@@ -693,7 +693,6 @@ Include Nose Piercing by Piercings Modules.
 Include Lip Piercing by Piercings Modules.
 Include Clitoris Lead by Piercings Modules.
 Include Cow Nipple Piercing by Piercings Modules.
-Include Module Framework by Piercings Modules.
 			
 Include Equippables Framework by Equippables.
 Include Whip of Domination by Equippables.
