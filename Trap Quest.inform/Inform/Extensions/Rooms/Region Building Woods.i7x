@@ -1,0 +1,79 @@
+Region Building Woods by Rooms begins here.
+
+
+
+
+Figure of woods loading is the file "loading1.png".
+Figure of dq woods loading is the file "loading2.png".
+Figure of dq woods messy loading is the file "loading3.png".
+
+
+[!<SetUpTheWoods>+
+
+REQUIRES COMMENTING
+
++!]
+To Set Up The Woods:
+	if loading scenes is 1:
+		clear the screen;
+		if images visible is 1:
+			if diaper quest is 0:
+				display figure of woods loading;
+			otherwise if a random number between 0 and 5 < rectum or there is a worn messed knickers:
+				display figure of dq woods messy loading;
+			otherwise:
+				display figure of dq woods loading;
+		say "Now loading the woods region!";
+		wait 50 ms before continuing;
+	Scramble Woods;
+	now the uses of WoodsScenery03 is 1;
+	now a random hammock is in a random dodgy unrelaxing room;
+	now a random hammock is in a random dodgy unrelaxing room;
+	repeat with G running through important rooms in The Woods:
+		unless G is the location of the player:
+			let Y be a random treasure chest in Holding Pen;
+			now Y is in G;
+	repeat with G running through dodgy rooms in The Woods:
+		unless G is the location of the player:
+			let R be a random number between 1 and 2;
+			let Y be a random large sack in Holding Pen;
+			if R is 2, now Y is a random tree stump crate in Holding Pen;
+			now Y is in G;
+	unless there is an on-stage sword, set up sword in the stone;
+	follow the set up woods traps rules;
+	if inhuman pregnancy is 2:
+		now woods-breeder is in a random placed dodgy room;
+	repeat with M running through alive monsters in the woods:
+		if the location of M is not placed, now M is in a random placed dodgy room;
+	if debugmode is 0 and loading scenes is 1, clear the screen.
+
+[!<TheSpawnInitialWoodsBucketsRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the spawn initial woods buckets rule:
+	repeat with N running from 1 to 8:
+		let R be a random trappable placed jungle room;
+		while there is a bucket in R:
+			now R is a random trappable placed jungle room;
+		deploy bucket in R.
+
+The spawn initial woods buckets rule is listed in the set up woods traps rules.
+
+[!<ScrambleWoods>+
+
+REQUIRES COMMENTING
+
++!]
+To Scramble Woods:
+	let E be the easting part of the grid position of Stairwell01;
+	let N be the northing part of the grid position of Stairwell01;
+	let the sum be the spatial coordinate with maze level part 2 easting part E northing part N;[Maze level part 2 corresponds to the L part of a room's shape. Woods rooms have the shape L2.]
+	now the grid position of Woods01 is the sum; [this changes the grid position of Woods01 from <0,0,0> to <2,0,0>]
+	now target-floor is Woods01;[this is an example of a room that satisfies the condition "in the woods". Any will work.]
+	solve the puzzle;
+	make all jungle exits lead to Solid Rock.
+
+
+Region Building Woods ends here.
