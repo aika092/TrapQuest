@@ -239,7 +239,7 @@ Include Skills by Player.
 Include Magic Power by Player.
 
 Include Short Skirt Addiction by Player.
-Include No Panties Addiction by Player.
+Include Exposure Addiction by Player.
 
 Include Rectum by Player.
 Include Virginity by Player.
@@ -755,6 +755,7 @@ Include Spit First Tattoo by Tattoos.
 Include Asshole Cupid Tattoo by Tattoos.
 
 Include No Panties Tattoo by Tattoos.
+Include Topless Tattoo by Tattoos.
 Include Hundred Percent Cunt Tattoo by Tattoos.
 Include For Deposit Only Tattoo by Tattoos.
 Include Born To Lose Tattoo by Tattoos.
