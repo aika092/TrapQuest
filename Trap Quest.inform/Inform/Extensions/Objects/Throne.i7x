@@ -24,6 +24,8 @@ Definition: yourself is throne stuck:
 
 First-throne is a number that varies.
 
+Does the player mean entering the throne: it is very likely.
+
 Figure of throne is the file "throne1.png".
 Figure of potty throne is the file "throne2.png".
 [
