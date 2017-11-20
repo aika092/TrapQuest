@@ -27,7 +27,11 @@ topless permanent fetish is a number that varies.  topless permanent fetish is 0
 Definition: yourself is fighting against topless:
 	if topless permanent fetish is 1 or there is a worn topless tattoo or the humiliation of the player >= 35000:
 		let C be a random worn bra;
-		if C is bra and C is not fully exposing, decide yes;
+		if C is bra and C is not fully exposing and C is nipple covering, decide yes;
+		let D be a random worn dress;
+		if D is dress and D is not fully exposing and D is nipple covering, decide yes;
+		let O be a random worn corset;
+		if O is corset and O is nipple exposing, decide yes;
 	decide no.
 braless reminder is a number that varies. braless reminder is 0.
 A time based rule (this is the fighting against topless fetish rule):
