@@ -3,14 +3,14 @@ Virginity by Player begins here.
 
 [!<Player>@<virgin:Integer>*
 
-REQUIRES COMMENTING
+For females, has something alive fucked their vagina?  For males, have they had dominant penetrative sex?
 
 *@!]
 The player has a number called virgin.  The virgin of the player is usually 1.
 
 [!<Player>@<analVirgin:Integer>*
 
-REQUIRES COMMENTING
+Has something alive fucked their asshole?
 
 *@!]
 The player has a number called analvirgin.  The analvirgin of the player is usually 1.
@@ -24,7 +24,7 @@ The player has a number called virgin bonus.  The virgin bonus of the player is 
 
 [!<virginityValued:Integer>*
 
-REQUIRES COMMENTING
+Does the player care about their virginity?
 
 *!]
 virginity-valued is a number that varies.  virginity-valued is 1.
@@ -38,7 +38,7 @@ Triggered when the player loses vaginal virginity.
 +!]
 To compute virginity loss:
 	now the virgin of the player is 0;
-	say "[variable custom style][if the sex addiction of the player < 10]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the sex addiction of the player < 15]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger.  There's no going back from that! *giggle*[end if][roman type][line break]";
+	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah!  Sorry sisters, I have failed you...[otherwise if the sex addiction of the player < 10]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the sex addiction of the player < 15]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger.  There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
 	if the virgin bonus of the player > 0:
 		say "[if the sex addiction of the player < 10]You feel pure despair and[otherwise if the sex addiction of the player < 15]You shudder involuntarily as[otherwise][end if] you feel some of your strength and speed leave you.  As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
@@ -96,37 +96,58 @@ To virginreward:
 			say "You decide in this game, placing all of your hopes on your virginity might not be the most sensible idea.";
 			now virginity-valued is 0.
 
+[!<TheVirginbonusPussySlutRule>+
+
+The higher the virgin bonus gets, the more desirable it gets for NPCs to take your virginity.
+
++!]
+This is the virginbonus pussy slut rule:
+	if virginity-valued > 0, increase the desirability of vagina by the virgin bonus of the player / 2.
+The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
+
+Part - Virgin Punish (Sissification)
+
+Definition: yourself is a sissy:
+	if the number of worn sissifying clothing > 1 and the player is male, decide yes;
+	decide no.
+
 [!<VirginPunish>+
 
 REQUIRES COMMENTING
 
 +!]
 To virginpunish:
-	let H be a random off-stage pink sissy bow;
+	[let H be a random off-stage pink sissy bow;
 	if H is actually summonable:
 		say "[VirginFlav]";
 		say "[bold type]A silky pink bow appears in your hair!  [variable custom style]I get it, I'm being treated like a girl.[roman type][line break]";
 		summon H cursed;
-	otherwise if there is a worn sissy bow and there is off-stage sissifying fetish appropriate actually summonable clothing:
-		say "[VirginFlav]";
+	otherwise if there is a worn sissy bow and there is off-stage sissifying fetish appropriate actually summonable clothing:]
+	if virgincursed > 0:
 		let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-		say "[bold type]As if reacting to your feelings, you suddenly feel a [printed name of S] [bold type]appear on you!  [variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
-		summon S cursed;
-		now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
-		announce sissification;
-	otherwise if the size of penis > min penis size:
-		say "[VirginFlav]";
-		PenisDown 1;
-		say "Your penis [Shrink]s into a [ShortDesc of penis].";
-	otherwise if the size of penis > 0:
-		say "[VirginFlav]";
-		let C be a random off-stage chastity cage;
-		if C is actually summonable:
-			say "[bold type]As if reacting to your feelings, you suddenly feel a [printed name of C] [bold type]appear on you!  [variable custom style]How am I ever supposed to lose my virginity now?  I'm stuck like this forever...[roman type][line break]";
-			summon C cursed;
-	otherwise if the sex addiction of the player < 15:
-		say "[VirginFlav]";
-		SexAddictUp 1.
+		if S is clothing:
+			say "[VirginFlav]";
+			say "[bold type]As if reacting to your feelings, you suddenly feel a [printed name of S] [bold type]appear on you!  [variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
+			summon S cursed;
+			now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
+			announce sissification;
+		otherwise if the size of penis > min penis size:
+			say "[VirginFlav]";
+			PenisDown 1;
+			say "Your penis [Shrink]s into a [ShortDesc of penis].";
+		otherwise if the size of penis > 0:
+			say "[VirginFlav]";
+			let C be a random off-stage chastity cage;
+			if C is actually summonable:
+				say "[bold type]As if reacting to your feelings, you suddenly feel a [printed name of C] [bold type]appear on you!  [variable custom style]How am I ever supposed to lose my virginity now?  I'm stuck like this forever...[roman type][line break]";
+				summon C cursed;
+		otherwise if the raw sex addiction of the player < 15 and the raw sex addiction of the player < the raw delicateness of the player:
+			say "[VirginFlav]";
+			if the raw anal sex addiction of the player <= the raw sex addiction of the player / 2, AnalSexAddictUp 1;
+			otherwise SexAddictUp 1;
+		otherwise if the raw delicateness of the player < 15:
+			say "[VirginFlav]";
+			DelicateUp 1.
 
 [!<AnnounceSissification>+
 
@@ -168,14 +189,6 @@ REQUIRES COMMENTING
 To say VirginFlav:
 	say "[bold type]Another wave of [if the humiliation of the player < 40000]shame[otherwise]the curse[end if] flows through you as you [one of][or]once again [stopping]find yourself thinking about your embarrassing virginity.  [roman type]".
 
-[!<TheVirginbonusPussySlutRule>+
-
-The higher the virgin bonus gets, the more desirable it gets for NPCs to take your virginity.
-
-+!]
-This is the virginbonus pussy slut rule:
-	if virginity-valued > 0, increase the desirability of vagina by the virgin bonus of the player / 2.
-The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
 
 
 Part 3 - Virginity Taking Things

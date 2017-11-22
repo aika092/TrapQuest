@@ -48,6 +48,7 @@ cow-summoned is a number that varies.
 
 To compute class outfit of (H - a cow ears):
 	let B be a random off-stage cow print bikini top;
+	let Q be a random off-stage cow print milking basque;
 	let C be a random off-stage cowbell;
 	let G be a random off-stage cow pattern boots;
 	let P be a random off-stage cow piercing;
@@ -55,7 +56,14 @@ To compute class outfit of (H - a cow ears):
 	if P is cow piercing and the number of worn nipple piercing is 0, now pierce is 1;
 	let T be a random off-stage nintendolls-brand tattoo;
 	if the headgear chance of H < the threshold of H:[We only check once so we avoid lag.]
-		if B is actually summonable or (B is bra and cow-summoned is 0):
+		if Q is actually summonable:
+			say "[bold type]Your cow ears barely noticeably quiver, and then a [ShortDesc of Q] materialises on your chest.[roman type][line break]";
+			summon Q cursed;
+			now Q is milk production;
+			now the raw-magic-modifier of Q is the largeness of breasts / 4;
+			now cow-summoned is 1;
+			now basque-summoned is 1;
+		otherwise if B is actually summonable or (B is bra and cow-summoned is 0):
 			if cow-summoned is 0:
 				repeat with O running through worn breast covering clothing:
 					if B is bra or B is totally-exclusive or B is bottom-exclusive:

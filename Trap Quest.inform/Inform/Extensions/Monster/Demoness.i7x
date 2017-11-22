@@ -172,7 +172,7 @@ To compute perception of (M - a demoness):
 		if image cutscenes is 1, display figure of demoness interact 6;
 	otherwise if the player is prone:
 		if the thickness of hips > 4 and the number of worn cursed plug panties is 0 and the player is not diapered:
-			say "[speech style of M]'Oh my, what a tasty looking ass you have.  I might just have to use it.'[roman type][line break]Uh-oh...";
+			say "[speech style of M]'Oh my, what a [tasty] looking ass you have.  I might just have to use it.'[roman type][line break]Uh-oh...";
 			if image cutscenes is 1, display figure of demoness interact 8;
 			anger M;
 		otherwise if M is dealing:
@@ -311,7 +311,7 @@ To compute kneeling reaction of (M - a demoness):
 	humiliate 75.
 	
 To compute delay of (M - a demoness):
-	say "[one of]The [M] continues to patiently tap her heel to the ground. You feel like she's waiting for you to continue.[or]The [M] hovers her hands by her hips, letting you know she's prepared if you try anything funny. She just wants you to make the first move.[or]The [M] keeps a keen eye on your subtle movements, ready to stop you if you try to run.[or]You notice that the [M] is waiting for your next move.[or][speech style of M]'We haven't got all day, sugartits.'[roman type] The [M] says with a wink.[line break][or][speech style of M]'Go on, make my day.'[roman type][line break][or][speech style of M]'Oh this is gonna be good. Now, give me your ass pathetic human.'[roman type][line break][or][speech style of M]'[if the flesh volume of hips < 8]It's not the biggest butt, but I'm not complaining[otherwise]Now that's what I call a tasty butt[end if]. Hope you're not too sore!'[roman type][line break][in random order]".
+	say "[one of]The [M] continues to patiently tap her heel to the ground. You feel like she's waiting for you to continue.[or]The [M] hovers her hands by her hips, letting you know she's prepared if you try anything funny. She just wants you to make the first move.[or]The [M] keeps a keen eye on your subtle movements, ready to stop you if you try to run.[or]You notice that the [M] is waiting for your next move.[or][speech style of M]'We haven't got all day, sugartits.'[roman type] The [M] says with a wink.[line break][or][speech style of M]'Go on, make my day.'[roman type][line break][or][speech style of M]'Oh this is gonna be good. Now, give me your ass pathetic human.'[roman type][line break][or][speech style of M]'[if the flesh volume of hips < 8]It's not the biggest butt, but I'm not complaining[otherwise]Now that's what I call a [tasty] butt[end if]. Hope you're not too sore!'[roman type][line break][in random order]".
 
 To say WaitingFlav of (M - a demoness):
 	if the player is not able to speak:
@@ -371,7 +371,7 @@ This is the demoness punishes diaper rule:
 		rule succeeds.
 The diaper punishment rule of a demoness is usually the demoness punishes diaper rule.
 
-To compute prostate plugging of (M - a monster):
+To compute prostate plugging of (M - a demoness):
 	let P be a random off-stage prostate massager plug;
 	let D be a random worn diaper;
 	if diaper quest is 0, now current-monster is willing to do oral; [From now on there's an alternative method the demoness can use on the player]
@@ -771,50 +771,58 @@ To say OralSubmissionResponse of (M - a demoness):
 	otherwise:
 		say "[one of]You bob your head up and down, [if the bimbo of the player < 7]eyes screwed shut in shame[otherwise if the sex addiction of the player < 12]avoiding eye contact[otherwise]looking up at the [M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 3]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck the [M]'s [manly-penis], [if the oral sex addiction of the player < 4]determined to get this over and done with as soon as possible.[otherwise if the oral sex addiction of the player < 6]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or]The [M] guides the movement of your head as you [if the oral sex addiction of the player < 3]quietly [otherwise if the oral sex addiction of the player > 6]noisily [end if] suck her [manly-penis], [if the oral sex addiction of the player < 4]making you feel even more like a dirty slut. If that was even possible.[otherwise if the oral sex addiction of the player < 6]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or]The [M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or]The [M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]".
 
-
 To compute facial climax of (M - a demoness):
-	if trap fetish is 1:[This is the proxy tentacle, which will always do it on your mouth]
+	if trap fetish is 1:[This means the demoness is having a tentacle facefuck you as part of your deal, and it always finishes in your mouth.]
 		say SuccessfulFacialDodge of M;
 		compute happy reward of M;
 		now M is not penetrating face;
 		StomachSemenUp the semen load of M;
 	otherwise if the reaction of the player is 0:
 		if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
-			say FacialBrokenFree of M;
-			say FailedFacialDodge of M;[demoness is too fast for you to dodge]
-			CumFaceUp the semen load of M;
-			compute angry punishment of M;
+			compute failed facial dodging of M;
 		otherwise:
-			say ResistedOralCreampie of M;
-			if image cutscenes is 1, display figure of demoness cutscene 11;
-			say SwallowDemand of M;
-			if M is coercing a swallow: [Automatic swallow]
-				say AutomaticSwallow of M;
-				compute happy reward of M;
-				now M is not penetrating face;[so the player doesn't gag]
-				StomachSemenUp the semen load of M;
-				humiliate 200;
-			otherwise:
-				compute swallow choice of M;
+			compute oral creampie of M;
 	otherwise:
 		if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
-			say UnavoidedFacial of M;
-			CumFaceUp the semen load of M;
-			humiliate 300;
-			compute happy reward of M;
-			now M is not penetrating face;
-			StomachSemenUp 1;
+			compute facial accepting of M;
 		otherwise:
-			say DeepthroatCreampie of M;
-			if image cutscenes is 1, display figure of demoness cutscene 11;
-			StomachSemenUp the semen load of M;
-			humiliate 100;
-			compute happy reward of M;
+			compute deepthroat creampie of M;
 	[increase the times-dominated of M by 1;][Aika thinks this was wrong so has commented it out; MG was reusing this value to determine whether or not the player had acknowledged the demoness' offer before without using [stopping] ]
 	satisfy M.
 
+To compute oral creampie of (M - a demoness):
+	say ResistedOralCreampie of M;
+	if image cutscenes is 1, display figure of demoness cutscene 11;
+	say SwallowDemand of M;
+	now M is not penetrating face;[This prevents the player from puking]
+	if M is coercing a swallow:[Automatic swallow]
+		compute auto swallow of M;
+	otherwise:
+		compute swallow choice of M.
+
+To compute failed facial dodging of (M - a demoness):
+	say FacialBrokenFree of M;
+	say FailedFacialDodge of M;[demoness is too fast for you to dodge]
+	CumFaceUp the semen load of M;
+	compute angry punishment of M.
+
+To compute facial accepting of (M - a demoness):
+	say UnavoidedFacial of M;
+	CumFaceUp the semen load of M;
+	humiliate 300;
+	compute happy reward of M;
+	now M is not penetrating face;
+	StomachSemenUp 1.
+
+To compute deepthroat creampie of (M - a demoness):
+	say DeepthroatCreampie of M;
+	if image cutscenes is 1, display figure of demoness cutscene 11;
+	StomachSemenUp the semen load of M;
+	humiliate 100;
+	compute happy reward of M.
+
 To say SuccessfulFacialDodge of (M - a demoness):
-	say "The [M] grabs the tentacle as it tenses, pushing it in as deep as it can go as [one of]spurt after spurt[or]gush after gush[or]a huge amount of[at random] [tasted-semen] [one of]rushes[or]shoots[at random] down your throat, only allowing it to retract when all you can taste is its demonic seed.".
+	say "The [M] grabs the tentacle as it tenses, pushing it in as deep as it can go as [one of]spurt after spurt[or]gush after gush[or]a huge amount of[at random] [tasted-semen] [one of]rushes[or]shoots[at random] down your throat, keeping it there until your gag reflex subsides and every last drop of its demonic seed has settled fully in your belly.".
 
 To say FailedFacialDodge of (M - a demoness):
 	say "[one of]The [M] grabs you again with inhuman speed, her [manly-penis] bobbing in your face as it paints you with rope after rope of sticky white [semen].[or]The [M] catches you with inhuman speed, forcing you to sit still as she ejaculates all over your face.[or]The [M] catches you with seemingly inhuman reflexes, groaning as her [manly-penis] unleashes its massive load all over your face.[or]The [M] catches you in an instant, cackling as she shoots rope after rope of sticky white [semen] all over your face.[or]The [M] catches you almost instantly, leaving you to [if the semen addiction of the player < 8]struggle in vain as [he of M] unloads all over your face.[otherwise if the semen addiction of the player < 12]half-heartedly struggle as [he of M] unloads all over your face.[otherwise]giggle to yourself as [he of M] unloads all over your face.[end if][at random]".
@@ -873,6 +881,18 @@ To compute happy reward of (M - a demoness):
 	otherwise sexaddictup A;[Don't want to game over here so we intentionally shy back from going over the limit.]
 	sementasteaddictup A;
 	FavourUp M by A.
+
+To compute spit choice of (M - a demoness):
+	let V be nothing;
+	if the player is not flying and the player is not monster stuck, now V is the juice-collector;
+	if V is held:
+		compute semen catching from M in V;
+		say "[speech style of M]'Hmm. Guess I'll have to save your reward for later too, huh?'[roman type][line break] The [M] cackles, disappearing in a burst of flames.";
+		unless the raw sex addiction of the player is 20, sexaddictup 1;
+		unless the raw semen taste addiction of the player is 20, sementasteaddictup 1;
+	otherwise:
+		compute voluntary spitting of M.
+		[compute angry punishment of M.]
 
 To compute angry punishment of (M - a demoness):
 	say "[speech style of M]'Oh well, I got what I wanted anyway. Hahahaha!'[roman type] The [M] disappears in a burst of flames.[line break]";
@@ -1088,7 +1108,7 @@ To IdentifiablePosterReaction of (M - a demoness):
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
 To UnidentifiablePosterReaction of (M - a demoness):
-	say "[speech style of M]'Now that's is one tasty piece of ass.'[roman type][line break]";
+	say "[speech style of M]'Now that's is one [tasty] piece of ass.'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
@@ -1102,7 +1122,7 @@ To say RepeatResponse of (M - a demoness):
 	say "[speech style of M]'[one of]Hi. Know any weaklings I can crush? I[']m getting a bit bored.'[or]Hey. Do me a favor and don't give that witch anything.'[or]Hey there. Tell Xavier I said hi. You[']ll know him when you see him.'[at random][roman type][line break]";
 	
 To say UnfriendlyResponse of (M - a demoness):
-	if the class of the player is sissy:
+	if the player is a sissy:
 		say "[speech style of M]'[one of]Come here looking for a dick to suck? How about I ruin your sissy ass instead?'[or]I can tell just by looking at you that you[']re going to love having your asshole ruined.'[or]Did you come all the way here for me to punish you, sissy?[or]I love crushing weaklings like you. Are you ready?'[at random][roman type][line break]";
 	otherwise if the class of the  player is priestess:
 		say "[speech style of M]'[one of][if M is uninterested]YOU![otherwise]You will BURN![end if]'[or]You will suffer for your god, priestess.'[or]When I am finished torturing you...send the goddess my regards.'[or]Pray all you like, priestess, it will not help you now!'[or]So, the goddess sends another priestess for me to ruin. I'd be annoyed if it weren[']t so much fun.'[or]Say your prayers, priestess!'[or]So, you came here seeking to challenge me, but you did not bring a cross. You will pay dearly for that mistake.'[at random][roman type][line break]";
@@ -1235,7 +1255,7 @@ To compute perception of (M - an abyssal demoness):
 		repeat with H running through worn heels:
 			if H is dildo heels or the heel-height of H > 3, now T is 0;
 	if the player is flying:
-		say "What are you doing on my ceiling! Do you believe yourself above me? How dare you!";
+		say "What are you doing on my ceiling! Do you believe yourself ABOVE ME?! How dare you!";
 		anger M;
 	otherwise if the latex-transformation of the player > 3:
 		say "She doesn't seem interested for some reason.";
@@ -1255,7 +1275,7 @@ To compute perception of (M - an abyssal demoness):
 				now seconds is 1;
 				try kneeling;
 	otherwise if the player is prone:
-		say "[speech style of M]'[if the class of the player is cultist]Servant.'[otherwise if the class of the player is succubus]Good practice, sister. Glad to see some of his servants aren't idiots.'[otherwise]Gets used to crawling, girl, all will be servants eventually.'[end if][roman type][line break]";
+		say "[speech style of M]'[if the class of the player is cultist]Servant.'[otherwise if the class of the player is succubus]Good practice, sister. Glad to see some of his servants aren't idiots.'[otherwise]Get used to crawling, girl, all will be servants eventually.'[end if][roman type][line break]";
 		distract M;
 	otherwise: [We know by know that the player must be upright.]
 		if the class of the player is succubus:
@@ -1297,6 +1317,9 @@ To compute (M - an abyssal demoness) entering asshole:
 	now M is penetrating asshole;
 	if the soreness of asshole < 10, AssRuin 1.
 
+To say SummoningFlav of (M - a demoness):
+	if M is in the location of the player, say "The air around you grows unbearable cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind her.";
+	otherwise say "You hear the sound of inhuman laughter.".
 
 
 Demoness ends here.

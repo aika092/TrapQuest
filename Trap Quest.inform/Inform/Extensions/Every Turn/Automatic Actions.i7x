@@ -56,7 +56,7 @@ To compute automatic actions:
 		now delayed urination is 0;
 	otherwise if diaper lover is 3 and there is worn messed knickers and (there is a changing the player monster or there is a spanking the player monster): [If the player is only into scene messing then we need to prevent the player from getting a chance to escape e.g. with the pink pill]
 		now another-turn is 1;
-	otherwise if there is a worn drinkme tattoo and the player is not almost too full and there is a held non-empty bottle and face is not actually occupied and the player is not in danger and the player is able to use their hands:
+	otherwise if there is a worn drinkme tattoo and the semen taste addiction of the player < 20 and the player is not desperately craving and the urine taste addiction of the player <= 15 and the player is not almost too full and there is a held non-empty bottle and face is not actually occupied and the player is not in danger and the player is able to use their hands:
 		let C be a random held non-empty bottle;
 		if C is bottle:
 			say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [C] to your lips!";

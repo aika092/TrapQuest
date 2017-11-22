@@ -27,6 +27,9 @@ Report examining suspenders:
 To say ShortDesc of (O - a suspenders):
 	say "pair of suspenders".
 
+To say ShortestDesc of (C - a suspenders):
+	say "pair of suspenders".
+
 Report wearing stockings when there are worn suspenders:
 	let S be a random worn suspenders;
 	if S is cursed and the noun is not cursed:
@@ -73,6 +76,12 @@ To decide which object is the concealer of (C - a suspenders):
 
 Definition: a suspenders (called C) is bow themed:
 	decide yes.
+
+Definition: a suspenders (called C) is ingredient:
+	decide yes.
+
+To decide which number is the crafting key of (C - a suspenders):
+	decide on 52.
 
 
 Section - Wearability

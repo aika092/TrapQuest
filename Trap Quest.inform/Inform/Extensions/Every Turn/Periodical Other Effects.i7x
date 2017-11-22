@@ -68,7 +68,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		otherwise if the player is female and the virgin of the player is 1 and virginity-valued is 1:
 			virginreward;
 	[Virgin Curse]
-	if the remainder after dividing local-earnings by 297 < local-seconds and the player is male and the virgin of the player is 1 and virgincursed is 1:
+	if the remainder after dividing local-earnings by 297 < local-seconds and the player is male and the virgin of the player is 1 and virgincursed > 0:
 		virginpunish;
 	[Various periodic decays]	
 	if the remainder after dividing local-earnings by 611 < local-seconds:

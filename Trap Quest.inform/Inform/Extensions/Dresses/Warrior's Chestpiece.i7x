@@ -162,5 +162,44 @@ To say TransformReaction of (C - a hide warrior chestpiece):
 	otherwise if the humiliation of the player < 40000:
 		say "[variable custom style]Wow, even more outrageous... I can't believe how much wearing clothing like this is turning me on![roman type][line break]".
 
+Part 6 - Golden Warrior Priestess Outfit
+
+A golden warrior priestess outfit is a kind of immodest warrior chestpiece.  There is 1 golden warrior priestess outfit.  A golden warrior priestess outfit is usually metal.  A golden warrior priestess outfit is usually super-short.  A golden warrior priestess outfit is usually belly exposing.  A golden warrior priestess outfit is usually ridiculously low cut.  A golden warrior priestess outfit is usually totally-exclusive.
+
+Figure of golden warrior priestess outfit is the file "priestess5.png".
+
+The printed name of golden warrior priestess outfit is usually "[TQlink of item described][clothing-title-before]golden warrior priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of golden warrior priestess outfit is "gpo".
+
+To decide which figure-name is clothing-image of (C - a golden warrior priestess outfit):
+	decide on figure of golden warrior priestess outfit.
+
+To say ClothingDesc of (C - a golden warrior priestess outfit):
+	say "This bizarre metal outfit consists of just a few shiny constricting bars.  It covers your nipples but not much else.".
+
+To decide which number is the initial outrage of (C - a golden warrior priestess outfit):
+	decide on 8.
+
+Definition: a golden warrior priestess outfit (called C) is untransformable:
+	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
+	decide no.
+
+To compute virginity-loss of (H - a golden warrior priestess outfit):
+	say "As the [H] shatters into fragments, in a single instant you experience the lives of every single one of your clan's descendents.  This scene is probably more extreme than most things in this game, do you want to read it? [yesnolink]";
+	if the player consents:
+		say "You experience the lives of each member of your clan, each one destined to spend her life as nothing more than ";
+		if pregnancy fetish is 1:
+			say "a broodmare for the monsters of this world: instead of becoming noble priestesses, they all instead choose to devote themselves to carnal pleasures, voluntarily surrendering themselves to any entity they can find.  You experience a hundred thousand assaults in a thousand different ways by [if inhuman pregnancy is 2]everything from orcs to goblins to grotesque tentacled horrors[otherwise]men from every corner of the world - big cocks, small cocks, it's all the same after the first ten week-long gangbangs[end if].  Due to their obsessive sexual appetites they tend to be pregnant around the clock [if inhuman pregnancy is 2]and so they slowly fill the world with more and more of these horrible beasts from their own previously sacred wombs, [end if]and when their [if inhuman pregnancy is 2](human) [end if]daughers are old enough, their mothers watch with pride as they initiate themselves into the ranks of nymphomanic breeding factories.  And then eventually their daughters.  And then eventually their daughters.  For countless generations until the end of the world.  ";
+		otherwise:
+			say "a set of fuckholes for the men of this world: instead of becoming noble priestesses, they all instead choose to devote themselves to carnal pleasures, setting up a sacred 'temple' where the only thing woshipped is cock.  You experience a hundred thousand assaults in a thousand different ways.  Your sisters are used by men from every corner of the world - big dicks, small dicks, it's all the same after the first ten week-long gangbangs.  There are more men than there is time to service them and each of your clan are in use 24 hours a day.  Their holy lineage prevents them from aging, allowing them to continue to serve the hordes of men that come from far and wide to spill their seed inside and over the cursed women.  For countless centuries until the end of the world.  ";
+		say "All of this - every single ounce of cum, every single forced orgasm as huge cocks brutally plow three sore holes, every last spank and nipple tweak and clit flick, many millenia worth of sleep deprivation, [if watersports fetish is 1]every single time an exhausted face is used as a urinal, [end if][if pregnancy fetish is 1]every painful, shameful birthing, [end if]every single degrading word of abuse that is uttered at any of your clan throughout time, and the deep sense of perverse fulfillment that your sisters achieve from all of this happening to them - it all hits your soul at the same instant, like a bullet train forcing its way through the eye of a needle.  Your mind, rather unsurprisingly, exits stage left.  What is left of your frazzled brain is a shell of a human, with no self-respect and no ability to recognise herself as anything but an object.";
+	otherwise:
+		say "You lose all self-respect, becoming a sexually broken object to be used.";
+	decrease the virgin bonus of the player by 1;
+	now the humiliation of the player is 40001;
+	if mindbreak protection is 1:
+		say "But then you remember that you enabled mindbreak protection in the starting options of this virtual game.  You feel something attaching itself your mind almost like a fishing hook, reeling you back from the brink until you stabilise.  You're still going to be a shameless exhibitionist from now on, but at least you're one who controls her own destiny, dammit!";
+		now the humiliation of the player is 39999;
+	only destroy H.
+
 
 Warrior's Chestpiece ends here.

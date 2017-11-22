@@ -105,7 +105,7 @@ To compute perception of (M - a matron):
 		say "[speech style of M]'[if the times-met of M < 1]Hey there you cute little thing.'[otherwise][one of]Oh it's my favourite big baby!'[or]Hi little baby potty pants!'[or]Don't you cry little one, Nanny is here to take care of you!'[in random order][end if][roman type][line break]";
 		compute diaper check of M;
 	otherwise if M is motherly:
-		say "[speech style of M]'Bad [if the class of the player is sissy]sissy[otherwise if the class of the player is maid]maid[otherwise if the class of the player is princess]princess[otherwise if the size of penis < 3]girl[otherwise]baby[end if]!  What did I say about not letting me find you without a nice snug nappy?!  You're in big trouble!  [if the player is upright]Get on your knees, now!'[otherwise]Hold still, now...'[end if][roman type][line break]";
+		say "[speech style of M]'Bad [if the player is a sissy]sissy[otherwise if the class of the player is maid]maid[otherwise if the class of the player is princess]princess[otherwise if the size of penis < 3]girl[otherwise]baby[end if]!  What did I say about not letting me find you without a nice snug nappy?!  You're in big trouble!  [if the player is upright]Get on your knees, now!'[otherwise]Hold still, now...'[end if][roman type][line break]";
 		now the variety of M is 99;
 		anger M;
 	otherwise if there is an interested unfriendly wrestler in the location of M:

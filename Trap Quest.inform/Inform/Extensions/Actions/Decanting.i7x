@@ -14,6 +14,7 @@ Check decanting something with:
 	if the noun is lubricant and the second noun is not dispenser, try orilubing the noun with the second noun instead;
 	if the noun is knife, try knifing the second noun with the noun instead;
 	if the noun is salve, try salverubbing the noun on the second noun instead;
+	if the noun is powder, try powderrubbing the noun on the second noun instead;
 	if the noun is not a vessel, say "[if the noun is can]Cans have one-time use ring-pulls, which make them a bad choice for storing other liquids.[otherwise]You can't keep any liquid in that...[end if]" instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is penetrating an orifice, say "That's inside you at the moment..." instead;

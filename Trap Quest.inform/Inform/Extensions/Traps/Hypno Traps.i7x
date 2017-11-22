@@ -68,9 +68,14 @@ To compute hypno effect of (Y - a hypno trap):
 
 To compute specific hypno effect of (Y - a hypno trap):
 	do nothing. [Should never happen; each hypno trap should have a function here]
+	
+hypno-trigger-tasty is a number that varies.
 
 To compute specific hypno effect of (Y - a cocksucker hypno trap):
-	if the thirst of the player < 3:
+	if hypno-trigger-tasty is 0 and the player is a November 2017 top donator:
+		say "For some reason the word 'tasty' repeats in your head over and over and over and over.  You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
+		now hypno-trigger-tasty is 1;
+	otherwise if the thirst of the player < 3:
 		say "You feel weirdly thirsty.";
 		StomachDown 1;
 	otherwise:

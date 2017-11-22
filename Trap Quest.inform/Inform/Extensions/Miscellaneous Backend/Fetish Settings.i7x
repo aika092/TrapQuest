@@ -88,6 +88,7 @@ choice
 0 [secret: humiliation]
 0 [secret: artificial]
 0 [ungape]
+0 [tentacle fetish]
 
 
 [!<DecideWhichNumberIsPlayerGender>+
@@ -622,6 +623,15 @@ To decide which number is ungape:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 60 of the Table of Player Options.
 
+[!<DecideWhichNumberIsTentacleFetish>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is tentacle fetish:
+	if diaper quest is 1, decide on 0;
+	decide on the choice in row 61 of the Table of Player Options.
+
 [!<AThingIsAFlatchestedTrap>+
 
 REQUIRES COMMENTING
@@ -723,6 +733,7 @@ To decide which number is positive points count:
 	if latex prisoner is 1, increase X by 8;
 	if bondage prisoner is 1, increase X by 8;
 	if ungape is 1, increase X by 2;
+	if tentacle fetish is 1, increase X by 6;
 	increase X by natural redness;
 	increase X by natural blondeness;
 	increase X by natural brightness;
@@ -804,7 +815,7 @@ REQUIRES COMMENTING
 +!]
 This is the randomise choices rule:
 	repeat with X running from 1 to 100:
-		let R be a random number from 1 to 20;
+		let R be a random number from 1 to 21;
 		if R is 1, follow bukkake fetish toggle rule;
 		if R is 2, follow pregnancy fetish toggle rule;
 		if R is 3, follow lactation fetish toggle rule;
@@ -824,7 +835,8 @@ This is the randomise choices rule:
 		if R is 17, follow spontaneous tattoos toggle rule;
 		if R is 18, follow map reset toggle rule;
 		if R is 19, follow mythical creature fetish toggle rule;
-		if R is 20, follow the roleplay fetish toggle rule.
+		if R is 20, follow tentacle fetish toggle rule;
+		if R is 21, follow the roleplay fetish toggle rule.
 
 [!<TheRandomiseBonusesRule>+
 

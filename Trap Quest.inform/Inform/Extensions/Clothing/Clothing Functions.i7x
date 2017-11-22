@@ -17,7 +17,9 @@ REQUIRES COMMENTING
 +!]
 To say ShortDesc of (C - a clothing):
 	say "[C]". [Similarly, hopefully this will never happen, as each piece of clothing will have a description, but it needs to be here just in case.]
-	
+
+To say ShortestDesc of (C - a clothing):
+	say "item of clothing".
 
 To compute periodic effect of (C - a wearthing):
 	do nothing.

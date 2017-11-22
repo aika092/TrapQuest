@@ -332,7 +332,7 @@ To compute punishment of (P - hole-plug):
 
 hole-gatling-fuck is hole-in-wall punishment.
 Definition: hole-gatling-fuck (called P) is appropriate:
-	if diaper quest is 1, decide no;
+	if diaper quest is 1 or the player is diaper focused, decide no;
 	decide yes.
 
 To compute punishment of (P - hole-gatling-fuck):

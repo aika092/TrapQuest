@@ -1224,7 +1224,7 @@ To say RepeatResponse of (M - a gladiator):
 To say UnfriendlyResponse of (M - a gladiator):
 	if M is male and the class of the player is virgin warrior:
 		say "[speech style of M]'[one of]Let me show you the flaws of your path...'[or]When I am finished with you, you won[']t even be a warrior.'[or]Your virginity will belong to me.'[or][if pregnancy fetish is 1]Maybe when my seed is in your belly you will realize[otherwise]Maybe when I have taken your virginity you will realize[end if] your mistake.'[at random][roman type][line break]";
-	otherwise if M is male and the class of the player is sissy:
+	otherwise if M is male and the player is a sissy:
 		say "[speech style of M]'[one of]I will show you a real man, sissy.[or]Even I carry a penis better than you.'[or]I hope you are ready to beg for mercy.'[or]On your knees. I will not play this game with you, sissy.'[or]Do not waste my time, sissy. Get on your knees.'[or]You know your place, sissy. Get on your knees.'[or]Do not play games, sissy, you know what I have planned for you.'[or]I may not be a true woman anymore, but I am definitely more man than you.'[at random][roman type][line break]";
 	otherwise if M is male:
 		say "[speech style of M]'[one of]Shut up, and take what's coming to you!'[or]Won't you be silent while I punish you?!'[or]Gaah!  Silence!'[at random][roman type][line break]";
@@ -1400,7 +1400,12 @@ To set up (M - an insane gladiator):
 	now M is raunchy.
 
 To say SummoningFlav of (M - an insane gladiator):
-	say "[if M is in the location of the player]A space opens up in the centre of the circle, and a metal sword flies through. Two muscular arms follow closely behind, flexing as a mostly naked woman pulls herself through. She grabs the sword as the portal closes behind her, absent-mindedly fingering herself as she climbs to her feet.[otherwise]You hear the sound of metal hitting stone coming from another part of the dungeon.[end if]".
+	if M is in the dungeon:
+		if M is in the location of the player, say "A space opens up in the centre of the circle, and a metal sword flies through. Two muscular arms follow closely behind, flexing as a mostly naked woman pulls herself through. She grabs the sword as the portal closes behind her, absent-mindedly [if M is male]pumping her huge 9-inch [manly-penis][otherwise]fingering herself[end if] as she climbs to her feet.";
+		otherwise say "You hear the sound of metal hitting stone coming from another part of the dungeon.";
+	otherwise:
+		if M is in the location of the player, say "The mummy's wrappings rip audibly as the gladiator inside them bursts free, simultaneously tearing her sword from the aged planks underneath her and [if M is male]vigorously pumping her huge 9-inch [manly-penis][otherwise]fingering herself madly[end if] as the mummy silently reforms behind her, none the worse for the wear.";
+		otherwise say "You hear metal scraping on wood coming from another part of the mansion.".
 
 To compute (M - a monster) stomping (N - a insane gladiator):
 	if M is in the location of the player, say "The [N] charges at the [M] with her shortsword.  With incredible agility the [M] grabs the [N] and presses his giant [manly-penis] against her asshole.  She screams [first custom style]'Yes! FUCK M-!'[roman type] but before she has even finished [he of M]has started fucking and cumming inside her.  You watch as her belly grows in front of your eyes.   After she is full, [he of M]tosses her to the ground, where she promptly faints.";

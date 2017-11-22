@@ -31,6 +31,8 @@ To compute furniture resting on (F - a guest bed):
 		now F is tended;
 	compute normal rest of F.
 
+The player has a number called player-hypno-great. player-hypno-great is usually 0.
+
 [!<computeUniqueFurnitureFatigueEffect>+
 
 By default, calls the UniqueFurnitureNormalEffect function
@@ -73,6 +75,7 @@ To say RestingDesc of (F - a guest bed):
 		say "You continue to rest on the comfortable mattress[one of], silently repeating the [M]'s words.[or] drowsily watching the [M]'s lips as the form her song.[or], feeling yourself drifting to rhythm of the [M]'s voice.[or], hanging onto the steadily fading lilt of the [M]'s voice.[at random]";
 	otherwise if N < 11:
 		say "[if N is 10]You feel them clutching you. Holding you. Cradling you. You are ready. They are ready.[otherwise]You continue resting,  [one of]treasuring the soothing....blankness in your mind.[or]whispering yourself into a language you do not know.[or]anticipating...them.[at random][end if]";
+		now player-hypno-great is 1;
 	otherwise if N > 10:
 		if the remainder after dividing N by 4 is 1:[every four turns, add another tentacle.]
 			let O be a random orifice;

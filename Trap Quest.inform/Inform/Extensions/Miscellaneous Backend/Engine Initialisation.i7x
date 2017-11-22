@@ -146,7 +146,8 @@ To fill in table blanks:
 	unless there is a choice in row 57 of the Table of Player Options, now choice in row 57 of Table of Player Options is 0;
 	unless there is a choice in row 58 of the Table of Player Options, now choice in row 58 of Table of Player Options is 0;
 	unless there is a choice in row 59 of the Table of Player Options, now choice in row 59 of Table of Player Options is 0;
-	unless there is a choice in row 60 of the Table of Player Options, now choice in row 60 of Table of Player Options is 0.
+	unless there is a choice in row 60 of the Table of Player Options, now choice in row 60 of Table of Player Options is 0;
+	unless there is a choice in row 61 of the Table of Player Options, now choice in row 61 of Table of Player Options is 0.
 
 To correct table entries:
 	if the player is not the donator:

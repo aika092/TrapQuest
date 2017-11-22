@@ -44,7 +44,7 @@ To compute class outfit of (H - a flower hairclip):
 	let W be a random off-stage reinforced warrior chestpiece;
 	let G be a random off-stage gown of purity;
 	if the headgear chance of H < the threshold of H:
-		if (W is actually summonable or (W is warrior chestpiece and warrior-summoned < 2)) and the largeness of breasts < 18 and the class of the player is virgin warrior:
+		if (W is actually summonable or (W is warrior chestpiece and warrior-summoned is 0)) and the largeness of breasts < 18 and the class of the player is virgin warrior:
 			if warrior-summoned < 2:
 				repeat with O running through worn dresses:
 					say "Your [O] vanishes!";
@@ -55,16 +55,16 @@ To compute class outfit of (H - a flower hairclip):
 			say "[bold type]You are forced to [if the player is upright]stand[otherwise]stay[end if] still as a rigid metal chestpiece appears around you.  Somehow, you now feel more in control of your urges.[roman type][line break]";
 			summon W cursed;
 			now the raw-magic-modifier of W is the virgin bonus of the player;
-			now warrior-summoned is 2;
+			if warrior-summoned is 0, now warrior-summoned is 1;
 			now W is suppression;
-		otherwise if G is actually summonable or (G is gown of purity and warrior-summoned is 1):
+		otherwise if G is actually summonable or (G is gown of purity and warrior-summoned < 2):
 			if warrior-summoned is 0:
 				repeat with O running through worn skirted clothing:
 					say "Your [O] vanishes!";
 					destroy O;
 			say "[bold type]A belt suddenly latches around you with a dull *clang*.  Two strips of pure white fabric hang from the sides.  You feel incredible - fuelled with extra determination and feeling more comfortable with your current situation, you surge onwards![roman type][line break]";
 			summon G cursed;
-			if warrior-summoned is 0, now warrior-summoned is 1;
+			now warrior-summoned is 2;
 			now the raw-magic-modifier of G is the virgin bonus of the player.
 
 To compute virginity-loss of (H - a flower hairclip):

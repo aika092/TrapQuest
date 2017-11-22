@@ -109,7 +109,7 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 		now A is released;
 		if inhuman pregnancy > 0:
 			let T be a random off-stage tentacle monster;
-			compute set up T;
+			set up T;
 			decrease the difficulty of T by 2;
 			now T is in the location of A;
 			if A is in the location of the player, say "The [A] gives birth to a [T]!";[TODO: improve]

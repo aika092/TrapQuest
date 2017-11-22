@@ -48,7 +48,7 @@ Carry out crafting:
 				destroy the noun;
 			say "You pick it up.[line break]The bowl stops glowing[one of] - maybe you will have to wait a while until the magic returns[or][stopping].";
 			increase times-crafted by 1;
-			now the charge of alchemist's table is 500 - (the intelligence of the player * 15);
+			now the charge of alchemist's table is 325 - (the intelligence of the player * 10);
 			if the craftskill of the player is 1, now the charge of alchemist's table is the charge of alchemist's table / 4;
 			let H be a random worn blue scrunchie;
 			if H is clothing, compute class outfit of H;

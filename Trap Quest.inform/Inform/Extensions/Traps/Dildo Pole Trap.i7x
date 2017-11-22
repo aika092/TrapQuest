@@ -360,10 +360,9 @@ REQUIRES COMMENTING
 To Jump From The Drill:
 	let X be a random drill pole trap penetrating a fuckhole;
 	if the raw sex addiction of the player < 20: [Unmodified sex addiction]
-		let R be a random number from 1 to 3;
-		increase R by the soreness of a random fuckhole penetrated by X;
-		if the latex-transformation of the player > 3 or the player is not able to get horny, now R is 99999;
-		if R > the arousal of the player / 500:
+		let R be the soreness of a random fuckhole penetrated by X + (a random number from 2 to 5) - (the relevant sex addiction of X / 4);
+		if the latex-transformation of the player > 3 or the player is not able to get horny or the player is not a bit horny, now R is 99999;
+		if R >= the arousal of the player / 750:
 			say "You jump and the drilling dildo exits you, and thankfully this makes it stop spinning and pushing upwards.  You are able to successfully escape from the [if the sex addiction of the player < 15]torture[otherwise][second custom style]fun ride[roman type][end if]!";
 			now busy is 0;
 			now X is not penetrating asshole;

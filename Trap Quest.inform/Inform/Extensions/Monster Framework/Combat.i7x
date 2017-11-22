@@ -97,6 +97,13 @@ This is the reset chosen orifice rule:
 	now the chosen-orifice of current-monster is nothing.
 The reset chosen orifice rule is listed first in the default end of sex rules.
 
+[!<OrgasmMonster>+
+
+This function runs any code that needs to be executed whenever the player finishes having sex with a monster. If the player can have sex without triggering the default finish sex rule for a given monster, this function needs to be called manually.
+
+@param <Monster>:<M> The monster the player just had sex with
+
++!]
 To orgasm (M - a monster):
 	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
 		say "You can feel a surge in your holy aura and a voice appears in your head: 'Dutiful Sister, there is still more work to be done!'";
@@ -124,6 +131,13 @@ To compute replacement of (T - a thing) in (O - an orifice):
 		now current-monster is not retaining T;
 		if O is fuckhole, ruin O.
 
+[!<DominateUpMonster>+
+
+With this function, current-monster moves a given piece of clothing back into place
+
+@param <Clothing>:<D> The clothing to be replaced
+
++!]
 To compute replacement of (D - a clothing):
 	if current-monster is intelligent:
 		if D is worn:
@@ -163,58 +177,40 @@ To TimesFuckedUp (M - a monster):
 	if there is a worn tethering lipstick collar, end tethering.
 	
 Definition: a monster (called M) is coercing a swallow:
-	if a random number between 3 and (20 - (the thirst of the player * 4)) < the semen taste addiction of the player or a random number between 10 and 20 < the delicateness of the player, decide yes;
+	if the player is desperate to drink semen, decide yes;
+	if a random number between 10 and 20 < the delicateness of the player, decide yes;
 	decide no.
 
+[!<OrgasmMonster>+
+
+This function handles the oral "climax" of a monster. By default, this can end in one of four ways. First, a resisting player can escape at the last second, avoiding semen on their face or in their mouth, which should trigger the angry punishment function for this monster. Second, the monster can ejaculate on the player's face. Third, the monster can ejaculate in the player's mouth, prompting them to swallow. If they don't, we should call the angry punishment function. Fourth, the monster can deepthroat the player so they swallow automatically
+
+@param <Monster>:<M> The monster the player just had oral relations with
+
++!]
 To compute facial climax of (M - a monster):
-	let R be 0;
+	compute default facial climax for M.
+
+To compute default facial climax for (M - a monster):
 	TimesFuckedUp M by 1;
-	if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut and the class of the player is not living sex doll:[cumshot outside]
+	if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut and the class of the player is not living sex doll:[cumshot outside;TODO "willing to pull out" function for orifices]
 		if the reaction of the player is 0:
-			say FacialBrokenFree of M;
-			if a random number between 1 and the dexterity of the player > the difficulty of M:
-				say SuccessfulFacialDodge of M;
-				SemenPuddleUp the semen load of M;
-				compute angry punishment of M;
-			otherwise:
-				say FailedFacialDodge of M;
-				CumFaceUp the semen load of M;
-				compute happy reward of M;
+			compute facial dodging of M;
 		otherwise: [the player submitted]
-			say UnavoidedFacial of M;
-			CumFaceUp the semen load of M;
-			humiliate 200;
-			compute happy reward of M;
+			compute facial accepting of M;
 	otherwise: [Internal cumshot]
 		if the reaction of the player is 0:
-			say ResistedOralCreampie of M;
-			say SwallowDemand of M;
-			now M is not penetrating face; [This can't cause them to puke]
-			if M is coercing a swallow: [Automatic swallow]
-				say AutomaticSwallow of M;
-				StomachSemenUp the semen load of M;
-				humiliate 200;
-				compute happy reward of M;
-			otherwise:
-				compute swallow choice of M;
+			compute oral creampie of M;
 		otherwise: [submitted, deepthroat]
-			say DeepthroatCreampie of M;
-			StomachSemenUp the semen load of M;
-			humiliate 100;
-			compute happy reward of M;
-	satisfy M.
+			compute deepthroat creampie of M;
+	satisfy M.[dislodges him automatically]
 
 To compute swallow choice of (M - a monster):
 	say "Do you swallow? [yesnolink] ";
 	if the player consents:
-		say VoluntarySwallow of M;
-		StomachSemenUp the semen load of M;
-		humiliate 400;
-		compute happy reward of M;
-	otherwise:[Todo: spitting into an open container]
-		say VoluntarySpit of M;
-		SemenPuddleUp the semen load of M;
-		compute angry punishment of M.
+		compute voluntary swallow of M;
+	otherwise:
+		compute spit choice of M.
 
 This is the default anal climax rule:
 	if current-monster is penetrating asshole, compute anal climax of current-monster;
@@ -271,10 +267,24 @@ To compute vaginal climax of (M - a monster):
 To say CondomPieFlav of (M - a monster):
 	say "The [M] ejaculates into the condom!".
 
+[!<CreampieFlavOfMonster>+
+
+This function handles a monster finishing inside after anal or vaginal sex. May change function slightly depending on the monster
+
+@param <Monster>:<M> The monster the player just had sex with
+
++!]
 To say CreampieFlav of (M - a monster):
 	let F be a random fuckhole penetrated by M;
 	say "[if M is intelligent][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type]  [end if]The [M] [one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order] your [variable F]!".
-	
+
+[!<PullOutFlavOfMonster>+
+
+This function handles a monster pulling out after anal or vaginal sex. May change function slightly depending on the monster
+
+@param <Monster>:<M> The monster the player just had sex with
+
++!]
 To say PullOutFlav of (M - a monster):
 	if bukkake fetish is 1:
 		say "The [M] pulls out and sprays [semen] on the floor.";

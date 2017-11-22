@@ -165,7 +165,11 @@ To compute condom biting of (C - a clothing):
 	say "Stretching the cumfilled end of [if the used condoms of C is 1]the condom[otherwise]one of the condoms[end if] to your mouth, you gnaw on the middle with your teeth until it suddenly bursts, coating the inside of your mouth with salty goo[one of] like a water balloon exploding[or][stopping].  [if the semen addiction of the player < 8]The shock of the sudden blast makes you swallow the load on reflex[otherwise if the semen addiction of the player < 15]You gulp down the [semen] without thinking[otherwise]You savour the taste in your mouth for a few moments before beginning to swallow it down bit by bit, enjoying the feeling of the slimy stuff as it travels down your throat[end if].";
 	decrease the used condoms of C by 1;
 	increase the empty condoms of C by 1;
-	StomachSemenUp 2.
+	StomachSemenUp 2;
+	if the class of the player is cumdumpster:
+		say "As you finish swallowing it down, you feel yourself recover all of your energy!";
+		BodyHeal 2;
+		now the fatigue of the player is 0.
 
 
 

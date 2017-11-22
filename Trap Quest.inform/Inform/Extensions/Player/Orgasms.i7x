@@ -516,7 +516,7 @@ To decide which number is the sensitivity of (F - asshole):
 	let S be 0;
 	repeat with T running through worn things:
 		increase S by the anal sensitivity influence of T;
-	if the class of the player is sissy, increase S by 3;
+	if the player is a sissy, increase S by 3;
 	if the soreness of asshole > 5, increase S by 1;
 	if the soreness of asshole > 8, increase S by 1;
 	decide on S.

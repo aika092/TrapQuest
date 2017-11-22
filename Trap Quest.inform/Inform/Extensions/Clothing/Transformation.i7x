@@ -3,6 +3,7 @@ Transformation by Clothing begins here.
 
 clothing has an object called upgrade-target.
 clothing has a number called transform-attempts.
+clothing has a number called transform-resistance.
 
 To decide which object is the potential-upgrade-target of (C - a clothing):
 	decide on nothing.
@@ -157,7 +158,7 @@ To silently transform (C - a clothing):
 	silently transform C into the upgrade-target of C.
 
 To potentially transform (C - a clothing):
-	if C is upgradable:
+	if C is upgradable and the transform-attempts of C >= the transform-resistance of C:
 		transform C;
 	otherwise:
 		compute failed transform of C.
@@ -173,7 +174,7 @@ To decide which number is the disintegrate-resistance of (C - a heels):
 
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;
-	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2):
+	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
 		say "[bold type]The [C] [bold type]seems to resist being transformed once again, but it struggles to remain corporeal.  After a few final shudders, it disappears completely![line break]";
 		if the outrage of C is too humiliating or C is too boring, say "[variable custom style][one of]I didn't like it anyway.[or]Good riddance.[or]I don't mind losing that one.[or]Whatever.[in random order][roman type][line break]";
 		otherwise say "[variable custom style][if C is cursed]Well at least I don't need to worry about the curse.[otherwise]Nooo!  [one of]Come[or]Give it[or]I want it[at random] back![end if][roman type][line break]";

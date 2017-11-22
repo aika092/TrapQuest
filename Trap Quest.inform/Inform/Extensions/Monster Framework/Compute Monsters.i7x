@@ -59,7 +59,24 @@ To compute turn (N - a number) of (M - a monster):
 			if the player is able to get horny, Arouse 2500;
 			say "[variable custom style][if the sex addiction of the player < 8]Ugh, this game is messing with my head![otherwise if the sex addiction of the player < 12]I guess I should get there quick so it's over with.[otherwise]Looks like [he of M]'s horny again. I know just what to do![end if][roman type]".
 
+[!<computeUniqueEarlyActionOfMonster>+
+
+This function represents any action taken by a monster that either supersedes a normal movement/combat/sex action from a monster, or needs to happen before any other kind of action.
+
+@param <Monster>:<M> The monster taking the action
+
++!]
 To compute unique early action of (M - a monster):
+	do nothing.
+
+[!<computeUniqueFinalActionOfMonster>+
+
+This function represents any action taken by a monster that should happen after movement/combat/sex actions.
+
+@param <Monster>:<M> The monster taking the action
+
++!]
+To compute unique final action of (M - a monster):
 	do nothing.
 
 To compute action (N - a number) of (M - a monster):
@@ -81,18 +98,25 @@ To compute action (N - a number) of (M - a monster):
 		otherwise:
 			if M is unfriendly:
 				check seeking N of M;
-				if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1:
-					bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
-					if M is strangers:
-						now M is survived;
-						compute survival rewards;
+				check chase boredom of M;
 			otherwise:
 				compute friendly boredom of M; [Potentially make them bored]
 				if M is interested:
 					check seeking N of M;
 	otherwise:
 		if the boredom of M is 0 and (there is a worn clanking cowbell or the player is glued seductively), check seeking N of M;
-		otherwise check motion of M.
+		otherwise check motion of M;
+	compute unique final action of M.
+
+To check chase boredom of (M - a monster):
+	if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1:
+		bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
+		compute survival check of M.
+
+To compute survival check of (M - a monster):
+	if M is strangers:
+		now M is survived;
+		compute survival rewards.
 
 To say BecomesBoredFlav of (M - a monster):
 	say "The [M] seems to get bored of following you around.".

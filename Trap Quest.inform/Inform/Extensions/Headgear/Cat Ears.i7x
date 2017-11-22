@@ -27,8 +27,22 @@ To compute class outfit of (H - a cat ears):
 	let K be a random off-stage kitty claws;
 	let C be a random off-stage catbell;
 	let P be a random off-stage cat tail plug;
+	let M be a random off-stage exposing magical dress;
+	let W be a random off-stage heart wand;
 	if the headgear chance of H < the threshold of H:
-		if K is actually summonable or (K is kitty claws and kitty-summoned is 0):
+		if the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
+			if kitty-summoned is 0:
+				repeat with O running through worn dresses:
+					say "Your [O] vanishes!";
+					destroy O;
+			say "[bold type]Your cat ears barely noticeably quiver, and then a sailor uniform appears on you!  [roman type]No wait, this is only the neckline of a sailor uniform, leaving your entire body fully exposed!";
+			summon M cursed;
+			now the raw-magic-modifier of M is the stance of the player;
+			now kitty-summoned is 2;
+		otherwise if W is actually summonable and the class of the player is magical girl:
+			say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+			summon W;
+		otherwise if K is actually summonable or (K is kitty claws and kitty-summoned is 0):
 			if kitty-summoned is 0:
 				repeat with O running through worn slap ready equippables:
 					say "Your [O] vanishes!";
@@ -36,7 +50,7 @@ To compute class outfit of (H - a cat ears):
 			say "[bold type]Your cat ears barely noticeably quiver, and then your hands become encased in puffy warm gloves!  On closer inspection, these are cat paws![roman type][line break]";
 			summon K cursed;
 			now the raw-magic-modifier of K is the stance of the player;
-			now kitty-summoned is 1;
+			if kitty-summoned < 1, now kitty-summoned is 1;
 		otherwise if C is actually summonable:
 			say "[bold type]You feel a sudden tightness around your neck.  You look down to see that a cat collar has appeared![roman type][line break]";
 			summon C cursed;

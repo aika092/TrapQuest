@@ -31,8 +31,6 @@ To Set Up The Mansion:
 	follow the set up mansion traps rules;
 	repeat with M running through alive monsters in the mansion:
 		if the location of M is not placed, now M is in a random placed haunted room;
-	if inhuman pregnancy is 2:
-		now mansion-breeder is in a random placed haunted room;
 	let N be 0;
 	while N < 4:
 		let R be a random placed room in the mansion;

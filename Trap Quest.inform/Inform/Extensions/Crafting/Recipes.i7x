@@ -19,7 +19,10 @@ To say RecipeDesc:
 		say "The recipe just says 'Only a full flask of [FillName current-crafting-key] can create this item properly.'";
 	otherwise if there is a highlighted ingredient thing and current-crafting-key is not 0:
 		let H be a random highlighted ingredient thing;
-		say "The recipe just says '[if H is vessel]Pour any liquid from[otherwise]Place[end if] a [ShortDesc of H] into the bowl and the Goddess will do the rest.'";
+		if current-crafting-key >= 51 and current-crafting-key <= 54:
+			say "The recipe says 'Place any [ShortestDesc of H] in the bowl and the Goddess will do the rest.'";
+		otherwise:
+			say "The recipe just says '[if H is vessel]Pour any liquid from[otherwise]Place[end if] a [ShortDesc of H] into the bowl and the Goddess will do the rest.'";
 	otherwise:
 		say "This recipe is impossible to craft.  I guess someone should probably submit a bug report, with the following information:[line break]CURRENT-CRAFTING-KEY: [current-crafting-key].  CURRENT-ALCHEMY-KEY: [current-alchemy-key].  RECIPE-KEY: [recipe key of item described][line break]";
 		display complete alchemy data.
@@ -206,6 +209,36 @@ Definition: a recipe for codpiece (called R) is appropriate:
 	decide no; [temporary]
 	if the player is male, decide yes;
 	decide no.
+
+
+Recipe for powder of identification is a kind of recipe. The printed name of recipe for powder of identification is "[TQlink of item described]recipe for powder of identification[shortcut-desc][TQxlink of item described][verb-desc of item described]".  There is 1 recipe for powder of identification.  The text-shortcut of recipe for powder of identification is "rpi".
+Definition: a recipe for powder of identification (called R) is appropriate:
+	decide yes.
+
+To decide which number is the recipe key of (R - a recipe for powder of identification):
+	decide on 24.
+
+Recipe for powder of enhancement is a kind of recipe. The printed name of recipe for powder of enhancement is "[TQlink of item described]recipe for powder of enhancement[shortcut-desc][TQxlink of item described][verb-desc of item described]".  There is 1 recipe for powder of enhancement.  The text-shortcut of recipe for powder of enhancement is "rpe".
+Definition: a recipe for powder of enhancement (called R) is appropriate:
+	decide yes.
+
+To decide which number is the recipe key of (R - a recipe for powder of enhancement):
+	decide on 25.
+
+Recipe for powder of resistance is a kind of recipe. The printed name of recipe for powder of resistance is "[TQlink of item described]recipe for powder of resistance[shortcut-desc][TQxlink of item described][verb-desc of item described]".  There is 1 recipe for powder of resistance.  The text-shortcut of recipe for powder of resistance is "rpr".
+Definition: a recipe for powder of resistance (called R) is appropriate:
+	decide yes.
+
+To decide which number is the recipe key of (R - a recipe for powder of resistance):
+	decide on 26.
+
+Recipe for powder of escape is a kind of recipe. The printed name of recipe for powder of escape is "[TQlink of item described]recipe for powder of escape[shortcut-desc][TQxlink of item described][verb-desc of item described]".  There is 1 recipe for powder of escape.  The text-shortcut of recipe for powder of escape is "rpx".
+Definition: a recipe for powder of escape (called R) is appropriate:
+	decide yes.
+
+To decide which number is the recipe key of (R - a recipe for powder of escape):
+	decide on 27.
+
 
 
 Recipes ends here.

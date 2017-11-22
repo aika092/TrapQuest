@@ -172,7 +172,7 @@ Definition: a clothing is breast exposing rather than breast covering if it is c
 Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing.
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable. Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
-Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless.
+Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid.
 Clothing can be nipple covering or nipple exposing.  Clothing is usually nipple exposing.
 Definition: a clothing is nipple exposing[ rather than nipple covering] if it is top-displaced.[This is separate as some clothing has holes specifically for the nipples.]
 Clothing can be totally-exclusive, top-exclusive, bottom-exclusive, not-exclusive (this is the clothing-exclusivity property).  Clothing is usually not-exclusive. [Exclusive means nothing can go above or below it.]
@@ -242,6 +242,10 @@ Definition: a clothing (called C) is nudism-disabling:
 	if C is nudism-enabling, decide no;
 	decide yes.
 Definition: an accessory (called C) is nudism-enabling:
+	decide yes.
+Definition: a sex toy (called C) is nudism-enabling:
+	decide yes.
+Definition: a piercing (called C) is nudism-enabling:
 	decide yes.
 Definition: a bondage (called C) is nudism-enabling:
 	decide yes.

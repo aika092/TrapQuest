@@ -1,6 +1,6 @@
 Fox Ears by Headgear begins here.
 
-A fox ears is a kind of headgear. There is 1 fox ears. A fox ears is biological. A fox ears is usually dexterity-influencing. A fox ears is usually intelligence-influencing. A fox ears is blondeness-positive.  A fox ears is brightness-negative.  A fox ears is redness-positive.
+A fox ears is a kind of headgear. There is 1 fox ears. A fox ears is biological. A fox ears is usually dexterity-influencing. A fox ears is usually intelligence-influencing. A fox ears is blondeness-positive.  A fox ears is brightness-negative.  A fox ears is redness-positive. A fox ears is usually roleplay.
 
 The printed name of fox ears is usually "[TQlink of item described][clothing-title-before]fox ears[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The text-shortcut of fox ears is "fe".

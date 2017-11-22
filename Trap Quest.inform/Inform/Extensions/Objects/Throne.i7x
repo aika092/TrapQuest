@@ -63,7 +63,7 @@ Check entering the throne:
 			let H be a random tiara;
 			summon H cursed;
 			say "A silver tiara appears on your head.  You feel important.[second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
-		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the class of the player is adult baby or the class of the player is sissy))):
+		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the class of the player is adult baby or the player is a sissy))):
 			if the noun is transformed:
 				let K be a random worn knickers;
 				if rectum > 3:

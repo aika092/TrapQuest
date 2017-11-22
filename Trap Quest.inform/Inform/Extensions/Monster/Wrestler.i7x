@@ -84,7 +84,7 @@ To compute perception of (M - a wrestler):
 	otherwise if the bimbo of the player > 10 and the player-class is succubus:[The succubus is intimidating enough that it takes a bit longer for the wrestler to turn]
 		say "[second custom style]'Heh, you[']re trying to look scary but you don[']t have me fooled for a minute!'[roman type][line break]";
 		anger M;
-	otherwise if M is unfriendly or the class of the player is the royal slave or the class of the player is the latex fetish model or the class of the player is maid or the class of the player is sissy:
+	otherwise if M is unfriendly or the class of the player is the royal slave or the class of the player is the latex fetish model or the class of the player is maid or the player is a sissy:
 		if the player is flying:
 			say "[second custom style]'What are you doing up there, you crazy bitch?!'[roman type][line break]";
 		otherwise if the class of the player is the royal slave:
@@ -93,7 +93,7 @@ To compute perception of (M - a wrestler):
 			say "[second custom style]'Hey, sister!  I didn't know mistress had another rubber slave.  Let's fight to see who gets to be on top!'[roman type][line break]";
 		otherwise if the class of the player is maid:
 			say "[second custom style]'[if watersports fetish is 1 and the variety of M is 0]Oooh, a slutty maid!  If you're staff, I guess that kind of makes me your boss?  I know a job that's perfect for you.  Come with me!'[otherwise]Hey, you're staff, aren't you?  That means you have to let me do whatever I want to you, right?'[end if][roman type][line break]";
-		otherwise if the class of the player is sissy:
+		otherwise if the player is a sissy:
 			say "[second custom style]'Oooh!  A real life sissy!  My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
 		otherwise:
 			say "[second custom style]'Hey, wanna wrestle?  Winner gets to be on top!'[roman type][line break]";
@@ -141,7 +141,7 @@ The wrestler lets the matron take over rule is listed first in the wrestler uniq
 This is the wrestler puts slaves in the urinal rule:
 	let M be current-monster;
 	let R be 0;
-	if the latex-transformation of the player <= 4 and (the class of the player is latex fetish model or the class of the player is maid or the class of the player is sissy or the class of the player is human toilet or the class of the player is royal slave), now R is 1;
+	if the latex-transformation of the player <= 4 and (the class of the player is latex fetish model or the class of the player is maid or the player is a sissy or the class of the player is human toilet or the class of the player is royal slave), now R is 1;
 	if watersports fetish is 1 and (the variety of M is 0 or the class of the player is human toilet) and R is 1:
 		if Hotel31 is the location of the player:
 			now M is grabbing the player;

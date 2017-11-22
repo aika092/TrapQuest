@@ -27,7 +27,7 @@ A time based rule (this is the lactation rule):
 				if the largeness of belly > previous-size:
 					say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait.. what?!?! What the hell is this basque doing to me?  That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
 					now flav-said is 1;
-			otherwise:
+			if the number of worn ass covering white milking basques is 0: [this way, cow print milking basques do both]
 				let previous-size be the largeness of breasts;
 				MilkUp 1;
 				if the largeness of breasts > previous-size:

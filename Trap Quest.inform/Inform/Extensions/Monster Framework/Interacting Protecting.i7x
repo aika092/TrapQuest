@@ -13,13 +13,13 @@ To compute protection of (M - a monster): [You can define this for your monster 
 	if the player is in danger:
 		let X be M;
 		repeat with U running through dangerous monsters in the location of the player:
-			now X is U; [Selkie: why loop through, just to pick the last one? Would it be better to only set X to U, if U is not M? ] 
+			now X is U; [Selkie: why loop through, just to pick the last one? Would it be better to only set X to U, if U is not M? MG: If the interaction function is able to run, it implies the monster is friendly, so checking if U is M would be redundant. The otherwise-if later on in this function is just a failsafe. That said, let X be a random dangerous monster would probably be better because we aren't performing the search again if M does end up being U] 
 		if the player is flying:
-			distract M; [Selkie: not distract U? Or is your ally getting distracted?]
+			distract M; [Selkie: not distract U? Or is your ally getting distracted? MG: The player is flying so there is nothing a friendly monster can do for you unless they happen to be an aeromancer]
 		otherwise if X is M:
-			say "";
+			do nothing;
 		otherwise:
-			compute M protecting against X;
+			compute M protecting against X.
 	
 To compute (M - a monster) protecting against (X - a monster): [Default protection if not defined for the monster]
 	if M is intelligent:

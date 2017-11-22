@@ -1,7 +1,7 @@
 Visibility by Clothing begins here.
 
 
-Clothing can be layer-exposing or layer-concealing.  Clothing is usually layer-concealing. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath.  Clothing that is layer-concealing never does this.  Clothing that has a special rule should redefinition the definition block below.  This is about the CUT and SHAPE of the item, and not transparency.  Transparency is checked for separately.  A see through raincoat would still be layer-concealing.]
+Clothing can be layer-exposing or layer-concealing.  Clothing is usually layer-concealing. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath.  Clothing that is layer-concealing never does this.  Clothing that has a special rule should redefine the definition block below.  This is about the CUT and SHAPE of the item, and not transparency.  Transparency is checked for separately.  A see through raincoat would still be layer-concealing.]
 
 Definition: a clothing (called C) is top-layer-concealing:
 	if C is worn and C is layer-concealing and the top-layer of C > 0, decide yes;
@@ -12,7 +12,7 @@ Definition: a clothing (called C) is mid-layer-concealing:
 	decide no.
 
 Definition: a clothing (called C) is bottom-layer-concealing:
-	if C is worn and C is layer-concealing and the bottom-layer of C > 0 and C is crotch-in-place and C is not-butt-windowed, decide yes;
+	if C is worn and C is layer-concealing and the bottom-layer of C > 0 and (C is total protection or C is skirt-covering-crotch) and C is crotch-normal, decide yes; [crotch-assless clothing doesn't hide what's underneath]
 	decide no.
 
 current-clothing is a thing that varies.

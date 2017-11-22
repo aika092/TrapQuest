@@ -11,7 +11,7 @@ title	subtable	description	toggle
 "[roman type]Previous Menu (shortcut: press Q)"	--	--	quit rule
 "RANDOMISE CHOICES (this randomises choices on 'other handicaps' page too)"	--	--	randomise choices rule
 "Cum splatter on body and clothing - 7 points ([if bukkake fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	bukkake fetish toggle rule
-"Pregnancy[if tg fetish is 0 and the player is male]related flavour[end if] - [pregnancy points] points ([if pregnancy fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	pregnancy fetish toggle rule
+"Pregnancy[if tg fetish is 0 and the player is male] related flavour[end if] - [pregnancy points] points ([if pregnancy fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	pregnancy fetish toggle rule
 "Lactation - 5 points ([if lactation fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	lactation fetish toggle rule
 "Watersports (urine) - 3 points ([if watersports fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	watersports fetish toggle rule
 "Diapers - [diaper points] points ([if diaper lover <= 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	diaper lover toggle rule
@@ -22,6 +22,7 @@ title	subtable	description	toggle
 "Extreme body proportions - 11 points ([if extreme proportions fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	extreme proportions fetish toggle rule
 "Big Black Cocks - 2 points ([if interracial fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	interracial fetish toggle rule
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - 6 points ([if mythical creature fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	mythical creature fetish toggle rule
+"Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if tentacle fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	tentacle fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if TG fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	TG fetish toggle rule
 [DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters.  But them above this row instead.]
 
@@ -212,8 +213,7 @@ Definition: yourself is queen of spades:
 	if there is a worn interracial related thing, decide yes;
 	decide no.
 
-
-[!<TheBeastFetishToggleRule>+
+[!<TheMythicalCreatureFetishToggleRule>+
 
 REQUIRES COMMENTING
 
@@ -222,8 +222,21 @@ This is the mythical creature fetish toggle rule:
 	if mythical creature fetish is 0, now choice in row 48 of the Table of Player Options is 1;
 	otherwise now choice in row 48 of the Table of Player Options is 0.
 
-This is the beast nightmare rule:
+This is the mythical creature nightmare rule:
 	now choice in row 48 of the Table of Player Options is 1.
-The beast nightmare rule is listed in the nightmare mode rules.
+The mythical creature nightmare rule is listed in the nightmare mode rules.
+
+[!<TheTentacleFetishToggleRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the tentacle fetish toggle rule:
+	if tentacle fetish is 0, now choice in row 61 of the Table of Player Options is 1;
+	otherwise now choice in row 61 of the Table of Player Options is 0.
+
+This is the tentacle nightmare rule:
+	now choice in row 61 of the Table of Player Options is 1.
+The tentacle nightmare rule is listed in the nightmare mode rules.
 
 Fetish Options ends here.

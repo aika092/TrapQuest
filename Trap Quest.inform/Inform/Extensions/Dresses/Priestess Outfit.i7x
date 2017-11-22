@@ -97,28 +97,9 @@ To decide which number is the initial outrage of (C - a playdude priestess outfi
 	decide on 6.
 
 To decide which object is the potential-upgrade-target of (C - a playdude priestess outfit):
-	if the number of worn breast covering clothing > 1, decide on a random off-stage translucent priestess outfit;
-	decide on a random off-stage golden priestess outfit.
-
-Part 5 - Golden Priestess Outfit
-
-A golden priestess outfit is a kind of priestess outfit.  There is 1 golden priestess outfit.  A golden priestess outfit is usually metal.  A golden priestess outfit is usually super-short.  A golden priestess outfit is usually belly exposing.  A golden priestess outfit is usually ridiculously low cut.  A golden priestess outfit is usually totally-exclusive.
-
-Figure of golden priestess outfit is the file "priestess5.png".
-
-The printed name of golden priestess outfit is usually "[TQlink of item described][clothing-title-before]golden priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of golden priestess outfit is "gpo".
-
-To decide which figure-name is clothing-image of (C - a golden priestess outfit):
-	decide on figure of golden priestess outfit.
-
-To say ClothingDesc of (C - a golden priestess outfit):
-	say "This bizarre metal outfit consists of just a few shiny constricting bars.  It covers your nipples but not much else.".
-
-To decide which number is the initial outrage of (C - a golden priestess outfit):
-	decide on 8.
-
-To decide which object is the potential-upgrade-target of (C - a golden priestess outfit):
 	decide on a random off-stage translucent priestess outfit.
+
+
 
 Part 6 - Translucent Priestess Outfit
 

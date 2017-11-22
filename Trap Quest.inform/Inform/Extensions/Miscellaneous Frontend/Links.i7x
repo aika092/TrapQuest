@@ -360,6 +360,14 @@ REQUIRES COMMENTING
 To say unique-verb-desc of (T - salve of concealment):
 	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is male][link][bracket]use[close bracket][as]rub [text-shortcut of T] on butthole[end link][otherwise][link][bracket]pussy[close bracket][as]rub [text-shortcut of T] on vagina[end link] [link][bracket]ass[close bracket][as]rub [text-shortcut of T] on butthole[end link][end if]".
 
+[!<SayUniqueVerbDescOfPowder>+
+
+REQUIRES COMMENTING
+
++!]
+To say unique-verb-desc of (T - powder):
+	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if]".
+
 [!<SayUniqueVerbDescOfPinkPill>+
 
 REQUIRES COMMENTING

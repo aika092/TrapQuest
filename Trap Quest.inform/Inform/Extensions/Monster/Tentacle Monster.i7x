@@ -1,8 +1,8 @@
 Tentacle Monster by Monster begins here.
 
-Tentacle monster is a kind of monster.  A tentacle monster is usually male.  A tentacle monster is usually father material.  A tentacle monster is usually willing to do anal.  A tentacle monster is usually willing to do vaginal.  A tentacle monster is usually willing to do oral.
+Tentacle monster is a kind of monster.  A tentacle monster is usually male.  A tentacle monster is usually father material.  A tentacle monster is usually willing to do anal.  A tentacle monster is usually willing to do vaginal.  A tentacle monster is usually willing to do oral. A tentacle monster can be player-brood. A tentacle monster is usually not player-brood.[This will be used to flag the TM as not one of your children]
 
-Figure of Tentacle monster is the file "TQ Tentacle 1.png".  The printed name of tentacle monster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][monster-adjective of item described][if the variety of the item described is 3] evolved[end if] tentacle monster[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The description of tentacle monster is usually "[TentacleMonsterDesc]".  There are 12 tentacle monsters.  The text-shortcut of tentacle monster is "tnm".
+Figure of Tentacle monster is the file "TQ Tentacle 1.png".  The printed name of tentacle monster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][monster-adjective of item described][if the variety of the item described is 3] evolved[end if] tentacle monster[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The description of tentacle monster is usually "[TentacleMonsterDesc]".  There are 20 tentacle monsters.  The text-shortcut of tentacle monster is "tnm".
 
 To say TentacleMonsterDesc:
 	if images visible is 1, display the Figure of Tentacle Monster;
@@ -32,19 +32,14 @@ To set up (M - a tentacle monster):
 	now the monstersetup of M is 1;
 	if M is newborn:
 		now the difficulty of M is 6;
-		now the health of M is the maxhealth of M;
-		now the variety of M is 4;[This will be used to flag the TM as not one of your children]
 		now the text-shortcut of M is "ntm";
 	otherwise if M is large:
 		now the difficulty of M is 9;
-		now the health of M is the maxhealth of M;
-		now the variety of M is 4;
 		now the text-shortcut of M is "ltm";
 	otherwise if M is massive:
 		now the difficulty of M is 12;
-		now the health of M is the maxhealth of M;
-		now the variety of M is 4;
-		now the text-shortcut of M is "mtm".
+		now the text-shortcut of M is "mtm";
+	now the health of M is the maxhealth of M.
 
 Definition: a tentacle monster (called M) is blocker:
 	if M is newborn and the player is not prone, decide no;
@@ -56,7 +51,8 @@ To compute set up (M - a tentacle monster):
 	now the difficulty of M is 6;
 	now the health of M is the maxhealth of M;
 	now the variety of M is 0;
-	regionally place M.
+	regionally place M;
+	now M is player-brood.
 
 Definition: A tentacle monster (called M) is willing to shag:
 	if the sleep of M is 0 and the scared of M is 0 and the boredom of M < 120 and M is released, decide yes;
@@ -77,6 +73,11 @@ To compute fatherhood to (M - a tentacle monster):
 Definition: a tentacle monster (called M) is butt slut immune:
 	decide yes.
 
+To say SummoningFlav of (M - a tentacle monster):
+	let S be a random tentacle-breeder in the location of the player;
+	if inhuman pregnancy is 2, say "[bold type]You [if S is player-breeder]watch as your previous self gives birth to a red mass of tentacles with a loud squelch.  The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise if S is tentacle-breeder]watch as the girl stuck to the wall gives birth to a red mass of tentacles with a loud squelch.  The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise]hear a loud squelch and mindless moaning coming from nearby[end if]![roman type][line break]";
+	otherwise say "[bold type]You [if S is tentacle-breeder]watch as the hole in the flesh in the wall widens, and a ball of grey flesh drops out to the ground.  The newly spawned tentacle monster looks at you with its single eye before scuttling off into the distance[otherwise]hear a loud squelch coming from nearby[end if]![roman type][line break]".
+
 Part 1 - Perception
 
 To compute perception of (M - a tentacle monster):
@@ -85,7 +86,7 @@ To compute perception of (M - a tentacle monster):
 		say "It doesn't seem aggressive.";
 		calm M;
 	otherwise:
-		say "It looks like [if M is newborn]it's coming straight for you![otherwise]it wants to breed again![end if]";
+		say "It looks like [if M is newborn]it's coming straight for you![otherwise if inhuman pregnancy is 2]it wants to breed again![otherwise]you're its next target![end if]";
 		anger M;
 
 To compute (M - a monster) stomping (N - a tentacle monster):
@@ -134,7 +135,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 	if M is penetrating vagina:
 		PussyRuin 1;
 	if the reaction of the player > 0 and M is penetrating a fuckhole:
-		if M is not massive, say "Your lack of resistance against the monster is preventing you from getting more sore, [if the variety of M is not 3 and the variety of M is not 4]but it is extremely humiliating to submit to being bred by your own hellish tentacle spawn[otherwise]but you can feel your thoughts clouding as you are bred by the freakish tentacle spawn[end if].";
+		if M is not massive, say "Your lack of resistance against the monster is preventing you from getting more sore, [if M is not player-brood]but it is extremely humiliating to submit to being bred by your own hellish tentacle spawn[otherwise]but you can feel your thoughts clouding as you are bred by the freakish tentacle spawn[end if].";
 	if M is penetrating breasts, compute titfuck of M;
 	let spare-tentacle be 0;
 	let NB be the number of body parts penetrated by M;
@@ -149,7 +150,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 		otherwise if targeted-body-part is asshole:
 			if the player is not ass protected:
 				say "You feel the tip of another tentacle push against your anal sphincter, and before you can [if the bimbo of the player > 13]express your enthusiasm[otherwise if M is penetrating face]scream [variable custom style]'MMMMFF'[roman type][otherwise]yell in shock[end if] the [M] has buried its appendage deep inside your [asshole].  It joins the fucking pace of the other[if the number of orifices penetrated by M is 2]s[end if].";
-				if the variety of M is not 3 and the variety of M is not 4:
+				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [asshole] being permanently gaped.[otherwise if M is penetrating face and M is penetrating vagina]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating vagina]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating asshole;
 				AssRuin 1;
@@ -167,7 +168,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 		otherwise if targeted-body-part is vagina:
 			if the player is not pussy protected:
 				say "Another tentacle purposefully glides straight into your [vagina][if the openness of vagina < 4], stretching it painfully as it forces its way in[end if].  It joins the fucking pace of the other[if the number of orifices penetrated by M is 2]s[end if]. "; 
-				if the variety of M is not 3 and the variety of M is not 4:
+				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [vagina] being permanently widened.[otherwise if M is penetrating face and M is penetrating asshole]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating asshole]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating vagina;
 				PussyRuin 1;
@@ -358,7 +359,7 @@ Part 3 - Variants
 To say NewTentacleDesc:
 	say "[one of]A mass of [TentacleColour of the item described] tentacles, about the size of a [if extreme proportions fetish is 1]beachball[otherwise]basketball[end if]. Each 'arm' is about as thick around as a normal human penis, and looks just like one too. [or]A [if extreme proportions fetish is 1]beach[otherwise]basket[end if]ball-sized heap of [TentacleColour of the item described] tentacles. Each one is looks almost identical to a normal human penis in shape and thickness, although alien in colour. [in random order]";
 	say "[if the variety of the item described is 3]A single eye is visible inside the main mass, no larger than a plum and as black as the void itself.[otherwise if the sleep of item described > 0]A single eye no larger than a plum rests on the ground before it, attached to the main body by a fleshy stalk. It's closed, and the tentacles surrounding it are completely motionless.[otherwise]A single eye no larger than a plum is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with primitive curiosity.[end if]";
-	if the variety of the item described is 3 or the variety of the item described is 4:
+	unless the item described is player-brood:
 		do nothing;
 	otherwise:
 		say "[if the bimbo of the player < 7][first custom style][one of]That thing, it...it really came out of me?[or]It's a fucking demon-spawn. I'm killing it.[or]I have to kill this thing before it decides it wants to breed with me.[or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][second custom style][one of]He's adorable![or]How cute![or]I love my baby![or]Mmm, he looks hor~ny![or]I want to take *good care* of my baby boy.[or]He looks like he wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]".
@@ -366,7 +367,7 @@ To say NewTentacleDesc:
 To say LargeTentacleDesc:
 	say "[one of]A large mass of [TentacleColour of the item described] tentacles, about the size of a person. Each of its arms is as thick around as a soda bottle and ends in a soft, penis-like tip. [or]A person-sized mass of [TentacleColour of the item described] tentacles. Each one is about as thick around as a soda bottle and ends in a shiny, phallic tip.[in random order]";
 	say "[if the variety of the item described is 3]At least a dozen eyes are visible inside the main mass, each about the size of a grapefruit and as black as the void itself.[otherwise if the sleep of item described > 0]A single eye the size of a grapefruit is resting on the ground before it, connected to the main body by a fleshy stalk. It is closed, and the surrounding tentacles are completely motionless.[otherwise]A single eye the size of a grapefruit is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with primitive intelligence.[end if]";
-	if the variety of the item described is 3 or the variety of the item described is 4:
+	unless the item described is player-brood:
 		do nothing;
 	otherwise:
 		say "[if the bimbo of the player < 8][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me...even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or]He had sex with me even though I'm his mother.[or]He's getting big. Could he grow like that again?[or]I probably could have fought more, but...he was just so cute.[or]His tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][second custom style][one of]He had a growth spurt![or]I let him breed me like any good mommy would![or]He's growing up so fast. Especially where it counts...[or]I want to let him breed me again. He might grow even bigger![or]Who wants to fuck mommy? You do! You do![or]He's going to grow up big and horny, just like his daddy.[then at random][end if][roman type][line break]".
@@ -375,7 +376,7 @@ To say MassiveTentacleDesc:
 	let V be the variety of the item described;
 	say "[one of]A massive heap of [TentacleColour of the item described] tentacles, big enough to dwarf most humans and even some cars. Each arm is as about as thick around as *your* forearm and ends in a soft, penis-like tip. [or]A car-sized mass of [TentacleColour of the item described] tentacles. Each one, about as thick around as your forearm, has a natural sheen and a lightly coloured penis-like head. [in random order]";
 	say "[if the variety of the item described is 3]Dozens of eyes are visible inside the main mass, each about the size of a softball and as black as the void itself.[otherwise if the sleep of item described > 0]It is completely motionless, and its single, softball sized eye is closed and resting on the ground before it.[otherwise]A single eye about the size of a softball is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with an unnervingly human measure of intelligence.[end if]";
-	if the variety of the item described is 3 or the variety of the item described is 4:
+	unless the item described is player-brood:
 		do nothing;
 	otherwise:
 		say "[if the bimbo of the player < 9][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of]He's so strong now. There's no way I can fight him, let alone keep him from fucking me.[or]He's all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish he were more obedient, but still...[or]His tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or]He knows just how to please his mommy.[or]Those [manly-penis]s are so big! He gets it from his daddy.[or]I wonder when he'll be ready to breed me again?[in random order][end if][roman type][line break]".

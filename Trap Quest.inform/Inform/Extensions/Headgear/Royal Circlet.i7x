@@ -26,10 +26,10 @@ To compute SelfExamineDesc of (H - royal circlet):
 basque-summoned is a number that varies.
 
 To compute class outfit of (H - a royal circlet):
-	let B be a random off-stage milking basque;
+	let B be a random off-stage white milking basque;
 	let A be a random off-stage pair of anklecuffs;
 	if the headgear chance of H < the threshold of H:
-		if B is actually summonable or (B is milking basque and basque-summoned is 0):
+		if B is actually summonable or (B is basque and basque-summoned is 0):
 			if basque-summoned is 0:
 				repeat with O running through worn dresses:
 					say "Your [O] vanishes!";
@@ -53,7 +53,7 @@ To compute class outfit of (H - a royal circlet):
 		otherwise if there is a worn milking basque and A is actually summonable:
 			say "[bold type]Your [printed name of H] [bold type]shines brightly, and anklecuffs materialise around your feet![roman type][line break]";
 			summon A cursed;
-		otherwise if there is a worn crotch-ripped milking basque and the number of monsters penetrating asshole is 0:
+		otherwise if there is a worn crotch-ripped milking basque and the number of embodied things penetrating a fuckhole is 0:
 			now B is a random worn milking basque;
 			say "Your [printed name of H] shines brightly, and your [printed name of B] magically repairs itself.[line break]";
 			repair B;

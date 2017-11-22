@@ -12,6 +12,6 @@ To decide which number is the initial outrage of (C - a black suspenders):
 	decide on 4.
 
 To decide which object is the potential-upgrade-target of (C - a black suspenders):
-	decide on a random off-stage bridal sissy suspenders.
+	decide on a random off-stage bridal sissy-suspenders.
 
 Black Suspenders ends here.

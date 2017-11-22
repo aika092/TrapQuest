@@ -73,7 +73,7 @@ To decide which object is the unique-upgrade-target of (C - a leotard):
 
 To decide which object is the potential-upgrade-target of (C - a leotard):
 	if the milk-soak of C > 0:
-		decide on a random off-stage milking basque;
+		decide on a random off-stage white milking basque;
 	otherwise if the number of worn skirts is 0 and diaper quest is 0:
 		decide on a random off-stage long pink clubbing dress;
 	decide on nothing.

@@ -5,8 +5,17 @@ shoes is a kind of clothing. The soak-limit of a shoes is usually 7.
 To say ShoeType of (S - a shoes):
 	say "[if S is boots]boots[otherwise if S is heels]heels[otherwise]shoes[end if]".
 
+To say ShortestDesc of (C - a shoes):
+	say "pair of shoes".
+
 To decide which number is the kick-bonus of (S - a shoes):
 	decide on 0.
+
+Definition: a shoes (called C) is ingredient:
+	decide yes.
+
+To decide which number is the crafting key of (C - a shoes):
+	decide on 51.
 
 heels is a kind of shoes. A heels have a number called heel-height.  Understand "he" as heels.
 
