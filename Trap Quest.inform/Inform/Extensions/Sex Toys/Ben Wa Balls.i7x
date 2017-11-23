@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - ben wa balls):
 	decide on figure of ben wa balls.
 
 To say ClothingDesc of (C - ben wa balls):
-	say "Two balls [if the item described is cursed and the curse-ID of the item described is sure]of plastic on a string. One pops out from time to time, embarassingly, but the other won't come out due to its curse[otherwise]made of metal[end if][if the item described is worn]. Their turning, when you move, slowly builds your arousal.[otherwise].[end if]".
+	say "Two balls [if C is cursed and the curse-ID of C is sure]of plastic on a string. One pops out from time to time, embarassingly, but the other won't come out due to its curse[otherwise]made of metal[end if][if C is worn]. Their turning, when you move, slowly builds your arousal.[otherwise].[end if]".
 
 To say ShortDesc of (C - ben wa balls):
 	say "ben wa balls".
