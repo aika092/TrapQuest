@@ -18,7 +18,7 @@ To decide which figure-name is clothing-image of (C - a mystical amulet):
 	decide on figure of mystical amulet.
 
 To say ClothingDesc of (C - a mystical amulet):
-	say "This amulet has a golden scarab and a large ruby gem.  [if item described is worn]You can feel pulses of power flowing into your chest.[otherwise]It has a chain, to be worn around the neck.[end if]".
+	say "This amulet has a golden scarab and a large ruby gem.  [if C is worn]You can feel pulses of power flowing into your chest.[otherwise]It has a chain, to be worn around the neck.[end if]".
 
 To say ShortDesc of (C - a mystical amulet):
 	say "mystical amulet".

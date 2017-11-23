@@ -6,7 +6,7 @@ To decide which figure-name is the clothing-image of (C - a clitoris piercing):
 	decide on figure of clitoris piercing.
 
 To say ClothingDesc of (C - a clitoris piercing):
-	say "A jewelled vertical clitoris hood piercing.  [if item described is cursed]You can feel it making your clit much more sensitive[otherwise if item described is blessed]You can feel it making your clit less sensitive[otherwise]You can feel it making your clit slightly more sensitive[end if].".
+	say "A jewelled vertical clitoris hood piercing.  [if C is cursed]You can feel it making your clit much more sensitive[otherwise if C is blessed]You can feel it making your clit less sensitive[otherwise]You can feel it making your clit slightly more sensitive[end if].".
 To say ShortDesc of (C - a clitoris piercing):
 	say "jewelled vertical clitoris hood piercing".
 

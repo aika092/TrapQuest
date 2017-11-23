@@ -24,7 +24,7 @@ To decide which figure-name is clothing-image of (C - a chain crotchless panties
 	decide on figure of crotchless panties 3.
 
 To say ClothingDesc of (K - a pearl crotchless panties):
-	say "This crotchless g-string has a line of pearls down the middle[if the player is female and item described is worn] that stimulate your [vagina] as you walk[end if].  ";
+	say "This crotchless g-string has a line of pearls down the middle[if the player is female and K is worn] that stimulate your [vagina] as you walk[end if].  ";
 	say "It hides absolutely nothing.".
 
 To say ClothingDesc of (K - a buckle crotchless panties):
@@ -32,7 +32,7 @@ To say ClothingDesc of (K - a buckle crotchless panties):
 	say "It hides absolutely nothing.".
 
 To say ClothingDesc of (K - a chain crotchless panties):
-	say "This underwear is literally just a chain attached to a belt.  [if the player is female and item described is worn]The chain sits inside the entrance to your [vagina] and stimulates you as you walk.  [end if]";
+	say "This underwear is literally just a chain attached to a belt.  [if the player is female and K is worn]The chain sits inside the entrance to your [vagina] and stimulates you as you walk.  [end if]";
 	say "It hides absolutely nothing.".
 
 To say selfexamineuniquetitle of (K - a chain crotchless panties):

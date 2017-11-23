@@ -7,7 +7,7 @@ To decide which figure-name is clothing-image of (H - a jeans):
 	otherwise decide on figure of jeans.
 
 To say ClothingDesc of (J - a jeans):
-	say "A pair of tight fitting denim jeans with a [if item described is crotch-unzipped]open zip[otherwise if item described is crotch-ripped]ripped hole[otherwise if item described is zippable]convenient zip[otherwise]layer of protective denim[end if] at the crotch.[if the item described is zippable and diaper quest is 0]The zip goes all the way up the back to potentially allow anal access.[otherwise if the item described is zippable]The zip goes all the way up the back to allow for easy diaper checks and changes.[end if]".
+	say "A pair of tight fitting denim jeans with a [if J is crotch-unzipped]open zip[otherwise if J is crotch-ripped]ripped hole[otherwise if J is zippable]convenient zip[otherwise]layer of protective denim[end if] at the crotch.[if J is zippable and diaper quest is 0]The zip goes all the way up the back to potentially allow anal access.[otherwise if J is zippable]The zip goes all the way up the back to allow for easy diaper checks and changes.[end if]".
 
 To say ShortDesc of (Y - a  jeans):
 	say "pair of zip up jeans".

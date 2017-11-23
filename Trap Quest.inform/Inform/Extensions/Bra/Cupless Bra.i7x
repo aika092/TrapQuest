@@ -16,7 +16,7 @@ To decide which figure-name is clothing-image of (C - a cupless bra):
 	decide on figure of cupless bra.
 
 To say ClothingDesc of (C - a cupless bra):
-	say "This black latex bra only has an underbust section, with pink frills.  It has no cups at all and completely exposes the entirety of [if item described is worn]your [BreastDesc].[otherwise]the wearer's breasts.[end if]";
+	say "This black latex bra only has an underbust section, with pink frills.  It has no cups at all and completely exposes the entirety of [if C is worn]your [BreastDesc].[otherwise]the wearer's breasts.[end if]";
 
 To decide what number is the original price of (C - a cupless bra):
 	decide on 1.

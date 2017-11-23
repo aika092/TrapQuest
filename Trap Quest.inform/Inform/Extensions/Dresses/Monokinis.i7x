@@ -15,7 +15,7 @@ To decide which figure-name is clothing-image of (C - a white monokini):
 	decide on figure of white monokini.
 
 To say ClothingDesc of (C - a white monokini):
-	say "This tight fitting white onepiece swimsuit would be quite modest if it wasn't for the fact that it's quite see-through.  [if item described is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
+	say "This tight fitting white onepiece swimsuit would be quite modest if it wasn't for the fact that it's quite see-through.  [if C is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
 
 To say ShortDesc of (C - a white monokini):
 	say "translucent white swimsuit".
@@ -36,7 +36,7 @@ To decide which figure-name is clothing-image of (C - a green monokini):
 	decide on figure of green monokini.
 
 To say ClothingDesc of (C - a green monokini):
-	say "This tight fitting onepiece swimsuit is a bit torn at the top to allow for extra large amounts of cleavage to be shown[if item described is no protection], and at the crotch to allow entrance to anything that desires so[end if].".
+	say "This tight fitting onepiece swimsuit is a bit torn at the top to allow for extra large amounts of cleavage to be shown[if C is no protection], and at the crotch to allow entrance to anything that desires so[end if].".
 
 To say ShortDesc of (C - a green monokini):
 	say "sexy torn green swimsuit".
@@ -56,7 +56,7 @@ To decide which figure-name is clothing-image of (C - a grey monokini):
 	decide on figure of grey monokini.
 
 To say ClothingDesc of (C - a grey monokini):
-	say "This tight fitting onepiece swimsuit is quite fashionable, [if item described is crotch-ripped]but has a rip at the crotch[otherwise]showing off decent amounts of skin without being overly slutty[end if].".
+	say "This tight fitting onepiece swimsuit is quite fashionable, [if C is crotch-ripped]but has a rip at the crotch[otherwise]showing off decent amounts of skin without being overly slutty[end if].".
 
 To say ShortDesc of (C - a grey monokini):
 	say "fashionable grey swimsuit".

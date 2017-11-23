@@ -50,7 +50,7 @@ To decide which figure-name is the clothing-image of (C - a pair of earrings):
 		
 
 To say ClothingDesc of (C - a pair of earrings):
-	if item described is cursed:
+	if C is cursed:
 		if interracial fetish is 1:
 			say "A pair of large circular plastic earrings with a white female gender symbol surrounded by four black male gender symbols pointing towards it.  ";
 		otherwise if the player is originally female and the variation of C is 1:
@@ -60,7 +60,7 @@ To say ClothingDesc of (C - a pair of earrings):
 		otherwise:
 			say "A pair of large circular plastic earrings with the words 'I <3 Cock In My Ass' on each one.  ";
 		say "These would only be worn by a drunk girl at a hen party, or maybe an exhibitionist nymphomaniac[if the sex addiction of the player > 12 and the humiliation of the player > 30000][second custom style] like me![roman type][line break][otherwise].[end if]";
-	otherwise if item described is blessed:
+	otherwise if C is blessed:
 		say "Two large hooped earrings with several diamonds embedded in the hoops.  They indicate [if the bimbo of the player < 14]wealth, but also sluttiness[otherwise]that your Daddy must be quite wealthy[end if].";
 	otherwise if bukkake fetish is 1:
 		say "A pair of metal earrings shaped as penises, pointing towards your face.  A jewel at the tip of the [manly-penis] represents a cumshot.";

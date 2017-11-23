@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a lipstick collar):
 	decide on figure of lipstick collar.
 
 To say ClothingDesc of (C - a lipstick collar):
-	say "A leather collar with a red, lip shaped clasp in the front. Small hooks, like the kind you might attach a dog leash to, line the collar in a circle.[if the item described is worn]The collar is somehow forcing you to push your lips out and half-close your eyelids in a sultry 'come-hither' look.[otherwise]The phrase 'before the bite.' is cut into the leather on the inside. Strange.[end if]".
+	say "A leather collar with a red, lip shaped clasp in the front. Small hooks, like the kind you might attach a dog leash to, line the collar in a circle.[if C is worn]The collar is somehow forcing you to push your lips out and half-close your eyelids in a sultry 'come-hither' look.[otherwise]The phrase 'before the bite.' is cut into the leather on the inside. Strange.[end if]".
 
 To say ShortDesc of (C - a lipstick collar):
 	say "lipstick collar".

@@ -17,7 +17,7 @@ To decide which figure-name is clothing-image of (C - a steel collar):
 	decide on figure of steel collar.
 
 To say ClothingDesc of (C - a steel collar):
-	say "A thin steel collar placed on you by the hotel mechanic[if item described is worn].  It is somehow preventing you from cooling off arousal[end if].".
+	say "A thin steel collar placed on you by the hotel mechanic[if C is worn].  It is somehow preventing you from cooling off arousal[end if].".
 
 To say ShortDesc of (C - a steel collar):
 	say "thin steel collar".

@@ -22,7 +22,7 @@ To decide which figure-name is clothing-image of (C - a pullstring collar):
 	decide on figure of pullstring collar.
 
 To say ClothingDesc of (C - a pullstring collar):
-	say "[if item described is worn]This pink latex choker feels too small, but apparently stretches just enough that it fits your neck like a second skin. It makes adjusting it into the right spot on your neck a real bitch.  It has no clear way to remove it.  However there is a small plastic ring connected to a metal cord that you can pull at the back.[otherwise]A small pink choker with a pull cord at the back.[end if]".
+	say "[if C is worn]This pink latex choker feels too small, but apparently stretches just enough that it fits your neck like a second skin. It makes adjusting it into the right spot on your neck a real bitch.  It has no clear way to remove it.  However there is a small plastic ring connected to a metal cord that you can pull at the back.[otherwise]A small pink choker with a pull cord at the back.[end if]".
 
 To say ShortDesc of (C - a pullstring collar):
 	say "pullstring collar".
