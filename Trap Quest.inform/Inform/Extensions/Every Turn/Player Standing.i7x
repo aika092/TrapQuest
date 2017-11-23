@@ -111,7 +111,7 @@ To compute player standing:
 		otherwise:
 			if the player is drill stuck, compute drill damage;
 			if the player is dildo stuck, compute dildo damage;
-			if the player is vine-cursed or the player is vine stuck or the location of the player is WoodsBoss01 or the class of the player is schoolgirl, compute vines standing; [EXPERIMENTAL]
+			if the player is vine-cursed or the player is vine stuck or the location of the player is WoodsBoss01 or the player is a schoolgirl, compute vines standing; [EXPERIMENTAL]
 			if the player is glue stuck, compute glue escaping;
 	otherwise:
 		compute vines fucking.

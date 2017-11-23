@@ -97,7 +97,7 @@ To trigger pole trap (Y - a dildo trap):
 	now the motion of the player is 0;
 	now the reset-timer of Y is 250;
 	if the player is prone:
-		if the class of the player is living sex doll:
+		if the player is a living sex doll:
 			say "A dildo on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you onto your feet.";
 			unless the player is immobile, now the stance of the player is 0;
 		otherwise if a random number between 1 and 12 > the dexterity of the player:

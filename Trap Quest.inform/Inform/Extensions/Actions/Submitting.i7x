@@ -6,7 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is having marital sex:
-	unless the class of the player is princess, decide no;
+	unless the player is a princess, decide no;
 	unless princess-consort is monster, decide no;
 	if princess-consort is grabbing the player or princess-consort is penetrating a body part, decide yes;
 	decide no.

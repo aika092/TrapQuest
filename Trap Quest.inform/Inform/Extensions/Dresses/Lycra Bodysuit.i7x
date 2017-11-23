@@ -17,7 +17,7 @@ To decide which number is the initial outrage of (C - a lycra-bodysuit):
 	decide on 10.
 
 Definition: a lycra-bodysuit (called C) is untransformable:
-	if the class of the player is cumdumpster, decide yes;
+	if the player is a cumdumpster, decide yes;
 	decide no.
 
 Lycra Bodysuit ends here.

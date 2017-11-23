@@ -68,7 +68,7 @@ To say SummoningFlav of (M - an aeromancer):
 		say "[if M is in the location of the player]The wind kicks up suddenly, howling fiercely as a surprisingly clothed woman flies through the stone opening between the statue's legs. [speech style of M]'With the right wind in my sails, there[']s nothing I can[']t blow!'[roman type] She lands on her feet, chuckling at her own terrible pun.[otherwise]You hear a woman chuckling at her own terrible puns.[end if]".
 
 To say DiaperReaction of (M - a aeromancer):
-	say "The [M] smirks and looks directly at your dampening crotch.  [speech style of M]'[one of][if the class of the player is princess]Princess[otherwise]Pathetic[end if] Pottypants Prefers Peers['] Perception of her Pitiful Panty Peeing.  Haha, I'm a poet and I don't even know it!  Seriously though, you're a disgrace.'[or]Do you get off on me watching you wet yourself, or something?  Gross.'[stopping][roman type][line break]";
+	say "The [M] smirks and looks directly at your dampening crotch.  [speech style of M]'[one of][if the player is a princess]Princess[otherwise]Pathetic[end if] Pottypants Prefers Peers['] Perception of her Pitiful Panty Peeing.  Haha, I'm a poet and I don't even know it!  Seriously though, you're a disgrace.'[or]Do you get off on me watching you wet yourself, or something?  Gross.'[stopping][roman type][line break]";
 	if the humiliation of the player < 15000, say "[one of]You are so ashamed you wish the ground would just open up and swallow you.  [or][stopping]You turn bright red and refuse to look at the [M] in the eye.".
 
 To compute diaper mess reaction of (M - an aeromancer):
@@ -90,7 +90,7 @@ To compute (M - a monster) stomping (N - an aeromancer):
 Part 2 - Perception
 
 To compute appearance assessment of (M - an aeromancer):
-	if the player is exposed and the class of the player is not faerie:
+	if the player is exposed and the player is not a faerie:
 		FavourDown M by 2;
 		if M is unfriendly:
 			say "[speech style of M]'[one of]Aww yeah, combat time!   ..You do realise you look pretty slutty right now, right?'[or]My motto is: ['][if vagina is lewdly exposed]cunt[otherwise if penis is lewdly exposed and penis is tiny]sissy clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, it must be okay![']'[or]Ooh, a new subject for my experiments!'[or]You look like you could use some uplifting!'[or]Ooh, yay, I found one!  Let's do this!'[or]Hey there!  Would you rather fight or just let me fuck you?'[then at random][roman type][line break][one of]Uh-oh, she seems unfriendly...[or][stopping]";
@@ -109,7 +109,7 @@ To compute appearance assessment of (M - an aeromancer):
 			now the science requests of M is 0;
 			if image cutscenes is 1, display figure of aeromancer interact 5;
 		otherwise:
-			if the class of the player is faerie:
+			if the player is a faerie:
 				say "[speech style of M]'[if the science requests of M > 0]You know, my experiments are really fun! I know you[']d love helping if you gave me a chance. Help out before I decide to show you what you[']ve been missing?'[otherwise if the science history of M > 0]Ah, just the fairy I wanted to see! Help me with another experiment!'[otherwise]Hey, want to try out something fun? That's what you fairies are into, right?'[end if][roman type] [yesnolink]";
 			otherwise:
 				say "[speech style of M]'[if the science requests of M > 0]You know, you should really consider my request.  Before I decide my experiments are a little less... optional.  Come on, surely you'll let me try a new spell out on you?'[otherwise if the science history of M > 0]Hey, fancy helping me out with some more science?'[otherwise]Hey, would you like to help me out with an experiment?'[end if][roman type] [yesnolink]";
@@ -126,7 +126,7 @@ To compute appearance assessment of (M - an aeromancer):
 				FavourUp M;
 				compute aeromancer science of M;
 			otherwise:
-				if the class of the player is faerie:
+				if the player is a faerie:
 					say "[speech style of M]'[one of]Looks like I need to uplift your expectations!'[or]It[']s about time I aired some grievances!'[or]You won[']t stay this air free for long!'[at random]";
 					anger M;
 				otherwise:
@@ -135,7 +135,7 @@ To compute appearance assessment of (M - an aeromancer):
 
 To compute perception of (M - an aeromancer):
 	now M is interested;
-	if the class of the player is living sex doll:
+	if the player is a living sex doll:
 		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'Hey there little inflatable sex doll, do you need a top-up?'[roman type][line break]";
 		anger M;
 		if image cutscenes is 1, display figure of aeromancer interact 14;
@@ -796,20 +796,20 @@ To say RepeatResponse of (M - an aeromancer):
 	if image cutscenes is 1, display figure of aeromancer interact 16.
 
 To say UnfriendlyResponse of (M - an aeromancer):
-	say "[speech style of M]'[if the class of the player is faerie][one of]Hmm, most fairies are obsessed with getting pregnant, but it seems like all you care about is sex!'[or]I knew you[']d love my experiments, lucky for you I'm close to a blow through! Hahaha!'[then at random][otherwise][one of]Hmm, strange decision to show your face here again.'[or]Ready for some more science?'[or]Hahaha...your eagerness to be a test subject pleases me greatly!'[at random][end if][roman type][line break]";
+	say "[speech style of M]'[if the player is a faerie][one of]Hmm, most fairies are obsessed with getting pregnant, but it seems like all you care about is sex!'[or]I knew you[']d love my experiments, lucky for you I'm close to a blow through! Hahaha!'[then at random][otherwise][one of]Hmm, strange decision to show your face here again.'[or]Ready for some more science?'[or]Hahaha...your eagerness to be a test subject pleases me greatly!'[at random][end if][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 2.
 
 To say DominantResponse of (M - an aeromancer):
-	if the class of the player is faerie:
+	if the player is a faerie:
 		say "[speech style of M]'[one of]I know what you[']re going to say, but I[']m too busy for you to be messing with me right now. Trust me, it's more fun when I do it to you.'[or]No time for your fairy mischief or whatever, I[']m busy!'[at random][roman type][line break]";
-	otherwise if the class of the player is vixen:
+	otherwise if the player is a vixen:
 		say "[speech style of M]'[one of]Wow, you again? I thought you[']d be wearing a disguise after I embarrassed you like that. You must be really confident.'[or]Wow, it's you! Sorry, but have you ever thought about how awful you are at running away?'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[if M is buddy]Hey there.  I'm glad we can still be friends after what I did to you earlier.'[otherwise]Why are you talking to me?  Shouldn't you be angry at me or something?'[end if][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 2.
 
 To say midDominanceResponse of (M - an aeromancer):
-	say "[speech style of M]'[if the class of the player is faerie]You're talking to me? Just like a fairy to be carefree in a situation like this...'[otherwise]Why are you talking to me?  Seems to me like you have bigger fish to fry right now...'[end if][roman type][line break]";
+	say "[speech style of M]'[if the player is a faerie]You're talking to me? Just like a fairy to be carefree in a situation like this...'[otherwise]Why are you talking to me?  Seems to me like you have bigger fish to fry right now...'[end if][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 2.
 
 To say asDominantResponse of (M - an aeromancer):
@@ -844,7 +844,7 @@ To compute teaching of (M - an aeromancer):
 		increase the questioned of M by 50.
 
 To say WhereAnswer of (M - an aeromancer):
-	say "[speech style of M]'[if the class of the player is faerie]You wouldn[']t remember the answer if I told you.'[otherwise]I believe we are currently in dimension C-137.'[end if][roman type][line break]";
+	say "[speech style of M]'[if the player is a faerie]You wouldn[']t remember the answer if I told you.'[otherwise]I believe we are currently in dimension C-137.'[end if][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 18.
 
 To say WhoAnswer of (M - an aeromancer):
@@ -892,7 +892,7 @@ To compute appearance assessment of (M - a confident aeromancer):
 	let A be the air volume of belly + the air volume of breasts + the air volume of belly;
 	if A >= 15:
 		say "[speech style of M]'[one of]WOW, what wind elemental fucked YOUR brains out? I probably shouldn[']t bother asking, since you[']re obviously a slut for getting blown up like a balloon, but how would you like to help me with an experiment?'[or]You look kind of bloated. Did you wake up on the wrong side of a djinn[']s cloud buster? Hahaha! Help me out with an experiment....if you want. *snrt*'[or]Hey, you probably get this a lot, but you look JUST like this balloon I fucked in college. Hahaha! Want to help me out with an experiment?'[at random][roman type][line break]";
-	otherwise if the class of the player is schoolgirl:
+	otherwise if the player is a schoolgirl:
 		say "[speech style of M]'[one of]So, freshman. Want to help out with one of my experiments, or am I going to have to fog you.'[or]Hey, you like tentacles right? Ok, so I have this experiment I want to try out, but if you say no, I'm going to use my magic to make you my bitch. Win win for both of us, right?'[or]You obviously have no magical talent, so you'd really have no chance of taking me on in a fight. So, agree to help me out with an experiment, or I'm going to use my magic to torture you until I get bored! Sound good?'[at random][roman type][line break]";
 	otherwise if the player is exposed:
 		say "[speech style of M]'[one of]Wow, a wench outside the dungeon! You don't see that every day! [or]My motto is: ['][if vagina is lewdly exposed]cunt[otherwise if penis is lewdly exposed and penis is tiny]sissy clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, fucked by guards all day![']  [then at random]FYI I'm pretty powerful, so I'm going to experiment on you either way, but I'll go easier on you if you accept willingly. Sound good?[roman type][line break]";

@@ -23,7 +23,7 @@ This is the carefree fairy rule:
 The carefree fairy rule is listed in the knickers wearability rules.
 
 Definition: a butterfly wings (called C) is untransformable:
-	if the class of the player is faerie, decide yes;
+	if the player is a faerie, decide yes;
 	decide no.
 
 Butterfly Wings ends here.

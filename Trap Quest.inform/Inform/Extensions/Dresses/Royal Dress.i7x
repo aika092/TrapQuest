@@ -58,7 +58,7 @@ To uniquely set up (O - a lolita royal dress):
 
 Definition: a lolita royal dress (called C) is untransformable:
 	if diaper quest is 1 and there is an off-stage baby royal dress, decide no;
-	if the class of the player is princess, decide yes;
+	if the player is a princess, decide yes;
 	decide no.
 	
 Definition: a lolita royal dress (called C) is bow themed:
@@ -88,7 +88,7 @@ Definition: a baby royal dress (called O) is fetish appropriate:
 	decide no.
 
 Definition: a baby royal dress (called C) is untransformable:
-	if the class of the player is princess, decide yes;
+	if the player is a princess, decide yes;
 	decide no.
 
 To compute (C - a baby royal dress) unique inheriting from (D - a clothing):

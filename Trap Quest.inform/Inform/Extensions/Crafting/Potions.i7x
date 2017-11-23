@@ -118,7 +118,7 @@ To compute recipe specific cursing of (T - a potion of bull strength):
 	if the noun is bottle:
 		if the fill-colour of the noun is white and the noun is minotaur horn and the noun is monster-origin:
 			now T is bland;
-			if the noun is blessed or (a random number between 1 and 7 <= the number of worn blue scrunchies and the class of the player is schoolgirl):
+			if the noun is blessed or (a random number between 1 and 7 <= the number of worn blue scrunchies and the player is a schoolgirl):
 				now T is blessed;
 		otherwise:
 			now T is cursed;
@@ -134,7 +134,7 @@ Carry out quaffing potion of bull strength:
 		say "Your body instantly spills out as you instantly put on huge amounts of weight!";
 		FatUp 20;
 	if lactation fetish is 1:
-		if the class of the player is adventurer:
+		if the player is a adventurer:
 			let H2 be a random worn headgear;
 			say "Your [H2] suddenly vanishes!";
 			destroy H2;

@@ -246,7 +246,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute autotaking (I - a thing):
-	if autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and there is a worn bag of holding and the class of the player is not living sex doll and the player is not in danger:
+	if autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and there is a worn bag of holding and the player is not a living sex doll and the player is not in danger:
 		if the player is wrist bound and there is a worn heels and the player is upright:
 			say "[one of][bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break][or][stopping]";
 		otherwise:

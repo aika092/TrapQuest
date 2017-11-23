@@ -174,12 +174,12 @@ To decide which number is the strength-influence of (O - a black fetish hobble d
 	decide on S.
 
 Definition: a black fetish hobble dress (called C) is untransformable:
-	if the class of the player is maid, decide yes;
+	if the player is a maid, decide yes;
 	decide no.
 
 To say TransformReaction of (C - a black fetish hobble dress):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]How am I even supposed to walk properly in this?!  [if C is cursed]I wish I could take it off.[otherwise if the class of the player is maid]I guess I should probably take it off.  But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
+		say "[variable custom style]How am I even supposed to walk properly in this?!  [if C is cursed]I wish I could take it off.[otherwise if the player is a maid]I guess I should probably take it off.  But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]The way this forces me to walk actually makes me feel really sexy!  But it's probably not going to help me win this game...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:

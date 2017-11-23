@@ -45,9 +45,9 @@ To decide which number is the flat intelligence of the player:
 	let I be the raw intelligence of the player;
 	[decrease I by the blondeness of hair - natural blondeness;]
 	if the player is fighting against no-panties, decrease I by 2;
-	if the class of the player is fertility goddess:
+	if the player is a fertility goddess:
 		increase I by the children of the player;
-	if the class of the player is cowgirl:
+	if the player is a cowgirl:
 		decrease I by the raw sensitivity of breasts / 2;
 	repeat with T running through worn wearthings:
 		increase I by the intelligence-influence of T;
@@ -108,7 +108,7 @@ To Intup (X - a number):
 				otherwise if a random number between 1 and 2 is 1 and the questioned of M > 100:
 					decrease the questioned of M by 100;
 			increase the raw intelligence of the player by 1;
-			if the class of the player is schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1.[Dumb schoolgirls can double dip on intelligence gains.]
+			if the player is a schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1.[Dumb schoolgirls can double dip on intelligence gains.]
 
 [!<IntDownX>+
 

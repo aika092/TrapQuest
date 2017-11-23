@@ -8,13 +8,13 @@ To decide which figure-name is clothing-image of (C - a demon tail plug):
 	decide on figure of demon tail plug.
 
 To say UniquePlugDesc of (P - a demon tail plug):
-	say "This [PlugSize size of P] butt plug has a long, red, snake-like tail coming out of the base, ending in a spade tip. [if P is worn and the class of the player is priestess]It makes me feel unclean...[otherwise]It makes me feel kind of powerful![end if]".
+	say "This [PlugSize size of P] butt plug has a long, red, snake-like tail coming out of the base, ending in a spade tip. [if P is worn and the player is a priestess]It makes me feel unclean...[otherwise]It makes me feel kind of powerful![end if]".
 
 To say ShortDesc of (P - a demon tail plug):
 	say "demon tail butt plug".
 
 To decide which number is the delicateness influence of (P - a demon tail plug):
-	if the class of the player is priestess, decide on 3;
+	if the player is a priestess, decide on 3;
 	decide on 0.
 
 This is the demon tail pussy slut rule:

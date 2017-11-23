@@ -84,7 +84,7 @@ To compute perception of (M - a demon lord):
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type]";
 	otherwise if virgin of the player is 1 and the player is female:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH GIRL!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, GIRL! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
-	otherwise if the class of the player is princess:
+	otherwise if the player is a princess:
 		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
 	otherwise if the player-class is succubus and M is mating and the number of worn pentagram tattoo is 0:
 		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type]";
@@ -98,7 +98,7 @@ To compute DQ perception of (M - a demon lord):
 	now M is interested;
 	anger M;
 	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the class of the player is princess:
+	if the player is a princess:
 		say "[first custom style]'PRINCESS!  YOU DARE SHOW YOUR FACE HERE?  YOU WILL SUBMIT TO ME!'[roman type]";
 	otherwise:
 		say "[first custom style]'YOU!  GET ON YOUR KNEES AND PRESENT YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER.'[roman type][line break]".
@@ -197,7 +197,7 @@ To compute (M - a demon lord) removing (P - an anal beads):
 	destroy P.
 
 To say CondomRejectFlav of (M - a demon lord):
-	say "[speech style of M]'[one of]YOUR PUNY MORTAL CONDOMS WILL NEVER FIT ON ME[or]NOT EVEN A CONDOM CAN PROTECT YOU FROM MY SEED, WENCH[or]I GO BAREBACK IN EVERY HOLE, SLAVE[or]FOOL! I HAVE A LATEX ALLERGY[or][if the class of the player is princess]YOUR PUNY LATEX CANNOT TRICK ME THIS TIME, MORTAL[otherwise]HAHAHAHA! AS IF LATEX COULD CONTAIN MY SEED[end if][at random]!'[roman type] Looks like [he of M][']s going in bare...".
+	say "[speech style of M]'[one of]YOUR PUNY MORTAL CONDOMS WILL NEVER FIT ON ME[or]NOT EVEN A CONDOM CAN PROTECT YOU FROM MY SEED, WENCH[or]I GO BAREBACK IN EVERY HOLE, SLAVE[or]FOOL! I HAVE A LATEX ALLERGY[or][if the player is a princess]YOUR PUNY LATEX CANNOT TRICK ME THIS TIME, MORTAL[otherwise]HAHAHAHA! AS IF LATEX COULD CONTAIN MY SEED[end if][at random]!'[roman type] Looks like [he of M][']s going in bare...".
 [Selkie: changed WILL TRICK ME to CANNOT TRICK ME since the text says he’s going in bare back.]
 
 To say CondomAcceptFlav of (M - a demon lord):
@@ -234,7 +234,7 @@ To compute anal sex of (M - a demon lord):
 
 To compute fuckhole sex of (M - a demon lord):
 	let F be a random fuckhole penetrated by M;
-	if the class of the player is succubus:
+	if the player is a succubus:
 		say "You feel fulfilled in serving your true Master!";
 		dignify 800;
 	otherwise if the reaction of the player is 2:
@@ -283,7 +283,7 @@ To compute vaginal climax of (M - a demon lord):
 	if image cutscenes is 1, display figure of xavier cutscene 2;
 	if M is unwrapped:
 		WombFill the semen load of M;
-		if the class of the player is succubus:
+		if the player is a succubus:
 			say "You feel fulfilled as [M][']s mighty seed flows into your [vagina]!";
 			dignify 800;
 		let T be a random xavier's cunt tattoo;
@@ -320,10 +320,10 @@ To compute anal climax of (M - a demon lord):
 	now M is not penetrating asshole.
 
 To orgasm (M - a demon lord):
-	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
+	if the player is a priestess and (the virgin of the player is 0 or the player is male):
 		say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with him, Sister! Do not insult your goddess!'";
 		increase the charge of the dungeon altar by 30;
-	if the class of the player is princess, follow the betrothal rule.
+	if the player is a princess, follow the betrothal rule.
 
 To say StrikingSuccessFlav of (M - a demon lord) on (B - a body part):
 	say "The [M] strikes you [TargetName of B] with a large claw!  Ouch!!";
@@ -396,7 +396,7 @@ Section 3 - Damage
 Definition: a demon lord (called M) is damageable:
 	if attack-type is 1 and there is a worn sword of purity or there is a worn magic wand or there is a worn whip of domination, decide yes;
 	if attack-type is 3 and there is a worn dildo heels, decide yes;
-	if the class of the player is princess or the class of the player is priestess or the class of the player is virgin warrior or the class of the player is fertility goddess or there is a worn demon tattoo, decide yes;
+	if the player is a princess or the player is a priestess or the player is a virgin warrior or the player is a fertility goddess or there is a worn demon tattoo, decide yes;
 	decide no.
 
 To decide which number is the damage modifier of (M - a demon lord):
@@ -498,7 +498,7 @@ To say StoryAnswer of (M - a demon lord):
 	say "[first custom style]'THAT'S COPYRIGHTED - I MEAN NONE OF YOUR BUSINESS!'[roman type][line break]".
 
 To say EscapeAnswer of (M - a demon lord):
-	say "[first custom style]'THERE IS NO ESCAPE FOR YOU NOW, LITTLE ONE!  YOU WILL SERVE AS MY SLAVE[if the class of the player is not succubus] OR DIE TRYING TO ESCAPE!'[otherwise]!'[end if][roman type][line break]".
+	say "[first custom style]'THERE IS NO ESCAPE FOR YOU NOW, LITTLE ONE!  YOU WILL SERVE AS MY SLAVE[if the player is not a succubus] OR DIE TRYING TO ESCAPE!'[otherwise]!'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - a demon lord):
 	say "[first custom style]'STAY LOOSE AND LET IT HAPPEN!'[roman type][line break]".

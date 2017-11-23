@@ -311,7 +311,7 @@ REQUIRES COMMENTING
 +!]
 To say VagueAppearance:
 	let B be the appearance of the player;
-	if the class of the player is succubus:
+	if the player is a succubus:
 		say "Succubus";
 	otherwise if B < 3:
 		say "[if the player is male and the largeness of breasts < 4 and the thickness of hips < 4]Man[otherwise if the player is male and the largeness of breasts < 4]Trap[otherwise]Woman[end if]";
@@ -732,7 +732,7 @@ To say VagueInternals:
 		if the player is desperately craving:
 			say "Desperately ";
 		if the player is craving:
-			say "Craving [if the class of the player is santa's little helper]A Festive Drink[otherwise]Cum[end if]";
+			say "Craving [if the player is a santa's little helper]A Festive Drink[otherwise]Cum[end if]";
 			now fine is 0;
 	if player-immobile is 1:
 		if fine is 0, say " & ";

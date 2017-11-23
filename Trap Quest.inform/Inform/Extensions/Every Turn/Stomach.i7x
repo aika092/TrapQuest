@@ -286,7 +286,7 @@ REQUIRES COMMENTING
 Definition: yourself is upset about mess:
 	if there is a worn messed diaper:
 		let D be a random worn messed diaper;
-		if the class of the player is adult baby and the bimbo of the player > the mess of D, decide no;
+		if the player is a adult baby and the bimbo of the player > the mess of D, decide no;
 		if the diaper addiction of the player > 10, decide no;
 		decide yes;
 	otherwise if there is a worn messed knickers:
@@ -309,7 +309,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a thing is urine averse:
-	if the class of the player is adult baby, decide no;
+	if the player is a adult baby, decide no;
 	if diaper lover >= 1 and the diaper addiction of the player < 10 and the humiliation of the player < 40000, decide yes;
 	decide no.
 

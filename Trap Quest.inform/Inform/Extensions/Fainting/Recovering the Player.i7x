@@ -95,7 +95,7 @@ To Recover the Player:
 		now the blondeness of hair is 0;
 		now the redness of hair is 0;
 		now the brightness of hair is 0;
-	unless the class of the player is silicone queen, now the make-up of face is 0;
+	unless the player is a silicone queen, now the make-up of face is 0;
 	now permanent makeup is 0;]
 	now busy is 0;
 	if debugmode > 0, say "Finished recovering player.".

@@ -92,7 +92,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 		if the semen coating of the noun is 1, say "You can't get that last bit of [semen] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
 		if the semen coating of the noun is 0 and the urine coating of the noun > 0, say "You can't get the [urine] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
 	if the semen coating of the noun < 1, say "Your [noun] [if noun is thighs or noun is breasts]are[otherwise]is[end if] already [semen] free." instead;
-	if the class of the player is living sex doll, say "You don't have the manual dexterity to do that!" instead;
+	if the player is a living sex doll, say "You don't have the manual dexterity to do that!" instead;
 	if the second noun is not clothing and the second noun is not arms, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
 	if the second noun is clothing:
 		if the player is flying and the second noun is not held by the player, say "The [printed name of the second noun] is on the ground, and you're not." instead;

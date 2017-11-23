@@ -288,7 +288,7 @@ To FaceDown (X - a number):
 	now the previous make-up of face is the make-up of face;
 	while X > 0:
 		decrease X by 1;
-		if the make-up of face > 0 and the class of the player is not silicone queen and permanent MakeUp is 0 and the latex-transformation of the player < 7:
+		if the make-up of face > 0 and the player is not a silicone queen and permanent MakeUp is 0 and the latex-transformation of the player < 7:
 			decrease the make-up of face by 1.
 
 [!<permanentMakeUp:Integer>*

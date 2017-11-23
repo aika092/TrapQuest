@@ -6,7 +6,7 @@ Check spritzing:
 	let S be a random worn pink spraybottle;
 	if the noun is monster and S is cloth, say "It would probably make more sense to slap the [noun] instead.";
 	if the noun is not clothing and the noun is not monster, say "How would you clean that?" instead;
-	if the class of the player is not maid, say "You try, but nothing comes out of the nozzle. It's like it won[']t let you use it." instead;
+	if the player is not a maid, say "You try, but nothing comes out of the nozzle. It's like it won[']t let you use it." instead;
 	if the noun is clothing and the milk-soak of the noun + the semen-soak of the noun + the urine-soak of the noun < 1, say "There[']s nothing to clean." instead;
 	if the player is wrist bound behind, say "With your hands bound behind you, there's no way you can clean this successfully." instead;
 	if the player is wrist bound in front and the noun is worn, say "With your hands bound together like this, there[']s no way you can clean that without taking it off." instead;

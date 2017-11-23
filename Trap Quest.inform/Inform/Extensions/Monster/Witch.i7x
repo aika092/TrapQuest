@@ -97,7 +97,7 @@ To compute perception of (M - a witch):
 	otherwise if the variety of M >= 3:
 		say "The [M] notices you[if the player is sluttily dressed].  [otherwise]!  [end if][speech style of M]'Hey, you!  Good to see you again.  I hope you're having a fun adventure!'[roman type][line break]";
 		calm M;
-	otherwise if the class of the player is vixen:
+	otherwise if the player is a vixen:
 		say "The [M] notices you[if the player is sluttily dressed].  [otherwise]!  [end if][speech style of M]'[one of]Don[']t think I can[']t see through that ridiculous disguise you fucking bitch. You didn[']t pay me the last time you used my altar!'[or]There[']s no way I[']m letting you off the hook now, bitch!'[stopping][roman type]";
 		anger M;
 	otherwise:
@@ -120,7 +120,7 @@ altar-drops is a number that varies.
 
 Report dropping in the presence of a witch:
 	increase altar-drops by 1;
-	if altar-drops > 5 and the bimbo of the player < 10 and the class of the player is maid:
+	if altar-drops > 5 and the bimbo of the player < 10 and the player is a maid:
 		say "Like a busy and industrious little maid, you neatly pile up your equipment, keeping one nervous eye on the nearby altar, hoping that nothing too nasty wanders up while you're stripping yourself down to the bare minimum. The witch seems to be watching you with a smirking expression, as if she knows what you're doing. But she says nothing. Somehow, that makes it even more humiliating.";
 		humiliate 200;
 		now altar-drops is -20.
@@ -436,9 +436,9 @@ Section 1 - Greeting
 To say FirstResponse of (M - a witch):
 	if the variety of M >= 3:
 		say RepeatResponse of M;
-	otherwise if the class of the player is priestess:
+	otherwise if the player is a priestess:
 		say "[speech style of M]'[one of]Ha, so they finally got an altar bitch for the dungeon.'[or]So, the dungeon finally got a new altar bitch?'[or]Wow, another dungeon bitch? They're really going through you these days.'[or]Ha, so you're the new dungeon bitch? I've got to say, I don't envy you.'[at random][roman type][line break]";
-	otherwise if the class of the player is fertility goddess:
+	otherwise if the player is a fertility goddess:
 		say "[speech style of M]'What do you want? I[']m not going to bless any condoms if that[']s what you[']re here for, you obviously wouldn't even use them.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Hi there, bitch. Give me some cum[if watersports fetish is 1] or piss[end if] to use my altar or piss off.'[or]Hi. The altar isn't free, so if you don't have any [semen][if watersports fetish is 1] or urine[end if], fuck off.'[at random][roman type][line break]".
@@ -446,13 +446,13 @@ To say FirstResponse of (M - a witch):
 To say RepeatResponse of (M - a witch):
 	if the variety of M >= 3:
 		say "[speech style of M]'[one of]It's not an easy life being an altar witch, you know...'[or]Hey, feel free to use my altar whenever you want.'[or]Hi there! Feel free to stay around and chat. Not like there's much else to do in this shit-hole.'[at random][roman type][line break]";
-	otherwise if the class of the player is priestess:
+	otherwise if the player is a priestess:
 		say "[speech style of M]'[one of]So, how's the altar life treating you?'[or][if the the analvirgin of the player is 0 and the player is male or the player is female and the virgin of the player is 0]Wow, I can actually smell the sex on you from here. You're a dungeon bitch, aren't you.'[otherwise]You know, most dungeon bitches don[']t keep their cherry for so long.'[end if][or]If not for all the arse fucking, I would sort of envy you dungeon bitches. It's fucking boring up here.'[at random][roman type][line break]";
-	otherwise if the class of the player is cultist:
+	otherwise if the player is a cultist:
 		say "[speech style of M]'[one of]You aren[']t going to convert me so you might as well piss off.'[or]Hey, can you see this? I[']m flipping you off.'[or]Keep your shitty scripture to yourself, bitch.'[or]That altar of yours is hiding for a reason, bitch.'[or]Whatever you want me to cure, you can piss off. It's what you get for worshipping false idols.'[at random][roman type][line break]";
-	otherwise if the class of the player is fertility goddess:
+	otherwise if the player is a fertility goddess:
 		say "[speech style of M]'[one of]SHIT! Mistress, I wasn[']t slacking- Oh. It's you.'[or]Only thing worse than a whore is a whore that gets pregnant.'[or]Not everyone wants to breed with you. Piss off'[or]If you[']re here about an offering, I figure I should tell you that your vagina isn[']t an acceptable container.'[or]If you[']re dumb enough to get pregnant, you[']re probably dumb enough to piss me off. So piss off.'[at random][roman type][line break]";
-	otherwise if the class of the player is succubus:
+	otherwise if the player is a succubus:
 		say "[speech style of M]'[one of]So, he returned? I thought he got his ass kicked by some bitch in dress up.'[or]If you[']re here about his return, FYI I don[']t care.'[at random]";
 	otherwise:
 		say "[speech style of M]'[one of]You heard me before. Pay up or piss off.'[or]You heard what I said before. If you can't pay, piss off.'[or]I'll say it again. If you want to use the altar, you better fucking pay me first.'[at random][roman type][line break]".
@@ -471,9 +471,9 @@ To say SubmissiveResponse of (M - a witch):
 To say midDominanceResponse of (M - a witch):
 	if the relevant sex addiction of M < 12:
 		say "[speech style of M]'[one of]Most interesting thing I've seen all night.'[or]Why would I want to ruin the show?'[or]This is hilarious.'[or]Ha! Help yourself!'[at random][roman type][line break]";
-	otherwise if the class of the player is priestess:
+	otherwise if the player is a priestess:
 		say "[speech style of M]'[one of]And miss a chance to see a dungeon bitch in action?'[or]No way, it's been so long since I got to see a dungeon bitch in action.'[or]For a dungeon bitch? No way, I want to see the show!'[or]No way! I want to see [if the player is male]if you can out-whore the last dungeon bitch with only one hole![otherwise]if you whore it up better than the last dungeon bitch![end if]'[at random][roman type][line break]";
-	otherwise if the class of the player is cultist:
+	otherwise if the player is a cultist:
 		say "[speech style of M]'[one of]I would, but I don't want to catch anything.[or]And risk catching whatever disease *they* gave you?[or]No, I'll stay right here where it's clean, thanks.[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]I'd rather watch.'[or]I'd rather sit back and enjoy the show.'[at random][roman type][line break]".

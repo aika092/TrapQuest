@@ -95,7 +95,7 @@ To compute sudden objectification of (M - a matron):
 To compute perception of (M - a matron):
  	now M is interested;
  	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
- 	if the class of the player is living sex doll:
+ 	if the player is a living sex doll:
  		say "It doesn't look like she's interested in you.";
  		bore M for 500 seconds;
 	otherwise if M is unfriendly:
@@ -105,13 +105,13 @@ To compute perception of (M - a matron):
 		say "[speech style of M]'[if the times-met of M < 1]Hey there you cute little thing.'[otherwise][one of]Oh it's my favourite big baby!'[or]Hi little baby potty pants!'[or]Don't you cry little one, Nanny is here to take care of you!'[in random order][end if][roman type][line break]";
 		compute diaper check of M;
 	otherwise if M is motherly:
-		say "[speech style of M]'Bad [if the player is a sissy]sissy[otherwise if the class of the player is maid]maid[otherwise if the class of the player is princess]princess[otherwise if the size of penis < 3]girl[otherwise]baby[end if]!  What did I say about not letting me find you without a nice snug nappy?!  You're in big trouble!  [if the player is upright]Get on your knees, now!'[otherwise]Hold still, now...'[end if][roman type][line break]";
+		say "[speech style of M]'Bad [if the player is a sissy]sissy[otherwise if the player is a maid]maid[otherwise if the player is a princess]princess[otherwise if the size of penis < 3]girl[otherwise]baby[end if]!  What did I say about not letting me find you without a nice snug nappy?!  You're in big trouble!  [if the player is upright]Get on your knees, now!'[otherwise]Hold still, now...'[end if][roman type][line break]";
 		now the variety of M is 99;
 		anger M;
 	otherwise if there is an interested unfriendly wrestler in the location of M:
 		say "[speech style of M]'Ooh, this one is really cute isn't [unless the player is male and the bimbo of the player < 7]s[end if]he!  I know exactly what to do with you, darling.  From now on you should call me [']Mommy['], okay sweetie pie[if M is not eager to change diapers]?  Now let's get you into something more appropriate...'[otherwise]?'[end if][roman type][line break]";
 		now the variety of M is 99;
-	otherwise if the class of the player is schoolgirl and there is no worn diaper:
+	otherwise if the player is a schoolgirl and there is no worn diaper:
 		say "[speech style of M]'Oh my, you look so adorable in that uniform. But there[']s something we need to take care of before you can go off to school, now isn[']t there! Don[']t fight me sweety, I need to make sure you don[']t have any accidents in class.'[roman type][line break]";
 		now the variety of M is 99;
 	otherwise if diaper focus is 1 or the variety of M is 99:
@@ -341,7 +341,7 @@ To compute unique diaper change effect of (M - a matron):
 
 This is the matron confiscates grown up items rule:
 	let M be current-monster;
-	if the class of the player is adult baby:
+	if the player is a adult baby:
 		let N be the number of held vessels;
 		decrease N by the number of held baby's bottles;
 		if N > 0 and a random number between 1 and 4 is 1:
@@ -409,7 +409,7 @@ To compute forcefeed round (N - 2) of (M - a matron):
 To compute forcefeed round (N - 1) of (M - a matron):
 	say "[speech style of M]'Come on you messy baby, time for your sippy cup.'[roman type]  Before you can react, a toddler's drinking cup is shoved into your mouth, and you are sipping down a mystery liquid that tastes a lot like fruit juice, but a bit more sour.  [if incontinence < 5]Your stomach feels a little off...[otherwise if the diaper addiction of the player > 12]For a moment you almost forget you're not just a big baby.[otherwise]You feel the liquid enter your belly, and your bladder relax.[end if][line break]";
 	let B be a random off-stage bib;
-	if B is bib and the class of the player is adult baby:
+	if B is bib and the player is a adult baby:
 		summon B cursed;
 		say "[speech style of M]'Ooh, that bib just looks so perfect on you, I think I'll have to let you keep it!'[roman type]  The [M] leaves the bib on.  [if the strength-influence of B > 0]You can feel it making you a bit stronger!  [end if]";
 	otherwise if the number of worn bibs is 0:

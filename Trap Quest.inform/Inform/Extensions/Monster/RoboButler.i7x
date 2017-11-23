@@ -50,7 +50,7 @@ Part 2 - Perception
 To compute perception of (M - a robobutler):
  	say "The [M] notices you!";
 	FavourDown M;
- 	if the class of the player is maid:
+ 	if the player is a maid:
  		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
@@ -59,7 +59,7 @@ To compute perception of (M - a robobutler):
 		say "Its eyes turn red and it spins towards you. [speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
 		now the variety of M is 3;
 		anger M;
-	otherwise if the number of worn catsuits > 0 or the class of the player is vixen:
+	otherwise if the number of worn catsuits > 0 or the player is a vixen:
 		say "Its eyes turn red and it spins toward you. [speech style of M]'BURGLAR DETECTED! CRIMINAL APPREHENSION PROGRAM INITIATED!'[roman type][line break]";
 		now the variety of M is 4;
 		anger M;
@@ -197,7 +197,7 @@ Part 4 - Conversation
 Section 1 - Greeting
 
 To compute greeting response of (M - a robobutler):
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[first custom style]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise if M is uninterested:
 		compute correct perception of M;
@@ -205,10 +205,10 @@ To compute greeting response of (M - a robobutler):
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 	otherwise:
 		say "The [M] ignores you.";
-	unless the class of the player is maid, now M is interested.
+	unless the player is a maid, now M is interested.
 
 To say robogreeting:
-	say "[if the class of the player is maid]SERVANT[otherwise if the player is female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
+	say "[if the player is a maid]SERVANT[otherwise if the player is female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
 
 Section 2 - Questioning
 
@@ -218,7 +218,7 @@ To compute talk option (N - 2) to (M - a robobutler):
 
 To compute answer of (M - a robobutler):
 	let C be a random held unsure clothing;
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[speech style of M]'[if M is robomaid]EMPLOYEE BANTER. HA HA.[otherwise]GET BACK TO WORK.[end if]'[roman type][line break]";
 	otherwise if M is not buddy:
 		compute annoyance of M;
@@ -243,7 +243,7 @@ To compute unfriendly drink of (M - a robot):
 	say "[first custom style]'NO.'[roman type][line break]".
 
 To compute friendly drink of (M - a robot):
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[first custom style]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'DRINKS ARE AVAILABLE FROM THE MINIBAR, [robogreeting].'[roman type][line break]".
@@ -266,7 +266,7 @@ To say RoboMaidDesc:
 To compute perception of (M - a robomaid):
  	say "The [M] notices you!";
 	FavourDown M;
- 	if the class of the player is maid:
+ 	if the player is a maid:
  		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
@@ -282,7 +282,7 @@ To compute perception of (M - a robomaid):
 		calm M.
 
 To compute perception of (M - a milkmaid):
-	if the class of the player is maid:
+	if the player is a maid:
 		if breasts is lewdly exposed:
 			say "It glides towards you, addressing you in a monotone. [speech style of M]HEY GIRLFRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEE HEE. TEE HEE.[roman type] It seems to abruptly lose interest.";
 			calm M;
@@ -308,7 +308,7 @@ This is the robomaid punishment rule:
 	if the player is immobile:
 		say "[one of]The [current-monster] waits beside you patiently.[or][cycling]";
 	otherwise if current-monster is milkmaid:
-		if the class of the player is maid:
+		if the player is a maid:
 			let C be a random worn top-placed breast covering clothing;
 			if C is clothing:
 				if C is not-top-displacable:
@@ -329,7 +329,7 @@ This is the robomaid punishment rule:
 			say "[speech style of current-monster]ORAL OBSTRUCTION DETECTED.[roman type][line break]The [current-monster] tears out your [printed name of G].";
 			destroy G;
 			rule succeeds;
-		otherwise if R is 1 or the class of the player is maid:
+		otherwise if R is 1 or the player is a maid:
 			if trap fetish is 0:
 				say "[speech style of current-monster]'OOH. OOOH. I NEED YOU. TO SUCK. ME.[roman type] The [current-monster]'s dress shifts, and a metallic tentacle slithers out from underneath, dripping pointing at you menacingly as it dribbles [semen] along the floor. It curls around your neck and effortlessly forces its way into your mouth. You have no choice but to swallow as it pumps refrigerated [semen] into your mouth, trailing a line of the stuff down your chin when she finally withdraws and begins to wander off.";
 				now current-monster is penetrating face;

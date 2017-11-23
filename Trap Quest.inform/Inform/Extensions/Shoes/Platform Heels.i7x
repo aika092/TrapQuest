@@ -48,7 +48,7 @@ To decide which object is the potential-upgrade-target of (C - a platform heels)
 	decide on nothing.
 
 Definition: a platform heels (called C) is untransformable:
-	if the class of the player is silicone queen, decide yes;
+	if the player is a silicone queen, decide yes;
 	decide no.
 
 

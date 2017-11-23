@@ -22,7 +22,7 @@ To compute SelfExamineDesc of (C - a cultist robe):
 	say "A sheer black robe loosely fits you.".
 
 Definition: a cultist robe (called C) is untransformable:
-	if the class of the player is cultist, decide yes;
+	if the player is a cultist, decide yes;
 	decide no.
 
 Cultist Robe ends here.

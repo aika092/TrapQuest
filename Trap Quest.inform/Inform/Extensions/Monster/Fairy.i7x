@@ -203,10 +203,10 @@ This is the fairy plays diaper quest rule:
 The fairy plays diaper quest rule is listed in the fairy attack rules.
 
 This is the fairy tries to impregnate the player rule:
-	if pregnancy fetish is 1 and there is a vine grabbing the player and the class of the player is faerie:
+	if pregnancy fetish is 1 and there is a vine grabbing the player and the player is a faerie:
 		say "The [current-monster] continues to [one of]whiz about underneath you[or]hover beneath your legs[at random], throwing glittering dust over the horny vines twisting through the soil.";
 		rule succeeds;
-	if the class of the player is faerie and the player is female and the pregnancy of the player is 0:
+	if the player is a faerie and the player is female and the pregnancy of the player is 0:
 		let V be a random vine;
 		now current-monster is grabbing the player;
 		say "The [current-monster] whizzes between your legs, tossing a handful of glittering dust at the soil underneath you. She lands on your shoulders as several vines suddenly shoot out of the ground and seize you by the wrists and ankles! [speech style of current-monster]It must be awful walking around like that without a bun in your oven. Don't worry, I'll make sure you get knocked up! [roman type]";
@@ -224,7 +224,7 @@ This is the fairy tries to impregnate the player rule:
 		let B be the largeness of belly;
 		while the semen volume of vagina < 10 and the largeness of belly is B:
 			now current-monster is penetrating vagina; [Required for pregnancy tracking]
-			if the class of the player is faerie, WombFill 4;
+			if the player is a faerie, WombFill 4;
 			otherwise WombFill 1;
 			now current-monster is not penetrating vagina;
 		rule succeeds.
@@ -282,7 +282,7 @@ To say FairyName: [assuming the current-monster is a fairy, we include that as a
 To compute fairy meddling on (XXX - breasts):
 	let B be a random worn currently visible bra;
 	[Selkie: Let the fairies mess with your lactation rate, by suckling.
-	 It now does something more in the case where the class of the player is cowgirl!
+	 It now does something more in the case where the player is a cowgirl!
 	 Aika noted this would get a bit tedious after you've seen it a few times. My plan is to work in more variability. This may suffice...?]
 	let fM be a random number from 1 to the milk volume of breasts;
 	if decideToSuckle is 1:
@@ -745,7 +745,7 @@ To compute teaching of (M - a fairy):
 		increase the questioned of M by 75.[but not too much]
 
 To say WhereAnswer of (M - a fairy):
-	say "[speech style of M]'[if the class of the player is faerie][one of]What? I thought you knew![or]We're in our home, silly![at random][otherwise]I don[']t know what you[']d call it, but I call this place my home[end if].'[roman type][line break]";
+	say "[speech style of M]'[if the player is a faerie][one of]What? I thought you knew![or]We're in our home, silly![at random][otherwise]I don[']t know what you[']d call it, but I call this place my home[end if].'[roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 11.
 
 To say WhoAnswer of (M - a fairy):
@@ -757,7 +757,7 @@ To say StoryAnswer of (M - a fairy):
 	if image cutscenes is 1, display figure of fairy interact 8.
 
 To say EscapeAnswer of (M - a fairy):
-	if the class of the player is faerie:
+	if the player is a faerie:
 		say "[speech style of M]'[one of]I don't think us faeries are supposed to leave...'[or]Ask the witch! She knows everything!'[or]Fly out! *giggle*'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]This is a magic forest, there[']s no way out. Teehee!'[or]There[']s no way of getting out of here, this forest expands for miles and miles in every direction!'[or][if diaper quest is 1]There's a big scary metal robot you have to fight, but apparently it's less scary if you're wearing a full diaper!'[otherwise]Well, if you really want to know, there[']s this big hole somewhere nearby. If you jump in there, you might find a way out!'[end if][or]I don[']t know! Teehee!'[or]There[']s a set of doors somewhere, but behind them everything is all scary and metal.'[as decreasingly likely outcomes][roman type][line break]";[Who exactly expects useful information from a fairy?]
@@ -808,7 +808,7 @@ To decide which number is the bartering value of (T - a thing) for (M - a fairy)
 	decide on 0.
 
 To say MonsterOfferRejectFlav of (M - a fairy) to (T - a plentiful accessory):
-	say "[second custom style]'[if the class of the player is faerie]Umm, why would I want that? You are a fairy right?'[otherwise]Us fairies doesn't use money like you mortals!'[end if][roman type][line break]".
+	say "[second custom style]'[if the player is a faerie]Umm, why would I want that? You are a fairy right?'[otherwise]Us fairies doesn't use money like you mortals!'[end if][roman type][line break]".
 
 
 Part 5 - Variants

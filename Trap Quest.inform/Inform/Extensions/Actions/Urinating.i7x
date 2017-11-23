@@ -294,7 +294,7 @@ To compute pee protected urination:
 				increase the urine-soak of K by 1;
 				if K is diaper and there is a worn I love my wet nappies T-shirt and the diaper addiction of the player > 10 and image cutscenes is 1, display figure of wet nappies diaper cutscene 1;
 				if K is cursed diaper and the location of the player is toilets and image cutscenes is 1, display figure of toilet diaper cutscene 1;
-				if K is diaper and the location of the player is Blindfolded and the class of the player is human toilet and image cutscenes is 1, display figure of human toilet diaper cutscene 1;
+				if K is diaper and the location of the player is Blindfolded and the player is a human toilet and image cutscenes is 1, display figure of human toilet diaper cutscene 1;
 				let sK be a random worn bottom level soakable pee protection clothing;
 				if K is not sK and X < N:
 					say urinationoverflow of K;

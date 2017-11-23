@@ -19,7 +19,7 @@ Definition: a baby-dress (called C) is sissifying:
 	decide no.
 
 Definition: a baby-dress (called C) is untransformable:
-	if the class of the player is adult baby, decide yes;
+	if the player is a adult baby, decide yes;
 	decide no.
 
 Definition: a baby-dress (called C) is end of transformation chain:

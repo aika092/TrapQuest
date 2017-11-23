@@ -119,7 +119,7 @@ To decide which number is the initial outrage of (C - a translucent priestess ou
 	decide on 9.
 
 Definition: a translucent priestess outfit (called C) is untransformable:
-	if the class of the player is priestess, decide yes;
+	if the player is a priestess, decide yes;
 	decide no.
 
 

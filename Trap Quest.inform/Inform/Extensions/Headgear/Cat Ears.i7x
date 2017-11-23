@@ -39,7 +39,7 @@ To compute class outfit of (H - a cat ears):
 			summon M cursed;
 			now the raw-magic-modifier of M is the stance of the player;
 			now kitty-summoned is 2;
-		otherwise if W is actually summonable and the class of the player is magical girl:
+		otherwise if W is actually summonable and the player is a magical girl:
 			say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
 			summon W;
 		otherwise if K is actually summonable or (K is kitty claws and kitty-summoned is 0):
@@ -54,7 +54,7 @@ To compute class outfit of (H - a cat ears):
 		otherwise if C is actually summonable:
 			say "[bold type]You feel a sudden tightness around your neck.  You look down to see that a cat collar has appeared![roman type][line break]";
 			summon C cursed;
-		otherwise if the class of the player is catgirl and P is actually summonable and the player is not ass protected:
+		otherwise if the player is a catgirl and P is actually summonable and the player is not ass protected:
 			say "[bold type]You feel your [asshole] suddenly invaded by a foreign object!  Looking around you see a cat tail swaying proudly from your [asshole].[roman type][line break]";
 			summon P cursed;
 			let X be the openness of asshole + the number of worn clothing - 3;

@@ -20,7 +20,7 @@ Definition: a clothing (called C) is curse-sticky: [If it's cursed, it can't be 
 	decide yes.		
 
 Check taking off something:
-	if the noun is cursed and the noun is worn and the class of the player is not cultist and the noun is curse-sticky:
+	if the noun is cursed and the noun is worn and the player is not a cultist and the noun is curse-sticky:
 		now the noun is sure;
 		say "It refuses to budge!" instead;
 	if the noun is locked clothing and the noun is worn, say "It's locked!" instead;

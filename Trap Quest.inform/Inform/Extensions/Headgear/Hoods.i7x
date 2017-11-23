@@ -54,14 +54,14 @@ To compute recipe specific cursing of (T - a hood):
 
 To decide which number is the dexterity-influence of (H - a hood):
 	let D be 0;
-	if the class of the player is latex fetish model:
+	if the player is a latex fetish model:
 		repeat with L running through cursed latex clothing worn by the player:
 			unless L is H, increase D by 3;
 	decide on D.
 
 To decide which number is the strength-influence of (H - a black hood):
 	let S be 0;
-	if the class of the player is latex fetish model:
+	if the player is a latex fetish model:
 		if there is a worn cursed wrist bond, increase S by 2;
 		if there is a worn cursed ankle bond, increase S by 2;
 		if there is a worn cursed ballgag, increase S by 1;

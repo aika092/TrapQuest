@@ -1,11 +1,11 @@
 Altars by Objects begins here.
 
 
-The dungeon altar is in Dungeon28.  The dungeon altar is not portable.  The description of the dungeon altar is "[AltarDesc]".  The dungeon altar has a number called charge.  The charge of the dungeon altar is usually -200.  The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]".  The indefinite article of the dungeon altar is "an".  The text-shortcut of dungeon altar is "al".
+The dungeon altar is in Dungeon28.  The dungeon altar is not portable.  The description of the dungeon altar is "[AltarDesc]".  The dungeon altar has a number called charge.  The charge of the dungeon altar is usually -200.  The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the player is a priestess and the charge of item described > 0] (unsafe)[otherwise if the player is a priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]".  The indefinite article of the dungeon altar is "an".  The text-shortcut of dungeon altar is "al".
 
 To say AltarDesc:
 	if images visible is 1, display figure of dungeon altar;
-	say "A large stone slab held up by two statues of men naked except for loincloths.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]".
+	say "A large stone slab held up by two statues of men naked except for loincloths.[if the player is a priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the player is a priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]".
 Figure of dungeon altar is the file "altar1.png".
 
 The woods altar is in Woods20.  The woods altar is not portable.  The description of the woods altar is "[WoodsAltarDesc]".  The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]".  Understand "small" as the woods altar.  The indefinite article of the woods altar is "an".  The text-shortcut of woods altar is "al".
@@ -78,12 +78,12 @@ Check praying something with:
 				AltarPunish the player;
 			otherwise:
 				AltarPunish the noun;
-			if the class of the player is priestess, say "A voice appears in your head:  'Sister, you should know better than to provoke me!'" instead;
+			if the player is a priestess, say "A voice appears in your head:  'Sister, you should know better than to provoke me!'" instead;
 			say "A voice appears in your head:  'Do not test my powers so often!'" instead;
 		otherwise if the noun is demonic:
 			AltarPunish the player;
 			say "A voice appears in your head: 'How dare you place such a thing on my altar!'" instead;
-		otherwise if the class of the player is succubus and the souls of the player < 1:
+		otherwise if the player is a succubus and the souls of the player < 1:
 			say "The altar appears inert. It seems the Goddess who rules it isn[']t inclined to help you." instead.
 
 To AltarPunish (T - a thing):
@@ -111,13 +111,13 @@ To AltarPunish (C - a bottle):
 
 Carry out praying something with:
 	if the second noun is dungeon altar:
-		if the class of the player is succubus and the souls of the player > 0:
+		if the player is a succubus and the souls of the player > 0:
 			say "You feed one of the souls stored in your body into yourself for a moment, fooling the altar into accepting your prayer.";
 			decrease the souls of the player by 1;
 		if the noun is headgear and the noun is worn by the player:
 			if the noun is not blessed:
-				if the class of the player is not adventurer or the virgin of the player is 0 or the noun is runic headband or the noun is severed-tentacle:
-					say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if][if the noun is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
+				if the player is not a adventurer or the virgin of the player is 0 or the noun is runic headband or the noun is severed-tentacle:
+					say "A voice appears in your head:  '[if the player is a priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if][if the noun is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
 					bless the noun;
 					now the noun is sure;
 				otherwise:
@@ -128,7 +128,7 @@ Carry out praying something with:
 				reset dungeon altar;
 			otherwise:
 				let C be a random off-stage golden warrior priestess outfit;
-				if the class of the player is virgin warrior and C is clothing:
+				if the player is a virgin warrior and C is clothing:
 					let D be a random worn overdress;
 					if D is clothing:
 						repeat with X running through worn breast covering clothing:
@@ -160,7 +160,7 @@ Carry out praying something with:
 				say "Nothing seems to happen.";
 		otherwise if the noun is bottle:
 			if the noun is cursed:
-				say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I shall remove this curse for you!'";
+				say "A voice appears in your head:  '[if the player is a priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I shall remove this curse for you!'";
 				bless the noun;
 				now the curse-ID of the noun is sure;
 				reset dungeon altar;
@@ -168,12 +168,12 @@ Carry out praying something with:
 				say "Nothing happens.  It [if the noun is sure]is already[otherwise]must already be[end if] blessed!";
 				now the noun is sure;
 			otherwise:
-				say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I tried, but different magic is needed to bless this item!  Seek the witch in the lands above[unless the class of the player is priestess].  Now allow me to rest for a minute, I must recover from the attempt[end if].'";
-				unless the class of the player is priestess, now the charge of the second noun is 60;
+				say "A voice appears in your head:  '[if the player is a priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I tried, but different magic is needed to bless this item!  Seek the witch in the lands above[unless the player is a priestess].  Now allow me to rest for a minute, I must recover from the attempt[end if].'";
+				unless the player is a priestess, now the charge of the second noun is 60;
 				now the curse-ID of the noun is sure;
 		otherwise if the noun is cursable clothing or the noun is insertable:
 			if the noun is not blessed:
-				say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if][if the noun is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
+				say "A voice appears in your head:  '[if the player is a priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if][if the noun is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
 				bless the noun;
 				now the noun is sure;
 				if the noun is not blessed and the noun is worn and the noun is not piercing: [i.e. it was cursed]
@@ -183,7 +183,7 @@ Carry out praying something with:
 			otherwise:
 				say "Nothing seems to happen.";
 		otherwise if the noun is the player:
-			say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I shall help you on your quest!";
+			say "A voice appears in your head:  '[if the player is a priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I shall help you on your quest!";
 			MagicPowerUp 1;
 			while 1 is 1:
 				let R be a random number from 1 to 9;
@@ -386,7 +386,7 @@ Carry out praying something with:
 				say "Nothing happens.". 
 
 To reset dungeon altar:
-	if the class of the player is priestess and the player is female and the virgin of the player is 1, now the charge of the second noun is 120;
+	if the player is a priestess and the player is female and the virgin of the player is 1, now the charge of the second noun is 120;
 	otherwise now the charge of the second noun is 300;
 	if there is a worn demon tail plug, increase the charge of the second noun by 150.
 		

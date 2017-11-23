@@ -249,7 +249,7 @@ To decide which number is the weight of (XXX - belly):
 	if B > 0:
 		let bellymod be 100;
 		if the bellyskill of the player is 1, decrease bellymod by 66;
-		if there is a worn maternity dress or the class of the player is fertility goddess:
+		if there is a worn maternity dress or the player is a fertility goddess:
 			let M be a random overdress worn by the player;
 			if M is cursed:
 				if the pregnancy of the player is 0:

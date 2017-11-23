@@ -42,7 +42,7 @@ To decide which object is the unique-upgrade-target of (M - a maid outfit):
 	decide on nothing.
 
 Definition: a maid outfit (called M) is untransformable:
-	if the class of the player is maid and the potential-upgrade-target of M is nothing and the unique-upgrade-target of M is nothing, decide yes;
+	if the player is a maid and the potential-upgrade-target of M is nothing and the unique-upgrade-target of M is nothing, decide yes;
 	decide no.
 
 Part 1 - Playdude Maid Outfit

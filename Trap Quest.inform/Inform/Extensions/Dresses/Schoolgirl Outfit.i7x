@@ -115,7 +115,7 @@ To decide which number is the initial outrage of (C - a minimalist schoolgirl ou
 	decide on 9.
 
 Definition: a minimalist schoolgirl outfit (called C) is untransformable:
-	if the class of the player is schoolgirl, decide yes;
+	if the player is a schoolgirl, decide yes;
 	decide no.
 
 

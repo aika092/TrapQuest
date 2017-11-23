@@ -28,7 +28,7 @@ To compute periodic effect of (H - a cow ears):
 	compute cowgirl horniness.
 
 To compute cowgirl horniness:[cowgirls get horny if they're in the dungeon at the same time as the minotaur.]
-	if the player is in the dungeon and there is an alive minotaurs and the class of the player is cowgirl:
+	if the player is in the dungeon and there is an alive minotaurs and the player is a cowgirl:
 		let M be a random minotaur in the location of the player;
 		if M is monster and the arousal of the player < 3000 and the player is able to get horny:
 			say "All it takes is one whiff of the [M]'s virile musk to send a wave of arousal rippling through your body. [second custom style]M-moooo.[roman type][line break]";
@@ -84,7 +84,7 @@ To compute class outfit of (H - a cow ears):
 		otherwise if C is actually summonable:
 			say "[bold type]You feel a sudden coldness on your chest.  You look down to see that a cowbell has appeared![roman type][line break]";
 			summon C cursed;
-		otherwise if the class of the player is cowgirl and G is actually summonable:
+		otherwise if the player is a cowgirl and G is actually summonable:
 			say "[bold type]New boots appear around your ankles!  They have a cow pattern![roman type][line break]";
 			summon G cursed;
 			now the raw-magic-modifier of G is (the milk volume of breasts + a random number between -2 and 6) / 5.

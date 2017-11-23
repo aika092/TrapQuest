@@ -49,7 +49,7 @@ Check kneeling:
 				say "[variable custom style]I may be on my knees, but I'm not going to just submit![roman type][line break]" instead;
 		otherwise:
 			say "You are already kneeling!" instead;
-	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 12 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player:
+	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 12 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the player is a princess and princess-consort is not in the location of the player:
 		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet. [first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
 	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 10 and the bimbo of the player < 8 and the player is in danger and the player is not very horny and the delicateness of the player < 4:
 		say "[variable custom style]No way, I'm fighting until I drop![roman type][line break]" instead.
@@ -65,7 +65,7 @@ Carry out kneeling:
 		if the doses of X > 0 and a random number between 1 and the dexterity of the player < 4 and seconds > 0:
 			say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20].  What a waste[end if]!";
 			now the doses of X is 0;
-	if seconds > 0 and the class of the player is maid and there is a worn spray pink spraybottle:
+	if seconds > 0 and the player is a maid and there is a worn spray pink spraybottle:
 		compute a random pink spraybottle breaking;
 	let R be a random number between (the bimbo of the player / 2) and the bimbo of the player;
 	if there is a dangerous intelligent monster in the location of the player and seconds > 0 and the fatigue of the player > the buckle threshold of the player:
@@ -127,7 +127,7 @@ Report kneeling when the player is in danger and seconds > 1: [This is where we 
 	if there is an intelligent dangerous monster in the location of the player, now N is a random intelligent dangerous monster in the location of the player; [We only compute the reaction of one enemy.  We prioritise the reaction of intelligent monsters as they probably have a more interesting response.]
 	otherwise now N is a random dangerous monster in the location of the player;
 	compute correct kneeling reaction of N;
-	if the class of the player is princess, humiliate 20;
+	if the player is a princess, humiliate 20;
 	if newbie tips is 1 and the soreness of asshole > 5 or the soreness of vagina > 5, say "[one of][item style]Newbie tip: You could always try 'offer mouth' to avoid your sore holes getting any sorer!  Of course, it'll increase humiliation, and there's a chance it won't work.[roman type][line break][or][stopping]";
 	repeat with M running through dangerous monsters in the location of the player:
 		make M expectant. [Here we note that the monster is expectantly waiting to see if the player offers up a particular orifice.]

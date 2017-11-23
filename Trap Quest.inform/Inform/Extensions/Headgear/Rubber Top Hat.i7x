@@ -56,7 +56,7 @@ To compute class outfit of (H - a rubber top hat):
 					BustImplantsUp 1;
 				say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type]  Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple.  Somehow, your new dress has summoned breast implants inside of your boobs!";
 			now plastic-summoned is 1;
-		otherwise if the class of the player is silicone queen and P is actually summonable:
+		otherwise if the player is a silicone queen and P is actually summonable:
 			summon P cursed;
 			now P is pvc;
 			now the heel-height of P is 4;
@@ -64,7 +64,7 @@ To compute class outfit of (H - a rubber top hat):
 			if the silicone volume of breasts + a random number between 1 and 10 > 10, now P is speed;
 			otherwise now P is normal;
 			say "[bold type][if the player is upright]You suddenly shoot four inches upwards off the ground![otherwise]The soles of your feet are forced into an arch![end if][roman type][line break]A pair of [printed name of P] have appeared on your feet.";
-		otherwise if the class of the player is silicone queen and the total volume of hips < max ass size and the silicone volume of hips is 0:
+		otherwise if the player is a silicone queen and the total volume of hips < max ass size and the silicone volume of hips is 0:
 			AssImplantsUp 1;
 			say "[bold type]You feel and hear your ass expanding like stretchy rubber! Touching and feeling it, you can feel a tight, less squishy area in each cheek. Somehow, your dress has also summoned implants into your ass![roman type][line break]".
 

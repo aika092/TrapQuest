@@ -126,7 +126,7 @@ REQUIRES COMMENTING
 To HookPull:
 	now seconds is 3;
 	let S be the dexterity of the player;
-	if S > 4 or the class of the player is cheerleader:[cheerleaders always get a chance to try.]
+	if S > 4 or the player is a cheerleader:[cheerleaders always get a chance to try.]
 		if S < 9, now S is 9;
 		let R be a random number from 1 to S;
 		if R > 3:

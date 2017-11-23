@@ -8,7 +8,7 @@ Check opening a christmas gift:
 
 Unwrapping is an action applying to one thing.
 Check unwrapping:
-	if the class of the player is living sex doll, say "You don't have the manual dexterity to do that." instead;
+	if the player is a living sex doll, say "You don't have the manual dexterity to do that." instead;
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	if the player is in danger, say "You should deal with the threatening monsters first." instead.
 Carry out unwrapping:

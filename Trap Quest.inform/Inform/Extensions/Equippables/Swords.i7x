@@ -319,7 +319,7 @@ To decide which number is the damage improvement of (W - a demon broadsword):
 To compute periodic effect of (H - a demon broadsword):
 	if the arousal of H > 0:
 		let N be 30;
-		if the class of the player is priestess, decrease N by 10;
+		if the player is a priestess, decrease N by 10;
 		if a random number between 1 and N is 1 and H is not dildoed:
 			decrease the arousal of H by 1;
 			say "Your [H] seems to calm down a bit.";
@@ -356,7 +356,7 @@ To compute periodic effect of (H - a demon broadsword):
 				
 
 Check taking a demon broadsword:
-	if the class of the player is priestess, say "The sword shrinks away from your touch. Somehow." instead.
+	if the player is a priestess, say "The sword shrinks away from your touch. Somehow." instead.
 
 Carry out taking a demon broadsword:
 	now the noun is identified;
@@ -366,7 +366,7 @@ Report taking a demon broadsword:
 	try wearing the noun;
 
 Report wearing a demon broadsword:
-	if the player is a sissy or the class of the player is princess or the class of the player is royal slave or a random demon lord is alive or there is a worn demonic clothing:
+	if the player is a sissy or the player is a princess or the player is a royal slave or a random demon lord is alive or there is a worn demonic clothing:
 		say "It shivers visibly as your fingers close around the hilt![line break]";
 		compute demon punishment of the noun;
 	otherwise:

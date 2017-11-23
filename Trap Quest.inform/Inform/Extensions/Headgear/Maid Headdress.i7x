@@ -45,7 +45,7 @@ Report going:
 				summon M cursed;
 			otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
 				say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
-		if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
+		if the player is a princess and the number of monsters in the location of the player > 0, humiliate 10;
 		if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
 			if the largeness of breasts > 10 and the semen coating of breasts is 0:
 				say "[one of]Your [BreastDesc] become smeared with [semen] as they rub along the ground.[or][or][or][cycling]";

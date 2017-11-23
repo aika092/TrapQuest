@@ -28,7 +28,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the delicateness of the player:
-	if the class of the player is living sex doll, decide on 1;
+	if the player is a living sex doll, decide on 1;
 	if the humiliation of the player >= 40000, decide on 20;
 	let S be the raw delicateness of the player;
 	if submissive sex addict is 1, increase S by 7;

@@ -142,7 +142,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 	if the number of body parts penetrated by M < 2, now spare-tentacle is 1;
 	if M is large and the number of body parts penetrated by M < 3, now spare-tentacle is 1;
 	if M is massive and the number of body parts penetrated by M < 4, now spare-tentacle is 1;
-	if spare-tentacle is 1 and (a random number between 1 and 4 > 1 or the class of the player is schoolgirl or the class of the player is magical girl):
+	if spare-tentacle is 1 and (a random number between 1 and 4 > 1 or the player is a schoolgirl or the player is a magical girl):
 		choose a sex method;
 		if targeted-body-part is face:
 			say "The [M] decides to escalate things and before you can react it has forced another of its warm, thick appendages into your open mouth!  It thrusts away at the same pace as the other[if the number of orifices penetrated by M is 2]s[end if].  [if M is massive]The tentacle is so large that your jaw is forced into a painfully open position.[otherwise]The tentacle keeps hitting the back of your throat, causing you to make loud gagging noises.[end if]";
@@ -240,7 +240,7 @@ This is the tentacle monster climaxes rule:
 		now M is large;
 		now the text-shortcut of M is "ltm";
 	now the sleep of M is 250;
-	if the class of the player is schoolgirl, decrease the sleep of M by 100;
+	if the player is a schoolgirl, decrease the sleep of M by 100;
 	if the variety of M is 3, decrease the sleep of M by 100;
 	deinterest M;
 	rule succeeds.

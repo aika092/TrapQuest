@@ -132,7 +132,7 @@ To compute perception of (M - a mechanic):
 	otherwise if there is a worn messed knickers and diaper quest is 0:
 		say "[first custom style]'Nope, nope nope, I'm going to pretend I can't smell that.'[roman type][line break]";
 		bore M;
-	otherwise if the class of the player is living sex doll:
+	otherwise if the player is a living sex doll:
 		say "[first custom style]'Ooh, a sex doll.  Perfect - I'll have a quick break to get my rocks off, then get back to work.'[roman type][line break]";
 		anger M;
 	otherwise if there is a worn steel collar:
@@ -150,13 +150,13 @@ To compute perception of (M - a mechanic):
 			say "[speech style of M]'YOU!  Did I tell you that your punishment sentence was over?  In this hotel, the submissives must obey every order of the Masters.  Let me show you what happens if you don't.'[roman type][line break]";
 			FavourDown M by 4;
 			anger M;
-	otherwise if the class of the player is faerie:
+	otherwise if the player is a faerie:
 		say "[speech style of M]'Hey, fairy. Get the fuck over here and tell me what you've done with my amulet!'[roman type][line break]";
 		anger M;
 	otherwise if M is mating:
 		say "[first custom style]'Well if it isn't my babymomma!  [if the player is flying]But what are you doing up there?!'[otherwise]How are you doing?'[end if][roman type][line break]";
 		calm M;
-	otherwise if the class of the player is princess:
+	otherwise if the player is a princess:
 		say "[first custom style]'[if diaper quest is 0]Hey, [bitch]. [end if]You obviously don[']t know anything about that outfit you[']re wearing. Let me teach you a little lesson.'[roman type][line break]";
 		anger M;
 	otherwise if M is objectifying the player:
@@ -262,7 +262,7 @@ This is the mechanic claims amulet rule:
 		if S is steel collar:
 			say "With a snap of his fingers, the steel collar unlatches itself and drops from your neck. ";
 			now S is in the location of the player;
-		if (a random number between 1 and 2 is 1 and the player-class is not succubus) or the class of the player is priestess or there is a worn pure totem:[the mechanic will always transform if you are a demon]
+		if (a random number between 1 and 2 is 1 and the player-class is not succubus) or the player is a priestess or there is a worn pure totem:[the mechanic will always transform if you are a demon]
 			say "He puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room.  [first custom style]'I can feel the power running through my veins!  Yes, yes!  Haha!  I am back, baby!  Here, have a small reward for your troubles...'[roman type][line break]";
 			compute xavier reward of M;
 			say "The [M] starts to wander off, completely ignoring you.";
@@ -304,7 +304,7 @@ To compute xavier reward of (M - a mechanic):
 		IntUp 4;
 
 This is the mechanic strips princess rule:
-	if the class of the player is princess:
+	if the player is a princess:
 		if there is a monster penetrating face or there is a monster penetrating breasts:
 			rule succeeds; [Mechanic will wait until he has access to your chest]
 		let D be a random worn royal attire clothing;
@@ -318,7 +318,7 @@ The mechanic strips princess rule is listed in the mechanic unique punishment ru
 
 This is the mechanic applies collar rule:
 	let C be a random steel collar;
-	if C is actually summonable and C is not in the location of the player and the class of the player is not living sex doll and the bimbo of the player <= 15 and the xavier-power of current-monster < 2 and the player is souled and the power-stolen of current-monster is 0:
+	if C is actually summonable and C is not in the location of the player and the player is not a living sex doll and the bimbo of the player <= 15 and the xavier-power of current-monster < 2 and the player is souled and the power-stolen of current-monster is 0:
 		if there is a monster penetrating face, rule succeeds; [Mechanic waits silently for an opening]
 		say "[first custom style]'Haha[if diaper quest is 1], you're my baby slave now[end if]!'[roman type]  CLUNK!  The [current-monster] takes this opportunity to force [if C is in the location of the player or C is held]the[otherwise]a smooth, round[end if] steel collar around your neck and click it shut.  The locking mechanism is completely internal, meaning it's impossible to remove.  [if the player is able to speak][variable custom style]'Hey, what the hell?'[line break][end if][first custom style]'This is my own special invention.  It is completely impossible to take off without my knowledge, and when you get aroused, it will make sure you don't cool off until you orgasm.'[paragraph break]";
 		summon C;
@@ -398,7 +398,7 @@ To say StrikingFailureFlav of (M - a mechanic) on (B - a body part):
 To compute vaginal climax of (M - a mechanic):
 	TimesFuckedUp M by 1;
 	if M is wrapped:
-		if the player is a pussy slut or (the class of the player is maid and a random number between 1 and 2 is 2) or (a random number between 1 and 4 > 1):
+		if the player is a pussy slut or (the player is a maid and a random number between 1 and 2 is 2) or (a random number between 1 and 4 > 1):
 			say CondomPieFlav of M;
 			WombFill the semen load of M;
 			now M is unwrapped;
@@ -565,18 +565,18 @@ To say FirstResponse of (M - a mechanic):
 	say "[first custom style]'Hi there.'[roman type][line break]".
 
 To say RepeatResponse of (M - a mechanic):
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[first custom style]'[one of]The patrons are looking forward to having you clean up in their rooms. Don[']t keep them waiting.'[or]Hey, aren[']t you the maid? Stop flirting and get back to work.'[or]I[']m not paying you to make conversation, maid. Granted I[']m not really paying you to [']clean['] either...'[or]Ugh, is this about the pay? The patrons will compensate you when you do your job. Better get going, they might give less if you keep them waiting.'[or]If you[']re here looking for instructions, you[']re in luck. Stop bothering me and get back to work. Clear anything up?'[at random][roman type][line break]";
 	otherwise:
 		say "[first custom style]'Hi again.'[roman type][line break]".
 
 To say UnfriendlyResponse of (M - a mechanic):
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[first custom style]'[one of]In your contract, it said something about waxing hard poles. Get on your knees, I[']ll demonstrate what I mean.'[or]It's time you did some real work for a change, maid. Get on your knees.'[or]Do you feel like a fuck? Because if you value your job, you do.'[or]Hey maid. I[']m giving you a break from serving patrons. Get on your knees, because you[']re going to serve me instead.'[or]Guess what, your boss is horny, get on your knees.'[at random]";
 	say "[first custom style]'[one of]Shut up, or I'll make you.'[or]If you value your pretty face, you[']ll get on your knees. Hurry, before I lose my patience.'[or]Shut your mouth.'[or]If you keep running your mouth, I[']ll have to put something in it.'[at random][roman type][line break]".
 
 To say DominantResponse of (M - a mechanic):
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[first custom style]'[one of]There[']s a reason I keep sluts like you on my dime.'[or]I[']m not paying you to stand there and not get fucked. In fact, I[']m not quite sure I[']m paying you at all.'[or]Anything not to do your job, eh? Alright, get on your knees.'[or]I think I[']ve heard this one. So horny that you can[']t focus on your job. I[']ll bite. Get on your knees.'[at random][roman type][line break]";
 	otherwise if M is friendly:
 		say "[first custom style]'[one of]Haha, yes this is my realm - er, I mean hotel, and I'll fuck whoever I want, whenever I want!'[or][if the sex addiction of the player < 10]Wow, you're still hung up on that?  Must have felt pretty good.'[otherwise]Considering how much of a whore you are, what I did was more like theft...'[end if][at random][roman type][line break]";
@@ -599,13 +599,13 @@ To say WhereAnswer of (M - a mechanic):
 	say "[first custom style]'You're in the best fetish hotel in all the lands.  Enjoy your stay!'[roman type][line break]".
 
 To say WhoAnswer of (M - a mechanic):
-	say "[first custom style]'[if the class of the player is virgin warrior][one of]You[']ll know who I am soon enough. Just you wait.'[or]You really don[']t know? I guess any idiot can become a warrior as long as they're a prude.'[or]Who am I? Like you don[']t already know.'[or]If you want to know who I am, you should give me a go at that cherry of yours first.'[or]I[']ll tell you who I am...if you let me pop that cherry of yours.'[at random][otherwise]I[']m the mechanic, I designed and made all those lovely robots you see wandering around.  That[']s right, I[']m not just a pretty face!'[end if][roman type][line break]".
+	say "[first custom style]'[if the player is a virgin warrior][one of]You[']ll know who I am soon enough. Just you wait.'[or]You really don[']t know? I guess any idiot can become a warrior as long as they're a prude.'[or]Who am I? Like you don[']t already know.'[or]If you want to know who I am, you should give me a go at that cherry of yours first.'[or]I[']ll tell you who I am...if you let me pop that cherry of yours.'[at random][otherwise]I[']m the mechanic, I designed and made all those lovely robots you see wandering around.  That[']s right, I[']m not just a pretty face!'[end if][roman type][line break]".
 		
 To say StoryAnswer of (M - a mechanic):
 	say "[first custom style]'[one of]I[']m an extra planar demon, cursed to forever walk this mortal plane as a shadow of my true self[if the player-class is not succubus]. Just kidding, I[']m just looking for a pay check more than anything[end if].'[or]Well, I love kinky sex and I love making robots, so when Nintendolls gave me this opportunity, how could I turn it down?'[or]I entered an internet sweepstakes to get my robot design featured in the kinkiest game of all time. Naturally, I blew all the other entrants out of the water, but just to make sure I won, I hacked into the design database and sabotaged all the other contestants. Nintendolls found out, but the company was so impressed they gave me a permanent job creating and maintaining every robot on this level.'[or]This will probably go over your head, but this is a virtual reality game. I[']m simply a programming construct meant to resemble an actual human man.'[as decreasingly likely outcomes][roman type][line break]".
 
 To say EscapeAnswer of (M - a mechanic):
-	if the class of the player is maid:
+	if the player is a maid:
 		say "[first custom style]'[one of]You are not going anywhere. Get back to work.[or]A-ah! We[']ll discuss quitting time when it[']s actually quitting time, yeah?'[or]Leaving so soon? You[']ve barely done any work.'[or]I[']d tell you, but we[']re actually a bit understaffed at the moment. See, there[']s this maid who[']d rather engage in idle chitchat than do the work she[']s being paid for. I might fire her soon.'[in random order][roman type][line break]";
 	otherwise:
 		say "[first custom style]'[one of]Err, probably through the front door?'[or]Probably the same way you came in?'[at random][roman type][line break]".

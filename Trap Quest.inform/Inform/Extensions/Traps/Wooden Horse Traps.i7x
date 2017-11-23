@@ -50,7 +50,7 @@ Carry Out HorsePressing:
 		if the silicone volume of breasts > 0 and F is actually summonable:
 			say "Huge pink fake nails appear on each of your fingers!  You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break.  The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
 			summon F cursed;
-		otherwise if the player is not wrist bound and the class of the player is not living sex doll:
+		otherwise if the player is not wrist bound and the player is not a living sex doll:
 			say "Leather cuffs appear around your wrists!  [if the bimbo of the player > 13][second custom style]Ooh, how kinky.[otherwise][variable custom style]Fuck...[end if][roman type][line break]";
 			let W be a random off-stage pair of wristcuffs;
 			if W is clothing:

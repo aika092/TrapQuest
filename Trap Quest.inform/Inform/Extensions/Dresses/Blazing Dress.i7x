@@ -25,7 +25,7 @@ To decide which number is the strength-influence of (C - a blazing dress):
 	decide on 2.
 
 Definition: a blazing dress (called C) is untransformable:
-	if the class of the player is succubus, decide yes;
+	if the player is a succubus, decide yes;
 	decide no.
 
 

@@ -65,7 +65,7 @@ Definition: A demoness (called M) is willing to shag:
 	decide no.
 
 Definition: a demoness (called M) is objectifying the player:
-	if the class of the player is cheerleader, decide no;
+	if the player is a cheerleader, decide no;
 	if (the bimbo of the player >= 20 or the appearance of the player >= 20), decide yes;
 	if the appearance of the player > the bimbo tolerance of M, decide yes;
 	if the delicateness of the player > 6 + the favour of M / 4, decide yes;
@@ -119,7 +119,7 @@ To decide which number is the bimbo tolerance of (M - a demoness):
 Definition: a demoness (called M) is uniquely unfriendly:
 	if M is objectifying the player, decide yes;
 	if M is babifying the player, decide yes;
-	if the class of the player is priestess, decide yes;
+	if the player is a priestess, decide yes;
 	decide no.
 
 Definition: a demoness (called M) is ally:
@@ -137,7 +137,7 @@ Definition: a demoness (called M) is dealing:
 	let S be the raw sex addiction of the player + the raw semen taste addiction of the player;[calculate once instead of twice]
 	if S is 40, decide no;
 	if S < the favour of M + 2, decide yes;
-	if the class of the player is faerie, decide yes;
+	if the player is a faerie, decide yes;
 	decide no;
 
 To compute perception of (M - a demoness):
@@ -155,7 +155,7 @@ To compute perception of (M - a demoness):
 		bore M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if the class of the player is priestess:
+		if the player is a priestess:
 			say "Immediately upon seeing you, she shrieks: [speech style of M]Your holy aura has no power out here, mortal!  Get on your knees and submit to me as your new Mistress, or I will make you!'[roman type][line break][if M is friendly]Apparently she doesn't like priestesses...[end if]";
 			if image cutscenes is 1, display figure of demoness interact 7;
 			say "Your holy aura does seem to have some effect against her, as you are easily able to resist her dominating aura which tries to make you kneel on command.";
@@ -224,7 +224,7 @@ To compute DQ perception of (M - a demoness):
 		anger M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if the class of the player is priestess:
+		if the player is a priestess:
 			say "Immediately upon seeing you, she shrieks: [speech style of M]Your holy aura has no power out here, mortal!  Get on your knees and submit to me as your new Mistress, or I will make you!'[roman type][line break][if M is friendly]Apparently she doesn't like priestesses...[end if]";
 			say "Your holy aura does seem to have some effect against her, as you are easily able to resist her dominating aura which tries to make you kneel on command.";
 		otherwise:
@@ -468,7 +468,7 @@ To make the player soulless:
 
 This is the demoness doesn't care for skinny bitches rule:
 	let M be current-monster;
-	if the player is souled and (the class of the player is priestess or the virgin bonus of the player > 0):
+	if the player is souled and (the player is a priestess or the virgin bonus of the player > 0):
 		say "[speech style of M]'Your soul shines so brightly... Perhaps it can sate my hunger!'[roman type][line break]";
 		if image cutscenes is 1, display figure of demoness cutscene 1;
 		say "The [M] places her hand on your chest and begins to chant, and you suddenly feel cold inside! She then walks off, laughing.";
@@ -979,7 +979,7 @@ Section 2 - Damage
 
 To decide which number is the damage modifier of (M - a demoness):
 	[50% chance of +2 damage with priestess vs demoness]
-	if the class of the player is priestess and M is demoness and a random number between 1 and 2 is 1:
+	if the player is a priestess and M is demoness and a random number between 1 and 2 is 1:
 		now critical is 1;
 		decide on 2;
 
@@ -1214,7 +1214,7 @@ To compute unfriendly drink of (M - a demoness):
 
 To compute friendly drink of (M - a demoness):
 	let H be a random worn heels;
-	if (the class of the player is succubus or H is clothing and the heel-height of H > 3) and M is dealing:[only a dummy would ask anything from a demoness!]
+	if (the player is a succubus or H is clothing and the heel-height of H > 3) and M is dealing:[only a dummy would ask anything from a demoness!]
 		say "[one of]The [M] seems surprised for a second and smirks. [speech style of M]'I can do more than quench your thirst, you know. Get on your knees and open wide. I[']ll do the rest.'[roman type][or][speech style of M]'You[']re dumber than you look. Accept my deal and you get something to drink.'[roman type][stopping]";
 	otherwise if M is dealing:
 		say "[speech style of M]'[one of]I don[']t give handouts. But I promise a drink and more if you lend me your mouth for a while.'[or]I told you about the deal already, don[']t waste my time if you aren[']t interested.'[stopping][roman type]";
@@ -1265,7 +1265,7 @@ To compute perception of (M - an abyssal demoness):
 		calm M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if the class of the player is priestess:
+		if the player is a priestess:
 			say "Immediately upon seeing you, she shrieks: [speech style of M]Your holy aura has no power out here, mortal!  Get on your knees and submit to me as your new Mistress, or I will make you!'[roman type][line break][if M is friendly]Apparently she doesn't like priestesses...[end if]";
 			say "Your holy aura does seem to have some effect against her, as you are easily able to resist her dominating aura which tries to make you kneel on command.";
 		otherwise:
@@ -1275,14 +1275,14 @@ To compute perception of (M - an abyssal demoness):
 				now seconds is 1;
 				try kneeling;
 	otherwise if the player is prone:
-		say "[speech style of M]'[if the class of the player is cultist]Servant.'[otherwise if the class of the player is succubus]Good practice, sister. Glad to see some of his servants aren't idiots.'[otherwise]Get used to crawling, girl, all will be servants eventually.'[end if][roman type][line break]";
+		say "[speech style of M]'[if the player is a cultist]Servant.'[otherwise if the player is a succubus]Good practice, sister. Glad to see some of his servants aren't idiots.'[otherwise]Get used to crawling, girl, all will be servants eventually.'[end if][roman type][line break]";
 		distract M;
 	otherwise: [We know by know that the player must be upright.]
-		if the class of the player is succubus:
+		if the player is a succubus:
 			say "[speech style of M]'The mortals here are mine, sister. Do not forget that.'[roman type][line break]";
 			distract M;
 		otherwise:
-			say "[speech style of M]'[if the class of the player is cultist][one of]You, servant. I don't recognize you, but then again you mortals all blend together for me. Standing in my presence is a direct challenge to my authority. Get on your knees. Now.'[or]KNEEL! KNEEL IN MY PRESENCE, PEON!'[stopping][otherwise]Kneel in my presence, mortal. Quickly, I wouldn't want to hurt you. HAHAHA!'[end if][roman type][line break]Obey?[line break]";
+			say "[speech style of M]'[if the player is a cultist][one of]You, servant. I don't recognize you, but then again you mortals all blend together for me. Standing in my presence is a direct challenge to my authority. Get on your knees. Now.'[or]KNEEL! KNEEL IN MY PRESENCE, PEON!'[stopping][otherwise]Kneel in my presence, mortal. Quickly, I wouldn't want to hurt you. HAHAHA!'[end if][roman type][line break]Obey?[line break]";
 			if a random number between 3 and 22 < the delicateness of the player and the player is not dildo stuck:[I'm not sure if this is redundant.]
 				say "The [M] has such a powerful dominating aura that you mindlessly drop to your knees in front of her[if the anal sex addiction of the player > 6], nearly drooling at the thought of what she could do to you with those heels.[end if].";
 				now seconds is 1;

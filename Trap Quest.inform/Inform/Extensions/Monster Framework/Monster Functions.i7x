@@ -187,7 +187,7 @@ REQUIRES COMMENTING
 +!]
 To loot (M - a monster):
 	let X be a random off-stage plentiful accessory;
-	if the class of the player is santa's little helper:
+	if the player is a santa's little helper:
 		now X is a random off-stage christmas gift;
 	unless X is nothing:
 		now X is in the location of the player;

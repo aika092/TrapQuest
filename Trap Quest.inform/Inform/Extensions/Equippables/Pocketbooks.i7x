@@ -252,10 +252,10 @@ To compute studying:
 	say "The [printed name of G] falls open, filling its pages with intricate sketches as it siphons off the last of the energy from the bowl. [if the charge of G > 5]It doesn't look any stronger, really.[otherwise]It looks a lot stronger![end if]";	
 	increase the charge of G by 1;
 	if the number of worn scrunchies is 2, increase the charge of G by 1;
-	if the class of the player is schoolgirl and a random number between 1 and 3 is 1:[only the schoolgirl can repair the book.]
+	if the player is a schoolgirl and a random number between 1 and 3 is 1:[only the schoolgirl can repair the book.]
 		if the tear of G > 0:
 			decrease the tear of G by 1;
-	if the charge of G > 5 and the class of the player is not schoolgirl, now the charge of G is 5;
+	if the charge of G > 5 and the player is not a schoolgirl, now the charge of G is 5;
 	if the charge of G > 10, now the charge of G is 10.
 
 To compute attack of (W - a notebook) at (M - a monster):
@@ -268,7 +268,7 @@ To compute attack effect of (W - a notebook):[the effect of tear is going to be 
 	if attack-type is 1 and the noun is study-buddy:
 		let D be a random number between the times-fucked of the noun and (the times-fucked of the noun * 2);[the stronger the attack the higher the risk]
 		if W is cursed, increase D by 3;
-		unless the class of the player is schoolgirl, increase D by 2;
+		unless the player is a schoolgirl, increase D by 2;
 		if D + (the tear of W * 2) > 20 and the tear of W > 0:
 			say "The book emits a sharp crack and sends a whizzing orb of energy careening into your chest. The wind is instantly knocked out of you and you collapse, shivering uncontrollably.";
 			FatigueUp 25;

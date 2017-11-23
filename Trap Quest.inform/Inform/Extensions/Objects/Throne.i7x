@@ -55,7 +55,7 @@ Check entering the throne:
 		now the charge of the throne is 300;
 		let R be a random number from 1 to 6;
 		if there is worn headgear, increase R by 1;
-		if the class of the player is princess, increase R by 1;
+		if the player is a princess, increase R by 1;
 		if R is 2 and asshole is actually occupied, now R is 3;
 		if R < 3 and (the latex-transformation of the player > 3 or the noun is transformed), now R is 3;
 		if first-throne is 0:
@@ -65,7 +65,7 @@ Check entering the throne:
 			let H be a random tiara;
 			summon H cursed;
 			say "A silver tiara appears on your head.  You feel important.[second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
-		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the class of the player is adult baby or the player is a sissy))):
+		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the player is a princess and diaper quest is 1) or the player is a adult baby or the player is a sissy))):
 			if the noun is transformed:
 				let K be a random worn knickers;
 				if rectum > 3:
@@ -121,7 +121,7 @@ Check entering the throne:
 			if image cutscenes is 1, display figure of throne cutscene 1;
 			now the throne is triggered instead;
 		otherwise if R is 3:
-			if the class of the player is princess and the throne is not expired:
+			if the player is a princess and the throne is not expired:
 				say "[if the bimbo of the player < 7]You straighten your back and cross your legs to keep anyone from peering up your skirt. A strange aura begins to emanate from your tiara, distorting the bleak grey stone of the walls around you into pure white marble. You hear slow, measured footsteps from outside the room, just as a member of your royal guard enters through the doorway. He bows respectfully.[otherwise if the bimbo of the player < 12]You straighten your back and pull down your skirt to make it a little challenging to see your goods. A strange aura begins to emanate from your tiara, distorting the bleak grey stone of the walls around you into pure white marble. You hear slow, measured footsteps from outside the room, just as a member of your royal guard enters through the doorway. He bows respectfully.[otherwise if there is worn knickers]You straighten your back and splay your legs so anyone passing by can see your [printed name of a random worn knickers]. A strange aura begins to emanate from your tiara, distorting the bleak grey stone of the walls around you into pure white marble. You hear slow, measured footsteps from outside the room, just as a member of your royal guard enters through the doorway. He bows respectfully.[otherwise if the player is male]You straighten your back and splay your legs so anyone passing by can see your [ShortDesc of penis] and [ShortBallsDesc]. A strange aura begins to emanate from your tiara, distorting the bleak grey stone of the walls around you into pure white marble. You hear slow, measured footsteps from outside the room, just as a member of your royal guard enters through the doorway. He bows respectfully.[otherwise]You straighten your back and splay your legs so anyone passing by can see your [vagina]. A strange aura begins to emanate from your tiara, distorting the bleak grey stone of the walls around you into pure white marble. You hear slow, measured footsteps from outside the room, just as a member of your royal guard enters through the doorway. He bows respectfully.";
 				say "[first custom style]'[one of]Milady.'[or]Your Highness.'[or]My liege.'[or]Princess.'[or]My lady.'[purely at random][roman type][line break]";
 				[say "[bold type]Press enter to continue.[roman type][line break]";
@@ -328,7 +328,7 @@ To ThroneDisconnect:
 	now busy is 0;
 	now the throne is not filling asshole;
 	if a random number between -1 and the TrapNo of the throne < 1:
-		say "[bold type]As you get up, the insertable part of the throne breaks off into your [asshole].[roman type]  As it detaches from the throne you feel it shifting in form as the [unless the class of the player is princess]Princess['] [end if]magic leaves it.";
+		say "[bold type]As you get up, the insertable part of the throne breaks off into your [asshole].[roman type]  As it detaches from the throne you feel it shifting in form as the [unless the player is a princess]Princess['] [end if]magic leaves it.";
 		let P be a random off-stage plentiful plug;
 		assign size (the openness of asshole + 2) to P;
 		summon P cursed;

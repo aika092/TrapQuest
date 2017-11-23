@@ -421,13 +421,13 @@ To say BimboGreet:
 		if M is mating and M is male:
 			say "[variable custom style]'Hey there baby daddy...'";
 		otherwise if the bimbo of the player < 4:
-			if M is royal guard and the class of the player is princess:
+			if M is royal guard and the player is a princess:
 				say "[second custom style]'Greetings, loyal subject!'";
 			otherwise:
 				say "[first custom style]'Hi there, pleased to meet you.'";
 		otherwise if the bimbo of the player < 8:
 			if M is royal guard:
-				if the class of the player is princess, say "[second custom style]'Keep up the good work, guard!'";
+				if the player is a princess, say "[second custom style]'Keep up the good work, guard!'";
 				otherwise say "[first custom style]'Hey, what's up, dude?'";
 			otherwise:
 				say "[first custom style]'Hey, what's up?'";
@@ -474,7 +474,7 @@ To say BimboQuestion:
 			otherwise if the flat intelligence of the player < 9:
 				say "'How do I get out of here safely?'";
 			otherwise if the flat intelligence of the player < 11:
-				say "'Any advice for [if the class of the player is princess]an adventurous princess[otherwise if the class of the player is maid]a cunning maid[otherwise if the bimbo of the player > 13]a lonely girl[otherwise]a noble adventurer[end if]?'";
+				say "'Any advice for [if the player is a princess]an adventurous princess[otherwise if the player is a maid]a cunning maid[otherwise if the bimbo of the player > 13]a lonely girl[otherwise]a noble adventurer[end if]?'";
 			otherwise:
 				say "'Can you teach me anything useful?'";
 	otherwise:

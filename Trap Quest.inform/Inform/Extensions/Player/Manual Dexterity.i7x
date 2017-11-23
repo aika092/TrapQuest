@@ -44,7 +44,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the living sex doll can't use hands rule:
-	if the class of the player is living sex doll:
+	if the player is a living sex doll:
 		if manual hands attempt is 1, say "You only have inflatable latex stumps for hands, so you can't do that!";
 		rule fails.
 The living sex doll can't use hands rule is listed first in the hands restriction rules.

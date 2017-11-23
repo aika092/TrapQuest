@@ -7,7 +7,7 @@ To decide which figure-name is clothing-image of (C - a mittens):
 
 To say ClothingDesc of (W - a mittens):
 	say "A pair of large pink baby mittens with a teddy bear pattern and small bells.  You lose some manual dexterity and some slapping power from wearing them.";
-	if the class of the player is adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
+	if the player is a adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
 
 To say ShortDesc of (W - a mittens):
 	say "large pink baby mittens".

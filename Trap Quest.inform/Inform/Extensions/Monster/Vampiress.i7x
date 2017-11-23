@@ -59,7 +59,7 @@ Definition: a vampiress (called M) is objectifying the player:
 		decide no;
 	if there is a worn tethering lipstick collar, decide yes;
 	if the objectification of M is 1, decide yes;
-	if the class of the player is cheerleader, decide no;
+	if the player is a cheerleader, decide no;
 	if the bimbo of the player >= 20 or the appearance of the player >= 20 or the appearance of the player > the bimbo tolerance of M:
 		now the objectification of M is 1;
 		decide yes;
@@ -71,20 +71,20 @@ To compute perception of (M - a vampiress):
 	if there is a worn tethering lipstick collar:
 		say "[speech style of M]It's those sticky fingers of yours that make me so determined to give you a sticky face.[roman type][line break]";
 		anger M;
-	otherwise if the class of the player is living sex doll:
+	otherwise if the player is a living sex doll:
 		say "[speech style of M]'A sex doll... How quaint. You've amused me slightly. Now get out of my sight.'[roman type][line break]";
 		distract M;
-	otherwise if the class of the player is vampire spawn:
+	otherwise if the player is a vampire spawn:
 		if the player is craving:
 			say "[speech style of M]'Hello there, my youngest child. Don't forget to feast. I wouldn't want you to lose your strength.'[roman type][line break]";
 		otherwise if the player is desperately craving:
 			say "[speech style of M]'...You look awful. You mustn't let yourself go hungry. I recommend going to find one of those wenches to present your face to. Surely they will feed you.'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Hello there, my youngest child. You don't look hungry yet but, mark my words, you will be. Don't go too long without feasting on some sort of seminal fluid or you'll regret it.'[roman type][line break]";
-	otherwise if the class of the player is vixen:
+	otherwise if the player is a vixen:
 		say "[speech style of M]'[one of]Did you think you could fool me with that disguise, fox girl? Don[']t worry, darling. This time, everything you[']ll be taking from me is free.'[or]There you are, darling. I have something here that you simply must take. I won[']t take no for an answer, darling.'[stopping][roman type]";
 		anger M;
-	otherwise if the class of the player is faerie:
+	otherwise if the player is a faerie:
 		say "[speech style of M]'[one of]Here to try and steal my mansion from me? Unfortunately it's mine now, darling.'[or]Oh. There are always more of you. If I impregnate you, will go home?'[or]Begone, I have no interest if you cannot be turned. Don[']t make me get the broom.'[at random][roman type]";
 		anger M;
 	otherwise if there is a worn messed knickers and M is interested:
@@ -217,7 +217,7 @@ To say AssholePenPrep of (M - a vampiress):
 		say "[speech style of M]'Yes... To answer the question that is most certainly on your mind, in addition to a [vagina], I have a [manly-penis]. I suppose you are about to become a lot more well acquainted with it, aren't you?'[roman type][line break]";
 	otherwise if M is mating:
 		say "[speech style of M]'You should appreciate this. Few things are more intimate than the trading of fluids for vampires.'[roman type][line break]";
-	otherwise if the class of the player is vampire spawn and the last-interaction of M is 0:
+	otherwise if the player is a vampire spawn and the last-interaction of M is 0:
 		say "[speech style of M]'Be still. nothing is more intimate than the trading of fluids between vampires.'[roman type][line break]";
 	otherwise if the last-interaction of M is 0:
 		say "[speech style of M]'[one of]Stop fighting, mortal!'[or]If you don't give in, I might never let you go!'[or]Resistance is futile, [NameBimbo].'[or]Stop trying to be such an insolent little shit!'[in random order][roman type][line break]".
@@ -322,7 +322,7 @@ To say (M - a vampiress) sex reaction:
 	say "[roman type][line break]".
 
 To compute anal sex of (M - a vampiress):
-	if the class of the player is living sex doll:
+	if the player is a living sex doll:
 		say "As the [M] continues to use your [asshole] [one of]you feel your rubberised cheeks burn brighter still, and you try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping rosebud feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or]The [M] continues to use your super loose [asshole]![or]You continue to squeal as the [M] fucks your [asshole]![cycling].";
 	otherwise if the reaction of the player is 2:[begging]
 		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][at random]";
@@ -421,7 +421,7 @@ To compute unique death of (M - a vampiress):
 Part 4 - Conversation
 
 To IdentifiablePosterReaction of (M - a vampiress):
-	say "The [M] looks at you, smirks, then looks back to the poster. [speech style of M]'... I believe they caught your good side. [if the class of the player is vampire spawn]I wouldn't expect any less from one of my fledglings.'[roman type][line break]";
+	say "The [M] looks at you, smirks, then looks back to the poster. [speech style of M]'... I believe they caught your good side. [if the player is a vampire spawn]I wouldn't expect any less from one of my fledglings.'[roman type][line break]";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 	

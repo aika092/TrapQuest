@@ -29,7 +29,7 @@ Definition: a striped top is removable:
 		decide no.
 
 Definition: a striped top (called C) is untransformable:
-	if the class of the player is broodmother, decide yes;
+	if the player is a broodmother, decide yes;
 	decide no.
 
 Striped Top ends here.

@@ -8,9 +8,9 @@ A pink spraybottle is usually slap ready. A pink spraybottle has a number called
 
 To say ClothingDesc of (W - a pink spraybottle):
 	if W is cloth:
-		say "A super absorbent pink washcloth. [if the class of the player is maid]It really doesn't feel complete without a bottle to go with it.[end if]";
+		say "A super absorbent pink washcloth. [if the player is a maid]It really doesn't feel complete without a bottle to go with it.[end if]";
 	otherwise:
-		say "A bright pink spray bottle, used for cleaning up the toughest messes. The sides of the bottle are made of cheap, brittle plastic, allowing you to tell how much liquid is inside of it. [if the charge of W < 0]It's empty.[otherwise if the charge of W <= 40]There's enough for a use or two.[otherwise if the charge of W < 200]It's about a quarter full[otherwise if the charge of W < 400]It's a little over half full.[otherwise]It's almost completely full.[end if][if the class of the player is maid][line break][variable custom style]I need to be careful not to drop this, I don't know where I could get another one of these.[roman type][end if]".
+		say "A bright pink spray bottle, used for cleaning up the toughest messes. The sides of the bottle are made of cheap, brittle plastic, allowing you to tell how much liquid is inside of it. [if the charge of W < 0]It's empty.[otherwise if the charge of W <= 40]There's enough for a use or two.[otherwise if the charge of W < 200]It's about a quarter full[otherwise if the charge of W < 400]It's a little over half full.[otherwise]It's almost completely full.[end if][if the player is a maid][line break][variable custom style]I need to be careful not to drop this, I don't know where I could get another one of these.[roman type][end if]".
 
 To say ShortDesc of (W - a pink spraybottle):
 	if W is cloth:
@@ -19,7 +19,7 @@ To say ShortDesc of (W - a pink spraybottle):
 		say "bright pink spray bottle".
 
 Check taking pink spraybottle:
-	unless the class of the player is maid:
+	unless the player is a maid:
 		let M be a random black maid headdress;
 		let O be nothing;
 		repeat with R running through off-stage maid outfits:
@@ -40,14 +40,14 @@ Report taking pink spraybottle:
 	if newbie tips is 1, say "[item style][one of]You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of semen[if watersports fetish is 1 or lactation fetish is 1] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type]".
 
 Check taking off pink spraybottle:
-	if the work ethic of the noun < 20 and the class of the player is maid, say "You try, but it's like the [noun] won[']t let you put it down. [variable custom style]'Maybe I have to clean something with it first?'[roman type]" instead.
+	if the work ethic of the noun < 20 and the player is a maid, say "You try, but it's like the [noun] won[']t let you put it down. [variable custom style]'Maybe I have to clean something with it first?'[roman type]" instead.
 
 To compute periodic effect of (C - a pink spraybottle):
 	if C is cloth and the work ethic of C > 200:
 		say "Your [printed name of C] lights up, emitting a lemony scent as a matching pink spraybottle materializes in your other hand!";
 		now C is spray;
 		now the charge of C is 1;
-	if the class of the player is maid and the work ethic of C > -400, decrease the work ethic of C by 2.[The bottle gains charge automatically if you uncurse it. Note that it must be worn.]
+	if the player is a maid and the work ethic of C > -400, decrease the work ethic of C by 2.[The bottle gains charge automatically if you uncurse it. Note that it must be worn.]
 
 
 To compute (S - a pink spraybottle) breaking:

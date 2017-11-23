@@ -125,7 +125,7 @@ To compute perception of (M - a mindless acolyte):
 To compute perception of (M - an acolyte):
 	now M is interested;
 	say "The [M] notices you!";
-	if the class of the player is cultist and the pregnancy of the player > 0:
+	if the player is a cultist and the pregnancy of the player > 0:
 		say "[first custom style]'Well met sister, though why do you not wait with the other blessed downstairs?'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is cultist:
@@ -149,8 +149,8 @@ To compute perception of (M - an acolyte):
 
 To compute appearance assessment of (M - a clairvoyant acolyte):
 	if there is a worn mystical amulet:
-		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic. You could gain great favor from the [great one]s were you to gift it to them at their altar.'[roman type][line break]";
-	otherwise if the class of the player is cultist:
+		say "[speech style of M]'That amulet you possess bears a mighty power, [if the player is a cultist]sister[otherwise]heretic. You could gain great favor from the [great one]s were you to gift it to them at their altar.'[roman type][line break]";
+	otherwise if the player is a cultist:
 		say "[speech style of M]'[one of]I knew you were coming, sister.[or]Sister, do you come for a prophecy?'[or]The Herald will arrive soon, sister. Why do you waste time?'[at random][roman type]";
 	otherwise:
 		say "[speech style of M]'[one of]A non-believer? Here? Now? The [great one]s test us...[or]I knew you were coming, non-believer. You cannot stop what has already been set in motion.[or]Do not try to oppose us, non-believer. We serve a greater will...'[stopping][roman type]";
@@ -159,7 +159,7 @@ To compute appearance assessment of (M - a clairvoyant acolyte):
 		now doom counter is 1.
 
 To compute perception of (M - a clairvoyant acolyte):
-	if doomed is 5 and the class of the player is not cultist:
+	if doomed is 5 and the player is not a cultist:
 		say "[speech style of M]'[one of]THE HERALD IS HERE! YOU ARE TOO LATE, NON-BELIEVER!'[or]I see servitude in your NEAR future, non-believer...'[stopping][roman type] The [M] cackles deliriously and assumes an aggressive stance!";
 		anger M;
 	otherwise:
@@ -193,7 +193,7 @@ This is the cult conversion rule:
 		say "[one of]The [M] completely ignores you.[or][or]The [M] continues to ignore you.[or][stopping]"; [mindless cultists don't fight or punish]
 	otherwise if the player is immobile:
 		say "[one of]The [M] chants feverishly to herself[or]The [M] fervently whispers to herself[or]The [M] continues her hushed chanting[then at random].";
-	otherwise if the class of the player is not cultist and the pregnancy of the player is 0:
+	otherwise if the player is not a cultist and the pregnancy of the player is 0:
 		say "[one of][first custom style]'[if M is intelligent]You too shall serve as a vessel for the power of the [great one]s!'[otherwise]Vessel...'[end if][roman type][line break][or][stopping]";
 		now the target-room of M is Mansion23;
 		if delayed stand is 0:
@@ -306,7 +306,7 @@ This is the acolyte performs mummy ritual rule:
 The acolyte performs mummy ritual rule is listed last in the acolyte priority attack rules.
 
 To say MummyChant of (M - an acolyte):
-	if the class of the player is cultist:
+	if the player is a cultist:
 		say "[speech style of M]Sister, we must prepare the conversion ritual. Sit with me.[roman type][line break] The [M] motions for you to kneel in front of the [printed name of mysterious-mummy].";
 		if the player consents:
 			now the stance of the player is 1;
@@ -612,7 +612,7 @@ To female dominate (M - an acolyte):[The cultist eats you out herself!]
 			
 
 To say AfterDominationComment (N - a number) of (M - an acolyte):
-	if N is 1 and the class of the player is cultist, now N is 4;	
+	if N is 1 and the player is a cultist, now N is 4;	
 	if N is 1, say "[speech style of M]'[one of]Your seed empowers us, non-believer...'[or]All virility is an extension of the [great one]s...'[or]You lack the conviction to stand against the [great one]s, non-believer...'[at random][roman type][line break]";
 	if N is 2, say "[speech style of M]'You will yet become a worthy servant of the [great one]s.'[roman type][line break]";
 	if N is 3, say "[speech style of M]You are ready now to carry the future of the [great one]s.'[roman type][line break]";
@@ -634,8 +634,8 @@ To say PresentFriendlyAcceptanceFlav of (M - a clairvoyant acolyte):
 
 To compute (M - a clairvoyant acolyte) protecting against (X - a monster):
 	[if doomed is 5, clairvoyant acolyte delivers you to the herald.]
-	if X is acolyte or the class of the player is cultist:
-		say "[if the class of the player is cultist and X is acolyte][speech style of M]'There is no point in fighting amongst ourselves...the rise of the [great one]s is inevitable...'[roman type] The [M] doesn't seem to want to get involved![otherwise][speech style of M]'Resisting is useless, non-believer. The [great one]s will rise. It is is...inevitable.'[roman type]";
+	if X is acolyte or the player is a cultist:
+		say "[if the player is a cultist and X is acolyte][speech style of M]'There is no point in fighting amongst ourselves...the rise of the [great one]s is inevitable...'[roman type] The [M] doesn't seem to want to get involved![otherwise][speech style of M]'Resisting is useless, non-believer. The [great one]s will rise. It is is...inevitable.'[roman type]";
 	otherwise:
 		say "[speech style of M]'Your petty squabbles are nothing compared to the might of the [great one]s...'[roman type]";
 	distract M.
@@ -654,9 +654,9 @@ To say waitingflav of (M - a clairvoyant acolyte):
 	otherwise if the semen taste addiction of the player < 8:
 		say "[one of]You stare up at the cultist, stunned.[or]You shake your head in disbelief of the situation you've gotten yourself into.[or]You turn away. [first custom style]'Hmmph.'[roman type][line break][or][first custom style]'Whatever you're thinking of doing to me, please don't.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][first custom style]'Fuck off, I'm not doing it.'[roman type][line break][or]You find yourself paralysed with dread, staring at the disgusting [semen] dripping from the [M]'s holes.[in random order]";
 	otherwise if the semen taste addiction of the player < 11:
-		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of the [M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][variable custom style]'[if the class of the player is cultist]Okay, I guess I can do that. You know more about this religious stuff than I do[otherwise]Okay I'll lick it out of you but don't think I care about any of that weird religious stuff. You just really look like you need an orgasm[end if].''[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] the creature that must have been the source of that much [semen].[or][if the sex addiction of the player < 8]Internally you feel disgusted by the idea of her sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
+		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of the [M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][variable custom style]'[if the player is a cultist]Okay, I guess I can do that. You know more about this religious stuff than I do[otherwise]Okay I'll lick it out of you but don't think I care about any of that weird religious stuff. You just really look like you need an orgasm[end if].''[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] the creature that must have been the source of that much [semen].[or][if the sex addiction of the player < 8]Internally you feel disgusted by the idea of her sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
 	otherwise:
-		say "[one of][if the sex addiction of the player < 7]You are stunned with indecision - you don't want to have to lick her out but you do love the idea of getting to swallow some more [semen].[otherwise]You stare at her [semen] dripping filled orifices and lick your lips greedily.  It's like Christmas came early![end if][or]You stare at the [M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation.  [second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][second custom style]'I do love [semen]...'[roman type][line break][or][second custom style][if the class of the player is cultist]I knew I picked the right religious order to follow! I LOVE [semen][otherwise]I wouldn't mind joining her religious order or whatever if I get to swallow [semen] all day[end if]![roman type][line break][or][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
+		say "[one of][if the sex addiction of the player < 7]You are stunned with indecision - you don't want to have to lick her out but you do love the idea of getting to swallow some more [semen].[otherwise]You stare at her [semen] dripping filled orifices and lick your lips greedily.  It's like Christmas came early![end if][or]You stare at the [M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation.  [second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][second custom style]'I do love [semen]...'[roman type][line break][or][second custom style][if the player is a cultist]I knew I picked the right religious order to follow! I LOVE [semen][otherwise]I wouldn't mind joining her religious order or whatever if I get to swallow [semen] all day[end if]![roman type][line break][or][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
 
 To say RepeatResponse of (M - a clairvoyant acolyte):
 	say "[one of]Though they may be delayed now, they will always find a way to return. That is the power of the Old Gods.'[or]Tomorrow's horoscope is...sunny.'[or]You fight a battle you cannot win.'[or]You will find yourself in a blasphemous room, and fight against a horse[']s third leg.'[cycling]";
@@ -664,7 +664,7 @@ To say RepeatResponse of (M - a clairvoyant acolyte):
 To compute damage of (M - a clairvoyant acolyte):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The woman laughs bitterly and takes a fighting stance. [speech style of M]'[if the class of the player is cultist]Jealousy is pointless. I will show you...'[otherwise][one of]Do you truly believe you can stand against a prophet of the [great one]s?'[or]Even you can be useful to the [great one]s.'[at random][end if][roman type][line break]";
+			say "The woman laughs bitterly and takes a fighting stance. [speech style of M]'[if the player is a cultist]Jealousy is pointless. I will show you...'[otherwise][one of]Do you truly believe you can stand against a prophet of the [great one]s?'[or]Even you can be useful to the [great one]s.'[at random][end if][roman type][line break]";
 			now M is interested;
 			anger M;
 			now the sex-length of M is 2;

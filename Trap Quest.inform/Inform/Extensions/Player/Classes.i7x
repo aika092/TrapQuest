@@ -85,7 +85,7 @@ Cowgirl class increases the chance of titfucks.
 
 +!]
 This is the cow slut rule:
-	if the class of the player is cowgirl, increase the desirability of breasts by 5.
+	if the player is a cowgirl, increase the desirability of breasts by 5.
 The cow slut rule is listed in the tit slut eligibility rules.
 
 [!<ThePriestessClassRule>+
@@ -179,7 +179,7 @@ Royal slaves can't masturbate
 
 +!]
 This is the royal slaves can't masturbate rule:
-	if the class of the player is royal slave:
+	if the player is a royal slave:
 		if auto is 0, say "You try, but it's like your [printed name of a random worn headgear] is somehow preventing you!";
 		rule fails.
 The royal slaves can't masturbate rule is listed last in the masturbation restriction rules.	
@@ -368,7 +368,7 @@ REQUIRES COMMENTING
 
 +!]
 A time based rule (this is the compute brood rule):
-	if the class of the player is broodmother:
+	if the player is a broodmother:
 		let E be a random medium egg in the location of the player;
 		let old-wasps be total-wasps;
 		if E is laid:
@@ -480,7 +480,7 @@ REQUIRES COMMENTING
 
 +!]
 A time based rule (this is the compute whispers rule):
-	if the class of the player is cultist:
+	if the player is a cultist:
 		decrease whispered by 1;
 		if whisper-type is 3:
 			let S be the stomach-semen of the player - whisper-semen-old;

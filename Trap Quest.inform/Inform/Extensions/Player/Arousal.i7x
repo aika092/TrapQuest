@@ -80,7 +80,7 @@ To decide if the player is able to cool down:
 	if there is worn steel collar, decide no;
 	if there is a worn prostate massager plug, decide no;
 	if there is a worn thrusting living belt of sturdiness, decide no;
-	if princess-consort is monster and the class of the player is princess and the refactory-period of princess-consort + the sleep of princess-consort < 1, decide no;
+	if princess-consort is monster and the player is a princess and the refactory-period of princess-consort + the sleep of princess-consort < 1, decide no;
 	decide yes.
 
 [!<CoolDownX>+
@@ -100,7 +100,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is minimum arousal:
 	let A be the raw sex addiction of the player * 100;
-	if the class of the player is cowgirl and the number of monsters penetrating breasts < 1, increase A by the milk volume of breasts * 10;[too conservative? At max strength bonus this is +400; 15 might be better]
+	if the player is a cowgirl and the number of monsters penetrating breasts < 1, increase A by the milk volume of breasts * 10;[too conservative? At max strength bonus this is +400; 15 might be better]
 	decide on A.
 
 Part 2 - Decay Every Turn
@@ -231,7 +231,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is able to get horny:
-	if the class of the player is princess and princess-consort is monster and the refactory-period of princess-consort > 0, decide no;
+	if the player is a princess and princess-consort is monster and the refactory-period of princess-consort > 0, decide no;
 	if the latex-transformation of the player > 3, decide no;
 	if the player is male and the size of penis is 0, decide no;
 	decide yes.

@@ -152,7 +152,7 @@ Definition: a ghost (called M) is objectifying the player:
 	if the player is immobile, decide yes;
 	if the player is prone, decide yes;
 	if [the player is in the mansion and ]the slime-puddle of the location of the player > 0, decide yes;
-	[if the class of the player is faerie, decide no;]
+	[if the player is a faerie, decide no;]
 	if the appearance of the player > the bimbo tolerance of M, decide yes;
 	decide no.[The ghost won't go for you unless you're vulnerable or slutty]
 
@@ -624,7 +624,7 @@ Definition: a ghost (called M) is damageable:
 	if attack-type is 1 and (there is a worn blessed equippable or there is a worn sword of purity), decide yes;
 	if attack-type is 2 and there is a worn blessed trousers or there is a worn blessed stockings or (there is a worn blessed suspenders and there is worn stockings), decide yes;
 	if attack-type is 3 and there is a worn blessed heels, decide yes;
-	if the class of the player is cultist or the class of the player is priestess, decide yes;
+	if the player is a cultist or the player is a priestess, decide yes;
 	decide no.
 
 To decide which number is the damage modifier of (M - a ghost):
@@ -711,7 +711,7 @@ Definition: a ghostly tentacle (called M) is blocker:
 To decide which number is the girth of (M - a ghostly tentacle):
 	let G be 4;
 	if the location of the player is mansion23, increase G by 1;
-	if the class of the player is schoolgirl, increase G by 1;
+	if the player is a schoolgirl, increase G by 1;
 	decide on G.
 
 To compute perception of (M - a ghostly tentacle):

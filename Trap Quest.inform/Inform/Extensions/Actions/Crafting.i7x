@@ -54,7 +54,7 @@ Carry out crafting:
 			if H is clothing, compute class outfit of H;
 			if H is clothing, MagicPowerUp 1;
 			if there is a worn notebook:
-				if the class of the player is schoolgirl or a random number between 1 and 3 is 1, compute studying;
+				if the player is a schoolgirl or a random number between 1 and 3 is 1, compute studying;
 		otherwise:
 			if there is a highlighted product thing:
 				say "Nothing happens.";
@@ -67,12 +67,12 @@ Carry out crafting:
 To compute recipe specific cursing of (T - a thing):
 	let K be the alchemy key of T;
 	if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0:
-		if a random number between 2 and 16 <= the number of worn blue scrunchies and the class of the player is schoolgirl:
+		if a random number between 2 and 16 <= the number of worn blue scrunchies and the player is a schoolgirl:
 			now T is bland;[Schoolgirls can get very lucky and complete a potion recipe with the wrong ingredients.]
 		otherwise:
 			now T is cursed;
 	otherwise:
-		if (a random number between 2 and 12 <= the number of worn blue scrunchies and the class of the player is schoolgirl) or (a random number between 1 and 30 < the flat intelligence of the player and the recipe of K is memorised):
+		if (a random number between 2 and 12 <= the number of worn blue scrunchies and the player is a schoolgirl) or (a random number between 1 and 30 < the flat intelligence of the player and the recipe of K is memorised):
 			now T is blessed;
 		otherwise:
 			now T is bland.

@@ -48,7 +48,7 @@ Part 1 - Perception
 To compute perception of (M - a mind flayer):
 	now M is interested;
 	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the class of the player is living sex doll:
+	if the player is a living sex doll:
 		say "It doesn't look like it's interested in you.";
 		bore M for 500 seconds;
 	otherwise:

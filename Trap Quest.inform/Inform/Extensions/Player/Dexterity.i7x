@@ -64,9 +64,9 @@ To decide which number is the flat dexterity of the player:
 	decrease D by the semen coating of thighs / 3;
 	repeat with C running through worn wearthings:
 		increase D by the dexterity-influence of C;
-	if the class of the player is cheerleader:
+	if the player is a cheerleader:
 		increase D by the blondeness of hair;
-	if the class of the player is priestess:
+	if the player is a priestess:
 		increase D by 1;
 	[decrease D by the redness of hair - natural redness;]
 	if the player is breasts blinded, decrease D by 2;
@@ -86,7 +86,7 @@ To decide which number is the flat dexterity of the player:
 	if acceleration-tincture-timer > 0:
 		increase D by acceleration-tincture-bonus;
 	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 8;
-	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
+	if the silicone volume of breasts > 10 and the player is a silicone queen:
 		increase D by 1;
 		if the silicone volume of breasts > 18, increase D by 3;
 	if fudge-poison-timer > 0, now D is D / 2;

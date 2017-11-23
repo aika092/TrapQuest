@@ -266,7 +266,7 @@ REQUIRES COMMENTING
 +!]
 To Dignify (X - a number):
 	if the humiliation of the player < 40000:
-		if the player is soulless and the class of the player is not succubus, now X is 0;
+		if the player is soulless and the player is not a succubus, now X is 0;
 		if there is a worn no-regrets tattoo, now X is X / 2;
 		if the humiliation of the player < X, now the humiliation of the player is 0;
 		otherwise decrease the humiliation of the player by X.

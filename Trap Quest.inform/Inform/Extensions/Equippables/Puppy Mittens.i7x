@@ -7,7 +7,7 @@ To decide which figure-name is clothing-image of (C - a puppy mittens):
 
 To say ClothingDesc of (W - a puppy mittens):
 	say "A pair of black leather bondage mittens with a paw print design on the front.  You lose some manual dexterity from wearing them, and some slapping power.";
-	if the class of the player is puppygirl and W is worn, say "You feel [if the number of worn clothing < 4]excellent[otherwise if the number of worn clothing < 7]better[otherwise]worse[end if] at running away from monsters whilst on your knees.".
+	if the player is a puppygirl and W is worn, say "You feel [if the number of worn clothing < 4]excellent[otherwise if the number of worn clothing < 7]better[otherwise]worse[end if] at running away from monsters whilst on your knees.".
 
 To say ShortDesc of (W - a puppy mittens):
 	say "black leather puppy mittens".

@@ -15,7 +15,7 @@ This is the cheerleaders upskirt fetish rule:
 The cheerleaders upskirt fetish rule is listed in the knickers wearability rules.
 
 [This is the cheerleader shut up rule:
-	if the class of the player is cheerleader, rule succeeds.
+	if the player is a cheerleader, rule succeeds.
 The cheerleader shut up rule is listed in the blowjob slut eligibility rules.]
 
 To set up influence of (C - a cheerleader outfit):
@@ -69,7 +69,7 @@ To say ClothingDesc of (C - a supershort cheerleader outfit):
 	otherwise say "This blue cheerleader outfit has a ridiculously short skirt.". 
 
 Definition: a supershort cheerleader outfit (called C) is untransformable:
-	if the class of the player is cheerleader, decide yes;
+	if the player is a cheerleader, decide yes;
 	decide no.
 
 To say TransformReaction of (C - a supershort cheerleader outfit):
