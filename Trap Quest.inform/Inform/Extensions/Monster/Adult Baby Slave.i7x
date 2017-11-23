@@ -161,7 +161,7 @@ To compute perception of (M - an adult baby slave):
 	otherwise if there is a worn kitty cat diaper and M is friendly:
 		say "She looks you up and down and smiles.[speech style of M]'Your kitty diaper is adorable! I wish mine was so pretty!'[roman type][line break]";
 		FavourUp M by 1;
-	otherwise if there is a worn sissy diaper and M is friendly:
+	otherwise if there is a worn sissy-diaper and M is friendly:
 		say "She looks you up and down and smiles.[speech style of M]'Your sissy diaper is adorable! I love sissies!'[roman type][line break]";
 		FavourUp M by 1;
 	otherwise if there is a worn baby pattern diaper and M is friendly:

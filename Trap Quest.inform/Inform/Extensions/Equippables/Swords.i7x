@@ -366,7 +366,7 @@ Report taking a demon broadsword:
 	try wearing the noun;
 
 Report wearing a demon broadsword:
-	if the class of the player is sissy or the class of the player is princess or the class of the player is royal slave or a random demon lord is alive or there is a worn demonic clothing:
+	if the player is a sissy or the class of the player is princess or the class of the player is royal slave or a random demon lord is alive or there is a worn demonic clothing:
 		say "It shivers visibly as your fingers close around the hilt![line break]";
 		compute demon punishment of the noun;
 	otherwise:

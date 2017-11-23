@@ -132,34 +132,34 @@ To compute periodic effect of (D - a baby pattern diaper): [This cannot become c
 
 Chapter 7 Sissy Diaper
 
-sissy diaper is a kind of pullup diaper.  There is 1 silk sissy diaper.  The printed name of sissy diaper is usually "[TQlink of item described][clothing-title-before]sissy diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sissy diaper is "ssd".
+sissy-diaper is a kind of pullup diaper.  There is 1 silk sissy-diaper.  The printed name of sissy-diaper is usually "[TQlink of item described][clothing-title-before]sissy diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sissy-diaper is "ssd".  Understand "sissy", "diaper" as sissy-diaper.
 
-To decide which figure-name is clothing-image of (C - a sissy diaper):
-	decide on figure of sissy diaper.
+To decide which figure-name is clothing-image of (C - a sissy-diaper):
+	decide on figure of sissy-diaper.
 
-To say ClothingDesc of (C - a sissy diaper):
+To say ClothingDesc of (C - a sissy-diaper):
 	say "A silky smooth frilly diaper, with pink lining on the inside and silvery white on the outside with a little bow and puffy padding to humiliate the wearer even further.  But due to the type of fabric, it probably won't hold quite as much as some other diapers.  ".
 
-To say selfexamineuniquetitle of (K - a sissy diaper):
+To say selfexamineuniquetitle of (K - a sissy-diaper):
 	say "pink silky sissy diaper".
 
-Figure of sissy diaper is the file "diaper7.png".
-The DQFigure of sissy diaper is usually DQSmall. 
+Figure of sissy-diaper is the file "diaper7.png".
+The DQFigure of sissy-diaper is usually DQSmall. 
 
-The soak-limit of sissy diaper is 33.
+The soak-limit of sissy-diaper is 33.
 
-To decide which number is the original price of (C - a sissy diaper):
-	decide on 2;
+To decide which number is the original price of (C - a sissy-diaper):
+	decide on 2.
 
-To decide which number is the unique outrage of (C - a sissy diaper):
+To decide which number is the unique outrage of (C - a sissy-diaper):
 	if the player is male, decide on 6;
-	decide on 2;
+	decide on 2.
 
-Definition: a sissy diaper (called C) is sissifying:
+Definition: a sissy-diaper (called C) is sissifying:
 	if diaper lover >= 1, decide yes;
 	decide no.
 
-To compute periodic effect of (D - a sissy diaper):
+To compute periodic effect of (D - a sissy-diaper):
 	let S be (the soak-limit of D / 4) - the total-soak of D;
 	if S <= 0 and D is not cursed: [If the diaper is over 75% full]
 		let R1 be a random number between (unlucky * 2) - 2 and -5;

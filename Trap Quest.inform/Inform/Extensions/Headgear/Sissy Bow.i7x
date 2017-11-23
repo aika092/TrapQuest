@@ -16,6 +16,9 @@ To compute SelfExamineDesc of (H - a sissy bow):
 Definition: a clothing (called C) is sissifying:
 	decide no.
 
+Definition: a sissy bow (called C) is sissifying:
+	decide yes.
+
 To set up influence of (C - a sissy bow):
 	set up submissiveness-based influence of C.
 

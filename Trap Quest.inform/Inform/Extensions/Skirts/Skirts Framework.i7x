@@ -57,6 +57,9 @@ To compute SelfExamineDesc of (S - a skirt):
 To say ShortDesc of (S - a skirt):
 	say "skirt".
 
+To say ShortestDesc of (C - a skirt):
+	say "skirt".
+
 Definition: a clothing (called C) is skirt-covering-crotch: [does it protect the visibility of asshole]
 	if C is skirted:
 		if C is super-short or C is crotch-assless, decide no; [tiny skirts don't protect anything]
@@ -66,6 +69,12 @@ Definition: a clothing (called C) is skirt-covering-crotch: [does it protect the
 		if C is crotch covering and (C is no protection or C is pussy protection), decide no; [ripped hobble skirt, or crotch only]
 		decide yes;
 	decide no.
+
+Definition: a skirt (called C) is ingredient:
+	decide yes.
+
+To decide which number is the crafting key of (C - a skirt):
+	decide on 54.
 	
 
 Chapter - Wearability

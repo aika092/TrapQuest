@@ -33,39 +33,10 @@ To decide which number is the semen load of (M - a vampiress):
 Definition: a vampiress (called M) is human:
 	decide yes.
 
-To compute action (N - a number) of (M - a vampiress):
-	[If N is 1, this is a full action
-	if N is 2, this is a passive action (no attacking)]
-	if M is interested:
-		if the scared of M > 0 and M is not penetrating a body part:
-			compute fleeing of M;
-			if a random number from 1 to 5 is 1 and M is not in the location of the player and M is not nearby:
-				bore M for 100 seconds;
-		otherwise if M is in the location of the player:
-			if N is 1:
-				if M is penetrating a body part or M is grabbing the player or M is unfriendly:
-					if the objectification of M is 1 and the previous-objectification of M is 0:
-						compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed.  We need to make this obvious to the player by making them say something.]
-						now the previous-objectification of M is 1;
-					check attack of M;
-				otherwise:
-					compute friendly boredom of M; [Potentially make them bored]
-					if M is interested, compute interaction of M; [If still interested, check if there's anything for them to do]
-		otherwise:
-			if M is unfriendly:
-				check seeking N of M;
-				if M is not in the location of the player and a random number from 1 to 15 + (30 * the number of worn catbells) is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck: [She will not lose interest if you're chained to the pedestal.]
-					bore M for 0 seconds;
-					if M is strangers:
-						now M is survived;
-						compute survival rewards;
-			otherwise if a random number from 1 to 15 is 1:
-				bore M for 100 seconds; [Every turn the monster is friendly, there is a 1 in 15 chance of them getting bored.]
-			otherwise:
-				check seeking N of M;
-	otherwise:
-		if there is a worn cowbell and the boredom of M is 0, check seeking N of M;
-		otherwise check motion of M.
+To check chase boredom of (M - a vampiress):
+	if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck:
+		bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
+		compute survival check of M.
 
 Part 1 - Misc Flavour
 

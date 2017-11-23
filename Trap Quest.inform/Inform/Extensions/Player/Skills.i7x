@@ -623,13 +623,13 @@ REQUIRES COMMENTING
 This is the whisper quest list rule:
 	let W be whisper-type;
 	if W is 1:
-		say "Whispers: The Great Ones command you to present yourself at their altar beyond the mansion.";
+		say "Whispers: The [great one]s command you to present yourself at their altar beyond the mansion.";
 	if W is 2:
-		say "Whispers: The Great Ones command you to place a cursed item on their altar beyond the mansion.";
+		say "Whispers: The [great one]s command you to place a cursed item on their altar beyond the mansion.";
 	if W is 3:
-		say "Whispers: The Great Ones command you to consume semen.";
+		say "Whispers: The [great one]s command you to consume semen.";
 	if W is 4:
-		say "Whispers: The Great Ones command you to fill your ass with semen.".
+		say "Whispers: The [great one]s command you to fill your ass with semen.".
 The whisper quest list rule is listed in the quest listing rules.
 
 Part 14 - First Aid Skill

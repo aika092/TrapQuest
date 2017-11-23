@@ -56,8 +56,6 @@ To Set Up The Dungeon:
 		now a random kneeling stool in The Dungeon is cursed;
 	if lactation fetish is 1:
 		now a random milking bench is in a random sandy unrelaxing placed room;
-	if inhuman pregnancy is 2:
-		now dungeon-breeder is in a random sandy unrelaxing placed room;
 	repeat with G running through important rooms in The Dungeon:
 		unless G is the location of the player:
 			let Y be a random treasure chest in Holding Pen;

@@ -121,13 +121,36 @@ Carry out praying something with:
 					bless the noun;
 					now the noun is sure;
 				otherwise:
-					say "A shimmering blue light surrounds you as your [noun] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband.  A voice appears in your head:  [second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+					say "A shimmering blue light surrounds you as your [ShortDesc of noun] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband.  A voice appears in your head:  [second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 					only destroy the noun;
 					let R be a random runic headband;
 					summon R cursed;
 				reset dungeon altar;
 			otherwise:
-				say "Nothing seems to happen.";			
+				let C be a random off-stage golden warrior priestess outfit;
+				if the class of the player is virgin warrior and C is clothing:
+					let D be a random worn overdress;
+					if D is clothing:
+						repeat with X running through worn breast covering clothing:
+							unless X is D:
+								say "Your [X] vainshes!";
+								destroy X;
+						repeat with X running through worn belly covering clothing:
+							unless X is D:
+								say "Your [X] vainshes!";
+								destroy X;
+						repeat with X running through worn skirted clothing:
+							unless X is D:
+								say "Your [X] vainshes!";
+								destroy X;
+						say "A shimmering blue light surrounds you as your [ShortDesc of D] shapeshifts, first turning into pure visible energy and then settling into form as some kind of bizarre solid gold frame.  A voice appears in your head:  [second custom style]'At last, the chosen one has arrived! You are the Ture Herald, the prophecies speak of your role in deciding the destiny of our entire clan.  Now go, and keep yourself pure, for if you fail, all your descendants will be doomed to be nothing but the playthings of the monsters of this world.'[line break][variable custom style][if the bimbo of the player < 14]My virginity decides the future of this entire world?  That's quite an extreme amount of responsibility to just drop on someone...[otherwise]I'll do my best, but that outcome sounds kind of fun![end if][roman type][line break]";
+						silently transform D into C;
+						increase the raw-magic-modifier of C by 1;
+						now C is blessed;
+					otherwise:
+						say "Bug - the player was chosen tno become a warrior priestess but there was no warrior chestpiece to transform.";
+				otherwise:
+					say "Nothing seems to happen.";			
 		otherwise if the noun is wrist bond or the noun is ankle bond or the noun is chastity cage:
 			if the noun is cursed:
 				say "*Click!*  It would appear that the [printed name of noun] has magically unlocked!";
@@ -274,15 +297,16 @@ Carry out praying something with:
 	otherwise if the second noun is the elder altar: [To actually benefit from the elder altar's ability to bless things you need to learn a skill from a monster, the cultist otherwise all you can do is sacrifice things (which does at least let you destroy cursed clothing)]
 		if the noun is the player:
 			say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There[']s no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
-			if there is a worn laurel wreath and there is not a worn living tentacles:
+			if there is a worn laurel wreath and the number of worn living tentacles is 0:
 				say "You feel cold and wet on your arms as the manacles suddenly turn into tentacles! More tentacles appear on either side and begin to thrash out at everything you're wearing below your head!";
-				repeat with C running through clothing worn by the player:
-					if C is not laurel wreath:
+				repeat with C running through worn clothing:
+					if C is not laurel wreath and C is not sack of holding and C is not equippable and C is not bondage and C is not piercing:
 						say "Your [C] is torn apart!";
 						destroy C;
 				say "Your clothing removed, you begin to feel terrible foreboding. But as suddenly as they appeared, the tentacles simply vanish. As you consider how lucky you were, though, a sudden pain from your neck rips through your body! You get up with a start, and feel a warm, pulsing lump attached to you. One that should definitely be there. It[']s definitely okay that it is there. As you think this, purple tentacles come out of it and wrap around your body, accentuating your curves. How thoughtful.";
 				let T be a random living tentacles;
 				summon T cursed;
+				now fertility-summoned is 1;
 			otherwise if the player is female:[this one needs handling for pussy protection clothing Aika: it also needs to do something for males, I assume?  And what about females that are unable to orgasm? ("if the player is not able to get horny")]
 				repeat with C running through top level protection clothing worn by the player:
 					say "Your [C] vanishes in an ominous black flame!";

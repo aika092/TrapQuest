@@ -334,18 +334,17 @@ This is the overdress tail plug clash rule:
 The overdress tail plug clash rule is listed in the overdress wearability rules.
 
 Check replacing:
-	if there is a worn tail plug, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
+	if there is a worn tail plug:
+		unless the noun is crotch-assless or the noun is skirted, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
 
 To decide which object is the concealer of (C - a tail plug):
-	repeat with O running through worn actually dense bottom-layer-concealing clothing: [Tail plug not concealed by skirts.]
+	repeat with O running through worn actually dense bottom-layer-concealing unskirted clothing: [Tail plug not concealed by skirts.]
 		decide on O;
 	decide on nothing.
 
 To say CurrentlyVisibleFlav of (C - a tail plug):
-	say "It is currently visible to anyone who looks at you";
 	let S be a random worn actually dense potentially asshole covering clothing;
-	if S is clothing, say ", since the tail is creeping out from under your [printed name of S]";
-	say ".".
+	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
 
 
 

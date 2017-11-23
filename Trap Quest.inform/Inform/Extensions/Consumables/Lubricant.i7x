@@ -70,10 +70,6 @@ Check orilubing something with:
 	if the second noun is face, try drinking the noun instead;
 	if there is a lubricant covering the second noun and the soreness of the second noun is 0, say "Your [variable second noun] is already covered in [lubricant]." instead;
 	if the latex-transformation of the player > 3, say "You don't see how that would help, your latex insides are naturally smooth and slippery and not at risk of getting sore." instead;
-	[if the second noun is vagina and the player is pussy protected:
-		say "You need to get your [printed name of a random worn top level protection clothing] out the way first." instead;
-	if the second noun is asshole and the player is ass protected:
-		say "You need to get your [printed name of a random worn top level ass protection clothing] out the way first." instead;]
 	if the second noun is actually occupied:
 		say "You can't lube up your [variable second noun] while there is something in it." instead;
 	if the player is monster fucked, say "You're a little busy right now!" instead.

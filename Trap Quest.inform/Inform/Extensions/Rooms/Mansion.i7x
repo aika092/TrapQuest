@@ -83,7 +83,7 @@ Mansion07 is a creaky haunted room. [Mansion07 is west of Mansion5. ]The printed
 REQUIRES COMMENTING
 
 *!]
-Mansion08 is a creaky no-roof haunted room. The printed name of Mansion08 is "[one of]Dog House[sticky random]". "An enclosed section of cleared land, kept in relative darkness by the encroaching woods. Half the space is occupied by an enormous doghouse, more than large enough for a human to live in comfortably, let alone a dog. There's even a bed in there! A small sign sticking out of the grass in front of it reads [one of]Fido[or]Spike[or]Brutus[or]Scooby[sticky random].". The shape of Mansion08 is L4/0-0-0-0-1-0. The grid position of Mansion08 is <4,11,7>.
+Mansion08 is a creaky no-roof haunted room. The printed name of Mansion08 is "[one of]Dog House[sticky random]". "An enclosed section of cleared land, kept in relative darkness by the encroaching woods. Half the space is occupied by an enormous doghouse, more than large enough for a human to live in comfortably, let alone a dog. There's even a bed in there! A small sign sticking out of the grass in front of it reads [one of]Joe[or]Dante[or]Brutus[or]Belial[sticky random].". The shape of Mansion08 is L4/0-0-0-0-1-0. The grid position of Mansion08 is <4,11,7>.
 
 [!<mansion09:HauntedRoom>*
 
@@ -132,7 +132,7 @@ Mansion14 is a creaky haunted room. Mansion14 is east of Mansion15. The printed 
 REQUIRES COMMENTING
 
 *!]
-Mansion15 is a creaky haunted room. Mansion15 is east of Mansion10 and south of Mansion06. The printed name of Mansion15 is "[one of]Ballroom[or]Sperm Room[or]Ballroom[sticky random]". "This room takes up an obscene amount of space, and where this a normal mansion, it would obviously be the place for parties and other large gatherings. A stone statue of a giant sperm occupies the center of the dance floor, and when you get close to it, you could swear you can hear music playing faintly from somewhere above you.". The shape of Mansion15 is L4/0-0-1-1-0-1. The grid position of Mansion15 is <4,14,6>. [The shape of Mansion15 is L4/0-0-1-1-1-1.]
+Mansion15 is a creaky haunted room. Mansion15 is east of Mansion10 and south of Mansion06. The printed name of Mansion15 is "[one of]Ballroom[or]Sperm Room[or]Ballroom[sticky random]". "This room takes up an obscene amount of space, and were this a normal mansion, it would obviously be the place for parties and other large gatherings. A stone statue of a giant sperm occupies the center of the dance floor, and when you get close to it, you could swear you can hear music playing faintly from somewhere above you.". The shape of Mansion15 is L4/0-0-1-1-0-1. The grid position of Mansion15 is <4,14,6>. [The shape of Mansion15 is L4/0-0-1-1-1-1.]
 
 [!<mansion16:HauntedRoom>*
 
@@ -146,50 +146,49 @@ Mansion16 is a creaky bossed mandatory important haunted room. The printed name 
 REQUIRES COMMENTING
 
 *!]
-Mansion17 is a creaky no-roof haunted room. Mansion17 is west of Mansion16. The printed name of Mansion17 is "Terrace". "A wooden pavilion overlooking the woods. There is a strange dark spot in the trees off in the distance, as if the area there were sick or diseased.". The grid position of Mansion17 is <4,13,10>.  [The shape of Mansion17 is L4/0-0-1-1-1-1.]
+Mansion17 is a creaky no-roof haunted room. Mansion17 is west of Mansion16. The printed name of Mansion17 is "Terrace". "A wooden pavilion with an intricately carved wooden railing to keep people from falling off. Looking out over the woods from behind it makes you feel like you're in a jail cell.". The grid position of Mansion17 is <4,13,10>.  [The shape of Mansion17 is L4/0-0-1-1-1-1.]
 
 [!<mansion18:HauntedRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Mansion18 is a haunted room. Mansion18 is south of Mansion16 and north of Mansion04. The printed name of mansion18 is "Clean Hallway". "This hallway is way cleaner than every other place in the mansion. The floorboards are polished, the lights are bright, and the walls practically gleam with the care that must be lavished on them each day. Somehow, it's even creepier than it would be if it were dirty.". The grid position of Mansion18 is <4,14,9>. 
+Mansion18 is a haunted room. Mansion18 is south of Mansion16 and north of Mansion04. The printed name of mansion18 is "Clean Hallway". "This hallway's lights are bright, floorboards polished, and its walls practically gleam with the daily attention that must be lavished on them each day. The messiness of the rest of the mansion ends in straight lines along the edges of the hall.". The grid position of Mansion18 is <4,14,9>. 
 
 [!<mansion19:HauntedRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Mansion19 is a creaky haunted room.  Mansion19 is east of Mansion06 and north of Mansion14. The printed name of Mansion19 is "[one of]Lab[or]Workshop[at random]". "A dusty room containing an assortment of beakers and complicated pipes.". The grid position of Mansion19 is <4,15,7>. 
+Mansion19 is a creaky haunted room.  Mansion19 is east of Mansion06 and north of Mansion14. The printed name of Mansion19 is "[one of]Lab[or]Workshop[at random]". "A dusty room containing an assortment of beakers and complicated pipes. There's a surprisingly large space in the middle of the room, where some leather straps are attached to the floor.". The grid position of Mansion19 is <4,15,7>. 
 
 [!<mansion20:HauntedRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Mansion20 is a creaky no-roof haunted room. Mansion20 is west of Mansion05 and north of Mansion07. The printed name of Mansion20 is "Garden". "An overgrown area you're pretty sure used to be a garden." The grid position of Mansion20 is <4,12,8>.  The shape of Mansion20 is L4/0-0-0-1-0-1.
+Mansion20 is a creaky no-roof haunted room. Mansion20 is west of Mansion05 and north of Mansion07. The printed name of Mansion20 is "Garden". "An overgrown area full of exotic flowers, shrubs, and low-hanging tree branches.". The grid position of Mansion20 is <4,12,8>.  The shape of Mansion20 is L4/0-0-0-1-0-1.
 
 [!<mansion21:HauntedRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Mansion21 is a creaky haunted room. The printed name of Mansion21 is "[one of]Storm Cellar[or]Basement[sticky random]". "Everything in this room is covered in at least a centimetre of dust and mould. There is what appears to be a cabinet of wooden dildos off to one side of the room, but there are just too many cobwebs for any to be of 'use.' Hidden between several mounds of dirt, you can see a hole large enough for you to fit through.". The grid position of Mansion21 is <4,10,8>. [The shape of Mansion21 is L4/0-0-1-1-1-1.]
- [Connects to the secret passage. I figure there could be randomly occurring lever in the mansion that must be pulled before the passage can be accessed, and the passage closes(temporarily) whenever a deep one is summoned.]
+Mansion21 is a creaky haunted room. The printed name of Mansion21 is "[one of]Storm Cellar[or]Basement[sticky random]". "Everything in this room is covered in at least a centimetre of dust and mould. There is what appears to be a cabinet of wooden dildos off to one side of the room, but there are just too many cobwebs for any to be of 'use.'". The grid position of Mansion21 is <4,10,8>. [The shape of Mansion21 is L4/0-0-1-1-1-1.]
 
 [!<mansion22:HauntedRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Mansion22 is a haunted room. Mansion22 is north of Mansion21. The printed name of Mansion22 is "Secret passage". "This tunnel is remarkably free of any elements of what the mansion has brought you to expect. It's just dirt, as far as the eye can see, which isn't far, since the only light comes from the storm cellar and a small opening far in the distance.". The grid position of Mansion22 is  <4,10,9>. The shape of Mansion22 is L4/0-0-1-1-0-1.
+Mansion22 is a haunted room. Mansion22 is north of Mansion21. The printed name of Mansion22 is "Secret passage". "This dark tunnel is quiet, lined with dim purple candles and freshly moved dirt.". The grid position of Mansion22 is  <4,10,9>. The shape of Mansion22 is L4/0-0-1-1-0-1.
 
 [!<mansion23:HauntedRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Mansion23 is a garlic no-roof pinned mandatory haunted room. Mansion23 is north of Mansion22. The printed name of Mansion23 is "Hidden Altar". "A clearing in the middle of the woods. The soil here is a sickly shade of grey, and the trees around you have soggy, black leaves, as if the life were slowly being drained out of them. A stone statue of a [if pregnancy fetish is 1]pregnant[end if] woman [if the number of cultist veils in the location of the player > 0]wearing a black silk veil [end if]rests in the center of the clearing. Her legs have been broken off at the knee, so it looks like she's kneeling at the ominous obsidian altar before her.[if the charge of the elder altar >= 100] A dim purple glow is emanating from it.[end if]". The shape of Mansion23 is L4/0-0-0-0-1-0. The grid position of Mansion23 is  <4,10,10>.
+Mansion23 is a garlic no-roof pinned mandatory haunted room. Mansion23 is north of Mansion22. The printed name of Mansion23 is "Hidden Altar". "A clearing in the shadow of the mansion, edged out on almost every side with trees. The leaves are black and soggy, and the soil is a sickly shade of grey, as if the life were slowly being drained of everything in the area. A stone statue of a [if pregnancy fetish is 1]pregnant[end if] woman [if the number of cultist veils in the location of the player > 0]wearing a black silk veil [end if]rests in the center of the clearing. Her legs have been broken off at the knee, so it looks like she's kneeling at the ominous obsidian altar before her.[if the charge of the elder altar >= 100] A dim purple glow is emanating from it.[end if]". The shape of Mansion23 is L4/0-0-0-0-1-0. The grid position of Mansion23 is  <4,10,10>.
 
 [!<mansion24:HauntedRoom>*
 

@@ -57,14 +57,6 @@ To say ClothingDesc of (K - a butt window cutoffs):
 	say "Denim shorts with a heart shaped hole at the back that exposes your [buttcheeks].  It keeps your buttcheeks naturally closed which means that [if K is worn]your[otherwise]the wearer's[end if] asshole isn't constantly on show, but it still allows easy anal access when required.".
 Figure of butt window cutoffs is the file "cutoffs3.png".
 
-[!<ButtWindowCutoffsIsPotentiallyAssholeCovering>+
-
-Does this completely block vision of asshole when worn?
-
-+!]
-Definition: a butt window cutoffs (called C) is potentially asshole covering:
-	decide yes.
-
 To decide which object is the potential-upgrade-target of (C - a butt window cutoffs):
 	decide on a random off-stage g-string.
 

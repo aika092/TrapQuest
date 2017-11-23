@@ -394,43 +394,20 @@ To say wanking version of (B - a body part):
 	otherwise if B is hips:
 		say "right foot";
 
+To compute facial dodging of (M - a patron):
+	if the number of patrons penetrating a body part is 1:
+		say FacialBrokenFree of M;
+		if a random number between the semen addiction of the player * -1 and the dexterity of the player > the difficulty of M - 2:[facials are harder to dodge the more you like the feeling of semen]
+			compute successful facial dodging of M;
+		otherwise:
+			compute failed facial dodging of M;
+	otherwise:
+		say "Due to the other patron[if the number of patrons penetrating a body part > 2]s[end if] using your body, you are completely unable to do anything to stop the [M] as he pulls out and points his [manly-penis] at your [ShortDesc of face].";
+		say UnavoidableFacial of M;
+		CumFaceUp the semen load of M.
+
 To compute facial climax of (M - a patron):
-	TimesFuckedUp M by 1;
-	if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
-		if the reaction of the player is 0:
-			if the number of patrons penetrating a body part is 1:
-				say "[one of]You wait for your moment and pull back at the perfect time. You're free![or]You struggle valiantly, finally managing to pull off at the last moment. You're free![or]After several moments of struggling, you finally force him to let go. You're free![or]After a brief struggle, you manage to break free![in random order]";
-				if a random number between 1 and the dexterity of the player > the difficulty of M:
-					say SuccessfulFacialDodge of M;
-					increase the semen-puddle of the location of M by the semen load of M;
-					now M is pissed off;
-				otherwise:
-					say FailedFacialDodge of M;
-					CumFaceUp the semen load of M;
-			otherwise:
-				say "Due to the other patron[if the number of patrons penetrating a body part > 2]s[end if] using your body, you are completely unable to do anything to stop the [M] as he pulls out and points his [manly-penis] at your [ShortDesc of face].";
-				say UnavoidableFacial of M;
-				CumFaceUp the semen load of M;
-		otherwise: [the player submitted]
-			say UnavoidedFacial of M;
-			CumFaceUp the semen load of M;
-			humiliate 200;
-	otherwise: [Internal cumshot]
-		if the reaction of the player is 0:
-			say ResistedOralCreampie of M;
-			say "[speech style of M][one of]'You better swallow that, or I'm not paying.'[or]'Swallow like a good whore now.'[or]'Drink it down, [slut].'[or]'I expect you to swallow that, obviously.'[or]'Yeah, bitch, drink it up like a good girl now.'[in random order][roman type][line break]";
-			now M is not penetrating face; [This can't cause them to puke]
-			if M is coercing a swallow: [Automatic swallow]
-				say AutomaticSwallow of M;
-				StomachSemenUp the semen load of M;
-				humiliate 200;
-			otherwise:
-				compute swallow choice of M;
-		otherwise: [submitted, deepthroat]
-			say DeepthroatCreampie of M;
-			StomachSemenUp the semen load of M;
-			humiliate 100;
-	now M is not penetrating face;
+	compute default facial climax for M;
 	let T be a random mouth-tally tattoo;
 	if T is worn:
 		say "Taking out his permanent marker, the [M] [if M is pissed off]growls while adding[otherwise]adds[end if] another strike to the tally on your cheek.";
@@ -440,16 +417,11 @@ To compute facial climax of (M - a patron):
 		summon T;
 	compute payment of M.
 
-To compute swallow choice of (M - a patron):
-	say "Do you swallow? [yesnolink] ";
-	if the player consents:
-		say VoluntarySwallow of M;
-		StomachSemenUp the semen load of M;
-		humiliate 400;
-	otherwise:[Todo: spitting into an open container]
-		say VoluntarySpit of M;
-		increase the semen-puddle of the location of M by the semen load of M;
-		now M is pissed off.
+To say SwallowDemand of (M - a patron):
+	say "[speech style of M][one of]'You better swallow that, or I'm not paying.'[or]'Swallow like a good whore now.'[or]'Drink it down, [slut].'[or]'I expect you to swallow that, obviously.'[or]'Yeah, bitch, drink it up like a good girl now.'[in random order][roman type][line break]".
+
+To compute angry punishment of (M - a patron):
+	now M is pissed off.
 
 To compute facial sex of (M - a patron):
 	if the oral sex addiction of the player > 6, arouse 200;

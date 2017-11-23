@@ -570,7 +570,7 @@ Check going:
 		repeat with M running through dangerous monsters in the location of the player:
 			let E be 1;
 			if M is insane gladiator or M is wild gladiator, increase E by 10;
-			if the class of the player is catgirl or the class of the player is puppygirl, now E is ((the number of worn clothing - the number of worn accessories) * 20) - 120; [The more worn clothing, the worse this is]
+			if the class of the player is catgirl or the class of the player is puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
 			if the class of the player is adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
 			if a random number between E and (the difficulty of M + 3) > 2 and M is blocker, say "[MovementBlock of M]" instead;
 			otherwise say "[if M is blocker]You manage to quickly crawl past the [M] before [he of M] can catch you![end if]";

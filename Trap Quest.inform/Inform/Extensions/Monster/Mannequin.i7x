@@ -10,7 +10,7 @@ Figure of lycra-clad mannequin is the file "mannequin5.png".
 Figure of latex-clad Mannequin is the file "mannequin6.png".
 Figure of lingerie-clad mannequin is the file "mannequin7.png".
 Figure of skater mannequin is the file "mannequin8.png".
-Figure of Goth Mannequin is the file "mannequin9.png".
+Figure of goth Mannequin is the file "mannequin9.png".
 
 The description of mannequin is usually "[MannequinDesc]".  The text-shortcut of mannequin is "man".
 
@@ -96,7 +96,11 @@ To decide which number is the girth of (M - a mannequin):
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a mannequin):
-	if the location of the player is Woods30, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whir rapidly as the pieces begin to put themselves together, forming a [printed name of M].";[TODO: goth mannequin eventually]
+	if M is in the location of the player, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whir rapidly as the pieces begin to put themselves together, forming a [printed name of M].";[TODO: goth mannequin eventually]
+	otherwise say "You hear the sound of mechanical joints whirring.".
+
+To say SummoningFlav of (M - a goth mannequin):
+	if M is in the location of the player, say "A defeaning whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes its first few steps into the room, and the mummy's wrappings slowly reform behind it.";[TODO: goth mannequin eventually]
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 Part 2 - Perception

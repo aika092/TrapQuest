@@ -86,40 +86,11 @@ To satisfy (M - a ghost) for (N - a number) seconds:
 	destroy M;
 	bore M for N seconds.[Is dislodging handled with the destroy M function?.]
 
-To compute action (N - a number) of (M - a ghost):
-	[If N is 1, this is a full action
-	if N is 2, this is a passive action (no attacking)]
+To compute unique early action of (M - a ghost):
 	if the wind-up of M is 1:
 		compute ectoplasm to M;[Ghosts explode when they wind up, no matter what.]
-	otherwise if M is interested:
-		if the scared of M > 0 and M is not penetrating a body part:
-			compute fleeing of M;
-			if a random number from 1 to 5 is 1 and M is not in the location of the player and M is not nearby:
-				bore M for 100 seconds;
-		otherwise if M is in the location of the player:
-			if N is 1:
-				if M is unfriendly or M is penetrating a body part or M is grabbing the player:
-					check attack of M;
-				otherwise:
-					if the player is not in danger and a random number from 1 to 23 is 1:
-						distract M;
-						say "[BecomesBoredFlav of M]";
-					otherwise:
-						compute protection of M;
-		otherwise:
-			if M is unfriendly:
-				check seeking N of M;
-				if M is not in the location of the player and a random number from 1 to 15 + (30 * the number of worn catbells) is 1:
-					bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
-					if M is strangers:
-						now M is survived;
-						compute survival rewards;
-			otherwise if a random number from 1 to 15 is 1:
-				bore M for 100 seconds; [Every turn the monster is friendly, there is a 1 in 15 chance of them getting bored.]
-			otherwise:
-				check seeking N of M;
-	otherwise:
-		check motion of M;
+
+To compute unique final action of (M - a ghost):
 	compute phaseout of M;
 
 To compute phaseout of (M - a ghost):
@@ -130,11 +101,12 @@ To compute phaseout of (M - a ghost):
 		now M is phased;
 		if M is in the location of the player, say "The [M] shimmers as it shifts out of the corporeal world.".
 
-To compute phaseout of (M - a ghostly tentacle):
+To compute unique final action of (M - a ghostly tentacle):
 	do nothing.
 
 To say SummoningFlav of (M - a ghost):
-	say "[one of]You hear an unsettling creaking noise somewhere else in the mansion.[or]You hear loud knocking somewhere else in the mansion[or]You hear a door slowly creaking open somewhere else in the mansion.[at random]".
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if trap fetish is 0]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediatley [if bukkake fetish is 1 and trap fetish is 1]ejaculates all over her face[otherwise if trap fetish is 1]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if].  The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
+	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
 To say he of (M - a ghost):
 	say "it".

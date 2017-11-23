@@ -234,6 +234,9 @@ To transform (D - a blue scrunchie) into (C - a monkey scrunchie):
 	say "[printed plural name of C] in front of your eyes!"; [no image necessary since it'll be on character window]
 	say "[TransformReaction of C]".
 
+To decide if a monkey scrunchie is roleplay:
+	if diaper quest is 0, decide no;
+	decide yes;
 			
 Chapter 4 - Rubber Scrunchie
 

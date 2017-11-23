@@ -69,7 +69,15 @@ This is the cowgirl class rule:
 		now player-class is "cowgirl";
 		rule succeeds.
 The cowgirl class rule is listed in the player class rules.
-cowgirl is a text that varies.  cowgirl is "cowgirl".
+
+[!<TextIsCowgirl>+
+
+Thanks to the cow slave multiclass, we have multiple different texts that need to be able to return true for the class of the player being cowgirl.
+
++!]
+Definition: a text (called T) is cowgirl:
+	if T is "cowgirl" or T is "cow slave", decide yes;
+	decide no.
 
 [!<TheCowSlutRule>+
 
@@ -88,12 +96,12 @@ REQUIRES COMMENTING
 This is the priestess class rule:
 	if there is a worn runic headband and there is a worn priestess outfit:
 		now player-class is "priestess";
-		if there is a worn abyssal tattoo, now player-class is "cult priestess";
+		if there is a worn abyssal tattoo, now player-class is "dark priestess";
 		rule succeeds.
 The priestess class rule is listed in the player class rules.
 
 Definition: a text (called T) is priestess:
-	if T is "priestess" or T is "dark priestess", decide yes;
+	if T is "priestess" or T is "dark priestess" or T is "virgin warrior priestess", decide yes;
 	decide no.
 
 [!<TheVirginWarriorClassRule>+
@@ -102,11 +110,13 @@ REQUIRES COMMENTING
 
 +!]
 This is the virgin warrior class rule:
-	if there is a worn flower hairclip and there is a worn gown of purity:
+	if there is a worn flower hairclip and there is a worn warrior chestpiece:
 		now player-class is "virgin warrior";
 		rule succeeds.
 The virgin warrior class rule is listed in the player class rules.
-virgin warrior is a text that varies.  virgin warrior is "virgin warrior".
+Definition: a text (called T) is virgin warrior:
+	if T is "virgin warrior" or T is "virgin warrior priestess", decide yes;
+	decide no.
 
 [!<TheSchoolgirlClassRule>+
 
@@ -152,7 +162,16 @@ This is the royal slave class rule:
 		now player-class is "royal slave";
 		rule succeeds.
 The royal slave class rule is listed in the player class rules.
-royal slave is a text that varies.  royal slave is "royal slave".
+
+[!<TextIsRoyalSlave>+
+
+Thanks to the cow slave multiclass, we have multiple different texts that need to be able to return true for the class of the player being royal slave.
+
++!]
+Definition: a text (called T) is royal slave:
+	if T is "royal slave" or T is "cow slave", decide yes;
+	decide no.
+
 
 [!<TheRoyalSlavesCannotMasturbateRule>+
 
@@ -175,7 +194,15 @@ This is the silicone queen class rule:
 		now player-class is "silicone queen";
 		rule succeeds.
 The silicone queen class rule is listed in the player class rules.
-silicone queen is a text that varies.  silicone queen is "silicone queen".
+
+[!<TextIsSiliconeQueen>+
+
+Thanks to the walking condom multiclass, we have multiple different texts that need to be able to return true for the class of the player being silicone queen.
+
++!]
+Definition: a text (called T) is silicone queen:
+	if T is "silicone queen" or T is "walking condom", decide yes;
+	decide no.
 
 [!<TheLatexFetishModelClassRule>+
 
@@ -211,7 +238,15 @@ This is the catgirl class rule:
 		now player-class is "catgirl";
 		rule succeeds.
 The catgirl class rule is listed in the player class rules.
-catgirl is a text that varies.  catgirl is "catgirl".
+
+[!<TextIsCatgirl>+
+
+Thanks to the magical neko multiclass, we have multiple different texts that need to be able to return true for the class of the player being catgirl.
+
++!]
+Definition: a text (called T) is catgirl:
+	if T is "catgirl" or T is "magical neko", decide yes;
+	decide no.
 
 [!<ThePuppygirlClassRule>+
 
@@ -224,18 +259,6 @@ This is the puppygirl class rule:
 		rule succeeds.
 The puppygirl class rule is listed in the player class rules.
 puppygirl is a text that varies.  puppygirl is "puppygirl".
-
-[!<TheSissyClassRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the sissy class rule:
-	if there is a worn sissy bow and the number of worn sissifying clothing > 1 and the player is male:
-		now player-class is "sissy";
-		rule succeeds.
-The sissy class rule is listed in the player class rules.
-sissy is a text that varies.  sissy is "sissy".
 
 [!<TheSantaClassRule>+
 
@@ -266,11 +289,11 @@ The adult baby class rule is listed in the player class rules.
 
 [!<TextIsAdultBaby>+
 
-REQUIRES COMMENTING
+We have a lot of different texts that need to be able to return true for the class of the player being adult baby.
 
 +!]
 Definition: a text (called T) is adult baby:
-	if T is "little one" or T is "diaper slut" or T is "big baby" or T is "sissy baby", decide yes;
+	if T is "little one" or T is "diaper slut" or T is "big baby" or T is "sissy baby" or T is "messy baby", decide yes;
 	decide no.
 
 [!<TheWenchedClassRule>+
@@ -537,7 +560,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the faerie class rule:
-	if there is a worn glittering rose and there is a worn butterfly wings and the player is the donator:
+	if there is a worn glittering rose and there is a worn butterfly wings:
 		now the player-class is "faerie";
 		rule succeeds.
 The faerie class rule is listed in the player class rules.
@@ -557,7 +580,7 @@ hooker in training is a text that varies. hooker in training is "hooker in train
 
 [!<TheCumdumpsterClassRule>+
 
-REQUIRES COMMENTING
+The cumdumpster class (revolving around condoms pinned on clothes) only requires the cumdumpster hat.
 
 +!]
 This is the cumdumpster class rule:
@@ -565,14 +588,81 @@ This is the cumdumpster class rule:
 		now the player-class is "cumdumpster";
 		rule succeeds.
 The cumdumpster class rule is listed in the player class rules.
-cumdumpster is a text that varies. cumdumpster is "cumdumpster".
 
+[!<TextIsCumdumpster>+
+
+Thanks to the walking condom multiclass, we have multiple different texts that need to be able to return true for the class of the player being cumdumpster.
+
++!]
+Definition: a text (called T) is cumdumpster:
+	if T is "cumdumpster" or T is "walking condom", decide yes;
+	decide no.
+
+[!<TheMagicalGirlClassRule>+
+
+The magical girl class (revolving around destroying tentacle breeders) only requires the hairpin.
+
++!]
 This is the magical girl class rule:
 	if there is a worn heart hairpin:
 		now the player-class is "magical girl";
 		rule succeeds.
 The magical girl class rule is listed in the player class rules.
-magical girl is a text that varies. magical girl is "magical girl".
+
+[!<TextIsMagicalGirl>+
+
+Thanks to the magical neko multiclass, we have multiple different texts that need to be able to return true for the class of the player being magical girl.
+
++!]
+Definition: a text (called T) is magical girl:
+	if T is "magical girl" or T is "magical neko", decide yes;
+	decide no.
+
+[!<TheCowSlaveClassRule>+
+
+The cow slave is a combination class of the cowgirl and royal slave.  It can have either headgear.
+
++!]
+This is the cow slave class rule:
+	if there is a worn cow print milking basque and (there is a worn royal circlet or there is a worn cow ears):
+		now the player-class is "cow slave";
+		rule succeeds.
+The cow slave class rule is listed first in the player class rules.
+
+[!<TheWalkingCondomClassRule>+
+
+The walking condom is a combination class of the silicone queen and cumdumpster.  It needs the plastic dress with pinned condoms.
+
++!]
+This is the walking condom class rule:
+	if there is a worn rubber top hat or there is a worn cumdumpster hat:
+		let C be a random pink rubber dress;
+		if C is worn and the total condoms of C > 0:
+			now the player-class is "walking condom";
+			rule succeeds.
+The walking condom class rule is listed first in the player class rules.
+
+[!<TheMagicalNekoClassRule>+
+
+The magical neko is a combination class of the catgirl and magical girl.  It needs the cat ears and magical girl dress.
+
++!]
+This is the magical neko class rule:
+	if there is a worn cat ears and there is a worn magical dress:
+		now the player-class is "magical neko";
+		rule succeeds.
+The magical neko class rule is listed first in the player class rules.
+
+[!<TheVirginWarriorPriestessClassRule>+
+
+The virgin warrior priestess is a combination class of the virgin warrior and priestess.  It needs the flower hairclip and golden warrior priestess outfit.
+
++!]
+This is the virgin warrior priestess class rule:
+	if there is a worn flower hairclip and there is a worn golden warrior priestess outfit:
+		now the player-class is "virgin warrior priestess";
+		rule succeeds.
+The virgin warrior priestess class rule is listed first in the player class rules.
 
 [!<TheLivingSexDollClassRule>+
 

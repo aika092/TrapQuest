@@ -227,7 +227,7 @@ REQUIRES COMMENTING
 +!]
 To add treasure to (X - a treasure chest):
 	let R be a random off-stage appropriate recipe;
-	if a random number between 1 and 2 is 1 and earnings < starting-earnings - 150 and R is recipe:
+	if a random number between 1 and 5 > 2 and earnings < starting-earnings - 100 and R is recipe:
 		now R is in X;
 		say "You find a [printed name of R] written on the inside of the lid!  Interesting...";
 		if newbie tips is 1, say "[one of][item style]Newbie tip: You've found a recipe!  Recipes allow you to craft certain things at the Apothecary in the Dungeon once you've found the necessary ingredient.  Using anything but the correct ingredients will create cursed versions of random craftable items, so it's dangerous to risk it without knowing the recipe, as you won't know that what you've created will have a beneficial effect.  You can choose to memorise the recipe, but you can only remember a certain number, depending on your intelligence.  For most recipes, memorising it gives you a chance to create a better (e.g. blessed) version of the item.[roman type][line break][or][stopping]";

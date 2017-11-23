@@ -166,6 +166,8 @@ REQUIRES COMMENTING
 
 +!]
 Check direct-presenting something to:
+	if the second noun is summoning portal:
+		try appeasing the noun with the second noun instead;
 	if the noun is not body part:
 		if the second noun is monster, try offering the noun to the second noun instead;
 		say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5] or your breasts[end if]." instead;

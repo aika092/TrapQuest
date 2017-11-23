@@ -56,7 +56,7 @@ To compute labour to (M - a fairy):
 		say "[one of]Just as you think things can't get any weirder, the fairy flies down and kisses the baby on the cheek.  This causes your new daughter to sprout wings, her skin turns pink, and she starts giggling.  You watch stunned as your new fairy daughter starts flying - she goes up into the sky and out of view.[or]Just like last time, the fairy flies down and kisses the baby on the cheek, transforming her into a fairy.  Your new fairy daughter flies up into the sky and out of view.[stopping][roman type][line break]";
 		let R be a random off-stage glittering rose;
 		let T be a random womb diagram tattoo;
-		if R is actually summonable and the player is the top donator and (M is the father or M is mating):
+		if R is actually summonable and (M is the father or M is mating):
 			say "The glitter seems to coalesce from the air around you, forming itself into rose-shaped bow, which settles neatly on your head.";
 			summon R cursed;
 		otherwise if there is a worn tattoo and T is actually summonable:
@@ -80,8 +80,8 @@ To compute labour to (M - a fairy):
 Part 1 - Perception
 
 Definition: a fairy (called M) is uniquely unfriendly:
-	if the pregnancy of the player > 0, decide no;
 	if the boredom of M <= 0, decide yes;
+	if the pregnancy of the player > 0, decide no;
 	decide no.
 
 To compute perception of (M - a fairy):
@@ -238,6 +238,7 @@ While the fairy is grabbing the player, vaginal sex is much more likely.
 This is the fairy ritual rule:
 	if there is a fairy grabbing the player, increase the desirability of vagina by 20.
 The fairy ritual rule is listed in the pussy slut eligibility rules.
+
 [!<TheFairyAnalRule>+
 
 While the fairy is grabbing the player, anal sex is less likely.
@@ -822,5 +823,16 @@ To say WhoAnswer of (M - a blue fairy):
 
 To decide which number is the maxhealth of (M - a blue fairy):
 	decide on 5 + (the difficulty of M * (1 + game difficulty)).
+
+[Of course, 'current-monster' here is the blue fairy]
+This is the blue fairy powerup rule:
+	repeat with N running through dangerous monsters in the location of the player:
+		if N is not current-monster and the refactory-period of current-monster <= 0 and the health of N < the maxhealth of N:
+			say "The [current-monster] floats over the [N], giggling as she sprinkles glittering blue fairy dust over [his of N] head. [big he of N] shakes [his of N] head as all of [his of N] wounds close simultaneously.";
+			now the health of N is the maxhealth of N;
+			now the refactory-period of current-monster is 200;
+			bore current-monster for 120 seconds;
+			rule succeeds.
+The blue fairy powerup rule is listed first in the fairy attacks then gets bored rules.
 
 Fairy ends here.

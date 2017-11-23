@@ -62,10 +62,45 @@ To compute suggestion:
 		otherwise:
 			say "For some reason you feel very distracted and flirty!";
 			Intdown 1;
+		[###Selkie: I'd add:
+		- one that dropped you to your knees without thinking, - "submit"
+		- one that made you strip off all your clothes without thinking, - "stripper"
+		- one that made you pull out any bondage gear in your bag of holding and wear them - "slave"
+		- one that made you change into more slutty clothes if you have any? - "slutty"
+		]
 	otherwise if suggestion-tracking is 1:
 		[success gets 'rewarded' here]
 		say "You feel a sudden sense of relief, as though you had done something very important.";
 		now suggestion-type is 0.
 
+
+The hypno triggers rules is a rulebook.
+
+This is the great ones hypno rule:
+	if hypno-trigger is "great one" and player-hypno-great is 1:
+		say "Just thinking about the [great one]s makes you feel how powerless you are in comparison to them!";
+		humiliate 20.
+The great ones hypno rule is listed in the hypno triggers rules.
+
+
+
+This is the present-for-oral hypno rule:
+	if hypno-trigger is "tasty" and hypno-trigger-tasty is 1:
+		say "[bold type]Having heard the word 'tasty', you find yourself automatically [if face is actually occupied]trying to present[otherwise]presenting[end if] your mouth for use.[roman type][line break]";
+		if the player is upright, try silently kneeling;
+		let M be a random interested monster in the location of the player;
+		if M is nothing:
+			now M is a random monster in the location of the player;
+			if M is monster, now M is interested;
+		if the player is prone:
+			if face is actually occupied:
+				say "[if the bimbo of the player > 14]Unfortunately[otherwise]Fortunately[end if], your mouth is already occupied.";
+			otherwise if M is nothing:
+				say "All that happens is that you feel a little silly, since there's nobody here to offer a blowjob to.";
+			otherwise:
+				try direct-presenting face to M;
+				now broken-present-cooldown is 120;
+		now another-turn is 1.
+The present-for-oral hypno rule is listed in the hypno triggers rules.
 
 Hypnotic Suggestion ends here.

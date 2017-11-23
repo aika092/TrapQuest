@@ -64,7 +64,7 @@ Carry out WellWishing:
 		let K be a random skeleton key;
 		now K is carried by the player;
 		say "Suddenly, you find a [K] in your hand!";
-	otherwise if the class of the player is sissy and the soreness of asshole > 0:
+	otherwise if the player is a sissy and the soreness of asshole > 0:
 		say "[first custom style]I know... what you really wish for...[roman type][line break] Your [asshole] tingles as it spontaneously fills up with [semen], which washes away all feelings of soreness and tension.";
 		AssFill the soreness of asshole;
 		now the soreness of asshole is 0;

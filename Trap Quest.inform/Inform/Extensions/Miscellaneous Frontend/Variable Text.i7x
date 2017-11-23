@@ -10,6 +10,14 @@ To say variable custom style:
 	if a random number from 7 to 12 > the bimbo of the player, say first custom style;
 	otherwise say second custom style.
 
+[!<hypnoTrigger:String>*
+
+This is the variable text that controls whether hypnosis is triggered
+
+*!]
+
+hypno-trigger is a text that varies.
+
 [!<SayFeet>+
 
 REQUIRES COMMENTING
@@ -439,5 +447,24 @@ To say flow:
 	say "[one of]flow[or]stream[as decreasingly likely outcomes]".
 	
 
+[!<SayGreatOne>+
+
+In support of a hypnosis test, you can be indoctrinated by the cultists to react to them mentioning the Great Ones
+
++!]
+
+To say great one:
+	say "Great One";
+	if player-hypno-great is 1:
+		now hypno-trigger is "great one".
+
+[!<SayTasty>+
+
+Aika's first hypnosis test
+
++!]
+To say tasty:
+	say "tasty";
+	now hypno-trigger is "tasty".
 
 Variable Text ends here.

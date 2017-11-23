@@ -90,7 +90,7 @@ To compute friendly boredom of (M - a djinn):
 To compute perception of (M - a djinn):
 	now M is interested;
 	if M is objectifying the player:
-		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Whore, your holes are required.'[or]You look like a tasty mortal.  Bow before me!'[or]Come here, young one.  This shaft isn't going to pleasure itself...'[in random order][roman type][line break]";
+		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Whore, your holes are required.'[or]You look like a [tasty] mortal.  Bow before me!'[or]Come here, young one.  This shaft isn't going to pleasure itself...'[in random order][roman type][line break]";
 		permanently anger M;
 	otherwise if M is unfriendly or the wish history of M is 1:
 		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again!  Did you think you'd been forgiven?  No, you will be my sex pet forever.'[or]Ah, perfect, I was just wondering where you had got to!'[or]You know the drill[if the player is upright].  Get on your knees[end if].'[stopping][roman type][line break][if the player is upright]He takes an aggressive stance.[end if]";
@@ -377,7 +377,7 @@ Section 1 - Attack
 
 To compute the flying player taunting of (M - a djinn):
 	if a random number from 1 to 6 is 1:
-		say "The [M] laughs at you.  [speech style of M]'[one of]Your attempt at flight is laughable.'[or]If the Great One had intended you to fly, he would have given you my power!'[or]How dreadfully pathetic, even for a mortal.'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
+		say "The [M] laughs at you.  [speech style of M]'[one of]Your attempt at flight is laughable.'[or]If the [great one] had intended you to fly, he would have given you my power!'[or]How dreadfully pathetic, even for a mortal.'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
 		humiliate 20.
 
 To say LandingTaunt of (M - a djinn):

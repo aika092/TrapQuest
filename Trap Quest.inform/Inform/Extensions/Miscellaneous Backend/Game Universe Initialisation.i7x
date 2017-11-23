@@ -152,9 +152,13 @@ To compute starting headgear:
 	repeat with H running through on-stage headgear:
 		only destroy H;[takes care of things like scrunchies and cultist veils]
 	let H be a random roleplay headgear;
+	let C be 0;
+	while C < 2 and H is scrunchie:
+		now H is a random roleplay headgear;
+		increase C by 1;[because there are six times as many scrunchies as other types of headgear, we reroll up to two times if we get a scrunchie]
 	now the raw-magic-modifier of H is a random number between 0 and -2;
 	if H is royal circlet or H is sissy bow, increase the raw-magic-modifier of H by 3;
-	if H is white hood or H is vampiric fangs or H is pink scrunchie, increase the raw-magic-modifier of H by 2;
+	if H is white hood or H is vampiric fangs or H is pink scrunchie or H is monkey scrunchie, increase the raw-magic-modifier of H by 2;
 	if H is cat ears or H is rubber top hat or H is black hood or H is cultist veil, increase the raw-magic-modifier of H by 1;
 	if H is scrunchie:
 		let M be the raw-magic-modifier of H;
@@ -163,7 +167,7 @@ To compute starting headgear:
 				now the raw-magic-modifier of S is M;
 				now S is in a random pink wardrobe;
 		if H is pink scrunchie:
-			repeat with S running through blue scrunchies:
+			repeat with S running through pink scrunchies:
 				now the raw-magic-modifier of S is M;
 				now S is in a random pink wardrobe;
 	otherwise:

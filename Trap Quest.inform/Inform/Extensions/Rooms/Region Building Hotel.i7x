@@ -52,8 +52,6 @@ To Set Up The Hotel:
 		if R is recipe, now R is in Hotel25;
 	follow the set up hotel traps rules;
 	if inflation fetish is 1, now a random recipe for latex curse reversal is in Hotel25;
-	if inhuman pregnancy is 2:
-		now hotel-breeder is in a random placed modern room;
 	repeat with M running through alive monsters in the hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
 	if debugmode is 0 and loading scenes is 1, clear the screen.

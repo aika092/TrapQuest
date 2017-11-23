@@ -5,6 +5,9 @@ A candy corn is a kind of candy.  The printed name of candy corn is "[TQlink of 
 To decide which number is the crafting key of (C - a candy corn):
 	decide on 46.
 
+Definition: a candy corn (called C) is low tier:
+	decide yes.
+
 To say DevourFlav of (C - a candy corn):
 	say "You open the [C] and [if the player is in danger]devour it all as quickly as you can[otherwise if the fat-weight of the player > 28]greedily dumping it all into your mouth, and immediately swallowing them whole[otherwise if the fat-weight of the player > 12]speedily devour it two or three at a time[otherwise]pop each piece in your mouth one at a time, savouring the taste[end if].  ".
 

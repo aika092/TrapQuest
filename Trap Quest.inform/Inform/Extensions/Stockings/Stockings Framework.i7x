@@ -53,6 +53,9 @@ To set up influence of (C - a stockings):
 To say ShortDesc of (C - a stockings):
 	say "pair of stockings".
 
+To say ShortestDesc of (C - a stockings):
+	say "pair of stockings".
+
 This is the setup starting stockings rule:
 	let C be a random stockings;
 	restock C.
@@ -74,6 +77,13 @@ This is the remove inappropriate stockings rule:
 	repeat with B running through mesh stockings:
 		now B is in Holding Pen.
 The remove inappropriate stockings rule is listed in the diaper quest fix rules.
+
+Definition: a stockings (called C) is ingredient:
+	decide yes.
+
+To decide which number is the crafting key of (C - a stockings):
+	decide on 53.
+
 
 Part - Wearability
 

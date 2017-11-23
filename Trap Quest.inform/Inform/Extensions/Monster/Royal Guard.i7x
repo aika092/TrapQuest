@@ -758,7 +758,6 @@ To compute (M - a royal guard) entering mouth:
 		distract M.
 
 To compute facial climax of (M - a royal guard):
-	let R be 0;
 	TimesFuckedUp M by 1;
 	let N be a random wench in the location of the player;
 	let cW be 0;
@@ -788,41 +787,10 @@ To compute facial climax of (M - a royal guard):
 			repeat with W running through wenches in the location of the player:
 				if the guard-obedience of W is 1:
 					increase the favour of W by 1;
-	otherwise if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
-		if the reaction of the player is 0:
-			say FacialBrokenFree of M;
-			if a random number between 1 and the dexterity of the player > the difficulty of M:
-				say SuccessfulFacialDodge of M;
-				SemenPuddleUp the semen load of M;
-				compute angry punishment of M;
-			otherwise:
-				say FailedFacialDodge of M;
-				CumFaceUp the semen load of M;
-				compute happy reward of M;
-		otherwise: [the player submitted]
-			say UnavoidedFacial of M;
-			CumFaceUp the semen load of M;
-			humiliate 200;
-			compute happy reward of M;
-	otherwise: [Internal cumshot]
-		if image cutscenes is 1, display figure of guard cutscene 4;
-		if the reaction of the player is 0:
-			say ResistedOralCreampie of M;
-			say SwallowDemand of M;
-			now M is not penetrating face; [This can't cause them to puke]
-			if M is coercing a swallow: [Automatic swallow]
-				say AutomaticSwallow of M;
-				StomachSemenUp the semen load of M;
-				humiliate 200;
-				compute happy reward of M;
-			otherwise:
-				compute swallow choice of M;
-		otherwise: [submitted, deepthroat]
-			say DeepthroatCreampie of M;
-			StomachSemenUp the semen load of M;
-			humiliate 100;
-			compute happy reward of M;
-	satisfy M.
+		satisfy M;
+	otherwise:
+		compute default facial climax for M.
+	
 
 To compute angry punishment of (M - a royal guard):[Royal guards will always punish you if you struggle, unless you're a princess.]
 	if the class of the player is not princess or the bimbo of the player > 6:
@@ -1348,8 +1316,10 @@ To say AdviceAnswer of (M - a royal guard):
 Section 3 - Drink Requesting
 
 To compute friendly drink of (M - a royal guard):
-	say "[speech style of M]'[big he of M]re, drink from my water pouch.'[roman type][line break]You do so and feel completely refreshed!";
-	StomachUp 2.
+	say "[speech style of M]'Here, drink from my water pouch.  It's not particularly [tasty] but it will keep you hydrated.'[roman type][line break]";
+	if hypno-trigger-tasty is 0: [if the hypno trigger is enabled then we want them to drop and present instead.]
+		say "You do so and feel completely refreshed!";
+		StomachUp 2.
 
 To compute unfriendly drink of (M - a royal guard):
 	if M is penetrating a fuckhole:
@@ -1529,7 +1499,7 @@ To anal dominate (M - a royal guard):
 		orgasm M;
 		say AfterDominationComment 1 of M;
 	otherwise:
-		if the class of the player is sissy or the player is very horny or (the soreness of asshole > a random number between G and 7) or (the semen addiction of the player > a random number between 5 and 12):[accidental creampie]
+		if the player is a sissy or the player is very horny or (the soreness of asshole > a random number between G and 7) or (the semen addiction of the player > a random number between 5 and 12):[accidental creampie]
 			say "[if the soreness of asshole > 3]Your recent ordeals have left you so sensitive that the increase in stimulation immediately sends you over the edge,[otherwise if the semen addiction of the player > 9]The thought of being inseminated turns you on enough to immediately send you over the edge,[otherwise]You're already so turned on that the sudden increase in stimulation is all you need to get there,[end if] and you immediately feel [one of]a rush of[or]that familiar rush of[stopping] pleasure through your prostate, your internal muscles rapidly tensing and relaxing as [one of][he of M] floods your [asshole] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [asshole] fills with [his of M] hot [semen][at random]. [if C > 0]Your cage bounces as your load dribbles out into a puddle on [his of M] belly[otherwise if the size of penis < 3]Your [ShortDesc of penis] jiggles pitifully, dribbling a tiny load onto [his of M] belly[otherwise if the size of penis < 5] Your [ShortDesc of penis] bobs excitedly, spitting its load in a short line on [his of M] belly[otherwise if the size of penis < 8]Your [ShortDesc of penis] throbs as it shoots its [load] in a rough line across his belly[otherwise]Your [ShortDesc of penis] tenses, shooting several long ropes across [his of M] belly and chest[end if], a testament to the shameful nature of your orgasm as much as it is proof that you managed to be dominant while having it. You blow a short sigh of relief, sharing eye contact with [him of M] as you return to your feet";
 			now M is penetrating asshole;
 			orgasm;

@@ -41,8 +41,6 @@ To Set Up The Woods:
 			now Y is in G;
 	unless there is an on-stage sword, set up sword in the stone;
 	follow the set up woods traps rules;
-	if inhuman pregnancy is 2:
-		now woods-breeder is in a random placed dodgy room;
 	repeat with M running through alive monsters in the woods:
 		if the location of M is not placed, now M is in a random placed dodgy room;
 	if debugmode is 0 and loading scenes is 1, clear the screen.

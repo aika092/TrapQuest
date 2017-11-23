@@ -431,7 +431,7 @@ To say BimboGreet:
 				otherwise say "[first custom style]'Hey, what's up, dude?'";
 			otherwise:
 				say "[first custom style]'Hey, what's up?'";
-		otherwise if M is intelligent and the class of the player is sissy and the delicateness of the player > the bimbo of the player and the player is upright and there is worn knee-length or shorter clothing:
+		otherwise if M is intelligent and the player is a sissy and the delicateness of the player > the bimbo of the player and the player is upright and there is worn knee-length or shorter clothing:
 			let H be 0;
 			if there are worn heels, now H is the hindrance of a random worn heels;
 			say "Placing one foot in front of the other, you [if H > 0]awkwardly [end if]pull up the sides of your [random worn knee-length or shorter clothing] and bend at the knees whilst keeping your back straight.  [second custom style]'Pleased to meet you[if M is female], Ma'am[otherwise if M is male], Sir[end if].'";

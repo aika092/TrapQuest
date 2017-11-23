@@ -12,7 +12,7 @@ To decide which figure-name is the clothing-image of (C - a runic headband):
 	decide on figure of runic headband.
 
 To say ClothingDesc of (H - a runic headband):
-	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around.  You have no idea what they mean.".
+	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around.  You have no idea what they mean.[if there is a worn abyssal tattoo] The runes have turned black, and almost seem wet with some kind of sludge.[end if]".
 
 To say ShortDesc of (H - a runic headband):
 	say "runic headband".
@@ -23,6 +23,31 @@ To compute SelfExamineDesc of (H - runic headband):
 	
 To set up influence of (C - a runic headband):
 	set up stat-based influence of C.
+
+To decide which number is the strength-influence of (H - a runic headband):
+	let S be 0;
+	if the class of the player is cultist:
+		repeat with L running through cursed clothing worn by the player:
+			if L is not H, increase S by 1;
+		let I be the intelligence of the player;
+		increase S by I / 6;
+	decide on S.
+	
+To decide which number is the dexterity-influence of (H - a runic headband):
+	let D be 0;
+	if the class of the player is cultist:
+		repeat with L running through cursed clothing worn by the player:
+			if L is not H, increase D by 1;
+		let I be the intelligence of the player;
+		increase D by I / 6;
+	decide on D.
+	
+To decide which number is the intelligence-influence of (H - a runic headband):
+	let I be 0;
+	if the class of the player is cultist:
+		repeat with L running through cursed clothing worn by the player:
+			if L is not H, increase I by 1;
+	decide on I.
 
 priestess-summoned is a number that varies.
 

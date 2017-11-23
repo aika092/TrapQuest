@@ -140,7 +140,7 @@ To compute perception of (M - an aeromancer):
 		anger M;
 		if image cutscenes is 1, display figure of aeromancer interact 14;
 	otherwise if M is objectifying the player:
-		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Ooh, I can tell that you just can't wait to be played with!'[or]Wow, now that's a tasty slut!  Come here pretty girl, let me play with you!'[or]Ooh, yay, I've finally found the perfect subject for my experiments!'[in random order][roman type][line break]";
+		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Ooh, I can tell that you just can't wait to be played with!'[or]Wow, now that's a [tasty] slut!  Come here pretty girl, let me play with you!'[or]Ooh, yay, I've finally found the perfect subject for my experiments!'[in random order][roman type][line break]";
 		anger M;
 		if image cutscenes is 1, display figure of aeromancer interact 10;
 	otherwise if M is unfriendly:
@@ -256,6 +256,7 @@ Section 0 - Ballooning
 
 An aeromancer has a number called balloon.
 An aeromancer has a number called previously-ballooned.
+An aeromancer can be wand-empowered. An aeromancer is usually not wand-empowered.
 
 Definition: an aeromancer (called M) is ballooned:
 	if M is in the woods:
@@ -269,20 +270,20 @@ To compute unique early action of (M - an aeromancer):
 
 To compute ballooning of (M - an aeromancer):
 	if M is ballooned:
-		decrease the balloon of M by 1;
+		if M is not wand-empowered, decrease the balloon of M by 1;
 		if the balloon of M is 1:
 			if M is in the location of the player, say "The [M]'s breasts deflate and she returns to the ground.";
-			now the difficulty of M is 6;
-			if M is in the Woods, DifficultyUp M by 2;
+			if M is in the Woods, DifficultyDown M by 6;
+			otherwise DifficultyDown M by 4;
 			now M is flightless;
 	otherwise:
 		if M is in the location of the player and M is dangerous:
 			increase the balloon of M by 1;
 			if the balloon of M > a random number between 3 and 8:
-				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...'  [or]Ultimate Airbag Transformation - Engage!'  [stopping][roman type]The [M] pushes her wand between her breasts and massages it like a [manly-penis].  You watch [if the bimbo of the player < 6]in horror [end if]as her breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through her tight top and destroying it permanently[end if]!  They begin to lift her off of the ground until she is hovering gracefully a foot in the air.  You feel she's probably a lot more powerful until she lands.";
-				now the difficulty of M is 10;
+				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...'  [or]Ultimate Airbag Transformation - Engage!'  [stopping][roman type]The [M] pushes her wand between her breasts and massages it like a [manly-penis].  You watch [if the bimbo of the player < 6]in horror [end if]as her breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through her tight top and destroying it permanently[end if]!  They begin to lift her off of the ground until she is hovering gracefully a foot in the air.  [if M is wand-empowered]She's definitely going to be a lot more powerful now.[otherwise]You feel she's probably a lot more powerful until she lands.[end if]";
 				now M is airborne;
-				if M is in the Woods, DifficultyUp M by 2;
+				if M is in the Woods, DifficultyUp M by 6;
+				otherwise DifficultyUp M by 4;
 				increase the previously-ballooned of M by 1;
 				if image cutscenes is 1, display figure of aeromancer cutscene 1.
 	
@@ -456,7 +457,7 @@ To compute (M - an aeromancer) entering a fuckhole:[this was originally one big 
 		say "The [M] stretches out her arms and hands towards you, giggling uncontrollably as her wand begins to glow. The air around you compresses itself into shimmering tentacles, which immediately shoot [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Wind lashes at your skin and clothes as her invisible tentacles begin to ruthlessly fuck you.";
 	otherwise:
 		say "The [M] stretches out her arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind.  Cackling with glee, the aeromancer uses her mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the center, at just above waist height. She takes a couple steps forward, barely containing her mirth as you [if the relevant sex addiction of M < 7]desperately try and fail to get purchase on the ground below[otherwise]look up at her in wide-eyed anticipation[end if].";
-		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the class of the player is sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You[']re a slut! Hahahaha!'[in random order][roman type]";
+		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You[']re a slut! Hahahaha!'[in random order][roman type]";
 		say "The aeromancer raises her wand, which glows brightly as it compresses the air around you into shimmering tentacles, which immediately shoot [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Wind lashes at your skin and clothes as her invisible tentacles begin to ruthlessly fuck you.";
 	if image cutscenes is 1, display figure of aeromancer cutscene 4.
 
@@ -577,21 +578,13 @@ To compute unique death of (M - an aeromancer):
 
 Part 5 - Dominant Sex
 
-To decide which number is the submissiveness of (M - an aeromancer):
+To decide which number is the physical dominance roll for (M - an aeromancer):
 	let R be the intelligence of the player - the difficulty of M;
 	if debugmode > 0, say "Wand check = [R].[line break]";
-	if R < 0 and the intelligence of the player < 15, decide on -1;[You're too stupid for the wand to accept you.]
+	if R < 0 and the intelligence of the player < 15, decide on -1;[You can only have sex with the aeromancer if her wand is willing to accept you.]
 	if debugmode > 0, say "Aeromancer chastity check...[line break]";
 	if there is a worn research airhancer, decide on -1;
-	let N be a random number between (the strength of the player / 2) and (the dominance of the player + 2);
-	let D be the health of M - the times-dominated of M;
-	if debugmode > 0, say "Player dominance = [N], aeromancer submissiveness = [D].[line break]";
-	if N >= D, decide on 1;
-	if the health of M <= 10 and the maxhealth of M >= 40:[this is a high health enemy that takes a lot of effort to get this low, so we re-roll N and try again]
-		now N is a random number between (the strength of the player / 2) and (the dominance of the player + 2);
-		if debugmode > 0, say "Reroll. New player dominance = [N], aeromancer submissiveness = [D].[line break]";
-		if N >= D, decide on 1;
-	decide on -1.
+	decide on 0.
 
 To say DominanceSuccess of (M - an aeromancer):
 	if the size of penis <= 0 or the player is female:
@@ -1005,7 +998,7 @@ To compute (M - a confident aeromancer) entering a fuckhole:
 		say "The [M] stretches out her arms and hands towards you, smirking as her wand immediately begins to glow. The air around you compresses itself into a massive, disembodied [manly-penis], only visible from the sheer speed at which it shoots [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Shrieking gusts of wind lash at your skin and clothes as the magical sex organ begins to ruthlessly fuck you.";
 	otherwise:
 		say "The [M] stretches out her arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind.  Cackling with glee, the aeromancer uses her mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the center, at just above waist height. She takes a couple of steps forward, barely containing her mirth as you [if the relevant sex addiction of M < 7]desperately try but fail to get purchase on the ground below[otherwise]look up at her in wide-eyed anticipation[end if].";
-		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the class of the player is sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You[']re a slut! Hahahaha!'[in random order][roman type]";
+		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You[']re a slut! Hahahaha!'[in random order][roman type]";
 		say "The aeromancer raises her wand, which glows brightly as the air around you compresses itself into a massive, disembodied [manly-penis], only visible from the sheer speed at which it shoots [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Shrieking gusts of wind lash at your skin and clothes as the magical sex organ begins to ruthlessly fuck you.".
 
 

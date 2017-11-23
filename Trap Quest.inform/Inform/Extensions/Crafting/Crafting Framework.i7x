@@ -343,6 +343,8 @@ REQUIRES COMMENTING
 *@!]
 An alchemy product has a magic-curse.  Understand the magic-curse property as describing an alchemy product when item described is sure.
 
+Include Powder by Crafting.
+
 To display complete alchemy data:
 	repeat through the Table of Alchemy:
 		say "Product: [Product entry], Recipe: [Recipe entry], Ingredient: [ingredient entry].";
@@ -352,7 +354,7 @@ To display complete alchemy data:
 		now current-crafting-key is Ingredient entry;
 		let R2 be a random highlighted product thing;
 		let R1 be a random highlighted ingredient thing;
-		say "[if Ingredient entry <= highest-cursed or (Ingredient entry >= 20 and Ingredient entry <= 23)][Appearance corresponding to an Magic of current-crafting-key in the Table of Drinks] liquid[otherwise][R1][end if] ([Ingredient entry]) - [R2] ([Product entry]) - [if Recipe entry is 1]REAL[otherwise]FAKE[end if].".
+		say "[if Ingredient entry <= highest-cursed or (Ingredient entry >= 20 and Ingredient entry <= 23)][Appearance corresponding to an Magic of current-crafting-key in the Table of Drinks] liquid[otherwise][ShortDesc of R1][end if] ([Ingredient entry]) - [ShortDesc of R2] ([Product entry]) - [if Recipe entry is 1]REAL[otherwise]FAKE[end if].".
 
 
 Crafting Framework ends here.

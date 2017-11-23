@@ -50,6 +50,8 @@ To compute takeoff of (W - a magic wand):
 		otherwise if the player is in the Woods:
 			say "As you float off, the wand falls out of your hand! The [M] appears from thin air and immediately catches it. She waves as you float off into the sky.[line break][second custom style]'[one of]You better hope I don't find you again, I won't go easy on you!'[or]Up up and away!'[or]Don't worry, I'll find YOU!'[in random order][roman type][line break]";
 		now the favour of M is 0;
+		now the balloon of M is 9;
+		now M is wand-empowered;
 		only destroy W. [TODO - new revived aeromancer gets big bonus in some way.]
 
 Definition: a magic wand (called C) is inflation themed:

@@ -86,7 +86,7 @@ To dom (M - a monster):
 
 [DOMINANT SEX FRAMEWORK]
 
-[!<SayDominanceSuccessOfMonster>+
+[!<DominateUpMonster>+
 
 This function increments the times-dominated value for M, then increments dominated-count for the player. This allows the game to keep track of how many times the player has dominated a monster, and how many monsters the player has dominated overall.
 
@@ -115,7 +115,7 @@ Check dominating:
 	if the noun is not monster, say "What would be the point of that?" instead;
 	if diaper quest is 1, say "I think you're playing the wrong game." instead;
 	if the noun is not wenchy or (the noun is acolyte and the player is not a september 2017 top donator), say "The [the noun] doesn't look like someone you could successfully dominate." instead;
-	if (the noun is male and the noun is not gladiator) and the sex addiction of the player < 5, say "[first custom style][if the player is male]What if [he of the noun] was into it? Also, wouldn't that be pretty gay?[otherwise]It would be vindicating, but I won't risk having [him of the noun] turning the tables on me.[end if][roman type][line break]";
+	if (the noun is male and the noun is not gladiator) and the sex addiction of the player < 5, say "[first custom style][if the player is male]What if [he of the noun] was into it? Also, wouldn't that be pretty gay?[otherwise]It would be vindicating, but I won't risk having [him of the noun] turning the tables on me.[end if][roman type][line break]" instead;
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don[']t see the point." instead;
 	let D be 0;[what are you going to use to fuck the monster]
 	if the player is female, now D is 2;[vagina]
@@ -123,7 +123,7 @@ Check dominating:
 	if the player is barbie or (the noun is male and the noun is not gladiator), now D is 3;[asshole]
 	if D is 1:
 		if there is a worn undisplacable potentially penis covering clothing, say "You'll have to find a way to remove your [printed name of a random worn undisplacable potentially penis covering clothing] first." instead;
-		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;
+		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;[your chastity?]
 		if there is a worn condom of kings or there is a worn restricting research airhancer, say "You wouldn't feel anything from it, so you don't see the point." instead;
 	otherwise if D is 2:
 		if there is a worn undisplacable pussy covering clothing, say "You'll have to remove your [printed name of a random worn undisplacable pussy covering clothing] first." instead;
@@ -192,29 +192,46 @@ To decide which number is the dominance of the player:
 
 [!<DecideWhichNumberIsTheSubmissivenessOfMonster>+
 
-Does the monster submit to sex, or do they turn the tables; broken up so it's easier to balance the numbers. 
-1st check: Puts 1/3 the player's strength against roughly 5/6 the monster's difficulty. If the player's value is higher, they get a 50/50 to win with no further checks.
-2nd check: Takes a random number between the dominance of a player and 1/2 the player's strength, then reduces the result "N" against the difficulty of M - the times-dominated of M, "D". If the new N is greater than or equal to M's health, they win with no further check
-3rd check: If M has a maxhealth of 40 or more and their health is 10 or less, retry the 2nd check one more time.
+Does the monster submit to sex, or do they turn the tables; broken up so its easier to balance the numbers. 
+1st check: Checks the physical dominance roll function for M, and if the result is not 0, returns the result
+2nd check: Takes a random number between the dominance of a player and 1/2 the player's strength, then compares the result "N" against the difficulty of M - the times-dominated of M, "D". If N is greater than or equal to D, the player wins with no further check.
+3rd check: Retry 2nd check. I made a rule during a playthrough that I'd accept a failure if I failed again after using undo once, so I think its fair to simply include that in the check.
+4th check: If M has a maxhealth of 40 or more and their health is 10 or less, retry 2nd check.
 
 @param <Monster>:<M> The monster the player is trying to dominate
 @return <Integer> A value of -1 indicates failure. A value of 1 indicates success!
 
 +!]
 To decide which number is the submissiveness of (M - a monster):
-	let R be the strength of the player / 3 - (the difficulty of M / 2 + the difficulty of M / 3);
-	if debugmode > 0, say "Physical check is [R].[line break]";[remember that 7 * 5 / 6 in inform will give a different result to 7/2 + 7/3]
-	if R > 0:
-		if a random number between 1 and 2 is 1, decide on 1;[The player is far stronger than the monster's difficulty]
+	let R be the physical dominance roll for M;
+	if R is not 0, decide on R;[has to be done like this to account for RNG]
 	let N be a random number between (the strength of the player / 2) and (the dominance of the player + 2);[The minimum value here is always 3 assuming no negative modifiers on dominance.]
 	let D be the health of M - the times-dominated of M;
 	if debugmode > 0, say "Player dominance = [N], monster submissiveness = [D].[line break]";
 	if N >= D, decide on 1;
-	if the health of M <= 10 and the maxhealth of M >= 40:[this is a high health enemy that takes a lot of effort to get this low, so we re-roll N and try again]
+	if debugmode > 0, say "Reroll 1. New player dominance = [N], monster submissiveness = [D].[line break]";[I made a rule during a playthrough I'd accept the failure if I failed again after an undo, so we might as well incorporate that into the check.]
+	now N is a random number between (the strength of the player / 2) and (the dominance of the player + 2);
+	if N >= D, decide on 1;
+	if the health of M <= 10 and the maxhealth of M >= 40:[this is a high health enemy that takes a lot of effort to get this low, so we re-roll N a third time and try again]
 		now N is a random number between (the strength of the player / 2) and (the dominance of the player + 2);
-		if debugmode > 0, say "Reroll. New player dominance = [N], monster submissiveness = [D].[line break]";
+		if debugmode > 0, say "Reroll 2. New player dominance = [N], monster submissiveness = [D].[line break]";
 		if N >= D, decide on 1;
 	decide on -1.
+
+[!<DecideWhichNumberIsThePhysicalDominanceRollForMonster>+
+
+By default, puts 1/3 the player's strength against roughly 5/6 the monster's difficulty. If the player's value is higher, they get a 50/50 to win with no further checks. This function should handle any special conditions that a monster has for dominant sex.
+
+@param <Monster>:<M> The monster the player is trying to dominate
+@return <Integer> A value of -1 indicates the player can't dominate this monster, a value of 1 indicates that the player succeeds, and a value of 0 indicates that the game isn't sure yet.
+
++!]
+To decide which number is the physical dominance roll for (M - a monster):
+	let R be the strength of the player / 3 - (the difficulty of M / 2 + the difficulty of M / 3);
+	if debugmode > 0, say "Physical check is [R].[line break]";[remember that 35 / 6 in inform will give a different result to 7/2 + 7/3]
+	if R > 0:
+		if a random number between 1 and 2 is 1, decide on 1;
+	decide on 0.
 
 [!<SayDominanceSuccessOfMonster>+
 
