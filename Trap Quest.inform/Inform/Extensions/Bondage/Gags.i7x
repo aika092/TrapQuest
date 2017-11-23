@@ -68,7 +68,7 @@ To say ClothingDesc of (C - a large ballgag):
 	say "This large white ballgag stops you from speaking and keeps your jaw constantly stretched.[if item described is worn by the player]This constant aching makes it harder to concentrate.[end if]".
 	
 To say ClothingDesc of (C - a huge ballgag):
-	say "This enormous red ballgag stops you from speaking and keeps your jaw locked as wide as it could ever possibly go.[if item described is worn by the player]Your mind is so fixed on the uncomfortable and constant aching of your mouth that you struggle to think about anything else.[end if]".
+	say "This enormous red ballgag stops you from speaking and keeps your jaw locked as wide as it could ever possibly go.[if C is worn by the player]Your mind is so fixed on the uncomfortable and constant aching of your mouth that you struggle to think about anything else.[end if]".
 
 
 Definition: A ballgag (called B) is fetish appropriate:

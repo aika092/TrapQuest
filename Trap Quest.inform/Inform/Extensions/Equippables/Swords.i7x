@@ -6,7 +6,7 @@ To decide which figure-name is clothing-image of (C - a sword):
 	decide on figure of sword.
 
 To say ClothingDesc of (S - a sword):
-	say "[if the item described is in Woods26][StoneDesc of the item described][otherwise][SwordDesc of the item described][end if]".
+	say "[if S is in Woods26][StoneDesc of the item described][otherwise][SwordDesc of the item described][end if]".
 
 To say ShortDesc of (S - a sword):
 	say "sword".
@@ -50,7 +50,7 @@ A sword of purity is a kind of sword. A sword of purity is usually unique. A swo
 The printed name of sword of purity is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sword of purity[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sword of purity is "sw".
 
 To say SwordDesc of (S - a sword of purity):
-	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [if the item described is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind monsters where the power comes from...and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
+	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind monsters where the power comes from...and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
 To say ShortDesc of (S - a sword of purity):
 	say "gleaming silver sword".
 
@@ -211,7 +211,7 @@ A gladiator sword is a kind of sword. There is 1 gladiator sword. A gladiator sw
 The printed name of gladiator sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]blade of womanhood[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of gladiator sword is "tws".
 
 To say SwordDesc of (S - a gladiator sword):
-	say "A giant, dull-edged sword made of pure iron. Just swinging its weight around [if the burden of the item described < the strength of the player / 2]should take an enormous amount of strength, but somehow you have no trouble lifting it[otherwise if the burden of the item described > the strength of the player * 2]feels impossible[otherwise]takes a massive amount of strength[end if]. [if the item described is worn and the item described is unremovable]A magical chain is attached to the hilt, securely tethering it to your arm. There is a glowing message engraved on the hilt[otherwise]The hilt is engraved with a short message[end if]: 'May Honour Disarm You.'".
+	say "A giant, dull-edged sword made of pure iron. Just swinging its weight around [if the burden of S < the strength of the player / 2]should take an enormous amount of strength, but somehow you have no trouble lifting it[otherwise if the burden of S > the strength of the player * 2]feels impossible[otherwise]takes a massive amount of strength[end if]. [if S is worn and S is unremovable]A magical chain is attached to the hilt, securely tethering it to your arm. There is a glowing message engraved on the hilt[otherwise]The hilt is engraved with a short message[end if]: 'May Honour Disarm You.'".
 
 To say ShortDesc of (S - a gladiator sword):
 	say "giant dull-edged sword".
@@ -267,10 +267,10 @@ A demon broadsword is a kind of sword. There is 1 demon broadsword. A demon broa
 The printed name of demon broadsword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise if the item described is dildoed]Demon Lord[']s 'Broadsword'[otherwise]Demon Lord's Living Broadsword[ArousalDesc of item described][end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of demon broadsword is "dlb". Understand "lord's", "lords", "broad", "lord" as demon broadsword.
 
 To say SwordDesc of (S - a demon broadsword):
-	if the item described is dildoed:
+	if S is dildoed:
 		say "What was once a sword hilt is now a leather handle attached to an onyx portal. A giant red [manly-penis] is poking through it, fully erect and emanating unholy energy.";
 	otherwise:
-		say "A giant, gem encrusted sword with a jagged cutting edge. [if the item described is worn]The hilt is made of special treated leather, which makes it feel like your hand is wrapped around a hard [manly-penis][otherwise]The hilt is made of a special treated leather, always warm to the touch[end if].".
+		say "A giant, gem encrusted sword with a jagged cutting edge. [if S is worn]The hilt is made of special treated leather, which makes it feel like your hand is wrapped around a hard [manly-penis][otherwise]The hilt is made of a special treated leather, always warm to the touch[end if].".
 
 To say ShortDesc of (S - a demon broadsword):
 	if the item described is dildoed:

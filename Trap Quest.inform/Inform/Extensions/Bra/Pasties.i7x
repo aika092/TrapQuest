@@ -47,7 +47,7 @@ To decide which figure-name is clothing-image of (C - a tassels):
 	decide on figure of tassels.
 
 To say ClothingDesc of (C - a tassels):
-	say "A pair of white nipple caps with [if item described is worn]nylon tassels hanging from the center, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the center, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and the item described is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
+	say "A pair of white nipple caps with [if C is worn]nylon tassels hanging from the center, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the center, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and C is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
 
 To decide which number is the perceived-bimbo-influence of (C - a tassels):
 	if the largeness of breasts > 5, decide on 2;
