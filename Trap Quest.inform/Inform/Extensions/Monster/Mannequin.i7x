@@ -100,7 +100,7 @@ To say SummoningFlav of (M - a mannequin):
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say SummoningFlav of (M - a goth mannequin):
-	if M is in the location of the player, say "A defeaning whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes its first few steps into the room, and the mummy's wrappings slowly reform behind it.";[TODO: goth mannequin eventually]
+	if M is in the location of the player, say "A deafening whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes its first few steps into the room, and the mummy's wrappings slowly reform behind it.";[TODO: goth mannequin eventually]
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 Part 2 - Perception

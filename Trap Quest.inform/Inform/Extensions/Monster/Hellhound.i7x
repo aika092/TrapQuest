@@ -35,7 +35,7 @@ Definition: a hellhound (called M) is controlling: [Will it grab onto subduing c
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a hellhound):
-	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through it. The [printed name of M] emits a chilling howl, siezing the leash end of the collar with its teeth as the portal closes up, and the mummy slowly returns to its feet.";
+	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with its teeth as the portal closes, and the mummy slowly returns to its feet.";
 	say "You hear a chilling howl in the distance.".
 
 To say PregGrowth of (M - a hellhound):

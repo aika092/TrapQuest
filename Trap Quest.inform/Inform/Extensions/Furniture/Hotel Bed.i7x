@@ -1,7 +1,7 @@
 Hotel Bed by Furniture begins here.
 
 
-hotel bed is a kind of furniture.  The printed name of hotel bed is usually "[if item described is soggy]soggy [end if]hotel bed".  The printed name of hotel bed is "[TQlink of item described]hotel bed[TQxlink of item described][shortcut-desc][verb-desc of item described]".  A hotel bed can be unencountered or encountered.  A hotel bed is usually unencountered.  A hotel bed can be soggy. Understand "soggy" as hotel bed when the item described is soggy.  Understand "hotel" as hotel bed.  The text-shortcut of hotel bed is "hb".
+hotel bed is a kind of furniture.  The printed name of hotel bed is usually "[if item described is soggy]soggy [end if]hotel bed".  The printed name of hotel bed is "[TQlink of item described]hotel bed[TQxlink of item described][shortcut-desc][verb-desc of item described]".  A hotel bed can be unencountered or encountered.  A hotel bed is usually unencountered.  A hotel bed can be soggy. Understand "soggy" as hotel bed when the item described is soggy.  Understand "hotel", "bed" as hotel bed.  The text-shortcut of hotel bed is "hb".
 
 To destroy (F - a hotel bed):
 	remove F from play;

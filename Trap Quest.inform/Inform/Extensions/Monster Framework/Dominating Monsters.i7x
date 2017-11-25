@@ -192,10 +192,10 @@ To decide which number is the dominance of the player:
 
 [!<DecideWhichNumberIsTheSubmissivenessOfMonster>+
 
-Does the monster submit to sex, or do they turn the tables; broken up so its easier to balance the numbers. 
+Does the monster submit to sex, or do they turn the tables; broken up so it's easier to balance the numbers. 
 1st check: Checks the physical dominance roll function for M, and if the result is not 0, returns the result
 2nd check: Takes a random number between the dominance of a player and 1/2 the player's strength, then compares the result "N" against the difficulty of M - the times-dominated of M, "D". If N is greater than or equal to D, the player wins with no further check.
-3rd check: Retry 2nd check. I made a rule during a playthrough that I'd accept a failure if I failed again after using undo once, so I think its fair to simply include that in the check.
+3rd check: Retry 2nd check. I made a rule during a play-through that I'd accept a failure if I failed again after using undo once, so I think it's fair to simply include that in the check.
 4th check: If M has a maxhealth of 40 or more and their health is 10 or less, retry 2nd check.
 
 @param <Monster>:<M> The monster the player is trying to dominate
@@ -209,7 +209,7 @@ To decide which number is the submissiveness of (M - a monster):
 	let D be the health of M - the times-dominated of M;
 	if debugmode > 0, say "Player dominance = [N], monster submissiveness = [D].[line break]";
 	if N >= D, decide on 1;
-	if debugmode > 0, say "Reroll 1. New player dominance = [N], monster submissiveness = [D].[line break]";[I made a rule during a playthrough I'd accept the failure if I failed again after an undo, so we might as well incorporate that into the check.]
+	if debugmode > 0, say "Reroll 1. New player dominance = [N], monster submissiveness = [D].[line break]";[I made a rule during a play-through I'd accept the failure if I failed again after an undo, so we might as well incorporate that into the check.]
 	now N is a random number between (the strength of the player / 2) and (the dominance of the player + 2);
 	if N >= D, decide on 1;
 	if the health of M <= 10 and the maxhealth of M >= 40:[this is a high health enemy that takes a lot of effort to get this low, so we re-roll N a third time and try again]
@@ -228,7 +228,7 @@ By default, puts 1/3 the player's strength against roughly 5/6 the monster's dif
 +!]
 To decide which number is the physical dominance roll for (M - a monster):
 	let R be the strength of the player / 3 - (the difficulty of M / 2 + the difficulty of M / 3);
-	if debugmode > 0, say "Physical check is [R].[line break]";[remember that 35 / 6 in inform will give a different result to 7/2 + 7/3]
+	if debugmode > 0, say "Physical check is [R].[line break]";[remember that 35 / 6 in inform will give a different result to 7/2 + 7/3][###Selkie: From http://inform7.com/learn/documents/January2007Document.txt: "NI has basically no concept of operator precedence: neither, we feel, does English, which relies on the intonation with which a human reader speaks "let x be equal to y plus z times w" in order to communicate whether the addition happens before or after the multiplication. Clearly equations along the lines speculated about above would require a precise and traditional operator precedence. But we believe it would be inconsistent to apply such a thing to natural language forms. Instead, we do support the use of brackets to clarify such calculations"]
 	if R > 0:
 		if a random number between 1 and 2 is 1, decide on 1;
 	decide on 0.
