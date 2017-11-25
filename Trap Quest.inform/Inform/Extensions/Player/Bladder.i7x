@@ -19,9 +19,15 @@ To BladderUp (X - a number):
 	let P be the bladder of the player;
 	if the player is not able to pee, now X is 0;
 	if the player is female or the size of penis > 0:
-		while X > 0:
-			if the bladder of the player < 10 and watersports mechanics is 1, increase the bladder of the player by 2;
-			decrease X by 1;
+		if the bladder of the player < 10 and watersports mechanics is 1:
+			increase the bladder of the player by 2 * X;
+			if the bladder of the player > 10: [slower increase beyond ten]
+				let N be the bladder of the player - 10
+				decrease the bladder of the player by N / 2;
+			otherwise:
+				increase the bladder of the player by X;
+			if the bladder of the player > 20:
+				now the bladder of the player is 20;
 		if (the player is not bursting and the bladder of the player < 14) or player-urinating is 1:
 			say "";
 		otherwise if the player is diapered:
@@ -46,8 +52,8 @@ REQUIRES COMMENTING
 
 +!]
 To BladderDown (X - a number):
-	while X > 0:
-		if the bladder of the player > 0, decrease the bladder of the player by 1;
-		decrease X by 1.
+	decrease the bladder of the player by X;
+	if the bladder of the player < 0:
+		now the bladder of the player is 0.
 
 Bladder ends here.
