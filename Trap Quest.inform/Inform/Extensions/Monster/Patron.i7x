@@ -19,7 +19,7 @@ The printed name of impatient patron is usually "[if item described is in the lo
 
 An experienced patron is a kind of patron.
 A well dressed patron is a kind of experienced patron.  There is 1 well dressed patron.  A suited patron is a kind of experienced patron.  There is 1 suited patron.
-The printed name of well dressed patron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]well dressed patron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of well dressed patron is "wpa".
+The printed name of well dressed patron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]well dressed patron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of well dressed patron is "wdp".
 The printed name of suited patron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]suited patron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of suited patron is "spa".
 
 A gross patron is a kind of patron.

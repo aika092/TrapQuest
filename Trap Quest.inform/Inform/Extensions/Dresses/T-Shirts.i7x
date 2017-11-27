@@ -166,7 +166,7 @@ To decide which number is the intelligence-influence of (C - an I wish these wer
 
 Part 6 - Birth Control is for Sissies T-shirt
 
-A birth control for sissies T-shirt is a kind of T-shirt.  A birth control for sissies T-shirt is dense.  The printed name of birth control for sissies T-shirt is usually "[TQlink of item described][clothing-title-before]birth control is for sissies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of birth control for sissies T-shirt is "bct".  Understand "control is" as birth control for sissies T-shirt.  
+A birth control for sissies T-shirt is a kind of T-shirt.  A birth control for sissies T-shirt is dense.  The printed name of birth control for sissies T-shirt is usually "[TQlink of item described][clothing-title-before]birth control is for sissies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of birth control for sissies T-shirt is "bcst".  Understand "control is" as birth control for sissies T-shirt.  
 
 Figure of birth control for sissies T-shirt is the file "tshirt5.png".
 

@@ -2,7 +2,7 @@ Vampiric Claws by Equippables begins here.
 
 A vampiric claws is a kind of equippable. There is 1 vampiric claws. A vampiric claws is usually unique. A vampiric claws is usually slap ready.  A vampiric claws is usually manly. A vampiric claws is usually biological.
 
-The printed name of vampiric claws is usually "[clothing-title-before]vampiric claws[clothing-title-after]".  The text-shortcut of wasp-cloud is "vc". 
+The printed name of vampiric claws is usually "[clothing-title-before]vampiric claws[clothing-title-after]".  The text-shortcut of vampiric claws is "vcl". 
 
 To say ClothingDesc of (W - vampiric claws):
 	say "A pair of claws where your fingernails used to be.".

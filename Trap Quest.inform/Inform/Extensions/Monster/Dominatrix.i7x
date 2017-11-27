@@ -4,7 +4,7 @@ A dominatrix is a kind of monster.  A dominatrix is usually intelligent.  A domi
 
 A dominatrix has a number called orgasm watch.  A dominatrix has a number called disappointment.  A dominatrix has a number called strap-on girth.  The strap-on girth of a dominatrix is usually 2.
 
-The printed name of a dominatrix is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]strict dominatrix[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  Understand "strict" as a dominatrix.  The description of a dominatrix is usually "[DominatrixDesc]".  The text-shortcut of dominatrix is "do".
+The printed name of a dominatrix is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]strict dominatrix[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  Understand "strict" as a dominatrix.  The description of a dominatrix is usually "[DominatrixDesc]".  The text-shortcut of dominatrix is "dom".
 
 
 Figure of dominatrix 2 is the file "dominatrix2.png".

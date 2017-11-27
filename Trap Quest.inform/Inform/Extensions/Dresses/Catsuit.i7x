@@ -1,6 +1,6 @@
 Catsuit by Dresses begins here.
 
-catsuit is a kind of overdress.  A catsuit is usually latex.  A catsuit is usually unique.  A catsuit is usually unskirted.  A catsuit is usually leg covering.  A catsuit is usually only arm covering.  The printed name of catsuit is usually "[TQlink of item described][clothing-title-before]latex catsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of catsuit is "cs". Understand "cat", "suit" as catsuit.
+catsuit is a kind of overdress.  A catsuit is usually latex.  A catsuit is usually unique.  A catsuit is usually unskirted.  A catsuit is usually leg covering.  A catsuit is usually only arm covering.  The printed name of catsuit is usually "[TQlink of item described][clothing-title-before]latex catsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit.
 
 Report wearing catsuit:
 	say "It takes a long time to get it [if the largeness of breasts > 9]over your [BreastDesc]![otherwise if the largeness of belly > 4]over your [BellyDesc]![otherwise]on.[end if]";

@@ -90,7 +90,7 @@ To decide which number is the initial outrage of (C - a translucent fetish dress
 
 Part 3 - Pink Fetish Dress
 
-A pink fetish dress is a kind of fetish dress.  A pink fetish dress is usually short.  The text-shortcut of pink fetish dress is "pld".
+A pink fetish dress is a kind of fetish dress.  A pink fetish dress is usually short.  The text-shortcut of pink fetish dress is "pfd".
 
 There is 1 pink fetish dress.
 
@@ -187,7 +187,7 @@ To say TransformReaction of (C - a black fetish hobble dress):
 
 Part 7 - Purple Fetish Hobble Dress
 
-A purple fetish hobble dress is a kind of fetish dress.  A purple fetish hobble dress is usually hobble-skirted.  A purple fetish hobble dress is usually crotch-skirted.  A purple fetish hobble dress is usually high cut.  A purple fetish hobble dress is usually only arm covering.  The text-shortcut of purple fetish hobble dress is "pld".  The armour of purple fetish hobble dress is usually 14.   
+A purple fetish hobble dress is a kind of fetish dress.  A purple fetish hobble dress is usually hobble-skirted.  A purple fetish hobble dress is usually crotch-skirted.  A purple fetish hobble dress is usually high cut.  A purple fetish hobble dress is usually only arm covering.  The text-shortcut of purple fetish hobble dress is "phd".  The armour of purple fetish hobble dress is usually 14.   
 
 There is 1 purple fetish hobble dress.
 
