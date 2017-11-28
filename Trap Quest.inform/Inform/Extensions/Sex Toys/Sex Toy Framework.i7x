@@ -4,6 +4,7 @@ Sex Toy Framework by Sex Toys begins here.
 
 Definition: A thing is insertable:
 	if it is sex toy, decide yes;
+	if it is a bed post, decide yes;
 	if it is squirt dildo, decide yes;
 	if it is clothing:
 		if it is ass plugging or it is vagina plugging, decide yes;
@@ -113,6 +114,7 @@ To decide which number is the grip of (I - a thing):
 
 To decide which number is the grip of (I - an insertable thing):
 	if I is cursed, decide on 999; [cursed things don't fall out]
+	if I is a bed post, decide on 999;
 	if I is clothing and I is not sex toy, decide on 999; [clothing doesn't just fall out]
 	let X be 0;
 	if I is penetrating vagina:

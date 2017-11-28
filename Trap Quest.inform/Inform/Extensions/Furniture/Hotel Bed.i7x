@@ -15,7 +15,11 @@ To compute furniture resting on (F - a hotel bed):
 To say RestingDesc of (F - a hotel bed):
 	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress.".
 
-HotelBedBoring is a kind of hotel bed.  There are 2 HotelBedBoring.
+A bed post is a thing. It is scenery and enterable. The description is "The footboard posts end just above your middle.". Understand "post" as the bed post.
+
+HotelBedHalfPosted is a kind of hotel bed. The description is "A bed with four posts. Two high headboard posts and two footboard posts[if the sex addiction of the player > 9] exactly the right height[end if].".
+There are 2 HotelBedHalfPosted. The printed name of HotelBedHalfPosted is "[TQlink of item described]half posted hotel bed[TQxlink of item described][shortcut-desc][verb-desc of item described]".
+A bed post is part of the HotelBedHalfPosted.
 
 HotelBedCreamy is a kind of hotel bed. There are 2 HotelBedCreamy. The printed name of HotelBedCreamy is "[TQlink of item described][if item described is unencountered]hotel bed[otherwise][semen] soaked hotel bed[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]".
 To say RestingDesc of (F - HotelBedCreamy):
