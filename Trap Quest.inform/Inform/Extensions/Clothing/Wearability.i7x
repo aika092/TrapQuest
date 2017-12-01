@@ -76,7 +76,7 @@ This is the player won't wear childish clothes rule:
 The player won't wear childish clothes rule is listed in the global wearability rules.
 
 This is the sex doll can't wear new clothes rule:
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		if summoning is 0, say "You don't have the opposable thumbs you would need to be able to do this.";
 		rule fails.
 The sex doll can't wear new clothes rule is listed in the global wearability rules.

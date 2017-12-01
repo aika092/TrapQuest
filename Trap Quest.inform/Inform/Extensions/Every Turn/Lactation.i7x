@@ -44,7 +44,7 @@ A time based rule (this is the lactation rule):
 					say "[one of]They've felt weird ever since those darned fairies started fixating on your boobs![or]Surely, all that fairy-suckling.... are they turning you into a brood mare?[or]You hope it's not a side-effect of all that fairy attention to your milky boobs![or]You worry it's a side-effect of all those milk-hungry fairies![at random][line break]";
 		let M be the milk volume of breasts;
 		let L be 120;
-		if the player is a cowgirl, now L is 240;
+		if the class of the player is cowgirl, now L is 240;
 		decrease L by M * 2; [The more milk there is, the higher chance of lactation]
 		if a random number between 0 and L <= 0:
 			trigger lactation.

@@ -179,7 +179,7 @@ To compute perception of (M - a shopkeeper):
 	if diaper quest is 1, say "The [M] notices you[if the player is sluttily dressed][one of], and seems to be smiling politely enough[or][stopping].[otherwise]![end if]";
 	otherwise say "The [M] notices you[if the player is sluttily dressed], grinning at how you're dressed[one of] even though he is completely naked himself[or][stopping].[otherwise]![end if]";
 	now M is interested;
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		if the player is female, compute M using sex doll 1;
 		otherwise compute M using sex doll 2;
 	otherwise if M is mating:
@@ -187,7 +187,7 @@ To compute perception of (M - a shopkeeper):
 		calm M;
 	otherwise if there is held stolen clothing:
 		say "[speech style of M]'How dare you taunt me with that stolen clothing?  Give it back at once, or pay the price!'[roman type][line break]";
-	otherwise if the player is a vixen:
+	otherwise if the class of the player is vixen:
 		say "[speech style of M]'[one of]Hey, what are you doing in here! Don't think I'm going to just let you steal from my shop!'[or]Who do you think you're fooling coming into my shop like that? Get out of my shop, thief!'[or]Hey! I can tell you're a thief just by looking at you, so leave my shop right now or face the consequences!'[at random][roman type]";
 		anger M;
 	otherwise if M is babifying the player:
@@ -266,7 +266,7 @@ To compute (M - a shopkeeper) urinating:
 	send M home.
 
 To compute (M - a shopkeeper) entering mouth:
-	if the player is a living sex doll: [Should any of this move into another function?]
+	if the class of the player is living sex doll: [Should any of this move into another function?]
 		say "[speech style of M]'I just can't resist those plump and welcoming lips, Momma!'[roman type][line break]";
 		let MPlug be a random thing penetrating face;
 		if MPlug is not nothing:
@@ -352,7 +352,7 @@ To say VoluntarySpit of (M - a shopkeeper):
 	say "[if the semen taste addiction of the player < 8][one of]In a rather uppity way, you crinkle your nose and spit out his load, letting it form a puddle on the floor.[or]You spit his [semen] out and into a puddle on the floor as quickly as possible, using your teeth to scrape the taste off your tongue.[or]Even though you feel intimidated you manage to glare up at him as you let the [semen] dribble from your lips.[or]You shiver with an almost liquid spine as you gape your lips and let the [semen] pour from your mouth in thick, gooey clumps.[in random order][otherwise if the semen taste addiction of the player < 12][one of]You know he isn't going to be happy, but you just can't swallow. Avoiding his gaze, you look off to the side and let his thick [semen] dribble out of your mouth.[or]You hope that he won't be too mad as you let his [semen] slowly escape your mouth. You take occasional glances up at him as you do so, obviously regretting your actions as his sneer grows intense.[or]You lean to the side with a soft whimper leaving your throat as his [semen] spills from your lips to splatter on the floor below.[or]You spit it out, pushing uncomfortable thoughts of how satisfying it was to be face-fucked so hard to the back of your mind.[in random order][otherwise][one of]You take a second to lean in, lewdly pressing your [BreastDesc] together as his [semen] falls out of your mouth in thick clumps.[or]You reluctantly part with his [semen], letting it spill from your lips. You opening your mouth wide and roll your tongue around as if to ask him to replace it.[or]You can't help but look up at him as you defiantly spit his [semen] onto the floor, hoping it was enough to coax a punishment out of him.[or]You giggle stupidly as his [semen] gushes out of your mouth and onto the floor. Without thinking (as if you could at this point), you push your [BreastDesc] together and smile up at him, waiting for your punishment.[in random order][end if]".
 
 To say DeepthroatCreampie of (M - a shopkeeper):
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "When one large hand grabs the hair at the back of your head, bunching it up into a rope handle that he uses to really hammer into your face hole, you kind of white out in pleasure as he uses you, finally jetting stream after stream of [semen] deep inside you, before finally pulling free with an embarrassingly-loud 'pop' as he breaks the seal of your eager lips.";
 		say "[speech style of M]'Man!  That's the best model yet!  Those R&D guys know their stuff.  Maybe I should keep you here as my new stress-relief toy?'[roman type][line break]";
 		say "But he releases you, and turns away, and for a moment you have the crazy idea of poking him, just, you know, kind of making the point that he shouldn't be just thinking of his own pleasure?  Right?";
@@ -370,7 +370,7 @@ To satisfy (M - a shopkeeper) for (N - a number) seconds:
 	send M home. [This makes sure the shopkeeper always makes it back to the shop.]
 
 To say SwallowDemand of (M - a shopkeeper):
-	say "[speech style of M][one of]'You best swallow, [if the player is a princess]princess[otherwise][whore][end if], if you know what's good for you. Or else.'[or]'Be a good little slut and swallow my load. I've got a shop to run, stop stalling, I'm really not in the mood for your stupid games.'[or]'Mmnf, that was some good head. You better swallow to show how grateful you are... Or I might just take some of my pent up rage out on you.'[or]'I like a slut who knows her place, swallow and I won't have to remind you who's in charge.'[or]'I hope you learned your lesson, whore, but let's make it even more entertaining. Swallow, or else.'[or]'I don't know, [if M is objectifying the player]I still feel like abusing you[otherwise]I'm still mad at you[end if]. If you swallow, I might just forget about it.'[or]'You better start swallowing, whore, I don't have time for your games.'[or]'Do I look like I'm playing around? Swallow my load or face the consequences.'[in random order][roman type][line break]".
+	say "[speech style of M][one of]'You best swallow, [if the class of the player is princess]princess[otherwise][whore][end if], if you know what's good for you. Or else.'[or]'Be a good little slut and swallow my load. I've got a shop to run, stop stalling, I'm really not in the mood for your stupid games.'[or]'Mmnf, that was some good head. You better swallow to show how grateful you are... Or I might just take some of my pent up rage out on you.'[or]'I like a slut who knows her place, swallow and I won't have to remind you who's in charge.'[or]'I hope you learned your lesson, whore, but let's make it even more entertaining. Swallow, or else.'[or]'I don't know, [if M is objectifying the player]I still feel like abusing you[otherwise]I'm still mad at you[end if]. If you swallow, I might just forget about it.'[or]'You better start swallowing, whore, I don't have time for your games.'[or]'Do I look like I'm playing around? Swallow my load or face the consequences.'[in random order][roman type][line break]".
 
 To say angry punishment insult of (M - a shopkeeper):
 	if M is friendly-fucking, say "[speech style of M]Heh, you'll get over yourself soon enough.'[roman type][line break]";
@@ -403,17 +403,17 @@ To send (M - a shopkeeper) home:
 
 To say CondomPieFlav of (M - a shopkeeper):
 	let F be a random fuckhole penetrated by M;
-	say "[speech style of M]'Fuck, this is so good!  [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[stopping][roman type]  The [M] buries his entire length inside of you, groaning with pleasure as the condom fills with his [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain his massive load, miraculously staying intact as he slowly pulls out and carefully peels it off without spilling a drop. [speech style of M]'[if the reaction of the player is 2 or the player is a cheerleader]Didn't actually mean to come inside you, but I guess it's ok since I was wearing a condom. [otherwise if the player is a living sex doll]Wow, you are one amazing sex doll.  I hope you come back here again soon!'[otherwise if there is a worn sissy black cock whore tattoo][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing.  Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
+	say "[speech style of M]'Fuck, this is so good!  [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[stopping][roman type]  The [M] buries his entire length inside of you, groaning with pleasure as the condom fills with his [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain his massive load, miraculously staying intact as he slowly pulls out and carefully peels it off without spilling a drop. [speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's ok since I was wearing a condom. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll.  I hope you come back here again soon!'[otherwise if there is a worn sissy black cock whore tattoo][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing.  Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
 
 To say CreampieFlav of (M - a shopkeeper):
-	if the player is a living sex doll:[#####Selkie: could do much better here]
+	if the class of the player is living sex doll:[#####Selkie: could do much better here]
 		say "You're vaguely aware you've been hearing some hot chick squealing and squeaking and grunting without words for a long, long time, and then finally fireworks are exploding through your mind and body. When next you come to your senses, you can feel [semen] dripping down your thighs and the [M] watching you with one eyebrow raised in smug amusement.";
 	otherwise:
-		say "[speech style of M]'Fuck, this is so good!  [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type]  The [M] loses control over himself and orgasms, burying his entire length inside of you and releasing his hot load.  You can almost hear it flowing inside of you.  [speech style of M]'[if the reaction of the player is 2 or the player is a cheerleader]Sorry about that, to be fair I didn't mean to come inside you.  [otherwise if the player is a living sex doll]Wow, you are one amazing sex doll.  I hope you come back here again soon!'[otherwise if there is a worn sissy black cock whore tattoo][one of]Congratulations, you're at least good for one thing, getting bred by black cock.  What do you want, a gold star?  Now piss off and come[or]Come[stopping] back when you're ready for more black cock, slut.'[otherwise if M is friendly-fucking]That was fucking amazing.  Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
+		say "[speech style of M]'Fuck, this is so good!  [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type]  The [M] loses control over himself and orgasms, burying his entire length inside of you and releasing his hot load.  You can almost hear it flowing inside of you.  [speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you.  [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll.  I hope you come back here again soon!'[otherwise if there is a worn sissy black cock whore tattoo][one of]Congratulations, you're at least good for one thing, getting bred by black cock.  What do you want, a gold star?  Now piss off and come[or]Come[stopping] back when you're ready for more black cock, slut.'[otherwise if M is friendly-fucking]That was fucking amazing.  Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
 
 To compute fuckhole climax of (M - a shopkeeper):[TODO: break up]
 	TimesFuckedUp M by 1;
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		if M is penetrating asshole:
 			say "The [M]'s hands suddenly leave your hips, [if the player is female and vagina is not actually occupied]one descending onto your pussy to help you thrust your [AssDesc] back against its impaling shaft, while his other arm presses[otherwise]pressing[end if] across the small of your back so you're held immobile and utterly helpless as his hips start jack-hammering with insane speed. Moments later, you and he both explode in a huge crescendo of ecstasy, and you feel jet after jet after jet spurting inside you, with the characteristic sound of water spraying against balloon-tight rubber.";
 			say "[speech style of M]'Whoah!'[roman type], he exclaims, pulling his dick free with a cartoonish rubber squeak, your puckered flange squee-geeing his dick clean of [semen]. [speech style of M]'Man, that was the best one yet! Those sounds this new model make really add something special to the experience.  I wonder if I could convince them to let me add you to my product line? I could even give demonstrations, to potential customers.  What say, [']doll[']?'[roman type][line break]";
@@ -428,7 +428,7 @@ To compute fuckhole climax of (M - a shopkeeper):[TODO: break up]
 			say "[speech style of M]'Man, that was the best one yet! Your muffled squeals really add something to the experience.  I've gotta convince them to let me add you to my product line.  We could give demonstrations to potential customers, doll-face!'[roman type][line break]";
 			say "He leers at you, and you wonder whether he might decide to keep you here! [variable custom style]Then again, would that be so bad?[roman type]  Part of you considers the possibility of hanging around, maybe poking him again?  After all, you have other orifices your new friend could play with.[line break]";
 			CumFaceUp a random number between 2 and 4;
-	otherwise if (the player is a cheerleader or the reaction of the player is 2) and the player is not a pussy slut and M is unwrapped:
+	otherwise if (the class of the player is cheerleader or the reaction of the player is 2) and the player is not a pussy slut and M is unwrapped:
 		say PullOutFlav of M;
 		SemenPuddleUp 3;
 	otherwise:
@@ -459,7 +459,7 @@ To compute vaginal climax of (M - a shopkeeper):
 
 To compute fuckhole sex of (M - a shopkeeper):
 	let F be a random fuckhole penetrated by M;
-	if the player is a cheerleader:
+	if the class of the player is cheerleader:
 		say "The [M] keeps using your [variable F].[if the reaction of the player is 2][speech style of M]'[one of]Haha, yes, more dirty talk like that, you cheerleader slut!'[or]Yeah, that's right, I'm the boss of you, you naughty minx!'[or]It's difficult to go softly when fucking such a hot cheerleader!'[cycling][roman type][line break][otherwise][one of][speech style of M]'I've always wanted to fuck a cheerleader!'[roman type][line break][or][stopping][end if]";
 	otherwise if the reaction of the player is 0:
 		say "The [M] keeps using your [variable F].  You try as hard as possible to resist, but there's no getting away[one of][or][or][or][or][or] It's almost like he can keep going forever, and is waiting until you finally give in before blowing his load[stopping]!  [unless the latex-transformation of the player > 2]You're getting more and more sore.[end if]";
@@ -508,7 +508,7 @@ This is the shopkeeper reclaiming clothing rule:
 		rule succeeds.
 
 To say BreastsPenetrationFlav of (M - a shopkeeper):
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "He shakes his head. [speech style of M]'I just gotta try those beautiful balloons!'[roman type][line break]";
 		say "The next moment, he shoves you down so your face presses into his chest while each hand grabs one of your [BreastDesc], and without any problem, trapping his engorged cock between then.  Moments later, he's thrusting you up and down and you feel his rod pistoning between your orbs, squeaking like a rubber toy. The vibration caused by the squeaking rubber seems to really be getting him off![line break][speech style of M]'Oh, yeah, baby, that's go-oo-ood!  Keep that up, little Momma!'[roman type][line break]";
 		say "He sets up a rhythmic thrusting, each stroke of his making a squeaking sound, like it's a violin bow and your rubberised [BreastDesc] are the strings.  Squeak-squeak, SQUEAK-squeak, squeak-squeak... It's not your imagination, he really is using you to make a tune, and horrifyingly, the longer it runs, the more the vibrations of his thrusting tool saw between your boobies, the deeper the sense of pleasure runs through you, spreading out from your chest and down to your groin, and all of a sudden you're squealing and grunting like a hot chick off her face, and your girly grunts seem to be really inflaming his passions!";
@@ -517,7 +517,7 @@ To say BreastsPenetrationFlav of (M - a shopkeeper):
 
 To compute cleavage climax of (M - a shopkeeper):
 	increase the raw sensitivity of breasts by 1;
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "He begins taunting you as he thrusts harder, and suddenly ropey gobs of [semen] are jetting up between your breasts, liberally coating your face and some splashing across your cleavage and onto the generous swell of your chest.";
 		say "[speech style of M]'Not bad!'[roman type]  He grips the back of your neck and briefly, shockingly, and casually, thrusts his dick into your rounded mouth and uses your lips to scrape off the remaining juice from his rod, then releases you.[line break][speech style of M]'Yeah, this new model gets three thumbs up from me!'[roman type][line break]";
 		CumFaceUp the girth of M;
@@ -531,7 +531,7 @@ To compute cleavage climax of (M - a shopkeeper):
 	send M home.
 
 To say VaginaPenetrationFlav of (M - a shopkeeper):
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "The [M]'s fingers brush up and down your slick, pre-oiled pussy, and he shakes his head at how soft and plump and inflated those lips are. [speech style of M]'Oh, baby, now that looks fine.  I hope they made you deep enough: I wouldn't want to prick your balloon!'[roman type][line break]And without further ado, he slowly sheaths you over his throbbing dick, inch by inch.  [speech style of M]'Damn, girl, that's tight! That's no cheap-ass pussy they got there, the R&D boys must've strengthened the flubber cocktail, it's like you got real pussy-muscles holding on for dear life!'[roman type][line break]";
 		say "Your mouth, if you could control it, would be stretched open in a shocked 'O' of stunned pleasure by the intense sensations ripping through you - and then you remember, that's exactly how you do look, right now![line break]";
 		say "He walks across the room, taking his hands off you, but you're so tightly impaled on the huge throbbing length of meat thrust deep within you, that you stay stuck, your feet a few inches above the ground, and there's nothing you can do about it!";
@@ -734,7 +734,7 @@ To say midDominanceResponse of (M - a shopkeeper):
 	let N be a random monster penetrating a body part;
 	if the bimbo of the player < 12 and M is unfriendly:
 		say "[speech style of M]'[one of]Ha. Thieves like you deserve whatever you get.'[or]You deserve it. But don't worry, after [if N is male]he's[otherwise]she's[end if]done, I'm going to punish you personally.'[or]If it were up to me, every criminal would get tossed in jail and gangfucked until they passed out. You're getting off easy.'[or]I[']m not here because I want to help you. I[']m here because I[']m going to punish you personally once [he of N]'s done.'[at random][roman type][line break]";
-	otherwise if M is unfriendly and the player is a cheerleader:
+	otherwise if M is unfriendly and the class of the player is cheerleader:
 		say "[speech style of M]'[one of]It's not every day I get to fuck a cheerleader. I want you to myself.'[or]I'll wait. It's not every day I get to fuck a cheerleader.'[at random][roman type][line break]";
 	otherwise if M is released:
 		say "[speech style of M]'[one of]Don[']t worry, I[']m going to fuck you. I just want some one on one time.'[or]Heh, all you thieves end up like this. On their knees, begging to get fucked.'[at random][roman type][line break]";
@@ -746,7 +746,7 @@ To say midDominanceResponse of (M - a shopkeeper):
 [This section, on the other hand, is very robust, since sex with the shopkeeper can last a very long time!]
 To say AsDominantResponse of (M - a shopkeeper):
 	let F be a random body part penetrated by M;
-	if the player is a cheerleader:
+	if the class of the player is cheerleader:
 		say "[speech style of M]'[one of]No way I'm stopping, you look way too hot in that uniform!'[or]I'll never stop, you're too hot in that uniform!'[or]I'd never throw away a chance to fuck a cheerleader!'[at random][roman type][line break]";
 	otherwise if the number of lubricants covering F > 0 and the relevant sex addiction of M < 12:[reusing the value defined by the default ToDominantGreeting function]
 		say "[speech style of M]'[one of]If you didn't want me to fuck you, then why did you use so much lube?'[or]You obviously knew this would happen if you took the time to lube yourself up beforehand.'[or]Please. You knew you'd be taking my [manly-penis], that's why you covered yourself in lube, didn't you?'[or]If it hurts, all that means is you need to do a better job lubing up next time.'[at random][roman type][line break]";
@@ -756,7 +756,7 @@ To say AsDominantResponse of (M - a shopkeeper):
 		say "[speech style of M]'[one of]Yeah! Take it!'[or]Take it you naughty slut!'[or]Enjoying yourself you naughty minx?'[or]That's right, slut! Take it!'[or]Take it you naughty thief!'[or]Just like a thief to actually enjoy their punishment!'[at random][roman type][line break]".
 
 To say BimboSeduced of (M - a shopkeeper):
-	if M is interested and the player is a cheerleader and diaper quest is 0:
+	if M is interested and the class of the player is cheerleader and diaper quest is 0:
 		say "The [M] even more turned on by your incessant chattering!";[The chatterbox is his dream girl!]
 	otherwise:
 		say "Something seems to suddenly switch in the [M]'s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin.  Uh oh... [line break][variable custom style]Was it something I said?![roman type][line break]";

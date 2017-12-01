@@ -166,7 +166,7 @@ To compute condom biting of (C - a clothing):
 	decrease the used condoms of C by 1;
 	increase the empty condoms of C by 1;
 	StomachSemenUp 2;
-	if the player is a cumdumpster:
+	if the class of the player is cumdumpster:
 		say "As you finish swallowing it down, you feel yourself recover all of your energy!";
 		BodyHeal 2;
 		now the fatigue of the player is 0.

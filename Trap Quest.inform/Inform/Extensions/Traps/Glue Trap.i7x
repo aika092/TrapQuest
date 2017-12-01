@@ -544,7 +544,7 @@ To compute the mutation effects of (G - a glue):
 					say "Your penis [Shrink]s into a [ShortDesc of penis].";
 		otherwise if the active-colour of G is blackish: [###TODO: Use X to add further blackish-plausible options here.]
 			now X is a random number between 1 and 3;
-			if the player is a latex fetish model:
+			if the class of the player is latex fetish model:
 				carry out PartialLatexing;
 			otherwise:
 				say "You see the black goo shimmer, trying to take some kind of shape![line break]";

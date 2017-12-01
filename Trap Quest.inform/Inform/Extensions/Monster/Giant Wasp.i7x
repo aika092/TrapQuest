@@ -55,23 +55,23 @@ Definition: a giant wasp (called M) is virginity taking:
 Part 2 - Perception
 
 Definition: a giant wasp (called M) is normally guardian:
-	if the player is a broodmother, decide yes;
+	if the class of the player is broodmother, decide yes;
 	decide no.
 
 Definition: a giant wasp (called M) is normally ally:
-	if the player is a broodmother or the medium egg count of belly > 0, decide yes;
+	if the class of the player is broodmother or the medium egg count of belly > 0, decide yes;
 	decide no.
 
 Definition: a giant wasp (called M) is normally buddy:
-	if the player is a broodmother or the medium egg count of belly > 0, decide yes;
+	if the class of the player is broodmother or the medium egg count of belly > 0, decide yes;
 	decide no.
 
 Definition: a giant wasp (called M) is normally acquaintance:
-	if the player is a broodmother or the medium egg count of belly > 0, decide yes;
+	if the class of the player is broodmother or the medium egg count of belly > 0, decide yes;
 	decide no.
 
 Definition: a giant wasp (called M) is normally annoyed:
-	if the player is a broodmother or the medium egg count of belly > 0, decide yes;
+	if the class of the player is broodmother or the medium egg count of belly > 0, decide yes;
 	if the favour of M > the aggro limit of M, decide yes;
 	decide no.
 

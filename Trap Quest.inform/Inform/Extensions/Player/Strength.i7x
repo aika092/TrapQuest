@@ -64,13 +64,13 @@ To decide which number is the flat strength of the player:
 	increase S by fetish-bonus of the player;
 	repeat with C running through worn wearthings:
 		increase S by the strength-influence of C;
-	if the player is a priestess:
+	if the class of the player is priestess:
 		decrease S by 1;
 	[decrease S by the brightness of hair - natural brightness;]
 	if the player is thirsty, decrease S by the thirst of the player - 2;
 	if the player is hungry, decrease S by 2;
 	decrease S by the incidents of enema-stat-loss;
-	if the player is a cowgirl:
+	if the class of the player is cowgirl:
 		if the milk volume of breasts > 10, increase S by 1;
 		if the milk volume of breasts > 20, increase S by 1;
 		if the milk volume of breasts > 25, increase S by 1;

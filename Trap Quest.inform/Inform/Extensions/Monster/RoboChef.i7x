@@ -72,7 +72,7 @@ To compute perception of (M - a robochef):
 	say "The [M] notices you!";
 	if the number of plentiful accessories retained by M > 0:
 		say "Its eyes flash yellow. [first custom style]HELLO, CUSTOMER. YOU STILL HAVE FUNDS REMAINING IN YOUR ACCOUNT.[roman type]";
-	otherwise if the player is a maid:
+	otherwise if the class of the player is maid:
 		say "It seems to recognise you as a member of staff and leaves you alone.";
 		bore M for 450 seconds;
 	otherwise if asshole is lewdly exposed:
@@ -91,9 +91,9 @@ To compute DQ perception of (M - a robochef):
 		say "Its eyes turn red.  [first custom style]'IMMINENT TOILET ACCIDENT DETECTED.  HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE.  TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hungry:
-		say "Its eyes turn red.  [first custom style]'HUNGRY [if the player is a maid]EMPLOYEE[otherwise]GUEST[end if] DETECTED.  COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		say "Its eyes turn red.  [first custom style]'HUNGRY [if the class of the player is maid]EMPLOYEE[otherwise]GUEST[end if] DETECTED.  COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
-	otherwise if the player is a maid:
+	otherwise if the class of the player is maid:
 		say "It seems to recognise you as a member of staff and leaves you alone.";
 		bore M for 450 seconds;
 	otherwise if M is in Hotel19:
@@ -204,7 +204,7 @@ Part 5 - Conversation
 Section 1 - Greeting
 
 To compute greeting response of (M - a robochef):
-	if the player is a maid:
+	if the class of the player is maid:
 		say "[first custom style]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise if M is uninterested:
 		compute correct perception of M;
@@ -218,7 +218,7 @@ To compute talk option (N - 2) to (M - a robochef):
 	compute answer of M.
 
 To compute answer of (M - a robochef):
-	if the player is a maid:
+	if the class of the player is maid:
 		say "[first custom style]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise if M is unfriendly:
 		say "[first custom style]'PLEASE [if the player is upright]KNEEL[otherwise]WAIT[end if], DINNER MUST FIRST BE PREPARED.'[roman type][line break]";

@@ -129,13 +129,13 @@ Part 2 - Perception
 
 
 Definition: a dominatrix (called M) is objectifying the player:
-	if the player is a cheerleader, decide no;
+	if the class of the player is cheerleader, decide no;
 	if the favour of M > 17, decide yes;[18+ she considers you fully trained]
 	if the times-fucked of M > 3 and the blue-balls of M < 1, decide yes;
 	if (the bimbo of the player >= 20 or the appearance of the player >= 20), decide yes;
 	if the appearance of the player > the bimbo tolerance of M, decide yes;
-	if the player is a royal slave, decide yes;
-	if the player is a latex fetish model, decide yes;
+	if the class of the player is royal slave, decide yes;
+	if the class of the player is latex fetish model, decide yes;
 	if the sex addiction of the player >= 12, decide yes;
 	if the bimbo of the player >= the favour of M, decide yes;
 	if the delicateness of the player >= 11, decide yes;
@@ -147,7 +147,7 @@ To compute perception of (M - a dominatrix):
 	now M is interested;
 	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M;
 	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "It doesn't look like she's interested in you.";
 		bore M for 500 seconds;
 	otherwise:
@@ -157,9 +157,9 @@ To compute perception of (M - a dominatrix):
 		otherwise if the favour of M > 17:
 			if M is in Hotel22, say "The [M] smirks.  [speech style of M]'Already back for more. That's what I like about you, slut[if the disappointment of M > 1].  You're going to love the new toy I picked out for you.'[otherwise].'[end if][roman type][line break]";
 			otherwise say "The [M] smirks.  [speech style of M]'Ah, found you.  I'm ready for another session, and I know you are too[if the disappointment of M > 1].  You're going to love the new toy I picked out for you.'[otherwise]. Let's go.'[end if][roman type][line break]";
-		otherwise if the player is a royal slave:[no need to anger M when the dominatrix is uniquely unfriendly]
+		otherwise if the class of the player is royal slave:[no need to anger M when the dominatrix is uniquely unfriendly]
 			say "[speech style of M]'[if M is unfriendly and M is in Dungeon22]Ah, slave, you have returned.  Good timing, I am ready to play with you again.'[otherwise if M is unfriendly]Slave, return to my dungeon with me.  My needs are more pressing than the Princess's.'[otherwise]You, slave!  You're owned by the princess?  Her jurisdiction does not reach into my dungeon.  You will be mine tonight.'[end if][roman type][line break]";
-		otherwise if the player is the latex fetish model:
+		otherwise if the class of the player is the latex fetish model:
 			say "[speech style of M]'[if M is unfriendly and M is in Dungeon22]Ah, slave, you have returned.  Good timing, I am ready to play with you again.'[otherwise if M is unfriendly]Slave, return to my dungeon with me.  You will be my fucktoy again tonight.'[otherwise]Ooh, a rubber fuckdoll.  I've been waiting for a natural sub like you to walk into my dungeon.'[end if][roman type][line break]";
 		otherwise if the times-fucked of M > 3 and the blue-balls of M < 1:
 			say "[speech style of M]'[one of]Ah, my favourite customer! I have some good news. Since you[']ve been such a good sub, I[']ve decided to give you my services free of charge. All I want from you is your unconditional submission! [if the player is prone]Don[']t move.'[otherwise]Get on your knees.'[end if][or]If it isn[']t my favourite slave. You know the drill by now, don't you, slut.[stopping][roman type][line break]";

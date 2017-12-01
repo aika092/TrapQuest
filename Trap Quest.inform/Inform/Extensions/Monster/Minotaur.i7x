@@ -282,10 +282,10 @@ To compute vaginal sex of (M - a minotaur):
 		bore M for 500 seconds.
 
 To orgasm (M - a minotaur):
-	if the player is a priestess and (the virgin of the player is 0 or the player is male):
+	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
 		say "You feel a surge in your holy aura and a voice appears in your head: 'Good work, Sister!'";
 		decrease the charge of the dungeon altar by 300;
-	if the player is a princess, follow the betrothal rule.
+	if the class of the player is princess, follow the betrothal rule.
 
 To compute fuckhole sex of (M - a minotaur):
 	let F be a random fuckhole penetrated by M;
@@ -360,7 +360,7 @@ To compute the orifice choosing of (M - a minotaur):
 
 To compute (M - a minotaur) entering vagina:
 	now the sex-length of M is the health of M / 10;
-	say "The [M] stares at your body and sniffs your [vagina], assessing you.  He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina].  [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously.  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the player is a cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]";
+	say "The [M] stares at your body and sniffs your [vagina], assessing you.  He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina].  [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously.  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the class of the player is cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]";
 	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 4;
 	now M is penetrating vagina;
 	PussyRuin 1.

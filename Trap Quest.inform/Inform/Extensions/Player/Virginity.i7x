@@ -38,7 +38,7 @@ Triggered when the player loses vaginal virginity.
 +!]
 To compute virginity loss:
 	now the virgin of the player is 0;
-	say "[variable custom style][if the player is a virgin warrior and the player is a priestess]Aaah!  Sorry sisters, I have failed you...[otherwise if the sex addiction of the player < 10]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the sex addiction of the player < 15]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger.  There's no going back from that! *giggle*[end if][roman type][line break]";
+	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah!  Sorry sisters, I have failed you...[otherwise if the sex addiction of the player < 10]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the sex addiction of the player < 15]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger.  There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
 	if the virgin bonus of the player > 0:
 		say "[if the sex addiction of the player < 10]You feel pure despair and[otherwise if the sex addiction of the player < 15]You shudder involuntarily as[otherwise][end if] you feel some of your strength and speed leave you.  As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
@@ -56,7 +56,7 @@ To compute virginity loss:
 	if S is not held and S is in Woods26:
 		destroy S;
 		now a random off-stage dildo sword is in Woods26;
-	if the player is a priestess:
+	if the class of the player is priestess:
 		say "Your holy aura seems to diminish with the loss of your purity, enhancing the shame you are feeling. A strange new feeling of purpose passes through you, and you groan as your [vagina] loosens painfully. [variable custom style]I guess all I'm good for is sex now...[roman type]";
 		if the openness of vagina < 10, increase the openness of vagina by 1;
 		decrease the virgin bonus of the player by 1;

@@ -46,7 +46,7 @@ REQUIRES COMMENTING
 @inherits <Container>
 
 @!]
-A large sack is a kind of container.  A large sack is openable.  A large sack is closed.  A large sack is not portable.  The printed name of a large sack is "[TQlink of item described][if the player is a santa's little helper]stocking[otherwise]large sack[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of large sack is "sac".  The description is "[if the player is a santa's little helper]A giant stocking, which probably contains a lovely present.[otherwise]A large brown cotton sack lying against one wall.[end if]".
+A large sack is a kind of container.  A large sack is openable.  A large sack is closed.  A large sack is not portable.  The printed name of a large sack is "[TQlink of item described][if the class of the player is santa's little helper]stocking[otherwise]large sack[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of large sack is "sac".  The description is "[if the class of the player is santa's little helper]A giant stocking, which probably contains a lovely present.[otherwise]A large brown cotton sack lying against one wall.[end if]".
 40 trappable large sacks are in Holding Pen.  Understand "stocking" as large sack.
 
 To say ShortDesc of (C - a large sack):
@@ -59,7 +59,7 @@ REQUIRES COMMENTING
 @inherits <Container>
 
 @!]
-A wooden crate is a kind of container.  A wooden crate is openable.  A wooden crate is closed.  A wooden crate is not portable.  The printed name of a wooden crate is "[TQlink of item described][if the player is a santa's little helper]giant present[otherwise]wooden crate[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of wooden crate is "wcr".  The description is "[if the player is a santa's little helper]A large box that has been fashioned in the style of a Christmas present.[otherwise]A large wooden crate that looks like it has been there for a long time.[end if]".
+A wooden crate is a kind of container.  A wooden crate is openable.  A wooden crate is closed.  A wooden crate is not portable.  The printed name of a wooden crate is "[TQlink of item described][if the class of the player is santa's little helper]giant present[otherwise]wooden crate[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of wooden crate is "wcr".  The description is "[if the class of the player is santa's little helper]A large box that has been fashioned in the style of a Christmas present.[otherwise]A large wooden crate that looks like it has been there for a long time.[end if]".
 40 trappable wooden crates are in Holding Pen.  Understand "giant", "present" as wooden crate.
 
 
@@ -73,7 +73,7 @@ REQUIRES COMMENTING
 @inherits <Container>
 
 @!]
-A metal crate is a kind of container.  A metal crate is openable.  A metal crate is closed.  A metal crate is not portable.  The printed name of a metal crate is "[TQlink of item described][if the player is a santa's little helper]giant toybox[otherwise]metal crate[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of metal crate is "mcr".  The description is "[if the player is a santa's little helper]A large box that has been fashioned in the style of a toy box.[otherwise]A large metal crate that has handles on the lid for easy opening.".
+A metal crate is a kind of container.  A metal crate is openable.  A metal crate is closed.  A metal crate is not portable.  The printed name of a metal crate is "[TQlink of item described][if the class of the player is santa's little helper]giant toybox[otherwise]metal crate[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of metal crate is "mcr".  The description is "[if the class of the player is santa's little helper]A large box that has been fashioned in the style of a toy box.[otherwise]A large metal crate that has handles on the lid for easy opening.".
 30 trappable metal crates are in Holding Pen.  Understand "giant", "toy", "box", "toybox" as metal crate.
 
 To say ShortDesc of (C - a metal crate):

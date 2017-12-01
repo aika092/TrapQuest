@@ -29,7 +29,7 @@ To say ShortDesc of (C - a milking basque):
 	say "white milking basque".
 
 Definition: a milking basque (called C) is untransformable:
-	if the player is a royal slave, decide yes;
+	if the class of the player is royal slave, decide yes;
 	decide no.
 
 A white milking basque is a kind of milking basque.  The printed name of white milking basque is usually "[TQlink of item described][clothing-title-before]white basque[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of white milking basque is "wb".

@@ -240,7 +240,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute special decay:[doesn't seem to happen anywhere for some reason]
-	if the player is a cheerleader:
+	if the class of the player is cheerleader:
 		let O be a random overdress worn by the player;
 		if O is blessed and a random number between 1 and 170 is 1 and the largeness of breasts > the real largeness of breasts and the largeness of breasts > 3, BustDown 1;
 		if O is blessed and a random number between 1 and 170 is 1 and the thickness of hips > the real thickness of hips and the thickness of hips > 3, HipDown 1.

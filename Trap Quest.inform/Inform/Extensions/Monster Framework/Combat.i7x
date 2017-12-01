@@ -105,10 +105,10 @@ This function runs any code that needs to be executed whenever the player finish
 
 +!]
 To orgasm (M - a monster):
-	if the player is a priestess and (the virgin of the player is 0 or the player is male):
+	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
 		say "You can feel a surge in your holy aura and a voice appears in your head: 'Dutiful Sister, there is still more work to be done!'";
 		decrease the charge of the dungeon altar by 150;
-	if the player is a princess, follow the betrothal rule;
+	if the class of the player is princess, follow the betrothal rule;
 	[if there is a held notebook, now study-buddy is M;]
 	if M is intelligent, now the refactory-period of M is the refactory time of M;
 	if there is a worn royal scepter:
@@ -193,7 +193,7 @@ To compute facial climax of (M - a monster):
 
 To compute default facial climax for (M - a monster):
 	TimesFuckedUp M by 1;
-	if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut and the player is not a living sex doll:[cumshot outside;TODO "willing to pull out" function for orifices]
+	if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut and the class of the player is not living sex doll:[cumshot outside;TODO "willing to pull out" function for orifices]
 		if the reaction of the player is 0:
 			compute facial dodging of M;
 		otherwise: [the player submitted]
@@ -295,13 +295,13 @@ To say PullOutFlav of (M - a monster):
 
 Definition: a person is breeding material:
 	if current-monster is hellhound:
-		if the player is a catgirl, decide no;
-		if the player is a puppygirl, decide yes;
+		if the class of the player is catgirl, decide no;
+		if the class of the player is puppygirl, decide yes;
 		if the thickness of hips > 4, decide yes;
 	if current-monster is minotaur:
 		if the player is male, decide no;
 		if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
-		if the player is a cowgirl, decide yes;
+		if the class of the player is cowgirl, decide yes;
 	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;
 	decide no.
 
@@ -364,7 +364,7 @@ This is the default anal sex rule:
 The default anal sex rule is listed in the default progress sex rules.
 
 To compute anal sex of (M - a monster):
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "As the [M] continues to use your [asshole] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping rosebud feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or]The [M] continues to use your super loose [asshole]![or]You continue to squeal as the [M] fucks your [asshole]![cycling].";
 	otherwise if M is not intelligent:
 		say "The [M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [asshole]!";
@@ -851,7 +851,7 @@ To say AssholePenetrationFlav of (M - a monster):
 	let O be a random monster penetrating face;
 	let F be the openness of asshole - the girth of M;
 	say "[AssholePenPrep of M]";
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "[if the relevant sex addiction of M < 9][variable custom style]No, no![roman type] you try to beg [him of M], as [he of M][otherwise]The [M][end if] turns you away, and you feel the massive bulbous head probing at your tight pucker, but then it ploughs through and inside you!";
 		say "There's a sound like a rubber balloon animal being twisted into a knot as [his of M] rod plunges into your squeakily-tight interior.  [one of]You feel your cheeks flush in shame at the sound - which is weird: how can rubber cheeks flush? - but maybe they've done something so your emotional state is somehow transmitted to your new plastic skin?  You wouldn't put it past the wicked minds of the people who designed this game!  Probably some kind of 'psycho-active' plastic or something.  But it's pretty hard to keep philosophising while a massive cock is being rammed up your back passage[if M is not neuter], and the [M]'s hands are jerking you forward and back like some life-size rubber doll while his powerful hips plunge his hot, meaty pole in and then out of your backside[end if].  Not the least because you can't believe just how [italic type]good[roman type] it feels! It's like the number of nerve-endings back there have been multiplied ten-fold. You're also really getting off on the incoherent sounds of some bitch's high-pitched squeaking and grunting as she's... [variable custom style]Oops: that's me![roman type][line break][or][stopping][line break]";
 	otherwise if F < -2:[low bimbo: 2, mid: 2, high: 1]

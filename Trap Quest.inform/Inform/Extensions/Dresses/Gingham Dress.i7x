@@ -31,7 +31,7 @@ To decide which number is the initial cringe of (C - a gingham schoolgirl outfit
 	decide on 4.
 
 To decide which object is the potential-upgrade-target of (C - a gingham schoolgirl outfit):
-	unless the player is a schoolgirl, decide on a random off-stage kitty cat baby dress;
+	unless the class of the player is schoolgirl, decide on a random off-stage kitty cat baby dress;
 	decide on a random off-stage super short gingham dress.
 
 Part 2 - Super Short Gingham Dress
@@ -61,7 +61,7 @@ To decide which number is the initial cringe of (C - a super short gingham dress
 	decide on 6.
 
 Definition: a super short gingham dress (called C) is untransformable:
-	if the player is a schoolgirl, decide yes;
+	if the class of the player is schoolgirl, decide yes;
 	decide no.
 
 Gingham Dress ends here.

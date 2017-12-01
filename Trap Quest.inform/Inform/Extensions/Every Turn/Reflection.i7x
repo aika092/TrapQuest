@@ -179,7 +179,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: crawling-around (called A) is applicable:
-	if (the humiliation of the player < 10000 or the player-class is succubus or the player is a princess) and the player is prone, decide yes;
+	if (the humiliation of the player < 10000 or the player-class is succubus or the class of the player is princess) and the player is prone, decide yes;
 	decide no.
 
 [!<ReflectOnCrawlingAround>+
@@ -188,7 +188,7 @@ REQUIRES COMMENTING
 
 +!]
 To reflect on (A - crawling-around):
-	if the player is a princess:
+	if the class of the player is princess:
 		say "[first custom style]Why am I crawling around on my knees like some sort of peasant...[roman type]";
 	otherwise if the bimbo of the player < 3 and the player-class is not succubus:
 		say "[first custom style]I'm on my knees [one of]crawling through this place[or]crawling around like a [if diaper lover >= 1]kid[otherwise]dog[end if][or]like some kind of [if diaper quest is 1]baby[otherwise]common slut[end if][at random].  How humiliating is this!";
@@ -650,7 +650,7 @@ To say StatsChangedFlav:
 			otherwise if the old strength of the player < the flat strength of the player - 2:
 				if the flat strength of the player > 24:
 					if the bimbo of the player < 9, say "[first custom style][line break]I feel like I could move mountains![roman type][line break]";
-					otherwise say "[second custom style][line break]I feel really powerful for such a little [if the player is a princess]princess[otherwise]girl[end if]![roman type][line break]";
+					otherwise say "[second custom style][line break]I feel really powerful for such a little [if the class of the player is princess]princess[otherwise]girl[end if]![roman type][line break]";
 				otherwise if the flat strength of the player > 19:
 					if the bimbo of the player < 7, say "[first custom style][line break]I feel very strong.  I'll rip these traps to pieces![roman type][line break]";
 					otherwise say "[second custom style][line break]How can such a tiny body feel so strong?[roman type][line break]";

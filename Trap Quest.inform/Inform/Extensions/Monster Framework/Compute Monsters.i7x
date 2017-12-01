@@ -53,8 +53,8 @@ To compute turn (N - a number) of (M - a monster):
 		if the health of M < the maxhealth of M, increase the health of M by 4;
 		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M;
 	if the refactory-period of M > 0:
-		unless (the player is a princess and the sleep of M > 0), decrease the refactory-period of M by 4;
-		if princess-consort is M and the refactory-period of M < 1 and the player is a princess:
+		unless (the class of the player is princess and the sleep of M > 0), decrease the refactory-period of M by 4;
+		if princess-consort is M and the refactory-period of M < 1 and the class of the player is princess:
 			say "A strange tingle passes through your body, and you suddenly find yourself stricken with need, thoughts of the [princess-consort] swirling around inside your head. Somehow, you know you won't be able to think straight until you've seen to [his of M] needs.";
 			if the player is able to get horny, Arouse 2500;
 			say "[variable custom style][if the sex addiction of the player < 8]Ugh, this game is messing with my head![otherwise if the sex addiction of the player < 12]I guess I should get there quick so it's over with.[otherwise]Looks like [he of M]'s horny again. I know just what to do![end if][roman type]".

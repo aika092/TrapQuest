@@ -11,7 +11,7 @@ Are you at risk of saying something lewd instead of what you intended?
 +!]
 Definition: yourself is seductive:
 	if diaper quest is 1 and there is a worn baby pacifier, decide yes;
-	if the player is a cheerleader, decide yes;
+	if the class of the player is cheerleader, decide yes;
 	repeat with C running through clothing worn by the player:
 		if C is temptation, decide yes;
 	repeat with T running through tattoos worn by the player:
@@ -25,7 +25,7 @@ Chapter 1 Greeting
 To compute talk option (N - 1) to (M - a monster):
 	if times-met is 0, now times-met is 1; [this is a failsafe to make sure the first time greeting never displays twice.]
 	let B be a random number from 1 to 4; [variable used so we can refer to bimbo seduce in the next function]
-	if the player is a cheerleader and a random number between 1 and 2 is 1, now B is 1;
+	if the class of the player is cheerleader and a random number between 1 and 2 is 1, now B is 1;
 	let seduced be 0;
 	if the player is seductive and B is 1 and M is raunchy:
 		say "[BimboSeduce of M]";
@@ -81,7 +81,7 @@ To compute greeting response of (M - a monster):
 	now M is interested.
 
 To say FirstGreeting of (M - a monster):
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "[variable custom style]'Merry Christmas!'[roman type][line break]";
 	otherwise if bimbo of the player < 4:
 		if the player is female:
@@ -146,7 +146,7 @@ To say UnfriendlyGreeting of (M - a monster):[long time coming! Makes sense to i
 
 [has this monster ever been greeted before?; Note that this is less expansive than the one above, but it should have a good amount of overlap.]
 To say RepeatGreeting of (M - a monster):
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "[variable custom style]'Merry Christmas!'[roman type][line break]";
 	otherwise if bimbo of the player < 4:
 		if the player is female:
@@ -285,11 +285,11 @@ To say ToDominantGreeting of (M - a monster):
 
 [Some extra stuff added into the vanilla bimboseduce function. It's modular now, so someone like a dominatrix could simply define this function to refer to a strap on or particularly large breasts.]
 To say BimboSeduce of (M - a monster):
-	say "[if the player is a cheerleader]Unfortunately, the words that come out don't really sound like 'you' at all![otherwise]You try to say one thing, but somehow the words that come out of your mouth are completely different:[end if][line break]";
+	say "[if the class of the player is cheerleader]Unfortunately, the words that come out don't really sound like 'you' at all![otherwise]You try to say one thing, but somehow the words that come out of your mouth are completely different:[end if][line break]";
 	if diaper quest is 1:
 		if there is a worn pacifier, say "[variable custom style][muffled sounds][roman type][line break]";
 		otherwise say "[second custom style]'[one of]Ooh, I'm a bad girl, punish me!'[or]Please treat me like I deserve!'[or]Do you want to be my [daddy of M]?'[in random order][roman type][line break]";
-	otherwise if the player is a cheerleader:
+	otherwise if the class of the player is cheerleader:
 		say CheerSeduce of M;
 	otherwise if M is neuter:
 		say "[second custom style]'[one of]Ooh, I'm a bad girl, punish me!'[or]Please fuck me!'[at random][roman type][line break]";
@@ -310,7 +310,7 @@ To say BimboSeduced of (M - a monster):
 		say "Something seems to suddenly switch in the [M]'s demeanour and its stance becomes aggressive.";
 		anger M;
 		now the boredom of M is 0;
-	otherwise if the player is a cheerleader and M is unfriendly and a random number between 1 and 3 is 1 and M is not grabbing the player:
+	otherwise if the class of the player is cheerleader and M is unfriendly and a random number between 1 and 3 is 1 and M is not grabbing the player:
 		say "Something seems to suddenly switch in the [M]'s head, [his of M] grin changing into a nonplussed grimace. It must be something you said, the [M] doesn't look interested in you anymore.[line break]";[You ran your mouth so much the monster lost interest.]
 		now the scared of M is 30;
 	otherwise:
@@ -456,7 +456,7 @@ To say TeachQuestion of (M - a monster):
 	say "[variable custom style]'Can you teach me anything useful?'[roman type][line break]";
 
 To say WhereQuestion of (M - a monster):
-	say "[variable custom style]'[if the player is a santa's little helper]Hmm, this isn't Lapland.  [end if]Where [one of]are we?'[or]am I?'[at random][roman type][line break]".
+	say "[variable custom style]'[if the class of the player is santa's little helper]Hmm, this isn't Lapland.  [end if]Where [one of]are we?'[or]am I?'[at random][roman type][line break]".
 	
 To say WhoQuestion of (M - a monster):
 	if the bimbo of the player < 11:
@@ -465,24 +465,24 @@ To say WhoQuestion of (M - a monster):
 		say "[second custom style]'Got a name, [if M is male]big boy?'[otherwise]sexy?'[end if][roman type][line break]".
 
 To say StoryQuestion of (M - a monster):
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "[variable custom style]'How did you come to be here this Christmas?'[roman type][line break]";
 	otherwise:
 		say "[variable custom style]'What's your story?'[roman type][line break]".
 
 To say EscapeQuestion of (M - a monster):
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "[variable custom style]'I need to get back to Santa's grotto.  Any ideas?'[roman type][line break]";
 	otherwise:
 		say "[variable custom style]'How do I get out of here safely?'[roman type][line break]".
 
 [This should make it easier to add more classes to this function in the future.]
 To say AdviceQuestion of (M - a monster):
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "[variable custom style]'Any advice for [if the bimbo of the player > 6]a naughty[otherwise]an innocent[end if] little helper?'[roman type][line break]";
-	otherwise if the player is a princess:
+	otherwise if the class of the player is princess:
 		say "[variable custom style]'Any advice for an adventurous princess?'[roman type][line break]";
-	otherwise if the player is a maid:
+	otherwise if the class of the player is maid:
 		say "[variable custom style]'Any advice for a cunning maid?'[roman type][line break]";
 	otherwise if the bimbo of the player > 13:
 		say "[second custom style]'Any advice for a lonely girl?'[roman type][line break]";
@@ -540,7 +540,7 @@ To compute talk option (N - 3) to (M - a monster):
 
 To say DrinkRequest of (M - a monster):
 	say variable custom style;
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "'I'm thirsty.  Got any mulled wine?'";
 	otherwise if watersports fetish is 1 and the urine taste addiction of the player > 5 and the urine taste addiction of the player >= the semen taste addiction of the player and M is willing to urinate:
 		say "[if the urine taste addiction of the player < 9]Please, do you have anything I could drink?  I would even drink your pee if you wanted...'[otherwise if the urine taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [urine] if you'll let me.'[otherwise if the urine taste addiction of the player < 15]I'd love to drink your [urine] if you'll let me.  Anything will do though, I'm very thirsty.'[otherwise]Please may I have the privilege of being your toilet?  I promise I'll savour every last drop.'[end if]";

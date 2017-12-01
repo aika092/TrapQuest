@@ -136,15 +136,15 @@ Report wearing blue scrunchie:
 		otherwise say "Your hair magically changes colour and is now dark brown!".
 
 To decide which number is the intelligence-influence of (H - a blue scrunchie):
-	if the player is a schoolgirl, decide on 2;[+2 bonus if you have both scrunchies and the class]
+	if the class of the player is schoolgirl, decide on 2;[+2 bonus if you have both scrunchies and the class]
 	decide on 0.[until you do the work to become a schoolgirl, you get no intelligence bonus]
 
 To decide which number is the strength-influence of (H - a blue scrunchie):
-	if the player is a schoolgirl, decide on 0;
+	if the class of the player is schoolgirl, decide on 0;
 	decide on -1.
 
 To decide which number is the dexterity-influence of (H - a blue scrunchie):
-	if the player is a schoolgirl, decide on 0;
+	if the class of the player is schoolgirl, decide on 0;
 	decide on -1.
 
 To compute periodic effect of (H - a blue scrunchie):

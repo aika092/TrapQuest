@@ -32,7 +32,7 @@ REQUIRES COMMENTING
 
 +!]
 To say stud:
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "Santa[one of] baby[or][or][purely at random]";
 	otherwise:
 		say "[one of]stud[or]handsome[or]stud[or]big boy[or][if diaper lover >= 1]daddy[otherwise]master[end if][as decreasingly likely outcomes]".
@@ -158,7 +158,7 @@ REQUIRES COMMENTING
 
 +!]
 To say manly-penis:
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "candy cane";
 	otherwise:
 		say "[one of]cock[or]dick[cycling]".
@@ -232,7 +232,7 @@ REQUIRES COMMENTING
 
 +!]
 To say semen:
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "eggnog";
 	otherwise if the semen addiction of the player < 7:
 		say "[one of]semen[or]ejaculate[or]seed[or]cum[or]man cream[or]seminal fluid[as decreasingly likely outcomes]";
@@ -255,7 +255,7 @@ REQUIRES COMMENTING
 
 +!]
 To say urine:
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "hot buttered rum";
 	otherwise if the raw intelligence of the player < 5 and diaper lover >= 1:
 		say "[one of]pee pee[or]wee wee[or]wee[or]tinkle juice[as decreasingly likely outcomes]";
@@ -280,7 +280,7 @@ REQUIRES COMMENTING
 
 +!]
 To say milk:
-	if the player is a santa's little helper:
+	if the class of the player is santa's little helper:
 		say "brandy butter";
 	otherwise:
 		say "[if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
@@ -364,7 +364,7 @@ REQUIRES COMMENTING
 
 +!]
 To say baby title of (M - a monster):
-	if the player is a princess:
+	if the class of the player is princess:
 		say "[one of]our little princess[or]princess pottypants[or]her royal padded highness[or]princess of the pampers[or]the royal waddler[or]her royal heinie[at random]";
 	otherwise:
 		say "[one of]my little trooper[or]our little bedwetter[or]little miss waddlebum[or]chubby-cheeks[or]little miss [if diaper lover >= 3]stinker[otherwise]pee-pee-pants[end if][or]Baby [NameBimbo][or][at random]".

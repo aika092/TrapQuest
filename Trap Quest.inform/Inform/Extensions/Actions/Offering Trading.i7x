@@ -9,9 +9,9 @@ REQUIRES COMMENTING
 To decide which number is the charisma of the player:
 	let X be 0;
 	increase X by the make-up of face;
-	if the player is a cheerleader, increase X by 2;
-	if the player is a sissy or the player is a royal slave, decrease X by 2;
-	if the player is a succubus, increase X by 1;
+	if the class of the player is cheerleader, increase X by 2;
+	if the player is a sissy or the class of the player is royal slave, decrease X by 2;
+	if the class of the player is succubus, increase X by 1;
 	if there is a worn book of regrets, increase X by 1;
 	decrease X by the number of worn bitch tattoos;
 	decide on X.

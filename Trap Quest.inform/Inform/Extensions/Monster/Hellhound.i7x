@@ -69,7 +69,7 @@ Report kneeling when there is an uninterested hellhound in the location of the p
 
 To compute perception of (M - a hellhound):
 	deinterest M; [This is because the hellhound does not notice enemies by default.]
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "The [M] sniffs you, and then decides to leave you alone.";
 		bore M;
 	otherwise if the player is prone:

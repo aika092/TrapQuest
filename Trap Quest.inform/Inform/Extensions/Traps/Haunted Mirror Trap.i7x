@@ -139,13 +139,13 @@ To compute resolution of (X - mirror cum consumption):
 
 mirror soiling is a mirror attack.
 Definition: mirror soiling is acceptable:
-	if (the bladder of the player > 2 and there is worn knickers) or (rectum > 3 and there is a worn total protection diaper and diaper lover >= 4) or the player is diaper focused or the player is a adult baby, decide yes;
+	if (the bladder of the player > 2 and there is worn knickers) or (rectum > 3 and there is a worn total protection diaper and diaper lover >= 4) or the player is diaper focused or the class of the player is adult baby, decide yes;
 	decide no.
 Definition: mirror soiling is one-turn:
 	decide no.
 
 To compute resolution of (X - mirror soiling):
-	if the player is diaper focused or the player is a adult baby:
+	if the player is diaper focused or the class of the player is adult baby:
 		say "You suddenly feel your bladder [if there is a worn total protection diaper and diaper lover >= 4]and bowels [end if]fill, leaving you desperate to go!";
 		now the bladder of the player is 10;
 		if there is a worn total protection diaper and diaper lover >= 4:
@@ -158,7 +158,7 @@ To compute resolution of (X - mirror soiling):
 		say "Your reflection winks at you, and then scrunches its nose in concentration.  A split second later, you are [if the diaper addiction of the player < 3]horrified to find[otherwise if the diaper addiction of the player < 6]unhappy to find[otherwise if the diaper addiction of the player < 9]unfazed when you realize[otherwise if the diaper addiction of the player < 11]interested to find[otherwise if the diaper addiction of the player < 13]happy to find[otherwise if the diaper addiction of the player < 15]excited to find[otherwise if the diaper addiction of the player < 17]overjoyed upon noticing[otherwise]completely ecstatic to see[end if] that you are wetting yourself!";
 		now delayed urination is 1;
 		try urinating;
-	if (the player is diaper focused or the player is a adult baby) and there is a worn total protection diaper:
+	if (the player is diaper focused or the class of the player is adult baby) and there is a worn total protection diaper:
 		let D be a random worn total protection diaper;
 		say "Looking in front of you again, you can't help but laugh uncontrollably at the pathetic dumb baby in front of you [if D is currently visible]and their[end if][if D is currently visible and the total-soak of D >= 6] deeply yellowing[end if][if D is currently visible and the mess of D > 0], brown and sagging[end if][if D is currently visible] [printed name of D], [end if][if the diaper addiction of the player < 3 and the delicateness of the player < 12]before realizing that you're looking at yourself and growling angrily[otherwise if the diaper addiction of the player < 3]before realizing that you're looking at yourself and crying uncontrollably[otherwise if the diaper addiction of the player < 6]before realizing that you're looking at yourself and blushing[otherwise if the diaper addiction of the player < 9]before realizing that you're looking at yourself and quickly stopping[otherwise if the diaper addiction of the player < 11]especially once they begin rubbing their diaper with a grin on their face, before realizing it's you and, after a hesitating for a few seconds, taking your hands off your diaper[otherwise if the diaper addiction of the player < 13]especially once they begin rubbing their diaper with a grin on their face, before realizing it's you and, after a hesitating for a few seconds, continuing to rub your diaper[otherwise if the diaper addiction of the player < 15]especially once they begin rubbing their diaper with a grin on their face, before realizing it's you and, upon realizing you have control of your body back, immediately resuming rubbing your diaper[otherwise if the diaper addiction of the player < 17]especially once they begin rubbing their diaper with a huge grin on their face, before realizing it's you and, upon realizing you have control of your body back, immediately resuming rubbing your diaper[otherwise]especially once they begin rubbing their diaper with a huge grin on their face, before realizing it's you and eagerly continuing to rub your diaper without even realizing you have control of your body back[end if].";
 		if the diaper addiction of the player > 10:

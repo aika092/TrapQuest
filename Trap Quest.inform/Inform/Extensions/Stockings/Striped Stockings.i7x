@@ -8,13 +8,13 @@ To decide which figure-name is clothing-image of (C - a striped stockings):
 Figure of striped stockings is the file "stripedstockings1.png".
 
 To say ClothingDesc of (C - a striped stockings):
-	say "Fuzzy black and yellow stockings[if the player is a broodmother]. They feel like they[']ve become somewhat hard, and their tops fade into your skin[end if].".
+	say "Fuzzy black and yellow stockings[if the class of the player is broodmother]. They feel like they[']ve become somewhat hard, and their tops fade into your skin[end if].".
 
 To say ShortDesc of (C - a striped stockings):
 	say "pair of striped stockings".
 
 Definition: a striped stockings (called C) is untransformable:
-	if the player is a broodmother, decide yes;
+	if the class of the player is broodmother, decide yes;
 	decide no.
 
 Definition: a striped stockings is removable:

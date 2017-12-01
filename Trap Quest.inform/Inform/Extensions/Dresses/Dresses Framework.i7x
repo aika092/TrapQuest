@@ -90,7 +90,7 @@ To say ShortDesc of (O - an overdress):
 To decide which object is the unique-upgrade-target of (C - an overdress):
 	if there is a worn hood and C is crotch covering and the urine-soak of C > 0:
 		decide on a random off-stage WC catsuit;
-	otherwise if the player is diaper focused and the player is a adventurer:
+	otherwise if the player is diaper focused and the class of the player is adventurer:
 		decide on a random onesie;
 	decide on nothing.
 

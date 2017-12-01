@@ -45,7 +45,7 @@ Section 1 - Attack
 
 To TimesFuckedUp (M - a vine boss):
 	increase the times-fucked of M by 1;
-	if the player is a princess, compute vine betrothal;
+	if the class of the player is princess, compute vine betrothal;
 	if giant-statue is active, ChargeDown giant-statue by 40;
 	
 

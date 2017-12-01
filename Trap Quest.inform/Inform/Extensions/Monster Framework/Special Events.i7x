@@ -94,7 +94,7 @@ To DrinkPiss:
 	let H be a random white hood;
 	if H is worn:
 		compute full class outfit of H;
-		if the player is a human toilet and a random number between the raw dexterity of the player and 30 < 25:
+		if the class of the player is human toilet and a random number between the raw dexterity of the player and 30 < 25:
 			say "You feel more limber!";
 			DexUp 1;
 	otherwise if H is actually summonable and H is off-stage:

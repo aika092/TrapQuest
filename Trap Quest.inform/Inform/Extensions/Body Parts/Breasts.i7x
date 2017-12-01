@@ -74,7 +74,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the sensitivity of breasts:
 	let S be 0;
-	if the player is a cowgirl:
+	if the class of the player is cowgirl:
 		if the milk volume of breasts > 10, increase S by 1;
 		if the milk volume of breasts > 20, increase S by 1;
 		if the milk volume of breasts > 25, increase S by 1;
@@ -229,7 +229,7 @@ To decide which number is the weight of (XXX - breasts):
 						decrease S by 2;
 					otherwise:
 						decrease S by 4;
-			if the player is a silicone queen:
+			if the class of the player is silicone queen:
 				decrease S by 1;
 				if O is not cursed, decrease S by 2;
 				if O is blessed, decrease S by 2;

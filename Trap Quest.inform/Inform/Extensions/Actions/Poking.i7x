@@ -14,7 +14,7 @@ REQUIRES COMMENTING
 +!]
 Check poking:
 	[if the player is immobile, say "You're a bit busy!" instead;]
-	if the player is not a living sex doll:
+	if the class of the player is not living sex doll:
 		unless the player is able to manually use their hands, say "" instead;
 	if the noun is not monster:
 		now seconds is 2;

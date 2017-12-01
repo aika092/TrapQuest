@@ -32,8 +32,8 @@ To check perception of (M - a monster):
 				calm M;
 				say "The [M] notices you![line break]The [M] seems to be waiting for something..."; [Waiting for you to give birth to their baby]
 			otherwise if the scared of M > 0:
-				say "[if the player is a cheerleader]The [M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness]The [M] scoffs and starts to move in the other direction.[otherwise]The [M] notices you immediately and starts to run away![end if]";
-			otherwise if the player is a vixen and there is a worn kimono and a random number between 1 and 4 > 1:
+				say "[if the class of the player is cheerleader]The [M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness]The [M] scoffs and starts to move in the other direction.[otherwise]The [M] notices you immediately and starts to run away![end if]";
+			otherwise if the class of the player is vixen and there is a worn kimono and a random number between 1 and 4 > 1:
 				do nothing;
 			otherwise:
 				compute correct perception of M;
@@ -45,7 +45,7 @@ To check perception of (M - a monster):
 				now the previous-babification of M is the babification of M;
 				now the previous-objectification of M is the objectification of M;
 			if M is interested:
-				[if the player is a cheerleader and a random number between 1 and 5 is 1:
+				[if the class of the player is cheerleader and a random number between 1 and 5 is 1:
 					say "Your [printed name of a random worn pink scrunchie] feels warm, and you suddenly have the urge to open your mouth and say whatever comes to mind.";
 					try greeting M; Caused some weird interactions with shocked monsters]
 				if newbie tips is 1:
@@ -131,7 +131,7 @@ Definition: a monster (called M) is objectifying the player:
 		now the objectification of M is 0;
 		decide no;
 	if the objectification of M is 1, decide yes;
-	if the player is a cheerleader, decide no;
+	if the class of the player is cheerleader, decide no;
 	if the bimbo of the player >= 20 or the appearance of the player >= 20 or the appearance of the player > the bimbo tolerance of M:
 		now the objectification of M is 1;
 		decide yes;
@@ -155,7 +155,7 @@ Definition: a monster (called M) is babifying the player:
 		now the babification of M is 0;
 		decide no;
 	if the babification of M is 1, decide yes;
-	if the player is a adult baby, decide yes; [not sure about this]
+	if the class of the player is adult baby, decide yes; [not sure about this]
 	if the bimbo of the player >= 20 or the cringe appearance of the player >= 20 or the cringe appearance of the player > the cringe tolerance of M:
 		now the babification of M is 1;
 		decide yes;
@@ -236,12 +236,12 @@ To FavourDown (M - a monster):
 	decrease the favour of M by 1.
 
 To FavourUp (M - a monster) by (N - a number):
-	if the player is a cheerleader, increase N by 1;
+	if the class of the player is cheerleader, increase N by 1;
 	repeat with X running from 1 to N:
 		FavourUp M.
 		
 To FavourDown (M - a monster) by (N - a number):
-	if the player is a cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
+	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0:
 		repeat with X running from 1 to N:
 			FavourDown M.

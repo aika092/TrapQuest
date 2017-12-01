@@ -71,7 +71,7 @@ To compute appearance assessment of (M - a djinn):
 		if the wish history of M is 2:
 			say "[speech style of M]'Oh it's you again.  [one of]You'll be pleased to hear that I no longer have to grant you any wishes.  I'm free to mess with you, though.'[or]What should I do to you this time...'[stopping][roman type][line break]";
 			compute djinn messing of M;
-		otherwise if the player is a priestess or the player is a succubus or the player is a cultist:
+		otherwise if the class of the player is priestess or the class of the player is succubus or the class of the player is cultist:
 			say "[speech style of M]'[one of]I am bound...oh. You already work for someone else. Right, forget I said anything.'[or]We meet again, acolyte. '[at random][roman type][line break]";
 		otherwise if the player is able to speak:
 			say "[speech style of M]'I am bound by the law of Djinni to grant you one wish, within reason.  But if you don't wish for a [if diaper quest is 1]spanking[otherwise]suck of my cock[end if], I'll make your life miserable afterwards.'[roman type][line break]";

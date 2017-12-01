@@ -167,7 +167,7 @@ To compute perception of (M - a patron):
 	now the chosen-orifice of M is a random actual target body part;
 	if M is inexperienced patron, decrease the sex-length of M by 2;
 	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "[speech style of M]'A sex doll!  Just what I need to satisfy my urges. Come here!'[roman type][line break]";
 	otherwise if M is mating:
 		say "[speech style of M]'Hey I know you, you're the whore I creampied earlier.  I hope you didn't get knocked up, did you?[if the player is flying][line break]And what are you doing up there?!'[otherwise]'[end if][roman type][line break]";

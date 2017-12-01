@@ -25,7 +25,7 @@ To decide which number is the initial outrage of (C - a miniskirt):
 	decide on 6.
 
 Definition: a tartan miniskirt (called C) is untransformable:
-	if the player is a schoolgirl, decide yes;
+	if the class of the player is schoolgirl, decide yes;
 	decide no.
 
 To decide which object is the potential-upgrade-target of (C - a miniskirt):

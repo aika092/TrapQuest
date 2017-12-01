@@ -13,7 +13,7 @@ REQUIRES COMMENTING
 
 +!]
 Check begging:
-	if the mercyskill of the player is 0 and the player is not a cheerleader and the player is not a sissy, say "You don't know this ability.  Try [bold type]submit[roman type]ting for now." instead;
+	if the mercyskill of the player is 0 and the class of the player is not cheerleader and the player is not a sissy, say "You don't know this ability.  Try [bold type]submit[roman type]ting for now." instead;
 	if the player is not monster fucked and the number of monsters grabbing the player is 0:
 		if there is a live thing penetrating a body part, try submitting instead;
 		say "You are not being fucked, so there is nobody to beg to!" instead;

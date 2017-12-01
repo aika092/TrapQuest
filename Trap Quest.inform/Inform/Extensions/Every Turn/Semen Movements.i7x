@@ -43,8 +43,8 @@ A time based rule (this is the compute cum movements rule):
 					if the pregnancy rate of the player is 2, now R is a random number from -250 to the semen volume of vagina;
 					if the pregnancy rate of the player > 2, now R is a random number from -155 to the semen volume of vagina;
 					if the pregnancy rate of the player < 1, now R is a random number from -840 to the semen volume of vagina;
-					if the player is a cheerleader, decrease R by 5;
-					if there is a worn maternity dress or the player is a fertility goddess, increase R by 5; [TODO probably needs better balancing]
+					if the class of the player is cheerleader, decrease R by 5;
+					if there is a worn maternity dress or the class of the player is fertility goddess, increase R by 5; [TODO probably needs better balancing]
 					if R > 1 and the number of family things > 0 and the virgin of the player is 0 and slow pregnancy < 3:
 						say "[ConceptionFlav]";
 						now the pregnancy of the player is 1;

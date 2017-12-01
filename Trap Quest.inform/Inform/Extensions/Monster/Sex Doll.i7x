@@ -130,7 +130,7 @@ Report kneeling when there is an uninterested sex doll in the location of the pl
 
 To compute perception of (M - a sex doll):
 	deinterest M; [This is because the sex doll does not notice enemies by default.]
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "The [M] seems to notice you!  But it seems to no longer consider you an enemy.";
 		now the boredom of M is 300;
 	otherwise if M is objectifying the player:

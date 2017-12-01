@@ -319,7 +319,7 @@ To compute appearance assessment of (M - a gladiator):
 To compute perception of (M - a gladiator):
 	now M is interested;
 	say "The [M] notices you[if the player is sluttily dressed], even though she is almost naked herself.[otherwise]![end if]";
-	if the player is soulless and the player is not a succubus:
+	if the player is soulless and the class of the player is not succubus:
 		say "The [M] looks at you carefully. [speech style of M]'Oh my, just to look at your eyes I see there is nothing of true womanhood left inside your heart. Do not fear, I know just how to handle that...'[roman type][line break]";
 		anger M;
 	otherwise if M is purified:
@@ -513,7 +513,7 @@ This is the gladiator demon conversion rule:
 	let M be current-monster;
 	if M is uninterested and M is female, rule succeeds;[Handled first so we know the gladiator doesn't want to do anything to you this turn.]
 	if debugmode > 0, say "delayed stand is [delayed stand]";
-	if M is female and the player is soulless and the player is not a succubus and M is not wild gladiator and delayed stand is 0:[This prevents a glitch with autostanding and the gladiator dragging]
+	if M is female and the player is soulless and the class of the player is not succubus and M is not wild gladiator and delayed stand is 0:[This prevents a glitch with autostanding and the gladiator dragging]
 		let player-moved be 0;
 		now the target-room of M is Dungeon33;
 		if the location of the player is Dungeon33:
@@ -1222,17 +1222,17 @@ To say RepeatResponse of (M - a gladiator):
 		say "[speech style of M]'[one of]Your breasts are starting to look a bit on the small side again, you should fix that.'[or]Your breasts are big enough to be worthy of respect, but they could always be bigger.'[or]Don't let your breasts get too small, sister. They are the only thing that can make you a real woman.'[at random][roman type][line break]".		
 
 To say UnfriendlyResponse of (M - a gladiator):
-	if M is male and the player is a virgin warrior:
+	if M is male and the class of the player is virgin warrior:
 		say "[speech style of M]'[one of]Let me show you the flaws of your path...'[or]When I am finished with you, you won[']t even be a warrior.'[or]Your virginity will belong to me.'[or][if pregnancy fetish is 1]Maybe when my seed is in your belly you will realize[otherwise]Maybe when I have taken your virginity you will realize[end if] your mistake.'[at random][roman type][line break]";
 	otherwise if M is male and the player is a sissy:
 		say "[speech style of M]'[one of]I will show you a real man, sissy.[or]Even I carry a penis better than you.'[or]I hope you are ready to beg for mercy.'[or]On your knees. I will not play this game with you, sissy.'[or]Do not waste my time, sissy. Get on your knees.'[or]You know your place, sissy. Get on your knees.'[or]Do not play games, sissy, you know what I have planned for you.'[or]I may not be a true woman anymore, but I am definitely more man than you.'[at random][roman type][line break]";
 	otherwise if M is male:
 		say "[speech style of M]'[one of]Shut up, and take what's coming to you!'[or]Won't you be silent while I punish you?!'[or]Gaah!  Silence!'[at random][roman type][line break]";
-	otherwise if the player is a virgin warrior:
+	otherwise if the class of the player is virgin warrior:
 		say "[speech style of M]'[one of]The virgin warrior is a worthy path, but it is not the path to becoming a true woman!'[or]There is only one path to becoming a true woman!'[or]I must put you on the right path to becoming a true woman!'[at random][roman type][line break]";
-	otherwise if the player is a princess:
+	otherwise if the class of the player is princess:
 		say "[speech style of M]'[one of]I acknowledge none but the rule of true womanhood!'[or]We will speak as equals, or not at all!'[or]The crown cannot teach you the way of true womanhood, but I can!'[at random][roman type][line break]";
-	otherwise if the player is a fertility goddess:
+	otherwise if the class of the player is fertility goddess:
 		say "[speech style of M]'[one of]You of all people should know how important it is to attain true womanhood!'[or]How can you call yourself a goddess without the gift of true womanhood'[or]I answer to another power! TRUE womanhood![at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]I only associate with real women!'[or]Talk to me when you have become a real woman![or]We will talk when you have become a real woman!'[at random][roman type][line break]";

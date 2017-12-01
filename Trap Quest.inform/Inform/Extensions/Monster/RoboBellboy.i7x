@@ -58,7 +58,7 @@ To compute perception of (M - a robobellboy):
 	if there is a worn messed knickers:
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED.  PLEASE ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
-	otherwise if the player is a maid:
+	otherwise if the class of the player is maid:
 		say "[first custom style]'SERVANT, YOUR SERVICES ARE REQUIRED.'[roman type][line break]";
 		anger M;
 	otherwise if M is babifying the player:
@@ -67,7 +67,7 @@ To compute perception of (M - a robobellboy):
 	otherwise if M is objectifying the player:
 		say "Its eyes turn red.  [first custom style][if the player-class is not succubus]'WHORE, YOUR CLIENTS ARE WAITING.  PLEASE ALLOW ME TO ESCORT YOU.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
 		anger M;
-	otherwise if the player is not a catgirl and the player is not a puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
+	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
 		if M is senior robobellboy, say "Its eyes turn red. [first custom style]'PLEASURE TRAINEE DETECTED. PLEASE SUBMIT FOR PERFORMANCE OPTIMIZATION.'[roman type][line break]";
 		otherwise say "Its eyes turn red.  [first custom style][if the player-class is not succubus]'YOU REQUIRE CLOTHING.  ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR HIS SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
 		anger M;
@@ -87,7 +87,7 @@ This is the robobellboy punishment rule:
 		say "[one of]The [current-monster] waits beside you patiently.[or][cycling]";
 	otherwise if there is a worn messed knickers:
 		compute change forcing of current-monster;
-	otherwise if the player is a maid:
+	otherwise if the class of the player is maid:
 		compute maid forcing of current-monster;
 	otherwise if the variety of current-monster is 1 or the bimbo of the player > 13 or the number of worn crotch covering clothing > 0 and the number of worn breast covering clothing > 0:
 		compute whore forcing of current-monster;
@@ -211,7 +211,7 @@ bellboy-forced-clothing is a diaper punishment.  The priority of bellboy-forced-
 Definition: a bellboy-forced-clothing (called P) is appropriate:
 	if current-monster is not robobellboy, decide no;
 	if current-monster is babifying the player and the player is not immobile, decide no; [Will do whore forcing regime instead.]
-	if the player is not a catgirl and the player is not a puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0), decide yes;
+	if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0), decide yes;
 	decide no.
 
 To compute punishment of (P - bellboy-forced-clothing):

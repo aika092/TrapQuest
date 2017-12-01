@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a kitty claws):
 
 To say ClothingDesc of (W - a kitty claws):
 	say "A pair of giant fluffy cosplay cat paws.  You lose some manual dexterity from wearing them, [if W is cursed]and some slapping power[otherwise]but the claws make your slaps much more powerful[end if].";
-	if the player is a catgirl and W is worn, say "You feel [if the number of worn nudism-disabling clothing < 4]excellent[otherwise if the number of worn nudism-disabling clothing < 7]better[otherwise]worse[end if] at running away from monsters whilst on your knees.".
+	if the class of the player is catgirl and W is worn, say "You feel [if the number of worn nudism-disabling clothing < 4]excellent[otherwise if the number of worn nudism-disabling clothing < 7]better[otherwise]worse[end if] at running away from monsters whilst on your knees.".
 To say ShortDesc of (W - a kitty claws):
 	say "cosplay cat paws".
 

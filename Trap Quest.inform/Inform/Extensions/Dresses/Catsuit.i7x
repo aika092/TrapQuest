@@ -118,7 +118,7 @@ To say ShortDesc of (O - a WC catsuit):
 	say "skin hugging white latex catsuit".
 
 Definition: a WC catsuit (called C) is untransformable:
-	if the player is a human toilet, decide yes;
+	if the class of the player is human toilet, decide yes;
 	decide no.
 
 

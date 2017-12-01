@@ -54,7 +54,7 @@ To decide which number is the initial outrage of (C - an ivy leaves):
 	decide on 17.
 
 Definition: an ivy leaves (called C) is untransformable:
-	if the player is a fertility goddess, decide yes;
+	if the class of the player is fertility goddess, decide yes;
 	decide no.
 
 Part 3 - Living Tentacles
@@ -75,7 +75,7 @@ To decide which number is the initial outrage of (C - a living tentacles):
 	decide on 19.
 	
 Definition: a living tentacles (called C) is untransformable:
-	if the player is a fertility goddess, decide yes;
+	if the class of the player is fertility goddess, decide yes;
 	decide no.	
 
 

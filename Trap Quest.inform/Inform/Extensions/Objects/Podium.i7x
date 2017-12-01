@@ -20,7 +20,7 @@ Closing your eyes you can feel another shiver run though you. Taking a deep brea
 	now seconds is 6;
 	arouse 660;
 	let B be a random off-stage plentiful bracelet;
-	if the charge of podium > 0 or the player is a princess or the player is a royal slave or the number of alive royal guards is 0:
+	if the charge of podium > 0 or the class of the player is princess or the class of the player is royal slave or the number of alive royal guards is 0:
 		now the charge of the podium is 500;
 		say "[if (the sex addiction of the player < 10 and diaper quest is 0) or (the diaper addiction of the player < 10 and diaper quest is 1)]You realise you're actually getting aroused by the thought!  You push the bizarre fantasy to the back of your mind, and[otherwise]Your imagination runs wild!  You feel a bit more aroused from the experience.  You[end if] get down from the stage." instead;
 	otherwise if a random number between 1 and 3 > 1 and B is bracelet and the number of on-stage solid gold bracelets is 0:

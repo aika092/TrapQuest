@@ -84,14 +84,14 @@ To compute perception of (M - a wrestler):
 	otherwise if the bimbo of the player > 10 and the player-class is succubus:[The succubus is intimidating enough that it takes a bit longer for the wrestler to turn]
 		say "[second custom style]'Heh, you[']re trying to look scary but you don[']t have me fooled for a minute!'[roman type][line break]";
 		anger M;
-	otherwise if M is unfriendly or the player is the royal slave or the player is the latex fetish model or the player is a maid or the player is a sissy:
+	otherwise if M is unfriendly or the class of the player is the royal slave or the class of the player is the latex fetish model or the class of the player is maid or the player is a sissy:
 		if the player is flying:
 			say "[second custom style]'What are you doing up there, you crazy bitch?!'[roman type][line break]";
-		otherwise if the player is the royal slave:
+		otherwise if the class of the player is the royal slave:
 			say "[second custom style]'Ooh, another slave!  Can I be your friend?  [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
-		otherwise if the player is the latex fetish model:
+		otherwise if the class of the player is the latex fetish model:
 			say "[second custom style]'Hey, sister!  I didn't know mistress had another rubber slave.  Let's fight to see who gets to be on top!'[roman type][line break]";
-		otherwise if the player is a maid:
+		otherwise if the class of the player is maid:
 			say "[second custom style]'[if watersports fetish is 1 and the variety of M is 0]Oooh, a slutty maid!  If you're staff, I guess that kind of makes me your boss?  I know a job that's perfect for you.  Come with me!'[otherwise]Hey, you're staff, aren't you?  That means you have to let me do whatever I want to you, right?'[end if][roman type][line break]";
 		otherwise if the player is a sissy:
 			say "[second custom style]'Oooh!  A real life sissy!  My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
@@ -114,7 +114,7 @@ Section 2 - Attack
 
 To compute kneeling reaction of (M - a wrestler):
 	say "[one of]The [M] stands over you, a smug grin clearly visible through her latex hood.  [or]The [M] stands over you, her eyes shining with glee through the holes in her latex hood.  [or]You hear an excited chuckle escape her lips.  [or]The [M] looms over you. She leers down at you, grinning.  [in random order]";
-	say "[second custom style]'[if the player is a royal slave][one of]Slaves will be slaves.'[or]Aww, I was hoping I'd get a bit more fight out of you than that.'[in random order][otherwise if the player is a latex fetish model][one of]Subs will be subs.'[or]You look even sexier than me on your knees.'[in random order][otherwise if watersports fetish is 1][one of]Looks like you get to be the toilet today!'[or]Looks like we know who is going to be the piss bucket tonight.'[cycling][otherwise][one of]To the victor, the spoils!'[or]Pff, that was too easy.'[in random order][end if][roman type][line break]";
+	say "[second custom style]'[if the class of the player is royal slave][one of]Slaves will be slaves.'[or]Aww, I was hoping I'd get a bit more fight out of you than that.'[in random order][otherwise if the class of the player is latex fetish model][one of]Subs will be subs.'[or]You look even sexier than me on your knees.'[in random order][otherwise if watersports fetish is 1][one of]Looks like you get to be the toilet today!'[or]Looks like we know who is going to be the piss bucket tonight.'[cycling][otherwise][one of]To the victor, the spoils!'[or]Pff, that was too easy.'[in random order][end if][roman type][line break]";
 	humiliate 75.
 
 To compute flying player taunting of (M - a wrestler):
@@ -141,12 +141,12 @@ The wrestler lets the matron take over rule is listed first in the wrestler uniq
 This is the wrestler puts slaves in the urinal rule:
 	let M be current-monster;
 	let R be 0;
-	if the latex-transformation of the player <= 4 and (the player is a latex fetish model or the player is a maid or the player is a sissy or the player is a human toilet or the player is a royal slave), now R is 1;
-	if watersports fetish is 1 and (the variety of M is 0 or the player is a human toilet) and R is 1:
+	if the latex-transformation of the player <= 4 and (the class of the player is latex fetish model or the class of the player is maid or the player is a sissy or the class of the player is human toilet or the class of the player is royal slave), now R is 1;
+	if watersports fetish is 1 and (the variety of M is 0 or the class of the player is human toilet) and R is 1:
 		if Hotel31 is the location of the player:
 			now M is grabbing the player;
 			now the sex-length of M is a random number between 10 and 30;
-			say "The [M] forces your back against the wall in between the two urinals.  Before you can move, she has secured your ankles to two strong metal anklecuffs connected by short chains to the wall.  [if the bimbo of the player < 10]As you fruitlessly pull at the chains, [otherwise if the player is a human toilet]You hold the chains in silent obedience as[otherwise]You hold the chains in silent bemusement as [end if] she clamps two more cuffs around your wrists, securing them strictly to your ankles and preventing you from even standing up. Finally she gives you a passionate kiss on the lips as she pulls a thick woolly blindfold over your eyes.[line break][second custom style]'I'll be back for you in a bit, beautiful.  Enjoy yourself!'[roman type][line break]";
+			say "The [M] forces your back against the wall in between the two urinals.  Before you can move, she has secured your ankles to two strong metal anklecuffs connected by short chains to the wall.  [if the bimbo of the player < 10]As you fruitlessly pull at the chains, [otherwise if the class of the player is human toilet]You hold the chains in silent obedience as[otherwise]You hold the chains in silent bemusement as [end if] she clamps two more cuffs around your wrists, securing them strictly to your ankles and preventing you from even standing up. Finally she gives you a passionate kiss on the lips as she pulls a thick woolly blindfold over your eyes.[line break][second custom style]'I'll be back for you in a bit, beautiful.  Enjoy yourself!'[roman type][line break]";
 			now the player is in Blindfolded;
 			now the variety of M is 0;
 		otherwise:

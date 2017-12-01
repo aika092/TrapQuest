@@ -11,7 +11,7 @@ Check taking something:
 	if the player is live fucked, say "You're a bit busy getting fucked!" instead;
 	if the player is flying, say "You try to roll around in the air and reach down to the ground, but your [BreastDesc] and [BellyDesc] simply float you back around until you're face up, your balloon-boobs bouncing gently against the ceiling. You feel your nipples perk up at the unexpected contact. [if the bimbo of the player < 8][first custom style]Just when I thought I couldn't look any more ridiculous...[otherwise if the bimbo of the player < 13][second custom style]I'd better be careful, or I'm going to turn myself on![otherwise]Hee hee, even the ceiling wants to touch my boobies![roman type] You manage to flip yourself around so your back and butt are pressing up against the ceiling. You stare down at the floor below you, at your equipment strewn all around, out of reach. [variable custom style]How embarrassing![roman type]" instead;
 	if the noun is stuck, say "That's stuck in place!" instead;
-	if the player is a living sex doll and the number of things carried by the player > 0, say "You can only carry one item at a time without proper hands!" instead;
+	if the class of the player is living sex doll and the number of things carried by the player > 0, say "You can only carry one item at a time without proper hands!" instead;
 	if there is a worn tethering lipstick collar, say "You won[']t be able to reach it with the chain trying to pull you out of the room!" instead;
 	if the player is wrist bound and there is a worn heels and the player is upright:
 		let X be the trip hazard of the player;

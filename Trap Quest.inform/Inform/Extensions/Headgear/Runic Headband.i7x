@@ -26,7 +26,7 @@ To set up influence of (C - a runic headband):
 
 To decide which number is the strength-influence of (H - a runic headband):
 	let S be 0;
-	if the player is a cultist:
+	if the class of the player is cultist:
 		repeat with L running through cursed clothing worn by the player:
 			if L is not H, increase S by 1;
 		let I be the intelligence of the player;
@@ -35,7 +35,7 @@ To decide which number is the strength-influence of (H - a runic headband):
 	
 To decide which number is the dexterity-influence of (H - a runic headband):
 	let D be 0;
-	if the player is a cultist:
+	if the class of the player is cultist:
 		repeat with L running through cursed clothing worn by the player:
 			if L is not H, increase D by 1;
 		let I be the intelligence of the player;
@@ -44,7 +44,7 @@ To decide which number is the dexterity-influence of (H - a runic headband):
 	
 To decide which number is the intelligence-influence of (H - a runic headband):
 	let I be 0;
-	if the player is a cultist:
+	if the class of the player is cultist:
 		repeat with L running through cursed clothing worn by the player:
 			if L is not H, increase I by 1;
 	decide on I.

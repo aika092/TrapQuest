@@ -126,7 +126,7 @@ Part 2 - Perception
 To compute perception of (M - an adult baby slave):
 	now M is interested;
 	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the player is a living sex doll:
+	if the class of the player is living sex doll:
 		say "It doesn't look like she's interested in you.";
 		bore M for 500 seconds;
 	otherwise if M is bratty adult baby slave and the times-met of M is 0:
@@ -149,7 +149,7 @@ To compute perception of (M - an adult baby slave):
 	otherwise if M is unfriendly:
 		say "She eyes you mischievously and, compelled by some dark, childish impulse, she seems ready to pounce at you in a moments notice.";
 		now the sex-length of M is 3;
-	otherwise if the player is a adult baby and M is friendly:
+	otherwise if the class of the player is adult baby and M is friendly:
 		say "[speech style of M]'Oh my god! You're just too cute! Mommy has to see you later!'[roman type][line break]Mommy?";
 		FavourUp M by 3;
 	otherwise if there is a worn waddle diaper and M is friendly:
@@ -217,7 +217,7 @@ To say ClothesPeeReaction of (M - an adult baby slave):
 	say GroundPeeReaction of M.
 
 This is the adult baby slave obeys guard rule:
-	if there is an awake royal guard in the location of the player and the health of current-monster < the maxhealth of current-monster and the player is not the princess:
+	if there is an awake royal guard in the location of the player and the health of current-monster < the maxhealth of current-monster and the class of the player is not the princess:
 		if the guard-obedience of current-monster is 1:
 			if the number of spanking the player royal guards is 0:
 				say "[one of]The [current-monster] continues to lie face down on the ground with her hands behind her head.[or][or][cycling]";

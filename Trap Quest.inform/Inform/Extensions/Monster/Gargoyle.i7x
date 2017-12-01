@@ -44,8 +44,8 @@ Definition: A gargoyle (called M) is vigilant:
 
 Definition: a gargoyle (called M) is objectifying the player:
 	if (penis is lewdly exposed or the player is very horny) and the size of penis >= the blue-balls of M, decide yes;
-	if the player is a vampire spawn, decide no;
-	if the player is a faerie or the player is a vixen, decide yes;
+	if the class of the player is vampire spawn, decide no;
+	if the class of the player is faerie or the class of the player is vixen, decide yes;
 	if the objectification of M is 1, decide yes;
 	if the bimbo of the player >= 20 or the appearance of the player >= 20 or the appearance of the player > the bimbo tolerance of M:
 		now the objectification of M is 1;

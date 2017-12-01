@@ -435,7 +435,7 @@ To HairRedUp (X - a number):
 		now the previous hair redness of face is the redness of hair;
 		if a random number from 0 to the redness of hair is 0 or a random number between 1 and 2 is 1:
 			if the redness of hair < 3:
-				if the player is not a silicone queen and the player is not a cheerleader, increase the redness of hair by 1;
+				if the class of the player is not silicone queen and the class of the player is not cheerleader, increase the redness of hair by 1;
 			otherwise:
 				HairUp 1;
 				hair permanent check.

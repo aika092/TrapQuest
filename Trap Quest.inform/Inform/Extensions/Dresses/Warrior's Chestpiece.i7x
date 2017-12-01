@@ -56,7 +56,7 @@ To decide which number is the initial outrage of (C - an ornate warrior chestpie
 	decide on 8.
 
 Definition: an ornate warrior chestpiece (called C) is untransformable:
-	if the player is a virgin warrior, decide yes;
+	if the class of the player is virgin warrior, decide yes;
 	decide no.
 
 Part 2 - Leaf Pattern Warrior Chestpiece
@@ -151,7 +151,7 @@ To decide which number is the initial outrage of (C - a hide warrior chestpiece)
 	decide on 10.
 
 Definition: a hide warrior chestpiece (called C) is untransformable:
-	if the player is a virgin warrior, decide yes;
+	if the class of the player is virgin warrior, decide yes;
 	decide no.
 
 To say TransformReaction of (C - a hide warrior chestpiece):
@@ -180,7 +180,7 @@ To decide which number is the initial outrage of (C - a golden warrior priestess
 	decide on 8.
 
 Definition: a golden warrior priestess outfit (called C) is untransformable:
-	if the player is a virgin warrior or the player is a priestess, decide yes;
+	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
 	decide no.
 
 To compute virginity-loss of (H - a golden warrior priestess outfit):

@@ -47,7 +47,7 @@ To compute furniture resting on (M - a milking bench):
 			if H is actually summonable and a random number between 1 and 40 - (20 * unlucky) is 1:
 				say "As you are getting milked, a headband with fake cow ears appears on your head.  You let out a soft involuntary [variable custom style]'moo'[roman type].";
 				summon H cursed;
-			otherwise if the player is a royal slave and C is basque:
+			otherwise if the class of the player is royal slave and C is basque:
 				say "As you are getting milked, ";
 				let N be 0;
 				let MM be 0;

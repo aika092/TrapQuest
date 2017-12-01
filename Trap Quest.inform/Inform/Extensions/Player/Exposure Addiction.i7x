@@ -18,7 +18,7 @@ A time based rule (this is the fighting against no-panties fetish rule):
 Report wearing knickers:
 	if the player is fighting against no-panties, say "You immediately feel extremely uncomfortable in these, thanks to your [if diaper lover >= 1]diaper fetish[otherwise]fetish for not wearing panties[end if].".
 This is the knickers can't be summoned with no panties fetish rule:
-	if summoning is 1 and (no-panties permanent fetish is 1 or the player is a faerie):
+	if summoning is 1 and (no-panties permanent fetish is 1 or the class of the player is faerie):
 		unless wearing-target is diaper or (wearing-target is no protection and diaper lover <= 0), rule fails.
 The knickers can't be summoned with no panties fetish rule is listed in the knickers wearability rules.
 
@@ -39,7 +39,7 @@ A time based rule (this is the fighting against topless fetish rule):
 Report wearing actually dense nipple covering clothing:
 	if the player is fighting against topless, say "You feel very uncomfortable wearing this, [if there is a worn topless tattoo]the tattooed eye in your chest aches[else]because you know they want to see your [BreastDesc][end if].".
 This is the bra can't be summoned with braless fetish rule:
-	if summoning is 1 and (topless permanent fetish is 1 or the player is a faerie):
+	if summoning is 1 and (topless permanent fetish is 1 or the class of the player is faerie):
 		unless wearing-target is fully exposing or wearing-target is see-through or wearing-target is not not-top-displacable or wearing-target is nipple exposing, rule fails.
 		unless wearing-target is fully exposing, rule fails.
 The bra can't be summoned with braless fetish rule is listed in the bra wearability rules.

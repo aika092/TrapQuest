@@ -52,9 +52,9 @@ Carry out WellWishing:
 			now P is the price of A;
 			only destroy A;
 	[Change the value of the offering based on class]
-	if the player is a faerie, increase P by 2 + (the number of mating fairies * 2);
-	if the player is a priestess, decrease P by 5;
-	if the player is a cultist, decrease P by 10;
+	if the class of the player is faerie, increase P by 2 + (the number of mating fairies * 2);
+	if the class of the player is priestess, decrease P by 5;
+	if the class of the player is cultist, decrease P by 10;
 	increase wellwishes by 1;
 	[now, decide how much to award for the offering]
 	if P < 0:

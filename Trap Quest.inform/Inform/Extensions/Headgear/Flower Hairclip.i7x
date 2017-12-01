@@ -44,7 +44,7 @@ To compute class outfit of (H - a flower hairclip):
 	let W be a random off-stage reinforced warrior chestpiece;
 	let G be a random off-stage gown of purity;
 	if the headgear chance of H < the threshold of H:
-		if (W is actually summonable or (W is warrior chestpiece and warrior-summoned is 0)) and the largeness of breasts < 18 and the player is a virgin warrior:
+		if (W is actually summonable or (W is warrior chestpiece and warrior-summoned is 0)) and the largeness of breasts < 18 and the class of the player is virgin warrior:
 			if warrior-summoned < 2:
 				repeat with O running through worn dresses:
 					say "Your [O] vanishes!";

@@ -73,7 +73,7 @@ To compute vines standing:
 				if the heel-height of a random heels worn by the player > the heel skill of the player, decrease D by 1;
 				if the heel-height of a random heels worn by the player > the heel skill of the player + 1, decrease D by 1;
 			let R be a random number from 1 to D;
-			if R <= 2 or (R <= 4 and the player is a schoolgirl and the player is vine-cursed):
+			if R <= 2 or (R <= 4 and the class of the player is schoolgirl and the player is vine-cursed):
 				say "[one of]Vines slither up your legs, locking them in place. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Living vines grab your ankles and feet, locking them in place. There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. Before you can react, several more burst out of the ground and wrap around your ankles.[or]Vines shoot out of the ground and wrap around your ankles![or]A pair of vines shoot out of the soil. You try to move out of the way, but it's too late! They wrap around your ankles and pin them to the ground.[then at random]";
 				now V is grabbing the player;
 				if image cutscenes is 1, display figure of vines cutscene 2;
@@ -98,7 +98,7 @@ To compute vines kneeling:
 			now V is revealed;
 			let D be the dexterity of the player;
 			let R be a random number from 1 to D;
-			if R <= 3 or (R <= 6 and the player is a schoolgirl):
+			if R <= 3 or (R <= 6 and the class of the player is schoolgirl):
 				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground.  Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their oozing, bulbous tips [if the raw sex addiction of the player > 6]is strangely hypnotic, and before you realize it,[otherwise]is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before you realize it,[end if] they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 				now V is grabbing the player;
 				if image cutscenes is 1, display figure of vines cutscene 2;

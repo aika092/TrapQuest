@@ -226,7 +226,7 @@ To compute pregnancy:
 			if the size of M > 15, now the size of M is 15;
 			if the size of M > max breast size, now the size of M is max breast size;
 			say "A maternity bra materialises over your breasts!";
-		otherwise if the player is a fertility goddess and a random number between 1 and 20 is 1:
+		otherwise if the class of the player is fertility goddess and a random number between 1 and 20 is 1:
 			if a random worn overdress is cursed:
 				if the thickness of hips < 10:
 					say "You feel your hips widen in order to prepare for your inevitable labour!";
@@ -374,7 +374,7 @@ REQUIRES COMMENTING
 
 +!]	
 To Delay Labour:
-	if the player is a fertility goddess:
+	if the class of the player is fertility goddess:
 		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the bimbo of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the bimbo of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
 	otherwise:
 		say "A sudden contraction sends pain shooting from your womb to the rest of your body.  [if the player is upright]The contraction is so intense that you are forced to your knees.  [end if][if the father is alive monster and the father is not regional alive monster]You are filled with a desire to find [the father].[otherwise]You should probably make sure the exit to your vagina is clear![end if]";

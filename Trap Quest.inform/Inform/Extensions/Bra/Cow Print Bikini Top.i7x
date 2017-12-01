@@ -44,7 +44,7 @@ To compute (C - a cow print bikini top) unique inheriting from (D - a clothing):
 	now C is milk production.
 
 Definition: a cow print bikini top (called C) is untransformable:
-	if the player is a cowgirl, decide yes;
+	if the class of the player is cowgirl, decide yes;
 	decide no.
 
 Cow Print Bikini Top ends here.

@@ -570,8 +570,8 @@ Check going:
 		repeat with M running through dangerous monsters in the location of the player:
 			let E be 1;
 			if M is insane gladiator or M is wild gladiator, increase E by 10;
-			if the player is a catgirl or the player is a puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
-			if the player is a adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
+			if the class of the player is catgirl or the class of the player is puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
+			if the class of the player is adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
 			if a random number between E and (the difficulty of M + 3) > 2 and M is blocker, say "[MovementBlock of M]" instead;
 			otherwise say "[if M is blocker]You manage to quickly crawl past the [M] before [he of M] can catch you![end if]";
 		if S > (B2 / 2) + 1: [If this isn't true, the player will never be able to crawl, even with 0 fatigue.]
@@ -759,7 +759,7 @@ REQUIRES COMMENTING
 +!]
 To remove all interest:
 	if the number of interested monsters > 0:
-		say "Safe in [if the player is a princess]your[otherwise]the princess['][end if] royal chambers, you feel [one of]the heavy gaze of the monsters of the game lifted from you[or]the monsters of the game lose interest in you[or]like you are no longer being stalked[at random].";
+		say "Safe in [if the class of the player is princess]your[otherwise]the princess['][end if] royal chambers, you feel [one of]the heavy gaze of the monsters of the game lifted from you[or]the monsters of the game lose interest in you[or]like you are no longer being stalked[at random].";
 		repeat with M running through interested monsters:
 			bore M;
 			if the number of placed jungle rooms > 1:
@@ -966,7 +966,7 @@ To Test A Wire Trap:
 		if the largeness of breasts < 16 or the location of the player is in the Mansion:
 			say "[bold type]You crawl [if the location of the player is in the Mansion]over a protruding floorboard.[otherwise]under a tripwire.[end if][roman type][line break]";
 		otherwise:
-			say "[bold type]You try to crawl under a tripwire. but your [BreastDesc] stop you lowering your body enough.  The wire gets caught on your [if the player is a princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
+			say "[bold type]You try to crawl under a tripwire. but your [BreastDesc] stop you lowering your body enough.  The wire gets caught on your [if the class of the player is princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
 			trigger a wire trap;
 	if T is nothing, place permanent triggered wire.
 
