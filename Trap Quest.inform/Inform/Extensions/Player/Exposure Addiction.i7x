@@ -27,12 +27,13 @@ topless permanent fetish is a number that varies.  topless permanent fetish is 0
 Definition: yourself is fighting against topless:
 	if topless permanent fetish is 1 or there is a worn topless tattoo or the humiliation of the player >= 35000:
 		repeat with C running through worn breast covering clothing:
-			if C is actually dense and C is top-in-place and C is not fully exposing and C is nipple covering, decide yes; decide no.
+			if C is actually dense and C is top-placed and C is not fully exposing and C is nipple covering, decide yes;
+	decide no.
 braless reminder is a number that varies. braless reminder is 0.
 A time based rule (this is the fighting against topless fetish rule):
 	if the player is fighting against topless:
 		if braless reminder <= 0:
-			let C be a random worn actually dense top-in-place nipple covering clothing;
+			let C be a random worn actually dense top-placed nipple covering clothing;
 			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [printed name of C][bold type]!  [one of][if there is a worn topless tattoo]Your heart aches and you[else]You[end if] want to free your [BreastDesc]. It lowers your awareness and consumes your thought.[or][stopping][roman type][line break]";
 			now braless reminder is 30;
 		decrease braless reminder by 1.
@@ -41,7 +42,6 @@ Report wearing actually dense nipple covering clothing:
 This is the bra can't be summoned with braless fetish rule:
 	if summoning is 1 and (topless permanent fetish is 1 or the class of the player is faerie):
 		unless wearing-target is fully exposing or wearing-target is see-through or wearing-target is not not-top-displacable or wearing-target is nipple exposing, rule fails.
-		unless wearing-target is fully exposing, rule fails.
 The bra can't be summoned with braless fetish rule is listed in the bra wearability rules.
 
 Exposure Addiction ends here.
