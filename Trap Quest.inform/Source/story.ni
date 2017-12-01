@@ -351,7 +351,6 @@ Include Furniture Framework by Furniture.
 Include Kneeling Stool by Furniture.
 Include Milking Bench by Furniture.
 Include Hammock by Furniture.
-Include Hotel Bed by Furniture.
 Include Royal Bed by Furniture.
 Include Prison Guard's Bed by Furniture.
 Include Hotel Chairs by Furniture.
@@ -738,6 +737,7 @@ Include Prostate Massager Plug by Sex Toys.
 Include Anal Beads by Sex Toys.
 Include Ben Wa Balls by Sex Toys.
 
+Include Hotel Bed by Furniture.
 Include Condom of Kings by Clothing.
 
 Include Tattoos Framework by Tattoos.
