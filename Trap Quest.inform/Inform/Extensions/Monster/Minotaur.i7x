@@ -233,7 +233,7 @@ To decide which number is the rounds of sex left of (M - a minotaur):
 	decide on 1. [We don't do climax the standard way]
 
 To say AssholePenetrationFlav of (M - a minotaur):[TODO: EXPAND DONG]
-	say "The [M] forces [himself of M] into your [asshole]!".;
+	say "The [M] forces [himself of M] into your [asshole]!";
 	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 3.
 
 To compute anal sex of (M - a minotaur):
