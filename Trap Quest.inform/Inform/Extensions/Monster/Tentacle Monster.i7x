@@ -333,7 +333,7 @@ To compute unique death of (M - a tentacle monster):
 		if H is actually summonable:
 			say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
 			summon H cursed;
-			if the player is male and tg fetish >= 1:
+			if the player is male and tg fetish >= 2:
 				say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 				SexChange the player;
 	if the variety of M is 3 and there is an off-stage ghostly tentacle and the player is in the mansion:

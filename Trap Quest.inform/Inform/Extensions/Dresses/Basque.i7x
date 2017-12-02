@@ -23,7 +23,7 @@ The remove inappropriate basques rule is listed in the diaper quest fix rules.
 A milking basque is a kind of basque.  A milking basque is usually unique.
 
 To say ClothingDesc of (O - a milking basque):
-	say "This tight white undergarment keeps your body's shape looking and feeling smooth.[if O is worn and lactation fetish is 1][line break]You feel that it somehow magically messes with your body's lactation, sending it to other parts of your body...[end if]".
+	say "This tight white undergarment keeps your body looking and feeling smooth.[if O is worn and lactation fetish is 1][line break]You feel that it somehow magically messes with your body's lactation, sending it to other parts of your body...[end if]".
 
 To say ShortDesc of (C - a milking basque):
 	say "white milking basque".
@@ -41,7 +41,7 @@ Figure of white basque is the file "basque1.png".
 To decide which figure-name is clothing-image of (C - a white milking basque):
 	decide on figure of white basque.
 
-A cow print milking basque is a kind of milking basque.  The printed name of cow print milking basque is usually "[TQlink of item described][clothing-title-before]cow print basque[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cow print milking basque is "cwb".
+A cow print milking basque is a kind of milking basque.  The printed name of cow print milking basque is usually "[TQlink of item described][clothing-title-before]cow print basque[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cow print milking basque is "cwb".  A cow print milking basque is enema-helping.
 
 There is 1 cow print milking basque.
 

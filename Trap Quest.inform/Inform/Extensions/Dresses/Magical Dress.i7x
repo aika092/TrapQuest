@@ -13,6 +13,9 @@ To decide which number is the strength-influence of (O - a magical dress):
 	if M > 0, decide on 1;
 	decide on 0.
 
+To compute periodic effect of (H - a magical dress):
+	if the pregnancy of the player is 1 and the father is tentacle monster, now maximum-pregnancy-delay-tracker is maximum-pregnancy-delay + 1.
+
 A lolita magical dress is a kind of magical dress.
 
 There is 1 lolita magical dress. 
@@ -51,7 +54,7 @@ To compute ShortDesc of (O - an exposing magical dress):
 	say "exposing magical dress".
 
 To say ClothingDesc of (O - an exposing magical dress):
-	say "The top of a japanese sailor uniform, but just the neckline with the bow, literally nothing else.  It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else.".
+	say "The top of a Japanese sailor uniform, but just the neckline with the bow, literally nothing else.  It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else.".
 
 Definition: an exposing magical dress (called C) is nudism-enabling:
 	decide yes.

@@ -348,7 +348,7 @@ To compute orgasm resolution of (R - a drill pole trap):
 	if a random number between 1 and 4 - unlucky < 2:
 		let D be a random off-stage plentiful dong;
 		if D is nothing, now D is a random off-stage plentiful plug;
-		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains in side of you[roman type] as you fall to the floor.";
+		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
 		if R is penetrating vagina, summon D vaginally;
 		otherwise summon D;
 		now D is cursed;
@@ -456,7 +456,7 @@ To compute orgasm resolution of (R - a creampie pole trap):
 	if a random number between 1 and 2 - unlucky < 2:
 		let D be a random off-stage dong;
 		if D is nothing or D is throbbing-tentacle, let D be a random off-stage plug;
-		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains in side of you[roman type] as you fall to the floor.";
+		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
 		if R is penetrating vagina, summon D vaginally;
 		otherwise summon D;
 		now D is cursed;
