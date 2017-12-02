@@ -262,18 +262,31 @@ Definition: yourself is squirming:
 	decide no.
 
 To say movementDesc:
-	if the player is on a skippy ball, say "bounce";
+	if the player is upright:
+		say "walk";
 	if the player is crawling:
 		say "crawl";
-	otherwise:
-		say "walk".
+	if the player is mounted:
+		if the player is on a skippy ball:
+			say "bounce";
 
 To say movingDesc:
-	if the player is on a skippy ball, say "bouncing";
+	if the player is upright:
+		say "walking";
 	if the player is crawling:
 		say "crawling";
-	otherwise:
-		say "walking".
+	if the player is mounted:
+		if the player is on a skippy ball:
+			say "bouncing";
+
+To say movedDesc:
+	if the player is upright:
+		say "walked";
+	if the player is crawling:
+		say "crawled";
+	if the player is mounted:
+		if the player is on a skippy ball:
+			say "bounced";
 
 
 [!<movementReductionFlavSaid:Integer>*
@@ -989,7 +1002,7 @@ To Test A Wire Trap:
 		if R > 15:
 			say "[bold type]You [if there is worn ankle bond]carefully sidestep[otherwise]gracefully step[end if] over [if the location of the player is in the Mansion]a protruding floorboard[otherwise]a tripwire[end if].[roman type][line break]";
 		otherwise:
-			say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you walked right into a [if the location of the player is in the Mansion]raised floorboard[otherwise]tripwire[end if]![roman type]  Oops![line break]";
+			say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you [movedDesc] right into a [if the location of the player is in the Mansion]raised floorboard[otherwise]tripwire[end if]![roman type]  Oops![line break]";
 			trigger a wire trap;
 	if the player is crawling:
 		if the largeness of breasts < 16 or the location of the player is in the Mansion:
