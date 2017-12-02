@@ -274,7 +274,6 @@ Include Compute Turn by Every Turn.
 Include Player Standing by Every Turn.
 Include Player Kneeling by Every Turn.
 Include Automatic Actions by Every Turn.
-Include Instinctive Actions by Every Turn.
 Include Periodical Clothing Effects by Every Turn.
 Include Periodical Other Effects by Every Turn.
 Include Traps by Every Turn.
@@ -292,6 +291,7 @@ Include Doom by Every Turn.
 Include Semen Movements by Every Turn.
 Include Diaper Orgasms by Every Turn.
 Include Hypnotic Suggestion by Every Turn.
+Include Instinctive Actions by Every Turn.
 
 
 
@@ -736,6 +736,7 @@ Include Demon Tail Plug by Sex Toys.
 Include Prostate Massager Plug by Sex Toys.
 Include Anal Beads by Sex Toys.
 Include Ben Wa Balls by Sex Toys.
+Include Skippy Ball by Sex Toys.
 
 Include Hotel Bed by Furniture.
 Include Condom of Kings by Clothing.

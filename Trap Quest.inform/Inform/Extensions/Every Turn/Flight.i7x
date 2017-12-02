@@ -46,6 +46,18 @@ To Execute Takeoff:
 		if map images is 1, display entire map;
 	now the alert of the player is 1. [You stop resting]
 
+To Bounce Bigtime:
+	if the player is zeroG:
+		now last-turn-flight is 1;
+		say "Due to your extremely light weight you bounce a lot higher than expected, and you are currently still afloat.";
+	otherwise:
+		if the player is in the woods:
+			now last-turn-flight is 1;
+			say "The shear force launches you dangerously high.";
+		otherwise:
+			say "You bounce against the ceiling, and back towards the ground.";
+			Execute Landing.
+
 [!<ExecuteLanding>+
 
 REQUIRES COMMENTING
@@ -53,20 +65,24 @@ REQUIRES COMMENTING
 +!]
 To Execute Landing:
 	now last-turn-flight is 0;
-	say "You slowly start to descend towards the ground.  ";
-	if the player is in Sky01:
-		say "You have no idea where you are going to land.";
-		now the player is in a random placed jungle room;
-		repeat with M running through monsters in the location of the player:
-			compute perception of M;
-	let monster-flav be 0;
-	repeat with M running through dangerous monsters in the location of the player:
-		if monster-flav is 0 and the sex addiction of the player < 10 and the bimbo of the player > 4, say "Seeing the danger below, you pathetically try to flap your arms to stay airborne, but just manage to make yourself look like an utter idiot.";
-		say LandingTaunt of M;
-		now monster-flav is 1;
+	if the player is zeroG:
+		say "You slowly start to descend towards the ground.  ";
+		if the player is in Sky01:
+			say "You have no idea where you are going to land.";
+			now the player is in a random placed jungle room;
+			repeat with M running through monsters in the location of the player:
+				compute perception of M;
+		let monster-flav be 0;
+		repeat with M running through dangerous monsters in the location of the player:
+			if monster-flav is 0 and the sex addiction of the player < 10 and the bimbo of the player > 4, say "Seeing the danger below, you pathetically try to flap your arms to stay airborne, but just manage to make yourself look like an utter idiot.";
+			say LandingTaunt of M;
+			now monster-flav is 1;
+		if map images is 1, display entire map;
+	otherwise:
+		if the player is on a skippy ball:
+			say "With the skippy ball you manage to divert the majoriy of the blow, but you are hurled off afterwards.";
 	say "[bold type]As you land, you fall to your knees.[roman type][line break]";
-	if map images is 1, display entire map;
-	if the player is upright:
+	if the player is not prone:
 		try kneeling;
 	otherwise if the location of the player is glue-puddled:
 		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh oh.[or][variable custom style]Please, no![roman type][line break][or][variable custom style]Dear lord, not again![roman type][line break][at random]";

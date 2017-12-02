@@ -99,7 +99,8 @@ REQUIRES COMMENTING
 
 +!]	
 Check going up:
-	if there is a golem in the location of the player, say "You're going to need to deal with this monster!" instead.
+	if there is a golem in the location of the player, say "You[']re going to need to deal with this monster!" instead;
+	if the player is on a skippy ball, say "You can[']t do that while you're on a skippy ball." instead.
 
 [!<CheckGoingDown>+
 
@@ -107,7 +108,11 @@ REQUIRES COMMENTING
 
 +!]
 Check going down:
-	if there is a golem in the location of the player, say "You're going to need to deal with this monster!" instead.
+	if there is a golem in the location of the player, say "You[']re going to need to deal with this monster!" instead;
+	if the player is on a skippy ball, say "You[']re on a skippy ball, you don't want to break your neck." instead.
+
+Carry out going while the player is on a skippy ball:
+	say "You [one of]bounce[or]jump[at random] in [the travel-direction of the player] direction.".
 
 [!<TheHotelSetUpRule>+
 
@@ -256,6 +261,20 @@ Definition: yourself is squirming:
 	if there is an insertable object penetrating a fuckhole, decide yes;
 	decide no.
 
+To say movementDesc:
+	if the player is on a skippy ball, say "bounce";
+	if the player is crawling:
+		say "crawl";
+	otherwise:
+		say "walk".
+
+To say movingDesc:
+	if the player is on a skippy ball, say "bouncing";
+	if the player is crawling:
+		say "crawling";
+	otherwise:
+		say "walking".
+
 
 [!<movementReductionFlavSaid:Integer>*
 
@@ -284,25 +303,25 @@ To decide which number is the movement reduction of the player:
 		if the largeness of belly > 7, increase X by 2;
 		if the largeness of belly > 8, increase X by 2;
 		if movement-reduction-flav-said is 0:
-			say "[if the largeness of belly > 7]The huge size of your [ShortDesc of belly] is making it extremely unwieldy, and[otherwise if the largeness of belly > 5]The large size of your [ShortDesc of belly][otherwise]Your [ShortDesc of belly][end if] is significantly affecting the way you walk, restricting your movement[one of] and making it significantly easier for monsters to stop you from escaping[or][stopping]!";
+			say "[if the largeness of belly > 7]The huge size of your [ShortDesc of belly] is making it extremely unwieldy, and[otherwise if the largeness of belly > 5]The large size of your [ShortDesc of belly][otherwise]Your [ShortDesc of belly][end if] is significantly affecting the way you [movementDesc], restricting your movement[one of] and making it significantly easier for monsters to stop you from escaping[or][stopping]!";
 			now movement-reduction-flav-said is 1;
-	if there is a worn diaper:
+	if there is a worn diaper and the player is not on a skippy ball:
 		let D be the weight of a random worn diaper;
 		increase X by D;
 		if movement-reduction-flav-said is 0 and D > 1:
-			say "[if D > 4]Your comically exaggerated waddling caused by your extremely bloated diaper makes it almost impossible[otherwise if D > 2]Your extremely awkward waddling caused by your bloated diaper makes it extremely difficult[otherwise]Your awkward walking caused by your large diaper makes it difficult[end if] to move quickly[one of] and is making it significantly easier for monsters to stop you from escaping[or][stopping]!";
+			say "[if D > 4]Your comically exaggerated waddling caused by your extremely bloated diaper makes it almost impossible[otherwise if D > 2]Your extremely awkward waddling caused by your bloated diaper makes it extremely difficult[otherwise]Your awkward [movingDesc] caused by your large diaper makes it difficult[end if] to move quickly[one of] and is making it significantly easier for monsters to stop you from escaping[or][stopping]!";
 			now movement-reduction-flav-said is 1;
 	if the player is squirming:
 		repeat with F running through insertable objects penetrating a fuckhole:
 			increase X by the girth of F / 3;
 			if movement-reduction-flav-said is 0:
-				say "Your [F] is significantly affecting the way you walk, restricting your movement[one of] and making it significantly easier for monsters to stop you from escaping[or][stopping]!";
+				say "Your [F] is significantly affecting the way you [movementDesc], restricting your movement[one of] and making it significantly easier for monsters to stop you from escaping[or][stopping]!";
 				now movement-reduction-flav-said is 1;
-	if the player is swaying:
+	if the player is swaying and the player is not on a skippy ball:
 		increase X by 2;
 		if the weight of hips > 17, increase X by 2;
 		if movement-reduction-flav-said is 0:
-			say "[if the weight of hips > 17]The comically exaggerated swaying of your [HipDesc][otherwise if the weight of hips > 11]The exaggerated swaying of your [HipDesc][otherwise]The swaying of your [HipDesc][end if] is significantly affecting the way you walk, restricting your movement[one of] and making it significantly easier for monsters to stop you from escaping[or][stopping]!";
+			say "[if the weight of hips > 17]The comically exaggerated swaying of your [HipDesc][otherwise if the weight of hips > 11]The exaggerated swaying of your [HipDesc][otherwise]The swaying of your [HipDesc][end if] is significantly affecting the way you [movementDesc], restricting your movement[one of] and making it significantly easier for monsters to stop you from escaping[or][stopping]!";
 			now movement-reduction-flav-said is 1;
 	decide on X.
 
@@ -468,9 +487,11 @@ Check going:
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, moving is not submissive!  Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
-	if the player is prone and the player is zeroG:
-		say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
-		silently try standing;
+	if the player is zeroG:
+		if the player is prone:
+			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
+			silently try standing;
+		if the player is mounted and the player is on a skippy ball, Bounce Bigtime;
 	if the player is prone and a random number between -3 and 3 > the weight of the player:
 		say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
 		silently try standing;
@@ -859,6 +880,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking into a pressure trap:
+	if the player is not zeroG, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
@@ -869,6 +891,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking past a pressure trap:
+	if the player is not zeroG, decide yes;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
@@ -880,9 +903,15 @@ REQUIRES COMMENTING
 +!]
 To Test A Pressure Trap:
 	let B be the largeness of breasts;
-	if the player is upright:
-		say "[bold type]You feel the stone slab underneath your feet depress as you step on it...[roman type][line break]";
-		trigger a pressure trap;
+	if the player is not crawling:
+		if the player is upright:
+			say "[bold type]You feel the stone slab underneath your feet depress as you step on it...[roman type][line break]";
+			trigger a pressure trap;
+		otherwise:
+			if the player is on a skippy ball:[a chance to jump over it, decreased by weight.]
+				if a random number between -3 and the weight of the player > 14:
+					say "[bold type]A stone slab underneath you depresses as you [movingDesc] on it...[roman type][line break]";
+					trigger a pressure trap;
 	otherwise:
 		let R be ((a random number between 0 and the dexterity of the player) + (a random number between 0 and the dexterity of the player));
 		if there is a worn sandals, increase R by 4;
@@ -962,12 +991,19 @@ To Test A Wire Trap:
 		otherwise:
 			say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you walked right into a [if the location of the player is in the Mansion]raised floorboard[otherwise]tripwire[end if]![roman type]  Oops![line break]";
 			trigger a wire trap;
-	otherwise:
+	if the player is crawling:
 		if the largeness of breasts < 16 or the location of the player is in the Mansion:
 			say "[bold type]You crawl [if the location of the player is in the Mansion]over a protruding floorboard.[otherwise]under a tripwire.[end if][roman type][line break]";
 		otherwise:
 			say "[bold type]You try to crawl under a tripwire. but your [BreastDesc] stop you lowering your body enough.  The wire gets caught on your [if the class of the player is princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
 			trigger a wire trap;
+	otherwise:
+		if the player is on a skippy ball:[a chance to jump over it, decreased by weight.]
+			if a random number between -3 and the weight of the player > 8:
+				say "[bold type]you [movementDesc] against a tripwire.[line break]";
+				trigger a wire trap;
+			otherwise:
+				say "[bold type]You [movementDesc] over a tripwire. Phew that was close.[line break]";
 	if T is nothing, place permanent triggered wire.
 
 [!<TriggerAWireTrap>+

@@ -16,7 +16,7 @@ Increases by 1 each turn the player spends on their knees.  Essentially the long
 *@!]
 The player has a number called fatimod.  The fatimod of the player is usually 1.
 
-The player has a number called stance.  The stance of the player is usually 0. [0-standing, 1-kneeling]
+The player has a number called stance.  The stance of the player is usually 0. [0-standing, 1-kneeling, 2-mounted]
 [!<YourselfIsUpright>+
 
 Is the player standing?
@@ -34,6 +34,16 @@ Is the player kneeling?
 Definition: yourself is prone:
 	if the stance of it is 1, decide yes;
 	decide no.
+
+[!<YourselfIsMounted>+
+
+Is the player on a rideable vehicle?
+
++!]
+Definition: yourself is mounted:
+	if the stance of it is 2, decide yes;
+	decide no.
+
 
 
 [!<resting:Integer>*
