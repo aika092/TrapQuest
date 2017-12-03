@@ -72,7 +72,7 @@ The cowgirl class rule is listed in the player class rules.
 
 [!<TextIsCowgirl>+
 
-Thanks to the cow slave multiclass, we have multiple different texts that need to be able to return true for the class of the player being cowgirl.
+Thanks to the cow slave multi-class, we have multiple different texts that need to be able to return true for the class of the player being cowgirl.
 
 +!]
 Definition: a text (called T) is cowgirl:
@@ -165,7 +165,7 @@ The royal slave class rule is listed in the player class rules.
 
 [!<TextIsRoyalSlave>+
 
-Thanks to the cow slave multiclass, we have multiple different texts that need to be able to return true for the class of the player being royal slave.
+Thanks to the cow slave multi-class, we have multiple different texts that need to be able to return true for the class of the player being royal slave.
 
 +!]
 Definition: a text (called T) is royal slave:
@@ -197,7 +197,7 @@ The silicone queen class rule is listed in the player class rules.
 
 [!<TextIsSiliconeQueen>+
 
-Thanks to the walking condom multiclass, we have multiple different texts that need to be able to return true for the class of the player being silicone queen.
+Thanks to the walking condom multi-class, we have multiple different texts that need to be able to return true for the class of the player being silicone queen.
 
 +!]
 Definition: a text (called T) is silicone queen:
@@ -241,7 +241,7 @@ The catgirl class rule is listed in the player class rules.
 
 [!<TextIsCatgirl>+
 
-Thanks to the magical neko multiclass, we have multiple different texts that need to be able to return true for the class of the player being catgirl.
+Thanks to the magical neko multi-class, we have multiple different texts that need to be able to return true for the class of the player being catgirl.
 
 +!]
 Definition: a text (called T) is catgirl:
@@ -591,7 +591,7 @@ The cumdumpster class rule is listed in the player class rules.
 
 [!<TextIsCumdumpster>+
 
-Thanks to the walking condom multiclass, we have multiple different texts that need to be able to return true for the class of the player being cumdumpster.
+Thanks to the walking condom multi-class, we have multiple different texts that need to be able to return true for the class of the player being cumdumpster.
 
 +!]
 Definition: a text (called T) is cumdumpster:
@@ -611,7 +611,7 @@ The magical girl class rule is listed in the player class rules.
 
 [!<TextIsMagicalGirl>+
 
-Thanks to the magical neko multiclass, we have multiple different texts that need to be able to return true for the class of the player being magical girl.
+Thanks to the magical neko multi-class, we have multiple different texts that need to be able to return true for the class of the player being magical girl.
 
 +!]
 Definition: a text (called T) is magical girl:

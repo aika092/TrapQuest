@@ -96,10 +96,10 @@ The spawn initial acolytes rule is listed in the setting up mansion monsters rul
 
 To say SummoningFlav of (M - an acolyte):
 	if M is in the location of the player:
-		if M is intelligent, say "The cloth wrappings covering the mummfied figure slowly unravel, revealing the [printed name of M] underneath. Her legs shake a bit as she steps forward, mumbling the same syllable over and over under her breath. The mummy immediately reforms behind her.";
+		if M is intelligent, say "The cloth wrappings covering the mummified figure slowly unravel, revealing the [printed name of M] underneath. Her legs shake a bit as she steps forward, mumbling the same syllable over and over under her breath. The mummy immediately reforms behind her.";
 		otherwise say "The cloth wrappings covering the mummified figure slowly unravel, revealing the [printed name of M] underneath. She stands in place for a moment before stumbling forward, allowing the mummy to reform behind her.";
 	otherwise:
-		say "You hear fabric unraveling somewhere else in the mansion".
+		say "You hear fabric unravelling somewhere else in the mansion".
 
 Definition: a acolyte (called M) is human:
 	decide yes.
@@ -310,11 +310,11 @@ To say MummyChant of (M - an acolyte):
 		say "[speech style of M]Sister, we must prepare the conversion ritual. Sit with me.[roman type][line break] The [M] motions for you to kneel in front of the [printed name of mysterious-mummy].";
 		if the player consents:
 			now the stance of the player is 1;
-			say "You kneel in front of the mummy with the [M], holding her hand as she repeats a short chant under her breath. Although you don't really understand them, her words seem to ring in your head as she places another candle around the ring at the mummy's feet. You realize something significant has changed as she gets up, something very...bad?";
+			say "You kneel in front of the mummy with the [M], holding her hand as she repeats a short chant under her breath. Although you don't really understand them, her words seem to ring in your head as she places another candle around the ring at the mummy's feet. You realize something significant has changed as she gets up, something very... bad?";
 			ChargeDown mysterious-mummy by 50;
 			FavourUp M;
 		otherwise:
-			say "The [M] frowns as she kneels in front of the mummy, repeating a short chant under her breath as she places another candle around the ring at its feet. For some reason, you feel yourself mimmicking the words under your breath, and as the cultist returns to her feet, you feel something significant has changed.";
+			say "The [M] frowns as she kneels in front of the mummy, repeating a short chant under her breath as she places another candle around the ring at its feet. For some reason, you feel yourself mimicking the words under your breath, and as the cultist returns to her feet, you feel something significant has changed.";
 			ChargeDown mysterious-mummy by 25;
 	otherwise:
 		say "The [M] kneels in front of the [printed name of mysterious-mummy], facing you. She completes a short chant as she places another candle around the ring at the mummy's feet. You realize something feels really different as the cultist returns to her feet.";

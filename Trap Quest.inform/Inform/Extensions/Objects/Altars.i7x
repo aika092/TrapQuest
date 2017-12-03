@@ -133,22 +133,22 @@ Carry out praying something with:
 					if D is clothing:
 						repeat with X running through worn breast covering clothing:
 							unless X is D:
-								say "Your [X] vainshes!";
+								say "Your [X] vanishes!";
 								destroy X;
 						repeat with X running through worn belly covering clothing:
 							unless X is D:
-								say "Your [X] vainshes!";
+								say "Your [X] vanishes!";
 								destroy X;
 						repeat with X running through worn skirted clothing:
 							unless X is D:
-								say "Your [X] vainshes!";
+								say "Your [X] vanishes!";
 								destroy X;
-						say "A shimmering blue light surrounds you as your [ShortDesc of D] shapeshifts, first turning into pure visible energy and then settling into form as some kind of bizarre solid gold frame.  A voice appears in your head:  [second custom style]'At last, the chosen one has arrived! You are the Ture Herald, the prophecies speak of your role in deciding the destiny of our entire clan.  Now go, and keep yourself pure, for if you fail, all your descendants will be doomed to be nothing but the playthings of the monsters of this world.'[line break][variable custom style][if the bimbo of the player < 14]My virginity decides the future of this entire world?  That's quite an extreme amount of responsibility to just drop on someone...[otherwise]I'll do my best, but that outcome sounds kind of fun![end if][roman type][line break]";
+						say "A shimmering blue light surrounds you as your [ShortDesc of D] shapeshifts, first turning into pure visible energy and then settling into form as some kind of bizarre solid gold frame.  A voice appears in your head:  [second custom style]'At last, the chosen one has arrived! You are the True Herald, the prophecies speak of your role in deciding the destiny of our entire clan.  Now go, and keep yourself pure, for if you fail, all your descendants will be doomed to be nothing but the playthings of the monsters of this world.'[line break][variable custom style][if the bimbo of the player < 14]My virginity decides the future of this entire world?  That's an extreme amount of responsibility to just drop on someone...[otherwise]I'll do my best, but that outcome sounds kind of fun![end if][roman type][line break]";
 						silently transform D into C;
 						increase the raw-magic-modifier of C by 1;
 						now C is blessed;
 					otherwise:
-						say "Bug - the player was chosen tno become a warrior priestess but there was no warrior chestpiece to transform.";
+						say "Bug - the player was chosen to become a warrior priestess but there was no warrior chestpiece to transform.";
 				otherwise:
 					say "Nothing seems to happen.";			
 		otherwise if the noun is wrist bond or the noun is ankle bond or the noun is chastity cage:

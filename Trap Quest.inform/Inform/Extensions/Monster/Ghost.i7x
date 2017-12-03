@@ -105,7 +105,7 @@ To compute unique final action of (M - a ghostly tentacle):
 	do nothing.
 
 To say SummoningFlav of (M - a ghost):
-	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if trap fetish is 0]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediatley [if bukkake fetish is 1 and trap fetish is 1]ejaculates all over her face[otherwise if trap fetish is 1]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if].  The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if trap fetish is 0]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediately [if bukkake fetish is 1 and trap fetish is 1]ejaculates all over her face[otherwise if trap fetish is 1]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if].  The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
 To say he of (M - a ghost):
