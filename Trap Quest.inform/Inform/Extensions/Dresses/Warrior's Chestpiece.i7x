@@ -131,11 +131,11 @@ To decide which number is the initial outrage of (C - a plate warrior chestpiece
 To decide which object is the potential-upgrade-target of (C - a plate warrior chestpiece):
 	decide on a random off-stage hide warrior chestpiece.
 
-Part 5 - Hide Warrior Chestpiece
+Part 5 - Leather Warrior Chestpiece
 
 A hide warrior chestpiece is a kind of immodest warrior chestpiece.  A hide warrior chestpiece is usually fully exposing.  A hide warrior chestpiece is usually leather.
 
-The printed name of hide warrior chestpiece is usually "[TQlink of item described][clothing-title-before]hide warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hide warrior chestpiece is "hwc".
+The printed name of hide warrior chestpiece is usually "[TQlink of item described][clothing-title-before]leather warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hide warrior chestpiece is "lwc".
 
 There is 1 hide warrior chestpiece.
 
