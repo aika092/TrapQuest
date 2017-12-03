@@ -29,8 +29,19 @@ Check jumping:
 	if the player is immobile:
 		now seconds is 0;
 		say "You're a bit stuck right now!" instead;
-	say "You jump, making your wobbly bits wobble.  [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face!  Ouch![end if]".
+	if the player is on skippy ball:
+		say "You [one of]launch yourself by pushing your legs alongside the skippy ball surface[or][one of]push yourself up[or]jump[or]bounce[at random] once more[stopping].";
+	otherwise:
+		say "You jump, making your wobbly bits wobble.  [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face!  Ouch![end if]".
 Understand "leap", "bounce", "ju" as jumping.
 
+After jumping:
+	if the player is on skippy ball (called S) and a skippy dildo (called D) is part of the S:
+		if the D is worn by the player:
+			let P be the pussy;
+			if the player is male or D is penetrating the asshole:
+				now P is the asshole;
+			say "[if the is lubricant covering P]The lube is still working its magic -- you feel no resistance, no pain, just[or]You feel[end if] [one of]the dildo[or]the protrusion[or]yet another few inches[at random] [one of]bash[or]slam into[or]reentering[or]ramm ing[or]smacking[or]sliding all the way into[at random] your [ShortDesc of P]. ";
+			humiliate 20;
 
 Jumping ends here.
