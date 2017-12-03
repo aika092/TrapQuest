@@ -211,7 +211,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute makeup decay:
-	if a random number between 0 and diaper quest is 0:
+	if a random number between 0 and diaper quest is 0 and permanent makeup is 0:
 		if the make-up of face > 1:
 			say "Your make-up partially fades.";
 			FaceDown 1;

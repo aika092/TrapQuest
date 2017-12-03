@@ -68,8 +68,9 @@ To compute hypno effect of (Y - a hypno trap):
 
 To compute specific hypno effect of (Y - a hypno trap):
 	do nothing. [Should never happen; each hypno trap should have a function here]
-	
+
 hypno-trigger-tasty is a number that varies.
+hypno-trigger-maturity is a number that varies.
 
 To compute specific hypno effect of (Y - a cocksucker hypno trap):
 	if hypno-trigger-tasty is 0 and the player is a November 2017 top donator:

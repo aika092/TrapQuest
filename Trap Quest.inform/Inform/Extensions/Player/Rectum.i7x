@@ -107,28 +107,31 @@ To compute messing:
 	otherwise:
 		if D is diaper:
 			diaperaddictup 1;
-			if rectum < 3:
-				say "A small amount of squishy mush finds its way out of your butt and into your [ShortDesc of D]."; [Should be a rare occurrence that only happens from suppositories]
-			otherwise if rectum < 5:
+			if rectum < 5:
+				say "A small amount of squishy mush finds its way out of your butt and into your [ShortDesc of D]."; [Should be a rare occurrence that only happens from suppositories and similar]
+			otherwise if rectum < 9:
 				say "A reasonable amount of squishy mush forces its way out of your butt and fills your [ShortDesc of D].  It's instantly noticeably heavier and any movement you make [if the diaper addiction of the player < 3]completely disgusts you[otherwise if the diaper addiction of the player < 6]feels all weird and gross[otherwise if the diaper addiction of the player < 9]feels strange[otherwise if the diaper addiction of the player < 11]feels weirdly enjoyable[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]turns you on[otherwise if the diaper addiction of the player < 15]makes your [genitals] feel [italic type]amazing[roman type][otherwise if the diaper addiction of the player < 17]makes your [genitals]feel so [italic type]amazing[roman type] that you instantly want to rub your diaper[otherwise]makes your [genitals] feel so [italic type]amazing[roman type] that you instantly want to find a grown-up to give you [italic type]cummies[roman type][end if].";
-			otherwise if rectum < 8:
+			otherwise if rectum < 13:
 				say "A large amount of squishy mush forces its way out of your butt over several seconds, fills your [ShortDesc of D] out so much that you almost grow concerned about the limits of what it can hold.  You're shocked by how heavy it now feels, and how impossible it is for you to close your legs.  You can feel it squelching against your butt as you move.";
-			otherwise if rectum < 10:
+			otherwise if rectum < 17:
 				say "Your [asshole] gapes wide as a huge bulky log starts to force its way out of your rear.  You can feel your [ShortDesc of D] stretching and straining as the massive piece of excrement continues to snake out, emptying your gut but filling your pants.  There's so much that part of the mush has to force its way between your thighs and squelch its way into the front of your nappy.  To be honest you're just glad that your [ShortDesc of D] was somehow able to contain your mega bowel movement.  Moving is almost out of the question - every time you try you can feel the [if the diaper addiction of the player < 9]gross[otherwise if the diaper addiction of the player < 13]strange[otherwise if the diaper addiction of the player < 15]pleasant[otherwise]sexy[end if] sludge sliding against your skin.";
-			otherwise:
-				say "With the least dignified noise you've ever heard, you overly full guts begin to excavate themselves.  Your [ShortDesc of D] rapidly expands outwards, forced to in every direction by the veritable truckloads of smelly goop that is forcing its way out of your [asshole].  You are unable to stop the flow as log after log pushes its way out of your rectum, each one finding it more difficult than the one before to find a resting place.  Soon your [ShortDesc of D] is almost twice its previous size, straining under the pressure as your poop forces itself between your legs and into the front of your nappy, filling that side too.  Completely stunned, you can do nothing but shudder, moan and press your hands against your padding as the biggest shit of your life continues, warm foamy sludge following swiftly behind your uncountable number of solid chunks, filling up the small amounts of gaps left for it to find.  [one of]Your [ShortDesc of D] has become a padded [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if] [if the diaper addiction of the player < 13]within[otherwise]from[end if] which you are almost completely unwilling to [if the diaper addiction of the player < 13]move[otherwise]leave[end if].  You [if the diaper addiction of the player < 13]have no idea what to do[otherwise]had no idea messing yourself would feel this good[end if]![or]Once again your [ShortDesc of D] has become your messy [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if]![stopping]";
+			otherwise if rectum < 35: [anything mortal!]
+				say "With the least dignified noise you've ever heard, you overly full guts begin to excavate themselves.  Your [ShortDesc of D] rapidly expands outwards, forced to in every direction by the veritable truckloads of smelly goop that is forcing its way out of your [asshole].  You are unable to stop the flow as log after log pushes its way out of your rectum, each one finding it more difficult than the one before to find a resting place.  Soon your [ShortDesc of D] is almost twice its previous size, straining under the pressure as your poop forces itself between your legs and into the front of your nappy, filling that side too.  Completely stunned, you can do nothing but shudder, moan and press your hands against your padding as the biggest shit of your life continues, warm foamy sludge following swiftly behind your uncountable number of solid chunks, filling up the small amounts of gaps left for it to find.  [MessyPrison of D]";
+			otherwise: [should generally only happen from xavier diaper link]
+				say "A monstrous snake of mush brutally pushes its way out of your butthole.  Your [ShortDesc of D] crinkles and groans as it stretches and stretches to attempt to contain the impossibly bulky beast, as thick as your forearm and seemingly unending, like a train coming out of a tunnel with no end in sight.  The front of your underwear is soon required to contain the log, filling every spare inch of space with soft yet substantial poop.  By the time the craptastic boatload of muck has finished its journey into your pants, your [ShortDesc of D] has visibly doubled in size, now a weird baloon of brown around your midriff.  You stay absolutely still, whimpering in shame.  You can't move a muscle without making a sickening squelch as it rubs against you.  [MessyPrison of D]";
 		otherwise:
 			say "A [if rectum < 3]a small amount of mush[otherwise if rectum < 5]reasonable amount of squishy mush forces its way[otherwise if rectum < 8]large amount of lumpy mush[otherwise if rectum < 10]huge bulky log forces its way[otherwise]seemingly unending series of large mushy lumps become one giant ball which stretches you on its journey[end if] out of your butt and fills your [ShortDesc of D].  You feel it bulge out behind you, and you're almost afraid to move at all.  A diaper would at least shield and properly contain your shame but the [ShortDesc of D] threatens to buckle at any moment.  You need a change, and you need one now!";
-	if (diaper lover is 3 or M is in the location of the player) and diaper-scene-unhandled is 1: [We only do this if the messing was triggered from a scene that can't handle the mess on its own]
+	if there is a worn cum-when-messing tattoo or (the diaper addiction of the player > 13 and the player is very horny) or (the diaper addiction of the player > 18 and the player is a bit horny), anally orgasm shamefully;
+	if ((diaper lover is 3 and the times-met of M > 0 and the player is in the hotel) or M is in the location of the player) and diaper-scene-unhandled is 1: [We only do this if the messing was triggered from a scene that can't handle the mess on its own]
 		now diaper-scene-unhandled is 0;
-		say "[variable custom style][if the diaper addiction of the player < 7 and voluntary-messing is 0]How did I let this happen?![otherwise if the diaper addiction of the player < 12]Am I really just as pathetic as an incontinent child now?[otherwise if the diaper addiction of the player < 15]I can't believe how good that felt...[otherwise]Uh-oh, I did a naughty thing[one of]!  But it was so fun[or]again, and that means I get a change from Nanny!  Yay[stopping]![end if][roman type][line break]";
+		say "[variable custom style][if the diaper addiction of the player < 7 and voluntary-messing is 0]How did I let this happen?![otherwise if the diaper addiction of the player < 12]Am I really just as pathetic as an incontinent child now?[otherwise if the diaper addiction of the player < 15]I can't believe how good that felt...[otherwise]Uh-oh, I did a naughty thing[one of]!  But it was so fun[or]again, and that means I get a change!  Yay[stopping]![end if][roman type][line break]";
 		repeat with N running through monsters in the location of the player:
 			unless N is M:
 				say "The [N] makes a speedy exit!";
 				regionally place N;
 				dislodge N;
 		if M is in the location of the player:
-			say "The [M] [if M is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].  [speech style of M]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now.  If you can't control your bottom you're going to have to be in nappies for a long, long time.  [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].";
+			say "The [M] [if M is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].  [speech style of M]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now.  If you can't control your bottom you're going to have to be in nappies for a long, long time.  [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
 		otherwise:
 			say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], the [M] suddenly arrives, adding to your shame.  She [if M is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].  [speech style of M]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now.  If you can't control your bottom you're going to have to be in nappies for a long, long time.  [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
 		if the player is not in Hotel22, say "[line break][bold type]The [M] [bold type]lifts you into the air and [if the player is in the Hotel]without a word swiftly carries you all the way to[otherwise]snaps her fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
@@ -188,6 +191,37 @@ To compute messing:
 		now seconds is 6;
 		now diaper-reaction-said is 0;
 		now another-turn is 1.
+
+To compute unhandled diaper scene:
+	if diaper lover is 3 and there is worn messed knickers and the number of changing the player monsters is 0:
+		say "[variable custom style][if the diaper addiction of the player < 7 and voluntary-messing is 0]How did I let this happen?![otherwise if the diaper addiction of the player < 12]Am I really just as pathetic as an incontinent child now?[otherwise if the diaper addiction of the player < 15]I can't believe how good that felt...[otherwise]Uh-oh, I did a naughty thing[one of]!  But it was so fun[or]again, and that means I get a change!  Yay[stopping]![end if][roman type][line break]";
+		now the stance of the player is 1;
+		say "[run paragraph on] [bold type]You are now on your knees.[roman type][line break]";
+		let M be a random alive royal guard;
+		if the player is in the hotel:
+			now M is a random alive matron;
+			if M is nothing, now M is a random alive mechanic;
+			if M is nothing, now M is a random alive robobellboy;
+			if M is nothing:
+				now M is a random robobellboy;
+				set up M;
+		otherwise:
+			if the player is in the dungeon:
+				if M is nothing, now M is a random alive gladiator;
+				if M is nothing, now M is a random regional adult baby slave;
+			if M is nothing:
+				now M is a random royal guard;
+				set up M;
+		now M is in the location of the player;
+		now M is interested;
+		say "Suddenly you notice that the [M] is looming over you[if M is robot]![otherwise]!  [speech style of M]'What have we here?'[roman type][line break][end if]";
+		if M is royal guard and the player is not in the dungeon:
+			drag to Dungeon06 by M;
+		compute diaper change of M;
+	now diaper-scene-unhandled is 0.
+
+To say MessyPrison of (D - a knickers):
+	say "[one of]Your [ShortDesc of D] has become a padded [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if] [if the diaper addiction of the player < 13]within[otherwise]from[end if] which you are almost completely unwilling to [if the diaper addiction of the player < 13]move[otherwise]leave[end if].  You [if the diaper addiction of the player < 13]have no idea what to do[otherwise]had no idea messing yourself would feel this good[end if]![or]Once again your [ShortDesc of D] has become your messy [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if]![stopping]".
 
 [!<SayDiaperMessDeclarationOfMonster>+
 

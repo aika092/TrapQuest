@@ -275,8 +275,8 @@ To compute DQ appearance assessment of (M - a royal guard):
 	otherwise if the class of the player is princess:
 		say "[one of][big he of M] smiles politely.[or][big he of M] bows gracefully.[or][speech style of M]'Your Highness!'[roman type][line break][at random]";
 	otherwise if the cringe appearance of the player > 4:
-		if M is buddy, say "[speech style of M]'Erm, I'm sure I've just caught you at a bad moment, but you really should find more dignified clothing if you wish for use to remain amicable.  ";
-		otherwise say "[speech style of M]'[if the times-changed of M is 0]You don't currently look like a grown adventurer to me.  Go away and find some more appropriate attire before I am forced to treat you as young as you look!  [otherwise]You still look like a little girl.  I suggest finding something more appropriate, and urgently.  [end if]";
+		if M is buddy, say "[speech style of M]'Erm, I'm sure I've just caught you at a bad moment, but you really should find more dignified clothing that reflects your [maturity] if you wish for use to remain amicable.  ";
+		otherwise say "[speech style of M]'[if the times-changed of M is 0]You don't look like a grown adventurer to me.  Go away and find some more appropriate attire before I am forced to treat you as though you have the [maturity] that you outwardly represent!  [otherwise]You still look like a little girl.  I suggest finding something more appropriate, and urgently.  [end if]";
 		FavourDown M by 2;
 	otherwise if the appearance of the player > 7:
 		if M is buddy, say "[speech style of M]'I understand that you're trying to look like an adult, but your appearance is a disgrace.  Please try and find something more sensible to wear before we meet again.  ";

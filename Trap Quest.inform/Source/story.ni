@@ -851,6 +851,10 @@ Include Daddys Wild Child Tattoo by Tattoos.
 
 Include Whip Tattoo by Tattoos.
 
+Include Can't Change Self Tattoo by Tattoos.
+Include Cum When Messing Tattoo by Tattoos.
+Include Demon Link Mark by Tattoos.
+
 Include Inking by Actions.
 
 Include Bags of Holding Framework by Bags of Holding.
