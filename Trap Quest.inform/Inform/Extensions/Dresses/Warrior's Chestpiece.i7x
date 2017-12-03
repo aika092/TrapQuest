@@ -63,7 +63,7 @@ Part 2 - Leaf Pattern Warrior Chestpiece
 
 A leaf pattern warrior chestpiece is a kind of modest warrior chestpiece. A leaf pattern warrior chestpiece is usually high cut.  A leaf pattern warrior chestpiece is usually belly covering.  
 
-The printed name of leaf pattern warrior chestpiece is usually "[TQlink of item described][clothing-title-before]leaf pattern warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of leaf pattern warrior chestpiece is "lwc".
+The printed name of leaf pattern warrior chestpiece is usually "[TQlink of item described][clothing-title-before]leaf pattern warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of leaf pattern warrior chestpiece is "lpwc".
 
 There is 1 leaf pattern warrior chestpiece.
 
