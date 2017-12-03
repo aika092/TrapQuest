@@ -1,7 +1,7 @@
 Maid Headdress by Headgear begins here.
 
 
-A maid headdress is a kind of headgear.  A maid headdress is usually brightness-negative.  A maid headdress is usually hair growing.  The text-shortcut of maid headdress is "mh".  A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
+A maid headdress is a kind of headgear.  A maid headdress is usually brightness-negative.  A maid headdress is usually hair growing.  The text-shortcut of maid headdress is "mhd".  A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
 
 To compute SelfExamineDesc of (H - maid headdress):
 	let X be the largeness of hair;

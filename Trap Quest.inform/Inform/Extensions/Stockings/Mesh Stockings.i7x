@@ -1,7 +1,7 @@
 Mesh Stockings by Stockings begins here.
 
 A heart stockings is a kind of stockings.  There is 1 unique heart stockings.  A heart stockings is usually mesh.  The text-shortcut of heart stockings is "hbs".  The printed name of heart stockings is usually "[TQlink of item described][clothing-title-before]pair of heart bow [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "bow" as heart stockings.
-A fishnet stockings is a kind of stockings.  There is 1 unique fishnet stockings.  A fishnet stockings is usually mesh.  The text-shortcut of fishnet stockings is "fst".  The printed name of fishnet stockings is usually "[TQlink of item described][clothing-title-before]pair of fishnet stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "fish", "net" as fishnet stockings.
+A fishnet stockings is a kind of stockings.  There is 1 unique fishnet stockings.  A fishnet stockings is usually mesh.  The text-shortcut of fishnet stockings is "fs".  The printed name of fishnet stockings is usually "[TQlink of item described][clothing-title-before]pair of fishnet stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "fish", "net" as fishnet stockings.
 
 To decide which figure-name is clothing-image of (C - a fishnet stockings):
 	decide on figure of mesh stockings B.

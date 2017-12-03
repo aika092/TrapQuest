@@ -9,7 +9,7 @@ This is the spawn initial woods vines rule:
 			if the number of vines in R is 0, deploy T in R.
 The spawn initial woods vines rule is listed in the set up woods traps rules.
 
-vine are a kind of trap.  The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]".  There are 16 revealed vines.  Understand "living", "vine", "vines" as vines when item described is in the location of the player.  The printed plural name of vines is "vines".  The description of vines is "[VineDesc]".  Figure of vines is the file "vines1.png".  Vines are father material.  The text-shortcut of a vine is "vi".
+vine are a kind of trap.  The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]".  There are 16 revealed vines.  Understand "living", "vine", "vines" as vines when item described is in the location of the player.  The printed plural name of vines is "vines".  The description of vines is "[VineDesc]".  Figure of vines is the file "vines1.png".  Vines are father material.  The text-shortcut of a vine is "vin".
 
 To decide which number is the girth of (V - a vine):
 	decide on 2 * (1 + the TrapNo of V).

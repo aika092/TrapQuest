@@ -56,7 +56,7 @@ To decide which number is the initial outrage of (C - a rubber shirt):
 To decide which object is the potential-upgrade-target of (C - a rubber shirt):
 	decide on a random off-stage rubber vest top.
 
-A pink rubber shirt is a kind of rubber shirt.  The printed name of pink rubber shirt is usually "[TQlink of item described][clothing-title-before]pink latex shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink rubber shirt is "pls".
+A pink rubber shirt is a kind of rubber shirt.  The printed name of pink rubber shirt is usually "[TQlink of item described][clothing-title-before]pink latex shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink rubber shirt is "prs".
 
 There is 1 pink rubber shirt.
 
@@ -108,7 +108,7 @@ To decide which object is the unique-upgrade-target of (C - a blue rubber shirt)
 
 Part 4 - Polo Shirt
 
-A polo shirt is a kind of shirt.  The printed name of polo shirt is usually "[TQlink of item described][clothing-title-before]polo shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of polo shirt is "pls".
+A polo shirt is a kind of shirt.  The printed name of polo shirt is usually "[TQlink of item described][clothing-title-before]polo shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of polo shirt is "ps".
 
 Figure of polo shirt is the file "poloshirt1.png".
 

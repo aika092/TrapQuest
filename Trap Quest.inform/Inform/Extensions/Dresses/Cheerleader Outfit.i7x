@@ -50,7 +50,7 @@ Part 2 - Supershort Cheerleader Outfit
 
 A supershort cheerleader outfit is a kind of cheerleader outfit.  A supershort cheerleader outfit is usually super-short.
 
-The printed name of supershort cheerleader outfit is usually "[TQlink of item described][clothing-title-before]supershort cheerleader outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of supershort cheerleader outfit is "sco".
+The printed name of supershort cheerleader outfit is usually "[TQlink of item described][clothing-title-before]supershort cheerleader outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of supershort cheerleader outfit is "scho".
 
 There is 1 supershort cheerleader outfit.
 
@@ -84,7 +84,7 @@ Part 3 - Vest Top Cheerleader Outfit
 
 A vest top cheerleader outfit is a kind of cheerleader outfit.
 
-The printed name of vest top cheerleader outfit is usually "[TQlink of item described][clothing-title-before]vest top cheerleader outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of vest top cheerleader outfit is "vco".
+The printed name of vest top cheerleader outfit is usually "[TQlink of item described][clothing-title-before]vest top cheerleader outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of vest top cheerleader outfit is "vtco".
 
 There is 1 vest top cheerleader outfit.
 

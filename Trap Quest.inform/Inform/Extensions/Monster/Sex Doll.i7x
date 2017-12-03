@@ -6,7 +6,7 @@ Figure of Male Sex Doll is the file "sexdoll1.png".
  Figure of Female Sex Doll is the file "sexdoll2.png". The description of sex doll is usually "[SexDollDesc]".  The text-shortcut of sex doll is "sd".  Understand "do" as sex doll.
 
 A creepy sex doll is a kind of sex doll.  There is 1 creepy sex doll.
-The printed name of creepy sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] creepy sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of creepy sex doll is "cre".
+The printed name of creepy sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] creepy sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of creepy sex doll is "csd".
 An expressionless sex doll is a kind of sex doll.  There is 1 expressionless sex doll.
 The printed name of expressionless sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] expressionless sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of expressionless sex doll is "exp".
 An animated sex doll is a kind of sex doll.  There is 1 animated sex doll.
@@ -16,7 +16,7 @@ The printed name of zombielike sex doll is "[if item described is in the locatio
 A wandering sex doll is a kind of sex doll.  There is 1 wandering sex doll.
 The printed name of wandering sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] wandering sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of wandering sex doll is "wan".
 A mindless sex doll is a kind of sex doll.  There is 1 mindless sex doll.
-The printed name of mindless sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] mindless sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of mindless sex doll is "min".
+The printed name of mindless sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] mindless sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of mindless sex doll is "msd".
 A puppetlike sex doll is a kind of sex doll.  There is 1 puppetlike sex doll.
 The printed name of puppetlike sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] puppetlike sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of puppetlike sex doll is "pup".
 An uncanny sex doll is a kind of sex doll.  There is 1 uncanny sex doll.

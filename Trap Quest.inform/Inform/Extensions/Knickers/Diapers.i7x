@@ -90,7 +90,7 @@ To decide which number is the original price of (C - a kitty cat diaper):
 
 Chapter 5 Elephant Diaper
 
-elephant diaper is a kind of disposable diaper.  There is 1 elephant diaper.  The printed name of elephant diaper is usually "[TQlink of item described][clothing-title-before]elephant diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of elephant diaper is "ed".
+elephant diaper is a kind of disposable diaper.  There is 1 elephant diaper.  The printed name of elephant diaper is usually "[TQlink of item described][clothing-title-before]elephant diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of elephant diaper is "edi".
 
 To decide which figure-name is clothing-image of (C - an elephant diaper):
 	decide on figure of elephant diaper.
@@ -253,7 +253,7 @@ Definition: a waddle diaper (called C) is untransformable:
 
 Chapter 9 Dragonfly Diaper
 
-dragonfly pattern diaper is a kind of pullup diaper.  There is 1 dragonfly pattern diaper.  The printed name of dragonfly pattern diaper is usually "[TQlink of item described][clothing-title-before]dragonfly pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of dragonfly pattern diaper is "dd".  Understand "cloth" as dragonfly pattern diaper.  The soak-limit of a dragonfly pattern diaper is usually 24.
+dragonfly pattern diaper is a kind of pullup diaper.  There is 1 dragonfly pattern diaper.  The printed name of dragonfly pattern diaper is usually "[TQlink of item described][clothing-title-before]dragonfly pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of dragonfly pattern diaper is "dpd".  Understand "cloth" as dragonfly pattern diaper.  The soak-limit of a dragonfly pattern diaper is usually 24.
 
 To decide which figure-name is clothing-image of (C - a dragonfly pattern diaper):
 	decide on figure of dragonfly pattern diaper.
@@ -420,7 +420,7 @@ To say selfexamineuniquetitle of (K - a bunny diaper):
 
 Chapter 16 Blue and Pink Diaper
 
-A blue-and-pink diaper is a kind of disposable diaper.  There is 1 blue-and-pink diaper.  The printed name of blue-and-pink diaper is usually "[TQlink of item described][clothing-title-before]blue and pink diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of blue-and-pink diaper is "bpd".  Understand "blue", "pink", "blue and pink" as blue-and-pink diaper.
+A blue-and-pink diaper is a kind of disposable diaper.  There is 1 blue-and-pink diaper.  The printed name of blue-and-pink diaper is usually "[TQlink of item described][clothing-title-before]blue and pink diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of blue-and-pink diaper is "bapd".  Understand "blue", "pink", "blue and pink" as blue-and-pink diaper.
 
 To decide which figure-name is clothing-image of (C - a blue-and-pink diaper):
 	decide on figure of blue-and-pink diaper.
@@ -475,7 +475,7 @@ To say selfexamineuniquetitle of (K - a butterfly pattern diaper):
 
 Chapter 19 Hippo Diaper
 
-A hippo diaper is a kind of pullup diaper.  There is 1 hippo diaper.  The printed name of hippo diaper is usually "[TQlink of item described][clothing-title-before]hippo diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hippo diaper is "hd".  The soak-limit of a hippo diaper is usually 28.
+A hippo diaper is a kind of pullup diaper.  There is 1 hippo diaper.  The printed name of hippo diaper is usually "[TQlink of item described][clothing-title-before]hippo diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hippo diaper is "hdi".  The soak-limit of a hippo diaper is usually 28.
 
 To decide which figure-name is clothing-image of (C - a hippo diaper):
 	decide on figure of hippo diaper.
@@ -508,7 +508,7 @@ The DQFigure of princess castle diaper is usually DQPullups.
 
 Chapter 21 Smiley Balloon Diaper
 
-A smiley balloon diaper is a kind of disposable diaper.  There is 1 smiley balloon diaper.  The printed name of smiley balloon diaper is usually "[TQlink of item described][clothing-title-before]smiley balloon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of smiley balloon diaper is "bbd".
+A smiley balloon diaper is a kind of disposable diaper.  There is 1 smiley balloon diaper.  The printed name of smiley balloon diaper is usually "[TQlink of item described][clothing-title-before]smiley balloon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of smiley balloon diaper is "sbd".
 
 To decide which figure-name is clothing-image of (C - a smiley balloon diaper):
 	decide on figure of smiley balloon diaper.
@@ -529,7 +529,7 @@ To decide which number is the unique outrage of (D - an smiley balloon diaper):
 
 Chapter 22 Star Pattern Diaper
 
-A star pattern diaper is a kind of pullup diaper.  There is 1 star pattern diaper.  The printed name of star pattern diaper is usually "[TQlink of item described][clothing-title-before]star pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of star pattern diaper is "dd".  Understand "cloth" as star pattern diaper.  The soak-limit of a star pattern diaper is usually 24.
+A star pattern diaper is a kind of pullup diaper.  There is 1 star pattern diaper.  The printed name of star pattern diaper is usually "[TQlink of item described][clothing-title-before]star pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of star pattern diaper is "spd".  Understand "cloth" as star pattern diaper.  The soak-limit of a star pattern diaper is usually 24.
 
 To decide which figure-name is clothing-image of (C - a star pattern diaper):
 	decide on figure of star pattern diaper.

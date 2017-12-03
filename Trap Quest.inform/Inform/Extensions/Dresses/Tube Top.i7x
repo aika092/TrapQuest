@@ -84,7 +84,7 @@ Part 3 - Pink Rubber Tube Top
 
 A pink rubber tube top is a kind of tube top.  A pink rubber tube top is usually latex.
 
-The printed name of pink rubber tube top is usually "[TQlink of item described][clothing-title-before]pink latex tube top[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink rubber tube top is "ptu".  A pink rubber tube top is usually dense.
+The printed name of pink rubber tube top is usually "[TQlink of item described][clothing-title-before]pink latex tube top[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink rubber tube top is "prtt".  A pink rubber tube top is usually dense.
 
 There is 1 pink rubber tube top.
 
@@ -161,7 +161,7 @@ Part 6 - Pink Tube Top
 
 A pink tube top is a kind of tube top.
 
-The printed name of pink tube top is usually "[TQlink of item described][clothing-title-before]pink tube top[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink tube top is "ptu".
+The printed name of pink tube top is usually "[TQlink of item described][clothing-title-before]pink tube top[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink tube top is "ptt".
 
 There is 1 pink tube top.
 

@@ -100,7 +100,7 @@ Report wearing a black clubbing dress when there is a worn diaper:
 
 Part 4 - White Slut Clubbing Dress
 
-A white slut clubbing dress is a kind of clubbing dress.  There is 1 white slut clubbing dress.  A white slut clubbing dress is usually cotton.  A white slut clubbing dress is unique.  A white slut clubbing dress is usually ridiculously low cut.  A white slut clubbing dress is usually belly exposing.  A white slut clubbing dress is usually knee-length.  A white slut clubbing dress is usually only arm covering.  Figure of white slut clubbing dress is the file "clubbingdress4.png".  The text-shortcut of white slut clubbing dress is "wcd".  A white slut clubbing dress is usually sheer-when-wet.
+A white slut clubbing dress is a kind of clubbing dress.  There is 1 white slut clubbing dress.  A white slut clubbing dress is usually cotton.  A white slut clubbing dress is unique.  A white slut clubbing dress is usually ridiculously low cut.  A white slut clubbing dress is usually belly exposing.  A white slut clubbing dress is usually knee-length.  A white slut clubbing dress is usually only arm covering.  Figure of white slut clubbing dress is the file "clubbingdress4.png".  The text-shortcut of white slut clubbing dress is "wscd".  A white slut clubbing dress is usually sheer-when-wet.
 
 The printed name of white slut clubbing dress is usually "[TQlink of item described][clothing-title-before]white slut clubbing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -126,7 +126,7 @@ To decide which object is the potential-upgrade-target of (C - a white slut club
 
 Part 5 - Black Slut Clubbing Dress
 
-A black slut clubbing dress is a kind of clubbing dress.  There is 1 black slut clubbing dress.  A black slut clubbing dress is usually leather.  Figure of black slut clubbing dress is the file "clubbingdress5.png".  A black slut clubbing dress is unique.  A black slut clubbing dress is usually ridiculously low cut.  The text-shortcut of black slut clubbing dress is "bcd".
+A black slut clubbing dress is a kind of clubbing dress.  There is 1 black slut clubbing dress.  A black slut clubbing dress is usually leather.  Figure of black slut clubbing dress is the file "clubbingdress5.png".  A black slut clubbing dress is unique.  A black slut clubbing dress is usually ridiculously low cut.  The text-shortcut of black slut clubbing dress is "bscd".
 
 Definition: a black slut clubbing dress (called C) is fluid immune:
 	decide yes.
@@ -237,7 +237,7 @@ To say ShortDesc of (C - a exposing pink clubbing dress):
 
 Part 10 - Blue Slut Clubbing Dress
 
-A blue slut clubbing dress is a kind of clubbing dress.  There is 1 blue slut clubbing dress.  A blue slut clubbing dress is usually cotton.  A blue slut clubbing dress is unique.  A blue slut clubbing dress is usually very low cut.  A blue slut clubbing dress is usually belly exposing.  A blue slut clubbing dress is usually knee-length.  A blue slut clubbing dress is usually only arm covering.  Figure of blue slut clubbing dress is the file "clubbingdress10.png".  The text-shortcut of blue slut clubbing dress is "bcd".  A blue slut clubbing dress is usually sheer-when-wet.
+A blue slut clubbing dress is a kind of clubbing dress.  There is 1 blue slut clubbing dress.  A blue slut clubbing dress is usually cotton.  A blue slut clubbing dress is unique.  A blue slut clubbing dress is usually very low cut.  A blue slut clubbing dress is usually belly exposing.  A blue slut clubbing dress is usually knee-length.  A blue slut clubbing dress is usually only arm covering.  Figure of blue slut clubbing dress is the file "clubbingdress10.png".  The text-shortcut of blue slut clubbing dress is "uscd".  A blue slut clubbing dress is usually sheer-when-wet.
 
 The printed name of blue slut clubbing dress is usually "[TQlink of item described][clothing-title-before]blue slut clubbing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
