@@ -82,6 +82,7 @@ To compute baby hotel chair sitting:
 		let K be a random worn knickers;
 		if K is total protection diaper and the player is full and diaper lover >= 3:
 			say "As you sit there, something clicks inside of you, and you feel yourself losing control of your bowels!  ";
+			now diaper-scene-unhandled is 1;
 			compute messing;
 		otherwise if K is total protection clothing and the player is female and vagina is not actually occupied and diaper quest is 0:
 			say "You feel something very thin poke its way through the [if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [K] and then find its way to the entrance of your [vagina].  Suddenly you feel it start to powerfully pump out something warm and viscous - it's pumping you full of [semen]! What the fuck!";

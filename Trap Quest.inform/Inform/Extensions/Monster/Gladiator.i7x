@@ -357,7 +357,7 @@ To compute DQ appearance assessment of (M - a gladiator):
 		distract M;
 		FavourDown M by 2;
 	otherwise if the appearance of the player > 4:
-		say "[speech style of M]'Truly adult women don't need to look like sluts in order prove their maturity, you know.  I'm going to leave you to hopefully improve your appearance before we next meet.'[roman type][line break]";
+		say "[speech style of M]'Truly adult women don't need to look like sluts in order prove their [maturity], you know.  I'm going to leave you to hopefully improve your appearance before we next meet.'[roman type][line break]";
 		distract M;
 		FavourDown M by 2;
 	otherwise:	

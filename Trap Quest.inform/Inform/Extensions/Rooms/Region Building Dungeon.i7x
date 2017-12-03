@@ -16,7 +16,7 @@ To Set Up The Dungeon:
 		if images visible is 1:
 			if diaper quest is 0:
 				display figure of dungeon loading;
-			otherwise if a random number between 2 and 5 < diaper lover or there is a worn messed knickers:
+			otherwise if diaper lover >= 4:
 				display figure of dq dungeon messy loading;
 			otherwise:
 				display figure of dq dungeon loading;

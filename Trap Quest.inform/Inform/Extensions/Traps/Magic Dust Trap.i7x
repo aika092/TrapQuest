@@ -34,7 +34,10 @@ To trigger (Y - a magic dust trap):
 	let C be a random worn currently uncovered transformable clothing;
 	if C is nothing, now C is a random worn currently uncovered clothing;
 	if X > the dexterity of the player:
-		if diaper quest is 1 and the make-up of face >= 3 and permanent makeup is 0 and a random number between 1 and 5 > 3: [###Selkie: I love this! I wish it was available outside DQ!]
+		if diaper quest is 1 and hypno-trigger-maturity is 0 and diaper lover >= 3 and the player is a November 2017 top donator:
+			say "A phrase rapdily repeats in your head over and over and over and over.  [second custom style]'I don't need maturity!  I don't need maturity!  I don't need maturity!  Don't need maturity!  Don't need maturity!  Maturity!  Maturity!  Maturity...'[roman type]  You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
+			now hypno-trigger-maturity is 1;
+		otherwise if diaper quest is 1 and the make-up of face >= 3 and permanent makeup is 0 and a random number between 1 and 5 > 3: [###Selkie: I love this! I wish it was available outside DQ!]
 			say "It gets all over your face!  Your make-up becomes all glittery with big lips and you have a heart pattern on your cheeks.  It feels more... permanent.  You try to move your face but you find you [i]can't[/i] - it's stuck in place!  Your facial expression is frozen into this childish vacant look...  [variable custom style][if the bimbo of the player > 14]Ooh, it's perfect!  I'm like a pretty little doll![otherwise if the bimbo of the player > 9]Well maybe it's better than the really messy job I had before, I guess.  But I can't believe I can no longer move my face!  How am I going to get people to treat me like a person and not an object now?![otherwise]Oh my god, my face can't really be stuck like this, can it?![end if][roman type][line break]";
 			now permanent makeup is 1;
 		otherwise if C is nothing or C is untransformable or a random number between 1 and 6 is 1:

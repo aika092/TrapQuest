@@ -72,33 +72,13 @@ To check bounce release of (Y - a baby bouncer):
 	if the bounces of Y >= a random number between 2 and 3:
 		if diaper lover >= 3 and the player is full and asshole is not actually occupied and (there is worn total protection diaper or (there is worn total protection knickers and panty messing is 1)):
 			say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff!  You wheeze with discomfort as your rectal muscles spasm uncontrollably.  ";
+			now diaper-scene-unhandled is 1;
 			compute messing;
 		say "The baby bouncer, seemingly out of power, lowers you to the ground and releases you.";
 		now busy is 0;
 		now Y is not grabbing the player;
 		now Y is expired;
-		now the bounces of Y is 0;
-		if diaper lover is 3 and there is worn messed knickers:
-			now the stance of the player is 1;
-			say "[run paragraph on] [bold type]You are now on your knees.[roman type][line break]";
-			let M be a random alive royal guard;
-			if the player is in the dungeon:
-				if M is nothing, now M is a random alive gladiator;
-				if M is nothing, now M is a random regional adult baby slave;
-				if M is nothing:
-					now M is a random royal guard;
-					set up M;
-			otherwise if the player is in the hotel:
-				now M is a random alive matron;
-				if M is nothing, now M is a random alive mechanic;
-				if M is nothing, now M is a random alive robobellboy;
-				if M is nothing:
-					now M is a random robobellboy;
-					set up M;
-			now M is in the location of the player;
-			now M is interested;
-			say "Suddenly you notice that the [M] is looming over you[if M is robot]![otherwise]!  [speech style of M]'What have we here?'[roman type][line break][end if]";
-			compute diaper change of M.
+		now the bounces of Y is 0.
 
 [!<JumpFromTheBabyBouncer>+
 

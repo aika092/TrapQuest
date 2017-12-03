@@ -37,7 +37,7 @@ Woods03 is an important jungle room.  The printed name of Woods03 is "Dead End".
 REQUIRES COMMENTING
 
 *!]
-Woods04 is a dodgy jungle room.  The printed name of Woods04 is "Twisting Pathway".  "You are on a twisting dirt pathway through the woods.  You can continue to the north or the west.".  The shape of Woods04 is L2/0-0-1-1-0-0.
+Woods04 is a dodgy jungle room.  The printed name of Woods04 is "Twisting Pathway".  "You are on a twisting dirt pathway through the woods.".  The shape of Woods04 is L2/0-0-1-1-0-0.
 
 [!<woods05:JungleRoom>*
 
@@ -191,7 +191,7 @@ Woods25 is a dodgy jungle room.  The printed name of Woods25 is "Shallow Woods".
 REQUIRES COMMENTING
 
 *!]
-Woods26 is an important mandatory jungle room.  The printed name of Woods26 is "Sword in the Stone".  "A stone [if (the player is female and the virgin of the player is 1) or (tg fetish >= 1 and the player is male)]slab in the centre of this clearing has a shining sword stuck in it. T[otherwise]statue in the center of this clearing has a floppy dildo sticking out of it. It doesn't look useful for anything, but t[end if]here's probably no harm in seeing if you can pull it out.".  The shape of Woods26 is L2/0-0-1-1-1-1. 
+Woods26 is an important mandatory jungle room.  The printed name of Woods26 is "Sword in the Stone".  "A stone [if diaper quest is 1]slab in the centre of this clearing has a giant rattle embedded in it.  Surely t[otherwise if (the player is female and the virgin of the player is 1) or (tg fetish >= 1 and the player is male)]slab in the centre of this clearing has a shining sword stuck in it. T[otherwise]statue in the center of this clearing has a floppy dildo sticking out of it. It doesn't look useful for anything, but t[end if]here's probably no harm in seeing if you can pull it out.".  The shape of Woods26 is L2/0-0-1-1-1-1. 
 
 [!<woods27:JungleRoom>*
 

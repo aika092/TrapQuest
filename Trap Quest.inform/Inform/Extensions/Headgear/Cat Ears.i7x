@@ -54,10 +54,10 @@ To compute class outfit of (H - a cat ears):
 		otherwise if C is actually summonable:
 			say "[bold type]You feel a sudden tightness around your neck.  You look down to see that a cat collar has appeared![roman type][line break]";
 			summon C cursed;
-		otherwise if the class of the player is catgirl and P is actually summonable and the player is not ass protected:
+		otherwise if diaper quest is 0 and the class of the player is catgirl and P is actually summonable and the player is not ass protected:
 			say "[bold type]You feel your [asshole] suddenly invaded by a foreign object!  Looking around you see a cat tail swaying proudly from your [asshole].[roman type][line break]";
 			summon P cursed;
-			let X be the openness of asshole + the number of worn clothing - 3;
+			let X be (the openness of asshole + the number of worn nudism-disabling clothing) - 3;
 			assign size X to P.
 
 Definition: a thing (called T) is cat themed:
