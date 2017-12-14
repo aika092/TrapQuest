@@ -137,7 +137,7 @@ To compute (V - a vine) penetrating:
 				otherwise:
 					repeat with X running through vines grabbing the player:
 						now X is penetrating asshole;
-				AssRuin 1;
+				ruin asshole;
 		otherwise if asshole is actually occupied:
 			let T be a random thing penetrating asshole;
 			if T is disembodied:
@@ -152,7 +152,7 @@ To compute (V - a vine) penetrating:
 					now X is penetrating asshole;
 			if image cutscenes is 1 and the player is female, display figure of vines cutscene 1;
 			say "[AssholePenetrationFlav of V]";
-			AssRuin 1;
+			ruin asshole;
 	otherwise:
 		if the player is pussy protected:
 			let K be a random worn top level protection clothing;
@@ -164,7 +164,7 @@ To compute (V - a vine) penetrating:
 				otherwise:
 					repeat with X running through vines grabbing the player:
 						now X is penetrating vagina;
-				PussyRuin 1;
+				ruin vagina;
 		otherwise if vagina is actually occupied:
 			let T be a random thing penetrating vagina;
 			if T is disembodied:
@@ -179,7 +179,7 @@ To compute (V - a vine) penetrating:
 					now X is penetrating vagina;
 			if image cutscenes is 1, display figure of vines cutscene 1;
 			say "[VaginaPenetrationFlav of V]";
-			PussyRuin 1.
+			ruin vagina.
 
 [!<ComputeVineAttackingClothing>+
 

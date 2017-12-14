@@ -78,10 +78,10 @@ A time based rule (this is the life elixir decay rule):
 				BodyHeal 1;
 			otherwise if the soreness of asshole > the soreness of vagina:
 				say "Your [asshole] feels [if the openness of asshole < 6]a bit less sore[otherwise][second custom style]ready for more[roman type][end if]!";
-				AssHeal 1;
+				heal asshole times 1;
 			otherwise if the soreness of vagina > 0:
 				say "Your [vagina] feels [if the openness of vagina < 6]a bit less sore[otherwise][second custom style]ready for more[roman type][end if]!";
-				PussyHeal 1;
+				heal vagina times 1;
 			otherwise if the pregnancy of the player > 0:
 				say "You feel life force rushing through your body, as if trying to find something to heal.  After rushing through your torso, your [vagina] and your [asshole], it flows through your cervix into your womb.";
 				let B be the largeness of belly;

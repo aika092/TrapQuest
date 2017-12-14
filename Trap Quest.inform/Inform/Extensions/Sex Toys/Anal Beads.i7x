@@ -92,8 +92,8 @@ To compute (M - a monster) removing (C - an anal beads):
 			now C is in holding pen;
 			now M is retaining C;
 			dislodge C;
-		if F is asshole, AssRuin R;
-		otherwise PussyRuin R;
+		if F is asshole, ruin asshole times R;
+		otherwise ruin vagina times R;
 	otherwise:
 		say "The [M] manages to pull hard enough on your [printed name of C] to remove one bead";
 		ruin F;

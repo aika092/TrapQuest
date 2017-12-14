@@ -227,8 +227,8 @@ Carry out praying something with:
 				if R is 5:
 					if the body soreness of the player > 5 or the soreness of asshole > 5 or the soreness of vagina > 5:
 						say "Your entire body feels less sore.";
-						AssHeal 2;
-						PussyHeal 2;
+						heal asshole times 2;
+						heal vagina times 2;
 						BodyHeal 2;
 						break;
 				if R is 6 and the humiliation of the player < 40000 and the humiliation of the player >= 2000:
@@ -321,7 +321,7 @@ Carry out praying something with:
 				now elder altar is penetrating vagina;
 				if the player is able to get horny:
 					say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your [vagina]. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your [vagina] without hesitation, unexpectedly firm yet oddly fluid.";
-					PussyRuin 2;
+					ruin vagina times 2;
 					say "You are blown away by the sensation, and in spite of yourself you begin moaning in ecstasy. The creature seems to be encouraged by your reaction and only increases its force, which in turn causes your reactions to increase as well. For a while sensation overwhelms you, and finally you cannot help yourself.[line break]";
 					vaginally orgasm shamefully;
 					say "The creature seemed to be waiting for this moment, and you feel it begin to pump [semen] into you even as you orgasm. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
@@ -347,7 +347,7 @@ Carry out praying something with:
 				now elder altar is penetrating asshole;
 				if the player is able to get horny:
 					say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your ass. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your ass without hesitation, unexpectedly firm yet oddly fluid.";
-					AssRuin 2;
+					ruin asshole times 2;
 					say "You are blown away by the sensation, and in spite of yourself you begin moaning in ecstasy. The creature seems to be encouraged by your reaction and only increases its force, which in turn causes your reactions to increase as well. For a while sensation overwhelms you, and finally you cannot help yourself.[line break]";
 					anally orgasm shamefully;
 					say "The creature seemed to be waiting for this moment, and you feel it begin to pump [semen] into you even as you orgasm. In a shockingly short time it seems like it has sprayed most of its body into your asshole, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";

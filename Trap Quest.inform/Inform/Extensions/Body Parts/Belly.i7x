@@ -893,7 +893,7 @@ To AssSquirt:
 					delayed imprint destroy BL;
 		say " and falls to the ground.";
 		resolve delayed imprints;
-		AssRuin 1;
+		ruin asshole;
 		now ST is in the location of the player;
 		dislodge ST;
 	[Now we set up an expulsion poster, if appropriate]
@@ -1068,7 +1068,7 @@ To AssSquirt:
 				if liquid-total > 6 and liquid-total < 1000:
 					decrease liquid-total by 6;
 					say "The [cascade] [one of]shows no signs of slowing down[or]is still spurting just as powerfully[or]continues[at random]!";	
-					AssRuin 1;
+					ruin asshole;
 					if liquid-total < 7, now liquid-total is 9999;
 				otherwise if liquid-total is 9999:
 					say "The [flow] now slows down, until there's only a tiny trickle leaving your [asshole].";
@@ -1116,7 +1116,7 @@ To lay (X - a number) small eggs:
 		say "The movement of each egg forcefully stimulates the inside of your ass, which feels incredible but also makes you quite sore.";
 		let E be a random small egg;
 		now E is penetrating asshole; [For size calculations]
-		AssRuin X;
+		ruin asshole times X;
 		now E is not penetrating asshole;
 	let D be a random worn total protection diaper;
 	if D is diaper:
@@ -1147,7 +1147,7 @@ To lay (X - a number) medium eggs:
 		say "The eggs are much too big to be passed comfortably, and the ordeal inevitably stimulates your ass just as much as a good rough fucking would.";
 		let E be a random medium egg;
 		now E is penetrating asshole; [For size calculations]
-		AssRuin X;
+		ruin asshole times X;
 		now E is not penetrating asshole;
 	let D be a random worn total protection diaper;
 	if D is diaper:
@@ -1179,7 +1179,7 @@ To lay (X - a number) large eggs:
 		say "You moan softly as [if X is 2]another egg[otherwise]one by one, [X - 1] more eggs[end if] of the same size make their way through just as slowly and with just as intense sensations.[line break]";
 	let E be a random large egg;
 	now E is penetrating asshole; [For size calculations]
-	AssRuin X;
+	ruin asshole times X;
 	now E is not penetrating asshole;
 	let D be a random worn total protection diaper;
 	if D is diaper:

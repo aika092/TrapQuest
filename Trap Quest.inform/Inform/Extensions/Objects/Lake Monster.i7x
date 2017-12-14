@@ -223,7 +223,7 @@ To LakeMonsterCheck (S - a number):
 					increase A by 2;
 				otherwise:
 					say "As much as it tries to force its way in, there is just no room.  The clearly frustrated tentacle starts spanking your [HipDesc], seemingly as some sort of punishment!  Your [asshole] and entire ass area is getting very sore!";
-					AssRuin 3;
+					ruin asshole times 3;
 					BodyRuin 3;
 			otherwise if P is 2 and Z is 2:
 				say "It starts poking around near the entrance to your already full [vagina]!  It seems to want in, ignoring the fact that it's already being obscenely stretched.  As it starts to try and push the tip in with incredible force, your poor [vagina] feels on fire.  ";
@@ -232,7 +232,7 @@ To LakeMonsterCheck (S - a number):
 					increase P by 2;
 				otherwise:
 					say "As much as it tries to force its way in, there is just no room.  The clearly frustrated tentacle starts spanking your inner thighs and pubic area, seemingly as some sort of punishment!  Your [vagina] and entire crotch area is getting very sore!";
-					PussyRuin 3;
+					ruin vagina times 3;
 					BodyRuin 3;
 			otherwise if M is 0 or M is 2:
 				say "It journeys up your front and to your head.  It rounds towards your face and stays there, pointing.  From here you can see a tiny opening at the tip of the tentacle... and you realise that these tentacles definitely are this monster's sex organs!";
@@ -284,13 +284,13 @@ To LakeMonsterCheck (S - a number):
 				say "The tentacle destroying your [vagina] pumps your womb full of warm monster [semen], and you can feel your belly stretching to accommodate the huge load.  The amount of [semen] is beyond inhuman!  It just won't stop coming...";
 				now a random lake monster is penetrating vagina; [Allows virginity to be taken, pregnancy]
 				WombFill 7;
-				PussyRuin 3;
+				ruin vagina times 3;
 				now a random lake monster is not penetrating vagina;
 			otherwise if P is 4:
 				say "The tentacles destroying your [vagina] both pump your womb more than full of warm monster [semen], and you can feel your belly stretching and inflating to accommodate the huge loads.  This amount of [semen] is beyond inhuman!  It just won't stop coming.  There's absolutely no space for it to squirt out around the tentacles so it is all kept inside you...";
 				now a random lake monster is penetrating vagina; [Allows virginity to be taken, pregnancy]
 				WombFill 11;
-				PussyRuin 5;
+				ruin vagina times 5;
 				now a random lake monster is not penetrating vagina;
 			if A is 1 or A is 3:
 				say "The tentacle pointing at your [asshole] deposits its load all over your [HipDesc] and thighs.  The stream of [semen] seems just unending, and doesn't stop until your entire bottom half is soaked in the stuff.";
@@ -300,12 +300,12 @@ To LakeMonsterCheck (S - a number):
 				if Egg Laying Fetish is 1:
 					say "The tentacle ruining your [asshole] bulges, becoming nearly twice as wide.  You moan with a mixture of intense pleasure and pain as your [asshole] is stretched to new levels.  From the bottom end of the tentacle where it emerges from the lake, you see a huge bulge start to slowly travel along its length.  Your eyes widen, and if it were possible your eyes would have widened even further when you see three more bulges of the same size appear behind it.  You wriggle and wrestle with your binds but the monster easily holds you in place as the bulges reach your rear.[line break]As the first solid bulge reaches your [asshole], you feel the immense pressure placed against it and shriek [if M is 2 or M is 3]through the tentacle in your mouth [end if]in fear.  Your sphincter does not yet yield, the object is just too big!  The tip of the object has lodged itself at the entrance but isn't making any more progress.  But as the other bulges catch up, they push the ones in front, doubling, tripling and then quadrupling the force trying to get the first one inside.  All of a sudden your [asshole] gapes that slight bit more, and all four objects go rushing at incredible velocity into your belly, mercilessly rubbing against the inside walls of your ass as they do.  Your belly instantly bulges out to an impossible size, showing you and the rest of this world just how full you now are.";
 					AssFill 4 Large Eggs;
-					AssRuin 4;
+					ruin asshole times 4;
 					now a random lake monster is not penetrating asshole;
 				otherwise:
 					say "The tentacle ruining your [asshole] keeps thrusting as it ejaculates, and the warm sloshy feeling soon turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all out.  Your belly balloons under the pressure from your full rectum and full innards as the [semen] flows the wrong way up through your body.";
 					AssFill a random number from 10 to 15;
-					AssRuin 3;
+					ruin asshole times 3;
 				now a random lake monster is not penetrating asshole;
 			if A is 4:
 				now a random lake monster is penetrating asshole; [Allows virginity to be taken]
@@ -313,12 +313,12 @@ To LakeMonsterCheck (S - a number):
 					say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate.  Instead of the [semen] you were expecting, the tentacles seem to be pumping you full of small solid spherical objects!  The uncomfortable feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all back out.  Your belly balloons under the pressure from your full rectum and full innards.";
 					AssFill a random number from 10 to 15 small eggs;
 					AssFill a random number from 10 to 15 small eggs;
-					AssRuin 4;
+					ruin asshole times 4;
 				otherwise:
 					say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate, and the warm sloshy feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all out.  Your belly balloons under the pressure from your full rectum and full innards as the [semen] flows the wrong way up through your body.";
 					AssFill a random number from 8 to 15;
 					AssFill a random number from 8 to 15;
-					AssRuin 5;
+					ruin asshole times 5;
 				now a random lake monster is not penetrating asshole;
 			say "Having finally finished with you, the monster chucks you onto the ground.  The tentacles do not disappear however, seeming to favour this part of the lake now that it is full of the gallons of [semen] that didn't manage to stay on or inside you.";
 			now the stance of the player is 1;

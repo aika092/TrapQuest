@@ -33,7 +33,7 @@ Check waiting:
 				compute extra turn;
 				if a random number between 1 and 6 is 1 and the player is not in Dungeon12:
 					say "The [M]'s [manly-penis] twitches inside of you.";
-					AssRuin 1;
+					ruin asshole;
 			if the sleep of M is 0:
 				say "The [M] pulls out of you, and assuming that you are unconscious, and wanders off to search for other victims.";
 				bore M for 50 seconds;
@@ -145,23 +145,23 @@ To HookWait:
 			now X is unrevealed;
 		otherwise if WomanBimbo < 5:
 			say "She grins at you.  [second custom style]'Uh-oh, you look like you're having a lot of fun there!  Do you need some help?'[roman type][line break]She pulls at the hook, but slips when she gets it halfway out.  It shoots back into your [asshole], causing you to yelp in pain!";
-			AssRuin 1;
+			ruin asshole;
 			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]  This time she gets it all the way out, but just before you can react and step to the side, she loses her grip again!  It shoots back in with twice the force of last time!";
-			AssRuin 1;
+			ruin asshole;
 			say "[second custom style]'Silly girl, try to move out the way this time.'[roman type][line break]  This time as soon as it's all the way out, you leap away, finally free!  The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise:
 			say "[second custom style]'*Giggle*.  Look who it is!  You look like you're having fun there.  I'm jealous!  Want me to help you out?'[roman type][line break]She pulls the hook out a small amount then lets go.  The tension of the rope forces it back inside!  You scream in surprise.";
-			AssRuin 1;
+			ruin asshole;
 			say "[second custom style]'That looks like so much fun!'[roman type][line break]She pulls it out a bit more but then again lets go.  You squeal in discomfort.";
-			AssRuin 1;
+			ruin asshole;
 			let N be 4;
 			while delayed fainting is 0 and the player is not unable to orgasm so soon and N > 0:
 				decrease N by 1;
 				say "[W] keeps fucking you with the ass hook!  [second custom style]'[one of]Are you going to cum from your naughty butthole?'[or]Wee! Isn't this fun?'[or]Why are you screaming?   Am I not doing it hard enough for you?'[or]This is what you meant by [']Get me off['], right?'[or]You look so sexy right now![or]I'm getting horny just watching you squirm![in random order][roman type][line break]";
-				AssRuin 1;
+				ruin asshole;
 				now seconds is 6;
 				compute extra turn;
 			if delayed fainting is 0 and N > 0:

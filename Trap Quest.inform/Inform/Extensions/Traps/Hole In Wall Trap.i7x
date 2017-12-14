@@ -151,8 +151,8 @@ To compute punishment of (P - hole-spank):
 		if there is worn ass plugging clothing:
 			let K be a random worn ass plugging clothing;
 			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if].  Ouch!";
-			if K is vagina plugging, Pussyruin 2;
-			if K is not jelldo, Assruin 2;
+			if K is vagina plugging, ruin vagina times 2;
+			if K is not jelldo, ruin asshole times 2;
 		repeat with K running through ass covering clothing:
 			decrease pain-factor by a random number between 0 and 1;
 		let D be a random worn diaper;
@@ -326,7 +326,7 @@ To compute punishment of (P - hole-plug):
 			otherwise:
 				now D is in the location of hole-in-wall;
 		summon C cursed;
-		AssRuin 1;
+		ruin asshole;
 		try examining C.
 
 

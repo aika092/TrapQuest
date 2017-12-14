@@ -27,12 +27,12 @@ Carry out PinkEating:
 				if M is penetrating asshole:
 					now the player-reaction of the player is resisting;
 					say "The [M] is ripped out of your [asshole][if M is penetrating vagina] and [vagina][end if] at an incredible speed, causing a loud pop!  Your mind reels from the brutal damage done to the inside of your poor hole[if M is penetrating vagina]s[end if]!";
-					AssRuin 2;
-					if M is penetrating vagina, PussyRuin 2;
+					ruin asshole times 2;
+					if M is penetrating vagina, ruin vagina times 2;
 				otherwise if M is penetrating vagina:
 					now the player-reaction of the player is resisting;
 					say "The [M] is ripped out of your [vagina] at an incredible speed, causing a loud pop.  Your mind reels from the brutal damage done to the inside of your [vagina]!";
-					PussyRuin 2;
+					ruin vagina times 2;
 				dislodge M;
 	teleport to Dungeon12;
 	remove all interest;

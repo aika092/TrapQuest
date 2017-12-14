@@ -657,40 +657,48 @@ To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 
 	otherwise:
 		decide on 0.
 
-To compute anal climax of (M - a gladiator):
-	TimesFuckedUp M by 1;
-	say CreampieFlav of M;
-	if image cutscenes is 1, display figure of gladiator cutscene 4;
-	assfill the semen load of M;
-	now M is not penetrating asshole;
+To compute post climax effect of (M - a gladiator) in (F - a fuckhole):
 	unless the sleep of M is 0:
 		now the sleep of M is 200;
 		if newbie tips is 1, say sleeping tip;
 	FavourUp M;
 	bore M.
 
-To compute vaginal climax of (M - a gladiator):
-	TimesFuckedUp M by 1;
-	if the player is a pussy slut or M is wrapped or (the openness of vagina <= a random number between 2 and 7):
-		if image cutscenes is 1, display figure of gladiator cutscene 3;
-		say CreampieFlav of M;
-		now the sleep of M is 200;
-		wombfill the semen load of M;
-		if newbie tips is 1, say sleeping tip;
-	otherwise:
-		if image cutscenes is 1, display figure of gladiator cutscene 6;
-		say PullOutFlav of M;
-		if bukkake fetish is 1, CumFaceUp the semen load of M;
-		otherwise SemenPuddleUp the semen load of M;
-		if a random number between 1 and 2 is 1 or bukkake fetish is 0:
-			say "Her eyes roll back, and after a long sigh of relief, [he of M] slumps over and falls asleep.";
-			now the sleep of M is 100;
-			if newbie tips is 1, say sleeping tip;
-		otherwise:
-			say "She loses interest.";
-	now M is not penetrating vagina;
-	FavourUp M;
-	bore M.
+To decide if (M - a gladiator) is willing to creampie (F - vagina):
+	if the player is a pussy slut, decide yes;
+	if there is a worn sword and the largeness of breasts > 5, decide yes;
+	if the openness of vagina <= a random number between 2 and 7, decide yes;
+	decide no.
+
+To get creampie image of (M - a gladiator) in (F - vagina):
+	display figure of gladiator cutscene 3.
+
+To get creampie image of (M - a gladiator) in (F - asshole):
+	display figure of gladiator cutscene 4.
+
+To compute creampie of (M - a gladiator) in (F - a fuckhole):
+	if image cutscenes is 1, get creampie image of M in F;
+	say CreampieFlav of M in F;
+	now the sleep of M is 200;
+	Wombfill the semen load of M;
+	if newbie tips is 1, say sleeping tip.
+
+To get clean pull out image of (M - a gladiator) in (F - a fuckhole):
+	display figure of gladiator cutscene 6.
+
+To compute (M - a gladiator) messily pulling out of (F - a fuckhole):
+	get messy pull out image of M in F;
+	say MessyPullOutFlav of M in F;
+	CumFaceUp the semen load of M;
+	say "[big he of M] loses interest.";
+
+To compute (M - a gladiator) cleanly pulling out of (F - a fuckhole):
+	get clean pull out image of M in F;
+	say PullOutFlav of M in F;
+	SemenPuddleUp the semen load of M;
+	say "[big his of M] eyes roll back, and after a long sigh of relief, [he of M] slumps over and falls asleep.";
+	now the sleep of M is 100;
+	if newbie tips is 1, say sleeping tip;
 
 To say CondomAcceptFlav of (M - a gladiator):
 	say "The [M] [one of]smiles disgustedly[or]laughs humourlessly[or]scoffs[at random] and takes a condom.  Discarding the wrapper, [he of M] rolls it down the length of [his of M] [manly-penis].  You stare[one of] [if the sex addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the sex addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly, curling your upper lip[end if].[or], unable to [if the sex addiction of the player < 13 and the sex addiction of the player > 6]bring yourself to [end if]look away[or]your mouth opening unconsciously[or][if the sex addiction of the player < 7]unexcitedly[otherwise]enviously[end if] as the rubber makes intimate contact with every inch of the massive tool[or] as the gleaming latex makes every bump and vein glisten [if the sex addiction of the player < 7]unappealingly[otherwise]temptingly[end if][at random].".
@@ -703,22 +711,17 @@ To decide which number is the condom resistance of (M - a gladiator):
 To say CondomRejectFlav of (M - a gladiator):
 	say "[speech style of M][one of]Ha. As if you deserve even that.[or]You are in no position to be asking favours of me, whore.[or]I will fuck you as I please. You deserve nothing more.[at random][roman type] Looks like [he of M][']s going in bare...".
 
-To say CondomPieFlav of (M - a gladiator):
-	let F be a random fuckhole penetrated by M;
+To say CondomPieFlav of (M - a gladiator) in (F - a fuckhole):
 	say "[one of]The [M] roars with pleasure, tightening her grip as the condom begins to fill up with warm [semen]. She continues fucking you until her magical supply of [semen] has been completely and thoroughly emptied inside of it. [speech style of M]'That actually felt... pretty... amazing...'[roman type]  You feel her hands leave your hips as she pulls out, peeling off the condom before falling over, asleep.[or]The [M] grunts, her [manly-penis] throbbing as it unloads into the surprisingly stretchy latex condom. She sighs in satisfaction, pulling out and drowsily peeling it off before slumping over, asleep.[or][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type]  You're used to this series of events by now, and find yourself clenching around the [M]'s [manly-penis] as the condom catches several jets of [semen]. You wait expectantly, and after a few seconds she pulls out, removing the condom before immediately falling asleep.[then at random]";
 
-To say CreampieFlav of (M - a gladiator):
-	let F be a random fuckhole penetrated by M;
-	if M is wrapped:
-		say CondomPieFlav of M;
-	otherwise:
-		say "[one of]The [M] roars with pleasure, tightening her grip as warm [semen] begins flowing inside of you. She continues fucking you until her magical supply of [semen] has been thoroughly and completely emptied into your [variable F]. [if M is insane gladiator][speech style of M]'I[']ll be back again. Yes. Again and again.'[roman type] You feel her hands leave your hips as she pulls out, somehow as horny as ever[otherwise if M is wild gladiator][speech style of M]'Recover. I will return when I am ready for your next tribute.'[roman type] You feel her hands squeeze your [AssDesc] as she pulls out and climbs to her feet.[otherwise][speech style of M]'That actually felt... pretty... amazing...'[roman type]  You feel her hands leave your hips as she pulls out and falls over, asleep[end if].[or]The [M] grunts, her [manly-penis] throbbing as she unloads into your [variable F]. She sighs in satisfaction, roughly shoving you off her [manly-penis][if M is insane gladiator], still as horny as ever but no longer interested in you[otherwise if M is wild gladiator] and climbing to her feet.[otherwise] before slumping over, asleep[end if].[or][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type]  You're used to this series of events by now, and find yourself clenching around the [M]'s [manly-penis] as she shoots her jets of [semen] deep inside you.  You wait expectantly, and then after a few seconds feel [if M is insane gladiator]her get up, having lost interest[otherwise if M is wild gladiator]her pull out and get to her feet, satisfied for now[otherwise]and hear her slump to the ground, asleep[end if].[then at random]".
+To say CreampieFlav of (M - a gladiator) in (F - a fuckhole):
+	say "[one of]The [M] roars with pleasure, tightening her grip as warm [semen] begins flowing inside of you. She continues fucking you until her magical supply of [semen] has been thoroughly and completely emptied into your [variable F]. [if M is insane gladiator][speech style of M]'I[']ll be back again. Yes. Again and again.'[roman type] You feel her hands leave your hips as she pulls out, somehow as horny as ever[otherwise if M is wild gladiator][speech style of M]'Recover. I will return when I am ready for your next tribute.'[roman type] You feel her hands squeeze your [AssDesc] as she pulls out and climbs to her feet.[otherwise][speech style of M]'That actually felt... pretty... amazing...'[roman type]  You feel her hands leave your hips as she pulls out and falls over, asleep[end if].[or]The [M] grunts, her [manly-penis] throbbing as she unloads into your [variable F]. She sighs in satisfaction, roughly shoving you off her [manly-penis][if M is insane gladiator], still as horny as ever but no longer interested in you[otherwise if M is wild gladiator] and climbing to her feet.[otherwise] before slumping over, asleep[end if].[or][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type]  You're used to this series of events by now, and find yourself clenching around the [M]'s [manly-penis] as she shoots her jets of [semen] deep inside you.  You wait expectantly, and then after a few seconds feel [if M is insane gladiator]her get up, having lost interest[otherwise if M is wild gladiator]her pull out and get to her feet, satisfied for now[otherwise]and hear her slump to the ground, asleep[end if].[then at random]".
 
-To say PullOutFlav of (M - a gladiator):
-	if bukkake fetish is 1:
-		say "[one of]The [M] pulls out abruptly, seizing you by the hair and wrenching your face toward [him of M].[or]The [M] grabs you by the hair, twisting your face toward [him of M] as [he of M] pulls out.[or]The [M] pulls out and flips you over, snarling as she over you.[or]The [M] flips you over, pulling out and kneeling over your face.[at random][speech style of M]'[one of]Wear it, whore!'[or]Wear this as evidence of your shame!'[or]I[']ll mark your face, whore!'[or]They will know when they see your face, whore!'[or]They will understand when they see your face, whore!'[in random order]'[roman type][line break]She rapidly pumps her [one of]throbbing[or]swollen[or]big[at random] [manly-penis], [one of]practically shivering with pleasure[or]holding back her moans[or]obviously trying not to moan[at random] as [he of M] [one of]ejaculates all over your face[or]unloads all over your face[or]paints your face with a hot, sticky load[or]blasts your face with several ropes of fresh, sticky [semen][in random order].";
-	otherwise:
-		say "[one of]The [M] pulls out abruptly, gasping with pleasure as she paints the floor with fresh, sticky [semen].[or]The [M] suddenly pushes you off, emitting several badly stifled moans as [he of M] shoots [his of M] load all over the floor.[at random][speech style of M]'[one of]Like I'd risk impregnating...you...'[or]Were you hoping I'd waste....my seed...on you...'[or]Even I wouldn't seed a...whore...like you...'[or]I wouldn[']t wast my...seed...on you...'[at random][roman type]".
+To say MessyPullOutFlav of (M - a gladiator) in (F - a fuckhole):
+	say "[one of]The [M] pulls out abruptly, seizing you by the hair and wrenching your face toward [him of M].[or]The [M] grabs you by the hair, twisting your face toward [him of M] as [he of M] pulls out.[or]The [M] pulls out and flips you over, snarling as she climb ontop you.[or]The [M] flips you over, pulling out and kneeling over your face.[at random][speech style of M]'[one of]Wear it, whore!'[or]Wear this as evidence of your shame!'[or]I[']ll mark your face, whore!'[or]They will know when they see your face, whore!'[or]They will understand when they see your face, whore!'[in random order]'[roman type][line break][big he of M] rapidly pumps her [one of]throbbing[or]swollen[or]big[at random] [manly-penis], [one of]practically shivering with pleasure[or]holding back [his of M] moans[or]obviously trying not to moan[at random] as [he of M] [one of]ejaculates all over your face[or]unloads all over your face[or]paints your face with a hot, sticky load[or]blasts your face with several ropes of fresh, sticky [semen][in random order].";
+
+To say PullOutFlav of (M - a gladiator) in (F - a fuckhole):
+	say "[one of]The [M] pulls out abruptly, gasping with pleasure as [he of M] paints the floor with fresh, sticky [semen].[or]The [M] suddenly pushes you off, emitting several badly stifled moans as [he of M] shoots [his of M] load all over the floor.[at random][speech style of M]'[one of]Like I[']d risk...impregnating...you...'[or]Were you hoping I[']d waste....my seed...on you?'[or]Even I wouldn[']t seed a...whore...like you...'[or]I wouldn[']t waste my...seed...on you...'[at random][roman type]".
 
 To say angry punishment insult of (M - a gladiator):
 	if M is wild gladiator:
@@ -799,9 +802,14 @@ To compute (M - a gladiator) entering mouth:
 		say "The [M] sees that you are already occupied and loses interest.";
 		distract M.
 
+To get failed facial dodge image for (M - a gladiator):
+	display figure of gladiator cutscene 10.
+
 To say FailedFacialDodge of (M - a gladiator):
-	if image cutscenes is 1, display figure of gladiator cutscene 10;
 	say "[first custom style]'[one of]Not today[or]Not this time[or]Nice try[or]Get back here[in random order], [one of]cretin[or]scum[or]loser[in random order]!'[roman type][line break][one of]The [M] grabs your head and holds you still, emptying [his of M] load all over your face![or]The [M] manages to grab you again, holding you still as [he of M] ejaculates all over your face.[or]The [M] cackles as [he of M] holds your head and blasts it with a rather inhuman amount of [semen].[or]Your lips make a loud [italic type]pop[roman type] as the [M] suddenly pulls out and begins to cum all over your mouth and nose.  By the time [he of M] has finished painting your face, it is rather thoroughly coated in warm [semen].[in random order]".
+
+To get facial accepting image for (M - a gladiator):
+	get failed facial dodge image for M.
 
 To say UnavoidedFacial of (M - a gladiator):
 	if image cutscenes is 1, display figure of gladiator cutscene 10;
@@ -1418,24 +1426,25 @@ To compute (M - a monster) stomping (N - a insane gladiator):
 To say PresentAcceptanceFlav of (M - an insane gladiator):
 	say "[speech style of M]'[one of]She wants it....disgusting. Arousing. Yes.'[or]I'm going to punish her. Yes. She's disgusting.'[stopping][roman type] The [M] seems convinced by your request!".
 
-To compute vaginal climax of (M - an insane gladiator):
-	let R be a random number between 1 and 2;
-	if asshole is not actually occupied and the number of worn top level ass protection clothing is 0 and R is 1 and M is unwrapped:
-		say PullOutFlav of M;
-		wombfill the semen load of M - 1;
-		if bukkake fetish is 1, CumThighsUp 1;
-		otherwise SemenPuddleUp 1;
-		now M is not penetrating vagina;
-		now the sex-length of M is 3;
-		now M is penetrating asshole;
-		RuinRoll Asshole;
-	otherwise:
-		say CreampieFlav of M;
-		wombfill the semen load of M;
-		now M is not penetrating vagina;
-		TimesFuckedUp M by 1;
-		bore M;
-		DifficultyUp M by 1.
+To compute creampie of (M - a wild gladiator) in (F - a fuckhole):
+	say CreampieFlav of M in F;
+	compute M finishing in F;
+	bore M;
+	DifficultyUp M by 1.
+
+To decide if (M - an insane gladiator) is willing to creampie (F - vagina):
+	if asshole is actually occupied or the number of worn top level ass protection clothing > 0, decide yes;
+	if the player is a pussy slut, decide yes;
+	if a random number between 1 and 5 is 1, decide yes;[she is very likely to want more]
+	decide no.
+
+To compute (M - an insane gladiator) pulling out of (F - vagina):
+	say PullOutFlav of M;
+	compute M finishing in F;
+	now M is not penetrating vagina;
+	now the sex-length of M is 2;
+	now M is penetrating asshole;
+	RuinRoll Asshole.		
 
 To say CondomPieFlav of (M - an insane gladiator):
 	let F be a random fuckhole penetrated by M;
@@ -1446,7 +1455,7 @@ To say CondomPinFlav of (M - an insane gladiator) on (C - a clothing):
 	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]!  [or]The condom fuses to your [C] just like before.  [or]The condom fuses to your [C].  [stopping]".
 
 To say PullOutFlav of (M - an insane gladiator):
-	say "[one of]The [M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or]The [M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [speech style of M]'[one of]I came, but I'm still horny. I need to keep going. Yes...'[or]More. I need more. Yes...'[at random][roman type] She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her cum-slicked knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
+	say "[one of]The [M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or]The [M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [speech style of M]'[one of]I came, but I'm still horny. I need to keep going. Yes...'[or]More. I need more. Yes...'[at random][roman type] She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her [semen]-dripping knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
 
 To say angry punishment clothing destruction of (M - an insane gladiator) on (C - a clothing):
 	say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]SHOW ME! Hiding them...'[otherwise if C is ass covering and the player is female]You're hiding them...your fuckholes. I know. Yes.'[otherwise if C is ass covering]You're hiding it....your fuckhole. I know. Yes.'[otherwise]NAKED! MORE NAKED!'[end if][roman type][line break]".
@@ -1501,7 +1510,7 @@ To set up (M - a wild gladiator):
 	now the health of M is the maxhealth of M.
 
 To say SummoningFlav of (M - a wild gladiator):
-	if the location of the player is Woods30, say "You hear some grunting inside the statue, primal, but distinctly sexual in tone. A nude woman drops out of the stony opening[if trap fetish is 0], scanning the surrounding area as she strokes the softening [manly-penis] hanging between her legs[otherwise], resting an intimidating looking sword over her shoulder as she scans the surrounding area[end if].";
+	if M is in the location of the player, say "You hear some grunting inside the statue, primal, but distinctly sexual in tone. A nude woman drops out of the stony opening[if trap fetish is 0], scanning the surrounding area as she strokes the softening [manly-penis] hanging between her legs[otherwise], resting an intimidating looking sword over her shoulder as she scans the surrounding area[end if].";
 	otherwise say "You hear leaves rustling from somewhere nearby.".
 
 Definition: a wild gladiator (called M) is uniquely unfriendly:
@@ -1562,23 +1571,24 @@ To compute kneeling reaction of (M - a wild gladiator):
 To say PresentAcceptanceFlav of (M - a wild gladiator):
 	say "[speech style of M]'[one of]I knew you would see things my way.'[or]I am glad you are beginning to learn your place.'[at random][roman type] The [M] seems convinced by your request!".
 
-To compute vaginal climax of (M - a wild gladiator):
-	let R be a random number between 1 and 2;
-	if asshole is not actually occupied and the number of worn top level ass protection clothing is 0 and R is 1 and M is unwrapped:
-		say PullOutFlav of M;
-		wombfill the semen load of M - 1;
-		if bukkake fetish is 1, CumThighsUp 1;
-		otherwise SemenPuddleUp 1;
-		now M is not penetrating vagina;
-		now the sex-length of M is 4;
-		now M is penetrating asshole;
-		RuinRoll Asshole;
-	otherwise:
-		say CreampieFlav of M;
-		wombfill the semen load of M;
-		now M is not penetrating vagina;
-		TimesFuckedUp M by 1;
-		bore M.
+To decide if (M - a wild gladiator) is willing to creampie (F - vagina):
+	if asshole is actually occupied or the number of worn top level ass protection clothing > 0, decide yes;
+	if the player is a pussy slut and a random number between 1 and 2 is 1, decide yes;[if you're a pussy slut, the wild gladiator gives you a 1 in 2]
+	if a random number between 1 and 3 is 1, decide yes;
+	decide no.
+
+To compute (M - a wild gladiator) pulling out of (F - vagina):
+	say PullOutFlav of M;
+	compute M finishing in F;
+	now M is not penetrating vagina;
+	now the sex-length of M is 4;
+	now M is penetrating asshole;
+	RuinRoll Asshole.
+
+To compute creampie of (M - a wild gladiator) in (F - a fuckhole):
+	say CreampieFlav of M in F;
+	compute M finishing in F;
+	bore M.
 
 To say CondomRejectFlav of (M - a wild gladiator):
 	say "[speech style of M][one of]Do not insult me.[or]You are my trophy. Why should I care if you do not want me to come inside you?[or]No. You will not deny me my right.[at random][roman type] Looks like [he of M][']s going in bare...".
@@ -1591,7 +1601,7 @@ To say CondomPieFlav of (M - a wild gladiator):
 	say "[one of]The [M] roars with pleasure, tightening her grip as the condom begins to fill up with warm [semen]. She continues fucking you until her magical supply of [semen] has been completely and thoroughly emptied inside of it. [speech style of M]'Recover. I will return when I am ready for your next tribute.'[roman type] You feel her hands squeeze your hips as she pulls out and carefully peels it off.[or]The [M] grunts, her [manly-penis] throbbing as she unloads into the thin latex condom. She sighs in satisfaction, roughly shoving you off her [manly-penis] before climbing to her feet and carefully peeling it off.[or][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type]  You're used to this series of events by now, and find yourself clenching around the [M]'s [manly-penis] as the condom catches several jets of [semen]. You wait expectantly, and after a few seconds she pulls out and climbs to her feet, removing the condom with a satisfying snap.[then at random]".
 
 To say PullOutFlav of (M - a wild gladiator):
-	say "[one of]The [M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or]The [M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [speech style of M]'[one of]I am not finished yet. Not at all....I will have to claim you thoroughly.'[or]We[']re not done yet, are we slut? You deserve to be claimed very thoroughly.'[or]I am afraid you have given me no choice. I will have to claim you.....thoroughly.'[at random][roman type] She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her cum-slicked knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
+	say "[one of]The [M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or]The [M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [speech style of M]'[one of]I am not finished yet. Not at all....I will have to claim you thoroughly.'[or]We[']re not done yet, are we slut? You deserve to be claimed very thoroughly.'[or]I am afraid you have given me no choice. I will have to claim you.....thoroughly.'[at random][roman type] She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her slick knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
 
 To say angry punishment clothing destruction of (M - a wild gladiator) on (C - a clothing):
 	say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]Challenge me now, whore, and see what happens. Perhaps then you will not be so disrespectful.'[otherwise if C is ass covering and the player is male]You belong to me. Perhaps if your [asshole] is on display, the jungle will reveal to you the slut you really are?[otherwise if C is ass covering]You belong to me. Perhaps if your [fuckholes] are on display, the jungle will reveal to you the slut you really are.'[otherwise]I own you, slut. You will no longer delude yourself by concealing your body from me!'[end if][roman type][line break]".

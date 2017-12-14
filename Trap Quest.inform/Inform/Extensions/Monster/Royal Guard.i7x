@@ -485,6 +485,9 @@ To say SexResistFlav of (M - a royal guard):
 
 Chapter 1 - Attack
 
+To get orgasm image of (M - a royal guard) in (F - a fuckhole):
+	display figure of guard cutscene 3.
+
 To compute the flying player taunting of (M - a royal guard):
 	if a random number from 1 to 6 is 1:
 		say "The [M] taunts you.  [speech style of M]'[if the class of the player is princess][one of]My Princess, what happened to your sense of dignity?![or]You shame our kingdom with your acts, my Princess.  I shall feel no regret for what I have in mind for you when you descend.[or]No true royalty would allow such a humiliating scenario to befall themselves.[or]Our Princess is naught but a dumb cow in need of breeding.  Oh how I have dreamed for such an opportunity![or]Princess!  Come down from there so that I can use you to deposit my seed.  It would seem to be all you are good for now.[or]Are you really even the Princess?  Or are you just a dumb obese whore in royal dress?[in random order]'[otherwise][one of]You wenches are so foolish, getting yourselves into such humiliating situations![or]You look like a life sized balloon![or]How do you expect anyone to respect you, never mind a noble such as myself?[or]Dumb fat girls deserve nothing less than a good ruining!  I shall wait for you to descend.[or]Come down, little piggy, let me play with you.[or]Fat useless females like you are my favourite kind to use to relieve myself.[in random order]'[end if][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
@@ -499,6 +502,9 @@ To say SwallowDemand of (M - a royal guard):
 		say "The [M] gives you a hopeful look.";
 	otherwise:
 		say "[speech style of M][one of]'I have prepared a gift for you, [if the class of the player is princess]princess[otherwise]wench[end if]. Do not waste a drop.'[or]'Swallow like a good whore and this will be the end of your punishment.'[or]'You disgust me, [if the class of the player is princess]princess[otherwise]whore[end if]. Swallow my seed, or I will be forced to administer further punishment.'[or]'I have decided that you will carry the evidence of your punishment in your belly.'[or]'Know that I have been merciful with you. Swallow, and I won't stop.'[or]'My mercy is at a premium, wench. Swallow if you know what's good for you.'[or]'Swallow like the filthy whore you are, or face the consequences.'[or]'Swallow. It is not a request.'[in random order][roman type][line break]".
+
+To get oral creampie image for (M - a royal guard):
+	display figure of guard cutscene 4.
 	
 To satisfy (M - a royal guard) for (N - a number) seconds:
 	reset submissive wenches;
@@ -509,45 +515,36 @@ To satisfy (M - a royal guard) for (N - a number) seconds:
 	otherwise:
 		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
 
-To compute anal climax of (M - a royal guard):
-	if image cutscenes is 1:
-		if the reaction of the player is 0, display figure of guard cutscene 5;
-		otherwise display figure of guard cutscene 6;
-	say CreampieFlav of M;
+To compute unique climax of (M - a royal guard) in (F - a fuckhole):	
+	if M is wrapped, compute wrapped climax of M in F;
+	otherwise compute unprotected climax of M in F.
+
+To get creampie image of (M - a royal guard) in (F - a fuckhole):
+	if the reaction of the player is 0, display figure of guard cutscene 5;
+	otherwise display figure of guard cutscene 6;
+
+To compute post climax effect of (M - a royal guard) in (F - a fuckhole):
 	now the sleep of M is 200;
 	FavourUp M;
-	assfill the semen load of M;
-	dislodge M;
 	if the class of the player is princess, compute happy reward of M;
 	if newbie tips is 1, say sleeping tip;
 	reset submissive wenches;
-	TimesFuckedUp M by 1;
 	bore M.
 
-[[big he of M] thinks of you as a whore, but he'd rather not drop one in your pussy. Expect a creampie if you're really attractive]
-To compute vaginal climax of (M - a royal guard):
-	if image cutscenes is 1:
-		if the reaction of the player is 0, display figure of guard cutscene 5;
-		otherwise display figure of guard cutscene 6;
-	if M is mating or (M is princess-consort and the class of the player is princess) or the player is a pussy slut or the favour of M >= (a random number between 20 and 25) - the appearance of the player or M is wrapped:
-		say CreampieFlav of M;[the more [he of M] likes you, the more likely a creampie]
-		wombfill the semen load of M;
-	otherwise:
-		say PullOutFlav of M;
-		if bukkake fetish is 1, CumThighsUp the semen load of M;
-		otherwise SemenPuddleUp the semen load of M;
-	now the sleep of M is 200;
-	FavourUp M;
-	dislodge M;
-	if the class of the player is princess, compute happy reward of M; [decreases the blue-balls of the guard by two and increases [his of M] favour. This happens silently because he's sleeping.]
-	if newbie tips is 1, say sleeping tip;
-	reset submissive wenches;
-	TimesFuckedUp M by 1;
-	bore M.
-	
+To decide if (M - a royal guard) is willing to creampie (F - vagina):
+	if M is mating, decide yes;
+	if the class of the player is princess:
+		if M is princess-consort, decide yes;
+		decide no;
+	if the player is a pussy slut, decide yes;
+	if the favour of M >= (a random number between 20 and 25) - the appearance of the player, decide yes;[He thinks of you as a whore, but he'd rather not drop one in your pussy. Expect a creampie if you're really attractive]
+	decide no.
 
-To say PullOutFlav of (M - a royal guard):
-	say "[one of]The [M] roars with pleasure, barely pulling out as [he of M] explodes, spraying [if bukkake fetish is 1]your crotch with thick, creamy [end if][semen][if bukkake fetish is 0] all over the ground[end if].[or]The [M] grunts, [manly-penis] throbbing powerfully as [he of M] pulls out and douses [if bukkake fetish is 1]your crotch[otherwise]the ground[end if] with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breath a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
+To say MessyPullOutFlav of (M - a royal guard) in (F - a fuckhole):
+	say "[one of]The [M] roars with pleasure, barely pulling out as [he of M] explodes, spraying your crotch with thick, creamy [semen].[or]The [M] grunts, [manly-penis] throbbing powerfully as [he of M] pulls out and douses your crotchwith fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breath a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
+
+To say PullOutFlav of (M - a royal guard) in (F - a fuckhole):
+	say "[one of]The [M] roars with pleasure, barely pulling out as [he of M] explodes, spraying [semen] all over the ground.[or]The [M] grunts, [manly-penis] throbbing powerfully as [he of M] pulls out and douses the ground with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breath a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
 
 To decide which number is the condom resistance of (M - a royal guard):
 	if M is mating, decide on 6;[You're married, of course he's going in raw!]
@@ -565,15 +562,12 @@ To say CondomRejectFlav of (M - a royal guard):
 			now R is 1;
 	if R is 0, say "The [M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion.  Looks like [he of M][']s going in bare...".
 
-To say CondomPieFlav of (M - a royal guard):
+To say CondomPieFlav of (M - a royal guard) in (F - a fuckhole):
 	let F be a random fuckhole penetrated by M;
 	say "[one of]The [M] roars with pleasure, tightening [his of M] grip as the condom floods with warmth. [big he of M] continues fucking you until the [semen] filled pocket at the tip begins to bulge with the volume of [his of M] load, and with a sigh, you feel [his of M] hands leave your hips as [he of M] pulls out and falls asleep.[or]The [M] grunts, [his of M] [manly-penis] throbbing as [he of M] unloads [his of M] balls into the condom, which stretches readily to prevent [his of M] load from flowing freely into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [manly-penis] before slumping over, asleep.[or][if the semen addiction of the player < 7]The [M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as the condom bloats with [his of M] [semen], as if threatening your [variable F] with its slimy warmth. [big he of M] releases your hips, allowing you to crawl away in shame as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 15]The [M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as the condom bloats with [his of M] [semen]. [big he of M] releases your hips, thrusting a few more times before pulling out and falling asleep.[otherwise]The [M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as the condom bloats with [his of M] [semen]. [big he of M] releases your hips, allowing you to milk [his of M] [manly-penis] down to the last drop before pulling out and falling asleep.[end if][or][if the semen addiction of the player < 7]The [M] grunts and tightens [his of M] grip, causing you to whimper uncomfortably as [he of M] fills [his of M] condom with wave after wave of [semen], subtly stretching it more and more until finally [he of M] pulls out and falls asleep.[otherwise if the semen addiction of the player < 11]The [M] grunts and tightens [his of M] grip, causing you to look over your shoulder wearily as [he of M] fills [his of M] condom with wave after wave of [semen], subtly stretching it more and more until finally [he of M] pulls out and falls asleep.[otherwise]The [M] grunts and tightens [his of M] grip, causing you to coo happily as [he of M] fills the condom with wave after wave of [second custom style]yummy[roman type] [semen], subtly stretching it more and more until finally [he of M] pulls out and immediately falls asleep.[end if][at random]".
 
-To say CreampieFlav of (M - a royal guard):
-	let F be a random orifice penetrated by M;
-	if M is wrapped:
-		say CondomPieFlav of M;
-	otherwise if tutorial is 1:
+To say CreampieFlav of (M - a royal guard) in (F - a fuckhole):
+	if tutorial is 1:
 		say "The [M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] balls have been thoroughly and completely emptied into your [variable F]. You feel [his of M] hands leave your hips as [he of M] pulls out and sighs contently.";
 	otherwise:
 		say "[one of]The [M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] balls have been thoroughly and completely emptied into your [variable F]. You feel [his of M] hands leave your hips as [he of M] pulls out and falls over, asleep.[or]The [M] grunts, [his of M] [manly-penis] throbbing as [he of M] unloads [his of M] balls into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [manly-penis] before slumping over, asleep.[or][if the semen addiction of the player < 7]The [M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to crawl away in shame as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 15]The [M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, thrusting a few more times before pulling out and falling asleep.[otherwise]The [M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to milk [his of M] [manly-penis] down to the last drop before pulling out and falling asleep.[end if][or][if the semen addiction of the player < 7]The [M] grunts and tightens [his of M] grip. You whimper as [his of M] [manly-penis] pumps wave after wave of [semen] directly into your [variable F]. [big his of M]hands leave your hips as [he of M] pulls out and immediately falls asleep.[otherwise if the semen addiction of the player < 11]The [M] grunts and tightens [his of M] grip. You sigh quietly as [his of M] [manly-penis] pumps wave after wave of [semen] directly into your [variable F]. [big his of M]hands leave your hips as [he of M] pulls out and immediately falls asleep.[otherwise]The [M] grunts and tightens [his of M] grip. You coo happily as [his of M] [manly-penis] pumps wave after wave of [semen] directly into your [variable F]. [big his of M]hands leave your hips as [he of M] pulls out and immediately falls asleep.[end if][at random]".
@@ -589,11 +583,11 @@ To compute the dildo stuck taunting of (M - a royal guard):
 		if the chosen-orifice of M is asshole and the player is not ass protected:
 			say "Taking advantage of your humiliating situation, the guard[one of] whips out [his of M] [manly-penis] and [or], [stopping]pulling apart your ass cheeks, forces [his of M] [manly-penis] into your [asshole]! [big he of M] grabs your hips tightly to hold you still as [he of M] fucks you.  You're being double penetrated!";
 			now M is penetrating asshole;
-			AssRuin 1;
+			ruin asshole;
 		otherwise if the chosen-orifice of M is vagina and the player is not pussy protected:
 			say "Taking advantage of your humiliating situation, the guard[one of] whips out [his of M] [manly-penis], and [or], [stopping]holding your legs apart, sticks [his of M] [manly-penis] in your [vagina]!  [big his of M][manly-penis] slides right in!  [big he of M] grabs your thighs tightly to hold you still as [he of M] fucks you.  You're being double penetrated!";
 			now M is penetrating vagina;
-			PussyRuin 1;
+			ruin vagina;
 	if the chosen-orifice of M is not a fuckhole:
 		say "The [M] watches you with some amusement.".
 
@@ -1445,7 +1439,7 @@ To vaginal dominate (M - a royal guard):[with times-fucked we'll assume the sex 
 		Ruin vagina times 2;
 	otherwise if O < G + 2:
 		say "You hold [his of M] [manly-penis] steady, sighing with pleasure as you guide the first few inches into your [vagina]. [if the times-fucked of M > 0]It's just as big as you remember it, but as much as you're about to enjoy yourself, nothing could make you forget how much [he of M] needs to be taken down a peg[otherwise if the times-dominated of M > 0]It's deliciously big, but as much as you're about to enjoy yourself, you don't forget how important it is to remind [him of M] of [his of M] status as your own personal fucktoy[otherwise]It's nice and big, which makes the little rush of power from being on top all the more satisfying[end if]. [variable custom style]'So, still want me to unhand you? I'm sure it wouldn't be proper if anyone saw you underneath me like this.'[roman type] You chuckle, holding eye contact with him as you sink another few inches down [his of M] length. [big he of M] turns tomato red, [his of M] cock stiffening noticeably as [he of M] stares back at you in silence. You place a hand on his chest, feeling his heart pumping excitedly as you sway your hips, taunting him with the prospect of penetrating you even deeper as the smirk grows ever wider on your face. [big his of M] heart jumps when you start to pull off, and [he of M] quickly shakes [his of M] head as shame cracks like an egg over [his of M] cheeks. You would have preferred if [he of M] said it out loud, but [his of M] [manly-penis] is just too perfect for you to wait any longer, and you immediately begin to move your hips. [big his of M] shaft twitches and throbs as you fuck yourself without a hint of restraint, meeting every buck and twist of [his of M] hips with a sharp downward motion of your own, driving [him of M] in as hard and deep as possible. [big he of M]'s [if the times-dominated of M < 3]totally unprepared[otherwise]not even close to being able to handle[end if] the sudden increase in stimulation, and a powerful groan rumbles from [his of M] throat as he nears the edge.";
-		Ruin vagina times 1;
+		ruin vagina;
 	otherwise:
 		say "You hold [his of M] [manly-penis] loosely, emitting an 'Oooh' as you slide it fully into your [vagina].  [if the times-fucked of M > 0]It doesn't feel quite as big as it did when [he of M] had the control, but this time, it's up to you whether or not [he of M] gets to cum[otherwise if the times-dominated of M > 0]It feels smaller than you remember, but knowing this isn't [his of M] first time under you makes you certain you'll find a way for it to satisfy you[otherwise]It's not quite as big as you're accustomed to, but it's enough to satisfy you, which is good for [him of M], because [he of M] might have a chance to cum[end if] [variable custom style]'So, still want me to unhand you? I'm sure it wouldn't be proper if anyone saw you underneath me like this.'[roman type] You chuckle, leaning back so [he of M] has an uninterrupted view of the point where your nether lips meet the base of [his of M] shaft. [big his of M] [manly-penis] noticeably stiffens, and [he of M] stares silently for a few moments before your words actually reach [him of M], and a deep blush spreads over [his of M] face as [he of M] quickly shakes [his of M] head. You couldn't be happier to immediately drop all restraint, grabbing his shoulders as you wildly bounce on [his of M] [manly-penis]. [big he of M] tries to hide it, but [he of M][if the times-dominated of M < 3]'s already demonstrated to you time and again how much [he of M] loves being treated like your own personal fucktoy[otherwise]'s clearly more than a little turned on by being treated like a human fucktoy[end if], and you make sure he knows it. You hold eye contact as your [AssDesc] slaps [his of M] balls, meeting every buck and twist of [his of M] hips with a sharp movement of your own, driving [him of M] in as hard and deep as possible.  [big he of M] can't handle it for very long, and you feel [his of M] [manly-penis] begin to twitch and throb ominously as he nears the edge.";
 		gape vagina times 1;
@@ -1489,7 +1483,7 @@ To anal dominate (M - a royal guard):
 		Ruin asshole times 2;
 	otherwise if O < G + 2:
 		say "You grip the base of [his of M] shaft firmly, hissing through gritted teeth as your sphincter slowly parts for [his of M] invading [manly-penis]. It's [if the times-fucked of M > 0]just as big as it was last time [he of M] put it inside you, but it's much less intimidating when you're the one with the reins[otherwise if the times-dominated of M > 0]as huge as you remember it, which just makes you feel better about reusing [him of M] as your fucktoy[otherwise]so big. [big he of M] fills you thoroughly that it's impossible not to notice the even the tiniest movements of [his of M] hips, which makes it even better that you're going to be in control of the pace[end if]! [AnalTaunt M] work his [manly-penis] in and out of your [asshole]. As much as you want to relish the feeling of being in control and getting fucked at the same time, it's hard not to go fast. [big he of M] couldn't be a more perfect fit, and [if M is wrapped]even with the condom on,[otherwise]and[end if] the feeling of those fucking [second custom style]inches[roman type] sliding through your hole, constantly pressing on your prostate like a button that never quite goes down, is slowly driving you insane. Whatever restraint you were trying to hold onto quickly evaporates, and you moan uncontrollably as you rhythmically jam [his of M] [manly-penis] into your [second custom style]sissy spot[roman type]. [run paragraph on]";
-		Ruin asshole times 1;
+		ruin asshole;
 	otherwise:
 		say "You grip the base of [his of M] shaft firmly, emitting a long, spiteful moan as every inch of [his of M] [manly-penis] slides into your [asshole]. [if the times-fucked of M > 0]It feels good to have it inside you again, but unfortunately for [him of M], this time you're going to be the one calling the shots[otherwise if the times-dominated of M > 0]It feels good to have it inside you again, and even to let [him of M] know you still see [him of M] as nothing more than your own personal fucktoy[otherwise if O < G + 3]It's more than big enough to satisfy you, and even if it wasn't, your position of power gives you enough of a rush to make up for it[otherwise]It's not as big as you're accustomed to, but even if it was, the rush you get from your position of power is enough to satisfy you all on its own[end if]! [AnalTaunt M] work your hips up and down. It feels so good to let go, so good to let your [AssDesc] clap [his of M] balls, and [italic type]so fucking good[roman type] to let your hands rove [his of M] big, sexy arms and sculpted, muscular chest. Sticky precum collects in a pool on [his of M] belly as you jack-hammer yourself on his [manly-penis], making sure every downward motion drives it hard into your [second custom style]sissy cum-button[roman type]. [if the times-dominated of M < 3]The [M] can't handle this level of stimulation for long, and his breathing grows ragged as you get closer and closer to the edge, his [manly-penis] throbbing ominously as its master bucks and shivers below you[otherwise]The [M]'s body seems to respond to being ridden so enthusiastically, and you feel [him of M] buck and shift, his [manly-penis] throbbing ominously as you inch closer and closer to the edge[end if].";
 		gape asshole times 1;

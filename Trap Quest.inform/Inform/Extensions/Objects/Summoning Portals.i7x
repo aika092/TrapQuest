@@ -311,7 +311,7 @@ A time based rule (this is the woods summoning rule):
 To compute (G - giant-statue) regionally summoning (M - a monster):
 	summon M in the Woods;
 	now the next-summon of G is a random number between 0 and 5;
-	now the charge of G is 150 - (game difficulty * 10) + (the number of alive monsters in the woods * (5 - game difficulty));
+	now the charge of G is the active threshold of G + 70 + (the number of alive monsters in the woods * 2);
 
 To decide which object is the summonChoice of (G - a giant-statue):
 	let N be the next-summon of G;

@@ -70,9 +70,9 @@ To initialise latex prisoner:
 		if C is overdress:
 			layer C correctly;
 			if C is posture training, now C is blandness;
-	AssRuin 1;
+	ruin asshole;
 	if the player is female:
-		PussyRuin 1.
+		ruin vagina.
 
 [!<InitialiseBondagePrisoner>+
 
