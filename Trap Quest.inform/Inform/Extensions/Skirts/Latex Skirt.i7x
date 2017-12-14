@@ -40,7 +40,7 @@ To say ClothingDesc of (C - a black rubber skirt):
 
 Part 3 - Pink Rubber Miniskirt
 
-A pink rubber miniskirt is a kind of shorter rubber skirt.  There is 1 latex pink rubber miniskirt.  Printed name of pink rubber miniskirt is "[TQlink of item described][clothing-title-before]pink latex miniskirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink rubber miniskirt is "pls".  Figure of pink rubber miniskirt is the file "latexminiskirt1.png".
+A pink rubber miniskirt is a kind of shorter rubber skirt.  There is 1 latex pink rubber miniskirt.  Printed name of pink rubber miniskirt is "[TQlink of item described][clothing-title-before]pink latex miniskirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink rubber miniskirt is "prm".  Figure of pink rubber miniskirt is the file "latexminiskirt1.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber miniskirt):
 	decide on figure of pink rubber miniskirt.

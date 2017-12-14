@@ -163,7 +163,7 @@ To RuinRoll (F - a fuckhole):
 		otherwise if the soreness of F <= the previous soreness of F and the soreness of F < 10 and there is a live thing penetrating F and the number of lubricants covering F > 0:
 			say "The [lubricant] sloshing around inside your [variable F] has helped you take the [random live thing penetrating F] without getting any more sore!".
 
-[NB AssRuin & PussyRuin functions are in Asshole and Vagina extensions.  The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
+[NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions.  The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
 
 
 
@@ -181,8 +181,8 @@ REQUIRES COMMENTING
 
 +!]
 To heal (F - a fuckhole) times (X - a number):
-	if F is vagina, pussyheal X;
-	otherwise assheal X.
+	if F is vagina, heal vagina times X;
+	otherwise heal asshole times X.
 
 [!<CheckSorenessFaintingOfFuckhole>+
 

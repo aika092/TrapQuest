@@ -359,13 +359,13 @@ To compute (M - a mechanic) entering asshole:
 	otherwise say "[AssholePenetrationFlav of M]";
 	now the sex-length of M is a random number between 2 and 3;
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To compute (M - a mechanic) entering vagina:
 	say "[VaginaPenetrationFlav of M]";
 	now the sex-length of M is a random number between 2 and 3;
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 To compute (M - a mechanic) entering mouth:
 	if there is a worn tiara and the blue-balls of M is 1 and watersports fetish is 1 and the latex-transformation of the player <= 4:
@@ -395,58 +395,47 @@ To say StrikingSuccessFlav of (M - a mechanic) on (B - a body part):
 To say StrikingFailureFlav of (M - a mechanic) on (B - a body part):
 	say "The [M] tries to whack you [TargetName of B] with his wrench but you manage to get out of the way just in time!".
 
-To compute vaginal climax of (M - a mechanic):
-	TimesFuckedUp M by 1;
-	if M is wrapped:
-		if the player is a pussy slut or (the class of the player is maid and a random number between 1 and 2 is 2) or (a random number between 1 and 4 > 1):
-			say CondomPieFlav of M;
-			WombFill the semen load of M;
-			now M is unwrapped;
-			WombFill 1;
-		otherwise:
-			say PullOutFlav of M;
-			if pregnancy fetish is 1, say "[first custom style][if the bimbo of the player < 6][one of]I can[']t believe he came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant.... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t he know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Couldn[']t he have just kept it on...[or]Is he really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][roman type][line break]";
-			now M is unwrapped;
-			WombFill the semen load of M;
-	otherwise:
-		say CreampieFlav of M;
-		WombFill the semen load of M;
+To compute post climax effect of (M - a mechanic) in (F - a fuckhole):
 	if M is interested:
 		compute happy reward of M;
 		satisfy M;
-	now M is not penetrating vagina.
+	otherwise:
+		bore M.
 
-To say PullOutFlav of (M - a mechanic):
-	let F be a random fuckhole penetrated by M;
+To decide if (M - a mechanic) is losing wrapper in (F - vagina):
+	if the class of the player is princess:[he hates princesses]
+		if the player is a pussy slut and a random number between 1 and 2 is 1, decide no;
+		decide yes;
+	if the player is a pussy slut, decide no;
+	if the class of the player is priestess, decide no;[he's weak to priestesses]
+	if the class of the player is maid and a random number between 1 and 2 is 2, decide no;
+	if a random number between 1 and 4 is 1, decide no;
+	decide yes.
+
+To decide if (M - a mechanic) is losing wrapper in (F - asshole):
+	if the class of the player is princess:
+		if the class of the player is priestess and a random number between 1 and 2 is 1, decide no;
+		decide yes;
+	if a random number between 1 and 2 is 1:
+		if the player is a butt slut, decide no;
+		if the class of the player is priestess, decide no;
+	decide yes.
+
+To compute condom success of (M - a mechanic) in (F - a fuckhole):
+	say CondomPieFlav of M in F;
+	compute M finishing in F;
+	now M is unwrapped;
+	if F is asshole, AssFill 1;
+	otherwise WombFill 1.
+
+To say CondomFailFlav of (M - a mechanic) in (F - a fuckhole):
 	say "The [M] suddenly pulls out, tearing off the condom before immediately slamming his [manly-penis] back in. [speech style of M]'[one of]I[']m going to jizz inside you, bitch!'[or][if pregnancy fetish is 1 and M is penetrating vagina]Hope you[']re on the pill, bitch,[otherwise]Hope you like creampies, bitch,[end if] this load is going to be big!'[or]You[']re gonna take it all, bitch![or]That[']s right bitch, enjoy all my cum!'[at random][roman type] [if the semen addiction of the player < 7]You desperately struggle to get away[otherwise if the semen addiction of the player < 12]You half-heartedly struggle to get away[otherwise]You playfully struggle to get away[end if], but he holds you down effortlessly while his [manly-penis] slams in and out of your unprotected [variable F], throbbing powerfully as wave after wave of [semen] flows inside you. Every thrust pushes his load deeper, ensuring that your inner walls have been well and truly coated when he finally pulls out and climbs to his feet.".
 
-To say CondomPieFlav of (M - a mechanic):
-	let F be a random fuckhole penetrated by M;
+To say CondomPieFlav of (M - a mechanic) in (F - a fuckhole):
 	say "[one of]The [M] tightens his grip, pistoning fervently as the condom fills with warmth. His groans die down as he loses speed, and when he pulls out you think it's over and try to crawl away, only to feel his [manly-penis] immediately slam back in protection-free, depositing a final few spurts of [semen] directly into your [variable F].[or]The [M] groans, tightening his grip as his [manly-penis] shoots jet after jet of fresh [semen] into the latex condom. He pulls out, quickly peeling it off before sliding back in, sighing in satisfaction as he shoots a final wave of [semen] directly into your [variable F].[at random]".
 
-To say CreampieFlav of (M - a mechanic):
-	let F be a random fuckhole penetrated by M;
+To say CreampieFlav of (M - a mechanic) in (F - a fuckhole):
 	say "[one of]The [M] slams his [manly-penis] home, groaning with pleasure as he floods your [variable F] with his warm [semen]. He gives you a healthy smack across the ass as he pulls out, climbing to his feet and wiping a bit of sweat from his brow.[or]The [M] jams his [manly-penis] in as far as it will go, reaching underneath you to play with your [ShortDesc of breasts] he fills your [variable F] with his load. He roughly shoves you off his [manly-penis], sighing in satisfaction as he gets to his feet.[or]The [M] groans, tightening his grip as his [manly-penis] shoots jet after jet of fresh [semen] directly into your [variable F]. He finishes himself off with a few short thrusts before pulling out and climbing to his feet.[at random]".
-
-To compute anal climax of (M - a mechanic):
-	TimesFuckedUp M by 1;
-	if M is wrapped:
-		if the player is a butt slut and a random number between 1 and 2 is 1:
-			say PullOutFlav of M;
-			now M is unwrapped;
-			AssFill the semen load of M;
-		otherwise:
-			say CondomPieFlav of M;
-			AssFill the semen load of M;
-			now M is unwrapped;
-			AssFill 1;
-	otherwise:
-		say CreampieFlav of M;
-		AssFill the semen load of M;
-	if M is interested:
-		compute happy reward of M;
-		satisfy M;
-	now M is not penetrating asshole.
 
 To compute happy reward of (M - a mechanic):[reward for giving a pleasant blowjob]
 	if M is retaining a pink spraybottle:

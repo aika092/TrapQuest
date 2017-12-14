@@ -260,8 +260,8 @@ Check taking off worn shoes:
 Carry out taking off shoes while the player is dildo stuck:
 	say "You awkwardly bend over, forcing even more of your weight onto the dildo.";
 	repeat with T running through traps penetrating a fuckhole:
-		if T is penetrating asshole, AssRuin 1;
-		otherwise PussyRuin 1.
+		if T is penetrating asshole, ruin asshole;
+		otherwise ruin vagina.
 
 
 Shoes Framework ends here.

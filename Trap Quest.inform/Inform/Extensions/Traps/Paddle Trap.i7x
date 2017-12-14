@@ -38,8 +38,8 @@ To trigger (Y - a paddle trap):
 			DelicateUp 1;
 			if K is ass plugging and K is not jelldo:
 				say "Not only that, the plug[if the player is female]s[end if] inside of you send[if the player is male]s[end if] the vibrations of the spank deep inside your [if the player is female]holes[otherwise][asshole][end if].  Ouch!";
-				Assruin 2;
-				if the player is female, Pussyruin 2;
+				ruin asshole times 2;
+				if the player is female, ruin vagina times 2;
 			otherwise:
 				say "Owww!";
 			Damage K;
@@ -59,8 +59,8 @@ To trigger (Y - a paddle trap):
 				Damage K;
 				if K is ass plugging:
 					say "Not only that, the plug[if the player is female]s[end if] inside of you send[if the player is male]s[end if] the vibrations of the spank deep inside your [if the player is female]holes[otherwise][asshole][end if].  Ouch!";
-					Assruin 2;
-					if the player is female, Pussyruin 2;
+					ruin asshole times 2;
+					if the player is female, ruin vagina times 2;
 				otherwise:
 					say "At least your [printed name of K] softened the blow.";
 		otherwise:

@@ -70,9 +70,9 @@ To initialise latex prisoner:
 		if C is overdress:
 			layer C correctly;
 			if C is posture training, now C is blandness;
-	AssRuin 1;
+	ruin asshole;
 	if the player is female:
-		PussyRuin 1.
+		ruin vagina.
 
 [!<InitialiseBondagePrisoner>+
 
@@ -155,7 +155,7 @@ To compute starting headgear:
 	let C be 0;
 	while C < 2 and H is scrunchie:
 		now H is a random roleplay headgear;
-		increase C by 1;[because there are six times as many scrunchies as other types of headgear, we reroll up to two times if we get a scrunchie]
+		increase C by 1;[because there are six times as many scrunchies as other types of headgear, we re-roll up to two times if we get a scrunchie]
 	now the raw-magic-modifier of H is a random number between 0 and -2;
 	if H is royal circlet or H is sissy bow, increase the raw-magic-modifier of H by 3;
 	if H is white hood or H is vampiric fangs or H is pink scrunchie or H is monkey scrunchie, increase the raw-magic-modifier of H by 2;

@@ -126,13 +126,13 @@ To trigger pole trap (Y - a dildo trap):
 				do nothing;
 			otherwise if Y is anal:
 				let P be a random thing filling asshole;
-				AssRuin 2;
+				ruin asshole times 2;
 				if P is anal beads and the notch-taken of P < the notches of P:
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
 			otherwise:
 				let P be a random thing filling vagina;
-				PussyRuin 2;
+				ruin vagina times 2;
 				if P is anal beads and the notch-taken of P < the notches of P:
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
@@ -147,11 +147,11 @@ To trigger pole trap (Y - a dildo trap):
 					if Y is anal:
 						now Y is penetrating asshole;
 						say "You gasp as the dildo goes straight through your [printed name of O] and into your [asshole]!  ";
-						assruin 1;
+						ruin asshole;
 					otherwise:
 						now Y is penetrating vagina;
 						say "You gasp as the dildo goes straight through your [printed name of O] and into your [vagina]!  ";
-						pussyruin 1;
+						ruin vagina;
 					if O is rippable:
 						say "Your [printed name of O] is now torn at the crotch.";
 						rip O;
@@ -177,11 +177,11 @@ To trigger pole trap (Y - a dildo trap):
 				if Y is anal:
 					now Y is penetrating asshole;
 					say "You gasp as the dildo goes straight into your [asshole]!";
-					assruin 1;
+					ruin asshole;
 				otherwise:
 					now Y is penetrating vagina;
 					say "You gasp as the dildo goes straight into your [vagina]!";
-					pussyruin 1;
+					ruin vagina;
 			otherwise:
 				say "The dildo bounces harmlessly off your [HipDesc].".
 
@@ -232,11 +232,11 @@ To Jump From The Dildo:
 			if D < R:
 				if Y is penetrating vagina:
 					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][second custom style]Again again![roman type][end if]";
-					pussyruin 1;
+					ruin vagina;
 					if a random trap penetrating a fuckhole is creampie pole trap, WombFill 2;
 				otherwise:
 					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][second custom style]Again again![roman type][end if]";
-					assruin 1;
+					ruin asshole;
 					if a random trap penetrating a fuckhole is creampie pole trap, assFill 2;
 			otherwise:
 				say "You manage to jump whilst in your heels and the dildo exits you, and luckily you jump high enough that it misses your crotch on the way back down, and bends at an awkward angle.";
@@ -345,7 +345,7 @@ To compute orgasm resolution of (R - a drill pole trap):
 	if a random number between 1 and 4 - unlucky < 2:
 		let D be a random off-stage plentiful dong;
 		if D is nothing, now D is a random off-stage plentiful plug;
-		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains in side of you[roman type] as you fall to the floor.";
+		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
 		if R is penetrating vagina, summon D vaginally;
 		otherwise summon D;
 		now D is cursed;
@@ -453,7 +453,7 @@ To compute orgasm resolution of (R - a creampie pole trap):
 	if a random number between 1 and 2 - unlucky < 2:
 		let D be a random off-stage dong;
 		if D is nothing or D is throbbing-tentacle, let D be a random off-stage plug;
-		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains in side of you[roman type] as you fall to the floor.";
+		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
 		if R is penetrating vagina, summon D vaginally;
 		otherwise summon D;
 		now D is cursed;
@@ -506,13 +506,13 @@ To trigger (Y - a ghostly dildo pole trap):
 			say "The dildo forcefully bashes into your [if Y is anal][printed name of random thing filling asshole][otherwise][printed name of random thing filling vagina][end if], sending powerful vibrations flying through your sensitive hole!";
 			if Y is anal:
 				let P be a random thing filling asshole;
-				AssRuin 2;
+				ruin asshole times 2;
 				if P is anal beads and the notch-taken of P < the notches of P:
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
 			otherwise:
 				let P be a random thing filling vagina;
-				PussyRuin 2;
+				ruin vagina times 2;
 				if P is anal beads and the notch-taken of P < the notches of P:
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
@@ -522,11 +522,11 @@ To trigger (Y - a ghostly dildo pole trap):
 			if Y is anal:
 				now Y is penetrating asshole;
 				say "You gasp as the dildo goes straight [if O is clothing]through your [printed name of O], as if it wasn't there, and [end if]into your [asshole]!";
-				assruin 1;
+				ruin asshole;
 			otherwise:
 				now Y is penetrating vagina;
 				say "You gasp as the dildo goes straight [if O is clothing]through your [printed name of O], as if it wasn't there, and [end if]into your [vagina]!";
-				pussyruin 1.
+				ruin vagina.
 
 [!<GhostlyDildoPoleTrap>@<ComputeOrgasmResolution>+
 

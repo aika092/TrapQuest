@@ -127,8 +127,8 @@ To compute dildo damage:
 			say "The dildo keeps pressing on your sensitive spots inside your [if D is penetrating asshole][asshole][otherwise][vagina][end if][one of], making you more and more sore![or].[stopping]";
 			let Q be a random number from 1 to 3;
 			if Q > 1:
-				if D is penetrating asshole, Assruin 1;
-				otherwise Pussyruin 1.
+				if D is penetrating asshole, ruin asshole;
+				otherwise ruin vagina.
 
 [!<ComputeDrillDamage>+
 
@@ -139,8 +139,8 @@ To compute drill damage:
 	repeat with D running through drill pole traps penetrating a fuckhole:
 		say "The dildo keeps spinning inside your [if D is penetrating asshole][asshole][otherwise][vagina][end if], making you more and more sensitive!";
 		arouse 250; [Extra arousal]
-		if D is penetrating asshole, Assruin 1;
-		otherwise Pussyruin 1.
+		if D is penetrating asshole, ruin asshole;
+		otherwise ruin vagina.
 
 
 Player Standing ends here.

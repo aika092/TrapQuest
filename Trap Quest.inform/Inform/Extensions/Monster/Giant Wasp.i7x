@@ -164,7 +164,7 @@ To compute anal sex of (M - a giant wasp):
 			assfill 1 medium eggs;
 	say "[one of][or][or][line break][if the bimbo of the player < 8][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][variable custom style]Oof!  This is intense![otherwise][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
 	decrease the sex-length of M by 1;
-	AssRuin 1.
+	ruin asshole.
 	
 Definition: an giant wasp (called M) is willing to let go:
 	decide no.
@@ -192,8 +192,8 @@ This is the wasp tends the broodmother rule:
 			increase the stomach-water of the player by 1;
 		rule succeeds;
 	otherwise if current-monster is in the location of the player and the orifice soreness of the player > 8 and the number of unfriendly monsters in the location of the player < 1 and the player-class is broodmother:
-		AssHeal 2;
-		PussyHeal 2;
+		heal asshole times 2;
+		heal vagina times 2;
 		say "The [M] seems to notice that you are suffering some kind of birthing problems and buzzes around you with what almost seems to be concern. It sprays a sticky, sweet fluid at your crotch, which amazingly seems to make you feel a bit better.";
 		rule succeeds;
 	otherwise if current-monster is in the location of the player and the body soreness of the player > 8 and the number of unfriendly monsters in the location of the player < 1 and the player-class is broodmother:
@@ -235,7 +235,7 @@ To compute (M - a giant wasp) entering asshole:
 	say "The [M]  tries to stick its ovipositor into your [asshole] through your ass cheeks!  Its ovipositor manages to push its way in!  You are being bred by the [M].";
 	now M is penetrating asshole;
 	now the sex-length of M is 4;
-	AssRuin 1.
+	ruin asshole.
 
 To compute striking attack of (M - a giant wasp):
 	say "The [M] stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]!  It doesn't really hurt but you feel yourself getting tired very quickly...";

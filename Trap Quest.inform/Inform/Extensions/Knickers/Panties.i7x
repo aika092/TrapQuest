@@ -114,7 +114,7 @@ To compute periodic effect of (G - a pink panties):
 To decide which number is the initial outrage of (C - a pink panties):
 	decide on 4.
 
-A purple panties is a kind of panties.  There is 1 purple panties.  The text-shortcut of purple panties is "ppa".
+A purple panties is a kind of panties.  There is 1 purple panties.  The text-shortcut of purple panties is "prp".
 To say selfexamineuniquetitle of (G - a purple panties):
 	say "pair of purple panties".
 To say UniqueClothingDesc of (G - a purple panties):

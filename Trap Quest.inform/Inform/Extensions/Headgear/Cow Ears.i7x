@@ -5,7 +5,7 @@ A cow ears is a kind of headgear.  A cow ears is usually manly.  There is 1 cow 
 Definition: a cow ears (called C) is fluid immune:
 	decide yes.
 
-The printed name of cow ears is usually "[TQlink of item described][clothing-title-before]pair of cow ears[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cow ears is "ce".
+The printed name of cow ears is usually "[TQlink of item described][clothing-title-before]pair of cow ears[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cow ears is "cwes".
 
 To decide which figure-name is the clothing-image of (C - a cow ears):
 	decide on figure of cow ears.

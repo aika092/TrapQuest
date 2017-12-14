@@ -22,7 +22,7 @@ To ChargeUp (S - a summoning portal) by (X - a number):
 	otherwise if the charge of S > 300:
 		decrease X by X / 4;
 	increase the charge of S by X;
-	increase the reset-count of the second noun by 1.
+	increase the reset-count of S by 1.
 
 [!<ChargeDownPortalByNumber>+
 
@@ -58,7 +58,7 @@ Outputs a hint on what the summoning portal "S" will spawn next.
 
 +!]
 To say PortalHint of (S - a summoning portal):
-	say "Its going to summon something soon!".
+	say "It's going to summon something soon!".
 
 [!<SayActiveWarningOfPortal>+
 
@@ -134,7 +134,7 @@ Calls the regionally summoning function for summoning portal "S", which calls a 
 To compute (S - a summoning portal) summoning (M - a monster):
 	compute S regionally summoning M;
 	now M is in the location of S;
-	say SummoningFlav of M;[shoul describe portal closing up if the player is in the room]
+	say SummoningFlav of M;[should describe portal closing up if the player is in the room]
 	now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
 
 [!<ComputePortalRegionallySummoningMonster>+
@@ -311,7 +311,7 @@ A time based rule (this is the woods summoning rule):
 To compute (G - giant-statue) regionally summoning (M - a monster):
 	summon M in the Woods;
 	now the next-summon of G is a random number between 0 and 5;
-	now the charge of G is 150 - (game difficulty * 10) + (the number of alive monsters in the woods * (5 - game difficulty));
+	now the charge of G is the active threshold of G + 70 + (the number of alive monsters in the woods * 2);
 
 To decide which object is the summonChoice of (G - a giant-statue):
 	let N be the next-summon of G;
@@ -436,17 +436,15 @@ To say PortalHint of (S - a mysterious-mummy):
 		if N is 1:[cultist]
 			say "A squirming woman wrapped from head to toe in white linen. Her arms are crossed in front of her chest, but it looks like her wrists are being held together by an invisible rope. There's nothing sexual about the way she's standing, but whenever you look at her it feels like you're watching a really intense gangbang. ";
 		otherwise if N is 2:[gladiator]
-			say "An tall, busty woman wrapped from head to toe in white linen. An iron sword has been jammed into the planks underneath her, sticking straight up with its hilt [if trap fetish is 1]buried in her [vagina]. Feminine fluids slowly trickle down the blade[otherwise]buried up her ass. The cloth is distorted by banana-like shape near her crotch, which twitches slightly[end if] as her visibly muscular arms struggle against their strong wrappings.";
+			say "A tall, busty woman wrapped from head to toe in white linen. An iron sword has been jammed into the planks underneath her, sticking straight up with its hilt [if trap fetish is 1]buried in her [vagina]. Feminine fluids slowly trickle down the blade[otherwise]buried up her ass. The cloth is distorted by a banana-like shape near her crotch, which twitches slightly[end if] as her visibly muscular arms struggle against their strong wrappings.";
 		otherwise if N is 3:[gargoyle; shouldn't happen]
-			say "An crouched woman completely encased in white linen. She's completely motionless, but you can hear her stomach rumbling audibly from any distance away.";
+			say "A crouched woman completely encased in white linen. She's completely motionless, but you can hear her stomach rumbling audibly from some distance away.";
 		otherwise if N is 4:[mannequin]
-			say "A feminine figure wrapped from head to toe in white linen. Dusky makeup is peppered over its face, and its arms are splayed at disturbing angles to its sides. It seems to change poses whenever you look away for more than a second, 
-			and you can't help but notice a strange clicking noise whenever you get too close.";
+			say "A feminine figure wrapped from head to toe in white linen. Dusky makeup is peppered over its face, and its arms are splayed at disturbing angles to its sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
 		otherwise if N is 5:[demoness]
 			say "A tall woman wrapped from head to toe in white linen. One hand rests on her hips, and the other extends out in front of her in command. Two horns curve around her temples, like a wreath, and although you can't see her feet, you're almost certain she's wearing heels.[if pregnancy fetish is 1] She's pregnant.[end if]";
 		otherwise if N is 6:[kitsune; shouldn't happen]
-			say "A woman wrapped in white linen from head to toe. She has just about your build and height, and her arms are crossed in front of her chest. The wrappings don't actually look that secure, and its head always seems to face away from 
-			you no matter where you try to stand. Its almost like its trying to trick you.";
+			say "A woman wrapped in white linen from head to toe. She has just about your build and height, and her arms are crossed in front of her chest. The wrappings don't actually look that secure, and its head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
 		otherwise if N is 7:[hellhound]
 			say "A woman wrapped in linen from head to toe. She's on all fours, and there is a leather collar and leash gripped in one of her hands. [one of]For some reason she's holding it from the wrong end[or]She's holding it from the collar end instead of the leash[at random].";
 		otherwise:[ghost?]
@@ -459,17 +457,17 @@ To say ActiveWarning of (S - a mysterious-mummy):
 	let N be the next-summon of S;
 	if N is 2:[gladiator]
 		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. [run paragraph on]";
-		say "As they move closer, you recognize a gladiator holding iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if trap fetish is 0]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [first custom style]C-cowards! You can't become real woman if y-[roman type] The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
+		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if trap fetish is 0]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [first custom style]C-cowards! You can't become a real woman if y-[roman type] The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
 	otherwise if N is 1:[cultist]
-		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. You recognize the person as another cultist as they move closer, but this one seems different from the others, somehow.[line break][first custom style]Ready yourself, sister! Your last rite of passage is at hand!'[roman type][line break]The first two cultists lead her up to the [printed name of S], leaving as the linen's begin to unravel. She seems to be repeating some chant under her breath as the mummy explodes forward, completely covering her in strips of frayed fabric.";
+		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. You recognize the person as another cultist as they move closer, but this one seems different from the others, somehow.[line break][first custom style]Ready yourself, sister! Your last rite of passage is at hand!'[roman type][line break]The first two cultists lead her up to the [printed name of S], leaving as the linen begins to unravel. She seems to be repeating some chant under her breath as the mummy explodes forward, completely covering her in strips of frayed fabric.";
 	otherwise if N is 5:[demoness]
-		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through on their hands and knees. A demoness comes into view behind them, her heels *click* *clacking* on the wood floor as she confidently struts past them. [line break][first custom style]'[one of]The moment of my rebirth is at hand. Go.'[or]Leave me. You are not worthy to witness my transformation.'[or]Get out of my sight or my rebirth is going to wait until I finish ruining you two again.'[at random][roman type][line break]The cultists nod reverently, crawling away quickly as the demoness walks up to the mummified figure and expectantly holds out her hand. [one of]To your surprise, the mummy takes[or]The mummy seems to hesistate before taking[stopping] it, exploding forward in a rush of fabric as it completely covers her in strips of frayed linen.";
+		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through on their hands and knees. A demoness comes into view behind them, her heels *click* *clacking* on the wood floor as she confidently struts past them. [line break][first custom style]'[one of]The moment of my rebirth is at hand. Go.'[or]Leave me. You are not worthy to witness my transformation.'[or]Get out of my sight or my rebirth is going to wait until I finish ruining you two again.'[at random][roman type][line break]The cultists nod reverently, crawling away quickly as the demoness walks up to the mummified figure and expectantly holds out her hand. [one of]To your surprise, the mummy takes[or]The mummy seems to hesitate before taking[stopping] it, exploding forward in a rush of fabric as it completely covers her in strips of frayed linen.";
 	otherwise if N is 4 or N is 7:[mannequin;TODO]
 		say "One of the many mannequins shuffles its way out of the crowd, holding a small make-up kit. It clicks awkwardly as it lurches up to the mummy and delicately applies blush, lipstick and then mascara to the wrappings on its face. A black glow slowly begins to gather around it as the mannequin trudges back into the crowd.";
 	otherwise if N is 7:[hellhound]
 		say "You hear awkward clicking as a mannequin slowly shuffles forward from the crowd, holding a leather collar and leash in its hands. The mummy's hips swell visibly as it drops to its hands and knees, a red glow concentrating around its body as the mannequin clumsily places the collar in the mummy's hands and trudges back into the 'crowd'.";
 	otherwise:
-		say "You hear a peal of mocking laughter as the mummy's wrappings pull taut around the chest, and it falls forward onto its knees, arms suddenly snapping together behind its back. A bright green glow begins to build up around the now kneeling figure, along with that really strange feeling that permeates every other room in the mansion.".
+		say "You hear a peal of mocking laughter as the mummy's wrappings pull taut around its chest, and it falls forward onto its knees, arms suddenly snapping together behind its back. A bright green glow begins to build up around the now kneeling figure, along with that really strange feeling that permeates every other room in the mansion.".
 
 To ChargeUp (S - a mysterious-mummy) by (X - a number):
 	decrease X by the reset-count of S * 10;

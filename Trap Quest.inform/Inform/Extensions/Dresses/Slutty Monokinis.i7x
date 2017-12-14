@@ -42,7 +42,7 @@ To say ShortDesc of (C - a purple strap monokini):
 
 Part 3 - Grey String Monokini
 
-A grey string monokini is a kind of string monokini.  There is 1 grey string monokini.  The text-shortcut of grey string monokini is "gmk".
+A grey string monokini is a kind of string monokini.  There is 1 grey string monokini.  The text-shortcut of grey string monokini is "gsmk".
 
 The printed name of grey string monokini is usually "[TQlink of item described][clothing-title-before]grey string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

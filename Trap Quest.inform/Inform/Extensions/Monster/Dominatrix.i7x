@@ -4,7 +4,7 @@ A dominatrix is a kind of monster.  A dominatrix is usually intelligent.  A domi
 
 A dominatrix has a number called orgasm watch.  A dominatrix has a number called disappointment.  A dominatrix has a number called strap-on girth.  The strap-on girth of a dominatrix is usually 2.
 
-The printed name of a dominatrix is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]strict dominatrix[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  Understand "strict" as a dominatrix.  The description of a dominatrix is usually "[DominatrixDesc]".  The text-shortcut of dominatrix is "do".
+The printed name of a dominatrix is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]strict dominatrix[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  Understand "strict" as a dominatrix.  The description of a dominatrix is usually "[DominatrixDesc]".  The text-shortcut of dominatrix is "dom".
 
 
 Figure of dominatrix 2 is the file "dominatrix2.png".
@@ -429,23 +429,23 @@ To compute anal sex of (M - a dominatrix):
 	otherwise if the strap-on girth of M >= 6 and refactoryperiod is 0 and the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking:
 		say "The [M] starts pumping even faster.  [speech style of M]'Cum, slave, cum for me now!'[roman type][line break][if the sex addiction of the player < 7]As much as you try to stop yourself, the feeling in your [asshole] is too intense and you can't help but obey her command![otherwise]You feel the pressure building inside of you and gleefully comply![end if]";
 		anally orgasm shamefully;
-		AssHeal 2; [To prevent fainting]
+		heal asshole times 2; [To prevent fainting]
 		now the disappointment of M is -1;
 		FavourUp M;
 	otherwise:
 		say "The [M] continues to powerfully pummel away with her [ShortStrapOn of M].  [one of]You can very clearly feel the realistic contours of her rubber [manly-penis] as it rubs mercilessly against the sensitive walls of your [asshole].[or][variable custom style]Oof![roman type][line break][or][variable custom style]Aaah![roman type][line break][or][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear she's deriving a lot of sexual pleasure from the situation.[or][speech style of M]'Good girl!'[roman type][line break][then at random]";
-		AssRuin 1;
+		ruin asshole;
 		if M is friendly-fucking and refactoryperiod > 0:
 			compute anal climax of M;
 	decrease the sex-length of M by 1;
 	if M is not friendly-fucking:
-		AssRuin 1;
+		ruin asshole;
 		if refactoryperiod > 0 and the disappointment of M is 0:
 			say "The [M] tuts and shakes her head in disapproval.  [speech style of M]'Did I say you could cum?  I didn't think so.  Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 			now the disappointment of M is 1.
 	
 		
-To compute anal climax of (M - a dominatrix):
+To compute unique climax of (M - a dominatrix) in (F - asshole):
 	say "The [M][if M is not friendly-fucking], satisfied,[end if] slowly removes her [ShortStrapOn of M] from your [ShortDesc of asshole].";
 	if M is friendly-fucking and the sex-length of M < 1 and the times-fucked of M > 0:
 		decrease the blue-balls of M by 2;
@@ -465,9 +465,7 @@ To compute anal climax of (M - a dominatrix):
 		otherwise:
 			say "[speech style of M]'I must say, slave, I'm impressed.  You took that fucking like a real champ.  As a reward, I'll make sure I have a brand new toy to try out on you next time you see me.'[roman type][line break]";
 			now the disappointment of M is the strap-on girth of M + 2;
-		bore M;
-	TimesFuckedUp M by 1;
-	now M is not penetrating asshole.
+		bore M.
 
 Check going when there is a dominatrix in the location of the player:
 	let M be a random dominatrix in the location of the player;
@@ -525,7 +523,7 @@ To compute (M - a dominatrix) entering asshole:
 	otherwise:
 		say "[AssholePenetrationFlav of M]";[The flavor handles sex-length by itself]
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 	
 To compute (M - a dominatrix) entering vagina:
 	if M is friendly-fucking:
@@ -534,7 +532,7 @@ To compute (M - a dominatrix) entering vagina:
 		say "[VaginaPenetrationFlav of M]";
 		now the sex-length of M is 3;
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 To compute (M - a dominatrix) entering mouth:
 	if M is friendly-fucking:

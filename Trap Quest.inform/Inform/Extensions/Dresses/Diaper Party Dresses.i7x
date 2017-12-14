@@ -26,7 +26,7 @@ Definition: a party-dress (called C) is end of transformation chain:
 
 Part 1 - Floral Pink Sissy Dress
 
-A floral pink sissy dress is a kind of baby-dress.  There is 1 floral pink sissy dress. The printed name of floral pink sissy dress is "[TQlink of item described][clothing-title-before]floral pink sissy dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".   The text-shortcut of floral pink sissy dress is "fpd".
+A floral pink sissy dress is a kind of baby-dress.  There is 1 floral pink sissy dress. The printed name of floral pink sissy dress is "[TQlink of item described][clothing-title-before]floral pink sissy dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".   The text-shortcut of floral pink sissy dress is "fpsd".
 
 Figure of floral pink sissy dress is the file "babydress1.png".
 

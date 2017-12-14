@@ -157,12 +157,11 @@ To compute class outfit of (H - a trainee hood):[TODO: improve]
 	if the headgear chance of H < the threshold of H:
 		if the training-progress of H is 3:
 			LipsUp 3;
-			say "The [printed name of H] emits three short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them of, you realize they've merged fully with your skin! You now have [LipDesc] lips!";
+			say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them of, you realize they've merged fully with your skin! You now have [LipDesc]!";
 			DelicateUp 2;
 			now the training-progress of H is 0;
 			only destroy H;
-			let M be a random senior robobellboy;
-			increase the training-progress of M by 1;
+			ProgressUp senior robobellboy;
 		otherwise if face is not actually occupied:
 			say "The [printed name of H] emits a short tone and the metal ring collapses, forcing your lips shut as your mouth fills with thick, sweet smelling smoke. You [if the bimbo of the player > 13]breath in happily, knowing that whatever it is, it[']ll do something fun! The silicon lips slowly open after a few seconds, hugging even tighter to the real ones underneath.[otherwise if the bimbo of the player > 9]breath in cautiously, knowing your airway is too restricted to have any choice. A funny feeling lingers at the back of your throat as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath[otherwise]hold your breath desperately, but with your restricted airway you have no choice but to breath in, coughing reflexively as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath.[end if].";
 			FaceUp 1;
@@ -176,5 +175,11 @@ To demagnetise (C - a clothing):[Do not call this function unless you know it is
 Definition: a hood (called C) is condom pinnable:
 	decide yes.
 
+[
+
+TODO: mechanic can move along the "training-progress" stat on the trainee items
+TODO: servicing lots of patrons can move along the "training-progress" stat on trainee items
+
+]
 
 Hoods ends here.

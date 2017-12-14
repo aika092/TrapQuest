@@ -41,7 +41,7 @@ To compute furniture resting on (F - hotel chairs):
 To compute normal hotel chair sitting on (F - hotel chairs):
 	say "You [if the openness of asshole <= the girth of F]force[otherwise]slide[end if] your [asshole] down onto the large golden dong.  [if the openness of asshole <= the girth of F]Your sphincter is stretched way past the limit of what is comfortable.[end if]";
 	now F is penetrating asshole;
-	AssRuin 1;
+	ruin asshole;
 	let R be a random number between 1 and 4;
 	if R is 1 and the latex-transformation of the player > 2, now R is a random number between 2 and 4;
 	if R is 1:
@@ -49,7 +49,7 @@ To compute normal hotel chair sitting on (F - hotel chairs):
 			say "As you bottom out on the dildo, you feel a weird sensation just behind your sphincter.  Before you can react in time and pull yourself off, you realise the bottom section of the dildo is rapidly expanding!  You test to confirm your suspicions - you can't get off!  The dildo has effectively knotted you in place.  [one of]The dildo starts vibrating powerfully, and you quickly realise what it intends to happen before it lets you off.[or]Once again, it begins vibrating powerfully.[stopping]";
 			while the player is not unable to orgasm so soon and resting is 1:
 				say "The golden dildo continues to vibrate powerfully in your [asshole], keeping you trapped on the seat!";
-				AssRuin 1;
+				ruin asshole;
 				compute extra turn;
 			if resting is 1, say "You are left panting as the knot of the dildo deflates and you are able to stand up. However you realise you do feel a lot less tired!";
 		otherwise:
@@ -82,6 +82,7 @@ To compute baby hotel chair sitting:
 		let K be a random worn knickers;
 		if K is total protection diaper and the player is full and diaper lover >= 3:
 			say "As you sit there, something clicks inside of you, and you feel yourself losing control of your bowels!  ";
+			now diaper-scene-unhandled is 1;
 			compute messing;
 		otherwise if K is total protection clothing and the player is female and vagina is not actually occupied and diaper quest is 0:
 			say "You feel something very thin poke its way through the [if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [K] and then find its way to the entrance of your [vagina].  Suddenly you feel it start to powerfully pump out something warm and viscous - it's pumping you full of [semen]! What the fuck!";
@@ -119,7 +120,7 @@ To compute baby hotel chair sitting:
 				while the player is able to get horny and busy is 1 and N > 0:
 					say "The vibrations of the chair send pleasurable waves through your [D]!";
 					if diaper quest is 1:
-						PussyRuin 2; [Orgasms can happen]
+						ruin vagina times 2; [Orgasms can happen]
 					otherwise:
 						arouse 400;
 					decrease N by 1;

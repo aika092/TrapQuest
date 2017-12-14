@@ -6,7 +6,7 @@ Figure of Male Sex Doll is the file "sexdoll1.png".
  Figure of Female Sex Doll is the file "sexdoll2.png". The description of sex doll is usually "[SexDollDesc]".  The text-shortcut of sex doll is "sd".  Understand "do" as sex doll.
 
 A creepy sex doll is a kind of sex doll.  There is 1 creepy sex doll.
-The printed name of creepy sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] creepy sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of creepy sex doll is "cre".
+The printed name of creepy sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] creepy sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of creepy sex doll is "csd".
 An expressionless sex doll is a kind of sex doll.  There is 1 expressionless sex doll.
 The printed name of expressionless sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] expressionless sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of expressionless sex doll is "exp".
 An animated sex doll is a kind of sex doll.  There is 1 animated sex doll.
@@ -16,7 +16,7 @@ The printed name of zombielike sex doll is "[if item described is in the locatio
 A wandering sex doll is a kind of sex doll.  There is 1 wandering sex doll.
 The printed name of wandering sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] wandering sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of wandering sex doll is "wan".
 A mindless sex doll is a kind of sex doll.  There is 1 mindless sex doll.
-The printed name of mindless sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] mindless sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of mindless sex doll is "min".
+The printed name of mindless sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] mindless sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of mindless sex doll is "msd".
 A puppetlike sex doll is a kind of sex doll.  There is 1 puppetlike sex doll.
 The printed name of puppetlike sex doll is "[if item described is in the location of the player][TQlink of item described][end if][input-style][SexDollGender] puppetlike sex doll[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of puppetlike sex doll is "pup".
 An uncanny sex doll is a kind of sex doll.  There is 1 uncanny sex doll.
@@ -172,10 +172,10 @@ To compute fuckhole sex of (M - a sex doll):
 	say "The sex doll is fucking your [if M is penetrating asshole][asshole][otherwise][vagina][end if][one of] slowly but steadily[or] silently[or], seemingly unable to hear your screams[or] as if controlled by invisible puppet strings[or] in a very strict rhythm[or], with machine like precision and timing[or], with no signs of emotion or conscious thought[or] [if the bimbo of the player < 14]as if you were some kind of object[otherwise]like the fucktoy that you are[end if][at random]!  [if the bimbo of the player < 11][first custom style]Shit...[otherwise][second custom style]Aaah!!![end if][roman type][line break]";
 	decrease the sex-length of M by 1;
 	if the reaction of the player > 0, say "[one of]You feel further humiliated by the fact that you are letting the doll fuck you.[or][or][or][cycling]";
-	if M is penetrating asshole, AssRuin 1;
-	otherwise PussyRuin 1.
+	if M is penetrating asshole, ruin asshole;
+	otherwise ruin vagina.
 
-To compute anal climax of (M - a sex doll):
+To compute unique climax of (M - a sex doll) in (F - asshole):
 	TimesFuckedUp M by 1;
 	if M is airfilled and inflation fetish is 1:
 		say "With one final thrust, you feel air start to flow inside of you.  The [M] is deflating inside of you!  Your belly somehow inflates like a balloon.[if the bimbo of the player < 7][first custom style][one of]  What the fuck is going on?![or]Not again...[stopping][roman type][line break]The sex doll deflates into nothingness.";
@@ -198,7 +198,7 @@ To compute FluidFill of (M - a sex doll):
 		BustUp 3;
 		if R is 3, HipUp 1.
 
-To compute vaginal climax of (M - a sex doll):
+To compute unique climax of (M - a sex doll) in (F - vagina):
 	TimesFuckedUp M by 1;
 	if M is airfilled:
 		compute FluidFill of M;
@@ -277,7 +277,7 @@ To compute (M - a sex doll) entering asshole:
 	say type security of M;
 	say "[FuckholePenetrationFlav of M]";
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To compute (M - a sex doll) entering vagina:
 	let N be a random monster penetrating asshole;
@@ -286,7 +286,7 @@ To compute (M - a sex doll) entering vagina:
 	say type security of M;
 	say "[FuckholePenetrationFlav of M]";
 	now M is penetrating vagina;
-	PussyRuin 1;
+	ruin vagina;
 	if the player is female and there is a monster penetrating vagina and there is a monster penetrating asshole, say "You're being [if there is a monster penetrating face]triple[otherwise]double[end if] penetrated!".
 
 To say FuckholePenetrationFlav of (M - a sex doll):

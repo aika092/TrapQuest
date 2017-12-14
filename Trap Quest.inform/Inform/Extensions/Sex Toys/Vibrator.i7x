@@ -27,8 +27,8 @@ To compute periodic effect of (P - a vibrator):
 				arouse 200;
 			otherwise:
 				say "Your [printed name of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more sore!";
-				if F is asshole, AssRuin 1;
-				otherwise PussyRuin 1.
+				if F is asshole, ruin asshole;
+				otherwise ruin vagina.
 
 To decide which number is the original price of (C - a vibrator):
 	decide on 4.

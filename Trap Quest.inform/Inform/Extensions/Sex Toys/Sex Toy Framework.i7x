@@ -89,13 +89,13 @@ To compute periodic effect of (C - a rejuvenation clothing):
 		if L > 1 and watersports fetish is 1 and F is asshole:
 			say "Your [printed name of C] pulses as warm, frothy liquid streams into your [variable F].";
 			AssFill N urine;
-			if C is blessed, AssHeal 2;
-			otherwise AssHeal 1;
+			if C is blessed, heal asshole times 2;
+			otherwise heal asshole times 1;
 		otherwise if L > 3:
 			say "Your [printed name of C] pulses as cool liquid streams into your [variable F].";
 			AssFill N water;
-			if C is blessed, AssHeal 2;
-			otherwise AssHeal 1;
+			if C is blessed, heal asshole times 2;
+			otherwise heal asshole times 1;
 		otherwise:
 			say "Your [printed name of C] pulses as several spurts of warm [semen] shoot into your [variable F], which tingles as the soreness seems to melt away.";
 			if F is asshole, AssFill N;
@@ -168,7 +168,7 @@ To compute gripping of (I - an insertable thing):
 			if G < 4:
 				say "[if the bimbo of the player < 7][first custom style]'Hmm, well I guess there's no way something that small is going to stay inside my [asshole] for very long.'[otherwise if the bimbo of the player < 14][variable custom style]'Oops, I guess this one is too small for my [asshole]!'[otherwise][second custom style]'Aww, no, it fell out!  I need to find a bigger one that can properly fill my greedy [asshole] and keep it stretched and open!'[end if][roman type][line break]";
 			otherwise if G < 8 or the player is not horny or the player is unable to orgasm so soon:
-				AssRuin 1;
+				ruin asshole;
 				say "[if the bimbo of the player < 7][first custom style]'Holy shit, that felt pretty intense!'[otherwise if the bimbo of the player < 14][variable custom style]'I can't believe how good that made my [asshole] feel!'[otherwise][second custom style]'MM, I love that feeling!'[end if][roman type][line break]";
 			otherwise:
 				anally orgasm shamefully;
@@ -191,7 +191,7 @@ To compute gripping of (I - an insertable thing):
 			if G < 4:
 				say "[if the bimbo of the player < 7][first custom style]'Hmm, well I guess there's no way something that small is going to stay inside my [vagina] for very long.'[otherwise if the bimbo of the player < 14][variable custom style]'Oops, I guess this one is too small for my [vagina]!'[otherwise][second custom style]'Aww, no, it fell out!  I need to find a bigger one that can properly fill my greedy [vagina] and keep it stretched and open!'[end if][roman type][line break]";
 			otherwise if G < 8 or the player is not horny or the player is unable to orgasm so soon:
-				PussyRuin 1;
+				ruin vagina;
 				say "[if the bimbo of the player < 7][first custom style]'Holy shit, that felt pretty intense!'[otherwise if the bimbo of the player < 14][variable custom style]'I can't believe how good that made my [vagina] feel!'[otherwise][second custom style]'MM, I love that feeling!'[end if][roman type][line break]";
 			otherwise:
 				vaginally orgasm shamefully;

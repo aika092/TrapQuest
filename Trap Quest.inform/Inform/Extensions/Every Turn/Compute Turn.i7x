@@ -54,7 +54,8 @@ To run the engine once:
 		if (M is not minotaur or M is awake monster) and M is not ghostly tentacle and wanking is 0: [If it's an asleep minotaur we don't ask this]
 			say "[if the player-reaction of the player is resisting]Keep resisting?[otherwise]Do you want to resist?[end if] [yesnolink] ";
 			if the player consents, try resisting;
-			otherwise try submitting.
+			otherwise try submitting;
+	if another-turn is 0 and diaper-scene-unhandled is 1, compute unhandled diaper scene. [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
 
 
 [!<ComputeExtraTurn>+

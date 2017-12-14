@@ -141,7 +141,7 @@ To HookPull:
 				if the player is a bit horny, now prev-horny is 1;
 				if the player is horny, now prev-horny is 2;
 				if the player is unable to orgasm so soon, now able-to-orgasm is 0;
-				Assruin 1;
+				ruin asshole;
 				if image cutscenes is 1:
 					if able-to-orgasm is 1 and the player is unable to orgasm so soon: [player just came]
 						if the player is male, display figure of hook cutscene 6;
@@ -177,12 +177,12 @@ REQUIRES COMMENTING
 +!]
 Carry out hook fucking:
 	now seconds is 3;
-	Assruin 1;
+	ruin asshole;
 	if the bimbo of the player < 13:
 		say "You're pulling it the wrong way!  Ow!";
 	otherwise:
 		say "You repeatedly pull up on the hook, fucking your [asshole] raw.";
-		Assruin 1.
+		ruin asshole.
 Understand "pull up on [something]", "pull [something] up" as hook fucking.
 
 
@@ -194,7 +194,7 @@ REQUIRES COMMENTING
 To Jump From The Hook:
 	say "You jump up as much as you can while on tip toes, which isn't much, hoping you can get off the hook this way.  But the rope just pulls up as you jump, and now you are even more on tiptoes as before as the rope refuses to return to its original amount of slack!  This is putting even more of your weight on the hook in your [asshole]!  Maybe try [bold type]pull[roman type]ing it instead?";
 	now seconds is 6;
-	Assruin 1.	
+	ruin asshole.	
 
 
 Ass Hook Trap ends here.

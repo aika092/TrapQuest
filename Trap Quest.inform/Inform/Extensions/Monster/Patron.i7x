@@ -19,7 +19,7 @@ The printed name of impatient patron is usually "[if item described is in the lo
 
 An experienced patron is a kind of patron.
 A well dressed patron is a kind of experienced patron.  There is 1 well dressed patron.  A suited patron is a kind of experienced patron.  There is 1 suited patron.
-The printed name of well dressed patron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]well dressed patron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of well dressed patron is "wpa".
+The printed name of well dressed patron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]well dressed patron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of well dressed patron is "wdp".
 The printed name of suited patron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]suited patron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of suited patron is "spa".
 
 A gross patron is a kind of patron.
@@ -314,9 +314,11 @@ To say SexResistFlav of (M - a patron):
 To compute payment of (M - a patron):
 	if M is pissed off:
 		say "[speech style of M]'[one of]I'm not paying you after that.'[or]If you want to get paid, you'll behave yourself next time.'[or]I'm not going to pay you.  In fact I might complain.'[or]I'll be back, and next time be obedient and you'll actually earn a payment.'[in random order][roman type][line break]";
+		decrease the employee-record of senior robobellboy by 1;[Until you start a training regimen, you can only earn strikes]
 	otherwise:
-		if the number of worn free ride tattoos is 0 or a random number between 1 and 2 is 1, loot M;
-		say "The [M] [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald]n[end if] [dropped-item] [one of]at your feet[or]on the ground in front of you[or]onto the bed[purely at random].";
+		if the number of worn free ride tattoos is 0 or a random number between 1 and 2 is 1:
+			loot M;
+			say "The [M] [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald]n[end if] [dropped-item] [one of]at your feet[or]on the ground in front of you[or]onto the bed[purely at random].";
 		say "[speech style of M]'[if M is inexperienced patron][one of]Thanks for the great time!'[or]That was fun, I'll be back again!'[or]You blew my mind, babe.'[or]That was definitely worth the money.'[or]I think that's the hardest I've ever orgasmed, thank you so much.'[or]Here's your payment, as promised!'[in random order][otherwise if M is gross patron][one of]Thanks.'[or]That was good.'[or]Expensive, but worth it.'[or]I'll be back again.'[in random order][otherwise if M is experienced patron][one of]Until next time.'[or]Your performance was acceptable.'[or]You earned it.'[or]Buy yourself something nice.'[in random order][otherwise][one of]Keep the change, you filthy animal.'[or]To be honest I'm impressed that you've survived.'[or]You don't even deserve this much.'[or]Until next time, whore.'[or]Try harder next time.'[in random order][end if][roman type][line break]";
 		let C be a random worn clothing;
 		if diaper quest is 0 and (there is a worn pussy deluxe tattoo or (C is clothing and M is not dickhead patron)):
@@ -325,10 +327,11 @@ To compute payment of (M - a patron):
 			if there is a worn pussy deluxe tattoo, now C is a random worn pussy deluxe tattoo;
 			let O be the initial outrage of C;
 			if C is tattoo, now O is the outrage of C; [initial outrage would be 0]
-			if O > a random number between 8 and 16:
+			if O > a random number between 8 and 16 or the class of the player is trained hooker:
 				loot M;
 				say "The [M] pauses, and then [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald]n[end if] [dropped-item] next to it.";
 				say "[speech style of M]'[if there is a worn pussy deluxe tattoo and the number of worn tattoos is 1]Your [one of]cunt[or]pussy[or]vag[as decreasingly likely outcomes] tattoo is[otherwise if there is a worn pussy deluxe tattoo]Your tattoos are[otherwise]That [C][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if]  pretty [if the initial outrage of C > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if], [one of]so here's something extra as a tip[or]you deserve extra[or]I think you've earned this much[or]you deserve a reward[or]here's something towards your next sexy purchase[or]and I'm feeling generous[at random].'[roman type][line break]";
+			if the class of the player is hotel employment, increase the employee-record of senior robobellboy by 1;
 	say "The [M] leaves the way he came.";
 	destroy M.
 
@@ -437,70 +440,55 @@ To compute facial sex of (M - a patron):
 			say OralSubmissionResponse of M;
 			decrease the sex-length of M by 1.
 
-To compute anal climax of (M - a patron):
-	compute fuckhole climax of M.
-
 To compute anal sex of (M - a patron):
 	if the reaction of the player is 2 and M is not dickhead patron and M is not pissed off:
 		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
-		if a random number between 1 and 3 > 1, AssRuin 1;
+		if a random number between 1 and 3 > 1, ruin asshole;
 	otherwise if the reaction of the player > 0:
 		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][or][M submission sex 7][at random]";
-		AssRuin 1;
+		ruin asshole;
 	otherwise:
 		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][or][M rough sex 6][at random]";
-		AssRuin 1;
+		ruin asshole;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
-	
-
-To compute vaginal climax of (M - a patron):
-	compute fuckhole climax of M.
 
 To compute vaginal sex of (M - a patron):
 	if the reaction of the player is 2:
 		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
 	otherwise if the reaction of the player is 1:
 		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][at random]";
-		PussyRuin 1;
+		ruin vagina;
 	otherwise:
 		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		PussyRuin 1;
+		ruin vagina;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
-To compute fuckhole climax of (M - a patron):
-	TimesFuckedUp M by 1;
-	if M is wrapped, say CondomPieFlav of M;
-	otherwise say CreampieFlav of M;
-	if M is penetrating vagina:
-		wombfill the semen load of M;
-		now M is not penetrating vagina;
-		let T be a random vagina-tally tattoo;
-		if T is worn:
-			say "Taking out his permanent marker, the [M] adds another strike to the tally at your crotch.";
-			increase the tallies of T by 1;
-		otherwise if there is a worn[ ink-me] tattoo:
-			say "Taking out a permanent marker, the [M] draws a permanent tally next to your [vagina].";
-			summon T;
-	if M is penetrating asshole:
-		assfill the semen load of M;
-		now M is not penetrating asshole;
-		let T be a random asshole-tally tattoo;
-		if T is worn:
-			say "Taking out his permanent marker, the [M] adds another strike to the tally next to your [asshole].";
-			increase the tallies of T by 1;
-		otherwise if there is a worn[ ink-me] tattoo:
-			say "Taking out a permanent marker, the [M] draws a permanent tally next to your [asshole].";
-			summon T;
+To compute post climax effect of (M - a patron) in (F - vagina):
+	let T be a random vagina-tally tattoo;
+	if T is worn:
+		say "Taking out his permanent marker, the [M] adds another strike to the tally at your crotch.";
+		increase the tallies of T by 1;
+	otherwise if there is a worn[ ink-me] tattoo:
+		say "Taking out a permanent marker, the [M] draws a permanent tally next to your [vagina].";
+		summon T;
 	compute payment of M.
 
-To say CondomPieFlav of (M - a patron):
-	let F be a random fuckhole penetrated by M;
+To compute post climax effect of (M - a patron) in (F - asshole):
+	let T be a random asshole-tally tattoo;
+	if T is worn:
+		say "Taking out his permanent marker, the [M] adds another strike to the tally next to your [asshole].";
+		increase the tallies of T by 1;
+	otherwise if there is a worn[ ink-me] tattoo:
+		say "Taking out a permanent marker, the [M] draws a permanent tally next to your [asshole].";
+		summon T;
+	compute payment of M.
+
+To say CondomPieFlav of (M - a patron) in (F - a fuckhole):
 	say "[one of]The [M] growls, tightening [his of M] grip as the condom fills with warmth. He continues fucking you, making sure that [his of M] balls have been well and truly emptied of every last drop of [semen]. Finally, you feel [his of M] hands leave your hips and he pulls out.[or]The [M] grunts, his [manly-penis] throbbing as he unloads [his of M] balls into [his of M] condom. He sighs in satisfaction, roughly shoving you off his [manly-penis].[or][if the semen addiction of the player < 7]The [M] tightens his grip and begins grunting in pleasure. You shudder and look over your shoulder as you feel a flash of warmth near his tip, spreading quickly into the rest of the condom as he releases your hips and pulls out.[otherwise if the semen addiction of the player < 11]The [M] tightens his grip and begins grunting in pleasure. You gasp and look over your shoulder as you feel a flash of warmth near his tip, spreading quickly into the rest of the condom as his thrusting comes to a close. His hands reluctantly leave your hips as he pulls out.[otherwise]The [M] tightens his grip and begins grunting in pleasure. You look over your shoulder and grin as you feel a surge of warmth near his tip, spreading quickly into the rest of the condom as you milk his [manly-penis] down to the last drop. His hands reluctantly leave your hips as he pulls out.[end if][or]The [M] grunts and tightens his grip. You [if the semen addiction of the player < 8]whimper[otherwise if the semen addiction of the player < 13]sigh quietly[otherwise]coo[end if] as the condom fills with his [semen], thin enough that you can still feel it flowing slowly inside it as he pulls out.[at random]".
 
-To say CreampieFlav of (M - a patron):
-	let F be a random fuckhole penetrated by M;
+To say CreampieFlav of (M - a patron) in (F - a fuckhole):
 	say "[one of]The [M] growls, tightening his grip as warm [semen] begins flowing inside of you. He continues fucking you until his balls have been thoroughly and completely emptied into your [variable F]. You feel his hands leave your hips as he pulls out.[or]The [M] grunts, his [manly-penis] throbbing as he unloads his balls into your [variable F]. He sighs in satisfaction, roughly shoving you off his [manly-penis].[or][if the semen addiction of the player < 7]The [M] tightens his grip and begins grunting in pleasure. You shudder and look over your shoulder as [semen] flows into your [variable F]. He releases your hips, finished with you.[otherwise if the semen addiction of the player < 11]The [M] tightens his grip and begins grunting in pleasure. You gasp and look over your shoulder as [semen] flows into your [variable F]. He releases your hips, thrusting a few more times before pulling out.[otherwise]The [M] tightens his grip and begins grunting in pleasure. You look over your shoulder and grin as [semen] flows into your [variable F]. He releases your hips, allowing you to milk his [manly-penis] down to the last drop before pulling out.[end if][or][if the semen addiction of the player < 8]The [M] grunts and tightens his grip. You whimper as his [manly-penis] pumps two waves of [semen] directly into your [variable F]. His hands leave your hips as he pulls out.[otherwise if the semen addiction of the player < 13]The [M] grunts and tightens his grip. You sigh quietly as his [manly-penis] pumps two waves of [semen] directly into your [variable F]. His hands leave your hips as he pulls out.[otherwise]The [M] grunts and tightens his grip. You coo happily as his [manly-penis] pumps two waves of [semen] directly into your [variable F]. His hands leave your hips as he pulls out.[end if][at random]".
 
 The latex punishment rule of a patron is usually the no latex punishment rule.

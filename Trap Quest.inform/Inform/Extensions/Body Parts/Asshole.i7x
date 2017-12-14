@@ -11,95 +11,6 @@ REQUIRES COMMENTING
 @!]
 asshole is a fuckhole.  asshole is everywhere.  The description of asshole is "[TotalDesc of asshole][AssholeModesty]".  Understand "butthole", "anus", "ass hole", "butt hole" as asshole.  Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut.  Understand "hole" as asshole when the player is not in Hotel16.
 
-[!<Asshole>@<soreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called soreness.  The soreness of asshole is usually 0.
-
-[!<Asshole>@<tolerated:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called tolerated.  The tolerated of asshole is usually 0.
-
-[!<Asshole>@<openness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called openness.  The openness of asshole is usually 0.
-
-[!<Asshole>@<realOpenness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called real openness.  The real openness of asshole is usually 0.
-
-[!<Asshole>@<previousSoreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called previous soreness.
-
-[!<Asshole>@<previousOpenness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called previous openness.
-
-[!<Asshole>@<buildup:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-asshole has a number called buildup.
-
-[!<WhichNumberIsTheSemenVolumeOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is the semen-volume of (F - a fuckhole):
-	if F is vagina , decide on the semen volume of vagina;
-	if F is asshole, decide on the semen volume of belly;
-	decide on 0.
-
-[!<FuckholeIsLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a fuckhole (called F) is lewdly exposed:
-	if F is exposed, decide yes; [Plugs are not usable as modesty items]
-	[if F is exposed and F is not actually occupied, decide yes; [Plugs are actually usable as modesty items]]
-	decide no.
-
-To decide which number is the lewdly exposed outrage of (F - a fuckhole):
-	let O be 11;
-	if F is asshole and the semen volume of belly > 0, increase O by 2;
-	if F is vagina and the semen volume of vagina > 0, increase O by 2;
-	increase O by the openness of F / 5;
-	decide on O.
-
-[!<FuckholeIsAtLeastPartiallyLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a fuckhole (called F) is at least partially lewdly exposed:
-	if F is at least partially exposed, decide yes; [Plugs are not usable as modesty items]
-	[if F is exposed and F is not actually occupied, decide yes; [Plugs are actually usable as modesty items]]
-	decide no.
-
-To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
-	decide on the lewdly exposed outrage of F - 2.  [allows us to easily tweak this number]
-
 [!<AssholeIsExposed>+
 
 REQUIRES COMMENTING
@@ -284,12 +195,17 @@ To say AssholeModesty:
 		if there is an ass covering clothing:
 			let W be a random ass covering clothing;
 			say "It is clearly visible through your [selfexamineuniquetitle of W].  ";
-		otherwise:
-			say "It is completely unprotected.  ";
+		otherwise if asshole is not actually occupied:
+			say "It is completely unprotected. ";
 	otherwise:
-		let W be a random worn potentially asshole covering clothing;
-		say "It can't be seen thanks to the [if asshole is exposed][random thing penetrating asshole][otherwise][selfexamineuniquetitle of W][end if].  ".
-
+		let W be a random worn potentially at least partially asshole covering clothing;
+		say "It can't be seen thanks to the [if asshole is exposed][random thing penetrating asshole][otherwise][selfexamineuniquetitle of W][end if].  ";
+	if asshole is actually occupied:
+		let P be a random thing penetrating asshole;
+		if P is monster:
+			say "It is currently being pounded by [printed name of P].";
+		otherwise:
+			say "It is currently the [if the girth of P > the openness of asshole]snug [end if]home of a [printed name of P].".
 [!<SayRealGapeDesc>+
 
 REQUIRES COMMENTING
@@ -385,45 +301,6 @@ To Assclose (X - a number):
 				otherwise if I is an insertable thing:
 					decrease the openness of asshole by 1;[in the next clause we assume anything penetrating the player is a monster, so we leave the player untightened.]
 			if the number of things filling asshole is 0, decrease the openness of asshole by 1.[if this isn't 0, it wasn't an item, so we leave it in.]
-
-
-[!<AssRuinX>+
-
-REQUIRES COMMENTING
-
-+!]
-To assruin (X - a number):
-	now the previous soreness of asshole is the soreness of asshole;
-	increase the buildup of asshole by 1;
-	while X > 0:
-		decrease X by 1;
-		if the soreness of asshole > 8 and there is a worn cum dump's undergarment, now the soreness of asshole is 8; [cum dump's undergarment prevents fainting from soreness]
-		if asshole is pushed over the edge:
-			anally orgasm shamefully;
-		otherwise if the buildup of asshole >= 20 and the soreness of asshole < 10:
-			say "Regardless of how insensitive your [asshole] is, there's no way it can take an infinite fucking.  Over time, you feel it getting slowly more and more sore...";
-			now the soreness of asshole is 10;
-			now the buildup of asshole is 0;
-		otherwise if the soreness of asshole is 10 and X is 0 and there is an embodied thing penetrating asshole:
-			check soreness fainting of asshole;
-		RuinRoll asshole;
-	if the previous soreness of asshole < 10 and the soreness of asshole is 10 and delayed fainting is 0, say "[RuinedFlav of asshole]".
-
-[!<AssHealX>+
-
-REQUIRES COMMENTING
-
-+!]
-To assheal (X - a number):
-	now the previous soreness of asshole is the soreness of asshole;
-	let Y be X;
-	while X > 0:
-		decrease X by 1;
-		if the soreness of asshole > 0:
-			if Y is X - 1:
-				say "Your [asshole] feels [if X > 2 and the soreness of asshole > 2]much [end if]less sore."; [We only say this once.]
-				now the tolerated of asshole is 0;
-			decrease the soreness of asshole by 1.
 
 
 Asshole ends here.

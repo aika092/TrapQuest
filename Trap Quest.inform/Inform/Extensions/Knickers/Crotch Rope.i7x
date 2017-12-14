@@ -34,6 +34,6 @@ Carry out going when there is a worn crotch rope: [Should only ever be worn by f
 	let C be a random worn crotch rope;
 	if a random number between 1 and 10 is 1 and vagina is not actually occupied:
 		say "As you move, the large knot at the front of your [printed name of C] rubs brutally against your [vagina], stimulating it and making it more sore!";
-		PussyRuin 1.
+		ruin vagina.
 
 Crotch Rope ends here.

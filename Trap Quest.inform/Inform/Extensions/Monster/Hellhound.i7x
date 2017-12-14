@@ -35,7 +35,7 @@ Definition: a hellhound (called M) is controlling: [Will it grab onto subduing c
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a hellhound):
-	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through it. The [printed name of M] emits a chilling howl, siezing the leash end of the collar with its teeth as the portal closes up, and the mummy slowly returns to its feet.";
+	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with its teeth as the portal closes, and the mummy slowly returns to its feet.";
 	say "You hear a chilling howl in the distance.".
 
 To say PregGrowth of (M - a hellhound):
@@ -105,56 +105,95 @@ To compute vaginal sex of (M - a hellhound):
 To compute fuckhole sex of (M - a hellhound):
 	let F be a random fuckhole penetrated by M;
 	if M is knotted:
-		compute knotting of M;
+		compute knotting of M in F;
 	otherwise if the rounds of sex left of M <= 1:
-		if M is penetrating asshole, compute anal climax of M;
-		otherwise compute vaginal climax of M;
-		now the sex-length of M is a random number between 2 and 5;
+		compute climax of M in F;
+		if M is knotted, now the sex-length of M is a random number between 2 and 5;
 	otherwise:
 		say "The [M] [one of]licks your face with a hot, slimy devil tongue as it continues to pound away at your [variable F][or]pistons away in your [variable F] with incredible speed[or]repeatedly drills into you, plundering the depths of your [variable F] with its slippery canine cock[in random order].";
 		decrease the sex-length of M by 1;
 		if the reaction of the player > 0, say "[one of]You feel further humiliated by the fact that you are letting a dog fuck you, even if it is some kind of demon.[or][or][or][cycling]";
-		if M is penetrating asshole, AssRuin 1;
-		otherwise PussyRuin 1.
+		ruin F.
 
-To compute anal climax of (M - a hellhound):
-	TimesFuckedUp M by 1;
-	say "The [M] howls as [he of M] climaxes, filling you with [his of M] unusually hot jism. [run paragraph on]";
-	if the player is breeding material or the player is a butt slut:
-		say "Instead of pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper, and [if the sex addiction of the player < 7]your heart sinks[otherwise if the sex addiction of the player < 14]you yelp[otherwise]you coo happily[end if] as you feel the base of its cock inflating. There's nothing you can do under the weight of the beast except [if the anal sex addiction of the player < 8]shudder[otherwise]shiver[end if] as you are anally knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
-	otherwise:
-		say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel the base of its cock inflating. Pinned down by its full weight, [if the sex addiction of the player < 7]your heart sinks[otherwise if the sex addiction of the player < 14]you groan[otherwise]you mewl happily[end if] as you realize there's nothing you can do to get away as you are anally knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
-	assfill the semen load of M;
+To Knot (M - a hellhound) in (F - a fuckhole):
 	now M is knotted;
-	AssRuin 1.
+	ruin F;
+	if the sex-length of M < 1, now the sex-length of M is 1.
 
-To compute vaginal climax of (M - a hellhound):
-	TimesFuckedUp M by 1;
-	say "The [M] howls as he climaxes, filling you with its unusually hot jism.  You can feel it flow into your womb[if pregnancy fetish is 1 and inhuman pregnancy > 1], surging straight for your fallopian tubes with unnatural ease[end if].  [if pregnancy fetish is 1 and inhuman pregnancy > 1 and M is mating][variable custom style]Uh-oh, not pups again![roman type][line break][otherwise if pregnancy fetish is 1 and inhuman pregnancy > 1][variable custom style]I can't get pregnant with puppies, can I?!  I'm a human![roman type][line break][end if]";
-	wombfill the semen load of M;
-	if the player is not breeding material and the player is not a pussy slut:[does he see you as a good mate?]
-		say PullOutFlav of M;
-		if watersports fetish is 1, FacePiss;
-		otherwise SemenPuddleUp 2;
-		bore M;
-	otherwise:
-		say CreampieFlav of M;
-		now M is knotted;
-		PussyRuin 1.
+To UnKnot (M - a hellhound) in (F - a fuckhole):
+	now M is unknotted;
+	now the sex-length of M is 0.
 
-To say CreampieFlav of (M - a hellhound):
-	if M is penetrating vagina:
-		say "But rather than pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper into your [vagina], and you can't help but make high pitched noises as you feel the base of its cock inflating[one of][or], stretching your tired hole once again[stopping].  There's nothing you can do under the weight of the beast except shudder as you are vaginally knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
-	otherwise:
-		say "The [M] ejaculates deep inside your [asshole]!".
-	
-To say PullOutFlav of (M - a hellhound):
-	if watersports fetish is 1:
-		say "The [M] pulls out and slowly walks around to your face. He lifts his leg and immediately begins to pee, as if marking you as his territory!";
-	otherwise:
-		say "The [M] pulls out, appearing to have immediately lost interest. [Semen] continues leaking from its [manly-penis], leaving a slimy trail along the floor.".
+To compute unique climax of (M - a hellhound) in (F - a fuckhole):
+	say ClimaxAnnounce of M in F;
+	compute unprotected climax of M in F.
 
-To compute knotting of (M - a hellhound):
+To decide if (M - a hellhound) is willing to creampie (F - asshole):
+	if the class of the player is catgirl, decide no;
+	if the class of the player is puppygirl or the class of the player is succubus, decide yes;
+	if the class of the player is priestess:
+		if the virgin bonus of the player > 0, decide no;
+	if the player is a butt slut, decide yes;
+	if the thickness of hips > 4, decide yes;
+	decide no.
+
+To decide if (M - a hellhound) is willing to creampie (F - vagina):
+	if the class of the player is catgirl, decide no;
+	if the class of the player is puppygirl or the class of the player is succubus, decide yes;
+	if the class of the player is priestess:[He can sometimes knot a priestess, but there's rules]
+		if the virgin bonus of the player < 0 or the player is a sissy, decide yes;
+		decide no;
+	if the player is a pussy slut, decide yes;
+	if the thickness of hips + the pregnancy rate of the player > 4, decide yes;
+	decide no.
+
+To say ClimaxAnnounce of (M - a hellhound) in (F - asshole):
+	say "The [M] howls as [he of M] climaxes, filling you with [his of M] unusually hot jism. [run paragraph on]".
+
+To say ClimaxAnnounce of (M - a hellhound) in (F - vagina):
+	say "The [M] howls as he climaxes, filling you with its unusually hot jism.  You can feel it flow into your womb[if pregnancy fetish is 1 and inhuman pregnancy > 1], surging straight for your fallopian tubes with unnatural ease[end if].  [if pregnancy fetish is 1 and inhuman pregnancy > 1 and M is mating][variable custom style]Uh-oh, not pups again![roman type][line break][otherwise if pregnancy fetish is 1 and inhuman pregnancy > 1][variable custom style]I can't get pregnant with puppies, can I?!  I'm a human![roman type][line break][end if]".
+
+To say CreampieFlav of (M - a hellhound) of (F - a fuckhole):
+	say "But rather than pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and you can't help but make high pitched noises as you feel the base of its cock inflating[one of][or], stretching your tired hole once again[stopping].  There's nothing you can do under the weight of the beast except shudder as you are knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
+
+To say MessyPullOutFlav of (M - a hellhound) in (F - asshole):
+	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel the base of its cock inflating. Pinned down by its full weight, [if the sex addiction of the player < 7]your heart sinks[otherwise if the sex addiction of the player < 14]you groan[otherwise]you mewl happily[end if] as you realize there's nothing you can do to get away as you are anally knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].".
+
+To say MessyPullOutFlav of (M - a hellhound) in (F - vagina):
+	say "The [M] pulls out and slowly walks around to your face. He lifts his leg and immediately begins to pee, as if marking you as his territory!".
+
+To say PullOutFlav of (M - a hellhound) in (F - vagina):
+	say "The [M] pulls out, appearing to have immediately lost interest. [Semen] continues leaking from its [manly-penis], leaving a slimy trail along the floor.".
+
+To compute (M - a hellhound) pulling out of (F - asshole):
+	say MessyPullOutFlav of M in F;
+	compute M finishing in F.
+
+To compute (M - a hellhound) finishing in (F - asshole):
+	AssFill the semen load of M;
+	Knot M in F.
+
+To compute (M - a hellhound) pulling out of (F - vagina):
+	if watersports fetish is 1, compute M messily pulling out of F;
+	otherwise compute M cleanly pulling out of F;
+	bore M.
+
+To compute (M - a hellhound) messily pulling out of (F - vagina):
+	say MessyPullOutFlav of M in F;
+	compute M finishing in F;
+	FacePiss.
+
+To compute (M - a hellhound) cleanly pulling out of (F - vagina):
+	say PullOutFlav of M in F;
+	compute M finishing in F;
+	SemenPuddleUp 2;
+
+To compute creampie of (M - a hellhound) in (F - vagina):
+	say CreampieFlav of M in vagina;
+	compute M finishing in F;
+	Knot M in F.
+
+To compute knotting of (M - a hellhound) in (F - a fuckhole):
 	if the sex-length of M <= 0:
 		now M is unknotted;
 		dislodge M;
@@ -164,26 +203,24 @@ To compute knotting of (M - a hellhound):
 		if H is actually summonable:
 			summon H cursed;
 			say "[bold type]Suddenly, a pair of [H][bold type] appear on your head![if the bimbo of the player < 9]  [variable custom style]I am NOT a dog![end if][roman type][line break]";
-	otherwise if the player is breeding material or the player is a butt slut:
+	otherwise if M is willing to creampie F:
 		if M is in Mansion08:
 			say "The [M] completely ignores you, continuing to drink its fill.";
 		otherwise:
 			let player-moved be 0;
 			if delayed stand is 0: [This prevents a glitch with autostanding and the gladiator dragging]
 				drag to Mansion08 by M;
-		if M is penetrating asshole, AssRuin 1;
-		otherwise PussyRuin 1;
+		ruin F;
 		say "The [M]'s [semen] continues to slowly flow into you.";
 		if M is penetrating asshole, Assfill 1;
 		otherwise wombfill 1;
 		decrease the sex-length of M by 1;
 	otherwise:
-		say "The [M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realizes that [his of M] giant knot has wedged [his of M] [manly-penis] firmly inside your rectum. Digging [his of M] bestial talons into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], he [i]wrenches[/i] [him of M]self free with a [if the openness of asshole < 3]excruciatingly painful[otherwise if the openness of asshole < 6]vicious[otherwise if the openness of asshole < 10]moderate[otherwise]healthy[end if] amount of force,  releasing you with a loud *POP*.";
-		AssRuin 5;
+		say "The [M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realizes that [his of M] giant knot has wedged [his of M] [manly-penis] firmly inside your [variable F]. Digging [his of M] bestial talons into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], he [i]wrenches[/i] [him of M]self free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force,  releasing you with a loud *POP*.";
+		ruin F times 5;
 		DelicateUp 2;
-		now M is unknotted;
+		UnKnot M in F;
 		dislodge M;
-		now the sex-length of M is 0;
 		bore M;
 	let T be a random paw print tattoo;
 	if there is a worn tattoo and T is not worn:
@@ -212,19 +249,19 @@ The monster convinced rule of hellhound is usually the hellhound never convinced
 
 To compute (M - a hellhound) entering asshole:
 	let C be a random off-stage pet collar;
-	if the player is the donator and C is actually summonable and the player is breeding material:
+	if the player is the donator and C is actually summonable and M is willing to creampie asshole:
 		summon C cursed;
 		now M is covering C;
 		say "The [M] uses its giant mouth to swing the collar over your head and onto your neck, where it immediately seals itself with cursed magic.  The [M] still has the leash in its mouth, which it uses to hold you strictly in place.  There's no way you can escape now!";
 	otherwise:
 		say "[FuckholePenetrationFlav of M]";
 		now M is penetrating asshole;
-		AssRuin 1.
+		ruin asshole.
 
 To compute (M - a hellhound) entering vagina:
 	say "[FuckholePenetrationFlav of M]";
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 To say FuckholePenetrationFlav of (M - a hellhound):
 	let F be the chosen-orifice of M;

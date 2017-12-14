@@ -236,7 +236,7 @@ Figure of briefs 15 is the file "briefs15.png".
 
 [Below are from Lucas]
 
-A pale blue briefs is a kind of briefs.  There is 1 pale blue briefs.  The text-shortcut of pale blue briefs is "pbb".	
+A pale blue briefs is a kind of briefs.  There is 1 pale blue briefs.  The text-shortcut of pale blue briefs is "pbbr".	
 Understand "I want", "it all" as pale blue briefs.
 To say selfexamineuniquetitle of (G - a pale blue briefs):	
 	say "pair of pale blue 'I WANT IT ALL' briefs".

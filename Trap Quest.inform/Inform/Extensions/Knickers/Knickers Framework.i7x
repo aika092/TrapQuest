@@ -138,9 +138,9 @@ Report wearing knickers:
 		otherwise:
 			say "[if the bimbo of the player < 7][first custom style]I can't believe I'm doing this...  [roman type][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plugs into your [if the soreness of vagina > 4]open [otherwise]tight [end if][vagina] and [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
 			now the noun is penetrating vagina;
-			PussyRuin 1;
+			ruin vagina;
 		now the noun is penetrating asshole;
-		AssRuin 1;
+		ruin asshole;
 		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is female]ass [end if] plug starts vibrating!  That can't be good...";
 	otherwise if the noun is unsure and the noun is cursed:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off.  This diaper is cursed!";

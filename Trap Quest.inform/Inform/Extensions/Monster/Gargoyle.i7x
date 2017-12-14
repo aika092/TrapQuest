@@ -207,12 +207,12 @@ To compute masturbation of (M - a gargoyle):
 			now player-fucking is 0;
 			now refactoryperiod is 3;
 		otherwise if the player is female:
-			Pussyruin 1;
+			ruin vagina;
 		arouse (the difficulty of M + the size of penis) * 35;
 		if there is worn vagina plugging clothing and the player is female:
 			let K be a random worn vagina plugging clothing;
 			say "The plug[if K is vagina plugging]s[end if] inside of you send pleasurable sensations deep into your [vagina].";
-			PussyRuin 1;
+			ruin vagina;
 		let D be a random worn messed diaper;
 		if D is diaper:
 			say "[one of]The gross squishiness of your messy diaper being spanked makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";

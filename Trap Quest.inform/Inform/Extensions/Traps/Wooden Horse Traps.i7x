@@ -164,8 +164,8 @@ To compute horse effect of (T - a painted horse):
 	if horse-vibrations is listed in the list of current horse effects and W > 2:
 		say "The vibrations of the wooden horse continue to overstimulate your [asshole][if the player is female] and [vagina][end if].";
 		if the player is female:
-			if the soreness of vagina < 10 or the delicateness of the player > 15, PussyRuin 1;
-		if the soreness of asshole < 10 or the delicateness of the player > 15, AssRuin 1;
+			if the soreness of vagina < 10 or the delicateness of the player > 15, ruin vagina;
+		if the soreness of asshole < 10 or the delicateness of the player > 15, ruin asshole;
 		otherwise DelicateUp 1;
 		arouse 400; [Extra arousal hardcoded in here]
 	otherwise if W > 2 and delayed fainting is 0:
@@ -225,8 +225,8 @@ To compute horse effect of (T - a wild horse):
 	if W < 3, now W is 3;
 	let R be a random number between -1 and W;
 	say "The ridges of the horse continue to overstimulate your [asshole][if the player is female] and [vagina][end if].";
-	if the player is female, PussyRuin 1;
-	otherwise AssRuin 1; [Otherwise horse is a bit imbalanced towards punishing females]
+	if the player is female, ruin vagina;
+	otherwise ruin asshole; [Otherwise horse is a bit imbalanced towards punishing females]
 	arouse 400; [Extra arousal hardcoded in here]
 	if the TrapNo of T < 1:
 		now T is not penetrating vagina;
@@ -235,7 +235,7 @@ To compute horse effect of (T - a wild horse):
 		let R be a random number between 1 and 4;
 		if R < 3 and mythical creature fetish is 1:
 			say "The horse tips forward suddenly, flinging you right into its path. A compartment opens in the bottom as it bears down on you, an incredibly lifelike rubber horsecock slides out. You barely have time to get out of the way before it plunges deep inside you, dragging your helpless body along the ground as the teetering motions drive the dildo in and out of your [asshole]. Semen flows inside of you as the horse slowly grinds to a halt, leaving a creamy line of white on your back as the dildo pops out.";
-			AssRuin 3;
+			ruin asshole times 3;
 			CumThighsUp 1;
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;

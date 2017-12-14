@@ -130,10 +130,8 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 	if M is newborn, say "steadily.";
 	otherwise say "powerfully.";
 	decrease the sex-length of M by 1;
-	if M is penetrating asshole:
-		AssRuin 1;
-	if M is penetrating vagina:
-		PussyRuin 1;
+	if M is penetrating asshole, ruin asshole;
+	if M is penetrating vagina, ruin vagina;
 	if the reaction of the player > 0 and M is penetrating a fuckhole:
 		if M is not massive, say "Your lack of resistance against the monster is preventing you from getting more sore, [if M is not player-brood]but it is extremely humiliating to submit to being bred by your own hellish tentacle spawn[otherwise]but you can feel your thoughts clouding as you are bred by the freakish tentacle spawn[end if].";
 	if M is penetrating breasts, compute titfuck of M;
@@ -153,7 +151,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [asshole] being permanently gaped.[otherwise if M is penetrating face and M is penetrating vagina]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating vagina]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating asshole;
-				AssRuin 1;
+				ruin asshole;
 			otherwise:
 				let C be a random worn top level ass protection clothing;
 				if M is newborn:
@@ -171,7 +169,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [vagina] being permanently widened.[otherwise if M is penetrating face and M is penetrating asshole]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating asshole]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating vagina;
-				PussyRuin 1;
+				ruin vagina;
 			otherwise:
 				let C be a random worn top level protection clothing;
 				if M is newborn:
@@ -284,13 +282,13 @@ To compute (M - a tentacle monster) entering mouth:
 To compute (M - a tentacle monster) entering asshole:
 	say "Without hesitation the [M] buries a [if M is not newborn]thick [end if]tentacle deep inside your [asshole].[if M is massive][line break]The tentacle is so large that you can feel your [asshole] being permanently gaped.[end if]";
 	now M is penetrating asshole;
-	AssRuin 1;
+	ruin asshole;
 	set up sex length of M.
 
 To compute (M - a tentacle monster) entering vagina:
 	say "Without hesitation the [M] forces a [if M is not newborn]thick [end if]tentacle deep inside your [vagina].[if M is massive][line break]The tentacle is so large that you can feel your [vagina] being permanently gaped.[end if]";
 	now M is penetrating vagina;
-	PussyRuin 1;
+	ruin vagina;
 	set up sex length of M.
 
 To say SelectionFrustrated of (M - a tentacle monster):
@@ -333,7 +331,7 @@ To compute unique death of (M - a tentacle monster):
 		if H is actually summonable:
 			say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
 			summon H cursed;
-			if the player is male and tg fetish >= 1:
+			if the player is male and tg fetish >= 2:
 				say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 				SexChange the player;
 	if the variety of M is 3 and there is an off-stage ghostly tentacle and the player is in the mansion:

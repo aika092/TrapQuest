@@ -1,7 +1,7 @@
 Hotel Bed by Furniture begins here.
 
 
-hotel bed is a kind of furniture.  The printed name of hotel bed is usually "[if item described is soggy]soggy [end if]hotel bed".  The printed name of hotel bed is "[TQlink of item described]hotel bed[TQxlink of item described][shortcut-desc][verb-desc of item described]".  A hotel bed can be unencountered or encountered.  A hotel bed is usually unencountered.  A hotel bed can be soggy. Understand "soggy" as hotel bed when the item described is soggy.  Understand "hotel" as hotel bed.  The text-shortcut of hotel bed is "hb".
+hotel bed is a kind of furniture.  The printed name of hotel bed is usually "[if item described is soggy]soggy [end if]hotel bed".  The printed name of hotel bed is "[TQlink of item described]hotel bed[TQxlink of item described][shortcut-desc][verb-desc of item described]".  A hotel bed can be unencountered or encountered.  A hotel bed is usually unencountered.  A hotel bed can be soggy. Understand "soggy" as hotel bed when the item described is soggy.  Understand "hotel", "bed" as hotel bed.  The text-shortcut of hotel bed is "hb".
 
 To destroy (F - a hotel bed):
 	remove F from play;
@@ -17,7 +17,7 @@ To say RestingDesc of (F - a hotel bed):
 
 HotelBedBoring is a kind of hotel bed.  There are 2 HotelBedBoring.
 
-HotelBedCreamy is a kind of hotel bed. There are 2 HotelBedCreamy. The printed name of HotelBedCreamy is "[TQlink of item described][if item described is unencountered]hotel bed[otherwise][semen] soaked hotel bed[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]".
+HotelBedCreamy is a kind of hotel bed. There are 2 HotelBedCreamy. The printed name of HotelBedCreamy is "[TQlink of item described][if item described is unencountered]hotel bed[otherwise if diaper quest is 1]constricting hotel bed[otherwise][semen] soaked hotel bed[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]".
 To say RestingDesc of (F - HotelBedCreamy):
 	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress.[if diaper quest is 0][one of]You are so comfortable that you appreciate the warm, moist feeling within the bed without really thinking too hard about it.[or][stopping][end if]".
 To compute rest ending of (F - HotelBedCreamy):

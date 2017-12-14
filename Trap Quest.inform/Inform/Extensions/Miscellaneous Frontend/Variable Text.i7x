@@ -467,4 +467,13 @@ To say tasty:
 	say "tasty";
 	now hypno-trigger is "tasty".
 
+[!<SayMaturity>+
+
+Aika's first DQ hypnosis test
+
++!]
+To say maturity:
+	say "maturity";
+	now hypno-trigger is "maturity".
+
 Variable Text ends here.

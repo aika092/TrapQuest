@@ -163,8 +163,8 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					HipUp 1;
 				say "[bold type]'You feel one of the souls you have devoured fading away. Its power flows into the stone in your chest, and your body becomes more womanly!!'[roman type][line break]";
 			otherwise:
-				assheal 1;
-				pussyheal 1;
+				heal asshole times 1;
+				heal vagina times 1;
 				bodyheal 1;
 				if the player is thirsty, increase the stomach-water of the player by 1;
 				say "[bold type]'You feel one of the souls you have devoured fading away, and feel its power sustaining your flesh.'[roman type][line break]";
@@ -211,7 +211,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute makeup decay:
-	if a random number between 0 and diaper quest is 0:
+	if a random number between 0 and diaper quest is 0 and permanent makeup is 0:
 		if the make-up of face > 1:
 			say "Your make-up partially fades.";
 			FaceDown 1;
@@ -227,12 +227,12 @@ REQUIRES COMMENTING
 To compute orifice soreness decay:
 	if asshole is not actually occupied:
 		if the player is male:
-			AssHeal 1;
+			heal asshole times 1;
 		otherwise:
 			if the soreness of asshole > the soreness of vagina or vagina is actually occupied:
-				AssHeal 1;
+				heal asshole times 1;
 			otherwise:
-				PussyHeal 1.
+				heal vagina times 1.
 
 [!<ComputeSpecialDecay>+
 

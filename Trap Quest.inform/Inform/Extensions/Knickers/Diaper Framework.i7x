@@ -27,6 +27,9 @@ Definition: a knickers (called K) is soilable:
 Definition: a diaper (called D) is soilable:
 	decide yes.
 
+Definition: a training pants (called D) is soilable:
+	if panty messing is 0, decide no;
+	decide yes.
 Definition: a panties (called D) is soilable:
 	if panty messing is 0, decide no;
 	decide yes.
@@ -131,9 +134,10 @@ Definition: a diaper (called C) is too boring:
 	decide no.
 
 To say ShortDesc of (D - a diaper):
-	say selfexamineuniquetitle of D	.
+	say selfexamineuniquetitle of D.
 	
 To compute periodic effect of (D - a diaper):
+	compute unique periodic effect of D;
 	if D is no protection and D is not zippable and D is cursed or D is blessed:
 		if the number of embodied things penetrating a fuckhole is 0 and the bladder of the player > 4 and a random number between 1 and 10 is 1 and (the soak-limit of D / 2 > the total-soak of D):
 			say "[bold type]You feel your [D] somehow repair itself!  The rip at the crotch disappears, leaving it looking brand new[if the urine-soak of D > 0] (apart from the [urine])[end if].[roman type][line break]";
@@ -141,7 +145,23 @@ To compute periodic effect of (D - a diaper):
 	let S be ((the soak-limit of D * 4) / 5) - the total-soak of D; [Is the diaper over 80% full]
 	if S <= 0 and D is not cursed and a random number between 1 and 70 is 1:
 		say "[bold type]You feel the waistband and leg holes of your [printed name of D] tighten significantly.  It looks like you can't take it off any more![line break][variable custom style]I'm being punished for not changing it, aren't I?[roman type][line break]";
-		now D is cursed.
+		curse D;
+	if xavier-diaper-link > 0 and D is total protection:
+		increase xavier-diaper-link by 1;
+		if xavier-diaper-link is 17 or xavier-diaper-link is 39:
+			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you.  The Demon Queen must be urinating [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if you are wetting yourself.  ";
+			PissSoak 12 on D;
+			say "[PeeReaction 2]";
+			if diaper lover < 3, now xavier-diaper-link is 1;
+		if xavier-diaper-link is 57:
+			now xavier-diaper-link is 1;
+			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you.  The Demon Queen must be messing herself [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if it's you, which is all that really matters.  ";
+			now rectum is 35;
+			if D is not demon diaper, now diaper-scene-unhandled is 1;
+			compute messing.
+
+To compute unique periodic effect of (D - a diaper):
+	do nothing.
 
 Definition: a diaper (called D) is basic loot:
 	decide no. [A diaper never spawns from selecting a random basic loot knickers. #MG Seems redundant with the default]
@@ -164,6 +184,7 @@ To decide which number is the weight of (D - a diaper):
 Definition: a diaper (called D) is eligible:
 	if D is store, decide no;
 	if D is in holding pen, decide no;
+	if D is unique or D is rare, decide no;
 	if D is off-stage, decide yes;
 	if D is worn, decide no;
 	if D is held, decide no;

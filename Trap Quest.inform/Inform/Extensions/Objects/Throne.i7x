@@ -1,6 +1,6 @@
 Throne by Objects begins here.
 
-The throne is in Dungeon11.  The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]".  The throne is a trap.  The throne is not portable.  The throne is not triggered.  The throne is untriggered.  The throne is revealed.  Understand "bind","binds","tentacle","tentacles" as the throne. The description of the throne is "[ThroneDesc]".  The throne has a number called charge.  The charge of the throne is usually 0.  The throne has a number called turns.  The throne can be untransformed or transformed.  The throne is untransformed.  The text-shortcut of throne is "th".
+The throne is in Dungeon11.  The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]".  The throne is a trap.  The throne is not portable.  The throne is not triggered.  The throne is untriggered.  The throne is revealed.  Understand "bind","binds","tentacle","tentacles" as the throne. The description of the throne is "[ThroneDesc]".  The throne has a number called charge.  The charge of the throne is usually 0.  The throne has a number called turns.  The throne can be untransformed or transformed.  The throne is untransformed.  The text-shortcut of throne is "thr".
 
 To say ThroneDesc:
 	if the noun is untransformed:
@@ -289,7 +289,7 @@ A time based rule (this is the compute throne rule):
 			say "You feel stronger for having survived that ordeal, ";
 			if the turns of the throne > 6:
 				say "but your head is feeling very light, and your [asshole] is feeling a bit worse for wear!";
-				Assruin 1;
+				ruin asshole;
 				Intdown 1;
 				SemenAddictUp 1;
 			otherwise:

@@ -8,8 +8,7 @@ To decide which number is the initial outrage of (C - an ultra slutty bag of hol
 A condom rolls bag of holding is a kind of ultra slutty bag of holding.  A condom rolls bag of holding is usually plastic.  There is 1 condom rolls bag of holding.  The printed name of condom rolls bag of holding is usually "[TQlink of item described][clothing-title-before]condom rolls bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 Definition: a condom rolls bag of holding (called C) is condom-providing:
-	if the player is the donator, decide yes;
-	decide no.
+	decide yes.
 
 Figure of condom rolls bag of holding is the file "bag14.png".
 
