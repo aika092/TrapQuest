@@ -239,13 +239,13 @@ To say AssholePenetrationFlav of (M - a minotaur):[TODO: EXPAND DONG]
 To compute anal sex of (M - a minotaur):
 	if the sex-length of M > 0:
 		compute fuckhole sex of M;
-		if the soreness of asshole < 9 or the reaction of the player is 0, AssRuin 1;
+		if the soreness of asshole < 9 or the reaction of the player is 0, ruin asshole;
 		if the reaction of the player > 0:
 			if the soreness of asshole > 8, say "[one of]Your lack of resistance against the [M] is preventing you from going over the edge and fainting, but it is extremely humiliating to let yourself get fucked by a half bull.[or][or][or][or][cycling]";
 	otherwise if the health of M > 5:
 		compute fuckhole sex of M;
 		AssFill 2;
-		if the soreness of asshole < 10 or the reaction of the player is 0, AssRuin 1;
+		if the soreness of asshole < 10 or the reaction of the player is 0, ruin asshole;
 	otherwise:
 		if the dexterity of the player + the strength of the player > 20 + a random number between 1 and 10:
 			say "[one of]The [M] is completely spent, and collapses on top of you, half-crushing your body.[or]The [M], completely spent, collapses on top of you, half crushing your body.[or]The [M] collapses on top of you, spent.[at random] You barely manage to crawl out from underneath him, [if the soreness of asshole > 4 or the openness of asshole < 8]wincing as his[one of] shrinking[or] cum-slicked[or][or][at random] [manly-penis] [one of]slides out[or]pops out[at random] of your [asshole][otherwise]sighing as his[one of] shrinking[or] cum-slicked[or][or][at random] [manly-penis] slides out of your [asshole].";
@@ -260,13 +260,13 @@ To compute anal sex of (M - a minotaur):
 To compute vaginal sex of (M - a minotaur):
 	if the sex-length of M > 0:
 		compute fuckhole sex of M;
-		if the soreness of vagina < 9 or the reaction of the player is 0, PussyRuin 1;
+		if the soreness of vagina < 9 or the reaction of the player is 0, ruin vagina;
 		if the reaction of the player > 0:
 			if the soreness of vagina > 8, say "[one of]Your lack of resistance against the [M] is preventing you from going over the edge and fainting, but it is extremely humiliating to let yourself get fucked by a half bull.[or][or][or][or][cycling]";
 	otherwise if the health of M > 5:
 		compute fuckhole sex of M;
 		WombFill 2;
-		if the soreness of vagina < 10 or the reaction of the player is 0, PussyRuin 1;
+		if the soreness of vagina < 10 or the reaction of the player is 0, ruin vagina;
 	otherwise:
 		WombFill 2;
 		say "[one of]The [M] seems completely spent - he pulls your bloated body off his shaft and leaves you to recover.[or]The [M], spent, pulls your bloated body off his deflating shaft and leaves you to recover.[or]The [M] pulls your bloated body off his shaft as his ejaculation finally ends, leaving you on the floor to recover.[or]The [M] removes his deflating shaft from your [vagina], completely spent.[at random]  He stalks off, probably looking for another woman to breed.";
@@ -331,7 +331,7 @@ This is the minotaur replaces the monster rule:
 	now the chosen-orifice of M is asshole;
 	destroy N;
 	now M is penetrating asshole;
-	AssRuin 1;
+	ruin asshole;
 	rule succeeds.
 
 To compute (M - a minotaur) attacking (C - a clothing):
@@ -349,11 +349,18 @@ To compute (M - a minotaur) attacking (C - a clothing):
 To compute (M - a minotaur) removing (X - a thing):
 	say "The [M] forcefully and roughly pulls the [printed name of X] out of your [asshole] and drops it on the ground!";		
 	now X is in the location of the player;
-	if X is anal beads, AssRuin the notch-taken of X / 2;
+	if X is anal beads, ruin asshole times the notch-taken of X / 2;
 	dislodge X.
 
+To decide if (M - a minotaur) is willing to creampie (F - a vagina):
+	if the player is male, decide no;
+	if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
+	if the class of the player is cowgirl, decide yes;
+	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;
+	decide no.
+
 To compute the orifice choosing of (M - a minotaur):
-	if the player is breeding material:
+	if M is willing to creampie vagina:
 		now the chosen-orifice of M is vagina;
 	otherwise:
 		now the chosen-orifice of M is asshole.
@@ -363,13 +370,13 @@ To compute (M - a minotaur) entering vagina:
 	say "The [M] stares at your body and sniffs your [vagina], assessing you.  He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina].  [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously.  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the class of the player is cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]";
 	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 4;
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 To compute (M - a minotaur) entering asshole:
 	now the sex-length of M is the health of M / 10;
 	say "The [M] [one of]forcefully pushes his[or]clumsily rams his[or]jams his[or]forces his[at random] giant [manly-penis] into your [asshole], and starts fucking you furiously!  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]";
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 Section 2 - Damage
 

@@ -289,7 +289,7 @@ A time based rule (this is the compute throne rule):
 			say "You feel stronger for having survived that ordeal, ";
 			if the turns of the throne > 6:
 				say "but your head is feeling very light, and your [asshole] is feeling a bit worse for wear!";
-				Assruin 1;
+				ruin asshole;
 				Intdown 1;
 				SemenAddictUp 1;
 			otherwise:

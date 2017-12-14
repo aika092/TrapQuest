@@ -181,9 +181,16 @@ To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part)
 
 To compute tripping attack of (M - a futanari slutty sister):
 	if there is a dangerous bulging slutty sister in the location of the player and bukkake fetish is 1:
-		say "The [M] delicately strokes her [cock of M], aiming it at you.  You [one of]are too shocked to dodge[or]are too slow to dodge[stopping] as a huge, unrealistic jet of [semen] blasts from the tip and hits you straight in the mouth, coating your face and [BreastDesc].";
-		CumFaceUp 5;
-		CumTitsUp 5;
+		if a random number between the dexterity of the player - the semen addiction of the player and 4 < 8:
+			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4  > 12: 
+				say "The [M] delicately strokes her [cock of M], aiming it at you.  You react quickly as a huge, unrealistic jet of [semen] blasts from the tip, catching most of it in your mouth and letting the rest splatter liberally cross your face and [BreastDesc].";
+				StomachSemenUp 4;
+				CumFaceUp 2;
+				CumTitsUp 2;
+			otherwise:
+				say "The [M] delicately strokes her [cock of M], aiming it at you.  You [if the semen addiction of the player < 5][one of]are too shocked to dodge[or]are too slow to dodge[stopping][otherwise]too turned on to dodge[end if] as a huge, unrealistic jet of [semen] blasts from the tip and hits you straight in the mouth, coating your face and [BreastDesc].";
+				CumFaceUp 5;
+				CumTitsUp 5;
 	otherwise:
 		compute striking attack of M.
 
@@ -207,7 +214,8 @@ To compute (M - a bulging slutty sister) entering mouth:
 	now M is filling face.
 
 To decide which number is the suffocation limit of the player:
-	decide on 12; [rebalanced]
+	if the class of the player is trained hooker, decide on 14;
+	decide on 12;[rebalanced]
 	if the fatigue of the player is 0, decide on 10;
 	if the fatigue of the player < 200, decide on 8;
 	decide on 7.
@@ -279,31 +287,25 @@ To compute fuckhole sex of (M - a futanari slutty sister):[the sister is facing 
 To compute anal sex of (M - a futanari slutty sister):
 	say "[one of][or][or][second custom style]'Girl, your butthole is FINE!'[roman type]  [or][or][second custom style]'Unnngh, you still conscious there?  Unf, you really are an ass bandit, huh?'  [roman type][or][stopping]";
 	compute fuckhole sex of M;
-	AssRuin 1.
+	ruin asshole.
 
 To compute vaginal sex of (M - a futanari slutty sister):
 	say "[one of][or][or][second custom style]'Girl, your pussay is TOP CLASS SHIT!'[roman type]  [or][or][second custom style]'Unnngh, you still conscious there?  Unf, you really are a naughty fuckslut, huh?'  [roman type][or][stopping]";
 	compute fuckhole sex of M;
-	PussyRuin 1.
+	ruin vagina.
 
-To compute anal climax of (M - a futanari slutty sister):
-	TimesFuckedUp M by 1;
-	say "[second custom style]'Unf... So [if the openness of asshole < 8]tight, so [end if]good!  Aaah!'[roman type]  The [M][if trap fetish is 1]'s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [asshole]!  It feels like there's a powerful hosepipe shoved inside your belly!";
-	AssFill the semen load of M;
-	satisfy M;
+To compute unique climax of (M - a futanari slutty sister) in (F - asshole):
+	compute creampie of M in F;
 	now the sleep of M is 300;
-	now M is not penetrating asshole;
 	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done.  Phew...'[roman type]  The [M] collapses onto her ass, her [cock of M] quickly going limp as she pulls out.".
 
-To compute vaginal climax of (M - a futanari slutty sister):
-	TimesFuckedUp M by 1;
-	say "[second custom style]'Unf... So [if the openness of vagina < 8]tight, so [end if]good!  Aaah!'[roman type]  The [M][if trap fetish is 1]'s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [vagina]!  It feels like there's a powerful hosepipe shoved inside your belly!";
-	WombFill the semen load of M;
-	satisfy M;
+To compute unique climax of (M - a futanari slutty sister) in (F - vagina):
+	compute creampie of M in F;
 	now the sleep of M is 300;
-	now M is not penetrating vagina;
 	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done.  Phew...'[roman type]  The [M] collapses onto her ass, her [cock of M] quickly going limp as she pulls out.".
 
+To say CreampieFlav of (M - a futanari slutty sister) in (F - a fuckhole):
+	say "[second custom style]'Unf... So [if the openness of F < 8]tight, so [end if]good!  Aaah!'[roman type]  The [M][if trap fetish is 1]'s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]!  It feels like there's a powerful hosepipe shoved inside your belly!";
 
 Section 2 - Damage
 

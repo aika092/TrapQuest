@@ -42,8 +42,8 @@ Carry out drinking DungeonScenery01:
 	StomachSemenUp 2;
 	if the soreness of asshole > 1 or the soreness of vagina > 1:
 		say "[if the thirst of the player > 2]You feel less thirsty.[line break][end if][if the semen taste addiction of the player < 8][first custom style]Wow, I feel really refreshed!  [one of]I can't believe I just swallowed that though.[or]I came back for more.  Am I really turning into a slut?[stopping][otherwise][variable custom style]Wow, I feel ready for more![end if][roman type][line break]";
-		AssHeal 4;
-		PussyHeal 4;
+		heal asshole times 4;
+		heal vagina times 4;
 	otherwise:
 		say "[if the thirst of the player > 2]Except for feeling less thirsty, you[otherwise]You[end if] don't feel any different.[line break][if the semen taste addiction of the player < 8][first custom style]Did anything good happen?  [one of]I can't believe I just swallowed that.[or]I came back for more.  Am I really turning into a slut?[stopping][otherwise if the semen taste addiction of the player > 11][second custom style]Did anything good happen?  Oh well, at least it was yummy.[end if][roman type][line break]";
 	let P be a random off-stage cock pacifier;

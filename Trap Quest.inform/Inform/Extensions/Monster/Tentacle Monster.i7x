@@ -130,10 +130,8 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 	if M is newborn, say "steadily.";
 	otherwise say "powerfully.";
 	decrease the sex-length of M by 1;
-	if M is penetrating asshole:
-		AssRuin 1;
-	if M is penetrating vagina:
-		PussyRuin 1;
+	if M is penetrating asshole, ruin asshole;
+	if M is penetrating vagina, ruin vagina;
 	if the reaction of the player > 0 and M is penetrating a fuckhole:
 		if M is not massive, say "Your lack of resistance against the monster is preventing you from getting more sore, [if M is not player-brood]but it is extremely humiliating to submit to being bred by your own hellish tentacle spawn[otherwise]but you can feel your thoughts clouding as you are bred by the freakish tentacle spawn[end if].";
 	if M is penetrating breasts, compute titfuck of M;
@@ -153,7 +151,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [asshole] being permanently gaped.[otherwise if M is penetrating face and M is penetrating vagina]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating vagina]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating asshole;
-				AssRuin 1;
+				ruin asshole;
 			otherwise:
 				let C be a random worn top level ass protection clothing;
 				if M is newborn:
@@ -171,7 +169,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [vagina] being permanently widened.[otherwise if M is penetrating face and M is penetrating asshole]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating asshole]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating vagina;
-				PussyRuin 1;
+				ruin vagina;
 			otherwise:
 				let C be a random worn top level protection clothing;
 				if M is newborn:
@@ -284,13 +282,13 @@ To compute (M - a tentacle monster) entering mouth:
 To compute (M - a tentacle monster) entering asshole:
 	say "Without hesitation the [M] buries a [if M is not newborn]thick [end if]tentacle deep inside your [asshole].[if M is massive][line break]The tentacle is so large that you can feel your [asshole] being permanently gaped.[end if]";
 	now M is penetrating asshole;
-	AssRuin 1;
+	ruin asshole;
 	set up sex length of M.
 
 To compute (M - a tentacle monster) entering vagina:
 	say "Without hesitation the [M] forces a [if M is not newborn]thick [end if]tentacle deep inside your [vagina].[if M is massive][line break]The tentacle is so large that you can feel your [vagina] being permanently gaped.[end if]";
 	now M is penetrating vagina;
-	PussyRuin 1;
+	ruin vagina;
 	set up sex length of M.
 
 To say SelectionFrustrated of (M - a tentacle monster):

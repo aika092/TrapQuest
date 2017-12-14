@@ -151,8 +151,7 @@ To decide which number is the rounds of sex left of (M - a mannequin):
 	if the latex-transformation of the player > 2, decide on 0;
 	decide on 10 - ((a random number between 1 and 3) + arousal of the player / 1000 + the sex-length of M).
 
-To compute anal climax of (M - a mannequin):
-	TimesFuckedUp M by 1;
+To compute unique climax of (M - a mannequin) of (F - asshole):
 	FavourUp M;
 	if the latex-transformation of the player > 2:
 		say "The [M] looks confused, removes her hand from your [asshole] and leaves you alone.";

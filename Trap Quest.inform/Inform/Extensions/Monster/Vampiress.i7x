@@ -222,49 +222,54 @@ To say AssholePenPrep of (M - a vampiress):
 	otherwise if the last-interaction of M is 0:
 		say "[speech style of M]'[one of]Stop fighting, mortal!'[or]If you don't give in, I might never let you go!'[or]Resistance is futile, [NameBimbo].'[or]Stop trying to be such an insolent little shit!'[in random order][roman type][line break]".
 
-To compute anal climax of (M - a vampiress):
-	TimesFuckedUp M by 1;
-	if M is wrapped:
-		say CondomPieFlav of M;
-		Arouse 2000;
-		let R be a random number between 10 and the difficulty of M;
-		if the number of worn ballgags is 0 and R > the semen taste addiction of the player and the player consents:
-			say "You obediently open your mouth as [semen] slowly dribbles out of the open end, plopping wetly onto your tongue before slowly rolling down your throat. She grins, lowering it closer and closer to your face as it empties out, shaking it twice before gently laying it to rest on the bridge of your nose.";
-			say "[speech style of M]'[if the number of worn vampiric fangs is 0]Good...maybe we should do this without the condom next time?[otherwise]Wear it. Let everyone know of our tryst.[end if]'[roman type][line break]";
-			humiliate 200;
-			StomachSemenUp the semen load of M;
-		otherwise:
-			say "[speech style of M]'[if the number of worn ballgags > 0]What[']s that dear? You can[']t? Just think what you're missing out on, darling. Think hard...'[otherwise if R > the semen taste addiction of the player]Wait a moment, darling, what am I saying? You are not ready for my seed now, but you WILL be....'[otherwise]Oh my. But aren[']t you hungry?'[roman type] The condom disappears from her hand in a flash of mesmerizing purple flames, and you feel a strange tickle in the back of your throat as vivid images of being face-fucked by the vampiress appear in your mind. She blows you a kiss, eyes glowing brightly as she straightens up and begins to walk away.";
-			SemenTasteAddictUp the semen load of M;
-			DifficultyUp M by the semen load of M;
-			now M is unwrapped;
-		if M is wrapped, compute condom filling of M;
-	otherwise if the reaction of the player is 0 and the player is not a butt slut:
-		say PullOutFlav of M;
-		let R be a random number between 0 and 2;
-		RandomAddictUp R;
-		Intdown 2 - R;
-		DifficultyUp M by 2;
-		Arouse 2000;
-	otherwise:
-		let H be a random off-stage vampiric fangs;
-		say CreampieFlav of M;
-		assfill the semen load of M;
-		if H is actually summonable:
-			summon H cursed;
-			follow the vampire rules;
-	now M is not penetrating asshole;
-	bore M.
+To decide if (M - a vampiress) is willing to creampie (F - asshole):
+	if the reaction of the player is 1 and the player is not a butt slut, decide no;
+	decide yes.
 
-To say CondomPieFlav of (M - a vampiress):
+To compute (M - a vampiress) pulling out of (F - a fuckhole):
+	say PullOutFlav of M in F;
+	let R be a random number between 0 and 2;
+	RandomAddictUp R;
+	Intdown 2 - R;
+	DifficultyUp M by 2;
+	Arouse 2000.
+
+To compute creampie of (M - a vampiress) in (F - asshole):
+	let H be a random off-stage vampiric fangs;
+	say CreampieFlav of M in F;
+	Assfill the semen load of M;
+	if H is actually summonable:
+		summon H cursed;
+		follow the vampire rules.
+	
+To compute unprotected climax of (M - a vampiress) in (F - a fuckhole):
+	if M is willing to creampie F, compute M pulling out of F;
+	otherwise compute creampie of M in F;
+
+To compute condom success of (M - a vampiress) in (F - a fuckhole):
+	say CondomPieFlav of M in F;
+	Arouse 2000;
+	let R be a random number between 10 and the difficulty of M;
+	if the number of worn ballgags is 0 and R > the semen taste addiction of the player and the player consents:
+		say "You obediently open your mouth as [semen] slowly dribbles out of the open end, plopping wetly onto your tongue before slowly rolling down your throat. She grins, lowering it closer and closer to your face as it empties out, shaking it twice before gently laying it to rest on the bridge of your nose.";
+		say "[speech style of M]'[if the number of worn vampiric fangs is 0]Good...maybe we should do this without the condom next time?[otherwise]Wear it. Let everyone know of our tryst.[end if]'[roman type][line break]";
+		humiliate 200;
+		StomachSemenUp the semen load of M;
+		compute condom filling of M;
+	otherwise:
+		say "[speech style of M]'[if the number of worn ballgags > 0]What[']s that dear? You can[']t? Just think what you're missing out on, darling. Think hard...'[otherwise if R > the semen taste addiction of the player]Wait a moment, darling, what am I saying? You are not ready for my seed now, but you WILL be....'[otherwise]Oh my. But aren[']t you hungry?'[end if][roman type] The condom disappears from her hand in a flash of mesmerizing purple flames, and you feel a strange tickle in the back of your throat as vivid images of being face-fucked by the vampiress appear in your mind. She blows you a kiss, eyes glowing brightly as she straightens up and begins to walk away.";
+		SemenTasteAddictUp the semen load of M / 2;
+		DifficultyUp M by the semen load of M.
+
+To say CondomPieFlav of (M - a vampiress) in (F - a fuckhole):
 	say "The [M] roars with pleasure, tightening her grip as the condom floods with warm [semen], only barely prevented from flowing freely into your used hole. Thereafter, the hand that was previously rubbing your [if player is male]cock[otherwise if player is female][vagina][end if] leaves your genitals, making you acutely aware of how close you are to orgasm as she pulls out and stands back up. [line break][speech style of M]'Was it good for you, honey? What am I saying? Of course it was.'[roman type][line break] She walks around to your face, carefully peeling off the condom and upending it over your face. [if there is a worn tethering lipstick collar][speech style of M]'Drink it all like a good little thief...'[roman type][otherwise][speech style of M]'Drink it all. Feed on me...'[roman type][end if][line break]".
 
-To say CreampieFlav of (M - a vampiress):
+To say CreampieFlav of (M - a vampiress) in (F - a fuckhole):
 	say "The [M] roars with pleasure, tightening her grip as warm [semen] begins spurting out into your used hole[if the anal sex addiction of the player > 5], causing you to cry out with ecstasy.[otherwise].[end if] Still, her rapid penetration doesn't cease until her cum has thoroughly coated the inside of your anus.";
 	if the player is able to get horny, anally orgasm shamefully;
 	say "The hand that was previously rubbing your [if player is male]cock[otherwise if player is female][vagina][end if] leaves your genitals as she lifts it to her lips and licks the cum clean. Thereafter, she pulls out and stands back up, wiping herself off. [line break][speech style of M]'Was it good for you, honey? What am I saying? Of course it was. It was good for me too, you know. [if the number of worn headgear is 0 and newbie tips is 1]By the way, I should tell you that the sperm of a vampire contains our virus and when delivered anally, the virus is transmitted. You'll probably start to notice some changes in yourself. First, the rumour about vampires needing blood isn't entirely accurate. What we really need is human fluid, of any variety. Most vampires see themselves above the degradation of collecting and feasting on cum. But, most vampires are vicious murderers. My point is, you're going to start noticing these cravings. I'd sate those if I were you, as ignoring them will make you weaker. Other than that, once your claws grow in, you'll also be able to drain energy from your enemies, healing yourself and fighting your fatigue. However, you won't be able to turn anyone else. That is a power you do not gain until you are many, many years old. Have fun, my newest fledgling.'[roman type][line break]You check your mouth and, sure enough, fangs have grown where your canine teeth once were.[otherwise if the number of worn headgear is 0]By the way, [one of]if you happen to feel an insatiable craving for human fluids, don't be alarmed. I have made you into my newest fledgling. Go forth, and feast on the essence of the living![or]surely you know how dangerous it is to have unprotected sex with a vampire? Don[']t be a fool and deny your cravings, darling~!'[or]I usually make new thralls by filling their asses with my seed. Did you know that, darling? You certainly do now...'[at random][roman type][line break]You notice a pair of fangs have grown where your canine teeth once were![otherwise]In fact, I might even make you a thrall one day...'[roman type][line break][end if]".
 	
-To say PullOutFlav of (M - a vampiress):
+To say PullOutFlav of (M - a vampiress) in (F - a fuckhole):
 	say "The [M] thrusts faster and faster, flattening herself on top of you as her futa cock slams in and out of your asshole. Her grip tightens, and waves of pleasure begin to roll through your body and...instantly go away. She pulls out. [speech style of M]'Sorry dear. I know you wanted to cum, but your mind is not in the right place. Don[']t worry. You[']ll have another chance later.'[roman type][line break]The [M] makes a small incantation under her breath, and you feel a sensation like a finger nail running up the nape of your neck. Her eyes glow as vivid images of the vampiress fucking you in various positions appear in your mind.".
 
 This is the vampiric cumslut rule:
@@ -328,10 +333,10 @@ To compute anal sex of (M - a vampiress):
 		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][at random]";
 	otherwise if the reaction of the player is 1:[submitting]
 		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][at random]";
-		AssRuin 1;
+		ruin asshole;
 	otherwise:[resisting]
 		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		AssRuin 1;
+		ruin asshole;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 

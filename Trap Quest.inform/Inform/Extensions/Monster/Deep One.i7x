@@ -61,31 +61,21 @@ To compute (M - a deep one) entering asshole:
 	otherwise say "[AssholePenetrationFlav of M]";
 	now the sex-length of M is a random number between 2 and 3;
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To compute (M - a deep one) entering vagina:
 	say "[VaginaPenetrationFlav of M]";
 	now the sex-length of M is a random number between 2 and 3;
 	now M is penetrating vagina;
-	PussyRuin 1.
-		
-To compute vaginal climax of (M - a deep one):
-	TimesFuckedUp M by 1;
-	say "The [M] ejaculates deep inside your [vagina]!";
-	WombFill the semen load of M;
-	now M is not penetrating vagina;
-	if the angered of M > 0:
-		now the angered of M is 0;
-	bore M.
+	ruin vagina.
 
-To compute anal climax of (M - a deep one):
-	TimesFuckedUp M by 1;
-	say "The [M] ejaculates deep inside your [asshole]!";
-	AssFill the semen load of M;
-	now M is not penetrating asshole;
+To TimesFuckedUp (M - a deep one) by (N - a number):
 	if the angered of M > 0:
 		now the angered of M is 0;
-	bore M.
+	DirectTimesFuckedUp M by N.
+
+To say CreampieFlav of (M - a deep one) in (F - a fuckhole):[TODO]
+	say "The [M] ejaculates deep inside your [variable F]!".
 	
 Section 2 - Damage
 

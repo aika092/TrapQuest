@@ -1,6 +1,6 @@
 Demoness by Monster begins here.
 
-A demoness is a kind of monster.  A demoness is usually woods dwelling.  A demoness is usually intelligent.  A demoness is usually raunchy.  A demoness is usually willing to do anal.  A demoness is usually willing to urinate. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105.
+A demoness is a kind of monster.  A demoness is usually woods dwelling.  A demoness is usually intelligent.  A demoness is usually raunchy.  A demoness is usually willing to do anal.  A demoness is usually willing to urinate. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul seeking. A demoness is usually not soul seeking.
 
 A demoness has a number called excitement. The excitement of a demoness is usually 0.
 
@@ -362,7 +362,7 @@ This is the demoness punishes diaper rule:
 				now the soreness of asshole is 7;
 		otherwise:
 			say "With a snap of her fingers, the [P] begins twisting, shaking and vibrating violently!  Your [if the anal sex addiction of the player < 5]poor [end if][asshole] is powerfully stimulated.";
-			AssRuin 2;
+			ruin asshole times 2;
 		say "The [current-monster] seems satisfied, and leaves you alone.";
 		bore current-monster;
 		rule succeeds;
@@ -392,11 +392,11 @@ To compute anal sex of (M - a demoness):
 	if the reaction of the player > 0:
 		let R be a random number between 1 and 11;
 		say "You relax your [asshole] and let her fuck you.  [if R > 6]You manage to prevent yourself becoming any more sore.[otherwise]However her thrusting is so deep and strong that it's still constantly stimulating the inside of your poor [asshole].[end if]";
-		if R < 7, AssRuin 1;
+		if R < 7, ruin asshole;
 		if M is friendly-fucking, decrease the excitement of M by 1;
 		otherwise decrease the excitement of M by 2;
 	otherwise:[resisting makes it last twice as long, but you have a better chance of killing her when she's finished.]
-		AssRuin 1;
+		ruin asshole;
 		decrease the difficulty of M by 1.
 
 To decide which number is the rounds of sex left of (M - a demoness):
@@ -405,7 +405,7 @@ To decide which number is the rounds of sex left of (M - a demoness):
 		if the excitement of M > 1 and the difficulty of M > 1, decide on 1;[She'll keep going as long as you're interesting enough to torture, and she has enough power]
 	decide on 0.
 
-To compute anal climax of (M - a demoness):
+To compute unique climax of (M - a demoness) in (F - asshole):
 	TimesFuckedUp M by 1;
 	if M is friendly-fucking:
 		say "[if bukkake fetish is 1]The [M] slows down, cackling as she removes her heel from your [asshole]. You think that[']s the end of it, but a portal opens up above your head, and you find yourself looking down the barrel of a huge candy-red [manly-penis] as it ejaculates all over your face.[otherwise]The [M] slows down, and you hear a hearty cackle as she removes her heel from your [asshole].[end if]";
@@ -413,7 +413,6 @@ To compute anal climax of (M - a demoness):
 			if the semen load of M > 6, CumFaceUp 6;
 			otherwise CumFaceUp the semen load of M;
 		compute happy reward of M;
-		satisfy M;
 	otherwise if the excitement of M < 2 or the difficulty of M < 2:
 		say "[if the excitement of M < the difficulty of M]The [M] slows down, and you[otherwise]The [M] looks exhausted!  You[end if] feel the magic grip on your body fade all at once as she removes her heel from your [asshole].";
 		if image cutscenes is 1, display figure of demoness cutscene 3;
@@ -423,9 +422,8 @@ To compute anal climax of (M - a demoness):
 			summon P;
 			if the girth of P > the openness of asshole + 2:
 				say "[variable custom style]Oof!  It's so big![roman type][line break]";
-				AssRuin 1;
-		if the excitement of M > the difficulty of M, bore M;
-		otherwise satisfy M;[If you help get it out of her system, she might not come back for more.]
+				ruin asshole;
+		if the excitement of M > the difficulty of M, bore M;[otherwise we leave it to the default function to run Satisfy M]
 	otherwise:
 		say "Only once you have been reduced to a puddle of tears does the [M] stop fucking your [asshole].  She cackles again and starts to wander off.";
 		if there is an insertable object held by M:
@@ -434,10 +432,9 @@ To compute anal climax of (M - a demoness):
 			summon P;
 			if the girth of P > the openness of asshole + 2:
 				say "[variable custom style]Oof!  It's so big![roman type][line break]";
-				AssRuin 1; [we don't want this to cause fainting]
+				ruin asshole; [we don't want this to cause fainting]
 		if the difficulty of M < 5, now the difficulty of M is 5;
-		FavourUp M;
-		satisfy M.
+		FavourUp M.
 
 To compute the dildo stuck taunting of (M - a demoness):
 	if there are worn heels:
@@ -513,14 +510,14 @@ This is the demoness punishing occupied assholes rule:
 	let T be a random thing penetrating asshole;
 	if T is vibrating plug panties:
 		say "The [M] mutters a curse from under her breath.  You yelp uncontrollably as you feel the plug in your [asshole] suddenly grow and increase in vibration speed.  You howl and hold your hands to your ass, as if that could help.";
-		AssRuin 2;
+		ruin asshole times 2;
 		say "Luckily the plug returns to its original size and vibration speed after the [M] stops concentrating.  She seems to lose interest in you... for now.";
 		FavourUp M;
 		bore M;
 	otherwise if T is insertable and the size of T < 10:
 		say "The [M] mutters a curse from under her breath.  You yelp uncontrollably as you feel the plug in your [asshole] suddenly grow!  [if the openness of asshole  <= the size of T]You howl and hold your hands to your ass, as if that could help[otherwise]It now is a better fit for your [asshole][end if].";
 		increase the size of T by 1;
-		if the openness of asshole < the size of T, AssRuin 1;
+		if the openness of asshole < the size of T, ruin asshole;
 	otherwise if watersports fetish is 1 and the number of monsters penetrating face is 0  and the latex-transformation of the player <= 4:
 		say "[speech style of M]'Drown bitch, drown.'[roman type][line break]The [M] stands over you and grabs you by the head with a surprisingly strong hand, directing your face towards her crotch. Before long she lifts up her dress, and releases a torrent of piss over your hair and face. As the warm liquid cascades down your visage you cough and splutter, struggling to keep your eyes open as little droplets of the yellow fluid stray from your lips and cheeks to splash at your peepers.";
 		FacePiss;
@@ -605,7 +602,7 @@ To compute (M - a demoness) entering asshole:
 	say "The [M] lifts up one of her feet, on which are her unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels.  She continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, she curls her lips into a wicked grin, gritting her teeth and going wide-eyed. Clearly she enjoys herself behind you as a cackle rings out to rustle the trees. Either she is really pent up or just enjoys ruining the players.  Some kind of magic grasp is preventing you from moving.";
 	if image cutscenes is 1, display figure of demoness cutscene 2;
 	now M is penetrating asshole;
-	if the soreness of asshole < 10, AssRuin 1.
+	if the soreness of asshole < 10, ruin asshole.
 
 This is the demoness mouth insertion rule:
 	if the chosen-orifice of current-monster is face, follow the demoness mouth insertion rules.
@@ -687,7 +684,7 @@ To say FriendlySexReleaseRefusalSpeech of (M - a demoness):
 	unless M is penetrating asshole:
 		if trap fetish is 0:
 			say "[speech style of M]'[one of]Yes! Fight me! I love it when you fight!'[or]Ooh! Yeah! Fight me! Fucking fight me!'[or]You can[']t keep resisting forever! Hahaha!'[or]I always get what I want!'[or]Resist me, slut! Show me how pure you are!'[or]Ooh...you are going to taste so good!'[in random order][roman type][line break]";
-			if image cutscenes is 1, display figure of demoness cutscene 5;
+			if image cutscenes is 1 and M is penetrating face, display figure of demoness cutscene 5;
 		otherwise:
 			say "[speech style of M]'[one of]Shhh....'[or]That[']s right, get all that fight out of your system...'[or]Sh-sh-shhh...'[or]That[']s right sweetie, keep fighting. He loves that.'[or]No running away now sweetheart...'[in random order][roman type][line break]";
 	otherwise:
@@ -790,15 +787,8 @@ To compute facial climax of (M - a demoness):
 	[increase the times-dominated of M by 1;][Aika thinks this was wrong so has commented it out; MG was reusing this value to determine whether or not the player had acknowledged the demoness' offer before without using [stopping] ]
 	satisfy M.
 
-To compute oral creampie of (M - a demoness):
-	say ResistedOralCreampie of M;
-	if image cutscenes is 1, display figure of demoness cutscene 11;
-	say SwallowDemand of M;
-	now M is not penetrating face;[This prevents the player from puking]
-	if M is coercing a swallow:[Automatic swallow]
-		compute auto swallow of M;
-	otherwise:
-		compute swallow choice of M.
+To get oral creampie image for (M - a demoness):
+	display figure of demoness cutscene 11.
 
 To compute failed facial dodging of (M - a demoness):
 	say FacialBrokenFree of M;
@@ -814,9 +804,11 @@ To compute facial accepting of (M - a demoness):
 	now M is not penetrating face;
 	StomachSemenUp 1.
 
+To get deepthroat creampie image for (M - a demoness):
+	get oral creampie image for M.
+
 To compute deepthroat creampie of (M - a demoness):
 	say DeepthroatCreampie of M;
-	if image cutscenes is 1, display figure of demoness cutscene 11;
 	StomachSemenUp the semen load of M;
 	humiliate 100;
 	compute happy reward of M.
@@ -919,11 +911,13 @@ To compute (M - a demoness) entering vagina:
 		let V be the virgin of the player;
 		say "[FriendlyVaginaPenetrationFlav of M]";
 		if image cutscenes is 1, display figure of demoness cutscene 13;
+		now M is penetrating vagina;
 		if V > 0:
 			now the excitement of M is 10 + the virgin bonus of the player;
 			say "[speech style of M]All gone! Hahaha![roman type]";
+			now M is soul seeking;
+			ruin vagina;
 		now the sex-length of M is 3;
-		now M is penetrating vagina;
 	otherwise:
 		say "The [M] sees that you are already occupied and loses interest.";
 		distract M.
@@ -932,48 +926,83 @@ To say VaginaPenPrep of (M - a demoness):
 	say "[one of]You watch in [if the oral sex addiction of the player < 4]horror[otherwise if the oral sex addiction of the player < 6]shock[otherwise]awe[end if][or]You watch[stopping] as the [M] lifts up her skirt, her clit throbbing and shaking as it swells into a massive candy red penis, which stands proudly erect as she lines it up with your [vagina].";
 
 Definition: a demoness (called M) is virginity taking:
+	if M is soul seeking, decide yes;
+	decide no.
+
+To compute unprotected climax of (M - a demoness) in (F - fuckhole):
+	if M is willing to creampie F, choose creampie of M in F;
+	otherwise compute M pulling out of F.
+
+To decide if (M - a demoness) is willing to creampie (F - vagina):
+	if the pregnancy of the player is 1:
+		let D be a random demon lord;
+		if D is the father, decide no;[She won't end your pregnancy if its one of her own]
 	decide yes.
 
-To compute vaginal climax of (M - a demoness):
-	TimesFuckedUp M by 1;
-	if the excitement of M >= 10:
-		say PullOutFlav of M;
-		now M is not penetrating vagina;
-		now a random demon lord is penetrating vagina;
-		WombFill the excitement of M - 9;[If the bonus is 0, she still creampies you for 1]
-		now a random demon lord is not penetrating vagina;
-	otherwise:[TODO: making her wear a condom gives no reward]
-		let P be the pregnancy of the player;
-		say CreampieFlav of M;
-		if image cutscenes is 1, display figure of demoness cutscene 12;
-		WombFill the semen load of M;
-		if P > 0 and the pregnancy of the player is 0, now the semen volume of vagina is 0;
-	now the excitement of M is 0;
-	satisfy M.
+[To get creampie image of (M - a demoness) in (F - vagina):]
 
-To say PullOutFlav of (M - a demoness):
-	say "The [M] hilts herself deep inside your [vagina], cackling madly as she floods you with her load. An instant chill, like a candle being blown out, falls over your body as her [semen] flows into your [vagina], and a [if the virgin bonus of the player < 0]second, stronger feeling of shame[otherwise]strange feeling of emptiness[end if] settles heavily in your chest.[line break][speech style of M]Could you feel, that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! Hahaha! I hope it was worth it!'[roman type] She pulls out, cackling madly as she pinches your clit between two ominously glowing fingertips. You feel an explosion of pleasure radiate out from your crotch, causing powerful waves of euphoria to crash through your body. You feel incredible...but in an empty way.";
+To choose creampie of (M - a demoness) in (F - a fuckhole):
+	if image cutscenes is 1, display figure of demoness cutscene 12;[we don't override the creampie image function so we don't have to rewrite the default creampie of M code]
+	if M is virginity taking:
+		compute soul creampie of M in F;
+	otherwise if the pregnancy of the player is 1:
+		compute pregnancy creampie of M in F;
+	otherwise:
+		compute creampie of M in F.
+
+To compute soul creampie of (M - a demoness) in (F - vagina):
+	say "The [M] hilts herself deep inside your [vagina], cackling madly as she floods you with her load. An instant chill, like a candle being blown out, falls over your body as her [semen] flows into your [vagina], and a [if the virgin bonus of the player < 0]second, stronger feeling of shame[otherwise]strange feeling of emptiness[end if] settles heavily in your chest.[line break][speech style of M]'Could you feel, that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! Hahaha! I hope it was worth it!'[roman type] She pulls out, cackling madly as she pinches your clit between two ominously glowing fingertips. You feel an explosion of pleasure radiate out from your crotch, causing powerful waves of euphoria to crash through your body. You feel incredible...but in an empty way.";
 	vaginally orgasm shamefully;
 	make the player soulless;
 	humiliate 1000;[being soulless isn't really all that bad, so we do this as well!]
 	IntUp 5;
 	DexUp 5;
-	StrengthUp 5.
+	StrengthUp 5;
+	compute M finishing in F;
+	now M is not soul seeking.
 
-To say CreampieFlav of (M - a demoness):
-	let F be a random orifice penetrated by M;
-	if the pregnancy of the player is 1:
-		say "The [M] [one of]roars with pleasure,[or]emits a drawn out moan[or]moans throatily,[at random] tightening her grip as a wave of warmth enters your pussy and quickly spreads outward into your [ShortDesc of Belly]. You hear an ominous rumble, and with a snap of her fingers, your belly instantly shrinks down to normal. She smirks, wiping the leftover cum off her [manly-penis] and licking it off her fingers as she pulls out. [speech style of M]And now, I'll just take my payment![roman type][line break]";
-		let R be a random number between 2 and 4;
-		SexAddictUp R;
-		SemenAddictUp R - 5;
-		say "She loses interest.";
-		now the father is the throne;
- 		now the pregnancy of the player is 0;
- 		now the semen volume of vagina is 0;
-	otherwise:
-		say "[one of]The [M] grunts, her [manly-penis] throbbing as she unloads her lust directly into your [vagina]. She sighs in satisfaction, raking a hand across your [AssDesc] as she pulls out.[or]The [M] tightens her grip, nails digging into your tender skin as she grunts in pleasure. [if the semen addiction of the player < 7]You shudder and look over your shoulder[otherwise if the semen addiction of the player < 15]You gasp and look over your shoulder[otherwise]You look over your shoulder and grin[end if] as piping hot [semen] flows into your [variable F]. She leers back at you, pulling out with an exaggerated sigh of contentment.[or]The [M] coos and tightens her grip. You [if the semen addiction of the player < 7]whimper[otherwise if the semen addiction of the player < 11]sigh quietly[otherwise]moan happily[end if] as her [manly-penis] pumps wave after wave of hot, hot [semen] directly into your [variable F]. She roughly squeezes your [AssDesc] as she pulls out.[at random]";
-		compute happy reward of M.
+To compute pregnancy creampie of (M - a demoness) in (F - vagina):
+	say "The [M] [one of]roars with pleasure,[or]emits a drawn out moan[or]moans throatily,[at random] tightening her grip as a wave of warmth enters your pussy and quickly spreads outward into your [ShortDesc of Belly]. You hear an ominous rumble, and with a snap of her fingers, your belly instantly shrinks down to normal. She smirks, wiping the leftover cum off her [manly-penis] and licking it off her fingers as she pulls out. [speech style of M]And now, I'll just take my payment![roman type][line break]";
+	let R be a random number between 2 and 4;
+	SexAddictUp R;
+	SemenAddictUp R - 5;
+	say "She loses interest.";
+	now the father is the throne;
+ 	now the pregnancy of the player is 0;
+ 	now the semen volume of vagina is 0.
+
+To compute (M - a demoness) finishing in (F - vagina):
+	now M is not penetrating vagina;
+	now a random demon lord is penetrating vagina;[The demoness impregnates you for the demon lord, not herself]
+	WombFill the semen load of M;
+	now a random demon lord is not penetrating vagina.
+
+To compute post climax effect of (M - a demoness) in (F - vagina):
+	now the excitement of M is 0.
+
+To say CreampieFlav of (M - a demoness) in (F - vagina):
+	say "[one of]The [M] grunts, her [manly-penis] throbbing as she unloads her lust directly into your [vagina]. She sighs in satisfaction, raking a hand across your [AssDesc] as she pulls out.[or]The [M] tightens her grip, nails digging into your tender skin as she grunts in pleasure. [if the semen addiction of the player < 7]You shudder and look over your shoulder[otherwise if the semen addiction of the player < 15]You gasp and look over your shoulder[otherwise]You look over your shoulder and grin[end if] as piping hot [semen] flows into your [variable F]. She leers back at you, pulling out with an exaggerated sigh of contentment.[or]The [M] coos and tightens her grip. You [if the semen addiction of the player < 7]whimper[otherwise if the semen addiction of the player < 11]sigh quietly[otherwise]moan happily[end if] as her [manly-penis] pumps wave after wave of hot, hot [semen] directly into your [variable F]. She roughly squeezes your [AssDesc] as she pulls out.[at random]";
+	compute happy reward of M.
+
+To compute (M - a demoness) pulling out of (F - vagina):
+	say "[speech style of M]'Whoops, almost came inside you! Can't do that with the high quality bun you have in your oven!'[roman type][line break]";
+	if asshole is not actually occupied and the number of worn top level ass protection clothing is 0, compute M messily pulling out of F;
+	otherwise compute M cleanly pulling out of F;
+
+To say MessyPullOutFlav of (M - a demoness) in (F - vagina):
+	say "The [M] pulls out and immediately jams [his of M] [manly-penis] in your [asshole], flooding it with [semen] in only a few short pumps. [if the excitement of M > 3]Its thick, hot and in seemingly endless supply, thoroughly coating the inside of your belly as she pulls out with a hearty sigh[otherwise]Its thick and very hot, coating the inside of your belly in a warmth that lasts long after she pulls out[end if].".
+
+To compute (M - a demoness) messily pulling out of (F - vagina):
+	if image cutscenes is 1, get messy pull out image of M in F;
+	say MessyPullOutFlav of M in F;
+	now M is not penetrating vagina;
+	now M is penetrating asshole;
+	compute M finishing in asshole;
+	compute happy reward of M.
+
+To say PullOutFlav of (M - a demoness) in (F - vagina):
+	say "The [M] pulls out, emitting an exaggerated sigh of contentment as she finishes herself off in just a few short pumps..";
+	compute happy reward of M.
 
 Section 2 - Damage
 
@@ -1315,7 +1344,7 @@ To compute the busy waiting of (M - an abyssal demoness):
 To compute (M - an abyssal demoness) entering asshole:
 	say "The [M] lifts up one of her feet, on which are her unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels.  She continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, she curls her lips into a wicked grin, gritting her teeth and going wide-eyed. Clearly she enjoys herself behind you as a cackle rings out to echo off the walls. Either she is really pent up or just enjoys ruining the players.  Some kind of magic grasp is preventing you from moving.";
 	now M is penetrating asshole;
-	if the soreness of asshole < 10, AssRuin 1.
+	if the soreness of asshole < 10, ruin asshole.
 
 To say SummoningFlav of (M - a demoness):
 	if M is in the location of the player, say "The air around you grows unbearable cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind her.";

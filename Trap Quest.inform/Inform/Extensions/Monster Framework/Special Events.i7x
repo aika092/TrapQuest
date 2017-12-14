@@ -109,6 +109,28 @@ To DrinkPiss:
 		now the soreness of vagina is 0;
 		now the tolerated of vagina is 0.
 
+
+[!<AMonsterIsWillingToBukkake>+
+
+Determines whether or not a monster will pull out or finish on the player's face after oral sex.
+
+@param <Monster>:<M> A monster the player is having oral sex with
+@return <Boolean> True if the monster is willing/able to ejaculate on the player's face, otherwise false
+
++!]
+Definition: A monster (called M) is willing to bukkake:
+	if the player is a blowjob slut, decide no;
+	if the class of the player is living sex doll, decide no;
+	if a random number between 1 and 2 is 1, decide yes;
+	decide no.
+
+[!<ComputeFacialDodgingOfMonster>+
+
+This function is called when the player resists in the last turn of oral sex and their sex partner is "willing to bukkake". If the player's dexterity is high enough, they can dodge the incoming facial, otherwise they get a new paint job.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute facial dodging of (M - a monster):
 	say FacialBrokenFree of M;
 	if a random number between the semen addiction of the player * -1 and the dexterity of the player > the difficulty of M - 2:[facials are harder to dodge the more you like the feeling of semen]
@@ -116,23 +138,85 @@ To compute facial dodging of (M - a monster):
 	otherwise:
 		compute failed facial dodging of M.
 
+[!<ComputeSuccessFacialDodgingOfMonster>+
+
+This function is called when the player successfully dodges an incoming facial. Usually entails semen creating a puddle on the floor.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute successful facial dodging of (M - a monster):
+	if image cutscenes is 1, get successful facial dodge image for M;
 	say SuccessfulFacialDodge of M;
 	SemenPuddleUp the semen load of M;
 	compute angry punishment of M.
 
+[!<GetSuccessfulFacialDodgeImageOfMonster>+
+
+This function can display a relevant image when the player successfully dodges an incoming facial. Does the same thing as get facial accepting image.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To get successful facial dodge image for (M - a monster):
+	get facial accepting image for M.
+
+[!<ComputeFailedFacialDodgingOfMonster>+
+
+This function is called when the player unsuccessfully dodges an incoming facial. Usually entails semen being added to the player's face, and an invocation of the check forgiveness function, since the player was resisting.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute failed facial dodging of (M - a monster):
+	if image cutscenes is 1, get failed facial dodge image for M;
 	say FailedFacialDodge of M;
 	CumFaceUp the semen load of M;
 	check forgiveness of M.
 
+[!<GetFailedFacialDodgeImageOfMonster>+
+
+This function can display a relevant image when the player unsuccessfully dodges an incoming facial. Does the same thing as get facial accepting image.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To get failed facial dodge image for (M - a monster):
+	get facial accepting image for M.
+
+[!<ComputeFacialAcceptingOfMonster>+
+
+This function is called when the player submits in the last turn of oral sex and their partner is "willing to bukkake". Almost the same as failed facial dodge, but invokes the happy reward function and humiliates the player, since they were obedient.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute facial accepting of (M - a monster):
+	if image cutscenes is 1, get facial accepting image for M;
 	say UnavoidedFacial of M;
 	CumFaceUp the semen load of M;
 	humiliate 200;
 	compute happy reward of M.
 
+[!<GetFacialAcceptingImageOfMonster>+
+
+This function can display a relevant image when the player receives a facial. Does nothing by default
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To get facial accepting image for (M - a monster):
+	do nothing.
+
+[!<ComputeOralCreampieOfMonster>+
+
+This function is called whenever a monster is not willing to bukkake the player, and they ejaculate in the player's mouth rather than down their throat. By default, this means the player was resisting in the last turn of sex. Depending on the player's delicateness score(checked by the coercing a swallow function), the player will either swallow automatically or have a choice of spitting.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute oral creampie of (M - a monster):
+	if image cutscenes is 1, get oral creampie image for M;
 	say ResistedOralCreampie of M;
 	say SwallowDemand of M;
 	now M is not penetrating face;[This prevents the player from puking]
@@ -141,12 +225,61 @@ To compute oral creampie of (M - a monster):
 	otherwise:
 		compute swallow choice of M.
 
+[!<GetOralCreampieImageOfMonster>+
+
+This function can display a relevant image when the player receives an oral creampie. Does nothing by default
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To get oral creampie image for (M - a monster):
+	do nothing.
+
+[!<ComputeDeepthroatCreampieOfMonster>+
+
+This function is called whenever a monster is not willing to bukkake the player, and they ejaculate straight down the player's throat. Humiliates the player, and invokes the happy reward function since the player was probably being obedient.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute deepthroat creampie of (M - a monster):
+	if image cutscenes is 1, get deepthroat creampie image for M;
 	say DeepthroatCreampie of M;
 	StomachSemenUp the semen load of M;
 	humiliate 100;
 	compute happy reward of M.
 
+[!<GetDeepthroatCreampieImageOfMonster>+
+
+This function can display a relevant image when the player is forced to deepthroat a monster as it ejaculates. By default, does the same thing as get oral creampie image.
+
+@param <Monster>:<M> A monster the player is deepthroating
+
++!]
+To get deepthroat creampie image for (M - a monster):
+	get oral creampie image for M.
+
+[!<ComputeSwallowChoiceOfMonster>+
+
+This function is called whenever a monster ejaculates in the player's mouth, and they don't have any reason to swallow automatically. Player can choose to humiliate themselves by swallowing, or spit and probably piss their partner off.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To compute swallow choice of (M - a monster):
+	say "Do you swallow? [yesnolink] ";
+	if the player consents:
+		compute voluntary swallow of M;
+	otherwise:
+		compute spit choice of M.
+
+[!<ComputeSpitChoiceOfMonster>+
+
+This function is called whenever the player chooses to spit rather than swallow after taking an oral creampie. If the player has anything available that they can use to catch the semen, they will be offered the chance to spit into it via the juice-collector decide on function. Otherwise the player won't spit into anything.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute spit choice of (M - a monster):
 	[We check if the player wants to collect some in a vessel, and output some unique flavour text.]
 	let V be nothing;
@@ -157,6 +290,14 @@ To compute spit choice of (M - a monster):
 	otherwise:[TODO: depending on player semen addiction, and breast size they catch it on their boobs instead]
 		compute voluntary spitting of M.
 
+[!<ComputeSemenCatchingFromMonsterInBottle>+
+
+This function is called whenever the player chooses to spit semen into a vessel/bottle rather than spit on the floor. Humiliating, and since the player was disobedient, there's a chance of a punishment from the above function.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+@param <Bottle>:<V> A bottle the player can spit something into
+
++!]
 To compute semen catching from (M - a monster) in (V - a bottle):
 	say "You position the [printed name of V] below your chin[if the semen taste addiction of the player < 9], looking away from [him of M][otherwise if the semen taste addiction of the player < 13], trying not to look at [him of M][otherwise], winking up at [him of M][end if] as it catches the [one of]load[or][tasted-semen][at random] [one of]dribbling slowly out of your mouth[or]in thick gooey clumps[or]slides out of your open mouth[at random].[one of] As your [printed name of V] quickly fills up you realise the only thing more humiliating than swallowing [semen] is being witnessed saving some for later!  [or][stopping]";
 	humiliate 100;
@@ -164,40 +305,92 @@ To compute semen catching from (M - a monster) in (V - a bottle):
 	now the fill-colour of V is creamy;
 	now V is monster-origin.
 
+
+[!<ComputeAutoSwallowOfMonster>+
+
+This function is called whenever a monster ejaculates in the player's mouth and the player swallows automatically. Humiliating.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute auto swallow of (M - a monster):
 	say AutomaticSwallow of M;
 	StomachSemenUp the semen load of M;
 	humiliate 200;
 	compute happy reward of M.
 
+[!<ComputeVoluntarySwallowOfMonster>+
+
+This function is called whenever a monster ejaculates in the player's mouth and the player chooses to swallow rather than spit. Twice as humiliating as swallowing automatically.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute voluntary swallow of (M - a monster):
 	say VoluntarySwallow of M;
 	StomachSemenUp the semen load of M;
 	humiliate 400;
 	compute happy reward of M.
 
+[!<ComputeVoluntarySpittingOfMonster>+
+
+This function is called whenever a monster ejaculates in the player's mouth, the player chooses to spit, and the player either has nothing available to spit in, or chooses not to spit into anything. Depending on fetish options, semen addiction, and breast size, the player has a chance to spit on their body rather than on the floor.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute voluntary spitting of (M - a monster):
 	if the largeness of breasts >= 5 and bukkake fetish is 1 and the semen addiction of the player > a random number between 15 and (10 - the bimbo of the player):
 		compute chest spitting of M;
 	otherwise:
 		compute floor spitting of M.
 
+[!<ComputeFloorSpittingOfMonster>+
+
+This function is called whenever a monster ejaculates in the player's mouth and the player chooses to spit the semen on the floor. Since the player is being disobedient, we invoke the angry punishment for this monster.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute floor spitting of (M - a monster):
 	say VoluntarySpit of M;
 	SemenPuddleUp the semen load of M;
 	compute angry punishment of M.
 
+[!<ComputeChestSpittingOfMonster>+
+
+This function is called whenever a monster ejaculates in the player's mouth and the player chooses to spit the semen on the floor. The player has high semen addiction, so they decide to play with the semen instead. The player is being disobedient, but some monsters might like what the player decided to do instead of swallowing, so we invoke the check forgiveness function for M.
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
 To compute chest spitting of (M - a monster):
 	say ChestSpit of M;
 	CumTitsUp the semen load of M;
 	check forgiveness of M.
 
-[Should trigger when the player disobeys a monster(usually not swallowing), but in a way that he could end up enjoying.]
+[!<CheckForgivenessOfMonster>+
+
+This function should be called whenever a monster "M" has reason to be angry with the player, but has been given some reason to forgive them. Uses the charisma of the player and the favour of M.
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
 To check forgiveness of (M - a monster):
-	if a random number between the favour of M and the charisma of the player > 8:[you usually need to be sexy to get away with it, unless he already likes you]
-		say ForgivenessFlav of M;
+	if a random number between the favour of M and the charisma of the player > 8:
+		compute angry forgiveness of M;
 	otherwise:
 		compute angry punishment of M.
+
+[!<ComputeAngryForgivenessOfMonster>+
+
+This function is called when the player makes a monster angry in some way, but the monster decides to forgive them.
+
+@param <Monster>:<M> A monster forgiving the player
+
++!]
+To compute angry forgiveness of (M - a monster):
+	say ForgivenessFlav of M.
 
 To say FacialBrokenFree of (M - a monster):
 	say "[one of]You wait for your moment and pull back at the perfect time. You're free![or]You struggle valiantly, finally managing to pull off at the last moment. You're free![or]After several moments of struggling, you finally force [him of M] to let go. You're free![or]After a brief struggle, you manage to break free![in random order]".
@@ -260,6 +453,13 @@ To say NearingClimaxOral of (M - a monster):
 To say SwallowDemand of (M - a monster):
 	say "The [M] gives you a stern look.  It's clear that [he of M] wants you to swallow the [semen].".
 
+[!<ComputeAngryPunishmentOfMonster>+
+
+This function is called when the player makes a monster angry in some way, like disobeying an order
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
 To compute angry punishment of (M - a monster):
 	say angry punishment insult of M;
 	if there is worn tearable clothing and M is not friendly-fucking:
@@ -278,28 +478,292 @@ To compute angry punishment of (M - a monster):
 			say angry punishment clothing destruction of M on C;
 		destroy C.
 
-To compute happy reward of (M - a monster):[reward for giving a pleasant blowjob]
+[!<ComputeHappyRewardOfMonster>+
+
+This function is called when the player pleases a monster in some way, like swallowing after being asked. Usually requires the player do something humiliating.
+
+@param <Monster>:<M> The happy monster, usually as a reward for a pleasant blowjob
+
++!]
+To compute happy reward of (M - a monster):
 	if M is friendly-fucking:
 		say "[speech style of M]'Keep that up and I might give you something for your trouble.'[roman type][line break]";
 		FavourUp M by 1;
 	FavourUp M by 1.
 	
+[!<SayAngryPunishmentInsultOfMonster>+
 
+This should display some text when a monster decides to punish the player for some reason. Should be less severe for friendly monsters, since they will usually for a weaker punishment.
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
 To say angry punishment insult of (M - a monster):
 	if M is intelligent and M is not friendly-fucking:
 		say "[first custom style]'Fucking bitch!  Learn your place.'[roman type][line break]";
 	otherwise if M is intelligent:
-		say "[first custom style]'Whatever, fucking bitch.'[roman type][line break]";[He's not trying to fuck you, so he doesn't tear your clothes off, but he isn't all that happy either.]
+		say "[first custom style]'Whatever, fucking bitch.'[roman type][line break]";
 	otherwise:
 		say "The [M] looks very [if the bimbo of the player < 12]angry[otherwise]disappointed[end if]!".
 
+[!<SayAngryPunishmentAccessoryConfiscationOfMonster>+
+
+This should display some text when a monster punishes the player by taking some jewelery
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
 To say angry punishment accessory confiscation of (M - a monster):
 	if M is intelligent, say "[first custom style]'This is mine now.'[roman type][line break]";
 	otherwise say "It looks like [he of M] intends to keep it, and there's not much you can do to prevent that!".
 
+[!<SayAngryPunishmentClothingDesctructionOfMonster>+
+
+This should display some text when a monster punishes the player by ripping off some clothing
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
 To say angry punishment clothing destruction of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn clothing > 1]Sluts don't deserve clothes! There, now you are one step closer to being buck naked.'[otherwise]Sluts don't deserve clothes!'[end if][roman type][line break]";
 	otherwise say "it looks like [he of M] is satisfied with leaving it at that.".
+
+[!<ComputeUniqueClimaxOfMonster>+
+
+Contains the unique handling for a monster "M" climaxing in a fuckhole "F". Monsters with a unique way of climaxing for a given hole should have their own version of this function. The outer function "compute climax of M in F" increments timers and handles a couple of other things, so anything coded in this function should only pertain to this specific monster. This function assumes the monster is male.
+
+@param <Monster>:<M> The monster having the climax
+@param <Fuckhole>:<F> The fuckhole the monster is climaxing with
+
++!]
+To compute unique climax of (M - a monster) in (F - a fuckhole):[assumes M is male]
+	if M is wrapped, compute wrapped climax of M in F;
+	otherwise compute unprotected climax of M in F.
+
+[!<ComputePostClimaxEffectOfMonster>+
+
+Handles anything that needs to happen after a monster "M" climaxes in a fuckhole "F". This function is meant to help specific monsters control what happens after a climax, anything that affects all or most monsters needs to be part of the outer function "compute climax of M in F". No functionality in this function by default
+
+@param <Monster>:<M> The monster that had the climax
+@param <Fuckhole>:<F> The fuckhole the monster had the climax with
+
++!]
+To compute post climax effect of (M - a monster) in (F - a fuckhole):
+	do nothing.
+
+[!<DecideIfMonsterIsLosingWrapperInFuckhole>+
+
+Determines whether or not anything happens to the condom the monster "M" is wearing in the fuckhole "F". This function handles condoms breaking, being manually removed, or simply not working right. By default, the condom is always successful, so condoms only fail if there is a unique reason specified in a given monster's version of this function
+
+@param <Monster>:<M> The monster wearing the condom
+@param <Fuckhole>:<F> The fuckhole the monster is inside of
+@return <Boolean> true if the monster's condom fails for any reason, otherwise false
+
++!]
+To decide if (M - a monster) is losing wrapper in (F - a fuckhole):
+	decide no.
+
+[!<ComputeWrappedClimaxOfMonsterInFuckhole>+
+
+This function is called when a monster "M" has an orgasm in a fuckhole "F" whilst wearing a condom. If M's condom fails for any reason, calls the condom failure function for M and F. Otherwise, calls the condom success function for M and F
+
+@param <Monster>:<M> The monster wearing the condom
+@param <Fuckhole>:<F> The fuckhole the monster is penetrating
+
++!]
+To compute wrapped climax of (M - a monster) in (F - a fuckhole):
+	if M is losing wrapper in F, compute condom failure of M in F;
+	otherwise compute condom success of M in F;
+
+[!<ComputeCondomFailureOfMonsterInFuckhole>+
+
+This function is called when a monster "M" has an orgasm in a fuckhole "F", and for some reason the condom they were wearing fails. Usually this means the player won't have to deal with a condom being pinned to their clothes and takes a full-on creampie instead.
+
+@param <Monster>:<M> The monster that was wearing the condom
+@param <Fuckhole>:<F> The fuckhole the monster is penetrating
+
++!]
+To compute condom failure of (M - a monster) in (F - a fuckhole):
+	if debugmode > 0, say "CONDOM FAILED[line break]";
+	if image cutscenes is 1, get condom failure image of M in F;
+	say CondomFailFlav of M in F;
+	now M is unwrapped;
+	compute M finishing in F;
+	say CreampieReactionFlav to M in F.
+
+[!<GetCondomFailureImageOfMonsterInFuckhole>+
+
+This function can display a relevant image when a monster "M" has their condom fail for the fuckhole "F". By default, shares an image with the get creampie image function for M and F.
+
+@param <Monster>:<M> The monster that was wearing the condom
+@param <Fuckhole>:<F> The fuckhole the monster is penetrating
+
++!]
+To get condom failure image of (M - a monster) in (F - a fuckhole):
+	get creampie image of M in F.
+
+[!<ComputeCondomSuccessOfMonster>+
+
+This function is called when a monster "M" has an orgasm in a fuckhole "F" whilst wearing a condom, and it didn't fail for any reason.
+
+@param <Monster>:<M> The monster wearing the condom
+@param <Fuckhole>:<F> The fuckhole the monster is penetrating
+
++!]
+To compute condom success of (M - a monster) in (F - a fuckhole):
+	if debugmode > 0, say "CONDOM SUCCEEDED[line break]";
+	if image cutscenes is 1, get condom success image of M in F;
+	say CondomPieFlav of M in F;
+	compute M finishing in F.
+
+[!<GetCondomSuccessImageOfMonsterInFuckhole>+
+
+This function can display a relevant image when a monster "M" ejaculates in the fuckhole "F" whilst wearing a condom. By default, shares an image with the get creampie image function for M and F.
+
+@param <Monster>:<M> The monster wearing the condom
+@param <Fuckhole>:<F> The fuckhole the monster is penetrating
+
++!]
+To get condom success image of (M - a monster) in (F - a fuckhole):
+	get creampie image of M in F.
+
+[!<DecideIfMonsterIsWillingToCreampieFuckhole>+
+
+Determines whether or a monster "M" will pull out of a fuckhole "F" before it ejaculates. If M has some reason not to finish inside F, or M has something planned for after it finishes with F, this function should evaluate as false. By default, any given monster is willing to creampie, so any monster that pulls out after sex is doing so for a unique reason specified in their version of this function
+
+@param <Monster>:<M> A monster who might creampie a fuckhole
+@param <Fuckhole>:<F> The fuckhole that might be creampied
+@return <Boolean> true if M is going to do anything but ejaculate in F and then lose interest, otherwise false
+
++!]
+To decide if (M - a monster) is willing to creampie (F - a fuckhole):
+	decide yes.
+
+[!<ComputeUnprotectedClimaxOfMonsterInFuckhole>+
+
+This function is called whenever a monster "M" ejaculates in a fuckhole "F" whilst not wearing a condom. If the monster has any reason not to creampie the player, calls the compute M pulling out of F function. In any other case, calls the compute creampie of M in F function.
+
+@param <Monster>:<M> The monster having the climax
+@param <Fuckhole>:<F> The fuckhole the monster is penetrating
+
++!]
+To compute unprotected climax of (M - a monster) in (F - fuckhole):
+	if M is willing to creampie F, compute creampie of M in F;
+	otherwise compute M pulling out of F.
+
+[!<ComputeMonsterFinishingInVagina>+
+
+This function is called whenever a monster "M" ejaculates in the player's vagina "F".
+
+@param <Monster>:<M> The monster ejaculating
+@param <Vagina>:<F> The player's vagina
+
++!]
+To compute (M - a monster) finishing in (F - vagina):
+	WombFill the semen load of M.
+
+[!<ComputeMonsterFinishingInAsshole>+
+
+This function is called whenever a monster "M" ejaculates in the player's asshole "F".
+
+@param <Monster>:<M> The monster ejaculating
+@param <Asshole>:<F> The player's asshole
+
++!]
+To compute (M - a monster) finishing in (F - asshole):
+	AssFill the semen load of M.
+
+[!<ComputeCreampieOfMonsterInFuckhole>+
+
+This function is called whenever a monster "M" ejaculates in a fuckhole "F" whilst not wearing a condom, and M has no reason to pull out.
+
+@param <Monster>:<M> The monster performing the creampie
+@param <Fuckhole>:<F> The fuckhole receiving the creampie
+
++!]
+To compute creampie of (M - a monster) in (F - a fuckhole):
+	if debugmode > 0, say "PULL OUT FAILED[line break]";
+	if image cutscenes is 1, get creampie image of M in F;
+	say CreampieFlav of M in F;
+	compute M finishing in F;
+	say CreampieReactionFlav to M in F.
+
+To get creampie image of (M - a monster) in (F - a fuckhole):
+	do nothing.
+
+[!<ComputeMonsterPullingOutOfFuckhole>+
+
+This function is called whenever a monster "M" is about to ejaculate in a fuckhole "F" whilst not wearing a condom, and has some reason to pull out
+
+@param <Monster>:<M> The monster having the orgasm
+@param <Fuckhole>:<F> The fuckhole M is pulling out of
+
++!]
+To compute (M - a monster) pulling out of (F - a fuckhole):
+	if debugmode > 0, say "PULL OUT SUCCEEEDED[line break]";
+	if bukkake fetish is 1, compute M messily pulling out of F;
+	otherwise compute M cleanly pulling out of F.
+
+[!<ComputeMonsterMessilyPullingOutOfFuckhole>+
+
+This function is called whenever a monster "M" is about to ejaculate in a fuckhole "F" whilst not wearing a condom, and has some reason to pull out. Usually, this function is called when bukkake fetish is enabled, and handles M glazing the player's crotch rather than ejaculating inside them.
+
+@param <Monster>:<M> The monster having the orgasm
+@param <Fuckhole>:<F> The fuckhole M pulled out of
+
++!]
+To compute (M - a monster) messily pulling out of (F - a fuckhole):
+	if image cutscenes is 1, get messy pull out image of M in F;
+	say MessyPullOutFlav of M in F;
+	CumThighsUp the semen load of M.
+
+To get messy pull out image of (M - a monster) in (F - a fuckhole):
+	get clean pull out image of M in F.
+
+[!<ComputeMonsterCleanlyPullingOutOfFuckhole>+
+
+This function is called whenever a monster "M" is about to ejaculate in a fuckhole "F" whilst not wearing a condom, and has some reason to pull out. Usually, this function is called when bukkake fetish is disabled, and handles M ejaculating on the floor rather than inside the player.
+
+@param <Monster>:<M> The monster having the orgasm
+@param <Fuckhole>:<F> The fuckhole M pulled out of
+
++!]
+To compute (M - a monster) cleanly pulling out of (F - a fuckhole):
+	if image cutscenes is 1, get clean pull out image of M in F;
+	say PullOutFlav of M in F;
+	SemenPuddleUp the semen load of M.
+
+To get clean pull out image of (M - a monster) in (F - a fuckhole):
+	do nothing.
+
+[!<CreampieFlavOfMonster>+
+
+@param <Monster>:<M> The monster the player just had sex with
+
++!]
+To say CreampieFlav of (M - a monster) in (F - a fuckhole):
+	say "[if M is intelligent][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type]  [end if]The [M] [one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order] your [variable F]!".
+
+To say CreampieReactionFlav to (M - a monster) in (F - a fuckhole):
+	if pregnancy fetish is 1 and F is vagina and the pregnancy of the player is 0, say "[first custom style][if the bimbo of the player < 6][one of]I can[']t believe he came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant.... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t he know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is he really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][roman type][line break]";
+	otherwise say "".
+
+To say CondomPieFlav of (M - a monster) in (F - a fuckhole):
+	say "The [M] ejaculates into the condom!".
+
+To say CondomFailFlav of (M - a monster) in (F - a fuckhole):
+	say "The condom breaks as the [M] ejaculates, and [semen] flows freely into your [variable F].";
+
+To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
+	say "The [M] pulls out and sprays your crotch with [semen]".
+
+[!<sayPullOutFlavOfMonster>+
+
+@param <Monster>:<M> The monster the player just had sex with
+
++!]
+To say PullOutFlav of (M - a monster) in (F - a fuckhole):
+	say "The [M] pulls out and sprays [semen] on the floor.".
 
 To say VirginityTaken of (M - a monster):
 	say "[if the sex addiction of the player < 5]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, a single tear rolls down your face as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You don't struggle, absorbed with dread that [he of M] could be the first of dozens, if not hundreds of sex partners to fuck you against your will. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise if the sex addiction of the player < 10]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, worriedly biting your lip as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You are paralysed with indecision, not sure if the fact that [he of M] could be the first of dozens, if not hundreds of sex partners is something that scares you or arouses you. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more painful and strangely satisfying than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, grinning in satisfaction as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You stay still as best you can, hoping to preserve your tightness for the dozens, if not hundreds of sex partners you'll have in the future. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more decadently painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[end if]".
@@ -427,7 +891,7 @@ To compute (M - a monster) buttplugging with (P - a sex toy):
 	say "[ButtplugFlav of M with P]";
 	now P is worn by the player;
 	now P is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To say ButtplugFlav of (M - a monster) with (P - a sex toy):
 	say "The [M] [if P is off-stage]produces a[otherwise]takes the[end if] [P] and pushes it into your [asshole]!".
@@ -435,5 +899,9 @@ To say ButtplugFlav of (M - a monster) with (P - a sex toy):
 To compute ghost fleeing of (M - a monster):
 	say "The [M] immediately begins to look for a way out of the room.";
 	now the scared of M is 10.
+
+
+To get orgasm image of (M - a monster) in (F - a fuckhole):
+	do nothing.
 
 Special Events ends here.

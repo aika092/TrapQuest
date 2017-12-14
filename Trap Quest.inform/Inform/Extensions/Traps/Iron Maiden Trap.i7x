@@ -37,7 +37,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 		otherwise if diaper quest is 1:
 			say "The tentacles [one of]begin to push against your body all over, but putting particular pressure on your [BellyDesc][if there is a worn diaper] and diaper[end if].  They [or][stopping][one of]wiggle and squirm[or]continue to writhe around you[or]press into and tickle you[then at random], [if there is a worn diaper]stimulating you and [end if][one of]making it difficult to hold onto your bladder[if diaper lover >= 4] and bowels[end if][or]making your tummy gurgle[cycling]!";
 			if there is a worn diaper:
-				PussyRuin 2;
+				ruin vagina times 2;
 			if player-urinating is 0 and the bladder of the player > 0 and a random number between iron-maiden-turns and the bladder of the player >= 5 - the incontinence of the player:
 				say "You can't hold on!  You begin wetting yourself.";
 				now delayed urination is 1;
@@ -72,11 +72,11 @@ A time based rule (this is the iron-maiden-punishment rule):
 				if the player is female:
 					if M is penetrating vagina:
 						say "The tentacle in your [vagina] is still [one of]thrusting vigorously[or]plowing away[or]fucking you deep and hard[or]smashing against your cervix as it violates you[in random order]!";
-						PussyRuin 1;
+						ruin vagina;
 					otherwise if vagina is not actually occupied:
 						say "You feel the tip of one tentacle find the entrance to your [vagina]!  You don't have a moment to react before it launches forward, sliding inexorably in, penetrating you, bottoming out with one relentless motion!";
 						now M is penetrating vagina;
-						PussyRuin 1;
+						ruin vagina;
 					otherwise:
 						say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [vagina]!";
 				otherwise if the size of penis > 0:
@@ -85,11 +85,11 @@ A time based rule (this is the iron-maiden-punishment rule):
 			unless there is worn top level ass protection clothing: 
 				if M is penetrating asshole:
 					say "The tentacle behind you continues to [one of]impale your [asshole] on its seemingly endless length[or]plunder your [asshole], snaking its way up through your colon, with each thrust working closer and closer to your belly itself[or]delve deeper and deeper into your [asshole][or]ruin the deepest parts of your [asshole][in random order]!";
-					AssRuin 1;
+					ruin asshole;
 				otherwise if asshole is not actually occupied:
 					say "A particularly slimy tentacle presses against your [asshole]!  You feel your sphincter quickly losing its battle to remain closed as the unseen tentacle drills its way inside!";
 					now M is penetrating asshole;
-					AssRuin 1;
+					ruin asshole;
 				otherwise:
 					say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [asshole]!";
 			

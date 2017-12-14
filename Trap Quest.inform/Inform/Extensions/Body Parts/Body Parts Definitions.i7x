@@ -51,6 +51,162 @@ REQUIRES COMMENTING
 @!]
 a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviously]
 
+
+[!<Fuckhole>@<soreness:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called soreness.  The soreness of a fuckhole is usually 0.
+
+[!<Fuckhole>@<tolerated:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called tolerated.  The tolerated of a fuckhole is usually 0.
+
+[!<Fuckhole>@<openness:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called openness.  The openness of a fuckhole is usually 0.
+
+[!<Fuckhole>@<realOpenness:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called real openness.  The real openness of a fuckhole is usually 0.
+
+[!<Fuckhole>@<previousSoreness:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called previous soreness.
+
+[!<Fuckhole>@<previousOpenness:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called previous openness.
+
+[!<Fuckhole>@<buildup:Integer>*
+
+REQUIRES COMMENTING
+
+*@!]
+a fuckhole has a number called buildup.
+
+[!<WhichNumberIsTheSemenVolumeOfFuckhole>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is the semen-volume of (F - a fuckhole):
+	if F is vagina , decide on the semen volume of vagina;
+	if F is asshole, decide on the semen volume of belly;
+	decide on 0.
+
+[!<FuckholeIsLewdlyExposed>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: a fuckhole (called F) is lewdly exposed:
+	if F is exposed, decide yes; [Plugs are not usable as modesty items]
+	[if F is exposed and F is not actually occupied, decide yes; [Plugs are actually usable as modesty items]]
+	decide no.
+
+To decide which number is the lewdly exposed outrage of (F - a fuckhole):
+	let O be 11;
+	if F is asshole and the semen volume of belly > 0, increase O by 2;
+	if F is vagina and the semen volume of vagina > 0, increase O by 2;
+	increase O by the openness of F / 5;
+	decide on O.
+
+[!<FuckholeIsAtLeastPartiallyLewdlyExposed>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: a fuckhole (called F) is at least partially lewdly exposed:
+	if F is at least partially exposed, decide yes; [Plugs are not usable as modesty items]
+	[if F is exposed and F is not actually occupied, decide yes; [Plugs are actually usable as modesty items]]
+	decide no.
+
+To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
+	decide on the lewdly exposed outrage of F - 2.  [allows us to easily tweak this number]
+
+[!<GapeFuckholeTimesNumber>+
+
+Increases the openness of the fuckhole "F". Should be implemented uniquely for each orifice.
+
+@param <Fuckhole>:<F> The fuckhole being gaped
+
++!]
+To gape (F - a fuckhole) times (X - a number):
+	do nothing.
+
+[!<RuinFuckhole>+
+
+Calls the RuinFuckhole function with an argument of 1
+
+@param <Fuckhole>:<F> The fuckhole being ruined
+
++!]
+To ruin (F - a fuckhole):
+	ruin F times 1.
+
+[!<RuinFuckholeTimesNumber>+
+
+Increases the soreness of a fuckhole "F" by a given number and handles all effects that should occur when a fuckhole gets sore.
+
+@param <Fuckhole>:<F> The fuckhole being ruined
+@param <Integer>:<X> The number of times to ruin F
+
+
++!]
+To ruin (F - a fuckhole) times (X - a number):
+	now the previous soreness of F is the soreness of F;
+	increase the buildup of F by 1;
+	while X > 0:
+		decrease X by 1;
+		if the soreness of F > 8 and there is a worn cum dump's undergarment, now the soreness of F is 8; [undergarment prevents fainting from soreness]
+		if the number of worn for deposit only tattoos is 0 and the player is extremely horny or F is pushed over the edge:
+			if F is vagina, vaginally orgasm shamefully;
+			otherwise anally orgasm shamefully;
+		otherwise if the buildup of F >= 20 and the soreness of F < 10:
+			say "Regardless of how insensitive your [variable F] is, there's no way it can take an infinite fucking.  Over time, you feel it getting slowly more and more sore...";
+			now the soreness of F is 10;
+			now the buildup of F is 0;
+		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and the number of worn for deposit only tattoos is 0:
+			check soreness fainting of F;
+		RuinRoll F;
+		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say "[RuinedFlav of F]".
+
+[!<HealFuckholeX>+
+
+Reduces the soreness of a fuckhole by a given amount
+
+@param <Fuckhole>:<F> The fuckhole being healed
+@param <Integer>:<X> How much the fuckhole should be healed
+
+!]
+To heal (F - a fuckhole) times (X - a number):
+	now the previous soreness of F is the soreness of F;
+	let Y be X;
+	while X > 0:
+		decrease X by 1;
+		if the soreness of F > 0:
+			if Y is X - 1:
+				say "Your [variable F] feels [if X > 2 and the soreness of F > 2]much [end if]less sore."; [We only say this once.]
+				now the tolerated of F is 0;
+			decrease the soreness of F by 1.
+
 [A body part has a rule called weight-rule.  body-part-weight is a number that varies.  The weight-rule of body part is usually the default weight rule.]
 
 [!<BodyPart>@<semenCoating:Integer>*

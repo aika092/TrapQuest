@@ -68,8 +68,8 @@ To compute (M - a vine boss) removing (C - a thing): [This is used for removing 
 	say "Using a particularly nimble vine, the [M] effortlessly pulls out your [printed name of C] and discards it onto the floor.";
 	now C is in the location of the player;
 	if C is anal beads:
-		if F is vagina, pussyruin the notch-taken of C / 2;
-		otherwise assruin the notch-taken of C / 2;
+		if F is vagina, ruin vagina times the notch-taken of C / 2;
+		otherwise ruin asshole times the notch-taken of C / 2;
 	dislodge C.
 
 To compute (M - a vine boss) attacking (C - a clothing): [This should change for any special flavour or varied mechanics on how the clothing is removed.]

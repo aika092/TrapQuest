@@ -12,7 +12,7 @@ Figure of pimp is the file "pimp1.png".
 
 To say PimpDesc:
 	if images visible is 1, display the figure of pimp;
-	say "A tall, powerful looking dark skinned man, dressed in overly extravagant clothing - a purple three piece suit, a fur coat and a long thin cane.  [variable custom style]Yep, this guy is definitely a pimp.  And [if the times-met of item described < 2]it would appear that [end if]I'm his whore.".
+	say "A tall, powerful looking dark skinned man, dressed in overly extravagant clothing - a purple three piece suit, a fur coat and a long thin cane.  [variable custom style]Yep, this guy is definitely a pimp.  And [if the times-met of item described < 2]it would appear that [end if]I'm his whore.[roman type][line break]".
 
 To decide which number is the girth of (M - a pimp):
 	decide on 4.
@@ -36,7 +36,7 @@ To say PregGrowth of (M - a pimp):
 To compute labour to (M - a pimp):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  He[end if] kneels down on one knee and delivers the human mixed raised baby, which immediately starts crying loudly.  He takes it into his arms with an unconcealed look of annoyance.  [first custom style]'Geez, thanks a lot!  Now I have to manage a brothel AND raise [one of]a[or]yet another[stopping] fucking kid.'[roman type][line break]Without giving you a chance to react, never mind reply, he leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  He[end if] kneels down on one knee and delivers the human mixed raced baby, which immediately starts crying loudly.  He takes it into his arms with an unconcealed look of annoyance.  [first custom style]'Geez, thanks a lot!  Now I have to manage a brothel AND raise [one of]a[or]yet another[stopping] fucking kid.'[roman type][line break]Without giving you a chance to react, never mind reply, he leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment.  You feel great!";
 			StrengthUp 1;
