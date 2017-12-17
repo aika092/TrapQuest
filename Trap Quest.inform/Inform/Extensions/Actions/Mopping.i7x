@@ -15,8 +15,8 @@ Check mopping:
 		if there is a dangerous monster in the location of the player, say "You need to deal with the [printed name of a random dangerous monster in the location of the player] first!" instead;
 		if the noun is not worn by the player, say "But you're not holding the cloth..." instead;
 	if the noun is face and the player is not craving:
-		if the semen taste addiction of the player * the thirst of the player < 18, say "[if the semen taste addiction of the player > 14 or the humiliation of the player > 40000]Why lick if off the floor when you could have it fresh and warm straight from the source![otherwise]You can't bring yourself to do something so degrading...[end if]" instead;
-		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the semen taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [printed name of a random monster in the location of the player]. [if the semen taste addiction of the player > 14][second custom style]no matter how much you want to...[roman type][end if]" instead;
+		if the semen taste addiction of the player * the thirst of the player < 18 and the class of the player is not catgirl or (the class of the player is catgirl and the semen taste addiction of the player * the thirst of the player < 9), say "[if the semen taste addiction of the player > 14 or the humiliation of the player > 40000 or (the class of the player is catgirl and (the humiliation of the player > 20000 or the semen taste addiction of the player > 7))]Why lick if off the floor when you could have it fresh and warm straight from the source![otherwise]You can't bring yourself to do something so degrading...[end if]" instead;
+		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the semen taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [printed name of a random monster in the location of the player]. [if the semen taste addiction of the player > 14 or the class of the player is catgirl and the semen taste addiction of the player > 7][second custom style]no matter how much you want to...[roman type][end if]" instead;
 	if the noun is not face and the noun is not pink spraybottle, say "How would you clean with something like that?".
 	[if the second noun is clothing:
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with.  Maybe try a piece of clothing actually made out of soft fabric?" instead;
@@ -39,7 +39,11 @@ Carry out mopping face:
 	if A > 0:
 		StomachUp 1;
 		decrease the urine-puddle of the location of the player by 1;
-	humiliate 400 - (50 * the thirst of the player);[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
+	if class of the player is catgirl:
+		StomachUp 1;
+		if the humiliation of the player < 39800, humiliate 200 - (40 * the thirst of the player);
+	otherwise:
+		humiliate 400 - (50 * the thirst of the player);[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
 
 To decide which number is total puddle:
 	let X be 0;
