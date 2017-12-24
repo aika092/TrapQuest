@@ -33,7 +33,7 @@ To decide which figure-name is clothing-image of (C - a vibrating plug panties):
 	otherwise decide on figure of female latex plug panties.
 
 To say ClothingDesc of (P - a vibrating plug panties):
-	say "[if the player is female]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if].  [if the item described is cursed and the item described is sure and the item described is worn]The ass plug is vibrating!  [end if]The latex material looks very tough.".
+	say "[if the player is female]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if].  [if P is cursed and P is sure and P is worn]The ass plug is vibrating!  [end if]The latex material looks very tough.".
 
 To compute SelfExamineDesc of (K - a vibrating plug panties):
 	say "A pair of latex plug panties covers your [ShortDesc of hips].  ";

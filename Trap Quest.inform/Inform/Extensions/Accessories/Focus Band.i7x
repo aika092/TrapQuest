@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a focus band):
 	decide on figure of focus band.
 
 To say ClothingDesc of (C - a focus band):
-	say "A nice stretchy band that you would wear on your wrist.  [if item described is worn]You feel more able to endure sex without orgasming.[otherwise]You can sense that the item has some small amount of magic power.[end if]".
+	say "A nice stretchy band that you would wear on your wrist.  [if C is worn]You feel more able to endure sex without orgasming.[otherwise]You can sense that the item has some small amount of magic power.[end if]".
 To say ShortDesc of (C - a focus band):
 	say "focus band".
 

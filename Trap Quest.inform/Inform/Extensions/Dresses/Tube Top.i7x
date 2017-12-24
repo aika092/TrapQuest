@@ -243,7 +243,7 @@ To decide which figure-name is clothing-image of (C - a jacket):
 	decide on figure of rubber jacket.
 
 To say ClothingDesc of (C - a rubber jacket):
-	say "A thin black sleeveless latex jacket that clings tightly to your chest.[if item described is worn][line break]Your erect nipples can be clearly seen through it.  [end if]It's very short, [if item described is worn]completely exposing[otherwise]and would completely expose[end if] your [BellyDesc].".
+	say "A thin black sleeveless latex jacket that clings tightly to your chest.[if C is worn][line break]Your erect nipples can be clearly seen through it.  [end if]It's very short, [if C is worn]completely exposing[otherwise]and would completely expose[end if] your [BellyDesc].".
 
 To decide which object is the potential-upgrade-target of (C - a rubber jacket):
 	decide on a random off-stage pasties.

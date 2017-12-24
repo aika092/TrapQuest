@@ -19,7 +19,7 @@ To decide which figure-name is the clothing-image of (C - a tongue piercing):
 	decide on figure of tongue piercing.
 
 To say ClothingDesc of (C - a tongue piercing):
-	say "A large stud fixed on the underside of your tongue.  You're not used to its presence so it's difficult to take your mind off it[if the item described is cursed]. Its curse is preventing people from understanding what you're trying to say[end if].".
+	say "A large stud fixed on the underside of your tongue.  You're not used to its presence so it's difficult to take your mind off it[if C is cursed]. Its curse is preventing people from understanding what you're trying to say[end if].".
 
 To say ShortDesc of (C - a tongue piercing):
 	say "tongue piercing".

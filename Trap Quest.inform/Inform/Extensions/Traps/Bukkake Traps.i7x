@@ -102,7 +102,7 @@ To trigger (Y - a bukkake trap door):
 		otherwise:
 			say "A trap door opens above your head, and more [semen] falls down all over you.  Of course since you're basically completely drenched already, it all just drips off you slowly.  Think of it as a fresh coat of paint.";
 		CumFaceUp 50;
-		if the number of worn clothing - the number of worn accessories is 0 and image cutscenes is 1, display figure of bukkake door cutscene 1;
+		if the number of worn nudism-disabling clothing is 0 and image cutscenes is 1, display figure of bukkake door cutscene 1;
 	let R be a random number between 7 and 13;
 	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed, now R is -9999;
 	if debugmode is 1, say "Player [Strength of the player - weight of the player] |  [R].5 Bukkake[paragraph break]";

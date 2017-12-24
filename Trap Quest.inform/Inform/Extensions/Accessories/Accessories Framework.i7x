@@ -51,7 +51,7 @@ To say accessorydesc:
 		otherwise:
 			say "A silver coloured ring with a small [accessory-colour of item described] embedded in the top.";
 	if the flat intelligence of the player < 6:
-		say "You have no idea how much it's probably worth.";
+		say "You have no idea how much it's worth.";
 	otherwise if the flat intelligence of the player < 11:
 		say "[if the price of item described < 4]It's probably only worth a little bit.[otherwise if the price of item described < 8]It probably has notable worth.[otherwise if the price of item described < 12]You reckon this is quite a valuable piece of jewellery.[otherwise]This is probably an extremely expensive piece of jewellery.[end if]";
 	otherwise:

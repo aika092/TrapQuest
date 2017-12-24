@@ -21,7 +21,7 @@ To decide which figure-name is clothing-image of (C - a catbell):
 	decide on figure of catbell.
 
 To say ClothingDesc of (C - a catbell):
-	say "This thin black leather collar has pink frills and a small jingly bell[if item described is worn] that jingles as you move[end if].  It [if item described is worn]makes[otherwise]would make[end if] enough noise to help unfriendly monsters keep chasing you.".
+	say "This thin black leather collar has pink frills and a small jingly bell[if C is worn] that jingles as you move[end if].  It [if C is worn]makes[otherwise]would make[end if] enough noise to help unfriendly monsters keep chasing you.".
 To say ShortDesc of (C - a catbell):
 	say "catbell".
 

@@ -9,7 +9,7 @@ To decide which figure-name is clothing-image of (C - a plain diaper):
 	decide on figure of plain diaper.
 
 To say ClothingDesc of (C - a plain diaper):
-	say "An extremely large white adult diaper, with huge amounts of extra puffy padding.  It doesn't have any kind of humiliating pattern on it.  [if the weight of item described < 5]You're confident this is probably the most absorbent diaper you will ever encounter, and if it was fully saturated, it would probably be nearly as big as a beach ball!  [end if].".
+	say "An extremely large white adult diaper, with huge amounts of extra puffy padding.  It doesn't have any kind of humiliating pattern on it.  [if the weight of C < 5]You're confident this is probably the most absorbent diaper you will ever encounter, and if it was fully saturated, it would probably be nearly as big as a beach ball!  [end if].".
 
 Figure of plain diaper is the file "diaper1.png".
 

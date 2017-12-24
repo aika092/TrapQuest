@@ -3,7 +3,7 @@ Wrist Bondage by Bondage begins here.
 A wrist bond is a kind of bondage.  Understand "cuffs" as wrist bond.
 
 To say ClothingDesc of (W - a wrist bond):
-	say "[WristBondDesc][if item described is bound-in-front and item described is worn]They are binding your wrists in front of you. [otherwise if item described is worn]They are binding your wrists behind you. [end if]".
+	say "[WristBondDesc][if W is bound-in-front and W is worn]They are binding your wrists in front of you. [otherwise if W is worn]They are binding your wrists behind you. [end if]".
 
 To decide which number is the initial outrage of (W - a wrist bond):
 	decide on 2.

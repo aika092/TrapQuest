@@ -859,6 +859,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking into a pressure trap:
+	if the player is not zeroG, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
@@ -869,6 +870,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking past a pressure trap:
+	if the player is not zeroG, decide yes;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.

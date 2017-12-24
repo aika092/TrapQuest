@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a butterfly wings):
 	decide on figure of butterfly wings.
 
 To say ClothingDesc of (C - a butterfly wings):
-	say "A pair of giant pink butterfly wings, which catch the light in a way that makes them appear to glitter. [if the item described is worn]Wearing these makes you feel lighter.[end if]".
+	say "A pair of giant pink butterfly wings, which catch the light in a way that makes them appear to glitter. [if C is worn]Wearing these makes you feel lighter.[end if]".
 
 To compute SelfExamineDesc of (C - a butterfly wings):
 	say "A pair of giant pink wings sits on your back. ".

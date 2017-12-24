@@ -6,7 +6,7 @@ To decide which figure-name is the clothing-image of (C - a clitoris lead):
 	decide on figure of clitoris lead.
 
 To say ClothingDesc of (C - a clitoris lead):
-	say "A short metal chain attached to your clitoris hood piercing.  [if the player is clit stuck]The [random monster covering C] is holding onto it, threatening to pull it roughly, which is preventing you from fighting back.[otherwise if the player is prone]It barely touches the ground as you crawl.  [otherwise if the concealer of item described is nothing]It dangles between your legs awkwardly, the bottom end hanging just below your knees.  [end if][if the player is not clit stuck]Any enemy that got a hold of this would be able to subdue you easily.[end if]".
+	say "A short metal chain attached to your clitoris hood piercing.  [if the player is clit stuck]The [random monster covering C] is holding onto it, threatening to pull it roughly, which is preventing you from fighting back.[otherwise if the player is prone]It barely touches the ground as you crawl.  [otherwise if the concealer of C is nothing]It dangles between your legs awkwardly, the bottom end hanging just below your knees.  [end if][if the player is not clit stuck]Any enemy that got a hold of this would be able to subdue you easily.[end if]".
 
 To say ShortDesc of (C - a clitoris lead):
 	say "clitoris lead".

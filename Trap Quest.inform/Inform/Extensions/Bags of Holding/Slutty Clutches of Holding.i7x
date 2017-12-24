@@ -82,7 +82,7 @@ To say ClothingDesc of (C - a basic bitch clutch of holding):
 	say "A magic pink clutch that sits under your armpit and holds all your spare items and negates their weight.  There is some bizarre clip art on the front of a [if tg fetish >= 1]drag queen[otherwise]overly painted whore[end if] holding a pink vibrator and wearing a pink collar that reads 'BASIC'.  A warning on the label says '[BagHoldingWarning] clutch'.".
 
 To say ShortDesc of (C - an basic bitch clutch of holding):
-	say "'basic' bitch clutch bag".;
+	say "'basic' bitch clutch bag".
 
 
 
