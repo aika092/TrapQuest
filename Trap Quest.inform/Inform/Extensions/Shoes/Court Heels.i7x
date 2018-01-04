@@ -1,6 +1,6 @@
 Court Heels by Shoes begins here.
 
-A court heels is a kind of stiletto heels.  The printed name of court heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of court heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of court heels is "che".
+A court heels is a kind of stiletto heels.  The printed name of court heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of court heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of court heels is "che".
 
 There is 1 satin court heels.  There is 1 leather court heels.  There is 1 pvc court heels.  There is 1 glass court heels.  
 
