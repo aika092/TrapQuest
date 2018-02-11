@@ -135,7 +135,7 @@ To say AssholePenetrationFlav of (M - a robochef):
 To compute anal sex of (M - a robochef):
 	say "The [M] continues to [one of]methodically plow[or]emotionlessly fuck[or]steadily thrust into[in random order] your [asshole]!";
 	decrease the sex-length of M by 1;
-	AssRuin 1.
+	ruin asshole.
 
 To decide which number is the condom resistance of (M - a robochef):
 	if the number of off-stage bag lunches is 0, decide on 99;
@@ -144,8 +144,7 @@ To decide which number is the condom resistance of (M - a robochef):
 To say CondomRejectFlav of (M - a robochef):
 	say "[speech style of M]ERROR, BAG LUNCH DOT BATCH IS UNAVAILABLE. GOTO TEN. RESUMING SOUP BREWING PROGRAM.[roman type] Looks like it couldn[']t handle your request...".
 
-To compute anal climax of (M - a robochef):
-	TimesFuckedUp M by 1;
+To compute unique climax of (M - a robochef) in (F - asshole):
 	if M is wrapped:
 		compute condom filling of M;
 	otherwise:
@@ -161,7 +160,7 @@ To compute anal climax of (M - a robochef):
 To compute condom filling of (M - a robochef):
 	now M is unwrapped;
 	say "You can feel the rubbery coating of [M]'s [manly-penis] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break] The [M] emits a sharp *ding*, and its bulging rubber [manly-penis] detaches from [his of M] body, landing behind you with a pronounced *plop*. It seems to lose interest.";
-	AssRuin 1;
+	ruin asshole;
 	let L be a random off-stage bag lunch;
 	now L is in the location of the player;
 

@@ -14,7 +14,7 @@ The printed name of vacant acolyte is usually "[if item described is in the loca
 A unminded acolyte is a kind of mindless acolyte.  There is 1 unminded acolyte.
 The printed name of unminded acolyte is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]mindless cultist[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of unminded acolyte is "min".  Understand "mindless", "mind" as unminded acolyte.
 A chanting acolyte is a kind of mindless acolyte.  There is 1 chanting acolyte.
-The printed name of chanting acolyte is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]chanting cultist[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of chanting acolyte is "cha".  Understand "chanting", "chant" as chanting acolyte.
+The printed name of chanting acolyte is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]chanting cultist[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of chanting acolyte is "chac".  Understand "chanting", "chant" as chanting acolyte.
 
 An ardent acolyte is a kind of acolyte. There is 1 ardent acolyte.
 The printed name of ardent acolyte is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]ardent cultist[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of ardent acolyte is "aac".
@@ -213,7 +213,7 @@ This is the cult conversion rule:
 			say "The creature seemed to be waiting for this moment, and you feel it begin to pump [semen] into you even as you orgasm. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
 			increase the charge of the elder altar by 500;
 			WombFill 6;
-			PussyRuin 2;]
+			ruin vagina times 2;]
 	otherwise if the pregnancy of the player > 0 and M is intelligent:
 		say "[first custom style]'It is unseemly for the blessed to be so unruly, maintain decorum in the future.'[roman type][line break]";
 		bore M;
@@ -448,7 +448,7 @@ To compute failed dominance punishment of (M - a mindless acolyte):
 			SexChange the player;
 			now the virgin of the player is 0;
 			now elder altar is penetrating vagina;
-			PussyRuin 2;
+			ruin vagina times 2;
 			WombFill 6;
 			now elder altar is not penetrating vagina;
 			now P is 0;
@@ -598,13 +598,13 @@ To female dominate (M - an acolyte):[The cultist eats you out herself!]
 		if the semen volume of asshole > 0:
 			say "She crawls behind you, causing you to gasp as she spreads your asscheeks and thrusts her tongue into your [asshole], stretching your sphincter pleasurably as it begins to explore your delicate anal passage. Her nails dig into your [AssDesc] as her tongue enters a trapped pocket of [semen], and you hear a ravenous grunt as her lips suddenly flatten around your hole. Its undeniably humiliating to get treated like a common refrigerator, but as she slurps the cum straight from your ass, there's something reverent about her actions that really gets under your skin. You find yourself letting go of your lingering aches and fatigue as the intense-tongue fucking runs its course, feeling refreshed as she finally removes her tongue and swallows the last of your anal contents in one gulp.";[may need update for milk, urine, etc.]
 			now the semen volume of asshole is 0;
-			assheal 1;
+			heal asshole times 1;
 			bodyHeal 3;
 			now the fatigue of the player is 0;
 		otherwise:
 			say "She crawls behind you, pausing briefly before sliding a spit-coated finger into your [asshole], which stretches your sphincter pleasurably as it begins to explore your delicate back passage. Her nails dig lightly into your [AssDesc] as her knuckle pops in and out of your hole, tongue tenderly stroking your anal ring as she continues her (now garbled) chanting under her breath. Its undeniably humiliating to let her violate you like this, but the reverence in her voice really gets under your skin, and you feel yourself letting go of your lingering aches and fatigue. You let the experience run its course, returning to your feet feeling refreshed.";
 			bodyHeal 3;
-			assheal 3;
+			heal asshole times 3;
 			gape asshole times 1;
 			now the fatigue of the player is 0;
 		Humiliate 10;

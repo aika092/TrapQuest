@@ -124,7 +124,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 		if asshole is not actually occupied and the hunger of M > 7:
 			say "The [M] pushes her way out of your [asshole]!";
 			now M is penetrating asshole;
-			AssRuin 1;
+			ruin asshole;
 			now M is not penetrating asshole;
 			now M is in Woods05;
 			now the hunger of M is 0;
@@ -182,7 +182,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 				say "She somehow speaks to you telepathically.  [second custom style]'I hope you don't mind me living in here for a while, but I want to drink all the tasty cum that people are going to squirt inside you!'[roman type][line break]";
 				say "[if the bimbo of the player < 7][first custom style]Holy shit, what is this?![otherwise if the bimbo of the player < 11][variable custom style]Err... okay?  I think?[otherwise][second custom style]Ooh, this could be fun![end if][roman type][line break]";
 				now M is penetrating asshole;
-				AssRuin 1;
+				ruin asshole;
 				now M is not penetrating asshole;
 				now M is worn by the player;
 				now the semen volume of belly is 0;

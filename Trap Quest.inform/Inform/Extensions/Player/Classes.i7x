@@ -29,9 +29,13 @@ REQUIRES COMMENTING
 
 +!]
 This is the princess class rule:
-	if there is a worn tiara and there is a worn royal attire clothing:
-		now player-class is "princess";
-		rule succeeds.
+	if there is a worn royal attire clothing:
+		if the training-progress of senior robobellboy is -1:
+			now player-class is "trained fuck princess";
+			rule succeeds;
+		otherwise if there is a worn tiara:
+			now player-class is "princess";
+			rule succeeds.
 The princess class rule is listed in the player class rules.
 princess is a text that varies.  princess is "princess".
 
@@ -42,7 +46,10 @@ REQUIRES COMMENTING
 +!]
 This is the maid class rule:
 	if there is a worn maid headdress and (there is a worn maid outfit or there is a worn black fetish hobble dress):
-		now player-class is "maid";
+		if the training-progress of senior robobellboy is -1:
+			now player-class is "fully trained maid";
+		otherwise:
+			now player-class is "maid";
 		rule succeeds.
 The maid class rule is listed in the player class rules.
 maid is a text that varies.  maid is "maid".
@@ -576,7 +583,28 @@ This is the hooker in training class rule:
 		now the player-class is "hooker in training";
 		rule succeeds.
 The hooker in training class rule is listed in the player class rules.
-hooker in training is a text that varies. hooker in training is "hooker in training".
+
+Definition: a text (called T) is hooker in training:[catch-all]
+	if there is a worn trainee hood or there is a worn trainee bra or there is a worn trainee thigh highs, decide yes.
+
+This is the trained hooker class rule:
+	if the training-progress of senior robobellboy is -1:
+		if there is a worn royal attire clothing:
+			now the player-class is "trained fuck princess";
+		otherwise if there is a worn maid headdress:
+			now the player-class is "fully trained maid";
+		otherwise:
+			now the player-class is "trained hooker".
+The trained hooker class rule is listed in the player class rules.
+
+Definition: a text (called T) is hotel employment:
+	if T is hooker in training, decide yes;
+	if T is trained hooker, decide yes;
+	decide no.
+
+Definition: a text (called T) is trained hooker:
+	if the training-progress of senior robobellboy is -1, decide yes.
+	
 
 [!<TheCumdumpsterClassRule>+
 
@@ -688,7 +716,6 @@ This is the adventurer class rule:
 		now player-class is "adventurer".
 The adventurer class rule is listed last in the player class rules. [Catch-all]
 adventurer is a text that varies.  adventurer is "adventurer".
-
 
 
 Classes ends here.

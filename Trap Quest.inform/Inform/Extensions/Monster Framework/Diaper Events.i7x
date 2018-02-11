@@ -351,8 +351,8 @@ To compute spanking of (M - a monster):
 		if there is worn ass plugging clothing:
 			let K be a random worn ass plugging clothing;
 			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if].  Ouch!";
-			if K is vagina plugging, Pussyruin 2;
-			if K is not jelldo, Assruin 2;
+			if K is vagina plugging, ruin vagina times 2;
+			if K is not jelldo, ruin asshole times 2;
 		repeat with K running through ass covering clothing:
 			let R be a random number between 0 and 1;
 			if R is 1:
@@ -476,11 +476,11 @@ To compute masturbation of (M - a monster):
 	otherwise if the sex-length of M > 0:
 		say "[MasturbationFlav of M]";
 		Arouse 1000 + (the difficulty of M * 100);
-		Pussyruin 1;
+		ruin vagina;
 		if there is worn vagina plugging clothing and the player is female:
 			let K be a random worn vagina plugging clothing;
 			say "The plug[if K is vagina plugging]s[end if] inside of you send pleasurable sensations deep into your [vagina].";
-			PussyRuin 1;
+			ruin vagina;
 		let D be a random worn messed diaper;
 		if D is diaper:
 			say "[one of]The gross squishiness of your messy diaper being spanked makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";

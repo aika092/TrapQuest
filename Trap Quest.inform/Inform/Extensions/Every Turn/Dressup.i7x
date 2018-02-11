@@ -54,7 +54,7 @@ A time based rule (this is the dressup rule):
 			if the player is female:
 				if the number of things penetrating vagina is 0:
 					say "You shriek as a pair [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [printed name of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of the [printed name of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]like nothing but a toy to be used[or]like their personal sex guinea pig[or]like nothing but a simple plaything[at random].";
-					ruin vagina times 1;
+					ruin vagina;
 					humiliate 15;
 					arouse 50 + the vaginal sex addiction of the player * 5;
 					now molested is 1;

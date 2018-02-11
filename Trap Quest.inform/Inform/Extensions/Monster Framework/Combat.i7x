@@ -166,6 +166,9 @@ To replace any gags:
 		compute replacement of G in face.
 
 To TimesFuckedUp (M - a monster) by (N - a number):
+	DirectTimesFuckedUp M by N.
+
+To DirectTimesFuckedUp (M - a monster) by (N - a number):
 	repeat with X running from 1 to N:
 		TimesFuckedUp M.
 
@@ -193,8 +196,8 @@ To compute facial climax of (M - a monster):
 
 To compute default facial climax for (M - a monster):
 	TimesFuckedUp M by 1;
-	if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut and the class of the player is not living sex doll:[cumshot outside;TODO "willing to pull out" function for orifices]
-		if the reaction of the player is 0:
+	if bukkake fetish is 1 and M is willing to bukkake:[cumshot outside;TODO "willing to pull out" function for orifices]
+		if the reaction of the player is 0:[Player rolls to see if they]
 			compute facial dodging of M;
 		otherwise: [the player submitted]
 			compute facial accepting of M;
@@ -205,12 +208,20 @@ To compute default facial climax for (M - a monster):
 			compute deepthroat creampie of M;
 	satisfy M.[dislodges him automatically]
 
-To compute swallow choice of (M - a monster):
-	say "Do you swallow? [yesnolink] ";
-	if the player consents:
-		compute voluntary swallow of M;
-	otherwise:
-		compute spit choice of M.
+[!<OrgasmMonster>+
+
+This function handles the climax of a monster (M) in a given fuckhole (F). First we call TimesFuckedUp for M, then we look at the "unique climax" for M in F, which may be replaced with special functionality depending on the monster. The post climax effect handles anything that should happen after the climax has happened, specfic to that monster. Lastly, we dislodge the monster after making sure that the monster actually needs to be dislodged(some monsters might want to go for another round after they climax, and other monsters may have their own rules for making the monster pull out.) Satisfy M makes the monster forgive the player and calls the "dislodge M" function by default.
+
+@param <Monster>:<M> The monster having the climax
+@param <Fuckhole>:<F> The fuckhole the monster is having the climax in
+
++!]
+To compute climax of (M - a monster) in (F - a fuckhole):
+	TimesFuckedUp M by 1;
+	compute unique climax of M in F;
+	compute post climax effect of M in F;
+	if M is interested and the sex-length of M is 0:
+		satisfy M.
 
 This is the default anal climax rule:
 	if current-monster is penetrating asshole, compute anal climax of current-monster;
@@ -234,14 +245,7 @@ To replace any clothes:
 		unless current-monster is withholding C, compute replacement of C.
 
 To compute anal climax of (M - a monster):
-	TimesFuckedUp M by 1;
-	if M is male:
-		if M is wrapped, say CondomPieFlav of M;
-		otherwise say CreampieFlav of M;
-		AssFill the semen load of M;
-	if M is interested:
-		satisfy M;
-	now M is not penetrating asshole.
+	compute climax of M in asshole.
 
 This is the default vaginal climax rule:
 	if current-monster is penetrating vagina, compute vaginal climax of current-monster;
@@ -255,55 +259,7 @@ To replace any cuntplugs:
 		compute replacement of G in vagina.
 
 To compute vaginal climax of (M - a monster):
-	TimesFuckedUp M by 1;
-	if M is male:
-		if M is wrapped, say CondomPieFlav of M;
-		otherwise say CreampieFlav of M;
-		WombFill the semen load of M;
-	if M is interested:
-		satisfy M;
-	now M is not penetrating vagina.
-
-To say CondomPieFlav of (M - a monster):
-	say "The [M] ejaculates into the condom!".
-
-[!<CreampieFlavOfMonster>+
-
-This function handles a monster finishing inside after anal or vaginal sex. May change function slightly depending on the monster
-
-@param <Monster>:<M> The monster the player just had sex with
-
-+!]
-To say CreampieFlav of (M - a monster):
-	let F be a random fuckhole penetrated by M;
-	say "[if M is intelligent][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type]  [end if]The [M] [one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order] your [variable F]!".
-
-[!<PullOutFlavOfMonster>+
-
-This function handles a monster pulling out after anal or vaginal sex. May change function slightly depending on the monster
-
-@param <Monster>:<M> The monster the player just had sex with
-
-+!]
-To say PullOutFlav of (M - a monster):
-	if bukkake fetish is 1:
-		say "The [M] pulls out and sprays [semen] on the floor.";
-		SemenPuddleUp the semen load of M;
-	otherwise:
-		say "The [M] pulls out and sprays your crotch with [semen]";
-		CumThighsUp the semen load of M.
-
-Definition: a person is breeding material:
-	if current-monster is hellhound:
-		if the class of the player is catgirl, decide no;
-		if the class of the player is puppygirl, decide yes;
-		if the thickness of hips > 4, decide yes;
-	if current-monster is minotaur:
-		if the player is male, decide no;
-		if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
-		if the class of the player is cowgirl, decide yes;
-	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;
-	decide no.
+	compute climax of M in vagina.
 
 This is the default cleavage climax rule:
 	if current-monster is penetrating breasts, compute cleavage climax of current-monster.
@@ -372,10 +328,10 @@ To compute anal sex of (M - a monster):
 		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
 	otherwise if the reaction of the player is 1:[submitting]
 		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][at random]";
-		AssRuin 1;
+		ruin asshole;
 	otherwise:[resisting]
 		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		AssRuin 1;
+		ruin asshole;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -390,10 +346,10 @@ To compute vaginal sex of (M - a monster):
 		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
 	otherwise if the reaction of the player is 1:
 		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][at random]";
-		PussyRuin 1;
+		ruin vagina;
 	otherwise:
 		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		PussyRuin 1;
+		ruin vagina;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -844,7 +800,7 @@ To compute (M - a monster) entering asshole:
 	if M is friendly-fucking or presented-orifice is asshole, say "[FriendlyAssholePenetrationFlav of M]";
 	otherwise say "[AssholePenetrationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To say AssholePenetrationFlav of (M - a monster):
 	let N be a random monster penetrating vagina;
@@ -926,7 +882,7 @@ To compute (M - a monster) entering vagina:
 	if M is friendly-fucking, say "[FriendlyVaginaPenetrationFlav of M]";
 	otherwise say "[VaginaPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 To say VaginaPenPrep of (M - a monster):
 	let N be a random monster penetrating vagina;

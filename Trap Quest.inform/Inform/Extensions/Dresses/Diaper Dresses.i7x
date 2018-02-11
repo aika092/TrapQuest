@@ -105,7 +105,7 @@ To say ShortDesc of (C - a white sissy dress):
 
 Part 5 - Teddybear Baby Dress
 
-A teddybear baby dress is a kind of baby-dress.  There is 1 teddybear baby dress. The printed name of teddybear baby dress is "[TQlink of item described][clothing-title-before]super short teddybear baby dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "super", "short" as teddybear baby dress.  A teddybear baby dress is usually super-short.  The text-shortcut of teddybear baby dress is "std".
+A teddybear baby dress is a kind of baby-dress.  There is 1 teddybear baby dress. The printed name of teddybear baby dress is "[TQlink of item described][clothing-title-before]super short teddybear baby dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "super", "short" as teddybear baby dress.  A teddybear baby dress is usually super-short.  The text-shortcut of teddybear baby dress is "tbbd".
 
 Figure of teddybear baby dress is the file "babydress5.png".
 
@@ -172,7 +172,7 @@ To say ShortDesc of (C - a floofy sissy baby dress):
 
 Part 9 - Dinosaur Baby Dress
 
-A dinosaur baby dress is a kind of baby-dress.  There is 1 dinosaur baby dress. The printed name of dinosaur baby dress is "[TQlink of item described][clothing-title-before]super short dinosaur baby dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "super", "short" as dinosaur baby dress.  A dinosaur baby dress is usually super-short.  The text-shortcut of dinosaur baby dress is "std".
+A dinosaur baby dress is a kind of baby-dress.  There is 1 dinosaur baby dress. The printed name of dinosaur baby dress is "[TQlink of item described][clothing-title-before]super short dinosaur baby dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "super", "short" as dinosaur baby dress.  A dinosaur baby dress is usually super-short.  The text-shortcut of dinosaur baby dress is "dbd".
 
 Figure of dinosaur baby dress is the file "babydress9.png".
 

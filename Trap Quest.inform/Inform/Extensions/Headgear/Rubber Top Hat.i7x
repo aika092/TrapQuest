@@ -9,7 +9,7 @@ To decide if a rubber top hat is roleplay:
 	if artificial enhancements fetish is 1, decide yes;
 	decide no.
 
-The printed name of rubber top hat is usually "[TQlink of item described][clothing-title-before]rubber top hat[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of rubber top hat is "th".
+The printed name of rubber top hat is usually "[TQlink of item described][clothing-title-before]rubber top hat[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 
 To decide which figure-name is the clothing-image of (C - a rubber top hat):

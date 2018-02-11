@@ -3,7 +3,7 @@ Armadillo Heels by Shoes begins here.
 
 An armadillo heels is a kind of stiletto heels.  An armadillo heels is rare.  An armadillo heels is usually leather. The heel-height of an armadillo heels is usually 5. There is 1 armadillo heels.
 
-The printed name of armadillo heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch armadillo heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of armadillo heels is "ah".
+The printed name of armadillo heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch armadillo heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of armadillo heels is "ah".
 
 To decide which figure-name is the clothing-image of (H - an armadillo heels):
 	decide on the figure of armadillo heels.

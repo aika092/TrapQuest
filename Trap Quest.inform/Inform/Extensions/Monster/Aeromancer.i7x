@@ -59,6 +59,9 @@ Definition: an aeromancer (called M) is human:
 To say LeftoverDesc (N - 113):
 	say "An unconscious aeromancer on the ground has a [if pregnancy fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of her asshole.[line break]";
 
+To decide which number is the semen load of (M - an aeromancer):
+	decide on a random number between 7 and 11.
+
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - an aeromancer):
@@ -314,8 +317,8 @@ To compute fuckhole sex of (M - an aeromancer): [separated these out so it's les
 		otherwise:
 			say "[one of]The [M]'s magic sex organs continue to fuck you.[or]The [M] struggles to come up with more puns as the magic tentacles piston away.[or]The [M] continues to violate you with her magical sex organs.[or]The invisible tentacles continue pistoning away in between her awful puns.[or]The magical tentacles fuck you extra hard when the [M] is having extra trouble coming up with a pun. They might be a relief if they weren[']t so terrible.[at random]";
 	say "[speech style of M]'[one of]I think your [if F is asshole]ass[otherwise]cunt[end if] needs some airing out!'[or]After this ravaging, I think you'll be SOREing!  Haha, get it?'[or]Aww, I'm sorry to burst your bubble, but I think I might have punctured your body!  Don't worry, I'll be sure to fill you back up!'[or]I hope you don't feel under pressure to perform!'[or]It may be painful now, but if you get any wounds, you can always HELIUM.'[or]It looks like you[']re really full of hot air!'[or]It's a bird! It's a plane! It's a dick in your [if F is asshole]ass[otherwise]cunt[end if]! Hahaha!'[or]The amount of time you spend getting fucked[if the player is not female] in the ass[end if] must be pretty *high up*![or]I[']d love to talk about a vortex, but sluts like you only care about more sex![in random order][roman type][line break][if the sex-length of M is 3 and the reaction of the player is 0]Despite her awful puns, you still feel humiliated, and you are continuously getting more sore.[line break][end if]"; [There will be puns.]
-	if M is penetrating asshole, AssRuin 1;
-	otherwise PussyRuin 1;
+	if M is penetrating asshole, ruin asshole;
+	otherwise ruin vagina;
 	decrease the sex-length of M by 1.
 
 
@@ -325,27 +328,32 @@ To compute anal sex of (M - an aeromancer):
 To compute vaginal sex of (M - an aeromancer):
 	compute fuckhole sex of M.
 
-To compute anal climax of (M - an aeromancer):
-	bore M;
-	FavourUp M;
-	TimesFuckedUp M by 1;
-	let N be a random number between 7 and 11;
-	say "You feel the tentacles throb in unison, groaning involuntarily as they take turns filling up your belly with gush after gush of compressed air. The [M] screams with delight at your rapidly burgeoning belly, sloppily dropping you on your back before walking over to inspect her handiwork.";
-	AssFill N air;
-	if N < 6:
+To compute unique climax of (M - an aeromancer) in (F - asshole):
+	let N be the air volume of belly;
+	compute creampie of M in F;
+	if N + 5 < the air volume of belly:
 		say "She gleefully scribbles something in a small notebook and turns away. Looks like she's finished.";
 	otherwise:
-		say "She writes something in a small notebook and turns away. Looks like she's finished.".
-
-To compute vaginal climax of (M - an aeromancer):
+		say "She writes something in a small notebook and turns away. Looks like she's finished.";
 	bore M;
 	FavourUp M;
-	TimesFuckedUp M by 1;
-	let N be a random number between 3 and 6;
+
+To say CreampieFlav of (M - an aeromancer) in (F - asshole):
+	say "You feel the tentacles throb in unison, groaning involuntarily as they take turns filling up your belly with gush after gush of compressed air. The [M] screams with delight at your rapidly burgeoning belly, sloppily dropping you on your back before walking over to inspect her handiwork.";
+
+To compute (M - an aeromancer) finishing in (F - asshole):
+	AssFill (the semen load of M) air.
+
+To compute unique climax of (M - an aeromancer) in (F - vagina):
+	compute creampie of M in F.
+
+To say CreampieFlav of (M - an aeromancer) in (F - vagina):
 	say "The [M] screams with delight as her magical tentacles climax, taking turns flooding your [vagina] with warm, glittery [semen].  She releases her hold on your body as the gooey fluid soaks into your skin, causing a strange tingling feeling to travel up your torso and into your chest. You watch with [if the bimbo of the player < 7]horror[otherwise if the bimbo of the player < 11]confusion[otherwise]awe[end if] as your boobs balloon in front of you!";
-	BustInflate N;
 	if image cutscenes is 1, display figure of aeromancer cutscene 5;
-	say "The [M] rather sloppily drops you on the ground, [if N > 5]gleefully [end if]writing something in her notebook before losing interest.".
+	say "The [M] rather sloppily drops you on the ground, [one of]gleefully [or][stopping]writing something in her notebook before losing interest.".
+
+To compute (M - an aeromancer) finishing in (F - vagina):
+	BustInflate (a random number between 3 and 6).
 
 This is the aeromancer tries to curse the player rule:
 	if there is a sex doll penetrating a body part and the latex-transformation of the player is 0 and inflation fetish is 1:
@@ -407,7 +415,7 @@ To compute (M - an aeromancer) attacking (C - a diaper):
 		say "The [M] stretches out her arms and hands towards you.  You feel invisible tentacles made of compressed air shoot up your [asshole] with incredible speed.  Somehow the magic sex organs are simply phasing through your [printed name of C][if asshole is actually occupied] and the [printed name of random thing filling asshole][end if]!";
 		now M is penetrating asshole;
 		now the sex-length of M is 3;
-		AssRuin 1.
+		ruin asshole.
 
 To say PullAttempt of (M - an aeromancer) at (K - a clothing):
 	say "".
@@ -467,7 +475,7 @@ To compute (M - an aeromancer) entering asshole:
 	otherwise:
 		]compute M entering a fuckhole;
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To compute (M - an aeromancer) entering vagina:
 	[if M is friendly-fucking:
@@ -475,7 +483,7 @@ To compute (M - an aeromancer) entering vagina:
 	otherwise:
 		]compute M entering a fuckhole;
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 Definition: an aeromancer (called M) is willing to let go:
 	decide no.
@@ -979,23 +987,18 @@ To compute aeromancer science of (M - a confident aeromancer):
 			SexAddictUp 1;
 	say "[speech style of M]'[one of]Whew, that was awesome!'[or]Thanks for your help.'[or]Interesting...'[or]Well that was unexpected...'[or]Curiouser and curiouser.'[in random order][roman type]  The [M] [one of]jots a short note[or]smirks at you and writes just a word or two[or]makes a quick note[or]writes a scribble[at random] in her pocket book and then closes it.".
 
-To compute anal climax of (M - a confident aeromancer):
-	bore M;
-	FavourUp M;
-	TimesFuckedUp M by 1;
-	let N be a random number between 7 and 11;
-	say "The [M] fucks you harder and harder, wild gusts of wind screaming through the trees as her magical phallus pulses with its climax. You groan involuntarily as your belly fills up with torrent after torrent of compressed air, each one leaving a wider smirk on the aeromancer's face.";
-	AssFill N air;
-	say "The [M] releases her hold on you rather abruptly, chuckling as you smack the ground. She loses interest.";
+To compute unique climax of (M - a confident aeromancer) in (F - asshole):
+	compute creampie of M in F;
+	say "The [M] releases her hold on you rather abruptly, chuckling as you smack the ground. She loses interest.".
 
-To compute vaginal climax of (M - a confident aeromancer):
-	bore M;
-	FavourUp M;
-	TimesFuckedUp M by 1;
-	let N be a random number between 3 and 6;
+To say CreampieFlav of (M - a confident aeromancer) in (F - asshole):
+	say "The [M] fucks you harder and harder, wild gusts of wind screaming through the trees as her magical phallus pulses with its climax. You groan involuntarily as your belly fills up with torrent after torrent of compressed air, each one leaving a wider smirk on the aeromancer's face.";
+
+To say CreampieFlav of (M - a confident aeromancer) in (F - vagina):
 	say "The [M] fucks you harder and harder, screaming with delight as her magical phallus floods your [vagina] with warm, glittery [semen]. She releases her hold on your body as the gooey fluid soaks into your skin, causing a strange tingling feeling to travel up your torso and into your chest. You watch with [if the bimbo of the player < 7]horror[otherwise if the bimbo of the player < 11]confusion[otherwise]awe[end if] as your breasts suddenly balloon with air!";
-	BustInflate N;
-	say "The [M] drops you on your back, taking a brief moment to smirk at her handiwork before losing interest.";
+	if image cutscenes is 1, display figure of aeromancer cutscene 5;
+	say "The [M] drops you on your back, taking a brief moment to smirk at her handiwork before losing interest.".	
+	
 
 To compute (M - a confident aeromancer) entering a fuckhole:
 	now the sex-length of M is 3;

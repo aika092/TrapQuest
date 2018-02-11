@@ -2,7 +2,7 @@ Baby Booties by Shoes begins here.
 
 A baby booties is a kind of shoes.  A baby booties is usually cotton.  A baby booties is usually unique.
 
-The printed name of baby booties is usually "[TQlink of item described][item style]pair of [clothing-title-before]baby booties[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby booties is "bbo".
+The printed name of baby booties is usually "[TQlink of item described][item style][clothing-title-before]pair of baby booties[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby booties is "bbo".
 
 There is 1 baby booties.
 
@@ -48,7 +48,7 @@ Part 1 - Baby Slippers
 	
 A baby slippers is a kind of baby booties.  A baby slippers is usually wool.
 
-The printed name of baby slippers is usually "[TQlink of item described][item style]pair of [clothing-title-before]baby slippers[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby slippers is "bsl".
+The printed name of baby slippers is usually "[TQlink of item described][item style][clothing-title-before]pair of baby slippers[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby slippers is "bsl".
 
 There is 1 baby slippers.
 

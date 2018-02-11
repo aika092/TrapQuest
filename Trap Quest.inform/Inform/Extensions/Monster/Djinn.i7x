@@ -370,8 +370,8 @@ To say angry punishment insult of (M - a djinn):
 	otherwise:
 		say "[first custom style]'There's still some stubbornness left in you.  I like that.  I'll let you off this time.'[roman type][line break]".[He's not raping you, so he doesn't tear your clothes off, but he isn't all that happy either.]
 
-To compute happy reward of (M - a djinn):[reward for giving a pleasant blowjob]
-	if M is friendly-fucking, say "[speech style of M]'It was a wise decision to not make an enemy of me.'[roman type][line break]".[reward only possible if it's friendly sex, also there's no reward for now.]
+To compute happy reward of (M - a djinn):
+	if M is friendly-fucking, say "[speech style of M]'It was a wise decision to not make an enemy of me.'[roman type][line break]".
 
 Section 1 - Attack
 
@@ -384,56 +384,52 @@ To say LandingTaunt of (M - a djinn):
 	say "The [M] [if a random number between 1 and 2 is 1]chuckles[otherwise]laughs mercilessly[end if].";
 	humiliate 50.
 
-To compute anal climax of (M - a djinn):
-	TimesFuckedUp M by 1;
-	if M is wrapped:
-		say CondomPieFlav of M;
-		if a random number between 1 and 5 is 1:
-			say "It can't handle the strain! You feel it burst open inside of you, and a gush of warmth floods your [asshole], gurgling upwards into your bowls at an incredible pace. It's almost like you can feel his energetic swimmers moving around in your gut.";
-			now M is unwrapped;
-		otherwise:
-			say "Miraculously, it seems to hold, and the [M] laughs as he pulls out and carefully peels it off. [speech style of M]'I am surprised your mortal condom could hold my seed!'[roman type][line break]";
-	otherwise:
-		say CreamPieFlav of M;
-	AssFill the semen load of M;
+To decide if (M - a djinn) is losing wrapper in (F - asshole):
+	if the class of the player is priestess or the class of the player is cultist, decide yes;
+	if a random number between 1 and 5 is 1, decide yes;
+	decide no.
+
+To compute wrapped climax of (M - a djinn) in (F - a fuckhole):
+	say CondomStrain of M in F;
+	if M is losing wrapper in F, compute condom failure of M in F;
+	otherwise compute condom success of M in F.
+
+To say CondomStrain of (M - a djinn) in (F - a fuckhole):
+	say "[speech style of M]'Yes...  yes... [if F is asshole]I can feel it coming!'[otherwise]Your cunt is pleasing to me, mortal!'[end if][roman type] The [M] bellows as he ejaculates, filling the condom with wave after wave of fresh [semen]. You can feel it shifting inside of you, almost as if his little baby-making bastards were struggling to bust out of their flimsy latex prison. It stretches further and further as it struggles to contain the rest of his cum, rounding out as the commotion inside reaches its peak.[line break]".
+
+To compute post climax effect of (M - a djinn) in (F - asshole):
 	if M is interested:
 		compute happy reward of M;
-		satisfy M;
-	now M is not penetrating asshole.
+		satisfy M.
 
-To say CreampieFlav of (M - a djinn):
-	if M is penetrating vagina:
-		say "[speech style of M]'Yes...  yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your cunt is pleasing to me, mortal[end if]!'[roman type] The [M] ejaculates deep inside your [vagina][if pregnancy fetish is 1].  Your womb explodes with sensation, as you feel his swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!";
-	otherwise:
-		say "[speech style of M]'Yes...  yes... I can feel it coming!'[roman type] The [M] bellows as he ejaculates deep inside your [asshole].  Your jizz enema gurgles into your bowels at an incredible pace.  It's almost like you can feel his little baby-making bastards swimming around energetically inside your gut.".
+To say CondomFailFlav of (M - a djinn) in (F - asshole):
+	say "It can[']t handle the strain! You feel it burst open inside of you, and a gush of warmth floods your [asshole], gurgling upwards into your bowls at an incredible pace. It's almost like you can feel his energetic swimmers moving around in your gut.".
 
-To say CondomPieFlav of (M - a djinn):
-	if M is penetrating vagina:
-		say "[speech style of M]'Yes... yes.. your cunt is pleasing to me, mortal!'[roman type] The [M] ejaculates, filling the condom with warm [semen]. You can feel it shifting inside of you, his powerful swimmers fighting aggressively against their tough latex prison. It stretches further and further to contain the rest of his cum, and the struggle inside becomes all the more pronounced.";
-	otherwise:
-		say "[speech style of M]'Yes...  yes... I can feel it coming!'[roman type] The [M] bellows as he ejaculates, filling the condom with wave after wave of fresh [semen]. You can feel it shifting inside of you, almost as if his little baby-making bastards were struggling to bust out of their flimsy latex prison. It stretches further and further as it struggles to contain the rest of his cum, rounding out as the commotion inside reaches its peak.";
-	say "[line break]";
+To say CondomPieFlav of (M - a djinn) in (F - a fuckhole):
+	say "Miraculously, it seems to hold, and the [M] laughs as he pulls out and carefully peels it off. [speech style of M]'I am surprised your mortal condom could hold my seed!'[roman type][line break]".
 
-To compute vaginal climax of (M - a djinn):
-	TimesFuckedUp M by 1;
-	if M is unwrapped:
-		say CreampieFlav of M;
-	otherwise:
-		say CondomPieFlav of M;
-		if a random number between 1 and 3 is 1:
-			say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and his horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [speech style of M]Hahaha! Your mortal condom was no match for my divine sperm![roman type][line break][end if]";
-			now M is unwrapped;
-		otherwise:
-			say "Miraculously, it seems to hold, and the [M] laughs as he pulls out and carefully peels it off. [speech style of M]I am surprised your mortal condom could hold my seed![roman type][line break]";
-	WombFill the semen load of M;
+To say CreampieFlav of (M - a djinn) in (F - asshole):
+	say "[speech style of M]'Yes...  yes... I can feel it coming!'[roman type] The [M] bellows as he ejaculates deep inside your [asshole].  Your jizz enema gurgles into your bowels at an incredible pace.  It's almost like you can feel his little baby-making bastards swimming around energetically inside your gut.".
+
+To decide if (M - a djinn) is losing wrapper in (F - vagina):
+	if the class of the player is priestess or the class of the player is cultist, decide yes;
+	if a random number between 1 and 3 is 1, decide yes;
+	decide no.
+
+To compute post climax effect of (M - a djinn) in (F - vagina):
 	if M is unwrapped and pregnancy fetish is 1 and the pregnancy of the player is 0:
 		say "You immediately feel the [if the player is queen of spades]superior virility of his nubian sperm[otherwise]magical sperm[end if] barrelling down your tubes and straight to your undefended egg[if inhuman pregnancy > 0]s[end if].  A strange tingle shoots through you from deep inside, kind of in your belly, almost, and you feel certain you're now pregnant with his child[if inhuman pregnancy > 0]ren[end if]![line break]";
 		now the pregnancy of the player is 1;
 		now the father is M;
 	if M is interested:
 		compute happy reward of M;
-		satisfy M;
-	now M is not penetrating vagina.
+		satisfy M.
+
+To say CondomFailFlav of (M - a djinn) in (F - vagina):
+	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and his horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [speech style of M]Hahaha! Your mortal condom was no match for my divine sperm![roman type][line break][end if]".
+
+To say CreampieFlav of (M - a djinn) in (F - vagina):
+	say "[speech style of M]'Yes...  yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your cunt is pleasing to me, mortal[end if]!'[roman type] The [M] ejaculates deep inside your [vagina][if pregnancy fetish is 1].  Your womb explodes with sensation, as you feel his swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
 
 To compute labour to (M - a djinn):
 	if M is regional and M is alive:

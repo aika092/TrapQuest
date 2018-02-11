@@ -286,12 +286,12 @@ To compute (M - a wrestler) diving into (F - a fuckhole):
 
 To compute anal sex of (M - a wrestler):
 	compute M fisting asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To compute vaginal sex of (M - a wrestler):
 	unless M is penetrating face:
 		compute M fisting vagina;
-		PussyRuin 1.
+		ruin vagina.
 
 To compute (M - a wrestler) fisting (F - a fuckhole):
 	if the reaction of the player is 0:
@@ -317,15 +317,8 @@ To TimesFuckedUp (M - a wrestler):
 		decrease the excitement of M by 1;
 	increase the times-fucked of M by 1.
 
-To compute anal climax of (M - a wrestler):
-	TimesFuckedUp M;
-	compute M leaving asshole;
-	now M is not penetrating asshole.
-
-To compute vaginal climax of (M - a wrestler):
-	TimesFuckedUp M;
-	compute M leaving vagina;
-	now M is not penetrating vagina.
+To compute unique climax of (M - a wrestler) in (F - a fuckhole):
+	compute M leaving F.
 
 To compute (M - a wrestler) leaving (F - a fuckhole):
 	say "The [M] pulls her [if the fingers of M is 6]fist out of your [variable F] with a loud POP.  [otherwise]fingers slowly out of your [variable F].  [end if]It looks like she's satisfied with herself.";

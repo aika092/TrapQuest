@@ -19,13 +19,10 @@ To BladderUp (X - a number):
 	let P be the bladder of the player;
 	if the player is not able to pee, now X is 0;
 	if the player is female or the size of penis > 0:
-		if the bladder of the player < 10 and watersports mechanics is 1:
+		if watersports mechanics is 1:
 			increase the bladder of the player by 2 * X;
 			if the bladder of the player > 10: [slower increase beyond ten]
-				let N be the bladder of the player - 10;
-				decrease the bladder of the player by N / 2;
-			otherwise:
-				increase the bladder of the player by X;
+				decrease the bladder of the player by X;
 			if the bladder of the player > 20:
 				now the bladder of the player is 20;
 		if (the player is bursting or the bladder of the player >= 14) and player-urinating is not 1:

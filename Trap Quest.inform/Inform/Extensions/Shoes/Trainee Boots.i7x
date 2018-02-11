@@ -34,11 +34,10 @@ To compute periodic effect of (C - a trainee thigh highs):
 			HipUp 1;
 			RandomAddictUp 3;
 			HeelUp 2;
-			if artificial enhancements fetish is 1, RandomAddictUp 3;
+			if artificial enhancements fetish is 1, SexAddictUp 3;
 			now the training-progress of C is 0;
 			destroy C;
-			let M be a random senior robobellboy;
-			increase the training-progress of M by 1;
+			ProgressUp senior robobellboy;
 		otherwise:
 			say "Your [printed name of C] [if the training-progress of C is 0]emit a synchronised tone[otherwise]emit [the training-progress of C + 1] synchronised tones[end if] and [if the player is prone]your ankles are forced forward[otherwise]you lurch forward[end if] as the metal stiletto shoots upward.[line break]";
 			increase the heel-height of C by 1;

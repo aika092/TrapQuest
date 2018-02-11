@@ -59,10 +59,10 @@ To compute periodic effect of (P - a vibrating plug panties):
 	if a random number between 1 and R is 1:
 		if the soreness of asshole is 10:
 			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating!  [end if]Your poor [asshole] spasms.  It's so incredibly sensitive!";
-			AssRuin 1;
+			ruin asshole;
 		otherwise:
 			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating!  [end if]Your [asshole] spasms.  Wearing [if P is cursed]it is very quickly[otherwise]the [printed name of P] is slowly[end if] making you sore!";
-			AssRuin 1;
+			ruin asshole;
 	if P is cursed, now R is 20;
 	if the player is female and a random number between 1 and R is 1:
 		if the soreness of vagina is 10:
@@ -71,7 +71,7 @@ To compute periodic effect of (P - a vibrating plug panties):
 			if a random number between 1 and 2 is 1, IntDown 1;
 		otherwise:
 			say "Your [vagina] spasms.  Wearing the [printed name of P] is slowly making you sore!";
-			PussyRuin 1.
+			ruin vagina.
 
 Chapter 2 Pump Plug Panties
 

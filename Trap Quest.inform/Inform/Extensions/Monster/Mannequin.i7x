@@ -15,7 +15,7 @@ Figure of goth Mannequin is the file "mannequin9.png".
 The description of mannequin is usually "[MannequinDesc]".  The text-shortcut of mannequin is "man".
 
 A stylish mannequin is a kind of mannequin.  There is 1 stylish mannequin.
-The printed name of stylish mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]stylish mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of stylish mannequin is "cre".
+The printed name of stylish mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]stylish mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of stylish mannequin is "stm".
 A topless mannequin is a kind of mannequin.  There is 1 topless mannequin.
 The printed name of topless mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]topless mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of topless mannequin is "tom".
 A flirty mannequin is a kind of mannequin.  There is 1 flirty mannequin.
@@ -151,8 +151,7 @@ To decide which number is the rounds of sex left of (M - a mannequin):
 	if the latex-transformation of the player > 2, decide on 0;
 	decide on 10 - ((a random number between 1 and 3) + arousal of the player / 1000 + the sex-length of M).
 
-To compute anal climax of (M - a mannequin):
-	TimesFuckedUp M by 1;
+To compute unique climax of (M - a mannequin) of (F - asshole):
 	FavourUp M;
 	if the latex-transformation of the player > 2:
 		say "The [M] looks confused, removes her hand from your [asshole] and leaves you alone.";

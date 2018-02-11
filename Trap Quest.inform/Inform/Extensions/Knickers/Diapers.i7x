@@ -90,7 +90,7 @@ To decide which number is the original price of (C - a kitty cat diaper):
 
 Chapter 5 Elephant Diaper
 
-elephant diaper is a kind of disposable diaper.  There is 1 elephant diaper.  The printed name of elephant diaper is usually "[TQlink of item described][clothing-title-before]elephant diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of elephant diaper is "ed".
+elephant diaper is a kind of disposable diaper.  There is 1 elephant diaper.  The printed name of elephant diaper is usually "[TQlink of item described][clothing-title-before]elephant diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of elephant diaper is "edi".
 
 To decide which figure-name is clothing-image of (C - an elephant diaper):
 	decide on figure of elephant diaper.
@@ -124,7 +124,7 @@ To say selfexamineuniquetitle of (K - a baby pattern diaper):
 
 Figure of baby pattern diaper is the file "diaper6.png".
 
-To compute periodic effect of (D - a baby pattern diaper): [This cannot become cursed on its own, but if it is cursed it can very quickly makes the player fully incontinent.]
+To compute unique periodic effect of (D - a baby pattern diaper): [This cannot become cursed on its own, but if it is cursed it can very quickly makes the player fully incontinent.]
 	if D is cursed and the player is bursting and a random number between 1 and 3 is 1:
 		while the player is bursting and incontinence < 5:
 			increase incontinence by 1;
@@ -159,7 +159,7 @@ Definition: a sissy-diaper (called C) is sissifying:
 	if diaper lover >= 1, decide yes;
 	decide no.
 
-To compute periodic effect of (D - a sissy-diaper):
+To compute unique periodic effect of (D - a sissy-diaper):
 	let S be (the soak-limit of D / 4) - the total-soak of D;
 	if S <= 0 and D is not cursed: [If the diaper is over 75% full]
 		let R1 be a random number between (unlucky * 2) - 2 and -5;
@@ -221,8 +221,8 @@ To bless (D - a waddle diaper):
 		if D is worn, say "Your [D] shrinks a noticeably, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches below your knees.";
 		now D is bland.
 
-To compute periodic effect of (D - a waddle diaper):
-	if the total-soak of D > the soak-limit of D / 2:
+To compute unique periodic effect of (D - a waddle diaper):
+	if the total-soak of D > the soak-limit of D / 2 or D is messed:
 		say "[bold type]You feel the padding of your [printed name of D] [bold type]suddenly becoming dry again![roman type]  ";
 		if D is cursed:
 			if there is a worn heels:
@@ -253,7 +253,7 @@ Definition: a waddle diaper (called C) is untransformable:
 
 Chapter 9 Dragonfly Diaper
 
-dragonfly pattern diaper is a kind of pullup diaper.  There is 1 dragonfly pattern diaper.  The printed name of dragonfly pattern diaper is usually "[TQlink of item described][clothing-title-before]dragonfly pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of dragonfly pattern diaper is "dd".  Understand "cloth" as dragonfly pattern diaper.  The soak-limit of a dragonfly pattern diaper is usually 24.
+dragonfly pattern diaper is a kind of pullup diaper.  There is 1 dragonfly pattern diaper.  The printed name of dragonfly pattern diaper is usually "[TQlink of item described][clothing-title-before]dragonfly pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of dragonfly pattern diaper is "dpd".  Understand "cloth" as dragonfly pattern diaper.  The soak-limit of a dragonfly pattern diaper is usually 24.
 
 To decide which figure-name is clothing-image of (C - a dragonfly pattern diaper):
 	decide on figure of dragonfly pattern diaper.
@@ -420,7 +420,7 @@ To say selfexamineuniquetitle of (K - a bunny diaper):
 
 Chapter 16 Blue and Pink Diaper
 
-A blue-and-pink diaper is a kind of disposable diaper.  There is 1 blue-and-pink diaper.  The printed name of blue-and-pink diaper is usually "[TQlink of item described][clothing-title-before]blue and pink diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of blue-and-pink diaper is "bpd".  Understand "blue", "pink", "blue and pink" as blue-and-pink diaper.
+A blue-and-pink diaper is a kind of disposable diaper.  There is 1 blue-and-pink diaper.  The printed name of blue-and-pink diaper is usually "[TQlink of item described][clothing-title-before]blue and pink diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of blue-and-pink diaper is "bapd".  Understand "blue", "pink", "blue and pink" as blue-and-pink diaper.
 
 To decide which figure-name is clothing-image of (C - a blue-and-pink diaper):
 	decide on figure of blue-and-pink diaper.
@@ -475,7 +475,7 @@ To say selfexamineuniquetitle of (K - a butterfly pattern diaper):
 
 Chapter 19 Hippo Diaper
 
-A hippo diaper is a kind of pullup diaper.  There is 1 hippo diaper.  The printed name of hippo diaper is usually "[TQlink of item described][clothing-title-before]hippo diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hippo diaper is "hd".  The soak-limit of a hippo diaper is usually 28.
+A hippo diaper is a kind of pullup diaper.  There is 1 hippo diaper.  The printed name of hippo diaper is usually "[TQlink of item described][clothing-title-before]hippo diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hippo diaper is "hdi".  The soak-limit of a hippo diaper is usually 28.
 
 To decide which figure-name is clothing-image of (C - a hippo diaper):
 	decide on figure of hippo diaper.
@@ -508,7 +508,7 @@ The DQFigure of princess castle diaper is usually DQPullups.
 
 Chapter 21 Smiley Balloon Diaper
 
-A smiley balloon diaper is a kind of disposable diaper.  There is 1 smiley balloon diaper.  The printed name of smiley balloon diaper is usually "[TQlink of item described][clothing-title-before]smiley balloon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of smiley balloon diaper is "bbd".
+A smiley balloon diaper is a kind of disposable diaper.  There is 1 smiley balloon diaper.  The printed name of smiley balloon diaper is usually "[TQlink of item described][clothing-title-before]smiley balloon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of smiley balloon diaper is "sbd".
 
 To decide which figure-name is clothing-image of (C - a smiley balloon diaper):
 	decide on figure of smiley balloon diaper.
@@ -529,7 +529,7 @@ To decide which number is the unique outrage of (D - an smiley balloon diaper):
 
 Chapter 22 Star Pattern Diaper
 
-A star pattern diaper is a kind of pullup diaper.  There is 1 star pattern diaper.  The printed name of star pattern diaper is usually "[TQlink of item described][clothing-title-before]star pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of star pattern diaper is "dd".  Understand "cloth" as star pattern diaper.  The soak-limit of a star pattern diaper is usually 24.
+A star pattern diaper is a kind of pullup diaper.  There is 1 star pattern diaper.  The printed name of star pattern diaper is usually "[TQlink of item described][clothing-title-before]star pattern cloth diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of star pattern diaper is "spd".  Understand "cloth" as star pattern diaper.  The soak-limit of a star pattern diaper is usually 24.
 
 To decide which figure-name is clothing-image of (C - a star pattern diaper):
 	decide on figure of star pattern diaper.
@@ -542,6 +542,43 @@ To say selfexamineuniquetitle of (K - a star pattern diaper):
 
 Figure of star pattern diaper is the file "diaper22.png".
 The DQFigure of star pattern diaper is usually DQPullups. 
+
+Chapter 23 Demonic Diaper
+
+A demon diaper is a kind of disposable diaper.  There is 1 demon diaper.  The printed name of demon diaper is usually "[TQlink of item described][clothing-title-before]demon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of demon diaper is "dmd".  The armour of demon diaper is 25.  demon diaper is unique.  A demon diaper has a number called dry-timer.
+
+To decide which figure-name is clothing-image of (C - a demon diaper):
+	decide on figure of plain diaper.
+
+To say ClothingDesc of (C - a demon diaper):
+	say "This massive white diaper has a red pentagram printed on the front.  It periodically cleans itself.";
+
+To say selfexamineuniquetitle of (K - a demon diaper):
+	say "superthick white demon diaper".
+
+The DQFigure of demon diaper is usually DQMoosive. 
+
+The soak-limit of demon diaper is usually 60.
+
+To decide which number is the unique outrage of (C - a demon diaper):
+	decide on -5.
+
+To decide which number is the original price of (C - a demon diaper):
+	decide on 4.
+
+To compute unique periodic effect of (D - a demon diaper):
+	if the total-soak of D > 0 or D is messed:
+		increase the dry-timer of D by 1;
+		if the dry-timer of D > 10 or (D is messed and diaper lover is 3):
+			say "[bold type]You feel the padding of your [printed name of D] [bold type]suddenly becoming dry again![roman type][line break]";
+			now the dry-timer of D is 0;
+			clean D;
+			now the water-soak of D is 0.
+
+Definition: a demon diaper (called C) is untransformable:
+	decide yes.
+
+
 
 
 Diapers ends here.

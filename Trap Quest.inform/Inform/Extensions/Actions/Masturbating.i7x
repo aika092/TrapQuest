@@ -400,8 +400,8 @@ Carry out masturbating:
 			say "It was in a perfect position to capture a full shot of your [if the sex addiction of the player < 7]crime[otherwise]orgasm[end if].";
 			say "[one of][variable custom style][if the humiliation of the player < 29000]Oh shit!  This was a bad place to decide to do that...[otherwise]Looks like someone is helping me expose myself.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][second custom style]If someone sells that photo, I hope I get royalties![end if][stopping][roman type][line break]";
 			set up target-poster;
-		if the player is male, AssHeal 1;
-		if the player is female and object-choice is nothing, PussyHeal 1;
+		if the player is male, heal asshole times 1;
+		if the player is female and object-choice is nothing, heal vagina times 1;
 		if a random number between 1 and the sex addiction of the player < 5, SexAddictUp 1;
 		orgasm;
 		if the wanktime of the player > 0 and the number of on-stage chastity cages is 0:

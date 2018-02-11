@@ -1,7 +1,7 @@
 Maid Headdress by Headgear begins here.
 
 
-A maid headdress is a kind of headgear.  A maid headdress is usually brightness-negative.  A maid headdress is usually hair growing.  The text-shortcut of maid headdress is "mh".  A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
+A maid headdress is a kind of headgear.  A maid headdress is usually brightness-negative.  A maid headdress is usually hair growing.  The text-shortcut of maid headdress is "mhd".  A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
 
 To compute SelfExamineDesc of (H - maid headdress):
 	let X be the largeness of hair;
@@ -30,7 +30,7 @@ Report going:
 	if the player is prone:
 		increase the crawl count of the player by 1;
 		let M be a random off-stage black maid headdress;
-		if (15 is not too humiliating or the player is in the woods) and the player is not crotch covered, now M is a random off-stage cat ears;
+		if (15 is not too humiliating or the player is in the woods) and (the player is not crotch covered or diaper quest is 1), now M is a random off-stage cat ears;
 		if M is actually summonable:
 			let R1 be a random number between 3 and 40;
 			let R2 be a random number between 3 and 40;

@@ -51,7 +51,7 @@ Check TQeating something:
 	if the latex-transformation of the player > 4, say "You are no longer able to eat things." instead;
 	if the player is not able to eat, say "You are currently unable to eat." instead;
 	if the noun is egg, say "[variable custom style][if the bimbo of the player < 10]I'm not eating that, it came out of my own butt[otherwise]It looks delicious, but something is telling me that I shouldn't[end if]![roman type][line break]" instead;
-	if the player is overly full and the stomach-food of the player > 2 and the noun is not pink pill:
+	if the player is overly full and the stomach-food of the player > 2 and the noun is not pink pill and auto is 0:
 		say "You are already feeling very full.  Are you sure you want to force even more down? [yesnolink] ";
 		unless the player consents, do nothing instead;
 	if the noun is pink pill, try PinkEating the noun instead;

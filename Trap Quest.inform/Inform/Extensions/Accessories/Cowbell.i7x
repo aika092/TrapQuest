@@ -4,7 +4,7 @@ A cowbell is a kind of neckwear.  There is 1 unique cowbell.  A cowbell can be c
 
 Understand "bell" as a cowbell.
 
-The printed name of cowbell is "[TQlink of item described][clothing-title-before]cowbell[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cowbell is "co".
+The printed name of cowbell is "[TQlink of item described][clothing-title-before]cowbell[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cowbell is "cob".
 
 To decide which number is the initial outrage of (C - a cowbell):
 	decide on 11.

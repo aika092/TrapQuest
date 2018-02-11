@@ -117,7 +117,7 @@ To Set Up Dispensers:
 	let N be a random number between 1 and 15;
 	repeat with D running through all dispensers:
 		refill D with N;
-		now the doses of D is a random number between 2 and 8;
+		now the doses of D is a random number between 2 + bonus liquid and 8;
 		if D is alchemical vat, now the doses of D is 10;
 		increase N by 1;
 		if N is 16, now N is 1;

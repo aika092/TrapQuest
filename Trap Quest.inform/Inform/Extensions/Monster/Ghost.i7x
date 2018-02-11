@@ -8,7 +8,7 @@ A jismbodied ghost is a kind of ghost. There is 1 jismbodied ghost. The printed 
 
 A perverted ghost is a kind of ghost. There is 1 perverted ghost. The printed name of a perverted ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]perverted ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of perverted ghost is "per".
 A haunty ghost is a kind of ghost. There is 1 haunty ghost. The printed name of a haunty ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]horny ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of haunty ghost is "hau". Understand "horny" as haunty ghost.
-A creepy ghost is a kind of ghost. There is 1 creepy ghost. The printed name of a creepy ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]creepy ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of creepy ghost is "cre". 
+A creepy ghost is a kind of ghost. There is 1 creepy ghost. The printed name of a creepy ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]creepy ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of creepy ghost is "crg". 
 A unsettling ghost is a kind of ghost. There is 1 unsettling ghost. The printed name of a unsettling ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]unsettling ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of unsettling ghost is "uns".
 
 
@@ -207,7 +207,7 @@ To compute (M - a ghost) entering asshole:
 	now the sex-length of M is 3;
 	say "[AssholePenetrationFlav of M]";
 	now M is penetrating asshole;
-	AssRuin 1.
+	ruin asshole.
 
 To say AssholePenetrationFlav of (M - a ghost):
 	let C be a random worn total protection clothing;
@@ -220,8 +220,8 @@ To compute anal sex of (M - a ghost):
 
 To compute fuckhole sex of (M - a ghost):
 	say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][or][M submission sex 7][at random]";
-	if M is penetrating vagina, PussyRuin 1;
-	otherwise AssRuin 1;
+	if M is penetrating vagina, ruin vagina;
+	otherwise ruin asshole;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -259,7 +259,7 @@ To compute (M - a ghost) entering vagina:
 	now the sex-length of M is 3;
 	say "[VaginaPenetrationFlav of M]";
 	now M is penetrating vagina;
-	PussyRuin 1.
+	ruin vagina.
 
 To say VaginaPenetrationFlav of (M - a ghost):
 	let C be a random worn total protection clothing;
@@ -401,9 +401,6 @@ This is the ghost anal climax rule:
 		finish possession of G in asshole.
 The ghost anal climax rule is listed in the ghost end of sex rules.
 
-To compute anal climax of (M - a ghost):
-	compute fuckhole climax of M.
-
 To finish possession of (T - a sex toy) in (O - an orifice):
 	unless O is actually occupied or current-monster is not intelligent:
 		say "The [current-monster] leaves the [T] behind in your [variable O], plugging all the [semen] inside of you.";
@@ -418,20 +415,12 @@ This is the ghost vaginal climax rule:
 		finish possession of G in vagina.
 The ghost vaginal climax rule is listed in the ghost end of sex rules.
 
-To compute vaginal climax of (M - a ghost):
-	compute fuckhole climax of M.
+To compute unique climax of (M - a ghost) in (F - a fuckhole):
+	say CreampieFlav of M in F;
+	compute M finishing in F.
 
-To compute fuckhole climax of (M - a ghost):
-	TimesFuckedUp M by 1;
-	let F be a random fuckhole penetrated by M;
-	say "[one of]The room fills with a ghastly glow as the [M] slams itself home, eagerly flooding your [variable F] with its seed. After several [if the semen addiction of the player < 7]excruciating[otherwise if the semen addiction of the player < 15]intense[otherwise]wonderful[end if] moments of stillness, broken only by the subtle twitching between loads, the [M] pulls out and leaves you to [if the semen addiction of the player < 10]crawl away in shame[otherwise]take in what just happened[end if].[or]The [M] jizzes directly into your [variable F], continuing to thrust until your deepest, most intimate recesses have been acquainted with its ghastly [semen]. You look over your shoulder, [if the semen addiction of the player < 7]shuddering[otherwise]quivering[end if][if the semen addiction of the player > 14] with excitement[end if] as it pulls out and floats away.[or]The [M] throbs as it pumps load after load of thick [semen] directly into your [variable F], pushing it nice and deep with a few last thrusts before pulling out and leaving you alone.[or]The [M] continues to thrust as its [semen] flows inside of you, as if to ensure you won[']t forget the sensation until long after it pulls out and leaves you alone[if semen addiction of the player < 7], no matter how much you want to[otherwise if the semen addiction of the player < 11], although you aren't sure how you could[otherwise], which is exactly the way you like it[end if].[at random][line break]";
-	if M is penetrating vagina:
-		wombfill the semen load of M;
-		now M is not penetrating vagina;
-	if M is penetrating asshole:
-		assfill the semen load of M;
-		now M is not penetrating asshole;
-	satisfy M.
+To say CreampieFlav of (M - a ghost) in (F - a fuckhole):
+	say "[one of]The room fills with a ghastly glow as the [M] slams itself home, eagerly flooding your [variable F] with its seed. After several [if the semen addiction of the player < 7]excruciating[otherwise if the semen addiction of the player < 15]intense[otherwise]wonderful[end if] moments of stillness, broken only by the subtle twitching between loads, the [M] pulls out and leaves you to [if the semen addiction of the player < 10]crawl away in shame[otherwise]take in what just happened[end if].[or]The [M] jizzes directly into your [variable F], continuing to thrust until your deepest, most intimate recesses have been acquainted with its ghastly [semen]. You look over your shoulder, [if the semen addiction of the player < 7]shuddering[otherwise]quivering[end if][if the semen addiction of the player > 14] with excitement[end if] as it pulls out and floats away.[or]The [M] throbs as it pumps load after load of thick [semen] directly into your [variable F], pushing it nice and deep with a few last thrusts before pulling out and leaving you alone.[or]The [M] continues to thrust as its [semen] flows inside of you, as if to ensure you won[']t forget the sensation until long after it pulls out and leaves you alone[if semen addiction of the player < 7], no matter how much you want to[otherwise if the semen addiction of the player < 11], although you aren't sure how you could[otherwise], which is exactly the way you like it[end if].[at random][line break]".
 	
 Section 4 - Attack
 

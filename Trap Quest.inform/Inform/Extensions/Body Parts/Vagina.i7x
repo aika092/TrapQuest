@@ -11,61 +11,12 @@ REQUIRES COMMENTING
 @!]
 vagina is a fuckhole.  vagina is everywhere.  The description of vagina is "[if the player is female][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".  Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female.
 
-[!<Vagina>@<soreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Vagina has a number called soreness.  The soreness of vagina is usually 0.
-
-[!<Vagina>@<tolerated:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-vagina has a number called tolerated.  The tolerated of vagina is usually 0.
-
-[!<Vagina>@<openness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Vagina has a number called openness.  The openness of vagina is usually 0.
-
-[!<Vagina>@<realOpenness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Vagina has a number called real openness.  The real openness of vagina is usually 0.
-
 [!<Vagina>@<semenVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
 Vagina has a number called semen volume.  The semen volume of vagina is usually 0.
-
-[!<Vagina>@<previousSoreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Vagina has a number called previous soreness.
-
-[!<Vagina>@<previousOpenness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Vagina has a number called previous openness.
-
-[!<Vagina>@<buildup:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-vagina has a number called buildup.
 
 [!<VaginaIsExposed>+
 
@@ -235,20 +186,6 @@ To say PussyGape (N - a number):
 	if N is 9, say "gaping wide";
 	if N is 10, say "impossibly stretched".
 
-[!<SayVaginaModesty>+
-
-REQUIRES COMMENTING
-
-+!]
-To say VaginaModesty:
-	if vagina is lewdly exposed:
-		if there is a worn pussy covering clothing:
-			say "It is clearly visible through your [random worn pussy covering clothing].  ";
-		otherwise:
-			say "It is completely unprotected.  ";
-	otherwise:
-		say "It can't be seen thanks to the [if vagina is exposed][random thing penetrating vagina][otherwise][random worn potentially vagina covering clothing][end if].  ".
-
 [!<SayTotalDescOfVagina>+
 
 REQUIRES COMMENTING
@@ -292,11 +229,17 @@ To say VaginaModesty:
 		if there is a pussy covering clothing:
 			let W be a random pussy covering clothing;
 			say "It is clearly visible through your [selfexamineuniquetitle of W].  ";
-		otherwise:
-			say "It is completely unprotected.  ";
+		otherwise if vagina is not actually occupied:
+			say "It is completely unprotected. ";
 	otherwise:
-		let W be a random worn potentially vagina covering clothing;
-		say "It can't be seen thanks to the [if vagina is exposed][random thing penetrating vagina][otherwise][selfexamineuniquetitle of W][end if].  ".
+		let W be a random worn potentially at least partially vagina covering clothing;
+		say "It can't be seen thanks to the [if vagina is exposed][random thing penetrating vagina][otherwise][selfexamineuniquetitle of W][end if].  ";[if vagina exposed is legacy code from when plugs could improve your modesty]
+	if vagina is actually occupied:
+		let P be a random thing penetrating vagina;
+		if P is monster:
+			say "It is currently being pounded by [printed name of P].";
+		otherwise:
+			say "It is currently the [if the girth of P > the openness of vagina]snug [end if]home of a [printed name of P].".
 
 Part 3 - Modify Vagina Stats
 
@@ -365,43 +308,7 @@ To PussyClose (X - a number):
 
 Chapter 2 - Soreness
 
-[!<PussyRuinX>+
 
-REQUIRES COMMENTING
-
-+!]
-To pussyruin (X - a number):
-	now the previous soreness of vagina is the soreness of vagina;
-	increase the buildup of vagina by 1;
-	while X > 0:
-		decrease X by 1;
-		if the soreness of vagina > 8 and there is a worn cum dump's undergarment, now the soreness of vagina is 8; [undergarment prevents fainting from soreness]
-		if the number of worn for deposit only tattoos is 0 and the player is extremely horny or vagina is pushed over the edge:
-			vaginally orgasm shamefully;
-		otherwise if the buildup of vagina >= 20 and the soreness of vagina < 10:
-			say "Regardless of how insensitive your [vagina] is, there's no way it can take an infinite fucking.  Over time, you feel it getting slowly more and more sore...";
-			now the soreness of vagina is 10;
-			now the buildup of vagina is 0;
-		otherwise if the soreness of vagina is 10 and X is 0 and there is an embodied thing penetrating vagina and the number of worn for deposit only tattoos is 0:
-			check soreness fainting of vagina;
-		RuinRoll vagina;
-		if the previous soreness of vagina < 10 and the soreness of vagina is 10 and delayed fainting is 0, say "[RuinedFlav of vagina]".
-
-[!<PussyHealX>+
-
-REQUIRES COMMENTING
-
-!]
-To pussyheal (X - a number):
-	now the previous soreness of vagina is the soreness of vagina;
-	let Y be X;
-	while X > 0:
-		decrease X by 1;
-		if the soreness of vagina > 0:
-			if Y is X - 1:
-				say "Your [vagina] feels [if X > 2 and the soreness of vagina > 2]much [end if]less sore."; [We only say this once.]
-				now the tolerated of vagina is 0;
-			decrease the soreness of vagina by 1.
 
 Chapter 3 - Contents and Pregnancy
 
@@ -435,7 +342,7 @@ To Wombfill (X - a number):
 		2Wombfill;
 	[Pussy gets opened and ruined if there was any semen squirting this turn.]
 	if flav-said > 0 and invigoration-elixir-timer is 0:
-		PussyRuin 1;
+		ruin vagina;
 	if there is a worn tethering lipstick collar, end tethering.
 
 [!<2WombFill>+
