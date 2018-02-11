@@ -89,6 +89,7 @@ choice
 0 [secret: artificial]
 0 [ungape]
 0 [tentacle fetish]
+0 [bonus liquid]
 
 
 [!<DecideWhichNumberIsPlayerGender>+
@@ -796,6 +797,7 @@ To decide which number is points count:
 	decrease X by 7 * piercing-fetish;
 	decrease X by 7 * humiliation-fetish;
 	decrease X by 7 * artificial-fetish;
+	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decide on X.
 
 
@@ -863,5 +865,7 @@ This is the randomise bonuses rule:
 				otherwise:
 					follow max ass size rule.
 
+To decide which number is max bonus liquid: decide on 6.
+To decide which number is bonus liquid: decide on choice in row 62 of the Table of Player Options.
 
 Fetish Settings ends here.
