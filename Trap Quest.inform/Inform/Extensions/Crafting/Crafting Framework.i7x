@@ -6,17 +6,17 @@ CRAFTING FRAMEWORK DOCUMENTATION:
 * If a type of item is an ingredient, please define it as an ingredient.
 * If a type of item is a product, please define it as a product.
 * A thing should never be defined as both!! This will cause bugs due to the "is highlighted" definition.
-* If an item has a varied title, e.g. rings can be sapphire, emerald, etc., then it should not be a basic ingredient.  It should be part of a specific recipe.  Which requires...
+* If an item has a varied title, e.g. rings can be sapphire, emerald, etc., then it should not be a basic ingredient. It should be part of a specific recipe. Which requires...
 	* A specific product
 	* A bespoke description for the relevant recipe
-	* Define the extra recipe functions and rules.  For an example see the spike bra.
+	* Define the extra recipe functions and rules. For an example see the spike bra.
 * If the product or ingredient is limited to certain fetish options, you'll need to do even more.
 
 GETTING KEYS RIGHT:
 
-First, compile and run the game and one in-game, type "omega list me".  This will give you a big table, but at the top you'll get to see what the current highest crafting key (for ingredients) and the current highest alchemy key (for products) is.  Make your item have keys that are the next number up.  So if the current highest alchemy key is 22, your new product item should have an alchemy key of 23.
+First, compile and run the game and one in-game, type "omega list me". This will give you a big table, but at the top you'll get to see what the current highest crafting key (for ingredients) and the current highest alchemy key (for products) is. Make your item have keys that are the next number up. So if the current highest alchemy key is 22, your new product item should have an alchemy key of 23.
 
-Whenever you add shit to the crafting framework, please compile and test with "omega list me".  Make sure that the new entry or entries at the bottom of the table look as you expect.
+Whenever you add shit to the crafting framework, please compile and test with "omega list me". Make sure that the new entry or entries at the bottom of the table look as you expect.
 ]
 
 [!<Thing>@<IsIngredient>+
@@ -27,7 +27,7 @@ REQUIRES COMMENTING
 Definition: a thing (called T) is ingredient:
 	decide no.
 
-[It's important to flag any item that can be used as an ingredient with this flag, or the game may not properly include it.  We also need to make sure that it has a unique crafting key.  This will probably be 1 higher than whatever the current highest crafting key is.]
+[It's important to flag any item that can be used as an ingredient with this flag, or the game may not properly include it. We also need to make sure that it has a unique crafting key. This will probably be 1 higher than whatever the current highest crafting key is.]
 [!<Collectible>@<IsIngredient>+
 
 REQUIRES COMMENTING
@@ -68,11 +68,12 @@ current-crafting-key is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-Definition: a thing (called C) is highlighted:
-	if C is ingredient:
-		if the crafting key of C is current-crafting-key, decide yes;
-	if C is product:
-		if the alchemy key of C is current-alchemy-key, decide yes;
+Definition: a thing (called C) is ingredient-highlighted:
+	if C is ingredient and the crafting key of C is current-crafting-key, decide yes;
+	decide no.
+
+Definition: a thing (called C) is product-highlighted:
+	if C is product and the alchemy key of C is current-alchemy-key, decide yes;
 	decide no.
 
 [Lots of spare rows for future ingredients]
@@ -196,7 +197,7 @@ To set up alchemy table:
 		now the Product in row N of the Table of Alchemy is R;
 		now the Recipe in row N of the Table of Alchemy is 0;
 	follow the specific recipe rules; [First we set up all specific recipes, then allocate the random ones.]
-	[Now we assign each product to its true ingredient.  This will overwrite a few rows above.]	
+	[Now we assign each product to its true ingredient. This will overwrite a few rows above.]	
 	repeat with N running from 1 to MA:
 		if N is alchemy appropriate and N is recipe appropriate:
 			let K be 0;
@@ -212,7 +213,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a number (called K) is ingredient appropriate: [Will this ingredient be available in-game?]
 	[Here we can identify that some ingredients will never appear and are therefore inappropriate to put on a recipe.]
-	if (K is 10 and diaper quest is 1) or (K is 12 and lactation fetish is 0) or (K is 11 and watersports fetish is 0 and diaper lover <= 0) or (K is 13 and ((lactation fetish is 0 and watersports fetish is 0) or diaper quest is 1)), decide no;
+	if (K is 20 and diaper quest is 1) or (K is 22 and lactation fetish is 0) or (K is 21 and watersports fetish is 0 and diaper lover <= 0) or (K is 23 and ((lactation fetish is 0 and watersports fetish is 0) or diaper quest is 1)), decide no;
 	if K is 37 and the player is not the donator, decide no; [Pocketbooks for crafting study guide]
 	if ((K >= 23 and K <= 25) or K is 16) and egg laying fetish is 0, decide no; [all three types of eggs and wasp wing]
 	if K is 36 and inflation fetish is 0, decide no;
@@ -226,7 +227,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a number (called K) is alchemy appropriate: [Should we use this alchemy product as a random outcome?]
 	now current-alchemy-key is K;
-	let H be a random highlighted product thing;
+	let H be a random product-highlighted thing;
 	if H is a thing:
 		if H is recipe specific, decide no;
 		if H is fetish appropriate, decide yes;
@@ -239,7 +240,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a number (called K) is recipe appropriate: [Does this recipe get fully randomised (some will need a specific ingredient)?]
 	now current-alchemy-key is K;
-	let H be a random highlighted product thing;
+	let H be a random product-highlighted thing;
 	if H is a thing:
 		if H is recipe specific, decide no;
 		decide yes;
@@ -293,7 +294,7 @@ current-alchemy-key is a number that varies.
 REQUIRES COMMENTING
 
 +@!]
-Definition: an alchemy product (called C) is highlighted:
+Definition: an alchemy product (called C) is product-highlighted:
 	if the alchemy key of C is current-alchemy-key, decide yes;
 	decide no.
 
@@ -334,14 +335,14 @@ An alchemy product is a kind of thing.
 REQUIRES COMMENTING
 
 *@!]
-An alchemy product has a curse-ID.  Understand the curse-ID property as describing an alchemy product.  An alchemy product is usually unsure.
+An alchemy product has a curse-ID. Understand the curse-ID property as describing an alchemy product. An alchemy product is usually unsure.
 
 [!<AlchemyProduct>@<magicCurse:MagicCurseEnums>*
 
 REQUIRES COMMENTING
 
 *@!]
-An alchemy product has a magic-curse.  Understand the magic-curse property as describing an alchemy product when item described is sure.
+An alchemy product has a magic-curse. Understand the magic-curse property as describing an alchemy product when item described is sure.
 
 Include Powder by Crafting.
 
@@ -352,9 +353,10 @@ To display complete alchemy data:
 	repeat through the Table of Alchemy:
 		now current-alchemy-key is Product entry;
 		now current-crafting-key is Ingredient entry;
-		let R2 be a random highlighted product thing;
-		let R1 be a random highlighted ingredient thing;
+		let R2 be a random product-highlighted thing;
+		let R1 be a random ingredient-highlighted thing;
 		say "[if Ingredient entry <= highest-cursed or (Ingredient entry >= 20 and Ingredient entry <= 23)][Appearance corresponding to an Magic of current-crafting-key in the Table of Drinks] liquid[otherwise][ShortDesc of R1][end if] ([Ingredient entry]) - [ShortDesc of R2] ([Product entry]) - [if Recipe entry is 1]REAL[otherwise]FAKE[end if].".
 
 
 Crafting Framework ends here.
+

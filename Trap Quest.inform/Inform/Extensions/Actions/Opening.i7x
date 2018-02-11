@@ -28,7 +28,7 @@ Check opening a container:
 		unless the player consents, say "You decide against it." instead;
 	if the prevsearch of the noun is 0 and the noun is not pink wardrobe and the bimbo of the player <= 12 and autosearch is 1 and the player is upright and autoopen is 0 and the player is able to use manual dexterity and the player is not breasts blinded and tutorial is 0:
 		if the delicateness of the player > 1:
-			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10].  [variable custom style]This game is mental.  I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
+			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10].  [line break][variable custom style]This game is mental.  I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
 			try searching the noun;
 			if the prevsearch of the noun is 2 or the prevsearch of the noun is 4:
 				do nothing instead;
@@ -38,7 +38,7 @@ Check opening a container:
 				now seconds is 2;
 			if the noun is open, now autoopen is 0 instead; [If the player automatically searches, there's a chance this could then cause the player to automatically open the container!  SO it might already be open here.]
 		otherwise:
-			say "[one of][variable custom style]Searching for traps sounds like a waste of time.  What's the worst they could do?[roman type][line break][or][stopping]";
+			say "[one of][line break][variable custom style]Searching for traps sounds like a waste of time.  What's the worst they could do?[roman type][line break][or][stopping]";
 	now autoopen is 0.
 
 [!<CarryOutOpeningAContainer>+
@@ -58,8 +58,7 @@ REQUIRES COMMENTING
 Report opening a container:
 	if the noun is pink wardrobe:
 		add treasure to the noun;
-	otherwise if the noun is ornate trunk and a random number between 1 and 4 is 1:
-		say "A pair of hands shoot out and seize your wrists as soon as you crack the lid, which creaks ominously as it opens the rest of the way all on its own. [run paragraph on]";
+	otherwise if the noun is memic:
 		compute mimic;
 	otherwise:
 		if the noun is not emptied:
@@ -87,3 +86,4 @@ Check closing a container:
 
 
 Opening ends here.
+

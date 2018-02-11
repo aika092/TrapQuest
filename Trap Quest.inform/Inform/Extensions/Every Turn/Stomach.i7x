@@ -58,7 +58,7 @@ Definition: yourself is thirsty:
 
 [!<digestionTimer:Integer>*
 
-Some things can speed up digestion by increasing this variable.  It counts down over time.
+Some things can speed up digestion by increasing this variable. It counts down over time.
 
 *!]
 digestion-timer is a number that varies.
@@ -103,11 +103,11 @@ A time based rule (this is the compute stomach rule):
 		increase cold turkey by time-seconds;
 		if cold turkey > the semen taste addiction of the player * 40:
 			now the raw semen taste addiction of the player is 14;
-			say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing.  [if the player is craving]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
+			say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
 			now cold turkey is 0;
 	otherwise if the stomach-semen of the player is 0:
 		now cold turkey is 0;
-	[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period].  Comparing it to round time of [time-seconds].";]
+	[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
 	if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
 		let N be (the stomach-food of the player / 4) + 1;
 		if the stomach-food of the player > 0:
@@ -124,10 +124,10 @@ A time based rule (this is the compute stomach rule):
 		if T < the thirst of the player:
 			if the thirst of the player is 3:
 				say "[bold type]You're beginning to feel a bit thirsty.[roman type][line break]";
-				if newbie tips is 1, say "[one of][item style]Newbie tip: You're getting thirsty!  Your strength will be lowered until you drink something[if diaper quest is 0] (remember, in a pickle, semen counts)[end if]!  If you go too long without drinking something, your thirst will get worse and worse and you'll eventually faint.[roman type][line break][or][stopping]";
+				if newbie tips is 1, say "[one of][item style]Newbie tip: You're getting thirsty!  Your strength will be lowered until you drink something[if diaper quest is 0] (remember, in a pickle, semen counts)[end if]!  If you go too long without drinking something, your thirst will get worse and worse, giving you lowered stats and eventually your character will take matters into their own hands and drink anything they can, any way they can...[roman type][line break][or][stopping]";
 				let P be a random worn cursed pacifier;
 				if P is pacifier:
-					say "Your [P] suddenly feels less stuck in your mouth.  Maybe you're allowed to take it out to drink?";
+					say "Your [P] suddenly feels less stuck in your mouth. Maybe you're allowed to take it out to drink?";
 			otherwise if the thirst of the player is 4:
 				say "[bold type]Your throat is feeling pretty dry, you should really drink [if the player is craving]someone's [semen][otherwise]something[end if]![roman type][line break]";
 			otherwise if the thirst of the player is 5:
@@ -140,10 +140,10 @@ A time based rule (this is the compute stomach rule):
 				if C is cursed, now X is 3;
 				let R be a random number between 1 and 10;
 				if R > X:
-					say "It shoots warm [semen] into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 11][variable custom style]Mmm, delicious cum![otherwise if the semen taste addiction of the player > 7][variable custom style]It's making me drink [semen] again![otherwise][first custom style]Oh my god, that was [semen] it just made me swallow!  Gross![end if][roman type][line break]";
+					say "It shoots warm [semen] into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 11][line break][variable custom style]Mmm, delicious cum![otherwise if the semen taste addiction of the player > 7][variable custom style]It's making me drink [semen] again![otherwise][line break][first custom style]Oh my god, that was [semen] it just made me swallow!  Gross![end if][roman type][line break]";
 					StomachSemenUp 1;
 				otherwise:
-					say "Cool water squirts into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 13][variable custom style]Aww, it was just water.  I was hoping for [semen]![otherwise if the semen taste addiction of the player > 7][variable custom style]It's hard not to imagine that it just came in my mouth.[otherwise][first custom style]Phew, just water.  That feels much better![end if][roman type][line break]";
+					say "Cool water squirts into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 13][line break][variable custom style]Aww, it was just water. I was hoping for [semen]![otherwise if the semen taste addiction of the player > 7][variable custom style]It's hard not to imagine that it just came in my mouth.[otherwise][line break][first custom style]Phew, just water. That feels much better![end if][roman type][line break]";
 					StomachUp 1;
 	let bladder-prompt be 6;
 	if the incontinence of the player > 0, now bladder-prompt is 4;
@@ -154,11 +154,11 @@ A time based rule (this is the compute stomach rule):
 		if debugmode is 1, say "Urination roll of [R] vs bladder of [the bladder of the player].";
 		if R < the bladder of the player, now delayed urination is 1;
 	if the remainder after dividing time-earnings by 25 < time-seconds and the delayed bladder of the player > 0:
-		bladderup 1;
+		bladderup 1 + (xavier-belt-link * 2);
 		decrease the delayed bladder of the player by 1;
 	if the thirst of the player is 5 and the player is thirsty and delayed fainting is 0 and busy is 0 and the player is able to speak and the player is not flying and the player is not stuck:
 		if the player is in Dungeon10:
-			say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 6]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 10]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if].  [if the player is upright]You get on your knees.  [end if]";
+			say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 6]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 10]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if]. [if the player is upright]You get on your knees. [end if]";
 			now the stance of the player is 1;
 			try drinking DungeonScenery01;
 		otherwise if last-begged-time < earnings - 30:
@@ -396,3 +396,4 @@ Definition: yourself is nearly hungry:
 
 
 Stomach ends here.
+

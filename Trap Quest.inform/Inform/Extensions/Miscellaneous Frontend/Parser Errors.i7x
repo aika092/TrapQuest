@@ -2,7 +2,7 @@ Parser Errors by Miscellaneous Frontend begins here.
 
 
 After asking which do you mean (this is the Disambiguation Choices cause crashes rule):
-	if inline hyperlinks > 0 and newbie tips is 1, say "[bold type][one of]Do not use a hyperlink here, or this will cause the game to crash.  Type a number instead.  I have no idea why, sorry.[or]Remember, don't use a hyperlink or the game will crash.[stopping][roman type][line break]".
+	if inline hyperlinks > 0 and newbie tips is 1, say "[bold type][one of]Do not use a hyperlink here, or this will cause the game to crash. Type a number instead. I have no idea why, sorry.[or]Remember, don't use a hyperlink or the game will crash.[stopping][roman type][line break]".
 
 
 [!<RuleForPrintingAParserErrorWhenTheLatestParserErrorIsTheIBedYourPardonError>+
@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 
 +!]
 Rule for printing a parser error when the latest parser error is the I beg your pardon error:
-	if the bimbo of the player > 11, say "[second custom style][one of]I like, totally forgot what I was going to do![or]Gosh, I feel so light-headed.  What was I going to do again?[in random order][roman type][line break]" instead.
+	if the bimbo of the player > 11, say "[second custom style][one of]I like, totally forgot what I was going to do![or]Gosh, I feel so light-headed. What was I going to do again?[in random order][roman type][line break]" instead.
 
 [!<RuleForPrintingAParserErrorWhenTheLatestParserErrorIsTheNotAVerbIRecogniseError>+
 
@@ -19,7 +19,7 @@ REQUIRES COMMENTING
 
 +!]	
 Rule for printing a parser error when the latest parser error is the not a verb I recognise error:
-	say "That's not a verb I recognise.  But if you really think it should be, maybe tell Aika?" instead;
+	say "That's not a verb I recognise. But if you really think it should be, maybe tell Aika?" instead;
 
 [!<RuleForPrintingAParserErrorWhenTheLatestParserErrorIsTheDidNotUnderstandError>+
 
@@ -58,3 +58,4 @@ Rule for printing a parser error when the latest parser error is the noun did no
 
 
 Parser Errors ends here.
+

@@ -49,7 +49,7 @@ To decide which number is the adult appearance of the player:
 REQUIRES COMMENTING
 
 *!]
-cringe-target is a thing that varies.  
+cringe-target is a thing that varies. 
 
 [!<appearanceCringeTarget:Thing>*
 
@@ -101,3 +101,4 @@ To decide which number is cumulative-cringe-level:
 calculated-cringe-level is a number that varies.
 
 Cringe Appearance ends here.
+

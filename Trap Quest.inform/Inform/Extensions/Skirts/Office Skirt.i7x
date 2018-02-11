@@ -1,6 +1,6 @@
 Office Skirt by Skirts begins here.
 
-An office skirt is a kind of skirt.  There is 1 office skirt.  Printed name of office skirt is "[TQlink of item described][clothing-title-before]office skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of office skirt is "os".  An office skirt is usually nylon. An office skirt is usually hobble-skirted.  An office skirt is usually crotch-skirted.  The armour of office skirt is usually 7.   
+An office skirt is a kind of skirt. There is 1 office skirt. Printed name of office skirt is "[TQlink of item described][clothing-title-before]office skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of office skirt is "os". An office skirt is usually nylon. An office skirt is usually hobble-skirted. An office skirt is usually crotch-skirted. The armour of office skirt is usually 7. 
 
 Figure of office skirt is the file "officeskirt1.png".
 
@@ -33,3 +33,4 @@ To set up influence of (C - an office skirt):
 	do nothing.
 
 Office Skirt ends here.
+

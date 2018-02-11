@@ -1,6 +1,6 @@
 T-Shirts by Dresses begins here.
 
-A T-shirt is a kind of overdress.  A T-shirt is usually unskirted.  A T-shirt is usually fully covering.  A T-shirt is usually unique.  A T-shirt is usually manly. A T-shirt is usually not-top-displacable.  A T-shirt is usually sheer-when-wet.
+A T-shirt is a kind of overdress. A T-shirt is usually unskirted. A T-shirt is usually fully covering. A T-shirt is usually unique. A T-shirt is usually manly. A T-shirt is usually not-top-displacable. A T-shirt is usually sheer-when-wet.
 
 Understand "shirt", "T" as T-shirt.
 
@@ -8,12 +8,13 @@ To decide which number is the initial outrage of (C - a T-shirt):
 	decide on 0.
 
 To compute SelfExamineDesc of (C - a T-shirt):
-	say "You are wearing a [ShortDesc of C].  ".
+	say "You are wearing a [ShortDesc of C]. ".
 
 To say ShortDesc of (C - a T-shirt):
 	say "T-shirt".
 
 To decide which object is the unique-upgrade-target of (C - a T-shirt):
+	if there is an off-stage dear santa T-shirt, decide on a random dear santa T-shirt;
 	if diaper quest is 1, decide on a random yellow sissy baby dress;
 	otherwise decide on nothing.
 
@@ -41,11 +42,11 @@ To restock (C - a T-shirt):
 
 Part 1 - Boobies T-shirt
 
-A Boobies T-shirt is a kind of T-shirt.  A Boobies T-shirt is usually plentiful.  The printed name of Boobies T-shirt is usually "[TQlink of item described][clothing-title-before]Boobies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of Boobies T-shirt is "bbt".
+A Boobies T-shirt is a kind of T-shirt. A Boobies T-shirt is usually plentiful. The printed name of Boobies T-shirt is usually "[TQlink of item described][clothing-title-before]Boobies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of Boobies T-shirt is "bbt".
 
 Figure of Boobies T-shirt is the file "tshirt0.png".
 
-There is 1 Boobies T-shirt.  
+There is 1 Boobies T-shirt. 
 
 To decide which figure-name is clothing-image of (C - a Boobies T-shirt):
 	decide on figure of Boobies T-shirt.
@@ -66,11 +67,11 @@ To decide which object is the potential-upgrade-target of (C - a Boobies T-shirt
 
 Part 2 - Gang Bang Girl T-shirt
 
-A Gang Bang Girl T-shirt is a kind of T-shirt.  The printed name of Gang Bang Girl T-shirt is usually "[TQlink of item described][clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  A Gang Bang Girl T-shirt is interracial related.  The text-shortcut of Gang Bang Girl T-shirt is "ggt".
+A Gang Bang Girl T-shirt is a kind of T-shirt. The printed name of Gang Bang Girl T-shirt is usually "[TQlink of item described][clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". A Gang Bang Girl T-shirt is interracial related. The text-shortcut of Gang Bang Girl T-shirt is "ggt".
 
 Figure of Gang Bang Girl T-shirt is the file "tshirt1.png".
 
-There is 1 Gang Bang Girl T-shirt.  
+There is 1 Gang Bang Girl T-shirt. 
 
 To decide which figure-name is clothing-image of (C - a Gang Bang Girl T-shirt):
 	decide on figure of Gang Bang Girl T-shirt.
@@ -88,7 +89,7 @@ To decide which number is the initial outrage of (C - a Gang Bang Girl T-shirt):
 
 Part 3 - Gender Bender T-shirt
 
-A Gender Bender T-shirt is a kind of T-shirt.  The printed name of Gender Bender T-shirt is usually "[TQlink of item described][clothing-title-before]Gender Bender T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of Gender Bender T-shirt is "gbt".
+A Gender Bender T-shirt is a kind of T-shirt. The printed name of Gender Bender T-shirt is usually "[TQlink of item described][clothing-title-before]Gender Bender T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of Gender Bender T-shirt is "gbt".
 
 Figure of Gender Bender T-shirt is the file "tshirt2.png".
 
@@ -105,7 +106,7 @@ To say ShortDesc of (C - a Gender Bender T-shirt):
 
 Report wearing gender bender T-shirt:
 	if the player is male and the bimbo of the player < 5:
-		say "You feel slightly calmer about the feminine nature of the game.  Something feels a bit different but you're not sure what...";
+		say "You feel slightly calmer about the feminine nature of the game. Something feels a bit different but you're not sure what...";
 		if the flesh volume of breasts is 0, now the flesh volume of breasts is 1;
 		if the raw heel skill of the player < 2, now the raw heel skill of the player is 2;
 		if the raw semen addiction of the player < 2, now the raw semen addiction of the player is 2;
@@ -118,7 +119,7 @@ Report wearing gender bender T-shirt:
 
 Part 4 - I Love My Wet Nappies T-shirt
 
-An I love my wet nappies T-shirt is a kind of T-shirt.  The printed name of I love my wet nappies T-shirt is usually "[TQlink of item described][clothing-title-before]I love my wet nappies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of I love my wet nappies T-shirt is "wnt".  An I love my wet nappies T-shirt is usually diaper-addiction-influencing.
+An I love my wet nappies T-shirt is a kind of T-shirt. The printed name of I love my wet nappies T-shirt is usually "[TQlink of item described][clothing-title-before]I love my wet nappies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of I love my wet nappies T-shirt is "wnt". An I love my wet nappies T-shirt is usually diaper-addiction-influencing.
 
 Figure of I love my wet nappies T-shirt is the file "tshirt3.png".
 
@@ -128,7 +129,7 @@ To decide which figure-name is clothing-image of (C - a I love my wet nappies T-
 	decide on figure of I love my wet nappies T-shirt.
 
 To say ClothingDesc of (C - an I love my wet nappies T-shirt):
-	say "This unisex T-shirt has the words 'I love my wet nappies' in large letters on it and a clipart image of a used diaper.  Compared to everything else you've seen in the game, this is much more modest.[if C is worn and there is a worn diaper][line break]Somehow you feel less embarrassed about the fact that you a wearing a diaper.[otherwise if C is worn][line break]Somehow you feel more comfortable with the idea of wearing a diaper.  You feel like you could wear one without wanting to crawl into a ball with embarrassment.[end if]".
+	say "This unisex T-shirt has the words 'I love my wet nappies' in large letters on it and a clipart image of a used diaper. Compared to everything else you've seen in the game, this is much more modest.[if C is worn and there is a worn diaper][line break]Somehow you feel less embarrassed about the fact that you a wearing a diaper.[otherwise if C is worn][line break]Somehow you feel more comfortable with the idea of wearing a diaper. You feel like you could wear one without wanting to crawl into a ball with embarrassment.[end if]".
 
 To say ShortDesc of (C - an I love my wet nappies T-shirt):
 	say "'I love my wet nappies' T-shirt".
@@ -143,7 +144,7 @@ Definition: an I love my wet nappies T-shirt (called C) is untransformable:
 
 Part 5 - I Wish These Were Brains T-shirt
 
-An I wish these were brains T-shirt is a kind of T-shirt.  The printed name of I wish these were brains T-shirt is usually "[TQlink of item described][clothing-title-before]I wish these were brains T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of I wish these were brains T-shirt is "wwt".
+An I wish these were brains T-shirt is a kind of T-shirt. The printed name of I wish these were brains T-shirt is usually "[TQlink of item described][clothing-title-before]I wish these were brains T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of I wish these were brains T-shirt is "wwt".
 
 Figure of I wish these were brains T-shirt is the file "tshirt4.png".
 
@@ -166,7 +167,7 @@ To decide which number is the intelligence-influence of (C - an I wish these wer
 
 Part 6 - Birth Control is for Sissies T-shirt
 
-A birth control for sissies T-shirt is a kind of T-shirt.  A birth control for sissies T-shirt is dense.  The printed name of birth control for sissies T-shirt is usually "[TQlink of item described][clothing-title-before]birth control is for sissies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of birth control for sissies T-shirt is "bcst".  Understand "control is" as birth control for sissies T-shirt.  
+A birth control for sissies T-shirt is a kind of T-shirt. A birth control for sissies T-shirt is dense. The printed name of birth control for sissies T-shirt is usually "[TQlink of item described][clothing-title-before]birth control is for sissies T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of birth control for sissies T-shirt is "bcst". Understand "control is" as birth control for sissies T-shirt. 
 
 Figure of birth control for sissies T-shirt is the file "tshirt5.png".
 
@@ -192,7 +193,7 @@ To decide which number is the vaginal-sex-addiction-influence of (C - a birth co
 
 Part 7 - Oh to be a Sissy T-shirt
 
-An oh to be a sissy T-shirt is a kind of T-shirt.  The printed name of oh to be a sissy T-shirt is usually "[TQlink of item described][clothing-title-before]oh to be a sissy T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of oh to be a sissy T-shirt is "tbt".
+An oh to be a sissy T-shirt is a kind of T-shirt. The printed name of oh to be a sissy T-shirt is usually "[TQlink of item described][clothing-title-before]oh to be a sissy T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of oh to be a sissy T-shirt is "tbt".
 
 Figure of oh to be a sissy T-shirt is the file "tshirt6.png".
 
@@ -215,7 +216,7 @@ To decide which number is the delicateness-influence of (C - an oh to be a sissy
 
 Part 8 I'm Knocked Up T-shirt
 
-An I'm knocked up T-shirt is a kind of T-shirt.  The printed name of I'm knocked up T-shirt is usually "[TQlink of item described][clothing-title-before]I'm knocked up T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of I'm knocked up T-shirt is "kut".
+An I'm knocked up T-shirt is a kind of T-shirt. The printed name of I'm knocked up T-shirt is usually "[TQlink of item described][clothing-title-before]I'm knocked up T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of I'm knocked up T-shirt is "kut".
 
 Figure of I'm knocked up T-shirt is the file "tshirt7.png".
 
@@ -241,7 +242,7 @@ To decide which number is the vaginal-sex-addiction-influence of (C - an I'm kno
 
 Part 9 - Crybaby T-shirt
 
-A crybaby T-shirt is a kind of T-shirt.  The printed name of crybaby T-shirt is usually "[TQlink of item described][clothing-title-before]Crybaby T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of crybaby T-shirt is "crt".
+A crybaby T-shirt is a kind of T-shirt. The printed name of crybaby T-shirt is usually "[TQlink of item described][clothing-title-before]Crybaby T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of crybaby T-shirt is "crt".
 
 Figure of crybaby T-shirt is the file "tshirt8.png".
 
@@ -270,7 +271,7 @@ To decide which object is the unique-upgrade-target of (C - a crybaby T-shirt):
 
 Part 10 - High Maintenance T-shirt
 
-A high maintenance T-shirt is a kind of T-shirt.  The printed name of high maintenance T-shirt is usually "[TQlink of item described][clothing-title-before]high maintenance T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of high maintenance T-shirt is "hmt".
+A high maintenance T-shirt is a kind of T-shirt. The printed name of high maintenance T-shirt is usually "[TQlink of item described][clothing-title-before]high maintenance T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of high maintenance T-shirt is "hmt".
 
 Figure of high maintenance T-shirt is the file "tshirt9.png".
 
@@ -294,4 +295,34 @@ To decide which number is the initial cringe of (C - a high maintenance T-shirt)
 	decide on 3.
 
 
+Part 11 - Dear Santa T-shirt
+
+A dear santa T-shirt is a kind of T-shirt. The printed name of dear santa T-shirt is usually "[TQlink of item described][clothing-title-before]dear santa T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of dear santa T-shirt is "dst".
+
+Figure of dear santa T-shirt is the file "tshirt10.png".
+
+To decide which figure-name is clothing-image of (C - a dear santa T-shirt):
+	decide on figure of dear santa T-shirt.
+
+There is 1 dear santa T-shirt.
+
+To say ClothingDesc of (C - a dear santa T-shirt):
+	say "This white T-shirt has the words 'Dear santa... I can explain' on the front in red letters.".
+
+To say ShortDesc of (C - a dear santa T-shirt):
+	say "white 'dear santa' T-shirt".
+
+To decide which number is the delicateness-influence of (C - a dear santa T-shirt):
+	let S be 2;
+	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
+	decide on S.
+
+To decide which number is the initial outrage of (C - a dear santa T-shirt):
+	decide on 2.
+
+To decide which number is the initial cringe of (C - a dear santa T-shirt):
+	decide on 2.
+
+
 T-Shirts ends here.
+

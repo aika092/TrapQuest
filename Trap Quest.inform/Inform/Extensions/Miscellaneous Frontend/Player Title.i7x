@@ -126,6 +126,7 @@ To say TitleBimbo:
 			say " queen of spades";
 		if the player is a sissy, say " sissy";
 		if T is not "adventurer":
+			if armband is worn, say " [armband-print of armband]";
 			if T is "catgirl" and the player is male and the bimbo of the player < 13 and the largeness of breasts < 6:
 				say " catboy";
 			otherwise if T is "puppygirl" and the player is male and the bimbo of the player < 13 and the largeness of breasts < 6:
@@ -134,12 +135,14 @@ To say TitleBimbo:
 				say " black cock [if the sex addiction of the player > 14]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
 			otherwise:
 				say " [T]";
+		otherwise if armband is worn:
+			say " [armband-print of armband]";
 		otherwise if there is a worn leotard and there is a worn ballet shoes or there is a worn ballet heels:
 			say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 		otherwise if there is a worn whip of domination and the delicateness of the player < 10:
 			say " dominatrix";
-		otherwise if there is an alive newborn giant wasp:
-			say " wasp [if the number of alive newborn giant wasps is 1]queen[otherwise]broodmother[end if]";
+		otherwise if newborn-wasp is an alive giant wasp:
+			say " wasp [if the number of alive giant wasps < 4]queen[otherwise]broodmother[end if]";
 		otherwise if the virgin bonus of the player <= -2:
 			say " [one of]fallen[or]disgraced[sticky random] ex-warrior";
 		otherwise if there is a worn T-shirt and the bimbo of the player > 8:
@@ -185,8 +188,9 @@ To say TitleBaby:
 		say " diapered";
 		if incontinence > 2, say " [if there is worn bed wetting clothing]bedwetting[otherwise]accident-prone[end if]";
 	if the number of worn cursed clothing > 4, say " unlucky";
+	if the player is a sissy, say " sissy";
 	if T is not "adventurer":
-		if T is "", say " adult";
+		if T is "" and the player is not a sissy, say " adult";
 		otherwise say "[if the delicateness of the player > 16] baby[end if] [T]";
 	otherwise if there is a worn leotard and there is a worn ballet shoes or there is a worn ballet heels:
 		say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
@@ -206,3 +210,4 @@ To say TitleBaby:
 
 
 Player Title ends here.
+

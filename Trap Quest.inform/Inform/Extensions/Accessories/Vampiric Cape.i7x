@@ -22,3 +22,4 @@ To decide which number is the dexterity-influence of (C - a vampiric cape):
 	decide on X.
 
 Vampiric Cape ends here.
+

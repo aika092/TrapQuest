@@ -14,7 +14,7 @@ To Set Up The Mansion:
 		if images visible is 1:
 			display figure of mansion loading;
 		say "Now loading the mansion region!";
-		wait 10 ms before continuing;
+		wait 50 ms before continuing;
 	Scramble Mansion;
 	if debugmode is 1, say "SETTING UP CONTAINERS[line break]";
 	repeat with G running through creaky rooms in The Mansion:
@@ -50,13 +50,14 @@ REQUIRES COMMENTING
 
 +!]
 To Scramble Mansion:
-	[let E be the easting part of the grid position of Stairwell03;
+	let E be the easting part of the grid position of Stairwell03;
 	let N be the northing part of the grid position of Stairwell03;
 	let the sum be the spatial coordinate with maze level part 4 easting part E northing part N;
-	now the grid position of Mansion01 is the sum;]
+	now the grid position of Mansion01 is the sum;
 	now target-floor is Mansion01;
 	solve the puzzle;
 	make all haunted exits lead to Solid Rock.
 
 
 Region Building Mansion ends here.
+

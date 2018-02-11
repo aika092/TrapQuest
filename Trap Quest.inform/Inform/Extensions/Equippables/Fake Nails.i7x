@@ -1,12 +1,17 @@
 Fake Nails by Equippables begins here.
 
-A fake nails is a kind of equippable.  A fake nails is usually slap ready. The printed name of fake nails is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]set of fake nails[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of fake nails is "fn".  There is 1 unique fake nails.  Understand "set", "set of" as fake nails.  Fake nails is usually plastic.
+A fake nails is a kind of equippable. A fake nails is usually slap ready. The printed name of fake nails is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]set of fake nails[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of fake nails is "fn". There is 1 unique fake nails. Understand "set", "set of" as fake nails. Fake nails is usually plastic.
+
+Figure of fake nails is the file "fakenails1.png".
+
+To decide which figure-name is the clothing-image of (C - a fake nails):
+	decide on figure of fake nails.
 
 To say ClothingDesc of (C - a fake nails):
-	say "A set of large pink fake nails.  [if C is cursed]You find yourself constantly distracted, worrying that you will accidentally break a nail.[otherwise if C is blessed]You are fully confident that your blessed nails are magically reinforced and impossible to break.[otherwise]You find yourself more than a bit distracted by them as you anticipate that it might hurt if one were to break.[end if]".
+	say "A set of large pink fake nails. [if C is cursed]You find yourself constantly distracted, worrying that you will accidentally break a nail.[otherwise if C is blessed]You are fully confident that your blessed nails are magically reinforced and impossible to break.[otherwise]You find yourself more than a bit distracted by them as you anticipate that it might hurt if one were to break.[end if]".
 
 To say ShortDesc of (C - a fake nails):
-	say "large pink fake nails".  
+	say "large pink fake nails". 
 
 To decide which number is the damage improvement of (W - a fake nails):
 	if W is blessed, decide on 3;
@@ -69,3 +74,4 @@ The fake nails prevent hand use rule is listed in the manual dexterity restricti
 
 
 Fake Nails ends here.
+

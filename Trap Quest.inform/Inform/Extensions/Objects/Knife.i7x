@@ -1,7 +1,7 @@
 Knife by Objects begins here.
 
 
-A knife is a kind of thing.  A knife is usually not portable.  1 knife is in Hotel19.  The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of a knife is "kn".  Understand "sharp" as knife.  The description of knife is "A large sharp butcher's knife chained to the worktop.  You can't take it away with you but you might be able to use it to destroy some items of clothing you don't like wearing.".  A knife has a number called charge.
+A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. The description of knife is "A large sharp butcher's knife chained to the worktop. You can't take it away with you but you might be able to use it to destroy some items of clothing you don't like wearing.". A knife has a number called charge.
 
 Definition: A knife (called I) is immune to change:
 	decide yes.
@@ -77,7 +77,7 @@ Carry out knifing:
 		otherwise if the charge of the second noun > 0:
 			say "The knife seems to be completely dull at the moment!  You give up.";
 		otherwise:
-			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter!  It is completely destroyed!  The knife loses its glow[if newbie tips is 1][one of].  Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
+			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter!  It is completely destroyed!  The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
 			now the charge of the second noun is 300;
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]
@@ -94,3 +94,4 @@ Check cutting when the player is in Hotel19:
 
 
 Knife ends here.
+

@@ -16,6 +16,7 @@ A time based rule (this is the lactation rule):
 		if C is maternity dress, increase R by 1;
 		if C is milking basque, increase R by 1;
 		if C is nintendolls-brand tattoo, increase R by 2;
+		if C is abyssal tattoo and the class of the player is cowgirl, increase R by 2;
 	if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
 	if R > 0:
 		let L be 200 / R + 1;
@@ -84,22 +85,22 @@ To trigger lactation:
 		let N be bottom level lactation cover;
 		if there is a worn white pacifier, now N is a random worn white pacifier;
 		if N is white pacifier:
-			say "[one of]You feel [milk] leak from your [BreastDesc], but the milk never reaches [if bottom level lactation cover is clothing]your [bottom level lactation cover][otherwise]the air[end if]![roman type]  Instead you feel your [N] magically feeding it back into your body via your mouth[or]Once again you feel [milk] leak from your nipples and magically appear in your mouth[stopping].  [variable custom style][if the milk taste addiction of the player < 7][one of]Yuck![or]Gross...[or]My own milk?  Eww![or]I'm breastfeeding myself, gross![in random order][otherwise if the milk taste addiction of the player < 14][one of]At least it tastes good.[or]This is a bit weird, but I've done weirder.[or]Well I guess it's good for my nutrition...[or]Does all breast milk taste this good?[in random order][otherwise][one of]Yum![or]How delicious![or]So tasty![or]Ooh, I want to drink even more![in random order][end if][roman type][line break]";
+			say "[one of]You feel [milk] leak from your [BreastDesc], but the milk never reaches [if bottom level lactation cover is clothing]your [bottom level lactation cover][otherwise]the air[end if]![roman type]  Instead you feel your [N] magically feeding it back into your body via your mouth[or]Once again you feel [milk] leak from your nipples and magically appear in your mouth[stopping]. [line break][variable custom style][if the milk taste addiction of the player < 7][one of]Yuck![or]Gross...[or]My own milk?  Eww![or]I'm breastfeeding myself, gross![in random order][otherwise if the milk taste addiction of the player < 14][one of]At least it tastes good.[or]This is a bit weird, but I've done weirder.[or]Well I guess it's good for my nutrition...[or]Does all breast milk taste this good?[in random order][otherwise][one of]Yum![or]How delicious![or]So tasty![or]Ooh, I want to drink even more![in random order][end if][roman type][line break]";
 			MilkDown M / 2;
 			StomachUp M / 2;
 			increase the fat-burning of the player by 75 * M;
 		otherwise if N is crotch-in-place top-placed milking basque:
-			say "[one of]Milk flows from your nipples, but it doesn't stain your [N]!  Instead you feel the milk somehow flow directly into your [asshole]!  [variable custom style]What the hell?!  This thing must be magic![roman type][line break][or]Milk flows from your nips directly into your [asshole] thanks to your [N].[stopping]";
+			say "[one of]Milk flows from your nipples, but it doesn't stain your [N]!  Instead you feel the milk somehow flow directly into your [asshole]!  [line break][variable custom style]What the hell?!  This thing must be magic![roman type][line break][or]Milk flows from your nips directly into your [asshole] thanks to your [N].[stopping]";
 			MilkDown M / 2;
 			AssFill M / 2 Milk;
 		otherwise if N is milking harness:
 			if M is 1:
-				say "A few drops of [milk] leak from your [BreastDesc] and into the suction cups of your [printed name of N].  You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 8]in enjoyment[end if] as you feel the warm liquid enter you through the harness's plug.";
+				say "A few drops of [milk] leak from your [BreastDesc] and into the suction cups of your [printed name of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 8]in enjoyment[end if] as you feel the warm liquid enter you through the harness's plug.";
 				MilkDown 1;
 				AssFill 1 Milk;
 			otherwise:
-				if M < 10, say "Milk flows from your nipples into the suction cups of your [printed name of N].  You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 11]in delight[end if] as you feel substantial amounts of the warm liquid enter you through the harness's plug.";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of your [printed name of N].  You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 14]in ecstasy[end if] as you feel the warm liquid enter you through the harness's plug.";
+				if M < 10, say "Milk flows from your nipples into the suction cups of your [printed name of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 11]in delight[end if] as you feel substantial amounts of the warm liquid enter you through the harness's plug.";
+				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of your [printed name of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 14]in ecstasy[end if] as you feel the warm liquid enter you through the harness's plug.";
 				MilkDown M / 2;
 				AssFill M / 2 Milk;
 			say "The stimulation [one of]of the suction on your nipples combined with the [milk] rushing into your [asshole] [or][stopping]makes you aroused[if the sex addiction of the player < 11] against your will[end if].";
@@ -122,8 +123,8 @@ To trigger lactation:
 					say "A strange shivery feeling tingles through your chest.";
 					increase the lactation rate of the player by 1;
 			otherwise: [Selkie: when I started the line below "[Milk] starts..." , that entire block of text came out in bold (and Milk was not capitalised). So I changed it to just say "Milk starts..."]
-				if M < 10, say "Milk starts jetting from your nipples into the suction cups of the [printed name of N].  You hear a recording of a cow mooing, playing from somewhere right by your head, so that if anyone were looking at you they'd think you were the one mooing in pleasure.  Ohhh - how mean!  You shiver [if the humiliation of the player > 11]in delight [end if]and wonder if somehow this situation might be somehow making you more cow-like?  But they wouldn't be that mean, would they?";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of the [printed name of N].  You feel the pressure easing from your swollen udders, and combined with the wonderful feeling of the exciting suction on your tender and sucked-erect teats, and the [milk] squirting from them, you feel a heat growing in your loins.  [variable custom style]This is actually pretty wonderful![roman type]  It goes on for a long time, and you feel yourself getting hornier, and find yourself pressing your thighs together, trying to squeeze out a little bit more pleasure from your tingling groin.  [one of][variable custom style]Wow, this is really giving my milk ducts a workout!  Imagine if they were like other muscles, and... oohhh... the more I work them, the better they get at doing their job?[if the bimbo of the player > 14]  I sure hope it does![roman type][otherwise]You sure hope not.  The idea of [italic type]your[roman type] breasts giving milk is just awful![end if][or][variable custom style]It's like an exercise machine for my milky boobs![roman type][or]You feel a curious burning sensation, spread out deep inside your boobs - it reminds you of growing pains, when you were a teen.[or]You imagine your poor milk ducts, being filled and emptied, over and over.[or]Your milk glands definitely feel [italic type]healthier.[roman type][stopping][line break]";
+				if M < 10, say "Milk starts jetting from your nipples into the suction cups of the [printed name of N]. You hear a recording of a cow mooing, playing from somewhere right by your head, so that if anyone were looking at you they'd think you were the one mooing in pleasure. Ohhh - how mean!  You shiver [if the humiliation of the player > 11]in delight [end if]and wonder if somehow this situation might be somehow making you more cow-like?  But they wouldn't be that mean, would they?";
+				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of the [printed name of N]. You feel the pressure easing from your swollen udders, and combined with the wonderful feeling of the exciting suction on your tender and sucked-erect teats, and the [milk] squirting from them, you feel a heat growing in your loins. [line break][variable custom style]This is actually pretty wonderful![roman type][line break]It goes on for a long time, and you feel yourself getting hornier, and find yourself pressing your thighs together, trying to squeeze out a little bit more pleasure from your tingling groin. [one of][line break][variable custom style]Wow, this is really giving my milk ducts a workout!  Imagine if they were like other muscles, and... oohhh... the more I work them, the better they get at doing their job?[if the bimbo of the player > 14]  I sure hope it does![roman type][line break][otherwise]You sure hope not. The idea of [italic type]your[roman type] breasts giving milk is just awful![end if][or][line break][variable custom style]It's like an exercise machine for my milky boobs![roman type][line break][or]You feel a curious burning sensation, spread out deep inside your boobs - it reminds you of growing pains, when you were a teen.[or]You imagine your poor milk ducts, being filled and emptied, over and over.[or]Your milk glands definitely feel [italic type]healthier.[roman type][stopping][line break]";
 				let tempM be M / 2;
 				MilkDown tempM;
 				if tempM < 4:
@@ -162,3 +163,4 @@ To trigger lactation:
 
 
 Lactation ends here.
+

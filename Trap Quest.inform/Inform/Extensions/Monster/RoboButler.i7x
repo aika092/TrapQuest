@@ -1,14 +1,14 @@
 RoboButler by Monster begins here.
 
-[A captive robobutler has been tipped recently.  A released robobutler is annoyed at the lack of a tip recently.]
+[A captive robobutler has been tipped recently. A released robobutler is annoyed at the lack of a tip recently.]
 
-A robobutler is a kind of robot.  A robobutler is usually hotel dwelling.   Understand "butler" as robobutler.  A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118.
+A robobutler is a kind of robot. Understand "butler" as robobutler. A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118.
 
 Figure of robobutler is the file "robobutler1.png". The description of robobutler is usually "[RoboButlerDesc]".
 
-A polite robobutler is a kind of robobutler.  There is 1 polite robobutler.  The text-shortcut of polite robobutler is "prb".
+A polite robobutler is a kind of robobutler. There is 1 polite robobutler. The text-shortcut of polite robobutler is "prb".
 The printed name of polite robobutler is "[if item described is in the location of the player][TQlink of item described][end if][input-style]polite RoboButler[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
-An unemotional robobutler is a kind of robobutler.  There is 1 unemotional robobutler.  The text-shortcut of unemotional robobutler is "urb".
+An unemotional robobutler is a kind of robobutler. There is 1 unemotional robobutler. The text-shortcut of unemotional robobutler is "urb".
 The printed name of unemotional robobutler is "[if item described is in the location of the player][TQlink of item described][end if][input-style]unemotional RoboButler[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
 
 
@@ -40,7 +40,7 @@ To say speech style of (M - a robobutler):
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a robobutler):
-	say "You hear the sound of a robotic voice coming from elsewhere in the hotel.  [first custom style]'CAN I HELP YOU SIR?'[roman type][line break]".
+	say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]".
 
 To say LeftoverDesc (N - 118):
 	say "There is a pile of mangled nuts and bolts here that used to be a fully functional robobutler.[line break]".
@@ -54,25 +54,25 @@ To compute perception of (M - a robobutler):
  		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type] [if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
+		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
-		say "Its eyes turn red and it spins towards you. [speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
+		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
 		now the variety of M is 3;
 		anger M;
 	otherwise if the number of worn catsuits > 0 or the class of the player is vixen:
-		say "Its eyes turn red and it spins toward you. [speech style of M]'BURGLAR DETECTED! CRIMINAL APPREHENSION PROGRAM INITIATED!'[roman type][line break]";
+		say "Its eyes turn red and it spins toward you. [line break][speech style of M]'BURGLAR DETECTED! CRIMINAL APPREHENSION PROGRAM INITIATED!'[roman type][line break]";
 		now the variety of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
- 		say "Its eyes turn red and it spins towards you. [speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
+ 		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
  		anger M;
  		now the variety of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
- 		say "Its eyes turn red and it spins towards you.  [first custom style]'EMPTY STOMACH DETECTED.  COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+ 		say "Its eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
  		anger M;
  		now the variety of M is 1;
  	otherwise:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type] One of its 'hands' is unsubtly placed upturned towards you.";
+		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
 		now the variety of M is 0;
 		calm M.
 
@@ -94,7 +94,7 @@ To compute forcefeed of (M - a robobutler):
 		if the player is not in the target-room of M:
 			drag to the target-room of M by M;
 		otherwise:
-			say "[speech style of M]'DINNER IS SERVED.  PLEASE HELP YOURSELF.'[roman type]  The [M] slowly but forcefully pushes your head towards the bowls.  Unable to fight back, you sigh and submit to [his of M] demands.";
+			say "[speech style of M]'DINNER IS SERVED. PLEASE HELP YOURSELF.'[roman type]  The [M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 		try BowlFeeding a random feeding bowls;
 		satisfy M for 500 seconds.
 
@@ -103,19 +103,19 @@ To compute (M - a robobutler) cuffing:
 	let A be a random off-stage pair of anklecuffs;
 	let B be a random off-stage fetish appropriate ballgag;
 	if W is actually summonable:
-		say "The [M] pulls out a [printed name of W] and locks them onto your wrists. [speech style of M]CRIME SPREE COMPLETE.[roman type][line break]";
+		say "The [M] pulls out a [printed name of W] and locks them onto your wrists. [line break][speech style of M]CRIME SPREE COMPLETE.[roman type][line break]";
 		summon W locked;
 	otherwise if A is actually summonable:
-		say "The [M] pulls out a [printed name of A] and locks them onto your ankles. [speech style of M]CRIME TERMINATED.[roman type][line break]";
+		say "The [M] pulls out a [printed name of A] and locks them onto your ankles. [line break][speech style of M]CRIME TERMINATED.[roman type][line break]";
 		summon A locked;
 	otherwise if B is actually summonable:
-		say "The [M] pulls out a [printed name of B] and forces it into your mouth. [speech style of M]TRIAL COMPLETE.[roman type][line break]";
+		say "The [M] pulls out a [printed name of B] and forces it into your mouth. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]";
 		summon B locked;
 	otherwise:
 		repeat with C running through worn bondage:
 			if C is unlocked, now C is locked;
 			increase the sentence of a random prison guard by 1;
-		say "The [M]'s eyes flash blue and red for a moment. [speech style of M]TRIAL COMPLETE.[roman type][line break]".
+		say "The [M]'s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
 
 The unique punishment rule of a robobutler is usually the robobutler punishment rule.
 This is the robobutler punishment rule:
@@ -161,7 +161,7 @@ This is the robobutler punishment rule:
 		LipsUp 1;
 		satisfy M for 500 seconds;
 		rule succeeds;[He doesn't drag you if he increases the size of your lips.]
-	if presented-orifice is not nothing, say "[speech style of M]'REQUEST NOT UNDERSTOOD.  IGNORING.'[roman type][line break]";
+	if presented-orifice is not nothing, say "[speech style of M]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
 	if M is interested, compute forcefeed of M;
 	rule succeeds.
 
@@ -172,7 +172,7 @@ To say DragArrival of (M - a robomaid) to (R - Hotel20):
 	say "[speech style of M]'LAUNDRY PROTOCOL INITIATED. PLEASE REMAIN SEATED.'[roman type][line break]";
 
 To say DragArrival of (M - a robobutler) to (R - Hotel18):
-	if the variety of M is not 5, say "[speech style of M]'DINNER IS SERVED.  PLEASE HELP YOURSELF.'[roman type]  The [M] slowly but forcefully pushes your head towards the bowls.  Unable to fight back, you sigh and submit to [his of M] demands.";
+	if the variety of M is not 5, say "[speech style of M]'DINNER IS SERVED. PLEASE HELP YOURSELF.'[roman type]  The [M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 	otherwise say DragArrival of M to Stairwell01.
 
 To say DragArrival of (M - a robobutler) to (R - a room):
@@ -212,10 +212,6 @@ To say robogreeting:
 
 Section 2 - Questioning
 
-To compute talk option (N - 2) to (M - a robobutler):
-	say "[variable custom style]Can you help me out?[roman type][line break]";
-	compute answer of M.
-
 To compute answer of (M - a robobutler):
 	let C be a random held unsure clothing;
 	if the class of the player is maid:
@@ -223,19 +219,19 @@ To compute answer of (M - a robobutler):
 	otherwise if M is not buddy:
 		compute annoyance of M;
 	otherwise if C is clothing:
-		say "The [M] points at your [printed name of C].  [first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
+		say "The [M] points at your [printed name of C]. [line break][first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
 		now C is sure;
 		FavourDown M by 2;
 		if M is not buddy:
-			say "The [M] turns around, facing away.  One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
+			say "The [M] turns around, facing away. One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
 	otherwise:
-		say "[first custom style]'NOT CURRENTLY, [robogreeting].  APOLOGIES.'[roman type][line break]".
+		say "[first custom style]'NOT CURRENTLY, [robogreeting]. APOLOGIES.'[roman type][line break]".
 
 To compute annoyance of (M - a robobutler):
 	if M is unfriendly and M is interested:
 		say "[first custom style]'STOMACH FILLING IN PROGRESS.'[roman type][line break]";
 	otherwise:
-		say "[first custom style]'I HELP TIPPING CUSTOMERS, [robogreeting].'[roman type][line break]".
+		say "[first custom style]'I HELP WELL-TIPPING CUSTOMERS, [robogreeting].'[roman type][line break]".
 
 Section 3 - Drink Requesting
 
@@ -270,41 +266,41 @@ To compute perception of (M - a robomaid):
  		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [speech style of M]'GREETINGS. I AM DO-THE-DISHES-UNIT 4.2.1. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type] One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
+		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM DO-THE-DISHES-UNIT 4.2.1. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
 	otherwise if the number of worn dirty clothing > 0:
-		say "Its eyes turn red and it spins towards you. [speech style of M]'CLEANLINESS VIOLATION DETECTED. EMERGENCY LAUNDERING PROGRAM INITIATED.'[roman type][line break]";
+		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. EMERGENCY LAUNDERING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the number of worn clothing is 0:
-		say "Its eyes turn red and it spins towards you. [speech style of M]'DECENCY VIOLATION DETECTED. CLOTHING ASSISTANCE PROGRAM INITIATED.'[roman type][line break]";
+		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. CLOTHING ASSISTANCE PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
  	otherwise:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type] One of its 'hands' is unsubtly placed upturned towards you.";
+		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
 		calm M.
 
 To compute perception of (M - a milkmaid):
 	if the class of the player is maid:
 		if breasts is lewdly exposed:
-			say "It glides towards you, addressing you in a monotone. [speech style of M]HEY GIRLFRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEE HEE. TEE HEE.[roman type] It seems to abruptly lose interest.";
+			say "It glides towards you, addressing you in a monotone. [line break][speech style of M]HEY GIRLFRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEE HEE. TEE HEE.[roman type][line break]It seems to abruptly lose interest.";
 			calm M;
 		otherwise if the largeness of breasts < 2:[exposed but not lewdly exposed? You must have small breasts!]
-			say "Its eyes turn red and it spins toward you. [speech style of M][if lactation fetish is 1]UNDERDEVELOPED MAMMARY CENTRE DETECTED. STIMULATION PROGRAM INITIATED[otherwise]UNDERDEVELOPED CHESTS REFLECT BADLY ON MANAGEMENT. STIMULATION PROGRAM INITIATED[end if].'[roman type][line break]";
+			say "Its eyes turn red and it spins toward you. [line break][speech style of M][if lactation fetish is 1]UNDERDEVELOPED MAMMARY CENTRE DETECTED. STIMULATION PROGRAM INITIATED[otherwise]UNDERDEVELOPED CHESTS REFLECT BADLY ON MANAGEMENT. STIMULATION PROGRAM INITIATED[end if].'[roman type][line break]";
 			anger M;
 		otherwise:
-			say "Its eyes turn red and it spins toward you. [speech style of M]UNAUTHORIZED MAMMARY CONCEALMENT DETECTED. LIBERATION PROGRAM INITIATED.[roman type][line break]";
+			say "Its eyes turn red and it spins toward you. [line break][speech style of M]UNAUTHORIZED MAMMARY CONCEALMENT DETECTED. LIBERATION PROGRAM INITIATED.[roman type][line break]";
 			anger M;
 	otherwise if M is friendly:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [speech style of M]'GREETINGS. I AM TITTYTRON 609. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type] One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
+		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM TITTYTRON 609. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
 	otherwise:
 		if the stomach of the player <= 4 and the player is able to eat:
-			say "Its eyes turn red and it spins towards you.  [first custom style]'EMPTY STOMACH DETECTED.  COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+			say "Its eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 			anger M;
 		otherwise:
-			say "It glides toward you, pushing out its chest as it addresses you in a monotone. [first custom style]'FLIRTATION PROGRAM INITIATED....[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or]I LIKE BIG DICKS.[at random] PLEASE TIP ME.[roman type] One of its 'hands' is unsubtly placed upturned towards you.";
+			say "It glides toward you, pushing out its chest as it addresses you in a monotone. [line break][first custom style]'FLIRTATION PROGRAM INITIATED....[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or]I LIKE BIG DICKS.[at random] PLEASE TIP ME.[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
 			calm M;
 	
 The unique punishment rule of a robomaid is the robomaid punishment rule.
 This is the robomaid punishment rule:
-	if presented-orifice is not nothing, say "[speech style of current-monster]'REQUEST NOT UNDERSTOOD.  IGNORING.'[roman type][line break]";
+	if presented-orifice is not nothing, say "[speech style of current-monster]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
 	if the player is immobile:
 		say "[one of]The [current-monster] waits beside you patiently.[or][cycling]";
 	otherwise if current-monster is milkmaid:
@@ -364,7 +360,7 @@ This is the robomaid punishment rule:
 		if the player is not in the target-room of current-monster:
 			drag to the target-room of current-monster by current-monster;
 		otherwise:
-			say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  The [current-monster] slowly but forcefully pushes your head towards the bowls.  Unable to fight back, you sigh and submit to [his of current-monster] demands.";
+			say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  The [current-monster] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of current-monster] demands.";
 		try BowlFeeding a random feeding bowls;
 		let M be a random robochef;
 		anger M;
@@ -391,7 +387,7 @@ This is the robomaid punishment rule:
 		rule succeeds;
 	otherwise:
 		if the player is not in the target-room of current-monster, drag to the target-room of current-monster by current-monster;
-		otherwise say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  The [current-monster] slowly but forcefully pushes your head towards the bowls.  Unable to fight back, you sigh and submit to [his of current-monster] demands.";
+		otherwise say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  The [current-monster] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of current-monster] demands.";
 		try BowlFeeding a random feeding bowls;
 		let M be a random robochef;
 		anger M;
@@ -401,3 +397,4 @@ This is the robomaid punishment rule:
 
 
 RoboButler ends here.
+

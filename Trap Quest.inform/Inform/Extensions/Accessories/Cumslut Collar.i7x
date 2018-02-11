@@ -1,6 +1,6 @@
 Cumslut Collar by Accessories begins here.
 
-A cumslut collar is a kind of submissive collar.  There is 1 unique leather cumslut collar.  Printed name of cumslut collar is "[TQlink of item described][clothing-title-before]cumslut collar[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cumslut collar is "cc".
+A cumslut collar is a kind of submissive collar. There is 1 unique leather cumslut collar. Printed name of cumslut collar is "[TQlink of item described][clothing-title-before]cumslut collar[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cumslut collar is "cc".
 
 To decide which number is the initial outrage of (C - a cumslut collar):
 	decide on 10.
@@ -29,3 +29,4 @@ To decide which number is the bartering value of (T - a cumslut collar) for (M -
 
 
 Cumslut Collar ends here.
+

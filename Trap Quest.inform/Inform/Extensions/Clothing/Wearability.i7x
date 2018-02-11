@@ -12,7 +12,7 @@ Definition: a clothing (called C) is actually wearable:
 	decide yes.
 
 wearing-target is a clothing that varies.
-summoning is a number that varies. [If summoning is set to 1, then we do not output text whilst checking rules because we are summoning.  If summoning is set to 0, then we are trying to wear an item of clothing, so we do output text explaining why.]
+summoning is a number that varies. [If summoning is set to 1, then we do not output text whilst checking rules because we are summoning. If summoning is set to 0, then we are trying to wear an item of clothing, so we do output text explaining why.]
 
 the global wearability rules is a rulebook.
 
@@ -171,7 +171,7 @@ This is the pussy protected players can't wear vagina plugging clothes rule:
 The pussy protected players can't wear vagina plugging clothes rule is listed in the global wearability rules.
 
 This is the clothes can't be worn when in danger rule:
-	if summoning is 0 and the player is in danger and wearing-target is not equippable:
+	if summoning is 0 and the player is in danger and wearing-target is not equippable and wearing-target is not accessory:
 		say "You can't do that now, you have to deal with the [random dangerous monster in the location of the player]!";
 		rule fails.
 The clothes can't be worn when in danger rule is listed in the global wearability rules.
@@ -244,3 +244,4 @@ The cultist won't wear blessed clothing rule is listed in the global wearability
 
 
 Wearability ends here.
+

@@ -2,7 +2,10 @@ Stuffed Mushroom by Food begins here.
 
 
 
-A stuffed mushroom is a kind of chef food.  There is 1 stuffed mushroom.  The printed name of a stuffed mushroom is "[TQlink of item described]stuffed mushroom[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a stuffed mushroom is "[TQlink of item described]stuffed mushrooms[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of stuffed mushroom is usually "sm".   The description of a stuffed mushroom is "A large mushroom [if the quality of the noun > -1]stuffed with tasty ingredients. It smells so good.[otherwise if diaper quest is 1]stuffed with tasty ingredients. It has a really sharp odour.[otherwise if the quality of the noun is -1]stuffed with tasty ingredients. It has a really sharp odour. Like someone came on it.[otherwise]cooked and glazed with 100% pure [semen].[end if]".
+A stuffed mushroom is a kind of chef food. There is 1 stuffed mushroom. The printed name of a stuffed mushroom is "[TQlink of item described]stuffed mushroom[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a stuffed mushroom is "[TQlink of item described]stuffed mushrooms[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of stuffed mushroom is usually "sm". The description of a stuffed mushroom is "A large mushroom [if the quality of the noun > -1]stuffed with tasty ingredients. It smells so good.[otherwise if diaper quest is 1]stuffed with tasty ingredients. It has a really sharp odour.[otherwise if the quality of the noun is -1]stuffed with tasty ingredients. It has a really sharp odour. Like someone came on it.[otherwise]cooked and glazed with 100% pure [semen].[end if]".
+
+To say ShortDesc of (C - a stuffed mushroom):
+	say "stuffed mushroom".
 
 To say DevourFlav of (C - a stuffed mushroom):
 	if diaper quest is 1, say "You [if the flesh volume of arms > 7]greedily stuff the [noun] in your face, taking a few noisy chomps before swallowing it whole.[otherwise if the quality of the noun > -2]speedily devour the rich, oily [noun].[otherwise]slowly eat the [noun], savouring the rich, oily taste and mulling over its texture.[end if]";
@@ -13,13 +16,13 @@ Carry out TQeating stuffed mushroom:
 	say "[DevourFlav of the noun]";
 	if diaper quest is 1:
 		 if the quality of the noun is -2:
-			say "You can't deny how filling it was, but it's even harder to deny the weird aftertaste that comes with every single bite.  There's definitely some extra ingredient in this, and knowing the nature of this game it's probably not going to [italic type]help[roman type] your ability to use a toilet like an adult...";
+			say "You can't deny how filling it was, but it's even harder to deny the weird aftertaste that comes with every single bite. There's definitely some extra ingredient in this, and knowing the nature of this game it's probably not going to [italic type]help[roman type] your ability to use a toilet like an adult...";
 			increase incontinence by 1;
 		 otherwise:
 			say "You feel way healthier after such a filling meal, albeit pretty lethargic.";
 			DexDown 1;
 	otherwise if the quality of the noun is -2:
-		say "You can't deny how filling it was, but it's even harder to deny the slimy feeling of [semen] on your tongue and sliding down your throat in every single bite. It was more jizz than mushroom! [variable custom style][if the semen taste addiction of the player < 8]How could I eat something so obscene! I wasn't really that hungry, was I?[otherwise if the semen taste addiction of the player < 14]I guess if I had to choose between this and sucking dick when I'm hungry...[otherwise]So delicious! I might have to eat everything with [semen] on it now![end if][roman type]";
+		say "You can't deny how filling it was, but it's even harder to deny the slimy feeling of [semen] on your tongue and sliding down your throat in every single bite. It was more jizz than mushroom! [line break][variable custom style][if the semen taste addiction of the player < 8]How could I eat something so obscene! I wasn't really that hungry, was I?[otherwise if the semen taste addiction of the player < 14]I guess if I had to choose between this and sucking dick when I'm hungry...[otherwise]So delicious! I might have to eat everything with [semen] on it now![end if][roman type][line break]";
 		BodyHeal the fat of the noun;
 		Humiliate 40 - the semen taste addiction of the player;
 		StomachSemenUp 2;
@@ -28,7 +31,7 @@ Carry out TQeating stuffed mushroom:
 		say "You feel way healthier after such a filling meal, albeit pretty lethargic.";
 		DexDown 1;
 	otherwise:
-		say "You feel a lot healthier after such a filling meal, but you feel pretty weighed down too.  Really, really weighed down.";
+		say "You feel a lot healthier after such a filling meal, but you feel pretty weighed down too. Really, really weighed down.";
 		BustUp the fat of the noun;
 		if weight gain fetish is 1:
 			FatAssUp the fat of the noun;
@@ -40,3 +43,4 @@ Carry out TQeating stuffed mushroom:
 
 
 Stuffed Mushroom ends here.
+

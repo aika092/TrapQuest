@@ -126,26 +126,26 @@ Report wearing something (this is the identify-magic-state rule):
 	if the noun is wearthing:
 		unless the noun is absorption or the noun is dressup, now the magic-ID of the noun is identified;
 		now the curse-ID of the noun is sure;
-		if newbie tips is 1 and the noun is cursed and tutorial is 0, say "[one of][item style]Newbie tip: Uh-oh, this item is cursed!  That means that you won't be able to take it off on your own.  You need to find an altar to get it blessed.  There is one somewhere in the Dungeon, and one in the Woods.  The one in the Dungeon works on a simple timer, you can use it about once every 5 minutes of in-game time; and all you need to do is [']place['] the item you want blessed onto the altar.  The one in the woods works very differently, as you'll find out when you speak to the witch that guards it![roman type][line break][or][stopping]".
+		if newbie tips is 1 and the noun is cursed and tutorial is 0, say "[one of][item style]Newbie tip: Uh-oh, this item is cursed!  That means that you won't be able to take it off on your own. You need to find an altar to get it blessed. There is one somewhere in the Dungeon, and one in the Woods. The one in the Dungeon works on a simple timer, you can use it about once every 5 minutes of in-game time; and all you need to do is [']place['] the item you want blessed onto the altar. The one in the woods works very differently, as you'll find out when you speak to the witch that guards it![roman type][line break][or][stopping]".
 The identify-magic-state rule is listed last in the report wearing rulebook.
 
 Report wearing suppression clothing:
-	say "A mild feeling of inner peace comes over you as you finish putting the clothing on.  [if the sex addiction of the player > 3]You feel like the clothing may be trying to fight the arousal that keeps building up inside of you.  [end if]This is a magic [ShortDesc of the noun]!".
+	say "A mild feeling of inner peace comes over you as you finish putting the clothing on. [if the sex addiction of the player > 3]You feel like the clothing may be trying to fight the arousal that keeps building up inside of you. [end if]This is a magic [ShortDesc of the noun]!".
 
 Report plugging something with suppression clothing:
-	say "A mild feeling of inner peace comes over you as you finish pushing it in. [if the sex addiction of the player > 3]You feel like it might be trying to fight the arousal that keeps building up inside of you.  [end if]This is a magic [ShortDesc of the second noun]!".
+	say "A mild feeling of inner peace comes over you as you finish pushing it in. [if the sex addiction of the player > 3]You feel like it might be trying to fight the arousal that keeps building up inside of you. [end if]This is a magic [ShortDesc of the second noun]!".
 
 Report wearing dominance clothing:
-	say "A strong feeling of confidence flows through you as you finish putting the [noun] on.  [if the raw sex addiction of the player > 10]You feel less eager to take the submissive role in intimate encounters without a fight.  [end if]This is a magic [ShortDesc of the noun]!".
+	say "A strong feeling of confidence flows through you as you finish putting the [noun] on. [if the raw sex addiction of the player > 10]You feel less eager to take the submissive role in intimate encounters without a fight. [end if]This is a magic [ShortDesc of the noun]!".
 	
 Report plugging something with dominance clothing:
-	say "A strong feeling of confidence flows through you as you finish putting it in.  [if the raw sex addiction of the player > 10]You feel less eager to submit to enemies without a fight.  [end if]This is a magic [ShortDesc of the second noun]!".
+	say "A strong feeling of confidence flows through you as you finish putting it in. [if the raw sex addiction of the player > 10]You feel less eager to submit to enemies without a fight. [end if]This is a magic [ShortDesc of the second noun]!".
 
 Report wearing confidence clothing:
-	if the humiliation-influence of the noun >= 0, say "A pleasant feeling flows through you.  You feel good about your body[if the noun is unidentified].  This must be a magic [ShortDesc of the noun][end if]!".
+	if the humiliation-influence of the noun >= 0, say "A pleasant feeling flows through you. You feel good about your body[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing constriction clothing:
-	say "[if the noun is belly covering]The [ShortDesc of the noun][otherwise]An invisible force[end if] clamps down on your waist, forcing it smaller than is at all comfortable.  [if the noun is cursed]It's cursed!  [end if]";
+	say "[if the noun is belly covering]The [ShortDesc of the noun][otherwise]An invisible force[end if] clamps down on your waist, forcing it smaller than is at all comfortable. [if the noun is cursed]It's cursed!  [end if]";
 	now the squirt timer of belly is 1;
 	if the semen volume of vagina > 0 and the pregnancy of the player is 0:
 		say "The [semen] is squeezed from your womb and out of your [vagina].";
@@ -154,34 +154,34 @@ Report wearing constriction clothing:
 			leak vagina semen 1.
 
 Report wearing endurance clothing:
-	say "A strong feeling of energy flows through you[if the noun is unidentified].  This must be a magic [ShortDesc of the noun][end if]!".
+	say "A strong feeling of energy flows through you[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report plugging something with endurance clothing:
-	say "A strong feeling of energy flows through you[if the noun is unidentified].  This must be a magic [ShortDesc of the second noun][end if]!".
+	say "A strong feeling of energy flows through you[if the noun is unidentified]. This must be a magic [ShortDesc of the second noun][end if]!".
 
 Report wearing bed wetting clothing:
 	say "Your bladder tingles slightly[if incontinence < 10], and you somehow can tell you have less control over not wetting yourself![end if]".
 
 Report wearing stumbling clothing:
-	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance.  [otherwise]are glad that you're not wearing heels right now!  [end if]This [ShortDesc of the noun] is making it harder for you to stay balanced!".
+	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now!  [end if]This [ShortDesc of the noun] is making it harder for you to stay balanced!".
 
 Report plugging something with stumbling clothing:
-	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance.  [otherwise]are glad that you're not wearing heels right now!  [end if]This [ShortDesc of the second noun] is making it harder for you to stay balanced!".
+	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now!  [end if]This [ShortDesc of the second noun] is making it harder for you to stay balanced!".
 
 Report wearing posture training clothing:
-	if the number of worn posture training clothing is 1, say "You feel yourself [if the bimbo of the player < 6]involuntarily [end if]push your [BreastDesc] out forward and your [HipDesc] out behind you[if the noun is unidentified].  This must be a magic [ShortDesc of the noun][end if]!".
+	if the number of worn posture training clothing is 1, say "You feel yourself [if the bimbo of the player < 6]involuntarily [end if]push your [BreastDesc] out forward and your [HipDesc] out behind you[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing kicking clothing:
-	say "A rush of energy flows through you.  Your [if there are worn heels]heels[otherwise]feet[end if] feel great[if the noun is unidentified].  This must be a magic [ShortDesc of the noun][end if]!".
+	say "A rush of energy flows through you. Your [if there are worn heels]heels[otherwise]feet[end if] feel great[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing speed clothing:
-	say "A rush of energy flows through you.  Your legs feel great[if the noun is unidentified].  This must be a magic [ShortDesc of the noun][end if]!".
+	say "A rush of energy flows through you. Your legs feel great[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing temptation clothing:
-	say "As you finish putting it on, you find yourself happily [if the noun is skirt or the largeness of breasts < 3]sticking your ass out provocatively behind you, as if trying to tempt others to make a move on you[otherwise]puffing your chest out as far as possible and pushing your shoulders back, as if trying to show off your cleavage as much as possible[end if].  [if the bimbo of the player < 13]You can't bring yourself to feel bad about it though, it feels so natural to you all of a sudden.  [end if][if the noun is bra]This is a bra of temptation![otherwise if the noun is skirt]This is a skirt of temptation![otherwise][line break][end if]".
+	say "As you finish putting it on, you find yourself happily [if the noun is skirt or the largeness of breasts < 3]sticking your ass out provocatively behind you, as if trying to tempt others to make a move on you[otherwise]puffing your chest out as far as possible and pushing your shoulders back, as if trying to show off your cleavage as much as possible[end if]. [if the bimbo of the player < 13]You can't bring yourself to feel bad about it though, it feels so natural to you all of a sudden. [end if][if the noun is bra]This is a bra of temptation![otherwise if the noun is skirt]This is a skirt of temptation![otherwise][line break][end if]".
 	
 Report plugging something with temptation clothing:
-	say "As you finish putting it in, you find yourself happily [if the largeness of breasts < 3]sticking your ass out provocatively behind you, as if trying to tempt others to make a move on you[otherwise]puffing your chest out as far as possible and pushing your shoulders back, as if trying to show off your cleavage as much as possible[end if].  [if the bimbo of the player < 13]You can't bring yourself to feel bad about it though, it feels so natural to you all of a sudden.  [end if][if the noun is unidentified]This must be a magic [ShortDesc of the second noun]![end if]".
+	say "As you finish putting it in, you find yourself happily [if the largeness of breasts < 3]sticking your ass out provocatively behind you, as if trying to tempt others to make a move on you[otherwise]puffing your chest out as far as possible and pushing your shoulders back, as if trying to show off your cleavage as much as possible[end if]. [if the bimbo of the player < 13]You can't bring yourself to feel bad about it though, it feels so natural to you all of a sudden. [end if][if the noun is unidentified]This must be a magic [ShortDesc of the second noun]![end if]".
 
 Report plugging something with refreshment clothing:
 	if the number of lubricants covering the noun is 0:
@@ -202,3 +202,4 @@ Report wearing possession clothing:
 
 
 Wearing ends here.
+

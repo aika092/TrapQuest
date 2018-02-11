@@ -2,9 +2,9 @@ Slutty Monokinis by Dresses begins here.
 
 Part 1 - Yellow String Monokini
 
-A yellow string monokini is a kind of string monokini.  A yellow string monokini is usually see-through.  There is 1 yellow string monokini.  The text-shortcut of yellow string monokini is "ymk".
+A yellow string monokini is a kind of string monokini. A yellow string monokini is usually see-through. There is 1 yellow string monokini. The text-shortcut of yellow string monokini is "ymk".
 
-The armour of yellow string monokini is usually 1.  The soak-limit of yellow string monokini is usually 3.
+The armour of yellow string monokini is usually 1. The soak-limit of yellow string monokini is usually 3.
 
 The printed name of yellow string monokini is usually "[TQlink of item described][clothing-title-before]yellow string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -24,7 +24,7 @@ To say ShortDesc of (C - a yellow string monokini):
 
 Part 2 - Purple Strap Monokini
 
-A purple strap monokini is a kind of strap monokini. There is 1 purple strap monokini.  The text-shortcut of purple strap monokini is "pmk". 
+A purple strap monokini is a kind of strap monokini. There is 1 purple strap monokini. The text-shortcut of purple strap monokini is "pmk". 
 
 The printed name of purple strap monokini is usually "[TQlink of item described][clothing-title-before]purple strap swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -35,14 +35,14 @@ To decide which figure-name is clothing-image of (C - a purple strap monokini):
 
 To say ClothingDesc of (C - a purple strap monokini):
 	say "This piece of elasticated purple fabric is really quite thin.";
-	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].  It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
+	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
 
 To say ShortDesc of (C - a purple strap monokini):
 	say "purple strap swimsuit".
 
 Part 3 - Grey String Monokini
 
-A grey string monokini is a kind of string monokini.  There is 1 grey string monokini.  The text-shortcut of grey string monokini is "gsmk".
+A grey string monokini is a kind of string monokini. There is 1 grey string monokini. The text-shortcut of grey string monokini is "gsmk".
 
 The printed name of grey string monokini is usually "[TQlink of item described][clothing-title-before]grey string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -61,7 +61,7 @@ To say ShortDesc of (C - a grey string monokini):
 Part 4 - Black String Monokini
 
 
-A black string monokini is a kind of string monokini. There is 1 black string monokini.  The text-shortcut of black string monokini is "bmk".
+A black string monokini is a kind of string monokini. There is 1 black string monokini. The text-shortcut of black string monokini is "bmk".
 
 The printed name of black string monokini is usually "[TQlink of item described][clothing-title-before]black string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -80,9 +80,9 @@ To say ShortDesc of (C - a black string monokini):
 Part 5 - Blue Slut Monokini
 
 
-A blue slut monokini is a kind of slut monokini.  There is 1 blue slut monokini.
+A blue slut monokini is a kind of slut monokini. There is 1 blue slut monokini.
 
-The printed name of blue slut monokini is usually "[TQlink of item described][clothing-title-before]blue monokini[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of blue slut monokini is "bm".
+The printed name of blue slut monokini is usually "[TQlink of item described][clothing-title-before]blue monokini[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of blue slut monokini is "bm".
 
 Figure of blue slut monokini is the file "stringmonokini5.png".
 
@@ -102,7 +102,7 @@ To set up influence of (C - a blue slut monokini):
 Part 6 - Pink Minimalist Monokini
 
 
-A pink minimalist monokini is a kind of minimalist monokini.  There is 1 pink minimalist monokini.  A pink minimalist monokini is usually ridiculously low cut.  A pink minimalist monokini is usually sheer-when-wet.  The text-shortcut of pink minimalist monokini is "pmm".
+A pink minimalist monokini is a kind of minimalist monokini. There is 1 pink minimalist monokini. A pink minimalist monokini is usually ridiculously low cut. A pink minimalist monokini is usually sheer-when-wet. The text-shortcut of pink minimalist monokini is "pmm".
 
 The printed name of pink minimalist monokini is usually "[TQlink of item described][clothing-title-before]pink minimalist swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -124,7 +124,7 @@ To say ShortDesc of (C - a pink minimalist monokini):
 Part 7 - Blue Minimalist Monokini
 
 
-A blue minimalist monokini is a kind of minimalist monokini.  There is 1 blue minimalist monokini.  The text-shortcut of blue minimalist monokini is "bmm".
+A blue minimalist monokini is a kind of minimalist monokini. There is 1 blue minimalist monokini. The text-shortcut of blue minimalist monokini is "bmm".
 
 The printed name of blue minimalist monokini is usually "[TQlink of item described][clothing-title-before]blue minimalist swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -142,7 +142,7 @@ To say ShortDesc of (C - a blue minimalist monokini):
 
 Part 8 - Pink Strap Monokini
 
-A pink strap monokini is a kind of strap monokini. There is 1 pink strap monokini.  The text-shortcut of pink strap monokini is "pss". 
+A pink strap monokini is a kind of strap monokini. There is 1 pink strap monokini. The text-shortcut of pink strap monokini is "pss". 
 
 The printed name of pink strap monokini is usually "[TQlink of item described][clothing-title-before]pink strap swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -153,14 +153,14 @@ To decide which figure-name is clothing-image of (C - a pink strap monokini):
 
 To say ClothingDesc of (C - a pink strap monokini):
 	say "This piece of elasticated pink fabric is really quite thin.";
-	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].  It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
+	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
 
 To say ShortDesc of (C - a pink strap monokini):
 	say "pink strap swimsuit".
 
 Part 9 - Purple Minimalist Monokini
 
-A purple minimalist monokini is a kind of minimalist monokini.  There is 1 purple minimalist monokini. The text-shortcut of purple minimalist monokini is "pum".
+A purple minimalist monokini is a kind of minimalist monokini. There is 1 purple minimalist monokini. The text-shortcut of purple minimalist monokini is "pum".
 
 The printed name of purple minimalist monokini is usually "[TQlink of item described][clothing-title-before]purple minimalist swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -179,7 +179,7 @@ To say ShortDesc of (C - a purple minimalist monokini):
 
 Part 10 - White Slut Monokini
 
-A white slut monokini is a kind of slut monokini.  There is 1 white slut monokini. The text-shortcut of white slut monokini is "wm".  A white slut monokini is neck exposing.
+A white slut monokini is a kind of slut monokini. There is 1 white slut monokini. The text-shortcut of white slut monokini is "wm". A white slut monokini is neck exposing.
 
 The printed name of white slut monokini is usually "[TQlink of item described][clothing-title-before]white monokini[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -189,7 +189,7 @@ To decide which figure-name is clothing-image of (C - a white slut monokini):
 	decide on figure of white slut monokini.
 
 To say ClothingDesc of (C - a white slut monokini):
-	say "This bizarre swimsuit consists of just a couple of white straps that connect to your crotch by going up between your cleavage.  The crotch section says the word 'FLIRT' in red letters on the front.";
+	say "This bizarre swimsuit consists of just a couple of white straps that connect to your crotch by going up between your cleavage. The crotch section says the word 'FLIRT' in red letters on the front.";
 	if C is worn, say "It covers absolutely no part of your [ShortDesc of breasts] and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a white slut monokini):
@@ -201,7 +201,7 @@ To set up influence of (C - a white slut monokini):
 
 Part 11 - Black Mesh Monokini
 
-A black mesh monokini is a kind of string monokini. There is 1 black mesh monokini.  The text-shortcut of black mesh monokini is "bms".  A black mesh monokini is see-through.  A black mesh monokini is nipple covering.
+A black mesh monokini is a kind of string monokini. There is 1 black mesh monokini. The text-shortcut of black mesh monokini is "bms". A black mesh monokini is see-through. A black mesh monokini is nipple covering.
 
 The printed name of black mesh monokini is usually "[TQlink of item described][clothing-title-before]black mesh swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -211,7 +211,7 @@ To decide which figure-name is clothing-image of (C - a black mesh monokini):
 	decide on figure of black mesh monokini.
 
 To say ClothingDesc of (C - a black mesh monokini):
-	say "This swimsuit is a tight V of mesh material that meets at your crotch.  It's mesh. ";
+	say "This swimsuit is a tight V of mesh material that meets at your crotch. It's mesh. ";
 	if C is worn, say "It fails to cover your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a black mesh monokini):
@@ -219,3 +219,4 @@ To say ShortDesc of (C - a black mesh monokini):
 
 
 Slutty Monokinis ends here.
+

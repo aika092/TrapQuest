@@ -1,29 +1,51 @@
 Giant Wasp by Monster begins here.
 
-A giant wasp is a kind of monster.  A giant wasp is usually woods dwelling.  A giant wasp is usually airborne.  A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually willing to do anal.  A giant wasp is usually neuter. A giant wasp is poison immune.  A giant wasp has a number called fertilization-cooldown.
+A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilization-cooldown.
 
-There are 8 giant wasps.  Figure of Giant Wasp is the file "wasp1.png".  The printed name of giant wasp is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][monster-adjective of item described] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The printed plural name of giant wasp is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][monster-adjective of item described] giant wasps[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of giant wasp is "wsp".  The description of giant wasp is usually "[GiantWaspDesc]".
+Definition: a giant wasp (called M) is willing to do anal:
+	decide yes.
 
-The list of wasp-types is a list of monster-adjectives that varies.  List of wasp-types is {buzzing, hovering, angry}.
+Definition: A giant wasp (called M) is woods dwelling:
+	if egg laying fetish is 0 or mythical creature fetish is 0, decide no;
+	decide yes.
+
+daddy-wasp is an object that varies.
+newborn-wasp is an object that varies.
+
+Figure of Giant Wasp is the file "wasp1.png". The description of giant wasp is usually "[GiantWaspDesc]". Understand "daddy", "dwsp" as giant wasp when the item described is daddy-wasp. Understand "newborn", "nwsp" as giant wasp when the item described is newborn-wasp.
+
+buzzing giant wasp is a giant wasp. The printed name of buzzing giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]buzzing[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of buzzing giant wasp is "bwsp".
+fluttering giant wasp is a giant wasp. The printed name of fluttering giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fluttering[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of fluttering giant wasp is "fwsp".
+vicious giant wasp is a giant wasp. The printed name of vicious giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]vicious[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of vicious giant wasp is "vwsp".
+lively giant wasp is a giant wasp. The printed name of lively giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]lively[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of lively giant wasp is "lwsp".
+hovering giant wasp is a giant wasp. The printed name of hovering giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]hovering[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of hovering giant wasp is "hwsp".
+angry giant wasp is a giant wasp. The printed name of angry giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]angry[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of angry giant wasp is "awsp".
+stinging giant wasp is a giant wasp. The printed name of stinging giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]stinging[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of stinging giant wasp is "swsp".
+fuzzy giant wasp is a giant wasp. The printed name of fuzzy giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fuzzy[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of fuzzy giant wasp is "fwsp".
+erratic giant wasp is a giant wasp. The printed name of erratic giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]erratic[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of erratic giant wasp is "ewsp".
+nasty giant wasp is a giant wasp. The printed name of nasty giant wasp is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]nasty[end if] giant wasp[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of nasty giant wasp is "nwsp".
+
+
+[The list of wasp-types is a list of monster-adjectives that varies. List of wasp-types is {buzzing, hovering, angry}.
 This is the scramble wasp adjectives rule:
 	sort the list of wasp-types in random order.
-The scramble wasp adjectives rule is listed in the monster adjectives scrambling rules.
+The scramble wasp adjectives rule is listed in the monster adjectives scrambling rules.]
 
 To say GiantWaspDesc:
 	if images visible is 1, display the Figure of Giant Wasp;
-	say "This giant flying insect is larger than you, but is still capable of perfect flight from its rapidly oscillating wings.  As with real wasps in the real world, this beast seems to be very aggressive for no clear reason.  Aside from its terrifying giant stinger, you can also see an ovipositor extending from its underbelly.".
+	say "This giant flying insect is larger than you, but is still capable of perfect flight from its rapidly oscillating wings. As with real wasps in the real world, this beast seems to be very aggressive for no clear reason. Aside from its terrifying giant stinger, you can also see an ovipositor extending from its underbelly.".
 
 To set up (M - a giant wasp):
 	reset M;
 	now the monstersetup of M is 1;
 	if egg laying fetish is 1 and mythical creature fetish is 1:
-		repeat with L running through the list of wasp-types:
+		[repeat with L running through the list of wasp-types:
 			if L is unused:
 				now the monster-adjective of M is L;
 				break;
 			otherwise:
 				now the monster-adjective of M is entry 1 in list of wasp-types;
-				scramble monster adjectives;
+				scramble monster adjectives;]
 		now the difficulty of M is 6;
 		now the fertilization-cooldown of M is 100;
 		now the health of M is the maxhealth of M;
@@ -120,7 +142,7 @@ Part 4 - Fertilize
 To Fertilize (E - a medium egg) with (M - a giant wasp):
 	if E is laid and E is not carried by the player and the player-class is not broodmother:[The broodmother can birth her own giant wasps and needs eggs in general, so we don't want the giant wasps screwing that up]
 		if M is in the location of the player:
-			say "The [M] swoops down and lands next to the [printed name of E].  [one of]A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg.  You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack.  Within seconds, a familiarly looking larva has emerged from the egg.  The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.  Before you realise what has happened, there are two identical giant wasps hovering in front of you.  The 'father' looks ready for round 2, and the newborn doesn't seem to care that you're his 'mother'. It looks like it wants to follow its immediate instincts to reproduce.[or]Once again you are forced to watch the wasp fertilize your egg, changes colour to light brown, doubles in size, and then just as quickly, starts to crack.  Within seconds, a familiarly looking larva has emerged from the egg.  The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.  The 'father' looks ready for round 2, and just like the previous time, the newborn doesn't seem to care that you're his 'mother'...[stopping]";
+			say "The [M] swoops down and lands next to the [printed name of E]. [one of]A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds. Before you realise what has happened, there are two identical giant wasps hovering in front of you. The 'father' looks ready for round 2, and the newborn doesn't seem to care that you're his 'mother'. It looks like it wants to follow its immediate instincts to reproduce.[or]Once again you are forced to watch the wasp fertilize your egg, changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds. The 'father' looks ready for round 2, and just like the previous time, the newborn doesn't seem to care that you're his 'mother'...[stopping]";
 		anger M;
 		remove E from play;
 		let H be a random off-stage wasp-antennae;
@@ -129,16 +151,16 @@ To Fertilize (E - a medium egg) with (M - a giant wasp):
 			say "[bold type]Suddenly a pair of antennae on a headband appears on your head![roman type][line break]";
 		let W be a random off-stage giant wasp;
 		if W is monster:
-			now W is in the location of the player;
+			now W is in the location of M;
 			now the difficulty of W is 6;
 			now the fertilization-cooldown of W is 500;
 			now the fertilization-cooldown of M is 200;
 			anger W;
 			bore W for 1 seconds;
 			now W is released;
-			now W is newborn;
 			now the health of W is the maxhealth of W;
-		now M is daddy.
+			now newborn-wasp is W;
+			now daddy-wasp is M.
 		
 Part 5 - Combat
 
@@ -149,7 +171,7 @@ To compute (M - a giant wasp) protecting against (X - a monster):
 		compute X receiving 1 damage from M.
 
 To say AllyDamageFlav of (M - a giant wasp) on (X - a monster):
-	say "The [M] [one of]speedily flies in to protect you and your eggs.  It [or][stopping]stings the [X]!".
+	say "The [M] [one of]speedily flies in to protect you and your eggs. It [or][stopping]stings the [X]!".
 
 To compute anal sex of (M - a giant wasp):
 	say "The [M] keeps thrusting with its ovipositor!  ";
@@ -158,11 +180,11 @@ To compute anal sex of (M - a giant wasp):
 		say "As the [M] pushes its ovipositor into the deepest recesses of your [asshole], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your belly!";
 		assfill 1 medium eggs;
 	if the reaction of the player > 0:
-		say "You submit to the fucking and relax your [asshole] around the ovipositor.  This lets another egg travel more easily through the sex organ, bringing the [M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]"; [NB: humiliation is carried out inside the "Carry Out Submitting" function.]
+		say "You submit to the fucking and relax your [asshole] around the ovipositor. This lets another egg travel more easily through the sex organ, bringing the [M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]"; [NB: humiliation is carried out inside the "Carry Out Submitting" function.]
 		if the sex-length of M > 1:
 			decrease the sex-length of M by 1;
 			assfill 1 medium eggs;
-	say "[one of][or][or][line break][if the bimbo of the player < 8][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][variable custom style]Oof!  This is intense![otherwise][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
+	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof!  This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
 	decrease the sex-length of M by 1;
 	ruin asshole.
 	
@@ -176,7 +198,7 @@ To compute anal climax of (M - a giant wasp):
 
 The latex punishment rule of a giant wasp is usually the no latex punishment rule.
 
-The wasp priority attack rules is a rulebook.  The priority attack rules of a giant wasp is usually the wasp priority attack rules.
+The wasp priority attack rules is a rulebook. The priority attack rules of a giant wasp is usually the wasp priority attack rules.
 
 This is the wasp fertilizes an egg rule:
 	if there is a laid medium egg in the location of the player and the fertilization-cooldown of current-monster is 0:
@@ -246,7 +268,7 @@ Section 2 - Damage
 To compute damage of (M - a giant wasp):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The [noun] seems to notice you.  Uh-oh...";
+			say "The [noun] seems to notice you. Uh-oh...";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -278,3 +300,4 @@ To compute unique death of (M - a giant wasp):
 
 
 Giant Wasp ends here.
+

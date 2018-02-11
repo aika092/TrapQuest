@@ -4,7 +4,7 @@ A blazing dress is a kind of overdress. A blazing dress is usually unique. A bla
 
 Figure of blazing dress is the file "blazingdress1.png".
 
-The printed name of blazing dress is usually "[TQlink of item described][clothing-title-before]blazing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of blazing dress is "bd".
+The printed name of blazing dress is usually "[TQlink of item described][clothing-title-before]blazing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of blazing dress is "bd".
 
 To decide which figure-name is clothing-image of (C - a blazing dress):
 	decide on figure of blazing dress.
@@ -13,7 +13,7 @@ To say ClothingDesc of (C - a blazing dress):
 	say "A red latex dress reminiscent of fire. Its skirt only barely covers your crotch, and your breasts very nearly hang out of it.".
 	
 To compute SelfExamineDesc of (C - a blazing dress):
-	say "A [ShortDesc of C] tightly fits your body.  ".
+	say "A [ShortDesc of C] tightly fits your body. ".
 	
 To say ShortDesc of (C - a blazing dress):
 	say "blazing red dress".
@@ -30,3 +30,4 @@ Definition: a blazing dress (called C) is untransformable:
 
 
 Blazing Dress ends here.
+

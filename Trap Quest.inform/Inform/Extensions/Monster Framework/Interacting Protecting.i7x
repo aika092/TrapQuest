@@ -25,6 +25,7 @@ To compute (M - a monster) protecting against (X - a monster): [Default protecti
 	if M is intelligent:
 		say "[one of]The [M] watches, seemingly unconcerned by your situation.[or][or]The [M] nods with interest, as if rating your performance.[or][or]Your actions appear to interest the [M], who purses [his of M] lips as if unsure if your heart is really in this.[or][or]The [M] seems mildly surprised by your actions, but shrugs, not wishing to judge you.[or][or]The [M] shakes [his of M] head, as if surprised by your behaviour.[or][or]The [M] looks away, as if embarrassed by your choice of actions.[cycling]";
 	otherwise:
-		say "[one of]The [M] watches, seemingly not noticing your situation.[or]The [M] appears not to have noticed what's going on![or]The [M] is looking the other way, and doesn't see your humiliating situation.[or]The [M] seems confused by your actions.[or]The [M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really.  Besides, it's not like the [M] cares. Right?[cycling]".
+		say "[one of]The [M] watches, seemingly not noticing your situation.[or]The [M] appears not to have noticed what's going on![or]The [M] is looking the other way, and doesn't see your humiliating situation.[or]The [M] seems confused by your actions.[or]The [M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really. Besides, it's not like the [M] cares. Right?[cycling]".
 
 Interacting Protecting ends here.
+

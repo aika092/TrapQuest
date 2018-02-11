@@ -1,12 +1,12 @@
 Equippables Framework by Equippables begins here.
 
-An equippable is a kind of clothing.  An equippable can be slap ready, knee ready or kick ready.  An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee.
+An equippable is a kind of clothing. An equippable can be slap ready, knee ready or kick ready. An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee.
 
 Definition: an equippable (called C) is stealable: [Some clothing can never be stolen or destroyed, even by monsters.]
 	if diaper quest is 1, decide yes;
 	decide no.
 
-Understand "wield [something]", "equip [something]" as wearing.  
+Understand "wield [something]", "equip [something]" as wearing. 
 
 To compute attack of (E - an equippable) at (M - a monster):
 	say "You strike the [noun] with your [E]!  ".
@@ -22,11 +22,11 @@ To uniquely set up (E - an equippable):
 
 Part 1 - Gloves
 
-A gloves is a kind of equippable.  A gloves is usually slap ready.  Understand "pair", "pair of", "glove" as gloves.
+A gloves is a kind of equippable. A gloves is usually slap ready. Understand "pair", "pair of", "glove" as gloves.
 
 Part 2 - Wearability
 
-equippable wearability rules is a rulebook.  The wearability rules of equippable is usually equippable wearability rules.
+equippable wearability rules is a rulebook. The wearability rules of equippable is usually equippable wearability rules.
 
 This is the slap ready equippable already worn rule:
 	if wearing-target is slap ready:
@@ -55,3 +55,4 @@ Check taking off worn gloves:
 		say "You would need to stop wielding the [E] first." instead.
 
 Equippables Framework ends here.
+

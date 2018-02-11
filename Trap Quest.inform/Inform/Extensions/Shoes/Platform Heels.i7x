@@ -2,7 +2,7 @@ Platform Heels by Shoes begins here.
 
 A platform heels is a kind of heels.  The printed name of platform heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch platform heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of platform heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch platform heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of platform heels is "phe".
 
-There is 1 leather platform heels.  There is 1 latex platform heels.  There is 1 pvc platform heels.
+There is 1 leather platform heels. There is 1 latex platform heels. There is 1 pvc platform heels.
 
 To decide which number is the kick-bonus of (S - a platform heels):
 	decide on the heel-height of S - 2.
@@ -53,3 +53,4 @@ Definition: a platform heels (called C) is untransformable:
 
 
 Platform Heels ends here.
+

@@ -77,7 +77,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		compute orifice soreness decay;
 	if the remainder after dividing local-earnings by 676 < local-seconds:
 		compute makeup decay;
-	if the remainder after dividing local-earnings by 23 < local-seconds:
+	if the remainder after dividing local-earnings by 9 < local-seconds:
 		compute inflation decay;
 	if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
 		compute stat healing;
@@ -125,7 +125,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				otherwise if the player is in the Mansion:
 					now M is in Mansion01;
 				now M is captive;
-				say "Some speakers come to life, and you hear an announcement! [second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type]";
+				say "Some speakers come to life, and you hear an announcement! [line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
 				now time-tracking is 400;
 	[succubus souls]
 	if the remainder after dividing local-earnings by 250 < local-seconds and the player-class is succubus:
@@ -252,19 +252,18 @@ REQUIRES COMMENTING
 +!]
 To compute inflation decay:
 	let flav-said be 0;
-	if the player is flying or a random number between 1 and 2 is 1:
-		if the air volume of breasts > 0:
-			bustdeflate 1;
-			say "Your [BreastDesc] [if the air volume of belly > 0]and [BellyDesc] [end if][if the air volume of hips > 0]and [ShortDesc of hips] [end if]have slightly deflated.";
-			now flav-said is 1;
-		if the air volume of belly > 0:
-			decrease the air volume of belly by 1;
-			if flav-said is 0, say "Your [BellyDesc] [if the air volume of hips > 0]and [ShortDesc of hips] have[otherwise]has[end if] slightly deflated.";
-			now flav-said is 1;
-		if the air volume of hips > 0:
-			decrease the air volume of hips by 1;
-			if flav-said is 0, say "Your [ShortDesc of hips] have slightly deflated.";
-		if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air!  How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][variable custom style]I'm a floating blimp.  How disgraceful![roman type][line break][or][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][variable custom style]This is a strangely calming experience...[roman type][line break][or][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
+	if the air volume of breasts > 0:
+		bustdeflate 1;
+		say "Your [BreastDesc] [if the air volume of belly > 0]and [BellyDesc] [end if][if the air volume of hips > 0]and [ShortDesc of hips] [end if]have slightly deflated.";
+		now flav-said is 1;
+	if the air volume of belly > 0:
+		decrease the air volume of belly by 1;
+		if flav-said is 0, say "Your [BellyDesc] [if the air volume of hips > 0]and [ShortDesc of hips] have[otherwise]has[end if] slightly deflated.";
+		now flav-said is 1;
+	if the air volume of hips > 0:
+		decrease the air volume of hips by 1;
+		if flav-said is 0, say "Your [ShortDesc of hips] have slightly deflated.";
+	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air!  How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
 
 
 		
@@ -283,3 +282,4 @@ To compute stat healing:
 
 
 Periodical Other Effects ends here.
+

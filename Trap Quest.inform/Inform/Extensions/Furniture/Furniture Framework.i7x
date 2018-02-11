@@ -1,9 +1,9 @@
 Furniture Framework by Furniture begins here.
 
-Furniture is a kind of thing.  Furniture is not portable.  Furniture has a magic-curse.  The magic-curse of furniture is usually bland.  Furniture can be permanent fixture.  Furniture is usually not permanent fixture.
+Furniture is a kind of thing. Furniture is not portable. Furniture has a magic-curse. The magic-curse of furniture is usually bland. Furniture can be permanent fixture. Furniture is usually not permanent fixture.
 
 Report going when there is furniture in the location of the player and newbie tips is 1:
-	say "[one of][item style]Newbie tip: There's an item of furniture in this room.  Pay close attention to where these are - when you take physical damage from fights[if the body soreness of the player > 0] (for example you are hurt right now)[end if], you'll need to 'rest on' the furniture in order to heal up.  However, when you do this, your exercise count will go back down to 0.  While your exercise count is high, you'll sometimes [if weight gain fetish is 1]burn fat or [end if]gain strength or dexterity.[roman type][line break][or][stopping]".
+	say "[one of][item style]Newbie tip: There's an item of furniture in this room. Pay close attention to where these are - when you take physical damage from fights[if the body soreness of the player > 0] (for example you are hurt right now)[end if], you'll need to 'rest on' the furniture in order to heal up. However, when you do this, your exercise count will go back down to 0. While your exercise count is high, you'll sometimes [if weight gain fetish is 1]burn fat or [end if]gain strength or dexterity.[roman type][line break][or][stopping]".
 
 Section 1 - Furniture Verb
 
@@ -200,7 +200,7 @@ This function is called when the player finishes resting without being interrupt
 +!]
 To compute rest completion of (F - a furniture):
 	if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
-	otherwise say "[second custom style]I'm full of energy again.  Yum![roman type][line break]";
+	otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
 	now resting is 0;
 	try standing.
 
@@ -215,3 +215,4 @@ To compute rest ending of (F - a furniture):
 	do nothing.
 
 Furniture Framework ends here.
+

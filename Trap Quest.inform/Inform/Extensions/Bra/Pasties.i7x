@@ -1,6 +1,6 @@
 Pasties by Bra begins here.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20.  The max size of a pasties is 20. A pasties is usually fully exposing. There is 1 unique pasties. Understand "stickers", "caps", "nipple" as pasties.
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually fully exposing. There is 1 unique pasties. Understand "stickers", "caps", "nipple" as pasties.
 
 Figure of pasties is the file "pasties1.png".
 
@@ -55,3 +55,4 @@ To decide which number is the perceived-bimbo-influence of (C - a tassels):
 
 
 Pasties ends here.
+

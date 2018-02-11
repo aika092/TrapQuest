@@ -5,7 +5,7 @@ Body Soreness by Player begins here.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called body soreness.  The body soreness of the player is usually 0.  [Min 0 Max 10]
+The player has a number called body soreness. The body soreness of the player is usually 0. [Min 0 Max 10]
 
 [!<BodyRuinX>+
 
@@ -37,3 +37,4 @@ To bodyheal (X - a number):
 		if the body soreness of the player > 0, decrease the body soreness of the player by 1.
 
 Body Soreness ends here.
+

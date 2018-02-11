@@ -1,21 +1,24 @@
 Altars by Objects begins here.
 
 
-The dungeon altar is in Dungeon28.  The dungeon altar is not portable.  The description of the dungeon altar is "[AltarDesc]".  The dungeon altar has a number called charge.  The charge of the dungeon altar is usually -200.  The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]".  The indefinite article of the dungeon altar is "an".  The text-shortcut of dungeon altar is "al".
+The dungeon altar is in Dungeon28. The dungeon altar is not portable. The description of the dungeon altar is "[AltarDesc]". The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al".
 
 To say AltarDesc:
 	if images visible is 1, display figure of dungeon altar;
 	say "A large stone slab held up by two statues of men naked except for loincloths.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]".
 Figure of dungeon altar is the file "altar1.png".
 
-The woods altar is in Woods20.  The woods altar is not portable.  The description of the woods altar is "[WoodsAltarDesc]".  The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]".  Understand "small" as the woods altar.  The indefinite article of the woods altar is "an".  The text-shortcut of woods altar is "al".
+The woods altar is in Woods20. The woods altar is not portable. The description of the woods altar is "[WoodsAltarDesc]". The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The indefinite article of the woods altar is "an". The text-shortcut of woods altar is "al".
 
 To say WoodsAltarDesc:
 	if images visible is 1, display figure of woods altar;
 	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or]  It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
 Figure of woods altar is the file "altar2.png".
 
-The elder altar is in Mansion23. The elder altar is not portable. The description of the elder altar is "[ElderAltarDesc]". The printed name of elder altar is "dark altar[shortcut-desc]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. An elder altar is father material.  The text-shortcut of elder altar is "al".
+The elder altar is in Mansion23. The elder altar is not portable. The description of the elder altar is "[ElderAltarDesc]". The printed name of elder altar is "dark altar[shortcut-desc]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
+
+Definition: an elder altar (called M) is father material:
+	decide yes.
 
 Definition: An elder altar (called E) is live:
 	decide yes.
@@ -35,10 +38,6 @@ Check entering the elder altar:
 Definition: a thing (called C) is demonic:
 	unless C is clothing, decide no;
 	if C is possession, decide yes;
-	if C is demon horns, decide yes;
-	if C is demon broadsword, decide yes;
-	if C is demon codpiece, decide yes;
-	if C is demon tail plug, decide yes;
 	decide no.
 
 Praying it with is an action applying to two things.
@@ -89,18 +88,18 @@ Check praying something with:
 To AltarPunish (T - a thing):
 	if a random number between 1 and 2 is 1:
 		SemenAddictUp 1;
-		say "You feel funny inside.  ";
+		say "You feel funny inside. ";
 
 To AltarPunish (C - a clothing):
 	if a random number between 1 and 2 is 1 or tutorial is 1:
 		if C is worn upgradable clothing:
 			potentially transform C;
-			if tutorial is 1, say "[item style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while.  The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset.  If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again.  Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[item style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
 		otherwise:
 			say "Your [C] is momentarily surrounded by a dark glow.";
 			curse the C;
 			now the C is sure;
-			if tutorial is 1, say "[item style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while.  The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset.  If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again.  Anyway, let's move along to the east![roman type][line break]".
+			if tutorial is 1, say "[item style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]".
 
 To AltarPunish (C - a bottle):
 	if a random number between 1 and 2 is 1:
@@ -121,7 +120,7 @@ Carry out praying something with:
 					bless the noun;
 					now the noun is sure;
 				otherwise:
-					say "A shimmering blue light surrounds you as your [ShortDesc of noun] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband.  A voice appears in your head:  [second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+					say "A shimmering blue light surrounds you as your [ShortDesc of noun] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 					only destroy the noun;
 					let R be a random runic headband;
 					summon R cursed;
@@ -143,7 +142,7 @@ Carry out praying something with:
 							unless X is D:
 								say "Your [X] vanishes!";
 								destroy X;
-						say "A shimmering blue light surrounds you as your [ShortDesc of D] shapeshifts, first turning into pure visible energy and then settling into form as some kind of bizarre solid gold frame.  A voice appears in your head:  [second custom style]'At last, the chosen one has arrived! You are the True Herald, the prophecies speak of your role in deciding the destiny of our entire clan.  Now go, and keep yourself pure, for if you fail, all your descendants will be doomed to be nothing but the playthings of the monsters of this world.'[line break][variable custom style][if the bimbo of the player < 14]My virginity decides the future of this entire world?  That's an extreme amount of responsibility to just drop on someone...[otherwise]I'll do my best, but that outcome sounds kind of fun![end if][roman type][line break]";
+						say "A shimmering blue light surrounds you as your [ShortDesc of D] shapeshifts, first turning into pure visible energy and then settling into form as some kind of bizarre solid gold frame. A voice appears in your head:  [line break][second custom style]'At last, the chosen one has arrived! You are the True Herald, the prophecies speak of your role in deciding the destiny of our entire clan. Now go, and keep yourself pure, for if you fail, all your descendants will be doomed to be nothing but the playthings of the monsters of this world.'[line break][variable custom style][if the bimbo of the player < 14]My virginity decides the future of this entire world?  That's an extreme amount of responsibility to just drop on someone...[otherwise]I'll do my best, but that outcome sounds kind of fun![end if][roman type][line break]";
 						silently transform D into C;
 						increase the raw-magic-modifier of C by 1;
 						now C is blessed;
@@ -165,10 +164,10 @@ Carry out praying something with:
 				now the curse-ID of the noun is sure;
 				reset dungeon altar;
 			otherwise if the noun is blessed:
-				say "Nothing happens.  It [if the noun is sure]is already[otherwise]must already be[end if] blessed!";
+				say "Nothing happens. It [if the noun is sure]is already[otherwise]must already be[end if] blessed!";
 				now the noun is sure;
 			otherwise:
-				say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I tried, but different magic is needed to bless this item!  Seek the witch in the lands above[unless the class of the player is priestess].  Now allow me to rest for a minute, I must recover from the attempt[end if].'";
+				say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if]I tried, but different magic is needed to bless this item!  Seek the witch in the lands above[unless the class of the player is priestess]. Now allow me to rest for a minute, I must recover from the attempt[end if].'";
 				unless the class of the player is priestess, now the charge of the second noun is 60;
 				now the curse-ID of the noun is sure;
 		otherwise if the noun is cursable clothing or the noun is insertable:
@@ -188,12 +187,12 @@ Carry out praying something with:
 			while 1 is 1:
 				let R be a random number from 1 to 9;
 				if permanent makeup is 1:
-					say "The make up on your face feels less... permanent.  Maybe it will start to fade soon!";
+					say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
 					now permanent makeup is 0;
 					break;
 				if the pregnancy of the player > 0:
 					if the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0:
-						say "You feel an emptiness inside of you.  Suddenly, your belly dramatically shrinks!";
+						say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
 						now the pregnancy of the player is 0;
 						now the semen volume of vagina is 1;
 						WombSquirt 1; [This will automatically remove all potential fathers.]
@@ -264,7 +263,7 @@ Carry out praying something with:
 			let T be a random worn cursed clothing;
 			if T is nothing:
 				if the raw strength of the player >= 20 and the raw dexterity of the player >= 20 and the raw intelligence of the player >= 20:
-					say "You feel magic energy flow through you but fizzle out without making a difference.  Maybe you're too powerful already for the altar to be able to help you any more?";
+					say "You feel magic energy flow through you but fizzle out without making a difference. Maybe you're too powerful already for the altar to be able to help you any more?";
 				otherwise if the raw intelligence of the player < the raw strength of the player and the raw intelligence of the player < the raw dexterity of the player:
 					say "You feel yourself getting smarter!";
 					IntUp 1;
@@ -307,6 +306,13 @@ Carry out praying something with:
 				let T be a random living tentacles;
 				summon T cursed;
 				now fertility-summoned is 1;
+			otherwise if there is a worn abyssal tattoo and the class of the player is virgin warrior and voidblade summoned is not 1:
+				say "The darkness of the room grows profound, and you can feel it pressing into you almost like a weight. The only sensation you can feel for what seems like forever is the pressure of the dark. One minute or a thousand years, you are no longer able to even sense time. Time no longer exists. The world no longer exists. You no longer exist. Yes. Forget... Suddenly pink motes begin to flow from your body, and you feel a sense of joy at somehow knowing those are your useless former life leaving you. They form into the shape of a sword, and as the lights come back up, a shard of the darkness remains.";
+				let W be a random voidblade;
+				now W is in Mansion23;
+				humiliate 100;
+				Intdown 2;
+				now voidblade summoned is 1;
 			otherwise if the player is female:[this one needs handling for pussy protection clothing Aika: it also needs to do something for males, I assume?  And what about females that are unable to orgasm? ("if the player is not able to get horny")]
 				repeat with C running through top level protection clothing worn by the player:
 					say "Your [C] vanishes in an ominous black flame!";
@@ -385,6 +391,8 @@ Carry out praying something with:
 			otherwise:
 				say "Nothing happens.". 
 
+voidblade summoned is a number that varies. voidblade summoned is usually 0.
+
 To reset dungeon altar:
 	if the class of the player is priestess and the player is female and the virgin of the player is 1, now the charge of the second noun is 120;
 	otherwise now the charge of the second noun is 300;
@@ -424,3 +432,4 @@ Understand "place [something] on [something]", "offer [something] on [something]
 
 
 Altars ends here.
+

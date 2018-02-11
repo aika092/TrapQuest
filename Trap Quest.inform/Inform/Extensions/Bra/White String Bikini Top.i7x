@@ -1,6 +1,6 @@
 White String Bikini Top by Bra begins here.
 
-A white string bikini top is a kind of string bikini top.  Figure of bikini 1 is the file "bikini1.png".   A white string bikini top is ridiculously low cut.  The text-shortcut of white string bikini top is "wsb".  The soak-limit of a white string bikini top is 5.
+A white string bikini top is a kind of string bikini top. Figure of bikini 1 is the file "bikini1.png". A white string bikini top is ridiculously low cut. The text-shortcut of white string bikini top is "wsb". The soak-limit of a white string bikini top is 5.
 
 There is 1 white string bikini top.
 
@@ -23,3 +23,4 @@ To decide which object is the potential-upgrade-target of (C - a white string bi
 	decide on a random off-stage purple string bikini top.
 
 White String Bikini Top ends here.
+

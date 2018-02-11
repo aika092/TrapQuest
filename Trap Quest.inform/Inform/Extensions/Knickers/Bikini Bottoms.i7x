@@ -1,6 +1,6 @@
 Bikini Bottoms by Knickers begins here.
 
-A bikini bottoms is a kind of knickers.  A bikini bottoms is usually swimwear.  The armour of bikini bottoms is 8.  A bikini bottoms is usually nylon.  Understand "pair", "pair of" as bikini bottoms.
+A bikini bottoms is a kind of knickers. A bikini bottoms is usually swimwear. The armour of bikini bottoms is 8. A bikini bottoms is usually nylon. Understand "pair", "pair of" as bikini bottoms.
 
 Definition: a bikini bottoms is displacable:
 	decide yes.
@@ -8,7 +8,7 @@ Definition: a bikini bottoms is displacable:
 To say selfexamineuniquetitle of (K - a bikini bottoms):
 	say "pair of bikini bottoms".
 
-A crotchless bikini bottoms is a kind of bikini bottoms.  A crotchless bikini bottoms is usually crotch-exposing.  The soak-limit of crotchless bikini bottoms is usually 7.  The armour of a crotchless bikini bottoms is usually 0.
+A crotchless bikini bottoms is a kind of bikini bottoms. A crotchless bikini bottoms is usually crotch-exposing. The soak-limit of crotchless bikini bottoms is usually 7. The armour of a crotchless bikini bottoms is usually 0.
 
 To decide which number is the initial outrage of (C - a crotchless bikini bottoms):
 	decide on 11.
@@ -19,11 +19,11 @@ To decide which object is the unique-upgrade-target of (C - a bikini bottoms):
 
 [cow print bikini bottoms]
 
-A cow print bikini bottoms is a kind of bikini bottoms.  A cow print bikini bottoms is usually unique.
-There is 1 cow print bikini bottoms.  The printed name of cow print bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of cow print bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cow print bikini bottoms is "cbb".
+A cow print bikini bottoms is a kind of bikini bottoms. A cow print bikini bottoms is usually unique.
+There is 1 cow print bikini bottoms. The printed name of cow print bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of cow print bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cow print bikini bottoms is "cbb".
 
 To compute SelfExamineDesc of (K - a cow print bikini bottoms):
-	say "A pair of cow print bikini bottoms modestly covers your [ShortDesc of hips].  ";
+	say "A pair of cow print bikini bottoms modestly covers your [ShortDesc of hips]. ";
 
 To say selfexamineuniquetitle of (K - a cow print bikini bottoms):
 	say "pair of cow print bikini bottoms".
@@ -43,11 +43,11 @@ To decide which object is the unique-upgrade-target of (C - a cow print bikini b
 
 [pink bikini bottoms]
 
-A pink bikini bottoms is a kind of bikini bottoms.  A pink bikini bottoms is usually unique.  A pink bikini bottoms is usually see-through. [Because it rides up into your snatch - see image]
-There is 1 pink bikini bottoms.  The printed name of pink bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of pink bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink bikini bottoms is "pbb".  The armour of pink bikini bottoms is 3.
+A pink bikini bottoms is a kind of bikini bottoms. A pink bikini bottoms is usually unique. A pink bikini bottoms is usually see-through. [Because it rides up into your snatch - see image]
+There is 1 pink bikini bottoms. The printed name of pink bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of pink bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink bikini bottoms is "pbb". The armour of pink bikini bottoms is 3.
 
 To compute SelfExamineDesc of (K - a pink bikini bottoms):
-	say "A super skimpy pair of pink bikini bottoms completely exposes your [ShortDesc of hips][if the player is female] and rides up into your [vagina][end if].  ";
+	say "A super skimpy pair of pink bikini bottoms completely exposes your [ShortDesc of hips][if the player is female] and rides up into your [vagina][end if]. ";
 
 To say selfexamineuniquetitle of (K - a pink bikini bottoms):
 	say "pair of pink bikini microbottoms".
@@ -68,11 +68,11 @@ To decide which object is the potential-upgrade-target of (C - a pink bikini bot
 
 [white crotchless bikini bottoms]
 
-A white crotchless bikini bottoms is a kind of crotchless bikini bottoms.  A white crotchless bikini bottoms is usually unique.
-There is 1 white crotchless bikini bottoms.  The printed name of white crotchless bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of white crotchless bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of white crotchless bikini bottoms is "wbb".
+A white crotchless bikini bottoms is a kind of crotchless bikini bottoms. A white crotchless bikini bottoms is usually unique.
+There is 1 white crotchless bikini bottoms. The printed name of white crotchless bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of white crotchless bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of white crotchless bikini bottoms is "wbb".
 
 To compute SelfExamineDesc of (K - a white crotchless bikini bottoms):
-	say "A super slutty pair of white crotchless bikini bottoms completely exposes your [ShortDesc of hips].  ";
+	say "A super slutty pair of white crotchless bikini bottoms completely exposes your [ShortDesc of hips]. ";
 
 To say selfexamineuniquetitle of (K - a white crotchless bikini bottoms):
 	say "pair of white crotchless bikini bottoms".
@@ -88,11 +88,11 @@ To decide which number is the initial outrage of (C - a white crotchless bikini 
 	decide on 12.
 
 Definition: a white crotchless bikini bottoms (called C) is end of transformation chain:
-	decide yes. [It's the end of the transformation chain.  This will make some things avoid bothering to attempt to transform it.]
+	decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
 
 To say TransformReaction of (C - a white crotchless bikini bottoms):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]Come on, what is even the point of these?!  They don't help me in any way at all.  [if C is cursed]I wish I could[otherwise]I guess I should probably[end if] take them off and wear a normal pair...[roman type][line break]";
+		say "[variable custom style]Come on, what is even the point of these?!  They don't help me in any way at all. [if C is cursed]I wish I could[otherwise]I guess I should probably[end if] take them off and wear a normal pair...[roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]What does it say about me that I kind of like the way this looks?[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
@@ -100,11 +100,11 @@ To say TransformReaction of (C - a white crotchless bikini bottoms):
 
 [black crotchless bikini bottoms]
 
-A black crotchless bikini bottoms is a kind of crotchless bikini bottoms.  A black crotchless bikini bottoms is usually unique.
-There is 1 black crotchless bikini bottoms.  The printed name of black crotchless bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of black crotchless bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of black crotchless bikini bottoms is "bbb".
+A black crotchless bikini bottoms is a kind of crotchless bikini bottoms. A black crotchless bikini bottoms is usually unique.
+There is 1 black crotchless bikini bottoms. The printed name of black crotchless bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of black crotchless bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black crotchless bikini bottoms is "bbb".
 
 To compute SelfExamineDesc of (K - a black crotchless bikini bottoms):
-	say "A super slutty pair of black crotchless bikini bottoms mostly exposes your [ShortDesc of hips].  ";
+	say "A super slutty pair of black crotchless bikini bottoms mostly exposes your [ShortDesc of hips]. ";
 
 To say selfexamineuniquetitle of (K - a black crotchless bikini bottoms):
 	say "pair of black crotchless bikini bottoms".
@@ -124,10 +124,10 @@ To decide which object is the potential-upgrade-target of (C - a black crotchles
 
 [red bikini briefs]
 
-A red bikini briefs is a kind of bikini bottoms.  There is 1 red bikini briefs.  The printed name of red bikini briefs is usually "[TQlink of item described][clothing-title-before]pair of red bikini briefs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of red bikini briefs is "rbb".
+A red bikini briefs is a kind of bikini bottoms. There is 1 red bikini briefs. The printed name of red bikini briefs is usually "[TQlink of item described][clothing-title-before]pair of red bikini briefs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of red bikini briefs is "rbb".
 
 To compute SelfExamineDesc of (K - a red bikini briefs):
-	say "A pair of red bikini briefs leaves most of your [ShortDesc of hips] exposed.  ";
+	say "A pair of red bikini briefs leaves most of your [ShortDesc of hips] exposed. ";
 
 To say selfexamineuniquetitle of (K - a red bikini briefs):
 	say "pair of red bikini briefs".
@@ -136,7 +136,7 @@ To decide which figure-name is clothing-image of (C - a red bikini briefs):
 	decide on figure of bikini bottoms 5.
 
 To say ClothingDesc of (K - a red bikini briefs):
-	say "A bottom half of a bikini outfit with a red pattern.  The cut is quite narrow, leaving a lot of your butt showing.".
+	say "A bottom half of a bikini outfit with a red pattern. The cut is quite narrow, leaving a lot of your butt showing.".
 Figure of bikini bottoms 5 is the file "bikinibottoms5.png".
 
 To decide which number is the initial outrage of (C - a red bikini briefs):
@@ -147,10 +147,10 @@ To decide which object is the potential-upgrade-target of (C - a red bikini brie
 
 [leopard print bikini bottoms]
 
-A leopard print bikini bottoms is a kind of bikini bottoms.  There is 1 leopard print bikini bottoms.  The printed name of leopard print bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of leopard print bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of leopard print bikini bottoms is "lbb".
+A leopard print bikini bottoms is a kind of bikini bottoms. There is 1 leopard print bikini bottoms. The printed name of leopard print bikini bottoms is usually "[TQlink of item described][clothing-title-before]pair of leopard print bikini bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of leopard print bikini bottoms is "lbb".
 
 To compute SelfExamineDesc of (K - a leopard print bikini bottoms):
-	say "A pair of leopard print bikini bottoms leaves some of your [ShortDesc of hips] exposed.  ";
+	say "A pair of leopard print bikini bottoms leaves some of your [ShortDesc of hips] exposed. ";
 
 To say selfexamineuniquetitle of (K - a leopard print bikini bottoms):
 	say "pair of leopard print bikini bottoms".
@@ -159,7 +159,7 @@ To decide which figure-name is clothing-image of (C - a leopard print bikini bot
 	decide on figure of bikini bottoms 6.
 
 To say ClothingDesc of (K - a leopard print bikini bottoms):
-	say "A bottom half of a bikini outfit with a leopard print pattern.  Part of the waist is made of gold coloured metal chain rather than nylon, which gives it a raunchy feel.".
+	say "A bottom half of a bikini outfit with a leopard print pattern. Part of the waist is made of gold coloured metal chain rather than nylon, which gives it a raunchy feel.".
 
 Figure of bikini bottoms 6 is the file "bikinibottoms6.png".
 
@@ -172,3 +172,4 @@ To decide which object is the potential-upgrade-target of (C - a leopard print b
 
 
 Bikini Bottoms ends here.
+

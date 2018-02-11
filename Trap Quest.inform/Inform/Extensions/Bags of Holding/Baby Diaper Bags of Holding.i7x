@@ -10,7 +10,7 @@ Definition: a baby diaper bag of holding (called C) is untransformable:
 
 Part 1 - Baby Buggy Diaper Bag of Holding
 
-A baby buggy diaper bag of holding is a kind of baby diaper bag of holding.  A baby buggy diaper bag of holding is usually cotton.  There is 1 baby buggy diaper bag of holding.  The printed name of baby buggy diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby buggy diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A baby buggy diaper bag of holding is a kind of baby diaper bag of holding. A baby buggy diaper bag of holding is usually cotton. There is 1 baby buggy diaper bag of holding. The printed name of baby buggy diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby buggy diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 Figure of baby buggy diaper bag of holding is the file "bag22.png".
 
@@ -21,11 +21,11 @@ To say ShortDesc of (C - a baby buggy diaper bag of holding):
 	say "baby buggy diaper bag".
 
 To say ClothingDesc of (C - a baby buggy diaper bag of holding):
-	say "A home-made pink diaper bag that holds all your spare items and negates their weight.  It has a baby buggy pattern sewn into the front as well as the words 'Baby girl', which makes it extremely clear what kind of bag it is.  A warning on the label says '[BagHoldingWarning] bag'.".
+	say "A home-made pink diaper bag that holds all your spare items and negates their weight. It has a baby buggy pattern sewn into the front as well as the words 'Baby girl', which makes it extremely clear what kind of bag it is. A warning on the label says '[BagHoldingWarning] bag'.".
 
 Part 2 - Baby Car Diaper Bag of Holding
 
-A baby car diaper bag of holding is a kind of baby diaper bag of holding.  A baby car diaper bag of holding is usually cotton.  There is 1 baby car diaper bag of holding.  The printed name of baby car diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby car diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A baby car diaper bag of holding is a kind of baby diaper bag of holding. A baby car diaper bag of holding is usually cotton. There is 1 baby car diaper bag of holding. The printed name of baby car diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby car diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 Figure of baby car diaper bag of holding is the file "bag23.png".
 
@@ -36,6 +36,7 @@ To say ShortDesc of (C - a baby car diaper bag of holding):
 	say "baby car diaper bag".
 
 To say ClothingDesc of (C - a baby car diaper bag of holding):
-	say "A home-made pink diaper bag that holds all your spare items and negates their weight.  It has a baby car pattern with buttons for wheels sewn into the front as well as the words 'cute as a button', which makes it extremely clear what kind of bag it is.  A warning on the label says '[BagHoldingWarning] bag'.".
+	say "A home-made pink diaper bag that holds all your spare items and negates their weight. It has a baby car pattern with buttons for wheels sewn into the front as well as the words 'cute as a button', which makes it extremely clear what kind of bag it is. A warning on the label says '[BagHoldingWarning] bag'.".
 
 Baby Diaper Bags of Holding ends here.
+

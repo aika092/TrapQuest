@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 @inherits <Trap>
 
 @!]
-A makeup pad is a kind of trap.  There are 12 click makeup pads.  The description of a makeup pad is "A cotton pad on the end of a wooden pole, set up on a catapult style mechanism.".
+A makeup pad is a kind of trap. There are 12 click makeup pads. The description of a makeup pad is "A cotton pad on the end of a wooden pole, set up on a catapult style mechanism.".
 
 [!<TheSpawnInitialDungeonMakeUpTrapsRule>+
 
@@ -69,3 +69,4 @@ To trigger (Y - a makeup pad):
 
 
 Makeup Pad Trap ends here.
+

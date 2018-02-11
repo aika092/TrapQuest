@@ -42,7 +42,7 @@ To decide which number is the appearance of the player: [When an NPC looks at th
 REQUIRES COMMENTING
 
 *!]
-outrage-target is a thing that varies.  
+outrage-target is a thing that varies. 
 
 
 [!<DecideWhichNumberIsCumulativeOutrageLevel>+
@@ -68,7 +68,7 @@ To decide which number is cumulative-outrage-level:
 REQUIRES COMMENTING
 
 *!]
-appearance-outrage-target is a thing that varies.  
+appearance-outrage-target is a thing that varies. 
 
 [!<DecideWhichNumberIsAppearanceOutrageLevel>+
 
@@ -99,3 +99,4 @@ To update appearance level:
 
 
 Appearance ends here.
+

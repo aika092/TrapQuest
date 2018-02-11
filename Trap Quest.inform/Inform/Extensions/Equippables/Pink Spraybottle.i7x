@@ -1,6 +1,6 @@
 Pink Spraybottle by Equippables begins here.
 
-A pink spraybottle is a kind of equippable.  1 pink spraybottle is in Dungeon30. The printed name of pink spraybottle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is cloth]pink washcloth[otherwise]pink washcloth and spraybottle[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink spraybottle is "psp". Understand "rag", "washcloth", "bottle", "spritzer", "wash", "cloth", "spray" as pink spraybottle.
+A pink spraybottle is a kind of equippable. 1 pink spraybottle is in Dungeon30. The printed name of pink spraybottle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is cloth]pink washcloth[otherwise]pink washcloth and spraybottle[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink spraybottle is "psp". Understand "rag", "washcloth", "bottle", "spritzer", "wash", "cloth", "spray" as pink spraybottle.
 
 A pink spraybottle is usually slap ready. A pink spraybottle has a number called charge. The charge of a pink spraybottle is usually 0. A pink spraybottle has a number called work ethic. The work ethic of a pink spraybottle is usually 0. A pink spraybottle is usually unique. A pink spraybottle can be spray or cloth. A pink spraybottle is usually spray. A pink spraybottle is usually projectile. A pink spraybottle is usually cotton.
 
@@ -17,6 +17,9 @@ To say ShortDesc of (W - a pink spraybottle):
 		say "pink washcloth";
 	otherwise:
 		say "bright pink spray bottle".
+
+Definition: a pink spraybottle (called P) is immune to change:
+	decide yes.
 
 Check taking pink spraybottle:
 	unless the class of the player is maid:
@@ -40,7 +43,7 @@ Report taking pink spraybottle:
 	if newbie tips is 1, say "[item style][one of]You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of semen[if watersports fetish is 1 or lactation fetish is 1] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type]".
 
 Check taking off pink spraybottle:
-	if the work ethic of the noun < 20 and the class of the player is maid, say "You try, but it's like the [noun] won[']t let you put it down. [variable custom style]'Maybe I have to clean something with it first?'[roman type]" instead.
+	if the work ethic of the noun < 20 and the class of the player is maid, say "You try, but it's like the [noun] won[']t let you put it down. [line break][variable custom style]'Maybe I have to clean something with it first?'[roman type][line break]" instead.
 
 To compute periodic effect of (C - a pink spraybottle):
 	if C is cloth and the work ethic of C > 200:
@@ -52,7 +55,7 @@ To compute periodic effect of (C - a pink spraybottle):
 
 To compute (S - a pink spraybottle) breaking:
 	if a random number between 1 and the dexterity of the player < 5 or (a  random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
-		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][second custom style][one of]Oopsie!  I'm such a klutz sometimes![or]Tee hee, it happened again!  I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
+		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie!  I'm such a klutz sometimes![or]Tee hee, it happened again!  I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
 		let M be a random mechanic in the location of the player;
 		now S is cloth;
 		now the charge of S is 0;
@@ -88,7 +91,7 @@ To compute spraybottle punishment:[Punishments: buttplug + bucket + vibrator]
 			summon P cursed;
 			say "You feel your a hard object prodding at your [asshole], as if trying to get inside. It succeeds, [if the openness of asshole < 10]brutally [end if]stretching you out as it forces its way in.";
 		otherwise if the number of monsters grabbing the player is 0 and a random number between 1 and 4 is 1:
-			say "You notice a shadow looming over you, and look around just in time to see a broad wooden paddle colliding harshly with your backside.[variable custom style]Ow ow ow![roman type][line break]";
+			say "You notice a shadow looming over you, and look around just in time to see a broad wooden paddle colliding harshly with your backside.[line break][variable custom style]Ow ow ow![roman type][line break]";
 			try kneeling;
 			FatigueUp 30;
 			bodyruin 1;
@@ -132,7 +135,7 @@ To compute spraybottle punishment:[Punishments: buttplug + bucket + vibrator]
 
 To compute (M - a mechanic) considering (T - a pink spraybottle):
 	if T is cloth:
-		say "[speech style of M]'Ugh. Here I was thinking you might [if diaper quest is 1]be able to hold some adult responsibilities[otherwise]be useful as more than a pair of walking tits[end if], but you actually managed to break your only tool. Fucking incredible.'[roman type] He takes the destroyed pieces of your [printed name of T] and puts them into a small pocket on his utility belt. [speech style of M]'Honestly, I should fire you, but I[']m willing to hold onto it for you until you a figure out a way to make this up to me. Understand?  [if diaper quest is 0]There's two things I like - blowjobs and[otherwise]Here's a hint - I like[end if] *ahem* amulets...'[roman type]";
+		say "[speech style of M]'Ugh. Here I was thinking you might [if diaper quest is 1]be able to hold some adult responsibilities[otherwise]be useful as more than a pair of walking tits[end if], but you actually managed to break your only tool. Fucking incredible.'[roman type] He takes the destroyed pieces of your [printed name of T] and puts them into a small pocket on his utility belt. [line break][speech style of M]'Honestly, I should fire you, but I[']m willing to hold onto it for you until you a figure out a way to make this up to me. Understand?  [if diaper quest is 0]There's two things I like - blowjobs and[otherwise]Here's a hint - I like[end if] *ahem* amulets...'[roman type][line break]";
 		now T is in Holding Pen;
 		now M is retaining T;
 		now M is withholding T;
@@ -142,3 +145,4 @@ To compute (M - a mechanic) considering (T - a pink spraybottle):
 
 
 Pink Spraybottle ends here.
+

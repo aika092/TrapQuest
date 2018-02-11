@@ -11,3 +11,4 @@ To decide which number is the strength-influence of (T - a weakness tattoo):
 	decide on -5.
 
 Weakness Tattoo ends here.
+

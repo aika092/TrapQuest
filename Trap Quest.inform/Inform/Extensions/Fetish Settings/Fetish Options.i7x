@@ -24,7 +24,7 @@ title	subtable	description	toggle
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - 6 points ([if mythical creature fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	mythical creature fetish toggle rule
 "Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if tentacle fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	tentacle fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if TG fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	TG fetish toggle rule
-[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters.  But them above this row instead.]
+[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. But them above this row instead.]
 
 
 [!<TheBukkakeFetishToggleRule>+
@@ -240,3 +240,4 @@ This is the tentacle nightmare rule:
 The tentacle nightmare rule is listed in the nightmare mode rules.
 
 Fetish Options ends here.
+

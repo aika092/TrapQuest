@@ -1,6 +1,6 @@
 Skirts Framework by Skirts begins here.
 
-A skirt is a kind of clothing.  A skirt is usually knee-length.  Understand "skirt" as skirt. The soak-limit of a skirt is usually 16.
+A skirt is a kind of clothing. A skirt is usually knee-length. Understand "skirt" as skirt. The soak-limit of a skirt is usually 16.
 
 To decide which number is the initial outrage of (C - a skirt):
 	decide on 2;
@@ -82,7 +82,7 @@ Chapter - Wearability
 Check wearing gown of purity:
 	if the virgin of the player is 0, say "The latches of the belt refuse to close!  It's almost as if the 'gown' is refusing to let you wear it..." instead;
 
-skirt wearability rules is a rulebook.  The wearability rules of skirt is usually skirt wearability rules.
+skirt wearability rules is a rulebook. The wearability rules of skirt is usually skirt wearability rules.
 
 This is the skirt already worn rule:
 	repeat with O running through worn skirts:
@@ -103,3 +103,4 @@ Check taking off worn skirt:
 
 
 Skirts Framework ends here.
+

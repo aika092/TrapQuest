@@ -54,6 +54,7 @@ To decide which number is the flat intelligence of the player:
 	decrease I by the incidents of enema-int-loss;
 	if the arousal of the player >= 5000, decrease I by (the arousal of the player - 2000) / 3000;
 	increase I by ((strawberry-lace-timer + default-candy-duration - 1) / default-candy-duration) * 6;
+	if the the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
 	if toffee-poison-timer > 0, now I is I / 2;
 	if the bimbo of the player is 19 and I > 5:
 		now I is 5;
@@ -80,14 +81,14 @@ Part 2 - Modify Intelligence
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw intelligence.  The raw intelligence of the player is usually 7. [Min 1 Max 30]
+The player has a number called raw intelligence. The raw intelligence of the player is usually 7. [Min 1 Max 30]
 
 [!<Player>@<oldIntelligence:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called old intelligence.  The old intelligence of the player is usually 0.
+The player has a number called old intelligence. The old intelligence of the player is usually 0.
 
 
 [!<IntUpX>+
@@ -103,9 +104,7 @@ To Intup (X - a number):
 		decrease X by 1;
 		if the raw intelligence of the player < 30:
 			repeat with M running through alive monsters:
-				if the question-asked of M > 0:
-					now the question-asked of M is 0;
-				otherwise if a random number between 1 and 2 is 1 and the questioned of M > 100:
+				if a random number between 1 and 2 is 1 and the questioned of M > 100:
 					decrease the questioned of M by 100;
 			increase the raw intelligence of the player by 1;
 			if the class of the player is schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1.[Dumb schoolgirls can double dip on intelligence gains.]
@@ -133,3 +132,4 @@ To Intdown (X - a number):
 			decrease the raw intelligence of the player by 1. [One orgasm away from instant loss.]
 
 Intelligence ends here.
+

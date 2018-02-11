@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <BodyPart>
 
 @!]
-penis is a body part.  penis is everywhere.  The description of penis is "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
+penis is a body part. penis is everywhere. The description of penis is "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
@@ -18,14 +18,14 @@ Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "w
 REQUIRES COMMENTING
 
 *@!]
-penis has a number called size.  the size of penis is usually 0.
+penis has a number called size. the size of penis is usually 0.
 
 [!<Penis>@<realSize:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-penis has a number called real size.  The real size of penis is usually 0.
+penis has a number called real size. The real size of penis is usually 0.
 
 [!<PenisIsTiny>+
 
@@ -46,7 +46,7 @@ Definition: penis is lewdly exposed:
 	decide no.
 
 To decide which number is the lewdly exposed outrage of (P - penis):
-	decide on 12 - the size of penis.  [allows us to easily tweak this number]
+	decide on 12 - the size of penis. [allows us to easily tweak this number]
 
 [!<PenisIsAtLeastPartiallyLewdlyExposed>+
 
@@ -58,7 +58,7 @@ Definition: penis is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (P - penis):
-	decide on 10 - the size of penis.  [allows us to easily tweak this number]
+	decide on 10 - the size of penis. [allows us to easily tweak this number]
 
 [!<PenisIsExposed>+
 
@@ -203,13 +203,13 @@ REQUIRES COMMENTING
 To say TotalDesc of penis:
 	if the size of penis > 0:
 		if there is worn chastity cage:
-			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage.  ";
+			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
 		otherwise if there is a worn pussy covering clothing:
-			say "You have a [ShortDesc of penis] and [ShortBallsDesc].  ";
+			say "You have a [ShortDesc of penis] and [ShortBallsDesc]. ";
 		otherwise:
-			say "Your [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely.  [otherwise if the size of penis > 3]hang freely.  [otherwise]are barely noticeable.  [end if]";
+			say "Your [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
 	otherwise if the player is male:
-		say "A doll-like flat mound exists where your penis used to be.  [if watersports fetish is 1 or diaper lover >= 1]There's just a tiny hole to allow you to pee.[end if]".
+		say "A doll-like flat mound exists where your penis used to be. [if watersports fetish is 1 or diaper lover >= 1]There's just a tiny hole to allow you to pee.[end if]".
 
 [!<SayShortBallsDesc>+
 
@@ -235,12 +235,12 @@ To say PenisModesty:
 	if penis is exposed:
 		if there is a pussy covering clothing:
 			let W be a random pussy covering clothing;
-			say "It is clearly visible [if W is actually dense]poking out of[otherwise]through[end if] your [selfexamineuniquetitle of W].  ";
+			say "It is clearly visible [if W is actually dense]poking out of[otherwise]through[end if] your [selfexamineuniquetitle of W]. ";
 		otherwise:
-			say "You have no clothing covering it.  ";
+			say "You have no clothing covering it. ";
 	otherwise if the size of penis > 0:
 		let W be a random worn actually penis covering clothing;
-		say "It can't be seen thanks to the [selfexamineuniquetitle of W].  ".
+		say "It can't be seen thanks to the [selfexamineuniquetitle of W]. ".
 
 Part 3 - Modify Penis Stats
 
@@ -266,7 +266,7 @@ To PenisUp (X - a number):
 			dignify 15;
 			if X is 0, say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!".
 
-Shrink is a text that varies.  Shrink is "shrink".
+Shrink is a text that varies. Shrink is "shrink".
 
 [X is not how much the penis shrinks, but how many times it does so]
 To PenisDown (X - a number):
@@ -292,3 +292,4 @@ To PenisDown (X - a number):
 
 
 Penis ends here.
+

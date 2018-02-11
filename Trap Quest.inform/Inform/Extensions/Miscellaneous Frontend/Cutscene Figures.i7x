@@ -173,6 +173,8 @@ Figure of Minotaur Cutscene 6 is the file "cutscene-minotaur-splash1.png".
 
 Figure of Wasp Cutscene 1 is the file "cutscene-wasp-sex1.png".
 
+Figure of Mindflayer Cutscene 1 is the file "cutscene-mindflayer-perception1.png".
+
 Figure of Tentacle Cutscene 1 is the file "cutscene-tentacle-birth1.png".
 
 Figure of Slimegirl Cutscene 1 is the file "cutscene-slimegirl1.png".
@@ -212,6 +214,8 @@ Figure of Hook Cutscene 4 is the file "cutscene-hook-pull2.png".
 Figure of Hook Cutscene 5 is the file "cutscene-hook-orgasm1.png".
 Figure of Hook Cutscene 6 is the file "cutscene-hook-orgasm2.png".
 
+Figure of Hose Cutscene 1 is the file "cutscene-hose1.png".
+
 Figure of Princess Diaper Cutscene 1 is the file "cutscene-jamjar1.png".
 Figure of Clubbing Diaper Cutscene 1 is the file "cutscene-jamjar2.png".
 Figure of Wet Nappies Diaper Cutscene 1 is the file "cutscene-jamjar3.png".
@@ -235,4 +239,7 @@ Figure of Fat Growth 1 is the file "cutscene-fat1.png".
 Figure of Fat Growth 2 is the file "cutscene-fat2.png".
 Figure of Fat Growth 3 is the file "cutscene-fat3.png".
 
+
+
 Cutscene Figures ends here.
+

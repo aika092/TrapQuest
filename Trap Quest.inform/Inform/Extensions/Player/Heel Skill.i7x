@@ -45,14 +45,14 @@ Part 2 - Modify Heel Skill
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw heel skill.  The raw heel skill of the player is usually 0.  [Min 0 Max 10]
+The player has a number called raw heel skill. The raw heel skill of the player is usually 0. [Min 0 Max 10]
 
 [!<Player>@<heelTime:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called heel time.  The heel time of the player is usually 0.
+The player has a number called heel time. The heel time of the player is usually 0.
 
 
 [!<HeelUpX>+
@@ -71,10 +71,10 @@ REQUIRES COMMENTING
 
 +!]
 To 2HeelUp:
-	if the raw heel skill of the player is 1, say "[if the bimbo of the player < 4][first custom style]Right so if I put this foot like this... wow, walking in heels is difficult.[otherwise][second custom style]This is hard... I want to be better at walking in heels![end if][roman type][line break]";
-	if the raw heel skill of the player is 3, say "[if the bimbo of the player < 5][first custom style]Ahh, if I put the heel down first...[otherwise][second custom style]I'm getting better at walking in these... yay![end if][roman type][line break]";
-	if the raw heel skill of the player is 5, say "[if the bimbo of the player < 6][first custom style]I could totally get used to walking in heels![otherwise][second custom style]Walking in heels is fun![end if][roman type][line break]";
-	if the raw heel skill of the player is 8, say "[if the bimbo of the player < 8][first custom style]Okay now I can walk on my heels a bit too well for my liking...[otherwise][second custom style]I can waltz around in heels almost perfectly![end if][roman type][line break]";
+	if the raw heel skill of the player is 1, say "[if the bimbo of the player < 4][line break][first custom style]Right so if I put this foot like this... wow, walking in heels is difficult.[otherwise][line break][second custom style]This is hard... I want to be better at walking in heels![end if][roman type][line break]";
+	if the raw heel skill of the player is 3, say "[if the bimbo of the player < 5][line break][first custom style]Ahh, if I put the heel down first...[otherwise][line break][second custom style]I'm getting better at walking in these... yay![end if][roman type][line break]";
+	if the raw heel skill of the player is 5, say "[if the bimbo of the player < 6][line break][first custom style]I could totally get used to walking in heels![otherwise][line break][second custom style]Walking in heels is fun![end if][roman type][line break]";
+	if the raw heel skill of the player is 8, say "[if the bimbo of the player < 8][line break][first custom style]Okay now I can walk on my heels a bit too well for my liking...[otherwise][line break][second custom style]I can waltz around in heels almost perfectly![end if][roman type][line break]";
 	repeat with C running through worn posture training clothing:
 		if diaper quest is 0 and (the raw heel skill of the player < 10 or a random number between 1 and 100 is 1):
 			say "[bold type][if the thickness of hips < max ass size]As if to reward your excellent posture, the [printed name of C] [bold type]magically increases the size of your hips. [end if][if C is cursed]A slight loosening of the [clothing-material of C] tells you that the curse has been lifted![end if][roman type][line break]";
@@ -102,3 +102,4 @@ To 2HeelDown:
 	
 
 Heel Skill ends here.
+

@@ -1,10 +1,16 @@
 Gargoyle by Monster begins here.
 
-A gargoyle is a kind of monster.  There is 1 gargoyle. A gargoyle is usually mansion dwelling. A gargoyle is poison immune. A gargoyle can be excited. A gargoyle is usually not excited. A gargoyle is usually female.
+A gargoyle is a kind of monster. There is 1 gargoyle. A gargoyle can be excited. A gargoyle is usually not excited. The poison-status of a gargoyle is -1. The paralyze-status of a gargoyle is -1. The blind-status of a gargoyle is -1.
+
+Definition: A gargoyle (called M) is mansion dwelling:
+	decide yes.
 
 The description of gargoyle is usually "[GargoyleDesc]". The text-shortcut of gargoyle is "gy". The printed name of gargoyle is "[if item described is in the location of the player][TQlink of item described][end if][input-style]stone [if mythical creature fetish is 1]gargoyle[otherwise]sentry[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "stone", "statue", "sentry" as gargoyle.
 
+Figure of gargoyle is the file "gargoyle1.png".
+
 To say GargoyleDesc:
+	if images visible is 1, display figure of gargoyle;
 	say "An eerie stone statue of [if mythical creature fetish is 1]a woman with long, curved horns and giant bat-like wings. Every inch of her body is exposed, and although rendered in stone, she gives you the feeling of a beast lying in wait, ready to pounce[otherwise]a winged woman wearing an ill-fitting robe, draped open by her elbows, leaving her chest completely exposed. She is resting on one knee and her head is bowed, as if offering deference to her master. There's something way too realistic about her. You get the feeling she might wake up and attack you at any time[end if]. [if the item described is vigilant]She appraises you silently from atop her pedestal, never moving, not even to blink.[end if]".
 
 To set up (M - a gargoyle):
@@ -17,10 +23,7 @@ To set up (M - a gargoyle):
 	now M is captive.
 
 This is the spawn initial gargoyles rule:
-	if diaper quest is 1:
-		repeat with M running through gargoyles:
-			now M is not mansion dwelling;
-	otherwise if the number of alive gargoyles is 0 and the player is the donator:
+	if the number of alive gargoyles is 0 and the player is the donator and diaper quest is 0:
 		let M be a random off-stage gargoyle;
 		summon M in the mansion;
 		set up M.
@@ -104,7 +107,7 @@ To say SelectionFrustrated of (M - a gargoyle):
 
 Part 2 - Combat
 
-The gargoyle priority attack rules is a rulebook.  The priority attack rules of a gargoyle is usually the gargoyle priority attack rules.
+The gargoyle priority attack rules is a rulebook. The priority attack rules of a gargoyle is usually the gargoyle priority attack rules.
 
 This is the gargoyle flight rule:
 	if current-monster is not airborne:
@@ -303,7 +306,7 @@ Definition: a gargoyle (called M) is damageable:
 	if M is captive and M is uninterested, decide no.
 
 To compute the default taunting of (M - a gargoyle):
-	say "[one of]The [M] watches in total silence.[or]The [M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really.  Besides, it's not like the [M] cares. Right?[cycling]". 
+	say "[one of]The [M] watches in total silence.[or]The [M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really. Besides, it's not like the [M] cares. Right?[cycling]". 
 
 To compute (M - a gargoyle) protecting against (X - a monster): [Default protection if not defined for the monster]
 	if M is vigilant:[TODO: gargoyle protects player she recently "fed" from]
@@ -314,3 +317,4 @@ To compute (M - a gargoyle) protecting against (X - a monster): [Default protect
 
 
 Gargoyle ends here.
+

@@ -54,7 +54,7 @@ Part 2 - Modify Vaginal Sex Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw vaginal sex addiction.  The raw vaginal sex addiction of the player is usually 3. [Min 1 Max 10]
+The player has a number called raw vaginal sex addiction. The raw vaginal sex addiction of the player is usually 3. [Min 1 Max 10]
 
 [!<VaginalSexAddictUpX>+
 
@@ -85,3 +85,4 @@ To VaginalSexAddictDown (X - a number):
 
 
 Vaginal Sex Addiction ends here.
+

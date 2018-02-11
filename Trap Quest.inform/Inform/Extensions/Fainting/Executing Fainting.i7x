@@ -3,10 +3,10 @@ Executing Fainting by Fainting begins here.
 
 [!<sexChanged:Integer>*
 
-Set to 1 when the player is sex changed, telling us that the next time the player faints, we should mention it.  Then it gets set to 2 so we don't do that again the following time the player faints.
+Set to 1 when the player is sex changed, telling us that the next time the player faints, we should mention it. Then it gets set to 2 so we don't do that again the following time the player faints.
 
 *!]
-Sex-changed is a number that varies.  Sex-changed is 0.
+Sex-changed is a number that varies. Sex-changed is 0.
 
 [!<newlyTattooed:Integer>*
 
@@ -25,7 +25,7 @@ tentacled is a number that varies. tentacled is 0.
 
 [!<ExecuteFainting>+
 
-Called when the player faints.  We reset a lot of variables.
+Called when the player faints. We reset a lot of variables.
 
 +!]
 To Execute Fainting:
@@ -41,7 +41,7 @@ To Execute Fainting:
 	let T be a random property-tattoo;
 	if the number of worn lower back tattoos is 0 and there is a worn tattoo and the player can see a royal guard:
 		summon T;
-		now Newly-tattooed is 1;
+		now newly-tattooed is 1;
 	if there is a tentacle monster in the location of the player, now tentacled is 1;
 	let J be the biggest jewel;
 	if J is a plentiful accessory:
@@ -56,21 +56,12 @@ To Execute Fainting:
 		now sex-changed is 2;
 	otherwise:
 		say "[if the faint count of the player is 0][First Time Fainting Story][otherwise][Next Time Fainting Story][end if]";
-		if extra lives of the player <= 0:
-			say "[second custom style]'[one of]You have fainted quite a few times, honey - we want to give you the option to give up[or]Baby, you really don't seem to be doing very well[or]We're going to keep giving you the option to quit, baby[stopping].  Are you sure you want to keep playing?'[roman type][yesnolink][line break]";
-			unless the player consents:
-				end the story finally saying "You have lost.";
+	say "[second custom style]'[one of]Oh yeah... when you come back here, we are supposed to give you a chance to, well, give up. If you want to. You'll leave with no winnings[or]Also we're going to keep giving you the option to quit every time you come back here[stopping]. So, are you sure you want to keep playing?  That means say [bold type]yes [second custom style] to keep playing and [bold type]no [second custom style]to give up.'[roman type][line break][yesnolink][line break]";
+	unless the player consents:
+		end the story finally saying "You have lost.";
 	decrease the extra lives of the player by 1;
 	unless earnings is starting-earnings:
 		Set Leftovers;
-		[say "[line break][roman type]As the loud buzzing starts to return you hear the other girl speak.  [second custom style]";
-		if extra lives of the player is 0:
-			say "'If you lose this time, it's game over and you'll get no winnings to pay us back and revert your real life changes.  Better be careful baby!'";
-		otherwise if extra lives of the player is 1:
-			say "'You only have one more try after this one if you faint again so it's time to pick up the slack, sugar!'";
-		otherwise:
-			say "'You've got [extra lives of the player + 1] more tries left, honey.  Do your best!'";
-		say "[roman type][line break]";]
 		increase the faint count of the player by 1;
 		if debugmode is 1, say "[line break][bold type]RECOVERING MONSTERS[roman type][line break]";
 		Recover Monsters;
@@ -124,7 +115,7 @@ To Execute Fainting:
 		now the location of the player is discovered;
 		if map images is 1, display entire map;
 		if side images is 2, Display Character Window;
-		say "[one of]You wake up, and realise you are lying face down, still in the [printed name of the location of the player][if the urine-puddle of the location of the player > 0], surrounded by a puddle of [urine][end if].  Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen.  The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it!  [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life.  [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left.  [end if][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds.  It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player].  Once again a hologram of your real self appears in front of you.[stopping]";
+		say "[one of]You wake up, and realise you are lying face down, still in the [printed name of the location of the player][if the urine-puddle of the location of the player > 0], surrounded by a puddle of [urine][end if]. Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen. The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it!  [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life. [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left. [end if][line break][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds. It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player]. Once again a hologram of your real self appears in front of you.[stopping]";
 		say "You are [RealDesc]";
 		if the pink pill is not held by the player:
 			say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
@@ -159,7 +150,7 @@ Some things don't get reset when the player faints.
 
 +!]
 Definition: A thing (called I) is immune to change:
-	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in a random pink wardrobe or I is penetrating a body part, decide yes;
+	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is penetrating a body part or I is store clothing, decide yes;
 	decide no.
 
 [!<RecideWhichObjectIsTheBiggestJewel>+
@@ -179,3 +170,4 @@ To decide which object is the biggest jewel:
 
 
 Executing Fainting ends here.
+

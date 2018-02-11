@@ -77,7 +77,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 			decrease N by 1;
 		if the semen coating of C > 0:
 			say "[SemenEncounterFlav]";
-			if newbie tips is 1, say "[one of][item style]Newbie tip: You've got cum on your face!  That's not great - you'll be extremely humiliated if anyone sees you.  It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'.  Your chest and belly work similarly.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][item style]Newbie tip: You've got cum on your face!  That's not great - you'll be extremely humiliated if anyone sees you. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'. Your chest and belly work similarly.[roman type][line break][or][stopping]";
 			if LC is tethering lipstick collar, end tethering;
 			if the make-up of face > 0 and permanent makeup is 0 and a random number between 1 and 6 is 1:
 				say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
@@ -91,11 +91,11 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 			UniqueSquirt L on hair by M;
 		if the semen coating of C > 0:
 			if the semen coating of C > N:
-				say "The [variable L] washes some [semen] off of your face.  ";
+				say "The [variable L] washes some [semen] off of your face. ";
 				PuddleUp semen by N;
 				decrease the semen coating of C by N;
 			otherwise:
-				say "The [variable L] washes all the [semen] off of your face.  ";
+				say "The [variable L] washes all the [semen] off of your face. ";
 				PuddleUp semen by the semen coating of C;
 				now the semen coating of C is 0;
 		if breasts is unsoaked, say "The [variable L] steadily flows down your face to your [BreastDesc].";
@@ -106,7 +106,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
 	let H be a random worn able to take more liquid headgear;
 	if M > 0 and H is headgear:
 		decrease N by M; [hair]
-		say "It gets all over your [ShortDesc of H].";
+		say "It gets all over your [ShortDesc of H]";
 		Squirt L on H by M;
 	if L is semen or L is urine:
 		while the semen coating of C + the urine coating of C < the largeness of hair and N > 0:
@@ -172,11 +172,11 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 			Squirt L on highest-cleavage-clothing by M;
 		if the semen coating of C > 0:
 			if the semen coating of C > N:
-				if C is unsoaked, say "The [variable L] washes some [semen] off of your chest.  ";
+				if C is unsoaked, say "The [variable L] washes some [semen] off of your chest. ";
 				PuddleUp semen by N;
 				decrease the semen coating of C by N;
 			otherwise:
-				if C is unsoaked, say "The [variable L] washes all the [semen] off of your chest.  ";
+				if C is unsoaked, say "The [variable L] washes all the [semen] off of your chest. ";
 				PuddleUp semen by the semen coating of C;
 				now the semen coating of C is 0;
 		if belly is unsoaked, say "The [variable L] steadily flows down your chest to your [BellyDesc].";
@@ -198,11 +198,11 @@ To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
 		otherwise:
 			if the semen coating of C > 0:
 				if the semen coating of C > N:
-					if C is unsoaked, say "The [variable L] washes some [semen] off of your belly.  ";
+					if C is unsoaked, say "The [variable L] washes some [semen] off of your belly. ";
 					PuddleUp semen by N;
 					decrease the semen coating of C by N;
 				otherwise:
-					if C is unsoaked, say "The [variable L] washes all the [semen] off of your belly.  ";
+					if C is unsoaked, say "The [variable L] washes all the [semen] off of your belly. ";
 					PuddleUp semen by the semen coating of C;
 					now the semen coating of C is 0;
 			if hips is unsoaked, say "The [variable L] steadily flows down your belly to your loins.";
@@ -224,15 +224,15 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 		while the semen coating of C < 10 and N > 0:
 			LiquidSoak L on C;
 			decrease N by 1;
-		if newbie tips is 1 and the semen coating of C > 0, say "[one of][item style]Newbie tip: You've got cum on your thighs!  That's bad for you - you'll have reduced dexterity until it's gone.  It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe thighs with X'.[roman type][line break][or][stopping]";
+		if newbie tips is 1 and the semen coating of C > 0, say "[one of][item style]Newbie tip: You've got cum on your thighs!  That's bad for you - you'll have reduced dexterity until it's gone. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe thighs with X'.[roman type][line break][or][stopping]";
 	otherwise:
 		if the semen coating of C > 0:
 			if the semen coating of C > N:
-				if C is unsoaked, say "The [variable L] washes some [semen] off of your thighs.  ";
+				if C is unsoaked, say "The [variable L] washes some [semen] off of your thighs. ";
 				PuddleUp semen by N;
 				decrease the semen coating of C by N;
 			otherwise:
-				if C is unsoaked, say "The [variable L] washes all the [semen] off of your thighs.  ";
+				if C is unsoaked, say "The [variable L] washes all the [semen] off of your thighs. ";
 				PuddleUp semen by the semen coating of C;
 				now the semen coating of C is 0;
 	if N > 0:
@@ -297,7 +297,7 @@ To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 	while C is able to take more liquid and N > 0:
 		LiquidSoak L on C;
 		decrease N by 1;
-	if N > 0: [To avoid infinite recursion, we always make sure that clothing items drip liquid to the body part directly below them.  So first we check if they're leg covering, and then crotch covering, and so on, so we're working in 'gravity priority order'.  Otherwise for example a liquid soaking into trousers could go crotch clothing code > thighs code > crotch clothing code > thighs code > etc.]
+	if N > 0: [To avoid infinite recursion, we always make sure that clothing items drip liquid to the body part directly below them. So first we check if they're leg covering, and then crotch covering, and so on, so we're working in 'gravity priority order'. Otherwise for example a liquid soaking into trousers could go crotch clothing code > thighs code > crotch clothing code > thighs code > etc.]
 		if C is leg covering:
 			let SH be a random worn shoes;
 			if SH is clothing:
@@ -454,6 +454,7 @@ REQUIRES COMMENTING
 +!]
 To CumFaceUp (X - a number):
 	Squirt semen On Face By X;
+	if a random number between 0 and 8 < the semen coating of face, SemenAddictUp 1;
 	reset soak flavour.
 
 [!<CumFaceDownX>+
@@ -473,6 +474,7 @@ REQUIRES COMMENTING
 +!]
 To CumTitsUp (X - a number):
 	Squirt semen On Breasts By X;
+	if a random number between 5 and 13 < the semen coating of breasts, SemenAddictUp 1; [less likely than face]
 	reset soak flavour.
 
 
@@ -513,6 +515,7 @@ REQUIRES COMMENTING
 +!]
 To CumThighsUp (X - a number):
 	Squirt semen On Thighs By X;
+	if a random number between 6 and 13 < the semen coating of thighs, SemenAddictUp 1; [less likely than face]
 	reset soak flavour.
 
 
@@ -545,7 +548,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute face cum dribbling:
-	say "Globs of [semen] drip down from your chin onto your [BreastDesc].  ";
+	say "Globs of [semen] drip down from your chin onto your [BreastDesc]. ";
 	CumTitsUp 1;
 	CumFaceDown 1.
 
@@ -559,10 +562,10 @@ To compute tits cum dribbling:
 	now breasts is soaked;
 	let HC be highest-cleavage-clothing;
 	if HC is unsoaked clothing:
-		say "Some [semen] runs down your [BreastDesc] and onto your [ShortDesc of HC].  ";
+		say "Some [semen] runs down your [BreastDesc] and onto your [ShortDesc of HC]. ";
 		CumSoak 1 on HC;
 	otherwise:
-		say "Some [semen] runs down your [BreastDesc] and onto your [BellyDesc].  ";
+		say "Some [semen] runs down your [BreastDesc] and onto your [BellyDesc]. ";
 		CumBellyUp 1;
 	CumTitsDown 1.
 
@@ -572,11 +575,15 @@ REQUIRES COMMENTING
 
 +!]
 To compute belly cum dribbling:
-	say "Some [semen] runs down your [BellyDesc] and towards your loins.  ";
+	say "Some [semen] runs down your [BellyDesc] and towards your loins. ";
 	Squirt semen on hips by 1;
 	reset soak flavour;
 	CumBellyDown 1.
 
+To fully clean (B - a body part):
+	now the semen coating of B is 0;
+	now the urine coating of B is 0.
 
 
 Liquid Movements ends here.
+

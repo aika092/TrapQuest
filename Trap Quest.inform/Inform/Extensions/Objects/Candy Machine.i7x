@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 @inherits <Thing>
 
 @!]
-A candy machine is a kind of thing.  A candy machine is not portable.  1 candy machine is in Dungeon32.  1 candy machine is in Woods09.  1 candy machine is in Hotel27.  1 candy machine is in Mansion04.  The printed name of a candy machine is usually "[TQlink of item described]candy machine ([if the number of on-stage candy >= max-candy]no[otherwise if the recent uses of item described is 0]green[otherwise if the recent uses of item described is -1]golden[otherwise]red[end if] light)[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of a candy machine is usually "cdm".  The description of a candy machine is usually "[CandyMachineDesc]".  Understand "button" as candy machine.
+A candy machine is a kind of thing. A candy machine is not portable. 1 candy machine is in Dungeon32. 1 candy machine is in Woods09. 1 candy machine is in Hotel27. 1 candy machine is in Mansion04. The printed name of a candy machine is usually "[TQlink of item described]candy machine ([if the number of on-stage candy >= max-candy]no[otherwise if the recent uses of item described is 0]green[otherwise if the recent uses of item described is -1]golden[otherwise]red[end if] light)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a candy machine is usually "cdm". The description of a candy machine is usually "[CandyMachineDesc]". Understand "button" as candy machine.
 
 [!<CandyMachine>@<recentUses:Integer>*
 
@@ -45,7 +45,7 @@ REQUIRES COMMENTING
 
 +!]
 To say CandyMachineDesc:
-	say "A large modern vending machine with a picture of a candy in its wrapper on the front.  There is a big light-up button on the front.  It is currently [if the number of on-stage candy >= max-candy]off[otherwise if the recent uses of item described is 0]green[otherwise if the recent uses of item described is -1]gold[otherwise]red[end if].".
+	say "A large modern vending machine with a picture of a candy in its wrapper on the front. There is a big light-up button on the front. It is currently [if the number of on-stage candy >= max-candy]off[otherwise if the recent uses of item described is 0]green[otherwise if the recent uses of item described is -1]gold[otherwise]red[end if].".
 
 [!<CandyMachine>@<IsComboReady>+
 
@@ -130,7 +130,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out CandyObtaining:
-	say "You press the button[if there is worn a bound-behind wrist bond] with your nose[end if].  ";
+	say "You press the button[if there is worn a bound-behind wrist bond] with your nose[end if]. ";
 	now seconds is 3;
 	let C be nothing;
 	if starting-pack-given is 0:
@@ -147,16 +147,16 @@ Carry out CandyObtaining:
 		say "Nothing seems to happen.";
 	otherwise if the recent uses of the noun is -1:
 		now C is a random off-stage top tier candy;
-		if C is nothing, say "Nothing seems to happen.  You must be holding all the golden candy...";
+		if C is nothing, say "Nothing seems to happen. You must be holding all the golden candy...";
 	otherwise if the recent uses of the noun is 0:
 		now C is a random off-stage standard tier candy;
-		if C is nothing, say "Nothing seems to happen.  You must be holding all the normal candy...";
+		if C is nothing, say "Nothing seems to happen. You must be holding all the normal candy...";
 	otherwise:
 		now C is a random off-stage low tier candy;
-		if C is nothing, say "Nothing seems to happen.  You must be holding all the bad candy...";
+		if C is nothing, say "Nothing seems to happen. You must be holding all the bad candy...";
 	if C is candy:
 		now C is held by the player;
-		say "The machine spits out a [C]!  You pick it up.  ";
+		say "The machine spits out a [C]!  You pick it up. ";
 		let F be a random number between 0 and 4;
 		if weight gain fetish is 1, decrease F by the fat-weight of the player / 10;
 		if player-hunger > F and the player is not overly full:
@@ -185,8 +185,9 @@ REQUIRES COMMENTING
 
 +!]
 Report going east when the player is in Dungeon32:
-	if newbie tips is 1, say "[one of][item style]Newbie tip: Candy machines are your primary source of food.  You'll only be able to have a maximum of three at any time so you'll need to periodically eat some and then come back to machines for more.  There's one in each region of the game.  After you use a candy machine its light will turn red, and it'll only give you worse candy until you use a different candy machine in other regions.  This means that you'll need to keep moving between regions to get the best candy.  If you use all the candy machines except one in a row, the final one will turn golden and give you an extra special candy when you use it!  It's strongly recommended for you to use this one now, as it'll give you your 'starting pack' of three candies.  You can either eat some immediately or wait until you actually get hungry.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][item style]Newbie tip: Candy machines are your primary source of food. You'll only be able to have a maximum of three at any time so you'll need to periodically eat some and then come back to machines for more. There's one in each region of the game. After you use a candy machine its light will turn red, and it'll only give you worse candy until you use a different candy machine in other regions. This means that you'll need to keep moving between regions to get the best candy. If you use all the candy machines except one in a row, the final one will turn golden and give you an extra special candy when you use it!  It's strongly recommended for you to use this one now, as it'll give you your 'starting pack' of three candies. You can either eat some immediately or wait until you actually get hungry.[roman type][line break][or][stopping]".
 
 
 
 Candy Machine ends here.
+

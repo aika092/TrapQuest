@@ -3,7 +3,7 @@ Pom Poms by Equippables begins here.
 A pom-pom is a kind of gloves. A pom-pom is unique. The printed name of pom-pom is "[TQlink of item described]pom-poms[shortcut-desc][TQxlink of item described][verb-desc of item described]". A pom-pom is usually pvc. There is 1 pom-pom. Understand "pom", "poms" as pom-pom. The text-shortcut of pom-pom is "pom".
 
 To say ClothingDesc of (C - a pom-pom):
-	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything.  But you feel like you could kick for hours!". 
+	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could kick for hours!". 
 To say ShortDesc of (C - a pom-pom):
 	say "pom-poms". 
 
@@ -28,3 +28,4 @@ To compute attack effect of (E - a pom-pom):[TODO: maybe add an effect where ups
 		FatigueDown 2.
 
 Pom Poms ends here.
+

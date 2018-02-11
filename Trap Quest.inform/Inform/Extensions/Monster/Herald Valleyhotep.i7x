@@ -1,6 +1,9 @@
 Herald Valleyhotep by Monster begins here.
 
-A herald is a kind of monster. A herald is usually intelligent. There is 1 herald. A herald is usually neuter. A herald is usually mansion dwelling. A herald is poison immune.
+A herald is a kind of monster. A herald is usually intelligent. There is 1 herald. A herald is usually neuter. The poison-status of a herald is -1.
+
+Definition: A herald (called M) is mansion dwelling:
+	decide yes.
 
 The printed name of herald is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]Valleyhotep the Herald[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of herald is usually "[HeraldDesc]". Understand "Valleyhotep", "herald" as herald.
 
@@ -38,7 +41,7 @@ Section 1 - Attack
 
 The herald attack rules is a rulebook. The attack rules of a herald is usually the herald attack rules.
 
-The herald priority attack rules is a rulebook.  The priority attack rules of a herald is usually the herald priority attack rules.
+The herald priority attack rules is a rulebook. The priority attack rules of a herald is usually the herald priority attack rules.
 
 This is the herald's power attack rule:
 	let M be current-monster;
@@ -83,7 +86,7 @@ To say DamageReaction (N - a number) of (M - a herald):
 	otherwise say "While the entity has no face, you can tell it is suddenly getting a bit serious.".
 
 To compute unique death of (M - a herald):
-	say "[second custom style]'What the dick? I guess you win this time... [first custom style]BUT NEXT TIME, YOU AND THIS WORLD WILL FALL BEFORE THE MIGHT OF THE OLD ONES...'[roman type][line break]".
+	say "[second custom style]'What the dick? I guess you win this time... [line break][first custom style]BUT NEXT TIME, YOU AND THIS WORLD WILL FALL BEFORE THE MIGHT OF THE OLD ONES...'[roman type][line break]".
 
 To loot (M - a herald):
 	let X be a random off-stage plentiful necklace;
@@ -146,9 +149,9 @@ To compute annoyance of (M - a herald):
 	if M is uninterested:
 		say "The [M] doesn't seem to realize you are talking to her.[line break]";
 	otherwise if M is unfriendly:
-		say "The [M] ignores your question.  [second custom style]'La la! I can[']t hear it when weaklings talk!'[roman type][line break]";
+		say "The [M] ignores your question. [line break][second custom style]'La la! I can[']t hear it when weaklings talk!'[roman type][line break]";
 	otherwise:
-		say "[second custom style]'Okay let me be clear here... [first custom style]SHUT UP.'[roman type][line break]";
+		say "[second custom style]'Okay let me be clear here... [line break][first custom style]SHUT UP.'[roman type][line break]";
 	
 To compute teaching of (M - a herald):
 	say "[second custom style]'Teach you something? What a strange request... Like, fine. Gaze into me, if you dare...'[roman type] For a terrible moment her skin shifts into an infinite field of swirling patterns that assaults your mind and self! You feel smarter, but also like your sanity has slipped away!";
@@ -156,10 +159,21 @@ To compute teaching of (M - a herald):
 	humiliate 400;
 	
 The herald has a number called gifted. The gifted of a herald is usually 0.
+
+The herald has a number called quest-status. The quest-status of a herald is usually 0.
 	
 To compute herald's gift:
 	let M be a random herald;
-	if the gifted of M is 0:
+	if the quest-status of M is 0:
+		let S be a random dark scroll;
+		say "[second custom style]'Say, you seem like a capable type! So there is, like, totally another player in this game, right? Maybe you've met her? I could really use a snack, could you be a dear and read this scroll around her? I'll, like, totally reward you or some junk.[roman type][line break]";
+		now the quest-status of M is 1;
+		now S is in the location of the player;
+	otherwise if the quest-status of M is 2:
+		say "[second custom style]Well if it isn't my favorite minion! You did, like, super good sending me that lady, and I want to thank you for it! I know! She had, like, a lot of silly smarts left in her brains! Since you work for me it's okay for now if you have some of the leftovers.[roman type][line break]";
+		Intup 2;
+		now the quest-status of M is 3;
+	otherwise if the gifted of M is 0:
 		say "[second custom style]'So do you want a blessing or not?'[roman type][line break]";
 		if the player consents:
 			say "[second custom style]'Now that is what I like to hear! Now, what should we make of you...?'[roman type][line break]";
@@ -204,3 +218,4 @@ To compute herald's gift:
 
 
 Herald Valleyhotep ends here.
+

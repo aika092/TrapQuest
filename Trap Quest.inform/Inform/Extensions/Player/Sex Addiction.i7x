@@ -114,14 +114,14 @@ Part 2 - Modify Sex Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw sex addiction.  The raw sex addiction of the player is usually 1. [Min 1 Max 20]
+The player has a number called raw sex addiction. The raw sex addiction of the player is usually 1. [Min 1 Max 20]
 
 [!<highestSexAddiction:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-highest sex addiction is a number that varies.  highest sex addiction is 0.
+highest sex addiction is a number that varies. highest sex addiction is 0.
 
 [!<SexAddictUpX>+
 
@@ -145,23 +145,23 @@ To SexAddictUp (X - a number):
 		if a random number between 1 and 8 > K: [Sometimes confidence clothing stops sex addiction increases]
 			if the raw sex addiction of the player < 20 and a random number between 5 and 30 > the raw sex addiction of the player:
 				if (highest sex addiction < the sex addiction of the player and X is 0 or the sex addiction of the player is 19) and diaper quest is 0: [We only want to output 1 thing from this list even if sex addiction goes up multiple times]
-					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]I am not going to let anything else fuck me.  At all.  That is NOT happening again.[end if][roman type][line break]";
-					if the sex addiction of the player is 2, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]If I can't avoid things fucking me, my situation is only going to get worse and worse.  I've got to keep level headed.[end if][roman type][line break]";
-					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy it that little bit more.  I have a to find a way out![roman type][line break]";
+					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]I am not going to let anything else fuck me. At all. That is NOT happening again.[end if][roman type][line break]";
+					if the sex addiction of the player is 2, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]If I can't avoid things fucking me, my situation is only going to get worse and worse. I've got to keep level headed.[end if][roman type][line break]";
+					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy it that little bit more. I have a to find a way out![roman type][line break]";
 					if the sex addiction of the player is 4, say "[first custom style]I have to avoid the sex!  The game is rigged to make me get addicted...[roman type][line break]";
-					if the sex addiction of the player is 5, say "[first custom style]I am not enjoying this.  I am NOT enjoying this!!!  Why does my body feel like it's disagreeing with me?[roman type][line break]";
-					if the sex addiction of the player is 6, say "[variable custom style][if the analvirgin of the player is 1]Maybe it's worth trying anal sex, at least once.  Just to confirm that it is as gross and nasty as I think it is.[otherwise]Anal sex feels so pleasurable here!  Surely it doesn't feel this good in the real world, right?[end if][roman type][line break]";
-					if the sex addiction of the player is 7, say "[variable custom style]Maybe I've got it all wrong.  Maybe I should be using this game to experiment with my body.  At least it's safe down here, since nothing is real.[roman type][line break]";
+					if the sex addiction of the player is 5, say "[first custom style]I am not enjoying this. I am NOT enjoying this!!!  Why does my body feel like it's disagreeing with me?[roman type][line break]";
+					if the sex addiction of the player is 6, say "[variable custom style][if the analvirgin of the player is 1]Maybe it's worth trying anal sex, at least once. Just to confirm that it is as gross and nasty as I think it is.[otherwise]Anal sex feels so pleasurable here!  Surely it doesn't feel this good in the real world, right?[end if][roman type][line break]";
+					if the sex addiction of the player is 7, say "[variable custom style]Maybe I've got it all wrong. Maybe I should be using this game to experiment with my body. At least it's safe down here, since nothing is real.[roman type][line break]";
 					if the sex addiction of the player is 8, say "[variable custom style]I guess the truth is, why does it matter if I happen to enjoy it?  It's just sex.[roman type][line break]";
 					if the sex addiction of the player is 9, say "[variable custom style]Why was I so convinced that being submissive is a bad thing, anyway?  Someone has to be the submissive one, so it's only fair that sometimes it's me.[roman type][line break]";
 					if the sex addiction of the player is 10, say "[second custom style][if the semen taste addiction of the player > 12]Hey, if I have to be the submissive one in order to get another yummy dose of [semen], that's fine with me.[otherwise if the semen taste addiction of the player > 8]If someone's bigger than me and they want to be the dominant one, well that just makes sense.[otherwise]I think I would love giving blowjobs if I didn't have to deal with so much [semen] afterwards.[end if][line break][first custom style]Oh god what am I becoming?[roman type][line break]";
-					if the sex addiction of the player is 11, say "[second custom style]I seriously have no idea why I used to get so turned off by the idea of being a submissive.  What a stupid idea.[roman type][line break]";
+					if the sex addiction of the player is 11, say "[second custom style]I seriously have no idea why I used to get so turned off by the idea of being a submissive. What a stupid idea.[roman type][line break]";
 					if the sex addiction of the player is 12, say "[second custom style]There's just something so thrilling about not being in control...[roman type][line break]";
-					if the sex addiction of the player is 13, say "[second custom style]I definitely prefer getting fucked from behind like a whore to boring old vanilla sex.  It's just so much more exciting and kinky.[roman type][line break]";
+					if the sex addiction of the player is 13, say "[second custom style]I definitely prefer getting fucked from behind like a whore to boring old vanilla sex. It's just so much more exciting and kinky.[roman type][line break]";
 					if the sex addiction of the player is 14, say "[second custom style]Sure, getting my holes rammed full of monster [manly-penis] isn't going to help me win the game, but it sure is fun![roman type][line break]";
-					if the sex addiction of the player is 15, say "[second custom style]I like it better when I'm full of [manly-penis].  It makes life a lot less boring.[roman type][line break]";
-					if the sex addiction of the player is 16, say "[second custom style]I'm not afraid to admit it, I'm addicted to [manly-penis].  I love cocks and cocks love me.  What's wrong with that?[roman type][line break]";
-					if the sex addiction of the player is 17, say "[second custom style]Degrading sex is the only sex worth having.  Unless my orgasm makes me feel like a cheap whore, I'm not really interested.[roman type][line break]";
+					if the sex addiction of the player is 15, say "[second custom style]I like it better when I'm full of [manly-penis]. It makes life a lot less boring.[roman type][line break]";
+					if the sex addiction of the player is 16, say "[second custom style]I'm not afraid to admit it, I'm addicted to [manly-penis]. I love cocks and cocks love me. What's wrong with that?[roman type][line break]";
+					if the sex addiction of the player is 17, say "[second custom style]Degrading sex is the only sex worth having. Unless my orgasm makes me feel like a cheap whore, I'm not really interested.[roman type][line break]";
 					if the sex addiction of the player is 18, say "[second custom style]Hunks, this way!  Over here!  Give [NameBimbo] your big [manly-penis]s and she'll make you feel good.[roman type][line break]";
 					if the sex addiction of the player is 19, say "[second custom style][NameBimbo] wants more cummies!  [NameBimbo] needs more [manly-penis]s...[roman type][line break]";
 				[otherwise if X is 1:
@@ -216,3 +216,4 @@ The number of times the player has had submissive sex with any monster, not just
 The player has a number called sex-count. The sex-count of the player is 0.
 
 Sex Addiction ends here.
+

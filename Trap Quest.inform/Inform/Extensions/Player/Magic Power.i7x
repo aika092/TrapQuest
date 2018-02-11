@@ -14,3 +14,4 @@ To MagicPowerDown (X - a number):
 		if the magic-power of the player > 0, decrease the magic-power of the player by 1.
 
 Magic Power ends here.
+

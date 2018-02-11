@@ -7,7 +7,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the standing strength of the player:
-	[This is what the player uses to try and stand up.  It is the strength of the player times 13, scaled down by body soreness 10% each time.]
+	[This is what the player uses to try and stand up. It is the strength of the player times 13, scaled down by body soreness 10% each time.]
 	decide on (the strength of the player * 13) * (10 - the body soreness of the player);
 
 [!<DecideWhichNumberIsTheStandingCapabilityOfThePlayer>+
@@ -53,7 +53,7 @@ REQUIRES COMMENTING
 +!]
 Check standing:
 	if resting is 1, do nothing instead;
-	if the player is in Start, say "How did you even get this message to show up?  Well played.  Email aika for a prize.  (NB: the prize is penis)" instead;
+	if the player is in Start, say "How did you even get this message to show up?  Well played. Email aika for a prize. (NB: the prize is penis)" instead;
 	if the player is in Capsule, say "There's not enough space to stand while you're lying down in the capsule." instead;
 	if the player is flying, say "You're not even touching the ground!" instead;
 	let B be the weight of the player;
@@ -82,7 +82,7 @@ Check standing:
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, standing is not submissive!]
 	if the largeness of hair > 7:
-		repeat with M running through dangerous flightless monsters in the location of the player: [This is the monster standing on their hair.  Easier to do but requires hair length 7 or higher.]
+		repeat with M running through dangerous flightless monsters in the location of the player: [This is the monster standing on their hair. Easier to do but requires hair length 7 or higher.]
 			let H be 15 - the largeness of hair;
 			increase H by 2 * the number of worn scrunchies; [Wearing scrunchies makes it harder to step on their hair.]
 			if a random number between 1 and the difficulty of M > H: 
@@ -108,24 +108,24 @@ Check standing:
 	[if this isn't true, then the player will never be able to stand up like this]
 		let R be a random number between 1 and the standing capability of the player;
 		if debugmode is 1, say "Stand up check: player [R].5 vs difficulty check of [the standing capability of the player].";
-		if the number of heavy body parts is 0, say "You [if the player is tired]strain[otherwise]attempt[end if] to get yourself back on your [feet][if the player is wrist bound in front] whilst your wrists are bound together in front of you[otherwise if the player is wrist bound behind] whilst your wrists are bound together behind you[end if].  ";
-		otherwise say "You [if the player is tired]strain[otherwise]attempt[end if] to get the weight off your [HeavyThings] and onto your [feet][if the player is wrist bound in front] whilst your wrists are bound together in front of you[otherwise if the player is wrist bound behind] whilst your wrists are bound together behind you[end if].  ";
+		if the number of heavy body parts is 0, say "You [if the player is tired]strain[otherwise]attempt[end if] to get yourself back on your [feet][if the player is wrist bound in front] whilst your wrists are bound together in front of you[otherwise if the player is wrist bound behind] whilst your wrists are bound together behind you[end if]. ";
+		otherwise say "You [if the player is tired]strain[otherwise]attempt[end if] to get the weight off your [HeavyThings] and onto your [feet][if the player is wrist bound in front] whilst your wrists are bound together in front of you[otherwise if the player is wrist bound behind] whilst your wrists are bound together behind you[end if]. ";
 		if R < the standing challenge of the player and tutorial is 0:
 			now seconds is 6;
 			say "You don't manage it this time." instead;
 	otherwise if the body soreness of the player > 0:
-		say "Your legs are feeling battered and weak.  [if the number of heavy body parts > 0]Your [HeavyThings] are just too huge.  [end if][if there are worn heels]You are wearing [feet] that are difficult to balance on.  [end if][if the player is wrist bound in front]Your wrists are bound in front of you.  [otherwise if the player is wrist bound behind]Your wrists are bound behind you.  [end if]There is just no way you are ever going to manage to stand up in your current state.";
+		say "Your legs are feeling battered and weak. [if the number of heavy body parts > 0]Your [HeavyThings] are just too huge. [end if][if there are worn heels]You are wearing [feet] that are difficult to balance on. [end if][if the player is wrist bound in front]Your wrists are bound in front of you. [otherwise if the player is wrist bound behind]Your wrists are bound behind you. [end if]There is just no way you are ever going to manage to stand up in your current state.";
 		say "[bold type]You need to go find some furniture to rest on.[roman type][line break]" instead;
 	otherwise if there are worn heels:
 		let H be a random heels worn by the player;
-		say "[if the number of heavy body parts > 0]Your [HeavyThings] are just too huge.  [end if][if the player is wrist bound in front]Your wrists are bound in front of you.  [otherwise if the player is wrist bound behind]Your wrists are bound behind you.  [end if]You are wearing [feet] that are difficult to balance on.  There is just no way you are ever going to manage to stand up in your current state." instead;
+		say "[if the number of heavy body parts > 0]Your [HeavyThings] are just too huge. [end if][if the player is wrist bound in front]Your wrists are bound in front of you. [otherwise if the player is wrist bound behind]Your wrists are bound behind you. [end if]You are wearing [feet] that are difficult to balance on. There is just no way you are ever going to manage to stand up in your current state." instead;
 		say "[bold type]You need to [if H is cursed]find a way to remove the curse on[otherwise]remove[end if] your [printed name of H][bold type].[roman type][line break]" instead;
 	otherwise if the player is wrist bound:
 		let W be a random wrist bond worn by the player;
-		say "[if the number of heavy body parts > 0]Your [HeavyThings] are just too huge.  [end if][if the player is wrist bound in front]Your wrists are bound in front of you.  [otherwise if the player is wrist bound behind]Your wrists are bound behind you.  [end if]There is just no way you are ever going to manage to stand up in your current state." instead;
+		say "[if the number of heavy body parts > 0]Your [HeavyThings] are just too huge. [end if][if the player is wrist bound in front]Your wrists are bound in front of you. [otherwise if the player is wrist bound behind]Your wrists are bound behind you. [end if]There is just no way you are ever going to manage to stand up in your current state." instead;
 		say "[bold type]You need to [if W is cursed]find a way to remove the curse on[otherwise]remove[end if] your [printed name of W][bold type].[roman type][line break]" instead;
 	otherwise:
-		say "Your [HeavyThings] are just too huge.  There is just no way you are ever going to manage to stand up in your current state.  You feel hopeless.  [bold type]The only way you are going to be able to stand again is if you lose some weight.  [roman type]If you can't, you might as well [bold type]faint[roman type]." instead.
+		say "Your [HeavyThings] are just too huge. There is just no way you are ever going to manage to stand up in your current state. You feel hopeless. [bold type]The only way you are going to be able to stand again is if you lose some weight. [roman type]If you can't, you might as well [bold type]faint[roman type]." instead.
 
 [!<CarryOutStanding>+
 
@@ -144,7 +144,7 @@ REQUIRES COMMENTING
 
 +!]
 Report standing:
-	say "You get off your knees successfully.  [bold type]You are now standing.[roman type]".
+	say "You get off your knees successfully. [bold type]You are now standing.[roman type]".
 Understand "arise", "get up", "unkneel", "lift me", "st" as standing.
 Instead of exiting, try standing.
 
@@ -157,3 +157,4 @@ To say LongHairStandingBlock of (M - a monster):
 
 
 Standing ends here.
+

@@ -1,5 +1,13 @@
 Imprinting by Clothing begins here.
 
+[!<DecideWhichNumberIsClothingImprinting>+
+
+Used to be an option. Now it's not.
+
++!]
+To decide which number is clothing-imprinting:
+	decide on 1.
+
 [!<imprintFlav:Integer>*
 
 REQUIRES COMMENTING
@@ -267,7 +275,7 @@ REQUIRES COMMENTING
 This is the dignity imprinting rule:
 	if the humiliation-influence of imprint-target is not 0:
 		say "[ImprintStartFlav][if the humiliation-influence of imprint-target < 0]self-esteem shredding[otherwise]dignity maintaining[end if] effect [run paragraph on]";
-		if the humiliation of the player < 40000, decrease the humiliation of the player by 350 * the humiliation-influence of imprint-target.
+		if the humiliation of the player < HUMILIATION-BROKEN, decrease the humiliation of the player by 350 * the humiliation-influence of imprint-target.
 The dignity imprinting rule is listed in the imprinting rules.
 
 [!<TheDiaperAddictionImprintingRule>+
@@ -284,3 +292,4 @@ This is the diaper addiction imprinting rule:
 The diaper addiction imprinting rule is listed in the imprinting rules.
 
 Imprinting ends here.
+

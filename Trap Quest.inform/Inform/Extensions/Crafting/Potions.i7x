@@ -2,11 +2,11 @@ Potions by Crafting begins here.
 
 
 
-A potion is a kind of alchemy product.  Understand "potions" as a potion.
+A potion is a kind of alchemy product. Understand "potions" as a potion.
 
 Section 1 Potion of Balance
 
-A potion of balance is a kind of potion.  The printed name of potion of balance is "[TQlink of item described]potion of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of potion of balance is "[TQlink of item described]potions of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of potion of balance is "pb".  The description of potion of balance is "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid.  It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".  There are 3 potion of balance. 
+A potion of balance is a kind of potion. The printed name of potion of balance is "[TQlink of item described]potion of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of balance is "[TQlink of item described]potions of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of balance is "pb". The description of potion of balance is "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of balance. 
 
 To decide which number is the alchemy key of (A - a potion of balance):
 	decide on 6.
@@ -44,7 +44,7 @@ Carry out quaffing potion of balance:
 
 Section 2 Potion of the Womb
 
-A potion of the womb is a kind of potion.  The printed name of potion of the womb is "[TQlink of item described]potion of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of potion of the womb is "[TQlink of item described]potions of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of potion of the womb is "pw".  The description of potion of the womb is "A round clear hip flask filled with a dose of smoky pink liquid.  It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".  There are 3 potion of the womb.
+A potion of the womb is a kind of potion. The printed name of potion of the womb is "[TQlink of item described]potion of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of the womb is "[TQlink of item described]potions of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of the womb is "pw". The description of potion of the womb is "A round clear hip flask filled with a dose of smoky pink liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of the womb.
 
 To decide which number is the alchemy key of (A - a potion of the womb):
 	decide on 7.
@@ -80,7 +80,7 @@ Section 3 Potion of Blessing
 To decide which number is the alchemy key of (A - a potion of blessing):
 	decide on 8.
 
-A potion of blessing is a kind of potion.  The printed name of potion of blessing is "[TQlink of item described]potion of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of potion of blessing is "[TQlink of item described]potions of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of potion of blessing is "pb".  The description of potion of blessing is "A round clear hip flask filled with a dose of bright glowing blue liquid.  It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".  There are 3 potion of blessing. 
+A potion of blessing is a kind of potion. The printed name of potion of blessing is "[TQlink of item described]potion of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of blessing is "[TQlink of item described]potions of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of blessing is "pb". The description of potion of blessing is "A round clear hip flask filled with a dose of bright glowing blue liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of blessing. 
 
 Carry out quaffing potion of blessing:
 	say "You pull out the stopper and down the brightly glowing liquid.";
@@ -101,7 +101,7 @@ Carry out quaffing potion of blessing:
 
 Section 4 Potion of Bull Strength
 
-A potion of bull strength is a kind of potion.  The printed name of potion of bull strength is "[TQlink of item described]potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of potion of bull strength is "[TQlink of item described]potions of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of potion of bull strength is "pb".  The description of potion of bull strength is "A round clear hip flask filled with a dose of murky white liquid.  It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".  There are 3 potion of bull strength. 
+A potion of bull strength is a kind of potion. The printed name of potion of bull strength is "[TQlink of item described]potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of bull strength is "[TQlink of item described]potions of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of bull strength is "pb". The description of potion of bull strength is "A round clear hip flask filled with a dose of murky white liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of bull strength. 
 
 To decide which number is the alchemy key of (A - a potion of bull strength):
 	decide on 12.
@@ -151,7 +151,7 @@ Carry out quaffing potion of bull strength:
 			
 Section 5 Space Mead
 
-A space mead is a kind of potion. The printed name of space mead is "[TQlink of item described]carafe of space mead[TQxlink of item described][verb-desc of item described]". The printed plural name of space mead is "[TQlink of item described]carafes of space mead[TQxlink of item described][verb-desc of item described]". The description of space mead is "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual.". There are 3 space meads. Understand "carafe" as space mead.  The text-shortcut of space mead is "smd".
+A space mead is a kind of potion. The printed name of space mead is "[TQlink of item described]carafe of space mead[TQxlink of item described][verb-desc of item described]". The printed plural name of space mead is "[TQlink of item described]carafes of space mead[TQxlink of item described][verb-desc of item described]". The description of space mead is "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual.". There are 3 space meads. Understand "carafe" as space mead. The text-shortcut of space mead is "smd".
 
 Carry out quaffing space mead:
 	say "You drink the golden liquid.";
@@ -172,3 +172,4 @@ Carry out quaffing space mead:
 
 
 Potions ends here.
+

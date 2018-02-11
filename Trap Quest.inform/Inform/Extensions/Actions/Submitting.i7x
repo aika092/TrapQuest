@@ -24,7 +24,7 @@ REQUIRES COMMENTING
 
 +!]
 Check submitting:
-	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being fucked, so there is nothing to submit to!" instead;
+	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
 	if there is a fucking daddy's hole monster:
 		try resisting instead; [See resisting for more info on this mechanic]
 
@@ -86,7 +86,7 @@ To compute player submission:
 		if the player is having marital sex, dignify the sex addiction of the player * 3;
 		otherwise humiliate 125;
 		compute submission reaction of M;
-	if there is an enjoys sex dangerous monster in the location of the player, say "[if the sex addiction of the player < 12]You feel incredibly [one of]self-conscious[or]nervous[or]shy[at random].[otherwise]In a moment of clarity, you are horrified to see what you have become.  The feeling soon fades and is replaced by shy enthusiasm.[end if]".
+	if there is an enjoys sex dangerous monster in the location of the player, say "[if the sex addiction of the player < 12]You feel incredibly [one of]self-conscious[or]nervous[or]shy[at random].[otherwise]In a moment of clarity, you are horrified to see what you have become. The feeling soon fades and is replaced by shy enthusiasm.[end if]".
 
 [!<ComputeSubmissionReactionOfMonster>+
 
@@ -103,9 +103,9 @@ REQUIRES COMMENTING
 +!]
 To say SubmissionFlav of (M - a monster):
 	if M is intelligent:
-		say "The [M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you.  ";
+		say "The [M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you. ";
 	otherwise:
-		say "The [M] prepares to assault you.  ".
+		say "The [M] prepares to assault you. ".
 
 
 To make (M - a monster) expectant: [This is in a function so that you can override it in a particular monster's definition if required.]
@@ -125,3 +125,4 @@ To reset submitted monsters: [This means that making an aggressive move breaks a
 
 
 Submitting ends here.
+

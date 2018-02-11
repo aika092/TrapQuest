@@ -86,3 +86,4 @@ To deploy minibar in (G - a room):
 
 
 Deploying ends here.
+

@@ -1,7 +1,7 @@
 Infernal Gem by Collectibles begins here.
 
 
-An infernal gem is a kind of collectible.  There are 4 infernal gems.  The printed name of infernal gem is "[TQlink of item described]infernal gem[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of infernal gem is "[TQlink of item described]infernal gems[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The description of infernal gem is "A powerful red gem obtained from the necklace of a demoness.  It's not valuable or wearable but it clearly contains great power.".  The text-shortcut of infernal gem is "ig".
+An infernal gem is a kind of collectible. There are 4 infernal gems. The printed name of infernal gem is "[TQlink of item described]infernal gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of infernal gem is "[TQlink of item described]infernal gems[shortcut-desc][TQxlink of item described][verb-desc of item described]". The description of infernal gem is "A powerful red gem obtained from the necklace of a demoness. It's not valuable or wearable but it clearly contains great power.". The text-shortcut of infernal gem is "ig".
 
 To say ShortDesc of (C - an infernal gem):
 	say "magic red gem".
@@ -27,7 +27,7 @@ To say OfferThanksFlav of (M - a mechanic) for (T - an infernal gem):
 	otherwise if the xavier-power of M < 5:
 		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I[']m actually feeling generous!'[roman type]";
 	otherwise:
-		say "The [M] crushes the [T] into a sparkling powder and knocks it back. [speech style of M]Yeah...YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type]".	
+		say "The [M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah...YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".	
 
 To compute resolution of (M - a mechanic) taking (T - an infernal gem):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;
@@ -51,3 +51,4 @@ To decide which number is the bartering value of (T - an infernal gem) for (M - 
 
 
 Infernal Gem ends here.
+

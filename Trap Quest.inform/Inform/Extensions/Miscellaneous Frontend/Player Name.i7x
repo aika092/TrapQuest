@@ -1,13 +1,14 @@
 Player Name by Miscellaneous Frontend begins here.
 
-
 [!<SayNameBimbo>+
 
 REQUIRES COMMENTING
 
 +!]
 To say NameBimbo:
-	if the player-name is 0:
+	if armband is worn and the armband-print of armband is not "new recruit":
+		say "[armband-title of armband]";
+	otherwise if the player-name is 0:
 		if the bimbo of the player < 5 and the player is male:
 			say "Raymond";
 		otherwise if the bimbo of the player < 9 and the player is male:
@@ -794,3 +795,4 @@ This is the stephanie name rule:
 
 
 Player Name ends here.
+

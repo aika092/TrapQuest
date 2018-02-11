@@ -2,7 +2,7 @@ Perception by Monster Framework begins here.
 
 Part 1 - Perception
 
-A monster has a number called favour.  The favour of a monster is usually 13.  [The favour of an NPC determines when it turns unfriendly.]
+A monster has a number called favour. The favour of a monster is usually 13. [The favour of an NPC determines when it turns unfriendly.]
 
 perceiving is a number that varies. [We want to suppress some text while we are in the middle of perception.]
  
@@ -19,10 +19,10 @@ To check perception of (M - a monster):
 		if M is interested:
 			if M is uniquely unfriendly:
 				if the babification of M is 1 and the previous-babification of M is 0:
-					compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed.  We need to make this obvious to the player by making them say something.]
+					compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
 					now the previous-babification of M is 1;
 				otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
-					compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed.  We need to make this obvious to the player by making them say something.]
+					compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
 					now the previous-objectification of M is 1;
 		otherwise:
 			now M is interested;
@@ -49,8 +49,8 @@ To check perception of (M - a monster):
 					say "Your [printed name of a random worn pink scrunchie] feels warm, and you suddenly have the urge to open your mouth and say whatever comes to mind.";
 					try greeting M; Caused some weird interactions with shocked monsters]
 				if newbie tips is 1:
-					if M is friendly, say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them.  If thirsty, you could even 'ask [M] [item style]for drink'.[roman type][line break][or][stopping]";
-					otherwise say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way.  You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away!  If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks.  At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
+					if M is friendly, say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them. If thirsty, you could even 'ask [M] [item style]for drink'.[roman type][line break][or][stopping]";
+					otherwise say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away!  If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
 				reset orifice selection of M. [Otherwise they would be biased towards doing the same thing again, which is lame.]
 
 To compute correct perception of (M - a monster):
@@ -112,16 +112,16 @@ Definition: a monster (called M) is uniquely unfriendly: [We can use this to eas
 	if M is babifying the player, decide yes;
 	decide no.
 
-A monster has a number called objectification. [If an NPC is objectifying the player, and that's the only reason they're unfriendly, we want to make this unfriendliness stick for the duration of their interaction.  Otherwise, the NPC could start to have sex with the player but then the player's make up fades causing the NPC to suddenly become friendly mid-fuck.]
-A monster has a number called previous-objectification.  [Similarly, if the NPC is friendly and the player suddenly looks more slutty, we don't want the NPC to become unfriendly without saying something.  Tracking whether the NPC was objectifying last turn will help us know when we need to make the NPC say something as they switch to hostile.]
+A monster has a number called objectification. [If an NPC is objectifying the player, and that's the only reason they're unfriendly, we want to make this unfriendliness stick for the duration of their interaction. Otherwise, the NPC could start to have sex with the player but then the player's make up fades causing the NPC to suddenly become friendly mid-fuck.]
+A monster has a number called previous-objectification. [Similarly, if the NPC is friendly and the player suddenly looks more slutty, we don't want the NPC to become unfriendly without saying something. Tracking whether the NPC was objectifying last turn will help us know when we need to make the NPC say something as they switch to hostile.]
 
 A monster has a number called babification. [Diaper quest version of objectification.]
 A monster has a number called previous-babification.
 
 To compute sudden objectification of (M - a monster):
 	if M is intelligent:
-		if M is raunchy, say "Something seems to change in the way the [M] is looking at you.  [speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
-		otherwise say "Something seems to change in the way the [M] is looking at you.  [speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
+		if M is raunchy, say "Something seems to change in the way the [M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
+		otherwise say "Something seems to change in the way the [M] is looking at you. [line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
 	otherwise:
 		say "The [M] suddenly turns hostile!".
 
@@ -145,7 +145,7 @@ To decide which number is the bimbo tolerance of (M - a monster):
 
 To compute sudden babification of (M - a monster):
 	if M is intelligent:
-		say "Something seems to change in the way the [M] is looking at you.  [speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
+		say "Something seems to change in the way the [M] is looking at you. [line break][speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
 	otherwise:
 		say "The [M] suddenly turns hostile!".
 
@@ -254,14 +254,14 @@ Part 2 - Reflection
 REQUIRES COMMENTING
 
 *!]
-shocked-monsters is a number that varies.  [The number of monsters that have noticed the player right now, if the player is humiliated]
+shocked-monsters is a number that varies. [The number of monsters that have noticed the player right now, if the player is humiliated]
 
 [!<arousedMonsters:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-aroused-monsters is a number that varies.  [The number of monsters that have noticed the player right now, if the player is aroused]
+aroused-monsters is a number that varies. [The number of monsters that have noticed the player right now, if the player is aroused]
 
 [!<NumberIsTooHumiliating>+
 
@@ -327,3 +327,4 @@ Definition: a person (called P) is sluttily dressed:
 
 
 Perception ends here.
+

@@ -2,7 +2,7 @@ Trainee Boots by Shoes begins here.
 
 
 
-A trainee thigh highs is a kind of stiletto heels.  A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[TQlink of item described][item style]trainee thigh highs[clothing-title-after][TQxlink of item described][verb-desc of item described]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized.
+A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[TQlink of item described][item style]trainee thigh highs[clothing-title-after][TQxlink of item described][verb-desc of item described]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized.  A trainee thigh highs has a number called train-charge.
 
 
 Figure of trainee thigh highs is the file "thighhighs1.png".
@@ -27,7 +27,9 @@ Report wearing trainee thigh highs:
 	now the noun is magnetized.
 
 To compute periodic effect of (C - a trainee thigh highs):
-	if a random number between 1 and 40 is 1:
+	increase the train-charge of C by 1;
+	if the train-charge of C > 40:
+		now the train-charge of C is 0;
 		if the training-progress of C is 5:
 			say "Your [printed name of C] emit five synchronised tones, and a tiny needle pierces the sole of your foot as the stockings suddenly loosen and fall away. A weird feeling passes through your whole body.";
 			BustUp 1;
@@ -39,10 +41,11 @@ To compute periodic effect of (C - a trainee thigh highs):
 			destroy C;
 			ProgressUp senior robobellboy;
 		otherwise:
-			say "Your [printed name of C] [if the training-progress of C is 0]emit a synchronised tone[otherwise]emit [the training-progress of C + 1] synchronised tones[end if] and [if the player is prone]your ankles are forced forward[otherwise]you lurch forward[end if] as the metal stiletto shoots upward.[line break]";
+			say "Your [printed name of C] [if the training-progress of C < 1]emit a synchronised tone[otherwise]emit [the training-progress of C + 1] synchronised tones[end if] and [if the player is prone]your ankles are forced forward[otherwise]you lurch forward[end if] as the metal stiletto shoots upward.[line break]";
 			increase the heel-height of C by 1;
 			increase the training-progress of C by 1.
 
 
 
 Trainee Boots ends here.
+

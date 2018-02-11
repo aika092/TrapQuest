@@ -1,7 +1,7 @@
 Latex Stockings by Stockings begins here.
 
-A black rubber stockings is a kind of stockings.  There is 1 unique black rubber stockings.  A black rubber stockings is usually latex.  A black rubber stockings is usually dense.  The text-shortcut of black rubber stockings is "bls".  The printed name of black rubber stockings is usually "[TQlink of item described][clothing-title-before]pair of black [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
-A red rubber stockings is a kind of stockings.  There is 1 red unique rubber stockings.  A red rubber stockings is usually latex.  A red rubber stockings is usually dense.  The text-shortcut of red rubber stockings is "rls".  The printed name of red rubber stockings is usually "[TQlink of item described][clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A black rubber stockings is a kind of stockings. There is 1 unique black rubber stockings. A black rubber stockings is usually latex. A black rubber stockings is usually dense. The text-shortcut of black rubber stockings is "bls". The printed name of black rubber stockings is usually "[TQlink of item described][clothing-title-before]pair of black [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A red rubber stockings is a kind of stockings. There is 1 red unique rubber stockings. A red rubber stockings is usually latex. A red rubber stockings is usually dense. The text-shortcut of red rubber stockings is "rls". The printed name of red rubber stockings is usually "[TQlink of item described][clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a red rubber stockings):
 	decide on figure of rubber stockings B.
@@ -31,3 +31,4 @@ To decide which number is the initial outrage of (C - a latex stockings):
 	decide on 8.
 
 Latex Stockings ends here.
+

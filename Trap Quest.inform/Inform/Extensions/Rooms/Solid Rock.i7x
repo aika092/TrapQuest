@@ -1,6 +1,5 @@
 Solid Rock by Rooms begins here.
 
-
 ["Solid Rock" is a room which is never visited, but which is used to indicate blocked-off routes: an exit leading to Solid Rock is considered blocked. Initially, when none of the labyrinth rooms have been "played" into the maze, all exits are blocked in this way. Solid Rock is also used as a special value meaning that no room is at a given grid position: thus "the room at <1,4,12>" might evaluate to a room present in the maze, or it might evaluate to Solid Rock.]
 
 [!<SolidRock>@
@@ -115,6 +114,8 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 		if the grid position of H is grid ref, decide on H;
 	repeat with M running through rooms in the Mansion:
 		if the grid position of M is grid ref, decide on M;
+	repeat with M running through rooms in the School:
+		if the grid position of M is grid ref, decide on M;
 	repeat with M running through rooms in the tutorialarea:
 		if the grid position of M is grid ref, decide on M;
 	decide on Solid Rock.
@@ -130,3 +131,4 @@ Check going to Solid Rock:
 
 
 Solid Rock ends here.
+

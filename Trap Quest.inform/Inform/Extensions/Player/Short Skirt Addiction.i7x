@@ -1,6 +1,6 @@
 Short Skirt Addiction by Player begins here.
 
-short skirts permanent fetish is a number that varies.  short skirts permanent fetish is 0.
+short skirts permanent fetish is a number that varies. short skirts permanent fetish is 0.
 Definition: a person is fighting against short skirts:
 	if short skirts permanent fetish > 0:
 		repeat with C running through worn actually dense trousers:
@@ -13,7 +13,7 @@ Definition: a person is fighting against short skirts:
 				unless C is super-short or C is short, decide yes;
 	decide no.
 
-short skirts reminder is a number that varies.  short skirts reminder is 0.
+short skirts reminder is a number that varies. short skirts reminder is 0.
 A time based rule (this is the fighting against short skirts fetish rule):
 	if the player is fighting against short skirts:
 		if short skirts reminder <= 0:
@@ -37,3 +37,4 @@ This is the skirts can't be summoned with short skirts fetish rule:
 The skirts can't be summoned with short skirts fetish rule is listed in the global wearability rules.
 
 Short Skirt Addiction ends here.
+

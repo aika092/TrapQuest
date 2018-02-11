@@ -149,6 +149,8 @@ REQUIRES COMMENTING
 To say sissy-penis:
 	if the player is barbie:
 		say "[one of]smooth groin[or]sexless mound[or]smooth stretch of skin[at random]"; [I avoided using doll-like here so we can further qualify this with "doll-like", elsewhere]
+	otherwise if the class of the player is santa's little helper:
+		say "little candy cane";
 	otherwise:
 		say "[one of]prick[or]willy[or]pecker[or]clitty[or]noodle[or]dickie[or]winky[or]weeny[as decreasingly likely outcomes]".
 
@@ -291,7 +293,7 @@ REQUIRES COMMENTING
 
 +!]
 To say he of (M - a monster):
-	say "[if M is neuter]it[otherwise if M is female]she[otherwise]he[end if]".
+	say "[if M is neuter]it[otherwise if M is male]he[otherwise]she[end if]".
 
 [!<SayBigHeOfMonster>+
 
@@ -299,7 +301,7 @@ REQUIRES COMMENTING
 
 +!]
 To say big he of (M - a monster):
-	say "[if M is neuter]It[otherwise if M is female]She[otherwise]He[end if]".
+	say "[if M is neuter]It[otherwise if M is male]He[otherwise]She[end if]".
 
 [!<SayHimOfMonster>+
 
@@ -307,7 +309,7 @@ REQUIRES COMMENTING
 
 +!]
 To say him of (M - a monster):
-	say "[if M is neuter]it[otherwise if M is female]her[otherwise]him[end if]".
+	say "[if M is neuter]it[otherwise if M is male]him[otherwise]her[end if]".
 
 [!<SayHisOfMonster>+
 
@@ -315,7 +317,7 @@ REQUIRES COMMENTING
 
 +!]
 To say his of (M - a monster):
-	say "[if M is neuter]its[otherwise if M is female]her[otherwise]his[end if]".
+	say "[if M is neuter]its[otherwise if M is male]his[otherwise]her[end if]".
 
 [!<SayBigHisOfMonster>+
 
@@ -323,7 +325,7 @@ REQUIRES COMMENTING
 
 +!]
 To say big his of (M - a monster):
-	say "[if M is neuter]Its[otherwise if M is female]Her[otherwise]His[end if]".
+	say "[if M is neuter]Its[otherwise if M is male]His[otherwise]Her[end if]".
 
 [!<SayHimselfOfMonster>+
 
@@ -339,8 +341,12 @@ REQUIRES COMMENTING
 
 +!]
 To say daddy of (M - a monster):
-	if the bimbo of the player > 18, say "[if M is female]Nana[otherwise]Papa[end if]";
-	otherwise say "[if M is female]Mummy[otherwise]Daddy[end if]".
+	if the class of the player is santa's little helper and M is male:
+		say "Santa";
+	otherwise if the bimbo of the player > 18:
+		say "[if M is male]Papa[otherwise]Mama[end if]";
+	otherwise:
+		say "[if M is male]Daddy[otherwise]Mummy[end if]".
 
 [!<SayHoneyOfMonster>+
 
@@ -348,7 +354,10 @@ REQUIRES COMMENTING
 
 +!]
 To say honey of (M - a monster):
-	say "[one of]honey[or]dear[or]sunshine[or]darling[or]cutie[or]cupcake[or]sweetums[or]sweetheart[at random]".
+	if the class of the player is santa's little helper:
+		say "snowflake";
+	otherwise:
+		say "[one of]honey[or]dear[or]sunshine[or]darling[or]cutie[or]cupcake[or]sweetums[or]sweetheart[or]snowflake[at random]".
 
 [!<SayChildOfMonster>+
 
@@ -356,7 +365,10 @@ REQUIRES COMMENTING
 
 +!]
 To say child of (M - a monster):
-	say "[one of]little one[or]child[or]young one[at random]".
+	if the class of the player is santa's little helper:
+		say "little elf";
+	otherwise:
+		say "[one of]little one[or]child[or]young one[at random]".
 
 [!<SayBabyTitleOfMonster>+
 
@@ -364,10 +376,15 @@ REQUIRES COMMENTING
 
 +!]
 To say baby title of (M - a monster):
-	if the class of the player is princess:
+	if the class of the player is santa's little helper:
+		say "[one of]our little padded prancer[or]the little baby elf[at random]";
+	otherwise if the class of the player is princess:
 		say "[one of]our little princess[or]princess pottypants[or]her royal padded highness[or]princess of the pampers[or]the royal waddler[or]her royal heinie[at random]";
 	otherwise:
 		say "[one of]my little trooper[or]our little bedwetter[or]little miss waddlebum[or]chubby-cheeks[or]little miss [if diaper lover >= 3]stinker[otherwise]pee-pee-pants[end if][or]Baby [NameBimbo][or][at random]".
+
+To say slut school:
+	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] School".
 
 [!<SayMuffledSounds>+
 
@@ -445,6 +462,13 @@ REQUIRES COMMENTING
 +!]
 To say flow:
 	say "[one of]flow[or]stream[as decreasingly likely outcomes]".
+
+To say horror:
+	say "[horror the bimbo of the player]".
+
+To say horror (N - a number):
+	increase N by a random number between 1 and -1;
+	say "[if N < 3]horror[otherwise if N < 5]shock[otherwise if N < 7]concern[otherwise if N < 9]confusion[otherwise if N < 12]mild surprise[otherwise]awe[end if]".
 	
 
 [!<SayGreatOne>+
@@ -452,7 +476,6 @@ To say flow:
 In support of a hypnosis test, you can be indoctrinated by the cultists to react to them mentioning the Great Ones
 
 +!]
-
 To say great one:
 	say "Great One";
 	if player-hypno-great is 1:
@@ -477,3 +500,4 @@ To say maturity:
 	now hypno-trigger is "maturity".
 
 Variable Text ends here.
+

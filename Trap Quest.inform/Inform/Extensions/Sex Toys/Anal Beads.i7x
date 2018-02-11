@@ -1,6 +1,6 @@
 Anal Beads by Sex Toys begins here.
 
-An anal beads is a kind of plug. The printed name of anal beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of anal beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. The notches of an anal beads is usually 0. An anal beads has a number called notch-taken. The notch-taken of an anal beads is usually 0. Understand "bead", "anal" as anal beads.
+An anal beads is a kind of plug. The printed name of anal beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of anal beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. The notches of an anal beads is usually 0. An anal beads has a number called notch-taken. The notch-taken of an anal beads is usually 0. Understand "bead", "anal" as anal beads.
 
 To summon (S - an anal beads):
 	now S is not penetrating vagina;
@@ -25,19 +25,20 @@ Definition: an anal beads (called C) is untransformable:
 	decide yes.
 
 To compute periodic effect of (C - an expansion anal beads):
-	let R be 50;
-	if C is cursed, now R is 40;
-	if a random number between 1 and R is 1 and the notches of C < 10:
-		say "Your [printed name of C] grows, and another bead forces itself into your [asshole]";
-		increase the notches of C by 1;
-		increase the notch-taken of C by 1;
-		if the player is male, PenisUp 1;
-	otherwise if the size of C < 10 and a random number between 1 and R is 1:
-		say "Your [printed name of C] drastically increases in size!";
-		increase the size of C by 1;
-		let F be a random fuckhole penetrated by C;
-		if the size of C > the openness of F, Ruin F;
-		if the player is male, PenisUp 1.
+	increase the toy-charge of C by 1;
+	if the toy-charge of C > 40:
+		now the toy-charge of C is 0;
+		if a random number between 4 and 10 > the notches of C:
+			say "Your [ShortDesc of C] grows, and another bead forces itself into your [asshole]";
+			increase the notches of C by 1;
+			increase the notch-taken of C by 1;
+			if the player is male, PenisUp 1;
+		otherwise if the size of C < 10:
+			say "Your [ShortDesc of C] drastically increases in size!";
+			increase the size of C by 1;
+			let F be a random fuckhole penetrated by C;
+			if the size of C > the openness of F, Ruin F;
+			if the player is male, PenisUp 1.
 
 Figure of anal beads is the file "analbeads1.png".
 
@@ -145,3 +146,4 @@ To decide which number is the original price of (C - an anal beads):
 
 
 Anal Beads ends here.
+

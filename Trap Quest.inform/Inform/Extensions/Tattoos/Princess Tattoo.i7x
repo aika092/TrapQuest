@@ -1,6 +1,6 @@
 Princess Tattoo by Tattoos begins here.
 
-princess tattoo is a kind of lower back tattoo.  Figure of princess tattoo is the file "tattoo35.png".  There is 1 princess tattoo.
+princess tattoo is a kind of lower back tattoo. Figure of princess tattoo is the file "tattoo35.png". There is 1 princess tattoo.
 Definition: a princess tattoo (called T) is eligible:
 	if the noun is tiara or the noun is royal attire, decide yes;
 	decide no.
@@ -19,3 +19,4 @@ To decide which number is the initial cringe of (T - a princess tattoo):
 	decide on 6.
 
 Princess Tattoo ends here.
+

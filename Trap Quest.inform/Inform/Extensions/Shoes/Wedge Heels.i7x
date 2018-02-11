@@ -2,7 +2,7 @@ Wedge Heels by Shoes begins here.
 
 A wedge heels is a kind of heels.  The printed name of wedge heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch wedge heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of wedge heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch wedge heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of wedge heels is "whe".
 
-There is 1 leather wedge heels.  There is 1 pvc wedge heels.  There is 1 satin wedge heels.  
+There is 1 leather wedge heels. There is 1 pvc wedge heels. There is 1 satin wedge heels. 
 
 To decide which figure-name is the clothing-image of (H - a wedge heels):
 	if H is leather, decide on the figure of leather wedge heels;
@@ -27,7 +27,7 @@ To decide which number is the original price of (C - a wedge heels):
 	decide on the heel-height of C.
 
 To say ClothingDesc of (C - a wedge heels):
-	say "A pair of [heel-height of C] inch wedge [if C is leather]heels made of black leather patterer with pink and white alt-girl hearts and skeletons.[otherwise if C is pvc]boots made of some combination of PVC, other plastics and cardboard.  They have a slutty leopard print and open toes.[otherwise if C is satin]heels that are smart and black.  Relatively modest compared to most of the clothes you've seen in this game.[end if]";
+	say "A pair of [heel-height of C] inch wedge [if C is leather]heels made of black leather patterer with pink and white alt-girl hearts and skeletons.[otherwise if C is pvc]boots made of some combination of PVC, other plastics and cardboard. They have a slutty leopard print and open toes.[otherwise if C is satin]heels that are smart and black. Relatively modest compared to most of the clothes you've seen in this game.[end if]";
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a wedge heels):
@@ -52,3 +52,4 @@ To decide which object is the potential-upgrade-target of (C - a wedge heels):
 	decide on nothing.
 
 Wedge Heels ends here.
+

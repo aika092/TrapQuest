@@ -9,14 +9,14 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-vagina is a fuckhole.  vagina is everywhere.  The description of vagina is "[if the player is female][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".  Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female.
+vagina is a fuckhole. vagina is everywhere. The description of vagina is "[if the player is female][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]". Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female.
 
 [!<Vagina>@<semenVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Vagina has a number called semen volume.  The semen volume of vagina is usually 0.
+Vagina has a number called semen volume. The semen volume of vagina is usually 0.
 
 [!<VaginaIsExposed>+
 
@@ -106,7 +106,7 @@ REQUIRES COMMENTING
 +!]
 This is the virginity is important rule:
 	if the virgin bonus of the player > 0 and there is a virginity taking monster in the location of the player:
-		if auto is 0, say "[variable custom style]No way.  My virginity is way too important to me.[roman type][line break]";
+		if auto is 0, say "[variable custom style]No way. My virginity is way too important to me.[roman type][line break]";
 		rule fails.
 The virginity is important rule is listed in the vagina presentable rules.
 
@@ -116,7 +116,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the too much dignity to present vagina rule:
-	if the humiliation of the player < 10000 and the player is not horny and debugmode < 1:
+	if the humiliation of the player < HUMILIATION-PROUD + 2000 and the player is not horny and debugmode < 1:
 		if auto is 0, say "You have too much self respect to do that!";
 		rule fails.
 The too much dignity to present vagina rule is listed in the vagina presentable rules.
@@ -204,20 +204,20 @@ To say TotalDesc of vagina:
 		if the openness of vagina is 9, say "Your gaping wide [vagina] [if the semen volume of vagina > 7 and pregnancy fetish is 1]seems close to childbirth and [end if]";
 		if the openness of vagina is 10, say "Your impossibly stretched [vagina] [if the semen volume of vagina > 7 and pregnancy fetish is 1]seems ready for childbirth and [end if]";
 		if the latex-transformation of the player < 4:
-			if the soreness of vagina is 0, say "feels fine.  ";
-			if the soreness of vagina is 1, say "feels almost completely fine.  ";
-			if the soreness of vagina is 2, say "[one of]feels used[or]feels mostly fine[stopping].  ";
-			if the soreness of vagina is 3, say "[if the bimbo of the player > 9]is begging for more[otherwise]is gently tingling[end if].  ";
-			if the soreness of vagina is 4, say "[if the bimbo of the player > 9]feels like it needs filling[otherwise]is tingling[end if].  ";
+			if the soreness of vagina is 0, say "feels fine. ";
+			if the soreness of vagina is 1, say "feels almost completely fine. ";
+			if the soreness of vagina is 2, say "[one of]feels used[or]feels mostly fine[stopping]. ";
+			if the soreness of vagina is 3, say "[if the bimbo of the player > 9]is begging for more[otherwise]is gently tingling[end if]. ";
+			if the soreness of vagina is 4, say "[if the bimbo of the player > 9]feels like it needs filling[otherwise]is tingling[end if]. ";
 			if the soreness of vagina is 5, say "[if the bimbo of the player > 9]loves being satisfied by [manly-penis][otherwise]is gently throbbing[end if].";
 			if the soreness of vagina is 6, say "[if the bimbo of the player > 9]is gently tingling[otherwise]is starting to feel sore[end if].";
-			if the soreness of vagina is 7, say "is aching[if the bimbo of the player > 9], but in a good way[end if].  ";
-			if the soreness of vagina is 8, say "feels very sore.  ";
-			if the soreness of vagina is 9, say "feels ruined.  ";
-			if the soreness of vagina is 10, say "feels completely destroyed.  It is so sensitive, it hurts just to touch it.  ";
+			if the soreness of vagina is 7, say "is aching[if the bimbo of the player > 9], but in a good way[end if]. ";
+			if the soreness of vagina is 8, say "feels very sore. ";
+			if the soreness of vagina is 9, say "feels ruined. ";
+			if the soreness of vagina is 10, say "feels completely destroyed. It is so sensitive, it hurts just to touch it. ";
 		otherwise:
-			say "feels numb.  ";
-		if there is a lubricant covering vagina, say "It is dripping with slippery [lubricant].  ".
+			say "feels numb. ";
+		if there is a lubricant covering vagina, say "It is dripping with slippery [lubricant]. ".
 
 [!<SayVaginaModesty>+
 
@@ -228,12 +228,12 @@ To say VaginaModesty:
 	if vagina is lewdly exposed:
 		if there is a pussy covering clothing:
 			let W be a random pussy covering clothing;
-			say "It is clearly visible through your [selfexamineuniquetitle of W].  ";
+			say "It is clearly visible through your [selfexamineuniquetitle of W]. ";
 		otherwise if vagina is not actually occupied:
 			say "It is completely unprotected. ";
 	otherwise:
 		let W be a random worn potentially at least partially vagina covering clothing;
-		say "It can't be seen thanks to the [if vagina is exposed][random thing penetrating vagina][otherwise][selfexamineuniquetitle of W][end if].  ";[if vagina exposed is legacy code from when plugs could improve your modesty]
+		say "It can't be seen thanks to the [if vagina is exposed][random thing penetrating vagina][otherwise][selfexamineuniquetitle of W][end if]. ";[if vagina exposed is legacy code from when plugs could improve your modesty]
 	if vagina is actually occupied:
 		let P be a random thing penetrating vagina;
 		if P is monster:
@@ -262,7 +262,7 @@ To gape (A - vagina) times (X - a number):
 			if the openness of vagina is 3:
 				say "[variable custom style][line break][one of]Oh no, my [vagina] is starting to get wet...[or]My [vagina] is getting wet again...[stopping][roman type][line break]";
 			if the openness of vagina is 5:
-				say "[if the sex addiction of the player < 8][variable custom style][one of]My [vagina] is sopping wet... am I enjoying this?![or]Oh my [vagina] is so loose any wet again...[stopping][otherwise][second custom style][line break][one of]My [vagina] is so wet..  I feel horny...[or]I love how horny my [vagina] is making me feel...[stopping][end if][roman type][line break]";
+				say "[if the sex addiction of the player < 8][line break][variable custom style][one of]My [vagina] is sopping wet... am I enjoying this?![or]Oh my [vagina] is so loose any wet again...[stopping][otherwise][line break][second custom style][line break][one of]My [vagina] is so wet.. I feel horny...[or]I love how horny my [vagina] is making me feel...[stopping][end if][roman type][line break]";
 			if the openness of vagina is 7:
 				say "[variable custom style][line break][one of]My [vagina] is so wet and stretched, it's as if it's just begging to be stretched even further...[or]Uh-oh, my cunt is pretty much gaping wide again![stopping][roman type][line break]";
 			if the openness of vagina is 9:
@@ -329,7 +329,7 @@ To Wombfill (X - a number):
 		if the soreness of vagina > X, decrease the soreness of vagina by X;
 		otherwise now the soreness of vagina is 0;
 		now the tolerated of vagina is 0;
-	if a random number between 0 and 6 < X, SemenAddictUp 1;
+	if a random number between 0 and 5 < X, SemenAddictUp 1;
 	while X > 0:
 		decrease X by 1;
 		if the semen volume of vagina >= 10 and flav-said < 1:
@@ -374,7 +374,7 @@ To compute sudden pregnancy:
 		check for extreme pregnancies;
 		if the semen volume of vagina is 31, now the semen volume of vagina is 50;
 		otherwise now the semen volume of vagina is 30;
-		say "Suddenly[one of] and impossibly,[or][stopping] your belly bulges out to a [if the semen volume of vagina is 50]gigantic[otherwise]huge[end if] size!  [one of]You instinctively know that the [SuddenPregTitle of M] has just made you pregnant.  [variable custom style][if the bimbo of the player < 7]Oh COME ON!  You're seriously telling me that[otherwise]So[end if] this is how pregnancy works in this game?[or]You are once again instantly brought to full term pregnancy.  [variable custom style][if the bimbo of the player > 14]Yippee![otherwise]Oof!  So heavy...[end if][stopping][roman type][line break]";
+		say "Suddenly[one of] and impossibly,[or][stopping] your belly bulges out to a [if the semen volume of vagina is 50]gigantic[otherwise]huge[end if] size!  [one of]You instinctively know that the [SuddenPregTitle of M] has just made you pregnant. [line break][variable custom style][if the bimbo of the player < 7]Oh COME ON!  You're seriously telling me that[otherwise]So[end if] this is how pregnancy works in this game?[or]You are once again instantly brought to full term pregnancy. [variable custom style][if the bimbo of the player > 14]Yippee![otherwise]Oof!  So heavy...[end if][stopping][roman type][line break]";
 		check goddess eligibility.
 
 To say SuddenPregTitle of (M - a thing):
@@ -494,3 +494,4 @@ To 2WombSquirt:
 	
 
 Vagina ends here.
+

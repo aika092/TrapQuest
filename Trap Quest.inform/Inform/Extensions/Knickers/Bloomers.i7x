@@ -1,6 +1,6 @@
 Bloomers by Knickers begins here.
 
-bloomers is a kind of knickers.  There is 1 bloomers.  bloomers are usually sheer.  bloomers are usually nylon.  The armour of bloomers is 3.  The printed name of bloomers is usually "[TQlink of item described][clothing-title-before]pair of sheer nylon bloomers[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "pair", "of", "sheer" as bloomers.  The text-shortcut of bloomers is "bl".
+bloomers is a kind of knickers. There is 1 bloomers. bloomers are usually sheer. bloomers are usually nylon. The armour of bloomers is 3. The printed name of bloomers is usually "[TQlink of item described][clothing-title-before]pair of sheer nylon bloomers[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "pair", "of", "sheer" as bloomers. The text-shortcut of bloomers is "bl".
 
 Definition: a bloomers is displacable:
 	decide yes.
@@ -9,13 +9,13 @@ To decide which figure-name is clothing-image of (H - a bloomers):
 	decide on figure of bloomers.
 
 To compute SelfExamineDesc of (K - a bloomers):
-	say "A pair of sheer nylon bloomers covers a small amount of your [ShortDesc of hips].  ";
+	say "A pair of sheer nylon bloomers covers a small amount of your [ShortDesc of hips]. ";
 
 To say selfexamineuniquetitle of (K - a bloomers):
 	say "pair of sheer nylon bloomers".
 
 To say ClothingDesc of (K - a bloomers):
-	say "These [UniqueTitle of K] are very sheer.  They would only ever be worn by sissy cross-dressers.".
+	say "These [UniqueTitle of K] are very sheer. They would only ever be worn by sissy cross-dressers.".
 	
 To say UniqueTitle of (K - a bloomers):
 		say "sexy sissy bloomers".
@@ -34,19 +34,19 @@ Definition: a bloomers (called C) is sissifying:
 To decide which object is the potential-upgrade-target of (C - a bloomers):
 	decide on a random off-stage crotchless bloomers.
 
-crotchless bloomers is a kind of bloomers.  There is 1 unique crotchless bloomers.  A crotchless bloomers is usually crotch-exposing.  The printed name of crotchless bloomers is usually "[TQlink of item described][clothing-title-before]pair of crotchless sheer nylon bloomers[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+crotchless bloomers is a kind of bloomers. There is 1 unique crotchless bloomers. A crotchless bloomers is usually crotch-exposing. The printed name of crotchless bloomers is usually "[TQlink of item described][clothing-title-before]pair of crotchless sheer nylon bloomers[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (H - a crotchless bloomers):
 	decide on figure of crotchless bloomers.
 
 To compute SelfExamineDesc of (K - a crotchless bloomers):
-	say "A pair of sheer nylon crotchless bloomers covers a small amount of your [ShortDesc of hips].  ";
+	say "A pair of sheer nylon crotchless bloomers covers a small amount of your [ShortDesc of hips]. ";
 
 To say selfexamineuniquetitle of (K - a crotchless bloomers):
 	say "pair of sheer nylon crotchless bloomers".
 
 To say ClothingDesc of (K - a crotchless bloomers):
-	say "These [UniqueTitle of K] are very sheer.  They would only ever be worn by sissy cross-dressers.".
+	say "These [UniqueTitle of K] are very sheer. They would only ever be worn by sissy cross-dressers.".
 	
 To say UniqueTitle of (K - a crotchless bloomers):
 		say "sexy crotchless sissy bloomers".
@@ -68,3 +68,4 @@ Definition: a crotchless bloomers is end of transformation chain:
 
 
 Bloomers ends here.
+

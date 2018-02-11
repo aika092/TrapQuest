@@ -3,7 +3,7 @@ Nipple Piercings by Piercings Modules begins here.
 
 A nipple piercing is a kind of piercing.
 
-A nipple chain is a kind of nipple piercing.  The printed name of nipple chain is "[TQlink of item described][item style]nipple chain[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of nipple chain is "nc".  There is 1 nipple chain.  Figure of nipple chain is the file "nipplechain1.png".  A nipple chain is usually titfuck-addiction-influencing.
+A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[TQlink of item described][item style]nipple chain[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing.  A nipple chain has a number called arousal-charge.
 
 [!<TheCowChainSlutRule>+
 
@@ -24,15 +24,18 @@ To decide which figure-name is the clothing-image of (C - a nipple chain):
 	decide on figure of nipple chain.
 
 To say ClothingDesc of (C - a nipple chain):
-	say "Two solid metal piercings connected together by a short chain.  Your already over-sensitive nipples would scream in pain if this were to get pulled.".
+	say "Two solid metal piercings connected together by a short chain. Your already over-sensitive nipples would scream in pain if this were to get pulled.".
 
 To say ShortDesc of (C - a nipple chain):
 	say "nipple chain".
 
 To compute periodic effect of (N - a nipple chain):
-	if N is cursed and the latex-transformation of the player < 6 and a random number between 1 and 66 is 1:
-		say "[bold type]Your [printed name of N] are [one of][or]still [stopping]making your nipples over-sensitive and erect, keeping you stimulated![roman type][line break]";
-		arouse 400.
+	increase the arousal-charge of N by 1;
+	if the arousal-charge of N > 65:
+		now the arousal-charge of N is 0;
+		if N is cursed and the latex-transformation of the player < 6:
+			say "[bold type]Your [printed name of N] are [one of][or]still [stopping]making your nipples over-sensitive and erect, keeping you stimulated![roman type][line break]";
+			arouse 400.
 
 Definition: a nipple chain (called P) is eligible:
 	decide no.
@@ -51,7 +54,7 @@ To say SubduedGrabFlav of (C - nipple chain):
 
 Section 1 Wearability
 
-nipple piercing wearability rules is a rulebook.  The wearability rules of nipple chain is usually nipple piercing wearability rules.
+nipple piercing wearability rules is a rulebook. The wearability rules of nipple chain is usually nipple piercing wearability rules.
 
 This is the nipple chain breast covering clash rule:
 	if there is worn breast covering clothing, rule fails.
@@ -78,3 +81,4 @@ The bra nipple chain clash rule is listed in the bra wearability rules.
 
 
 Nipple Piercings ends here.
+

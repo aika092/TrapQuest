@@ -8,7 +8,7 @@ Definition: a severed-tentacle (called T) is TQedible:
 
 TentInt is a number that varies. TentInt is 1.[### Since this is only used within the tentacle's functions, we should consider making this variable part of the tentacle itself.]
 
-The printed name of severed-tentacle is usually "[TQlink of item described][clothing-title-before][if there is a worn severed-tentacle]The Master[otherwise]severed tentacle[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of severed-tentacle is "sev".
+The printed name of severed-tentacle is usually "[TQlink of item described][clothing-title-before][if there is a worn severed-tentacle]The Master[otherwise]severed tentacle[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of severed-tentacle is "sev".
 
 Figure of severed tentacle is the file "severedtentacle1.png".
 
@@ -42,7 +42,7 @@ To compute periodic effect of (H - a severed-tentacle):
 			Intdown 1;
 			increase TentInt by 1;
 			increase the domination of the player by 4;
-			say "The tentacle on your head throbs suddenly, and you feel light-headed. [first custom style]'You make an excellent meal. I shall reward you to make you a more suitable servant.'[roman type]";
+			say "The tentacle on your head throbs suddenly, and you feel light-headed. [line break][first custom style]'You make an excellent meal. I shall reward you to make you a more suitable servant.'[roman type][line break]";
 			if a random number between 1 and 2 is 1:
 				Strengthup 1;
 				say " You feel stronger!";
@@ -50,7 +50,7 @@ To compute periodic effect of (H - a severed-tentacle):
 				Dexup 1;
 				say " You feel more flexible!";
 		otherwise if the player is not wearing a throbbing-tentacle and a monster is not penetrating a fuckhole and a trap is not penetrating a fuckhole:
-			say "The tentacle on your head throbs with increasing frequency and you feel an increasing sense of suction on your head. [first custom style]'It appears my meal is complete. Now for your final reward. Remove me and place me before your entrance, [whore].'[roman type] You feel the tentacle slightly release, and you gently and reverently remove it from your head. Taking the tentacle[']s shaft in both hands, you place it up against your [if the player is female][vagina][']'s[otherwise][asshole][']s[end if] entrance. [if the player is not lewdly exposed]With unexpected strength, the tentacle rips aside all obstructions, then[otherwise]It then[end if] slowly yet forcefully enters you. As it pushes itself in, you feel compelled to rub its length in your hands and are rewarded by it swelling inside you. After an excruciating moment that feels like an eternity it bottoms out inside you, and begins to pulse and rub until it fills you completely. [first custom style]'Come, [slut]. Now.'[roman type] You find yourself gleefully obeying!";
+			say "The tentacle on your head throbs with increasing frequency and you feel an increasing sense of suction on your head. [line break][first custom style]'It appears my meal is complete. Now for your final reward. Remove me and place me before your entrance, [whore].'[roman type][line break]You feel the tentacle slightly release, and you gently and reverently remove it from your head. Taking the tentacle[']s shaft in both hands, you place it up against your [if the player is female][vagina][']'s[otherwise][asshole][']s[end if] entrance. [if the player is not lewdly exposed]With unexpected strength, the tentacle rips aside all obstructions, then[otherwise]It then[end if] slowly yet forcefully enters you. As it pushes itself in, you feel compelled to rub its length in your hands and are rewarded by it swelling inside you. After an excruciating moment that feels like an eternity it bottoms out inside you, and begins to pulse and rub until it fills you completely. [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
 			let P be a random off-stage throbbing-tentacle;
 			repeat with C running through worn top level protection clothing:
 				destroy C;
@@ -68,7 +68,7 @@ To compute periodic effect of (H - a severed-tentacle):
 				summon P cursed;
 				now P is penetrating vagina;
 		otherwise if the player is able to get horny:
-			say "The tentacle on your head throbs with what feels like amusement. [first custom style]'I was going to reward you, [whore], but it seems you are busy so I suppose it can wait. Hmm, still, I think you deserve this...'[roman type] A rush of euphoria envelops you!";
+			say "The tentacle on your head throbs with what feels like amusement. [line break][first custom style]'I was going to reward you, [whore], but it seems you are busy so I suppose it can wait. Hmm, still, I think you deserve this...'[roman type][line break]A rush of euphoria envelops you!";
 			if the player is male:
 				anally orgasm shamefully;
 			otherwise:
@@ -105,3 +105,4 @@ Check taking off severed-tentacle:
 
 
 Severed Tentacle ends here.
+

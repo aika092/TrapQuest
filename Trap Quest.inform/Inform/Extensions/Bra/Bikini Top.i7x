@@ -1,12 +1,12 @@
 Bikini Top by Bra begins here.
 
-A bikini top is a kind of bra.  A bikini top is usually nylon.  A bikini top is usually swimwear. A bikini top is usually optional-top-displacable.  The soak-limit of a bikini top is 6.
+A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually swimwear. A bikini top is usually optional-top-displacable. The soak-limit of a bikini top is 6.
 
 The text-shortcut of bikini top is "bt".
 
-The min size of a bikini top is usually 2.  The max size of a bikini top is usually 15.  The support of a bikini top is usually 2.
+The min size of a bikini top is usually 2. The max size of a bikini top is usually 15. The support of a bikini top is usually 2.
 
-A string bikini top is a kind of bikini top.  The soak-limit of a string bikini top is 2.  The min size of a string bikini top is usually 20.  The max size of a string bikini top is usually 20.  The support of a string bikini top is usually 0. [Essentially a string bikini top comes in one size fits all]
+A string bikini top is a kind of bikini top. The soak-limit of a string bikini top is 2. The min size of a string bikini top is usually 20. The max size of a string bikini top is usually 20. The support of a string bikini top is usually 0. [Essentially a string bikini top comes in one size fits all]
 
 To say CupDesc of (C - a string bikini top):
 	say "".
@@ -29,3 +29,4 @@ To decide which object is the unique-upgrade-target of (C - a bikini top):
 	decide on nothing.
 
 Bikini Top ends here.
+

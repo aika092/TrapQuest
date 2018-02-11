@@ -1,6 +1,6 @@
 Mary Janes by Shoes begins here.
 
-A mary janes is a kind of shoes.  A mary janes is usually leather.  A mary janes is usually unique.
+A mary janes is a kind of shoes. A mary janes is usually leather. A mary janes is usually unique.
 
 The printed name of mary janes is usually "[TQlink of item described][item style][clothing-title-before]pair of mary janes[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of mary janes is "mjs".
 
@@ -33,3 +33,4 @@ To decide which object is the potential-upgrade-target of (C - a mary janes):
 
 
 Mary Janes ends here.
+

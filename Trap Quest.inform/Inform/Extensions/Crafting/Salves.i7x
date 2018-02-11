@@ -1,7 +1,7 @@
 Salves by Crafting begins here.
 
 
-A salve is a kind of alchemy product.  Understand "salves" as a salve.
+A salve is a kind of alchemy product. Understand "salves" as a salve.
 A salve is wearable. 
 A true salve is a kind of alchemy product. Understand "salves" as a salve.
 A true salve is wearable. 
@@ -15,7 +15,7 @@ Include Salve Rubbing by Actions.
 
 Part 1 - Salve of Buoyancy
 
-A salve of buoyancy is a kind of salve.  The printed name of salve of buoyancy is "[TQlink of item described]salve of buoyancy[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of salve of buoyancy is "[TQlink of item described]salves of buoyancy[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of salve of buoyancy is "sbo".  The description of salve of buoyancy is "A small round metal container that contains a greasy lip-balm-like substance.  [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type].[end if]".  There are 5 salve of buoyancy.
+A salve of buoyancy is a kind of salve. The printed name of salve of buoyancy is "[TQlink of item described]salve of buoyancy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of salve of buoyancy is "[TQlink of item described]salves of buoyancy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of salve of buoyancy is "sbo". The description of salve of buoyancy is "A small round metal container that contains a greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type].[end if]". There are 5 salve of buoyancy.
 
 To decide which number is the alchemy key of (A - a salve of buoyancy):
 	decide on 9.
@@ -35,7 +35,7 @@ To oil (B - a body part) with (S - a salve of buoyancy):
 
 Part 2 - Salve of Restriction
 
-A salve of restriction is a kind of salve.  The printed name of salve of restriction is "[TQlink of item described]salve of restriction[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of salve of restriction is "[TQlink of item described]salves of restriction[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of salve of restriction is "sor".  The description of salve of restriction is "A small round metal container that contains a greasy lip-balm-like substance.  [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type].[end if]".  There are 5 salve of restriction.
+A salve of restriction is a kind of salve. The printed name of salve of restriction is "[TQlink of item described]salve of restriction[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of salve of restriction is "[TQlink of item described]salves of restriction[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of salve of restriction is "sor". The description of salve of restriction is "A small round metal container that contains a greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type].[end if]". There are 5 salve of restriction.
 
 To decide which number is the alchemy key of (A - a salve of restriction):
 	decide on 10.
@@ -71,7 +71,7 @@ To oil (B - a body part) with (S - a salve of restriction):
 
 Part 3 - Salve of Concealment
 
-A salve of concealment is a kind of salve.  The printed name of salve of concealment is "[TQlink of item described]salve of concealment[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of salve of concealment is "[TQlink of item described]salves of concealment[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of salve of concealment is "sac".  The description of salve of concealment is "A small round metal container that contains a greasy lip-balm-like substance.  [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to an orifice.[end if]".  There are 5 salve of concealment.
+A salve of concealment is a kind of salve. The printed name of salve of concealment is "[TQlink of item described]salve of concealment[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of salve of concealment is "[TQlink of item described]salves of concealment[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of salve of concealment is "sac". The description of salve of concealment is "A small round metal container that contains a greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to an orifice.[end if]". There are 5 salve of concealment.
 
 To decide which number is the alchemy key of (A - a salve of concealment):
 	decide on 11.
@@ -109,3 +109,4 @@ The salve butt slut rule is listed in the butt slut eligibility rules.
 
 
 Salves ends here.
+

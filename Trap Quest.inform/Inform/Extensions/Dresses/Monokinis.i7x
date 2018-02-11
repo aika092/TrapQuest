@@ -2,7 +2,7 @@ Monokinis by Dresses begins here.
 
 Part 1 - White Monokini
 
-A white monokini is a kind of monokini.  A white monokini is usually sheer.  There is 1 white monokini.  A white monokini is fully covering. A white monokini is not-top-displacable.  The text-shortcut of white monokini is "wmk".
+A white monokini is a kind of monokini. A white monokini is usually sheer. There is 1 white monokini. A white monokini is fully covering. A white monokini is not-top-displacable. The text-shortcut of white monokini is "wmk".
 
 The printed name of white monokini is usually "[TQlink of item described][clothing-title-before]white onepiece swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -15,7 +15,7 @@ To decide which figure-name is clothing-image of (C - a white monokini):
 	decide on figure of white monokini.
 
 To say ClothingDesc of (C - a white monokini):
-	say "This tight fitting white onepiece swimsuit would be quite modest if it wasn't for the fact that it's quite see-through.  [if C is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
+	say "This tight fitting white onepiece swimsuit would be quite modest if it wasn't for the fact that it's quite see-through. [if C is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
 
 To say ShortDesc of (C - a white monokini):
 	say "translucent white swimsuit".
@@ -26,7 +26,7 @@ To decide which object is the potential-upgrade-target of (C - a white monokini)
 Part 2 - Green Monokini
 
 
-A green monokini is a kind of monokini.  There is 1 green monokini.  A green monokini is very low cut.  The text-shortcut of green monokini is "gmk".
+A green monokini is a kind of monokini. There is 1 green monokini. A green monokini is very low cut. The text-shortcut of green monokini is "gmk".
 
 The printed name of green monokini is usually "[TQlink of item described][clothing-title-before]green onepiece swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -46,7 +46,7 @@ To decide which object is the potential-upgrade-target of (C - a green monokini)
 
 Part 3 - Grey Monokini
 
-A grey monokini is a kind of monokini.  There is 1 grey monokini.  The text-shortcut of grey monokini is "grm".
+A grey monokini is a kind of monokini. There is 1 grey monokini. The text-shortcut of grey monokini is "grm".
 
 The printed name of grey monokini is usually "[TQlink of item described][clothing-title-before]grey onepiece swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -72,3 +72,4 @@ To decide which object is the potential-upgrade-target of (C - a grey monokini):
 
 
 Monokinis ends here.
+

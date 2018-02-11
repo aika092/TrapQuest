@@ -7,7 +7,7 @@ Part 1 - Takeoff and Landing
 REQUIRES COMMENTING
 
 *!]
-last-turn-flight is a number that varies.  last-turn-flight is 0.
+last-turn-flight is a number that varies. last-turn-flight is 0.
 
 [!<ComputeFlight>+
 
@@ -27,13 +27,13 @@ REQUIRES COMMENTING
 +!]
 To Execute Takeoff:
 	now last-turn-flight is 1;
-	say "Your body is now lighter than air!  As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][first custom style]What the fuck is happening to me?![otherwise][second custom style]Oooh, yay, I can fly!  Wait, how do I control where I go?  Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again!  Weeeee![end if][stopping][roman type][line break]";
+	say "Your body is now lighter than air!  As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][line break][first custom style]What the fuck is happening to me?![otherwise][line break][second custom style]Oooh, yay, I can fly!  Wait, how do I control where I go?  Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again!  Weeeee![end if][stopping][roman type][line break]";
 	repeat with D running through dildo traps penetrating a fuckhole:
 		dislodge D;
 	let flav-said be 0;
 	repeat with C running through things held by the player:
 		unless C is worn:
-			if flav-said is 0, say "Your sudden flight makes you drop all the items you're carrying.";
+			if flav-said is 0, say "Your sudden flight makes [if there is a worn bag of holding]all your items fall out of your [ShortDesc of random worn bag of holding] and [end if]you drop all the items you're carrying!";
 			now flav-said is 1;
 			now C is in the location of the player;
 	if there is a worn magic wand:
@@ -53,7 +53,7 @@ REQUIRES COMMENTING
 +!]
 To Execute Landing:
 	now last-turn-flight is 0;
-	say "You slowly start to descend towards the ground.  ";
+	say "You slowly start to descend towards the ground. ";
 	if the player is in Sky01:
 		say "You have no idea where you are going to land.";
 		now the player is in a random placed jungle room;
@@ -69,7 +69,7 @@ To Execute Landing:
 	if the player is upright:
 		try kneeling;
 	otherwise if the location of the player is glue-puddled:
-		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh oh.[or][variable custom style]Please, no![roman type][line break][or][variable custom style]Dear lord, not again![roman type][line break][at random]";
+		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh oh.[or][line break][variable custom style]Please, no![roman type][line break][or][line break][variable custom style]Dear lord, not again![roman type][line break][at random]";
 		check glue tripping.
 
 [!<SayLandingTauntOfMonster>+
@@ -143,3 +143,4 @@ Definition: a person (called P) is too high to see:
 
 
 Flight ends here.
+

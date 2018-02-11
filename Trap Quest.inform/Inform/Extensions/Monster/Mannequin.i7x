@@ -1,6 +1,9 @@
 Mannequin by Monster begins here.
 
-A mannequin is a kind of monster.  A mannequin is usually woods dwelling.  A mannequin is usually willing to do anal.  A mannequin is usually willing to do oral. A mannequin is poison immune.
+A mannequin is a kind of monster. The poison-status of a mannequin is -1.
+
+Definition: A mannequin (called M) is woods dwelling:
+	decide yes.
 
 Figure of topless mannequin is the file "mannequin1.png".
 Figure of stylish mannequin is the file "mannequin2.png".
@@ -12,26 +15,33 @@ Figure of lingerie-clad mannequin is the file "mannequin7.png".
 Figure of skater mannequin is the file "mannequin8.png".
 Figure of goth Mannequin is the file "mannequin9.png".
 
-The description of mannequin is usually "[MannequinDesc]".  The text-shortcut of mannequin is "man".
+The description of mannequin is usually "[MannequinDesc]". The text-shortcut of mannequin is "man".
 
-A stylish mannequin is a kind of mannequin.  There is 1 stylish mannequin.
+A stylish mannequin is a kind of mannequin. There is 1 stylish mannequin.
 The printed name of stylish mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]stylish mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of stylish mannequin is "stm".
-A topless mannequin is a kind of mannequin.  There is 1 topless mannequin.
+A topless mannequin is a kind of mannequin. There is 1 topless mannequin.
 The printed name of topless mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]topless mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of topless mannequin is "tom".
-A flirty mannequin is a kind of mannequin.  There is 1 flirty mannequin.
+A flirty mannequin is a kind of mannequin. There is 1 flirty mannequin.
 The printed name of flirty mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]flirty mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of flirty mannequin is "fli".
-A lycra-clad mannequin is a kind of mannequin.  There is 1 lycra-clad mannequin.
-The printed name of lycra-clad mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]lycra clad mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of lycra-clad mannequin is "lyc".  Understand "lycra", "clad" as lycra-clad mannequin.
-A swimmer mannequin is a kind of mannequin.  There is 1 swimmer mannequin.
+A lycra-clad mannequin is a kind of mannequin. There is 1 lycra-clad mannequin.
+The printed name of lycra-clad mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]lycra clad mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of lycra-clad mannequin is "lyc". Understand "lycra", "clad" as lycra-clad mannequin.
+A swimmer mannequin is a kind of mannequin. There is 1 swimmer mannequin.
 The printed name of swimmer mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]swimmer mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of swimmer mannequin is "swi".
-A latex-clad mannequin is a kind of mannequin.  There is 1 latex-clad mannequin.
-The printed name of latex-clad mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]latex clad mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of latex-clad mannequin is "lat".  Understand "latex", "clad" as latex-clad mannequin.
-A lingerie-clad mannequin is a kind of mannequin.  There is 1 lingerie-clad mannequin.
-The printed name of lingerie-clad mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]lingerie clad mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of lingerie-clad mannequin is "lin".  Understand "lingerie", "clad" as lingerie-clad mannequin.
-An skater mannequin is a kind of mannequin.  There is 1 skater mannequin.
+A latex-clad mannequin is a kind of mannequin. There is 1 latex-clad mannequin.
+The printed name of latex-clad mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]latex clad mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of latex-clad mannequin is "lat". Understand "latex", "clad" as latex-clad mannequin.
+A lingerie-clad mannequin is a kind of mannequin. There is 1 lingerie-clad mannequin.
+The printed name of lingerie-clad mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]lingerie clad mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of lingerie-clad mannequin is "lin". Understand "lingerie", "clad" as lingerie-clad mannequin.
+An skater mannequin is a kind of mannequin. There is 1 skater mannequin.
 The printed name of skater mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]skater mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of skater mannequin is "ska".
 A goth mannequin is a kind of mannequin. There is 1 goth mannequin.
-The printed name of goth mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]goth mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". A goth mannequin is usually mansion dwelling. A goth mannequin is usually not woods dwelling. The text-shortcut of goth mannequin is "got".
+The printed name of goth mannequin is "[if item described is in the location of the player][TQlink of item described][end if][input-style]goth mannequin[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of goth mannequin is "got".
+
+Definition: A goth mannequin (called M) is woods dwelling:
+	if doomed < 5, decide no;
+	decide yes.
+
+Definition: A goth mannequin (called M) is mansions dwelling:
+	decide yes.
 
 To say MannequinDesc:
 	if images visible is 1:
@@ -53,10 +63,10 @@ To say MannequinDesc:
 			display the Figure of lingerie-clad mannequin;
 		otherwise:
 			display the Figure of skater mannequin;
-	if item described is goth mannequin or item described is topless mannequin or item described is stylish mannequin or item described is flirty mannequin, say "[if item described is goth mannequin]An unsettling female mannequin complete with garish makeup and a blank stare. Her solid black hair frames a stark pale face which emphasises her scarlet red lips.  Everything she is wearing is black: her criminally short punk dress, her knee high boots and her gloves[otherwise if item described is topless mannequin]A topless female mannequin with a tanned skin tone, wearing tight denim jeans. She has blonde hair drawn back into a silky ponytail and a pink scrunchie around each wrist. Her breasts are perfectly spherical and unmoving[otherwise if item described is stylish mannequin]An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair, and a short pink dress underneath a trendy belt. It is low-cut and very thin, so her featureless breasts and smooth crotch are on full display for your prying eyes. She has long white fingernails, which match the latex handbag hanging over one of her shoulders[otherwise]An unsettling female mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by excessive amounts of eye shadow and eyeliner.  Wavy black hair flows down her front and back to her waist, giving her a very provocative look.  This is emphasised by the sheer red negligee she is wearing.  It is practically see-through when the light touches it in the right way[end if].  "; [split into two because say clause was too long]
-	otherwise say "[if item described is lycra-clad mannequin]An unsettling female mannequin, with a warm tanned skin tone and a politely smiling facial expression, painted in 'night on the town' make up.  Reddish-brown hair rests on her shoulders, kept mostly tidy thanks to a ponytail.  Her grey playsuit boasts a very low V neck that almost exposes her belly button, and is ever so slightly sheer, giving you glimpses of what is underneath.  Or rather, what would be underneath if she wasn't a doll[otherwise if item described is swimmer mannequin]An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair and is modelling a tight blue one-piece swimsuit[otherwise if item described is latex-clad mannequin]An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair, and is modelling a provocative pink latex dress.  The V neck is so low that her belly button is left bare.  A pair of grey latex knee-length boots adorn her feet[otherwise if item described is lingerie-clad mannequin]An unsettling female mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by make up that really make her eyes pop.  Her 'outfit' consists of only the most skimpy, lacy black and burgundy lingerie: a full set of strapless bra, thong, stockings and suspenders[otherwise]An unsettling female mannequin complete with striking makeup and blankly smiling stare.  A pink punk-styled top sits above a tiny white skater mini-skirt, which barely hides whatever underwear she might be wearing.  Fishnet tights sit under multicoloured striped knee-length socks and knee-pads.  Fingerless gloves, elbow-pads and black & white trainers finish off the skater look[end if].  ";
-	say "A small handbag hangs delicately over one shoulder.  She would look just like a real human if it wasn't for her doll-like joints and completely static facial expression.";
-	if diaper quest is 0, say "[if the bimbo of the player <= 4][first custom style][one of]Wow, she's really creepy.[or]She doesn't look tough, but she's not human so I should keep an eye out.[or]I wonder if she's got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt she can feel pain, but she probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][variable custom style][one of]She's actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed her up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][second custom style][one of]Her make up looks really good.[or]Is that a wig or is that real hair?  She has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have her do my make up![or]Maybe she can give me some fashion pointers, teehee![or]People stare at her all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like her![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or]She[']s so lucky, people make all her choices for her every day![in random order][end if][roman type][line break]".
+	if item described is goth mannequin or item described is topless mannequin or item described is stylish mannequin or item described is flirty mannequin, say "[if item described is goth mannequin]An unsettling female mannequin complete with garish makeup and a blank stare. Her solid black hair frames a stark pale face which emphasises her scarlet red lips. Everything she is wearing is black: her criminally short punk dress, her knee high boots and her gloves[otherwise if item described is topless mannequin]A topless female mannequin with a tanned skin tone, wearing tight denim jeans. She has blonde hair drawn back into a silky ponytail and a pink scrunchie around each wrist. Her breasts are perfectly spherical and unmoving[otherwise if item described is stylish mannequin]An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair, and a short pink dress underneath a trendy belt. It is low-cut and very thin, so her featureless breasts and smooth crotch are on full display for your prying eyes. She has long white fingernails, which match the latex handbag hanging over one of her shoulders[otherwise]An unsettling female mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by excessive amounts of eye shadow and eyeliner. Wavy black hair flows down her front and back to her waist, giving her a very provocative look. This is emphasised by the sheer red negligee she is wearing. It is practically see-through when the light touches it in the right way[end if]. "; [split into two because say clause was too long]
+	otherwise say "[if item described is lycra-clad mannequin]An unsettling female mannequin, with a warm tanned skin tone and a politely smiling facial expression, painted in 'night on the town' make up. Reddish-brown hair rests on her shoulders, kept mostly tidy thanks to a ponytail. Her grey playsuit boasts a very low V neck that almost exposes her belly button, and is ever so slightly sheer, giving you glimpses of what is underneath. Or rather, what would be underneath if she wasn't a doll[otherwise if item described is swimmer mannequin]An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair and is modelling a tight blue one-piece swimsuit[otherwise if item described is latex-clad mannequin]An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair, and is modelling a provocative pink latex dress. The V neck is so low that her belly button is left bare. A pair of grey latex knee-length boots adorn her feet[otherwise if item described is lingerie-clad mannequin]An unsettling female mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by make up that really make her eyes pop. Her 'outfit' consists of only the most skimpy, lacy black and burgundy lingerie: a full set of strapless bra, thong, stockings and suspenders[otherwise]An unsettling female mannequin complete with striking makeup and blankly smiling stare. A pink punk-styled top sits above a tiny white skater mini-skirt, which barely hides whatever underwear she might be wearing. Fishnet tights sit under multicoloured striped knee-length socks and knee-pads. Fingerless gloves, elbow-pads and black & white trainers finish off the skater look[end if]. ";
+	say "A small handbag hangs delicately over one shoulder. She would look just like a real human if it wasn't for her doll-like joints and completely static facial expression.";
+	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, she's really creepy.[or]She doesn't look tough, but she's not human so I should keep an eye out.[or]I wonder if she's got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt she can feel pain, but she probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of]She's actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed her up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of]Her make up looks really good.[or]Is that a wig or is that real hair?  She has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have her do my make up![or]Maybe she can give me some fashion pointers, teehee![or]People stare at her all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like her![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or]She[']s so lucky, people make all her choices for her every day![in random order][end if][roman type][line break]".
 
 
 To say MannequinHairColour of (M - a mannequin):
@@ -93,6 +103,12 @@ To decide which number is the girth of (M - a mannequin):
 		decide on the size of P;[If the mannequin has a plug or a dildo, she can use it on you]
 	decide on 2.
 
+Definition: a mannequin (called M) is willing to do anal:
+	decide yes.
+
+Definition: a mannequin (called M) is willing to do oral:
+	decide yes.
+
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a mannequin):
@@ -114,7 +130,7 @@ To compute perception of (M - a mannequin):
 			bore M;
 	otherwise if the player is a bit horny:
 		if a random number between 5 and 25 < the anal sex addiction of the player and the player is not immobile and the player is upright and the player is not unable to orgasm so soon and the player is not flying:
-			say "You look at the [M] and feel a burning desire to have an orgasm milked out of you[if the latex-transformation of the player > 3], even though you know it won't work[end if].  In this moment of weakness, you drop to your knees and look at the [M] expectantly.";
+			say "You look at the [M] and feel a burning desire to have an orgasm milked out of you[if the latex-transformation of the player > 3], even though you know it won't work[end if]. In this moment of weakness, you drop to your knees and look at the [M] expectantly.";
 			try kneeling;
 			if the player is not ass protected, now presented-orifice is asshole;
 			if the player is prone or the bimbo of the player > 14:
@@ -151,7 +167,7 @@ To decide which number is the rounds of sex left of (M - a mannequin):
 	if the latex-transformation of the player > 2, decide on 0;
 	decide on 10 - ((a random number between 1 and 3) + arousal of the player / 1000 + the sex-length of M).
 
-To compute unique climax of (M - a mannequin) of (F - asshole):
+To compute unique climax of (M - a mannequin) in (F - asshole):
 	FavourUp M;
 	if the latex-transformation of the player > 2:
 		say "The [M] looks confused, removes her hand from your [asshole] and leaves you alone.";
@@ -204,7 +220,7 @@ Definition: a mannequin (called M) is requiring facial penetration:
 To compute (M - a goth mannequin) entering mouth:
 	let S be a random off-stage pink scrunchie;
 	if the make-up of face is 3 and permanent makeup is 0:
-		say "The [M] [if presented-orifice is face]seems to appreciate you holding your mouth open and your head still and [end if]pulls out a brush you've never seen before.  As she brushes it across your face, nothing observable seems to change but your current makeup feels more... durable.";
+		say "The [M] [if presented-orifice is face]seems to appreciate you holding your mouth open and your head still and [end if]pulls out a brush you've never seen before. As she brushes it across your face, nothing observable seems to change but your current makeup feels more... durable.";
 		now permanent makeup is 1;
 		satisfy M;
 	otherwise if the lips of face < 2 + artificial enhancements fetish:
@@ -213,13 +229,13 @@ To compute (M - a goth mannequin) entering mouth:
 		LipsUp 1;
 		satisfy M;
 	otherwise if the make-up of face > a random number between 0 and 2 and S is actually summonable and the largeness of hair > 4:
-		if the player is ponytailed, say "The [M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][second custom style]sexy [roman type][end if]pair of pigtails.[if the player is male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
-		otherwise say "The [M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][second custom style]cute[roman type][end if] ponytail.[if the player is male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
+		if the player is ponytailed, say "The [M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][line break][second custom style]sexy [roman type][line break][end if]pair of pigtails.[if the player is male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
+		otherwise say "The [M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][line break][second custom style]cute[roman type][line break][end if] ponytail.[if the player is male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
 		summon S cursed;
 		satisfy M;
 	otherwise if the make-up of face > 1 and the largeness of hair > 4 and a random number between 1 and 5 > 2 and artificial enhancements fetish is 1 and the fake largeness of hair < 10:
 		FakeHairUp 4;
-		say "The [M] pulls out some fake hair extensions in just your colour, and at rapid speed skilfully attaches them to your existing hair.  You now have [ShortDesc of hair]!";
+		say "The [M] pulls out some fake hair extensions in just your colour, and at rapid speed skilfully attaches them to your existing hair. You now have [ShortDesc of hair]!";
 		satisfy M;
 	otherwise if asshole is an actual target:
 		follow the monster asshole insertion rules; [That's right, we decide that the mannequin goes after the asshole instead.]
@@ -235,17 +251,17 @@ To compute (M - a mannequin) entering mouth:
 		summon H cursed;
 		satisfy M;
 	otherwise if the make-up of face is 3 and permanent makeup is 0:
-		say "The [M] [if presented-orifice is face]seems to appreciate you holding your mouth open and your head still and [end if]pulls out a brush you've never seen before.  As she brushes it across your face, nothing observable seems to change but your current makeup feels more... durable.";
+		say "The [M] [if presented-orifice is face]seems to appreciate you holding your mouth open and your head still and [end if]pulls out a brush you've never seen before. As she brushes it across your face, nothing observable seems to change but your current makeup feels more... durable.";
 		now permanent makeup is 1;
 		satisfy M;
 	otherwise if the make-up of face > a random number between 0 and 2 and S is actually summonable and the largeness of hair > 4:
-		if the player is ponytailed, say "The [M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][second custom style]sexy [roman type][end if]pair of pigtails.[if the player is male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
-		otherwise say "The [M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][second custom style]cute[roman type][end if] ponytail.[if the player is male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
+		if the player is ponytailed, say "The [M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][line break][second custom style]sexy [roman type][line break][end if]pair of pigtails.[if the player is male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
+		otherwise say "The [M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][line break][second custom style]cute[roman type][line break][end if] ponytail.[if the player is male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
 		summon S cursed;
 		satisfy M;		
 	otherwise if the make-up of face > 1 and the largeness of hair > 4 and a random number between 1 and 5 > 2 and artificial enhancements fetish is 1 and the fake largeness of hair < 10:
 		FakeHairUp 2;
-		say "The [M] pulls out some fake hair extensions in just your colour, and at rapid speed skilfully attaches them to your existing hair.  You now have [ShortDesc of hair]!";
+		say "The [M] pulls out some fake hair extensions in just your colour, and at rapid speed skilfully attaches them to your existing hair. You now have [ShortDesc of hair]!";
 		satisfy M;
 	otherwise if the make-up of face < 3:
 		say "The [M] [if presented-orifice is face]seems to appreciate you holding your mouth open and your head still and [end if]pulls out a makeup kit, and starts wildly applying it to your face!";
@@ -253,7 +269,7 @@ To compute (M - a mannequin) entering mouth:
 		if image cutscenes is 1, display figure of mannequin cutscene 2;
 		satisfy M;
 	otherwise if artificial enhancements fetish is 1 and F is actually summonable:
-		say "The [M] pulls out a set of long and slutty pink fake nails.  Before you can react to what is happening, all ten have been glued on top of your real nails.  Wow that was fast!  You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break.  The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
+		say "The [M] pulls out a set of long and slutty pink fake nails. Before you can react to what is happening, all ten have been glued on top of your real nails. Wow that was fast!  You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
 		summon F cursed;
 		satisfy M;
 	otherwise if asshole is an actual target:
@@ -268,11 +284,11 @@ To compute (M - a mannequin) entering asshole:
 	otherwise:
 		say "The [M] inserts two fingers into your [asshole], and starts stroking in a come hither motion.";
 	if the player is female: 
-		say "[unless there is a worn chastity cage or the player is pussy protected]With her other hand she starts expertly pinching and rubbing your clitoris.  [end if]She's trying to force an orgasm out of you!";
+		say "[unless there is a worn chastity cage or the player is pussy protected]With her other hand she starts expertly pinching and rubbing your clitoris. [end if]She's trying to force an orgasm out of you!";
 	otherwise if the size of penis > 0:
-		say "She [if there is a worn chastity cage]grasps your testicles with her other hand, delicately massaging them as her faux-knuckles bump against your cage.  [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with her other hand and skilfully begins stroking away.  [otherwise]delicately teasing your [ShortDesc of penis] with her fingertips.  [end if]She's trying to force an orgasm out of you!";
+		say "She [if there is a worn chastity cage]grasps your testicles with her other hand, delicately massaging them as her faux-knuckles bump against your cage. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with her other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with her fingertips. [end if]She's trying to force an orgasm out of you!";
 	otherwise:
-		say "She holds you still with her other hand.  It's like she's trying to force an anal orgasm out of you!";
+		say "She holds you still with her other hand. It's like she's trying to force an anal orgasm out of you!";
 	if image cutscenes is 1, display figure of mannequin cutscene 3;
 	now M is penetrating asshole;
 	now the sex-length of M is 0.
@@ -283,7 +299,7 @@ This is the mannequin forces orgasm through diaper rule:
 		let D be a random worn diaper;
 		while the coverer of D is clothing:
 			now D is the coverer of D;
-		say "The [M] seems to detect that you are very aroused.  Staring directly into your eyes with her blank expression, she presses a hand to the front of your [D] and pushes firmly.  Her hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]!  The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]!  [variable custom style]Unfff.... it's too strong!  I'm gonna...[roman type]Your eyes roll into the back of your head and you start shaking.";
+		say "The [M] seems to detect that you are very aroused. Staring directly into your eyes with her blank expression, she presses a hand to the front of your [D] and pushes firmly. Her hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]!  The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]!  [line break][variable custom style]Unfff.... it's too strong!  I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
 		orgasm;
 		SexAddictUp 1;
 		say "The [M] cocks her creepy head to one side, silently pulls her hand away and then leaves you alone to recover[if the player is male and the bimbo of the player < 6]I can't believe I just came into my diaper...[end if].[roman type][line break]";
@@ -292,7 +308,7 @@ This is the mannequin forces orgasm through diaper rule:
 		rule succeeds;
 	otherwise if there is a worn diaper and diaper lover >= 3 and the stomach-food of the player > 3 + incontinence and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
 		let M be current-monster;
-		say "You see the [M] moving something towards your face and expect her to apply a new layer of make up.  But instead, she pushes a small white pill into your mouth and down your throat!  You are forced to swallow it before you can react!  You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
+		say "You see the [M] moving something towards your face and expect her to apply a new layer of make up. But instead, she pushes a small white pill into your mouth and down your throat!  You are forced to swallow it before you can react!  You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
 		increase rectum by the stomach-food of the player;
 		now the stomach-food of the player is 1;
 		say "The [M] cocks her creepy head to one side, silently turns away and then leaves you alone to contemplate what might be coming very soon...";
@@ -303,7 +319,7 @@ The diaper punishment rule of a mannequin is usually the mannequin forces orgasm
 
 Section 2 - DQ
 
-The mannequin diaper quest rules is a rulebook.  The diaper quest rules of a mannequin is usually the mannequin diaper quest rules.
+The mannequin diaper quest rules is a rulebook. The diaper quest rules of a mannequin is usually the mannequin diaper quest rules.
 
 The mannequin forces orgasm through diaper rule is listed first in the mannequin diaper quest rules.
 
@@ -357,7 +373,7 @@ Section 3 - Damage
 To compute damage of (M - a mannequin):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The [noun] seems to notice you.  Uh-oh...";
+			say "The [noun] seems to notice you. Uh-oh...";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -385,3 +401,4 @@ To compute unique death of (M - a mannequin):
 
 
 Mannequin ends here.
+

@@ -9,8 +9,8 @@ REQUIRES COMMENTING
 *!]
 Table of Diaper Options
 title	subtable	description	toggle
-"Only wetting today please.  Disable messing for now, maybe another time!"	--	--	extreme diaper liker rule
-"Absolutely not.  Please permanently disable messing and never ask me again."	--	--	extreme diaper hater rule
+"Only wetting today please. Disable messing for now, maybe another time!"	--	--	extreme diaper liker rule
+"Absolutely not. Please permanently disable messing and never ask me again."	--	--	extreme diaper hater rule
 "Enable diaper messing scenes only (these will always be 'cleaned up' right away afterwards)."	--	--	extreme diaper lover rule
 "Enable diaper messing (you'll need to go find a change yourself)[if the player is not a top donator] [bracket]DISABLED - Patrons only[close bracket][end if]."	--	--	messed diaper lover rule
 
@@ -179,3 +179,4 @@ The diaper focus butt slut rule is listed first in the butt slut eligibility rul
 
 
 Diaper Lover Options ends here.
+

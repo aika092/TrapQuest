@@ -45,3 +45,4 @@ To compute reset cooldown of (T - a trap):
 		decrease the reset-timer of T by time-seconds.
 
 Traps ends here.
+

@@ -1,6 +1,6 @@
 Basque by Dresses begins here.
 
-A basque is a kind of overdress.  A basque is usually crotch-intact.  A basque is usually bottom-exclusive.  A basque is usually unskirted.  A basque is usually nylon.  A basque is usually fully covering.  A basque is usually top-displacable.
+A basque is a kind of overdress. A basque is usually crotch-intact. A basque is usually bottom-exclusive. A basque is usually unskirted. A basque is usually nylon. A basque is usually fully covering. A basque is usually top-displacable.
 
 To decide which number is the initial outrage of (C - a basque):
 	decide on 4.
@@ -20,7 +20,7 @@ This is the remove inappropriate basques rule:
 		now B is in Holding Pen.
 The remove inappropriate basques rule is listed in the diaper quest fix rules.
 
-A milking basque is a kind of basque.  A milking basque is usually unique.
+A milking basque is a kind of basque. A milking basque is usually unique.
 
 To say ClothingDesc of (O - a milking basque):
 	say "This tight white undergarment keeps your body looking and feeling smooth.[if O is worn and lactation fetish is 1][line break]You feel that it somehow magically messes with your body's lactation, sending it to other parts of your body...[end if]".
@@ -32,7 +32,7 @@ Definition: a milking basque (called C) is untransformable:
 	if the class of the player is royal slave, decide yes;
 	decide no.
 
-A white milking basque is a kind of milking basque.  The printed name of white milking basque is usually "[TQlink of item described][clothing-title-before]white basque[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of white milking basque is "wb".
+A white milking basque is a kind of milking basque. The printed name of white milking basque is usually "[TQlink of item described][clothing-title-before]white basque[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of white milking basque is "wb".
 
 There is 1 white milking basque.
 
@@ -41,7 +41,7 @@ Figure of white basque is the file "basque1.png".
 To decide which figure-name is clothing-image of (C - a white milking basque):
 	decide on figure of white basque.
 
-A cow print milking basque is a kind of milking basque.  The printed name of cow print milking basque is usually "[TQlink of item described][clothing-title-before]cow print basque[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cow print milking basque is "cwb".  A cow print milking basque is enema-helping.
+A cow print milking basque is a kind of milking basque. The printed name of cow print milking basque is usually "[TQlink of item described][clothing-title-before]cow print basque[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cow print milking basque is "cwb". A cow print milking basque is enema-helping.
 
 There is 1 cow print milking basque.
 
@@ -60,3 +60,4 @@ To decide which figure-name is clothing-image of (C - a cow print milking basque
 
 
 Basque ends here.
+

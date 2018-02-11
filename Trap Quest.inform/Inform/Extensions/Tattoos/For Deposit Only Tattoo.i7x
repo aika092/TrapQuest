@@ -1,6 +1,6 @@
 For Deposit Only Tattoo by Tattoos begins here.
 
-for deposit only tattoo is a kind of crotch tattoo.  Figure of for deposit only tattoo is the file "tattoo12.png".  There is 1 for deposit only tattoo.
+for deposit only tattoo is a kind of crotch tattoo. Figure of for deposit only tattoo is the file "tattoo12.png". There is 1 for deposit only tattoo.
 Definition: a for deposit only tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
@@ -11,7 +11,7 @@ Definition: a for deposit only tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - a for deposit only tattoo):
 	if images visible is 1, display figure of for deposit only tattoo;
-	say "The words 'For Deposit Only' and a red Adulterer 'A' are tattooed in large gothic letters above your [vagina].  You can feel it suppressing your ability to have vaginal orgasms or faint from vaginal soreness.".
+	say "The words 'For Deposit Only' and a red Adulterer 'A' are tattooed in large gothic letters above your [vagina]. You can feel it suppressing your ability to have vaginal orgasms or faint from vaginal soreness.".
 
 [!<TheDepositOnlyTattooBlocksMasturbationRule>+
 
@@ -25,3 +25,4 @@ This is the deposit only tattoo blocks masturbation rule:
 The deposit only tattoo blocks masturbation rule is listed last in the masturbation restriction rules.		
 
 For Deposit Only Tattoo ends here.
+

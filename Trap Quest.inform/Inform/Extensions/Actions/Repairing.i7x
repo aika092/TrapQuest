@@ -16,9 +16,10 @@ Check repairing:
 	let M be the noun;
 	let N be the second noun;
 	if the noun is not ripped clothing, say "That doesn[']t need to be repaired!" instead;
-	if the player is not in Dungeon37, say "You need to be at a crafting table to do this!" instead;
+	if the player is not in School09, say "You need to be at a crafting table to do this!" instead;
 	if N is not clothing, say "You can[']t patch clothing with this!" instead;
 	if the clothing-material of M is not the clothing-material of N, say "You need [clothing-material of M] to repair this!" instead;
+	if N is worn, say "You need to take the [N] off first.".
 
 [!<CarryOutRepairing>+
 
@@ -35,3 +36,4 @@ Understand "repair [something] with [something]", "patch [something] with [somet
 
 
 Repairing ends here.
+

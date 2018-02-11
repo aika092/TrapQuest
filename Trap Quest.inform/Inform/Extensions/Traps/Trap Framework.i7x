@@ -8,63 +8,63 @@ REQUIRES COMMENTING
 @inherits <Thing>
 
 @!]
-A trap is a kind of thing.  A trap is not portable.
+A trap is a kind of thing. A trap is not portable.
 
 [!<Trap>@<isExpired:Boolean>*
 
 REQUIRES COMMENTING
 
 *@!]
-A trap can be expired.  A trap is usually not expired.
+A trap can be expired. A trap is usually not expired.
 
 [!<Trap>@<isUntriggered:Boolean>*
 
 REQUIRES COMMENTING
 
 *!]
-A trap can be untriggered.  A trap is usually untriggered.
+A trap can be untriggered. A trap is usually untriggered.
 
 [!<Trap>@<triggered:Boolean>*
 
 REQUIRES COMMENTING
 
 *@!]
-A trap can be triggered.  A trap is usually not triggered.
+A trap can be triggered. A trap is usually not triggered.
 
 [!<Trap>@<potentiallyClick:Boolean>*
 
 REQUIRES COMMENTING
 
 *:!]
-A trap can be potentially click.  A trap is usually not potentially click.
+A trap can be potentially click. A trap is usually not potentially click.
 
 [!<Trap>@<potentiallyPressure:Boolean>*
 
 REQUIRES COMMENTING
 
 *@!]
-A trap can be potentially pressure.  A trap is usually not potentially pressure.
+A trap can be potentially pressure. A trap is usually not potentially pressure.
 
 [!<Trap>@<potentiallyWire:Boolean>*
 
 REQUIRES COMMENTING
 
 *@!]
-A trap can be potentially wire.  A trap is usually not potentially wire.
+A trap can be potentially wire. A trap is usually not potentially wire.
 
 [!<Trap>@<potentiallySticky:Boolean>*
 
 REQUIRES COMMENTING
 
 *@!]
-A trap can be potentially sticky.  A trap is usually not potentially sticky.
+A trap can be potentially sticky. A trap is usually not potentially sticky.
 
 [!<Trap>@<trigger:TriggerStateEnum>*
 
 A click trap means it's triggered by opening a container in the room.
 
 *@!]
-A trap can be triggerless, click, pressure, wire, swing, sticky.  A trap is usually triggerless.
+A trap can be triggerless, click, pressure, wire, swing, sticky. A trap is usually triggerless.
 
 Understand "trap" as trap.
 
@@ -87,7 +87,7 @@ A trap has a direction called trap-direction.
 REQUIRES COMMENTING
 
 *@!]
-A trap has a number called reset-timer.  The reset-timer of a trap is usually 0.
+A trap has a number called reset-timer. The reset-timer of a trap is usually 0.
 A trap is scenery.
 
 [!<Trap>@<trapNo:Integer>*
@@ -95,7 +95,7 @@ A trap is scenery.
 REQUIRES COMMENTING
 
 *@!]
-A trap has a number called TrapNo.  The TrapNo of a trap is usually 0.
+A trap has a number called TrapNo. The TrapNo of a trap is usually 0.
 
 [!<SayShortDescOfTrap>+
 
@@ -173,7 +173,7 @@ To print the you can't see message:
 REQUIRES COMMENTING
 
 *@!]
-A trap can be revealed or unrevealed.  A trap is unrevealed.
+A trap can be revealed or unrevealed. A trap is unrevealed.
 
 
 [!<CheckExaminingTrap>+
@@ -345,3 +345,4 @@ To trigger (Y - a grabby trap):
 
 
 Trap Framework ends here.
+

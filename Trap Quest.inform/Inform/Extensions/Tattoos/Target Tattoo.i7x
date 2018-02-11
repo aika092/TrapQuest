@@ -16,3 +16,4 @@ To decide which number is the initial outrage of (T - a target tattoo):
 	decide on 9.
 
 Target Tattoo ends here.
+

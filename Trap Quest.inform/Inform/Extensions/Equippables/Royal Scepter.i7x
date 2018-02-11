@@ -2,7 +2,7 @@ Royal Scepter by Equippables begins here.
 
 A royal scepter is a kind of equippable. There is 1 royal scepter. A royal scepter is usually unique. A royal scepter is usually slap ready. A royal scepter is usually manly. A royal scepter is usually plastic. A royal scepter has a number called charge. The charge of a royal scepter is usually 1. A royal scepter is usually projectile.
 
-The printed name of royal scepter is usually "[TQlink of item described][clothing-title-before]royal scepter[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of royal scepter is "rs". 
+The printed name of royal scepter is usually "[TQlink of item described][clothing-title-before]royal scepter[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of royal scepter is "rs". 
 
 To say ClothingDesc of (W - a royal scepter):
 	say "A long staff with a gem encrusted version of a royal crest on top. There is a large orb in the center, which [if the charge of W < 0]seems to darken the area around it, like a black hole.[otherwise]slightly illuminates the area around it, like a torch.[end if] If you look closely, you can see a faint image of the [princess-consort] swirling around inside it. Somehow, you know you can find [him of princess-consort] in the [bold type][the location of princess-consort][roman type]".
@@ -91,3 +91,4 @@ To punish infidelity:
 
 
 Royal Scepter ends here.
+

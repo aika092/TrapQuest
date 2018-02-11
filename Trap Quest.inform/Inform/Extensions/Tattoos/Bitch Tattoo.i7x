@@ -18,3 +18,4 @@ To decide which number is the humiliation-influence of (O - a bitch tattoo):
 	decide on -2.
 
 Bitch Tattoo ends here.
+

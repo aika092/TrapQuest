@@ -5,7 +5,7 @@ Orifice Soreness by Player begins here.
 REQUIRES COMMENTING
 
 *!]
-Ruined is a number that varies.  Ruined is usually 0. [Used to check if the orifice soreness was just increased.]
+Ruined is a number that varies. Ruined is usually 0. [Used to check if the orifice soreness was just increased.]
 
 [!<DecideWhichNumberIsTheLargestGirthInsideFuckhole>+
 
@@ -163,7 +163,7 @@ To RuinRoll (F - a fuckhole):
 		otherwise if the soreness of F <= the previous soreness of F and the soreness of F < 10 and there is a live thing penetrating F and the number of lubricants covering F > 0:
 			say "The [lubricant] sloshing around inside your [variable F] has helped you take the [random live thing penetrating F] without getting any more sore!".
 
-[NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions.  The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
+[NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions. The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
 
 
 
@@ -173,7 +173,7 @@ REQUIRES COMMENTING
 
 +!]
 To say RuinedFlav of (F - a fuckhole):
-	say "[bold type]Your [variable F] is completely and utterly ruined.  You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If the [random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
+	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If the [random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
 
 [!<HealFuckholeTimesNumber>+
 
@@ -196,9 +196,9 @@ To check soreness fainting of (F - a fuckhole):
 		if the tolerated of F <=  N / 2:
 			increase the tolerated of F by 1;
 		otherwise:
-			say "[one of]Your [variable F] is so sore that your mind can't take it any more.  You feel yourself start to pass[or]You are on the verge of passing[stopping] out.[if debugmode > 0 and the raw delicateness of the player < 20]Do you want to steel your mind and power through (this will not change any stats because you are in debug mode)? [otherwise if the raw delicateness of the player < 20][line break]Do you want to steel your mind and attempt to power through (this will cause a slight increase in delicateness)? [end if][yesnolink] ";
+			say "[one of]Your [variable F] is so sore that your mind can't take it any more. You feel yourself start to pass[or]You are on the verge of passing[stopping] out.[if debugmode > 0 and the raw delicateness of the player < 20]Do you want to steel your mind and power through (this will not change any stats because you are in debug mode)? [otherwise if the raw delicateness of the player < 20][line break]Do you want to steel your mind and attempt to power through (this will cause a slight increase in delicateness)? [end if][yesnolink] ";
 			if the raw delicateness of the player < 20 and the player consents:
-				say "You steel your mind and manage to power through the intense feelings without fainting[if the delicateness of the player < 4][otherwise if the delicateness of the player < 8].  You whimper gently[otherwise if the delicateness of the player < 12].  You sob quietly[otherwise if the delicateness of the player < 16].  You can't help but cry[otherwise if diaper lover >= 1].  You bawl loudly like a baby[otherwise].  You bawl loudly[end if].";
+				say "You steel your mind and manage to power through the intense feelings without fainting[if the delicateness of the player < 4][otherwise if the delicateness of the player < 8]. You whimper gently[otherwise if the delicateness of the player < 12]. You sob quietly[otherwise if the delicateness of the player < 16]. You can't help but cry[otherwise if diaper lover >= 1]. You bawl loudly like a baby[otherwise]. You bawl loudly[end if].";
 				if debugmode is 0:
 					DelicateUp 1;
 					potentially despair about F sex;
@@ -247,3 +247,4 @@ To say submission success of (M - a thing) in (F - a fuckhole):
 
 
 Orifice Soreness ends here.
+

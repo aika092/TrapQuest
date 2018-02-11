@@ -1,6 +1,6 @@
 Cream Bikini Top by Bra begins here.
 
-A cream bikini top is a kind of bikini top.  Figure of bikini 7 is the file "bikini7.png".   A cream bikini top is very low cut.  The text-shortcut of cream bikini top is "cbt".
+A cream bikini top is a kind of bikini top. Figure of bikini 7 is the file "bikini7.png". A cream bikini top is very low cut. The text-shortcut of cream bikini top is "cbt".
 
 There is 1 cream bikini top.
 
@@ -24,3 +24,4 @@ To decide which object is the potential-upgrade-target of (C - a cream bikini to
 
 
 Cream Bikini Top ends here.
+

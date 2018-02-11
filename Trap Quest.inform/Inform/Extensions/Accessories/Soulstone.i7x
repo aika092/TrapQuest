@@ -1,6 +1,6 @@
 Soulstone by Accessories begins here.
 
-A soulstone is a kind of neckwear. There is 1 unique soulstone. Printed name of soulstone is "[TQlink of item described][clothing-title-before]soulstone[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of soulstone is "so". 
+A soulstone is a kind of neckwear. There is 1 unique soulstone. Printed name of soulstone is "[TQlink of item described][clothing-title-before]soulstone[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of soulstone is "so". 
 
 Figure of soulstone is the file "soulstone1.png".
 
@@ -22,3 +22,4 @@ To decide which number is the initial outrage of (C - a soulstone):
 	decide on 1.
 
 Soulstone ends here.
+

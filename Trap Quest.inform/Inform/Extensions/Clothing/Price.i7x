@@ -32,3 +32,4 @@ To decide what number is the price of (C - a clothing):
 
 
 Price ends here.
+

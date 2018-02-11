@@ -16,9 +16,11 @@ REQUIRES COMMENTING
 Check LongWaiting:
 	if the player is immobile, say "You're a bit busy to use this verb!" instead;
 	if the player is in danger, say "You can't use this verb when there are aggressive monsters nearby!" instead;
-	if the player is not prone, say "It is only sensible to wait for a long time when on your knees." instead;
-	say "Do you want to wait until something interesting happens[if the location of the player is smoky][bold type] (NB the room you are in has pink smoke)[roman type][end if]? [yesnolink] ";
-	unless the player consents, say "You decide against it." instead.
+	say "Do you want to wait until something interesting happens[if the location of the player is smoky and the player is prone][bold type] (NB the room you are in has pink smoke)[roman type][end if]? [yesnolink] ";
+	unless the player consents, say "You decide against it." instead;
+	if the player is upright:
+		say "Are you aware that you are standing and will therefore gain fatigue over time? [yesnolink]";
+		unless the player consents, say "You decide against it." instead.
 
 
 [!<longWaitRules:Rulebook>*
@@ -40,7 +42,7 @@ The long wait setup rules are a rulebook.
 REQUIRES COMMENTING
 
 *!]
-The long wait report rules are a rulebook.  The long wait report rules have default failure. [If for some reason we don't know why the long wait ended, then this allows us to at least say something.]
+The long wait report rules are a rulebook. The long wait report rules have default failure. [If for some reason we don't know why the long wait ended, then this allows us to at least say something.]
 
 [!<oldPregnancy:Integer>*
 
@@ -55,7 +57,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the long wait setup pregnancy rule: 
-	now old-pregnancy is the pregnancy of the player.  
+	now old-pregnancy is the pregnancy of the player. 
 The long wait setup pregnancy rule is listed in the long wait setup rules.
 
 [!<TheLongWaitPregnancyRule>+
@@ -77,26 +79,6 @@ This is the long wait report pregnancy rule:
 	if old-pregnancy is not the pregnancy of the player, rule succeeds. [If the player just gave birth or become pregnant, it should be pretty clear why the long wait ended.]
 The long wait report pregnancy rule is listed in the long wait report rules.
 
-[!<TheLongWaitNewShapeRule>+
-
-REQUIRES COMMENTING
-
-+!]
-[This is the long wait new shape rule:
-	if the player is a new shape:
-		rule fails.
-The long wait new shape rule is listed in the long wait rules.
-
-[!<TheLongWaitReportNewShapeRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the long wait report new shape rule:
-	if the player is a new shape:
-		say "[bold type]Waiting ended as the player stats have changed.[roman type][line break]";
-		rule succeeds.
-The long wait report new shape rule is listed in the long wait report rules.]
 
 [!<TheLongWaitDangerRule>+
 
@@ -119,6 +101,27 @@ This is the long wait report danger rule:
 		now the alert of the player is 0;
 		rule succeeds.
 The long wait report danger rule is listed in the long wait report rules.
+
+
+[!<TheLongWaitDangerRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the long wait school dungeon rule:
+	if the player is in School34 and dungeon chains is not worn, rule fails.
+The long wait school dungeon rule is listed in the long wait rules.
+
+[!<TheLongWaitReportDangerRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the long wait report school dungeon rule:
+	if the player is in School34 and dungeon chains is not worn:
+		say "[bold type]Waiting ended you are no longer bound by chains.[roman type][line break]";
+		rule succeeds.
+The long wait report school dungeon rule is listed in the long wait report rules.
 
 [!<oldThirst:Integer>*
 
@@ -159,6 +162,42 @@ This is the long wait report thirst rule:
 		rule succeeds.
 The long wait report thirst rule is listed in the long wait report rules.
 
+[!<oldStance:Integer>*
+
+REQUIRES COMMENTING
+
+*!]
+long-stance is a number that varies.
+
+[!<TheLongWaitSetupStanceRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the long wait setup stance rule:
+	now long-stance is the stance of the player.
+The long wait setup stance rule is listed in the long wait setup rules.
+
+[!<TheLongWaitStanceRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the long wait stance rule:
+	if the stance of the player is not long-stance, rule fails.
+The long wait stance rule is listed in the long wait rules.
+
+[!<TheLongWaitReportStanceRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the long wait report stance rule:
+	if the stance of the player is not long-stance:
+		[say "[bold type]Waiting ended as you [if the player is prone]fell to your knees[otherwise]changed stance[end if].";]
+		rule succeeds.
+The long wait report stance rule is listed in the long wait report rules.
+
 [!<oldBursting:Integer>*
 
 REQUIRES COMMENTING
@@ -173,7 +212,7 @@ REQUIRES COMMENTING
 +!]
 This is the long wait setup bladder rule: 
 	if the player is bursting, now old-bursting is 1;
-	otherwise now old-bursting is 0.  
+	otherwise now old-bursting is 0. 
 The long wait setup bladder rule is listed in the long wait setup rules.
 
 [!<TheLongWaitBladderRule>+
@@ -210,7 +249,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the long wait setup rectum rule: 
-	now old-rectum is rectum.  
+	now old-rectum is rectum. 
 The long wait setup rectum rule is listed in the long wait setup rules.
 
 [!<TheLongWaitRectumRule>+
@@ -348,3 +387,4 @@ Understand "long wait", "wait for a while" as LongWaiting.
 
 
 Long Waiting ends here.
+

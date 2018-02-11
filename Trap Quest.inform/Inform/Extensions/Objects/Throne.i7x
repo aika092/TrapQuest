@@ -1,17 +1,17 @@
 Throne by Objects begins here.
 
-The throne is in Dungeon11.  The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]".  The throne is a trap.  The throne is not portable.  The throne is not triggered.  The throne is untriggered.  The throne is revealed.  Understand "bind","binds","tentacle","tentacles" as the throne. The description of the throne is "[ThroneDesc]".  The throne has a number called charge.  The charge of the throne is usually 0.  The throne has a number called turns.  The throne can be untransformed or transformed.  The throne is untransformed.  The text-shortcut of throne is "thr".
+The throne is in Dungeon11. The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]". The throne is a trap. The throne is not portable. The throne is not triggered. The throne is untriggered. The throne is revealed. Understand "bind","binds","tentacle","tentacles" as the throne. The description of the throne is "[ThroneDesc]". The throne has a number called charge. The charge of the throne is usually 0. The throne has a number called turns. The throne can be untransformed or transformed. The throne is untransformed. The text-shortcut of throne is "thr".
 
 To say ThroneDesc:
 	if the noun is untransformed:
 		if images visible is 1, display figure of throne;
-		say "A pink and gold throne clearly fit for a royal lady.  Pink frills at the bottom obscure what could be underneath the throne.";
+		say "A pink and gold throne clearly fit for a royal lady. Pink frills at the bottom obscure what could be underneath the throne.";
 	otherwise:
 		if images visible is 1, display figure of potty throne;
-		say "A pink chair cheaply fashioned into a princess theme, with the words 'Lil Lady' below a black bow on the backrest.  A hole in the middle of the seat contains a potty.".
+		say "A pink chair cheaply fashioned into a princess theme, with the words 'Lil Lady' below a black bow on the backrest. A hole in the middle of the seat contains a potty.".
 
 To say ShortDesc of (T - a throne):
-	say "A pink [TQlink of throne]throne[TQxlink of throne][verb-desc of throne] is sitting proudly at the west end of the room.  ".
+	say "A pink [TQlink of throne]throne[TQxlink of throne][verb-desc of throne] is sitting proudly at the west end of the room. ".
 
 [!<YourselfIsThroneStuck>+
 
@@ -49,8 +49,8 @@ Check entering the throne:
 	if the player is prone, say "You can't while you are on your hands and knees." instead;
 	if the throne is triggered, say "You already are!" instead;
 	now seconds is 2;
-	if newbie tips is 1, say "[one of][item style]Newbie tip: The throne has a lot of different possible outcomes when you sit on it, but you can only try it once in a while.  Come back in a bit and try again![roman type][line break][or][stopping]";
-	say "You sit on the throne.  ";
+	if newbie tips is 1, say "[one of][item style]Newbie tip: The throne has a lot of different possible outcomes when you sit on it, but you can only try it once in a while. Come back in a bit and try again![roman type][line break][or][stopping]";
+	say "You sit on the throne. ";
 	if the charge of the throne <= 0:
 		now the charge of the throne is 300;
 		let R be a random number from 1 to 6;
@@ -64,28 +64,28 @@ Check entering the throne:
 		if R is 1:
 			let H be a random tiara;
 			summon H cursed;
-			say "A silver tiara appears on your head.  You feel important.[second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
+			say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the class of the player is adult baby or the player is a sissy))):
 			if the noun is transformed:
 				let K be a random worn knickers;
 				if rectum > 3:
-					say "All of a sudden, you suddenly completely lose control over your sphincter!  You try to stand up but your [if K is clothing][K][otherwise]butt[end if] is somehow stuck in the potty!  You shudder as your butt begins to empty itself, forcing the mushy contents of your guts into your [if K is diaper]nappy[otherwise if K is clothing][K][otherwise]new toilet[end if].  ";
-					if K is knickers, say "[if the diaper addiction of the player < 10]You are completely powerless to stop it, so you end up just sitting there awkwardly whilst your poop chute gets to work.  There's so much!  By the time you finish, you are very confident that you are now empty.[otherwise if the diaper addiction of the player < 15][one of]You can't help but almost enjoy messing yourself - the warm feeling spreading over your butt and thighs actually feels kind of nice.[or]You give into the pleasurable feelings and sigh gently as you feel the warmth spreading beneath you.[stopping][otherwise]You giggle like a naughty schoolgirl and rub your butt into the mush as you continue to fill your [K].  It feels so good - you wish it could last for ever!  Once you've finished pooping yourself, you sit there with a massive grin on your face, wiggling your bum in the seat to keep feeling the weight of it sagging beneath you in the potty.[end if]";
+					say "All of a sudden, you suddenly completely lose control over your sphincter!  You try to stand up but your [if K is clothing][K][otherwise]butt[end if] is somehow stuck in the potty!  You shudder as your butt begins to empty itself, forcing the mushy contents of your guts into your [if K is diaper]nappy[otherwise if K is clothing][K][otherwise]new toilet[end if]. ";
+					if K is knickers, say "[if the diaper addiction of the player < 10]You are completely powerless to stop it, so you end up just sitting there awkwardly whilst your poop chute gets to work. There's so much!  By the time you finish, you are very confident that you are now empty.[otherwise if the diaper addiction of the player < 15][one of]You can't help but almost enjoy messing yourself - the warm feeling spreading over your butt and thighs actually feels kind of nice.[or]You give into the pleasurable feelings and sigh gently as you feel the warmth spreading beneath you.[stopping][otherwise]You giggle like a naughty schoolgirl and rub your butt into the mush as you continue to fill your [K]. It feels so good - you wish it could last for ever!  Once you've finished pooping yourself, you sit there with a massive grin on your face, wiggling your bum in the seat to keep feeling the weight of it sagging beneath you in the potty.[end if]";
 					now rectum is 0;
 					now the urine-soak of K is 1; [to make sure it's cleaned directly below]
 				if K is clothing and (the urine-soak of K > 0 or K is messed):
-					say "Suddenly, a wave of magic flows through the potty to your [K] and you feel that it has been magically cleaned.  It's like it was brand new!";
+					say "Suddenly, a wave of magic flows through the potty to your [K] and you feel that it has been magically cleaned. It's like it was brand new!";
 					now the urine-soak of K is 0;
 					now the mess of K is 0;
 				otherwise:
 					if the bladder of the player < 10, now the bladder of the player is 10;
-					say "[if the player is bursting and K is clothing]You suddenly feel a desperate need to use your [K]![otherwise if the player is bursting]You suddenly feel a desperate need to pee![otherwise]Nothing seems to happen.  Strange...[end if]";
+					say "[if the player is bursting and K is clothing]You suddenly feel a desperate need to use your [K]![otherwise if the player is bursting]You suddenly feel a desperate need to pee![otherwise]Nothing seems to happen. Strange...[end if]";
 			otherwise:
-				say "The shape of the throne twists and morphs beneath you!  You gasp as you realise it has now transformed into a throne shaped potty!  [variable custom style][if the diaper addiction of the player < 4]What the FUCK is going on in this sick game?![otherwise if the diaper addiction of the player < 10]I don't know what would be worse, using a diaper or using this thing...[otherwise if the diaper addiction of the player < 15]Why would I use this when I have my diaper?[end if][roman type][line break]";
+				say "The shape of the throne twists and morphs beneath you!  You gasp as you realise it has now transformed into a throne shaped potty!  [line break][variable custom style][if the diaper addiction of the player < 4]What the FUCK is going on in this sick game?![otherwise if the diaper addiction of the player < 10]I don't know what would be worse, using a diaper or using this thing...[otherwise if the diaper addiction of the player < 15]Why would I use this when I have my diaper?[end if][roman type][line break]";
 			now the noun is transformed instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and the noun is transformed and (the bladder of the player > 0 or rectum > 1):
 			say "Suddenly, you feel the magic of throne working on your crotch!  You suddenly realise that you desperately need the loo!  [if rectum <= 1]Maybe the throne is counteracting your incontinence?  [end if]";
-			say "You let go of the hold on your bladder[if rectum > 1] and sphincter[end if], using the potty for its intended purpose.  After a few [if rectum > 1]embarrassing noises coming from your rear end[otherwise]awkward moments listening to yourself tinkle[end if], you're done.  The potty makes a weird gurgling sound, and then is suddenly completely empty and clean again!";
+			say "You let go of the hold on your bladder[if rectum > 1] and sphincter[end if], using the potty for its intended purpose. After a few [if rectum > 1]embarrassing noises coming from your rear end[otherwise]awkward moments listening to yourself tinkle[end if], you're done. The potty makes a weird gurgling sound, and then is suddenly completely empty and clean again!";
 			if rectum > 0, reset rectum;
 			if incontinence > 0, decrease incontinence by 1;
 			now the bladder of the player is 0 instead;
@@ -94,7 +94,7 @@ Check entering the throne:
 			now the TrapNo of the throne is 0;
 			now the turns of the throne is 0;
 			now busy is 1;
-			say "Two tentacle-like binds wrap around your thighs and hold your legs in place.[paragraph break][if the bimbo of the player < 13][first custom style]Oh shit.[otherwise][second custom style]Ooh, what now?[end if][line break][roman type]A dildo shoots up from a hidden hole in the seat of the throne!  ";
+			say "Two tentacle-like binds wrap around your thighs and hold your legs in place.[paragraph break][if the bimbo of the player < 13][line break][first custom style]Oh shit.[otherwise][line break][second custom style]Ooh, what now?[end if][line break][roman type][line break]A dildo shoots up from a hidden hole in the seat of the throne!  ";
 			let A be a random number between 12 and 22;
 			if debugmode is 1, say "[line break]Player [the defence of the player].5 | [A] Throne[line break]";
 			if A > the anal defence of the player:
@@ -114,10 +114,10 @@ Check entering the throne:
 			otherwise:
 				if the player is ass protected:
 					let K be a random worn top level ass protection clothing;
-					say "Your [printed name of K] block[if the armour of K < 7]s[end if] the dildo which retreats, ready to try again.  The [clothing-material of K] is stretched a little by the attack.";
+					say "Your [printed name of K] block[if the armour of K < 7]s[end if] the dildo which retreats, ready to try again. The [clothing-material of K] is stretched a little by the attack.";
 					Damage K;
 				otherwise:
-					say "The dildo bounces harmlessly off your [HipDesc].  It retreats, ready to try again.";
+					say "The dildo bounces harmlessly off your [HipDesc]. It retreats, ready to try again.";
 			if image cutscenes is 1, display figure of throne cutscene 1;
 			now the throne is triggered instead;
 		otherwise if R is 3:
@@ -135,10 +135,10 @@ Check entering the throne:
 				otherwise if the bimbo of the player < 11:
 					say "You draw your hand from the base of his shaft all the way to the top, teasing his cockhead with your palm. A fat dollop of pre appears at his opening and dribbles down between your fingers. Every moment of your wrist is accompanied by a lewd squelch, and a hushed grunt of pleasure from your consort. Despite your position of obvious power, you can't shake the feeling that there's something inherently submissive about pleasuring [if the player is male]another man[otherwise]men[end if], especially when they're so much bigger and stronger than you. With muscles like that, the guard could easily overpower you, but since your hand is already wrapped around his [manly-penis] and soaked with his slippery pre-cum, there's no need! Your cheeks grow hot as the guard's strong hands grasp your shoulders, his [manly-penis] twitching and throbbing in your grip. You can feel your mouth opening, and although you know it's wrong, you don[']t do anything to stop it as the soft, spongy head pushes its way between your lips. Without a second thought you begin to suck, sweaty musk overwhelming your senses as thick, salty [semen] spurts down your throat.";
 				otherwise:
-					say "You draw your hand from the base of his shaft all the way to the top, teasing his cockhead with your palm. A fat dollop of pre appears at his opening and dribbles down between your fingers. Every moment of your wrist is accompanied by a lewd squelch, and a hushed grunt of pleasure from your consort. Despite your apparent position of power, there's something so *naughty* about willingly pleasuring [if the player is male]other [end if]men, especially when they're so much bigger and stronger than you. With big, [second custom style]sexy[roman type] muscles like that, the guard could easily overpower you, but since your hand is already wrapped around his [manly-penis] and soaked with his slippery pre-cum, there's no need! You smile and lick your lips as the guard's [manly-penis] begins to twitch and throb in your grip. He grabs you by the shoulders, giving you the only hint you need to keep your mouth wide open as his proud cockhead slides in. Without so much as second thought you begin to suck, relishing the musky scent of his sweat in your nostrils as [tasted-semen] spurts down your oh-so-willing throat.";
+					say "You draw your hand from the base of his shaft all the way to the top, teasing his cockhead with your palm. A fat dollop of pre appears at his opening and dribbles down between your fingers. Every moment of your wrist is accompanied by a lewd squelch, and a hushed grunt of pleasure from your consort. Despite your apparent position of power, there's something so *naughty* about willingly pleasuring [if the player is male]other [end if]men, especially when they're so much bigger and stronger than you. With big, [line break][second custom style]sexy[roman type][line break]muscles like that, the guard could easily overpower you, but since your hand is already wrapped around his [manly-penis] and soaked with his slippery pre-cum, there's no need! You smile and lick your lips as the guard's [manly-penis] begins to twitch and throb in your grip. He grabs you by the shoulders, giving you the only hint you need to keep your mouth wide open as his proud cockhead slides in. Without so much as second thought you begin to suck, relishing the musky scent of his sweat in your nostrils as [tasted-semen] spurts down your oh-so-willing throat.";
 				[say "[bold type]Press enter to continue.[roman type][line break]";
 				unless text delay is 999, wait 30000 * text delay ms before continuing;]
-				say "The room abruptly snaps back to the familiar bleak gray of the dungeon you have come to recognize. A translucent pink tentacle withdraws from your mouth, trailing [semen] down your chin as it retreats underneath the throne.[line break][if the bimbo of the player < 8][first custom style]'What just happened?'[otherwise if the bimbo of the player < 12][variable custom style]'That was...really arousing.'[otherwise][second custom style]'That was fun! I want to do that again!'[end if][roman type][line break]";
+				say "The room abruptly snaps back to the familiar bleak gray of the dungeon you have come to recognize. A translucent pink tentacle withdraws from your mouth, trailing [semen] down your chin as it retreats underneath the throne.[line break][if the bimbo of the player < 8][line break][first custom style]'What just happened?'[otherwise if the bimbo of the player < 12][line break][variable custom style]'That was...really arousing.'[otherwise][line break][second custom style]'That was fun! I want to do that again!'[end if][roman type][line break]";
 				now the throne is expired;
 				StomachSemenUp 4;
 				SexAddictUp 1;
@@ -146,7 +146,7 @@ Check entering the throne:
 					increase the favour of M by a random number between 1 and 2;
 				IntUp 4 instead;
 			otherwise:
-				say "The throne makes you more womanly.  You feel your [if the player is a flatchested trap and weight gain fetish is 0]hips expand[otherwise]body expand in all directions[end if]![if the bimbo of the player is 1][one of][first custom style]What the fuck is this game?![roman type][line break][or][stopping][end if]";
+				say "The throne makes you more womanly. You feel your [if the player is a flatchested trap and weight gain fetish is 0]hips expand[otherwise]body expand in all directions[end if]![if the bimbo of the player is 1][one of][line break][first custom style]What the fuck is this game?![roman type][line break][or][stopping][end if]";
 				HipUp 1;
 				if weight gain fetish is 1 and the flesh volume of belly < 9, increase the flesh volume of belly by 2;
 				BustUp 2 instead;
@@ -161,7 +161,7 @@ Check entering the throne:
 			DexUp 1 instead;
 		otherwise if R is 7:
 			if the largeness of hair > 6:
-				say "You hear a metal slice from behind you.  You turn around and see that your hair has been cut back down to shoulder length!  You can see the cut strands of your [HairColour] hair on the floor behind the throne.";
+				say "You hear a metal slice from behind you. You turn around and see that your hair has been cut back down to shoulder length!  You can see the cut strands of your [HairColour] hair on the floor behind the throne.";
 				now the raw largeness of hair is 6;
 			otherwise if the redness of hair > 0:
 				say "Your hair feels pleasant, and you feel somewhat less stiff.";
@@ -206,7 +206,7 @@ Check pulling the throne:
 	if X < 13:
 		say "You struggle to break the bonds of the tentacles[if B > 3] with increasing urgency[end if], but you can't break free!" instead;
 	otherwise:
-		say "With an incredible display of strength, you manage to rip the tentacles off your thighs.  You can stand up freely now.";
+		say "With an incredible display of strength, you manage to rip the tentacles off your thighs. You can stand up freely now.";
 		now the throne is not untriggered instead.
 
 [!<CheckAttackingTheThrone>+
@@ -245,10 +245,10 @@ A time based rule (this is the compute throne rule):
 			otherwise:
 				if the player is ass protected:
 					let K be a random worn top level ass protection clothing;
-					say "Your [printed name of K] block[if the armour of K < 7]s[end if] the dildo which retreats, ready to try again.  The [clothing-material of K] is stretched a little by the attack.";
+					say "Your [printed name of K] block[if the armour of K < 7]s[end if] the dildo which retreats, ready to try again. The [clothing-material of K] is stretched a little by the attack.";
 					Damage K;
 				otherwise:
-					say "The dildo bounces harmlessly off your [HipDesc].  It retreats, ready to try again.";
+					say "The dildo bounces harmlessly off your [HipDesc]. It retreats, ready to try again.";
 		otherwise if the throne is filling asshole:
 			increase the TrapNo of the throne by 1;
 			if egg laying fetish is 1:
@@ -258,16 +258,16 @@ A time based rule (this is the compute throne rule):
 				assfill 3;
 			now the turns of the throne is the TrapNo of the throne;
 			if the semen volume of belly >= belly limit - 2:
-				say "The throne is keeping your [BellyDesc] completely full.  It rumbles worryingly.";
+				say "The throne is keeping your [BellyDesc] completely full. It rumbles worryingly.";
 				if the TrapNo of the throne is 8, decrease the TrapNo of the throne by 1;
 				if the throne is untriggered:
-					say "The binds holding your [ShortDesc of thighs] are finally released.  You should probably try and stand up now before you burst!";
+					say "The binds holding your [ShortDesc of thighs] are finally released. You should probably try and stand up now before you burst!";
 					now the throne is not untriggered;
 			otherwise:
-				if the TrapNo of the throne is 1, say "The fake [manly-penis] in your [asshole] keeps filling you up.  You can feel it start to fill your [BellyDesc].";
-				if the TrapNo of the throne is 2, say "The liquid keeps coming.  You can feel your [BellyDesc] expanding.";
-				if the TrapNo of the throne is 3, say "The throne continues to fill up your [asshole].  [if egg laying fetish is 1]You feel something solid enter your ass along with the liquid!  What the hell?!  [end if]Your [BellyDesc] keeps expanding.";
-				if the TrapNo of the throne is 4, say "Your [BellyDesc] now feels fully stretched, surely no more can fit in?!  [if egg laying fetish is 1]You can feel more solid objects make their way into your body.  [end if]The liquid keeps going...";
+				if the TrapNo of the throne is 1, say "The fake [manly-penis] in your [asshole] keeps filling you up. You can feel it start to fill your [BellyDesc].";
+				if the TrapNo of the throne is 2, say "The liquid keeps coming. You can feel your [BellyDesc] expanding.";
+				if the TrapNo of the throne is 3, say "The throne continues to fill up your [asshole]. [if egg laying fetish is 1]You feel something solid enter your ass along with the liquid!  What the hell?!  [end if]Your [BellyDesc] keeps expanding.";
+				if the TrapNo of the throne is 4, say "Your [BellyDesc] now feels fully stretched, surely no more can fit in?!  [if egg laying fetish is 1]You can feel more solid objects make their way into your body. [end if]The liquid keeps going...";
 				if the TrapNo of the throne is 5, say "Your [BellyDesc] just keeps stretching!";
 				if the TrapNo of the throne is 6:
 					say "Your [BellyDesc] is still expanding...";
@@ -275,7 +275,7 @@ A time based rule (this is the compute throne rule):
 				if the TrapNo of the throne is 7:
 					while the total fill of belly < 20 and the number of worn slimegirls is 0:
 						assfill 1;
-					say "You [if pregnancy fetish is 1 and the largeness of belly > 6]now look like you are in the late stages of pregnancy[otherwise if the largeness of belly > 6]feel more full then you realised it was possible to feel[otherwise]feel weird[end if].  [if the largeness of breasts > 10 and extreme proportions fetish is 1]In combination with your [BreastDesc] which have now been squashed above it, you can see nothing but your own swollen flesh.  [end if][if the throne is untriggered]The binds holding your [ShortDesc of thighs] are finally released.  You should probably try and stand up now before you burst![end if]";
+					say "You [if pregnancy fetish is 1 and the largeness of belly > 6]now look like you are in the late stages of pregnancy[otherwise if the largeness of belly > 6]feel more full then you realised it was possible to feel[otherwise]feel weird[end if]. [if the largeness of breasts > 10 and extreme proportions fetish is 1]In combination with your [BreastDesc] which have now been squashed above it, you can see nothing but your own swollen flesh. [end if][if the throne is untriggered]The binds holding your [ShortDesc of thighs] are finally released. You should probably try and stand up now before you burst![end if]";
 					if image cutscenes is 1:
 						if the largeness of belly > 7:
 							display figure of throne cutscene 4;
@@ -336,9 +336,10 @@ To ThroneDisconnect:
 	otherwise if the largeness of belly > 3:
 		display figure of throne cutscene 6;
 	if the weight of belly > 18:
-		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if].  ";
+		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";
 		try kneeling.
 
 
 
 Throne ends here.
+

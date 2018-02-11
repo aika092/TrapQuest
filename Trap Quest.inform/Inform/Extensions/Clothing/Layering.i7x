@@ -159,7 +159,7 @@ To layer (C - a clothing) correctly:
 					say "[type 4 layering bug]";
 	if C is bottom layer:
 		let MBL be max-bottom-layer + 1;
-		if debugmode is 2, say "Layering data:  C is [C].  Max bottom layer is [MBL].";
+		if debugmode is 2, say "Layering data:  C is [C]. Max bottom layer is [MBL].";
 		repeat with CL running from 1 to MBL:
 			if debugmode is 2, say "At Clothing Layer [CL], ";
 			if the bottom-layer of C is 0: [If we haven't found its place yet]
@@ -244,3 +244,4 @@ To check that (C - a corset) usually goes under (D - a dress):
 	rule succeeds.
 
 Layering ends here.
+

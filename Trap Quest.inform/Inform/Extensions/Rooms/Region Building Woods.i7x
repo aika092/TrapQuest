@@ -56,7 +56,6 @@ This is the spawn initial woods buckets rule:
 		while there is a bucket in R:
 			now R is a random trappable placed jungle room;
 		deploy bucket in R.
-
 The spawn initial woods buckets rule is listed in the set up woods traps rules.
 
 [!<ScrambleWoods>+
@@ -75,3 +74,4 @@ To Scramble Woods:
 
 
 Region Building Woods ends here.
+

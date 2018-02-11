@@ -68,9 +68,9 @@ A time based rule (this is the compute doom rule):
 					DelicateUp 2;
 				otherwise: 
 					if the player-class is not cultist:
-						say "The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you. [second custom style]'Like, cower in fear and junk because Valleyhotep, herald of Azacocks, is totally here.'[roman type] This is probably bad.";
+						say "The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you. [line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of Azacocks, is totally here.'[roman type][line break]This is probably bad.";
 					otherwise:
-						say "The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you. [second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of Azacocks!'[roman type]";
+						say "The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you. [line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of Azacocks!'[roman type][line break]";
 					SexAddictUp 2;
 					SemenAddictUp 2;
 					DelicateUp 2;
@@ -91,13 +91,7 @@ To Resolve Doom:
 	set up M;
 	if diaper quest is 0:
 		compute chosen birth;
-		now M is in Mansion23;
-		now M is a random insane gladiator;[converted npc's can now spawn in other regions]
-		now M is dungeon dwelling;
-		now M is a random abyssal demoness;
-		now M is woods dwelling;
-		now M is a random goth mannequin;
-		now M is woods dwelling.
+		now M is in Mansion23.
 
 [!<ComputeChosenBirth>+
 
@@ -119,3 +113,4 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 
 
 Doom ends here.
+

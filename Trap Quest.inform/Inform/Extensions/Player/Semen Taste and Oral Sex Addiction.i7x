@@ -103,7 +103,7 @@ Part 2 - Modify Oral Sex Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw semen taste addiction.  The raw semen taste addiction of the player is usually 1. [Min 1 Max 20]
+The player has a number called raw semen taste addiction. The raw semen taste addiction of the player is usually 1. [Min 1 Max 20]
 
 
 
@@ -112,7 +112,7 @@ The player has a number called raw semen taste addiction.  The raw semen taste a
 Not used because it's currently the same thing as semen taste addiction
 
 *@!]
-[The player has a number called raw oral sex addiction.  The raw oral sex addiction of the player is usually 1. [Min 1 Max 10]]
+[The player has a number called raw oral sex addiction. The raw oral sex addiction of the player is usually 1. [Min 1 Max 10]]
 
 
 [!<OralSexAddictUpX>+
@@ -162,3 +162,4 @@ To SemenTasteAddictDown (X - a number):
 
 
 Semen Taste and Oral Sex Addiction ends here.
+

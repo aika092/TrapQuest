@@ -1,6 +1,6 @@
 Jeans by Trousers begins here.
 
-jeans is a kind of trousers.  Jeans are usually manly.  There is 1 zippable denim jeans.  The armour of jeans is 10.  The printed name of jeans is usually "[TQlink of item described][clothing-title-before][clothing-material of item described] jeans[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of jeans is "je".  Figure of jeans is the file "jeans1.png".  Figure of jeans ripped is the file "jeans2.png". The soak-limit of jeans is usually 22.
+jeans is a kind of trousers. Jeans are usually manly. There is 1 zippable denim jeans. The armour of jeans is 10. The printed name of jeans is usually "[TQlink of item described][clothing-title-before][clothing-material of item described] jeans[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of jeans is "je". Figure of jeans is the file "jeans1.png". Figure of jeans ripped is the file "jeans2.png". The soak-limit of jeans is usually 22.
 
 To decide which figure-name is clothing-image of (H - a jeans):
 	if the item described is no protection and item described is not zippable, decide on figure of jeans ripped;
@@ -18,3 +18,4 @@ To decide which object is the potential-upgrade-target of (C - a jeans):
 	decide on nothing.
 
 Jeans ends here.
+

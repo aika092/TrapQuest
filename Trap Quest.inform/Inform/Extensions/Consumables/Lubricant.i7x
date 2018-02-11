@@ -1,12 +1,12 @@
 Lubricant by Consumables begins here.
 
 
-A lubricant is a kind of collectible. There are 15 lubricants.  The description of lubricant is usually "[LubeDesc]".   Understand "lube" or "baby oil" or "oil" as lubricant.  The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]".  The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]".  The text-shortcut of lubricant is "lu". [lubricants hotlinks don't work]
+A lubricant is a kind of collectible. There are 15 lubricants. The description of lubricant is usually "[LubeDesc]". Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu". [lubricants hotlinks don't work]
 
 To decide which number is the crafting key of (C - a lubricant):
 	decide on 35.
 
-Lubricant has a number called timer.  The timer of lubricant is usually 0.
+Lubricant has a number called timer. The timer of lubricant is usually 0.
 
 To say ShortDesc of (C - a lubricant):
 	say "[lubricant]".
@@ -78,11 +78,11 @@ Carry out orilubing something with:
 	now seconds is 6;
 	let F be the second noun;
 	if the bimbo of the player < 8:
-		say "You delicately apply [lubricant] to your [variable F], until it feels a little less dry.  ";
+		say "You delicately apply [lubricant] to your [variable F], until it feels a little less dry. ";
 	otherwise if the bimbo of the player < 14:
-		say "You liberally squirt [lubricant] deep into your [variable F], until it feels nice and slippery all the way inside.  ";
+		say "You liberally squirt [lubricant] deep into your [variable F], until it feels nice and slippery all the way inside. ";
 	otherwise:
-		say "You generously lube up your whole hand and [if the openness of F > 7]fist your own [variable F][otherwise]shove as many fingers as you can fit into your [variable F][end if].  Mmm, that feels a lot better.  ";
+		say "You generously lube up your whole hand and [if the openness of F > 7]fist your own [variable F][otherwise]shove as many fingers as you can fit into your [variable F][end if]. Mmm, that feels a lot better. ";
 	if the soreness of F > 0:
 		heal F times 3;
 	lube up F with the noun.
@@ -93,7 +93,7 @@ Check drinking lubricant:
 	if the sex addiction of the player < 8 and the thirst of the player < 4, say "You aren't thirsty enough to bring yourself to do that." instead.
 	
 Carry out drinking lubricant:
-	say "[if the bimbo of the player < 10]You hold your nose and squeeze the flavoured lube into your mouth, swallowing tentatively.  [otherwise]You happily squeeze the flavoured lube into your mouth.  [end if]It coats the inside of your throat![line break][if the oral sex addiction of the player > 6][second custom style]I'm probably better at deepthroating now![roman type][line break][end if]";
+	say "[if the bimbo of the player < 10]You hold your nose and squeeze the flavoured lube into your mouth, swallowing tentatively. [otherwise]You happily squeeze the flavoured lube into your mouth. [end if]It coats the inside of your throat![line break][if the oral sex addiction of the player > 6][line break][second custom style]I'm probably better at deepthroating now![roman type][line break][end if]";
 	SemenTasteAddictUp 1;
 	StomachUp 1;
 	lube up face with the noun.
@@ -153,3 +153,4 @@ To destroy (C - a lubricant):
 	if C is held by the player, remove C from play.
 
 Lubricant ends here.
+

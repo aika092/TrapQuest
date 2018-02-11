@@ -1,6 +1,6 @@
 Trousers Framework by Trousers begins here.
 
-Trousers is a kind of clothing.  A trousers is usually crotch-intact.  A trousers is usually manly.  A trousers is usually leg covering.
+Trousers is a kind of clothing. A trousers is usually crotch-intact. A trousers is usually manly. A trousers is usually leg covering.
 
 Definition: a trousers is displacable:
 	decide yes.
@@ -55,9 +55,9 @@ Report wearing trousers:
 			say "You pull the [ShortDesc of the noun] up around your hips. As you finish pulling them over your [random worn knickers], you feel the pants heating up along with your underwear! They firmly conform to the contours of your [ShortDesc of hips] and [genitals]. These are cursed, and now so are your [random worn knickers]!"; [Crowdsourced from Yorekani]
 			curse K;
 		otherwise:
-			say "You pull the [ShortDesc of the noun] up around your hips.  As you finish adjusting them you feel a pulse of warmth along the seams! They firmly conform to the contours of your [ShortDesc of hips] and [genitals]. [if the noun is unsure]These are cursed![end if]".
+			say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They firmly conform to the contours of your [ShortDesc of hips] and [genitals]. [if the noun is unsure]These are cursed![end if]".
 
-trousers wearability rules is a rulebook.  The wearability rules of trousers is usually trousers wearability rules.
+trousers wearability rules is a rulebook. The wearability rules of trousers is usually trousers wearability rules.
 
 This is the trousers already worn rule:
 	repeat with O running through worn trousers:
@@ -78,7 +78,8 @@ This is the knickers trousers clash rule:
 		rule fails.
 The knickers trousers clash rule is listed in the knickers wearability rules.
 
-trousers removability rules is a rulebook.  The removability rules of trousers is usually trousers removability rules.
+trousers removability rules is a rulebook. The removability rules of trousers is usually trousers removability rules.
 
 
 Trousers Framework ends here.
+

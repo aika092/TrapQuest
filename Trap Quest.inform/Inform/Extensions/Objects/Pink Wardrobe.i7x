@@ -1,6 +1,6 @@
 Pink Wardrobe by Objects begins here.
 
-pink wardrobe is a kind of container.  the printed name of pink wardrobe is "[TQlink of item described]pink wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink wardrobe is "wa".  Understand "pw" as pink wardrobe.  pink wardrobe is usually closed.   A pink wardrobe is openable.  A pink wardrobe is not portable.  The description of pink wardrobe is usually "[WardrobeDesc]".  1 pink wardrobe is in Dungeon12.
+pink wardrobe is a container. the printed name of pink wardrobe is "[TQlink of item described]pink wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink wardrobe is "wa". Understand "pw" as pink wardrobe. pink wardrobe is closed. A pink wardrobe is openable. A pink wardrobe is not portable. The description of pink wardrobe is "[WardrobeDesc]". pink wardrobe is in Dungeon12.
 
 To say WardrobeDesc:
 	if images visible is 1, display figure of wardrobe;
@@ -14,11 +14,11 @@ Definition: A container (called I) is immune to change:
 	decide no.
 
 To add treasure to (X - a pink wardrobe):
-	say "You open the pink wardrobe, revealing several pieces of [if the bimbo of the player < 3]obscene[otherwise if the bimbo of the player < 7]dodgy looking[otherwise]useful looking[end if] clothing.  You see ";
+	say "You open the pink wardrobe, revealing several pieces of [if the bimbo of the player < 3]obscene[otherwise if the bimbo of the player < 7]dodgy looking[otherwise]useful looking[end if] clothing. You see ";
 	let c-count be 0;
-	repeat with O running through clothing in a random pink wardrobe:
+	repeat with O running through clothing in pink wardrobe:
 		increase c-count by 1;
-	repeat with O running through clothing in a random pink wardrobe:
+	repeat with O running through clothing in pink wardrobe:
 		if c-count > 1:
 			say "a [printed name of O], ";
 		otherwise:
@@ -28,14 +28,15 @@ To add treasure to (X - a pink wardrobe):
 	say "There's also a weird pink [C] that looks like it's left over from a trashy hen party on a shelf, which it looks like you could use it to collect liquid from the nearby tank[if inline hyperlinks >= 2]. [link][bracket]take all[close bracket][as]take all[end link][line break][otherwise].[end if]";
 	if earnings > starting-earnings - 100:
 		if diaper focus >= 1:
-			say "[first custom style]Oh my god, there's a diaper in here, but in my size!  [one of]I think it's meant for me[or]I feel weirdly drawn to it[or]I weirdly feel like I'm almost destined to wear it[purely at random]...  No! This is the game trying to mess with my mind!  I've got to fight against it, I think?  I should just wear the padded underwear.  But maybe it'll be much easier to do well in the game if I'm wearing the diaper?  Ooh, I can't even tell what are my real thoughts and what are the fake thoughts they are filling my head with!  [second custom style]Or are these all my thoughts, and I'm just being paranoid?[roman type][line break]";
+			say "[first custom style]Oh my god, there's a diaper in here, but in my size!  [one of]I think it's meant for me[or]I feel weirdly drawn to it[or]I weirdly feel like I'm almost destined to wear it[purely at random]... No! This is the game trying to mess with my mind!  I've got to fight against it, I think?  I should just wear the padded underwear. But maybe it'll be much easier to do well in the game if I'm wearing the diaper?  Ooh, I can't even tell what are my real thoughts and what are the fake thoughts they are filling my head with!  [line break][second custom style]Or are these all my thoughts, and I'm just being paranoid?[roman type][line break]";
 		otherwise if there is an on-stage santa hat:
 			say "[first custom style]A santa hat?!  I guess it is Christmas... maybe I should make this a festive play-through?[roman type][line break]";
 		otherwise if the player is male:
-			say "[first custom style][if diaper lover >= 1]Oh sweet!  Looks like a total MILF lives here.  And one who really loves her offspring, looking at that T-shirt.  Those pants probably wouldn't look too weird on me, I might have to steal them.[otherwise][one of]Wow, a total slut must live in here.[or]I've only seen closets like this in hustler magazine.[or]I hope the babe that lives in here won't mind if I steal her panties.[purely at random][end if][roman type][line break]";
+			say "[first custom style][if diaper lover >= 1]Oh sweet!  Looks like a total MILF lives here. And one who really loves her offspring, looking at that T-shirt. Those pants probably wouldn't look too weird on me, I might have to steal them.[otherwise][one of]Wow, a total slut must live in here.[or]I've only seen closets like this in hustler magazine.[or]I hope the babe that lives in here won't mind if I steal her panties.[purely at random][end if][roman type][line break]";
 		otherwise:
-			say "[first custom style][if latex prisoner is 1]So THAT's what I'll be able to wear after I get this awful thing off?[otherwise if diaper lover >= 1]That underwear seems okay at least, but weirdly reminds me of stuff I used to wear when I was younger.  Wait, does that T-shirt say what I think it says?![otherwise][one of]Is this supposed to be my wardrobe?[or]Am I supposed to wear this slutty crap?[or]So, I either have to go naked, or I have to walk around in this crap like a tart. I'm not sure which is worse.[purely at random][end if][roman type][line break]";
-	if newbie tips is 1, say "[item style]Newbie tip: Consider this your starting kit.  These items will never be blessed but they're often better than nothing.  Wearing heels is an interesting but challenging choice because this will make you more vulnerable in the early game but is a great source of damage later on.[roman type][line break]".
+			say "[first custom style][if latex prisoner is 1]So THAT's what I'll be able to wear after I get this awful thing off?[otherwise if diaper lover >= 1]That underwear seems okay at least, but weirdly reminds me of stuff I used to wear when I was younger. Wait, does that T-shirt say what I think it says?![otherwise][one of]Is this supposed to be my wardrobe?[or]Am I supposed to wear this slutty crap?[or]So, I either have to go naked, or I have to walk around in this crap like a tart. I'm not sure which is worse.[purely at random][end if][roman type][line break]";
+	if newbie tips is 1, say "[item style]Newbie tip: Consider this your starting kit. These items will never be blessed but they're often better than nothing. Wearing heels is an interesting but challenging choice because this will make you more vulnerable in the early game but is a great source of damage later on.[roman type][line break]".
 
 
 Pink Wardrobe ends here.
+

@@ -18,11 +18,20 @@ Definition: A monster (called M) is simulated:
 	if the player is in the Mansion:
 		if M is in the Mansion, decide yes;
 		otherwise decide no;
+	if the player is in the School:
+		if M is in the School, decide yes;
+		otherwise decide no;
 	decide no.
+
+timedebug is a number that varies. timedebug is 0.
 
 To compute monsters:
 	now shocked-monsters is 0; [This is the variable that makes sure we don't spam the player with too much humiliation flavour if several monsters notice them at once]
+	if timedebug is 1:
+		say "Entering slowtest territory, press enter and start your stopwatch.";
+		wait 10000 ms before continuing;
 	repeat with M running through alive simulated monsters:
+		if timedebug is 1, say "Computing [M].";
 		if M is not seeked: [Monsters that already got a chance to chase the player get no further action.]
 			check immobility;
 			if M is moved, compute turn 3 of M; [Monsters that already moved don't move again.]
@@ -123,3 +132,4 @@ To say BecomesBoredFlav of (M - a monster):
 
 
 Compute Monsters ends here.
+

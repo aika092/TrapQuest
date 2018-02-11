@@ -621,7 +621,7 @@ Note the way Inform is able to solve the conservation equation, which says the p
 
 Example: ** The Empire Strikes Back - Using good old Imperial measures of length and area alongside these Frenchified metric ones.
 
-Imperial measures, often going back to obscure customs in Anglo-Saxon England, were inflicted across much of the world in the heyday of the British Empire.  Some are still very much alive in England and its former colonies (Australia, India, New Zealand, Canada, Ireland, the USA and so on) - miles and feet, for instance. Others continue only in unscientific social customs, like sport: horse-races are measured in furlongs; the running distance between the two wickets of a cricket pitch is 22 yards, which is 1 chain exactly; and even in France, a football goal must be 8 feet high and 8 yards wide.
+Imperial measures, often going back to obscure customs in Anglo-Saxon England, were inflicted across much of the world in the heyday of the British Empire. Some are still very much alive in England and its former colonies (Australia, India, New Zealand, Canada, Ireland, the USA and so on) - miles and feet, for instance. Others continue only in unscientific social customs, like sport: horse-races are measured in furlongs; the running distance between the two wickets of a cricket pitch is 22 yards, which is 1 chain exactly; and even in France, a football goal must be 8 feet high and 8 yards wide.
 
 	*: "The Empire Strikes Back"
 	

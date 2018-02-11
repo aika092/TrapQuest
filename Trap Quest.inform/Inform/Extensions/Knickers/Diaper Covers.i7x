@@ -1,7 +1,7 @@
 Diaper Covers by Knickers begins here.
 
 
-diaper cover is a kind of clothing.  The armour of diaper cover is 10.  A diaper cover is usually manly.  A diaper cover is usually crotch-intact.  A diaper cover is usually crotch-intact.  A diaper cover is usually polyester.  A diaper cover is usually rare. The soak-limit of a diaper cover is usually 24.  A diaper cover is usually diaper-addiction-influencing.
+diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. The soak-limit of a diaper cover is usually 24. A diaper cover is usually diaper-addiction-influencing.
 
 Definition: a diaper cover (called D) is fetish appropriate:
 	if diaper lover >= 1, decide yes;
@@ -34,16 +34,16 @@ To compute recipe specific cursing of (T - a diaper cover):
 To decide what number is the price of (C - a diaper cover):
 	decide on 2.
 
-The printed name of diaper cover is usually "[TQlink of item described][clothing-title-before]diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of diaper cover is "dc".
+The printed name of diaper cover is usually "[TQlink of item described][clothing-title-before]diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper cover is "dc".
 
 To say ShortDesc of (C - a diaper cover):
 	say selfexamineuniquetitle of C.
 
 To say ClothingDesc of (C - a diaper cover):
-	say "A large diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].  [if C is worn and there is a worn diaper]You can feel it making it much easier to walk in your nappy.[end if]".
+	say "A large diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. [if C is worn and there is a worn diaper]You can feel it making it much easier to walk in your nappy.[end if]".
 
 To compute SelfExamineDesc of (K - a diaper cover):
-	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].  ".
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
 To say selfexamineuniquetitle of (K - a diaper cover):
 	say "diaper cover".
@@ -76,12 +76,12 @@ To say ClothingDesc of (C - a frilly white diaper cover):
 	say "A large frilly white diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
 
 To compute SelfExamineDesc of (K - a frilly white diaper cover):
-	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].  ".
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
 To say selfexamineuniquetitle of (K - a frilly white diaper cover):
 	say "frilly white diaper cover".
 
-A teddy bear diaper cover is a kind of diaper cover.  A teddy bear diaper cover is usually cotton. There is 1 teddy bear diaper cover.
+A teddy bear diaper cover is a kind of diaper cover. A teddy bear diaper cover is usually cotton. There is 1 teddy bear diaper cover.
 
 The printed name of teddy bear diaper cover is usually "[TQlink of item described][clothing-title-before]teddy bear diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -94,14 +94,14 @@ To say ClothingDesc of (C - a teddy bear diaper cover):
 	say "A cosy pink cotton diaper cover with a teddy bear on the backside. It [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
 
 To compute SelfExamineDesc of (K - a teddy bear diaper cover):
-	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].  ".
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
 To say selfexamineuniquetitle of (K - a teddy bear diaper cover):
 	say "pink teddy bear diaper cover".
 
 Chapter 1 Wearability
 
-diaper cover wearability rules is a rulebook.  The wearability rules of a diaper cover is usually diaper cover wearability rules.
+diaper cover wearability rules is a rulebook. The wearability rules of a diaper cover is usually diaper cover wearability rules.
 
 This is the diaper cover already worn rule:
 	repeat with O running through worn diaper covers:
@@ -137,3 +137,4 @@ The diaper cover can't go over waddle diapers rule is listed in the diaper cover
 
 
 Diaper Covers ends here.
+

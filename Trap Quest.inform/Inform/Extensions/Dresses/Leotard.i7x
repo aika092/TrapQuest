@@ -1,15 +1,15 @@
 Leotard by Dresses begins here.
 
-A leotard is a kind of overdress.  A leotard is usually crotch-intact.  A leotard is usually crotch-intact.  A leotard is usually unskirted.  A leotard is fully covering.  A leotard is usually not-top-displacable.  A leotard is usually sheer-when-wet.  
+A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet.  A leotard has a number called charge.
 
-A pink leotard is a kind of leotard.  A sexy blue leotard is a kind of leotard.
+A pink leotard is a kind of leotard. A sexy blue leotard is a kind of leotard.
 
-The printed name of pink leotard is usually "[TQlink of item described][clothing-title-before]pink leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink leotard is "ple".
-The printed name of sexy blue leotard is usually "[TQlink of item described][clothing-title-before]sexy blue leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sexy blue leotard is "ble".
+The printed name of pink leotard is usually "[TQlink of item described][clothing-title-before]pink leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink leotard is "ple".
+The printed name of sexy blue leotard is usually "[TQlink of item described][clothing-title-before]sexy blue leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sexy blue leotard is "ble".
 
-Figure of pink leotard is the file "leotard1.png".  Figure of sexy blue leotard is the file "leotard2.png".
+Figure of pink leotard is the file "leotard1.png". Figure of sexy blue leotard is the file "leotard2.png".
 
-There is 1 pink leotard.  There is 1 unique sexy blue leotard.
+There is 1 pink leotard. There is 1 unique sexy blue leotard.
 
 To decide which figure-name is clothing-image of (C - a pink leotard):
 	decide on figure of pink leotard.
@@ -22,7 +22,7 @@ To say ClothingDesc of (C - a sexy blue leotard):
 	say "A blue leotard which is so sheer that it would reveal everything if it wasn't the for opaque stars over each nipple and the crotch.[if C is crotch-ripped]A rip at the bottom of the leotard means that it unfortunately doesn't protect the crotch region.[end if]".
 
 To compute SelfExamineDesc of (C - a leotard):
-	say "You are wearing a [ShortDesc of C].  ".
+	say "You are wearing a [ShortDesc of C]. ".
 
 To say ShortDesc of (C - a pink leotard):
 	say "pretty pink leotard with frilly tutu".
@@ -57,15 +57,17 @@ Definition: a pink leotard (called C) is sissifying:
 
 To compute periodic effect of (L - a leotard):
 	[ballerina stuff]
-	let R be a random number between 1 and 1500 - (1000 * unlucky);
-	let H be a random off-stage ballet heels;
-	let S be a random off-stage plentiful ballet shoes;
-	if H is actually summonable and R < the raw heel skill of the player * the raw heel skill of the player:
-		say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright].  You feel yourself forced to stand on tip-toes!  Uh-oh...[otherwise].[end if][roman type][line break]";
-		summon H cursed;
-	otherwise if S is actually summonable and R < 25 - (the raw heel skill of the player * 2):
-		say "[bold type]Your leotard glows softly, and ballet shoes appear on your feet[if the player is upright].  You feel yourself forced to stand on tip-toes![otherwise].[end if][roman type][line break]";
-		summon S cursed.
+	increase the charge of L by 1;
+	if the charge of L > 500:
+		now the charge of L is 0;
+		let H be a random off-stage ballet heels;
+		let S be a random off-stage plentiful ballet shoes;
+		if H is actually summonable and the raw heel skill of the player > 5:
+			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes!  Uh-oh...[otherwise].[end if][roman type][line break]";
+			summon H cursed;
+		otherwise if S is actually summonable:
+			say "[bold type]Your leotard glows softly, and ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes![otherwise].[end if][roman type][line break]";
+			summon S cursed.
 
 To decide which object is the unique-upgrade-target of (C - a leotard):
 	if diaper focus is 0, decide on a random off-stage sexy blue leotard;
@@ -81,3 +83,4 @@ To decide which object is the potential-upgrade-target of (C - a leotard):
 
 
 Leotard ends here.
+

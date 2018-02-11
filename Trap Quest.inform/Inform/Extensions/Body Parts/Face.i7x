@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Orifice>
 
 @!]
-face is an orifice.  Face is everywhere.  The description of face is "[TotalDesc of face]".  The printed name of face is "[if item described is occupied]mouth[otherwise]face[end if]".  Understand "mouth", "blowjob", "oral", "oral sex", "fellatio", "cunnilingus", "blow job" as face. [This way 'offer/suggest blowjob/etc. is understood by the game]
+face is an orifice. Face is everywhere. The description of face is "[TotalDesc of face]". The printed name of face is "[if item described is occupied]mouth[otherwise]face[end if]". Understand "mouth", "blowjob", "oral", "oral sex", "fellatio", "cunnilingus", "blow job" as face. [This way 'offer/suggest blowjob/etc. is understood by the game]
 
 [!<Face>@<previousMakeUp:Integer>*
 
@@ -97,8 +97,8 @@ REQUIRES COMMENTING
 
 +!]
 This is the too much dignity to present face rule:
-	if the humiliation of the player < 10000 and debugmode < 1:
-		if (the virgin of the player is 0 and the player is female) or (the analvirgin of the player is 0 and the player is male): [Female players can attempt to preserve their virginity always]
+	if the humiliation of the player < HUMILIATION-PROUD + 2000 and debugmode < 1:
+		if (the virgin of the player is 0 and the player is female) or (the analvirgin of the player is 0 and the player is male): [virgins can always attempt to preserve their virginity]
 			if auto is 0, say "You have too much self respect to do that!";
 			rule fails.
 The too much dignity to present face rule is listed in the face presentable rules.
@@ -188,15 +188,15 @@ To say ShortDesc of (F - face):
 	if the make-up of face is 2, say "heavily made up";
 	if the make-up of face is 3, say "[if diaper quest is 1 and permanent makeup is 1]frozen kawai[otherwise if diaper quest is 1]messily made up[otherwise]whore painted[end if]";
 	if the semen coating of face > 7:
-		say ", [semen] plastered";
+		say ", cum plastered";
 	otherwise if the semen coating of face > 4:
-		say  ", partially [semen] covered";
+		say  ", partially cum-covered";
 	otherwise if the semen coating of face > 0:
 		say  ", creamed";
 	if the lips of face is 1:
-		say "big-lipped";
+		say " big-lipped";
 	otherwise if the lips of face > 1:
-		say "whore-lipped";
+		say " whore-lipped";
 	say " face".
 
 [!<SayMediumDescOfFace>+
@@ -215,7 +215,7 @@ REQUIRES COMMENTING
 To say TotalDesc of face:
 	say "You have [LipDesc], and ";
 	if the semen coating of face > 7:
-		say "your face [MakeUpDesc][if the make-up of face is 0] but is completely covered in [semen].[otherwise].  It is also completely plastered in [semen]![end if]";
+		say "your face [MakeUpDesc][if the make-up of face is 0] but is completely covered in [semen].[otherwise]. It is also completely plastered in [semen]![end if]";
 	otherwise if the semen coating of face > 4:
 		say  "your face [MakeUpDesc] and is dripping with [semen].";
 	otherwise if the semen coating of face > 0:
@@ -244,7 +244,7 @@ To say MakeUpDesc:
 			if permanent makeup is 1, say "is covered in heavy kawai make-up with white hearts on the cheeks and is fixed in a vacant expression";
 			otherwise say "is smothered in overdone make-up, which looks like it was done by a three-year-old";
 		otherwise:
-			say "is smothered in overdone make-up, which [one of]gives you an almost doll-like face[or]encourages men to treat you like a slut[or]most men would take as a signal that you're an easy lay[or]is begging for all the [if the bimbo of the player < 12]wrong[otherwise][second custom style]right[roman type][end if] sorts of attention[or]makes you look like a total [whore][purely at random]".
+			say "is smothered in overdone make-up, which [one of]gives you an almost doll-like face[or]encourages men to treat you like a slut[or]most men would take as a signal that you're an easy lay[or]is begging for all the [if the bimbo of the player < 12]wrong[otherwise][line break][second custom style]right[roman type][line break][end if] sorts of attention[or]makes you look like a total [whore][purely at random]".
 
 [!<SayLipDesc>+
 
@@ -296,7 +296,7 @@ To FaceDown (X - a number):
 REQUIRES COMMENTING
 
 *!]
-Permanent MakeUp is a number that varies.  Permanent MakeUp is 0.
+Permanent MakeUp is a number that varies. Permanent MakeUp is 0.
 
 [!<LipsUpX>+
 
@@ -310,3 +310,4 @@ To LipsUp (X - a number):
 		if the lips of face < 2 + artificial enhancements fetish, increase the lips of face by 1.
 
 Face ends here.
+

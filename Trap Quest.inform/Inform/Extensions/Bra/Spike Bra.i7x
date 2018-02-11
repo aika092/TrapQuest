@@ -1,10 +1,10 @@
 Spike Bra by Bra begins here.
 
-A spike bra is a kind of bra.  Figure of spike bra 1 is the file "spikebra1.png".  Figure of spike bra 2 is the file "spikebra2.png".  A spike bra is usually spikey.  The min size of a spike bra is usually 2.  The max size of a spike bra is usually 15.  The support of a spike bra is usually 3.  A spike bra is low cut.  A spike bra is usually pvc.
+A spike bra is a kind of bra. Figure of spike bra 1 is the file "spikebra1.png". Figure of spike bra 2 is the file "spikebra2.png". A spike bra is usually spikey. The min size of a spike bra is usually 2. The max size of a spike bra is usually 15. The support of a spike bra is usually 3. A spike bra is low cut. A spike bra is usually pvc.
 
-A pink spike bra is a kind of spike bra.  A pink spike bra is usually cotton. The soak-limit of a pink spike bra is usually 18.
+A pink spike bra is a kind of spike bra. A pink spike bra is usually cotton. The soak-limit of a pink spike bra is usually 18.
 
-There is 1 unique top-exclusive spike bra.  There is 1 unique top-exclusive pink spike bra.  The text-shortcut of spike bra is "spb".
+There is 1 unique top-exclusive spike bra. There is 1 unique top-exclusive pink spike bra. The text-shortcut of spike bra is "spb".
 
 To say ShortDesc of (B - a spike bra):
 	say "spike bra".
@@ -17,7 +17,7 @@ To decide which figure-name is clothing-image of (C - a spike bra):
 	decide on figure of spike bra 2.
 
 To say ClothingDesc of (C - a spike bra):
-	say "A bra made out of black straps with spikes facing outwards.  It exposes a lot of breast flesh but covers the nipples and looks very dominant and intimidating.".
+	say "A bra made out of black straps with spikes facing outwards. It exposes a lot of breast flesh but covers the nipples and looks very dominant and intimidating.".
 
 To decide which figure-name is clothing-image of (C - a pink spike bra):
 	decide on figure of spike bra 1.
@@ -96,3 +96,4 @@ To decide which number is the bartering value of (T - a spike bra) for (M - a gl
 
 
 Spike Bra ends here.
+

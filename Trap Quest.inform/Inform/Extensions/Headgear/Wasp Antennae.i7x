@@ -2,9 +2,9 @@ Wasp Antennae by Headgear begins here.
 
 
 
-A wasp-antennae is a kind of headgear. There is one wasp-antennae. A wasp-antennae is biological. Understand "wasp", "antennae" as wasp-antennae.  A wasp-antennae is usually anal-sex-addiction-influencing. A wasp-antennae is usually roleplay.
+A wasp-antennae is a kind of headgear. There is one wasp-antennae. A wasp-antennae is biological. Understand "wasp", "antennae" as wasp-antennae. A wasp-antennae is usually anal-sex-addiction-influencing. A wasp-antennae is usually roleplay.
 
-The printed name of wasp-antennae is usually "[TQlink of item described][clothing-title-before]wasp antennae[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of wasp-antennae is "waa".
+The printed name of wasp-antennae is usually "[TQlink of item described][clothing-title-before]wasp antennae[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of wasp-antennae is "waa".
 
 total-wasps is a number that varies. total-wasps is 0.
 
@@ -32,21 +32,20 @@ wasp-summoned is a number that varies.
 
 To compute class outfit of (H - a wasp-antennae):
 	let B be a random off-stage striped top;
-	let S be a random off-stage striped stockings;
-	if the headgear chance of H < the threshold of H:
-		if B is actually summonable or (B is striped top and wasp-summoned is 0):
-			if wasp-summoned is 0:
-				repeat with O running through worn dresses:
-					say "Your [O] vanishes!";
-					destroy O;
-			say "[bold type][if total-wasps < 50]A fuzzy black and yellow top suddenly appears on your chest![otherwise]You look down in shock as the skin around your breasts begins to turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
-			summon B cursed;
-			now the raw-magic-modifier of B is total-wasps / 50;
-			now wasp-summoned is 1;
-		otherwise if S is actually summonable:
-			say "[bold type][if total-wasps < 50]A pair of fuzzy black and yellow stockings suddenly appears on your legs![otherwise]You look down in shock as your legs turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
-			summon S cursed;
-			now the raw-magic-modifier of S is total-wasps / 50.
+	let S be a random off-stage black-and-yellow striped stockings;
+	if B is actually summonable or (B is striped top and wasp-summoned is 0):
+		if wasp-summoned is 0:
+			repeat with O running through worn dresses:
+				say "Your [O] vanishes!";
+				destroy O;
+		say "[bold type][if total-wasps < 50]A fuzzy black and yellow top suddenly appears on your chest![otherwise]You look down in shock as the skin around your breasts begins to turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
+		summon B cursed;
+		now the raw-magic-modifier of B is total-wasps / 50;
+		now wasp-summoned is 1;
+	otherwise if S is actually summonable:
+		say "[bold type][if total-wasps < 50]A pair of fuzzy black and yellow stockings suddenly appears on your legs![otherwise]You look down in shock as your legs turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
+		summon S cursed;
+		now the raw-magic-modifier of S is total-wasps / 50.
 			
 	
 
@@ -56,3 +55,4 @@ after you have laid enough eggs, you start very slowly producing them yourself i
 
 
 Wasp Antennae ends here.
+

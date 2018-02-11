@@ -2,7 +2,7 @@ Striped Top by Dresses begins here.
 
 A striped top is a kind of overdress. A striped top is usually unskirted. A striped top is usually biological. A striped top is usually unique. A striped top is usually belly exposing. There is 1 striped top.
 
-The printed name of striped top is usually "[TQlink of item described][clothing-title-before]striped top[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of striped top is "stt".
+The printed name of striped top is usually "[TQlink of item described][clothing-title-before]striped top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of striped top is "stt".
 
 To say selfexaminetitle of (B - a striped top):
 	say "fuzzy black and yellow top".
@@ -33,3 +33,4 @@ Definition: a striped top (called C) is untransformable:
 	decide no.
 
 Striped Top ends here.
+

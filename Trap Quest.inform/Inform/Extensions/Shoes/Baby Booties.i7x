@@ -1,6 +1,6 @@
 Baby Booties by Shoes begins here.
 
-A baby booties is a kind of shoes.  A baby booties is usually cotton.  A baby booties is usually unique.
+A baby booties is a kind of shoes. A baby booties is usually cotton. A baby booties is usually unique.
 
 The printed name of baby booties is usually "[TQlink of item described][item style][clothing-title-before]pair of baby booties[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby booties is "bbo".
 
@@ -46,7 +46,7 @@ To decide which object is the unique-upgrade-target of (C - a baby booties):
 
 Part 1 - Baby Slippers
 	
-A baby slippers is a kind of baby booties.  A baby slippers is usually wool.
+A baby slippers is a kind of baby booties. A baby slippers is usually wool.
 
 The printed name of baby slippers is usually "[TQlink of item described][item style][clothing-title-before]pair of baby slippers[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby slippers is "bsl".
 
@@ -56,7 +56,7 @@ To say UniqueShortDesc of (C - a baby slippers):
 	say "baby slippers".
 
 To say ClothingDesc of (C - a baby slippers):
-	say "A pair of thick pink slippers, made out of a soft cotton and wool.  [if C is worn]It reduces the power of your kicks.[end if]".
+	say "A pair of thick pink slippers, made out of a soft cotton and wool. [if C is worn]It reduces the power of your kicks.[end if]".
 
 To decide which figure-name is the clothing-image of (H - a baby slippers):
 	decide on the figure of baby slippers.
@@ -76,3 +76,4 @@ Understand "booties" as baby slippers.
 
 
 Baby Booties ends here.
+

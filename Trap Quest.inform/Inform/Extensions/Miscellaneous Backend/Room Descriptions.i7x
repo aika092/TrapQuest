@@ -1,12 +1,12 @@
 Room Descriptions by Miscellaneous Backend begins here.
 
 
-[This is a rule that comes with the base code, we are removing it to add our own directly below.  We are doing this because the original code doesn't list the items inside a container in the things the player can see in a room.]
+[This is a rule that comes with the base code, we are removing it to add our own directly below. We are doing this because the original code doesn't list the items inside a container in the things the player can see in a room.]
 The you-can-also-see rule is not listed in the for printing the locale description rulebook.
 
 [!<ForPrintingTheLocaleDescription>+
 
-We list all the things that the player can see.  This function is called pretty much whenever a room's description is printed.
+We list all the things that the player can see. This function is called pretty much whenever a room's description is printed.
 
 +!]
 For printing the locale description (this is the you-can-also-see-modified rule):
@@ -89,3 +89,4 @@ To say full text of (C - a pedestal):
 
 
 Room Descriptions ends here.
+

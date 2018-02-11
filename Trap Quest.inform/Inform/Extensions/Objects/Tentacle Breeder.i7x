@@ -1,8 +1,8 @@
 Tentacle Breeder by Objects begins here.
 
-A tentacle-breeder is a kind of summoning portal. The printed name of tentacle-breeder is "[TQlink of item described]tentacle breeder[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of tentacle-breeder is "[TentacleBreederDesc]". Understand "tentacle", "breeder" as tentacle-breeder.  The text-shortcut of a tentacle breeder is usually "ttb".
+A tentacle-breeder is a kind of summoning portal. The printed name of tentacle-breeder is "[TQlink of item described]tentacle breeder[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of tentacle-breeder is "[TentacleBreederDesc]". Understand "tentacle", "breeder" as tentacle-breeder. The text-shortcut of a tentacle-breeder is usually "ttb".
 
-A tentacle-breeder has a number called growth. The growth of a tentacle-breeder is usually 0.  The charge of a tentacle-breeder is usually 30.
+A tentacle-breeder has a number called growth. The growth of a tentacle-breeder is usually 0. The charge of a tentacle-breeder is usually 30.
 
 To decide which number is the true-growth of (T - a tentacle-breeder):
 	let G be the growth of T;
@@ -41,7 +41,7 @@ The tentacle breeder in mansion rule is listed in the set up mansion traps rules
 
 To say TentacleBreederDesc:
 	if inhuman pregnancy is 2, say "A massively pregnant [if item described is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime. A sea of tentacles pushes itself into all of [if item described is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament.[otherwise if item described is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now.[otherwise]You feel like you should probably stay away from her, since you'd really prefer to avoid her fate.[end if]";
-	otherwise say "A messy dome of grey flesh is stuck to one wall.  A hole in the middle pulsates rapidly, kind of like a spasming asshole.  [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region.[otherwise]You feel like you should probably stay away from it until you have the power to remove its tainted presence entirely.[end if]".
+	otherwise say "A messy dome of grey flesh is stuck to one wall. A hole in the middle pulsates rapidly, kind of like a spasming asshole. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region.[otherwise]You feel like you should probably stay away from it until you have the power to remove its tainted presence entirely.[end if]".
 
 Purifying is an action applying to one thing.
 
@@ -141,3 +141,4 @@ A time based rule (this is the tentacle breeder tester rule):
 
 
 Tentacle Breeder ends here.
+

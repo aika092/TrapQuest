@@ -140,7 +140,7 @@ To decide if there is something to the (D - a direction):
 		decide no;
 	otherwise:
 		now Neighbour Finder is R;
-		[say "Shape of [tile finder] is [shape of tile finder].  Shape of [R] is [shape of R].  Direction is [D].";]
+		[say "Shape of [tile finder] is [shape of tile finder]. Shape of [R] is [shape of R]. Direction is [D].";]
 		if D is desired:
 			let Sh be the shape of tile finder;
 			if D is north and N part of Sh is 1, decide yes;
@@ -151,3 +151,4 @@ To decide if there is something to the (D - a direction):
 
 
 ASCII Map ends here.
+

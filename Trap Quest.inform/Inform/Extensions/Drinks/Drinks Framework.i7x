@@ -83,14 +83,14 @@ Definition: A number is remembered:
 REQUIRES COMMENTING
 
 *!]
-magic-curse is a kind of value.  The magic-curses are bland, blessed, and cursed.  
+magic-curse is a kind of value. The magic-curses are bland, blessed, and cursed. 
 
 [!<curseID:CurseIDEnum>*
 
 REQUIRES COMMENTING
 
 *!]
-curse-ID is a kind of value.  The curse-IDs are sure and unsure.  
+curse-ID is a kind of value. The curse-IDs are sure and unsure. 
 
 [!<Thing>@<SayMagicCurse>+
 
@@ -106,7 +106,7 @@ To say magic curse of (C - a thing):
 REQUIRES COMMENTING
 
 *@!]
-Drink-Colour is a kind of value.  The drink-colours are white, scarlet, blue, golden, green, grey, clear, indigo, magenta, orange, lime, brownish, violet, glittery, turquoise, creamy, silver, bronze, murky.
+Drink-Colour is a kind of value. The drink-colours are white, scarlet, blue, golden, green, grey, clear, indigo, magenta, orange, lime, brownish, violet, glittery, turquoise, creamy, silver, bronze, murky.
 
 Understand "milk" as a can when the fill-colour of item described is white and the doses of item described > 0.
 Understand "urine", "piss", "pee", "wee" as a bottle when the fill-colour of item described is golden and the doses of item described > 0.
@@ -144,3 +144,4 @@ To Print Drinks Table:
 
 
 Drinks Framework ends here.
+

@@ -1,20 +1,13 @@
 Stockings Framework by Stockings begins here.
 
-A stockings is a kind of clothing.  Understand "pair", "pair of" as stockings.  The printed name of stockings is usually "[TQlink of item described][clothing-title-before]pair of [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".  A stockings is usually sheer. The soak-limit of stockings is usually 10.
+A stockings is a kind of clothing. Understand "pair", "pair of" as stockings. The printed name of stockings is usually "[TQlink of item described][clothing-title-before]pair of [clothing-material of the item described] stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]". A stockings is usually sheer. The soak-limit of stockings is usually 10.
 
 Report examining stockings:
-	if the number of worn stockings is 0 and newbie tips is 1, say "Stockings make wearing heels more comfortable, and therefore slightly improve your ability to walk in them.".
+	if the number of worn stockings is 0 and newbie tips is 1, say "Stockings and socks make wearing heels more comfortable, and therefore slightly improve your ability to walk in them[unless the noun is socks]. Stockings also improve your knee damage[end if].".
 
 To decide which figure-name is target-stockings-figure:
 	repeat with S running through worn stockings:
-		if S is heart stockings, decide on figure of mesh stockings A;
-		if S is fishnet stockings, decide on figure of mesh stockings B;
-		if S is suspender stockings, decide on figure of nylon stockings B;
-		if S is lacy stockings, decide on figure of nylon stockings A;
-		if S is black rubber stockings, decide on figure of rubber stockings A;
-		if S is red rubber stockings, decide on figure of rubber stockings B;
-		if S is frilly stockings, decide on figure of cotton stockings;
-		if S is woven stockings, decide on figure of wool stockings;
+		decide on the clothing-image of S;
 	decide on figure of cotton stockings.
 
 To decide which number is the hindrance-modifier of (S - a stockings):
@@ -82,12 +75,25 @@ Definition: a stockings (called C) is ingredient:
 	decide yes.
 
 To decide which number is the crafting key of (C - a stockings):
-	decide on 53.
+	decide on 53. [TODO socks are separate ingredient]
+
+Part - Socks
+
+A socks is a kind of stockings. The printed name of socks is usually "[TQlink of item described][clothing-title-before]pair of [clothing-material of the item described] socks[clothing-title-after][TQxlink of item described][verb-desc of item described]". A socks is usually dense. A socks is usually unique.
+
+To decide which number is the knee-modifier of (S - a socks):
+	decide on 0.
+
+To say ShortDesc of (C - a socks):
+	say "pair of knee high socks".
+
+To say ShortestDesc of (C - a stockings):
+	say "pair of socks".
 
 
 Part - Wearability
 
-stockings wearability rules is a rulebook.  The wearability rules of stockings is usually stockings wearability rules.
+stockings wearability rules is a rulebook. The wearability rules of stockings is usually stockings wearability rules.
 
 This is the stockings already worn rule:
 	repeat with O running through worn stockings:
@@ -123,7 +129,7 @@ Check taking off stockings:
 		unless L is the noun, say "You need to take off your [L] first." instead;
 	if the player is prone, say "You need to be standing up really." instead.
 
-stockings removability rules is a rulebook.  The removability rules of stockings is usually stockings removability rules.
+stockings removability rules is a rulebook. The removability rules of stockings is usually stockings removability rules.
 
 This is the cursed stockings prevents removal of stockings rule:
 	repeat with C running through worn cursed stockings:
@@ -147,3 +153,4 @@ The worn leg covering clothing prevents removal of stockings rule is listed in t
 
 
 Stockings Framework ends here.
+

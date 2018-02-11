@@ -11,3 +11,4 @@ To decide which object is the concealer of (T - a nintendolls-brand tattoo):
 Understand "nintendolls", "brand" as nintendolls-brand tattoo.
 
 Nintendolls Brand Tattoo ends here.
+

@@ -1,7 +1,7 @@
 Needle Trap by Traps begins here.
 
 
-A needle trap is a kind of trap.  There are 22 potentially pressure potentially sticky potentially click potentially wire needle traps.
+A needle trap is a kind of trap. There are 22 potentially pressure potentially sticky potentially click potentially wire needle traps.
 
 This is the spawn initial dungeon needle traps rule:
 	repeat with N running from 1 to 4:
@@ -46,7 +46,7 @@ To trigger (Y - a needle trap):
 		now target-body-part is hips;
 	if the latex-transformation of the player > 0, now target-body-part is breasts;
 	if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
-	say "A tiny needle shoots out of [if the player is in the dungeon]the stone wall[otherwise if the player is in the woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise]hip[end if].  ";
+	say "A tiny needle shoots out of [if the player is in the dungeon]the stone wall[otherwise if the player is in the woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise]hip[end if]. ";
 	compute Y injecting into target-body-part.
 
 
@@ -80,7 +80,7 @@ To compute (Y - a needle trap) injecting into (X - breasts):
 		cutscene needle breasts;
 		NeedleDelicateUp;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:
-		say "Owww, that really hurt!  You watch the capsule at the end of the needle empty a mysterious serum into your breasts.  [one of]They feel more... active.[or]They feel more... productive.[or]Your lactation rate has been increased again![stopping]";
+		say "Owww, that really hurt!  You watch the capsule at the end of the needle empty a mysterious serum into your breasts. [one of]They feel more... active.[or]They feel more... productive.[or]Your lactation rate has been increased again![stopping]";
 		increase the lactation rate of the player by 1;
 		cutscene needle breasts;
 		NeedleDelicateUp;
@@ -90,7 +90,7 @@ To compute (Y - a needle trap) injecting into (X - breasts):
 		cutscene needle breasts;
 		NeedleDelicateUp;
 	otherwise:
-		say "Owww, that really hurt!  You take it out and notice that it has an empty capsule at the end you're holding.  It looks like it injected you with something?";
+		say "Owww, that really hurt!  You take it out and notice that it has an empty capsule at the end you're holding. It looks like it injected you with something?";
 		Bustup 1;
 		cutscene needle breasts;
 		NeedleDelicateUp.
@@ -130,7 +130,7 @@ To compute (Y - a needle trap) injecting into (X - belly):
 	if needle-blocker is clothing:
 		say "The needle is blocked by your [ShortDesc of needle-blocker]!  Phew!";
 	otherwise:
-		say "Owww, that really hurt!  You take it out and notice that it has an empty capsule at the end you're holding.  It looks like it injected you with something?";
+		say "Owww, that really hurt!  You take it out and notice that it has an empty capsule at the end you're holding. It looks like it injected you with something?";
 		NeedleDelicateUp;
 		Bustup 1.
 
@@ -148,7 +148,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 		say "The needle is blocked by your [ShortDesc of needle-blocker]!  Phew!";
 	otherwise if diaper quest is 1:
 		if a random number between 1 and 2 is 1:
-			say "Owww, that really hurt!  You watch the large balloon at the back end of the needle empty a lot of liquid into your body[one of].  That can't be good...[or].[stopping]";
+			say "Owww, that really hurt!  You watch the large balloon at the back end of the needle empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
 			BladderUp 5;
 			if rectum > 0, increase rectum by 2;
 			cutscene needle hips;
@@ -159,12 +159,12 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			cutscene needle hips;
 			NeedleDelicateUp;
 	otherwise if inflation fetish is 1 and a random number between 1 and 2 is 1 and tutorial is 0:
-		say "Owww, that really hurt!  You watch the large balloon at the back end of the needle empty a lot of air into your ass cheeks.  They inflate as if they were also made of stretchy rubber!";
+		say "Owww, that really hurt!  You watch the large balloon at the back end of the needle empty a lot of air into your ass cheeks. They inflate as if they were also made of stretchy rubber!";
 		AssInflate a random number between 4 and 6;
 		cutscene needle hips;
 		NeedleDelicateUp;
 	otherwise:
-		say "Owww, that really hurt!!  You take it out and notice that it has an empty capsule at the end you're holding.  It looks like it injected you with something?";
+		say "Owww, that really hurt!!  You take it out and notice that it has an empty capsule at the end you're holding. It looks like it injected you with something?";
 		cutscene needle hips;
 		NeedleDelicateUp;
 		HipUp 1.
@@ -196,3 +196,4 @@ To NeedleDelicateUp:
 
 
 Needle Trap ends here.
+
