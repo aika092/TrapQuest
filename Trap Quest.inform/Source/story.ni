@@ -3,7 +3,7 @@
 Release along with cover art.
 The story genre is "Erotica".
 Use BRIEF room descriptions.
-The story creation year is 2017. 
+The story creation year is 2017.
 
 Include Compiler Settings by Miscellaneous Backend.
 Include Third Party Extensions by Third Party Extensions.
@@ -11,7 +11,7 @@ Include Third Party Extensions by Third Party Extensions.
 [!<SetUpDebugStuff>+
 
 Used for testing, to modify the starting state.
-ngi
+
 +!]
 To set up debug stuff:
 	do nothing.
@@ -24,12 +24,12 @@ To set up debug stuff:
  Class tags for variables/functions within classes should be expanded to [!<ClassName>@<VARIABLENAME:VARIABLETYPE|FUNCTIONNAME>*|+ (as appropriate) +|*!]
 "
  All annotations associated with normal JavaDocs should still work within these tags. ALL ANNOTATIONS MUST OCCUR AFTER THE GENERAL FUNCTION/CLASS DESCRIPTION. The main annotations to take note of are:
-     @param <CLASSNAME>:<VariableName> -> For any parameter/argument used within the function, describe the class it belongs to and the name of the variable within the function immediately after the annotation.
-     @return <CLASSNAME> -> If the function returns a variable, describe the class of that variable immediately after the annotation.
-     @inherits <CLASSNAME> -> (For classes only) If the class directly inherits another object, note the object down (no description required).
-     @deprecated -> If the function has been deprecated, say why.
-     @throws -> Probably not used, but should be something to consider when having functions that can be erroneous.
-     @since <MAJOR.MINOR.PATCH> -> Describe when a new function was added according to the released version that it first appeared in.
+	 @param <CLASSNAME>:<VariableName> -> For any parameter/argument used within the function, describe the class it belongs to and the name of the variable within the function immediately after the annotation.
+	 @return <CLASSNAME> -> If the function returns a variable, describe the class of that variable immediately after the annotation.
+	 @inherits <CLASSNAME> -> (For classes only) If the class directly inherits another object, note the object down (no description required).
+	 @deprecated -> If the function has been deprecated, say why.
+	 @throws -> Probably not used, but should be something to consider when having functions that can be erroneous.
+	 @since <MAJOR.MINOR.PATCH> -> Describe when a new function was added according to the released version that it first appeared in.
 
 Any descriptor can be written using the markdown syntax to apply stylistics and format everything. If you do not know what the markdown syntax is... I would suggest Google is a great place to start. The following is an example for all listed possibilities:
 ]
@@ -84,13 +84,15 @@ can document things. Woop!
 
 [
 Needs Testing:
-* Wishing well accepts drink offerings(Tested some, but could probably use more)
+* Mysterious mummy
+* Dual classes
+* Fuckholes (heheh)
 ]
 
 [
 Big reworks:
 * Break up removal checks into functions like wearability
-* Break up compute action N into smaller functions
+* Mansion generates randomly like other regions
 ]
 
 [
@@ -100,14 +102,12 @@ Minor changes:
 * Different flavour for submitting when a sex doll
 * More ways to influence hair colour and make up
 * Glued clothing can't be displaced
-* Dominatrix stops the player from masturbating during sex
 ]
 
 [
 Features to implement:
 * Some intelligent NPCs can rip off breast covering / low outrage clothing if the player resists during sex.
 * Add a "level 2" repairing area in the mansion
-* Cultists periodically destroy "garlic" rooms with summoning rituals
 * Witch can enchant clothing with "durability" (for a price)
 ]
 
@@ -184,6 +184,7 @@ Include Dungeon by Rooms.
 Include Woods by Rooms.
 Include Hotel by Rooms.
 Include Mansion by Rooms.
+Include School by Rooms.
 
 An introductory room is a kind of room.  An introductory room has a labyrinth shape called shape.  The shape of an introductory room is usually L3/0-0-1-1-1-1.  The grid position of an introductory room is usually <0,0,0>.
 
@@ -300,6 +301,8 @@ Volume 6 - Things
 Include Things Framework by Objects.
 Include Destroying by Objects.
 Include Containers by Objects.
+Include Mimic by Objects.
+Include MimicInvestigating by Actions.
 Include Candy Machine by Objects.
 
 Include Trap Framework by Traps.
@@ -361,6 +364,8 @@ Include Bunk Bed by Furniture.
 Include Lecture Chair by Furniture.
 Include Guest Bed by Furniture.
 Include Master Bed by Furniture.
+Include Med Bay Bed by Furniture.
+Include Detention Chair by Furniture.
 
 Include Throne by Objects.
 Include Altars by Objects.
@@ -382,6 +387,7 @@ Include Gloryhole by Objects.
 Include White Wall by Objects.
 Include Warp Portal by Objects.
 Include Tentacle Breeder by Objects.
+Include Sewing Bench by Objects.
 
 
 Include Collectible Definition by Collectibles.
@@ -394,6 +400,7 @@ Include Electric Fan by Consumables.
 Include Squeezy Bottle by Consumables.
 Include Skeleton Key by Consumables.
 Include Bandage by Consumables.
+Include Dark Scroll by Consumables.
 
 Include Doom Stuff by Collectibles.
 Include Ectoplasm by Collectibles.
@@ -433,6 +440,8 @@ Include Gelatin by Food.
 Include Candy Corn by Food.
 
 Include Hotel Feeding Bowls by Objects.
+Include Chocolates Bag by Objects.
+Include School Food Machine by Objects.
 
 Include Snacks by Food.
 Include Banana by Food.
@@ -622,6 +631,7 @@ Include Dining Dresses by Dresses.
 Include Rubber Dress by Dresses.
 Include Gingham Dress by Dresses.
 Include Magical Dress by Dresses.
+Include Christmas Dress by Dresses.
 
 Include Corsets Framework by Corsets.
 Include Gothic Corset by Corsets.
@@ -654,6 +664,7 @@ Include White Suspenders by Belts Suspenders.
 Include Black Suspenders by Belts Suspenders.
 Include Red Suspenders by Belts Suspenders.
 Include String Belt by Belts Suspenders.
+Include Demon Belt by Belts Suspenders.
 
 Include Stockings Framework by Stockings.
 Include Mesh Stockings by Stockings.
@@ -663,6 +674,7 @@ Include Cotton Stockings by Stockings.
 Include Wool Stockings by Stockings.
 Include Striped Stockings by Stockings.
 Include Magical Stockings by Stockings.
+Include Christmas Socks by Stockings.
 
 Include Accessories Framework by Accessories.
 Include Rings by Accessories.
@@ -683,6 +695,9 @@ Include Vampiric Cape by Accessories.
 Include Lipstick Collar by Accessories.
 Include Cumslut Collar by Accessories.
 Include Research Airhancer by Accessories.
+
+Include Armband by Accessories.
+
 
 Include Piercing Framework by Piercings Modules.
 Include Nipple Piercings by Piercings Modules.
@@ -751,6 +766,7 @@ Include Just The Tip Tattoo by Tattoos.
 Include Funcenter Tattoo by Tattoos.
 Include Daddy's Cock Only Tattoo by Tattoos.
 Include Anal Dragon Tattoo by Tattoos.
+Include Anal Star Tattoo by Tattoos.
 Include Butt Slut Asshole Tattoo by Tattoos.
 Include Spit First Tattoo by Tattoos.
 Include Asshole Cupid Tattoo by Tattoos.
@@ -850,12 +866,13 @@ Include Teapot Tattoo by Tattoos.
 Include Elephant Tattoo by Tattoos.
 Include Diapered Dinosaur Tattoo by Tattoos.
 Include Daddys Wild Child Tattoo by Tattoos.
-
-Include Whip Tattoo by Tattoos.
-
 Include Can't Change Self Tattoo by Tattoos.
 Include Cum When Messing Tattoo by Tattoos.
+
+Include Demon Belly Mark by Tattoos.
 Include Demon Link Mark by Tattoos.
+
+Include Whip Tattoo by Tattoos.
 
 Include Inking by Actions.
 
@@ -946,7 +963,7 @@ Include Combat by Monster Framework.
 Include DQ Punishments by Monster Framework.
 Include Special Events by Monster Framework.
 Include Diaper Events by Monster Framework.
-Include Consensual Sex by Monster Framework.
+Include Requested Sex by Monster Framework.
 Include Attacking Monsters by Monster Framework.
 Include Dominating Monsters by Monster Framework.
 
@@ -967,7 +984,7 @@ Include Tentacle Monster by Monster.
 Include Patron by Monster.
 Include Matron by Monster.
 
-Include Robots Framework by Monster.
+Include Robots Framework by Monster Framework.
 Include RoboBellboy by Monster.
 Include RoboButler by Monster.
 Include RoboChef by Monster.
@@ -993,6 +1010,19 @@ Include Boogeymonster by Monster.
 Include Golem by Monster.
 Include Pimp by Monster.
 
+Include Staff Framework by Monster Framework.
+Include Receptionist by Monster.
+Include Headmistress by Monster.
+Include Nurse by Monster.
+Include Teachers Sapphire by Monster.
+
+Include Student Framework by Monster Framework.
+Include Students Amicable by Monster.
+Include Students Tryhard by Monster.
+Include Students Innocent by Monster.
+Include Students Nasty by Monster.
+Include Students Ditzy by Monster.
+
 Include Woman Barbara by Monster.
 
 Include Talking by Actions.
@@ -1008,3 +1038,4 @@ Include Tutorial by Miscellaneous Frontend.
 Volume 12 - Version
 
 Include Public Version Stuff by Miscellaneous Backend.
+

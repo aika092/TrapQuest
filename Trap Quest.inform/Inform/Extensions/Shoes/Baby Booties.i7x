@@ -48,11 +48,7 @@ Part 1 - Baby Slippers
 	
 A baby slippers is a kind of baby booties. A baby slippers is usually wool.
 
-<<<<<<< HEAD
-The printed name of baby slippers is usually "[TQlink of item described][item style]pair of [clothing-title-before]baby slippers[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby slippers is "bsl".
-=======
 The printed name of baby slippers is usually "[TQlink of item described][item style][clothing-title-before]pair of baby slippers[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of baby slippers is "bsl".
->>>>>>> refs/remotes/origin/master
 
 There is 1 baby slippers.
 
