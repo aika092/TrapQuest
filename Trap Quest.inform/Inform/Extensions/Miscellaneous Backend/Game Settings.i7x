@@ -829,5 +829,40 @@ This is the trap warning toggle rule:
 	if choice in row 35 of Table of Settings is 0, increase choice in row 35 of Table of Settings by 1;
 	otherwise now choice in row 35 of Table of Settings is 0.
 
+
+Part - Save Game Counter
+
+The save game counter is a number that varies. 
+To decide which number is max game save counter: decide on 6 - game difficulty.
+To decide which number is remaining game saves: decide on (max game save counter * (4 - the extra lives of the player)) - save game counter.
+The check game save counter rules are a rulebook. The check game save counter rules have default success.
+Check game save counter: 
+	if (remaining game saves <= 0) and (the player is not in Hotel36):
+		say "You dont have a permission to save game. Nintendodolls, with love.";
+		rule fails.
+The increase game save counter rules are a rulebook. The increase game save counter rules have default success.
+Increase game save counter: if (the player is not in Capsule) and (the player is not in Hotel36), increase save game counter by 1; say "You now have [remaining game saves] saves remaining.".
+
+Include (-
+[ SAVE_THE_GAME_R res fref;
+	if (actor ~= player) rfalse;
+	if ( FollowRulebook( (+ check game save counter +) ) && RulebookFailed()) jump SFailed;
+	fref = glk_fileref_create_by_prompt($01, $01, 0);
+	if (fref == 0) jump SFailed;
+	gg_savestr = glk_stream_open_file(fref, $01, GG_SAVESTR_ROCK);
+	glk_fileref_destroy(fref);
+	if (gg_savestr == 0) jump SFailed;
+	@save gg_savestr res;
+	glk_stream_close(gg_savestr, 0); ! stream_close
+	gg_savestr = 0;
+	if (res == 0) { 
+		FollowRulebook( (+ increase game save counter +) );
+		return GL__M(##Save, 2); 
+	}
+	.SFailed;
+	GL__M(##Save, 1);
+];
+-) instead of "Save The Game Rule" in "Glulx.i6t".
+
 Game Settings ends here.
 

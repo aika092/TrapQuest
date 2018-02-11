@@ -44,7 +44,7 @@ Definition: a ballet shoes (called C) is sissifying:
 
 Part 1 - Normal Ballet Shoes
 
-The printed name of ballet shoes is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] ballet shoes[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ballet shoes is "bs".
+The printed name of ballet shoes is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] ballet shoes[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of ballet shoes is "bs".
 
 To decide which figure-name is the clothing-image of (H - a ballet shoes):
 	decide on the figure of ballet shoes.

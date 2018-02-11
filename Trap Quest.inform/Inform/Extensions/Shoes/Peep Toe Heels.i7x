@@ -1,6 +1,6 @@
 Peep Toe Heels by Shoes begins here.
 
-A peep toe heels is a kind of stiletto heels. The printed name of peep toe heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch peep toe heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of peep toe heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch peep toe heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of peep toe heels is "pth".
+A peep toe heels is a kind of stiletto heels.  The printed name of peep toe heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch peep toe heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of peep toe heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch peep toe heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of peep toe heels is "pth".
 
 There is 1 satin peep toe heels. There is 1 leather peep toe heels. There is 1 pvc peep toe heels.
 

@@ -4,7 +4,8 @@ A cow pattern boots is a kind of boots. A cow pattern boots is usually leather. 
 Definition: a cow pattern boots (called C) is fluid immune:
 	decide yes.
 
-The printed name of cow pattern boots is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch cow pattern boots[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cow pattern boots is "cpb".
+The printed name of cow pattern boots is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch cow pattern boots[clothing-title-after][TQxlink of item described][verb-desc of item described]".   The text-shortcut of cow pattern boots is "cpb".
+
 Understand "boots" as cow pattern boots.
 
 There is 1 cow pattern boots.

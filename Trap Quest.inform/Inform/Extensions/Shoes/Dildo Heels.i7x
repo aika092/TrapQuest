@@ -6,7 +6,7 @@ To decide which number is the kick-bonus of (S - a dildo heels):
 	let X be the heel-height of S;
 	decide on X.
 
-The printed name of dildo heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch platform dildo heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of dildo heels is "dhe".
+The printed name of dildo heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch platform dildo heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of dildo heels is "dhe".
 
 To decide which figure-name is the clothing-image of (H - a dildo heels):
 	decide on the figure of dildo heels.

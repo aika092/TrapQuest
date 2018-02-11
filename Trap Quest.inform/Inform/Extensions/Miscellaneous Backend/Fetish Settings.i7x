@@ -90,7 +90,7 @@ choice
 0 [ungape]
 0 [tentacle fetish]
 0 [starting body shape]
-0 [reserved]
+0 [bonus liquid]
 0 [bondage protection]
 
 
@@ -644,6 +644,12 @@ To decide which number is starting body shape:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 62 of the Table of Player Options.
 
+To decide which number is max bonus liquid: 
+	decide on 6.
+
+To decide which number is bonus liquid:
+	decide on choice in row 63 of the Table of Player Options.
+
 To decide which number is bondage protection:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 64 of the Table of Player Options.
@@ -815,6 +821,7 @@ To decide which number is points count:
 	decrease X by 7 * piercing-fetish;
 	decrease X by 7 * humiliation-fetish;
 	decrease X by 7 * artificial-fetish;
+	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decide on X.
 
 

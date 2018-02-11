@@ -3,7 +3,7 @@ Lipstick Heels by Shoes begins here.
 
 A lipstick heels is a kind of stiletto heels. A lipstick heels is usually leather. A lipstick heels is rare. The heel-height of a lipstick heels is usually 5. There is 1 lipstick heels.
 
-The printed name of lipstick heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch lipstick heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of lipstick heels is "lsh".
+The printed name of lipstick heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch lipstick heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of lipstick heels is "lsh".
 
 To decide which figure-name is the clothing-image of (H - a lipstick heels):
 	decide on the figure of lipstick heels.
