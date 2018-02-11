@@ -369,8 +369,8 @@ This is the bondage protection reset rule:
 The bondage protection reset rule is listed in the reset rules.
 
 To say bonus liquid cost: if bonus liquid < max bonus liquid, say "Next increase costs [bonus liquid + 1] points"; if bonus liquid is max bonus liquid, say "You are at maximum bonus liquid". 
-This is the bonus liquid rule: if bonus liquid < max bonus liquid and points count > bonus liquid,  increase choice in row 62 of the Table of Player Options by 1. 
-This is the bonus liquid reset rule: now choice in row 62 of the Table of Player Options is 0. The bonus liquid reset rule is listed in the reset rules.
+This is the bonus liquid rule: if bonus liquid < max bonus liquid and points count > bonus liquid,  increase choice in row 63 of the Table of Player Options by 1. 
+This is the bonus liquid reset rule: now choice in row 63 of the Table of Player Options is 0. The bonus liquid reset rule is listed in the reset rules.
 
 Benefit Options ends here.
 
