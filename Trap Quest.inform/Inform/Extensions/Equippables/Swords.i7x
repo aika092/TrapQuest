@@ -1,6 +1,6 @@
 Swords by Equippables begins here.
 
-A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal.  Understand "sword" as sword. Understand "statue", "stone" as sword when item described is in Woods26 and item described is not held. Figure of sword is the file "sword1.png".
+A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal. Understand "sword" as sword. Understand "statue", "stone" as sword when item described is in Woods26 and item described is not held. Figure of sword is the file "sword1.png".
 
 To decide which figure-name is clothing-image of (C - a sword):
 	decide on figure of sword.
@@ -12,7 +12,7 @@ To say ShortDesc of (S - a sword):
 	say "sword".
 
 To say StoneDesc of (S - a sword):
-	say "A sword stuck in a stone, just like in the fairy tales you've heard.  There's probably some criteria you need to have in order to be able to [bold type]pull[roman type] it out.".
+	say "A sword stuck in a stone, just like in the fairy tales you've heard. There's probably some criteria you need to have in order to be able to [bold type]pull[roman type] it out.".
 
 To say SwordDesc of (S - a sword):
 	say "A metal blade, perfect for cutting things.".
@@ -47,7 +47,7 @@ Section 1 - Sword of Purity
 
 A sword of purity is a kind of sword. A sword of purity is usually unique. A sword of purity is usually purity. There is 1 sword of purity.
 
-The printed name of sword of purity is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sword of purity[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sword of purity is "sw".
+The printed name of sword of purity is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sword of purity[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sword of purity is "sw".
 
 To say SwordDesc of (S - a sword of purity):
 	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind monsters where the power comes from...and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
@@ -86,7 +86,7 @@ To compute attack effect of (W - a sword of purity):
 
 Carry out taking a sword of purity:
 	now the noun is identified;
-	if the noun is in Woods26, say "The sword slides out without any resistance. You have been deemed pure and worthy!  You feel its power flowing through you.  You should try using your [bold type]slap[roman type] attack on enemies!";
+	if the noun is in Woods26, say "The sword slides out without any resistance. You have been deemed pure and worthy!  You feel its power flowing through you. You should try using your [bold type]slap[roman type] attack on enemies!";
 	if the player is male and tg fetish >= 1:
 		say "[DefaultSexchangeFlav]";
 		now the virgin bonus of the player is 1;
@@ -96,13 +96,13 @@ Report taking a sword of purity:
 	if diaper focus is 1 and the player is diapered and the noun is in Woods26:
 		let R be a random giant rattle;
 		summon R cursed;
-		say "As you pull the sword free, it turns into a [R], stuck to your hand!  [variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
+		say "As you pull the sword free, it turns into a [R], stuck to your hand!  [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
 	otherwise if the virgin of the player is 0 and the player is female:
 		let R be a random dildo sword;
 		summon R cursed;
-		say "As your hands close around the hilt, it turns into a [R], which sticks to your hand!  [variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
+		say "As your hands close around the hilt, it turns into a [R], which sticks to your hand!  [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
 	if the player-class is succubus, say "The sword heats up to almost searing at your touch! Clearly it wants nothing to do with you." instead;
@@ -133,7 +133,7 @@ To curse (B - a sword of purity):
 
 Section 2 - Dildo Sword
 
-A dildo sword is a kind of sword. There is 1 dildo sword. A dildo sword is usually unique.  A dildo sword is usually plastic. A dildo sword has a number called dildo girth.  The dildo girth of a dildo sword is usually 5. The text-shortcut of dildo sword is "ds". The printed name of dildo sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]dildo in the statue[otherwise]dildo sword[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  
+A dildo sword is a kind of sword. There is 1 dildo sword. A dildo sword is usually unique. A dildo sword is usually plastic. A dildo sword has a number called dildo girth. The dildo girth of a dildo sword is usually 5. The text-shortcut of dildo sword is "ds". The printed name of dildo sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]dildo in the statue[otherwise]dildo sword[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". 
 
 Figure of dildo sword is the file "sword2.png".
 
@@ -144,7 +144,7 @@ To say StoneDesc of (S - a dildo sword):
 	say "A stone statue of a naked woman on all fours, with a faceless man behind her. There is a thick, floppy dildo hanging from where his penis has presumably just been. It isn't attached to anything, you could probably [bold type]pull[roman type] it out.".
 
 To say SwordDesc of (S - a dildo sword):
-	say "[if the item described is worn]You are wielding a[otherwise]A[end if] [if the girth of item described < 7]large[otherwise if the girth of item described < 9]giant[otherwise]absolutely massive[end if] floppy dildo[if the raw-magic-modifier of item described is 0], which is absolutely useless for real combat![otherwise], which has some slight power in combat thanks to its magic glow.[end if]  [variable custom style][if the virgin of the player is 0 and the player is female]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of item described <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me.  How appropriate.[end if][roman type][line break]".
+	say "[if the item described is worn]You are wielding a[otherwise]A[end if] [if the girth of item described < 7]large[otherwise if the girth of item described < 9]giant[otherwise]absolutely massive[end if] floppy dildo[if the raw-magic-modifier of item described is 0], which is absolutely useless for real combat![otherwise], which has some slight power in combat thanks to its magic glow.[end if]  [line break][variable custom style][if the virgin of the player is 0 and the player is female]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of item described <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me. How appropriate.[end if][roman type][line break]".
 
 To decide which number is the initial outrage of (C - a dildo sword):
 	decide on 8.
@@ -169,7 +169,7 @@ Report plugging something with dildo sword:
 		say "[bold type]As the dildo bottoms out inside of you, ";
 		let R be a random number between 1 and 3;
 		if R is 1:
-			say "it starts wriggling around, stimulating your insides all the way from the deepest point inside to your entrance![roman type]  [if N is 5]The tentacle-like movement is extremely powerful and fast, causing your whole body to shudder.  It lasts for several seconds!  [otherwise if N > 2]It lasts for a few seconds, enough to make you weak at the knees.  [otherwise]It only lasts for a couple of seconds but it still felt intense.  [end if]You can't help but become [if the player is a bit horny]further [end if]aroused.";
+			say "it starts wriggling around, stimulating your insides all the way from the deepest point inside to your entrance![roman type]  [if N is 5]The tentacle-like movement is extremely powerful and fast, causing your whole body to shudder. It lasts for several seconds!  [otherwise if N > 2]It lasts for a few seconds, enough to make you weak at the knees. [otherwise]It only lasts for a couple of seconds but it still felt intense. [end if]You can't help but become [if the player is a bit horny]further [end if]aroused.";
 			arouse 500 * N;
 		otherwise if R is 2:
 			say "you feel a strange pressure inside of you, which you quickly realise is the dildo sword filling you with [if inflation fetish is 1]air[otherwise]some kind of magic serum[end if]![roman type]  Before you know it, your [if inflation fetish is 1]belly is[otherwise]hips are[end if] rumbling and growing...";
@@ -177,11 +177,11 @@ Report plugging something with dildo sword:
 			otherwise HipUp (N + 1) / 2;
 		otherwise:
 			let F be a random fuckhole penetrated by the second noun;
-			say "it grows, trying to stretch you even further.[roman type]  Your [variable F] [if the openness of F < 10]is forced to gape even further[otherwise]relaxes, easily accepting the largest size that the dildo sword can grow to[end if].  ";
+			say "it grows, trying to stretch you even further.[roman type]  Your [variable F] [if the openness of F < 10]is forced to gape even further[otherwise]relaxes, easily accepting the largest size that the dildo sword can grow to[end if]. ";
 			now the dildo girth of the second noun is the openness of F + 2;
 			if the dildo girth of the second noun > 10, now the dildo girth of the second noun is 10;
 			ruin F;
-	say "[if the second noun is cursed]Since you can't let go of the handle,[otherwise]Since the large dildo is so heavy, it can't stay inside on its own and[end if] you are forced to pull it back out.  [if the raw-magic-modifier of the second noun < 5]As it comes out, you find that it is glistening with newly recharged magic power![end if]";
+	say "[if the second noun is cursed]Since you can't let go of the handle,[otherwise]Since the large dildo is so heavy, it can't stay inside on its own and[end if] you are forced to pull it back out. [if the raw-magic-modifier of the second noun < 5]As it comes out, you find that it is glistening with newly recharged magic power![end if]";
 	now the raw-magic-modifier of the second noun is 5;
 	try unplugging the second noun.
 
@@ -208,7 +208,7 @@ Section 3 - Blade of Womanhood
 
 A gladiator sword is a kind of sword. There is 1 gladiator sword. A gladiator sword is usually unique. A gladiator sword has a number called burden. The burden of a gladiator sword is usually 0.
 
-The printed name of gladiator sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]blade of womanhood[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of gladiator sword is "tws".
+The printed name of gladiator sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]blade of womanhood[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of gladiator sword is "tws".
 
 To say SwordDesc of (S - a gladiator sword):
 	say "A giant, dull-edged sword made of pure iron. Just swinging its weight around [if the burden of S < the strength of the player / 2]should take an enormous amount of strength, but somehow you have no trouble lifting it[otherwise if the burden of S > the strength of the player * 2]feels impossible[otherwise]takes a massive amount of strength[end if]. [if S is worn and S is unremovable]A magical chain is attached to the hilt, securely tethering it to your arm. There is a glowing message engraved on the hilt[otherwise]The hilt is engraved with a short message[end if]: 'May Honour Disarm You.'".
@@ -262,9 +262,9 @@ Section 4 - Demon Broadsword
 
 [The more you attack with the demon broadsword the hornier it will get. Let its arousal reach 10 and it will transform into a giant dildo that likes to fuck you every so often.]
 
-A demon broadsword is a kind of sword. There is 1 demon broadsword. A demon broadsword is usually unique. A demon broadsword has a number called arousal. The arousal of a demon broadsword is usually 0. A demon broadsword can be dildoed. A demon broadsword is usually not dildoed. A demon broadsword has a number called dildo girth.  The dildo girth of a demon broadsword is usually 5.
+A demon broadsword is a kind of sword. There is 1 demon broadsword. A demon broadsword is usually unique. A demon broadsword has a number called arousal. The arousal of a demon broadsword is usually 0. A demon broadsword can be dildoed. A demon broadsword is usually not dildoed. A demon broadsword has a number called dildo girth. The dildo girth of a demon broadsword is usually 5.
 
-The printed name of demon broadsword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise if the item described is dildoed]Demon Lord[']s 'Broadsword'[otherwise]Demon Lord's Living Broadsword[ArousalDesc of item described][end if][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of demon broadsword is "dlb". Understand "lord's", "lords", "broad", "lord" as demon broadsword.
+The printed name of demon broadsword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise if the item described is dildoed]Demon Lord[']s 'Broadsword'[otherwise]Demon Lord's Living Broadsword[ArousalDesc of item described][end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon broadsword is "dlb". Understand "lord's", "lords", "broad", "lord" as demon broadsword.
 
 To say SwordDesc of (S - a demon broadsword):
 	if S is dildoed:
@@ -343,9 +343,7 @@ To compute periodic effect of (H - a demon broadsword):
 			otherwise:
 				if bukkake fetish is 1:
 					say "The [printed name of H] stiffens, blasting your face with several hot ropes of [semen]. Your head swims as you breathe in its masculine musk.";
-					if a random number between 1 and 2 is 1, SemenAddictUp 1;
-					otherwise IntDown 1;
-					Arouse 200 + the semen addiction of the player * 10;
+					CumFaceUp 4;
 				otherwise:
 					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is male]emasculating[otherwise]dehumanizing[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
 					if a random number between 1 and 3 is 1, DelicateUp 1;
@@ -366,7 +364,7 @@ Report taking a demon broadsword:
 	try wearing the noun;
 
 Report wearing a demon broadsword:
-	if the player is a sissy or the class of the player is princess or the class of the player is royal slave or a random demon lord is alive or there is a worn demonic clothing:
+	if the player is a sissy or the class of the player is princess or the class of the player is royal slave or a random demon lord is alive or there is a worn demonic wearthing:
 		say "It shivers visibly as your fingers close around the hilt![line break]";
 		compute demon punishment of the noun;
 	otherwise:
@@ -375,15 +373,11 @@ Report wearing a demon broadsword:
 To compute demon punishment of (S - a demon broadsword):
 	if bukkake fetish is 1 and a random number between 1 and 5 < 4:
 		say "The [printed name of S] transforms into a giant red [manly-penis], which immediately douses your body in several gallons of [semen]!";
-		CumFaceUp 3;
-		CumTitsUp 3;
-		CumBellyUp 3;
-		CumThighsUp 3;
+		CumFaceUp 30;
 	otherwise:
 		say "The [printed name of S] transforms into a giant red [manly-penis], which falls on top of you as the sudden shift in your weight throws you off balance. Your head swims as you breathe in its incredibly potent masculine musk.";
 		SemenAddictUp 3;
-		SexAddictUp 3;
-		IntDown 3;
+		IntDown 1;
 	now the arousal of S is 0;
 	now S is dildoed;
 	now S is biological;
@@ -391,12 +385,12 @@ To compute demon punishment of (S - a demon broadsword):
 
 Section 5 - Giant Rattle
 
-A giant rattle is a kind of equippable.  A giant rattle is usually slap ready.  A giant rattle is usually unique.  A giant rattle is usually plastic.  There is 1 giant rattle.  
+A giant rattle is a kind of equippable. A giant rattle is usually slap ready. A giant rattle is usually unique. A giant rattle is usually plastic. There is 1 giant rattle. 
 
 Definition: A giant rattle (called S) is immune to change:
 	decide yes.
 
-The printed name of giant rattle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]giant rattle[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of giant rattle is "rat".
+The printed name of giant rattle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]giant rattle[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of giant rattle is "rat".
 
 Figure of giant rattle is the file "rattle1.png".
 
@@ -404,7 +398,7 @@ To decide which figure-name is clothing-image of (C - a giant rattle):
 	decide on figure of giant rattle.
 
 To say ClothingDesc of (C - a giant rattle):
-	say "An extremely large plastic rattle, with baby blue and yellow colours, and a rubber duck pattern.  Its hard exterior, size and weight make it a wield-able weapon.".
+	say "An extremely large plastic rattle, with baby blue and yellow colours, and a rubber duck pattern. Its hard exterior, size and weight make it a wield-able weapon.".
 To say ShortDesc of (C - a giant rattle):
 	say "large plastic rattle".
 
@@ -435,7 +429,33 @@ Carry out taking a giant rattle:
 
 Report taking a giant rattle:
 	if the noun is cursed:
-		say "Your grip tightens involuntarily as your fingers close around the handle. [variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]";
+		say "Your grip tightens involuntarily as your fingers close around the handle. [line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]";
 		now the noun is worn by the player.
 
+Section 6 - Sword of the Void
+
+A voidblade is a kind of sword. A voidblade is usually unique. There is 1 voidblade. 
+
+The printed name of voidblade is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]voidblade[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of voidblade is "vdb". Understand "void", "blade" as voidblade.
+
+To say SwordDesc of (S - a voidblade):
+	say "The blade of this sword seems to be made of pure darkness, with a swirling sea of pink motes floating in it. When you look at it, you somehow think of the [great one]s, and you know its power comes from surrendering that which does not venerate them.".
+
+To compute attack of (W - a voidblade) at (M - a monster):
+	say "The [printed name of W] seems to slice through reality itself as it arcs towards the [M]!".
+
+To compute attack effect of (W - a voidblade):
+	say "As you swing the blade, you cannot help but gaze into the swirling black and pink void it leaves in its wake. You feel like a tiny portion of your sense of self is being sucked into it.";
+	humiliate 10.
+
+To decide which number is the damage improvement of (W - a voidblade):
+	let X be 3;
+	increase X by the magic-modifier of W;
+	increase X by the humiliation of the player / 7000;
+	decide on X.
+
+Definition: a voidblade (called W) is cult garb:
+	decide yes.	
+
 Swords ends here.
+

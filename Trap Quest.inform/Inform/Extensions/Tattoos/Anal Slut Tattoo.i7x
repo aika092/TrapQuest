@@ -1,6 +1,6 @@
 Anal Slut Tattoo by Tattoos begins here.
 
-anal-slut tattoo is a kind of lower back tattoo.  Figure of anal-slut tattoo is the file "tattoo34.png".  There is 1 anal-slut tattoo.  The printed name of anal-slut tattoo is "anal slut tattoo".  Understand "anal", "slut" as anal-slut tattoo.
+anal-slut tattoo is a kind of lower back tattoo. Figure of anal-slut tattoo is the file "tattoo34.png". There is 1 anal-slut tattoo. The printed name of anal-slut tattoo is "anal slut tattoo". Understand "anal", "slut" as anal-slut tattoo.
 Definition: an anal-slut tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;
 	if there is a worn lower back tattoo, decide no;
@@ -18,3 +18,4 @@ This is the player can't present anything except asshole rule:
 The player can't present anything except asshole rule is listed in the global presentable rules.
 
 Anal Slut Tattoo ends here.
+

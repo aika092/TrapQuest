@@ -1,7 +1,7 @@
 Slimegirl by Objects begins here.
 
 
-A slimegirl is a kind of person.  The description of slimegirl is usually "[SlimeGirlDesc]".  There is 1 slimegirl.  The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of slimegirl is "sg".  Understand "slime", "girl" as slimegirl.  A slimegirl is wearable.
+A slimegirl is a kind of person. The description of slimegirl is usually "[SlimeGirlDesc]". There is 1 slimegirl. The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "sg". Understand "slime", "girl" as slimegirl. A slimegirl is wearable.
 
 Definition: a slimegirl (called C) is cult garb:
 	decide yes.
@@ -16,16 +16,16 @@ Check inserting a slimegirl into:
 	say "[if the noun is worn]She's inside you, that's not very straightforward...[otherwise]I don't think she agrees.[end if]" instead.
 
 To decide which number is the girth of (M - a slimegirl):
-	decide on 8.  [This is how wide she forces you when she goes inside.]
+	decide on 8. [This is how wide she forces you when she goes inside.]
 
-A slimegirl has a number called hunger.  
+A slimegirl has a number called hunger. 
 [
 The higher the number, the more desperate the slimegirl is to get some semen.
 At hunger 10, the slimegirl dies.
 A hunger of 999 means the slimegirl is permanently dead.
 ]
 
-A slimegirl has a number called intensity.  
+A slimegirl has a number called intensity. 
 [
 The higher the number here, the more the slimegirl is influencing the player's stats.
 ]
@@ -45,7 +45,7 @@ A time based rule (this is the compute slimegirl rule):
 				increase the hunger of M by 1;
 			otherwise if the hunger of M < 5:
 				increase the hunger of M by 1;
-				say "[bold type]The [M] [bold type]telepathically communicates with you.  [second custom style]'[one of]I'm getting hungry in here... can you feed me with some tasty cum soon please?'[or]I'm hungry, give me some more cum!'[or]I need semen to live in here, you know?  Please feed me soon!'[or]Hey baby, have you forgotten about me?  I need feeding, you know...'[in random order][roman type][line break]";
+				say "[bold type]The [M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]I'm getting hungry in here... can you feed me with some tasty cum soon please?'[or]I'm hungry, give me some more cum!'[or]I need semen to live in here, you know?  Please feed me soon!'[or]Hey baby, have you forgotten about me?  I need feeding, you know...'[in random order][roman type][line break]";
 				let R be a random number between 1 and 3;
 				if R is 1:
 					say "You feel the [M] slightly influencing your love of [semen] and sex.";
@@ -62,7 +62,7 @@ A time based rule (this is the compute slimegirl rule):
 						HipUp 1;
 			otherwise if the hunger of M < 7:
 				if a random number between 1 and 2 is 1, increase the hunger of M by 1;
-				say "[bold type]The [M] [bold type]telepathically communicates with you.  [second custom style]'[one of]I'm getting sooo hungry in here... I really need some manly seed soon!'[or]I'm fed up of waiting, feed me now or else!!'[or]I'm going to keep fucking with you if you don't feed me, you slut!'[or]Are you enjoying what I'm doing to you or something?  Just find a manly stud, and get him to assfuck you!  It's not hard!'[in random order][roman type][line break]";
+				say "[bold type]The [M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]I'm getting sooo hungry in here... I really need some manly seed soon!'[or]I'm fed up of waiting, feed me now or else!!'[or]I'm going to keep fucking with you if you don't feed me, you slut!'[or]Are you enjoying what I'm doing to you or something?  Just find a manly stud, and get him to assfuck you!  It's not hard!'[in random order][roman type][line break]";
 				let R be a random number between 1 and 3;
 				if R is 1:
 					say "You feel the [M] massively influencing your love of [semen] and sex.";
@@ -83,18 +83,18 @@ A time based rule (this is the compute slimegirl rule):
 						say "You feel the [M] widening your hips, to make you more tempting to potential partners.";
 						HipUp 1;
 				if lactation fetish is 1:
-					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric.  [if the lactation rate of the player > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
+					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric. [if the lactation rate of the player > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
 					increase the lactation rate of the player by 1;
 			otherwise if the hunger of M is 7:
 				increase the hunger of M by 1;
-				say "[bold type]The [M] [bold type]telepathically communicates with you.  [second custom style]'[one of]Okay I give up, I guess you're really not going to feed me.  Will you at least take me back to my pool?  I'll die if you leave me in here...'[or]Okay okay I give up again!  Please take me back to my pool?'[stopping][roman type][line break]";
+				say "[bold type]The [M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]Okay I give up, I guess you're really not going to feed me. Will you at least take me back to my pool?  I'll die if you leave me in here...'[or]Okay okay I give up again!  Please take me back to my pool?'[stopping][roman type][line break]";
 				now the intensity of M is 0;
 			otherwise if the hunger of M < 10:
 				increase the hunger of M by 1;
-				say "[bold type]The [M] [bold type]telepathically communicates with you.  [second custom style]'[one of]Either feed me or let me out!!!  I'm going to starve!'[or]I won't let you starve me to death!'[or]You bitch, let me out!'[or]Let me out of here, you fucking whore!'[in random order][roman type][line break]";
+				say "[bold type]The [M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]Either feed me or let me out!!!  I'm going to starve!'[or]I won't let you starve me to death!'[or]You bitch, let me out!'[or]Let me out of here, you fucking whore!'[in random order][roman type][line break]";
 				now the intensity of M is 2;
 				if lactation fetish is 1:
-					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric.  [if the lactation rate of the player > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
+					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric. [if the lactation rate of the player > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
 					increase the lactation rate of the player by 1;
 				if watersports mechanics is 1:
 					BladderUp 1;
@@ -105,10 +105,10 @@ A time based rule (this is the compute slimegirl rule):
 					say "You feel the [M] widening your hips!";
 					HipUp 1;
 			otherwise:
-				say "[bold type]The [M] shrivels up and dies inside of you.  She seems to disappear completely![roman type][line break]";
+				say "[bold type]The [M] shrivels up and dies inside of you. She seems to disappear completely![roman type][line break]";
 				remove M from play;
 				now the hunger of M is 999;
-				say "Your victory against the monster has strengthened your resolve to continue.  You feel more at peace with yourself.";
+				say "Your victory against the monster has strengthened your resolve to continue. You feel more at peace with yourself.";
 				SexAddictDown 2;
 				SemenAddictDown 2;
 				say "You now have a [BellyDesc].".
@@ -137,13 +137,13 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			say "The slimegirl hurries over to you!  ";
 		otherwise if the hunger of a random slimegirl is not 999:
 			now a random slimegirl is in Woods05;
-			say "As the [semen] starts to wash off, you [one of]are shocked to[or]once again[stopping] see a humanoid monster made completely of liquid leap out of the water and pounce on you.  ";
+			say "As the [semen] starts to wash off, you [one of]are shocked to[or]once again[stopping] see a humanoid monster made completely of liquid leap out of the water and pounce on you. ";
 		otherwise:
 			rule fails;
 		say "[one of]At first you expect the monster (who at closer inspection is some kind of female slime monster) to be attacking you, but you quickly realise she is [or]The [M] quickly begins [stopping]lapping up all the [semen] on your body[if S > 0] and clothes[end if].";
 		if image cutscenes is 1, display figure of slimegirl cutscene 1;
 		if the semen volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected and the pregnancy of the player <= 0:
-			say "The [M] moves down to your [vagina], and laps away with great enthusiasm.  ";
+			say "The [M] moves down to your [vagina], and laps away with great enthusiasm. ";
 			if the arousal of the player / 1000 + the semen volume of vagina >= 10 and the player is able to get horny:
 				say "It feels so good [if S > 4]and she licks away with such vigour [end if] that you are quickly brought to an orgasm[if the sex addiction of the player < 10] against your will[end if]!";
 				vaginally orgasm shamefully;
@@ -153,9 +153,9 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			now the semen volume of vagina is 0;
 			cancel father material of vagina;
 		if the semen-volume of asshole > 0 and asshole is not actually occupied and the player is not pussy protected and the pregnancy of the player <= 0:
-			say "The [M] moves down to your [asshole], and licks with increased vigour.  It feels incredibly relaxing!";
+			say "The [M] moves down to your [asshole], and licks with increased vigour. It feels incredibly relaxing!";
 			increase S by 1;
-		if bukkake fetish is 1, say "She continues licking you up and down until all the [semen] you had on you is gone.  Everywhere she licks gives you a little tingle of pleasure.";
+		if bukkake fetish is 1, say "She continues licking you up and down until all the [semen] you had on you is gone. Everywhere she licks gives you a little tingle of pleasure.";
 		arouse 1000;
 		repeat with C running through worn clothing:
 			clean C;
@@ -169,8 +169,8 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 		now the semen coating of thighs is 0;
 		if lactation fetish is 1, now S is 10; [With lactation fetish, she'll always try to jump inside]
 		if the player is not ass protected and asshole is not occupied and S > 6 and belly limit - the total fill of belly >= 10 and the latex-transformation of the player <= 2:
-			say "The [M] smacks her lips.  [second custom style]'That was [one of]the best feast I've had in a long time[or]just as great as last time[stopping]!  I think I'm going to have to travel with you for a while...'[roman type][line break]";
-			say "[one of]You are still trying to work out what that means when[or]Once again[stopping] she dives underwater, and suddenly you feel something poking forcefully at your [asshole].  She's... she's trying to force herself in!";
+			say "The [M] smacks her lips. [line break][second custom style]'That was [one of]the best feast I've had in a long time[or]just as great as last time[stopping]!  I think I'm going to have to travel with you for a while...'[roman type][line break]";
+			say "[one of]You are still trying to work out what that means when[or]Once again[stopping] she dives underwater, and suddenly you feel something poking forcefully at your [asshole]. She's... she's trying to force herself in!";
 			let R be a random number between the swimming modifier of the player / 2 and the dexterity of the player;
 			say "[bold type]Do you want to try and escape?[roman type] [yesnolink] [line break]";
 			unless the player consents, now R is -9999;
@@ -179,8 +179,8 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			if R < 8:
 				unless R <= -9999, say "It's no good, she's too fast for you!  You can't get away!  ";
 				say "You feel [if the openness of asshole < 8]your [asshole] forced wide as the [M] swims up inside you and into your belly![otherwise]her wiggling as the [M] swims up into your [asshole] and into your belly![end if]";
-				say "She somehow speaks to you telepathically.  [second custom style]'I hope you don't mind me living in here for a while, but I want to drink all the tasty cum that people are going to squirt inside you!'[roman type][line break]";
-				say "[if the bimbo of the player < 7][first custom style]Holy shit, what is this?![otherwise if the bimbo of the player < 11][variable custom style]Err... okay?  I think?[otherwise][second custom style]Ooh, this could be fun![end if][roman type][line break]";
+				say "She somehow speaks to you telepathically. [line break][second custom style]'I hope you don't mind me living in here for a while, but I want to drink all the tasty cum that people are going to squirt inside you!'[roman type][line break]";
+				say "[if the bimbo of the player < 7][line break][first custom style]Holy shit, what is this?![otherwise if the bimbo of the player < 11][line break][variable custom style]Err... okay?  I think?[otherwise][line break][second custom style]Ooh, this could be fun![end if][roman type][line break]";
 				now M is penetrating asshole;
 				ruin asshole;
 				now M is not penetrating asshole;
@@ -191,18 +191,18 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			otherwise:
 				say "You manage to swim out of the waterfall pool before she can force herself inside.[line break][second custom style]'No, wait, come back!  Awww...'[roman type][line break]";
 		otherwise:
-			say "The [M] smacks her lips.  [second custom style]'That was [one of]tasty[or]scrumptious[or]yummy[in random order]!  Come back any time, [one of]darling[or]baby[in random order]!'[roman type][line break]";
+			say "The [M] smacks her lips. [line break][second custom style]'That was [one of]tasty[or]scrumptious[or]yummy[in random order]!  Come back any time, [one of]darling[or]baby[in random order]!'[roman type][line break]";
 		now seconds is 6;
 		rule succeeds;
 	rule fails.
 	
 To say SlimeGirlDesc:
 	if images visible is 1, display figure of slimegirl;
-	say "A blue, semi-transparent creature made out of some kind of slimy liquid, in the shape of a buxom humanoid girl.  It appears that she can shapeshift, but the extent of her powers is unclear.  [if item described is worn]She is currently living inside your belly.  [end if][if item described is worn and the intensity of item described > 0]She is making you crave semen much more than usual![end if][line break]".
+	say "A blue, semi-transparent creature made out of some kind of slimy liquid, in the shape of a buxom humanoid girl. It appears that she can shapeshift, but the extent of her powers is unclear. [if item described is worn]She is currently living inside your belly. [end if][if item described is worn and the intensity of item described > 0]She is making you crave semen much more than usual![end if][line break]".
 
 To compute talk option (N - 1) to (M - a slimegirl):
 	if M is worn:
-		say "She telepathically communicates with you.  [second custom style]'Are you talking to me?  [one of]Yes, I can hear you.'[or]Say what you want to say, already!'[stopping][roman type]";
+		say "She telepathically communicates with you. [line break][second custom style]'Are you talking to me?  [one of]Yes, I can hear you.'[or]Say what you want to say, already!'[stopping][roman type][line break]";
 	otherwise:
 		say "[second custom style]'Why don't you come a bit closer, honey?'[roman type]";
 	say "[line break]".
@@ -241,3 +241,4 @@ To compute talk option (N - 4) to (M - a slimegirl):
 
 
 Slimegirl ends here.
+

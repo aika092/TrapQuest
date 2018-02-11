@@ -1,6 +1,6 @@
 Sissy Bow by Headgear begins here.
 
-A sissy bow is a kind of headgear.  A sissy bow is usually silk.  A sissy bow is blondeness-positive.  A sissy bow is brightness-positive.  A sissy bow is redness-positive.  A sissy bow is usually hair growing.
+A sissy bow is a kind of headgear. A sissy bow is usually silk. A sissy bow is blondeness-positive. A sissy bow is brightness-positive. A sissy bow is redness-positive. A sissy bow is usually hair growing.
 
 To decide if a sissy bow is roleplay:
 	if the player is male, decide yes;
@@ -11,7 +11,7 @@ The printed name of sissy bow is usually "[TQlink of item described][clothing-ti
 
 To compute SelfExamineDesc of (H - a sissy bow):
 	let X be the largeness of hair;
-	say "You are wearing a pink sissy bow in your [ShortDesc of hair].  ".
+	say "You are wearing a pink sissy bow in your [ShortDesc of hair]. ".
 
 Definition: a clothing (called C) is sissifying:
 	decide no.
@@ -34,7 +34,7 @@ Definition: a sissy bow (called C) is bow themed:
 
 Part - Pink Sissy Bow
 
-A pink sissy bow is a kind of sissy bow.  There is 1 pink sissy bow.  The printed name of sissy bow is usually "[TQlink of item described][clothing-title-before]sissy bow[clothing-title-after][TQxlink of item described][verb-desc of item described]".   The text-shortcut of sissy bow is "ssb".
+A pink sissy bow is a kind of sissy bow. There is 1 pink sissy bow. The printed name of sissy bow is usually "[TQlink of item described][clothing-title-before]sissy bow[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sissy bow is "ssb".
 
 Figure of sissy bow is the file "sissybow1.png".
 
@@ -49,7 +49,7 @@ Definition: a pink sissy bow (called C) is untransformable:
 	decide no.
 
 To say ClothingDesc of (H - a sissy bow):
-	say "A huge pink sissy bow on a hairclip.  [if H is worn]It makes you feel[otherwise]It looks[end if] very feminine.".
+	say "A huge pink sissy bow on a hairclip. [if H is worn]It makes you feel[otherwise]It looks[end if] very feminine.".
 
 To say ShortDesc of (H - a sissy bow):
 	say "pink sissy bow".
@@ -64,7 +64,7 @@ To decide which object is the potential-upgrade-target of (C - a pink sissy bow)
 
 Part - Baby Sissy Bow
 
-A baby sissy bow is a kind of sissy bow.  There is 1 baby sissy bow.  The printed name of baby sissy bow is usually "[TQlink of item described][clothing-title-before]baby sissy bow[clothing-title-after][TQxlink of item described][verb-desc of item described]".   The text-shortcut of baby sissy bow is "bsb".
+A baby sissy bow is a kind of sissy bow. There is 1 baby sissy bow. The printed name of baby sissy bow is usually "[TQlink of item described][clothing-title-before]baby sissy bow[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby sissy bow is "bsb".
 
 Figure of baby sissy bow is the file "sissybow2.png".
 
@@ -75,12 +75,18 @@ To decide which number is the initial cringe of (C - a baby sissy bow):
 	decide on 6.
 
 To say ClothingDesc of (H - a baby sissy bow):
-	say "A huge blue sissy bow on a hairclip, adorned with white frills at the edges.  In the middle is a pink button badge with the motif of a baby's face with a pacifier in her mouth.  [if H is worn]It makes you feel[otherwise]It looks[end if] very childish.".
+	say "A huge blue sissy bow on a hairclip, adorned with white frills at the edges. In the middle is a pink button badge with the motif of a baby's face with a pacifier in her mouth. [if H is worn]It makes you feel[otherwise]It looks[end if] very childish.".
 
-To say ShortDesc of (H - a sissy bow):
+To say ShortDesc of (H - a baby sissy bow):
 	say "blue baby sissy bow".
+
+Definition: a baby sissy bow is fetish appropriate:
+	if diaper lover < 1, decide no;
+	decide yes.
+
 
 
 
 
 Sissy Bow ends here.
+

@@ -12,3 +12,4 @@ This is the pentagon blowjob slut rule:
 The pentagon blowjob slut rule is listed in the blowjob slut eligibility rules.
 
 Cumlust Tattoo ends here.
+

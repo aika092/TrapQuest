@@ -1,6 +1,6 @@
 Slave Collar by Accessories begins here.
 
-A slave collar is a kind of submissive collar.  There is 1 unique leather slave collar.  Printed name of slave collar is "[TQlink of item described][clothing-title-before]slave collar[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of slave collar is "slc".
+A slave collar is a kind of submissive collar. There is 1 unique leather slave collar. Printed name of slave collar is "[TQlink of item described][clothing-title-before]slave collar[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of slave collar is "slc".
 
 To decide which number is the initial outrage of (C - a slave collar):
 	decide on 10.
@@ -34,3 +34,4 @@ To decide which object is the unique-upgrade-target of (C - a slave collar):
 	decide on a random off-stage cumslut collar.
 
 Slave Collar ends here.
+

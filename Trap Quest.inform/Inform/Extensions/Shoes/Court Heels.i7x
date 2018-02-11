@@ -1,8 +1,8 @@
 Court Heels by Shoes begins here.
 
-A court heels is a kind of stiletto heels.  The printed name of court heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of court heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of court heels is "che".
+A court heels is a kind of stiletto heels. The printed name of court heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of court heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of court heels is "che".
 
-There is 1 satin court heels.  There is 1 leather court heels.  There is 1 pvc court heels.  There is 1 glass court heels.  
+There is 1 satin court heels. There is 1 leather court heels. There is 1 pvc court heels. There is 1 glass court heels. 
 
 To decide which figure-name is the clothing-image of (H - a court heels):
 	if H is glass, decide on figure of glass court heels;
@@ -22,7 +22,7 @@ To say UniqueShortDesc of (C - a court heels):
 	say "court heels".
 
 To say ClothingDesc of (C - a court heels):
-	say "A pair of [heel-height of C] inch [if C is glass]transparent glass[otherwise if C is leather]red leather[otherwise if C is satin]black satin[otherwise if C is pvc]hot pink PVC[end if] fashionable shoes with a strong stiletto heel.  They would be worn by noblewomen and maybe even royalty.";
+	say "A pair of [heel-height of C] inch [if C is glass]transparent glass[otherwise if C is leather]red leather[otherwise if C is satin]black satin[otherwise if C is pvc]hot pink PVC[end if] fashionable shoes with a strong stiletto heel. They would be worn by noblewomen and maybe even royalty.";
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a court heels):
@@ -48,3 +48,4 @@ To decide which object is the potential-upgrade-target of (C - a court heels):
 	decide on nothing.
 
 Court Heels ends here.
+

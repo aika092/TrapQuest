@@ -30,8 +30,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the modification machine charge decay rule:
-	let M be a random modification machine;
-	if the charge of M > 0, decrease the charge of M by counters-seconds.
+	if the charge of modification machine > 0, decrease the charge of modification machine by counters-seconds.
 The modification machine charge decay rule is listed in the advance counters rules.
 
 [!<TheCrossTrainerChargeDecayRule>+
@@ -143,7 +142,7 @@ This is the urine gross out resolution rule:
 	if the player is upset about urine, now previous-urine-upset is 1;
 	otherwise now previous-urine-upset is 0;
 	if P is not previous-urine-upset:
-		if P is 0, say "[bold type][one of]You can't help but be extremely grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing.  Until you remove or clean it all, [otherwise][random worn urine soaked clothing].  Until you clean it or remove it, [end if]your dexterity will be significantly reduced.[or]Once again your dexterity is significantly limited until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]";
+		if P is 0, say "[bold type][one of]You can't help but be extremely grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn urine soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be significantly reduced.[or]Once again your dexterity is significantly limited until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]";
 		now the arousal of the player is 0.
 The urine gross out resolution rule is listed in the advance counters rules.
 
@@ -250,3 +249,4 @@ The pain drain cooldown rule is listed in the advance counters rules.
 
 
 Advance Counters ends here.
+

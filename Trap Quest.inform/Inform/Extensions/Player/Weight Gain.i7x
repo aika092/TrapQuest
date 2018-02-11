@@ -22,7 +22,7 @@ To decide which number is the weight of the player:
 	repeat with P running through body parts:
 		increase B by the weight of P;
 	now B is B / 3; [Some attempted balancing]
-	increase B by 10; [This is how much the head and the rest of the player's body weighs.  In reality of course it would be much larger but for the purposes of potentially having players floating, this is what it will be.]
+	increase B by 10; [This is how much the head and the rest of the player's body weighs. In reality of course it would be much larger but for the purposes of potentially having players floating, this is what it will be.]
 	if there is a worn butterfly wings, decrease B by 3;
 	if the latex-transformation of the player > 6 and B > 0, now B is 0; [THIS SHOULD NOT BE NECESSARY, but at the moment it is here as a failsafe.]
 	decide on B.
@@ -103,9 +103,9 @@ Carry out going:
 		if debugmode is 1, say "Fatigue [the fatigue of the player] -> ";
 		FatigueUp fatigue weight / 4;
 		if inventory weight > 10:
-			if newbie tips is 1, say "[one of][item style]Newbie tip: Woah there!  You're carrying an awful lot of stuff in your inventory.  Every item in your inventory, except a small few (e.g. the pink pill), weighs you down, meaning your fatigue increases faster.  Clothing you're wearing weighs you down a lot lot less than the clothing you're carrying.  Metal items and drinks tend to weigh even more than everything else.  You should consider making a trip back to the starting room, and put all your spare stuff you can't wear in the pink wardrobe, where it'll be safe even if you faint.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][item style]Newbie tip: Woah there!  You're carrying an awful lot of stuff in your inventory. Every item in your inventory, except a small few (e.g. the pink pill), weighs you down, meaning your fatigue increases faster. Clothing you're wearing weighs you down a lot lot less than the clothing you're carrying. Metal items and drinks tend to weigh even more than everything else. You should consider making a trip back to the starting room, and put all your spare stuff you can't wear in the pink wardrobe, where it'll be safe even if you faint.[roman type][line break][or][stopping]";
 		if inventory weight > 15:
-			if newbie tips is 1, say "[one of][item style]Newbie tip: Warning!  You are extremely overloaded.  You need to carry around less stuff than that if you want to be able to remain standing for a long period of time.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][item style]Newbie tip: Warning!  You are extremely overloaded. You need to carry around less stuff than that if you want to be able to remain standing for a long period of time.[roman type][line break][or][stopping]";
 		[repeat with H running through heels worn by the player:
 			FatigueUp (the hindrance of H + 1) / 2;]
 		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].".
@@ -145,7 +145,7 @@ Part 3 - Modify Fat Stats
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called fat-burning.  The fat-burning of the player is usually 0.
+The player has a number called fat-burning. The fat-burning of the player is usually 0.
 
 
 [!<FatUpX>+
@@ -164,11 +164,11 @@ To FatUp (X - a number):
 		decrease X by 1;
 	if weight gain fetish is 1 and image cutscenes is 1:
 		if the fat-weight of the player > 35:
-			say "[one of][variable custom style]If I keep gaining wait I won't even be able to stand...[roman type][FatCutscene 3][or][stopping]";
+			say "[one of][line break][variable custom style]If I keep gaining wait I won't even be able to stand...[roman type][line break][FatCutscene 3][or][stopping]";
 		otherwise if the fat-weight of the player > 23:
-			say "[one of][variable custom style]When did I get so fat?![roman type][FatCutscene 2][or][stopping]";
+			say "[one of][line break][variable custom style]When did I get so fat?![roman type][line break][FatCutscene 2][or][stopping]";
 		otherwise if the fat-weight of the player > 11:
-			say "[one of][variable custom style]I've started to put on the pounds, haven't I...[roman type][FatCutscene 1][or][stopping]".
+			say "[one of][line break][variable custom style]I've started to put on the pounds, haven't I...[roman type][line break][FatCutscene 1][or][stopping]".
 
 [!<FatDownX>+
 
@@ -218,3 +218,4 @@ To say InventoryWeightDesc:
 
 
 Weight Gain ends here.
+

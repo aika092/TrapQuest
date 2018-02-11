@@ -12,7 +12,7 @@ player-squatting is a number that varies.
 If the humiliation of the player is below this, the player will refuse to expel in front of NPCs.
 
 *!]
-public-squatting-limit is a number that varies.  public-squatting-limit is 30000.
+public-squatting-limit is a number that varies. public-squatting-limit is 30000.
 
 
 
@@ -29,7 +29,7 @@ REQUIRES COMMENTING
 
 +!]
 Check squatting:
-	[if the squatskill of the player is 0, say "You don't know how to do that!" instead;]
+	if the semen addiction of the player > 16 and the semen volume of belly > 0, say "[variable custom style]There's no way I'm letting out my precious cum until I literally can't hold it in any longer![roman type][line break]" instead;
 	if the total squirtable fill of belly <= 0, say "You don't have any liquid[if egg laying fetish is 1] or eggs[end if] in your belly." instead;
 	if asshole is actually occupied, say "The [random thing penetrating asshole] is plugging your [asshole], so this will do nothing!" instead;
 	if the latex-transformation of the player > 4, say "Your doll-like butthole's one way valve doesn't let you expel stuff on demand." instead; 
@@ -62,7 +62,7 @@ REQUIRES COMMENTING
 Carry out squatting:
 	now player-squatting is 1;
 	now seconds is 6;
-	say "[if the player is upright]You bend your knees to squat, with your [HipDesc] near the ground.  [end if]You relax your sphincter's muscles and push.";
+	say "[if the player is upright]You bend your knees to squat, with your [HipDesc] near the ground. [end if]You relax your sphincter's muscles and push.";
 	if the latex-transformation of the player > 4:
 		say "Nothing happens.";
 	otherwise:
@@ -72,3 +72,4 @@ Understand "squat", "squat down", "poo", "poop", "expel", "expel enema", "expel 
 
 
 Squatting ends here.
+

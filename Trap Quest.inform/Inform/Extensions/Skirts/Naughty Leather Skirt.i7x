@@ -1,8 +1,8 @@
 Naughty Leather Skirt by Skirts begins here.
 
-A naughty skirt is a kind of skirt.  A naughty skirt is usually leather.  A naughty skirt is usually butt-windowed.
+A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is usually butt-windowed.
 
-There is 1 naughty skirts.  Printed name of naughty skirt is "[TQlink of item described][clothing-title-before]naughty leather skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of naughty skirt is "nls".  Figure of naughty skirt is the file "naughtyskirt1.png".
+There is 1 naughty skirts. Printed name of naughty skirt is "[TQlink of item described][clothing-title-before]naughty leather skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of naughty skirt is "nls". Figure of naughty skirt is the file "naughtyskirt1.png".
 
 To decide which figure-name is clothing-image of (C - a naughty skirt):
 	decide on figure of naughty skirt.
@@ -20,3 +20,4 @@ To decide which object is the potential-upgrade-target of (C - a naughty skirt):
 	decide on a random off-stage dense miniskirt.
 
 Naughty Leather Skirt ends here.
+

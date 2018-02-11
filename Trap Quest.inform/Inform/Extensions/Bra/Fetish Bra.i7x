@@ -1,10 +1,10 @@
 Fetish Bra by Bra begins here.
 
-A fetish bra is a kind of bra.  Figure of fetish bra is the file "latexbra1.png".  A fetish bra is usually nipple exposing.  A fetish bra is usually sheer.  A fetish bra is fully covering.  A fetish bra is usually latex.  A fetish bra is usually unique.
+A fetish bra is a kind of bra. Figure of fetish bra is the file "latexbra1.png". A fetish bra is usually nipple exposing. A fetish bra is usually sheer. A fetish bra is fully covering. A fetish bra is usually latex. A fetish bra is usually unique.
 
-There is 1 fetish bra.  The text-shortcut of fetish bra is "fbr".
+There is 1 fetish bra. The text-shortcut of fetish bra is "fbr".
 
-The min size of a fetish bra is usually 5.  The max size of a fetish bra is usually 12.  The support of a fetish bra is usually 2.
+The min size of a fetish bra is usually 5. The max size of a fetish bra is usually 12. The support of a fetish bra is usually 2.
 
 To say ShortDesc of (B - a fetish bra):
 	say "fetish bra".
@@ -28,3 +28,4 @@ To decide which object is the potential-upgrade-target of (C - a fetish bra):
 	decide on a random off-stage cupless bra.
 
 Fetish Bra ends here.
+

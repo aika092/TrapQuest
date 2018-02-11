@@ -18,7 +18,7 @@ Check poking:
 		unless the player is able to manually use their hands, say "" instead;
 	if the noun is not monster:
 		now seconds is 2;
-		say "You poke it.  Nothing happens." instead;
+		say "You poke it. Nothing happens." instead;
 	if the noun is awake:
 		say "You poke the [noun].";
 		decrease the favour of the noun by 1;
@@ -52,3 +52,4 @@ Understand "poke [something]", "awake [something]", "wake [something]" as poking
 
 
 Poking ends here.
+

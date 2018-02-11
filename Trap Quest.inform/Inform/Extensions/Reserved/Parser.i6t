@@ -737,7 +737,7 @@ Is anyone being addressed?
 
 @c
 	! Only check for a comma (a "someone, do something" command) if we are
-	! not already in the middle of one.  (This simplification stops us from
+	! not already in the middle of one. (This simplification stops us from
 	! worrying about "robot, wizard, you are an idiot", telling the robot to
 	! tell the wizard that she is an idiot.)
 	
@@ -750,7 +750,7 @@ Is anyone being addressed?
 	jump NotConversation;
 	
 	! NextWord nudges the word number wn on by one each time, so we've now
-	! advanced past a comma.  (A comma is a word all on its own in the table.)
+	! advanced past a comma. (A comma is a word all on its own in the table.)
 	
 	.Conversation;
 	
@@ -794,7 +794,7 @@ Is anyone being addressed?
 		jump ReType;
 	}
 	
-	! The player has now successfully named someone.  Adjust "him", "her", "it":
+	! The player has now successfully named someone. Adjust "him", "her", "it":
 	
 	PronounNotice(l);
 	
@@ -837,7 +837,7 @@ Get the verb: try all the syntax lines for that verb.
 	.VerbAccepted;
 
     ! We now definitely have a verb, not a direction, whether we got here by the
-    ! "take ..." or "person, take ..." method.  Get the meta flag for this verb:
+    ! "take ..." or "person, take ..." method. Get the meta flag for this verb:
 
     meta = ((verb_word->#dict_par1) & 2)/2;
 
@@ -1166,7 +1166,7 @@ so that it may be reprinted by the parser later on.
                 if (parser_trace >= 1) print "[Line successfully parsed]^";
                 #Endif; ! DEBUG
 
-                ! The line has successfully matched the text.  Declare the input error-free...
+                ! The line has successfully matched the text. Declare the input error-free...
 
                 oops_from = 0;
 
@@ -1276,7 +1276,7 @@ Print best possible error message.
 
 @c
     ! If the player was the actor (eg, in "take dfghh") the error must be printed,
-    ! and fresh input called for.  In three cases the oops word must be jiggled.
+    ! and fresh input called for. In three cases the oops word must be jiggled.
 
     if ((etype ofclass Routine) || (etype ofclass String)) {
         if (ParserError(etype) ~= 0) jump ReType;
@@ -1682,12 +1682,12 @@ Parse an object name.
 
     oops_from = wn;
 
-    ! So, two cases.  Case 1: token not equal to "held" (so, no implicit takes)
+    ! So, two cases. Case 1: token not equal to "held" (so, no implicit takes)
     ! but we may well be dealing with multiple objects
 
     ! In either case below we use NounDomain, giving it the token number as
     ! context, and two places to look: among the actor's possessions, and in the
-    ! present location.  (Note that the order depends on which is likeliest.)
+    ! present location. (Note that the order depends on which is likeliest.)
 
     if (token ~= HELD_TOKEN) {
         i = multiple_object-->0;
@@ -1750,7 +1750,7 @@ Parse an object name.
                 ! So the answer had to be inferred from no textual data,
                 ! and we know that there was an ambiguity in the descriptor
                 ! stage (such as a word which could be a pronoun being
-                ! parsed as an article or possessive).  It's worth having
+                ! parsed as an article or possessive). It's worth having
                 ! another go.
 
                 ResetDescriptors();
@@ -1789,8 +1789,8 @@ Parse an object name.
             etype = CantSee(); jump FailToken;            ! Choose best error
         }
 
-        ! ...until it produces something not held by the actor.  Then an implicit
-        ! take must be tried.  If this is already happening anyway, things are too
+        ! ...until it produces something not held by the actor. Then an implicit
+        ! take must be tried. If this is already happening anyway, things are too
         ! confused and we have to give up (but saving the oops marker so as to get
         ! it on the right word afterwards).
         ! The point of this last rule is that a sequence like
@@ -2109,7 +2109,7 @@ because we want to allow duplicates).
     if (number_matched == 0) { wn++; rfalse; }
 
     ! Suppose that there really were some words being parsed (i.e., we did
-    ! not just infer).  If so, and if there was only one match, it must be
+    ! not just infer). If so, and if there was only one match, it must be
     ! right and we return it...
 
     if (match_from <= num_words) {
@@ -2119,7 +2119,7 @@ because we want to allow duplicates).
         }
 
         ! ...now suppose that there was more typing to come, i.e. suppose that
-        ! the user entered something beyond this noun.  If nothing ought to follow,
+        ! the user entered something beyond this noun. If nothing ought to follow,
         ! then there must be a mistake, (unless what does follow is just a full
         ! stop, and or comma)
 
@@ -2167,7 +2167,7 @@ because we want to allow duplicates).
         return i;
     }
 
-    ! If we get here, there was no obvious choice of object to make.  If in
+    ! If we get here, there was no obvious choice of object to make. If in
     ! fact we've already gone past the end of the player's typing (which
     ! means the match list must contain every object in scope, regardless
     ! of its name), then it's foolish to give an enormous list to choose
@@ -2269,7 +2269,7 @@ because we want to allow duplicates).
     ! (eg, > take red button
     !      Which one, ...
     !      > music
-    ! becomes "take music red button".  The parser will thus have three
+    ! becomes "take music red button". The parser will thus have three
     ! words to work from next time, not two.)
 
     #Ifdef TARGET_ZCODE;
@@ -2363,7 +2363,7 @@ because we want to allow duplicates).
 
             parse2-->1 = 0;
 
-            ! An inferred object.  Best we can do is glue in a pronoun.
+            ! An inferred object. Best we can do is glue in a pronoun.
             ! (This is imperfect, but it's very seldom needed anyway.)
 
             if (pattern-->j >= 2 && pattern-->j < REPARSE_CODE) {
@@ -2523,7 +2523,7 @@ routines to clear up this mess, so we can't economise on working them out).
 
     ! If there is ambiguity about what was typed, but it definitely wasn't
     ! animate as required, then return anything; higher up in the parser
-    ! a suitable error will be given.  (This prevents a question being asked.)
+    ! a suitable error will be given. (This prevents a question being asked.)
 
     if (context == CREATURE_TOKEN && good_ones == 0) return match_list-->0;
 
@@ -2669,7 +2669,7 @@ routines to clear up this mess, so we can't economise on working them out).
 @p ReviseMulti.
 |ReviseMulti| revises the multiple object which already exists, in the
 light of information which has come along since then (i.e., the second
-parameter).  It returns a parser error number, or else 0 if all is well.
+parameter). It returns a parser error number, or else 0 if all is well.
 This only ever throws things out, never adds new ones.
 
 @c
@@ -2934,12 +2934,12 @@ for some function $f$.)
     !  What complicates things is that o1 or o2 might have a parsing routine,
     !  so the parser can't know from here whether they are or aren't the same.
     !  If they have different parsing routines, we simply assume they're
-    !  different.  If they have the same routine (which they probably got from
+    !  different. If they have the same routine (which they probably got from
     !  a class definition) then the decision process is as follows:
     !
     !     the routine is called (with self being o1, not that it matters)
     !       with noun and second being set to o1 and o2, and action being set
-    !       to the fake action TheSame.  If it returns -1, they are found
+    !       to the fake action TheSame. If it returns -1, they are found
     !       identical; if -2, different; and if >=0, then the usual method
     !       is used instead.
 
@@ -2952,7 +2952,7 @@ for some function $f$.)
     }
 
     !  This is the default algorithm: do they have the same words in their
-    !  "name" (i.e. property no. 1) properties.  (Note that the following allows
+    !  "name" (i.e. property no. 1) properties. (Note that the following allows
     !  for repeated words and words in different orders.)
 
     p1 = o1.&1; n1 = (o1.#1)/WORDSIZE;
@@ -3440,11 +3440,11 @@ cases, we pass the job down to |TryGivenObject|.
 		if (indef_nspec_at > 0 && match_from ~= indef_nspec_at) {
 			! This case arises if the player has typed a number in
 			! which is hypothetically an indefinite descriptor:
-			! e.g. "take two clubs".  We have just checked the object
+			! e.g. "take two clubs". We have just checked the object
 			! against the word "clubs", in the hope of eventually finding
-			! two such objects.  But we also backtrack and check it
+			! two such objects. But we also backtrack and check it
 			! against the words "two clubs", in case it turns out to
-			! be the 2 of Clubs from a pack of cards, say.  If it does
+			! be the 2 of Clubs from a pack of cards, say. If it does
 			! match against "two clubs", we tear up our original
 			! assumption about the meaning of "two" and lapse back into
 			! definite mode.
@@ -3557,7 +3557,7 @@ if it was a match because of inadequate input).
 
 @p Refers.
 |Refers| works out whether the word at number wnum can refer to the object
-|obj|, returning true or false.  The standard method is to see if the word
+|obj|, returning true or false. The standard method is to see if the word
 is listed under the |name| property for the object, but this is more
 complex in languages other than English.
 

@@ -5,6 +5,7 @@ Include Region Building Dungeon by Rooms.
 Include Region Building Woods by Rooms.
 Include Region Building Hotel by Rooms.
 Include Region Building Mansion by Rooms.
+Include Region Building School by Rooms.
 
 
 [!<targetFloor:Room>*
@@ -153,7 +154,7 @@ REQUIRES COMMENTING
 +@!]
 Definition: a room (called R) is actually solvable:
 	if R is not solvable, decide no;
-	[If we have gotten past that line, then Neighbour Finder will already be the room we want to look at.  Otherwise we would need to set it here.]
+	[If we have gotten past that line, then Neighbour Finder will already be the room we want to look at. Otherwise we would need to set it here.]
 
 [!<SolveThePuzzle>+
 
@@ -173,11 +174,11 @@ To solve the puzzle:
 			repeat with R running through puzzle piece rooms:
 				make all directions possible for R;
 			now P is a random solvable room;
-		if debugmode is 1, say "P is [P].  ";
+		if debugmode is 1, say "P is [P]. ";
 		if P is room:
 			now target-puzzle-piece is P;
 			now chosen-puzzle-direction is a random empty puzzle socket direction;
-			if debugmode is 1, say "Direction is [chosen-puzzle-direction].  ";
+			if debugmode is 1, say "Direction is [chosen-puzzle-direction]. ";
 			if chosen-puzzle-direction is the final one and only-singles-left is 0, now closing-forbidden is 1;
 			otherwise now closing-forbidden is 0;
 			if debugmode is 1, say "Closing is [if closing-forbidden is 0]not [end if]forbidden.";
@@ -199,7 +200,7 @@ To solve the puzzle:
 					flag chosen-puzzle-direction as impossible;
 		otherwise:
 			[We either have finished or need to reset]
-			if debugmode is 1, say "[bold type][line break]REGION COMPLETE.  [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
+			if debugmode is 1, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
 			if there are unplaced puzzle piece mandatory rooms:
 				flip the table around target-floor; [Reset all the rooms, we need to start again!]
 				now only-singles-left is 0;
@@ -265,8 +266,8 @@ REQUIRES COMMENTING
 THE PLAN:
 
 In a loop:
-Look at a placed tile.  Look at directions that are available.  Choose a direction at random.  For that direction:
-Check if it is the last one of its type.  If it is, raise a flag that prevents using closing pieces unless they are the only ones left.
+Look at a placed tile. Look at directions that are available. Choose a direction at random. For that direction:
+Check if it is the last one of its type. If it is, raise a flag that prevents using closing pieces unless they are the only ones left.
 Look at all tiles that perfectly could fit there and choose one.
 If unable, look at all tiles that could fit there and choose one.
 If unable, flag that direction as dead.
@@ -551,3 +552,4 @@ Definition: A room (called R) is unrelaxing:
 	decide yes.
 
 Region Building ends here.
+

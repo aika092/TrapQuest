@@ -1,6 +1,8 @@
 Ankle Bondage by Bondage begins here.
 
-An ankle bond is a kind of bondage.  Understand "cuffs" as ankle bond.
+An ankle bond is a kind of bondage. Understand "cuffs" as ankle bond.
+
+Include Dungeon Chains by Objects.
 
 To decide which number is the initial outrage of (C - an ankle bond):
 	decide on 2.
@@ -15,12 +17,12 @@ Definition: yourself is ankle bound:
 	decide no.
 
 To compute SelfExamineDesc of (A - an ankle bond):
-	say "Your ankles are kept close together by [ShortDesc of A].  ".
+	say "Your ankles are kept close together by [ShortDesc of A]. ".
 
 To say ShortDesc of (A - an ankle bond):
 	say "ankle bondage".
 
-A pair of anklecuffs is a kind of ankle bond.   The printed name of pair of anklecuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of anklecuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pair of anklecuffs is "ac".  The printed plural name of pair of anklecuffs is "pairs of anklecuffs".  There is 1 pair of anklecuffs.
+A pair of anklecuffs is a kind of ankle bond. The printed name of pair of anklecuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of anklecuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pair of anklecuffs is "ac". The printed plural name of pair of anklecuffs is "pairs of anklecuffs". There is 1 pair of anklecuffs.
 
 Figure of anklecuffs is the file "anklecuffs1.png".
 
@@ -36,7 +38,7 @@ To say ShortDesc of (A - a pair of anklecuffs):
 
 Chapter - Wearability
 
-ankle bond wearability rules is a rulebook.  The wearability rules of ankle bond is usually ankle bond wearability rules.
+ankle bond wearability rules is a rulebook. The wearability rules of ankle bond is usually ankle bond wearability rules.
 
 This is the ankle bond already worn rule:
 	repeat with O running through worn ankle bond:
@@ -59,3 +61,4 @@ The trousers ankle bondage clash rule is listed in the trousers wearability rule
 
 
 Ankle Bondage ends here.
+

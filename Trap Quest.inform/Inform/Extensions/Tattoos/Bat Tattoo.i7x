@@ -1,6 +1,6 @@
 Bat Tattoo by Tattoos begins here.
 
-bat tattoo is a kind of chest tattoo.  Figure of bat tattoo is the file "tattoo39.png".  There is 1 bat tattoo.
+bat tattoo is a kind of chest tattoo. Figure of bat tattoo is the file "tattoo39.png". There is 1 bat tattoo.
 Definition: a bat tattoo (called T) is drawable:
 	if there is a worn chest tattoo, decide no;
 	if the noun is bat corset, decide yes;
@@ -19,3 +19,4 @@ To decide which number is the strength-influence of (T - a bat tattoo):
 	decide on 1.
 
 Bat Tattoo ends here.
+

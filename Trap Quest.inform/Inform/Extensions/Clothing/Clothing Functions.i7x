@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute SelfExamineDesc of (C - a clothing):
-	say "You are wearing a [ShortDesc of C].  ". [Hopefully, this will never happen, as each piece of clothing will have a description, but it needs to be here just in case.]
+	say "You are wearing a [ShortDesc of C]. ". [Hopefully, this will never happen, as each piece of clothing will have a description, but it needs to be here just in case.]
 
 [!<SayShortDescOfClothing>+
 
@@ -49,7 +49,7 @@ To decide which number is the hindrance of (C - a clothing):
 	decide on 0.
 
 To restock (C - a clothing):
-	say "Error - the game tried to restock an item of clothing but there was no specific function to call.  Please report the bug to Aika.".
+	say "Error - the game tried to restock an item of clothing but there was no specific function to call. Please report the bug to Aika.".
 
 [!<DamageClothing>+
 
@@ -157,3 +157,4 @@ To only destroy (C - clothing):
 
 
 Clothing Functions ends here.
+

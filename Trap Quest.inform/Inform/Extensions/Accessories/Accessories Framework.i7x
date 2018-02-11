@@ -1,8 +1,8 @@
 Accessories Framework by Accessories begins here.
 
-An accessory is a kind of clothing.  Understand "accessories" as the plural of accessory.  An accessory is usually metal. The soak-limit of an accessory is usually 3.
+An accessory is a kind of clothing. Understand "accessories" as the plural of accessory. An accessory is usually metal. The soak-limit of an accessory is usually 3.
 
-An accessory can be sapphire, emerald, ruby, solid gold, pink diamond, pure diamond (this is the accessory-colour property).  Understand the accessory-colour property as describing a accessory when the item described is plentiful.  Understand "solid", "gold" as the accessory when the item described is solid gold and the item described is not stethoscope.  Understand "pure", "diamond" as the accessory when the item described is pure diamond.  Understand "pink", "diamond" as the accessory when the item described is pink diamond.  The description of accessory is usually "[accessorydesc][ownership-desc]".
+An accessory can be sapphire, emerald, ruby, pink diamond, pure diamond, solid gold (this is the accessory-colour property). Understand the accessory-colour property as describing a accessory when the item described is plentiful. Understand "solid", "gold" as the accessory when the item described is solid gold. Understand "pure", "diamond" as the accessory when the item described is pure diamond. Understand "pink", "diamond" as the accessory when the item described is pink diamond. The description of accessory is usually "[accessorydesc][ownership-desc]".
 
 Definition: an accessory (called C) is too boring:
 	decide no.
@@ -12,7 +12,7 @@ Definition: an accessory (called C) is magic-enhanceable:
 
 Definition: a piercing (called C) is magic-enhanceable:
 	decide no.
-	
+
 To decide which number is the initial outrage of (C - an accessory):
 	let X be 0;
 	if C is pink diamond, increase X by 1;
@@ -55,7 +55,7 @@ To say accessorydesc:
 	otherwise if the flat intelligence of the player < 11:
 		say "[if the price of item described < 4]It's probably only worth a little bit.[otherwise if the price of item described < 8]It probably has notable worth.[otherwise if the price of item described < 12]You reckon this is quite a valuable piece of jewellery.[otherwise]This is probably an extremely expensive piece of jewellery.[end if]";
 	otherwise:
-		say "You don't know where this is coming from, but something in your head suggests this is probably worth... [price of item described].  Whatever that means.".
+		say "You don't know where this is coming from, but something in your head suggests this is probably worth... [price of item described]. Whatever that means.".
 
 Definition: an accessory (called C) is stealable:
 	if C is plentiful, decide yes;
@@ -104,3 +104,4 @@ To decide which indexed text is jewellery-shortcut of (A - an accessory):
 
 
 Accessories Framework ends here.
+

@@ -143,7 +143,7 @@ REQUIRES COMMENTING
 
 +!]
 Check going up when the player is in Stairwell03:
-	if diaper quest is 1, say "That place seems way too spooky, something is telling you that you can't do that here.  It probably isn't ready for Diaper Quest yet." instead.
+	if diaper quest is 1, say "That place seems way too spooky, something is telling you that you can't do that here. It probably isn't ready for Diaper Quest yet." instead.
 
 [!<TheMansionSetUpRule>+
 
@@ -171,7 +171,9 @@ REQUIRES COMMENTING
 
 +!]
 Report going up:
-	if map images is 1, display entire map.
+	if map images is 1, display entire map;
+	repeat with C running through in-play clothing:
+		if C is not immune to change and C is not regional, destroy C.
 
 [The region-setup rule is listed before the monsters-go-next rule in the carry out going rulebook.]
 
@@ -182,6 +184,8 @@ REQUIRES COMMENTING
 +!]
 Report going down:
 	if map images is 1, display entire map;
+	repeat with C running through in-play clothing:
+		if C is not immune to change and C is not regional, destroy C.
 
 Part 1 - Movement Hindrance Definitions
 
@@ -262,7 +266,7 @@ Definition: yourself is squirming:
 REQUIRES COMMENTING
 
 *!]
-movement-reduction-flav-said is a number that varies.  movement-reduction-flav-said is 0. [This gets reset every round in the 'reset flags' function.]
+movement-reduction-flav-said is a number that varies. movement-reduction-flav-said is 0. [This gets reset every round in the 'reset flags' function.]
 
 [!<DecideWhichNumberIstheMovementReductionOfThePlayer>+
 
@@ -450,19 +454,19 @@ Check going:
 			unless the player consents, say "You change your mind." instead;
 	repeat with ST running through revealed hypno traps in the room noun from the location of the player:
 		unless ST is expired:
-			say "There is a hypno trap currently displaying [hypno content of ST] in that room.  Are you sure you want to try and go that way? [yesnolink] ";
+			say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
 	repeat with ST running through revealed haunted mirror traps in the room noun from the location of the player:
 		unless ST is expired:
-			say "There is currently an uncovered haunted mirror in that room.  Are you sure you want to try and go that way? [yesnolink] ";
+			say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
 	repeat with ST running through futanari slutty sisters in the room noun from the location of the player:
 		unless the sleep of ST > 0:
-			say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room.  You'll probably have to fight them.  [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
+			say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
 	repeat with ST running through robomatron in the room noun from the location of the player:
 		unless the sleep of ST > 0:
-			say "You can see a large scary robot dressed like a nanny.  You'll probably have to fight it.  [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
+			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
 	now seconds is 3; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
 	repeat with M running through expectant monsters:
@@ -482,11 +486,10 @@ Check going:
 	if the player is upright:
 		[Firstly, monsters each get a chance to block the player, this is only likely to happen if the player has low dexterity or lots of movement reductions.]
 		repeat with M running through dangerous monsters in the location of the player:
-			let R be a random number from the dexterity of the player to ((the difficulty of M * 2) - the movement reduction of the player); [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
-			if R < the difficulty of M and M is blocker:
+			if M is successfully blocking:
 				now seconds is 2;
 				say "[MovementBlock of M]" instead;
-		[Here we increase heel experience.  NB even if the player falls over, they still gain heel experience.]
+		[Here we increase heel experience. NB even if the player falls over, they still gain heel experience.]
 		if there are worn heels:
 			let C be a random heels worn by the player;
 			[Posture training makes heel skill experience go up faster]
@@ -509,7 +512,7 @@ Check going:
 		if D is X and there are worn heels, say "You feel very unstable, and are barely managing to keep your balance on your [printed name of random worn heels]!"; [The player barely managed to succeed the roll.]
 		if D < X:
 			follow the trip reasons rules; [Here we explain to the player why they tripped]
-			if there is a worn heels, say "[if the heel skill of the player < 4][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating.. but in a fun way.[in random order][end if][roman type]";
+			if there is a worn heels, say "[if the heel skill of the player < 4][line break][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][line break][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating.. but in a fun way.[in random order][end if][roman type][line break]";
 			try kneeling;
 			if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
 			say "[bold type]You are still in the [location of the player].[roman type]" instead;
@@ -524,15 +527,15 @@ Check going:
 			let R be a random number between 1 and 10;
 			if the weight of Di is 6: [Very very big]
 				if R > 8: [20% chance]
-					say "Your baby-like waddling caused by your extremely bloated [printed name of Di] causes you to stumble, and you don't make it very far this turn.  [bold type]You are still in the [location of the player][roman type].";
+					say "Your baby-like waddling caused by your extremely bloated [printed name of Di] causes you to stumble, and you don't make it very far this turn. [bold type]You are still in the [location of the player][roman type].";
 					say "[variable custom style]Maybe I should crawl for now instead?[roman type][line break]" instead;
 				otherwise if R > 6: [25% chance (assuming we didn't fall over)]
-					if the humiliation of the player < 15000, say "You waddle forward, cringing with humiliation about the size of your diaper and the babyish way you are walking.";
+					if the humiliation of the player < HUMILIATION-MODEST - 1000, say "You waddle forward, cringing with humiliation about the size of your diaper and the babyish way you are walking.";
 			otherwise: [Cartoonishly big]
 				if R > 5: [50% chance]
-					say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps.  You don't make it very far this turn.  [bold type]You are still in the [location of the player][roman type]." instead;
+					say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps. You don't make it very far this turn. [bold type]You are still in the [location of the player][roman type]." instead;
 				otherwise: [100% chance (assuming we didn't fall over)]
-					say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps.  It takes a lot of effort to make it to the door of the next room, but you manage it this time.";
+					say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps. It takes a lot of effort to make it to the door of the next room, but you manage it this time.";
 					say "[variable custom style]Maybe I should crawl for now instead?[roman type][line break]";	
 		otherwise: [Okay, the player is definitely not falling over! Assuming there are no super-giant diapers, let's output some flavour text to the player and deal with some other potential situations.]
 			if the player is wobbling or the player is hobbling or the player is swaying or the player is staggering:
@@ -547,7 +550,7 @@ Check going:
 					if R is 1:
 						let X be the weight of a random diaper worn by the player;
 						say "[if X > 5]You walk very slowly with the most exaggerated waddle, caused by your [one of]almost impossibly inflated[or]extremely bloated[or]ridiculously oversized[in random order] diaper.[otherwise if X > 3]Your movement is significantly slowed because your [one of]incredibly inflated[or]very bloated[or]oversized[in random order] diaper is forcing you to waddle instead of walk.[otherwise]Your movement is slightly hampered by the way that your [one of]inflated[or]bloated[or]expanded[in random order] diaper is making you waddle.[end if]";
-						humiliate X * 10;
+						humiliate X * TRIVIAL-HUMILIATION * 2;
 			otherwise if there is a worn cowbell and a random number between 1 and 15 is 1:
 				say "Your cowbell [one of]rings[or]continues to ring[stopping] loudly as you walk.";
 			otherwise if the strut of the player is 1 and there is a worn heels:
@@ -560,12 +563,13 @@ Check going:
 	[All these checks only take place if the player is CRAWLING as opposed to walking.]
 	if the player is prone:
 		[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
-		if the noun is a direction: [We do this just in case the player says "go wardrobe" or something retarded like that.]
-			if the room noun from the location of the player is smoky:
-				say "There is [if the player is in the Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees.  Are you sure you want to try and crawl that way? [yesnolink] ";
-				unless the player consents:
-					now seconds is 0; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
-					say "You change your mind." instead;
+		if trap warning is 1:
+			if the noun is a direction: [We do this just in case the player says "go wardrobe" or something retarded like that.]
+				if the room noun from the location of the player is smoky:
+					say "There is [if the player is in the Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees. Are you sure you want to try and crawl that way? [yesnolink] ";
+					unless the player consents:
+						now seconds is 0; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
+						say "You change your mind." instead;
 		let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]
 		repeat with M running through dangerous monsters in the location of the player:
 			let E be 1;
@@ -606,11 +610,11 @@ Check going:
 				now seconds is 6;
 		otherwise:
 			forbid crawling instead; [Since the player can just choose to faint when they want, this will do for now.]
-	[Some traps trigger as you try and leave the room.  If they are triggered, they often prevent movement.]
+	[Some traps trigger as you try and leave the room. If they are triggered, they often prevent movement.]
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player:
 		now the room-entering of the player is 0;
 		choose a trap to trigger;
-		if the motion of the player is 0, say "[bold type]You are still in the [printed name of the location of the player][roman type]." instead; [Some traps will have set motion to 0.  This means the player hasn't successfully moved from this room.]
+		if the motion of the player is 0, say "[bold type]You are still in the [printed name of the location of the player][roman type]." instead; [Some traps will have set motion to 0. This means the player hasn't successfully moved from this room.]
 	[The player is successfully moving!  For sure!  So, anything location specific needs to go here, since if we put it as a "carry out" function, we may have already moved.]
 	[Here we reset paddle traps.]
 	repeat with Y running through swing traps in the location of the player:
@@ -624,7 +628,8 @@ Check going:
 		if the player is glue stuck:
 			say "You stretch and strain towards the portal, and finally feel it take a grip on you!";
 			compute raw glue escaping a random glue in the location of the player with 1;
-		teleport via W instead.
+		teleport via W instead;
+		do nothing instead. [Shouldn't be necessary but it is. Go figure.]
 
 [!<TheMonstersGoNextRule>+
 
@@ -645,10 +650,10 @@ To Delay Crawling:
 	now seconds is 6;
 	if the fatigue of the player > the fatigue of the player / 2:
 		if the largeness of belly > 6:
-			say "Your legs are feeling quite weak, and your hands can hardly reach the ground thanks to your [BellyDesc][if the largeness of breasts > 9] and [BreastDesc][end if], which is stopping you from being able to crawl effectively.  Try again?";
+			say "Your legs are feeling quite weak, and your hands can hardly reach the ground thanks to your [BellyDesc][if the largeness of breasts > 9] and [BreastDesc][end if], which is stopping you from being able to crawl effectively. Try again?";
 		otherwise:
 			if the largeness of belly < 4 and the weight of breasts > 18:
-				say "Your legs are feeling quite weak, and your [BreastDesc] keep your chest pinned to the ground, which is stopping you from being able to crawl effectively.  Try again?";
+				say "Your legs are feeling quite weak, and your [BreastDesc] keep your chest pinned to the ground, which is stopping you from being able to crawl effectively. Try again?";
 			otherwise if the largeness of belly < 4 and the largeness of breasts < 7:
 				say "You struggle to find the energy to crawl forward. Try again?";
 			otherwise if the largeness of belly < 4:
@@ -656,12 +661,12 @@ To Delay Crawling:
 			otherwise:
 				say "The combination of your fatigue[if the largeness of breasts >= 7], [BreastDesc][end if] and [BellyDesc] are making it slightly difficult to crawl, try again?";
 	otherwise if the largeness of breasts + the largeness of belly < 10:
-		say "[one of]Your legs are feeling quite weak, so you stay still on your knees while they recover a bit more.  Try again?[or]Your arms wobble as you try to crawl, causing you to stop and take a breath.  Woah, better try again?[or]The feebleness of your girly arms is making it a bit difficult to even crawl.  Try again?[purely at random]";
+		say "[one of]Your legs are feeling quite weak, so you stay still on your knees while they recover a bit more. Try again?[or]Your arms wobble as you try to crawl, causing you to stop and take a breath. Woah, better try again?[or]The feebleness of your girly arms is making it a bit difficult to even crawl. Try again?[purely at random]";
 	otherwise:
 		if the largeness of belly > 6:
-			say "Your hands can hardly reach the ground thanks to your [BellyDesc][if the largeness of breasts > 9] and [BreastDesc][end if], stopping you from being able to crawl effectively.  Try again?";
+			say "Your hands can hardly reach the ground thanks to your [BellyDesc][if the largeness of breasts > 9] and [BreastDesc][end if], stopping you from being able to crawl effectively. Try again?";
 		otherwise:
-			if the weight of belly < 12 and the weight of breasts > 18, say "Your [BreastDesc] keep your chest pinned to the ground, and are stopping you from being able to crawl effectively.  Try again?";
+			if the weight of belly < 12 and the weight of breasts > 18, say "Your [BreastDesc] keep your chest pinned to the ground, and are stopping you from being able to crawl effectively. Try again?";
 			otherwise say "The combination of your [BreastDesc] and [BellyDesc] are making it slightly difficult to crawl, try again?".
 
 [!<ForbidCrawling>+
@@ -671,13 +676,13 @@ REQUIRES COMMENTING
 +!]
 To Forbid Crawling:
 	if the largeness of belly < 4:
-		say "Your [BreastDesc] are just too big to shovel along the ground.  You're going to have to wait until you can stand up again.";
+		say "Your [BreastDesc] are just too big to shovel along the ground. You're going to have to wait until you can stand up again.";
 	otherwise:
 		if the largeness of belly > 7:
-			say "Your [BellyDesc] is so big[if the largeness of breasts > 13] and your [BreastDesc] are so bloated[end if] that you're struggling to get a grip on the ground.  You're going to have to wait until your belly deflates or you can manage to stand up again.";
+			say "Your [BellyDesc] is so big[if the largeness of breasts > 13] and your [BreastDesc] are so bloated[end if] that you're struggling to get a grip on the ground. You're going to have to wait until your belly deflates or you can manage to stand up again.";
 		otherwise:
-			if the strength of the player < 6, say "Your arm muscles are too weak to help you crawl.  You're going to have to wait until you can stand up again.";
-			otherwise say "The combination of your [BreastDesc] and your [BellyDesc] are preventing you from crawling at all.  You're going to have to wait until you can stand up again.".
+			if the strength of the player < 6, say "Your arm muscles are too weak to help you crawl. You're going to have to wait until you can stand up again.";
+			otherwise say "The combination of your [BreastDesc] and your [BellyDesc] are preventing you from crawling at all. You're going to have to wait until you can stand up again.".
 
 [!<SayMovementBlockOfMonster>+
 
@@ -698,7 +703,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 	let S be a random shopkeeper;
 	repeat with C running through store clothing held by the player:
 		if S is not mating:
-			if flav-said is 0, say "The shopkeeper sees you trying to leave.  [first custom style]'[one of]Stop Thief!'[or]Guards!  Guards!  Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon.  Looks like you're in trouble with the law!";
+			if flav-said is 0, say "The shopkeeper sees you trying to leave.  [line break][first custom style]'[one of]Stop Thief!'[or]Guards!  Guards!  Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon.  Looks like you're in trouble with the law!";
 			now C is stolen;
 			repeat with M running through alive royal guards:
 				deinterest M;
@@ -707,7 +712,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 			now S is interested;
 			anger S;
 		otherwise:
-			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what she wants.  I hope you find it useful!'[roman type][line break]";
+			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what she wants. I hope you find it useful!'[roman type][line break]";
 			now C is normal;
 		now flav-said is 1.
 
@@ -847,7 +852,7 @@ To Test a Sticky Trap:
 			trigger T;
 		if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
 	otherwise:
-		say ".  You manage to avoid falling over!".
+		say ". You manage to avoid falling over!".
 
 To say StickyTriggerFlav of (T - a trap):
 	say "As your hands hit the ground, you feel a pressure pad depress underneath them!  [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
@@ -859,7 +864,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking into a pressure trap:
-	if the player is not zeroG, decide no;
+	if the player is zeroG, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
@@ -870,7 +875,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking past a pressure trap:
-	if the player is not zeroG, decide yes;
+	if the player is zeroG, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
@@ -890,12 +895,12 @@ To Test A Pressure Trap:
 		if there is a worn sandals, increase R by 4;
 		if debugmode is 1, say "Player [R] | 13.5 Pressure Pad[line break]";
 		if R > 13:
-			say "[bold type]As you crawl your hand touches a stone stab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
+			say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
 			if B > 16:
 				say "  However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap!  Whoops![line break]";
 				trigger a pressure trap;
 		otherwise:
-			say "[bold type]As you crawl your hand touches a stone stab that starts to depress.[roman type]  You fail to react in time and trigger a trap![line break]";
+			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type]  You fail to react in time and trigger a trap![line break]";
 			trigger a pressure trap.
 
 
@@ -968,7 +973,7 @@ To Test A Wire Trap:
 		if the largeness of breasts < 16 or the location of the player is in the Mansion:
 			say "[bold type]You crawl [if the location of the player is in the Mansion]over a protruding floorboard.[otherwise]under a tripwire.[end if][roman type][line break]";
 		otherwise:
-			say "[bold type]You try to crawl under a tripwire. but your [BreastDesc] stop you lowering your body enough.  The wire gets caught on your [if the class of the player is princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
+			say "[bold type]You try to crawl under a tripwire. but your [BreastDesc] stop you lowering your body enough. The wire gets caught on your [if the class of the player is princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
 			trigger a wire trap;
 	if T is nothing, place permanent triggered wire.
 
@@ -1000,3 +1005,4 @@ To Place Permanent Triggered Wire:
 			
 
 Going ends here.
+

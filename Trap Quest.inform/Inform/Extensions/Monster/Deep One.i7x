@@ -1,8 +1,8 @@
 Deep One by Monster begins here.
 
-A deep one is a kind of monster. A deep one is usually male. [A deep one is usually intelligent. ]There is 1 deep one. A deep one is usually willing to do vaginal. A deep one is usually willing to do anal. The difficulty of a deep one is usually 12. A deep one is usually captive. A deep one is usually father material. Understand "deepone" as deep one.
+A deep one is a kind of monster. [A deep one is usually intelligent. ]There is 1 deep one. The difficulty of a deep one is usually 12. A deep one is usually captive. Understand "deepone" as deep one. A deep one is male.
 
-The printed name of a deep one is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]deep one[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of a deep one is usually "[DeepOneDesc]".  The text-shortcut of deep one is "do". 
+The printed name of a deep one is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]deep one[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of a deep one is usually "[DeepOneDesc]". The text-shortcut of deep one is "do". 
 
 A deep one has a number called angered. The angered of a deep one is usually 0.
 
@@ -37,6 +37,12 @@ To compute labour to (M - a deep one):
 			humiliate 300;
 	otherwise if M is alive:
 		Delay Labour.
+
+Definition: a deep one (called M) is willing to do oral:
+	decide no.
+
+Definition: a deep one (called M) is willing to do titfucks:
+	decide no.
 
 Part 1 - Perception
 
@@ -101,10 +107,11 @@ To say DamageReaction (N - a number) of (M - a deep one):
 		say "The creature seems to be having trouble staying on its feet!".
 		
 To compute unique death of (M - a deep one):
-	say "The [noun] shrieks and falls to the ground.  ";
+	say "The [noun] shrieks and falls to the ground. ";
 	say "Its body decomposes into a foul mist, and quicker than you can react it sinks into your skin! You feel much stronger and tougher!";
 	Strengthup 2;
 	DelicateDown 4.
 
 
 Deep One ends here.
+

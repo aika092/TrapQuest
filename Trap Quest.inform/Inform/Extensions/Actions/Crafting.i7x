@@ -14,7 +14,7 @@ Check crafting:
 	if the noun is bottle:
 		if the doses of the noun is 0:
 			now seconds is 2;
-			say "You place the empty [noun] into the bowl.  Nothing happens.  Maybe if it actually had liquid in it..." instead;
+			say "You place the empty [noun] into the bowl. Nothing happens. Maybe if it actually had liquid in it..." instead;
 	if the noun is not ingredient thing:
 		now seconds is 2;
 		say "Nothing happens." instead.
@@ -33,9 +33,9 @@ Carry out crafting:
 	if the crafting key of the noun > 0 and the charge of alchemist's table <= 0:
 		now current-crafting-key is the crafting key of the noun;
 		now current-alchemy-key is Product corresponding to an Ingredient of current-crafting-key in the Table of Alchemy;
-		now T is a random off-stage highlighted product thing;
+		now T is a random off-stage product-highlighted thing;
 		if T is a thing:
-			repeat with R running through on-stage highlighted product things:
+			repeat with R running through on-stage product-highlighted things:
 				if R is visible, say "The [R] [if R is held]in your hands [end if]suddenly vanishes[one of]!   Maybe you can only have one at a time?[or]![stopping]";
 				destroy R;
 			compute recipe specific cursing of T;
@@ -56,13 +56,13 @@ Carry out crafting:
 			if there is a worn notebook:
 				if the class of the player is schoolgirl or a random number between 1 and 3 is 1, compute studying;
 		otherwise:
-			if there is a highlighted product thing:
+			if there is a product-highlighted thing:
 				say "Nothing happens.";
 			otherwise:
-				say "Nothing happens.  You get a feeling that this might be a gameplay bug worth reporting, with the following information...";
+				say "Nothing happens. You get a feeling that this might be a gameplay bug worth reporting, with the following information...";
 				display complete alchemy data;
 	otherwise:
-		say "Nothing happens[if the charge of alchemist's table > 0].  Maybe try again a bit later.[otherwise].[end if]".
+		say "Nothing happens[if the charge of alchemist's table > 0]. Maybe try again a bit later.[otherwise].[end if]".
 
 To compute recipe specific cursing of (T - a thing):
 	let K be the alchemy key of T;
@@ -88,3 +88,4 @@ Definition: a thing (called T) is maybe-cursed:
 
 
 Crafting ends here.
+

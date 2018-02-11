@@ -76,7 +76,7 @@ REQUIRES COMMENTING
 To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
-		increase the stomach-food of the player by 1;
+		increase the stomach-food of the player by 1 + (xavier-belt-link * 2);
 		decrease X by 1.
 
 [!<StomachFoodDownX>+
@@ -127,7 +127,7 @@ To StomachSemenDown (X - a number):
 		decrease X by 1;
 	if the player is craving and S > 0:
 		if the player is desperately craving, say "[bold type]Your stomach is completely empty of [semen]!  You can't stand it, you are desperate for your next fix!  Your reflexes are significantly dulled until the next time you satisfy your addiction.[roman type][line break]";
-		otherwise say "[bold type]You find yourself eager to try tasting some more [semen].  Your reflexes are slightly dulled until the next time you get a fix.[roman type][line break]".
+		otherwise say "[bold type]You find yourself eager to try tasting some more [semen]. Your reflexes are slightly dulled until the next time you get a fix.[roman type][line break]".
 
 
 [!<YourselfIsGagProne>+
@@ -168,7 +168,7 @@ To PukeUp:
 		let T be a random tongue piercing;
 		let P be a random pink pacifier;
 		if T is actually summonable and a random number between 15 and the semen taste addiction of the player >= 15:
-			say "[bold type]A cold metal piercing suddenly appears in your mouth, embedded into your tongue!  You've never had something like that in your mouth before, so it's difficult to stop thinking about the [if the bimbo of the player < 10]unwelcome [end if]intrusion.  Even worse, you can feel its cursed magic somehow preventing you from speaking properly![roman type][line break]";
+			say "[bold type]A cold metal piercing suddenly appears in your mouth, embedded into your tongue!  You've never had something like that in your mouth before, so it's difficult to stop thinking about the [if the bimbo of the player < 10]unwelcome [end if]intrusion. Even worse, you can feel its cursed magic somehow preventing you from speaking properly![roman type][line break]";
 			summon T cursed;
 		otherwise if there is a worn baby bonnet and P is actually summonable:
 			say "[bold type]Your baby's bonnet flutters wildly and a large pink pacifier appears in your mouth!  You can't remove it![roman type]  But it does make you feel stronger...";
@@ -204,3 +204,4 @@ To PukeUp (X - a number):
 			SemenPuddleUp S.
 
 Stomach ends here.
+

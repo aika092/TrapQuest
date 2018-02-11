@@ -21,7 +21,7 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 		say "You try to pee but nothing comes out!" instead;
 	if the bladder of the player < 4, say "You don't feel the need." instead;
 	if the player is live fucked, say "You're a bit busy right now!" instead;
-	if the humiliation of the player < 15000 and debugmode is 0, say "You consider yourself too dignified to do that right now.  Peeing on the floor would be humiliating enough." instead;
+	if the humiliation of the player < HUMILIATION-MODEST - 1000 and debugmode is 0, say "You consider yourself too dignified to do that right now. Peeing on the floor would be humiliating enough." instead;
 	if there is worn pee covering clothing, say "If you peed right now, it'd be inside your [printed name of random worn pee covering clothing]." instead;
 	if the player is prone:
 		say "If you peed right now, it'd be on the floor because you're not standing." instead;
@@ -44,7 +44,7 @@ Carry out PeeBottling:
 		increase the doses of the noun by 1;
 		BladderDown 2;
 	say "You pee into the [noun][if the bladder of the player > 0], but it's now full and you can't stop going![otherwise if the max-doses of the noun is the doses of the noun], and it's now full.[otherwise].[end if][if the humiliation of the player < 25000][line break][variable custom style]Yuk, why am I doing this?[roman type][line break][end if]";
-	humiliate 75;
+	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION;
 	if the bladder of the player > 0:
 		now delayed urination is 1;
 		now pee-bottling is 1;
@@ -53,3 +53,4 @@ Carry out PeeBottling:
 Understand "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]" , "pp [something]" as PeeBottling.
 
 Urinating Into Bottles ends here.
+

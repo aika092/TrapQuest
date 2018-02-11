@@ -8,14 +8,14 @@ REQUIRES COMMENTING
 @inherits <Thing>
 
 @!]
-A dispenser is a kind of thing.  A dispenser is not portable.
+A dispenser is a kind of thing. A dispenser is not portable.
 
 [!<Dispenser>@<doses:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-A dispenser has a number called doses.  The description of dispenser is "[DisDesc]".
+A dispenser has a number called doses. The description of dispenser is "[DisDesc]".
 
 [!<Dispenser>@<fillColour:DrinkColourEnums>*
 
@@ -40,8 +40,8 @@ REQUIRES COMMENTING
 @inherits <Dispenser>
 
 @!]
-A tank is a kind of dispenser.  1 tank is in Dungeon12.  7 tanks are in Holding Pen.  Figure of tank is the file "tank1.png".
-The printed name of a tank is usually "[TQlink of item described][if the doses of item described > 0][fill-colour of the item described][otherwise]empty[end if] tank[if the fill-type of item described is remembered and the doses of item described > 0] ([FillName the fill-type of item described])[end if][shortcut-desc][TQxlink of item described]".  The text-shortcut of a tank is usually "ta". Understand the fill-colour property as describing a tank when the doses of item described > 0.
+A tank is a kind of dispenser. 1 tank is in Dungeon12. 7 tanks are in Holding Pen. Figure of tank is the file "tank1.png".
+The printed name of a tank is usually "[TQlink of item described][if the doses of item described > 0][fill-colour of the item described][otherwise]empty[end if] tank[if the fill-type of item described is remembered and the doses of item described > 0] ([FillName the fill-type of item described])[end if][shortcut-desc][TQxlink of item described]". The text-shortcut of a tank is usually "ta". Understand the fill-colour property as describing a tank when the doses of item described > 0.
 
 [!<Bucket>@
 
@@ -50,7 +50,7 @@ REQUIRES COMMENTING
 @inherits <Dispenser>
 
 @!]
-A bucket is a kind of dispenser.  8 buckets are in Holding Pen.  Figure of bucket is the file "bucket1.png".  The printed name of bucket is "[TQlink of item described][if the doses of item described <= 0]empty [end if]bucket[shortcut-desc][TQxlink of item described]".  The text-shortcut of a bucket is usually "bu".
+A bucket is a kind of dispenser. 8 buckets are in Holding Pen. Figure of bucket is the file "bucket1.png". The printed name of bucket is "[TQlink of item described][if the doses of item described <= 0]empty [end if]bucket[shortcut-desc][TQxlink of item described]". The text-shortcut of a bucket is usually "bu".
 
 [!<RefillDispenser>+
 
@@ -134,14 +134,14 @@ To say DisDesc:
 	let D be item described;
 	if D is a bucket:
 		if images visible is 1, display figure of bucket;
-		say "A metal bucket hanging from, and secured to, a branch of a nearby tree.  You can't see what kind of liquid is inside!";
+		say "A metal bucket hanging from, and secured to, a branch of a nearby tree. You can't see what kind of liquid is inside!";
 	if D is a tank:
 		if images visible is 1, display figure of tank;
 		if the doses of D > 0:
 			let X be the fill-type of D;
-			say "A small glass tank set in the stone wall about 5 feet off the ground, with a gap above it.  You can reach into it if you stretch your arm but you can't drink from it directly. [if the doses of D < 3]The nearly empty tank contains [end if][if the doses of D is 3]The mostly empty tank contains [end if][if the doses of D is 4]The half full tank contains [end if][if the doses of D is 5]The over halfway full tank contains [end if][if the doses of D is 6]The mostly full tank contains [end if][if the doses of D is 7]The nearly full tank contains [end if][if the doses of D is 8]The tank is completely full of [end if][if X is remembered][FillName X].[otherwise]a [appearance corresponding to an Magic of X in the Table of Drinks] liquid.[end if]";
+			say "A small glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. [if the doses of D < 3]The nearly empty tank contains [end if][if the doses of D is 3]The mostly empty tank contains [end if][if the doses of D is 4]The half full tank contains [end if][if the doses of D is 5]The over halfway full tank contains [end if][if the doses of D is 6]The mostly full tank contains [end if][if the doses of D is 7]The nearly full tank contains [end if][if the doses of D is 8]The tank is completely full of [end if][if X is remembered][FillName X].[otherwise]a [appearance corresponding to an Magic of X in the Table of Drinks] liquid.[end if]";
 		otherwise:
-			say "A glass tank set in the stone wall about 5 feet off the ground, with a gap above it.  You can reach into it if you stretch your arm but you can't drink from it directly.  It is empty anyway.";
+			say "A glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. It is empty anyway.";
 	if D is an alchemical vat:
 		say "A huge wrought iron vat, resting on the floor between two counters. You can reach into it if you stretch your arm, but it would be pretty challenging to drink from directly. [run paragraph on]";
 		if the doses of D > 0:
@@ -176,3 +176,4 @@ Report decanting something with alchemical vat:
 
 
 Dispensers ends here.
+

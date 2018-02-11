@@ -1,6 +1,6 @@
 Wrist Bondage by Bondage begins here.
 
-A wrist bond is a kind of bondage.  Understand "cuffs" as wrist bond.
+A wrist bond is a kind of bondage. Understand "cuffs" as wrist bond.
 
 To say ClothingDesc of (W - a wrist bond):
 	say "[WristBondDesc][if W is bound-in-front and W is worn]They are binding your wrists in front of you. [otherwise if W is worn]They are binding your wrists behind you. [end if]".
@@ -42,7 +42,7 @@ To decide which number is the initial outrage of (C - a wrist bond):
 	decide on 2.
 
 To compute SelfExamineDesc of (W - a wrist bond):
-	say "Your wrists are kept close together [if W is bound-in-front]in front of[otherwise]behind[end if] you by [ShortDesc of W].  ".
+	say "Your wrists are kept close together [if W is bound-in-front]in front of[otherwise]behind[end if] you by [ShortDesc of W]. ".
 
 To say ShortDesc of (W - a wrist bond):
 	say "wrist bondage".
@@ -51,28 +51,28 @@ To compute (C - a wrist bond) unique inheriting from (D - a wrist bond):
 	if D is bound-in-front, now C is bound-in-front;
 	otherwise now C is bound-behind.
 
-A pair of handcuffs is a kind of wrist bond.  The printed name of pair of handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of pair of handcuffs is "pairs of handcuffs".  There is 1 pair of handcuffs.
+A pair of handcuffs is a kind of wrist bond. The printed name of pair of handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of pair of handcuffs is "pairs of handcuffs". There is 1 pair of handcuffs.
 The text-shortcut of pair of handcuffs is "hc".
 
-A pair of pink handcuffs is a kind of wrist bond.  The printed name of pair of pink handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of pink handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of pair of handcuffs is "pairs of pink handcuffs".  There is 1 pair of pink handcuffs.
+A pair of pink handcuffs is a kind of wrist bond. The printed name of pair of pink handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of pink handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of pair of handcuffs is "pairs of pink handcuffs". There is 1 pair of pink handcuffs.
 The text-shortcut of pair of pink handcuffs is "phc".
 
 To decide which number is the initial outrage of (W - a pair of pink handcuffs):
 	decide on 5.
 
-A pair of furry handcuffs is a kind of wrist bond.  The printed name of pair of furry handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of furry handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of pair of furry handcuffs is "pairs of furry handcuffs".  There is 1 leather pair of furry handcuffs.
+A pair of furry handcuffs is a kind of wrist bond. The printed name of pair of furry handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of furry handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of pair of furry handcuffs is "pairs of furry handcuffs". There is 1 leather pair of furry handcuffs.
 The text-shortcut of pair of furry handcuffs is "fhc".
 
 To decide which number is the initial outrage of (W - a pair of furry handcuffs):
 	decide on 6.
 
-A pair of trashy handcuffs is a kind of wrist bond.  The printed name of pair of trashy handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of trashy handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of pair of trashy handcuffs is "pairs of trashy handcuffs".  There is 1 leather pair of trashy handcuffs.
+A pair of trashy handcuffs is a kind of wrist bond. The printed name of pair of trashy handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of trashy handcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of pair of trashy handcuffs is "pairs of trashy handcuffs". There is 1 leather pair of trashy handcuffs.
 The text-shortcut of pair of trashy handcuffs is "thc".
 
 To decide which number is the initial outrage of (W - a pair of trashy handcuffs):
 	decide on 7.
 
-A pair of wristcuffs is a kind of wrist bond.   The printed name of pair of wristcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of wristcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of pair of wristcuffs is "pairs of wristcuffs".  There is 1 pair of wristcuffs.
+A pair of wristcuffs is a kind of wrist bond. The printed name of pair of wristcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of wristcuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of pair of wristcuffs is "pairs of wristcuffs". There is 1 pair of wristcuffs.
 The text-shortcut of pair of wristcuffs is "wc".
 
 To decide which number is the initial outrage of (W - a pair of wristcuffs):
@@ -121,8 +121,8 @@ To say WristBondDesc:
 	if the item described is pair of handcuffs, say "A pair of metal, medieval looking handcuffs.";
 	if the item described is pair of pink handcuffs, say "A pair of pink metal handcuffs.";
 	if the item described is pair of furry handcuffs, say "A pair of leather cuffs with pink fluffy material on the inside to make them look more designed for sex play than true bondage.";
-	if the item described is pair of trashy handcuffs, say "A pair of leather cuffs with pink fluffy material on the inside to make them look more designed for sex play than true bondage.  The leather is studded all over with fake diamonds, pink bows and roses making it impossible to take [if item described is worn]you[otherwise]the wearer[end if] seriously.";
-	if the item described is pair of wristcuffs, say "A luxury pair of leather wristcuffs connected by a golden chain, for [if the bimbo of the player < 8]comfortable use[otherwise][second custom style]fun times[roman type][end if] in the bedroom.".
+	if the item described is pair of trashy handcuffs, say "A pair of leather cuffs with pink fluffy material on the inside to make them look more designed for sex play than true bondage. The leather is studded all over with fake diamonds, pink bows and roses making it impossible to take [if item described is worn]you[otherwise]the wearer[end if] seriously.";
+	if the item described is pair of wristcuffs, say "A luxury pair of leather wristcuffs connected by a golden chain, for [if the bimbo of the player < 8]comfortable use[otherwise][line break][second custom style]fun times[roman type][line break][end if] in the bedroom.".
 
 To say ShortDesc of (W - a pair of handcuffs):
 	say "a medieval pair of handcuffs".
@@ -138,7 +138,7 @@ The wrist bondage prevents hand use rule is listed in the hands restriction rule
 
 Chapter - Wearability
 
-wrist bond wearability rules is a rulebook.  The wearability rules of wrist bond is usually wrist bond wearability rules.
+wrist bond wearability rules is a rulebook. The wearability rules of wrist bond is usually wrist bond wearability rules.
 
 This is the wrist bond already worn rule:
 	repeat with O running through worn wrist bond:
@@ -175,3 +175,4 @@ Carry out wearing wrist bond:
 
 
 Wrist Bondage ends here.
+

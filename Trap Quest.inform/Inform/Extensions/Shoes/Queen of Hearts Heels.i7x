@@ -1,9 +1,9 @@
 Queen of Hearts Heels by Shoes begins here.
 
 
-A queen of hearts heels is a kind of stiletto heels.  A queen of hearts heels is usually leather.  A queen of hearts heels is usually unique.  The heel-height of a queen of hearts heels is usually 5.
+A queen of hearts heels is a kind of stiletto heels. A queen of hearts heels is usually leather. A queen of hearts heels is usually unique. The heel-height of a queen of hearts heels is usually 5.
 
-The printed name of queen of hearts heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch queen of hearts heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of queen of hearts heels is "qh".
+The printed name of queen of hearts heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch queen of hearts heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of queen of hearts heels is "qh".
 
 There is 1 queen of hearts heels.
 
@@ -22,7 +22,7 @@ To say UniqueShortDesc of (C - a queen of hearts heels):
 	say "queen of hearts heels".
 
 To say ClothingDesc of (C - a queen of hearts heels):
-	say "A unique pair of black leather [heel-height of C] inch stiletto heels that have a pattern on them reminiscent of the suits in a pack of playing cards.  Somehow you can sense that they are flowing with magic power.";
+	say "A unique pair of black leather [heel-height of C] inch stiletto heels that have a pattern on them reminiscent of the suits in a pack of playing cards. Somehow you can sense that they are flowing with magic power.";
 	say "[SteadinessDesc of C]".
 
 Definition: a queen of hearts heels (called C) is product:
@@ -53,3 +53,4 @@ To uniquely set up (C - a queen of hearts heels):
 
 
 Queen of Hearts Heels ends here.
+

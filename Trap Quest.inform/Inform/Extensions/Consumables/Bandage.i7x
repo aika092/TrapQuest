@@ -1,7 +1,7 @@
 Bandage by Consumables begins here.
 
 
-A bandage is a kind of thing. There are 3 bandages.  The printed name of bandage is "[TQlink of item described]bandage[TQxlink of item described][verb-desc of item described]".  The printed plural name of bandage is "[TQlink of item described]bandages[TQxlink of item described][verb-desc of item described]".  The text-shortcut of bandage is "bdg".  The description of bandage is "A crude bandage you managed to scavenge up.".
+A bandage is a kind of thing. There are 3 bandages. The printed name of bandage is "[TQlink of item described]bandage[TQxlink of item described][verb-desc of item described]". The printed plural name of bandage is "[TQlink of item described]bandages[TQxlink of item described][verb-desc of item described]". The text-shortcut of bandage is "bdg". The description of bandage is "A crude bandage you managed to scavenge up.".
 
 bandaging is an action applying to one thing.
 
@@ -31,3 +31,4 @@ Understand "bandage with [something]", "bandage self with [something]" as bandag
 
 
 Bandage ends here.
+

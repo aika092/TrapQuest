@@ -9,15 +9,15 @@ REQUIRES COMMENTING
 @inherits <Thing>
 
 @!]
-A barrier is a kind of thing.  A barrier is not portable. Understand "barrier" as barrier.
+A barrier is a kind of thing. A barrier is not portable. Understand "barrier" as barrier.
 
 [!<CheckGoingWhenThereIsABarrierInTheLocationOfThePlayer>+
 
 REQUIRES COMMENTING
 
 +!]
-Check going when there is a barrier in the location of the player:
-	say "You can't go that way, there is a [random barrier in the location of the player] blocking the exit!" instead.
+Check going when there is a modesty shutter in the location of the player:
+	say "You can't go that way, there is a [random modesty shutter in the location of the player] blocking the exit!" instead.
 
 [!<TheBarriersRaisingRule>+
 
@@ -35,7 +35,7 @@ REQUIRES COMMENTING
 @inherits <Barrier>
 
 @!]
-A modesty shutter is a kind of barrier.  There is 1 modesty shutter.
+A modesty shutter is a kind of barrier. There is 1 modesty shutter.
 
 [!<ComputeRaisingOfModestyShutter>+
 
@@ -60,3 +60,4 @@ To compute raising of (B - a modesty shutter):
 
 
 Barriers ends here.
+

@@ -28,6 +28,10 @@ To uniquely set up (C - a demon tail plug):
 To compute periodic effect of (C - a demon tail plug):
 	let H be a random off-stage demon horns;
 	if H is actually summonable and a random number between 1 and (50 - unlucky * 10 ) is 1:
-		say "[bold type]You feel your hair parting as a pair of felt horns materialise on your head![roman type][line break][variable custom style]This feels like a halloween costume.[roman type][line break]".
+		say "[bold type]You feel your hair parting as a pair of felt horns materialise on your head![line break][variable custom style]This feels like a halloween costume.[roman type][line break]".
+
+Definition: a demon tail plug (called D) is demonic:
+	decide yes.
 
 Demon Tail Plug ends here.
+

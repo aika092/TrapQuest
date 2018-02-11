@@ -6,6 +6,10 @@ A gelatin is a kind of chef food. There is 1 gelatin. Understand "gummy" as gela
 To say JellyDesc:
 		say "[if the quality of the noun > 0]A chunk of gourmet gelatin, moulded into the shape of a rose[otherwise if the quality of the noun > -1]A chunk of gelatin, moulded into a perfect sphere.[otherwise if the quality of the noun > -2 or diaper quest is 1]A soft chunk of cheap gelatin, haphazardly moulded into a sphere.[otherwise]A soft chunk of cheap gelatin. Something is really off about the color. It almost looks like [semen].[end if]". 
 
+
+To say ShortDesc of (C - a gelatin):
+	say "gelatin".
+
 Carry out TQeating gelatin:
 	say "[DevourFlav of the noun]";
 	if the quality of the noun is -2:
@@ -39,3 +43,4 @@ Carry out TQeating gelatin:
 
 
 Gelatin ends here.
+

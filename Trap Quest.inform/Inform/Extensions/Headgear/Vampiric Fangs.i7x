@@ -43,19 +43,19 @@ vampire-summoned is a number that varies.
 To compute class outfit of (H - a vampiric fangs):
 	let C be a random off-stage vampiric claws;
 	let P be a random off-stage vampiric cape;
-	if the headgear chance of H < the threshold of H:
-		if C is actually summonable or (C is vampiric claws and vampire-summoned is 0):
-			if vampire-summoned is 0:
-				repeat with O running through worn slap ready equippables:
-					say "Your [O] vanishes!";
-					destroy O;
-			say "[bold type]You feel your hands shift and warp painfully as your fingernails elongate and sharpen, turning into claws. Your slaps will certainly be more powerful! And, that vampiress told you you'd be able to drain an enemy's energy with these.[roman type][line break]";
-			summon C cursed;
-			now the raw-magic-modifier of C is 0;
-			now vampire-summoned is 1;
-		otherwise if P is actually summonable:
-			say "[bold type]A long, black cape suddenly appears on your back! You feel it making you quicker and more nimble![roman type][line break]";
-			summon P cursed;
-			now the raw-magic-modifier of P is 0.
+	if C is actually summonable or (C is vampiric claws and vampire-summoned is 0):
+		if vampire-summoned is 0:
+			repeat with O running through worn slap ready equippables:
+				say "Your [O] vanishes!";
+				destroy O;
+		say "[bold type]You feel your hands shift and warp painfully as your fingernails elongate and sharpen, turning into claws. Your slaps will certainly be more powerful! And, that vampiress told you you'd be able to drain an enemy's energy with these.[roman type][line break]";
+		summon C cursed;
+		now the raw-magic-modifier of C is 0;
+		now vampire-summoned is 1;
+	otherwise if P is actually summonable:
+		say "[bold type]A long, black cape suddenly appears on your back! You feel it making you quicker and more nimble![roman type][line break]";
+		summon P cursed;
+		now the raw-magic-modifier of P is 0.
 
 Vampiric Fangs ends here.
+

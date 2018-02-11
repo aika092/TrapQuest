@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 @inherits <Trap>
 
 @!]
-A dildo trap is a kind of trap.   A dildo trap is usually potentially wire.  The text-shortcut of a dildo trap is "dt".
+A dildo trap is a kind of trap. A dildo trap is usually potentially wire. The text-shortcut of a dildo trap is "dt".
 
 
 [!<DildoTrap>@<target:TargetEnum>*
@@ -16,7 +16,7 @@ A dildo trap is a kind of trap.   A dildo trap is usually potentially wire.  The
 REQUIRES COMMENTING
 
 *@!]
-A dildo trap can be anal or vaginal.  A dildo trap is usually anal.
+A dildo trap can be anal or vaginal. A dildo trap is usually anal.
 
 [!<YourselfIsDildoStuck>+
 
@@ -34,7 +34,7 @@ REQUIRES COMMENTING
 
 +@!]
 To say ShortDesc of (T - a dildo trap):
-	say "A pole protrudes from a hole in the floor with a dildo on the end.  ".
+	say "A pole protrudes from a hole in the floor with a dildo on the end. ".
 
 
 [!<DildoTrap>@<WhichNumberIsTheGirth>+
@@ -51,7 +51,7 @@ REQUIRES COMMENTING
 
 +@!]
 Check taking off dildo trap:
-	if the noun is penetrating a fuckhole, say "You can't just remove it with all your weight on it.  You're going to have to jump!" instead.
+	if the noun is penetrating a fuckhole, say "You can't just remove it with all your weight on it. You're going to have to jump!" instead.
 
 
 [!<DildoPoleTrap>@<Trigger>+
@@ -106,7 +106,7 @@ To trigger pole trap (Y - a dildo trap):
 			now delayed fainting is 1;
 			now the fainting reason of the player is 5;
 		otherwise:
-			say "A dildo on a pole shoots out of a trap door underneath you and narrowly misses your face.  Phew, that could have been quite ugly...";
+			say "A dildo on a pole shoots out of a trap door underneath you and narrowly misses your face. Phew, that could have been quite ugly...";
 	otherwise:
 		now Y is not untriggered;
 		now Y is revealed;
@@ -121,7 +121,7 @@ To trigger pole trap (Y - a dildo trap):
 		if target-check is 2:
 			if Y is anal, let P be a random thing filling asshole;
 			otherwise let P be a random thing filling vagina;
-			say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [if Y is anal][printed name of random thing filling asshole][otherwise][printed name of random thing filling vagina][end if], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole![end if]";
+			say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [if Y is anal][ShortDesc of random thing filling asshole][otherwise][ShortDesc of random thing filling vagina][end if], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole![end if]";
 			if P is jelldo:
 				do nothing;
 			otherwise if Y is anal:
@@ -153,22 +153,22 @@ To trigger pole trap (Y - a dildo trap):
 						say "You gasp as the dildo goes straight through your [printed name of O] and into your [vagina]!  ";
 						ruin vagina;
 					if O is rippable:
-						say "Your [printed name of O] is now torn at the crotch.";
+						say "Your [ShortDesc of O] is now torn at the crotch.";
 						rip O;
 					otherwise:
-						say "Your [printed name of O] is destroyed.";
+						say "Your [ShortDesc of O] is destroyed.";
 						destroy O;
 				otherwise:
 					if O is diaper:
-						say "The dildo hits the thick padding of your [O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
+						say "The dildo hits the thick padding of your [ShortDesc O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
 						arouse 550;
 					otherwise:
-						say "Your [printed name of O] blocks the dildo which bounces off harmlessly.  The [if O is rigid]material is damaged[otherwise][clothing-material of O] material of the clothing is stretched[end if] a little by the attack.";
+						say "Your [ShortDesc of O] blocks the dildo which bounces off harmlessly. The [if O is rigid]material is damaged[otherwise][clothing-material of O] material of the clothing is stretched[end if] a little by the attack.";
 						damage O;
 						damage O;
 			otherwise:
 				[If there is more than one layer of clothing, then automatic failure]
-				say "It bounces off your [printed name of O] harmlessly!";
+				say "It bounces off your [ShortDesc of O] harmlessly!";
 		otherwise:
 			[If there is nothing blocking, then there's a chance of it hitting the player's huge butt cheeks]
 			let A be a random number between 5 and 12;
@@ -208,7 +208,7 @@ To Jump From The Dildo:
 	if the player is clothing stuck:
 		let C be a random stuck clothing worn by the player;
 		if C is cursed:
-			say "Your [printed name of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
+			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
 		otherwise:
 			say "You can't jump because your [printed name of C] is stuck in place.";
 	otherwise if there are worn heels:
@@ -231,11 +231,11 @@ To Jump From The Dildo:
 			if debugmode is 1, say "[line break]Player [D * 5].5 | [R] Dildo Pole[line break]";
 			if D < R:
 				if Y is penetrating vagina:
-					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][second custom style]Again again![roman type][end if]";
+					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 					ruin vagina;
 					if a random trap penetrating a fuckhole is creampie pole trap, WombFill 2;
 				otherwise:
-					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][second custom style]Again again![roman type][end if]";
+					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 					ruin asshole;
 					if a random trap penetrating a fuckhole is creampie pole trap, assFill 2;
 			otherwise:
@@ -274,7 +274,7 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A dildo pole trap is a kind of dildo trap.  There are 10 dildo pole traps.  The printed name of dildo pole trap is "[TQlink of item described]dildo pole trap[TQxlink of item described][verb-desc of item described]".  The description of a dildo pole trap is "A metal pole with a flesh coloured dildo on the end.  It rises so high up off the ground that even on tip toes you [if item described is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if item described is penetrating vagina][vagina]!  [otherwise][asshole]!  [end if]Maybe if you [bold type]jump[roman type] high enough you can get off it?".
+A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The printed name of dildo pole trap is "[TQlink of item described]dildo pole trap[TQxlink of item described][verb-desc of item described]". The description of a dildo pole trap is "A metal pole with a flesh coloured dildo on the end. It rises so high up off the ground that even on tip toes you [if item described is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if item described is penetrating vagina][vagina]!  [otherwise][asshole]!  [end if]Maybe if you [bold type]jump[roman type] high enough you can get off it?".
 
 [!<TheSpawnInitialDildoPoleTrapsRule>+
 
@@ -301,7 +301,7 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A drill pole trap is a kind of dildo trap.  There are 10 drill pole traps.  The printed name of drill pole trap is "[TQlink of item described]drill pole trap[TQxlink of item described][verb-desc of item described]".  The description of a drill pole trap is "A metal pole with a flesh coloured dildo on the end.  When it is inside you, it spins rapidly!".
+A drill pole trap is a kind of dildo trap. There are 10 drill pole traps. The printed name of drill pole trap is "[TQlink of item described]drill pole trap[TQxlink of item described][verb-desc of item described]". The description of a drill pole trap is "A metal pole with a flesh coloured dildo on the end. When it is inside you, it spins rapidly!".
 
 [!<TheSpawnInitialDrillPoleTrapsRule>+
 
@@ -334,7 +334,7 @@ To trigger (Y - a drill pole trap):
 	trigger pole trap Y;
 	if Y is penetrating a fuckhole:
 		if image cutscenes is 1, compute pole cutscene image of Y;
-		say "After it shoots in, it starts to spin round, pushing its way deeper.  When it is fully inside you, it doesn't stop spinning!".
+		say "After it shoots in, it starts to spin round, pushing its way deeper. When it is fully inside you, it doesn't stop spinning!".
 
 [!<DrillPoleTrap>@<ComputeOrgasmResolution>+
 
@@ -363,20 +363,20 @@ To Jump From The Drill:
 		let R be the soreness of a random fuckhole penetrated by X + (a random number from 2 to 5) - (the relevant sex addiction of X / 4);
 		if the latex-transformation of the player > 3 or the player is not able to get horny or the player is not a bit horny, now R is 99999;
 		if R >= the arousal of the player / 750:
-			say "You jump and the drilling dildo exits you, and thankfully this makes it stop spinning and pushing upwards.  You are able to successfully escape from the [if the sex addiction of the player < 15]torture[otherwise][second custom style]fun ride[roman type][end if]!";
+			say "You jump and the drilling dildo exits you, and thankfully this makes it stop spinning and pushing upwards. You are able to successfully escape from the [if the sex addiction of the player < 15]torture[otherwise][line break][second custom style]fun ride[roman type][line break][end if]!";
 			now busy is 0;
 			now X is not penetrating asshole;
 			now X is not penetrating vagina;
 			now X is expired;
 		otherwise:
 			if the player is very horny:
-				say "You're so desperate for an orgasm that you're finding it difficult to bring yourself to try to jump free.  Try again?";
+				say "You're so desperate for an orgasm that you're finding it difficult to bring yourself to try to jump free. Try again?";
 			otherwise if the player is not a bit horny:
 				say "The extreme spinning of the dildo has left you temporarily stunned and unable to move!  Try again?";
 			otherwise:
-				say "You're currently enjoying the feeling of the spinning dildo too much to bring yourself to jump off it.  Try again?";
+				say "You're currently enjoying the feeling of the spinning dildo too much to bring yourself to jump off it. Try again?";
 	otherwise:
-		say "You can no longer even attempt to gather your thoughts enough to jump from the spinning dildo.  Even if you could, your body is now in a mixture of pain and ecstasy that you are now completely addicted to.  The drilling rubber phallus forces you to have orgasm after shameful orgasm, but quickly your mind goes blank and you white out.";
+		say "You can no longer even attempt to gather your thoughts enough to jump from the spinning dildo. Even if you could, your body is now in a mixture of pain and ecstasy that you are now completely addicted to. The drilling rubber phallus forces you to have orgasm after shameful orgasm, but quickly your mind goes blank and you white out.";
 		now the fainting reason of the player is 17;
 		execute fainting.
 
@@ -389,7 +389,10 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A creampie pole trap is a kind of dildo trap.  There are 10 creampie pole traps.  The printed name of creampie pole trap is "[TQlink of item described][if pregnancy fetish is 1]insemination[otherwise]creampie[end if] pole trap[TQxlink of item described][verb-desc of item described]".  The description of a creampie pole trap is "A metal pole with a flesh coloured dildo on the end.  It has a hole in the tip which shoots [semen] upon successful penetration.[one of]  It rises so high up off the ground that even on tip toes you can't get it out of your [if item described is vaginal][vagina]![otherwise][asshole]![end if][or]  Maybe if you [bold type]jump[roman type] high enough you can get off it?[or][stopping]".  A creampie pole trap is usually father material.  Understand "insemination" as a creampie pole trap.
+A creampie pole trap is a kind of dildo trap. There are 10 creampie pole traps. The printed name of creampie pole trap is "[TQlink of item described][if pregnancy fetish is 1]insemination[otherwise]creampie[end if] pole trap[TQxlink of item described][verb-desc of item described]". The description of a creampie pole trap is "A metal pole with a flesh coloured dildo on the end. It has a hole in the tip which shoots [semen] upon successful penetration.[one of]  It rises so high up off the ground that even on tip toes you can't get it out of your [if item described is vaginal][vagina]![otherwise][asshole]![end if][or]  Maybe if you [bold type]jump[roman type] high enough you can get off it?[or][stopping]". Understand "insemination" as a creampie pole trap.
+
+Definition: a creampie pole trap (called M) is father material:
+	decide yes.
 
 [!<TheSpawnInitialCreampiePoleTrapsRule>+
 
@@ -469,7 +472,7 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A ghostly dildo pole trap is a kind of dildo trap.  There are 10 ghostly dildo pole traps.  The printed name of ghostly dildo pole trap is "[TQlink of item described]ghostly dildo pole trap[TQxlink of item described][verb-desc of item described]".  The description of a ghostly dildo pole trap is "A seemingly incorporeal pole with a translucent dildo on the end.".
+A ghostly dildo pole trap is a kind of dildo trap. There are 10 ghostly dildo pole traps. The printed name of ghostly dildo pole trap is "[TQlink of item described]ghostly dildo pole trap[TQxlink of item described][verb-desc of item described]". The description of a ghostly dildo pole trap is "A seemingly incorporeal pole with a translucent dildo on the end.".
 
 [!<TheSpawnInitialGhostlyDildoPoleTrapsRule>+
 
@@ -493,7 +496,7 @@ To trigger (Y - a ghostly dildo pole trap):
 	now the motion of the player is 0;
 	now the reset-timer of Y is 250;
 	if the player is prone:
-		say "A ghostly dildo on a pole shoots out of a trap door underneath you and passes straight through your body.  That was weird...";
+		say "A ghostly dildo on a pole shoots out of a trap door underneath you and passes straight through your body. That was weird...";
 	otherwise:
 		now Y is not untriggered;
 		now Y is revealed;
@@ -549,3 +552,4 @@ To compute orgasm resolution of (R - a ghostly dildo pole trap):
 
 
 Dildo Pole Trap ends here.
+

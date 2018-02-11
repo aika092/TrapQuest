@@ -1,6 +1,6 @@
 Zip Tattoo by Tattoos begins here.
 
-zip tattoo is a kind of crotch tattoo.  Figure of zip tattoo is the file "tattoo19.png".  There is 1 zip tattoo.
+zip tattoo is a kind of crotch tattoo. Figure of zip tattoo is the file "tattoo19.png". There is 1 zip tattoo.
 Definition: a zip tattoo (called T) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if the player is male, decide no;
@@ -14,3 +14,4 @@ To say tattoo-desc of (T - a zip tattoo):
 	say "A tattoo of a zip, mostly opened, surrounds your [vagina].".
 
 Zip Tattoo ends here.
+

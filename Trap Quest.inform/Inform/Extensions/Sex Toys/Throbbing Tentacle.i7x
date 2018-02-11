@@ -1,6 +1,6 @@
 Throbbing Tentacle by Sex Toys begins here.
 
-A throbbing-tentacle is a kind of dong. There is one unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
+A throbbing-tentacle is a kind of dong. There is one unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
 
 To say ClothingDesc of (C - a throbbing-tentacle):
 	say "[if the player is wearing a throbbing-tentacle]You can barely see the end of the Master sticking out of you, slowly waving.[otherwise]Your Master, presently no longer in his home. You feel empty without him in your hole.[end if]".
@@ -18,15 +18,19 @@ Definition: a throbbing-tentacle (called T) is removable:
 	decide no.
 		
 To compute periodic effect of (P - a throbbing-tentacle):
-	if a random number between 1 and 20 is 1 and the player is able to get horny:
-		say "The tentacle inside you once again pushes itself to its limits and begins to vibrate. [first custom style]'I will reward you once again, [whore].'[roman type] What little mind you have left is quickly blown aside by the sensations coming from the tentacle! [first custom style]'Come, [slut]. Now.'[roman type] You find yourself gleefully obeying!";
-		if the player is male:
-			anally orgasm shamefully;
-		otherwise:
-			vaginally orgasm shamefully.
+	increase the toy-charge of P by 1;
+	if the toy-charge of P > 30:
+		now the toy-charge of P is 0;
+		if the player is able to get horny:
+			say "The tentacle inside you once again pushes itself to its limits and begins to vibrate. [line break][first custom style]'I will reward you once again, [whore].'[roman type][line break]What little mind you have left is quickly blown aside by the sensations coming from the tentacle! [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
+			if the player is male:
+				anally orgasm shamefully;
+			otherwise:
+				vaginally orgasm shamefully.
 
 To uniquely set up (P - a throbbing-tentacle):
 	do nothing.[No enchantments here!]
 
 
 Throbbing Tentacle ends here.
+

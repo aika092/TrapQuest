@@ -1,6 +1,6 @@
 Bib by Accessories begins here.
 
-A bib is a kind of clothing.  A pink purple bib is a kind of bib.  There is 1 unique cotton pink purple bib. Printed name of pink purple bib is "[TQlink of item described][clothing-title-before]pink and purple bib[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "pink and purple" as pink purple bib.  Understand "bi" as bib. The soak-limit of a bib is usually 15.
+A bib is a kind of clothing. A pink purple bib is a kind of bib. There is 1 unique cotton pink purple bib. Printed name of pink purple bib is "[TQlink of item described][clothing-title-before]pink and purple bib[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "pink and purple" as pink purple bib. Understand "bi" as bib. The soak-limit of a bib is usually 15.
 
 Figure of pink bib is the file "bib1.png".
 
@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a bib):
 	decide on figure of pink bib.
 
 To say ClothingDesc (C - a bib):
-	say "A large soft bib with a drawing of a cartoon animal dancing on the front.  [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
+	say "A large soft bib with a drawing of a cartoon animal dancing on the front. [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
 To say ShortDesc (C - a bib):
 	say "large soft bib".
 
@@ -30,3 +30,4 @@ To decide which number is the initial cringe of (C - a bib):
 	decide on 13.
 
 Bib ends here.
+

@@ -1,10 +1,19 @@
 Ghost by Monster begins here.
 
-A ghost is a kind of monster. A ghost is usually male. A ghost has a number called bank. The bank of a ghost is usually 120. A ghost has a number called wind-up.  The wind-up of a ghost is usually 0. A ghost is usually willing to do oral.  A ghost is usually willing to do anal.  A ghost is usually willing to do vaginal.  [A ghost is usually willing to do titfucks.] A ghost is usually mansion dwelling. A ghost is poison immune. A ghost is usually father material. A ghost can be phased or unphased.
+A ghost is a kind of monster. A ghost has a number called bank. The bank of a ghost is usually 120. A ghost has a number called wind-up. The wind-up of a ghost is usually 0. The poison-status of a ghost is -1. A ghost can be phased or unphased. A ghost is male.
 
-The printed name of ghost is usually "[input-style]ghost[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type]".  The description of ghost is usually "[GhostDesc]".  The text-shortcut of ghost is "pe". Understand "ghost", "dick", "cock", "penis" as a ghost.
+Definition: a ghost (called M) is willing to do titfucks:
+	decide no.
 
-A jismbodied ghost is a kind of ghost. There is 1 jismbodied ghost. The printed name of a jismbodied ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]disembodied ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of jismbodied ghost is "dis".  Understand "disembodied", "jism", "dism", "jis" as jismbodied ghost. The bank of a jismbodied ghost is usually 180.
+Definition: a ghost (called M) is father material:
+	decide yes.
+
+Definition: A ghost (called M) is mansion dwelling:
+	decide yes.
+
+The printed name of ghost is usually "[input-style]ghost[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type]". The description of ghost is usually "[GhostDesc]". The text-shortcut of ghost is "pe". Understand "ghost", "dick", "cock", "penis" as a ghost.
+
+A jismbodied ghost is a kind of ghost. There is 1 jismbodied ghost. The printed name of a jismbodied ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]disembodied ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of jismbodied ghost is "dis". Understand "disembodied", "jism", "dism", "jis" as jismbodied ghost. The bank of a jismbodied ghost is usually 180.
 
 A perverted ghost is a kind of ghost. There is 1 perverted ghost. The printed name of a perverted ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]perverted ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of perverted ghost is "per".
 A haunty ghost is a kind of ghost. There is 1 haunty ghost. The printed name of a haunty ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]horny ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of haunty ghost is "hau". Understand "horny" as haunty ghost.
@@ -57,10 +66,7 @@ To decide which number is the girth of (M - a ghost):
 	decide on 3.
 
 This is the spawn initial ghosts rule:
-	if diaper quest is 1:
-		repeat with M running through ghosts:
-			now M is not mansion dwelling;[Consider replacing ghosts with floating pacifiers, maybe?]
-	otherwise if the number of alive ghosts is 0:
+	if the number of alive ghosts is 0 and diaper quest is 0:
 		let M be a random off-stage jismbodied ghost;
 		set up M;
 		summon M in the mansion.
@@ -105,7 +111,7 @@ To compute unique final action of (M - a ghostly tentacle):
 	do nothing.
 
 To say SummoningFlav of (M - a ghost):
-	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if trap fetish is 0]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediately [if bukkake fetish is 1 and trap fetish is 1]ejaculates all over her face[otherwise if trap fetish is 1]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if].  The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if trap fetish is 0]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediately [if bukkake fetish is 1 and trap fetish is 1]ejaculates all over her face[otherwise if trap fetish is 1]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
 To say he of (M - a ghost):
@@ -132,7 +138,6 @@ To compute labour to (M - a ghost):
 	repeat with N running through ghosts:
 		unless N is ghostly tentacle:
 			set up N;
-			now N is anal;
 			now N is not penetrating asshole;
 			now N is not penetrating vagina;
 			now N is in the location of the player;
@@ -440,7 +445,7 @@ To compute ectoplasm to (M - a ghost):
 		say "[if bukkake fetish is 1]You hear a sound similar to a fire hydrant being smashed open somewhere else in the mansion[otherwise]You hear a loud crash somewhere else in the mansion[end if][line break]";
 	now the wind-up of M is 0.
 
-The ghost priority attack rules is a rulebook.  The priority attack rules of a ghost is usually the ghost priority attack rules.
+The ghost priority attack rules is a rulebook. The priority attack rules of a ghost is usually the ghost priority attack rules.
 
 [This is the ghosts are patient rule:
 	if current-monster is objectifying the player and current-monster is not unfriendly:
@@ -499,7 +504,7 @@ To say MonsterTrippedFlav of (M - a ghost):
 		say "They grab your [printed name of C] and yank straight down, pulling them off you and sweeping you off your feet in one fluid motion!";
 		now C is in the location of the player;
 	otherwise:
-		say "They grab handfuls of your hair and yank straight down! You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance.  You[otherwise if the largeness of hair > 7]but your long hair gives the [M] too much extra leverage.  You[otherwise]and[end if] fall to the ground!".
+		say "They grab handfuls of your hair and yank straight down! You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise if the largeness of hair > 7]but your long hair gives the [M] too much extra leverage. You[otherwise]and[end if] fall to the ground!".
 
 To say MonsterFailedTripFlav of (M - a ghost):
 	let C be a random worn displacable trousers;
@@ -632,11 +637,11 @@ To say damage-flavour of (N - a number) on (M - a ghost):
 	otherwise if N is 2:
 		say "That felt quite weak, but hopefully it hurt a bit.";
 	otherwise if N < 5:
-		say "The [M] blurs at the edges from your attack.  A respectable hit!";
+		say "The [M] blurs at the edges from your attack. A respectable hit!";
 	otherwise if N < 7:
-		say "The [M] flinches from the hit, blurring at the edges.  A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
+		say "The [M] flinches from the hit, blurring at the edges. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
 	otherwise if N < 9:
-		say "Wow, that one sent the [M] back a couple feet.  A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
+		say "Wow, that one sent the [M] back a couple feet. A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 	otherwise:
 		say "POW!  Your attack is accompanied by a loud sound and sends the [M] flying across the room!  An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!".
 
@@ -682,7 +687,10 @@ To compute unique death of (M - a ghost):
 
 Part 3 - Ghostly Tentacle
 
-A ghostly tentacle is a kind of ghost. There is 1 ghostly tentacle. The printed name of a ghostly tentacle is "[if item described is in the location of the player][TQlink of item described][end if][input-style]phantom tentacle[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". A ghostly tentacle has a number called holeCount. The holeCount of a ghostly tentacle is usually 0. Understand "phantom" as ghostly tentacle. The bank of a ghostly tentacle is usually 3. A ghostly tentacle is usually not father material.
+A ghostly tentacle is a kind of ghost. There is 1 ghostly tentacle. The printed name of a ghostly tentacle is "[if item described is in the location of the player][TQlink of item described][end if][input-style]phantom tentacle[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". A ghostly tentacle has a number called holeCount. The holeCount of a ghostly tentacle is usually 0. Understand "phantom" as ghostly tentacle. The bank of a ghostly tentacle is usually 3.
+
+Definition: a ghostly tentacle (called M) is father material:
+	decide no.
 
 To set up (M - a ghostly tentacle):
 	reset M;
@@ -792,3 +800,4 @@ To say MonsterFailedTripFlav of (M - a ghostly tentacle):
 
 
 Ghost ends here.
+

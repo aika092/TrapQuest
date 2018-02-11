@@ -16,6 +16,16 @@ REQUIRES COMMENTING
 Check kneeling while gloryhole is grabbing the player:
 	say  "[if seconds is 0]You can't move![end if]" instead.
 
+
+[!<CheckKneelingWhileThePlayerIsDildoStuck>+
+
+REQUIRES COMMENTING
+
++!]
+Check kneeling while the player is dildo stuck:
+	say  "[if seconds is 0]You can't move![end if]" instead.
+
+
 [!<CheckKneelingWhileThePlayerIsImmobile>+
 
 REQUIRES COMMENTING
@@ -50,7 +60,7 @@ Check kneeling:
 		otherwise:
 			say "You are already kneeling!" instead;
 	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 12 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player:
-		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet. [first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
+		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet. [line break][first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
 	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 10 and the bimbo of the player < 8 and the player is in danger and the player is not very horny and the delicateness of the player < 4:
 		say "[variable custom style]No way, I'm fighting until I drop![roman type][line break]" instead.
 
@@ -63,7 +73,7 @@ Carry out kneeling:
 	now the stance of the player is 1;
 	repeat with X running through open topped vessels carried by the player:
 		if the doses of X > 0 and a random number between 1 and the dexterity of the player < 4 and seconds > 0:
-			say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20].  What a waste[end if]!";
+			say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
 			now the doses of X is 0;
 	if seconds > 0 and the class of the player is maid and there is a worn spray pink spraybottle:
 		compute a random pink spraybottle breaking;
@@ -75,7 +85,7 @@ Carry out kneeling:
 	otherwise if R < 8:
 		say "[bold type]You are now on your knees[if a random number between 1 and 6 is 1] once again[end if].[roman type][line break]";
 	otherwise if R < 11:
-		say "[if a random number between 1 and 6 is 1][variable custom style]I'm on my knees again![otherwise][bold type]You are now on your knees.[end if][roman type][line break]";
+		say "[if a random number between 1 and 6 is 1][line break][variable custom style]I'm on my knees again![otherwise][bold type][line break]You are now on your knees.[end if][roman type][line break]";
 	otherwise:
 		say "[bold type]You are now on your knees,[roman type] like a good little [if diaper quest is 1]baby[otherwise]slut[end if].[line break]";
 	if [the player is in the mansion and ]the slime-puddle of the location of the player > 0:
@@ -124,10 +134,10 @@ Understand "kneel", "kneel down", "crawl", "prone", "drop me", "kn" as kneeling.
 
 Report kneeling when the player is in danger and seconds > 1: [This is where we output the reaction of a dominant monster to you conceding a fight before it's over.]
 	let N be nothing;
-	if there is an intelligent dangerous monster in the location of the player, now N is a random intelligent dangerous monster in the location of the player; [We only compute the reaction of one enemy.  We prioritise the reaction of intelligent monsters as they probably have a more interesting response.]
+	if there is an intelligent dangerous monster in the location of the player, now N is a random intelligent dangerous monster in the location of the player; [We only compute the reaction of one enemy. We prioritise the reaction of intelligent monsters as they probably have a more interesting response.]
 	otherwise now N is a random dangerous monster in the location of the player;
 	compute correct kneeling reaction of N;
-	if the class of the player is princess, humiliate 20;
+	if the class of the player is princess, humiliate SLIGHT-HUMILIATION - TRIVIAL-HUMILIATION;
 	if newbie tips is 1 and the soreness of asshole > 5 or the soreness of vagina > 5, say "[one of][item style]Newbie tip: You could always try 'offer mouth' to avoid your sore holes getting any sorer!  Of course, it'll increase humiliation, and there's a chance it won't work.[roman type][line break][or][stopping]";
 	repeat with M running through dangerous monsters in the location of the player:
 		make M expectant. [Here we note that the monster is expectantly waiting to see if the player offers up a particular orifice.]
@@ -137,16 +147,17 @@ To compute correct kneeling reaction of (M - a monster):
 	otherwise compute kneeling reaction of M.
 
 To compute DQ kneeling reaction of (M - a monster): [Default boring reaction if none is defined.]
-	if M is intelligent, say "The [M] grins.[if the humiliation of the player < 30000]You shiver with shame.[end if]";
-	otherwise say "The [M] watches you, expressionless.[if the humiliation of the player < 30000]You shudder with shame.[end if]";	
-	humiliate 75.
+	if M is intelligent, say "The [M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
+	otherwise say "The [M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";	
+	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 To compute kneeling reaction of (M - a monster): [Default boring reaction if none is defined.]
-	if M is intelligent, say "The [M] grins.[if the humiliation of the player < 30000]You shiver with shame.[end if]";
-	otherwise say "The [M] watches you, expressionless.[if the humiliation of the player < 30000]You shudder with shame.[end if]";	
-	humiliate 75.
+	if M is intelligent, say "The [M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
+	otherwise say "The [M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";	
+	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 
 
 
 Kneeling ends here.
+

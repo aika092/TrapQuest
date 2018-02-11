@@ -34,11 +34,11 @@ REQUIRES COMMENTING
 +!]
 To say ClothesDescription:
 	if the player is naked:
-		say "You are completely naked.  [if the bimbo of the player > 6 and diaper quest is 1][variable custom style]I'm going to get in trouble![roman type]  [otherwise if the humiliation of the player > 15000 and the humiliation of the player < 40000][second custom style]How naughty![roman type]  [end if]";
+		say "You are completely naked. [if the bimbo of the player > 6 and diaper quest is 1][line break][variable custom style]I'm going to get in trouble![roman type][line break][otherwise if the humiliation of the player > 15000 and the humiliation of the player < 40000][line break][second custom style]How naughty![roman type][line break][end if]";
 	if the latex-transformation of the player >= 7:
 		say "You are unable to speak due to your latex mouth being kept in a permanent O-shape";
 	if there is a worn cowbell:
-		say "A loud clanging accompanies your movement thanks to a cowbell attached to your neck.  ";
+		say "A loud clanging accompanies your movement thanks to a cowbell attached to your neck. ";
 	repeat with S running through worn shoes:
 		compute SelfExamineDesc of S;
 	repeat with B running through worn bondage:
@@ -47,7 +47,7 @@ To say ClothesDescription:
 		compute SelfExamineDesc of O;
 	repeat with S running through worn skirts:
 		compute SelfExamineDesc of S;
-	if a random stethoscope is worn by the player, say "You have a fancy looking stethoscope hanging around your neck.  ";
+	if a random stethoscope is worn by the player, say "You have a fancy looking stethoscope hanging around your neck. ";
 	if there is a worn tattoo:
 		let images-saved be images visible;
 		now choice in row 2 of the Table of Settings is 0; [we temporarily disable images so we can use the descriptions of tattoos.]
@@ -55,7 +55,7 @@ To say ClothesDescription:
 			say "[tattoo-desc of T]";
 		now choice in row 2 of the Table of Settings is images-saved;
 	if the player is glue stuck:
-		say "Oh.  And you've also managed to glue yourself to the floor.";
+		say "Oh. And you've also managed to glue yourself to the floor.";
 	if debugmode is 1, explain appearance.
 
 [!<SayPregDescription>+
@@ -77,11 +77,11 @@ REQUIRES COMMENTING
 To say OptionalDescription:
 	if the pregnancy of the player > 0, say "You are currently carrying [PregDescription].[if the latex-transformation of the player > 0 or the pregnancy of the player is 2]The pregnancy doesn't seem to be growing any bigger.[end if]";
 	if the player is glue stuck:
-		say "You are embedded in a mass of stretchy glue holding you helplessly down on the ground.  ";
+		say "You are embedded in a mass of stretchy glue holding you helplessly down on the ground. ";
 	if the player is drill stuck:
 		say "You are stuck on a spinning drill!  [if the latex-transformation of the player < 4]Your poor fuckhole is getting more and more sore by the second!  [end if]";
 	if the player is pole stuck:
-		say "You are stuck on a dildo!  [if the latex-transformation of the player < 3]Your hole is getting stretched further and further.  [end if]";
+		say "You are stuck on a dildo!  [if the latex-transformation of the player < 3]Your hole is getting stretched further and further. [end if]";
 	if the player is hook stuck:
 		say "An ass hook is pulling your [asshole] apart from the inside!  ";
 	if the player is horse stuck:
@@ -91,11 +91,11 @@ To say OptionalDescription:
 			say "Vines are holding you still and fucking your [if the player is male][asshole]!  [otherwise][vagina]!  [end if]";
 		otherwise:
 			if the player is upright, say "Vines are holding your ankles still!  ";
-			otherwise say "Vines are holding your wrists and ankles down, keeping you on your knees.  ";
+			otherwise say "Vines are holding your wrists and ankles down, keeping you on your knees. ";
 	otherwise if the player is monster fucked:
-		say "The [random monster penetrating a body part] is [if diaper quest is 1]punishing you[otherwise][one of]having fun with your body[or]using your body as a playground[or]currently defiling your body[at random][end if].  ";
+		say "The [random monster penetrating a body part] is [if diaper quest is 1]punishing you[otherwise][one of]having fun with your body[or]using your body as a playground[or]currently defiling your body[at random][end if]. ";
 	otherwise if there is a monster grabbing the player:
-		say "The [random monster grabbing the player] [if diaper quest is 1]is punishing you[otherwise][GrabStatus of a random monster grabbing the player][end if].  ";
+		say "The [random monster grabbing the player] [if diaper quest is 1]is punishing you[otherwise][GrabStatus of a random monster grabbing the player][end if]. ";
 	if diaper quest is 1, say "[PerceivedAdultDesc][InternalsDesc][SorenessDesc]";
 	otherwise say "[PerceivedBimboDesc][InternalsDesc][SorenessDesc][line break][StatusDesc][BimboDesc]".
 
@@ -109,3 +109,4 @@ To say GrabStatus of (M - a monster):
 
 
 Overall Description ends here.
+

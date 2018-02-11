@@ -1,11 +1,11 @@
 Ribbon Bra by Bra begins here.
 
 
-A ribbon bra is a kind of bra.  Figure of ribbon bra is the file "ribbonbra1.png".  A ribbon bra is usually nipple exposing.  A ribbon bra is ridiculously low cut. A ribbon bra is usually optional-top-displacable. The soak-limit of a ribbon bra is usually 9.  A ribbon bra is usually unique.
+A ribbon bra is a kind of bra. Figure of ribbon bra is the file "ribbonbra1.png". A ribbon bra is usually nipple exposing. A ribbon bra is ridiculously low cut. A ribbon bra is usually optional-top-displacable. The soak-limit of a ribbon bra is usually 9. A ribbon bra is usually unique.
 
-There is 1 ribbon bra.  The text-shortcut of ribbon bra is "rib".
+There is 1 ribbon bra. The text-shortcut of ribbon bra is "rib".
 
-The min size of a ribbon bra is usually 4.  The max size of a ribbon bra is usually 13.  The support of a ribbon bra is usually 1.
+The min size of a ribbon bra is usually 4. The max size of a ribbon bra is usually 13. The support of a ribbon bra is usually 1.
 
 To say ShortDesc of (B - a ribbon bra):
 	say "ribbon bra".
@@ -27,14 +27,14 @@ To compute SelfExamineDesc of (B - a ribbon bra):
 			say " that fit tightly inside the constraints of ";
 		otherwise if Y < X - 1:
 			say " that are overflowing out of the constraints of ";
-	say "your red ribbon bra, keeping your nipples exposed.  ".
+	say "your red ribbon bra, keeping your nipples exposed. ".
 
 
 To decide which figure-name is clothing-image of (C - a ribbon bra):
 	decide on figure of ribbon bra.
 
 To say ClothingDesc of (C - a ribbon bra):
-	say "This bra provides little support, and since the cups are simply two black ribbons across the nipples, reveals a lot of flesh, including the nipples themselves which are framed by a metal ring.  [if lactation fetish is 1]However because of its design in this way, it doesn't get soaked by lactating nipples.[otherwise]You're not really sure what the benefit is to wearing this kind of bra.[end if]";
+	say "This bra provides little support, and since the cups are simply two black ribbons across the nipples, reveals a lot of flesh, including the nipples themselves which are framed by a metal ring. [if lactation fetish is 1]However because of its design in this way, it doesn't get soaked by lactating nipples.[otherwise]You're not really sure what the benefit is to wearing this kind of bra.[end if]";
 	
 To decide which number is the original price of (C - a ribbon bra):
 	decide on 1.
@@ -51,3 +51,4 @@ Definition: a ribbon bra (called C) is bow themed:
 
 
 Ribbon Bra ends here.
+

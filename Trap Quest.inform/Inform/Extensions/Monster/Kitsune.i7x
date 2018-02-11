@@ -1,6 +1,9 @@
 Kitsune by Monster begins here.
 
-A kitsune is a kind of monster. A kitsune is usually intelligent. There is 1 kitsune. A kitsune is usually female. A kitsune is usually mansion dwelling. A kitsune has a number called vanish timer. The vanish timer of a kitsune is usually -1. A kitsune has a number called times-revealed. The times-revealed of a kitsune is usually 0. A kitsune has a number called special-gifted. The special-gifted of a kitsune is usually 0.  A kitsune has a monster called target-disguise. Understand "vampiress", "seductive" as kitsune when the target-disguise of the item described is vampiress. Understand "cultist", "acolyte", "ardent" as kitsune when the target-disguise of the item described is acolyte.
+A kitsune is a kind of monster. A kitsune is usually intelligent. There is 1 kitsune. A kitsune has a number called vanish timer. The vanish timer of a kitsune is usually -1. A kitsune has a number called times-revealed. The times-revealed of a kitsune is usually 0. A kitsune has a number called special-gifted. The special-gifted of a kitsune is usually 0. A kitsune has a monster called target-disguise. Understand "vampiress", "seductive" as kitsune when the target-disguise of the item described is vampiress. Understand "cultist", "acolyte", "ardent" as kitsune when the target-disguise of the item described is acolyte.
+
+Definition: A kitsune (called M) is mansion dwelling:
+	decide yes.
 
 The printed name of kitsune is usually "[KitsuneName]".
 
@@ -68,7 +71,7 @@ Section 1 - Damage
 To compute damage of (M - a kitsune):
 	if the health of M > 0:
 		if M is uninterested and the target-disguise of M is not M:
-			say "The [printed name of M] suddenly shimmers and disappears in a puff of pink smoke! [speech style of M]'[if the times-revealed of M is 0]Oh my, you saw through my disguise! I'm so impressed, stranger! Say, you look like an adventurer of wealth and taste. If you come across anything particularly shiny and impressive in your quest, I'd be very interested. I might just have some... interesting items that could be of use to you.'[otherwise]Ah, hello again! My offer still stands, your shiny things for my favour, and valuable rewards!'[end if][roman type][line break]";
+			say "The [printed name of M] suddenly shimmers and disappears in a puff of pink smoke! [line break][speech style of M]'[if the times-revealed of M is 0]Oh my, you saw through my disguise! I'm so impressed, stranger! Say, you look like an adventurer of wealth and taste. If you come across anything particularly shiny and impressive in your quest, I'd be very interested. I might just have some... interesting items that could be of use to you.'[otherwise]Ah, hello again! My offer still stands, your shiny things for my favour, and valuable rewards!'[end if][roman type][line break]";
 			now M is interested;
 			reveal disguise of M;
 			increase the times-revealed of M by 1;
@@ -186,3 +189,4 @@ To compute offer reward of (M - a kitsune) for (T - a thing):
 
 
 Kitsune ends here.
+

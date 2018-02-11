@@ -1,8 +1,8 @@
 Magic State by Clothing begins here.
 
 Understand the magic-type property as describing a clothing when the item described is identified.
-A clothing has a curse-ID.  A clothing is usually unsure.
-A clothing has a magic-curse.  Understand the magic-curse property as describing a clothing when item described is sure.  Clothing is usually bland.
+A clothing has a curse-ID. A clothing is usually unsure.
+A clothing has a magic-curse. Understand the magic-curse property as describing a clothing when item described is sure. Clothing is usually bland.
 Definition: a clothing is uncursed if it is not cursed.
 Definition: a clothing is unblessed if it is not blessed.
 Definition: a thing (called C) is cursable:
@@ -19,7 +19,7 @@ Definition: an accessory (called C) is cursable:
 	otherwise:
 		say "You feel [one of]a coolness from the [B][or]the [B] vibrates for a moment[or]the [B] pulses[at random]. ";
 		now B is bland.
-	Aika: Maybe if we'd done that 4 years ago.  It's too core a function used by a lot of other functions that assume it's going to stay silent.
+	Aika: Maybe if we'd done that 4 years ago. It's too core a function used by a lot of other functions that assume it's going to stay silent.
 ]
 To curse (B - a thing):
 	if B is not blessed, now B is cursed;
@@ -55,3 +55,4 @@ To say raw-magic-modifier-desc:
 
 
 Magic State ends here.
+

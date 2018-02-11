@@ -9,14 +9,14 @@ REQUIRES COMMENTING
 @inherits <Limb>
 
 @!]
-thighs is a limb.  thighs is everywhere. The description of thighs is "[if weight gain fetish is 1 or the semen coating of thighs > 0][TotalDesc of thighs][otherwise]There's nothing interesting to note about your thighs.[end if]".
+thighs is a limb. thighs is everywhere. The description of thighs is "[if weight gain fetish is 1 or the semen coating of thighs > 0][TotalDesc of thighs][otherwise]There's nothing interesting to note about your thighs.[end if]".
 
 [!<Thighs>@<fleshVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-thighs has a number called flesh volume.  the flesh volume of thighs is 0.
+thighs has a number called flesh volume. the flesh volume of thighs is 0.
 
 Understand "thigh", "leg", "legs" as thighs.
 
@@ -43,7 +43,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ShortDesc of (T - thighs):
-	say "[if the semen coating of thighs > 6]cum coated [otherwise if the semen coating of thighs > 0]cum splashed [end if]thighs".
+	say "[if the semen coating of thighs > 6]cum-coated [otherwise if the semen coating of thighs > 0]cum-splashed [end if]thighs".
 
 [!<SayLongDescOfThighs>+
 
@@ -73,13 +73,13 @@ REQUIRES COMMENTING
 
 +!]
 To say TotalDesc of thighs:
-	if weight gain fetish is 1 or the semen coating of thighs > 0, say "Supporting your body you have [LongDesc of thighs][if the semen coating of thighs is 0].  [end if]";
+	if weight gain fetish is 1 or the semen coating of thighs > 0, say "Supporting your body you have [LongDesc of thighs][if the semen coating of thighs is 0]. [end if]";
 	if the semen coating of thighs > 7:
-		say " that are completely caked in [if the semen addiction of the player < 6]nasty, [end if]slimy [semen].  ";
+		say " that are completely caked in [if the semen addiction of the player < 6]nasty, [end if]slimy [semen]. ";
 	otherwise if the semen coating of thighs > 4:
-		say " that squelch together [if the semen addiction of the player < 6]horribly [end if]as you [if the player is upright]walk[otherwise]crawl[end if].  ";
+		say " that squelch together [if the semen addiction of the player < 6]horribly [end if]as you [if the player is upright]walk[otherwise]crawl[end if]. ";
 	otherwise if the semen coating of thighs > 0:
-		say " that have [semen] slowly trickling down them as you [if the player is upright]walk[otherwise]crawl[end if].  ".
+		say " that have [semen] slowly trickling down them as you [if the player is upright]walk[otherwise]crawl[end if]. ".
 
 Part 3 - Modify Thighs Stats
 
@@ -93,7 +93,7 @@ To FatThighsUp (X - a number):
 	while X > 0 and weight gain fetish is 1:
 		if the flesh volume of thighs < 10, increase the flesh volume of thighs by 1;
 		decrease X by 1;
-		if newbie tips is 1 and the flesh volume of thighs > 2, say "[one of][item style]Newbie tip: Your thighs are getting quite thick!  That's making you heavier and therefore you'll tire out faster.  However, it is fully reversible!  Lots of things exercise fat away from your thighs, including fighting enemies and drinking milk.[roman type][line break][or][stopping]".
+		if newbie tips is 1 and the flesh volume of thighs > 2, say "[one of][item style]Newbie tip: Your thighs are getting quite thick!  That's making you heavier and therefore you'll tire out faster. However, it is fully reversible!  Lots of things exercise fat away from your thighs, including fighting enemies and drinking milk.[roman type][line break][or][stopping]".
 
 [!<FatThighsDownX>+
 
@@ -106,3 +106,4 @@ To FatThighsDown (X - a number):
 		decrease X by 1.
 
 Thighs ends here.
+

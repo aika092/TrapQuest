@@ -7,3 +7,4 @@ A time based rule (this is the compute clothing rule):
 		compute periodic effect of C.
 
 Periodical Clothing Effects ends here.
+

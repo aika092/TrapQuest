@@ -6,28 +6,28 @@ Puddles by Rooms begins here.
 REQUIRES COMMENTING
 
 *@!]
-A room has a number called semen-puddle.  The semen-puddle of a room is usually 0.
+A room has a number called semen-puddle. The semen-puddle of a room is usually 0.
 
 [!<Room>@<urinePuddle:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-A room has a number called urine-puddle.  The urine-puddle of a room is usually 0.
+A room has a number called urine-puddle. The urine-puddle of a room is usually 0.
 
 [!<Room>@<milkPuddle:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-A room has a number called milk-puddle.  The milk-puddle of a room is usually 0.
+A room has a number called milk-puddle. The milk-puddle of a room is usually 0.
 
 [!<Room>@<sprinklePuddle:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-A room has a number called sprinkle-puddle.  The sprinkle-puddle of a room is usually 0.
+A room has a number called sprinkle-puddle. The sprinkle-puddle of a room is usually 0.
 
 [!<Room>@<slimePuddle:Integer>*
 
@@ -35,7 +35,7 @@ REQUIRES COMMENTING
 
 *@!]
 A room has a number called slime-puddle. The slime-puddle of a room is usually 0.
-A room can be glue-puddled.  A room is usually not glue-puddled.  
+A room can be glue-puddled. A room is usually not glue-puddled. 
 Definition: A room is glue-puddled if a glue is in it. [One approach might be to let the glue-puddle be a number, and use that to represent how sticky it is; but since the stickiness of the player is already being used to do that, I *think* it makes sense to use that instead.]
 
 
@@ -148,7 +148,7 @@ A time based rule (this is the sticky decay rule):
 	let WasGlued be 0;
 	if the stickiness of the player > 0:
 		if the player is glue stuck:
-			[They're supposed to pull free.  But let's be kind and say the glue does eventually weaken for some reason.  Just much slower than ghost jizz. Maybe allow them to pee on it to weaken it faster?]
+			[They're supposed to pull free. But let's be kind and say the glue does eventually weaken for some reason. Just much slower than ghost jizz. Maybe allow them to pee on it to weaken it faster?]
 			now WasGlued is 1;
 			[###Selkie: Aika set this to 1, not 5; and may be right. But I want to try instead having a slower decay of stickiness for rounds in which nothing happens, so they get more fetishy rounds of struggling and squirming trying to get free. The stickiness now reduces more readily each round that something happens. And if a monster encounters them, the stickiness also reduces by 1, then.]
 			if a random number between 1 and [1]5 is 1:
@@ -170,16 +170,16 @@ REQUIRES COMMENTING
 +!]
 To say PuddleDesc:
 	repeat with S running through revealed sprinkle traps in the location of the player:
-		if S is expired, say "Inactive sprinklers hangs from the ceiling.  There is a fine layer of [SprinkleLiquid of S] on the floor here.  ";
-		otherwise say "Sprinklers in the ceiling are covering everything with a fine layer of [SprinkleLiquid of S].  ";
+		if S is expired, say "Inactive sprinklers hangs from the ceiling. There is a fine layer of [SprinkleLiquid of S] on the floor here. ";
+		otherwise say "Sprinklers in the ceiling are covering everything with a fine layer of [SprinkleLiquid of S]. ";
 	if the semen-puddle of the location of the player > 0:
-		if the semen-puddle of the location of the player <= 20, say "There is a [if the semen-puddle of the location of the player > 12]very large puddle[otherwise if the semen-puddle of the location of the player > 7]large puddle[otherwise if the semen-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [semen] in the middle of this room.  ";
+		if the semen-puddle of the location of the player <= 20, say "There is a [if the semen-puddle of the location of the player > 12]very large puddle[otherwise if the semen-puddle of the location of the player > 7]large puddle[otherwise if the semen-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [semen] in the middle of this room. ";
 		otherwise say "[if the semen-puddle of the location of the player < 30]Most of the floor of this room is covered in [semen].[otherwise if the semen-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [semen] that has been expelled in this room.[otherwise if the semen-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [semen] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [semen] that is about half an inch deep.[end if]";
 	if the urine-puddle of the location of the player > 0 and the semen-puddle of the location of the player <= 20: [We only talk about the urine if there's only puddles of semen.]
-		if the urine-puddle of the location of the player <= 20, say "There is a [if the urine-puddle of the location of the player > 12]very large puddle[otherwise if the urine-puddle of the location of the player > 7]large puddle[otherwise if the urine-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [urine] in the middle of this room.  ";
+		if the urine-puddle of the location of the player <= 20, say "There is a [if the urine-puddle of the location of the player > 12]very large puddle[otherwise if the urine-puddle of the location of the player > 7]large puddle[otherwise if the urine-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [urine] in the middle of this room. ";
 		otherwise say "[if the urine-puddle of the location of the player < 30]Most of the floor of this room is covered in [urine].[otherwise if the urine-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [urine] that has been expelled in this room.[otherwise if the urine-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [urine] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [urine] that is about half an inch deep.[end if]";
 	if the milk-puddle of the location of the player > 0 and the semen-puddle of the location of the player <= 20 and the urine-puddle of the location of the player <= 20: [We only talk about the milk if there's only puddles of semen and urine.]
-		if the milk-puddle of the location of the player <= 20, say "There is a [if the milk-puddle of the location of the player > 12]very large puddle[otherwise if the milk-puddle of the location of the player > 7]large puddle[otherwise if the milk-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [milk] in the middle of this room.  ";
+		if the milk-puddle of the location of the player <= 20, say "There is a [if the milk-puddle of the location of the player > 12]very large puddle[otherwise if the milk-puddle of the location of the player > 7]large puddle[otherwise if the milk-puddle of the location of the player > 3]puddle[otherwise]small puddle[end if] of [milk] in the middle of this room. ";
 		otherwise say "[if the milk-puddle of the location of the player < 30]Most of the floor of this room is covered in [milk].[otherwise if the milk-puddle of the location of the player < 45]No corner of this room has been spared from the huge amounts of [milk] that has been expelled in this room.[otherwise if the milk-puddle of the location of the player < 70]The entire floor of this room is coated by a layer of [milk] that is about a centimetre deep.[otherwise]The entire floor of this room is coated by a layer of [milk] that is about half an inch deep.[end if]";
 	if [the location of the player is in the mansion and ]the slime-puddle of the location of the player > 0:
 		if the slime-puddle of the location of the player < 6:
@@ -189,3 +189,4 @@ To say PuddleDesc:
 
 
 Puddles ends here.
+

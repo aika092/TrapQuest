@@ -3,7 +3,7 @@ Bottles by Drinks begins here.
 
 [!<Bottle>@
 
-All drinking vessels that obey standard dosage and colour rules.  I.e. not the squeezy bottle.
+All drinking vessels that obey standard dosage and colour rules. I.e. not the squeezy bottle.
 
 @inherits <Thing>
 
@@ -47,10 +47,10 @@ A bottle is usually bland.
 
 [!<Bottle>@<fillColour:DrinkColourEnums>*
 
-Bottles have a colour.  This is what liquid colour is contained within it.
+Bottles have a colour. This is what liquid colour is contained within it.
 
 *@!]
-A bottle has a drink-colour called the fill-colour.   Understand the fill-colour property as describing a bottle when item described is non-empty.
+A bottle has a drink-colour called the fill-colour. Understand the fill-colour property as describing a bottle when item described is non-empty.
 
 
 To say PotionType of (B - a bottle):
@@ -63,10 +63,10 @@ To say ShortDesc of (B - a bottle):
 
 [!<Bottle>@<origin:OriginEnum>*
 
-This variable maybe needs to be renamed, because what it really is checking is whether the liquid has at any point been up the player's ass.  If it has, then it gets flagged as monster-origin.  The exception is urine; if the urine came from collecting from being pissed on, then it gets flagged as monster-origin.  This is mainly for tracking how valuable the liquid is to the witch.  ###Selkie suggests: pee-origin-player or pee-origin-monster
+This variable maybe needs to be renamed, because what it really is checking is whether the liquid has at any point been up the player's ass. If it has, then it gets flagged as monster-origin. The exception is urine; if the urine came from collecting from being pissed on, then it gets flagged as monster-origin. This is mainly for tracking how valuable the liquid is to the witch. ###Selkie suggests: pee-origin-player or pee-origin-monster
 
 *@!]
-A bottle can be player-origin or monster-origin.  A bottle is usually player-origin. 
+A bottle can be player-origin or monster-origin. A bottle is usually player-origin. 
 
 
 [!<Bottle>@<WhichNumberIsTheFillType>+
@@ -248,3 +248,4 @@ To destroy (T - a bottle):
 
 
 Bottles ends here.
+

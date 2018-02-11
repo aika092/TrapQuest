@@ -99,15 +99,15 @@ To compute (M - a monster) considering (T - a thing):
 		say MonsterOfferRejectFlav of M to T.
 
 To say MonsterOfferRejectFlav of (M - a monster) to (T - a thing):
-	if M is intelligent, say "[if M is unfriendly]The [M] smiles.[otherwise]The [M] looks a bit confused.[end if]  [speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
+	if M is intelligent, say "[if M is unfriendly]The [M] smiles.[otherwise]The [M] looks a bit confused.[end if]  [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
 	otherwise say "The [M] completely ignores the [T].".
 
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - a thing):
 	if M is intelligent:
 		if M is unfriendly:
-			say "The [M] smiles.  [speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really?  Thanks a lot!  Maybe I've made a mistake judging you.  You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that.  Thanks a bunch.  We're cool now.'[otherwise]Fair enough, have it your way.  I'll leave you alone... this time.'[end if][roman type][line break]";
+			say "The [M] smiles.  [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really?  Thanks a lot!  Maybe I've made a mistake judging you.  You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that.  Thanks a bunch.  We're cool now.'[otherwise]Fair enough, have it your way.  I'll leave you alone... this time.'[end if][roman type][line break]";
 		otherwise:
-			say "The [M] seems elated.  [speech style of M]'Wow, thank you so much!  How generous of you.'[roman type][line break]";
+			say "The [M] seems elated.  [line break][speech style of M]'Wow, thank you so much!  How generous of you.'[roman type][line break]";
 	otherwise:
 		say "The [M] turns its full attention to the [T], completely ignoring you for now!".	
 
@@ -135,3 +135,4 @@ To compute offer reward of (M - a monster) for (T - a thing): [The NPC doesn't g
 		
 
 Offering Trading ends here.
+

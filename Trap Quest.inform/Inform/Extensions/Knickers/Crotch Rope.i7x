@@ -1,12 +1,12 @@
 Crotch Rope by Knickers begins here.
 
-crotch rope is a kind of knickers.  There is 1 unique hemp crotch ropes.  The armour of crotch rope is 15.  The printed name of crotch rope is usually "[TQlink of item described][clothing-title-before]crotch rope[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of crotch rope is usually 3.  The text-shortcut of crotch rope is "cr".  A crotch rope is usually crotch-assless.
+crotch rope is a kind of knickers. There is 1 unique hemp crotch ropes. The armour of crotch rope is 15. The printed name of crotch rope is usually "[TQlink of item described][clothing-title-before]crotch rope[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of crotch rope is usually 3. The text-shortcut of crotch rope is "cr". A crotch rope is usually crotch-assless.
 
 Definition: a crotch rope is displacable:
 	decide no.
 
 To compute SelfExamineDesc of (K - a crotch rope):
-	say "A coarse rope with a large knot at your crotch is wrapped around your [ShortDesc of hips].  ";
+	say "A coarse rope with a large knot at your crotch is wrapped around your [ShortDesc of hips]. ";
 
 To decide which figure-name is clothing-image of (C - a crotch rope):
 	decide on figure of crotch rope.
@@ -37,3 +37,4 @@ Carry out going when there is a worn crotch rope: [Should only ever be worn by f
 		ruin vagina.
 
 Crotch Rope ends here.
+

@@ -1,6 +1,6 @@
 Earrings by Piercings Modules begins here.
 
-A pair of earrings is a kind of piercing.  The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pair of earrings is "ea".   Understand "penis shaped" as pair of earrings when item described is bland.  Understand "valuable" as pair of earrings when item described is blessed.  Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings is interracial related.  A pair of earrings has a number called variation.
+A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings is interracial related. A pair of earrings has a number called variation.
 
 To uniquely set up (C - a pair of earrings):
 	now the variation of C is a random number between 1 and 3.
@@ -52,20 +52,20 @@ To decide which figure-name is the clothing-image of (C - a pair of earrings):
 To say ClothingDesc of (C - a pair of earrings):
 	if C is cursed:
 		if interracial fetish is 1:
-			say "A pair of large circular plastic earrings with a white female gender symbol surrounded by four black male gender symbols pointing towards it.  ";
+			say "A pair of large circular plastic earrings with a white female gender symbol surrounded by four black male gender symbols pointing towards it. ";
 		otherwise if the player is originally female and the variation of C is 1:
-			say "A pair of large circular plastic earrings with graphic depictions of a mouth, vagina and asshole on each one.  ";
+			say "A pair of large circular plastic earrings with graphic depictions of a mouth, vagina and asshole on each one. ";
 		otherwise if the variation of C is 2:
-			say "A pair of large circular plastic earrings with the words 'I <3 Sucking Cock' on each one.  ";
+			say "A pair of large circular plastic earrings with the words 'I <3 Sucking Cock' on each one. ";
 		otherwise:
-			say "A pair of large circular plastic earrings with the words 'I <3 Cock In My Ass' on each one.  ";
-		say "These would only be worn by a drunk girl at a hen party, or maybe an exhibitionist nymphomaniac[if the sex addiction of the player > 12 and the humiliation of the player > 30000][second custom style] like me![roman type][line break][otherwise].[end if]";
+			say "A pair of large circular plastic earrings with the words 'I <3 Cock In My Ass' on each one. ";
+		say "These would only be worn by a drunk girl at a hen party, or maybe an exhibitionist nymphomaniac[if the sex addiction of the player > 12 and the humiliation of the player > 30000][line break][second custom style] like me![roman type][line break][otherwise].[end if]";
 	otherwise if C is blessed:
-		say "Two large hooped earrings with several diamonds embedded in the hoops.  They indicate [if the bimbo of the player < 14]wealth, but also sluttiness[otherwise]that your Daddy must be quite wealthy[end if].";
+		say "Two large hooped earrings with several diamonds embedded in the hoops. They indicate [if the bimbo of the player < 14]wealth, but also sluttiness[otherwise]that your Daddy must be quite wealthy[end if].";
 	otherwise if bukkake fetish is 1:
-		say "A pair of metal earrings shaped as penises, pointing towards your face.  A jewel at the tip of the [manly-penis] represents a cumshot.";
+		say "A pair of metal earrings shaped as penises, pointing towards your face. A jewel at the tip of the [manly-penis] represents a cumshot.";
 	otherwise:
-		say "A pair of plastic flesh coloured earrings shaped as penises, pointing downwards, complete with large balls.  They look very cheap and trashy.";
+		say "A pair of plastic flesh coloured earrings shaped as penises, pointing downwards, complete with large balls. They look very cheap and trashy.";
 	say "The earrings have no hook but a closed metal hole, which means they are permanent.".
 
 To say ShortDesc of (C - a pair of earrings):
@@ -92,11 +92,11 @@ To decide which number is the intelligence-influence of (C - a pair of earrings)
 	decide on 0.
 	
 To say PiercingFlav of (P - a pair of earrings):
-	say "An arm comes down with a searing hot needle!  You scream [if there is a worn ballgag]through your gag [end if]as your earlobes are painfully pierced.  The needle is quickly removed and two large circular earrings with profanities printed on the sides are pushed into place.  The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me!  These look absolutely ridiculous!  Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings.  Everyone will know I'm a shameless exhibitionist!  Teehee.[end if][roman type][line break]".
+	say "An arm comes down with a searing hot needle!  You scream [if there is a worn ballgag]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two large circular earrings with profanities printed on the sides are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me!  These look absolutely ridiculous!  Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist!  Teehee.[end if][roman type][line break]".
 
 Section - Wearability
 
-pair of earrings wearability rules is a rulebook.  The wearability rules of pair of earrings is usually pair of earrings wearability rules.
+pair of earrings wearability rules is a rulebook. The wearability rules of pair of earrings is usually pair of earrings wearability rules.
 
 This is the pair of earrings already worn rule:
 	if there is a worn pair of earrings, rule fails.
@@ -104,3 +104,4 @@ The pair of earrings already worn rule is listed in the pair of earrings wearabi
 
 
 Earrings ends here.
+

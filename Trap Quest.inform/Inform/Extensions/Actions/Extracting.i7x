@@ -1,7 +1,7 @@
 Extracting by Actions begins here.
 
 
-Extracting it with is an action applying to two things. [The second noun is the source of the transfer, and the noun is the destination.  "Filling" would be a more appropriate verb but IDGAF]
+Extracting it with is an action applying to two things. [The second noun is the source of the transfer, and the noun is the destination. "Filling" would be a more appropriate verb but IDGAF]
 Check extracting something with:
 	if the noun is not bottle or the second noun is not bottle, say "This verb is for transferring liquid between two containers." instead;
 	if the noun is squirt dildo and the second noun is can, say "The dildo can't fit inside the hole." instead;
@@ -55,3 +55,4 @@ Understand "pour [something] into [something]", "pour [something] in [something]
 
 
 Extracting ends here.
+

@@ -1,6 +1,6 @@
 Public Version Stuff by Miscellaneous Backend begins here.
 
-A module is a kind of piercing.  n ass module is a kind of module. A breast module is a kind of module. A crotch module is a kind of module. A lips module is a kind of module. A heel module is a kind of module.
+A module is a kind of piercing. n ass module is a kind of module. A breast module is a kind of module. A crotch module is a kind of module. A lips module is a kind of module. A heel module is a kind of module.
 
 To say ModuleFlav of (M - a module):
 	do nothing.
@@ -86,3 +86,4 @@ Include No Graphics by Miscellaneous Frontend.
 Include No Epilogue by Ending the Game.
 
 Public Version Stuff ends here.
+

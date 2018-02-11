@@ -1,6 +1,6 @@
 Girly Bow Court Heels by Shoes begins here.
 
-A girly bow court heels is a kind of court heels.  The printed name of girly bow court heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch girly bow court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of girly bow court heels is "gbc".
+A girly bow court heels is a kind of court heels. The printed name of girly bow court heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch girly bow court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of girly bow court heels is "gbc".
 
 There is 1 leather girly bow court heels.
 
@@ -33,3 +33,4 @@ To uniquely set up (C - a girly bow court heels):
 	set up heel length of C.
 
 Girly Bow Court Heels ends here.
+

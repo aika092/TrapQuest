@@ -2,7 +2,7 @@ Pink Pill by Consumables begins here.
 
 
 
-The pink pill is a thing.  The description of pink pill is "A small pink pill.  You get the feeling it may help you out if you use it in a desperate time of need.  It is virtually weightless.".  The printed name of pink pill is "[TQlink of item described]pink pill[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pink pill is "pi".  Understand "pp" as pink pill.
+The pink pill is a thing. The description of pink pill is "A small pink pill. You get the feeling it may help you out if you use it in a desperate time of need. It is virtually weightless.". The printed name of pink pill is "[TQlink of item described]pink pill[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink pill is "pi". Understand "pp" as pink pill.
 
 Check taking pink pill:
 	if the noun is carried by the player, try PinkEating the noun instead.
@@ -31,7 +31,7 @@ Carry out PinkEating:
 					if M is penetrating vagina, ruin vagina times 2;
 				otherwise if M is penetrating vagina:
 					now the player-reaction of the player is resisting;
-					say "The [M] is ripped out of your [vagina] at an incredible speed, causing a loud pop.  Your mind reels from the brutal damage done to the inside of your [vagina]!";
+					say "The [M] is ripped out of your [vagina] at an incredible speed, causing a loud pop. Your mind reels from the brutal damage done to the inside of your [vagina]!";
 					ruin vagina times 2;
 				dislodge M;
 	teleport to Dungeon12;
@@ -44,3 +44,4 @@ Carry out PinkEating:
 
 
 Pink Pill ends here.
+

@@ -1,13 +1,13 @@
 Vine Boss by Monster begins here.
 
-A vine boss is a kind of monster.  A vine boss is usually neuter.
+A vine boss is a kind of monster. A vine boss is usually neuter.
 
-1 vine boss is in WoodsBoss01.  Understand "monstrous" as a monster when the item described is vine boss.  Figure of Vine Boss is the file "vineboss1.png".  The printed name of vine boss is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]monstrous vine boss[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The description of vine boss is usually "[VineBossDesc]".  The text-shortcut of vine boss is "vb".
+1 vine boss is in WoodsBoss01. Understand "monstrous" as a monster when the item described is vine boss. Figure of Vine Boss is the file "vineboss1.png". The printed name of vine boss is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]monstrous vine boss[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of vine boss is usually "[VineBossDesc]". The text-shortcut of vine boss is "vb".
 
 To say VineBossDesc:
 	if images visible is 1, display the Figure of Vine Boss;
 	say "[one of]A 10 foot mass of seething plant matter, with primitive club-like arms and a pair of beady red eyes. Its body is supported by a trunk of interwoven vines, but the centre and top looks vaguely like a giant flower.[or]A sentient mass of seething plant matter. Its [']body['] is supported by a vast network of living vines, all of which seem to perk up at your presence. You can feel invisible eyes peering at you from the giant pink flower that makes its [']head['] boring holes through your skull.[in random order]";
-	say "[if the bimbo of the player > 15][second custom style][one of]I can't get away. I guess I'll just have to get on my knees then![or]It looks strong! Strong enough to hold me down for a good LONG time![in random order][otherwise if the bimbo of the player > 5][variable custom style][one of]I'm trapped down here. I wonder what it's going to do to me.[or]Some of these vines look a lot like bellends. Oh no...[or]If the vines are penises, I wonder where its balls are.[in random order][otherwise if the player is female][first custom style][one of]It's terrifying![or]What is THAT?![or]I don't think I can fight it...but I don't think I have any choice.[or]I don't want any of those vines to touch me.[or]It looks extremely powerful.[in random order][otherwise][first custom style][one of]I'm getting a final boss vibe here.[or]I'm not scared, but...I still want to get out of here.[or]It would be less scary with tits.[or]Nowhere to run. Me or the monster.[or]It looks pretty powerful. But it can't be prepared for THESE GUNS![in random order][end if][roman type][line break]".
+	say "[if the bimbo of the player > 15][line break][second custom style][one of]I can't get away. I guess I'll just have to get on my knees then![or]It looks strong! Strong enough to hold me down for a good LONG time![in random order][otherwise if the bimbo of the player > 5][line break][variable custom style][one of]I'm trapped down here. I wonder what it's going to do to me.[or]Some of these vines look a lot like bellends. Oh no...[or]If the vines are penises, I wonder where its balls are.[in random order][otherwise if the player is female][line break][first custom style][one of]It's terrifying![or]What is THAT?![or]I don't think I can fight it...but I don't think I have any choice.[or]I don't want any of those vines to touch me.[or]It looks extremely powerful.[in random order][otherwise][first custom style][one of]I'm getting a final boss vibe here.[or]I'm not scared, but...I still want to get out of here.[or]It would be less scary with tits.[or]Nowhere to run. Me or the monster.[or]It looks pretty powerful. But it can't be prepared for THESE GUNS![in random order][end if][roman type][line break]".
 
 To set up (M - a vine boss):
 	reset M;
@@ -43,11 +43,10 @@ Part 2 - Combat
 
 Section 1 - Attack
 
-To TimesFuckedUp (M - a vine boss):
-	increase the times-fucked of M by 1;
+To TimesFuckedUp (M - a vine boss) by (N - a number):
+	DirectTimesFuckedUp M by N;
 	if the class of the player is princess, compute vine betrothal;
-	if giant-statue is active, ChargeDown giant-statue by 40;
-	
+	if giant-statue is active, ChargeDown giant-statue by 40.
 
 To compute vine betrothal:
 	let S be a random royal scepter;
@@ -76,7 +75,7 @@ To compute (M - a vine boss) attacking (C - a clothing): [This should change for
 	say "Using a particularly nimble vine, the [M] effortlessly rips off your [printed name of C], destroying it.";
 	destroy C.
 
-The vine boss attack rules is a rulebook.  The priority attack rules of a vine boss is usually the vine boss attack rules.
+The vine boss attack rules is a rulebook. The priority attack rules of a vine boss is usually the vine boss attack rules.
 
 The latex punishment rule of a vine boss is usually the no latex punishment rule.
 
@@ -84,14 +83,14 @@ This is the vine boss ultimate victory attack rule:
 	if there is an actually occupied fuckhole and the player is vine fucked:
 		let V be a random vines penetrating a fuckhole;
 		if the TrapNo of V is 3 and the player is female and the semen volume of vagina > 8:
-			say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth.  Using the vines in your pussy it pushes you into its huge chasm of a mouth and swallows you whole.  ";
+			say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your pussy it pushes you into its huge chasm of a mouth and swallows you whole. ";
 			if image cutscenes is 1, display figure of vine boss cutscene 1;
-			say "Your body falls into its belly of vines and soon you are being completely filled in your [fuckholes] and mouth.  The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much.  You feel like you are about to explode!";
+			say "Your body falls into its belly of vines and soon you are being completely filled in your [fuckholes] and mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
 			now delayed fainting is 1;
 		otherwise if the TrapNo of V is 3 and the player is male and the total fill of belly > 13 or there is a worn slimegirl:
-			say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth.  Using the vines in your ass it pushes you into its huge chasm of a mouth and swallows you whole.  ";
+			say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your ass it pushes you into its huge chasm of a mouth and swallows you whole. ";
 			if image cutscenes is 1, display figure of vine boss cutscene 1;
-			say "Your body falls into its belly of vines and soon you are being completely filled in both your [asshole] and your mouth.  The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much.  You feel like you are about to explode!";
+			say "Your body falls into its belly of vines and soon you are being completely filled in both your [asshole] and your mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
 			now delayed fainting is 1;
 	if delayed fainting is 1:
 		repeat with V running through vines in the location of the player:
@@ -170,7 +169,7 @@ To say DamageReaction (N - a number) of (M - a vine boss):
 
 To compute unique death of (M - a vine boss):
 	let B be a random writhing vine;
-	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you.  They slowly and gracefully fall to the ground in a large pile.  Victory!  Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
+	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory!  Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
 	repeat with V running through vines:
 		destroy V;
 	now B is in the location of the player;
@@ -188,3 +187,4 @@ To loot (M - a vine boss):
 
 
 Vine Boss ends here.
+

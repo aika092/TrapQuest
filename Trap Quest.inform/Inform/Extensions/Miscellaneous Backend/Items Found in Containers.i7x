@@ -53,7 +53,7 @@ treasure-necessity is a number that varies.
 REQUIRES COMMENTING
 
 *!]
-max-overload is a number that varies.  max-overload is 2.
+max-overload is a number that varies. max-overload is 2.
 
 [!<AThingIsNecessary>+
 
@@ -159,22 +159,22 @@ To compute generic treasure to (X - a thing):
 			now Z is in X;
 			compute autotaking Z;
 		otherwise:
-			say "Oh no, it's empty.  Boo!";
+			say "Oh no, it's empty. Boo!";
 	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 100 - (10 * the number of on-stage rare clothing):
 		let C be a random off-stage rare fetish appropriate clothing;
 		now C is in X;
 		say "You find a [printed name of C]!  This must be a rare item!";
-		if C is diaper cover, say "[one of][item style]Newbie tip: You've found a diaper cover!  This can only be worn over a diaper, and reduces how much a soggy diaper weighs you down.  They will often take a long time for enemies to get past.[roman type][line break][or][stopping]";
+		if C is diaper cover, say "[one of][item style]Newbie tip: You've found a diaper cover!  This can only be worn over a diaper, and reduces how much a soggy diaper weighs you down. They will often take a long time for enemies to get past.[roman type][line break][or][stopping]";
 		compute autotaking C;
 	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 100 - (5 * snacks-found):
 		let C be a random off-stage snack;
 		now C is in X;
 		increase snacks-found by 1;
 		say "You find a [printed name of C]!  This [one of]looks like it [or][stopping]should help!";
-		if newbie tips is 1, say "[one of][item style]Newbie tip: You've found a snack!  These food items will do something good to your stats.  But also if you're patient, there's a certain chef you might meet who can upgrade them into even more incredible treats in exchange for jewellery.[roman type][line break][or][stopping]";
+		if newbie tips is 1, say "[one of][item style]Newbie tip: You've found a snack!  These food items will do something good to your stats. But also if you're patient, there's a certain chef you might meet who can upgrade them into even more incredible treats in exchange for jewellery.[roman type][line break][or][stopping]";
 		compute autotaking C;
 	otherwise if a random number between 1 and 3 is [1]0:
-		say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty.  Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]";
+		say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty. Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]";
 	otherwise:
 		now treasure-necessity is [a random number between 1 and] max-overload;
 		if debugmode is 1, say "Obtaining item with maximum overload of [treasure-necessity]; ";
@@ -282,22 +282,22 @@ To say Discovery of (I - a thing):
 	say "You find a [ShortDesc of I] inside![line break][variable custom style][DiscoveryFlav of I][roman type][line break]";
 	if newbie tips is 1:
 		if I is can, say "[one of][item style]Newbie tip: You've found a can!  These can contain a single dose of a type of liquid.[roman type][line break][or][stopping]";
-		if I is vessel, say "[one of][item style]Newbie tip: You've found a drinking vessel!  You can fill this full of liquid at dispensers such as tanks and buckets.  There's one tank in the starting room, so you can [unless the location of the player is Dungeon12]go there to [end if]try it out.[roman type][line break][or][stopping]";
-		if I is bottle, say "[one of][item style]There are lots of different colours of liquids, which you'll slowly identify as you play the game.  Some are good, and some are cursed, which means they will always have a bad effect.  Drinking from a cursed vessel will make any drink, even a beneficial one, cursed instead![roman type][line break][or][stopping]";
+		if I is vessel, say "[one of][item style]Newbie tip: You've found a drinking vessel!  You can fill this full of liquid at dispensers such as tanks and buckets. There's one tank in the starting room, so you can [unless the location of the player is Dungeon12]go there to [end if]try it out.[roman type][line break][or][stopping]";
+		if I is bottle, say "[one of][item style]There are lots of different colours of liquids, which you'll slowly identify as you play the game. Some are good, and some are cursed, which means they will always have a bad effect. Drinking from a cursed vessel will make any drink, even a beneficial one, cursed instead![roman type][line break][or][stopping]";
 		if I is can, say "[one of][item style]Cans can never be cursed, so once you drink a cursed drink from a can, your player will always remember that this colour is definitely cursed.[roman type][line break][or][stopping]";
-		if I is bra, say "[one of][item style]Newbie tip: You've found a bra!  These can help you reduce the effective weight of your breasts, which therefore reduces how quickly you gain fatigue.  The closer they are to your actual cup size, the more effective they'll be.  [if the largeness of breasts < 3]Right now, you don't need to worry about breast weight, so it's probably best to ignore this item.[end if][roman type][line break][or][stopping]";
-		if I is undies, say "[one of][item style]Newbie tip: You've found some underwear!  These can protect your modesty, and also make it slightly more challenging for the bad things in the game to get at your [fuckholes].  It's best to examine them first, since they can have extra details which usually indicate what negative effect they may have, if any.[roman type][line break][or][stopping]";
-		if I is diaper, say "[one of][item style]Newbie tip: You've found a diaper!  Diapers are a really good idea, since your character really won't be happy if they wet themselves in any other underwear.  Examine the diaper to learn more.[roman type][line break][or][stopping]";
+		if I is bra, say "[one of][item style]Newbie tip: You've found a bra!  These can help you reduce the effective weight of your breasts, which therefore reduces how quickly you gain fatigue. The closer they are to your actual cup size, the more effective they'll be. [if the largeness of breasts < 3]Right now, you don't need to worry about breast weight, so it's probably best to ignore this item.[end if][roman type][line break][or][stopping]";
+		if I is undies, say "[one of][item style]Newbie tip: You've found some underwear!  These can protect your modesty, and also make it slightly more challenging for the bad things in the game to get at your [fuckholes]. It's best to examine them first, since they can have extra details which usually indicate what negative effect they may have, if any.[roman type][line break][or][stopping]";
+		if I is diaper, say "[one of][item style]Newbie tip: You've found a diaper!  Diapers are a really good idea, since your character really won't be happy if they wet themselves in any other underwear. Examine the diaper to learn more.[roman type][line break][or][stopping]";
 		if I is corset, say "[one of][item style]Newbie tip: You've found a corset!  Corsets help keep your belly under control, which makes it less difficult to crawl and encourages stuff that's gone up into your belly to come back out faster.[roman type][line break][or][stopping]";
-		if I is heels, say "[one of][item style]Newbie tip: You've found a pair of heels!  These make standing much more difficult, and fatigue goes up much faster while standing.  The higher the heels, the worse the penalty.  You risk falling over while your heel skill is low.  But, your kick attacks, which are usually the weakest attacks, get massive bonus damage depending on how high the heels are.  As you wear heels, you'll slowly get better at wearing them, and fall over less and less.  Essentially, if you choose to wear heels, you'll struggle more early on but be able to do huge damage later on.  For your first ever game, it's probably best to ignore heels completely, and rely on other attacks.[roman type][line break][or][stopping]";
+		if I is heels, say "[one of][item style]Newbie tip: You've found a pair of heels!  These make standing much more difficult, and fatigue goes up much faster while standing. The higher the heels, the worse the penalty. You risk falling over while your heel skill is low. But, your kick attacks, which are usually the weakest attacks, get massive bonus damage depending on how high the heels are. As you wear heels, you'll slowly get better at wearing them, and fall over less and less. Essentially, if you choose to wear heels, you'll struggle more early on but be able to do huge damage later on. For your first ever game, it's probably best to ignore heels completely, and rely on other attacks.[roman type][line break][or][stopping]";
 		if I is stockings, say "[one of][item style]Newbie tip: You've found a pair of stockings!  These can slightly improve your knee attacks, and also can help you stay balanced when wearing heels.[roman type][line break][or][stopping]";
 		if I is skirt, say "[one of][item style]Newbie tip: You've found a skirt!  Skirts can help with modesty, examine the item closer to find out exactly how good or bad this one would be![roman type][line break][or][stopping]";
-		if I is overdress, say "[one of][item style]Newbie tip: You've found a piece of overwear clothing!  There are loads of these, and they all have different positives and negatives.  Examine them to get an idea of what they might do.  Then, if you wear the item, examine it again afterwards.  Sometimes you'll be given extra information that you weren't allowed to know before you put it on.[roman type][line break][or][stopping]";
-		if I is lubricant, say "[one of][item style]Newbie tip: You've found a lubricant!  Your lower orifices can get sore from getting used, which can lead to you fainting.  If you use the lube on an orifice, it will make it get sore much slower, for a while.  You can also drink lube - it helps you avoid gag reflexes when about to choke down some cock, and it can save you from fainting from thirst in a real pinch.[roman type][line break][or][stopping]";
-		if I is snack, say "[one of][item style]Newbie tip: You've found a snack!  Snacks tend to not tend to do too much except keep you from being hungry, although some have minor additional effects.  [if weight gain fetish is 1]However, eating snacks will make you fatter, which means until you work off the fat with exercise, you'll gain fatigue faster than before.[end if][roman type][line break][or][stopping]";
-		if I is plentiful accessory, say "[one of][item style]Newbie tip: You've found a piece of jewellery!  Jewellery acts as both the in-game currency which you can sometimes spend on useful things, and also what you want to end up [bold type]wearing[item style] at the end to get a decent score.  Every time you faint, you'll lose your most valuable piece of jewellery.[roman type][line break][or][stopping]";
+		if I is overdress, say "[one of][item style]Newbie tip: You've found a piece of overwear clothing!  There are loads of these, and they all have different positives and negatives. Examine them to get an idea of what they might do. Then, if you wear the item, examine it again afterwards. Sometimes you'll be given extra information that you weren't allowed to know before you put it on.[roman type][line break][or][stopping]";
+		if I is lubricant, say "[one of][item style]Newbie tip: You've found a lubricant!  Your lower orifices can get sore from getting used, which can lead to you fainting. If you use the lube on an orifice, it will make it get sore much slower, for a while. You can also drink lube - it helps you avoid gag reflexes when about to choke down some cock, and it can save you from fainting from thirst in a real pinch.[roman type][line break][or][stopping]";
+		if I is snack, say "[one of][item style]Newbie tip: You've found a snack!  Snacks tend to not tend to do too much except keep you from being hungry, although some have minor additional effects. [if weight gain fetish is 1]However, eating snacks will make you fatter, which means until you work off the fat with exercise, you'll gain fatigue faster than before.[end if][roman type][line break][or][stopping]";
+		if I is plentiful accessory, say "[one of][item style]Newbie tip: You've found a piece of jewellery!  Jewellery acts as both the in-game currency which you can sometimes spend on useful things, and also what you want to end up [bold type]wearing[item style] at the end to get a decent score. Every time you faint, you'll lose your most valuable piece of jewellery.[roman type][line break][or][stopping]";
 	if I is maybe-cursed and I is clothing and the identifyskill of the player is 1 and a random number between 1 and 40 < the intelligence of the player:
-		say "Looking at this item, you remember the shopkeeper's hints!  Studying it closely, you realise you're definitely right in your suspicions.  You have identified that the [ShortDesc of I] is cursed!";
+		say "Looking at this item, you remember the shopkeeper's hints!  Studying it closely, you realise you're definitely right in your suspicions. You have identified that the [ShortDesc of I] is cursed!";
 		now I is sure.
 
 [!<SayDiscoveryFlavOfThing>+
@@ -330,7 +330,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DiscoveryFlav of (I - diaper):
-	say "[if earnings > starting-earnings - 100 and diaper quest is 0]I don't get it, why would I need this?![otherwise if the bimbo of the player < 6 and there is a held diaper]Ugh, yuck.  Am I really going to need this many?![otherwise if the bimbo of the player < 6]Ugh, yuck.  Am I really going to need this?[otherwise if the bimbo of the player < 11 and I is actually summonable]I guess I'd better wear this.[otherwise if the bimbo of the player < 11]I guess I'd better take this with me.[otherwise if the number of held diapers is 0]Phew!  I was hoping to find one soon.[otherwise if the number of carried diapers is 0]Thank goodness, I was running low![otherwise if the bimbo of the player < 15]It's good to have a decent supply![otherwise]Ooh, this one will look perfect on me![end if]".
+	say "[if earnings > starting-earnings - 100 and diaper quest is 0]I don't get it, why would I need this?![otherwise if the bimbo of the player < 6 and there is a held diaper]Ugh, yuck. Am I really going to need this many?![otherwise if the bimbo of the player < 6]Ugh, yuck. Am I really going to need this?[otherwise if the bimbo of the player < 11 and I is actually summonable]I guess I'd better wear this.[otherwise if the bimbo of the player < 11]I guess I'd better take this with me.[otherwise if the number of held diapers is 0]Phew!  I was hoping to find one soon.[otherwise if the number of carried diapers is 0]Thank goodness, I was running low![otherwise if the bimbo of the player < 15]It's good to have a decent supply![otherwise]Ooh, this one will look perfect on me![end if]".
 
 [!<ComputeAutomaticWearingOfClothing>+
 
@@ -355,7 +355,8 @@ To compute automatic eating of (I - a thing):
 	now I is carried by the player;
 	let C be I;
 	try TQeating C; [I HAVE NO IDEA WHY THIS SOLVES THE BUG IT JUST DOES DON'T ASK QUESTIONS]
-	if I is off-stage, say "[if the bimbo of the player < 12 and I is candy][variable custom style]I should really work on my self-control...[otherwise if the bimbo of the player < 12][variable custom style]I feel much better![otherwise][second custom style]MMM so yummy!  Oh, it's all gone already?[end if][roman type][line break]".
+	if I is off-stage, say "[if the bimbo of the player < 12 and I is candy][line break][variable custom style]I should really work on my self-control...[otherwise if the bimbo of the player < 12][variable custom style]I feel much better![otherwise][line break][second custom style]MMM so yummy!  Oh, it's all gone already?[end if][roman type][line break]".
 
 
 Items Found in Containers ends here.
+

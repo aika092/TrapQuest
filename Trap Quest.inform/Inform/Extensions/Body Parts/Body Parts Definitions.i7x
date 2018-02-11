@@ -1,7 +1,7 @@
 Body Parts Definitions by Body Parts begins here.
 
 [We keep track of major body parts separately as backdrops.]
-[The player and the game may want to reference specific body parts of the body.  These are defined here.]
+[The player and the game may want to reference specific body parts of the body. These are defined here.]
 
 [This is the default weight rule:
 	now body-part-weight is 1.]
@@ -57,28 +57,28 @@ a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviousl
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called soreness.  The soreness of a fuckhole is usually 0.
+a fuckhole has a number called soreness. The soreness of a fuckhole is usually 0.
 
 [!<Fuckhole>@<tolerated:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called tolerated.  The tolerated of a fuckhole is usually 0.
+a fuckhole has a number called tolerated. The tolerated of a fuckhole is usually 0.
 
 [!<Fuckhole>@<openness:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called openness.  The openness of a fuckhole is usually 0.
+a fuckhole has a number called openness. The openness of a fuckhole is usually 0.
 
 [!<Fuckhole>@<realOpenness:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called real openness.  The real openness of a fuckhole is usually 0.
+a fuckhole has a number called real openness. The real openness of a fuckhole is usually 0.
 
 [!<Fuckhole>@<previousSoreness:Integer>*
 
@@ -139,7 +139,7 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
-	decide on the lewdly exposed outrage of F - 2.  [allows us to easily tweak this number]
+	decide on the lewdly exposed outrage of F - 2. [allows us to easily tweak this number]
 
 [!<GapeFuckholeTimesNumber>+
 
@@ -180,7 +180,7 @@ To ruin (F - a fuckhole) times (X - a number):
 			if F is vagina, vaginally orgasm shamefully;
 			otherwise anally orgasm shamefully;
 		otherwise if the buildup of F >= 20 and the soreness of F < 10:
-			say "Regardless of how insensitive your [variable F] is, there's no way it can take an infinite fucking.  Over time, you feel it getting slowly more and more sore...";
+			say "Regardless of how insensitive your [variable F] is, there's no way it can take an infinite fucking. Over time, you feel it getting slowly more and more sore...";
 			now the soreness of F is 10;
 			now the buildup of F is 0;
 		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and the number of worn for deposit only tattoos is 0:
@@ -207,7 +207,7 @@ To heal (F - a fuckhole) times (X - a number):
 				now the tolerated of F is 0;
 			decrease the soreness of F by 1.
 
-[A body part has a rule called weight-rule.  body-part-weight is a number that varies.  The weight-rule of body part is usually the default weight rule.]
+[A body part has a rule called weight-rule. body-part-weight is a number that varies. The weight-rule of body part is usually the default weight rule.]
 
 [!<BodyPart>@<semenCoating:Integer>*
 
@@ -331,26 +331,26 @@ Definition: a body part (called B) is at least partially exposed:
 
 
 To decide which number is the lewdly exposed outrage of (B - a body part):
-	decide on 0.  [not humiliating by default]
+	decide on 0. [not humiliating by default]
 To decide which number is the at least partially lewdly exposed outrage of (B - a body part):
-	decide on 0.  [not humiliating by default]
+	decide on 0. [not humiliating by default]
 To decide which number is the outrage of (B - a body part):
 	let O be 0;
 	if B is exposed, increase O by the semen coating of B * 2;
 	if B is lewdly exposed, decide on the lewdly exposed outrage of B + O;
 	if B is at least partially lewdly exposed, decide on the at least partially lewdly exposed outrage of B + O;
-	decide on O.  [not humiliating by default]
+	decide on O. [not humiliating by default]
 To decide which number is the cringe of (B - a body part):
 	let C be the outrage of B;
 	if C < 4, decide on 0;
-	decide on C - 3.  [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
+	decide on C - 3. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
 
 [!<BodyPartIsUnSoakedOrSoaked>+
 
 REQUIRES COMMENTING
 
 +!]
-A body part can be unsoaked or soaked.  A body part is usually unsoaked.  [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
+A body part can be unsoaked or soaked. A body part is usually unsoaked. [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
 
 [!<BodyPartIsOccupied>+
 
@@ -364,7 +364,7 @@ Definition: a body part is occupied:
 
 [!<BodyPartIsFakeOccupied>+
 
-Some things can make an orifice 'appear' occupied to living things (not dildo traps etc.).  E.g. salve of concealment.
+Some things can make an orifice 'appear' occupied to living things (not dildo traps etc.). E.g. salve of concealment.
 
 +!]
 Definition: a body part is fake occupied:
@@ -385,7 +385,7 @@ Definition: a body part is actually occupied:
 
 [!<YourselfIsExposed>+
 
-Used by some NPCs to decide if they thing that the player is inappropriately dressed.  Is something naughty showing? 
+Used by some NPCs to decide if they thing that the player is inappropriately dressed. Is something naughty showing? 
 
 +!]
 Definition: yourself is exposed:
@@ -394,7 +394,7 @@ Definition: yourself is exposed:
 
 [!<YourselfIsCompletelyExposed>+
 
-Used by some NPCs to decide if they thing that the player is inappropriately dressed.  IS everything naughty showing?
+Used by some NPCs to decide if they thing that the player is inappropriately dressed. IS everything naughty showing?
 
 +!]
 Definition: yourself is completely exposed:
@@ -403,7 +403,7 @@ Definition: yourself is completely exposed:
 
 [!<YourselfIsNipplesExposed>+
 
-Used by some NPCs to decide if they thing that the player is inappropriately dressed.  Are nipples showing?
+Used by some NPCs to decide if they thing that the player is inappropriately dressed. Are nipples showing?
 
 +!]
 Definition: yourself is nipples exposed:
@@ -428,3 +428,4 @@ Include Desirability by Body Parts.
 
 
 Body Parts Definitions ends here.
+

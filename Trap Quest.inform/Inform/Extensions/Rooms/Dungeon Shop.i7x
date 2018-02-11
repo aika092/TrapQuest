@@ -3,10 +3,10 @@ Dungeon Shop by Rooms begins here.
 
 [!<discount:Integer>*
 
-The shopkeeper can give the player a discount.  This number tracks how many seconds are left on the discount.  If the number is -1, this means that the discount will not be offered again.  This happens when the discount offer is refused.
+The shopkeeper can give the player a discount. This number tracks how many seconds are left on the discount. If the number is -1, this means that the discount will not be offered again. This happens when the discount offer is refused.
 
 *!]
-discount is a number that varies.  discount is 0.
+discount is a number that varies. discount is 0.
 
 [!<ARoomIsGuarded>+
 
@@ -41,3 +41,4 @@ To decide which number is the wealth of the player:
 
 
 Dungeon Shop ends here.
+

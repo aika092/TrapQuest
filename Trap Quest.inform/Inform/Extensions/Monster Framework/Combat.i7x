@@ -7,10 +7,10 @@ To check attack of (M - a monster):
 	if M is delayed:
 		now the last-interaction of M is 1;
 		compute correct delay of M;
-	otherwise if M is paralyzed:
+	otherwise if the paralyze-status of M is 1:
 		now the last-interaction of M is 1;
 		if a random number between 1 and 2 is 1:
-			now M is limber;
+			now the paralyze-status of M is 0;
 		compute paralysis of M;
 	otherwise:
 		compute attack of M.
@@ -30,18 +30,16 @@ To compute paralysis of (M - a monster):
 
 To compute attack of (M - a monster):
 	now current-monster is M;
-	if M is poisoned and M is poison immune:
-		now M is healthy;
-	if M is poisoned and health of M > 1:
+	if the poison-status of M is 1 and health of M > 1:
 		decrease health of M by 4;
 		if health of M < 1:
 			now health of M is 1;
 		if a random number between 1 and 3 is 1:
-			now M is healthy;
+			now the poison-status of M is 0;
 	follow the monster attack rules.
 
 The monster attack rules is a rulebook.
-[In each rule in this rulebook, we write 'if the rule succeeded, rule succeeds.'  In this way rule succeeds is used for finishing up completely.  Rule fails is used for exiting a rulebook and moving to the next rulebook in the sex rules.  Obviously if a rulebook ends with neither, then we also continue as if we had encountered a rule fails.]
+[In each rule in this rulebook, we write 'if the rule succeeded, rule succeeds.'  In this way rule succeeds is used for finishing up completely. Rule fails is used for exiting a rulebook and moving to the next rulebook in the sex rules. Obviously if a rulebook ends with neither, then we also continue as if we had encountered a rule fails.]
 
 Chapter 1 Continue and Finish Sex
 
@@ -91,7 +89,7 @@ This is the default finish sex rule:
 		rule succeeds.
 The default finish sex rule is listed last in the default continue sex rules.
 
-[The following rules should be considered BLAND EXAMPLES and if they are called during runtime that is bad because they are boring.  Replace either the compute clauses, or the entire end of sex rulebook for any monster you create.]
+[The following rules should be considered BLAND EXAMPLES and if they are called during runtime that is bad because they are boring. Replace either the compute clauses, or the entire end of sex rulebook for any monster you create.]
 
 This is the reset chosen orifice rule:
 	now the chosen-orifice of current-monster is nothing.
@@ -121,7 +119,7 @@ To orgasm (M - a monster):
 		ChargeUp giant-statue by 60;
 
 To say sleeping tip:
-	if tutorial is 0, say "[one of][item style]Newbie tip: The enemy has fallen asleep!  However in this game you can't just kill sleeping enemies, you have to attack them like normal.  Usually, this results in them waking back up again, so you'll still have a fight on your hands![roman type][line break][or][stopping]".
+	if tutorial is 0, say "[one of][item style]Newbie tip: The enemy has fallen asleep!  However in this game you can't just kill sleeping enemies, you have to attack them like normal. Usually, this results in them waking back up again, so you'll still have a fight on your hands![roman type][line break][or][stopping]".
 
 To compute replacement of (T - a thing) in (O - an orifice):
 	unless O is actually occupied or current-monster is not intelligent:
@@ -210,7 +208,7 @@ To compute default facial climax for (M - a monster):
 
 [!<OrgasmMonster>+
 
-This function handles the climax of a monster (M) in a given fuckhole (F). First we call TimesFuckedUp for M, then we look at the "unique climax" for M in F, which may be replaced with special functionality depending on the monster. The post climax effect handles anything that should happen after the climax has happened, specfic to that monster. Lastly, we dislodge the monster after making sure that the monster actually needs to be dislodged(some monsters might want to go for another round after they climax, and other monsters may have their own rules for making the monster pull out.) Satisfy M makes the monster forgive the player and calls the "dislodge M" function by default.
+This function handles the climax of a monster (M) in a given fuckhole (F). First we call TimesFuckedUp for M, then we look at the "unique climax" for M in F, which may be replaced with special functionality depending on the monster. The post climax effect handles anything that should happen after the climax has happened, specific to that monster. Lastly, we dislodge the monster after making sure that the monster actually needs to be dislodged(some monsters might want to go for another round after they climax, and other monsters may have their own rules for making the monster pull out.) Satisfy M makes the monster forgive the player and calls the "dislodge M" function by default.
 
 @param <Monster>:<M> The monster having the climax
 @param <Fuckhole>:<F> The fuckhole the monster is having the climax in
@@ -220,7 +218,7 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 	TimesFuckedUp M by 1;
 	compute unique climax of M in F;
 	compute post climax effect of M in F;
-	if M is interested and the sex-length of M is 0:
+	if M is interested and the rounds of sex left of current-monster <= 0:
 		satisfy M.
 
 This is the default anal climax rule:
@@ -374,9 +372,9 @@ To compute titfuck of (M - a monster):
 		if the sensitivity of breasts >= 10:
 			say "[one of]The nerves in your breasts explode with sensation!  [if the player is female]Your [vagina] gushes with pleasure.[otherwise if the size of penis > 0]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
 		otherwise if the sensitivity of breasts >= 6:
-			say "[one of]Your breasts feel amazing.  [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or the player is male and the size of penis is 0]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+			say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or the player is male and the size of penis is 0]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 		otherwise:
-			say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily.  Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper.  It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
+			say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
 
 To say TitfuckResistFlav of (M - a monster):
 	let C be a random worn top level covering nipple covering clothing;
@@ -387,11 +385,11 @@ To say TitfuckForceFlav of (M - a monster):
 	say "[one of]The [if C is clothing][printed name of C]keeps your [ShortDesc of breasts] pushed together around the [M]'s[otherwise][M] keeps your [ShortDesc of breasts] pushed together around his[end if] [manly-penis] as he thrusts between them.[or]The [M] continues to powerfully thrust between your [ShortDesc of breasts]![or]Your [ShortDesc of breasts] jiggle[if the largeness of breasts > 10] obscenely[end if] as the [M] continues thrusting between them![or]The [M] forces you to hold your [ShortDesc of breasts] together as [he of M] roughly thrusts between them.[or]The [M] holds you by the wrists, keeping your [ShortDesc of breasts] wrapped around [his of M] [manly-penis] as [he of M] thrusts between them.[in random order]".
 
 To say TitfuckReceiveFlav of (M - a monster):
-	say "[one of]The [M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping his [manly-penis] with your [ShortDesc of breasts].[or]You continue to massage his [manly-penis] with your [ShortDesc of breasts].[or]You stare at [his of M] [manly-penis] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or]The [M]'s [manly-penis] gently bumps your chin as he enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7][first custom style]gross[roman type][otherwise]firm, hard[end if] penis between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
+	say "[one of]The [M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping his [manly-penis] with your [ShortDesc of breasts].[or]You continue to massage his [manly-penis] with your [ShortDesc of breasts].[or]You stare at [his of M] [manly-penis] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or]The [M]'s [manly-penis] gently bumps your chin as he enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7][line break][first custom style]gross[roman type][line break][otherwise]firm, hard[end if] penis between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
 
 Chapter 2 Priority Attack
 
-[If the monster has any unique actions that it would sometimes rather do than follow normal attack logic, those go here.  These should generally not involve the player, so an example would be the giant wasp fertilizing an egg]
+[If the monster has any unique actions that it would sometimes rather do than follow normal attack logic, those go here. These should generally not involve the player, so an example would be the giant wasp fertilizing an egg]
 
 This is the priority attack rule:
 	follow the priority attack rules of current-monster;
@@ -400,7 +398,7 @@ The priority attack rule is listed last in the monster attack rules. [Listed 2nd
 
 Chapter 3 Taunting
 
-[In this section, monsters tend to taunt the player or wait silently because the player is either immune to combat (e.g. resting in hammock) or the player is stuck in some other way (e.g. flying or stuck on a dildo).  It should be very rare that a monster does anything else, but there are exceptions; for example the royal guard can DP a female player on a dildo pole and a demoness can curse a player's heels.]
+[In this section, monsters tend to taunt the player or wait silently because the player is either immune to combat (e.g. resting in hammock) or the player is stuck in some other way (e.g. flying or stuck on a dildo). It should be very rare that a monster does anything else, but there are exceptions; for example the royal guard can DP a female player on a dildo pole and a demoness can curse a player's heels.]
 
 This is the taunting rule:
 	follow the taunting rules of current-monster;
@@ -429,7 +427,7 @@ This is the monster fucked player taunting rule:
 The monster fucked player taunting rule is listed last in the default taunting rules.
 
 This is the default monster fucked taunting rule:
-	do nothing. [This should preferably be replaced for all monsters that don't just blindly join in with sex.  If the rule doesn't succeed, then that means that the monster will keep trying other things.  So this monsters that do not wish to progress until the player is completely free should have "rule succeeds" here.  Remember you can also use this function to have the monster interact with the player while they are fucked, e.g. to urinate on them.]
+	do nothing. [This should preferably be replaced for all monsters that don't just blindly join in with sex. If the rule doesn't succeed, then that means that the monster will keep trying other things. So this monsters that do not wish to progress until the player is completely free should have "rule succeeds" here. Remember you can also use this function to have the monster interact with the player while they are fucked, e.g. to urinate on them.]
 
 This is the dildo stuck player taunting rule:
 	if the player is dildo stuck:
@@ -438,7 +436,7 @@ This is the dildo stuck player taunting rule:
 The dildo stuck player taunting rule is listed last in the default taunting rules.
 
 To compute the dildo stuck taunting of (M - a monster):
-	if a random number between 1 and 6 is 1, say "The [M] continues to wait for you to get off the dildo.". [This should preferably be replaced for all monsters.  Remember you can also use this function to have the monster interact with the player while they are stuck on the dildo.]
+	if a random number between 1 and 6 is 1, say "The [M] continues to wait for you to get off the dildo.". [This should preferably be replaced for all monsters. Remember you can also use this function to have the monster interact with the player while they are stuck on the dildo.]
 
 This is the trap stuck player taunting rule:
 	if the player is trap stuck:
@@ -487,7 +485,7 @@ This is the default latex punishment rule:
 		rule succeeds.
 
 To say LatexPunishmentFlav of (M - a monster):
-	say "The [M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds.  Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".
+	say "The [M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds. Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".
 
 This is the monster pulls collar rule:
 	if there is a worn pullstring collar:
@@ -528,7 +526,7 @@ This is the unique punishment rule:
 The unique punishment rule is listed last in the monster punishment rules.
 
 This is the default unique punishment rule:
-	do nothing. [If the monster does something really cool (i.e. not sex) (e.g. the gladiator), replace this with a rule that succeeds.  This could even be a rule that follows a whole new rulebook.]
+	do nothing. [If the monster does something really cool (i.e. not sex) (e.g. the gladiator), replace this with a rule that succeeds. This could even be a rule that follows a whole new rulebook.]
 
 This is the sex attempt rule:
 	follow the sex attempt rules;
@@ -568,7 +566,7 @@ Definition: asshole (called B) is a potential target:
 	if current-monster is willing to do anal, decide yes;
 	decide no.
 
-Definition: belly (called B) is a potential target: [Belly is used to target for urination.  And since urination can just go on the face and doesn't need to go inside the mouth, we don't need to check 'reasonable target'.]
+Definition: belly (called B) is a potential target: [Belly is used to target for urination. And since urination can just go on the face and doesn't need to go inside the mouth, we don't need to check 'reasonable target'.]
 	if current-monster is willing to urinate and watersports fetish is 1 and the latex-transformation of the player <= 4, decide yes;
 	decide no.
 
@@ -798,7 +796,7 @@ The monster penetrating asshole rule is listed last in the monster asshole inser
 To compute (M - a monster) entering asshole:
 	now the sex-length of M is 3;
 	if M is friendly-fucking or presented-orifice is asshole, say "[FriendlyAssholePenetrationFlav of M]";
-	otherwise say "[AssholePenetrationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
+	otherwise say "[AssholePenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 	now M is penetrating asshole;
 	ruin asshole.
 
@@ -808,18 +806,18 @@ To say AssholePenetrationFlav of (M - a monster):
 	let F be the openness of asshole - the girth of M;
 	say "[AssholePenPrep of M]";
 	if the class of the player is living sex doll:
-		say "[if the relevant sex addiction of M < 9][variable custom style]No, no![roman type] you try to beg [him of M], as [he of M][otherwise]The [M][end if] turns you away, and you feel the massive bulbous head probing at your tight pucker, but then it ploughs through and inside you!";
-		say "There's a sound like a rubber balloon animal being twisted into a knot as [his of M] rod plunges into your squeakily-tight interior.  [one of]You feel your cheeks flush in shame at the sound - which is weird: how can rubber cheeks flush? - but maybe they've done something so your emotional state is somehow transmitted to your new plastic skin?  You wouldn't put it past the wicked minds of the people who designed this game!  Probably some kind of 'psycho-active' plastic or something.  But it's pretty hard to keep philosophising while a massive cock is being rammed up your back passage[if M is not neuter], and the [M]'s hands are jerking you forward and back like some life-size rubber doll while his powerful hips plunge his hot, meaty pole in and then out of your backside[end if].  Not the least because you can't believe just how [italic type]good[roman type] it feels! It's like the number of nerve-endings back there have been multiplied ten-fold. You're also really getting off on the incoherent sounds of some bitch's high-pitched squeaking and grunting as she's... [variable custom style]Oops: that's me![roman type][line break][or][stopping][line break]";
+		say "[if the relevant sex addiction of M < 9][line break][variable custom style]No, no![roman type][line break]you try to beg [him of M], as [he of M][otherwise]The [M][end if] turns you away, and you feel the massive bulbous head probing at your tight pucker, but then it ploughs through and inside you!";
+		say "There's a sound like a rubber balloon animal being twisted into a knot as [his of M] rod plunges into your squeakily-tight interior. [one of]You feel your cheeks flush in shame at the sound - which is weird: how can rubber cheeks flush? - but maybe they've done something so your emotional state is somehow transmitted to your new plastic skin?  You wouldn't put it past the wicked minds of the people who designed this game!  Probably some kind of 'psycho-active' plastic or something. But it's pretty hard to keep philosophising while a massive cock is being rammed up your back passage[if M is not neuter], and the [M]'s hands are jerking you forward and back like some life-size rubber doll while his powerful hips plunge his hot, meaty pole in and then out of your backside[end if]. Not the least because you can't believe just how [italic type]good[roman type] it feels! It's like the number of nerve-endings back there have been multiplied ten-fold. You're also really getting off on the incoherent sounds of some bitch's high-pitched squeaking and grunting as she's... [line break][variable custom style]Oops: that's me![roman type][line break][or][stopping][line break]";
 	otherwise if F < -2:[low bimbo: 2, mid: 2, high: 1]
 		if the relevant sex addiction of M < 7:
-			say "[one of]You [if O is monster]scream as loudly as you can through the dick in your mouth[otherwise]look over your shoulder[end if] as [his of M] [manly-penis] prods at your sphincter, attempting to force its way in with brute force alone. The [M] stops only to[unless O is monster] leer at your horrified face and[end if] spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.[or][if O is monster]You try as hard as you can to fight it, but your mouth is much too full of dick for you to manage anything but a low groan of pain[otherwise]You try as hard as you can to fight [him of M], cursing through the pain[end if] as the [M] slowly and painfully forces [his of M] [manly-penis] into your [asshole], only pausing when [his of M] balls are in full contact with your taint.[at random]";
+			say "[one of]You [if O is monster]complain as loudly as you can through the dick in your mouth[otherwise]look over your shoulder[end if] as [his of M] [manly-penis] prods at your sphincter, attempting to force its way in with brute force alone. The [M] stops only to[unless O is monster] leer at your furious face and[end if] spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.[or][if O is monster]You try as hard as you can to evade it, but your mouth is much too full of dick for you to manage anything but a low groan of pain[otherwise]You try as hard as you can to make it difficult for [him of M], cursing through the pain[end if] as the [M] slowly and painfully forces [his of M] [manly-penis] into your [asshole], only pausing when [his of M] balls are in full contact with your taint.[at random]";
 		otherwise if the relevant sex addiction of M < 12:
 			say "[one of]You [if O is monster]half-heartedly struggle as [his of M] [manly-penis] prods at your sphincter, trying your best to ignore what[']s in your mouth and focus on keeping [him of M] at bay. The [M] stops, but[otherwise]silently look over your shoulder as [his of M] [manly-penis] prods at your sphincter, doing absolutely nothing to stop [him of M] even though every part of your being is telling you you should. The [M] stops, but[end if] only to spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way into your [asshole].[or]You brace yourself as the [M]'s [manly-penis] presses at your sphincter, stretching it bit by painful bit as it slowly forces its way into your [asshole]. The feeling is so intense, that by the time it occurs to you to bolt or at least fight, [his of M] balls are already slapping your [if the player is male]coin-purse[otherwise]taint[end if].[at random]";
 		otherwise:
 			say "You [if O is monster]continue servicing the dick in your mouth[otherwise]look over your shoulder with a grin[end if] as [his of M] [manly-penis] prods at your sphincter, attempting to force its way in with brute force alone. The [M] pauses only to [unless O is monster]return your look and [end if]spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.";
 	otherwise if F < 0:[low bimbo: 3 mid: 2, high: 1]
 		if the relevant sex addiction of M < 7:
-			say "[one of]You [if O is monster]scream as loudly as you can through the dick in your mouth[otherwise]grit your teeth and shoot a furious glare over your shoulder[end if] as [his of M] [manly-penis] forces open your sphincter, just big enough to hurt as much as possible without needing any extra lube. The [M] answers your look with a hearty smack of your [AssDesc], and grabs your hips with both hands to ensure you can[']t escape.[or][if O is monster]You try as hard as you can to fight [him of M], but your mouth is much too full of dick for you to manage anything but a pained grunt[otherwise]You try as hard as you can to fight [him of M], cursing through the pain[end if] as the [M] forces [his of M] [manly-penis] into your [asshole], only pausing when [his of M] balls slap your [if the player is male]taint[otherwise]cunt[end if]. Easily stopping your last escape attempt with a stronger grip, [he of M] begins to thrust.[or]You [if O is monster]grunt around the dick in your mouth[otherwise]snarl at the [M][end if] as [his of M] cockhead presses at your sphincter, which painfully stretches to let [his of M] [manly-penis] slowly slide its way in. Something tells you this will be a long, unpleasant fucking.[at random]";
+			say "[one of]You [if O is monster]groan as loudly as you can through the dick in your mouth[otherwise]grit your teeth and shoot a furious glare over your shoulder[end if] as [his of M] [manly-penis] forces open your sphincter, just big enough to hurt as much as possible without needing any extra lube. The [M] answers your look with a hearty smack of your [AssDesc], and grabs your hips with both hands to ensure you can[']t escape.[or][if O is monster]You try to dissuade [him of M], but your mouth is much too full of dick for you to manage anything but a pained grunt[otherwise]You try as hard as you can to make it difficult for [him of M], cursing through the pain[end if] as the [M] forces [his of M] [manly-penis] into your [asshole], only pausing when [his of M] balls slap your [if the player is male]taint[otherwise]cunt[end if]. Easily stopping your last escape attempt with a stronger grip, [he of M] begins to thrust.[or]You [if O is monster]grunt around the dick in your mouth[otherwise]snarl at the [M][end if] as [his of M] cockhead presses at your sphincter, which painfully stretches to let [his of M] [manly-penis] slowly slide its way in. Something tells you this will be a long, unpleasant fucking.[at random]";
 		otherwise if the relevant sex addiction of M < 12:
 			say "[one of]You do nothing to resist as [his of M] [manly-penis] presses at your sphincter, convincing yourself you[']re not looking forward to having [him of M] stretch out your tight little hole. A [if O is monster]muffled[end if] mixture of grunts and moans leave your mouth as it slowly forces its way in, answered with a derisive laugh as [he of M] begins to thrust.[or]You half-heartedly resist as [he of M] forces [his of M] [manly-penis] into your [asshole], emitting an involuntary moan [if O is monster]through the meat in your mouth [end if] as [he of M] finally drives it all the way in. [big he of M] tightens [his of M] grip as [he of M] begins to thrust, ensuring you won[']t be getting away if you decide you want to.[at random]";
 		otherwise:
@@ -880,7 +878,7 @@ The monster penetrating vagina rule is listed last in the monster vagina inserti
 To compute (M - a monster) entering vagina:
 	now the sex-length of M is 3;
 	if M is friendly-fucking, say "[FriendlyVaginaPenetrationFlav of M]";
-	otherwise say "[VaginaPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
+	otherwise say "[VaginaPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 	now M is penetrating vagina;
 	ruin vagina.
 
@@ -922,7 +920,7 @@ The monster penetrating mouth rule is listed last in the monster mouth insertion
 To compute (M - a monster) entering mouth:
 	now the sex-length of M is 3;
 	if M is friendly-fucking, say "[FriendlyMouthPenetrationFlav of M]";
-	otherwise say "[MouthPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
+	otherwise say "[MouthPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 	now M is penetrating face.
 
 This is the monster breasts insertion rule:
@@ -932,7 +930,7 @@ The monster breasts insertion rule is listed in the default monster insertion ru
 To compute (M - a monster) entering breasts:
 	now the sex-length of M is 3;
 	if M is friendly-fucking, say "[FriendlyBreastsPenetrationFlav of M]";
-	otherwise say "[BreastsPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
+	otherwise say "[BreastsPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 	now M is penetrating breasts.
 
 To say BreastsPenetrationFlav of (M - a monster):
@@ -962,19 +960,19 @@ This is the monster urinating rule:
 The monster urinating rule is listed last in the monster begin urination rules.
 
 To compute (M - a monster) urinating:
-	say "[UrinationFlav of M]"; [If you just want to change the text, replace the Flav function.  Otherwise replace the entire compute function.]
-	FacePiss;
+	say "[UrinationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+	FacePiss from M;
 	satisfy M.
 
 To say UrinationFlav of (M - a monster):
 	if M is male:
 		if M is intelligent:
-			say "[one of]The [M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![or]The [M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][first custom style][line break]What the actual fuck.[roman type][line break][end if]";
+			say "[one of]The [M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![or]The [M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style][line break]What the actual fuck.[roman type][line break][end if]";
 		otherwise:
 			say "The [M] points [his of M] [manly-penis] towards your face. A golden stream of [urine] shoots out, headed straight for you!";
 	otherwise:
 		if M is intelligent:
-			say "[one of]The [M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart her pussy lips, she allows a golden stream of [urine] to start to squirt straight at your face![or]The [M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][first custom style][line break]What the actual fuck.[roman type][line break][end if]";
+			say "[one of]The [M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart her pussy lips, she allows a golden stream of [urine] to start to squirt straight at your face![or]The [M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style][line break]What the actual fuck.[roman type][line break][end if]";
 		otherwise:
 			say "The [M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
 
@@ -1000,7 +998,7 @@ Set the monster's tripping roll as a value, we'll use T here
 If successful, say that the trip was successful and try kneeling.
 Otherwise say that it was unsuccessful.
 ]
-[The trip roll is usually (difficulty / 2) to difficulty.  The number it's rolling against is dex]
+[The trip roll is usually (difficulty / 2) to difficulty. The number it's rolling against is dex]
 To decide which number is the tripping roll of (M - a monster):
 	let T be the tripping max of M;
 	let D be the dexterity of the player;
@@ -1033,7 +1031,7 @@ To decide which number is the tripping max of (M - a monster):
 
 To decide which number is the accuracy roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
-	if M is blinded, decrease D by 6;
+	if the blind-status of M is 1, decrease D by 6;
 	if D > the difficulty of M + 7, now D is 9999; [This check means that the right hand side of the normal distribution roll always is a successful hit. i.e. 50% of the time, the monster will hit automatically]
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 [M][line break]";
 	decide on D.
@@ -1049,7 +1047,7 @@ To say TripChanceFlav of (M - a monster):
 	if the last-tripped of M > 4:
 		say "The [M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]!  [big he of M] is clearly going to try and trip you soon.";
 	otherwise if the last-tripped of M > 2:
-		say "The [M] [one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order].  There's a chance [he of M] is planning to trip you up.[if newbie tips is 1 and tutorial is 0][one of][item style]This would be a good time to stick to slapping until the NPC makes [his of M] trip attack.[roman type][line break][or][stopping][end if]".
+		say "The [M] [one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order]. There's a chance [he of M] is planning to trip you up.[if newbie tips is 1 and tutorial is 0][one of][item style]This would be a good time to stick to slapping until the NPC makes [his of M] trip attack.[roman type][line break][or][stopping][end if]".
 
 Definition: a jismbodied ghost (called M) is a tripper:
 	decide yes.
@@ -1071,18 +1069,18 @@ To compute tripping attack of (M - a monster):
 	say "The [M] tries to trip you up!";
 	let D be the tripping roll of M;
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Monster[line break]";
-	if (D >= the dexterity of the player and M is not-blinded) or tutorial is 1:
+	if (D >= the dexterity of the player and the blind-status of M is not 1) or tutorial is 1:
 		say "[MonsterTrippedFlav of M]";
 		try kneeling;
 		if the player is prone and tutorial is 0, check attack of M;
 	otherwise:
 		say "[MonsterFailedTripFlav of M]";
-		if M is blinded and a random number between 1 and 2 is 1:
+		if the blind-status of M is 1 and a random number between 1 and 2 is 1:
 			say "The [M] is no longer blind!";
-			now M is not-blinded.
+			now the blind-status of M is 0.
 
 To say MonsterTrippedFlav of (M - a monster):
-	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance.  You[otherwise]and[end if] fall to the ground!".
+	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise]and[end if] fall to the ground!".
 
 To say MonsterFailedTripFlav of (M - a monster):
 	say "You manage to keep your balance.".
@@ -1096,9 +1094,9 @@ To compute striking attack of (M - a monster):
 		compute M striking B;
 	otherwise:	
 		say "[StrikingFailureFlav of M on B]";
-		if the monster is blinded and a random number between 1 and 2 is 1:
+		if the blind-status of M is 1 and a random number between 1 and 2 is 1:
 			say "The [M] is no longer blind!";
-			now M is not-blinded.
+			now the blind-status of M is 0.
 
 To say StrikingSuccessFlav of (M - a monster) on (B - a body part):
 	say "The [M] smacks you [TargetName of B]!  Ouch!!".
@@ -1188,7 +1186,7 @@ To compute (M - a monster) striking (B - thighs):
 	if P is clothing, compute P protecting B;
 	otherwise BodyRuin 1.
 
-To compute (P - a striped stockings) protecting (B - thighs):
+To compute (P - a black-and-yellow striped stockings) protecting (B - thighs):
 	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your legs!";
 	otherwise BodyRuin 1.
 
@@ -1203,9 +1201,9 @@ To compute (P - a clothing) protecting (B - thighs):
 To compute (S - a clothing) damaging (M - a monster):
 	if S is spikey, say "The [M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari slutty sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
 	otherwise say "Somehow, the [M] hurts [himself of M] as [he of M] attacks!";
-	if S is spikey and S is a striped top and M is poison vulnerable:
+	if S is spikey and S is a striped top and the poison-status of M is 0:
 		say "After striking you, the [M] takes on an unhealthy shade of green!";
-		now M is poisoned;
+		now the poison-status of M is 1;
 	decrease the health of M by 4.
 
 To compute (M - a monster) striking (B - face):
@@ -1236,7 +1234,7 @@ To compute (P - a clothing) protecting (B - belly):
 			AssSquirt.
 
 To say MonsterAttackError:
-	say "[one of][bold type]ERROR - this monster doesn't know how to attack.  Some stupid slut forgot to code this right!  Oh dear.  I guess it just stands there and does nothing.[roman type][line break][or][stopping]".
+	say "[one of][bold type]ERROR - this monster doesn't know how to attack. Some stupid slut forgot to code this right!  Oh dear. I guess it just stands there and does nothing.[roman type][line break][or][stopping]".
 
 To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
 	say "[AllyDamageFlav of X on M]";
@@ -1249,3 +1247,4 @@ To say AllyDamageFlav of (X - a monster) on (M - a monster):
 
 
 Combat ends here.
+

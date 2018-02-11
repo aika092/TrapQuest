@@ -1,6 +1,6 @@
 Tear It Up Daddy Tattoo by Tattoos begins here.
 
-tear it up daddy tattoo is a kind of lower back tattoo.  Figure of tear it up daddy tattoo is the file "tattoo33.png".  There is 1 tear it up daddy tattoo.
+tear it up daddy tattoo is a kind of lower back tattoo. Figure of tear it up daddy tattoo is the file "tattoo33.png". There is 1 tear it up daddy tattoo.
 Definition: a tear it up daddy tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;
 	if there is a worn lower back tattoo, decide no;
@@ -16,3 +16,4 @@ To decide which number is the bimbo-influence of (T - a tear it up daddy tattoo)
 	decide on 1.
 
 Tear It Up Daddy Tattoo ends here.
+

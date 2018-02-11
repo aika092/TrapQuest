@@ -1,25 +1,25 @@
 Runic Headband by Headgear begins here.
 
 
-A runic headband is a kind of headgear.  A runic headband is usually silk.  There is 1 runic headband.  Figure of runic headband is the file "runicheadband1.png".  A runic headband is usually hair growing. A runic headband is usually roleplay.
+A runic headband is a kind of headgear. A runic headband is usually silk. There is 1 runic headband. Figure of runic headband is the file "runicheadband1.png". A runic headband is usually hair growing. A runic headband is usually roleplay.
 
 Definition: a runic headband (called C) is fluid immune:
 	decide yes.
-The printed name of runic headband is usually "[TQlink of item described][clothing-title-before]runic headband[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of runic headband is "rhb".
+The printed name of runic headband is usually "[TQlink of item described][clothing-title-before]runic headband[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of runic headband is "rhb".
 
 
 To decide which figure-name is the clothing-image of (C - a runic headband):
 	decide on figure of runic headband.
 
 To say ClothingDesc of (H - a runic headband):
-	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around.  You have no idea what they mean.[if there is a worn abyssal tattoo] The runes have turned black, and almost seem wet with some kind of sludge.[end if]".
+	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around. You have no idea what they mean.[if there is a worn abyssal tattoo] The runes have turned black, and almost seem wet with some kind of sludge.[end if]".
 
 To say ShortDesc of (H - a runic headband):
 	say "runic headband".
 
 To compute SelfExamineDesc of (H - runic headband):
 	let X be the largeness of hair;
-	say "You are wearing a religious headband on top of your [ShortDesc of hair].  ".
+	say "You are wearing a religious headband on top of your [ShortDesc of hair]. ".
 	
 To set up influence of (C - a runic headband):
 	set up stat-based influence of C.
@@ -53,7 +53,7 @@ priestess-summoned is a number that varies.
 
 To compute class outfit of (H - a runic headband):
 	let P be a random off-stage flowing priestess outfit;
-	if the headgear chance of H < the threshold of H and P is actually summonable or (P is priestess outfit and priestess-summoned is 0):
+	if P is actually summonable or (P is priestess outfit and priestess-summoned is 0):
 		if priestess-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] vanishes!";
@@ -67,20 +67,11 @@ To compute class outfit of (H - a runic headband):
 		now the raw-magic-modifier of P is the number of worn cursed clothing.
 		
 To compute hair colour change of (H - runic headband):
-	if H is blessed:
-		let C be the headgear chance of H;
-		if C is 1 and the brightness of hair > 0:
-			HairBrightDown 1;
-			say "You feel your headband changing your hair colour.  ";
-		if C is 2 and the blondeness of hair > 0:
-			HairBlondeDown 1;
-			say "You feel your headband changing your hair colour.  ";
-		if C is 3 and the redness of hair > 0:
-			HairRedDown 1;
-			say "You feel your headband changing your hair colour.  ".
+	compute hair colour darken of H.
 
 Definition: a runic headband (called C) is condom pinnable:
 	decide yes.
 
 
 Runic Headband ends here.
+

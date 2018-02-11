@@ -37,7 +37,7 @@ This is the princess class rule:
 			now player-class is "princess";
 			rule succeeds.
 The princess class rule is listed in the player class rules.
-princess is a text that varies.  princess is "princess".
+princess is a text that varies. princess is "princess".
 
 [!<TheMaidClassRule>+
 
@@ -52,7 +52,7 @@ This is the maid class rule:
 			now player-class is "maid";
 		rule succeeds.
 The maid class rule is listed in the player class rules.
-maid is a text that varies.  maid is "maid".
+maid is a text that varies. maid is "maid".
 
 [!<TheCheerleaderClassRule>+
 
@@ -64,7 +64,7 @@ This is the cheerleader class rule:
 		now player-class is "cheerleader";
 		rule succeeds.
 The cheerleader class rule is listed in the player class rules.
-cheerleader is a text that varies.  cheerleader is "cheerleader".
+cheerleader is a text that varies. cheerleader is "cheerleader".
 
 [!<TheCowgirlClassRule>+
 
@@ -142,7 +142,7 @@ This is the schoolgirl class rule:
 				now player-class is "schoolgirl";
 				rule succeeds.
 The schoolgirl class rule is listed in the player class rules.
-schoolgirl is a text that varies.  schoolgirl is "schoolgirl".
+schoolgirl is a text that varies. schoolgirl is "schoolgirl".
 
 Definition: a wearthing (called C) is schoolgirl-enabling:
 	decide no.
@@ -157,7 +157,7 @@ This is the fertility goddess class rule:
 		now player-class is "fertility goddess";
 		rule succeeds.
 The fertility goddess class rule is listed in the player class rules.
-fertility goddess is a text that varies.  fertility goddess is "fertility goddess".
+fertility goddess is a text that varies. fertility goddess is "fertility goddess".
 
 [!<TheRoyalSlaveClassRule>+
 
@@ -221,7 +221,7 @@ This is the latex fetish model class rule:
 		now player-class is "latex fetish model";
 		rule succeeds.
 The latex fetish model class rule is listed in the player class rules.
-latex fetish model is a text that varies.  latex fetish model is "latex fetish model".
+latex fetish model is a text that varies. latex fetish model is "latex fetish model".
 
 [!<TheHumanToiletClassRule>+
 
@@ -233,7 +233,7 @@ This is the human toilet class rule:
 		now player-class is "toilet";
 		rule succeeds.
 The human toilet class rule is listed in the player class rules.
-human toilet is a text that varies.  human toilet is "toilet".
+human toilet is a text that varies. human toilet is "toilet".
 
 [!<TheCatgirlClassRule>+
 
@@ -265,7 +265,7 @@ This is the puppygirl class rule:
 		now player-class is "puppygirl";
 		rule succeeds.
 The puppygirl class rule is listed in the player class rules.
-puppygirl is a text that varies.  puppygirl is "puppygirl".
+puppygirl is a text that varies. puppygirl is "puppygirl".
 
 [!<TheSantaClassRule>+
 
@@ -273,11 +273,14 @@ REQUIRES COMMENTING
 
 +!]
 This is the santa class rule:
-	if there is a worn santa hat:
-		now player-class is "santa's little helper";
+	if there is a worn christmas headgear:
+		if there is a worn christmas dress, now player-class is "christmas tree";
+		otherwise now player-class is "santa's little helper";
 		rule succeeds.
 The santa class rule is listed in the player class rules.
-santa's little helper is a text that varies.  santa's little helper is "santa's little helper".
+Definition: a text (called T) is santa's little helper:
+	if T is "santa's little helper" or T is "christmas tree", decide yes;
+	decide no.
 
 [!<TheAdultBabyClassRule>+
 
@@ -355,7 +358,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the broodmother class rule:
-	if there is a worn wasp-antennae and (there is a worn striped top or there is a worn striped stockings):
+	if there is a worn wasp-antennae and (there is a worn striped top or there is a worn black-and-yellow striped stockings):
 		now the player-class is "broodmother";
 		rule succeeds.
 The broodmother class rule is listed in the player class rules.
@@ -381,13 +384,13 @@ A time based rule (this is the compute brood rule):
 		if E is laid:
 			MagicPowerUp 2;
 			if the number of alive giant wasps < 0 and there is an off-stage giant wasp:
-				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack.  Within seconds, a familiarly looking larva has emerged from the egg.  The giant maggot, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.";
+				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The giant maggot, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.";
 				let M be a random off-stage giant wasp;
 				now M is in the location of the player;
 				set up M;
 				destroy E;
 			otherwise if there is an off-stage giant wasp and a random number between 1 and 16 is 1:
-				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack.  Within seconds, a familiarly looking larva has emerged from the egg.  The giant maggot, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.";
+				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The giant maggot, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.";
 				let M be a random off-stage giant wasp;
 				now M is in the location of the player;
 				set up M;
@@ -407,7 +410,7 @@ A time based rule (this is the compute brood rule):
 				now total-wasps is 3;
 				destroy E;
 		if total-wasps > 49 and old-wasps < 50:
-			say "[bold type]You feel terribly strange, and sudden pain bores through your head. You suddenly find you can feel the antennae coming out of your head as though they were a part of your body, and they begin to twitch on their own! [if there is a worn striped top]You see the fuzzy top on your chest meld with your skin, which has become black and shiny in the area around it![end if] [if there is a worn striped stockings]You see the fuzzy stockings on your legs meld with your skin, which has become black and shiny in the area around them![end if][roman type][line break]";
+			say "[bold type]You feel terribly strange, and sudden pain bores through your head. You suddenly find you can feel the antennae coming out of your head as though they were a part of your body, and they begin to twitch on their own! [if there is a worn striped top]You see the fuzzy top on your chest meld with your skin, which has become black and shiny in the area around it![end if] [if there is a worn black-and-yellow striped stockings]You see the fuzzy stockings on your legs meld with your skin, which has become black and shiny in the area around them![end if][roman type][line break]";
 		otherwise if total-wasps > 99 and old-wasps < 100 and there is a worn striped top:
 			say "[bold type]You feel a sudden heat from your chest as a pair of stingers pushes themselves from your nipples![roman type][line break]";
 		let W be a random worn wasp-cloud;
@@ -506,36 +509,36 @@ A time based rule (this is the compute whispers rule):
 		if whispered is less than -50 and a random number between 1 and 45000 is less than the humiliation of the player:
 			let W be a random number between 1 and 4;
 			if W is 1:
-				say "You hear a strange voice whispered in your ear! [first custom style]'serve your gods. present yourself at our altar and be blessed.'[roman type] That was peculiar. Should you do it?";
+				say "You hear a strange voice whispered in your ear! [line break][first custom style]'serve your gods. present yourself at our altar and be blessed.'[roman type][line break]That was peculiar. Should you do it?";
 				now whisper-type is 1;
 				now whispered is 200;
 				now whisper-tracking is 0;
 			if W is 2:
-				say "You hear a strange voice whispered in your ear! [first custom style]'serve your gods. feed us with curses.'[roman type] That was odd. Should you do it?";
+				say "You hear a strange voice whispered in your ear! [line break][first custom style]'serve your gods. feed us with curses.'[roman type][line break]That was odd. Should you do it?";
 				now whisper-type is 2;
 				now whispered is 200;
 				now whisper-tracking is 0;
 			if W is 3:
-				say "You hear a strange voice whispered in your ear! [first custom style]'serve your gods. gorge yourself upon [semen].'[roman type] That was strange. Should you do it?";
+				say "You hear a strange voice whispered in your ear! [line break][first custom style]'serve your gods. gorge yourself upon [semen].'[roman type][line break]That was strange. Should you do it?";
 				now whisper-type is 3;
 				now whispered is 200;
 				now whisper-semen-old is the stomach-semen of the player;
 				now whisper-semen-tracker is 0;
 				now whisper-tracking is 0;
 			if W is 4:
-				say "You hear a strange voice whispered in your ear! [first custom style]'serve your gods. let your ass be a vessel for their [semen].'[roman type] That was creepy. Should you do it?";
+				say "You hear a strange voice whispered in your ear! [line break][first custom style]'serve your gods. let your ass be a vessel for their [semen].'[roman type][line break]That was creepy. Should you do it?";
 				now whisper-type is 4;
 				now whispered is 200;
 				now whisper-semen-old is the semen volume of belly;
 				now whisper-semen-tracker is 0;
 				now whisper-tracking is 0;
 		if whispered < 0 and whisper-type is not 0 and whisper-tracking is 0:
-			say "You hear a strange voice echoing through you! [first custom style]'YOU HAVE FAILED US'[roman type] You feel an ominous sensation, but you can[']t quite place it.";
+			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can[']t quite place it.";
 			SexAddictUp 2;
 			SemenAddictUp 2;
 			now whisper-type is 0;
 		if whispered > -1 and whisper-tracking is 1 and whisper-type is not 0:
-			say "You hear a strange voice whispered in your ear! [first custom style]'you have pleased us. be rewarded.'[roman type]";
+			say "You hear a strange voice whispered in your ear! [line break][first custom style]'you have pleased us. be rewarded.'[roman type][line break]";
 			MagicPowerUp 1;
 			if whisper-type is 1:
 				now the body soreness of the player is 0;
@@ -648,7 +651,7 @@ Definition: a text (called T) is magical girl:
 
 [!<TheCowSlaveClassRule>+
 
-The cow slave is a combination class of the cowgirl and royal slave.  It can have either headgear.
+The cow slave is a combination class of the cowgirl and royal slave. It can have either headgear.
 
 +!]
 This is the cow slave class rule:
@@ -659,7 +662,7 @@ The cow slave class rule is listed first in the player class rules.
 
 [!<TheWalkingCondomClassRule>+
 
-The walking condom is a combination class of the silicone queen and cumdumpster.  It needs the plastic dress with pinned condoms.
+The walking condom is a combination class of the silicone queen and cumdumpster. It needs the plastic dress with pinned condoms.
 
 +!]
 This is the walking condom class rule:
@@ -672,7 +675,7 @@ The walking condom class rule is listed first in the player class rules.
 
 [!<TheMagicalNekoClassRule>+
 
-The magical neko is a combination class of the catgirl and magical girl.  It needs the cat ears and magical girl dress.
+The magical neko is a combination class of the catgirl and magical girl. It needs the cat ears and magical girl dress.
 
 +!]
 This is the magical neko class rule:
@@ -683,7 +686,7 @@ The magical neko class rule is listed first in the player class rules.
 
 [!<TheVirginWarriorPriestessClassRule>+
 
-The virgin warrior priestess is a combination class of the virgin warrior and priestess.  It needs the flower hairclip and golden warrior priestess outfit.
+The virgin warrior priestess is a combination class of the virgin warrior and priestess. It needs the flower hairclip and golden warrior priestess outfit.
 
 +!]
 This is the virgin warrior priestess class rule:
@@ -702,7 +705,7 @@ This is the living sex doll class rule:
 		now player-class is "living sex doll";
 		rule succeeds.
 The living sex doll class rule is listed first in the player class rules. [Overrides all other rules]
-living sex doll is a text that varies.  living sex doll is "living sex doll".
+living sex doll is a text that varies. living sex doll is "living sex doll".
 
 [!<TheAdventurerClassRule>+
 
@@ -715,7 +718,8 @@ This is the adventurer class rule:
 	otherwise:
 		now player-class is "adventurer".
 The adventurer class rule is listed last in the player class rules. [Catch-all]
-adventurer is a text that varies.  adventurer is "adventurer".
+adventurer is a text that varies. adventurer is "adventurer".
 
 
 Classes ends here.
+

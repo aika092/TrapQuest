@@ -1,12 +1,27 @@
 Aeromancer by Monster begins here.
 
-An aeromancer is a kind of monster.  An aeromancer is usually intelligent.  An aeromancer is usually woods dwelling.  An aeromancer is usually dungeon dwelling.  An aeromancer is usually willing to do anal.  An aeromancer is usually willing to do vaginal. The leftover-type of an aeromancer is usually 113.  An aeromancer has a number called science requests.  An aeromancer has a number called science history. An aeromancer is usually wenchy.
+An aeromancer is a kind of monster. An aeromancer is usually intelligent. The leftover-type of an aeromancer is usually 113. An aeromancer has a number called science requests. An aeromancer has a number called science history.
 
-A smirking aeromancer is a kind of aeromancer.  There is 1 smirking aeromancer.  The printed name of smirking aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]smirking [if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of smirking aeromancer is "sae".
-A grinning aeromancer is a kind of aeromancer.  There is 1 grinning aeromancer.  The printed name of grinning aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]grinning [if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of grinning aeromancer is "gae".
-A chuckling aeromancer is a kind of aeromancer.  There is 1 chuckling aeromancer.  The printed name of chuckling aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]chuckling [if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of chuckling aeromancer is "cae".
+Definition: an aeromancer (called M) is willing to do anal:
+	decide yes.
 
-The printed name of aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The description of aeromancer is usually "[AeromancerDesc]".   Understand "massive", "massive-breasted" as aeromancer when the item described is ballooned.
+Definition: an aeromancer (called M) is willing to do vaginal:
+	decide yes.
+
+Definition: An aeromancer (called M) is dungeon dwelling:
+	decide yes.
+
+Definition: An aeromancer (called M) is woods dwelling:
+	decide yes.
+
+Definition: An aeromancer (called M) is wenchy:
+	decide yes.
+
+A smirking aeromancer is a kind of aeromancer. There is 1 smirking aeromancer. The printed name of smirking aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]smirking [if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of smirking aeromancer is "sae".
+A grinning aeromancer is a kind of aeromancer. There is 1 grinning aeromancer. The printed name of grinning aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]grinning [if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of grinning aeromancer is "gae".
+A chuckling aeromancer is a kind of aeromancer. There is 1 chuckling aeromancer. The printed name of chuckling aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]chuckling [if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of chuckling aeromancer is "cae".
+
+The printed name of aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][if item described is ballooned]massive-breasted [end if]aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of aeromancer is usually "[AeromancerDesc]". Understand "massive", "massive-breasted" as aeromancer when the item described is ballooned.
 
 Figure of aeromancer 1 is the file "aeromancer1.png". Figure of aeromancer 2 is the file "aeromancer2.png". Figure of aeromancer 3 is the file "aeromancer3.png". 
 
@@ -18,11 +33,11 @@ To say AeromancerDesc:
 			display the figure of aeromancer 2;
 		otherwise:
 			display the figure of aeromancer 1;
-	say "[if the item described is confident aeromancer or the previously-ballooned of item described > 0]The aeromancer is dressed in a blue sorceress['] outfit, which is open at the front to expose her breasts. You can see  a solid gold wand resting in her hand, glowing faintly as her clothes subtly flow with the direction of the wind. She seems very confident and focused on her goals, whatever they are.[otherwise]The aeromancer is dressed in a sexy but not slutty sorceress['] outfit, complete with what looks like a solid gold wand.  She seems very upbeat and focused on her goals, whatever they are.[end if]";
+	say "[if the item described is confident aeromancer or the previously-ballooned of item described > 0]The aeromancer is dressed in a blue sorceress['] outfit, which is open at the front to expose her breasts. You can see  a solid gold wand resting in her hand, glowing faintly as her clothes subtly flow with the direction of the wind. She seems very confident and focused on her goals, whatever they are.[otherwise]The aeromancer is dressed in a sexy but not slutty sorceress['] outfit, complete with what looks like a solid gold wand. She seems very upbeat and focused on her goals, whatever they are.[end if]";
 	if item described is ballooned:
-		say "Right now she has inhumanly huge air-inflated breasts and is hovering a foot above the ground.  [variable custom style]Something tells me she's a bit more powerful while she's got those boobs...[roman type][line break]";
+		say "Right now she has inhumanly huge air-inflated breasts and is hovering a foot above the ground. [line break][variable custom style]Something tells me she's a bit more powerful while she's got those boobs...[roman type][line break]";
 	otherwise:
-		say "[if the bimbo of the player <= 7 and the player is female][first custom style][one of]She's not that out of the ordinary, I suppose.[or]Where did she get all those clothes?[purely at random][otherwise if the bimbo of the player <= 7][one of]Is that real gold?![or]She probably looks better naked.[at random][otherwise if the bimbo of the player <= 12][variable custom style][one of]That's a cute skirt. I guess.[or]That wand is kind of boner-like. Now that I think about it.[purely at random][otherwise][second custom style][one of]Who needs magic when you can suck dick![or]She's wearing way too much clothing. Everybody knows sluts look better nude![purely at random][end if][roman type][line break]".
+		say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]She's not that out of the ordinary, I suppose.[or]Where did she get all those clothes?[purely at random][otherwise if the bimbo of the player <= 7][one of]Is that real gold?![or]She probably looks better naked.[at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of]That's a cute skirt. I guess.[or]That wand is kind of boner-like. Now that I think about it.[purely at random][otherwise][line break][second custom style][one of]Who needs magic when you can suck dick![or]She's wearing way too much clothing. Everybody knows sluts look better nude![purely at random][end if][roman type][line break]".
 	
 To set up (M - an aeromancer):
 	reset M;
@@ -66,16 +81,16 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - an aeromancer):
 	if M is in the dungeon:
-		say "[if M is in the location of the player]A space opens up in the centre of the circle, and a surprisingly clothed woman flies through riding on a gust of wind. [speech style of M]Looks like I gust about escaped![roman type] She chuckles at her own terrible pun as the portal closes behind her.[otherwise]You hear a woman chuckling at her own terrible puns.[end if]";
+		say "[if M is in the location of the player]A space opens up in the centre of the circle, and a surprisingly clothed woman flies through riding on a gust of wind. [line break][speech style of M]Looks like I gust about escaped![roman type][line break]She chuckles at her own terrible pun as the portal closes behind her.[otherwise]You hear a woman chuckling at her own terrible puns.[end if]";
 	otherwise:
-		say "[if M is in the location of the player]The wind kicks up suddenly, howling fiercely as a surprisingly clothed woman flies through the stone opening between the statue's legs. [speech style of M]'With the right wind in my sails, there[']s nothing I can[']t blow!'[roman type] She lands on her feet, chuckling at her own terrible pun.[otherwise]You hear a woman chuckling at her own terrible puns.[end if]".
+		say "[if M is in the location of the player]The wind kicks up suddenly, howling fiercely as a surprisingly clothed woman flies through the stone opening between the statue's legs. [line break][speech style of M]'With the right wind in my sails, there[']s nothing I can[']t blow!'[roman type][line break]She lands on her feet, chuckling at her own terrible pun.[otherwise]You hear a woman chuckling at her own terrible puns.[end if]".
 
 To say DiaperReaction of (M - a aeromancer):
-	say "The [M] smirks and looks directly at your dampening crotch.  [speech style of M]'[one of][if the class of the player is princess]Princess[otherwise]Pathetic[end if] Pottypants Prefers Peers['] Perception of her Pitiful Panty Peeing.  Haha, I'm a poet and I don't even know it!  Seriously though, you're a disgrace.'[or]Do you get off on me watching you wet yourself, or something?  Gross.'[stopping][roman type][line break]";
-	if the humiliation of the player < 15000, say "[one of]You are so ashamed you wish the ground would just open up and swallow you.  [or][stopping]You turn bright red and refuse to look at the [M] in the eye.".
+	say "The [M] smirks and looks directly at your dampening crotch. [line break][speech style of M]'[one of][if the class of the player is princess]Princess[otherwise]Pathetic[end if] Pottypants Prefers Peers['] Perception of her Pitiful Panty Peeing. Haha, I'm a poet and I don't even know it!  Seriously though, you're a disgrace.'[or]Do you get off on me watching you wet yourself, or something?  Gross.'[stopping][roman type][line break]";
+	if the humiliation of the player < 15000, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at the [M] in the eye.".
 
 To compute diaper mess reaction of (M - an aeromancer):
-	say "The [M] recoils with shock.  [speech style of M]'Are you shitting me?!  Pun not intended!!!  [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
+	say "The [M] recoils with shock. [line break][speech style of M]'Are you shitting me?!  Pun not intended!!!  [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
 	humiliate 400;
 	if M is uninterested:
 		bore M;
@@ -83,7 +98,7 @@ To compute diaper mess reaction of (M - an aeromancer):
 			compute room leaving of M.
 
 To compute (M - a monster) stomping (N - an aeromancer):
-	if M is in the location of the player, say "With lightning speed the [M] grabs the [N] and starts fucking her ass furiously.  She screams in both pleasure and terror and he starts coming inside her within seconds.  Her belly expands in front of her as he fills her up.  After she is full, he tosses her to the ground, where she promptly faints.";
+	if M is in the location of the player, say "With lightning speed the [M] grabs the [N] and starts fucking her ass furiously. She screams in both pleasure and terror and he starts coming inside her within seconds. Her belly expands in front of her as he fills her up. After she is full, he tosses her to the ground, where she promptly faints.";
 	otherwise say "You hear a girl shout out in a mixture of ecstasy and terror from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
 	destroy N;
 	let L be a random off-stage leftover;
@@ -108,14 +123,14 @@ To compute appearance assessment of (M - an aeromancer):
 	otherwise:
 		FavourDown M by the science requests of M;
 		if M is unfriendly:
-			say "[speech style of M]'Okay, I'm officially fed up of asking.  Get on your knees and participate in my experiments before I MAKE you.'[roman type][line break]";
+			say "[speech style of M]'Okay, I'm officially fed up of asking. Get on your knees and participate in my experiments before I MAKE you.'[roman type][line break]";
 			now the science requests of M is 0;
 			if image cutscenes is 1, display figure of aeromancer interact 5;
 		otherwise:
 			if the class of the player is faerie:
 				say "[speech style of M]'[if the science requests of M > 0]You know, my experiments are really fun! I know you[']d love helping if you gave me a chance. Help out before I decide to show you what you[']ve been missing?'[otherwise if the science history of M > 0]Ah, just the fairy I wanted to see! Help me with another experiment!'[otherwise]Hey, want to try out something fun? That's what you fairies are into, right?'[end if][roman type] [yesnolink]";
 			otherwise:
-				say "[speech style of M]'[if the science requests of M > 0]You know, you should really consider my request.  Before I decide my experiments are a little less... optional.  Come on, surely you'll let me try a new spell out on you?'[otherwise if the science history of M > 0]Hey, fancy helping me out with some more science?'[otherwise]Hey, would you like to help me out with an experiment?'[end if][roman type] [yesnolink]";
+				say "[speech style of M]'[if the science requests of M > 0]You know, you should really consider my request. Before I decide my experiments are a little less... optional. Come on, surely you'll let me try a new spell out on you?'[otherwise if the science history of M > 0]Hey, fancy helping me out with some more science?'[otherwise]Hey, would you like to help me out with an experiment?'[end if][roman type] [yesnolink]";
 			if image cutscenes is 1:
 				if the science requests of M is 0:
 					display figure of aeromancer interact 6;
@@ -147,10 +162,10 @@ To compute perception of (M - an aeromancer):
 		anger M;
 		if image cutscenes is 1, display figure of aeromancer interact 10;
 	otherwise if M is unfriendly:
-		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Hi again!  Guess what time I've just decided it is?'[or]Ah, perfect, I was just wondering where my favourite test subject had got to!'[or]Sweet, there you are.  I thought I'd scared you off!'[in random order][roman type][line break][if the player is upright]She takes an aggressive stance.[end if]";
+		say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Hi again!  Guess what time I've just decided it is?'[or]Ah, perfect, I was just wondering where my favourite test subject had got to!'[or]Sweet, there you are. I thought I'd scared you off!'[in random order][roman type][line break][if the player is upright]She takes an aggressive stance.[end if]";
 		if image cutscenes is 1, display figure of aeromancer interact 12;
 	otherwise if the player is in danger or there is a live thing penetrating a body part:
-		say "The [M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][speech style of M]'Fascinating! I'll be back!'[roman type]  [Big he of M] turns to leave you alone."; [###Selkie: The surprise (!) seems more appropriate for the slutty-dressed branch, I think. So I swapped them.]
+		say "The [M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'Fascinating! I'll be back!'[roman type][line break][Big he of M] turns to leave you alone."; [###Selkie: The surprise (!) seems more appropriate for the slutty-dressed branch, I think. So I swapped them.]
 		distract M;
 		if image cutscenes is 1, display figure of aeromancer interact 13;
 	otherwise:
@@ -177,12 +192,12 @@ To compute aeromancer science of (M - an aeromancer):
 	let N be the science history of M;
 	if N > 5, now N is 5;
 	let R be a random number between 0 and N;
-	say "[speech style of M]'[one of]Sweet!  Let's do this.'  [or]Okay, cool!  Here we go...'  [or]Nice!  Right, stay still...'  [at random][roman type]Pointing her wand towards you, the [M] concentrates.  ";
+	say "[speech style of M]'[one of]Sweet!  Let's do this.'  [or]Okay, cool!  Here we go...'  [or]Nice!  Right, stay still...'  [at random][roman type]Pointing her wand towards you, the [M] concentrates. ";
 	if R is 0:
 		say "You feel your whole body exploding outwards!";
-		if the largeness of breasts < max breast size, BustInflate 12;
+		if the largeness of breasts < max breast size, BustInflate 6;
 		AssFill (belly limit - the total fill of belly) air;
-		if the total volume of hips < max ass size, AssInflate 7;
+		if the total volume of hips < max ass size, AssInflate 4;
 		if image cutscenes is 1:
 			if the player is flying, display figure of aeromancer cutscene 2;
 			otherwise display figure of aeromancer cutscene 3;
@@ -198,7 +213,7 @@ To compute aeromancer science of (M - an aeromancer):
 		let C be a random worn knickers;
 		if K is actually summonable:
 			summon K cursed;
-			say "A [K] materialises on and inside of you!  [variable custom style][if the openness of asshole < 3]Ouch![otherwise if the openness of asshole < 6 or the anal sex addiction of the player < 4]Eek![otherwise]Ooh![end if][roman type][line break]";
+			say "A [K] materialises on and inside of you!  [line break][variable custom style][if the openness of asshole < 3]Ouch![otherwise if the openness of asshole < 6 or the anal sex addiction of the player < 4]Eek![otherwise]Ooh![end if][roman type][line break]";
 		otherwise if the bladder of the player > 0:
 			say "Air fills your bladder, putting immense pressure on it!  You can't help but start to wet yourself.";
 			now delayed urination is 1;
@@ -283,7 +298,7 @@ To compute ballooning of (M - an aeromancer):
 		if M is in the location of the player and M is dangerous:
 			increase the balloon of M by 1;
 			if the balloon of M > a random number between 3 and 8:
-				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...'  [or]Ultimate Airbag Transformation - Engage!'  [stopping][roman type]The [M] pushes her wand between her breasts and massages it like a [manly-penis].  You watch [if the bimbo of the player < 6]in horror [end if]as her breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through her tight top and destroying it permanently[end if]!  They begin to lift her off of the ground until she is hovering gracefully a foot in the air.  [if M is wand-empowered]She's definitely going to be a lot more powerful now.[otherwise]You feel she's probably a lot more powerful until she lands.[end if]";
+				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...'  [or]Ultimate Airbag Transformation - Engage!'  [stopping][roman type]The [M] pushes her wand between her breasts and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as her breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through her tight top and destroying it permanently[end if]!  They begin to lift her off of the ground until she is hovering gracefully a foot in the air. [if M is wand-empowered]She's definitely going to be a lot more powerful now.[otherwise]You feel she's probably a lot more powerful until she lands.[end if]";
 				now M is airborne;
 				if M is in the Woods, DifficultyUp M by 6;
 				otherwise DifficultyUp M by 4;
@@ -295,7 +310,7 @@ Section 1 - Attack
 
 To compute the flying player taunting of (M - an aeromancer):[TODO: angry aeromancers actually mess with you.]
 	if a random number from 1 to 6 is 1:
-		say "The [M] laughs at you.  [speech style of M]'[one of]Enjoying your flight? Hahahaha![or]Is it a bird?  Is it a plane?  No, it's a dumb fat whore![or]I should attach a string to your toe and pull you around like a kite![or]You must be ballooning with humiliation!  Get it? Haha.[or]Don't let all that air get to your head!  Get it?  Because you're air-headed![or]Hey now, it looks like you've blown things way out of proportion!  Bwahaha.[in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
+		say "The [M] laughs at you. [line break][speech style of M]'[one of]Enjoying your flight? Hahahaha![or]Is it a bird?  Is it a plane?  No, it's a dumb fat whore![or]I should attach a string to your toe and pull you around like a kite![or]You must be ballooning with humiliation!  Get it? Haha.[or]Don't let all that air get to your head!  Get it?  Because you're air-headed![or]Hey now, it looks like you've blown things way out of proportion!  Bwahaha.[in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
 		humiliate 20.
 
 The latex punishment rule of an aeromancer is usually the no latex punishment rule.
@@ -348,7 +363,7 @@ To compute unique climax of (M - an aeromancer) in (F - vagina):
 	compute creampie of M in F.
 
 To say CreampieFlav of (M - an aeromancer) in (F - vagina):
-	say "The [M] screams with delight as her magical tentacles climax, taking turns flooding your [vagina] with warm, glittery [semen].  She releases her hold on your body as the gooey fluid soaks into your skin, causing a strange tingling feeling to travel up your torso and into your chest. You watch with [if the bimbo of the player < 7]horror[otherwise if the bimbo of the player < 11]confusion[otherwise]awe[end if] as your boobs balloon in front of you!";
+	say "The [M] screams with delight as her magical tentacles climax, taking turns flooding your [vagina] with warm, glittery [semen]. She releases her hold on your body as the gooey fluid soaks into your skin, causing a strange tingling feeling to travel up your torso and into your chest. You watch with [horror] as your boobs balloon in front of you!";
 	if image cutscenes is 1, display figure of aeromancer cutscene 5;
 	say "The [M] rather sloppily drops you on the ground, [one of]gleefully [or][stopping]writing something in her notebook before losing interest.".
 
@@ -357,7 +372,7 @@ To compute (M - an aeromancer) finishing in (F - vagina):
 
 This is the aeromancer tries to curse the player rule:
 	if there is a sex doll penetrating a body part and the latex-transformation of the player is 0 and inflation fetish is 1:
-		say "The [current-monster] sees what the doll is doing to you and chuckles sadistically.  [speech style of current-monster]'[one of]I've been waiting to try this spell out...'[or]Ooh, another slut I can help make their hobby into a full time occupation.  Lucky you!'[stopping][roman type][line break]You feel her magic flow from her to the doll, and then from the doll to you.  [one of]You feel different, but you can't put your finger on why.  Maybe you feel a tiny bit.. numb?[or]Once again you've been inflicted with the latex doll transformation curse![stopping]";
+		say "The [current-monster] sees what the doll is doing to you and chuckles sadistically. [line break][speech style of current-monster]'[one of]I've been waiting to try this spell out...'[or]Ooh, another slut I can help make their hobby into a full time occupation. Lucky you!'[stopping][roman type][line break]You feel her magic flow from her to the doll, and then from the doll to you. [one of]You feel different, but you can't put your finger on why. Maybe you feel a tiny bit.. numb?[or]Once again you've been inflicted with the latex doll transformation curse![stopping]";
 		now the latex-transformation of the player is 1;
 		bore current-monster for 800 seconds;
 		now the variety of current-monster is 2;
@@ -375,14 +390,14 @@ To compute the default taunting of (M - an aeromancer):
 		now the variety of M is a random number between 2 and 4;
 		if inflation fetish is 0, now the variety of M is 2;
 		if the variety of M is 2:
-			say "The [M] points at your [BreastDesc] in a fit of giggles.  [speech style of M]'[one of]It's all in the air as to whether this will help you or not!'[or]It won't be plain sailing, but I think you'll end up over the moon thanks to these enhancements!'[in random order][roman type][line break]You feel them inflating rapidly.";
+			say "The [M] points at your [BreastDesc] in a fit of giggles. [line break][speech style of M]'[one of]It's all in the air as to whether this will help you or not!'[or]It won't be plain sailing, but I think you'll end up over the moon thanks to these enhancements!'[in random order][roman type][line break]You feel them inflating rapidly.";
 			if inflation fetish is 1, BustInflate 6;
 			otherwise BustUp a random number between 1 and 2;
 		otherwise if the variety of M is 3:
-			say "The [M] points at your [BellyDesc] whilst uncontrollably chuckling.  [speech style of M]'[one of]Improving people's bellies like this gives me such a lift!  Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel it inflating rapidly.";
+			say "The [M] points at your [BellyDesc] whilst uncontrollably chuckling. [line break][speech style of M]'[one of]Improving people's bellies like this gives me such a lift!  Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel it inflating rapidly.";
 			AssFill 8 Air;
 		otherwise:
-			say "The [M] points at your [ShortDesc of hips] whilst uncontrollably chuckling.  [speech style of M]'[one of]Improving people's bodies like this gives me such a lift!  Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel it inflating rapidly.";
+			say "The [M] points at your [ShortDesc of hips] whilst uncontrollably chuckling. [line break][speech style of M]'[one of]Improving people's bodies like this gives me such a lift!  Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel it inflating rapidly.";
 			AssInflate 5;
 	otherwise if the variety of M is 2:
 		say "The [M] is still making your [BreastDesc] inflate!";
@@ -399,7 +414,7 @@ This is the aeromancer settles for hip inflation rule:
 	let M be current-monster;
 	now the variety of M is 1; [Just in case]
 	if asshole is occupied and (the player is male or vagina is occupied):
-		say "The [M] seems to settle for inflating your body.  She points at your [ShortDesc of hips] whilst uncontrollably chuckling.  [speech style of M]'[one of]Improving people's bodies like this gives me such a lift!  Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel it inflating rapidly.";
+		say "The [M] seems to settle for inflating your body. She points at your [ShortDesc of hips] whilst uncontrollably chuckling. [line break][speech style of M]'[one of]Improving people's bodies like this gives me such a lift!  Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel it inflating rapidly.";
 		AssInflate 4;
 		satisfy M;
 		rule succeeds.
@@ -407,12 +422,12 @@ The unique punishment rule of an aeromancer is usually the aeromancer settles fo
 
 To compute (M - an aeromancer) attacking (C - a diaper):
 	if asshole is actually occupied or C is messed:
-		say "The [M] senses your situation with your [if C is messed]messed[otherwise]already occupied [asshole] and[end if] diaper and decides against penetrating you.  Instead she simply summons more air directly inside your belly!";
+		say "The [M] senses your situation with your [if C is messed]messed[otherwise]already occupied [asshole] and[end if] diaper and decides against penetrating you. Instead she simply summons more air directly inside your belly!";
 		AssFill 5 Air;
 		say "The [M] seems satisfied and leaves you alone.";
 		distract M;
 	otherwise:
-		say "The [M] stretches out her arms and hands towards you.  You feel invisible tentacles made of compressed air shoot up your [asshole] with incredible speed.  Somehow the magic sex organs are simply phasing through your [printed name of C][if asshole is actually occupied] and the [printed name of random thing filling asshole][end if]!";
+		say "The [M] stretches out her arms and hands towards you. You feel invisible tentacles made of compressed air shoot up your [asshole] with incredible speed. Somehow the magic sex organs are simply phasing through your [printed name of C][if asshole is actually occupied] and the [printed name of random thing filling asshole][end if]!";
 		now M is penetrating asshole;
 		now the sex-length of M is 3;
 		ruin asshole.
@@ -454,17 +469,17 @@ This is the aeromancer monster convinced rule:
 		say "[PresentRejectionFlav of current-monster]".
 
 To say PresentAcceptanceFlav of (M - an aeromancer):
-	say "The [M] laughs at your request.  [speech style of M]'Fine by me.  Let's do this!'[roman type][line break]".
+	say "The [M] laughs at your request. [line break][speech style of M]'Fine by me. Let's do this!'[roman type][line break]".
 
 To say PresentRejectionFlav of (M - an aeromancer):
-	say "The [M] laughs at your request.  [speech style of M]'Haha, no, that's not going to happen!'[roman type][line break]".
+	say "The [M] laughs at your request. [line break][speech style of M]'Haha, no, that's not going to happen!'[roman type][line break]".
 
 To compute (M - an aeromancer) entering a fuckhole:[this was originally one big block but I separated it because I had to nest [if][end if] statements, and I wasn't sure that would work.]
 	now the sex-length of M is 3;
 	if the player is monster stuck:
 		say "The [M] stretches out her arms and hands towards you, giggling uncontrollably as her wand begins to glow. The air around you compresses itself into shimmering tentacles, which immediately shoot [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Wind lashes at your skin and clothes as her invisible tentacles begin to ruthlessly fuck you.";
 	otherwise:
-		say "The [M] stretches out her arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind.  Cackling with glee, the aeromancer uses her mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the center, at just above waist height. She takes a couple steps forward, barely containing her mirth as you [if the relevant sex addiction of M < 7]desperately try and fail to get purchase on the ground below[otherwise]look up at her in wide-eyed anticipation[end if].";
+		say "The [M] stretches out her arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind. Cackling with glee, the aeromancer uses her mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the center, at just above waist height. She takes a couple steps forward, barely containing her mirth as you [if the relevant sex addiction of M < 7]desperately try and fail to get purchase on the ground below[otherwise]look up at her in wide-eyed anticipation[end if].";
 		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You[']re a slut! Hahahaha!'[in random order][roman type]";
 		say "The aeromancer raises her wand, which glows brightly as it compresses the air around you into shimmering tentacles, which immediately shoot [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Wind lashes at your skin and clothes as her invisible tentacles begin to ruthlessly fuck you.";
 	if image cutscenes is 1, display figure of aeromancer cutscene 4.
@@ -499,7 +514,7 @@ To say StrikingSuccessFlav of (M - an aeromancer) on (B - a body part):
 	say "An invisible whip made of air whacks you [TargetName of B]!  Ouch!!".
 
 To compute (S - a spike bra) damaging (M - an aeromancer):
-	say "You see the [M] flinch back in pain as her air whip strikes your [printed name of a random spike bra worn by the player].  The attack was somehow reflected!";
+	say "You see the [M] flinch back in pain as her air whip strikes your [printed name of a random spike bra worn by the player]. The attack was somehow reflected!";
 	decrease the health of M by 3;
 
 To say StrikingFailureFlav of (M - an aeromancer) on (B - a body part):
@@ -517,10 +532,10 @@ To compute tripping attack of (M - an aeromancer):
 		say "[MonsterFailedTripFlav of M]";
 		if M is blinded and a random number between 1 and 2 is 1:
 			say "The [M] is no longer blind!";
-			now M is not-blinded.
+			now the blind-status of M is 0.
 
 To say MonsterTrippedFlav of (M - an aeromancer):
-	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance.  You[otherwise]and[end if] fall to the ground!".
+	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise]and[end if] fall to the ground!".
 
 To decide which number is the tripping max of (M - an aeromancer): [Giving the aeromancer her own tripping max function since she doesn't use hair to trip the player.]
 	if attack-type is 0 or attack-type is 1:
@@ -537,7 +552,7 @@ To decide which number is the tripping max of (M - an aeromancer): [Giving the a
 	decide on D.
 
 To compute SelectionFailure of (M - an aeromancer):
-	say "The [M] finds herself unable to use you how it planned, and seems to settle for casting a simple spell.  ";
+	say "The [M] finds herself unable to use you how it planned, and seems to settle for casting a simple spell. ";
 	now the variety of M is 1;
 	compute the default taunting of M;
 	bore M.
@@ -572,17 +587,17 @@ To compute unique death of (M - an aeromancer):
 	let P be a random off-stage golden phallus;
 	let B be a random off-stage plentiful bracelet;
 	if a random number between 1 and 2 is 1 and P is golden phallus:
-		say "The [noun] drops the ground, dead.  She disappears, leaving behind her golden wand.  Most of the wand slowly fades away, leaving only the tip, which you can't help but notice [if the bimbo of the player < 8]is shaped like a [printed name of P][otherwise]would make a perfectly usable dildo[end if].";
+		say "The [noun] drops the ground, dead. She disappears, leaving behind her golden wand. Most of the wand slowly fades away, leaving only the tip, which you can't help but notice [if the bimbo of the player < 8]is shaped like a [printed name of P][otherwise]would make a perfectly usable dildo[end if].";
 		now P is in the location of the player;
 		compute autotaking P;
 	otherwise if B is bracelet:
 		now B is solid gold;
 		set shortcut of B;
-		say "The [noun] drops the ground, dead.  She disappears, leaving behind her golden wand.  Most of the wand slowly fades away, leaving only the tip, which curls up on itself into a vague doughnut shape before settling into the form of a [printed name of B].";
+		say "The [noun] drops the ground, dead. She disappears, leaving behind her golden wand. Most of the wand slowly fades away, leaving only the tip, which curls up on itself into a vague doughnut shape before settling into the form of a [printed name of B].";
 		now B is in the location of the player;
 		compute autotaking P;
 	otherwise:
-		say "The [noun] drops the ground, dead.  After a couple of seconds, her body disappears.".
+		say "The [noun] drops the ground, dead. After a couple of seconds, her body disappears.".
 
 Part 5 - Dominant Sex
 
@@ -596,7 +611,7 @@ To decide which number is the physical dominance roll for (M - an aeromancer):
 
 To say DominanceSuccess of (M - an aeromancer):
 	if the size of penis <= 0 or the player is female:
-		say "You force the [M] onto her back, greedily yanking the wand out of her hands. It seems to react to your touch, crackling with energy as the aeromancer's clothes transform into a set of solid gold chains. You grin. [variable custom style]'How about a taste of your own medicine?'[roman type] She frantically shakes her head, but since you don't care about her opinion anyway, you immediately jam the fat end of the wand up her ass. You fuck her mercilessly, revelling in her groan of discomfort as air rushes inside of her, visibly distending her belly. She glares at you as you withdraw your new prize.[AfterDominationComment 5 of M]";
+		say "You force the [M] onto her back, greedily yanking the wand out of her hands. It seems to react to your touch, crackling with energy as the aeromancer's clothes transform into a set of solid gold chains. You grin. [line break][variable custom style]'How about a taste of your own medicine?'[roman type][line break]She frantically shakes her head, but since you don't care about her opinion anyway, you immediately jam the fat end of the wand up her ass. You fuck her mercilessly, revelling in her groan of discomfort as air rushes inside of her, visibly distending her belly. She glares at you as you withdraw your new prize.[AfterDominationComment 5 of M]";
 	otherwise if a random number between 1 and 3 is 1 or the player is desperate to pee and watersports fetish is 1:
 		if the player is desperate to pee and watersports fetish is 1:[Watersports]
 			watersports dominate M;
@@ -612,62 +627,62 @@ To say DominanceSuccess of (M - an aeromancer):
 		
 To watersports dominate (M - an aeromancer):
 	if the size of penis >= 9:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as a ring of solid gold forces her mouth wide open. You grin. [first custom style]'If you can deepthroat, I'll give it back.'[roman type] She trembles with fear at the sheer size of your [ShortDesc of penis], but after a moment she bows her head and slowly unzips her jacket to reveal a pair of pert C cup breasts. Not concerned with receiving a more formal invitation, you grab her by the hair and jam her face-first onto your [player-penis]. Tears well up in her eyes as your tip brushes the back of her throat, not even halfway there. You shake her back and forth like a rag doll, revelling in the sound of her gagging. Eventually you grow bored and shove her off your [manly-penis]. She gasps for air, eyes glued to the wand you still have clutched in your hand. [first custom style]'You couldn't do it. Too bad.'[roman type] you chuckle, releasing your hold on your bladder and directing a golden stream of [urine] into her face.";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as a ring of solid gold forces her mouth wide open. You grin. [line break][first custom style]'If you can deepthroat, I'll give it back.'[roman type][line break]She trembles with fear at the sheer size of your [ShortDesc of penis], but after a moment she bows her head and slowly unzips her jacket to reveal a pair of pert C cup breasts. Not concerned with receiving a more formal invitation, you grab her by the hair and jam her face-first onto your [player-penis]. Tears well up in her eyes as your tip brushes the back of her throat, not even halfway there. You shake her back and forth like a rag doll, revelling in the sound of her gagging. Eventually you grow bored and shove her off your [manly-penis]. She gasps for air, eyes glued to the wand you still have clutched in your hand. [line break][first custom style]'You couldn't do it. Too bad.'[roman type][line break]you chuckle, releasing your hold on your bladder and directing a golden stream of [urine] into her face.";
 		Dignify 60;[very empowering.]
 	otherwise if the size of penis >= 7:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as a ring of solid gold forces her mouth wide open. You grin. [first custom style]'If you can deepthroat, I'll give it back.'[roman type] She slowly nods and unzips her jacket to reveal a pair of pert C cup breasts. Leaning forward, she takes your [ShortDesc of penis] into her mouth, stalling out about halfway. The generous person you are, you decide to help. You take a handful of her hair and roughly slam her down, revelling in her lewd gagging noises as she repeatedly tries and fails to take it all. Eventually you pull her off and piss all over her face.";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as a ring of solid gold forces her mouth wide open. You grin. [line break][first custom style]'If you can deepthroat, I'll give it back.'[roman type][line break]She slowly nods and unzips her jacket to reveal a pair of pert C cup breasts. Leaning forward, she takes your [ShortDesc of penis] into her mouth, stalling out about halfway. The generous person you are, you decide to help. You take a handful of her hair and roughly slam her down, revelling in her lewd gagging noises as she repeatedly tries and fails to take it all. Eventually you pull her off and piss all over her face.";
 		Dignify 35;
 	otherwise if the size of penis >= 4:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as a ring of solid gold forces her mouth wide open. You grin. [first custom style]'If you can deepthroat, I'll give it back.'[roman type] She slowly nods and unzips her jacket to reveal a pair of pert C cup breasts. Leaning forward, she takes your [ShortDesc of penis] into her mouth, stalling out about three quarters of the way. The generous person you are, you decide to help. You take a handful of her hair and roughly slam her down, revelling in the lewd gagging noise she makes as her lips very nearly reach your balls. But that's not enough. You hold her down and immediately begin pissing straight down her throat. Tears well up in her eyes as she swallows it, clearly very disgusted.";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as a ring of solid gold forces her mouth wide open. You grin. [line break][first custom style]'If you can deepthroat, I'll give it back.'[roman type][line break]She slowly nods and unzips her jacket to reveal a pair of pert C cup breasts. Leaning forward, she takes your [ShortDesc of penis] into her mouth, stalling out about three quarters of the way. The generous person you are, you decide to help. You take a handful of her hair and roughly slam her down, revelling in the lewd gagging noise she makes as her lips very nearly reach your balls. But that's not enough. You hold her down and immediately begin pissing straight down her throat. Tears well up in her eyes as she swallows it, clearly very disgusted.";
 		Dignify 30;
 	otherwise:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [speech style of M]'Wait! That's mine!'[roman type] She grabs for it, but you hold it just out of reach. [variable custom style]'If you want it back you're going to have to blow me away.'[roman type] She takes one look at your [ShortDesc of penis] and begins giggling uncontrollably. Infuriated, you smack her in the face and grab her by the hair so she can't move as you shower her with hot [urine]. She takes it silently, yanking the wand out of your hand as soon as your guard is down!";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [line break][speech style of M]'Wait! That's mine!'[roman type][line break]She grabs for it, but you hold it just out of reach. [line break][variable custom style]'If you want it back you're going to have to blow me away.'[roman type][line break]She takes one look at your [ShortDesc of penis] and begins giggling uncontrollably. Infuriated, you smack her in the face and grab her by the hair so she can't move as you shower her with hot [urine]. She takes it silently, yanking the wand out of your hand as soon as your guard is down!";
 		Dignify 20;
 	now the bladder of the player is 0.
 
 To oral dominate (M - an aeromancer):
 	if the size of penis >= 9:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [speech style of M]'Wait! That's mine!'[roman type] she grabs for it, but you hold it just out of reach. [first custom style]'If you want it back you're going to have to blow me away.'[roman type] You put extra emphasis on the word blow. After an extended stare at your [ShortDesc of penis], she nods and unzips her jacket to reveal a pair of pert C cup breasts. You don't need any more motivation than that to grab her by the hair and jam her face first onto your [player-penis]. She gags, clawing at your hands as you brutally fuck her face. It doesn't take long at all for you to reach orgasm, grunting primally as your [load] shoots straight down her throat. You chuck her to the side when you're finished. Looks like you just earned yourself a wand!";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [line break][speech style of M]'Wait! That's mine!'[roman type][line break]she grabs for it, but you hold it just out of reach. [line break][first custom style]'If you want it back you're going to have to blow me away.'[roman type][line break]You put extra emphasis on the word blow. After an extended stare at your [ShortDesc of penis], she nods and unzips her jacket to reveal a pair of pert C cup breasts. You don't need any more motivation than that to grab her by the hair and jam her face first onto your [player-penis]. She gags, clawing at your hands as you brutally fuck her face. It doesn't take long at all for you to reach orgasm, grunting primally as your [load] shoots straight down her throat. You chuck her to the side when you're finished. Looks like you just earned yourself a wand!";
 		Dignify 20;
 	otherwise if the size of penis >= 7:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [speech style of M]'Wait! That's mine!'[roman type] she grabs for it, but you hold it just out of reach. [first custom style]'If you want it back you're going to have to blow me away.'[roman type] You put extra emphasis on the word blow and brandish your [ShortDesc of penis]. She nods, unzipping her jacket to reveal a pair of pert C cup breasts. You rest your hand on her head as she leans forward and begins to suck. Surprisingly, she's really good at it, and quickly brings you to the edge of orgasm using only her mouth. She tries to pull up at the last moment, but you catch her and hold her down as your [load] rushes down her throat.";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [line break][speech style of M]'Wait! That's mine!'[roman type][line break]she grabs for it, but you hold it just out of reach. [line break][first custom style]'If you want it back you're going to have to blow me away.'[roman type][line break]You put extra emphasis on the word blow and brandish your [ShortDesc of penis]. She nods, unzipping her jacket to reveal a pair of pert C cup breasts. You rest your hand on her head as she leans forward and begins to suck. Surprisingly, she's really good at it, and quickly brings you to the edge of orgasm using only her mouth. She tries to pull up at the last moment, but you catch her and hold her down as your [load] rushes down her throat.";
 		Dignify 10;
 	otherwise if the size of penis >= 4:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [speech style of M]'Wait! That's mine!'[roman type] she grabs for it, but you hold it just out of reach. [first custom style]'If you want it back you're going to have to blow me away.'[roman type] You put extra emphasis on the word blow. She nods, unzipping her jacket to reveal a pair of pert C cup breasts. You rest your hand on her head as she leans forward and begins to suck. Surprisingly, she's really good at it, and quickly brings you to the edge of orgasm using only her mouth. She pulls up at the last moment, pumping your [ShortDesc of penis] until it paints her face with its [load].";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [line break][speech style of M]'Wait! That's mine!'[roman type][line break]she grabs for it, but you hold it just out of reach. [line break][first custom style]'If you want it back you're going to have to blow me away.'[roman type][line break]You put extra emphasis on the word blow. She nods, unzipping her jacket to reveal a pair of pert C cup breasts. You rest your hand on her head as she leans forward and begins to suck. Surprisingly, she's really good at it, and quickly brings you to the edge of orgasm using only her mouth. She pulls up at the last moment, pumping your [ShortDesc of penis] until it paints her face with its [load].";
 		Dignify 5;
 	otherwise:
-		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [speech style of M]'Wait! That's mine!'[roman type] she grabs for it, but you hold it just out of reach. [first custom style]'If you want it back you're going to have to blow me away.'[roman type] You put extra emphasis on the word blow and brandish your [ShortDesc of penis]. She takes one look at it and begins to giggle. [speech style of M]'Ok, sure.'[roman type] You puff out your chest in satisfaction at having dominated her, not noticing until too late as the aeromancer takes in an enormous gulp of air and releases a focused blast of wind at your crotch. A feminine moan escapes your lips as you instantly ejaculate, your [load] of [semen] splattering across your belly and thighs. You stand there dumbfounded as she yanks the wand from your hands.";
+		say "You force the [M] to her knees, wresting the wand out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. [line break][speech style of M]'Wait! That's mine!'[roman type][line break]she grabs for it, but you hold it just out of reach. [line break][first custom style]'If you want it back you're going to have to blow me away.'[roman type][line break]You put extra emphasis on the word blow and brandish your [ShortDesc of penis]. She takes one look at it and begins to giggle. [line break][speech style of M]'Ok, sure.'[roman type][line break]You puff out your chest in satisfaction at having dominated her, not noticing until too late as the aeromancer takes in an enormous gulp of air and releases a focused blast of wind at your crotch. A feminine moan escapes your lips as you instantly ejaculate, your [load] of [semen] splattering across your belly and thighs. You stand there dumbfounded as she yanks the wand from your hands.";
 		CumThighsUp 1;
 		CumBellyUp 1;
 	orgasm.
 
 To vaginal dominate (M - an aeromancer):[TODO: Consolidate]
 	if the size of penis >= 9:
-		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a fleshy nightstick. [speech style of M]'What are you going to do with me?'[roman type] You offer a silent answer, lining up your [player-penis] with her slit.  [speech style of M]'W-wait a second! I can't take a [manly-penis] that big!'[roman type] she says it quickly, but it's too late. You slam yourself forward, revelling in her scream of pain as your [manly-penis] sinks into her incredibly tight pussy. She treats you to a sweet song of shrieking protests as you fuck her, eventually succumbing to the sensation as she creams all over your [player-penis]. You laugh menacingly and slow down slightly. [first custom style]'Where are your manners, bitch. You're not supposed to cum before I do.'[roman type] She opens her mouth to answer, but you smack her in the face. It's punishment time baby! You give her the most brutal fucking you can muster, holding back your orgasm until you know she's nearing the edge, and slam your [manly-penis] in as far as it will go. She squirms as you unload into her pussy, her shrieks tinged with desperate pleasure. You don't stop until you literally can't fit any more of your cum inside her, pulling out and painting her naked stomach with a [load]. She trembles from head to toe, gulping in air as the chains, and her remaining clothes, disappear.[AfterDominationComment 8 of M]";
+		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a fleshy nightstick. [line break][speech style of M]'What are you going to do with me?'[roman type][line break]You offer a silent answer, lining up your [player-penis] with her slit. [line break][speech style of M]'W-wait a second! I can't take a [manly-penis] that big!'[roman type][line break]she says it quickly, but it's too late. You slam yourself forward, revelling in her scream of pain as your [manly-penis] sinks into her incredibly tight pussy. She treats you to a sweet song of frustrated swear words as you fuck her, eventually succumbing to the sensation as she creams all over your [player-penis]. You laugh menacingly and slow down slightly. [line break][first custom style]'Where are your manners, bitch. You're not supposed to cum before I do.'[roman type][line break]She opens her mouth to answer, but you smack her in the face. It's punishment time baby! You give her the most brutal fucking you can muster, holding back your orgasm until you know she's nearing the edge, and slam your [manly-penis] in as far as it will go. She squirms as you unload into her pussy, her shrieks tinged with desperate pleasure. You don't stop until you literally can't fit any more of your cum inside her, pulling out and painting her naked stomach with a [load]. She trembles from head to toe, gulping in air as the chains, and her remaining clothes, disappear.[AfterDominationComment 8 of M]";
 		Dignify 70;[vaginal sex is the rarest, so it has the best 'loot']
 	otherwise if the size of penis >= 7:
-		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body, binding her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a frozen sausage. [speech style of M]'What are you going to do with me?'[roman type] You offer a silent answer, lining up your [player-penis] with her slit. [speech style of M]'Please, use my ass instead!'[roman type] she says quickly, but it's too late. You slam yourself forward, revelling in her yelp of pain as your [manly-penis] sinks into her tight pussy. That, combined with the sweet song of her whimpering protests, brings you to the edge in a short time. You grab her hips, sinking yourself deeper and deeper until your balls slap the nape of her ass. She shudders as you cum, her eyes wide and her teeth clenched while you shoot rope after rope of nice hot [semen] straight into her defenceless honeypot. You pull out and wipe your [player-penis] on her inner thigh when you're done. The chains, and her remaining clothes, disappear.[AfterDominationComment 5 of M]";
+		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body, binding her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a frozen sausage. [line break][speech style of M]'What are you going to do with me?'[roman type][line break]You offer a silent answer, lining up your [player-penis] with her slit. [line break][speech style of M]'Please, use my ass instead!'[roman type][line break]she says quickly, but it's too late. You slam yourself forward, revelling in her yelp of frustration as your [manly-penis] sinks into her tight pussy. That, combined with the sweet song of her whimpering, brings you to the edge in a short time. You grab her hips, sinking yourself deeper and deeper until your balls slap the nape of her ass. She shudders as you cum, her eyes wide and her teeth clenched while you shoot rope after rope of nice hot [semen] straight into her defenceless honeypot. You pull out and wipe your [player-penis] on her inner thigh when you're done. The chains, and her remaining clothes, disappear.[AfterDominationComment 5 of M]";
 		Dignify 45;
 	otherwise if the size of penis >= 4:
-		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a fleshy carrot. [speech style of M]'What are you going to do with me?'[roman type] You offer a silent answer, lining up your [player-penis] with her slit. [speech style of M]'Please, use my ass instead!'[roman type] she says quickly, but it's too late. You slam yourself forward, revelling in her look of horror as your [manly-penis] sinks into her tight pussy. She whimpers through the rough fuck, completely powerless to stop you as you jack-hammer yourself to a gut clenching orgasm. You howl in pleasure as you unload, burying yourself to the hilt so every drop of your [load] ends up in her pussy. She shudders as you pull out and wipe your [player-penis] on the side of her leg. The chains, and her remaining clothes, disappear.[AfterDominationComment 5 of M]";
+		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a fleshy carrot. [line break][speech style of M]'What are you going to do with me?'[roman type][line break]You offer a silent answer, lining up your [player-penis] with her slit. [line break][speech style of M]'Please, use my ass instead!'[roman type][line break]she says quickly, but it's too late. You slam yourself forward, revelling in the sound of her expletives as your [manly-penis] sinks into her tight pussy. She whimpers through the rough fuck, completely powerless to stop you as you jack-hammer yourself to a gut clenching orgasm. You howl in pleasure as you unload, burying yourself to the hilt so every drop of your [load] ends up in her pussy. She shudders as you pull out and wipe your [player-penis] on the side of her leg. The chains, and her remaining clothes, disappear.[AfterDominationComment 5 of M]";
 		Dignify 25;
 	otherwise:
-		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a fleshy tube of lipstick. [speech style of M]'What do you think you're going to do with me?'[roman type] she asks, a noticeable hint of mirth in her voice. You offer a silent answer, lining up your [player-penis] with her slit. [speech style of M]'O-oh. W-well, uh. I um, feel really bad for you, so you can fuck my pussy if you want. Just don't cum inside.'[roman type] You decide that's pretty fair, emitting a feminine grunt as you push forward, allowing your [sissy-penis] to slightly part her folds. She sighs and moans here and there, just tight enough to feel you, but in the same way that she would probably feel a finger or the end of a sharpie. It's much more intense for you, though, and before long you pull out and spray her bare stomach and breasts with your [load]. She sits up when the chains disappear, yanking the wand from your hand.[AfterDominationComment 7 of M]"; [MG notes: "If you look at her dominance reward functions you'll notice that you simply don't receive a wand at certain penis sizes."]
+		say "You force the [M] onto her back, knocking the wand out of her hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind her up like a thanksgiving turkey. You smile from ear to ear, smacking your [ShortDesc of penis] into your hand like a fleshy tube of lipstick. [line break][speech style of M]'What do you think you're going to do with me?'[roman type][line break]she asks, a noticeable hint of mirth in her voice. You offer a silent answer, lining up your [player-penis] with her slit. [line break][speech style of M]'O-oh. W-well, uh. I um, feel really bad for you, so you can fuck my pussy if you want. Just don't cum inside.'[roman type][line break]You decide that's pretty fair, emitting a feminine grunt as you push forward, allowing your [sissy-penis] to slightly part her folds. She sighs and moans here and there, just tight enough to feel you, but in the same way that she would probably feel a finger or the end of a sharpie. It's much more intense for you, though, and before long you pull out and spray her bare stomach and breasts with your [load]. She sits up when the chains disappear, yanking the wand from your hand.[AfterDominationComment 7 of M]"; [MG notes: "If you look at her dominance reward functions you'll notice that you simply don't receive a wand at certain penis sizes."]
 		Dignify 5;
 	orgasm.
 
 To anal dominate (M - an aeromancer):
 	if the size of penis >= 9:
-		say "You force the [M] onto her back, ripping off her panties to reveal her pussy. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. Her eyes widen at your sheer size. [speech style of M]'W-wait! I can't take a [manly-penis] that big in my pussy. Please use my ass instead.'[roman type] What a baby. You flip her over onto her stomach, spitting on your [ShortDesc of penis] before roughly slamming it into her ass. She arches her back and moans in pleasure as you begin to thrust. It doesn't take too long for you to come, groaning primally as you fire off your [load] deep inside her belly. You pull out when you're done and make sure to paint her honey pot with a few short ropes, as if to let her know you might not spare her next time.[AfterDominationComment 5 of M]";
+		say "You force the [M] onto her back, ripping off her panties to reveal her pussy. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. Her eyes widen at your sheer size. [line break][speech style of M]'W-wait! I can't take a [manly-penis] that big in my pussy. Please use my ass instead.'[roman type][line break]What a baby. You flip her over onto her stomach, spitting on your [ShortDesc of penis] before roughly slamming it into her ass. She arches her back and moans in pleasure as you begin to thrust. It doesn't take too long for you to come, groaning primally as you fire off your [load] deep inside her belly. You pull out when you're done and make sure to paint her honey pot with a few short ropes, as if to let her know you might not spare her next time.[AfterDominationComment 5 of M]";
 		Dignify 15;
 	otherwise if the size of penis >= 7:
-		say "You force the [M] onto her back, pulling up her skirt and ripping off her panties. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. Her eyes widen as you line up your [ShortDesc of penis] with her pussy. [speech style of M]'W-wait! Don't you want to fuck my ass instead?'[roman type] She rolls over onto her hands and knees, reaching back and pointing your [manly-penis] at her asshole. It's not convincing, but you're in a merciful mood, so you grab her by the hips and groan as you slide your [manly-penis] into her asshole. She does all the work, panting with mixed arousal and exertion as she slowly brings you to orgasm. It doesn't take long, but she's covered in a fine sheen of sweat by the time you finally do fire off your [load] into her ass. You make sure to wipe off the leftovers very close to her pussy when you pull out.[AfterDominationComment 5 of M]";
+		say "You force the [M] onto her back, pulling up her skirt and ripping off her panties. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. Her eyes widen as you line up your [ShortDesc of penis] with her pussy. [line break][speech style of M]'W-wait! Don't you want to fuck my ass instead?'[roman type][line break]She rolls over onto her hands and knees, reaching back and pointing your [manly-penis] at her asshole. It's not convincing, but you're in a merciful mood, so you grab her by the hips and groan as you slide your [manly-penis] into her asshole. She does all the work, panting with mixed arousal and exertion as she slowly brings you to orgasm. It doesn't take long, but she's covered in a fine sheen of sweat by the time you finally do fire off your [load] into her ass. You make sure to wipe off the leftovers very close to her pussy when you pull out.[AfterDominationComment 5 of M]";
 		Dignify 7;
 	otherwise if the size of penis >= 4:
-		say "You force the [M] onto her back, pulling up her skirt and ripping off her panties. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. Her eyes widen as you line up your [ShortDesc of penis] with her pussy. [speech style of M]'W-wait! Don't you want to fuck my ass instead?'[roman type] She rolls over onto her hands and knees, reaching back and pointing your [manly-penis] at her asshole. It's not convincing, but you're in a merciful mood, so you grab her by the hips and groan as you slide your [manly-penis] into her asshole. She does all the work, panting from exertion as she slowly brings you to orgasm. You tighten your grip and slam yourself home as you fire off your [load] deep inside her ass. She looks over her shoulder.[AfterDominationComment 5 of M]";
+		say "You force the [M] onto her back, pulling up her skirt and ripping off her panties. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. Her eyes widen as you line up your [ShortDesc of penis] with her pussy. [line break][speech style of M]'W-wait! Don't you want to fuck my ass instead?'[roman type][line break]She rolls over onto her hands and knees, reaching back and pointing your [manly-penis] at her asshole. It's not convincing, but you're in a merciful mood, so you grab her by the hips and groan as you slide your [manly-penis] into her asshole. She does all the work, panting from exertion as she slowly brings you to orgasm. You tighten your grip and slam yourself home as you fire off your [load] deep inside her ass. She looks over her shoulder.[AfterDominationComment 5 of M]";
 		Dignify 5;
 	otherwise:
-		say "You force the [M] onto her back, pulling up her skirt and ripping off her panties. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. She puts her hand on your shoulder as you line up your [ShortDesc of penis] with her pussy. [speech style of M]'Um, I know you're trying to dominate me and all, but I'm not going to feel anything from a [player-penis] that tiny.'[roman type] You tremble with humiliation, knowing she's probably right. [speech style of M]'I won't let you put it in my pussy, but I feel bad for you, so you can use my ass.'[roman type] She lays down on her stomach, pulling apart her asscheeks as you push your [sissy-penis] into her asshole. You lay back and let her do all the work, moaning in pleasure as she brings you to orgasm in a very short time. She gently takes the wand from you when you're done, your [load] clinging to the backs of her thighs.[AfterDominationComment 7 of M]";[no dignity bonus]
+		say "You force the [M] onto her back, pulling up her skirt and ripping off her panties. She begins to raise her wand, but you immediately yank it out of her hands. It seems to react to your touch, crackling with energy as her clothes disappear completely, leaving her naked. She puts her hand on your shoulder as you line up your [ShortDesc of penis] with her pussy. [line break][speech style of M]'Um, I know you're trying to dominate me and all, but I'm not going to feel anything from a [player-penis] that tiny.'[roman type][line break]You tremble with humiliation, knowing she's probably right. [line break][speech style of M]'I won't let you put it in my pussy, but I feel bad for you, so you can use my ass.'[roman type][line break]She lays down on her stomach, pulling apart her ass cheeks as you push your [sissy-penis] into her asshole. You lay back and let her do all the work, moaning in pleasure as she brings you to orgasm in a very short time. She gently takes the wand from you when you're done, your [load] clinging to the backs of her thighs.[AfterDominationComment 7 of M]";[no dignity bonus]
 	orgasm.
 
 To say AfterDominationComment (N - a number) of (M - an aeromancer):
@@ -754,7 +769,7 @@ To compute failed dominance punishment of (M - an aeromancer):
 	otherwise:
 		let T be a random off-stage research airhancer;
 		if T is actually summonable:
-			say "[speech style of M]'I think you[']ll find my methods to be airtight!'[roman type][line break]The [M] touches her wand to your [ShortDesc of penis], chanting under her breath as air swirls around your length. You watch as a semi-transparent sheet of compressed air layers itself over your shaft, causing your [if the player is a bit horny]erection[otherwise]half-erection[end if] to slowly go away as a golden bracelet materializes around your wrist.[line break][speech style of M]I call this my research airhancer. Get it? AIR-hancer?[roman type] She pauses to laugh uncontrollably. [speech style of M]So, this thing monitors the air pressure in your belly, and you're ready for a touch-up, it should keep your dick from getting hard. No more sex for you unless you're a good little test subject and help out with my experiments! I'm pretty sure I'm the only one who can take it off, but hey, I guess you can't blow it until you try! Hahaha!'[roman type]";
+			say "[speech style of M]'I think you[']ll find my methods to be airtight!'[roman type][line break]The [M] touches her wand to your [ShortDesc of penis], chanting under her breath as air swirls around your length. You watch as a semi-transparent sheet of compressed air layers itself over your shaft, causing your [if the player is a bit horny]erection[otherwise]half-erection[end if] to slowly go away as a golden bracelet materializes around your wrist.[line break][speech style of M]I call this my research airhancer. Get it? AIR-hancer?[roman type] She pauses to laugh uncontrollably. [line break][speech style of M]So, this thing monitors the air pressure in your belly, and you're ready for a touch-up, it should keep your dick from getting hard. No more sex for you unless you're a good little test subject and help out with my experiments! I'm pretty sure I'm the only one who can take it off, but hey, I guess you can't blow it until you try! Hahaha!'[roman type][line break]";
 			summon T;
 			calm M;
 		otherwise:
@@ -767,9 +782,9 @@ To compute failed dominance punishment of (M - an aeromancer):
 		bore M.
 
 To compute tornado experiment of (M - an aeromancer):
-	say "[speech style of M]I[']m sorry about this experiment. It really blows loads![roman type][line break] A tiny tornado flows out of the tip of her wand, grabbing your [ShortDesc of penis] and locking it in a prison of powerful suction. [run paragraph on]";
+	say "[speech style of M]I[']m sorry about this experiment. It really blows loads![roman type][line break]A tiny tornado flows out of the tip of her wand, grabbing your [ShortDesc of penis] and locking it in a prison of powerful suction. [run paragraph on]";
 	if the size of penis >= 9 or the health of M < 3:
-		say "It feels incredible for a moment, but the cone dissipates after only a couple seconds. [speech style of M]'Wow, looks like I[']m gonna have to turn up the juice!'[roman type] The [M] furrows her brow as she raises her wand again, chanting under her breath as a second wind tunnel twice as large as the original slowly flows from the tip of her wand, sucking in air from all around you as it assaults your penis with a rapidly intensifying vortex of pressure. The aeromancer struggles to maintain the spell, clothes ruffling in the wind and eventually tearing off as the suction builds and builds, torturing you with an ever mounting onslaught of pleasure.";
+		say "It feels incredible for a moment, but the cone dissipates after only a couple seconds. [line break][speech style of M]'Wow, looks like I[']m gonna have to turn up the juice!'[roman type][line break]The [M] furrows her brow as she raises her wand again, chanting under her breath as a second wind tunnel twice as large as the original slowly flows from the tip of her wand, sucking in air from all around you as it assaults your penis with a rapidly intensifying vortex of pressure. The aeromancer struggles to maintain the spell, clothes ruffling in the wind and eventually tearing off as the suction builds and builds, torturing you with an ever mounting onslaught of pleasure.";
 		if the science history of M > 4 or M is confident aeromancer :[worse punishment from the skilled aeromancer]
 			say "[line break]You suddenly lose control, groaning as your [ShortDesc of penis] explodes into the cone, which sends your [semen] flying across the room in every direction. The [M] stands up slowly[if bukkake fetish is 1], thoroughly coated in your load[otherwise], [one of]obviously surprised at[or]pleased with[stopping] her own strength[end if].";
 			SemenPuddleUp the size of penis;
@@ -796,11 +811,11 @@ Part 6 - Conversation
 Section 1 - Greeting
 
 To say FirstResponse of (M - an aeromancer):
-	say "[speech style of M]'Well hello there.  You look quite... unique.'[roman type][line break]";
+	say "[speech style of M]'Well hello there. You look quite... unique.'[roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 15.
 
 To say RepeatResponse of (M - an aeromancer):
-	say "[speech style of M]'[if M is buddy][one of]Oh it's you again.  Sup.'[or]Hey. Got any good puns to do with air?'[or]Good to see you again.'[at random][otherwise][one of]Oh it's you.  I thought I smelled something funny.'[or]Oh it's only you.'[or]We just keep bumping into each other, don't we.  You're not stalking me, are you?'[at random][roman type][line break]";
+	say "[speech style of M]'[if M is buddy][one of]Oh it's you again. Sup.'[or]Hey. Got any good puns to do with air?'[or]Good to see you again.'[at random][otherwise][one of]Oh it's you. I thought I smelled something funny.'[or]Oh it's only you.'[or]We just keep bumping into each other, don't we. You're not stalking me, are you?'[at random][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 16.
 
 To say UnfriendlyResponse of (M - an aeromancer):
@@ -813,7 +828,7 @@ To say DominantResponse of (M - an aeromancer):
 	otherwise if the class of the player is vixen:
 		say "[speech style of M]'[one of]Wow, you again? I thought you[']d be wearing a disguise after I embarrassed you like that. You must be really confident.'[or]Wow, it's you! Sorry, but have you ever thought about how awful you are at running away?'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if M is buddy]Hey there.  I'm glad we can still be friends after what I did to you earlier.'[otherwise]Why are you talking to me?  Shouldn't you be angry at me or something?'[end if][roman type][line break]";
+		say "[speech style of M]'[if M is buddy]Hey there. I'm glad we can still be friends after what I did to you earlier.'[otherwise]Why are you talking to me?  Shouldn't you be angry at me or something?'[end if][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 2.
 
 To say midDominanceResponse of (M - an aeromancer):
@@ -837,9 +852,9 @@ To compute annoyance of (M - an aeromancer):
 	if M is uninterested:
 		say "The aeromancer doesn't seem to realize you are talking to her.[line break]";
 	otherwise if M is unfriendly:
-		say "The aeromancer ignores your question.  [speech style of M]'Too much talking, not enough science.'[roman type][line break]";
+		say "The aeromancer ignores your question. [line break][speech style of M]'Too much talking, not enough science.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Okay that's enough questions now.  I'm a busy woman, you know.'[roman type][line break]";
+		say "[speech style of M]'Okay that's enough questions now. I'm a busy woman, you know.'[roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 17.
 
 To compute teaching of (M - an aeromancer):
@@ -856,11 +871,11 @@ To say WhereAnswer of (M - an aeromancer):
 	if image cutscenes is 1, display figure of aeromancer interact 18.
 
 To say WhoAnswer of (M - an aeromancer):
-	say "[speech style of M]'I'm nobody of importance.  Just a humble travelling scientist.'[roman type][line break]";
+	say "[speech style of M]'I'm nobody of importance. Just a humble travelling scientist.'[roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 6.
 		
 To say StoryAnswer of (M - an aeromancer):
-	say "[speech style of M]'That's too long a tale to explain right now.  Maybe one day it'll get made into a TV series though.'[roman type][line break]";
+	say "[speech style of M]'That's too long a tale to explain right now. Maybe one day it'll get made into a TV series though.'[roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 18.
 
 To say EscapeAnswer of (M - an aeromancer):
@@ -868,7 +883,7 @@ To say EscapeAnswer of (M - an aeromancer):
 	if image cutscenes is 1, display figure of aeromancer interact 5.
 
 To say AdviceAnswer of (M - an aeromancer):
-	say "[speech style of M]'[one of]If there's a room you might need to spend a lot of time on your knees, for example a room with furniture, maybe it would make sense to not risk opening the container in that room, in case it's trapped and releases pink smoke everywhere.'[or]Pretty much every living thing in this world seems to like being given shiny jewellery.  Even the mindless ones like the sex dolls.'[or]I hear there's a machine somewhere that can give you magic tattoos.  I've heard that putting a recipe in the hole can even get you a tattoo that makes you smarter!'[in random order][roman type][line break]";
+	say "[speech style of M]'[one of]If there's a room you might need to spend a lot of time on your knees, for example a room with furniture, maybe it would make sense to not risk opening the container in that room, in case it's trapped and releases pink smoke everywhere.'[or]Pretty much every living thing in this world seems to like being given shiny jewellery. Even the mindless ones like the sex dolls.'[or]I hear there's a machine somewhere that gives you magic tattoos depending on what you donate it. I bet that giving it a potion you've crafted might get you a tattoo that makes you smarter!'[in random order][roman type][line break]";
 	if image cutscenes is 1, display figure of aeromancer interact 16.
 
 Section 3 - Drink Requesting
@@ -887,7 +902,10 @@ Part 7 - Variants
 
 Section 1 - Confident Aeromancer
 
-A confident aeromancer is a kind of aeromancer.  There is 1 confident aeromancer.  The printed name of confident aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]confident aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The text-shortcut of confident aeromancer is "mae". A confident aeromancer is not dungeon dwelling.
+A confident aeromancer is a kind of aeromancer. There is 1 confident aeromancer. The printed name of confident aeromancer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]confident aeromancer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of confident aeromancer is "mae". 
+
+Definition: A confident aeromancer (called M) is dungeon dwelling:
+	decide no.
 
 This is the spawn initial woods aeromancer rule:
 	if the number of alive aeromancers in the woods is 0 and inflation fetish is 1:
@@ -901,7 +919,7 @@ To compute appearance assessment of (M - a confident aeromancer):
 	if A >= 15:
 		say "[speech style of M]'[one of]WOW, what wind elemental fucked YOUR brains out? I probably shouldn[']t bother asking, since you[']re obviously a slut for getting blown up like a balloon, but how would you like to help me with an experiment?'[or]You look kind of bloated. Did you wake up on the wrong side of a djinn[']s cloud buster? Hahaha! Help me out with an experiment....if you want. *snrt*'[or]Hey, you probably get this a lot, but you look JUST like this balloon I fucked in college. Hahaha! Want to help me out with an experiment?'[at random][roman type][line break]";
 	otherwise if the class of the player is schoolgirl:
-		say "[speech style of M]'[one of]So, freshman. Want to help out with one of my experiments, or am I going to have to fog you.'[or]Hey, you like tentacles right? Ok, so I have this experiment I want to try out, but if you say no, I'm going to use my magic to make you my bitch. Win win for both of us, right?'[or]You obviously have no magical talent, so you'd really have no chance of taking me on in a fight. So, agree to help me out with an experiment, or I'm going to use my magic to torture you until I get bored! Sound good?'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]So, freshman. Want to help out with one of my experiments, or am I going to have to fog you.'[or]Hey, you like tentacles right? Ok, so I have this experiment I want to try out, but if you say no, I'm going to use my magic to make you my bitch. Win win for both of us, right?'[or]You obviously have no magical talent, so you'd really have no chance of taking me on in a fight. So, agree to help me out with an experiment, or I'm going to use my magic to torture you until I get bored! Sound good?'[at random][roman type] [yesnolink][line break]";
 	otherwise if the player is exposed:
 		say "[speech style of M]'[one of]Wow, a wench outside the dungeon! You don't see that every day! [or]My motto is: ['][if vagina is lewdly exposed]cunt[otherwise if penis is lewdly exposed and penis is tiny]sissy clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, fucked by guards all day![']  [then at random]FYI I'm pretty powerful, so I'm going to experiment on you either way, but I'll go easier on you if you accept willingly. Sound good?[roman type][line break]";
 	otherwise:
@@ -924,7 +942,7 @@ To compute aeromancer science of (M - a confident aeromancer):
 	let N be the science history of M;
 	if N > 5, now N is 5;
 	let R be a random number between 0 and N;[TODO: summons wasp]
-	say "[speech style of M]'[one of]Smart! Ok, let's see...'  [or]Nice!  Here we go...'  [or]Right, stay still...'  [at random][roman type]Pointing her wand towards you, the [M] concentrates.  ";
+	say "[speech style of M]'[one of]Smart! Ok, let's see...'  [or]Nice!  Here we go...'  [or]Right, stay still...'  [at random][roman type]Pointing her wand towards you, the [M] concentrates. ";
 	if R is 0:
 		say "You feel your whole body exploding outwards!";
 		if the largeness of breasts < max breast size, BustInflate 12;
@@ -942,7 +960,7 @@ To compute aeromancer science of (M - a confident aeromancer):
 		let C be a random worn knickers;
 		if K is actually summonable:
 			summon K cursed;
-			say "A [K] materialises on and inside of you!  [variable custom style][if the openness of asshole < 3]Ouch![otherwise if the openness of asshole < 6 or the anal sex addiction of the player < 4]Eek![otherwise]Ooh![end if][roman type][line break]";
+			say "A [K] materialises on and inside of you!  [line break][variable custom style][if the openness of asshole < 3]Ouch![otherwise if the openness of asshole < 6 or the anal sex addiction of the player < 4]Eek![otherwise]Ooh![end if][roman type][line break]";
 		otherwise if the bladder of the player > 0:
 			say "Air fills your bladder, putting immense pressure on it!  You can't help but start to wet yourself.";
 			now delayed urination is 1;
@@ -990,7 +1008,7 @@ To say CreampieFlav of (M - a confident aeromancer) in (F - asshole):
 	say "The [M] fucks you harder and harder, wild gusts of wind screaming through the trees as her magical phallus pulses with its climax. You groan involuntarily as your belly fills up with torrent after torrent of compressed air, each one leaving a wider smirk on the aeromancer's face.";
 
 To say CreampieFlav of (M - a confident aeromancer) in (F - vagina):
-	say "The [M] fucks you harder and harder, screaming with delight as her magical phallus floods your [vagina] with warm, glittery [semen]. She releases her hold on your body as the gooey fluid soaks into your skin, causing a strange tingling feeling to travel up your torso and into your chest. You watch with [if the bimbo of the player < 7]horror[otherwise if the bimbo of the player < 11]confusion[otherwise]awe[end if] as your breasts suddenly balloon with air!";
+	say "The [M] fucks you harder and harder, screaming with delight as her magical phallus floods your [vagina] with warm, glittery [semen]. She releases her hold on your body as the gooey fluid soaks into your skin, causing a strange tingling feeling to travel up your torso and into your chest. You watch with [horror] as your breasts suddenly balloon with air!";
 	if image cutscenes is 1, display figure of aeromancer cutscene 5;
 	say "The [M] drops you on your back, taking a brief moment to smirk at her handiwork before losing interest.".	
 	
@@ -1000,9 +1018,10 @@ To compute (M - a confident aeromancer) entering a fuckhole:
 	if the player is monster stuck:
 		say "The [M] stretches out her arms and hands towards you, smirking as her wand immediately begins to glow. The air around you compresses itself into a massive, disembodied [manly-penis], only visible from the sheer speed at which it shoots [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Shrieking gusts of wind lash at your skin and clothes as the magical sex organ begins to ruthlessly fuck you.";
 	otherwise:
-		say "The [M] stretches out her arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind.  Cackling with glee, the aeromancer uses her mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the center, at just above waist height. She takes a couple of steps forward, barely containing her mirth as you [if the relevant sex addiction of M < 7]desperately try but fail to get purchase on the ground below[otherwise]look up at her in wide-eyed anticipation[end if].";
+		say "The [M] stretches out her arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind. Cackling with glee, the aeromancer uses her mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the center, at just above waist height. She takes a couple of steps forward, barely containing her mirth as you [if the relevant sex addiction of M < 7]desperately try but fail to get purchase on the ground below[otherwise]look up at her in wide-eyed anticipation[end if].";
 		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You[']re a slut! Hahahaha!'[in random order][roman type]";
 		say "The aeromancer raises her wand, which glows brightly as the air around you compresses itself into a massive, disembodied [manly-penis], only visible from the sheer speed at which it shoots [if M is anal]up your [asshole][otherwise]into your [vagina][end if]. Shrieking gusts of wind lash at your skin and clothes as the magical sex organ begins to ruthlessly fuck you.".
 
 
 Aeromancer ends here.
+

@@ -6,7 +6,7 @@ Player Standing by Every Turn begins here.
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the buckle threshold of the player:
+To decide which number is the buckle threshold of (Y - yourself):
 	decide on ((the strength of the player + 5) * 20 * (10 - the body soreness of the player)) / 10.
 
 [!<DecideWhichNumberIsTheTiredThresholdOfThePlayer>+
@@ -14,7 +14,7 @@ To decide which number is the buckle threshold of the player:
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the tired threshold of the player:
+To decide which number is the tired threshold of (Y - yourself):
 	decide on ((the strength of the player + 5) * 10 * (10 - the body soreness of the player)) / 10.
 
 [!<DecideWhichNumberIsTheVeryTiredThresholdOfThePlayer>+
@@ -22,7 +22,7 @@ To decide which number is the tired threshold of the player:
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the very tired threshold of the player:
+To decide which number is the very tired threshold of (Y - yourself):
 	decide on ((the strength of the player + 5) * 15 * (10 - the body soreness of the player)) / 10.
 
 [!<PersonIsTired>+
@@ -30,7 +30,7 @@ To decide which number is the very tired threshold of the player:
 REQUIRES COMMENTING
 
 +!]	
-Definition: a person is tired:
+Definition: yourself (called Y) is tired:
 	if the fatigue of the player > the tired threshold of the player, decide yes;
 	decide no.
 
@@ -39,7 +39,7 @@ Definition: a person is tired:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person is very tired:
+Definition: yourself (called Y) is very tired:
 	if the fatigue of the player > the very tired threshold of the player, decide yes;
 	decide no.
 
@@ -76,7 +76,7 @@ To compute player standing:
 	repeat with C running through worn clothing:
 		[say "Fatigue influence of [C] is [fatigue-influence of C].";]
 		increase W by the fatigue-influence of C;
-	if there is a worn heels, now W is (W * 1000) / H; [The * 1000 is to allow the game to better deal with division since it doesn't do remainders.  Ideally we'd just use real numbers as opposed to integers here.  Anyway the sum here means that at 0 or 1 heel skill you don't reduce fatigue at all (you divide by 1) and at max heel skill (10) you divide by 2.]
+	if there is a worn heels, now W is (W * 1000) / H; [The * 1000 is to allow the game to better deal with division since it doesn't do remainders. Ideally we'd just use real numbers as opposed to integers here. Anyway the sum here means that at 0 or 1 heel skill you don't reduce fatigue at all (you divide by 1) and at max heel skill (10) you divide by 2.]
 	otherwise now W is W / 2;
 	if W > the strength of the player * 4, now W is the strength of the player * 4; [Any player of any weight should be able to stand up for at least 20 rounds]
 	if W > 0: [W > 0 is there because fatigue increases very slowly when the player is superlight]
@@ -93,7 +93,7 @@ To compute player standing:
 	if the player is not vine fucked:
 		if the fatigue of the player > S:
 			unless the player is trap stuck:
-				say "Your knees buckle with fatigue, and you fall down onto them.  ";
+				say "Your knees buckle with fatigue, and you fall down onto them. ";
 				try kneeling;
 				repeat with M running through intelligent dangerous monsters in the location of the player:
 					make M expectant; [This way monsters are delayed for a turn when you buckle, giving you a chance to wait, submit, etc.]
@@ -103,7 +103,7 @@ To compute player standing:
 					try urinating;
 			otherwise:
 				if the player is hook stuck:
-					say "Your arms feel weak, your legs feel weak, your everything feels weak.  Your legs begin to shake.  You [if the bimbo of the player < 12]burst into tears[otherwise]squeal like a little girl[end if] as you feel your knees buckle underneath you, and all your weight is placed onto the hook.  The intense pressure turns quickly into blinding pain, and causes you to faint within seconds.";
+					say "Your arms feel weak, your legs feel weak, your everything feels weak. Your legs begin to shake. You [if the bimbo of the player < 12]burst into tears[otherwise]squeal like a little girl[end if] as you feel your knees buckle underneath you, and all your weight is placed onto the hook. The intense pressure turns quickly into blinding pain, and causes you to faint within seconds.";
 					now delayed fainting is 1;
 					now the fainting reason of the player is 6;
 				if the player is drill stuck, compute drill damage;
@@ -144,3 +144,4 @@ To compute drill damage:
 
 
 Player Standing ends here.
+

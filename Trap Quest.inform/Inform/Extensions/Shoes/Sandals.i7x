@@ -1,6 +1,6 @@
 Sandals by Shoes begins here.
 
-A sandals is a kind of heels. A sandals is usually biological. A sandals is usually unique. The printed name of sandals is usually "[TQlink of item described][item style]pair of wooden sandals[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sandals is "wsa". Understand "wooden" as sandals. There is 1 sandals.
+A sandals is a kind of heels. A sandals is usually biological. A sandals is usually unique. The printed name of sandals is usually "[TQlink of item described][item style]pair of wooden sandals[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sandals is "wsa". Understand "wooden" as sandals. There is 1 sandals.
 
 Figure of wooden sandals is the file "sandals1.png".
 
@@ -29,3 +29,4 @@ To decide which object is the unique-upgrade-target of (C - a sandals):
 	decide on nothing.
 
 Sandals ends here.
+

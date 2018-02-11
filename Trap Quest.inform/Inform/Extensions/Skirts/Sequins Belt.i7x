@@ -1,15 +1,15 @@
 Sequins Belt by Skirts begins here.
 
-A sequins belt is a kind of skirt.  A sequins belt is usually sheer.  A sequins belt is usually super-short.  Figure of sequins belt is the file "belt1.png".  There is 1 unique metal sequins belt.  The printed name of sequins belt is usually "[TQlink of item described][clothing-title-before]sequins belt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of sequins belt is "seq".
+A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is usually super-short. Figure of sequins belt is the file "belt1.png". There is 1 unique metal sequins belt. The printed name of sequins belt is usually "[TQlink of item described][clothing-title-before]sequins belt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sequins belt is "seq".
 
 To decide which figure-name is clothing-image of (C - a sequins belt):
 	decide on figure of sequins belt.
 
 To say ClothingDesc of (C - a sequins belt):
-	say "This belt is made of several strands of sequins that hang freely in front of your crotch, held around your waist by a small black strap.  It would appear to be completely pointless except for possibly providing the tiniest amount of modesty.".
+	say "This belt is made of several strands of sequins that hang freely in front of your crotch, held around your waist by a small black strap. It would appear to be completely pointless except for possibly providing the tiniest amount of modesty.".
 
 To compute SelfExamineDesc of (Y - a sequins belt):
-	say "Several strands of sequins hang in front of your crotch.  ".
+	say "Several strands of sequins hang in front of your crotch. ".
 
 To say ShortDesc of (Y - a sequins belt):
 	say "sequins belt".
@@ -35,3 +35,4 @@ To transform (D - a sequins belt) into (C - a sequins outfit):
 	say "[TransformReaction of C]".
 
 Sequins Belt ends here.
+

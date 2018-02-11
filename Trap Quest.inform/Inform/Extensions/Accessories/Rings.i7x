@@ -1,6 +1,6 @@
 Rings by Accessories begins here.
 
-A ring is a kind of accessory.  The printed name of ring is usually "[TQlink of item described][item style][accessory-colour of the item described] ring[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of ring is usually "[TQlink of item described][item style][accessory-colour of the item described] rings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A ring is a kind of accessory. The printed name of ring is usually "[TQlink of item described][item style][accessory-colour of the item described] ring[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of ring is usually "[TQlink of item described][item style][accessory-colour of the item described] rings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 There are 25 rings.
 
@@ -31,3 +31,4 @@ This is the setup starting rings rule:
 The setup starting rings rule is listed in the setup starting items rules.
 
 Rings ends here.
+

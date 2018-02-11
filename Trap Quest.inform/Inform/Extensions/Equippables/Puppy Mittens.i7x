@@ -1,12 +1,12 @@
 Puppy Mittens by Equippables begins here.
 
-A puppy mittens is a kind of gloves.  A puppy mittens is usually unique.  A puppy mittens is usually leather.  A puppy mittens is usually manly.  There is 1 puppy mittens.  The printed name of puppy mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of puppy mittens[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of puppy mittens is "pm".  Figure of puppy mittens is the file "puppymittens1.png".
+A puppy mittens is a kind of gloves. A puppy mittens is usually unique. A puppy mittens is usually leather. A puppy mittens is usually manly. There is 1 puppy mittens. The printed name of puppy mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of puppy mittens[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of puppy mittens is "pm". Figure of puppy mittens is the file "puppymittens1.png".
 
 To decide which figure-name is clothing-image of (C - a puppy mittens):
 	decide on figure of puppy mittens.
 
 To say ClothingDesc of (W - a puppy mittens):
-	say "A pair of black leather bondage mittens with a paw print design on the front.  You lose some manual dexterity from wearing them, and some slapping power.";
+	say "A pair of black leather bondage mittens with a paw print design on the front. You lose some manual dexterity from wearing them, and some slapping power.";
 	if the class of the player is puppygirl and W is worn, say "You feel [if the number of worn clothing < 4]excellent[otherwise if the number of worn clothing < 7]better[otherwise]worse[end if] at running away from monsters whilst on your knees.".
 
 To say ShortDesc of (W - a puppy mittens):
@@ -36,3 +36,4 @@ To uniquely set up (C - a puppy mittens):
 	now C is endurance.
 
 Puppy Mittens ends here.
+

@@ -96,13 +96,13 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	if the second noun is not clothing and the second noun is not arms, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
 	if the second noun is clothing:
 		if the player is flying and the second noun is not held by the player, say "The [printed name of the second noun] is on the ground, and you're not." instead;
-		if the second noun is not appropriate for cleaning, say "That's not something you can clean with.  Maybe try a piece of clothing actually made out of soft fabric?" instead;
+		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
 		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
 		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean yourself with it." instead;
 	otherwise if the player is not craving: [i.e. If the second noun is arms]
 		if the semen taste addiction of the player < 8 and the thirst of the player < 4, say "You can't bring yourself to do that!" instead;
 	if the humiliation of the player > 28000 and the semen addiction of the player > 11 and ((the player is not craving and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player) or the second noun is not arms):
-		if the second noun is arms and the semen taste addiction of the player > 13, say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]!  I only get to drink it if there's extra left over.[or]It's more important for me to look like a slut than get to taste my favourite drink.[or][if the noun is face]How will guys know I want their [manly-penis] in my mouth don't have [semen] on my face?  The best way to make sure I get to taste more cum is by keeping the stuff on my face there.[otherwise]I deserve to have this on my [noun].  Removing it would be unfair to the contributors.[end if][or]I like wearing it! No way am I wiping it off!, even if it is to taste it![or]If I want to taste [semen], I could convince a hunk to fuck my throat, not cheat by licking it off my body.[or]That would be cheating.  I should find a cock to suck if I want a fix.[or]It would be more fun to let a guy cum in my ass, and then collect it in a cup.  To lick cum off my own body would be too cheap and easy for a girl like me.[or]My body is all dirty and sweaty.  I want to drink pure cum, straight from the tap.[or]I'm supposed to wear it, not drink it.  I was naughty and this is my punishment[if the intelligence of the player > 13].  Semen, semen everywhere, through all my pores did shrink; semen, semen everywhere, nor any drop to drink.  Ooh, that sounds like great idea for a poem!  I'll call it 'The Rime of the Ancient Cum Guzzler'[end if].[in random order][roman type][line break]" instead;
+		if the second noun is arms and the semen taste addiction of the player > 13, say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]!  I only get to drink it if there's extra left over.[or]It's more important for me to look like a slut than get to taste my favourite drink.[or][if the noun is face]How will guys know I want their [manly-penis] in my mouth don't have [semen] on my face?  The best way to make sure I get to taste more cum is by keeping the stuff on my face there.[otherwise]I deserve to have this on my [noun]. Removing it would be unfair to the contributors.[end if][or]I like wearing it! No way am I wiping it off!, even if it is to taste it![or]If I want to taste [semen], I could convince a hunk to fuck my throat, not cheat by licking it off my body.[or]That would be cheating. I should find a cock to suck if I want a fix.[or]It would be more fun to let a guy cum in my ass, and then collect it in a cup. To lick cum off my own body would be too cheap and easy for a girl like me.[or]My body is all dirty and sweaty. I want to drink pure cum, straight from the tap.[or]I'm supposed to wear it, not drink it. I was naughty and this is my punishment[if the intelligence of the player > 13]. Semen, semen everywhere, through all my pores did shrink; semen, semen everywhere, nor any drop to drink. Ooh, that sounds like great idea for a poem!  I'll call it 'The Rime of the Ancient Cum Guzzler'[end if].[in random order][roman type][line break]" instead;
 		otherwise say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]![or]I'm a dirty slut and I should look like one.[or][if the noun is face]How will guys know I'm an easy fuck if I don't have [semen] on my face?[otherwise]I didn't put it there, so I can't be sure I have permission to remove it.[end if][or]I deserve to have this on my [noun].[or]I like wearing it! No way am I wiping it off![or]I'm a whore, I deserve to be covered in it![or]A dirty whore like me should look the part![or]I'm a filthy slut, I deserve to be covered in [semen].[or]No way! I LIKE being dirty![or]I deserve to be covered in it. I'm a NAUGHTY girl![or]I'm supposed to wear it, I was naughty.[in random order][roman type][line break]" instead.
 
 [!<CarryOutCleaningItWith>+
@@ -119,7 +119,7 @@ REQUIRES COMMENTING
 
 +!]
 To 2Clean (P - a body part) with  (C - a clothing):
-	say "You use the [printed name of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][first custom style]  [one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
+	say "You use the [printed name of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style]  [one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
  	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
  		decrease the semen coating of P by 1;
  		let R be a random number between 1 and 2;
@@ -140,7 +140,7 @@ REQUIRES COMMENTING
 
 +!]
 To 2Clean (P - a body part) with (C - a limb):
-	say "You use your fingers to scrape a bit of [semen] from your [P] and eat it.[if the semen taste addiction of the player > 11][second custom style]  [one of]Mmm, tasty![or]Yummy![or]Yum yum![or]So good![then at random][roman type][end if] ";
+	say "You use your fingers to scrape a bit of [semen] from your [P] and eat it.[if the semen taste addiction of the player > 11][line break][second custom style]  [one of]Mmm, tasty![or]Yummy![or]Yum yum![or]So good![then at random][roman type][line break][end if] ";
 	let R be a random number between 2 and 4;
 	if the semen coating of P < R, now R is the semen coating of P;
 	decrease the semen coating of P by R;
@@ -158,7 +158,7 @@ REQUIRES COMMENTING
 Report cleaning it with when the second noun is clothing:
 	let M be a random shopkeeper;
 	if the second noun is store and Dungeon41 is guarded and M is not mating:
-		say "[speech style of M]'Oi!  I own that, don't use it as some kind of cum rag.  GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
+		say "[speech style of M]'Oi!  I own that, don't use it as some kind of cum rag. GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
 		anger M;
 		now M is interested;
 		now the second noun is stolen.
@@ -175,3 +175,4 @@ To clean (C - a clothing):
 
 
 Cleaning ends here.
+

@@ -1,6 +1,6 @@
 Fertility Goddess Outfit by Dresses begins here.
 
-A fertility outfit is a kind of overdress.  A fertility outfit is usually unique.  A fertility outfit is usually vaginal-sex-addiction-influencing.
+A fertility outfit is a kind of overdress. A fertility outfit is usually unique. A fertility outfit is usually vaginal-sex-addiction-influencing.
 
 Definition: a fertility outfit (called C) is pregnancy related:
 	decide yes.
@@ -10,9 +10,9 @@ Figure of ivy leaves is the file "fertilitygoddess2.png".
 
 Part 1 - Goddess Tunic
 
-A goddess tunic is a kind of fertility outfit.  A goddess tunic is usually silk.  A goddess tunic is usually short.  A goddess tunic is usually confidence.  A goddess tunic is usually high cut.  A goddess tunic is usually sheer-when-wet.  There is 1 goddess tunic.
+A goddess tunic is a kind of fertility outfit. A goddess tunic is usually silk. A goddess tunic is usually short. A goddess tunic is usually confidence. A goddess tunic is usually high cut. A goddess tunic is usually sheer-when-wet. There is 1 goddess tunic.
 
-The printed name of goddess tunic is usually "[TQlink of item described][clothing-title-before]goddess tunic[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of goddess tunic is "gt".
+The printed name of goddess tunic is usually "[TQlink of item described][clothing-title-before]goddess tunic[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of goddess tunic is "gt".
 
 
 To decide which figure-name is clothing-image of (C - a goddess tunic):
@@ -22,7 +22,7 @@ To say ClothingDesc of (C - a goddess tunic):
 	say "This regal tunic look like the sort of thing a Roman goddess would be portrayed in.".
 	
 To compute SelfExamineDesc of (O - a goddess tunic):
-	say "You are wearing a [ShortDesc of O].  ".	
+	say "You are wearing a [ShortDesc of O]. ".	
 
 To say ShortDesc of (C - a goddess tunic):
 	say "goddess' tunic".
@@ -35,18 +35,18 @@ To decide which object is the potential-upgrade-target of (C - a goddess tunic):
 
 Part 2 - Ivy Leaves
 
-An ivy leaves is a kind of fertility outfit.  An ivy leaves is usually biological.  An ivy leaves is usually nipple exposing.  An ivy leaves is usually fully exposing. An ivy leaves is usually belly exposing.  An ivy leaves is usually unskirted.  An ivy leaves is usually bottom-exclusive.  There is 1 ivy leaves.
+An ivy leaves is a kind of fertility outfit. An ivy leaves is usually biological. An ivy leaves is usually nipple exposing. An ivy leaves is usually fully exposing. An ivy leaves is usually belly exposing. An ivy leaves is usually unskirted. An ivy leaves is usually bottom-exclusive. There is 1 ivy leaves.
 
-The printed name of ivy leaves is usually "[TQlink of item described][clothing-title-before]ivy leaves[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of ivy leaves is "il".
+The printed name of ivy leaves is usually "[TQlink of item described][clothing-title-before]ivy leaves[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ivy leaves is "il".
 
 To decide which figure-name is clothing-image of (C - an ivy leaves):
 	decide on figure of ivy leaves.
 
 To say ClothingDesc of (C - an ivy leaves):
-	say "This... 'outfit' made of ivy leaves and twigs covers very little.  [if C is worn]It makes you feel like some kind of mother nature.[otherwise]It looks like the sort of thing that a dryad or earth spirit would wear.[end if]".
+	say "This... 'outfit' made of ivy leaves and twigs covers very little. [if C is worn]It makes you feel like some kind of mother nature.[otherwise]It looks like the sort of thing that a dryad or earth spirit would wear.[end if]".
 
 To compute SelfExamineDesc of (O - an ivy leaves):
-	say "You have a few branches of ivy and leaves clinging to your body, which is somehow making your body shine a shade of green.  ".
+	say "You have a few branches of ivy and leaves clinging to your body, which is somehow making your body shine a shade of green. ".
 
 The printed name of ivy leaves is usually "[TQlink of item described][clothing-title-before]ivy leaves[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -80,3 +80,4 @@ Definition: a living tentacles (called C) is untransformable:
 
 
 Fertility Goddess Outfit ends here.
+

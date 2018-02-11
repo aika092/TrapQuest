@@ -21,6 +21,7 @@ To Recover the Player:
 	MilkPuddleUp the milk volume of breasts / 2;
 	now the milk volume of breasts is the lactation rate of the player;
 	now the lactation rate of the player is 0;
+	now the air volume of belly is 0; [always deflate belly of air even if ass is plugged]
 	if the number of things penetrating asshole is 0:
 		SemenPuddleUp the semen volume of belly / 2;
 		now the semen volume of belly is 0;
@@ -31,7 +32,6 @@ To Recover the Player:
 		now the milk volume of belly is 0;
 		if watersports mechanics is 1, UrinePuddleUp the urine volume of belly / 2;
 		now the urine volume of belly is 0;
-		now the air volume of belly is 0;
 		now the water volume of belly is 0;
 		while the small egg count of belly > 0:
 			decrease the small egg count of belly by 1;
@@ -102,3 +102,4 @@ To Recover the Player:
 
 
 Recovering the Player ends here.
+

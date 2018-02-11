@@ -1,14 +1,14 @@
 Scrunchies by Headgear begins here.
 
-A scrunchie is a kind of headgear.   A scrunchie is usually hair growing.
+A scrunchie is a kind of headgear. A scrunchie is usually hair growing.
 
-A scrunchie is blondeness-positive.  A scrunchie is brightness-positive.  A scrunchie is redness-positive. A scrunchie is usually roleplay.
+A scrunchie is blondeness-positive. A scrunchie is brightness-positive. A scrunchie is redness-positive. A scrunchie is usually roleplay.
 
-The printed name of scrunchie is usually "[TQlink of item described][clothing-title-before]blue scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of scrunchie is usually "[TQlink of item described][clothing-title-before]blue scrunchies[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of scrunchie is "scr".
+The printed name of scrunchie is usually "[TQlink of item described][clothing-title-before]blue scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of scrunchie is usually "[TQlink of item described][clothing-title-before]blue scrunchies[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of scrunchie is "scr".
 
 To compute SelfExamineDesc of (H - a scrunchie):
 	let X be the largeness of hair;
-	say "You have [ShortDesc of hair].  ".
+	say "You have [ShortDesc of hair]. ".
 
 This is the scrunchie must be the same colour rule:
 	if there is a worn blue scrunchie:
@@ -88,33 +88,35 @@ To decide which number is the intelligence-influence of (H - a pink scrunchie):
 cheerleader-summoned is a number that varies.
 
 To compute class outfit of (H - a pink scrunchie):
-	if the headgear chance of H < the threshold of H:
-		let C be a random off-stage longsleeved cheerleader outfit;
-		let P be a random pom-pom;
-		if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0):
-			if cheerleader-summoned is 0:
-				repeat with O running through worn dresses:
-					say "Your [O] vanishes!";
-					destroy O;
-				repeat with O running through worn skirts:
-					say "Your [O] vanishes!";
-					destroy O;
-			say "[bold type]A snug red outfit appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
-			summon C cursed;
-			now the raw-magic-modifier of C is 0;
-			now cheerleader-summoned is 1;
-			increase the raw-magic-modifier of C by the flesh volume of hips / 5;
-		otherwise if P is actually summonable:
-			say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type]";
-			summon P cursed;
-			now the raw-magic-modifier of P is 0;
-			if the player is not ass protected, now the raw-magic-modifier of P is 2.
+	let C be a random off-stage longsleeved cheerleader outfit;
+	let P be a random pom-pom;
+	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0):
+		if cheerleader-summoned is 0:
+			repeat with O running through worn dresses:
+				say "Your [O] vanishes!";
+				destroy O;
+			repeat with O running through worn skirts:
+				say "Your [O] vanishes!";
+				destroy O;
+		say "[bold type]A snug red outfit appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
+		summon C cursed;
+		now the raw-magic-modifier of C is 0;
+		now cheerleader-summoned is 1;
+		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
+	otherwise if P is actually summonable:
+		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type]";
+		summon P cursed;
+		now the raw-magic-modifier of P is 0;
+		if the player is not ass protected, now the raw-magic-modifier of P is 2.
 
 Chapter 2 - Blue Scrunchie
 
 [The first is obtained from dungeon apothecary, second is obtained from hotel library.]
 
-A blue scrunchie is a kind of scrunchie. 1 blue scrunchie is in Dungeon27. 1 blue scrunchie is in Hotel25.  Figure of blue scrunchie is the file "scrunchie2.png".
+A blue scrunchie is a kind of scrunchie. 1 blue scrunchie is in Dungeon27. 1 blue scrunchie is in Hotel25. Figure of blue scrunchie is the file "scrunchie2.png".
+
+Definition: A blue scrunchie (called S) is immune to change:
+	decide yes.
 
 schoolgirl-summoned is a number that varies.
 
@@ -147,10 +149,12 @@ To decide which number is the dexterity-influence of (H - a blue scrunchie):
 	if the class of the player is schoolgirl, decide on 0;
 	decide on -1.
 
-To compute periodic effect of (H - a blue scrunchie):
-	if diaper quest is 1 and (the headgear chance of H < the threshold of H or schoolgirl-summoned is 0), compute class outfit of H;
-	compute hair growth of H;
-	compute hair colour change of H.[Class outfit is handled during alchemy]
+To compute outfit of (H - a blue scrunchie):
+	if diaper quest is 1:
+		increase the outfit-charge of H by 1;
+		if the outfit-charge of H > 25:
+			now the outfit-charge of H is 0;
+			compute class outfit of H.
 
 To compute class outfit of (H - a blue scrunchie):
 	let R be a random off-stage cheeky schoolgirl outfit;
@@ -165,7 +169,7 @@ To compute class outfit of (H - a blue scrunchie):
 			now the raw-magic-modifier of T is 0;
 			if diaper quest is 0, now T is temptation;
 		if O is actually summonable and there is a worn tartan miniskirt: [if the miniskirt spawned let's try and spawn the tube top as well]
-			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh...there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Tee hee!  I guess I am being pretty naughty.  I hope there[']s more to this outfit...[end if][roman type][line break]";
+			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh...there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Tee hee!  I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
 			summon O cursed;
 			now the raw-magic-modifier of O is 0;
 			now O is confidence;
@@ -191,7 +195,7 @@ To compute class outfit of (H - a blue scrunchie):
 			now schoolgirl-summoned is 1;
 			summon R cursed;
 			now the raw-magic-modifier of R is 1;
-			say "[bold type]A black fleece appears on you, followed by a short skirt and a matching tie![line break][variable custom style]I guess that makes me a [if diaper quest is 1]naughty[otherwise]slutty[end if] schoolgirl.  [if the bimbo of the player < 8]Sigh...[end if][roman type][line break]";
+			say "[bold type]A black fleece appears on you, followed by a short skirt and a matching tie![line break][variable custom style]I guess that makes me a [if diaper quest is 1]naughty[otherwise]slutty[end if] schoolgirl. [if the bimbo of the player < 8]Sigh...[end if][roman type][line break]";
 		otherwise if there is a worn schoolgirl outfit and S is actually summonable:
 			summon S cursed;
 			now the raw-magic-modifier of S is 1;
@@ -208,7 +212,7 @@ To decide which object is the potential-upgrade-target of (C - a blue scrunchie)
 
 Chapter 3 - Monkey Scrunchie
 
-A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies.  Figure of monkey scrunchie is the file "scrunchie3.png".
+A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies. Figure of monkey scrunchie is the file "scrunchie3.png".
 
 The printed name of monkey scrunchie is usually "[TQlink of item described][clothing-title-before]monkey scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The printed plural name of monkey scrunchie is usually "[TQlink of item described][clothing-title-before]monkey scrunchies[clothing-title-after][TQxlink of item described][verb-desc of item described]".
@@ -248,3 +252,4 @@ The printed name of a rubber scrunchie is "[TQlink of item described][clothing-t
 
 
 Scrunchies ends here.
+

@@ -17,15 +17,15 @@ Definition: a shoes (called C) is ingredient:
 To decide which number is the crafting key of (C - a shoes):
 	decide on 51.
 
-heels is a kind of shoes. A heels have a number called heel-height.  Understand "he" as heels.
+heels is a kind of shoes. A heels have a number called heel-height. Understand "he" as heels.
 
 Definition: a heels (called C) is fluid immune:
 	decide yes.
 
-Understand the heel-height property as describing a heels.   Understand "heel", "inch" as heels.  The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]".  The text-shortcut of heels is "he".
+Understand the heel-height property as describing a heels. Understand "heel", "inch" as heels. The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]". The text-shortcut of heels is "he".
 
-stiletto heels is a kind of heels.  boots is a kind of heels.  platform heels is a kind of heels.
-The text-shortcut of stiletto heels is "sh".  The text-shortcut of boots is "bo".  The text-shortcut of platform heels is "ph".
+stiletto heels is a kind of heels. boots is a kind of heels. platform heels is a kind of heels.
+The text-shortcut of stiletto heels is "sh". The text-shortcut of boots is "bo". The text-shortcut of platform heels is "ph".
 Understand "boot", "boots" as boots.
 
 To decide which number is the initial cringe of (C - a shoes):
@@ -91,7 +91,7 @@ To decide which number is the kick-bonus of (S - a heels):
 To decide which number is the damage modifier of (H - a heels):
 	[Double damage on crit with heels]
 	if attack-type is 3:
-		[Normal heels have a 1 in 6 chance.  Queen of Hearts heels have a 1 in 3 chance.  Cursed heels have a 1 in 10 chance.]
+		[Normal heels have a 1 in 6 chance. Queen of Hearts heels have a 1 in 3 chance. Cursed heels have a 1 in 10 chance.]
 		let R be a random number between 1 and 6;
 		if H is queen of hearts heels, now R is a random number between 1 and 3;
 		if H is cursed, now R is a random number between 1 and 10;
@@ -158,10 +158,10 @@ To say UniqueShortDesc of (C - a heels):
 
 To compute SelfExamineDesc of (H - a heels):
 	if the player is upright:
-		say "You are [if the player is ankle bound]somehow managing to hobble along with[otherwise if the strut of the player is 1]strutting around provocatively in your[otherwise if the hindrance of H < 2]walking around confidently in your[otherwise]managing to balance on a[end if] [ShortDesc of H].  ";
-		if diaper quest is 0, say "[one of]Your [BreastDesc] [BreastBounceDesc] as you [if the player is ankle bound]mince in tiny steps[otherwise if the strut of the player is 1]strut[otherwise if the hindrance of H < 2]stride[otherwise]teeter[end if] through these [if the delicateness of the player  < 4]weird and disturbing places[otherwise]scary environs[end if].  [or][or][or][or][in random order]";
+		say "You are [if the player is ankle bound]somehow managing to hobble along with[otherwise if the strut of the player is 1]strutting around provocatively in your[otherwise if the hindrance of H < 2]walking around confidently in your[otherwise]managing to balance on a[end if] [ShortDesc of H]. ";
+		if diaper quest is 0, say "[one of]Your [BreastDesc] [BreastBounceDesc] as you [if the player is ankle bound]mince in tiny steps[otherwise if the strut of the player is 1]strut[otherwise if the hindrance of H < 2]stride[otherwise]teeter[end if] through these [if the delicateness of the player  < 4]weird and disturbing places[otherwise]scary environs[end if]. [or][or][or][or][in random order]";
 	otherwise:
-		say "A [ShortDesc of H] are currently latched to your feet[if the player is ankle bound], and your ankles are bound close together making it difficult to crawl[end if].  ".
+		say "A [ShortDesc of H] are currently latched to your feet[if the player is ankle bound], and your ankles are bound close together making it difficult to crawl[end if]. ".
 
 Report examining heels:
 	if newbie tips is 1, say "Heels [if the number of worn heels is 0]would [end if]allow you to deal higher amounts of damage with your kicks.".
@@ -212,7 +212,7 @@ Part - Wearability
 Definition: a shoes (called C) is too outrageous: [Player will never refuse to wear shoes.]
 	decide no.
 
-shoes wearability rules is a rulebook.  The wearability rules of shoes is usually shoes wearability rules.
+shoes wearability rules is a rulebook. The wearability rules of shoes is usually shoes wearability rules.
 
 This is the shoes already worn rule:
 	repeat with S running through shoes worn by the player:
@@ -236,7 +236,7 @@ Report wearing shoes:
 	if the noun is unsure and the noun is cursed, say "You finish slipping your [printed name of the noun] onto your [if there are worn stockings]stockings clad [end if]feet . As you take your first step you feel a pulse of warmth that runs from your toe tips to the back of your [feet]! The material of the [feet] shrinks to fit your feet [if the bimbo of the player < 6]firmly[otherwise if the bimbo of the player < 10]tightly[otherwise if the bimbo of the player < 15]deliciously[otherwise]enticingly[end if]. Lifting your foot tentatively, you can feel the sole of your [ShoeType of the noun] clinging to the bottom of your feet. These heels are cursed!"; [Crowdsourced from Anya Snowdrifter]
 	otherwise say "[if the bimbo of the player > 12 and a random number between 1 and 2 is 1][line break][second custom style]These make my ass look great![roman type][line break][end if]";
 	if the noun is queen of hearts heels:
-		if the strutskill of the player is 0 and the player is not wobbling, say "These heels are so [if the bimbo of the player < 5]beautiful[otherwise][second custom style]sexy[roman type][end if], you feel like [bold type]strut[roman type]ting around in them!".
+		if the strutskill of the player is 0 and the player is not wobbling, say "These heels are so [if the bimbo of the player < 5]beautiful[otherwise][line break][second custom style]sexy[roman type][line break][end if], you feel like [bold type]strut[roman type]ting around in them!".
 
 Check taking off worn shoes:
 	if the player is dildo stuck and the noun is heels:
@@ -265,3 +265,4 @@ Carry out taking off shoes while the player is dildo stuck:
 
 
 Shoes Framework ends here.
+

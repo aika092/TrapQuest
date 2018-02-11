@@ -62,7 +62,7 @@ choice
 0 [submissive sex addict]
 0 [bonus breast size points]
 0 [trap fetish]
-0 [mindbreak resistance]
+0 [mindbreak protection]
 0 [spontaneous tattoos]
 0 [max belly size points]
 0 [map reset]
@@ -78,7 +78,7 @@ choice
 0 [mythical creature fetish]
 0 [slow pregnancy]
 0 [panty messing]
-1 [clothing-imprinting]
+0 [tough-shit]
 0 [background: nurse]
 0 [background: sporty]
 0 [background: waitress]
@@ -89,6 +89,9 @@ choice
 0 [secret: artificial]
 0 [ungape]
 0 [tentacle fetish]
+0 [starting body shape]
+0 [reserved]
+0 [bondage protection]
 
 
 [!<DecideWhichNumberIsPlayerGender>+
@@ -539,7 +542,7 @@ To decide which number is panty messing:
 REQUIRES COMMENTING
 
 +!]
-To decide which number is clothing-imprinting:
+To decide which number is tough-shit:
 	decide on choice in row 51 of the Table of Player Options.
 
 [!<DecideWhichNumberIsBackgroundNurse>+
@@ -632,6 +635,19 @@ To decide which number is tentacle fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 61 of the Table of Player Options.
 
+[!<DecideWhichNumberIsStartingBodyShape>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is starting body shape:
+	if diaper quest is 1, decide on 0;
+	decide on the choice in row 62 of the Table of Player Options.
+
+To decide which number is bondage protection:
+	if diaper quest is 1, decide on 0;
+	decide on the choice in row 64 of the Table of Player Options.
+
 [!<AThingIsAFlatchestedTrap>+
 
 REQUIRES COMMENTING
@@ -687,9 +703,9 @@ Table of Diaper Fetish Options
 title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
 "Fashion victim (more cursed/forced/transforming clothing) - 6 points ([if unlucky is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	unlucky toggle rule
-"RECOMMENDED Clothes Imprinting - 0 points ([if clothing-imprinting is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	imprinting toggle rule
+"Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if tough-shit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tough-shit toggle rule
 "Male-to-female sex change - 2 points ([if TG fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	TG fetish toggle rule
-[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters.  Put them above the TG fetish row instead.]
+[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. Put them above the TG fetish row instead.]
 
 Include Fetish Options by Fetish Settings.
 Include Handicap Options by Fetish Settings.
@@ -734,9 +750,11 @@ To decide which number is positive points count:
 	if bondage prisoner is 1, increase X by 8;
 	if ungape is 1, increase X by 2;
 	if tentacle fetish is 1, increase X by 6;
+	if tough-shit is 1, increase X by 8;
 	increase X by natural redness;
 	increase X by natural blondeness;
 	increase X by natural brightness;
+	increase X by starting body shape * 2;
 	decide on X.
 
 [!<DecideWhichNumberIsPregnancyPoints>+
@@ -787,6 +805,7 @@ To decide which number is points count:
 	if TG fetish is 0, decrease X by min penis size points;
 	if trap fetish is 1, decrease X by trap points;
 	decrease X by mindbreak protection * 4;
+	decrease X by bondage protection * 4;
 	decrease X by roleplay fetish * 6;
 	decrease X by the background-nurse * 5;
 	decrease X by 5 * background-sporty;
@@ -865,3 +884,4 @@ This is the randomise bonuses rule:
 
 
 Fetish Settings ends here.
+

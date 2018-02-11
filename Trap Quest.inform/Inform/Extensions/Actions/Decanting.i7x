@@ -70,7 +70,7 @@ To say DecantingFlav of (V - a vessel):
 	say "You dip the [V] into the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
 
 To say DecantingFlav of (V - a squirt dildo):
-	say "You squeeze the dildo and release inside the [second noun].  A [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if] flows into the dildo.".
+	say "You squeeze the dildo and release inside the [second noun]. A [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if] flows into the dildo.".
 
 To say DecantingFlav of (V - a cocktail glass):
 	say "You dip the cocktail glass inside the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
@@ -79,7 +79,7 @@ To say DecantingFlav of (V - a golden chalice):
 	say "You dip the chalice inside the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
 
 To say DecantingFlav of (V - a baby's bottle):
-	say "You take the sucker lid off the top of the bottle, dip it inside the [second noun], and [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if] rushes into the bottle.  You replace the sucker.".
+	say "You take the sucker lid off the top of the bottle, dip it inside the [second noun], and [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if] rushes into the bottle. You replace the sucker.".
 
 To say DecantingFlav of (V - a novelty mug):
 	say "You dip the mug inside the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
@@ -92,3 +92,4 @@ Report decanting something with:
 
 
 Decanting ends here.
+

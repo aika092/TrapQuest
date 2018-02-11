@@ -13,8 +13,9 @@ To decide which number is the damage improvement of (W - a midnight tanto):
 	
 To compute attack of (W - a midnight tanto) at (M - a monster):
 	say "You slash the [M] with the tanto!";
-	if a random number between 1 and 3 > 1 and M is not-blinded:
+	if a random number between 1 and 3 > 1 and the blind-status of M is 0:
 		say "[big he of M] clutches at [his of M] eyes!";
-		now M is blinded.
+		now the blind-status of M is 1.
 
 Midnight Tanto ends here.
+

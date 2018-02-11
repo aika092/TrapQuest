@@ -1,6 +1,6 @@
 Yoga Pants by Trousers begins here.
 
-yoga pants is a kind of trousers.  There is 1 cursed yoga pants.  The armour of yoga pants is 8.  The printed name of yoga pants is usually "[TQlink of item described][clothing-title-before]yoga pants[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of yoga pants is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]yoga pants[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of yoga pants is "yp".  Figure of yoga pants is the file "yogapants1.png".
+yoga pants is a kind of trousers. There is 1 cursed yoga pants. The armour of yoga pants is 8. The printed name of yoga pants is usually "[TQlink of item described][clothing-title-before]yoga pants[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of yoga pants is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]yoga pants[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of yoga pants is "yp". Figure of yoga pants is the file "yogapants1.png".  A yoga pants has a number called yoga-charge.
 
 To decide which figure-name is clothing-image of (H - a yoga pants):
 	decide on figure of yoga pants.
@@ -17,9 +17,12 @@ To decide which number is the hindrance of (C - a yoga pants):
 	decide on -1.
 
 To compute periodic effect of (C - a yoga pants):
-	if there is worn knickers and C is not blessed and a random number between -290 and 10 > the thickness of hips and diaper quest is 0:
-		say "You feel a pulse of warmth from your [printed name of C] and [random worn knickers] as your hips widen.";
-		HipUp 1.
+	increase the yoga-charge of C by 1;
+	if the yoga-charge of C > 40:
+		now the yoga-charge of C is 0;
+		if there is worn knickers and C is not blessed and diaper quest is 0:
+			say "You feel a pulse of warmth from your [ShortDesc of C] as your hips widen.  You sense it's not happy you're wearing underwear at the same time...";
+			HipUp 1.
 
 Definition: a yoga pants (called C) is strut enabling:
 	if C is blessed, decide yes;
@@ -41,3 +44,4 @@ To decide which object is the potential-upgrade-target of (C - a yoga pants):
 	decide on nothing.
 
 Yoga Pants ends here.
+

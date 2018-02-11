@@ -1,8 +1,18 @@
 Minotaur by Monster begins here.
 
-A dungeon boss is a kind of monster.  A minotaur is a kind of dungeon boss.  A minotaur is usually father material.  A minotaur is usually male.  A minotaur is usually willing to do anal.  A minotaur is usually willing to do vaginal. The leftover-type of a minotaur is usually 107.
+A dungeon boss is a kind of monster. A minotaur is a kind of dungeon boss. A minotaur is male. The leftover-type of a minotaur is usually 107.
 
-1 captive minotaur is in Dungeon36.  Figure of minotaur is the file "minotaur1.png".  Figure of minotaur caged is the file "minotaur2.png".  Figure of hulk is the file "hulk1.png".  The printed name of minotaur is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][monster-adjective of item described] [if mythical creature fetish is 0]hulk[otherwise]minotaur[end if][if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  The description of minotaur is usually "[MinotaurDesc]".  The text-shortcut of minotaur is "mi".  Understand "hulk" as minotaur.
+Definition: A minotaur (called M) is dungeon dwelling:
+	if diaper quest is 1, decide no;
+	decide yes.
+
+1 captive minotaur is in Dungeon36. Figure of minotaur is the file "minotaur1.png". Figure of minotaur caged is the file "minotaur2.png". Figure of hulk is the file "hulk1.png". The printed name of minotaur is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]large [if mythical creature fetish is 0]hulk[otherwise]minotaur[end if][if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of minotaur is usually "[MinotaurDesc]". The text-shortcut of minotaur is "mi". Understand "large", "hulk" as minotaur.
+
+Definition: a minotaur (called M) is willing to do oral:
+	decide no.
+
+Definition: a minotaur (called M) is willing to do titfucks:
+	decide no.
 
 To say MinotaurDesc:
 	if images visible is 1:
@@ -33,14 +43,13 @@ To say MinoDesc (N - a number):
 		if N is 1, say "A nude, and extremely powerful looking minotaur. He has a bestial, cow-like face, with small beady black eyes and large flat nostrils, which are connected by a [one of]brass[or]iron[or]onyx[or]gold[sticky random] ring. Just like a bull, his head is covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, and two long [one of]black[or]cream-coloured[or]white[sticky random] horns extend from just above his floppy bovine ears. He has wide, masculine shoulders, and a thick barrel chest, covered with a thick Austin Powers style rug. In fact, his entire body is coated with sheets of rippling muscle, which looks as though it could burst free of his [one of]golden brown skin[or]dark brown skin[or]skin[sticky random] at any time. His legs are furry, and end in gray hooves. Hanging between them is a long tail, but you'd be lying if you said that's what really drew your attention.";
 		if N is 2, say "A naked bull-man with rippling muscles covering his entire body. His face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long [one of]black[or]bony[or]white[sticky random] horns extend from just above his floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. He is seething with rage, his wide shoulders covered in a fine sheen of sweat, and his thick barrel chest heaves with every breath. His skin is [one of]dark brown[or]golden brown[or]a fair brown[sticky random] and from the waist down he is covered in fur, with gray hooves in place of feet. Hanging between his legs is a long tail, but that's not what draws your attention.";
 	otherwise:
-		say "A naked hulk of a man with rippling muscles covering his entire body. He looks like the result of some mad science experiment gone wrong.  He is seething with rage, his wide shoulders covered in a fine sheen of sweat and his thick barrel chest heaving with every breath.".
+		say "A naked hulk of a man with rippling muscles covering his entire body. He looks like the result of some mad science experiment gone wrong. He is seething with rage, his wide shoulders covered in a fine sheen of sweat and his thick barrel chest heaving with every breath.".
 
 
 To set up (M - a minotaur):
 	if M is alive: [We don't want to reset the minotaur if he's dead]
 		reset M;
 		now the monstersetup of M is 1;
-		now M is large;
 		now the difficulty of M is 12;
 		now the variety of M is 0;
 		now the sex-length of M is 3;
@@ -54,7 +63,6 @@ This is the spawn initial minotaur rule:
 	if debugmode > 1, say "Now summoning minotaur.";
 	if diaper quest is 1:
 		repeat with M running through minotaurs:
-			now M is not dungeon dwelling;
 			remove M from play;
 	otherwise:
 		let M be a random minotaur;
@@ -77,9 +85,9 @@ To say PregGrowth of (M - a minotaur):
 To compute labour to (M - a minotaur):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if].  After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms.  You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half-giant...[end if][roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half-giant...[end if][roman type][line break]";
 		if the father is in the location of the player:
-			say "For some reason, you are filled with a sense of deep fulfilment.  You feel great!";
+			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
 			DexUp 1;
 			IntUp 1;
@@ -103,7 +111,7 @@ To compute perception of (M - a minotaur):
 			otherwise:
 				say "It looks like [he of M] wants more offspring...";				
 		otherwise:
-			say "He does not look friendly.  In fact, you can see some fierce hunger in his eyes.";
+			say "He does not look friendly. In fact, you can see some fierce hunger in his eyes.";
 	otherwise:
 		say "He growls angrily at his captivity.".
 
@@ -177,7 +185,7 @@ Definition: a minotaur (called M) is eager to slap:
 	if a random number between 1 and 4 is 1, decide yes;
  	decide no.
 
-The minotaur priority attack rules is a rulebook.  The priority attack rules of a minotaur is usually the minotaur priority attack rules.
+The minotaur priority attack rules is a rulebook. The priority attack rules of a minotaur is usually the minotaur priority attack rules.
 
 This is the minotaur still caged rule:
 	if current-monster is captive:
@@ -251,7 +259,7 @@ To compute anal sex of (M - a minotaur):
 			say "[one of]The [M] is completely spent, and collapses on top of you, half-crushing your body.[or]The [M], completely spent, collapses on top of you, half crushing your body.[or]The [M] collapses on top of you, spent.[at random] You barely manage to crawl out from underneath him, [if the soreness of asshole > 4 or the openness of asshole < 8]wincing as his[one of] shrinking[or] cum-slicked[or][or][at random] [manly-penis] [one of]slides out[or]pops out[at random] of your [asshole][otherwise]sighing as his[one of] shrinking[or] cum-slicked[or][or][at random] [manly-penis] slides out of your [asshole].";
 			now M is not penetrating asshole;
 		otherwise:
-			say "[one of]The [M] is completely spent, and collapses on top of you, crushing your body.  You can't manage to crawl out from underneath his weight![or]The [M], spent, collapses on top of you, crushing you under his full weight. You try, but you don't manage to crawl out from underneath him![or]The [M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath him.[or]The [M], completely spent, collapses on top of you, pinning you down with his full weight. No matter what you do, you can't manage to crawl out from underneath him![at random] You're going to have to wait [one of]like this with his [manly-penis] in your [asshole] until he wakes up...[or]with his [manly-penis] buried in your asshole until he wakes up...[at random]";
+			say "[one of]The [M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath his weight![or]The [M], spent, collapses on top of you, crushing you under his full weight. You try, but you don't manage to crawl out from underneath him![or]The [M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath him.[or]The [M], completely spent, collapses on top of you, pinning you down with his full weight. No matter what you do, you can't manage to crawl out from underneath him![at random] You're going to have to wait [one of]like this with his [manly-penis] in your [asshole] until he wakes up...[or]with his [manly-penis] buried in your asshole until he wakes up...[at random]";
 			if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 2;
 		AssFill 2;	
 		orgasm M;
@@ -325,7 +333,7 @@ This is the minotaur replaces the monster rule:
 	let M be current-monster;
 	let N be a random monster penetrating a fuckhole;
 	if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
-	say "The [M] kicks the [N] out of the way, and takes over!  He [one of]sticks his giant [manly-penis] in your [asshole],[or]shoves his massive [manly-penis] up your ass[or]jams his giant dick into your [asshole][or]clumsily rams his huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately!  [variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type]";
+	say "The [M] kicks the [N] out of the way, and takes over!  He [one of]sticks his giant [manly-penis] in your [asshole],[or]shoves his massive [manly-penis] up your ass[or]jams his giant dick into your [asshole][or]clumsily rams his huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately!  [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
 	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 3;
 	now the sex-length of M is 0;
 	now the chosen-orifice of M is asshole;
@@ -367,7 +375,7 @@ To compute the orifice choosing of (M - a minotaur):
 
 To compute (M - a minotaur) entering vagina:
 	now the sex-length of M is the health of M / 10;
-	say "The [M] stares at your body and sniffs your [vagina], assessing you.  He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina].  [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously.  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the class of the player is cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]";
+	say "The [M] stares at your body and sniffs your [vagina], assessing you. He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina]. [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the class of the player is cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]";
 	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 4;
 	now M is penetrating vagina;
 	ruin vagina.
@@ -410,19 +418,18 @@ To say DamageReaction (N - a number) of (M - a minotaur):
 To compute unique death of (M - a minotaur):
 	let H be a random off-stage minotaur horn;
 	if mythical creature fetish is 1 and H is a thing:
-		say "The minotaur falls to the ground, dead.  One of his horns smacks into the ground and snaps clean off.  The [H] appears to be hollow - you could almost use this as a drinking vessel!";
+		say "The minotaur falls to the ground, dead. One of his horns smacks into the ground and snaps clean off. The [H] appears to be hollow - you could almost use this as a drinking vessel!";
 		now H is in the location of the player;
 		compute autotaking H;
 	otherwise:
 		let B be a random off-stage potion of bull strength;
-		say "The [M] falls to the ground, defeated.  [if B is potion]He dropped a [printed name of B]![end if]";
+		say "The [M] falls to the ground, defeated. [if B is potion]He dropped a [printed name of B]![end if]";
 		if B is potion:
 			now B is in the location of the player;
 			compute autotaking B.
 
-To uniquely destroy (M - a minotaur):
-	now M is captive.
-
+[To uniquely destroy (M - a minotaur):
+	now M is captive.]
 
 To loot (M - a minotaur):
 	let X be a random off-stage plentiful ring;
@@ -437,3 +444,4 @@ To loot (M - a minotaur):
 
 
 Minotaur ends here.
+

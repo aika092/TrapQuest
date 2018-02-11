@@ -1,8 +1,8 @@
 Pullstring Collar by Accessories begins here.
 
-A pullstring collar is a kind of submissive collar.  There is 1 unique latex pullstring collar.  Printed name of pullstring collar is "[TQlink of item described][clothing-title-before]pink pullstring choker[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of pullstring collar is "pul".  Understand "pink", "pull", "string", "ripcord", "cord", "choker" as pullstring collar.  A pullstring collar has a number called times pulled.  The times pulled of a pullstring collar is usually 0.
+A pullstring collar is a kind of submissive collar. There is 1 unique latex pullstring collar. Printed name of pullstring collar is "[TQlink of item described][clothing-title-before]pink pullstring choker[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pullstring collar is "pul". Understand "pink", "pull", "string", "ripcord", "cord", "choker" as pullstring collar. A pullstring collar has a number called times pulled. The times pulled of a pullstring collar is usually 0.
 
-Monster-puller is a thing that varies.  Monster-puller is yourself.
+Monster-puller is a thing that varies. Monster-puller is yourself.
 
 Definition: a pullstring collar (called C) is removable: [Some clothing can never be removed, even by monsters.]
 	decide no.
@@ -22,7 +22,7 @@ To decide which figure-name is clothing-image of (C - a pullstring collar):
 	decide on figure of pullstring collar.
 
 To say ClothingDesc of (C - a pullstring collar):
-	say "[if C is worn]This pink latex choker feels too small, but apparently stretches just enough that it fits your neck like a second skin. It makes adjusting it into the right spot on your neck a real bitch.  It has no clear way to remove it.  However there is a small plastic ring connected to a metal cord that you can pull at the back.[otherwise]A small pink choker with a pull cord at the back.[end if]".
+	say "[if C is worn]This pink latex choker feels too small, but apparently stretches just enough that it fits your neck like a second skin. It makes adjusting it into the right spot on your neck a real bitch. It has no clear way to remove it. However there is a small plastic ring connected to a metal cord that you can pull at the back.[otherwise]A small pink choker with a pull cord at the back.[end if]".
 
 To say ShortDesc of (C - a pullstring collar):
 	say "pullstring collar".
@@ -64,12 +64,12 @@ Check pulling a pullstring collar:
 		otherwise if R is 4:
 			now R is 0;
 			if no-panties permanent fetish is 0:
-				say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder.  I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
+				say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
 				let C be a random worn knickers;
 				if C is total protection knickers or C is pussy protection knickers:
-					if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself.  No need to duplicate that text here.]
+					if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself. No need to duplicate that text here.]
 				otherwise:
-					say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers.  [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all.  [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
+					say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
 				now no-panties permanent fetish is 1;
 			otherwise if diaper lover >= 1 and the player is not incontinent:
 				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break]";
@@ -87,20 +87,21 @@ Check pulling a pullstring collar:
 			otherwise:
 				increase R by 1;
 		if R is 6:
-			if the humiliation of the player <= 40000:
+			if the humiliation of the player <= HUMILIATION-BROKEN:
 				if diaper quest is 1, say "'[one of]A well behaved baby slave wears whatever she's told to, no matter how degrading!'[or]I'm a good baby, [if there is a worn diaper]I even wear diapers when I haven't been told to[otherwise]I will pee wherever I'm told[end if]!'[or]A good baby slave doesn't care who sees her, whether she's in a soiled nappy or completely naked!'[in random order]";
-				otherwise say "'A proper slut doesn't care if her ASSets are on display!'[roman type][line break][if the humiliation of the player < 20000]You feel more comfortable wearing revealing clothing.[otherwise]You feel even more like an object, not a real person.[end if]";
-				say "You feel like you respect yourself [if the humiliation of the player > 10000]even [end if]less.";
-				Humiliate 1000;
+				otherwise say "'A proper slut doesn't care if her ASSets are on display!'[roman type][line break][if the humiliation of the player < HUMILIATION-MODEST + 4000]You feel more comfortable wearing revealing clothing.[otherwise]You feel even more like an object, not a real person.[end if]";
+				say "You feel like you respect yourself [if the humiliation of the player > HUMILIATION-PROUD + 2000]even [end if]less.";
+				Humiliate STRONG-HUMILIATION * 4;
 			otherwise:
 				say "'I'm an object, I don't need to use my brain!'[roman type][line break]";
 				say "It feels even harder to think.";
 				IntDown 1;
 		increase the times pulled of the noun by 1;
 	otherwise:
-		say "[if monster-puller is the player]You pull the ring and then you let go, and you[otherwise]You[end if] feel it start winding back into the collar.  Nothing seems to happen.";
+		say "[if monster-puller is the player]You pull the ring and then you let go, and you[otherwise]You[end if] feel it start winding back into the collar. Nothing seems to happen.";
 	now seconds is 6 instead.
 
 
 
 Pullstring Collar ends here.
+

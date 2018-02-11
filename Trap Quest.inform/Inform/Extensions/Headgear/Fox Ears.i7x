@@ -1,6 +1,6 @@
 Fox Ears by Headgear begins here.
 
-A fox ears is a kind of headgear. There is 1 fox ears. A fox ears is biological. A fox ears is usually dexterity-influencing. A fox ears is usually intelligence-influencing. A fox ears is blondeness-positive.  A fox ears is brightness-negative.  A fox ears is redness-positive. A fox ears is usually roleplay.
+A fox ears is a kind of headgear. There is 1 fox ears. A fox ears is biological. A fox ears is usually dexterity-influencing. A fox ears is usually intelligence-influencing. A fox ears is blondeness-positive. A fox ears is brightness-negative. A fox ears is redness-positive. A fox ears is usually roleplay.
 
 The printed name of fox ears is usually "[TQlink of item described][clothing-title-before]fox ears[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The text-shortcut of fox ears is "fe".
@@ -29,13 +29,13 @@ To decide which number is the intelligence-influence of (C - a fox ears):[vixens
 	decide on X + the magic-modifier of C.
 
 To compute class outfit of (H - a fox ears):
-	let T be a random number between 1 and (the threshold of H * 15);
-	if T is 1 and there is a worn locked clothing:
+	if there is a worn locked clothing:
 		let B be a random worn locked clothing;
-		say "You feel your [printed name of H] twitch slightly, and your [printed name of B] briefly lights up as it is magically unlocked!";
+		say "You feel your [ShortDesc of H] twitch slightly, and your [printed name of B] briefly lights up as it is magically unlocked!";
 		now B is unlocked;
-	otherwise if T is 1 and the make-up of face < 3:
+	otherwise if the make-up of face < 3:
 		FaceUp 1;
-		say "You feel your [printed name of H] twitch slightly, and you feel a wave of warmth on your cheeks as it magically conjures [if the make-up of face is 0]a[otherwise]another[end if] layer of makeup on your face!".
+		say "You feel your [ShortDesc of H] twitch slightly, and you feel a wave of warmth on your cheeks as it magically conjures [if the make-up of face is 0]a[otherwise]another[end if] layer of makeup on your face!".
 
 Fox Ears ends here.
+

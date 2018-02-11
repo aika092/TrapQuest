@@ -1,10 +1,15 @@
 Mind Flayer by Monster begins here.
 
-A mind flayer is a kind of monster. A mind flayer is usually intelligent. There is 1 mind flayer. A mind flayer is usually neuter. A mind flayer is usually willing to do oral. The difficulty of a mind flayer is usually 9.  Understand "mindflayer" as mind flayer.
+A mind flayer is a kind of monster. A mind flayer is usually intelligent. There is 1 mind flayer. A mind flayer is usually neuter. The difficulty of a mind flayer is usually 9. Understand "mindflayer" as mind flayer.
 
 The mind flayer has a number called feeding. The feeding of a mind flayer is usually 0.
 
-The printed name of a mind flayer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]mind flayer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  Understand "mind" as a mind flayer.  The description of a mind flayer is usually "[MindFlayerDesc]".  The text-shortcut of mind flayer is "mf".
+Definition: a mind flayer (called M) is willing to do oral:
+	decide yes.
+
+The printed name of a mind flayer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]mind flayer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "mind" as a mind flayer. The description of a mind flayer is usually "[MindFlayerDesc]". The text-shortcut of mind flayer is "mf".
+
+Figure of mindflayer is the file "mindflayer1.png".
 
 To say MindFlayerDesc:
 	say "A lean humanoid with slimy looking purple skin. It wears a loose robe. Slowly waving tentacles surround its mouth. Though its eyes are pure white, it exudes an aura of intelligence and menace.".
@@ -52,6 +57,7 @@ To compute perception of (M - a mind flayer):
 		say "It doesn't look like it's interested in you.";
 		bore M for 500 seconds;
 	otherwise:
+		if image cutscenes is 1, display figure of mindflayer cutscene 1;
 		anger M.
 		
 To compute (M - a minotaur) stomping (N - a mind flayer):
@@ -172,7 +178,7 @@ Section 2 - Damage
 To compute damage of (M - a mind flayer):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The creature seems to notice you.  Uh-oh...";
+			say "The creature seems to notice you. Uh-oh...";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -191,7 +197,7 @@ To say DamageReaction (N - a number) of (M - a mind flayer):
 		say "The creature's expression grows frantic as it senses its life is in jeopardy!".
 		
 To compute unique death of (M - a mind flayer):
-	say "The [noun] screams hideously as it collapses to the ground.  ";
+	say "The [noun] screams hideously as it collapses to the ground. ";
 	let B be a random off-stage severed-tentacle;
 	if B is a thing:
 		now B is in the location of the player;
@@ -202,3 +208,4 @@ To compute unique death of (M - a mind flayer):
 
 
 Mind Flayer ends here.
+

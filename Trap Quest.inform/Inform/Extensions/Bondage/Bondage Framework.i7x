@@ -1,6 +1,6 @@
 Bondage Framework by Bondage begins here.
 
-bondage is a kind of clothing.  bondage is usually metal.  
+bondage is a kind of clothing. bondage is usually metal. 
 
 Definition: a bondage (called C) is too boring:
 	decide no.
@@ -15,7 +15,7 @@ To decide which number is the bartering value of (T - a bondage) for (M - a domi
 	decide on 2.
 
 To say MonsterOfferAcceptFlav of (M - a dominatrix) to (T - a bondage):
-	say "[speech style of M]'Hmm, I must admit, that would go great in my collection.  [if M is unfriendly]Fine, I'll leave you alone, for now[otherwise]You have my thanks[end if].'[roman type][line break]".
+	say "[speech style of M]'Hmm, I must admit, that would go great in my collection. [if M is unfriendly]Fine, I'll leave you alone, for now[otherwise]You have my thanks[end if].'[roman type][line break]".
 
 To say ShortDesc of (T - a bondage):
 	say "bondage".
@@ -26,3 +26,4 @@ To uniquely set up (C - a bondage):
 
 
 Bondage Framework ends here.
+

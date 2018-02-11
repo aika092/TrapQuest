@@ -1,7 +1,7 @@
 Visibility by Clothing begins here.
 
 
-Clothing can be layer-exposing or layer-concealing.  Clothing is usually layer-concealing. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath.  Clothing that is layer-concealing never does this.  Clothing that has a special rule should redefine the definition block below.  This is about the CUT and SHAPE of the item, and not transparency.  Transparency is checked for separately.  A see through raincoat would still be layer-concealing.]
+Clothing can be layer-exposing or layer-concealing. Clothing is usually layer-concealing. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
 
 Definition: a clothing (called C) is top-layer-concealing:
 	if C is worn and C is layer-concealing and the top-layer of C > 0, decide yes;
@@ -41,7 +41,7 @@ Definition: a wearthing (called C) is currently uncovered:
 		decide no;
 	decide yes.
 
-[Layers, not visibility.  Mesh items don't count as covering at all since liquid can get through]
+[Layers, not visibility. Mesh items don't count as covering at all since liquid can get through]
 To decide which object is the coverer of (C - a clothing):
 	if the top-layer of C > 0:
 		repeat with O running through top-layer-concealing clothing:
@@ -95,3 +95,4 @@ To decide which object is the concealer of (S - a sex toy):
 
 
 Visibility ends here.
+

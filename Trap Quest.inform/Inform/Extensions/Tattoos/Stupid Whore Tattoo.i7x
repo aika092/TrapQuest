@@ -1,6 +1,6 @@
 Stupid Whore Tattoo by Tattoos begins here.
 
-stupid whore tattoo is a kind of lower back tattoo.  Figure of stupid whore tattoo is the file "tattoo32.png".  There is 1 stupid whore tattoo.
+stupid whore tattoo is a kind of lower back tattoo. Figure of stupid whore tattoo is the file "tattoo32.png". There is 1 stupid whore tattoo.
 Definition: a stupid whore tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;
 	if there is a worn lower back tattoo, decide no;
@@ -17,3 +17,4 @@ To decide which number is the bimbo-influence of (T - a stupid whore tattoo):
 	decide on 1.
 
 Stupid Whore Tattoo ends here.
+

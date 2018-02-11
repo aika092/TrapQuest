@@ -14,8 +14,8 @@ REQUIRES COMMENTING
 
 +!]
 To compute continued urination:
-	if the player is in danger, say "You try to stop the flow but you can't!  You continue to [urinate].  ";
-	otherwise say "[one of]Time passes as you[or]You[cycling] continue to [urinate].  ";
+	if the player is in danger, say "You try to stop the flow but you can't!  You continue to [urinate]. ";
+	otherwise say "[one of]Time passes as you[or]You[cycling] continue to [urinate]. ";
 	compute urination;
 	now another-turn is 1.
 
@@ -35,7 +35,7 @@ To compute automatic actions:
 				let urine-before be the urine-soak of D;
 				increase the urine-soak of D by the bladder of the player;
 				now the bladder of the player is 0;
-				say "You reach down to feel the front of your [printed name of D] and realise that it's [one of]much warmer and heavier than before.  You must have used your diaper recently without even realising it![or]once again [if urine-before is 0]now quite damp[otherwise]much fuller than before[end if].  You must have wet yourself again![stopping][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great!  I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";
+				say "You reach down to feel the front of your [printed name of D] and realise that it's [one of]much warmer and heavier than before. You must have used your diaper recently without even realising it![or]once again [if urine-before is 0]now quite damp[otherwise]much fuller than before[end if]. You must have wet yourself again![stopping][line break][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great!  I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";
 				if diaper bonus > 0, compute wetting failure;
 				let W be a random worn giant rattle;
 				if W is a thing:
@@ -43,7 +43,7 @@ To compute automatic actions:
 						say "Your rattle glows blue for a moment!  It feels more powerful.";
 						increase the raw-magic-modifier of W by 1;
 				if a random number between 1 and 4 - (unlucky * 2) is 1 and D is not bed wetting:
-					say "Your [D] glows softly.  Something tells you it is now making you even more incontinent!";
+					say "Your [D] glows softly. Something tells you it is now making you even more incontinent!";
 					now D is bed wetting;
 				now diaper-happened is 1;
 				DiaperAddictUp 1;
@@ -52,7 +52,7 @@ To compute automatic actions:
 			otherwise say "[bold type]A warm wet feeling makes you realise that you're currently peeing yourself.[roman type][line break]";
 			let old-bladder be the bladder of the player;
 			try urinating;
-			if old-bladder > the bladder of the player, now another-turn is 1;[We need to check this to verify that urination was successful.  If it was prevented for any reason, then we don't want to create an infinite loop!]
+			if old-bladder > the bladder of the player, now another-turn is 1;[We need to check this to verify that urination was successful. If it was prevented for any reason, then we don't want to create an infinite loop!]
 		now delayed urination is 0;
 	otherwise if diaper lover is 3 and there is worn messed knickers and (there is a changing the player monster or there is a spanking the player monster): [If the player is only into scene messing then we need to prevent the player from getting a chance to escape e.g. with the pink pill]
 		now another-turn is 1;
@@ -74,3 +74,4 @@ To compute automatic actions:
 
 
 Automatic Actions ends here.
+

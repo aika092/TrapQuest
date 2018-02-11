@@ -1,9 +1,9 @@
 Hoods by Headgear begins here.
 
 
-A hood is a kind of headgear.  A hood is usually latex.  A hood is usually manly.  A hood is usually roleplay. A black hood is a kind of hood.  A black hood is usually strength-influencing. A black hood is usually dexterity-influencing. A white hood is a kind of hood. There is 1 black hood. There is 1 white hood.  Figure of latex hood is the file "latexhood1.png".  Figure of WC hood is the file "WcLatexHood.png".  A hood is usually oral-sex-addiction-influencing.  A white hood is usually urine-taste-addiction-influencing.
+A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. A hood is usually roleplay. A black hood is a kind of hood. A black hood is usually strength-influencing. A black hood is usually dexterity-influencing. A white hood is a kind of hood. There is 1 black hood. There is 1 white hood. Figure of latex hood is the file "latexhood1.png". Figure of WC hood is the file "WcLatexHood.png". A hood is usually oral-sex-addiction-influencing. A white hood is usually urine-taste-addiction-influencing.
 
-The printed name of hood is usually "[TQlink of item described][clothing-title-before]latex hood[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of hood is "lh".
+The printed name of hood is usually "[TQlink of item described][clothing-title-before]latex hood[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of hood is "lh".
 
 [!<TheLatexHoodPreventsSpeechRule>+
 
@@ -19,10 +19,10 @@ To decide which figure-name is the clothing-image of (C - a hood):
 	decide on figure of latex hood.
 
 To say ClothingDesc of (H - a black hood):
-	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth.  The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly.  Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
+	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
 
 To say ClothingDesc of (H - a white hood):
-	say "This white latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth.  The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly.  Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
+	say "This white latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
 
 To say ShortDesc of (H - a hood):
 	say "latex hood".
@@ -32,7 +32,7 @@ To say ShortDesc of (H - a white hood):
 	say "white latex hood".
 
 To compute SelfExamineDesc of (H - a hood):
-	say "You are wearing a bondage style latex hood.  ".
+	say "You are wearing a bondage style latex hood. ".
 
 Definition: a black hood (called C) is product:
 	decide yes.
@@ -80,13 +80,12 @@ Carry out wearing hood:
 To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a hood):
 	say "[speech style of M]'I've already got one of those, silly!'[roman type][line break]".
 
-To compute class outfit of (H - a white hood):
-	if the headgear chance of H < the threshold of H and a random number between 1 and 3 is 1:
-		compute full class outfit of H.
-
 toilet-summoned is a number that varies.
 
-To compute full class outfit of (H - a white hood):
+To decide which number is the outfit threshold of (H - a white hood):
+	decide on 75. [this takes longer than most because it's also automatically triggered each time the player drinks urine]
+
+To compute class outfit of (H - a white hood):
 	let C be a random off-stage WC catsuit;
 	let B be a random off-stage WC thigh high boots;
 	let P be a random off-stage WC plug panties;
@@ -101,7 +100,7 @@ To compute full class outfit of (H - a white hood):
 			repeat with O running through worn bras:
 				say "Your [O] vanishes!";
 				destroy O;
-		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body!  [variable custom style][if the humiliation of the player < 27500]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
+		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body!  [line break][variable custom style][if the humiliation of the player < 27500]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
 		summon C cursed;
 		now the raw-magic-modifier of C is 0;
 		if toilet-summoned is 0, now toilet-summoned is 1;
@@ -141,7 +140,7 @@ To say ClothingDesc of (H - a trainee hood):
 To decide which number is the perceived-bimbo-influence of (C - a trainee hood):
 	decide on 2.
 
-trainee hood removability rules is a rulebook.  The removability rules of trainee hood is usually trainee hood removability rules.
+trainee hood removability rules is a rulebook. The removability rules of trainee hood is usually trainee hood removability rules.
 
 This is the magnetized trainee hood can't be removed rule:
 	if the noun is magnetized:
@@ -154,19 +153,18 @@ Report wearing trainee hood:
 	now the noun is magnetized.
 
 To compute class outfit of (H - a trainee hood):[TODO: improve]
-	if the headgear chance of H < the threshold of H:
-		if the training-progress of H is 3:
-			LipsUp 3;
-			say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them of, you realize they've merged fully with your skin! You now have [LipDesc]!";
-			DelicateUp 2;
-			now the training-progress of H is 0;
-			only destroy H;
-			ProgressUp senior robobellboy;
-		otherwise if face is not actually occupied:
-			say "The [printed name of H] emits a short tone and the metal ring collapses, forcing your lips shut as your mouth fills with thick, sweet smelling smoke. You [if the bimbo of the player > 13]breath in happily, knowing that whatever it is, it[']ll do something fun! The silicon lips slowly open after a few seconds, hugging even tighter to the real ones underneath.[otherwise if the bimbo of the player > 9]breath in cautiously, knowing your airway is too restricted to have any choice. A funny feeling lingers at the back of your throat as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath[otherwise]hold your breath desperately, but with your restricted airway you have no choice but to breath in, coughing reflexively as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath.[end if].";
-			FaceUp 1;
-			SemenTasteAddictUp 1;
-			increase the training-progress of H by 1.
+	if the training-progress of H is 3:
+		LipsUp 3;
+		say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them of, you realize they've merged fully with your skin! You now have [LipDesc]!";
+		DelicateUp 2;
+		now the training-progress of H is 0;
+		only destroy H;
+		ProgressUp senior robobellboy;
+	otherwise if face is not actually occupied:
+		say "The [printed name of H] emits a short tone and the metal ring collapses, forcing your lips shut as your mouth fills with thick, sweet smelling smoke. You [if the bimbo of the player > 13]breath in happily, knowing that whatever it is, it[']ll do something fun! The silicon lips slowly open after a few seconds, hugging even tighter to the real ones underneath.[otherwise if the bimbo of the player > 9]breath in cautiously, knowing your airway is too restricted to have any choice. A funny feeling lingers at the back of your throat as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath[otherwise]hold your breath desperately, but with your restricted airway you have no choice but to breath in, coughing reflexively as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath.[end if].";
+		FaceUp 1;
+		SemenTasteAddictUp 1;
+		increase the training-progress of H by 1.
 
 To demagnetise (C - a clothing):[Do not call this function unless you know it is a magnetic item.]
 	say "The [C] emits a sharp tone and the magnetic latches snap open!";
@@ -183,3 +181,4 @@ TODO: servicing lots of patrons can move along the "training-progress" stat on t
 ]
 
 Hoods ends here.
+

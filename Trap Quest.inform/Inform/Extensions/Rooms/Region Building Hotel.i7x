@@ -3,8 +3,8 @@ Region Building Hotel by Rooms begins here.
 
 
 Figure of hotel loading is the file "loading4.png".
-Figure of dq hotel loading is the file "loading5.png".
-Figure of dq hotel messy loading is the file "loading6.png".
+Figure of dq hotel loading is the file "loading8.png".
+Figure of dq hotel messy loading is the file "loading9.png".
 
 [!<SetUpTheHotel>+
 
@@ -54,6 +54,7 @@ To Set Up The Hotel:
 	if inflation fetish is 1, now a random recipe for latex curse reversal is in Hotel25;
 	repeat with M running through alive monsters in the hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
+	if the player is a november 2017 top donator or the player is a november 2017 diaper donator, set up the school;
 	if debugmode is 0 and loading scenes is 1, clear the screen.
 
 [!<ScrambleHotel>+
@@ -77,3 +78,4 @@ To Scramble Hotel:
 	make all modern exits lead to Solid Rock.
 
 Region Building Hotel ends here.
+

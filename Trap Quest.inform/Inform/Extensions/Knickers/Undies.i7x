@@ -6,7 +6,7 @@ Definition: a undies is displacable:
 	decide yes.
 	
 To say UniqueClothingDesc of (U - an undies):
-	say "A [selfexaminetitle of U].  ".
+	say "A [selfexaminetitle of U]. ".
 
 To say selfexaminetitle of (U - an undies):
 	say "pair of undies".
@@ -14,15 +14,20 @@ To say selfexaminetitle of (U - an undies):
 To decide which number is the initial outrage of (C - a undies):
 	if the armour of C < 7, decide on 7 - the armour of C;
 	decide on 0.
+
+An undies has a number called shape-charge.
 	
 To compute periodic effect of (P - an undies):
 	if P is cursed:
-		if a random number between -2000 and 10 > the thickness of hips:
-			say "You feel your [printed name of P] try to grow your hips to make your buttocks even less concealed!";
-			HipUp 1;
-		if a random number between 1 and 1000 < the size of penis and the size of penis > min penis size:
-			PenisDown 1;
-			say "You feel your [printed name of P] [Shrink] your manhood to better conceal your [ShortDesc of penis]!".
+		increase the shape-charge of P by 1;
+		if the shape-charge of P > 45:
+			now the shape-charge of P is 0;
+			if the thickness of hips < max ass size and a random number between 1 and 2 is 1:
+				say "You feel your [printed name of P] try to grow your hips to make your buttocks even less concealed!";
+				HipUp 1;
+			otherwise if the size of penis > min penis size:
+				PenisDown 1;
+				say "You feel your [printed name of P] [Shrink] your manhood to better conceal your [ShortDesc of penis]!".
 
 Definition: an undies (called C) is potentially penis covering:[doesn't check for density]
 	unless C is pussy covering clothing, decide no;
@@ -45,24 +50,15 @@ This is the remove inappropriate undies rule:
 		now B is in Holding Pen;
 	repeat with B running through thongs:
 		now B is in Holding Pen;
-	repeat with B running through pink briefs:
-		now B is in Holding Pen;
-	repeat with B running through red briefs:
-		now B is in Holding Pen;
-	repeat with B running through black briefs:
-		now B is in Holding Pen;
-	repeat with B running through green briefs:
-		now B is in Holding Pen;
-	repeat with B running through grey briefs:
-		now B is in Holding Pen;
-	repeat with B running through pale blue briefs:
-		now B is in Holding Pen;
-	repeat with B running through grey hi-cut briefs:
-		now B is in Holding Pen;
-	repeat with B running through blue polka-dot briefs:
-		now B is in Holding Pen;
-	repeat with B running through green briefs:
-		now B is in Holding Pen;
+	now pink briefs is in Holding Pen;
+	now red briefs is in Holding Pen;
+	now black briefs is in Holding Pen;
+	now green-briefs is in Holding Pen;
+	now grey-briefs is in Holding Pen;
+	now pale blue-briefs is in Holding Pen;
+	now grey-hi-cut briefs is in Holding Pen;
+	now blue-polka-dot briefs is in Holding Pen;
+	now green-briefs is in Holding Pen;
 	repeat with B running through pink panties:
 		now B is in Holding Pen;
 	repeat with B running through black sucking cocks panties:
@@ -75,3 +71,4 @@ The remove inappropriate undies rule is listed in the diaper quest fix rules.
 
 
 Undies ends here.
+

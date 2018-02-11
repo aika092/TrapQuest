@@ -70,12 +70,12 @@ REQUIRES COMMENTING
 +!]
 Check resisting:
 	now forced submit is 0;
-	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being fucked, so there is nothing to resist!" instead;
+	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
 	if there is a vampiress penetrating an orifice, now M is a random vampiress;
 	if there is a fucking daddy's hole monster:
-		say "[one of][if the player is able to speak]You find yourself resisting the assault.  [variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to touch you there.[end if][or][stopping]";
+		say "[one of][if the player is able to speak]You find yourself resisting the assault. [line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to touch you there.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
 		say "Your gaping [if the player is male][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
 		now forced submit is 1;
@@ -85,7 +85,7 @@ Check resisting:
 		now forced submit is 1;
 		try submitting instead;
 	otherwise if the humiliation of the player >= 40000:
-		say "[one of][bold type]As you are a fully broken in sex object, you no longer even consider resisting an option.  From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
+		say "[one of][bold type]As you are a fully broken in sex object, you no longer even consider resisting an option. From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player:
 		say "You love anal sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
@@ -117,7 +117,7 @@ Check resisting:
 		now forced submit is 1;
 		try submitting instead;
 	otherwise if the player is friendly fucked and friendly-confirmation is 0:
-		say "You will attempt to stop the sex.  Is that what you want? [yesnolink] ";
+		say "You will attempt to stop the sex. Is that what you want? [yesnolink] ";
 		if the player consents, now friendly-confirmation is 1;
 		otherwise say "Action cancelled." instead.
 
@@ -158,7 +158,7 @@ Report resisting:
 			if the sex addiction of the player > 8 and M is male intelligent monster:
 				let T be a random daddy's wild child tattoo;
 				if there is a worn tattoo and T is not worn:
-					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like 'The [M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl.  '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. ']
+					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like 'The [M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. ']
 					say "[bold type]A new tattoo appears on your arm![roman type][line break]";
 					try examining T.
 
@@ -208,7 +208,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You're sit there and take it like the [if the player is male][second custom style]sissy bitch[roman type][otherwise]scaredy-cat[end if] you are![at random]".
+	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You're sit there and take it like the [if the player is male][line break][second custom style]sissy bitch[roman type][line break][otherwise]scaredy-cat[end if] you are![at random]".
 
 [!<SayOralAddResRefusalFlavOfMonster>+
 
@@ -224,7 +224,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralSlutResRefusalFlav of (M - a monster):
-	say "[one of][if the sex addiction of the player < 10]No matter how hard you try, you can't keep yourself from desperately suckling his [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the semen addiction of the player < 13]You hate yourself for it, but you can't help suckling the guard's [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's a big [second custom style]yummy[roman type] [manly-penis] in your mouth.[semen].[end if][in random order]".
+	say "[one of][if the sex addiction of the player < 10]No matter how hard you try, you can't keep yourself from desperately suckling his [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the semen addiction of the player < 13]You hate yourself for it, but you can't help suckling the guard's [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's a big [line break][second custom style]yummy[roman type][line break][manly-penis] in your mouth.[semen].[end if][in random order]".
 
 [!<SayThirstResRefusalFlavOfMonster>+
 
@@ -317,7 +317,7 @@ To choose a sex resist punishment:
 REQUIRES COMMENTING
 
 *!]
-slap-punishment is a sex resist punishment.  The priority of slap-punishment is 1.
+slap-punishment is a sex resist punishment. The priority of slap-punishment is 1.
 
 [!<MonsterIseagerToSlap>+
 
@@ -360,7 +360,7 @@ To compute sex resist slap of (M - a monster):
 REQUIRES COMMENTING
 
 *!]
-anger-punishment is a sex resist punishment.  The priority of anger-punishment is 1.
+anger-punishment is a sex resist punishment. The priority of anger-punishment is 1.
 
 [!<MonsterIsEagerToGetAngry>+
 
@@ -394,9 +394,10 @@ REQUIRES COMMENTING
 
 +!]
 To compute sex resist anger of (M - a monster):
-	say "The [M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random].  It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
+	say "The [M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
 	FavourDown M.
 
 
 
 Resisting ends here.
+

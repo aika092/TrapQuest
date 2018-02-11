@@ -1,6 +1,6 @@
 Piercing Framework by Piercings Modules begins here.
 
-A piercing is a kind of clothing.  A piercing is usually unique.  A piercing is usually metal.
+A piercing is a kind of clothing. A piercing is usually unique. A piercing is usually metal.
 
 Definition: a piercing (called C) is removable: [Some clothing can never be removed, even by monsters.]
 	decide no.
@@ -19,7 +19,7 @@ Definition: a piercing is destructible:
 	decide no.
 
 To say PiercingFlav of (P - a piercing):
-	say "An arm comes down with a searing hot needle!  You scream as your flesh is burned and pierced.  The needle is quickly moved and a [P] is pushed into place.  The connection somehow welds itself shut, meaning that the piercing is permanent!".
+	say "An arm comes down with a searing hot needle!  You scream as your flesh is burned and pierced. The needle is quickly moved and a [P] is pushed into place. The connection somehow welds itself shut, meaning that the piercing is permanent!".
 
 Definition: a piercing (called C) is too boring:
 	decide no.
@@ -37,3 +37,4 @@ Check taking off piercing:
 	say "You can't take that off, it's permanently pierced into your skin!" instead.
 
 Piercing Framework ends here.
+

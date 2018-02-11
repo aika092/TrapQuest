@@ -1,6 +1,6 @@
 Leather Corset by Corsets begins here.
 
-A black corset is a kind of corset.  A black corset is usually leather.  There is 1 black corset.
+A black corset is a kind of corset. A black corset is usually leather. There is 1 black corset.
 
 Definition: a black corset (called C) is fluid immune:
 	decide yes.
@@ -19,3 +19,4 @@ To say ShortDesc of (C - a black corset):
 	say "leather corset".
 
 Leather Corset ends here.
+

@@ -1,5 +1,8 @@
 Monster Descriptions by Monster Framework begins here.
 
+To decide which figure-name is the monster-image of (M - a monster):
+	decide on figure of no-image-yet.
+
 After examining a monster:
 	unless the noun is not intelligent or the noun is robot:
 		say "[FavourDesc of the noun]";
@@ -30,3 +33,4 @@ Before examining a nearby monster:
 	say "[description of item described]" instead.
 
 Monster Descriptions ends here.
+

@@ -30,7 +30,7 @@ Check drinking a can:
 
 Carry out drinking a can:
 	now seconds is 6;
-	say "You [if the doses of the noun is the max-doses of the noun]remove the ring pull of [the noun], [end if]bring it to your mouth and gulp.  ";
+	say "You [if the doses of the noun is the max-doses of the noun]remove the ring pull of [the noun], [end if]bring it to your mouth and gulp. ";
 	compute drinking the noun;
 	now the Known corresponding to an Magic of the fill-type of the noun in the Table of Drinks is 1;
 	decrease the doses of the noun by 1;
@@ -51,7 +51,7 @@ Check drinking a bottle:
 			say "You're going to have to kneel down if you want to drink that." instead;
 	if the noun is held and the player is not able to use their hands, say "Since you don't have the use of your hands, you're going to have to put that on the ground[if the player is upright] and kneel down[end if] if you want to drink it." instead;
 	if the player is overly full and the stomach-water of the player > 2:
-		say "You are already feeling very full.  Are you sure you want to force even more down (you will have a significantly reduced chance of gaining positive effects)? [yesnolink] ";
+		say "You are already feeling very full. Are you sure you want to force even more down (you will have a significantly reduced chance of gaining positive effects)? [yesnolink] ";
 		unless the player consents, do nothing instead.
 
 Carry out drinking a bottle when the player is prone:
@@ -99,19 +99,19 @@ Check drinking a vessel:
 
 Check drinking DungeonScenery03:
 	if a random lake monster is in the location of the player, say "You don't dare go near the tentacle monster." instead;
-	say "You try tasting it.  Ugh, it tastes horrible!  That is definitely not good for you.  You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
+	say "You try tasting it. Ugh, it tastes horrible!  That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
 	
 Carry out drinking DungeonScenery03:
-	say "You place your lips in the water and sip.  It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
+	say "You place your lips in the water and sip. It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
 	now seconds is 6;
 	StomachUp 2;
 	if the stomach-water of the player < 0, now the stomach-water of the player is 0.
 	
 Check drinking WoodsScenery01:
-	say "You try tasting it.  Ugh, it tastes horrible!  That is definitely not good for you.  You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
+	say "You try tasting it. Ugh, it tastes horrible!  That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
 	
 Carry out drinking WoodsScenery01:
-	say "You place your lips in the water and sip.  It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
+	say "You place your lips in the water and sip. It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
 	now seconds is 6;
 	StomachUp 2;
 	if the stomach-water of the player < 0, now the stomach-water of the player is 0.
@@ -119,10 +119,10 @@ Carry out drinking WoodsScenery01:
 Carry out drinking a vessel:
 	now seconds is 6;
 	if the noun is a squirt dildo:
-		say "You put the dildo in your mouth and squeeze.  You gulp down the liquid that comes out.";
+		say "You put the dildo in your mouth and squeeze. You gulp down the liquid that comes out.";
 		humiliate 50;
 	if the noun is a baby's bottle:
-		say "You put the bottle in your mouth and suck.  You gulp down the liquid as it comes out.";
+		say "You put the bottle in your mouth and suck. You gulp down the liquid as it comes out.";
 		humiliate 40;
 	compute drinking the noun;
 	decrease the doses of the noun by 1;
@@ -147,3 +147,4 @@ The block drinking rule is not listed in the check drinking rulebook.
 
 
 Drinking ends here.
+

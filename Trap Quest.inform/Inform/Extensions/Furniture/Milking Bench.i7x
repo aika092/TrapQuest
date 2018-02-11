@@ -1,10 +1,10 @@
 Milking Bench by Furniture begins here.
 
 
-milking bench is a kind of furniture.  There is 1 milking bench.  The description of milking bench is "[MilkingBenchDesc]".  A milking bench has a number called units collected.  The printed name of milking bench is "[TQlink of item described]milking bench[TQxlink of item described][shortcut-desc][verb-desc of item described]".  The text-shortcut of milking bench is "mb".
+milking bench is a kind of furniture. There is 1 milking bench. The description of milking bench is "[MilkingBenchDesc]". A milking bench has a number called units collected. The printed name of milking bench is "[TQlink of item described]milking bench[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of milking bench is "mb".
 To say MilkingBenchDesc:
 	if images visible is 1, display figure of milking bench;
-	say "A bench you could kneel and rest on.  There are cups that are clearly for milking swollen mammaries.".
+	say "A bench you could kneel and rest on. There are cups that are clearly for milking swollen mammaries.".
 Figure of milking bench is the file "milkingbench1.png".
 
 To compute furniture resting on (M - a milking bench):
@@ -45,7 +45,7 @@ To compute furniture resting on (M - a milking bench):
 			let H be a random off-stage cow ears;
 			let C be a random off-stage cow print milking basque;
 			if H is actually summonable and a random number between 1 and 40 - (20 * unlucky) is 1:
-				say "As you are getting milked, a headband with fake cow ears appears on your head.  You let out a soft involuntary [variable custom style]'moo'[roman type].";
+				say "As you are getting milked, a headband with fake cow ears appears on your head. You let out a soft involuntary [line break][variable custom style]'moo'[roman type][line break].";
 				summon H cursed;
 			otherwise if the class of the player is royal slave and C is basque:
 				say "As you are getting milked, ";
@@ -78,7 +78,7 @@ To compute furniture resting on (M - a milking bench):
 		now milking is 0;
 		if M is in the location of the player:
 			say "The machine finally stops milking you.";
-			if the alert of the player is 0, say "[if the bimbo of the player < 11][first custom style]I feel so much better![otherwise][second custom style]I'm full of energy again.  Yum![end if][roman type][line break]";
+			if the alert of the player is 0, say "[if the bimbo of the player < 11][line break][first custom style]I feel so much better![otherwise][line break][second custom style]I'm full of energy again. Yum![end if][roman type][line break]";
 		let B be a random off-stage can;
 		if B is can and the units collected of M > 0:
 			now B is in the location of M;
@@ -87,6 +87,7 @@ To compute furniture resting on (M - a milking bench):
 			now the max-doses of B is (the units collected of M + 3) / 4;
 			now the doses of B is the max-doses of B;
 			say "It spits out a [printed name of B].";
+			compute autotaking B;
 		now the units collected of M is 0;
 		now resting is 0;
 		if the alert of the player is 0, try standing;
@@ -112,3 +113,4 @@ To say RestingDesc of (F - a milking bench):
 	say  "You [one of][or]continue to [stopping]kneel on the bench.";
 
 Milking Bench ends here.
+

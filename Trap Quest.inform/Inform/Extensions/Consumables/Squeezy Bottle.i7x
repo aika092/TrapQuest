@@ -1,7 +1,7 @@
 Squeezy Bottle by Consumables begins here.
 
 
-A squeezy bottle is a kind of thing. There is 1 squeezy bottle in Hotel19.  The description of squeezy bottle is "A large bottle with one of those lids where you have to squeeze the bottle to get the liquid to come out.  A label on the side says 'THE MANAGEMENT ARE NOT RESPONSIBLE FOR ANY SIDE EFFECTS THAT MAY OCCUR FROM DRINKING FROM THIS EXPERIMENTAL DEVICE'.  [variable custom style][if the bimbo of the player > 13]Sounds fair enough to me![otherwise]Sounds about right.[end if][roman type][line break]".  The printed name of squeezy bottle is "[TQlink of item described]squeezy bottle[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of squeezy bottle is "sq".
+A squeezy bottle is a kind of thing. There is 1 squeezy bottle in Hotel19. The description of squeezy bottle is "A large bottle with one of those lids where you have to squeeze the bottle to get the liquid to come out. A label on the side says 'THE MANAGEMENT ARE NOT RESPONSIBLE FOR ANY SIDE EFFECTS THAT MAY OCCUR FROM DRINKING FROM THIS EXPERIMENTAL DEVICE'. [line break][variable custom style][if the bimbo of the player > 13]Sounds fair enough to me![otherwise]Sounds about right.[end if][roman type][line break]". The printed name of squeezy bottle is "[TQlink of item described]squeezy bottle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of squeezy bottle is "sq".
 
 Definition: a squeezy bottle (called B) is immune to change:
 	decide yes.
@@ -31,7 +31,7 @@ Check drinking a squeezy bottle:
 	now seconds is 6;
 	let R be a random number between 1 and 3;
 	if R is 1:
-		say "Some kind of extremely spicy liquid burns your throat!  [variable custom style]Eek!  [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
+		say "Some kind of extremely spicy liquid burns your throat!  [line break][variable custom style]Eek!  [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
 		DelicateUp 1;
 	otherwise:
 		say "Water squirts from the bottle into your mouth.";
@@ -39,3 +39,4 @@ Check drinking a squeezy bottle:
 
 
 Squeezy Bottle ends here.
+

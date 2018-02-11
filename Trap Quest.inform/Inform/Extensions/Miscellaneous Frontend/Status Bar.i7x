@@ -278,28 +278,28 @@ REQUIRES COMMENTING
 To say VagueHumiliation:
 	let B be the appearance of the player;
 	if the player-class is not succubus:
-		if the humiliation of the player < 8000:
+		if the humiliation of the player < HUMILIATION-PROUD:
 			say "[if B > 9]Mortified[otherwise if B > 5]Embarrassed[otherwise if B > 1]Uncomfortable[otherwise]Smug[end if]";
-		otherwise if the humiliation of the player < 16000:
+		otherwise if the humiliation of the player < HUMILIATION-MODEST:
 			say "[if B > 12]Mortified[otherwise if B > 8]Embarrassed[otherwise if B > 5]Uncomfortable[otherwise if B > 2]Bold[otherwise]Dignified[end if]";
-		otherwise if the humiliation of the player < 24000:
+		otherwise if the humiliation of the player < HUMILIATION-DISGRACED:
 			say "[if B > 8]Embarrassed[otherwise if B > 6]Uncomfortable[otherwise if B > 2]Cheeky[otherwise]Bored[end if]";
-		otherwise if the humiliation of the player < 32000:
+		otherwise if the humiliation of the player < HUMILIATION-SHAMELESS:
 			say "[if B > 8]Pitiable[otherwise if B > 4]Cheap[otherwise]Bored[end if]";
-		otherwise if the humiliation of the player < 40000:
+		otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 			say "[if B > 13]Shameless[otherwise if B > 8]Notorious[otherwise]Bored[end if]";
 		otherwise:
 			say "[if the intelligence of the player > 5]Absent[otherwise if the intelligence of the player > 2]Scatterbrained[otherwise]Unthinking[end if]";
 	otherwise:
-		if the humiliation of the player < 8000:
+		if the humiliation of the player < HUMILIATION-PROUD:
 			say "In Control";
-		otherwise if the humiliation of the player < 16000:
+		otherwise if the humiliation of the player < HUMILIATION-MODEST:
 			say "Floaty";
-		otherwise if the humiliation of the player < 24000:
+		otherwise if the humiliation of the player < HUMILIATION-DISGRACED:
 			say "Suggestible";
-		otherwise if the humiliation of the player < 32000:
+		otherwise if the humiliation of the player < HUMILIATION-SHAMELESS:
 			say "Fading";
-		otherwise if the humiliation of the player < 40000:
+		otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 			say "Hollow";
 		otherwise:
 			say "Possessed".
@@ -352,15 +352,15 @@ REQUIRES COMMENTING
 +!]
 To say VagueCringeHumiliation:
 	let B be the cringe appearance of the player;
-	if the humiliation of the player < 8000:
+	if the humiliation of the player < HUMILIATION-PROUD:
 		say "[if B > 9]Mortified[otherwise if B > 5]Embarrassed[otherwise if B > 1]Uncomfortable[otherwise]Proud[end if]";
-	otherwise if the humiliation of the player < 16000:
+	otherwise if the humiliation of the player < HUMILIATION-MODEST:
 		say "[if B > 12]Mortified[otherwise if B > 8]Embarrassed[otherwise if B > 5]Uncomfortable[otherwise if B > 2]Bold[otherwise]Dignified[end if]";
-	otherwise if the humiliation of the player < 24000:
+	otherwise if the humiliation of the player < HUMILIATION-DISGRACED:
 		say "[if B > 8]Embarrassed[otherwise if B > 6]Uncomfortable[otherwise if B > 2]Cheeky[otherwise]Bored[end if]";
-	otherwise if the humiliation of the player < 32000:
+	otherwise if the humiliation of the player < HUMILIATION-SHAMELESS:
 		say "[if B > 8]Disgraced[otherwise if B > 4]Naughty[otherwise]Bored[end if]";
-	otherwise if the humiliation of the player < 40000:
+	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 		say "[if B > 10]Shameless[otherwise]Bored[end if]";
 	otherwise:
 		say "Completely Content".
@@ -922,3 +922,4 @@ left	central	right
 
 
 Status Bar ends here.
+

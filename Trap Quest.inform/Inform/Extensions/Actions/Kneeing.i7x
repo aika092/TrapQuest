@@ -28,6 +28,7 @@ REQUIRES COMMENTING
 
 +!]
 Check kneeing:
+	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not a monster, say "Err, why would you do that?" instead;
 	if the noun is woman, say "Something tells you this would be a stupid idea." instead;
@@ -82,3 +83,4 @@ Understand "knee [something]", "kn [something]" as kneeing.
 
 
 Kneeing ends here.
+

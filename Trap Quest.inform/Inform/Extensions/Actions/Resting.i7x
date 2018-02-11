@@ -16,7 +16,7 @@ REQUIRES COMMENTING
 Check resting:
 	if the player is monster fucked, try resisting instead;
 	if the player is immobile, say "Aren't you a bit busy?" instead;
-	if the fatigue of the player is 0, say "[if the body soreness of the player is 0]You feel completely fine.[otherwise]You're not fatigued at the moment, just injured.  You're going to need to find somewhere specific to rest to heal your injuries.[end if]" instead;
+	if the fatigue of the player is 0, say "[if the body soreness of the player is 0]You feel completely fine.[otherwise]You're not fatigued at the moment, just injured. You're going to need to find somewhere specific to rest to heal your injuries.[end if]" instead;
 	if the player is upright, say "You can only rest while kneeling." instead;
 	say "Stay still until you feel completely refreshed? [yesnolink] ";
 	unless the player consents, say "You change your mind." instead.
@@ -39,7 +39,7 @@ Carry out resting:
 				if debugmode is 1, say "The [M] in [location of M] might make the player alert if it is close enough..";
 				if M is in the location of the player or M is nearby, now the alert of the player is 1;
 				if the alert of the player is 1 and M is nearby:
-					say "You see a threatening looking [M] that is lurking nearby.  ";
+					say "You see a threatening looking [M] that is lurking nearby. ";
 					break;
 				otherwise if the alert of the player is 1:
 					say "Your rest is interrupted by the [M].";
@@ -66,3 +66,4 @@ Understand "rest", "recover", "re", "res" as resting.
 
 
 Resting ends here.
+

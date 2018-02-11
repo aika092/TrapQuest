@@ -80,8 +80,9 @@ To decide which number is the flat strength of the player:
 		if the milk volume of breasts > 40, increase S by 1;
 	if strength-tincture-timer > 0:
 		increase S by strength-tincture-bonus;
-	increase S by ((pink-nugget-timer + default-candy-duration - 1) / default-candy-duration) * 8;
+	increase S by ((pink-nugget-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	decrease S by ((liquorice-timer + default-candy-duration - 1) / default-candy-duration) * 1;
+	if the the boost-cooldown of nurse > 0, increase S by 2;
 	if cookie-poison-timer > 0, now S is S / 2;
 	increase S by the number of worn piercings;
 	if temp_str_dam > 0, decrease S by temp_str_dam;
@@ -105,7 +106,7 @@ Part 2 - Modify Strength
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw strength.  The raw strength of the player is usually 7. [Min 1 Max 30]
+The player has a number called raw strength. The raw strength of the player is usually 7. [Min 1 Max 30]
 
 
 [!<Player>@<oldStrength:Integer>*
@@ -113,7 +114,7 @@ The player has a number called raw strength.  The raw strength of the player is 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called old strength.  The old strength of the player is usually 0.
+The player has a number called old strength. The old strength of the player is usually 0.
 
 
 [!<StrengthUpX>+
@@ -138,3 +139,4 @@ To StrengthDown (X - a number):
 
 
 Strength ends here.
+

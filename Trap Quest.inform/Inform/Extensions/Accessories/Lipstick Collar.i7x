@@ -20,7 +20,7 @@ Definition: a lipstick collar (called C) is immune to change:
 Report wearing lipstick collar:
 	now a random lipstick collar is cursed;
 	now a random lipstick collar is temptation;
-	say "The collar tightens around your neck, and as you struggle to regain your breathing, you [one of][or]once again [stopping]realize it's somehow forcing you to make a very lewd, provocative face. [if the bimbo of the player < 8][first custom style]Another reason not to look anyone here in the eye. Great.[otherwise if the bimbo of the player < 12][variable custom style]I guess it's not that bad. I mean, it's not like I'm making this face on purpose.[otherwise][second custom style]Great, now everybody will know what I really want![end if][roman type][line break]";
+	say "The collar tightens around your neck, and as you struggle to regain your breathing, you [one of][or]once again [stopping]realize it's somehow forcing you to make a very lewd, provocative face. [if the bimbo of the player < 8][line break][first custom style]Another reason not to look anyone here in the eye. Great.[otherwise if the bimbo of the player < 12][line break][variable custom style]I guess it's not that bad. I mean, it's not like I'm making this face on purpose.[otherwise][line break][second custom style]Great, now everybody will know what I really want![end if][roman type][line break]";
 	if the location of the player is mansion28:
 		say "A wave of relief seems to pass through the air, and the glass on the pedestals shifts to a translucent shade of pink.";
 	repeat with P running through closed pedestals:
@@ -35,8 +35,8 @@ Report taking off lipstick collar:
 
 To say TetherMove:
 	let M be a random alive vampiress;
-	if M is in the location of the player, say "The [M] pulls hard as soon as you start to move, very nearly throwing you off balance. [speech style of M]'[one of]Why are you running away darling? Afraid I[']m going to pull out when I cum? Hahaha!'[or]You[']re cute for a thief, which is all the more reason to make sure I collect your payment personally...'[or]No getting away from me now, [if the size of penis > 3]Mr[otherwise]Mrs[end if]. sticky fingers!'[or]Scared of me, darling? Don[']t worry, I don[']t kill thieves, I inseminate them.'[or][at random][roman type]";
-	otherwise say "The chain pulls hard as soon as you start to move, [one of]forcefully dragging you back several feet[or]accompanied by a sing-songy voice down the hall [speech style of M]'I[']ve been deep-throated by faster thieves than you, darling~!'[roman type][or]dragging you back several feet. You hear a mocking roll of laughter down the hall.[or]accompanied by a sing-songy voice down the hall [speech style of M]'Better run faster unless you want a sticky face to match those sticky fingers~!'[roman type][or][speech style of M]'Run run run, as fast as you can, can[']t escape me, I[']m going to violate your asshole!'[roman type][at random] [one of]You have to keep trying to escape![or]You have to keep trying![stopping]"
+	if M is in the location of the player, say "The [M] pulls hard as soon as you start to move, very nearly throwing you off balance. [line break][speech style of M]'[one of]Why are you running away darling? Afraid I[']m going to pull out when I cum? Hahaha!'[or]You[']re cute for a thief, which is all the more reason to make sure I collect your payment personally...'[or]No getting away from me now, [if the size of penis > 3]Mr[otherwise]Mrs[end if]. sticky fingers!'[or]Scared of me, darling? Don[']t worry, I don[']t kill thieves, I inseminate them.'[or][at random][roman type][line break]";
+	otherwise say "The chain pulls hard as soon as you start to move, [one of]forcefully dragging you back several feet[or]accompanied by a sing-songy voice down the hall [line break][speech style of M]'I[']ve been deep-throated by faster thieves than you, darling~!'[roman type][line break][or]dragging you back several feet. You hear a mocking roll of laughter down the hall.[or]accompanied by a sing-songy voice down the hall [line break][speech style of M]'Better run faster unless you want a sticky face to match those sticky fingers~!'[roman type][line break][or][line break][speech style of M]'Run run run, as fast as you can, can[']t escape me, I[']m going to violate your asshole!'[roman type][line break][at random] [one of]You have to keep trying to escape![or]You have to keep trying![stopping]"
 
 To end tethering:
 	let L be a random worn tethering lipstick collar;
@@ -58,3 +58,4 @@ Report going down when there is a worn tethering lipstick collar:
 
 
 Lipstick Collar ends here.
+

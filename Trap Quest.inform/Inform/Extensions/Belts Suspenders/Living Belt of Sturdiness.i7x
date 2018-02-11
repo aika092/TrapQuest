@@ -1,26 +1,30 @@
 Living Belt of Sturdiness by Belts Suspenders begins here.
 
-The living belt of sturdiness is a belt.  The living belt of sturdiness is unskirted.  Figure of living belt of sturdiness is the file "belt2.png". The living belt of sturdiness is unique.  The living belt of sturdiness is biological. The printed name of living belt of sturdiness is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of living belt of sturdiness is "lbs".  The description of living belt of sturdiness is "[LivingBeltDesc]".
+The living belt of sturdiness is a belt. Figure of living belt of sturdiness is the file "belt2.png". The living belt of sturdiness is unique. The living belt of sturdiness is biological. The printed name of living belt of sturdiness is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of living belt of sturdiness is "lbs".
 
-The living belt of sturdiness has a number called buildup.  The buildup of the living belt of sturdiness is 0.  The living belt of sturdiness is father material.
+The living belt of sturdiness has a number called buildup. The buildup of the living belt of sturdiness is 0.
+
+Definition: a living belt of sturdiness (called C) is father material:
+	decide yes.
 
 To decide which figure-name is clothing-image of (C - the living belt of sturdiness):
 	decide on figure of living belt of sturdiness.
 
-To say LivingBeltDesc:
-	say "This 'belt' is a loop of living metallic silver tentacles that are slowly undulating.  They look almost robotic in nature but they are warm to the touch and not as solid as a real metal.";
+To say ClothingDesc of (C - living belt of sturdiness):
+	say "This 'belt' is a loop of living metallic silver tentacles that are slowly undulating. They look almost robotic in nature but they are warm to the touch and not as solid as a real metal.";
 	if item described is penetrating a fuckhole:
 		say "[line break]";
-		say "[if item described is filling asshole and item described is filling vagina]The tentacles are[otherwise]The tentacle is[end if] currently penetrating you and filling you to the brim.";
-		if item described is thrusting, say "[if the sex addiction of the player > 12 and item described is filling asshole and item described is filling vagina] Moreover, the tentacles are fucking you simultaneously in a deliciously teasing[otherwise if the sex addiction of the player > 12] Moreover, the tentacle is fucking you in a deliciously teasing[otherwise if item described is filling asshole and item described is filling vagina]  Even worse, the tentacles are fucking you simultaneously in a frustratingly distracting[otherwise]  Even worse, the tentacle is fucking you in a frustratingly distracting[end if] slow, strong and steady manner.".
+		say "[if item described is filling asshole and item described is filling vagina]The tentacles are[otherwise]The tentacle is[end if] currently penetrating you and filling you to the brim. ";
+		if item described is thrusting, say "[if the sex addiction of the player > 12 and item described is filling asshole and item described is filling vagina]Moreover, the tentacles are fucking you simultaneously in a deliciously teasing[otherwise if the sex addiction of the player > 12]Moreover, the tentacle is fucking you in a deliciously teasing[otherwise if item described is filling asshole and item described is filling vagina] Even worse, the tentacles are fucking you simultaneously in a frustratingly distracting[otherwise] Even worse, the tentacle is fucking you in a frustratingly distracting[end if] slow, strong and steady manner.";
+		otherwise say line break.
 
 To say ShortDesc of (Y - living belt of sturdiness):
-	say "belt made of living sex tentacles".
+	say "belt of living sex tentacles".
 
 Definition: a living belt of sturdiness (called C) is product:
 	decide yes.
 
-To decide which number is the alchemy key of (C - a living belt of sturdiness):
+To decide which number is the alchemy key of (C - living belt of sturdiness):
 	decide on 19.
 
 Definition: A clothing (called C) is thrusting:
@@ -30,20 +34,20 @@ Definition: A clothing (called C) is thrusting:
 To decide which number is the girth of (I - the living belt of sturdiness):
 	decide on 4.
 
-To decide which number is the initial outrage of (C - a living belt of sturdiness):
+To decide which number is the initial outrage of (C - living belt of sturdiness):
 	decide on 16.
 
-To uniquely set up (C - a living belt of sturdiness):
+To uniquely set up (C - living belt of sturdiness):
 	now the buildup of C is 0.
 
-Definition: a living belt of sturdiness (called C) is untransformable:
+Definition: living belt of sturdiness (called C) is untransformable:
 	decide yes.
 
 To compute periodic effect of (I - living belt of sturdiness):
 	if the player is upright:
 		if the living belt of sturdiness is penetrating a fuckhole:
 			if the buildup of the living belt of sturdiness > 6 and a random number between 1 and (30 - buildup of living belt of sturdiness) < 2 and the player is not unable to orgasm so soon:
-				say "The steady fucking of the strong, rhythmic silver tentacle[if living belt of sturdiness is penetrating vagina and living belt of sturdiness is penetrating asshole]s[end if] of your [printed name of living belt of sturdiness] [one of]finally[or]once again[stopping] becomes too much for you, and your knees wobble and fail as you reach an extremely powerful climax.[line break][if the player is gagged]You scream into your [printed name of random ballgag worn by the player].  [variable custom style]'MMMMMPHH!!!'[otherwise][variable custom style]'Oooooooh fuuuuuuuuccckk!'[end if][roman type][line break]";
+				say "The steady fucking of the strong, rhythmic silver tentacle[if living belt of sturdiness is penetrating vagina and living belt of sturdiness is penetrating asshole]s[end if] of your [printed name of living belt of sturdiness] [one of]finally[or]once again[stopping] becomes too much for you, and your knees wobble and fail as you reach an extremely powerful climax.[line break][if the player is gagged]You scream into your [ShortDesc of random thing penetrating face]. [line break][variable custom style]'MMMMMPHH!!!'[otherwise][variable custom style]'Oooooooh fuuuuuuuuccckk!'[end if][roman type][line break]";
 				if the living belt of sturdiness is penetrating vagina:
 					vaginally orgasm shamefully;
 					[say "Your orgasm seems to cause the silver tentacle[if living belt of sturdiness is penetrating vagina and living belt of sturdiness is penetrating asshole]s[end if] to explode with their own climax!  You feel yourself getting filled up with inhuman [semen].";
@@ -116,3 +120,4 @@ The trousers living belt clash rule is listed in the trousers wearability rules.
 
 
 Living Belt of Sturdiness ends here.
+

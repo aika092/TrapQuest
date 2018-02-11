@@ -1,6 +1,6 @@
 Golem by Monster begins here.
 
-A golem is a kind of monster. There is 1 golem. A golem is poison immune. A golem is usually neuter.
+A golem is a kind of monster. There is 1 golem. A golem is usually neuter. The poison-status of a golem is -1.
 
 The description of golem is usually "[GolemDesc]". The text-shortcut of golem is "sg". The printed name of golem is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if artificial enhancements fetish is 1]silicone[otherwise]flesh[end if] golem[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "silicone", "flesh" as golem.
 
@@ -47,7 +47,7 @@ To compute perception of (M - a golem):
 	say "The golem turns to face you almost mechanically and yet with unsettling grace. It seems to be blocking the path forward, you'll need to deal with it to move on.".
 
 To compute (M - a monster) stomping (N - a golem):
-	if M is in the location of the player, say "The [M] holds the [N] with two powerful fists and pulls apart with impossible strength.  The [N] splits into two!  The pieces fall to the ground and then disappear.";
+	if M is in the location of the player, say "The [M] holds the [N] with two powerful fists and pulls apart with impossible strength. The [N] splits into two!  The pieces fall to the ground and then disappear.";
 	otherwise say "You hear a very loud ripping sound!";
 	destroy N.
 
@@ -107,3 +107,4 @@ To compute unique death of (M - a golem):
 
 
 Golem ends here.
+

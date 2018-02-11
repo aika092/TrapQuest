@@ -15,7 +15,7 @@ Check attacking:
 	if the noun is woman, say "Something tells you this would be a stupid idea." instead;
 	if the player is prone, say "You can't do much to hurt [the noun] whilst on your [if the noun is wench and the noun is grabbing the player]back[otherwise]knees[end if]!" instead;
 	if the player is immobile, say "You're a bit immobile right now to be trying to attack anything!" instead;
-	if the sleep of the noun > 0, say "Just because they're asleep doesn't mean you can defeat [him of the noun] in one hit in this world.  You're going to have to attack them as usual, which will wake [him of the noun] up.";
+	if the sleep of the noun > 0, say "Just because they're asleep doesn't mean you can defeat [him of the noun] in one hit in this world. You're going to have to attack them as usual, which will wake [him of the noun] up.";
 	let Sl be the slap damage of the player - combat bonus remainder;
 	let K be the knee damage of the player - combat bonus remainder;
 	let Ki be the kick damage of the player - combat bonus remainder;
@@ -24,3 +24,4 @@ Check attacking:
 Understand "kill [something]", "murder [something]", "destroy [something]", "stamp on [something]", "stamp [something]", "k [something]", "at [something]", "break [something]" as attacking.
 
 Attacking ends here.
+

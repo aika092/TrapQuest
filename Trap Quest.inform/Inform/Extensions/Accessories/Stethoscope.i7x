@@ -4,7 +4,7 @@ A stethoscope is a kind of neckwear. The printed name of stethoscope is "[TQlink
 
 A stethoscope is unique.
 
-Understand "steth","stetho" as a stethoscope.  The text-shortcut of stethoscope is "ste".
+Understand "steth","stetho" as a stethoscope. The text-shortcut of stethoscope is "ste".
 
 To decide which number is the initial outrage of (C - a stethoscope):
 	decide on 0.
@@ -13,7 +13,7 @@ To say ShortDesc of (C - a stethoscope):
 	say "stethoscope".
 
 Report wearing stethoscope:
-	say "You put the stethoscope around your neck.  You realise you could probably use this to try and detect traps.  Maybe even some of those [one of]boxes[or]crates[or]containers[purely at random] you weren't sure about before?".
+	say "You put the stethoscope around your neck. You realise you could probably use this to try and detect traps. Maybe even some of those [one of]boxes[or]crates[or]containers[purely at random] you weren't sure about before?".
 
 To decide which number is the intelligence-influence of (C - a stethoscope):
 	let I be 2;
@@ -22,7 +22,7 @@ To decide which number is the intelligence-influence of (C - a stethoscope):
 	decide on I.
 
 Check taking off a stethoscope:
-	if the flat intelligence of the player < the intelligence-influence of the noun + 1, say "As you try to take [the noun] off, you feel consciousness slipping from you.  You decide to leave it on..." instead.
+	if the flat intelligence of the player < the intelligence-influence of the noun + 1, say "As you try to take [the noun] off, you feel consciousness slipping from you. You decide to leave it on..." instead.
 
 To uniquely set up (C - a stethoscope):
 	do nothing.
@@ -37,7 +37,7 @@ To decide which figure-name is clothing-image of (C - a doctor stethoscope):
 	decide on figure of stethoscope 1.
 
 To say ClothingDesc of (C - a doctor stethoscope):
-	say "You can wear this around your neck.  If you do, you will be more reliable when searching crates for traps.".
+	say "You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.".
 
 Definition: a doctor stethoscope (called C) is untransformable:
 	if diaper quest is 1, decide yes;
@@ -52,7 +52,7 @@ To decide which number is the alchemy key of (W - a doctor stethoscope):
 
 Part 2 - Cock Stethoscope
 
-A cock stethoscope is a kind of stethoscope.  There is 1 cock stethoscope.
+A cock stethoscope is a kind of stethoscope. There is 1 cock stethoscope.
 
 Figure of stethoscope 2 is the file "stethoscope2.png".
 
@@ -63,8 +63,9 @@ To decide which number is the initial outrage of (C - a cock stethoscope):
 	decide on 9.
 
 To say ClothingDesc of (C - a cock stethoscope):
-	say "A normal doctor's stethoscope but with cocks for your ears and at the sensor end. You can wear this around your neck.  If you do, you will be more reliable when searching crates for traps.". 
+	say "A normal doctor's stethoscope but with cocks for your ears and at the sensor end. You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.". 
 
 
 
 Stethoscope ends here.
+

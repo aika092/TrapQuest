@@ -1,12 +1,12 @@
 Thigh High Boots by Shoes begins here.
 
 
-A thigh high boots is a kind of boots.  The printed name of thigh high boots is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of thigh high boots is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of thigh high boots is "thb".
+A thigh high boots is a kind of boots. The printed name of thigh high boots is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of thigh high boots is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of thigh high boots is "thb".
 
 Definition: a thigh high boots (called C) is fluid immune:
 	decide yes.
 
-There is 1 latex thigh high boots.  There is 1 leather thigh high boots.
+There is 1 latex thigh high boots. There is 1 leather thigh high boots.
 
 To decide which number is the unique outrage of (C - a thigh high boots):
 	decide on 1.
@@ -39,7 +39,7 @@ To uniquely set up (C - a thigh high boots):
 		if R is 2, now C is kicking;
 	set up heel length of C.
 
-A WC thigh high boots is a kind of thigh high boots.  There is 1 unique WC thigh high boots.  A WC thigh high boots is usually latex.  Figure of WC thigh high boots is the file "WcLatexBoot.png".  WC thigh high boots has a number called powerup.
+A WC thigh high boots is a kind of thigh high boots. There is 1 unique WC thigh high boots. A WC thigh high boots is usually latex. Figure of WC thigh high boots is the file "WcLatexBoot.png". WC thigh high boots has a number called powerup.
 
 To decide which figure-name is the clothing-image of (H - a WC thigh high boots):
 	decide on figure of WC thigh high boots.
@@ -63,7 +63,7 @@ Report kicking when there are worn WC thigh high boots:
 	let C be a random WC thigh high boots;
 	if C is kicking:
 		if the powerup of C < 20 and (a random number between 1 and powerup of C) + (a random number between 1 and powerup of C) <= 2:
-			say "[bold type]You feel the kicking enchantment leave your [C][bold type] and the stumbling enchantment return.  It looks like it's decided you've been shirking your toilet duties![roman type][line break]";
+			say "[bold type]You feel the kicking enchantment leave your [C][bold type] and the stumbling enchantment return. It looks like it's decided you've been shirking your toilet duties![roman type][line break]";
 			now C is stumbling;
 			now the powerup of C is 0;
 		otherwise:
@@ -72,3 +72,4 @@ Report kicking when there are worn WC thigh high boots:
 
 
 Thigh High Boots ends here.
+

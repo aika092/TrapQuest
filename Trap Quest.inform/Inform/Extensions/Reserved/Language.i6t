@@ -232,7 +232,7 @@ Array LanguageGNAsToArticles --> 0 0 0 1 1 1 0 0 0 1 1 1;
 
 @p Commands.
 |LanguageVerbLikesAdverb| is called by |PrintCommand| when printing an |UPTO_PE|
-error or an inference message.  Words which are intransitive verbs, i.e.,
+error or an inference message. Words which are intransitive verbs, i.e.,
 which require a direction name as an adverb (``walk west''), not a noun
 (``I only understood you as far as wanting to touch the ground''), should
 cause the routine to return |true|.
@@ -460,7 +460,7 @@ they will be more easily dealt with. But for now, the old-fashioned way:
         9:  print (The) actor, " gets onto ", (the) x1, ".^";
     }
   Examine: switch (n) {
-        1:  "Darkness, noun.  An absence of light to see by.";
+        1:  "Darkness, noun. An absence of light to see by.";
         2:  "You see nothing special about ", (the) x1, ".";
         3:  print (The) x1, " ", (isorare) x1, " currently switched ";
             if (x1 has on) "on."; else "off.";
@@ -635,9 +635,9 @@ they will be more easily dealt with. But for now, the old-fashioned way:
             print ",";
             #endif;
             " or QUIT?";
-        6:  "[Your interpreter does not provide ~undo~.  Sorry!]";
+        6:  "[Your interpreter does not provide ~undo~. Sorry!]";
             #Ifdef TARGET_ZCODE;
-        7:  "~Undo~ failed.  [Not all interpreters provide it.]";
+        7:  "~Undo~ failed. [Not all interpreters provide it.]";
             #Ifnot; ! TARGET_GLULX
         7:  "[You cannot ~undo~ any further.]";
             #Endif; ! TARGET_

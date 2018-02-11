@@ -1,8 +1,8 @@
 Blouse by Dresses begins here.
 
-A bodice is a kind of overdress.  A bodice is usually unskirted.  A bodice is usually satin.  Understand "blouse" as bodice.  A bodice is usually high cut.  A bodice is usually rare.  The text-shortcut of bodice is "blo".
+A bodice is a kind of overdress. A bodice is usually unskirted. A bodice is usually satin. Understand "blouse" as bodice. A bodice is usually high cut. A bodice is usually rare. The text-shortcut of bodice is "blo".
 
-A pink bodice is a kind of bodice.  A pink bodice is usually only arm covering.  A black bodice is a kind of bodice.   The text-shortcut of pink bodice is "pbl".  The text-shortcut of black bodice is "bbl".
+A pink bodice is a kind of bodice. A pink bodice is usually only arm covering. A black bodice is a kind of bodice. The text-shortcut of pink bodice is "pbl". The text-shortcut of black bodice is "bbl".
 
 Figure of Black Blouse is the file "blouse1.png".
 Figure of Pink Blouse is the file "blouse2.png".
@@ -12,10 +12,10 @@ To decide which figure-name is clothing-image of (C - a bodice):
 	decide on Figure of Black Blouse.
 
 To say ClothingDesc of (C - a bodice):
-	say "A loose fitting blouse that is a lot more modest than any other piece of clothing you've seen in this game.  [if the semen-soak of C > 0]If it wasn't covered in [semen], it [otherwise]It [end if]would probably help you feel less humiliated about yourself.".
+	say "A loose fitting blouse that is a lot more modest than any other piece of clothing you've seen in this game. [if the semen-soak of C > 0]If it wasn't covered in [semen], it [otherwise]It [end if]would probably help you feel less humiliated about yourself.".
 
 To compute SelfExamineDesc of (C - a bodice):
-	say "A [ShortDesc of C] keeps your top half modestly covered.  ".
+	say "A [ShortDesc of C] keeps your top half modestly covered. ".
 
 To say ShortDesc of (C - a bodice):
 	say "blouse".
@@ -55,7 +55,7 @@ There are 4 unique pink bodices. [needed for wench drops.]
 
 The printed name of pink bodice is usually "[TQlink of item described][clothing-title-before]pink blouse[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-There are 4 unique black bodices.  [needed for wench drops.]
+There are 4 unique black bodices. [needed for wench drops.]
 
 The printed name of black bodice is usually "[TQlink of item described][clothing-title-before]black blouse[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -65,3 +65,4 @@ The blouse fix rule is listed in the diaper quest fix rules.
 
 
 Blouse ends here.
+

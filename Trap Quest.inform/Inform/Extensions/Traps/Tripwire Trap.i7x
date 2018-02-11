@@ -1,8 +1,8 @@
 Tripwire Trap by Traps begins here.
 
-A tripwire trap is a kind of trap.  There are 30 wire tripwire traps.  The description of tripwire trap is "A thin wire crosses the [trap-direction] exit of the room at knee height.".
+A tripwire trap is a kind of trap. There are 30 wire tripwire traps. The description of tripwire trap is "A thin wire crosses the [trap-direction] exit of the room at knee height.".
 
-A tripwire trap has a number called memory.  The memory of a tripwire trap is usually 0.
+A tripwire trap has a number called memory. The memory of a tripwire trap is usually 0.
 
 To trigger (Y - a tripwire trap):
 	now Y is revealed;
@@ -18,3 +18,4 @@ To trigger (Y - a tripwire trap):
 		say "Luckily, nothing seems to happen.".
 
 Tripwire Trap ends here.
+

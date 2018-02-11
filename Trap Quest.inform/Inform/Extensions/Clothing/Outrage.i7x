@@ -31,7 +31,7 @@ To decide which number is the unworn outrage of (C - a clothing):
 	if C is crotch covering and (C is not total protection or C is see-through) and O < the lewdly exposed outrage of asshole and asshole is lewdly exposed, now O is the lewdly exposed outrage of asshole; [EXPERIMENTAL: This is an item that exposes the player's butthole, does nothing for breast modesty and therefore can't be less humiliating than being bottomless.]
 	if C is skirted and (C is super-short or C is see-through) and O < the lewdly exposed outrage of asshole and asshole is lewdly exposed, now O is the lewdly exposed outrage of asshole; [EXPERIMENTAL: This is a skirted item that exposes the player's butthole, does nothing for breast modesty and therefore can't be less humiliating than being bottomless.]
 	if C is worn currently visible clothing:
-		if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, increase O by 3; [This item should be blocking the crotch but it isn't.  How outrageous!]
+		if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, increase O by 3; [This item should be blocking the crotch but it isn't. How outrageous!]
 	if O > 20, now O is 20;
 	decide on O.
 
@@ -84,3 +84,4 @@ Definition: a clothing (called C) is almost too much:
 
 
 Outrage ends here.
+

@@ -3,14 +3,14 @@ Game Settings by Miscellaneous Backend begins here.
 
 [!<crashdebug:Integer>*
 
-Sometimes when there are a lot of crashes during fainting we enable this to allow checkpoints during fainting so we can see how far the interpreter got so that we can work out which bit is causing the crash.  When it's set to 1, the game will spit out "CHECKPOINT 1", "CHECKPOINT 2" etc. during the resetting of the map.
+Sometimes when there are a lot of crashes during fainting we enable this to allow checkpoints during fainting so we can see how far the interpreter got so that we can work out which bit is causing the crash. When it's set to 1, the game will spit out "CHECKPOINT 1", "CHECKPOINT 2" etc. during the resetting of the map.
 
 *!]
 crashdebug is a number that varies. crashdebug is 0.
 
 [!<quickStart:Integer>*
 
-Used to track what game mode was selected.  
+Used to track what game mode was selected. 
 
 0: Normal start
 1: Random start
@@ -18,7 +18,7 @@ Used to track what game mode was selected.
 3: Load save file
 
 *!]
-quick start is a number that varies.  quick start is 0.
+quick start is a number that varies. quick start is 0.
 
 
 [!<fileOfPreferences:File>*
@@ -69,10 +69,11 @@ choice
 1 [Game Difficulty]
 1 [Transformation Cutscenes]
 1 [Loading Screens]
+1 [Trap Warning]
 
 [!<DecideWhichNumberIsTextDelay>+
 
-How long until the 'press enter to continue' happens automatically.  The higher the longer.
+How long until the 'press enter to continue' happens automatically. The higher the longer.
 
 +!]
 To decide which number is text delay:
@@ -88,7 +89,7 @@ To decide which number is images visible:
 
 [!<DecideWhichNumberIsImageDelay>+
 
-Legacy variable.  Kept here because otherwise all the others would be pushed to incorrect locations.
+Legacy variable. Kept here because otherwise all the others would be pushed to incorrect locations.
 
 +!]	
 To decide which number is image delay:
@@ -336,6 +337,13 @@ Are there specific screens for loading the various regions?
 To decide which number is loading scenes:
 	decide on choice in row 34 of the Table of Settings.
 
+[!<DecideWhichNumberIsTrapWarning>+
+
+Do you want to be warned before entering a room with an active trap that may affect you?
+
++!]	
+To decide which number is trap warning:
+	decide on choice in row 35 of the Table of Settings.
 
 
 [!<tableOfGameSettings:Table>*
@@ -345,7 +353,7 @@ REQUIRES COMMENTING
 *!]
 Table of Game Settings
 title	subtable	description	toggle
-"Restore a Save File (if this crashes, try Quick Start followed by 'restore')"	--	--	load game rule
+"Restore a Save File (to guarantee windows are the right size or if this crashes, try Quick Start followed by 'restore')"	--	--	load game rule
 "[if earnings is starting-earnings]Normal Start (choose all your options, read prologue)[otherwise]Confirm Settings[end if] (shortcut: Q)"	--	--	quit rule
 "Quick Start (use same player choices as last time, skip prologue)"	--	--	quick start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
@@ -355,7 +363,7 @@ title	subtable	description	toggle
 "IMAGE AND LAYOUT SETTINGS"	Table of Image Settings	--	--
 "OPTIONAL TEXT SETTINGS"	Table of Optional Text Settings	--	--
 "AUTOMATIC ACTIONS SETTINGS"	Table of Automatic Actions Settings	--	--
-"File Based Undo (guaranteed to make undo work properly, but can slow down game; essentially creates a save file every turn.  recommended if you sometimes experience crashes because you can just restore with the latest undo file): [if ultra undo is 1]ON[otherwise]OFF[end if]"	--	--	ultra undo toggle rule
+"File Based Undo (guaranteed to make undo work properly, but can slow down game; essentially creates a save file every turn. recommended if you sometimes experience crashes because you can just restore with the latest undo file): [if ultra undo is 1]ON[otherwise]OFF[end if]"	--	--	ultra undo toggle rule
 
 
 
@@ -400,7 +408,7 @@ This is the load game rule:
 
 [!<tableOfCustomLibraryMessages:Table>*
 
-This is a weird work-around way in Inform to be able to run a function after the game has finished restoring a save file.  We want to refresh the UI and so we do that via a say command.
+This is a weird work-around way in Inform to be able to run a function after the game has finished restoring a save file. We want to refresh the UI and so we do that via a say command.
 
 *!]
 Table of custom library messages (continued)
@@ -547,7 +555,7 @@ title	subtable	description	toggle
 "Automatically search containers before opening them: [if autosearch is 1]ON[otherwise]OFF[end if]"	--	--	autosearch toggle rule
 "Automatically attempt standing after tripping (not including combat): [if autostand is 1]ON[otherwise]OFF[end if]"	--	--	autostand toggle rule
 "Automatically pick up items: [if autotake is 2]ON[otherwise if autotake is 1]ONLY NON-EDIBLES[otherwise]OFF[end if]"	--	--	autotake toggle rule
-
+"Warn if entering trapped room: [if trap warning is 1]ON[otherwise]OFF[end if]"	--	--	trap warning toggle rule
 
 [!<TheAutosearchToggleRule>+
 
@@ -812,6 +820,14 @@ This is the loading scenes toggle rule:
 	if choice in row 34 of Table of Settings is 0, increase choice in row 34 of Table of Settings by 1;
 	otherwise now choice in row 34 of Table of Settings is 0.
 
+[!<TheTrapWarningToggleRule>+
 
+REQUIRES COMMENTING
+
++!]
+This is the trap warning toggle rule:
+	if choice in row 35 of Table of Settings is 0, increase choice in row 35 of Table of Settings by 1;
+	otherwise now choice in row 35 of Table of Settings is 0.
 
 Game Settings ends here.
+

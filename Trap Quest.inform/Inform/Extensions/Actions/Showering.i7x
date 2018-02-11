@@ -16,6 +16,7 @@ Check showering:
 	if the bimbo of the player < 14 and there is a lake monster in the location of the player, say "You don't dare go near with the tentacle monster still lurking in these waters.." instead;
 	if the player is immobile, say "You're a bit immobile at the moment!" instead;
 	if the player is flying, say "You aren't even touching the ground!" instead;
+	if the player is in danger, say "You can't do that in the middle of combat!" instead;
 	if the noun is not WoodsScenery01 and the noun is not DungeonScenery03 and the noun is not sacred pool, say "How would that work exactly?" instead;
 	if there is a worn unmessed diaper:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper!  Are you sure you want to? [yesnolink] ";
@@ -29,7 +30,7 @@ REQUIRES COMMENTING
 
 +!]
 Report going when the player is in Dungeon35 and newbie tips is 1:
-	say "[one of][item style]Newbie tip: A body of water!  If [if diaper quest is 1]your clothes have been soiled[otherwise]you have been stained with bodily fluids[end if], you can use this to your advantage.  You can clean individual items of clothing with 'clean X in water' and you can use 'wash in water' to go in yourself, and clean everything you're wearing at the same time[if diaper lover >= 4].  You can even use this to clean up after messing yourself[otherwise if diaper lover > 0].  It may be sensible to remove any diapers first though, unless you want them to instantly get fully waterlogged[end if]![roman type][line break][or][stopping]".
+	say "[one of][item style]Newbie tip: A body of water!  If [if diaper quest is 1]your clothes have been soiled[otherwise]you have been stained with bodily fluids[end if], you can use this to your advantage. You can clean individual items of clothing with 'clean X in water' and you can use 'wash in water' to go in yourself, and clean everything you're wearing at the same time[if diaper lover >= 4]. You can even use this to clean up after messing yourself[otherwise if diaper lover > 0]. It may be sensible to remove any diapers first though, unless you want them to instantly get fully waterlogged[end if]![roman type][line break][or][stopping]".
 
 [!<CheckEnteringWoodsScenery01>+
 
@@ -61,7 +62,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out showering WoodsScenery01:
-	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the pool and wash yourself with the water.  ";
+	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the pool and wash yourself with the water. ";
 	let S be 0;
 	let X be 0;
 	now tracked-semen is 0;
@@ -104,7 +105,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out showering DungeonScenery03:
-	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the lake and wash yourself with the water.  ";
+	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the lake and wash yourself with the water. ";
 	now tracked-semen is 0;
 	let L be 0;
 	let X be 0;
@@ -149,7 +150,7 @@ To wash clothing in water body:
 			increase tracked-semen by 1;
 		if the milk-soak of C > 0:
 			increase tracked-semen by 1;
-		if C is diaper, say "[if C is messed]You use the water to thoroughly clean your [C] and your loins[otherwise]Your diaper is quickly filled to its limit with water.  It is now very heavy and won't be able to hold any more liquid[end if].";
+		if C is diaper, say "[if C is messed]You use the water to thoroughly clean your [C] and your loins[otherwise]Your diaper is quickly filled to its limit with water. It is now very heavy and won't be able to hold any more liquid[end if].";
 		clean C;
 		if C is fluid vulnerable, now the water-soak of C is the soak-limit of C.
 
@@ -188,3 +189,4 @@ To wash salves:
 		destroy C.
 
 Showering ends here.
+

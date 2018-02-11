@@ -1,10 +1,10 @@
 Wonder Bra by Bra begins here.
 
-A wonder bra is a kind of bra.  Understand "wonderbra" as wonder bra.  Figure of wonder bra is the file "wonderbra1.png".
+A wonder bra is a kind of bra. Understand "wonderbra" as wonder bra. Figure of wonder bra is the file "wonderbra1.png".
 
 There is 1 wonder bra. The text-shortcut of wonder bra is "wbr".
 
-The min size of a wonder bra is usually 3.  The max size of a wonder bra is usually 6.  The support of a wonder bra is usually 3.  A wonder bra is low cut.
+The min size of a wonder bra is usually 3. The max size of a wonder bra is usually 6. The support of a wonder bra is usually 3. A wonder bra is low cut.
 
 To say ShortDesc of (B - a wonder bra):
 	say "wonderbra".
@@ -29,3 +29,4 @@ To decide which object is the potential-upgrade-target of (C - a wonder bra):
 	decide on a random off-stage white bikini top.
 
 Wonder Bra ends here.
+
