@@ -165,6 +165,14 @@ To trigger (Y - a glue trap):
 The check to see if the player gets stuck depends on their dexterity, modified by how overloaded they are and how well-balanced on their heels they are. If it pulls them off-balance and sticks them, then further mutation effects kick in.
 There is a chance they fall so badly they can get more stuck, too, but this is much reduced compared to the chance of falling at first. ]
 To check glue tripping:
+	if the player is on a skippy ball (called Q):
+		if a random number between 0 and the dexterity of the player > 6:
+			say "You stop bouncing when you notice the puddle of glue. ";
+		otherwise:
+			say "Your skippy ball gets stuck to the glue. ";
+			get thrown off Q;
+			now the Q is glue-stuck;
+		stop;
 	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed:
 		say "[one of]You waltz pass the glue puddle nonchalantly[or]Thanks to your cute belt, you nimbly bypass the puddle of glue[or]You gaily skip past the very sticky-looking ooze[at random].";
 		stop;

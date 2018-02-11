@@ -964,22 +964,27 @@ To compute aeromancer science of (M - a confident aeromancer):
 				destroy C;
 			if the number of worn clothing is N, DelicateUp 1;
 	otherwise: [Selkie: it'd be sweet if she could add a step or two to a latex-doll transformation that was underway]
-		say "A beam flies straight from her wand to your face!";
-		if a random number between 1 and 3 > 1 and (the raw largeness of hair + 1) < max hair length:
-			say "Your hair grows and rapidly shifts in color!";
-			HairUp 2;
-		if a random number between 1 and 3 > 1 and the make-up of face < 3:
-			say "Your make up gets thicker!";
-			FaceUp 1;
-		if a random number between 1 and 4 > 1:
-			say "You feel smarter!";
-			IntUp 2;
-		if a random number between 1 and 3 > 1 and the lips of face < 2 + artificial enhancements fetish:
-			say "Your lips get plumper!";
-			LipsUp 1;
-		say "Your head feels a bit more giddy!";
-		OralSexAddictUp 1;
-		SexAddictUp 1;
+		if the player is mounted:
+			if the player is on a skippy ball (called S) and there is a skippy dildo (called D) part of S:
+				say "A beam directed by [M] shoots towards you, but it seems to have hit your Skippy Ball, rather than you.";
+				sizeUp D by a random number between 0 and 3;
+		otherwise:
+			say "A beam flies straight from her wand to your face!";
+			if a random number between 1 and 3 > 1 and (the raw largeness of hair + 1) < max hair length:
+				say "Your hair grows and rapidly shifts in color!";
+				HairUp 2;
+			if a random number between 1 and 3 > 1 and the make-up of face < 3:
+				say "Your make up gets thicker!";
+				FaceUp 1;
+			if a random number between 1 and 4 > 1:
+				say "You feel smarter!";
+				IntUp 2;
+			if a random number between 1 and 3 > 1 and the lips of face < 2 + artificial enhancements fetish:
+				say "Your lips get plumper!";
+				LipsUp 1;
+			say "Your head feels a bit more giddy!";
+			OralSexAddictUp 1;
+			SexAddictUp 1;
 	say "[speech style of M]'[one of]Whew, that was awesome!'[or]Thanks for your help.'[or]Interesting...'[or]Well that was unexpected...'[or]Curiouser and curiouser.'[in random order][roman type]  The [M] [one of]jots a short note[or]smirks at you and writes just a word or two[or]makes a quick note[or]writes a scribble[at random] in her pocket book and then closes it.".
 
 To compute unique climax of (M - a confident aeromancer) in (F - asshole):
