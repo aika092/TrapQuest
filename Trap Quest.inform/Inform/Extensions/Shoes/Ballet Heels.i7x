@@ -2,7 +2,7 @@ Ballet Heels by Shoes begins here.
 
 A ballet heels is a kind of stiletto heels.  A ballet heels is usually latex.  A ballet heels is usually unique.  The heel-height of a ballet heels is usually 8.
 
-The printed name of ballet heels is usually "[TQlink of item described][item style]pair of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch ballet heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of ballet heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch ballet heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of ballet heels is "bh".
+The printed name of ballet heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch ballet heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of ballet heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch ballet heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of ballet heels is "bh".
 
 There is 1 ballet heels.
 

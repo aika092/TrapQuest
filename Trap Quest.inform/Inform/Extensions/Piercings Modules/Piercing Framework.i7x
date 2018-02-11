@@ -31,7 +31,11 @@ Definition: a piercing (called C) is untransformable:
 	decide yes.
 
 Check wearing piercing:
-	say "You're already wearing it, that's permanently welded into your skin!" instead.
+	if the noun is not worn and debugmode > 0:
+		say "You use the ancient powers of Aika to connect piercing to your body.";
+		summon noun cursed instead;
+	otherwise:
+		say "You're already wearing it, that's permanently welded into your skin!" instead.
 
 Check taking off piercing:
 	say "You can't take that off, it's permanently pierced into your skin!" instead.
