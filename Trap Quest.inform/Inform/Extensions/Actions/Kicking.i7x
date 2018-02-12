@@ -31,6 +31,7 @@ REQUIRES COMMENTING
 
 +!]
 Check kicking:
+	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not a monster, say "Err, why would you do that?" instead;
 	if the player is flying, say "You're not even on the ground!" instead;
@@ -78,3 +79,4 @@ Understand "kick [something]", "ki [something]" as kicking.
 
 
 Kicking ends here.
+

@@ -1,6 +1,6 @@
 Gags by Bondage begins here.
 
-A ballgag is a kind of bondage.  A ballgag is usually unique.  A ballgag is usually leather. The text-shortcut of ballgag is "gag". Understand "gag" as ballgag.
+A ballgag is a kind of bondage. A ballgag is usually unique. A ballgag is usually leather. The text-shortcut of ballgag is "gag". Understand "gag" as ballgag.
 
 [!<YourselfIsGagged>+
 
@@ -37,12 +37,12 @@ To decide which number is the intelligence-influence of (C - a huge ballgag):
 	increase S by the magic-modifier of C;
 	decide on S.
 
-A small ballgag is a kind of ballgag.  There are 1 small ballgags.  The printed name of small ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]small ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of small ballgag is "sga".
-A large ballgag is a kind of ballgag.  There are 1 large ballgags.  The printed name of large ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]large ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of large ballgag is "lga".
-A huge ballgag is a kind of ballgag.  There are 1 huge ballgags.  The printed name of huge ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]huge ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of ballgag is "hga".
+A small ballgag is a kind of ballgag. There are 1 small ballgags. The printed name of small ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]small ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of small ballgag is "sga".
+A large ballgag is a kind of ballgag. There are 1 large ballgags. The printed name of large ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]large ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of large ballgag is "lga".
+A huge ballgag is a kind of ballgag. There are 1 huge ballgags. The printed name of huge ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]huge ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ballgag is "hga".
 
 To compute SelfExamineDesc of (C - a ballgag):
-	say "You are unable to speak due to your mouth being filled by [ShortDesc of C].  ".
+	say "You are unable to speak due to your mouth being filled by [ShortDesc of C]. ".
 
 To say ShortDesc of (C - a ballgag):
 	say "ballgag".
@@ -81,7 +81,7 @@ Include Pacifiers by Bondage.
 
 Chapter - Wearability
 
-ballgag wearability rules is a rulebook.  The wearability rules of ballgag is usually ballgag wearability rules.
+ballgag wearability rules is a rulebook. The wearability rules of ballgag is usually ballgag wearability rules.
 
 This is the ballgag already worn rule:
 	repeat with O running through worn ballgag:
@@ -97,3 +97,4 @@ The mouth already full rule is listed in the ballgag wearability rules.
 
 
 Gags ends here.
+

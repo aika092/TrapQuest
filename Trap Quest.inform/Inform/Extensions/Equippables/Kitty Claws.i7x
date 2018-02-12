@@ -1,13 +1,13 @@
 Kitty Claws by Equippables begins here.
 
-A kitty claws is a kind of gloves.  A kitty claws is usually unique.  A kitty claws is usually wool.  There is 1 kitty claws.  The printed name of kitty claws is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of kitty claws[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of kitty claws is "kc".  Figure of kitty claws 1 is the file "kittyclaws1.png".  Figure of kitty claws 2 is the file "kittyclaws2.png". Understand "paws" as kitty claws.
+A kitty claws is a kind of gloves. A kitty claws is usually unique. A kitty claws is usually wool. There is 1 kitty claws. The printed name of kitty claws is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of kitty claws[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "kittyclaws1.png". Figure of kitty claws 2 is the file "kittyclaws2.png". Understand "paws" as kitty claws.
 
 To decide which figure-name is clothing-image of (C - a kitty claws):
 	if C is cursed, decide on figure of kitty claws 1;
 	otherwise decide on figure of kitty claws 2.
 
 To say ClothingDesc of (W - a kitty claws):
-	say "A pair of giant fluffy cosplay cat paws.  You lose some manual dexterity from wearing them, [if W is cursed]and some slapping power[otherwise]but the claws make your slaps much more powerful[end if].";
+	say "A pair of giant fluffy cosplay cat paws. You lose some manual dexterity from wearing them, [if W is cursed]and some slapping power[otherwise]but the claws make your slaps much more powerful[end if].";
 	if the class of the player is catgirl and W is worn, say "You feel [if the number of worn nudism-disabling clothing < 4]excellent[otherwise if the number of worn nudism-disabling clothing < 7]better[otherwise]worse[end if] at running away from monsters whilst on your knees.".
 To say ShortDesc of (W - a kitty claws):
 	say "cosplay cat paws".
@@ -52,3 +52,4 @@ Definition: a kitty claws (called C) is cat themed:
 
 
 Kitty Claws ends here.
+

@@ -1,9 +1,9 @@
 Corsets Framework by Corsets begins here.
 
-A corset is a kind of clothing.  The printed name of corset is usually "[TQlink of item described][clothing-title-before][clothing-material of the item described] corset[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of corset is usually "[TQlink of item described][clothing-title-before][clothing-material of the item described] corsets[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of corset is "co".  A corset is usually belly covering. The soak-limit of a corset is usually 14.
+A corset is a kind of clothing. The printed name of corset is usually "[TQlink of item described][clothing-title-before][clothing-material of the item described] corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of corset is usually "[TQlink of item described][clothing-title-before][clothing-material of the item described] corsets[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of corset is "co". A corset is usually belly covering. The soak-limit of a corset is usually 14.
 
 To compute SelfExamineDesc of (C - a corset):
-	say "A tight corset keeps it [if C is constriction and the latex-transformation of the player < 4]painfully [end if]under control.  ".
+	say "A tight corset keeps it [if C is constriction and the latex-transformation of the player < 4]painfully [end if]under control. ".
 
 To say ShortDesc of (C - a corset):
 	say "corset".
@@ -88,7 +88,7 @@ Report taking off a corset:
 
 Part - Wearability
 
-corset wearability rules is a rulebook.  The wearability rules of corset is usually corset wearability rules.
+corset wearability rules is a rulebook. The wearability rules of corset is usually corset wearability rules.
 
 This is the corset already worn rule:
 	repeat with O running through worn corsets:
@@ -113,3 +113,4 @@ Check taking off worn corsets:
 	if the player is wrist bound, say "You won't be able to successfully get this off whilst your wrists are bound..." instead.
 
 Corsets Framework ends here.
+

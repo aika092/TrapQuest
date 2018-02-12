@@ -1,6 +1,6 @@
 Womb Diagram Tattoo by Tattoos begins here.
 
-womb diagram tattoo is a kind of crotch tattoo.  Figure of womb diagram tattoo is the file "tattoo18.png".  There is 1 womb diagram tattoo.
+womb diagram tattoo is a kind of crotch tattoo. Figure of womb diagram tattoo is the file "tattoo18.png". There is 1 womb diagram tattoo.
 Definition: a womb diagram tattoo (called T) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
@@ -11,7 +11,7 @@ Definition: a womb diagram tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - a womb diagram tattoo):
 	if images visible is 1, display figure of womb diagram tattoo;
-	say "A huge drawing of the female's reproductive system is tattooed above your [vagina].  You can feel it making you even more fertile than usual, and encouraging lovers to use your main breeding hole.".
+	say "A huge drawing of the female's reproductive system is tattooed above your [vagina]. You can feel it making you even more fertile than usual, and encouraging lovers to use your main breeding hole.".
 To summon (T - a womb diagram tattoo):
 	increase the pregnancy rate of the player by 1;
 	now T is worn by the player.
@@ -25,3 +25,4 @@ This is the womb diagram tattoo pussy slut rule:
 The womb diagram tattoo pussy slut rule is listed in the pussy slut eligibility rules.
 
 Womb Diagram Tattoo ends here.
+

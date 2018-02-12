@@ -45,8 +45,9 @@ REQUIRES COMMENTING
 
 +!]	
 Report SelfDrinking:
-	say "You [if the humiliation of the player < 20000]cringe with humiliation[otherwise]giggle nervously[end if] as you bring your own nipple to your mouth.  You suck gently, [one of]surprised about how amazing it feels[or]enjoying the delicate pleasurable feeling[or]once again enjoying the stimulation[stopping].  You shiver with pleasure as the [milk] exits your body and re-enters onto your tongue.  It tastes great and you swallow it greedily.";
-	say "[if the humiliation of the player < 25000][variable custom style]Yes it was humiliating, but at least it was tasty![otherwise][second custom style]Oh my, I'm such a naughty girl, drinking my own [milk] straight from the tap![end if][roman type][line break]".
+	say "You [if the humiliation of the player < HUMILIATION-MODEST + 4000]cringe with humiliation[otherwise]giggle nervously[end if] as you bring your own nipple to your mouth. You suck gently, [one of]surprised about how amazing it feels[or]enjoying the delicate pleasurable feeling[or]once again enjoying the stimulation[stopping]. You shiver with pleasure as the [milk] exits your body and re-enters onto your tongue. It tastes great and you swallow it greedily.";
+	say "[if the humiliation of the player < HUMILIATION-DISGRACED + 1000][line break][variable custom style]Yes it was humiliating, but at least it was tasty![otherwise][line break][second custom style]Oh my, I'm such a naughty girl, drinking my own [milk] straight from the tap![end if][roman type][line break]".
 
 
 Self Drinking ends here.
+

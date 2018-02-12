@@ -1,20 +1,20 @@
 Tinctures by Crafting begins here.
 
-A tincture is a kind of alchemy product.  The plural of tincture is tinctures.
+A tincture is a kind of alchemy product. The plural of tincture is tinctures.
 
 Section 1 Tincture of Strength
 
-A tincture of strength is a kind of tincture.  The printed name of tincture of strength is "[TQlink of item described]tincture of strength[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of tincture of strength is "[TQlink of item described]tinctures of strength[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of tincture of strength is "tis".  The description of tincture of strength is "A tiny glass vial filled with a small dose of glowing [appearance corresponding to an Magic of 2 in the Table of Drinks] liquid.  It looks like it would do something extremely powerful if you drank it, but who knows for how long, and if there are any side effects...".  There are 3 tincture of strength.
+A tincture of strength is a kind of tincture. The printed name of tincture of strength is "[TQlink of item described]tincture of strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of tincture of strength is "[TQlink of item described]tinctures of strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of tincture of strength is "tis". The description of tincture of strength is "A tiny glass vial filled with a small dose of glowing [appearance corresponding to an Magic of 2 in the Table of Drinks] liquid. It looks like it would do something extremely powerful if you drank it, but who knows for how long, and if there are any side effects...". There are 3 tincture of strength.
 
 To decide which number is the alchemy key of (A - a tincture of strength):
 	decide on 1.
 
-[Bonus is the amount of strength to add.  Timer is the amount of seconds it lasts for.]
-strength-tincture-bonus is a number that varies.  strength-tincture-bonus is 0.
-strength-tincture-timer is a number that varies.  strength-tincture-timer is 0.
+[Bonus is the amount of strength to add. Timer is the amount of seconds it lasts for.]
+strength-tincture-bonus is a number that varies. strength-tincture-bonus is 0.
+strength-tincture-timer is a number that varies. strength-tincture-timer is 0.
 
 Carry out quaffing tincture of strength:
-	say "You pull out the tiny stopper and down the glowing liquid.[unless the flat strength of the player > 26]  You feel much, much stronger!  [one of][variable custom style]Wooow![roman type]  [or][stopping]Time to go kick some ass![end if]";
+	say "You pull out the tiny stopper and down the glowing liquid.[unless the flat strength of the player > 26]  You feel much, much stronger!  [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]Time to go kick some ass![end if]";
 	let T be a random number between 10 and 15;
 	now strength-tincture-timer is T * 6;
 	while the flat strength of the player < 30 and T > 0:
@@ -29,7 +29,7 @@ A time based rule (this is the strength tincture decay rule):
 		decrease strength-tincture-timer by time-seconds;
 		if strength-tincture-timer <= 0:
 			now strength-tincture-timer is 0;
-			if strength-tincture-bonus > 0, say "[bold type]Your magical superhuman strength fades.  As the energy disperses from your muscles, you feel your body expand rapidly![line break][variable custom style]Oh no....![roman type]";
+			if strength-tincture-bonus > 0, say "[bold type]Your magical superhuman strength fades. As the energy disperses from your muscles, you feel your body expand rapidly![line break][variable custom style]Oh no....![roman type]";
 			while strength-tincture-bonus > 0:
 				let R be a random number between 1 and 5;
 				if R is 1 and the player is not top heavy:
@@ -42,16 +42,16 @@ A time based rule (this is the strength tincture decay rule):
 
 Section 2 Tincture of Acceleration
 
-A tincture of acceleration is a kind of tincture.  The printed name of tincture of acceleration is "[TQlink of item described]tincture of acceleration[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of tincture of acceleration is "[TQlink of item described]tinctures of acceleration[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of tincture of acceleration is "tia".  The description of tincture of acceleration is "A tiny glass vial filled with a small dose of glowing [appearance corresponding to an Magic of 1 in the Table of Drinks] liquid.    It looks like it would do something extremely powerful if you drank it, but who knows for how long, and if there are any side effects...".  There are 3 tincture of acceleration.
+A tincture of acceleration is a kind of tincture. The printed name of tincture of acceleration is "[TQlink of item described]tincture of acceleration[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of tincture of acceleration is "[TQlink of item described]tinctures of acceleration[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of tincture of acceleration is "tia". The description of tincture of acceleration is "A tiny glass vial filled with a small dose of glowing [appearance corresponding to an Magic of 1 in the Table of Drinks] liquid. It looks like it would do something extremely powerful if you drank it, but who knows for how long, and if there are any side effects...". There are 3 tincture of acceleration.
 
 To decide which number is the alchemy key of (A - a tincture of acceleration):
 	decide on 2.
 
-acceleration-tincture-bonus is a number that varies.  strength-tincture-bonus is 0.
-acceleration-tincture-timer is a number that varies.  strength-tincture-timer is 0.
+acceleration-tincture-bonus is a number that varies. strength-tincture-bonus is 0.
+acceleration-tincture-timer is a number that varies. strength-tincture-timer is 0.
 
 Carry out quaffing tincture of acceleration:
-	say "You pull out the tiny stopper and down the glowing liquid.  [unless the flat dexterity of the player > 26 or the noun is cursed]Time seems to noticeably slow down around you, giving you loads of time to react to things.  [one of][variable custom style]Wooow![roman type]  [or][stopping]You feel like running a marathon![end if][line break]Your [BellyDesc] rumbles worryingly...";
+	say "You pull out the tiny stopper and down the glowing liquid. [unless the flat dexterity of the player > 26 or the noun is cursed]Time seems to noticeably slow down around you, giving you loads of time to react to things. [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]You feel like running a marathon![end if][line break]Your [BellyDesc] rumbles worryingly...";
 	let T be a random number between 10 and 15;
 	now acceleration-tincture-timer is T * 6;
 	while the flat dexterity of the player < 30 and T > 0:
@@ -87,3 +87,4 @@ A time based rule (this is the acceleration tincture decay rule):
 
 
 Tinctures ends here.
+

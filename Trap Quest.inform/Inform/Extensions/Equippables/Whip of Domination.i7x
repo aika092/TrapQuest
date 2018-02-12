@@ -1,6 +1,6 @@
 Whip of Domination by Equippables begins here.
 
-A whip of domination is a kind of equippable.  A whip of domination is usually slap ready.  There is 1 unique leather whip of domination.  The printed name of whip of domination is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]whip of domination[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of whip of domination is "whi".
+A whip of domination is a kind of equippable. A whip of domination is usually slap ready. There is 1 unique leather whip of domination. The printed name of whip of domination is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]whip of domination[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of whip of domination is "whi".
 
 Figure of whip of domination is the file "whipofdomination1.png".
 
@@ -53,7 +53,7 @@ To compute slaying bonus of (W - a whip of domination):
 		say "The [random worn whip of domination] sends positive feelings of confidence flowing through your body!".
 
 To compute attack of (W - a whip of domination) at (M - a monster):
-	say "[if the sex addiction of the player < 2]With a powerful piercing laugh, you skilfully slash[otherwise if the sex addiction of the player < 7]You feel confident inside as you skilfully lash[otherwise if the sex addiction of the player < 12]You strike[otherwise if the sex addiction of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]!  [if W is cursed]After striking the [M], the whip flicks back with recoil, hitting you as well!  [variable custom style]Oww[one of]!  Is this whip cursed?[or][stopping]![roman type][line break][end if]";
+	say "[if the sex addiction of the player < 2]With a powerful piercing laugh, you skilfully slash[otherwise if the sex addiction of the player < 7]You feel confident inside as you skilfully lash[otherwise if the sex addiction of the player < 12]You strike[otherwise if the sex addiction of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]!  [if W is cursed]After striking the [M], the whip flicks back with recoil, hitting you as well!  [line break][variable custom style]Oww[one of]!  Is this whip cursed?[or][stopping]![roman type][line break][end if]";
 	if a random number between 1 and 2 is 1 and W is cursed:
 		DelicateUp 1;
 	otherwise if W is cursed:
@@ -70,7 +70,7 @@ To say MonsterOfferRejectFlav of (M - a demoness) to (T - a whip of domination):
 	say "[speech style of M]'I don't need that to dominate you with, slut.'[roman type][line break]".
 
 To say OfferThanksFlav of (M - a demoness) for (T - a whip of domination):
-	say "[speech style of M]'What a rare magical item.. I'll have to give you something in return.  Here, take this!  I understand it's the most valuable item to you mortals in the entire world.'[roman type][line break]".
+	say "[speech style of M]'What a rare magical item.. I'll have to give you something in return. Here, take this!  I understand it's the most valuable item to you mortals in the entire world.'[roman type][line break]".
 
 To compute offer reward of (M - a demoness) for (T - a whip of domination): 
 	let D be a random off-stage necklace;
@@ -84,7 +84,7 @@ To decide which number is the bartering value of (T - a whip of domination) for 
 	decide on 5.
 
 To say MonsterOfferAcceptFlav of (M - a dominatrix) to (T - a whip of domination):
-	say "[speech style of M]'Incredible.  Did you make this for me?!'[roman type][line break]".
+	say "[speech style of M]'Incredible. Did you make this for me?!'[roman type][line break]".
 
 To say MonsterOfferRejectFlav of (M - a dominatrix) to (T - a whip of domination):
 	say "[speech style of M]'I don't need that to dominate you with, slave.'[roman type][line break]".
@@ -101,3 +101,4 @@ To compute offer reward of (M - a dominatrix) for (T - a whip of domination):
 		say "The [M] summons a [D] out of nowhere, and hands it to you.".
 
 Whip of Domination ends here.
+

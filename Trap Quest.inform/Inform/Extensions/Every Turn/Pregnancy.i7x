@@ -7,14 +7,10 @@ Pregnancy by Every Turn begins here.
 REQUIRES COMMENTING
 
 *!]
-The father is a thing that varies.  The father is the throne.
+The father is a thing that varies. The father is the throne.
 
-[!<Thing>@<isFatherMaterial:Boolean>*
-
-REQUIRES COMMENTING
-
-*@!]
-A thing can be father material.  A thing is usually not father material.  
+Definition: a thing (called T) is father material:
+	decide no.
 
 [!<ThingIsFamily>+
 
@@ -116,7 +112,7 @@ Carry out Family Printing:
 	print fatherly things.
 Understand "who's the daddy" as Family Printing.
 
-[NB the priority order for fatherhood.  What can I say, some stuff has stronger sperm.]
+[NB the priority order for fatherhood. What can I say, some stuff has stronger sperm.]
 [!<DecideWhichThingIsTheNewFather>+
 
 REQUIRES COMMENTING
@@ -141,7 +137,7 @@ REQUIRES COMMENTING
 +!]
 To say PregGrowth:
 	let P be a random thing inseminating vagina;
-	say "You feel your belly swell even further as [if the father is not the throne][PregGrowth of the father][otherwise if the number of things inseminating vagina is 1][PregGrowth of P][otherwise]whatever is[end if] inside your womb [one of]starts to grow![or]continues to grow![if the semen volume of vagina is 38 and the number of things inseminating vagina > 1][variable custom style]This definitely isn't a human baby I'm carrying, is it...[roman type][line break][end if][stopping]".
+	say "You feel your belly swell even further as [if the father is not the throne][PregGrowth of the father][otherwise if the number of things inseminating vagina is 1][PregGrowth of P][otherwise]whatever is[end if] inside your womb [one of]starts to grow![or]continues to grow![if the semen volume of vagina is 38 and the number of things inseminating vagina > 1][line break][variable custom style]This definitely isn't a human baby I'm carrying, is it...[roman type][line break][end if][stopping]".
 
 [!<SayPregGrowthOfThing>+
 
@@ -210,7 +206,7 @@ To compute pregnancy:
 			now R is 1;
 			now maximum-pregnancy-delay-tracker is 0;
 		if R < 2, increase slow-pregnancy-tracker by 1;
-		if debugmode > 0, say "Pregnancy growth check: [R] must be less than 2.  Slow preg tracker is [slow-pregnancy-tracker].";
+		if debugmode > 0, say "Pregnancy growth check: [R] must be less than 2. Slow preg tracker is [slow-pregnancy-tracker].";
 		let M be a random off-stage maternity bra;
 		if R < 2 and the pregnancy of the player is 1 and (slow pregnancy is 0 or slow-pregnancy-tracker > 3): [If the pregnancy of the player is 2, this means pregnancy is paused]
 			now slow-pregnancy-tracker is 0;
@@ -236,7 +232,7 @@ To compute pregnancy:
 		if the semen volume of vagina is 30:[Here we choose the father and check for and trigger super-pregnancies]
 			if the father is the throne: 
 				now the father is the new father;
-				if the father is the throne: [This should never happen.  But just in case...]
+				if the father is the throne: [This should never happen. But just in case...]
 					say "[PregnancyBugFlav]";
 					now the pregnancy of the player is 0;
 					now the semen volume of vagina is 1;
@@ -250,7 +246,7 @@ To compute pregnancy:
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay:
 			now R is 1;
 			now maximum-pregnancy-delay-tracker is 0;
-		if debugmode > 0, say "Pregnancy growth check: [R] must be less than 2.  Slow preg tracker is [slow-pregnancy-tracker].";
+		if debugmode > 0, say "Pregnancy growth check: [R] must be less than 2. Slow preg tracker is [slow-pregnancy-tracker].";
 		if R < 2, increase slow-pregnancy-tracker by 1;
 		if R < 2 and (slow pregnancy is 0 or slow-pregnancy-tracker > 3):
 			now slow-pregnancy-tracker is 0;
@@ -317,7 +313,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PregFlav:
-	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type]  [if the bimbo of the player < 13][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
+	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type]  [if the bimbo of the player < 13][line break][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][line break][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
 
 [!<SayDefaultBirthScene>+
 
@@ -326,7 +322,7 @@ REQUIRES COMMENTING
 +!]
 To say DefaultBirthScene:
 	compute pregnancy clothing displacement;
-	say "[PregFlav]You feel yourself start to give birth.  You feel a burning desire for the father of the child to appear, but nobody does, and without the father there to assist with the delivery you feel yourself begin to pass out due to the pain.  In your groggy state you think you see some cherubic angels appear and begin to take the baby up into the heavens.  [second custom style]'Don't worry [TitleBimbo], we'll take care of this one for you.  Good luck on your quest!'[roman type][line break]When you properly regain your senses, there are no babies, no cherubs, just you on the floor with a rapidly deflating belly and your vaginal juices sprayed across the ground below your crotch.[if the pregnancy rate of the player is 1][line break]Deep down, you can feel your womb crying out to begin the process all over again.[end if]";
+	say "[PregFlav]You feel yourself start to give birth. You feel a burning desire for the father of the child to appear, but nobody does, and without the father there to assist with the delivery you feel yourself begin to pass out due to the pain. In your groggy state you think you see some cherubic angels appear and begin to take the baby up into the heavens. [line break][second custom style]'Don't worry [TitleBimbo], we'll take care of this one for you. Good luck on your quest!'[roman type][line break]When you properly regain your senses, there are no babies, no cherubs, just you on the floor with a rapidly deflating belly and your vaginal juices sprayed across the ground below your crotch.[if the pregnancy rate of the player is 1][line break]Deep down, you can feel your womb crying out to begin the process all over again.[end if]";
 	if the pregnancy rate of the player < 2, increase the pregnancy rate of the player by 1.
 
 [!<ComputeTentacleBirth>+
@@ -336,9 +332,9 @@ REQUIRES COMMENTING
 +!]
 To compute tentacle birth:
 	compute pregnancy clothing displacement;
-	say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a slimy tentacle about as thick as an ordinary penis push its way out of your [vagina] quickly followed by several more.  [or]You [if the bimbo of the player < 13]wince with fear and then shudder with shame when[otherwise]brace yourself with gleeful anticipation when[end if] you begin to feel the familiar dark red tentacles begin to push themselves out of your [vagina].  [stopping]";
+	say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a slimy tentacle about as thick as an ordinary penis push its way out of your [vagina] quickly followed by several more. [or]You [if the bimbo of the player < 13]wince with fear and then shudder with shame when[otherwise]brace yourself with gleeful anticipation when[end if] you begin to feel the familiar dark red tentacles begin to push themselves out of your [vagina]. [stopping]";
 	if image cutscenes is 1, display figure of tentacle cutscene 1;
-	say "They all wrap around your hips and clench tightly as the monster inside you slowly and determinedly pries itself from your struggling hole.  The slow movement of the huge dark red creature is accompanied by lewd squelches and slurps and some loud moaning, which you then realise is coming from yourself.  Your [vagina] is forced to stretch further still as the critter reaches its widest point at your entrance and then with a loud POP it flies out and lands on the ground.  [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'child': a [if extreme proportions fetish is 1]beachball sized[otherwise]basketball sized[end if] heap of vulnerable looking flesh with a single eye and several phallic tentacled appendages.  Before your eyes its flesh starts to slowly solidify and it gives you a long and seemingly thoughtful stare before dragging itself out of sight with its tentacles.[or]Once again you watch it start to build its strength and drag itself away.[stopping]";
+	say "They all wrap around your hips and clench tightly as the monster inside you slowly and determinedly pries itself from your struggling hole. The slow movement of the huge dark red creature is accompanied by lewd squelches and slurps and some loud moaning, which you then realise is coming from yourself. Your [vagina] is forced to stretch further still as the critter reaches its widest point at your entrance and then with a loud POP it flies out and lands on the ground. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'child': a [if extreme proportions fetish is 1]beachball sized[otherwise]basketball sized[end if] heap of vulnerable looking flesh with a single eye and several phallic tentacled appendages. Before your eyes its flesh starts to slowly solidify and it gives you a long and seemingly thoughtful stare before dragging itself out of sight with its tentacles.[or]Once again you watch it start to build its strength and drag itself away.[stopping]";
 	let T be a random off-stage living tentacles;
 	if there is a worn laurel wreath and T is clothing:
 		repeat with O running through worn dresses:
@@ -375,9 +371,9 @@ REQUIRES COMMENTING
 +!]	
 To Delay Labour:
 	if the class of the player is fertility goddess:
-		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the bimbo of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the bimbo of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
+		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the bimbo of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][line break][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the bimbo of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][line break][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
 	otherwise:
-		say "A sudden contraction sends pain shooting from your womb to the rest of your body.  [if the player is upright]The contraction is so intense that you are forced to your knees.  [end if][if the father is alive monster and the father is not regional alive monster]You are filled with a desire to find [the father].[otherwise]You should probably make sure the exit to your vagina is clear![end if]";
+		say "A sudden contraction sends pain shooting from your womb to the rest of your body. [if the player is upright]The contraction is so intense that you are forced to your knees. [end if][if the father is alive monster and the father is not regional alive monster]You are filled with a desire to find [the father].[otherwise]You should probably make sure the exit to your vagina is clear![end if]";
 		if the player is upright, try kneeling;
 	now successful-pregnancy is 0.
 
@@ -406,3 +402,4 @@ To check for extreme pregnancies:
 
 
 Pregnancy ends here.
+

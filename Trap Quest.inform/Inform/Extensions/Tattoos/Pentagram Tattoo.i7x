@@ -11,3 +11,4 @@ To say tattoo-desc of (T - a pentagram tattoo):
 	say "A pentagram is tattooed around your vagina. You can feel it attempting to ward mortal cocks away from what belongs to Xavier!".
 
 Pentagram Tattoo ends here.
+

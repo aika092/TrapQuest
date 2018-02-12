@@ -1,10 +1,10 @@
 Wooden Horse Traps by Traps begins here.
 
 
-A wooden horse is a kind of trap.  The text-shortcut of a wooden horse is "wdh".  The printed name of wooden horse is "[TQlink of item described]wooden horse[TQxlink of item described][verb-desc of item described]".
+A wooden horse is a kind of trap. The text-shortcut of a wooden horse is "wdh". The printed name of wooden horse is "[TQlink of item described]wooden horse[TQxlink of item described][verb-desc of item described]".
 
 To say ShortDesc of (T - a wooden horse):
-	say "A large wooden horse lies dormant on the ground.  ".
+	say "A large wooden horse lies dormant on the ground. ".
 
 To decide which number is the girth of (T - a wooden horse):
 	decide on 1.
@@ -24,7 +24,7 @@ Definition: yourself is horse stuck:
 
 Section 1 Painted Horse Trap
 
-A painted horse is a kind of wooden horse.  The description of a painted horse is "A large block of triangular wood that ends in a thin point at the top.  A carved block of wood sits at the front, painted to make it resemble an actual horse.  On top of the horse's head are 5 buttons.  [5 - the number of entries in list of possible horse effects] buttons have already been pressed.".  There are 3 potentially pressure potentially sticky painted horses.  Understand "button", "buttons" as painted horse.
+A painted horse is a kind of wooden horse. The description of a painted horse is "A large block of triangular wood that ends in a thin point at the top. A carved block of wood sits at the front, painted to make it resemble an actual horse. On top of the horse's head are 5 buttons. [5 - the number of entries in list of possible horse effects] buttons have already been pressed.". There are 3 potentially pressure potentially sticky painted horses. Understand "button", "buttons" as painted horse.
 
 
 Check pushing painted horse:
@@ -44,14 +44,14 @@ Carry Out HorsePressing:
 		remove B from the list of possible horse effects;
 	if B is horse-alarm:
 		add B to the list of current horse effects;
-		say "You press the button, and the sound of extremely loud neighing starts coming from the horse, like some kind of alarm!  That's going to attract the attention of anything nearby...  [if the bimbo of the player > 14 and the latex-transformation of the player < 7][second custom style]'Yippee, everyone come look at me riding this horsey!  If you help me down I'll suck your [manly-penis]...'[otherwise][variable custom style]Uh-oh...[end if][roman type][line break]";
+		say "You press the button, and the sound of extremely loud neighing starts coming from the horse, like some kind of alarm!  That's going to attract the attention of anything nearby... [if the bimbo of the player > 14 and the latex-transformation of the player < 7][line break][second custom style]'Yippee, everyone come look at me riding this horsey!  If you help me down I'll suck your [manly-penis]...'[otherwise][line break][variable custom style]Uh-oh...[end if][roman type][line break]";
 	otherwise if B is horse-cuffs:
 		let F be a random fake nails;
 		if the silicone volume of breasts > 0 and F is actually summonable:
-			say "Huge pink fake nails appear on each of your fingers!  You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break.  The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
+			say "Huge pink fake nails appear on each of your fingers!  You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
 			summon F cursed;
 		otherwise if the player is not wrist bound and the class of the player is not living sex doll:
-			say "Leather cuffs appear around your wrists!  [if the bimbo of the player > 13][second custom style]Ooh, how kinky.[otherwise][variable custom style]Fuck...[end if][roman type][line break]";
+			say "Leather cuffs appear around your wrists!  [if the bimbo of the player > 13][line break][second custom style]Ooh, how kinky.[otherwise][line break][variable custom style]Fuck...[end if][roman type][line break]";
 			let W be a random off-stage pair of wristcuffs;
 			if W is clothing:
 				summon W locked;
@@ -69,7 +69,7 @@ Carry Out HorsePressing:
 					increase slice-count by 1;
 		if the slice-count is 0, say "If there was any clothing covering your hips, it would probably have been destroyed.";
 	otherwise if B is horse-hair:
-		say "You let out an involuntary horse whinny.  [variable custom style]Well that was weird...[roman type][line break]";
+		say "You let out an involuntary horse whinny. [line break][variable custom style]Well that was weird...[roman type][line break]";
 		HairUp 4;
 	otherwise if B is horse-disable or R is 0:
 		now the noun is not penetrating vagina;
@@ -128,7 +128,7 @@ REQUIRES COMMENTING
 The list of current horse effects is a list of things that varies.
 
 This is the spawn initial woods painted horse traps rule:
-	if diaper focus is 0:
+	if diaper focus is 0 and tough-shit is 1:
 		let R be a random pressure untrapped trappable placed jungle room;
 		let T be a random off-stage painted horse;
 		deploy T in R.
@@ -139,7 +139,7 @@ To trigger (Y - a painted horse):
 	now the reset-timer of Y is 90000; [Doesn't reset]
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor.  All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole].  [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it.  [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable.  [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable.  [otherwise if the weight of the player > 15]Your weight is making it even worse!  [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint!  [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse.  [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse!  [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint!  [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
 	if the player is female, now Y is penetrating vagina;
@@ -196,7 +196,7 @@ Section 2 Wild Horse Trap
 
 [The wild horse is a vibrating version of the normal horse that the player needs to try and "tame". If the player can't use the bit to control it within 3-4 turns, they will be punished in some way.]
 
-A wild horse is a kind of wooden horse.  The description of a wild horse is "A large block of triangular wood that ends in a thin point at the top.  A wooden horse's head sits at the front with a large, plastic bit[if item described is penetrating a fuckhole] which you could [bold type]pull[roman type][end if] resting on the nape of its neck.".  There are 3 potentially pressure potentially sticky wild horses.  Understand "plastic bit", "bit", "broncho", "bronco", "cord", "rein", "reins", "rope" as wild horse.
+A wild horse is a kind of wooden horse. The description of a wild horse is "A large block of triangular wood that ends in a thin point at the top. A wooden horse's head sits at the front with a large, plastic bit[if item described is penetrating a fuckhole] which you could [bold type]pull[roman type][end if] resting on the nape of its neck.". There are 3 potentially pressure potentially sticky wild horses. Understand "plastic bit", "bit", "broncho", "bronco", "cord", "rein", "reins", "rope" as wild horse.
 
 This is the spawn initial woods wild horse traps rule:
 	if diaper quest is 0:
@@ -206,7 +206,7 @@ This is the spawn initial woods wild horse traps rule:
 The spawn initial woods wild horse traps rule is listed in the set up woods traps rules.
 
 To say ShortDesc of (T - a wild horse):
-	say "A large wooden horse lies dormant on the ground.  ".
+	say "A large wooden horse lies dormant on the ground. ".
 
 To trigger (Y - a wild horse):
 	now the motion of the player is 0;
@@ -214,7 +214,7 @@ To trigger (Y - a wild horse):
 	now the reset-timer of Y is 500;
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor.  All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole].  You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it.  [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable.  [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable.  [otherwise if the weight of the player > 15]Your weight is making it even worse!  [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse!  [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
 	if the player is female, now Y is penetrating vagina.
@@ -240,7 +240,7 @@ To compute horse effect of (T - a wild horse):
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;
 		otherwise:
-			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cowgirl on a bucking bronco and are sent rolling into a tree.  [variable custom style]Aaaah!  Ouch.[roman type][line break]";
+			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cowgirl on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah!  Ouch.[roman type][line break]";
 			FatigueUp W;
 			bodyruin W / 2;[TODO: light players go flying]
 		try kneeling;
@@ -286,3 +286,4 @@ Carry Out horsePulling:
 
 
 Wooden Horse Traps ends here.
+

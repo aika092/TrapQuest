@@ -81,7 +81,7 @@ A text question rule (this is the talk choice rule):
 	otherwise if the current answer is "food" or the current answer is "Food" and the thirst of the player > 2:
 		compute talk option 4 to M;
 	otherwise if the current answer is "cancel" or the current answer is "Cancel":
-		say "[if the flat intelligence of the player < 6 and the bimbo of the player > 10][second custom style]'Gawsh, I was totally gonna say something, but I, like, totally got distracted!'[roman type][line break][otherwise]Cancelled.[end if]";
+		say "[if the flat intelligence of the player < 6 and the bimbo of the player > 10][line break][second custom style]'Gawsh, I was totally gonna say something, but I, like, totally got distracted!'[roman type][line break][otherwise]Cancelled.[end if]";
 	otherwise:
 		say "That is not a valid option.";
 		retry;
@@ -134,8 +134,8 @@ Check talking:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
 	if the noun is a monster:
 		if the player is flying and the player is in the Woods, say "You are too high up, they can't hear you." instead;
-		if the sleep of the noun > 0 and the noun is not slutty sister, say "You can't talk to someone who's asleep.  Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
-		if the noun is not intelligent, say "It doesn't look like it can speak.  You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
+		if the sleep of the noun > 0 and the noun is not slutty sister, say "You can't talk to someone who's asleep. Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
+		if the noun is not intelligent, say "It doesn't look like it can speak. You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
 		if the player is not able to speak, say "You are currently unable to speak!  You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
@@ -163,7 +163,7 @@ Check greeting:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
 	if the noun is a monster:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		if the sleep of the noun > 0, say "You can't talk to someone who's asleep.  Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
+		if the sleep of the noun > 0, say "You can't talk to someone who's asleep. Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
 		if the noun is not intelligent or the player is not able to speak, try poking the noun instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
@@ -194,7 +194,7 @@ Check questioning:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
 	if the noun is a monster:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		if the sleep of the noun > 0, say "You can't talk to someone who's asleep.  Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
+		if the sleep of the noun > 0, say "You can't talk to someone who's asleep. Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
 		if the noun is not intelligent, say "It doesn't look like [he of the noun] can speak." instead;
 		if the player is not able to speak, say "You are currently unable to speak!" instead;
 	otherwise:
@@ -223,7 +223,7 @@ Check drink requesting:
 	if the noun is a monster:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		unless the player is thirsty, say "You aren't thirsty, so don't see the point." instead;
-		if the sleep of the noun > 0, say "You can't talk to someone who's asleep.  Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
+		if the sleep of the noun > 0, say "You can't talk to someone who's asleep. Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
 		if the noun is not intelligent, say "It doesn't look like [he of the noun] can speak." instead;
 		if the player is not able to speak, say "You are currently unable to speak!" instead;
 	otherwise:
@@ -252,7 +252,7 @@ Check food requesting:
 	if the noun is a monster:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		unless the player is hungry, say "You aren't hungry, so don't see the point." instead;
-		if the sleep of the noun > 0, say "You can't talk to someone who's asleep.  Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
+		if the sleep of the noun > 0, say "You can't talk to someone who's asleep. Either attack [him of the noun] or wait for [him of the noun] to wake up." instead;
 		if the noun is not intelligent, say "It doesn't look like [he of the noun] can speak." instead;
 		if the player is not able to speak, say "You are currently unable to speak!" instead;
 	otherwise:
@@ -272,3 +272,4 @@ Understand "ask [something] for food", "ask [something] for some food", "ask [so
 
 
 Talking ends here.
+

@@ -44,7 +44,7 @@ Part 2 - Modify Diaper Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw diaper addiction.  The raw diaper addiction of the player is usually 1. [Min 1 Max 20]
+The player has a number called raw diaper addiction. The raw diaper addiction of the player is usually 1. [Min 1 Max 20]
 
 [!<DiaperAddictUpX>+
 
@@ -71,3 +71,4 @@ To DiaperAddictDown (X - a number):
 
 
 Diaper Addiction ends here.
+

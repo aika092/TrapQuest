@@ -1,15 +1,15 @@
 RoboChef by Monster begins here.
 
-A robochef is a kind of robot.  A robochef is usually hotel dwelling.   Understand "chef" as robochef.  A robochef is usually intelligent.  A robochef is usually willing to do anal.  A robochef is usually male.  A robochef has a number called patrol. The leftover-type of a robochef is usually 119.
+A robochef is a kind of robot. Understand "chef" as robochef. A robochef is usually intelligent. A robochef is male. A robochef has a number called patrol. The leftover-type of a robochef is usually 119.
 
-Figure of robochef is the file "robochef1.png". The description of robochef is usually "[RoboChefDesc]".  The text-shortcut of robochef is "rc".
+Figure of robochef is the file "robochef1.png". The description of robochef is usually "[RoboChefDesc]". The text-shortcut of robochef is "rc".
 
 There is 1 robochef.
-The printed name of robochef is "[if item described is in the location of the player][TQlink of item described][end if][input-style]busy RoboChef[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".  Understand "busy" as robochef.
+The printed name of robochef is "[if item described is in the location of the player][TQlink of item described][end if][input-style]busy RoboChef[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "busy" as robochef.
 
 To say RoboChefDesc:
 	if images visible is 1, display figure of robochef;
-	say "A human sized metal robot dressed as a head chef.  It looks like a robot out of Futurama, with a fixed metal facial expression and old fashioned joints.  Its 'eyes' glow brightly as he glides around silently on his wheels-for-feet.  ";
+	say "A human sized metal robot dressed as a head chef. It looks like a robot out of Futurama, with a fixed metal facial expression and old fashioned joints. Its 'eyes' glow brightly as he glides around silently on his wheels-for-feet. ";
 	if diaper quest is 0, say "At its groin, a normal sized rock solid transparent solid penis is filled with [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk] and [urine][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [urine] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if].";
 	otherwise say line break.
 
@@ -29,10 +29,19 @@ The spawn initial robochef rule is listed in the setting up hotel monsters rules
 To decide which number is the girth of (M - a robochef):
 	decide on 4.
 
+Definition: a robochef (called M) is willing to do oral:
+	decide no.
+
+Definition: a robochef (called M) is willing to do vaginal:
+	decide no.
+
+Definition: a robochef (called M) is willing to do titfucks:
+	decide no.
+
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a robochef):
-	say "You hear the sound of a robotic voice coming from elsewhere in the hotel.  [first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
+	say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
 
 To say LeftoverDesc (N - 119):
 	say "There is a pile of mangled nuts and bolts here that used to be a fully functional robochef.[line break]".
@@ -71,12 +80,12 @@ Part 3 - Perception
 To compute perception of (M - a robochef):
 	say "The [M] notices you!";
 	if the number of plentiful accessories retained by M > 0:
-		say "Its eyes flash yellow. [first custom style]HELLO, CUSTOMER. YOU STILL HAVE FUNDS REMAINING IN YOUR ACCOUNT.[roman type]";
+		say "Its eyes flash yellow. [line break][first custom style]HELLO, CUSTOMER. YOU STILL HAVE FUNDS REMAINING IN YOUR ACCOUNT.[roman type][line break]";
 	otherwise if the class of the player is maid:
 		say "It seems to recognise you as a member of staff and leaves you alone.";
 		bore M for 450 seconds;
 	otherwise if asshole is lewdly exposed:
-		say "Its eyes turn red.  [first custom style]'[one of]VALID INJECTION ORIFICE FOUND[or]STATUS OF COOK.ASSISTANT: FOUND[or]IDENTIFIED COOKING ASSISTANT[at random].  COMPULSORY SOUP BREWING PROGRAM INITIATED.'[roman type][line break]";
+		say "Its eyes turn red. [line break][first custom style]'[one of]VALID INJECTION ORIFICE FOUND[or]STATUS OF COOK.ASSISTANT: FOUND[or]IDENTIFIED COOKING ASSISTANT[at random]. COMPULSORY SOUP BREWING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if M is in Hotel19:
 		say "It seems to be eyeing you closely, but doesn't make an aggressive move.";
@@ -88,10 +97,10 @@ To compute perception of (M - a robochef):
 To compute DQ perception of (M - a robochef):
 	say "The [M] notices you!";
 	if the number of worn diapers is 0 and (the player is full or the player is desperate to pee or the water volume of belly > 0):
-		say "Its eyes turn red.  [first custom style]'IMMINENT TOILET ACCIDENT DETECTED.  HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE.  TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
+		say "Its eyes turn red. [line break][first custom style]'IMMINENT TOILET ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hungry:
-		say "Its eyes turn red.  [first custom style]'HUNGRY [if the class of the player is maid]EMPLOYEE[otherwise]GUEST[end if] DETECTED.  COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		say "Its eyes turn red. [line break][first custom style]'HUNGRY [if the class of the player is maid]EMPLOYEE[otherwise]GUEST[end if] DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the class of the player is maid:
 		say "It seems to recognise you as a member of staff and leaves you alone.";
@@ -152,14 +161,14 @@ To compute unique climax of (M - a robochef) in (F - asshole):
 		AssFill 6 - ((watersports fetish * 2) + (lactation fetish * 2));
 		if watersports fetish is 1, AssFill 2 Urine;
 		if lactation fetish is 1, AssFill 2 Milk;
-		say "The [M] pulls out.  [first custom style]'SOUP INGREDIENT[if lactation fetish + watersports fetish > 0]S[end if] INSERTED.  BREWING IN PROGRESS.  ENJOY YOUR MEAL.'[roman type] It turns away from you and leaves you alone.";
+		say "The [M] pulls out. [line break][first custom style]'SOUP INGREDIENT[if lactation fetish + watersports fetish > 0]S[end if] INSERTED. BREWING IN PROGRESS. ENJOY YOUR MEAL.'[roman type][line break]It turns away from you and leaves you alone.";
 		say "[variable custom style][one of][if the bimbo of the player < 8]This is hardly what I'd call [']brewing[']![otherwise if the bimbo of the player < 14]It's using my butthole for brewing?![otherwise]I can't wait until it's finished brewing! Yum![end if][or][if the bimbo of the player < 8]How did I let this happen again![otherwise if the bimbo of the player < 14]My belly has gotten a lot of use as a cum-dumpster this game![otherwise]That felt good...[end if][stopping][roman type][line break]";
 	FavourUp M;
 	bore M.
 
 To compute condom filling of (M - a robochef):
 	now M is unwrapped;
-	say "You can feel the rubbery coating of [M]'s [manly-penis] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break] The [M] emits a sharp *ding*, and its bulging rubber [manly-penis] detaches from [his of M] body, landing behind you with a pronounced *plop*. It seems to lose interest.";
+	say "You can feel the rubbery coating of [M]'s [manly-penis] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break]The [M] emits a sharp *ding*, and its bulging rubber [manly-penis] detaches from [his of M] body, landing behind you with a pronounced *plop*. It seems to lose interest.";
 	ruin asshole;
 	let L be a random off-stage bag lunch;
 	now L is in the location of the player;
@@ -183,19 +192,19 @@ To say ForcefeedDeclarationFlav of (M - a robochef):
 	say "[speech style of M]'[one of]PLEASE OPEN YOUR NUTRITION CONSUMPTION ORIFICE.'[or]PLEASE REMAIN IN THE NUTRITION RECEPTION POSITION.'[in random order][roman type][line break]".
 
 To say ForcefeedStartFlav of (M - a robochef):
-	say "The [M] wheels around so that [he of M] is standing in front of you, with [his of M] arms holding your shoulders in place.  A panel in the front of the [M]'s torso opens, revealing rows of open jars of baby food, each with its own spoon on its own mechanical arm.  Soon there are a queue of spoons, some with crushed banana, others with mushy peas and carrots, and others with stuff you can't even identify waiting to push their way in.  And then the first one does, depositing its load between your lips, followed immediately by another, and another.  You are forced to keep swallowing just to keep up with the speed of the spoons.  Fortunately, the food doesn't require chewing!".
+	say "The [M] wheels around so that [he of M] is standing in front of you, with [his of M] arms holding your shoulders in place. A panel in the front of the [M]'s torso opens, revealing rows of open jars of baby food, each with its own spoon on its own mechanical arm. Soon there are a queue of spoons, some with crushed banana, others with mushy peas and carrots, and others with stuff you can't even identify waiting to push their way in. And then the first one does, depositing its load between your lips, followed immediately by another, and another. You are forced to keep swallowing just to keep up with the speed of the spoons. Fortunately, the food doesn't require chewing!".
 
 To compute forcefeed round (N - a number) of (M - a robochef):
-	say "The [M]'s robotic spoons continue to [one of]shovel[or]deposit[or]cram[in random order] baby food into your mouth.  You gobble the mouthfuls down as quickly as you can!";
+	say "The [M]'s robotic spoons continue to [one of]shovel[or]deposit[or]cram[in random order] baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";
 	[if diaper lover >= 3 and a random number between 1 and diaper lover > 1 and (the player is not thirsty or the player is hungry):
-		say "baby food into your mouth.  You gobble the mouthfuls down as quickly as you can!";]
+		say "baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";]
 	StomachFoodUp 2.
 
 To say ForcefeedAftermath of (M - a robochef):
-	say "The spoons finally stop returning with more food.  The panel in the belly of the [M] closes, and [he of M] lets go of your wrists.  You are able to crawl away, feeling [if the player is overly full]like your belly is going to burst from overstuffing[otherwise]much more full[end if].".
+	say "The spoons finally stop returning with more food. The panel in the belly of the [M] closes, and [he of M] lets go of your wrists. You are able to crawl away, feeling [if the player is overly full]like your belly is going to burst from overstuffing[otherwise]much more full[end if].".
 
 To say ForcefeedAfterFlav of (M - a robochef):
-	say "[speech style of M]'[one of]PLEASE RETURN ONCE [if diaper lover >= 3]YOUR FOOD HAS TAKEN ITS NATURAL COURSE[otherwise]YOU ARE EMPTY AGAIN[end if] FOR A REFILL.'[or]SUBJECT SUFFICIENTLY SATIATED[if diaper lover >= 4].  WARNING: DIAPER RECOMMENDED TO AVOID POTTY FAILURE[end if].'[in random order][roman type][line break].".
+	say "[speech style of M]'[one of]PLEASE RETURN ONCE [if diaper lover >= 3]YOUR FOOD HAS TAKEN ITS NATURAL COURSE[otherwise]YOU ARE EMPTY AGAIN[end if] FOR A REFILL.'[or]SUBJECT SUFFICIENTLY SATIATED[if diaper lover >= 4]. WARNING: DIAPER RECOMMENDED TO AVOID POTTY FAILURE[end if].'[in random order][roman type][line break].".
 
 
 Part 5 - Conversation
@@ -211,10 +220,6 @@ To compute greeting response of (M - a robochef):
 		say "The [M] ignores you.".
 
 Section 2 - Questioning
-
-To compute talk option (N - 2) to (M - a robochef):
-	say "[variable custom style]Can you help me out?[roman type][line break]";
-	compute answer of M.
 
 To compute answer of (M - a robochef):
 	if the class of the player is maid:
@@ -255,7 +260,7 @@ To compute (M - a robochef) considering (T - a thing):
 		say "[speech style of M]'ERROR. UNABLE TO DEDUCT THE NECESSARY PAYMENT FROM YOUR ACCOUNT. TRY AGAIN LATER.'[roman type][line break]";
 		say "Looks like he's not interested in it right now.";
 	otherwise if T is plentiful accessory:
-		say "[speech style of M]'PROCESSING DEPOSIT.  THANK YOU, CUSTOMER. PAYMENT HAS BEEN ADDED TO YOUR ACCOUNT. PLEASE PROVIDE SUITABLE INGREDIENT FOR COOKING.'[roman type][line break]";
+		say "[speech style of M]'PROCESSING DEPOSIT. THANK YOU, CUSTOMER. PAYMENT HAS BEEN ADDED TO YOUR ACCOUNT. PLEASE PROVIDE SUITABLE INGREDIENT FOR COOKING.'[roman type][line break]";
 		say "The [M] takes the [printed name of T].";
 		now T is retained by M;
 		now T is in Holding Pen;
@@ -312,3 +317,4 @@ To say MonsterOfferRejectFlav of (M - a robochef) to (T - a chef food):
 
 
 RoboChef ends here.
+

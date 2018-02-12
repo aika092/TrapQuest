@@ -29,3 +29,4 @@ To say BimboDesc:
 	if the bimbo of the player is 20, say "[second custom style][line break][NameBimbo] [one of]is happy[or]feels good[or]having fun[or]loves game[or]wants more[purely at random]![roman type][line break]".
 
 Bimbo ends here.
+

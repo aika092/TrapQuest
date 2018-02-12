@@ -1,6 +1,6 @@
 Topless Tattoo by Tattoos begins here.
 
-topless tattoo is a kind of chest tattoo.  Figure of topless tattoo is the file "tattoo78.png".  There is 1 topless tattoo.
+topless tattoo is a kind of chest tattoo. Figure of topless tattoo is the file "tattoo78.png". There is 1 topless tattoo.
 Definition: a topless tattoo (called T) is drawable:
 	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;
@@ -16,3 +16,4 @@ To decide which number is the initial outrage of (T - a topless tattoo):
 	decide on 7.
 
 Topless Tattoo ends here.
+

@@ -19,7 +19,7 @@ A time based rule (this is the compute cum movements rule):
 		otherwise if R < the semen coating of belly and the semen coating of belly > 0:
 			compute belly cum dribbling;
 		otherwise if R < the semen coating of thighs and the semen coating of thighs > 0:
-			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6]  [first custom style]Yuck.[roman type][line break][end if]";
+			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6]  [line break][first custom style]Yuck.[roman type][line break][end if]";
 			CumThighsDown 1;
 			SemenPuddleUp 1;
 		if the total fill of belly > 0:
@@ -97,7 +97,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ConceptionFlav:
-	say "[one of]You look down, and realise that your belly isn't slowly getting smaller as you'd expect.  [if the bimbo of the player < 8][first custom style]Am I pregnant?![otherwise][second custom style]I think I'm pregnant![end if][roman type][line break][or]You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][first custom style]Uh-oh.[otherwise][second custom style]Oopsie, I think I got myself knocked up back there![end if][roman type][line break][purely at random]".
+	say "[one of]You look down, and realise that your belly isn't slowly getting smaller as you'd expect. [if the bimbo of the player < 8][line break][first custom style]Am I pregnant?![otherwise][line break][second custom style]I think I'm pregnant![end if][roman type][line break][or]You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Uh-oh.[otherwise][line break][second custom style]Oopsie, I think I got myself knocked up back there![end if][roman type][line break][purely at random]".
 
 [!<DecideWhichNumberIsBellyStrainBalance>+
 
@@ -222,7 +222,7 @@ REQUIRES COMMENTING
 
 +!]
 To execute (E - an enema-effect):
-	say "BUG - the enema effect '[E]' has no coded effect.  Please report!".
+	say "BUG - the enema effect '[E]' has no coded effect. Please report!".
 
 [!<enemaCramping:EnemaEffect>*
 
@@ -274,7 +274,7 @@ REQUIRES COMMENTING
 
 +!]
 To execute (E - enema-stat-loss):
-	say "The effort of holding your [enema] in weakens the rest of your body.  You will be [if the incidents of E > 0]even [end if]slower and weaker until you [italic type]expel[bold type] it out.".
+	say "The effort of holding your [enema] in weakens the rest of your body. You will be [if the incidents of E > 0]even [end if]slower and weaker until you [italic type]expel[bold type] it out.".
 
 [!<enemaIntLoss:EnemaEffect>*
 
@@ -297,7 +297,7 @@ REQUIRES COMMENTING
 
 +!]
 To execute (E - enema-int-loss):
-	say "The uncomfortable nature of your [enema] clouds your mind.  You [if the incidents of E > 0]will have an even cloudier mind[otherwise]won't be able to think as clearly[end if] until you [italic type]expel[bold type] it out.".
+	say "The uncomfortable nature of your [enema] clouds your mind. You [if the incidents of E > 0]will have an even cloudier mind[otherwise]won't be able to think as clearly[end if] until you [italic type]expel[bold type] it out.".
 
 [!<enemaIncontinence:EnemaEffect>*
 
@@ -323,10 +323,11 @@ REQUIRES COMMENTING
 
 +!]
 To execute (E - enema-incontinence):
-	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if incontinence > 0] even further[end if].  ";
+	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if incontinence > 0] even further[end if]. ";
 	increase incontinence by 1;
 	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
 	
 
 
 Semen Movements ends here.
+

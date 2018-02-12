@@ -1,7 +1,7 @@
 Summoning Trap by Traps begins here.
 
 
-A summoning trap is a kind of trap.  There are 20 click summoning traps.
+A summoning trap is a kind of trap. There are 20 click summoning traps.
 
 [This is the spawn initial dungeon summoning traps rule:
 	repeat with N running from 1 to 3:
@@ -120,3 +120,4 @@ To summon (M - a monster) in (D - the mansion):
 
 
 Summoning Trap ends here.
+

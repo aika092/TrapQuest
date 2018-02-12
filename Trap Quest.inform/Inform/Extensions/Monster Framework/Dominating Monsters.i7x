@@ -8,7 +8,7 @@ Determines whether or not the player can successfully fuck a monster or not.
 @return This function returns true if the player is able to fuck the monster. Otherwise, it returns false.
 
 +!]
-Definition: a person is domlicious:
+[Definition: a person is domlicious:
 	if there is a worn cursed ass covering clothing, decide no;
 	if there is a worn cursed pussy covering clothing, decide no;
 	if size of penis is 0 and the player is male and asshole is actually occupied, decide no;
@@ -18,7 +18,7 @@ Definition: a person is domlicious:
 	if the latex-transformation of the player >= 6, decide no;
 	if there is a dangerous monster in the location of the player, decide no;
 	if the size of penis > 0 and penis is not sex available, decide no;
-	decide yes.
+	decide yes.]
 
 [!<Player>@<dominatedCount:Integer>*
 
@@ -82,7 +82,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use the [M] as your own personal cocksleeve!  Then they run away, upset and angry.[otherwise]You finger-bang the [M] into submission.  They run away, upset and angry.[end if]";
+	say "[if the size of penis > 0]You use the [M] as your own personal cocksleeve!  Then [he of M] runs away, upset and angry.[otherwise]You finger-bang the [M] into submission. [big he of M] runs away, upset and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -117,15 +117,15 @@ Check dominating:
 	if the noun is not wenchy or (the noun is acolyte and the player is not a september 2017 top donator), say "The [the noun] doesn't look like someone you could successfully dominate." instead;
 	if (the noun is male and the noun is not gladiator) and the sex addiction of the player < 5, say "[first custom style][if the player is male]What if [he of the noun] was into it? Also, wouldn't that be pretty gay?[otherwise]It would be vindicating, but I won't risk having [him of the noun] turning the tables on me.[end if][roman type][line break]" instead;
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don[']t see the point." instead;
-	let D be 0;[what are you going to use to fuck the monster]
-	if the player is female, now D is 2;[vagina]
-	if the player is male, now D is 1;[penis]
-	if the player is barbie or (the noun is male and the noun is not gladiator), now D is 3;[asshole]
-	if D is 1:
+	let D be asshole;[what are you going to use to fuck the monster]
+	if the player is female, now D is vagina;
+	if the player is male, now D is penis;
+	if the player is barbie or (the noun is male and the noun is not gladiator), now D is asshole;
+	if D is penis:
 		if there is a worn undisplacable potentially penis covering clothing, say "You'll have to find a way to remove your [printed name of a random worn undisplacable potentially penis covering clothing] first." instead;
 		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;[your chastity?]
 		if there is a worn condom of kings or there is a worn restricting research airhancer, say "You wouldn't feel anything from it, so you don't see the point." instead;
-	otherwise if D is 2:
+	otherwise if D is vagina:
 		if there is a worn undisplacable pussy covering clothing, say "You'll have to remove your [printed name of a random worn undisplacable pussy covering clothing] first." instead;
 		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;
 		if vagina is actually occupied, say "You need to remove your [printed name of a random worn clothing penetrating vagina] first!" instead;	
@@ -158,7 +158,7 @@ Carry out dominating:
 	otherwise:[Value of 2? Player failed and is getting punished]
 		now M is interested;
 		unless M is unfriendly, anger M;[this handles edge cases where the player goes for a monster that isn't paying attention to the player.]
-		now the stance of the player is 1; [Does this *tell* the player they’ve fallen to their knees? MG says: The flavour should usually imply the player is on their knees, but specific functions can override that with DominanceFailure of M.]
+		now the stance of the player is 1; [Does this *tell* the player they've fallen to their knees? MG says: The flavour should usually imply the player is on their knees, but specific functions can override that with DominanceFailure of M.]
 		FatigueUp 50;
 		now player-fucking is 1;
 		say DominanceFailure of M;
@@ -241,7 +241,7 @@ This function determines what happens when a monster fails its "submissiveness" 
 
 +!]
 To say DominanceSuccess of (M - a monster):
-	say "You successfully force the [M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve!  [big he of M] runs away, upset and angry.[otherwise]finger-bang [him of M] into submission.  [big he of M] runs away, upset and angry.[end if]".
+	say "You successfully force the [M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve!  [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
 
 [!<ComputeSuccessfulDominanceOfMonster>+
 
@@ -398,11 +398,11 @@ computeSissification is called whenever the monster doesn't have another punishm
 To compute sissification:
 	let H be a random pink sissy bow;
 	if the player is male and H is actually summonable:
-		say "[bold type]A silky pink bow appears in your hair!  [variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it...only a girl would have trouble doing something like that...[end if][roman type][line break]";
+		say "[bold type]A silky pink bow appears in your hair!  [line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it...only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon H cursed;
 	otherwise if H is worn and the number of off-stage sissifying fetish appropriate actually summonable clothing > 0:
 		let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [printed name of S] [bold type]appear on you!  [variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
+		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [printed name of S] [bold type]appear on you!  [line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
 		summon S cursed;
 		announce sissification;
 	otherwise:
@@ -411,3 +411,4 @@ To compute sissification:
 
 
 Dominating Monsters ends here.
+

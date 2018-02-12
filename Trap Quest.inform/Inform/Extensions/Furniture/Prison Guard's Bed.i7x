@@ -1,7 +1,7 @@
 Prison Guard's Bed by Furniture begins here.
 
 
-prison guard's bed is a kind of furniture. 1 prison guard's bed is in Dungeon06.  The printed name of prison guard's bed is "[TQlink of item described]guard's bed[TQxlink of item described][shortcut-desc][verb-desc of item described]".   The description of prison guard's bed is "The prison guard has a comfortable but bland looking double bed.  You have no idea if you would get in trouble for resting on it or not[if the intelligence of the player > 7], but knowing this game, the odds aren't in your favour.[otherwise].[end if]".  prison guard's bed is usually permanent fixture.  prison guard's bed can be in use.  prison guard's bed is usually not in use.  The text-shortcut of prison guard's bed is "gbe".
+prison guard's bed is a kind of furniture. 1 prison guard's bed is in Dungeon06. The printed name of prison guard's bed is "[TQlink of item described]guard's bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of prison guard's bed is "The prison guard has a comfortable but bland looking double bed. You have no idea if you would get in trouble for resting on it or not[if the intelligence of the player > 7], but knowing this game, the odds aren't in your favour.[otherwise].[end if]". prison guard's bed is usually permanent fixture. prison guard's bed can be in use. prison guard's bed is usually not in use. The text-shortcut of prison guard's bed is "gbe".
 
 To compute furniture resting on (F - prison guard's bed):
 	now resting is 1;
@@ -19,3 +19,4 @@ To say RestingDesc of (F - prison guard's bed):
 
 
 Prison Guard's Bed ends here.
+

@@ -1,15 +1,15 @@
 Cum Dump's Undergarment by Knickers begins here.
 
-a cum dump's undergarment is a kind of crotchless panties.  A cum dump's undergarment is usually unique.  A cum dump's undergarment is usually totally-exclusive. There is 1 cum dump's undergarment.  The armour of cum dump's undergarment is 1.  The printed name of cum dump's undergarment is usually "[TQlink of item described][clothing-title-before]unholy cum dump's undergarment[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Figure of unholy panties is the file "crotchless6.png". Understand "unholy" as cum dump's undergarment.  The text-shortcut of cum dump's undergarment is "uu".
+a cum dump's undergarment is a kind of crotchless panties. A cum dump's undergarment is usually unique. A cum dump's undergarment is usually totally-exclusive. There is 1 cum dump's undergarment. The armour of cum dump's undergarment is 1. The printed name of cum dump's undergarment is usually "[TQlink of item described][clothing-title-before]unholy cum dump's undergarment[clothing-title-after][TQxlink of item described][verb-desc of item described]". Figure of unholy panties is the file "crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
 
 To compute SelfExamineDesc of (K - a cum dump's undergarment):
-	say "A pair of unholy crotchless panties does nothing to provide any modesty to your [ShortDesc of hips].  ";
+	say "A pair of unholy crotchless panties does nothing to provide any modesty to your [ShortDesc of hips]. ";
 
 To decide which figure-name is clothing-image of (C - a cum dump's undergarment):
 	decide on figure of unholy panties.
 
 To say ClothingDesc of (K - a cum dump's undergarment):
-	say "This white pair of crotchless panties has a butterfly pattern above the crotch, giving it an innocent look.  But you somehow know that it's much more than that, possessing incredible unholy powers.".
+	say "This white pair of crotchless panties has a butterfly pattern above the crotch, giving it an innocent look. But you somehow know that it's much more than that, possessing incredible unholy powers.".
 
 To decide which number is the initial outrage of (C - a cum dump's undergarment):
 	decide on 10.
@@ -47,3 +47,4 @@ To set up influence of (C - a cum dump's undergarment):
 	now C is semen-addiction-influencing.
 
 Cum Dump's Undergarment ends here.
+

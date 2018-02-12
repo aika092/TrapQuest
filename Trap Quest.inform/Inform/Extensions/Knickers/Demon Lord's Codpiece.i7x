@@ -2,7 +2,7 @@ Demon Lord's Codpiece by Knickers begins here.
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
 
-A demon codpiece is a kind of knickers.  There is 1 demon codpiece. A demon codpiece is unique. The armour of an demon codpiece is 10.  The printed name of demon codpiece is usually "[TQlink of item described][clothing-title-before]demon lord's codpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of demon codpiece is usually 6.  The text-shortcut of demon codpiece is "dlj".  An demon codpiece is usually crotch-assless. An demon codpiece is usually leather. An demon codpiece is usually totally-exclusive. Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. A demon codpiece has a number called charge. The charge of a demon codpiece is usually 1.
+A demon codpiece is a kind of knickers. There is 1 demon codpiece. A demon codpiece is unique. The armour of an demon codpiece is 10. The printed name of demon codpiece is usually "[TQlink of item described][clothing-title-before]demon lord's codpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of demon codpiece is usually 6. The text-shortcut of demon codpiece is "dlj". An demon codpiece is usually crotch-assless. An demon codpiece is usually leather. An demon codpiece is usually totally-exclusive. Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. A demon codpiece has a number called charge. The charge of a demon codpiece is usually 1.
 
 Figure of demon codpiece is the file "codpiece1.png".
 
@@ -28,9 +28,12 @@ To uniquely set up (C - a demon codpiece):
 Definition: a demon codpiece (called C) is product:
 	if the player is not a may 2017 top donator, decide no;
 	decide yes.
-	
+
 To decide which number is the alchemy key of (C - a demon codpiece):
 	decide on 23.
+
+Definition: a demon codpiece (called D) is demonic:
+	decide yes.
 
 To SexChange (J - a demon codpiece):
 	now J is temptation;
@@ -97,3 +100,4 @@ This is the demon junk punishment rule:
 		say "A fog settles over your mind, permanently impairing your ability to think about...just about anything, really.".
 
 Demon Lord's Codpiece ends here.
+

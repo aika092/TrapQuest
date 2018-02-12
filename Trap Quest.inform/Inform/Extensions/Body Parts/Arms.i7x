@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Limb>
 
 @!]
-arms is a limb. arms is everywhere.  The description of arms is "[if weight gain fetish is 1][TotalDesc of arms][otherwise]There's nothing interesting to note about your arms.[end if]".
+arms is a limb. arms is everywhere. The description of arms is "[if weight gain fetish is 1][TotalDesc of arms][otherwise]There's nothing interesting to note about your arms.[end if]".
 
 [!<Arms>@<fatBurning:Integer>*
 
@@ -23,7 +23,7 @@ arms has a number called fat-burning.
 REQUIRES COMMENTING
 
 *@!]
-arms has a number called flesh volume.  the flesh volume of arms is 0.
+arms has a number called flesh volume. the flesh volume of arms is 0.
 Understand "finger", "fingers", "hand", "hands", "arm" as arms.
 
 [!<DecideWhichNumberIsTheWeightOfArms>+
@@ -68,17 +68,17 @@ To say TotalDesc of arms:
 	if weight gain fetish is 1 and the latex-transformation of the player < 4:
 		say "You have ";
 		if the flesh volume of arms > 9:
-			say "obese, blubbery arms that constantly shudder and wobble as you move about.  ";
+			say "obese, blubbery arms that constantly shudder and wobble as you move about. ";
 		otherwise if the flesh volume of arms > 7:
-			say "very fat arms that wobble embarrassingly as you move.  ";
+			say "very fat arms that wobble embarrassingly as you move. ";
 		otherwise if the flesh volume of arms > 5:
-			say "relatively fat arms[if the flat strength of the player > 10] that hide any muscles you have.  [otherwise].  [end if]";
+			say "relatively fat arms[if the flat strength of the player > 10] that hide any muscles you have. [otherwise]. [end if]";
 		otherwise if the flesh volume of arms > 3:
-			say "[if the flat strength of the player > 20]incredibly muscly[otherwise if the flat strength of the player > 15]very muscly[otherwise if the flat strength of the player > 10]well toned[otherwise if the flat strength of the player > 6]slim[otherwise]very small and weak looking[end if] chubby arms.  ";
+			say "[if the flat strength of the player > 20]incredibly muscly[otherwise if the flat strength of the player > 15]very muscly[otherwise if the flat strength of the player > 10]well toned[otherwise if the flat strength of the player > 6]slim[otherwise]very small and weak looking[end if] chubby arms. ";
 		otherwise if the flesh volume of arms > 1:
-			say "[if the flat strength of the player > 20]incredibly muscly[otherwise if the flat strength of the player > 15]very muscly[otherwise if the flat strength of the player > 10]well toned[otherwise if the flat strength of the player > 6]slim[otherwise]very small and weak looking[end if] and slightly chubby arms.  ";
+			say "[if the flat strength of the player > 20]incredibly muscly[otherwise if the flat strength of the player > 15]very muscly[otherwise if the flat strength of the player > 10]well toned[otherwise if the flat strength of the player > 6]slim[otherwise]very small and weak looking[end if] and slightly chubby arms. ";
 		otherwise:
-			say "[if the flat strength of the player > 20]incredibly muscly[otherwise if the flat strength of the player > 15]very muscly[otherwise if the flat strength of the player > 10]well toned[otherwise if the flat strength of the player > 6]slim[otherwise]very small and weak looking[end if] arms.  ".	
+			say "[if the flat strength of the player > 20]incredibly muscly[otherwise if the flat strength of the player > 15]very muscly[otherwise if the flat strength of the player > 10]well toned[otherwise if the flat strength of the player > 6]slim[otherwise]very small and weak looking[end if] arms. ".	
 
 Part 3 - Modify Arms Stats
 
@@ -92,7 +92,7 @@ To FatArmsUp (X - a number):
 	while X > 0 and weight gain fetish is 1:
 		if the flesh volume of arms < 10, increase the flesh volume of arms by 1;
 		decrease X by 1;
-		if newbie tips is 1 and the flesh volume of arms > 2, say "[one of][item style]Newbie tip: Your arms are getting a bit chubby!  That's making you heavier and therefore you'll tire out faster.  However, it is fully reversible!  Every time you slap an NPC, you'll exercise your arm muscles a bit, and help you lose that fat.[roman type][line break][or][stopping]".
+		if newbie tips is 1 and the flesh volume of arms > 2, say "[one of][item style]Newbie tip: Your arms are getting a bit chubby!  That's making you heavier and therefore you'll tire out faster. However, it is fully reversible!  Every time you slap an NPC, you'll exercise your arm muscles a bit, and help you lose that fat.[roman type][line break][or][stopping]".
 
 [!<FatArmsDownX>+
 
@@ -107,3 +107,4 @@ To FatArmsDown (X - a number):
 
 
 Arms ends here.
+

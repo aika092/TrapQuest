@@ -45,3 +45,4 @@ To decide which number is the bartering value of (T - a pure totem) for (M - a g
 	decide on -1.
 
 Totem of Purity ends here.
+

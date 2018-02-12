@@ -65,13 +65,13 @@ Carry out WellWishing:
 		now K is carried by the player;
 		say "Suddenly, you find a [K] in your hand!";
 	otherwise if the player is a sissy and the soreness of asshole > 0:
-		say "[first custom style]I know... what you really wish for...[roman type][line break] Your [asshole] tingles as it spontaneously fills up with [semen], which washes away all feelings of soreness and tension.";
+		say "[first custom style]I know... what you really wish for...[roman type][line break]Your [asshole] tingles as it spontaneously fills up with [semen], which washes away all feelings of soreness and tension.";
 		AssFill the soreness of asshole;
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
 	otherwise if the noun is infernal gem and there is an off-stage pure totem and a random number between 1 and 3 is 1:
 		let S be a random off-stage pure totem;
-		say "[first custom style]Temperance... granted.[roman type][line break] An invisible force gently pushes your hands open, and a tiny ivory carving materialises in your palm.";
+		say "[first custom style]Temperance... granted.[roman type][line break]An invisible force gently pushes your hands open, and a tiny ivory carving materialises in your palm.";
 		now S is held by the player;
 	otherwise if diaper quest is 1 and permanent makeup is 1 and the noun is plentiful accessory and the noun is not sapphire and the noun is not emerald:
 		say "[first custom style]Wish... granted.[roman type][line break]";
@@ -152,3 +152,4 @@ To compute BadWishing:
 
 
 WellWishing ends here.
+

@@ -9,7 +9,10 @@ This is the spawn initial woods vines rule:
 			if the number of vines in R is 0, deploy T in R.
 The spawn initial woods vines rule is listed in the set up woods traps rules.
 
-vine are a kind of trap.  The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]".  There are 16 revealed vines.  Understand "living", "vine", "vines" as vines when item described is in the location of the player.  The printed plural name of vines is "vines".  The description of vines is "[VineDesc]".  Figure of vines is the file "vines1.png".  Vines are father material.  The text-shortcut of a vine is "vin".
+vine are a kind of trap. The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]". There are 16 revealed vines. Understand "living", "vine", "vines" as vines when item described is in the location of the player. The printed plural name of vines is "vines". The description of vines is "[VineDesc]". Figure of vines is the file "vines1.png". The text-shortcut of a vine is "vin".
+
+Definition: a vine (called M) is father material:
+	decide yes.
 
 To decide which number is the girth of (V - a vine):
 	decide on 2 * (1 + the TrapNo of V).
@@ -78,11 +81,11 @@ To compute vines standing:
 				now V is grabbing the player;
 				if image cutscenes is 1, display figure of vines cutscene 2;
 			otherwise if the living belt of sturdiness is not worn and R is 6:
-				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if].  You manage to avoid it grabbing you but it makes you trip and fall![or]Living vines burst out of the soil, grasping at your legs. You manage to keep them from grabbing you, but you lose your balance and fall.[or]A living vine tries to grab your heels. You successfully kick it away, but you lose your balance and fall.[or]Vines shoot out of the soil beneath you. In your scramble to get out of the way, you trip and fall.[or]A single vine bursts out of the soil, headed straight for your ankle. Your reflexes kick in too late, sending you toppling to the ground.[in random order]";
+				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if]. You manage to avoid it grabbing you but it makes you trip and fall![or]Living vines burst out of the soil, grasping at your legs. You manage to keep them from grabbing you, but you lose your balance and fall.[or]A living vine tries to grab your heels. You successfully kick it away, but you lose your balance and fall.[or]Vines shoot out of the soil beneath you. In your scramble to get out of the way, you trip and fall.[or]A single vine bursts out of the soil, headed straight for your ankle. Your reflexes kick in too late, sending you toppling to the ground.[in random order]";
 				try kneeling;
 				FatigueUp 15;
 			otherwise:
-				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if].  You manage to avoid it grabbing you![or]Living vines burst out of the soil, grasping for your ankles. Thanks to your good reflexes, you successfully keep them from grabbing you for now.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. You feel the soil moving beneath you and jump back before more can grab you. Still free for now.[or]Several vines rise out of the soil and pounce for your ankles. You [if the dexterity of the player > 13]easily [end if]dodge each one thanks to your [if the dexterity of the player > 15]catlike [end if]reflexes, safe for the time being.[in random order]";
+				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if]. You manage to avoid it grabbing you![or]Living vines burst out of the soil, grasping for your ankles. Thanks to your good reflexes, you successfully keep them from grabbing you for now.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. You feel the soil moving beneath you and jump back before more can grab you. Still free for now.[or]Several vines rise out of the soil and pounce for your ankles. You [if the dexterity of the player > 13]easily [end if]dodge each one thanks to your [if the dexterity of the player > 15]catlike [end if]reflexes, safe for the time being.[in random order]";
 				FatigueUp 10.
 
 [!<ComputeVinesKneeling>+
@@ -99,11 +102,11 @@ To compute vines kneeling:
 			let D be the dexterity of the player;
 			let R be a random number from 1 to D;
 			if R <= 3 or (R <= 6 and the class of the player is schoolgirl):
-				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground.  Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their oozing, bulbous tips [if the raw sex addiction of the player > 6]is strangely hypnotic, and before you realize it,[otherwise]is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before you realize it,[end if] they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
+				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their oozing, bulbous tips [if the raw sex addiction of the player > 6]is strangely hypnotic, and before you realize it,[otherwise]is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before you realize it,[end if] they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 				now V is grabbing the player;
 				if image cutscenes is 1, display figure of vines cutscene 2;
 			otherwise:
-				say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles.  You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]".
+				say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]".
 
 [!<ReportKneelingWhenThereIsAVineGrabbingThePlayer>+
 
@@ -125,7 +128,7 @@ To compute (V - a vine) penetrating:
 	if the player is a butt slut or the player is male, now R is 1;
 	if the player is a pussy slut and the player is not a butt slut, now R is 2;
 	if H < the thickness of hips and H < 10: [Vines will always succeed on a roll above 9]
-		say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [HipDesc].  It recoils back into the ground.";
+		say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [HipDesc]. It recoils back into the ground.";
 	otherwise if R is 1:
 		if the player is ass protected:
 			let K be a random worn top level ass protection clothing;
@@ -333,7 +336,7 @@ To VinePull:
 		say "You manage to loosen the vines and free your [if the player is prone]wrists and [end if]ankles!  ";
 		now the noun is not grabbing the player;
 		if the noun is penetrating a fuckhole:
-			say "The vine[if the TrapNo of the noun > 0]s[end if] in your [if the noun is penetrating asshole][asshole][otherwise][vagina][end if] pull[if the TrapNo of the noun is 0]s[end if] out and go[if the TrapNo of the noun is 0]es[end if] back into the ground, ready to strike again.  ";
+			say "The vine[if the TrapNo of the noun > 0]s[end if] in your [if the noun is penetrating asshole][asshole][otherwise][vagina][end if] pull[if the TrapNo of the noun is 0]s[end if] out and go[if the TrapNo of the noun is 0]es[end if] back into the ground, ready to strike again. ";
 			now the noun is not penetrating asshole;
 			now the noun is not penetrating vagina;
 		now the TrapNo of the noun is 0;
@@ -355,3 +358,4 @@ Check attacking vines:
 
 
 Vines ends here.
+

@@ -1,10 +1,10 @@
 Belt Framework by Belts Suspenders begins here.
 
-A belt is a kind of clothing.  A belt is unskirted.
+A belt is a kind of clothing. A belt is unskirted.
 
 Chapter - Wearability
 
-belt wearability rules is a rulebook.  The wearability rules of a belt is usually belt wearability rules.
+belt wearability rules is a rulebook. The wearability rules of a belt is usually belt wearability rules.
 
 This is the belt already worn rule:
 	repeat with B running through worn belts:
@@ -13,3 +13,4 @@ This is the belt already worn rule:
 The belt already worn rule is listed in the belt wearability rules.
 
 Belt Framework ends here.
+

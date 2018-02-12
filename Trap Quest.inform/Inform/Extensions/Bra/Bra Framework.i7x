@@ -1,6 +1,6 @@
 Bra Framework by Bra begins here.
 
-A bra is a kind of clothing.  bras have a number called support.  The support of a bra is usually 1.  bras have a number called size.  bras have a number called min size.  The min size of a bra is usually 2.  bras have a number called max size.  The max size of a bra is usually 15.  A bra is usually top-displacable. The soak-limit of a bra is usually 10.
+A bra is a kind of clothing. bras have a number called support. The support of a bra is usually 1. bras have a number called size. bras have a number called min size. The min size of a bra is usually 2. bras have a number called max size. The max size of a bra is usually 15. A bra is usually top-displacable. The soak-limit of a bra is usually 10.
 
 Definition: a bra (called B) is ingredient:
 	if B is product, decide no;
@@ -9,11 +9,11 @@ Definition: a bra (called B) is ingredient:
 To decide which number is the crafting key of (B - a bra):
 	decide on 26.
 
-A bra is usually average cut.  A bra is usually nipple covering.
+A bra is usually average cut. A bra is usually nipple covering.
 
-A bra can be milking flappable.  A bra is usually not milking flappable.
+A bra can be milking flappable. A bra is usually not milking flappable.
 
-The printed name of bra is usually "[TQlink of item described][clothing-title-before][CupDesc of item described][ShortDesc of item described][clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of bra is usually "[TQlink of item described][clothing-title-before][CupDesc of item described][ShortDesc of item described]s[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of bra is usually "[TQlink of item described][clothing-title-before][CupDesc of item described][ShortDesc of item described][clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of bra is usually "[TQlink of item described][clothing-title-before][CupDesc of item described][ShortDesc of item described]s[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To say ShortDesc of (B - a bra):
 	say "bra".
@@ -27,18 +27,18 @@ To compute SelfExamineDesc of (B - a bra):
 	let B be a random bra worn by the player;
 	let Y be the size of B;
 	if X < 3 or diaper quest is 1:
-		say " that are inside a [selfexaminetitle of B].  ";
+		say " that are inside a [selfexaminetitle of B]. ";
 	otherwise:
 		if Y > X + 2:
-			say " that hang freely inside the cups of your [selfexaminetitle of B].  ";
+			say " that hang freely inside the cups of your [selfexaminetitle of B]. ";
 		otherwise if Y > X and Y < X + 3:
-			say " that sit loosely inside the cups of your [selfexaminetitle of B].  ";
+			say " that sit loosely inside the cups of your [selfexaminetitle of B]. ";
 		otherwise if Y is X:
-			say " that sit perfectly inside the cups of your [selfexaminetitle of B].  ";
+			say " that sit perfectly inside the cups of your [selfexaminetitle of B]. ";
 		otherwise if Y < X and Y > X - 2:
-			say " that fit tightly inside the cups of your [selfexaminetitle of B].  ";
+			say " that fit tightly inside the cups of your [selfexaminetitle of B]. ";
 		otherwise if Y < X - 1:
-			say " that are overflowing out of the cups of your [selfexaminetitle of B].  ".
+			say " that are overflowing out of the cups of your [selfexaminetitle of B]. ".
 
 Report examining bra:
 	if the largeness of breasts > 2 and newbie tips is 1, say "Bras [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts.".
@@ -118,10 +118,10 @@ To compute bra strain of (B - a bra):
 		BraBurst B.
 
 To BraBurst (B - a bra):
-	say "Your [printed name of B] can't take the strain any more, and the clasp at the back snaps.  It pings off your body, ruined!";
+	say "Your [printed name of B] can't take the strain any more, and the clasp at the back snaps. It pings off your body, ruined!";
 	repeat with D running through worn overdresses:
 		if the top-layer of D > the top-layer of B and a random number between 1 and 10 > 7 and D is not cursed:
-			say "As it flies off, it rips through your [printed name of D].  It falls to the ground, ruined.";
+			say "As it flies off, it rips through your [printed name of D]. It falls to the ground, ruined.";
 			destroy D;
 	destroy B.
 
@@ -194,7 +194,7 @@ The remove inappropriate bras rule is listed in the diaper quest fix rules.
 
 Part - Wearability
 
-bra wearability rules is a rulebook.  The wearability rules of bra is usually bra wearability rules.
+bra wearability rules is a rulebook. The wearability rules of bra is usually bra wearability rules.
 
 This is the bra already worn rule:
 	repeat with O running through worn bras:
@@ -232,8 +232,9 @@ Report wearing a bra:
 		if the size of the noun > the largeness of breasts and the size of the noun < the largeness of breasts + 3, say "Your breasts sit loosely inside the cups.";
 		if the size of the noun is the largeness of breasts, say "Your breasts sit perfectly inside the cups.";
 		if the size of the noun < the largeness of breasts, say "Your breasts fit tightly inside the cups.";
-		if the noun is chastity bra, say "[one of][variable custom style]Wow, this is heavy...[roman type][line break][or][stopping]";
-	if the noun is cursed, say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bra![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart.  This must be a cursed bra![end if]".
+		if the noun is chastity bra, say "[one of][line break][variable custom style]Wow, this is heavy...[roman type][line break][or][stopping]";
+	if the noun is cursed, say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bra![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart. This must be a cursed bra![end if]".
 
 
 Bra Framework ends here.
+

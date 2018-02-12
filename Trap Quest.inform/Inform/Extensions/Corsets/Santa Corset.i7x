@@ -1,8 +1,8 @@
 Santa Corset by Corsets begins here.
 
-A santa corset is a kind of corset.  A santa corset is usually wool.  A santa corset is rare.  A santa corset is usually nipple covering.  A santa corset is usually top-exclusive.  [There is 1 santa corset.]  A santa corset is usually average cut. A santa corset is usually top-displacable.
+A santa corset is a kind of corset. A santa corset is usually wool. A santa corset is rare. A santa corset is usually nipple covering. A santa corset is usually top-exclusive. There is 1 santa corset. A santa corset is usually average cut. A santa corset is usually top-displacable.
 
-The printed name of santa corset is usually "[TQlink of item described][clothing-title-before]santa corset[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of santa corset is "san".
+The printed name of santa corset is usually "[TQlink of item described][clothing-title-before]santa corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of santa corset is "san".
 
 Figure of santa corset is the file "santacorset1.png".
 
@@ -22,3 +22,4 @@ To say ShortDesc of (C - a santa corset):
 	say "santa corset".
 
 Santa Corset ends here.
+

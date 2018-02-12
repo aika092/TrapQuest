@@ -20,70 +20,70 @@ The skill cheating rules is a rulebook.
 REQUIRES COMMENTING
 
 *@]
-The player has a number called mercyskill.  The mercyskill of the player is usually 0.
+The player has a number called mercyskill. The mercyskill of the player is usually 0.
 
 [!<Player>@<strutSkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called strutskill.  The strutskill of the player is usually 0.
+The player has a number called strutskill. The strutskill of the player is usually 0.
 
 [!<Player>@<strut:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called strut.  The strut of the player is usually 0.
+The player has a number called strut. The strut of the player is usually 0.
 
 [!<Player>@<breastSkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called breastskill.  The breastskill of the player is usually 0.
+The player has a number called breastskill. The breastskill of the player is usually 0.
 
 [!<Player>@<throatSkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called throatskill.  The throatskill of the player is usually 0.
+The player has a number called throatskill. The throatskill of the player is usually 0.
 
 [!<Player>@<identifySkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called identifyskill.  The identifyskill of the player is usually 0.
+The player has a number called identifyskill. The identifyskill of the player is usually 0.
 
 [!<Player>@<wankTime:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called wanktime.  The wanktime of the player is usually 0.
+The player has a number called wanktime. The wanktime of the player is usually 0.
 
 [!<Player>@<bellySkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called bellyskill.  The bellyskill of the player is usually 0.
+The player has a number called bellyskill. The bellyskill of the player is usually 0.
 
 [!<Player>@<milkSkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called milkskill.  The milkskill of the player is usually 0.
+The player has a number called milkskill. The milkskill of the player is usually 0.
 
 [!<Player>@<relaxSkill:Integer>
 
 REQUIRES COMMENTING
 
 *@]
-The player has a number called relaxskill.  The relaxskill of the player is usually 0.
+The player has a number called relaxskill. The relaxskill of the player is usually 0.
 
 [!<Player>@<invokeSkill:Integer>
 
@@ -124,7 +124,7 @@ To teach begging for mercy:
 	if the mercyskill of the player is 0:
 		if diaper quest is 1:
 			if the delicateness of the player > 3:
-				say "[bold type]**You have learned how to beg for mercy!  Sometimes you will automatically escape a spanking punishment by using diplomacy.  Convincing power (make-up) makes this more likely!**[roman type]";
+				say "[bold type]**You have learned how to beg for mercy!  Sometimes you will automatically escape a spanking punishment by using diplomacy. Convincing power (make-up) makes this more likely!**[roman type]";
 				now the mercyskill of the player is 1;
 			otherwise:
 				say "You are much too stubborn to admit defeat! If you were to suffer a few more painful moments, then maybe you'd pay more attention to this tip...";
@@ -133,7 +133,7 @@ To teach begging for mercy:
 				say "[bold type]**You have learned how to beg for mercy!**[roman type]";
 				now the mercyskill of the player is 1;
 			otherwise:
-				say "You have no plans to [if the sex addiction of the player < 14]get fucked, so don't feel that the advice is very useful.  If you were to lose your virginity, then maybe you'd pay more attention to this tip...[otherwise]complain if someone is nice enough to fuck you, so you ignore the advice![end if]";
+				say "You have no plans to [if the sex addiction of the player < 14]get fucked, so don't feel that the advice is very useful. If you were to lose your virginity, then maybe you'd pay more attention to this tip...[otherwise]complain if someone is nice enough to fuck you, so you ignore the advice![end if]";
 	otherwise:
 		say "[bold type]You already know how to beg for mercy![roman type]".
 
@@ -211,10 +211,10 @@ REQUIRES COMMENTING
 To teach strutting:
 	if the strutskill of the player is 0:
 		if the heel skill of the player > 3:
-			say "[bold type]**You have learned how to strut!**[line break]Type 'strut' to activate or deactivate strutting whilst wearing heels.  You'll slowly gain humiliation but have increased dexterity.[roman type]";
+			say "[bold type]**You have learned how to strut!**[line break]Type 'strut' to activate or deactivate strutting whilst wearing heels. You'll slowly gain humiliation but have increased dexterity.[roman type]";
 			now the strutskill of the player is 1;
 		otherwise:
-			say "[if the bimbo of the player < 12]You decide that looking more slutty than you do already is not a priority right now[otherwise]You resent her for implying that you need to look any more sexy than you already do, and ignore her advice[end if].  But maybe once you're better at walking in heels, you'll value her advice.";
+			say "[if the bimbo of the player < 12]You decide that looking more slutty than you do already is not a priority right now[otherwise]You resent her for implying that you need to look any more sexy than you already do, and ignore her advice[end if]. But maybe once you're better at walking in heels, you'll value her advice.";
 	otherwise:
 		say "[bold type]You already know how to strut![roman type]".
 
@@ -298,10 +298,10 @@ REQUIRES COMMENTING
 To teach identifying:
 	if the identifyskill of the player is 0:
 		if the incidents of enema-int-loss is 0 and the arousal of the player < 5000 and the soreness of asshole < 10 and the soreness of vagina < 10:
-			say "[bold type]**You have learned how to identify!**[line break]Every now and then when you find a cursed item in a container, you will immediately be able to tell that it is cursed.  The higher your intelligence, the higher the chance.[roman type][line break]";
+			say "[bold type]**You have learned how to identify!**[line break]Every now and then when you find a cursed item in a container, you will immediately be able to tell that it is cursed. The higher your intelligence, the higher the chance.[roman type][line break]";
 			now the identifyskill of the player is 1;
 		otherwise:
-			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory.  They probably won't be much use.";
+			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
 	otherwise:
 		say "[bold type]You have already heard and memorised these hints![roman type][line break]".
 
@@ -445,7 +445,7 @@ To teach fastcrafting:
 			say "[bold type]**You have learned how to preserve the magic energy of the alchemist's bowl!**[line break]When you craft an item, the table will be ready to use again four times as quickly.[roman type][line break]";
 			now the craftskill of the player is 1;
 		otherwise:
-			say "When you admit that you have no idea what she means by alchemy, she quickly shuts up.  [second custom style]'Forget I said anything.'[roman type][line break]";
+			say "When you admit that you have no idea what she means by alchemy, she quickly shuts up. [line break][second custom style]'Forget I said anything.'[roman type][line break]";
 	otherwise:
 		say "[bold type]You already know how to craft faster![roman type][line break]".
 
@@ -455,7 +455,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the craftskill list rule:
-	if the craftskill of the player is 1, say "When you use the alchemist's bowl, it recharges much faster.  It's all due to your skilful wrist action.".
+	if the craftskill of the player is 1, say "When you use the alchemist's bowl, it recharges much faster. It's all due to your skilful wrist action.".
 The craftskill list rule is listed in the skill listing rules.
 
 [!<TheCraftSkillLearnRule>+
@@ -650,7 +650,7 @@ To teach milkskill:
 	if the milkskill of the player is 0 and lactation fetish is 1:
 		if the milk volume of breasts > 0:
 			say "[second custom style]'Well, if you have large enough breasts, have you ever considered that you could pull them up to your mouth and drink the [milk] from them?  It's healthy and natural!'[line break]";
-			say "[bold type]You've learned how to drink from your own breasts!  By typing 'drink breasts' you can now consume [milk] from your breasts as long as they are big enough and your nipples are easily accessed.  This can quench your thirst and make exercise more effective, but is quite a humiliating act to perform![roman type]";
+			say "[bold type]You've learned how to drink from your own breasts!  By typing 'drink breasts' you can now consume [milk] from your breasts as long as they are big enough and your nipples are easily accessed. This can quench your thirst and make exercise more effective, but is quite a humiliating act to perform![roman type]";
 			now the milkskill of the player is 1;
 		otherwise:
 			say "[second custom style]'Nope, sorry, nothing that would be useful to you at this moment!'[roman type]";
@@ -672,3 +672,4 @@ The milkskill learn rule is listed in the skill cheating rules.
 
 
 Skills ends here.
+

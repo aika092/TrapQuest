@@ -13,14 +13,14 @@ The maximum score is 150.
 
 [!<diaperQuestFixRules:Rulebook>*
 
-This is run at the start of the game if DQ is enabled.  It allows people to create rules for how the starting environment is 'fixed' for DQ.
+This is run at the start of the game if DQ is enabled. It allows people to create rules for how the starting environment is 'fixed' for DQ.
 
 *!]
 The diaper quest fix rules is a rulebook.
 
 [!<WhenPlayBegins>+
 
-This is the first procedure the game runs when the game is opened.  We initialise variables and set stuff up, then start throwing menus at the player.
+This is the first procedure the game runs when the game is opened. We initialise variables and set stuff up, then start throwing menus at the player.
 
 +!]
 When play begins:
@@ -117,6 +117,7 @@ To fill in table blanks:
 	unless there is a choice in row 32 of the Table of Settings, now choice in row 32 of Table of Settings is 1; 
 	unless there is a choice in row 33 of the Table of Settings, now choice in row 33 of Table of Settings is 1; 
 	unless there is a choice in row 34 of the Table of Settings, now choice in row 34 of Table of Settings is 1;
+	unless there is a choice in row 35 of the Table of Settings, now choice in row 35 of Table of Settings is 1;
 	[Allows old save files to load properly]
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
 	unless there is a choice in row 33 of the Table of Player Options, now choice in row 33 of Table of Player Options is 0;
@@ -137,7 +138,7 @@ To fill in table blanks:
 	unless there is a choice in row 48 of the Table of Player Options, now choice in row 48 of Table of Player Options is 0; 
 	unless there is a choice in row 49 of the Table of Player Options, now choice in row 49 of Table of Player Options is 0; 
 	unless there is a choice in row 50 of the Table of Player Options, now choice in row 50 of Table of Player Options is 0; 
-	unless there is a choice in row 51 of the Table of Player Options, now choice in row 51 of Table of Player Options is 1;
+	unless there is a choice in row 51 of the Table of Player Options, now choice in row 51 of Table of Player Options is 0;
 	unless there is a choice in row 52 of the Table of Player Options, now choice in row 52 of Table of Player Options is 0;
 	unless there is a choice in row 53 of the Table of Player Options, now choice in row 53 of Table of Player Options is 0;
 	unless there is a choice in row 54 of the Table of Player Options, now choice in row 54 of Table of Player Options is 0;
@@ -147,7 +148,10 @@ To fill in table blanks:
 	unless there is a choice in row 58 of the Table of Player Options, now choice in row 58 of Table of Player Options is 0;
 	unless there is a choice in row 59 of the Table of Player Options, now choice in row 59 of Table of Player Options is 0;
 	unless there is a choice in row 60 of the Table of Player Options, now choice in row 60 of Table of Player Options is 0;
-	unless there is a choice in row 61 of the Table of Player Options, now choice in row 61 of Table of Player Options is 0.
+	unless there is a choice in row 61 of the Table of Player Options, now choice in row 61 of Table of Player Options is 0;
+	unless there is a choice in row 62 of the Table of Player Options, now choice in row 62 of Table of Player Options is 0;
+	unless there is a choice in row 63 of the Table of Player Options, now choice in row 63 of Table of Player Options is 0;
+	unless there is a choice in row 64 of the Table of Player Options, now choice in row 64 of Table of Player Options is 0.
 
 To correct table entries:
 	if the player is not the donator:
@@ -177,16 +181,6 @@ To retrieve settings:
 	if ultra undo is 1, compute undo weirdness;
 	write File of Preferences from the Table of Settings.
 
-To say disclaimer:
-	if diaper quest is 0, say "This game is a piece of erotic interactive fiction intended for the consumption by mature adults only.  The following are topics that you can be confident that this game will not contain: under-age characters (babies are born and quickly whisked away in brief pregnancy scenes), gore, scat play, extreme torture, sex with real animals (for example the game does not contain a bull, a real animal, but it does contain a minotaur).   The game contains offensive gendered slurs and stereotypes, and you may encounter some extremely adult and sometimes taboo topics, including but not limited to mild physical violence, implied lack of consent and sexual violence, blackmail, degradation, and sex with inhuman (fantasy) creatures.   These topics are presented in the context of a FICTIONAL UNIVERSE that does not reflect the author's views or the reality of modern day society.  In the same way that you would not watch the movie Saw and then consider it any more morally acceptable to torture or murder people, you should not, after playing this game, be under any impression that the acts encountered are any less morally despicable than you previously held.  If you believe acts such as any kind of assault including sexual assault to be morally acceptable or justifiable, then you should not play this game, or use the content of this game to further reinforce your belief structure, and should ideally seek professional help and guidance.  
-
-	Similarly you should not understand the stereotypes portrayed and played on in this game to be an accurate reflection of people, or trends of people, in the real world.  In the real world, men, women and others who do not fit into the binary gender spectrum should be respected and treated equally, judged on their deeds and choices and not on the way they were born.  Acts based on sexist or similar philosophies are only acceptable when used for mutual enjoyment between consenting adults.  It is imperative that you do not play this game unless you are mature enough to be fully aware of this separation between fantasy and reality.  The legal age for you to purchase and view adult (XXX) material in your country is a reasonable guideline for when you may be approaching this age, but the game author personally recommends not engaging in and consuming such potentially objectionable material as is contained within this game until you are at least 21 years old.
-
-	Images were obtained for this game through image sharing sites where it is a breach of the ToS to upload copyrighted material.  If, however, you do discover images in this game of which you are the copyright holder, please inform the author who will promptly remove them from the game in compliance with the DMCA.";
-	otherwise say "This game is a piece of interactive fiction intended for the consumption by mature adults only.  In this game, the player can be humiliated by being forced to look and act like a woman and/or as an 'adult baby'.  Roleplay based on sexist or similar philosophies are only acceptable when used for mutual enjoyment between consenting adults.  It is imperative that you do not play this game unless you are mature enough to be fully aware of this separation between fantasy and reality.  The legal age for you to purchase and view adult (XXX) material in your country is a reasonable guideline for when you may be approaching this age, but the game author personally recommends not engaging in and consuming such potentially objectionable material as is contained within this game until you are at least 21 years old.";
-	say "[bold type][line break]By pressing enter I acknowledge that I have read the above disclaimer and that I agree with its principles.  I am of a legal age to consume adult material.[roman type]";
-	unless text delay is 999, wait 30000 * text delay ms before continuing;
-	clear the screen.
 
 To retrieve gender:
 	if quick start is 1:
@@ -225,19 +219,12 @@ To configure gender:
 		now the size of penis is 7;
 		now the real size of penis is 7;
 	otherwise:
-		now the flesh volume of breasts is 3;
-		now the real flesh volume of breasts is 3;
-		now the thickness of hips is 2;
-		now the real thickness of hips is 2;
-		now the flesh volume of hips is 2;
 		if diaper quest is 1:
 			now the flesh volume of breasts is 6;
 			now the real flesh volume of breasts is 6;
 			now the thickness of hips is 5;
 			now the real thickness of hips is 5;
 			now the flesh volume of hips is 5;
-		now the raw largeness of hair is 4;
-		now the real largeness of hair is 4;	
 		now choice in row 29 of the Table of Player Options is 0; [We set min penis size points to 0, since you shouldn't be able to put points in here if you are female.]
 		now choice in row 10 of the Table of Player Options is 0; [Similarly TG fetish must be off.]
 		choose the row with a toggle of TG fetish toggle rule in the Table of Fetish Options;
@@ -310,11 +297,16 @@ To fix starting stats:
 	now the blondeness of hair is natural blondeness * 3;
 	now the brightness of hair is natural brightness * 3;
 	now the redness of hair is natural redness * 3;
-	if the player is female: [Flat chested girls fixed here]
-		while max breast size < the largeness of breasts:
-			decrease the flesh volume of breasts by 1;
-			decrease the real flesh volume of breasts by 1;
-			if the largeness of breasts <= 1, break. [failsafe]
+	now the thickness of hips is min ass size;
+	now the real thickness of hips is min ass size;
+	now the flesh volume of hips is min ass size;
+	if the player is female: 
+		while the largeness of breasts < min breast size: [Starting body shape fixed here]
+			increase the flesh volume of breasts by 1;
+			now the real flesh volume of breasts is the flesh volume of breasts;
+	now the raw largeness of hair is min ass size;
+	now the real largeness of hair is the raw largeness of hair.	
 
 Engine Initialisation ends here.
+
 

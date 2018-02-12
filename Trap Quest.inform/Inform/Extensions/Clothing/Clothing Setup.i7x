@@ -99,3 +99,4 @@ To set up magic state of (C - a clothing):
 
 
 Clothing Setup ends here.
+

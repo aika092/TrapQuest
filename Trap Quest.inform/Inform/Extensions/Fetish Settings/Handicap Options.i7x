@@ -10,6 +10,7 @@ Table of Handicap Options
 title	subtable	description	toggle
 "[roman type]Previous Menu (shortcut: press Q)"	--	--	quit rule
 "RANDOMISE CHOICES (this randomises choices on 'fetish options' page too)"	--	--	randomise choices rule
+"Starting body shape ([if starting body shape is 0 and the player is male]normal[otherwise if starting body shape is 0]androgynous[otherwise if starting body shape is 1 and the player is male]androgynous[otherwise if starting body shape is 1]normal[otherwise if the player is male]THICC[otherwise]curvy[end if] - [starting body shape * 2] points)"	--	--	starting body shape rule
 "[if extreme proportions fetish is 0]150[otherwise]133[end if]% Breast Expansion Rate - 4 points ([if fast breast expansion is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	fast breast expansion toggle rule
 "Natural hair redness - 1 point ([if natural redness is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	natural redness rule
 "Natural hair blondeness - 1 point ([if natural blondeness is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	natural blondeness rule
@@ -22,7 +23,7 @@ title	subtable	description	toggle
 "Map resets on fainting - 4 points ([if map reset is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	map reset toggle rule
 "Sex can result in fainting - 0 points ([if sex fainting is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	sex fainting toggle rule
 "Realistic orifice re-tightening (you don't stay gaped which means you'll get sore faster) - 2 points ([if ungape is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	ungape toggle rule
-"RECOMMENDED Clothes Imprinting - 0 points ([if clothing-imprinting is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	imprinting toggle rule
+"Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if tough-shit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tough-shit toggle rule
 
 
 
@@ -158,13 +159,13 @@ The ungape nightmare rule is listed in the nightmare mode rules.
 REQUIRES COMMENTING
 
 +!]
-This is the imprinting toggle rule:
-	if clothing-imprinting is 0, now choice in row 51 of the Table of Player Options is 1;
+This is the tough-shit toggle rule:
+	if tough-shit is 0, now choice in row 51 of the Table of Player Options is 1;
 	otherwise now choice in row 51 of the Table of Player Options is 0.
 
-This is the imprinting nightmare rule:
+This is the tough-shit nightmare rule:
 	now choice in row 51 of the Table of Player Options is 1.
-The imprinting nightmare rule is listed in the nightmare mode rules.
+The tough-shit nightmare rule is listed in the nightmare mode rules.
 
 [!<TheNaturalRednessRule>+
 
@@ -205,4 +206,24 @@ This is the natural brightness nightmare rule:
 	now choice in row 42 of the Table of Player Options is 1.
 The natural brightness nightmare rule is listed in the nightmare mode rules.
 
+
+[!<TheStartingBodyShapeRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the starting body shape rule:
+	if starting body shape < 2:
+		increase choice in row 62 of the Table of Player Options by 1;
+		if min ass size > max ass size, now choice in row 28 of the Table of Player options is 0; [Gotta make sure min ass size is never greater than max ass size]
+	otherwise:
+		now choice in row 62 of the Table of Player Options is 0.
+
+This is the body shape nightmare rule:
+	now choice in row 62 of the Table of Player Options is 1.
+The body shape nightmare rule is listed in the nightmare mode rules.
+
+
+
 Handicap Options ends here.
+

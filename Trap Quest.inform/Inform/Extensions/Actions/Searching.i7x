@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 +!]
 Check searching a container:
 	if the noun is open, say "Why would you search an open container?" instead;
-	if the delicateness of the player is 1, say "[variable custom style]Searching for traps is a waste of time.  What's the worst they could do?  Bring it on![roman type][line break]" instead;
+	if the delicateness of the player is 1, say "[variable custom style]Searching for traps is a waste of time. What's the worst they could do?  Bring it on![roman type][line break]" instead;
 	if the player is breasts blinded, say "You can't see clearly enough to search while your [ShortDesc of breasts] are floating in front of your face!" instead;
 	if the player is prone, say "You can't search while on all fours!" instead;
 	if the player is immobile, say "You're a bit busy right now to be searching that!" instead;
@@ -112,8 +112,8 @@ To Second Time Search (X - a container):
 				now the prevsearch of X is 3;
 			if the prevsearch of X is 4 and a random number between 1 and 5 is 1, HairBlondeDown 1;
 	otherwise:
-		if the prevsearch of X is 1, say "You have already searched that.  You found nothing.";
-		if the prevsearch of X is 2, say "You have already searched that.  You found a trap!".
+		if the prevsearch of X is 1, say "You have already searched that. You found nothing.";
+		if the prevsearch of X is 2, say "You have already searched that. You found a trap!".
 			
 Understand "investigate [something]", "inspect [something]" as searching.
 
@@ -140,3 +140,4 @@ Prevsearch means the following:
 
 
 Searching ends here.
+

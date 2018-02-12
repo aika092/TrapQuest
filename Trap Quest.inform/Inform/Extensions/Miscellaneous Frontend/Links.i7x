@@ -84,7 +84,7 @@ To say unique-verb-desc of (T - a container):
 REQUIRES COMMENTING
 
 +!]
-To say unique-verb-desc of (T - a pink wardrobe):
+To say unique-verb-desc of (T - pink wardrobe):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is closed] [link][bracket]op[close bracket][as]open [text-shortcut of T][end link][otherwise if the number of things in T > 1] [link][bracket]take all[close bracket][as]take all[end link][end if]".
 
 [!<SayUniqueVerbDescOfPedestal>+
@@ -204,7 +204,8 @@ REQUIRES COMMENTING
 To say unique-verb-desc of (T - a monster):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "" and hyperlink extras is 1:
 		if T is friendly and T is intelligent:
-			if the player is able to speak, say " [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
+			[if the player is able to speak, ]
+			say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
 		otherwise if the player is upright:
 			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
 		otherwise if T is uninterested:
@@ -217,7 +218,8 @@ REQUIRES COMMENTING
 +!]
 To say unique-verb-desc of (T - a fairy):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "" and hyperlink extras is 1:
-		if the player is able to speak, say " [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if the player is thirsty and T is interested] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
+		[if the player is able to speak, ]
+		say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if the player is thirsty and T is interested] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
 		if the player is upright, say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]".
 
 To say unique-verb-desc of (T - a vine boss):
@@ -382,6 +384,9 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - feeding bowls):
+	if inline hyperlinks >= 2, say " [link][bracket]eat[close bracket][as]eat [text-shortcut of T][end link]".
+
+To say unique-verb-desc of (T - food machine):
 	if inline hyperlinks >= 2, say " [link][bracket]eat[close bracket][as]eat [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfDungeonScenery06>+
@@ -583,11 +588,11 @@ To compute options:
 			now the noun is catalogued;
 		now Neighbour Finder is the location of the player;
 		say "[line break]";
-		if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][link]wait[end link] ";
+		if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][if the player is in School34][link]long wait[end link][otherwise][link]wait[end link][end if] ";
 		unless the player is immobile, say "[if west is N-viable][link]west[end link] [end if][if north is N-viable][link]north[end link] [end if][if south is N-viable][link]south[end link] [end if][if east is N-viable][link]east[end link] [end if][if the room up of the location is a room][link]up[end link] [end if][if the room down of the location is a room][link]down[end link] [end if]";
 		if the player is prone and there is a worn pink spraybottle and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
 		if the player is in Dungeon35 or the player is in Woods05:
-			if there is worn dirty clothing or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0), say "[link]wash in water[end link] ";
+			if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0), say "[link]wash in water[end link] ";
 		say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0][link]wank[end link] [end if][if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
 		if inline hyperlinks >= 3 and the player is not immobile:
 			say "[line break]";
@@ -687,3 +692,4 @@ The pull lever unique option rule is listed in the unique options rules.
 
 
 Links ends here.
+

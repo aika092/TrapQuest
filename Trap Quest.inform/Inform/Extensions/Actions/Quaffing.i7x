@@ -1,7 +1,7 @@
 Quaffing by Actions begins here.
 
 
-[Quaffing is the verb used to handle potions created via alchemy.  It is called automatically by the drinking verb when appropriate.]
+[Quaffing is the verb used to handle potions created via alchemy. It is called automatically by the drinking verb when appropriate.]
 Quaffing is an action applying to one thing.
 Check quaffing:
 	if the noun is salve, say "That cannot be drunk, try [bold type]rub[roman type]bing the [noun] on a body part instead." instead;
@@ -21,3 +21,4 @@ Carry out quaffing:
 
 
 Quaffing ends here.
+

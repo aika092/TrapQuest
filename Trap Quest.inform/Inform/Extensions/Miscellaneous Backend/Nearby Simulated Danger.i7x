@@ -95,30 +95,16 @@ Definition: a person (called P) is in near danger:
 	if P is in danger or there is a dangerous nearby monster, decide yes;
 	decide no.
 
-[!<AMonsterIsRegional>+
+[!<AThingIsRegional>+
 
-REQUIRES COMMENTING
-
-+!]
-Definition: a monster (called M) is regional:
-	if M is in the dungeon and the player is in the dungeon, decide yes;
-	if M is in the woods and the player is in the woods, decide yes;
-	if M is in the hotel and the player is in the hotel, decide yes;
-	if M is in the mansion and the player is in the mansion, decide yes;
-	decide no.
-
-[!<ARegionIsSimulated>+
-
-REQUIRES COMMENTING
+REMEMBER YOU FUCKWAD, WHEN STORING A REGION IN A VARIABLE AS OPPOSED TO EXPLICITLY NAMING IT YOU MUST USE THE "regionally in" CONDITION RATHER THAN JUST "in" OR EVERYTHING BREAKS AND YOU WASTE HOURS TRYING TO DEBUG WTF IS GOING ON
 
 +!]
-Definition: A region (called R) is simulated:
-	if R is dungeon, decide yes;
-	if R is woods and woods01 is discovered, decide yes;
-	if R is hotel and hotel01 is discovered, decide yes;
-	if R is mansion and mansion01 is discovered, decide yes;
+Definition: a thing (called T) is regional:
+	repeat with R running through regions:
+		if T is regionally in R and the player is regionally in R, decide yes;
 	decide no.
-
 
 
 Nearby Simulated Danger ends here.
+

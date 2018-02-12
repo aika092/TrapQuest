@@ -1,7 +1,7 @@
 Discombobulator Laser Trap by Traps begins here.
 
 
-A discombobulator laser trap is a kind of trap.  There are 20 potentially click potentially wire discombobulator laser traps.  The description of a discombobulator laser trap is "A futuristic looking laser ray gun pokes out from its hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if].".
+A discombobulator laser trap is a kind of trap. There are 20 potentially click potentially wire discombobulator laser traps. The description of a discombobulator laser trap is "A futuristic looking laser ray gun pokes out from its hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if].".
 
 This is the spawn initial dungeon laser traps rule:
 	repeat with N running from 1 to (4 + (unlucky * 2)):
@@ -45,3 +45,4 @@ To trigger (Y - a discombobulator laser trap):
 
 
 Discombobulator Laser Trap ends here.
+

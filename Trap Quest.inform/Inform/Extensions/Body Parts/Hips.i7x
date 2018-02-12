@@ -9,35 +9,35 @@ REQUIRES COMMENTING
 @inherits <Flesh>
 
 @!]
-hips is a flesh.  hips is everywhere.  The description of hips is "[TotalDesc of hips]".  Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips.
+hips is a flesh. hips is everywhere. The description of hips is "[TotalDesc of hips]". Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips.
 
 [!<Hips>@<thickness:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Hips has a number called thickness.  The thickness of hips is usually 1.
+Hips has a number called thickness. The thickness of hips is usually 1.
 
 [!<Hips>@<realThickness:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Hips has a number called real thickness.  The real thickness of hips is usually 1.
+Hips has a number called real thickness. The real thickness of hips is usually 1.
 
 [!<Hips>@<fleshVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Hips has a number called flesh volume.  The flesh volume of hips is usually 1.
+Hips has a number called flesh volume. The flesh volume of hips is usually 1.
 
 [!<Hips>@<airVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Hips has a number called air volume.  The air volume of hips is usually 0.
+Hips has a number called air volume. The air volume of hips is usually 0.
 
 [!<Hips>@<siliconeVolume:Integer>*
 
@@ -51,7 +51,7 @@ Hips has a number called silicone volume. The silicone volume of hips is usually
 REQUIRES COMMENTING
 
 *@!]
-Hips has a number called previous thickness.  Hips has a number called previous total volume.
+Hips has a number called previous thickness. Hips has a number called previous total volume.
 
 [!<Hips>@<fatBurning:Integer>*
 
@@ -59,6 +59,53 @@ REQUIRES COMMENTING
 
 *@!]
 Hips has a number called fat-burning.
+
+
+[!<DecideWhichNumberIsMaxAssSizeModifier>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is max ass size modifier:
+	let M be max ass size points;
+	if max ass size points > 0, increase M by 1;
+	if max ass size points > 1, increase M by 1;
+	if max ass size points > 2, increase M by 1;
+	decide on M;
+
+[!<DecideWhichNumberIsMaxAssSize>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is max ass size:
+	if there is a restricting salve covering hips, decide on the thickness of hips;
+	if extreme proportions fetish is 1, decide on 20 - max ass size modifier;
+	otherwise decide on 10 - max ass size modifier.
+
+[!<SayMaxAssSizeDesc>+
+
+REQUIRES COMMENTING
+
++!]
+To say MaxAssSizeDesc:
+	if extreme proportions fetish is 1:
+		if max ass size is 11, say "humongous";
+		if max ass size is 12, say "Kardashian sized";
+		if max ass size is 13, say "giant wobbling";
+		if max ass size is 14, say "watermelon sized";
+		if max ass size is 16, say "beachball sized";
+		if max ass size is 18, say "comically inflated";
+		if max ass size is 20, say "impossibly giant";
+	otherwise:
+		if max ass size is 1, say "completely flat";
+		if max ass size is 2, say "flat";
+		if max ass size is 3, say "tight";
+		if max ass size is 4, say "toned";
+		if max ass size is 6, say "curvy";
+		if max ass size is 8, say "cushioned";
+		if max ass size is 10, say "oversized".
+
 
 [!<YourselfIsBottomHeavy>+
 
@@ -70,6 +117,9 @@ Definition: yourself is bottom heavy:
 	if extreme proportions fetish is 1, now Z is 20;
 	if the thickness of hips < 10 - max ass size modifier or the flesh volume of hips < Z - max ass size modifier, decide no;
 	decide yes.
+
+To decide which number is min ass size:
+	decide on 1 + (starting body shape * 2).
 
 [!<ReportTaking>+
 
@@ -117,6 +167,8 @@ To decide which number is the weight of (XXX - hips):
 		if S is cursed, increase H by 4;
 		if S is bland and H > 3, decrease H by 3;
 		if S is blessed and H > 3, decrease H by 6;
+	if there is a worn abyssal tattoo and the class of the player is silicone queen:
+		decrease H by the silicone volume of hips / 4; [Ass implants weigh less for the silicone queen if they've got the abyssal tattoo bonus]
 	if H > 1, now H is H / 2;
 	if the latex-transformation of the player > 1 and H > 6, now H is 6;
 	if the latex-transformation of the player > 5 and  H > 0, now H is 0;
@@ -153,9 +205,9 @@ To say TotalDesc of hips:
 	if there is worn knickers:
 		compute SelfExamineDesc of a random worn knickers;
 	otherwise if the thickness of hips > 3 and the total volume of hips > 4:
-		say "Your [if the bimbo of the player > 6]alluring [end if][ShortDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if].  ";
+		say "Your [if the bimbo of the player > 6]alluring [end if][ShortDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if]. ";
 	otherwise:
-		say "You have [ShortDesc of hips].  [if the thickness of hips > 6 + the flesh volume of thighs]You have a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together.  [end if]";
+		say "You have [ShortDesc of hips]. [if the thickness of hips > 6 + the flesh volume of thighs]You have a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together. [end if]";
 	say "[AssFillDesc][AssImplantsDesc][HipWeight]".
 
 [!<SayAssDesc>+
@@ -225,11 +277,11 @@ REQUIRES COMMENTING
 +!]
 To say HipWeight:
 	if the weight of hips < -3:
-		say "Your butt weighs significantly less than air and is trying to pull you up off the ground.  ";
+		say "Your butt weighs significantly less than air and is trying to pull you up off the ground. ";
 	otherwise if the weight of hips < 3:
 		say "Your butt is essentially weightless. ";
 	otherwise if the weight of hips < 7:
-		say "Your butt is a bit heavy.  ";
+		say "Your butt is a bit heavy. ";
 	otherwise if the weight of hips < 11:
 		say "Your butt is weighing you down a lot. ";
 	otherwise if the weight of hips < 15:
@@ -248,13 +300,13 @@ To say AssFillDesc:
 	if the air volume of hips is 0:
 		say "";
 	otherwise if the total volume of hips > the air volume of hips * 2:
-		say "It is slightly inflated with air.  ";
+		say "It is slightly inflated with air. ";
 	otherwise if the total volume of hips > the air volume of hips:
-		say "It is inflated with a decent amount of air.  ";
+		say "It is inflated with a decent amount of air. ";
 	otherwise if the total volume of hips is the air volume of hips or the total volume of hips > the air volume of hips / 2:
-		say "It is ballooned with a huge amount of air.  ";
+		say "It is ballooned with a huge amount of air. ";
 	otherwise:
-		say "It is ballooned with a massive amount of air.  ".
+		say "It is ballooned with a massive amount of air. ".
 
 [!<SayAssImplantsDesc>+
 
@@ -341,7 +393,7 @@ To HipDown (X - a number):
 				now X is 0;
 			otherwise:
 				decrease X by 1;
-				if the thickness of hips > 0, decrease the thickness of hips by 1;
+				if the thickness of hips > min ass size, decrease the thickness of hips by 1;
 	if weight gain fetish is 0, now the flesh volume of hips is the thickness of hips. [The two values are mirrored when we're not tracking fatness separately]
 
 Chapter 2 - Buttocks
@@ -371,6 +423,7 @@ REQUIRES COMMENTING
 +!]
 To AssInflate (X - a number):
 	if the number of worn research airhancers > 0, increase X by 1;
+	now X is X * 2;
 	while X > 0 and inflation fetish is 1:
 		decrease X by 1;
 		if total volume of hips < max ass size:
@@ -418,7 +471,7 @@ REQUIRES COMMENTING
 To FatAssUp (X - a number):
 	if weight gain fetish is 1:
 		AssSwell X;
-		if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][item style]Newbie tip: You're starting to pack on the pounds in the butt area!  That's making you heavier and therefore you'll tire out faster.  However, it is fully reversible!  Every turn you 'resist' during sex will exercise your butt muscles a bit, and help you lose that fat.  Also, picking items up off the ground when standing exercises that butt slowly but surely.  It also increases fatigue, though.[roman type][line break][or][stopping]".
+		if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][item style]Newbie tip: You're starting to pack on the pounds in the butt area!  That's making you heavier and therefore you'll tire out faster. However, it is fully reversible!  Every turn you 'resist' during sex will exercise your butt muscles a bit, and help you lose that fat. Also, picking items up off the ground when standing exercises that butt slowly but surely. It also increases fatigue, though.[roman type][line break][or][stopping]".
 
 [!<FatAssDownX>+
 
@@ -431,3 +484,4 @@ To FatAssDown (X - a number):
 		decrease X by 1.
 
 Hips ends here.
+

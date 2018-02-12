@@ -26,7 +26,7 @@ Carry out TQeating candy:
 	now seconds is 6.
 
 To say DevourFlav of (C - a candy):
-	say "You unwrap the [C] and [if the player is in danger]devour it as quickly as you can[otherwise if the fat-weight of the player > 28]greedily stuff the entire thing into your mouth, immediately swallowing it whole[otherwise if the fat-weight of the player > 12]speedily devour the sweet[otherwise]consume the sweet slowly, savouring the taste[end if].  ".
+	say "You unwrap the [C] and [if the player is in danger]devour it as quickly as you can[otherwise if the fat-weight of the player > 28]greedily stuff the entire thing into your mouth, immediately swallowing it whole[otherwise if the fat-weight of the player > 12]speedily devour the sweet[otherwise]consume the sweet slowly, savouring the taste[end if]. ".
 	
 To restock (C - a candy):
 	let B be a random off-stage candy;
@@ -44,3 +44,4 @@ To decide which number is default-candy-duration:
 
 
 Candy ends here.
+

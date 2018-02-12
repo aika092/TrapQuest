@@ -31,8 +31,8 @@ Carry out squirting:
 		otherwise:
 			say "The [fill-colour of the noun] liquid is forced into your [vagina] but quickly flows out onto the ground.";
 	otherwise if the noun is penetrating asshole:
-		if the humiliation of the player < 35000, say "[one of]The humiliation hits you even before you've done the act, and your hand shakes as you move it to the bulb of the dildo.[or][stopping]";
-		humiliate 200;
+		if the humiliation of the player < HUMILIATION-SHAMELESS - 3000, say "[one of]The humiliation hits you even before you've done the act, and your hand shakes as you move it to the bulb of the dildo.[or][stopping]";
+		humiliate SEVERE-HUMILIATION + MODERATE-HUMILIATION;
 		if the fill-colour of the noun is creamy:
 			say "You give yourself an artificial anal creampie as the [semen] flows up your [asshole].";
 			AssFill 2;
@@ -48,9 +48,9 @@ Carry out squirting:
 			if watersports mechanics is 1, AssFill 1 Urine;
 			if lactation fetish is 1, AssFill 1 Milk;
 		otherwise:
-			say "You give yourself a small enema of the [PotionType of the noun], and you feel your insides quickly absorbing the liquid into your bloodstream.  ";
+			say "You give yourself a small enema of the [PotionType of the noun], and you feel your insides quickly absorbing the liquid into your bloodstream. ";
 			if the fill-type of the noun >= lowest-cursed:
-				say "[if the fill-type of the noun is not remembered]The liquid must have been cursed, as you[otherwise]You[end if] feel a rush of dizziness which even as it passes leaves a lingering effect.  It feels slightly more difficult to concentrate.";
+				say "[if the fill-type of the noun is not remembered]The liquid must have been cursed, as you[otherwise]You[end if] feel a rush of dizziness which even as it passes leaves a lingering effect. It feels slightly more difficult to concentrate.";
 				SexAddictUp 1;
 				SemenAddictUp 1;
 				if the fill-type of the noun is not remembered, say "You now feel confident that this colour represents a cursed drink!";
@@ -83,7 +83,7 @@ Carry out squirting:
 				otherwise:
 					say "You don't notice anything change.";
 			otherwise if the fill-type of the noun is 5:
-				say "You start to feel proud of yourself but then the feeling fades.  It's difficult to gain self esteem whilst you have a dildo stuck up your [asshole].";
+				say "You start to feel proud of yourself but then the feeling fades. It's difficult to gain self esteem whilst you have a dildo stuck up your [asshole].";
 			otherwise if the fill-type of the noun is 6:
 				say "Your [asshole][if the player is female], [vagina][end if] and body are fully healed!";
 				now the soreness of asshole is 0;
@@ -104,3 +104,4 @@ Understand "squirt [something]", "squeeze [something]" as squirting.
 
 
 Squirting ends here.
+

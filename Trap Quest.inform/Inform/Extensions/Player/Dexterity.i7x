@@ -85,7 +85,8 @@ To decide which number is the flat dexterity of the player:
 	if life-elixir-timer > 0, increase D by 10;
 	if acceleration-tincture-timer > 0:
 		increase D by acceleration-tincture-bonus;
-	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 8;
+	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 6;
+	if the the boost-cooldown of nurse > 0, increase D by 2;
 	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
 		increase D by 1;
 		if the silicone volume of breasts > 18, increase D by 3;
@@ -113,7 +114,7 @@ Part 2 - Modify Dexterity
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw dexterity.  The raw dexterity of the player is usually 7. [Min 1 Max 30]
+The player has a number called raw dexterity. The raw dexterity of the player is usually 7. [Min 1 Max 30]
 
 
 [!<Player>@<oldDexterity:Integer>*
@@ -121,7 +122,7 @@ The player has a number called raw dexterity.  The raw dexterity of the player i
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called old dexterity.  The old dexterity of the player is usually 0.
+The player has a number called old dexterity. The old dexterity of the player is usually 0.
 
 [!<DexUpX>+
 
@@ -145,3 +146,4 @@ To Dexdown (X - a number):
 
 
 Dexterity ends here.
+

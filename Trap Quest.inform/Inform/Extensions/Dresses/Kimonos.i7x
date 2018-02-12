@@ -1,6 +1,6 @@
 Kimonos by Dresses begins here.
 
-A kimono is a kind of overdress. A kimono is usually unique. A kimono is usually hobble-skirted. An kimono is usually crotch-skirted.  The armour of kimono is usually 6.    A kimono is usually leg covering. A kimono is usually belly covering. A kimono is usually only arm covering. A kimono is usually fully covering.  A kimono is usually silk.
+A kimono is a kind of overdress. A kimono is usually unique. A kimono is usually hobble-skirted. An kimono is usually crotch-skirted. The armour of kimono is usually 6. A kimono is usually leg covering. A kimono is usually belly covering. A kimono is usually only arm covering. A kimono is usually fully covering. A kimono is usually silk.
 
 Definition: a kimono (called C) is untransformable:
 	if the class of the player is vixen, decide yes;
@@ -26,3 +26,4 @@ To compute SelfExamineDesc of (C - an illusory kimono):
 
 
 Kimonos ends here.
+

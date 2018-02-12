@@ -1,6 +1,6 @@
 Knickers Framework by Knickers begins here.
 
-Knickers is a kind of clothing.  Knickers is usually crotch-intact. The soak-limit of knickers is usually 12.
+Knickers is a kind of clothing. Knickers is usually crotch-intact. The soak-limit of knickers is usually 12.
 
 Definition: a knickers (called B) is ingredient:
 	if B is product, decide no;
@@ -45,7 +45,7 @@ To say selfexamineuniquetitle of (K - a knickers):
 
 Report examining knickers:
 	if newbie tips is 1:
-		if the noun is diaper, say "Diapers [if the number of worn diapers is 0]would [end if]help prevent against clothing stain and humiliation penalties from the act of urination.  [if the player is urine averse]Also when any worn item of clothing becomes fully soaked, your dexterity will be severely limited, and diapers hold a lot more urine before anything else before they become fully saturated.[otherwise if the incontinence of the player >= 5]Also you are incontinent, and so wearing diapers is the only way to reliably prevent against losing turns every now and then as you involuntarily wet yourself.[otherwise]You can use diapers as a mobile toilet; not that you really care about the smell of urine any more.[end if]";
+		if the noun is diaper, say "Diapers [if the number of worn diapers is 0]would [end if]help prevent against clothing stain and humiliation penalties from the act of urination. [if the player is urine averse]Also when any worn item of clothing becomes fully soaked, your dexterity will be severely limited, and diapers hold a lot more urine before anything else before they become fully saturated.[otherwise if the incontinence of the player >= 5]Also you are incontinent, and so wearing diapers is the only way to reliably prevent against losing turns every now and then as you involuntarily wet yourself.[otherwise]You can use diapers as a mobile toilet; not that you really care about the smell of urine any more.[end if]";
 		say "Underwear [if the noun is diaper]in general [end if][if the noun is no protection](but not this one!) [end if][if the number of worn knickers is 0]would provide[otherwise]provides[end if] a line of defence against things accessing your [fuckholes].".
 
 To decide which number is the initial outrage of (K - a knickers):
@@ -89,11 +89,11 @@ The remove inappropriate knickers rule is listed in the diaper quest fix rules.
 Definition: a knickers (called C) is leghole free:
 	decide no.
 
-The DQFigure of knickers is usually DQWhitePants.  
+The DQFigure of knickers is usually DQWhitePants. 
 
 Part - Wearability
 
-knickers wearability rules is a rulebook.  The wearability rules of knickers is usually knickers wearability rules.
+knickers wearability rules is a rulebook. The wearability rules of knickers is usually knickers wearability rules.
 
 This is the knickers already worn rule:
 	repeat with O running through worn knickers:
@@ -129,22 +129,22 @@ This is the hobble skirt knickers top level clash rule:
 			rule fails.
 The hobble skirt knickers top level clash rule is listed in the knickers wearability rules.
 
-knickers removability rules is a rulebook.  The removability rules of knickers is usually knickers removability rules.
+knickers removability rules is a rulebook. The removability rules of knickers is usually knickers removability rules.
 
 Report wearing knickers:
 	if the noun is plug panties:
 		if the player is male or the noun is pump plug panties:
-			say "[if the bimbo of the player < 7][first custom style]I can't believe I'm doing this...  [roman type][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plug into your [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
+			say "[if the bimbo of the player < 7][line break][first custom style]I can't believe I'm doing this... [roman type][line break][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plug into your [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
 		otherwise:
-			say "[if the bimbo of the player < 7][first custom style]I can't believe I'm doing this...  [roman type][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plugs into your [if the soreness of vagina > 4]open [otherwise]tight [end if][vagina] and [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
+			say "[if the bimbo of the player < 7][line break][first custom style]I can't believe I'm doing this... [roman type][line break][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plugs into your [if the soreness of vagina > 4]open [otherwise]tight [end if][vagina] and [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
 			now the noun is penetrating vagina;
 			ruin vagina;
 		now the noun is penetrating asshole;
 		ruin asshole;
 		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is female]ass [end if] plug starts vibrating!  That can't be good...";
 	otherwise if the noun is unsure and the noun is cursed:
-		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off.  This diaper is cursed!";
-		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][end if] conform to the contours of your [HipDesc] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable!  [end if]These panties are cursed!"; [Crowdsourced from Anya Snowdrifter]
+		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
+		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][line break][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][line break][end if] conform to the contours of your [HipDesc] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable!  [end if]These panties are cursed!"; [Crowdsourced from Anya Snowdrifter]
 
 
 Check taking off worn knickers:
@@ -161,3 +161,4 @@ Check taking off worn knickers:
 			do nothing instead.
 
 Knickers Framework ends here.
+

@@ -39,7 +39,7 @@ To reset entire catalogue:
 REQUIRES COMMENTING
 
 *!]
-ItemListing is an action applying to nothing.  Understand "items", "list items", "list inventory" as ItemListing.
+ItemListing is an action applying to nothing. Understand "items", "list items", "list inventory" as ItemListing.
 inventory-busy is a number that varies.
 
 [!<CarryOutItemListing>+
@@ -108,7 +108,7 @@ Carry Out ItemListing:
 	now inventory-busy is 0;
 	now disambiguation-busy is false.
 
-ClothingListing is an action applying to nothing.  Understand "clothing", "list clothing", "clothes", "list clothes", "c" as ClothingListing.
+ClothingListing is an action applying to nothing. Understand "clothing", "list clothing", "clothes", "list clothes", "c" as ClothingListing.
 
 [!<CarryOutClothingListing>+
 
@@ -132,7 +132,7 @@ Carry Out ClothingListing:
 	now inventory-busy is 0;
 	now disambiguation-busy is false.
 
-JewelleryListing is an action applying to nothing.  Understand "accessories", "list accessories", "jewels", "list jewels", "jewellery", "list jewellery", "j" as JewelleryListing.
+JewelleryListing is an action applying to nothing. Understand "accessories", "list accessories", "jewels", "list jewels", "jewellery", "list jewellery", "j" as JewelleryListing.
 
 [!<CarryOutJewelleryListing>+
 
@@ -156,7 +156,7 @@ Carry Out JewelleryListing:
 	now inventory-busy is 0;
 	now disambiguation-busy is false.
 
-FoodListing is an action applying to nothing.  Understand "edibles", "list edibles", "food", "list food", "drinks", "list drinks", "list cans", "vessels", "list vessels", "f" as FoodListing.
+FoodListing is an action applying to nothing. Understand "edibles", "list edibles", "food", "list food", "drinks", "list drinks", "list cans", "vessels", "list vessels", "f" as FoodListing.
 
 [!<CarryOutFoodListing>+
 
@@ -194,3 +194,4 @@ To say ShortDesc of (L - a list of things):
 
 
 Taking Inventory ends here.
+

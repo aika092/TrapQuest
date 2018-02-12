@@ -1,6 +1,6 @@
 True Love Tattoo by Tattoos begins here.
 
-true love tattoo is a kind of chest tattoo.  Figure of true love tattoo is the file "tattoo38.png".  There is 1 true love tattoo.
+true love tattoo is a kind of chest tattoo. Figure of true love tattoo is the file "tattoo38.png". There is 1 true love tattoo.
 Definition: a true love tattoo (called T) is drawable:
 	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;
@@ -12,6 +12,7 @@ Definition: a true love tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - a true love tattoo):
 	if images visible is 1, display figure of true love tattoo;
-	say "The words 'True Love' is tattooed in large letters above your [BreastDesc], on top of a heart.  Either side, there is an angelic cloud with a halo.  You can feel it making your [ShortDesc of breasts] more sensitive.".
+	say "The words 'True Love' is tattooed in large letters above your [BreastDesc], on top of a heart. Either side, there is an angelic cloud with a halo. You can feel it making your [ShortDesc of breasts] more sensitive.".
 
 True Love Tattoo ends here.
+

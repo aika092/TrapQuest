@@ -13,18 +13,18 @@ REQUIRES COMMENTING
 
 +!]
 Check begging:
-	if the mercyskill of the player is 0 and the class of the player is not cheerleader and the player is not a sissy, say "You don't know this ability.  Try [bold type]submit[roman type]ting for now." instead;
+	if the mercyskill of the player is 0 and the class of the player is not cheerleader and the player is not a sissy, say "You don't know this ability. Try [bold type]submit[roman type]ting for now." instead;
 	if the player is not monster fucked and the number of monsters grabbing the player is 0:
 		if there is a live thing penetrating a body part, try submitting instead;
 		say "You are not being fucked, so there is nobody to beg to!" instead;
 	if the player is friendly fucked, say "You don't need to beg for mercy, this is consensual sex!" instead;
 	if the player is gagged:
 		now seconds is 6;
-		say "You try to beg for mercy, but all that comes out around your [printed name of random ballgag worn by the player] is [variable custom style]'Mm mm mmm mmmmph!'[roman type][line break]";
+		say "You try to beg for mercy, but all that comes out around your [ShortDesc of random thing filling face] is [line break][variable custom style]'Mm mm mmm mmmmph!'[roman type][line break]";
 		now the the player-reaction of the player is submitting instead;
 	if there is a live thing penetrating face:
 		now seconds is 6;
-		say "[one of]How are you going to beg? Your mouth is full![or][if a random live thing penetrating face is a male intelligent monster][variable custom style]'GGHGPHMMN!'[roman type] He probably didn't understand that.[otherwise]You can't beg now, your mouth is full, silly![end if][in random order]" instead;
+		say "[one of]How are you going to beg? Your mouth is full![or][if a random live thing penetrating face is a male intelligent monster][line break][variable custom style]'GGHGPHMMN!'[roman type][line break] He probably didn't understand that.[otherwise]You can't beg now, your mouth is full, silly![end if][in random order]" instead;
 	if the player is not able to speak, say "You can't speak right now!" instead.
 
 [!<CarryOutBegging>+
@@ -63,3 +63,4 @@ To say MercyReaction of (M - a monster):
 
 
 Begging for Mercy ends here.
+

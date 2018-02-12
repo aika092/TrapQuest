@@ -230,7 +230,7 @@ Definition: a clothing (called C) is bottom level ass protection:
 
 [!<ThingIsPlugged>+
 
-Here we check if the player is wearing an UNCURSED insertable.  This is something that several monsters may want to just remove in order to use you.
+Here we check if the player is wearing an UNCURSED insertable. This is something that several monsters may want to just remove in order to use you.
 
 +!]
 Definition: a thing (called T) is plugged:
@@ -245,7 +245,7 @@ Definition: a thing (called T) is plugged:
 
 [!<ThingIsCursedPlugged>+
 
-Here we check if the player is wearing a CURSED insertable.  A few monsters may have the power to remove this, use the orifice, and then replace it.  The code should try and make sure that the object is always replaced.
+Here we check if the player is wearing a CURSED insertable. A few monsters may have the power to remove this, use the orifice, and then replace it. The code should try and make sure that the object is always replaced.
 
 +!]
 Definition: a thing (called T) is cursed plugged:
@@ -258,7 +258,7 @@ Definition: a thing (called T) is cursed plugged:
 			if P is cursed, decide yes;
 	decide no.
 	
-[Sometimes we want to check if the player has things in all their holes.  It may be just a case of waiting, or removing an object.  We do that here.]
+[Sometimes we want to check if the player has things in all their holes. It may be just a case of waiting, or removing an object. We do that here.]
 [!<YourselfIsFullyOccupied>+
 
 REQUIRES COMMENTING
@@ -311,3 +311,4 @@ To decide what number is the vaginal defence of the player:
 
 
 Orifice Protection ends here.
+

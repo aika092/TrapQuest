@@ -1,6 +1,6 @@
 Supertall Platform Heels by Shoes begins here.
 
-A tall platform heels is a kind of platform heels.  A tall platform heels is usually pvc.  A tall platform heels is rare.
+A tall platform heels is a kind of platform heels. A tall platform heels is usually pvc. A tall platform heels is rare.
 
 There are 2 tall platform heels.
 
@@ -28,11 +28,11 @@ To uniquely set up (C - a tall platform heels):
 	otherwise now the heel-height of C is 10.
 
 Definition: a tall platform heels (called C) is end of transformation chain:
-	decide yes. [It's the end of the transformation chain.  This will make some things avoid bothering to attempt to transform it.]
+	decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
 
 To say TransformReaction of (C - a tall platform heels):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]What the fuck are these?!  They are ludicrous.  [if the hindrance of C > 2]There's no way I can walk in them without falling over.[otherwise]And a challenge to walk in...[end if][roman type][line break]";
+		say "[variable custom style]What the fuck are these?!  They are ludicrous. [if the hindrance of C > 2]There's no way I can walk in them without falling over.[otherwise]And a challenge to walk in...[end if][roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]I actually quite how quirky these are, and they make me feel really tall!  [if the hindrance of C > 2]I'm not sure how I'm to walk around in them without falling over though.[otherwise]I hope I don't fall over too much, though![end if][roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
@@ -40,3 +40,4 @@ To say TransformReaction of (C - a tall platform heels):
 
 
 Supertall Platform Heels ends here.
+

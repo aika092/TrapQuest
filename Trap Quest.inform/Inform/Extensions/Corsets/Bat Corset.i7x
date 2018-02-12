@@ -1,11 +1,11 @@
 Bat Corset by Corsets begins here.
 
-A bat corset is a kind of corset.  A bat corset is usually leather.  A bat corset is rare.  A bat corset is usually nipple covering.  There is 1 bat corset.  A bat corset is usually average cut.
+A bat corset is a kind of corset. A bat corset is usually leather. A bat corset is rare. A bat corset is usually nipple covering. There is 1 bat corset. A bat corset is usually average cut.
 
 Definition: a bat corset (called C) is fluid immune:
 	decide yes.
 
-The printed name of bat corset is usually "[TQlink of item described][clothing-title-before]bat corset[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of bat corset is "bco".
+The printed name of bat corset is usually "[TQlink of item described][clothing-title-before]bat corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bat corset is "bco".
 
 Figure of Bat Corset is the file "batcorset1.png".
 
@@ -13,7 +13,7 @@ To decide which figure-name is clothing-image of (C - a bat corset):
 	decide on figure of bat corset.
 
 To say ClothingDesc of (C - a bat corset):
-	say "A stylish black overbust corset in the shape of a bat.  You can feel powerful magic flowing from it.".
+	say "A stylish black overbust corset in the shape of a bat. You can feel powerful magic flowing from it.".
 
 To decide which number is the dexterity-influence of (C - a bat corset):
 	let D be 1;
@@ -43,3 +43,4 @@ To say ShortDesc of (C - a bat corset):
 	say "bat corset".
 
 Bat Corset ends here.
+

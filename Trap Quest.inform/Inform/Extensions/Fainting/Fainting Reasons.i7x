@@ -6,7 +6,7 @@ Fainting Reasons by Fainting begins here.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called fainting reason.  The fainting reason of the player is usually 0.
+The player has a number called fainting reason. The fainting reason of the player is usually 0.
 
 [!<Leftover>@
 
@@ -146,3 +146,4 @@ To say LeftoverDesc (N - 100):
 
 
 Fainting Reasons ends here.
+

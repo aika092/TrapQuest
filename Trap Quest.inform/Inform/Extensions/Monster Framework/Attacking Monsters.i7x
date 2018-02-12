@@ -7,7 +7,7 @@ The block attacking rule is not listed in the check attacking rulebook.
 REQUIRES COMMENTING
 
 *!]
-attack-type is a number that varies.  attack-type is usually 0.
+attack-type is a number that varies. attack-type is usually 0.
 [
 0 - Start of game
 1 - Slap
@@ -29,21 +29,21 @@ autoattack is a number that varies.
 REQUIRES COMMENTING
 
 *!]
-autoslap is a number that varies.  autoslap is 1.
+autoslap is a number that varies. autoslap is 1.
 
 [!<autoknee:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-autoknee is a number that varies.  autoknee is 1.
+autoknee is a number that varies. autoknee is 1.
 
 [!<autokick:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-autokick is a number that varies.  autokick is 1.
+autokick is a number that varies. autokick is 1.
 
 [!<abilityToSlapRules:Rulebook>*
 
@@ -69,7 +69,7 @@ The ability to kick rules is a rulebook.
 [!<YourselfIsAbleToSlap>+
 
 This definition performs two checks:
-The first check only runs if the player is trying to slap automatically, and returns a value based on the value of "autoslap".  This is so that we only calculate whether the player can automatically slap a maximum of once per turn.
+The first check only runs if the player is trying to slap automatically, and returns a value based on the value of "autoslap". This is so that we only calculate whether the player can automatically slap a maximum of once per turn.
 The second check goes through each of the rules in the ability to slap rulebook, and sets autoslap to -1 if any of those rules failed. Otherwise, sets autoslap to -1.
 
 @return <Boolean> returns true if autoslap is 1, otherwise returns false
@@ -92,7 +92,7 @@ Definition: yourself is able to slap:
 [!<YourselfIsAbleToKnee>+
 
 This definition performs two checks:
-The first check only runs if the player is trying to knee automatically, and returns a value based on the value of "autoknee".  This is so that we only calculate whether the player can automatically knee a maximum of once per turn.
+The first check only runs if the player is trying to knee automatically, and returns a value based on the value of "autoknee". This is so that we only calculate whether the player can automatically knee a maximum of once per turn.
 The second check goes through each of the rules in the ability to knee rulebook, and sets autoknee to -1 if any of those rules failed. Otherwise, sets autoknee to -1.
 
 @return <Boolean> returns true if autoknee is 1, otherwise returns false
@@ -115,7 +115,7 @@ Definition: yourself is able to knee:
 [!<YourselfIsAbleToKnee>+
 
 This definition performs two checks:
-The first check only runs if the player is trying to kick automatically, and returns a value based on the value of "autokick".   This is so that we only calculate whether the player can automatically kick a maximum of once per turn.
+The first check only runs if the player is trying to kick automatically, and returns a value based on the value of "autokick". This is so that we only calculate whether the player can automatically kick a maximum of once per turn.
 The second check goes through each of the rules in the ability to kick rulebook, and sets autokick to -1 if any of those rules failed. Otherwise, sets autokick to -1.
 
 @return <Boolean> returns true if autokick is 1, otherwise returns false
@@ -286,7 +286,7 @@ This rule causes a kick to fail if the player is wearing a knee-length or hobble
 +!]
 This is the player can't kick with knees rule:
 	repeat with C running through worn knee-length or longer clothing:
-		if [C is hobble-skirted and ]C is crotch-in-place:
+		if [C is hobble-skirted and ]C is crotch-in-place and C is not slitted:
 			if autoattack is 0:
 				say "You can't raise your knee like that whilst sporting a long skirt!";
 				now focused-thing is C;
@@ -380,7 +380,7 @@ REQUIRES COMMENTING
 +!]
 To compute surrender to (M - a monster):
 	let N be a random intelligent dangerous monster in the location of the player;
-	say "You consider attacking the [M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you.  You find yourself dropping to your knees.  [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
+	say "You consider attacking the [M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
 	now surrendered is 1;
 	try kneeling.
 
@@ -392,7 +392,7 @@ REQUIRES COMMENTING
 To say SurrenderFlav of (M - a monster):
 	if M is intelligent:
 		if the player is able to speak:
-			if the humiliation of the player >= 40000, say "[variable custom style]'[one of]Please use my body to your heart's desire.'[or]I understand my place.'[or]I am yours to use.  Please do not show me any mercy.'[in random order][roman type][line break]";
+			if the humiliation of the player >= 40000, say "[variable custom style]'[one of]Please use my body to your heart's desire.'[or]I understand my place.'[or]I am yours to use. Please do not show me any mercy.'[in random order][roman type][line break]";
 			otherwise say "[variable custom style]'[one of]Do what you want with me, just please don't be rough!'[or]I'll do whatever you say, just please don't hurt me!'[or]You're the boss... just please be kind to me!'[or]I'm delicate, please don't break me!'[or]I'm just a poor weakling, please show me mercy!'[in random order][roman type][line break]";
 	if the player is able to use their hands, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if the [M] even understands your actions[end if].".
 
@@ -413,7 +413,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is combat scaling:
-	decide on 8. [This number allows for easy balance changes to damage.  The higher this number is, the less of an impact strength will have on damage.]
+	decide on 6. [This number allows for easy balance changes to damage. The higher this number is, the less of an impact strength will have on damage.]
 
 [!<combatBonusRemainder:Integer>*
 
@@ -422,7 +422,7 @@ REQUIRES COMMENTING
 *!]
 combat bonus remainder is a number that varies.
 
-[Once per turn, we decide what the player's next attack strength will be.  This is done so that estimation of average damage in the verb above is consistent.]
+[Once per turn, we decide what the player's next attack strength will be. This is done so that estimation of average damage in the verb above is consistent.]
 [!<TheCombatBonusRule>+
 
 REQUIRES COMMENTING
@@ -480,7 +480,7 @@ To compute damage of (M - a monster):
 		now the boredom of M is 0;
 	otherwise:
 		say "The [noun] drops slowly to the ground defeated, and disappears."; 
-		loot the noun.
+		compute death of the noun.
 
 [!<SayDamageReactionOfMonster>+
 
@@ -510,20 +510,20 @@ To say damage-flavour of (N - a number) on (M - a monster):
 	otherwise if N < 3:
 		say "That felt quite weak, but hopefully it hurt a bit.";
 	otherwise if N < 6:
-		say "The [M] definitely felt that.  A respectable hit!";
+		say "The [M] definitely felt that. A respectable hit!";
 	otherwise if N < 9:
-		say "The [M] visibly recoils from the hit.  A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
+		say "The [M] visibly recoils from the hit. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
 	otherwise if N < 13:
-		say "Wow, you felt that connect with incredible force.  A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
+		say "Wow, you felt that connect with incredible force. A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 	otherwise:
-		say "POW!  Your attack is accompanied by a loud sound.  An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
+		say "POW!  Your attack is accompanied by a loud sound. An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 
 [!<critical:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Critical is a number that varies.  Critical is 0. [Flag whether the attack counts as a critical]
+Critical is a number that varies. Critical is 0. [Flag whether the attack counts as a critical]
 
 [!<attackDamage:Integer>*
 
@@ -557,7 +557,7 @@ To damage (A - a number) on (M - a monster):
 	if the health of M > 0:
 		say "[Damage-flavour of attack-damage on M]";
 	otherwise:
-		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster.  Not relevant to the other clause but putting it here because why not.]
+		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster. Not relevant to the other clause but putting it here because why not.]
 	if debugmode is 1, say "After final monster and clothing specific changes, player deals [attack-damage] damage, [M] has [the health of M] HP left.";
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
 	anger M;
@@ -590,3 +590,4 @@ To damage (A - a number) on (M - a monster):
 
 
 Attacking Monsters ends here.
+

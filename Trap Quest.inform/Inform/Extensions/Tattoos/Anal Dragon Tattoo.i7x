@@ -1,6 +1,6 @@
 Anal Dragon Tattoo by Tattoos begins here.
 
-anal dragon tattoo is a kind of asshole tattoo. Figure of anal dragon tattoo is the file "tattoo7.png".  There is 1 anal dragon tattoo.
+anal dragon tattoo is a kind of asshole tattoo. Figure of anal dragon tattoo is the file "tattoo7.png". There is 1 anal dragon tattoo.
 Definition: an anal dragon tattoo (called T) is eligible:	
 	if the noun is sex toy or the noun is ass plugging clothing or the noun is egg, decide yes;
 	decide no.
@@ -11,3 +11,4 @@ To decide which number is the anal sensitivity influence of (C - an anal dragon 
 	decide on 2.
 
 Anal Dragon Tattoo ends here.
+

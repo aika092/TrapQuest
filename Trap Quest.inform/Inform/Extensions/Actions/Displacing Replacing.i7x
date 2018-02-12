@@ -7,6 +7,7 @@ Displacing is an action applying to one thing.
 Check displacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
+	if the noun is glued, say "It's glued in place!" instead;
 	if the noun is not displacable and the noun is not not-top-displacable, try topDisplacing the noun instead;[if it can't cover the crotch, or it's pulled aside, this allows the top displacing verb to be used instead. Note that there is a bug where sheer knee-length and hobble-skirted skirts cannot be displaced]
 	if the noun is crotch-displaced, try replacing the noun instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
@@ -24,7 +25,7 @@ Carry out displacing:
 	displace the noun.
 
 To say DisplaceFlav of (C - a clothing):
-	if C is hobble-skirted, say "You hike [unless C is skirt]the skirt of [end if]your [C] up so that it bunches at the top of your thighs, exposing your crotch.  The tight bunching of the material means that your movement is still restricted.";
+	if C is hobble-skirted, say "You hike [unless C is skirt]the skirt of [end if]your [C] up so that it bunches at the top of your thighs, exposing your crotch. The tight bunching of the material means that your movement is still restricted.";
 	otherwise say "[DefaultDisplaceFlav of C]".
 
 To say DisplaceFlav of (C - a trousers):
@@ -72,3 +73,4 @@ Understand "fix [something]", "replace [something]", "adjust [something]", "unmo
 
 
 Displacing Replacing ends here.
+

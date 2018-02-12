@@ -21,7 +21,7 @@ To compute (M - a monster) removing all ass protection:
 				now C is in Holding Pen;
 		if more-to-go is 1:
 			if C is ass covering clothing or C is penetrating asshole:
-				say "Glitch!  The [M] failed to properly remove the [C].  We're going to move ahead as if [he of M] did, but please report the bug!";
+				say "Glitch!  The [M] failed to properly remove the [C]. We're going to move ahead as if [he of M] did, but please report the bug!";
 				now more-to-go is 0.
 
 To say DiaperQuestRemovalFlav of (M - a monster) on (C - a clothing):
@@ -75,7 +75,7 @@ To decide which number is the instant mess influence of (M - a monster):
 
 To say InstantMessFlav of (M - a monster):
 	let D be a random worn knickers;
-	say "[one of]As [his of M] hands push into your padding, you feel a strange twinge in your belly[or]You find your body relaxing as [he of M] presses [his of M] hand against your bottom, as if it was the most natural thing in the world[or]As [he of M] holds you there between [his of M] hands, your head starts feeling weirdly light, and for a moment you struggle to think straight[in random order].  [if the diaper addiction of the player > 12]You sigh with pleasure and feel your sphincter dilating slightly.  [otherwise if the diaper addiction of the player > 6]You feel nervous and you can't explain why, as your belly rumbles ominously.  [otherwise]You feel your rectum churning and just too late you realise that [he of M] must be using [one of]some kind of hidden magic device on you[or]magic to force you to mess yourself[stopping]!  [end if]The [M] begins to speak.  [speech style of M]'[if the urine-soak of D > the soak-limit of D / 9]Oopsie, It seems like my little baby has had a big accident!  Thank goodness your cute little bottom was diapered. [otherwise]Hmm, it looks like you don't need a change yet... [end if]Wait, what's this?!'[roman type][line break]As soon as the [M] stops speaking you can feel what [he of M] has detected - you've lost control of your bowels and have started to mess yourself!".
+	say "[one of]As [his of M] hands push into your padding, you feel a strange twinge in your belly[or]You find your body relaxing as [he of M] presses [his of M] hand against your bottom, as if it was the most natural thing in the world[or]As [he of M] holds you there between [his of M] hands, your head starts feeling weirdly light, and for a moment you struggle to think straight[in random order]. [if the diaper addiction of the player > 12]You sigh with pleasure and feel your sphincter dilating slightly. [otherwise if the diaper addiction of the player > 6]You feel nervous and you can't explain why, as your belly rumbles ominously. [otherwise]You feel your rectum churning and just too late you realise that [he of M] must be using [one of]some kind of hidden magic device on you[or]magic to force you to mess yourself[stopping]!  [end if]The [M] begins to speak. [line break][speech style of M]'[if the urine-soak of D > the soak-limit of D / 9]Oopsie, It seems like my little baby has had a big accident!  Thank goodness your cute little bottom was diapered. [otherwise]Hmm, it looks like you don't need a change yet... [end if]Wait, what's this?!'[roman type][line break]As soon as the [M] stops speaking you can feel what [he of M] has detected - you've lost control of your bowels and have started to mess yourself!".
 
 To say DiaperCheckResultsFlav of (M - a monster):
 	let D be a random worn knickers;
@@ -105,7 +105,7 @@ To say DiaperCheckResultsMessedReactionFlav of (M - a monster):
 	let D be a random worn knickers;
 	if the player is upset about mess, say "[one of]You are relieved that you're going to be rescued from your gross situation. [or]The only thing you care about right now is getting out of this [ShortDesc of D], so [his of M] words are a welcome relief! [or]You actually feel gratitude for the fact you're going to be helped out of your smelly [ShortDesc of D]! [in random order]";
 	otherwise say "[if the delicateness of the player < 7][one of]You wrinkle your nose. You don't want to be changed like a little child![or]You growl, angry at the concept that you need someone else to change you.[or]You harrumph with disdain at the idea.[in random order][otherwise if the delicateness of the player < 12][one of]You wriggle nervously on the spot.[or]You smile sheepishly.[or]You feel a bit uncomfortable, but know it needs to be done.[or]You tremble on the spot.[in random order][otherwise if the delicateness of the player > 15][one of]You wiggle happily on the spot.[or]You smile inwardly, excited at the prospect of a change.[or]You make a gleeful gurgling sound.[or]A euphoric shiver of anticipation rushes through your veins.[in random order][otherwise][one of]You smile nervously, and with more than a hint of excitement.[or]Your heart flutters and you immediately adopt a submissive pose.[or]You happily submit to the change.[in random order][end if]";
-	if the player is able to speak, say "[run paragraph on][variable custom style]'[if the humiliation of the player >= 40000]Yes [daddy of M].'[otherwise if the delicateness of the player < 7][one of]Just get me out of this thing, please!!!'[or]This isn't funny!  Please help me out...'[or]Look, I'm not some diaper loving weirdo, but please god, yes, get me into a clean one!'[in random order][otherwise if the delicateness of the player > 14][one of]I'm ready for my change now...'[or]I'm sorry, I didn't mean to do a stinky!'[or]I'm sorry, I couldn't hold it in...'[or]*giggle* I love the squishy sound your hand makes against my diaper!'[or]Thank you [daddy of M]!'[or]Tee-hee, [NameBimbo] needs a new nappy!'[or]Ooh, I hope my new diaper is even prettier than this one!'[or]*giggle* I love it when you change me, [daddy of M].'[in random order][otherwise if the diaper addiction of the player < 11][one of]Go on then, get on with it!'[or]Yeah, yeah, I understand the drill. Let's get it over with.'[in random order][otherwise][one of]Ooh yay, I can't wait to get into a new comfy diaper!'[or]Oh, thank you so much!'[or]This diaper feels good, but I guess a new one will feel even better.'[in random order][end if][roman type][line break]";
+	if the player is able to speak, say "[run paragraph on][line break][variable custom style]'[if the humiliation of the player >= 40000]Yes [daddy of M].'[otherwise if the delicateness of the player < 7][one of]Just get me out of this thing, please!!!'[or]This isn't funny!  Please help me out...'[or]Look, I'm not some diaper loving weirdo, but please god, yes, get me into a clean one!'[in random order][otherwise if the delicateness of the player > 14][one of]I'm ready for my change now...'[or]I'm sorry, I didn't mean to do a stinky!'[or]I'm sorry, I couldn't hold it in...'[or]*giggle* I love the squishy sound your hand makes against my diaper!'[or]Thank you [daddy of M]!'[or]Tee-hee, [NameBimbo] needs a new nappy!'[or]Ooh, I hope my new diaper is even prettier than this one!'[or]*giggle* I love it when you change me, [daddy of M].'[in random order][otherwise if the diaper addiction of the player < 11][one of]Go on then, get on with it!'[or]Yeah, yeah, I understand the drill. Let's get it over with.'[in random order][otherwise][one of]Ooh yay, I can't wait to get into a new comfy diaper!'[or]Oh, thank you so much!'[or]This diaper feels good, but I guess a new one will feel even better.'[in random order][end if][roman type][line break]";
 	otherwise say muffled sounds.
 
 To say DiaperCheckResultsTornFlav of (M - a monster):
@@ -120,10 +120,10 @@ To say DiaperCheckResultsWetReactionFlav of (M - a monster):
 	otherwise say muffled sounds.
 
 To say DiaperCheckResultsMostlyDryFlav of (M - a monster):
-	say "[speech style of M]'[one of]Hmm,[or]I see,[or]Yep,[in random order] [one of]as I suspected, you haven't been able to stay dry[or]definitely a bit wet[or]I can definitely feel some warmth[or]this feels a bit heavy[or]it feels like you've leaked a bit, [honey of M][or]you've had a little leakage in here, haven't you[or]you've gone tinkles in your pampers[in random order].  [one of]It feels like it can still hold a bit more, though,[or]However you don't need a change quite yet[or]It's nowhere near at risk of leaking yet[or]Most of the padding is still dry[or]You've only leaked a little bit[in random order] so [one of]I'm not going to waste a brand new diaper until it's really full.'[or]I'll leave you to waddle along for now.'[or]I think you'll have to stay wallowing in your own pee-pee for a bit longer.'[or]you're going to have to stay squelching around in your wet nappy for now.'[or]maybe come and find me when you've had another accident.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hmm,[or]I see,[or]Yep,[in random order] [one of]as I suspected, you haven't been able to stay dry[or]definitely a bit wet[or]I can definitely feel some warmth[or]this feels a bit heavy[or]it feels like you've leaked a bit, [honey of M][or]you've had a little leakage in here, haven't you[or]you've gone tinkles in your pampers[in random order]. [one of]It feels like it can still hold a bit more, though,[or]However you don't need a change quite yet[or]It's nowhere near at risk of leaking yet[or]Most of the padding is still dry[or]You've only leaked a little bit[in random order] so [one of]I'm not going to waste a brand new diaper until it's really full.'[or]I'll leave you to waddle along for now.'[or]I think you'll have to stay wallowing in your own pee-pee for a bit longer.'[or]you're going to have to stay squelching around in your wet nappy for now.'[or]maybe come and find me when you've had another accident.'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsMostlyDryReactionFlav of (M - a monster):
-	if the player is able to speak, say "[variable custom style]'[if the humiliation of the player >= 40000]Thank you for punishing this pathetic baby by [one of]forcing it to stay waddling in its own shame[or]denying it a dry diaper[or]making it continue to crawl around in its disgusting soggy nappy[cycling].'[otherwise if the delicateness of the player < 6][one of]As if I'd let you change me, pervert!'[or]I'll get a change when I want one!  Leave me alone.'[or]I'll decide for myself when I need to change, thank you very much!!!'[or]Maybe I didn't want a change anyway.  Did you even consider my own desires?  Wait that came out wrong...'[in random order][otherwise if the delicateness of the player > 14][one of]Yay, I get to stay in this one for a bit longer!'[or]Well you'd better keep checking up me, you know I'll have had more accidents soon!'[or]Sorry [daddy of M], I'll do my best to make it even more full for you!'[then at random][otherwise if the diaper addiction of the player < 8][one of]You're going to make me stay in this yucky thing?  You can't be serious!'[or]Oh come on, you know I'm not enjoying this right?  I need a new dry one at least!'[or]Are you joking?  You're really not going to give me a clean change?!'[or]Seriously, if I'm going to be wearing diapers, please please please at least give me dry ones...'[in random order][otherwise if the diaper addiction of the player < 13][one of]If you say so!'[or]I guess that's a fitting punishment...'[or]Whatever, I'm getting kind of used to the warm feeling anyway.'[in random order][otherwise][one of]If [daddy of M] wants me to stay in a soggy diaper then I'll wear it with pride!'[or]Yay!  It's actually really warm and comforting...'[or]I'll wear whatever diaper [daddy of M] tells me to!'[or]*giggle* Okey dokey!  Are you gonna watch over me as I wander around in my soggy nappy like a good baby?'[in random order][end if][roman type][line break]";
+	if the player is able to speak, say "[variable custom style]'[if the humiliation of the player >= 40000]Thank you for punishing this pathetic baby by [one of]forcing it to stay waddling in its own shame[or]denying it a dry diaper[or]making it continue to crawl around in its disgusting soggy nappy[cycling].'[otherwise if the delicateness of the player < 6][one of]As if I'd let you change me, pervert!'[or]I'll get a change when I want one!  Leave me alone.'[or]I'll decide for myself when I need to change, thank you very much!!!'[or]Maybe I didn't want a change anyway. Did you even consider my own desires?  Wait that came out wrong...'[in random order][otherwise if the delicateness of the player > 14][one of]Yay, I get to stay in this one for a bit longer!'[or]Well you'd better keep checking up me, you know I'll have had more accidents soon!'[or]Sorry [daddy of M], I'll do my best to make it even more full for you!'[then at random][otherwise if the diaper addiction of the player < 8][one of]You're going to make me stay in this yucky thing?  You can't be serious!'[or]Oh come on, you know I'm not enjoying this right?  I need a new dry one at least!'[or]Are you joking?  You're really not going to give me a clean change?!'[or]Seriously, if I'm going to be wearing diapers, please please please at least give me dry ones...'[in random order][otherwise if the diaper addiction of the player < 13][one of]If you say so!'[or]I guess that's a fitting punishment...'[or]Whatever, I'm getting kind of used to the warm feeling anyway.'[in random order][otherwise][one of]If [daddy of M] wants me to stay in a soggy diaper then I'll wear it with pride!'[or]Yay!  It's actually really warm and comforting...'[or]I'll wear whatever diaper [daddy of M] tells me to!'[or]*giggle* Okey dokey!  Are you gonna watch over me as I wander around in my soggy nappy like a good baby?'[in random order][end if][roman type][line break]";
 	otherwise say muffled sounds.
 	
 To say DiaperCheckResultsDryFlav of (M - a monster):
@@ -139,14 +139,14 @@ To say DiaperCheckResultsDryFlav of (M - a monster):
 		
 
 To say DiaperCheckResultsDryForNowFlav of (M - a monster):
-	say "[speech style of M]'[one of]Oh[or]Hmph[or]Unbelievable[or]How surprising[in random order]. [one of]You've actually managed to stay dry, for now[or]It doesn't feel like you've had an accident, yet[or]You're completely dry[or]It's bone dry[or]No leaks yet, it would seem[in random order].  [one of]I don't expect that will last for long though[or]Maybe one of these days you will actually be ready for big girl pants again[or]Maybe there's a very slight chance I misjudged you?  We'll see if you can keep this up for the next time we meet[or]I think you got lucky.  I'll be checking again soon and I bet you'll have slipped up by then[in random order].'[roman type][line break]".
+	say "[speech style of M]'[one of]Oh[or]Hmph[or]Unbelievable[or]How surprising[in random order]. [one of]You've actually managed to stay dry, for now[or]It doesn't feel like you've had an accident, yet[or]You're completely dry[or]It's bone dry[or]No leaks yet, it would seem[in random order]. [one of]I don't expect that will last for long though[or]Maybe one of these days you will actually be ready for big girl pants again[or]Maybe there's a very slight chance I misjudged you?  We'll see if you can keep this up for the next time we meet[or]I think you got lucky. I'll be checking again soon and I bet you'll have slipped up by then[in random order].'[roman type][line break]".
 
 To say DiaperCheckResultsDryForNowReactionFlav of (M - a monster):
 	if the player is able to speak, say "[variable custom style]'[if the humiliation of the player >= 40000]This useless baby is certain it will wet its nappy soon.'[otherwise if the delicateness of the player < 6][one of]I can't believe you won't just trust me to stay dry!'[or]This is ridiculous, I shouldn't have to prove myself like this!'[or]Hmph.'[stopping][otherwise if the delicateness of the player > 14][one of]Tee-hee, I guess I've gotten lucky this time!'[or]Well you'd better keep checking up me, you know I can't be trusted!'[or]Maybe I will wet myself just so you keep ordering me around...'[then at random][otherwise if the diaper addiction of the player < 8][one of]You'd better let me out of this darned thing soon!'[or]Forcing me to wear this thing is so stupid.'[or]I'm going to prove to you I don't need to be in this ridiculous thing!'[or]Seriously, as if I'm going to let you catch me in a disgusting soggy nappy.'[in random order][otherwise if the diaper addiction of the player < 13][one of]I'm going to do my best to win this bet!'[or]You told me not to pee in it, so I'm doing my best.'[or]I can keep dry when I want to!'[in random order][otherwise][one of]It feels good when I pee myself though, so maybe I should?'[or]I would be wearing this even if you hadn't ordered me to, it's so comfy!'[or]Haha, I'm enjoying this game!'[or]Trust me, it won't be dry for long! *giggle*'[in random order][end if][roman type][line break]";
 	otherwise say muffled sounds.
 
 To say DiaperCheckResultsDrynessProvedFlav of (M - a monster):
-	say "[speech style of M]'[one of]Hmph[or]Hmm[purely at random], [one of]dry again[or]still dry[or]you actually managed to stay dry[or]still no leaks[in random order].  [one of]Okay, you've proved yourself; your choice of underwear is your own again, feel free to wear adult panties if you want to.  But nothing too slutty.'[or]Fine.  I give you permission to stop wearing diapers, if you so choose.  But maybe you've enjoyed the experience, hmm?'[or]I guess I have no choice but to end your diaper punishment.  Stop wearing diapers or keep wearing them, it's up to you now.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hmph[or]Hmm[purely at random], [one of]dry again[or]still dry[or]you actually managed to stay dry[or]still no leaks[in random order]. [one of]Okay, you've proved yourself; your choice of underwear is your own again, feel free to wear adult panties if you want to. But nothing too slutty.'[or]Fine. I give you permission to stop wearing diapers, if you so choose. But maybe you've enjoyed the experience, hmm?'[or]I guess I have no choice but to end your diaper punishment. Stop wearing diapers or keep wearing them, it's up to you now.'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsDrynessProvedReactionFlav of (M - a monster):
 	let N be nothing;
@@ -155,7 +155,7 @@ To say DiaperCheckResultsDrynessProvedReactionFlav of (M - a monster):
 		if the diaper-duration of O > 0 and O is not M:
 			now N is O;
 			increase N-count by 1;
-	if the player is able to speak, say "[variable custom style]'[if the humiliation of the player >= 40000]This pathetic baby will continue wearing diapers anyway, in anticipation of eventually failing her potty training.'[otherwise if the delicateness of the player < 9 and N-count > 1][one of]This is so stupid.  I still have [N-count] more people to convince.  Why am I even letting you guys order me around?!'[or]This is pointless.  I still have [N-count] others trying to control my choice of clothing as if I'm some little kid.'[or]If it was only you, I'd have ignored you anyway.  Unfortunately there's still [N-count] others who would also beat me up if I didn't...'[in random order][otherwise if the delicateness of the player < 9 and N is monster][one of]Right, now time to find the [N][variable custom style].  And I might just beat [him of N] up rather than going through all this again.'[or]Okay, only one more person I have to convince now.  Or maybe I'll just take it off now and let [him of N] try and fight me, if [he of N] dares.'[in random order][otherwise if the delicateness of the player < 9][one of]You're very lucky that I played along and didn't just kill you.'[or]And about time too!  I thought you were just going to keep checking me forever...'[or]Okay, now that I've proved myself will people PLEASE stop checking me now!'[in random order][otherwise if the delicateness of the player > 14][one of]I can't believe it, I actually did it!'[or]If... if you say so...'[or]Are you SURE I'm ready for big girl pants?  I'm not so confident any more...'[then at random][otherwise if the diaper addiction of the player < 8 and N-count > 1][one of]Great, now only [N-count] more people to convince...'[or]You're only one of many people who have ordered me to stay in diapers though, so I've won the battle but not the war.'[or]At last!  One down, [N-count] to go.'[in random order][otherwise if the diaper addiction of the player < 8 and N is monster][one of]Phew.  Well now I only need to prove myself to the [N].'[or]If only I wasn't also under the watchful eye of the [N]...'[or]Okay, only one more person I have to stay dry for now.'[in random order][otherwise if the diaper addiction of the player < 8][one of]I'm allowed to take it off?  Really?  Yay!'[or]Phew, I thought I'd be stuck in these forever...'[in random order][otherwise if the diaper addiction of the player < 13][one of]I did my best!'[or]That was a fun challenge, let's do it again some time!'[or]See, I can keep dry... if I really want to!'[in random order][otherwise][one of]Oh trust me, I'm going to stay in this comfy nappy for as long as I can!'[or]Why would I want to wear big girl pants?'[or]Haha, why would I stop wearing diapers?  You're funny!'[or]I'm not going to stop, I love wearing this thing!'[in random order][end if][roman type][line break]";
+	if the player is able to speak, say "[variable custom style]'[if the humiliation of the player >= 40000]This pathetic baby will continue wearing diapers anyway, in anticipation of eventually failing her potty training.'[otherwise if the delicateness of the player < 9 and N-count > 1][one of]This is so stupid. I still have [N-count] more people to convince. Why am I even letting you guys order me around?!'[or]This is pointless. I still have [N-count] others trying to control my choice of clothing as if I'm some little kid.'[or]If it was only you, I'd have ignored you anyway. Unfortunately there's still [N-count] others who would also beat me up if I didn't...'[in random order][otherwise if the delicateness of the player < 9 and N is monster][one of]Right, now time to find the [N][line break][variable custom style]. And I might just beat [him of N] up rather than going through all this again.'[or]Okay, only one more person I have to convince now. Or maybe I'll just take it off now and let [him of N] try and fight me, if [he of N] dares.'[in random order][otherwise if the delicateness of the player < 9][one of]You're very lucky that I played along and didn't just kill you.'[or]And about time too!  I thought you were just going to keep checking me forever...'[or]Okay, now that I've proved myself will people PLEASE stop checking me now!'[in random order][otherwise if the delicateness of the player > 14][one of]I can't believe it, I actually did it!'[or]If... if you say so...'[or]Are you SURE I'm ready for big girl pants?  I'm not so confident any more...'[then at random][otherwise if the diaper addiction of the player < 8 and N-count > 1][one of]Great, now only [N-count] more people to convince...'[or]You're only one of many people who have ordered me to stay in diapers though, so I've won the battle but not the war.'[or]At last!  One down, [N-count] to go.'[in random order][otherwise if the diaper addiction of the player < 8 and N is monster][one of]Phew. Well now I only need to prove myself to the [N].'[or]If only I wasn't also under the watchful eye of the [N]...'[or]Okay, only one more person I have to stay dry for now.'[in random order][otherwise if the diaper addiction of the player < 8][one of]I'm allowed to take it off?  Really?  Yay!'[or]Phew, I thought I'd be stuck in these forever...'[in random order][otherwise if the diaper addiction of the player < 13][one of]I did my best!'[or]That was a fun challenge, let's do it again some time!'[or]See, I can keep dry... if I really want to!'[in random order][otherwise][one of]Oh trust me, I'm going to stay in this comfy nappy for as long as I can!'[or]Why would I want to wear big girl pants?'[or]Haha, why would I stop wearing diapers?  You're funny!'[or]I'm not going to stop, I love wearing this thing!'[in random order][end if][roman type][line break]";
 	otherwise say muffled sounds.
 
 To say DiaperCheckResultsDryWellDoneFlav of (M - a monster):
@@ -166,7 +166,7 @@ To say DiaperCheckResultsDryWellDoneReactionFlav of (M - a monster):
 	otherwise say muffled sounds.
 
 To say DiaperChangeRefuseAnger of (M - a monster):
-	say "As [he of M] sees you make a move to resist, the [M] gets angry!  [variable custom style]'[one of]Bad baby!'[or]Ugh, they never learn...'[or]You will regret this!'[then at random][roman type][line break]".
+	say "As [he of M] sees you make a move to resist, the [M] gets angry!  [line break][variable custom style]'[one of]Bad baby!'[or]Ugh, they never learn...'[or]You will regret this!'[then at random][roman type][line break]".
 
 
 
@@ -285,31 +285,31 @@ To compute diaper change during cummies reward of (M - a monster):
 	diaperaddictup 1.
 
 To compute diaper change complete cummies reward of (M - a monster):
-	say "[speech style of M]'[one of]You've been such a good baby recently, I think you need a little reward.'[or]Time for your squirt squirt, for being such a good baby!'[stopping][roman type]  The [M] starts to rub you through the front of your diaper.  You soon feel a certain warmth rising, and you [if the sex addiction of the player > 12]sigh in glee[otherwise]can't help but[end if]explode an orgasm into your new nappy.";
+	say "[speech style of M]'[one of]You've been such a good baby recently, I think you need a little reward.'[or]Time for your squirt squirt, for being such a good baby!'[stopping][roman type]  The [M] starts to rub you through the front of your diaper. You soon feel a certain warmth rising, and you [if the sex addiction of the player > 12]sigh in glee[otherwise]can't help but[end if]explode an orgasm into your new nappy.";
 	orgasm;
 	punish shameful orgasm; [This automatically gives diaper addiction because the player will be wearing a total protection diaper at this moment.]
-	say "The [M] pulls away, admiring [his of M] handiwork[one of].  [speech style of M]'If you keep being a good baby, you'll get more where that came from.'[roman type][line break][or].[stopping]";
+	say "The [M] pulls away, admiring [his of M] handiwork[one of]. [line break][speech style of M]'If you keep being a good baby, you'll get more where that came from.'[roman type][line break][or].[stopping]";
 	FavourDown M by 2.
 
 To say DiaperChangeRemovalFlav of (M - a monster):
-	say "The [M] [if current-diaper is diaper]slowly pulls your [current-diaper] away[otherwise]rips off your [current-diaper][end if][if current-diaper is messed knickers].  Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
+	say "The [M] [if current-diaper is diaper]slowly pulls your [current-diaper] away[otherwise]rips off your [current-diaper][end if][if current-diaper is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
 
 To say DiaperPowderFlav of (M - a monster):
 	say "".
 
 To say DiaperChangeFlav of (M - a monster):
-	say "From [DiaperSpace of M] the [M] produces [if old-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] swiftly puts underneath your bum and then fixes in place.  ".
+	say "From [DiaperSpace of M] the [M] produces [if old-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] swiftly puts underneath your bum and then fixes in place. ".
 
 To say DiaperDonateFlav of (M - a monster):
 	say "[DiaperChangeFlav of M]".
 
 To say DiaperChangeComment of (M - a monster):
 	if M is intelligent:
-		if M is diaper disciplining and the diaper-duration of M <= 0, say "[speech style of M]'[one of]I'm afraid I'm going to have to insist you stay in diapers until you can prove to me that you can stay dry[or]That's better.  Now make sure that you stay in diapers until I give you permission to return to big girl panties[or]Well, that should do for now.  And this is the only warning I'm going to give you: I will punish you if I catch you outside of diapers before you've proved to me that you can stay dry[or]That's a lot better, isn't it?  Now make sure you're a good girl and do NOT stop wearing diapers until you have proved that you have stopped having accidents[in random order].'[roman type][line break]";
+		if M is diaper disciplining and the diaper-duration of M <= 0, say "[speech style of M]'[one of]I'm afraid I'm going to have to insist you stay in diapers until you can prove to me that you can stay dry[or]That's better. Now make sure that you stay in diapers until I give you permission to return to big girl panties[or]Well, that should do for now. And this is the only warning I'm going to give you: I will punish you if I catch you outside of diapers before you've proved to me that you can stay dry[or]That's a lot better, isn't it?  Now make sure you're a good girl and do NOT stop wearing diapers until you have proved that you have stopped having accidents[in random order].'[roman type][line break]";
 		otherwise say "[speech style of M]'There we go, all clean!'[roman type][line break]".
 
 To say DiaperDonateComment of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]And you'll wear diapers until I say that you have permission to wear grown-up panties again, or there'll be hell to pay!'[or]That's better.  And if I catch you out of diapers before I've given you permission, you'll be in big trouble.'[or]There we go.  And you don't want to know how I'll punish you if I catch you outside of diapers before I've told you that you're allowed.'[in random order][roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[one of]And you'll wear diapers until I say that you have permission to wear grown-up panties again, or there'll be hell to pay!'[or]That's better. And if I catch you out of diapers before I've given you permission, you'll be in big trouble.'[or]There we go. And you don't want to know how I'll punish you if I catch you outside of diapers before I've told you that you're allowed.'[in random order][roman type][line break]".
 
 To decide which number is the diaper punishment length of (M - a monster):
 	decide on 3.
@@ -350,13 +350,13 @@ To compute spanking of (M - a monster):
 		let pain-factor be the spank strength of M;
 		if there is worn ass plugging clothing:
 			let K be a random worn ass plugging clothing;
-			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if].  Ouch!";
+			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if]. Ouch!";
 			if K is vagina plugging, ruin vagina times 2;
 			if K is not jelldo, ruin asshole times 2;
 		repeat with K running through ass covering clothing:
 			let R be a random number between 0 and 1;
 			if R is 1:
-				[say "Your [K] manages to soften the blows a [one of]tiny bit[or]little[or]small amount[in random order].  ";]
+				[say "Your [K] manages to soften the blows a [one of]tiny bit[or]little[or]small amount[in random order]. ";]
 				decrease pain-factor by 1;
 		let D be a random worn diaper;
 		if D is diaper:
@@ -369,7 +369,7 @@ To compute spanking of (M - a monster):
 				decrease pain-factor by 2;
 		if the reaction of the player > 0, decrease pain-factor by 1;
 		if a random number between 0 and 2 < pain-factor:
-			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if].  ";
+			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
 			DelicateUp 1;
 		otherwise:
 			if there is worn ass covering clothing, say "Thanks to your [if there is a worn diaper]diaper[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
@@ -421,7 +421,7 @@ To say SpankingMercyRejectionFlav of (M - a monster):
 	say "[speech style of M]'[one of]You're not getting off that easy this time.'[or]That line won't work on me today, young Miss.'[or]It's not a proper punishment if you don't cry.'[in random order][roman type]  The [M] ignores your pleas.".
 
 To say SoftSpankingFlav of (M - a monster):
-	say "The [M] hesitates, and then delivers a few weak blows to your [buttcheeks] with [his of M] hand.  [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats.  [end if][speech style of M]'I guess that'll do for now.  Just this once.'[roman type][line break]The [M] turns away and lets you go.".
+	say "The [M] hesitates, and then delivers a few weak blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'I guess that'll do for now. Just this once.'[roman type][line break]The [M] turns away and lets you go.".
 
 To say SpankingStartFlav of (M - a monster):
 	say "The [M] pushes down on your back with one powerful hand to keep you still!".
@@ -436,7 +436,7 @@ To say DiaperSoftenFlav of (M - a monster):
 	say "[one of]Your [random worn diaper] softens the blows but can't protect you completely - [he of M] is a very hard hitter!  [or][DiaperSoftenShortFlav of M][stopping]".
 
 To say DiaperSoftenShortFlav of (M - a monster):
-	say "[one of]Your [random worn diaper] helps to soften the blow.  [or][or][cycling]".
+	say "[one of]Your [random worn diaper] helps to soften the blow. [or][or][cycling]".
 
 To say SpankingAftermath of (M - a monster):
 	say "[if the delicateness of the player > 14]By the end of your spanking you are bawling your eyes out, begging [him of M] to stop and pleading with [him of M] to give you another chance to be a good little girl[otherwise if the delicateness of the player > 8]By the end of your spanking you are crying your eyes out, begging [him of M] to [one of]stop[or]be merciful[at random][otherwise]You are unable to prevent a solitary tear from escaping your eye as you [one of]grit your teeth and try to[or]struggle to[or]try your best to[or]focus your mind to help[at random] tolerate the lingering pain[end if].".
@@ -448,7 +448,7 @@ To say SpankingReactionFlav of (M - a monster):
 	if a random number between 1 and 3 > 1 and the player is able to speak:
 		say "[variable custom style]'[one of]Owww!'[or]Ooof!'[or]Ouch!'[or]Ouchies!'[as decreasingly likely outcomes][roman type][line break]";
 	otherwise:
-		if the delicateness of the player > 7, say "[second custom style]Ooh, I've been a bad girl...[if the delicateness of the player < 10][first custom style]What the fuck, did I just think that?![end if][roman type][line break]".
+		if the delicateness of the player > 7, say "[second custom style]Ooh, I've been a bad girl...[if the delicateness of the player < 10][line break][first custom style]What the fuck, did I just think that?![end if][roman type][line break]".
 
 Section - Masturbating
 
@@ -500,7 +500,7 @@ To decide which number is the masturbation length of (M - a monster):
 
 To say MasturbationDeclarationFlav of (M - a monster):
 	if M is intelligent:
-		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby.  Let's see what I can do about that...'[or]Are you feeling good inside your nappy?  Let [daddy of M] help with that...'[at random][roman type]  ".
+		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy?  Let [daddy of M] help with that...'[at random][roman type]  ".
 
 To say MasturbationStartFlav of (M - a monster):
 	say "The [M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is female]your [vagina][otherwise]your [ShortDesc of penis][end if]!".
@@ -524,7 +524,7 @@ To say MasturbationAfterFlav of (M - a monster):
 	say "After this [he of M] seems satisfied, and [if refactoryperiod > 0]flexes [his of M] wrist muscles in pride before leaving you to recover.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]leaves you alone.[end if]".
 
 To say MasturbationTeaseFlav of (M - a monster):
-	if M is intelligent, say "smiles as [he of M] sees your flustered face.  [speech style of M]'[one of]Aww, is the little baby all hot and bothered under her nappy?  I think I'll leave you that way.'[or]I guess you'll have to finish yourself off if you want release.'[or]I think I'll leave you like that, all hot and flustered, desperate for a Mommy or Daddy to finish you off.'[or]That's right, I'm stopping there.  No cummies for you today, hah!'[in random order][roman type][line break]";
+	if M is intelligent, say "smiles as [he of M] sees your flustered face. [line break][speech style of M]'[one of]Aww, is the little baby all hot and bothered under her nappy?  I think I'll leave you that way.'[or]I guess you'll have to finish yourself off if you want release.'[or]I think I'll leave you like that, all hot and flustered, desperate for a Mommy or Daddy to finish you off.'[or]That's right, I'm stopping there. No cummies for you today, hah!'[in random order][roman type][line break]";
 	otherwise say "leaves you alone with your arousal.".
 
 Section - Enema
@@ -577,13 +577,13 @@ To say EnemaSpace of (M - a monster):
 	say "out of nowhere".
 
 To say EnemaFlav of (M - a monster):
-	say "The [M] takes [if the water volume of belly is 0 and the sex-length of M is 1]the[otherwise if the water volume of belly is 0]a[otherwise]another[end if] syringe and [one of]pushes[or]pokes[or]eases[at random] the end into your [asshole].  As [he of M] [one of]depresses[or]forces in[at random] the plunger, [one of]you can feel the cold water filling your belly[or]the cold water flows steadily into your body[or]you feel the cool water gurgle as it makes its way into your belly[or]the water has nowhere to go except up your [asshole] and into your intestines[or]the cold water fills your gut[or]you wince, the cold water making you feel uncomfortable as it travels deeper and deeper inside of you[at random].".
+	say "The [M] takes [if the water volume of belly is 0 and the sex-length of M is 1]the[otherwise if the water volume of belly is 0]a[otherwise]another[end if] syringe and [one of]pushes[or]pokes[or]eases[at random] the end into your [asshole]. As [he of M] [one of]depresses[or]forces in[at random] the plunger, [one of]you can feel the cold water filling your belly[or]the cold water flows steadily into your body[or]you feel the cool water gurgle as it makes its way into your belly[or]the water has nowhere to go except up your [asshole] and into your intestines[or]the cold water fills your gut[or]you wince, the cold water making you feel uncomfortable as it travels deeper and deeper inside of you[at random].".
 
 To say EnemaAftermath of (M - a monster):
-	say "The [M] pulls the enema syringe from your [asshole].  You immediately feel your stomach gurgle ominously.".
+	say "The [M] pulls the enema syringe from your [asshole]. You immediately feel your stomach gurgle ominously.".
 
 To say EnemaAfterFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]Feeling full?  Good.  Now keep that in for as long as you can.'[or]Now trot along.  [if there is a worn total protection diaper]Aren't you glad that you're wearing a diaper?'[otherwise]If I were you, I'd find a toilet or a diaper before that all comes out...'[end if][or]That's better.  Naughty babies like you don't get the privilege of getting to control their bodily functions.'[or]Aww, it looks like the little baby has a full tummy.  She better find somewhere to let it out soon...'[at random][roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[one of]Feeling full?  Good. Now keep that in for as long as you can.'[or]Now trot along. [if there is a worn total protection diaper]Aren't you glad that you're wearing a diaper?'[otherwise]If I were you, I'd find a toilet or a diaper before that all comes out...'[end if][or]That's better. Naughty babies like you don't get the privilege of getting to control their bodily functions.'[or]Aww, it looks like the little baby has a full tummy. She better find somewhere to let it out soon...'[at random][roman type][line break]".
 
 To compute enema plugging of (M - a monster):
 	let P be a random off-stage plug;
@@ -597,7 +597,7 @@ To compute enema plugging of (M - a monster):
 	say "[EnemaPlugAfterFlav of M]".
 
 To say EnemaPlugDeclarationFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]Hmm, actually, I'm not sure I trust you to keep this in for long enough on your own.  How about this...'[or]Hmm, maybe you need some help controlling yourself?'[or]I've been waiting for a good opportunity to use this magical item I recently obtained.  Let's make your situation even more interesting...'[at random][roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[one of]Hmm, actually, I'm not sure I trust you to keep this in for long enough on your own. How about this...'[or]Hmm, maybe you need some help controlling yourself?'[or]I've been waiting for a good opportunity to use this magical item I recently obtained. Let's make your situation even more interesting...'[at random][roman type][line break]".
 
 To say EnemaPlugAfterFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]There we go, much better!'[or]Uh-oh, I wonder how that's going to feel in a few minutes?'[or]Don't worry, the curse should lift itself just as you fully lose control of your own bodily functions!'[at random][roman type][line break]".
@@ -635,20 +635,20 @@ To say ForcefeedPillDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]And finally... let's try this!'[or]This will keep your bowels moving!'[then at random][roman type][line break]".
 
 To say ForcefeedStartFlav of (M - a monster):
-	say "The [M] takes you onto [his of M] lap, your back pressing into [his of M] chest, and holds you very tightly.  You won't be able to escape now.".
+	say "The [M] takes you onto [his of M] lap, your back pressing into [his of M] chest, and holds you very tightly. You won't be able to escape now.".
 
 To compute forcefeed round (N - a number) of (M - a monster):
 	if N is 1 and M is willing to forcefeed pills:
 		if M is intelligent, say "[ForcefeedPillDeclarationFlav of M]";
-		say "The [M] pushes a small white pill into your mouth and forces you to swallow it.  [one of]Almost immediately[or]Once again[stopping] you feel that your stomach is more... active.  It feels like it's digesting its contents at double speed!";
+		say "The [M] pushes a small white pill into your mouth and forces you to swallow it. [one of]Almost immediately[or]Once again[stopping] you feel that your stomach is more... active. It feels like it's digesting its contents at double speed!";
 		increase digestion-timer by 360;
 	otherwise:
 		say "The [M] [one of]shoves[or]forces[or]crams[in random order] ";
 		if diaper lover >= 3 and a random number between 1 and diaper lover > 1 and (the player is not thirsty or the player is hungry):
-			say "[one of]a large banana[or]a candy bar[or]a handful of marshmallows[or]a cookie[in random order] into your mouth.  You are forced to chew and swallow it all down.";
+			say "[one of]a large banana[or]a candy bar[or]a handful of marshmallows[or]a cookie[in random order] into your mouth. You are forced to chew and swallow it all down.";
 			StomachFoodUp 1;
 		otherwise:
-			say "a baby bottle full of [one of]apple juice[or]warm milk[or]orange juice[or]cold coffee[in random order] into your mouth.  You are forced to suck and swallow it all down.";
+			say "a baby bottle full of [one of]apple juice[or]warm milk[or]orange juice[or]cold coffee[in random order] into your mouth. You are forced to suck and swallow it all down.";
 			StomachUp 2.
 
 To say ForcefeedAftermath of (M - a monster):
@@ -681,10 +681,10 @@ To say SuppositoryDeclarationFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'I've got just the thing for [if the health of M < the maxhealth of M]naughty babies[otherwise if the player is not incontinent]big babies that are too confident of their potty training[otherwise]someone[end if] like you!'[roman type][line break]".
 
 To say SuppositoryFlav of (M - a monster):
-	say "The [M] takes what looks like a small rubber bullet and pushes it into your [asshole].  Before you can stop it, it has travelled upwards and is lost inside your body.".
+	say "The [M] takes what looks like a small rubber bullet and pushes it into your [asshole]. Before you can stop it, it has travelled upwards and is lost inside your body.".
 
 To say SuppositoryAftermath of (M - a monster):
-	say "[if the player is feeling full]You immediately feel your tummy begin to cramp.  Uh-oh...[otherwise]You have a feeling you know how this story is going to end...[end if]".
+	say "[if the player is feeling full]You immediately feel your tummy begin to cramp. Uh-oh...[otherwise]You have a feeling you know how this story is going to end...[end if]".
 
 To say SuppositoryAfterFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'Don't worry, I'm not planning to stick around to witness the [']fireworks[']...'[roman type][line break]".
@@ -701,7 +701,7 @@ To compute confiscate of (M - a monster):
 
 
 To say ConfiscationDeclarationFlav of (M - a monster) on (C - a clothing):
-	if M is intelligent, say "[speech style of M]'[if C is plentiful accessory]Where did you get this jewellery, little one?  Babies can't be trusted with expensive items like these.  I'll have to confiscate it.'[otherwise if C is equippable]What are you doing handling something this dangerous?  Little kids can't be trusted to not hurt themselves.  I'll have to take it off of you.'[otherwise]This is not clothing for babies!  I'm confiscating it.'[end if][roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[if C is plentiful accessory]Where did you get this jewellery, little one?  Babies can't be trusted with expensive items like these. I'll have to confiscate it.'[otherwise if C is equippable]What are you doing handling something this dangerous?  Little kids can't be trusted to not hurt themselves. I'll have to take it off of you.'[otherwise]This is not clothing for babies!  I'm confiscating it.'[end if][roman type][line break]".
 
 To compute (M - a monster) confiscating (C - a clothing):
 	say "[ConfiscationFlav of M on C]";
@@ -742,3 +742,4 @@ To say ConfiscationAfterFlav of (M - a monster) on (C - a clothing):
 
 
 Diaper Events ends here.
+

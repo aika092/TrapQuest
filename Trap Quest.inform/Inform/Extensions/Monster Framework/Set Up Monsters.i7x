@@ -4,25 +4,22 @@ The setting up dungeon monsters rules is a rulebook.
 The setting up woods monsters rules is a rulebook.
 The setting up hotel monsters rules is a rulebook.
 The setting up mansion monsters rules is a rulebook.
+The setting up school monsters rules is a rulebook.
 
 To regionally place (M - a monster):
 	remove M from play;
-	bore M for 0 seconds;
+	bore M for 0 seconds; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
 	now M is released;
 	now the health of M is the maxhealth of M;
 	while M is not regional or M is in the location of the player or M is nearby:
 		now M is in a random placed room.
 
 To Set Up Monsters:
-	if debugmode > 0, say "Now setting up monsters...";
-	scramble monster adjectives;
-	repeat with M running through off-stage monsters:
-		unless M is woman, now M is nonexistant; [Reset their adjective so it goes back to "unused" state]
-	if debugmode > 0, say "Now setting up dungeon monsters...";
+	if debugmode > 1, say "Now setting up dungeon monsters...";
 	follow the setting up dungeon monsters rules;
 	if Woods01 is placed, follow the setting up woods monsters rules;
 	if Hotel01 is placed, follow the setting up hotel monsters rules;
-	if debugmode > 0, say "Now setting up mansion monsters...";
+	if debugmode > 1, say "Now setting up mansion monsters...";
 	if Mansion01 is placed, follow the setting up mansion monsters rules;
 	repeat with M running through alive nonexistant monsters:
 		if debugmode > 1, say "Setting up initial state of [M]...";
@@ -48,3 +45,4 @@ Definition: a monster (called M) is nonsetup:
 	decide no.
 
 Set Up Monsters ends here.
+

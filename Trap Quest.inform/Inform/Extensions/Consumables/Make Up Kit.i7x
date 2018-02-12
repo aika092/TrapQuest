@@ -1,7 +1,7 @@
 Make Up Kit by Consumables begins here.
 
 
-A make up kit is a kind of collectible.  There are 7 make up kits.  The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of make up kit is "mk".  The description of make up kit is "A small box which contains an internal mirror and a few brushes.  It looks like there's only enough for one use.". Understand "makeup", "makeup kit" as make up kit.
+A make up kit is a kind of collectible. There are 7 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". The description of make up kit is "A small box which contains an internal mirror and a few brushes. It looks like there's only enough for one use.". Understand "makeup", "makeup kit" as make up kit.
 To decide which number is the crafting key of (C - a make up kit):
 	decide on 34.
 To decide which number is the bartering value of (T - a make up kit) for (M - a wench):
@@ -37,7 +37,7 @@ Check brushing something with:
 
 Carry out brushing something with:
 	now seconds is 6;
-	say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up.  You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if].  You discard the used [noun].";
+	say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. You discard the used [noun].";
 	destroy the noun;
 	FaceUp 1.
 
@@ -47,3 +47,4 @@ Understand "brush [something] on [something]", "makeup [something] on [something
 
 
 Make Up Kit ends here.
+

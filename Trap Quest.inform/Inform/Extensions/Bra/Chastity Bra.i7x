@@ -1,10 +1,10 @@
 Chastity Bra by Bra begins here.
 
-A chastity bra is a kind of bra.  Figure of metal bra is the file "metalbra1.png".  A chastity bra is usually metal.
+A chastity bra is a kind of bra. Figure of metal bra is the file "metalbra1.png". A chastity bra is usually metal.
 
-There is 1 chastity bra.  The text-shortcut of chastity bra is "cbr".
+There is 1 chastity bra. The text-shortcut of chastity bra is "cbr".
 
-The min size of a chastity bra is usually 4.  The max size of a chastity bra is usually 8.  The support of a chastity bra is usually -4.
+The min size of a chastity bra is usually 4. The max size of a chastity bra is usually 8. The support of a chastity bra is usually -4.
 
 To say ShortDesc of (B - a chastity bra):
 	say "chastity bra".
@@ -38,3 +38,4 @@ To decide which object is the potential-upgrade-target of (C - a chastity bra):
 
 
 Chastity Bra ends here.
+

@@ -82,3 +82,4 @@ To say SubduedGrabFlav of (C - clothing):
 	if the player is glue stuck, say "[variable custom style]Oh no, this is gonna hurt![roman type][line break]".
 
 Immobility ends here.
+

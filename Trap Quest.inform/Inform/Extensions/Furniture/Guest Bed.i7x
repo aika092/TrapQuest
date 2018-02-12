@@ -1,16 +1,18 @@
 Guest Bed by Furniture begins here.
 
 
-A guest bed is a kind of furniture.  There is 1 guest bed. The printed name of guest bed is "[TQlink of item described]guest bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "guest", "bed" as guest bed.  The text-shortcut of guest bed is "pgb". The description of guest bed is "A comfortable looking bed with shale grey pillows and a solid black comforter. It looks surprisingly mundane[if there is a clairvoyant acolyte in the location of the player and bukkake fetish is 1], but the [printed name of a random clairvoyant acolyte] has obviously been 'leaking' on the sheets[end if].". A guest bed has a number called song. song is usually 0. A guest bed can be tended. A guest bed is usually not tended.
+A guest bed is a kind of furniture. There is 1 guest bed. The printed name of guest bed is "[TQlink of item described]guest bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "guest", "bed" as guest bed. The text-shortcut of guest bed is "pgb". The description of guest bed is "A comfortable looking bed with shale grey pillows and a solid black comforter. It looks surprisingly mundane[if there is a clairvoyant acolyte in the location of the player and bukkake fetish is 1], but the [printed name of a random clairvoyant acolyte] has obviously been 'leaking' on the sheets[end if].". A guest bed has a number called song. song is usually 0. A guest bed can be tended. A guest bed is usually not tended. A guest bed has a number called holeCount; The holeCount of a guest bed is usually 0.
 
 To say RestingDesc of (F - a guest bed):
 	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress.[one of][if bukkake fetish is 1 and there is a clairvoyant acolyte in the location of the player]You are so comfortable that you appreciate the warm, moist feeling within the bed without really thinking too hard about it[otherwise]It's pleasant and warm underneath the covers[end if].[or][stopping]".
 
 To compute rest ending of (F - a guest bed):
-	let M be a random ghostly tentacle;
-	if the holeCount of M > 0:
-		let O be a random orifice penetrated by M;
-		say "[if M is penetrating face]The feeling of [semen] spurting into your mouth[otherwise]The feeling of warm fluid flowing into you[end if] suddenly jars you from your stupor. [if the holeCount of M is 1]Your [variable O] is stuffed full of a giant purple tentacle, throbbing viciously as it pumps you full of [semen].[otherwise]You're being pinned down by several giant tentacles, which throb viciously as they pump your holes full of [semen].[end if] The [printed name of a random clairvoyant acolyte in the location of the player] regards you from the side of the bed, gasping softly as feminine fluids dribble down her bare legs. You feel a fog being lifted as the tentacles slowly retract, allowing you to finally throw aside the covers.";
+	if the holeCount of F > 0:
+		let O be a random orifice penetrated by F;
+		say "[if F is penetrating face]The feeling of [semen] spurting into your mouth[otherwise]The feeling of warm fluid flowing into you[end if] suddenly jars you from your stupor. [if the holeCount of F is 1]Your [variable O] is stuffed full of a giant purple tentacle, throbbing viciously as it pumps you full of [semen].[otherwise]You're being pinned down by several giant tentacles, which throb viciously as they pump your holes full of [semen].[end if] The [printed name of a random clairvoyant acolyte in the location of the player] regards you from the side of the bed, gasping softly as feminine fluids dribble down her bare legs. You feel a fog being lifted as the tentacles slowly retract, allowing you to finally throw aside the covers.";
+		let M be a random ghostly tentacle;
+		repeat with S running through orifices penetrated by F:
+			now M is penetrating S;
 		if M is penetrating face, StomachSemenUp the semen load of M;
 		if M is penetrating vagina, WombFill the semen load of M;
 		if M is penetrating asshole, AssFill the semen load of M;
@@ -31,7 +33,7 @@ To compute furniture resting on (F - a guest bed):
 		now F is tended;
 	compute normal rest of F.
 
-The player has a number called player-hypno-great. player-hypno-great is usually 0.
+player-hypno-great is a number that varies. player-hypno-great is usually 0.
 
 [!<computeUniqueFurnitureFatigueEffect>+
 
@@ -81,16 +83,16 @@ To say RestingDesc of (F - a guest bed):
 			let O be a random orifice;
 			if the player is male and O is vagina:
 				now O is asshole;
-			let M be a random ghostly tentacle;
-			now M is penetrating O;
-			increase the holeCount of M by 1;
-			humiliate the holeCount of M;
-			if debugmode > 0, say "increase tentacle count to [the holeCount of M].";
-		if the number of ghostly tentacles penetrating face > 0:
+			now F is penetrating O;
+			increase the holeCount of F by 1;
+			humiliate the holeCount of F;
+			if debugmode > 0, say "increase tentacle count to [the holeCount of F].";
+		if F is penetrating face:
 			say "[one of]You taste them.[or]It tastes so good.[or]Filling your belly.[or]Only service.[then at random]";
-		if the number of ghostly tentacles penetrating asshole > 0 or the number of ghostly tentacles penetrating vagina > 0:
+		if F is penetrating a fuckhole:
 			say "[one of]They are inside you.[or]Only penetration.[or]It feels so good.[or]It feels so big.[or]You feel them.[then at random]";
 		if a random number between 1 and 3 is 1, RandomAddictUp 1.
 
 
 Guest Bed ends here.
+

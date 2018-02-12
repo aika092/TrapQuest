@@ -1,7 +1,7 @@
 Baby Bouncer by Traps begins here.
 
 
-A baby bouncer is a kind of trap.   The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". The description of a baby bouncer is "[BabyBouncerDesc]". There are 3 wire baby bouncers.  The text-shortcut of a baby bouncer is "bou".  Figure of baby bouncer is the file "babybouncer1.png".
+A baby bouncer is a kind of trap. The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". The description of a baby bouncer is "[BabyBouncerDesc]". There are 3 wire baby bouncers. The text-shortcut of a baby bouncer is "bou". Figure of baby bouncer is the file "babybouncer1.png".
 
 A baby bouncer has a number called bounces.
 
@@ -42,7 +42,7 @@ To trigger (Y - a baby bouncer):
 	say "[bold type]A trap door opens from the ceiling and a baby bouncer drops down. Suddenly, a pair of robotic arms are heading straight for you![roman type][line break]";
 	let C be a random worn hobble-skirted clothing;
 	if C is clothing:
-		say "They suddenly change their mind, apparently realising that your [C] makes them unable to place you in the bouncer as they had clearly intended.  [if the bimbo of the player < 14]Phew![otherwise]Aww...[end if]";
+		say "They suddenly change their mind, apparently realising that your [C] makes them unable to place you in the bouncer as they had clearly intended. [if the bimbo of the player < 14]Phew![otherwise]Aww...[end if]";
 	otherwise if a random number between 5 and 25 > the dexterity of the player or the bimbo of the player >= 16:
 		say "The arms grab you under your armpits and pull you up, placing you into the overgrown baby toy, causing you to bounce wildly upward.[if there is a worn messed knickers]Immediately the mess in your undergarments begins shifting around and around, rubbing against you in ways you couldn't possibly have imagined before finding yourself in this situation.[otherwise if there is a worn diaper]The padding of your diaper pushes against your crotch, stimulating you [one of]in ways you couldn't have imagined before finding yourself in this situation[or]again[stopping].[end if]As you fall back down in the seat of the bouncer, [if asshole is actually occupied]the [printed name of random thing filling asshole] inside your [asshole] is roughly forced further inside of you, stimulating your hole as [end if]your toes manage to touch the floor for a brief moment before you are propelled back into the air.";
 		if there is a worn diaper:
@@ -55,7 +55,7 @@ To trigger (Y - a baby bouncer):
 		say "Seeing the arms coming for you and not liking where you suspect they plan to place you, you duck under them, narrowly avoiding being grabbed.".
 
 To say SexSubmissionFlav of (Y - a baby bouncer):
-	say "You keep still and wait for something to happen.  The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot.  The gentle treatment of the contraption [if there is a worn diaper][one of]feels surprisingly nice against your padding[or]feels really relaxing thanks to your cushioned diaper[or]presses your nappy against your body in a comforting manner[in random order][otherwise]relaxes you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you feel like a little child[in random order][end if].";
+	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. The gentle treatment of the contraption [if there is a worn diaper][one of]feels surprisingly nice against your padding[or]feels really relaxing thanks to your cushioned diaper[or]presses your nappy against your body in a comforting manner[in random order][otherwise]relaxes you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you feel like a little child[in random order][end if].";
 	increase the bounces of Y by 1;
 	if there is a worn diaper, DiaperAddictUp 1;
 	otherwise DelicateUp 1;
@@ -63,7 +63,7 @@ To say SexSubmissionFlav of (Y - a baby bouncer):
 	check bounce release of Y.
 
 To say SexResistFlav of (Y - a baby bouncer):
-	say "You struggle to get out without bouncing!  The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation.  The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
+	say "You struggle to get out without bouncing!  The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation. The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
 	increase the bounces of Y by 1;
 	ruin vagina times 2;
 	check bounce release of Y.
@@ -71,7 +71,7 @@ To say SexResistFlav of (Y - a baby bouncer):
 To check bounce release of (Y - a baby bouncer):
 	if the bounces of Y >= a random number between 2 and 3:
 		if diaper lover >= 3 and the player is full and asshole is not actually occupied and (there is worn total protection diaper or (there is worn total protection knickers and panty messing is 1)):
-			say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff!  You wheeze with discomfort as your rectal muscles spasm uncontrollably.  ";
+			say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff!  You wheeze with discomfort as your rectal muscles spasm uncontrollably. ";
 			now diaper-scene-unhandled is 1;
 			compute messing;
 		say "The baby bouncer, seemingly out of power, lowers you to the ground and releases you.";
@@ -111,3 +111,4 @@ To Jump From The Baby Bouncer:
 
 
 Baby Bouncer ends here.
+

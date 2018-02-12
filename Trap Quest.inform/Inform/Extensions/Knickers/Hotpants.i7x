@@ -1,6 +1,6 @@
 Hotpants by Knickers begins here.
 
-hotpants is a kind of knickers.  There is 1 hotpants.  A hotpants is usually sheer-when-wet.  The armour of hotpants is 5.  The printed name of hotpants is usually "[TQlink of item described][clothing-title-before]pair of hotpants[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of hotpants is usually "[TQlink of item described][clothing-title-before]pairs of hotpants[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "pair", "of", "hot", "pants" as hotpants.   The text-shortcut of hotpants is "hp".  
+hotpants is a kind of knickers. There is 1 hotpants. A hotpants is usually sheer-when-wet. The armour of hotpants is 5. The printed name of hotpants is usually "[TQlink of item described][clothing-title-before]pair of hotpants[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of hotpants is usually "[TQlink of item described][clothing-title-before]pairs of hotpants[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "pair", "of", "hot", "pants" as hotpants. The text-shortcut of hotpants is "hp". 
 
 Definition: a hotpants is displacable:
 	decide yes.
@@ -9,7 +9,7 @@ To decide which figure-name is clothing-image of (H - a hotpants):
 	decide on figure of hotpants.
 
 To compute SelfExamineDesc of (K - a hotpants):
-	say "A pair of tiny tiny hotpants covers a small amount of your [ShortDesc of hips].  ";
+	say "A pair of tiny tiny hotpants covers a small amount of your [ShortDesc of hips]. ";
 
 To say selfexamineuniquetitle of (K - a hotpants):
 	say "pair of skimpy hotpants".
@@ -29,3 +29,4 @@ To decide which object is the potential-upgrade-target of (C - a hotpants):
 	decide on a random off-stage pink bikini bottoms.
 
 Hotpants ends here.
+

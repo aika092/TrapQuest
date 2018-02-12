@@ -1,6 +1,6 @@
 Hypno Traps by Traps begins here.
 
-A hypno trap is a kind of trap.  A cocksucker hypno trap is a kind of hypno trap.  A fucktoy hypno trap is a kind of hypno trap. A diaper hypno trap is a kind of hypno trap. There are 5 potentially wire potentially sticky potentially click cocksucker hypno traps.  There are 5 potentially wire potentially sticky potentially click fucktoy hypno traps. There are 7 potentially wire potentially sticky potentially click diaper hypno traps.  Understand "screen" as hypno trap.  The printed name of a hypno trap is "hypno screen".
+A hypno trap is a kind of trap. A cocksucker hypno trap is a kind of hypno trap. A fucktoy hypno trap is a kind of hypno trap. A diaper hypno trap is a kind of hypno trap. There are 5 potentially wire potentially sticky potentially click cocksucker hypno traps. There are 5 potentially wire potentially sticky potentially click fucktoy hypno traps. There are 7 potentially wire potentially sticky potentially click diaper hypno traps. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
 
 This is the spawn initial hotel hypno traps rule:
 	repeat with N running from 1 to 6:
@@ -17,15 +17,15 @@ This is the spawn initial hotel hypno traps rule:
 		deploy U in R.
 The spawn initial hotel hypno traps rule is listed first in the set up hotel traps rules.
 
-The description of a hypno trap is "A monitor revealed from within a hidden compartment in a wall.  On the screen is [hypno content of item described].  It's difficult to look away once you start watching it.".
+The description of a hypno trap is "A monitor revealed from within a hidden compartment in a wall. On the screen is [hypno content of item described]. It's difficult to look away once you start watching it.".
 
 To say ShortDesc of (T - a hypno trap):
-	say "A large [if T is expired]blank TV screen[otherwise if T is diaper hypno trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you.  ".
+	say "A large [if T is expired]blank TV screen[otherwise if T is diaper hypno trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you. ".
 
 To trigger (Y - a hypno trap):
 	now Y is revealed;
 	now Y is not untriggered;
-	say "A section of the wall in front of you slides away, and behind it is a large screen.  On the screen is [hypno content of Y].";
+	say "A section of the wall in front of you slides away, and behind it is a large screen. On the screen is [hypno content of Y].";
 	now the reset-timer of Y is 250.
 
 To compute turn trap effect of (T - a hypno trap):
@@ -55,7 +55,7 @@ To compute hypno effect of (Y - a hypno trap):
 	increase R by a random number between 0 and the intelligence of the player / 2;
 	if the player is immobile and R >= 0, increase R by 7; [There is always a chance of tearing eyes away even when immobile with low int]
 	if R > the intelligence of the player or the bimbo of the player > 14 or wanking is 1:
-		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away.  [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch!  [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere!  [otherwise]You can't bring yourself to look away!  [end if]";
+		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch!  [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere!  [otherwise]You can't bring yourself to look away!  [end if]";
 		say "[video content of Y]";
 		compute specific hypno effect of Y;
 		if the player is able to wank and the player is a bit horny and the player is not in danger and a random number between 5 and (19 - (the arousal of the player / 750)) < the sex addiction of the player and wanking is 0:
@@ -64,7 +64,7 @@ To compute hypno effect of (Y - a hypno trap):
 			now auto is 0;
 		arouse 750;
 	otherwise:
-		say "You overpower the hypnotic urge and tear your eyes away from the screen, for now.  You should try and leave the room before your eyes wander back!".
+		say "You overpower the hypnotic urge and tear your eyes away from the screen, for now. You should try and leave the room before your eyes wander back!".
 
 To compute specific hypno effect of (Y - a hypno trap):
 	do nothing. [Should never happen; each hypno trap should have a function here]
@@ -74,7 +74,7 @@ hypno-trigger-maturity is a number that varies.
 
 To compute specific hypno effect of (Y - a cocksucker hypno trap):
 	if hypno-trigger-tasty is 0 and the player is a November 2017 top donator:
-		say "For some reason the word 'tasty' repeats in your head over and over and over and over.  You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
+		say "For some reason the word 'tasty' repeats in your head over and over and over and over. You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
 		now hypno-trigger-tasty is 1;
 	otherwise if the thirst of the player < 3:
 		say "You feel weirdly thirsty.";
@@ -98,7 +98,7 @@ To compute specific hypno effect of (Y - a diaper hypno trap):
 		now delayed urination is 1;
 		try urinating;
 	otherwise:
-		say "[one of][if there is a worn diaper]Seeing the images on the screen, you feel more comfortable with the idea of wearing and using your diaper.  [end if][if there is a worn diaper and the diaper addiction of the player < 10]After all, if you have to go, you have to go, right?[otherwise if there is a worn diaper]After all, they're super comfy and toilets are dumb![otherwise]Part of you suddenly wishes you were wearing a diaper.[end if][if the number of worn diapers is 0 and the diaper addiction of the player < 10]At the very least, they're more convenient.[otherwise if the number of worn diapers is 0]After all, the people on the screen look like they're having so much fun![end if][or][or][cycling]";
+		say "[one of][if there is a worn diaper]Seeing the images on the screen, you feel more comfortable with the idea of wearing and using your diaper. [end if][if there is a worn diaper and the diaper addiction of the player < 10]After all, if you have to go, you have to go, right?[otherwise if there is a worn diaper]After all, they're super comfy and toilets are dumb![otherwise]Part of you suddenly wishes you were wearing a diaper.[end if][if the number of worn diapers is 0 and the diaper addiction of the player < 10]At the very least, they're more convenient.[otherwise if the number of worn diapers is 0]After all, the people on the screen look like they're having so much fun![end if][or][or][cycling]";
 	if the raw diaper addiction of the player < 20:
 		DiaperAddictUp 1;
 	otherwise:	
@@ -122,3 +122,4 @@ To say specific video content of (Y - a diaper hypno trap):
 
 
 Hypno Traps ends here.
+

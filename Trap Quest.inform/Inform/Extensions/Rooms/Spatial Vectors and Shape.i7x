@@ -64,7 +64,7 @@ To decide which number is the current maze level:
 REQUIRES COMMENTING
 
 *!]
-The previous maze level is a number that varies.  The previous maze level is usually 0.
+The previous maze level is a number that varies. The previous maze level is usually 0.
 
 [!<Direction>@
 
@@ -243,6 +243,13 @@ REQUIRES COMMENTING
 +!]
 Definition: A room is mansionplaced if it is placed and it is in the Mansion.
 
+[!<Room>@<IsSchoolplaced>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: A room is schoolplaced if it is placed and it is in the School.
+
 [!<LabyrinthRoom>@<IsUnshaped>+
 
 REQUIRES COMMENTING
@@ -385,3 +392,4 @@ Definition: West (called D) is wanted:
 	decide yes.
 
 Spatial Vectors and Shape ends here.
+

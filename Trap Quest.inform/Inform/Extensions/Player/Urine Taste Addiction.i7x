@@ -44,7 +44,7 @@ Part 2 - Modify Urine Taste Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw urine taste addiction.  The raw urine taste addiction of the player is usually 1. [Min 1 Max 20]
+The player has a number called raw urine taste addiction. The raw urine taste addiction of the player is usually 1. [Min 1 Max 20]
 
 [!<UrineTasteAddictUpX>+
 
@@ -76,3 +76,4 @@ To UrineTasteAddictDown (X - a number):
 
 
 Urine Taste Addiction ends here.
+

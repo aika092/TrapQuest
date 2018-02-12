@@ -29,8 +29,9 @@ Check jumping:
 	if the player is immobile:
 		now seconds is 0;
 		say "You're a bit stuck right now!" instead;
-	say "You jump, making your wobbly bits wobble.  [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face!  Ouch![end if]".
+	say "You jump, making your wobbly bits wobble. [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face!  Ouch![end if]".
 Understand "leap", "bounce", "ju" as jumping.
 
 
 Jumping ends here.
+

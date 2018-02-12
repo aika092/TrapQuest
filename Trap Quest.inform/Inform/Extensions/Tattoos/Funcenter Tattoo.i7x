@@ -1,6 +1,6 @@
 Funcenter Tattoo by Tattoos begins here.
 
-funcenter tattoo is a kind of asshole tattoo.  Figure of funcenter tattoo is the file "tattoo5.png".  There is 1 funcenter tattoo.
+funcenter tattoo is a kind of asshole tattoo. Figure of funcenter tattoo is the file "tattoo5.png". There is 1 funcenter tattoo.
 Definition: a funcenter tattoo (called T) is eligible:	
 	if the noun is sex toy or the noun is ass plugging clothing or the noun is mechanical joint or the noun is lubricant, decide yes;
 	decide no.
@@ -11,3 +11,4 @@ To decide which number is the anal sensitivity influence of (C - a funcenter tat
 	decide on 2.
 
 Funcenter Tattoo ends here.
+

@@ -1,6 +1,6 @@
 Master Bed by Furniture begins here.
 
-A master bed is a kind of furniture.  There is 1 master bed. The printed name of master bed is "[TQlink of item described]master bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "master", "bed" as master bed.  The text-shortcut of master bed is "vmb". The description of master bed is "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerizing pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.". A master bed has a number called charge.
+A master bed is a kind of furniture. There is 1 master bed. The printed name of master bed is "[TQlink of item described]master bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "master", "bed" as master bed. The text-shortcut of master bed is "vmb". The description of master bed is "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerizing pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.". A master bed has a number called charge.
 
 Definition: yourself is bed-stuck:
 	if there is a furniture grabbing it, decide yes;
@@ -35,9 +35,9 @@ To compute furniture resting on (F - a master bed):
 	let V be a random alive vampiress;
 	if V is monster and the refactory-period of V <= 0:
 		if there is a worn submissive collar:
-			say "You climb onto the bed and begin to pull back the covers, but a sudden flash of warmth from your collar makes you stop what you're doing, turn around, and immediately lay spread-eagled over the comforter. [variable custom style]What just happened?[roman type][line break]Glowing pink chains billow out from underneath the bed, instantly latching onto your wrists and ankles, securing them to the bedposts. [second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
+			say "You climb onto the bed and begin to pull back the covers, but a sudden flash of warmth from your collar makes you stop what you're doing, turn around, and immediately lay spread-eagled over the comforter. [line break][variable custom style]What just happened?[roman type][line break]Glowing pink chains billow out from underneath the bed, instantly latching onto your wrists and ankles, securing them to the bedposts. [line break][second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
 		otherwise if the player is horny:
-			say "You climb onto the bed and begin to pull back the covers, but a sudden rush of warmth makes you stop what you're doing , turn around, and immediately lay spread-eagled over the comforter. Just as the feeling ends, glowing pink chains billow out from underneath the bed, latching onto your limbs and securing them to the bedposts before you regain full control of your body. A strange thought comes to the front of your mind, but for some reason you know it belongs to someone else [second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
+			say "You climb onto the bed and begin to pull back the covers, but a sudden rush of warmth makes you stop what you're doing , turn around, and immediately lay spread-eagled over the comforter. Just as the feeling ends, glowing pink chains billow out from underneath the bed, latching onto your limbs and securing them to the bedposts before you regain full control of your body. A strange thought comes to the front of your mind, but for some reason you know it belongs to someone else [line break][second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
 		now V is interested;
 		anger V;
 		now the stance of the player is 1;
@@ -65,13 +65,13 @@ To compute chain rest of (F - a master bed):
 	let V be a random alive vampiress;
 	let N be 5;
 	while V is not in the location of the player and N > 0:
-		say "[one of]Images of being face-fucked by [second custom style]your mistress[roman type] force their way into your mind.[or][second custom style]I want to feel my mistress cum.[roman type][line break][or]An image of a pale [manly-penis] flashes in your vision, covered in [second custom style]your spit[roman type][or]Your thoughts swirl around an image of yourself on all fours[or][second custom style]My mistress needs a warm hole.[roman type][line break][or]You hear your own voice echoing inside your head, moaning breathlessly as [second custom style]your mistress[roman type] takes you.[or][second custom style]My mistress makes me so horny.[roman type][line break][then at random]";
+		say "[one of]Images of being face-fucked by [line break][second custom style]your mistress[roman type][line break]force their way into your mind.[or][line break][second custom style]I want to feel my mistress cum.[roman type][line break][or]An image of a pale [manly-penis] flashes in your vision, covered in [line break][second custom style]your spit[roman type][line break][or]Your thoughts swirl around an image of yourself on all fours[or][line break][second custom style]My mistress needs a warm hole.[roman type][line break][or]You hear your own voice echoing inside your head, moaning breathlessly as [line break][second custom style]your mistress[roman type][line break]takes you.[or][line break][second custom style]My mistress makes me so horny.[roman type][line break][then at random]";
 		decrease N by 1;
 		compute extra turn;
 	unless V is in the location of the player:
 		say "You hear high pitched shrieking as dozens of bats fly in through some narrow, high windows, converging in a twisting mass of flapping wings and black fur. Just as suddenly as they appeared, the bats disperse, leaving a [printed name of V] standing in the doorway.";
 		now V is in the location of the player;
-	say "[speech style of V]Mmm, what do we have here?[roman type][line break] [big he of V] purrs, snapping her fingers as the chains release you and recede back into the bed.";
+	say "[speech style of V]Mmm, what do we have here?[roman type][line break][big he of V] purrs, snapping her fingers as the chains release you and recede back into the bed.";
 	now F is not grabbing the player.
 
 To compute normal rest of (F - a master bed):
@@ -118,7 +118,7 @@ To compute rest completion of (F - a master bed):
 		say "You feel completely rested, but instead of throwing off the covers and climbing out of bed, you find yourself huddling even deeper under the sheets, eyes fluttering as your body tries to go to sleep.[line break]";
 		if a random number between 5 and (the intelligence of the player - A) < 7:
 			[let R be a random number between 1 and 3;]
-			say "Shaking your head doesn't make the lethargy go away, but you manage to will yourself to pull off the blankets and sit up on the side of the bed. Someone clears their throat, and you look up to see your lover standing in the doorway, both hands on her hips. You share an electrifying stare with each other as she saunters across the room, anticipation blossoming in your belly as her [manly-penis] quickly grows erect. [line break][first custom style]'You were looking forward to this, weren't you, darling?'[roman type][line break]You nod, tenderly fondling her balls and pumping her shaft as you polish it with your tongue. It tastes like every delicious flavour in the world all wrapped up into one package, throbbing mouth-wateringly as you guide it fully into your mouth. The harder you suck, the better it tastes, and the more your hunger seems to grow. Every moment leaves you more sure that there could be nothing more satisfying than tasting her [semen]. You'd [second custom style]keep sucking[roman type] forever if only you could taste one drop of her [semen]. It's the only thing that can sate your hunger. You need to taste her [semen], even if you have to [second custom style]keep sucking forever[roman type]. Forever and ever and [second custom style]ever[roman type].[line break]";
+			say "Shaking your head doesn't make the lethargy go away, but you manage to will yourself to pull off the blankets and sit up on the side of the bed. Someone clears their throat, and you look up to see your lover standing in the doorway, both hands on her hips. You share an electrifying stare with each other as she saunters across the room, anticipation blossoming in your belly as her [manly-penis] quickly grows erect. [line break][first custom style]'You were looking forward to this, weren't you, darling?'[roman type][line break]You nod, tenderly fondling her balls and pumping her shaft as you polish it with your tongue. It tastes like every delicious flavour in the world all wrapped up into one package, throbbing mouth-wateringly as you guide it fully into your mouth. The harder you suck, the better it tastes, and the more your hunger seems to grow. Every moment leaves you more sure that there could be nothing more satisfying than tasting her [semen]. You'd [line break][second custom style]keep sucking[roman type][line break]forever if only you could taste one drop of her [semen]. It's the only thing that can sate your hunger. You need to taste her [semen], even if you have to [line break][second custom style]keep sucking forever[roman type][line break]. Forever and ever and [line break][second custom style]ever[roman type][line break].[line break]";
 			say "...[line break]Your eyes snap open and you realize you're still lying in bed, half pulling back the covers. You shake the remnants of the dream from your head and climb out of the bed.";
 			SemenTasteAddictUp a random number between 1 and 2;
 			[otherwise if R is 2:
@@ -132,8 +132,9 @@ To compute rest completion of (F - a master bed):
 			say "You quickly shake your head, ousting the lingering lethargy as you remove the blankets and return to your feet.";
 	otherwise:
 		if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
-		otherwise say "[second custom style]I'm full of energy again.  Yum![roman type][line break]";
+		otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
 	now resting is 0;
 	try standing.
 
 Master Bed ends here.
+

@@ -4,7 +4,7 @@ monster-dragging is a number that varies.
 
 To teleport to (R - a room):
 	repeat with C running through stuck clothing worn by the player:
-		say "Your [printed name of C] is ripped from your body by the force of the [if monster-dragging is 0]portal[otherwise]pull[end if], and destroyed.  ";
+		say "Your [printed name of C] is ripped from your body by the force of the [if monster-dragging is 0]portal[otherwise]pull[end if], and destroyed. ";
 		destroy C;
 	repeat with M running through monsters in the location of the player:
 		if R is not Dungeon12 and M is grabbing the player or M is penetrating an orifice:
@@ -61,10 +61,11 @@ To check shopstealing of (M - a monster):
 		repeat with C running through held store clothing:
 			now C is stolen;
 		if X > 0:
-			say "The shopkeeper sees the [M] [']helping['] you to leave.  He seems to think it's your fault.  [speech style of M]'[one of]Stop Thief!'[or]Guards!  Guards!  Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon.  [bold type]Looks like you're in trouble with the law![roman type][line break]";
+			say "The shopkeeper sees the [M] [']helping['] you to leave. He seems to think it's your fault. [line break][speech style of M]'[one of]Stop Thief!'[or]Guards!  Guards!  Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
 			let S be a random shopkeeper;
 			now S is interested;
 			anger S.
 
 
 Teleporting and Dragging ends here.
+

@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Flesh>
 
 @!]
-breasts is a flesh.  breasts is everywhere.  The description of breasts is "[TotalDesc of breasts][line break]".  Understand "tits", "breast", "boobs", "cleavage", "bust" as breasts.  Understand "chest" as breasts when the number of treasure chests in the location of the player is 0.
+breasts is a flesh. breasts is everywhere. The description of breasts is "[TotalDesc of breasts][line break]". Understand "tits", "breast", "boobs", "cleavage", "bust" as breasts. Understand "chest" as breasts when the number of treasure chests in the location of the player is 0.
 
 [!<Breasts>@<fleshVolume:Integer>*
 
@@ -98,7 +98,7 @@ Definition: breasts (called B) is lewdly exposed:
 	decide no.
 
 To decide which number is the lewdly exposed outrage of (B - breasts):
-	decide on 9.  [allows us to easily tweak this number]
+	decide on 9. [allows us to easily tweak this number]
 
 [!<BreastsIsExposed>+
 
@@ -120,7 +120,7 @@ Definition: breasts (called B) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
-	decide on 7.  [allows us to easily tweak this number]
+	decide on 7. [allows us to easily tweak this number]
 
 To decide which number is the outrage of (B - breasts):
 	if there is worn actually dense fully covering top-placed clothing, decide on 0; [can be fully concealed which prevents them from being embarrassing]
@@ -130,7 +130,7 @@ To decide which number is the outrage of (B - breasts):
 		if there is a worn currently visible top-displaced clothing, increase O by 1;
 		if B is lewdly exposed, decide on the lewdly exposed outrage of B + O;
 		if B is at least partially lewdly exposed, decide on the at least partially lewdly exposed outrage of B + O;
-	decide on O.  [not humiliating by default]
+	decide on O. [not humiliating by default]
 
 [!<BreastsIsAtLeastPartiallyExposed>+
 
@@ -159,7 +159,7 @@ REQUIRES COMMENTING
 To decide which number is the largeness of breasts:
 	let O be the air volume of breasts;
 	[if the milk volume of breasts > the flesh volume of breasts, increase O by the milk volume of breasts;]
-	increase O by the flesh volume of breasts; [Flesh can contain up to as much milk as it has size.  After that, breasts expand even further.]
+	increase O by the flesh volume of breasts; [Flesh can contain up to as much milk as it has size. After that, breasts expand even further.]
 	increase O by the silicone volume of breasts;
 	let B be 1;
 	if O < 16:
@@ -202,6 +202,8 @@ To decide which number is the supportable weight of breasts:
 		if S is blessed, decrease O by 3;
 	if there is a worn Atlas tattoo:
 		decrease O by 3;
+	if there is a worn abyssal tattoo and the class of the player is silicone queen:
+		decrease O by the silicone volume of breasts / 6; [breast implants weigh half as much for the silicone queen if you've got the bonus]
 	if the air volume of breasts <= 0 and O < 0, now O is 0; [Can't have negative weight without inflation fetish]
 	decide on O.
 
@@ -212,7 +214,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the weight of (XXX - breasts):
 	let S be the supportable weight of breasts;
-	[If the weight of breasts < 1, then we don't make calculations about how well it's supported.  Essentially clothing can help you fight fatigue gain and strength requirements, but not help you defy gravity.]
+	[If the weight of breasts < 1, then we don't make calculations about how well it's supported. Essentially clothing can help you fight fatigue gain and strength requirements, but not help you defy gravity.]
 	if S > 0:
 		repeat with B running through bras worn by the player:
 			if the largeness of breasts + 2 > the size of B and B is top-placed, decrease S by the support of B;
@@ -260,6 +262,27 @@ Are breasts going to fail to grow any further?
 Definition: yourself is top heavy:
 	if the largeness of breasts < max breast size, decide no;
 	decide yes.
+
+[!<DecideWhichNumberIsMaxBreastSize>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is max breast size:
+	if diaper quest is 1, decide on 5;
+	if trap fetish is 1 and the player is male and the player is virtual, decide on 1;
+	if there is a restricting salve covering breasts, decide on recent-breasts-largeness;
+	let Z be 11;
+	if extreme proportions fetish is 1, now Z is 20;
+	decrease Z by max breast size points;
+	decrease Z by choice in row 33 of the Table of Player Options;
+	if Z < min breast size, decide on min breast size;
+	if Z > 1, decide on Z;
+	decide on 1.
+
+To decide which number is min breast size:
+	if the player is male, decide on 1;
+	decide on 1 + (starting body shape * 2).
 
 [!<breastsPresentableRules:Rulebook>*
 
@@ -358,7 +381,7 @@ Less brief details (size, exposure, semen)
 
 +!]
 To say MediumDesc of (B - breasts):
-	say "[if breasts is lewdly exposed]fully exposed [otherwise if breasts is at least partially lewdly exposed]visible [otherwise if breasts is showing cleavage]partially exposed [otherwise if breasts is not exposed]concealed [end if][if the semen coating of breasts > 6][semen] coated [otherwise if the semen coating of breasts > 0][semen] splattered [end if][BreastDesc]".
+	say "[if breasts is lewdly exposed]fully exposed [otherwise if breasts is at least partially lewdly exposed]visible [otherwise if breasts is showing cleavage]partially exposed [otherwise if breasts is not exposed]concealed [end if][if the semen coating of breasts > 6]cum-coated [otherwise if the semen coating of breasts > 0]cum-splattered [end if][BreastDesc]".
 
 [!<SayTotalDescOfBreasts>+
 
@@ -383,11 +406,11 @@ To say TotalDesc of breasts:
 		if the latex-transformation of the player is 0, say BreastFillDesc;
 	say "[BreastWeight][BreastModesty]";
 	if the semen coating of breasts > 7:
-		say "[BreastsTheyAre] completely covered in [semen].  ";
+		say "[BreastsTheyAre] completely covered in [semen]. ";
 	otherwise if the semen coating of breasts > 4:
-		say "[BreastsTheyAre] dripping with [semen].  ";
+		say "[BreastsTheyAre] dripping with [semen]. ";
 	otherwise if the semen coating of breasts > 0:
-		say "[BreastsTheyAre] slightly splattered with [semen].  ".
+		say "[BreastsTheyAre] slightly splattered with [semen]. ".
 
 [!<SayBreastsTheyAre>+
 
@@ -534,25 +557,25 @@ To say BreastStandingDesc:
 	if the weight of breasts > the largeness of breasts:
 		let X be the largeness of breasts;
 		if the latex-transformation of the player > 2, now X is 100;
-		if X is 100, say " that wobble gently as they protrude straight forward from your chest, [if the latex-transformation of the player < 5]as if they are[otherwise]as they are[end if] made of latex and filled with air.  ";
-		if X < 6, say ".  ";
-		if X is 6, say " that wobble as you walk.  ";
-		if X is 7, say " that bounce around a bit as you walk.  ";
-		if X is 8, say " that distract you with their weight.  ";
-		if X is 9, say " that make it difficult to keep a straight back.  ";
-		if X is 10, say " that are ruining your posture.  ";
-		if X is 11, say " that bounce significantly as you walk, exaggerating all your movements.  ";
-		if X is 12, say " that threaten to make you lose your balance.  ";
-		if X is 13, say " that prevent you from seeing the ground in front of you.  ";
-		if X is 14, say " that you have to support with your arms to stop them from slapping against your stomach.  ";
-		if X is 15, say " that ache from their own weight pulling them down.  ";
-		if X is 16, say " that flail wildly as you move.  ";
-		if X is 17, say ", larger than any realistic cup size, that are in danger of smacking you in the face painfully if you jump.  ";
-		if X is 18, say " that make you look like a poorly drawn hentai girl, and are making you weak at the knees even when just standing still.  ";
-		if X is 19, say " that are almost forcing you onto your hands and knees with their weight.  ";
-		if X is 20, say " that threaten to tip you off your feet at any moment.  ";
+		if X is 100, say " that wobble gently as they protrude straight forward from your chest, [if the latex-transformation of the player < 5]as if they are[otherwise]as they are[end if] made of latex and filled with air. ";
+		if X < 6, say ". ";
+		if X is 6, say " that wobble as you walk. ";
+		if X is 7, say " that bounce around a bit as you walk. ";
+		if X is 8, say " that distract you with their weight. ";
+		if X is 9, say " that make it difficult to keep a straight back. ";
+		if X is 10, say " that are ruining your posture. ";
+		if X is 11, say " that bounce significantly as you walk, exaggerating all your movements. ";
+		if X is 12, say " that threaten to make you lose your balance. ";
+		if X is 13, say " that prevent you from seeing the ground in front of you. ";
+		if X is 14, say " that you have to support with your arms to stop them from slapping against your stomach. ";
+		if X is 15, say " that ache from their own weight pulling them down. ";
+		if X is 16, say " that flail wildly as you move. ";
+		if X is 17, say ", larger than any realistic cup size, that are in danger of smacking you in the face painfully if you jump. ";
+		if X is 18, say " that make you look like a poorly drawn hentai girl, and are making you weak at the knees even when just standing still. ";
+		if X is 19, say " that are almost forcing you onto your hands and knees with their weight. ";
+		if X is 20, say " that threaten to tip you off your feet at any moment. ";
 	otherwise:
-		say ".  ".
+		say ". ".
 
 [!<SayBreastKneelingDesc>+
 
@@ -563,25 +586,25 @@ To say BreastKneelingDesc:
 	if the weight of breasts > the largeness of breasts:
 		let X be the largeness of breasts;
 		if the latex-transformation of the player > 2, now X is 100;
-		if X is 100, say " that wobble gently as they protrude straight forward from your chest, [if the latex-transformation of the player < 5]as if they are[otherwise]as they are[end if] made of latex and filled with air.  ";
-		if X < 6, say ".  ";
-		if X is 6, say " that wobble underneath you as you crawl.  ";
-		if X is 7, say " that hang and sway as you crawl.  ";
-		if X is 8, say " that are constantly distracting you as you try to crawl around.  ";
-		if X is 9, say " that get in the way of your elbows as you crawl.  ";
-		if X is 10, say " that keep bumping into each other and  bouncing off each other as you crawl.  ";
-		if X is 11, say " that are forcing your chest and head closer to the ground, and pushing your ass into the air.  ";
-		if X is 12, say " that keep touching the ground as you crawl.  ";
-		if X is 13, say " that are so large, that your nipples keep rubbing against the ground as you crawl.  ";
-		if X is 14, say " that keep bouncing awkwardly and hitting the floor as you crawl.  ";
-		if X is 15, say " that ache from their weight and your continued attempts to keep them off the ground as you crawl.  ";
-		if X is 16, say " that drag across the floor as you crawl.  ";
-		if X is 17, say ", larger than any realistic cup size, that drag awkwardly along the floor as you crawl.  ";
-		if X is 18, say " that make you look a poorly drawn hentai girl, and drag painfully along the floor as you crawl.  ";
-		if X is 19, say " that you struggle to drag along the floor with you as you crawl.  ";
-		if X is 20, say " that are exhausting to shovel along the floor with you as you crawl.  ";
+		if X is 100, say " that wobble gently as they protrude straight forward from your chest, [if the latex-transformation of the player < 5]as if they are[otherwise]as they are[end if] made of latex and filled with air. ";
+		if X < 6, say ". ";
+		if X is 6, say " that wobble underneath you as you crawl. ";
+		if X is 7, say " that hang and sway as you crawl. ";
+		if X is 8, say " that are constantly distracting you as you try to crawl around. ";
+		if X is 9, say " that get in the way of your elbows as you crawl. ";
+		if X is 10, say " that keep bumping into each other and  bouncing off each other as you crawl. ";
+		if X is 11, say " that are forcing your chest and head closer to the ground, and pushing your ass into the air. ";
+		if X is 12, say " that keep touching the ground as you crawl. ";
+		if X is 13, say " that are so large, that your nipples keep rubbing against the ground as you crawl. ";
+		if X is 14, say " that keep bouncing awkwardly and hitting the floor as you crawl. ";
+		if X is 15, say " that ache from their weight and your continued attempts to keep them off the ground as you crawl. ";
+		if X is 16, say " that drag across the floor as you crawl. ";
+		if X is 17, say ", larger than any realistic cup size, that drag awkwardly along the floor as you crawl. ";
+		if X is 18, say " that make you look a poorly drawn hentai girl, and drag painfully along the floor as you crawl. ";
+		if X is 19, say " that you struggle to drag along the floor with you as you crawl. ";
+		if X is 20, say " that are exhausting to shovel along the floor with you as you crawl. ";
 	otherwise:
-		say ".  ".
+		say ". ".
 
 [!<SayBreastFillDesc>+
 
@@ -592,33 +615,33 @@ To say BreastFillDesc:
 	if the milk volume of breasts is 0:
 		say "";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the silicone volume of breasts > the milk volume of breasts * 2:
-		say "The amount of [milk] they contain is small compared to the overall size of your breasts.  ";
+		say "The amount of [milk] they contain is small compared to the overall size of your breasts. ";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the silicone volume of breasts > the milk volume of breasts:
-		say "They feel like they are holding a decent amount of [milk].  ";
+		say "They feel like they are holding a decent amount of [milk]. ";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the silicone volume of breasts is the milk volume of breasts or the flesh volume of breasts + the air volume of breasts + the silicone volume of breasts > the milk volume of breasts / 2:
-		say "They feel like they are bloated with [milk].  ";
+		say "They feel like they are bloated with [milk]. ";
 	otherwise:
-		say "They feel like they are extremely bloated with [milk].  ";
+		say "They feel like they are extremely bloated with [milk]. ";
 	if the silicone volume of breasts is 0:
 		say "";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts  > the silicone volume of breasts * 2:
-		say "They contain a pair of small silicone implants.  ";
+		say "They contain a pair of small silicone implants. ";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts > the silicone volume of breasts:
-		say "They contain a pair of decently sized silicone implants.  ";
+		say "They contain a pair of decently sized silicone implants. ";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts is the silicone volume of breasts or the flesh volume of breasts + the air volume of breasts + the milk volume of breasts > the silicone volume of breasts / 2:
-		say "They contain [if the silicone volume of breasts > 12]extremely large[otherwise if the silicone volume of breasts > 8]large[otherwise]medium sized[end if] silicone implants.  ";
+		say "They contain [if the silicone volume of breasts > 12]extremely large[otherwise if the silicone volume of breasts > 8]large[otherwise]medium sized[end if] silicone implants. ";
 	otherwise:
-		say "The vast majority of your bust can be attributed to your [if the silicone volume of breasts > 12]extremely large[otherwise if the silicone volume of breasts > 8]large[otherwise]decently sizeable[end if] silicone implants.  ";
+		say "The vast majority of your bust can be attributed to your [if the silicone volume of breasts > 12]extremely large[otherwise if the silicone volume of breasts > 8]large[otherwise]decently sizeable[end if] silicone implants. ";
 	if the air volume of breasts is 0:
 		say "";
 	otherwise if the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts * 2:
-		say "They are slightly inflated with air.  ";
+		say "They are slightly inflated with air. ";
 	otherwise if the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts:
-		say "They are inflated with a decent amount of air.  ";
+		say "They are inflated with a decent amount of air. ";
 	otherwise if the flesh volume of breasts  + the milk volume of breasts + the silicone volume of breasts is the air volume of breasts or the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts / 2:
-		say "They are ballooned with a huge amount of air.  ";
+		say "They are ballooned with a huge amount of air. ";
 	otherwise:
-		say "They are ballooned with a massive amount of air.  ".
+		say "They are ballooned with a massive amount of air. ".
 
 [!<SayBreastWeight>+
 
@@ -635,23 +658,23 @@ To say BreastWeight:
 		otherwise if the sensitivity of breasts > 2:
 			say "They are a little sensitive to the touch, and when something rubs against them, it makes you feel light-headed and fuzzy inside, as if it was one big nipple.";
 		if W < -6:
-			say "They weigh significantly less than air and are trying to pull you up off the ground like a pair of helium balloons.  [if the largeness of breasts > 7 and the number of worn bras is 0]They are floating in front of your face, obscuring your vision.  [end if]";
+			say "They weigh significantly less than air and are trying to pull you up off the ground like a pair of helium balloons. [if the largeness of breasts > 7 and the number of worn bras is 0]They are floating in front of your face, obscuring your vision. [end if]";
 		otherwise if W < 0:
-			say "They are lighter than air, gently rising upwards from your chest.  ";
+			say "They are lighter than air, gently rising upwards from your chest. ";
 		otherwise if W < 3:
-			say "They are essentially weightless.  ";
+			say "They are essentially weightless. ";
 		otherwise if W < 9:
-			say "They are a bit heavy.  ";
+			say "They are a bit heavy. ";
 		otherwise if W < 15:
-			say "They are weighing you down a noticeable amount, but it could be worse.  ";
+			say "They are weighing you down a noticeable amount, but it could be worse. ";
 		otherwise if W < 21:
-			say "They are weighing you down to the point where it's a constantly noticeable burden.  ";
+			say "They are weighing you down to the point where it's a constantly noticeable burden. ";
 		otherwise if W < 27:
 			say "They are weighing you down a lot, your back is not happy!  ";
 		otherwise if W < 33:
-			say "They are ridiculously heavy, and you can't help but lean forward as they pull your upper body towards the ground.  ";
+			say "They are ridiculously heavy, and you can't help but lean forward as they pull your upper body towards the ground. ";
 		otherwise:
-			say "They are much heavier than any real world breasts ever would be.  [if the player is upright]Normal walking is out of the question, you are going to have to kneel down and rest every few minutes.  [end if]".
+			say "They are much heavier than any real world breasts ever would be. [if the player is upright]Normal walking is out of the question, you are going to have to kneel down and rest every few minutes. [end if]".
 
 [!<SayBreastModesty>+
 
@@ -661,18 +684,18 @@ REQUIRES COMMENTING
 To say BreastModesty:
 	if breasts is lewdly exposed:
 		if there is a worn breast covering top-placed clothing:
-			say "Your chest is clearly visible through your [random worn breast covering top-placed clothing].  ";
+			say "Your chest is clearly visible through your [random worn breast covering top-placed clothing]. ";
 		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [random worn breast covering clothing].  ";
+			say "Your nipples are clearly visible through your [random worn breast covering clothing]. ";
 		otherwise:
-			say "They are completely uncovered, on display for anyone who wants to [if the bimbo of the player < 5]perv on[otherwise if the bimbo of the player < 10]ogle at[otherwise]get intimate with[end if] them.  ";
+			say "They are completely uncovered, on display for anyone who wants to [if the bimbo of the player < 5]perv on[otherwise if the bimbo of the player < 10]ogle at[otherwise]get intimate with[end if] them. ";
 	otherwise if breasts is at least partially lewdly exposed:
 		if there is a worn breast covering top-placed clothing:
-			say "Your chest is partially visible through your [random worn breast covering top-placed clothing].  ";
+			say "Your chest is partially visible through your [random worn breast covering top-placed clothing]. ";
 		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [random worn nipple covering top-placed clothing].  ";
+			say "Your nipples are clearly visible through your [random worn nipple covering top-placed clothing]. ";
 	otherwise if breasts are not exposed:
-		say "[BreastsTheyAre] hidden safely behind your [random worn actually dense nipple covering clothing].  ".
+		say "[BreastsTheyAre] hidden safely behind your [random worn actually dense nipple covering clothing]. ".
 
 [!<SayBreastCupNumber>+
 
@@ -731,22 +754,22 @@ To Bustup (X - a number):
 	if the largeness of breasts > B:
 		say "Your breasts have visibly [one of]grown[or]swelled[or]expanded[at random] into [ShortDesc of breasts].";
 		if the largeness of breasts is 1:
-			if the bimbo of the player < 8, say "[one of][first custom style][line break]Woah, am I getting boobs?[roman type][line break][or][stopping]";
-			otherwise say "[one of][second custom style][line break]Oooh, I'm growing tits![roman type][line break][or][stopping]";
+			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]Woah, am I getting boobs?[roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]Oooh, I'm growing tits![roman type][line break][or][stopping]";
 		if the largeness of breasts is 3:
-			if the bimbo of the player < 8, say "[one of][first custom style][line break][if the player is male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
-			otherwise say "[one of][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";	
+			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break][if the player is male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";	
 		if the largeness of breasts is 5:		
-			if the bimbo of the player < 8, say "[one of][first custom style][line break]Okay, these boobs are getting worryingly big now...[roman type][line break][or][stopping]";
-			otherwise say "[one of][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";
+			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]Okay, these boobs are getting worryingly big now...[roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 10:
-			if the bimbo of the player < 12, say "[one of][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
-			otherwise say "[one of][second custom style][line break]Tee hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
+			if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]Tee hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 15:
-			if the bimbo of the player < 15, say "[one of][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
-			otherwise say "[one of][second custom style][line break]*giggle* My tits are just ridiculously huge!  I wonder if they can grow any bigger?[roman type][line break][or][stopping]";
+			if the bimbo of the player < 15, say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]*giggle* My tits are just ridiculously huge!  I wonder if they can grow any bigger?[roman type][line break][or][stopping]";
 		compute bra strain;
-	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size.  Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
+	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
 
 [!<2BustUp>+
 
@@ -841,7 +864,7 @@ To 2Bustdown:
 	otherwise if there is a restricting salve covering breasts:
 		say "[one of]You feel your [BreastDesc] try to shrink, but the salve of restriction stops them from changing size![or][or][or][or][or][in random order]";
 	otherwise if the flesh volume of breasts <= the real flesh volume of breasts:
-		if boobshrinkflav is 0, say "[if the faint count of the player is 0]Your boobs refuse to shrink.  [one of]What could that mean?[or][stopping][otherwise]Your boobs refuse to shrink.  [one of]Oh dear, that must mean your real world breasts have now grown to this size![or]They won't go smaller than your real world size![stopping][end if]";
+		if boobshrinkflav is 0, say "[if the faint count of the player is 0]Your boobs refuse to shrink. [one of]What could that mean?[or][stopping][otherwise]Your boobs refuse to shrink. [one of]Oh dear, that must mean your real world breasts have now grown to this size![or]They won't go smaller than your real world size![stopping][end if]";
 		now boobshrinkflav is 1;
 	otherwise:
 		decrease the flesh volume of breasts by 1;
@@ -862,7 +885,7 @@ To Milkup (X - a number):
 		otherwise if the player is top heavy and X is 1: [This is only done for the final unit of milk]
 			increase the milk volume of breasts by 1;
 			trigger lactation; [We have filled the player's breasts beyond legal capacity so we trigger lactation, which will empty some of it.]
-			if the player is top heavy, now the milk volume of breasts is the flesh volume of breasts; [Here we make sure that there isn't a huge amount of leftover milk that shouldn't be allowed to exist.  However we may want to improve this as with edge conditions there's a chance that much more milk will disappear here than it should.]
+			if the player is top heavy, now the milk volume of breasts is the flesh volume of breasts; [Here we make sure that there isn't a huge amount of leftover milk that shouldn't be allowed to exist. However we may want to improve this as with edge conditions there's a chance that much more milk will disappear here than it should.]
 			if a random number between 1 and 2 is 1 and the milk volume of breasts > 1:
 				say "[variable custom style]I [one of]really[or]urgently[purely at random] need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break]";
 		otherwise if the player is top heavy:
@@ -871,7 +894,7 @@ To Milkup (X - a number):
 			2Milkup; [We do this if the player's breast flesh is completely full of milk but the breasts are still allowed to grow.]
 			increase the flesh volume of breasts by 1;
 	if old-B < the largeness of breasts, say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!".
-	[if the player is overbusted, say "[one of][bold type]MilkUp function has increased breasts to larger than max size.  Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";]
+	[if the player is overbusted, say "[one of][bold type]MilkUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";]
 
 [!<2MilkUp>+
 
@@ -914,6 +937,7 @@ REQUIRES COMMENTING
 +!]
 To BustInflate (X - a number):
 	if the number of worn research airhancers > 0, increase X by 1;
+	now X is X * 2;
 	if the player is a flatchested trap, now X is 0;
 	let previous-weight be the weight of breasts;
 	while X > 0:
@@ -926,7 +950,7 @@ To BustInflate (X - a number):
 		say "Your [BreastDesc] are now lighter than air!  They gently try to rise from your body like two helium balloons glued to your chest.";
 	otherwise if previous-weight > 0 and the weight of breasts is 0:
 		say "Your [BreastDesc] are now weightless!  They seem to ignore the effects of gravity and now constantly wobble.";
-	if the player is overbusted, say "[one of][bold type]BustInflate function has increased breasts to larger than max size.  Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
+	if the player is overbusted, say "[one of][bold type]BustInflate function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
 
 [!<BustDeflateX>+
 
@@ -962,7 +986,7 @@ To BustImplantsUp (X - a number):
 			say "Your [BreastDesc] are just too big, the skin won't stretch any further!  Your new [if the silicone volume of breasts > 0]and improved [end if]implants shrink under the pressure.";
 			now attempt-done is 2;
 	compute bra strain;
-	if the player is overbusted, say "[one of][bold type]BustImplants function has increased breasts to larger than max size.  Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
+	if the player is overbusted, say "[one of][bold type]BustImplants function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
 
 [!<BustImplantsDownX>+
 
@@ -975,3 +999,4 @@ To BustImplantsDown (X - a number):
 		if the silicone volume of breasts > 0, decrease the silicone volume of breasts by 1.
 
 Breasts ends here.
+

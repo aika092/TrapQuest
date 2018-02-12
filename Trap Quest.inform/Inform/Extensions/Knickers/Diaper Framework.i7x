@@ -1,7 +1,7 @@
 Diaper Framework by Knickers begins here.
 
 
-diaper is a kind of knickers.  The armour of diaper is 11.  The description of diaper is "[ImageDesc of item described][diaper-desc]".  The soak-limit of diaper is usually 36.  A diaper is usually manly.  a knickers has a number called mess.  The text-shortcut of diaper is "dp".  A diaper is usually manly.
+diaper is a kind of knickers. The armour of diaper is 11. The description of diaper is "[ImageDesc of item described][diaper-desc]". The soak-limit of diaper is usually 36. A diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp". A diaper is usually manly.
 
 Definition: a clothing (called D) is dry rather than wet:
 	if the total-soak of D <= 0, decide yes;
@@ -77,7 +77,7 @@ The printed name of diaper is usually "[TQlink of item described][clothing-title
 The DQFigure of diaper is usually DQMedium. 
 
 To compute SelfExamineDesc of (K - a diaper):
-	say "A large puffy adult diaper completely covers your [ShortDesc of hips].  ".
+	say "A large puffy adult diaper completely covers your [ShortDesc of hips]. ".
 
 To say selfexamineuniquetitle of (K - a diaper):
 	say "diaper".
@@ -109,7 +109,7 @@ To decide which number is the initial cringe of (C - a diaper):
 	if the urine-soak of C is 0, decrease O by 2;
 	decide on O.
 
-Definition: a diaper (called D) is currently diaper covered: [if it's not, that means it's fully visible.  otherwise it means that probably just the shape can be seen.]
+Definition: a diaper (called D) is currently diaper covered: [if it's not, that means it's fully visible. otherwise it means that probably just the shape can be seen.]
 	if D is not worn, decide no;
 	if there is a worn diaper covering clothing, decide yes;
 	decide no.
@@ -136,26 +136,31 @@ Definition: a diaper (called C) is too boring:
 To say ShortDesc of (D - a diaper):
 	say selfexamineuniquetitle of D.
 	
+A diaper has a number called curse-charge.
+	
 To compute periodic effect of (D - a diaper):
 	compute unique periodic effect of D;
 	if D is no protection and D is not zippable and D is cursed or D is blessed:
-		if the number of embodied things penetrating a fuckhole is 0 and the bladder of the player > 4 and a random number between 1 and 10 is 1 and (the soak-limit of D / 2 > the total-soak of D):
+		if the number of embodied things penetrating a fuckhole is 0 and the bladder of the player > 4 and the player is not in danger and (the soak-limit of D / 2 > the total-soak of D):
 			say "[bold type]You feel your [D] somehow repair itself!  The rip at the crotch disappears, leaving it looking brand new[if the urine-soak of D > 0] (apart from the [urine])[end if].[roman type][line break]";
 			repair D;
-	let S be ((the soak-limit of D * 4) / 5) - the total-soak of D; [Is the diaper over 80% full]
-	if S <= 0 and D is not cursed and a random number between 1 and 70 is 1:
-		say "[bold type]You feel the waistband and leg holes of your [printed name of D] tighten significantly.  It looks like you can't take it off any more![line break][variable custom style]I'm being punished for not changing it, aren't I?[roman type][line break]";
-		curse D;
+	increase the curse-charge of D by 1;
+	if the curse-charge of D > 35:
+		now the curse-charge of D is 0;
+		let S be ((the soak-limit of D * 4) / 5) - the total-soak of D; [Is the diaper over 80% full]
+		if S <= 0 and D is not cursed and a random number between 1 and 70 is 1:
+			say "[bold type]You feel the waistband and leg holes of your [ShortDesc of D] tighten significantly. It looks like you can't take it off any more![line break][variable custom style]I'm being punished for not changing it, aren't I?[roman type][line break]";
+			curse D;
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 17 or xavier-diaper-link is 39:
-			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you.  The Demon Queen must be urinating [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if you are wetting yourself.  ";
+			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if you are wetting yourself. ";
 			PissSoak 12 on D;
 			say "[PeeReaction 2]";
 			if diaper lover < 3, now xavier-diaper-link is 1;
 		if xavier-diaper-link is 57:
 			now xavier-diaper-link is 1;
-			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you.  The Demon Queen must be messing herself [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if it's you, which is all that really matters.  ";
+			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
 			if D is not demon diaper, now diaper-scene-unhandled is 1;
 			compute messing.
@@ -189,7 +194,7 @@ Definition: a diaper (called D) is eligible:
 	if D is worn, decide no;
 	if D is held, decide no;
 	if D is in the location of the player, decide no;
-	if D is in a random pink wardrobe, decide no;
+	if D is in pink wardrobe, decide no;
 	repeat with C running through containers in the location of the player:
 		if D is in C, decide no; [This is here to stop us spawning a diaper in a container then immediately moving it back to standard item pen]
 	decide yes.
@@ -208,12 +213,12 @@ The setup starting diapers rule is listed in the setup starting items rules.
 To say diaper-saturation-desc:
 	let D be the soak-limit of the item described;
 	if item described is messed, say "You have filled the diaper [if the mess of item described > 10]to the brim with[otherwise if the mess of item described > 5]with a large amount of[otherwise]with a relatively small amount of[end if] your stinky mess.";
-	say "[if the total-soak of item described >= D]It has absorbed as much [soak-types] as it can possibly hold, and is puffed out to its largest possible size.  [otherwise if the total-soak of item described >= D / 4]It has absorbed a huge amount of [soak-types], and as such has expanded quite a bit.  [otherwise if the total-soak of item described >= D / 6]It has absorbed a decent amount of [soak-types].  [otherwise if the total-soak of item described >= D / 10]It has absorbed a smallish amount of [soak-types].  [otherwise if the total-soak of the item described > 0]It has absorbed a small amount of [soak-types].[otherwise]It is completely unsoiled.  [end if]";
-	if the item described is worn, say "[if the weight of item described is 0]It doesn't weigh you down at all.[otherwise if the weight of item described is 1]It is weighing you down a tiny amount.[otherwise if the weight of item described is 2]It is weighing you down a noticeable amount.[otherwise if the weight of item described is 3]It is quite heavy now and the bloated nature is forcing you to walk with a waddle.[otherwise if the weight of item described is 4]It is very noticeably weighing you down and making it impossible to walk without a waddle.[otherwise if the weight of item described is 5]It is adding significant amounts to your body weight and is forcing your legs apart into an exaggerated waddle.[otherwise if the weight of item described is 6]It is extremely heavy and has expanded to a comical size.  Your thighs are forced wide apart and you can't bend your knees at all when you walk.[otherwise]It is so heavy from all the [soak-types] it is holding that it feels like it is made of lead.  The puffy padding has expanded so far in every direction that you can no longer see your feet.  You can feel that the bottom of the diaper goes down past your knees.  Your thighs and legs are forced so far apart that you can only move by waddling along with the tiniest of steps.  You would probably be better off crawling.".
+	say "[if the total-soak of item described >= D]It has absorbed as much [soak-types] as it can possibly hold, and is puffed out to its largest possible size. [otherwise if the total-soak of item described >= D / 4]It has absorbed a huge amount of [soak-types], and as such has expanded quite a bit. [otherwise if the total-soak of item described >= D / 6]It has absorbed a decent amount of [soak-types]. [otherwise if the total-soak of item described >= D / 10]It has absorbed a smallish amount of [soak-types]. [otherwise if the total-soak of the item described > 0]It has absorbed a small amount of [soak-types].[otherwise]It is completely unsoiled. [end if]";
+	if the item described is worn, say "[if the weight of item described is 0]It doesn't weigh you down at all.[otherwise if the weight of item described is 1]It is weighing you down a tiny amount.[otherwise if the weight of item described is 2]It is weighing you down a noticeable amount.[otherwise if the weight of item described is 3]It is quite heavy now and the bloated nature is forcing you to walk with a waddle.[otherwise if the weight of item described is 4]It is very noticeably weighing you down and making it impossible to walk without a waddle.[otherwise if the weight of item described is 5]It is adding significant amounts to your body weight and is forcing your legs apart into an exaggerated waddle.[otherwise if the weight of item described is 6]It is extremely heavy and has expanded to a comical size. Your thighs are forced wide apart and you can't bend your knees at all when you walk.[otherwise]It is so heavy from all the [soak-types] it is holding that it feels like it is made of lead. The puffy padding has expanded so far in every direction that you can no longer see your feet. You can feel that the bottom of the diaper goes down past your knees. Your thighs and legs are forced so far apart that you can only move by waddling along with the tiniest of steps. You would probably be better off crawling.".
 
 Report wearing diaper:
 	if the urine-soak of the noun > 0:
-		say "The cold wet squelch as you put the [noun] on makes you [if the diaper addiction of the player < 10]shudder involuntarily.  How gross[otherwise if the diaper addiction of the player < 14]squirm uncomfortably.  It's cold and clammy[otherwise]shiver with arousal[end if].";
+		say "The cold wet squelch as you put the [noun] on makes you [if the diaper addiction of the player < 10]shudder involuntarily. How gross[otherwise if the diaper addiction of the player < 14]squirm uncomfortably. It's cold and clammy[otherwise]shiver with arousal[end if].";
 		if the diaper addiction of the player < 14, arouse 350;
 		DiaperAddictUp 1;
 	if diaper lover is 3 and the player is feeling full:
@@ -269,3 +274,4 @@ Check taking off worn diaper:
 
 
 Diaper Framework ends here.
+

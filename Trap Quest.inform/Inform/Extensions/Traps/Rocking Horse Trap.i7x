@@ -1,7 +1,7 @@
 Rocking Horse Trap by Traps begins here.
 
 
-A rocking horse is a kind of trap.  The text-shortcut of a rocking horse is "rch".  The printed name of rocking horse is "[TQlink of item described]rocking horse[TQxlink of item described][verb-desc of item described]".
+A rocking horse is a kind of trap. The text-shortcut of a rocking horse is "rch". The printed name of rocking horse is "[TQlink of item described]rocking horse[TQxlink of item described][verb-desc of item described]".
 
 This is the spawn initial woods rocking horse traps rule:
 	if diaper lover > 0:
@@ -17,7 +17,7 @@ The description of a rocking horse is "[RockingHorseDesc]".
 
 To say RockingHorseDesc:
 	if images visible is 1, display figure of rocking horse;
-	say "A large wooden rocking horse, made for an adult but fashioned like a child's one would be, in white, purple and pink, with a princess-style backrest and armrests[if item described is grabbing the player].  Some magic force is keeping you stuck to the saddle, it looks like you're going to have to [bold type]rock[roman type] until it lets you off[end if].".  
+	say "A large wooden rocking horse, made for an adult but fashioned like a child's one would be, in white, purple and pink, with a princess-style backrest and armrests[if item described is grabbing the player]. Some magic force is keeping you stuck to the saddle, it looks like you're going to have to [bold type]rock[roman type] until it lets you off[end if].". 
 
 There are 3 potentially pressure potentially sticky rocking horses.
 
@@ -33,7 +33,7 @@ Definition: yourself is rocker stuck:
 Figure of rocking horse is the file "rockinghorse1.png".
 
 To say ShortDesc of (T - a rocking horse):
-	say "An adult sized [T] is fixed on the ground.  ".
+	say "An adult sized [T] is fixed on the ground. ".
 
 To trigger (Y - a rocking horse):
 	now the motion of the player is 0;
@@ -42,13 +42,13 @@ To trigger (Y - a rocking horse):
 	now Y is not untriggered;
 	now Y is revealed;
 	if Y is grabbing the player:
-		say "You clamber up onto the rocking horse[if the body soreness of the player > 0] to rest and recover[end if].  ";
+		say "You clamber up onto the rocking horse[if the body soreness of the player > 0] to rest and recover[end if]. ";
 		let T be a random off-stage tiara;
 		if T is actually summonable:
 			summon T cursed;
 			say "As you do, a [T] appears on your head!";
 	otherwise:
-		say "A giant large wooden rocking horse shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor.  ";
+		say "A giant large wooden rocking horse shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. ";
 	say "Some kind of magic force seems to keep your butt glued to the saddle! Looks like you're going to have to [bold type]rock[roman type] yourself until it's happy to let you down!";
 	now the stance of the player is 0;
 	now Y is grabbing the player.
@@ -65,16 +65,16 @@ Rocking is an action applying to nothing.
 Check rocking:
 	unless there is a rocking horse grabbing the player:
 		now seconds is 6;
-		say "You rock back and forth a bit.  You're not sure why you did that..." instead.
+		say "You rock back and forth a bit. You're not sure why you did that..." instead.
 Carry out rocking:
 	let Y be a random rocking horse grabbing the player;
-	say "You rock back and forth.  ";
+	say "You rock back and forth. ";
 	now seconds is 6;
 	decrease the TrapNo of Y by 1;
 	if the player is not diapered:
 		let K be a random worn knickers;
 		if K is knickers:
-			say "As you rock, you feel your [K] getting lighter and lighter.  You look down just in time to witness it fade from existence!";
+			say "As you rock, you feel your [K] getting lighter and lighter. You look down just in time to witness it fade from existence!";
 			destroy K;
 		otherwise:
 			let D be a random eligible diaper;
@@ -92,7 +92,7 @@ Carry out rocking:
 			say "The saddle vibrates, gently stimulating you through your diaper.";
 			arouse 400;
 	otherwise:
-		say "The magic binding on the saddle seems to disappear!  You are able to climb off successfully.  [one of]As you lift yourself off, you magically feel fully healed!  Wow![or]Once again, you feel fully healed![stopping]";
+		say "The magic binding on the saddle seems to disappear!  You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed!  Wow![or]Once again, you feel fully healed![stopping]";
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
 		if the player is female:
@@ -110,7 +110,7 @@ Understand "rock" as rocking.
 
 Check submitting when there is a rocking horse grabbing the player:
 	let Y be a random rocking horse grabbing the player;
-	say "The [Y] suddenly heats up to a painful temperature, seemingly trying to encourage you to start rocking!  [variable custom style]Ouch!  Hot hot hot!!![roman type][line break]";
+	say "The [Y] suddenly heats up to a painful temperature, seemingly trying to encourage you to start rocking!  [line break][variable custom style]Ouch!  Hot hot hot!!![roman type][line break]";
 	DelicateUp 1 instead;
 	do nothing instead.
 
@@ -119,12 +119,13 @@ Check dropping a rocking horse:
 
 [TODO: Unique reactions for demoness, fairy]
 To compute RockingReaction of (M - a monster):
-	say "The [M] chuckles as [he of M] watches you.  [RockingReactionSpeech of M]You turn bright red.";
+	say "The [M] chuckles as [he of M] watches you. [RockingReactionSpeech of M]You turn bright red.";
 	humiliate 50.
 
 To say RockingReactionSpeech of (M - a monster):
-	say "[one of][speech style of M]'Haha, you look just like a real baby!'[roman type][line break][or][stopping]".
+	say "[one of][line break][speech style of M]'Haha, you look just like a real baby!'[roman type][line break][or][stopping]".
 
 
 
 Rocking Horse Trap ends here.
+

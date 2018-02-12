@@ -33,12 +33,11 @@ REQUIRES COMMENTING
 To bore (M - a monster) for (N - a number) seconds:
 	dislodge M;
 	if N >= 50 and the player is not in Dungeon12, decrease the charge of the dungeon altar by a random number between 1 and 50;
-	if M is interested:
-		now M is uninterested;
-		now the objectification of M is 0;
-		now the babification of M is 0;
-		now the friendly boredom of M is 0;
-		now the boredom of M is N.
+	now M is uninterested;
+	now the objectification of M is 0;
+	now the babification of M is 0;
+	now the friendly boredom of M is 0;
+	now the boredom of M is N.
 
 [!<SatisfyMonster>+
 
@@ -75,7 +74,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DeathBrink of (M - a monster):
-	say "The [M] is on the brink of defeat.  Do you want to leave her alive and fuck her instead?".
+	say "The [M] is on the brink of defeat. Do you want to leave her alive and fuck her instead?".
 
 [!<ComputeDeathOfMonster>+
 
@@ -150,7 +149,6 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 	now M is not dying;
 	deinterest M; [this includes dislodging]
 	now the questioned of M is 0;
-	now the question-asked of M is 0;
 	now the sleep of M is 0;
 	now the scared of M is 0;
 	now the last-interaction of M is 0;
@@ -213,3 +211,4 @@ To loot (M - a monster):
 
 
 Monster Functions ends here.
+

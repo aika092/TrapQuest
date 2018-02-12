@@ -1,7 +1,7 @@
 Ballet Shoes by Shoes begins here.
 
 
-A ballet shoes is a kind of shoes.  A ballet shoes is usually cotton.
+A ballet shoes is a kind of shoes. A ballet shoes is usually cotton.
 
 To decide which number is the original price of (C - a ballet shoes):
 	decide on 3.
@@ -54,7 +54,7 @@ Figure of ballet shoes is the file "balletshoes1.png".
 There is 1 ballet shoes.
 
 To say ClothingDesc of (C - a ballet shoes):
-	say "A pair of magic pink cotton ballet shoes[if C is worn] that force your feet onto tiptoes at all times.  However you seem to be brilliant at walking in them!  This is probably good practice for walking in real heels in the future[end if].".
+	say "A pair of magic pink cotton ballet shoes[if C is worn] that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them!  This is probably good practice for walking in real heels in the future[end if].".
 
 To decide which object is the unique-upgrade-target of (C - a ballet shoes):
 	if there is a worn diaper, decide on a random off-stage baby booties; 
@@ -67,7 +67,7 @@ The ballet shoes fix rule is listed in the diaper quest fix rules.
 
 Part 1 - Sissy Ballet Boots
 
-A sissy ballet boots is a kind of ballet shoes.  A sissy ballet boots is usually unique.  A sissy ballet boots is usually pvc.
+A sissy ballet boots is a kind of ballet shoes. A sissy ballet boots is usually unique. A sissy ballet boots is usually pvc.
 
 To decide which figure-name is the clothing-image of (H - a sissy ballet boots):
 	decide on the figure of sissy ballet boots.
@@ -77,7 +77,7 @@ Figure of sissy ballet boots is the file "balletshoes2.png".
 There is 1 sissy ballet boots.
 
 To say ClothingDesc of (C - a sissy ballet boots):
-	say "A pair of magic pink PVC ballet shoes with frilly bits that go up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times.  However you seem to be brilliant at walking in them!  This is probably good practice for walking in real heels in the future[end if].".
+	say "A pair of magic pink PVC ballet shoes with frilly bits that go up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them!  This is probably good practice for walking in real heels in the future[end if].".
 
 To decide which object is the unique-upgrade-target of (C - a sissy ballet boots):
 	if there is a worn diaper, decide on a random off-stage baby booties; 
@@ -92,3 +92,4 @@ To decide which number is the unique cringe of (C - a sissy ballet boots):
 
 
 Ballet Shoes ends here.
+

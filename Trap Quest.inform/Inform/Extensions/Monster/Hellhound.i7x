@@ -1,14 +1,18 @@
 Hellhound by Monster begins here.
 
-A hellhound is a kind of monster.  A hellhound is usually mansion dwelling.  A hellhound is usually male.  A hellhound is usually father material.  A hellhound is usually willing to do anal.  A hellhound is usually willing to do vaginal.  The leftover-type of a hellhound is usually 113. A hellhound is poison immune.  A hellhound can be unknotted or knotted.  Figure of hellhound is the file "demondog1.png".  There is 1 hellhound. Understand "hell", "hound", "dog" as hellhound.
+A hellhound is a kind of monster. A hellhound is male. The leftover-type of a hellhound is usually 113. The poison-status of a hellhound is -1. A hellhound can be unknotted or knotted. Figure of hellhound is the file "demondog1.png". There is 1 hellhound. Understand "hell", "hound", "dog" as hellhound.
 
-The description of hellhound is usually "[HellHoundDesc]".  The text-shortcut of hellhound is "hh".
+Definition: A hellhound (called M) is mansion dwelling:
+	if mythical creature fetish is 0, decide no;
+	decide yes.
+
+The description of hellhound is usually "[HellHoundDesc]". The text-shortcut of hellhound is "hh".
 
 The printed name of hellhound is "[if item described is in the location of the player][TQlink of item described][end if][input-style]hellhound[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
 
 To say HellHoundDesc:
 	if images visible is 1, display figure of hellhound;
-	say "This huge black canine is as tall as you even when it's on all fours.  Its spiked tail, sharp fangs and elongated claws are dead give-aways that it is from another plane.  [if a random pet collar is off-stage]It holds a collar and leash in its mouth, as if it's looking for someone to take it on a walk, or more likely, a pet of its own to lead around!  [end if]It stares at you with glowing red eyes, suggesting that a keen intelligence lies hidden behind the bestial mask.".
+	say "This huge black canine is as tall as you even when it's on all fours. Its spiked tail, sharp fangs and elongated claws are dead give-aways that it is from another plane. [if a random pet collar is off-stage]It holds a collar and leash in its mouth, as if it's looking for someone to take it on a walk, or more likely, a pet of its own to lead around!  [end if]It stares at you with glowing red eyes, suggesting that a keen intelligence lies hidden behind the bestial mask.".
 	
 To set up (M - a hellhound):
 	reset M;
@@ -17,10 +21,7 @@ To set up (M - a hellhound):
 	now the health of M is the maxhealth of M.
 
 This is the spawn initial hellhound rule:
-	if diaper quest is 1 or mythical creature fetish is 0:
-		repeat with M running through hellhounds:
-			now M is not mansion dwelling;
-	otherwise if the number of alive hellhounds is 0:
+	if the number of alive hellhounds is 0 and mythical creature fetish is 1:
 		let M be a random hellhound;
 		summon M in the mansion.
 The spawn initial hellhound rule is listed in the setting up mansion monsters rules.
@@ -31,6 +32,12 @@ To decide which number is the girth of (M - a hellhound):
 
 Definition: a hellhound (called M) is controlling: [Will it grab onto subduing clothing e.g. a clitoris lead?]
 	decide yes.
+
+Definition: a hellhound (called M) is willing to do oral:
+	decide no.
+
+Definition: a hellhound (called M) is willing to do titfucks:
+	decide no.
 
 Part 1 - Misc Flavour
 
@@ -44,9 +51,9 @@ To say PregGrowth of (M - a hellhound):
 To compute labour to (M - a hellhound):
 	if M is not alive or M is regional:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a wet black nose poke its way out of your [vagina], followed by a canine head and body.  The tiny puppy that has just emerged from your womb is clearly infernal even in its infant state, with its jet black fur and blood red eyes.  [if the bimbo of the player < 15][variable custom style]How is this even possible?![otherwise][second custom style]I'm a breeding bitch for a demon dog... what an honour![end if][roman type]  Your cervix continues to painfully dilate and spasm as another pup begins its journey into the [if the intelligence of the player < 7]real[otherwise]virtual[end if] world, beginning to yap with a high pitched voice as soon as it has taken its first breath of air[or][stopping].  Your giant belly slowly shrinks as puppy after puppy emerge.  All in all, you give birth to [one of][or]another [stopping] [one of]twelve demonic canine babies[or]litter of eleven pups[or]ten small but loud puppies[or]nine little doggies[at random].   [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'children', [if the bimbo of the player < 15]unable to believe that what just happened really happened[otherwise]unsure how you're expected to care for so many at once.  You only have two teats[end if]![or]You catch your breath as a weird sense of a job well done washes over you.[stopping][line break][if the father is in the location of the player]The [father][otherwise if M is alive]The [father] appears almost as if on cue!  It[otherwise]A ghostly apparition of the hellhound appears from thin air!  It[end if] howls loudly, almost like a wolf, and all the puppies copy their father.  A rift appears in the air, and [one of]what looks like a portal to another plane[or]the inter-planar portal once again[stopping] opens in front of you.  Your canine spawn jump through the shimmering portal, one by one, until they have all disappeared into the murky abyss.  After the last one has departed from this dimension, the portal closes.  The [M] takes one final incomprehensible look at you, before [if M is alive]beginning to wander away[otherwise]fading away[end if].";
+		say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a wet black nose poke its way out of your [vagina], followed by a canine head and body. The tiny puppy that has just emerged from your womb is clearly infernal even in its infant state, with its jet black fur and blood red eyes. [if the bimbo of the player < 15][line break][variable custom style]How is this even possible?![otherwise][line break][second custom style]I'm a breeding bitch for a demon dog... what an honour![end if][roman type][line break]Your cervix continues to painfully dilate and spasm as another pup begins its journey into the [if the intelligence of the player < 7]real[otherwise]virtual[end if] world, beginning to yap with a high pitched voice as soon as it has taken its first breath of air[or][stopping]. Your giant belly slowly shrinks as puppy after puppy emerge. All in all, you give birth to [one of][or]another [stopping] [one of]twelve demonic canine babies[or]litter of eleven pups[or]ten small but loud puppies[or]nine little doggies[at random]. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'children', [if the bimbo of the player < 15]unable to believe that what just happened really happened[otherwise]unsure how you're expected to care for so many at once. You only have two teats[end if]![or]You catch your breath as a weird sense of a job well done washes over you.[stopping][line break][if the father is in the location of the player]The [father][otherwise if M is alive]The [father] appears almost as if on cue!  It[otherwise]A ghostly apparition of the hellhound appears from thin air!  It[end if] howls loudly, almost like a wolf, and all the puppies copy their father. A rift appears in the air, and [one of]what looks like a portal to another plane[or]the inter-planar portal once again[stopping] opens in front of you. Your canine spawn jump through the shimmering portal, one by one, until they have all disappeared into the murky abyss. After the last one has departed from this dimension, the portal closes. The [M] takes one final incomprehensible look at you, before [if M is alive]beginning to wander away[otherwise]fading away[end if].";
 		if the father is in the location of the player:
-			say "For some reason, you are filled with a sense of deep fulfilment.  You feel great!";
+			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
 			DexUp 1;
 			IntUp 1;
@@ -151,10 +158,10 @@ To say ClimaxAnnounce of (M - a hellhound) in (F - asshole):
 	say "The [M] howls as [he of M] climaxes, filling you with [his of M] unusually hot jism. [run paragraph on]".
 
 To say ClimaxAnnounce of (M - a hellhound) in (F - vagina):
-	say "The [M] howls as he climaxes, filling you with its unusually hot jism.  You can feel it flow into your womb[if pregnancy fetish is 1 and inhuman pregnancy > 1], surging straight for your fallopian tubes with unnatural ease[end if].  [if pregnancy fetish is 1 and inhuman pregnancy > 1 and M is mating][variable custom style]Uh-oh, not pups again![roman type][line break][otherwise if pregnancy fetish is 1 and inhuman pregnancy > 1][variable custom style]I can't get pregnant with puppies, can I?!  I'm a human![roman type][line break][end if]".
+	say "The [M] howls as he climaxes, filling you with its unusually hot jism. You can feel it flow into your womb[if pregnancy fetish is 1 and inhuman pregnancy > 1], surging straight for your fallopian tubes with unnatural ease[end if]. [if pregnancy fetish is 1 and inhuman pregnancy > 1 and M is mating][line break][variable custom style]Uh-oh, not pups again![roman type][line break][otherwise if pregnancy fetish is 1 and inhuman pregnancy > 1][line break][variable custom style]I can't get pregnant with puppies, can I?!  I'm a human![roman type][line break][end if]".
 
 To say CreampieFlav of (M - a hellhound) of (F - a fuckhole):
-	say "But rather than pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and you can't help but make high pitched noises as you feel the base of its cock inflating[one of][or], stretching your tired hole once again[stopping].  There's nothing you can do under the weight of the beast except shudder as you are knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
+	say "But rather than pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and you can't help but make high pitched noises as you feel the base of its cock inflating[one of][or], stretching your tired hole once again[stopping]. There's nothing you can do under the weight of the beast except shudder as you are knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
 
 To say MessyPullOutFlav of (M - a hellhound) in (F - asshole):
 	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel the base of its cock inflating. Pinned down by its full weight, [if the sex addiction of the player < 7]your heart sinks[otherwise if the sex addiction of the player < 14]you groan[otherwise]you mewl happily[end if] as you realize there's nothing you can do to get away as you are anally knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].".
@@ -181,7 +188,7 @@ To compute (M - a hellhound) pulling out of (F - vagina):
 To compute (M - a hellhound) messily pulling out of (F - vagina):
 	say MessyPullOutFlav of M in F;
 	compute M finishing in F;
-	FacePiss.
+	FacePiss from M.
 
 To compute (M - a hellhound) cleanly pulling out of (F - vagina):
 	say PullOutFlav of M in F;
@@ -197,12 +204,12 @@ To compute knotting of (M - a hellhound) in (F - a fuckhole):
 	if the sex-length of M <= 0:
 		now M is unknotted;
 		dislodge M;
-		say "The [M]'s knot finally deflates and it walks away, its [manly-penis] plopping out of your hole as the gap between you grows.  It doesn't even look back, seemingly not even noticing that it is no longer dragging your body along with it.";
+		say "The [M]'s knot finally deflates and it walks away, its [manly-penis] plopping out of your hole as the gap between you grows. It doesn't even look back, seemingly not even noticing that it is no longer dragging your body along with it.";
 		bore M;
 		let H be a random off-stage puppy ears;
 		if H is actually summonable:
 			summon H cursed;
-			say "[bold type]Suddenly, a pair of [H][bold type] appear on your head![if the bimbo of the player < 9]  [variable custom style]I am NOT a dog![end if][roman type][line break]";
+			say "[bold type]Suddenly, a pair of [H][bold type] appear on your head![if the bimbo of the player < 9]  [line break][variable custom style]I am NOT a dog![end if][roman type][line break]";
 	otherwise if M is willing to creampie F:
 		if M is in Mansion08:
 			say "The [M] completely ignores you, continuing to drink its fill.";
@@ -252,7 +259,7 @@ To compute (M - a hellhound) entering asshole:
 	if the player is the donator and C is actually summonable and M is willing to creampie asshole:
 		summon C cursed;
 		now M is covering C;
-		say "The [M] uses its giant mouth to swing the collar over your head and onto your neck, where it immediately seals itself with cursed magic.  The [M] still has the leash in its mouth, which it uses to hold you strictly in place.  There's no way you can escape now!";
+		say "The [M] uses its giant mouth to swing the collar over your head and onto your neck, where it immediately seals itself with cursed magic. The [M] still has the leash in its mouth, which it uses to hold you strictly in place. There's no way you can escape now!";
 	otherwise:
 		say "[FuckholePenetrationFlav of M]";
 		now M is penetrating asshole;
@@ -268,13 +275,13 @@ To say FuckholePenetrationFlav of (M - a hellhound):
 	now M is unknotted;
 	if the sex-length of M < 5, now the sex-length of M is a random number between 3 and 4;
 	if the sex-length of M > 5, now the sex-length of M is 5;
-	say "Standing over you on all fours, the [M] places its front paws over your hands, preventing you from moving at all.  As if it would have mattered anyway - the beast is so heavy that all it had to do was put its weight on you!  The [M] thrusts blindly, sending its [manly-penis] prodding between your butt-cheeks.  [one of]No!  You clench your ass-cheeks, trying to deny it entrance, but the long member feels surprisingly oily and slippery, and you have a bad feeling you know where this is going to end...[or]Once again it probes blindly between your thighs...[stopping] You do not have to wait long before it comes across an opening, and sensing that victory is close, the [M] begins pressing forward.  As the tip of its [manly-penis] pierces into your [variable F], you hear it howl - but you could swear that the howl somehow sounds like laughter.".
+	say "Standing over you on all fours, the [M] places its front paws over your hands, preventing you from moving at all. As if it would have mattered anyway - the beast is so heavy that all it had to do was put its weight on you!  The [M] thrusts blindly, sending its [manly-penis] prodding between your butt-cheeks. [one of]No!  You clench your ass-cheeks, trying to deny it entrance, but the long member feels surprisingly oily and slippery, and you have a bad feeling you know where this is going to end...[or]Once again it probes blindly between your thighs...[stopping] You do not have to wait long before it comes across an opening, and sensing that victory is close, the [M] begins pressing forward. As the tip of its [manly-penis] pierces into your [variable F], you hear it howl - but you could swear that the howl somehow sounds like laughter.".
 
 This is the hellhound fills diaper rule:
 	let M be current-monster;
 	if the player is diaper focused:
 		let D be a random worn diaper;
-		say "The [M] mounts you from behind, its canine [manly-penis] struggling to find anything to penetrate thanks to your well-padded rear.  Unable to make its way inside, it settles for humping against your [D] whilst you lay there unable to move from under its immense weight.  As the [M]'s movements become more frantic, its [manly-penis] manages to slip into one of the leg-holes of your diaper.  Stimulated by this sudden change in sensation, the [M] ejaculates, coating your butt cheeks with canine [semen].  You hold still as the [M] pulls away, leaving you with his musky seed seeping into your padding.";
+		say "The [M] mounts you from behind, its canine [manly-penis] struggling to find anything to penetrate thanks to your well-padded rear. Unable to make its way inside, it settles for humping against your [D] whilst you lay there unable to move from under its immense weight. As the [M]'s movements become more frantic, its [manly-penis] manages to slip into one of the leg-holes of your diaper. Stimulated by this sudden change in sensation, the [M] ejaculates, coating your butt cheeks with canine [semen]. You hold still as the [M] pulls away, leaving you with his musky seed seeping into your padding.";
 		CumSoak 3 on D;
 		satisfy M;
 		rule succeeds.
@@ -294,7 +301,7 @@ Section 2 - Damage
 To compute damage of (M - a hellhound):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The [M] barks angrily, with a terrifying demonic echo.  Uh-oh...";
+			say "The [M] barks angrily, with a terrifying demonic echo. Uh-oh...";
 			now M is interested;
 			anger M;
 			now the sex-length of M is 4;
@@ -315,3 +322,4 @@ To say DamageReaction (N - a number) of (M - a hellhound):
 
 
 Hellhound ends here.
+

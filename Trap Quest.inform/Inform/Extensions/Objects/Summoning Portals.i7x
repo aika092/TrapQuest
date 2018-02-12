@@ -1,9 +1,9 @@
 Summoning Portals by Objects begins here.
 
-A summoning portal is a kind of thing. A summoning portal is not portable.[ The printed name of summoning portal is "summoning portal".] The text-shortcut of summoning portal is "spo".  A summoning portal can be active. A summoning portal is usually not active. A summoning portal has a number called charge. The charge of a summoning portal is usually 450. [represents the time until it spawns the next monster]A summoning portal has a number called next-summon. The next-summon of a summoning portal is usually 0.[represents the next monster it will summon we can obfuscate this from the player or show them if we want to.]
+A summoning portal is a kind of thing. A summoning portal is not portable.[ The printed name of summoning portal is "summoning portal".] The text-shortcut of summoning portal is "spo". A summoning portal can be active. A summoning portal is usually not active. A summoning portal has a number called charge. The charge of a summoning portal is usually 450. [represents the time until it spawns the next monster]A summoning portal has a number called next-summon. The next-summon of a summoning portal is usually 0.[represents the next monster it will summon we can obfuscate this from the player or show them if we want to.]
 
 A summoning portal has a number called spawn-count. The spawn-count of a summoning portal is usually 0.
-A summoning portal has a number called reset-count.  The reset-count of a summoning portal is usually 0.
+A summoning portal has a number called reset-count. The reset-count of a summoning portal is usually 0.
 
 [!<ChargeUpPortalByNumber>+
 
@@ -262,7 +262,7 @@ Carry out appeasing something with summoning-circle:
 		let N be 0;
 		if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 		if N <= 0:
-			say "You throw the [noun] into the circle. It disintegrates.  Nothing else happens.";
+			say "You throw the [noun] into the circle. It disintegrates. Nothing else happens.";
 			only destroy the noun;
 		otherwise:
 			say "The bodily fluids in the [noun] start to glow a fluorescent shade of blue as you throw it into the circle, the clothing disintegrating as it absorbs some of the building energy.";
@@ -274,7 +274,7 @@ Report appeasing something with summoning-circle:
 
 Chapter 2 - Giant Statue
 
-The giant-statue is in Woods30. The giant-statue is a summoning portal. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]".  Figure of giant pregnant statue is the file "statue5.png".  Figure of giant-statue is the file "statue6.png". Understand "giant", "statue" as giant-statue.
+The giant-statue is in Woods30. The giant-statue is a summoning portal. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Figure of giant pregnant statue is the file "statue5.png". Figure of giant-statue is the file "statue6.png". Understand "giant", "statue" as giant-statue.
 
 The description of giant-statue is "[GiantDesc]";
 
@@ -294,7 +294,7 @@ To say GiantDesc:
 To say PortalHint of (S - a giant-statue):
 	let N be the next-summon of S;
 	if N < 3 and N > 0:
-		say "You can hear really intense moaning coming from inside it. [if the sex addiction of the player < 6][first custom style]Sounds like screaming...[roman type][otherwise if the sex addiction of the player < 14][variable custom style]Why do I feel jealous...[roman type][otherwise][second custom style]Wow, whoever is in there must feel really good...[roman type][end if]";[demoness/wasp]
+		say "You can hear really intense moaning coming from inside it. [if the sex addiction of the player < 6][line break][first custom style]Sounds like screaming...[roman type][line break][otherwise if the sex addiction of the player < 14][line break][variable custom style]Why do I feel jealous...[roman type][line break][otherwise][line break][second custom style]Wow, whoever is in there must feel really good...[roman type][line break][end if]";[demoness/wasp]
 	otherwise if N is 3:
 		say "You can make out a faint slapping noise coming from inside it. It's rhythmic, and every so often you hear a moan.";[gladiator]
 	otherwise if N < 6:
@@ -450,14 +450,14 @@ To say PortalHint of (S - a mysterious-mummy):
 		otherwise:[ghost?]
 			say "A kneeling woman wrapped in white linen, with a green aura highlighting her figure in the relative darkness. The fabric is pulled taut near all of her sensitive parts, and the air around you is positively dripping with [italic type]intent[roman type]. You're feel a little violated just standing in the same room too long.";[TODO: unsuccessful summon changes next-summon to a ghost.]
 	otherwise:
-		say "A feminine figure wrapped in white linen, with just about your height and build.  Its arms are open, and its head always seems to be facing you no matter where you stand in the room. ".
+		say "A feminine figure wrapped in white linen, with just about your height and build. Its arms are open, and its head always seems to be facing you no matter where you stand in the room. ".
 
 To say ActiveWarning of (S - a mysterious-mummy):
 	let G be a random number between 1 and 3;
 	let N be the next-summon of S;
 	if N is 2:[gladiator]
 		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. [run paragraph on]";
-		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if trap fetish is 0]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [first custom style]C-cowards! You can't become a real woman if y-[roman type] The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
+		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if trap fetish is 0]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [line break][first custom style]C-cowards! You can't become a real woman if y-[roman type][line break]The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
 	otherwise if N is 1:[cultist]
 		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. You recognize the person as another cultist as they move closer, but this one seems different from the others, somehow.[line break][first custom style]Ready yourself, sister! Your last rite of passage is at hand!'[roman type][line break]The first two cultists lead her up to the [printed name of S], leaving as the linen begins to unravel. She seems to be repeating some chant under her breath as the mummy explodes forward, completely covering her in strips of frayed fabric.";
 	otherwise if N is 5:[demoness]
@@ -530,3 +530,4 @@ Carry out appeasing something with mysterious-mummy:
 			say "Nothing happens. [if the cult-cooldown of the second noun > 0] Maybe you need to wait before offering something to it again?[end if]".
 
 Summoning Portals ends here.
+

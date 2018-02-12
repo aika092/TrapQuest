@@ -1,6 +1,6 @@
 Trainee Bra by Bra begins here.
 
-A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized.  A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 Figure of trainee bra is the file "traineebra1.png".
 
@@ -18,7 +18,7 @@ To say CupDesc of (C - a trainee bra):
 To decide which number is the perceived-bimbo-influence of (C - a trainee bra):
 	decide on 2.[no perceived breast size for now, so this will do.]
 
-trainee bra removability rules is a rulebook.  The removability rules of trainee bra is usually trainee bra removability rules.
+trainee bra removability rules is a rulebook. The removability rules of trainee bra is usually trainee bra removability rules.
 
 This is the magnetized trainee bra can't be removed rule:
 	if the noun is magnetized:
@@ -31,6 +31,7 @@ Report wearing trainee bra:
 	now the noun is magnetized.
 
 To compute periodic effect of (C - a trainee bra):
+	BraGrow C;
 	if a random number between 1 and 50 is 1:
 		if artificial enhancements fetish is 1:
 			if the training-progress of C is 3:
@@ -40,7 +41,7 @@ To compute periodic effect of (C - a trainee bra):
 				destroy C;
 				ProgressUp senior robobellboy;
 			otherwise:
-				say "Your [printed name of C] [if the training-progress of C is 0]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure that your chest is a lot more sensitive than it used to be.[line break]";
+				say "Your [printed name of C] [if the training-progress of C is 0]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.[line break]";
 				TitFuckAddictUp 1;
 				if lactation fetish is 1, increase the lactation rate of the player by 1;
 				arouse 100 + the sensitivity of breasts * 10;
@@ -57,3 +58,4 @@ To compute periodic effect of (C - a trainee bra):
 
 
 Trainee Bra ends here.
+

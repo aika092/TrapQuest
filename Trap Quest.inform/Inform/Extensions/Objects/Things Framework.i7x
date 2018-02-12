@@ -6,14 +6,14 @@ Things Framework by Objects begins here.
 REQUIRES COMMENTING
 
 *@!]
-A thing has an indexed text called a text-shortcut.  Understand the text-shortcut property as describing a thing.
+A thing has an indexed text called a text-shortcut. Understand the text-shortcut property as describing a thing.
 
 [!<Thing>@<disembodied:Boolean>*
 
 REQUIRES COMMENTING
 
 *@!]
-A thing can be disembodied.  
+A thing can be disembodied. 
 
 
 To say MediumDesc of (C - a thing):
@@ -24,3 +24,4 @@ To say ShortDesc of (C - a thing):
 
 
 Things Framework ends here.
+

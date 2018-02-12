@@ -58,7 +58,7 @@ Check unplugging something:
 Carry out unplugging something:
 	if the noun is anal beads, do nothing instead;[Important!]
 	if the player is in danger:
-		say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [printed name of the noun] out of your fuckhole to make it available for the [printed name of random unfriendly interested monster in the location of the player].  Your cheeks turn a beetroot shade of red.";
+		say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [printed name of the noun] out of your fuckhole to make it available for the [printed name of random unfriendly interested monster in the location of the player]. Your cheeks turn a beetroot shade of red.";
 		humiliate 125;
 		compute player submission;
 	if the girth of the noun > the openness of a random orifice penetrated by the noun + 2:
@@ -69,7 +69,7 @@ Carry out unplugging something:
 	now the noun is held by the player.
 Report unplugging something:
 	if the noun is dildo sword and the raw-magic-modifier of the noun < 5:
-		say "As you pull it out, it glows strongly.  It feels more powerful, as least for now!";
+		say "As you pull it out, it glows strongly. It feels more powerful, as least for now!";
 		now the raw-magic-modifier of the noun is 5;
 	otherwise if the number of body parts penetrated by the noun < 1:
 		say "Successfully removed.";
@@ -77,3 +77,4 @@ Report unplugging something:
 
 
 Plugging ends here.
+

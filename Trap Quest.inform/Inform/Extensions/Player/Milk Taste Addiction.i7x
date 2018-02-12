@@ -43,7 +43,7 @@ Part 2 - Modify Milk Taste Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw milk taste addiction.  The raw milk taste addiction of the player is usually 1. [Min 1 Max 20]
+The player has a number called raw milk taste addiction. The raw milk taste addiction of the player is usually 1. [Min 1 Max 20]
 
 [!<MilkTasteAddictUpX>+
 
@@ -71,3 +71,4 @@ To MilkTasteAddictDown (X - a number):
 
 
 Milk Taste Addiction ends here.
+

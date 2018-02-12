@@ -1,6 +1,6 @@
 No Panties Tattoo by Tattoos begins here.
 
-no-panties tattoo is a kind of crotch tattoo.  Figure of no-panties tattoo is the file "tattoo10.png".  There is 1 no-panties tattoo.
+no-panties tattoo is a kind of crotch tattoo. Figure of no-panties tattoo is the file "tattoo10.png". There is 1 no-panties tattoo.
 Definition: a no-panties tattoo (called T) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper lover >= 1, decide no;
@@ -15,3 +15,4 @@ To decide which number is the initial outrage of (T - a no-panties tattoo):
 	decide on 8.
 
 No Panties Tattoo ends here.
+

@@ -1,13 +1,13 @@
 Maid Outfit by Dresses begins here.
 
-A maid outfit is a kind of overdress.  A maid outfit is usually unique.
+A maid outfit is a kind of overdress. A maid outfit is usually unique.
 
 Understand "maids", "maid's", "apron" as maid outfit.
 
-The printed name of maid outfit is usually "[TQlink of item described][clothing-title-before]maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of maid outfit is "mo".
+The printed name of maid outfit is usually "[TQlink of item described][clothing-title-before]maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of maid outfit is "mo".
 
 To compute SelfExamineDesc of (M - a maid outfit):
-	say "You are wearing a [ShortDesc of M].  ".
+	say "You are wearing a [ShortDesc of M]. ".
 
 To say ShortDesc of (C - a maid outfit):
 	say "slutty maid's outfit".
@@ -47,7 +47,7 @@ Definition: a maid outfit (called M) is untransformable:
 
 Part 1 - Playdude Maid Outfit
 
-A playdude maid outfit is a kind of maid outfit. There is 1 playdude maid outfit.  A playdude maid outfit is high cut.  The text-shortcut of playdude maid outfit is "mo1". The printed name of playdude maid outfit is usually "[TQlink of item described][clothing-title-before]playdude maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A playdude maid outfit is a kind of maid outfit. There is 1 playdude maid outfit. A playdude maid outfit is high cut. The text-shortcut of playdude maid outfit is "mo1". The printed name of playdude maid outfit is usually "[TQlink of item described][clothing-title-before]playdude maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a playdude maid outfit):
 	decide on figure of maid outfit 1.
@@ -66,7 +66,7 @@ To decide which object is the potential-upgrade-target of (M - a playdude maid o
 
 Part 2 - Drooping Maid Outfit
 
-A drooping maid outfit is a kind of maid outfit. There is 1 drooping maid outfit.  A drooping maid outfit is very low cut.  The text-shortcut of drooping maid outfit is "mo2". The printed name of drooping maid outfit is usually "[TQlink of item described][clothing-title-before]drooping maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A drooping maid outfit is a kind of maid outfit. There is 1 drooping maid outfit. A drooping maid outfit is very low cut. The text-shortcut of drooping maid outfit is "mo2". The printed name of drooping maid outfit is usually "[TQlink of item described][clothing-title-before]drooping maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a drooping maid outfit):
 	decide on figure of maid outfit 2.
@@ -84,7 +84,7 @@ To decide which object is the potential-upgrade-target of (M - a drooping maid o
 	
 Part 3 - Cheap Maid Outfit
 
-A cheap maid outfit is a kind of maid outfit. A cheap maid outfit is usually pvc.  A cheap maid outfit is usually short.  There is 1 cheap maid outfit.  The text-shortcut of cheap maid outfit is "mo3". The printed name of cheap maid outfit is usually "[TQlink of item described][clothing-title-before]cheap maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A cheap maid outfit is a kind of maid outfit. A cheap maid outfit is usually pvc. A cheap maid outfit is usually short. There is 1 cheap maid outfit. The text-shortcut of cheap maid outfit is "mo3". The printed name of cheap maid outfit is usually "[TQlink of item described][clothing-title-before]cheap maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a cheap maid outfit):
 	decide on figure of maid outfit 3.
@@ -102,7 +102,7 @@ To decide which object is the potential-upgrade-target of (M - a cheap maid outf
 
 Part 4 - Fetish Maid Outfit
 
-A fetish maid outfit is a kind of maid outfit.  A fetish maid outfit is usually latex.  A fetish maid outfit is usually unskirted.  A fetish maid outfit is usually crotch-intact.  A fetish maid outfit is usually crotch-intact.  There is 1 fetish maid outfit.  The text-shortcut of fetish maid outfit is "mo4". The printed name of fetish maid outfit is usually "[TQlink of item described][clothing-title-before]fetish maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A fetish maid outfit is a kind of maid outfit. A fetish maid outfit is usually latex. A fetish maid outfit is usually unskirted. A fetish maid outfit is usually crotch-intact. A fetish maid outfit is usually crotch-intact. There is 1 fetish maid outfit. The text-shortcut of fetish maid outfit is "mo4". The printed name of fetish maid outfit is usually "[TQlink of item described][clothing-title-before]fetish maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a fetish maid outfit):
 	decide on figure of maid outfit 4.
@@ -125,7 +125,7 @@ To decide which object is the potential-upgrade-target of (M - a fetish maid out
 
 Part 5 - Pink Maid Outfit
 
-A pink maid outfit is a kind of maid outfit.  A pink maid outfit is usually sheer.  A pink maid outfit is usually belly exposing.  A pink maid outfit is usually short.  There is 1 pink maid outfit.  A pink maid outfit is usually fully covering. A pink maid outfit is usually optional-top-displacable.  The text-shortcut of pink maid outfit is "mo5". The printed name of pink maid outfit is usually "[TQlink of item described][clothing-title-before]pink maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A pink maid outfit is a kind of maid outfit. A pink maid outfit is usually sheer. A pink maid outfit is usually belly exposing. A pink maid outfit is usually short. There is 1 pink maid outfit. A pink maid outfit is usually fully covering. A pink maid outfit is usually optional-top-displacable. The text-shortcut of pink maid outfit is "mo5". The printed name of pink maid outfit is usually "[TQlink of item described][clothing-title-before]pink maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a pink maid outfit):
 	decide on figure of maid outfit 5a.
@@ -145,7 +145,7 @@ To decide which object is the potential-upgrade-target of (M - a pink maid outfi
 
 Part 6 - Slutty Maid Outfit
 
-A slutty maid outfit is a kind of maid outfit.  A slutty maid outfit is usually nylon.  A slutty maid outfit is usually unskirted.  A slutty maid outfit is usually crotch-intact.  A slutty maid outfit is usually crotch-intact.  A slutty maid outfit is usually sheer.  There is 1 slutty maid outfit.  The text-shortcut of slutty maid outfit is "mo6". The printed name of slutty maid outfit is usually "[TQlink of item described][clothing-title-before]slutty maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A slutty maid outfit is a kind of maid outfit. A slutty maid outfit is usually nylon. A slutty maid outfit is usually unskirted. A slutty maid outfit is usually crotch-intact. A slutty maid outfit is usually crotch-intact. A slutty maid outfit is usually sheer. There is 1 slutty maid outfit. The text-shortcut of slutty maid outfit is "mo6". The printed name of slutty maid outfit is usually "[TQlink of item described][clothing-title-before]slutty maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a slutty maid outfit):
 	decide on figure of maid outfit 6.
@@ -168,13 +168,13 @@ To decide which object is the potential-upgrade-target of (M - a slutty maid out
 
 Part 7 - V-shape Maid Outfit
 
-A V-shape maid outfit is a kind of maid outfit.  A V-shape maid outfit is usually denim. [This is the closest to accurate] A V-shape maid outfit is usually unskirted.  A V-shape maid outfit is usually crotch-intact.  There is 1 V-shape maid outfit.  A V-shape maid outfit is usually ridiculously low cut.  The text-shortcut of V-shape maid outfit is "mo7". The printed name of V-shape maid outfit is usually "[TQlink of item described][clothing-title-before]V-shape maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A V-shape maid outfit is a kind of maid outfit. A V-shape maid outfit is usually denim. [This is the closest to accurate] A V-shape maid outfit is usually unskirted. A V-shape maid outfit is usually crotch-intact. There is 1 V-shape maid outfit. A V-shape maid outfit is usually ridiculously low cut. The text-shortcut of V-shape maid outfit is "mo7". The printed name of V-shape maid outfit is usually "[TQlink of item described][clothing-title-before]V-shape maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a V-shape maid outfit):
 	decide on figure of maid outfit 7.
 
 To say ClothingDesc of (M - a V-shape maid outfit):
-	say " An extremely complex corset comprised of black satin, white lace, and some buckles to make sure it doesn't go anywhere. Holding tightly and keeping your posture at a perfect ten, this is a corset worthy of only the most obedient and beautiful of royal maids.  The top of the outfit is so low that it [if M is not worn]might not even cover your nipples[otherwise if M is nipple covering]can barely even cover your nipples[otherwise]fails to even cover your nipples[end if].".
+	say " An extremely complex corset comprised of black satin, white lace, and some buckles to make sure it doesn't go anywhere. Holding tightly and keeping your posture at a perfect ten, this is a corset worthy of only the most obedient and beautiful of royal maids. The top of the outfit is so low that it [if M is not worn]might not even cover your nipples[otherwise if M is nipple covering]can barely even cover your nipples[otherwise]fails to even cover your nipples[end if].".
 
 To decide which number is the initial outrage of (C - a V-shape maid outfit):
 	decide on 14.
@@ -195,7 +195,7 @@ To decide which object is the potential-upgrade-target of (M - a V-shape maid ou
 
 Part 8 - Fishnet Maid Outfit
 
-A fishnet maid outfit is a kind of maid outfit. There is 1 fishnet maid outfit.  A fishnet maid outfit is fully covering.  A fishnet maid outfit is mesh.  A fishnet maid outfit is usually unskirted.  A fishnet maid outfit is usually crotch-intact.  The text-shortcut of fishnet maid outfit is "mo8". The printed name of fishnet maid outfit is usually "[TQlink of item described][clothing-title-before]fishnet maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "fish", "net" as fishnet maid outfit.
+A fishnet maid outfit is a kind of maid outfit. There is 1 fishnet maid outfit. A fishnet maid outfit is fully covering. A fishnet maid outfit is mesh. A fishnet maid outfit is usually unskirted. A fishnet maid outfit is usually crotch-intact. The text-shortcut of fishnet maid outfit is "mo8". The printed name of fishnet maid outfit is usually "[TQlink of item described][clothing-title-before]fishnet maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "fish", "net" as fishnet maid outfit.
 
 To decide which figure-name is clothing-image of (C - a fetish maid outfit):
 	decide on figure of maid outfit 8.
@@ -216,13 +216,13 @@ To decide which object is the potential-upgrade-target of (M - a fishnet maid ou
 
 Part 9 - Blue Sissy Maid Outfit
 
-A blue sissy maid outfit is a kind of maid outfit. There is 1 blue sissy maid outfit.  A blue sissy maid outfit is fully covering.  A blue sissy maid outfit is polyester.  The text-shortcut of blue sissy maid outfit is "bmo".  A blue sissy maid outfit is usually short. The printed name of blue sissy maid outfit is usually "[TQlink of item described][clothing-title-before]blue sissy maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A blue sissy maid outfit is a kind of maid outfit. There is 1 blue sissy maid outfit. A blue sissy maid outfit is fully covering. A blue sissy maid outfit is polyester. The text-shortcut of blue sissy maid outfit is "bmo". A blue sissy maid outfit is usually short. The printed name of blue sissy maid outfit is usually "[TQlink of item described][clothing-title-before]blue sissy maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a blue sissy maid outfit):
 	decide on figure of maid outfit 9.
 
 To say ClothingDesc of (M - a blue sissy maid outfit):
-	say "A blue polyester garment with a high collar and ruffles everywhere including the shoulders and short skirt.  Many layers of ruffles live beneath the skirt.  A large white apron covers the front.".
+	say "A blue polyester garment with a high collar and ruffles everywhere including the shoulders and short skirt. Many layers of ruffles live beneath the skirt. A large white apron covers the front.".
 
 To decide which number is the initial outrage of (C - a blue sissy maid outfit):
 	decide on 0.
@@ -238,13 +238,13 @@ Definition: a blue sissy maid outfit (called C) is end of transformation chain:
 
 Part 10 - Cafe Maid Outfit
 
-A cafe maid outfit is a kind of maid outfit. There is 1 cafe maid outfit.  A cafe maid outfit is fully covering.  A cafe maid outfit is polyester.  The text-shortcut of cafe maid outfit is "cmo".  A cafe maid outfit is usually short. The printed name of cafe maid outfit is usually "[TQlink of item described][clothing-title-before]cafe maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A cafe maid outfit is a kind of maid outfit. There is 1 cafe maid outfit. A cafe maid outfit is fully covering. A cafe maid outfit is polyester. The text-shortcut of cafe maid outfit is "cmo". A cafe maid outfit is usually short. The printed name of cafe maid outfit is usually "[TQlink of item described][clothing-title-before]cafe maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which figure-name is clothing-image of (C - a cafe maid outfit):
 	decide on figure of maid outfit 10.
 
 To say ClothingDesc of (M - a cafe maid outfit):
-	say "A pink polyester garment with a high collar and ruffles everywhere including the shoulders and short skirt.  Many layers of ruffles live beneath the skirt.  A large white apron covers the front.".
+	say "A pink polyester garment with a high collar and ruffles everywhere including the shoulders and short skirt. Many layers of ruffles live beneath the skirt. A large white apron covers the front.".
 
 To decide which number is the initial outrage of (C - a cafe maid outfit):
 	decide on 0.
@@ -260,3 +260,4 @@ Definition: a cafe maid outfit (called C) is end of transformation chain:
 
 
 Maid Outfit ends here.
+

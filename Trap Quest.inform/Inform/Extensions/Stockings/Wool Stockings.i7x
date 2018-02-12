@@ -1,6 +1,6 @@
 Wool Stockings by Stockings begins here.
 
-A woven stockings is a kind of stockings.  There is 1 unique woven stockings.  A woven stockings is usually wool.  A woven stockings is usually dense.  The text-shortcut of woven stockings is "wst".
+A woven stockings is a kind of stockings. There is 1 unique woven stockings. A woven stockings is usually wool. A woven stockings is usually dense. The text-shortcut of woven stockings is "wst".
 
 Figure of wool stockings is the file "woolstockings1.png".
 
@@ -30,3 +30,4 @@ Definition: a woven stockings (called C) is bow themed:
 	decide yes.
 
 Wool Stockings ends here.
+

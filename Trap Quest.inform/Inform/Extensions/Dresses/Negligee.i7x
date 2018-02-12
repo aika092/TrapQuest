@@ -1,14 +1,14 @@
 Negligee by Dresses begins here.
 
-A negligee is a kind of overdress.  A negligee is usually sheer.  A negligee is usually short.  A negligee is usually unique.  A negligee is usually silk. A negligee is not-top-displacable.
+A negligee is a kind of overdress. A negligee is usually sheer. A negligee is usually short. A negligee is usually unique. A negligee is usually silk. A negligee is not-top-displacable.
 
-The printed name of negligee is usually "[TQlink of item described][clothing-title-before]negligee[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of negligee is "ne".
+The printed name of negligee is usually "[TQlink of item described][clothing-title-before]negligee[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of negligee is "ne".
 	
 To say ShortDesc of (C - a negligee):
 	say "sheer negligee".
 
 To compute SelfExamineDesc of (O - a negligee):
-	say "A [ShortDesc of O] clings to you, doing pretty much nothing to help your modesty.  ".
+	say "A [ShortDesc of O] clings to you, doing pretty much nothing to help your modesty. ".
 
 To decide which number is the initial outrage of (C - a negligee):
 	decide on 10.
@@ -29,7 +29,7 @@ The remove inappropriate negligee rule is listed in the diaper quest fix rules.
 
 Part 1 - Backless Negligee
 	
-A backless negligee is a kind of negligee.  There is 1 backless negligee.
+A backless negligee is a kind of negligee. There is 1 backless negligee.
 
 Figure of backless negligee is the file "backlessnegligee1.png".
 
@@ -41,7 +41,7 @@ To say ClothingDesc of (C - a backless negligee):
 
 Part 2 - Lacy Negligee
 
-A lacy negligee is a kind of negligee.  There is 1 lacy negligee.  A lacy negligee is usually super-short.  A lacy negligee is usually ridiculously low cut. 
+A lacy negligee is a kind of negligee. There is 1 lacy negligee. A lacy negligee is usually super-short. A lacy negligee is usually ridiculously low cut. 
 
 Figure of lacy negligee is the file "negligee1.png".
 
@@ -49,9 +49,10 @@ To decide which figure-name is clothing-image of (C - a lacy negligee):
 	decide on figure of lacy negligee.
 
 To say ClothingDesc of (C - a lacy negligee):
-	say "This sheer naughty lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them.  Your nipples are covered by straps but only just.".
+	say "This sheer naughty lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them. Your nipples are covered by straps but only just.".
 
 
 
 
 Negligee ends here.
+

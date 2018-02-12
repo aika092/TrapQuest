@@ -1,10 +1,13 @@
 Truffle by Food begins here.
 
 
-A truffle is a kind of chef food. There is 1 truffle. The printed name of a truffle is "[TQlink of item described][if the quality of the item described > 1]high quality [otherwise if diaper quest is 1]suspicious quality [otherwise if the quality of the item described is -1]suggestive [otherwise if the quality of the item described <= -2]creampied [end if]truffle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a truffle is "[TQlink of item described]truffles[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The description of a truffle is "[TruffleDesc]". The text-shortcut of a truffle is usually "tr".
+A truffle is a kind of chef food. There is 1 truffle. The printed name of a truffle is "[TQlink of item described][if the quality of the item described > 1]high quality [otherwise if diaper quest is 1]suspicious quality [otherwise if the quality of the item described is -1]suggestive [otherwise if the quality of the item described <= -2]creampied [end if]truffle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a truffle is "[TQlink of item described]truffles[shortcut-desc][TQxlink of item described][verb-desc of item described]". The description of a truffle is "[TruffleDesc]". The text-shortcut of a truffle is usually "tr".
+
+To say ShortDesc of (C - a truffle):
+	say "truffle".
 
 To say TruffleDesc:
-	say "[if the quality of the noun > -1]A chocolate truffle, garnished with a thick sugary glaze.[otherwise if diaper quest is 1]A chocolate truffle, with a pacifier design stencilled into its surface.  You can't be confident of what it's filled with.[otherwise if the quality of the noun > -2]A chocolate truffle with a design stencilled into its surface to make it look like the tip of an erect penis. complete with a really suggestive trail of sugary glaze.[otherwise]What used to be a chocolate truffle until someone put their [manly-penis] in it and filled the center with [semen]. Looking at it reminds you of a well fucked hole.[end if]". 
+	say "[if the quality of the noun > -1]A chocolate truffle, garnished with a thick sugary glaze.[otherwise if diaper quest is 1]A chocolate truffle, with a pacifier design stencilled into its surface. You can't be confident of what it's filled with.[otherwise if the quality of the noun > -2]A chocolate truffle with a design stencilled into its surface to make it look like the tip of an erect penis. complete with a really suggestive trail of sugary glaze.[otherwise]What used to be a chocolate truffle until someone put their [manly-penis] in it and filled the center with [semen]. Looking at it reminds you of a well fucked hole.[end if]". 
 
 truffle-confidence-timer is a number that varies.
 
@@ -53,3 +56,4 @@ a time based rule (this is the truffle confidence decay rule):
 
 
 Truffle ends here.
+

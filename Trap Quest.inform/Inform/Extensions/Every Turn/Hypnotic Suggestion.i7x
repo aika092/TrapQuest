@@ -106,7 +106,7 @@ The present-for-oral hypno rule is listed in the hypno triggers rules.
 This is the eat-all-food hypno rule:
 	if hypno-trigger is "tasty" and hypno-trigger-tasty is 1 and diaper quest is 1:
 		if the number of held food > 0 and face is not actually occupied and the player is able to eat:
-			say "[bold type]Having heard the word 'tasty', you find yourself automatically start eating everything you can.[roman type][line break]";
+			say "[bold type]Having heard the word 'tasty', you find yourself automatically starting to eat everything you can.[roman type][line break]";
 			now auto is 1;
 			repeat with F running through held food:
 				try TQeating F;
@@ -116,7 +116,7 @@ The eat-all-food hypno rule is listed in the hypno triggers rules.
 
 This is the autopush hypno rule:
 	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and there are worn soilable knickers:
-		say "[bold type]Having heard the word 'maturity', you find yourself automatically start [if the player is upright]squatting, [end if]grunting and pushing.[roman type][line break]";
+		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, [end if]grunting and pushing.[roman type][line break]";
 		now player-squatting is 1;
 		unless there is a royal guard in the location of the player or there is a gladiator in the location of the player, now diaper-scene-unhandled is 1; 
 		compute messing;
@@ -125,3 +125,4 @@ This is the autopush hypno rule:
 The autopush hypno rule is listed in the hypno triggers rules.
 
 Hypnotic Suggestion ends here.
+

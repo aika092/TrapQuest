@@ -1,12 +1,12 @@
 Exercise Bra by Bra begins here.
 
-An exercise bra is a kind of bra.  A modest exercise bra is a kind of exercise bra.  A sexy exercise bra is a kind of exercise bra.
+An exercise bra is a kind of bra. A modest exercise bra is a kind of exercise bra. A sexy exercise bra is a kind of exercise bra.
 
-Figure of exercise bra is the file "exercisebra1.png".  Figure of sexy exercise bra is the file "exercisebra2.png".
+Figure of exercise bra is the file "exercisebra1.png". Figure of sexy exercise bra is the file "exercisebra2.png".
 
-There is 1 modest exercise bra.  The text-shortcut of modest exercise bra is "ebr".  There is 1 unique sexy exercise bra.  The text-shortcut of sexy exercise bra is "sbr".
+There is 1 modest exercise bra. The text-shortcut of modest exercise bra is "ebr". There is 1 unique sexy exercise bra. The text-shortcut of sexy exercise bra is "sbr".
 
-The min size of an exercise bra is usually 4.  The max size of an exercise bra is usually 10.  The support of an exercise bra is usually 4.  An exercise bra is high cut.
+The min size of an exercise bra is usually 4. The max size of an exercise bra is usually 10. The support of an exercise bra is usually 4. An exercise bra is high cut.
 
 To decide which figure-name is clothing-image of (C - a exercise bra):
 	decide on figure of exercise bra.
@@ -29,7 +29,7 @@ To say ClothingDesc of (C - a modest exercise bra):
 	say "A secure beige [printed name of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back.".
 
 To say ClothingDesc of (C - a sexy exercise bra):
-	say "A stretchy blue [printed name of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back.  It's made of several separated strips of fabric, revealing a lot of breast flesh.".
+	say "A stretchy blue [printed name of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back. It's made of several separated strips of fabric, revealing a lot of breast flesh.".
 
 To decide which number is the dexterity-influence of (C - an exercise bra):
 	let D be 1;
@@ -53,3 +53,4 @@ To decide which object is the potential-upgrade-target of (C - a sexy exercise b
 
 
 Exercise Bra ends here.
+

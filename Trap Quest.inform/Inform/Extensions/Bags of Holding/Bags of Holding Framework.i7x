@@ -1,6 +1,6 @@
 Bags of Holding Framework by Bags of Holding begins here.
 
-A bag of holding is a kind of clothing.  A bag of holding is unique.  The printed name of bag of holding is usually "[TQlink of item described][clothing-title-before]bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The soak-limit of bag of holding is usually 0.  A bag of holding is usually leather.  A bag of holding has a number called hunger.  The text-shortcut of bag of holding is "boh".
+A bag of holding is a kind of clothing. A bag of holding is unique. The printed name of bag of holding is usually "[TQlink of item described][clothing-title-before]bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of bag of holding is usually 0. A bag of holding is usually leather. A bag of holding has a number called hunger. The text-shortcut of bag of holding is "boh".
 
 To uniquely set up (C - a bag of holding):
 	do nothing.
@@ -30,11 +30,11 @@ Definition: a food (called C) is in-bag:
 Check taking something:
 	if there is a worn bag of holding:
 		if the noun is bottle or the noun is food or the noun is plentiful accessory:
-			if not-in-bag >= 15, say "You are at your limit for carrying food, drink and jewellery.  You'll have to drop some [if there is a carried actually summonable plentiful accessory]or wear one [end if]if you want to pick up more." instead;
+			if not-in-bag >= 15, say "You are at your limit for carrying food, drink and jewellery. You'll have to drop some [if there is a carried actually summonable plentiful accessory]or wear one [end if]if you want to pick up more." instead;
 	otherwise:
 		let P be 15;
 		if pink pill is carried, now P is 16;
-		if the number of carried portable things >= P, say "You are at your limit for carrying objects.  If only you still had that bag of holding." instead;
+		if the number of carried portable things >= P, say "You are at your limit for carrying objects. If only you still had that bag of holding." instead;
 	unless the player is overburdened, now player-overburdened is -1. [This means that we'll recalculate overburdened after this action]
 
 player-overburdened is a number that varies.
@@ -59,7 +59,7 @@ The reset overburdened rule is listed in the advance counters rules.
 Report taking something:
 	if player-overburdened is -1:
 		if the player is overburdened:
-			say "[bold type]You are now carrying a lot of food drink and jewellery.  Your dexterity will be reduced until you drop some.[roman type][line break]".
+			say "[bold type]You are now carrying a lot of food drink and jewellery. Your dexterity will be reduced until you drop some.[roman type][line break]".
 
 Check inserting food into bag of holding:
 	say "A warning on the [second noun] says that this would be a horrible idea." instead.
@@ -114,9 +114,10 @@ To say BagHoldingWarning:
 				otherwise	if the initial outrage of T > the initial outrage of consumed-thing:
 					now consumed-thing is T;
 		if consumed-thing is carried clothing:
-			say "[bold type]Your [ShortDesc of C] growls hungrily[roman type] and consumes your [consumed-thing][one of] to fuel its magic.  Just like that, it's gone[or][or][or][cycling]!";
+			say "[bold type]Your [ShortDesc of C] growls hungrily[roman type] and consumes your [consumed-thing][one of] to fuel its magic. Just like that, it's gone[or][or][or][cycling]!";
 			destroy consumed-thing;
 			now the hunger of C is 0.]
 	
 
 Bags of Holding Framework ends here.
+

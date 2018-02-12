@@ -1,10 +1,10 @@
 Maternity Bra by Bra begins here.
 
-A maternity bra is a kind of bra.  Figure of maternity bra is the file "maternitybra1.png". The soak-limit of a maternity bra is usually 15.
+A maternity bra is a kind of bra. Figure of maternity bra is the file "maternitybra1.png". The soak-limit of a maternity bra is usually 15.
 
-There is 1 maternity bra.  The text-shortcut of maternity bra is "mbr".
+There is 1 maternity bra. The text-shortcut of maternity bra is "mbr".
 
-The min size of a maternity bra is usually 7.  The max size of a maternity bra is usually 15.  The support of a maternity bra is usually 3.  A maternity bra is usually fully covering.
+The min size of a maternity bra is usually 7. The max size of a maternity bra is usually 15. The support of a maternity bra is usually 3. A maternity bra is usually fully covering.
 
 A maternity bra is usually milking flappable.
 
@@ -32,3 +32,4 @@ To decide which object is the potential-upgrade-target of (C - a maternity bra):
 	decide on a random off-stage white bikini top.
 
 Maternity Bra ends here.
+

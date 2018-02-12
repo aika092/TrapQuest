@@ -8,9 +8,9 @@ This is the choosing a diaper punishment rule:
 		rule succeeds.
 The choosing a diaper punishment rule is listed first in the default diaper quest rules.
 
-A diaper punishment is a kind of object.  A diaper punishment has a number called priority.
+A diaper punishment is a kind of object. A diaper punishment has a number called priority.
 
-chosen diaper punishment is a diaper punishment that varies.  punishment-not-found is a diaper punishment.
+chosen diaper punishment is a diaper punishment that varies. punishment-not-found is a diaper punishment.
 
 To compute punishment of (P - a diaper punishment):
 	say "BUG - the diaper punishment '[P]' has no execution function!".
@@ -34,7 +34,7 @@ To choose a diaper punishment:
 
 Section 1 Diaper Change
 
-diaper-change is a diaper punishment.  The priority of diaper-change is 4.
+diaper-change is a diaper punishment. The priority of diaper-change is 4.
 
 Definition: a monster (called M) is eager to change diapers:
 	if M is changing the player, decide yes;
@@ -76,7 +76,7 @@ Definition: diaper-change (called P) is appropriate:
 To compute punishment of (P - diaper-change):
 	compute diaper change of current-monster.
 
-diaper-donate is a diaper punishment.  The priority of diaper-donate is 4.
+diaper-donate is a diaper punishment. The priority of diaper-donate is 4.
 
 Definition: a monster (called M) is eager to donate diapers:
 	if M is changing the player, decide yes;
@@ -103,7 +103,7 @@ To compute punishment of (P - diaper-donate):
 
 Section 2 Spanking Session
 
-spanking-session is a diaper punishment.  The priority of spanking-session is 2.
+spanking-session is a diaper punishment. The priority of spanking-session is 2.
 
 Definition: a monster (called M) is eager to spank:
 	if M is spanking the player, decide yes;
@@ -127,7 +127,7 @@ To compute punishment of (P - spanking-session):
 
 Section 3 Masturbation Session
 
-masturbation-session is a diaper punishment.  The priority of masturbation-session is 4.
+masturbation-session is a diaper punishment. The priority of masturbation-session is 4.
 
 Definition: a monster (called M) is eager to masturbate:
 	if M is masturbating the player, decide yes;
@@ -157,7 +157,7 @@ To compute punishment of (P - masturbation-session):
 
 Section 4 Enema
 
-deliver-enema is a diaper punishment.  The priority of deliver-enema is 2.
+deliver-enema is a diaper punishment. The priority of deliver-enema is 2.
 
 Definition: a monster (called M) is eager to deliver enemas:
 	if M is enema-filling the player, decide yes;
@@ -184,7 +184,7 @@ To compute punishment of (P - deliver-enema):
 
 Section 5 Forcefeeding
 
-forcefeed is a diaper punishment.  The priority of forcefeed is 2.
+forcefeed is a diaper punishment. The priority of forcefeed is 2.
 
 Definition: a monster (called M) is eager to forcefeed:
 	if M is feeding the player, decide yes;
@@ -212,7 +212,7 @@ To compute punishment of (P - forcefeed):
 
 Section 6 Confiscation
 
-confiscate is a diaper punishment.  The priority of confiscate is 2.
+confiscate is a diaper punishment. The priority of confiscate is 2.
 
 Definition: a monster (called M) is eager to confiscate:
 	if the health of M >= the maxhealth of M and the diaper-duration of M is 0, decide no; [Most NPCs only confiscate if they've been properly wronged.]
@@ -239,3 +239,4 @@ To compute punishment of (P - confiscate):
 
 
 DQ Punishments ends here.
+

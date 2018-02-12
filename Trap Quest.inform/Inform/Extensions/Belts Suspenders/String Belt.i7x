@@ -1,6 +1,6 @@
 String Belt by Belts Suspenders begins here.
 
-A string belt is a kind of clothing. [No clashes.]  The printed name of string belt is usually "[TQlink of item described][clothing-title-before]string belt[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of string belt is "stb".  There is 1 unique hemp manly string belt.
+A string belt is a kind of clothing. [No clashes.]  The printed name of string belt is usually "[TQlink of item described][clothing-title-before]string belt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of string belt is "stb". There is 1 unique hemp manly string belt.
 
 Figure of string belt is the file "stringbelt1.png".
 
@@ -14,3 +14,4 @@ To say ShortDesc of (C - a string belt):
 	say "string belt".
 
 String Belt ends here.
+

@@ -1,6 +1,6 @@
 Leggings by Trousers begins here.
 
-leggings is a kind of trousers.  There is 1 nylon leggings.  leggings are usually sheer.  The armour of leggings is 2.  The printed name of leggings is usually "[TQlink of item described][clothing-title-before]sheer nylon leggings[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of leggings is "nl".   Figure of leggings is the file "leggings1.png".  Understand "sheer" as leggings.
+leggings is a kind of trousers. There is 1 nylon leggings. leggings are usually sheer. The armour of leggings is 2. The printed name of leggings is usually "[TQlink of item described][clothing-title-before]sheer nylon leggings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of leggings is "nl". Figure of leggings is the file "leggings1.png". Understand "sheer" as leggings.
 
 To decide which figure-name is clothing-image of (H - a leggings):
 	decide on figure of leggings.
@@ -23,3 +23,4 @@ To decide which object is the potential-upgrade-target of (C - a leggings):
 	decide on nothing.
 
 Leggings ends here.
+

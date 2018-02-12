@@ -1,6 +1,6 @@
 Necktie by Accessories begins here.
 
-A necktie is a kind of neckwear.  Printed name of necktie is "[TQlink of item described][clothing-title-before]necktie[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "tie" as necktie.  The text-shortcut of necktie is "nt".
+A necktie is a kind of neckwear. Printed name of necktie is "[TQlink of item described][clothing-title-before]necktie[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "tie" as necktie. The text-shortcut of necktie is "nt".
 
 To decide which number is the initial outrage of (C - a necktie):
 	decide on 5.
@@ -25,3 +25,4 @@ To say ShortDesc of (C - a necktie):
 	say "tiny apricot tartan necktie".
 
 Necktie ends here.
+

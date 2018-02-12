@@ -1,5 +1,10 @@
 Recovering Rooms by Fainting begins here.
 
+To totally clean (R - a room):
+	now the semen-puddle of R is 0;
+	now the urine-puddle of R is 0;
+	now the milk-puddle of R is 0;
+	now the sprinkle-puddle of R is 0;
 
 [!<RecoverRooms>+
 
@@ -9,11 +14,7 @@ REQUIRES COMMENTING
 To Recover Rooms:
 	repeat with R running through labyrinth rooms:
 		now Neighbour Finder is R;
-		unless R is the location of the player:		
-			now the semen-puddle of R is 0;
-			now the urine-puddle of R is 0;
-			now the milk-puddle of R is 0;
-			now the sprinkle-puddle of R is 0;
+		unless R is the location of the player, totally clean R;
 		unless R is the location of the player or R is Dungeon12, now R is not smoky; [All rooms except the royal chambers lose pink smoke]
 		unless R is Dungeon10 or R is Dungeon11 or R is Dungeon12 or R is Dungeon32: [The first 4 rooms don't change location or configuration, everything else is reset]
 			now the grid position of R is <0,0,0>;
@@ -33,38 +34,26 @@ To Recover Rooms:
 	repeat with R running through jungle rooms: [Every room in the woods is reset]
 		now Neighbour Finder is R;
 		now R is not discovered;
-		unless R is the location of the player:		
-			now the semen-puddle of R is 0;
-			now the urine-puddle of R is 0;
-			now the milk-puddle of R is 0;
-			now the sprinkle-puddle of R is 0;
+		unless R is the location of the player, totally clean R;
 		now the grid position of R is <0,0,0>;
 		repeat with D running through N-viable directions:
 			change the D exit of R to Solid Rock;
 	repeat with R running through modern rooms:
 		now Neighbour Finder is R;
 		now R is not discovered;
-		unless R is the location of the player:		
-			now the semen-puddle of R is 0;
-			now the urine-puddle of R is 0;
-			now the milk-puddle of R is 0;
-			now the sprinkle-puddle of R is 0;
+		unless R is the location of the player, totally clean R;
 		now the grid position of R is <0,0,0>;
 		repeat with D running through N-viable directions:
 			change the D exit of R to Solid Rock;
-	[repeat with R running through haunted rooms:
+	repeat with R running through haunted rooms:
 		now Neighbour Finder is R;
-		unless R is the location of the player:		
-			now the semen-puddle of R is 0;
-			now the urine-puddle of R is 0;
-			now the milk-puddle of R is 0;
-			now the sprinkle-puddle of R is 0;
+		unless R is the location of the player, totally clean R;
 		if R is Mansion00:
 			if the location of the player is R, now the player is in Mansion01;
 			now the grid position of R is <0,0,0>;
 			repeat with D running through N-viable directions:
 				change the D exit of R to Solid Rock;
-		if R is the location of the player, now the slime-puddle of R is 0;]
+		if R is the location of the player, now the slime-puddle of R is 0;
 	repeat with F running through on-stage furniture:
 		unless F is permanent fixture, destroy F;
 	[Now we need to make the three non-west exits to the hallway at the start of the game available for connections again]
@@ -94,3 +83,4 @@ To Recover Rooms:
 
 
 Recovering Rooms ends here.
+

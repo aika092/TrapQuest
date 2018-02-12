@@ -21,3 +21,4 @@ To decide which number is the initial cringe of (T - an empty-mind tattoo):
 	decide on 4.
 
 Empty Mind Tattoo ends here.
+

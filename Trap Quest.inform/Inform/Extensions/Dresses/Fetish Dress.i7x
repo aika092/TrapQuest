@@ -1,6 +1,6 @@
 Fetish Dress by Dresses begins here.
 
-A fetish dress is a kind of overdress.  A fetish dress is usually latex.
+A fetish dress is a kind of overdress. A fetish dress is usually latex.
 
 Figure of Latex Dress 1 is the file "latexdress1.png".
 Figure of Latex Dress 2 is the file "latexdress2.png".
@@ -12,7 +12,7 @@ Figure of Latex Dress 7 is the file "latexdress7.png".
 Figure of Latex Dress 8 is the file "latexdress8.png".
 
 To compute SelfExamineDesc of (O - a fetish dress):
-	say "A [ShortDesc of O] clings tightly to your body, showing off your curves[if the largeness of breasts > 4] and ample cleavage[end if].  ".
+	say "A [ShortDesc of O] clings tightly to your body, showing off your curves[if the largeness of breasts > 4] and ample cleavage[end if]. ".
 	
 To say ShortDesc of (C - a fetish dress):
 	say "latex fetish dress".
@@ -54,7 +54,7 @@ The remove inappropriate fetish dresses rule is listed in the diaper quest fix r
 
 Part 1 - Green Fetish Hobble Dress
 
-A green fetish hobble dress is a kind of fetish dress.  A green fetish hobble dress is usually hobble-skirted.  A green fetish hobble dress is usually low cut.  The text-shortcut of green fetish hobble dress is "gld".
+A green fetish hobble dress is a kind of fetish dress. A green fetish hobble dress is usually hobble-skirted. A green fetish hobble dress is usually low cut. The text-shortcut of green fetish hobble dress is "gld".
 
 There is 1 green fetish hobble dress.
 
@@ -69,11 +69,11 @@ To decide which figure-name is clothing-image of (C - a green fetish hobble dres
 	decide on figure of latex dress 1.
 
 To say ClothingDesc of (O - a green fetish hobble dress):
-	say "An extremely tight fitting green latex dress with a low cleavage cut.  The long tight skirt [if O is worn]restricts your movement[otherwise]would restrict the wearer's movement[end if].".
+	say "An extremely tight fitting green latex dress with a low cleavage cut. The long tight skirt [if O is worn]restricts your movement[otherwise]would restrict the wearer's movement[end if].".
 
 Part 2 - Translucent Latex Dress
 
-A translucent fetish dress is a kind of fetish dress.  A translucent fetish dress is usually short.  A translucent fetish dress is fully covering. A translucent fetish dress is usually not-top-displacable.  The text-shortcut of translucent fetish dress is "tld".
+A translucent fetish dress is a kind of fetish dress. A translucent fetish dress is usually short. A translucent fetish dress is fully covering. A translucent fetish dress is usually not-top-displacable. The text-shortcut of translucent fetish dress is "tld".
 
 There is 1 translucent fetish dress.
 
@@ -83,14 +83,14 @@ To decide which figure-name is clothing-image of (C - a translucent fetish dress
 	decide on figure of latex dress 2.
 
 To say ClothingDesc of (O - a translucent fetish dress):
-	say "A slightly translucent red latex dress that goes all the way up to your neck but is so short that it [if the size of penis > 3 and the number of worn chastity cages is 0 and 0 is the number of worn knickers]doesn't even cover your [ShortDesc of penis].  [otherwise]barely covers your crotch.  [end if]".
+	say "A slightly translucent red latex dress that goes all the way up to your neck but is so short that it [if the size of penis > 3 and the number of worn chastity cages is 0 and 0 is the number of worn knickers]doesn't even cover your [ShortDesc of penis]. [otherwise]barely covers your crotch. [end if]".
 
 To decide which number is the initial outrage of (C - a translucent fetish dress):
 	decide on 14.
 
 Part 3 - Pink Fetish Dress
 
-A pink fetish dress is a kind of fetish dress.  A pink fetish dress is usually short.  The text-shortcut of pink fetish dress is "pfd".
+A pink fetish dress is a kind of fetish dress. A pink fetish dress is usually short. The text-shortcut of pink fetish dress is "pfd".
 
 There is 1 pink fetish dress.
 
@@ -108,7 +108,7 @@ To decide which object is the potential-upgrade-target of (C - a pink fetish dre
 
 Part 4 - Red Fetish Dress
 
-A red fetish dress is a kind of fetish dress.  A red fetish dress is rare.  A red fetish dress is ridiculously low cut.  The text-shortcut of red fetish dress is "rld".
+A red fetish dress is a kind of fetish dress. A red fetish dress is rare. A red fetish dress is ridiculously low cut. The text-shortcut of red fetish dress is "rld".
 
 There is 1 red fetish dress.
 
@@ -118,7 +118,7 @@ To decide which figure-name is clothing-image of (C - a red fetish dress):
 	decide on figure of latex dress 4.
 
 To say ClothingDesc of (O - a red fetish dress):
-	say "This tight fitting red latex dress has a huge circular neckline, made for someone with gigantic boobs to show off most of their cleavage.  It [if O is worn]provides[otherwise]would provide[end if] a decent amount of modesty for your bottom half.".
+	say "This tight fitting red latex dress has a huge circular neckline, made for someone with gigantic boobs to show off most of their cleavage. It [if O is worn]provides[otherwise]would provide[end if] a decent amount of modesty for your bottom half.".
 
 To decide which number is the initial outrage of (C - a red fetish dress):
 	decide on 7.
@@ -129,11 +129,11 @@ To decide which object is the potential-upgrade-target of (C - a red fetish dres
 
 Part 5 - White Fetish Dress
 
-A windowed fetish dress is a kind of fetish dress.  A windowed fetish dress is usually sheer.  A windowed fetish dress is usually short.  A windowed fetish dress is fully covering.  A windowed fetish dress is neck covering.  A windowed fetish dress is usually not-top-displacable.  The text-shortcut of windowed fetish dress is "wld".
+A windowed fetish dress is a kind of fetish dress. A windowed fetish dress is usually sheer. A windowed fetish dress is usually short. A windowed fetish dress is fully covering. A windowed fetish dress is neck covering. A windowed fetish dress is usually not-top-displacable. The text-shortcut of windowed fetish dress is "wld".
 
 There is 1 windowed fetish dress.
 
-The printed name of a windowed fetish dress is usually "[TQlink of item described][clothing-title-before]white latex dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".  Understand "white" as windowed fetish dress.
+The printed name of a windowed fetish dress is usually "[TQlink of item described][clothing-title-before]white latex dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "white" as windowed fetish dress.
 
 To decide which number is the initial outrage of (C - a windowed fetish dress):
 	decide on 15.
@@ -142,14 +142,14 @@ To decide which figure-name is clothing-image of (C - a windowed fetish dress):
 	decide on figure of latex dress 5.
 
 To say ClothingDesc of (O - a windowed fetish dress):
-	say "This tight white latex dress is opaque at the sides but translucent at the front and back, allowing anyone close enough to still get a great view of your private parts.  The bottom of the dress only goes down to your inner thighs and threatens to ride up at any moment.  A tight and full collar prevents you from wearing anything else at your neck.".
+	say "This tight white latex dress is opaque at the sides but translucent at the front and back, allowing anyone close enough to still get a great view of your private parts. The bottom of the dress only goes down to your inner thighs and threatens to ride up at any moment. A tight and full collar prevents you from wearing anything else at your neck.".
 
 To decide which number is the bimbo-influence of (O - a windowed fetish dress):
 	decide on 1.
 	
 Part 6 - Black Fetish Hobble Dress
 
-A black fetish hobble dress is a kind of fetish dress.  A black fetish hobble dress is usually hobble-skirted.  A black fetish hobble dress is usually crotch-skirted.  A black fetish hobble dress is usually low cut.  The text-shortcut of black fetish hobble dress is "bld".  The armour of black fetish hobble dress is usually 14.   
+A black fetish hobble dress is a kind of fetish dress. A black fetish hobble dress is usually hobble-skirted. A black fetish hobble dress is usually crotch-skirted. A black fetish hobble dress is usually low cut. The text-shortcut of black fetish hobble dress is "bld". The armour of black fetish hobble dress is usually 14. 
 
 There is 1 black fetish hobble dress.
 
@@ -159,7 +159,7 @@ To decide which figure-name is clothing-image of (C - a black fetish hobble dres
 	decide on figure of latex dress 6.
 
 To say ClothingDesc of (O - a black fetish hobble dress):
-	say "This tight black latex dress has a hobble style skirt which forces the wearer to walk with short steps.  The deep neckline and bottom of the dress have a white pattern that vaguely resembles a maid's outfit.".
+	say "This tight black latex dress has a hobble style skirt which forces the wearer to walk with short steps. The deep neckline and bottom of the dress have a white pattern that vaguely resembles a maid's outfit.".
 
 To decide which number is the initial outrage of (C - a black fetish hobble dress):
 	decide on 11.
@@ -179,7 +179,7 @@ Definition: a black fetish hobble dress (called C) is untransformable:
 
 To say TransformReaction of (C - a black fetish hobble dress):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]How am I even supposed to walk properly in this?!  [if C is cursed]I wish I could take it off.[otherwise if the class of the player is maid]I guess I should probably take it off.  But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
+		say "[variable custom style]How am I even supposed to walk properly in this?!  [if C is cursed]I wish I could take it off.[otherwise if the class of the player is maid]I guess I should probably take it off. But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]The way this forces me to walk actually makes me feel really sexy!  But it's probably not going to help me win this game...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
@@ -187,7 +187,7 @@ To say TransformReaction of (C - a black fetish hobble dress):
 
 Part 7 - Purple Fetish Hobble Dress
 
-A purple fetish hobble dress is a kind of fetish dress.  A purple fetish hobble dress is usually hobble-skirted.  A purple fetish hobble dress is usually crotch-skirted.  A purple fetish hobble dress is usually high cut.  A purple fetish hobble dress is usually only arm covering.  The text-shortcut of purple fetish hobble dress is "phd".  The armour of purple fetish hobble dress is usually 14.   
+A purple fetish hobble dress is a kind of fetish dress. A purple fetish hobble dress is usually hobble-skirted. A purple fetish hobble dress is usually crotch-skirted. A purple fetish hobble dress is usually high cut. A purple fetish hobble dress is usually only arm covering. The text-shortcut of purple fetish hobble dress is "phd". The armour of purple fetish hobble dress is usually 14. 
 
 There is 1 purple fetish hobble dress.
 
@@ -197,7 +197,7 @@ To decide which figure-name is clothing-image of (C - a purple fetish hobble dre
 	decide on figure of latex dress 7.
 
 To say ClothingDesc of (O - a purple fetish hobble dress):
-	say "This tight purple latex dress has a hobble style skirt which forces the wearer to walk with short steps.  The high neckline makes it seem relatively modest, but the fetishistic nature of a skin-tight latex dress means it is still very provocative.".
+	say "This tight purple latex dress has a hobble style skirt which forces the wearer to walk with short steps. The high neckline makes it seem relatively modest, but the fetishistic nature of a skin-tight latex dress means it is still very provocative.".
 
 To decide which number is the initial outrage of (C - a purple fetish hobble dress):
 	decide on 9.
@@ -213,7 +213,7 @@ To decide which number is the strength-influence of (O - a purple fetish hobble 
 
 Part 8 - Assless Fetish Hobble Dress
 
-An assless fetish hobble dress is a kind of fetish dress.  An assless fetish hobble dress is usually hobble-skirted.  An assless fetish hobble dress is usually crotch-skirted.  An assless fetish hobble dress is usually fully covering.  An assless fetish hobble dress is usually crotch-assless.  An assless fetish hobble dress is usually sheer.  An assless fetish hobble dress is usually unique.  An assless fetish hobble dress is usually finger covering.  The text-shortcut of assless fetish hobble dress is "ald".  The armour of assless fetish hobble dress is usually 12.   
+An assless fetish hobble dress is a kind of fetish dress. An assless fetish hobble dress is usually hobble-skirted. An assless fetish hobble dress is usually crotch-skirted. An assless fetish hobble dress is usually fully covering. An assless fetish hobble dress is usually crotch-assless. An assless fetish hobble dress is usually sheer. An assless fetish hobble dress is usually unique. An assless fetish hobble dress is usually finger covering. The text-shortcut of assless fetish hobble dress is "ald". The armour of assless fetish hobble dress is usually 12. 
 
 There is 1 assless fetish hobble dress.
 
@@ -223,7 +223,7 @@ To decide which figure-name is clothing-image of (C - an assless fetish hobble d
 	decide on figure of latex dress 8.
 
 To say ClothingDesc of (O - an assless fetish hobble dress):
-	say "This tight latex dress has a hobble style skirt which forces the wearer to walk with short steps.  The dress is essentially see-through and it also has a huge hole cut at at the butt, to allow for easy anal access.".
+	say "This tight latex dress has a hobble style skirt which forces the wearer to walk with short steps. The dress is essentially see-through and it also has a huge hole cut at at the butt, to allow for easy anal access.".
 
 To decide which number is the initial outrage of (C - an assless fetish hobble dress):
 	decide on 14.
@@ -238,7 +238,8 @@ To decide which number is the strength-influence of (O - an assless fetish hobbl
 	decide on S.
 
 Definition: an assless fetish hobble dress (called C) is end of transformation chain:
-	decide yes. [It's the end of the transformation chain.  This will make some things avoid bothering to attempt to transform it.]
+	decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
 
 
 Fetish Dress ends here.
+

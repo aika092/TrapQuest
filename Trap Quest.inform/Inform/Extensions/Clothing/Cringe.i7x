@@ -1,6 +1,6 @@
 Cringe by Clothing begins here.
 
-[Cringe is the ABDL version of outrage.  How much does it make the player seem like a little rather than a grownup.]
+[Cringe is the ABDL version of outrage. How much does it make the player seem like a little rather than a grownup.]
 
 To decide which number is the cringe of (C - an object):
 	decide on 0.
@@ -15,7 +15,7 @@ To decide which number is the unworn cringe of (C - a clothing):
 	let O be the initial cringe of C;
 	increase O by the fluid outrage of C;
 	if C is worn currently visible clothing:
-		if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, increase O by 3; [This item should be blocking the crotch but it isn't.  How outrageous!]
+		if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, increase O by 3; [This item should be blocking the crotch but it isn't. How outrageous!]
 		if C is worn currently visible knickers, increase O by 3; [Having one's knickers exposed is very childlike.]
 	if C is crotch covering fluid vulnerable clothing:
 		if C is wet, increase O by 3; [Wet = soiled as far as anyone who is looking at you is concerned.]
@@ -36,3 +36,4 @@ Definition: a clothing (called C) is almost too cringeworthy:
 
 
 Cringe ends here.
+

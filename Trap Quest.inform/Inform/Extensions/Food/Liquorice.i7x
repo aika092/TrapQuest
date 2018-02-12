@@ -1,7 +1,10 @@
 Liquorice by Food begins here.
 
 
-A liquorice is a kind of candy.  The printed name of liquorice is "[TQlink of item described]liquorice[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of liquorice is "[TQlink of item described]pieces of liquorice[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of liquorice is "lq".  The description of liquorice is "A small liquorice sweet.  You hate the taste of liquorice!'".  There are 3 liquorice.  Understand "pieces" as liquorice.
+A liquorice is a kind of candy. The printed name of liquorice is "[TQlink of item described]liquorice[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of liquorice is "[TQlink of item described]pieces of liquorice[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of liquorice is "lq". The description of liquorice is "A small liquorice sweet. You hate the taste of liquorice!'". There are 3 liquorice. Understand "pieces" as liquorice.
+
+To say ShortDesc of (C - a liquorice):
+	say "liquorice".
 
 liquorice-timer is a number that varies.
 
@@ -9,7 +12,7 @@ Definition: a liquorice (called C) is low tier:
 	decide yes.
 
 To say DevourFlav of (C - a liquorice):
-	say "You quickly chew the [C] before swallowing it.  ".
+	say "You quickly chew the [C] before swallowing it. ".
 
 To decide which number is the crafting key of (C - a liquorice):
 	decide on 41.
@@ -19,7 +22,7 @@ Carry out TQeating liquorice:
 	if a random number between 1 and 4 > 1:
 		say "You manage to tolerate the bittersweet taste without suffering any [if liquorice-timer > 0]further [end if]negative effects.";
 	otherwise:
-		say "Yuck!  You feel your body weaken [if liquorice-timer > 0]even further[otherwise]slightly.  You feel that it's going to stay that way until the bittersweet taste fades from your mouth[end if].";
+		say "Yuck!  You feel your body weaken [if liquorice-timer > 0]even further[otherwise]slightly. You feel that it's going to stay that way until the bittersweet taste fades from your mouth[end if].";
 		increase liquorice-timer by default-candy-duration.
 
 a time based rule (this is the liquorice decay rule):
@@ -42,3 +45,4 @@ To compute (M - a robochef) cooking (I - a liquorice):
 
 
 Liquorice ends here.
+

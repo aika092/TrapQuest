@@ -8,8 +8,8 @@ REQUIRES COMMENTING
 @inherits <Bottle>
 
 @!]
-A can is a kind of bottle.  The doses of a can is usually 1.  The max-doses of a can is usually 1.  There are 30 cans.  Understand the fill-colour property as describing a can.
-The printed name of a can is usually "[TQlink of item described][if the max-doses of item described > 5]giant [otherwise if the max-doses of item described > 3]extra large [otherwise if the max-doses of item described > 1]large [end if][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][fill-colour of the item described] can[if the fill-type of item described is remembered] ([FillName the fill-type of item described])[end if][TQxlink of item described][verb-desc of item described]".  The printed plural name of a can is usually "[TQlink of item described][fill-colour of the item described] cans[TQxlink of item described][verb-desc of item described]".  The text-shortcut of can is "can".
+A can is a kind of bottle. The doses of a can is usually 1. The max-doses of a can is usually 1. There are 30 cans. Understand the fill-colour property as describing a can.
+The printed name of a can is usually "[TQlink of item described][if the max-doses of item described > 5]giant [otherwise if the max-doses of item described > 3]extra large [otherwise if the max-doses of item described > 1]large [end if][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][fill-colour of the item described] can[if the fill-type of item described is remembered] ([FillName the fill-type of item described])[end if][TQxlink of item described][verb-desc of item described]". The printed plural name of a can is usually "[TQlink of item described][fill-colour of the item described] cans[TQxlink of item described][verb-desc of item described]". The text-shortcut of can is "can".
 Understand "giant" as can when the max-doses of the item described > 5.
 Understand "extra" as can when the max-doses of the item described > 3 and the max-doses of the item described <= 5.
 Understand "large" as can when the max-doses of the item described > 1 and the max-doses of the item described <= 5.
@@ -58,3 +58,4 @@ To destroy (T - a can):
 
 
 Cans ends here.
+

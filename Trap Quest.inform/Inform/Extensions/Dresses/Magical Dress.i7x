@@ -13,7 +13,7 @@ To decide which number is the strength-influence of (O - a magical dress):
 	if M > 0, decide on 1;
 	decide on 0.
 
-To compute periodic effect of (H - a magical dress):
+To compute periodic effect of (H - a magical dress): [tentacle monsters grow and pop out almost instantly]
 	if the pregnancy of the player is 1 and the father is tentacle monster, now maximum-pregnancy-delay-tracker is maximum-pregnancy-delay + 1.
 
 A lolita magical dress is a kind of magical dress.
@@ -28,7 +28,7 @@ To decide which figure-name is the clothing-image of (O - a lolita magical dress
 The printed name of lolita magical dress is usually "[TQlink of item described][clothing-title-before]magical dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To compute SelfExamineDesc of (O - a lolita magical dress):
-	say "[if the top-layer of O > 1 or the mid-layer of O > 1]Over this you[otherwise]You[end if] are wearing a [ShortDesc of O].  ".
+	say "[if the top-layer of O > 1 or the mid-layer of O > 1]Over this you[otherwise]You[end if] are wearing a [ShortDesc of O]. ".
 
 To compute ShortDesc of (O - a lolita magical dress):
 	say "lolita magical dress".
@@ -36,7 +36,7 @@ To compute ShortDesc of (O - a lolita magical dress):
 To say ClothingDesc of (O - a lolita magical dress):
 	say "A frilly hime lolita dress that [if the thickness of hips > 5 and O is worn]would be just below knee height on a normal sized ass, but yours prevents it from sitting properly and so it only covers just beneath your rear[otherwise]is just below knee height[end if]. It is layered with bows and lace, making it incredibly innocent looking. It sparkles with an almost magical air.".
 
-An exposing magical dress is a kind of magical dress.  An exposing magical dress is usually arm exposing. An exposing magical dress is optional-top-displacable.  An exposing magical dress is chestless.  An exposing magical dress is belly exposing.  An exposing magical dress is unskirted.
+An exposing magical dress is a kind of magical dress. An exposing magical dress is usually arm exposing. An exposing magical dress is optional-top-displacable. An exposing magical dress is chestless. An exposing magical dress is belly exposing. An exposing magical dress is unskirted.
 
 There is 1 exposing magical dress.
 
@@ -48,16 +48,17 @@ To decide which figure-name is the clothing-image of (O - an exposing magical dr
 The printed name of exposing magical dress is usually "[TQlink of item described][clothing-title-before]exposing magical dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To compute SelfExamineDesc of (O - an exposing magical dress):
-	say "You are wearing a [ShortDesc of O].  ".
+	say "You are wearing a [ShortDesc of O]. ".
 
 To compute ShortDesc of (O - an exposing magical dress):
 	say "exposing magical dress".
 
 To say ClothingDesc of (O - an exposing magical dress):
-	say "The top of a Japanese sailor uniform, but just the neckline with the bow, literally nothing else.  It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else.".
+	say "The top of a Japanese sailor uniform, but just the neckline with the bow, literally nothing else. It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else.".
 
 Definition: an exposing magical dress (called C) is nudism-enabling:
 	decide yes.
 
 
 Magical Dress ends here.
+

@@ -12,14 +12,14 @@ To say ShortDesc of (C - a dress):
 
 Part 1 - Underdresses
 
-An underdress is usually knee-length.  An underdress is usually average cut.  An underdress is usually nipple covering.  An underdress is usually belly covering.  The armour of an underdress is usually 4.  An underdress is usually top-displacable.  The soak-limit of an underdress is usually 26.
+An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually nipple covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable. The soak-limit of an underdress is usually 26.
 
 Definition: an underdress is displacable:
 	decide yes.
 
 Chapter - Wearability
 
-underdress wearability rules is a rulebook.  The wearability rules of underdress is usually underdress wearability rules.
+underdress wearability rules is a rulebook. The wearability rules of underdress is usually underdress wearability rules.
 
 This is the underdress already worn rule:
 	repeat with O running through worn underdresses:
@@ -51,7 +51,7 @@ The skirt underdress clash rule is listed in the skirt wearability rules.
 Part 2 - Overdresses
 
 
-An overdress is usually knee-length.  An overdress is usually average cut.  An overdress is usually nipple covering.  An overdress is usually belly covering.  The armour of an overdress is usually 4. An overdress is usually top-displacable.  The soak-limit of an overdress is usually 26.
+An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually nipple covering. An overdress is usually belly covering. The armour of an overdress is usually 4. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
 
 To uniquely set up (C - an overdress):
 	repair C;
@@ -82,7 +82,7 @@ This is the setup starting overdresses rule:
 The setup starting overdresses rule is listed in the setup starting items rules.
 
 Report wearing overdress:
-	if the noun is unsure and the noun is cursed, say "You finish wearing the [noun] and then you realise that the [clothing-material of the noun] is clinging extremely tightly to your skin.  You try to pull it off but can't.  It's cursed!";
+	if the noun is unsure and the noun is cursed, say "You finish wearing the [noun] and then you realise that the [clothing-material of the noun] is clinging extremely tightly to your skin. You try to pull it off but can't. It's cursed!";
 
 To say ShortDesc of (O - an overdress):
 	say "[printed name of O]".
@@ -97,7 +97,7 @@ To decide which object is the unique-upgrade-target of (C - an overdress):
 
 Chapter - Wearability
 
-overdress wearability rules is a rulebook.  The wearability rules of overdress is usually overdress wearability rules.
+overdress wearability rules is a rulebook. The wearability rules of overdress is usually overdress wearability rules.
 
 This is the overdress already worn rule:
 	repeat with O running through worn overdresses:
@@ -143,3 +143,4 @@ Check taking off worn overdresses:
 
 
 Dresses Framework ends here.
+

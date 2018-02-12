@@ -1,6 +1,6 @@
 Dildo Heels by Shoes begins here.
 
-A dildo heels is a kind of platform heels.  A dildo heels is usually leather.  A dildo heels is usually unique.  The heel-height of a dildo heels is usually 5.  A dildo heels is usually kicking.
+A dildo heels is a kind of platform heels. A dildo heels is usually leather. A dildo heels is usually unique. The heel-height of a dildo heels is usually 5. A dildo heels is usually kicking.
 
 To decide which number is the kick-bonus of (S - a dildo heels):
 	let X be the heel-height of S;
@@ -32,3 +32,4 @@ To uniquely set up (C - a dildo heels):
 	do nothing.
 
 Dildo Heels ends here.
+
