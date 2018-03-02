@@ -20,7 +20,7 @@ A lolita magical dress is a kind of magical dress.
 
 There is 1 lolita magical dress. 
 
-Figure of lolita magical dress is the file "magicaldress1.png".
+Figure of lolita magical dress is the file "Items\Clothes\Upper\Special\MahouShoujo\magicaldress1.png".
 
 To decide which figure-name is the clothing-image of (O - a lolita magical dress):
 	decide on figure of lolita magical dress.
@@ -40,7 +40,7 @@ An exposing magical dress is a kind of magical dress. An exposing magical dress 
 
 There is 1 exposing magical dress.
 
-Figure of exposing magical dress is the file "magicaldress2.png".
+Figure of exposing magical dress is the file "Items\Clothes\Upper\Special\MahouShoujo\magicaldress2.png".
 
 To decide which figure-name is the clothing-image of (O - an exposing magical dress):
 	decide on figure of exposing magical dress.

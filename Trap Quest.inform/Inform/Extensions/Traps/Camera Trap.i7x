@@ -283,7 +283,7 @@ To compute title of (P - a shameful orgasm poster):
 				now the title of P is "Prudish princess turned girl gone wild!";
 			otherwise:
 				now the title of P is "Royal princess caught in sex scandal!";
-		otherwise if the old-overdress of P is leotard and old-gender of P is 0 and diaper quest is 0:
+		otherwise if the old-overdress of P is ballet related and old-gender of P is 0 and diaper quest is 0:
 			if P is in the hotel:
 				now the title of P is "SISSY SLUT";
 			otherwise if the dexterity of the player > 15:
@@ -293,7 +293,7 @@ To compute title of (P - a shameful orgasm poster):
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel:
 				now the title of P is "SERVICE WITH A SMILE";
-			otherwise if the sex addiction of the player > 10:
+			otherwise if the old-sex-addiction of P > 10:
 				now the title of P is "At Hotel Premier Sinn, your every demand is her desire!";
 			otherwise:
 				now the title of P is "Come along to Hotel Premier Sinn, where even the maids join in on the fun!";
@@ -401,7 +401,7 @@ To compute title of (P - a masturbation poster):
 				now the title of P is "Princess caught polishing her pearl!";
 			otherwise:
 				now the title of P is "Apparently even royalty suffer from the basest of urges.";
-		otherwise if the old-overdress of P is leotard and old-gender of P is 0:
+		otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 			if P is in the hotel, now the title of P is "SISSY SLUT";
 			otherwise now the title of P is "'This sissy is showing just how much she likes being dressed in a tutu.'";
 		otherwise if the old-overdress of P is maid outfit:
@@ -480,7 +480,7 @@ To compute title of (P - a wetting poster):
 			if the old-overdress of P is royal attire:
 				if P is in the hotel, now the title of P is "PRINCESS POTTYPANTS";
 				otherwise now the title of P is "A royal relief!";
-			otherwise if the old-overdress of P is leotard and old-gender of P is 0:
+			otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 				if P is in the hotel, now the title of P is "SISSY PEEPOT";
 				otherwise now the title of P is "'I'm a little peepot, whimper and pout[line break]Here is my diapee I cry about[line break]When I get all fussy I wail and shout[line break]Check my diaper and change me out'";
 			otherwise if the old-overdress of P is maid outfit:
@@ -678,7 +678,7 @@ To compute title of (P - an expulsion poster):
 		if the old-overdress of P is royal attire:
 			if P is in the hotel, now the title of P is "DISHONOURED ROYALTY";
 			otherwise now the title of P is "Royal princess caught in sex scandal!";
-		otherwise if the old-overdress of P is leotard and old-gender of P is 0:
+		otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 			if P is in the hotel, now the title of P is "SISSY SLUT";
 			otherwise now the title of P is "'This ballerina is learning what a true sissy's life is like.'";
 		otherwise if the old-overdress of P is maid outfit:

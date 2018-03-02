@@ -38,7 +38,7 @@ Check kicking:
 	if the noun is woman, say "Something tells you this would be a stupid idea." instead;
 	if the noun is captive and the noun is dungeon boss, say "You can't reach it through the cage!" instead;
 	if the player is not able to kick, do nothing instead;
-	if the noun is intimidating, compute surrender to the noun instead.
+	if the noun is too intimidating, compute surrender to the noun instead.
 
 [!<CarryOutKicking>+
 

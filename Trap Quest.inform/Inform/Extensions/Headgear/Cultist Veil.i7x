@@ -14,7 +14,7 @@ Definition: a cultist veil (called C) is cult garb:
 Definition: a cultist veil (called C) is immune to change:
 	decide yes.
 	
-Figure of cultist veil is the file "cultistveil1.png".
+Figure of cultist veil is the file "Items\Accessories\Head\cultistveil1.png".
 	
 To decide which figure-name is the clothing-image of (C - a cultist veil):
 	decide on figure of cultist veil.

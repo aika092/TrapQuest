@@ -1,6 +1,6 @@
 Witch by Monster begins here.
 
-A witch is a kind of monster. A witch is usually intelligent.
+A witch is a kind of monster. A witch is usually intelligent. A witch has a number called altar-uses. The altar-uses of a witch is usually 2.
 
 1 captive witch is in Woods20. The printed name of witch is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]sneering witch[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "sneering" as witch. The description of witch is usually "[WitchDesc]". The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
 
@@ -13,7 +13,7 @@ To set up (M - a witch):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 9;
-	now the sex-length of M is 2;
+	[now the sex-length of M is 2;]
 	now M is captive;
 	now the health of M is the maxhealth of M.
 
@@ -253,18 +253,8 @@ This is the witch tries to trip the player rule:
 		rule succeeds.
 The witch tries to trip the player rule is listed last in the witch attack rules.
 
-To compute tripping attack of (M - a witch):
-	say "[one of]The witch holds her hand in the air, causing a giant clay hand to grow out of the ground.[or]The witch raises her hand, causing a giant clay hand to grow out of the ground.[purely at random]";
-	let D be the tripping roll of M;
-	if D > the dexterity of the player and M is not-blinded:
-		say "[MonsterTrippedFlav of M]";
-		try kneeling;
-		if the player is prone, check attack of M;
-	otherwise:
-		say "[MonsterFailedTripFlav of M]";
-		if M is blinded and a random number between 1 and 2 is 1:
-			say "The [M] is no longer blind!";
-			now the blind-status of M is 0.
+To say MonsterTripAnnounceFlav of (M - a witch):
+	say "[one of]The witch holds her hand in the air, causing a giant clay hand to grow out of the ground.[or]The witch raises her hand, causing a giant clay hand to grow out of the ground.[purely at random]".
 
 To say MonsterTrippedFlav of (M - a witch):  [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
 	say "[if there is a worn nipple chain]It hooks a finger around your nipple chain, yanking you to the ground.[otherwise if there is a worn nipple piercing]It nimbly snatches the ring in one nipple and tugs down, the pain making you squeal and toppling you onto all fours on the ground[otherwise][one of]It chops your ankle out from under you, causing you to topple over onto your hands and knees.[or]It grabs your ankle, yanking it out from under you. You topple onto your hands and knees.[or]It grabs you by your ankles, tossing you off the ground. You yelp as you fly through the air and land on your hands and knees.[or]It grabs you by the wrist and yanks you onto your hands and knees.[or]It picks you up by your waist and roughly tosses you onto your hands and knees.[or]It grabs you at the knees and roughly yanks them out from under you. You fall to the ground![in random order][end if]".
@@ -276,7 +266,7 @@ To say SelectionFrustrated of (M - a witch):
 	say "[one of]The [M] crosses her arms, laughing proudly at her handiwork.[or]The [M] throws her head back and laughs derisively.[or]The [M]'s breasts jiggle as she throws her head back and cackles derisively.[or][if there is a worn pair of anklecuffs]The [M] points at your [random worn pair of anklecuffs], cackling madly.[otherwise]The [M] holds her middle finger in your direction, laughing scornfully.[end if][or]The [M] points at you with a grin, laughing scornfully.[or]The [M] cackles madly, seemingly pleased by your awkward situation.[or]The [M] cackles with glee, pleased by your awkward situation.[or]The [M] squats, holding her stomach and cackling madly. She's clearly pleased by your situation.[or]The [M] laughs derisively, holding her middle finger in your direction.[in random order]";[The witch is only bored once you're getting fucked.]
 
 This is the witch summons vines rule:
-	if the number of vines in the location of the player is 0 and a random vine boss is on-stage:
+	if the number of vines in the location of the player is 0 and a random vine boss is on-stage and the number of off-stage vines > 0:
 		say "The [current-monster] places her hands on the ground, and hums. Living vines sprout out of the ground!";
 		let V be a random off-stage vines;
 		now V is in the location of the player;
@@ -328,15 +318,20 @@ To compute damage of (M - a witch):
 		if the health of M <= 0:
 			compute death of M.
 
-To say DamageReaction (N - a number) of (M - a witch):
-	if N > (the maxhealth of M / 4) * 3:
-		say "[one of]The [noun] screams with rage, taking the hit![or]The [noun] chants threateningly at the top of [his of M] lungs![stopping]";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The [noun] takes the hit, wincing as [he of M] [one of]chants[or]continues chanting[stopping] under her breath!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The [noun] takes the hit, staggering as [he of M] repeats a slurred chant between breaths.";
-	otherwise:
-		say "The [noun] takes the hit, screaming in pain!";
+To say DamageReactHealthy of (M - a witch):
+	say "[one of]The [noun] screams with rage, taking the hit![or]The [noun] chants threateningly at the top of [his of M] lungs![stopping]".
+
+To say DamageReactDamaged of (M - a witch):
+	say "The [noun] takes the hit, wincing as [he of M] [one of]chants[or]continues chanting[stopping] under her breath!".
+
+To say DamageReactTired of (M - a witch):
+	say "The [noun] takes the hit, staggering as [he of M] repeats a slurred chant between breaths.".
+
+To say DamageReactWeak of (M - a witch):
+	say "The [noun] takes the hit, screaming in pain!".
+
+To say DamageReactSubmissive of (M - a witch):
+	say "The [noun] staggers as [he of M] takes the hit, seeming to take extra care not to turn [his of M] back towards you.".
 
 To compute unique death of (M - a witch):
 	say "The [M] disappears, leaving just a tattered robe and several gems. Shortly after, the robe vanishes.";
@@ -463,12 +458,12 @@ To say UnfriendlyResponse of (M - a witch):
 	say "[speech style of M]'[one of]You can forget about using my altar!'[or]I'm going to make you regret what you did!'[or]Never mess with a witch!'[or]Don't mess with an altar witch!'[in random order][roman type][line break]".
 	
 To say SubmissiveResponse of (M - a witch):
-	if the sex addiction of the player < 7 and the player is male:
+	if the player is feeling dominant:
 		say "[speech style of M]'[one of]You really don[']t have any idea who you[']re messing with, do you?'[or]I'm going to enjoy torturing you.'[or][if M is captive]You have some nerve coming back here.'[otherwise]How nice of you to come find me.'[end if][at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 14:
+	otherwise if the player is not feeling submissive:
 		say "[speech style of M]'Fuck off. I want to watch you fucking suffer.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Don[']t worry, I[']ll make sure someone gets on top of you, you fucking bitch.'[roman type][line break]".
+		say "[speech style of M]'Don't worry, I[']ll make sure someone gets on top of you, you fucking bitch.'[roman type][line break]".
 
 To say midDominanceResponse of (M - a witch):
 	if the relevant sex addiction of M < 12:
@@ -494,7 +489,7 @@ To say WhoQuestion of (M - a witch):
 	say "[variable custom style]'[one of]How many altar uses do I have left?'[or]Can you remind me how many altar uses I have left?'[or]Hey, do I have any more uses of the altar?[or]Hey, can I still use the altar?'[at random][roman type][line break]".
 
 To say WhoAnswer of (M - a witch):
-	say "The [M] rolls her eyes. [line break][speech style of M]'You have [if the sex-length of M > 1][sex-length of M] uses left. Don[']t try to slip one by me, I[']ll know.'[otherwise if the sex-length of M is 1]1 use left.[otherwise]None left. Give me something to drink first.'[end if][roman type][line break]".
+	say "The [M] rolls her eyes. [line break][speech style of M]'You have [if the altar-uses of M > 1][altar-uses of M] uses left. Don[']t try to slip one by me, I[']ll know.'[otherwise if the altar-uses of M is 1]1 use left.[otherwise]None left. Give me something to drink first.'[end if][roman type][line break]".
 
 To compute WhoAnswer of (M - a witch):
 	say "[speech style of M]'Nobody of consequence.'[roman type][line break]".

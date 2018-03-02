@@ -13,7 +13,7 @@ Definition: a vampiress (called M) is raunchy:
 
 The printed name of vampiress is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]seductive vampiress[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of vampiress is usually "[VampDesc]". The text-shortcut of vampiress is "va".
 Understand "vampire", "seductive", "vamp" as a vampiress.
-Figure of Vampiress is the file "vampiress1.png".
+Figure of Vampiress is the file "NPCs/Mansion/vampiress1.png".
 
 To say VampDesc:
 	if images visible is 1, display the figure of vampiress;
@@ -115,13 +115,13 @@ To compute kneeling reaction of (M - a vampiress):
 To say waitingflav of (M - a vampiress):
 	if times-fucked of M < 1:
 		say "Your eyes glaze over and, no matter what your previous thoughts were, you now desire very strongly to be fucked by the beautiful creature before you. Suddenly, she pulls out a rather large [manly-penis] and seems to contemplate where she wishes to place it as though her decision is a matter of life or death.";
-	otherwise if the player is not able to speak and the sex addiction of the player < 8:
+	otherwise if the player is not able to speak and the player is not a pervert:
 		say "[one of][line break][variable custom style][muffled sounds][roman type][line break][or]You peer up at the [M] silently. Something in your mind pops and you find your vision turn from derision to lust.[at random]";
 	otherwise if the player is not able to speak:
 		say "[one of][line break][variable custom style][muffled sounds][roman type][line break][or]You peer up at the [M] silently.[at random]";
-	otherwise if the sex addiction of the player < 8:
+	otherwise if the player is not a pervert:
 		say "[one of]You glare up at the monster before you, letting your loathing of her be known. However, as moments go by, you find your hatred harder to express as your anger dissipates.[or]You bow your head, defeated. You feel something penetrate your mind and, suddenly, regardless of your previous disposition, you are now eager to see what she has in store for you.[or][line break][first custom style]'You aren't going to drink my blood, are you?'[roman type][line break][or]You avert your eyes, hoping that your blood will stay in your body. Suddenly, you feel a flicker in your brain and you decide that it wouldn't be that bad letting her drain you.[or]You can't help but wonder if the stories are true... If she bites you, will you become a vampire?[in random order]";
-	otherwise if the sex addiction of the player > 7:
+	otherwise:
 		say "[one of]She's actually pretty hot... This will probably be fun.[or]You wait eagerly in place to see what she has in mind.[or][line break][variable custom style]'I've got something you can suck, if you know what I mean.'[roman type][line break][or][line break][variable custom style]'As long as you don't drink my blood, I'm on board. '[roman type][line break][or]Your blood pumps in your ears as you chitter happily at the thought of being hers forever.[in random order]";
 
 To say SexSubmissionFlav of (M - a vampiress):
@@ -146,10 +146,10 @@ To say VampResistRefusalFlav:
 		say "[variable custom style][muffled sounds][roman type][line break]".
 
 To say OralAddResRefusalFlav of (M - a vampiress):
-	say "[one of]You give a half-hearted thought to resisting, but it passes as you absorb yourself in polishing her [manly-penis] like the cumhungry slut you are.[or]You don't really want to resist, and it's like your body knows! You submissively pleasure the vampiress anyway, hoping for a satisfying semen fix.[or][if the sex addiction of the player < 10]It's incredibly degrading, but your body just won't listen when you tell it to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]It's like your body won't resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the sex addiction of the player < 10 and the player is female]You know it's something only a complete harlot would do, but your body is practically acting on its own! You just can't pass up a mouthful of fresh, tasty [semen]![otherwise]You consider resisting as you desperately suckle the vampiress's [manly-penis] for all it's worth. Maybe you[']ll fight back some other time...[end if][in random order]";
+	say "[one of]You give a half-hearted thought to resisting, but it passes as you absorb yourself in polishing her [manly-penis] like the cumhungry slut you are.[or]You don't really want to resist, and it's like your body knows! You submissively pleasure the vampiress anyway, hoping for a satisfying semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but your body just won't listen when you tell it to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]It's like your body won't resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the sex addiction of the player < 10 and the player is female]You know it's something only a complete harlot would do, but your body is practically acting on its own! You just can't pass up a mouthful of fresh, tasty [semen]![otherwise]You consider resisting as you desperately suckle the vampiress's [manly-penis] for all it's worth. Maybe you[']ll fight back some other time...[end if][in random order]";
 
 To say OralSlutResRefusalFlav of (M - a vampiress):
-	say "[one of][if the sex addiction of the player < 8]No matter how much you 'want' to resist, you can't keep yourself from desperately suckling her [manly-penis].[otherwise]Why resist? Sucking [manly-penis]s is FUN, and all resistance is pointless anyway![end if][or][if the semen taste addiction of the player < 10]You hate yourself for it, but no matter how much you know you want to resist, you can't help suckling the vampiress's [manly-penis] for all it's worth.[otherwise]One part of you wants to resist, but it's just so easy to keep polishing the yummy [manly-penis] in your mouth! Oh well![end if][in random order]";
+	say "[one of][if the player is feeling dominant]No matter how much you 'want' to resist, you can't keep yourself from desperately suckling her [manly-penis].[otherwise]Why resist? Sucking [manly-penis]s is FUN, and all resistance is pointless anyway![end if][or][if the semen taste addiction of the player < 10]You hate yourself for it, but no matter how much you know you want to resist, you can't help suckling the vampiress's [manly-penis] for all it's worth.[otherwise]One part of you wants to resist, but it's just so easy to keep polishing the yummy [manly-penis] in your mouth! Oh well![end if][in random order]";
 
 To say ThirstResRefusalFlav of (M - a vampiress):
 	say "[one of]You want to resist, you really do, but your body needs water...it's not responding to you at all.[or]You tell yourself to resist, but your body needs something to drink, and it knows where it can find something absolutely delicious.[or]Your body ignores every order to resist, desperately searching for a wet, sloppy answer to its thirst.[at random]";
@@ -208,20 +208,14 @@ This is the vampiress punishes diaper rule:
 			rule succeeds.
 The diaper punishment rule of a vampiress is usually the vampiress punishes diaper rule.
 
-To say AssholePenPrep of (M - a vampiress):
-	let N be a random monster penetrating vagina;
-	let O be a random monster penetrating face;
-	if N is monster and O is monster:
-		if N is intelligent, say "The [N] flips you over so your chin is resting on [his of M] chest, holding you by the waist as the [M] pulls apart your asscheeks.";
-		otherwise say "The [M] flips you onto your side, so you[']re facing the [N]. The [N] and the [O] continue to fuck you as [he of M] spreads apart your asscheeks.";
-	otherwise if N is a monster:
-		if N is intelligent, say "The [N] flips you over so you're face to face, holding you by the waist as the [M] pulls apart your asscheeks.";
-		otherwise say "The [N] continues to fuck your [vagina] as the [M] flips you over, spreading your asscheeks.";
-	[otherwise if O is a monster: Usually won't change anything significantly]
+To say TwosomePrep of (M - a vampiress) in (F - a fuckhole):[in other words, sex.]
 	if there is a worn chastity cage:
 		say "The [M] smiles, gently pulling your hips up against her body. She [if the times-fucked of M < 1]pulls out a large [manly-penis] from in-between her legs and pushes it between your cheeks[otherwise]places her hard length between your cheeks[end if], gently rubbing your belly as her hand moves to your waist.[line break]";
 	otherwise:
-		say "The [M] smiles, gently pulling your hips up against her body. She [if the times-fucked of M < 1]pulls out a large [manly-penis] from in-between her legs and pushes it between your cheeks[otherwise]places her hard length between your cheeks[end if], gently [if the player is female]pushing her soft, nimble fingers into your [vagina][otherwise if the size of penis > 4]wrapping her soft, nimble fingers around your [ShortDesc of penis][otherwise]tracing around your [ShortDesc of penis] with her nimble fingertips[end if] as her hand grabs your waist.[line break]";
+		say "The [M] smiles, gently pulling your hips up against her body. She [if the times-fucked of M < 1]pulls out a large [manly-penis] from in-between her legs and pushes it between your cheeks[otherwise]places her hard length between your cheeks[end if], gently [if the player is female]pushing her soft, nimble fingers into your [vagina][otherwise if the size of penis > 4]wrapping her soft, nimble fingers around your [ShortDesc of penis][otherwise]tracing around your [ShortDesc of penis] with her nimble fingertips[end if] as her hand grabs your waist.[line break]".
+		[now M is masturbating the player.][TODO]
+
+To say PrepTaunt of (M - a vampiress) in (F - a fuckhole):
 	if the times-fucked of M < 1:
 		say "[speech style of M]'Yes... To answer the question that is most certainly on your mind, in addition to a [vagina], I have a [manly-penis]. I suppose you are about to become a lot more well acquainted with it, aren't you?'[roman type][line break]";
 	otherwise if M is mating:
@@ -298,13 +292,13 @@ To compute (M - a vampiress) entering mouth:
 		say "The [M] sees that you are already occupied and loses interest.";
 		distract M.
 
-To say MouthPenetrationFlav of (M - a vampiress):[This probably needs changing for every monster!]
+To say MouthPenetrationFlav of (M - a vampiress):[TODO: subfunctions]
 	if presented-orifice is face:
-		say "[FriendlyMouthPenetrationFlav of M]";
+		say FriendlyMouthPenetrationFlav of M;
 	otherwise if there is a worn latex hood:
 		say "[one of]The [M] puts [his of M] hand on the back of your head, guiding [his of M] [manly-penis] through your gag and into your mouth.[or]The [M] slides [his of M] [manly-penis] through your gag. With no way of resisting[if the relevant sex addiction of M > 12], and no motivation,[end if] you have to sit there and take it as [he of M] begins to aggressively fuck your face.[or][if the relevant sex addiction of M < 7]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled grunt of indignation as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 10]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled grunt as [he of M] begins to thrust.[otherwise]Your eyes roll back in your head as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[end if][or][if the relevant sex addiction of M < 8]Your eyes widen in horror as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise if the relevant sex addiction of M < 13]Your eyes widen with excitement as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled sigh of satisfaction as [he of M] begins to thrust.[end if][in random order]";
 	otherwise if the latex-transformation of the player > 6:
-		say "[SexDollMouthPenetrationFlav of M]";
+		say SexDollMouthPenetrationFlav of M;
 	otherwise:
 		if the oral sex addiction of the player < 3:
 			say "[one of]The [M] traces her finger along the side of your chin, lifting her skirt as a strange tingling sensation moves up your neck. Your eyes latch onto the delicious yellow [i]popsicle[/i] she was hiding underneath her dress, and as she forces it between your lips, you can't help but wonder what the big deal is about sucking it. It's not like you hate popsicles, so why not just... suck.... Suuuuck. Suck. Suck. Suck-! You suddenly jerk out of a trance, realizing that 'yummy' thing sliding in and out of your mouth is actually someone's penis![or]The [M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but you suddenly have a much better idea. She'd probably hate it if you sucked her dick. Yeah. Sucked it until she came. Yeah, suck.... You catch yourself too late, struggling furiously as [M]'s [manly-penis] is already sliding in and out of your mouth.[or]The [M] points to your mouth, slowly stroking [his of M] [manly-penis]. You snarl. [line break][first custom style]'Not on your life, bitch. You really think I'd suck your huge, yummy dick? Ok, maybe I fucking will.'[roman type][line break]You grab her shaft and angrily slide it into your mouth, your eyes widening with the realization of what you've just done as she begins to thrust.[at random]";
@@ -496,7 +490,7 @@ To say UnfriendlyResponse of (M - a vampiress):
 [To say SubmissiveResponse of (M - a vampiress):]
 
 To say SubmissiveGreeting of (M - a vampiress):
-	if the sex addiction of the player < 8:
+	if the player is feeling dominant:
 		say "[second custom style]'I won't bow before you again!'[roman type][line break]";
 	otherwise:
 		say "'[line break][second custom style]Hello mistress... You said you like the struggle of your prey, right?'[roman type][line break]".

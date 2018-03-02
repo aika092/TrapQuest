@@ -7,7 +7,7 @@ Definition: A gargoyle (called M) is mansion dwelling:
 
 The description of gargoyle is usually "[GargoyleDesc]". The text-shortcut of gargoyle is "gy". The printed name of gargoyle is "[if item described is in the location of the player][TQlink of item described][end if][input-style]stone [if mythical creature fetish is 1]gargoyle[otherwise]sentry[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "stone", "statue", "sentry" as gargoyle.
 
-Figure of gargoyle is the file "gargoyle1.png".
+Figure of gargoyle is the file "NPCs/Mansion/gargoyle1.png".
 
 To say GargoyleDesc:
 	if images visible is 1, display figure of gargoyle;
@@ -278,15 +278,17 @@ To compute damage of (M - a gargoyle):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a gargoyle):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The [M] seems completely unaffected by your attack!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The [M] blinks, as if surprised by the force of your attack!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "[one of]The [M] emits a weird crunching noise[or]Tiny cracks spread across [his of M] stony skin[at random]!";
-	otherwise:
-		say "The hit seems to dislodge several pieces of loose rock!".
+To say DamageReactHealthy of (M - a gargoyle):
+	say "The [M] seems completely unaffected by your attack!".
+
+To say DamageReactDamaged of (M - a gargoyle):
+	say "The [M] blinks, as if surprised by the force of your attack!".
+
+To say DamageReactTired of (M - a gargoyle):
+	say "[one of]The [M] emits a weird crunching noise[or]Tiny cracks spread across [his of M] stony skin[at random]!".
+
+To say DamageReactWeak of (M - a gargoyle):
+	say "The hit seems to dislodge several pieces of loose rock!".
 
 To say StrikingSuccessFlav of (M - a gargoyle) on (B - a body part):
 	say "The [M] smacks you with a stony fist!".

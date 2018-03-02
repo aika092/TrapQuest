@@ -62,7 +62,10 @@ To say displacement-desc:
 		say " (ripped)";
 	if item described is locked clothing:
 		say " (locked)";
-	if the item described is top-displaced and the item described is worn:
+	if the item described is top-ripped:
+		if the item described is crotch covering, say " (bust ripped)";
+		otherwise say " (ripped)";
+	otherwise if the item described is top-displaced and the item described is worn:
 		if the item described is not bra or the item described is not very low cut or higher:
 			say " (pulled down)";
 		otherwise:

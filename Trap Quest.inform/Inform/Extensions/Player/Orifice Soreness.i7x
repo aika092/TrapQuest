@@ -62,7 +62,8 @@ To decide which number is the tolerance of (F - a fuckhole):
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (O - an object):
+To decide which number is the stimulation of (O - an object) on (F - a fuckhole):
+	if the semen volume of vagina > 6 and F is vagina, decide on 4; [Pussy creampie expulsion]
 	decide on 0.
 
 [!<DecideWhichNumberIsTheStimulationOfMonster>+
@@ -70,8 +71,8 @@ To decide which number is the stimulation of (O - an object):
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (M - a monster):
-	let S be the girth of M + 3;
+To decide which number is the stimulation of (M - a monster) on (F - a fuckhole):
+	let S be the girth of M;
 	if interracial fetish is 1:
 		if M is dark skinned:
 			increase S by 1;
@@ -86,8 +87,8 @@ To decide which number is the stimulation of (M - a monster):
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (T - a thing):
-	if T is insertable, decide on the girth of T;
+To decide which number is the stimulation of (T - a thing) on (F - a fuckhole):
+	if T is insertable, decide on (the girth of T * 2) / 3;
 	if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 	decide on 0.
 
@@ -96,8 +97,8 @@ To decide which number is the stimulation of (T - a thing):
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (T - a trap):
-	if the girth of T > 0, decide on the girth of T;
+To decide which number is the stimulation of (T - a trap) on (F - a fuckhole):
+	if the girth of T > 0, decide on (the girth of T * 2) / 3;
 	if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 	decide on 0.
 
@@ -141,7 +142,7 @@ To RuinRoll (F - a fuckhole):
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
 		if F is vagina, increase A by the square root of the vaginal sex addiction of the player;
 		if there is a worn total protection diaper, increase A by the diaper addiction of the player;
-		arouse 1000 + (stimulation of T * 150) + (A * 50);
+		arouse 1000 + (stimulation of T on F * 150) + (A * 50);
 	if diaper quest is 0:
 		let X be the tolerance of F; 
 		if X < 1, now X is 1; [Always a small chance of avoiding soreness]
@@ -235,7 +236,7 @@ To potentially despair about (F - a fuckhole) sex:
 
 
 To compute submission success of (M - a thing) in (F - a fuckhole):
-	say "[submission success of M in F]";
+	say submission success of M in F;
 	if F is asshole:
 		if a random number between 0 and the raw anal sex addiction of the player is 0 and the player is horny, AnalSexAddictUp 1;
 	otherwise:

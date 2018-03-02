@@ -1,6 +1,6 @@
 Lucky You Tattoo by Tattoos begins here.
 
-lucky you tattoo is a kind of crotch tattoo. Figure of lucky you tattoo is the file "tattoo15.png". There is 1 lucky you tattoo.
+lucky you tattoo is a kind of crotch tattoo. Figure of lucky you tattoo is the file "Items/Tats/tattoo15.png". There is 1 lucky you tattoo.
 Definition: a lucky you tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if the noun is pack of playing cards, decide yes;

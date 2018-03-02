@@ -1,6 +1,6 @@
 Just the Tip Tattoo by Tattoos begins here.
 
-just the tip tattoo is a kind of ass tattoo. Figure of just the tip tattoo is the file "tattoo50.png". There is 1 just the tip tattoo.
+just the tip tattoo is a kind of ass tattoo. Figure of just the tip tattoo is the file "Items/Tats/tattoo50.png". There is 1 just the tip tattoo.
 Definition: a just the tip tattoo (called B) is eligible:	
 	decide no.
 Definition: a just the tip tattoo (called B) is drawable:

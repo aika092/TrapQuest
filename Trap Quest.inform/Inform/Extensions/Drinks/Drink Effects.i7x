@@ -126,9 +126,9 @@ REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 2):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. This makes you feel less sex-obsessed![otherwise]More sex-addiction reducing potion. Excellent![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. This makes you feel less perverted![otherwise]More sex-addiction reducing potion. Excellent![end if]";
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
-	if the noun is blessed or a random number between 1 and 5 is 1:
+	if the noun is blessed or a random number between 1 and 3 is 1:
 		DiaperAddictDown 1;
 		AnalSexAddictDown 1;
 		OralSexAddictDown 1;
@@ -142,7 +142,7 @@ REQUIRES COMMENTING
 +!]
 To compute drinking effect (N - 3):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, you can definitely taste a hint of caffeine. You feel clear-headed![otherwise if the raw intelligence of the player >= the starting intelligence of the player and the noun is not blessed]It doesn't seem to have any effect.[otherwise]More energy drink. Your eyes widen![end if]";
-	if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20, IntUp 1;
+	if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20, IntUp 1; [Intelligence is difficult to increase once sex addiction hits max]
 	if the noun is blessed, Intup 1.
 
 [!<ComputeDrinkingEffect4>+

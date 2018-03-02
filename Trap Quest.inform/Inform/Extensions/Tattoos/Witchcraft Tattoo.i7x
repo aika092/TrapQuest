@@ -1,6 +1,6 @@
 Witchcraft Tattoo by Tattoos begins here.
 
-witchcraft tattoo is a kind of leg tattoo. Figure of witchcraft tattoo is the file "tattoo27.png". There is 1 witchcraft tattoo.
+witchcraft tattoo is a kind of leg tattoo. Figure of witchcraft tattoo is the file "Items/Tats/tattoo27.png". There is 1 witchcraft tattoo.
 Definition: a witchcraft tattoo (called T) is eligible:
 	if the noun is golden phallus or the noun is magic wand or the noun is priestess outfit or the noun is runic headband or the noun is fertility outfit or the noun is gothic corset or the noun is potion or the noun is salve or the noun is elixir or the noun is tincture or the noun is recipe or the noun is witch's goblet, decide yes;
 	decide no.

@@ -2,7 +2,7 @@ Sandals by Shoes begins here.
 
 A sandals is a kind of heels. A sandals is usually biological. A sandals is usually unique. The printed name of sandals is usually "[TQlink of item described][item style]pair of wooden sandals[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sandals is "wsa". Understand "wooden" as sandals. There is 1 sandals.
 
-Figure of wooden sandals is the file "sandals1.png".
+Figure of wooden sandals is the file "Items\Clothes\Lower\Feet\sandals1.png".
 
 To decide which figure-name is the clothing-image of (C - a sandals):
 	decide on figure of wooden sandals.

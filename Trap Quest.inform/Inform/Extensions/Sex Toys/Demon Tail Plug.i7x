@@ -2,7 +2,7 @@ Demon Tail Plug by Sex Toys begins here.
 
 A demon tail plug is a kind of tail plug. A demon tail plug is rare. The printed name of demon tail plug is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] demon tail plug[clothing-title-after][TQxlink of item described][verb-desc of item described]". There is 1 demon tail plug. The text-shortcut of demon tail plug is "dtp".
 
-Figure of demon tail plug is the file "demontail1.png".
+Figure of demon tail plug is the file "Items\Accessories\Toys\demontail1.png".
 
 To decide which figure-name is clothing-image of (C - a demon tail plug):
 	decide on figure of demon tail plug.

@@ -43,7 +43,7 @@ Part 1 - Anime Superheroine Top
 An anime superheroine top is a kind of superheroine outfit. An anime superheroine top is usually pvc. An anime superheroine top is usually neck covering. An anime superheroine top is usually belly exposing.
 There is 1 anime superheroine top. The text-shortcut of anime superheroine top is "aso".
 
-Figure of anime heroine top is the file "animeheroine1.png".
+Figure of anime heroine top is the file "Items\Clothes\Upper\Special\Hero\animeheroine1.png".
 
 To decide which number is the initial outrage of (C - an anime superheroine top):
 	decide on 6.
@@ -70,7 +70,7 @@ Part 2 - Blue Superheroine Outfit
 
 A blue superheroine outfit is a kind of superheroine outfit. A blue superheroine outfit is usually leg covering. A blue superheroine outfit is usually only arm covering. A blue superheroine outfit is usually crotch-intact. There is 1 blue superheroine outfit. The text-shortcut of blue superheroine outfit is "bso".
 
-Figure of blue superheroine outfit is the file "Xheroine1.png".
+Figure of blue superheroine outfit is the file "Items\Clothes\Upper\Special\Hero\Xheroine1.png".
 
 To decide what number is the price of (C - a blue superheroine outfit):
 	decide on 4.

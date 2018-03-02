@@ -9,7 +9,7 @@ There is 1 baby booties.
 To decide which figure-name is the clothing-image of (H - a baby booties):
 	decide on the figure of baby booties.
 
-Figure of baby booties is the file "booties1.png".
+Figure of baby booties is the file "Items\Clothes\Lower\Feet\Booties\booties1.png".
 
 To decide which number is the unique outrage of (C - a baby booties):
 	decide on 6.
@@ -61,7 +61,7 @@ To say ClothingDesc of (C - a baby slippers):
 To decide which figure-name is the clothing-image of (H - a baby slippers):
 	decide on the figure of baby slippers.
 
-Figure of baby slippers is the file "booties2.png".
+Figure of baby slippers is the file "Items\Clothes\Lower\Feet\Booties\booties2.png".
 
 To decide which number is the unique cringe of (C - a baby slippers):
 	decide on 12.

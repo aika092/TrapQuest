@@ -7,7 +7,7 @@ Definition: A herald (called M) is mansion dwelling:
 
 The printed name of herald is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]Valleyhotep the Herald[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of herald is usually "[HeraldDesc]". Understand "Valleyhotep", "herald" as herald.
 
-Figure of herald is the file "herald1.png".
+Figure of herald is the file "NPCs/Mansion/herald1.png".
 
 To say HeraldDesc:
 	if images visible is 1, display figure of herald;

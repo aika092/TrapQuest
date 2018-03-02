@@ -6,14 +6,14 @@ The dungeon altar is in Dungeon28. The dungeon altar is not portable. The descri
 To say AltarDesc:
 	if images visible is 1, display figure of dungeon altar;
 	say "A large stone slab held up by two statues of men naked except for loincloths.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]".
-Figure of dungeon altar is the file "altar1.png".
+Figure of dungeon altar is the file "Env/Dungeon/altar1.png".
 
 The woods altar is in Woods20. The woods altar is not portable. The description of the woods altar is "[WoodsAltarDesc]". The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The indefinite article of the woods altar is "an". The text-shortcut of woods altar is "al".
 
 To say WoodsAltarDesc:
 	if images visible is 1, display figure of woods altar;
 	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or]  It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
-Figure of woods altar is the file "altar2.png".
+Figure of woods altar is the file "Env/Forest/altar2.png".
 
 The elder altar is in Mansion23. The elder altar is not portable. The description of the elder altar is "[ElderAltarDesc]". The printed name of elder altar is "dark altar[shortcut-desc]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
 
@@ -115,7 +115,7 @@ Carry out praying something with:
 			decrease the souls of the player by 1;
 		if the noun is headgear and the noun is worn by the player:
 			if the noun is not blessed:
-				if the class of the player is not adventurer or the virgin of the player is 0 or the noun is runic headband or the noun is severed-tentacle:
+				if the class of the player is not adventurer or the virgin of the player is 0 or the noun is runic headband or the noun is severed-tentacle or the number of worn headgear > 1:
 					say "A voice appears in your head:  '[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo], [if the bimbo of the player > 8 and the bimbo of the player < 13]my pet, [end if][if the noun is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
 					bless the noun;
 					now the noun is sure;
@@ -194,8 +194,8 @@ Carry out praying something with:
 					if the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0:
 						say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
 						now the pregnancy of the player is 0;
-						now the semen volume of vagina is 1;
-						WombSquirt 1; [This will automatically remove all potential fathers.]
+						now the womb volume of vagina is 0;
+						cancel father material; [This will remove all potential fathers.]
 						break;
 				if the player is hungry:
 					say "You feel full!";
@@ -212,7 +212,7 @@ Carry out praying something with:
 					HipDown 2;
 					break;
 				if R is 3 and the sex addiction of the player > 7:
-					say "You feel less submissive.";
+					say "You feel less perverted.";
 					SexAddictDown 2;
 					break;
 				otherwise if R is 3:
@@ -285,14 +285,14 @@ Carry out praying something with:
 				say "The [printed name of noun] disappears into nothingness.";
 				remove the noun from play;
 		repeat with W running through witches in the location of the player:
-			if the sex-length of W <= 0 and the variety of W < 3:
+			if the altar-uses of W <= 0 and the variety of W < 3:
 				if W is captive or W is uninterested:
-					say "[second custom style]'[one of]Hey, what the fuck do you think you're doing!  No using that without my permission!'[or]You again!  You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [W]!";
+					say "[second custom style]'[one of]Hey, what the fuck do you think you're doing!  No using that without my permission!'[or]You again!  You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of W]!";
 					anger W;
 					now W is interested;
 					now W is released;
 			otherwise if the variety of W < 3:
-				decrease the sex-length of W by 1;
+				decrease the altar-uses of W by 1;
 	otherwise if the second noun is the elder altar: [To actually benefit from the elder altar's ability to bless things you need to learn a skill from a monster, the cultist otherwise all you can do is sacrifice things (which does at least let you destroy cursed clothing)]
 		if the noun is the player:
 			say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There[']s no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
@@ -334,7 +334,7 @@ Carry out praying something with:
 				otherwise: 
 					say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your [vagina]. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your [vagina] without hesitation, unexpectedly firm yet oddly fluid. In spite of your lack of reaction, it appears perfectly content to thrust and pump away at you. Eventually it tenses up, and begins spraying semen into you. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.[line break]";
 				increase the charge of the elder altar by 500;
-				WombFill 6;
+				PussyFill 6;
 				now elder altar is not penetrating vagina;
 				MagicPowerUp 2;
 				if whispered > 0 and whisper-type is 1:

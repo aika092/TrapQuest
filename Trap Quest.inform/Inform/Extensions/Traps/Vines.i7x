@@ -9,7 +9,7 @@ This is the spawn initial woods vines rule:
 			if the number of vines in R is 0, deploy T in R.
 The spawn initial woods vines rule is listed in the set up woods traps rules.
 
-vine are a kind of trap. The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]". There are 16 revealed vines. Understand "living", "vine", "vines" as vines when item described is in the location of the player. The printed plural name of vines is "vines". The description of vines is "[VineDesc]". Figure of vines is the file "vines1.png". The text-shortcut of a vine is "vin".
+vine are a kind of trap. The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]". There are 16 revealed vines. Understand "living", "vine", "vines" as vines when item described is in the location of the player. The printed plural name of vines is "vines". The description of vines is "[VineDesc]". Figure of vines is the file "Env/Forest/vines1.png". The text-shortcut of a vine is "vin".
 
 Definition: a vine (called M) is father material:
 	decide yes.
@@ -34,6 +34,7 @@ Returns yes if the player is grabbed by a vine.
 +!]
 Definition: yourself is vine stuck:
 	if there is a vine grabbing the player, decide yes;
+	if there is a fairy witch grabbing the player, decide yes;
 	decide no.
 
 [!<YourselfIsVineFucked>+
@@ -130,59 +131,71 @@ To compute (V - a vine) penetrating:
 	if H < the thickness of hips and H < 10: [Vines will always succeed on a roll above 9]
 		say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [HipDesc]. It recoils back into the ground.";
 	otherwise if R is 1:
-		if the player is ass protected:
-			let K be a random worn top level ass protection clothing;
-			compute V attacking K;
-			if the player is not ass protected and K is crotch-ripped or K is crotch-unzipped:
-				say "It continues straight into your [asshole] and immediately begins fucking you at full force!";
-				if V is grabbing the player:
-					now V is penetrating asshole;
-				otherwise:
-					repeat with X running through vines grabbing the player:
-						now X is penetrating asshole;
-				ruin asshole;
-		otherwise if asshole is actually occupied:
-			let T be a random thing penetrating asshole;
-			if T is disembodied:
-				say "The vine powerfully pulls out the [T] and throws it on the ground.";
-				dislodge T;
-				now T is in the location of the player;
-		otherwise:
-			if V is grabbing the player:
-				now V is penetrating asshole;
-			otherwise:
-				repeat with X running through vines grabbing the player:
-					now X is penetrating asshole;
-			if image cutscenes is 1 and the player is female, display figure of vines cutscene 1;
-			say "[AssholePenetrationFlav of V]";
-			ruin asshole;
+		compute V penetrating asshole;
 	otherwise:
-		if the player is pussy protected:
-			let K be a random worn top level protection clothing;
-			compute V attacking K;
-			if the player is not pussy protected and K is crotch-ripped or K is crotch-unzipped:
-				say "It continues straight into your [vagina] and immediately begins fucking you at full force!";
-				if V is grabbing the player:
-					now V is penetrating vagina;
-				otherwise:
-					repeat with X running through vines grabbing the player:
-						now X is penetrating vagina;
-				ruin vagina;
-		otherwise if vagina is actually occupied:
-			let T be a random thing penetrating vagina;
-			if T is disembodied:
-				say "The vine powerfully pulls out the [T] and throws it on the ground.";
-				dislodge T;
-				now T is in the location of the player;
+		compute V penetrating vagina.
+
+To compute (V - a vine) penetrating (F - asshole):
+	let K be a random worn top level ass protection clothing;
+	if the player is ass protected:
+		[let K be a random worn top level ass protection clothing;]
+		compute V attacking K;
+	if the player is not ass protected and K is crotch-ripped or K is crotch-unzipped:
+		say "It continues straight into your [asshole] and immediately begins fucking you at full force!";
+		if V is grabbing the player:
+			now V is penetrating asshole;
 		otherwise:
-			if V is grabbing the player:
-				now V is penetrating vagina;
-			otherwise:
-				repeat with X running through vines grabbing the player:
-					now X is penetrating vagina;
-			if image cutscenes is 1, display figure of vines cutscene 1;
-			say "[VaginaPenetrationFlav of V]";
-			ruin vagina.
+			repeat with X running through vines grabbing the player:
+				now X is penetrating asshole;
+			ruin asshole;
+	otherwise if asshole is actually occupied:
+		let T be a random thing penetrating asshole;
+		if T is disembodied:
+			say "The vine powerfully pulls out the [T] and throws it on the ground.";
+			dislodge T;
+			now T is in the location of the player;
+	otherwise:
+		let N be a random vine grabbing the player;
+		if N is V:
+			now V is penetrating asshole;
+		otherwise if N is vine:
+			now N is penetrating asshole;
+		otherwise:
+			now a random vine in the location of the player is penetrating asshole;
+		if image cutscenes is 1 and the player is female, display figure of vines cutscene 1;
+		say "[AssholePenetrationFlav of V]";
+		ruin asshole.
+
+To compute (V - a vine) penetrating (F - vagina):
+	let K be a random worn top level protection clothing;
+	if the player is pussy protected:
+		[let K be a random worn top level protection clothing;]
+		compute V attacking K;
+	if the player is not pussy protected and K is crotch-ripped or K is crotch-unzipped:
+		say "It continues straight into your [vagina] and immediately begins fucking you at full force!";
+		let N be a random vine grabbing the player;
+		if N is V:
+			now V is penetrating vagina;
+		otherwise if N is vine:
+			now N is penetrating vagina;
+		otherwise:
+			now a random vine in the location of the player is penetrating vagina;
+			ruin vagina;
+	otherwise if vagina is actually occupied:
+		let T be a random thing penetrating vagina;
+		if T is disembodied:
+			say "The vine powerfully pulls out the [T] and throws it on the ground.";
+			dislodge T;
+			now T is in the location of the player;
+	otherwise:
+		if V is grabbing the player:
+			now V is penetrating vagina;
+		otherwise:
+			repeat with X running through vines grabbing the player:
+				now X is penetrating vagina;
+		if image cutscenes is 1, display figure of vines cutscene 1;
+		say "[VaginaPenetrationFlav of V]";
+		ruin vagina.
 
 [!<ComputeVineAttackingClothing>+
 
@@ -234,8 +247,8 @@ To compute vines fucking:
 			say "As if to quell your resistance, a free vine lashes out with its oozing, bulbous tip and slaps you across the face several times, leaving drippy trails of [semen] in its wake. [if the semen taste addiction of the player > R and Face is not occupied]Overwhelmed by submissive desires, [one of]your tongue lewdly reaches out and licks up as much of the sticky mess as it can.[or] you follow its movements with your open mouth in an attempt to steal a taste of the writhing intruder.[or]you stop struggling and part your lips in supplication. The vine momentarily rewards your response by wrapping itself around your neck, forcing its way into your mouth and down your gullet, and simultaneously squeezing and fucking your throat while you choke and sputter. It withdraws as you start to see stars, leaving you feeling dazed yet disturbingly satisfied.[then at random][end if][line break]";
 			if the semen taste addiction of the player > R:
 				CumFaceUp 1;
-				StomachSemenUp 1;
 				now V is penetrating face;
+				StomachSemenUp 1;
 				now V is not penetrating face;[To allow the player to gag]
 			otherwise:
 				CumFaceUp 2;
@@ -265,12 +278,15 @@ To compute vines fucking:
 			otherwise if V is penetrating asshole:
 				assfill ((a random number between 1 and 3) + (a random number between 1 and 3) + the stance of the player);
 			otherwise:
-				wombfill ((a random number between 1 and 3) + (a random number between 1 and 3) + the stance of the player);
+				PussyFill ((a random number between 1 and 3) + (a random number between 1 and 3) + the stance of the player);
 				let F be a random fairy grabbing the player;
-				if F is monster and the pregnancy of the player is 0:
+				if F is monster and the pregnancy of the player is 0 and pregnancy fetish is 1:
 					say "Your belly [if slow pregnancy > 2]grows rapidly, emitting magenta light[otherwise]emits magenta light for several seconds, illuminating the vegetal mass between your legs[end if] as the [F] grins up at you, fingering herself as she floats away.[run paragraph on]";
 					now the pregnancy of the player is 1;
-					if slow pregnancy > 2, now the semen volume of vagina is 30;
+					if slow pregnancy > 2, now the womb volume of vagina is 30;
+					if image cutscenes is 1, display figure of fairy cutscene 19;
+				otherwise if there is a fairy in the location of the player:
+					if image cutscenes is 1, display figure of fairy cutscene 20;
 				if F is monster and the pregnancy of the player is 1, say "[line break][speech style of F]'[one of]Pay me back whenever you want, honey!'[or]Don[']t you feel so much better now?'[or]Fairies help fairies!'[or]You[']re welcoooome!'[in random order][roman type][line break]";
 				if F is monster:
 					now F is not grabbing the player;
@@ -281,7 +297,7 @@ To compute vines fucking:
 			now V is not penetrating asshole;
 			now V is not penetrating vagina;
 			now V is unrevealed;
-			TimesFuckedUp a random vine boss by 1;[So the study guide isn't useless. Princesses should avoid this!]
+			TimesFuckedUp a random vine boss by 1;[Princesses should avoid this!]
 			if V is in WoodsBoss01:
 				remove V from play;
 				now the TrapNo of V is 0;
@@ -305,6 +321,7 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling vines:
+	if there is a fairy witch grabbing the player, say "They're too strong. Its like the fairy is empowering them!" instead;
 	if the noun is not grabbing the player:
 		repeat with V running through vines grabbing the player:
 			try pulling V instead;
@@ -314,7 +331,7 @@ Check pulling vines:
 		if R < the soreness of a random fuckhole penetrated by the noun:
 			now seconds is 2;
 			say "Your [variable random fuckhole penetrated by the noun] is so sore that you are paralysed for a moment by the intense feelings!" instead;
-	VinePull instead;
+	VinePull instead.
 
 [!<VinePull>+
 

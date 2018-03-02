@@ -2,7 +2,7 @@ Butterfly Wings by Dresses begins here.
 
 A butterfly wings is a kind of overdress. A butterfly wings is usually unique. A butterfly wings is usually fully exposing. A butterfly wings is usually no-crotch. A butterfly wings is usually unskirted. There is 1 butterfly wings. The printed name of butterfly wings is "[TQlink of item described][clothing-title-before]butterfly wings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of butterfly wings is "bw". Understand "butter", "fly" as butterfly wings. A butterfly wings is usually totally-exclusive.
 
-Figure of butterfly wings is the file "butterfly1.png".
+Figure of butterfly wings is the file "Items\Clothes\Upper\Special\butterfly1.png".
 
 To decide which figure-name is clothing-image of (C - a butterfly wings):
 	decide on figure of butterfly wings.

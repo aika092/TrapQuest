@@ -26,8 +26,8 @@ First-throne is a number that varies.
 
 Does the player mean entering the throne: it is very likely.
 
-Figure of throne is the file "throne1.png".
-Figure of potty throne is the file "throne2.png".
+Figure of throne is the file "Env/Dungeon/throne1.png".
+Figure of potty throne is the file "Env/Dungeon/throne2.png".
 [
 Definitions for the throne:
 Triggered - Player is interacting with the throne in some way.

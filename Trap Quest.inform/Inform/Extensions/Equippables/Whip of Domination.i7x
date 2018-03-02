@@ -2,7 +2,7 @@ Whip of Domination by Equippables begins here.
 
 A whip of domination is a kind of equippable. A whip of domination is usually slap ready. There is 1 unique leather whip of domination. The printed name of whip of domination is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]whip of domination[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of whip of domination is "whi".
 
-Figure of whip of domination is the file "whipofdomination1.png".
+Figure of whip of domination is the file "Items\Accessories\Equippables\whipofdomination1.png".
 
 To decide which figure-name is the clothing-image of (W - a whip of domination):
 	decide on figure of whip of domination.
@@ -33,16 +33,16 @@ To compute recipe specific cursing of (T - a whip of domination):
 	if the noun is not writhing vine, now T is cursed.
 
 To compute attack effect of (W - a whip of domination):
-	if attack-type is 1 and W is not cursed and the sex addiction of the player < 12:
-		arouse 250;
-		say "Using the [printed name of W] is quickly making you more and more aroused!".
+	if attack-type is 1 and W is not cursed and the player is not feeling submissive:
+		arouse 100 + (20 * the sex addiction of the player);
+		say "Using the [printed name of W] is [if the player is a pervert]quickly [end if]making you more[if the player is horny] and more[end if] aroused!".
 			
 To decide which number is the damage improvement of (W - a whip of domination):
 	let X be 0;
 	if W is cursed, decrease X by 1;
 	increase X by the magic-modifier of W;
-	let Y be (the sex addiction of the player + 3) / 5;
-	increase X by (2 - Y) * 2; [The lower the player's sex-addiction, the more bonus damage]
+	let Y be (the delicateness of the player + 2) / 5;
+	increase X by (2 - Y) * 2; [The lower the player's delicateness, the more bonus damage]
 	if the player is horny, increase X by 1;
 	decide on X.
 	
@@ -53,11 +53,9 @@ To compute slaying bonus of (W - a whip of domination):
 		say "The [random worn whip of domination] sends positive feelings of confidence flowing through your body!".
 
 To compute attack of (W - a whip of domination) at (M - a monster):
-	say "[if the sex addiction of the player < 2]With a powerful piercing laugh, you skilfully slash[otherwise if the sex addiction of the player < 7]You feel confident inside as you skilfully lash[otherwise if the sex addiction of the player < 12]You strike[otherwise if the sex addiction of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]!  [if W is cursed]After striking the [M], the whip flicks back with recoil, hitting you as well!  [line break][variable custom style]Oww[one of]!  Is this whip cursed?[or][stopping]![roman type][line break][end if]";
+	say "[if the player is feeling dominant and a random number between 4 and 8 < the sex addiction of the player]With a powerful piercing laugh, you skilfully slash[otherwise if the player is feeling dominant]You feel confident inside as you skilfully lash[otherwise if the player is not feeling submissive]You strike[otherwise if the delicateness of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]!  [if W is cursed]After striking the [M], the whip flicks back with recoil, hitting you as well!  [line break][variable custom style]Oww[one of]!  Is this whip cursed?[or][stopping]![roman type][line break][end if]";
 	if a random number between 1 and 2 is 1 and W is cursed:
-		DelicateUp 1;
-	otherwise if W is cursed:
-		BodyRuin 1.
+		DelicateUp 1.
 
 To decide which number is the bartering value of (T - a whip of domination) for (M - a demoness):
 	if M is friendly, decide on 4;

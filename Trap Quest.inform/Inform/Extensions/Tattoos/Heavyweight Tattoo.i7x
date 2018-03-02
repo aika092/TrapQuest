@@ -1,6 +1,6 @@
 Heavyweight Tattoo by Tattoos begins here.
 
-heavyweight tattoo is a kind of leg tattoo. Figure of heavyweight tattoo is the file "tattoo26.png". There is 1 heavyweight tattoo.
+heavyweight tattoo is a kind of leg tattoo. Figure of heavyweight tattoo is the file "Items/Tats/tattoo26.png". There is 1 heavyweight tattoo.
 Definition: a heavyweight tattoo (called T) is eligible:
 	if the noun is egg or the noun is metal disc or the noun is food or the noun is metal clothing, decide yes;
 	decide no.

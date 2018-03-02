@@ -1,6 +1,6 @@
 Ribbon Bow Tattoo by Tattoos begins here.
 
-ribbon bow tattoo is a kind of leg tattoo. Figure of ribbon bow tattoo is the file "tattoo29.png". There is 1 ribbon bow tattoo.
+ribbon bow tattoo is a kind of leg tattoo. Figure of ribbon bow tattoo is the file "Items/Tats/tattoo29.png". There is 1 ribbon bow tattoo.
 Definition: a ribbon bow tattoo (called T) is eligible:
 	if the noun is stockings or the noun is bow themed, decide yes;
 	decide no.

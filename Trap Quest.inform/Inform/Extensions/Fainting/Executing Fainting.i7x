@@ -29,15 +29,17 @@ Called when the player faints. We reset a lot of variables.
 
 +!]
 To Execute Fainting:
+	repeat with M running through monsters in the location of the player:
+		dislodge M;
 	now another-turn is 0;
 	if the player is in WoodsBoss01, now the player is in Woods16;
 	if the player is in Blindfolded, now the player is in Hotel31;
 	if the player is in Iron Maiden, now the player is in the location of a random iron-maiden;
 	if the player is in HoleInWall, now the player is in the location of hole-in-wall;
 	if the player is in the mansion and there is an off-stage mindless acolyte:
-		let M be a random off-stage mindless acolyte;
-		set up M;
-		summon M in the mansion;
+		let A be a random off-stage mindless acolyte;
+		set up A;
+		summon A in the mansion;
 	let T be a random property-tattoo;
 	if the number of worn lower back tattoos is 0 and there is a worn tattoo and the player can see a royal guard:
 		summon T;

@@ -71,7 +71,7 @@ A time based rule (this is the acceleration tincture decay rule):
 				say "Time speeds back up to its normal speed.";
 		otherwise:
 			if the pregnancy of the player > 0 and the largeness of belly < 10:
-				increase the semen volume of vagina by 1;
+				increase the womb volume of vagina by 1;
 			if the stomach of the player > 1 and the thirst of the player < 5:
 				stomachdown 1;
 				if watersports mechanics is 1, increase the delayed bladder of the player by 1;
@@ -79,7 +79,7 @@ A time based rule (this is the acceleration tincture decay rule):
 				MilkUp 1;
 			if the lactation rate of the player is 1 and a random number between 1 and 2 is 1:
 				MilkUp 1;
-			if the semen volume of vagina > 1 and the pregnancy of the player is 0 and pregnancy fetish is 1 and acceleration-tincture-timer < 48 and the number of family things > 0:
+			if the womb volume of vagina > 1 and the pregnancy of the player is 0 and pregnancy fetish is 1 and acceleration-tincture-timer < 48 and the number of family things > 0:
 				say "[ConceptionFlav]";
 				now the pregnancy of the player is 1;
 			if the player is upright and acceleration-tincture-bonus > 0, increase the fat-burning of the player by 20.

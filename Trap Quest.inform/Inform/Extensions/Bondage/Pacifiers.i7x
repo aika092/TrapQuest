@@ -69,11 +69,11 @@ Carry out drinking cock pacifier:
 	say "You suck as hard as you can on your pacifier, triggering it to ejaculate [semen] down your throat.[line break][second custom style][if the semen taste addiction of the player > 8]Mm, that's actually pretty tasty...[otherwise][line break][first custom style]Eww. So slimy...[end if][roman type][line break]";
 	StomachSemenUp 1.
 
-Figure of cock pacifier is the file "cockpacifier1.png".
-Figure of pink pacifier is the file "pacifier1.png".
-Figure of tiger pacifier is the file "pacifier2.png".
-Figure of white pacifier is the file "pacifier3.png".
-Figure of sparkly princess pacifier is the file "pacifier4.png".
+Figure of cock pacifier is the file "Items\Accessories\Head\cockpacifier1.png".
+Figure of pink pacifier is the file "Items\Accessories\Head\pacifier1.png".
+Figure of tiger pacifier is the file "Items\Accessories\Head\pacifier2.png".
+Figure of white pacifier is the file "Items\Accessories\Head\pacifier3.png".
+Figure of sparkly princess pacifier is the file "Items\Accessories\Head\pacifier4.png".
 
 To decide which figure-name is clothing-image of (C - a cock pacifier):
 	decide on figure of cock pacifier.
@@ -114,6 +114,9 @@ To decide which number is the strength-influence of (C - a tiger pacifier):
 	let S be 2;
 	increase S by the magic-modifier of C;
 	decide on S.
+
+To decide which number is the intelligence-influence of (C - a pacifier):
+	decide on 0.
 
 To compute periodic effect of (P - a pacifier):
 	if diaper quest is 0 and the thirst of the player >= 5 and P is not cock pacifier:

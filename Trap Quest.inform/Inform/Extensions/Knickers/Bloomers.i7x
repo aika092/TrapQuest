@@ -20,7 +20,7 @@ To say ClothingDesc of (K - a bloomers):
 To say UniqueTitle of (K - a bloomers):
 		say "sexy sissy bloomers".
 
-Figure of bloomers is the file "bloomers1.png".
+Figure of bloomers is the file "Items\Clothes\Lower\Underwear\Bloomers\bloomers1.png".
 
 To decide which number is the initial outrage of (C - a bloomers):
 	decide on 8.
@@ -51,7 +51,7 @@ To say ClothingDesc of (K - a crotchless bloomers):
 To say UniqueTitle of (K - a crotchless bloomers):
 		say "sexy crotchless sissy bloomers".
 
-Figure of crotchless bloomers is the file "bloomers2.png".
+Figure of crotchless bloomers is the file "Items\Clothes\Lower\Underwear\Bloomers\bloomers2.png".
 
 To uniquely set up (C - a crotchless bloomers):
 	if a random number between 1 and 3 is 1, now C is protection;

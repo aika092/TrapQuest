@@ -1,6 +1,6 @@
 Forever Tattoo by Tattoos begins here.
 
-forever tattoo is a kind of crotch tattoo. Figure of forever tattoo is the file "tattoo16.png". There is 1 forever tattoo. The printed name of forever tattoo is "nothing is forever tattoo". Understand "nothing is" as forever tattoo.
+forever tattoo is a kind of crotch tattoo. Figure of forever tattoo is the file "Items/Tats/tattoo16.png". There is 1 forever tattoo. The printed name of forever tattoo is "nothing is forever tattoo". Understand "nothing is" as forever tattoo.
 Definition: a forever tattoo (called T) is eligible:	
 	if the noun is plentiful accessory, decide yes;
 	decide no.

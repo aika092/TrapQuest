@@ -1,5 +1,5 @@
 Flower Hairclip by Headgear begins here.
-A flower hairclip is a kind of headgear. A flower hairclip is usually satin. A flower hairclip is usually purity. There is 1 flower hairclip. Figure of flower hairclip is the file "flowerhairclip1.png". A flower hairclip is usually hair growing. A flower hairclip is usually anal-sex-addiction-influencing. Understand "white", "rose", "clip" as flower hairclip.
+A flower hairclip is a kind of headgear. A flower hairclip is usually satin. A flower hairclip is usually purity. There is 1 flower hairclip. Figure of flower hairclip is the file "Items\Accessories\Head\flowerhairclip1.png". A flower hairclip is usually hair growing. A flower hairclip is usually anal-sex-addiction-influencing. Understand "white", "rose", "clip" as flower hairclip.
 
 To decide if a flower hairclip is roleplay:
 	if earnings > starting-earnings - 250, decide no;[prevents the hairclip from spawning naturally; would be super strong w/ almost all headgear disabled]

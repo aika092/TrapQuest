@@ -1,6 +1,6 @@
 Let It Die Tattoo by Tattoos begins here.
 
-let it die tattoo is a kind of crotch tattoo. Figure of let it die tattoo is the file "tattoo43.png". There is 1 let it die tattoo.
+let it die tattoo is a kind of crotch tattoo. Figure of let it die tattoo is the file "Items/Tats/tattoo43.png". There is 1 let it die tattoo.
 Definition: a let it die tattoo (called T) is eligible:
 	if the noun is collectible, decide yes;
 	decide no.

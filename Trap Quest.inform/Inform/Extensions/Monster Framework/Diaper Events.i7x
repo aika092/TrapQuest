@@ -604,12 +604,49 @@ To say EnemaPlugAfterFlav of (M - a monster):
 
 Section - Forcefeed
 
+A monster has a number called chosen-forcefeed-round.
+[
+HERE'S HOW YOU CREATE A FORCEFEED SCENE FOR YOUR NPC:
+
+Simple Version - Just create two functions, with X different possible scenes
+
+To compute forcefeed round (N - a number) of (M - YOUR NPC HERE):
+	say "[one of]FEED SCENE 1[or]FEED SCENE 2[or]FEED SCENE X[in random order]";
+	StomachFoodUp 1;
+	
+To decide which number is the forcefeed-length of (M - YOUR NPC HERE):
+	decide on X.
+
+------------------
+
+Complex Version - Create X varied scenes and let the engine choose random ones (always in descending numerical order)
+
+To compute forcefeed round (N - 1) of (M - YOUR NPC HERE):
+	say "FEED SCENE 1";
+	FEED SCENE 1 EFFECTS;
+
+To compute forcefeed round (N - 2) of (M - YOUR NPC HERE):
+	say "FEED SCENE 2";
+	FEED SCENE 2 EFFECTS;
+
+To compute forcefeed round (N - X) of (M - YOUR NPC HERE):
+	say "FEED SCENE X";
+	FEED SCENE X EFFECTS;
+
+To decide which number is the forcefeed-length of (M - YOUR NPC HERE):
+	decide on a random number between ??? and ???. [each ??? must be between 1 and X inclusive]
+
+To decide which number is the max-forcefeed-length of (M - YOUR NPC HERE):
+	decide on X.
+
+]
+
 To compute forcefeed of (M - a monster):
 	if M is not feeding the player:
 		compute forcefeed start of M;
-	let S be the sex-length of M;
+	progress the forcefeeding of M;
+	let S be the chosen-forcefeed-round of M;
 	compute forcefeed round S of M;
-	decrease the sex-length of M by 1;
 	if the sex-length of M <= 0:
 		dislodge M;
 		say "[ForcefeedAftermath of M]";
@@ -619,6 +656,7 @@ To compute forcefeed of (M - a monster):
 
 To compute forcefeed start of (M - a monster):
 	now the sex-length of M is the forcefeed-length of M;
+	now the chosen-forcefeed-round of M is the max-forcefeed-length of M + 1; [because we always subtract at least 1 before the first forcefeed]
 	say "[ForcefeedDeclarationFlav of M]";
 	follow the monster removing gag rule; [If there's a gag, let's take it off for now]
 	now M is grabbing the player;
@@ -627,6 +665,24 @@ To compute forcefeed start of (M - a monster):
 
 To decide which number is the forcefeed-length of (M - a monster):
 	decide on 1.
+
+To decide which number is the max-forcefeed-length of (M - a monster): [Set this to however high the NPC's forcefeed rounds go]
+	decide on 1.
+
+[
+Let's imagine that we are on chosen-forcefeed-round 6 and we have 3 rounds of feeding left. 
+So we want to decrease chosen-forcefeed-round by at least 1, and no more than 3 (saved in the below function as N), since we need to at the very least be able to go 3 > 2 > 1 in the last 3 rounds of feeding.
+Rather than completely random, we choose a random number between 1 and N squared and then apply squre root to give us a nice logarithmic probability curve, to make it rarer that we subtract the maximum.
+
+And just for my sanity, let's look at the edge cases to show that nothing super ridiculous should ever happen:
+Chosen-forcefeed-round = 2, sex-length = 1;  N = 1; S = 1; sex-length is reduced and so then we exit forcefeeding.
+Chosen-forcefeed-round = 1, sex-length = 1;  N = 0; S = 1; sex-length is reduced and so then we exit forcefeeding.
+]
+To progress the forcefeeding of (M - a monster):
+	let N be the chosen-forcefeed-round of M - the sex-length of M; [This is the maximum we can subtract because we need to have the sex-length of M left over at the end]
+	let S be the square root of (a random number between 1 and (N * N));
+	decrease the chosen-forcefeed-round of M by S;
+	decrease the sex-length of M by 1.
 
 To say ForcefeedDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]It looks like it's time for your din-dins!'[or]Babies need to eat and drink to keep up their strength... and to keep their bowels moving.'[in random order][roman type][line break]".

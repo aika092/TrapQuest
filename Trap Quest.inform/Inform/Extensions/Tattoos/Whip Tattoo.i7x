@@ -1,6 +1,6 @@
 Whip Tattoo by Tattoos begins here.
 
-whip tattoo is a kind of body tattoo. Figure of whip tattoo is the file "tattoo75.png". There is 1 whip tattoo.
+whip tattoo is a kind of body tattoo. Figure of whip tattoo is the file "Items/Tats/tattoo75.png". There is 1 whip tattoo.
 Definition: a whip tattoo (called T) is eligible:
 	if the noun is whip of domination, decide yes;
 	decide no.

@@ -9,7 +9,7 @@ Definition: an adult baby slave (called M) is raunchy:
 	decide yes.
  
 The description of adult baby slave is usually "[ABSDesc]". 
-Figure of AABS is the file "AABS.png". Figure of BABS is the file "BABS.png".
+Figure of AABS is the file "NPCs/MultiFloor/BabySlave/AABS.png". Figure of BABS is the file "NPCs/MultiFloor/BabySlave/BABS.png".
 
 An angelic adult baby slave is a kind of adult baby slave. there is 1 angelic adult baby slave.
 The printed name of angelic adult baby slave is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]angelic adult baby slave[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". understand "angel" as angelic adult baby slave. The text-shortcut of angelic adult baby slave is "abs". 
@@ -393,7 +393,7 @@ To compute facial climax of (M - an adult baby slave):
 	FavourUp M;
 	bore M.
 
-To compute (M - an adult baby slave) entering asshole:
+To compute (M - an adult baby slave) entering anally:
 	if diaper lover >= 4:
 		compute suppository of M;
 	otherwise:
@@ -516,7 +516,7 @@ To say SuppositoryDeclarationFlav of (M - an adult baby slave):
 	say "[if presented-orifice is asshole or M is friendly-fucking]You stick your ass out in the direction of the [M], waiting to see[otherwise]The [M] has a very evil look in her eyes, and you are concerned about[end if] what she has in mind. ".
 
 To say SuppositoryFlav of (M - an adult baby slave):
-	say "The [M] sticks her finger inside of your rectum, though it doesn't seem to be alone!  Once the finger is all the way up there she twists it around several times before pulling it back out, causing you to gasp [if the sex addiction of the player < 7]with shock, [end if][if the sex addiction of the player > 6]and moan with arousal, [end if].[line break][speech style of M]'I thought you could use a messy diaper, so I just gave you a suppository. These things are pretty fast acting, so it shouldn't be long now...'[roman type][line break]".
+	say "The [M] sticks her finger inside of your rectum, though it doesn't seem to be alone!  Once the finger is all the way up there she twists it around several times before pulling it back out, causing you to gasp[if the sex addiction of the player <= 7] with shock[end if][if the sex addiction of the player >= 5], and moan with arousal[end if].[line break][speech style of M]'I thought you could use a messy diaper, so I just gave you a suppository. These things are pretty fast acting, so it shouldn't be long now...'[roman type][line break]".
 
 To say SuppositoryAftermath of (M - an adult baby slave):
 	if there is a worn diaper or there is a diaper retained by M: [If there's a retained diaper, she's about to replace it.]
@@ -555,15 +555,17 @@ To compute damage of (M - an adult baby slave):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - an adult baby slave):
-	if N > (the maxhealth of M / 4) * 3:
-		say "[big he of M] blows a raspberry in the air at you... What a brat!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "[big he of M] looks like [he of M]'s contemplating biting you.";
-	otherwise if N > (the maxhealth of M / 4):
-		say "[big he of M] looks like [he of M] wants to cry but [he of M]'s holding it together surprisingly well for [his of M] maturity level.";
-	otherwise:
-		say "She looks like she's ready to burst into tears!".
+To say DamageReactHealthy of (M - an adult baby slave):
+	say "[big he of M] blows a raspberry in the air at you... What a brat!".
+
+To say DamageReactDamaged of (M - an adult baby slave):
+	say "[big he of M] looks like [he of M]'s contemplating biting you.".
+
+To say DamageReactTired of (M - an adult baby slave):
+	say "[big he of M] looks like [he of M] wants to cry but [he of M]'s holding it together surprisingly well for [his of M] maturity level.".
+
+To say DamageReactWeak of (M - an adult baby slave):
+	say "She looks like she's ready to burst into tears!".
 
 To compute unique death of (M - an adult baby slave):
 	say "The [noun] cries as she falls to the floor and vanishes. ";

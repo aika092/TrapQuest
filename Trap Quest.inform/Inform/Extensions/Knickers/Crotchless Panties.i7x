@@ -38,9 +38,9 @@ To say ClothingDesc of (K - a chain crotchless panties):
 To say selfexamineuniquetitle of (K - a chain crotchless panties):
 	say "slutty crotch chain".
 
-Figure of crotchless panties 1 is the file "crotchless1.png".
-Figure of crotchless panties 2 is the file "crotchless2.png".
-Figure of crotchless panties 3 is the file "crotchless3.png".
+Figure of crotchless panties 1 is the file "Items\Clothes\Lower\Underwear\Skimpy\Crotchless\crotchless1.png".
+Figure of crotchless panties 2 is the file "Items\Clothes\Lower\Underwear\Skimpy\Crotchless\crotchless2.png".
+Figure of crotchless panties 3 is the file "Items\Clothes\Lower\Underwear\Skimpy\Crotchless\crotchless3.png".
 
 To decide which number is the initial outrage of (C - a crotchless panties):
 	decide on 11.

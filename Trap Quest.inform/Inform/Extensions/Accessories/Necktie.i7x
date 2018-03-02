@@ -11,7 +11,7 @@ To decide which number is the initial cringe of (C - a necktie):
 To set up influence of (C - a necktie):
 	set up taste-based influence of C.
 
-Figure of necktie is the file "necktie1.png".
+Figure of necktie is the file "Items\Accessories\Neck\necktie1.png".
 
 There is 1 unique cotton necktie.
 

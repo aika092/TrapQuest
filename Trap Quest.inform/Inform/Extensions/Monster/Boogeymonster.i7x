@@ -2,7 +2,7 @@ Boogeymonster by Monster begins here.
 
 A boogeymonster is a kind of dungeon boss. A boogeymonster is usually neuter. The leftover-type of a boogeymonster is usually 107.
 
-1 captive boogeymonster is in Dungeon36. Figure of boogeymonster is the file "boogeymonster1.png". The printed name of boogeymonster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]boogeymonster[if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of boogeymonster is usually "[BoogeymonsterDesc]". The text-shortcut of boogeymonster is "boo". Understand "boogey" as boogeymonster.
+1 captive boogeymonster is in Dungeon36. Figure of boogeymonster is the file "NPCs/Bosses/boogeymonster1.png". The printed name of boogeymonster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]boogeymonster[if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of boogeymonster is usually "[BoogeymonsterDesc]". The text-shortcut of boogeymonster is "boo". Understand "boogey" as boogeymonster.
 
 Definition: A boogeymonster (called M) is dungeon dwelling:
 	if diaper quest is 0, decide no;
@@ -173,7 +173,7 @@ boogeymonster-nightmare-school is a boogeymonster-nightmare.
 
 The priority of boogeymonster-nightmare-school is 3. [This is super harsh so doesn't ever happen first. It happens after all the other eligible ones have happened.]
 
-Figure of boogeymonster school cutscene is the file "cutscene-boogeymonster1.png".
+Figure of boogeymonster school cutscene is the file "Special/Cutscene/cutscene-boogeymonster1.png".
 
 To compute punishment of (P - boogeymonster-nightmare-school):
 	now the priority of P is 1;
@@ -221,7 +221,7 @@ boogeymonster-nightmare-airplane is a boogeymonster-nightmare.
 
 The priority of boogeymonster-nightmare-airplane is 4.
 
-Figure of boogeymonster airplane cutscene is the file "cutscene-boogeymonster2.png".
+Figure of boogeymonster airplane cutscene is the file "Special/Cutscene/cutscene-boogeymonster2.png".
 
 To compute punishment of (N - boogeymonster-nightmare-airplane):
 	now the priority of N is 1;
@@ -285,7 +285,7 @@ Section - TV Nightmare
 
 boogeymonster-nightmare-tv is a boogeymonster-nightmare.
 
-Figure of boogeymonster tv cutscene is the file "cutscene-boogeymonster3.png".
+Figure of boogeymonster tv cutscene is the file "Special/Cutscene/cutscene-boogeymonster3.png".
 
 The priority of boogeymonster-nightmare-tv is 4. 
 
@@ -330,7 +330,7 @@ Definition: boogeymonster-nightmare-magic-marker (called P) is appropriate:
 	if the humiliation of the player > 28000 or the diaper addiction of the player > 13 or the delicateness of the player > 13, decide no;
 	decide yes.
 
-Figure of boogeymonster magic marker cutscene is the file "cutscene-boogeymonster4.png".
+Figure of boogeymonster magic marker cutscene is the file "Special/Cutscene/cutscene-boogeymonster4.png".
 
 The priority of boogeymonster-nightmare-magic-marker is 5. 
 
@@ -381,7 +381,7 @@ Definition: boogeymonster-nightmare-courtroom (called P) is appropriate:
 
 The priority of boogeymonster-nightmare-courtroom is 4. 
 
-Figure of boogeymonster courtroom cutscene is the file "cutscene-boogeymonster5.png".
+Figure of boogeymonster courtroom cutscene is the file "Special/Cutscene/cutscene-boogeymonster5.png".
 
 To compute punishment of (N - boogeymonster-nightmare-courtroom):
 	now the priority of N is 1;

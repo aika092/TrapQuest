@@ -23,6 +23,9 @@ To decide which number is the bartering value of (T - a make up kit) for (M - a 
 To decide which number is the bartering value of (T - a make up kit) for (M - a witch):
 	decide on 2.
 
+To say ShortDesc of (C - a make up kit):
+	say "make up kit".
+
 Brushing it with is an action applying to two things.
 Check brushing something with:
 	if the noun is not make up kit, say "This verb is used for make up kits!" instead;

@@ -11,7 +11,7 @@ teacher-serenity is a sapphire-teacher.
 
 The text-shortcut of teacher-serenity is "tese".
 
-Figure of serenity is the file "teacher1.png".
+Figure of serenity is the file "NPCs/School/Teacher/teacher1.png".
 
 To decide which figure-name is the monster-image of (M - teacher-serenity):
 	decide on figure of serenity.
@@ -79,7 +79,7 @@ teacher-angela is a sapphire-teacher.
 
 The text-shortcut of teacher-angela is "tean".
 
-Figure of angela is the file "teacher2.png".
+Figure of angela is the file "NPCs/School/Teacher/teacher2.png".
 
 To decide which figure-name is the monster-image of (M - teacher-angela):
 	decide on figure of angela.

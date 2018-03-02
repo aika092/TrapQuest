@@ -1,6 +1,6 @@
 Royal Circlet by Headgear begins here.
 
-A royal circlet is a kind of headgear. A royal circlet is usually metal. Figure of royal circlet is the file "circlet1.png". A royal circlet is usually hair growing. A royal circlet is usually delicateness-influencing. A royal circlet is usually enema-helping.
+A royal circlet is a kind of headgear. A royal circlet is usually metal. Figure of royal circlet is the file "Items\Accessories\Head\circlet1.png". A royal circlet is usually hair growing. A royal circlet is usually delicateness-influencing. A royal circlet is usually enema-helping.
 
 There is 1 royal circlet.
 

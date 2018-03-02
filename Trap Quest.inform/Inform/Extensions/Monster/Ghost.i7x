@@ -21,10 +21,10 @@ A creepy ghost is a kind of ghost. There is 1 creepy ghost. The printed name of 
 A unsettling ghost is a kind of ghost. There is 1 unsettling ghost. The printed name of a unsettling ghost is "[if item described is in the location of the player][TQlink of item described][end if][input-style]unsettling ghost[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of unsettling ghost is "uns".
 
 
-Figure of ghost 1 is the file "ghost1.png".
-Figure of ghost 2 is the file "ghost2.png".
-Figure of ghost 3 is the file "ghost3.png".
-Figure of ghost 4 is the file "ghost4.png".
+Figure of ghost 1 is the file "NPCs/Mansion/Ghost/ghost1.png".
+Figure of ghost 2 is the file "NPCs/Mansion/Ghost/ghost2.png".
+Figure of ghost 3 is the file "NPCs/Mansion/Ghost/ghost3.png".
+Figure of ghost 4 is the file "NPCs/Mansion/Ghost/ghost4.png".
  
 To say GhostDesc:
 	if the item described is unfriendly:
@@ -208,17 +208,15 @@ This is the blessings block ghosts rule:[ghosts normally phase through orifice b
 			rule succeeds.
 The blessings block ghosts rule is listed last in the ghost asshole insertion rules. The monster penetrating asshole rule is listed last in the ghost asshole insertion rules.
 
-To compute (M - a ghost) entering asshole:
-	now the sex-length of M is 3;
-	say "[AssholePenetrationFlav of M]";
-	now M is penetrating asshole;
-	ruin asshole.
-
 To say AssholePenetrationFlav of (M - a ghost):
 	let C be a random worn total protection clothing;
-	if C is clothing and M is jismbodied ghost and bukkake fetish is 1, CumSoak 5 on C;
+	[if C is clothing and M is jismbodied ghost and bukkake fetish is 1, CumSoak 5 on C;]
 	let P be a random sex toy penetrating asshole;
 	say "The [M] floats behind you, [one of]surprising you[or]once again surprising you[stopping] [if C is clothing] as a very tangible cockhead pokes your [asshole] through your [printed name of C].[otherwise if P is worn]with a very tangible shaft rubbing itself between your asscheeks.[otherwise]with a very tangible tip prodding at your [asshole].[end if][if C is clothing] [one of]Instead of being blocked or delayed by the layer of [clothing-material of C] protecting your hole, it simply passes through![or]It simply passes through the layer of [clothing-material of C] covering your hole.[at random][end if] You [if the openness of asshole < 3]grunt[otherwise if the anal sex addiction of the player < 4]gasp[otherwise]sigh[end if] as it slowly slides its way in[if P is worn], ignoring your [printed name of P] completely as it[otherwise] and[end if] begins to thrust.".
+
+To compute unique penetration effect of (M - a jismbodied ghost) in (F - a fuckhole):
+	let C be a random worn total protection clothing;[The jismbodied ghost leaves semen on everything it touches]
+	if C is clothing and bukkake fetish is 1, CumSoak 5 on C.
 
 To compute anal sex of (M - a ghost):
 	compute fuckhole sex of M.
@@ -260,15 +258,8 @@ To say (M - a ghost) submission sex (N - a number):
 
 The ghost vagina insertion rules is a rulebook. The blessings block ghosts rule is listed last in the ghost vagina insertion rules. The monster penetrating vagina rule is listed last in the ghost vagina insertion rules.
 
-To compute (M - a ghost) entering vagina:
-	now the sex-length of M is 3;
-	say "[VaginaPenetrationFlav of M]";
-	now M is penetrating vagina;
-	ruin vagina.
-
 To say VaginaPenetrationFlav of (M - a ghost):
 	let C be a random worn total protection clothing;
-	if C is clothing and M is jismbodied ghost and bukkake fetish is 1, CumSoak 5 on C;
 	let P be a random sex toy penetrating vagina;
 	say "The [M] floats behind you, [one of]surprising you[or]once again surprising you[stopping] [if C is clothing] as a very tangible cockhead brushes your clit through your [printed name of C].[otherwise if P is worn]with a very tangible shaft rubbing itself on your inner thighs.[otherwise]with a very tangible tip rubbing your [vagina].[end if][if C is clothing] [one of]Instead of being blocked or delayed by the layer of [clothing-material of C] protecting your hole, it simply passes through![or]It simply passes through the layer of [clothing-material of C] covering your hole.[at random][end if] You [if the openness of asshole < 3]grunt[otherwise if the relevant sex addiction of M < 8]gasp[otherwise]sigh[end if] as it slowly slides its way in[if P is worn], ignoring your [printed name of P] completely as it[otherwise] and[end if] begins to thrust.".
 

@@ -1,6 +1,6 @@
 Hellhound by Monster begins here.
 
-A hellhound is a kind of monster. A hellhound is male. The leftover-type of a hellhound is usually 113. The poison-status of a hellhound is -1. A hellhound can be unknotted or knotted. Figure of hellhound is the file "demondog1.png". There is 1 hellhound. Understand "hell", "hound", "dog" as hellhound.
+A hellhound is a kind of monster. A hellhound is male. The leftover-type of a hellhound is usually 113. The poison-status of a hellhound is -1. A hellhound can be unknotted or knotted. Figure of hellhound is the file "NPCs/Mansion/demondog1.png". There is 1 hellhound. Understand "hell", "hound", "dog" as hellhound.
 
 Definition: A hellhound (called M) is mansion dwelling:
 	if mythical creature fetish is 0, decide no;
@@ -161,10 +161,10 @@ To say ClimaxAnnounce of (M - a hellhound) in (F - vagina):
 	say "The [M] howls as he climaxes, filling you with its unusually hot jism. You can feel it flow into your womb[if pregnancy fetish is 1 and inhuman pregnancy > 1], surging straight for your fallopian tubes with unnatural ease[end if]. [if pregnancy fetish is 1 and inhuman pregnancy > 1 and M is mating][line break][variable custom style]Uh-oh, not pups again![roman type][line break][otherwise if pregnancy fetish is 1 and inhuman pregnancy > 1][line break][variable custom style]I can't get pregnant with puppies, can I?!  I'm a human![roman type][line break][end if]".
 
 To say CreampieFlav of (M - a hellhound) of (F - a fuckhole):
-	say "But rather than pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and you can't help but make high pitched noises as you feel the base of its cock inflating[one of][or], stretching your tired hole once again[stopping]. There's nothing you can do under the weight of the beast except shudder as you are knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].";
+	say "But rather than pulling out, the [M] [one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and you can't help but make high pitched noises as you feel the base of its cock inflating[one of][or], stretching your tired hole once again[stopping]. There's nothing you can do under the weight of the beast except shudder as you are knotted by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].";
 
 To say MessyPullOutFlav of (M - a hellhound) in (F - asshole):
-	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel the base of its cock inflating. Pinned down by its full weight, [if the sex addiction of the player < 7]your heart sinks[otherwise if the sex addiction of the player < 14]you groan[otherwise]you mewl happily[end if] as you realize there's nothing you can do to get away as you are anally knotted by your canine [if the sex addiction of the player < 14]nemesis[otherwise]mate[end if].".
+	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel the base of its cock inflating. Pinned down by its full weight, [if the anal sex addiction of the player < 3]your heart sinks[otherwise if the anal sex addiction of the player < 7]you groan[otherwise]you mewl happily[end if] as you realize there's nothing you can do to get away as you are anally knotted by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].".
 
 To say MessyPullOutFlav of (M - a hellhound) in (F - vagina):
 	say "The [M] pulls out and slowly walks around to your face. He lifts his leg and immediately begins to pee, as if marking you as his territory!".
@@ -220,7 +220,7 @@ To compute knotting of (M - a hellhound) in (F - a fuckhole):
 		ruin F;
 		say "The [M]'s [semen] continues to slowly flow into you.";
 		if M is penetrating asshole, Assfill 1;
-		otherwise wombfill 1;
+		otherwise PussyFill 1;
 		decrease the sex-length of M by 1;
 	otherwise:
 		say "The [M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realizes that [his of M] giant knot has wedged [his of M] [manly-penis] firmly inside your [variable F]. Digging [his of M] bestial talons into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], he [i]wrenches[/i] [him of M]self free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force,  releasing you with a loud *POP*.";
@@ -254,27 +254,27 @@ This is the hellhound never convinced rule:
 	if presented-orifice is not nothing, say "The [current-monster] shows no indication of being persuaded by your action.".
 The monster convinced rule of hellhound is usually the hellhound never convinced rule.
 
-To compute (M - a hellhound) entering asshole:
+To compute (M - a hellhound) entering anally:
 	let C be a random off-stage pet collar;
 	if the player is the donator and C is actually summonable and M is willing to creampie asshole:
 		summon C cursed;
 		now M is covering C;
-		say "The [M] uses its giant mouth to swing the collar over your head and onto your neck, where it immediately seals itself with cursed magic. The [M] still has the leash in its mouth, which it uses to hold you strictly in place. There's no way you can escape now!";
+		say "The [M] uses its giant mouth to swing the collar over your head and onto your neck, where it immediately seals itself with cursed magic. The [M] still has the leash in its mouth, which it uses to hold you strictly in place. There's no way you can escape now!";[The hellhound does this instead of penetrating you for this turn]
 	otherwise:
-		say "[FuckholePenetrationFlav of M]";
-		now M is penetrating asshole;
-		ruin asshole.
+		compute M entering asshole.
 
-To compute (M - a hellhound) entering vagina:
-	say "[FuckholePenetrationFlav of M]";
-	now M is penetrating vagina;
-	ruin vagina.
+To say VaginaPenetrationFlav of (M - a hellhound):
+	say FuckholePenetrationFlav of M.
+
+To set up sex length of (M - a monster) in (B - a body part):
+	if the sex-length of M < 5, now the sex-length of M is a random number between 3 and 4;
+	if the sex-length of M > 5, now the sex-length of M is 5.
 
 To say FuckholePenetrationFlav of (M - a hellhound):
 	let F be the chosen-orifice of M;
 	now M is unknotted;
-	if the sex-length of M < 5, now the sex-length of M is a random number between 3 and 4;
-	if the sex-length of M > 5, now the sex-length of M is 5;
+	[if the sex-length of M < 5, now the sex-length of M is a random number between 3 and 4;
+	if the sex-length of M > 5, now the sex-length of M is 5;]
 	say "Standing over you on all fours, the [M] places its front paws over your hands, preventing you from moving at all. As if it would have mattered anyway - the beast is so heavy that all it had to do was put its weight on you!  The [M] thrusts blindly, sending its [manly-penis] prodding between your butt-cheeks. [one of]No!  You clench your ass-cheeks, trying to deny it entrance, but the long member feels surprisingly oily and slippery, and you have a bad feeling you know where this is going to end...[or]Once again it probes blindly between your thighs...[stopping] You do not have to wait long before it comes across an opening, and sensing that victory is close, the [M] begins pressing forward. As the tip of its [manly-penis] pierces into your [variable F], you hear it howl - but you could swear that the howl somehow sounds like laughter.".
 
 This is the hellhound fills diaper rule:
@@ -310,16 +310,17 @@ To compute damage of (M - a hellhound):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a hellhound):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The [M] ignores the impact and continues its assault!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "[one of]The [M] is showing signs of pain, but is still attacking you with everything [he of M] has got![or]The [M] continues to ignore the pain![stopping]";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The [M] seems to be struggling to ignore the pain, but that isn't holding [he of M] back!";
-	otherwise:
-		say "The [M] seems too injured to keep going for too much longer!".
+To say DamageReactHealthy of (M - a hellhound):
+	say "The [M] ignores the impact and continues its assault!".
 
+To say DamageReactDamaged of (M - a hellhound):
+	say "[one of]The [M] is showing signs of pain, but is still attacking you with everything [he of M] has got![or]The [M] continues to ignore the pain![stopping]".
+
+To say DamageReactTired of (M - a hellhound):
+	say "The [M] seems to be struggling to ignore the pain, but that isn't holding [he of M] back!".
+
+To say DamageReactWeak of (M - a hellhound):
+	say "The [M] seems too injured to keep going for too much longer!".
 
 Hellhound ends here.
 

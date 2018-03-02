@@ -1,7 +1,7 @@
 Ribbon Bra by Bra begins here.
 
 
-A ribbon bra is a kind of bra. Figure of ribbon bra is the file "ribbonbra1.png". A ribbon bra is usually nipple exposing. A ribbon bra is ridiculously low cut. A ribbon bra is usually optional-top-displacable. The soak-limit of a ribbon bra is usually 9. A ribbon bra is usually unique.
+A ribbon bra is a kind of bra. Figure of ribbon bra is the file "Items/Clothes/Upper/Bras/ribbonbra1.png". A ribbon bra is usually nipple exposing. A ribbon bra is ridiculously low cut. A ribbon bra is usually optional-top-displacable. The soak-limit of a ribbon bra is usually 9. A ribbon bra is usually unique.
 
 There is 1 ribbon bra. The text-shortcut of ribbon bra is "rib".
 

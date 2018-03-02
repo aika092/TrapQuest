@@ -1,6 +1,6 @@
 Paw Print Tattoo by Tattoos begins here.
 
-paw print tattoo is a kind of body tattoo. Figure of paw print tattoo is the file "tattoo60.png". There is 1 paw print tattoo.
+paw print tattoo is a kind of body tattoo. Figure of paw print tattoo is the file "Items/Tats/tattoo60.png". There is 1 paw print tattoo.
 Definition: a paw print tattoo (called T) is eligible:
 	if the noun is puppy mittens or the noun is puppy ears or the noun is puppy tail plug or the noun is pet collar, decide yes;
 	decide no.

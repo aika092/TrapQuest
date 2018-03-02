@@ -2,7 +2,7 @@ Blazing Dress by Dresses begins here.
 
 A blazing dress is a kind of overdress. A blazing dress is usually unique. A blazing dress is usually short. A blazing dress is usually low cut. A blazing dress is usually latex. There is 1 blazing dress.
 
-Figure of blazing dress is the file "blazingdress1.png".
+Figure of blazing dress is the file "Items\Clothes\Upper\Dresses\blazingdress1.png".
 
 The printed name of blazing dress is usually "[TQlink of item described][clothing-title-before]blazing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of blazing dress is "bd".
 

@@ -8,7 +8,7 @@ student-hailey is an innocent student.
 
 The text-shortcut of student-hailey is "stha".
 
-Figure of hailey is the file "student7.png".
+Figure of hailey is the file "NPCs/School/Student/student7.png".
 
 To decide which figure-name is the monster-image of (M - student-hailey):
 	decide on figure of hailey.
@@ -35,7 +35,7 @@ student-winnie is a tq-only innocent student.
 
 The text-shortcut of student-winnie is "stwi".
 
-Figure of winnie is the file "student8.png".
+Figure of winnie is the file "NPCs/School/Student/student8.png".
 
 To decide which figure-name is the monster-image of (M - student-winnie):
 	decide on figure of winnie.
@@ -64,7 +64,7 @@ student-lottie is a dq-only innocent student.
 
 The text-shortcut of student-lottie is "stlo".
 
-Figure of lottie is the file "student9.png".
+Figure of lottie is the file "NPCs/School/Student/student9.png".
 
 To decide which figure-name is the monster-image of (M - student-lottie):
 	decide on figure of lottie.
@@ -100,7 +100,7 @@ student-austin is a tq-only innocent student.
 
 The text-shortcut of student-austin is "stau".
 
-Figure of austin is the file "student10.png".
+Figure of austin is the file "NPCs/School/Student/student10.png".
 
 To decide which figure-name is the monster-image of (M - student-austin):
 	decide on figure of austin.

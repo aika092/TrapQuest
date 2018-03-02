@@ -2,12 +2,15 @@ Leotard by Dresses begins here.
 
 A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet.  A leotard has a number called charge.
 
+Definition: a leotard (called C) is ballet related:
+	decide yes.
+
 A pink leotard is a kind of leotard. A sexy blue leotard is a kind of leotard.
 
 The printed name of pink leotard is usually "[TQlink of item described][clothing-title-before]pink leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink leotard is "ple".
 The printed name of sexy blue leotard is usually "[TQlink of item described][clothing-title-before]sexy blue leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sexy blue leotard is "ble".
 
-Figure of pink leotard is the file "leotard1.png". Figure of sexy blue leotard is the file "leotard2.png".
+Figure of pink leotard is the file "Items\Clothes\Upper\Leotards\leotard1.png". Figure of sexy blue leotard is the file "Items\Clothes\Upper\Leotards\leotard2.png".
 
 There is 1 pink leotard. There is 1 unique sexy blue leotard.
 
@@ -70,7 +73,8 @@ To compute periodic effect of (L - a leotard):
 			summon S cursed.
 
 To decide which object is the unique-upgrade-target of (C - a leotard):
-	if diaper focus is 0, decide on a random off-stage sexy blue leotard;
+	if a random number between 1 and 2 is 1, decide on a random off-stage sexy blue leotard;
+	if diaper focus is 0, decide on a random off-stage ballet corset;
 	decide on a random off-stage teddybear playsuit.
 
 To decide which object is the potential-upgrade-target of (C - a leotard):

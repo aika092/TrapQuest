@@ -1,6 +1,6 @@
 Demon Tattoo by Tattoos begins here.
 
-demon tattoo is a kind of crotch tattoo. Figure of demon tattoo is the file "tattoo37.png". There is 1 demon tattoo.
+demon tattoo is a kind of crotch tattoo. Figure of demon tattoo is the file "Items/Tats/tattoo37.png". There is 1 demon tattoo.
 Definition: a demon tattoo (called T) is eligible:
 	if the noun is infernal gem, decide yes;
 	decide no.

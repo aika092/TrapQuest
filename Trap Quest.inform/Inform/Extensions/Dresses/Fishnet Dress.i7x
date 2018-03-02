@@ -16,7 +16,7 @@ To compute SelfExamineDesc of (C - a fishnet dress):
 To say ShortDesc of (C - a fishnet dress):
 	say "slutty fishnet dress".
 
-Figure of Fishnet Dress is the file "fishnetdress1.png".
+Figure of Fishnet Dress is the file "Items\Clothes\Upper\Exposing\Fishnet\fishnetdress1.png".
 
 To decide which number is the initial outrage of (C - a fishnet dress):
 	decide on 12.

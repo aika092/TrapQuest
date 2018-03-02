@@ -12,7 +12,7 @@ Check displacing:
 	if the noun is crotch-displaced, try replacing the noun instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is not displacable and the noun is overdress, say "That's not the sort of item of clothing that can be displaced." instead;
-	if the noun is crotch-exposing, say "What would be the point?" instead;
+	if the noun is crotch-exposing and the noun is unskirted, say "What would be the point?" instead;
 	if the noun is knickers and the noun is not displacable, say "The leg holes are much too tight for you to be able to pull this to the side." instead;
 	if the noun is skirt and the noun is not displacable, say "That's too short to pull up.";
 	if the noun is not displacable, say "I'm not sure how you would displace that item of clothing." instead;

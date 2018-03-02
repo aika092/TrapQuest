@@ -40,7 +40,7 @@ To compute periodic effect of (C - an expansion anal beads):
 			if the size of C > the openness of F, Ruin F;
 			if the player is male, PenisUp 1.
 
-Figure of anal beads is the file "analbeads1.png".
+Figure of anal beads is the file "Items\Accessories\Toys\analbeads1.png".
 
 To decide which figure-name is clothing-image of (C - an anal beads):
 	decide on figure of anal beads.
@@ -118,7 +118,7 @@ To compute replacement of (T - an anal beads) in (O - an orifice):
 		now current-monster is not retaining T.
 
 To compute (M - a ghost) removing (C - an anal beads):
-	say "The [M] floats behind you, dripping precum as it nears your [printed name of C]. Undeterred, it phases into your [chosen-orifice of M], causing the toy to wiggle and throb as it changes shape. [if the sex addiction of the player < 8]You whimper as the newly formed dildo slowly begins to fuck you.[otherwise if the sex addiction of the player < 12]Shivers run up your spine as the newly formed dildo slowly begins to fuck you.[otherwise]A shiver of anticipation runs up your spine as the newly formed dildo beings to fuck you.[end if]";
+	say "The [M] floats behind you, dripping precum as it nears your [printed name of C]. Undeterred, it phases into your [chosen-orifice of M], causing the toy to wiggle and throb as it changes shape. [if the relevant sex addiction of C < 4]You whimper as the newly formed dildo slowly begins to fuck you.[otherwise if the relevant sex addiction of C < 6]Shivers run up your spine as the newly formed dildo slowly begins to fuck you.[otherwise]A shiver of anticipation runs up your spine as the newly formed dildo beings to fuck you.[end if]";
 	now C is in the holding pen;
 	now M is retaining C;
 	dislodge C;

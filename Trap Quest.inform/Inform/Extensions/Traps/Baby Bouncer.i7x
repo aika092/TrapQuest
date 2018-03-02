@@ -1,7 +1,7 @@
 Baby Bouncer by Traps begins here.
 
 
-A baby bouncer is a kind of trap. The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". The description of a baby bouncer is "[BabyBouncerDesc]". There are 3 wire baby bouncers. The text-shortcut of a baby bouncer is "bou". Figure of baby bouncer is the file "babybouncer1.png".
+A baby bouncer is a kind of trap. The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". The description of a baby bouncer is "[BabyBouncerDesc]". There are 3 wire baby bouncers. The text-shortcut of a baby bouncer is "bou". Figure of baby bouncer is the file "Env/MultiFloor/babybouncer1.png".
 
 A baby bouncer has a number called bounces.
 

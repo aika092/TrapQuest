@@ -2,7 +2,7 @@ Bodysuit by Dresses begins here.
 
 bodysuit is a kind of overdress. A bodysuit is usually latex. A bodysuit is fully covering. A bodysuit is usually unskirted. A bodysuit is usually leg covering. A bodysuit is usually only arm covering. A bodysuit is usually zippable. A bodysuit is usually crotch-intact. A bodysuit is usually not-top-displacable.
 
-Figure of latex bodysuit 1 is the file "bodysuit1.png".
+Figure of latex bodysuit 1 is the file "Items\Clothes\Upper\Latex\bodysuit1.png".
 
 The printed name of bodysuit is usually "[TQlink of item described][clothing-title-before]latex bodysuit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bodysuit is "lab".
 

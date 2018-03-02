@@ -71,7 +71,7 @@ Report taking store clothing while the player is in Dungeon41 and Dungeon41 is g
 	let P be the price of the noun;
 	if the total wealth of the player < P:
 		if debugmode is 1, say "Total wealth: [Total wealth of the player]. Item cost: [P].";
-		say "[first custom style]'I'm sorry, you can't afford [if P - the total wealth of the player < 3]that. You're not far off, though. [otherwise]that. [end if]But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[line break][first custom style] another method of... [']payment[']. No guarantees that it'll convince me, though.'[roman type][line break]";
+		say "[first custom style]'I'm sorry, you can't afford [if P - the total wealth of the player < 3]that. You're not far off, though. [otherwise]that. [end if]But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[first custom style] another method of... [']payment[']. No guarantees that it'll convince me, though.'[roman type][line break]";
 	otherwise:
 		let jewellery be list of held plentiful currently perceivable accessories;
 		truncate jewellery to 8 entries;

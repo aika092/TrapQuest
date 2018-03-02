@@ -1,6 +1,6 @@
 Cupcake Tattoo by Tattoos begins here.
 
-cupcake tattoo is a kind of chest tattoo. Figure of cupcake tattoo is the file "tattoo22.png". There is 1 cupcake tattoo.
+cupcake tattoo is a kind of chest tattoo. Figure of cupcake tattoo is the file "Items/Tats/tattoo22.png". There is 1 cupcake tattoo.
 Definition: a cupcake tattoo (called T) is eligible:
 	if the noun is food, decide yes;
 	decide no.

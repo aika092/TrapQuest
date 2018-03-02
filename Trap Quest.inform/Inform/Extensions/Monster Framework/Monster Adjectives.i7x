@@ -32,6 +32,7 @@ A monster is usually female. [Male = Do they have a sex organ that can ejaculate
  A monster has a number called times-fucked. The times-fucked of a monster is usually 0.
  A monster can be moved. A monster is usually not moved. [Has the monster moved this turn?]
  A monster can be seeked. A monster is usually not seeked. [Has the monster moved aggressively this turn?]
+ A monster can be notebook-studied. A monster is usually not notebook-studied.
 
 [These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap.]
 Definition: a monster (called M) is dungeon dwelling:

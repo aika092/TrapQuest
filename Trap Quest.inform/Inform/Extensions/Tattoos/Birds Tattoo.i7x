@@ -1,6 +1,6 @@
 Birds Tattoo by Tattoos begins here.
 
-birds tattoo is a kind of body tattoo. Figure of birds tattoo is the file "tattoo70.png". There is 1 birds tattoo.
+birds tattoo is a kind of body tattoo. Figure of birds tattoo is the file "Items/Tats/tattoo70.png". There is 1 birds tattoo.
 Definition: a birds tattoo (called T) is eligible:
 	if the noun is egg or the noun is inflation themed, decide yes;
 	decide no.

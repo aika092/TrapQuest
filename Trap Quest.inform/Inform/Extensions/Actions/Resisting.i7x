@@ -85,13 +85,13 @@ Check resisting:
 		now forced submit is 1;
 		try submitting instead;
 	otherwise if the humiliation of the player >= 40000:
-		say "[one of][bold type]As you are a fully broken in sex object, you no longer even consider resisting an option. From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
+		say "[one of][line break][bold type]As you are a fully broken in sex object, you no longer even consider resisting an option. From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
 		try submitting instead;
-	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player:
+	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player * 2:
 		say "You love anal sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
 		now forced submit is 1;
 		try submitting instead;
-	otherwise if there is a live thing penetrating vagina and a random number between 14 and 19 < the the vaginal sex addiction of the player:
+	otherwise if there is a live thing penetrating vagina and a random number between 14 and 19 < the the vaginal sex addiction of the player * 2:
 		say "You love sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
 		now forced submit is 1;
 		try submitting instead;
@@ -155,11 +155,11 @@ Report resisting:
 		otherwise:
 			say SexResistFlav of M;
 			if M is monster, compute sex resist punishment of M;
-			if the sex addiction of the player > 8 and M is male intelligent monster:
+			if the player is not feeling dominant and M is male intelligent monster:
 				let T be a random daddy's wild child tattoo;
 				if there is a worn tattoo and T is not worn:
-					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like 'The [M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. ']
-					say "[bold type]A new tattoo appears on your arm![roman type][line break]";
+					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like 'The [M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
+					say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
 					try examining T.
 
 [!<SaySexResistFlavOfThing>+
@@ -208,7 +208,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You're sit there and take it like the [if the player is male][line break][second custom style]sissy bitch[roman type][line break][otherwise]scaredy-cat[end if] you are![at random]".
+	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
 
 [!<SayOralAddResRefusalFlavOfMonster>+
 
@@ -216,7 +216,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralAddResRefusalFlav of (M - a monster):
-	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure the [M], desperate for your next semen fix.[or][if the sex addiction of the player < 10]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the sex addiction of the player < 10 and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the sex addiction of the player < 7]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling the [M]'s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
+	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure the [M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling the [M]'s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
 [!<SayOralSlutResRefusalFlavOfMonster>+
 
@@ -224,7 +224,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralSlutResRefusalFlav of (M - a monster):
-	say "[one of][if the sex addiction of the player < 10]No matter how hard you try, you can't keep yourself from desperately suckling his [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the semen addiction of the player < 13]You hate yourself for it, but you can't help suckling the guard's [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's a big [line break][second custom style]yummy[roman type][line break][manly-penis] in your mouth.[semen].[end if][in random order]".
+	say "[one of][if the player is not a pervert]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the semen taste addiction of the player < 13]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]".
 
 [!<SayThirstResRefusalFlavOfMonster>+
 
@@ -232,7 +232,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ThirstResRefusalFlav of (M - a monster):
-	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can[']t stop now. Now when you're so close to something that can wet your throat...[or]You can[']t bring yourself to resist the [M] knowing that [his of M] balls are so full of something to drink.[or][if the sex addiction of the player < 9]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
+	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can[']t stop now. Now when you're so close to something that can wet your throat...[or]You can[']t bring yourself to resist the [M] knowing that [his of M] balls are so full of something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
 
 Part - Resist Punishments
 

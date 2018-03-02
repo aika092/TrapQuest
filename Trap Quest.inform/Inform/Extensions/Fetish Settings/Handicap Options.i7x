@@ -24,6 +24,7 @@ title	subtable	description	toggle
 "Sex can result in fainting - 0 points ([if sex fainting is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	sex fainting toggle rule
 "Realistic orifice re-tightening (you don't stay gaped which means you'll get sore faster) - 2 points ([if ungape is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	ungape toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if tough-shit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tough-shit toggle rule
+"Limited Saves - 4 points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	save game toggle rule
 
 
 

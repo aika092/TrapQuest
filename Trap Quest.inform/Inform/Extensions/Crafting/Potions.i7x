@@ -56,8 +56,8 @@ Carry out quaffing potion of the womb:
 			[The player becomes pregnant]
 			say "[ConceptionFlav]";
 			now the pregnancy of the player is 1;
-			if the semen volume of vagina < 5, now the semen volume of vagina is 5;
-			if the noun is cursed, now the semen volume of vagina is 15;
+			if the womb volume of vagina < 5, now the womb volume of vagina is 5;
+			if the noun is cursed, now the womb volume of vagina is 15;
 			if there is an alive fairy and inhuman pregnancy > 0 and the noun is not cursed:
 				now the father is a random alive fairy;
 			otherwise if the noun is blessed:

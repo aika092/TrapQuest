@@ -9,9 +9,9 @@ To decide which figure-name is the clothing-image of (H - a peep toe heels):
 	if H is pvc, decide on the figure of pvc peep toe heels;
 	if H is satin, decide on the figure of satin peep toe heels.
 
-Figure of leather peep toe heels is the file "peeptoes1.png".
-Figure of pvc peep toe heels is the file "peeptoes2.png".
-Figure of satin peep toe heels is the file "peeptoes3.png".
+Figure of leather peep toe heels is the file "Items\Clothes\Lower\Feet\Heels\Peeptoe\peeptoes1.png".
+Figure of pvc peep toe heels is the file "Items\Clothes\Lower\Feet\Heels\Peeptoe\peeptoes2.png".
+Figure of satin peep toe heels is the file "Items\Clothes\Lower\Feet\Heels\Peeptoe\peeptoes3.png".
 
 To decide which number is the unique outrage of (C - a peep toe heels):
 	decide on 0.

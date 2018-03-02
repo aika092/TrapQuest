@@ -270,7 +270,7 @@ To compute kneeling reaction of (M - a wench):
 				say "[speech style of M]'[if the class of the player is maid][one of]Hey maid, I'm dirty, come clean me up.'[or]Open your mouth baby, I need help cleaning up.'[in random order][otherwise if the player is male and there is a worn chastity cage][one of]You're not going to fuck anybody when you're locked up like that. Now open up.'[or]Oooh, is poor widdle baby locked up in a cage? Don't worry, I've got milk for you right here.'[or]Hmm, I bet you'd like to fuck this pussy. Too bad you're all caged up! Now open wide.'[in random order][otherwise if the size of penis > 0 and the size of penis <= 3][one of]Hey baby dick, how'd you like to eat my pussy? That's probably the only action you'll ever get from a woman.'[or]With a [player-penis] that tiny, I bet you can't even cum. Luckily, you can still help ME cum if you lend me your mouth for a minute.'[or]Wow, what a tiny [player-penis]! You'll never satisfy anyone with that! I really hope your tongue isn't that small.'[or]If you open your mouth, I'll give you a taste of a real man's cum.'[in random order][otherwise if the size of penis > 5][one of]Wow, a [player-penis] that big and you're still on your knees? I'm going to enjoy having you eat my pussy.'[or]I bet you thought you were going to fuck me. Wrong! Now open up, bitch.'[in random order][otherwise][one of]Open wide, bitch.'[or]Open up, bitch.'[or]You thirsty, bitch?'[or]I hope you're thirsty.'[or]I hope you're good at eating pussy.'[in random order][end if][roman type][line break]";
 		humiliate 75.
 
-To say waitingflav of (M - a wench):
+To say WaitingFlav of (M - a wench):
 	if there are worn desirable knickers and M is not horny-wench:
 		say "[if the bimbo of the player < 6]There's no way you're going to give her an easy time taking your last line of defence. If she wants your underwear she is going to have to pull it off you herself.[otherwise if the bimbo of the player < 12]You refuse to move. If she wants your underwear, she can rip it off you herself and live with the guilt.[otherwise]You have grown quite attached to your clothing and don't want to give it away voluntarily. You lie there and wait for her to pull it off you herself.[end if]";
 	otherwise if the player is not able to speak:
@@ -278,9 +278,9 @@ To say waitingflav of (M - a wench):
 	otherwise if the semen taste addiction of the player < 8:
 		say "[one of]You stare up at the wench, stunned.[or]You shake your head in disbelief of the situation you've gotten yourself into.[or]You turn away. [line break][first custom style]'Hmmph.'[roman type][line break][or][line break][first custom style]'Whatever you're thinking of doing to me, please don't.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][line break][first custom style]'Fuck off, I'm not doing it.'[roman type][line break][or]You find yourself paralysed with dread, staring at the disgusting [semen] dripping from the [M]'s holes.[in random order]";
 	otherwise if the semen taste addiction of the player < 11:
-		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of the [M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Okay I'll lick it out of you but only because you're forcing me. I'm not a [semen] craving addict like you.'[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] all the [manly-penis]s that must have been the source of that much [semen].[or][if the sex addiction of the player < 8]Internally you feel disgusted by the idea of her sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
+		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of the [M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Okay I'll lick it out of you but only because you're forcing me. I'm not a [semen] craving addict like you.'[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] all the [manly-penis]s that must have been the source of that much [semen].[or][if the player is feeling dominant]Internally you feel disgusted by the idea of her sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
 	otherwise:
-		say "[one of][if the sex addiction of the player < 7]You are stunned with indecision - you don't want to have to lick her out but you do love the idea of getting to swallow some more [semen].[otherwise]You stared at her [semen] dripping filled orifices and lick your lips greedily. It's like Christmas come early![end if][or]You stare at the [M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation. [line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style]If she thinks I'm not going to enjoy swallowing that [semen], she's sorely mistaken![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
+		say "[one of][if the player is feeling dominant]You are stunned with indecision - you don't want to have to lick her out but you do love the idea of getting to swallow some more [semen].[otherwise]You stared at her [semen] dripping filled orifices and lick your lips greedily. It's like Christmas come early![end if][or]You stare at the [M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation. [line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style]If she thinks I'm not going to enjoy swallowing that [semen], she's sorely mistaken![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
 
 To compute flying player taunting of (M - a wench):
 	if a random number from 1 to 6 is 1:
@@ -359,7 +359,7 @@ To compute facial sex of (M - a wench):
 			say "[one of]A large glob of [semen] leaks out of her ass and onto your face.[or]Warm [semen] seeps out of her asshole and onto your face.[or]Thick [semen] slowly trickles out of her asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of her butt and plops wetly onto your face.[or][semen] oozes out of her gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of her butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
 			CumFaceUp 1;
 		if the reaction of the player > 0:
-			say "[one of]You lick the wench's cunt with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You dig your tongue into the wench's pussy, which immediately rewards you with a thick glob of salty [semen].[or]You tease the wench's clit with your tongue. Warm [semen] slowly dribbles out of her cunt and into your open mouth.[or]You spear your tongue into the wench's gaping honey pot, allowing the [semen] within to slowly roll into your mouth.[or]You obediently open your mouth, allowing the [semen] slowly oozing out of her pussy to slide down your throat.[or][if the semen taste addiction of the player < 8]You reluctantly stroke the wench's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[otherwise if the sex addiction of the player < 10]You somewhat reluctantly stroke the wench's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[otherwise]You eagerly stroke the wench's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[end if][or][if the semen taste addiction of the player < 8]You leaf through her folds with your tongue, trying to clean it out while tasting as little [semen] as possible. There's still quite a lot.[otherwise if the semen addiction of the player < 12]You obediently scour her pussy with your tongue, hesitating only for a moment before swallowing the [semen] that trickles out.[otherwise]You kiss and lick every inch of her pussy, eagerly lapping up and swallowing any [semen] that trickles out.[end if][in random order]";
+			say "[one of]You lick the wench's cunt with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You dig your tongue into the wench's pussy, which immediately rewards you with a thick glob of salty [semen].[or]You tease the wench's clit with your tongue. Warm [semen] slowly dribbles out of her cunt and into your open mouth.[or]You spear your tongue into the wench's gaping honey pot, allowing the [semen] within to slowly roll into your mouth.[or]You obediently open your mouth, allowing the [semen] slowly oozing out of her pussy to slide down your throat.[or][if the semen taste addiction of the player < 8]You reluctantly stroke the wench's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[otherwise if the delicateness of the player < 10]You somewhat reluctantly stroke the wench's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[otherwise]You eagerly stroke the wench's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[end if][or][if the semen taste addiction of the player < 8]You leaf through her folds with your tongue, trying to clean it out while tasting as little [semen] as possible. There's still quite a lot.[otherwise if the semen addiction of the player < 12]You obediently scour her pussy with your tongue, hesitating only for a moment before swallowing the [semen] that trickles out.[otherwise]You kiss and lick every inch of her pussy, eagerly lapping up and swallowing any [semen] that trickles out.[end if][in random order]";
 			StomachSemenUp 1;
 			decrease the sex-length of M by 1;
 			if image cutscenes is 1 and the sex-length of M is 0, display figure of wench cutscene 5;
@@ -441,7 +441,10 @@ This is the wench monster convinced rule:
 		say "[if M is not horny-wench]The [M] sees your request and shakes her head. [line break][speech style of M]'If I'm going to fuck you, I'll be using your mouth!'[otherwise]The [M] sees your request and frowns. [line break][speech style of M]'Did you not hear what I said?  I need you to lick me out!'[end if][roman type][line break]".
 The monster convinced rule of a wench is usually the wench monster convinced rule.
 
-To compute (M - a wench) entering mouth:
+To get facial penetration image for (M - a wench):
+	if image cutscenes is 1, display figure of wench cutscene 2.
+
+To compute (M - a wench) entering mouth:[TODO: alter for gangbangs]
 	if milking is 1:
 		do nothing;
 	otherwise:
@@ -451,18 +454,18 @@ To compute (M - a wench) entering mouth:
 			say "The [M] tries to roll you over onto your back!";
 		let R be a random number between the difficulty of M * 3 and 27;
 		let B be the weight of the player + (the strength of the player / 3);
-		if presented-orifice is face or the player is subdued or M is friendly-fucking, now B is 0; [If the player consents, she flips you automatically]
+		if presented-orifice is face or the player is subdued or M is friendly-fucking or the player is live fucked, now B is 0; [If the player consents, she flips you automatically]
 		if debugmode is 1, say "Player [B * 1].5 | [R] Girl[line break]";
 		if R > B:
 			now the suffocation of M is 0; [This is what we use to track how many turns the wench has been forcing the player to hold their breath.]
 			if presented-orifice is face or M is friendly-fucking, say "You let her, and she immediately sits on your face. ";
 			otherwise say "She succeeds, and immediately sits on your face. ";
-			if image cutscenes is 1, display figure of wench cutscene 2;
+			get facial penetration image for M;
 			say MouthPenetrationFlav of M;
 			if bukkake fetish is 1:
 				say "A large glob of [semen] leaks out of her ass and onto your face.[if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
 				CumFaceUp 1;
-			say "[one of]Her hold on your neck and head is too strong, you'll have to choose between either [bold type]resist[roman type]ing and risk it taking longer until you can breathe or [bold type]submit[roman type]ing by licking her out, swallowing the [semen] dripping from her pussy and hoping she [if the sex addiction of the player < 3]finishes[otherwise if the sex addiction of the player < 7]climaxes[otherwise]cums over your face[end if] quickly[or]Once again, you won't be able to breathe until she's finished with you[stopping]!";
+			say "[one of]Her hold on your neck and head is too strong, you'll have to choose between either [bold type]resist[roman type]ing and risk it taking longer until you can breathe or [bold type]submit[roman type]ing by licking her out, swallowing the [semen] dripping from her pussy and hoping she [if the oral sex addiction of the player < 3]finishes[otherwise if the oral sex addiction of the player < 7]climaxes[otherwise]cums over your face[end if] quickly[or]Once again, you won't be able to breathe until she's finished with you[stopping]!";
 			now M is filling face;
 		otherwise:
 			say "She doesn't manage it this time.";
@@ -475,6 +478,21 @@ To say MouthPenetrationFlav of (M - a wench):
 		say "She buries your nose into her cum-dripping asshole and covers your mouth with her cum-filled [vagina]. You can't breathe![line break][line break][line break][speech style of M]'[one of]Please lick it all out of me!'[or]I really need to feel your tongue...'[or]Don't worry, it tastes really good!'[purely at random][roman type][line break]";
 	otherwise:
 		say "She buries your nose into her cum-dripping asshole and covers your mouth with her cum-filled [vagina]. You can't breathe![line break][line break][line break][speech style of M]'[one of]Drink bitch, drink!'[or]Eat my pussy bitch!'[or]How do you like the taste of my pussy, bitch?'[or]Lick my pussy clean you fucking whore!'[purely at random][roman type][line break]";
+
+To say SpitroastPrep of (M - a monster) with (O - a wench) in (F - vagina):
+	if M is intelligent, say "The [M] pushes your legs apart and kneels between them.";
+	otherwise say "The [O] grabs your legs and pushes them nice and wide as the [M] moves into position.".
+
+To say SpitroastPrep of (M - a monster) with (O - a wench) in (F - asshole):
+	if M is intelligent, say "The [M] grabs you by the waist, pulling your hips into [his of M] lap.";
+	otherwise say "The [O] pulls your leg out of the way as the [M] moves into position.";
+
+To say FoursomePrep of (M - a monster) with (N - a monster) and (O - a wench) in (F - asshole):
+	if N is intelligent, say "The [N] twists your lower body, lifting your leg out of the way as the [M] moves into position.";
+	otherwise say "The [O] grabs one of your legs, pulling it towards [him of O] as the [M] moves into position.".
+
+To say FoursomePrep of (M - a monster) with (N - a monster) and (O - a wench) in (F - vagina):
+	say FoursomePrep of M with N and O in asshole.
 
 To say StrikingFlav of (M - a wench) on (B - a body part):
 	say "The [M] slaps you [TargetName of B]![if M is not horny-wench]  [line break][speech style of M]'[one of]Bitch[or]Slut[or]Whore[or]Fucker[or]Fuck you[in random order]!!'[roman type][line break][end if]".
@@ -548,15 +566,20 @@ To compute damage of (M - a wench):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a wench):
-	if N > (the maxhealth of M / 4) * 3:
-		say "She looks [one of][or]even [stopping]more pissed off than she did already!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "She grunts in pain!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "She staggers, squeaking in pain!";
-	otherwise:
-		say "She screams in pain, [if the size of penis > 3]covering her crotch as she fights to maintain her balance[otherwise]staring apprehensively at your crotch as she fights to maintain her balance[end if]!".
+To say DamageReactHealthy of (M - a wench):
+	say "[big he of M] looks [one of][or]even [stopping]more pissed off than she did already!".
+
+To say DamageReactDamaged of (M - a wench):
+	say "[big he of M] grunts in pain!".
+
+To say DamageReactTired of (M - a wench):
+	say "[big he of M] staggers, squeaking in pain!".
+
+To say DamageReactWeak of (M - a wench):
+	say "[big he of M] screams in pain, struggling to maintain her balance!".
+
+To say DamageReactSubmissive of (M - a wench):
+	say "[big he of M] groans in pain, [if the size of penis <= 3]seemingly resigning herself to something[otherwise]staring apprehensively at your crotch[end if] as she fights to maintain her balance.".
 
 To compute unique death of (M - a wench):
 	now the sleep of M is 0;
@@ -597,11 +620,12 @@ To compute failed dominance punishment of (M - a wench):
 			Bore M;
 	otherwise if the player is female or the number of things penetrating asshole > 0:
 		say "[speech style of M]'[one of]Wait your turn you fucking greedy bitch!'[or]I need this more than you do, you fucking bitch.'[or]I don[']t care how fucking horny you are, bitch! It was my idea first!'[at random][roman type][line break]";
+		now another-turn is 1;
 	otherwise:
 		if the size of penis > 3:
-			say "[speech style of M]'What[']s the matter? Aren[']t you supposed to be fucking me right about now?'[roman type] She laughs derisively, shoving her middle and index fingers into your [asshole] and slapping your [AssDesc] as she begins to stroke your prostate from the inside. You sit there, frozen [if the humiliation of the player < 10000]in abject humiliation[otherwise]with pleasure[end if] as she teases your [ShortDesc of penis] with the very tips of her fingers, [if the player is a bit horny]ensuring it stays achingly hard as[otherwise]ensuring it gets nice and hard and stays that way as[end if] she violates your [if the openness of asshole > 5]loose[otherwise]tight[end if] hole. She[']s perfectly positioned to hold you down without putting a lot of effort in, but you just [if the sex addiction of the player < 8]can't focus enough to challenge her even though you [italic type]know[roman type] how much you want to.[otherwise if the sex addiction of the player < 12]can't bring yourself to challenge her, even though you know you [italic type]want[roman type] to.[otherwise]can't bring yourself to stop her when it feel so good![end if] You have no choice but to lie underneath her, writhing with pleasure and humiliation as the slow stroking slowly builds you to orgasm. [line break][speech style of M]'Ooh, you must really like having your asshole played with, faggot, I can already feel your prostate tightening up![roman type] The [M] coos, abruptly yanking her finger out of your butt and removing her thumb before you can cum. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
+			say "[speech style of M]'What[']s the matter? Aren[']t you supposed to be fucking me right about now?'[roman type] She laughs derisively, shoving her middle and index fingers into your [asshole] and slapping your [AssDesc] as she begins to stroke your prostate from the inside. You sit there, frozen [if the humiliation of the player < 10000]in abject humiliation[otherwise]with pleasure[end if] as she teases your [ShortDesc of penis] with the very tips of her fingers, [if the player is a bit horny]ensuring it stays achingly hard as[otherwise]ensuring it gets nice and hard and stays that way as[end if] she violates your [if the openness of asshole > 5]loose[otherwise]tight[end if] hole. She[']s perfectly positioned to hold you down without putting a lot of effort in, but you just [if the player is feeling dominant]can't focus enough to challenge her even though you [italic type]know[roman type] how much you want to.[otherwise if the player is not feeling submissive]can't bring yourself to challenge her, even though you know you [italic type]want[roman type] to.[otherwise]can't bring yourself to stop her when it feel so good![end if] You have no choice but to lie underneath her, writhing with pleasure and humiliation as the slow stroking slowly builds you to orgasm. [line break][speech style of M]'Ooh, you must really like having your asshole played with, faggot, I can already feel your prostate tightening up![roman type] The [M] coos, abruptly yanking her finger out of your butt and removing her thumb before you can cum. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
 		otherwise if the size of penis > 0:
-			say "[speech style of M]'Did you actually think you could fuck me with that shrimp dick? Now I HAVE to fucking mess with you.'[roman type] She shoves her middle finger into your [asshole], smirking scornfully as she begins to stroke your prostate from the inside. You can[']t stifle your moans, frozen [if the humiliation of the player < 10000]in abject humiliation[otherwise]with pleasure[end if] as she rubs your poor, neglected [ShortDesc of penis] with the tip of her thumb, as if stimulating a clitoris. She doesn[']t put a lot of effort into holding you down, but you just [if the sex addiction of the player < 8]can't focus enough to stop her even though you [italic type]know[roman type] how much you want to.[otherwise if the sex addiction of the player < 12]can't bring yourself to stop her, even though you know you [italic type]want[roman type] to.[otherwise]can't bring yourself to stop her when it feel so good![end if] [line break][speech style of M]'Ooh, you must really love having your clit played with, faggot, I can already feel your prostate tightening up![roman type] The [M] coos, abruptly yanking her finger out of your butt and removing her thumb before you can cum. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
+			say "[speech style of M]'Did you actually think you could fuck me with that shrimp dick? Now I HAVE to fucking mess with you.'[roman type][line break] She shoves her middle finger into your [asshole], smirking scornfully as she begins to stroke your prostate from the inside. You can[']t stifle your moans, frozen [if the humiliation of the player < 10000]in abject humiliation[otherwise]with pleasure[end if] as she rubs your poor, neglected [ShortDesc of penis] with the tip of her thumb, as if stimulating a clitoris. She doesn[']t put a lot of effort into holding you down, but you just [if the player is feeling dominant]can't focus enough to stop her even though you [i]know[/i] how much you want to.[otherwise if the player is not feeling submissive]can't bring yourself to stop her, even though you know you [i]want[/i] to.[otherwise]can't bring yourself to stop her when it feel so good![end if] [line break][speech style of M]'Ooh, you must really love having your clit played with, faggot, I can already feel your prostate tightening up![roman type][line break] The [M] coos, abruptly yanking her finger out of your butt and removing her thumb before you can cum. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
 		compute sissification;
 		arouse 3000;
 		Bore M.
@@ -621,7 +645,7 @@ To say DominanceSuccess of (M - a wench):[TODO: eventual penetration]
 			say "The [M] takes one look at your rock hard [ShortDesc of penis] and tries to scramble away, but you grab her by the hair and force her down onto her knees. [line break][first custom style]'Where you goin['] bitch? I thought you liked drinking cum.'[roman type][line break]She [if M is horny-wench]shakes her head, but immediately forms an O-shape with her lips, drooling a bit as her tongue lolls out over her lower lip[otherwise]shakes her head vigorously, but after a moment she slowly opens her mouth anyway[end if]. You revel in the sound of her gagging as you shove it in, brutally fucking her face until she begins to do it all by herself. She skilfully strokes the underside of your shaft with her tongue, further streaking her makeup with fresh tears as repeatedly impales her face on your rock hard junk.";
 			Dignify 20;[Extra dignity when you save up]
 		otherwise:
-			say "You force the [M] to her knees. She [if the times-dominated of M > 0]lazily opens her mouth, staring at your [manly-penis] and fondling her breasts as she robotically licks her lips. Her expression slowly changes to one of fear[otherwise]tentatively opens her mouth and begins to fondle her breasts, eyeing your [manly-penis] as if it were rare breed of venomous snake. Her expression grows even more uncertain[end if] as your [ShortDesc of penis] reaches its full size, and she backs away a bit as your erection nears her lips. She's silent for a moment, [if M is horny-wench]before grabbing it with both hands and eagerly guides[otherwise]then slowly reaches out with one hand, guiding[end if] your [manly-penis] into her mouth. You feel her tongue move skilfully over the underside of your shaft, gently lubricating it as it reaches down her throat. She does such it with such precision and control that you can't bear the thought of interrupting, [run paragraph on]";
+			say "You force the [M] to her knees. She [if the times-dominated of M > 0]lazily opens her mouth, staring at your [manly-penis] and fondling her breasts as she robotically licks her lips. Her expression slowly changes to one of fear[otherwise]tentatively opens her mouth and begins to fondle her breasts, eyeing your [manly-penis] as if it were rare breed of venomous snake. Her expression grows even more uncertain[end if] as your [ShortDesc of penis] reaches its full size, and she backs away a bit as your erection nears her lips. She's silent for a moment, [if M is horny-wench]before grabbing it with both hands and eagerly guiding[otherwise]then slowly reaches out with one hand, guiding[end if] your [manly-penis] into her mouth. You feel her tongue move skilfully over the underside of your shaft, gently lubricating it as it reaches down her throat. She does such it with such precision and control that you can't bear the thought of interrupting, [run paragraph on]";
 		if the player is desperate to pee and watersports fetish is 1:
 			say " so you go for the next best thing and immediately start peeing straight down her throat! Her eyes widen at first, but after a moment she just accepts it, staring up at you submissively as you empty every last drop of your hot [urine] into her belly. You shove her off and quickly nut all over her face when you're finished.";
 			now the bladder of the player is 0;
@@ -632,13 +656,13 @@ To say DominanceSuccess of (M - a wench):[TODO: eventual penetration]
 		orgasm;
 		say "[AfterDominationComment 5 of M]";
 	otherwise if the size of penis > 6 and the player is a bit horny:
-		say "You force the [M] to her knees, brandishing your fully erect [ShortDesc of penis]. [line break][variable custom style]'[if the player is desperate to pee and watersports fetish is 1]So, want something to drink, bitch[otherwise]So, I heard you like drinking cum, bitch[end if]?'[roman type][line break][if the times-dominated of M > 0 or M is horny-wench]She nods quickly[otherwise]She gulps, avoiding eye contact as she answers with a slow nod[end if], gripping the base of your shaft with one hand and lightly stroking it as she drags her tongue up your length. You didn[']t really come here for foreplay though, and just as you're ready to 'nudge' her into beginning the main event, her lips wrap themselves around the end of your [manly-penis] and immediately glide down your spit-coated shaft. She furrows her eyebrows as your tip brushes the back of her throat, bracing her hands on your thighs as she forces herself down even further.";
+		say "You force the [M] to her knees, brandishing your fully erect [ShortDesc of penis]. [line break][variable custom style]'[if the player is desperate to pee and watersports fetish is 1]So, want something to drink, bitch[otherwise]So, I heard you like drinking cum, bitch[end if]?'[roman type][line break][if the times-dominated of M > 0 or M is horny-wench]She nods eagerly[otherwise]She gulps, avoiding eye contact as she answers with a slow nod[end if], gripping the base of your shaft with one hand and lightly stroking it as she drags her tongue up your length. You didn[']t really come here for foreplay though, and just as you're ready to 'nudge' her into beginning the main event, her lips wrap themselves around the end of your [manly-penis] and immediately glide down your spit-coated shaft. She furrows her eyebrows as your tip brushes the back of her throat, bracing her hands on your thighs as she forces herself down even further.";
 		if the player is desperate to pee and watersports fetish is 1:
 			say "You decide its the perfect time to give her a drink, and hold her down as you begin pissing straight down her throat. She splutters a bit, but otherwise seems to accept it, staring up at you submissively until your bladder has been completely and thoroughly emptied into her belly, and you allow her to pull up.";
 			now the bladder of the player is 0;
 			Dignify 40;
 		otherwise:
-			say "Pleasure exploding up your shaft as tiny movements of [his of M] tongue push you to the brink of orgasm in no-time-flat. You barely manage to grunt before you go over the edge, involuntarily bucking your hips as you unload straight down her throat. [if the throatskill of the player is 1]She's clearly had a lot more practice than you have, because s[otherwise]S[end if]he's able to hold the position for the full duration of your orgasm, allowing your softening [manly-penis] to slip out of her mouth on its own.";
+			say "Pleasure explodes up your shaft as tiny movements of [his of M] tongue push you to the brink of orgasm in no-time-flat. You barely manage to grunt before you go over the edge, involuntarily bucking your hips as you unload straight down her throat. [if the throatskill of the player is 1]She's clearly had a lot more practice than you have, because s[otherwise]S[end if]he's able to hold the position for the full duration of your orgasm, allowing your softening [manly-penis] to slip out of her mouth on its own.";
 			orgasm;
 			Dignify 30;
 		say "[AfterDominationComment 1 of M]";
@@ -685,8 +709,8 @@ To oral dominate (M - a wench):[TODO: update]
 			now the bladder of the player is 0;
 			say "[AfterDominationComment 4 of M]";
 		otherwise:
-			say "You force the [M] onto her back, sitting on her face. [if the bimbo of the player < 12][line break][first custom style]'[one of]No offence meant[or]Nothing personal[at random], I promise.'  [otherwise][line break][second custom style]'Let's see how you like it!'  [end if][roman type][line break]";
-			if the semen volume of vagina > 0 and the pregnancy of the player is 0:
+			say "You force the [M] onto her back, sitting on her face. [if the bimbo of the player < 12][line break][first custom style]'[one of]No offense meant[or]Nothing personal[at random], I promise.'  [otherwise][line break][second custom style]'Let's see how you like it!'  [end if][roman type][line break]";
+			if the semen volume of vagina > 0:
 				say "Pulling your asscheeks apart, you position your dripping wet folds over her mouth and your [asshole] over her nose, cutting off her airflow. She squirms petulantly, weakly clawing at your thighs to try and make you get up, but fails because she is weakened from the preceding fight. Reluctantly, she opens her mouth and pushes her tongue into your [vagina]. You sigh in pleasure, massaging your breasts as the sensations cause your vaginal muscles to loosen and allow [semen] to dribble out onto her face. The wench grabs your thighs, suddenly a lot more eager to fuck you with her tongue. You reach back to rub her gash, which she was probably planning to have you clean out yourself. You're sure you'd be able to orgasm if the wench continued on like this, but the slipperiness of the [semen] drooling out of your pussy makes you a lot less sensitive. So, you eventually grow bored and stand up.";
 				now the semen volume of vagina is 0;
 			otherwise if the player is a bit horny:
@@ -810,11 +834,11 @@ To say UnfriendlyResponse of (M - a wench):
 		say "[speech style of M]'[one of]God, do you ever fucking shut up?'[or]Shut up.'[or]Do you ever stop running your mouth?'[or][if the bimbo of the player < 8]Shut up you fucking prude!'[otherwise if the bimbo of the player < 14]Shut up you fucking skank!'[otherwise]Shut up you fucking slut!'[end if][at random][roman type][line break]".
 
 To say SubmissiveResponse of (M - a wench):
-	if the size of penis <= 3 and the player is male and penis is lewdly exposed and the sex addiction of the player < 7:
+	if the size of penis <= 3 and the player is male and penis is lewdly exposed and the player is feeling dominant:
 		say "[speech style of M]'[one of]Just try to fuck me, shrimp dick. I fucking dare you.'[or]So you're going to fuck me? Really. With a tiny cock like that?'[or]Go ahead and try to fuck me, faggot. I wouldn't even feel it.'[at random][roman type][line break]";
-	otherwise if the player is male and M is unfriendly and the sex addiction of the player < 7:
+	otherwise if the player is male and M is unfriendly and the player is feeling dominant:
 		say "[UnfriendlyResponse of M]";
-	otherwise if the player is female and the sex addiction of the player < 14:
+	otherwise if the player is female and the player is not feeling submissive:
 		say "[speech style of M]'[one of]Go fuck yourself, bitch!'[or]You know how to make it up to me, bitch.'[or]If you're really sorry, you'll get on your fucking knees.'[at random][roman type][line break]";
 	otherwise if player is upright:
 		say "[speech style of M]'[one of]Get on your fucking knees then, bitch.'[or]Get on your knees then, skank.'[or]Get on the ground then, skank.'[at random][roman type][line break]";

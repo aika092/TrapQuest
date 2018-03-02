@@ -1,6 +1,6 @@
 Cow Ears by Headgear begins here.
 
-A cow ears is a kind of headgear. A cow ears is usually manly. There is 1 cow ears. Figure of cow ears is the file "cowears1.png". Understand "pair", "of" as cow ears. A cow ears is usually hair growing. A cow ears is usually milk-taste-addiction-influencing. A cow ears is usually roleplay. [###Selkie: should it also sometimes increase lactation rate?]
+A cow ears is a kind of headgear. A cow ears is usually manly. There is 1 cow ears. Figure of cow ears is the file "Items\Accessories\Head\cowears1.png". Understand "pair", "of" as cow ears. A cow ears is usually hair growing. A cow ears is usually milk-taste-addiction-influencing. A cow ears is usually roleplay. [###Selkie: should it also sometimes increase lactation rate?]
 
 Definition: a cow ears (called C) is fluid immune:
 	decide yes.

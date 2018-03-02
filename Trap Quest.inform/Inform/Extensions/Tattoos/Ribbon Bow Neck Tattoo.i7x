@@ -1,6 +1,6 @@
 Ribbon Bow Neck Tattoo by Tattoos begins here.
 
-ribbon bow neck tattoo is a kind of body tattoo. Figure of ribbon bow neck tattoo is the file "tattoo71.png". There is 1 ribbon bow neck tattoo.
+ribbon bow neck tattoo is a kind of body tattoo. Figure of ribbon bow neck tattoo is the file "Items/Tats/tattoo71.png". There is 1 ribbon bow neck tattoo.
 Definition: a ribbon bow neck tattoo (called T) is eligible:
 	if the noun is bow themed, decide yes;
 	decide no.

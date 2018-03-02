@@ -211,18 +211,18 @@ To decide which number is the initial cringe of (C - a pale panties):
 Definition: a pale panties (called C) is sissifying:
 	decide yes.
 
-Figure of panties 1 is the file "panties1.png".
-Figure of panties special 1 is the file "pantiesspecial1.png".
-Figure of panties 2 is the file "panties2.png".
-Figure of panties 3 is the file "panties3.png".
-Figure of panties 4 is the file "panties4.png".
-Figure of panties 5 is the file "panties5.png".
-Figure of panties special 5 is the file "pantiesspecial5.png".
-Figure of panties special 5b is the file "pantiesspecial5b.png".
-Figure of panties 6 is the file "panties6.png".
-Figure of panties 7 is the file "panties7.png".
-Figure of panties 8 is the file "panties8.png".
-Figure of panties 9 is the file "panties9.png".
+Figure of panties 1 is the file "Items\Clothes\Lower\Underwear\Panties\panties1.png".
+Figure of panties special 1 is the file "Items\Clothes\Lower\Underwear\Panties\pantiesspecial1.png".
+Figure of panties 2 is the file "Items\Clothes\Lower\Underwear\Panties\panties2.png".
+Figure of panties 3 is the file "Items\Clothes\Lower\Underwear\Panties\panties3.png".
+Figure of panties 4 is the file "Items\Clothes\Lower\Underwear\Panties\panties4.png".
+Figure of panties 5 is the file "Items\Clothes\Lower\Underwear\Panties\panties5.png".
+Figure of panties special 5 is the file "Items\Clothes\Lower\Underwear\Panties\pantiesspecial5.png".
+Figure of panties special 5b is the file "Items\Clothes\Lower\Underwear\Panties\pantiesspecial5b.png".
+Figure of panties 6 is the file "Items\Clothes\Lower\Underwear\Panties\panties6.png".
+Figure of panties 7 is the file "Items\Clothes\Lower\Underwear\Panties\panties7.png".
+Figure of panties 8 is the file "Items\Clothes\Lower\Underwear\Panties\panties8.png".
+Figure of panties 9 is the file "Items\Clothes\Lower\Underwear\Panties\panties9.png".
 
 
 Panties ends here.

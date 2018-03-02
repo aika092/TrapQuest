@@ -2,7 +2,7 @@ Pasties by Bra begins here.
 
 A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually fully exposing. There is 1 unique pasties. Understand "stickers", "caps", "nipple" as pasties.
 
-Figure of pasties is the file "pasties1.png".
+Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.png".
 
 To decide which figure-name is clothing-image of (C - a pasties):
 	decide on figure of pasties.
@@ -41,7 +41,7 @@ A tassels is a kind of pasties. There is 1 unique tassels.
 To say ShortDesc of (B - a tassels):
 	say "nipple tassels".
 
-Figure of tassels is the file "tassels1.png".
+Figure of tassels is the file "Items/Clothes/Upper/Bras/tassels1.png".
 
 To decide which figure-name is clothing-image of (C - a tassels):
 	decide on figure of tassels.

@@ -17,7 +17,7 @@ Part 1 - Busy Patterned Romper
 
 A busy patterned romper is a kind of romper. There is 1 busy patterned romper. The text-shortcut of busy patterned romper is "bpr". The printed name of busy patterned romper is usually "[TQlink of item described][clothing-title-before]busy patterned romper[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of busy patterned romper is the file "romper1.png".
+Figure of busy patterned romper is the file "Items\Clothes\Upper\Rompers\romper1.png".
 
 To decide which figure-name is clothing-image of (C - a busy patterned romper):
 	decide on figure of busy patterned romper.
@@ -42,7 +42,7 @@ Part 2 - Pink Baby Romper
 
 A pink baby romper is a kind of romper. There is 1 unique pink baby romper. The text-shortcut of pink baby romper is "pbr". The printed name of pink baby romper is usually "[TQlink of item described][clothing-title-before]pink baby romper[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of pink baby romper is the file "romper2.png".
+Figure of pink baby romper is the file "Items\Clothes\Upper\Rompers\romper2.png".
 
 To decide which figure-name is clothing-image of (C - a pink baby romper):
 	decide on figure of pink baby romper.
@@ -67,7 +67,7 @@ Part 3 - Cupcake Baby Romper
 
 A cupcake baby romper is a kind of romper. There is 1 unique cupcake baby romper. The text-shortcut of cupcake baby romper is "cpr". The printed name of cupcake baby romper is usually "[TQlink of item described][clothing-title-before]cupcake baby romper[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of cupcake baby romper is the file "romper3.png".
+Figure of cupcake baby romper is the file "Items\Clothes\Upper\Rompers\romper3.png".
 
 To decide which figure-name is clothing-image of (C - a cupcake baby romper):
 	decide on figure of cupcake baby romper.

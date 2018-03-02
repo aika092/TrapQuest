@@ -1,6 +1,6 @@
 Cow Print Bikini Top by Bra begins here.
 
-A cow print bikini top is a kind of bikini top. Figure of bikini 3 is the file "bikini3.png". The text-shortcut of cow print bikini top is "cpt".
+A cow print bikini top is a kind of bikini top. Figure of bikini 3 is the file "Items/Clothes/Upper/Bras/bikini3.png". The text-shortcut of cow print bikini top is "cpt".
 
 There is 1 unique cow print bikini top.
 

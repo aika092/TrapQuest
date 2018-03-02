@@ -8,7 +8,7 @@ The printed name of armadillo heels is usually "[TQlink of item described][item 
 To decide which figure-name is the clothing-image of (H - an armadillo heels):
 	decide on the figure of armadillo heels.
 
-Figure of armadillo heels is the file "armadillo1.png".
+Figure of armadillo heels is the file "Items\Clothes\Lower\Feet\Heels\Special\armadillo1.png".
 
 To decide which number is the unique outrage of (C - an armadillo heels):
 	decide on 4.

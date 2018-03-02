@@ -99,10 +99,10 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the relevant sex addiction of (M - a thing): [We want to know which orifice they're penetrating so we can use the appropriate variable to determine the player's reaction.]
 	if diaper quest is 1, decide on the diaper addiction of the player;
-	if M is penetrating asshole, decide on the anal sex addiction of the player * 2;
-	if M is penetrating vagina, decide on the vaginal sex addiction of the player * 2;
-	if M is penetrating face, decide on the oral sex addiction of the player * 2;
-	if M is penetrating breasts, decide on the titfuck addiction of the player * 2;
+	if M is asshole or M is penetrating asshole, decide on the anal sex addiction of the player * 2;
+	if M is vagina or M is penetrating vagina, decide on the vaginal sex addiction of the player * 2;
+	if M is face or M is penetrating face, decide on the oral sex addiction of the player * 2;
+	if M is breasts or M is penetrating breasts, decide on the titfuck addiction of the player * 2;
 	decide on the sex addiction of the player. [catch-all]
 
 Part 2 - Modify Sex Addiction
@@ -147,21 +147,21 @@ To SexAddictUp (X - a number):
 				if (highest sex addiction < the sex addiction of the player and X is 0 or the sex addiction of the player is 19) and diaper quest is 0: [We only want to output 1 thing from this list even if sex addiction goes up multiple times]
 					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]I am not going to let anything else fuck me. At all. That is NOT happening again.[end if][roman type][line break]";
 					if the sex addiction of the player is 2, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]If I can't avoid things fucking me, my situation is only going to get worse and worse. I've got to keep level headed.[end if][roman type][line break]";
-					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy it that little bit more. I have a to find a way out![roman type][line break]";
+					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy this world a little bit more. I have a to find a way out![roman type][line break]";
 					if the sex addiction of the player is 4, say "[first custom style]I have to avoid the sex!  The game is rigged to make me get addicted...[roman type][line break]";
 					if the sex addiction of the player is 5, say "[first custom style]I am not enjoying this. I am NOT enjoying this!!!  Why does my body feel like it's disagreeing with me?[roman type][line break]";
-					if the sex addiction of the player is 6, say "[variable custom style][if the analvirgin of the player is 1]Maybe it's worth trying anal sex, at least once. Just to confirm that it is as gross and nasty as I think it is.[otherwise]Anal sex feels so pleasurable here!  Surely it doesn't feel this good in the real world, right?[end if][roman type][line break]";
+					if the sex addiction of the player is 6, say "[variable custom style][if the analvirgin of the player is 1]Maybe it's worth trying anal sex, at least once. Just to confirm that it is as gross and nasty as I think it is.[otherwise]Anal sex feels so... intimate. Which if you think about it, is actually kind of romantic. Maybe kinky stuff isn't so bad after all...[end if][roman type][line break]";
 					if the sex addiction of the player is 7, say "[variable custom style]Maybe I've got it all wrong. Maybe I should be using this game to experiment with my body. At least it's safe down here, since nothing is real.[roman type][line break]";
 					if the sex addiction of the player is 8, say "[variable custom style]I guess the truth is, why does it matter if I happen to enjoy it?  It's just sex.[roman type][line break]";
-					if the sex addiction of the player is 9, say "[variable custom style]Why was I so convinced that being submissive is a bad thing, anyway?  Someone has to be the submissive one, so it's only fair that sometimes it's me.[roman type][line break]";
-					if the sex addiction of the player is 10, say "[second custom style][if the semen taste addiction of the player > 12]Hey, if I have to be the submissive one in order to get another yummy dose of [semen], that's fine with me.[otherwise if the semen taste addiction of the player > 8]If someone's bigger than me and they want to be the dominant one, well that just makes sense.[otherwise]I think I would love giving blowjobs if I didn't have to deal with so much [semen] afterwards.[end if][line break][first custom style]Oh god what am I becoming?[roman type][line break]";
-					if the sex addiction of the player is 11, say "[second custom style]I seriously have no idea why I used to get so turned off by the idea of being a submissive. What a stupid idea.[roman type][line break]";
-					if the sex addiction of the player is 12, say "[second custom style]There's just something so thrilling about not being in control...[roman type][line break]";
+					if the sex addiction of the player is 9, say "[variable custom style]Why was I so convinced that being perverted is a bad thing, anyway? Being different is what makes people interesting.[roman type][line break]";
+					if the sex addiction of the player is 10, say "[second custom style][if the semen taste addiction of the player > 12]Hey, if I have to act like a slut in order to get another yummy dose of [semen], that's fine with me.[otherwise if the oral sex addiction of the player > 4]It actually feels rather rewarding to pleasure someone with my mouth. And why wouldn't it? It's such an intimate act.[otherwise]I think I would love giving blowjobs if I didn't have to deal with so much [semen] afterwards.[end if][line break][first custom style]Wait, what sort of thought was that?! Who I am becoming?[roman type][line break]";
+					if the sex addiction of the player is 11, say "[second custom style]I seriously have no idea why I used to be so resistant to indulging in kinky sex. What a stupid idea.[roman type][line break]";
+					if the sex addiction of the player is 12, say "[second custom style]Life would be so pointless without sex...[roman type][line break]";
 					if the sex addiction of the player is 13, say "[second custom style]I definitely prefer getting fucked from behind like a whore to boring old vanilla sex. It's just so much more exciting and kinky.[roman type][line break]";
 					if the sex addiction of the player is 14, say "[second custom style]Sure, getting my holes rammed full of monster [manly-penis] isn't going to help me win the game, but it sure is fun![roman type][line break]";
-					if the sex addiction of the player is 15, say "[second custom style]I like it better when I'm full of [manly-penis]. It makes life a lot less boring.[roman type][line break]";
+					if the sex addiction of the player is 15, say "[second custom style]I like it better when I'm full of [manly-penis]. It makes life feel so much more... fulfilling.[roman type][line break]";
 					if the sex addiction of the player is 16, say "[second custom style]I'm not afraid to admit it, I'm addicted to [manly-penis]. I love cocks and cocks love me. What's wrong with that?[roman type][line break]";
-					if the sex addiction of the player is 17, say "[second custom style]Degrading sex is the only sex worth having. Unless my orgasm makes me feel like a cheap whore, I'm not really interested.[roman type][line break]";
+					if the sex addiction of the player is 17, say "[second custom style]Nasty, filthy, degrading sex is the only sex worth having. Unless my orgasm makes me feel like a cheap whore, I'm not really interested.[roman type][line break]";
 					if the sex addiction of the player is 18, say "[second custom style]Hunks, this way!  Over here!  Give [NameBimbo] your big [manly-penis]s and she'll make you feel good.[roman type][line break]";
 					if the sex addiction of the player is 19, say "[second custom style][NameBimbo] wants more cummies!  [NameBimbo] needs more [manly-penis]s...[roman type][line break]";
 				[otherwise if X is 1:

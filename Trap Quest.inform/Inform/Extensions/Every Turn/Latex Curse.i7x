@@ -30,7 +30,9 @@ To compute latex transformation:
 			now the openness of asshole is 10;
 			if the player is female, now the openness of vagina is 10;
 		if the latex-transformation of the player is 4:
-			say "Your skin is now completely smooth and featureless - it doesn't look real but more like something made out of plastic or in a cartoon. Your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] completely rubber all the way inside - whilst you can still feel things, you probably can no longer get sore.";
+			say "Your skin is now completely smooth and featureless - it doesn't look real but more like something made out of plastic or in a cartoon. ";
+			if image cutscenes is 1, display figure of latex curse 1;
+			say "Your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] completely rubber all the way inside - whilst you can still feel things, you probably can no longer get sore.";
 			now the soreness of asshole is 0;
 			now the soreness of vagina is 0;
 			now the tolerated of asshole is 0;
@@ -41,10 +43,12 @@ To compute latex transformation:
 			now the delayed bladder of the player is 0;
 		if the latex-transformation of the player is 6:
 			say "Your skin is definitely made of some kind of rubbery latex. You can tell that you don't have any kind of flesh under there any more because you feel extremely light and you're pretty sure you can no longer bruise. You're more scared of being over-inflated...";
+			if image cutscenes is 1, display figure of latex curse 2;
 			now the body soreness of the player is 0;
 			now the milk volume of breasts is 0;
 		if the latex-transformation of the player is 7:
 			say "Your mouth rounds out into a perfect O shape and you realise you can no longer control or close it. You try to move your tongue but you realise that's gone too. You can no longer form proper words but just make a girly moaning sound. Your makeup is now permanently doll-like.";
+			if image cutscenes is 1, display figure of latex curse 3;
 			now the make-up of face is 3;
 			now the lips of face is 3;
 		if the latex-transformation of the player is 8:

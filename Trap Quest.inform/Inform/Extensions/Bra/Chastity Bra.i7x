@@ -1,6 +1,6 @@
 Chastity Bra by Bra begins here.
 
-A chastity bra is a kind of bra. Figure of metal bra is the file "metalbra1.png". A chastity bra is usually metal.
+A chastity bra is a kind of bra. Figure of metal bra is the file "Items/Clothes/Upper/Bras/metalbra1.png". A chastity bra is usually metal.
 
 There is 1 chastity bra. The text-shortcut of chastity bra is "cbr".
 

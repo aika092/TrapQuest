@@ -1,6 +1,6 @@
 Worthless Cunt Tattoo by Tattoos begins here.
 
-worthless cunt tattoo is a kind of crotch tattoo. Figure of worthless cunt tattoo is the file "tattoo47.png". There is 1 worthless cunt tattoo.
+worthless cunt tattoo is a kind of crotch tattoo. Figure of worthless cunt tattoo is the file "Items/Tats/tattoo47.png". There is 1 worthless cunt tattoo.
 Definition: a worthless cunt tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;

@@ -1,6 +1,6 @@
 Kitty Cat Tattoo by Tattoos begins here.
 
-kitty cat tattoo is a kind of dq tattoo. Figure of kitty cat tattoo is the file "tattoo69.png". There is 1 kitty cat tattoo.
+kitty cat tattoo is a kind of dq tattoo. Figure of kitty cat tattoo is the file "Items/Tats/tattoo69.png". There is 1 kitty cat tattoo.
 Definition: a kitty cat tattoo (called T) is eligible:
 	if the noun is cat themed, decide yes;
 	decide no.

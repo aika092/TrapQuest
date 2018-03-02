@@ -5,15 +5,15 @@ A mannequin is a kind of monster. The poison-status of a mannequin is -1.
 Definition: A mannequin (called M) is woods dwelling:
 	decide yes.
 
-Figure of topless mannequin is the file "mannequin1.png".
-Figure of stylish mannequin is the file "mannequin2.png".
-Figure of swimmer Mannequin is the file "mannequin3.png".
-Figure of flirty mannequin is the file "mannequin4.png".
-Figure of lycra-clad mannequin is the file "mannequin5.png".
-Figure of latex-clad Mannequin is the file "mannequin6.png".
-Figure of lingerie-clad mannequin is the file "mannequin7.png".
-Figure of skater mannequin is the file "mannequin8.png".
-Figure of goth Mannequin is the file "mannequin9.png".
+Figure of topless mannequin is the file "NPCs/Forest/Mannequin/mannequin1.png".
+Figure of stylish mannequin is the file "NPCs/Forest/Mannequin/mannequin2.png".
+Figure of swimmer Mannequin is the file "NPCs/Forest/Mannequin/mannequin3.png".
+Figure of flirty mannequin is the file "NPCs/Forest/Mannequin/mannequin4.png".
+Figure of lycra-clad mannequin is the file "NPCs/Forest/Mannequin/mannequin5.png".
+Figure of latex-clad Mannequin is the file "NPCs/Forest/Mannequin/mannequin6.png".
+Figure of lingerie-clad mannequin is the file "NPCs/Forest/Mannequin/mannequin7.png".
+Figure of skater mannequin is the file "NPCs/Forest/Mannequin/mannequin8.png".
+Figure of goth Mannequin is the file "NPCs/Forest/Mannequin/mannequin9.png".
 
 The description of mannequin is usually "[MannequinDesc]". The text-shortcut of mannequin is "man".
 
@@ -122,14 +122,14 @@ To say SummoningFlav of (M - a goth mannequin):
 Part 2 - Perception
 
 To compute perception of (M - a mannequin):
-	if permanent makeup is 0 or the sex addiction of the player < 18:
+	if permanent makeup is 0 or the anal sex addiction of the player < 9:
 		if the latex-transformation of the player < 3:
 			anger M;
 			say "The [M] seems to notice you!  Uh-oh...";
 		otherwise:
 			bore M;
 	otherwise if the player is a bit horny:
-		if a random number between 5 and 25 < the anal sex addiction of the player and the player is not immobile and the player is upright and the player is not unable to orgasm so soon and the player is not flying:
+		if a random number between 5 and 15 < the anal sex addiction of the player and the player is not immobile and the player is upright and the player is not unable to orgasm so soon and the player is not flying:
 			say "You look at the [M] and feel a burning desire to have an orgasm milked out of you[if the latex-transformation of the player > 3], even though you know it won't work[end if]. In this moment of weakness, you drop to your knees and look at the [M] expectantly.";
 			try kneeling;
 			if the player is not ass protected, now presented-orifice is asshole;
@@ -144,12 +144,8 @@ To compute perception of (M - a mannequin):
 		anger M.
 
 To compute DQ perception of (M - a mannequin):
-	if the make-up of face < 3 or the sex addiction of the player < 18:
-		anger M;
-		say "The [M] seems to notice you!  Uh-oh...";
-	otherwise if M is objectifying the player:
-		anger M;
-		say "The [M] seems to notice you!  You giggle in nervous delight.".
+	say "The [M] seems to notice you!  Uh-oh...";
+	anger M.
 
 
 Part 3 - Combat
@@ -276,8 +272,11 @@ To compute (M - a mannequin) entering mouth:
 		follow the monster asshole insertion rules; [That's right, we decide that the mannequin goes after the asshole instead.]
 	otherwise:
 		compute SelectionFailure of M.
-			
-To compute (M - a mannequin) entering asshole:
+
+To set up sex length of (M - a mannequin) in (F - asshole):
+	set up sex length 0 of M in F.
+
+To compute (M - a mannequin) entering anally:
 	let P be a random sex toy retained by M;
 	if P is sex toy:
 		say "The [M] pushes a [printed name of P] into your [asshole], [if size of penis is 0]angling it toward herself as she begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as she begins pumping it in and out of your hole[end if].";
@@ -381,15 +380,17 @@ To compute damage of (M - a mannequin):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a mannequin):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The [noun] doesn't even flinch!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "A rattle passes through the [noun]'s joints as it takes the hit!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The [noun] rattles ominously, taking the hit!";
-	otherwise:
-		say "The [noun] looks like its joints are starting to fail!".
+To say DamageReactHealthy of (M - a mannequin):
+	say "The [noun] doesn't even flinch!".
+
+To say DamageReactDamaged of (M - a mannequin):
+	say "A rattle passes through the [noun]'s joints as it takes the hit!".
+
+To say DamageReactTired of (M - a mannequin):
+	say "The [noun] rattles ominously, taking the hit!".
+
+To say DamageReactWeak of (M - a mannequin):
+	say "The [noun] looks like its joints are starting to fail!".
 
 To compute unique death of (M - a mannequin):
 	say "The [noun] falls and breaks into pieces.";

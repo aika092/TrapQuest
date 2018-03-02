@@ -121,7 +121,7 @@ To trigger (Y - a bukkake hose):
 	now Y is revealed;
 	now Y is expired;
 	let X be 10 - (a random number between 6 and the dexterity of the player);
-	if X < 1, now X is 1;
+	if X < 2, now X is 2;
 	say "A hose hidden inside the container suddenly starts spraying out [semen]. It gets all over your face[if the largeness of breasts > 5] and [BreastDesc][end if]!";
 	if image cutscenes is 1, display figure of hose cutscene 1;
 	let Z be X / 2;

@@ -44,7 +44,7 @@ The printed name of ornate warrior chestpiece is usually "[TQlink of item descri
 
 There is 1 ornate warrior chestpiece.
 
-Figure of ornate warrior chestpiece is the file "warrior1.png".
+Figure of ornate warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior1.png".
 
 To decide which figure-name is clothing-image of (C - an ornate warrior chestpiece):
 	decide on figure of ornate warrior chestpiece.
@@ -67,7 +67,7 @@ The printed name of leaf pattern warrior chestpiece is usually "[TQlink of item 
 
 There is 1 leaf pattern warrior chestpiece.
 
-Figure of leaf pattern warrior chestpiece is the file "warrior3.png".
+Figure of leaf pattern warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior3.png".
 
 To decide which figure-name is clothing-image of (C - a leaf pattern warrior chestpiece):
 	decide on figure of leaf pattern warrior chestpiece.
@@ -92,7 +92,7 @@ The printed name of reinforced warrior chestpiece is usually "[TQlink of item de
 
 There is 1 reinforced warrior chestpiece.
 
-Figure of reinforced warrior chestpiece is the file "warrior4.png".
+Figure of reinforced warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior4.png".
 
 To decide which figure-name is clothing-image of (C - a reinforced warrior chestpiece):
 	decide on figure of reinforced warrior chestpiece.
@@ -117,7 +117,7 @@ The printed name of plate warrior chestpiece is usually "[TQlink of item describ
 
 There is 1 plate warrior chestpiece.
 
-Figure of plate warrior chestpiece is the file "warrior2.png".
+Figure of plate warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior2.png".
 
 To decide which figure-name is clothing-image of (C - a plate warrior chestpiece):
 	decide on figure of plate warrior chestpiece.
@@ -139,7 +139,7 @@ The printed name of hide warrior chestpiece is usually "[TQlink of item describe
 
 There is 1 hide warrior chestpiece.
 
-Figure of hide warrior chestpiece is the file "warrior5.png".
+Figure of hide warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior5.png".
 
 To decide which figure-name is clothing-image of (C - a hide warrior chestpiece):
 	decide on figure of hide warrior chestpiece.
@@ -166,7 +166,7 @@ Part 6 - Golden Warrior Priestess Outfit
 
 A golden warrior priestess outfit is a kind of immodest warrior chestpiece. There is 1 golden warrior priestess outfit. A golden warrior priestess outfit is usually metal. A golden warrior priestess outfit is usually super-short. A golden warrior priestess outfit is usually belly exposing. A golden warrior priestess outfit is usually ridiculously low cut. A golden warrior priestess outfit is usually totally-exclusive.
 
-Figure of golden warrior priestess outfit is the file "priestess5.png".
+Figure of golden warrior priestess outfit is the file "Items\Clothes\Upper\Special\Warrior\priestess5.png".
 
 The printed name of golden warrior priestess outfit is usually "[TQlink of item described][clothing-title-before]golden warrior priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden warrior priestess outfit is "gpo".
 

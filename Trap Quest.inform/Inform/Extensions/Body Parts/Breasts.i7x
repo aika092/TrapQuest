@@ -364,6 +364,14 @@ Definition: a person is breasts blinded:
 			say "[bold type]Your [ShortDesc of breasts] are no longer obscuring your vision.[roman type][line break]";
 		decide no.
 
+[!<DecideWhichNumberIsTheDesireOfBreasts>+
+
+How much does the player want this body part to be used?
+
++!]
+To decide which number is the desire of (B - breasts):
+	decide on the titfuck addiction of the player.
+
 	
 Part 2 - Description
 
@@ -875,7 +883,7 @@ REQUIRES COMMENTING
 
 +!]
 To Milkup (X - a number):
-	if the player is a flatchested trap, now X is 0;
+	if the player is a flatchested trap or lactation fetish is 0, now X is 0;
 	if the latex-transformation of the player > 5, now X is 0;
 	let old-B be the largeness of breasts;
 	while X > 0:

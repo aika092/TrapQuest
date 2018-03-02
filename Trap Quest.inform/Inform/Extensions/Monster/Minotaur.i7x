@@ -6,7 +6,7 @@ Definition: A minotaur (called M) is dungeon dwelling:
 	if diaper quest is 1, decide no;
 	decide yes.
 
-1 captive minotaur is in Dungeon36. Figure of minotaur is the file "minotaur1.png". Figure of minotaur caged is the file "minotaur2.png". Figure of hulk is the file "hulk1.png". The printed name of minotaur is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]large [if mythical creature fetish is 0]hulk[otherwise]minotaur[end if][if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of minotaur is usually "[MinotaurDesc]". The text-shortcut of minotaur is "mi". Understand "large", "hulk" as minotaur.
+1 captive minotaur is in Dungeon36. Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png". Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png". Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.png". The printed name of minotaur is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]large [if mythical creature fetish is 0]hulk[otherwise]minotaur[end if][if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of minotaur is usually "[MinotaurDesc]". The text-shortcut of minotaur is "mi". Understand "large", "hulk" as minotaur.
 
 Definition: a minotaur (called M) is willing to do oral:
 	decide no.
@@ -58,6 +58,9 @@ To set up (M - a minotaur):
 
 To decide which number is the girth of (M - a minotaur):
 	decide on 8.
+
+To decide which number is the semen load of (M - a minotaur):
+	decide on 18.
 
 This is the spawn initial minotaur rule:
 	if debugmode > 1, say "Now summoning minotaur.";
@@ -273,10 +276,10 @@ To compute vaginal sex of (M - a minotaur):
 			if the soreness of vagina > 8, say "[one of]Your lack of resistance against the [M] is preventing you from going over the edge and fainting, but it is extremely humiliating to let yourself get fucked by a half bull.[or][or][or][or][cycling]";
 	otherwise if the health of M > 5:
 		compute fuckhole sex of M;
-		WombFill 2;
+		PussyFill 2;
 		if the soreness of vagina < 10 or the reaction of the player is 0, ruin vagina;
 	otherwise:
-		WombFill 2;
+		PussyFill 2;
 		say "[one of]The [M] seems completely spent - he pulls your bloated body off his shaft and leaves you to recover.[or]The [M], spent, pulls your bloated body off his deflating shaft and leaves you to recover.[or]The [M] pulls your bloated body off his shaft as his ejaculation finally ends, leaving you on the floor to recover.[or]The [M] removes his deflating shaft from your [vagina], completely spent.[at random]  He stalks off, probably looking for another woman to breed.";
 		let H be a random off-stage cow ears;
 		let T be a random bred by a bull tattoo;
@@ -289,11 +292,9 @@ To compute vaginal sex of (M - a minotaur):
 		orgasm M;
 		bore M for 500 seconds.
 
-To orgasm (M - a minotaur):
-	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
-		say "You feel a surge in your holy aura and a voice appears in your head: 'Good work, Sister!'";
-		decrease the charge of the dungeon altar by 300;
-	if the class of the player is princess, follow the betrothal rule.
+To compute priestessBlessing of (M - a minotaur):
+	say "You feel a surge in your holy aura and a voice appears in your head: 'Good work, Sister!'";
+		decrease the charge of the dungeon altar by 300.
 
 To compute fuckhole sex of (M - a minotaur):
 	let F be a random fuckhole penetrated by M;
@@ -373,18 +374,18 @@ To compute the orifice choosing of (M - a minotaur):
 	otherwise:
 		now the chosen-orifice of M is asshole.
 
-To compute (M - a minotaur) entering vagina:
-	now the sex-length of M is the health of M / 10;
-	say "The [M] stares at your body and sniffs your [vagina], assessing you. He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina]. [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the class of the player is cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]";
-	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 4;
-	now M is penetrating vagina;
-	ruin vagina.
+To set up sex length of (M - a minotaur) in (B - a fuckhole):
+	now the sex-length of M is 0;[preventative measure to prevent bugginess]
+	set up sex length (the health of M / 10) of M in B.
 
-To compute (M - a minotaur) entering asshole:
-	now the sex-length of M is the health of M / 10;
-	say "The [M] [one of]forcefully pushes his[or]clumsily rams his[or]jams his[or]forces his[at random] giant [manly-penis] into your [asshole], and starts fucking you furiously!  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]";
-	now M is penetrating asshole;
-	ruin asshole.
+To say AssholePenetrationFlav of (M - a minotaur):
+	say "The [M] [one of]forcefully pushes his[or]clumsily rams his[or]jams his[or]forces his[at random] giant [manly-penis] into your [asshole], and starts fucking you furiously!  [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
+
+To get vaginal penetration image for (M - a minotaur):
+	if image cutscenes is 1 and mythical creature fetish is 1, display figure of minotaur cutscene 4.
+
+To say VaginaPenetrationFlav of (M - a minotaur):
+	say "The [M] stares at your body and sniffs your [vagina], assessing you. He seems to make up his mind that you are a suitable breeding partner and poises his huge penis with the tip at the entrance to your [vagina]. [one of]With very little effort, he forces his[or]With no effort at all, he shoves his[or]Without the slightest hint of difficulty he rams his[or]Without pausing, he forces his[at random] giant [manly-penis] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, he has started cumming inside you![otherwise if the class of the player is cowgirl]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by his huge bull [manly-penis].[otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][end if]".
 
 Section 2 - Damage
 
@@ -405,15 +406,17 @@ To compute damage of (M - a minotaur):
 	otherwise:
 		compute death of M;
 
-To say DamageReaction (N - a number) of (M - a minotaur):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The [M] effortlessly shrugs off your hit!";
-	otherwise if N > (the maxhealth of M / 4) * 3:
-		say "[big he of M] snarls through clenched teeth!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "[big he of M] roars savagely, taking the hit!";
-	otherwise:
-		say "[big he of M] seems to be breathing more heavily, as if [he of M]'s getting tired!".
+To say DamageReactHealthy of (M - a minotaur):
+	say "The [M] effortlessly shrugs off your hit!".
+
+To say DamageReactDamaged of (M - a minotaur):
+	say "[big he of M] snarls through clenched teeth!".
+
+To say DamageReactTired of (M - a minotaur):
+	say "[big he of M] roars savagely, taking the hit!".
+
+To say DamageReactWeak of (M - a minotaur):
+	say "[big he of M] seems to be breathing more heavily, as if [he of M]'s getting tired!".
 
 To compute unique death of (M - a minotaur):
 	let H be a random off-stage minotaur horn;

@@ -1,6 +1,6 @@
 Born To Lose Tattoo by Tattoos begins here.
 
-born to lose tattoo is a kind of crotch tattoo. Figure of born to lose tattoo is the file "tattoo14.png". There is 1 born to lose tattoo.
+born to lose tattoo is a kind of crotch tattoo. Figure of born to lose tattoo is the file "Items/Tats/tattoo14.png". There is 1 born to lose tattoo.
 Definition: a born to lose tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if the noun is pack of playing cards, decide yes;

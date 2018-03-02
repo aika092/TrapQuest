@@ -1,6 +1,6 @@
 Matron by Monster begins here.
 
-A matron is a kind of monster. A matron is usually intelligent. The difficulty of a matron is usually 9. There is 1 matron. The leftover-type of a matron is usually 116. A matron can be motherly or unmotherly. [The times-changed of a matron is usually 0. A matron has a number called potty-training. The potty-training of a matron is usually 0. A matron has a number called potty-training-asked. The potty-training-asked of a Matron is usually 0.][For planned future content]
+A matron is a kind of monster. A matron is usually intelligent. The difficulty of a matron is usually 9. There is 1 matron. The leftover-type of a matron is usually 116. A matron can be motherly or unmotherly. A matron has a number called feedingtone. The feedingtone of a matron is usually 0. [The times-changed of a matron is usually 0. A matron has a number called potty-training. The potty-training of a matron is usually 0. A matron has a number called potty-training-asked. The potty-training-asked of a Matron is usually 0.][For planned future content]
 
 Definition: A matron (called M) is hotel dwelling:
 	if diaper lover <= 0, decide no;
@@ -8,7 +8,7 @@ Definition: A matron (called M) is hotel dwelling:
 
 The printed name of a matron is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]strict matron[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "strict" as a matron. The description of a matron is usually "[MatronDesc]". The text-shortcut of matron is "mat".
 
-Figure of matron is the file "matron1.png".
+Figure of matron is the file "NPCs/Hotel/matron1.png".
 
 To say MatronDesc:
 	if images visible is 1, display the figure of matron;
@@ -171,7 +171,7 @@ To compute diaper check of (M - a matron):
 			FavourUp M by 1;
 			if M is unfriendly:
 				say "The [M] considers her options, her jutting breasts inches away from your face. Her [if lactation fetish is 1]full, engorged [end if]nipples [if the oral sex addiction of the player > 7]protruding from her shiny latex dress causes your mind to think of the feeling of your tongue running along a sweet delicious cock. [otherwise]protrude from her shiny latex dress. [end if][line break][speech style of M]'Hmm, you don't need a change yet, but I think a naughty minx like you needs [if diaper quest is 0]feeding again, to make sure you're getting your nutrients[otherwise]some sort of discipline to keep you in line[end if]. [if the player is upright]Get on your knees, baby!'[otherwise]Come here...'[end if][roman type][line break]";
-				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This woman is trying to force me to use my diaper![otherwise][line break][second custom style]*Giggle* If she feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let her do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope she feeds me with a delicious cream pie from her pussy.[otherwise if the delicateness of the player > 10]At least if she feeds me I won't be hungry. [otherwise if the sex addiction of the player < 10 and the player is male]Maybe she'll have me eat some food off her hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope she feeds me by letting me suckle her giant breasts.[otherwise]I'm letting her treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
+				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This woman is trying to force me to use my diaper![otherwise][line break][second custom style]*Giggle* If she feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let her do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope she feeds me with a delicious cream pie from her pussy.[otherwise if the delicateness of the player > 10]At least if she feeds me I won't be hungry. [otherwise if the sex addiction of the player < 4 and the player is male]Maybe she'll have me eat some food off her hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope she feeds me by letting me suckle her giant breasts.[otherwise if the sex addiction of the player < 11]This is just outrageous, I'm being treated like some kind of powerless baby![otherwise]I'm letting her treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
 	otherwise if M is unfriendly or M is motherly:
  		say "[speech style of M]'[one of]Didn't I tell you it's important for you to stay in diapers?  [if the player is prone]Stay on your knees[otherwise]Get on your knees[end if] and I'll fix that for you...'[or]How many times am I going to catch you out of nappies?  You're getting put in my naughty book for sure this time.'[or]Come on you naughty girl!  Time for your diaper.'[stopping][roman type][line break]";
  		now the variety of M is 99;
@@ -222,8 +222,6 @@ Definition: a matron (called M) is willing to masturbate:
 Definition: a matron (called M) is willing to deliver enemas:
 	decide yes.
 
-Definition: a matron (called M) is willing to forcefeed:
-	decide yes.
 
 This is the matron waits for players to finish peeing rule:
 	if continued urination is 1, rule succeeds.
@@ -383,13 +381,25 @@ This is the matron confiscates grown up items rule:
 The matron confiscates grown up items rule is listed last in the matron nanny rules.
 
 This is the matron feeds the player rule:
-	if there is a worn diaper and (face is not actually occupied or there is a worn ballgag):
-		compute forcefeed of current-monster;
-		rule succeeds.
+	[if there is a worn diaper and (face is not actually occupied or there is a worn ballgag):] [is this clause still necessary?]
+	now the feedingtone of current-monster is 0; [just in case]
+	compute forcefeed of current-monster;
+	now the feedingtone of current-monster is 0; [just in case]
+	rule succeeds.
 The matron feeds the player rule is listed last in the matron nanny rules.
 
+
 To say ForcefeedDeclarationFlav of (M - a matron):
-	say "[if the health of M < the maxhealth of M][line break][speech style of M]'Let me show you what happens to naughty babies who fight back!'[roman type][line break]".
+	if the feedingtone of M is 2: [If this is a friendly requested feeding]
+		say "[speech style of M]'Is baby ready for [if the size of penis > 4]his[otherwise]her[end if] dindins? '[roman type][line break]";
+	otherwise if the feedingtone of M is 1: [If this is an unfriendly requested feeding]
+		say "[speech style of M]'Of course, honey! I have just the thing for naughty little minxs like you...'[roman type][line break]";
+	otherwise if the feedingtone of M is 3: [if this is an unfriendly requested drink]
+		say "Is my naughty baby thirsty? I have a sippy cup with your name on it...";
+	otherwise if the health of M < the maxhealth of M: [is there a way to have this happen ONLY if the feeding is a direct result of combat?]
+		say "[line break][speech style of M]'Let me show you what happens to naughty babies who fight back!'[roman type][line break]";
+	otherwise: [if this is a forced feeding]
+		say "[line break][speech style of M]'I think it's a certain naughty baby's dinner time...'[roman type][line break]".
 
 To say ForcefeedStartFlav of (M - a matron):
 	say "The [M], with seemingly little physical exertion, picks you up and plops you down on the giant high chair. She pulls the tray into place in front of you and locks it shut, preventing you from escaping. [if the number of worn bibs is 0]She gets a large pink bib with an image of a cartoon animal on it, and fastens it around your neck. [end if][line break][speech style of M]'Time for your dindins!'[roman type][line break]".
@@ -464,15 +474,17 @@ To compute damage of (M - a matron):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a matron):
-	if N > (the maxhealth of M / 4) * 3:
-		say "[one of]'[line break][speech style of M]You definitely deserve a punishment, you naughty harlot, you... Grr!'[roman type][line break][or]She sneers aggressively![stopping]";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "She snarls angrily, taking the hit!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "She seems to get angrier with every hit!";
-	otherwise:
-		say "She keeps her eyes trained on you, never wavering as she fights to maintain her balance.".
+To say DamageReactHealthy of (M - a matron):
+	say "[one of]'[line break][speech style of M]You definitely deserve a punishment, you naughty harlot, you... Grr!'[roman type][line break][or]She sneers aggressively![stopping]".
+
+To say DamageReactDamaged of (M - a matron):
+	say "She snarls angrily, taking the hit!".
+
+To say DamageReactTired of (M - a matron):
+	say "She seems to get angrier with every hit!".
+
+To say DamageReactWeak of (M - a matron):
+	say "She keeps her eyes trained on you, never wavering as she fights to maintain her balance.".
 
 To compute unique death of (M - a matron):
 	say "The [noun] screams as she falls to the floor. ";
@@ -552,7 +564,7 @@ To say MatronGreeting:
 		say "[second custom style]'[one of]Nanna. Are there any men around here? I[']m so hungry.'[or]Nanna! [if the player is horny]I'm soooo horny. Set me up on a play-date or something.[otherwise]Are you taking care of any cute guys? I[']d love a play-date.[end if]'[or]Hey Nanna. You look SO good! I want to be hot like you when I grow up!'[at random][roman type][line break]". [The player is more like an "adult baby" here.]
 
 To say DominantResponse of (M - a matron):
-	if the sex addiction of the player < 10:
+	if the delicateness of the player < 10:
 		say "[speech style of M]'[one of]Don[']t you dare speak to me that way!'[or]Don[']t speak to me in that tone of voice!'[or]Grown ups know best, sweetie.'[or]You[']re lucky. I usually clean potty mouths with a bar of soap.'[or]Don[']t be a potty mouth, sweetie.'[or]Hmmph. That kind of language is exactly why I don[']t like letting you leave the nursery.'[or]It sounds like you need a spanking.'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Hey there snookums. Are you hungry?'[or]Hi there! You sound hungry!'[or]Hi there cutie patootie!'[at random][roman type][line break]".
@@ -607,29 +619,97 @@ To compute teaching of (M - a matron):
 
 Section 3 Drink Requesting
 
+To say DrinkRequest of (M - a matron):
+	say variable custom style;
+	if the delicateness of the player < 3 or (the cringe appearance of the player < 8 and M is not motherly):
+		say "Please, do you have anything I could drink?'";
+	otherwise if the delicateness of the player < 6:
+		say "Excuse me, I am really thirsty, do you have anything I could drink?'";
+	otherwise if the delicateness of the player < 9:
+		say "Please, do you have anything I could drink from?'";
+	otherwise if the delicateness of the player < 12:
+		say "I'd do anything for something to drink.'";
+	otherwise if the delicateness of the player < 15:
+		say "I just really need something to wet my throat...'";
+	otherwise:
+		say "I just need something to suck on... I'll swallow anything you give me...'"; [modify to be unique variants]
+	say "[roman type][line break]".
+
 To compute unfriendly drink of (M - a matron):
-	if M is unfriendly:
+	if the player is immobile:
+		say "[speech style of M]'Ask me when you're not busy!'[roman type][line break]"; 
+	otherwise:
+		now the stance of the player is 1;
+		now the feedingtone of M is 3;
+		compute forcefeed of M;
+		now the feedingtone of M is 0.
+	[if M is unfriendly: [isn't this redundant? Should unfriendly drink just be the unfriendly feeding, or just a worse drink?]
 		say "[speech style of M]'You can have a drink from your sippy cup if and when I decide you deserve it.'[roman type][line break]";
 		now the boredom of M is 0;
 	otherwise:
-		say "[speech style of M]'Not now, darling.'[roman type][line break]".
+		say "[speech style of M]'Not now, darling.'[roman type][line break]".]
 
 To compute friendly drink of (M - a matron):
-	say "[speech style of M]'Sorry, I only have a special sippy cup designed for big babies. You'll have to find someone else to help you.'[roman type][line break]".
+	if the cringe appearance of the player < 8 and M is not motherly: [motherly should be replaced by diaper-disciplining if that is what will be used for matron]
+		say "[speech style of M]'Sorry, I only have a special sippy cup designed for big babies. You'll have to find someone else to help you.'[roman type][line break]";
+	otherwise: [Should these scenes use forcefeed or have their own dialog?]
+		say "[speech style of M]'Aww, is Mommy's little [if the size of penis > 4]boy[otherwise]girl[end if] thirsty? Let me get you your sippy cup...'[roman type][line break]The [M] grabs a pink toddler sippy cup and hands it to you.";
+		if the delicateness of the player < 7 and the thirst of the player < 4:
+			say "However, you are not nearly thirsty enough to drink out of something like this. Instead, you throw the cup on the ground, where it tumbles harmlessly.";
+			say "[speech style of M]'What do you think you're doing?! Naughty babies like you need to be punished...'[roman type]";
+			FavourDown M by 5;
+			now the variety of M is 99;
+			anger M;
+		otherwise:
+			if the delicateness of the player < 10:
+				say "As difficult as it is for you to accept it, it's better than nothing. You tentatively start sipping from the cup.";
+			otherwise if the delicateness of the player < 14:
+				say "You nervously take the cup and start drinking from it.";
+			otherwise:
+				say "You eagerly accept the cup from your Mommy, and start gulping from the plastic lid. You are so eager to drink it that the milk begins to stream out of your mouth!";
+			say "The cup held a sweet, warm, milk. You finish the cup and give it back to the [M], and are left with a strange aftertaste...";
+			StomachUp 2;
+			increase bladder by 1.
+		
 
 Section 4 Food Requesting
 
+To say FoodRequest of (M - a matron):
+	say "[variable custom style]";
+	if the delicateness of the player < 3 or (the cringe appearance of the player < 8 and M is not motherly):
+		say "'Please, do you have anything I could eat?'";
+	otherwise if the delicateness of the player < 6:
+		say "'Excuse me, I am really hungry, do you have anything I could eat?'";
+	otherwise if the delicateness of the player < 9:
+		say "'Please, do you have anything I could eat from?'";
+	otherwise if the delicateness of the player < 12:
+		say "'I'd do anything for something to eat.'";
+	otherwise if the delicateness of the player < 15:
+		say "'I just really need something to fill my stomach...'";
+	otherwise:
+		say "'I just need something to put in my mouth... I'll swallow anything you give me...'"; [modify to be unique variants]
+	say "[roman type][line break]".	
+
+
 To compute friendly food of (M - a matron):
-	compute unfriendly food of M.
+	if the player is immobile:
+		say "[speech style of M]'Ask me when you're not busy!'[roman type][line break]";
+	otherwise if the cringe appearance of the player < 8 and M is not motherly: [motherly should be replaced by diaper-disciplining if that is what will be used for matron]
+		say "[speech style of M]'Sorry sweetie, I only have food for big babies that need to be fed in a high chairs! Someone else around here probably has some age appropriate food for you.'[roman type][line break]";
+	otherwise:
+		now the stance of the player is 1;
+		now the feedingtone of M is 2;
+		compute forcefeed of M;
+		now the feedingtone of M is 0.
 
 To compute unfriendly food of (M - a matron):
 	if the player is immobile:
-		say "[speech style of M]'Ask me when you're not busy!'[roman type][line break]";
+		say "[speech style of M]'Ask me when you're not busy!'[roman type][line break]"; 
 	otherwise:
-		say "[speech style of M]'Of course, honey!  Take a seat...'[roman type][line break]";
 		now the stance of the player is 1;
-		compute forcefeed of M.
-
+		now the feedingtone of M is 1;
+		compute forcefeed of M;
+		now the feedingtone of M is 0.
 
 
 Matron ends here.

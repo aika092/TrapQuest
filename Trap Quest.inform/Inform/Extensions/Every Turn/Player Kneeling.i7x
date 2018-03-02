@@ -72,7 +72,7 @@ To compute pink smoke:
 				say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
 				try masturbating;
 			otherwise:
-				say "You are so incredibly horny but can't masturbate [if there is worn bound-behind wrist bond]with your hands bound behind your back[otherwise]right now[end if]!  [if the sex addiction of the player < 10]Inappropriate[otherwise]Graphic[end if] sexual fantasies fill your head.";
+				say "You are so incredibly horny but can't masturbate [if there is worn bound-behind wrist bond]with your hands bound behind your back[otherwise]right now[end if]! [if the player is not a pervert]Inappropriate[otherwise]Graphic[end if] sexual fantasies fill your head.";
 				SexAddictUp 1;
 				decrease the arousal of the player by 4000;
 				update arousal;

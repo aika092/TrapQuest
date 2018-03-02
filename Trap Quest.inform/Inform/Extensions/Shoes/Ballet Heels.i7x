@@ -9,7 +9,7 @@ There is 1 ballet heels.
 To decide which figure-name is the clothing-image of (H - a ballet heels):
 	decide on the figure of ballet heels.
 
-Figure of ballet heels is the file "balletheels1.png".
+Figure of ballet heels is the file "Items\Clothes\Lower\Feet\Ballet\balletheels1.png".
 
 To decide which number is the unique outrage of (C - a ballet heels):
 	decide on 4.
@@ -29,6 +29,9 @@ To say ClothingDesc of (C - a ballet heels):
 
 To uniquely set up (C - a ballet heels):
 	do nothing.
+
+Definition: a ballet heels (called C) is ballet related:
+	decide yes.
 
 Ballet Heels ends here.
 

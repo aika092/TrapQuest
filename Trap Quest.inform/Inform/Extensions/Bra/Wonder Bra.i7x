@@ -1,6 +1,6 @@
 Wonder Bra by Bra begins here.
 
-A wonder bra is a kind of bra. Understand "wonderbra" as wonder bra. Figure of wonder bra is the file "wonderbra1.png".
+A wonder bra is a kind of bra. Understand "wonderbra" as wonder bra. Figure of wonder bra is the file "Items/Clothes/Upper/Bras/wonderbra1.png".
 
 There is 1 wonder bra. The text-shortcut of wonder bra is "wbr".
 

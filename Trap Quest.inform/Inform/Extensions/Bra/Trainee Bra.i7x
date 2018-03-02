@@ -2,7 +2,7 @@ Trainee Bra by Bra begins here.
 
 A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of trainee bra is the file "traineebra1.png".
+Figure of trainee bra is the file "Items/Clothes/Upper/Bras/traineebra1.png".
 
 To decide which figure-name is clothing-image of (C - a trainee bra):
 	decide on figure of trainee bra.
@@ -30,7 +30,7 @@ Report wearing trainee bra:
 	say "The magnetic latches snap closed as you finish putting it on.";
 	now the noun is magnetized.
 
-To compute periodic effect of (C - a trainee bra):
+To compute periodic effect of (C - a trainee bra):[remember that training-progress will sometimes be negative]
 	BraGrow C;
 	if a random number between 1 and 50 is 1:
 		if artificial enhancements fetish is 1:
@@ -41,10 +41,11 @@ To compute periodic effect of (C - a trainee bra):
 				destroy C;
 				ProgressUp senior robobellboy;
 			otherwise:
-				say "Your [printed name of C] [if the training-progress of C is 0]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.[line break]";
+				say "Your [printed name of C] [if the training-progress of C < 0]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.[line break]";
 				TitFuckAddictUp 1;
 				if lactation fetish is 1, increase the lactation rate of the player by 1;
 				arouse 100 + the sensitivity of breasts * 10;
+				increase the training-progress of C by 1;
 		otherwise:
 			say "Your [printed name of C] [if the training-progress of C < 0]tightens and emits a short tone[otherwise]tightens and emits [the training-progress of C + 1] short tones[end if] as warm fluid begins seeping through the flexible lining of the bra, soaking into your skin. You hear another tone after a while, and look down [if the training-progress of C is 3]to see the bra dropping off your chest completely![otherwise]to see the silhouette of the bra hasn't changed! Your breasts must be bigger![end if][line break]";
 			increase the training-progress of C by 1;

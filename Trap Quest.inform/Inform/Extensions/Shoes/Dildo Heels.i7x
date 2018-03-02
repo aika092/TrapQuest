@@ -13,7 +13,7 @@ To decide which figure-name is the clothing-image of (H - a dildo heels):
 	
 There is 1 dildo heels.
 
-Figure of dildo heels is the file "dildoheel1.png".
+Figure of dildo heels is the file "Items\Clothes\Lower\Feet\Heels\Special\dildoheel1.png".
 
 To decide which number is the unique outrage of (C - a dildo heels):
 	decide on 4.

@@ -35,7 +35,7 @@ A black fishnet top is a kind of fishnet top. There is 1 black fishnet top.
 
 The soak-limit of a black fishnet top is usually 6.
 
-Figure of black fishnet top is the file "fishnettop1.png".
+Figure of black fishnet top is the file "Items\Clothes\Upper\Exposing\Fishnet\fishnettop1.png".
 
 The printed name of black fishnet top is usually "[TQlink of item described][clothing-title-before]black fishnet top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black fishnet top is "bft".
 
@@ -49,7 +49,7 @@ Part 2 - Pink Fishnet Top
 
 A pink fishnet top is a kind of fishnet top. There is 1 pink fishnet top. A pink fishnet top is only arm covering.
 
-Figure of pink fishnet top is the file "fishnettop2.png".
+Figure of pink fishnet top is the file "Items\Clothes\Upper\Exposing\Fishnet\fishnettop2.png".
 
 The printed name of pink fishnet top is usually "[TQlink of item described][clothing-title-before]pink fishnet top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink fishnet top is "pft".
 

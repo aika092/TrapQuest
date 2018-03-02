@@ -11,7 +11,7 @@ To decide which figure-name is clothing-image of (C - a plain diaper):
 To say ClothingDesc of (C - a plain diaper):
 	say "An extremely large white adult diaper, with huge amounts of extra puffy padding. It doesn't have any kind of humiliating pattern on it. [if the weight of C < 5]You're confident this is probably the most absorbent diaper you will ever encounter, and if it was fully saturated, it would probably be nearly as big as a beach ball!  [end if].".
 
-Figure of plain diaper is the file "diaper1.png".
+Figure of plain diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper1.png".
 
 The DQFigure of plain diaper is usually DQMoosive. 
 
@@ -39,7 +39,7 @@ To decide which figure-name is clothing-image of (C - a teddy bear diaper):
 To say ClothingDesc of (C - teddy bear diaper):
 	say "A white adult diaper, with a cute teddy bear pattern. It has a normal amount of padding. ";
 	
-Figure of teddy bear diaper is the file "diaper2.png".
+Figure of teddy bear diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper2.png".
 
 The soak-limit of teddy bear diaper is 36.
 
@@ -60,7 +60,7 @@ To decide which figure-name is clothing-image of (C - a rocking horse diaper):
 To say ClothingDesc of (C - a rocking horse diaper):
 	say "A pink cloth adult diaper, with a large rocking horse pattern. It has huge amounts of extra puffy padding which would force you to walk with an exaggerated waddle when filled with [urine]. ".
 
-Figure of rocking horse diaper is the file "diaper3.png".
+Figure of rocking horse diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper3.png".
 The DQFigure of rocking horse diaper is usually DQCloth. 
 
 The soak-limit of rocking horse diaper is 45.
@@ -85,7 +85,7 @@ To say ClothingDesc of (C - a kitty cat diaper):
 To say selfexamineuniquetitle of (K - a kitty cat diaper):
 	say "pink kitty cat diaper".
 
-Figure of kitty cat diaper is the file "diaper4.png".
+Figure of kitty cat diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper4.png".
 The DQFigure of kitty cat diaper is usually DQCloth. 
 
 To decide which number is the original price of (C - a kitty cat diaper):
@@ -104,7 +104,7 @@ To say ClothingDesc of (C - an elephant diaper):
 To say selfexamineuniquetitle of (K - an elephant diaper):
 	say "huge white elephant pattern diaper".
 
-Figure of elephant diaper is the file "diaper5.png".
+Figure of elephant diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper5.png".
 The DQFigure of elephant diaper is usually DQLarge. 
 
 The soak-limit of elephant diaper is 48.
@@ -125,7 +125,7 @@ To say ClothingDesc of (C - a baby pattern diaper):
 To say selfexamineuniquetitle of (K - a baby pattern diaper):
 	say "white baby pattern diaper".
 
-Figure of baby pattern diaper is the file "diaper6.png".
+Figure of baby pattern diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper6.png".
 
 To compute unique periodic effect of (D - a baby pattern diaper): [If it is cursed it can very quickly makes the player fully incontinent.]
 	if D is cursed and the player is bursting and a random number between 1 and 3 is 1:
@@ -146,7 +146,7 @@ To say ClothingDesc of (C - a sissy-diaper):
 To say selfexamineuniquetitle of (K - a sissy-diaper):
 	say "pink silky sissy diaper".
 
-Figure of sissy-diaper is the file "diaper7.png".
+Figure of sissy-diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper7.png".
 The DQFigure of sissy-diaper is usually DQSmall. 
 
 The soak-limit of sissy-diaper is 33.
@@ -185,7 +185,7 @@ To say ClothingDesc of (C - a waddle diaper):
 To say selfexamineuniquetitle of (K - a waddle diaper):
 	say "humongous pink waddle diaper".
 
-Figure of waddle diaper is the file "diaper8.png".
+Figure of waddle diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper8.png".
 The DQFigure of waddle diaper is usually DQWaddle. 
 
 To decide what number is the price of (C -  waddle diaper):
@@ -266,7 +266,7 @@ To say ClothingDesc of (C - a dragonfly pattern diaper):
 To say selfexamineuniquetitle of (K - a dragonfly pattern diaper):
 	say "cloth dragonfly pattern diaper".
 
-Figure of dragonfly pattern diaper is the file "diaper9.png".
+Figure of dragonfly pattern diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper9.png".
 The DQFigure of dragonfly pattern diaper is usually DQPullups. 
 
 Chapter 10 Velcro Diaper
@@ -282,7 +282,7 @@ To say ClothingDesc of (C - a velcro diaper):
 To say selfexamineuniquetitle of (K - a velcro diaper):
 	say "velcro cloth diaper".
 
-Figure of velcro diaper is the file "diaper10.png".
+Figure of velcro diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper10.png".
 The DQFigure of velcro diaper is usually DQVelcro. 
 
 Chapter 11 Yellow Kiddie Pattern Diaper
@@ -298,7 +298,7 @@ To say ClothingDesc of (C - a yellow kiddie pattern diaper):
 To say selfexamineuniquetitle of (K - a yellow kiddie pattern diaper):
 	say "huge yellow diaper".
 
-Figure of yellow kiddie pattern diaper is the file "diaper11.png".
+Figure of yellow kiddie pattern diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper11.png".
 The DQFigure of yellow kiddie pattern diaper is usually DQHuge.
 
 The soak-limit of yellow kiddie pattern diaper is 45.
@@ -319,7 +319,7 @@ To say ClothingDesc of (C - a thick pink diaper):
 To say selfexamineuniquetitle of (K - a thick pink diaper):
 	say "thick pink disposable diaper".
 
-Figure of thick pink diaper is the file "diaper12.png".
+Figure of thick pink diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper12.png".
 The DQFigure of thick pink diaper is usually DQHuge. 
 
 The soak-limit of thick pink diaper is 40.
@@ -344,8 +344,8 @@ To say ClothingDesc of (C - a training pants):
 To say selfexamineuniquetitle of (K - a training pants):
 	say "pair of [if the urine-soak of K > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if]".
 
-Figure of training pants is the file "diaper13.png".
-Figure of sexy training pants is the file "trainingpants2.png".
+Figure of training pants is the file "Items\Clothes\Lower\Underwear\Diapers\TrainingPants\trainingpants1.png".
+Figure of sexy training pants is the file "Items\Clothes\Lower\Underwear\Diapers\TrainingPants\trainingpants2.png".
 The DQFigure of training pants is usually DQBlackPants. 
 
 The soak-limit of a training pants is usually 18.
@@ -391,7 +391,7 @@ To say ClothingDesc of (C - an blue bear diaper):
 To say selfexamineuniquetitle of (K - an blue bear diaper):
 	say "huge blue bear pattern diaper".
 
-Figure of blue bear diaper is the file "diaper14.png".
+Figure of blue bear diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper14.png".
 The DQFigure of blue bear diaper is usually DQLarge. 
 
 The soak-limit of blue bear diaper is 48.
@@ -409,7 +409,7 @@ To decide which figure-name is clothing-image of (C - a bunny diaper):
 To say ClothingDesc of (C - bunny diaper):
 	say "A white adult diaper, with a cute bunny, teddy and butterfly pattern. It has a normal-ish amount of padding. ";
 	
-Figure of bunny diaper is the file "diaper15.png".
+Figure of bunny diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper15.png".
 
 The soak-limit of bunny diaper is 28. The DQFigure of bunny diaper is DQSmall.
 
@@ -430,7 +430,7 @@ To decide which figure-name is clothing-image of (C - a blue-and-pink diaper):
 To say ClothingDesc of (C - blue-and-pink diaper):
 	say "A white adult diaper, with a cute blue and pink pattern of stars, rocking horses, pacifiers and other baby paraphernalia. It has a normal amount of padding. ";
 	
-Figure of blue-and-pink diaper is the file "diaper16.png".
+Figure of blue-and-pink diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper16.png".
 
 The soak-limit of blue-and-pink diaper is 36.
 
@@ -450,7 +450,7 @@ To say ClothingDesc of (C - an pink bear diaper):
 To say selfexamineuniquetitle of (K - an pink bear diaper):
 	say "huge pink bear pattern diaper".
 
-Figure of pink bear diaper is the file "diaper17.png".
+Figure of pink bear diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper17.png".
 The DQFigure of pink bear diaper is usually DQLarge. 
 
 The soak-limit of pink bear diaper is 48.
@@ -468,7 +468,7 @@ To decide which figure-name is clothing-image of (C - a butterfly pattern diaper
 To say ClothingDesc of (C - butterfly pattern diaper):
 	say "A white and purple adult diaper, with a cute pattern of butterflies and swirls. It has a large amount of padding. ";
 	
-Figure of butterfly pattern diaper is the file "diaper18.png".
+Figure of butterfly pattern diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper18.png".
 
 The soak-limit of butterfly pattern diaper is 42.
 
@@ -488,7 +488,7 @@ To say ClothingDesc of (C - a hippo diaper):
 To say selfexamineuniquetitle of (K - a hippo diaper):
 	say "hippo pull-up diaper".
 
-Figure of hippo diaper is the file "diaper19.png".
+Figure of hippo diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper19.png".
 
 The DQFigure of hippo diaper is usually DQPullups. 
 
@@ -505,7 +505,7 @@ To say ClothingDesc of (C - a princess castle diaper):
 To say selfexamineuniquetitle of (K - a princess castle diaper):
 	say "princess castle pull-up diaper".
 
-Figure of princess castle diaper is the file "diaper20.png".
+Figure of princess castle diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper20.png".
 The DQFigure of princess castle diaper is usually DQPullups. 
 
 Chapter 21 Smiley Balloon Diaper
@@ -521,7 +521,7 @@ To say ClothingDesc of (C - an smiley balloon diaper):
 To say selfexamineuniquetitle of (K - an smiley balloon diaper):
 	say "huge smiley balloon pattern diaper".
 
-Figure of smiley balloon diaper is the file "diaper21.png".
+Figure of smiley balloon diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper21.png".
 The DQFigure of smiley balloon diaper is usually DQLarge. 
 
 The soak-limit of smiley balloon diaper is 48.
@@ -542,7 +542,7 @@ To say ClothingDesc of (C - a star pattern diaper):
 To say selfexamineuniquetitle of (K - a star pattern diaper):
 	say "cloth star pattern diaper".
 
-Figure of star pattern diaper is the file "diaper22.png".
+Figure of star pattern diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper22.png".
 The DQFigure of star pattern diaper is usually DQPullups. 
 
 Chapter 23 Demon Diaper

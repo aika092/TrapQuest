@@ -50,7 +50,7 @@ To compute rest ending of (F - HotelBedCreamy):
 To say HotelBedDesc:
 	if images visible is 1, display figure of hotel bed;
 	say "A standard hotel bed.".
-Figure of hotel bed is the file "hotelbed1.png".]
+Figure of hotel bed is the file "Env/Hotel/hotelbed1.png".]
 
 HotelBedCollar is a kind of hotel bed. There are 2 HotelBedCollar.
 
@@ -100,7 +100,7 @@ To compute PatronSpawning of (F - HotelBedPatrons):
 		say "[R] men walk through into the room.";
 	now neighbour finder is the location of the player;
 	say "[one of]At the same time, [if the number of N-viable directions is 1]a solid metal shutter slams across the doorway of the room. It has[otherwise]solid metal shutters slam across the doorways of the room. They each have[end if] 'MODESTY BARRIER' printed on in big letters, and means that you can't escape.[or]Once again the [if the number of N-viable directions is 1]'Modesty Barrier' comes[otherwise]'Modesty Barriers' come[end if] down, preventing your escape.[stopping]";
-	if R > 2, say "[if the sex addiction of the player < 9][line break][variable custom style]Oh crap, that's way too many...[otherwise if the sex addiction of the player < 15][variable custom style]I hope I can please them all...[otherwise][line break][second custom style]Ooh yay!  The more the merrier![end if][roman type][line break]";
+	if R > 2, say "[if the player is a nympho][second custom style]Ooh yay!  The more the merrier![otherwise if the sex addiction of the player < 4 + (R * 2)][variable custom style]Oh crap, that's way too many...[otherwise][variable custom style]I hope I can please them all...[end if][roman type][line break]";
 	now a random modesty shutter is in the location of the player.
 
 

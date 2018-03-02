@@ -11,7 +11,7 @@ To decide which number is the initial outrage of (C - a slave collar):
 To set up influence of (C - a slave collar):
 	set up submissiveness-based influence of C.
 
-Figure of slave collar is the file "collar1.png".
+Figure of slave collar is the file "Items\Accessories\Neck\collar1.png".
 
 To decide which figure-name is clothing-image of (C - a slave collar):
 	decide on figure of slave collar.

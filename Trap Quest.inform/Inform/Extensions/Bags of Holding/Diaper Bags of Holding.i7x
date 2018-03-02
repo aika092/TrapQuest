@@ -16,7 +16,7 @@ Part 1 - Silvery Pink Diaper Bag of Holding
 
 A silvery pink diaper bag of holding is a kind of diaper bag of holding. A silvery pink diaper bag of holding is usually plastic. There is 1 silvery pink diaper bag of holding. The printed name of silvery pink diaper bag of holding is usually "[TQlink of item described][clothing-title-before]silvery pink diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of silvery pink diaper bag of holding is the file "bag21.png".
+Figure of silvery pink diaper bag of holding is the file "Items\Accessories\Bags\bag21.png".
 
 To decide which figure-name is clothing-image of (C - a silvery pink diaper bag of holding):
 	decide on figure of silvery pink diaper bag of holding.
@@ -28,7 +28,7 @@ Part 2 - Teddybear Diaper Bag of Holding
 
 A teddybear diaper bag of holding is a kind of diaper bag of holding. A teddybear diaper bag of holding is usually cotton. There is 1 teddybear diaper bag of holding. The printed name of teddybear diaper bag of holding is usually "[TQlink of item described][clothing-title-before]teddybear diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of teddybear diaper bag of holding is the file "bag24.png".
+Figure of teddybear diaper bag of holding is the file "Items\Accessories\Bags\bag24.png".
 
 To decide which figure-name is clothing-image of (C - a teddybear diaper bag of holding):
 	decide on figure of teddybear diaper bag of holding.

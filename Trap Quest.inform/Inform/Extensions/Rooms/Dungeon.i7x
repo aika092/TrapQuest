@@ -204,7 +204,7 @@ Dungeon28 is a mandatory important labyrinth room. The printed name of Dungeon28
 REQUIRES COMMENTING
 
 *!]
-Dungeon29 is a sandy labyrinth room. The printed name of Dungeon29 is "Tool Room". "This room is filled with [if the bimbo of the player > 10]grown-up[otherwise]heavy[end if] tools. Better leave them alone.". The shape of Dungeon29 is L1/0-0-1-0-0-0.
+Dungeon29 is a sandy labyrinth room. The printed name of Dungeon29 is "Tool Room". "This room is filled with [if the bimbo of the player > 10 and diaper quest is 1]grown-up[otherwise if the bimbo of the player > 10]manly[otherwise]heavy[end if] tools.  Better leave them alone.". The shape of Dungeon29 is L1/0-0-1-0-0-0.
 
 [!<dungeon30:LabyrinthRoom>*
 

@@ -1,6 +1,6 @@
 Gown of Purity by Skirts begins here.
 
-A gown of purity is a kind of skirt. Figure of Gown of Purity is the file "gown1.png". A gown of purity is usually see-through. A gown of purity is usually purity. There is 1 unique silk cursed gown of purity. The printed name of gown of purity is usually "[TQlink of item described][clothing-title-before]gown of purity[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of gown of purity is "gop".
+A gown of purity is a kind of skirt. Figure of Gown of Purity is the file "Items\Clothes\Lower\Skirts\gown1.png". A gown of purity is usually see-through. A gown of purity is usually purity. There is 1 unique silk cursed gown of purity. The printed name of gown of purity is usually "[TQlink of item described][clothing-title-before]gown of purity[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of gown of purity is "gop".
 
 To decide which figure-name is clothing-image of (C - a gown of purity):
 	decide on figure of gown of purity.

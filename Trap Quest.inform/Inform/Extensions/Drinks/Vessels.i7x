@@ -244,15 +244,15 @@ To say vessel-desc:
 	if item described is a teapot, say "[if diaper quest is 0]A weird small teapot with a long stem shaped like a limp penis.[otherwise]A small teapot shaped like a cute kitty cat's head.[end if]";
 	say "[if the doses of item described > 0]It currently contains [PotionType of item described].[otherwise]It is currently empty.[end if]".
 
-Figure of squirt dildo is the file "squirtdildo1.png".
-Figure of baby's bottle is the file "babybottle1.png".
-Figure of cocktail glass is the file "cocktailglass1.png".
-Figure of champagne glass is the file "champagneglass1.png".
-Figure of golden chalice is the file "goldenchalice1.png".
-Figure of boob mug is the file "mug1.png".
-Figure of cow mug is the file "mug2.png".
-Figure of penis teapot is the file "teapot1.png".
-Figure of kitty teapot is the file "teapot2.png".
+Figure of squirt dildo is the file "Items\Accessories\Vessels\squirtdildo1.png".
+Figure of baby's bottle is the file "Items\Accessories\Vessels\babybottle1.png".
+Figure of cocktail glass is the file "Items\Accessories\Vessels\cocktailglass1.png".
+Figure of champagne glass is the file "Items\Accessories\Vessels\champagneglass1.png".
+Figure of golden chalice is the file "Items\Accessories\Vessels\goldenchalice1.png".
+Figure of boob mug is the file "Items\Accessories\Vessels\mug1.png".
+Figure of cow mug is the file "Items\Accessories\Vessels\mug2.png".
+Figure of penis teapot is the file "Items\Accessories\Vessels\teapot1.png".
+Figure of kitty teapot is the file "Items\Accessories\Vessels\teapot2.png".
 
 
 

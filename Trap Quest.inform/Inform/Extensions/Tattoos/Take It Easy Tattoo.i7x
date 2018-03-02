@@ -1,6 +1,6 @@
 Take It Easy Tattoo by Tattoos begins here.
 
-take it easy tattoo is a kind of body tattoo. Figure of take it easy tattoo is the file "tattoo57.png". There is 1 take it easy tattoo.
+take it easy tattoo is a kind of body tattoo. Figure of take it easy tattoo is the file "Items/Tats/tattoo57.png". There is 1 take it easy tattoo.
 Definition: a take it easy tattoo (called T) is eligible:
 	if the noun is pink pill or the noun is bandage or the noun is apple or the noun is pyjama bottoms or the noun is romper or the noun is nightie or the noun is pure totem or the noun is baby booties, decide yes;
 	decide no.

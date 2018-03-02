@@ -1,6 +1,6 @@
 White Trash Tattoo by Tattoos begins here.
 
-white trash tattoo is a kind of leg tattoo. Figure of white trash tattoo is the file "tattoo28.png". There is 1 white trash tattoo.
+white trash tattoo is a kind of leg tattoo. Figure of white trash tattoo is the file "Items/Tats/tattoo28.png". There is 1 white trash tattoo.
 Definition: a white trash tattoo (called A) is drawable:
 	if diaper quest is 1, decide no;
 	if interracial fetish is 0, decide no;

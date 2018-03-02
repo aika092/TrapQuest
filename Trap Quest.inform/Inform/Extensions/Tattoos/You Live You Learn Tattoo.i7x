@@ -1,6 +1,6 @@
 You Live You Learn Tattoo by Tattoos begins here.
 
-you live you learn tattoo is a kind of chest tattoo. Figure of you live you learn tattoo is the file "tattoo21.png". There is 1 you live you learn tattoo.
+you live you learn tattoo is a kind of chest tattoo. Figure of you live you learn tattoo is the file "Items/Tats/tattoo21.png". There is 1 you live you learn tattoo.
 Definition: a you live you learn tattoo (called T) is eligible:
 	if the noun is clothing:
 		if the intelligence-influence of the noun > 0, decide yes;

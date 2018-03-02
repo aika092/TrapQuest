@@ -1,6 +1,6 @@
 Maternity Bra by Bra begins here.
 
-A maternity bra is a kind of bra. Figure of maternity bra is the file "maternitybra1.png". The soak-limit of a maternity bra is usually 15.
+A maternity bra is a kind of bra. Figure of maternity bra is the file "Items/Clothes/Upper/Bras/maternitybra1.png". The soak-limit of a maternity bra is usually 15.
 
 There is 1 maternity bra. The text-shortcut of maternity bra is "mbr".
 

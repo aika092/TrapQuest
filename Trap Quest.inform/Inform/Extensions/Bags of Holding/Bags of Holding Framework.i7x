@@ -117,7 +117,10 @@ To say BagHoldingWarning:
 			say "[bold type]Your [ShortDesc of C] growls hungrily[roman type] and consumes your [consumed-thing][one of] to fuel its magic. Just like that, it's gone[or][or][or][cycling]!";
 			destroy consumed-thing;
 			now the hunger of C is 0.]
-	
+
+To compute failed transform of (C - a bag of holding):
+	increase the transform-attempts of C by 1;
+	say "The [C] seems to [if the transform-attempts of C > 1]once again [end if]resist being transformed!".
 
 Bags of Holding Framework ends here.
 

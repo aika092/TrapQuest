@@ -145,7 +145,7 @@ To compute BadWishing:
 			say "Nothing happens. How lame.";
 	otherwise if the player is female:
 		say "You feel yourself being spread wide as [semen] suddenly starts dribbling out of your [vagina]";
-		2Wombfill;
+		increase the semen volume of vagina by 2;
 		leak vagina semen a random number between 4 and 6;
 	otherwise:
 		say "Nothing happens. How lame.".

@@ -1,6 +1,6 @@
 Buttslut Tattoo by Tattoos begins here.
 
-buttslut tattoo is a kind of ass tattoo. Figure of buttslut tattoo is the file "tattoo1.png". There is 1 buttslut tattoo. The printed name of buttslut tattoo is "butt slut [if there is a worn butt-slut tattoo]ass [end if]tattoo". Understand "butt slut", "ass tattoo" as buttslut tattoo.
+buttslut tattoo is a kind of ass tattoo. Figure of buttslut tattoo is the file "Items/Tats/tattoo1.png". There is 1 buttslut tattoo. The printed name of buttslut tattoo is "butt slut [if there is a worn butt-slut tattoo]ass [end if]tattoo". Understand "butt slut", "ass tattoo" as buttslut tattoo.
 Definition: a buttslut tattoo (called B) is eligible:	
 	if the noun is chastity cage or the noun is pussy protection clothing or the noun is plug or the noun is flower hairclip or the noun is dildo heels or the noun is buttockless pants or the noun is sword of purity or the noun is book of anal, decide yes;
 	decide no.

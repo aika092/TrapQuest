@@ -65,7 +65,7 @@ When play begins:
 			Prologue;
 		otherwise:
 			clear the screen;
-		unless quick start is 1 or tutorial is 1, now choice in row 31 of Table of Player Options is cheater-validation;
+		unless quick start is 2 or tutorial is 1, now choice in row 31 of Table of Player Options is cheater-validation;
 		write File of Player Options from the Table of Player Options;
 		[if side images > 0, initialise display stuff.]
 	otherwise:
@@ -118,6 +118,7 @@ To fill in table blanks:
 	unless there is a choice in row 33 of the Table of Settings, now choice in row 33 of Table of Settings is 1; 
 	unless there is a choice in row 34 of the Table of Settings, now choice in row 34 of Table of Settings is 1;
 	unless there is a choice in row 35 of the Table of Settings, now choice in row 35 of Table of Settings is 1;
+	unless there is a choice in row 36 of the Table of Settings, now choice in row 36 of Table of Settings is 0;
 	[Allows old save files to load properly]
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
 	unless there is a choice in row 33 of the Table of Player Options, now choice in row 33 of Table of Player Options is 0;
@@ -215,7 +216,6 @@ To retrieve name:
 To configure gender:
 	if the player is male:
 		now the soreness of vagina is 0;
-		now the semen volume of vagina is 0;
 		now the size of penis is 7;
 		now the real size of penis is 7;
 	otherwise:

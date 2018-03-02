@@ -1,6 +1,6 @@
 DrinkMe Tattoo by Tattoos begins here.
 
-drinkme tattoo is a kind of body tattoo. Figure of drinkme tattoo is the file "tattoo65.png". There is 1 drinkme tattoo.
+drinkme tattoo is a kind of body tattoo. Figure of drinkme tattoo is the file "Items/Tats/tattoo65.png". There is 1 drinkme tattoo.
 Definition: a drinkme tattoo (called T) is eligible:
 	if the noun is bottle or the noun is squeezy bottle or the noun is alchemy product, decide yes;
 	decide no.

@@ -11,7 +11,7 @@ To decide which number is the initial outrage of (C - a steel collar):
 To set up influence of (C - a steel collar):
 	now C is delicateness-influencing.
 
-Figure of steel collar is the file "steelcollar1.png".
+Figure of steel collar is the file "Items\Accessories\Neck\steelcollar1.png".
 
 To decide which figure-name is clothing-image of (C - a steel collar):
 	decide on figure of steel collar.

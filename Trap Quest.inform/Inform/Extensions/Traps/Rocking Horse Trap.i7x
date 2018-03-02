@@ -30,7 +30,7 @@ Definition: yourself is rocker stuck:
 	if there is a rocking horse grabbing the player, decide yes;
 	decide no.
 
-Figure of rocking horse is the file "rockinghorse1.png".
+Figure of rocking horse is the file "Env/Forest/rockinghorse1.png".
 
 To say ShortDesc of (T - a rocking horse):
 	say "An adult sized [T] is fixed on the ground. ".

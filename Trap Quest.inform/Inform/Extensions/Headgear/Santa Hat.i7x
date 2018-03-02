@@ -24,7 +24,7 @@ Definition: a christmas headgear (called H) is untransformable:
 	decide no.
 
 
-A santa hat is a kind of christmas headgear. A santa hat is usually wool. Figure of santa hat is the file "santahat1.png". There is 1 santa hat.
+A santa hat is a kind of christmas headgear. A santa hat is usually wool. Figure of santa hat is the file "Items\Accessories\Head\santahat1.png". There is 1 santa hat.
 
 The printed name of santa hat is usually "[TQlink of item described][clothing-title-before]santa hat[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of santa hat is "sah".
 
@@ -50,7 +50,7 @@ To decide which object is the unique-upgrade-target of (H - a santa hat):
 
 
 
-A red bow headband is a kind of christmas headgear. The printed name of red bow headband is usually "[TQlink of item described][clothing-title-before]red bow headband[clothing-title-after][TQxlink of item described][verb-desc of item described]". Figure of red bow headband is the file "bowheadband1.png". There is 1 red bow headband.
+A red bow headband is a kind of christmas headgear. The printed name of red bow headband is usually "[TQlink of item described][clothing-title-before]red bow headband[clothing-title-after][TQxlink of item described][verb-desc of item described]". Figure of red bow headband is the file "Items\Accessories\Head\bowheadband1.png". There is 1 red bow headband.
 
 Definition: a red bow headband (called C) is bow themed:
 	decide yes.
@@ -91,7 +91,7 @@ To decide which number is the initial cringe of (H - a red bow headband):
 
 
 
-A star headband is a kind of christmas headgear. The printed name of star headband is usually "[TQlink of item described][clothing-title-before]star headband[clothing-title-after][TQxlink of item described][verb-desc of item described]". Figure of star headband is the file "starheadband1.png". There is 1 star headband.
+A star headband is a kind of christmas headgear. The printed name of star headband is usually "[TQlink of item described][clothing-title-before]star headband[clothing-title-after][TQxlink of item described][verb-desc of item described]". Figure of star headband is the file "Items\Accessories\Head\starheadband1.png". There is 1 star headband.
 
 To decide which figure-name is the clothing-image of (C - a star headband):
 	decide on figure of star headband.

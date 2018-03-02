@@ -1,6 +1,6 @@
 Daddy's Little Girl Tattoo by Tattoos begins here.
 
-daddy's little girl tattoo is a kind of crotch tattoo. Figure of daddy's little girl tattoo is the file "tattoo44.png". There is 1 daddy's little girl tattoo.
+daddy's little girl tattoo is a kind of crotch tattoo. Figure of daddy's little girl tattoo is the file "Items/Tats/tattoo44.png". There is 1 daddy's little girl tattoo.
 Definition: a daddy's little girl tattoo (called T) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper lover <= 0, decide no;

@@ -5,7 +5,7 @@ Trainee Boots by Shoes begins here.
 A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[TQlink of item described][item style]trainee thigh highs[clothing-title-after][TQxlink of item described][verb-desc of item described]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized.  A trainee thigh highs has a number called train-charge.
 
 
-Figure of trainee thigh highs is the file "thighhighs1.png".
+Figure of trainee thigh highs is the file "Items\Clothes\Lower\Feet\Boots\thighhighs1.png".
 
 To decide which figure-name is the clothing-image of (C - a trainee thigh highs):
 	decide on figure of trainee thigh highs.
@@ -40,7 +40,7 @@ To compute periodic effect of (C - a trainee thigh highs):
 			now the training-progress of C is 0;
 			destroy C;
 			ProgressUp senior robobellboy;
-		otherwise:
+		otherwise:[training-progress will sometimes be negative, so the if-statement is important here]
 			say "Your [printed name of C] [if the training-progress of C < 1]emit a synchronised tone[otherwise]emit [the training-progress of C + 1] synchronised tones[end if] and [if the player is prone]your ankles are forced forward[otherwise]you lurch forward[end if] as the metal stiletto shoots upward.[line break]";
 			increase the heel-height of C by 1;
 			increase the training-progress of C by 1.

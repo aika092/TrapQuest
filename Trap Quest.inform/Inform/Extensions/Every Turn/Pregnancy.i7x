@@ -137,7 +137,7 @@ REQUIRES COMMENTING
 +!]
 To say PregGrowth:
 	let P be a random thing inseminating vagina;
-	say "You feel your belly swell even further as [if the father is not the throne][PregGrowth of the father][otherwise if the number of things inseminating vagina is 1][PregGrowth of P][otherwise]whatever is[end if] inside your womb [one of]starts to grow![or]continues to grow![if the semen volume of vagina is 38 and the number of things inseminating vagina > 1][line break][variable custom style]This definitely isn't a human baby I'm carrying, is it...[roman type][line break][end if][stopping]".
+	say "You feel your belly swell even further as [if the father is not the throne][PregGrowth of the father][otherwise if the number of things inseminating vagina is 1][PregGrowth of P][otherwise]whatever is[end if] inside your womb [one of]starts to grow![or]continues to grow![if the womb volume of vagina is 38 and the number of things inseminating vagina > 1][line break][variable custom style]This definitely isn't a human baby I'm carrying, is it...[roman type][line break][end if][stopping]".
 
 [!<SayPregGrowthOfThing>+
 
@@ -195,11 +195,11 @@ To compute pregnancy:
 	increase maximum-pregnancy-delay-tracker by 1;
 	if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay:
 		now R is 1;
-	if R < 2 and (the semen volume of vagina is 30 or the semen volume of vagina >= 50):
+	if R < 2 and (the womb volume of vagina is 30 or the womb volume of vagina >= 50):
 		increase slow-pregnancy-tracker by 1;
 		now maximum-pregnancy-delay-tracker is 0;
 		if debugmode > 0, say "Birth check: Slow preg tracker is at  [slow-pregnancy-tracker] and needs to be higher than [2 + (2 * slow pregnancy rate)].";
-	if the semen volume of vagina < 30:
+	if the womb volume of vagina < 30:
 		let B be the largeness of belly;
 		now R is a random number between 1 and (6 - (the pregnancy rate of the player * 2));
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay:
@@ -210,11 +210,11 @@ To compute pregnancy:
 		let M be a random off-stage maternity bra;
 		if R < 2 and the pregnancy of the player is 1 and (slow pregnancy is 0 or slow-pregnancy-tracker > 3): [If the pregnancy of the player is 2, this means pregnancy is paused]
 			now slow-pregnancy-tracker is 0;
-			increase the semen volume of vagina by 1;  [1 or more, +1]
-			if R < 1, increase the semen volume of vagina by 1; [0 +2]
-			if R < 0, increase the semen volume of vagina by 1; [-1 +3]
-			if R < -1, increase the semen volume of vagina by 1; [-2 or less, +4]
-			if the semen volume of vagina > 30, now the semen volume of vagina is 30; [Important so that this doesn't get confused with a super-pregnancy]
+			increase the womb volume of vagina by 1;  [1 or more, +1]
+			if R < 1, increase the womb volume of vagina by 1; [0 +2]
+			if R < 0, increase the womb volume of vagina by 1; [-1 +3]
+			if R < -1, increase the womb volume of vagina by 1; [-2 or less, +4]
+			if the womb volume of vagina > 30, now the womb volume of vagina is 30; [Important so that this doesn't get confused with a super-pregnancy]
 			if the largeness of belly > B, say PregGrowth;
 		otherwise if M is actually summonable and a random number between 1 and 55 - (20 * unlucky) is 1 and the largeness of breasts < 17:
 			summon M cursed;
@@ -229,18 +229,20 @@ To compute pregnancy:
 				otherwise if extreme proportions fetish is 1 and the thickness of hips < 20:
 					say "You feel your hips widen in order to prepare for your inevitable labour!";
 				HipUp 1;
-		if the semen volume of vagina is 30:[Here we choose the father and check for and trigger super-pregnancies]
+		if the womb volume of vagina is 30:[Here we choose the father and check for and trigger super-pregnancies]
 			if the father is the throne: 
 				now the father is the new father;
 				if the father is the throne: [This should never happen. But just in case...]
 					say "[PregnancyBugFlav]";
 					now the pregnancy of the player is 0;
-					now the semen volume of vagina is 1;
-					WombSquirt 1; [This removes all alleged family monsters]
-					CumThighsUp 30;
+					let temp be the womb volume of vagina + the semen volume of vagina;
+					now the semen volume of vagina is 0;
+					now the womb volume of vagina is 0;
+					cancel father material of vagina; [This has to be done when both vagina and womb is empty]
+					now the semen volume of vagina is temp;
 			if the number of things inseminating vagina > 1 and image cutscenes is 1, display figure of full term pregnancy;
 			check for extreme pregnancies;
-	otherwise if the semen volume of vagina > 30 and the semen volume of vagina < 50 and the pregnancy of the player is 1:
+	otherwise if the womb volume of vagina > 30 and the womb volume of vagina < 50 and the pregnancy of the player is 1:
 		let B be the largeness of belly;
 		now R is a random number between 1 and (5 - (the pregnancy rate of the player * 2));
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay:
@@ -250,12 +252,12 @@ To compute pregnancy:
 		if R < 2, increase slow-pregnancy-tracker by 1;
 		if R < 2 and (slow pregnancy is 0 or slow-pregnancy-tracker > 3):
 			now slow-pregnancy-tracker is 0;
-			increase the semen volume of vagina by 1;
-			if R < 1, increase the semen volume of vagina by 1;
-			if R < 0, increase the semen volume of vagina by 1;
-			if R < -1, increase the semen volume of vagina by 1;
+			increase the womb volume of vagina by 1;
+			if R < 1, increase the womb volume of vagina by 1;
+			if R < 0, increase the womb volume of vagina by 1;
+			if R < -1, increase the womb volume of vagina by 1;
 			if the largeness of belly > B, say PregGrowth;
-			if the semen volume of vagina is 50 and the number of things inseminating vagina > 1 and image cutscenes is 1, display figure of giant pregnancy;
+			if the womb volume of vagina is 50 and the number of things inseminating vagina > 1 and image cutscenes is 1, display figure of giant pregnancy;
 	otherwise if R < 2 and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0 and slow-pregnancy-tracker > 1 + (2 * slow pregnancy rate):
 		let C be the children of the player;
 		now summoning is 1;
@@ -284,7 +286,7 @@ To compute pregnancy:
 			now slow-pregnancy-tracker is 0;
 			now the father is the throne;
 			if the player is upright, try kneeling;
-			now the semen volume of vagina is 0;
+			now the womb volume of vagina is 0;
 			now the pregnancy of the player is 0;	
 			cancel father material of vagina;
 		otherwise:
@@ -374,6 +376,7 @@ To Delay Labour:
 		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the bimbo of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][line break][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the bimbo of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][line break][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
 	otherwise:
 		say "A sudden contraction sends pain shooting from your womb to the rest of your body. [if the player is upright]The contraction is so intense that you are forced to your knees. [end if][if the father is alive monster and the father is not regional alive monster]You are filled with a desire to find [the father].[otherwise]You should probably make sure the exit to your vagina is clear![end if]";
+		if image cutscenes is 1, display figure of full term contraction;
 		if the player is upright, try kneeling;
 	now successful-pregnancy is 0.
 
@@ -393,11 +396,11 @@ REQUIRES COMMENTING
 To check for extreme pregnancies:
 	if extreme proportions fetish is 1 and inhuman pregnancy > 0 and the father is not the throne: [Super-pregnancies are go]
 		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound:
-			now the semen volume of vagina is 31;
+			now the womb volume of vagina is 31;
 		if the father is creampie pole trap and inhuman pregnancy is 2 and a random number between 1 and 5 >= 2:
-			now the semen volume of vagina is 31;
+			now the womb volume of vagina is 31;
 		if the father is djinn:
-			now the semen volume of vagina is 31.
+			now the womb volume of vagina is 31.
 
 
 

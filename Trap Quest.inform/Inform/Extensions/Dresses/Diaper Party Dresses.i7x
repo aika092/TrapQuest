@@ -28,7 +28,7 @@ Part 1 - Floral Pink Sissy Dress
 
 A floral pink sissy dress is a kind of baby-dress. There is 1 floral pink sissy dress. The printed name of floral pink sissy dress is "[TQlink of item described][clothing-title-before]floral pink sissy dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of floral pink sissy dress is "fpsd".
 
-Figure of floral pink sissy dress is the file "babydress1.png".
+Figure of floral pink sissy dress is the file "Items\Clothes\Upper\Dresses\Baby\babydress1.png".
 
 To decide which figure-name is clothing-image of (C - a floral pink sissy dress):
 	decide on figure of floral pink sissy dress.

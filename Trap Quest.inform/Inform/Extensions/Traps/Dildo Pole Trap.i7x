@@ -233,11 +233,11 @@ To Jump From The Dildo:
 				if Y is penetrating vagina:
 					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 					ruin vagina;
-					if a random trap penetrating a fuckhole is creampie pole trap, WombFill 2;
+					if Y is creampie pole trap, PussyFill 2;
 				otherwise:
 					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 					ruin asshole;
-					if a random trap penetrating a fuckhole is creampie pole trap, assFill 2;
+					if Y is creampie pole trap, assFill 2;
 			otherwise:
 				say "You manage to jump whilst in your heels and the dildo exits you, and luckily you jump high enough that it misses your crotch on the way back down, and bends at an awkward angle.";
 				now busy is 0;
@@ -363,7 +363,7 @@ To Jump From The Drill:
 		let R be the soreness of a random fuckhole penetrated by X + (a random number from 2 to 5) - (the relevant sex addiction of X / 4);
 		if the latex-transformation of the player > 3 or the player is not able to get horny or the player is not a bit horny, now R is 99999;
 		if R >= the arousal of the player / 750:
-			say "You jump and the drilling dildo exits you, and thankfully this makes it stop spinning and pushing upwards. You are able to successfully escape from the [if the sex addiction of the player < 15]torture[otherwise][line break][second custom style]fun ride[roman type][line break][end if]!";
+			say "You jump and the drilling dildo exits you, and thankfully this makes it stop spinning and pushing upwards. You are able to successfully escape from the [if the player is not a nympho]torture[otherwise][line break][second custom style]fun ride[roman type][line break][end if]!";
 			now busy is 0;
 			now X is not penetrating asshole;
 			now X is not penetrating vagina;
@@ -428,7 +428,7 @@ To trigger (Y - a creampie pole trap):
 					display figure of creampie pole cutscene 2;
 				otherwise:
 					display figure of creampie pole cutscene 3;
-			WombFill 6;
+			PussyFill 6;
 		if Y is penetrating asshole:
 			if image cutscenes is 1:
 				let R be a random number between 1 and 2;

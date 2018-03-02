@@ -82,11 +82,10 @@ Definition: an asshole tattoo (called A) is drawable:
 	decide yes.
 
 To decide which object is the concealer of (T - an asshole tattoo):
-	decide on a random worn potentially asshole covering clothing.
+	decide on the concealer of asshole.
 
 To decide which number is the initial outrage of (T - an asshole tattoo):
 	decide on 16.
-
 
 To decide which number is the anal sensitivity influence of (C - an asshole tattoo):
 	decide on 1.

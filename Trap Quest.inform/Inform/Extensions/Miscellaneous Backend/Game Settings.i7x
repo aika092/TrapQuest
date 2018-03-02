@@ -70,6 +70,7 @@ choice
 1 [Transformation Cutscenes]
 1 [Loading Screens]
 1 [Trap Warning]
+0 [Save Game Limit]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -344,6 +345,14 @@ Do you want to be warned before entering a room with an active trap that may aff
 +!]	
 To decide which number is trap warning:
 	decide on choice in row 35 of the Table of Settings.
+
+[!<DecideWhichNumberIsSaveGameLimit>+
+
+Is there a limited number of times that the game can be saved?
+
++!]	
+To decide which number is save game limit:
+	decide on choice in row 36 of the Table of Settings.
 
 
 [!<tableOfGameSettings:Table>*
@@ -829,6 +838,15 @@ This is the trap warning toggle rule:
 	if choice in row 35 of Table of Settings is 0, increase choice in row 35 of Table of Settings by 1;
 	otherwise now choice in row 35 of Table of Settings is 0.
 
+[!<TheSaveGameToggleRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the save game toggle rule:
+	if choice in row 36 of Table of Settings is 0, increase choice in row 36 of Table of Settings by 1;
+	otherwise now choice in row 36 of Table of Settings is 0.
+
 
 Part - Save Game Counter
 
@@ -837,11 +855,11 @@ To decide which number is max game save counter: decide on 6 - game difficulty.
 To decide which number is remaining game saves: decide on (max game save counter * (4 - the extra lives of the player)) - save game counter.
 The check game save counter rules are a rulebook. The check game save counter rules have default success.
 Check game save counter: 
-	if (remaining game saves <= 0) and (the player is not in Hotel36):
-		say "You dont have a permission to save game. Nintendodolls, with love.";
+	if (remaining game saves <= 0) and (the player is not in Hotel36) and save game limit is 1:
+		say "You dont have a permission to save the game. Nintendodolls, with love.";
 		rule fails.
 The increase game save counter rules are a rulebook. The increase game save counter rules have default success.
-Increase game save counter: if (the player is not in Capsule) and (the player is not in Hotel36), increase save game counter by 1; say "You now have [remaining game saves] saves remaining.".
+Increase game save counter: if (the player is not in Capsule) and (the player is not in Hotel36) and debugmode is 0, increase save game counter by 1; say "You now have [remaining game saves] saves remaining.".
 
 Include (-
 [ SAVE_THE_GAME_R res fref;
