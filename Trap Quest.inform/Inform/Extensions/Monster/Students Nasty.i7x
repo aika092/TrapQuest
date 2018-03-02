@@ -8,7 +8,7 @@ student-abbi is a tq-only nasty student.
 
 The text-shortcut of student-abbi is "stab".
 
-Figure of abbi is the file "student11.png".
+Figure of abbi is the file "NPCs/School/Student/student11.png".
 
 To decide which figure-name is the monster-image of (M - student-abbi):
 	decide on figure of abbi.
@@ -48,7 +48,7 @@ student-lucy is a nasty student.
 
 The text-shortcut of student-lucy is "stlu".
 
-Figure of lucy is the file "student12.png".
+Figure of lucy is the file "NPCs/School/Student/student12.png".
 
 To decide which figure-name is the monster-image of (M - student-lucy):
 	decide on figure of lucy.
@@ -91,11 +91,11 @@ student-katya is a tq-only nasty student.
 
 The text-shortcut of student-katya is "stka".
 
-Figure of katherine is the file "student13a.png".
-Figure of kat is the file "student13b.png".
-Figure of katya is the file "student13c.png".
-Figure of kitty is the file "student13d.png".
-Figure of cuntwarmer is the file "student13e.png".
+Figure of katherine is the file "NPCs/School/Student/student13a.png".
+Figure of kat is the file "NPCs/School/Student/student13b.png".
+Figure of katya is the file "NPCs/School/Student/student13c.png".
+Figure of kitty is the file "NPCs/School/Student/student13d.png".
+Figure of cuntwarmer is the file "NPCs/School/Student/student13e.png".
 
 To decide which figure-name is the monster-image of (M - student-katya):
 	if the current-rank of M is 1:
@@ -167,7 +167,7 @@ student-darla is a tq-only nasty student.
 
 The text-shortcut of student-darla is "stda".
 
-Figure of darla is the file "student14.png".
+Figure of darla is the file "NPCs/School/Student/student14.png".
 
 To decide which figure-name is the monster-image of (M - student-darla):
 	decide on figure of darla.
@@ -198,8 +198,8 @@ student-belinda is in School14. [TODO: remove]
 
 The text-shortcut of student-belinda is "stbe".
 
-Figure of belinda is the file "student15a.png".
-Figure of belle is the file "student15b.png".
+Figure of belinda is the file "NPCs/School/Student/student15a.png".
+Figure of belle is the file "NPCs/School/Student/student15b.png".
 
 To decide which figure-name is the monster-image of (M - student-belinda):
 	if the current-rank of M is 1, decide on figure of belinda;
@@ -227,7 +227,7 @@ student-tanya is a dq-only nasty student.
 
 The text-shortcut of student-tanya is "stta".
 
-Figure of tanya is the file "student16.png".
+Figure of tanya is the file "NPCs/School/Student/student16.png".
 
 To decide which figure-name is the monster-image of (M - student-tanya):
 	decide on figure of tanya.

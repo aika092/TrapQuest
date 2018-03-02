@@ -4,7 +4,7 @@ Demon Lord's Codpiece by Knickers begins here.
 
 A demon codpiece is a kind of knickers. There is 1 demon codpiece. A demon codpiece is unique. The armour of an demon codpiece is 10. The printed name of demon codpiece is usually "[TQlink of item described][clothing-title-before]demon lord's codpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of demon codpiece is usually 6. The text-shortcut of demon codpiece is "dlj". An demon codpiece is usually crotch-assless. An demon codpiece is usually leather. An demon codpiece is usually totally-exclusive. Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. A demon codpiece has a number called charge. The charge of a demon codpiece is usually 1.
 
-Figure of demon codpiece is the file "codpiece1.png".
+Figure of demon codpiece is the file "Items\Clothes\Lower\Underwear\Special\codpiece1.png".
 
 To decide which figure-name is clothing-image of (C - a demon codpiece):
 	decide on figure of demon codpiece.
@@ -26,7 +26,7 @@ To uniquely set up (C - a demon codpiece):
 	now the magic-type of C is dominance.
 
 Definition: a demon codpiece (called C) is product:
-	if the player is not a may 2017 top donator, decide no;
+	if the player is not the donator, decide no;
 	decide yes.
 
 To decide which number is the alchemy key of (C - a demon codpiece):

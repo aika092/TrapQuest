@@ -173,6 +173,14 @@ To decide which number is the cringe of (F - face):
 	if the make-up of face >= 3, decide on 7;
 	decide on 0.
 
+[!<DecideWhichNumberIsTheDesireOfFace>+
+
+How much does the player want this body part to be used?
+
++!]
+To decide which number is the desire of (B - face):
+	decide on the oral sex addiction of the player.
+
 
 
 Part 2 - Description

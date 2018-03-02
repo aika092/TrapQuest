@@ -24,8 +24,8 @@ Definition: a stockings (called C) is end of transformation chain:
 	if C is latex, decide yes;
 	decide no.
 
-Figure of rubber stockings A is the file "rubberstockings1.png".
-Figure of rubber stockings B is the file "rubberstockings2.png".
+Figure of rubber stockings A is the file "Items\Clothes\Lower\Legs\rubberstockings1.png".
+Figure of rubber stockings B is the file "Items\Clothes\Lower\Legs\rubberstockings2.png".
 
 To decide which number is the initial outrage of (C - a latex stockings):
 	decide on 8.

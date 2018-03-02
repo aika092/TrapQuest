@@ -12,9 +12,9 @@ To decide which figure-name is the clothing-image of (H - a platform heels):
 	if H is latex, decide on the figure of latex platform heels;
 	decide on the figure of pvc platform heels.
 
-Figure of pvc platform heels is the file "platform1a.png".
-Figure of leather platform heels is the file "platform2.png".
-Figure of latex platform heels is the file "platform3.png".
+Figure of pvc platform heels is the file "Items\Clothes\Lower\Feet\Heels\Platform\platform1a.png".
+Figure of leather platform heels is the file "Items\Clothes\Lower\Feet\Heels\Platform\platform2.png".
+Figure of latex platform heels is the file "Items\Clothes\Lower\Feet\Heels\Platform\platform3.png".
 
 To decide which number is the hindrance-modifier of (C - a platform heels):
 	decide on -2.

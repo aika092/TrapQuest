@@ -20,8 +20,8 @@ To say ShortDesc of (C - a lacy stockings):
 To say ShortDesc of (C - a suspender stockings):
 	say "pair of nylon stockings".
 
-Figure of nylon stockings A is the file "nylonstockings1.png".
-Figure of nylon stockings B is the file "nylonstockings2.png".
+Figure of nylon stockings A is the file "Items\Clothes\Lower\Legs\nylonstockings1.png".
+Figure of nylon stockings B is the file "Items\Clothes\Lower\Legs\nylonstockings2.png".
 
 To decide which number is the initial outrage of (C - a nylon stockings):
 	decide on 1.

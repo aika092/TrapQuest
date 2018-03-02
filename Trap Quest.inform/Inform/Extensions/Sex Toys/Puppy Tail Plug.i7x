@@ -1,6 +1,6 @@
 Puppy Tail Plug by Sex Toys begins here.
 
-A puppy tail plug is a kind of tail plug. A puppy tail plug is unique. The printed name of puppy tail plug is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] puppy tail butt plug[clothing-title-after][TQxlink of item described][verb-desc of item described]". There is 1 puppy tail plug. Figure of puppy tail plug is the file "puppyplug1.png". The text-shortcut of a puppy tail plug is "ptp".
+A puppy tail plug is a kind of tail plug. A puppy tail plug is unique. The printed name of puppy tail plug is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] puppy tail butt plug[clothing-title-after][TQxlink of item described][verb-desc of item described]". There is 1 puppy tail plug. Figure of puppy tail plug is the file "Items\Accessories\Toys\puppyplug1.png". The text-shortcut of a puppy tail plug is "ptp".
 
 To decide which number is the intelligence-influence of (C - a puppy tail plug):
 	decide on 5.

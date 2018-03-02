@@ -11,14 +11,22 @@ REQUIRES COMMENTING
 @!]
 asshole is a fuckhole. asshole is everywhere. The description of asshole is "[TotalDesc of asshole][AssholeModesty]". Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
 
+
+To decide which object is the concealer of (A - asshole):
+	let C be a random worn potentially at least partially asshole covering clothing;
+	if C is clothing, decide on C;
+	if the player is upright and the total volume of hips > 2, decide on hips;
+	if the total volume of hips > 13, decide on hips;
+	decide on nothing.
+
 [!<AssholeIsExposed>+
 
 REQUIRES COMMENTING
 
 +!]
 Definition: asshole (called A) is exposed:
-	if there is a worn potentially at least partially asshole covering clothing, decide no;
-	decide yes.
+	if the concealer of A is nothing, decide yes;
+	decide no.
 
 [!<AssholeIsAtLeastPartiallyExposed>+
 
@@ -110,6 +118,14 @@ This is the monster doesn't do anal rule:
 	if auto is 1 and the number of willing to do anal monsters in the location of the player is 0, rule fails.
 The monster doesn't do anal rule is listed in the asshole presentable rules.
 
+[!<DecideWhichNumberIsTheDesireOfAsshole>+
+
+How much does the player want this body part to be used?
+
++!]
+To decide which number is the desire of (B - asshole):
+	decide on the anal sex addiction of the player.
+
 Part 2 - Description
 
 [!<SayShortDescOfAsshole>+
@@ -198,14 +214,14 @@ To say AssholeModesty:
 		otherwise if asshole is not actually occupied:
 			say "It is completely unprotected. ";
 	otherwise:
-		let W be a random worn potentially at least partially asshole covering clothing;
-		say "It can't be seen thanks to the [if asshole is exposed][random thing penetrating asshole][otherwise][selfexamineuniquetitle of W][end if]. ";
+		say "It can't be seen thanks to the [ShortDesc of the concealer of asshole]. ";
 	if asshole is actually occupied:
 		let P be a random thing penetrating asshole;
 		if P is monster:
 			say "It is currently being pounded by [printed name of P].";
 		otherwise:
 			say "It is currently the [if the girth of P > the openness of asshole]snug [end if]home of a [printed name of P].".
+
 [!<SayRealGapeDesc>+
 
 REQUIRES COMMENTING
@@ -231,7 +247,6 @@ To gape (A - asshole) times (X - a number):
 			now the analvirgin of the player is 0;
 			say "[bold type]You just lost your anal virginity![roman type][line break]";
 			if the player is male and the virgin of the player is 1:
-				[####Selkie: This used to be < 40000, not 32000, but this new version looks correct to me.]
 				if the sex addiction of the player < 10 and the bimbo of the player < 10 and the humiliation of the player < HUMILIATION-SHAMELESS, now virgincursed is 2;
 				otherwise now virgincursed is 3;
 		if the openness of asshole < 10:
@@ -251,7 +266,7 @@ To gape (A - asshole) times (X - a number):
 		let T be a random asshole-cupid tattoo;
 		if T is drawable:
 			summon T;
-			say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]!  [line break][variable custom style][if the sex addiction of the player < 9]No no, I'm not a butt slut![otherwise if the sex addiction of the player < 14]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
+			say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]!  [line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
 	if virgincursed > 1:
 		if virgincursed is 2:
 			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else!  [roman type]The realisation crushes your spirit and your body shivers involuntarily. The game seems to detect these feelings and you feel ";

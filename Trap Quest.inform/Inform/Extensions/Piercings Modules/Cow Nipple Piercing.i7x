@@ -1,6 +1,6 @@
 Cow Nipple Piercing by Piercings Modules begins here.
 
-A cow piercing is a kind of nipple piercing. The printed name of cow piercing is "[TQlink of item described][item style]nipple rings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cow piercing is "nr". There is 1 cow piercing. Understand "nipple", "rings" as cow piercing. A cow piercing is usually titfuck-addiction-influencing. Figure of cow piercing is the file "nipplepiercing1.png".
+A cow piercing is a kind of nipple piercing. The printed name of cow piercing is "[TQlink of item described][item style]nipple rings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cow piercing is "nr". There is 1 cow piercing. Understand "nipple", "rings" as cow piercing. A cow piercing is usually titfuck-addiction-influencing. Figure of cow piercing is the file "Items\Accessories\Piercings\nipplepiercing1.png".
 
 To decide which figure-name is the clothing-image of (C - a cow piercing):
 	decide on figure of cow piercing.

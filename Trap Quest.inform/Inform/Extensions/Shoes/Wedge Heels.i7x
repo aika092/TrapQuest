@@ -9,9 +9,9 @@ To decide which figure-name is the clothing-image of (H - a wedge heels):
 	if H is pvc, decide on the figure of pvc wedge heels;
 	if H is satin, decide on the figure of satin wedge heels.
 
-Figure of pvc wedge heels is the file "wedge1.png".
-Figure of leather wedge heels is the file "wedge2.png".
-Figure of satin wedge heels is the file "wedge3.png".
+Figure of pvc wedge heels is the file "Items\Clothes\Lower\Feet\Heels\Wedge\wedge1.png".
+Figure of leather wedge heels is the file "Items\Clothes\Lower\Feet\Heels\Wedge\wedge2.png".
+Figure of satin wedge heels is the file "Items\Clothes\Lower\Feet\Heels\Wedge\wedge3.png".
 
 To decide which number is the unique outrage of (C - a wedge heels):
 	decide on -1.

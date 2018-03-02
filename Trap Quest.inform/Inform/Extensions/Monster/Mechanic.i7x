@@ -19,7 +19,7 @@ The printed name of mechanic is usually "[if item described is in the location o
 Understand "hotel" as mechanic. There is 1 mechanic.
 
 The description of mechanic is usually "[MechanicDesc]". The text-shortcut of mechanic is "mc".
-Figure of mechanic is the file "mechanic1.png".
+Figure of mechanic is the file "NPCs/Hotel/mechanic1.png".
 
 To say MechanicDesc:
 	let M be the item described;
@@ -170,7 +170,7 @@ To compute perception of (M - a mechanic):
 		say "[speech style of M]'[if diaper quest is 0]Hey, [bitch]. [end if]You obviously don[']t know anything about that outfit you[']re wearing. Let me teach you a little lesson.'[roman type][line break]";
 		anger M;
 	otherwise if M is objectifying the player:
-		say "[speech style of M]'You look like you're up for a fuck. Let's get it on.'  [roman type][if the sex addiction of the player < 12]Uh-oh...[otherwise][line break][end if]";
+		say "[speech style of M]'You look like you're up for a fuck. Let's get it on.' [if the sex addiction of the player < 12][line break][variable custom style]Uh-oh...[end if][roman type][line break]";
 		anger M;
 	otherwise if M is babifying the player:
 		say "[speech style of M]'You look like a stupid big baby!  Let me help you enjoy yourself...'  [roman type][if the bimbo of the player < 12]Uh-oh...[otherwise][line break][end if]";
@@ -295,7 +295,7 @@ To compute xavier reward of (M - a mechanic):
 	otherwise if R is 2:
 		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your body. Instead of pain, though, you just feel your joints tingling, as if being massaged by a thousand tiny fingers. After a few moments, the lightning stops. You feel FLEXIBLE!";
 		DexUp 4;
-	otherwise if R is 3 and J is actually summonable and the player is male and the player is a may 2017 top donator:
+	otherwise if R is 3 and J is actually summonable and the player is male and the player is the donator:
 		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your crotch. Light converges around your [ShortDesc of penis] and a [printed name of J] materializes around your waist! You feel dominant!";
 		summon J;
 		bless J;
@@ -364,18 +364,8 @@ The mechanic dark ritual rule is listed last in the mechanic unique punishment r
 
 The choosing a diaper punishment rule is listed last in the mechanic diaper quest rules.
 
-To compute (M - a mechanic) entering asshole:
-	if M is friendly-fucking or presented-orifice is asshole, say "[FriendlyAssholePenetrationFlav of M]";
-	otherwise say "[AssholePenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating asshole;
-	ruin asshole.
-
-To compute (M - a mechanic) entering vagina:
-	say "[VaginaPenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating vagina;
-	ruin vagina.
+To set up sex length of (M - a mechanic) in (F - a fuckhole):
+	set up sex length (a random number between 2 and 3) of M in F.
 
 To compute (M - a mechanic) entering mouth:
 	if there is a worn tiara and the blue-balls of M is 1 and watersports fetish is 1 and the latex-transformation of the player <= 4:
@@ -387,7 +377,7 @@ To compute (M - a mechanic) entering mouth:
 		now the sex-length of M is a random number between 2 and 3;
 		now M is penetrating face.
 
-To say MouthPenetrationFlav of (M - a mechanic):
+To say MouthPenetrationFlav of (M - a mechanic):[TODO: break up according to new set of mouthpenetrationflav functions]
 	if presented-orifice is face:
 		say FriendlyMouthPenetrationFlav of M;
 	otherwise:
@@ -436,7 +426,7 @@ To compute condom success of (M - a mechanic) in (F - a fuckhole):
 	compute M finishing in F;
 	now M is unwrapped;
 	if F is asshole, AssFill 1;
-	otherwise WombFill 1.
+	otherwise PussyFill 1.
 
 To say CondomFailFlav of (M - a mechanic) in (F - a fuckhole):
 	say "The [M] suddenly pulls out, tearing off the condom before immediately slamming [his of M] [manly-penis] back in. [line break][speech style of M]'[one of]I[']m going to jizz inside you, bitch!'[or][if pregnancy fetish is 1 and M is penetrating vagina]Hope you[']re on the pill, bitch,[otherwise]Hope you like creampies, bitch,[end if] this load is going to be big!'[or]You[']re gonna take it all, bitch![or]That[']s right bitch, enjoy all my cum!'[at random][roman type][line break][if the semen addiction of the player < 7]You struggle as much as you can without setting [him of M] off immediately[otherwise if the semen addiction of the player < 12]You half-heartedly struggle to get away[otherwise]You playfully struggle to get away[end if], but [he of M] holds you down effortlessly, [one of]his [manly-penis] continuing to slam in and out as wave after wave of [semen] rushes into your now unprotected [variable F][or]continuing to thrust as [his of M] [manly-penis] plants [his of M] [semen] nice and deep inside your now unprotected [variable F][or]his [manly-penis] throbbing powerfully as it floods your unprotected [variable F] with [his of M] load, pushing it deeper with every thrust[at random]. By the time [he of M] finally pulls out and returns to [his of M] feet, both of you are certain [he of M] has coated every inch of your inner walls.".

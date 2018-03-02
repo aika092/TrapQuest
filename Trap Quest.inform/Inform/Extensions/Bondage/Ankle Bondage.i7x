@@ -24,7 +24,7 @@ To say ShortDesc of (A - an ankle bond):
 
 A pair of anklecuffs is a kind of ankle bond. The printed name of pair of anklecuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of anklecuffs[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pair of anklecuffs is "ac". The printed plural name of pair of anklecuffs is "pairs of anklecuffs". There is 1 pair of anklecuffs.
 
-Figure of anklecuffs is the file "anklecuffs1.png".
+Figure of anklecuffs is the file "Items\Accessories\Leg\anklecuffs1.png".
 
 To decide which figure-name is clothing-image of (C - a pair of anklecuffs):
 	decide on figure of anklecuffs.

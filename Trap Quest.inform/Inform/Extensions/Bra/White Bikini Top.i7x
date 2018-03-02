@@ -1,6 +1,6 @@
 White Bikini Top by Bra begins here.
 
-A white bikini top is a kind of bikini top. Figure of bikini 8 is the file "bikini8.png". A white bikini top is very low cut. The text-shortcut of white bikini top is "wbt". Understand "pink" as white bikini top when diaper quest is 1.
+A white bikini top is a kind of bikini top. Figure of bikini 8 is the file "Items/Clothes/Upper/Bras/bikini8.png". A white bikini top is very low cut. The text-shortcut of white bikini top is "wbt". Understand "pink" as white bikini top when diaper quest is 1.
 
 There is 1 white bikini top.
 

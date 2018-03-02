@@ -2,7 +2,7 @@ Vine Boss by Monster begins here.
 
 A vine boss is a kind of monster. A vine boss is usually neuter.
 
-1 vine boss is in WoodsBoss01. Understand "monstrous" as a monster when the item described is vine boss. Figure of Vine Boss is the file "vineboss1.png". The printed name of vine boss is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]monstrous vine boss[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of vine boss is usually "[VineBossDesc]". The text-shortcut of vine boss is "vb".
+1 vine boss is in WoodsBoss01. Understand "monstrous" as a monster when the item described is vine boss. Figure of Vine Boss is the file "NPCs/Bosses/vineboss1.png". The printed name of vine boss is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]monstrous vine boss[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of vine boss is usually "[VineBossDesc]". The text-shortcut of vine boss is "vb".
 
 To say VineBossDesc:
 	if images visible is 1, display the Figure of Vine Boss;
@@ -82,7 +82,7 @@ The latex punishment rule of a vine boss is usually the no latex punishment rule
 This is the vine boss ultimate victory attack rule:
 	if there is an actually occupied fuckhole and the player is vine fucked:
 		let V be a random vines penetrating a fuckhole;
-		if the TrapNo of V is 3 and the player is female and the semen volume of vagina > 8:
+		if the TrapNo of V is 3 and the player is female and the womb volume of vagina > 3:
 			say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your pussy it pushes you into its huge chasm of a mouth and swallows you whole. ";
 			if image cutscenes is 1, display figure of vine boss cutscene 1;
 			say "Your body falls into its belly of vines and soon you are being completely filled in your [fuckholes] and mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
@@ -157,15 +157,17 @@ To compute damage of (M - a vine boss):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a vine boss):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The giant vine beast does not seem to react to your attacks as if it can't feel pain!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The giant vine beast seems confused by your ongoing ability to fight!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The vine beast [one of]is now screeching, it clearly now realises it might lose this fight![or]screeches but does not stop defending its lair![stopping]";
-	otherwise:
-		say "The vine beast continues screeching, huge chunks of dying vegetation falling from the ceiling as it fights on.";
+To say DamageReactHealthy of (M - a vine boss):
+	say "The giant vine beast does not seem to react to your attacks as if it can't feel pain!".
+
+To say DamageReactDamaged of (M - a vine boss):
+	say "The giant vine beast seems confused by your ongoing ability to fight!".
+
+To say DamageReactTired of (M - a vine boss):
+	say "The vine beast [one of]is now screeching, it clearly now realises it might lose this fight![or]screeches but does not stop defending its lair![stopping]".
+
+To say DamageReactWeak of (M - a vine boss):
+	say "The vine beast continues screeching, huge chunks of dying vegetation falling from the ceiling as it fights on.".
 
 To compute unique death of (M - a vine boss):
 	let B be a random writhing vine;

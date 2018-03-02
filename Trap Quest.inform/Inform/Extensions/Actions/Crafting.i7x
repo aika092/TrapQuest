@@ -53,8 +53,6 @@ Carry out crafting:
 			let H be a random worn blue scrunchie;
 			if H is clothing, compute class outfit of H;
 			if H is clothing, MagicPowerUp 1;
-			if there is a worn notebook:
-				if the class of the player is schoolgirl or a random number between 1 and 3 is 1, compute studying;
 		otherwise:
 			if there is a product-highlighted thing:
 				say "Nothing happens.";

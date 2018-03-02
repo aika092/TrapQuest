@@ -5,7 +5,7 @@ A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobel
 Definition: A robobellboy (called M) is hotel dwelling:
 	decide yes.
 
-Figure of robobellboy is the file "robobellboy1.png". The description of robobellboy is usually "[RoboBellboyDesc]".
+Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.png". The description of robobellboy is usually "[RoboBellboyDesc]".
 
 speedy robobellboy is a kind of robobellboy. There is 1 speedy robobellboy.
 The printed name of speedy robobellboy is "[if item described is in the location of the player][TQlink of item described][end if][input-style]speedy RoboBellboy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of speedy robobellboy is "sbe". 
@@ -76,6 +76,7 @@ To compute perception of (M - a robobellboy):
 		anger M;
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
 		say "Its eyes turn red. [line break][first custom style][unless the class of the player is succubus]'YOU REQUIRE CLOTHING. ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR HIS SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
+		if image cutscenes is 1, display Figure of RoboBellboy Cutscene 1;
 		anger M;
 	otherwise:
 		say "It appears to be completely uninterested in you and continues on its way.";
@@ -145,11 +146,11 @@ To compute trainee forcing of (M - a robobellboy):
 		FavourUp M;
 	otherwise if H is clothing and H is actually summonable:
 		summon H cursed;
-		say "The [M] opens its chest compartment and pulls out a [C]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.";
+		say "The [M] opens its chest compartment and pulls out a [H]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.";
 		now D is H;
 	otherwise if T is clothing and T is actually summonable:
 		summon T cursed;
-		say "The [M] opens its chest compartment and pulls out a pair of [printed name of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
+		say "The [M] opens its chest compartment and pulls out a pair of [printed name of T]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
 		now D is T;
 	if D is worn:
 		say "[first custom style]'PLEASE BE MORE CONSCIOUS OF YOUR PERFORMANCE IN THE FUTURE.'[roman type][line break]";

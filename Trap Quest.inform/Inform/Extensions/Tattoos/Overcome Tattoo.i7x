@@ -1,6 +1,6 @@
 Overcome Tattoo by Tattoos begins here.
 
-overcome tattoo is a kind of chest tattoo. Figure of overcome tattoo is the file "tattoo24.png". There is 1 overcome tattoo.
+overcome tattoo is a kind of chest tattoo. Figure of overcome tattoo is the file "Items/Tats/tattoo24.png". There is 1 overcome tattoo.
 Definition: a overcome tattoo (called T) is eligible:
 	if the noun is clothing:
 		if the strength-influence of the noun > 0, decide yes;

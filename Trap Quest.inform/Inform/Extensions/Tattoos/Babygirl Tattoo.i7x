@@ -1,6 +1,6 @@
 Babygirl Tattoo by Tattoos begins here.
 
-babygirl tattoo is a kind of leg tattoo. Figure of babygirl tattoo is the file "tattoo66.png". There is 1 babygirl tattoo.
+babygirl tattoo is a kind of leg tattoo. Figure of babygirl tattoo is the file "Items/Tats/tattoo66.png". There is 1 babygirl tattoo.
 Definition: a babygirl tattoo (called A) is drawable:
 	if there is a worn leg tattoo, decide no;
 	if diaper lover <= 0, decide no;

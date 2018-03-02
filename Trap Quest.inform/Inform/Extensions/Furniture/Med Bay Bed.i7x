@@ -2,7 +2,7 @@ Med Bay Bed by Furniture begins here.
 
 med bay bed is furniture. The printed name of med bay bed is "[TQlink of item described]med bay bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". med bay bed is permanent fixture. med bay bed is in School12. The description of med bay bed is "[MedBayDesc]". med bay bed has a number called charge. The text-shortcut of med bay bed is "med".
 
-Figure of med bay bed is the file "medbaybed1.png".
+Figure of med bay bed is the file "Env/School/medbaybed1.png".
 
 Definition: med bay bed (called C) is immune to change:
 	decide yes.

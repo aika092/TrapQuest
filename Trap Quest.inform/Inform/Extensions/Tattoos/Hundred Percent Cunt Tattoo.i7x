@@ -1,6 +1,6 @@
 Hundred Percent Cunt Tattoo by Tattoos begins here.
 
-hundred percent cunt tattoo is a kind of crotch tattoo. printed name of hundred percent cunt tattoo is "100% cunt tattoo". Understand "100%" as hundred percent cunt tattoo. Figure of hundred percent cunt tattoo is the file "tattoo11.png". There is 1 hundred percent cunt tattoo.
+hundred percent cunt tattoo is a kind of crotch tattoo. printed name of hundred percent cunt tattoo is "100% cunt tattoo". Understand "100%" as hundred percent cunt tattoo. Figure of hundred percent cunt tattoo is the file "Items/Tats/tattoo11.png". There is 1 hundred percent cunt tattoo.
 Definition: a hundred percent cunt tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;

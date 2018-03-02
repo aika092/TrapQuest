@@ -596,54 +596,86 @@ To compute options:
 		say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0][link]wank[end link] [end if][if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
 		if inline hyperlinks >= 3 and the player is not immobile:
 			say "[line break]";
-			if the body soreness of the player > 0 and the player is not in danger:
-				repeat with F running through held candy:
-					if F is toffee or F is fudge or F is chocolate bar:
+			if there is an interested unfriendly monster in the location of the player and the player is prone:
+				now auto is 1;
+				repeat with P running through actually presentable body parts:
+					say "[link][if the delicateness of the player < 10]suggest[otherwise]offer[end if] [P][end link] ";
+					now P is catalogued;
+				now auto is 0;
+				now summoning is 1;
+				let C be a random worn top level ass protection clothing;
+				if C is clothing and C is not catalogued:
+					if C is displacable or C is actually removable:
+						say "[C] ";
+						now C is catalogued;
+				otherwise if there is a wearthing penetrating asshole:
+					now C is a random wearthing penetrating asshole;
+					if C is actually removable:
+						say "[C] ";
+						now C is catalogued;
+				if the player is female:
+					now C is a random worn top level protection clothing;
+					if C is clothing and C is not catalogued:
+						if C is displacable or C is actually removable:
+							say "[C] ";
+							now C is catalogued;
+					otherwise if there is a wearthing penetrating vagina:
+						now C is a random wearthing penetrating vagina;
+						if C is actually removable:
+							say "[C] ";
+							now C is catalogued;
+				now summoning is 0;
+			otherwise if there is an interested monster in the location of the player and the player is prone:
+				now auto is 1;
+				repeat with P running through actually presentable body parts:
+					say "[link]present [P][end link] ";
+					now P is catalogued;
+				now auto is 0;
+			[The entire segment of code above is to help the player expose and present their body parts to NPCs]
+			unless the player is in danger:
+				if the body soreness of the player > 0:
+					repeat with F running through held candy:
+						if F is toffee or F is fudge or F is chocolate bar:
+							if F is not catalogued, say "[F] ";
+							now F is catalogued;
+				say "[if the body soreness of the player > 0 and there is a held bandage and the player is not in danger][link]use bandage[end link] [end if]";
+				unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0][link]wipe face[end link] [end if][if the semen coating of hair > 1][link]wipe hair[end link] [end if][if the semen coating of breasts > 0][link]wipe tits[end link] [end if][if the semen coating of belly > 0][link]wipe belly[end link] [end if][if the semen coating of thighs > 0][link]wipe thighs[end link] [end if]";
+				if (the player is in Dungeon35 or the player is in Woods05):
+					repeat with F running through carried dirty clothing:
 						if F is not catalogued, say "[F] ";
 						now F is catalogued;
-			say "[if the body soreness of the player > 0 and there is a held bandage and the player is not in danger][link]use bandage[end link] [end if]";
-			unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0][link]wipe face[end link] [end if][if the semen coating of hair > 1][link]wipe hair[end link] [end if][if the semen coating of breasts > 0][link]wipe tits[end link] [end if][if the semen coating of belly > 0][link]wipe belly[end link] [end if][if the semen coating of thighs > 0][link]wipe thighs[end link] [end if]";
+				if the player is hungry:
+					repeat with F running through held food:
+						if F is not catalogued, say "[F] ";
+						now F is catalogued;
+				if the player is thirsty:
+					repeat with F running through held bottles:
+						if F is not catalogued, say "[F] ";
+						now F is catalogued;
+				otherwise if there is a dispenser in the location of the player and the player is upright:
+					repeat with F running through held vessels:
+						if F is not catalogued, say "[F] ";
+						now F is catalogued;
+				if there is worn crotch-displaced clothing:
+					repeat with F running through worn crotch-displaced clothing:
+						if F is not catalogued, say "[F] ";
+						now F is catalogued;
+				if there is worn top-displaced clothing:
+					repeat with F running through worn top-displaced clothing:
+						if F is not catalogued, say "[F] ";
+						now F is catalogued;
+				if the player is in the location of the alchemist's table and the charge of the alchemist's table <= 0:
+					say "[link]list craftables[end link] ";
+				if the player is in the location of the dungeon altar and the charge of the dungeon altar < 100:
+					say "[link]list blessables[end link] [link]lie on altar[end link] ";
 			if the player is glue stuck and the player is not immobile, say "[link]scrub glue[end link] ";
-			if (the player is in Dungeon35 or the player is in Woods05) and the player is not in danger:
-				repeat with F running through carried dirty clothing:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
-			if the player is hungry:
-				repeat with F running through held food:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
-			if the player is thirsty:
-				repeat with F running through held bottles:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
-			otherwise if there is a dispenser in the location of the player and the player is upright:
-				repeat with F running through held vessels:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
 			if there is held lubricant and (the soreness of asshole > 3 and asshole is not actually occupied) or (the soreness of vagina > 3 and vagina is not actually occupied):
 				unless there is a held catalogued lubricant, say "[printed name of a random held lubricant] ";
 				now a random held lubricant is catalogued;
-			if there is worn crotch-displaced clothing and the player is not in danger:
-				repeat with F running through worn crotch-displaced clothing:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
-			if there is worn top-displaced clothing and the player is not in danger:
-				repeat with F running through worn top-displaced clothing:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
-			if diaper quest is 0 and the player is in the location of the alchemist's table and the charge of the alchemist's table <= 0 and the player is not in danger:
-				repeat with F running through carried ingredient things:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
 			if the player is in the location of the woods altar or the player is in the location of WoodsScenery04:
 				repeat with F running through held plentiful accessories:
 					if F is not catalogued, say "[F] ";
 					now F is catalogued;
-			if the player is in the location of the dungeon altar and the charge of the dungeon altar < 100:
-				repeat with F running through held sure cursed clothing:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
-				say "[link]lie on altar[end link] ";
 			if there is an interested mechanic in the location of the player:
 				repeat with F running through held mystical amulets:
 					if F is not catalogued, say "[F] ";
@@ -688,7 +720,19 @@ This is the pull lever unique option rule:
 		increase unique options used by 1.
 The pull lever unique option rule is listed in the unique options rules.
 
+CraftListing is an action applying to nothing.
+Carry out CraftListing:
+	repeat with F running through carried ingredient things:
+		say "[F] ".
+Understand "list craftables" as CraftListing.
 
+AltarListing is an action applying to nothing.
+Carry out AltarListing:
+	repeat with F running through held sure unblessed clothing:
+		say "[F] ";
+	repeat with F running through held unsure clothing:
+		say "[F] ".
+Understand "list blessables" as AltarListing.
 
 
 Links ends here.

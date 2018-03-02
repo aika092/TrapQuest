@@ -13,7 +13,7 @@ Part 1 - Spike Skull Clutch of Holding
 
 A spike skull clutch of holding is a kind of clutch of holding. There is 1 spike skull clutch of holding. The printed name of spike skull clutch of holding is usually "[TQlink of item described][clothing-title-before]spike and skull clutch of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "spike and" as spike skull clutch of holding.
 
-Figure of spike skull clutch of holding is the file "bag9.png".
+Figure of spike skull clutch of holding is the file "Items\Accessories\Bags\bag9.png".
 
 To decide which figure-name is clothing-image of (C - a spike skull clutch of holding):
 	decide on figure of spike skull clutch of holding.
@@ -28,7 +28,7 @@ Part 2 - Lips Clutch of Holding
 
 A lips clutch of holding is a kind of clutch of holding. There is 1 lips clutch of holding. The printed name of lips clutch of holding is usually "[TQlink of item described][clothing-title-before]lips clutch of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of lips clutch of holding is the file "bag11.png".
+Figure of lips clutch of holding is the file "Items\Accessories\Bags\bag11.png".
 
 To decide which figure-name is clothing-image of (C - a lips clutch of holding):
 	decide on figure of lips clutch of holding.

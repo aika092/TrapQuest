@@ -13,7 +13,12 @@ VARIETY STATES:
 
 A woman is a kind of monster. A woman is usually intelligent. There is 1 woman. A woman has a number called delayed sluttification. A woman can be stranger or introduced. A woman is usually stranger. A woman can be correctly named or incorrectly named. A woman can be permanently dead. A woman is usually not permanently dead. The leftover-type of a woman is usually 130.
 
-Figure of Woman 1 is the file "woman1.png". Figure of Woman 2 is the file "woman2.png". Figure of Woman 3 is the file "woman3.png". Figure of Woman 4 is the file "woman4.png". Figure of Woman 5 is the file "woman5.png". Figure of Woman 6 is the file "woman6.png".
+Figure of Woman 1 is the file "NPCs/MultiFloor/Woman/woman1.png". 
+Figure of Woman 2 is the file "NPCs/MultiFloor/Woman/woman2.png". 
+Figure of Woman 3 is the file "NPCs/MultiFloor/Woman/woman3.png". 
+Figure of Woman 4 is the file "NPCs/MultiFloor/Woman/woman4.png". 
+Figure of Woman 5 is the file "NPCs/MultiFloor/Woman/woman5.png". 
+Figure of Woman 6 is the file "NPCs/MultiFloor/Woman/woman6.png".
 Understand "player", "mysterious", "busty", "girl" as woman. 
 Understand "Barbar", "Barbara", "Baby", "Barbie", "Bambi" as woman.
 Understand "Barry", "Barney" as woman when WomanBimbo < 2. [Currently not possible]

@@ -2,7 +2,7 @@ Christmas Socks by Stockings begins here.
 
 A deer socks is a kind of socks. There is 1 deer socks. The text-shortcut of deer socks is "drs".
 
-Figure of deer socks is the file "socks1.png".
+Figure of deer socks is the file "Items\Clothes\Lower\Legs\socks1.png".
 
 To decide which figure-name is clothing-image of (C - a deer socks):
 	decide on figure of deer socks.
@@ -25,7 +25,7 @@ To decide which object is the potential-upgrade-target of (C - a deer socks):
 
 A frilly green socks is a kind of socks. There is 1 frilly green socks. The text-shortcut of frilly green socks is "fgs".
 
-Figure of frilly green socks is the file "socks2.png".
+Figure of frilly green socks is the file "Items\Clothes\Lower\Legs\socks2.png".
 
 To decide which figure-name is clothing-image of (C - a frilly green socks):
 	decide on figure of frilly green socks.

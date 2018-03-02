@@ -4,7 +4,7 @@ A vinyl corset is a kind of corset. A vinyl corset is usually pvc. There is 1 vi
 
 The printed name of vinyl corset is usually "[TQlink of item described][clothing-title-before]vinyl corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of vinyl corset is usually "[TQlink of item described][clothing-title-before]vinyl corsets[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of vinyl corset is "vco".
 
-Figure of Vinyl Corset is the file "vinylcorset1.png".
+Figure of Vinyl Corset is the file "Items\Clothes\Upper\Corsets\vinylcorset1.png".
 
 To decide which figure-name is clothing-image of (C - a vinyl corset):
 	decide on figure of vinyl corset.

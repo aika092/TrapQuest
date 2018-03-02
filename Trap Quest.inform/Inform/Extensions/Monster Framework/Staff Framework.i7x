@@ -223,9 +223,11 @@ The detention decay rule is listed in the advance counters rules.
 
 To compute detention of (M - a staff member):
 	now M is in the location of the player;
+	let R be a random number between 1 and 2;
 	if health of M < the maxhealth of M, say GenericDetention of M;
 	otherwise say LateDetention of M;
-	compute chair detention of M.
+	if R is 1 and diaper quest is 0, compute remedial detention of M;
+	otherwise compute chair detention of M.
 
 To say LateDetention of (M - a staff member):
 	say "The [M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE!  Class is already over!  It's detention for you, young Miss. Come with me now!'[roman type][line break]".
@@ -261,6 +263,7 @@ To compute DQChairSetup of (M - a staff member):
 	say "[big he of M] forces a [ShortDesc of D] around your loins.".
 
 To compute chair detention of (M - a staff member):
+	now detention chair is detention-wand;
 	now detention-turns is a random number between 15 and 25;
 	drag to School13 by M;
 	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit.[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
@@ -280,7 +283,8 @@ To compute chair detention of (M - a staff member):
 		now the boredom of N is 0;
 		now N is uninterested;
 	now the stance of the player is 1;
-	now detention chair is grabbing the player.
+	now detention chair is grabbing the player;
+	now detention chair is detention-wand.
 
 To DetentionChairWait:
 	while detention chair is grabbing the player:
@@ -289,22 +293,28 @@ To DetentionChairWait:
 
 A time based rule (this is the detention chair rule):
 	if detention chair is grabbing the player:
-		repeat with M running through uninterested alive students:
-			if the boredom of M is 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
-		if detention-turns > 0:
-			say "The magic wand [one of]buzzes powerfully[or]continues to buzz[stopping]!";[possibly add text here describing arousal so far]
-			arouse 500;
-			increase the fatigue of the player by 30;
-			if vagina is pushed over the edge, vaginally orgasm shamefully;
+		if detention chair is detention-wand:
+			compute wand chair detention;
 		otherwise:
-			let M be a random staff member in Holding Pen;
-			if M is staff member:
-				now M is in the location of the player;
-				say "The [M] returns and after looking at your exhausted state gives you a wide smirk. [big he of M] doesn't say anything but just releases you from the bindings before sauntering off.";
-				distract M;
-			otherwise:
-				say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
-			dislodge detention chair.
+			compute rem chair detention.
+
+To compute wand chair detention:
+	repeat with M running through uninterested alive students:
+		if the boredom of M is 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
+	if detention-turns > 0:
+		say "The magic wand [one of]buzzes powerfully[or]continues to buzz[stopping]!";[possibly add text here describing arousal so far]
+		arouse 500;
+		increase the fatigue of the player by 30;
+		if vagina is pushed over the edge, vaginally orgasm shamefully;
+	otherwise:
+		let M be a random staff member in Holding Pen;
+		if M is staff member:
+			now M is in the location of the player;
+			say "The [M] returns and after looking at your exhausted state gives you a wide smirk. [big he of M] doesn't say anything but just releases you from the bindings before sauntering off.";
+			distract M;
+		otherwise:
+			say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
+		dislodge detention chair.
 
 To compute detention chair tease of (M - a monster):
 	say "[detention chair tease of M][detention chair tease response of M]";
@@ -340,7 +350,7 @@ To say detention chair tease response of (M - a monster):
 
 This is the detention orgasm announcement rule:
 	if detention chair is grabbing the player and the player is able to speak:
-		if the delicateness of the player  + the sex addiction of the player > 17 or the fatigue of the player > 200:
+		if the player is feeling submissive or the fatigue of the player > 200:
 			say "You hear the camera in the corner focusing on you, and loudly blurt out the truth. [line break][variable custom style]'[one of]I CAME FROM BEING IN DETENTION!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";
 			repeat with M running through monsters in the location of the player:
 				say detention orgasm reaction of M;
@@ -373,32 +383,113 @@ To say detention orgasm reaction of (M - a teacher):
 [
 More detention ideas:
 
-Printer
+Portfolio
+-Player is stripped and has a set number pictures taken of their body. They need to get each picture captioned to end the detention.
+-Player is given a picture portfolio and a marker to carry. The player can offer the marker or the portfolio to a student, who will then add a caption.
+-The player can caption the pictures themselves, but the ink will erase itself from the picture unless the player has a high enough humiliation level to write something scandalous.
+	-bodily fluids will also work as captions.
+-The player won't be able to leave the school until they finish the portfolio. Pink pill should still teleport, and fainting should probably end it. 
+	-Possibly they won't be able to put clothes back on until they complete it.
 -Player has to print out a set number of humiliating pictures and hang them up around campus/hand them out to students
 
 Apology
--Player has to wear the "sorry outfit" and then to go to each teacher and apologize for being bad or whatever. They have to apologize to every student along the way too.
--Not sure what the sorry outfit could be.
-	-Maybe when the player meets a student they have an opportunity to sign it, which makes it more humiliating.
+-Player has to wear the "sorry outfit/collar". They need to visit a set number of staff members in order to take it off.
+	-Not sure what the sorry outfit could be.
 	-Maybe the outfit involves some really big plugs
 	-Possibly it's really gross?
+-The player's armband prevents the player from the school until the "sorry item" is gone. Pink pill would still teleport, though, and fainting should probably end the detention.
+-The "sorry item" forces the player to apologize to everyone they meet, as long as they are able to speak.
+-The apology wouldn't be assigned if the player is wearing a gag, and the player would have their gag confiscated if a teacher saw it.
+	-The gameplay here forks for players: They can try to hide and meet as few people as possible on their way to each of the teachers, or try to get away with wearing a gag through each of the halls without meeting a teacher too early.
+
+Hypno
+-Player is strapped into a chair and forced to wear headphones, etc. Could be the detention chair or another one. The player is forced to watch a video hypnotizing them to be slutty or something, and there's a narrator that says stuff into the player's ear so waiting around through the punishment duration doesn't get stale.
 
 Hole
 -Player has to work a gloryhole for high level students. (timer)
 
-Condom duty
--Player has to clean up condoms used in and outside class
--Player will have to lick up any semen that comes out of them
--Condoms might have a connection to some students
-	-Higher class students will have fuller condoms that are easier to break
-	-Lower class students more likely to leave broken condoms, but intact ones are less likely to burst
--Possibly restrict to one room or make player find a certain amount to find and clean up.
--Are there dorms?
+Cup challenge
+-The player is cuffed and locked into a gloryhole. The player will be presented a number of opaque cups. The player's detention ends when the timer is finished, or when the player drinks the right cup.
+-One cup is milk
+-DQ: The other four cups are filled with water
+-TQ: The other four cups are filled with semen
+-One cup has a birth control pill dissolved in it
+-One cup has a negative pill dissolved in it
+	-DQ: its that kind of pill.
+	-TQ: arousal pill?
+-One cup is just the substance.
+-One cup has a thing added to it that tells the player's armband detention is over
+-Each cup has a volume and weight written on it. The player can get ahead by memorizing what the weight should be per volume of substance and picking the one that's off
+-The player will get fucked while they fiddle around with the cups
 
 Aika: I like a lot of these ideas but most of them give the player a way to rebel, which then obviously needs to be handled somehow.
+MG: The idea with a lot of these was to give the player a bit of a minigame to play. I think the detention should have ways to minimize its effects built in, that way if the player has already seen this type of detention, they aren't bored, and I think its very thematic to be rebellious during detention.
 
 ]
 
+[Two ideas here:
+The player watches a pornographic video in class and has to write a report on what insights the narrator had on "<insert idea here>"
+
+The player is strapped into a chair and has to watch a "remedial" seminar to make up for lost class time. Really its a hypno screen that the player has to stare at for a while
+
+]
+
+[player is forced to watch a hypno video]
+To compute remedial detention of (M - a staff member):
+	now detention chair is detention-remedial;
+	now detention-turns is a random number between 8 and 12;
+	drag to School13 by M;
+	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
+	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
+	otherwise compute DQChairSetup of M;]
+	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4]The [M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise]The [M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your head, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rythm begins playing into your ears.";
+	if diaper quest is 0, say "Short clips of [if tg fetish is 1]transexual [end if]pornstars stripping off their clothes appear on the screen, and the music's volume slowly rises as a husky feminine voice begins speaking right into your ear.[line break][first custom style]'Welcome to my classroom, baby. You can call me Mistress Professor. Are you ready for a lesson?'[roman type][line break]A hypnotic swirling pattern fades into the screen as male actors gradually begin to appear in the clips, and you suddenly realize how hard it is to pull your eyes away from the screen. You realize you have no choice but to fight off the hypnosis until you're released!";
+	otherwise say "PLACEHOLDER";
+	compute room leaving of M;
+	now M is in Holding Pen;
+	now School13 is bossed;
+	now the stance of the player is 1;
+	now detention chair is grabbing the player.
+
+To compute rem chair detention:
+	if detention chair is grabbing the player:
+		if detention-turns > 0:
+			let N be a random number between the sex addiction of the player and (the intelligence of the player * -1);
+			if N < -9:
+				say "[one of]You manage to shut everything out completely, drowning out the professor's voice by humming in your head.[or]You focus on ignoring the professor's voice, visualizing yourself breaking free of the straps.[or]You shut your eyes, focusing everything on keeping the professor's voice from penetrating your thoughts.[or]You tear your eyes away from the screen, focusing on ignoring everything the narrator whispers into your ears.[at random]";
+			otherwise if N < -3:
+				say "[one of]You manage to tear your eyes away from the screen, but the narrator's voice in your head still sends shivers down your spine![or]You look away from the screen, but the professor's voice still sends tingles through your body.[or]You manage to keep your eyes shut, but you can't shut out the narrator's voice in your head![or]You tears your eyes away from the screen, but the narrator's voice remains loud and clear in your ear![at random]";
+				say RemHypnoMantra;
+				humiliate TRIVIAL-HUMILIATION + TRIVIAL-HUMILIATION;
+			otherwise if N < 6:
+				say RemHypnoContent;
+				say "[one of]The professor's voice seems to reverberate in your head as you unsuccessfully try to tear your eyes off the screen.[or]Your eyes refuse to look away from the screen, and no matter what you do the voice of the professor continues to penetrate your thoughts![or]You try to keep your eyes shut, but they're glued to the screen! The professor's voice seems to resonate with everything happening in front of you.[or]You can't tear your eyes away from the screen, and you find yourself repeating everything the professor whispers in your ear.[at random]";		
+				say RemHypnoMantra;
+				humiliate SLIGHT-HUMILIATION;
+			otherwise:
+				say RemHypnoContent;
+				say "[one of]You hang on the professor's every word as you stare at the screen.[or]You don't even think of looking away, taking in the professor's voice as you stare at the screen.[or]You can't help staring at the screen, letting the music reverberate in your head as the professor whispers in your ear.[or]You let the professor's voice wash over you as you take in everything on the screen.[at random]";
+				say RemHypnoMantra;
+				humiliate SLIGHT-HUMILIATION + TRIVIAL-HUMILIATION;
+		otherwise:
+			let M be a random staff member in Holding Pen;
+			if M is staff member:
+				now M is in the location of the player;
+				say "Panning clips of pornstars [if bukkake fetish is 1]with cum plastered all over their faces[otherwise if diaper quest is 0]displaying their gaping holes to the camera[otherwise]PLACEHOLDER[end if] cycle on the screen as the hypnotic swirling pattern fades and the syncopated rythm winds down. [line break][first custom style]'Thanks for learning. That's all for today![roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and the [M] reenters the room. [big he of M] doesn't say anything as she removes your headphones and frees you from your bindings.";
+				distract M;
+				now the location of the player is not bossed;
+			otherwise:
+				say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
+			now detention chair is not grabbing the player.
+		
+
+To say RemHypnoContent:
+	if diaper quest is 0, say "[one of]A clip of a [if tg fetish is 1]transexual [end if]pornstar getting gangbanged by five guys shows on the screen.[or]A zoomed in shot of a pornstar being anally destroyed by two [manly-penis]s at once shows on the screen.[or]The screen shows a pornstar getting her makeup ruined as her partner fucks her face.[or]The screen shows a pornstar grinning as her partner smacks her in the face, slamming his dick in and out of her [asshole].[or]The video shows a pair of [if tg fetish is 1]transexual [end if]pornstars taking turns getting spitroasted by a group of 9 guys.[in random order]";
+	otherwise say "PLACEHOLDER".
+
+To say RemHypnoMantra:
+	if diaper quest is 0, say "[line break][first custom style]'[one of]Doesn[']t that look good, baby?'[or]Wouldn[']t that feel good, baby?'[or]It always feels good to say yes.'[or]You love saying yes.'[or]No means yes. Yes means yes.'[or]Don[']t you wish that was you?'[or]Let him do it, baby.'[or]One isn[']t enough for you, baby.'[or]Teach him no means yes.'[or]Scream when you want it. Hope they realize the truth when they say you don[']t.'[in random order][roman type][line break]";[The goal of the "hypnosis" is to progress the player toward being fully broken]
+	otherwise say "PLACEHOLDER".
 
 
 Staff Framework ends here.

@@ -23,7 +23,8 @@ To teleport to (R - a room):
 	repeat with C running through held store clothing:
 		now C is stolen;
 		now a random shopkeeper is released;
-	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;
+		if there is a worn tethering lipstick collar, end tethering;
+	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
 	now the player is in R;
 	now the location of the player is discovered;
 	if map images is 1, display entire map.

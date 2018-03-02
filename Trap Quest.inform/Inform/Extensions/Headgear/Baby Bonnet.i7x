@@ -1,6 +1,6 @@
 Baby Bonnet by Headgear begins here.
 
-A baby bonnet is a kind of headgear. A baby bonnet is usually silk. There is 1 baby bonnet. Figure of baby bonnet is the file "babybonnet1.png". A baby bonnet is blondeness-negative. A baby bonnet is brightness-negative. A baby bonnet is redness-negative. A baby bonnet is usually hair growing. A baby bonnet is usually diaper-addiction-influencing.
+A baby bonnet is a kind of headgear. A baby bonnet is usually silk. There is 1 baby bonnet. Figure of baby bonnet is the file "Items\Accessories\Head\babybonnet1.png". A baby bonnet is blondeness-negative. A baby bonnet is brightness-negative. A baby bonnet is redness-negative. A baby bonnet is usually hair growing. A baby bonnet is usually diaper-addiction-influencing.
 
 The printed name of baby bonnet is usually "[TQlink of item described][clothing-title-before]baby bonnet[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby bonnet is "bon".
 

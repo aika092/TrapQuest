@@ -3,8 +3,8 @@ Hotel Chairs by Furniture begins here.
 
 hotel chairs is a kind of furniture. The printed name of hotel chairs is "[TQlink of item described]hotel [if diaper focus >= 1]baby [end if]chairs[TQxlink of item described][shortcut-desc][verb-desc of item described]". hotel chairs has a number called times-sat. hotel chairs is usually permanent fixture. 1 hotel chairs is in Hotel21. Understand "baby chair", "baby chairs", "hotel baby", "chair" as hotel chairs. The description of hotel chairs is "[HotelChairsDesc]". The text-shortcut of hotel chairs is "hch".
 
-Figure of hotel chairs is the file "hotelchairs1.png".
-Figure of baby chairs is the file "hotelchairs2.png".
+Figure of hotel chairs is the file "Env/Hotel/hotelchairs1.png".
+Figure of baby chairs is the file "Env/Hotel/hotelchairs2.png".
 
 To say HotelChairsDesc:
 	if images visible is 1:
@@ -86,7 +86,7 @@ To compute baby hotel chair sitting:
 			compute messing;
 		otherwise if K is total protection clothing and the player is female and vagina is not actually occupied and diaper quest is 0:
 			say "You feel something very thin poke its way through the [if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [K] and then find its way to the entrance of your [vagina]. Suddenly you feel it start to powerfully pump out something warm and viscous - it's pumping you full of [semen]! What the fuck!";
-			WombFill 10;
+			PussyFill 6;
 			now a random creampie pole trap is inseminating vagina;
 			say "The pumping keeps going for what feels like a full 10 seconds before it stops, leaving your womb feeling very full.";
 		otherwise if K is clothing:

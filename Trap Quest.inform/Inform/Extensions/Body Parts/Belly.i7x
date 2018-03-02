@@ -176,24 +176,27 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the largeness of belly:
-	let B be the total fill of belly;
-	increase B by (the stomach of the player + rectum) / 3;
-	increase B by the semen volume of vagina;
-	increase B by the flesh volume of belly;
+	if the pregnancy of the player > 0 and womb volume of vagina > 30, decide on belly magnitude of womb volume of vagina; [Monster pregnancy = we only care about womb fill]
+	let B be the largeness fill of belly;
 	repeat with C running through corsets worn by the player:
 		decrease B by (the magic-modifier of C + 5);
 		if C is constriction, decrease B by 4;
-	if the pregnancy of the player > 0 and semen volume of vagina > 30, decide on belly magnitude of semen volume of vagina; [Monster pregnancy = we only care about womb fill]
 	let F be belly magnitude of B;
 	if F > max belly size:
 		now B is the flesh volume of belly;
-		if the pregnancy of the player > 0, increase B by the semen volume of vagina;
+		if the pregnancy of the player > 0, increase B by the womb volume of vagina;
 		increase B by the air volume of belly;
 		let B2 be belly magnitude of B;
 		if B2 > max belly size, decide on B2; [we only override max belly size if pregnancy + fat + air is higher on its own.]
 		decide on max belly size;
 	decide on F.
 
+To decide which number is the largeness fill of belly:
+	let B be the total fill of belly;
+	increase B by (the stomach of the player + rectum) / 3;
+	increase B by the total volume of vagina;
+	increase B by the flesh volume of belly;
+	decide on B.
 
 [!<DecideWhichNumberIsBellyMagnitudeOfNumber>+
 
@@ -222,9 +225,9 @@ To decide which number is belly magnitude of (B - a number):
 		now S is 9;
 	otherwise:
 		now S is 10;
-	if the semen volume of vagina > 30: [Super pregnancy sizes]
-		if the semen volume of vagina > 45, decide on 13;
-		if the semen volume of vagina > 37, decide on 12;
+	if the womb volume of vagina > 30: [Super pregnancy sizes]
+		if the womb volume of vagina > 45, decide on 13;
+		if the womb volume of vagina > 37, decide on 12;
 		decide on 11;
 	if S > 10, decide on 10;
 	otherwise decide on S.
@@ -239,7 +242,7 @@ To decide which number is the weight of (XXX - belly):
 	decrease B by the air volume of belly; [this one is to counteract the total belly fill count]
 	decrease B by the air volume of belly * 2; [this one is because the air is lighter than air]
 	increase B by the stomach of the player / 2;
-	increase B by the semen volume of vagina;
+	increase B by the total volume of vagina;
 	increase B by the flesh volume of belly;
 	if there is a worn buoyant salve covering belly:
 		let S be a random worn buoyant salve covering belly;
@@ -1134,7 +1137,10 @@ To lay (X - a number) small eggs:
 			decrease X by 1;
 			let S be a random available small egg;
 			now S is in the location of the player;
-			now S is laid.
+			now S is laid;
+		if image cutscenes is 1:
+			if the semen volume of belly > 6, display figure of egg laying 1;
+			otherwise display figure of egg laying 2.
 
 [!<LayXMediumEggs>+
 
@@ -1165,7 +1171,14 @@ To lay (X - a number) medium eggs:
 			decrease X by 1;
 			let S be a random available medium egg;
 			now S is in the location of the player;
-			now S is laid.
+			now S is laid;
+		if image cutscenes is 1:
+			if the semen volume of belly > 6:
+				display figure of egg laying 5;
+			otherwise if the soreness of asshole > 7:
+				display figure of egg laying 4;
+			otherwise:
+				display figure of egg laying 3.
 
 [!<LayXLargeEggs>+
 
@@ -1174,8 +1187,10 @@ REQUIRES COMMENTING
 +!]
 To lay (X - a number) large eggs:
 	say "the largest egg you've ever seen exits your [asshole] at an excruciatingly slow speed, keeping your [asshole] stretched for several seconds as it eases its way out. It's as wide as your forearm.";
+	if image cutscenes is 1, display figure of egg laying 7;
 	if X > 1 and the latex-transformation of the player < 3:
 		say "You breathe a sigh of relief as it finally passes, but your sigh immediately turns into a scream of [if the bimbo of the player < 12]despair[otherwise]unexpected pleasure[end if] as [if X is 2]another egg[otherwise]one by one, [X - 1] more eggs[end if] of the same size make their way through just as slowly and with just as intense sensations.[line break][variable custom style][if the player is gagged]'MMMMMMMMMPH MMMMMMMMPH!!'[roman type][line break]The feelings are so intense that you can't help but scream out loud through your [ShortDesc of random thing penetrating face].[otherwise]'Fuuuuuuuuuuck Meeeeeeeeeeee!'[roman type][line break]The feelings are so intense that you can't help but scream out loud.[end if]";
+		if image cutscenes is 1, display figure of egg laying 6;
 	otherwise if X > 1:
 		say "You moan softly as [if X is 2]another egg[otherwise]one by one, [X - 1] more eggs[end if] of the same size make their way through just as slowly and with just as intense sensations.[line break]";
 	let E be a random large egg;

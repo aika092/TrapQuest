@@ -52,8 +52,9 @@ To Recover the Player:
 	if the pregnancy of the player is 0:
 		cancel father material;
 		if the player is female and the number of things penetrating vagina is 0:
-			now the semen volume of vagina is 0;
+			now the womb volume of vagina is 0;
 			SemenPuddleUp the semen volume of vagina / 2;
+			now the semen volume of vagina is 0;
 	now the body soreness of the player is 0;
 	now the fatigue of the player is 0;
 	now the stomach-water of the player is 3;

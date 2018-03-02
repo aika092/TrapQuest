@@ -27,6 +27,10 @@ This is the trap stuck immobility rule:
 	if the player is trap stuck, rule fails.
 The trap stuck immobility rule is listed in the immobility rules.
 
+This is the blindfolded immobility rule:
+	if the player is in Blindfolded, rule fails.
+The blindfolded immobility rule is listed in the immobility rules.
+
 [!<YourselfIsTrapStuck>+
 
 REQUIRES COMMENTING

@@ -6,7 +6,7 @@ To say WardrobeDesc:
 	if images visible is 1, display figure of wardrobe;
 	say "An ornate pink wardrobe, which [if item described is closed]no doubt [end if]is used to store clothes.".
 
-Figure of wardrobe is the file "wardrobe1.png".
+Figure of wardrobe is the file "Env/Dungeon/wardrobe1.png".
 
 Definition: A container (called I) is immune to change:
 	if I is in the location of the player, decide yes;

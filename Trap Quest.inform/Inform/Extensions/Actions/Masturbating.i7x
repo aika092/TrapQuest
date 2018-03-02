@@ -106,22 +106,22 @@ This is the embarrassing masturbation rule:
 	let M be a random monster in the location of the player;
 	if there is a dangerous monster in the location of the player and M is not a dangerous monster, now M is a random dangerous monster in the location of the player;
 	if asshole is actually occupied:
-		if the anal sex addiction of the player + the sex addiction of the player < 5:
-			if (the player is male and the player is not horny) or the player is not a bit horny:
+		if the anal sex addiction of the player < 5 and the sex addiction of the player < 10:
+			if (the player is male and the player is not very horny) or the player is not horny:
 				say "You can[']t bring yourself to masturbate when there[']s [if the number of monsters penetrating asshole > 0 and diaper quest is 0]someone fucking[otherwise]something in[end if] your [asshole]!";
 				rule fails;[Female players are more open to masturbating with toys.]
-			if the player is not very horny and (the humiliation of the player / HUMILIATION-PROUD + 2000) < the number of monsters in the location of the player:[shouldn't ever trigger when the player is alone]
+			if the player is not extremely horny and (the humiliation of the player / HUMILIATION-PROUD + 2000) < the number of monsters in the location of the player:[shouldn't ever trigger when the player is alone]
 				if M is monster:
 					say "You can't bring yourself to [if the player is male]jack off[otherwise]finger yourself[end if] now. What if the [printed name of M] thinks you actually like [if the number of monsters penetrating asshole > 0 and diaper quest is 0]getting fucked in the[otherwise]having things up your[end if] ass!";
 					rule fails;
 	if the number of monsters penetrating vagina > 0:
-		if the vaginal sex addiction of the player + the sex addiction of the player < 5:
-			if the player is not horny and (the humiliation of the player / HUMILIATION-PROUD + 2000) < the number of monsters in the location of the player:
+		if the vaginal sex addiction of the player < 5 and the sex addiction of the player < 10:
+			if the player is not very horny and (the humiliation of the player / HUMILIATION-PROUD + 2000) < the number of monsters in the location of the player:
 				if M is monster:
 					say "You can't bring yourself to touch yourself now. What if the [printed name of M] thinks you actually like getting [if M is male and diaper quest is 0]fucked[otherwise]toyed with[end if]?";
 					rule fails;
 	if the number of monsters penetrating face > 0:
-		if the semen addiction of the player + the sex addiction of the player < 5:
+		if the oral sex addiction of the player < 5 and the sex addiction of the player < 10:
 			if the player is not horny and (the humiliation of the player / HUMILIATION-PROUD + 2000) < the number of monsters in the location of the player:
 				if M is monster:
 					say "You can't bring yourself to touch yourself now. What if the [printed name of M] thinks you actually like [if M is male and diaper quest is 0]sucking dick[otherwise]having your mouth abused like this[end if]?";
@@ -324,7 +324,7 @@ Carry out masturbating:
 				if R is 1:
 					say "You paw at yourself through your [printed name of C], shivering as the [clothing-material of C] rubs up against your sensitive outer [vagina].";
 				otherwise if R is 2:
-					say "You slowly rub yourself through the fabric of your [printed name of C], which dampens slightly with [if the semen-volume of vagina > 0]a bit of [semen] trapped in your [vagina][otherwise]feminine juices[end if].";
+					say "You slowly rub yourself through the fabric of your [printed name of C], which dampens slightly with [if the semen volume of vagina > 0]a bit of [semen] trapped in your [vagina][otherwise]feminine juices[end if].";
 				otherwise:
 					say "You start rubbing your clit through your [printed name of C], which dampens the sensation somewhat, but adds an interesting new one to compensate.";
 			otherwise:
@@ -374,7 +374,7 @@ Carry out masturbating:
 						say "[one of]You fantasize about [PlayerFantasy], shuddering with [if the raw sex addiction of the player < 8]a mixture of shame and [end if]pleasure as you work your fingers in and out of your [vagina].[or]You continue to passionately shlick yourself, allowing your mind to run wild with thoughts of [PlayerFantasy].[or]You dip your fingers in and out of your [vagina],  [if the raw sex addiction of the player < 5]quietly sighing[otherwise if the raw sex addiction of the player < 10]sighing[otherwise if the raw sex addiction of the player < 15]moaning[otherwise]passionately moaning[end if] with pleasure as you fantasize about [PlayerFantasy].[or]You tenderly run your thumb over your clit, fantasizing about [PlayerFantasy].[or][if the number of awake monsters in the location of the player < 1]You glance from side to side, knowing what might happen if somebody catches you in this compromising position, but already much too turned on to consider stopping.[otherwise]You glance at the [printed name of a random awake monster in the location of the player], already too turned on to consider stopping, but well aware of what might happen if they wanted to take advantage of your incredibly compromising position.[end if][if the raw sex addiction of the player < 5]Imagining it scares and intimidates you.[otherwise if the raw sex addiction of the player < 10]Imagining it confuses and intimidates you.[otherwise if the raw sex addiction of the player < 15]Imagining it arouses and encourages you.[otherwise]Imagining it arouses you beyond belief, and you slow down a bit, hoping something happens.[end if][at random]";
 					otherwise:
 						let P be a random worn nipple covering clothing;
-						say "[one of]You fantasize about [PlayerFantasy]. Quiet slicking noises can be heard as you work your fingers in and out of your [if the semen-volume of vagina > 0]cum-sodden[otherwise if the raw sex addiction of the player < 10]shamefully wet[otherwise]desperately wet[end if] [vagina].[or]You rapidly rub your clit, allowing your fingers to slip into your [vagina] as your mind turns to thoughts of [PlayerFantasy].[or]You eagerly diddle your clit and [if P is clothing]rub your [BreastDesc] through your [printed name of P][otherwise]tweak your nipples[end if], allowing your back to rest up against a nearby [if the player is in the Woods]tree[otherwise]wall[end if] as you fantasize about [PlayerFantasy].[or]You fuck yourself with your own fingers, [if the bimbo of the player < 5]shuddering[otherwise if the bimbo of the player < 12]trembling[otherwise]rolling your eyes back[end if][if the semen-volume of vagina < 1] at how inexorably pleasurable the nintendolls managed to make it feel[otherwise if the semen-volume of vagina < 4] at the feeling of the slimy [semen] trapped in your [vagina][otherwise] as thick, creamy [semen] coats your fingers and rolls down your arm.[end if][or]You continue your passionate shlicking session, [if the bimbo of the player < 7]trying and failing to stifle your shameful moans[otherwise if the bimbo of the player < 13]half-heartedly trying to stifle your passionate moans[otherwise]allowing shameless, wanton moans to stream out of your mouth[end if] as you fantasize about [PlayerFantasy].[at random]";
+						say "[one of]You fantasize about [PlayerFantasy]. Quiet slicking noises can be heard as you work your fingers in and out of your [if the semen volume of vagina > 0]cum-sodden[otherwise if the raw sex addiction of the player < 10]shamefully wet[otherwise]desperately wet[end if] [vagina].[or]You rapidly rub your clit, allowing your fingers to slip into your [vagina] as your mind turns to thoughts of [PlayerFantasy].[or]You eagerly diddle your clit and [if P is clothing]rub your [BreastDesc] through your [printed name of P][otherwise]tweak your nipples[end if], allowing your back to rest up against a nearby [if the player is in the Woods]tree[otherwise]wall[end if] as you fantasize about [PlayerFantasy].[or]You fuck yourself with your own fingers, [if the bimbo of the player < 5]shuddering[otherwise if the bimbo of the player < 12]trembling[otherwise]rolling your eyes back[end if][if the semen volume of vagina < 1] at how inexorably pleasurable the Nintendolls managed to make it feel[otherwise if the semen volume of vagina < 4] at the feeling of the slimy [semen] trapped in your [vagina][otherwise] as thick, creamy [semen] coats your fingers and rolls down your arm.[end if][or]You continue your passionate shlicking session, [if the bimbo of the player < 7]trying and failing to stifle your shameful moans[otherwise if the bimbo of the player < 13]half-heartedly trying to stifle your passionate moans[otherwise]allowing shameless, wanton moans to stream out of your mouth[end if] as you fantasize about [PlayerFantasy].[at random]";
 			say "[line break]";
 			compute extra turn;
 			if the number of monsters grabbing the player > 0 or wanking is 0:
@@ -413,7 +413,7 @@ Carry out masturbating:
 			set up target-poster;
 		if the player is male, heal asshole times 1;
 		if the player is female and object-choice is nothing, heal vagina times 1;
-		if a random number between 1 and the sex addiction of the player < 5, SexAddictUp 1;
+		if a random number between 1 and the sex addiction of the player < 6, SexAddictUp 1;
 		orgasm;
 		if the wanktime of the player > 0 and the number of on-stage chastity cages is 0:
 			let R be a random number between 1 and 225;

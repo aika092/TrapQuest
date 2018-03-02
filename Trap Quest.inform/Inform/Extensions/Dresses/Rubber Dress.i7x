@@ -14,7 +14,7 @@ Part 1 - White Rubber Giant Bow Dress
 
 A white rubber giant bow dress is a kind of rubber dress. There is 1 white rubber giant bow dress. The text-shortcut of white rubber giant bow dress is "wgb". The printed name of white rubber giant bow dress is usually "[TQlink of item described][clothing-title-before]white latex giant bow dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of white rubber giant bow dress is the file "rubberdress2.png".
+Figure of white rubber giant bow dress is the file "Items\Clothes\Upper\Latex\rubberdress2.png".
 
 To decide which figure-name is clothing-image of (C - a white rubber giant bow dress):
 	decide on figure of white rubber giant bow dress.
@@ -39,7 +39,7 @@ Part 2 - Metallic Purple Rubber Dress
 
 A metallic purple rubber dress is a kind of rubber dress. There is 1 metallic purple rubber dress. A metallic purple rubber dress is neck covering. The text-shortcut of metallic purple rubber dress is "mpd". The printed name of metallic purple rubber dress is usually "[TQlink of item described][clothing-title-before]metallic purple latex dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of metallic purple rubber dress is the file "rubberdress3.png".
+Figure of metallic purple rubber dress is the file "Items\Clothes\Upper\Latex\rubberdress3.png".
 
 To decide which figure-name is clothing-image of (C - a metallic purple rubber dress):
 	decide on figure of metallic purple rubber dress.
@@ -66,7 +66,7 @@ There is 1 superheroine fetish dress.
 
 The printed name of superheroine fetish dress is usually "[TQlink of item described][clothing-title-before]green and gold latex dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "green", "and gold", "gold" as superheroine fetish dress.
 
-Figure of superheroine fetish dress is the file "rubberdress4.png".
+Figure of superheroine fetish dress is the file "Items\Clothes\Upper\Latex\rubberdress4.png".
 
 To decide which figure-name is clothing-image of (C - a superheroine fetish dress):
 	decide on figure of superheroine fetish dress.

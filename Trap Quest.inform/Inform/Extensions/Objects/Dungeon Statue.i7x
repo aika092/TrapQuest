@@ -1,8 +1,8 @@
 Dungeon Statue by Objects begins here.
 
-DungeonScenery01 is a thing. DungeonScenery01 is in Dungeon10. DungeonScenery01 is not portable. The printed name of DungeonScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of DungeonScenery01 is "[DungeonScenery01Desc]". Understand "statue","man","penis", "woman", "nipple" as DungeonScenery01. DungeonScenery01 has a number called doses. The doses of DungeonScenery01 is usually 1. Figure of DungeonScenery01 is the file "statue1.png". The text-shortcut of DungeonScenery01 is "sta".
+DungeonScenery01 is a thing. DungeonScenery01 is in Dungeon10. DungeonScenery01 is not portable. The printed name of DungeonScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of DungeonScenery01 is "[DungeonScenery01Desc]". Understand "statue","man","penis", "woman", "nipple" as DungeonScenery01. DungeonScenery01 has a number called doses. The doses of DungeonScenery01 is usually 1. Figure of DungeonScenery01 is the file "Env/Dungeon/statue1.png". The text-shortcut of DungeonScenery01 is "sta".
 DungeonScenery01b is scenery. DungeonScenery01b is in Dungeon10. The printed name of DungeonScenery01b is "statue". The description of DungeonScenery01b is "[DungeonScenery01bDesc]". Understand "statues" as DungeonScenery01b.
-Figure of DungeonScenery01d is the file "statue4.png".
+Figure of DungeonScenery01d is the file "Env/Dungeon/statue4.png".
 To say DungeonScenery01Desc:
 	if diaper quest is 0:
 		if images visible is 1, display figure of DungeonScenery01;

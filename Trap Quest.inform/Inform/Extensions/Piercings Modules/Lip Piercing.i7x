@@ -1,6 +1,6 @@
 Lip Piercing by Piercings Modules begins here.
 
-A lip piercing is a kind of piercing. The printed name of lip piercing is "[TQlink of item described][item style]lip piercing[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of lip piercing is "lp". There is 1 lip piercing. Figure of lip piercing is the file "lippiercing1.png".
+A lip piercing is a kind of piercing. The printed name of lip piercing is "[TQlink of item described][item style]lip piercing[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of lip piercing is "lp". There is 1 lip piercing. Figure of lip piercing is the file "Items\Accessories\Piercings\lippiercing1.png".
 
 To decide which figure-name is the clothing-image of (C - a lip piercing):
 	decide on figure of lip piercing.

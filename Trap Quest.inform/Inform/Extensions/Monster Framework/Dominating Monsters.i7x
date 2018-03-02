@@ -13,7 +13,7 @@ Determines whether or not the player can successfully fuck a monster or not.
 	if there is a worn cursed pussy covering clothing, decide no;
 	if size of penis is 0 and the player is male and asshole is actually occupied, decide no;
 	if the player is female and vagina is actually occupied, decide no;
-	if the sex addiction of the player >= 14, decide no;
+	if the player is feeling submissive, decide no;
 	if there is a worn let it die tattoo and a random number between 1 and 2 is 1, decide no;
 	if the latex-transformation of the player >= 6, decide no;
 	if there is a dangerous monster in the location of the player, decide no;
@@ -114,8 +114,15 @@ REQUIRES COMMENTING
 Check dominating:
 	if the noun is not monster, say "What would be the point of that?" instead;
 	if diaper quest is 1, say "I think you're playing the wrong game." instead;
-	if the noun is not wenchy or (the noun is acolyte and the player is not a september 2017 top donator), say "The [the noun] doesn't look like someone you could successfully dominate." instead;
-	if (the noun is male and the noun is not gladiator) and the sex addiction of the player < 5, say "[first custom style][if the player is male]What if [he of the noun] was into it? Also, wouldn't that be pretty gay?[otherwise]It would be vindicating, but I won't risk having [him of the noun] turning the tables on me.[end if][roman type][line break]" instead;
+	if the noun is not wenchy[ or (the noun is acolyte and the player is not a september 2017 top donator)], say "The [the noun] doesn't look like someone you could successfully dominate." instead;
+	if (the noun is male and the noun is not gladiator):
+		let C be 5;
+		if the player is horny, decrease C by 1;
+		if the player is very horny, decrease C by 1;
+		if the player is extremely horny, decrease C by 1;
+		if the sex addiction of the player < C:
+			if debugmode is 0, say "[first custom style][if the player is male]What if [he of the noun] was into it? Also, wouldn't that be pretty gay?[otherwise]It would be vindicating, but I won't risk having [him of the noun] turning the tables on me.[end if][roman type][line break]" instead;
+			otherwise say "if debugmode were disabled, the player would refuse to perform this action.";
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don[']t see the point." instead;
 	let D be asshole;[what are you going to use to fuck the monster]
 	if the player is female, now D is vagina;
@@ -139,6 +146,11 @@ Check dominating:
 		say "The [noun] isn't even paying attention to you right now. Are you sure you want to start a fight?";
 		unless the player consents, do nothing instead.
 
+To say DomThreshold (R - a number):
+	if R is 1, say "Auto dominance threshold met.[line break]";
+	if R is 0, say "Neither auto threshold met.[line break]";
+	if R is -1, say "Auto failure threshold met.[line break]".
+
 [!<CarryOutDominating>+
 
 REQUIRES COMMENTING
@@ -149,11 +161,12 @@ Carry out dominating:
 	now player-fucking is 0;[we set this to 1 after we're finished determining success]
 	if the health of M >= (the number of worn let it die tattoos  * -10) + (the number of worn dominance clothing * 2) + (the maxhealth of M / 2) or the delicateness of the player is 20, now player-fucking is -1;[anymore than 50% hp and it's auto loss]
 	if player-fucking is 0, now player-fucking is the submissiveness of M;[submissiveness of M will set player-fucking based on the monster]
+	otherwise say DomThreshold player-fucking;
 	if player-fucking is 1:[Value of 1? The player is successful!]
 		say DominanceSuccess of M;
 		compute successful dominance of M;
 		let J be a random worn demon codpiece;
-		if J is clothing and the player is a may 2017 top donator, follow the demon junk reward rule;
+		if J is clothing and the player is the donator, follow the demon junk reward rule;
 		replace M after domination;
 	otherwise:[Value of 2? Player failed and is getting punished]
 		now M is interested;
@@ -176,19 +189,19 @@ Understand "dominate [something]", "fuck [something]", "dom [something]", "screw
 [!<DecideWhichNumberIsTheDominanceOfThePlayer>+
 
 This function calculates the "dominance score" of the player, which is derived from the player's sex addiction, delicateness, and orifice openness, in addition to penis size and the enchantment types of any pieces of worn clothing. Male players always have an inherent advantage, so we try to compensate a little bit by taking the average gape of both holes for female players. If the player learns the fuckskill, orifice openness and sex addiction are omitted from the calculation.
-
+@return <Integer> A higher value indicates the player is more dominant. A smaller value indicates the player is less dominant.
 +!]
 To decide which number is the dominance of the player:
-	let D be 0;
+	let D be 3; [The player is naturally a little dominant]
 	decrease D by the delicateness of the player;
 	decrease D by the number of worn temptation clothing * 2;
 	increase D by the number of worn dominance clothing * 2;
 	increase D by the size of penis;
 	if fuckskill is 0:[note that default openness is 1, so all players can gain something from having the skill.]
-		if the player is male, decrease D by the openness of asshole;
-		otherwise decrease D by (the openness of vagina + the openness of asshole) / 2;
-		decrease D by the sex addiction of the player;
-	decide on D.
+		if the player is male, decrease D by the openness of asshole / 2;
+		otherwise decrease D by (the openness of vagina + the openness of asshole) / 4;
+		decrease D by the sex addiction of the player / 4;
+	decide on D + 2.
 
 [!<DecideWhichNumberIsTheSubmissivenessOfMonster>+
 
@@ -204,19 +217,56 @@ Does the monster submit to sex, or do they turn the tables; broken up so it's ea
 +!]
 To decide which number is the submissiveness of (M - a monster):
 	let R be the physical dominance roll for M;
-	if R is not 0, decide on R;[has to be done like this to account for RNG]
-	let N be a random number between (the strength of the player / 2) and (the dominance of the player + 2);[The minimum value here is always 3 assuming no negative modifiers on dominance.]
-	let D be the health of M - the times-dominated of M;
+	if debugmode > 0, say DomThreshold R;
+	unless R is 0, decide on R;[has to be done like this to account for RNG]
+	let N be the mental dominance roll for M;
+	let D be the submissiveness base of M;
 	if debugmode > 0, say "Player dominance = [N], monster submissiveness = [D].[line break]";
 	if N >= D, decide on 1;
 	if debugmode > 0, say "Reroll 1. New player dominance = [N], monster submissiveness = [D].[line break]";[I made a rule during a play-through I'd accept the failure if I failed again after an undo, so we might as well incorporate that into the check.]
-	now N is a random number between (the strength of the player / 2) and (the dominance of the player + 2);
+	now N is the mental dominance roll for M;
 	if N >= D, decide on 1;
 	if the health of M <= 10 and the maxhealth of M >= 40:[this is a high health enemy that takes a lot of effort to get this low, so we re-roll N a third time and try again]
-		now N is a random number between (the strength of the player / 2) and (the dominance of the player + 2);
+		now N is the mental dominance roll for M;
 		if debugmode > 0, say "Reroll 2. New player dominance = [N], monster submissiveness = [D].[line break]";
 		if N >= D, decide on 1;
 	decide on -1.
+
+[!<DecideIfMonsterIsDominantSexReady>+
+
+Determines whether or not it is likely that the player would succeed if they tried to dominate this monster.
+
+@param <Monster>:<M> The monster the player could potentially dominate
+@return <Boolean> True if the average of the player's strength and dominance is greater than M's submissiveness base
+
++!]
+To decide if (M - a monster) is dominantSexReady:
+	unless M is wenchy, decide no;
+	let X be ((the strength of the player / 2) + the dominance of the player) / 2;[that is to say, the average of strength and dominance]
+	if the submissiveness base of M < X, decide yes;
+	decide no.
+
+[!<DecideWhichNumberIsMentalDominanceRollForMonster>+
+
+Outputs the strength of the player's current domination attempt for a particular monster
+
+@param <Monster>:<M> The monster the player is trying to dominate
+@return <Integer> integer between the player's strength divided by 2 and the player's dominance value
+
++!]
+To decide which number is the mental dominance roll for (M - a monster):
+	decide on a random number between (the strength of the player / 2) and the dominance of the player;[The minimum value here is always 3 assuming no negative modifiers on dominance.]
+
+[!<DecideWhichNumberIsSubmissivenessBaseOfMonster>+
+
+Outputs the "DC" the player's mental dominance roll needs to beat in order to dominate a particular monster
+
+@param <Monster>:<M> The monster the player is trying to dominate
+@return <Integer> integer based on M's health and the number of times the player has successfully dominated it
+
++!]
+To decide which number is the submissiveness base of (M - a monster):
+	decide on the health of M - the times-dominated of M.
 
 [!<DecideWhichNumberIsThePhysicalDominanceRollForMonster>+
 
@@ -228,7 +278,7 @@ By default, puts 1/3 the player's strength against roughly 5/6 the monster's dif
 +!]
 To decide which number is the physical dominance roll for (M - a monster):
 	let R be the strength of the player / 3 - (the difficulty of M / 2 + the difficulty of M / 3);
-	if debugmode > 0, say "Physical check is [R].[line break]";[remember that 35 / 6 in inform will give a different result to 7/2 + 7/3][###Selkie: From http://inform7.com/learn/documents/January2007Document.txt: "NI has basically no concept of operator precedence: neither, we feel, does English, which relies on the intonation with which a human reader speaks "let x be equal to y plus z times w" in order to communicate whether the addition happens before or after the multiplication. Clearly equations along the lines speculated about above would require a precise and traditional operator precedence. But we believe it would be inconsistent to apply such a thing to natural language forms. Instead, we do support the use of brackets to clarify such calculations"]
+	if debugmode > 0, say "Physical check is [R].[line break]";[KEEP IN MIND: a calculation like 35 / 6 in inform will give a different result to (7/2) + (7/3)][###Selkie: From http://inform7.com/learn/documents/January2007Document.txt: "NI has basically no concept of operator precedence: neither, we feel, does English, which relies on the intonation with which a human reader speaks "let x be equal to y plus z times w" in order to communicate whether the addition happens before or after the multiplication. Clearly equations along the lines speculated about above would require a precise and traditional operator precedence. But we believe it would be inconsistent to apply such a thing to natural language forms. Instead, we do support the use of brackets to clarify such calculations"]
 	if R > 0:
 		if a random number between 1 and 2 is 1, decide on 1;
 	decide on 0.

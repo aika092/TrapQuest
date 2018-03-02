@@ -1,6 +1,6 @@
 Bird Nest Tattoo by Tattoos begins here.
 
-bird nest tattoo is a kind of crotch tattoo. Figure of bird nest tattoo is the file "tattoo36.png". There is 1 bird nest tattoo.
+bird nest tattoo is a kind of crotch tattoo. Figure of bird nest tattoo is the file "Items/Tats/tattoo36.png". There is 1 bird nest tattoo.
 Definition: a bird nest tattoo (called T) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;

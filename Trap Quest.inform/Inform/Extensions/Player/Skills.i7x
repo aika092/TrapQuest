@@ -133,7 +133,7 @@ To teach begging for mercy:
 				say "[bold type]**You have learned how to beg for mercy!**[roman type]";
 				now the mercyskill of the player is 1;
 			otherwise:
-				say "You have no plans to [if the sex addiction of the player < 14]get fucked, so don't feel that the advice is very useful. If you were to lose your virginity, then maybe you'd pay more attention to this tip...[otherwise]complain if someone is nice enough to fuck you, so you ignore the advice![end if]";
+				say "You have no plans to [if the player is not a nympho]get fucked, so don't feel that the advice is very useful. If you were to lose your virginity, then maybe you'd pay more attention to this tip...[otherwise]complain if someone is nice enough to fuck you, so you ignore the advice![end if]";
 	otherwise:
 		say "[bold type]You already know how to beg for mercy![roman type]".
 
@@ -166,7 +166,7 @@ REQUIRES COMMENTING
 To teach deepthroating:
 	if the throatskill of the player is 0:
 		if the semen taste addiction of the player > 1 or the stomach-semen of the player > 0:
-			say "[bold type]**You have learned how to deepthroat!**[roman type][line break][if the sex addiction of the player < 10]As much as you don't ever want to be deep-throated, never mind be known as a particularly skilled throater, you have to admit to yourself that in this game it's probably sensible to know how![end if]You will now be able to prevent yourself from puking up semen during blowjobs.";
+			say "[bold type]**You have learned how to deepthroat!**[roman type][line break][if the oral sex addiction of the player < 5]As much as you don't ever want to be deep-throated, never mind be known as a particularly skilled throater, you have to admit to yourself that in this game it's probably sensible to know how! [end if]You will now be able to prevent yourself from puking up semen during blowjobs.";
 			now the throatskill of the player is 1;
 		otherwise:
 			say "You ignore this piece of advice, [if the sex addiction of the player < 13]you don't ever want to be deep-throated, never mind be known as a particularly skilled throater!  Maybe if you are ever forced to swallow some semen, then you might decide it's worth knowing how to do this.[otherwise]since you would much rather get fucked properly if the opportunity arises.[end if]";
@@ -510,7 +510,7 @@ REQUIRES COMMENTING
 +!]
 To teach fuckskill:
 	if the fuckskill of the player is 0:
-		if the sex addiction of the player > 7 or the size of penis < 4:
+		if the player is a pervert or the size of penis < 4:
 			say "[bold type]**You have learned how to hide your submissiveness from the people around you!**[line break]From now on, you[']ll find it a lot easier to find a way of having dominant sex![roman type][line break]";
 			now the fuckskill of the player is 1;
 		otherwise:

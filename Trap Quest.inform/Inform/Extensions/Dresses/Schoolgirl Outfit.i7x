@@ -27,7 +27,7 @@ The printed name of cheeky schoolgirl outfit is usually "[TQlink of item describ
 
 There is 1 cheeky schoolgirl outfit.
 
-Figure of cheeky schoolgirl outfit is the file "schoolgirl3.png".
+Figure of cheeky schoolgirl outfit is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl3.png".
 
 To decide which figure-name is clothing-image of (C - a cheeky schoolgirl outfit):
 	decide on figure of cheeky schoolgirl outfit.
@@ -53,7 +53,7 @@ The printed name of provocative schoolgirl outfit is usually "[TQlink of item de
 
 There is 1 provocative schoolgirl outfit.
 
-Figure of provocative schoolgirl outfit is the file "schoolgirl2.png".
+Figure of provocative schoolgirl outfit is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl2.png".
 
 To decide which figure-name is clothing-image of (C - a provocative schoolgirl outfit):
 	decide on figure of provocative schoolgirl outfit.
@@ -78,8 +78,8 @@ There is 1 halloween schoolgirl outfit.
 To say ShortDesc of (C - a halloween schoolgirl outfit):
 	say "halloween-style slutty schoolgirl outfit".
 
-Figure of halloween schoolgirl outfit A is the file "schoolgirl1a.png".
-Figure of halloween schoolgirl outfit B is the file "schoolgirl1b.png".
+Figure of halloween schoolgirl outfit A is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl1a.png".
+Figure of halloween schoolgirl outfit B is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl1b.png".
 
 To decide which figure-name is clothing-image of (C - a halloween schoolgirl outfit):
 	decide on figure of halloween schoolgirl outfit a.
@@ -103,7 +103,7 @@ The printed name of minimalist schoolgirl outfit is usually "[TQlink of item des
 
 There is 1 minimalist schoolgirl outfit.
 
-Figure of minimalist schoolgirl outfit is the file "schoolgirl4.png".
+Figure of minimalist schoolgirl outfit is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl4.png".
 
 To decide which figure-name is clothing-image of (C - a minimalist schoolgirl outfit):
 	decide on figure of minimalist schoolgirl outfit.

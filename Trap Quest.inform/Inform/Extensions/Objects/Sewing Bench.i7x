@@ -1,6 +1,6 @@
 Sewing Bench by Objects begins here.
 
-sewing bench is object. sewing bench is not portable. The printed name of sewing bench is "[TQlink of item described]sewing bench[TQxlink of item described][verb-desc of item described]". The description of a sewing bench is "[SewingBenchDesc]". sewing bench is in School09. The text-shortcut of a sewing bench is "swb". [Figure of sewing bench is the file "detentionchair1.png".]
+sewing bench is object. sewing bench is not portable. The printed name of sewing bench is "[TQlink of item described]sewing bench[TQxlink of item described][verb-desc of item described]". The description of a sewing bench is "[SewingBenchDesc]". sewing bench is in School09. The text-shortcut of a sewing bench is "swb". [Figure of sewing bench is the file "Env/School/detentionchair1.png".]
 
 Definition: sewing bench (called C) is immune to change:
 	decide yes.

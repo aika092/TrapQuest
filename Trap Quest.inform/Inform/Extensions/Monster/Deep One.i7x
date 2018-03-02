@@ -6,7 +6,7 @@ The printed name of a deep one is usually "[if item described is in the location
 
 A deep one has a number called angered. The angered of a deep one is usually 0.
 
-Figure of deep one is the file "deepone1.png".
+Figure of deep one is the file "NPCs/Mansion/deepone1.png".
 
 To say DeepOneDesc:
 	if images visible is 1, display figure of deep one;
@@ -62,19 +62,6 @@ Part 2 - Combat
 
 Section 1 - Attack
 
-To compute (M - a deep one) entering asshole:
-	if M is friendly-fucking or presented-orifice is asshole, say "[FriendlyAssholePenetrationFlav of M]";
-	otherwise say "[AssholePenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating asshole;
-	ruin asshole.
-
-To compute (M - a deep one) entering vagina:
-	say "[VaginaPenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating vagina;
-	ruin vagina.
-
 To TimesFuckedUp (M - a deep one) by (N - a number):
 	if the angered of M > 0:
 		now the angered of M is 0;
@@ -96,16 +83,18 @@ To compute damage of (M - a deep one):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a deep one):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The creature seems uninjured!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The creature doesn[']t seem to be affected by its injuries!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The creature is becoming rather frantic!";
-	otherwise:
-		say "The creature seems to be having trouble staying on its feet!".
-		
+To say DamageReactHealthy of (M - a deep one):
+	say "The creature seems uninjured!".
+
+To say DamageReactDamaged of (M - a deep one):
+	say "The creature doesn[']t seem to be affected by its injuries!".
+
+To say DamageReactTired of (M - a deep one):
+	say "The creature is becoming rather frantic!".
+
+To say DamageReactWeak of (M - a deep one):
+	say "The creature seems to be having trouble staying on its feet!".
+
 To compute unique death of (M - a deep one):
 	say "The [noun] shrieks and falls to the ground. ";
 	say "Its body decomposes into a foul mist, and quicker than you can react it sinks into your skin! You feel much stronger and tougher!";

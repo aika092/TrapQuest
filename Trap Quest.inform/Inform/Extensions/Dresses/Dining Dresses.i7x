@@ -10,11 +10,14 @@ This is the remove inappropriate dining dresses rule:
 		now B is in Holding Pen.
 The remove inappropriate dining dresses rule is listed in the diaper quest fix rules.
 
+Definition: a dining dress (called C) is slitted: [Slitted skirts don't block knee attacks]
+	decide yes.
+
 Part 1 - Red Dining Dress
 
 A red dining dress is a kind of dining dress. There is 1 red dining dress. The text-shortcut of red dining dress is "rdd". The printed name of red dining dress is usually "[TQlink of item described][clothing-title-before]red dining dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of red dining dress is the file "diningdress1.png".
+Figure of red dining dress is the file "Items\Clothes\Upper\Dresses\Evening\diningdress1.png".
 
 To decide which figure-name is clothing-image of (C - a red dining dress):
 	decide on figure of red dining dress.
@@ -38,7 +41,7 @@ Part 2 - Black Dining Dress
 
 A black dining dress is a kind of dining dress. There is 1 black dining dress. A black dining dress is usually fully covering. The text-shortcut of black dining dress is "bdd". The printed name of black dining dress is usually "[TQlink of item described][clothing-title-before]black dining dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of black dining dress is the file "diningdress2.png".
+Figure of black dining dress is the file "Items\Clothes\Upper\Dresses\Evening\diningdress2.png".
 
 To decide which figure-name is clothing-image of (C - a black dining dress):
 	decide on figure of black dining dress.

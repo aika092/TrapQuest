@@ -37,7 +37,7 @@ Hotel03 is a guest modern room. The printed name of Hotel03 is "Room 102". "A no
 REQUIRES COMMENTING
 
 *!]
-Hotel04 is a guest modern room. The printed name of Hotel04 is "Room 103". "A normal hotel bedroom. [if diaper quest is 1]A video of a diapered woman in a straitjacket with a strong vibrating wand taped to her diaper[otherwise]An explicit BDSM porno[end if] is playing loudly on the widescreen TV. There doesn't seem to be any way to turn it off[if the sex addiction of the player < 8].[otherwise], not that you'd want to.[end if]". The shape of Hotel04 is L3/0-0-1-0-0-0.
+Hotel04 is a guest modern room. The printed name of Hotel04 is "Room 103". "A normal hotel bedroom. [if diaper quest is 1]A video of a diapered woman in a straitjacket with a strong vibrating wand taped to her diaper[otherwise]An explicit BDSM porno[end if] is playing loudly on the widescreen TV. There doesn't seem to be any way to turn it off[if the player is not a pervert].[otherwise], not that you'd want to.[end if]". The shape of Hotel04 is L3/0-0-1-0-0-0.
 
 [!<hotel05:ModernRoom>*
 

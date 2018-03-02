@@ -27,7 +27,7 @@ Carry out squirting:
 	if the noun is penetrating vagina:
 		if the fill-colour of the noun is creamy:
 			say "The [semen] is squirted [if pregnancy fetish is 1]almost directly into your womb[otherwise]deep into your [vagina] as you give yourself an artificial creampie[end if].";
-			WombFill 2;
+			PussyFill 2;
 		otherwise:
 			say "The [fill-colour of the noun] liquid is forced into your [vagina] but quickly flows out onto the ground.";
 	otherwise if the noun is penetrating asshole:
@@ -65,7 +65,7 @@ Carry out squirting:
 				VaginalSexAddictDown 1;
 				TitfuckAddictDown 1;
 			otherwise if the fill-type of the noun is 3:
-				if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20:
+				if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20: [once the player's sex addiction hits max, they no longer can regain intelligence]
 					say "You feel more wise, and more awake!";
 					IntUp 1;
 					now the fatigue of the player is 0;

@@ -4,7 +4,7 @@ A santa corset is a kind of corset. A santa corset is usually wool. A santa cors
 
 The printed name of santa corset is usually "[TQlink of item described][clothing-title-before]santa corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of santa corset is "san".
 
-Figure of santa corset is the file "santacorset1.png".
+Figure of santa corset is the file "Items\Clothes\Upper\Corsets\santacorset1.png".
 
 To decide which figure-name is clothing-image of (C - a santa corset):
 	decide on figure of santa corset.

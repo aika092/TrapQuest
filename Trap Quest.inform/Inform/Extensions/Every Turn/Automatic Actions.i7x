@@ -19,12 +19,12 @@ To compute continued urination:
 	compute urination;
 	now another-turn is 1.
 
-[!<ComputeAutomaticActions>+
+The compulsory action rules is a rulebook.
 
-REQUIRES COMMENTING
+To compute compulsory actions:
+	follow the compulsory action rules.
 
-+!]
-To compute automatic actions:
+This is the compulsory urination rule:
 	if continued urination is 1:
 		compute continued urination;
 	otherwise if delayed urination is 1 and busy is 0:
@@ -53,16 +53,26 @@ To compute automatic actions:
 			let old-bladder be the bladder of the player;
 			try urinating;
 			if old-bladder > the bladder of the player, now another-turn is 1;[We need to check this to verify that urination was successful. If it was prevented for any reason, then we don't want to create an infinite loop!]
-		now delayed urination is 0;
-	otherwise if diaper lover is 3 and there is worn messed knickers and (there is a changing the player monster or there is a spanking the player monster): [If the player is only into scene messing then we need to prevent the player from getting a chance to escape e.g. with the pink pill]
-		now another-turn is 1;
-	otherwise if there is a worn drinkme tattoo and the semen taste addiction of the player < 20 and the player is not desperately craving and the urine taste addiction of the player <= 15 and the player is not almost too full and there is a held non-empty bottle and face is not actually occupied and the player is not in danger and the player is able to use their hands:
-		let C be a random held non-empty bottle;
-		if C is bottle:
-			say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [C] to your lips!";
-			try drinking C;
-			now another-turn is 1;
-	otherwise if delayed stand is 1:
+		if debugmode is 1, say "resetting accidental urination flag.";
+		now delayed urination is 0.
+The compulsory urination rule is listed in the compulsory action rules.
+
+This is the compulsory change rule:
+	if diaper lover is 3 and there is worn messed knickers and (there is a changing the player monster or there is a spanking the player monster): [If the player is only into scene messing then we need to prevent the player from getting a chance to escape e.g. with the pink pill]
+		now another-turn is 1.
+The compulsory change rule is listed in the compulsory action rules.
+
+This is the compulsory pussy expulsion rule:
+	if the semen volume of vagina > 6 and vagina is not actually occupied, compute pussy expulsion.
+The compulsory pussy expulsion rule is listed in the compulsory action rules.
+
+[!<ComputeAutomaticActions>+
+
+REQUIRES COMMENTING
+
++!]
+To compute automatic actions:
+	if delayed stand is 1:
 		if there is a revealed hypno trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is smoky: [The player might prefer to move first]
 			now delayed stand is 0;
 		otherwise:

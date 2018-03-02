@@ -12,7 +12,7 @@ The printed name of demon lord is usually "[if item described is in the location
 Understand "xavier" as demon lord. There is 1 demon lord.
 
 The description of demon lord is usually "[DemonDesc]". The text-shortcut of demon lord is "xa".
-Figure of demon lord is the file "xavier1.png".
+Figure of demon lord is the file "NPCs/Bosses/xavier1.png".
 
 To say DemonDesc:
 	if images visible is 1 and diaper quest is 0, display the figure of demon lord;
@@ -211,28 +211,14 @@ To say CondomRejectFlav of (M - a demon lord):
 To say CondomAcceptFlav of (M - a demon lord):
 	if the condom resistance of M > 0, say "The [M] frowns, but then takes the condom and sheathes [his of M] [manly-penis]. [line break][speech style of M]'[one of]I GUESS I SHOULD USE PROTECTION[or]YOUR PUNY LATEX WILL NOT SCARE ME THIS TIME, MORTAL[at random]!'[roman type][line break]".
 
-To compute (M - a demon lord) entering asshole:
-	say "[AssholePenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating asshole;
-	if the player-class is succubus:
-		dignify 1200;
-	ruin asshole.
+To set up sex length of (M - a demon lord) in (B - a body part):
+	set up sex length (a random number between 2 and 3) of M in B.
 
-To compute (M - a demon lord) entering vagina:
-	say "[VaginaPenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating vagina;
-	if the player-class is succubus:
-		dignify 800;
-	ruin vagina.
+To compute unique penetration effect of (M - a demon lord) in (B - asshole):
+	if the player-class is succubus, dignify 1200.
 
-To compute (M - a demon lord) entering mouth:
-	say "[MouthPenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	if the player-class is succubus:
-		dignify 800;
-	now M is penetrating face.
+To compute unique penetration effect of (M - a demon lord) in (B - a body part):
+	if the player-class is succubus, dignify 800.
 
 To compute vaginal sex of (M - a demon lord):
 	compute fuckhole sex of M.
@@ -302,7 +288,7 @@ To decide if (M - a demon lord) is losing wrapper in (F - a fuckhole):
 To compute condom failure of (M - a demon lord) in (F - a fuckhole):
 	say CondomFailFlav of M in F;
 	now M is unwrapped;[condom comes off in the flavour, so we remove it]
-	WombFill the semen load of M / 2.
+	PussyFill the semen load of M / 2.
 
 To say CondomPieFlav of (M - a demon lord) in (F - a fuckhole):
 	say "The [M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of his ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with his load, roaring with pleasure as the insane force of his ejaculation causes it to stretch[at random]. The latex inches up his length as it struggles to contain his huge load, allowing you to feel every throb of his [manly-penis] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of]his orgasm dies down just as the condom is about to overflow, and he begins to pull out[or]he starts to pull out just as it's about to overflow[or]it doesn't overflow, and his [semen] stays safely behind a layer of latex as he pulls out[at random]. He seems to lose interest.".
@@ -313,11 +299,9 @@ To say CondomFailFlav of (M - a demon lord) in (O - a fuckhole):
 To say CreampieFlav of (M - a demon lord) in (O - a fuckhole):[TODO]
 	say "The [M] ejaculates deep inside your [variable O]!";
 
-To orgasm (M - a demon lord):
-	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
-		say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with him, Sister! Do not insult your goddess!'";
-		increase the charge of the dungeon altar by 30;
-	if the class of the player is princess, follow the betrothal rule.
+To compute priestessBlessing of (M - a demon lord):
+	say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with him, Sister! Do not insult your goddess!'";
+		increase the charge of the dungeon altar by 30.
 
 To say StrikingSuccessFlav of (M - a demon lord) on (B - a body part):
 	say "The [M] strikes you [TargetName of B] with a large claw!  Ouch!!";
@@ -459,8 +443,8 @@ The priority of xavier-nightmare-belt is 4.
 
 xavier-belt-link is a number that varies.
 
-Figure of cutscene-xavier-nightmare-belt-clean is the file "cutscene-xavier-nightmare-belt1.png".
-Figure of cutscene-xavier-nightmare-belt-messy is the file "cutscene-xavier-nightmare-belt2.png".
+Figure of cutscene-xavier-nightmare-belt-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-belt1.png".
+Figure of cutscene-xavier-nightmare-belt-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-belt2.png".
 
 To compute punishment of (P - xavier-nightmare-belt):
 	now the priority of P is 0; [can only happen once]

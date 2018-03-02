@@ -90,7 +90,7 @@ To compute dungeon long term challenge of (M - a monster):
 	otherwise:
 		compute pink smoke challenge of M;
 
-To compute dungeon tentacle challenge of (M - a monster):
+To compute dungeon tentacle challenge of (M - a monster):[maybe once the tentacle monster is large enough it breaks you out of prison]
 	let T be a random off-stage tentacle monster;
 	if T is monster:
 		now T is newborn;

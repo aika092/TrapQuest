@@ -37,10 +37,10 @@ The printed name of clairvoyant acolyte is usually "[if item described is in the
 Definition: a clairvoyant acolyte (called M) is willing to do oral:
 	decide yes.
 
-Figure of acolyte 1 is the file "cultist1.png".
-Figure of acolyte 2 is the file "cultist2.png".
-Figure of acolyte 3 is the file "cultist3.png".
-Figure of acolyte 4 is the file "cultist4.png".
+Figure of acolyte 1 is the file "NPCs/Mansion/Cultist/cultist1.png".
+Figure of acolyte 2 is the file "NPCs/Mansion/Cultist/cultist2.png".
+Figure of acolyte 3 is the file "NPCs/Mansion/Cultist/cultist3.png".
+Figure of acolyte 4 is the file "NPCs/Mansion/Cultist/cultist4.png".
 
 To say AcolyteDesc:
 	let M be the item described;
@@ -232,7 +232,7 @@ This is the cult conversion rule:
 			if the player is able to get horny, vaginally orgasm shamefully;
 			say "The creature seemed to be waiting for this moment, and you feel it begin to pump [semen] into you even as you orgasm. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
 			increase the charge of the elder altar by 500;
-			WombFill 6;
+			PussyFill 6;
 			ruin vagina times 2;]
 	otherwise if the pregnancy of the player > 0 and M is intelligent:
 		say "[first custom style]'It is unseemly for the blessed to be so unruly, maintain decorum in the future.'[roman type][line break]";
@@ -293,15 +293,20 @@ To compute damage of (M - a mindless acolyte):
 		now the angered of N is 1;
 		now N is in the location of the player.
 
-To say DamageReaction (N - a number) of (M - an acolyte):
-	if N > (the maxhealth of M / 4) * 3:
-		say "[big he of M] doesn[']t seem to notice any injury!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "[big he of M] takes the hit without dodging!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "[big he of M] seems to be getting frantic!";
-	otherwise:
-		say "[big he of M] seems to be fighting to maintain [his of M] balance.".
+To say DamageReactHealthy of (M - an acolyte):
+	say "[big he of M] doesn[']t seem to notice any injury!".
+
+To say DamageReactDamaged of (M - an acolyte):
+	say "[big he of M] takes the hit without dodging!".
+
+To say DamageReactTired of (M - an acolyte):
+	say "[big he of M] seems to be getting frantic!".
+
+To say DamageReactWeak of (M - an acolyte):
+	say "[big he of M] seems to be fighting to maintain [his of M] balance.".
+
+To say DamageReactSubmissive of (M - an acolyte):
+	say "[big he of M] staggers as [he of M] takes the hit, pushing out [his of M] chest provocatively as [he of M] struggles to maintain [his of M] balance.".
 
 To compute unique death of (M - an acolyte):
 	say "The [noun] shrieks and falls to the ground. ";
@@ -464,12 +469,12 @@ To compute failed dominance punishment of (M - a mindless acolyte):
 	say "Your vision fades, and you find yourself floating naked in a black void, drifting inexorably toward a rapidly growing mass of pink fog in the distance. That same terrible chill takes hold of your body as you pass the precipice, and a [if the times-met of H > 1]familiar[otherwise]unfamiliar[end if] voice fills every fibre of your being.";
 	if the player is male:
 		if the size of penis is min penis size and TG fetish is 1:[transform player into a woman, and impregnate them if possible. Otherwise]
-			say "[speech style of H]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of Azacocks and stuff[otherwise]powerless before the will of Azacocks[end if]!'[roman type][line break]A huge black tentacle reaches out of the smoke, pinning your wrists together behind your back as it [if the sex addiction of the player < 7]pries[otherwise]pushes[end if] your thighs apart, shiny, bulbous head pushing insistently against your taint. You feel your insides behind your crotch rearranging themselves[if the size of penis > 0] as your [Shortdesc of penis] recedes fully into your body[end if], twisting and turning as the tentacle grinds harder and harder, coating your skin with its slimy, viscous drool. Your legs are forced even wider as the tip pushes further, deeper and deeper into a space that never existed inside you before, simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Huge bulges pass up its length as the tentacle bumps up against what must be your cervix, stretching your new hole wide as it bastes your insides with hot, warm [semen]. You feel a sensation like a curtain being thrust open as you suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] oozing out of your new [vagina]. You've been transformed into a woman!";
+			say "[speech style of H]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of Azacocks and stuff[otherwise]powerless before the will of Azacocks[end if]!'[roman type][line break]A huge black tentacle reaches out of the smoke, pinning your wrists together behind your back as it [if the player is feeling dominant]pries[otherwise]pushes[end if] your thighs apart, shiny, bulbous head pushing insistently against your taint. You feel your insides behind your crotch rearranging themselves[if the size of penis > 0] as your [Shortdesc of penis] recedes fully into your body[end if], twisting and turning as the tentacle grinds harder and harder, coating your skin with its slimy, viscous drool. Your legs are forced even wider as the tip pushes further, deeper and deeper into a space that never existed inside you before, simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Huge bulges pass up its length as the tentacle bumps up against what must be your cervix, stretching your new hole wide as it bastes your insides with hot, warm [semen]. You feel a sensation like a curtain being thrust open as you suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] oozing out of your new [vagina]. You've been transformed into a woman!";
 			SexChange the player;
 			now the virgin of the player is 0;
 			now elder altar is penetrating vagina;
 			ruin vagina times 2;
-			WombFill 6;
+			PussyFill 6;
 			now elder altar is not penetrating vagina;
 			now P is 0;
 		otherwise if the size of penis > min penis size:[reduce penis size by the number of mindless acolytes]
@@ -477,17 +482,17 @@ To compute failed dominance punishment of (M - a mindless acolyte):
 			now P is 0;
 			PenisDown the number of on-stage mindless acolytes;
 	otherwise if pregnancy fetish is 1 and the humiliation of the player > HUMILIATION-SHAMELESS:[humiliation beyond certain point? Impregnate the player!]
-		say "[speech style of H]'[one of]You're totally about to be fertilized by the seed of Azacocks, just you know.[or]You're about to become the vessel for the spawn of Azacocks!'[or]Get your fucking pussy ready to be bent to the will of Azacocks!'[at random][line break]A huge black tentacle reaches out of the smoke, drooling thick, viscous[semen] from its shiny, bulbous tip as it inches toward your crotch. It leaves a trial of white as it curls around your thighs, effortlessly [if the sex addiction of the player < 7]prying[otherwise]pulling [end if] them wide open before slowly entering your [vagina]. You should be horrified/aroused, but, you can't really muster much of a feeling about anything. Your mind is blank. Every thought fades in an instant, leaving nothing between you and the Great Ones. Nothing at all to distract you from your duty. Your service. You exist only as a vessel for the spawn of the Great Ones. Until now, what you knew was only a childish imitation of purpose. Everything else is pointless. You feel a sensation like a curtain being thrust open as you suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] leaking out of your [vagina][if bukkake fetish is 1]and plastered to your inner thighs[end if]. It's very hard to think about anything, and even if you try to force yourself, you can't imagine yourself as being an individual in any sense of the word.";
+		say "[speech style of H]'[one of]You're totally about to be fertilized by the seed of Azacocks, just you know.[or]You're about to become the vessel for the spawn of Azacocks!'[or]Get your fucking pussy ready to be bent to the will of Azacocks!'[at random][line break]A huge black tentacle reaches out of the smoke, drooling thick, viscous[semen] from its shiny, bulbous tip as it inches toward your crotch. It leaves a trial of white as it curls around your thighs, effortlessly [if the player is feeling dominant]prying[otherwise]pulling[end if] them wide open before slowly entering your [vagina]. You should be horrified/aroused, but, you can't really muster much of a feeling about anything. Your mind is blank. Every thought fades in an instant, leaving nothing between you and the Great Ones. Nothing at all to distract you from your duty. Your service. You exist only as a vessel for the spawn of the Great Ones. Until now, what you knew was only a childish imitation of purpose. Everything else is pointless. You feel a sensation like a curtain being thrust open as you suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] leaking out of your [vagina][if bukkake fetish is 1]and plastered to your inner thighs[end if]. It's very hard to think about anything, and even if you try to force yourself, you can't imagine yourself as being an individual in any sense of the word.";
 		now P is 0;
-		WombFill 6;
+		PussyFill 6;
 		now the pregnancy of the player is 1;
 		now the father is elder altar;
-		if slow pregnancy > 2, now the semen volume of vagina is 30;
+		if slow pregnancy > 2, now the womb volume of vagina is 30;
 		Humiliate SEVERE-HUMILIATION + MODERATE-HUMILIATION;
 	if P is 1:[HUMILIATION SMASH]
 		say "[speech style of H]'[one of]Your mind is fucking forfeit to the will of Azacocks, or something!'[or]All holes are, like, one before the will of Azacocks!'[at random][roman type][line break]The smoke converges around you, forcing your mouth[if the player is female], [vagina],[end if] and [asshole] wide open as the fog spreads to your thoughts, and volts of pleasure ripple through your entire body. You feel but do not see huge cylindrical objects thrusting in and out of all your orifices, faster and faster until you feel a sensation like a curtain being thrust open and suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] leaking out of every hole. You feel like your sense of self worth is somehow harder to grasp.";
 		StomachSemenUp 2;
-		WombFill 2;
+		PussyFill 2;
 		AssFill 2;
 		Humiliate SEVERE-HUMILIATION + MODERATE-HUMILIATION.
 
@@ -580,7 +585,7 @@ To watersports dominate (M - an acolyte):
 	Dignify 30.
 
 To vaginal dominate (M - an acolyte):[TODO: less humiliating]
-	say "The [M] spreads [his of M] legs, but otherwise remains completely motionless as you push your [ShortDesc of penis] into [his of M] [vagina]. [big he of M]'s loose, and wet too, so you don't have to bother starting slow, pounding away as hard as like, right from the start. [big his of M] breasts jiggle pleasantly with the force of your strokes, punctuated by the rhythmic slap of your crotches repeatedly slamming together. You can faintly feel tentacles coiling around your body as you thrust, stroking your nipples, tracing your lips, and prodding [if asshole is actually occupied]the [printed name of random thing penetrating asshole] embedded in your [asshole][otherwise]your [asshole], which feels increasingly vulnerable by the second[end if]. [if the sex addiction of the player < 6]It's unsettling enough that you want to pull out, but that only makes the tendrils tighten their grip[otherwise if the sex addiction of the player < 12]Your instincts tell you to pull out, as much as it turns you on, but the tendrils tighten their grip as soon as you finish your thought[otherwise]And if that wasn't enough to turn you on, the tendrils tighten their grip after coiling around most of your body[end if], completely wresting away control of your hips and forcing you to fuck the [M] with even more enthusiasm.";
+	say "The [M] spreads [his of M] legs, but otherwise remains completely motionless as you push your [ShortDesc of penis] into [his of M] [vagina]. [big he of M]'s loose, and wet too, so you don't have to bother starting slow, pounding away as hard as like, right from the start. [big his of M] breasts jiggle pleasantly with the force of your strokes, punctuated by the rhythmic slap of your crotches repeatedly slamming together. You can faintly feel tentacles coiling around your body as you thrust, stroking your nipples, tracing your lips, and prodding [if asshole is actually occupied]the [printed name of random thing penetrating asshole] embedded in your [asshole][otherwise]your [asshole], which feels increasingly vulnerable by the second[end if]. [if the sex addiction of the player < 6]It's unsettling enough that you try to pull out, but that only makes the tendrils tighten their grip[otherwise if the sex addiction of the player < 12]Your instincts tell you to pull out, as much as it turns you on, but the tendrils tighten their grip as soon as you finish your thought[otherwise]And if that wasn't enough to turn you on, the tendrils tighten their grip after coiling around most of your body[end if], completely wresting away control of your hips and forcing you to fuck the [M] with even more enthusiasm.";
 	if asshole is available and face is available:
 		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way inside, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. The tentacle in your [asshole] presses insistently against your prostate as the [M]'s legs wrap around your waist, and you feel your balls tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as [if the size of penis > 8][semen] floods[otherwise if the size of penis > 6]several long ropes of [semen] spurt into[otherwise]several short streamers of [semen] spurt into[end if] the [M]'s [vagina], and you feel the tentacles pulsating wildly, your mouth filling with the unmistakeable taste of cum, although strangely, there isn't actually anything there.";
 		humiliate STRONG-HUMILIATION;
@@ -589,10 +594,10 @@ To vaginal dominate (M - an acolyte):[TODO: less humiliating]
 		humiliate MODERATE-HUMILIATION;
 	otherwise if asshole is available:
 		say "You feel a strong push from the tentacle near your asshole, forcing you wide open as the [M]'s legs wrap around your waist, and it begins to press insistently against your prostate. Your balls tighten, and you emit a muffled groan as pleasure builds and builds, finally coming to an explosive head as your [ShortDesc of penis] [if the size of penis > 8]floods the [M]'s [vagina] with semen[otherwise if the size of penis > 6]shoots several long ropes of [semen] spurt into the [M]'s [vagina][otherwise]shoots several times into the [M]'s [vagina][end if]. You can feel the tentacle pulsating wildly, but although its as humiliating as being inseminated, strangely it feels like nothing is actually being left inside you.";
-		humiliate STRONG-HUMILIATION - (TRIVIAL-HUMILIATION * 4);
+		humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION;
 	otherwise:
 		say "The [M]'s legs wrap around your waist, and you feel the tentacles desperately trying to strong-arm their way into your holes as the pleasure slowly begins to build. You take a bit of comfort in knowing that to an on-looker, it seems like you're really just giving it a willing slut, but as the tentacle near your [asshole] punches your [printed name of a random thing penetrating asshole], you can't deny how humiliating it feels to know it's anything but. Your balls tighten, and you emit a muffled grunt as your [ShortDesc of penis] explodes into the [M]'s vagina, filling it with your [load].";
-		humiliate SLIGHT-HUMILIATION - TRIVIAL-HUMILIATION;
+		humiliate MODERATE-HUMILIATION - SLIGHT-HUMILIATION;
 	now the body soreness of the player is 10;
 	say "The tentacles['] grip slowly fades, and you quickly return to your feet, trying to shake off what just happened.";
 	increase doom counter by 50 + the size of penis;
@@ -607,11 +612,11 @@ To vaginal dominate (M - an acolyte):[TODO: less humiliating]
 
 To female dominate (M - an acolyte):[The cultist eats you out herself!]
 	if the player is female:
-		say "You don't really know what [he of M]'s talking about, but it sounds like [he of M]'s planning to do what you had in mind anyway, so you join [him of M] on the ground and expectantly spread your legs. [big he of M] doesn't need a word of encouragement, pushing her fingers into your [vagina] as [his of M] tongue goes to work on your clit. The veil keeps you from seeing exactly what [he of M]'s doing, but [one of][he of M]'s unexpectedly good at it for someone in a game about sucking dick[or]apparently that religious stuff has more to it, because [he of M]'s pretty good at this[stopping]! You arch your back, legs shaking with pleasure as [he of M] [if the player is very horny]brings you to orgasm within moments[otherwise if the player is horny]brings you to orgasm in under a minute[otherwise if the player is a bit horny]brings you to orgasm with the impossibly dexterous motions of her tongue[otherwise]uses her dexterous tongue to bring you to an impossibly fast orgasm[end if], extending it with rhythmic, surgically precise pumping of [his of M] fingers. You can do nothing but ride on the wave of pleasure, moaning through clenched teeth as adrenaline floods through your body. When [he of M] eventually does let up, [he of M] resumes the chanting under [his of M] breath, [if the semen volume of vagina > 1 and the pregnancy of the player is 0 and bukkake fetish is 1][semen] clinging to her chin as [he of M] helps[otherwise if the semen volume of vagina > 1]licking [his of M] lips as [he of M] helps[otherwise]helping[end if] you gracefully to your feet. You feel great! Although for some reason you actually feel less dignified than you did before...";
+		say "You don't really know what [he of M]'s talking about, but it sounds like [he of M]'s planning to do what you had in mind anyway, so you join [him of M] on the ground and expectantly spread your legs. [big he of M] doesn't need a word of encouragement, pushing [his of M] fingers into your [vagina] as [his of M] tongue goes to work on your clit. The veil keeps you from seeing exactly what [he of M]'s doing, but [one of][he of M]'s unexpectedly good at it for someone in a game about sucking dick[or]apparently that religious stuff has more to it, because [he of M]'s pretty good at this[stopping]! You arch your back, legs shaking with pleasure as [he of M] [if the player is very horny]brings you to orgasm within moments[otherwise if the player is horny]brings you to orgasm in under a minute[otherwise if the player is a bit horny]brings you to orgasm with the impossibly dexterous motions of [his of M] tongue[otherwise]uses [his of M] dexterous tongue to bring you to an impossibly fast orgasm[end if], extending it with rhythmic, surgically precise pumping of [his of M] fingers. You can do nothing but ride on the wave of pleasure, moaning through clenched teeth as adrenaline floods through your body. When [he of M] eventually does let up, [he of M] resumes the chanting under [his of M] breath, [if the semen volume of vagina > 0 and bukkake fetish is 1][semen] clinging to [his of M] chin as [he of M] helps[otherwise if the semen volume of vagina > 0]licking [his of M] lips as [he of M] helps[otherwise]helping[end if] you gracefully to your feet. You feel great! Although for some reason you actually feel less dignified than you did before...";
 		orgasm;
 		Humiliate TRIVIAL-HUMILIATION * 2;
 		now the fatigue of the player is 0;
-		if the pregnancy of the player is 0, now the semen volume of vagina is 0;
+		now the semen volume of vagina is 0;
 		bodyHeal 1;
 	otherwise:
 		say "Not that you have any idea what [he of M]'s talking about, but you decide not to waste your chance, so you join [him of M] on the ground and wait expectantly.";
@@ -674,9 +679,9 @@ To say waitingflav of (M - a clairvoyant acolyte):
 	otherwise if the semen taste addiction of the player < 8:
 		say "[one of]You stare up at the cultist, stunned.[or]You shake your head in disbelief of the situation you've gotten yourself into.[or]You turn away. [line break][first custom style]'Hmmph.'[roman type][line break][or][line break][first custom style]'Whatever you're thinking of doing to me, please don't.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][line break][first custom style]'Fuck off, I'm not doing it.'[roman type][line break][or]You find yourself paralysed with dread, staring at the disgusting [semen] dripping from the [M]'s holes.[in random order]";
 	otherwise if the semen taste addiction of the player < 11:
-		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of the [M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'[if the class of the player is cultist]Okay, I guess I can do that. You know more about this religious stuff than I do[otherwise]Okay I'll lick it out of you but don't think I care about any of that weird religious stuff. You just really look like you need an orgasm[end if].''[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] the creature that must have been the source of that much [semen].[or][if the sex addiction of the player < 8]Internally you feel disgusted by the idea of her sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
+		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of the [M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'[if the class of the player is cultist]Okay, I guess I can do that. You know more about this religious stuff than I do[otherwise]Okay I'll lick it out of you but don't think I care about any of that weird religious stuff. You just really look like you need an orgasm[end if].''[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] the creature that must have been the source of that much [semen].[or][if the oral sex addiction of the player < 4]Internally you feel disgusted by the idea of her sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
 	otherwise:
-		say "[one of][if the sex addiction of the player < 7]You are stunned with indecision - you don't want to have to lick her out but you do love the idea of getting to swallow some more [semen].[otherwise]You stare at her [semen] dripping filled orifices and lick your lips greedily. It's like Christmas came early![end if][or]You stare at the [M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation. [line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style][if the class of the player is cultist]I knew I picked the right religious order to follow! I LOVE [semen][otherwise]I wouldn't mind joining her religious order or whatever if I get to swallow [semen] all day[end if]![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
+		say "[one of][if the player is not a pervert]You are stunned with indecision - you don't want to have to lick her out but you do love the idea of getting to swallow some more [semen].[otherwise]You stare at her [semen] dripping filled orifices and lick your lips greedily. It's like Christmas came early![end if][or]You stare at the [M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation. [line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style][if the class of the player is cultist]I knew I picked the right religious order to follow! I LOVE [semen][otherwise]I wouldn't mind joining her religious order or whatever if I get to swallow [semen] all day[end if]![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
 
 To say RepeatResponse of (M - a clairvoyant acolyte):
 	say "[one of]Though they may be delayed now, they will always find a way to return. That is the power of the Old Gods.'[or]Tomorrow's horoscope is...sunny.'[or]You fight a battle you cannot win.'[or]You will find yourself in a blasphemous room, and fight against a horse[']s third leg.'[cycling]";

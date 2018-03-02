@@ -1,8 +1,8 @@
 Flower Ballerina Tattoo by Tattoos begins here.
 
-flower ballerina tattoo is a kind of body tattoo. Figure of flower ballerina tattoo is the file "tattoo58.png". There is 1 flower ballerina tattoo.
+flower ballerina tattoo is a kind of body tattoo. Figure of flower ballerina tattoo is the file "Items/Tats/tattoo58.png". There is 1 flower ballerina tattoo.
 Definition: a flower ballerina tattoo (called T) is eligible:
-	if the noun is leotard or the noun is ballet shoes or the noun is ballet heels or the noun is glittering rose or the noun is flower hairclip, decide yes;
+	if the noun is ballet related wearthing or the noun is glittering rose or the noun is flower hairclip, decide yes;
 	decide no.
 To say tattoo-desc of (T - a flower ballerina tattoo):
 	if images visible is 1, display figure of flower ballerina tattoo;

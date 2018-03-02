@@ -6,7 +6,7 @@ A vampiric fangs is a kind of headgear. There is one vampiric fangs. A vampiric 
 The printed name of vampiric fangs is usually "[clothing-title-before]vampiric fangs[clothing-title-after]". 
 The text-shortcut of vampiric fangs is "vf".
 
-Figure of vampiric fangs is the file "fangs1.png".
+Figure of vampiric fangs is the file "Items\Accessories\Head\fangs1.png".
 
 To decide which figure-name is the clothing-image of (C - a vampiric fangs):
 	decide on figure of vampiric fangs.

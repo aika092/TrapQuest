@@ -13,7 +13,7 @@ Definition: a tongue piercing (called C) is currently visible: [Is the item worn
 Check taking off tongue piercing:
 	say "That's permanently welded into your tongue!" instead. 
 
-Figure of tongue piercing is the file "tonguepiercing1.png".
+Figure of tongue piercing is the file "Items\Accessories\Piercings\tonguepiercing1.png".
 
 To decide which figure-name is the clothing-image of (C - a tongue piercing):
 	decide on figure of tongue piercing.

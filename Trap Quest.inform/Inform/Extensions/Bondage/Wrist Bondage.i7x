@@ -78,11 +78,11 @@ The text-shortcut of pair of wristcuffs is "wc".
 To decide which number is the initial outrage of (W - a pair of wristcuffs):
 	decide on 3.
 
-Figure of handcuffs is the file "handcuffs1.png".
-Figure of pink handcuffs is the file "handcuffs2.png".
-Figure of furry handcuffs is the file "handcuffs3.png".
-Figure of trashy handcuffs is the file "handcuffs4.png".
-Figure of wristcuffs is the file "wristcuffs1.png".
+Figure of handcuffs is the file "Items\Accessories\Arm\handcuffs1.png".
+Figure of pink handcuffs is the file "Items\Accessories\Arm\handcuffs2.png".
+Figure of furry handcuffs is the file "Items\Accessories\Arm\handcuffs3.png".
+Figure of trashy handcuffs is the file "Items\Accessories\Arm\handcuffs4.png".
+Figure of wristcuffs is the file "Items\Accessories\Arm\wristcuffs1.png".
 
 Definition: a pair of handcuffs (called P) is untransformable:
 	decide no.

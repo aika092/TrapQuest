@@ -8,7 +8,7 @@ student-laci is a tryhard student.
 
 The text-shortcut of student-laci is "stla".
 
-Figure of laci is the file "student3.png".
+Figure of laci is the file "NPCs/School/Student/student3.png".
 
 To decide which figure-name is the monster-image of (M - student-laci):
 	decide on figure of laci.
@@ -46,7 +46,7 @@ student-misty is a tq-only tryhard student.
 
 The text-shortcut of student-misty is "stmi".
 
-Figure of misty is the file "student4.png".
+Figure of misty is the file "NPCs/School/Student/student4.png".
 
 To decide which figure-name is the monster-image of (M - student-misty):
 	decide on figure of misty.
@@ -89,7 +89,7 @@ student-candy is a tryhard student.
 
 The text-shortcut of student-candy is "stca".
 
-Figure of candy is the file "student5.png".
+Figure of candy is the file "NPCs/School/Student/student5.png".
 
 To decide which figure-name is the monster-image of (M - student-candy):
 	decide on figure of candy.

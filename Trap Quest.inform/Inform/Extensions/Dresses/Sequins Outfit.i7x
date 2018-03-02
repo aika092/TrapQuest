@@ -6,7 +6,7 @@ A sequins outfit is a kind of overdress. A sequins outfit is usually unique. A s
 
 The printed name of sequins outfit is usually "[TQlink of item described][clothing-title-before]sequins outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sequins outfit is "sqo".
 
-Figure of sequins outfit is the file "sequinsoutfit1.png".
+Figure of sequins outfit is the file "Items\Clothes\Upper\Exposing\Sequins\sequinsoutfit1.png".
 
 To decide which figure-name is clothing-image of (C - a sequins outfit):
 	decide on figure of sequins outfit.
@@ -40,7 +40,7 @@ A sequins dress is a kind of overdress. A sequins dress is usually top-exclusive
 
 The printed name of sequins dress is usually "[TQlink of item described][clothing-title-before]sequins dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sequins dress is "sdr".
 
-Figure of sequins dress is the file "sequinsdress1.png".
+Figure of sequins dress is the file "Items\Clothes\Upper\Exposing\Sequins\sequinsdress1.png".
 
 To decide which figure-name is clothing-image of (C - a sequins dress):
 	decide on figure of sequins dress.

@@ -1,6 +1,6 @@
 Semen Demon Tattoo by Tattoos begins here.
 
-semen demon tattoo is a kind of lower back tattoo. Figure of semen demon tattoo is the file "tattoo31.png". There is 1 semen demon tattoo.
+semen demon tattoo is a kind of lower back tattoo. Figure of semen demon tattoo is the file "Items/Tats/tattoo31.png". There is 1 semen demon tattoo.
 Definition: a semen demon tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;
 	if there is a worn lower back tattoo, decide no;

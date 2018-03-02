@@ -1,6 +1,6 @@
 Cum Dumpster Lip Tattoo by Tattoos begins here.
 
-cum dumpster lip tattoo is a kind of body tattoo. Figure of cum dumpster lip tattoo is the file "tattoo41.png". There is 1 cum dumpster lip tattoo.
+cum dumpster lip tattoo is a kind of body tattoo. Figure of cum dumpster lip tattoo is the file "Items/Tats/tattoo41.png". There is 1 cum dumpster lip tattoo.
 Definition: a cum dumpster lip tattoo (called T) is drawable:
 	if T is worn, decide no;
 	if diaper quest is 1, decide no;

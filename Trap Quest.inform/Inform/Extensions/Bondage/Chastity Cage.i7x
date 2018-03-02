@@ -23,8 +23,8 @@ To decide which figure-name is clothing-image of (C - a chastity cage):
 	if the player is male, decide on figure of male chastity cage;
 	otherwise decide on figure of female chastity cage.
 
-Figure of male chastity cage is the file "chastitycage1.png".
-Figure of female chastity cage is the file "chastitycage2.png".
+Figure of male chastity cage is the file "Items\Accessories\Chastity\chastitycage1.png".
+Figure of female chastity cage is the file "Items\Accessories\Chastity\chastitycage2.png".
 
 To say ClothingDesc of (C - a chastity cage):
 	say "[if the player is male]A tight cage for your penis that stops you from getting an erection or stimulating your penis in any way.[otherwise]A chastity belt that completely prevents access to your [vagina]. The back straps go over each ass cheek, allowing full access to your [asshole].[end if]";

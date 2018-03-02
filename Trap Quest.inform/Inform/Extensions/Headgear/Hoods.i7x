@@ -1,7 +1,7 @@
 Hoods by Headgear begins here.
 
 
-A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. A hood is usually roleplay. A black hood is a kind of hood. A black hood is usually strength-influencing. A black hood is usually dexterity-influencing. A white hood is a kind of hood. There is 1 black hood. There is 1 white hood. Figure of latex hood is the file "latexhood1.png". Figure of WC hood is the file "WcLatexHood.png". A hood is usually oral-sex-addiction-influencing. A white hood is usually urine-taste-addiction-influencing.
+A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. A hood is usually roleplay. A black hood is a kind of hood. A black hood is usually strength-influencing. A black hood is usually dexterity-influencing. A white hood is a kind of hood. There is 1 black hood. There is 1 white hood. Figure of latex hood is the file "Items\Accessories\Head\latexhood1.png". Figure of WC hood is the file "Items\Accessories\Head\WcLatexHood.png". A hood is usually oral-sex-addiction-influencing. A white hood is usually urine-taste-addiction-influencing.
 
 The printed name of hood is usually "[TQlink of item described][clothing-title-before]latex hood[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of hood is "lh".
 

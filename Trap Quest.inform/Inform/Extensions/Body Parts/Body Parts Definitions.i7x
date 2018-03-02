@@ -107,7 +107,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the semen-volume of (F - a fuckhole):
-	if F is vagina , decide on the semen volume of vagina;
+	if F is vagina , decide on the total volume of vagina;
 	if F is asshole, decide on the semen volume of belly;
 	decide on 0.
 
@@ -223,9 +223,17 @@ REQUIRES COMMENTING
 *@!]
 a body part has a number called urine coating.
 
+[!<DecideWhichNumberIsTheDesireOfBodyPart>+
+
+How much does the player want this body part to be used?
+
++!]
+To decide which number is the desire of (B - a body part):
+	decide on 0.
+
 [!<BodyPart>@<desirability:Integer>*
 
-REQUIRES COMMENTING
+How much do others want to use this body part for sex?
 
 *@!]
 a body part has a number called desirability.

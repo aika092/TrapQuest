@@ -1,6 +1,6 @@
 Magic Wand by Equippables begins here.
 
-A magic wand is a kind of equippable. A magic wand is usually slap ready. A magic wand is usually unique. A magic wand is usually metal. There is 1 magic wand. The printed name of magic wand is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]magic wand[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of magic wand is "mw". Figure of magic wand is the file "goldenphallus1.png". A magic wand is usually projectile.
+A magic wand is a kind of equippable. A magic wand is usually slap ready. A magic wand is usually unique. A magic wand is usually metal. There is 1 magic wand. The printed name of magic wand is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]magic wand[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of magic wand is "mw". Figure of magic wand is the file "Items\Accessories\Toys\goldenphallus1.png". A magic wand is usually projectile.
 
 To decide which figure-name is clothing-image of (C - a magic wand):
 	decide on figure of magic wand.

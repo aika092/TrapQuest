@@ -1,6 +1,6 @@
 Royal Hearts Tattoo by Tattoos begins here.
 
-royal hearts tattoo is a kind of body tattoo. Figure of royal hearts tattoo is the file "tattoo67.png". There is 1 royal hearts tattoo.
+royal hearts tattoo is a kind of body tattoo. Figure of royal hearts tattoo is the file "Items/Tats/tattoo67.png". There is 1 royal hearts tattoo.
 Definition: a royal hearts tattoo (called T) is eligible:
 	if the noun is royal attire or the noun is tiara, decide yes;
 	decide no.

@@ -274,7 +274,7 @@ Report appeasing something with summoning-circle:
 
 Chapter 2 - Giant Statue
 
-The giant-statue is in Woods30. The giant-statue is a summoning portal. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Figure of giant pregnant statue is the file "statue5.png". Figure of giant-statue is the file "statue6.png". Understand "giant", "statue" as giant-statue.
+The giant-statue is in Woods30. The giant-statue is a summoning portal. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Figure of giant pregnant statue is the file "Env/Forest/statue5.png". Figure of giant-statue is the file "Env/Forest/statue6.png". Understand "giant", "statue" as giant-statue.
 
 The description of giant-statue is "[GiantDesc]";
 
@@ -332,7 +332,7 @@ To say ActiveWarning of (G - a giant-statue):
 	if the location of the player is Woods30:
 		if a random vine boss is alive or doomed is 5:
 			say "You hear a deep rumble, watching the vines tighten around the giant-statue's wrists and ankles. A cloud of glittering orange pollen explodes over you as flowers bloom across her chest. [if the player is upright and the player is not immobile]An overwhelming sense of vertigo immediately drops you to your knees.[end if] You feel strange.";
-			if the pregnancy of the player is 1 and the semen volume of vagina is not 30, increase the semen volume of vagina by 1;
+			if the pregnancy of the player is 1 and the womb volume of vagina is not 30, increase the womb volume of vagina by 1;
 		otherwise:
 			say "You hear a deep rumble, watching as the giant statue's arms slowly reach up and palm her gigantic breasts. [if the player is upright and the player is not immobile]Your knees buckle, and a powerful tingle passes through your whole body as you immediately drop to your knees[otherwise]A powerful tingle passes through your whole body, like a forceful gust of wind.[end if].";
 			if the lactation rate of the player < lactation fetish, increase the lactation rate of the player by 1;[if fetish is 1, increase it to 1.]

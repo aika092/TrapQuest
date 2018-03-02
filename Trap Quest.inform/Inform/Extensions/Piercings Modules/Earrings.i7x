@@ -33,7 +33,9 @@ To decide which object is the concealer of (C - a pair of earrings):
 
 To decide which figure-name is the clothing-image of (C - a pair of earrings):
 	if C is cursed:
-		if interracial fetish is 1:
+		if watersports fetish is 1:
+			decide on figure of earrings toilet;
+		otherwise if interracial fetish is 1:
 			decide on figure of earrings gangbang;
 		otherwise if the player is originally female and the variation of C is 1:
 			decide on figure of earrings holes;
@@ -51,7 +53,9 @@ To decide which figure-name is the clothing-image of (C - a pair of earrings):
 
 To say ClothingDesc of (C - a pair of earrings):
 	if C is cursed:
-		if interracial fetish is 1:
+		if watersports fetish is 1:
+			say "A pair of earrings shaped like toilet rolls, marking you as a human toilet. ";
+		otherwise if interracial fetish is 1:
 			say "A pair of large circular plastic earrings with a white female gender symbol surrounded by four black male gender symbols pointing towards it. ";
 		otherwise if the player is originally female and the variation of C is 1:
 			say "A pair of large circular plastic earrings with graphic depictions of a mouth, vagina and asshole on each one. ";
@@ -71,21 +75,25 @@ To say ClothingDesc of (C - a pair of earrings):
 To say ShortDesc of (C - a pair of earrings):
 	say "pair of [if C is cursed]ultra slutty[otherwise if C is blessed]hooped[otherwise]cock-shaped[end if] earrings".
 
-Figure of earrings bukkake cock is the file "Earrings2a.png".
-Figure of earrings cock is the file "Earrings2b.png".
-Figure of earrings hoop is the file "Earrings3a.png".
-Figure of earrings cock ass is the file "Earrings1a.png".
-Figure of earrings holes is the file "Earrings1b.png".
-Figure of earrings gangbang is the file "Earrings1c.png".
-Figure of earrings sucking cock is the file "Earrings1d.png".
+Figure of earrings bukkake cock is the file "Items\Accessories\Piercings\Earrings2a.png".
+Figure of earrings cock is the file "Items\Accessories\Piercings\Earrings2b.png".
+Figure of earrings hoop is the file "Items\Accessories\Piercings\Earrings3a.png".
+Figure of earrings cock ass is the file "Items\Accessories\Piercings\Earrings1a.png".
+Figure of earrings holes is the file "Items\Accessories\Piercings\Earrings1b.png".
+Figure of earrings gangbang is the file "Items\Accessories\Piercings\Earrings1c.png".
+Figure of earrings sucking cock is the file "Items\Accessories\Piercings\Earrings1d.png".
+Figure of earrings toilet is the file "Items\Accessories\Piercings\Earrings1e.png".
 
 To decide which number is the bimbo-influence of (C - a pair of earrings):
 	decide on 1.
 To decide which number is the anal-sex-addiction-influence of (C - a pair of earrings):
-	if C is cursed and the variation of C is not 2, decide on 1;
+	if C is cursed and the variation of C is not 2 and watersports fetish is 0, decide on 1;
+	decide on 0.
+To decide which number is the urine-taste-addiction-influence of (C - a pair of earrings):
+	if C is cursed and watersports fetish is 1, decide on 1;
 	decide on 0.
 To decide which number is the oral-sex-addiction-influence of (C - a pair of earrings):
-	if C is cursed and the variation of C is 2, decide on 1;
+	if C is cursed and the variation of C is 2 and watersports fetish is 0, decide on 1;
 	decide on 0.
 To decide which number is the intelligence-influence of (C - a pair of earrings):
 	if C is blessed, decide on 1;

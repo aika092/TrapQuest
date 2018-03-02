@@ -102,7 +102,7 @@ To compute periodic effect of (C - a rejuvenation clothing):
 		otherwise:
 			say "Your [ShortDesc of C] pulses as several spurts of warm [semen] shoot into your [variable F], which tingles as the soreness seems to melt away.";
 			if F is asshole, AssFill N;
-			otherwise WombFill N;
+			otherwise PussyFill N;
 			if C is blessed, heal F times N;
 			otherwise heal F times N - 1.
 
@@ -253,11 +253,11 @@ To say PlugSize (N - a number):
 
 A plug is usually ass plugging.
 
-Figure of small plug is the file "plug1.png".
-Figure of medium plug is the file "plug2.png".
-Figure of large plug is the file "plug3.png".
-Figure of huge plug is the file "plug4.png".
-Figure of monstrous plug is the file "plug5.png".
+Figure of small plug is the file "Items\Accessories\Toys\plug1.png".
+Figure of medium plug is the file "Items\Accessories\Toys\plug2.png".
+Figure of large plug is the file "Items\Accessories\Toys\plug3.png".
+Figure of huge plug is the file "Items\Accessories\Toys\plug4.png".
+Figure of monstrous plug is the file "Items\Accessories\Toys\plug5.png".
 
 To decide which figure-name is the clothing-image of (P - a plug):
 	if the size of P < 3:

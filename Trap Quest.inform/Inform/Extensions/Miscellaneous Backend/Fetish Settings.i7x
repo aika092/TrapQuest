@@ -757,6 +757,7 @@ To decide which number is positive points count:
 	if ungape is 1, increase X by 2;
 	if tentacle fetish is 1, increase X by 6;
 	if tough-shit is 1, increase X by 8;
+	if save game limit is 1, increase X by 4;
 	increase X by natural redness;
 	increase X by natural blondeness;
 	increase X by natural brightness;

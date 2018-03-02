@@ -85,7 +85,7 @@ To compute (C - a clothing) unique inheriting from (D - a clothing):
 	do nothing.
 
 To transform (D - a clothing) into (C - a clothing):
-	say "Your [D] transforms into ";
+	say "Your [ShortDesc of D] transforms into ";
 	silently transform D into C;
 	say "a [C] in front of your eyes!  ";
 	if transformation cutscenes is 1, say "[description of C]";
@@ -120,7 +120,7 @@ To say TransformReaction of (C - a clothing): [We make the assumption it's worse
 		otherwise:
 			if C is cursed, say "[variable custom style][one of]How embarrassing!  And I can't even take if off...[or]Oh come on![or]Fuck. I need to get this thing uncursed.[or]Okay, I'm only wearing this because I've literally got no choice![or]Really?  This is just unfair.[or]Am I really stuck wearing this?  Grr.[or]And it's cursed too. Not cool...[in random order][roman type][line break]";
 			otherwise say "[variable custom style][one of]I feel very reluctant to let anyone[if there is an intelligent monster in the location of the player] else[end if] see me like this...[or]What a joke. This is too trashy for me.[or]This is too nasty [if the humiliation of the player > HUMILIATION-DISGRACED + 3500]even [end if]for me.[or]I'm not looking forward to people seeing me in this.[or]This is much worse![or]This is not my idea of an upgrade![or]Ugh. I'm really tempted to take this off, it's just too much.[in random order][roman type][line break]";
-	otherwise if C is almost too cringeworthy or the unworn cringe of C is too humiliating:
+	otherwise if (C is almost too cringeworthy or the unworn cringe of C is too humiliating) and diaper quest is 1:
 		if the unworn cringe of C is too humiliating:
 			say "[variable custom style][one of]Holy cow!  Thank goodness it's covered up.[or]Oh my god, I'm so glad this is covered up at the moment![or]There's no way I could feel comfortable wearing something so childish if it wasn't covered up![in random order][roman type][line break]";
 		otherwise if C is equippable or C is bag of holding:
@@ -171,6 +171,8 @@ To decide which number is the disintegrate-resistance of (C - a shoes):
 
 To decide which number is the disintegrate-resistance of (C - a heels):
 	decide on the heel-height of C.
+
+
 
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;

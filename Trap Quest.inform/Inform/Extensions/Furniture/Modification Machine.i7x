@@ -95,13 +95,13 @@ To compute (M - a modification machine) stretching (F - a fuckhole):
 	let O be the openness of F;
 	now busy is 1;
 	now M is penetrating F;
-	say "A robotic arm with a [dildodesc of M] directs itself towards your crotch. [if the sex addiction of the player < 7]You are powerless to resist[otherwise if the sex addiction of the player < 14]You lie there stunned[otherwise]You watch with growing excitement[end if] as it pushes forward and starts pressing against your [variable F]. As the pressure increases, it starts slowly rotating like a drill!  [if the openness of F < 10]It's definitely bigger than you're comfortable taking!  You moan loudly as it slowly but surely forces itself in, stretching you wider[otherwise]As it forces itself in, the ridiculously wide bottom section of the cone threatens to split your already gaping hole in two[end if]!";
+	say "A robotic arm with a [dildodesc of M] directs itself towards your crotch. [if the player is not a pervert]You are powerless to resist[otherwise if the player is not a nympho]You lie there stunned[otherwise]You watch with growing excitement[end if] as it pushes forward and starts pressing against your [variable F]. As the pressure increases, it starts slowly rotating like a drill!  [if the openness of F < 10]It's definitely bigger than you're comfortable taking!  You moan loudly as it slowly but surely forces itself in, stretching you wider[otherwise]As it forces itself in, the ridiculously wide bottom section of the cone threatens to split your already gaping hole in two[end if]!";
 	say "[variable custom style][one of]Oof![or]Ack![or]Aahn![at random][roman type][line break]";
 	ruin F;
 	while the openness of F is O and the openness of F < 10 and delayed fainting is 0 and the latex-transformation of the player < 3:
 		compute extra turn;
 		say "The machine keeps drilling into your [variable F][one of] agonisingly slowly[or][stopping]!";
-		say "[variable custom style][if the soreness of F > 5][one of]Fuck![or]Aargh![or]Aaahn![at random][otherwise if the sex addiction of the player > 12][one of]Ooh![or]Aaah![or]Uuunf.[at random][otherwise][one of]Oof![or]Ack![or]Aahn![at random][end if][roman type][line break]";
+		say "[variable custom style][if the soreness of F > 5][one of]Fuck![or]Aargh![or]Aaahn![at random][otherwise if the relevant sex addiction of F > 12][one of]Ooh![or]Aaah![or]Uuunf.[at random][otherwise][one of]Oof![or]Ack![or]Aahn![at random][end if][roman type][line break]";
 		ruin F;
 	if delayed fainting is 0:
 		compute extra turn;

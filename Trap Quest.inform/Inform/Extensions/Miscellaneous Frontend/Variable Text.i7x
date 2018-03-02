@@ -28,14 +28,69 @@ To say feet:
 
 [!<SayStud>+
 
-REQUIRES COMMENTING
+If the player is impressed with the (assumed male) NPC
 
 +!]
 To say stud:
 	if the class of the player is santa's little helper:
 		say "Santa[one of] baby[or][or][purely at random]";
+	if the delicateness of the player < 7:
+		say "[one of][if diaper quest is 1]handsome[otherwise]big boy[end if][or]honey[or]cutie[as decreasingly likely outcomes]";
+	otherwise if the delicateness of the player < 14:
+		say "[if diaper lover >= 1]Sir[otherwise][one of]stud[or]handsome[or]stud[or]sailor[as decreasingly likely outcomes][end if]";
 	otherwise:
-		say "[one of]stud[or]handsome[or]stud[or]big boy[or][if diaper lover >= 1]daddy[otherwise]master[end if][as decreasingly likely outcomes]".
+		say "[if diaper lover >= 1]daddy[otherwise]Master[end if]".
+
+[!<SayMistress>+
+
+If the player is impressed with the (assumed female) NPC
+
++!]
+To say mistress:
+	if the class of the player is santa's little helper:
+		say "Mrs Santa";
+	if the delicateness of the player < 7:
+		say "[one of]honey[or]cutie[as decreasingly likely outcomes]";
+	otherwise if the delicateness of the player < 14:
+		say "[if diaper lover >= 1]Missus[otherwise][one of]beauty[or]Madame[or]Missus[as decreasingly likely outcomes][end if]";
+	otherwise:
+		say "[if diaper lover >= 1]mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
+
+[!<SayStud>+
+
+If the player is impressed with the NPC (unknown gender)
+
++!]
+To say stud of (M - a monster):
+	if M is female, say mistress;
+	otherwise say stud.
+
+[!<SayWormOfMonster>+
+
+If the player looks down on the NPC
+
++!]
+To say worm of (M - a monster):
+	if the class of the player is santa's little helper:
+		say "little elf";
+	otherwise:
+		say "[one of]little[or]pathetic[or]weak little[as decreasingly likely outcomes] [one of]bitch[if M is male and M is human] boy[end if][or]shit[or]worm[or][if M is male and M is human]shrimp-dick[otherwise]shit[end if][or]fucktoy[as decreasingly likely outcomes]".
+
+[!<SayWormOfMonster>+
+
+To decide whether the player looks down on this NPC
+
++!]
+To say stud-worm of (M - a monster):
+	if M is unimpressive and M is unintimidating and the player is feeling dominant, say worm of M;
+	otherwise say stud of M.
+
+Definition: a monster is unintimidating rather than intimidating if the difficulty of it < the strength of the player / 2. [Does the monster look too scary to insult?]
+
+Definition: a monster (called M) is impressive rather than unimpressive: [Does the monster look like a good lay?]
+	if M is dark skinned and interracial fetish is 1, decide yes;
+	if the girth of M > 10 - highest body part sex addiction, decide yes; [The more the player loves dick, the smaller dick they are satisfied by]
+	decide no.
 
 [!<SayBabe>+
 
@@ -335,6 +390,9 @@ REQUIRES COMMENTING
 To say himself of (M - a monster):
 	say "[if M is neuter]itself[otherwise if M is female]herself[otherwise]himself[end if]".
 
+To say penisDesc of (M - a monster):
+	say manly-penis;
+
 [!<SayDaddyOfMonster>+
 
 REQUIRES COMMENTING
@@ -394,9 +452,9 @@ REQUIRES COMMENTING
 To say muffled sounds:
 	if the player is able to make sounds:
 		if there is a thing penetrating face or the player is gagged:
-			say "[gag sounds]";
+			say gag sounds;
 		otherwise:
-			say "[open mouth sounds]".
+			say open mouth sounds.
 
 [!<SayOpenMouthSounds>+
 

@@ -2,7 +2,7 @@ Focus Band by Accessories begins here.
 
 A focus band is a kind of bracelet. There is 1 unique latex focus band. Printed name of focus band is "[TQlink of item described][clothing-title-before]focus band[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of focus band is "fcb".
 
-Figure of focus band is the file "focusband1.png".
+Figure of focus band is the file "Items\Accessories\Arm\focusband1.png".
 
 To decide which figure-name is clothing-image of (C - a focus band):
 	decide on figure of focus band.

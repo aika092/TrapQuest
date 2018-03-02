@@ -16,7 +16,7 @@ To decide which number is the initial outrage of (C - a pullstring collar):
 Check wearing a pullstring collar:
 	say "It's in two pieces, there's no way for it to stay on!" instead.
 
-Figure of pullstring collar is the file "collar2.png".
+Figure of pullstring collar is the file "Items\Accessories\Neck\collar2.png".
 
 To decide which figure-name is clothing-image of (C - a pullstring collar):
 	decide on figure of pullstring collar.
@@ -54,11 +54,11 @@ Check pulling a pullstring collar:
 			now R is 0;
 		otherwise if R is 3 or monster-puller is monster:
 			if diaper quest is 1:
-				say "'[if the sex addiction of the player < 5 and the player is female]Being a prude gets boring, the truth is that I love masturbating just as much as boys do!'[otherwise if the sex addiction of the player < 8][one of]My orgasms are more intense when someone else is in charge[or]I'll be a good little baby if you reward me by giving me cummies[or]If you hold me down while you play with my bits, I'm sure to enjoy it[then at random]!'[otherwise if the sex addiction of the player < 11][one of]The only thing more fun than being a big baby is being a big baby who's allowed cummies[or]I'll wear anything I'm told as long as you rub me through it[at random]!'[otherwise if there is a worn diaper]Please rub me through my diaper, I'll be your obedient little baby slave!'[otherwise]If I put on a diaper, will you promise to give me my cummies through it?'[end if][roman type][line break]";
+				say "'[if the sex addiction of the player < 5 and the player is female]Being a prude gets boring, the truth is that I love masturbating just as much as boys do!'[otherwise if the sex addiction of the player < 8][one of]Nothing in life is better than a well-earned orgasm[or]If you hold me down while you play with my bits, I'm sure to enjoy it[then at random]!'[otherwise if the sex addiction of the player < 11][one of]The only thing more fun than being a big baby is being a big baby who's allowed cummies[or]I'll wear anything I'm told as long as you rub me through it[at random]!'[otherwise if there is a worn diaper]If I'm an obedient little baby, will you rub me through my diaper?'[otherwise]If I put on a diaper, will you promise to give me my cummies through it?'[end if][roman type][line break]";
 			otherwise:
-				if monster-puller is female monster, say "'[if the player is a sissy]Pathetic sissies like me need to obey our Mistresses if we want to earn our cummies![otherwise if the player is male]Girls turn me on, but only if they're on top!  I'm not manly enough to try and dominate a woman.'[otherwise]This girl is so sexy... of course I want her to dominate me!'[end if][roman type][line break]";
-				otherwise say "'[if the sex addiction of the player < 5 and the player is female]Being a prude gets boring, I need someone to fuck me!'[otherwise if the sex addiction of the player < 5]Being on top gets boring, I want someone else to call the shots!'[otherwise if the sex addiction of the player < 11]The only thing more fun than being a nympho is being a submissive nympho!'[otherwise]Having my [asshole] destroyed gives me the best orgasms!'[end if][roman type][line break]";
-			say "You feel a little more desperate to submit to your superiors.";
+				if monster-puller is female monster, say "'[if the player is a sissy]Pathetic sissies like me love working hard to earn our cummies![otherwise if the player is male]Girls turn me on, especially when they're on top! I'm not manly enough to try and dominate a woman.'[otherwise]This girl is so sexy... I hope she sits on my face!'[end if][roman type][line break]";
+				otherwise say "'[if the sex addiction of the player < 5 and the player is female]Being a prude gets boring, I need someone to fuck me!'[otherwise if the sex addiction of the player < 5]Nothing in life is better than a well-earned orgasm!'[otherwise if the sex addiction of the player < 11]There's nothing more fun than being a nympho!'[otherwise if highest body part sex addiction < 6]I can't wait until my new Masters train my body to be addicted to [manly-penis]!'[otherwise]Having my [asshole] destroyed gives me the best orgasms!'[end if][roman type][line break]";
+			say "You feel a little [if the sex addiction of the player < 10]less inhibited[otherwise]more obsessed with domination and submission[end if].";
 			SexAddictUp 1;
 			now R is 0;
 		otherwise if R is 4:

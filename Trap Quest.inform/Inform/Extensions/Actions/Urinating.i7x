@@ -67,6 +67,7 @@ REQUIRES COMMENTING
 Check urinating:
 	if the bladder of the player is 0 and the number of worn prostate massager plugs is 0:
 		if delayed urination is not 1, say "You don't feel the need." instead;
+		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops!  Oh well, let's not break the game.]
 		say "[one of]Player was forced to urinate when they had nothing in their bladder, please report the bug to Aika![or][stopping]";
  		do nothing instead;
@@ -212,6 +213,7 @@ To start urination:
 	now player-urinating is 1;
 	if pee-bottling is 1: [We are automatically urinating so we set delayed urination to 1 to make sure we skipped the check functions. But we don't want to tell the player that the urination was involuntary because that's not actually true.]
 		now pee-bottling is 0;
+		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0;
 	if there is a camera trap in the location of the player and refactoryperiod < 3, now target-poster is a random off-stage wetting poster;
 	otherwise now target-poster is nothing;
@@ -402,6 +404,7 @@ To end urination:
 			DiaperAddictUp 1;
 		otherwise if the number of worn diapers is 0:
 			DiaperAddictDown 1;
+	if debugmode is 1, say "resetting accidental urination flag.";
 	now delayed urination is 0;
 	now the bladder of the player is 0;
 	now continued urination is 0;

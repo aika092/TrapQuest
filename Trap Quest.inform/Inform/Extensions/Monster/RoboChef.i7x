@@ -2,7 +2,7 @@ RoboChef by Monster begins here.
 
 A robochef is a kind of robot. Understand "chef" as robochef. A robochef is usually intelligent. A robochef is male. A robochef has a number called patrol. The leftover-type of a robochef is usually 119.
 
-Figure of robochef is the file "robochef1.png". The description of robochef is usually "[RoboChefDesc]". The text-shortcut of robochef is "rc".
+Figure of robochef is the file "NPCs/Hotel/Robot/robochef1.png". The description of robochef is usually "[RoboChefDesc]". The text-shortcut of robochef is "rc".
 
 There is 1 robochef.
 The printed name of robochef is "[if item described is in the location of the player][TQlink of item described][end if][input-style]busy RoboChef[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "busy" as robochef.
@@ -137,8 +137,10 @@ To compute (M - a robochef) ripping (C - a clothing):
 	say "The [M] manages to create a tear in the fabric!  Your [printed name of C] is now permanently ripped.";
 	now C is crotch-ripped.
 
+To set up sex length of (M - a robochef) in (F - asshole):
+	set up sex length (a random number between 2 and 3) of M in F.
+
 To say AssholePenetrationFlav of (M - a robochef):
-	now the sex-length of M is a random number between 2 and 3;
 	say "The [M] forces its glass [manly-penis] into your [asshole]!".
 
 To compute anal sex of (M - a robochef):

@@ -146,14 +146,14 @@ To say selfexamineuniquetitle of (G - a green thong):
 To say UniqueClothingDesc of (G - a green thong):
 	say "A basic skimpy green thong.".
 
-Figure of thong 1 is the file "thong1.png".
-Figure of thong 2 is the file "thong2.png".
-Figure of thong 3 is the file "thong3.png".
-Figure of thong 4 is the file "thong4.png".
-Figure of thong 5 is the file "thong5.png".
-Figure of thong 6 is the file "thong6.png".
-Figure of thong 7 is the file "thong7.png".
-Figure of thong 8 is the file "thong8.png".
+Figure of thong 1 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong1.png".
+Figure of thong 2 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong2.png".
+Figure of thong 3 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong3.png".
+Figure of thong 4 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong4.png".
+Figure of thong 5 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong5.png".
+Figure of thong 6 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong6.png".
+Figure of thong 7 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong7.png".
+Figure of thong 8 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong8.png".
 
 [Below are from Lucas]
 
@@ -197,12 +197,12 @@ To say UniqueClothingDesc of (G - a grey keyhole thong):
 Definition: a grey keyhole thong (called C) is bow themed:
 	decide yes.
 
-Figure of thong 9 is the file "thong9.png".	
-Figure of thong 10 is the file "thong10.png".	
-Figure of thong 11 is the file "thong11.png".	
-Figure of thong 12 is the file "thong12.png".	
-Figure of thong 13 is the file "thong13.png".	
-Figure of thong 14 is the file "thong14.png".	
+Figure of thong 9 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong9.png".	
+Figure of thong 10 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong10.png".	
+Figure of thong 11 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong11.png".	
+Figure of thong 12 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong12.png".	
+Figure of thong 13 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong13.png".	
+Figure of thong 14 is the file "Items\Clothes\Lower\Underwear\Skimpy\Thongs\thong14.png".	
 
 
 

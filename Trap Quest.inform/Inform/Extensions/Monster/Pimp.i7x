@@ -23,7 +23,7 @@ The printed name of pimp is usually "[if item described is in the location of th
 There is 1 pimp.
 
 The description of pimp is usually "[PimpDesc]". The text-shortcut of pimp is "pmp".
-Figure of pimp is the file "pimp1.png".
+Figure of pimp is the file "NPCs/Hotel/Patron/pimp1.png".
 
 To say PimpDesc:
 	if images visible is 1, display the figure of pimp;
@@ -40,7 +40,7 @@ Definition: a pimp (called M) is willing to let go:
 	decide no.
 
 To set up (M - a pimp):
-	if the player is not a july 2017 top donator or pimp-dead is 1, remove M from play;
+	if the player is not the donator or pimp-dead is 1, remove M from play;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 10;
 	now the health of M is the maxhealth of M.

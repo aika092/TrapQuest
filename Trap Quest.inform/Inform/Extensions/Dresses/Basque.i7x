@@ -36,7 +36,7 @@ A white milking basque is a kind of milking basque. The printed name of white mi
 
 There is 1 white milking basque.
 
-Figure of white basque is the file "basque1.png".
+Figure of white basque is the file "Items\Clothes\Upper\Dresses\Basques\basque1.png".
 
 To decide which figure-name is clothing-image of (C - a white milking basque):
 	decide on figure of white basque.
@@ -45,7 +45,7 @@ A cow print milking basque is a kind of milking basque. The printed name of cow 
 
 There is 1 cow print milking basque.
 
-Figure of cow print basque is the file "basque2.png".
+Figure of cow print basque is the file "Items\Clothes\Upper\Dresses\Basques\basque2.png".
 
 To say ClothingDesc of (O - a cow print milking basque):
 	say "This tight cow patterned undergarment keeps your body's shape looking and feeling smooth.[if O is worn and lactation fetish is 1][line break]You feel that it somehow magically messes with your body's lactation, sending some of it to other parts of your body...[end if]".

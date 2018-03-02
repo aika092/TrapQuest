@@ -104,19 +104,27 @@ This function runs any code that needs to be executed whenever the player finish
 +!]
 To orgasm (M - a monster):
 	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
-		say "You can feel a surge in your holy aura and a voice appears in your head: 'Dutiful Sister, there is still more work to be done!'";
-		decrease the charge of the dungeon altar by 150;
+		compute priestessBlessing of M;
 	if the class of the player is princess, follow the betrothal rule;
 	[if there is a held notebook, now study-buddy is M;]
-	if M is intelligent, now the refactory-period of M is the refactory time of M;
+	if M is intelligent, compute refactoryReset of M;
+	if there is a worn notebook:
+		compute studying 0 of M;
+	if the player is in the woods and giant-statue is active:
+		say "You feel a strange tingle near the back of your neck, like a lot of pressure lifted all at once.";
+		ChargeUp giant-statue by 60;
+
+To compute refactoryReset of (M - a monster):
+	now the refactory-period of M is the refactory time of M;
 	if there is a worn royal scepter:
 		if the charge of a random worn royal scepter > 2, increase the refactory-period of M by (the refactory time of M + 4);
 	if there is a worn enhancing book of anal:
 		FavourUp M;
-		increase the refactory-period of M by the intelligence of the player;
-	if the player is in the woods and giant-statue is active:
-		say "You feel a strange tingle near the back of your neck, like a lot of pressure lifted all at once.";
-		ChargeUp giant-statue by 60;
+		increase the refactory-period of M by the intelligence of the player.
+
+To compute priestessBlessing of (M - a monster):
+	say "You can feel a surge in your holy aura and a voice appears in your head: 'Dutiful Sister, there is still more work to be done!'";
+	decrease the charge of the dungeon altar by 150.
 
 To say sleeping tip:
 	if tutorial is 0, say "[one of][item style]Newbie tip: The enemy has fallen asleep!  However in this game you can't just kill sleeping enemies, you have to attack them like normal. Usually, this results in them waking back up again, so you'll still have a fight on your hands![roman type][line break][or][stopping]".
@@ -309,7 +317,7 @@ To compute facial sex of (M - a monster):
 			if a random number between 1 and 2 is 1:
 				decrease the sex-length of M by 1;
 		otherwise:
-			say OralSubmissionResponse of M;
+			say OralSubmissionResponse of M;[The idea here is that the player and "M" are working together, so we don't uncessarily restrict outselves with two flavour functions]
 			decrease the sex-length of M by 1;
 		if the sex-length of M > 2 and the lips of face > 2, decrease the sex-length of M by 1.
 
@@ -319,17 +327,15 @@ The default anal sex rule is listed in the default progress sex rules.
 
 To compute anal sex of (M - a monster):
 	if the class of the player is living sex doll:
-		say "As the [M] continues to use your [asshole] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping rosebud feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or]The [M] continues to use your super loose [asshole]![or]You continue to squeal as the [M] fucks your [asshole]![cycling].";
+		say SexDollAnal of M;
 	otherwise if M is not intelligent:
 		say "The [M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [asshole]!";
 	otherwise if the reaction of the player is 2:[begging]
-		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
+		compute begging of M in asshole;	
 	otherwise if the reaction of the player is 1:[submitting]
-		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][at random]";
-		ruin asshole;
+		compute sexSubmit of M in asshole;
 	otherwise:[resisting]
-		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		ruin asshole;
+		compute sexResist of M in asshole;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -341,13 +347,11 @@ To compute vaginal sex of (M - a monster):
 	if M is not intelligent:
 		say "The [M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [vagina]!";
 	otherwise if the reaction of the player is 2:
-		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
+		compute begging of M in vagina;
 	otherwise if the reaction of the player is 1:
-		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][at random]";
-		ruin vagina;
+		compute sexSubmit of M in vagina;
 	otherwise:
-		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		ruin vagina;
+		compute sexResist of M in vagina;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -359,11 +363,11 @@ To compute titfuck of (M - a monster):
 	humiliate 75;
 	if the reaction of the player is 0:
 		if M is male and M is intelligent:
-			say "[TitfuckResistFlav of M]";
-		say "[TitfuckForceFlav of M]";
+			say TitfuckResistFlav of M;
+		say TitfuckForceFlav of M;
 		if a random number between 1 and 2 is 1, decrease the sex-length of M by 1;
 	otherwise:
-		say "[TitfuckReceiveFlav of M]";
+		say TitfuckReceiveFlav of M;
 		decrease the sex-length of M by 1;
 	if breasts is pushed over the edge:
 		breasts orgasm shamefully;
@@ -375,17 +379,6 @@ To compute titfuck of (M - a monster):
 			say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or the player is male and the size of penis is 0]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 		otherwise:
 			say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
-
-To say TitfuckResistFlav of (M - a monster):
-	let C be a random worn top level covering nipple covering clothing;
-	say "[one of]You try and pry [his of M] hands off, but [he of M]'s too strong![or]You do everything you can to push [him of M] away, but [if C is clothing]your [printed name of C] keeps [him of M] firmly sandwiched between them![otherwise]you simply don't have the leverage from your position on your knees![end if][or]You struggle but you can't get away![or]You resist, but you simply can't get away![or]You try to push him away, but he stays right on top of you.[in random order]".
-
-To say TitfuckForceFlav of (M - a monster):
-	let C be a random worn top level covering nipple covering clothing;
-	say "[one of]The [if C is clothing][printed name of C]keeps your [ShortDesc of breasts] pushed together around the [M]'s[otherwise][M] keeps your [ShortDesc of breasts] pushed together around his[end if] [manly-penis] as he thrusts between them.[or]The [M] continues to powerfully thrust between your [ShortDesc of breasts]![or]Your [ShortDesc of breasts] jiggle[if the largeness of breasts > 10] obscenely[end if] as the [M] continues thrusting between them![or]The [M] forces you to hold your [ShortDesc of breasts] together as [he of M] roughly thrusts between them.[or]The [M] holds you by the wrists, keeping your [ShortDesc of breasts] wrapped around [his of M] [manly-penis] as [he of M] thrusts between them.[in random order]".
-
-To say TitfuckReceiveFlav of (M - a monster):
-	say "[one of]The [M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping his [manly-penis] with your [ShortDesc of breasts].[or]You continue to massage his [manly-penis] with your [ShortDesc of breasts].[or]You stare at [his of M] [manly-penis] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or]The [M]'s [manly-penis] gently bumps your chin as he enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7][line break][first custom style]gross[roman type][line break][otherwise]firm, hard[end if] penis between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
 
 Chapter 2 Priority Attack
 
@@ -638,7 +631,7 @@ This is the default monster convinced rule:
 			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
 			say "[PresentAcceptanceFlav of current-monster]";
 			rule succeeds;
-		otherwise if presented-orifice is face and current-monster is intelligent and there is a worn tongue piercing:
+		otherwise if (presented-orifice is face or presented-orifice is belly) and current-monster is intelligent and there is a worn tongue piercing:
 			say "The [current-monster] was about to ignore you, but it seems that your tongue piercing made your request extremely convincing!";
 			now the chosen-orifice of current-monster is presented-orifice;
 			rule succeeds;
@@ -767,6 +760,37 @@ To compute (M - a monster) replacing (C - a clothing):
 To say WeakenFlav of (M - a monster) on (C - a clothing):
 	say "The [clothing-material of C] is weakening.".
 
+[!<SetUpSexLengthOfMonsterInBodypart>+
+
+Sets the sex-length property of a monster "M" based on a body part "B". 
+
+@param <Monster>:<M> The monster that is planning to fuck the player
+@param <BodyPart>:<B> The bodypart "M" is planning to fuck
++!]
+To set up sex length of (M - a monster) in (B - a body part):
+	set up sex length 3 of M in B.
+
+[!<ComputeUniquePenetrationEffectOfMonsterInBodypart>+
+
+Defines a unique effect for a monster "M" penetrating the player in bodypart "B". Note that this function is by default called BEFORE M is penetrating B.
+
+@param <Monster>:<M> The monster that is penetrating the player
+@param <BodyPart>:<B> The bodypart "M" is penetrating
++!]
+To compute unique penetration effect of (M - a monster) in (B - a body part):
+	do nothing.
+
+[!<SetUpSexLengthNumberOfMonsterInBodypart>+
+
+Sets the sex-length property of a monster to a given property as long as it is 0 or less. Optionally modified based on the body part the monster is about to have sex with
+
+@param <Integer>:<N> The number to which sex-length will be set
+@param <Monster>:<M> The monster that is planning to fuck the player
+@param <BodyPart>:<B> The bodypart "M" is planning to fuck
++!]
+To set up sex length (N - a number) of (M - a monster) in (B - a body part):[ONLY assigns N to the sex length field if it is 0. If a monster potentially has a special sex length, this function does not do anything. Use "now sex length is X" instead]
+	if the sex-length of M <= 0, now the sex-length of M is N.
+
 This is the monster asshole insertion rule:
 	if the chosen-orifice of current-monster is asshole, follow the monster asshole insertion rules.
 The monster asshole insertion rule is listed in the default monster insertion rules.
@@ -788,66 +812,41 @@ This is the monster removing butt plug rule:
 The monster removing butt plug rule is listed last in the monster asshole insertion rules.
 
 This is the monster penetrating asshole rule:
-	if current-monster is male and there is a held condom-providing thing, compute condom request choice of current-monster;
-	compute current-monster entering asshole;
+	if current-monster is male and there is a held condom-providing thing[ and current-monster is not wrapped], compute condom request choice of current-monster;
+	compute current-monster entering anally;
 	rule succeeds.
 The monster penetrating asshole rule is listed last in the monster asshole insertion rules.
 
-To compute (M - a monster) entering asshole:
-	now the sex-length of M is 3;
-	if M is friendly-fucking or presented-orifice is asshole, say "[FriendlyAssholePenetrationFlav of M]";
-	otherwise say "[AssholePenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
-	now M is penetrating asshole;
-	ruin asshole.
+To get anal penetration image for (M - a monster):
+	do nothing.
 
-To say AssholePenetrationFlav of (M - a monster):
-	let N be a random monster penetrating vagina;
-	let O be a random monster penetrating face;
-	let F be the openness of asshole - the girth of M;
-	say "[AssholePenPrep of M]";
-	if the class of the player is living sex doll:
-		say "[if the relevant sex addiction of M < 9][line break][variable custom style]No, no![roman type][line break]you try to beg [him of M], as [he of M][otherwise]The [M][end if] turns you away, and you feel the massive bulbous head probing at your tight pucker, but then it ploughs through and inside you!";
-		say "There's a sound like a rubber balloon animal being twisted into a knot as [his of M] rod plunges into your squeakily-tight interior. [one of]You feel your cheeks flush in shame at the sound - which is weird: how can rubber cheeks flush? - but maybe they've done something so your emotional state is somehow transmitted to your new plastic skin?  You wouldn't put it past the wicked minds of the people who designed this game!  Probably some kind of 'psycho-active' plastic or something. But it's pretty hard to keep philosophising while a massive cock is being rammed up your back passage[if M is not neuter], and the [M]'s hands are jerking you forward and back like some life-size rubber doll while his powerful hips plunge his hot, meaty pole in and then out of your backside[end if]. Not the least because you can't believe just how [italic type]good[roman type] it feels! It's like the number of nerve-endings back there have been multiplied ten-fold. You're also really getting off on the incoherent sounds of some bitch's high-pitched squeaking and grunting as she's... [line break][variable custom style]Oops: that's me![roman type][line break][or][stopping][line break]";
-	otherwise if F < -2:[low bimbo: 2, mid: 2, high: 1]
-		if the relevant sex addiction of M < 7:
-			say "[one of]You [if O is monster]complain as loudly as you can through the dick in your mouth[otherwise]look over your shoulder[end if] as [his of M] [manly-penis] prods at your sphincter, attempting to force its way in with brute force alone. The [M] stops only to[unless O is monster] leer at your furious face and[end if] spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.[or][if O is monster]You try as hard as you can to evade it, but your mouth is much too full of dick for you to manage anything but a low groan of pain[otherwise]You try as hard as you can to make it difficult for [him of M], cursing through the pain[end if] as the [M] slowly and painfully forces [his of M] [manly-penis] into your [asshole], only pausing when [his of M] balls are in full contact with your taint.[at random]";
-		otherwise if the relevant sex addiction of M < 12:
-			say "[one of]You [if O is monster]half-heartedly struggle as [his of M] [manly-penis] prods at your sphincter, trying your best to ignore what[']s in your mouth and focus on keeping [him of M] at bay. The [M] stops, but[otherwise]silently look over your shoulder as [his of M] [manly-penis] prods at your sphincter, doing absolutely nothing to stop [him of M] even though every part of your being is telling you you should. The [M] stops, but[end if] only to spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way into your [asshole].[or]You brace yourself as the [M]'s [manly-penis] presses at your sphincter, stretching it bit by painful bit as it slowly forces its way into your [asshole]. The feeling is so intense, that by the time it occurs to you to bolt or at least fight, [his of M] balls are already slapping your [if the player is male]coin-purse[otherwise]taint[end if].[at random]";
-		otherwise:
-			say "You [if O is monster]continue servicing the dick in your mouth[otherwise]look over your shoulder with a grin[end if] as [his of M] [manly-penis] prods at your sphincter, attempting to force its way in with brute force alone. The [M] pauses only to [unless O is monster]return your look and [end if]spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.";
-	otherwise if F < 0:[low bimbo: 3 mid: 2, high: 1]
-		if the relevant sex addiction of M < 7:
-			say "[one of]You [if O is monster]groan as loudly as you can through the dick in your mouth[otherwise]grit your teeth and shoot a furious glare over your shoulder[end if] as [his of M] [manly-penis] forces open your sphincter, just big enough to hurt as much as possible without needing any extra lube. The [M] answers your look with a hearty smack of your [AssDesc], and grabs your hips with both hands to ensure you can[']t escape.[or][if O is monster]You try to dissuade [him of M], but your mouth is much too full of dick for you to manage anything but a pained grunt[otherwise]You try as hard as you can to make it difficult for [him of M], cursing through the pain[end if] as the [M] forces [his of M] [manly-penis] into your [asshole], only pausing when [his of M] balls slap your [if the player is male]taint[otherwise]cunt[end if]. Easily stopping your last escape attempt with a stronger grip, [he of M] begins to thrust.[or]You [if O is monster]grunt around the dick in your mouth[otherwise]snarl at the [M][end if] as [his of M] cockhead presses at your sphincter, which painfully stretches to let [his of M] [manly-penis] slowly slide its way in. Something tells you this will be a long, unpleasant fucking.[at random]";
-		otherwise if the relevant sex addiction of M < 12:
-			say "[one of]You do nothing to resist as [his of M] [manly-penis] presses at your sphincter, convincing yourself you[']re not looking forward to having [him of M] stretch out your tight little hole. A [if O is monster]muffled[end if] mixture of grunts and moans leave your mouth as it slowly forces its way in, answered with a derisive laugh as [he of M] begins to thrust.[or]You half-heartedly resist as [he of M] forces [his of M] [manly-penis] into your [asshole], emitting an involuntary moan [if O is monster]through the meat in your mouth [end if] as [he of M] finally drives it all the way in. [big he of M] tightens [his of M] grip as [he of M] begins to thrust, ensuring you won[']t be getting away if you decide you want to.[at random]";
-		otherwise:
-			say "You wouldn[']t even think of resisting, [if O is monster]passionately slurping the dick in your mouth and[otherwise]arching your back and[end if] wiggling your hips as [he of M] forces [his of M] [manly-penis] through your sphincter, treating you to an intense mixture of pleasure as [his of M] throbbing meat burrows its way into your tight [asshole].";
-	otherwise if F < 2:[low bimbo: 2 mid: 2, high: 2]
-		if the relevant sex addiction of M < 7:
-			say "[one of]You [if O is monster]emit a muffled protest through the meat in your mouth[otherwise]scowl over your shoulder[end if] as [his of M] [manly-penis] sinks into your [asshole], and immediately begins thrusting. The [M] grabs your waist tightly with both hands, eliminating all chance of escape.[or]You struggle pitifully as [he of M] pushes [his of M] [manly-penis] into your [asshole], which easily stretches to accommodate [his of M] invading length. [if O is monster]You emit a muffled grunt of indignation[otherwise]You glare at [him of M] furiously[end if] as [he of M] smacks your [AssDesc] and immediately begins to thrust.[at random]";
-		otherwise if the relevant sex addiction of M < 12:
-			say "[one of]You do your best to resist, but in the end, you know [his of M] [manly-penis] is a perfect fit for your [asshole], and find yourself actively pushing back against the [M] to get [him of M] in you as soon as possible.[or]You [if O is monster]emit a muffled, but obvious moan through the meat in your mouth[otherwise]unsuccessfully stifle a moan[end if] as [his of M] [manly-penis] sinks into your [asshole], struggling only out of embarrassment as [he of M] begins to thrust.[at random]";
-		otherwise:
-			say "[one of]You do your best to make [him of M] work for it, but it's hard when all you really want is to get [his of M] [manly-penis] in you and thrusting as soon as possible. As [his of M] other hand grabs your waist, you hold out hope you[']ve earned yourself a long, rough fuck.[or]You wouldn[']t even think of resisting, [if O is monster]passionately slurping the dick in your mouth and[otherwise]arching your back and[end if] wiggling your hips as [he of M] pushes [his of M] [manly-penis] into your [asshole], moaning happily as he begins to thrust.[at random]";
-	otherwise:[low bimbo: 1 mid: 3, high: 3]
-		if the relevant sex addiction of M < 7:
-			say "You [if O is monster]exhale sharply through your nose[otherwise]angrily look over your shoulder[end if] as [his of M] [manly-penis] slides into your [asshole], and [his of M] grip on your hips tightening before you even have a chance to resist. No escaping now...";
-		otherwise if the relevant sex addiction of M < 12:
-			say "[one of]Your [asshole] so loose that [his of M] [manly-penis] is already in you and thrusting by the time you think to resist. [if O is monster]You sigh and return to servicing the [O],[otherwise]Knowing you weren[']t going to try very hard anyway,[end if] you sit back and try to find a way to enjoy it.[or]You try not to moan as [his of M] penis slides into your [asshole], [if O is monster]shameful noises escaping through the space between your lips and the [O]'s[manly-penis][otherwise]cooing shamefully[end if] as [he of M] smacks your [AssDesc] and begins to thrust.[or]You force yourself to resist, but it doesn[']t matter. Your [asshole] is just too loose. The [M] grabs your waist as [his of M] balls smack your taint, tightening [his of M] grip and beginning to thrust.[at random]";
-		otherwise:
-			say "[one of]You do your best to make [him of M] work for it, but in the end, [if O is monster or N is monster]you[']re far too interested in what[']s already in you[otherwise]you[']re far too much of dirty slut[end if] to put up anything remotely resembling a fight as the [M] slides [his of M] [manly-penis] into your loose [asshole].[or]You wouldn't even think of resisting, doing all you can to get [his of M] [manly-penis] in you and thrusting as soon as possible.[or]You moan in pleasure as [his of M] [manly-penis] slides into your [asshole], doing your best to make [him of M] work for it [if O is monster]without neglecting the dick already in your mouth[otherwise]without actually getting in [his of M] way[end if]. From the way [his of M] grip tightens, you know you[']re in for a nice, rough fuck![or]You didn[']t necessarily invite [him of M], but that doesn[']t stop you from impaling yourself backward on [his of M] [manly-penis], shuddering with pleasure as [his of M] balls begin to repeatedly slap your taint.[at random]".
-	
-To say AssholePenPrep of (M - a monster):
-	let N be a random monster penetrating vagina;
-	let O be a random monster penetrating face;
-	if N is monster and O is monster:
-		if N is intelligent, say "The [N] flips you over so your chin is resting on [his of M] chest, holding you by the waist as the [M] pulls apart your asscheeks.";
-		otherwise say "The [M] flips you onto your side, so you[']re facing the [N]. The [N] and the [O] continue to fuck you as the newcomer spreads apart your asscheeks.";
-	otherwise if N is a monster:
-		if N is intelligent, say "The [N] flips you over so you're face to face, holding you by the waist as the [M] pulls apart your asscheeks.";
-		otherwise say "The [M] flips you onto your side, so you're facing the [N]. The [N] continues to fuck your [vagina] as the newcomer spreads apart your asscheeks.";
+To compute (M - a monster) entering anally:
+	compute M entering asshole.
+
+To compute (M - a monster) entering (F - a fuckhole):[Generic function that shouldn't realistically come up.]
+	if F is not actually occupied:
+		set up sex length of M in F;
+		say "The [M] forces [him of M]self into your [variable F]";
+		now M is penetrating F;
+		ruin F;
+		compute unique penetration effect of M in F;
 	otherwise:
-		say "The [M] [if O is monster]pulls your hips up against [his of M] body, forcing you to support yourself with your hands as [he of M] [otherwise]shoves you face down and pulls your hips up against [his of M] body. [big he of M] [end if]spreads your asscheeks apart.".
+		say "The [M] sees that you are already occupied and loses interest";
+		Bore M.
+
+To compute (M - a monster) entering (F - asshole):
+	if F is not actually occupied:
+		set up sex length of M in F;
+		if (M is friendly-fucking or presented-orifice is F) and M is intelligent, say FriendlyAssholePenetrationFlav of M;[You can't really have "friendly" sex with unintelligent monsters anyway]
+		otherwise say AssholePenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+		now M is penetrating F;
+		compute unique penetration effect of M in F;
+		ruin F;
+		get anal penetration image for M;
+		say GangAnnounce;
+	otherwise:
+		say "The [M] sees that you are already occupied and loses interest.";
+		distract M.
 
 This is the monster vagina insertion rule:
 	if the chosen-orifice of current-monster is vagina, follow the monster vagina insertion rules.
@@ -871,33 +870,32 @@ The monster removing cunt plug rule is listed last in the monster vagina inserti
 
 This is the monster penetrating vagina rule:
 	if current-monster is male and there is a held condom-providing thing, compute condom request choice of current-monster;
-	compute current-monster entering vagina;
+	compute current-monster entering vaginally;
 	rule succeeds.
 The monster penetrating vagina rule is listed last in the monster vagina insertion rules.
 
-To compute (M - a monster) entering vagina:
-	now the sex-length of M is 3;
-	if M is friendly-fucking, say "[FriendlyVaginaPenetrationFlav of M]";
-	otherwise say "[VaginaPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
-	now M is penetrating vagina;
-	ruin vagina.
+To get vaginal penetration image for (M - a monster):
+	if image cutscenes is 1:
+		if the latex-transformation of the player > 6:
+			if M is male and M is human and M is not dark skinned:
+				display figure of latex curse 6.
 
-To say VaginaPenPrep of (M - a monster):
-	let N be a random monster penetrating vagina;
-	let O be a random monster penetrating face;
-	if N is intelligent:
-		say "[if O is monster]The [N] pulls you into [his of N] lap, pinning your arms to your waist as the [M] spreads your legs.[otherwise]The [N] flips you so your head is resting on [his of N] chest, holding you by the waist as the [M] spreads your legs.[end if]";
-	otherwise if N is not intelligent and N is monster:
-		say "The [M] grabs your leg and lifts it out of the way.";
+To compute (M - a monster) entering vaginally:
+	compute M entering vagina.
+
+To compute (M - a monster) entering (F - vagina):
+	if F is not actually occupied:
+		set up sex length of M in vagina;
+		if (M is friendly-fucking or presented-orifice is vagina) and M is intelligent, say FriendlyVaginaPenetrationFlav of M;
+		otherwise say VaginaPenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+		compute unique penetration effect of M in vagina;
+		now M is penetrating vagina;
+		ruin vagina;
+		get vaginal penetration image for M;
+		say GangAnnounce;
 	otherwise:
-		say "The [M] [if O is monster]pulls your hips up against [his of M] body, forcing you to support yourself with your hands as [otherwise]shoves you face down and pulls your hips up against [his of M] body [end if] [he of M] spreads your asscheeks apart.".
-
-To say VaginaPenetrationFlav of (M - a monster):
-	say "The [M] forces [himself of M] into your [vagina]!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
-[Maybe need a preamble bit that defines some variable text for "penetration_object", and some way to say "his" or "her" or "its" (doesn't i7 give that to you, built in?), so you can then say "[his of M] [penetration_object]" - aeromancer's wind-dick, rubber wrestler's fist/hand, minotaur's cock, vine's bulbous tendril, dominatrix's strap-on, ...?
-You'd like the penetration_object text to be one with a [one of]...[or]...[at random] built in to it, too.
-This penetration_object would be part of each monster's definition, when it was set up.
-]
+		say "The [M] sees that you are already occupied and loses interest.";
+		distract M.
 
 This is the monster mouth insertion rule:
 	if the chosen-orifice of current-monster is face, follow the monster mouth insertion rules.
@@ -917,21 +915,36 @@ This is the monster penetrating mouth rule:
 	rule succeeds.
 The monster penetrating mouth rule is listed last in the monster mouth insertion rules.
 
+To get facial penetration image for (M - a monster):
+	do nothing.
+
 To compute (M - a monster) entering mouth:
-	now the sex-length of M is 3;
-	if M is friendly-fucking, say "[FriendlyMouthPenetrationFlav of M]";
-	otherwise say "[MouthPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
-	now M is penetrating face.
+	if face is not occupied: [The whole 'face is not occupied' stuff is so that we can try and call this from other areas of the code.]
+		set up sex length of M in face;
+		if M is friendly-fucking, say FriendlyMouthPenetrationFlav of M;
+		otherwise say MouthPenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+		now M is penetrating face;
+		compute unique penetration effect of M in face;
+		get facial penetration image for M;
+		say GangAnnounce;
+	otherwise:
+		say "The [M] sees that you are already occupied and loses interest.";
+		distract M.
 
 This is the monster breasts insertion rule:
 	if the chosen-orifice of current-monster is breasts, compute current-monster entering breasts.
 The monster breasts insertion rule is listed in the default monster insertion rules.
 
+To get breasts penetration image for (M - a monster):
+	do nothing.
+
 To compute (M - a monster) entering breasts:
-	now the sex-length of M is 3;
-	if M is friendly-fucking, say "[FriendlyBreastsPenetrationFlav of M]";
-	otherwise say "[BreastsPenetrationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
-	now M is penetrating breasts.
+	set up sex length of M in breasts;
+	if M is friendly-fucking, say FriendlyBreastsPenetrationFlav of M;
+	otherwise say BreastsPenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+	now M is penetrating breasts;
+	compute unique penetration effect of M in breasts;
+	get breasts penetration image for M.
 
 To say BreastsPenetrationFlav of (M - a monster):
 	say "The [M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
@@ -1066,7 +1079,7 @@ This is the choice of attack rule:
 The choice of attack rule is listed last in the default monster attack rules.
 
 To compute tripping attack of (M - a monster):
-	say "The [M] tries to trip you up!";
+	say MonsterTripAnnounceFlav of M;
 	let D be the tripping roll of M;
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Monster[line break]";
 	if (D >= the dexterity of the player and the blind-status of M is not 1) or tutorial is 1:
@@ -1078,6 +1091,9 @@ To compute tripping attack of (M - a monster):
 		if the blind-status of M is 1 and a random number between 1 and 2 is 1:
 			say "The [M] is no longer blind!";
 			now the blind-status of M is 0.
+
+To say MonsterTripAnnounceFlav of (M - a monster):
+	say "The [M] tries to trip you up!".
 
 To say MonsterTrippedFlav of (M - a monster):
 	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise]and[end if] fall to the ground!".

@@ -105,6 +105,7 @@ To DrinkPiss from (M - an object):
 	Humiliate 1050 - (the urine taste addiction of the player * 50);
 	StomachUp 3;
 	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn hood]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
+	compute unique piss drink effect of M;
 	let H be a random white hood;
 	if H is worn:
 		compute class outfit of H;
@@ -122,6 +123,9 @@ To DrinkPiss from (M - an object):
 		now the tolerated of asshole is 0;
 		now the soreness of vagina is 0;
 		now the tolerated of vagina is 0.
+
+To compute unique piss drink effect of (M - an object):
+	do nothing.
 
 
 [!<AMonsterIsWillingToBukkake>+
@@ -457,7 +461,7 @@ To say OralResistingResponse of (M - a monster):
 
 To say OralSubmissionResponse of (M - a monster):
 	if M is friendly-fucking:
-		say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the humiliation of the player < 18000 or the sex addiction of the player < 8]avoiding eye contact[otherwise]looking up at the [M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck the [M]'s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible.[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or]The [M] guides the movement of your head as you [if the oral sex addiction of the player < 4]quietly [otherwise if the oral sex addiction of the player > 5]noisily [end if]suck [his of M] cock, [if the sex addiction of the player < 7]making you feel even more like a dirty slut. If that was even possible.[otherwise if the sex addiction of the player < 12]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or]The [M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or]The [M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much.[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]";
+		say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the humiliation of the player < 18000 or the player is feeling dominant]avoiding eye contact[otherwise]looking up at the [M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck the [M]'s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible.[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or]The [M] guides the movement of your head as you [if the oral sex addiction of the player < 4]quietly [otherwise if the oral sex addiction of the player > 5]noisily [end if]suck [his of M] cock, [if the sex addiction of the player < 7]making you feel even more like a dirty slut. If that was even possible.[otherwise if the sex addiction of the player < 12]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or]The [M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or]The [M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much.[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]";
 	otherwise:
 		say "[one of]The [M] thrusts at a good pace, holding on as if to make sure you won't stop.[or]The [M] breathes slowly, guiding you with one hand and clenching [his of M] other.[or]The [M] holds you tightly, rolling [his of M] hips to complement the bobbing of your head.[or]The [M] grunts in approval. However, [his of M] enjoyment doesn't seem to make [him of M] loosen [his of M] grip.[or]The [M] holds you with an almost uncomfortably tight grip, guiding your movement.[or]The [M] breathes steadily as you work, making sure not to loosen [his of M] hold at all.[in random order]".
 
@@ -542,255 +546,24 @@ To say angry punishment clothing destruction of (M - a monster) on (C - a clothi
 	if M is intelligent, say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn clothing > 1]Sluts don't deserve clothes! There, now you are one step closer to being buck naked.'[otherwise]Sluts don't deserve clothes!'[end if][roman type][line break]";
 	otherwise say "it looks like [he of M] is satisfied with leaving it at that.".
 
-[!<ComputeUniqueClimaxOfMonster>+
-
-Contains the unique handling for a monster "M" climaxing in a fuckhole "F". Monsters with a unique way of climaxing for a given hole should have their own version of this function. The outer function "compute climax of M in F" increments timers and handles a couple of other things, so anything coded in this function should only pertain to this specific monster. This function assumes the monster is male.
-
-@param <Monster>:<M> The monster having the climax
-@param <Fuckhole>:<F> The fuckhole the monster is climaxing with
-
-+!]
-To compute unique climax of (M - a monster) in (F - a fuckhole):[assumes M is male]
-	if M is wrapped, compute wrapped climax of M in F;
-	otherwise compute unprotected climax of M in F.
-
-[!<ComputePostClimaxEffectOfMonster>+
-
-Handles anything that needs to happen after a monster "M" climaxes in a fuckhole "F". This function is meant to help specific monsters control what happens after a climax, anything that affects all or most monsters needs to be part of the outer function "compute climax of M in F". No functionality in this function by default
-
-@param <Monster>:<M> The monster that had the climax
-@param <Fuckhole>:<F> The fuckhole the monster had the climax with
-
-+!]
-To compute post climax effect of (M - a monster) in (F - a fuckhole):
-	do nothing.
-
-[!<DecideIfMonsterIsLosingWrapperInFuckhole>+
-
-Determines whether or not anything happens to the condom the monster "M" is wearing in the fuckhole "F". This function handles condoms breaking, being manually removed, or simply not working right. By default, the condom is always successful, so condoms only fail if there is a unique reason specified in a given monster's version of this function
-
-@param <Monster>:<M> The monster wearing the condom
-@param <Fuckhole>:<F> The fuckhole the monster is inside of
-@return <Boolean> true if the monster's condom fails for any reason, otherwise false
-
-+!]
-To decide if (M - a monster) is losing wrapper in (F - a fuckhole):
-	decide no.
-
-[!<ComputeWrappedClimaxOfMonsterInFuckhole>+
-
-This function is called when a monster "M" has an orgasm in a fuckhole "F" whilst wearing a condom. If M's condom fails for any reason, calls the condom failure function for M and F. Otherwise, calls the condom success function for M and F
-
-@param <Monster>:<M> The monster wearing the condom
-@param <Fuckhole>:<F> The fuckhole the monster is penetrating
-
-+!]
-To compute wrapped climax of (M - a monster) in (F - a fuckhole):
-	if M is losing wrapper in F, compute condom failure of M in F;
-	otherwise compute condom success of M in F;
-
-[!<ComputeCondomFailureOfMonsterInFuckhole>+
-
-This function is called when a monster "M" has an orgasm in a fuckhole "F", and for some reason the condom they were wearing fails. Usually this means the player won't have to deal with a condom being pinned to their clothes and takes a full-on creampie instead.
-
-@param <Monster>:<M> The monster that was wearing the condom
-@param <Fuckhole>:<F> The fuckhole the monster is penetrating
-
-+!]
-To compute condom failure of (M - a monster) in (F - a fuckhole):
-	if debugmode > 0, say "CONDOM FAILED[line break]";
-	if image cutscenes is 1, get condom failure image of M in F;
-	say CondomFailFlav of M in F;
-	now M is unwrapped;
-	compute M finishing in F;
-	say CreampieReactionFlav to M in F.
-
-[!<GetCondomFailureImageOfMonsterInFuckhole>+
-
-This function can display a relevant image when a monster "M" has their condom fail for the fuckhole "F". By default, shares an image with the get creampie image function for M and F.
-
-@param <Monster>:<M> The monster that was wearing the condom
-@param <Fuckhole>:<F> The fuckhole the monster is penetrating
-
-+!]
-To get condom failure image of (M - a monster) in (F - a fuckhole):
-	get creampie image of M in F.
-
-[!<ComputeCondomSuccessOfMonster>+
-
-This function is called when a monster "M" has an orgasm in a fuckhole "F" whilst wearing a condom, and it didn't fail for any reason.
-
-@param <Monster>:<M> The monster wearing the condom
-@param <Fuckhole>:<F> The fuckhole the monster is penetrating
-
-+!]
-To compute condom success of (M - a monster) in (F - a fuckhole):
-	if debugmode > 0, say "CONDOM SUCCEEDED[line break]";
-	if image cutscenes is 1, get condom success image of M in F;
-	say CondomPieFlav of M in F;
-	compute M finishing in F.
-
-[!<GetCondomSuccessImageOfMonsterInFuckhole>+
-
-This function can display a relevant image when a monster "M" ejaculates in the fuckhole "F" whilst wearing a condom. By default, shares an image with the get creampie image function for M and F.
-
-@param <Monster>:<M> The monster wearing the condom
-@param <Fuckhole>:<F> The fuckhole the monster is penetrating
-
-+!]
-To get condom success image of (M - a monster) in (F - a fuckhole):
-	get creampie image of M in F.
-
-[!<DecideIfMonsterIsWillingToCreampieFuckhole>+
-
-Determines whether or a monster "M" will pull out of a fuckhole "F" before it ejaculates. If M has some reason not to finish inside F, or M has something planned for after it finishes with F, this function should evaluate as false. By default, any given monster is willing to creampie, so any monster that pulls out after sex is doing so for a unique reason specified in their version of this function
-
-@param <Monster>:<M> A monster who might creampie a fuckhole
-@param <Fuckhole>:<F> The fuckhole that might be creampied
-@return <Boolean> true if M is going to do anything but ejaculate in F and then lose interest, otherwise false
-
-+!]
-To decide if (M - a monster) is willing to creampie (F - a fuckhole):
-	decide yes.
-
-[!<ComputeUnprotectedClimaxOfMonsterInFuckhole>+
-
-This function is called whenever a monster "M" ejaculates in a fuckhole "F" whilst not wearing a condom. If the monster has any reason not to creampie the player, calls the compute M pulling out of F function. In any other case, calls the compute creampie of M in F function.
-
-@param <Monster>:<M> The monster having the climax
-@param <Fuckhole>:<F> The fuckhole the monster is penetrating
-
-+!]
-To compute unprotected climax of (M - a monster) in (F - fuckhole):
-	if M is willing to creampie F, compute creampie of M in F;
-	otherwise compute M pulling out of F.
-
-[!<ComputeMonsterFinishingInVagina>+
-
-This function is called whenever a monster "M" ejaculates in the player's vagina "F".
-
-@param <Monster>:<M> The monster ejaculating
-@param <Vagina>:<F> The player's vagina
-
-+!]
-To compute (M - a monster) finishing in (F - vagina):
-	WombFill the semen load of M.
-
-[!<ComputeMonsterFinishingInAsshole>+
-
-This function is called whenever a monster "M" ejaculates in the player's asshole "F".
-
-@param <Monster>:<M> The monster ejaculating
-@param <Asshole>:<F> The player's asshole
-
-+!]
-To compute (M - a monster) finishing in (F - asshole):
-	AssFill the semen load of M.
-
-[!<ComputeCreampieOfMonsterInFuckhole>+
-
-This function is called whenever a monster "M" ejaculates in a fuckhole "F" whilst not wearing a condom, and M has no reason to pull out.
-
-@param <Monster>:<M> The monster performing the creampie
-@param <Fuckhole>:<F> The fuckhole receiving the creampie
-
-+!]
-To compute creampie of (M - a monster) in (F - a fuckhole):
-	if debugmode > 0, say "PULL OUT FAILED[line break]";
-	if image cutscenes is 1, get creampie image of M in F;
-	say CreampieFlav of M in F;
-	compute M finishing in F;
-	say CreampieReactionFlav to M in F.
-
-To get creampie image of (M - a monster) in (F - a fuckhole):
-	do nothing.
-
-[!<ComputeMonsterPullingOutOfFuckhole>+
-
-This function is called whenever a monster "M" is about to ejaculate in a fuckhole "F" whilst not wearing a condom, and has some reason to pull out
-
-@param <Monster>:<M> The monster having the orgasm
-@param <Fuckhole>:<F> The fuckhole M is pulling out of
-
-+!]
-To compute (M - a monster) pulling out of (F - a fuckhole):
-	if debugmode > 0, say "PULL OUT SUCCEEDED[line break]";
-	if bukkake fetish is 1, compute M messily pulling out of F;
-	otherwise compute M cleanly pulling out of F.
-
-[!<ComputeMonsterMessilyPullingOutOfFuckhole>+
-
-This function is called whenever a monster "M" is about to ejaculate in a fuckhole "F" whilst not wearing a condom, and has some reason to pull out. Usually, this function is called when bukkake fetish is enabled, and handles M glazing the player's crotch rather than ejaculating inside them.
-
-@param <Monster>:<M> The monster having the orgasm
-@param <Fuckhole>:<F> The fuckhole M pulled out of
-
-+!]
-To compute (M - a monster) messily pulling out of (F - a fuckhole):
-	if image cutscenes is 1, get messy pull out image of M in F;
-	say MessyPullOutFlav of M in F;
-	CumThighsUp the semen load of M.
-
-To get messy pull out image of (M - a monster) in (F - a fuckhole):
-	get clean pull out image of M in F.
-
-[!<ComputeMonsterCleanlyPullingOutOfFuckhole>+
-
-This function is called whenever a monster "M" is about to ejaculate in a fuckhole "F" whilst not wearing a condom, and has some reason to pull out. Usually, this function is called when bukkake fetish is disabled, and handles M ejaculating on the floor rather than inside the player.
-
-@param <Monster>:<M> The monster having the orgasm
-@param <Fuckhole>:<F> The fuckhole M pulled out of
-
-+!]
-To compute (M - a monster) cleanly pulling out of (F - a fuckhole):
-	if image cutscenes is 1, get clean pull out image of M in F;
-	say PullOutFlav of M in F;
-	SemenPuddleUp the semen load of M.
-
-To get clean pull out image of (M - a monster) in (F - a fuckhole):
-	do nothing.
-
-[!<CreampieFlavOfMonster>+
-
-@param <Monster>:<M> The monster the player just had sex with
-
-+!]
-To say CreampieFlav of (M - a monster) in (F - a fuckhole):
-	say "[if M is intelligent][line break][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type][line break][end if]The [M] [one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order] your [variable F]!".
-
-To say CreampieReactionFlav to (M - a monster) in (F - a fuckhole):
-	if pregnancy fetish is 1 and F is vagina and the pregnancy of the player is 0, say "[first custom style][if the bimbo of the player < 6][one of]I can[']t believe he came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant.... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t he know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is he really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][roman type][line break]";
-	otherwise say "".
-
-To say CondomPieFlav of (M - a monster) in (F - a fuckhole):
-	say "The [M] ejaculates into the condom!".
-
-To say CondomFailFlav of (M - a monster) in (F - a fuckhole):
-	say "The condom breaks as the [M] ejaculates, and [semen] flows freely into your [variable F].";
-
-To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
-	say "The [M] pulls out and sprays your crotch with [semen]".
-
-[!<sayPullOutFlavOfMonster>+
-
-@param <Monster>:<M> The monster the player just had sex with
-
-+!]
-To say PullOutFlav of (M - a monster) in (F - a fuckhole):
-	say "The [M] pulls out and sprays [semen] on the floor.".
-
 To say VirginityTaken of (M - a monster):
-	say "[if the sex addiction of the player < 5]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, a single tear rolls down your face as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You don't struggle, absorbed with dread that [he of M] could be the first of dozens, if not hundreds of sex partners to fuck you against your will. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise if the sex addiction of the player < 10]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, worriedly biting your lip as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You are paralysed with indecision, not sure if the fact that [he of M] could be the first of dozens, if not hundreds of sex partners is something that scares you or arouses you. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more painful and strangely satisfying than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, grinning in satisfaction as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You stay still as best you can, hoping to preserve your tightness for the dozens, if not hundreds of sex partners you'll have in the future. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more decadently painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[end if]".
+	say "[if the sex addiction of the player < 5]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, a single tear rolls down your face as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You don't struggle, absorbed with dread that [he of M] could be the first of dozens, if not hundreds of sex partners to dominate and fuck you. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise if the sex addiction of the player < 10]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, worriedly biting your lip as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You are paralysed with indecision, not sure if the fact that [he of M] could be the first of dozens, if not hundreds of sex partners is something that scares you or arouses you. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more painful and strangely satisfying than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise]The [M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, grinning in satisfaction as [his of M] [manly-penis] pierces your hymen, removing your virginity forever. You stay still as best you can, hoping to preserve your tightness for the dozens, if not hundreds of sex partners you'll have in the future. Apparently not concerned with giving you time with your thoughts, the [M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [manly-penis] into your [vagina]. After what feels like an eternity, every moment more decadently painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[end if]".
 
 To say MouthPenetrationFlav of (M - a monster):[This probably needs changing for every monster!]
 	if presented-orifice is face:
-		say "[FriendlyMouthPenetrationFlav of M]";
-	otherwise if there is a worn latex hood:
-		say "[one of]The [M] puts [his of M] hand on the back of your head, guiding [his of M] [manly-penis] through your gag and into your mouth.[or]The [M] slides [his of M] [manly-penis] through your gag. With no way of resisting[if the relevant sex addiction of M > 12], and no motivation,[end if] you have to sit there and take it as [he of M] begins to aggressively fuck your face.[or][if the relevant sex addiction of M < 7]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled grunt of indignation as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 10]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled grunt as [he of M] begins to thrust.[otherwise]Your eyes roll back in your head as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[end if][or][if the relevant sex addiction of M < 8]Your eyes widen in horror as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise if the relevant sex addiction of M < 13]Your eyes widen with excitement as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled sigh of satisfaction as [he of M] begins to thrust.[end if][in random order]";
+		say FriendlyMouthPenetrationFlav of M;
+	otherwise if there is a worn latex hood[ or there is a worn ring gag]:
+		say RingMouthPenetrationFlav of M;
 	otherwise if the latex-transformation of the player > 6:
-		say "[SexDollMouthPenetrationFlav of M]";
+		say SexDollMouthPenetrationFlav of M;
 	otherwise:
-		say "[one of][if the relevant sex addiction of M < 8]The [M] pinches your nose, shoving [his of M] [manly-penis] in your mouth as soon as you try to breathe. You glare up at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13]The [M] points to your mouth, slowly stroking [his of M] [manly-penis]. You obediently open it, emitting a slow sigh through your nose as it slides through your lips.[otherwise]The [M] positions [his of M] [manly-penis] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[end if][or][if the relevant sex addiction of M < 8]The [M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but [he of M] immediately inserts [his of M] [manly-penis] and begins to thrust.[otherwise if the relevant sex addiction of M < 12]The [M] puts one hand on the back of your head. Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[otherwise]The [M] points to your mouth, grinning. You obediently loll out your tongue, gazing at [him of M] reverently as [his of M] [manly-penis] slides through your lips.[end if][or][if the relevant sex addiction of M < 7]The [M] points to your mouth, slowly stroking [his of M] [manly-penis]. You snarl. [line break][first custom style]'Not on your life bud-'[roman type][line break][he of M] cuts you off by immediately shoving [himself of M] into your mouth. You stare at [him of M] lividly as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13]The [M] points to your mouth, grinning. You open and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [manly-penis] slides through your lips.[otherwise]The [M] places one hand on your shoulder. You greedily lean forward and take [his of M] [manly-penis] into your mouth.[end if][or][if the relevant sex addiction of M < 3]The [M] points to your mouth, grinning. You spit at [his of M] feet. [line break][first custom style]'Go fuck yourself assh-'[roman type][line break][he of M] cuts you off by immediately shoving [his of M] [manly-penis] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 7]The [M] points to your mouth, grinning. You slowly and fearfully open it, shuddering as [his of M] [manly-penis] slides past your lips.[otherwise if the relevant sex addiction of M < 11]The [M] places [his of M] hand on your shoulder, guiding [his of M] [manly-penis] to your lips with the other. You obediently open your mouth to allow [him of M] inside.[otherwise]The [M] puts [his of M] hand on the back of your head. You submissively part your lips and accept [his of M] [manly-penis] into your mouth.[end if][in random order]".
+		say NormalMouthPenetrationFlav of M.
+
+To say NormalMouthPenetrationFlav of (M - a monster):
+	say "[one of][if the relevant sex addiction of M < 8]The [M] pinches your nose, shoving [his of M] [manly-penis] in your mouth as soon as you try to breathe. You glare up at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13]The [M] points to your mouth, slowly stroking [his of M] [manly-penis]. You obediently open it, emitting a slow sigh through your nose as it slides through your lips.[otherwise]The [M] positions [his of M] [manly-penis] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[end if][or][if the relevant sex addiction of M < 8]The [M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but [he of M] immediately inserts [his of M] [manly-penis] and begins to thrust.[otherwise if the relevant sex addiction of M < 12]The [M] puts one hand on the back of your head. Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[otherwise]The [M] points to your mouth, grinning. You obediently loll out your tongue, gazing at [him of M] reverently as [his of M] [manly-penis] slides through your lips.[end if][or][if the relevant sex addiction of M < 7]The [M] points to your mouth, slowly stroking [his of M] [manly-penis]. You snarl. [line break][first custom style]'Not on your life bud-'[roman type][line break][he of M] cuts you off by immediately shoving [himself of M] into your mouth. You stare at [him of M] lividly as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13]The [M] points to your mouth, grinning. You open and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [manly-penis] slides through your lips.[otherwise]The [M] places one hand on your shoulder. You greedily lean forward and take [his of M] [manly-penis] into your mouth.[end if][or][if the relevant sex addiction of M < 3]The [M] points to your mouth, grinning. You spit at [his of M] feet. [line break][first custom style]'Go fuck yourself assh-'[roman type][line break][he of M] cuts you off by immediately shoving [his of M] [manly-penis] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 7]The [M] points to your mouth, grinning. You slowly and fearfully open it, shuddering as [his of M] [manly-penis] slides past your lips.[otherwise if the relevant sex addiction of M < 11]The [M] places [his of M] hand on your shoulder, guiding [his of M] [manly-penis] to your lips with the other. You obediently open your mouth to allow [him of M] inside.[otherwise]The [M] puts [his of M] hand on the back of your head. You submissively part your lips and accept [his of M] [manly-penis] into your mouth.[end if][in random order]".
+
+To say RingMouthPenetrationFlav of (M - a monster):
+	say "[one of]The [M] puts [his of M] hand on the back of your head, guiding [his of M] [manly-penis] through your gag and into your mouth.[or]The [M] slides [his of M] [manly-penis] through your gag. With no way of resisting[if the relevant sex addiction of M > 12], and no motivation,[end if] you have to sit there and take it as [he of M] begins to aggressively fuck your face.[or][if the relevant sex addiction of M < 7]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled grunt of indignation as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 10]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled grunt as [he of M] begins to thrust.[otherwise]Your eyes roll back in your head as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[end if][or][if the relevant sex addiction of M < 8]Your eyes widen in horror as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise if the relevant sex addiction of M < 13]Your eyes widen with excitement as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise]The [M] slides [his of M] [manly-penis] through your gag. You emit a muffled sigh of satisfaction as [he of M] begins to thrust.[end if][in random order]".
 
 To say SexDollMouthPenetrationFlav of (M - a monster):
 	say "[one of]The [M] pushes [his of M] rock hard [manly-penis] into the padded hole you call a mouth, planting one hand on the back of your head as [he of M] begins guiding you back and forth.[or]The [M] slides [his of M] [manly-penis] between your soft, plastic lips, which make faint squeaking noises as he guides your head back and forth.[or]The [M] puts one hand on the back of your head as [he of M] guides [his of M] [manly-penis] through your puffy plastic lips.[or]You look up at the [M] as [his of M] [manly-penis] enters your mouth, knowing [he of M] only sees your face as just another hole to be used.[in random order]".
@@ -803,66 +576,17 @@ To say FriendlyMouthPenetrationFlav of (M - a monster):[This probably needs chan
 	otherwise:
 		say "[one of]The [M] shoves [his of M] [manly-penis] into your open mouth. You hum happily as you begin to suck.[or]The [M] pushes [his of M] [manly-penis] into your open mouth. You gaze up at [him of M] as you eagerly bob your head back and forth.[or][if the player is not wrist bound]You wrap your fingers around the [M]'s [manly-penis], moaning like the dirty whore you are as [he of M] slides it into your mouth.[otherwise]You drag your tongue up and down the [M]'s shaft, moaning lecherously as [his of M] [line break][second custom style]delicious[roman type][line break]meat slides into your mouth.[end if][or][if the largeness of breasts > 5]You wrap your lips around the [M]'s [manly-penis] as [he of M] manhandles your [BreastDesc], locking eyes with [him of M] as you eagerly begin to suck.[otherwise]The [M] pushes [his of M] [manly-penis] into your open mouth, grinning down at you as you desperately worship [his of M] length with your tongue and throat.[end if][or]The [M] shoves [his of M] [manly-penis] into your open mouth. Your lips close around the invader at their first opportunity, all too eager [if the semen taste addiction of the player > 8]for that spermy goodness[otherwise]to get to work[end if].[or]The [M] pushes [his of M] [manly-penis] into your mouth and begins to guide your head back and forth. You give [him of M] a smouldering look, eagerly leaning into [his of M] movements as you rub [his of M] shaft with your tongue.[in random order]".
 
-To say (M - a monster) mercy sex (N - a number):
-	let O be a random orifice penetrated by M;
-	if N is 1:
-		say "The [M] rubs your back, fucking your [variable O] with slow strokes.";
-	if N is 2:
-		say "The [M] slows down a bit, but there's still quite a bit of power to [his of M] thrusts.";
-	if N is 3:
-		say "The [M] pounds your [variable O], slightly softening [his of M] grip and controlling [his of M] pace.";
-	if N is 4:
-		say "The [M] fucks your [variable O] with shallow strokes. You can tell from the softening of [his of M] grip that [he of M][']s trying not to hurt you.";
-	if N is 5:
-		say "The [M] slowly plows your [variable O], loosening [his of M] grip slightly so you know [he of M][']s not trying to hurt you.";
-	if N is 6:
-		say "The [M] slowly drives [his of M] [manly-penis] in and out of your [variable O].";
-	if N is 7:
-		say "The [M] fucks your [variable O] slowly and methodically, breathing evenly as if trying to maintain focus.".
 
-To say (M - a monster) submission sex (N - a number):[We care about friendly fucking here but not during rough sex.]
-	let O be a random orifice penetrated by M;
-	if N is 1:
-		say "The [M] takes the opportunity to reach underneath you and fondle your [BreastDesc] as [he of M] pistons [his of M] [manly-penis] in and out of your [variable O].";
-	if N is 2:
-		say "The [M] pushes you into the floor, leaning over so you can feel [his of M] breath on your back as [he of M] slams [his of M] [manly-penis] in and out of your [variable O].";
-	if N is 3:
-		let C be a random worn skirted clothing;
-		if C is nothing, let C be a random worn crotch covering clothing;
-		say "The [M] [if C is clothing]pushes [his of M] hand underneath your [printed name of C][otherwise]squeezes your [AssDesc][end if] as [he of M] plows your [variable O], [if M is friendly-fucking]taking full advantage of this opportunity to play with your body.[otherwise]making sure to keep one hand on your hips in case you try to get away.[end if]";
-	if N is 4:
-		say "[if the relevant sex addiction of M < 6]The [M] fucks your [variable O] with fast, hard thrusts. You close your eyes and tilt your head to the ground, focusing as hard as possible on when it will be over.[otherwise if the relevant sex addiction of M < 10]The [M] slams in and out of your [variable O], grunting heavily. You bite back a moan of pleasure.[otherwise]The [M] slams in and out of your [variable O], grunting heavily. You look over your shoulder and make a show of biting your lip.[end if]";
-	if N is 5:
-		say "[if the relevant sex addiction of M < 6]The [M] plows [his of M] [manly-penis] in and out of your [variable O]. It's extra humiliating because you're letting [him of M] do it![otherwise if the relevant sex addiction of M < 10]The [M] slams [his of M] [manly-penis] in and out of your [variable O], panting heavily. You try to convince yourself you're not doing this because you enjoy it.[otherwise]The [M] fucks your [variable O] with fast, hard thrusts. You close your eyes and tilt your head to the ground, losing yourself to pleasure.[end if]";
-	if N is 6:
-		say "[if the relevant sex addiction of M < 7]The [M] gives your [variable O] the hard fucking it deserves. You clench your fists and try to ignore your growing embarrassment.[otherwise if the humiliation of the player < 15000]The [M] roughly fucks your [variable O], panting heavily. You can almost feel your dignity crumbling, every thrust humiliating you more and more.[otherwise if the relevant sex addiction of M < 10]The [M] plows [his of M] [manly-penis] in and out of your [variable O]. There's something so invigorating about letting [him of M] do it![otherwise]The [M] plows [his of M] [manly-penis] in and out of your [variable O]. It's so satisfying to let [him of M] do it![end if]";
-	if N is 7:
-		if the player is male, say "[if the size of penis < 4 and tg fetish >= 1]The [M] ruts you like an animal. At this point, there's not a lot separating you from a girl.[otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14]The [M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed of how minuscule your [ShortDesc of penis] is compared to [his of M].[otherwise if the size of penis < 4 and the size of penis > 0]The [M] pounds your [asshole] hard and fast. You feel proud of how minuscule your [ShortDesc of penis] is compared to [his of M].[otherwise if the bimbo of the player < 3]The [M]'s balls repeatedly slap your taint as he pistons in and out of your [asshole],as if to remind you how little you've actually done to stop [him of M].[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [manly-penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7]The [M]'s [manly-penis] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked by another man.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10]The [M]'s [manly-penis] relentlessly pounds your sensitive prostate, reminding you that you're a dirty faggot for enjoying this.[otherwise if the bimbo of the player < 12]The [M]'s balls repeatedly slap your taint as he pistons in and out of your [asshole], as if to remind you how much you secretly like this.[otherwise if the bimbo of the player < 14]The [M]'s balls repeatedly slap your taint as he pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
-		otherwise say "[if the player is horny and the relevant sex addiction of M < 10]The [M] fucks your [variable O] hard and fast. After a few seconds [he of M] reaches between your legs, chuckling when [he of M] discovers just how wet you are.[otherwise if the player is horny]The [M] fucks your [asshole] hard and fast. After a few seconds [he of M] reaches between your legs, sinking a finger into your [vagina] when [he of M] realizes how wet you are.[otherwise if the openness of vagina > 3]The [M] reaches between your legs, sinking two fingers into your [vagina] as [he of M] slams in and out of your [asshole].[otherwise]The [M] reaches between your legs, gently rubbing your clit in small circles as [he of M] plows your [asshole].[end if]".
+To say TitfuckResistFlav of (M - a monster):
+	let C be a random worn top level covering nipple covering clothing;
+	say "[one of]You try and pry [his of M] hands off, but [he of M]'s too strong![or]You do everything you can to push [him of M] away, but [if C is clothing]your [ShortDesc of C] keeps [him of M] firmly sandwiched between them![otherwise]you simply don't have the leverage from your position on your knees![end if][or]You struggle but you can't get away![or]You resist, but you simply can't get away![or]You try to push him away, but he stays right on top of you.[in random order]".
 
-To say (M - a monster) rough sex (N - a number):
-	let O be a random orifice penetrated by M;
-	if N is 1:
-		say "[if there is a worn ballgag and the bimbo of the player > 12]The [M] rams [his of M] [manly-penis] in and out of your [variable O]. You feel slightly annoyed that your [random worn ballgag] is muffling your moans.[otherwise if there is a worn ballgag and the bimbo of the player > 7]The [M] rams [his of M] [manly-penis] in and out of your [variable O]. You feel slightly relieved that your [random worn ballgag] muffles the sound of your moans.[otherwise if there is a worn ballgag]The [M] rams [his of M] [manly-penis] in and out of your [variable O]. Your grunts of displeasure are muffled by the lump of plastic in your mouth.[otherwise if the relevant sex addiction of M > 12]The [M] gives your [variable O] the hard fucking it deserves. You arch your back and shamelessly moan in pleasure.[otherwise if the relevant sex addiction of M > 7]The [M] gives your [variable O] the hard fucking it deserves. You arch your back and emit an involuntary moan of pleasure.[otherwise]The [M] gives your [variable O] the hard fucking it deserves, panting heavily. You try as hard as possible to show your displeasure.[end if]";
-	if N is 2:
-		let F be the openness of O - the girth of M;
-		say "[if the F < 0 and the relevant sex addiction of M > 11]The [M] is roughly fucking your [variable O] and panting heavily. It's so exciting knowing [he of M] barely fits![otherwise if F < -2]The thickness of the [M]'s [manly-penis] is VERY noticeable as [he of M] slams it in and out of your tight [variable O].[otherwise if F < 0]The [M] ruts you like an animal. Each of [his of M] thrusts reach nice and deep, as if to acclimate your tight [variable O] to the feeling of [manly-penis].[otherwise if F > 4]The [M] pounds your [variable O] mercilessly, but your [variable O] is so stretched that it doesn't feel rough at all.[otherwise if F > 2]The [M] fucks you hard and fast. However, your [variable O] is loose enough that it doesn[']t actually feel rough at all.[otherwise]The [M]'s thrusts come quickly, greedily seeking the inner reaches of your [variable O].[end if]";
-	if N is 3:
-		say "[if the thickness of hips > 6]The [M] plunges into your [variable O] at full force. Lewd claps ring through the air as [his of M] hips slam into your [HipDesc].[otherwise if the flesh volume of hips > 4]The [M] plows your [variable O] as if you were some kind of fuck toy! You can feel your [HipDesc] jiggling with each thrust.[otherwise]The [M] slams in and out of your [variable O], grunting heavily.[end if]";
-	if N is 4:
-		say "[if the largeness of breasts > 15 and the bimbo of the player > 11]The [M] explores your [BreastDesc] with [his of M] hands as [he of M] plows your [variable O]. You giggle. Of course, [he of M] knows you're much too heavy to get away.[otherwise if the largeness of breasts > 15]The [M] explores your [BreastDesc] with [his of M] hands as [he of M] plows your [variable O]. You sigh. Obviously [he of M] knows you're much too heavy to get away.[otherwise if the largeness of breasts > 12 and the number of worn bras is 0]The [M] roughly fucks your [variable O], causing your unrestrained [BreastDesc] to slap audibly against your chest.[otherwise if the largeness of breasts > 9]The [M] roughly fucks your [variable O], jostling your [BreastDesc] with the force of [his of M] thrusts.[otherwise if the largeness of breasts > 5]The [M] roughly fucks your [variable O] as your [BreastDesc] [BreastBounceDesc] with the force of [his of M] thrusts.[otherwise]The [M] pounds your [variable O] with fast, powerful strokes.";
-	if N is 5:
-		say "[if the relevant sex addiction of M > 12]The [M] slams [his of M] [manly-penis] in and out of your [variable O], panting heavily. You're enjoying it so much you can hardly think![otherwise if the relevant sex addiction of M > 7]The [M] fucks your [variable O] with fast, hard thrusts. You close your eyes and tilt your head to the ground, trying to ignore how good it feels.[otherwise]The [M] slams in and out of your [variable O], grunting heavily. You look over your shoulder and scowl in hopes of turning [him of M] off.[end if]";
-	if N is 6:
-		if the size of penis > 0 and the relevant sex addiction of M > 7 and there is worn knickers and the number of worn chastity cages is 0:
-			let P be a random worn knickers;
-			say "[if the size of penis < 3]The [M] plows your [asshole] without mercy. Your desperately hard [sissy-penis] not even tenting your [printed name of P].[otherwise if the armour of P - 3 < the size of penis]The [M] plows your [asshole] without mercy, your [ShortDesc of penis] hard and peeking out of your [printed name of P].[otherwise]The [M] plows your [asshole] without mercy, your [ShortDesc of penis] hard enough to visibly tent your [printed name of P].[end if]";
-		otherwise if the size of penis > 2 and the relevant sex addiction of M > 7:
-			say "The [M] plows your [asshole] without mercy, your [ShortDesc of penis] slapping audibly against your [belly].";
-		otherwise if the player is male:
-			say "[if the bimbo of the player < 6 and the size of penis > 2]The [M] ruts you like an animal. You have a penis, but [he of M][']s still treating you just like a woman![otherwise if the size of penis > 2]The [M] rams [his of M] [manly-penis] in and out of your [asshole]. Your [ShortDesc of penis] jiggles around.[otherwise if the humiliation of the player < 22500]The [M] fucks your [asshole] hard and fast. There's something so humiliating about sex with another man![otherwise]The [M] fucks your [asshole] with fast, powerful thrusts. You can feel [his of M] [manly-penis] slamming into your sensitive prostate.[end if]";
-		otherwise:
-			say "[if the relevant sex addiction of M > 10 and there is a worn chastity cage]The [M] slams in and out of your [asshole]. You desperately want to play with yourself but you can't because of your stupid belt![otherwise if the relevant sex addiction of M > 6 and there is a worn chastity cage]The [M] slams in and out of your [asshole]. You can't help feeling ashamed that you would be playing with yourself if not for your chastity belt.[otherwise if the relevant sex addiction of M > 13 and vagina is not actually occupied]The [M] slams in and out of your [asshole], panting heavily. You eagerly finger yourself, determined to enjoy this as much as possible.[otherwise if the relevant sex addiction of M > 13]The [M] roughly fucks your [asshole] as you frantically diddle your clit. You want to enjoy yourself as much as you possibly can![otherwise if the relevant sex addiction of M > 9]The [M] roughly fucks your [asshole] as you play with your clit. You know you shouldn't, but it's like you just can't stop yourself![otherwise if the relevant sex addiction of M > 6]The [M] slams in and out of your [asshole], panting heavily. You want to touch yourself so badly, but you won't give [him of M] the satisfaction![otherwise]The [M] slams in and out of your [asshole], panting heavily. You know it would make it easier to take if you touched yourself as well, but you definitely won't give [him of M] or Nintendolls the satisfaction![end if]".
+To say TitfuckForceFlav of (M - a monster):
+	let C be a random worn top level covering nipple covering clothing;
+	say "[one of]The [if C is clothing][ShortDesc of C]keeps your [ShortDesc of breasts] pushed together around the [M]'s[otherwise][M] keeps your [ShortDesc of breasts] pushed together around his[end if] [manly-penis] as he thrusts between them.[or]The [M] continues to powerfully thrust between your [ShortDesc of breasts]![or]Your [ShortDesc of breasts] jiggle[if the largeness of breasts > 10] obscenely[end if] as the [M] continues thrusting between them![or]The [M] forces you to hold your [ShortDesc of breasts] together as [he of M] roughly thrusts between them.[or]The [M] holds you by the wrists, keeping your [ShortDesc of breasts] wrapped around [his of M] [manly-penis] as [he of M] thrusts between them.[in random order]".
+
+To say TitfuckReceiveFlav of (M - a monster):
+	say "[one of]The [M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping his [manly-penis] with your [ShortDesc of breasts].[or]You continue to massage his [manly-penis] with your [ShortDesc of breasts].[or]You stare at [his of M] [manly-penis] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or]The [M]'s [manly-penis] gently bumps your chin as he enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7][line break][first custom style]gross[roman type][line break][otherwise]firm, hard[end if] penis between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
 
 To say (M - a monster) sex reaction:
 	say "".
@@ -915,8 +639,19 @@ To compute ghost fleeing of (M - a monster):
 	now the scared of M is 10.
 
 
-To get orgasm image of (M - a monster) in (F - a fuckhole):
-	do nothing.
+[!<SayGangAnnounce>+
+
+This should display some text if the player is currently being fucked by more than one thing at a time.
+
++!]
+To say GangAnnounce:
+	let V be a random live thing penetrating vagina;
+	let O be a random live thing penetrating face;
+	let A be a random live thing penetrating asshole;
+	if V is live thing and A is live thing:
+		say "[line break][bold type]You're being [if O is live thing]triple[otherwise]double[end if] penetrated![roman type][line break]";
+	otherwise if O is monster and (A is live thing or V is live thing):
+		say "[line break][bold type]You're being spitroasted![roman type][line break]".
 
 Special Events ends here.
 

@@ -38,10 +38,10 @@ Triggered when the player loses vaginal virginity.
 +!]
 To compute virginity loss:
 	now the virgin of the player is 0;
-	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah!  Sorry sisters, I have failed you...[otherwise if the sex addiction of the player < 10]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the sex addiction of the player < 15]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
+	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah!  Sorry sisters, I have failed you...[otherwise if the player is not a pervert]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the player is not a nympho]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
 	if the virgin bonus of the player > 0:
-		say "[if the sex addiction of the player < 10]You feel pure despair and[otherwise if the sex addiction of the player < 15]You shudder involuntarily as[otherwise][end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
+		say "[if the player is not a pervert]You feel pure despair and[otherwise if the player is not a nympho]You shudder involuntarily as[otherwise]Perverse arousal mixed with a vague sense of self-disgust consumes you as[end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
 		now flav-said is 1;
 		now the virgin bonus of the player is -1;
 		let T be a random virgin void tattoo;

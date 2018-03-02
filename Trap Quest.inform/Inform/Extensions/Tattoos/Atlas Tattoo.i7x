@@ -1,6 +1,6 @@
 Atlas Tattoo by Tattoos begins here.
 
-Atlas tattoo is a kind of chest tattoo. Figure of Atlas tattoo is the file "tattoo30.png". There is 1 Atlas tattoo.
+Atlas tattoo is a kind of chest tattoo. Figure of Atlas tattoo is the file "Items/Tats/tattoo30.png". There is 1 Atlas tattoo.
 Definition: an Atlas tattoo (called T) is drawable:
 	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;

@@ -14,7 +14,7 @@ To decide which object is the potential-upgrade-target of (C - a satchel of hold
 
 A pink satchel of holding is a kind of satchel of holding. A pink satchel of holding is usually leather. There is 1 pink satchel of holding. The printed name of pink satchel of holding is usually "[TQlink of item described][clothing-title-before]pink satchel of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of pink satchel of holding is the file "bag16.png".
+Figure of pink satchel of holding is the file "Items\Accessories\Bags\bag16.png".
 
 To decide which figure-name is clothing-image of (C - a pink satchel of holding):
 	decide on figure of pink satchel of holding.

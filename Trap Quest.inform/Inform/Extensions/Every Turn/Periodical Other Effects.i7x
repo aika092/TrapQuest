@@ -107,7 +107,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				if M is monster:
 					set up M;
 					summon M in the dungeon;
-		if the number of alive golem is 0 and the player is a march 2017 top donator and diaper quest is 1:
+		if the number of alive golem is 0 and the player is the donator[ and diaper quest is 1]:
 			let M be a random off-stage golem;
 			let S be the thickness of hips + the largeness of breasts;
 			let X be max ass size + max breast size + 1;

@@ -4,7 +4,7 @@ A glittering rose is a kind of headgear. There is 1 glittering rose. A glitterin
 
 The printed name of glittering rose is usually "[TQlink of item described][clothing-title-before]glittering rose[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of glittering rose is "fah".
 
-Figure of glittering rose is the file "rose1.png".
+Figure of glittering rose is the file "Items\Accessories\Head\rose1.png".
 
 To decide which figure-name is the clothing-image of (C - a glittering rose):
 	decide on figure of glittering rose.

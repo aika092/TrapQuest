@@ -16,8 +16,8 @@ Definition: a djinn (called M) is raunchy:
 
 A nubian djinn is a kind of djinn. There is 1 nubian djinn. The printed name of nubian djinn is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]nubian djinn[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of nubian djinn is "ndj".
 
-Figure of djinn is the file "djinn1.png".
-Figure of censored djinn is the file "djinn2.png".
+Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.png".
+Figure of censored djinn is the file "NPCs/Forest/Djinn/djinn2.png".
 
 To say DjinnDesc:
 	if images visible is 1:
@@ -88,6 +88,9 @@ To compute appearance assessment of (M - a djinn):
 			say "[speech style of M]'I am bound by the law of Djinni to grant you one wish, within reason. But if you don't wish for a [if diaper quest is 1]spanking[otherwise]suck of my cock[end if], I'll make your life miserable afterwards.'[roman type][line break]";
 			now the alert of the player is 1;
 			compute djinn wishing of M;
+			if image cutscenes is 1:
+				if diaper quest is 0, display the figure of djinn;
+				otherwise display the figure of censored djinn;
 		otherwise:
 			say "[speech style of M]'Hmm, looks like you can't speak at the moment. I'll come back later.'[roman type][line break]";
 			bore M.
@@ -173,8 +176,14 @@ To compute DjinnDisappointedAfter of (M - a monster):
 
 To compute djinn wishing conclusion:
 	now seconds is 6;
+	cancel djinn wishing.
+
+To cancel djinn wishing:
 	change the text of the player's command to "finish setting";
 	now wish-to-ask is "".
+
+To compute unique dislodging of (C - a djinn):
+	cancel djinn wishing.
 
 This is the wishing for strength rule:
 	if wish-asked is "wish for strength" or wish-asked is "strength":
@@ -341,7 +350,7 @@ To compute djinn messing of (M - a djinn):
 To compute (M - a djinn) transforming (C - a clothing):
 	say "He points at your [C], and a bolt of magic lightning erupts from his finger!  Your [C] starts to shimmer...";
 	let enhanced be 0;
-	if the player is a may 2017 top donator and a random number between 2 and 6 > the raw-magic-modifier of C, now enhanced is 1;
+	if [the player is a may 2017 top donator and ]a random number between 2 and 6 > the raw-magic-modifier of C, now enhanced is 1;
 	[Below is a slightly modified version of the "potentially transform (C - a clothing)" code.]
 	if C is upgradable:
 		let D be the upgrade-target of C;
@@ -394,6 +403,9 @@ To compute the flying player taunting of (M - a djinn):
 To say LandingTaunt of (M - a djinn):
 	say "The [M] [if a random number between 1 and 2 is 1]chuckles[otherwise]laughs mercilessly[end if].";
 	humiliate 50.
+
+To get PenetrationImage of (M - a djinn) in (F - vagina):
+	display figure of djinn cutscene 1.
 
 To decide if (M - a djinn) is losing wrapper in (F - asshole):
 	if the class of the player is priestess or the class of the player is cultist, decide yes;
@@ -616,15 +628,17 @@ To compute damage of (M - a djinn):
 		if the health of M <= 0 and M is not dying:
 			compute death of M.
 
-To say DamageReaction (N - a number) of (M - a djinn):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The [M] takes the hit without flinching!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The [M] takes the hit, struggling not to react!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The [M] takes the hit, growling!";
-	otherwise:
-		say "The djinn grunts [he of M] takes the hit, eyeing the area around you.".
+To say DamageReactHealthy of (M - a djinn):
+	say "The [M] takes the hit without flinching!".
+
+To say DamageReactDamaged of (M - a djinn):
+	say "The [M] takes the hit, struggling not to react!".
+
+To say DamageReactTired of (M - a djinn):
+	say "The [M] takes the hit, growling!".
+
+To say DamageReactWeak of (M - a djinn):
+	say "The djinn grunts [he of M] takes the hit, eyeing the area around you.".
 
 To compute unique death of (M - a djinn): [TODO: If holding an oil lamp, player can defeat djinni permanently.]
 	say "The [M] seems to be weakening rapidly, and he begins to take flight. He shouts at you as he flees. [line break][speech style of M]'I'll be back, mortal!  I can never be fully defeated. And the next time we meet, I'll be even stronger!'[roman type][line break]";

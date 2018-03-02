@@ -11,7 +11,7 @@ total-wasps is a number that varies. total-wasps is 0.
 Definition: a wasp-antennae (called C) is cult garb:
 	decide yes.
 
-Figure of wasp antennae is the file "waspantennae1.png".
+Figure of wasp antennae is the file "Items\Accessories\Head\waspantennae1.png".
 
 To decide which figure-name is the clothing-image of (C - a wasp-antennae):
 	decide on figure of wasp antennae.

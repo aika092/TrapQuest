@@ -40,16 +40,19 @@ Carry out showering sacred pool:[Much later: some interaction with slimegirl; So
 					decrease S by 50;
 	otherwise:
 		say "The water feels nice as it runs over your [if the largeness of breasts > 4][BreastDesc].[otherwise]face.[end if]";
-		if the semen volume of vagina + the semen volume of belly + the urine volume of belly + the milk volume of belly > 1:
+		if the total felchable volume of vagina + the semen volume of belly + the urine volume of belly + the milk volume of belly > 0:
 			let C be 0;
-			if vagina is not actually occupied and the player is not pussy protected and the pregnancy of the player <= 0, now C is 1;
+			if vagina is not actually occupied and the player is not pussy protected, now C is 1;
 			if asshole is not actually occupied and the player is not ass protected, increase C by 2;
 			if C > 0:
 				say "You feel a pleasant tingling sensation as a cool [one of]tongue[or]finger[or]hand[at random] seems to reach in and clear out the [semen] trapped inside you.";
-			if the remainder after dividing C by 2 is 1:[2 or 3]
+			if the remainder after dividing C by 2 is 1:[1 or 3]
 				increase S by the semen volume of vagina * 2;
-				now the semen volume of vagina is 1;
-				WombSquirt 1;
+				now the semen volume of vagina is 0;
+				if the pregnancy of the player is 0:
+					increase S by the womb volume of vagina * 2;
+					now the womb volume of vagina is 0;
+					cancel father material of vagina;
 			if C > 1:
 				increase S by the semen volume of belly * 2;
 				increase S by the urine volume of belly * 3;

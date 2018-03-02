@@ -1,7 +1,7 @@
 Bird Kitty Tattoo by Tattoos begins here.
 
 
-bird kitty tattoo is a kind of body tattoo. Figure of bird kitty tattoo is the file "tattoo59.png". There is 1 bird kitty tattoo.
+bird kitty tattoo is a kind of body tattoo. Figure of bird kitty tattoo is the file "Items/Tats/tattoo59.png". There is 1 bird kitty tattoo.
 Definition: a bird kitty tattoo (called T) is eligible:
 	if the noun is cat themed, decide yes;
 	decide no.

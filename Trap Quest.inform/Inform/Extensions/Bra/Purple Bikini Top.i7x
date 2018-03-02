@@ -1,6 +1,6 @@
 Purple Bikini Top by Bra begins here.
 
-A purple bikini top is a kind of bikini top. Figure of bikini 4 is the file "bikini4.png". A purple bikini top is very low cut. The text-shortcut of purple bikini top is "pbt". Understand "shiny" as purple bikini top.
+A purple bikini top is a kind of bikini top. Figure of bikini 4 is the file "Items/Clothes/Upper/Bras/bikini4.png". A purple bikini top is very low cut. The text-shortcut of purple bikini top is "pbt". Understand "shiny" as purple bikini top.
 
 There is 1 purple bikini top.
 

@@ -28,9 +28,7 @@ To compute corset strain of (C - a corset):
 	increase F by the magic-modifier of C;
 	repeat with X running through worn clothing:
 		increase F by the leniency-addition of X;
-	let B be the total fill of belly;
-	increase B by the semen volume of vagina;
-	increase B by the stomach of the player / 2;
+	let B be the largeness fill of belly;
 	if B > F:
 		say "Your [printed name of C] rips and bursts under the pressure from your belly!  ";
 		repeat with D running through worn dresses:

@@ -13,9 +13,12 @@ To compute rest ending of (F - a guest bed):
 		let M be a random ghostly tentacle;
 		repeat with S running through orifices penetrated by F:
 			now M is penetrating S;
+			now F is not penetrating S;
 		if M is penetrating face, StomachSemenUp the semen load of M;
-		if M is penetrating vagina, WombFill the semen load of M;
+		if M is penetrating vagina, PussyFill the semen load of M;
 		if M is penetrating asshole, AssFill the semen load of M;
+		repeat with P running through orifices penetrated by M:
+			now M is not penetrating P;
 		now the holeCount of M is 0;
 	otherwise:
 		say "You eagerly throw off the covers and get to your feet.";

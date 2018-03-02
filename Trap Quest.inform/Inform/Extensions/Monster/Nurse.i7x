@@ -4,7 +4,7 @@ nurse is a staff member.
 
 nurse is in School11. The printed name of nurse is "[if item described is in the location of the player][TQlink of item described][end if][input-style]nurse[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of nurse is "[NurseDesc]". The text-shortcut of nurse is "nrs". nurse has a number called boost-cooldown. nurse has a number called boost-int-drain.
 
-Figure of nurse is the file "nurse1.png".
+Figure of nurse is the file "NPCs/School/nurse1.png".
 
 To say NurseDesc:
 	if images visible is 1, display the figure of nurse;
@@ -38,15 +38,17 @@ Definition: nurse (called M) is successfully blocking: [Do they succeed in a rol
 To say MovementBlock of (M - nurse):
 	say "The [M] stands into the doorway, completely blocking your path![line break][speech style of M]'No dear, you're not allowed back there unless you need to use the bed.'[roman type][line break]";
 
-To say DamageReaction (N - a number) of (M - nurse):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The [noun] easily takes the hit! [line break][speech style of M]'[one of]Ooh!'[or]Oof!'[at random][roman type][line break]";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The [noun] flinches, taking the hit! [line break][speech style of M]'[one of]Ow!'[or]Oof!'[at random][roman type][line break]";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The [noun] takes the hit, staggering! [line break][speech style of M]'[one of]Ouch!'[or]Ow!'[at random][roman type][line break]";
-	otherwise:
-		say "The [noun] takes the hit, fighting to maintain [his of M] balance! [line break][speech style of M]'[one of]Ooh!'[or]Ouch!'[at random][roman type][line break]";
+To say DamageReactHealthy of (M - nurse):
+	say "The [noun] easily takes the hit! [line break][speech style of M]'[one of]Ooh!'[or]Oof!'[at random][roman type][line break]".
+
+To say DamageReactDamaged of (M - nurse):
+	say "The [noun] flinches, taking the hit! [line break][speech style of M]'[one of]Ow!'[or]Oof!'[at random][roman type][line break]".
+
+To say DamageReactTired of (M - nurse):
+	say "The [noun] takes the hit, staggering! [line break][speech style of M]'[one of]Ouch!'[or]Ow!'[at random][roman type][line break]".
+
+To say DamageReactWeak of (M - nurse):
+	say "The [noun] takes the hit, fighting to maintain [his of M] balance! [line break][speech style of M]'[one of]Ooh!'[or]Ouch!'[at random][roman type][line break]".
 
 To say StrikingFlav of (M - a nurse) on (B - a body part):
 	say "The [M] grabs you by the wrist and pulls your arm toward her with seemingly impossible strength!".

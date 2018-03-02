@@ -54,18 +54,25 @@ Definition: yourself is pigtailed:
 	decide no.
 
 To decide which number is the initial outrage of (C - a scrunchie):
+	if the number of worn scrunchies < 2, decide on 0;
 	if diaper quest is 1, decide on 0;
 	decide on 3.
 
 To decide which number is the initial cringe of (C - a scrunchie):
+	if the number of worn scrunchies < 2, decide on 0;
 	decide on 4.
+
+Definition: a scrunchie (called C) is untransformable:
+	if the player is not pigtailed, decide yes;
+	if the unique-upgrade-target of C is nothing and the potential-upgrade-target of C is nothing, decide yes;
+	decide no.
 
 
 Chapter 1 - Pink Scrunchie
 
 [Obtained from the mannequin]
 
-A pink scrunchie is a kind of scrunchie. There are 2 pink scrunchies. Figure of pink scrunchie is the file "scrunchie1.png".
+A pink scrunchie is a kind of scrunchie. There are 2 pink scrunchies. Figure of pink scrunchie is the file "Items\Accessories\Head\scrunchie1.png".
 
 The printed name of a pink scrunchie is "[TQlink of item described][clothing-title-before]pink scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The printed plural name of a pink scrunchie is "[TQlink of item described][clothing-title-before]pink scrunchies[clothing-title-after][TQxlink of item described][verb-desc of item described]".
@@ -113,7 +120,7 @@ Chapter 2 - Blue Scrunchie
 
 [The first is obtained from dungeon apothecary, second is obtained from hotel library.]
 
-A blue scrunchie is a kind of scrunchie. 1 blue scrunchie is in Dungeon27. 1 blue scrunchie is in Hotel25. Figure of blue scrunchie is the file "scrunchie2.png".
+A blue scrunchie is a kind of scrunchie. 1 blue scrunchie is in Dungeon27. 1 blue scrunchie is in Hotel25. Figure of blue scrunchie is the file "Items\Accessories\Head\scrunchie2.png".
 
 Definition: A blue scrunchie (called S) is immune to change:
 	decide yes.
@@ -202,17 +209,16 @@ To compute class outfit of (H - a blue scrunchie):
 			now S is confidence;
 			say "[bold type]White cotton stockings appear around your [ShortDesc of thighs]![roman type][line break]".
 
-Definition: a blue scrunchie (called C) is untransformable:
-	if diaper quest is 0, decide yes;
-	if the player is not pigtailed, decide yes;
-	decide no.
-
 To decide which object is the potential-upgrade-target of (C - a blue scrunchie):
-	decide on a random off-stage monkey scrunchie.
+	if diaper lover > 0, decide on a random off-stage monkey scrunchie;
+	decide on nothing.
 
 Chapter 3 - Monkey Scrunchie
 
-A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies. Figure of monkey scrunchie is the file "scrunchie3.png".
+A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies. Figure of monkey scrunchie is the file "Items\Accessories\Head\scrunchie3.png".
+
+To decide which figure-name is the clothing-image of (C - a monkey scrunchie):
+	decide on figure of monkey scrunchie.
 
 The printed name of monkey scrunchie is usually "[TQlink of item described][clothing-title-before]monkey scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The printed plural name of monkey scrunchie is usually "[TQlink of item described][clothing-title-before]monkey scrunchies[clothing-title-after][TQxlink of item described][verb-desc of item described]".
@@ -247,6 +253,49 @@ Chapter 4 - Rubber Scrunchie
 A rubber scrunchie is a kind of scrunchie. [There is 1 rubber scrunchie. ]A rubber scrunchie is usually latex.
 
 The printed name of a rubber scrunchie is "[TQlink of item described][clothing-title-before]rubber scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+
+Chapter 5 - Helium Balloons
+
+A pair of helium balloons is a kind of scrunchie.  A pair of helium balloons is usually latex.  Figure of helium balloons is the file "Items\Accessories\Head\scrunchie4.png". There is 1 pair of helium balloons.
+
+To decide which figure-name is the clothing-image of (C - a pair of helium balloons):
+	decide on figure of helium balloons.
+
+The printed name of a pair of helium baloons is "[TQlink of item described][clothing-title-before]pair of helium baloons[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+
+To decide which number is the initial outrage of (H - a pair of helium balloons):
+	decide on 11.
+
+To say ShortDesc of (H - a pair of helium balloons):
+	say "pair of helium balloons".
+
+To say ClothingDesc of (H - a pair of helium balloons):
+	say "Two helium baloons rise from each of your pigtails, attached by a piece of string. One has '100% bimbo' written on it, and the other has 'I suck' written on it .".
+
+Definition: a pair of helium balloons (called C) is untransformable:
+	decide yes.
+
+To transform (D - a scrunchie) into (C - a pair of helium balloons):
+	say "Your [printed plural name of D] transform into a ";
+	silently transform D into C;
+	repeat with S running through worn scrunchies:
+		unless S is C, only destroy S;
+	say "[printed name of C] in front of your eyes!"; [no image necessary since it'll be on character window]
+	say "[TransformReaction of C]".
+
+To decide if a pair of helium balloons is roleplay:
+	decide no.
+
+To decide which number is the heaviness of (H - a pair of helium balloons):
+	decide on -20. [This needs to be big as it's divided by 5 when worn]
+
+To decide which number is the relieved heaviness of (H - a pair of helium balloons):
+	if there is a worn bag of holding, decide on 0;
+	decide on -4.
+
+To decide which object is the unique-upgrade-target of (C - a scrunchie):
+	if inflation fetish is 1, decide on a random off-stage pair of helium balloons;
+	decide on nothing.
 
 
 
