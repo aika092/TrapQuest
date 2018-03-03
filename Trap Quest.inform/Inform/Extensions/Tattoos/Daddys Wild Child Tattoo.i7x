@@ -1,6 +1,6 @@
 Daddys Wild Child Tattoo by Tattoos begins here.
 
-daddy's wild child tattoo is a kind of body tattoo. Figure of daddy's wild child tattoo is the file "tattoo76.png". There is 1 daddy's wild child tattoo.
+daddy's wild child tattoo is a kind of body tattoo. Figure of daddy's wild child tattoo is the file "Items/Tats/tattoo76.png". There is 1 daddy's wild child tattoo.
 Definition: a daddy's wild child tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - a daddy's wild child tattoo):

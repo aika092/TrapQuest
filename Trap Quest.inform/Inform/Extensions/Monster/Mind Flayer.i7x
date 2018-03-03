@@ -9,7 +9,7 @@ Definition: a mind flayer (called M) is willing to do oral:
 
 The printed name of a mind flayer is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]mind flayer[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "mind" as a mind flayer. The description of a mind flayer is usually "[MindFlayerDesc]". The text-shortcut of mind flayer is "mf".
 
-Figure of mindflayer is the file "mindflayer1.png".
+Figure of mindflayer is the file "NPCs/MultiFloor/mindflayer1.png".
 
 To say MindFlayerDesc:
 	say "A lean humanoid with slimy looking purple skin. It wears a loose robe. Slowly waving tentacles surround its mouth. Though its eyes are pure white, it exudes an aura of intelligence and menace.".
@@ -186,15 +186,17 @@ To compute damage of (M - a mind flayer):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a mind flayer):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The thing doesn't even flinch!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The creature doesn[']t seem to be looking quite at you, only slightly reacting to the hit.";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The creature takes the hit, its expression remaining as hard to read as ever.";
-	otherwise:
-		say "The creature's expression grows frantic as it senses its life is in jeopardy!".
+To say DamageReactHealthy of (M - a mind flayer):
+	say "The thing doesn't even flinch!".
+
+To say DamageReactDamaged of (M - a mind flayer):
+	say "The creature doesn[']t seem to be looking quite at you, only slightly reacting to the hit.".
+
+To say DamageReactTired of (M - a mind flayer):
+	say "The creature takes the hit, its expression remaining as hard to read as ever.".
+
+To say DamageReactWeak of (M - a mind flayer):
+	say "The creature's expression grows frantic as it senses its life is in jeopardy!".
 		
 To compute unique death of (M - a mind flayer):
 	say "The [noun] screams hideously as it collapses to the ground. ";

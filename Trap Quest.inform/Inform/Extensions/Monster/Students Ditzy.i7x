@@ -8,7 +8,7 @@ student-stacey is a tq-only ditzy student.
 
 The text-shortcut of student-stacey is "stst".
 
-Figure of stacey is the file "student17.png".
+Figure of stacey is the file "NPCs/School/Student/student17.png".
 
 To decide which figure-name is the monster-image of (M - student-stacey):
 	decide on figure of stacey.
@@ -45,7 +45,7 @@ student-holly is a ditzy student.
 
 The text-shortcut of student-holly is "stho".
 
-Figure of holly is the file "student18.png".
+Figure of holly is the file "NPCs/School/Student/student18.png".
 
 To decide which figure-name is the monster-image of (M - student-holly):
 	decide on figure of holly.
@@ -77,7 +77,7 @@ student-jill is a ditzy student.
 
 The text-shortcut of student-jill is "stji".
 
-Figure of jill is the file "student19.png".
+Figure of jill is the file "NPCs/School/Student/student19.png".
 
 To decide which figure-name is the monster-image of (M - student-jill):
 	decide on figure of jill.

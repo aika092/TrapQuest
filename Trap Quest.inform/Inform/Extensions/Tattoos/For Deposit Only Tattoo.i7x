@@ -1,6 +1,6 @@
 For Deposit Only Tattoo by Tattoos begins here.
 
-for deposit only tattoo is a kind of crotch tattoo. Figure of for deposit only tattoo is the file "tattoo12.png". There is 1 for deposit only tattoo.
+for deposit only tattoo is a kind of crotch tattoo. Figure of for deposit only tattoo is the file "Items/Tats/tattoo12.png". There is 1 for deposit only tattoo.
 Definition: a for deposit only tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;

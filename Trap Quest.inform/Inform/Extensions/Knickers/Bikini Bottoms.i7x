@@ -33,7 +33,7 @@ To decide which figure-name is clothing-image of (C - a cow print bikini bottoms
 
 To say ClothingDesc of (K - a cow print bikini bottoms):
 	say "A bottom half of a bikini outfit with a cow print pattern.".
-Figure of bikini bottoms 1 is the file "bikinibottoms1.png".
+Figure of bikini bottoms 1 is the file "Items\Clothes\Lower\Underwear\Skimpy\Bikini\bikinibottoms1.png".
 
 To decide which number is the initial outrage of (C - a cow print bikini bottoms):
 	decide on 2.
@@ -57,7 +57,7 @@ To decide which figure-name is clothing-image of (C - a pink bikini bottoms):
 
 To say ClothingDesc of (K - a pink bikini bottoms):
 	say "These metallic pink bikini bottoms are so ridiculously tiny that they ride up into your [if the player is female][vagina][otherwise]butt cheeks[end if], exposing everything.".
-Figure of bikini bottoms 2 is the file "bikinibottoms2.png".
+Figure of bikini bottoms 2 is the file "Items\Clothes\Lower\Underwear\Skimpy\Bikini\bikinibottoms2.png".
 
 To decide which number is the initial outrage of (C - a pink bikini bottoms):
 	decide on 11.
@@ -82,7 +82,7 @@ To decide which figure-name is clothing-image of (C - a white crotchless bikini 
 
 To say ClothingDesc of (K - a white crotchless bikini bottoms):
 	say "These white bikini bottoms are just two thin strips of fabric that go either side of your [player-crotch] leaving you completely exposed.".
-Figure of bikini bottoms 3 is the file "bikinibottoms3.png".
+Figure of bikini bottoms 3 is the file "Items\Clothes\Lower\Underwear\Skimpy\Bikini\bikinibottoms3.png".
 
 To decide which number is the initial outrage of (C - a white crotchless bikini bottoms):
 	decide on 12.
@@ -114,7 +114,7 @@ To decide which figure-name is clothing-image of (C - a black crotchless bikini 
 
 To say ClothingDesc of (K - a black crotchless bikini bottoms):
 	say "These black bikini bottoms are just a small sequins guard that sits in front of your [genitals] and two thin strips of fabric that go either side, leaving you almost completely exposed.".
-Figure of bikini bottoms 4 is the file "bikinibottoms4.png".
+Figure of bikini bottoms 4 is the file "Items\Clothes\Lower\Underwear\Skimpy\Bikini\bikinibottoms4.png".
 
 To decide which number is the initial outrage of (C - a black crotchless bikini bottoms):
 	decide on 10.
@@ -137,7 +137,7 @@ To decide which figure-name is clothing-image of (C - a red bikini briefs):
 
 To say ClothingDesc of (K - a red bikini briefs):
 	say "A bottom half of a bikini outfit with a red pattern. The cut is quite narrow, leaving a lot of your butt showing.".
-Figure of bikini bottoms 5 is the file "bikinibottoms5.png".
+Figure of bikini bottoms 5 is the file "Items\Clothes\Lower\Underwear\Skimpy\Bikini\bikinibottoms5.png".
 
 To decide which number is the initial outrage of (C - a red bikini briefs):
 	decide on 3.
@@ -161,7 +161,7 @@ To decide which figure-name is clothing-image of (C - a leopard print bikini bot
 To say ClothingDesc of (K - a leopard print bikini bottoms):
 	say "A bottom half of a bikini outfit with a leopard print pattern. Part of the waist is made of gold coloured metal chain rather than nylon, which gives it a raunchy feel.".
 
-Figure of bikini bottoms 6 is the file "bikinibottoms6.png".
+Figure of bikini bottoms 6 is the file "Items\Clothes\Lower\Underwear\Skimpy\Bikini\bikinibottoms6.png".
 
 To decide which number is the initial outrage of (C - a leopard print bikini bottoms):
 	decide on 2.

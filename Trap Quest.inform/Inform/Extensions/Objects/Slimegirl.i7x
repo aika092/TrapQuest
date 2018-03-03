@@ -45,7 +45,7 @@ A time based rule (this is the compute slimegirl rule):
 				increase the hunger of M by 1;
 			otherwise if the hunger of M < 5:
 				increase the hunger of M by 1;
-				say "[bold type]The [M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]I'm getting hungry in here... can you feed me with some tasty cum soon please?'[or]I'm hungry, give me some more cum!'[or]I need semen to live in here, you know?  Please feed me soon!'[or]Hey baby, have you forgotten about me?  I need feeding, you know...'[in random order][roman type][line break]";
+				say "[bold type]The [M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]I'm getting hungry in here... can you feed me with some [tasty] cum soon please?'[or]I'm hungry, give me some more cum!'[or]I need semen to live in here, you know?  Please feed me soon!'[or]Hey baby, have you forgotten about me?  I need feeding, you know...'[in random order][roman type][line break]";
 				let R be a random number between 1 and 3;
 				if R is 1:
 					say "You feel the [M] slightly influencing your love of [semen] and sex.";
@@ -113,7 +113,7 @@ A time based rule (this is the compute slimegirl rule):
 				SemenAddictDown 2;
 				say "You now have a [BellyDesc].".
 				
-Figure of slimegirl is the file "slimegirl1.png".
+Figure of slimegirl is the file "NPCs/Forest/slimegirl1.png".
 
 To SlimeGirlCheck (this is the slime-girl-clean rule):
 	let S be 0;
@@ -132,7 +132,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			now the timetaken of M is 0;
 			say "[second custom style]'Well, thanks for returning me to my pool, I guess...'[roman type][line break]";
 		rule fails;
-	otherwise if the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or S > 0 or the semen volume of vagina > 0 or the semen volume of belly > 0:
+	otherwise if the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or S > 0 or the total felchable volume of vagina > 0 or the semen volume of belly > 0:
 		if M is in Woods05:
 			say "The slimegirl hurries over to you!  ";
 		otherwise if the hunger of a random slimegirl is not 999:
@@ -142,23 +142,28 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			rule fails;
 		say "[one of]At first you expect the monster (who at closer inspection is some kind of female slime monster) to be attacking you, but you quickly realise she is [or]The [M] quickly begins [stopping]lapping up all the [semen] on your body[if S > 0] and clothes[end if].";
 		if image cutscenes is 1, display figure of slimegirl cutscene 1;
-		if the semen volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected and the pregnancy of the player <= 0:
+		if the total felchable volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected:
 			say "The [M] moves down to your [vagina], and laps away with great enthusiasm. ";
-			if the arousal of the player / 1000 + the semen volume of vagina >= 10 and the player is able to get horny:
-				say "It feels so good [if S > 4]and she licks away with such vigour [end if] that you are quickly brought to an orgasm[if the sex addiction of the player < 10] against your will[end if]!";
+			if (the arousal of the player / 1000) + the total felchable volume of vagina >= 6 and the player is able to get horny:
+				say "It feels so good [if S > 4]and she licks away with such vigour [end if] that you are quickly brought to an orgasm[if the player is not a pervert] against your will[end if]!";
 				vaginally orgasm shamefully;
+				VaginalSexAddictUp 1;
 			otherwise:
 				say "It feels amazing!";
 			increase S by the semen volume of vagina;
 			now the semen volume of vagina is 0;
-			cancel father material of vagina;
-		if the semen-volume of asshole > 0 and asshole is not actually occupied and the player is not pussy protected and the pregnancy of the player <= 0:
+			if the pregnancy of the player is 0:
+				increase S by the womb volume of vagina;
+				now the womb volume of vagina is 0;
+				cancel father material of vagina;
+		if the semen volume of belly > 0 and asshole is not actually occupied and the player is not ass protected:
 			say "The [M] moves down to your [asshole], and licks with increased vigour. It feels incredibly relaxing!";
 			increase S by 1;
 		if bukkake fetish is 1, say "She continues licking you up and down until all the [semen] you had on you is gone. Everywhere she licks gives you a little tingle of pleasure.";
 		arouse 1000;
 		repeat with C running through worn clothing:
 			clean C;
+			now the water-soak of C is the total-soak of C;
 		increase S by the semen coating of face;
 		now the semen coating of face is 0;
 		increase S by the semen coating of breasts;
@@ -179,7 +184,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			if R < 8:
 				unless R <= -9999, say "It's no good, she's too fast for you!  You can't get away!  ";
 				say "You feel [if the openness of asshole < 8]your [asshole] forced wide as the [M] swims up inside you and into your belly![otherwise]her wiggling as the [M] swims up into your [asshole] and into your belly![end if]";
-				say "She somehow speaks to you telepathically. [line break][second custom style]'I hope you don't mind me living in here for a while, but I want to drink all the tasty cum that people are going to squirt inside you!'[roman type][line break]";
+				say "She somehow speaks to you telepathically. [line break][second custom style]'I hope you don't mind me living in here for a while, but I want to drink all the [tasty] cum that people are going to squirt inside you!'[roman type][line break]";
 				say "[if the bimbo of the player < 7][line break][first custom style]Holy shit, what is this?![otherwise if the bimbo of the player < 11][line break][variable custom style]Err... okay?  I think?[otherwise][line break][second custom style]Ooh, this could be fun![end if][roman type][line break]";
 				now M is penetrating asshole;
 				ruin asshole;
@@ -191,7 +196,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			otherwise:
 				say "You manage to swim out of the waterfall pool before she can force herself inside.[line break][second custom style]'No, wait, come back!  Awww...'[roman type][line break]";
 		otherwise:
-			say "The [M] smacks her lips. [line break][second custom style]'That was [one of]tasty[or]scrumptious[or]yummy[in random order]!  Come back any time, [one of]darling[or]baby[in random order]!'[roman type][line break]";
+			say "The [M] smacks her lips. [line break][second custom style]'That was [one of][tasty][or]scrumptious[or]yummy[in random order]!  Come back any time, [one of]darling[or]baby[in random order]!'[roman type][line break]";
 		now seconds is 6;
 		rule succeeds;
 	rule fails.

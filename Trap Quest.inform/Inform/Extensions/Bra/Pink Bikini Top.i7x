@@ -1,6 +1,6 @@
 Pink Bikini Top by Bra begins here.
 
-A pink bikini top is a kind of string bikini top. Figure of bikini 9 is the file "bikini9.png". A pink bikini top is very low cut. The text-shortcut of pink bikini top is "pit".
+A pink bikini top is a kind of string bikini top. Figure of bikini 9 is the file "Items/Clothes/Upper/Bras/bikini9.png". A pink bikini top is very low cut. The text-shortcut of pink bikini top is "pit".
 
 There is 1 pink bikini top.
 

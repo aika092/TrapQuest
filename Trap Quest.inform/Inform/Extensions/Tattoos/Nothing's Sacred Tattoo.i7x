@@ -1,6 +1,6 @@
 Nothing's Sacred Tattoo by Tattoos begins here.
 
-nothing's sacred tattoo is a kind of body tattoo. Figure of nothing's sacred tattoo is the file "tattoo42.png". There is 1 nothing's sacred tattoo.  A nothing's sacred tattoo has a number called soul-charge.
+nothing's sacred tattoo is a kind of body tattoo. Figure of nothing's sacred tattoo is the file "Items/Tats/tattoo42.png". There is 1 nothing's sacred tattoo.  A nothing's sacred tattoo has a number called soul-charge.
 Definition: a nothing's sacred tattoo (called T) is eligible:
 	if the noun is infernal gem or the noun is purity clothing or the noun is runic headband or the noun is witch's goblet or the noun is mystical amulet or the noun is demonic or the noun is soulstone or the noun is blazing dress or the noun is dildo heels, decide yes;
 	decide no.

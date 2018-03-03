@@ -12,17 +12,17 @@ To compute SelfExamineDesc of (M - a maid outfit):
 To say ShortDesc of (C - a maid outfit):
 	say "slutty maid's outfit".
 
-Figure of Maid Outfit 1 is the file "maid1.png".
-Figure of Maid Outfit 2 is the file "maid7.png".
-Figure of Maid Outfit 3 is the file "maid2.png".
-Figure of Maid Outfit 4 is the file "maid3.png".
-Figure of Maid Outfit 5a is the file "maid4a.png".
-Figure of Maid Outfit 5b is the file "maid4b.png".
-Figure of Maid Outfit 6 is the file "maid5.png".
-Figure of Maid Outfit 7 is the file "maid6.png".
-Figure of Maid Outfit 8 is the file "maid8.png".
-Figure of Maid Outfit 9 is the file "maid9.png".
-Figure of Maid Outfit 10 is the file "maid10.png".
+Figure of Maid Outfit 1 is the file "Items\Clothes\Upper\Special\Maid\maid1.png".
+Figure of Maid Outfit 2 is the file "Items\Clothes\Upper\Special\Maid\maid7.png".
+Figure of Maid Outfit 3 is the file "Items\Clothes\Upper\Special\Maid\maid2.png".
+Figure of Maid Outfit 4 is the file "Items\Clothes\Upper\Special\Maid\maid3.png".
+Figure of Maid Outfit 5a is the file "Items\Clothes\Upper\Special\Maid\maid4a.png".
+Figure of Maid Outfit 5b is the file "Items\Clothes\Upper\Special\Maid\maid4b.png".
+Figure of Maid Outfit 6 is the file "Items\Clothes\Upper\Special\Maid\maid5.png".
+Figure of Maid Outfit 7 is the file "Items\Clothes\Upper\Special\Maid\maid6.png".
+Figure of Maid Outfit 8 is the file "Items\Clothes\Upper\Special\Maid\maid8.png".
+Figure of Maid Outfit 9 is the file "Items\Clothes\Upper\Special\Maid\maid9.png".
+Figure of Maid Outfit 10 is the file "Items\Clothes\Upper\Special\Maid\maid10.png".
 
 To decide which number is the strength-influence of (C - a maid outfit):
 	let S be 1;

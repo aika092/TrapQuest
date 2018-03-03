@@ -1,6 +1,6 @@
 Whore is my Mind Tattoo by Tattoos begins here.
 
-whore-is-my-mind tattoo is a kind of crotch tattoo. Figure of whore-is-my-mind tattoo is the file "tattoo45.png". There is 1 whore-is-my-mind tattoo. The printed name of whore-is-my-mind tattoo is "[if the bimbo of the player < 14]where[otherwise]whore[end if] is my mind tattoo". Understand "where" as whore-is-my-mind tattoo when the bimbo of the player < 14. Understand "whore" as whore-is-my-mind tattoo when the bimbo of the player >= 14. Understand "is my mind", "mind" as whore-is-my-mind tattoo.
+whore-is-my-mind tattoo is a kind of crotch tattoo. Figure of whore-is-my-mind tattoo is the file "Items/Tats/tattoo45.png". There is 1 whore-is-my-mind tattoo. The printed name of whore-is-my-mind tattoo is "[if the bimbo of the player < 14]where[otherwise]whore[end if] is my mind tattoo". Understand "where" as whore-is-my-mind tattoo when the bimbo of the player < 14. Understand "whore" as whore-is-my-mind tattoo when the bimbo of the player >= 14. Understand "is my mind", "mind" as whore-is-my-mind tattoo.
 Definition: a whore-is-my-mind tattoo (called T) is eligible:
 	if the noun is headgear, decide yes;
 	if the noun is wearthing:

@@ -61,7 +61,7 @@ Carry out quaffing elixir of life:
 		set up M;	
 		now the father is M;
 		now M is in Woods10;
-		if the semen volume of vagina < 10, now the semen volume of vagina is 1;
+		if the womb volume of vagina < 10, now the womb volume of vagina is 1;
 	if the noun is not cursed:
 		let R be a random number between 20 and 25;
 		if the noun is blessed, increase R by 6;
@@ -85,7 +85,7 @@ A time based rule (this is the life elixir decay rule):
 			otherwise if the pregnancy of the player > 0:
 				say "You feel life force rushing through your body, as if trying to find something to heal. After rushing through your torso, your [vagina] and your [asshole], it flows through your cervix into your womb.";
 				let B be the largeness of belly;
-				increase the semen volume of vagina by 1;
+				increase the womb volume of vagina by 1;
 				if the largeness of belly > B, say PregGrowth.
 	
 Section 3 Elixir of Invigoration

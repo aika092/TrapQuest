@@ -108,7 +108,7 @@ To say TitleBimbo:
 		otherwise if the bimbo of the player < 13 and the bimbo of the player > 10:
 			say " [one of]bimbo[or][if the openness of asshole > 5]anal [end if]slut[or][if the openness of asshole > 5]anal [end if]whore[sticky random]";
 		otherwise if the bimbo of the player < 18 and the bimbo of the player >= 13:
-			if the sex addiction of the player > 14:
+			if the player is a nympho:
 				say " [one of]nymphomaniac[or][if the openness of asshole > 5]anal [end if]orgasm addict[or][if the openness of asshole > 5]anal [end if]sex addict[sticky random]";
 			otherwise if the semen taste addiction of the player > 12:
 				if the semen taste addiction of the player < 16, say " cum drinker";
@@ -121,7 +121,7 @@ To say TitleBimbo:
 		if the player is flying:
 			say " balloon";
 		if the humiliation of the player >= 40000 or the bimbo of the player > 17:
-			say " [if the sex addiction of the player >= the semen addiction of the player][one of]collection of meat-holes[or]walking selection of fuckholes[or]cock sleeve[or]fuck toy[sticky random][otherwise][one of]cum dumpster[or]semen receptacle[or]human vacuum[sticky random][end if]";
+			say " [if highest body part sex addiction > the semen addiction of the player / 2][one of]collection of meat-holes[or]walking selection of fuckholes[or]cock sleeve[or]fuck toy[sticky random][otherwise][one of]cum dumpster[or]semen receptacle[or]human vacuum[sticky random][end if]";
 		otherwise if the player is queen of spades and the player is female and the bimbo of the player > 7:
 			say " queen of spades";
 		if the player is a sissy, say " sissy";
@@ -132,12 +132,12 @@ To say TitleBimbo:
 			otherwise if T is "puppygirl" and the player is male and the bimbo of the player < 13 and the largeness of breasts < 6:
 				say " puppyboy";
 			otherwise if the player is a sissy and the player is queen of spades and the bimbo of the player > 7:
-				say " black cock [if the sex addiction of the player > 14]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
+				say " black cock [if highest body part sex addiction > 7]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
 			otherwise:
 				say " [T]";
 		otherwise if armband is worn:
 			say " [armband-print of armband]";
-		otherwise if there is a worn leotard and there is a worn ballet shoes or there is a worn ballet heels:
+		otherwise if there is a worn ballet related dress and there is a worn ballet related shoes:
 			say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 		otherwise if there is a worn whip of domination and the delicateness of the player < 10:
 			say " dominatrix";
@@ -192,7 +192,7 @@ To say TitleBaby:
 	if T is not "adventurer":
 		if T is "" and the player is not a sissy, say " adult";
 		otherwise say "[if the delicateness of the player > 16] baby[end if] [T]";
-	otherwise if there is a worn leotard and there is a worn ballet shoes or there is a worn ballet heels:
+	otherwise if there is a worn ballet related dress and there is a worn ballet related shoes:
 		say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 	otherwise:
 		if the bimbo of the player < 5 or submissive sex addict is 1:

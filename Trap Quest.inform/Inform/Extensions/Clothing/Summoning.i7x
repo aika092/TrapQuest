@@ -72,6 +72,7 @@ Definition: a thing (called C) is stealable: [Some clothing can never be stolen 
 	if C is unremovable, decide no;
 	if C is bondage, decide no;
 	if C is accessory and (the unworn outrage of C >= 5 or the unworn cringe of C >= 5), decide no;[Regardless of how you feel about regular clothes, most npcs would agree it's better not to be naked.]
+	if C is sex toy, decide no;
 	decide yes.
 
 [!<ThingIsDestructible>+

@@ -104,7 +104,7 @@ Definition: a maid headdress (called M) is untransformable:
 
 Part 1 - Black Maid Headdress
 
-A black maid headdress is a kind of maid headdress. There is 1 black maid headdress. Figure of maid headdress is the file "maidheaddress1.png". 
+A black maid headdress is a kind of maid headdress. There is 1 black maid headdress. Figure of maid headdress is the file "Items\Accessories\Head\maidheaddress1.png". 
 
 The printed name of maid headdress is usually "[TQlink of item described][clothing-title-before]maid headdress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -119,7 +119,7 @@ To say ShortDesc of (H - maid headdress):
 
 Part 2 - Cafe Maid Headdress
 
-A cafe maid headdress is a kind of maid headdress. There is 1 cafe maid headdress. Figure of cafe maid headdress is the file "maidheaddress2.png". The text-shortcut of cafe maid headdress is "mch". A cafe maid headdress is usually strength-influencing. A cafe maid headdress is usually not roleplay.
+A cafe maid headdress is a kind of maid headdress. There is 1 cafe maid headdress. Figure of cafe maid headdress is the file "Items\Accessories\Head\maidheaddress2.png". The text-shortcut of cafe maid headdress is "mch". A cafe maid headdress is usually strength-influencing. A cafe maid headdress is usually not roleplay.
 
 The printed name of cafe maid headdress is usually "[TQlink of item described][clothing-title-before]cafe maid headdress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

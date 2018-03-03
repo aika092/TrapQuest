@@ -122,7 +122,7 @@ REQUIRES COMMENTING
 +!]
 This is the sex addiction imprinting rule:
 	if the sex-addiction-influence of imprint-target is not 0:
-		say "[ImprintStartFlav][if diaper quest is 1]orgasm[otherwise]submissive sex[end if] addiction [if the sex-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
+		say "[ImprintStartFlav][if diaper quest is 1]orgasm addiction[otherwise]sex obsession[end if] [if the sex-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
 		increase the raw sex addiction of the player by the sex-addiction-influence of imprint-target;
 		if the raw sex addiction of the player > 20, now the raw sex addiction of the player is 20;
 		if the raw sex addiction of the player < 1, now the raw sex addiction of the player is 1.

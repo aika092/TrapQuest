@@ -1,6 +1,6 @@
 Fuckin Classy Tattoo by Tattoos begins here.
 
-fuckin classy tattoo is a kind of body tattoo. Figure of fuckin classy tattoo is the file "tattoo48.png". There is 1 fuckin classy tattoo.
+fuckin classy tattoo is a kind of body tattoo. Figure of fuckin classy tattoo is the file "Items/Tats/tattoo48.png". There is 1 fuckin classy tattoo.
 Definition: a fuckin classy tattoo (called T) is eligible:
 	if the noun is bodice or the noun is rubber trousers or the noun is pink rubber shirt, decide yes;
 	decide no.

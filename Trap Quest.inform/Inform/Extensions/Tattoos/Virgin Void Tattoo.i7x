@@ -1,6 +1,6 @@
 Virgin Void Tattoo by Tattoos begins here.
 
-virgin void tattoo is a kind of body tattoo. Figure of virgin void tattoo is the file "tattoo40.png". There is 1 virgin void tattoo.
+virgin void tattoo is a kind of body tattoo. Figure of virgin void tattoo is the file "Items/Tats/tattoo40.png". There is 1 virgin void tattoo.
 Definition: a virgin void tattoo (called T) is drawable:
 	if T is worn, decide no;
 	if diaper quest is 1, decide no;

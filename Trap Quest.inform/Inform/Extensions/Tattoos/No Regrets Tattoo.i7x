@@ -1,6 +1,6 @@
 No Regrets Tattoo by Tattoos begins here.
 
-no-regrets tattoo is a kind of body tattoo. Figure of no-regrets tattoo is the file "tattoo49.png". There is 1 no-regrets tattoo. The printed name of no-regrets tattoo is "no regrets tattoo". Understand "no regrets", "regrets" as no-regrets tattoo.
+no-regrets tattoo is a kind of body tattoo. Figure of no-regrets tattoo is the file "Items/Tats/tattoo49.png". There is 1 no-regrets tattoo. The printed name of no-regrets tattoo is "no regrets tattoo". Understand "no regrets", "regrets" as no-regrets tattoo.
 Definition: a no-regrets tattoo (called T) is eligible:
 	if the noun is book of regrets, decide yes;
 	decide no.

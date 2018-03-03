@@ -5,8 +5,8 @@ A fertility outfit is a kind of overdress. A fertility outfit is usually unique.
 Definition: a fertility outfit (called C) is pregnancy related:
 	decide yes.
 
-Figure of goddess tunic is the file "fertilitygoddess1.png".
-Figure of ivy leaves is the file "fertilitygoddess2.png".
+Figure of goddess tunic is the file "Items\Clothes\Upper\Special\FertGod\fertilitygoddess1.png".
+Figure of ivy leaves is the file "Items\Clothes\Upper\Special\FertGod\fertilitygoddess2.png".
 
 Part 1 - Goddess Tunic
 
@@ -45,6 +45,9 @@ To decide which figure-name is clothing-image of (C - an ivy leaves):
 To say ClothingDesc of (C - an ivy leaves):
 	say "This... 'outfit' made of ivy leaves and twigs covers very little. [if C is worn]It makes you feel like some kind of mother nature.[otherwise]It looks like the sort of thing that a dryad or earth spirit would wear.[end if]".
 
+To say ShortDesc of (C - an ivy leaves):
+	say "ivy leaves".
+
 To compute SelfExamineDesc of (O - an ivy leaves):
 	say "You have a few branches of ivy and leaves clinging to your body, which is somehow making your body shine a shade of green. ".
 
@@ -67,7 +70,10 @@ The printed name of living tentacles is usually "[TQlink of item described][clot
 
 To say ClothingDesc of (C - a living tentacles):
 	say "A creepy little twitching mass of purple that was once on your neck. [if C is worn]The thing that's grabbing your neck appears to be trying to 'help' by covering your skin up with its tentacles. While you appreciate the gesture, one thing it does not have a strong grasp of is the concept of what you care about covering. Still, it's definitely okay that it is here. You feel very strongly about that. The tentacles are very helpful, even! They sometimes help you attack, and now you're never without a drink...".
-	
+
+To say ShortDesc of (C - a goddess tunic):
+	say "living tentacles".
+
 To compute SelfExamineDesc of (O - a living tentacles):
 	say "You have a bunch of purple tentacles clinging to your body coming from your neck, and for some reason your skin has a rather purple cast now as well. Which is fine.".
 	

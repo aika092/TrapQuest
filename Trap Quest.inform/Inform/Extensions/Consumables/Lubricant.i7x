@@ -90,7 +90,7 @@ Carry out orilubing something with:
 Understand "use [something] on [something]", "apply [something] on [something]", "apply [something] in [something]", "squirt [something] on [something]", "squirt [something] in [something]", "squeeze [something] on [something]", "squeeze [something] in [something]" as orilubing it with.
 
 Check drinking lubricant:
-	if the sex addiction of the player < 8 and the thirst of the player < 4, say "You aren't thirsty enough to bring yourself to do that." instead.
+	if the sex addiction of the player < 8 and the thirst of the player < 4, say "You aren't thirsty or perverted enough to bring yourself to do that." instead.
 	
 Carry out drinking lubricant:
 	say "[if the bimbo of the player < 10]You hold your nose and squeeze the flavoured lube into your mouth, swallowing tentatively. [otherwise]You happily squeeze the flavoured lube into your mouth. [end if]It coats the inside of your throat![line break][if the oral sex addiction of the player > 6][line break][second custom style]I'm probably better at deepthroating now![roman type][line break][end if]";

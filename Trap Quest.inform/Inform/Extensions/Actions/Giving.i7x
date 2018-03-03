@@ -38,14 +38,14 @@ Check giving:
 			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, say "Why would she want that?" instead;
 			if the variety of the second noun >= 3 and the second noun is captive, say "[second custom style]'Don[']t worry about paying me. You can use my altar for free!'[roman type][line break]" instead;
 			if the noun is not held by the player, say "You should probably pick it up first." instead;
-			if the sex-length of the second noun < 0, now the sex-length of the second noun is 0;
+			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 			say "The [second noun] brings the [noun] to her mouth and starts drinking!  She downs the whole drink in one, without stopping for a breath. ";
 			if the noun is monster-origin:
 				say "After she's finished, she sighs happily.  [line break][second custom style]'[if the fill-colour of the noun is murky]Good enough[otherwise]Yep, that's the stuff[end if].  You've earned [if the doses of the noun is 1]one use[otherwise][doses of the noun] uses[end if] of the altar.'[roman type][line break]";
-				increase the sex-length of the second noun by the doses of the noun;
+				increase the altar-uses of the second noun by the doses of the noun;
 			otherwise:
 				say "After she's finished, she frowns.  [line break][second custom style]'[one of]This is pretty bland, you know.  I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you?  This only gets you 1 use of the altar.  Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you.  Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again.  Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
-				increase the sex-length of the second noun by 1;
+				increase the altar-uses of the second noun by 1;
 			now seconds is 6;	
 			now the doses of the noun is 0 instead;
 			do nothing instead;
@@ -66,10 +66,10 @@ Check giving:
 				if the noun is worn and the noun is cursed, now N is 0;
 				now the second noun is retaining the noun;
 				now the noun is in Holding Pen;
-				if the sex-length of the second noun < 0, now the sex-length of the second noun is 0;
+				if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 				if N > 0, say "[second custom style]'Ooh, that feels [if N > 1]incredible[otherwise]goood[end if]!  You've earned [if N is 1]one use[otherwise][N] uses[end if] of the altar[one of]. Hey, don't judge me!  I'm not the one who NEEDS to wear nappies[or][stopping].'[roman type][line break]";
 				otherwise say "[second custom style]'Ooh, that feels pretty fucking good!  You've not earned any uses of the altar though, since I had to use my magic to remove that curse[one of]. What, you thought I wouldn't notice that you were stuck in it?'[or].'[stopping][roman type][line break]";
-				increase the sex-length of the second noun by N;
+				increase the altar-uses of the second noun by N;
 			do nothing instead;
 		otherwise:
 			if the variety of the second noun is 1 and the noun is fae mushroom:

@@ -8,8 +8,7 @@ REQUIRES COMMENTING
 To decide which number is the knee damage of (P - a person):
 	let A be 3;
 	increase A by combat bonus;
-	if there are worn stockings:
-		let S be a random worn stockings;
+	repeat with S running through worn wearthings:
 		increase A by the knee-modifier of S;
 	increase A by permanent-knee-bonus;
 	if the weight of the player < 1, decrease A by 2;
@@ -34,7 +33,7 @@ Check kneeing:
 	if the noun is woman, say "Something tells you this would be a stupid idea." instead;
 	if the noun is captive and the noun is dungeon boss, say "You can't reach it through the cage!" instead;
 	if the player is not able to knee, do nothing instead;
-	if the noun is intimidating, compute surrender to the noun instead.
+	if the noun is too intimidating, compute surrender to the noun instead.
 
 [!<CarryOutKneeing>+
 

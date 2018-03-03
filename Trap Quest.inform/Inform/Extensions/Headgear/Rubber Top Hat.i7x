@@ -1,7 +1,7 @@
 Rubber Top Hat by Headgear begins here.
 
 
-A rubber top hat is a kind of headgear. A rubber top hat is usually latex. Figure of rubber top hat is the file "tophat1.png". A rubber top hat is blondeness-positive. A rubber top hat is brightness-positive. A rubber top hat is redness-negative. A rubber top hat is usually hair growing. The text-shortcut of a rubber top hat is "rth".
+A rubber top hat is a kind of headgear. A rubber top hat is usually latex. Figure of rubber top hat is the file "Items\Accessories\Head\tophat1.png". A rubber top hat is blondeness-positive. A rubber top hat is brightness-positive. A rubber top hat is redness-negative. A rubber top hat is usually hair growing. The text-shortcut of a rubber top hat is "rth".
 
 There is 1 rubber top hat.
 

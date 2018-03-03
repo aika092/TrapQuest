@@ -25,7 +25,7 @@ To decide which figure-name is clothing-image of (C - a neat cutoffs):
 
 To say ClothingDesc of (K - a neat cutoffs):
 	say "Extremely tiny denim shorts, these are skimpier than most common underwear. They are so tight that they [if K is worn]are[otherwise]would be[end if] impossible to displace without completely removing them.".
-Figure of neat cutoffs is the file "cutoffs1.png".
+Figure of neat cutoffs is the file "Items\Clothes\Lower\Underwear\Skimpy\Cutoffs\cutoffs1.png".
 
 Part 2 - Torn Cutoffs
 
@@ -36,7 +36,7 @@ To decide which figure-name is clothing-image of (C - a torn cutoffs):
 
 To say ClothingDesc of (K - a torn cutoffs):
 	say "Extremely tiny denim shorts, these are skimpier than most common underwear. The waist is wide enough that wearing them [if K is worn]is[otherwise]would be[end if] pretty comfortable.".
-Figure of torn cutoffs is the file "cutoffs2.png".
+Figure of torn cutoffs is the file "Items\Clothes\Lower\Underwear\Skimpy\Cutoffs\cutoffs2.png".
 
 Definition: a torn cutoffs is displacable:
 	decide yes.
@@ -55,7 +55,7 @@ To decide which number is the initial outrage of (C - a butt window cutoffs):
 
 To say ClothingDesc of (K - a butt window cutoffs):
 	say "Denim shorts with a heart shaped hole at the back that exposes your [buttcheeks]. It keeps your buttcheeks naturally closed which means that [if K is worn]your[otherwise]the wearer's[end if] asshole isn't constantly on show, but it still allows easy anal access when required.".
-Figure of butt window cutoffs is the file "cutoffs3.png".
+Figure of butt window cutoffs is the file "Items\Clothes\Lower\Underwear\Skimpy\Cutoffs\cutoffs3.png".
 
 To decide which object is the potential-upgrade-target of (C - a butt window cutoffs):
 	decide on a random off-stage g-string.

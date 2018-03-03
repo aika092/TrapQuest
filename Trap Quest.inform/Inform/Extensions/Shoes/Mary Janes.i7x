@@ -9,7 +9,7 @@ There is 1 mary janes.
 To decide which figure-name is the clothing-image of (H - a mary janes):
 	decide on the figure of mary janes.
 
-Figure of mary janes is the file "maryjanes1.png".
+Figure of mary janes is the file "Items\Clothes\Lower\Feet\maryjanes1.png".
 
 To decide which number is the unique outrage of (C - a mary janes):
 	decide on 1.

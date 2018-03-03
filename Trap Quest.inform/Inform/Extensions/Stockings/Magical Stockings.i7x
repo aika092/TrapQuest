@@ -2,7 +2,7 @@ Magical Stockings by Stockings begins here.
 
 A magical stockings is a kind of stockings. There is 1 magical stockings. A magical stockings is usually cotton. The text-shortcut of magical stockings is "mst". A magical stockings is usually unique. A magical stockings is usually dexterity-influencing. The printed name of magical stockings is "[TQlink of item described][clothing-title-before]magical stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of magical stockings is the file "magicalstockings1.png".
+Figure of magical stockings is the file "Items\Clothes\Lower\Legs\magicalstockings1.png".
 
 To decide which figure-name is the clothing-image of (C - a magical stockings):
 	decide on figure of magical stockings.

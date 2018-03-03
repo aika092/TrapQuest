@@ -1,6 +1,6 @@
 Cupless Bra by Bra begins here.
 
-A cupless bra is a kind of bra. Figure of cupless bra is the file "cuplessbra1.png". A cupless bra is usually nipple exposing. A cupless bra is usually latex. A cupless bra is usually unique. [Cupless bras are fully exposing, so they can't be top-displacable.]
+A cupless bra is a kind of bra. Figure of cupless bra is the file "Items/Clothes/Upper/Bras/cuplessbra1.png". A cupless bra is usually nipple exposing. A cupless bra is usually latex. A cupless bra is usually unique. [Cupless bras are fully exposing, so they can't be top-displacable.]
 
 There is 1 cupless bra. The text-shortcut of cupless bra is "cub".
 

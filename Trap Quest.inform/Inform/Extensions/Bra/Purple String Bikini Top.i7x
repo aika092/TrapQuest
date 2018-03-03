@@ -1,6 +1,6 @@
 Purple String Bikini Top by Bra begins here.
 
-A purple string bikini top is a kind of string bikini top. Figure of bikini 10 is the file "bikini10.png". The text-shortcut of purple string bikini top is "psb".
+A purple string bikini top is a kind of string bikini top. Figure of bikini 10 is the file "Items/Clothes/Upper/Bras/bikini10.png". The text-shortcut of purple string bikini top is "psb".
 
 There is 1 unique purple string bikini top. A purple string bikini top is ridiculously low cut.
 

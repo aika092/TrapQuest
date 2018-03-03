@@ -1,6 +1,6 @@
 Wet Dream Tattoo by Tattoos begins here.
 
-wet dream tattoo is a kind of chest tattoo. Figure of wet dream tattoo is the file "tattoo20.png". There is 1 wet dream tattoo.
+wet dream tattoo is a kind of chest tattoo. Figure of wet dream tattoo is the file "Items/Tats/tattoo20.png". There is 1 wet dream tattoo.
 Definition: a wet dream tattoo (called T) is drawable:
 	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;

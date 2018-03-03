@@ -63,34 +63,12 @@ REQUIRES COMMENTING
 +!]
 Carry out showering WoodsScenery01:
 	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the pool and wash yourself with the water. ";
-	let S be 0;
-	let X be 0;
 	now tracked-semen is 0;
 	Wash Salves;
 	if bukkake fetish is 1 or lactation fetish is 1, SlimeGirlCheck;
-	wash clothing in water body;
 	if the rule failed:
-		if the semen coating of face > 0 or the semen coating of hair > 0 or the urine coating of hair > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or the semen coating of belly > 0 or tracked-semen > 0:
-			now X is the semen coating of face + the semen coating of hair + the semen coating of breasts + the semen coating of thighs + the semen coating of belly + tracked-semen;
-			now the semen coating of face is 0;
-			now the semen coating of hair is 0;
-			now the urine coating of hair is 0;
-			now the semen coating of breasts is 0;
-			now the semen coating of belly is 0;
-			now the semen coating of thighs is 0;
-			say "It washes all the bodily fluids off your body[if tracked-semen > 0] and clothes[end if]![if the semen addiction of the player < 10]That feels better.[end if]";
-			now tracked-semen is X;
-		otherwise:
-			say "The water feels nice as it runs over your [if the largeness of breasts > 4][BreastDesc].[otherwise]face.[end if]";
-		if the semen volume of vagina > 1 and vagina is not actually occupied and the player is not pussy protected and the pregnancy of the player <= 0:
-			say "You feel the water rushing underneath your [vagina], and the flow helps clear your womb of the [semen] it is holding.";
-			increase S by the semen volume of vagina * 2;
-			now the semen volume of vagina is 1;
-			WombSquirt 1;
-		if the make-up of face > 0 and permanent makeup is 0:
-			say "The water washes all the make up from your face.";
-			now the make-up of face is 0;
-		now seconds is 12 + S.
+		compute showering;
+		now seconds is 12 + tracked-semen.
 
 [!<trackedSemen:Integer>+
 
@@ -107,35 +85,40 @@ REQUIRES COMMENTING
 Carry out showering DungeonScenery03:
 	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the lake and wash yourself with the water. ";
 	now tracked-semen is 0;
-	let L be 0;
 	let X be 0;
 	Wash Salves;
+	compute showering;
+	now seconds is 12 + tracked-semen;
+	if bukkake fetish is 1, LakeMonsterCheck tracked-semen.
+
+Understand "shower [something]", "shower under [something]", "clean myself with [something]", "clean me with [something]", "shower in [something]", "shower with [something]", "wash in [something]", "wash with [something]", "bathe in [something]", "bathe with [something]" as showering.
+
+To compute showering:
 	wash clothing in water body;
 	if the semen coating of face > 0 or the semen coating of hair > 0 or the urine coating of hair > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or the semen coating of belly > 0 or tracked-semen > 0:
-		now X is the semen coating of face + the semen coating of hair + the semen coating of breasts + the semen coating of thighs + the semen coating of belly + tracked-semen;
+		let X be the semen coating of face + the semen coating of hair + the semen coating of breasts + the semen coating of thighs + the semen coating of belly + tracked-semen;
 		now the semen coating of face is 0;
 		now the semen coating of hair is 0;
 		now the urine coating of hair is 0;
 		now the semen coating of breasts is 0;
 		now the semen coating of belly is 0;
 		now the semen coating of thighs is 0;
-		say "It washes all the bodily fluids off your body[if tracked-semen > 0] and clothes[end if]![if the semen addiction of the player < 10]That feels better.[end if]";
+		say "It washes all the bodily fluids off your body[if tracked-semen > 0] and clothes[end if][if the semen addiction of the player < 10]! That feels better.[otherwise]![end if]";
 		now tracked-semen is X;
 	otherwise:
 		say "The water feels nice as it runs over your [if the largeness of breasts > 4][BreastDesc].[otherwise]face.[end if]";
-	if the semen volume of vagina > 1 and vagina is not actually occupied:
-		unless the pregnancy of the player > 0:
-			say "You feel the water rushing underneath your [vagina], and the flow helps clear your womb of the [semen] it is holding.";
-			increase tracked-semen by the semen volume of vagina * 2;
-			now the semen volume of vagina is 1;
-			WombSquirt 1;
+	if vagina is not actually occupied and the total felchable volume of vagina > 0:
+		say "You feel the water rushing underneath your [vagina], and the flow helps clear your womb of the [semen] it is holding.";
+		increase tracked-semen by the semen volume of vagina * 2;
+		now the semen volume of vagina is 0;
+		if the womb volume of vagina > 0 and the pregnancy of the player <= 0:
+			increase tracked-semen by the womb volume of vagina * 2;
+			now the womb volume of vagina is 0;
+			cancel father material of vagina;
 	if the make-up of face > 0 and permanent makeup is 0:
 		say "The water washes all the make up from your face.";
 		now the make-up of face is 0;
-	now seconds is 12 + tracked-semen + L;
-	if bukkake fetish is 1, LakeMonsterCheck tracked-semen.
 
-Understand "shower [something]", "shower under [something]", "clean myself with [something]", "clean me with [something]", "shower in [something]", "shower with [something]", "wash in [something]", "wash with [something]", "bathe in [something]", "bathe with [something]" as showering.
 
 [!<WashClothingInWaterBody>+
 

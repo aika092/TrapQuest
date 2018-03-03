@@ -8,7 +8,7 @@ student-rosie is a tq-only amicable student.
 
 The text-shortcut of student-rosie is "stro".
 
-Figure of rosie is the file "student1.png".
+Figure of rosie is the file "NPCs/School/Student/student1.png".
 
 To decide which figure-name is the monster-image of (M - student-rosie):
 	decide on figure of rosie.
@@ -35,7 +35,7 @@ student-rachel is a tq-only amicable student.
 
 The text-shortcut of student-rachel is "stra".
 
-Figure of rachel is the file "student2.png".
+Figure of rachel is the file "NPCs/School/Student/student2.png".
 
 To decide which figure-name is the monster-image of (M - student-rachel):
 	decide on figure of rachel.
@@ -64,7 +64,7 @@ student-jessica is a dq-only amicable student.
 
 The text-shortcut of student-jessica is "stje".
 
-Figure of jessica is the file "student6.png".
+Figure of jessica is the file "NPCs/School/Student/student6.png".
 
 To decide which figure-name is the monster-image of (M - student-jessica):
 	decide on figure of jessica.

@@ -1,6 +1,6 @@
 Spike Bra by Bra begins here.
 
-A spike bra is a kind of bra. Figure of spike bra 1 is the file "spikebra1.png". Figure of spike bra 2 is the file "spikebra2.png". A spike bra is usually spikey. The min size of a spike bra is usually 2. The max size of a spike bra is usually 15. The support of a spike bra is usually 3. A spike bra is low cut. A spike bra is usually pvc.
+A spike bra is a kind of bra. Figure of spike bra 1 is the file "Items/Clothes/Upper/Bras/spikebra1.png". Figure of spike bra 2 is the file "Items/Clothes/Upper/Bras/spikebra2.png". A spike bra is usually spikey. The min size of a spike bra is usually 2. The max size of a spike bra is usually 15. The support of a spike bra is usually 3. A spike bra is low cut. A spike bra is usually pvc.
 
 A pink spike bra is a kind of spike bra. A pink spike bra is usually cotton. The soak-limit of a pink spike bra is usually 18.
 

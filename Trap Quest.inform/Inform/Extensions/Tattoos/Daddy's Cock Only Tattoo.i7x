@@ -1,6 +1,6 @@
 Daddy's Cock Only Tattoo by Tattoos begins here.
 
-daddy's cock only tattoo is a kind of asshole tattoo. Figure of Daddy's cock only tattoo is the file "tattoo6.png". There is 1 daddy's cock only tattoo. [This one lets the player resist any anal sex that isn't caused by a father.]
+daddy's cock only tattoo is a kind of asshole tattoo. Figure of Daddy's cock only tattoo is the file "Items/Tats/tattoo6.png". There is 1 daddy's cock only tattoo. [This one lets the player resist any anal sex that isn't caused by a father.]
 Definition: a daddy's cock only tattoo (called T) is eligible:	
 	if  the noun is sex toy or the noun is ass plugging clothing or the noun is royal sigil, decide yes;
 	decide no.

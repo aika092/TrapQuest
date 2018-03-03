@@ -13,7 +13,7 @@ The printed name of gingham schoolgirl outfit is usually "[TQlink of item descri
 
 There is 1 gingham schoolgirl outfit.
 
-Figure of gingham schoolgirl outfit is the file "schoolgirl5.png".
+Figure of gingham schoolgirl outfit is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl5.png".
 
 To decide which figure-name is clothing-image of (C - a gingham schoolgirl outfit):
 	decide on figure of gingham schoolgirl outfit.
@@ -42,7 +42,7 @@ The printed name of super short gingham dress is usually "[TQlink of item descri
 
 There is 1 super short gingham dress.
 
-Figure of super short gingham dress is the file "ginghamdress1.png".
+Figure of super short gingham dress is the file "Items\Clothes\Upper\Special\Schoolgirl\ginghamdress1.png".
 
 To decide which figure-name is clothing-image of (C - a super short gingham dress):
 	decide on figure of super short gingham dress.

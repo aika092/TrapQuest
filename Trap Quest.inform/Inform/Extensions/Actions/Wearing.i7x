@@ -147,11 +147,13 @@ Report wearing confidence clothing:
 Report wearing constriction clothing:
 	say "[if the noun is belly covering]The [ShortDesc of the noun][otherwise]An invisible force[end if] clamps down on your waist, forcing it smaller than is at all comfortable. [if the noun is cursed]It's cursed!  [end if]";
 	now the squirt timer of belly is 1;
-	if the semen volume of vagina > 0 and the pregnancy of the player is 0:
+	if the total felchable volume of vagina > 0:
 		say "The [semen] is squeezed from your womb and out of your [vagina].";
 		while the semen volume of vagina > 0:
-			WombSquirt 1;
-			leak vagina semen 1.
+			PussySquirt 1;
+		if the pregnancy of the player is 0:
+			while the womb volume of vagina > 0:
+				WombSquirt 1.
 
 Report wearing endurance clothing:
 	say "A strong feeling of energy flows through you[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".

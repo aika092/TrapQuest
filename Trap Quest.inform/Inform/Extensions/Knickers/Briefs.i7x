@@ -215,23 +215,23 @@ To say selfexamineuniquetitle of (G - white-cameltoe briefs):
 To say UniqueClothingDesc of (G - white-cameltoe briefs):
 	say "A pair of low cut white briefs that would give a female wearer a very visible cameltoe.".
 
-Figure of briefs 1 is the file "briefs1.png".
-Figure of briefs special 1 is the file "briefsspecial1.png".
-Figure of briefs special 1b is the file "briefsspecial1b.png".
-Figure of briefs 2 is the file "briefs2.png".
-Figure of briefs 3 is the file "briefs3.png".
-Figure of briefs 4 is the file "briefs4.png".
-Figure of briefs 5 is the file "briefs5.png".
-Figure of briefs 6 is the file "briefs6.png".
-Figure of briefs 7 is the file "briefs7.png".
-Figure of briefs 8 is the file "briefs8.png".
-Figure of briefs 9 is the file "briefs9.png".
-Figure of briefs 10 is the file "briefs10.png".
-Figure of briefs 11 is the file "briefs11.png".	
-Figure of briefs 12 is the file "briefs12.png".	
-Figure of briefs 13 is the file "briefs13.png".	
-Figure of briefs 14 is the file "briefs14.png".
-Figure of briefs 15 is the file "briefs15.png".
+Figure of briefs 1 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs1.png".
+Figure of briefs special 1 is the file "Items\Clothes\Lower\Underwear\Briefs\briefsspecial1.png".
+Figure of briefs special 1b is the file "Items\Clothes\Lower\Underwear\Briefs\briefsspecial1b.png".
+Figure of briefs 2 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs2.png".
+Figure of briefs 3 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs3.png".
+Figure of briefs 4 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs4.png".
+Figure of briefs 5 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs5.png".
+Figure of briefs 6 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs6.png".
+Figure of briefs 7 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs7.png".
+Figure of briefs 8 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs8.png".
+Figure of briefs 9 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs9.png".
+Figure of briefs 10 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs10.png".
+Figure of briefs 11 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs11.png".	
+Figure of briefs 12 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs12.png".	
+Figure of briefs 13 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs13.png".	
+Figure of briefs 14 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs14.png".
+Figure of briefs 15 is the file "Items\Clothes\Lower\Underwear\Briefs\briefs15.png".
 
 [Below are from Lucas]
 

@@ -1,6 +1,6 @@
 Showtime Tattoo by Tattoos begins here.
 
-showtime tattoo is a kind of leg tattoo. Figure of showtime tattoo is the file "tattoo25.png". There is 1 showtime tattoo.
+showtime tattoo is a kind of leg tattoo. Figure of showtime tattoo is the file "Items/Tats/tattoo25.png". There is 1 showtime tattoo.
 Definition: a showtime tattoo (called T) is eligible:
 	if the noun is stockings, decide yes;
 	decide no.

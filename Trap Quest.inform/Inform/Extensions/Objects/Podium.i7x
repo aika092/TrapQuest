@@ -57,7 +57,7 @@ Closing your eyes you can feel another shiver run though you. Taking a deep brea
 			decrease the health of M by 5; [This stops him changing the player, and will instead punish further.]
 		otherwise if bondage protection is 1:
 			now the fatigue of the player is the standing strength of the player + 10;
-			say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all of its energy. You collapse to the ground, and are now on your knees! [line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as he slams his gravel down on the podium. Swallowing, you shiver as he yanks at your [ShortDesc of hair], hauling you forward to meet the winning bidder and your new Master... the [M]!	[line break][first custom style]'Look up at your new master, slave.'[roman type][line break]He grabs you by your hair as the auctionmaster lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, the [M], and [if the sex addiction of the player < 13]a decision to be made - fuck or flight?[otherwise]his waiting [manly-penis].[end if]";
+			say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all of its energy. You collapse to the ground, and are now on your knees! [line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as he slams his gravel down on the podium. Swallowing, you shiver as he yanks at your [ShortDesc of hair], hauling you forward to meet the winning bidder and your new Master... the [M]!	[line break][first custom style]'Look up at your new master, slave.'[roman type][line break]He grabs you by your hair as the auctionmaster lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, the [M], and [if the player is not a nympho]a decision to be made - fuck or flight?[otherwise]his waiting [manly-penis].[end if]";
 		otherwise:
 			let A be a random pair of anklecuffs;
 			let W be a random pair of wristcuffs;
@@ -82,7 +82,7 @@ auto-pod is a number that varies.
 
 To compute podium action:
 	if auto-pod is 0 and the player is upright and the charge of podium <= 0 and the player is not immobile and the player is not in danger and the player is able to use manual dexterity:
-		if a random number between 14 and 20 < the sex addiction of the player:
+		if a random number between 14 and 20 < the delicateness of the player:
 			say "You can't help yourself - you want to get back up on that podium and experience that submissive fantasy again!";
 			try entering podium;
 			now auto-pod is 1;

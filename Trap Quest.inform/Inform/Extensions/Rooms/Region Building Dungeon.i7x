@@ -1,9 +1,9 @@
 Region Building Dungeon by Rooms begins here.
 
 
-Figure of dungeon loading is the file "loading7.png".
-Figure of dq dungeon loading is the file "loading5.png".
-[Figure of dq dungeon messy loading is the file "loading9.png".]
+Figure of dungeon loading is the file "Special/Loading/loading7.png".
+Figure of dq dungeon loading is the file "Special/Loading/loading5.png".
+[Figure of dq dungeon messy loading is the file "Special/Loading/loading9.png".] [why is this commented out?]
 
 [!<SetUpTheDungeon>+
 

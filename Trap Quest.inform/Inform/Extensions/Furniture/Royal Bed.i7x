@@ -7,7 +7,7 @@ To say RoyalBedDesc:
 	if images visible is 1, display figure of royal bed;
 	say "A large pink four poster bed with pink drapes, fluffy pink pillows, and a luxurious pink duvet. [if diaper lover >= 1]On closer inspection, you realise that all the sheets are made of thin waterproof latex.[one of][line break][variable custom style]Is the person that sleeps here a bed-wetter?[roman type][line break][or][stopping][otherwise if the body soreness of the player is 0]It looks like an injured person could have a nice rest here.[otherwise]You get the feeling having a rest here would be great for your health![end if]".
 	
-Figure of royal bed is the file "bed1.png".
+Figure of royal bed is the file "Env/Dungeon/bed1.png".
 
 Check sleeping:
 	if there is furniture in the location of the player:
@@ -61,10 +61,10 @@ To compute furniture resting on (F - the royal bed):
 		say "You instantly feel fully healed!  Magic!  ";
 		if the size of penis > 10 - the delicateness of the player:
 			PenisDown 1;
-		otherwise if the delicateness of the player < 20:
+		otherwise if the delicateness of the player < the sex addiction of the player:
 			increase the raw delicateness of the player by 1;
 			say "But you do feel a bit more[one of]... fragile?[or] delicate.[stopping]";
-		otherwise if the sex addiction of the player < 11:
+		otherwise if the sex addiction of the player < the humiliation of the player / 2000:
 			SexAddictUp 1;
 		otherwise:
 			humiliate 200;

@@ -322,14 +322,14 @@ This is the living belt of sturdiness orgasm resolution rule:
 		otherwise:
 			say "The metallic tentacles in your holes [one of]seem to react[or]react[stopping] to your orgasm, pulsing rhythmically as begin picking up speed. You can feel them twisting around inside you, elongating and intensifying your orgasm as a fast moving wave of warmth spreads from the loop around your waist and travels toward the tentacles buried in your [vagina] and [asshole]. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like they[']re about to-[otherwise][line break][second custom style]Mmm, the only thing missing is a double-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! They[']re about to-[otherwise if the raw sex addiction of the player < 14][variable custom style]They[']re going to cum insi-[otherwise][second custom style]I can feel it! They[']re gonna cum insi-[end if][stopping][roman type][line break]Your eyes go wide as they jam themselves in as far as they can go, throbbing violently as [if the buildup of the living belt of sturdiness < 3]they take turns filling your holes with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]take turns filling your [vagina] and [asshole] with torrents of creamy alien [semen][otherwise]take turns flooding your holes with obscene amounts of alien [semen][end if]!";[On women, the first half of the semen prioritises assholes and the second half priorities vagina. But if the belt is only penetrating one hole (the other was occupied at the moment of penetration) then it gets the full amount. Could probably be coded simpler than this.]
 		let S be the buildup of the living belt of sturdiness / 2;
-		now the buildup of the living belt of sturdiness is 0; [stops infinite loops in rare circumstances where WombFIll causes ruin vagina times causes another orgasm]
+		now the buildup of the living belt of sturdiness is 0; [stops infinite loops in rare circumstances where PussyFill causes ruin vagina times causes another orgasm]
 		if the living belt of sturdiness is penetrating asshole, AssFill S;
-		otherwise WombFill S;
+		otherwise PussyFill S;
 		now S is the buildup of the living belt of sturdiness - S;
 		if the player is male:
 			AssFill S;
 		otherwise if the living belt of sturdiness is penetrating vagina:
-			WombFill S;
+			PussyFill S;
 		otherwise:
 			AssFill S;
 		say "The [printed name of the living belt of sturdiness], apparently satisfied, stops thrusting but remains inside you.";
@@ -546,7 +546,7 @@ REQUIRES COMMENTING
 Definition: a fuckhole (called F) is pushed over the edge:
 	if the player is unable to orgasm so soon or the player is not a bit horny, decide no; [No more than one orgasm in a round, and arousal needs to build at least a bit before the next one!]
 	let N be -1;
-	if there is a live thing penetrating F, increase N by 1;
+	increase N by the stimulation of a random thing penetrating F on F / 4;
 	increase N by the sensitivity of F;
 	increase N by the enjoyment of F;
 	if N < 0, now N is 0;

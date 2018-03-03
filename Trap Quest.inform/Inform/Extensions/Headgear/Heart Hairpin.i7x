@@ -4,7 +4,7 @@ A heart hairpin is a kind of headgear. There is one heart hairpin. A heart hairp
 
 The printed name of heart hairpin is usually "[TQlink of item described][clothing-title-before]heart hairpin[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of heart hairpin is "hhp".
 
-Figure of heart hairpin is the file "hearthairpin1.png".
+Figure of heart hairpin is the file "Items\Accessories\Head\hearthairpin1.png".
 
 To decide which figure-name is the clothing-image of (C - a heart hairpin):
 	decide on figure of heart hairpin.

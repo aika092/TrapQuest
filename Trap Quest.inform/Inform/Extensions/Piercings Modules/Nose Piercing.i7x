@@ -1,6 +1,6 @@
 Nose Piercing by Piercings Modules begins here.
 
-A nose piercing is a kind of piercing. The text-shortcut of nose piercing is "np". Understand "septum", "sep" as nose piercing. Figure of small nose piercing is the file "nosepiercing1.png". Figure of ugly nose piercing is the file "nosepiercing2.png". A nose piercing is usually manly.
+A nose piercing is a kind of piercing. The text-shortcut of nose piercing is "np". Understand "septum", "sep" as nose piercing. Figure of small nose piercing is the file "Items\Accessories\Piercings\nosepiercing1.png". Figure of ugly nose piercing is the file "Items\Accessories\Piercings\nosepiercing2.png". A nose piercing is usually manly.
 
 To decide which number is the intelligence-influence of (C - a nose piercing):
 	unless C is blessed, decide on -1;

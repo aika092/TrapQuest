@@ -411,15 +411,14 @@ To say VagueAddiction:
 		if the player is male, say "Straight";
 		otherwise say "Prude";
 	otherwise if the sex addiction of the player < 7:
-		if the delicateness of the player > 6, say "Reluctant";
-		otherwise say "Dominant";
+		if the player is feeling dominant, say "Dominant";
+		otherwise say "Reluctant";
+	otherwise if the player is feeling dominant and the player is not a nympho:
+		 say "Dominatrix";
 	otherwise if the sex addiction of the player < 10:
-		if the delicateness of the player > 6 or the player is male, say "Curious";
-		otherwise say "Dominatrix";
-	otherwise if the sex addiction of the player < 12:
-		say "[if the player is male]Willing[otherwise]Submissive[end if]";
-	otherwise if the sex addiction of the player < 14:
-		say "Eager";
+		say "Curious";
+	otherwise if the sex addiction of the player < 13:
+		say "[if the delicateness of the player < 14]Switch[otherwise]Submissive[end if]";
 	otherwise if the sex addiction of the player < 16:
 		say "Obsessed";
 	otherwise if the sex addiction of the player < 20:

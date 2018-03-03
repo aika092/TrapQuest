@@ -58,7 +58,7 @@ Report submitting:
 	if M is nothing, now M is a random live thing penetrating a body part;
 	unless M is nothing:
 		if forced submit is 1:
-			do nothing;[handled by the resisting function.]
+			do nothing;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
 		if the player is friendly fucked:
 			say FriendlySexSubmissionFlav of M;
 		otherwise:
@@ -83,10 +83,10 @@ REQUIRES COMMENTING
 To compute player submission:
 	repeat with M running through enjoys sex dangerous monsters in the location of the player:
 		if the last-interaction of M is 0, say SubmissionFlav of M;
-		if the player is having marital sex, dignify the sex addiction of the player * 3;
+		if the player is having marital sex, dignify the sex addiction of the player * 5;
 		otherwise humiliate 125;
 		compute submission reaction of M;
-	if there is an enjoys sex dangerous monster in the location of the player, say "[if the sex addiction of the player < 12]You feel incredibly [one of]self-conscious[or]nervous[or]shy[at random].[otherwise]In a moment of clarity, you are horrified to see what you have become. The feeling soon fades and is replaced by shy enthusiasm.[end if]".
+	if there is an enjoys sex dangerous monster in the location of the player, say "[if the player is feeling dominant]You grit your teeth and try to suppress your rage.[otherwise]In a brief moment of clarity, you are horrified to see what you have become. The feeling soon fades and is replaced by shy enthusiasm.[end if]".
 
 [!<ComputeSubmissionReactionOfMonster>+
 

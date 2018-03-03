@@ -30,7 +30,7 @@ To say SisterDesc:
 	if images visible is 1, display the Figure of slutty sister;
 	say "This is one of the two girls who [if the bimbo of the player < 8]tricked[otherwise if the bimbo of the player < 13][']helped['][otherwise]helped[end if] you into the game. She is dressed exactly how you remember - a tiny white latex microskirt with a blue line at the waist, and a small white latex bra with blue straps. ";
 	if item described is futanari slutty sister:
-		say "However, [if trap fetish is 1]you're pretty sure the foot long, mega thick strapon dildo dangling between her legs wasn't there before.[otherwise]you're pretty sure that in real life she didn't have a foot long, mega thick [cock of item described] dangling between her legs.[end if] [line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh!  So big![otherwise if the sex addiction of the player < 10]Keep that monster of a thing away from me![otherwise if the sex addiction of the player < 15]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]";
+		say "However, [if trap fetish is 1]you're pretty sure the foot long, mega thick strapon dildo dangling between her legs wasn't there before.[otherwise]you're pretty sure that in real life she didn't have a foot long, mega thick [cock of item described] dangling between her legs.[end if] [line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh!  So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]";
 	otherwise if item described is bulging slutty sister:
 		say "She currently has a [if the belly contents of item described > 14]giant bulging belly[otherwise if the belly contents of item described > 7]large, bloated belly[otherwise if the belly contents of item described > 0]visibly full belly[otherwise]flat, empty belly[end if]";
 		if the belly contents of item described > 0, say " that is full of her sister[']s [semen]. [line break][variable custom style][if item described is penetrating face][']Mmmmmmmmph!['][otherwise if the semen addiction of the player < 10]I'm so glad that's inside her and not inside me![otherwise if the semen taste addiction of the player < 15 and the belly contents of item described > 7]I think my stomach would explode if I had to drink all of that...[otherwise]I bet her sister's cum tastes soooo good!![end if][roman type][line break]";
@@ -53,7 +53,7 @@ To decide which number is the girth of (M - a futanari slutty sister):
 To decide which number is the semen-load of (M - a futanari slutty sister):
 	decide on 18.
 
-Definition: a slutty sister (called M) is intimidating: [The player never refuses to fight the final boss.]
+Definition: a slutty sister (called M) is too intimidating: [The player never refuses to fight the final boss.]
 	decide no.
 
 To say big he of (M - a futanari slutty sister):

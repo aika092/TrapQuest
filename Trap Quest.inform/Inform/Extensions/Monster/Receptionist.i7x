@@ -4,7 +4,7 @@ receptionist is a staff member. receptionist is captive.
 
 receptionist is in School01. The printed name of receptionist is "[if item described is in the location of the player][TQlink of item described][end if][input-style]receptionist[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of receptionist is "[ReceptionistDesc]". The text-shortcut of receptionist is "rcp".
 
-Figure of receptionist is the file "receptionist1.png".
+Figure of receptionist is the file "NPCs/School/receptionist1.png".
 
 To say ReceptionistDesc:
 	if images visible is 1, display the figure of receptionist;

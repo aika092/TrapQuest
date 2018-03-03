@@ -16,7 +16,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the diaper premature orgasm chance of the player:
 	if the diaper addiction of the player < 10, decide on 0;
-	if the sex addiction of the player < 8, decide on 0;
+	if the player is not a pervert, decide on 0;
 	decide on (the diaper addiction of the player / 5) + (the sex addiction of the player / 5) + (the arousal of the player / 1500).
 
 [!<ComputeSpontaneousCombustion>+

@@ -7,7 +7,7 @@ Definition: a black corset (called C) is fluid immune:
 
 The text-shortcut of black corset is "lc".
 
-Figure of Leather Corset is the file "leathercorset1.png".
+Figure of Leather Corset is the file "Items\Clothes\Upper\Corsets\leathercorset1.png".
 
 To decide which figure-name is clothing-image of (C - a black corset):
 	decide on figure of leather corset.

@@ -1,6 +1,6 @@
 Princess Castle Tattoo by Tattoos begins here.
 
-princess castle tattoo is a kind of dq tattoo. Figure of princess castle tattoo is the file "tattoo68.png". There is 1 princess castle tattoo.
+princess castle tattoo is a kind of dq tattoo. Figure of princess castle tattoo is the file "Items/Tats/tattoo68.png". There is 1 princess castle tattoo.
 Definition: a princess castle tattoo (called T) is eligible:
 	if the noun is royal attire or the noun is tiara or the noun is magic lamp or the noun is pink pill, decide yes;
 	decide no.

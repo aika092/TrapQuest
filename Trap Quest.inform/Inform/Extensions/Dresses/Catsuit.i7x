@@ -31,9 +31,9 @@ The remove inappropriate catsuits rule is listed in the diaper quest fix rules.
 Definition: a catsuit is displacable:
 	decide no.
 
-Figure of Latex Catsuit 1 is the file "latexcatsuit1.png".
-Figure of Latex Catsuit 2 is the file "latexcatsuit2.png".
-Figure of Latex Catsuit 3 is the file "latexcatsuit3.png".
+Figure of Latex Catsuit 1 is the file "Items\Clothes\Upper\Latex\latexcatsuit1.png".
+Figure of Latex Catsuit 2 is the file "Items\Clothes\Upper\Latex\latexcatsuit2.png".
+Figure of Latex Catsuit 3 is the file "Items\Clothes\Upper\Latex\latexcatsuit3.png".
 
 Part 1 - Pink Catsuit
 
@@ -94,7 +94,7 @@ Report wearing latex clothing:
 
 Part 3 - WC Catsuit
 
-A WC catsuit is a kind of catsuit. A WC catsuit is usually arm exposing. A WC catsuit is usually fully covering. The printed name of WC catsuit is usually "[TQlink of item described][clothing-title-before]latex human toilet catsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "human", "toilet" as WC catsuit. There is 1 WC catsuit. Figure of WC catsuit is the file "WcLatexCat.png". The text-shortcut of WC catsuit is "wcs". A WC catsuit is usually oral-sex-addiction-influencing.
+A WC catsuit is a kind of catsuit. A WC catsuit is usually arm exposing. A WC catsuit is usually fully covering. The printed name of WC catsuit is usually "[TQlink of item described][clothing-title-before]latex human toilet catsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "human", "toilet" as WC catsuit. There is 1 WC catsuit. Figure of WC catsuit is the file "Items\Clothes\Upper\Special\WcLatexCat.png". The text-shortcut of WC catsuit is "wcs". A WC catsuit is usually oral-sex-addiction-influencing.
 
 [!<TheWCCatsuitPissSlutRule>+
 

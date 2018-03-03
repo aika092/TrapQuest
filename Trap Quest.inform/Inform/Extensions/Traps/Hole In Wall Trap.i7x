@@ -14,7 +14,7 @@ To say unique-verb-desc of (T - hole-in-wall):
 To say ShortDesc of (T - hole-in-wall):
 	say "There is a medium sized [printed name of T] in one wall a couple feet above the ground[if there is a solid gold ring in HoleInWall]. You can see a shiny golden ring sparkling in the darkness through the hole[end if].".
 
-To say SuddenPregTitle of (M - a thing):
+To say SuddenPregTitle of (M - hole-in-wall):
 	say "anonymous man".
 
 Definition: hole-in-wall (called T) is live:
@@ -220,7 +220,7 @@ To compute punishment of (P - hole-wank):
 			increase wank-attempts by 1;
 			compute extra turn;
 		if refactoryperiod > 0, say "The anonymous hand's owner is clearly satisfied with that as you feel it let go, lovingly pat your bottom a couple of times for good measure, and then leave you alone.";
-		otherwise say "The anonymous hand's owner decides to leave you unsatisfied. [line break][variable custom style][if the humiliation of the player >= 40000]Denied release again, just like I always deserve.[otherwise if the sex addiction of the player < 7]I don't even know if I'm glad or not that I didn't cum...[otherwise]Nnng... so close... please come back...[end if][roman type][line break]".
+		otherwise say "The anonymous hand's owner decides to leave you unsatisfied. [line break][variable custom style][if the humiliation of the player >= 40000]Denied release again, just like I always deserve.[otherwise if the player is not a pervert]I don't even know if I'm glad or not that I didn't cum...[otherwise]Nnng... so close... please come back...[end if][roman type][line break]".
 
 hole-strip is hole-in-wall punishment.
 Definition: hole-strip (called P) is appropriate:
@@ -320,7 +320,7 @@ To compute punishment of (P - hole-plug):
 	if C is plug:
 		now the size of C is the openness of asshole + 2;
 		if the size of C > 10, now the size of C is 10;
-		say "Suddenly you feel a hand groping your butt!  [line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand quickly pulls your [list of worn total protection clothing] out of the way and then begins to slowly massage your [asshole] with a thumb. [line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the sex addiction of the player > 8)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C]!";
+		say "Suddenly you feel a hand groping your butt!  [line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand quickly pulls your [list of worn total protection clothing] out of the way and then begins to slowly massage your [asshole] with a thumb. [line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the player is a pervert)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C]!";
 		repeat with D running through worn total protection clothing:
 			if D is zippable:
 				now D is crotch-unzipped;
@@ -368,7 +368,7 @@ To compute punishment of (P - hole-gatling-fuck):
 		if men-fucked is 0, say "Soon you feel a rock-hard [manly-penis] pushing against your [variable F]. There's absolutely nothing you can do as it squeezes its way in and starts pumping in and out. The faceless man quickly hits a very fast pace and must really enjoy your body because within seconds he is ejaculating inside of you! You feel cum shoot into your [variable F].";
 		otherwise say "[one of]Another man takes his place[or]You feel another hard [manly-penis] slap against your [buttcheeks][or]Yet another man joins in[or]The manly chatter in the [location of hole-in-wall] is still just as loud as ever, and another [manly-penis] pokes at your hole[then at random]!  You [if the relevant sex addiction of hole-in-wall < 4][one of]grimace[or]squeal[or]groan[or]scrunch your eyes[or]growl[in random order][otherwise if the relevant sex addiction of hole-in-wall < 7][one of]squirm[or]shudder[or]curl your toes[or]can't help but moan[in random order][otherwise][one of]coo[or]sigh with pleasure[or]moan lewdly[or]squeal with glee[in random order][end if] as [one of]the anonymous man[or]the next stranger[or]the nameless assailant[or]your new unnamed partner[or]the mystery man[in random order] [one of]shoves his [manly-penis] inside[or]pushes his way into[or]mercilessly forces himself into[or]eases his [manly-penis] inside[or]pushes forward, filling[in random order] your [variable F]. [one of]Just like the man before him[or]Again[or]Just like before[or]Once again[or]Just like his fellow quick-trigger friends[cycling] it only takes him [one of]about ten thrusts[or]a few moments[or]a matter of seconds[in random order] [if the semen addiction of the player > 14][one of]until he is giving you that creampie you so desperately need[or]before he is giving you yet another amazing creampie[or]before he climaxes inside of you, giving you that amazing warm sticky feeling on the inside[or]and then suddenly he is finishing inside of you, marking you as his on the inside[in random order][otherwise][one of]until he is filling you with his [semen][or]before he is giving you another creampie[or]before he climaxes inside of you[or]and then suddenly he is finishing inside of you[in random order][end if].";
 		if F is asshole, AssFill 2;
-		otherwise WombFill 2;
+		otherwise PussyFill 2;
 		ruin F;
 		increase men-fucked by 1;
 		increase hole-in-wall-turns by 1;

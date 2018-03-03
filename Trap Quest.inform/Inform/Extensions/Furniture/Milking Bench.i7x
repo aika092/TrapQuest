@@ -5,7 +5,7 @@ milking bench is a kind of furniture. There is 1 milking bench. The description 
 To say MilkingBenchDesc:
 	if images visible is 1, display figure of milking bench;
 	say "A bench you could kneel and rest on. There are cups that are clearly for milking swollen mammaries.".
-Figure of milking bench is the file "milkingbench1.png".
+Figure of milking bench is the file "Env/Dungeon/milkingbench1.png".
 
 To compute furniture resting on (M - a milking bench):
 	let milking-allowed be 0;
@@ -13,7 +13,7 @@ To compute furniture resting on (M - a milking bench):
 		let B be a random worn nipple covering clothing;
 		if the player is not nipples exposed:
 			if B is milking flappable and the latex-transformation of the player > 7:
-				say "Open the milking flaps of your [printed name of B]? [yesnolink] ";
+				say "Open the milking flaps of your [ShortDesc of B]? [yesnolink] ";
 				if the player consents:
 					now milking-allowed is 1;
 					say "You expose your nipples before resting on the bench.";
@@ -21,10 +21,10 @@ To compute furniture resting on (M - a milking bench):
 					say "You decide against exposing your nipples before resting on the bench.";
 			unless B is not-top-displacable or the latex-transformation of the player > 7:[optional-top-displacable as well!]
 				if B is not top-displaced:
-					say "Pull aside [if B is bra]the cups of [end if]your [printed name of B]? [yesnolink] ";
+					say "Pull aside [if B is bra]the cups of [end if]your [ShortDesc of B]? [yesnolink] ";
 					if the player consents:
 						now milking-allowed is 1;
-						say "You move your [printed name of B] out of the way, freeing up access to your [BreastDesc].";
+						say "You move your [ShortDesc of B] out of the way, freeing up access to your [BreastDesc].";
 						now B is top-displaced;
 						now B is temporarily-displaced;
 					otherwise:

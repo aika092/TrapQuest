@@ -4,7 +4,7 @@ Candy by Food begins here.
 A candy is a kind of food. Understand "candy" as candy.
 
 Check dropping candy:
-	say "You get the feeling that this would be a really bad idea." instead.
+	unless the class of the player is a living sex doll, say "You get the feeling that this would be a really bad idea." instead.
 
 Check inserting candy into something:
 	say "You get the feeling that this would be a really bad idea." instead.

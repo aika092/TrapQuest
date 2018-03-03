@@ -18,7 +18,7 @@ A time based rule (this is the lake monster gets bored rule):
 			if the player is in the location of L, say "The [L]'s tentacles recede into the water. You watch as the large shadow of the [L] travels away from you, back to the far reaches of the lake. Maybe it's safe to wash in here again now?";
 			remove L from play;
 
-Figure of lake monster is the file "tentaclemonster1.png".
+Figure of lake monster is the file "NPCs/Bosses/tentaclemonster1.png".
 
 To say LakeMonsterDesc:
 	if images visible is 1, display figure of lake monster;
@@ -286,13 +286,13 @@ To LakeMonsterCheck (S - a number):
 			if P is 2 or P is 3:
 				say "The tentacle destroying your [vagina] pumps your womb full of warm monster [semen], and you can feel your belly stretching to accommodate the huge load. The amount of [semen] is beyond inhuman!  It just won't stop coming...";
 				now a random lake monster is penetrating vagina; [Allows virginity to be taken, pregnancy]
-				WombFill 7;
+				PussyFill 7;
 				ruin vagina times 3;
 				now a random lake monster is not penetrating vagina;
 			otherwise if P is 4:
 				say "The tentacles destroying your [vagina] both pump your womb more than full of warm monster [semen], and you can feel your belly stretching and inflating to accommodate the huge loads. This amount of [semen] is beyond inhuman!  It just won't stop coming. There's absolutely no space for it to squirt out around the tentacles so it is all kept inside you...";
 				now a random lake monster is penetrating vagina; [Allows virginity to be taken, pregnancy]
-				WombFill 11;
+				PussyFill 11;
 				ruin vagina times 5;
 				now a random lake monster is not penetrating vagina;
 			if A is 1 or A is 3:

@@ -5,9 +5,9 @@ Tentacle monster is a kind of monster. A tentacle monster is male. A tentacle mo
 A tentacle monster can be newborn, large, massive (this is the tentacle-size property).
 
 Definition: a tentacle monster (called M) is willing to do titfucks:
-	decide no.
+	decide no.[TODO: titfuck flavor for the tentacle monster]
 
-Figure of Tentacle monster is the file "TQ Tentacle 1.png". The printed name of tentacle monster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][tentacle-size of item described][if the variety of the item described is 3] evolved[end if] tentacle monster[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of tentacle monster is usually "[TentacleMonsterDesc]". There are 20 tentacle monsters. The text-shortcut of tentacle monster is "tnm".
+Figure of Tentacle monster is the file "NPCs/Bosses/TQ Tentacle 1.png". The printed name of tentacle monster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][tentacle-size of item described][if the variety of the item described is 3] evolved[end if] tentacle monster[if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of tentacle monster is usually "[TentacleMonsterDesc]". There are 20 tentacle monsters. The text-shortcut of tentacle monster is "tnm".
 
 To say TentacleMonsterDesc:
 	if images visible is 1, display the Figure of Tentacle Monster;
@@ -236,11 +236,12 @@ This is the tentacle monster climaxes rule:
 		now M is not penetrating asshole;
 	if M is penetrating vagina:
 		say "The tentacle in your [vagina] pumps its potent load into the deepest recesses of your womb, in a clear attempt to use your body as an incubator for further monsters.[one of][line break][if the bimbo of the player < 8][line break][first custom style]Oh no, please please please don't let me get pregnant with another one of these horrible creatures![otherwise][line break][variable custom style]It looks like this is the circle of life as I'm going to know it from now on...[end if][roman type][line break][or][stopping]";
-		WombFill cum-amount;
+		PussyFill cum-amount;
 		now M is not penetrating vagina;
 	if M is penetrating breasts:
 		increase the raw sensitivity of breasts by 1;
 		now M is not penetrating breasts;
+	if image cutscenes is 1 and the largeness of belly >= 10, display figure of tentacle cutscene 2;
 	if the magic-power of the player > 0:
 		say "You feel something draining from your body...[line break]";
 		MagicPowerDown 1;
@@ -295,17 +296,11 @@ To compute (M - a tentacle monster) entering mouth:
 	now M is penetrating face;
 	set up sex length of M.
 
-To compute (M - a tentacle monster) entering asshole:
-	say "Without hesitation the [M] buries a [if M is not newborn]thick [end if]tentacle deep inside your [asshole].[if M is massive][line break]The tentacle is so large that you can feel your [asshole] being permanently gaped.[end if]";
-	now M is penetrating asshole;
-	ruin asshole;
-	set up sex length of M.
+To say AssholePenetrationFlav of (M - a tentacle monster):
+	say "Without hesitation the [M] buries a [if M is not newborn]thick [end if]tentacle deep inside your [asshole].[if M is massive][line break]The tentacle is so large that you can feel your [asshole] being permanently gaped.[end if]".
 
-To compute (M - a tentacle monster) entering vagina:
-	say "Without hesitation the [M] forces a [if M is not newborn]thick [end if]tentacle deep inside your [vagina].[if M is massive][line break]The tentacle is so large that you can feel your [vagina] being permanently gaped.[end if]";
-	now M is penetrating vagina;
-	ruin vagina;
-	set up sex length of M.
+To say VaginaPenetrationFlav of (M - a tentacle monster):
+	say "Without hesitation the [M] forces a [if M is not newborn]thick [end if]tentacle deep inside your [vagina].[if M is massive][line break]The tentacle is so large that you can feel your [vagina] being permanently gaped.[end if]".
 
 To say SelectionFrustrated of (M - a tentacle monster):
 	say "The [M]'s one eye stares at you with visible frustration but then seems to decide to leave you alone.";
@@ -347,7 +342,7 @@ To compute unique death of (M - a tentacle monster):
 		if H is actually summonable:
 			say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
 			summon H cursed;
-			if the player is male and (tg fetish >= 2 or the size of penis <= min penis size):
+			if the player is male and (tg fetish >= 2 or (the size of penis <= min penis size and tg fetish is 1)):
 				say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 				SexChange the player;
 	if the variety of M is 3 and there is an off-stage ghostly tentacle and the player is in the mansion:

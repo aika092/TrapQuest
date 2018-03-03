@@ -1,6 +1,6 @@
 Teapot Tattoo by Tattoos begins here.
 
-teapot tattoo is a kind of dq tattoo. Figure of teapot tattoo is the file "tattoo72.png". There is 1 teapot tattoo.
+teapot tattoo is a kind of dq tattoo. Figure of teapot tattoo is the file "Items/Tats/tattoo72.png". There is 1 teapot tattoo.
 The printed name of teapot tattoo is "teapot and teacup tattoo". Understand "teacup", "and teacup" as teapot tattoo.
 Definition: a teapot tattoo (called T) is eligible:
 	if the noun is vessel or the noun is squeezy bottle or the noun is chocolate bar or the noun is cock pacifier, decide yes;

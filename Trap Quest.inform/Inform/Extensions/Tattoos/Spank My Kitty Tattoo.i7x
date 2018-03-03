@@ -1,6 +1,6 @@
 Spank My Kitty Tattoo by Tattoos begins here.
 
-spank my kitty tattoo is a kind of ass tattoo. Figure of spank my kitty tattoo is the file "tattoo4.png". There is 1 spank my kitty tattoo.
+spank my kitty tattoo is a kind of ass tattoo. Figure of spank my kitty tattoo is the file "Items/Tats/tattoo4.png". There is 1 spank my kitty tattoo.
 Definition: a spank my kitty tattoo (called A) is drawable:
 	if there is a worn ass tattoo, decide no;
 	if the player is male, decide no;

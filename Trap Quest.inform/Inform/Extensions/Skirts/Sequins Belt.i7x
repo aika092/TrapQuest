@@ -1,6 +1,6 @@
 Sequins Belt by Skirts begins here.
 
-A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is usually super-short. Figure of sequins belt is the file "belt1.png". There is 1 unique metal sequins belt. The printed name of sequins belt is usually "[TQlink of item described][clothing-title-before]sequins belt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sequins belt is "seq".
+A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is usually super-short. Figure of sequins belt is the file "Items\Clothes\Lower\Waist\Belts\belt1.png". There is 1 unique metal sequins belt. The printed name of sequins belt is usually "[TQlink of item described][clothing-title-before]sequins belt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sequins belt is "seq".
 
 To decide which figure-name is clothing-image of (C - a sequins belt):
 	decide on figure of sequins belt.

@@ -2,9 +2,9 @@ Region Building Hotel by Rooms begins here.
 
 
 
-Figure of hotel loading is the file "loading4.png".
-Figure of dq hotel loading is the file "loading8.png".
-Figure of dq hotel messy loading is the file "loading9.png".
+Figure of hotel loading is the file "Special/Loading/loading4.png".
+Figure of dq hotel loading is the file "Special/Loading/loading8.png".
+Figure of dq hotel messy loading is the file "Special/Loading/loading9.png".
 
 [!<SetUpTheHotel>+
 

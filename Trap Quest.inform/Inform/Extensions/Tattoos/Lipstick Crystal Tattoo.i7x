@@ -1,6 +1,6 @@
 Lipstick Crystal Tattoo by Tattoos begins here.
 
-lipstick crystal tattoo is a kind of body tattoo. Figure of lipstick crystal tattoo is the file "tattoo64.png". There is 1 lipstick crystal tattoo.
+lipstick crystal tattoo is a kind of body tattoo. Figure of lipstick crystal tattoo is the file "Items/Tats/tattoo64.png". There is 1 lipstick crystal tattoo.
 Definition: a lipstick crystal tattoo (called T) is eligible:
 	if the noun is make up kit or the noun is plentiful accessory or the noun is infernal gem, decide yes;
 	decide no.

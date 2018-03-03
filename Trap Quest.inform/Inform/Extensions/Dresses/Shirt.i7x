@@ -18,7 +18,7 @@ Part - I heart cum shirt
 
 An I heart cum shirt is a kind of shirt. The printed name of I heart cum shirt is usually "[TQlink of item described][clothing-title-before]I heart cum shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". An I heart cum shirt is usually semen-addiction-influencing. The text-shortcut of I heart cum shirt is "hcs".
 
-Figure of I heart cum shirt is the file "shirt1.png".
+Figure of I heart cum shirt is the file "Items\Clothes\Upper\Shirts\shirt1.png".
 
 To set up influence of (C - an I heart cum shirt):
 	now C is semen-addiction-influencing.
@@ -59,7 +59,7 @@ A pink rubber shirt is a kind of rubber shirt. The printed name of pink rubber s
 
 There is 1 pink rubber shirt.
 
-Figure of pink rubber shirt is the file "latexshirt1.png".
+Figure of pink rubber shirt is the file "Items\Clothes\Upper\Latex\latexshirt1.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt.
@@ -85,7 +85,7 @@ A blue rubber shirt is a kind of rubber shirt. The printed name of blue rubber s
 
 There is 1 blue rubber shirt.
 
-Figure of blue rubber shirt is the file "latexshirt2.png".
+Figure of blue rubber shirt is the file "Items\Clothes\Upper\Latex\latexshirt2.png".
 
 To decide which figure-name is clothing-image of (C -  a blue rubber shirt):
 	decide on figure of blue rubber shirt.
@@ -109,7 +109,7 @@ Part 4 - Polo Shirt
 
 A polo shirt is a kind of shirt. The printed name of polo shirt is usually "[TQlink of item described][clothing-title-before]polo shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of polo shirt is "ps".
 
-Figure of polo shirt is the file "poloshirt1.png".
+Figure of polo shirt is the file "Items\Clothes\Upper\Shirts\poloshirt1.png".
 
 There is 1 polo shirt.
 
@@ -133,7 +133,7 @@ Part 5 - Torn Shirt
 
 A torn shirt is a kind of shirt. A torn shirt is usually very low cut. The printed name of torn shirt is usually "[TQlink of item described][clothing-title-before]torn shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of torn shirt is "trs".
 
-Figure of torn shirt is the file "shirt2.png".
+Figure of torn shirt is the file "Items\Clothes\Upper\Shirts\shirt2.png".
 
 There is 1 torn shirt.
 

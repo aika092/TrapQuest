@@ -68,7 +68,7 @@ A velcro onesie is a kind of onesie. There is 1 velcro onesie. A velcro onesie i
 
 The printed name of velcro onesie is usually "[TQlink of item described][clothing-title-before]velcro onesie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of velcro onesie is the file "onesie2.png".
+Figure of velcro onesie is the file "Items\Clothes\Upper\Special\Onesies\onesie2.png".
 
 To decide which figure-name is clothing-image of (C - a velcro onesie):
 	decide on figure of velcro onesie.
@@ -89,13 +89,13 @@ To decide which object is the potential-upgrade-target of (C - a velcro onesie):
 
 A frilly onesie is a kind of onesie. There is 1 frilly onesie. A frilly onesie is usually zippable. The printed name of frilly onesie is usually "[TQlink of item described][clothing-title-before]frilly onesie[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of frilly onesie is "fon".
 
-Figure of frilly onesie is the file "onesie3.png".
+Figure of frilly onesie is the file "Items\Clothes\Upper\Special\Onesies\onesie3.png".
 
 To decide which figure-name is clothing-image of (C - a frilly onesie):
 	decide on figure of frilly onesie.
 
 To say ClothingDesc of (C - a frilly onesie):
-	say "A pink onesie which goes halfway up your arms and legs. The onesie has white frills at the neck, arms and leg holes. A childish pattern repeats itself across the fabric. A full crotch length zip allows for easy access for [if the sex addiction of the player > 14]sex[otherwise]diaper changes[end if]. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
+	say "A pink onesie which goes halfway up your arms and legs. The onesie has white frills at the neck, arms and leg holes. A childish pattern repeats itself across the fabric. A full crotch length zip allows for easy access for [if the player is a pervert and diaper quest is 0]sex[otherwise]diaper changes[end if]. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
 
 To decide which object is the potential-upgrade-target of (C - a frilly onesie):
 	decide on a random off-stage velcro onesie.
@@ -107,7 +107,7 @@ A little dinosaur onesie is a kind of onesie. There is 1 little dinosaur onesie.
 
 The printed name of little dinosaur onesie is usually "[TQlink of item described][clothing-title-before]little dinosaur onesie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of dinosaur onesie is the file "onesie1.png".
+Figure of dinosaur onesie is the file "Items\Clothes\Upper\Special\Onesies\onesie1.png".
 
 To decide which figure-name is clothing-image of (C - a little dinosaur onesie):
 	decide on figure of dinosaur onesie.

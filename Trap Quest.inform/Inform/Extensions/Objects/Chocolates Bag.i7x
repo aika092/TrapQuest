@@ -13,8 +13,8 @@ Definition: chocolates bag (called F) is TQEdible:
 
 chocolate-announced is a number that varies.
 
-Figure of chocolates cutscene 1 is the file "DQChocolates1.png".
-Figure of chocolates cutscene 2 is the file "DQChocolates2.png".
+Figure of chocolates cutscene 1 is the file "Special/Cutscene/DQChocolates1.png".
+Figure of chocolates cutscene 2 is the file "Special/Cutscene/DQChocolates2.png".
 
 A time based rule (this is the chocolates stalking rule):
 	if diaper quest is 1 and the player is in a region:

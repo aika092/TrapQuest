@@ -1,6 +1,6 @@
 Slut Tattoo by Tattoos begins here.
 
-slut tattoo is a kind of crotch tattoo. Figure of slut tattoo is the file "tattoo17.png". There is 1 slut tattoo.
+slut tattoo is a kind of crotch tattoo. Figure of slut tattoo is the file "Items/Tats/tattoo17.png". There is 1 slut tattoo.
 Definition: a slut tattoo (called T) is eligible:	
 	if the noun is clothing:
 		if the initial outrage of the noun > 14, decide yes;

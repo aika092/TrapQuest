@@ -107,14 +107,14 @@ To say selfexamineuniquetitle of (G - a green g-string):
 To say UniqueClothingDesc of (G - a green g-string):
 	say "A basic skimpy green g-string.".
 
-Figure of g-string 1 is the file "gstring1.png".
-Figure of g-string 2 is the file "gstring2.png".
-Figure of g-string 3 is the file "gstring3.png".
-Figure of g-string 4 is the file "gstring4.png".
-Figure of g-string 5 is the file "gstring5.png".
-Figure of g-string 6 is the file "gstring6.png".
-Figure of g-string 7 is the file "gstring7.png".
-Figure of g-string 8 is the file "gstring8.png".
+Figure of g-string 1 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring1.png".
+Figure of g-string 2 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring2.png".
+Figure of g-string 3 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring3.png".
+Figure of g-string 4 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring4.png".
+Figure of g-string 5 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring5.png".
+Figure of g-string 6 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring6.png".
+Figure of g-string 7 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring7.png".
+Figure of g-string 8 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring8.png".
 
 [Below are from Lucas]
 
@@ -138,9 +138,9 @@ To say UniqueClothingDesc of (G - a orange g-string):
 	say "A skimpy orange g-string. [']Too Much Fun['] is printed on the front, informing everyone that the wearer enjoys being up for anything.".
 Understand "too", "much", "fun" as orange g-string.	
 	
-Figure of g-string 9 is the file "gstring9.png".	
-Figure of g-string 10 is the file "gstring10.png".	
-Figure of g-string 11 is the file "gstring11.png".	
+Figure of g-string 9 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring9.png".	
+Figure of g-string 10 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring10.png".	
+Figure of g-string 11 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring11.png".	
 
 
 G-Strings ends here.

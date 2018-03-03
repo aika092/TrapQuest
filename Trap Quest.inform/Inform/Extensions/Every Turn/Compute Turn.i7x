@@ -44,8 +44,9 @@ To run the engine once:
 			now the room D from Neighbour Finder is seen;
 		compute turn;
 		if delayed fainting is 0:
-			compute automatic actions;
-			compute instinctive actions; [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
+			compute compulsory actions; [things that must happen]
+			unless another-turn is 1, compute instinctive actions;
+			unless another-turn is 1, compute automatic actions;  [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, now seconds is 0;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;

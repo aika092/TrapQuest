@@ -6,6 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 To dislodge (C - a thing):
+	compute unique dislodging of C;
 	if C is monster:
 		now C is doing nothing special;
 		now C is unwrapped;
@@ -15,6 +16,9 @@ To dislodge (C - a thing):
 		now C is not grabbing B;
 	repeat with B running through things covered by C:
 		now C is not covering B.
+
+To compute unique dislodging of (C - a thing):
+	do nothing.
 
 [!<DestroyThing>+
 

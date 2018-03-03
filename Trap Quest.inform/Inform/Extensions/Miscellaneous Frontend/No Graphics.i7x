@@ -162,17 +162,15 @@ title	subtable	description	toggle
 
 
 
-Figure of Demoness is the file "demoness2.png". 
-Figure of Witch is the file "witch2.png".
-Figure of wrestler is the file "wrestler2.png".
-Figure of wench1 is the file "wench1b.png".
-Figure of wench2 is the file "wench2b.png".
-Figure of wench3 is the file "wench3b.png".
-Figure of wench4 is the file "wench4b.png".
-Figure of dominatrix 1 is the file "dominatrix1a.png".
-Figure of Shopkeeper 1 is the file "shopkeeper3.png". Figure of Shopkeeper 2 is the file "shopkeeper3.png". 
-Figure of slutty sister is the file "sluttysister2.png".
-Figure of Gladiator is the file "gladiator1.png".
+Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png". 
+Figure of Witch is the file "NPCs/Forest/Witch/witch2.png".
+Figure of wench1 is the file "NPCs/Dungeon/Wench/wench1b.png".
+Figure of wench2 is the file "NPCs/Dungeon/Wench/wench2b.png".
+Figure of wench3 is the file "NPCs/Dungeon/Wench/wench3b.png".
+Figure of wench4 is the file "NPCs/Dungeon/Wench/wench4b.png".
+Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png". Figure of Shopkeeper 2 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
+Figure of slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
+Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
 
 No Graphics ends here.
 

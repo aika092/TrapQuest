@@ -21,7 +21,9 @@ Definition: A wrestler (called M) is hotel dwelling:
 	if diaper quest is 1, decide no;
 	decide yes.
 
-The description of wrestler is usually "[WrestlerDesc]".
+The description of wrestler is usually "[WrestlerDesc]".  
+Figure of wrestler is the file "NPCs/Hotel/wrestler1.png".
+
 
 A latex-clad wrestler is a kind of wrestler. There is 1 latex-clad wrestler. The text-shortcut of latex-clad wrestler is "lwr".
 The printed name of latex-clad wrestler is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]latex-clad wrestler[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "latex", "clad" as latex-clad wrestler.
@@ -75,11 +77,13 @@ To say LeftoverDesc (N - 119):
 
 To IdentifiablePosterReaction of (M - a wrestler):
 	say "The [M] looks at you, blinks, then looks back to the banner. Upon realising that it is you, she grins widely and gives you a sly wink.";
+	if image cutscenes is 1, display figure of wrestler interact 10;
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
 To UnidentifiablePosterReaction of (M - a wrestler):
 	say "[second custom style]'I'm jealous of whoever that is. I wish there were banners of me up around the place!'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 9;
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
@@ -93,28 +97,38 @@ To compute perception of (M - a wrestler):
 	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the latex-transformation of the player > 6 or there is a worn messed knickers: 
 		say "She seems a little intrigued by you but leaves you alone.";
+		if image cutscenes is 1, display figure of wrestler interact 2;
 		bore M;
 	otherwise if M is unfriendly and the times-met of M > 0:
 		say "[second custom style]'Hey hot stuff, ready for another round?'[roman type][line break]";
+		if image cutscenes is 1, display figure of wrestler interact 11;
 	otherwise if the bimbo of the player > 10 and the player-class is succubus:[The succubus is intimidating enough that it takes a bit longer for the wrestler to turn]
-		say "[second custom style]'Heh, you[']re trying to look scary but you don[']t have me fooled for a minute!'[roman type][line break]";
+		say "[second custom style]'Heh, you're trying to look scary but you don't have me fooled for a minute!'[roman type][line break]";
+		if image cutscenes is 1, display figure of wrestler interact 10;
 		anger M;
 	otherwise if M is unfriendly or the class of the player is the royal slave or the class of the player is the latex fetish model or the class of the player is maid or the player is a sissy:
 		if the player is flying:
 			say "[second custom style]'What are you doing up there, you crazy bitch?!'[roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler interact 8;
 		otherwise if the class of the player is the royal slave:
 			say "[second custom style]'Ooh, another slave!  Can I be your friend?  [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler interact 7;
 		otherwise if the class of the player is the latex fetish model:
 			say "[second custom style]'Hey, sister!  I didn't know mistress had another rubber slave. Let's fight to see who gets to be on top!'[roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler interact 11;
 		otherwise if the class of the player is maid:
 			say "[second custom style]'[if watersports fetish is 1 and the variety of M is 0]Oooh, a slutty maid!  If you're staff, I guess that kind of makes me your boss?  I know a job that's perfect for you. Come with me!'[otherwise]Hey, you're staff, aren't you?  That means you have to let me do whatever I want to you, right?'[end if][roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler interact 5;
 		otherwise if the player is a sissy:
 			say "[second custom style]'Oooh!  A real life sissy!  My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler interact 5;
 		otherwise:
 			say "[second custom style]'Hey, wanna wrestle?  Winner gets to be on top!'[roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler interact 11;
 		anger M;
 	if M is interested and M is friendly:
-		say "[second custom style]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel?'[or]Hey there hot stuff. Having a good time?'[stopping][roman type]".
+		say "[second custom style]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel?'[or]Hey there hot stuff. Having a good time?'[stopping][roman type]";
+		if image cutscenes is 1, display figure of wrestler interact 1.
 
 Part 3 - Combat
 
@@ -122,6 +136,7 @@ Section 1 - Protection
 
 To compute (M - a wrestler) protecting against (X - a monster):
 	say "[second custom style]'Haha, that looks like fun!  Can I join in?'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 5;
 	anger M;
 	compute attack of M.
 
@@ -170,6 +185,12 @@ This is the wrestler puts slaves in the urinal rule:
 		rule succeeds.
 The wrestler puts slaves in the urinal rule is listed in the wrestler unique punish rules.
 
+To say DragFlav of (M - a wrestler) to (R - a room):
+	say "The [M] lifts you over [his of M] shoulder into a fireman's hold and waltzes through the hotel [if the distance of R > 1]all the way [end if]to the [R]!";
+	if image cutscenes is 1:
+		if the player is male, display figure of wrestler cutscene 4;
+		otherwise display figure of wrestler cutscene 5.
+
 To say DragArrival of (M - a wrestler) to (R - Hotel31):
 	say "[second custom style]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh god, why is there a gap between those urinals?[otherwise]Why are we here I wonder?[end if][or][if the bimbo of the player < 13]No no no please not again![otherwise]Uh-oh, looks like it's toilet time again![end if][stopping][roman type][line break]".
 
@@ -197,7 +218,9 @@ To UrinalWait:
 To compute (M - a wrestler) releasing the player:
 	bore M for 700 seconds;
 	FavourUp M;
-	say "Suddenly you hear high heeled footsteps. You feel your [urine]-soaked blindfold removed and you see the [M] standing over you, grinning. [line break][second custom style]'Oooh, looks like you really did have fun!  Well, I guess I should let you go recover for now.'[roman type][line break]The [M] releases you from your bondage and then loses interest.";
+	say "Suddenly you hear high heeled footsteps. You feel your [urine]-soaked blindfold removed and you see the [M] standing over you, grinning. [line break][second custom style]'Oooh, looks like you really did have fun!  Well, I guess I should let you go recover for now.'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 10;
+	say "The [M] releases you from your bondage and then loses interest.";
 	now the urine-puddle of Blindfolded is the urine-puddle of Hotel31;
 	now the player is in Hotel31.
 
@@ -229,9 +252,19 @@ The wrestler feeds you to master rule is listed last in the wrestler unique puni
 To say DragArrival of (M - a wrestler) to (R - a room):
 	say "[speech style of M]'Here we are!'[roman type][line break]".
 
+
+wrestler-piss-drunk is a number that varies.
+
+To compute unique piss drink effect of (M - a wrestler):
+	now wrestler-piss-drunk is 1.
+
 To compute (M - a wrestler) urinating:
 	say "The [M] reaches down to her crotch and slowly unzips her catsuit, revealing her rosy, engorged vulva. [one of]She is clearly very aroused. [or][stopping][one of]She[or]Once again she[stopping] casually starts urinating over your hair and face. [if the humiliation of the player >= 40000]You feel strangely comforted, once again in your place as an object to be used and then discarded.[otherwise if the humiliation of the player > 30000]Deep down, you feel that you deserve this degradation.[otherwise]You can't tell if most of the warmth is coming from the heat of the [urine] or your cheeks burning red with humiliation.[end if]";
+	now wrestler-piss-drunk is 0;
 	FacePiss from M;
+	if image cutscenes is 1:
+		if wrestler-piss-drunk is 1, display figure of wrestler cutscene 6;
+		otherwise display figure of wrestler cutscene 7;
 	say "[second custom style]'That was fun. Let's do it again soon.'[roman type][line break]The [M] seems to lose interest in you for now.";
 	FavourUp M;
 	bore M.
@@ -279,26 +312,31 @@ To say VaginaPenetrationFlav of (M - a wrestler):
 To say AssholePenetrationFlav of (M - a wrestler):
 	compute M diving into asshole.
 
+To set up sex length of (M - a wrestler) in (F - a fuckhole):
+	set up sex length (a random number between 2 and 4) of M in F.
+
 To compute (M - a wrestler) diving into (F - a fuckhole):
 	say "[second custom style]'Okay, let's see just how much we can stretch you out!'[roman type][line break]";
-	now the sex-length of M is a random number between 2 and 4;
 	compute M getting fingers into F;
 	if the fingers of M is 1:
 		say "The [M] slides a single finger into your extremely tight [variable F].";
-		if image cutscenes is 1, display figure of wrestler cutscene 1;
+		if image cutscenes is 1, display figure of wrestler fingers 1;
 	otherwise if the fingers of M is 2:
 		say "The [M] slides two fingers into your tight [variable F].";
+		if image cutscenes is 1 and the player is male, display figure of wrestler fingers 2;
 	otherwise if the fingers of M is 3:
 		say "The [M] slides a full three fingers into your [variable F].";
+		if image cutscenes is 1 and the player is female, display figure of wrestler fingers 3;
 	otherwise if the fingers of M is 4:
 		say "The [M] forces all four of her fingers into your [variable F].";
 	otherwise if the fingers of M is 5:
 		say "The [M] slides all four of her fingers [italic type]and[roman type] her thumb into your [variable F], all the way up to her knuckles. She can't manage to push it in any further than that!";
+		if image cutscenes is 1 and the player is female, display figure of wrestler fingers 5;
 	otherwise:
 		say "The [M] slides all four of her fingers [italic type]and[roman type] her thumb into your [variable F], all the way up to her knuckles. She keeps pushing with all her might, and all of a sudden, her whole fist slides in!";
 		if image cutscenes is 1:
-			if the player is male or F is vagina, display figure of wrestler cutscene 2;
-			otherwise display figure of wrestler cutscene 3;
+			if the player is male, display figure of wrestler fingers 4;
+			otherwise display figure of wrestler fingers 6;
 	say "[variable custom style][if the relevant sex addiction of M < 9][one of]Oof[or]'That's too much!'[or]I'm being stretched![in random order][otherwise][one of]This is new..![or]Oof, I feel more loose already...[or]Here we go again![stopping][end if][roman type][line break]";
 	say "She starts moving her [if the fingers of M is 6]fist[otherwise]fingers[end if] in a thrusting motion.".
 
@@ -321,10 +359,14 @@ To compute (M - a wrestler) fisting (F - a fuckhole):
 			say "The [M] keeps pushing with all her might, and all of a sudden, her whole fist slides in!";
 			say "[variable custom style][if the relevant sex addiction of M < 8]'AAAAAAAAAH!'[otherwise if the relevant sex addiction of M < 14]There's no way...?!?! Oh my god, it's really happening, I'm being fisted![otherwise]She got the whole fist in, I'm so proud!  Fist fuck me, baby![end if][roman type][line break]";
 			if image cutscenes is 1:
-				if the player is male or F is vagina, display figure of wrestler cutscene 2;
-				otherwise display figure of wrestler cutscene 3;
+				if the player is male, display figure of wrestler fingers 4;
+				otherwise display figure of wrestler fingers 6;
 		otherwise:
 			say "The [M], having loosened you up, finds room for another finger!  She now has [fingers of M] fingers inside your [variable F]. She continues her furious thrusting!";
+			if image cutscenes is 1:
+				if the fingers of M is 5 and the player is female, display figure of wrestler fingers 5;
+				if the fingers of M is 3 and the player is female, display figure of wrestler fingers 3;
+				if the fingers of M is 2 and the player is male, display figure of wrestler fingers 2;
 	otherwise:
 		say "The [M] keeps thrusting away, [one of]using her strong muscles to keep the pounding strong and hard[or]varying the speed of her pumps to keep you on your toes[or]putting her body weight into it[in random order]. Your [variable F] struggles to keep up with her girth and speed!";
 	decrease the sex-length of M by 1.
@@ -361,7 +403,7 @@ This is the wrestler friendly convinced rule:
 			if watersports fetish is 1, compute friendly drink of current-monster;
 			otherwise say "[PresentFriendlyRejectionFlav of current-monster]";
 		otherwise:
-			say "The [current-monster] unzips her catsuit revealing a very wet, rosy [vagina]. [one of]She eagerly pushes your head between her legs, spreading her engorged outer lips as [if the oral sex addiction of the player < 3]you hesitantly push your tongue into her needy folds.[otherwise]you begin to using your tongue to please her tender folds.[end if] [line break][speech style of current-monster]'Hey, wait a sec. Why don[']t I get down there and do some licking of my own? You keep going, and we[']ll see who comes first!'[or][speech style of current-monster]'Want to see which of us comes first? I[']m betting on you!'[stopping][roman type][line break]";
+			say "The [current-monster] unzips her catsuit revealing a very wet, rosy [vagina]. [one of]She eagerly pushes your head between her legs, spreading her engorged outer lips as [if the oral sex addiction of the player < 3]you hesitantly push your tongue into her needy folds.[otherwise]you begin to using your tongue to please her tender folds.[end if] [line break][speech style of current-monster]'Hey, wait a sec. Why don[']t I get down there and do some licking of my own? You keep going, and we[']ll see who comes first!'[or][speech style of current-monster]'Want to see which of us comes first? I[']m betting on you!'[stopping][roman type][line break][yesnolink]";
 			if the player consents:
 				now chosen-orifice of current-monster is face;
 				now current-monster is friendly-fucking;
@@ -394,7 +436,10 @@ To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	if C is clothing:
 		if C is displacable, displace C;
 		otherwise now C is in the location of the player;
-	say "The [M] joins you on the floor, [if C is clothing and the size of penis <= the armour of C and the size of penis > 2]fishing your [ShortDesc of penis] out of your [printed name of C][otherwise if C is clothing]pulling down your [printed name of C][otherwise if the player is male]stroking your [ShortDesc of penis][otherwise]eagerly licking your outer lips[end if] as she pulls you on top of her. [if the oral sex addiction of the player < 3][one of]Already feeling her probing tongue on your [genitals], you lean in and start some hesitant probing of your own.[or]You take the time to build up some extra courage before hesitantly forcing your tongue to work.[at random][otherwise if the oral sex addiction of the player < 7][one of]Already feeling her probing tongue on your [genitals], you lean in and do some eager probing of your own.[or]You find yourself ruminating on how enticing her [vagina] looks for a moment before diving in.[at random][otherwise][one of]You don't even wait for her to start, eagerly shoving your face in her crotch and sending your tongue to work[or]You immediately dive in, desperate to get a taste of her beautiful crotch.[at random][end if]".
+	say "The [M] joins you on the floor, [if C is clothing and the size of penis <= the armour of C and the size of penis > 2]fishing your [ShortDesc of penis] out of your [printed name of C][otherwise if C is clothing]pulling down your [printed name of C][otherwise if the player is male]stroking your [ShortDesc of penis][otherwise]eagerly licking your outer lips[end if] as she pulls you on top of her. [if the oral sex addiction of the player < 3][one of]Already feeling her probing tongue on your [genitals], you lean in and start some hesitant probing of your own.[or]You take the time to build up some extra courage before hesitantly forcing your tongue to work.[at random][otherwise if the oral sex addiction of the player < 7][one of]Already feeling her probing tongue on your [genitals], you lean in and do some eager probing of your own.[or]You find yourself ruminating on how enticing her [vagina] looks for a moment before diving in.[at random][otherwise][one of]You don't even wait for her to start, eagerly shoving your face in her crotch and sending your tongue to work[or]You immediately dive in, desperate to get a taste of her beautiful crotch.[at random][end if]";
+	if image cutscenes is 1:
+		if the player is male, display figure of wrestler cutscene 9;
+		otherwise display figure of wrestler cutscene 8.
 
 To compute facial sex of (M - a wrestler):
 	let P be a random patron in the location of the player;
@@ -417,7 +462,7 @@ To compute facial sex of (M - a wrestler):
 		say OralSubmissionResponse of M;		
 	if P is patron:
 		if P is penetrating asshole:
-			say "[WrestlerAnal of P]";
+			say WrestlerAnal of P;
 		otherwise:
 			say "The [P] continues jerking off to the sight in front of him.[line break]";
 	unless (the reaction of the player is 0 and the number of patrons penetrating asshole is 0), decrease the sex-length of M by 1.
@@ -473,6 +518,7 @@ To compute facial climax of (M - a wrestler):
 	if the sex-length of M > 0:[we know at this point that the patron isn't inside you so no point checking for butt stuff.]
 		if the player is male:
 			say "[if the size of penis > 4]groaning[otherwise]moaning[end if] with pleasure as [if the size of penis < 4]your [sissy-penis] dribbles a pitifully tiny load into the [M]'s mouth[otherwise if the size of penis < 7]you shoot your load straight into the [M]'s mouth[otherwise]shoot a massive load straight down the [M]'s throat[end if]. She [if the size of penis > 6]releases your [manly-penis] from her mouth, swallowing[otherwise]swallows it [end if] with a self-satisfied giggle and crawls out from underneath you.";
+			if image cutscenes is 1, display figure of wrestler cutscene 12;
 		otherwise:
 			say "moaning with pleasure as you squirt all over the [M]'s face. She giggles, slowly crawling out from underneath you.";
 		say "[line break][speech style of M][one of]Looks like I win![or]I win! I'm game if you want another try later, though.[or]I win again![cycling][roman type]";
@@ -528,10 +574,11 @@ To compute damage of (M - a wrestler):
 	if the health of M > 0:
 		if M is uninterested:
 			say "The girl looks shocked. [line break][second custom style]'Ooh, I didn't know you wanted to fight!  Why didn't you just say so?'[roman type][line break]";
+			if image cutscenes is 1, display figure of wrestler cutscene 3;
 			now M is interested;
 			anger M;
 		otherwise if the health of M < the maxhealth of M / 2 and the excitement of M is -1 and the times-dominated of M > 0:
-			say "[speech style of M]Haha, is that really all you[']ve got? Looks like its my turn to be on top![roman type] The [M] seems to change her stance! Looks like this will be harder than you thought!";
+			say "[speech style of M]Haha, is that really all you've got? Looks like its my turn to be on top![roman type] The [M] seems to change her stance! Looks like this will be harder than you thought!";
 			DifficultyUp M by 5 + the times-dominated of M;
 			increase the health of M by 15;
 			now the excitement of M is 1;
@@ -542,15 +589,20 @@ To compute damage of (M - a wrestler):
 		if the health of M <= 0:
 			compute death of M.
 
-To say DamageReaction (N - a number) of (M - a wrestler):
-	if N > (the maxhealth of M / 4) * 3:
-		say "[big he of M] looks [one of][or]even [stopping]more excited than [he of M] did already!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "[big he of M] takes the hit, [one of]somehow [or][stopping]even more turned on by the pain!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "[big he of M] yelps in pain!  [one of]It was a very sexual yelp, though...[or][line break][stopping]";
-	otherwise:
-		say "[big he of M] [i]coos[/i] in pain, [if the intelligence of the player > 5]intentionally jiggling her tits[otherwise]causing her tits to jiggle[end if] as she fights to maintain her balance.".
+To say DamageReactHealthy of (M - a wrestler):
+	say "[big he of M] looks [one of][or]even [stopping]more excited than [he of M] did already!".
+
+To say DamageReactDamaged of (M - a wrestler):
+	say "[big he of M] takes the hit, [one of]somehow [or][stopping]even more turned on by the pain!".
+
+To say DamageReactTired of (M - a wrestler):
+	say "[big he of M] yelps in pain!  [one of]It was a very sexual yelp, though...[or][line break][stopping]".
+
+To say DamageReactWeak of (M - a wrestler):
+	say "[big he of M] [i]coos[/i] in pain, [if the intelligence of the player > 5]intentionally jiggling [his of M] tits[otherwise]causing [his of M] tits to jiggle[end if] as [he of M] fights to maintain [his of M] balance.".
+
+To say DamageReactSubmissive of (M - a wrestler):
+	say "[big he of M] [i]coos[/i] in pain, [if the intelligence of the player > 5]intentionally jiggling [his of M] tits[otherwise]causing [his of M] tits to jiggle[end if] and eagerly rubbing her thighs together as [he of M] struggles to maintain [his of M] balance.".
 
 To compute unique death of (M - a wrestler):
 	say "She [if the sleep of M is 0]drops to the ground, dead[otherwise]stops breathing[end if]. Her body disappears.";		
@@ -565,6 +617,7 @@ To say DominanceSuccess of (M - a wrestler):
 		orgasm;
 		if watersports fetish is 1 and the player is desperate to pee:
 			say "But even as she swallows wave after wave of [semen], the look in her eye as you pull out tells you she still isn[']t satisfied. You tilt her head up, relief washing over your body as you empty your bladder directly into her mouth, and then all over her face. She swallows as you step away, straightening up.";
+			if image cutscenes is 1, display figure of wrestler cutscene 2;
 			Dignify 100;
 			now the bladder of the player is 0;
 			say "[AfterDominationComment 1 of M]";
@@ -576,6 +629,7 @@ To say DominanceSuccess of (M - a wrestler):
 		say "[if watersports fetish is 1 and the player is desperate to pee][line break][speech style of M]'Looks like it's my turn to be the toilet! Don't worry, I'll swallow every drop of your [one of]urine[or]piss[or]pee[at random].'[roman type][line break][otherwise][line break][speech style of M]'I'm on the bottom again! Ooh! I'm gonna swallow every last drop! Just watch!'[roman type][line break][end if] She grabs your [ShortDesc of penis] with [if the size of penis > 6]both hands[otherwise]one hand[end if], glancing up at you as she accepts it into her mouth. Her eyes roll as she pushes further and further onto your meat, her tongue lapping at the underside of your shaft. She soon removes [if the size of penis > 6]her hands, emitting a happy noise[otherwise]her hand, humming proudly[end if] as her nose bumps up against your belly, and you feel her lower lip against your sack.";
 		if watersports fetish is 1 and the player is desperate to pee:
 			say "It's just not in you not to give her what she wants, and with a heavy sigh you allow all your stress to flow out directly [if the size of penis > 6]into her belly, filling it with frothy warmth[otherwise]into her mouth, filling her belly with frothy warm[end if]. True to her word she swallows every drop, licking her lips as you step away and straighten up.";
+			if image cutscenes is 1, display figure of wrestler cutscene 2;
 			Dignify 50;
 			now the bladder of the player is 0;
 			say "[AfterDominationComment 1 of M]";
@@ -588,6 +642,7 @@ To say DominanceSuccess of (M - a wrestler):
 		say "[if watersports fetish is 1 and the player is desperate to pee][line break][speech style of M]'[one of]Oh wow! I didn't even know dicks could get that small! Please, I have to know what your piss tastes like!'[or]I never get tired of your tiny cock! Let me have another taste of that yummy piss!'[stopping][roman type][line break][otherwise][line break][speech style of M]'[one of]Is that actually your penis? So cute! Please let me taste your cum!'[or]I don't care how your penis got so small, all I know is that tiny sissy penises make the best-tasting cum!'[stopping][roman type][line break][end if] She opens her mouth wide, gesturing to her outstretched tongue with a latex-clad finger. When you got her to on knees, you thought it was too good to be true, but now here she is, begging for a drink of your [if watersports fetish is 1 and the player is desperate to pee][urine][otherwise][semen][end if]!";
 		if watersports fetish is 1 and the player is desperate to pee:
 			say "You immediately release your hold on your bladder, allowing a shudder of relief to pass through your body as you douse the [M] in a stream of golden [urine]. She pushes her breasts together enticingly as she captures it in her mouth, making a show of swallowing it in one huge gulp as she suddenly gets up and kisses you square on the lips. Wow!";
+			if image cutscenes is 1, display figure of wrestler cutscene 2;
 			Dignify 10;
 			now the bladder of the player is 0;
 			if a random number between 1 and 2 is 1:
@@ -622,7 +677,7 @@ To oral dominate (M - a wrestler):[TODO: update so it fits the wrestler]
 			say "[AfterDominationComment 1 of M]";
 		otherwise:
 			say "You force the [M] onto her back, sitting on her face. [if the bimbo of the player < 12][line break][first custom style]'[one of]No offence meant[or]Nothing personal[at random], I promise.'  [otherwise][line break][second custom style]'Let's see how you like it!'  [end if][roman type][line break]";
-			if the semen volume of vagina > 0 and the pregnancy of the player is 0:
+			if the semen volume of vagina > 0:
 				say "Pulling your asscheeks apart, you position your dripping wet folds over her mouth and your [asshole] over her nose, cutting off her airflow. She squirms petulantly, weakly clawing at your thighs to try and make you get up, but fails because she is weakened from the preceding fight. Reluctantly, she opens her mouth and pushes her tongue into your [vagina]. You sigh in pleasure, the massaging your breasts as the sensations cause your vaginal muscles to loosen and allow [semen] to dribble out onto her face. The wench grabs your thighs, suddenly a lot more eager to fuck you with her tongue. You reach back to rub her gash, which she was probably planning to have you clean out yourself. You're sure you'd be able to orgasm if the wench continued on like this, but the slipperiness of the [semen] drooling out of your pussy makes you a lot less sensitive. So, you eventually grow bored and stand up.";
 				now the semen volume of vagina is 0;
 			otherwise if the player is a bit horny:
@@ -660,9 +715,9 @@ To compute FriendlySexRelease of (M - a wrestler):
 		say "[speech style of M]'[one of]Come on, he[']s having fun!'[or]But he[']s so into it!'[or]But this is so fun!'[at random][roman type] The [M] refuses to let you go!";
 	otherwise if watersports fetish is 1:
 		say "[speech style of M]'Aww, alright.'[roman type] The [M] [if M is penetrating asshole]gently removes her fingers from your [asshole], unzipping her crotch as she rises to her feet.[otherwise]crawls out from under you and rises to her feet.[end if][line break][speech style of M]'If you couldn[']t handle that...I guess I'll have to settle for toilet time!'[roman type][line break]She mashes her pussy into your face, and before you can react, begins pissing straight into your mouth. You know there[']s nothing you can do as the warm, salty [urine] hits your tongue, and [if the humiliation of the player < 34000]reluctantly[otherwise]eagerly[end if] allow her to use you as a literal human toilet.";
-		StomachUp 3;
 		increase the blue-balls of M by 1;[In the future, watersports players will use this for greetings.]
 		dislodge M;
+		FacePiss from M;
 	otherwise if M is willing to let go:
 		say FriendlySexReleaseFlav of M;
 		increase the blue-balls of M by 1;
@@ -723,59 +778,74 @@ To compute talk option (N - 1) to (M - a wrestler):
 		check perception of M.
 
 To say FirstResponse of (M - a wrestler):
-	say "[second custom style]'Ooh, pleased to meet you!  Can we be friends?'[roman type][line break]".
+	say "[second custom style]'Ooh, pleased to meet you!  Can we be friends?'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 1.
 
 To say RepeatResponse of (M - a wrestler):
-	say "[second custom style]'[one of]Hey sexy. How have things been going for you?'[or]Hey babe! Remind me to wrestle you sometime.'[or]Hi! [if largeness of breasts > 3]You know, I[']d really like a chance to play with those tits if you'd let me[otherwise]You know, I think you'd look really hot with big tits[end if].'[or]Hey! Have you met my mistress yet?'[or]Hey there. Maybe you and I should go put on a show for my mistress.'[at random][roman type][line break]".
+	say "[second custom style]'[one of]Hey sexy. How have things been going for you?'[or]Hey babe! Remind me to wrestle you sometime.'[or]Hi! [if largeness of breasts > 3]You know, I[']d really like a chance to play with those tits if you'd let me[otherwise]You know, I think you'd look really hot with big tits[end if].'[or]Hey! Have you met my mistress yet?'[or]Hey there. Maybe you and I should go put on a show for my mistress.'[at random][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 6.
 
 To say UnfriendlyResponse of (M - a wrestler):
-	say "[one of]The [M] ignores you.[or]The [M] smiles, silently retaining her aggressive stance[at random]".
+	say "[one of]The [M] ignores you.[or]The [M] smiles, silently retaining her aggressive stance[at random]";
+	if image cutscenes is 1, display figure of wrestler cutscene 3.
 
 To say SubmissiveResponse of (M - a wrestler):
-	say "[second custom style]'[one of]Ooh, it[']s you again. This time I[']m going to win!'[or]Ooh, I'm going to punch you for what you did to me. In a fun way!'[or]Earlier was SO much fun! Let's wrestle for next turn on top![or]Don[']t get used to winning! I[']ve been working out!'[or]I[']m always ready to wrestle some more! Losing is so much fun, though, you should try it some time.'[or]Oh yeah? I[']ll let my fingers do the talking on this one!'[or]This one is for the title of biggest slut! You[']re gonna win for sure!'[at random][roman type][line break]".
+	say "[second custom style]'[one of]Ooh, it[']s you again. This time I[']m going to win!'[or]Ooh, I'm going to punch you for what you did to me. In a fun way!'[or]Earlier was SO much fun! Let's wrestle for next turn on top![or]Don[']t get used to winning! I[']ve been working out!'[or]I[']m always ready to wrestle some more! Losing is so much fun, though, you should try it some time.'[or]Oh yeah? I[']ll let my fingers do the talking on this one!'[or]This one is for the title of biggest slut! You[']re gonna win for sure!'[at random][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 8.
 
 To say DominantResponse of (M - a wrestler):
 	if M is friendly:
 		say RepeatResponse of M;
 	otherwise:
-		say "[second custom style]'[one of]Ooh, I remember you. Does this mean you want to go again?'[or]Hi! I hope you[']re ready to lose to me again because I'm ready to beat you!'[or]Hi there! You[']re not a very good wrestler, but don[']t worry, you[']re an awesome loser!'[or]What[']s up loser! Ready to wrestle again?'[at random][roman type][line break]".
+		say "[second custom style]'[one of]Ooh, I remember you. Does this mean you want to go again?'[or]Hi! I hope you[']re ready to lose to me again because I'm ready to beat you!'[or]Hi there! You[']re not a very good wrestler, but don[']t worry, you[']re an awesome loser!'[or]What[']s up loser! Ready to wrestle again?'[at random][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 3.
 
 To say midDominanceResponse of (M - a wrestler):
 	if M is uninterested:
 		say "The [M] grins.";[The wrestler should always aggro when she notices the player in combat, so there's not much reason to have her say anything here since she says something when she becomes aggressive.]
 	otherwise:
-		say "[second custom style]'[one of]Haha, I[']m going to join in too, don[']t worry!'[or]Get ready, we[']re going to gang up on you!'[or]If you can talk, it means you have room for one more!'[or]Hmm...'[or]I[']m gonna help out for sure!'[at random][roman type][line break]".
+		say "[second custom style]'[one of]Haha, I[']m going to join in too, don[']t worry!'[or]Get ready, we[']re going to gang up on you!'[or]If you can talk, it means you have room for one more!'[or]Hmm...'[or]I[']m gonna help out for sure!'[at random][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 5.
 		
 To say AsDominantResponse of (M - a wrestler):
-	say "[second custom style]'[one of]Haha! Take it!'[or]Take it, loser!'[or]I know you love it!'[or]Wow, are you this talkative when guys fuck you?'[or]Scream, girl! I won[']t let up!'[at random][roman type][line break]".
+	say "[second custom style]'[one of]Haha! Take it!'[or]Take it, loser!'[or]I know you love it!'[or]Wow, are you this talkative when guys fuck you?'[or]Scream, girl! I won[']t let up!'[at random][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 10.
 
 Section 2 - Questioning
 
 To say WhereAnswer of (M - a wrestler):
-	say "[second custom style]'This is the fetish hotel Premier Sinn. But since you're here, and dressed like that, surely you know that?'[roman type][line break]".
+	say "[second custom style]'This is the fetish hotel Premier Sinn. But since you're here, and dressed like that, surely you know that?'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 13.
 
 To say WhoAnswer of (M - a wrestler):
-	say "[second custom style]'My owner just calls me [if watersports fetish is 1]Toilet[otherwise]Cumslut[end if]!'[roman type][line break]".
+	say "[second custom style]'My owner just calls me [if watersports fetish is 1]Toilet[otherwise]Cumslut[end if]!'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 3.
 		
 To say StoryAnswer of (M - a wrestler):
-	say "[second custom style]'I love being dominated, and my owner loves dominating me. We make a good match. We come here to unwind and meet new playmates!'[roman type][line break]".
+	say "[second custom style]'I love being dominated, and my owner loves dominating me. We make a good match. We come here to unwind and meet new playmates!'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 14.
 
 To say EscapeAnswer of (M - a wrestler):
-	say "[second custom style]'What do you mean escape?  Who would want to leave this paradise?'[roman type][line break][if the bimbo of the player < 10][line break][first custom style]'Wow, useful...'[roman type][line break][end if]".
+	say "[second custom style]'What do you mean escape?  Who would want to leave this paradise?'[roman type][line break][if the bimbo of the player < 10][line break][first custom style]'Wow, useful...'[roman type][line break][end if]";
+	if image cutscenes is 1, display figure of wrestler interact 12.
 
 To say AdviceAnswer of (M - a wrestler):
-	say "[second custom style]'[one of]Sometimes, it[']s better to crawl around than walk. And I[']m not saying that just because I love to serve!'[or]Latex isn[']t absorbent like other materials, so it's easy clean up if you end up making a mess. It's not just fun to wear, it's practical too!'[or]Acting like a slut gets easier and easier as time goes on, but it never gets any harder. You can fight it, if you hate fun or something, but if you let a guy cum in your mouth once, you remember that feeling forever.'[or]Don[']t just eat candy as soon as you find it. Save it for when you need some energy!'[or]If you don't want the butler to force you to do stuff, always carry around a little bit of jewellery.'[or]Latex isn[']t very flexible. If you[']ve got rubber blocking your crotch, it's easier to tear it off than to move it out of the way. Sure, latex is durable, but it won't hold up forever. If you care about your clothes, take them off before a fuck, or you can just use a zipper like me!'[at random][roman type][line break]".
+	say "[second custom style]'[one of]Sometimes, it[']s better to crawl around than walk. And I[']m not saying that just because I love to serve!'[or]Latex isn[']t absorbent like other materials, so it's easy clean up if you end up making a mess. It's not just fun to wear, it's practical too!'[or]Acting like a slut gets easier and easier as time goes on, but it never gets any harder. You can fight it, if you hate fun or something, but if you let a guy cum in your mouth once, you remember that feeling forever.'[or]Don[']t just eat candy as soon as you find it. Save it for when you need some energy!'[or]If you don't want the butler to force you to do stuff, always carry around a little bit of jewellery.'[or]Latex isn[']t very flexible. If you[']ve got rubber blocking your crotch, it's easier to tear it off than to move it out of the way. Sure, latex is durable, but it won't hold up forever. If you care about your clothes, take them off before a fuck, or you can just use a zipper like me!'[at random][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 14.
 
 To compute annoyance of (M - a wrestler):
 	if M is uninterested:
 		say "The [M] doesn't seem to realize you are talking to her.[line break]";
 	otherwise if M is unfriendly:
 		say "The [M] ignores your question. [line break][second custom style]'You should stop talking and start moving if you want any chance of beating me in a fight!'[roman type][line break]";
+		if image cutscenes is 1, display figure of wrestler cutscene 3;
 	otherwise:
 		say "[second custom style]'I'm bored of your questions. I just want to follow you and watch your adventure unfold...'[roman type][line break]";
+		if image cutscenes is 1, display figure of wrestler interact 9.
 
 To compute teaching of (M - a wrestler):
 	say "[second custom style]'When someone's shoving their massive cock up your you-know-where, it's important to be able to stay loose and let it happen, otherwise you won't enjoy it properly!  Here, let me show you how...'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler cutscene 1;
 	teach relaxing;
 	if the questioned of M <= 290:
 		increase the questioned of M by 100;
@@ -786,23 +856,43 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - a wrestler):
 	if the player is prone and watersports fetish is 1:
-		say "The [M]'s eyes light up. [line break][second custom style]'One Toilet Special, coming right up!'[roman type][line break]The [M] doesn't give you a chance to ask what that means before she has unzipped her crotch and starting pissing straight at you!  [variable custom style][if the bimbo of the player < 6]Shit shit shit![otherwise if the bimbo of the player < 13]That's not what I meant...[otherwise]Ooh, yum![end if]";
+		say "The [M]'s eyes light up. [line break][second custom style]'One Toilet Special, coming right up!'[roman type][line break]The [M] doesn't give you a chance to ask what that means before she has unzipped her crotch and starting pissing straight at you!  [variable custom style][if the urine taste addiction of the player < 6]Shit shit shit![otherwise if the urine taste addiction of the player < 13]That's not what I meant...[otherwise]Ooh, yum![end if]";
 		FacePiss from M;
 	otherwise:
-		say "[if watersports fetish is 1]You notice a naughty look in her eyes. [line break][second custom style]'[one of]Get on your knees and ask me again.'[or]Haha, sure! But only if you get on your knees first!'[or]Of course, why didn[']t you ask sooner? Get on your knees and open wide!'[or]Totally. Get on your knees and say the word, I[']ve got plenty for you.'[at random][otherwise][second custom style]Haha, no, does it look like this outfit has pockets?[end if][roman type][line break]".
+		say "[if watersports fetish is 1]You notice a naughty look in her eyes. [line break][second custom style]'[one of]Get on your knees and ask me again.'[or]Haha, sure! But only if you get on your knees first!'[or]Of course, why didn[']t you ask sooner? Get on your knees and open wide!'[or]Totally. Get on your knees and say the word, I[']ve got plenty for you.'[at random][otherwise][second custom style]Haha, no, does it look like this outfit has pockets?[end if][roman type][line break]";
+		if image cutscenes is 1:
+			if watersports fetish is 1, display figure of wrestler interact 5;
+			otherwise display figure of wrestler interact 16.
 	
 To compute unfriendly drink of (M - a wrestler):
 	say "[second custom style]'[if watersports fetish is 1]Oh I'll give you a drink all right!'[otherwise]You should stop talking and start moving if you want any chance of beating me in a fight!'[end if][roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler cutscene 3;
 	now M is interested;
 	now the boredom of M is 0.
 
-To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a thing):
-	say "[speech style of M]'Oh wow, [if T is clothing]that'll look amazing on me[otherwise]that's perfect for my mistress[end if]!  Sure, I'll take that off your hands.'[roman type][line break]".
 
 Section 4 - Food Requesting
 
 Definition: a wrestler (called M) is willing to give snacks:
 	decide yes.
+
+Section 5 - Trading
+
+To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a thing):
+	say "[speech style of M]'Oh wow, [if T is clothing]that'll look amazing on me[otherwise]that's perfect for my mistress[end if]!  Sure, I'll take that off your hands.'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 15.
+
+To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a thing):
+	say "[speech style of M]'Why would I need that?'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 13.
+
+To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a clothing):
+	say "[speech style of M]'I'm quite happy with what I wear right now, thanks!'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 16.
+
+To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a sex toy):
+	say "[speech style of M]'Oh I've already got one of those, thanks anyway!'[roman type][line break]";
+	if image cutscenes is 1, display figure of wrestler interact 4.
 
 
 Wrestler ends here.

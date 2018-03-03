@@ -199,9 +199,9 @@ To say RepeatGreeting of (M - a monster):
 
 [Has the player ever used the fuck skill on this monster? I think that since most fuckable monsters are permanently aggressive once you dominate them, it's fine to have some more forward greetings.]
 To say DominantGreeting of (M - a monster):
-	if the player is male and the sex addiction of the player < 7:
-		say "[first custom style]'[one of]Yo bitch! You might as well just get on your knees now.'[or]Yo, bitch! Stay there, I want to fuck you again.'[or]Hey bitch, how did it feel taking my BIG DICK.'[or]Hey bitch, how'd you like to suck my [manly-penis]?'[or]Hey bitch. Ready to go again?'[or]What's up bitch? Ready for round [the times-dominated of M + 1]?'[or]Hey bitch. Up for another round?'[at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 14:[for female players]
+	if the player is feeling dominant:
+		say "[first custom style]'[one of]Yo, bitch! Stay there, I want to fuck you again.'[or][if the player is male]Hey bitch, how did it feel taking my BIG DICK[otherwise]Yo bitch! You might as well just get on your knees now[end if].'[or][if the player is male]Hey bitch, how'd you like to suck my [manly-penis][otherwise]Hey bitch. Ready to go again[end if]?'[or]What's up bitch? Ready for round [the times-dominated of M + 1]?'[or]Hey bitch. Up for another round?'[at random][roman type][line break]";
+	otherwise if the player is not feeling submissive:
 		say "[variable custom style]'[one of]Hello. Sorry about earlier, I just really needed a win.'[or]Hi. Can we patch things up? It kind of got out of hand earlier.'[or]Hello. I hope I wasn't rough with you, I just needed a turn on top.'[or]Hey. I know what happened, but can we put that behind us? We have to stick together in here.'[at random][roman type][line break]";
 	otherwise:
 		say "[second custom style]'[one of]Hey there. Isn't it your turn to be on top?'[or]Hey babe. Do you want the next turn on top?'[or]Hi! Earlier was fun, but wouldn't it be great if you had a turn on top?'[at random][roman type][line break]".
@@ -210,17 +210,17 @@ To say DominantGreeting of (M - a monster):
 To say SubmissiveGreeting of (M - a monster):
 	let N be times-fucked of M;
 	let P be N + 1;
-	if M is mating and the bimbo of the player > 12:
+	if M is mating and the sex addiction of the player > 12:
 		say "[second custom style]'[one of][if M is not male]Hey there mommy!'[otherwise]Hey there baby daddy.'[end if][or]Hey baby. Want to make out?'[or]Hey babe! Let's hold hands!'[or][if M is not male]So, want to be girlfriend girlfriend now that we have a baby together?'[otherwise]Want to be boyfriend girlfriend now that we have a baby together?'[end if][at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 4:
+	otherwise if the delicateness of the player < 4:
 		say "[first custom style]'[one of]Stay away from me, asshole!'[or]Stay away from me you asshole!'[or]I want nothing to do with you.'[at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 7:
+	otherwise if the delicateness of the player < 7:
 		say "[first custom style]'[one of]I hope you're satisfied. You're not going to get away with treating me like that again.'[or]I hope you fucking enjoyed that, because it's not happening again.'[or]Don't think you're going to get away with what you did to me!'[or]Isn't [if N is 1]once[otherwise][N] times[end if] enough, asshole?'[at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 10:
+	otherwise if the delicateness of the player < 10:
 		say "[variable custom style]'[one of]Who do you think you are, treating me like that...'[or]This isn't over, I'll make you pay for what you've done....later.'[or]I guess I can forgive you for what happened. If you promise not to do it again.'[at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 12:
+	otherwise if the sex addiction of the player < 10:
 		say "[variable custom style]'[one of]You're not half bad, you know.'[or]I forgive you for what happened earlier. It wasn't that bad...'[or]I guess I could stand to fuck you again. But only if you ask!'[or]Ok, if you apologize for what happened earlier, I'll let you have a round [P].'[at random][roman type][line break]";
-	otherwise if the sex addiction of the player < 15:
+	otherwise if the player is not a nympho:
 		say "[second custom style]'[one of]Hey there. You sure know how to have a good time.'[or]I can go another round, if you want.'[or]So, want to go again? That last fuck was pretty good.'[or]You sure know how to please a lady. Want to go for round [P]?'[at random][roman type][line break]";
 	otherwise:
 		say "[second custom style]'[one of]Hey baby. Ready to put [if M is male]your [manly-penis][otherwise]something[end if] in me again?'[or]Feel like another round, [if M is male]big boy'[otherwise]sexy?'[end if][or]Hey baby. Do you want to go again?'[or]I'm always up for another round, sexy. Always.'[at random][roman type][line break]".

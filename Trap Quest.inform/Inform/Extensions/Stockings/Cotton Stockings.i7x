@@ -2,7 +2,7 @@ Cotton Stockings by Stockings begins here.
 
 A frilly stockings is a kind of stockings. There is 1 frilly stockings. A frilly stockings is usually cotton. A frilly stockings is usually sheer-when-wet. The text-shortcut of frilly stockings is "fst".
 
-Figure of cotton stockings is the file "cottonstockings1.png".
+Figure of cotton stockings is the file "Items\Clothes\Lower\Legs\cottonstockings1.png".
 
 To decide which figure-name is clothing-image of (C - a frilly stockings):
 	decide on figure of cotton stockings.

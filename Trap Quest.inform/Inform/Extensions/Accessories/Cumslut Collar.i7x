@@ -10,7 +10,7 @@ To decide which number is the oral-sex-addiction-influence of (C - a cumslut col
 	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on S.
 
-Figure of cumslut collar is the file "collar3.png".
+Figure of cumslut collar is the file "Items\Accessories\Neck\collar3.png".
 
 To decide which figure-name is clothing-image of (C - a cumslut collar):
 	decide on figure of cumslut collar.
@@ -26,6 +26,13 @@ To decide which number is the bartering value of (T - a cumslut collar) for (M -
 
 To decide which number is the bartering value of (T - a cumslut collar) for (M - a dominatrix):
 	decide on 4.
+
+Definition: a cumslut collar (called C) is untransformable:
+	if the semen taste addiction of the player >= highest body part sex addiction * 2, decide yes;
+	decide no.
+
+To decide which object is the unique-upgrade-target of (C - a cumslut collar):
+	decide on a random off-stage fuckdoll collar.
 
 
 Cumslut Collar ends here.

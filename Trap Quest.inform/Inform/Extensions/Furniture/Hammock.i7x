@@ -4,7 +4,7 @@ a hammock is a kind of furniture. There are 3 hammocks. The printed name of hamm
 To say HammockDesc:
 	if images visible is 1, display figure of hammock;
 	say "A relaxing looking hammock is strung quite low between two trees.".
-Figure of hammock is the file "hammock1.png".
+Figure of hammock is the file "Env/Forest/hammock1.png".
 
 To compute furniture resting on (H - a hammock):
 	if the player is upright:[if the player is upright, the hammock works differently than normal furniture]

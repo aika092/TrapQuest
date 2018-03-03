@@ -1,6 +1,6 @@
 Demongirl Tattoo by Tattoos begins here.
 
-demongirl tattoo is a kind of body tattoo. Figure of demongirl tattoo is the file "tattoo52.png". There is 1 demongirl tattoo.
+demongirl tattoo is a kind of body tattoo. Figure of demongirl tattoo is the file "Items/Tats/tattoo52.png". There is 1 demongirl tattoo.
 Definition: a demongirl tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - a demongirl tattoo):

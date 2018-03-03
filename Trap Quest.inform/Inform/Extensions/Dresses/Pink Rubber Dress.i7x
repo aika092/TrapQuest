@@ -6,7 +6,7 @@ There is 1 pink rubber dress.
 
 The printed name of pink rubber dress is usually "[TQlink of item described][clothing-title-before]pink rubber dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink rubber dress is "prd".
 
-Figure of pink rubber dress is the file "rubberdress1.png".
+Figure of pink rubber dress is the file "Items\Clothes\Upper\Latex\rubberdress1.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber dress):
 	decide on figure of pink rubber dress.

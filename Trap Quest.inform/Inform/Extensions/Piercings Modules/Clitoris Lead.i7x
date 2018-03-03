@@ -1,6 +1,6 @@
 Clitoris Lead by Piercings Modules begins here.
 
-A clitoris lead is a kind of piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. There is 1 clitoris lead. Figure of clitoris lead is the file "clitlead1.png".
+A clitoris lead is a kind of piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. There is 1 clitoris lead. Figure of clitoris lead is the file "Items\Accessories\Piercings\clitlead1.png".
 
 To decide which figure-name is the clothing-image of (C - a clitoris lead):
 	decide on figure of clitoris lead.
@@ -23,7 +23,7 @@ To decide which number is the initial outrage of (C - a clitoris lead):
 	decide on 20.
 
 To say PiercingFlav of (P - a clitoris lead):
-	say "An arm comes down with a short piece of chain!  You whimper meekly, expecting the piercing needle to join it. However, instead the chain is simply brought down to your clitoris, and one end of it is connected to your clit piercing. The two have combined into a single piece of metal that looks somehow welded together!  You now have what is essentially a short leash permanently connected to your clit.[line break][variable custom style]If someone gets hold of this, there'd be no way I could fight back, it would be way too painful!  [if the sex addiction of the player < 15]How concerning... how am I supposed to fight back now?[otherwise]I guess it's lucky that getting fucked is so fun, then![end if][roman type][line break]";
+	say "An arm comes down with a short piece of chain!  You whimper meekly, expecting the piercing needle to join it. However, instead the chain is simply brought down to your clitoris, and one end of it is connected to your clit piercing. The two have combined into a single piece of metal that looks somehow welded together!  You now have what is essentially a short leash permanently connected to your clit.[line break][variable custom style]If someone gets hold of this, there'd be no way I could fight back, it would be way too painful! [if the player is not a nympho]How concerning... how am I supposed to fight back now?[otherwise]I guess it's lucky that getting fucked is so fun, then![end if][roman type][line break]";
 	if image cutscenes is 1, display figure of modmachine cutscene 1.
 
 To decide which object is the concealer of (C - a clitoris lead):

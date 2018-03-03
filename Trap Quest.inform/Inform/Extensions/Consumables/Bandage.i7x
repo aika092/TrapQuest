@@ -5,6 +5,9 @@ A bandage is a kind of thing. There are 3 bandages. The printed name of bandage 
 
 bandaging is an action applying to one thing.
 
+To say ShortDesc of (C - a bandage):
+	say "bandage".
+
 Check drinking bandage:
 	try bandaging the noun instead.
 Check lubing bandage:

@@ -4,7 +4,7 @@ RoboButler by Monster begins here.
 
 A robobutler is a kind of robot. Understand "butler" as robobutler. A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118.
 
-Figure of robobutler is the file "robobutler1.png". The description of robobutler is usually "[RoboButlerDesc]".
+Figure of robobutler is the file "NPCs/Hotel/Robot/robobutler1.png". The description of robobutler is usually "[RoboButlerDesc]".
 
 A polite robobutler is a kind of robobutler. There is 1 polite robobutler. The text-shortcut of polite robobutler is "prb".
 The printed name of polite robobutler is "[if item described is in the location of the player][TQlink of item described][end if][input-style]polite RoboButler[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
@@ -150,6 +150,7 @@ This is the robobutler punishment rule:
 		now the size of P is a random number between the openness of O and the openness of O - 2;
 		if the size of P is 0, now the size of P is 1;
 		say "[speech style of M]'CORRECTING ANOMALOUS DISCHARGE.'[roman type] The [M] pulls out a [printed name of P], and pushes it into your [variable O]!";
+		now P is cursed;
 		if O is vagina:
 			summon P vaginally;
 		otherwise:

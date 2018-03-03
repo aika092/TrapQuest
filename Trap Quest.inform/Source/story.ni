@@ -642,6 +642,7 @@ Include Fetish Corset by Corsets.
 Include Bat Corset by Corsets.
 Include Santa Corset by Corsets.
 Include Spike Corset by Corsets.
+Include Ballet Corset by Corsets.
 
 Include Skirts Framework by Skirts.
 Include Microskirts by Skirts.
@@ -694,6 +695,7 @@ Include Bib by Accessories.
 Include Vampiric Cape by Accessories.
 Include Lipstick Collar by Accessories.
 Include Cumslut Collar by Accessories.
+Include Fuckdoll Collar by Accessories.
 Include Research Airhancer by Accessories.
 
 Include Armband by Accessories.
@@ -964,6 +966,7 @@ Include DQ Punishments by Monster Framework.
 Include Special Events by Monster Framework.
 Include Diaper Events by Monster Framework.
 Include Requested Sex by Monster Framework.
+Include Penetrative Sex by Monster Framework.
 Include Attacking Monsters by Monster Framework.
 Include Dominating Monsters by Monster Framework.
 

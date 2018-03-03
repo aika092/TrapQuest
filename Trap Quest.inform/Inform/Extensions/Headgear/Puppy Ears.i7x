@@ -1,6 +1,6 @@
 Puppy Ears by Headgear begins here.
 
-A puppy ears is a kind of headgear. A puppy ears is usually manly. There is 1 puppy ears. Figure of puppy ears is the file "puppyears1.png". Understand "pair", "of" as puppy ears. A puppy ears is blondeness-negative. A puppy ears is brightness-positive. A puppy ears is redness-negative. A puppy ears is usually hair growing. A puppy ears is usually dexterity-influencing. A puppy ears is usually roleplay.
+A puppy ears is a kind of headgear. A puppy ears is usually manly. There is 1 puppy ears. Figure of puppy ears is the file "Items\Accessories\Head\puppyears1.png". Understand "pair", "of" as puppy ears. A puppy ears is blondeness-negative. A puppy ears is brightness-positive. A puppy ears is redness-negative. A puppy ears is usually hair growing. A puppy ears is usually dexterity-influencing. A puppy ears is usually roleplay.
 
 Definition: a puppy ears (called C) is fluid immune:
 	decide yes.
@@ -25,6 +25,7 @@ puppy-summoned is a number that varies.
 To compute class outfit of (H - a puppy ears):
 	let K be a random off-stage puppy mittens;
 	let P be a random off-stage puppy tail plug;
+	let G be a random off-stage puppy bone gag;
 	if K is actually summonable or (K is puppy mittens and puppy-summoned is 0):
 		if puppy-summoned is 0:
 			repeat with O running through worn slap ready equippables:
@@ -38,7 +39,10 @@ To compute class outfit of (H - a puppy ears):
 		say "[bold type]You feel your [asshole] suddenly invaded by a foreign object!  Looking around you see a puppy tail swaying proudly from your [asshole].[roman type][line break]";
 		summon P cursed;
 		let X be the openness of asshole + the number of worn clothing;
-		assign size X to P.
+		assign size X to P;
+	otherwise if the class of the player is puppygirl and G is actually summonable:
+		say "[bold type]You feel your mouth suddenly bite down around a foreign object!  You are now wearing a bone shaped gag.[roman type][line break]";
+		summon G cursed.
 
 
 Puppy Ears ends here.

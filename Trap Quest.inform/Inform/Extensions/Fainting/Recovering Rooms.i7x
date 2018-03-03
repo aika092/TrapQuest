@@ -48,11 +48,11 @@ To Recover Rooms:
 	repeat with R running through haunted rooms:
 		now Neighbour Finder is R;
 		unless R is the location of the player, totally clean R;
-		if R is Mansion00:
-			if the location of the player is R, now the player is in Mansion01;
-			now the grid position of R is <0,0,0>;
-			repeat with D running through N-viable directions:
-				change the D exit of R to Solid Rock;
+		[if R is Mansion00:
+			if the location of the player is R, now the player is in Mansion01;]
+		now the grid position of R is <0,0,0>;
+		repeat with D running through N-viable directions:
+			change the D exit of R to Solid Rock;
 		if R is the location of the player, now the slime-puddle of R is 0;
 	repeat with F running through on-stage furniture:
 		unless F is permanent fixture, destroy F;

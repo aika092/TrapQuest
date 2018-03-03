@@ -7,8 +7,8 @@ A demon horns has a number called blackfire. The blackfire of a demon horns is u
 
 The printed name of demon horns is usually "[TQlink of item described][clothing-title-before]demon horns[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon horns is "dh".
 
-Figure of demon horns 1 is the file "demonhorns1.png".
-Figure of demon horns 2 is the file "demonhorns2.png".
+Figure of demon horns 1 is the file "Items\Accessories\Head\demonhorns1.png".
+Figure of demon horns 2 is the file "Items\Accessories\Head\demonhorns2.png".
 
 To decide which figure-name is the clothing-image of (C - a demon horns):
 	if the player is soulless, decide on figure of demon horns 2;

@@ -20,7 +20,13 @@ REQUIRES COMMENTING
 
 +!]
 To Compute Compulsions:
-	if there is a carried throbbing-tentacle:
+	if there is a worn drinkme tattoo and the semen taste addiction of the player < 20 and the player is not desperately craving and the urine taste addiction of the player <= 15 and the player is not almost too full and there is a held non-empty bottle and face is not actually occupied and the player is not in danger and the player is able to use their hands:
+		let C be a random held non-empty bottle;
+		if C is bottle:
+			say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of C] to your lips!";
+			try drinking C;
+			now another-turn is 1;
+	otherwise if there is a carried throbbing-tentacle:
 		let P be a random carried throbbing-tentacle;
 		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is male][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
@@ -86,7 +92,7 @@ To compute broken sex of (M - a monster):
 		if the sensitivity of breasts > 7 and there is a worn nipple chain and M is male and M is willing to do titfucks, now B is breasts;
 	otherwise:
 		decrease broken-present-cooldown by seconds;
-	if B is body part and the sex addiction of the player > a random number between 10 and 18: [If it is nothing, this means there's no sex we can have right now.]
+	if B is body part and the sex addiction of the player > a random number between 12 and 18: [If B is nothing, this means there's no sex we can have right now.]
 		if M is interested:
 			say "Without a second thought, you crawl towards the [M].";
 		otherwise:

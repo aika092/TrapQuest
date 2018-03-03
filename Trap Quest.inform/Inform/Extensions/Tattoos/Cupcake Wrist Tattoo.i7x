@@ -1,7 +1,7 @@
 Cupcake Wrist Tattoo by Tattoos begins here.
 
 
-cupcake wrist tattoo is a kind of body tattoo. Figure of cupcake wrist tattoo is the file "tattoo63.png". There is 1 cupcake wrist tattoo.
+cupcake wrist tattoo is a kind of body tattoo. Figure of cupcake wrist tattoo is the file "Items/Tats/tattoo63.png". There is 1 cupcake wrist tattoo.
 Definition: a cupcake wrist tattoo (called T) is eligible:
 	if the noun is food, decide yes;
 	decide no.

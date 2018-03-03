@@ -2,7 +2,7 @@ Exercise Bra by Bra begins here.
 
 An exercise bra is a kind of bra. A modest exercise bra is a kind of exercise bra. A sexy exercise bra is a kind of exercise bra.
 
-Figure of exercise bra is the file "exercisebra1.png". Figure of sexy exercise bra is the file "exercisebra2.png".
+Figure of exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra1.png". Figure of sexy exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra2.png".
 
 There is 1 modest exercise bra. The text-shortcut of modest exercise bra is "ebr". There is 1 unique sexy exercise bra. The text-shortcut of sexy exercise bra is "sbr".
 

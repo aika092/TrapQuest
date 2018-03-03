@@ -3,6 +3,9 @@ Semen Movements by Every Turn begins here.
 Include Absorption by Every Turn.
 Include Pregnancy by Every Turn.
 
+To decide which number is vagina-semen-frequency:
+	decide on 129.
+
 [!<ComputeCumMovements>+
 
 REQUIRES COMMENTING
@@ -36,48 +39,43 @@ A time based rule (this is the compute cum movements rule):
 					if the size of M > max breast size, now the size of M is max breast size;
 					say "A maternity bra materialises over your breasts![if the size of M is the largeness of breasts + 3]It's way too big for you, as if it has purposefully been left with room for growth![end if]";
 			compute enema holding;
-		if the semen volume of vagina > 0:
-			if pregnancy fetish is 1:
-				if the pregnancy of the player is 0:
-					let R be a random number from -420 to the semen volume of vagina;
-					if the pregnancy rate of the player is 2, now R is a random number from -250 to the semen volume of vagina;
-					if the pregnancy rate of the player > 2, now R is a random number from -155 to the semen volume of vagina;
-					if the pregnancy rate of the player < 1, now R is a random number from -840 to the semen volume of vagina;
-					if the class of the player is cheerleader, decrease R by 5;
-					if there is a worn maternity dress or the class of the player is fertility goddess, increase R by 5; [TODO probably needs better balancing]
-					if R > 1 and the number of family things > 0 and the virgin of the player is 0 and slow pregnancy < 3:
-						say "[ConceptionFlav]";
-						now the pregnancy of the player is 1;
-						check goddess eligibility;
-				otherwise:
-					if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
-					compute pregnancy;
-			if the pregnancy of the player is 0:
-				let R be a random number between -1 and (85 + (pregnancy fetish * 85));
-				if debugmode is 1, say "Womb action check of [R][paragraph break]";
-				if R < the semen volume of vagina:
-					let S be a random number between 1 and 7;
-					if the latex-transformation of the player > 3, now S is 5;
-					if S is 1:
+		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:
+			if the womb volume of vagina > 0:
+				if pregnancy fetish is 1:
+					if the pregnancy of the player is 0:
+						let PR be 0 - the pregnancy rate of the player;
+						if the class of the player is cheerleader, increase PR by 3;
+						if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]
+						let R be a random number from PR to 5;
+						if R <= the womb volume of vagina and the number of family things > 0 and the virgin of the player is 0 and slow pregnancy < 3:
+							say "[ConceptionFlav]";
+							now the pregnancy of the player is 1;
+							check goddess eligibility;
+					otherwise:
+						if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
+						compute pregnancy;
+			if the remainder after dividing time-earnings by (vagina-semen-frequency * 2) < time-seconds and the latex-transformation of the player <= 3: [half the time we are going to cause womb absorption, the other half is pussy trickling]:
+				if the pregnancy of the player is 0 and the womb volume of vagina > 0: [Womb semen isn't absorbed during a pregnancy!]
+					let S be a random number between 1 and 3;
+					[if S is 1:
 						say "[one of]You feel a warm feeling in your womb.[or]You feel some pressure lifted from within your womb.[or]Heat rises from your womb up to your chest.[at random]";
-						Wombsquirt 1;
-						Bustup 1;
-					if S is 2:
+						WombEmpty 1;
+						Bustup 1;]
+					if S is 1:
 						say "[one of]A burning sense of passion runs through you.[or]Your womb sends a wave of ecstasy over your body.[or]You feel your womb cry out for more [semen].[at random]";
-						Wombsquirt 1;
+						WombEmpty 1;
 						SemenAddictUp 3;
-					if S is 3:
+					if S is 2:
 						say "[one of]You feel a wave of calm come over you.[or]Your mind focuses on your womb, which feels pleasant.[at random]";
-						Wombsquirt 1;
+						WombEmpty 1;
 						IntUp 1;
-					if S is 4:
+					if S is 3:
 						say "[one of]You feel a warm feeling in your womb.[or]You feel some pressure lifted from within your womb.[or]Heat flows from your womb up outwards to your hips.[at random]";
-						Wombsquirt 1;
+						WombEmpty 1;
 						Hipup 1;
-					if S > 4:
-						say "A large glob of [semen] [one of]slowly seeps[or]leaks[purely at random] out of your [vagina] and [if the player is pee protected and bukkake fetish is 1]stains your [printed name of random worn bottom level pee protection clothing].[otherwise]trickles down your [ShortDesc of thighs].[end if]";
-						Wombsquirt 1;
-						leak vagina semen 1.
+			otherwise if the semen volume of vagina > 0:
+				say "A large glob of [semen] [one of]slowly seeps[or]leaks[purely at random] out of your [vagina] and [if the player is pee protected and bukkake fetish is 1]stains your [printed name of random worn bottom level pee protection clothing].[otherwise if the player is prone]puddles below you[otherwise]trickles down your [ShortDesc of thighs].[end if]";
+				PussySquirt 1.
 
 [!<CheckGoddessEligibility>+
 

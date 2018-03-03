@@ -10,9 +10,9 @@ To compute SelfExamineDesc of (O - a royal dress):
 To say ShortDesc of (O - a royal dress):
 	say "pink silky royal dress";
 
-Figure of Royal Dress 1 is the file "royaldress1.png". 
-Figure of Royal Dress 2 is the file "royaldress2.png".
-Figure of Royal Dress 3 is the file "royaldress3.png".
+Figure of Royal Dress 1 is the file "Items\Clothes\Upper\Dresses\Royal\royaldress1.png". 
+Figure of Royal Dress 2 is the file "Items\Clothes\Upper\Dresses\Royal\royaldress2.png".
+Figure of Royal Dress 3 is the file "Items\Clothes\Upper\Dresses\Royal\royaldress3.png".
 
 To decide which number is the intelligence-influence of (O - a royal dress):
 	let I be 1;

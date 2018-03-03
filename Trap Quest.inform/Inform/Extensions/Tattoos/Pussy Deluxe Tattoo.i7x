@@ -1,6 +1,6 @@
 Pussy Deluxe Tattoo by Tattoos begins here.
 
-pussy deluxe tattoo is a kind of crotch tattoo. Figure of pussy deluxe tattoo is the file "tattoo46.png". There is 1 pussy deluxe tattoo.
+pussy deluxe tattoo is a kind of crotch tattoo. Figure of pussy deluxe tattoo is the file "Items/Tats/tattoo46.png". There is 1 pussy deluxe tattoo.
 Definition: a pussy deluxe tattoo (called A) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;

@@ -70,6 +70,7 @@ REQUIRES COMMENTING
 +!]
 To repair (C - clothing):
 	replace C;
+	now C is top-intact;
 	if C is crotch-ripped:
 		if C is hobble-skirted, now C is crotch-skirted;
 		otherwise now C is crotch-intact;

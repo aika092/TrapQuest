@@ -2,7 +2,7 @@ Lipstick Collar by Accessories begins here.
 
 A lipstick collar is a kind of submissive collar. There is 1 lipstick collar in Mansion16. Printed name of lipstick collar is "[TQlink of item described][clothing-title-before][if item described is tethering]thieves collar[otherwise]lipstick collar[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of lipstick collar is "lsc". A lipstick collar can be tethering or not tethering. A lipstick collar is usually not tethering. A lipstick collar is usually leather. Understand "thief", "lip", "stick", "thieves" as lipstick collar.
 
-Figure of lipstick collar is the file "lipstickcollar1.png".
+Figure of lipstick collar is the file "Items\Accessories\Neck\lipstickcollar1.png".
 
 To decide which figure-name is clothing-image of (C - a lipstick collar):
 	decide on figure of lipstick collar.

@@ -1,6 +1,6 @@
 Cloth Revolution Tattoo by Tattoos begins here.
 
-cloth revolution tattoo is a kind of dq tattoo. Figure of cloth revolution tattoo is the file "tattoo56.png". There is 1 cloth revolution tattoo.
+cloth revolution tattoo is a kind of dq tattoo. Figure of cloth revolution tattoo is the file "Items/Tats/tattoo56.png". There is 1 cloth revolution tattoo.
 Definition: a cloth revolution tattoo (called T) is eligible:
 	if the noun is diaper, decide yes;
 	decide no.

@@ -4,7 +4,7 @@ headmistress is a staff member. headmistress is captive. headmistress is female.
 
 headmistress is in School08. The printed name of headmistress is "[if item described is in the location of the player][TQlink of item described][end if][input-style]headmistress[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of headmistress is "[HeadmistressDesc]". The text-shortcut of headmistress is "hdm".
 
-Figure of headmistress is the file "headmistress1.png".
+Figure of headmistress is the file "NPCs/School/headmistress1.png".
 
 To say HeadmistressDesc:
 	if images visible is 1, display the figure of headmistress;

@@ -1,6 +1,6 @@
 PJ Bottoms by Trousers begins here.
 
-A pyjama bottoms is a kind of yoga pants. A kitty cat pyjama bottoms is a kind of pyjama bottoms. There is 1 unique cursed kitty cat pyjama bottoms. The printed name of kitty cat pyjama bottoms is usually "[TQlink of item described][clothing-title-before]kitty cat pyjama bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".The text-shortcut of kitty cat pyjama bottoms is "kpj". Figure of kitty cat pyjama bottoms is the file "yogapants2.png".
+A pyjama bottoms is a kind of yoga pants. A kitty cat pyjama bottoms is a kind of pyjama bottoms. There is 1 unique cursed kitty cat pyjama bottoms. The printed name of kitty cat pyjama bottoms is usually "[TQlink of item described][clothing-title-before]kitty cat pyjama bottoms[clothing-title-after][TQxlink of item described][verb-desc of item described]".The text-shortcut of kitty cat pyjama bottoms is "kpj". Figure of kitty cat pyjama bottoms is the file "Items\Clothes\Lower\Pants\Yoga\yogapants2.png".
 
 To decide which figure-name is clothing-image of (H - a pyjama bottoms):
 	decide on figure of kitty cat pyjama bottoms.

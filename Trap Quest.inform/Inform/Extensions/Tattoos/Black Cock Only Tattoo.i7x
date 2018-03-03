@@ -1,6 +1,6 @@
 Black Cock Only Tattoo by Tattoos begins here.
 
-black cock only tattoo is a kind of lower back tattoo. A black cock only tattoo is interracial related. Figure of black cock only tattoo is the file "tattoo77.png". There is 1 black cock only tattoo.
+black cock only tattoo is a kind of lower back tattoo. A black cock only tattoo is interracial related. Figure of black cock only tattoo is the file "Items/Tats/tattoo77.png". There is 1 black cock only tattoo.
 Definition: a black cock only tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;
 	if interracial fetish is 0, decide no;

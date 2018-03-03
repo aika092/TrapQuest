@@ -87,7 +87,7 @@ To initialise bondage prisoner:
 		now A is a random off-stage pair of handcuffs;
 		now A is bound-in-front;
 	let C be a random off-stage chastity cage;
-	let G be a random off-stage fetish appropriate ballgag;
+	let G be a random off-stage small ballgag;
 	let S be a random off-stage slave collar;
 	let D be a random off-stage eligible plentiful diaper;
 	summon A locked;

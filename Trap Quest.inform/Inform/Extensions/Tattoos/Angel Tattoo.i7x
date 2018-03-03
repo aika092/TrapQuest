@@ -1,6 +1,6 @@
 Angel Tattoo by Tattoos begins here.
 
-angel tattoo is a kind of body tattoo. Figure of angel tattoo is the file "tattoo51.png". There is 1 angel tattoo.
+angel tattoo is a kind of body tattoo. Figure of angel tattoo is the file "Items/Tats/tattoo51.png". There is 1 angel tattoo.
 Definition: an angel tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - an angel tattoo):

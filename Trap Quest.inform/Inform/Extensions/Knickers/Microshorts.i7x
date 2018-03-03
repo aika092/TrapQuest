@@ -19,7 +19,7 @@ There is 1 gold microshorts. The text-shortcut of gold microshorts is "gmi".
 To decide which figure-name is clothing-image of (H - a gold microshorts):
 	decide on figure of gold microshorts.
 
-Figure of gold microshorts is the file "microshorts1.png".
+Figure of gold microshorts is the file "Items\Clothes\Lower\Underwear\Skimpy\microshorts1.png".
 
 To say UniqueTitle of (K - a gold microshorts):
 	say "shiny gold microshorts".
@@ -36,7 +36,7 @@ There is 1 black microshorts. The text-shortcut of black microshorts is "bmi".
 To decide which figure-name is clothing-image of (H - a black microshorts):
 	decide on figure of black microshorts.
 
-Figure of black microshorts is the file "microshorts2.png".
+Figure of black microshorts is the file "Items\Clothes\Lower\Underwear\Skimpy\microshorts2.png".
 
 To say UniqueTitle of (K - a black microshorts):
 	say "shiny black microshorts".

@@ -1,6 +1,6 @@
 Swords by Equippables begins here.
 
-A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal. Understand "sword" as sword. Understand "statue", "stone" as sword when item described is in Woods26 and item described is not held. Figure of sword is the file "sword1.png".
+A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal. Understand "sword" as sword. Understand "statue", "stone" as sword when item described is in Woods26 and item described is not held. Figure of sword is the file "Items\Accessories\Equippables\sword1.png".
 
 To decide which figure-name is clothing-image of (C - a sword):
 	decide on figure of sword.
@@ -135,7 +135,7 @@ Section 2 - Dildo Sword
 
 A dildo sword is a kind of sword. There is 1 dildo sword. A dildo sword is usually unique. A dildo sword is usually plastic. A dildo sword has a number called dildo girth. The dildo girth of a dildo sword is usually 5. The text-shortcut of dildo sword is "ds". The printed name of dildo sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]dildo in the statue[otherwise]dildo sword[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". 
 
-Figure of dildo sword is the file "sword2.png".
+Figure of dildo sword is the file "Items\Accessories\Equippables\sword2.png".
 
 To decide which figure-name is clothing-image of (C - a dildo sword):
 	decide on figure of dildo sword.
@@ -300,9 +300,9 @@ To compute attack effect of (W - a demon broadsword):
 			increase the arousal of W by a random number between 1 and 2;
 			say "The hilt pulses, hardening in your hand as you pull back from your attack[one of]! It's almost like it's getting excited by having somebody swing it around[or][stopping]!";
 			if the bimbo of the player < 13 and the relevant sex addiction of the player < 15:
-				say "[one of]Ugh. That's disgusting.[or][or]Ohh... this feels disturbingly like holding an actual, stiffening penis.[or][or]Stop that, you disgusting sword! I'm not doing this for [i]your[/i] pleasure! What sort of pervert makes a hilt that looks like a penis?[or][or]Dammit! The more I use this, the more it feels like an actual penis.[or][or]Good grief! I hope my friends can't see this penis-hilt, and think I'm enjoying groping it![then at random]";
+				if a random number between 1 and 2 is 1, say "[first custom style][one of]Ugh. That's disgusting.[or]Ohh... this feels disturbingly like holding an actual, stiffening penis.[or]Stop that, you disgusting sword! I'm not doing this for your pleasure! What sort of pervert makes a hilt that looks like a penis?[or]Dammit! The more I use this, the more it feels like an actual penis.[or]Good grief! I hope my friends can't see this penis-hilt, and think I'm enjoying groping it![then at random][roman type]";
 			otherwise:
-				say "[one of]Ohh, actually, that's kind of [i]nice[/i] to squeeze![or][or]I wish this was a real [penis] I was holding[or][or]Yeah, baby, get thicker, maybe I'll find [i]another[/i] use for you.[or][or]I love the way it feels, swelling up while I grip it![or][or][if tg fetish >= 1]I wonder if this is what they do with the left-over penises? This might be some former player's penis, tee he![otherwise]I wonder if this penis actually belongs to somebody. Maybe if I return it, the owner will fuck me as a reward![end if][or][or]I [if tg fetish >= 1]wonder if [i]my[/i] penis[otherwise]hope every penis[end if] might one day be used like this.[or][or]I wouldn't mind using the handle for something [i]else[/i] if I win this fight![then at random]";
+				if a random number between 1 and 2 is 1, say "[second custom style][one of]Ohh, actually, that's kind of nice to squeeze![or]I wish this was a real [penis] I was holding[or]Yeah, baby, get thicker, maybe I'll find another use for you.[or]I love the way it feels, swelling up while I grip it![or][if tg fetish >= 1]I wonder if this is what they do with the left-over penises? This might be some former player's penis, tee hee![otherwise]I wonder if this penis actually belongs to somebody. Maybe if I return it, the owner will fuck me as a reward![end if][or]I [if tg fetish >= 1]wonder if my penis[otherwise]hope every penis[end if] might one day be used like this.[or]I wouldn't mind using the handle for something else if I win this fight![then at random][roman type]";
 		otherwise if W is not dildoed:
 			compute demon punishment of W;
 		otherwise:
@@ -337,7 +337,7 @@ To compute periodic effect of (H - a demon broadsword):
 					say "Its red surface glistens with a mixture of your spit and its own masculine juices, causing your head to swim as you breathe in its incredibly potent masculine musk.";
 					IntDown 1;
 					SemenTasteAddictUp 1;
-					Arouse 200 + the sex addiction of the player * 10;
+					Arouse 200 + (the semen taste addiction of the player * 10);
 					decrease the arousal of H by 2;
 				FatigueUp 30 - S;[the lower S is, the more fatigued you get]
 			otherwise:
@@ -392,7 +392,7 @@ Definition: A giant rattle (called S) is immune to change:
 
 The printed name of giant rattle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]giant rattle[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of giant rattle is "rat".
 
-Figure of giant rattle is the file "rattle1.png".
+Figure of giant rattle is the file "Items\Accessories\Equippables\rattle1.png".
 
 To decide which figure-name is clothing-image of (C - a giant rattle):
 	decide on figure of giant rattle.

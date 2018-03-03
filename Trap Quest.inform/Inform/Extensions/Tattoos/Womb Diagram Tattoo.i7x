@@ -1,6 +1,6 @@
 Womb Diagram Tattoo by Tattoos begins here.
 
-womb diagram tattoo is a kind of crotch tattoo. Figure of womb diagram tattoo is the file "tattoo18.png". There is 1 womb diagram tattoo.
+womb diagram tattoo is a kind of crotch tattoo. Figure of womb diagram tattoo is the file "Items/Tats/tattoo18.png". There is 1 womb diagram tattoo.
 Definition: a womb diagram tattoo (called T) is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;

@@ -1,6 +1,6 @@
 Sheer Bra by Bra begins here.
 
-A flimsy bra is a kind of bra. Figure of sheer bra is the file "sheerbra1.png". Understand "sheer" as flimsy bra.
+A flimsy bra is a kind of bra. Figure of sheer bra is the file "Items/Clothes/Upper/Bras/sheerbra1.png". Understand "sheer" as flimsy bra.
 
 [The printed name of the bra is sheer bra hence the shortcut. Since sheer is already a keyword the game wouldn't let me create an object called the sheer bra hence why it's object identifier is flimsy bra. A player in-game will never see the word "flimsy".]
 There is 1 unique flimsy bra. The text-shortcut of flimsy bra is "shb".

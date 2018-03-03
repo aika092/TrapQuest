@@ -16,7 +16,7 @@ To decide which number is the overload of (C - an underdress):
 To decide which number is the overload of (C - a corset):
 	decide on the number of in-play corsets.
 To decide which number is the overload of (C - a knickers):
-	decide on the number of in-play knickers - 1.
+	decide on the number of in-play knickers - 1 - the number of knickers in Dungeon41.
 To decide which number is the overload of (C - a diaper):
 	if diaper quest is 1, decide on 0;
 	decide on the number of in-play knickers - 1.

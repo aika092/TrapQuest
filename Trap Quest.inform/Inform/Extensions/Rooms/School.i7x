@@ -9,7 +9,7 @@ To decide which number is the entry-rank of (R - a room):
 To say SchoolHallway:
 	say "An identical tiled marble floor to all the other sections of hallway. ".
 
-School01 is an academic room. The printed name of School01 is "Reception". "A receptionist's desk occupies the left hand side of this room. [one of]It looks like there[or]There[stopping] is a hallway to the north.". Stairwell04 is above School01. The shape of School01 is L5/0-0-1-0-0-0. The grid position of School01 is <5,12,5>.
+School01 is an academic room. The printed name of School01 is "Reception". "A receptionist's desk occupies the left hand side of this room. [one of]It looks like there[or]There[stopping] is a hallway to the north.". [Stairwell04 is above School01.] The shape of School01 is L5/0-0-1-0-0-0. The grid position of School01 is <5,12,5>.
 
 [Main Hallway]
 School02 is an academic room. The printed name of School02 is "Hallway". "The tiled marble floor has a large engraving in it which reads 'DISCE PER HOC QUOD LUXURIA' along with a great emblem made of a pair of bare breasts. To the south the door says 'Reception' and to the north the door says 'Food Hall'. The hallway continues for quite a distance to both the east and west.". The shape of School02 is L5/0-0-1-1-1-1. The grid position of School02 is <5,12,6>. School02 is north of School01.

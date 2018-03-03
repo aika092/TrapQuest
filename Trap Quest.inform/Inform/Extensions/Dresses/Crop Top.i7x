@@ -52,7 +52,7 @@ To uniquely set up (C - a milk crop top):
 To decide which number is the initial outrage of (C - a milk crop top):
 	decide on 2.
 	
-Figure of milk crop top is the file "croptop1.png".
+Figure of milk crop top is the file "Items\Clothes\Upper\CropTops\croptop1.png".
 
 To decide which figure-name is clothing-image of (C - a milk crop top):
 	decide on figure of milk crop top.
@@ -77,7 +77,7 @@ To uniquely set up (C - a size does matter crop top):
 To decide which number is the initial outrage of (C - a size does matter crop top):
 	decide on 3.
 	
-Figure of size does matter crop top is the file "croptop2.png".
+Figure of size does matter crop top is the file "Items\Clothes\Upper\CropTops\croptop2.png".
 
 To decide which figure-name is clothing-image of (C - a size does matter crop top):
 	decide on figure of size does matter crop top.
@@ -105,7 +105,7 @@ A baby doll crop top is a kind of crop top. The printed name of baby doll crop t
 
 There is 1 baby doll crop top. A baby doll crop top is usually high cut.
 
-Figure of baby doll crop top is the file "croptop3.png".
+Figure of baby doll crop top is the file "Items\Clothes\Upper\CropTops\croptop3.png".
 
 To decide which figure-name is clothing-image of (C - a baby doll crop top):
 	decide on figure of baby doll crop top.
@@ -128,7 +128,7 @@ There is 1 striped exposing crop top. A striped exposing crop top is usually ave
 To decide which number is the initial outrage of (C - a striped exposing crop top):
 	decide on 5.
 	
-Figure of striped exposing crop top is the file "croptop4.png".
+Figure of striped exposing crop top is the file "Items\Clothes\Upper\CropTops\croptop4.png".
 
 To decide which figure-name is clothing-image of (C - a striped exposing crop top):
 	decide on figure of striped exposing crop top.
@@ -152,7 +152,7 @@ There is 1 unique deepthroat princess crop top. A deepthroat princess crop top i
 To decide which number is the initial outrage of (C - a deepthroat princess crop top):
 	decide on 4.
 	
-Figure of deepthroat princess crop top is the file "croptop5.png".
+Figure of deepthroat princess crop top is the file "Items\Clothes\Upper\CropTops\croptop5.png".
 
 To set up influence of (C - a deepthroat princess crop top):
 	now C is oral-sex-addiction-influencing.
@@ -179,7 +179,7 @@ There is 1 spoiled crop top. A spoiled crop top is usually high cut.
 To decide which number is the initial outrage of (C - a spoiled crop top):
 	decide on 2.
 	
-Figure of spoiled crop top is the file "croptop6.png".
+Figure of spoiled crop top is the file "Items\Clothes\Upper\CropTops\croptop6.png".
 
 To decide which figure-name is clothing-image of (C - a spoiled crop top):
 	decide on figure of spoiled crop top.

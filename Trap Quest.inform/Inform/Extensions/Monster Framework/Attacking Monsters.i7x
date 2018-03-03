@@ -352,12 +352,12 @@ Include Kicking by Actions.
 
 Part 3 - Automatic Surrender
 
-[!<MonsterIsIntimidating>+
+[!<MonsterIsTooIntimidating>+
 
 REQUIRES COMMENTING
 
 +!]
-Definition: a monster (called M) is intimidating:
+Definition: a monster (called M) is too intimidating:
 	if the delicateness of the player < 15, decide no;
 	if M is uninterested or M is friendly, decide no;
 	if the health of M < the maxhealth of M, decide no;
@@ -489,13 +489,31 @@ REQUIRES COMMENTING
 +!]
 To say DamageReaction (N - a number) of (M - a monster):
 	if N > (the maxhealth of M / 4) * 3:
-		say "The [noun] easily takes the hit!";
+		say DamageReactHealthy of M;	
 	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The [noun] flinches, taking the hit!";
+		say DamageReactDamaged of M;
 	otherwise if N > (the maxhealth of M / 4):
-		say "The [noun] takes the hit, staggering!";
+		say DamageReactTired of M;
+	otherwise if M is dominantSexReady:
+		say DamageReactSubmissive of M;
+		if newbie tips is 1, say "[one of][item style]Newbie tip: Looks like the monster is beginning to reconsider [his of M] options! If you'd rather not get rid of [him of M], try dominating them with 'dominate [M].'[roman type][line break][or][stopping]";
 	otherwise:
-		say "The [noun] takes the hit, fighting to maintain [his of M] balance!";
+		say DamageReactWeak of M.
+
+To say DamageReactHealthy of (M - a monster):
+	say "The [noun] easily takes the hit!".
+
+To say DamageReactDamaged of (M - a monster):
+	say "The [noun] flinches, taking the hit!".
+
+To say DamageReactTired of (M - a monster):
+	say "The [noun] takes the hit, staggering!".
+
+To say DamageReactWeak of (M - a monster):
+	say "The [noun] takes the hit, fighting to maintain [his of M] balance!".
+
+To say DamageReactSubmissive of (M - a monster):
+	say "The [M] takes the hit, [his of M] eyes lingering on your crotch as [he of M] fights to maintain [his of M] balance.".
 
 [!<SayDamageFlavourOfNumberOnMonster>+
 

@@ -64,11 +64,11 @@ Check standing:
 	if the player is subdued:
 		say "[StandSubduedFlav of random worn subduing clothing]";
 		try waiting instead;
-	if the player is monster stuck:
-		if the player is monster fucked, try resisting instead;
-		say "The [random monster grabbing the player] is stopping you from standing up!" instead;
 	if gloryhole is penetrating a body part or gloryhole is grabbing the player, say "The magic of the gloryhole is preventing you!" instead;
 	if the player is vine stuck, say "Vines are pinning your wrists to the ground!" instead;
+	if the player is monster stuck:
+		if the player is monster fucked, try resisting instead;
+		say GrabbedStandingBlock of a random monster grabbing the player instead;
 	if the stickiness of the player > 0:
 		if the player is glue stuck:
 			say "You try to struggle to your feet, against the pull of the glue.";
@@ -148,6 +148,8 @@ Report standing:
 Understand "arise", "get up", "unkneel", "lift me", "st" as standing.
 Instead of exiting, try standing.
 
+To say GrabbedStandingBlock of (M - a monster):
+	say "The [M] is stopping you from standing up!".
 
 To say StandingBlock of (M - a monster):
 	say "The [M] grabs onto your [ShortDesc of hair] and stops you from standing up!".

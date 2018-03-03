@@ -1,6 +1,6 @@
 Training Bra by Bra begins here.
 
-A training bra is a kind of bra. Figure of training bra is the file "trainingbra1.png".
+A training bra is a kind of bra. Figure of training bra is the file "Items/Clothes/Upper/Bras/trainingbra1.png".
 
 There is 1 training bra. The text-shortcut of training bra is "tbr".
 

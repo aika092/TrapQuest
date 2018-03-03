@@ -22,8 +22,8 @@ To say ClothingDesc of (H - a thigh high boots):
 To say UniqueShortDesc of (H - a thigh high boots):
 	say "thigh high boots".
 
-Figure of latex thigh boots is the file "thighboots1.png".
-Figure of leather thigh boots is the file "thighboots2.png".
+Figure of latex thigh boots is the file "Items\Clothes\Lower\Feet\Boots\thighboots1.png".
+Figure of leather thigh boots is the file "Items\Clothes\Lower\Feet\Boots\thighboots2.png".
 
 To uniquely set up (C - a thigh high boots):
 	if C is latex, now the text-shortcut of C is "lth";
@@ -39,7 +39,7 @@ To uniquely set up (C - a thigh high boots):
 		if R is 2, now C is kicking;
 	set up heel length of C.
 
-A WC thigh high boots is a kind of thigh high boots. There is 1 unique WC thigh high boots. A WC thigh high boots is usually latex. Figure of WC thigh high boots is the file "WcLatexBoot.png". WC thigh high boots has a number called powerup.
+A WC thigh high boots is a kind of thigh high boots. There is 1 unique WC thigh high boots. A WC thigh high boots is usually latex. Figure of WC thigh high boots is the file "Items\Clothes\Lower\Feet\Boots\WcLatexBoot.png". WC thigh high boots has a number called powerup.
 
 To decide which figure-name is the clothing-image of (H - a WC thigh high boots):
 	decide on figure of WC thigh high boots.

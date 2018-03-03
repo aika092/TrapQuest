@@ -1,6 +1,6 @@
 Silver Bikini Top by Bra begins here.
 
-A silver bikini top is a kind of string bikini top. Figure of bikini 6 is the file "bikini6.png". A silver bikini top is very low cut. The text-shortcut of silver bikini top is "sbt". Understand "skimpy" as silver bikini top.
+A silver bikini top is a kind of string bikini top. Figure of bikini 6 is the file "Items/Clothes/Upper/Bras/bikini6.png". A silver bikini top is very low cut. The text-shortcut of silver bikini top is "sbt". Understand "skimpy" as silver bikini top.
 
 There is 1 silver bikini top.
 

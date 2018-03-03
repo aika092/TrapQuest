@@ -1,6 +1,6 @@
 Leopard Print Bikini Top by Bra begins here.
 
-A leopard print bikini top is a kind of bikini top. Figure of bikini 5 is the file "bikini5.png". A leopard print bikini top is very low cut. The text-shortcut of leopard print bikini top is "lpb". Understand "skimpy" as leopard print bikini top.
+A leopard print bikini top is a kind of bikini top. Figure of bikini 5 is the file "Items/Clothes/Upper/Bras/bikini5.png". A leopard print bikini top is very low cut. The text-shortcut of leopard print bikini top is "lpb". Understand "skimpy" as leopard print bikini top.
 
 There is 1 leopard print bikini top.
 

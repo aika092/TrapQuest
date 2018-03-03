@@ -4,8 +4,8 @@ A bodice is a kind of overdress. A bodice is usually unskirted. A bodice is usua
 
 A pink bodice is a kind of bodice. A pink bodice is usually only arm covering. A black bodice is a kind of bodice. The text-shortcut of pink bodice is "pbl". The text-shortcut of black bodice is "bbl".
 
-Figure of Black Blouse is the file "blouse1.png".
-Figure of Pink Blouse is the file "blouse2.png".
+Figure of Black Blouse is the file "Items\Clothes\Upper\Blouses\blouse1.png".
+Figure of Pink Blouse is the file "Items\Clothes\Upper\Blouses\blouse2.png".
 
 To decide which figure-name is clothing-image of (C - a bodice):
 	if C is pink bodice, decide on Figure of Pink Blouse;

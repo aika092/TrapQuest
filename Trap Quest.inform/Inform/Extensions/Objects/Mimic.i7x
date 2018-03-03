@@ -1,11 +1,11 @@
 Mimic by Objects begins here.
 
-memic is a container. memic is openable. memic is closed. memic is not portable. The printed name of memic is "[TQlink of item described][MimicName][shortcut-desc][TQxlink of item described][verb-desc of item described]". The description is "MimicDesc". There is 1 untrappable memic.[it's called a memic so you can't just type "look mimic". If you know the hard-coded name, more power to you.] A memic has a number called mimic-boredom. The mimic-boredom of a memic is usually 0. The text-shortcut of a memic is usually "mim".
+memic is a container. memic is openable. memic is closed. memic is not portable. The printed name of memic is "[TQlink of item described][MimicName][shortcut-desc][TQxlink of item described][verb-desc of item described]". The description is "[MimicDesc]". memic is in Holding Pen.[it's called a memic so you can't just type "look mimic". If you know the hard-coded name, more power to you.] A memic has a number called mimic-boredom. The mimic-boredom of a memic is usually 0. The text-shortcut of a memic is usually "mim". memic is untrappable.
 
 To decide which indexed text is the text-shortcut of (H - a memic):
 	decide on the text-shortcut of a random container in the location of H.
 
-memic has a thing called mimic-disguise. The mimic-disguise of memic is usually the throne.
+memic has a thing called mimic-disguise. The mimic-disguise of memic is usually memic.
 
 To say MimicName:
 	let M be the item described;
@@ -39,11 +39,11 @@ To say MimicDesc:
 		otherwise say "[one of]A large brown cotton sack lying against one wall[or]A large brown silk sack lying against one wall[or]A large bedazzled sack lying against one wall[as decreasingly likely outcomes].";
 	otherwise if D is wooden crate:
 		if the class of the player is santa's little helper, say "[one of]A large box that has been fashioned in the style of a Christmas present[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top. It has a sign on it that reads [if the player is male and the bimbo of the player < 6]STUDS, PLEASE OPEN ME[otherwise if the player is female and the bimbo of the player < 6]INTELLIGENT FEMINISTS, PLEASE OPEN ME[otherwise]HOT SLUTS, PLEASE OPEN ME[end if][as decreasingly likely outcomes].";
-		otherwise say "[one of]A large wooden crate that looks like it has been there for a long time[or]A large wooden crate that looks like it has been there for a little while[or]A large wooden crate that looks like it has only been there for a couple minutes[as decreasingly likely outcomes].";
+		otherwise say "[one of]A large wooden crate that looks like it has been there for a long time[or]A large wooden crate that looks like it was moved recently.[or]A large wooden crate that looks like it might contain beauty supplies[as decreasingly likely outcomes].";
 	otherwise:
 		say "A treasure chest covered in pink and purple glitter, with a pair of red lips in place of a latch.";
 
-Understand "ornate", "trunk", "ornate trunk" as memic when the text-shortcut of the item described is "ot". Understand "antique", "trunk", "antique trunk" as memic when the text-shortcut of the item described is "at". Understand "large", "sack", "large sack", "stocking" as memic when the text-shortcut of the item described is "sac". Understand "giant", "present", "wooden", "crate", "wooden crate" as memic when the text-shortcut of the item described is "wcr".
+Understand "ornate", "trunk", "ornate trunk" as memic when the mimic-disguise of the item described is ornate trunk. Understand "antique", "trunk", "antique trunk" as memic when the mimic-disguise of the item described is antique trunk. Understand "large", "sack", "large sack", "stocking" as memic when the mimic-disguise of the item described is large sack. Understand "giant", "present", "wooden", "crate", "wooden crate" as memic when the mimic-disguise of the item described is wooden crate. Understand "mimic" as memic when the mimic-disguise of the item described is memic.
 
 A time based rule (this is the mimic wandering rule):
 	if the player is in the mansion:
@@ -53,14 +53,17 @@ A time based rule (this is the mimic wandering rule):
 			decrease the mimic-boredom of memic by 1.
 
 To mimicReplace (M - a memic):
-	if the mimic-boredom of M < 1:
+	if the mimic-boredom of M < 1:[sometimes there's a "move" to nothing here, but I don't understand why it happens unless G is holding the "location of M" pointer, not the "location of M" reference]
 		let R be a random placed creaky haunted room;
+		let G be the location of M;
 		if R is placed and the number of containers in R > 0:
 			let C be a random container in R;
 			now M is in R;
 			now the mimic-disguise of M is C;
+			now M is closed;
 			if C is ornate trunk, now the mimic-boredom of M is 8;
-			otherwise now the mimic-boredom of M is 6.
+			otherwise now the mimic-boredom of M is 6;
+			now C is in G.[rather than sharing the room, it swaps]
 
 [!<ComputeMimic>+
 

@@ -23,7 +23,7 @@ Part 1 - Flowing Priestess Outfit
 
 A flowing priestess outfit is a kind of priestess outfit. There is 1 flowing priestess outfit.
 
-Figure of flowing priestess outfit is the file "priestess2.png".
+Figure of flowing priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess2.png".
 
 The printed name of flowing priestess outfit is usually "[TQlink of item described][clothing-title-before]flowing priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of flowing priestess outfit is "fpo".
 
@@ -43,7 +43,7 @@ Part 2 - Modest Priestess Outfit
 
 A modest priestess outfit is a kind of priestess outfit. There is 1 modest priestess outfit.
 
-Figure of modest priestess outfit is the file "priestess1.png".
+Figure of modest priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess1.png".
 
 The printed name of modest priestess outfit is usually "[TQlink of item described][clothing-title-before]modest priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of modest priestess outfit is "mpo".
 
@@ -63,7 +63,7 @@ Part 3 - Revealing Priestess Outfit
 
 A revealing priestess outfit is a kind of priestess outfit. There is 1 revealing priestess outfit.
 
-Figure of revealing priestess outfit is the file "priestess3.png".
+Figure of revealing priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess3.png".
 
 The printed name of revealing priestess outfit is usually "[TQlink of item described][clothing-title-before]revealing priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of revealing priestess outfit is "rpo".
 
@@ -83,7 +83,7 @@ Part 4 - Playdude Priestess Outfit
 
 A playdude priestess outfit is a kind of priestess outfit. There is 1 playdude priestess outfit. A playdude priestess outfit is usually short.
 
-Figure of playdude priestess outfit is the file "priestess4.png".
+Figure of playdude priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess4.png".
 
 The printed name of playdude priestess outfit is usually "[TQlink of item described][clothing-title-before]playdude priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of playdude priestess outfit is "ppo".
 
@@ -105,7 +105,7 @@ Part 6 - Translucent Priestess Outfit
 
 A translucent priestess outfit is a kind of priestess outfit. There is 1 translucent priestess outfit. A translucent priestess outfit is usually sheer. A translucent priestess outfit is usually high cut.
 
-Figure of translucent priestess outfit is the file "priestess6.png".
+Figure of translucent priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess6.png".
 
 The printed name of translucent priestess outfit is usually "[TQlink of item described][clothing-title-before]sheer priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of translucent priestess outfit is "spr". Understand "sheer" as translucent priestess outfit.
 
