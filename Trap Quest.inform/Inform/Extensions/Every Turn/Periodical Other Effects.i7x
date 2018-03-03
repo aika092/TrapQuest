@@ -107,14 +107,14 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				if M is monster:
 					set up M;
 					summon M in the dungeon;
-		if the number of alive golem is 0 and the player is the donator[ and diaper quest is 1]:
+		if the number of alive golem is 0 and the player is the donator and diaper quest is 0:
 			let M be a random off-stage golem;
 			let S be the thickness of hips + the largeness of breasts;
 			let X be max ass size + max breast size + 1;
 			let R be a random number between 1 and X;
  			decrease time-tracking by 1;
 			if debugmode > 0, say "Golem Check: [time-tracking] | [R].";
-			if a random number between S and time-tracking < R:[more likely the larger the difference between S and R.]
+			if time-tracking < 350 and a random number between S and time-tracking < R:[more likely the larger the difference between S and R.]
 				set up M;
 				if the player is in the Dungeon:
 					now M is in Stairwell01;
