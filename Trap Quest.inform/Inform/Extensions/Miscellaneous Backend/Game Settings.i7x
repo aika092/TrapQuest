@@ -859,7 +859,7 @@ Check game save counter:
 		say "You dont have a permission to save the game. Nintendodolls, with love.";
 		rule fails.
 The increase game save counter rules are a rulebook. The increase game save counter rules have default success.
-Increase game save counter: if (the player is not in Capsule) and (the player is not in Hotel36) and debugmode is 0, increase save game counter by 1; say "You now have [remaining game saves] saves remaining.".
+Increase game save counter: if save game limit is 1 and (the player is not in Capsule) and (the player is not in Hotel36) and debugmode is 0, increase save game counter by 1; say "You now have [remaining game saves] saves remaining.".
 
 Include (-
 [ SAVE_THE_GAME_R res fref;
