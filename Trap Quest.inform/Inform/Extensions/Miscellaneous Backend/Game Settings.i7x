@@ -871,7 +871,13 @@ Include (-
 	glk_fileref_destroy(fref);
 	if (gg_savestr == 0) jump SFailed;
 	@save gg_savestr res;
-	glk_stream_close(gg_savestr, 0); ! stream_close
+	if (res == -1) {
+		GGRecoverObjects();
+		glk_stream_close(gg_savestr, 0);
+		gg_savestr = 0;
+		return GL__M(##Restore, 2);
+	}
+	glk_stream_close(gg_savestr, 0);
 	gg_savestr = 0;
 	if (res == 0) { 
 		FollowRulebook( (+ increase game save counter +) );
