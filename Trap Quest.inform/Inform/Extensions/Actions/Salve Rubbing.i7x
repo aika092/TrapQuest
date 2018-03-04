@@ -19,9 +19,8 @@ Check SalveRubbing:
 			say "You already have the [printed name of random worn true salve covering breasts] covering your breasts!" instead;
 		if the player is wrist bound behind, say "You can't reach your chest to apply the salve whilst your wrists are bound behind you." instead;
 		if there is a worn bra:
-			if the support of a random worn bra > 0 and a random worn bra is not top-displaced, say "You would need to remove your [printed name of random worn bra] first." instead; [A support of 0 means the bra is cupless]
-		if there is a worn overdress:
-			if a random worn overdress is nipple exposing and a random worn overdress is not top-displaced, say "You would need to remove your [printed name of random worn overdress] first." instead;
+			if the support of a random worn bra > 0 and a random worn bra is actually breast covering, say "You would need to remove your [printed name of random worn bra] first." instead; [A support of 0 means the bra is cupless]
+		if there is a worn actually breast covering overdress, say "You would need to remove your [printed name of random worn overdress] first." instead;
 	otherwise if the second noun is belly:
 		if there is a worn true salve covering belly:
 			say "You already have the [printed name of random worn true salve covering belly] covering your belly!" instead;

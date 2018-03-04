@@ -39,6 +39,9 @@ A time based rule (this is the compute cum movements rule):
 					if the size of M > max breast size, now the size of M is max breast size;
 					say "A maternity bra materialises over your breasts![if the size of M is the largeness of breasts + 3]It's way too big for you, as if it has purposefully been left with room for growth![end if]";
 			compute enema holding;
+		if the pregnancy of the player > 0:
+			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
+			compute pregnancy;
 		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:
 			if the womb volume of vagina > 0:
 				if pregnancy fetish is 1:
@@ -47,13 +50,11 @@ A time based rule (this is the compute cum movements rule):
 						if the class of the player is cheerleader, increase PR by 3;
 						if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]
 						let R be a random number from PR to 5;
+						if debugmode > 0 and slow pregnancy < 3 and the virgin of the player is 0, say "Conception check: random number between [PR] (pregnancy resistance) and 5 = [R]; this needs to be lower or equal to womb volume of [womb volume of vagina].";
 						if R <= the womb volume of vagina and the number of family things > 0 and the virgin of the player is 0 and slow pregnancy < 3:
 							say "[ConceptionFlav]";
 							now the pregnancy of the player is 1;
 							check goddess eligibility;
-					otherwise:
-						if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
-						compute pregnancy;
 			if the remainder after dividing time-earnings by (vagina-semen-frequency * 2) < time-seconds and the latex-transformation of the player <= 3: [half the time we are going to cause womb absorption, the other half is pussy trickling]:
 				if the pregnancy of the player is 0 and the womb volume of vagina > 0: [Womb semen isn't absorbed during a pregnancy!]
 					let S be a random number between 1 and 3;
@@ -66,11 +67,11 @@ A time based rule (this is the compute cum movements rule):
 						WombEmpty 1;
 						SemenAddictUp 3;
 					if S is 2:
-						say "[one of]You feel a wave of calm come over you.[or]Your mind focuses on your womb, which feels pleasant.[at random]";
+						say "Your mind focuses on your womb, which feels pleasant. A wave of calm and clarity washes over you.";
 						WombEmpty 1;
 						IntUp 1;
 					if S is 3:
-						say "[one of]You feel a warm feeling in your womb.[or]You feel some pressure lifted from within your womb.[or]Heat flows from your womb up outwards to your hips.[at random]";
+						say "[one of]Heat flows from your womb up outwards to your hips.[or]You feel a warm feeling in your womb.[or]You feel some pressure lifted from within your womb.[cycling]";
 						WombEmpty 1;
 						Hipup 1;
 			otherwise if the semen volume of vagina > 0:

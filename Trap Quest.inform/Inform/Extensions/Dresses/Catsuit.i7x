@@ -62,7 +62,7 @@ To decide which object is the potential-upgrade-target of (C - a pink catsuit):
 
 Part 2 - Black Catsuit
 
-A black catsuit is a kind of catsuit. A black catsuit is fully exposing. A black catsuit is usually nipple exposing. There is 1 black catsuits. The printed name of black catsuit is usually "[TQlink of item described][clothing-title-before]black latex catsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black catsuit is "bcs".
+A black catsuit is a kind of catsuit. A black catsuit is fully exposing. There is 1 black catsuits. The printed name of black catsuit is usually "[TQlink of item described][clothing-title-before]black latex catsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black catsuit is "bcs".
 
 To decide which figure-name is clothing-image of (C - a black catsuit):
 	if C is worn by the player and the player is prone, decide on Figure of Latex Catsuit 2;

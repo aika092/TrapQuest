@@ -35,7 +35,7 @@ Definition: an evening dress (called C) is end of transformation chain:
 
 Part 1 - Red Evening Dress
 
-A red evening dress is a kind of evening dress. A red evening dress is usually crotch-exposing. A red evening dress is usually nipple exposing. A red evening dress is usually fully exposing. A red evening dress is usually belly exposing. There is 1 red evening dress. The text-shortcut of red evening dress is "rev". A red evening dress is not-top-displacable.
+A red evening dress is a kind of evening dress. A red evening dress is usually crotch-exposing. A red evening dress is usually fully exposing. A red evening dress is usually belly exposing. There is 1 red evening dress. The text-shortcut of red evening dress is "rev". A red evening dress is not-top-displacable.
 
 The printed name of red evening dress is usually "[TQlink of item described][clothing-title-before]red evening dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -85,7 +85,7 @@ To decide which number is the initial outrage of (C - a pink evening dress):
 
 Part 3 - Black Lace Evening Dress
 
-A black lace evening dress is a kind of evening dress. A black lace evening dress is usually nipple exposing. A black lace evening dress is usually fully exposing. A black lace evening dress is usually mesh. A black lace evening dress is usually sheer. A black lace evening dress is usually only arm covering. There is 1 black lace evening dress. The text-shortcut of black lace evening dress is "bev".
+A black lace evening dress is a kind of evening dress. A black lace evening dress is usually fully exposing. A black lace evening dress is usually mesh. A black lace evening dress is usually sheer. A black lace evening dress is usually only arm covering. There is 1 black lace evening dress. The text-shortcut of black lace evening dress is "bev".
 
 The printed name of black lace evening dress is usually "[TQlink of item described][clothing-title-before]black lace evening dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

@@ -235,7 +235,9 @@ To say TotalDesc of vagina:
 		otherwise:
 			say "feels numb. ";
 		if the semen volume of vagina > 0, say "It [if the semen volume of vagina > 4]is completely full of [semen][otherwise]has some [semen] in it[end if]. ";
-		if the womb volume of vagina > 0, say "[if the womb volume of vagina > 3]A huge amount of[otherwise]Some[end if] [semen] has made it into your [if pregnancy fetish is 1 and the pregnancy of the player is 0]fertile [end if]womb. ";
+		if the womb volume of vagina > 0:
+			if the pregnancy of the player > 0, say "[if inhuman pregnancy is 0]A baby[otherwise]Something[end if] [if the womb volume of vagina is 30 or the womb volume of vagina >= 50]has been[otherwise if slow pregnancy is 0]is rapidly[otherwise]is slowly[end if] growing inside your womb[if the womb volume of vagina is 30 or the womb volume of vagina >= 50] and has reached full term[end if]. [if the pregnancy of the player is 2]You can feel that your pregnancy has somehow magically been paused. [end if]";
+			otherwise say "[if the womb volume of vagina > 3]A huge amount of[otherwise]Some[end if] [semen] has made it into your [if pregnancy fetish is 1 and the pregnancy of the player is 0]fertile [end if]womb. ";
 		if there is a lubricant covering vagina, say "It is dripping with slippery [lubricant]. ".
 
 [!<SayVaginaModesty>+

@@ -1,6 +1,6 @@
 Ballet Corset by Corsets begins here.
 
-A ballet corset is a kind of corset. A ballet corset is usually top-exclusive. A ballet corset is usually pvc. A ballet corset is usually short. There is 1 unique ballet corset.  A ballet corset is usually nipple covering. A ballet corset is usually average cut.
+A ballet corset is a kind of corset. A ballet corset is usually top-exclusive. A ballet corset is usually pvc. A ballet corset is usually short. There is 1 unique ballet corset.  A ballet corset is usually normally-nipple-covering. A ballet corset is usually average cut.
 
 The printed name of ballet corset is usually "[TQlink of item described][clothing-title-before]ballet corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ballet corset is "blco".
 

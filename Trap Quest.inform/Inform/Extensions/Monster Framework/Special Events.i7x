@@ -596,8 +596,6 @@ To compute labour to (M - a monster):[Should never appear]
 	now the pregnancy of the player is 0.
 
 To compute fatherhood to (M - a monster): [no reason to check for successful pregnancy here, since we already know pregnancy was not delayed at this point.]
-	repeat with N running through family things:
-		now N is not inseminating vagina;
 	if M is not alive:
 		say "[DefaultBirthScene]";
 		if debugmode is 1, say "The father was [M], but he was dead.";

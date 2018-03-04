@@ -178,7 +178,7 @@ To say ShortDesc of (C - a pink tube top):
 
 Part 7 - Yellow Exposing Tube Top
 
-A yellow exposing tube top is a kind of tube top. A yellow exposing tube top is usually ridiculously low cut. A yellow exposing tube top is usually nipple exposing. A yellow exposing tube top is usually unique. A yellow exposing tube top is usually dense.
+A yellow exposing tube top is a kind of tube top. A yellow exposing tube top is usually ridiculously low cut. A yellow exposing tube top is usually normally-nipple-exposing. A yellow exposing tube top is usually unique. A yellow exposing tube top is usually dense.
 
 The printed name of yellow exposing tube top is usually "[TQlink of item described][clothing-title-before]yellow exposing tube top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of yellow exposing tube top is "ytu".
 

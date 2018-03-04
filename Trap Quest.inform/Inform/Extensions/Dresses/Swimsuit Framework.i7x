@@ -39,7 +39,7 @@ Chapter - Slutty Monokinis
 
 [There are a few different types of monokini, really just for transformation sequence handling.]
 
-A string monokini is a kind of monokini. The armour of string monokini is usually 2. The soak-limit of a string monokini is usually 5. A string monokini is nipple exposing. A string monokini is belly exposing. A string monokini is usually fully exposing. A string monokini is unique.
+A string monokini is a kind of monokini. The armour of string monokini is usually 2. The soak-limit of a string monokini is usually 5. A string monokini is normally-nipple-exposing. A string monokini is belly exposing. A string monokini is usually fully exposing. A string monokini is unique.
 To decide which object is the potential-upgrade-target of (C - a string monokini):
 	[if tutorial is 1, decide on nothing;]
 	decide on a random off-stage slut monokini.

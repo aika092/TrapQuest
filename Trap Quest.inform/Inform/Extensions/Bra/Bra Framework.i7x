@@ -9,9 +9,7 @@ Definition: a bra (called B) is ingredient:
 To decide which number is the crafting key of (B - a bra):
 	decide on 26.
 
-A bra is usually average cut. A bra is usually nipple covering.
-
-A bra can be milking flappable. A bra is usually not milking flappable.
+A bra is usually average cut. A bra is usually normally-nipple-covering.
 
 The printed name of bra is usually "[TQlink of item described][clothing-title-before][CupDesc of item described][ShortDesc of item described][clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of bra is usually "[TQlink of item described][clothing-title-before][CupDesc of item described][ShortDesc of item described]s[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

@@ -371,7 +371,7 @@ To compute fairySuckling of (M - a fairy):
 		repeat with nC running through worn nipple covering clothing:
 			if nc is milking flappable: [Fairies love milk so much they don't ask, they just rudely expose the player!]
 				say "The [FairyName] [one of]nimbly opens[or]quickly unlatches[or]frees up your teats from[or]slips your nipple free from[or]whips open[or]draws aside the covering of[at random] your [printed name of nC]";
-			otherwise if nC is top-displaced or nC is nipple exposing or nC is fully exposing:
+			otherwise if nC is nipple exposing:
 				say "The [FairyName] [one of]smirks[or]grins[or]sniggers[at random] at the [one of]lewdly-[or]sluttily-[or]perkily-[or]mouth-wateringly [or]prominently [or]temptingly [at random]exposed nipples of your [printed name of nC]";
 			otherwise if nC is top-displacable: [This means, CAN be displaced, yes?]
 				say "The [FairyName] [one of]swiftly tugs[or]pulls[or]draws[or]jerks[or]slips[or]shifts[or]displaces[at random] your [printed name of nC] [one of]aside[or]aside[or]to one side[or]out of the way[or]askew[at random].";
@@ -380,9 +380,8 @@ To compute fairySuckling of (M - a fairy):
 				say "The [FairyName] slashes futilely at your [nC], her [one of]fiendishly sharp[or]wicked[or]razor sharp[or]scary[at random] nails grating against and scratching the tough material, but finally she gives up, looking frustrated and annoyed!";
 				now decideToSuckle is 1; [This is my weak-ass attempt to make her more likely to try again next time: unfortunately, I don't think it will work.]
 				stop; [Selkie: I believe this is the right way in i7 to exit a function early, if it returns no value. (break/next are loop controls.) '"Stop" is the plain-jane return statement. It isn't used much, partly because of some other synonyms for return, and partly as fallout from the rules-based structure of the language.']
-			otherwise if nC is nipple covering or nC is not fully exposing: [she'll rip it unless it's no protection or has already been damaged: which we take to mean that it exposes the nipples]
+			otherwise if nC is nipple covering: [she'll rip it unless it's no protection or has already been damaged: which we take to mean that it exposes the nipples]
 				say "Her [one of]flashing nails[or]tiny but scary claws[or]razor-sharp fingernails[or]oyster-shell sharp little crescent nails[at random] [one of]carve[or]cut[or]slice[or]magically slide through[at random] your [nC], exposing your nipples to her [one of]tender mercies[or]gaze[or]hungry gaze[or]eager mouth[at random].[line break]";
-				now nC is nipple exposing; [bras and top coverings are considered nipple exposing or nipple covering. protection or no protection indicates whether they're damaged]
 				now nC is top-ripped;
 				now slashedSomething is 1;
 				[###Selkie: Given I've bypassed the damage clothing function, maybe it's okay to just add a little damage directly this way?]

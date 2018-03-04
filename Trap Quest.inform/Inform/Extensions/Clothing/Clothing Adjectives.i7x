@@ -173,12 +173,17 @@ Definition: a clothing (called C) is arm covering:
 Clothing can be chestless, fully exposing, ridiculously low cut, very low cut, low cut, average cut, high cut, fully covering (this is the clothing-cleavage property). Clothing is usually chestless. [Chestless means it doesn't take up the chest slot. Whereas fully exposing means that the breasts are fully exposed but the item still takes up the chest slot. e.g. cupless bra.]
 Clothing can be top-intact or top-ripped. Clothing is usually top-intact.
 Definition: a clothing is breast exposing rather than breast covering if it is chestless.
-Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing and it is top-intact.
+Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing and it is top-intact and it is top-placed.
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable. Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
 Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped.
-Clothing can be nipple covering or nipple exposing. Clothing is usually nipple exposing.
-Definition: a clothing is nipple exposing[ rather than nipple covering] if it is top-displaced.[This is separate as some clothing has holes specifically for the nipples.]
+Clothing can be normally-nipple-covering or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
+Definition: a clothing (called C) is nipple exposing rather than nipple covering:
+	if C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is chestless or C is fully exposing or C is uniquely nipple exposing, decide yes;
+	decide no.
+Definition: a clothing (called C) is uniquely nipple exposing: [Allows us to create unique rules for when nipples are exposed]
+	decide no.
+Clothing can be milking flappable or milking unflappable. Clothing is usually milking unflappable. [Are there flaps that allow for breast feeding / milking?]
 Clothing can be totally-exclusive, top-exclusive, bottom-exclusive, not-exclusive (this is the clothing-exclusivity property). Clothing is usually not-exclusive. [Exclusive means nothing can go above or below it.]
 Definition: a clothing is exclusive:
 	if it is not-exclusive, decide no;

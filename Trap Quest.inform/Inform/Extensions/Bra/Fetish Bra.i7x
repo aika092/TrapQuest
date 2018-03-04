@@ -1,6 +1,6 @@
 Fetish Bra by Bra begins here.
 
-A fetish bra is a kind of bra. Figure of fetish bra is the file "Items/Clothes/Upper/Bras/latexbra1.png". A fetish bra is usually nipple exposing. A fetish bra is usually sheer. A fetish bra is fully covering. A fetish bra is usually latex. A fetish bra is usually unique.
+A fetish bra is a kind of bra. Figure of fetish bra is the file "Items/Clothes/Upper/Bras/latexbra1.png". A fetish bra is usually normally-nipple-exposing. A fetish bra is usually sheer. A fetish bra is fully covering. A fetish bra is usually latex. A fetish bra is usually unique.
 
 There is 1 fetish bra. The text-shortcut of fetish bra is "fbr".
 
