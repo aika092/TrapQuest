@@ -1,6 +1,6 @@
 Clubbing Dress by Dresses begins here.
 
-A clubbing dress is a kind of overdress. A clubbing dress is usually short. An clubbing dress is usually nipple covering. A clubbing dress is usually very low cut. The text-shortcut of clubbing dress is "cd".
+A clubbing dress is a kind of overdress. A clubbing dress is usually short. A clubbing dress is usually very low cut. The text-shortcut of clubbing dress is "cd".
 
 To decide which number is the dexterity-influence of (C - a clubbing dress):
 	if C is protection, decide on 0;
@@ -193,7 +193,7 @@ Part 8 - Exposing Black Clubbing Dress
 
 An exposing clubbing dress is a kind of clubbing dress.
 
-A exposing black clubbing dress is a kind of exposing clubbing dress. There is 1 exposing black clubbing dress. An exposing black clubbing dress is usually fully exposing. An exposing black clubbing dress is usually nipple exposing. Figure of exposing black clubbing dress is the file "Items\Clothes\Upper\Dresses\Clubbing\clubbingdress8.png". A exposing black clubbing dress is unique. The text-shortcut of exposing black clubbing dress is "ecd".
+A exposing black clubbing dress is a kind of exposing clubbing dress. There is 1 exposing black clubbing dress. An exposing black clubbing dress is usually fully exposing. Figure of exposing black clubbing dress is the file "Items\Clothes\Upper\Dresses\Clubbing\clubbingdress8.png". A exposing black clubbing dress is unique. The text-shortcut of exposing black clubbing dress is "ecd".
 
 The printed name of exposing black clubbing dress is usually "[TQlink of item described][clothing-title-before]exposing black clubbing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -222,7 +222,7 @@ To say TransformReaction of (C - an exposing clubbing dress):
 
 Part 9 - Exposing Pink Clubbing Dress
 
-A exposing pink clubbing dress is a kind of exposing clubbing dress. There is 1 exposing pink clubbing dress. An exposing pink clubbing dress is usually fully exposing. An exposing pink clubbing dress is usually nipple exposing. Figure of exposing pink clubbing dress is the file "Items\Clothes\Upper\Dresses\Clubbing\clubbingdress9.png". A exposing pink clubbing dress is unique. The text-shortcut of exposing pink clubbing dress is "epd".
+A exposing pink clubbing dress is a kind of exposing clubbing dress. There is 1 exposing pink clubbing dress. An exposing pink clubbing dress is usually fully exposing. Figure of exposing pink clubbing dress is the file "Items\Clothes\Upper\Dresses\Clubbing\clubbingdress9.png". A exposing pink clubbing dress is unique. The text-shortcut of exposing pink clubbing dress is "epd".
 
 The printed name of exposing pink clubbing dress is usually "[TQlink of item described][clothing-title-before]exposing pink clubbing dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

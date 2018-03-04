@@ -1,6 +1,6 @@
 Spike Corset by Corsets begins here.
 
-A spike corset is a kind of corset. A spike corset is usually leather. A spike corset is rare. A spike corset is usually nipple covering. A spike corset is usually top-exclusive. There is 1 spike corset. A spike corset is usually low cut. A spike corset is usually spikey. [Seems too stiff to be displacable, even though that bust line is pretty low!]
+A spike corset is a kind of corset. A spike corset is usually leather. A spike corset is rare. A spike corset is usually normally-nipple-covering. A spike corset is usually top-exclusive. There is 1 spike corset. A spike corset is usually low cut. A spike corset is usually spikey. [Seems too stiff to be displacable, even though that bust line is pretty low!]
 
 The printed name of spike corset is usually "[TQlink of item described][clothing-title-before]spike corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of spike corset is "spc".
 

@@ -1,6 +1,6 @@
 Fishnet Dress by Dresses begins here.
 
-A fishnet dress is a kind of overdress. A fishnet dress is usually unskirted. A fishnet dress is usually nipple exposing. A fishnet dress is usually mesh. A fishnet dress is usually sheer. A fishnet dress is usually unique. There is 1 fishnet dress. A fishnet dress is usually fully covering. The soak-limit of a fishnet dress is usually 10. A fishnet dress is usually semen-addiction-influencing.
+A fishnet dress is a kind of overdress. A fishnet dress is usually unskirted. A fishnet dress is usually normally-nipple-exposing. A fishnet dress is usually mesh. A fishnet dress is usually sheer. A fishnet dress is usually unique. There is 1 fishnet dress. A fishnet dress is usually ridiculously low cut. The soak-limit of a fishnet dress is usually 10. A fishnet dress is usually semen-addiction-influencing.
 
 The printed name of fishnet dress is usually "[TQlink of item described][clothing-title-before]fishnet dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of fishnet dress is "fd". Understand "fish", "net" as fishnet dress.
 

@@ -1,6 +1,6 @@
 Superheroine Outfit by Dresses begins here.
 
-A superheroine outfit is a kind of overdress. A superheroine outfit is rare. A superheroine outfit is usually nylon. A superheroine outfit is usually nipple covering. A superheroine outfit is usually low cut. A superheroine outfit is usually unskirted. A superheroine outfit is usually top-exclusive. A superheroine outfit is usually not-top-displacable. The soak-limit of a superheroine outfit is usually 20.
+A superheroine outfit is a kind of overdress. A superheroine outfit is rare. A superheroine outfit is usually nylon. A superheroine outfit is usually low cut. A superheroine outfit is usually unskirted. A superheroine outfit is usually top-exclusive. A superheroine outfit is usually not-top-displacable. The soak-limit of a superheroine outfit is usually 20.
 
 The printed name of superheroine outfit is usually "[TQlink of item described][clothing-title-before]superheroine outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

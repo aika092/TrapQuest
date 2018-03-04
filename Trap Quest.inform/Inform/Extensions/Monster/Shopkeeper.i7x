@@ -124,7 +124,7 @@ To say FloorPeeReaction of (M - a shopkeeper):
 		say "[speech style of M]'Hmph. At least it's not in my shop. I hate it when people pee in my shop.'[roman type][line break]".
 
 To say MonsterOfferRejectFlav of (M - a shopkeeper) to (T - a thing):
-	say "The [M] frowns. [line break][speech style of M]'[if total stolen value > 0]Not good enough. Either [bold type][line break]pay[line break][speech style of M] me properly or accept your punishment.'[otherwise if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]".
+	say "The [M] frowns. [line break][speech style of M]'[if total stolen value > 0]Not good enough. Either [bold type]pay[speech style of M] me properly or accept your punishment.'[otherwise if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]".
 
 To say BecomesBoredFlav of (M - a shopkeeper):
 	say "The [M] seems to lose interest in you for now.".
@@ -221,7 +221,7 @@ To compute perception of (M - a shopkeeper):
 			FavourDown M by 4;
 			anger M;
 	otherwise if M is friendly and M is in Dungeon41:
-		say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop!  If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[line break][speech style of M]ing for something, though.'[roman type][line break]";
+		say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop!  If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[speech style of M]ing for something, though.'[roman type][line break]";
 	otherwise if M is unfriendly and total stolen value > 0:
 		say "[speech style of M]'There you are, thief!  Now I've got you!'[if the player is flying][line break]'Well, at least when you get down from there...'[end if][roman type][line break]";
 	otherwise if M is unfriendly:
@@ -448,10 +448,10 @@ To compute post climax effect of (M - a shopkeeper) in (F - a fuckhole):
 	if M is friendly, say "[line break][speech style of M]'That was awesome! Feel free to return to the shop if you start feeling horny, I[']m down to fuck you anytime! ";
 	otherwise say "[line break][unless M is objectifying the player]'Feel free to return to the shop, but don't you dare leave without paying again.'  [end if][roman type]The [M] pulls out and leaves you alone to recover.";
 	compute happy reward of M;
-	let T be a random off-stage interracial related tattoo;
-	if T is drawable and there is a worn tattoo:
+	let T be a random off-stage interracial related drawable tattoo;
+	if there is a worn tattoo:
 		summon T;
-		say "Four large words appear on your chest in permanent black ink:";
+		say "A new tattoo appears on you in permanent black ink:";
 		try examining T;
 		say "[variable custom style]Holy shit. [if the outrage of T is too humiliating]I have to keep this covered up. There's no way I can let anyone see such a nasty tattoo.[end if][roman type][line break]";
 	send M home.

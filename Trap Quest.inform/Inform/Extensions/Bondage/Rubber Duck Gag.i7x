@@ -7,6 +7,9 @@ To say ShortDesc of (C - a rubber duck gag):
 
 Figure of rubber duck gag is the file "Items\Accessories\Head\duckgag1.png".
 
+To decide which figure-name is clothing-image of (C - a rubber duck gag):
+	decide on figure of rubber duck gag.
+
 To say ClothingDesc of (C - a rubber duck gag):
 	say "This small rubber duck shaped gag stops you from speaking but without stretching your jaw too badly in the process.".
 
@@ -15,10 +18,10 @@ Definition: a rubber duck gag (called C) is untransformable:
 
 To decide which number is the initial outrage of (C - a rubber duck gag):
 	if diaper quest is 1, decide on 0;
-	decide on 4. 
+	decide on 8. 
 
 To decide which number is the initial cringe of (C - a rubber duck gag):
-	decide on 5. 
+	decide on 6. 
 
 To decide which number is the delicateness-influence of (C - a rubber duck gag):
 	let S be -1;

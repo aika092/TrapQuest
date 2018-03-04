@@ -12,7 +12,7 @@ To say ShortDesc of (C - a dress):
 
 Part 1 - Underdresses
 
-An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually nipple covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable. The soak-limit of an underdress is usually 26.
+An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable. The soak-limit of an underdress is usually 26.
 
 Definition: an underdress is displacable:
 	decide yes.
@@ -51,7 +51,7 @@ The skirt underdress clash rule is listed in the skirt wearability rules.
 Part 2 - Overdresses
 
 
-An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually nipple covering. An overdress is usually belly covering. The armour of an overdress is usually 4. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
+An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 4. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
 
 To uniquely set up (C - an overdress):
 	repair C;

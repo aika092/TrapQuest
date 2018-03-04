@@ -570,7 +570,7 @@ The player initiates vaginal with a friendly NPC.
 To say FriendlyVaginalRequest of (M - a monster):
 	if the virgin of the player is 1 and M is virginity taking:
 		say "[TakeMyVirginity of M]";
-	if M is male:
+	otherwise if M is male:
 		let preg-please be 0;
 		let preg-nope be 0;
 		if the pregnancy of the player is 0 and pregnancy fetish is 1 and M is father material:
@@ -657,7 +657,7 @@ To say TakeMyVirginity of (M - a monster):
 			say "[second custom style]'I've been waiting a long time for the right [if M is human]man[otherwise]monster[end if] who's worthy of this [vagina]... alright, go ahead, take my virginity - break me in!'";
 	otherwise:
 		if the player is not a pervert:
-			say "[first custom style]'If I'm to have my first time be in this game, I want it to at least be consensual. Please, would you do me the honour?'";
+			say "[first custom style]'If I'm to have my first time be in this game, I want it to at least be on my terms. Please, would you do me the honour?'";
 		otherwise if the vaginal sex addiction of the player < 3:
 			say "[variable custom style]'I think it's about time I tried 'real' sex, don't you think?  How do you fancy being the one to take my V-card?'";
 		otherwise:
@@ -696,7 +696,7 @@ The player initiates anal with a friendly NPC.
 To say FriendlyAnalRequest of (M - a monster):
 	if the analvirgin of the player is 1 and M is virginity taking:
 		say "[TakeMyAnalVirginity of M]";
-	if M is male:
+	otherwise if M is male:
 		let preg-nope be 0;
 		if the player is female and the pregnancy of the player is 0 and pregnancy fetish is 1 and M is father material and the player is afraid of a creampie, now preg-nope is 1;
 		if the player is a nympho:

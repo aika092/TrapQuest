@@ -14,10 +14,10 @@ Definition: yourself is gagged:
 	decide no.
 
 To decide which number is the initial outrage of (C - a small ballgag):
-	decide on 9.
+	decide on 6.
 
 To decide which number is the initial outrage of (C - a large ballgag):
-	decide on 9.
+	decide on 8.
 
 To decide which number is the initial outrage of (C - a huge ballgag):
 	decide on 10.
@@ -85,7 +85,7 @@ To decide which object is the potential-upgrade-target of (C - a large ballgag):
 To decide which object is the unique-upgrade-target of (C - a large ballgag):
 	if diaper quest is 1, decide on a random off-stage baby pacifier;
 	decide on nothing.
-Definition: a huge ballgag (called C) is untransformable:
+Definition: a large ballgag (called C) is untransformable:
 	if the potential-upgrade-target of C is a thing or the unique-upgrade-target of C is a thing, decide no;
 	decide yes.
 
@@ -97,7 +97,6 @@ Definition: A ballgag (called B) is fetish appropriate:
 Include Pacifiers by Bondage.
 Include Puppy Gag by Bondage.
 Include Rubber Duck Gag by Bondage.
-
 
 
 Chapter - Wearability

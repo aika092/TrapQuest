@@ -201,7 +201,7 @@ To set up influence of (C - a white slut monokini):
 
 Part 11 - Black Mesh Monokini
 
-A black mesh monokini is a kind of string monokini. There is 1 black mesh monokini. The text-shortcut of black mesh monokini is "bms". A black mesh monokini is see-through. A black mesh monokini is nipple covering.
+A black mesh monokini is a kind of string monokini. There is 1 black mesh monokini. The text-shortcut of black mesh monokini is "bms". A black mesh monokini is see-through. A black mesh monokini is normally-nipple-covering.
 
 The printed name of black mesh monokini is usually "[TQlink of item described][clothing-title-before]black mesh swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

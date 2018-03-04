@@ -40,9 +40,7 @@ To decide which number is topless-fetish:
 	otherwise decide on 0.
 
 Definition: yourself is fighting against topless:
-	if topless-fetish is 1:
-		repeat with C running through worn breast covering clothing:
-			if C is actually dense and C is top-placed and C is not fully exposing and C is nipple covering, decide yes;
+	if topless-fetish is 1 and there is worn actually dense nipple covering clothing, decide yes;
 	decide no.
 
 braless reminder is a number that varies. braless reminder is 0.
@@ -60,7 +58,7 @@ Report wearing actually dense nipple covering clothing:
 
 This is the bra can't be summoned with braless fetish rule:
 	if summoning is 1 and (topless permanent fetish is 1 or the class of the player is faerie):
-		unless wearing-target is fully exposing or wearing-target is see-through or wearing-target is not not-top-displacable or wearing-target is nipple exposing, rule fails.
+		unless wearing-target is see-through or wearing-target is not not-top-displacable or wearing-target is nipple exposing, rule fails. [Bras that can be displaced are allowed, since then it's up to the player]
 
 The bra can't be summoned with braless fetish rule is listed in the bra wearability rules.
 

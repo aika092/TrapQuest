@@ -8,33 +8,40 @@ To say MilkingBenchDesc:
 Figure of milking bench is the file "Env/Dungeon/milkingbench1.png".
 
 To compute furniture resting on (M - a milking bench):
-	let milking-allowed be 0;
-	if the number of worn nipple covering clothing is 1:[If there is more than one layer of nipple covering clothing, you have to manually open the flaps.]
-		let B be a random worn nipple covering clothing;
-		if the player is not nipples exposed:
-			if B is milking flappable and the latex-transformation of the player > 7:
-				say "Open the milking flaps of your [ShortDesc of B]? [yesnolink] ";
-				if the player consents:
-					now milking-allowed is 1;
-					say "You expose your nipples before resting on the bench.";
-				otherwise:
-					say "You decide against exposing your nipples before resting on the bench.";
-			unless B is not-top-displacable or the latex-transformation of the player > 7:[optional-top-displacable as well!]
-				if B is not top-displaced:
+	let milking-allowed be 1;
+	if there is worn not-top-displacable milking unflappable nipple covering clothing or the class of the player is living sex doll:
+		now milking-allowed is 0;
+	otherwise if the milk volume of breasts >= 0 and there is worn nipple covering clothing:
+		let N be max-top-layer;
+		decrease milking-allowed by N;
+		while N > 0: [start with top layered clothing and work downwards]
+			let B be nothing;
+			repeat with C running through worn top layer clothing:
+				if the top-layer of C is N, now B is C;
+			if B is nipple covering clothing and N + milking-allowed >= 1: [Is it still possible to expose nipples? (Essentially this stops us asking about lower down items if the player refused to move higher up items)]
+				if B is milking flappable:
+					say "Open the milking flaps of your [ShortDesc of B]? [yesnolink] ";
+					if the player consents:
+						increase milking-allowed by 1;
+						say "You open the flaps[if milking-allowed >= 1], exposing your nipples before resting on the bench[end if].";
+					otherwise:
+						say "You decide against exposing your nipples before resting on the bench.";
+				otherwise if B is not top-displaced: [This check should actually be unnecessary since the new code should not allow a top-displaced clothing to be flagged as nipple covering. But it is kept in for clarity and redundancy]
 					say "Pull aside [if B is bra]the cups of [end if]your [ShortDesc of B]? [yesnolink] ";
 					if the player consents:
-						now milking-allowed is 1;
-						say "You move your [ShortDesc of B] out of the way, freeing up access to your [BreastDesc].";
+						increase milking-allowed by 1;
+						say "You move your [ShortDesc of B] out of the way[if milking-allowed >= 1], freeing up access to your [BreastDesc][end if].";
 						now B is top-displaced;
 						now B is temporarily-displaced;
 					otherwise:
 						say "You decide against exposing your nipples before resting on the bench.";
+			decrease N by 1;
 	if the player is nipples exposed, now milking-allowed is 1;
 	now resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
 	now the alert of the player is 0;
-	if the milk volume of breasts > 0 and milking-allowed is 1:
+	if the milk volume of breasts > 0 and milking-allowed >= 1:
 		say "The suckers leap up and latch onto your [milk] filled breasts!";
 		now milking is 1;
 		while milking is 1 and the player is in the location of M and (the fatigue of the player > 0 or (the milk volume of breasts > 0 and the units collected of M < 20)): [The player can stop being milked by the game setting milking to 0]

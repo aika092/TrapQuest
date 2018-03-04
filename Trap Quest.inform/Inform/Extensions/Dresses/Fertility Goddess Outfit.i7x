@@ -35,7 +35,7 @@ To decide which object is the potential-upgrade-target of (C - a goddess tunic):
 
 Part 2 - Ivy Leaves
 
-An ivy leaves is a kind of fertility outfit. An ivy leaves is usually biological. An ivy leaves is usually nipple exposing. An ivy leaves is usually fully exposing. An ivy leaves is usually belly exposing. An ivy leaves is usually unskirted. An ivy leaves is usually bottom-exclusive. There is 1 ivy leaves.
+An ivy leaves is a kind of fertility outfit. An ivy leaves is usually biological. An ivy leaves is usually fully exposing. An ivy leaves is usually belly exposing. An ivy leaves is usually unskirted. An ivy leaves is usually bottom-exclusive. There is 1 ivy leaves.
 
 The printed name of ivy leaves is usually "[TQlink of item described][clothing-title-before]ivy leaves[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ivy leaves is "il".
 
@@ -62,7 +62,7 @@ Definition: an ivy leaves (called C) is untransformable:
 
 Part 3 - Living Tentacles
 
-A living tentacles is a kind of fertility outfit. A living tentacles is usually biological. A living tentacles is usually nipple exposing. A living tentacles is usually fully exposing. A living tentacles is usually belly exposing. A living tentacles is usually unskirted. A living tentacles is usually bottom-exclusive. There is 1 living tentacles. 
+A living tentacles is a kind of fertility outfit. A living tentacles is usually biological. A living tentacles is usually fully exposing. A living tentacles is usually belly exposing. A living tentacles is usually unskirted. A living tentacles is usually bottom-exclusive. There is 1 living tentacles. 
 
 Living tentacles has a number called charge. The charge of living tentacles is usually 0.
 

@@ -7,6 +7,9 @@ To say ShortDesc of (C - a puppy bone gag):
 
 Figure of puppy bone gag is the file "Items\Accessories\Head\bonegag1.jpg".
 
+To decide which figure-name is clothing-image of (C - a puppy bone gag):
+	decide on figure of puppy bone gag.
+
 To say ClothingDesc of (C - a puppy bone gag):
 	say "This orange-pink bone shaped gag stops you from speaking but without stretching your jaw too badly in the process.".
 

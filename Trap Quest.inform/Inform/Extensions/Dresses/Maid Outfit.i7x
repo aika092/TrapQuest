@@ -183,10 +183,10 @@ To uniquely set up (C - a V-shape maid outfit):
 	now the armour of C is 8;
 	repair C;
 	set up magic state of C.
-
-To compute periodic effect of (C - a V-shape maid outfit):
-	if the largeness of breasts > 6, now C is nipple exposing;
-	otherwise now C is nipple covering.
+	
+Definition: a V-shape maid outfit (called C) is is uniquely nipple exposing:
+	if the largeness of breasts > 6, decide yes;
+	decide no.
 
 To decide which object is the potential-upgrade-target of (M - a V-shape maid outfit):
 	let C be a random fishnet maid outfit;

@@ -1,6 +1,6 @@
 Nipple Ring Bikini Top by Bra begins here.
 
-A nipple ring bikini top is a kind of string bikini top. A nipple ring bikini top is usually nipple exposing. Figure of bikini 11 is the file "Items/Clothes/Upper/Bras/bikini11.png". The text-shortcut of nipple ring bikini top is "nrb".
+A nipple ring bikini top is a kind of string bikini top. A nipple ring bikini top is usually normally-nipple-exposing. Figure of bikini 11 is the file "Items/Clothes/Upper/Bras/bikini11.png". The text-shortcut of nipple ring bikini top is "nrb".
 
 There is 1 unique nipple ring bikini top. A nipple ring bikini top is ridiculously low cut.
 

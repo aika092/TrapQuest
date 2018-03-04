@@ -64,7 +64,7 @@ To compute recipe specific cursing of (T - a spike bra):
 				now T is cursed;
 				now T is respiration;
 				now the raw-magic-modifier of T is -2;
-		otherwise if the noun is not nipple exposing:
+		otherwise if the noun is nipple covering:
 			now T is cursed;
 			now T is temptation;
 			now the raw-magic-modifier of T is -2;

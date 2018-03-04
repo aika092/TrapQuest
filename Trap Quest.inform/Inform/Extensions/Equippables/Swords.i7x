@@ -241,7 +241,6 @@ Check taking a gladiator sword:
 	let R be 1;
 	let B be a random worn breast covering clothing;
 	if B is clothing:
-		if B is ridiculously low cut or higher, now R is 0;
 		if B is nipple covering, now R is 0;
 	if the player is male and the largeness of breasts < 12, now R is 0;
 	if gladiatorcurse < 0, now R is 1;[finishing the gladiator quest makes you worthy]

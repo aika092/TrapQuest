@@ -17,8 +17,11 @@ To update upgrade target of (C - a clothing):
 	if the upgrade-target of C is nothing, now the upgrade-target of C is the potential-upgrade-target of C;
 	if the upgrade-target of C is clothing:
 		if C is worn:
-			now C is in Holding Pen; [We want to see if the upgrade-target of C is wearable so we can't have it being worn while we do that]
+			let B be a random body part penetrated by C;
+			if B is body part, now C is not penetrating B;
+			now C is in Holding Pen; [We want to see if the upgrade-target of C is wearable so we can't have it being worn or penetrating orifices while we do that]
 			if the upgrade-target of C is not actually summonable, now the upgrade-target of C is nothing;
+			if B is body part, now C is penetrating B;
 			now C is worn by the player.
 
 Definition: an object (called C) is untransformable: ['Nothing' is untransformable.]
