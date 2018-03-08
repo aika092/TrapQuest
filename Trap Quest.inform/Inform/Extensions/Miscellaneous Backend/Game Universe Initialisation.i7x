@@ -150,7 +150,7 @@ To initialise wardrobe:
 	now CG is sure;
 	now CG is bland;
 	now CG is in pink wardrobe;
-	if diaper quest is 1, now a random santa hat is in pink wardrobe.
+	[now a random santa hat is in pink wardrobe.]
 
 ["only destroy": with the new imprinting functionality when clothing is destroyed, Aika introduced the concept of "only destroy". This is used when you want to destroy clothing without causing any imprinting effect on the player.]
 

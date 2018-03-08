@@ -165,7 +165,7 @@ To say TitleBimbo:
 					say " trap";
 				otherwise:
 					say " girl[if the player is male]yboy[end if]";
-		if the player is a piss slut and T is not "human toilet":
+		if the player is a piss slut and T is not "toilet":
 			say " urinal".
 
 [!<SayTitleBaby>+

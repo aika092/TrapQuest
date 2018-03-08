@@ -97,6 +97,7 @@ Definition: A ballgag (called B) is fetish appropriate:
 Include Pacifiers by Bondage.
 Include Puppy Gag by Bondage.
 Include Rubber Duck Gag by Bondage.
+Include Ring Gag by Bondage.
 
 
 Chapter - Wearability

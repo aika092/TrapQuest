@@ -8,7 +8,7 @@ To FacePiss from (M - an object):
 		say "Do you drink the [urine]? [yesnolink] ";
 	if the player is gagged:
 		compute urine hitting face;
-	otherwise if there is a worn hood:
+	otherwise if there is a worn ringagged clothing:
 		say "Your ring gag means that the [urine] flows straight into your mouth, forcing you to swallow it.";
 		DrinkPiss from M;
 	otherwise:
@@ -82,7 +82,7 @@ Definition: a person is desperate to drink urine:
 	decide no.
 
 Definition: a person is forced to drink urine:
-	if there is a worn hood, decide yes;
+	if there is a worn ringagged clothing, decide yes;
 	if the player is desperate to drink urine, decide yes;
 	decide no.
 
@@ -104,7 +104,7 @@ To compute urine hitting face:
 To DrinkPiss from (M - an object):
 	Humiliate 1050 - (the urine taste addiction of the player * 50);
 	StomachUp 3;
-	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn hood]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
+	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn ringagged clothing]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
 	compute unique piss drink effect of M;
 	let H be a random white hood;
 	if H is worn:
@@ -552,7 +552,7 @@ To say VirginityTaken of (M - a monster):
 To say MouthPenetrationFlav of (M - a monster):[This probably needs changing for every monster!]
 	if presented-orifice is face:
 		say FriendlyMouthPenetrationFlav of M;
-	otherwise if there is a worn latex hood[ or there is a worn ring gag]:
+	otherwise if there is a worn ringagged clothing:
 		say RingMouthPenetrationFlav of M;
 	otherwise if the latex-transformation of the player > 6:
 		say SexDollMouthPenetrationFlav of M;

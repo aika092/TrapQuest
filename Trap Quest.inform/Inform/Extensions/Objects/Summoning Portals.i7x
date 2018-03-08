@@ -203,7 +203,7 @@ To decide which object is the summonChoice of (S - a summoning-circle):
 To say ActiveWarning of (S - a summoning-circle):
 	say "[bold type][if the location of the player is Dungeon33]The [printed name of summoning-circle] slowly lights up, and you can feel dark energy gathering around you...[otherwise]A pulse of energy passes through the dungeon, and something changes in the air. It's almost like there's a draft.[end if][roman type][line break]";
 	if the location of the player is Dungeon33, say "[variable custom style]Is something going to come through that?[roman type][line break]";
-	otherwise say "[variable custom style]Something's coming..[if the bimbo of the player > 14]. Teehee. Cumming[end if].[roman type][line break]".
+	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Teehee, cumming.[otherwise]...[end if][roman type][line break]".
 
 Check entering summoning-circle:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;

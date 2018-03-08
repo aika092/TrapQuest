@@ -651,7 +651,6 @@ To decide which number is bonus liquid:
 	decide on choice in row 63 of the Table of Player Options.
 
 To decide which number is bondage protection:
-	if diaper quest is 1, decide on 0;
 	decide on the choice in row 64 of the Table of Player Options.
 
 [!<AThingIsAFlatchestedTrap>+
@@ -710,6 +709,7 @@ title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
 "Fashion victim (more cursed/forced/transforming clothing) - 6 points ([if unlucky is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	unlucky toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if tough-shit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tough-shit toggle rule
+"Limited Saves - 4 points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	save game toggle rule
 "Male-to-female sex change - 2 points ([if TG fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	TG fetish toggle rule
 [DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. Put them above the TG fetish row instead.]
 

@@ -577,6 +577,8 @@ Include Jeans by Trousers.
 Include Buttocksless Pants by Trousers.
 Include Leggings by Trousers.
 Include Latex Pants by Trousers.
+Include Bloomers by Trousers.
+Include Teddy Bear Pantyhose by Trousers.
 
 Include Dresses Framework by Dresses.
 

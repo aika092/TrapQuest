@@ -149,7 +149,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: face (called F) is exposed:
-	if there is a worn hood, decide no;
+	if there is a worn ringagged clothing, decide no;
 	decide yes.
 
 [!<FaceIsLewdlyExposed>+

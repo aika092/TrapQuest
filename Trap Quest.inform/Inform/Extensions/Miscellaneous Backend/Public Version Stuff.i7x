@@ -85,6 +85,8 @@ Carry out debugging:
 		decrease debugmode by 1.
 Understand "debug" as debugging.
 
+Definition: an object (called K) is thigh-spreading:
+	decide no.
 
 
 Include No Graphics by Miscellaneous Frontend.

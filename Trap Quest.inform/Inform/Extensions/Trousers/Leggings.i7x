@@ -20,6 +20,7 @@ Definition: a leggings (called C) is sissifying:
 To decide which object is the potential-upgrade-target of (C - a leggings):
 	if the number of worn stockings is 0, decide on a random off-stage lacy stockings;
 	if the number of worn knickers is 0, decide on a random off-stage crotch-intact bloomers;
+	if diaper quest is 1, decide on a random off-stage baby bloomers;
 	decide on nothing.
 
 Leggings ends here.

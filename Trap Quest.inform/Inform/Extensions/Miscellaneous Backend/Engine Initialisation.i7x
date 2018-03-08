@@ -162,8 +162,12 @@ To correct table entries:
 	if the player is not top donator or Name in row 1 of Table of Male Name Options is "Undefined Name 1":
 		choose the row with a toggle of custom name rule in the Table of Male Name Options;
 		blank out the whole row;
+		choose the row with a toggle of custom name rule in the Table of Male Name Diaper Quest Options;
+		blank out the whole row;
 	if the player is not a top donator or Name in row 1 of Table of Female Name Options is "Undefined Name 1":
 		choose the row with a toggle of custom name rule in the Table of Female Name Options;
+		blank out the whole row;
+		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
 	if the player is not the donator:
 		choose the row with a toggle of roleplay fetish toggle rule in the Table of Benefit Options;
@@ -196,16 +200,20 @@ To retrieve gender:
 To retrieve name:
 	if the player is male, now the current menu is the Table of Male Name Options;
 	otherwise now the current menu is the Table of Female Name Options;
+	if diaper quest is 1:
+		if the player is male, now the current menu is the Table of Male Name Diaper Quest Options;
+		otherwise now the current menu is the Table of Female Name Diaper Quest Options;
 	if the player is male:
 		choose the row with a toggle of pure background toggle rule in the Table of Background Options;
 		blank out the whole row;
-	if diaper quest is 1 or tutorial is 1:
+	if tutorial is 1:
 		if the player is male, follow the terrence name rule;
 		otherwise follow the kimberly name rule;
 	otherwise if quick start > 0:
-		unless choice in row 3 of the Table of Player Options is 0 and quick start is 2 and choice in row 2 of the Table of Player Options is not 100: [The player manually selected a name last time and wants to use it again]
-			if the player is male, follow the male name rule;
-			otherwise follow the female name rule;
+		if diaper quest is 0:
+			unless choice in row 3 of the Table of Player Options is 0 and quick start is 2 and choice in row 2 of the Table of Player Options is not 100: [The player manually selected a name last time and wants to use it again]
+				if the player is male, follow the male name rule;
+				otherwise follow the female name rule;
 	otherwise:
 		now choice in row 2 of the Table of Player Options is 100;
 		while the player-name is 100:
@@ -222,6 +230,7 @@ To configure gender:
 		if diaper quest is 1:
 			now the flesh volume of breasts is 6;
 			now the real flesh volume of breasts is 6;
+			now the real largeness of breasts is 4;
 			now the thickness of hips is 5;
 			now the real thickness of hips is 5;
 			now the flesh volume of hips is 5;

@@ -22,6 +22,12 @@ To say MediumDesc of (C - a thing):
 To say ShortDesc of (C - a thing):
 	say "[C]".
 
+To say NameDesc of (C - a thing):
+	say "the [ShortDesc of C]".
+
+To say BigNameDesc of (C - a thing):
+	say "The [ShortDesc of C]".
+
 
 Things Framework ends here.
 

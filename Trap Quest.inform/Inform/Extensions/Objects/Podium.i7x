@@ -39,7 +39,7 @@ Closing your eyes you can feel another shiver run though you. Taking a deep brea
 		now M is in the location of the player;
 		if diaper quest is 1:
 			let P be a random pink pacifier;
-			let N be a random mittens;
+			let N be a random off-stage rubber mittens;
 			let D be a random eligible diaper;
 			if P is actually summonable, summon P cursed;
 			if N is actually summonable, summon N cursed;

@@ -3,7 +3,10 @@ DQ Punishments by Monster Framework begins here.
 
 This is the choosing a diaper punishment rule:
 	choose a diaper punishment;
-	unless chosen diaper punishment is punishment-not-found:
+	if chosen diaper punishment is punishment-not-found:
+		if debugmode > 0, say "No acceptable diaper punishment found.";
+	otherwise:
+		if debugmode > 0, say "Selected [chosen diaper punishment].";
 		compute punishment of chosen diaper punishment;
 		rule succeeds.
 The choosing a diaper punishment rule is listed first in the default diaper quest rules.
@@ -127,7 +130,7 @@ To compute punishment of (P - spanking-session):
 
 Section 3 Masturbation Session
 
-masturbation-session is a diaper punishment. The priority of masturbation-session is 4.
+masturbation-session is a diaper punishment. The priority of masturbation-session is 3.
 
 Definition: a monster (called M) is eager to masturbate:
 	if M is masturbating the player, decide yes;
@@ -236,6 +239,35 @@ Definition: confiscate (called P) is appropriate:
 
 To compute punishment of (P - confiscate):
 	compute confiscate of current-monster.
+
+
+Section 7 Babywear Donation
+
+donate babywear is a diaper punishment. The priority of donate babywear is 2.
+
+Definition: a monster (called M) is eager to donate babywear:
+	if the health of M >= the maxhealth of M and the diaper-duration of M is 0, decide no; [Most NPCs only donate babywear if they've been properly wronged.]
+	if M is able to donate babywear, decide yes;
+ 	decide no.
+ 
+ Definition: a monster (called M) is able to donate babywear:
+	if there is confiscatable clothing, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is babywearable:
+	if C is on-stage or C is not babywear or C is not actually summonable, decide no;
+	decide yes.
+
+Definition: a monster (called M) is willing to donate babywear:
+	if M is willing to confiscate, decide yes;
+	decide no.
+
+Definition: donate babywear (called P) is appropriate:
+	if current-monster is willing to donate babywear and current-monster is eager to donate babywear, decide yes;
+	decide no.
+
+To compute punishment of (P - donate babywear):
+	compute babywear donation of current-monster.
 
 
 DQ Punishments ends here.

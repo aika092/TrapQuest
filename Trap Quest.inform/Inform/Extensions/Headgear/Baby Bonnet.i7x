@@ -25,7 +25,7 @@ baby-summoned is a number that varies.
 
 To compute class outfit of (H - a baby bonnet):
 	let O be a random off-stage onesie;
-	let M be a random off-stage mittens;
+	let M be a random off-stage rubber mittens;
 	let P be nothing;
 	let B be a random off-stage baby booties;
 	if there is a worn mittens and there is a worn baby booties and a random tiger pacifier is off-stage:

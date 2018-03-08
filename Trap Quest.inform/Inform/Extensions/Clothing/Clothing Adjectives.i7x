@@ -270,6 +270,11 @@ Definition: yourself is naked:
 	decide yes.
 Definition: a clothing (called C) is leghole free: [Anything that must be pulled down the legs like jeans is NOT leghole free.]
 	decide yes.
+Definition: a clothing (called C) is babywear: [Is it something that an NPC might put on a player to make them look more like a baby?]
+	decide no.
+Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
+	decide no.
+
 
 [!<ClothingIsBasicLoot>+
 
@@ -278,7 +283,7 @@ Is this something that should be able to appear as a generic item?
 +!]
 Definition: a clothing (called C) is basic loot:
 	if C is diaper, decide no;
-	if C is off-stage and C is plentiful, decide yes;
+	if C is off-stage and C is plentiful and C is fetish appropriate, decide yes;
 	decide no.
 
 
@@ -298,6 +303,7 @@ Definition: a clothing (called C) is desirable:
 
 Definition: a clothing (called C) is slitted: [Slitted skirts don't block knee attacks]
 	decide no.
+
 
 Include Orifice Protection by Clothing.
 

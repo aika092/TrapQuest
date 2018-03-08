@@ -153,7 +153,10 @@ A time based rule (this is the compute stomach rule):
 		if (there is a worn bed wetting clothing or there is a worn bed-wetter tattoo) and resting is 1, now R is 1;
 		if debugmode is 1, say "Urination roll of [R] vs bladder of [the bladder of the player].";
 		if R < the bladder of the player, now delayed urination is 1;
-	if the remainder after dividing time-earnings by 25 < time-seconds and the delayed bladder of the player > 0:
+	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
+		bladderup (1 + (xavier-belt-link * 2)) * the delayed bladder of the player;
+		now the delayed bladder of the player is 0;
+	otherwise if the remainder after dividing time-earnings by 25 < time-seconds and the delayed bladder of the player > 0:
 		bladderup 1 + (xavier-belt-link * 2);
 		decrease the delayed bladder of the player by 1;
 	if the thirst of the player is 5 and the player is thirsty and delayed fainting is 0 and busy is 0 and the player is able to speak and the player is not flying and the player is not stuck:
@@ -212,7 +215,7 @@ To compute food:
 		StomachFoodDown 1;
 		if the stomach-food of the player > 2, FatUp 1;
 		if the stomach-food of the player > 5, FatUp 1;
-		if rectum > 0 or diaper lover >= 4 or (diaper lover >= 3 and diaper focus is 1), increase rectum by 1; [With scenes & no diaper focus, it only starts going after the matron triggers it.]
+		if xavier-throat-link is 0 and (rectum > 0 or diaper lover >= 4 or (diaper lover >= 3 and diaper focus is 1)), increase rectum by 1; [With scenes & no diaper focus, it only starts going after the matron triggers it.]
 		if diaper lover < 3, now rectum is 0; [Just to make double triple sure]
 		if the player is hungry and hunger-flav-said is 0, say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type]  Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
 	now hunger-flav-said is 1.
