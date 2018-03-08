@@ -66,7 +66,9 @@ Check drinking:
 		if T is cock pacifier:
 			unless the noun is cock pacifier, say "The cock pacifier is so tightly connected to your face that there's no way you can drink anything else with it on!" instead;
 		otherwise if T is ballgag and the noun is held:
-			if T is baby pacifier or (artificial enhancements fetish is 0 and a random number between 1 and 3 > 1) or (artificial enhancements fetish is 1 and a random number between the lips of face and 5 > 2):[3 > 2!]
+			if T is ringagged:
+				say "";
+			otherwise if T is baby pacifier or (artificial enhancements fetish is 0 and a random number between 1 and 3 > 1) or (artificial enhancements fetish is 1 and a random number between the lips of face and 5 > 2):[3 > 2!]
 				say "You manage to stretch your [LipDesc] wide enough to get some past your [T].";
 			otherwise:
 				if the doses of the noun is 1:

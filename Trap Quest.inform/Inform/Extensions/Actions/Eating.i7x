@@ -71,7 +71,7 @@ REQUIRES COMMENTING
 Definition: yourself is able to eat:
 	repeat with T running through things penetrating face:
 		if T is ballgag: [Uncursed ballgags or cursed ones while the player is hungry can be eaten past.]
-			if T is cursed and the player is not hungry, decide no;
+			if T is not ringagged and (T is cursed or T is locked) and the player is not hungry, decide no;
 		otherwise:
 			decide no;
 	if the latex-transformation of the player > 4, decide no;

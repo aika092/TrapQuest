@@ -272,7 +272,7 @@ This is the mechanic claims amulet rule:
 		if S is steel collar:
 			say "With a snap of [his of M] fingers, the steel collar unlatches itself and drops from your neck. ";
 			now S is in the location of the player;
-		if (a random number between 1 and 2 is 1 and the player-class is not succubus) or the class of the player is priestess or there is a worn pure totem:[the mechanic will always transform if you are a demon]
+		if diaper quest is 0 and ((a random number between 1 and 2 is 1 and the player-class is not succubus) or the class of the player is priestess or there is a worn pure totem):[the mechanic will always transform if you are a demon]
 			say "[big he of M] puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room. [line break][speech style of M]'I can feel the power running through my veins!  Yes, yes!  Haha!  I am back, baby!  Here, have a small reward for your troubles...'[roman type][line break]";
 			compute xavier reward of M;
 			say "The [M] starts to wander off, completely ignoring you.";
@@ -290,18 +290,18 @@ To compute xavier reward of (M - a mechanic):
 	let J be a random off-stage demon codpiece;
 	let P be a random off-stage demon tail plug;
 	if R is 1:
-		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your body. Instead of pain, though, you just feel your skin tingle gently. After a few moments, the lightning stops. You feel STRONG!";
+		say "The [M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. Instead of pain, though, you just feel your skin tingle gently. After a few moments, the lightning stops. You feel STRONG!";
 		StrengthUp 4;
 	otherwise if R is 2:
-		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your body. Instead of pain, though, you just feel your joints tingling, as if being massaged by a thousand tiny fingers. After a few moments, the lightning stops. You feel FLEXIBLE!";
+		say "The [M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. Instead of pain, though, you just feel your joints tingling, as if being massaged by a thousand tiny fingers. After a few moments, the lightning stops. You feel FLEXIBLE!";
 		DexUp 4;
 	otherwise if R is 3 and J is actually summonable and the player is male and the player is the donator:
-		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your crotch. Light converges around your [ShortDesc of penis] and a [printed name of J] materializes around your waist! You feel dominant!";
+		say "The [M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your crotch. Light converges around your [ShortDesc of penis] and a [printed name of J] materializes around your waist! You feel dominant!";
 		summon J;
 		bless J;
 		DelicateDown 2;
 	otherwise if R is 4 and P is actually summonable:
-		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your body. It hurts, but somehow, you feel even more confident because of it! You feel your [asshole] being forced open as a [printed name of P], materializes inside you.";
+		say "The [M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. It hurts, but somehow, you feel even more confident because of it! You feel your [asshole] being forced open as a [printed name of P], materializes inside you.";
 		summon P;
 		now the body soreness of the player is 10;
 		if the delicateness of the player > 4:
@@ -310,7 +310,7 @@ To compute xavier reward of (M - a mechanic):
 			DelicateDown the delicateness of the player;
 			SexAddictDown the 5 - delicateness of the player;
 	otherwise:[Double chance of this]
-		say "The [M] points at you with [his of current-monster] hands, and lightning fires from [his of current-monster] fingertips, enveloping your body. Instead of pain, though, you just feel your skin tingle gently. After a few moments, the lightning stops. You feel more intelligent!";
+		say "The [M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. Instead of pain, though, you just feel your skin tingle gently. After a few moments, the lightning stops. You feel more intelligent!";
 		IntUp 4;
 
 This is the mechanic strips princess rule:
@@ -382,7 +382,7 @@ To say MouthPenetrationFlav of (M - a mechanic):[TODO: break up according to new
 		say FriendlyMouthPenetrationFlav of M;
 	otherwise:
 		say "[one of]The [M] grabs you by the neck, squeezing painfully as [he of M] closes the gap between you and [his of M] crotch.[or]The [M] grabs a handful of your hair and wrenches your face into [his of M] crotch.[or]The [M] savagely pulls your hair, forcing your face right up against [his of M] pulsing erection.[or]The [M] seizes you by the hair, cruelly yanking your face right up to [his of M] crotch.[or]The [M] closes [his of M] fist around your ear and brutally yanks your head toward [his of M] crotch.[at random]";
-		if there is a worn latex hood:
+		if there is a worn ringagged clothing:
 			say "[one of]You gag involuntarily as [he of M] rams [his of M] [manly-penis] into your mouth and begins to thrust.[or]You [if the oral sex addiction of the player + the delicateness of the player < 10]struggle, but the ring in your mouth ensures [he of M] can shove [his of M] [manly-penis] into your mouth and thrust with impunity.[otherwise]do your best not to struggle, which [he of M] simply takes as an opportunity to shove [his of M] [manly-penis] into your mouth and thrust with impunity.[end if][or][if the oral sex addiction of the player < 6]Your eyes widen in surprise and indignation as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[otherwise if the delicateness of the player > 3]You can do nothing but gag as [he of M] slides [his of M] penis through the ring and into your mouth.[otherwise]Your eyes widen with excitement as the [M] slides [his of M] [manly-penis] through your gag and into your mouth.[end if][at random]";
 		otherwise if the latex-transformation of the player > 6:
 			say "[one of]You give the [M] a dour look as [he of M] slides [his of M] penis through your [LipDesc][or]You can only stare up at [him of M] as [his of M] penis slides into padded hole you call a mouth.[or]Your [LipDesc] make faint squeaking noises as [he of M] slides [his of M] [manly-penis] into your mouth and begins to thrust.[or]You make [if the oral sex addiction of the player < 5]an annoyed noise[otherwise]a plaintive moan[end if] as [his of M] [manly-penis] enters your padded rubber mouth.[at random]";

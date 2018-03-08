@@ -30,6 +30,9 @@ To say PissDrinkThreat of (M - a demoness):
 
 Understand "demon" as demoness. The description of demoness is usually "[DemonessDesc]". 
 
+To say ShortDesc of (M - a demoness):
+	say "demoness".
+
 An infernal demoness is a kind of demoness. There is 1 infernal demoness.
 The printed name of infernal demoness is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]infernal demoness[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of infernal demoness is "ide".
 An cackling demoness is a kind of demoness. There is 1 cackling demoness.
@@ -273,6 +276,9 @@ To compute DQ perception of (M - a demoness):
 			say "The [M] has such a powerful dominating aura that you mindlessly drop to your knees in front of her.";
 			now seconds is 1;
 			try kneeling;
+	otherwise if demoness-facesit is appropriate:
+		say "[speech style of M]'Mortal! If I can sense your need to go to the toilet, then I am sure that you can! Why do you refuse to wear a diaper? I think you need to be taught a lesson...'[roman type][line break]";
+		anger M;
 	otherwise:
 		compute DQ appearance assessment of M;
 		if M is interested: [She hasn't finished talking]
@@ -1110,10 +1116,38 @@ To uniquely destroy (M - a demoness):
 Part 5 - DQ
 
 demoness-plug is a diaper punishment. The priority of demoness-plug is 5.
-Definition: a demoness-plug (called P) is appropriate:
+Definition: demoness-plug (called P) is appropriate:
 	if current-monster is not demoness, decide no;
 	if there is a worn diaper and there is an off-stage prostate massager plug, decide yes;
 	decide no.
+
+To compute punishment of (P - demoness-plug):
+	compute prostate plugging of current-monster.
+
+demoness-facesit is a diaper punishment. The priority of demoness-facesit is 5.
+Definition: demoness-facesit (called P) is appropriate:
+	if current-monster is not demoness, decide no;
+	if the player is pee protected or there is worn knickers, decide no;
+	if the player is bursting, decide yes;
+	decide no.
+
+To compute punishment of (P - demoness-facesit):
+	let M be current-monster;
+	say "[speech style of M]'[one of]Let me show you how to wear and use a diaper[or]Clearly you still need diaper use lessons, little one[stopping].'[roman type][line break][BigNameDesc of M] places both hands around [his of M] gem and you watch with [horror diaper addiction of the player] as a giant pink disposable diaper with a white star pattern begins to materialise around [him of M]. With a flick of [his of M] wrist, your body flips 180 degrees so that you are lying on your back. [big he of M] stands over your head and them begins to lower [his of M] diapered rear towards your face. You only just have time to hold your breath before the padding envelops you, and you are robbed of your sight and forced to focus on your sense of hearing.[line break][speech style of M]'Come on now, I'm not going to let you up until you breathe in deep.'[roman type][line break]You are forced to relent and begin to breathe laboured, shallow breaths, getting what oxygen you can through the thick material.[line break][speech style of M]'Now, watch closely.'[roman type][line break][BigNameDesc of M] holds you by the [BellyDesc] as [he of M] [if diaper lover < 3]sighs and begins to tinkle[otherwise]grunts and pushes and begins to vacate her bowels[end if]. Within moments the smell assaults your nostrils, dominating your sensory receptors and overwhelming you. [if diaper lover >= 3]And yet it keeps coming, as [he of M] unloads an ungodly amount of mess into [his of M] padding, pushed right into your face. The gross sounds that accompany the tirade keep you acutely aware of all the noxious gas she is cropdusting over your body. [end if]As [he of M] does this [he of M] pushes down on your belly, and you feel a weird tingle flow from her hands to your bladder. And then in the next moment, you are [one of][if the diaper addiction of the player > 7]surprised[otherwise]dismayed[end if] to find that you are wetting yourself[or]once again forced to wet yourself[stopping].";
+	if image cutscenes is 1 and diaper lover >= 3:
+		display figure of demoness cutscene 15;
+		say "[italic type]Image by Aweye. OC by Merunyaa.[roman type][line break]";
+	now delayed urination is 1;
+	now M is penetrating face; [stops the player from speaking]
+	try urinating;
+	say "Only after [NameDesc of M] has seen your wetting shame does she stand up, freeing your face. [speech style of M]'As [one of]I thought[or]we already knew[stopping], it's you who needs this diaper, not me.'[roman type][line break][big he of M] puts [his of M] hands together and concentrates. Her giant soiled diaper disappears from her crotch, and appears around yours!";
+	let D be a random plain diaper;
+	summon D cursed;
+	now the urine-soak of D is 10;
+	now the mess of D is 20;
+	satisfy M.
+	
+
 
 To compute punishment of (P - demoness-plug):
 	compute prostate plugging of current-monster.

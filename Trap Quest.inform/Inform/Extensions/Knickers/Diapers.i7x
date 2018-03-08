@@ -346,7 +346,7 @@ To say selfexamineuniquetitle of (K - a training pants):
 
 Figure of training pants is the file "Items\Clothes\Lower\Underwear\Diapers\TrainingPants\trainingpants1.png".
 Figure of sexy training pants is the file "Items\Clothes\Lower\Underwear\Diapers\TrainingPants\trainingpants2.png".
-The DQFigure of training pants is usually DQBlackPants. 
+The DQFigure of training pants is usually DQTrainingPants. 
 
 The soak-limit of a training pants is usually 18.
 
@@ -547,18 +547,20 @@ The DQFigure of star pattern diaper is usually DQPullups.
 
 Chapter 23 Demon Diaper
 
-A demon diaper is a kind of disposable diaper. There is 1 demon diaper. The printed name of demon diaper is usually "[TQlink of item described][clothing-title-before]demon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon diaper is "dmd". The armour of demon diaper is 25. demon diaper is unique. A demon diaper has a number called dry-timer.
+A demon diaper is a kind of pullup diaper. There is 1 demon diaper. The printed name of demon diaper is usually "[TQlink of item described][clothing-title-before]demon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon diaper is "dmd". The armour of demon diaper is 25. demon diaper is unique. A demon diaper has a number called dry-timer.
 
 To decide which figure-name is clothing-image of (C - a demon diaper):
 	decide on figure of plain diaper.
 
 To say ClothingDesc of (C - a demon diaper):
-	say "This massive white diaper has a red pentagram printed on the front. It periodically cleans itself.";
+	say "This massive pink diaper has a red pentagram printed on the front. It periodically cleans itself.";
 
 To say selfexamineuniquetitle of (K - a demon diaper):
-	say "super thick white demon diaper".
+	say "super thick pink demon diaper".
 
-The DQFigure of demon diaper is usually DQMoosive. 
+
+Figure of demon diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper23.png".
+The DQFigure of demon diaper is usually DQGiant. 
 
 The soak-limit of demon diaper is usually 60.
 

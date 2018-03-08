@@ -763,7 +763,7 @@ Rule for constructing the status line while displaying:
 		fill status bar with Table of Game Settings Status;
 	otherwise if the current menu is the Table of Gender Options:
 		fill status bar with Table of Gender Options Status;
-	otherwise if the current menu is the Table of Male Name Options or the current menu is the Table of Female Name Options:
+	otherwise if the current menu is the Table of Male Name Options or the current menu is the Table of Female Name Options or the current menu is the Table of Male Name Diaper Quest Options or the current menu is the Table of Female Name Diaper Quest Options:
 		fill status bar with Table of Name Options Status;
 	otherwise if the current menu is the Table of Benefit Options or the current menu is the Table of Diaper Quest Benefit Options or the current menu is the Table of Secret Options or the current menu is the Table of Background Options:
 		fill status bar with Table of Benefit Options Status;

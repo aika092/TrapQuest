@@ -173,7 +173,7 @@ slow-pregnancy-tracker is a number that varies.
 To decide which number is maximum-pregnancy-delay: [maximum number of turns before moving forward]
 	let M be 20 - (the pregnancy rate of the player * 4);
 	if M < 2, decide on 2;
-	decide on M.
+	decide on M / 2.
 
 [!<maximumPregnancyDelayTracker:Integer>*
 

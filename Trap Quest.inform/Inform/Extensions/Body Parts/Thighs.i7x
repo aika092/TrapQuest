@@ -34,6 +34,11 @@ Definition: thighs (called B) is exposed:
 	if there is a worn actually dense leg covering clothing, decide no;
 	decide yes.
 
+Definition: thighs (called B) is spread:
+	if diaper lover <= 0, decide no;
+	if there is worn thigh-spreading clothing, decide yes;
+	decide no.
+
 
 Part 2 - Description
 
@@ -50,7 +55,7 @@ To say ShortDesc of (T - thighs):
 REQUIRES COMMENTING
 
 +!]
-To say LongDesc of thighs:
+To say LongDesc of (T - thighs):
 	if weight gain fetish is 1:
 		if the flesh volume of thighs > 9:
 			say "giant thundering thighs that constantly shudder and wobble as you move around";
@@ -72,14 +77,15 @@ To say LongDesc of thighs:
 REQUIRES COMMENTING
 
 +!]
-To say TotalDesc of thighs:
-	if weight gain fetish is 1 or the semen coating of thighs > 0, say "Supporting your body you have [LongDesc of thighs][if the semen coating of thighs is 0]. [end if]";
+To say TotalDesc of (T - thighs):
+	if weight gain fetish is 1 or the semen coating of thighs > 0, say "Supporting your body you have [LongDesc of T][if the semen coating of thighs is 0]. [end if]";
 	if the semen coating of thighs > 7:
 		say " that are completely caked in [if the semen addiction of the player < 6]nasty, [end if]slimy [semen]. ";
 	otherwise if the semen coating of thighs > 4:
 		say " that squelch together [if the semen addiction of the player < 6]horribly [end if]as you [if the player is upright]walk[otherwise]crawl[end if]. ";
 	otherwise if the semen coating of thighs > 0:
-		say " that have [semen] slowly trickling down them as you [if the player is upright]walk[otherwise]crawl[end if]. ".
+		say " that have [semen] slowly trickling down them as you [if the player is upright]walk[otherwise]crawl[end if]. ";
+	if T is spread, say "They are forced wide apart thanks to your [ShortDesc of random worn thigh-spreading clothing].".
 
 Part 3 - Modify Thighs Stats
 

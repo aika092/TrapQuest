@@ -128,6 +128,7 @@ Figure of demoness cutscene 11 is the file "Special/Cutscene/cutscene-demoness-o
 Figure of demoness cutscene 12 is the file "Special/Cutscene/cutscene-demoness-vaginalcreampie1.png".
 Figure of demoness cutscene 13 is the file "Special/Cutscene/cutscene-demoness-vaginal1.png".
 Figure of demoness cutscene 14 is the file "Special/Cutscene/cutscene-demoness-strut1.png".
+Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.png".
 
 
 Figure of aeromancer interact 1 is the file "Special/Cutscene/cutscene-aeromancer-interact1.png".

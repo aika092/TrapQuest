@@ -73,7 +73,7 @@ To decide which figure-name is clothing-image of (C - a cupcake baby romper):
 	decide on figure of cupcake baby romper.
 
 To say ClothingDesc of (C - a cupcake baby romper):
-	say "This pink romper suit has a childish cupcake pattern and clearly looks like it's made for a baby girl. But it's in your size!  It has a large zip down the middle.".
+	say "This pink romper suit has a childish cupcake pattern and clearly looks like it's made for a baby girl. But it's in your size! It has a large zip down the middle.".
 
 To say ShortDesc of (C - a cupcake baby romper):
 	say "cupcake patterned baby pink romper".
@@ -85,7 +85,35 @@ To decide which number is the initial outrage of (C - a cupcake baby romper):
 To decide which number is the initial cringe of (C - a cupcake baby romper):
 	decide on 7.
 
-Definition: a cupcake baby romper (called C) is end of transformation chain:
+To decide which object is the potential-upgrade-target of (C - a cupcake baby romper):
+	decide on a random off-stage yellow baby romper.
+
+Part 4 - Yellow Baby Romper
+
+A yellow baby romper is a kind of romper. There is 1 unique yellow baby romper. The text-shortcut of yellow baby romper is "ybr". The printed name of yellow baby romper is usually "[TQlink of item described][clothing-title-before]yellow baby romper[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+
+Figure of yellow baby romper is the file "Items\Clothes\Upper\Rompers\romper4.png".
+
+To decide which figure-name is clothing-image of (C - a yellow baby romper):
+	decide on figure of yellow baby romper.
+
+To say ClothingDesc of (C - a yellow baby romper):
+	say "This yellow romper suit has loose pink pockets and a peter pan collar. It clearly looks like it's made for a baby girl, but it's in your size! It has line of popper buttons the middle.".
+
+To say ShortDesc of (C - a yellow baby romper):
+	say "yellow baby romper".
+
+To decide which number is the initial outrage of (C - a yellow baby romper):
+	if diaper quest is 1, decide on 0;
+	decide on the initial cringe of C.
+
+To decide which number is the initial cringe of (C - a yellow baby romper):
+	decide on 8.
+
+Definition: a yellow baby romper (called C) is end of transformation chain:
+	decide yes.
+
+Definition: a yellow baby romper (called C) is babywear:
 	decide yes.
 
 

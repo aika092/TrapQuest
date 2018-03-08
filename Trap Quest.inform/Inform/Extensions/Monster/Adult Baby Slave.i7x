@@ -271,18 +271,19 @@ This is the adult baby slave shows you to mommy rule:
 			say "[one of][line break][second custom style]'We're gonna go see mommy!'[roman type][line break][or][stopping]";
 			drag to the target-room of M by M;
 		if N is in the location of M:
-			say "[second custom style]'Mommy! [NameBimbo] had an accident so [if player is male]he[end if][if player is female]she[end if] needs diapers! That's the rule, right?!'[line break]";
+			if the times-met of N < 1, say "[second custom style]'[NameBimbo], meet Mommy! She's the best.'[line break]";
+			otherwise say "[second custom style]'Mommy! [NameBimbo] had an accident so [if player is male]he[end if][if player is female]she[end if] needs diapers! That's the rule, right?!'[line break]";
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]Let me go!'[otherwise]Umm...'[end if]";
 			say "[roman type][line break]";
 			say "The [M] dumps you in front of the [N] in this room, and then promptly skips away, humming to herself merrily, seemingly happy with herself for her 'good deed'.";
 			now the variety of N is 99;
-			now the ToMatron of M is 0;
+			now the ToMatron of M is -1;
 			if N is friendly or N is uninterested, check perception of N;
 			bore M;
 			compute motion of M;
 		otherwise: 
 			say "[second custom style]'Oh, she's not here. That's weird. Oh well, I guess we can wait for her here. I've got an idea of something we can do to pass the time...'[roman type][line break]";
-			now the ToMatron of M is 0;
+			now the ToMatron of M is -1;
 		rule succeeds.
 The adult baby slave shows you to mommy rule is listed in the adult baby slave unique punish rules.
 
@@ -298,7 +299,7 @@ The adult baby slave priority attack rules is a rulebook. The priority attack ru
 
 To compute kneeling reaction of (M - an adult baby slave):
 	say "The [M] walks over to you, rubbing the front of her diaper and staring down luridly into your eyes. She stops rubbing long enough to push her diaper closer to your face, forcing you to inhale the sweet scent of baby powder.";
-	if the ToMatron of M is 0,  say "[one of][line break][speech style of M]'Looking forward to having my diaper on your face little [if player is male]brother[else if player is female]sister[end if]?'[roman type][line break][or]'Just the thought of your nose in my diaper makes me super wet... and not with pee. Not yet anyway.'[roman type][or]'I kinda have to use my diaper... I hope you don't mind if I do it on your face.'[roman type][or]'Would you forgive me if I wet my diaper on your face?... Might you even like it a little?'[roman type][or][if diaper lover >= 4]'Would you hate me forever if I messed my diaper on your face, because I really want to! Maybe you'll even like it.'[end if][line break][in random order]";
+	if the ToMatron of M < 1 and diaper quest is 0,  say "[one of][line break][speech style of M]'Looking forward to having my diaper on your face little [if player is male]brother[else if player is female]sister[end if]?'[roman type][line break][or]'Just the thought of your nose in my diaper makes me super wet... and not with pee. Not yet anyway.'[roman type][or]'I kinda have to use my diaper... I hope you don't mind if I do it on your face.'[roman type][or]'Would you forgive me if I wet my diaper on your face?... Might you even like it a little?'[roman type][or][if diaper lover >= 4]'Would you hate me forever if I messed my diaper on your face, because I really want to! Maybe you'll even like it.'[end if][line break][in random order]";
 	
 To say waitingflav of (M - an adult baby slave):
 	if the player is not able to speak:
@@ -501,7 +502,7 @@ To say DiaperChangeComment of (M - a adult baby slave):
 To say MercyReaction of (M - an adult baby slave):
 	say "Your attempts to beg are muffled by the adult baby's diaper on your face!".
 
-adult-baby-facesit is a diaper punishment. The priority of adult-baby-facesit is 3.
+adult-baby-facesit is a diaper punishment. The priority of adult-baby-facesit is 2.
 Definition: an adult-baby-facesit (called P) is appropriate:
 	if current-monster is not adult baby slave, decide no;
 	if the player is immobile, decide no;
@@ -511,6 +512,26 @@ To compute punishment of (P - adult-baby-facesit):
 	let M be current-monster;
 	say "The [M] rolls you onto your back and sits on your face, burying it in layers of padding and plastic, adjusting herself to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[or]Sorry in advance if I use my diaper on your face.'[or]Just so you know, if I use my diaper on your face, it might not be an accident...'[at random][roman type][line break]";
 	compute diaper sit of M.
+
+adult-baby-matron-drag is a diaper punishment. The priority of adult-baby-matron-drag is 5.
+Definition: an adult-baby-matron-drag (called P) is appropriate:
+	if current-monster is not adult baby slave, decide no;
+	if current-monster is eager to feed to master, decide yes;
+	decide no.
+
+To compute punishment of (P - adult-baby-matron-drag):
+	follow the adult baby slave shows you to mommy rule.
+
+Definition: an adult baby slave (called M) is eager to feed to master:
+	let N be a random alive matron;
+	unless the player is in the hotel and N is monster and the ToMatron of M >= 0, decide no;
+	if the ToMatron of M is 1 or the times-met of N < 1, decide yes;
+	decide no.
+	
+	
+
+To compute punishment of (P - adult-baby-matron-drag):
+	 follow the adult baby slave shows you to mommy rule.
 
 To say SuppositoryDeclarationFlav of (M - an adult baby slave):
 	say "[if presented-orifice is asshole or M is friendly-fucking]You stick your ass out in the direction of the [M], waiting to see[otherwise]The [M] has a very evil look in her eyes, and you are concerned about[end if] what she has in mind. ".

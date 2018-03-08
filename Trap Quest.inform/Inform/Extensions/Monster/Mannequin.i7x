@@ -344,7 +344,7 @@ This is the mannequin donates clothing rule:
 	let D be a random eligible diaper;
 	if D is actually summonable:
 		summon D cursed;
-		say "The [current-monster] produces a [D] and pulls it into place!  Uh-oh!  ";
+		say "The [current-monster] produces a [D] and pulls it into place!  [if the diaper addiction of the player < 10]Uh-oh!  [end if]";
 		satisfy current-monster;
 		rule succeeds;
 	let M be a random off-stage babydoll microskirt;

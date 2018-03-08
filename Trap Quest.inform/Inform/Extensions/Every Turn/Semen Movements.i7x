@@ -75,7 +75,7 @@ A time based rule (this is the compute cum movements rule):
 						WombEmpty 1;
 						Hipup 1;
 			otherwise if the semen volume of vagina > 0:
-				say "A large glob of [semen] [one of]slowly seeps[or]leaks[purely at random] out of your [vagina] and [if the player is pee protected and bukkake fetish is 1]stains your [printed name of random worn bottom level pee protection clothing].[otherwise if the player is prone]puddles below you[otherwise]trickles down your [ShortDesc of thighs].[end if]";
+				say "A large glob of [semen] [one of]slowly seeps[or]leaks[purely at random] out of your [vagina] and [if the player is pee protected and bukkake fetish is 1]stains your [printed name of random worn bottom level pee protection clothing].[otherwise if the player is prone]puddles below you.[otherwise]trickles down your [ShortDesc of thighs].[end if]";
 				PussySquirt 1.
 
 [!<CheckGoddessEligibility>+

@@ -25,7 +25,7 @@ REQUIRES COMMENTING
 +!]
 To say TQxlink of (T - a thing):
 	if inline hyperlinks >= 1 and the text-shortcut of T is not "", say "[as]x [text-shortcut of T][end link]";
-	if disambiguation-busy is true and inventory-busy is 0, say "[bold type][if T is worn] (worn)[otherwise] (unworn)[end if][roman type]".
+	if disambiguation-busy is true and inventory-busy is 0, say "[bold type][if T is worn] (worn)[otherwise if T is wearable] (unworn)[end if][roman type]".
 
 
 [*<SayTQdlink>+
@@ -596,41 +596,42 @@ To compute options:
 		say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0][link]wank[end link] [end if][if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
 		if inline hyperlinks >= 3 and the player is not immobile:
 			say "[line break]";
-			if there is an interested unfriendly monster in the location of the player and the player is prone:
-				now auto is 1;
-				repeat with P running through actually presentable body parts:
-					say "[link][if the delicateness of the player < 10]suggest[otherwise]offer[end if] [P][end link] ";
-					now P is catalogued;
-				now auto is 0;
-				now summoning is 1;
-				let C be a random worn top level ass protection clothing;
-				if C is clothing and C is not catalogued:
-					if C is displacable or C is actually removable:
-						say "[C] ";
-						now C is catalogued;
-				otherwise if there is a wearthing penetrating asshole:
-					now C is a random wearthing penetrating asshole;
-					if C is actually removable:
-						say "[C] ";
-						now C is catalogued;
-				if the player is female:
-					now C is a random worn top level protection clothing;
+			if diaper quest is 0:
+				if there is an interested unfriendly monster in the location of the player and the player is prone:
+					now auto is 1;
+					repeat with P running through actually presentable body parts:
+						say "[link][if the delicateness of the player < 10]suggest[otherwise]offer[end if] [P][end link] ";
+						now P is catalogued;
+					now auto is 0;
+					now summoning is 1;
+					let C be a random worn top level ass protection clothing;
 					if C is clothing and C is not catalogued:
 						if C is displacable or C is actually removable:
 							say "[C] ";
 							now C is catalogued;
-					otherwise if there is a wearthing penetrating vagina:
-						now C is a random wearthing penetrating vagina;
+					otherwise if there is a wearthing penetrating asshole:
+						now C is a random wearthing penetrating asshole;
 						if C is actually removable:
 							say "[C] ";
 							now C is catalogued;
-				now summoning is 0;
-			otherwise if there is an interested monster in the location of the player and the player is prone:
-				now auto is 1;
-				repeat with P running through actually presentable body parts:
-					say "[link]present [P][end link] ";
-					now P is catalogued;
-				now auto is 0;
+					if the player is female:
+						now C is a random worn top level protection clothing;
+						if C is clothing and C is not catalogued:
+							if C is displacable or C is actually removable:
+								say "[C] ";
+								now C is catalogued;
+						otherwise if there is a wearthing penetrating vagina:
+							now C is a random wearthing penetrating vagina;
+							if C is actually removable:
+								say "[C] ";
+								now C is catalogued;
+					now summoning is 0;
+				otherwise if there is an interested monster in the location of the player and the player is prone:
+					now auto is 1;
+					repeat with P running through actually presentable body parts:
+						say "[link]present [P][end link] ";
+						now P is catalogued;
+					now auto is 0;
 			[The entire segment of code above is to help the player expose and present their body parts to NPCs]
 			unless the player is in danger:
 				if the body soreness of the player > 0:

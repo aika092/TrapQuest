@@ -24,7 +24,8 @@ Definition: a woven stockings (called C) is sissifying:
 	decide yes.
 
 To decide which object is the potential-upgrade-target of (C - a woven stockings):
-	if diaper quest is 0, decide on a random off-stage fishnet stockings.
+	if diaper quest is 0, decide on a random off-stage fishnet stockings;
+	otherwise decide on a random off-stage teddy bear pantyhose.
 	
 Definition: a woven stockings (called C) is bow themed:
 	decide yes.

@@ -796,6 +796,40 @@ To say ConfiscationAfterFlav of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[one of]You should be thankful that I don't punish you further.'[or]I think you've gotten off lightly really, don't you?'[or]Considering your behaviour, I think that you should be grateful I have chosen not to punish your more... physically.'[in random order][roman type][line break]".
 
 
+Section - Babywear Donation
+
+To compute babywear donation of (M - a monster):
+	let C be a random babywearable clothing;
+	if C is clothing:
+		say "[BabywearDonationDeclarationFlav of M on C]";
+		compute M babywear donating C;
+		say "[BabywearDonationReaction of M on C]";
+		say "[BabywearDonationAfterFlav of M on C]";
+		satisfy M;
+	otherwise:
+		say "BUG - couldn't find appropriate clothing to put on the player.".
+
+To say BabywearDonationDeclarationFlav of (M - a monster) on (C - a clothing):
+	if M is intelligent, say "[speech style of M]'Let's put you in something a bit more appropriate for a [if the health of M < the maxhealth of M]little brat[otherwise]diaper-dependent baby[end if].'[roman type][line break]".
+
+To compute (M - a monster) babywear donating (C - a clothing):
+	say "[BabywearDonationFlav of M on C]";
+	if C is bondage, summon C locked;
+	otherwise summon C cursed;
+	try examining C.
+
+To say BabywearDonationFlav of (M - a monster) on (C - a clothing):
+	say "The [M] forces you to wear a [ShortDesc of C]!".
+	
+To say BabywearDonationReaction of (M - a monster) on (C - a clothing):
+	if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]You'll pay for this!'[otherwise if the player is not feeling submissive][one of]Wha?!'[or]This doesn't seem fair...'[in random order][otherwise][one of]If you say so,[or]Thank you[or]Yes[in random order] [daddy of M]...'[end if][roman type][line break]";
+	otherwise say "[variable custom style]'[muffled sounds][roman type][line break]".
+
+To say BabywearDonationAfterFlav of (M - a monster) on (C - a clothing):
+	if M is intelligent, say "[speech style of M]'[one of]That looks much better.'[or]Haha, that looks perfect!'[or]Haha, I wish you could see how pathetic you look from up here!'[in random order][roman type][line break]".
+
+
+
 
 Diaper Events ends here.
 

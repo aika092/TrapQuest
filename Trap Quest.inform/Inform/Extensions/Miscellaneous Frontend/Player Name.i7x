@@ -589,6 +589,15 @@ title	subtable	description	toggle
 "[Name in row 1 of Table of Custom Male Name]"	--	--	custom name rule
 
 
+Table of Male Name Diaper Quest Options
+title	subtable	description	toggle
+"Lucas"	--	--	lucas name rule
+"Stanley"	--	--	stanley name rule
+"Terrence"	--	--	terrence name rule
+"Colin"	--	--	colin name rule
+"[Name in row 1 of Table of Custom Male Name]"	--	--	custom name rule
+
+
 [!<TheMaleNameRule>+
 
 REQUIRES COMMENTING
@@ -707,6 +716,13 @@ title	subtable	description	toggle
 "Adrianna"	--	--	adrianna name rule
 "Braedynne"	--	--	braedynne name rule
 "Stephanie"	--	--	stephanie name rule
+"[Name in row 1 of Table of Custom Female Name]"	--	--	custom name rule
+
+Table of Female Name Diaper Quest Options
+title	subtable	description	toggle
+"Margaret"	--	--	margaret name rule
+"Audrey"	--	--	audrey name rule
+"Kimberly"	--	--	kimberly name rule
 "[Name in row 1 of Table of Custom Female Name]"	--	--	custom name rule
 
 [!<TheFemaleNameRule>+

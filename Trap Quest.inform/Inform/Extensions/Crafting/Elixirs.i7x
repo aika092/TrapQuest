@@ -85,7 +85,7 @@ A time based rule (this is the life elixir decay rule):
 			otherwise if the pregnancy of the player > 0:
 				say "You feel life force rushing through your body, as if trying to find something to heal. After rushing through your torso, your [vagina] and your [asshole], it flows through your cervix into your womb.";
 				let B be the largeness of belly;
-				increase the womb volume of vagina by 1;
+				unless the womb volume of vagina is 30, increase the womb volume of vagina by 1;
 				if the largeness of belly > B, say PregGrowth.
 	
 Section 3 Elixir of Invigoration

@@ -77,6 +77,7 @@ To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
 		increase the stomach-food of the player by 1 + (xavier-belt-link * 2);
+		if xavier-throat-link is 1 and rectum > 0 and diaper lover >= 3, increase rectum by 1 + (xavier-belt-link * 2);
 		decrease X by 1.
 
 [!<StomachFoodDownX>+

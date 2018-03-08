@@ -7,7 +7,7 @@ To decide which number is the initial outrage of (C - a tongue piercing):
 
 Definition: a tongue piercing (called C) is currently visible: [Is the item worn and currently visible to onlookers?]
 	if C is not worn, decide no;
-	if there is a worn hood or the latex-transformation of the player > 6, decide yes; [If there is something holding your mouth open then your piercing is visible]
+	if there is a worn ringagged clothing or the latex-transformation of the player > 6, decide yes; [If there is something holding your mouth open then your piercing is visible]
 	decide no.
 
 Check taking off tongue piercing:
