@@ -72,6 +72,7 @@ maid-summoned is a number that varies.
 To compute class outfit of (H - a maid headdress):
 	let C be a random off-stage chastity cage;
 	let M be chosen-maid-outfit;
+	let S be a random off-stage cafe maid stockings;
 	if M is actually summonable or (M is maid outfit and maid-summoned is 0):
 		if maid-summoned is 0:
 			repeat with O running through worn dresses:
@@ -89,6 +90,12 @@ To compute class outfit of (H - a maid headdress):
 		now maid-summoned is 1;
 		now the raw-magic-modifier of M is 0;
 		increase the raw-magic-modifier of M by the crawl count of the player / 10;
+	otherwise if H is cafe maid headdress and S is actually summonable:
+		say "[bold type]Your headdress barely noticeably shakes, and then a [ShortDesc of S] materialises on your legs.[roman type][line break]";
+		summon S cursed;
+		now S is strength-influencing;
+		now the raw-magic-modifier of S is -1;
+		increase the raw-magic-modifier of S by the crawl count of the player / 7;
 	otherwise if there is a worn maid outfit and C is actually summonable and the player is extremely horny:
 		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]![roman type]  [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
 		summon C cursed;

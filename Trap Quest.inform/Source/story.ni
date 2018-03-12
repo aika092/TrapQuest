@@ -1,4 +1,4 @@
-"Trap Quest" by Aika
+"Diaper Quest" by Aika
 
 Release along with cover art.
 The story genre is "Erotica".
