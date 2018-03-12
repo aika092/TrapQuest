@@ -87,6 +87,8 @@ Understand "debug" as debugging.
 
 Definition: an object (called K) is thigh-spreading:
 	decide no.
+To decide which number is the DQBulk of (K - an object):
+	decide on 0.
 
 
 Include No Graphics by Miscellaneous Frontend.

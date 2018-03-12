@@ -263,8 +263,8 @@ The adult baby slave obeys guard rule is listed first in the adult baby slave pr
 
 This is the adult baby slave shows you to mommy rule: 
 	let M be current-monster;
-	let N be a random alive matron;
-	if N is monster and the ToMatron of M is 1 and the player is in the hotel:
+	if M is eager to feed to master:
+		let N be a random alive matron;
 		now the target-room of M is Hotel22;
 		anger M;
 		if the player is not in the target-room of M:

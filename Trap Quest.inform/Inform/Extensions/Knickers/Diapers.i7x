@@ -550,7 +550,7 @@ Chapter 23 Demon Diaper
 A demon diaper is a kind of pullup diaper. There is 1 demon diaper. The printed name of demon diaper is usually "[TQlink of item described][clothing-title-before]demon diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon diaper is "dmd". The armour of demon diaper is 25. demon diaper is unique. A demon diaper has a number called dry-timer.
 
 To decide which figure-name is clothing-image of (C - a demon diaper):
-	decide on figure of plain diaper.
+	decide on figure of demon diaper.
 
 To say ClothingDesc of (C - a demon diaper):
 	say "This massive pink diaper has a red pentagram printed on the front. It periodically cleans itself.";

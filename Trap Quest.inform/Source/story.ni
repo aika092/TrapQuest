@@ -678,6 +678,7 @@ Include Wool Stockings by Stockings.
 Include Striped Stockings by Stockings.
 Include Magical Stockings by Stockings.
 Include Christmas Socks by Stockings.
+Include Cafe Maid Stockings by Stockings.
 
 Include Accessories Framework by Accessories.
 Include Rings by Accessories.

@@ -16,7 +16,6 @@ To set up (M - a boogeymonster):
 	if M is alive: [We don't want to reset the boogeymonster if he's dead]
 		reset M;
 		now the monstersetup of M is 1;
-		now M is large;
 		now the difficulty of M is 11;
 		now the health of M is the maxhealth of M.
 

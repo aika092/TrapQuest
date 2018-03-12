@@ -664,10 +664,10 @@ To compute forcefeed start of (M - a monster):
 	say "[ForcefeedStartFlav of M]".
 
 To decide which number is the forcefeed-length of (M - a monster):
-	decide on 1.
+	decide on 2.
 
-To decide which number is the max-forcefeed-length of (M - a monster): [Set this to however high the NPC's forcefeed rounds go]
-	decide on 1.
+To decide which number is the max-forcefeed-length of (M - a monster): [Set this to however high the NPC's forcefeed rounds go. It shouldn't be less than their forcefeed-length.]
+	decide on the forcefeed-length of M.
 
 [
 Let's imagine that we are on chosen-forcefeed-round 6 and we have 3 rounds of feeding left. 
