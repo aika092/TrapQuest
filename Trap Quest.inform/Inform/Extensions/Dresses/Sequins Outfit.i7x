@@ -63,7 +63,6 @@ To decide which object is the potential-upgrade-target of (C - a sequins dress):
 To uniquely set up (C - a sequins dress):
 	repair C;
 	now the armour of C is 6;
-	set up magic state of C;
 	now C is confidence.
 
 This is the remove inappropriate sequins dress rule:

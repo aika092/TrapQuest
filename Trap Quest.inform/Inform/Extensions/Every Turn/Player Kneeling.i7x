@@ -7,10 +7,11 @@ REQUIRES COMMENTING
 
 +!]
 To compute player kneeling:
-	if the location of the player is Dungeon19:
+	if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole > 7:
 			say "While on your knees, you get a very strong whiff of the stench in this room. It takes you over the edge and you start to faint.";
 			now delayed fainting is 1;
+			now the soreness of asshole is 7;
 			now the fainting reason of the player is 3;
 	if the player is able to breathe:
 		compute fatigue loss;
@@ -72,7 +73,7 @@ To compute pink smoke:
 				say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
 				try masturbating;
 			otherwise:
-				say "You are so incredibly horny but can't masturbate [if there is worn bound-behind wrist bond]with your hands bound behind your back[otherwise]right now[end if]! [if the player is not a pervert]Inappropriate[otherwise]Graphic[end if] sexual fantasies fill your head.";
+				say "You are so incredibly horny but can't masturbate [if the player is wrist bound behind]with your hands bound behind your back[otherwise]right now[end if]! [if the player is not a pervert]Inappropriate[otherwise]Graphic[end if] sexual fantasies fill your head.";
 				SexAddictUp 1;
 				decrease the arousal of the player by 4000;
 				update arousal;

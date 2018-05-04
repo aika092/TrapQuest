@@ -22,22 +22,45 @@ Definition: an accessory (called C) is cursable:
 	Aika: Maybe if we'd done that 4 years ago. It's too core a function used by a lot of other functions that assume it's going to stay silent.
 ]
 To curse (B - a thing):
-	if B is not blessed, now B is cursed;
-	otherwise now B is bland.
+	if B is cursable:	
+		if B is not blessed:
+			say CurseCurseFlav of B;
+			now B is cursed;
+		otherwise:
+			say CurseBlandFlav of B;
+			now B is bland.
 
 To fully curse (B - a thing):
-	if B is blessed, curse B;
-	curse B;
+	if B is cursable:
+		if B is blessed, curse B;
+		curse B;
 
 To fully bless (B - a thing):
-	if B is cursed, bless B;
-	if B is blessable, bless B.
+	if B is cursable:
+		if B is cursed, bless B;
+		if B is blessable, bless B.
 
-[Selkie: likewise, here?
-Aika: likewise.]
+
+To say CurseCurseFlav of (B - a thing):
+	do nothing.
+	
+To say CurseBlandFlav of (B - a thing):
+	do nothing.
+
+To say BlessBlessFlav of (B - a thing):
+	do nothing.
+	
+To say BlessBlandFlav of (B - a thing):
+	do nothing.
+
 To bless (B - a thing):
-	if B is not cursed and B is blessable, now B is blessed;
-	otherwise now B is bland.
+	if B is cursable:
+		if B is not cursed and B is blessable:
+			say BlessBlessFlav of B;
+			now B is blessed;
+		otherwise:
+			say BlessBlandFlav of B;
+			now B is bland.
 
 To decide which number is the magic-modifier of (C - a clothing):
 	let R be the raw-magic-modifier of C;

@@ -85,7 +85,7 @@ To compute player standing:
 		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].";
 	otherwise:
 		unless the player is flying, FatigueUp 1; [It still increases though]
-	if the location of the player is Dungeon19:
+	if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole is 10:
 			say "The stench in this room takes you over the edge and you start to faint.";
 			now delayed fainting is 1;

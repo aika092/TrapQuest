@@ -192,8 +192,8 @@ REQUIRES COMMENTING
 
 +!]
 To say ToiletReactionFlav of (M - a monster):
-	if M is friendly, say "The [M] politely looks away.";
-	otherwise say "The [M] stares at you, frowning.".
+	if M is friendly, say "[BigNameDesc of M] politely looks away.";
+	otherwise say "[BigNameDesc of M] stares at you, frowning.".
 
 [!<CarryOutUrinating>+
 
@@ -593,7 +593,7 @@ To say PeeReaction (N - 0):
 
 To say ToiletPeeDeclaration of (M - a monster):
 	[####Selkie: used to be 22500, not 24000 - 2000]
-	say "[if the humiliation of the player < HUMILIATION-DISGRACED - 2000]You squirm uncomfortably, not used to anyone watching you, never mind the [M].[otherwise]You hang your head submissively, not looking the [M] in the eyes.[end if]";
+	say "[if the humiliation of the player < HUMILIATION-DISGRACED - 2000]You squirm uncomfortably, not used to anyone watching you, never mind [NameDesc of M].[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
 	say ToiletPeeReaction of M.
 
 [!<SayToiletPeeReactionOfMonster>+
@@ -602,7 +602,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ToiletPeeReaction of (M - a monster):
-	say "The [M] frowns with distaste. [line break][speech style of M]'[one of]Disgusting[or]Gross[or]Ugh[in random order]!  [one of][if M is interested]You couldn't wait until we had parted ways[otherwise]I can't believe you'd do that with me standing here... Did you think I was deaf or something[end if][or]Do you enjoy peeing in front of [if M is buddy]friends[otherwise]strangers[end if] or something[or]I'm standing right here, and you just start going to the toilet like that[in random order]?!'[roman type][line break]";
+	say "[BigNameDesc of M] frowns with distaste. [line break][speech style of M]'[one of]Disgusting[or]Gross[or]Ugh[in random order]!  [one of][if M is interested]You couldn't wait until we had parted ways[otherwise]I can't believe you'd do that with me standing here... Did you think I was deaf or something[end if][or]Do you enjoy peeing in front of [if M is buddy]friends[otherwise]strangers[end if] or something[or]I'm standing right here, and you just start going to the toilet like that[in random order]?!'[roman type][line break]";
 	FavourDown M.
 
 [!<SayPeeReaction1>+
@@ -650,10 +650,10 @@ REQUIRES COMMENTING
 +!]
 To say GroundPeeDeclaration of (M - a monster):
 	if delayed urination is 0: [Voluntary urination]
-		say "[if the humiliation of the player < HUMILIATION-DISGRACED + 3500]You shudder in shame as you allow the [M] to watch you.[otherwise]You hang your head submissively, not looking the [M] in the eyes.[end if]";
+		say "[if the humiliation of the player < HUMILIATION-DISGRACED + 3500]You shudder in shame as you allow [NameDesc of M] to watch you.[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
 	otherwise: [Accidental urination]
-		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Eek!  Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as the [M] watches you pee.";
-		otherwise say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of the [M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].";
+		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Eek!  Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you pee.";
+		otherwise say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of [NameDesc of M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].";
 	say GroundPeeReaction of M.
 
 [!<SayGroundPeeReactionOfMonster>+
@@ -672,7 +672,7 @@ REQUIRES COMMENTING
 
 +!]
 To say GroundPeeSexDeclaration of (M - a monster):
-	if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go right in front of the [M].";
+	if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go right in front of [NameDesc of M].";
 	otherwise say "[BrokenPeeFlav during sex with M]";
 	say GroundPeeSexReaction of M.
 
@@ -704,11 +704,11 @@ To say PeeReaction (N - 2):
 
 To say DiaperDeclaration of (M - a monster):
 	if the humiliation of the player < HUMILIATION-DISGRACED - 4000:
-		say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent the [M] from knowing what you are doing. But you feel extremely paranoid that [he of M] knows anyway.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone!  It's way too scary.[or]Am I making any noise? Eek![or]Am I standing weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
+		say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing. But you feel extremely paranoid that [he of M] knows anyway.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone!  It's way too scary.[or]Am I making any noise? Eek![or]Am I standing weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-SHAMELESS - 1000:
-		say "You [if delayed urination is 1]freeze in place and [end if]try to act casual, but you can't help but stare at the [M] coyly, tempting fate to get you caught.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why can't I stop myself?![or]Oh my god, I need to get myself under control![in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]Come on, say something![or]Next time, I'm going to make it even more obvious![in random order][end if][roman type][line break]";
+		say "You [if delayed urination is 1]freeze in place and [end if]try to act casual, but you can't help but stare at [NameDesc of M] coyly, tempting fate to get you caught.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why can't I stop myself?![or]Oh my god, I need to get myself under control![in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]Come on, say something![or]Next time, I'm going to make it even more obvious![in random order][end if][roman type][line break]";
 	otherwise:
-		say "You stare directly at the [M]. [line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Can you guess what I'm doing right now?'[end if][or]Please watch me as I pee in my diaper!'[or]Are you watching me wet myself?'[or]I'm peeing right now, and it feels so good!'[in random order][roman type][line break]";
+		say "You stare directly at [NameDesc of M]. [line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Can you guess what I'm doing right now?'[end if][or]Please watch me as I pee in my diaper!'[or]Are you watching me wet myself?'[or]I'm peeing right now, and it feels so good!'[in random order][roman type][line break]";
 	if diaper-reaction-said is 0, say "[DiaperReaction of M]".
 
 [!<SayPeeReaction3>+
@@ -720,7 +720,7 @@ To say PeeReaction (N - 3):
 	let M be a random monster penetrating a body part;
 	let K be a random worn bottom level pee protection clothing;
 	if M is monster:
-		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go into your [K] right in front of the [M].";
+		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go into your [K] right in front of [NameDesc of M].";
 		otherwise say "[BrokenPeeFlav during sex with M]";
 		humiliate 300;
 	otherwise:
@@ -750,9 +750,9 @@ REQUIRES COMMENTING
 +!]
 To say ClothesPeeDeclaration of (M - a monster):
 	if delayed urination is 0: [Voluntary urination]
-		say "[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder in shame as you allow the [M] to watch you.[otherwise]You hang your head submissively, not looking the [M] in the eyes.[end if]";
+		say "[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder in shame as you allow [NameDesc of M] to watch you.[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
 	otherwise:  [Accidental urination]
-		if the humiliation of the player < HUMILIATION-SHAMELESS - 2000, say "[if the player is able to speak][line break][variable custom style]'Eek!  Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as the [M] watches you wet yourself.";
+		if the humiliation of the player < HUMILIATION-SHAMELESS - 2000, say "[if the player is able to speak][line break][variable custom style]'Eek!  Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you wet yourself.";
 		otherwise say "[BrokenPeeFlav during sex with M]";
 	say ClothesPeeReaction of M.
 
@@ -764,15 +764,15 @@ REQUIRES COMMENTING
 To say ClothesPeeReaction of (M - a monster):
 	if diaper quest is 1:
 		if M is friendly:
-			say "The [M] frowns. [line break][speech style of M]'What are you doing?!  It looks to me like you need diapers, little girl. I am very unimpressed.'[roman type][line break]";
+			say "[BigNameDesc of M] frowns. [line break][speech style of M]'What are you doing?!  It looks to me like you need diapers, little girl. I am very unimpressed.'[roman type][line break]";
 			FavourDown M by 2;
 			if M is unfriendly, say "[speech style of M]'Yes in fact, I think you need training. [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], baby!'[roman type][line break]";
 		otherwise:
-			say "The [M] frowns angrily. [line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...";
+			say "[BigNameDesc of M] frowns angrily. [line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...";
 			now M is interested;
 	otherwise:
-		if M is interested, say "The [M] frowns, but doesn't say anything.";
-		otherwise say "The [M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
+		if M is interested, say "[BigNameDesc of M] frowns, but doesn't say anything.";
+		otherwise say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
 
 [!<SayDiaperReactionOfMonster>+
 
@@ -780,8 +780,8 @@ REQUIRES COMMENTING
 
 +!]
 To say DiaperReaction of (M - a monster):
-	if M is interested, say "The [M] seems to give you an odd look, but doesn't say anything. [if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Maybe [he of M] didn't notice?[otherwise][line break][variable custom style]I'm such a good girl![roman type][line break][end if]";
-	otherwise say "The [M] doesn't look at you directly or say anything, so it's hard to gauge [if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]if [he of M] saw[otherwise][his of M] reaction[end if].".
+	if M is interested, say "[BigNameDesc of M] seems to give you an odd look, but doesn't say anything. [if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Maybe [he of M] didn't notice?[otherwise][line break][variable custom style]I'm such a good girl![roman type][line break][end if]";
+	otherwise say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]if [he of M] saw[otherwise][his of M] reaction[end if].".
 
 [!<SayBrokenPeeFlavDuringSexWithMonster>+
 
@@ -789,7 +789,7 @@ REQUIRES COMMENTING
 
 +!]
 To say BrokenPeeFlav during sex with (M - a monster):
-	say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of the [M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].".
+	say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of [NameDesc of M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].".
 
 
 Urinating ends here.

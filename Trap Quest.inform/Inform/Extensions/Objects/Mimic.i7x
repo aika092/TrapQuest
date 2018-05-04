@@ -126,9 +126,9 @@ To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes
 	say "A shadowy mass rises out of the crate, slowly forming itself into a green-skinned woman with piercing yellow eyes and huge GG-cup breasts, which are barely restrained by a sparkling magenta bikini. [line break][first custom style]'[one of]You[']re looking for a makeover, aren[']t you? Of course you are, you look terrible honey.'[or]I can[']t blame you for being greedy, you obviously need a complete makeover.'[or]Oh my. You[']re in dire need of my expertise, aren[']t you, honey?[or]You may not think you need a makeover, but trust me honey, you do.'[at random][roman type][line break]";
 	if the number of worn clothing - the number of worn headgear > 0:
 		say "The [item style]stylish mimic[roman type] takes a deep breath, lifting you a full meter off the ground as she forcefully exhales glittering dust over your whole body.";
-		repeat with C running through clothing worn by the player:
-			transform C;
-		IntDown 1;
+		repeat with C running through worn upgradable clothing:
+			potentially transform C; [we should be able to just use "transform C" here, but better safe than sorry]
+		Intdown 1;
 		say "[line break][first custom style]There, now don't you feel hotter?[roman type][line break]The mimic puts you down, blowing you a kiss as she dissolves downward into the crate, closing the lid sharply behind her.";
 	otherwise if the make-up of face < 3:
 		say "The [item style]stylish mimic[roman type] takes a deep breath, pulling you halfway into the crate as she exhales glittering dust over your face. It holds fast to your cheeks as she releases you, blowing you a kiss as she swiftly closes the lid.";

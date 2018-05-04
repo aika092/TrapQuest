@@ -7,7 +7,6 @@ Report wearing catsuit:
 	now seconds is 12.
 
 To uniquely set up (C - a catsuit):
-	set up magic state of C;
 	if C is cursed:
 		if a random number between 1 and 2 is 1, now the magic-type of C is posture training;
 	otherwise:

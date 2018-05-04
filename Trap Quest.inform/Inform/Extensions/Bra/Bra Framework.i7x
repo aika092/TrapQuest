@@ -96,11 +96,11 @@ To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow 
 			if B is milk production:
 				MilkUp 1;
 			otherwise:
-				say "You feel your breasts grow to try and [if the support of B is 0]further emphasise the uselessness of your [printed name of B]![otherwise]fill your [printed name of B]![end if]";
+				say "You feel your breasts grow to try and [if the support of B is 0]further emphasise the uselessness of[otherwise]fill[end if] your [ShortDesc of B]!";
 				BustUp 1;
 		otherwise if the size of B is the largeness of breasts and the player is not top heavy and the size of B < the max size of B and a random number between 1 and 100 is 1 and the support of B > 1:
-			if B is milk production, say "You feel your [printed name of B] grow in size to allow your [BreastDesc] to produce [if the milk volume of breasts > 0]even more [end if][milk]!";
-			otherwise say "You feel your [printed name of B] grow in size to allow your [BreastDesc] to fill out even further!";
+			if B is milk production, say "You feel your [ShortDesc of B] grow in size to allow your [BreastDesc] to produce [if the milk volume of breasts > 0]even more [end if][milk]!";
+			otherwise say "You feel your [ShortDesc of B] grow in size to allow your [BreastDesc] to fill out even further!";
 			increase the size of B by 1;
 			
 To compute bra strain:
@@ -110,7 +110,7 @@ To compute bra strain:
 
 To compute bra strain of (B - a bra):
 	if the size of B < the max size of B and B is cursed milk production bra or B is cursed maternity bra:
-		say "Your [printed name of B] grows with your [BreastDesc] to continue to contain them.";
+		say "Your [ShortDesc of B] grows with your [BreastDesc] to continue to contain them.";
 		increase the size of B by 1;
 	otherwise:
 		BraBurst B.
@@ -196,7 +196,7 @@ bra wearability rules is a rulebook. The wearability rules of bra is usually bra
 
 This is the bra already worn rule:
 	repeat with O running through worn bras:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 		rule fails.
 The bra already worn rule is listed in the bra wearability rules.
 
@@ -213,7 +213,7 @@ The bra can't fit rule is listed in the bra wearability rules.
 This is the bra necklace clash rule:
 	if wearing-target is neck covering:
 		repeat with O running through worn neck covering clothing:
-			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 			rule fails.
 The bra necklace clash rule is listed in the bra wearability rules.
 

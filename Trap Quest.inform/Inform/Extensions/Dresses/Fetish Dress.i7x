@@ -37,7 +37,6 @@ To decide which number is the heel-skill-influence of (O - a fetish dress):
 	decide on temp.
 
 To uniquely set up (C - a fetish dress):
-	set up magic state of C;
 	if a random number between 1 and 3 is 1 and C is not cursed, now the magic-type of C is speed.
 
 To decide which object is the unique-upgrade-target of (C - a fetish dress):
@@ -62,8 +61,7 @@ The printed name of green fetish hobble dress is usually "[TQlink of item descri
 
 To uniquely set up (C - a green fetish hobble dress):
 	repair C;
-	now the armour of C is 8;
-	set up magic state of C.
+	now the armour of C is 8.
 
 To decide which figure-name is clothing-image of (C - a green fetish hobble dress):
 	decide on figure of latex dress 1.
@@ -166,8 +164,7 @@ To decide which number is the initial outrage of (C - a black fetish hobble dres
 	
 To uniquely set up (C - a black fetish hobble dress):
 	repair C;
-	now the armour of C is 8;
-	set up magic state of C.
+	now the armour of C is 8.
 
 To decide which number is the strength-influence of (O - a black fetish hobble dress):
 	let S be the magic-modifier of O;
@@ -204,8 +201,7 @@ To decide which number is the initial outrage of (C - a purple fetish hobble dre
 	
 To uniquely set up (C - a purple fetish hobble dress):
 	repair C;
-	now the armour of C is 8;
-	set up magic state of C.
+	now the armour of C is 8.
 
 To decide which number is the strength-influence of (O - a purple fetish hobble dress):
 	let S be the magic-modifier of O;
@@ -230,8 +226,7 @@ To decide which number is the initial outrage of (C - an assless fetish hobble d
 	
 To uniquely set up (C - an assless fetish hobble dress):
 	repair C;
-	now the armour of C is 8;
-	set up magic state of C.
+	now the armour of C is 8.
 
 To decide which number is the strength-influence of (O - an assless fetish hobble dress):
 	let S be the magic-modifier of O;

@@ -72,7 +72,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the cowgirl class rule:
-	if there is a worn cow ears and (there is a worn cow print bikini top or there is a worn nintendolls-brand tattoo or there is a worn cow piercing):
+	if there is a worn cow ears and the number of worn cow themed wearthings > 1:
 		now player-class is "cowgirl";
 		rule succeeds.
 The cowgirl class rule is listed in the player class rules.
@@ -157,7 +157,24 @@ This is the fertility goddess class rule:
 		now player-class is "fertility goddess";
 		rule succeeds.
 The fertility goddess class rule is listed in the player class rules.
-fertility goddess is a text that varies. fertility goddess is "fertility goddess".
+
+[!<TextIsFertilityGoddess>+
+
+Thanks to the fertile bunny multi-class, we have multiple different texts that need to be able to return true for the class of the player being fertility goddess.
+
++!]
+Definition: a text (called T) is fertility goddess:
+	if T is "fertility goddess" or T is "fertile bunny", decide yes;
+	decide no.
+
+[!<TheFertilityGoddessPussySlutRule>+
+
+If the player is the fertility goddess, the more desirable it gets for NPCs to penetrate you vaginally.
+
++!]
+This is the fertility goddess pussy slut rule:
+	if the class of the player is fertility goddess, increase the desirability of vagina by 5.
+The fertility goddess pussy slut rule is listed in the pussy slut eligibility rules.
 
 [!<TheRoyalSlaveClassRule>+
 
@@ -273,7 +290,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the santa class rule:
-	if there is a worn christmas headgear:
+	if there is a worn christmas headgear and christmas content is 1:
 		if there is a worn christmas dress, now player-class is "christmas tree";
 		otherwise now player-class is "santa's little helper";
 		rule succeeds.
@@ -337,8 +354,7 @@ REQUIRES COMMENTING
 This is the succubus class rule:
 	if there is a worn demon horns and there is a worn soulstone:
 		now the player-class is "succubus";
-		let M be a random demon lord;
-		if M is mating, now player-class is "demon concubine";
+		if demon lord is mating, now player-class is "demon concubine";
 		if there is a worn abyssal tattoo, now player-class is "abyssal succubus";
 		rule succeeds.
 The succubus class rule is listed in the player class rules.
@@ -576,6 +592,38 @@ This is the faerie class rule:
 The faerie class rule is listed in the player class rules.
 faerie is a text that varies. faerie is "faerie".
 
+[!<TheBunnyClassrule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the bunny class rule:
+	if there is a worn bunny ears and there is a worn bunny outfit:
+		now the player-class is "bunny";
+		rule succeeds.
+The bunny class rule is listed in the player class rules.
+
+[!<TextIsBunny>+
+
+Thanks to the fertile bunny multi-class, we have multiple different texts that need to be able to return true for the class of the player being bunny.
+
++!]
+Definition: a text (called T) is bunny:
+	if T is "bunny" or T is "fertile bunny", decide yes;
+	decide no.
+
+bunny-reminder is a number that varies.
+A time based rule (this is the bunny reminder rule):
+	if the class of the player is bunny:
+		if bunny-reminder is 0 and the player is in the woods:
+			say "[bold type]You feel your bunny reflexes improve while you are in the woods![roman type][line break]";
+			now bunny-reminder is 1;
+		otherwise if bunny-reminder is 1 and the player is not in the woods:
+			say "[bold type]You feel your bunny reflexes disappear as you are no longer in the woods.[roman type][line break]";
+			now bunny-reminder is 0;
+	otherwise:
+		now bunny-reminder is 0.
+
 [!<TheHookerInTrainingClassRule>+
 
 REQUIRES COMMENTING
@@ -683,6 +731,35 @@ This is the magical neko class rule:
 		now the player-class is "magical neko";
 		rule succeeds.
 The magical neko class rule is listed first in the player class rules.
+
+[!<TheFertileBunnyClassRule>+
+
+The fertile bunny is a combination class of the fertility goddess and bunny. It needs the bunny ears and the bunny tail plug.
+
++!]
+This is the fertile bunny class rule:
+	if there is a worn bunny ears and bunny tail plug is worn:
+		now the player-class is "fertile bunny";
+		rule succeeds.
+The fertile bunny class rule is listed first in the player class rules.
+
+[!<TheFertileBunnyPussySlutRule>+
+
+If the player is the fertile bunny, the even more desirable it gets for NPCs to penetrate you vaginally.
+
++!]
+This is the fertile bunny pussy slut rule:
+	if the player-class is "fertile bunny", increase the desirability of vagina by 5.
+The fertile bunny pussy slut rule is listed in the pussy slut eligibility rules.
+
+[!<TheFertileBunnyButtSlutRule>+
+
+If the player is the fertile bunny, the less desirable it gets for NPCs to penetrate you anally.
+
++!]
+This is the fertile bunny butt slut rule:
+	if the player-class is "fertile bunny", decrease the desirability of asshole by 5.
+The fertile bunny butt slut rule is listed in the butt slut eligibility rules.
 
 [!<TheVirginWarriorPriestessClassRule>+
 

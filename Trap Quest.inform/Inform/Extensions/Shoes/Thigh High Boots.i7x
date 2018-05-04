@@ -27,7 +27,6 @@ Figure of leather thigh boots is the file "Items\Clothes\Lower\Feet\Boots\thighb
 
 To uniquely set up (C - a thigh high boots):
 	if C is latex, now the text-shortcut of C is "lth";
-	set up magic state of C;
 	let R be a random number between 1 and 8;
 	if C is cursed:
 		if R <= 2:
@@ -52,7 +51,6 @@ To say UniqueShortDesc of (H - a WC thigh high boots):
 	say "human toilet thigh high boots".
 
 To uniquely set up (C - a WC thigh high boots):
-	set up magic state of C;
 	now C is stumbling;
 	set up heel length of C.
 

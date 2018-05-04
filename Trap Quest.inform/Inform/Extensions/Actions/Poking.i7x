@@ -42,7 +42,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute poking of (M - a monster):
-	say "The [M] wakes up, startled!";
+	say "[BigNameDesc of M] wakes up, startled!";
 	now the sleep of M is 0;
 	decrease the favour of M by 1;
 	now seconds is 2;

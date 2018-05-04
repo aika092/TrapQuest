@@ -150,7 +150,7 @@ To compute baby hotel chair sitting:
 	if busy is 1, say "[one of]Eventually[or]Finally,[stopping] the straps unlock themselves and you stand up. [one of]You walk away, finding that you feel very refreshed!  You're[or]Once again, you're[stopping] fully healed!  As you move away from the chairs, they all disappear backwards behind hidden panels in the wall behind them!  After a few seconds mechanical whirring coming from behind the wall, the panels open again and the chairs reappear. [one of]But something tells you they are in a different order than before![or]Once again you are completely unable to tell them apart, so you don't know which is which![stopping]". [if busy is 0, this means the scene was interrupted]
 
 To compute BabyChairReaction of (M - a monster):
-	say "The [M] looks at you and grins. [line break][speech style of M]'[one of]Yes you are a good girl, aren't you?'[or]Good girl!  [if M is male]Daddy[otherwise]Nanny[end if] is very impressed.'[or]Aww, does little sweetie want a gold sticker?'[in random order][roman type][line break]";
+	say "[BigNameDesc of M] looks at you and grins. [line break][speech style of M]'[one of]Yes you are a good girl, aren't you?'[or]Good girl!  [if M is male]Daddy[otherwise]Nanny[end if] is very impressed.'[or]Aww, does little sweetie want a gold sticker?'[in random order][roman type][line break]";
 	humiliate 200.
 
 To say RestingDesc of (F - hotel chairs):

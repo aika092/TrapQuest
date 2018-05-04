@@ -21,7 +21,7 @@ Carry out quaffing elixir of magnetism:
 	if the noun is not cursed and the player is in danger:
 		repeat with M running through unfriendly interested monsters in the location of the player:
 			if M is penetrating a body part or M is grabbing the player:
-				say "The [M]'s eyes open wide for a moment, but then it passes.";
+				say "[BigNameDesc of M]'s eyes open wide for a moment, but then it passes.";
 			otherwise:
 				now the scared of M is magnetism-elixir-timer;
 				say "[one of]As if mind controlled, the[or]The[stopping] [M] turns tail and starts fleeing away from you!".

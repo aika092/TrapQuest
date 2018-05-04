@@ -82,6 +82,14 @@ To compute automatic actions:
 			now delayed stand is 0;
 			now another-turn is 1.
 
+To compute optional actions:
+	if was-mopping is 1:
+		now was-mopping is 0;
+		if total puddle > 0:
+			say "Keep mopping? [yesnolink]";
+			if the player consents:
+				now another-turn is 1;
+				try mopping the noun.
 
 Automatic Actions ends here.
 

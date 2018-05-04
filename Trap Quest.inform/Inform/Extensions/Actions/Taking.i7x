@@ -41,7 +41,7 @@ REQUIRES COMMENTING
 
 +!]
 Check taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded:
-	unless a random shopkeeper is mating or there is held stolen clothing:
+	unless shopkeeper is mating or there is held stolen clothing:
 		if there is held store clothing, say "[one of][line break][first custom style]'Please only consider one item of clothing at a time, or we'll all get confused. And we don't offer change here.'[roman type][line break]What a cheeky way of running a business!  He seems serious though, so you decide to leave it alone.[or]You remember the strict rules about only considering one item at a time and decide to leave it alone.[stopping]" instead.
 
 [!<ReportTakingStoreClothing>+

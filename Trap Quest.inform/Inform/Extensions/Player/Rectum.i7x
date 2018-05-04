@@ -43,7 +43,7 @@ To compute scene messing:
 		otherwise if rectum + the incontinence of the player < a random number between 5 and 10:
 			say "Your tummy rumbles ominously[one of]. Something tells you that you should return to the hotel sooner rather than later...[or].[stopping]";
 		otherwise:
-			say "Your tummy cramps [if rectum < 10]painfully[otherwise]brutally[end if][if the player is upright], forcing you onto your knees[end if]. You feel a burning need to find the [M].";
+			say "Your tummy cramps [if rectum < 10]painfully[otherwise]brutally[end if][if the player is upright], forcing you onto your knees[end if]. You feel a burning need to find [NameDesc of M].";
 			try kneeling;
 			if rectum >= 10:
 				say "It takes you several moments to recover.";
@@ -99,7 +99,6 @@ To compute messing:
 	if rectum < 2, now rectum is 2;
 	now the alert of the player is 1;
 	let D be random worn knickers;
-	let M be a random matron;
 	let reactions-suppressed be 0;
 	if the total squirtable fill of belly > 0:
 		now reactions-suppressed is 1;
@@ -121,29 +120,29 @@ To compute messing:
 				say "A monstrous snake of mush brutally pushes its way out of your butthole. Your [ShortDesc of D] crinkles and groans as it stretches and stretches to attempt to contain the impossibly bulky beast, as thick as your forearm and seemingly unending, like a train coming out of a tunnel with no end in sight. The front of your underwear is soon required to contain the log, filling every spare inch of space with soft yet substantial poop. By the time the craptastic boatload of muck has finished its journey into your pants, your [ShortDesc of D] has visibly doubled in size, now a weird balloon of brown around your midriff. You stay absolutely still, whimpering in shame. You can't move a muscle without making a sickening squelch as it rubs against you. [MessyPrison of D]";
 		otherwise:
 			say "A [if rectum < 3]a small amount of mush[otherwise if rectum < 5]reasonable amount of squishy mush forces its way[otherwise if rectum < 8]large amount of lumpy mush[otherwise if rectum < 10]huge bulky log forces its way[otherwise]seemingly unending series of large mushy lumps become one giant ball which stretches you on its journey[end if] out of your butt and fills your [ShortDesc of D]. You feel it bulge out behind you, and you're almost afraid to move at all. A diaper would at least shield and properly contain your shame but the [ShortDesc of D] threatens to buckle at any moment. You need a change, and you need one now!";
-	if there is a worn cum-when-messing tattoo or (the diaper addiction of the player > 13 and the player is very horny) or (the diaper addiction of the player > 18 and the player is a bit horny), anally orgasm shamefully;
-	if ((diaper lover is 3 and the times-met of M > 0 and the player is in the hotel) or M is in the location of the player) and diaper-scene-unhandled is 1: [We only do this if the messing was triggered from a scene that can't handle the mess on its own]
+	if worn cum-when-messing tattoo is worn or (the diaper addiction of the player > 13 and the player is very horny) or (the diaper addiction of the player > 18 and the player is a bit horny), anally orgasm shamefully;
+	if ((diaper lover is 3 and the times-met of matron > 0 and the player is in the hotel) or matron is in the location of the player) and diaper-scene-unhandled is 1: [We only do this if the messing was triggered from a scene that can't handle the mess on its own]
 		now diaper-scene-unhandled is 0;
 		say "[variable custom style][if the diaper addiction of the player < 7 and voluntary-messing is 0]How did I let this happen?![otherwise if the diaper addiction of the player < 12]Am I really just as pathetic as an incontinent child now?[otherwise if the diaper addiction of the player < 15]I can't believe how good that felt...[otherwise]Uh-oh, I did a naughty thing[one of]!  But it was so fun[or]again, and that means I get a change!  Yay[stopping]![end if][roman type][line break]";
 		repeat with N running through monsters in the location of the player:
-			unless N is M:
-				say "The [N] makes a speedy exit!";
+			unless N is matron:
+				say "[BigNameDesc of N] makes a speedy exit!";
 				regionally place N;
 				dislodge N;
-		if M is in the location of the player:
-			say "The [M] [if M is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of M]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
+		if matron is in the location of the player:
+			say "[BigNameDesc of matron] [if matron is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of matron]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
 		otherwise:
-			say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], the [M] suddenly arrives, adding to your shame. She [if M is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of M]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
-		if the player is not in Hotel22, say "[line break][bold type]The [M] [bold type]lifts you into the air and [if the player is in the Hotel]without a word swiftly carries you all the way to[otherwise]snaps her fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
-		if M is off-stage, set up M;
-		if M is not in Hotel22, now M is in Hotel22;
-		if the player is not in Hotel22, drag to Hotel22 by M;
+			say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of matron] suddenly arrives, adding to your shame. She [if matron is changing the player]continues to hold her hand pressed against your rear, making sure you realise that she is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle she is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of matron]'[one of]Uh-oh, what do we have here?!  How have you managed this, you naughty baby!  Only the most pathetic of babies can't control their number twos!  [or]Again?!  You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?!  How long has it been since you last went potty?!  [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
+		if the player is not in Hotel22, say "[line break][bold type][BigNameDesc of matron] [bold type]lifts you into the air and [if the player is in the Hotel]without a word swiftly carries you all the way to[otherwise]snaps her fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
+		if matron is off-stage, set up matron;
+		if matron is not in Hotel22, now matron is in Hotel22;
+		if the player is not in Hotel22, drag to Hotel22 by matron;
 		now busy is 0;
-		say "She drops you down onto the giant changing table. She smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps.";
-		now M is interested;
-		anger M;
-		now M is grabbing the player;
-		now M is changing the player;
+		say "[big he of matron] drops you down onto the giant changing table. [big he of matron] smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps.";
+		now matron is interested;
+		anger matron;
+		now matron is grabbing the player;
+		now matron is changing the player;
 		now the stance of the player is 1;
 		let C be a random worn crotch covering clothing;
 		now C is a random worn top level protection clothing; [Top level takes priority]
@@ -151,21 +150,21 @@ To compute messing:
 		if C is nothing and there are worn knickers, now C is a random worn knickers;
 		while C is clothing:
 			if C is zippable and C is not diaper:
-				say "[UnzipFlav of M at C]";
+				say "[UnzipFlav of matron at C]";
 				now C is crotch-unzipped;
 			otherwise if C is displacable overdress:
-				say "The [M] pulls at your [C].";
-				compute M displacing C;
+				say "[BigNameDesc of matron] pulls at your [C].";
+				compute matron displacing C;
 			otherwise:
-				say "The [M] [if C is diaper]slowly peels your [ShortDesc of C] away, revealing your ultimate shame. [line break][speech style of M]'You really should thank me for taking care of this for you.'[roman type][line break]The messy diaper is removed and set aside, still within your view. Your face turns redder than a strawberry as the [M] works speedily with a small power hose and a bag of wet wipes to remove every last smelly molecule of evidence from around your butt. You find yourself sighing quietly in relief[otherwise]rips off your [ShortDesc of C][end if].";
+				say "[BigNameDesc of matron] [if C is diaper]slowly peels your [ShortDesc of C] away, revealing your ultimate shame. [line break][speech style of matron]'You really should thank me for taking care of this for you.'[roman type][line break]The messy diaper is removed and set aside, still within your view. Your face turns redder than a strawberry as [NameDesc of matron] works speedily with a small power hose and a bag of wet wipes to remove every last smelly molecule of evidence from around your butt. You find yourself sighing quietly in relief[otherwise]rips off your [ShortDesc of C][end if].";
 				if C is diaper, humiliate 100 * rectum;
 				only destroy C;
 			now C is a random worn crotch covering clothing;
 			now C is a random worn top level protection clothing; [Top level takes priority]
 			if C is worn no protection overdress or C is chastity cage, now C is nothing; [These are allowed to stay around!]
 			if C is nothing and there are worn knickers, now C is a random worn knickers;
-		now the variety of M is 99;
-		now current-monster is M;
+		now matron is diaper-prepared;
+		now current-monster is matron;
 		reset rectum;
 		follow the matron changes a diaper rule;
 	otherwise:
@@ -187,7 +186,7 @@ To compute messing:
 			repeat with N running through intelligent monsters in the location of the player:
 				compute diaper mess reaction of N;
  		reset rectum;
-		if M is alive, now the boredom of M is 0; [Next time she sees the player she should probably pay attention!]
+		if matron is alive, now the boredom of matron is 0; [Next time she sees the player she should probably pay attention!]
 		now seconds is 6;
 		now diaper-reaction-said is 0;
 		now another-turn is 1.
@@ -214,7 +213,7 @@ To compute unhandled diaper scene:
 				set up M;
 		now M is in the location of the player;
 		now M is interested;
-		say "Suddenly you notice that the [M] is looming over you[if M is robot]![otherwise]!  [line break][speech style of M]'What have we here?'[roman type][line break][end if]";
+		say "Suddenly you notice that [NameDesc of M] is looming over you[if M is robot]![otherwise]!  [line break][speech style of M]'What have we here?'[roman type][line break][end if]";
 		if M is royal guard and the player is not in the dungeon:
 			drag to Dungeon06 by M;
 		compute diaper change of M;
@@ -238,17 +237,17 @@ REQUIRES COMMENTING
 +!]
 To compute diaper mess reaction of (M - a monster):
 	if diaper quest is 1:
-		say "The [M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if player-squatting is 1]Pooping yourself on purpose in front of me?  You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if player-squatting is 1]Pooping yourself on purpose in front of me?  You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if player-squatting is 1, humiliate 500;
 		FavourDown M by 4;
 		distract M;
 	otherwise:
-		say "The [M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes]. [line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or]Please please PLEASE tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?!  How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes]. [line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or]Please please PLEASE tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?!  How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
 		humiliate 400;
 		if player-squatting is 1, humiliate 500;
 		if M is friendly or M is uninterested:
-			if M is friendly, say "Unable to stomach what [he of M][']s seeing, the [M] abandons you.";
+			if M is friendly, say "Unable to stomach what [he of M][']s seeing, [NameDesc of M] abandons you.";
 			bore M;
 			while M is in the location of the player:
 				compute room leaving of M.
@@ -259,7 +258,7 @@ REQUIRES COMMENTING
 
 +!]
 To say MatronResponsible:
-	if the times-met of a random matron > 0 and diaper quest is 0, say "[one of]Somehow you know that matron is responsible for this!  [or][stopping]".
+	if the times-met of matron > 0 and diaper quest is 0, say "[one of]Somehow you know that matron is responsible for this!  [or][stopping]".
 
 [!<voluntaryMessing:Integer>*
 

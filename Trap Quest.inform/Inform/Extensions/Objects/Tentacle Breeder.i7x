@@ -40,19 +40,37 @@ This is the tentacle breeder in mansion rule:
 The tentacle breeder in mansion rule is listed in the set up mansion traps rules.
 
 To say TentacleBreederDesc:
-	if inhuman pregnancy is 2, say "A massively pregnant [if item described is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime. A sea of tentacles pushes itself into all of [if item described is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament.[otherwise if item described is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now.[otherwise]You feel like you should probably stay away from her, since you'd really prefer to avoid her fate.[end if]";
-	otherwise say "A messy dome of grey flesh is stuck to one wall. A hole in the middle pulsates rapidly, kind of like a spasming asshole. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region.[otherwise]You feel like you should probably stay away from it until you have the power to remove its tainted presence entirely.[end if]".
+	if inhuman pregnancy is 2, say "A massively pregnant [if item described is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime. A sea of tentacles pushes itself into all of [if item described is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with five eldritch seals etched into the ground below her. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament.[otherwise if item described is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now.[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if]";
+	otherwise say "A messy dome of grey flesh is stuck to one wall, with a rapidly pulsating hold in the middle, kind of like a spasming asshole. There is a translucent barrier covering it, which seems to vibrate in time with five eldritch seals etched into the ground below it. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region.[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals.[end if]".
 
 Purifying is an action applying to one thing.
 
 Check purifying:
 	if the noun is not tentacle-breeder, say "This verb is for destroying tentacle spawners." instead;
-	if the magic-power of the player < 5, say "You don't have enough magical power to do that (you need 5)." instead.
+	if the magic-power of the player < 4:[check if the player can cheat]
+		if ritual-beads is held:
+			if the charge of ritual-beads > 8:
+				say "This will destroy your [ShortDesc of ritual-beads]. Is that what you want?";
+				if the player consents:
+					dislodge ritual-beads;
+					say "You feel a swell of energy as your [ShortDesc of ritual-beads] disintegrates!";
+					now the charge of ritual-beads is 0;
+					now the notches of ritual-beads is 3;
+					destroy ritual-beads;
+					MagicPowerUp 5;
+		if there is a held pure totem:
+			let T be a random held pure totem;
+			say "This will destroy your [ShortDesc of T]. Is that what you want?";
+			if the player consents:
+				say "You feel a swell of energy as your [ShortDesc of T] disintegrates!";
+				destroy T;
+				MagicPowerUp 5;
+	if the magic-power of the player < 4, say "You don't have enough magical power to do that (you need 4)." instead.
 
 Understand "purify [something]" as purifying.
 
 Carry out purifying tentacle-breeder:
-	MagicPowerDown 5;
+	MagicPowerDown 4;
 	say "You feel the magical power that has built up in your body flow into the mess of [if inhuman pregnancy is 2]tentacles and gravid flesh, and suddenly the tentacles and slime begin to thrash around and turn brown. The tentacles restraining the woman quickly rot away, and as she falls to the floor she manages a look of gratitude before vanishing into motes of light[otherwise]grey flesh, which shrinks away inside of itself until it has all completely gone[end if].";
 	destroy the noun.
 

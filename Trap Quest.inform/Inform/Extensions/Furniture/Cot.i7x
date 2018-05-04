@@ -6,7 +6,7 @@ A cot is a kind of furniture. A cot is not portable. The description of a cot is
 To compute furniture resting on (F - a cot):
 	let M be a random alive dominatrix in the location of the player;
 	if M is a monster and the number of alive monsters in the location of the player < 2:
-		say "[speech style of M]'Rest up, I have some work for you to do once you[']re finished up.'[roman type] The [M] presses a small button on a remote, and a modesty shutter slams across the doorway of the room.";
+		say "[speech style of M]'Rest up, I have some work for you to do once you[']re finished up.'[roman type] [BigNameDesc of M] presses a small button on a remote, and a modesty shutter slams across the doorway of the room.";
 		now a random modesty shutter is in the location of the player;
 	compute normal rest of F.
 
@@ -16,7 +16,7 @@ To say RestingDesc of (F - a cot):
 To compute rest ending of (F - a cot):
 	if the number of modesty shutters in the location of the player > 0:
 		let M be a random alive dominatrix in the location of the player;
-		say "The [M] grins. Looks like you[']ll have to handle her before you can leave this room.";
+		say "[BigNameDesc of M] grins. Looks like you[']ll have to handle her before you can leave this room.";
 		now the sex-length of M is 5;
 		if number of plentiful accessories retained by M < 1, now a random off-stage ring is retained by M;
 		now M is interested.

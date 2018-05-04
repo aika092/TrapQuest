@@ -66,7 +66,7 @@ REQUIRES COMMENTING
 
 +!]
 To say SatisfiedFlav of (M - a monster):
-	say "The [M] seems [if M is intelligent and M is unfriendly]satisfied, and loses[otherwise]to lose[end if] interest.".
+	say "[BigNameDesc of M] seems [if M is intelligent and M is unfriendly]satisfied, and loses[otherwise]to lose[end if] interest.".
 
 [!<SayDeathBrinkOfMonster>+
 
@@ -74,7 +74,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DeathBrink of (M - a monster):
-	say "The [M] is on the brink of defeat. Do you want to leave her alive and fuck her instead?".
+	say "[BigNameDesc of M] is on the brink of defeat. Do you want to leave her alive and fuck her instead?".
 
 [!<ComputeDeathOfMonster>+
 
@@ -87,7 +87,7 @@ To compute death of (M - a monster):
 		if the player-class is succubus:
 			increase the souls of the player by 1;
 			increase the total-souls of the player by 1;
-			say "You feel the soul of the [M] flow into you!";[Gain a soul for defeating an enemy basic implementation]
+			say "You feel the soul of [NameDesc of M] flow into you!";[Gain a soul for defeating an enemy basic implementation]
 			dignify 400;[Heal some lost humiliation on eating a soul]
 		if a random number between 1 and 3 > 1, loot M; [67% chance]
 		if a random number between 1 and 4 is 1, loot M; [25% chance]
@@ -114,7 +114,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute unique death of (M - a monster):
-	say "The [M] drops to the ground, dead. After a couple of seconds, [his of M] body disappears.".
+	say "[BigNameDesc of M] drops to the ground, dead. After a couple of seconds, [his of M] body disappears.".
 
 [!<DestroyMonster>+
 
@@ -190,24 +190,29 @@ To loot (M - a monster):
 		now X is a random off-stage christmas gift;
 	unless X is nothing:
 		now X is in the location of the player;
-		if X is plentiful accessory:
-			let R be a random number from the difficulty of M to (the difficulty of M * 4) / 3;
-			if R < 5:
-				now X is sapphire;
-			otherwise if R < 9:
-				now X is emerald;
-			otherwise if R < 13:
-				now X is ruby;
-			otherwise if R < 17:
-				now X is pink diamond;
-			otherwise if R < 22:
-				now X is pure diamond;
-			otherwise:
-				now X is solid gold;
-			set shortcut of X;
+		if X is plentiful accessory, compute appraisal of X from M;
 		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
+
+To compute appraisal of (X - an accessory) from (M - a monster):
+	let R be a random number from the difficulty of M to (the difficulty of M * 4) / 3;
+	set jewellery value of X to R.
+
+To set jewellery value of (X - an accessory) to (R - a number):
+	if R < 5:
+		now X is sapphire;
+	otherwise if R < 9:
+		now X is emerald;
+	otherwise if R < 13:
+		now X is ruby;
+	otherwise if R < 17:
+		now X is pink diamond;
+	otherwise if R < 22:
+		now X is pure diamond;
+	otherwise:
+		now X is solid gold;
+	set shortcut of X.
 
 
 

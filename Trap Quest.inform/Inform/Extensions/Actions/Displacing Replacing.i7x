@@ -4,21 +4,57 @@ Part 1 - Displacing
 
 Displacing is an action applying to one thing.
 
+The displacing rules is a rulebook.
+
+This is the can't displace glued clothing rule:
+	if the noun is glued:
+		if auto is 0, say "It's glued in place!";
+		rule fails.
+The can't displace glued clothing rule is listed in the displacing rules.
+
+This is the can't displace without hands rule:
+	if the player is not able to use their hands:
+		if auto is 0, say "You don't have the manual dexterity to do that!";
+		rule fails.
+The can't displace without hands rule is listed in the displacing rules.
+
+This is the can't displace while stuck in a wall rule:
+	if the player is in HoleInWall:
+		if auto is 0, say "You can't reach that at the moment!";
+		rule fails.
+The can't displace while stuck in a wall rule is listed in the displacing rules.
+
+This is the can't displace what isn't displacable rule:
+	if the noun is not displacable:
+		if auto is 0:
+			if the noun is overdress:
+				say "That's not the sort of item of clothing that can be displaced.";
+			otherwise if the noun is crotch-exposing and the noun is unskirted:
+				say "What would be the point?";
+			otherwise if the noun is knickers:
+				say "The leg holes are much too tight for you to be able to pull this to the side.";
+			otherwise if the noun is skirted:
+				say "That's too short to pull up.";
+			otherwise:
+				say "I'm not sure how you would displace that item of clothing.";
+		rule fails.
+The can't displace what isn't displacable rule is listed first in the displacing rules.
+
+This is the can't displace what's covered up rule:
+	repeat with C running through worn clothing:
+		if C is top level protection and the bottom-layer of C > the bottom-layer of the noun and the noun is unskirted:
+			if auto is 0, say "You would need to displace or remove your [printed name of C] first.";
+			rule fails.
+The can't displace what's covered up rule is listed last in the displacing rules.
+
+
 Check displacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
-	if the noun is glued, say "It's glued in place!" instead;
 	if the noun is not displacable and the noun is not not-top-displacable, try topDisplacing the noun instead;[if it can't cover the crotch, or it's pulled aside, this allows the top displacing verb to be used instead. Note that there is a bug where sheer knee-length and hobble-skirted skirts cannot be displaced]
 	if the noun is crotch-displaced, try replacing the noun instead;
-	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
-	if the noun is not displacable and the noun is overdress, say "That's not the sort of item of clothing that can be displaced." instead;
-	if the noun is crotch-exposing and the noun is unskirted, say "What would be the point?" instead;
-	if the noun is knickers and the noun is not displacable, say "The leg holes are much too tight for you to be able to pull this to the side." instead;
-	if the noun is skirt and the noun is not displacable, say "That's too short to pull up.";
-	if the noun is not displacable, say "I'm not sure how you would displace that item of clothing." instead;
-	if the player is in HoleInWall, say "You can't reach that at the moment!" instead;
-	repeat with C running through worn clothing:
-		if C is top level protection and the bottom-layer of C > the bottom-layer of the noun and the noun is unskirted, say "You would need to displace or remove your [printed name of C] first." instead.
+	follow the displacing rules;
+	if the rule failed, do nothing instead.
 
 Carry out displacing:
 	say "[DisplaceFlav of the noun]";
@@ -62,7 +98,7 @@ Check replacing:
 			if C is top level protection and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
 			if the noun is not C and C is crotch covering and (C is top-exclusive or C is totally-exclusive) and the bottom-layer of C < the bottom-layer of the noun, say "You can't put that back in place while you are wearing the [C]!" instead; [For example, trying to replace jeans over a waddle diaper]
 	repeat with M running through unfriendly interested released monsters in the location of the player:
-		unless the sleep of M > 0, say "The [M] gets in the way and stops you from fixing the position of your [noun]." instead.
+		unless the sleep of M > 0, say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
 
 Carry out replacing:
 	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [noun] back into its proper position over your [if noun is total protection]crotch.[otherwise if the noun is pussy protection][vagina].[otherwise]body.[end if]";

@@ -54,7 +54,7 @@ Check rezipping:
 		if C is top level protection and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
 	if there is a worn zip tattoo, say "Somehow your zip tattoo is preventing you from rezipping it!" instead;
 	repeat with M running through unfriendly interested released monsters in the location of the player:
-		unless the sleep of M > 0, say "The [M] gets in the way and stops you from touching the zip on your [noun]." instead.
+		unless the sleep of M > 0, say "[BigNameDesc of M] gets in the way and stops you from touching the zip on your [noun]." instead.
 
 Carry out rezipping:
 	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [noun]'s zip back into its proper position over your [if noun is total protection]crotch.[otherwise if the noun is pussy protection][vagina].[otherwise]body.[end if]";

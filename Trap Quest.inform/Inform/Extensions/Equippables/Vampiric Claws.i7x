@@ -23,7 +23,7 @@ To decide which number is the damage improvement of (W - a vampiric claws):
 	decide on X.
 
 To compute attack of (W - a vampiric claws) at (M - a monster):
-	say "[one of]You slash at the [M] with your [W].[or]You scratch the [M] with your [W].[at random]".
+	say "[one of]You slash at [NameDesc of M] with your [ShortDesc of W].[or]You scratch [NameDesc of M] with your [ShortDesc of W].[at random]".
 	
 To compute attack effect of (W - a vampiric claws):
 	if attack-type is 1:

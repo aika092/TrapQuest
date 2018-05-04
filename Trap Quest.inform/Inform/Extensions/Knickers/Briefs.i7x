@@ -1,6 +1,9 @@
 Briefs by Knickers begins here.
 
-A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. The soak-limit of briefs is 10. The text-shortcut of briefs is "br".
+A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. The soak-limit of briefs is 10. The text-shortcut of briefs is "br". 
+
+To decide which number is the penis-capacity of (K - a briefs):
+	decide on 6.
 
 The printed name of briefs is "[TQlink of item described][clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -16,8 +19,7 @@ To say selfexaminetitle of (T - a briefs):
 
 To uniquely set up (T - a briefs):
 	now the damage of T is 0;
-	now the armour of T is a random number between 7 and 10;
-	set up magic state of T.
+	now the armour of T is a random number between 7 and 10.
 
 To decide which object is the potential-upgrade-target of (C - briefs):
 	if C is sheer or C is see-through, decide on a random off-stage actually sheer thong;
@@ -77,13 +79,13 @@ To decide which figure-name is clothing-image of (C - blue-polka-dot briefs):
 To decide which figure-name is clothing-image of (C - white-cameltoe briefs):
 	decide on figure of briefs 15.
 
-white-briefs is a briefs. A white-briefs is sheer. The text-shortcut of white-briefs is "whb".  Understand "white" as white-briefs.
+white-briefs is a briefs. white-briefs is sheer. The text-shortcut of white-briefs is "whb".  Understand "white" as white-briefs.
 To say selfexamineuniquetitle of (G - white-briefs):
 	say "pair of white briefs".
 To say UniqueClothingDesc of (G - white-briefs):
 	say "This small white pair of briefs is a bit too sheer to give much modesty.".
 
-white-good girl briefs is a briefs. A white-good girl briefs is sheer-when-wet. The text-shortcut of white-good girl briefs is "wgg".  Understand "white", "good" as white-good girl briefs.
+white-good girl briefs is a briefs. white-good girl briefs is sheer-when-wet. The text-shortcut of white-good girl briefs is "wgg".  Understand "white", "good" as white-good girl briefs.
 To say selfexamineuniquetitle of (G - white-good girl briefs):
 	say "pair of white 'good girl' briefs".
 To say UniqueClothingDesc of (G - white-good girl briefs):
@@ -93,7 +95,7 @@ To decide which number is the bimbo-influence of (C - white-good girl briefs):
 To decide which number is the initial cringe of (C - white-good girl briefs):
 	decide on 6.
 
-white-diagram briefs is a briefs. A white-diagram briefs is sheer-when-wet. The text-shortcut of white-diagram briefs is "wdb".
+white-diagram briefs is a briefs. white-diagram briefs is sheer-when-wet. The text-shortcut of white-diagram briefs is "wdb".
 To say selfexamineuniquetitle of (G - white-diagram briefs):
 	say "pair of white ovaries diagram briefs".
 To say UniqueClothingDesc of (G - white-diagram briefs):
@@ -173,6 +175,9 @@ To say selfexamineuniquetitle of (G - silvery briefs):
 To say UniqueClothingDesc of (G - silvery briefs):
 	say "A pair of shiny silvery briefs.".
 
+To decide which number is the penis-capacity of (K - silvery briefs):
+	decide on 2.
+
 green-briefs is a briefs. The text-shortcut of green-briefs is "gib".
 To say selfexamineuniquetitle of (G - green-briefs):
 	say "pair of green 'Feeling lucky?' briefs".
@@ -201,7 +206,7 @@ pale briefs is a briefs. A pale briefs is sheer. A pale briefs is nylon. Underst
 To say selfexamineuniquetitle of (G - pale briefs):
 	say "pair of sheer nylon briefs".
 To say UniqueClothingDesc of (G - pale briefs):
-	say "This pair of sissy briefs are very delicate and sheer.".
+	say "This pair of pink sissy briefs are very delicate and sheer.".
 To decide which number is the initial outrage of (C - pale briefs):
 	decide on 8.
 To decide which number is the initial cringe of (C - pale briefs):

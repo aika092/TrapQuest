@@ -1,20 +1,28 @@
 RoboBellboy by Monster begins here.
 
-A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117.
+A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent. 
 
 Definition: A robobellboy (called M) is hotel dwelling:
 	decide yes.
 
 Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.png". The description of robobellboy is usually "[RoboBellboyDesc]".
 
-speedy robobellboy is a kind of robobellboy. There is 1 speedy robobellboy.
-The printed name of speedy robobellboy is "[if item described is in the location of the player][TQlink of item described][end if][input-style]speedy RoboBellboy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of speedy robobellboy is "sbe". 
-whirring robobellboy is a kind of robobellboy. There is 1 whirring robobellboy.
-The printed name of whirring robobellboy is "[if item described is in the location of the player][TQlink of item described][end if][input-style]whirring RoboBellboy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of whirring robobellboy is "wbe". 
-mechanical robobellboy is a kind of robobellboy. There is 1 mechanical robobellboy.
-The printed name of mechanical robobellboy is "[if item described is in the location of the player][TQlink of item described][end if][input-style]mechanical RoboBellboy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of mechanical robobellboy is "mbe". 
-wheeled robobellboy is a kind of robobellboy. There is 1 wheeled robobellboy.
-The printed name of wheeled robobellboy is "[if item described is in the location of the player][TQlink of item described][end if][input-style]wheeled RoboBellboy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of wheeled robobellboy is "wrb". 
+speedy robobellboy is a robobellboy. The text-shortcut of speedy robobellboy is "sbe". 
+whirring robobellboy is a robobellboy. The text-shortcut of whirring robobellboy is "wbe". 
+mechanical robobellboy is a robobellboy. The text-shortcut of mechanical robobellboy is "mbe". 
+wheeled robobellboy is a robobellboy. The text-shortcut of wheeled robobellboy is "wrb". 
+
+To say ShortDesc of (M - a robobellboy):
+	say "RoboBellboy".
+
+To say MediumDesc of (M - speedy robobellboy):
+	say "speedy RoboBellboy".
+To say MediumDesc of (M - whirring robobellboy):
+	say "whirring RoboBellboy".
+To say MediumDesc of (M - mechanical robobellboy):
+	say "mechanical RoboBellboy".
+To say MediumDesc of (M - wheeled robobellboy):
+	say "wheeled RoboBellboy".
 
 To say RoboBellboyDesc:
 	if images visible is 1, display figure of robobellboy;
@@ -56,7 +64,7 @@ To say LeftoverDesc (N - 117):
 Part 2 - Perception
 
 To compute perception of (M - a robobellboy):
-	say "The [M] notices you!";
+	say "[BigNameDesc of M] notices you!";
 	if there is a worn messed knickers:
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. PLEASE ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
@@ -69,7 +77,7 @@ To compute perception of (M - a robobellboy):
 		say "Its eyes turn red. [line break][first custom style][unless the class of the player is succubus]'LITTLE ONE, YOUR CLIENTS ARE WAITING. PLEASE ALLOW ME TO ESCORT YOU.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
 		anger M;
 	otherwise if M is objectifying the player:
-		if the times-fucked of a random pimp > 0:
+		if the times-fucked of pimp > 0:
 			say "Its eyes turn red. [line break][speech style of M]'PART-TIME WHORE. PLEASE ALLOW ME TO MAKE USE OF YOUR SERVICES.'[roman type][line break]";
 		otherwise:
 			say "Its eyes turn red. [line break][speech style of M][unless the class of the player is succubus]'FREELANCE WHORE. PLEASE ALLOW ME TO MAKE USE OF YOUR SERVICES.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
@@ -91,7 +99,7 @@ To compute perception of (M - senior robobellboy):
 		bore M;
 	if the training-progress of M > 2:
 		say "Its eyes turn red. [line break][speech style of M]'GOOD GOING TRAINEE. PLEASE KNEEL FOR YOUR TRAINING COMPLETION CEREMONY.'[roman type][line break]";
-	otherwise if (the class of the player is trained hooker or the class of the player is succubus) and the refactory-period of a random mechanic + the refactory-period of a random demon lord <= 0:
+	otherwise if (the class of the player is trained hooker or the class of the player is succubus) and the refactory-period of mechanic + the refactory-period of demon lord <= 0:
 		say "Its eyes turn red. [line break][speech style of M]'HELLO EMPLOYEE. SUBMIT IMMEDIATELY FOR PERFORMANCE REVIEW.'[roman type][line break]";
 	otherwise if the class of the player is maid or the class of the player is hooker in training:
 		say "Its eyes turn red. [line break][speech style of M]HELLO TRAINEE. PLEASE SUBMIT FOR FURTHER PERFORMANCE OPTIMIZATION.'[roman type][line break]";
@@ -119,14 +127,14 @@ The latex punishment rule of a robobellboy is usually the no latex punishment ru
 The unique punishment rule of a robobellboy is usually the robobellboy punishment rule.
 This is the robobellboy punishment rule:
 	if the player is immobile:
-		say "[one of]The [current-monster] waits beside you patiently.[or][cycling]";
+		say "[one of][BigNameDesc of current-monster] waits beside you patiently.[or][cycling]";
 	otherwise if there is a worn messed knickers:
 		compute change forcing of current-monster;
 	if current-monster is senior robobellboy or the employee-record of senior robobellboy < 3:
 		compute trainee forcing of current-monster;
 	otherwise if the class of the player is maid:
 		compute maid forcing of current-monster;
-	otherwise if the variety of current-monster is 1 or the bimbo of the player > 13 or the number of worn crotch covering clothing > 0 and the number of worn breast covering clothing > 0:
+	otherwise if the whore-intent of current-monster is 1 or the bimbo of the player > 13 or the number of worn crotch covering clothing > 0 and the number of worn breast covering clothing > 0:
 		compute whore forcing of current-monster;
 	otherwise:
 		compute clothes forcing of current-monster;
@@ -141,16 +149,16 @@ To compute trainee forcing of (M - a robobellboy):
 	let T be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C cursed;
-		say "The [M] opens its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
 		bore M;
 		FavourUp M;
 	otherwise if H is clothing and H is actually summonable:
 		summon H cursed;
-		say "The [M] opens its chest compartment and pulls out a [H]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a [H]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.";
 		now D is H;
 	otherwise if T is clothing and T is actually summonable:
 		summon T cursed;
-		say "The [M] opens its chest compartment and pulls out a pair of [printed name of T]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a pair of [printed name of T]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
 		now D is T;
 	if D is worn:
 		say "[first custom style]'PLEASE BE MORE CONSCIOUS OF YOUR PERFORMANCE IN THE FUTURE.'[roman type][line break]";
@@ -168,7 +176,7 @@ To compute whore forcing of (M - a robobellboy):
 		say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
 		bore M for 400 seconds;
 		FavourUp M;
-		now the variety of M is 0;
+		now the whore-intent of M is 0;
 		while there is a monster in the location of the player:
 			repeat with N running through monsters in the location of the player:
 				compute motion of N;
@@ -186,7 +194,7 @@ To compute change forcing of (M - a robobellboy):
 		drag to Hotel20 by M;
 	say "[first custom style]'FULL CHANGING PROCESS ENGAGED. PLEASE RELAX.'[roman type][line break]";
 	bore M for 400 seconds;
-	now the variety of M is 0;
+	now the whore-intent of M is 0;
 	compute LaundryRobots.
 
 To compute clothes forcing of (M - a robobellboy):
@@ -216,7 +224,7 @@ To compute bra forcing of (M - a robobellboy):
 		increase N by 1;
 	if C is actually summonable clothing:
 		summon C cursed;
-		say "The [M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, the [M] seems to be happy leaving you alone.";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, [NameDesc of M] seems to be happy leaving you alone.";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -238,19 +246,19 @@ To compute knickers forcing of (M - a robobellboy):
 		increase N by 1;
 	if C is actually summonable clothing:
 		summon C cursed;
-		say "The [M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, it seems to be happy to leave you alone.";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, it seems to be happy to leave you alone.";
 		bore M;
 		FavourUp M;
 	otherwise:
 		compute failed forcing of M.
 
 To compute failed forcing of (M - a robobellboy):
-	now the variety of M is 1;
-	say "The [M] seems to pause for a moment, and then seems to change his mind in how to deal with you. [line break][first custom style]'UNABLE TO SELECT SUITABLE FETISH ATTIRE; CLIENT WILL HAVE TO STAY NUDE. [if diaper quest is 1]BABY SLAVE[otherwise]PROSTITUTION[end if] DUTIES PROGRAM ENGAGED.'[roman type][line break]";
+	now the whore-intent of M is 1;
+	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you. [line break][first custom style]'UNABLE TO SELECT SUITABLE FETISH ATTIRE; CLIENT WILL HAVE TO STAY NUDE. [if diaper quest is 1]BABY SLAVE[otherwise]PROSTITUTION[end if] DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
 
 To uniquely destroy (M - a robobellboy): [Are there any special rules we need to follow?]
-	now the variety of M is 0.
+	now the whore-intent of M is 0.
 
 Section 2- DQ
 
@@ -290,7 +298,7 @@ To compute greeting response of (M - a robobellboy):
 	if M is uninterested:
 		compute correct perception of M;
 	otherwise:
-		say "The [M] ignores you.".
+		say "[BigNameDesc of M] ignores you.".
 
 Section 2 - Questioning
 
@@ -305,14 +313,16 @@ Part 5 - Variants
 
 Section 1 - Senior Robobellboy
 
-The senior robobellboy is a robobellboy. senior robobellboy has a number called training-progress. The training-progress of senior robobellboy is usually 0. senior robobellboy has a number called employee-record. The employee-record of senior robobellboy is usually 0.
-The printed name of senior robobellboy is "[if item described is in the location of the player][TQlink of item described][end if][input-style]senior RoboBellboy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of senior robobellboy is "srb".
+senior robobellboy is a robobellboy. senior robobellboy has a number called training-progress. The training-progress of senior robobellboy is 0. senior robobellboy has a number called employee-record. The employee-record of senior robobellboy is 0. The text-shortcut of senior robobellboy is "srb".
+
+To say ShortDesc of (M - senior robobellboy):
+	say "senior RoboBellboy".
 
 To ProgressUp (M - senior robobellboy):
 	if the training-progress of M >= 0, increase the training-progress of M by 1.
 
 To compute unique death of (M - senior robobellboy):
-	say "The [M] falls apart and clatters to the ground.";
+	say "[BigNameDesc of M] falls apart and clatters to the ground.";
 	let D be a random off-stage mechanical joint;
 	if D is mechanical joint:
 		now D is in the location of the player;
@@ -330,7 +340,7 @@ To compute unique death of (M - senior robobellboy):
 To compute trainee forcing of (M - senior robobellboy):
 	if there is a worn free ride tattoo and the training-progress of M is 3, now the training-progress of M is -1;
 	if the training-progress of M > 2:
-		say "The [M] pauses and its eyes shift from red to yellow. [line break][speech style of M]ADVANCED TRAINEE DETECTED. ADMINISTERING INSIGNIA OF QUALITY.[roman type][line break]It seizes you by the wrists, holding you tightly as its chest compartment opens up.";
+		say "[BigNameDesc of M] pauses and its eyes shift from red to yellow. [line break][speech style of M]ADVANCED TRAINEE DETECTED. ADMINISTERING INSIGNIA OF QUALITY.[roman type][line break]It seizes you by the wrists, holding you tightly as its chest compartment opens up.";
 		if there is a worn tattoo:
 			let T be a random off-stage crotch tattoo;
 			if T is drawable and the concealer of T is nothing:
@@ -357,17 +367,17 @@ To compute headgear forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee hood;
 	if C is clothing and C is actually summonable:
 		summon C cursed;
-		say "The [M] opens up its chest compartment and pulls out a [C]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [C]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
 		FavourUp M;
 	otherwise:
-		say "The [M] pauses and its eyes shift from red to green. [line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
+		say "[BigNameDesc of M] pauses and its eyes shift from red to green. [line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
 	bore M.	
 
 To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C cursed;
-		say "The [M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT PROGRAM INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT PROGRAM INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -377,7 +387,7 @@ To compute knickers forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C cursed;
-		say "The [M] opens up its chest compartment and pulls out a pair of [printed name of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.'[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a pair of [printed name of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.'[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -390,7 +400,7 @@ To compute whore forcing of (M - senior robobellboy):
 		if D is not in the location of the player:
 			drag to (the location of D) by M;
 		otherwise:
-			say "[speech style of M]'HELLO SIR. I HAVE BROUGHT THIS ONE IN TIME FOR YOUR BI-HOURLY EMPLOYEE REVIEW.'[roman type][line break]The [M] lets go and starts to leave as [if D is mechanic]the [D] turns around with a cocky grin, unzipping his pants. [line break][speech style of D]'Guess it's my responsibility to take care of this, huh?'[roman type][line break][otherwise]the [D] turns around stroking his enormous [manly-penis]. [line break][speech style of D]'[one of]EVEN I HAVE RESPONSIBILITIES[or]YOU FAIL! BUT I'M GOING TO FUCK YOU ANYWAY[or]YOU PASS! TIME TO CELEBRATE[at random]! HA HA HA!'[roman type][line break][end if][line break]";
+			say "[speech style of M]'HELLO SIR. I HAVE BROUGHT THIS ONE IN TIME FOR YOUR BI-HOURLY EMPLOYEE REVIEW.'[roman type][line break][BigNameDesc of M] lets go and starts to leave as [if D is mechanic]the [D] turns around with a cocky grin, unzipping his pants. [line break][speech style of D]'Guess it's my responsibility to take care of this, huh?'[roman type][line break][otherwise]the [D] turns around stroking his enormous [manly-penis]. [line break][speech style of D]'[one of]EVEN I HAVE RESPONSIBILITIES[or]YOU FAIL! BUT I'M GOING TO FUCK YOU ANYWAY[or]YOU PASS! TIME TO CELEBRATE[at random]! HA HA HA!'[roman type][line break][end if][line break]";
 			now D is interested;
 			anger D;
 			bore M;
@@ -398,7 +408,7 @@ To compute whore forcing of (M - senior robobellboy):
 		say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
 		bore M for 400 seconds;
 		FavourUp M;
-		now the variety of M is 0;
+		now the whore-intent of M is 0;
 		while there is a monster in the location of the player:
 			repeat with N running through monsters in the location of the player:
 				compute motion of N;
@@ -409,8 +419,8 @@ To compute whore forcing of (M - senior robobellboy):
 		drag to nearest patron by M.
 
 To compute failed forcing of (M - senior robobellboy):
-	now the variety of M is 1;
-	say "The [M] seems to pause for a moment, and then seems to change his mind in how to deal with you. [line break][first custom style]'UNABLE TO UPGRADE PERFORMANCE. PROSTITUTE MAY BE FULLY UPGRADED. PROSTITUTION DUTIES PROGRAM ENGAGED.'[roman type][line break]";
+	now the whore-intent of M is 1;
+	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you. [line break][first custom style]'UNABLE TO UPGRADE PERFORMANCE. PROSTITUTE MAY BE FULLY UPGRADED. PROSTITUTION DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
 
 

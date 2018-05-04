@@ -22,9 +22,6 @@ Carry out going:
 	if the player is upright and there are worn ballet shoes:
 		increase the heel time of the player by 2.
 
-To uniquely set up (C - a ballet shoes):
-	set up magic state of C.
-
 Definition: a ballet shoes (called C) is untransformable:
 	if there is a worn diaper or diaper quest is 1, decide no;
 	if the raw heel skill of the player > 6, decide no;

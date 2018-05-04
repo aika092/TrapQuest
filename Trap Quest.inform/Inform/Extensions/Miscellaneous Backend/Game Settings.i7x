@@ -71,6 +71,7 @@ choice
 1 [Loading Screens]
 1 [Trap Warning]
 0 [Save Game Limit]
+0 [Wonderfuller Clothing]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -353,6 +354,15 @@ Is there a limited number of times that the game can be saved?
 +!]	
 To decide which number is save game limit:
 	decide on choice in row 36 of the Table of Settings.
+
+[!<DecideWhichNumberIsWonderfullerClothing>+
+
+Are there clothes on the Wonderfuller model?
+
++!]	
+To decide which number is wonderfuller clothing:
+	if the player is not a march 2018 top donator, decide on 0;
+	decide on choice in row 37 of the Table of Settings.
 
 
 [!<tableOfGameSettings:Table>*

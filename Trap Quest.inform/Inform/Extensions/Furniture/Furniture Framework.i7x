@@ -63,7 +63,7 @@ To compute monster detection:
 				otherwise now the alert of the player is 1;
 		otherwise:
 			let M be a random nearby dangerous monster;
-			if the alert of the player is 0, say "You are so busy resting you don't notice the [M] nearby!  ";
+			if the alert of the player is 0, say "You are so busy resting you don't notice [NameDesc of M] nearby!  ";
 			if the alert of the player is 1, say "You spot a threatening looking [M] nearby!  ".
 
 [!<computeFurnitureResting>+
@@ -202,7 +202,9 @@ To compute rest completion of (F - a furniture):
 	if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
 	otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
 	now resting is 0;
-	try standing.
+	now auto is 1;
+	try standing;
+	now auto is 0.
 
 [!<computeFurnitureRestCompletion>+
 

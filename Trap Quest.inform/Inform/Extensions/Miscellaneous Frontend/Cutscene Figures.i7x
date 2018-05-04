@@ -1,7 +1,9 @@
 Cutscene Figures by Miscellaneous Frontend begins here.
 
-Figure of Cutscene Prologue Male is the file "Special/Cutscene/cutscene-prologue1.png".
-Figure of Cutscene Prologue Female is the file "Special/Cutscene/cutscene-prologue2.png".
+Figure of Cutscene DQ Prologue Male is the file "Special/Cutscene/cutscene-prologue1.png".
+Figure of Cutscene DQ Prologue Female is the file "Special/Cutscene/cutscene-prologue2.png".
+Figure of Cutscene TQ Prologue Male is the file "Special/Cutscene/cutscene-prologue3.png".
+Figure of Cutscene TQ Prologue Female is the file "Special/Cutscene/cutscene-prologue4.png".
 
 Figure of Guard Interact 1 is the file "Special/Cutscene/cutscene-guard-interact1.png".
 Figure of Guard Interact 2 is the file "Special/Cutscene/cutscene-guard-interact2.png".
@@ -22,13 +24,24 @@ Figure of Wench Interact 2 is the file "Special/Cutscene/cutscene-wench-interact
 Figure of Wench Interact 3 is the file "Special/Cutscene/cutscene-wench-interact3.png".
 Figure of Wench Interact 4 is the file "Special/Cutscene/cutscene-wench-interact4.png".
 Figure of Wench Interact 5 is the file "Special/Cutscene/cutscene-wench-interact5.png".
+Figure of Wench Interact 6 is the file "Special/Cutscene/cutscene-wench-interact6.png".
+Figure of Wench Interact 7 is the file "Special/Cutscene/cutscene-wench-interact7.png".
+Figure of Wench Interact 8 is the file "Special/Cutscene/cutscene-wench-interact8.png".
+Figure of Wench Interact 9 is the file "Special/Cutscene/cutscene-wench-interact9.png".
+Figure of Wench Interact 10 is the file "Special/Cutscene/cutscene-wench-interact10.png".
+Figure of Wench Interact 11 is the file "Special/Cutscene/cutscene-wench-interact11.png".
+Figure of Wench Interact 12 is the file "Special/Cutscene/cutscene-wench-interact12.png".
+Figure of Wench Interact 13 is the file "Special/Cutscene/cutscene-wench-interact13.png".
+Figure of Wench Interact 14 is the file "Special/Cutscene/cutscene-wench-interact14.png".
 
 Figure of Wench Cutscene 1 is the file "Special/Cutscene/cutscene-wench-climax1.png".
-Figure of Wench Cutscene 2 is the file "Special/Cutscene/cutscene-wench-sex1.png".
+[Figure of Wench Cutscene 2 is the file "Special/Cutscene/cutscene-wench-sex1.png".]
 Figure of Wench Cutscene 3 is the file "Special/Cutscene/cutscene-wench-steal1.png".
 Figure of Wench Cutscene 4 is the file "Special/Cutscene/cutscene-wench-skill1.png".
 Figure of Wench Cutscene 5 is the file "Special/Cutscene/cutscene-wench-fuck1.png".
 Figure of Wench Cutscene 6 is the file "Special/Cutscene/cutscene-wench-fuck2.png".
+Figure of Wench Cutscene 7 is the file "Special/Cutscene/cutscene-wench-fuck3.png".
+Figure of Wench Cutscene 8 is the file "Special/Cutscene/cutscene-wench-drink1.png".
 
 Figure of Mannequin Cutscene 1 is the file "Special/Cutscene/cutscene-mannequin-event1.png".
 Figure of Mannequin Cutscene 2 is the file "Special/Cutscene/cutscene-mannequin-event2.png".
@@ -220,6 +233,10 @@ Figure of RoboBellboy Cutscene 1 is the file "Special/Cutscene/cutscene-robobell
 Figure of Djinn Cutscene 1 is the file "Special/Cutscene/cutscene-djinn-fuck1.png".
 
 Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1.png".
+
+Figure of Barbara Cutscene 1 is the file "Special/Cutscene/cutscene-barbara-special1.png".
+Figure of Barbara Cutscene 2 is the file "Special/Cutscene/cutscene-barbara-react1.png".
+Figure of Barbara Cutscene 3 is the file "Special/Cutscene/cutscene-barbara-punish1.png".
 
 Figure of Vines Cutscene 1 is the file "Special/Cutscene/cutscene-vines1.png".
 Figure of Vines Cutscene 2 is the file "Special/Cutscene/cutscene-vines2.png".

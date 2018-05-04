@@ -53,7 +53,7 @@ Tutorial04 is an introductory room. "Another pink room with another container. H
 
 Check going south when the player is in Tutorial04:
 	let M be a random royal guard in Tutorial04;
-	if M is interested, say "[if M is unfriendly]Because this is a tutorial, you can't leave until you've dealt with the [M]![otherwise]Let's open that container first![end if]" instead.
+	if M is interested, say "[if M is unfriendly]Because this is a tutorial, you can't leave until you've dealt with [NameDesc of M]![otherwise]Let's open that container first![end if]" instead.
 
 Check greeting when in Tutorial04:
 	if the noun is uninterested monster, say "That would be a bad idea for this tutorial!" instead.
@@ -105,10 +105,9 @@ To compute tutorial treasure to (X - a container):
 		compute autotaking C;
 		HipUp 5;
 	if X is in Tutorial04:
-		let C be a random cocktail glass;
-		now C is bland;
-		now C is in X;
-		say "[Discovery of C]".
+		now cocktail-glass is bland;
+		now cocktail-glass is in X;
+		say "[Discovery of cocktail-glass]".
 
 Report opening a container:
 	if the player is in Tutorial02:
@@ -122,7 +121,7 @@ Report opening a container:
 		say "[item style]Your swimsuit was transformed!  This happens a lot in this game, and almost always makes the clothing more [if diaper quest is 1]slutty or childish, neither of which will impress NPCs[otherwise]slutty, which makes NPCs more likely to become upset with you[end if]. You'll need to keep lots of backup clothing items so you can try to keep your appearance looking reasonable. Clothing also has other natural uses.[roman type][paragraph break]";
 		let M be a random royal guard in the location of the player;
 		anger M;
-		say "The [M] seems to be looking at you differently!  [line break][first custom style]'That is not appropriate attire for these halls!  I have no choice but to punish you in a suitable manner...'[roman type][line break]";
+		say "[BigNameDesc of M] seems to be looking at you differently!  [line break][first custom style]'That is not appropriate attire for these halls!  I have no choice but to punish you in a suitable manner...'[roman type][line break]";
 		compute attack of M;
 		say "[item style]Uh-oh, it looks like your [if diaper quest is 1]childish[otherwise]slutty[end if] appearance means the guard wants to fight, and probably [if diaper quest is 1]treat you like a little baby afterwards[otherwise]fuck[end if]!  In the real game you lose NPC's 'favour' over time but in this tutorial we've made the guard super-offended straight away so we can explain combat. Let's try and fight back!  Since kicking is your strongest attack (you can see this towards the bottom of the status bar at the top of the screen), let's stick with that for now.[roman type][line break]".
 
@@ -198,9 +197,8 @@ To start the tutorial:
 	let T be a random off-stage needle trap;
 	deploy T in Tutorial02;
 	now T is click;
-	let M be a random solemn royal guard;
-	set up M;
-	now M is in Tutorial03;
+	set up solemn royal guard;
+	now solemn royal guard is in Tutorial03;
 	now T is a random tank;
 	now the fill-colour of T is appearance corresponding to an Magic of 6 in the Table of Drinks;
 	now the doses of T is 1;

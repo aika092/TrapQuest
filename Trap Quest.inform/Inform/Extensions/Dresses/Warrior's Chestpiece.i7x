@@ -19,9 +19,12 @@ To say ShortDesc of (C - a warrior chestpiece):
 To set up influence of (C - a warrior chestpiece):
 	set up stat-based influence of C.
 
-A modest warrior chestpiece is a kind of warrior chestpiece.
+A holy warrior chestpiece is a kind of warrior chestpiece.
 
-To uniquely set up (C - a modest warrior chestpiece):
+To set up magic state of (C - a holy warrior chestpiece):
+	do nothing.
+
+To uniquely set up (C - a holy warrior chestpiece):
 	now C is protection.
 
 An immodest warrior chestpiece is a kind of warrior chestpiece.
@@ -38,7 +41,7 @@ The virgin warrior butt slut rule is listed in the butt slut eligibility rules.
 
 Part 1 - Ornate Warrior Chestpiece
 
-An ornate warrior chestpiece is a kind of modest warrior chestpiece. An ornate warrior chestpiece is usually neck covering. An ornate warrior chestpiece is usually ridiculously low cut. 
+An ornate warrior chestpiece is a kind of holy warrior chestpiece. An ornate warrior chestpiece is usually neck covering. An ornate warrior chestpiece is usually ridiculously low cut. 
 
 The printed name of ornate warrior chestpiece is usually "[TQlink of item described][clothing-title-before]ornate warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ornate warrior chestpiece is "owc".
 
@@ -61,7 +64,7 @@ Definition: an ornate warrior chestpiece (called C) is untransformable:
 
 Part 2 - Leaf Pattern Warrior Chestpiece
 
-A leaf pattern warrior chestpiece is a kind of modest warrior chestpiece. A leaf pattern warrior chestpiece is usually high cut. A leaf pattern warrior chestpiece is usually belly covering. 
+A leaf pattern warrior chestpiece is a kind of holy warrior chestpiece. A leaf pattern warrior chestpiece is usually high cut. A leaf pattern warrior chestpiece is usually belly covering. 
 
 The printed name of leaf pattern warrior chestpiece is usually "[TQlink of item described][clothing-title-before]leaf pattern warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of leaf pattern warrior chestpiece is "lpwc".
 
@@ -86,7 +89,7 @@ To decide which object is the potential-upgrade-target of (C - a leaf pattern wa
 
 Part 3 - Reinforced Warrior Chestpiece
 
-A reinforced warrior chestpiece is a kind of modest warrior chestpiece. A reinforced warrior chestpiece is usually high cut. A reinforced warrior chestpiece is usually belly covering. 
+A reinforced warrior chestpiece is a kind of holy warrior chestpiece. A reinforced warrior chestpiece is usually high cut. A reinforced warrior chestpiece is usually belly covering. 
 
 The printed name of reinforced warrior chestpiece is usually "[TQlink of item described][clothing-title-before]reinforced warrior's chestpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of reinforced warrior chestpiece is "rwc".
 

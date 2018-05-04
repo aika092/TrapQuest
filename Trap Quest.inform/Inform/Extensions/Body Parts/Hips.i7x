@@ -113,9 +113,7 @@ Are hips at their maximum size?
 
 +!]
 Definition: yourself is bottom heavy:
-	let Z be 10;
-	if extreme proportions fetish is 1, now Z is 20;
-	if the thickness of hips < 10 - max ass size modifier or the flesh volume of hips < Z - max ass size modifier, decide no;
+	if the thickness of hips < 10 - max ass size modifier or the flesh volume of hips < max ass size, decide no;
 	decide yes.
 
 To decide which number is min ass size:
@@ -183,8 +181,7 @@ REQUIRES COMMENTING
 +!]
 To say ShortDesc of hips:
 	let X be the thickness of hips;
-	let A be the total volume of hips;
-	if extreme proportions fetish is 1, now X is (X + 1) / 2;
+	[if extreme proportions fetish is 1, now X is (X + 1) / 2;]
 	if X < 3, say "androgynous hips";
 	if X is 3, say "slight hips";
 	if X is 4, say "defined hips";
@@ -207,7 +204,7 @@ To say TotalDesc of hips:
 	otherwise if the thickness of hips > 3 and the total volume of hips > 4:
 		say "Your [if the bimbo of the player > 6]alluring [end if][ShortDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if]. ";
 	otherwise:
-		say "You have [ShortDesc of hips]. [if the thickness of hips > 6 + the flesh volume of thighs]You have a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together. [end if]";
+		say "You have [MediumDesc of hips]. [if the thickness of hips > 6 + the flesh volume of thighs]You have a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together. [end if]";
 	say "[AssFillDesc][AssImplantsDesc][HipWeight]".
 
 [!<SayAssDesc>+
@@ -269,6 +266,9 @@ To say HipDesc:
 			say " (which are exaggerated by an extremely bloated and weighty diaper)";
 		otherwise:
 			say " (which are greatly exaggerated by an incredibly heavy and saturated diaper)".
+
+To say MediumDesc of hips:
+	say HipDesc.
 
 [!<SayHipWeight>+
 
@@ -367,14 +367,14 @@ To HipUp (X - a number):
 		if there is a restricting salve covering hips:
 			say "[one of]You feel your [ShortDesc of hips] try to expand further, but the salve of restriction prevents it![or]Once again your [ShortDesc of hips] fails to grow any further.[stopping]";
 		otherwise:
-			if the thickness of hips < max ass size:
+			if the thickness of hips < 10 and the thickness of hips < max ass size:
 				increase the thickness of hips by 1;
 				if the thickness of hips > 6 + the flesh volume of thighs, say "[one of]Your hips have now grown so wide that they leave you with a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together.[or][stopping]";
 				if X is 0:
 					if weight gain fetish is 0:
-						now the flesh volume of hips is the thickness of hips; [The two values are mirrored when we're not tracking fatness separately]
+						now the flesh volume of hips is the thickness of hips * (extreme proportions fetish + 1); [The two values are mirrored when we're not tracking fatness separately]
 					otherwise:
-						if the flesh volume of hips < the thickness of hips + 3, FatAssUp 1; [Ass size increases a bit if hips are really big in comparison]
+						if the flesh volume of hips < (the thickness of hips - 1) * (extreme proportions fetish + 1), FatAssUp 1; [Ass size increases a bit if hips are really big in comparison]
 			otherwise:
 				say "[one of]You feel your [ShortDesc of hips] try to expand further, but it physically can't grow any more![or]Once again your [ShortDesc of hips] fails to grow any further.[stopping]". [This will not display when extreme proportions fetish is enabled, this is intentional]
 

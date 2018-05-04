@@ -1,45 +1,51 @@
 Dominatrix by Monster begins here.
 
-A dominatrix is a kind of monster. A dominatrix is usually intelligent. The difficulty of a dominatrix is usually 9. There is 1 dominatrix. The leftover-type of a dominatrix is usually 125.
+dominatrix is a monster. dominatrix is intelligent. The difficulty of dominatrix is 9. The leftover-type of dominatrix is 125.
 
-A dominatrix has a number called orgasm watch. A dominatrix has a number called disappointment. A dominatrix has a number called strap-on girth. The strap-on girth of a dominatrix is usually 2.
+dominatrix has a number called orgasm watch. dominatrix has a number called disappointment. dominatrix has a number called strap-on girth. The strap-on girth of dominatrix is 2.
 
-The printed name of a dominatrix is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]strict dominatrix[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "strict" as a dominatrix. The description of a dominatrix is usually "[DominatrixDesc]". The text-shortcut of dominatrix is "dom".
+Understand "strict" as dominatrix. The text-shortcut of dominatrix is "dom".
 
-Definition: a dominatrix (called M) is willing to do oral:
+To say ShortDesc of (M - dominatrix):
+	say "dominatrix".
+
+To say MediumDesc of (M - dominatrix):
+	say "strict dominatrix".
+
+Definition: dominatrix (called M) is willing to do oral:
 	decide yes.
 
-Definition: a dominatrix (called M) is willing to do anal:
+Definition: dominatrix (called M) is willing to do anal:
 	decide yes.
 
-Definition: A dominatrix (called M) is hotel dwelling:
+Definition: dominatrix (called M) is hotel dwelling:
 	decide yes.
 
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/dominatrix1.png".
 Figure of dominatrix 2 is the file "NPCs/Hotel/Dominatrix/dominatrix2.png".
 Figure of dominatrix 3 is the file "NPCs/Hotel/Dominatrix/dominatrix3.png".
 
-To say DominatrixDesc:
-	if images visible is 1:
-		if the girth of item described < 4:
-			display the figure of dominatrix 1;
-		otherwise if the girth of item described < 6:
-			display the figure of dominatrix 2;
-		otherwise:
-			display the figure of dominatrix 3;
-	say "This brunette woman is standing aggressively and it doesn't look like she messes around. Your eyes can't help but look down past her black latex outfit to her crotch, where she is sporting [StrapOnDesc of item described][DominatrixComment of item described]".[this is the only change, included the function below.]
+To decide which figure-name is the monster-image of (M - dominatrix):
+	if the girth of M < 4:
+		decide on figure of dominatrix 1;
+	otherwise if the girth of M < 6:
+		decide on figure of dominatrix 2;
+	otherwise:
+		decide on figure of dominatrix 3.
+
+To say MonsterDesc of (M - dominatrix):
+	say "This brunette woman is standing aggressively and it doesn't look like [he of M] messes around. Your eyes can't help but look down past [his of M] black latex outfit to [his of M] crotch, where [he of M] is sporting [StrapOnDesc of M].[line break][DominatrixComment of M]".
 		
-To decide which number is the girth of (M - a dominatrix):
+To decide which number is the girth of (M - dominatrix):
 	decide on the strap-on girth of M.[This is strap-on girth.]
 
-To say ShortStrapOn of (M - a dominatrix):
+To say ShortStrapOn of (M - dominatrix):
 	say "[if the girth of M < 4]average sized[otherwise if the girth of M < 6]huge[otherwise]ridiculously giant[end if] strap-on".
 
-To say StrapOnDesc of (M - a dominatrix):[###MG: Is 8 inches/10 inches thick really right? Should this be in centimeters instead? Selkie: maybe circumference? Sounds way too thick to be a diameter, yeah!]
+To say StrapOnDesc of (M - dominatrix):[###MG: Is 8 inches/10 inches thick really right? Should this be in centimeters instead? Selkie: maybe circumference? Sounds way too thick to be a diameter, yeah! Aika: Selkie is correct, penis girth is usually measured in circumference]
 	say "[if the girth of M < 4]a slightly larger than normal sized red strap-on dildo, about as thick than the average male penis and noticeably longer. You would guess around 8 to 9 inches.[otherwise if the girth of M < 6]a very large red strap-on dildo, probably 8 inches thick and 10 inches long.[otherwise if mythical creature fetish is 1]the largest strap-on dildo you've ever seen; fashioned in the shape of a horse-cock. It must be 10 to 12 inches thick and about 20 inches long, there's no way the entire length could fit in any living human, and that's assuming such a thick dong could get in at all.[otherwise]the largest strap-on dildo you've ever seen. It must be 10 to 12 inches thick and about 20 inches long, there's no way the entire length could fit in any living human, and that's assuming such a thick dong could get in at all.[end if]".
 	
-To say DominatrixComment of (M - a dominatrix): [addendum to descriptive function]
-	say "[line break]";[will skip a line]
+To say DominatrixComment of (M - dominatrix):
 	if the girth of M < 4:
 		if the player is female and the bimbo of the player < 7:
 			say "[first custom style][one of]Ugh, how perverted. Even the women have penises around here.[or]I suppose that[']s one way to keep the men off you. Gross.[or]I have a feeling I don[']t want to mess with this woman.[or]She seems rather taken with that strap-on of hers. I doubt she[']ll try to violate me with it unless I[']ve done something to please her.[or]She has the look of someone who is answered to.[in random order]";
@@ -79,46 +85,44 @@ To say DominatrixComment of (M - a dominatrix): [addendum to descriptive functio
 			say "[second custom style][one of]I[']m looking forward to getting POUNDED by that![or]Mistress is going to be so happy. I[']m determined to last longer this time![or]I hope Mistress feels like fucking me today. I hate boot for dinner...[or]Tee hee! It's SO big![or]Mistress is going to rut me like an animal!~[or]I think Mistress is going to give me permission to cum soon! OOooh I can[']t wait![or]Mistress did such a good job training me, I[']m sure I can take her strapon no problem![or]I love getting pounded by my Mistress![or]I hope Mistress is rough today...[in random order]";[highest bimbo functions are combined]
 	say "[roman type][line break]";
 	
-Definition: A dominatrix (called M) is able to remove cursed plugs:
+Definition: dominatrix (called M) is able to remove cursed plugs:
 	decide yes.
 
-Definition: A dominatrix (called M) is wenchy:
+Definition: dominatrix (called M) is wenchy:
 	decide yes.
 
-To set up (M - a dominatrix):
+To set up (M - dominatrix):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 11;
 	now the health of M is the maxhealth of M;
 	calm M.
-	
 
 This is the spawn initial dominatrix rule:
 	if diaper quest is 0:
 		if debugmode > 0, say "Summoning dominatrix in hotel.";
-		let M be a random dominatrix;
-		now M is in Hotel37.
+		now dominatrix is in Hotel37.
 The spawn initial dominatrix rule is listed in the setting up hotel monsters rules.
 
-Definition: a dominatrix (called M) is human:
+Definition: dominatrix (called M) is human:
 	decide yes.
 
 Part 1 - Misc Flavour
 
-To say SummoningFlav of (M - a dominatrix):
+To say SummoningFlav of (M - dominatrix):
 	say "You hear the sound of a female humming gently.".
 
-To say speech style of (M - a dominatrix):
+To say speech style of (M - dominatrix):
 	say first custom style.
 
-To say GrabStatus of (M - a dominatrix):
+To say GrabStatus of (M - dominatrix):
 	say "has you in bondage".
 
-To say SexResistFlav of (M - a dominatrix):
+To say SexResistFlav of (M - dominatrix):
 	if M is penetrating face and M is not friendly-fucking:
 		say "[if the player is able to speak][line break][variable custom style]'No way!'[roman type][line break][otherwise]You turn your head away in refusal![end if]";
 	otherwise if M is penetrating asshole:
-		say "[if the anal sex addiction of the player < 3][one of]You fight back against the [M], desperate to break out of her grip.[or]You struggle as much as you can. Orgasming is the last thing on your mind![or]You try to throw the [M] off, but she's too strong![or]You move away from the [M] as she pushes into you, to try to minimise the impact of her thrusts.[in random order][otherwise if the anal sex addiction of the player < 5][one of]You fight back against the [M], desperate not to let her win and make you orgasm![or]You move away from the [M] as she pushes into you, to try to minimise the impact of her thrusts.[or]You grit your teeth together and try to wiggle away.[in random order][otherwise][one of]You playfully wiggle away from the [M], making it more difficult for her to fuck you properly.[or]You hold still, refusing to join in your butt love session properly.[or]You hold still, concentrating on trying not to cum.[in random order][end if]";
+		say "[if the anal sex addiction of the player < 3][one of]You fight back against [NameDesc of M], desperate to break out of her grip.[or]You struggle as much as you can. Orgasming is the last thing on your mind![or]You try to throw [NameDesc of M] off, but she's too strong![or]You move away from [NameDesc of M] as she pushes into you, to try to minimise the impact of her thrusts.[in random order][otherwise if the anal sex addiction of the player < 5][one of]You fight back against [NameDesc of M], desperate not to let her win and make you orgasm![or]You move away from [NameDesc of M] as she pushes into you, to try to minimise the impact of her thrusts.[or]You grit your teeth together and try to wiggle away.[in random order][otherwise][one of]You playfully wiggle away from [NameDesc of M], making it more difficult for her to fuck you properly.[or]You hold still, refusing to join in your butt love session properly.[or]You hold still, concentrating on trying not to cum.[in random order][end if]";
 	otherwise if M is spanking the player and there is a patron in the location of the player:
 		if bukkake fetish is 1:
 			if the player is able to speak, say "[variable custom style]'[if the semen taste addiction of the player > 12 and the semen taste addiction of the player > the semen addiction of the player][one of]Guys you're being mean!  At least cum in my mouth so I get to taste it properly...'[or]This is so unfair, at least let me taste it properly!'[or]Stop teasing me with your cum and let me suck your cocks properly!'[in random order][otherwise if the semen addiction of the player > 10][one of]I don't mind you jizzing on my face, guys, but can you get this crazy woman to stop first?  Ow ow ow!'[or]If you wanted me to be your bukkake queen you just had to ask... you didn't have to gang up on me while I'm being abused already!'[in random order][otherwise if the bimbo of the player > 9][one of]Ooh, why do there have to be so many of you watching?'[or]Mistress, you're being mean!  Tell them to stop!'[or]Please at least wait until she stops paddling me!  Oof!'[then at random][otherwise if the semen coating of face is 0][one of]Piss off guys, this isn't funny!'[or]You're not seriously going to mess up my face while I'm bound like this, are you?!'[or]Come on, she was joking, right?  Right???'[or]Seriously, I'm not enjoying this!  I didn't even get a safe word!  You have to believe me!'[or]Don't listen to that woman!  She's insane!'[at random][otherwise][one of]Don't you think this has gone far enough already?!'[or]Why would you obey this psycho??'[or]Fucking hell, I'm not your plaything!  Stop this now!'[or]Do you really think this is consensual?'[or]Oh my god, how gross!'[or]Yuck yuck yuck!  Get away from me!'[or]No more, please!'[at random][end if][roman type][line break]";
@@ -129,18 +133,17 @@ To say SexResistFlav of (M - a dominatrix):
 	otherwise:
 		say "You struggle in vain to free yourself!".
 
-To compute kneeling reaction of (M - a dominatrix):
-	say "The [M] [one of]raises an eyebrow[or]smiles knowingly[or]grins[at random]. [line break][speech style of M]'[one of]If you feel a rush right now, that[']s your body telling you what your proper place is.'[or]Feeling properly submissive now? Good, I like when my subs know what their role is.'[or]Through playing games? Ready to worship your mistress?'[or]You[']re adorable when you try to fight me. We both know it's always going to be pointless though.'[or]I only put this cock of mine in holes that belong to me, slave. So, why don't you show me what belongs to me?'[at random][roman type][line break]";
+To compute kneeling reaction of (M - dominatrix):
+	say "[BigNameDesc of M] [one of]raises an eyebrow[or]smiles knowingly[or]grins[at random]. [line break][speech style of M]'[one of]If you feel a rush right now, that[']s your body telling you what your proper place is.'[or]Feeling properly submissive now? Good, I like when my subs know what their role is.'[or]Through playing games? Ready to worship your mistress?'[or]You[']re adorable when you try to fight me. We both know it's always going to be pointless though.'[or]I only put this cock of mine in holes that belong to me, slave. So, why don't you show me what belongs to me?'[at random][roman type][line break]";
 	say "[if the humiliation of the player < 30000]You shiver with shame.[end if]";
 	humiliate 75.
 
-To compute delay of (M - a dominatrix):
-	say "The [M] impatiently taps her foot, as if waiting to see what you do next.".
+To compute delay of (M - dominatrix):
+	say "[BigNameDesc of M] impatiently taps her foot, as if waiting to see what you do next.".
 
 Part 2 - Perception
 
-
-Definition: a dominatrix (called M) is objectifying the player:
+Definition: dominatrix (called M) is objectifying the player:
 	if the class of the player is cheerleader, decide no;
 	if the favour of M > 17, decide yes;[18+ she considers you fully trained]
 	if the times-fucked of M > 3 and the blue-balls of M < 1, decide yes;
@@ -154,11 +157,10 @@ Definition: a dominatrix (called M) is objectifying the player:
 	if there is a wrestler in the location of M, decide yes;
 	decide no.
 
-
-To compute perception of (M - a dominatrix):
+To compute perception of (M - dominatrix):
 	now M is interested;
 	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M;
-	say "The [M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[We shouldn't need a linebreak here because punctuation inside text-based if-clauses cause an automatic line break]
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[We shouldn't need a linebreak here because punctuation inside text-based if-clauses cause an automatic line break]
 	if the class of the player is living sex doll:
 		say "It doesn't look like she's interested in you.";
 		bore M for 500 seconds;
@@ -167,8 +169,8 @@ To compute perception of (M - a dominatrix):
 			say "[speech style of M]'Yuck. Go find the matron, she is much more suited to your needs than me.'[roman type][line break]";
 			bore M;
 		otherwise if the favour of M > 17:
-			if M is in Hotel22, say "The [M] smirks.[line break][speech style of M]'Already back for more. That's what I like about you, slut[if the disappointment of M > 1]. You're going to love the new toy I picked out for you.'[otherwise].'[end if][roman type][line break]";
-			otherwise say "The [M] smirks.[line break][speech style of M]'Ah, found you. I'm ready for another session, and I know you are too[if the disappointment of M > 1]. You're going to love the new toy I picked out for you.'[otherwise]. Let's go.'[end if][roman type][line break]";
+			if M is in Hotel22, say "[BigNameDesc of M] smirks.[line break][speech style of M]'Already back for more. That's what I like about you, slut[if the disappointment of M > 1]. You're going to love the new toy I picked out for you.'[otherwise].'[end if][roman type][line break]";
+			otherwise say "[BigNameDesc of M] smirks.[line break][speech style of M]'Ah, found you. I'm ready for another session, and I know you are too[if the disappointment of M > 1]. You're going to love the new toy I picked out for you.'[otherwise]. Let's go.'[end if][roman type][line break]";
 		otherwise if the class of the player is royal slave:[no need to anger M when the dominatrix is uniquely unfriendly]
 			say "[speech style of M]'[if M is unfriendly and M is in Dungeon22]Ah, slave, you have returned. Good timing, I am ready to play with you again.'[otherwise if M is unfriendly]Slave, return to my dungeon with me. My needs are more pressing than the Princess's.'[otherwise]You, slave!  You're owned by the princess?  Her jurisdiction does not reach into my dungeon. You will be mine tonight.'[end if][roman type][line break]";
 		otherwise if the class of the player is the latex fetish model:
@@ -176,22 +178,22 @@ To compute perception of (M - a dominatrix):
 		otherwise if the times-fucked of M > 3 and the blue-balls of M < 1:
 			say "[speech style of M]'[one of]Ah, my favourite customer! I have some good news. Since you[']ve been such a good sub, I[']ve decided to give you my services free of charge. All I want from you is your unconditional submission! [if the player is prone]Don[']t move.'[otherwise]Get on your knees.'[end if][or]If it isn[']t my favourite slave. You know the drill by now, don't you, slut.[stopping][roman type][line break]";
 		otherwise if M is unfriendly and the times-met of M > 0:
-			if M is in Hotel22, say "The [M] smirks.[line break][speech style of M]'Back for more punishment, are you[if the disappointment of M > 1]. Do you like my new strap-on?'[otherwise].'[end if][roman type][line break]";
-			otherwise say "The [M] smirks.[line break][speech style of M]'Ah, found you. I'm ready for another session, and that means you are too[if the disappointment of M > 1]. Do you like my new strap-on?'[otherwise].'[end if][roman type][line break]";
+			if M is in Hotel22, say "[BigNameDesc of M] smirks.[line break][speech style of M]'Back for more punishment, are you[if the disappointment of M > 1]. Do you like my new strap-on?'[otherwise].'[end if][roman type][line break]";
+			otherwise say "[BigNameDesc of M] smirks.[line break][speech style of M]'Ah, found you. I'm ready for another session, and that means you are too[if the disappointment of M > 1]. Do you like my new strap-on?'[otherwise].'[end if][roman type][line break]";
 		otherwise if M is objectifying the player:
 			anger M;
-			say "The [M] stares at you with intimidating eyes.[line break][speech style of M]'Yes, you'll do fine. [if the player is upright]Get on your knees[otherwise]I can tell by your crawling that you are a natural submissive[end if].'[roman type][line break]";
+			say "[BigNameDesc of M] stares at you with intimidating eyes.[line break][speech style of M]'Yes, you'll do fine. [if the player is upright]Get on your knees[otherwise]I can tell by your crawling that you are a natural submissive[end if].'[roman type][line break]";
 		otherwise:
-			say "The [M] glances at you.[line break][speech style of M]'You're not my type. I'm looking for a proper submissive.'[roman type][line break]She seems to immediately lose interest.";
+			say "[BigNameDesc of M] glances at you.[line break][speech style of M]'You're not my type. I'm looking for a proper submissive.'[roman type][line break]She seems to immediately lose interest.";
 		if the disappointment of M > 1, now the disappointment of M is 0.
 
-To say BecomesBoredFlav of (M - a dominatrix):
+To say BecomesBoredFlav of (M - dominatrix):
 	if M is uninterested:
-		say "The [M] seems to lose interest in you for now.".
+		say "[BigNameDesc of M] seems to lose interest in you for now.".
 
 Part 3 - Motion
 
-To compute motion of (M - a dominatrix):
+To compute motion of (M - dominatrix):
 	if M is unfriendly and the boredom of M <= 0: [The dominatrix goes looking for the player after a while, if she is unfriendly.]
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
@@ -203,16 +205,16 @@ To compute motion of (M - a dominatrix):
 	otherwise if M is not in Hotel37 and M is not in the location of the player: [TODO change room]
 		now M is in Hotel37.
 
-To compute (M - a dominatrix) seeking (D - a direction): [The dominatrix only follows the player if unfriendly]
+To compute (M - dominatrix) seeking (D - a direction): [The dominatrix only follows the player if unfriendly]
 	if M is unfriendly, try M going D.
 
 Part 4 - Combat
 
 Section 1 - Attack
 
-The monster fucked taunting rule of a dominatrix is usually the matron gets bored rule.
+The monster fucked taunting rule of dominatrix is usually the matron gets bored rule.
 
-The unique punishment rule of a dominatrix is usually the dominatrix tops the player rule.
+The unique punishment rule of dominatrix is usually the dominatrix tops the player rule.
 
 This is the dominatrix tops the player rule:
 	if current-monster is not grabbing the player, now current-monster is doing nothing special;
@@ -232,19 +234,19 @@ This is the dominatrix drags the player rule:
 		drag to Hotel37 by M;
 		rule succeeds.
 
-To say DragArrival of (M - a dominatrix) to (R - a room):
+To say DragArrival of (M - dominatrix) to (R - a room):
 	say "[speech style of M]'Now kneel silently, eyes cast downward. Like a good slave.'[roman type][line break]".
 
-To compute torturing of (M - a dominatrix):
+To compute torturing of (M - dominatrix):
 	say "[speech style of M]'[if the health of M < the maxhealth of M]You are going to learn a tough lesson in why you don't fight back against your superiors, whore.'[otherwise]You clearly need some [']education['] so that you can lean how to obey.'[end if][roman type][line break]";
 	if a random number between 1 and 2 is 1 or there is a worn messed knickers or there is a demon lord in the location of M, compute whipping of M;
 	otherwise compute stocks paddling of M.
 
-To TimesFuckedUp (M - a dominatrix):
+To TimesFuckedUp (M - dominatrix):
 	increase the times-fucked of M by 1;
 	if the number of modesty shutters in the location of the player > 0:
 		let B be a random modesty shutter in the location of the player;
-		say "The [M] presses the button on her remote and the modesty shutter clatters up.";
+		say "[BigNameDesc of M] presses the button on her remote and the modesty shutter clatters up.";
 		destroy B.
 
 This is the dominatrix special spanking rule:
@@ -253,7 +255,7 @@ This is the dominatrix special spanking rule:
 		rule succeeds.
 The dominatrix special spanking rule is listed first in the default continue sex rules.
 
-To compute stocks paddling of (M - a dominatrix):
+To compute stocks paddling of (M - dominatrix):
 	if M is grabbing the player:
 		if the sex-length of M is 3:
 			let X be 1 + (bukkake fetish * 4);
@@ -300,17 +302,16 @@ To compute stocks paddling of (M - a dominatrix):
 			say "[one of]Using some kind of spanking paddle outside of your vision, the[or]The[stopping] [M] [one of]strikes[or]slaps[or]spanks[or]paddles[then at random] your ass cheeks hard!  [line break][variable custom style][if the player is able to speak]'[one of]Owwww!'[or]Aaaaah!'[or]OUUCH!'[at random][otherwise][one of]Fuck![or]Shit![or]'MMMMPH!'[or]'NNNNG!'[at random][end if][roman type][line break][if there is a patron penetrating face][one of]You shriek around the [random patron penetrating face]'s [manly-penis], which just makes you gag even harder.[or][or][or][cycling]";
 			Humiliate 150;
 		otherwise:
-			say "The [M] stops paddling you and unlocks the stocks, freeing you.[line break][speech style of M]'I hope you've learned your lesson. I don't want to have to do that again.'[roman type][line break]Something tells you she's lying. For now, at least, she seems to have lost interest.";
+			say "[BigNameDesc of M] stops paddling you and unlocks the stocks, freeing you.[line break][speech style of M]'I hope you've learned your lesson. I don't want to have to do that again.'[roman type][line break]Something tells you she's lying. For now, at least, she seems to have lost interest.";
 			bore M;
 			TimesFuckedUp M by 1;
 			DelicateUp 1;
 		decrease the sex-length of M by 1;
 	otherwise:
-		say "The [M] pulls you towards the stocks, and locks you in, on your knees with your head secured pointing at the door. She whistles sharply.";
+		say "[BigNameDesc of M] pulls you towards the stocks, and locks you in, on your knees with your head secured pointing at the door. She whistles sharply.";
 		now M is grabbing the player;
 		now the sex-length of M is 4;
-		now M is spanking the player;
-		now the variety of M is 1.
+		now M is spanking the player.
 
 To compute dominatrixClimax of (N - a patron):
 	TimesFuckedUp N by 1;[now you remember which guy came on your face!]
@@ -318,7 +319,7 @@ To compute dominatrixClimax of (N - a patron):
 	CumFaceUp the semen load of N;
 	destroy N.
 
-To compute whipping of (M - a dominatrix):
+To compute whipping of (M - dominatrix):
 	TimesFuckedUp M by 1;
 	if M is grabbing the player:
 		say "[one of]Your punishment becomes clear when you hear a whistling sound quickly followed by an intense, sharp pain on your back. You're being whipped![or]Once again you hear a whistling sound quickly followed by an intense, sharp pain on your back. She's whipping you again![stopping][line break][speech style of M]'[one of]Beg for mercy, slave, and I might just go easy on you.'[or]We[']re going to be here a while if you don[']t start apologizing soon.'[or]I can be merciful, slave. All you need to do is beg for it.'[at random][roman type][line break]";
@@ -329,34 +330,33 @@ To compute whipping of (M - a dominatrix):
 		if R is 1:
 			if the favour of M < 17, FavourUp M;
 			now the body soreness of the player is 10;
-			say "The [M] pulls no punches, viciously laying into you with her whip as tears well up in your eyes and continue well past the point of crying, [if the delicateness of the player > 10]which does not take long[otherwise]which takes an unbearably long time[end if]. After this, she seems satisfied, and lets you down. [line break][speech style of M]'[if M is objectifying the player]I assume from those tears that you have learned your lesson, slave. Don[']t bother standing up to me again.'[otherwise]This is what happens to disobedient slaves. Disrespect me like that again and I will cut you loose.'[roman type][line break]";
+			say "[BigNameDesc of M] pulls no punches, viciously laying into you with her whip as tears well up in your eyes and continue well past the point of crying, [if the delicateness of the player > 10]which does not take long[otherwise]which takes an unbearably long time[end if]. After this, she seems satisfied, and lets you down. [line break][speech style of M]'[if M is objectifying the player]I assume from those tears that you have learned your lesson, slave. Don[']t bother standing up to me again.'[otherwise]This is what happens to disobedient slaves. Disrespect me like that again and I will cut you loose.'[roman type][line break]";
 			DelicateUp 2;
 		otherwise if the reaction of the player is 2 or (the reaction of the player is 1 and a random number between the charisma of the player and 4 > the difficulty of M / 3):
-			say "The [M] whips you only a few times, true to her word and holding back thanks to your submissive pleading. After this, she seems satisfied, and lets you down. [line break][speech style of M]'I[']m surprised at how quickly you learned your lesson, slave. Disrespect me again and I may not be so gentle.'[roman type][line break]";
+			say "[BigNameDesc of M] whips you only a few times, true to her word and holding back thanks to your submissive pleading. After this, she seems satisfied, and lets you down. [line break][speech style of M]'I[']m surprised at how quickly you learned your lesson, slave. Disrespect me again and I may not be so gentle.'[roman type][line break]";
 			humiliate 100;
 		otherwise:
-			say "The [M] whips you several more times, grinding her strapon cock between your asscheeks as she brings you to the verge of tears. True to her word she seems to be holding back, and after she's satisfied she gently lets you down. [line break][speech style of M]'Learn your lesson, slave, or next time I will not be so gentle.'[roman type][line break]";
+			say "[BigNameDesc of M] whips you several more times, grinding her strapon cock between your asscheeks as she brings you to the verge of tears. True to her word she seems to be holding back, and after she's satisfied she gently lets you down. [line break][speech style of M]'Learn your lesson, slave, or next time I will not be so gentle.'[roman type][line break]";
 			humiliate 125;
 			DelicateUp 1;
 		bore M;
 		TimesFuckedUp M by 1;
 	otherwise:
-		say "The [M] pulls you towards the X-frame, pulls you to your feet with your back facing her and locks all four of your limbs in[if the delicateness of the player < 11] before you can put up any resistance[end if]. You can hear her slowly walk several steps backwards.";
+		say "[BigNameDesc of M] pulls you towards the X-frame, pulls you to your feet with your back facing her and locks all four of your limbs in[if the delicateness of the player < 11] before you can put up any resistance[end if]. You can hear her slowly walk several steps backwards.";
 		now the sex-length of M is 4;
 		now M is grabbing the player;
-		now M is whipping the player;
-		now the variety of M is 2.
+		now M is whipping the player.
 
-To say PullAttempt of (M - a dominatrix) at (C - a clothing):
-	say "[one of]Placing[or]Keeping[stopping] one tall heel on the small of your back, the [M] pulls at your [printed name of C] to try and rip it off!".
+To say PullAttempt of (M - dominatrix) at (C - a clothing):
+	say "[one of]Placing[or]Keeping[stopping] one tall heel on the small of your back, [NameDesc of M] pulls at your [printed name of C] to try and rip it off!".
 
-To say MouthPenetrationFlav of (M - a dominatrix):
+To say MouthPenetrationFlav of (M - dominatrix):
 	now the sex-length of M is 1;
-	say "The [M] walks in front of your face, and presses one of her latex boots to your face. [line break][speech style of M]'Polish it[one of] with your tongue.'[or].'[stopping][roman type][line break][one of]The shoe doesn't look particularly dirty but it's pretty hard to tell since it's black. In any case you're confident it would taste horrible. (Use [bold type]submit[roman type] to lick the boot, and [bold type]resist[roman type] to refuse.)[line break][or][stopping]".
+	say "[BigNameDesc of M] walks in front of your face, and presses one of her latex boots to your face. [line break][speech style of M]'Polish it[one of] with your tongue.'[or].'[stopping][roman type][line break][one of]The shoe doesn't look particularly dirty but it's pretty hard to tell since it's black. In any case you're confident it would taste horrible. (Use [bold type]submit[roman type] to lick the boot, and [bold type]resist[roman type] to refuse.)[line break][or][stopping]".
 
-To compute facial sex of (M - a dominatrix):
+To compute facial sex of (M - dominatrix):
 	if M is friendly-fucking:
-		say "[one of]The [M] aggressively fucks your throat with her [ShortStrapOn of M].[or]The [M]'s hips slam into your face, her [ShortStrapOn of M] repeatedly striking the back of your throat.[or]The [M] slams her [ShortStrapOn of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or]The [M] wears a wide grin, mercilessly ramming her [ShortStrapOn of M] down your throat.[or]You can[']t help making a lot of noise as the [M] slams her [ShortStrapOn of M] into the back of your throat.[in random order]";
+		say "[one of][BigNameDesc of M] aggressively fucks your throat with her [ShortStrapOn of M].[or][BigNameDesc of M]'s hips slam into your face, her [ShortStrapOn of M] repeatedly striking the back of your throat.[or][BigNameDesc of M] slams her [ShortStrapOn of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or][BigNameDesc of M] wears a wide grin, mercilessly ramming her [ShortStrapOn of M] down your throat.[or]You can[']t help making a lot of noise as [NameDesc of M] slams her [ShortStrapOn of M] into the back of your throat.[in random order]";
 		let I be 0;
 		decrease I by the strap-on girth of M;
 		let G be a random number between the intelligence of the player and I;
@@ -376,83 +376,83 @@ To compute facial sex of (M - a dominatrix):
 			now the sex-length of M is 1;
 	decrease the sex-length of M by 1.
 
-To compute facial climax of (M - a dominatrix):
+To compute facial climax of (M - dominatrix):
 	if M is friendly-fucking and the sex-length of M is 0 and the times-fucked of M > 0:
 		compute happy reward of M;
 		TimesFuckedUp M by 1;
 	otherwise if M is friendly-fucking:
-		say "[speech style of M]'Ok, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break]The [M] pulls her [ShortStrapOn of M] out of your mouth and turns her attention to getting it clean.";
+		say "[speech style of M]'Ok, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] pulls her [ShortStrapOn of M] out of your mouth and turns her attention to getting it clean.";
 		now the sex-length of M is 0;
 		TimesFuckedUp M by 1;
 	otherwise:[times-fucked isn't incremented here yet.]
 		if the reaction of the player is 0:
-			say "The [M] slaps you hard on the cheek. You yelp in pain!  [line break][speech style of M]'Bitch, you need to learn to obey orders. I expect this to go differently next time.'[roman type][line break]";
+			say "[BigNameDesc of M] slaps you hard on the cheek. You yelp in pain!  [line break][speech style of M]'Bitch, you need to learn to obey orders. I expect this to go differently next time.'[roman type][line break]";
 			DelicateUp 1;
 		otherwise:
 			say "[speech style of M]'What a good slave you are!  I might have to promote to you head shoe polisher.'[roman type][line break]";
 			SexAddictUp 1;
 		if the number of modesty shutters in the location of the player > 0:
 			let B be a random modesty shutter in the location of the player;
-			say "The [M] presses the button on her remote and the modesty shutter clatters up.";
+			say "[BigNameDesc of M] presses the button on her remote and the modesty shutter clatters up.";
 			destroy B;
 		otherwise:
-			say "The [M] looks away and seems to have lost interest.";
+			say "[BigNameDesc of M] looks away and seems to have lost interest.";
 	bore M.
 
-To compute happy reward of (M - a dominatrix):
+To compute happy reward of (M - dominatrix):
 	FavourUp M by 1;
 	if the blue-balls of M < -1 and the number of cots in the location of the player is 0:
-		say "The [M] tilts your face upward as she gently removes her [ShortStrapOn of M]. [line break][speech style of M]'As always, you[']re a good little sub. Tell you what. I[']ll set up a cot for you right here in my dungeon, and you can use it anytime as long as you're willing to keep reminding your mistress why she keeps rewarding you.'[roman type] The [M] walks off to one corner of the room and pulls out a tiny bed.";
+		say "[BigNameDesc of M] tilts your face upward as she gently removes her [ShortStrapOn of M]. [line break][speech style of M]'As always, you[']re a good little sub. Tell you what. I[']ll set up a cot for you right here in my dungeon, and you can use it anytime as long as you're willing to keep reminding your mistress why she keeps rewarding you.'[roman type] [BigNameDesc of M] walks off to one corner of the room and pulls out a tiny bed.";
 		now a random cot is in the location of the player;
 	otherwise if M is penetrating face:
 		let C be a random off-stage candy;
-		say "The [M] tilts your face upward as she gently pulls her [ShortStrapOn of M] out of your mouth. [line break][speech style of M]'I have to say, I[']m impressed. I might have to make you my slave after a performance like that! As promised, take this, completely free of charge.'[roman type][line break]";
-		say "The [M] hands you a small [C].";
+		say "[BigNameDesc of M] tilts your face upward as she gently pulls her [ShortStrapOn of M] out of your mouth. [line break][speech style of M]'I have to say, I[']m impressed. I might have to make you my slave after a performance like that! As promised, take this, completely free of charge.'[roman type][line break]";
+		say "[BigNameDesc of M] hands you a small [C].";
 		now C is held by the player;
 	otherwise:
 		let C be a random off-stage candy;
 		say "[speech style of M]'I have to say, you took that fucking like a real champ. I might just have to make you into a slave if you keep that up! Take this, it's free of charge.";
-		say "The [M] hands you a small [C] before losing interest.";
+		say "[BigNameDesc of M] hands you a small [C] before losing interest.";
 		now C is held by the player;
 	decrease the blue-balls of M by 1.
 
-To say SexSubmissionFlav of (M - a dominatrix):
+To say SexSubmissionFlav of (M - dominatrix):
 	if M is penetrating face:
 		if the sex-length of M > 0, say "You [if the delicateness of the player < 5]extremely reluctantly[otherwise if the delicateness of the player < 10]reluctantly[otherwise if the delicateness of the player < 14]timidly[otherwise]enthusiastically[end if] begin licking the toe of her boot. The disgusting taste of latex instantly hits your mouth[if the delicateness of the player >= 14], but you don't care[end if].";
 		otherwise say "It's so gross that you [if the delicateness of the player < 10]can barely bring yourself to do it[otherwise if the delicateness of the player < 14]are quite hesitant[otherwise]are slightly hesitant[end if], but you do it anyway, tonguing the foul tasting part of the shoe where it has been in contact with the ground. The disgusting taste of rubber and grime overpower your taste buds and leave you not wanting to put your tongue back in your mouth.";
 	otherwise:
 		say "[one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[purely at random]".
 
-To say FriendlyAssholePenetrationFlav of (M - a dominatrix):
+To say FriendlyAssholePenetrationFlav of (M - dominatrix):
 	say AssholePenetrationFlav of M.
 
-To set up sex length of (M - a dominatrix) in (B - a body part):
+To set up sex length of (M - dominatrix) in (B - a body part):
 	set up sex length (a random number between 3 and 4) of M in B.[remember, this only applies if sex length is 0 or less]
 
-To compute unique penetration effect of (M - a dominatrix) in (B - a body part):
+To compute unique penetration effect of (M - dominatrix) in (B - a body part):
 	if refactoryperiod is 3 and M is not friendly-fucking:
-		say "The [M] tuts and shakes her head in disapproval. [line break][speech style of M]'Did I say you could cum?  I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
+		say "[BigNameDesc of M] tuts and shakes her head in disapproval. [line break][speech style of M]'Did I say you could cum?  I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 		now the disappointment of M is 1;
 	otherwise:
 		now the disappointment of M is 0.
 
-To say PenPrep of (M - a dominatrix) in (F - asshole):
-	say "The [M] wraps a hand around her [ShortStrapOn of M] and guides it towards the entrance to your [asshole]. [line break][speech style of M]'[one of]You[or]Remember, you[stopping] do not have permission to cum unless I say so.'[roman type][line break]".
+To say PenPrep of (M - dominatrix) in (F - asshole):
+	say "[BigNameDesc of M] wraps a hand around her [ShortStrapOn of M] and guides it towards the entrance to your [asshole]. [line break][speech style of M]'[one of]You[or]Remember, you[stopping] do not have permission to cum unless I say so.'[roman type][line break]".
 
-To say PenetrationFlav of (M - a dominatrix) in (F - asshole):
+To say PenetrationFlav of (M - dominatrix) in (F - asshole):
 	say "She pushes in with measured strength and your [ShortDesc of asshole] [if the openness of asshole < the girth of M]is forced apart[otherwise]parts to accept the fake [manly-penis] inside[end if].";
 
-To compute anal sex of (M - a dominatrix):
+To compute anal sex of (M - dominatrix):
 	if the reaction of the player is 0:
 		say "You try to get away, but she's much too strong for you.[one of]If anything, your struggles have just made the fucking even more brutal on your poor [asshole].[or]Instead, she seems to be taking the disobedience as motivation to fuck you even harder![or][or][at random]";[Friendly sex dominatrix has either let go or started torturing the player by now.]
 	otherwise if the strap-on girth of M >= 6 and refactoryperiod is 0 and the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking:
-		say "The [M] starts pumping even faster. [line break][speech style of M]'Cum, slave, cum for me now!'[roman type][line break][if the player is not a pervert]As much as you try to stop yourself, the feeling in your [asshole] is too intense and you can't help but obey her command![otherwise]You feel the pressure building inside of you and gleefully comply![end if]";
+		say "[BigNameDesc of M] starts pumping even faster. [line break][speech style of M]'Cum, slave, cum for me now!'[roman type][line break][if the player is not a pervert]As much as you try to stop yourself, the feeling in your [asshole] is too intense and you can't help but obey her command![otherwise]You feel the pressure building inside of you and gleefully comply![end if]";
 		anally orgasm shamefully;
 		heal asshole times 2; [To prevent fainting]
 		now the disappointment of M is -1;
 		FavourUp M;
 	otherwise:
-		say "The [M] continues to powerfully pummel away with her [ShortStrapOn of M]. [one of]You can very clearly feel the realistic contours of her rubber [manly-penis] as it rubs mercilessly against the sensitive walls of your [asshole].[or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear she's deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
+		say "[BigNameDesc of M] continues to powerfully pummel away with her [ShortStrapOn of M]. [one of]You can very clearly feel the realistic contours of her rubber [manly-penis] as it rubs mercilessly against the sensitive walls of your [asshole].[or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear she's deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
 		ruin asshole;
 		if M is friendly-fucking and refactoryperiod > 0:
 			compute anal climax of M;
@@ -460,36 +460,36 @@ To compute anal sex of (M - a dominatrix):
 	if M is not friendly-fucking:
 		ruin asshole;
 		if refactoryperiod > 0 and the disappointment of M is 0:
-			say "The [M] tuts and shakes her head in disapproval. [line break][speech style of M]'Did I say you could cum?  I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
+			say "[BigNameDesc of M] tuts and shakes her head in disapproval. [line break][speech style of M]'Did I say you could cum?  I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 			now the disappointment of M is 1.
 
-To compute MasturbationReaction of (M - a dominatrix):
+To compute MasturbationReaction of (M - dominatrix):
 	if M is penetrating asshole and M is not friendly-fucking:
 		let W be a random off-stage wrist bond;
 		if W is actually summonable:
-			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type]The [M] grabs your wrists and forcibly binds them together with a [printed name of W].";
-			now W is bound-behind;
+			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type][BigNameDesc of M] grabs your wrists and forcibly binds them together with a [printed name of W].";
+			now W is wrist-bound-behind;
 		otherwise:
-			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type] The [M] grabs your wrist and yanks it away from your crotch.";
+			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type] [BigNameDesc of M] grabs your wrist and yanks it away from your crotch.";
 			FavourDown M;
 		now wanking is 0;
 	otherwise:
-		say "The [M] chuckles as [he of M] watches you.".
+		say "[BigNameDesc of M] chuckles as [he of M] watches you.".
 
-To compute unique climax of (M - a dominatrix) in (F - asshole):
-	say "The [M][if M is not friendly-fucking], satisfied,[end if] slowly removes her [ShortStrapOn of M] from your [ShortDesc of asshole].";
+To compute unique climax of (M - dominatrix) in (F - asshole):
+	say "[BigNameDesc of M][if M is not friendly-fucking], satisfied,[end if] slowly removes her [ShortStrapOn of M] from your [ShortDesc of asshole].";
 	if M is friendly-fucking and the sex-length of M < 1 and the times-fucked of M > 0:
 		decrease the blue-balls of M by 2;
 		compute happy reward of M;
 	otherwise if M is friendly-fucking:
-		say "[speech style of M]'Ok, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break]The [M] loses interest.";
+		say "[speech style of M]'Ok, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] loses interest.";
 		now the sex-length of M is 0;
 	otherwise if M is interested:
 		if the disappointment of M is 1:
 			say "[speech style of M]'Next time, I expect you to control yourself and only orgasm if instructed.'[roman type][line break]";
 		otherwise if the disappointment of M is -1:
 			if a random focus band is off-stage:
-				say "[speech style of M]'You are the perfect fuck toy, you know that?  I think you need a reward. Here, take this. It'll help you focus your mind on what's important.'[roman type][line break]The [M] drops a black band on the floor next to you. [line break][speech style of M]'The magic in this focus band will help you resist orgasm for as long as possible, and so you should be able to fuck for longer before fainting.'[roman type][line break]";
+				say "[speech style of M]'You are the perfect fuck toy, you know that?  I think you need a reward. Here, take this. It'll help you focus your mind on what's important.'[roman type][line break][BigNameDesc of M] drops a black band on the floor next to you. [line break][speech style of M]'The magic in this focus band will help you resist orgasm for as long as possible, and so you should be able to fuck for longer before fainting.'[roman type][line break]";
 				now a random off-stage focus band is in the location of the player;[TODO: poster on the wall in the room advertising the focus band]
 			otherwise:
 				say "[speech style of M]'Heh, you really are the world's most perfect fuckhole.'[roman type][line break]";
@@ -498,42 +498,41 @@ To compute unique climax of (M - a dominatrix) in (F - asshole):
 			now the disappointment of M is the strap-on girth of M + 2;
 		bore M.
 
-Check going when there is a dominatrix in the location of the player:
-	let M be a random dominatrix in the location of the player;
-	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M. [Increase the strapon size if appropriate]
+Check going when dominatrix is in the location of the player:
+	if the disappointment of dominatrix > 1, now the strap-on girth of dominatrix is the disappointment of dominatrix. [Increase the strapon size if appropriate]
 
-Definition: a dominatrix (called M) is willing to let go:
+Definition: dominatrix (called M) is willing to let go:
 	if the blue-balls of M >= the blue-balls-limit of M, decide no;
 	decide yes.
 	
-To decide which number is the blue-balls-limit of (M - a dominatrix):
+To decide which number is the blue-balls-limit of (M - dominatrix):
 	decide on 3.
 
-Definition: a dominatrix (called M) is actually interested:[custom bit to allow the player to give jewellery to the dominatrix, but not modify her existing "friendly" functionality.]
+Definition: dominatrix (called M) is actually interested:[custom bit to allow the player to give jewellery to the dominatrix, but not modify her existing "friendly" functionality.]
 	if M is retaining a plentiful accessory and M is interested, decide yes;
 	if M is unfriendly, decide yes;
 	decide no.
 		
-To say MonsterOfferRejectFlav of (M - a dominatrix) to (T - a thing):
+To say MonsterOfferRejectFlav of (M - dominatrix) to (T - a thing):
 	if M is not actually interested:
-		say "The [M] doesn[']t even bother to look at you. She must not want it.";
+		say "[BigNameDesc of M] doesn[']t even bother to look at you. She must not want it.";
 	otherwise:
-		say "The [M] smiles. [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]".
+		say "[BigNameDesc of M] smiles. [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]".
 
-To compute (M - a dominatrix) considering (T - a plentiful accessory):
+To compute (M - dominatrix) considering (T - a plentiful accessory):
 	if M is unfriendly:
-		say "The [M] chortles. [line break][speech style of M]'Don[']t worry about paying me, I[']m gonna make you my bitch for free.'[roman type][line break]";
+		say "[BigNameDesc of M] chortles. [line break][speech style of M]'Don[']t worry about paying me, I[']m gonna make you my bitch for free.'[roman type][line break]";
 	otherwise if the number of cots in the location of the player > 0:
-		say "The [M] chuckles. [line break][speech style of M]'Don[']t worry about paying me, all you need to do is exactly as I say. Shouldn[']t be too hard, you[']re good at being my bitch.'[roman type][line break]";
+		say "[BigNameDesc of M] chuckles. [line break][speech style of M]'Don[']t worry about paying me, all you need to do is exactly as I say. Shouldn[']t be too hard, you[']re good at being my bitch.'[roman type][line break]";
 	otherwise if (the blue-balls of M) * 2 > the price of T and the price of T > 3:
-		say "The [M] scoffs. [line break][speech style of M]'[if the blue-balls of M > 0]If you[']re planning to waste my time again, you[']re going to have to pay a lot more than that.'[otherwise]You don[']t honestly believe that[']s enough for a session do you?'[end if][roman type][line break]";
+		say "[BigNameDesc of M] scoffs. [line break][speech style of M]'[if the blue-balls of M > 0]If you[']re planning to waste my time again, you[']re going to have to pay a lot more than that.'[otherwise]You don[']t honestly believe that[']s enough for a session do you?'[end if][roman type][line break]";
 		now M is rejecting T;
 	otherwise:
 		let R be the price of T - the blue-balls of M;
 		if R > 6, now R is 6;
 		if R is 1, increase R by 1;
 		now the sex-length of M is R;
-		say "The [M] seems to think about it for a moment before snatching the [T] from your hand. ";
+		say "[BigNameDesc of M] seems to think about it for a moment before snatching the [T] from your hand. ";
 		if the times-fucked of M > 0 and the blue-balls of M < 1:
 			say "[speech style of M]'That gets you [R] rounds, but you know what, you[']ve been a good sub so far, so let's make this a little interesting. If you can handle me for all [R] rounds, I[']ll give you a little treat.[roman type][line break]";[Blue balls will reset when she finishes sex with you, so she considers you a good sub.]
 		otherwise:
@@ -541,14 +540,14 @@ To compute (M - a dominatrix) considering (T - a plentiful accessory):
 		now T is in Holding Pen;
 		now M is retaining T;
 
-To distract (M - a dominatrix):
+To distract (M - dominatrix):
 	if the sex-length of M < 1 or M is not in the location of the player:
 		bore M for 50 seconds;
 	otherwise:
-		say "The [M] looks a little annoyed. You should hurry up.";
+		say "[BigNameDesc of M] looks a little annoyed. You should hurry up.";
 		increase the blue-balls of M by 1.[This ensures the player will have enough time to get their 'affairs' in order before the dominatrix loses interest, but also encourages them not to waste her time.]
 
-To compute (M - a dominatrix) entering mouth:
+To compute (M - dominatrix) entering mouth:
 	if M is friendly-fucking:
 		say "[FriendlyMouthPenetrationFlav of M]";
 	otherwise:
@@ -567,23 +566,23 @@ This is the dominatrix friendly convinced rule:
 			rule succeeds;
 	otherwise if presented-orifice is not nothing:
 		say "[PresentFriendlyRejectionFlav of current-monster]".
-The monster friendly convinced rule of a dominatrix is usually the dominatrix friendly convinced rule.
+The monster friendly convinced rule of dominatrix is usually the dominatrix friendly convinced rule.
 	
-To say FriendlyMouthPenetrationFlav of (M - a dominatrix):
-	say "The [M] places one hand on the top of your head and another on the base of her plastic cock, forcing you to stay still as she pushes every inch of her [ShortStrapOn of M] into your mouth. You can't help but make gagging noises as she begins to aggressively fuck your throat.".['Handling' the dominatrix during oral sex is avoiding your gag reflex.]
+To say FriendlyMouthPenetrationFlav of (M - dominatrix):
+	say "[BigNameDesc of M] places one hand on the top of your head and another on the base of her plastic cock, forcing you to stay still as she pushes every inch of her [ShortStrapOn of M] into your mouth. You can't help but make gagging noises as she begins to aggressively fuck your throat.".['Handling' the dominatrix during oral sex is avoiding your gag reflex.]
 
-To say PresentFriendlyAcceptanceFlav of (M - a dominatrix):
+To say PresentFriendlyAcceptanceFlav of (M - dominatrix):
 	say "[speech style of M]'About time.'[roman type][line break]".
 
-To say PresentFriendlyRejectionFlav of (M - a dominatrix):
+To say PresentFriendlyRejectionFlav of (M - dominatrix):
 	if presented-orifice is a potential target or the sex-length of M < 1:
 		say "[speech style of M]'If you want a session, you[']ll have to pay me first.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Anal or Oral only.'[roman type][line break]".
 
-To compute FriendlySexRelease of (M - a dominatrix):
+To compute FriendlySexRelease of (M - dominatrix):
 	if M is not willing to let go:
-		say "[speech style of M]'You know what? I[']m sick of letting you waste my time.'[roman type] The [M] pulls out, looking very pissed off.";
+		say "[speech style of M]'You know what? I[']m sick of letting you waste my time.'[roman type] [BigNameDesc of M] pulls out, looking very pissed off.";
 		now M is not penetrating face;
 		now M is not friendly-fucking;
 		anger M;
@@ -593,13 +592,13 @@ To compute FriendlySexRelease of (M - a dominatrix):
 		increase the blue-balls of M by 1;
 		dislodge M.
 	
-To say FriendlySexReleaseSpeech of (M - a dominatrix):
+To say FriendlySexReleaseSpeech of (M - dominatrix):
 	say "[speech style of M]Whatever, it's your money you[']re wasting.'[roman type] ".
 	
 
 Section 2 - Damage
 
-To compute damage of (M - a dominatrix):
+To compute damage of (M - dominatrix):
 	if the health of M > 0:
 		if M is uninterested:
 			say "[big he of M] shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
@@ -614,19 +613,19 @@ To compute damage of (M - a dominatrix):
 	otherwise:
 		compute death of M.
 
-To say DamageReactHealthy of (M - a dominatrix):
+To say DamageReactHealthy of (M - dominatrix):
 	say "[one of]'[line break][speech style of M]You will not enjoy your punishment, I can guarantee that!'[roman type][line break][or][big he of M] sneers aggressively![stopping]".
 
-To say DamageReactDamaged of (M - a dominatrix):
+To say DamageReactDamaged of (M - dominatrix):
 	say "[big he of M] snarls angrily, taking the hit!".
 
-To say DamageReactTired of (M - a dominatrix):
+To say DamageReactTired of (M - dominatrix):
 	say "[big he of M] growls angrily, wincing from the hit!".
 
-To say DamageReactWeak of (M - a dominatrix):
+To say DamageReactWeak of (M - dominatrix):
 	say "The dominatrix swears as [he of M] struggles to maintain [his of M] balance!".
 
-To compute unique death of (M - a dominatrix):
+To compute unique death of (M - dominatrix):
 	say "The [noun] screams as [he of M] falls to the floor. ";
 	let B be a random off-stage focus band;
 	if B is a thing:
@@ -636,13 +635,13 @@ To compute unique death of (M - a dominatrix):
 	otherwise:
 		say "[big his of M] body disappears.".
 
-To say StrikingSuccessFlav of (M - a dominatrix) on (B - a body part):
-	say "The [M] [one of]smacks[or]swats[as decreasingly likely outcomes] you [TargetName of B] with a riding crop!  Ouch!!".
+To say StrikingSuccessFlav of (M - dominatrix) on (B - a body part):
+	say "[BigNameDesc of M] [one of]smacks[or]swats[as decreasingly likely outcomes] you [TargetName of B] with a riding crop!  Ouch!!".
 
 Part 5 - Dominant Sex
 
-To say DominanceSuccess of (M - a dominatrix):
-	say "You successfully force the [M] to [his of M] knees, holding [him of M] down as you rip off [his of M] strapon, leaving [his of M] crotch bare. [big he of M] [if the times-dominated of M < 3]stares at you silently for a moment before cocking an eyebrow and spreading [his of M] legs. [line break][speech style of M]'Alright. Here[']s your chance.'[otherwise]looks away from you, waiting a moment before submissively spreading [his of M] legs. [line break][speech style of M]'Don[']t disappoint me.'[end if][roman type][line break]";
+To say DominanceSuccess of (M - dominatrix):
+	say "You successfully force [NameDesc of M] to [his of M] knees, holding [him of M] down as you rip off [his of M] strapon, leaving [his of M] crotch bare. [big he of M] [if the times-dominated of M < 3]stares at you silently for a moment before cocking an eyebrow and spreading [his of M] legs. [line break][speech style of M]'Alright. Here[']s your chance.'[otherwise]looks away from you, waiting a moment before submissively spreading [his of M] legs. [line break][speech style of M]'Don[']t disappoint me.'[end if][roman type][line break]";
 	if the size of penis >= 8 or (the player is desperate to pee and the size of penis >= 4):
 		oral dominate M;
 	otherwise if the size of penis >= 4:
@@ -650,7 +649,7 @@ To say DominanceSuccess of (M - a dominatrix):
 	otherwise:
 		anal dominate M.
 
-To oral dominate (M - a dominatrix):
+To oral dominate (M - dominatrix):
 	say "You chuckle, flipping the dildo around and jamming it into [his of M] pussy. [line break][speech style of M]'Ugh. This is exactly why [if the times-fucked of M > 0]I don[']t like giv[otherwise]I only bother wi[end if]-ULK!'[roman type] You cut [him of M] off by abruptly shoving your [ShortDesc of penis] in [his of M] open mouth, grinning down at [him of M] as [he of M] helplessly tries to jerk out of your grip. The rest of [his of M] sentence comes out in a much, much sexier tone of voice,  tickling your [manly-penis] as you furiously fuck [his of M] throat. [line break][variable custom style]'[if the times-fucked of M > 1]Tell me if this tastes any better than your fucking boot, bitch!'[otherwise]Here[']s dessert, bitch!'[end if][roman type][line break]You groan, holding [him of M] down with both hands as you explode, coating the inside of [his of M] mouth with a cascade of fresh, creamy [semen]. [big he of M] splutters, looking up at you with a mixture of fear, rage, and skilfully-hidden arousal as you immediately resume your normal pace. You're the dominant one here, which puts [him of M] decisively below you on the food chain, and you make sure you drive that point home with every single thrust.";
 	if bukkake fetish is 1 and the player is not desperate to pee:
 		say "[if the times-dominated of M is 0][big he of M] clearly has very little experience being put in [his of M] proper place, but as [he of M] shivers at your feet, trying to catch [his of M] breath, you know [he of M][']ll never forget how it felt to receive your [load] all over [his of M] face[otherwise if the times-dominated of M < 3][big he of M] definitely has a lot more to learn about [his of M] proper place, but as [he of M] rests against the wall with your [load] clinging to [his of M] cheeks, you know [he of M] [']ll definitely be taking a lesson from the experience[otherwise][big he of M] doesn[']t take long to drop all pretence of dominance, cupping [his of M] hands underneath [his of M] chin and lolling out [his of M] tongue when you finally decided it's time to pull out and blow your [load] all over [his of M] face[end if].";
@@ -672,7 +671,7 @@ To oral dominate (M - a dominatrix):
 	Bore M;
 	orgasm.
 
-To vaginal dominate (M - a dominatrix):
+To vaginal dominate (M - dominatrix):
 	let D be the dominance of the player;
 	say "You slap [him of M] [if D <= 2]as hard as you can, glaring back at [him of M][otherwise]without missing a beat, laughing imposingly[end if] as you slide your [ShortDesc of penis] into [his of M] [vagina]. [big he of M]'s tight, [if the intelligence of the player > 12]and although [he of M] does [his of M] best not to let it show on [his of M] face, [his of M] wetness tells you everything you'd want to know about how turned on [he of M] is to be on the bottom for a change. [big his of M] facade immediately deteriorates[otherwise if the intelligence of the player > 7]and although it doesn't show in [his of M] face, [his of M] wetness gives you a good impression of how excited [he of M] is to be on the bottom for a change. [big his of M] composure crumbles[otherwise]but the stern expression on [his of M] face makes it a little tough to know whether or not you[']re actually doing a good job of dominating [him of M] or not. [big his of M] true feelings only come through[end if] as you begin to thrust,  [his of M] steady glare and haughty snarl breaking within moments as [he of M] struggles not to let [his of M] moans make it through [his of M] lips. You're not about to let [his of M] save face, pounding harder and harder and HARDER, [if the times-dominated of M >= 3]until [he of M] finally begins to moan just like the slut you know [he of M] is.[otherwise]until [his of M] raw quaking moans finally force their way out of [his of M] mouth.[end if] You feel [him of M] clenching around your shaft as your arousal overflows, and you slam your [manly-penis] home as you unleash a [load] deep inside [his of M] [vagina].";
 	Dignify 100 + the times-dominated of M * 2;
@@ -686,7 +685,7 @@ To vaginal dominate (M - a dominatrix):
 	Bore M;
 	orgasm.
 
-To anal dominate (M - a dominatrix):
+To anal dominate (M - dominatrix):
 	let G be the girth of M;
 	let D be 0;
 	if G < 4:[lubricating it]
@@ -732,23 +731,23 @@ To anal dominate (M - a dominatrix):
 	Dignify D;
 	Bore M.
 
-To say DominanceFailure of (M - a dominatrix):
-	say "You grab the [M] and try to force [him of M] to the ground. [big he of M] doesn[']t seem to have a problem with it at first, but suddenly you feel [his of M] hands seize your wrists, and in an instant [he of M] turns the tables and slams you to the ground.[line break]";
+To say DominanceFailure of (M - dominatrix):
+	say "You grab [NameDesc of M] and try to force [him of M] to the ground. [big he of M] doesn[']t seem to have a problem with it at first, but suddenly you feel [his of M] hands seize your wrists, and in an instant [he of M] turns the tables and slams you to the ground.[line break]";
 
-To compute failed dominance punishment of (M - a dominatrix):
+To compute failed dominance punishment of (M - dominatrix):
 	say "[speech style of M]'Done already? How disappointing, I thought you were planning to teach me about your role in our relationship.'[roman type][line break]";
 	if the size of penis > 0 and the size of penis < 4 and the times-fucked of M > a random number between 3 and 4:[She has a sweet spot for you so she strokes your ego!]
 		if asshole is actually occupied:
 			let J be a random off-stage plentiful accessory;
 			now J is ruby;
-			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...I already know what would happen if you ever tried using your GIANT [manly-penis] on my pussy, and there[']s no way I[']m going to let you turn ME into your on-demand fuckhole. Nooo-siree!'[roman type][line break]The [M] makes a fearful face, holding you down as [he of M] quickly slips a plastic cage over your [ShortDesc of penis]. [line break][speech style of M]I don't know if my mind could handle cumming hard from your BIG juicy [manly-penis], and thanks to this cage, I won[']t have to find out. Can you believe how lucky I am?'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but more you think about it, the less you can deny how lucky [he of M] was to have a cage on hand. [big he of M] got off pretty easy! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it just completely slips your mind. You feel a swell of confidence![otherwise]It sucks to be all caged up, but it's for [his of M] own protection! A dominant, hung guy like you can turn girls like [him of M] into total sluts if [he of M] isn't careful. Knowing [he of M] has to go to such great lengths to protect [him of M]self fills you with a swell of confidence![end if] You take the [printed name of J] from [him of M] and stand tall.";
+			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...I already know what would happen if you ever tried using your GIANT [manly-penis] on my pussy, and there[']s no way I[']m going to let you turn ME into your on-demand fuckhole. Nooo-siree!'[roman type][line break][BigNameDesc of M] makes a fearful face, holding you down as [he of M] quickly slips a plastic cage over your [ShortDesc of penis]. [line break][speech style of M]I don't know if my mind could handle cumming hard from your BIG juicy [manly-penis], and thanks to this cage, I won[']t have to find out. Can you believe how lucky I am?'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but more you think about it, the less you can deny how lucky [he of M] was to have a cage on hand. [big he of M] got off pretty easy! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it just completely slips your mind. You feel a swell of confidence![otherwise]It sucks to be all caged up, but it's for [his of M] own protection! A dominant, hung guy like you can turn girls like [him of M] into total sluts if [he of M] isn't careful. Knowing [he of M] has to go to such great lengths to protect [him of M]self fills you with a swell of confidence![end if] You take the [printed name of J] from [him of M] and stand tall.";
 			now J is held by the player;
 			Dignify 330 - the intelligence of the player * 5;
 			let C be a random off-stage chastity cage;
 			Summon C cursed;
 		otherwise:
 			let P be a random off-stage sex toy;
-			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...I already know what would happen if I let you try that MONSTER cock on my pussy![roman type][line break]The [M] makes a fearful face, keeping as far a distance from you as possible as [he of M] [if P is dong]slides[otherwise]pushes[end if] a [printed name of P] into your [asshole]. [line break][speech style of M]'Please be satisfied with this gift from my collection. I know it's not much, really, but right now it's the only thing I have to make sure you don[']t try to MINDBREAK me with your GIANT dick!'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but the more you think about it, the less you can deny how dominant you feel getting a reward simply for trying to have sex with [him of M]! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it completely slips your mind. You feel a swell of confidence![otherwise]You feel a swell of confidence! Not only is your penis HUGE, [he of M][']s giving you something for free! WOW![end if] You give [him of M] your best dominant smirk and stand tall.";
+			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...I already know what would happen if I let you try that MONSTER cock on my pussy![roman type][line break][BigNameDesc of M] makes a fearful face, keeping as far a distance from you as possible as [he of M] [if P is dong]slides[otherwise]pushes[end if] a [printed name of P] into your [asshole]. [line break][speech style of M]'Please be satisfied with this gift from my collection. I know it's not much, really, but right now it's the only thing I have to make sure you don[']t try to MINDBREAK me with your GIANT dick!'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but the more you think about it, the less you can deny how dominant you feel getting a reward simply for trying to have sex with [him of M]! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it completely slips your mind. You feel a swell of confidence![otherwise]You feel a swell of confidence! Not only is your penis HUGE, [he of M][']s giving you something for free! WOW![end if] You give [him of M] your best dominant smirk and stand tall.";
 			if the size of P > the openness of asshole, now the size of P is the openness of asshole;
 			Summon P;
 			Dignify 155 - the intelligence of the player * 4;
@@ -761,15 +760,15 @@ To compute failed dominance punishment of (M - a dominatrix):
 			let C be a random chastity cage;
 			if C is held by the player, now C is a random off-stage g-string;
 			let W be a random off-stage wrist bond;
-			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...This is about how often you get to cum, isn[']t it? I promise you will get to orgasm eventually, but unfortunately you still to have to earn it.'[roman type][line break]The [M] pulls out a [printed name of V], switching it on as she slides it into your [vagina]. You immediately begin to feel the 'heat,' squirming with pleasure as [if C is chastity cage][he of M] places a [printed name of C] over your crotch[otherwise]she pulls a [printed name of C] up your legs[end if]. [if W is clothing and the number of worn wrist bonds is 0]And as if that weren[']t enough, [he of M] pulls out a [printed name of W] and binds your wrists together behind your back. [line break][speech style of M]'Perhaps you[']ll have learned your lesson by the next time you cum.'[roman type][line break]";
+			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...This is about how often you get to cum, isn[']t it? I promise you will get to orgasm eventually, but unfortunately you still to have to earn it.'[roman type][line break][BigNameDesc of M] pulls out a [printed name of V], switching it on as she slides it into your [vagina]. You immediately begin to feel the 'heat,' squirming with pleasure as [if C is chastity cage][he of M] places a [printed name of C] over your crotch[otherwise]she pulls a [printed name of C] up your legs[end if]. [if W is clothing and the number of worn wrist bonds is 0]And as if that weren[']t enough, [he of M] pulls out a [printed name of W] and binds your wrists together behind your back. [line break][speech style of M]'Perhaps you[']ll have learned your lesson by the next time you cum.'[roman type][line break]";
 			if the number of worn wrist bonds is 0:
 				summon W cursed;
-				now W is bound-behind;
+				now W is wrist-bound-behind;
 			summon V vaginally;
 			summon C cursed;
 		otherwise:
 			let P be a random off-stage sex toy;
-			say "[big his of M] eyes pass over your crotch for a second time, and after a brief pause [his of M] expression softens. [line break][speech style of M]'...This is about how often you get to cum, isn[']t it? Looks like I[']ll have to show you there are worse ways of being pent up.[roman type][line break]The [M] pulls out a giant syringe, totally filled with [semen]. You immediately understand [his of M] intentions, but have no way of stopping [him of M] as [he of M] slides it into your asshole and pushes in the plunger, emptying its contents into your unprotected hole. And as if that weren't enough, [he of M] pulls out a [printed name of P] and pushes it into your now thoroughly creampied hole. [line break][speech style of M]Perhaps you'll have learned your lesson by the time this comes out.[roman type][line break]";
+			say "[big his of M] eyes pass over your crotch for a second time, and after a brief pause [his of M] expression softens. [line break][speech style of M]'...This is about how often you get to cum, isn[']t it? Looks like I[']ll have to show you there are worse ways of being pent up.[roman type][line break][BigNameDesc of M] pulls out a giant syringe, totally filled with [semen]. You immediately understand [his of M] intentions, but have no way of stopping [him of M] as [he of M] slides it into your asshole and pushes in the plunger, emptying its contents into your unprotected hole. And as if that weren't enough, [he of M] pulls out a [printed name of P] and pushes it into your now thoroughly creampied hole. [line break][speech style of M]Perhaps you'll have learned your lesson by the time this comes out.[roman type][line break]";
 			AssFill 5;
 			if the size of P > the openness of asshole, now the size of P is the openness of asshole;
 			Summon P;
@@ -786,22 +785,22 @@ To compute failed dominance punishment of (M - a dominatrix):
 		unless M is interested, now M is interested;
 		now another-turn is 1.
 
-To say angry punishment insult of (M - a dominatrix):
+To say angry punishment insult of (M - dominatrix):
 	say "[first custom style]'Maybe it's because you remembered who this hole belongs to?'[roman type][line break]".
 
-To say angry punishment accessory confiscation of (M - a dominatrix):
+To say angry punishment accessory confiscation of (M - dominatrix):
 	say "[first custom style]'I will give this back when I think you can remember on your own.'[roman type][line break]".
 
-To say angry punishment clothing destruction of (M - a dominatrix) on (C - a clothing):
+To say angry punishment clothing destruction of (M - dominatrix) on (C - a clothing):
 	say "[first custom style]'[if C is ass covering]Will you remember now, slave?'[otherwise]Or maybe it's because you remembered you don[']t deserve clothes?'[end if][roman type][line break]".
 
-To say AfterDominationComment (N - a number) of (M - a dominatrix):
+To say AfterDominationComment (N - a number) of (M - dominatrix):
 	if N is 1, say "[first custom style]'[one of]I hope you are sa-...s-satisfied, [if the player is male]sir[otherwise]ma'am[end if].'[or]T-thank you for that, [if the player is male]sir[otherwise]ma'am[end if]...'[at random][roman type][line break]";
 	if N is 2, say "[first custom style]'[one of]I admit, you-...you[']re not...you aren[']t submissive. Sorry. [if the player is male]Sir[otherwise]Ma'am[end if].[or]I won[']t try to make you my slave anymore. [if the player is male]S-sir[otherwise]Ma'am[end if].'[at random][roman type][line break]";
 	if N is 3, say "[first custom style]'[one of]This...This, doesn[']t prove anything, slave! Get out of here!'[or]It won't b-be that easy, slave. You're the only submissive here!'[at random][roman type][line break]";
 	if N is 4, say "[first custom style]'[one of]If you[']re finished slave, I will retrieve you when it is time for your punishment.'[or]Cute. I[']ll fetch you when it's time for your punishment, slave.'[at random][roman type][line break]";
 
-To compute successful dominance of (M - a dominatrix):
+To compute successful dominance of (M - dominatrix):
 	compute unique dominance reward of M;
 	say "[line break]You feel more [if the player is male]manly[otherwise]dominant[end if]!";
 	if the player is male, check virginity;
@@ -809,17 +808,17 @@ To compute successful dominance of (M - a dominatrix):
 	DifficultyUp M by 3;
 	now the health of M is the maxhealth of M;
 	if the location of M is Hotel37:
-		say "[line break]The [M] pulls out a small remote, pressing a button as a robotic arm shoots out of the floor and drags you out of the room. A metal shutter noisily clatters down behind you.";
+		say "[line break][BigNameDesc of M] pulls out a small remote, pressing a button as a robotic arm shoots out of the floor and drags you out of the room. A metal shutter noisily clatters down behind you.";
 		let R be the room east from Hotel37;
 		now the player is in R;
 	otherwise:
-		say "[line break]The [M] crawls off as soon as [he of M] has the strength";
+		say "[line break][BigNameDesc of M] crawls off as soon as [he of M] has the strength";
 	now the scared of M is 60 + the difficulty of M * 2.
 
-To replace (M - a dominatrix) after domination:
+To replace (M - dominatrix) after domination:
 	now M is in Hotel37.
 
-To compute scared reduction of (M - a dominatrix):
+To compute scared reduction of (M - dominatrix):
 	if the scared of M > 0:
 		decrease the scared of M by seconds;
 		if the scared of M < 0, now the scared of M is 0;
@@ -828,12 +827,12 @@ To compute scared reduction of (M - a dominatrix):
 
 Part 6 - Conversation
 
-To IdentifiablePosterReaction of (M - a dominatrix):
-	say "The [M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] can't help but smile widely.";
+To IdentifiablePosterReaction of (M - dominatrix):
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] can't help but smile widely.";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
-To UnidentifiablePosterReaction of (M - a dominatrix):
+To UnidentifiablePosterReaction of (M - dominatrix):
 	say "[speech style of M]'Now that's is one dirty slut in need of discipline.'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
@@ -842,7 +841,7 @@ Section 1 - Greeting
 
 [Lots written by MG]
 
-To compute talk option (N - 1) to (M - a dominatrix):
+To compute talk option (N - 1) to (M - dominatrix):
 	if times-met is 0, now times-met is 1; [this is a failsafe to make sure the first time greeting never displays twice.]
 	let B be a random number from 1 to 4; [variable used so we can refer to bimbo seduce in the next function]
 	let seduced be 0;
@@ -874,22 +873,22 @@ To compute talk option (N - 1) to (M - a dominatrix):
 		if M is intelligent, now the boredom of M is 0;
 		check perception of M.
 
-To say FirstResponse of (M - a dominatrix):
+To say FirstResponse of (M - dominatrix):
 	say "[speech style of M]'What do you want?'[roman type][line break]".
 
-To say RepeatResponse of (M - a dominatrix):
+To say RepeatResponse of (M - dominatrix):
 	say "[speech style of M]'[one of]What do you want?  Quit bothering me.'[or]What is it you want? A boot in your crotch?'[or]I don[']t remember starting up a conversation. But I[']ll remember ending one, so make this fast.'[or]I have things to do. Make this quick.'[or]If there[']s something you want, say it and stop wasting my time.'[at random][roman type][line break]".
 
-To say UnfriendlyResponse of (M - a dominatrix):
+To say UnfriendlyResponse of (M - dominatrix):
 	say "[speech style of M]'[one of]I[']m sorry, did I tell you to speak?'[or]Hmm, did I tell you to speak?[or]Strange. It[']s like you[']re trying to talk to me when nobody gave you permission.[or]It sounds like you[']re talking to me without permission...but you wouldn[']t do that, knowing what the consequences could be, right?[or]Speaking without being spoken to. You must really want me to teach you a lesson.'[or]Do not speak without being spoken to!'[or]I never said you could talk. So don[']t.[or]When I'm in charge, you don't speak unless I fucking tell you to.[or]Shut up. I'm in charge, you don't get to talk to me unless I say so.'[at random][roman type][line break]".
 
-To say DominantResponse of (M - a dominatrix):
+To say DominantResponse of (M - dominatrix):
 	if the delicateness of the player < 10:
 		say "[speech style of M]'[one of]When I make somebody my pet, it's final. Sorry.'[or]You[']re about to piss me off.'[or]Keep running your mouth and I[']ll give you a reason to keep whining.'[or]I don[']t really care what you have to say, to be honest. So shut up.'[or]Phhbt. Like anybody cares what you want.'[or]I[']m sorry you don[']t like it, but when I decide you[']re my slut...you never stop being one.'[or]Stop fighting it. You[']re my fucktoy and you belong to me. [if player is not prone]Now, are you going to get on your knees, or am I going to force you[otherwise]Now, are you going to remember that, or do I need to whip it into your back[end if]?'[or]You belong to me. If you don[']t want to get fucked again, I don[']t really care.'[or]You[']re mine. When I start caring what you think, I[']ll tell you. Until then, shut up.'[at random][roman type][line break]";[player says something standoffish]
 	otherwise:
 		say "[speech style of M]'[one of]Sluts say the darndest things.'[or]Ha, licking my boot has given you quite the trashy tongue.'[or]Shut up. I don[']t care if you like getting fucked or not, because I[']m going to do it anyway.'[or]I[']m always in the mood to use my favourite fuckhole.'[or]I don[']t remember telling you it was ok to address me, but I can[']t resist a slut who knows her place.'[at random][roman type][line break]".
 
-To say ToDominantGreeting of (M - a dominatrix):
+To say ToDominantGreeting of (M - dominatrix):
 	if M is spanking the player and the sex addiction of the player < 8:
 		say "[first custom style]'[one of]Leave me alone! I-I[']m not interested in this sort of thing!'[or]Call them off! Can[']t you see they[']re g-going to-'[or]Please! This is SO degrading!'[or]N-No! You can[']t let them do this, there are so many!'[or]I[']m sorry! I[']m sorry, please, t-they[']re all...'[or]D-don[']t let them do this to me!'[at random][roman type][line break]";
 	otherwise if the humiliation of the player  < 12000:
@@ -897,7 +896,7 @@ To say ToDominantGreeting of (M - a dominatrix):
 	otherwise:
 		say "[first custom style]'[one of]Punish me! Make me sorry!'[or]Harder! Please, I deserve it![or]PUNISH ME![or]HURT ME![at random][roman type][line break]".
 
-To say AsDominantResponse of (M - a dominatrix):
+To say AsDominantResponse of (M - dominatrix):
 	if M is spanking the player and the sex addiction of the player < 8:[needed to split into a greater function here, it's a little redundant as a result.]
 		if bukkake fetish is 1:
 			say "[speech style of M]'[one of]Hear that? [if the player is a sissy]This little sissy STILL doesn[']t know her place[otherwise if the player is male]Looks like he needs you to show him how real men act[otherwise]She STILL doesn[']t know her place[end if]. Be messy, boys!'[or]Shut up slut, you'll be prettier after they're done anyway.'[or]Maybe next time I ask you to do something, you[']ll do it, eh?'[or]Well if they can[']t cum on your face, where are they supposed to cum? On mine? Ahahaha!'[or]Be glad I[']m on this side, then, slut.'[or]We all know your trashy ass loves every second of this.'[at random][roman type][line break]";
@@ -910,7 +909,7 @@ To say AsDominantResponse of (M - a dominatrix):
 	otherwise:
 		say "[speech style of M]'[one of]So you wanted this all along, did you? Can[']t say I[']m surprised.'[or]There[']s no punishing sluts like you, is there?'[or]I guess the punishment is the reward for some sluts.'[or]I like what I[']m hearing. Good sluts accept their punishments.'[at random][roman type][line break]";
 
-To say midDominanceResponse of (M - a dominatrix):
+To say midDominanceResponse of (M - dominatrix):
 	let N be a random monster penetrating a body part;
 	if the sex addiction of the player > 12:
 		say "[speech style of M]'[one of]You[']re a greedy little slut aren[']t you...[or]You[']re an insatiable little fuckhole, aren[']t you.'[or]What a greedy little fuckhole...'[or]The [N] isn[']t enough for you? Really? What a greedy slut.'[at random][roman type][line break]";
@@ -919,7 +918,7 @@ To say midDominanceResponse of (M - a dominatrix):
 
 Section 2 - Questioning
 
-To compute answer of (M - a dominatrix) to (Q - a number):
+To compute answer of (M - dominatrix) to (Q - a number):
 	if the questioned of M > 290: [She'll answer your questions]
 		compute annoyance of M;
 	otherwise if Q < 4:
@@ -940,43 +939,43 @@ To compute answer of (M - a dominatrix) to (Q - a number):
 	otherwise:
 		increase the questioned of M by 40.
 
-To say WhereAnswer of (M - a dominatrix):
+To say WhereAnswer of (M - dominatrix):
 	if M is unfriendly:
 		say "[speech style of M]'You[']re in my person dungeon, bitch!'[roman type]";
 	otherwise:
 		say "[speech style of M]'You're in my personal dungeon, and if you know what's good for you, you'll leave before I get pissed off!'[roman type][line break]".
 	
-To say WhoAnswer of (M - a dominatrix):
+To say WhoAnswer of (M - dominatrix):
 	if M is unfriendly:
 		say "[speech style of M]'[one of]I[']m your new mistress, bitch, now shut your fucking mouth.'[or]Pretty simple. I[']m your Mistress, and you[']re my new bitch.'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'm a professional dominatrix. But sometimes when business is slow I get bored, and need to find someone to take out my aggression on!'[roman type][line break]".
 	
-To say StoryAnswer of (M - a dominatrix):
+To say StoryAnswer of (M - dominatrix):
 	say "[speech style of M]'I rent this room to operate my... business out of. It's a lot better than working from my home, because here I have security here, and a constant stream of clients. Hey, why not go find some for me?'[roman type][line break]".
 	
-To say EscapeAnswer of (M - a dominatrix):
+To say EscapeAnswer of (M - dominatrix):
 	if M is unfriendly:
 		say "[speech style of M]'[one of]You[']re mine now, you aren[']t going anywhere, bitch.[or]You don't leave unless I say you do, got it?'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'You can leave via the front entrance of the hotel whenever you want. Just make sure to pay your bill before you leave.'[roman type][line break]".
 	
-To say AdviceAnswer of (M - a dominatrix):
+To say AdviceAnswer of (M - dominatrix):
 	if M is unfriendly:
 		say "[speech style of M]'[one of]Always do what I tell you.'[or]Never speak unless spoken to.[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'If you drink from a tank and find out that the liquid is cursed, you could drop the vessel you used in front of it to remind yourself for later. Just an idea, take it or leave it.'[roman type][line break]".[figured the butler advice could be a little better, added some more]
 
 [I think it makes sense to have her be a little more standoffish than everyone else.]
-To compute annoyance of (M - a dominatrix):
+To compute annoyance of (M - dominatrix):
 	if M is actually interested:
 		say "Stop wasting my time, please.";
 	otherwise if M is unfriendly:
 		say "[speech style of M]'Silence, slave. Submit to me!'[roman type][line break]";
 	otherwise:
-		say "The [M] ignores your question.";
+		say "[BigNameDesc of M] ignores your question.";
 
-To compute teaching of (M - a dominatrix):
+To compute teaching of (M - dominatrix):
 	say "[speech style of M]'When someone[']s topping you, it's up to them how hard you get fucked, and for how long. But, if you aren[']t gagged, it's never a bad idea to admit your own inferiority and plead for mercy. Sometimes it will help, sometimes it won[']t, but it definitely turns me on when a sub knows their place!'[roman type][line break]";
 	teach begging for mercy;
 	increase the questioned of M by 100. [She gains the same amount of "annoyance" regardless of whether or not she's annoyed already]
@@ -984,7 +983,7 @@ To compute teaching of (M - a dominatrix):
 
 Section 3 - Drink Requesting
 
-To compute talk option (N - 3) to (M - a dominatrix):
+To compute talk option (N - 3) to (M - dominatrix):
 	let B be a random number from 1 to 4;
 	if B is 1 and the player is seductive and M is raunchy:
 		now M is interested;
@@ -993,22 +992,22 @@ To compute talk option (N - 3) to (M - a dominatrix):
 	otherwise:
 		say "[DrinkRequest of M]";
 		if M is not intelligent:
-			say "It doesn't look like the [M] speaks English.";
+			say "It doesn't look like [NameDesc of M] speaks English.";
 		otherwise if M is not actually interested:
-			say "The [M] doesn't seem to realise you're talking to [him of M].";
+			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
 		otherwise if M is friendly:
 			compute friendly drink of M;
 		otherwise if M is unfriendly:
 			compute unfriendly drink of M.
 
-To compute unfriendly drink of (M - a dominatrix):
+To compute unfriendly drink of (M - dominatrix):
 	if M is uninterested:
 		say "[speech style of M]'You'll get no hospitality from me, [bitch]!'[roman type][line break]";
 		now the boredom of M is 0;
 	otherwise:
 		say "[speech style of M]'You'll get no hospitality from me, [bitch]!'[roman type][line break]".
 
-To compute friendly drink of (M - a dominatrix):
+To compute friendly drink of (M - dominatrix):
 	say "[speech style of M]'You'll get no hospitality from me.'[roman type][line break]".
 
 

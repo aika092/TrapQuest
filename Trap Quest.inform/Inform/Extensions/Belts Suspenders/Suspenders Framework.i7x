@@ -6,7 +6,6 @@ To decide which number is the initial outrage of (C - a suspenders):
 	decide on 2.
 
 To uniquely set up (S - a suspenders):
-	set up magic state of S;
 	now the raw-magic-modifier of S is 0.
 
 To set up influence of (C - a suspenders):

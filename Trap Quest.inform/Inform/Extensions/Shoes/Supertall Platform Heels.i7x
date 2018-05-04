@@ -16,7 +16,6 @@ To say ClothingDesc of (C - a tall platform heels):
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a tall platform heels):
-	set up magic state of C;
 	let R be a random number between 1 and 8;
 	if C is cursed:
 		if R <= 2:

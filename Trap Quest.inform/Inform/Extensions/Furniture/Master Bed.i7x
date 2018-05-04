@@ -113,7 +113,7 @@ To compute unique soreness effect of (F - a master bed):
 		otherwise Arouse 20.
 
 To compute rest completion of (F - a master bed):
-	if there is a worn submissive collar and the number of alive vampiresses is 0:
+	if there is a worn submissive collar and vampiress is not alive:
 		let A be the arousal of the player / 1000;
 		say "You feel completely rested, but instead of throwing off the covers and climbing out of bed, you find yourself huddling even deeper under the sheets, eyes fluttering as your body tries to go to sleep.[line break]";
 		if a random number between 5 and (the intelligence of the player - A) < 7:
@@ -134,7 +134,9 @@ To compute rest completion of (F - a master bed):
 		if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
 		otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
 	now resting is 0;
-	try standing.
+	now auto is 1;
+	try standing;
+	now auto is 0.
 
 Master Bed ends here.
 

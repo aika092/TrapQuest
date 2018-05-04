@@ -16,11 +16,20 @@ To compute furniture resting on (F - med bay bed):
 	if nurse is not in the location of F:
 		compute normal rest of F;
 	otherwise:
-		say "The [nurse] makes quick work of pushing your wrists down into the pink straps which immediately click into place[one of], seemingly automatically[or][stopping]. ";
+		say "[BigNameDesc of nurse] makes quick work of pushing your wrists down into the pink straps which immediately click into place[one of], seemingly automatically[or][stopping]. ";
 		now F is grabbing the player;
 		if nurse is aware that the player needs a change:
 			anger nurse;
 			compute diaper change of nurse;
+		otherwise if the breast-enhancement of nurse is 1:
+			let B be the largeness of breasts;
+			if artificial enhancements fetish is 1, say "[big he of nurse] holds two large fillets of see-through silicone in [his of nurse] hands.[line break][speech style of nurse]'I think you know where these are going, huh?'[roman type][line break]You watch as [he of nurse] places one on top of each of your [BreastDesc]. ";
+			say "[big he of nurse] then brings over a large phallic metal device which kind of reminds of you a magic wand, but looks much more... technical. [big he of nurse] holds it over your chest and clicks a button, and it begins to hum. You watch with [horror the bimbo of the player] as ";
+			if artificial enhancements fetish is 1, say "the silicone blobs shake and then begin to sink downwards, through your skin! Moments later, they seem to have perfectly settled and merged with [if the silicone volume of breasts > 0]your existing implants[otherwise]your flesh[end if]. ";
+			otherwise say "your boobs shake too, as if resonating with the device. ";
+			if artificial enhancements fetish is 1, BustImplantsUp 6;
+			otherwise BustUp 6;
+			say "[if the largeness of breasts > B and artificial enhancements fetish is 1]You now have [BreastDesc][otherwise]Your breasts feel noticeably bigger[end if]![line break][speech style of nurse]'Oh wow don't they look amazing? You must be very proud!'[roman type][line break]After that, the [nurse] unbuckles the straps holding you down and allows you to leave.";
 		otherwise if the body soreness of the player > 0 or the player is tired:
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;

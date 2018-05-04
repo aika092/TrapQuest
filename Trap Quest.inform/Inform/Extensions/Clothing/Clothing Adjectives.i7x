@@ -161,7 +161,7 @@ Clothing can be not-enema-helping or enema-helping. Clothing is usually not-enem
 Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-normal.
 Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt-windowed. [A butt window exposes underwear but not the asshole itself.]
 Clothing have a number called armour. The armour of clothing is usually 0. Clothing have a number called damage. The damage of clothing is usually 0.
-Clothing can be zippable or unzippable. Clothing is usually unzippable. [We use the flag "no protection" vs "total protection" to tell if a zip is up or down. Zippable clothing can never be pussy protection.]
+Clothing can be zippable or unzippable. Clothing is usually unzippable.
 Clothing can be plentiful, rare, unique (this is the clothing-rarity property). Clothing is usually plentiful.
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
@@ -197,6 +197,9 @@ magic-type is a kind of value. The magic-types are blandness, dressup, milk prod
 Clothing can be normal, store, museum-store, stolen (this is the ownership property). Clothing is usually normal.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
+To decide which number is the penis-capacity of (C - a clothing):
+	decide on 10.
+[what's the largest size of penis it can cover?]
 Clothing can be stuck. Clothing is usually not stuck.
 [!<YourselfIsClothingStuck>+
 

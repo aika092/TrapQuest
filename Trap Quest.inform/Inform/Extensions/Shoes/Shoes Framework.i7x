@@ -25,7 +25,6 @@ Definition: a heels (called C) is fluid immune:
 Understand the heel-height property as describing a heels. Understand "heel", "inch" as heels. The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]". The text-shortcut of heels is "he".
 
 stiletto heels is a kind of heels. boots is a kind of heels. platform heels is a kind of heels.
-The text-shortcut of stiletto heels is "sh". The text-shortcut of boots is "bo". The text-shortcut of platform heels is "ph".
 Understand "boot", "boots" as boots.
 
 To decide which number is the initial cringe of (C - a shoes):

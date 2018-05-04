@@ -54,7 +54,25 @@ To destroy (T - a can):
 	now the max-doses of T is 1;
 	dislodge T.
 
+The can drinkability rules is a rulebook.
+The drinkability rules of a can is usually the can drinkability rules.
 
+This is the ringpulls are tricky rule:
+	if the player is not able to use manual dexterity:
+		if autodrink is 0, say "[variable custom style]I don't have the manual dexterity to open the ringpull.[roman type][line break]";
+		rule fails.
+The ringpulls are tricky rule is listed in the can drinkability rules.
+
+Carry out drinking a can:
+	now seconds is 6;
+	say "You [if the doses of the noun is the max-doses of the noun]remove the ring pull of [the noun], [end if]bring it to your mouth and gulp. ";
+	compute drinking the noun;
+	now the Known corresponding to an Magic of the fill-type of the noun in the Table of Drinks is 1;
+	decrease the doses of the noun by 1;
+	if the doses of the noun is 0:
+		say "[line break]You discard the empty can.";
+		destroy the noun;
+	StomachUp 2.
 
 
 Cans ends here.

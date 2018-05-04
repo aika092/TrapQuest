@@ -4,8 +4,8 @@ Region Building Woods by Rooms begins here.
 
 
 Figure of woods loading is the file "Special/Loading/loading1.png".
-Figure of dq woods loading is the file "Special/Loading/loading2.png".
-Figure of dq woods messy loading is the file "Special/Loading/loading3.png".
+Figure of dq woods loading is the file "Special/Loading/loading8.png".
+Figure of dq woods messy loading is the file "Special/Loading/loading9.png".
 
 
 [!<SetUpTheWoods>+

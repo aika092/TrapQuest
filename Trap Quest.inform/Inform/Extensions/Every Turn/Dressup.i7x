@@ -13,7 +13,7 @@ A time based rule (this is the dressup rule):
 		if dressup-clothing is clothing:
 			let R be a random number between 1 and 4;
 			let E be a random off-stage evening dress;
-			let P be a random off-stage plentiful crotchless panties;
+			let P be a random off-stage plentiful crotchless-panties;
 			let B be a random off-stage plentiful cupless bra;
 			let S be a random off-stage sequins belt;
 			if diaper quest is 1:

@@ -14,7 +14,7 @@ To trigger (Y - a paddle trap):
 	let A be a random number between 6 and 14;
 	let K be a random worn top level protection clothing;
 	let N be 0;
-	repeat with C running through worn ass covering clothing:
+	repeat with C running through ass covering clothing:
 		if the armour of C > N:
 			now N is the armour of C;
 			now K is C;

@@ -1,5 +1,24 @@
 Standing by Actions begins here.
 
+The ability to stand rules is a rulebook.
+
+This is the gloryhole prevents standing rule:
+	if gloryhole is penetrating a body part or gloryhole is grabbing the player:
+		if auto is 0, say "The magic of the gloryhole is preventing you!";
+		rule fails.
+The gloryhole prevents standing rule is listed in the ability to stand rules.
+
+This is the vines prevent standing rule:
+	if the player is vine stuck:
+		if auto is 0, say "Vines are pinning your wrists to the ground!";
+		rule fails.
+The vines prevent standing rule is listed in the ability to stand rules.
+
+This is the xavier prevents standing rule:
+	if there is a worn xavier's cunt tattoo and there is a demon lord in the location of the player:
+		if auto is 0, say "You try to stand up, but your crotch tattoo seems to take control and stop you getting up from your knees in Xavier's presence!";
+		rule fails.
+The xavier prevents standing rule is listed in the ability to stand rules.
 
 [!<DecideWhichNumberIsTheStandingStrengthOfThePlayer>+
 
@@ -64,8 +83,8 @@ Check standing:
 	if the player is subdued:
 		say "[StandSubduedFlav of random worn subduing clothing]";
 		try waiting instead;
-	if gloryhole is penetrating a body part or gloryhole is grabbing the player, say "The magic of the gloryhole is preventing you!" instead;
-	if the player is vine stuck, say "Vines are pinning your wrists to the ground!" instead;
+	follow the ability to stand rules;
+	if the rule failed, do nothing instead;
 	if the player is monster stuck:
 		if the player is monster fucked, try resisting instead;
 		say GrabbedStandingBlock of a random monster grabbing the player instead;
@@ -77,7 +96,6 @@ Check standing:
 				do nothing instead;
 		otherwise:
 			say "You are stuck to the ground!" instead;
-	if there is a worn xavier's cunt tattoo and there is a demon lord in the location of the player, say "You try to stand up, but your crotch tattoo seems to take control and stop you getting up from your knees in Xavier's presence!" instead;
 	if surrendered is 1 and the player is in danger, say "You recently surrendered, you're too scared to get back up until the [if the number of dangerous monsters in the location of the player is 1]enemy is[otherwise]enemies are[end if] gone." instead;
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, standing is not submissive!]
@@ -149,13 +167,13 @@ Understand "arise", "get up", "unkneel", "lift me", "st" as standing.
 Instead of exiting, try standing.
 
 To say GrabbedStandingBlock of (M - a monster):
-	say "The [M] is stopping you from standing up!".
+	say "[BigNameDesc of M] is stopping you from standing up!".
 
 To say StandingBlock of (M - a monster):
-	say "The [M] grabs onto your [ShortDesc of hair] and stops you from standing up!".
+	say "[BigNameDesc of M] grabs onto your [ShortDesc of hair] and stops you from standing up!".
 
 To say LongHairStandingBlock of (M - a monster):
-	say "The [M] steps on your [ShortDesc of hair] and stops you from standing up!".
+	say "[BigNameDesc of M] steps on your [ShortDesc of hair] and stops you from standing up!".
 
 
 Standing ends here.

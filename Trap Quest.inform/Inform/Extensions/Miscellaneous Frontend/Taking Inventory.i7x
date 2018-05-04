@@ -148,9 +148,15 @@ Carry Out JewelleryListing:
 		repeat with T running through carried uncatalogued plentiful accessories:
 			say "[T][line break]";
 			now T is catalogued;
+		repeat with T running through carried uncatalogued bracelets: [e.g. airhancer]
+			say "[T][line break]";
+			now T is catalogued;
 	if there are worn uncatalogued plentiful accessories:
 		say "[bold type]Worn jewellery:[roman type][line break]";
 		repeat with T running through worn uncatalogued plentiful accessories:
+			say "[T][line break]";
+			now T is catalogued;
+		repeat with T running through worn uncatalogued bracelets:
 			say "[T][line break]";
 			now T is catalogued;
 	now inventory-busy is 0;

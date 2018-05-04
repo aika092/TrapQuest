@@ -10,8 +10,11 @@ To say ClothingDesc of (C - a cow piercing):
 To say ShortDesc of (C - a cow piercing):
 	say "high gauge nipple rings".
 	
-Definition: a cow piercing (called P) is eligible:
+Definition: a cow piercing (called C) is eligible:
 	decide no.
+
+Definition: a cow piercing (called C) is cow themed:
+	decide yes.
 
 [!<TheCowRingsSlutRule>+
 
@@ -36,17 +39,17 @@ This is the cow rings already worn rule:
 The cow rings already worn rule is listed in the cow piercing wearability rules.
 
 This is the overdress cow rings clash rule:
-	if wearing-target is nipple covering or wearing-target is ridiculously low cut or higher:
+	if wearing-target is normally-nipple-covering or wearing-target is ridiculously low cut or higher:
 		repeat with N running through cow piercings worn by the player:
 			if N is not blessed:
-				if summoning is 0, say "Your [printed name of N] are somehow preventing you from wearing the [printed name of wearing-target]![one of][or][or][line break]Maybe if you blessed them?[as decreasingly likely outcomes]";
+				if summoning is 0, say "Your [printed name of N] are somehow preventing you from wearing the [ShortDesc of wearing-target]![one of][or][or][line break]Maybe if you blessed them?[as decreasingly likely outcomes]";
 				rule fails.
 The overdress cow rings clash rule is listed in the overdress wearability rules.
 
 This is the bra cow rings clash rule:
-	if wearing-target is nipple covering:
-		repeat with N running through cow piercings worn by the player:
-			if summoning is 0, say "Your [printed name of N] are somehow preventing you from wearing the [printed name of wearing-target]!";
+	if wearing-target is normally-nipple-covering:
+		repeat with N running through worn cow piercings:
+			if summoning is 0, say "Your [printed name of N] are somehow preventing you from wearing the [ShortDesc of wearing-target]!";
 			rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.
 

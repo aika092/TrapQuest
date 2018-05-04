@@ -21,14 +21,14 @@ To decide which number is the unique outrage of (C - a cow pattern boots):
 To decide which number is the hindrance-modifier of (C - a cow pattern boots):
 	decide on -1.
 
+Definition: a cow pattern boots (called C) is cow themed:
+	decide yes.
+
 To say UniqueShortDesc of (C - a cow pattern boots):
 	say "cow pattern boots".
 To say ClothingDesc of (C - a cow pattern boots):
 	say "A pair of warm leather boots with a fluffy wool cow pattern on the outside.";
 	say "[SteadinessDesc of C]".
-
-To uniquely set up (C - a cow pattern boots):
-	do nothing.
 
 Cow Pattern Boots ends here.
 

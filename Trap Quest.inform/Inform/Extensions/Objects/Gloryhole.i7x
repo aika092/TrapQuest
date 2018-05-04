@@ -136,14 +136,13 @@ To compute gloryhole painting blowjob:
 
 To compute gloryhole genital modification:
 	let C be a random off-stage chastity cage;
-	let P be a random off-stage clitoris piercing;
 	if there is a worn tattoo and the number of worn crotch tattoos is 0:
 		let T be a random slut tattoo;
 		summon T;
 		say "You feel a sharp pain near your crotch and pull your body back. You now have a 'SLUT' tattoo!  [line break][variable custom style][if the bimbo of the player < 13]Fuck![otherwise]Heh. It's making me feel even more [one of]girly[or]giddy[at random]![end if][roman type][line break]";
-	otherwise if P is actually summonable and the player is female:
-		summon P cursed;
-		say "You feel a sharp hot pain in your clit!  You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [P]!";
+	otherwise if clitoris piercing is eligible:
+		summon clitoris piercing cursed;
+		say "You feel a sharp hot pain in your clit!  You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [clitoris piercing]!";
 	otherwise if C is chastity cage:
 		summon C cursed;
 		say "[if the player is male]Before you can react, someone on the other end of the hole has forced something hard and plastic around your [ShortDesc of penis]!  The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]!  [line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";

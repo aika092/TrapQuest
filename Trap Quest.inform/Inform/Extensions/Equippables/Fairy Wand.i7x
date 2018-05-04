@@ -16,7 +16,7 @@ To decide which number is the damage improvement of (W - a fairy wand):
 	decide on X.
 
 To compute attack of (W - a fairy wand) at (M - a monster):
-	say "You flick the wand, zapping the [M] with tiny bolts of magic.".
+	say "You flick the wand, zapping [NameDesc of M] with tiny bolts of magic.".
 
 Fairy Wand ends here.
 

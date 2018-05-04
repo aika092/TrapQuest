@@ -98,8 +98,8 @@ To develop (P - a poster):
 	compute unique variables of P.
 
 To compute special of (P - a poster):
-	if there is a worn ballgag:
-		now the old-special of P is a random worn ballgag;
+	if there is a worn gag:
+		now the old-special of P is a random worn gag;
 	otherwise if there is a worn chastity cage:
 		now the old-special of P is a random worn chastity cage;
 	otherwise if there is a worn ankle bond:
@@ -153,7 +153,7 @@ A time based rule (this is the monster spots poster rule):
 		repeat with M running through intelligent monsters in the location of the player:
 			if M is not disapproving P:
 				if the sleep of M is 0 and M is interested or the boredom of M > 30: [Essentially we don't want to do this check if the monster is just about to 'notice' the player.]
-					say "The [M] spots the [if P is in the hotel]banner[otherwise]poster[end if] of you in this room!";
+					say "[BigNameDesc of M] spots the [if P is in the hotel]banner[otherwise]poster[end if] of you in this room!";
 					if P is identifiable:
 						IdentifiablePosterReaction of M;
 					otherwise:
@@ -161,7 +161,7 @@ A time based rule (this is the monster spots poster rule):
 					now M is disapproving P.
 
 To IdentifiablePosterReaction of (M - a monster):
-	say "The [M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'Wait a second, is this YOU?!  Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'Wait a second, is this YOU?!  Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
@@ -560,7 +560,7 @@ To say WettingPosterDesc:
 	say "[PosterGenitals]";
 	if old-peereaction of item described is 2:
 		if old-monster of item described is monster, say "Your eyes are locked onto the [old-monster of item described], [if old-humiliation of item described < 20000]and your pale facial expression is one of pure terror that they might notice what you are doing[otherwise if old-humiliation of item described < 31000]your cheeks are red and you are biting your lip, clearly embarrassed that they might be aware of what you're doing[otherwise]and your mouth is open in an almost ecstatic grin, you are clearly in the middle of demanding their attention as you wet yourself[end if]. ";
-		otherwise say "[if the old-special of item described is ballgag]It's difficult to understand your facial expression because of the [old-special of item described] in your mouth[otherwise if old-bimbo of item described < 7]You don't look very happy with yourself[otherwise if old-bimbo of item described < 12]You have a calm, relaxed facial expression, and seem at peace with your situation[otherwise]Your facial expression is contorted with pleasure, your tongue is hanging out and your eyes have rolled to the back of your head[end if]. ";
+		otherwise say "[if the old-special of item described is gag]It's difficult to understand your facial expression because of the [old-special of item described] in your mouth[otherwise if old-bimbo of item described < 7]You don't look very happy with yourself[otherwise if old-bimbo of item described < 12]You have a calm, relaxed facial expression, and seem at peace with your situation[otherwise]Your facial expression is contorted with pleasure, your tongue is hanging out and your eyes have rolled to the back of your head[end if]. ";
 	otherwise if old-monster of item described is monster:
 		say "[if old-humiliation of item described < 27500]Your entire face has gone beetroot red as you have allowed the [old-monster of item described] to see you [urinate][otherwise]Your eyes are pointed downwards in shame as you submissively make sure the [old-monster of item described] can very clearly see you [urinate][end if]. ";
 	otherwise if old-peereaction of item described is 3:

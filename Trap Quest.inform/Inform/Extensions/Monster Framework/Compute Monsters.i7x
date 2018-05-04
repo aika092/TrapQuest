@@ -48,25 +48,14 @@ To compute turn (N - a number) of (M - a monster):
 		if M is not grabbing the player and M is not penetrating a body part, now M is not friendly-fucking; [We need to make sure that NPCs have the friendly fucking flag removed after they've finished a session, and this is probably the most reliable way to do it, if a little messy.]
 	if M is dying:
 		finally destroy M;
-	otherwise if the sleep of M is 0:
+	otherwise if the sleep of M is 0:[Monsters can't do anything if they are sleeping]
 		now current-monster is M; [Some functions care about which monster is current-monster]
-		if the health of M < the maxhealth of M and M is uninterested, increase the health of M by 2; [All monsters slowly heal]
-		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M; [Overhealing is not allowed]
 		if M is penetrating a body part, now M is in the location of the player; [Just in case there's a glitch where the player remains stuck but can't interact with the monster because somehow it's in a different room]
 		let monster-engaged be 1;
 		if M is uninterested, now monster-engaged is 0;
 		if N is not 2, check perception of M; [When the player moves room, all monsters get a non-violent moving action with no perception round.]
 		if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
-		if N < 3, compute action N of M; 
-	otherwise:
-		if the health of M < the maxhealth of M, increase the health of M by 4;
-		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M;
-	if the refactory-period of M > 0:
-		unless (the class of the player is princess and the sleep of M > 0), decrease the refactory-period of M by 4;
-		if princess-consort is M and the refactory-period of M < 1 and the class of the player is princess:
-			say "A strange tingle passes through your body, and you suddenly find yourself stricken with need, thoughts of the [princess-consort] swirling around inside your head. Somehow, you know you won't be able to think straight until you've seen to [his of M] needs.";
-			if the player is able to get horny, Arouse 2500;
-			say "[variable custom style][if the player is not a pervert]Ugh, this game is messing with my head![otherwise if the sex addiction of the player < 12]I guess I should get there quick so it's over with.[otherwise]Looks like [he of M]'s horny again. I know just what to do![end if][roman type]".
+		if N < 3, compute action N of M.
 
 [!<computeUniqueEarlyActionOfMonster>+
 
@@ -128,7 +117,7 @@ To compute survival check of (M - a monster):
 		compute survival rewards.
 
 To say BecomesBoredFlav of (M - a monster):
-	say "The [M] seems to get bored of following you around.".
+	say "[BigNameDesc of M] seems to get bored of following you around.".
 
 
 Compute Monsters ends here.

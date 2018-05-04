@@ -8,14 +8,15 @@ Definition: a hood (called C) is ringagged:
 
 The printed name of hood is usually "[TQlink of item described][clothing-title-before]latex hood[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of hood is "lh".
 
-[!<TheLatexHoodPreventsSpeechRule>+
+hood wearability rules is a rulebook. The wearability rules of a hood is the hood wearability rules.
 
-Prevents speech
+The headgear already worn rule is listed in the hood wearability rules.
 
-+!]
-This is the hood prevents speech rule:
-	if there is a worn hood, rule fails.
-The hood prevents speech rule is listed in the player speech rules.
+This is the opengag exclusivity rule:
+	if there is a worn ringagged clothing and wearing-target is ringagged:
+		if summoning is 0, say "You can't wear that because you're already wearing the [printed name of a random worn opengag]!";
+		rule fails.
+The opengag exclusivity rule is listed in the hood wearability rules.
 
 To decide which figure-name is the clothing-image of (C - a hood):
 	if C is white hood, decide on figure of WC hood;
@@ -65,9 +66,9 @@ To decide which number is the dexterity-influence of (H - a hood):
 To decide which number is the strength-influence of (H - a black hood):
 	let S be 0;
 	if the class of the player is latex fetish model:
-		if there is a worn cursed wrist bond, increase S by 2;
-		if there is a worn cursed ankle bond, increase S by 2;
-		if there is a worn cursed ballgag, increase S by 1;
+		if there is a worn cursed wrist bond, increase S by 3;
+		if there is a worn cursed ankle bond, increase S by 3;
+		if there is a worn cursed ballgag, increase S by 2;
 		if there is a worn cursed chastity cage, increase S by 2;
 		if there is a worn cursed sex toy penetrating asshole, increase S by 2;
 		if there is a worn cursed ass plugging clothing, increase S by 2;
@@ -77,7 +78,7 @@ To decide which number is the initial outrage of (C - a hood):
 	decide on 10.
 
 Carry out wearing hood:
-	if the player is not gagged, say "Your mouth is forced wide open by the ring gag.";
+	if the player is not gagged, say "Your mouth is forced wide open by the gag ring.";
 	curse the noun;
 
 To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a hood):
@@ -175,13 +176,6 @@ To demagnetise (C - a clothing):[Do not call this function unless you know it is
 
 Definition: a hood (called C) is condom pinnable:
 	decide yes.
-
-[
-
-TODO: mechanic can move along the "training-progress" stat on the trainee items
-TODO: servicing lots of patrons can move along the "training-progress" stat on trainee items
-
-]
 
 Hoods ends here.
 

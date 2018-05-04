@@ -217,6 +217,7 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	if K is 37 and the player is not the donator, decide no; [Pocketbooks for crafting study guide]
 	if ((K >= 23 and K <= 25) or K is 16) and egg laying fetish is 0, decide no; [all three types of eggs and wasp wing]
 	if K is 36 and inflation fetish is 0, decide no;
+	if K is 55 and diaper quest is 0, decide no; [Chocolate eggs]
 	if the Recipe in row K of the Table of Alchemy is 1, decide no; [We have already assigned this ingredient to a recipe]
 	decide yes.
 

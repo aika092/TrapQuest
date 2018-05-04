@@ -16,7 +16,7 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is able to wank:
 	[This is about whether the player can masturbate through their underwear]
-	if there is worn cursed pussy protection blocking wanking clothing, decide no;
+	if there is cursed pussy covering blocking wanking clothing, decide no;
 	decide yes.
 
 [!<ClothingIsBlockningWanking>+
@@ -135,7 +135,7 @@ REQUIRES COMMENTING
 +!]
 This is the clothing blocks masturbation rule:
 	if the player is not able to wank:
-		if auto is 0, say "Your [printed name of random worn cursed pussy protection blocking wanking clothing] won't budge; that item is simply not soft and thin enough for you to [masturbate] through!";
+		if auto is 0, say "Your [printed name of random cursed pussy covering blocking wanking clothing] won't budge; that item is simply not soft and thin enough for you to [masturbate] through!";
 		rule fails.
 The clothing blocks masturbation rule is listed last in the masturbation restriction rules.		
 
@@ -263,7 +263,7 @@ Carry out masturbating:
 	let object-choice be nothing;
 	let C be a random bottom level pee protection clothing;
 	now seconds is 6;
-	if the player is able to wank and the player is female and vagina is not actually occupied and the number of worn cursed pussy covering clothing is 0 and auto is 0:
+	if the player is able to wank and the player is female and vagina is not actually occupied and the number of cursed pussy covering clothing is 0 and auto is 0:
 		repeat with O running through insertable objects carried by the player:
 			if the girth of O < the openness of vagina + 3:
 				say "Would you like to use the [printed name of O] to masturbate with? [yesnolink] ";

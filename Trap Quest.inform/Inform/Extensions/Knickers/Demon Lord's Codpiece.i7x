@@ -2,40 +2,40 @@ Demon Lord's Codpiece by Knickers begins here.
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
 
-A demon codpiece is a kind of knickers. There is 1 demon codpiece. A demon codpiece is unique. The armour of an demon codpiece is 10. The printed name of demon codpiece is usually "[TQlink of item described][clothing-title-before]demon lord's codpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of demon codpiece is usually 6. The text-shortcut of demon codpiece is "dlj". An demon codpiece is usually crotch-assless. An demon codpiece is usually leather. An demon codpiece is usually totally-exclusive. Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. A demon codpiece has a number called charge. The charge of a demon codpiece is usually 1.
+demon codpiece is a knickers. demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[TQlink of item described][clothing-title-before]demon lord's codpiece[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of demon codpiece is 6. The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless. demon codpiece is leather. demon codpiece is totally-exclusive. Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
 
 Figure of demon codpiece is the file "Items\Clothes\Lower\Underwear\Special\codpiece1.png".
 
-To decide which figure-name is clothing-image of (C - a demon codpiece):
+To decide which figure-name is clothing-image of (C - demon codpiece):
 	decide on figure of demon codpiece.
 
 Definition: an demon codpiece is displacable:
 	decide yes.
 
-To say ShortDesc of (K - a demon codpiece):
+To say ShortDesc of (K - demon codpiece):
 	say "leather codpiece".
 
-To say selfexamineuniquetitle of (K - a demon codpiece):
+To say selfexamineuniquetitle of (K - demon codpiece):
 	say "leather codpiece".
 
-To say ClothingDesc of (K - a demon codpiece):
+To say ClothingDesc of (K - demon codpiece):
 	say "A leather belt with a red pouch designed to keep [if the size of penis > 0]your[otherwise]the wearer's[end if] genitals in place. It doesn[']t do anything to protect [if K is not worn]the wearer's[otherwise]your[end if] [asshole], but a large pentagonal gem on the front prevents anything else from being worn on top of it. [if the number of wenchy monsters in the location of the player > 0 or the dominance of the player < -1]It catches the light strangely, and when you look at it for too long you almost feel like it's taunting you.[otherwise]It appears to be inert, but a weird feeling in your gut tells you that isn't true.[end if]".
 
-To uniquely set up (C - a demon codpiece):
-	set up magic state of C;
+
+To uniquely set up (C - demon codpiece):
 	now the magic-type of C is dominance.
 
-Definition: a demon codpiece (called C) is product:
+Definition: demon codpiece (called C) is product:
 	if the player is not the donator, decide no;
 	decide yes.
 
-To decide which number is the alchemy key of (C - a demon codpiece):
+To decide which number is the alchemy key of (C - demon codpiece):
 	decide on 23.
 
-Definition: a demon codpiece (called D) is demonic:
+Definition: demon codpiece (called D) is demonic:
 	decide yes.
 
-To SexChange (J - a demon codpiece):
+To SexChange (J - demon codpiece):
 	now J is temptation;
 	let T be a random off-stage cumlust tattoo;
 	if the player is female:
@@ -46,19 +46,17 @@ To SexChange (J - a demon codpiece):
 		summon T;
 		destroy J;
 	otherwise:
-		let C be a random off-stage plentiful pouch panties;
-		transform J into C.
+		transform J into pouch-panties.
 
-To decide which number is the strength-influence of (C - a demon codpiece):
+To decide which number is the strength-influence of (C - demon codpiece):
 	decide on the charge of C + (the charge of C / 2) + the magic-modifier of C.
 
-To decide which number is the dexterity-influence of (C - a demon codpiece):
+To decide which number is the dexterity-influence of (C - demon codpiece):
 	decide on (the charge of C / 2) + the magic-modifier of C.
 
 This is the demon junk reward rule:
-	let J be a random worn demon codpiece;
-	say "Your [printed name of J] shifts and the gem lights up, [one of]as if reacting in approval[or]once again showing its opinion of your actions[stopping]! You feel more powerful!";
-	increase the charge of J by 1;
+	say "Your [ShortDesc of demon codpiece] shifts and the gem lights up, [one of]as if reacting in approval[or]once again showing its opinion of your actions[stopping]! You feel more powerful!";
+	increase the charge of demon codpiece by 1;
 	Dignify 50.
 
 This is the demon junk punishment rule:

@@ -170,7 +170,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - a vessel):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if the doses of T > 0] [link][bracket]dri[close bracket][as]dr [text-shortcut of T][end link][end if][if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if there is a dispenser in the location of the player] [link][bracket]dip[close bracket][as]dip [text-shortcut of T][end link][end if][if the doses of T > 0 and there is a carried squirt dildo and T is not squirt dildo] [link][bracket]decant[close bracket][as]decant [text-shortcut of T] into squirt dildo[end link][end if][if the doses of T > 0 and the fill-type of T >= 20 and there is a friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if the doses of T > 0] [link][bracket]dri[close bracket][as]dr [text-shortcut of T][end link][end if][if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if there is a dispenser in the location of the player] [link][bracket]dip[close bracket][as]dip [text-shortcut of T][end link][end if][if the doses of T > 0 and there is a carried squirt dildo and T is not squirt dildo] [link][bracket]decant[close bracket][as]decant [text-shortcut of T] into squirt dildo[end link][end if][if the doses of T > 0 and the fill-type of T >= 20 and there is a friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if][if the doses of T > 0 and waitress bunny ears is worn and there is a friendly human intelligent monster in the location of the player] [link][bracket]serve[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random friendly human intelligent monster in the location of the player][end link][end if]".
 
 [!<SayUniqueVerbDescOfSquirtDildo>+
 
@@ -669,6 +669,11 @@ To compute options:
 					say "[link]list craftables[end link] ";
 				if the player is in the location of the dungeon altar and the charge of the dungeon altar < 100:
 					say "[link]list blessables[end link] [link]lie on altar[end link] ";
+				if there is a friendly witch in the location of the player:
+					repeat with F running through held diapers:
+						if the urine-soak of F + the mess of F > 0:
+							if F is not catalogued, say "[F] ";
+							now F is catalogued;
 			if the player is glue stuck and the player is not immobile, say "[link]scrub glue[end link] ";
 			if there is held lubricant and (the soreness of asshole > 3 and asshole is not actually occupied) or (the soreness of vagina > 3 and vagina is not actually occupied):
 				unless there is a held catalogued lubricant, say "[printed name of a random held lubricant] ";
@@ -729,9 +734,9 @@ Understand "list craftables" as CraftListing.
 
 AltarListing is an action applying to nothing.
 Carry out AltarListing:
-	repeat with F running through held sure unblessed clothing:
+	repeat with F running through held sure unblessed blessable clothing:
 		say "[F] ";
-	repeat with F running through held unsure clothing:
+	repeat with F running through held unsure blessable clothing:
 		say "[F] ".
 Understand "list blessables" as AltarListing.
 

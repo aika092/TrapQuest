@@ -5,7 +5,7 @@ Laundry Robots by Objects begins here.
 REQUIRES COMMENTING
 
 *!]
-laundry robots is a thing. laundry robots is in Hotel20. The printed name of laundry robots is "robotic arms". The description of laundry robots is "Several extremely agile metal robotic arms with threatening looking grippers at the end. They are constantly zipping about the place with unclear purpose.". Understand "robot", "robotic", "metal", "arms", "hands", "room" as laundry robots. laundry robots has a number called charge.
+laundry robots is a thing. laundry robots is not portable. laundry robots is in Hotel20. The printed name of laundry robots is "[TQlink of item described]robotic arms[TQxlink of item described][verb-desc of item described]". The description of laundry robots is "Several extremely agile metal robotic arms with threatening looking grippers at the end. They are constantly zipping about the place with unclear purpose.". Understand "robot", "robotic", "metal", "arms", "hands", "room" as laundry robots. laundry robots has a number called charge. The text-shortcut of laundry robots is "rarm".
 
 [!<ReportWhenThePlayerIsInHotel20>+
 

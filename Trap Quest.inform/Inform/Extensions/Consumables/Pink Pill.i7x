@@ -23,15 +23,15 @@ Carry out PinkEating:
 	repeat with M running through things in the location of the player:
 		if M is grabbing the player or M is penetrating a body part:
 			unless M is disembodied:
-				if M is monster, say "[line break]The [M] loses [his of M] grip on you!";
+				if M is monster, say "[line break][BigNameDesc of M] loses [his of M] grip on you!";
 				if M is penetrating asshole:
 					now the player-reaction of the player is resisting;
-					say "The [M] is ripped out of your [asshole][if M is penetrating vagina] and [vagina][end if] at an incredible speed, causing a loud pop!  Your mind reels from the brutal damage done to the inside of your poor hole[if M is penetrating vagina]s[end if]!";
+					say "[BigNameDesc of M] is ripped out of your [asshole][if M is penetrating vagina] and [vagina][end if] at an incredible speed, causing a loud pop!  Your mind reels from the brutal damage done to the inside of your poor hole[if M is penetrating vagina]s[end if]!";
 					ruin asshole times 2;
 					if M is penetrating vagina, ruin vagina times 2;
 				otherwise if M is penetrating vagina:
 					now the player-reaction of the player is resisting;
-					say "The [M] is ripped out of your [vagina] at an incredible speed, causing a loud pop. Your mind reels from the brutal damage done to the inside of your [vagina]!";
+					say "[BigNameDesc of M] is ripped out of your [vagina] at an incredible speed, causing a loud pop. Your mind reels from the brutal damage done to the inside of your [vagina]!";
 					ruin vagina times 2;
 				dislodge M;
 	teleport to Dungeon12;

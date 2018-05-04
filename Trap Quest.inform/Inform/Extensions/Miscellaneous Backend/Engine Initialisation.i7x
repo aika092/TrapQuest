@@ -27,6 +27,7 @@ When play begins:
 	initialise variables;
 	clear the screen;
 	retrieve settings;
+	correct table entries;
 	if quick start < 3:
 		say disclaimer;
 		retrieve gender;
@@ -119,6 +120,7 @@ To fill in table blanks:
 	unless there is a choice in row 34 of the Table of Settings, now choice in row 34 of Table of Settings is 1;
 	unless there is a choice in row 35 of the Table of Settings, now choice in row 35 of Table of Settings is 1;
 	unless there is a choice in row 36 of the Table of Settings, now choice in row 36 of Table of Settings is 0;
+	unless there is a choice in row 37 of the Table of Settings, now choice in row 37 of Table of Settings is 0;
 	[Allows old save files to load properly]
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
 	unless there is a choice in row 33 of the Table of Player Options, now choice in row 33 of Table of Player Options is 0;
@@ -152,19 +154,22 @@ To fill in table blanks:
 	unless there is a choice in row 61 of the Table of Player Options, now choice in row 61 of Table of Player Options is 0;
 	unless there is a choice in row 62 of the Table of Player Options, now choice in row 62 of Table of Player Options is 0;
 	unless there is a choice in row 63 of the Table of Player Options, now choice in row 63 of Table of Player Options is 0;
-	unless there is a choice in row 64 of the Table of Player Options, now choice in row 64 of Table of Player Options is 0.
+	unless there is a choice in row 64 of the Table of Player Options, now choice in row 64 of Table of Player Options is 0;
+	unless there is a choice in row 65 of the Table of Player Options, now choice in row 65 of Table of Player Options is 0;
+	unless there is a choice in row 66 of the Table of Player Options, now choice in row 66 of Table of Player Options is 0;
+	unless there is a choice in row 67 of the Table of Player Options, now choice in row 67 of Table of Player Options is 0.
 
 To correct table entries:
 	if the player is not the donator:
 		choose the row with a toggle of ultra undo toggle rule in the Table of Game Settings;
 		blank out the whole row;
 		now choice in row 26 of the Table of Settings is 0;
-	if the player is not top donator or Name in row 1 of Table of Male Name Options is "Undefined Name 1":
+	if the player is not top donator or Name in row 1 of Table of Custom Male Name is "Undefined Name 1":
 		choose the row with a toggle of custom name rule in the Table of Male Name Options;
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Male Name Diaper Quest Options;
 		blank out the whole row;
-	if the player is not a top donator or Name in row 1 of Table of Female Name Options is "Undefined Name 1":
+	if the player is not a top donator or Name in row 1 of Table of Custom Female Name is "Undefined Name 1":
 		choose the row with a toggle of custom name rule in the Table of Female Name Options;
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
@@ -172,7 +177,12 @@ To correct table entries:
 	if the player is not the donator:
 		choose the row with a toggle of roleplay fetish toggle rule in the Table of Benefit Options;
 		blank out the whole row;
-		now choice in row 47 of Table of Player Options is 0.
+		now choice in row 47 of Table of Player Options is 0;
+	if the player is not a march 2018 top donator:
+		choose the row with a subtable of Table of Festive Options in the Table of Kink Options;
+		blank out the whole row;
+		choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
+		blank out the whole row;
 
 To retrieve settings:
 	if tutorial is 1:
@@ -195,7 +205,8 @@ To retrieve gender:
 		if quick start is 0, now choice in row 1 of the Table of Player Options is -1;
 		while choice in row 1 of the Table of Player Options is -1:
 			carry out the displaying activity;
-			clear the screen.
+			clear the screen;
+	if the player is female, now choice in row 10 of the table of player options is 0. [Make sure TG fetish is disabled if the player is female]
 
 To retrieve name:
 	if the player is male, now the current menu is the Table of Male Name Options;
@@ -238,8 +249,8 @@ To configure gender:
 		now choice in row 10 of the Table of Player Options is 0; [Similarly TG fetish must be off.]
 		choose the row with a toggle of TG fetish toggle rule in the Table of Fetish Options;
 		blank out the whole row;
-		choose the row with a toggle of TG fetish toggle rule in the Table of Diaper Fetish Options;
-		blank out the whole row.
+		[choose the row with a toggle of TG fetish toggle rule in the Table of Diaper Fetish Options;
+		blank out the whole row.]
 
 To retrieve fetish options:
 	if diaper quest is 1, now the current menu is the Table of Diaper Fetish Options;

@@ -56,14 +56,13 @@ To compute periodic effect of (C - a pink spraybottle):
 To compute (S - a pink spraybottle) breaking:
 	if a random number between 1 and the dexterity of the player < 5 or (a  random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
 		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie!  I'm such a klutz sometimes![or]Tee hee, it happened again!  I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
-		let M be a random mechanic in the location of the player;
 		now S is cloth;
 		now the charge of S is 0;
 		now S is cursed;
-		if M is monster:
-			say "[speech style of M]'That[']s coming out of your pay-check you clumsy bitch!'[roman type]  The [M] looks furious.";
-			now M is interested;
-			anger M;
+		if mechanic is in the location of the player:
+			say "[speech style of mechanic]'That[']s coming out of your pay-check you clumsy bitch!'[roman type][line break][BigNameDesc of mechanic] looks furious.";
+			now mechanic is interested;
+			anger mechanic;
 		if the work ethic of S > -100, now the work ethic of S is -100;
 	otherwise:
 		say "You almost drop your [printed name of S], but with quick fingers, you thankfully manage to hold onto it.[one of][line break][variable custom style]Eek!  If I had dropped it, it would have almost certainly broke![roman type][line break][or][stopping]".

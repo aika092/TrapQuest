@@ -100,6 +100,8 @@ To trigger pole trap (Y - a dildo trap):
 		if the class of the player is living sex doll:
 			say "A dildo on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you onto your feet.";
 			unless the player is immobile, now the stance of the player is 0;
+			now Y is not untriggered;
+			now Y is revealed;
 		otherwise if a random number between 1 and 12 > the dexterity of the player:
 			say "A dildo on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you out cold.";
 			[Note this can only happen with massive breasts when crawling]
@@ -107,6 +109,8 @@ To trigger pole trap (Y - a dildo trap):
 			now the fainting reason of the player is 5;
 		otherwise:
 			say "A dildo on a pole shoots out of a trap door underneath you and narrowly misses your face. Phew, that could have been quite ugly...";
+			now Y is not untriggered;
+			now Y is revealed;
 	otherwise:
 		now Y is not untriggered;
 		now Y is revealed;
@@ -160,7 +164,7 @@ To trigger pole trap (Y - a dildo trap):
 						destroy O;
 				otherwise:
 					if O is diaper:
-						say "The dildo hits the thick padding of your [ShortDesc O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
+						say "The dildo hits the thick padding of your [ShortDesc of O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
 						arouse 550;
 					otherwise:
 						say "Your [ShortDesc of O] blocks the dildo which bounces off harmlessly. The [if O is rigid]material is damaged[otherwise][clothing-material of O] material of the clothing is stretched[end if] a little by the attack.";

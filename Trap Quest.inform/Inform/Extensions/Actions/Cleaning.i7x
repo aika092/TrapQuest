@@ -156,11 +156,10 @@ REQUIRES COMMENTING
 
 +!]
 Report cleaning it with when the second noun is clothing:
-	let M be a random shopkeeper;
-	if the second noun is store and Dungeon41 is guarded and M is not mating:
-		say "[speech style of M]'Oi!  I own that, don't use it as some kind of cum rag. GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
-		anger M;
-		now M is interested;
+	if the second noun is store and Dungeon41 is guarded and shopkeeper is not mating:
+		say "[speech style of shopkeeper]'Oi!  I own that, don't use it as some kind of cum rag. GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
+		anger shopkeeper;
+		now shopkeeper is interested;
 		now the second noun is stolen.
 
 [!<CleanClothing>+

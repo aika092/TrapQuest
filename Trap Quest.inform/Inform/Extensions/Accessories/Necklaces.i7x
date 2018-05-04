@@ -7,8 +7,8 @@ A neckwear is a kind of clothing. A neckwear is neck covering. A neckwear is met
 Definition: a neckwear (called C) is untransformable:
 	decide yes.
 
-To uniquely set up (C - a neckwear):
-	do nothing.
+[To set up magic state of (C - a neckwear):
+	do nothing. Redundant]
 
 There are 6 necklaces.
 

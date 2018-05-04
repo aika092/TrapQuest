@@ -37,7 +37,7 @@ REQUIRES COMMENTING
 To decide which number is the bimbo of the player:
 	if saved-bimbo < 0:
 		if diaper quest is 1, now saved-bimbo is the flat diaper bimbo of the player;
-		otherwise now saved-bimbo is the flat bimbo of the player;
+		otherwise now saved-bimbo is the sex addiction of the player;
 	decide on saved-bimbo.
 
 [!<DecideWhichNumberIsTheFlatBimboOfThePlayer>+

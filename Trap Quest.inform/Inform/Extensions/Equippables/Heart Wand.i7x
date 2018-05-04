@@ -22,7 +22,7 @@ To decide which number is the damage improvement of (W - a heart wand):
 	decide on X.
 
 To compute attack of (W - a heart wand) at (M - a monster):
-	say "[one of]You slash at the [M] with a blast of gaudy hearts.[or]You strike the [M] with magical hearts.[or]You flail at the [M] with a vicious arc of pretty hearts.[or]A stream of darling hearts lashes the [M].[at random][if a random number between 1 and 30 is 1][line break][variable custom style]  I suppose it could be worse: they could be floating kisses.[roman type][line break][end if]".
+	say "[one of]You slash at [NameDesc of M] with a blast of gaudy hearts.[or]You strike [NameDesc of M] with magical hearts.[or]You flail at [NameDesc of M] with a vicious arc of pretty hearts.[or]A stream of darling hearts lashes [NameDesc of M].[at random][if a random number between 1 and 30 is 1][line break][variable custom style]  I suppose it could be worse: they could be floating kisses.[roman type][line break][end if]".
 
 Heart Wand ends here.
 

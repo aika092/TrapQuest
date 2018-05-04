@@ -42,15 +42,12 @@ To compute SelfExamineDesc of (K - a vibrating plug panties):
 Figure of female latex plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\latexplugpanties1.png".
 Figure of male latex plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\latexplugpanties2.png".
 
-To curse (B - a vibrating plug panties):
-	if B is bland and B is sure, say "The ass plug of the latex plug panties starts vibrating!!";
-	if B is not blessed, now B is cursed;
-	otherwise now B is bland.
+To say CurseCurseFlav of (B - a vibrating plug panties):
+	if B is in the location of the player, say "The ass plug of the latex plug panties starts vibrating!!".
 
-To bless (B - a vibrating plug panties):
-	if B is cursed and B is sure, say "The ass plug of the latex plug panties stops vibrating.";
-	if B is not cursed, now B is blessed;
-	otherwise now B is bland.	
+To say BlessBlandFlav of (B - a vibrating plug panties):
+	if B is in the location of the player and B is sure, say "The ass plug of the latex plug panties stops vibrating.".
+
 
 To compute periodic effect of (P - a vibrating plug panties):
 	increase the charge of P by 2;

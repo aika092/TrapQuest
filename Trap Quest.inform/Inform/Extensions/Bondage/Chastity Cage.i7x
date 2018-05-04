@@ -79,11 +79,18 @@ This is the chastity cage already worn rule:
 		rule fails.
 The chastity cage already worn rule is listed in the chastity cage wearability rules.
 
+This is the can't phase cage through clothes rule:
+	if summoning is 0 and the player is pussy protected:
+		say "You can't get the [ShortDesc of wearing-target] on through your [ShortDesc of random top level protection clothing].";
+		rule fails.
+The can't phase cage through clothes rule is listed in the chastity cage wearability rules.
+
 This is the players in chastity can't wear vagina plugging clothes rule:
 	if vagina is actually occupied and wearing-target is vagina plugging:
 		if summoning is 0, say "You can't get the plug in past your chastity belt, and so can't wear these.";
 		rule fails.
 The players in chastity can't wear vagina plugging clothes rule is listed in the global wearability rules.
+
 
 Chastity Cage ends here.
 

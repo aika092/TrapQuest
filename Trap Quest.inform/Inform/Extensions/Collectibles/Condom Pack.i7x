@@ -64,7 +64,7 @@ Report examining a condom pinned clothing:
 
 To compute condom request choice of (M - a monster):
 	if M is unwrapped and M is intelligent:
-		say "Looks like the [M] is probably going for your [chosen-orifice of M]. Would you like to request that [he of M] wear a condom? [yesnolink]";
+		say "Looks like [NameDesc of M] is probably going for your [chosen-orifice of M]. Would you like to request that [he of M] wear a condom? [yesnolink]";
 		if the player consents:
 			say "[CondomRequestFlav of M]";
 			if M is convinced to wear a condom:
@@ -108,7 +108,7 @@ To say CondomRequestFlav of (M - a monster):
 		otherwise:
 			say "[variable custom style]'[if total used condoms is 0][one of]I've got some condoms, if you want one.'[or]You should wear this, I don't know where that [manly-penis] has been.'[or]I'll feel like less of a disgrace if you wear this.'[in random order][otherwise][one of]I want you to wear this, but I'd rather you didn't pin it on me afterwards, if you'd be so kind.'[or]If I give you a condom, will you promise not to pin it on me afterwards?'[or]I'd rather you wore this, but not if you're going to add it to the [']collection['].'[or]If I give you a condom, are you going to pin it to me afterwards?'[in random order][end if][roman type][line break]";
 	otherwise:
-		say "[if M is intelligent][line break][variable custom style][gag sounds][roman type][line break][end if]You try to convince the [M] to wear a condom with [if the bimbo of the player < 8]desperate[otherwise if the bimbo of the player < 14]playful[otherwise]provocative[end if] hand gestures.".
+		say "[if M is intelligent][line break][variable custom style][gag sounds][roman type][line break][end if]You try to convince [NameDesc of M] to wear a condom with [if the bimbo of the player < 8]desperate[otherwise if the bimbo of the player < 14]playful[otherwise]provocative[end if] hand gestures.".
 
 [!<SayCondomAcceptFlav>+
 
@@ -116,8 +116,8 @@ The text output of this function is displayed whenever the player offers a monst
 
 +!]
 To say CondomAcceptFlav of (M - a monster):
-	if the condom resistance of M > 0, say "The [M] frowns, but then takes the condom and sheathes [his of M] [manly-penis].";
-	otherwise say "The [M] [one of]smiles[or]grins wordlessly[or]smirks[at random] and takes a condom. Discarding the wrapper, [he of M] rolls it down the length of [his of M] [manly-penis]. You stare, [one of][if the semen taste addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the semen taste addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly curling your upper lip[end if][or]unable to [if the player is a pervert and the player is not a nympho]bring yourself to [end if]look away[or]your mouth opening unconsciously[or][if the player is not a pervert]without a shred of enthusiasm[otherwise]with envy[end if], as the rubber makes intimate contact with every inch of the massive tool[or]as the gleaming latex makes every bump and vein glisten [if the player is not a pervert]unappealingly[otherwise]temptingly[end if][at random].".
+	if the condom resistance of M > 0, say "[BigNameDesc of M] frowns, but then takes the condom and sheathes [his of M] [manly-penis].";
+	otherwise say "[BigNameDesc of M] [one of]smiles[or]grins wordlessly[or]smirks[at random] and takes a condom. Discarding the wrapper, [he of M] rolls it down the length of [his of M] [manly-penis]. You stare, [one of][if the semen taste addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the semen taste addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly curling your upper lip[end if][or]unable to [if the player is a pervert and the player is not a nympho]bring yourself to [end if]look away[or]your mouth opening unconsciously[or][if the player is not a pervert]without a shred of enthusiasm[otherwise]with envy[end if], as the rubber makes intimate contact with every inch of the massive tool[or]as the gleaming latex makes every bump and vein glisten [if the player is not a pervert]unappealingly[otherwise]temptingly[end if][at random].".
 
 [!<SayCondomManualFlav>+
 
@@ -128,11 +128,11 @@ To say CondomManualFlav of (M - a monster):
 	say "You take out a condom and quickly roll it down [his of M] length, making [one of]sure the rubber is in intimate contact with every inch of the massive tool[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] massive tool.".
 
 To say CondomRejectFlav of (M - a monster):
-	say "The [M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".
+	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".
 
 To say CondomPinFlav of (M - a monster) on (C - a clothing):
-	if M is awake and M is interested, say "Before you can stop [him of M], the [M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. ";
-	otherwise say "Completely of its own accord, the used condom suddenly zips from the [M] and flies through the air until it hits your [C]. ".
+	if M is awake and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. ";
+	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [C]. ".
 
 To say CondomPinReactionFlav of (M - a monster) on (C - a clothing):
 	say "[variable custom style][one of]What on earth?!  Am I supposed to walk around with this thing just dangling there?![or][if the total condoms of C is 0]Oh great, now this has condoms on it too![otherwise][end if][stopping][roman type][line break]".

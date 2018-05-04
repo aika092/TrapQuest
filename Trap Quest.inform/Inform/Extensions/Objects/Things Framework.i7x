@@ -28,6 +28,12 @@ To say NameDesc of (C - a thing):
 To say BigNameDesc of (C - a thing):
 	say "The [ShortDesc of C]".
 
+To say NameDesc of (C - a monster):
+	say "the [input-style][MediumDesc of C][roman type]".
+
+To say BigNameDesc of (C - a monster):
+	say "The [input-style][MediumDesc of C][roman type]".
+
 
 Things Framework ends here.
 

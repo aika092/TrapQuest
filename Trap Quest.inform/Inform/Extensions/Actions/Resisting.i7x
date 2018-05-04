@@ -73,7 +73,7 @@ Check resisting:
 	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
-	if there is a vampiress penetrating an orifice, now M is a random vampiress;
+	if vampiress is penetrating an orifice, now M is vampiress;
 	if there is a fucking daddy's hole monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the assault. [line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to touch you there.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
@@ -158,7 +158,7 @@ Report resisting:
 			if the player is not feeling dominant and M is male intelligent monster:
 				let T be a random daddy's wild child tattoo;
 				if there is a worn tattoo and T is not worn:
-					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like 'The [M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
+					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like '[BigNameDesc of M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
 					say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
 					try examining T.
 
@@ -216,7 +216,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralAddResRefusalFlav of (M - a monster):
-	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure the [M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling the [M]'s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
+	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M]'s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
 [!<SayOralSlutResRefusalFlavOfMonster>+
 
@@ -232,7 +232,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ThirstResRefusalFlav of (M - a monster):
-	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can[']t stop now. Now when you're so close to something that can wet your throat...[or]You can[']t bring yourself to resist the [M] knowing that [his of M] balls are so full of something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
+	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can[']t stop now. Now when you're so close to something that can wet your throat...[or]You can[']t bring yourself to resist [NameDesc of M] knowing that [his of M] balls are so full of something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
 
 Part - Resist Punishments
 
@@ -352,7 +352,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute sex resist slap of (M - a monster):
-	say "The [M] [if M is intelligent][one of]cackles[or]laughs deeply[or]chuckles[or]snorts[at random] at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random][otherwise]looks at you blankly[end if] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].";
+	say "[BigNameDesc of M] [if M is intelligent][one of]cackles[or]laughs deeply[or]chuckles[or]snorts[at random] at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random][otherwise]looks at you blankly[end if] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].";
 	DelicateUp 1.
 
 [!<angerPunishment:SexResistPunishment>*
@@ -394,7 +394,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute sex resist anger of (M - a monster):
-	say "The [M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
+	say "[BigNameDesc of M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
 	FavourDown M.
 
 

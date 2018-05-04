@@ -13,7 +13,7 @@ To say ClothingDesc of (C - a santa corset):
 	say "A red overbust corset with fluffy white wool at the top and bottom, to reflect the festive nature of the item.[if C is worn][line break]It looks like it might be able to protect your breasts from injury.[end if]".
 
 To uniquely set up (C - a santa corset):
-	set up magic state of C. [It never gets a magic enhancement.]
+	do nothing.[It never gets a magic enhancement.]
 	
 To decide what number is the price of (C - a santa corset):
 	decide on 6.

@@ -45,10 +45,6 @@ To decide which number is the heel-skill-influence of (O - a leotard):
 	increase X by the magic-modifier of O;
 	decide on X.
 
-To uniquely set up (C - a leotard):
-	repair C;
-	set up magic state of C.
-
 To set up influence of (C - a leotard):
 	set up submissiveness-based influence of C.
 	
@@ -61,7 +57,7 @@ Definition: a pink leotard (called C) is sissifying:
 To compute periodic effect of (L - a leotard):
 	[ballerina stuff]
 	increase the charge of L by 1;
-	if the charge of L > 500:
+	if the charge of L > 200:
 		now the charge of L is 0;
 		let H be a random off-stage ballet heels;
 		let S be a random off-stage plentiful ballet shoes;

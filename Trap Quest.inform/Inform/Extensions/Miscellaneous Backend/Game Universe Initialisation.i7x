@@ -85,7 +85,7 @@ To initialise bondage prisoner:
 	let A be a random off-stage pair of anklecuffs;
 	if R is 2:
 		now A is a random off-stage pair of handcuffs;
-		now A is bound-in-front;
+		now A is wrist-bound-in-front;
 	let C be a random off-stage chastity cage;
 	let G be a random off-stage small ballgag;
 	let S be a random off-stage slave collar;
@@ -138,19 +138,17 @@ To initialise wardrobe:
 	if diaper lover >= 1, now T is a random I love my wet nappies T-shirt;
 	if a random number between 1 and 2 is 1, now T is a random basic loot overdress;
 	now T is in pink wardrobe;
-	let D be a random bunny diaper;
 	if diaper focus >= 1:
-		now D is in pink wardrobe;
-		now D is normal; [Just in case it had been put in the shop]
+		now  a random bunny diaper is in pink wardrobe;
+		now a random bunny diaper is normal; [Just in case it had been put in the shop]
 	repeat with X running through clothing in pink wardrobe:
 		if X is blessed, now X is bland;
 		unless X is cursed, now X is blandness;
 		now X is normal;
-	let CG be a random champagne glass;
-	now CG is sure;
-	now CG is bland;
-	now CG is in pink wardrobe;
-	[now a random santa hat is in pink wardrobe.]
+	now champagne-glass is sure;
+	now champagne-glass is bland;
+	now champagne-glass is in pink wardrobe;
+	if christmas content is 1, now a random santa hat is in pink wardrobe.
 
 ["only destroy": with the new imprinting functionality when clothing is destroyed, Aika introduced the concept of "only destroy". This is used when you want to destroy clothing without causing any imprinting effect on the player.]
 

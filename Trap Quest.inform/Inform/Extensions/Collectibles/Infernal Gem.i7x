@@ -19,7 +19,7 @@ To say MonsterOfferAcceptFlav of (M - a mechanic) to (T - an infernal gem):
 	say "[speech style of M]'[one of]Holy shit! I[']ll take the fucking shit out of that, mate!'[or]Haha, yes! You always come through for me!'[stopping][roman type]".
 
 To say MonsterTakeFlav of (M - a mechanic) for (T - an infernal gem):
-	say "The [M] takes the [T], crushing it into a sparkling powder and snorting it up his nose".[Just like coke!]
+	say "[BigNameDesc of M] takes the [T], crushing it into a sparkling powder and snorting it up his nose".[Just like coke!]
 
 To say OfferThanksFlav of (M - a mechanic) for (T - an infernal gem):
 	if the xavier-power of M < 4:
@@ -27,7 +27,7 @@ To say OfferThanksFlav of (M - a mechanic) for (T - an infernal gem):
 	otherwise if the xavier-power of M < 5:
 		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I[']m actually feeling generous!'[roman type]";
 	otherwise:
-		say "The [M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah...YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".	
+		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah...YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".	
 
 To compute resolution of (M - a mechanic) taking (T - an infernal gem):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;
@@ -43,7 +43,7 @@ To compute offer reward of (M - a mechanic) for (T - an infernal gem):
 	otherwise if the xavier-power of M is 4:
 		compute xavier reward of M;
 	otherwise:
-		say "The [M] looks...more powerful somehow? He seems to have lost interest in you.";
+		say "[BigNameDesc of M] looks...more powerful somehow? He seems to have lost interest in you.";
 		DifficultyUp M by a random number between 1 and 2;
 
 To decide which number is the bartering value of (T - an infernal gem) for (M - a shopkeeper):

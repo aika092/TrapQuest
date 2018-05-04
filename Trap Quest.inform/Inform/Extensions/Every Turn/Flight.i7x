@@ -79,7 +79,7 @@ REQUIRES COMMENTING
 +!]
 To say LandingTaunt of (M - a monster):
 	if M is intelligent:
-		say "The [M] grins at the sight.";
+		say "[BigNameDesc of M] grins at the sight.";
 		humiliate 50.
 
 Part 2 - Various Levels of Flight

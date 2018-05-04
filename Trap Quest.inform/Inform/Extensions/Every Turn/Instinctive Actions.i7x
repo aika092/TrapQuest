@@ -20,12 +20,12 @@ REQUIRES COMMENTING
 
 +!]
 To Compute Compulsions:
-	if there is a worn drinkme tattoo and the semen taste addiction of the player < 20 and the player is not desperately craving and the urine taste addiction of the player <= 15 and the player is not almost too full and there is a held non-empty bottle and face is not actually occupied and the player is not in danger and the player is able to use their hands:
-		let C be a random held non-empty bottle;
-		if C is bottle:
-			say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of C] to your lips!";
-			try drinking C;
-			now another-turn is 1;
+	now autodrink is 1;
+	let B be a random held actually drinkable bottle;
+	if there is a worn drinkme tattoo and B is bottle and the player is not in danger:
+		say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
+		try drinking B;
+		now another-turn is 1;
 	otherwise if there is a carried throbbing-tentacle:
 		let P be a random carried throbbing-tentacle;
 		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is male][asshole][otherwise][vagina][end if]!";
@@ -54,6 +54,7 @@ To Compute Compulsions:
 		otherwise:
 			now P is penetrating vagina;
 		now another-turn is 1;
+	now autodrink is 0;
 	let V be a random cultist veil in the location of the player;
 	if the humiliation of the player >= 40000 and V is actually summonable:
 		say "You see a black veil and suddenly feel so ashamed that your worthless face is on display, as though you were a person and not simply a selection of holes to be used. You silently lift the veil over your face, as is proper.";
@@ -94,9 +95,9 @@ To compute broken sex of (M - a monster):
 		decrease broken-present-cooldown by seconds;
 	if B is body part and the sex addiction of the player > a random number between 12 and 18: [If B is nothing, this means there's no sex we can have right now.]
 		if M is interested:
-			say "Without a second thought, you crawl towards the [M].";
+			say "Without a second thought, you crawl towards [NameDesc of M].";
 		otherwise:
-			say "Without a second thought, you crawl towards the [M], gently stroking your head on [his of M] [if M is airborne]body[otherwise]leg[end if].";
+			say "Without a second thought, you crawl towards [NameDesc of M], gently stroking your head on [his of M] [if M is airborne]body[otherwise]leg[end if].";
 			now M is interested;
 		try direct-presenting B to M;
 		now broken-present-cooldown is 120;

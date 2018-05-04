@@ -55,15 +55,31 @@ To compute hypno effect of (Y - a hypno trap):
 	increase R by a random number between 0 and the intelligence of the player / 2;
 	if the player is immobile and R >= 0, increase R by 7; [There is always a chance of tearing eyes away even when immobile with low int]
 	if R > the intelligence of the player or the bimbo of the player > 14 or wanking is 1:
-		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch!  [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere!  [otherwise]You can't bring yourself to look away!  [end if]";
+		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere!  [otherwise]You can't bring yourself to look away!  [end if]";
 		say "[video content of Y]";
 		compute specific hypno effect of Y;
+		if woman-barbara is in the location of the player:
+			compute barbara hypno shared progression;
 		if the player is able to wank and the player is a bit horny and the player is not in danger and a random number between 5 and (19 - (the arousal of the player / 750)) < the sex addiction of the player and wanking is 0:
 			now auto is 1;
 			try masturbating;
 			now auto is 0;
 		arouse 750;
 	otherwise:
+		if woman-barbara is in the location of the player:
+			say "Do you block [NameDesc of woman-barbara][']s vision of the screen? [yesnolink]";
+			if the player consents:
+				if the woman-bimbo of woman-barbara > 5:
+					say "[BigNameDesc of woman-barbara] blinks out of [his of woman-barbara] trance.[line break][second custom style]'NO! NO STOPPING FUN! TAKE ME BACK!'[roman type][line break][big he of woman-barbara] takes an aggressive stance!";
+					now woman-barbara is angered;
+				otherwise:
+					say "[BigNameDesc of woman-barbara] blinks out of [his of woman-barbara] trance.[line break][second custom style]'Oh! Eek! Thank you so much for saving me, [NameBimbo]. I owe you one.'[roman type][line break]";
+					compute room leaving of woman-barbara;
+					bore woman-barbara;
+					FavourUp woman-barbara;
+				if the woman-status of woman-barbara is 94 and the delayed sluttification of woman-barbara >= 2, decrease the delayed sluttification of woman-barbara by 2;
+			otherwise:
+				compute barbara hypno solo progression;
 		say "You overpower the hypnotic urge and tear your eyes away from the screen, for now. You should try and leave the room before your eyes wander back!".
 
 To compute specific hypno effect of (Y - a hypno trap):

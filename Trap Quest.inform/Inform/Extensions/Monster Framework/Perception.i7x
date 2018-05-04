@@ -14,25 +14,21 @@ To decide which number is the default favour of (M - a monster):
 
 Chapter 1 - Check Perception
 
+hypno-curtsey-trigger is a number that varies.
+
 To check perception of (M - a monster):
 	if M is aware:
 		if M is interested:
-			if M is uniquely unfriendly:
-				if the babification of M is 1 and the previous-babification of M is 0:
-					compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
-					now the previous-babification of M is 1;
-				otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
-					compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
-					now the previous-objectification of M is 1;
+			if M is uniquely unfriendly and M is normally annoyed, resolve sudden appearance change of M;
 		otherwise:
 			now M is interested;
 			now the last-tripped of M is 0;
 			now the last-interaction of M is 0;
 			if M is the father:
 				calm M;
-				say "The [M] notices you![line break]The [M] seems to be waiting for something..."; [Waiting for you to give birth to their baby]
+				say "[BigNameDesc of M] notices you![line break][BigNameDesc of M] seems to be waiting for something..."; [Waiting for you to give birth to their baby]
 			otherwise if the scared of M > 0:
-				say "[if the class of the player is cheerleader]The [M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness]The [M] scoffs and starts to move in the other direction.[otherwise]The [M] notices you immediately and starts to run away![end if]";
+				say "[if the class of the player is cheerleader][BigNameDesc of M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness][BigNameDesc of M] scoffs and starts to move in the other direction.[otherwise][BigNameDesc of M] notices you immediately and starts to run away![end if]";
 			otherwise if the class of the player is vixen and there is a worn kimono and a random number between 1 and 4 > 1:
 				do nothing;
 			otherwise:
@@ -51,7 +47,14 @@ To check perception of (M - a monster):
 				if newbie tips is 1:
 					if M is friendly, say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them. If thirsty, you could even 'ask [M] [item style]for drink'.[roman type][line break][or][stopping]";
 					otherwise say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away!  If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
-				reset orifice selection of M. [Otherwise they would be biased towards doing the same thing again, which is lame.]
+				reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
+			if hypno-curtsey-trigger is 1 and the player is upright and M is intelligent friendly monster and there is a worn knee-length or longer crotch-in-place clothing:
+				let C be a random worn knee-length or longer crotch-in-place clothing;
+				say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
+				now auto is 1;
+				try displacing C;
+				now auto is 0;
+				if C is crotch-displaced, compute curtsey reaction of M.
 
 To compute correct perception of (M - a monster):
 	if diaper quest is 1, compute DQ perception of M;
@@ -63,6 +66,31 @@ To reset orifice selection of (M - a monster):
 
 To compute DQ perception of (M - a monster):
 	compute perception of M.
+
+To resolve sudden appearance change of (M - a monster):
+	if the babification of M is 1 and the previous-babification of M is 0:
+		compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
+		now the previous-babification of M is 1;
+	otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
+		compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
+		now the previous-objectification of M is 1.
+
+To compute curtsey reaction of (M - a monster):
+	if vagina is exposed or penis is exposed or asshole is exposed or (diaper quest is 1 and there is a worn currently visible diaper):
+		if diaper quest is 1, now the babification of M is 1;
+		otherwise now the objectification of M is 1;
+	if M is uniquely unfriendly and M is normally annoyed:
+		resolve sudden appearance change of M;
+	otherwise:
+		say CurtseyReactionFlav of M;
+		if M is unfriendly, say "[big he of M] takes an offensive stance!".
+
+To say CurtseyReactionFlav of (M - a monster):
+	if there are worn currently visible knickers:
+		say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'Erm, I can see your underwear.'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] seems completely unaffected[one of] by your sudden display of submissive humility[or][or][cycling].".
+		
 
 Chapter 2 - Aggro Framework
 
@@ -120,10 +148,10 @@ A monster has a number called previous-babification.
 
 To compute sudden objectification of (M - a monster):
 	if M is intelligent:
-		if M is raunchy, say "Something seems to change in the way the [M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
-		otherwise say "Something seems to change in the way the [M] is looking at you. [line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
+		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
+		otherwise say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
 	otherwise:
-		say "The [M] suddenly turns hostile!".
+		say "[BigNameDesc of M] suddenly turns hostile!".
 
 Definition: a monster (called M) is objectifying the player:
 	if diaper quest is 1, decide no;
@@ -145,9 +173,9 @@ To decide which number is the bimbo tolerance of (M - a monster):
 
 To compute sudden babification of (M - a monster):
 	if M is intelligent:
-		say "Something seems to change in the way the [M] is looking at you. [line break][speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
+		say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
 	otherwise:
-		say "The [M] suddenly turns hostile!".
+		say "[BigNameDesc of M] suddenly turns hostile!".
 
 Definition: a monster (called M) is babifying the player:
 	if diaper quest is 0, decide no;

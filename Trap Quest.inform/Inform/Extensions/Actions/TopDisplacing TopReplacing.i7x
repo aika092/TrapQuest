@@ -28,9 +28,9 @@ Carry out TopDisplacing:
 
 To say TopDisplaceFlav of (C - a clothing):
 	if the noun is low cut or higher:
-		say "You move your [noun] out of the way, freeing up access to your [BreastDesc]";
+		say "You move your [noun] out of the way, freeing up access to your [BreastDesc].";
 	otherwise:
-		say "You move your [noun] just enough to free up access to your [BreastDesc]".
+		say "You move your [noun] just enough to free up access to your [BreastDesc].".
 
 Report TopDisplacing:
 	compute player submission;
@@ -58,7 +58,7 @@ Check topReplacing:
 		if C is top level covering and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
 	if the player is wrist bound behind, say "You can't do this with your wrists bound behind you." instead;
 	repeat with M running through unfriendly interested released monsters in the location of the player:
-		unless the sleep of M > 0, say "The [M] gets in the way and stops you from fixing the position of your [noun]." instead.
+		unless the sleep of M > 0, say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
 
 Carry out topReplacing:
 	say "You pull the [noun] back into its proper position over your [BreastDesc].";

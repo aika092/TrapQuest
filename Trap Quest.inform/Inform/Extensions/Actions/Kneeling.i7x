@@ -72,9 +72,12 @@ REQUIRES COMMENTING
 Carry out kneeling:
 	now the stance of the player is 1;
 	repeat with X running through open topped vessels carried by the player:
-		if the doses of X > 0 and a random number between 1 and the dexterity of the player < 4 and seconds > 0:
+		let R be a random number between 1 and the dexterity of the player;
+		if debugmode > 0, say "[ShortVesselDesc of X]: Player Dex Roll [R] | 3.5 Spill Evasion Difficulty.";
+		if the doses of X > 0 and R < 4 and seconds > 0:
 			say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
 			now the doses of X is 0;
+			if the service-ready of bunny waitress ears is 1 and bunny waitress ears is worn, compute service spill punishment of bunny waitress ears;
 	if seconds > 0 and the class of the player is maid and there is a worn spray pink spraybottle:
 		compute a random pink spraybottle breaking;
 	let R be a random number between (the bimbo of the player / 2) and the bimbo of the player;
@@ -147,13 +150,13 @@ To compute correct kneeling reaction of (M - a monster):
 	otherwise compute kneeling reaction of M.
 
 To compute DQ kneeling reaction of (M - a monster): [Default boring reaction if none is defined.]
-	if M is intelligent, say "The [M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
-	otherwise say "The [M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";	
+	if M is intelligent, say "[BigNameDesc of M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
+	otherwise say "[BigNameDesc of M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";	
 	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 To compute kneeling reaction of (M - a monster): [Default boring reaction if none is defined.]
-	if M is intelligent, say "The [M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
-	otherwise say "The [M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";	
+	if M is intelligent, say "[BigNameDesc of M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
+	otherwise say "[BigNameDesc of M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";	
 	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 

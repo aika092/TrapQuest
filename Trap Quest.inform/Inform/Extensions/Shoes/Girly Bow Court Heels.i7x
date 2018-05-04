@@ -20,7 +20,6 @@ To say ClothingDesc of (C - a girly bow court heels):
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a girly bow court heels):
-	set up magic state of C;
 	let R be a random number between 1 and 8;
 	if C is cursed:
 		if R <= 2:

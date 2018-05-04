@@ -22,8 +22,8 @@ Check paying:
 	truncate jewellery to 8 entries;
 	let chosen jewellery be jewellery priced at X;
 	if the number of entries in chosen jewellery is 0, say "You don't have enough valuable gems to pay for that!" instead;
-	if the number of shopkeepers in Dungeon41 is 0, say "You need a shopkeeper here to pay for something." instead;
-	if a random shopkeeper is mating:
+	if shopkeeper is not in Dungeon41, say "You need a shopkeeper here to pay for something." instead;
+	if shopkeeper is mating:
 		repeat with C running through store clothing held by the player:
 			now C is normal;
 		now seconds is 2;
@@ -58,7 +58,7 @@ Carry out paying:
 		repeat with J running through chosen jewellery:
 			only destroy J;
 		now Z is normal;
-		if a random shopkeeper in Dungeon41 is friendly, say "[first custom style]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
+		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say "[first custom style]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
 		otherwise say "[first custom style]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].".
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 
@@ -67,7 +67,7 @@ Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopke
 REQUIRES COMMENTING
 
 +!]
-Report taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded and a random shopkeeper is not mating:
+Report taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating:
 	let P be the price of the noun;
 	if the total wealth of the player < P:
 		if debugmode is 1, say "Total wealth: [Total wealth of the player]. Item cost: [P].";
@@ -77,11 +77,11 @@ Report taking store clothing while the player is in Dungeon41 and Dungeon41 is g
 		truncate jewellery to 8 entries;
 		let chosen jewellery be jewellery priced at P;
 		if the number of held plentiful currently perceivable accessories is 0:
-			say "[first custom style]'I'm sorry, you can't afford that. But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[line break][first custom style] another method of... [']payment[']. No guarantees that it'll convince me, though.'[roman type][line break]";
+			say "[first custom style]'I'm sorry, you can't afford that. But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[first custom style] another method of... [']payment[']. No guarantees that it'll convince me, though.'[roman type][line break]";
 		otherwise if the number of entries of chosen jewellery is 0:
 			say "[first custom style]'Hmm, I'm having trouble working out how best you can afford that, my brain can't handle all those different possible combinations. Maybe try dropping a few items of jewellery then picking up the [noun] again?'[roman type][line break]";
 		otherwise:
-			say "[first custom style]'That will cost you your [chosen jewellery][line break][first custom style].'[roman type][line break]";
+			say "[first custom style]'That will cost you your [chosen jewellery][first custom style].'[roman type][line break]";
 			try paying.
 
 [!<DecideWhichNumberIsTheTotalValueOfJewellery>+

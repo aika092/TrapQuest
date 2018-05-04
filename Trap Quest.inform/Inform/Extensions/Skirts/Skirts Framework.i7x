@@ -6,7 +6,6 @@ To decide which number is the initial outrage of (C - a skirt):
 	decide on 2;
 
 To uniquely set up (S - a skirt):
-	set up magic state of S;
 	unless S is unique:
 		let R be a random number between 1 and 7;
 		if R is 1, now the magic-type of S is confidence;

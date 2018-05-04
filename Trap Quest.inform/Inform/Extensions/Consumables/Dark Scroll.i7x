@@ -13,12 +13,11 @@ Check casting:
 
 Carry out casting:
 	let M be a random woman in the location of the player;
-	let H be a random herald;
 	now seconds is 6;
 	say "You read out the scroll the Herald gave you. Pink light suddenly begins to glow around [the printed name of M], and she suddenly vanishes in a flash!";
 	vanish M;
-	now WomanBimbo is 6;
-	now the quest-status of H is 2;
+	now the woman-bimbo of woman-barbara is 6;
+	now the quest-status of herald is 2;
 	destroy the noun.
 
 Dark Scroll ends here.

@@ -2,8 +2,15 @@ Bags of Holding Framework by Bags of Holding begins here.
 
 A bag of holding is a kind of clothing. A bag of holding is unique. The printed name of bag of holding is usually "[TQlink of item described][clothing-title-before]bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of bag of holding is usually 0. A bag of holding is usually leather. A bag of holding has a number called hunger. The text-shortcut of bag of holding is "boh".
 
-To uniquely set up (C - a bag of holding):
+To set up magic state of (C - a bag of holding):[probably redundant]
 	do nothing.
+
+To set up (C - a bag of holding):
+	do nothing.
+
+Definition: a bag of holding (called C) is cursable:
+	if tough-shit is 1, decide yes;
+	decide no.
 
 To decide which number is not-in-bag:
 	unless there is a worn bag of holding, decide on the number of carried portable things;
@@ -96,9 +103,6 @@ Check taking off bag of holding:
 
 Check inserting bag of holding into something:
 	try taking off the noun instead.
-
-To set up (C - a bag of holding):
-	do nothing.
 
 To say BagHoldingWarning:
 	say "Food, drink and valuable jewellery cannot be placed in this".

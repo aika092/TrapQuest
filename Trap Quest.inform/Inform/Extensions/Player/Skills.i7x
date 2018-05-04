@@ -608,8 +608,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the doomed quest list rule:
-	let M be a random witch;
-	if the doom-warned of M is 1:
+	if the doom-warned of witch is 1:
 		say "Doom: A witch has warned you of a terrible doom coming, and asked you to collect a bell, book, and candle.";
 	otherwise if doom counter > 0:
 		say "Doom: You have a sense of impending doom.".

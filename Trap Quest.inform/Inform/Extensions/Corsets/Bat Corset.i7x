@@ -31,7 +31,7 @@ To decide which number is the intelligence-influence of (C - a bat corset):
 	decide on D.
 
 To uniquely set up (C - a bat corset):
-	set up magic state of C. [It never gets a magic enhancement.]
+	do nothing. [It never gets a magic enhancement, unlike other corsets]
 
 Definition: a bat corset (called C) is untransformable:
 	decide yes.

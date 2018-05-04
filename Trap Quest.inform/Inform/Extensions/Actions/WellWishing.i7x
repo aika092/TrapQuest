@@ -107,12 +107,9 @@ Carry out WellWishing:
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;
 	otherwise if the noun is not bottle:
-		let D be a random alive djinn;
-		repeat with M running through djinn:
-			if M is mating, now D is M;
-		if D is mating and the player is the donator, compute D wishing on the noun;
+		if djinn is mating and the player is the donator, compute djinn wishing on the noun;
 		otherwise say "[first custom style]Wish... denied.[roman type]";[possible punishment of fairy spawn or vine summon in the future?]
-	only destroy the noun.
+	unless the noun is vessel, only destroy the noun.
 
 [!<ReportWellWishing>+
 

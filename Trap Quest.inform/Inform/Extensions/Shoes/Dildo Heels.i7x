@@ -28,8 +28,5 @@ To say ClothingDesc of (C - a dildo heels):
 	say "A pair of [heel-height of C] inch platform shoes with glass dildos for heels.[if C is kicking and C is worn]You can feel that they would be brilliant for kicking enemies with![end if]";
 	say "[SteadinessDesc of C]".
 
-To uniquely set up (C - a dildo heels):
-	do nothing.
-
 Dildo Heels ends here.
 

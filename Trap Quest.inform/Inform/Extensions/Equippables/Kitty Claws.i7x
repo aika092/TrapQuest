@@ -30,22 +30,14 @@ To decide which number is the damage improvement of (W - a kitty claws):
 	decide on X.
 
 To compute attack of (W - a kitty claws) at (M - a monster):
-	if W is cursed, say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at the [M] with your [printed name of W]!";
-	otherwise say "[one of]You slash at the [M] with your cat claws.[or]You scratch the [M] with your sharp claws.[or]You meow as you swipe at the [M] with your kitty claws.[or]You hiss as you slice the [M] with your claws.[at random]".
+	if W is cursed, say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W]!";
+	otherwise say "[one of]You slash at [NameDesc of M] with your cat claws.[or]You scratch [NameDesc of M] with your sharp claws.[or]You meow as you swipe at [NameDesc of M] with your kitty claws.[or]You hiss as you slice [NameDesc of M] with your claws.[at random]".
 
-To curse (B - a kitty claws):
-	if B is not blessed:
-		if B is held, say "The claws of your [printed name of B] retract back into the fabric.";
-		now B is cursed;
-	otherwise:
-		now B is bland.
-
-To bless (B - a kitty claws):
-	if B is not cursed:
-		now B is blessed;
-	otherwise:
-		if B is held, say "Claws spring out of your [printed name of B]!";
-		now B is bland.
+To say CurseCurseFlav of (B - a kitty claws):
+	if B is held, say "The claws of your [printed name of B] retract back into the fabric.".
+	
+To say BlessBlandFlav of (B - a kitty claws):
+	if B is held, say "Claws spring out of your [printed name of B]!".
 
 Definition: a kitty claws (called C) is cat themed:
 	decide yes.

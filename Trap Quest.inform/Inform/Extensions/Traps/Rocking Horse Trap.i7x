@@ -119,7 +119,7 @@ Check dropping a rocking horse:
 
 [TODO: Unique reactions for demoness, fairy]
 To compute RockingReaction of (M - a monster):
-	say "The [M] chuckles as [he of M] watches you. [RockingReactionSpeech of M]You turn bright red.";
+	say "[BigNameDesc of M] chuckles as [he of M] watches you. [RockingReactionSpeech of M]You turn bright red.";
 	humiliate 50.
 
 To say RockingReactionSpeech of (M - a monster):

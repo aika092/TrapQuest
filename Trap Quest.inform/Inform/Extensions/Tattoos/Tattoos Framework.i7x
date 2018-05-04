@@ -9,6 +9,11 @@ Definition: a tattoo (called T) is drawable:
 
 Definition: a tattoo (called T) is eligible:
 	decide no.
+
+Definition: a tattoo (called T) is actually summonable:
+	if the number of worn tattoos is 0, decide no;
+	if T is drawable, decide yes;
+	decide no.
 	
 To say tattoo-desc of (T - a tattoo):
 	say "".
@@ -33,8 +38,8 @@ To say outrage-desc of (T - a tattoo):
 	if the unworn outrage of T is too humiliating:
 		let C be the concealer of T;
 		if C is clothing:
-			if the unworn outrage of C < the unworn outrage of T, say "[variable custom style]I'm so glad this is covering up my tattoo. I can't let anyone see it, it's too embarrassing![roman type][line break]";
-			otherwise say "[if T is not asshole tattoo][line break][variable custom style]I know it's an awful, trashy tattoo, but I think I'd actually rather have it on display than wear this ridiculous piece of clothing![roman type][line break]";
+			if the unworn outrage of C < the unworn outrage of T, say "[variable custom style]I'm so glad this [ShortDesc of C] is covering up my tattoo. I can't let anyone see it, it's too embarrassing![roman type][line break]";
+			otherwise say "[if T is not asshole tattoo][line break][variable custom style]I know it's an awful, trashy tattoo, but I think I'd actually rather have it on display than wear this ridiculous [ShortDesc of C]![roman type][line break]";
 		otherwise:
 			say "[variable custom style]How humiliating. I need to find something to wear to cover this up![roman type][line break]".
 
@@ -118,7 +123,7 @@ Definition: a chest tattoo (called A) is drawable:
 	decide yes.
 
 To decide which object is the concealer of (T - a chest tattoo):
-	decide on a random worn actually dense fully covering clothing.
+	decide on a random worn actually dense fully covering actually breast covering clothing.
 
 To decide which number is the initial outrage of (T - a chest tattoo):
 	decide on 8.

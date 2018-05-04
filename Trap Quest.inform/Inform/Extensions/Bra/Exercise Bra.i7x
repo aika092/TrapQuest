@@ -1,10 +1,10 @@
 Exercise Bra by Bra begins here.
 
-An exercise bra is a kind of bra. A modest exercise bra is a kind of exercise bra. A sexy exercise bra is a kind of exercise bra.
+An exercise bra is a kind of bra. A beige exercise bra is a kind of exercise bra. A sexy exercise bra is a kind of exercise bra.
 
 Figure of exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra1.png". Figure of sexy exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra2.png".
 
-There is 1 modest exercise bra. The text-shortcut of modest exercise bra is "ebr". There is 1 unique sexy exercise bra. The text-shortcut of sexy exercise bra is "sbr".
+There is 1 beige exercise bra. The text-shortcut of beige exercise bra is "ebr". There is 1 unique sexy exercise bra. The text-shortcut of sexy exercise bra is "sbr".
 
 The min size of an exercise bra is usually 4. The max size of an exercise bra is usually 10. The support of an exercise bra is usually 4. An exercise bra is high cut.
 
@@ -25,7 +25,7 @@ To say selfexaminetitle of (B - an exercise bra):
 To say selfexaminetitle of (B - a sexy exercise bra):
 	say "blue provocative exercise bra".
 
-To say ClothingDesc of (C - a modest exercise bra):
+To say ClothingDesc of (C - a beige exercise bra):
 	say "A secure beige [printed name of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back.".
 
 To say ClothingDesc of (C - a sexy exercise bra):
@@ -42,7 +42,7 @@ To decide which number is the initial outrage of (C - an exercise bra):
 To decide which number is the initial outrage of (C - a sexy exercise bra):
 	decide on 3.
 
-To decide which object is the potential-upgrade-target of (C - a modest exercise bra):
+To decide which object is the potential-upgrade-target of (C - a beige exercise bra):
 	if pregnancy fetish is 1 and a random number between 1 and 2 is 1, decide on a random off-stage maternity bra;
 	if a random number between 1 and 3 > 1, decide on a random off-stage sexy exercise bra;
 	decide on a random off-stage wonder bra.

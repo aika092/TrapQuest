@@ -40,20 +40,15 @@ Check SalveRubbing:
 		if O is clothing:
 			unless O is no protection, say "Your [printed name of O] is covering too much of your butt, you would need to [if O is displacable]displace[otherwise]remove[end if] it first." instead;
 	otherwise if the second noun is asshole:
-		let O be a random worn ass covering overdress;
 		if there is a worn true salve covering asshole:
 			say "You already have the [printed name of random worn true salve covering asshole] covering your [asshole]!" instead;
-		if there is a worn ass covering knickers:
-			say "Your [printed name of random worn ass covering knickers] are covering your [asshole]!" instead;
-		if O is clothing:
-			say "Your [O] is covering your [asshole]!" instead;
+		if there is ass covering clothing:
+			say "Your [printed name of random ass covering clothing] is covering your [asshole]!" instead;
 	otherwise if the second noun is vagina:
 		if there is a worn true salve covering vagina:
 			say "You already have the [printed name of random worn true salve covering vagina] covering your [vagina]!" instead;
-		if there is a worn pussy covering knickers:
-			say "Your [printed name of random worn pussy covering knickers] are covering your [vagina]!" instead;
-		if there is a worn pussy covering overdress:
-			say "Your [printed name of random worn pussy covering overdress] is covering your [vagina]!" instead;
+		if there is a pussy covering clothing:
+			say "Your [printed name of random pussy covering clothing] is covering your [vagina]!" instead;
 	otherwise if the noun is ectoplasm:
 		if the second noun is not clothing or the second noun is accessory or the second noun is headgear or the second noun is stockings or the second noun is heels, say "You can't really rub it on properly. It's like the slime refuses to soak into it!" instead;
 		if the second noun is worn, say "You can't really rub it on properly when you're already wearing it." instead;

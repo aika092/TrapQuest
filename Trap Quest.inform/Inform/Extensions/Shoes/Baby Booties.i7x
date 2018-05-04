@@ -29,9 +29,6 @@ To say ClothingDesc of (C - a baby booties):
 To decide which number is the dexterity-influence of (C - a baby booties):
 	decide on 1.
 
-To uniquely set up (C - a baby booties):
-	do nothing.
-
 To set up influence of (C - a baby booties):
 	now C is diaper-addiction-influencing.
 	

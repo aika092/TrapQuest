@@ -11,9 +11,11 @@ To say ShortDesc of (C - demon belt):
 To say ClothingDesc of (C - demon belt):
 	say "This leather belt has a weird symbol made out of hexagons on the front.".
 
-To set up (C - demon belt):
-	now the raw-magic-modifier of C is 2;
+To set up influence of (C - demon belt):
 	now C is strength-influencing.
+
+To set up magic state of (C - demon belt):
+	now the raw-magic-modifier of C is 2.
 
 Definition: demon belt (called C) is untransformable:
 	decide yes.

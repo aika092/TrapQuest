@@ -103,9 +103,9 @@ REQUIRES COMMENTING
 +!]
 To say SubmissionFlav of (M - a monster):
 	if M is intelligent:
-		say "The [M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you. ";
+		say "[BigNameDesc of M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you. ";
 	otherwise:
-		say "The [M] prepares to assault you. ".
+		say "[BigNameDesc of M] prepares to assault you. ".
 
 
 To make (M - a monster) expectant: [This is in a function so that you can override it in a particular monster's definition if required.]

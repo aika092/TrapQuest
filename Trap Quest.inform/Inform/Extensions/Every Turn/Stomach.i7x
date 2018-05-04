@@ -258,7 +258,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is full:
-	if active hunger mechanics is 0, decide no;
+	[if active hunger mechanics is 0, decide no;]
 	if (there is a worn total protection diaper or diaper lover >= 4) and (rectum > 3 or suppository > 0), decide yes;
 	decide no.
 
@@ -278,7 +278,7 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is grossed out:
 	if the player is upset about urine or the player is upset about mess, decide yes;
-	if the location of the player is Dungeon19, decide yes;
+	if diaper quest is 0 and the location of the player is Dungeon19, decide yes;
 	decide no.
 
 [!<YourselfIsUpsetAboutMess>+
@@ -377,6 +377,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is active hunger mechanics:
 	if the latex-transformation of the player > 4, decide on 0;
+	if diaper quest is 1 and diaper lover >= 3, decide on 0;
 	decide on 1.
 
 [!<YourselfIsHungry>+

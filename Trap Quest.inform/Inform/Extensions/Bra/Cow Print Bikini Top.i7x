@@ -15,6 +15,9 @@ To say ClothingDesc of (C - a cow print bikini top):
 
 To decide which number is the initial outrage of (C - a cow print bikini top):
 	decide on 1.
+
+Definition: a cow print bikini top (called C) is cow themed:
+	decide yes.
 	
 To compute periodic effect of (B - a cow print bikini top):
 	BraGrow B;

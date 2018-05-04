@@ -15,7 +15,7 @@ Carry out TQeating fudge:
 	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]!  ";
 	FatigueDown 160;
 	bodyheal 4;
-	if a random number between 1 and 4 is 1:
+	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper lover < 3):
 		say "[if fudge-poison-timer > 0]You feel more of the dexterity draining poison enter your veins.[otherwise]But your limbs suddenly feel much heavier. The fudge was poisoned![end if]";
 		increase fudge-poison-timer by default-candy-duration / 2.
 

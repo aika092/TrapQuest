@@ -253,8 +253,8 @@ To decide which number is the weight of (XXX - belly):
 		let bellymod be 100;
 		if the bellyskill of the player is 1, decrease bellymod by 66;
 		if there is a worn maternity dress or the class of the player is fertility goddess:
-			let M be a random overdress worn by the player;
-			if M is cursed:
+			let M be a random worn overdress;
+			if M is cursed overdress:
 				if the pregnancy of the player is 0:
 					increase bellymod by 25;
 				otherwise:
@@ -603,11 +603,11 @@ To Assfill (X - a number):
 		otherwise now the body soreness of the player is 0;
 	if there is a worn slimegirl:
 		let M be a random slimegirl;
-		say "The [semen] flowing into your [asshole] is consumed by the [M]!  She communicates with you telepathically.";
+		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of M]!  She communicates with you telepathically.";
 		say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of M > 2]!  I feel better now...'[otherwise]!'[end if][roman type][line break]";
 		now the hunger of M is 0;
 		if the intensity of M > 0:
-			say "You feel the negative effects of the [M] on your mental state fade away.";
+			say "You feel the negative effects of [NameDesc of M] on your mental state fade away.";
 			now the intensity of M is 0;
 		now the timetaken of M is 0;
 		now X is 0;
@@ -618,7 +618,6 @@ To Assfill (X - a number):
 	overflow;
 	if L is clothing and L is tethering, end tethering.
 
-	
 To Assfill (X - a number) with (L - semen):
 	Assfill X.
 
@@ -642,6 +641,9 @@ To assfill (X - a number) medium eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the medium egg count of belly by 1;
+	if carrot daggers is worn and carrot daggers is not blessed and there is a live thing penetrating asshole:
+		bless carrot daggers;
+		say "You sense that your [ShortDesc of carrot daggers] have become more powerful!";
 	overflow;
 
 [!<AssFillXLargeEggs>+
@@ -1178,7 +1180,10 @@ To lay (X - a number) medium eggs:
 			otherwise if the soreness of asshole > 7:
 				display figure of egg laying 4;
 			otherwise:
-				display figure of egg laying 3.
+				display figure of egg laying 3;
+	if carrot daggers is worn and carrot daggers is not cursed:
+		curse carrot daggers;
+		say "You sense that your [ShortDesc of carrot daggers] [if carrot daggers is cursed]are now stuck to your hands[otherwise]have lost their sharp tips[end if]!".
 
 [!<LayXLargeEggs>+
 
@@ -1445,7 +1450,7 @@ To compute enema floor reaction of (M - a monster):
 	if M is unfriendly and diaper quest is 1:
 		now M is interested;
 	otherwise if M is friendly and M is interested:
-		say "The [M] turns to leave you alone.";
+		say "[BigNameDesc of M] turns to leave you alone.";
 		distract M.
 
 [!<SayEnemaFloorReactionFlavOfMonster>+
@@ -1454,7 +1459,7 @@ REQUIRES COMMENTING
 
 +!]
 To say EnemaFloorReactionFlav of (M - a monster):
-	say "The [M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if]. [line break][speech style of M]'Disgusting[if M is unfriendly and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if]. [line break][speech style of M]'Disgusting[if M is unfriendly and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
 
 [!<ComputeEnemaReactionOfMonsterIntoClothing>+
 

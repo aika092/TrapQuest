@@ -29,18 +29,6 @@ To compute periodic effect of (P - an undies):
 				PenisDown 1;
 				say "You feel your [printed name of P] [Shrink] your manhood to better conceal your [ShortDesc of penis]!".
 
-Definition: an undies (called C) is potentially penis covering:[doesn't check for density]
-	unless C is pussy covering clothing, decide no;
-	if C is crotch-displaced, decide no;
-	if there is a worn chastity cage, decide yes;
-	if the size of penis > the armour of C, decide no; [unbound penises can poke out of small undies]
-	decide yes.
-
-Definition: an undies (called C) is actually penis covering:
-	unless C is potentially penis covering clothing, decide no;
-	if C is actually dense, decide yes;
-	decide no.
-
 Report wearing undies:
 	if the armour of the noun < the size of penis:
 		say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
@@ -59,14 +47,10 @@ This is the remove inappropriate undies rule:
 	now grey-hi-cut briefs is in Holding Pen;
 	now blue-polka-dot briefs is in Holding Pen;
 	now green-briefs is in Holding Pen;
-	repeat with B running through pink panties:
-		now B is in Holding Pen;
-	repeat with B running through black sucking cocks panties:
-		now B is in Holding Pen;
-	repeat with B running through pale panties:
-		now B is in Holding Pen;
-	repeat with B running through green panties:
-		now B is in Holding Pen.
+	now pink-panties is in Holding Pen;
+	now black-sucking-cocks-panties is in Holding Pen;
+	now pale-panties is in Holding Pen;
+	now green-panties is in Holding Pen.
 The remove inappropriate undies rule is listed in the diaper quest fix rules.
 
 

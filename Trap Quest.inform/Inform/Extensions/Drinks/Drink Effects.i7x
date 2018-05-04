@@ -73,10 +73,10 @@ To compute drinking (X - a bottle):
 				curse X;
 				say "You sense that the blessing of your [X] has been nullified.";
 			now the curse-ID of X is sure;
-		otherwise if X is golden chalice and X is not cursed:
+		otherwise if X is gold chalice and X is not cursed:
 			if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
 			otherwise say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping]  ";
-			say "Luckily, the golden chalice seems to somehow absorb the curse!";
+			say "Luckily, the gold chalice seems to somehow absorb the curse!";
 			now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
 			curse X;
 			now the curse-ID of X is sure;
@@ -97,7 +97,7 @@ To compute drinking (X - a bottle):
 	if X is blessed:
 		let A be a random number between 1 and 3;
 		if the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed, now A is 1;
-		if X is golden chalice, now A is 2;
+		if X is gold chalice, now A is 2;
 		if A is 1:
 			curse X;
 			if the curse-ID of X is sure, say "You feel the blessing of your [X] expire.".

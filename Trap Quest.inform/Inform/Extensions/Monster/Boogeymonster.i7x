@@ -1,63 +1,69 @@
 Boogeymonster by Monster begins here.
 
-A boogeymonster is a kind of dungeon boss. A boogeymonster is usually neuter. The leftover-type of a boogeymonster is usually 107.
+boogeymonster is a dungeon boss. boogeymonster is neuter. boogeymonster is captive. The leftover-type of boogeymonster is usually 107.
 
-1 captive boogeymonster is in Dungeon36. Figure of boogeymonster is the file "NPCs/Bosses/boogeymonster1.png". The printed name of boogeymonster is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]boogeymonster[if the item described is captive] (caged)[otherwise if the sleep of the item described > 0] (fast asleep)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of boogeymonster is usually "[BoogeymonsterDesc]". The text-shortcut of boogeymonster is "boo". Understand "boogey" as boogeymonster.
+boogeymonster is in Dungeon36. Figure of boogeymonster is the file "NPCs/Bosses/boogeymonster1.png". The text-shortcut of boogeymonster is "boo". Understand "boogey" as boogeymonster.
 
-Definition: A boogeymonster (called M) is dungeon dwelling:
+To say ShortDesc of (M - boogeymonster):
+	say "boogeymonster".
+	
+To say MediumDesc of (M - boogeymonster):
+	say "boogeymonster[if the item described is captive] (caged)[end if]".
+
+Definition: boogeymonster (called M) is dungeon dwelling:
 	if diaper quest is 0, decide no;
 	decide yes.
 
-To say BoogeymonsterDesc:
-	if images visible is 1, display the figure of boogeymonster;
-	say "This giant green monster looks like something straight out of a nightmare[if item described is captive]. Luckily it is currently stuck inside a giant cage[end if].";
+To decide which figure-name is the monster-image of (M - boogeymonster):
+	decide on figure of boogeymonster.
 
-To set up (M - a boogeymonster):
+To say MonsterDesc of (M - boogeymonster):
+	say "This giant green monster looks like something straight out of a nightmare[if M is captive]. Luckily it is currently stuck inside a giant cage[end if].";
+
+To set up (M - boogeymonster):
 	if M is alive: [We don't want to reset the boogeymonster if he's dead]
 		reset M;
 		now the monstersetup of M is 1;
 		now the difficulty of M is 11;
 		now the health of M is the maxhealth of M.
 
-To decide which number is the girth of (M - a boogeymonster):
+To decide which number is the girth of (M - boogeymonster):
 	decide on 8.
 
 This is the spawn initial boogeymonster rule:
 	if debugmode > 1, say "Now summoning boogeymonster.";
 	if diaper quest is 0:
-		repeat with M running through boogeymonsters:
-			remove M from play;
+		remove boogeymonster from play;
 	otherwise:
-		let M be a random boogeymonster;
-		if M is released and M is alive, summon M in the dungeon.
+		if boogeymonster is released and boogeymonster is alive, summon boogeymonster in the dungeon.
 The spawn initial boogeymonster rule is listed in the setting up dungeon monsters rules.
 
-Definition: a boogeymonster (called M) is concealment immune: [Can the monster ignore salves of concealment, butt slut, etc.]
+Definition: boogeymonster (called M) is concealment immune: [Can the monster ignore salves of concealment, butt slut, etc.]
 	decide yes.
 
-Definition: a boogeymonster (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
+Definition: boogeymonster (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
 	decide yes.
 
 To say LeftoverDesc (N - 107):
-	say "The corpse of a boogeymonster lies on the ground. The back of its skull is missing, and a huge bloody hole is all that remains of its brain.[line break]".
+	say "The corpse of boogeymonster lies on the ground. The back of its skull is missing, and a huge bloody hole is all that remains of its brain.[line break]".
 
 Part 1 - Perception
 
-To compute perception of (M - a boogeymonster):
-	say "The [M] notices you[if the player is sluttily dressed][one of], even though you're not completely sure if it has more the mind of a beast or the mind of a man.[or].[stopping][otherwise]![end if]";
+To compute perception of (M - boogeymonster):
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of], even though you're not completely sure if it has more the mind of a beast or the mind of a man.[or].[stopping][otherwise]![end if]";
 	anger M;
 	if M is released:
 		say "It does not look friendly. In fact, you can see some malice in its eyes.";
 	otherwise:
 		say "It snarls angrily at its captivity.".
 
-To say BecomesBoredFlav of (M - a boogeymonster):
-	say "The [M] seems to lose interest in you for now.".
+To say BecomesBoredFlav of (M - boogeymonster):
+	say "[BigNameDesc of M] seems to lose interest in you for now.".
 	
 	
 Part 2 - Motion, Seeking and Sleeping
 
-To compute motion of (M - a boogeymonster):
+To compute motion of (M - boogeymonster):
 	if M is released:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
@@ -67,28 +73,21 @@ To compute motion of (M - a boogeymonster):
 			try M going A;
 		MonsterStomp M.
 		
-To compute (M - a boogeymonster) seeking (D - a direction):
+To compute (M - boogeymonster) seeking (D - a direction):
 	if M is released, try M going D.
-	
-To compute sleeping of (M - a boogeymonster): [This will need to change if sleep / boredom / scared mechanics change]
-	if the scared of M > 0:
-		decrease the scared of M by seconds;
-		if the scared of M < 0, now the scared of M is 0;
-	if the boredom of M > 0:
-		decrease the boredom of M by seconds;
-		if the boredom of M <= 0:
-			now the boredom of M is 0;
+
+To compute sleep reduction of (M - boogeymonster):
 	if the sleep of M > 0:
 		decrease the sleep of M by seconds;
 		if the sleep of M <= 0:
 			now the sleep of M is 0;
-			if M is in the location of the player, say "The [M] wakes up!". [Very slight deviation from the default.]
-			
+			if M is in the location of the player, say "[BigNameDesc of M] wakes up!".[Very slight deviation from the default.]
+
 
 Part 3 - Boogeymonster Stomp
 
 [To compute (M - a monster) stomping (N - a monster): Consider this a template!
-	say "The [M] kills the [N]!";
+	say "[BigNameDesc of M] kills the [N]!";
 	destroy N;
 	let L be a random off-stage leftover;
 	now L is in the location of M;
@@ -98,7 +97,7 @@ Part 4 - Combat
 
 Chapter 1 - Attack
 
-The boogeymonster priority attack rules is a rulebook. The priority attack rules of a boogeymonster is usually the boogeymonster priority attack rules.
+The boogeymonster priority attack rules is a rulebook. The priority attack rules of boogeymonster is usually the boogeymonster priority attack rules.
 
 This is the boogeymonster still caged rule:
 	if current-monster is captive:
@@ -107,7 +106,7 @@ This is the boogeymonster still caged rule:
 The boogeymonster still caged rule is listed first in the boogeymonster priority attack rules.
 
 To say CagedBoogeyMonsterFlav:
-	say "[one of]The [current-monster] angrily shakes the metal bars of his cage.[or]The [current-monster] paws at the floor of his cage, snarling with anger.[or]The [current-monster] snarls angrily at his captive state.[or]The [current-monster] bangs at the bars of his cage. The sound of clanging metal rings through the room.[or]The [current-monster] throws himself at the bars of his cage. You try to ignore his angry snarling.[in random order]".
+	say "[one of][BigNameDesc of current-monster] angrily shakes the metal bars of his cage.[or][BigNameDesc of current-monster] paws at the floor of his cage, snarling with anger.[or][BigNameDesc of current-monster] snarls angrily at his captive state.[or][BigNameDesc of current-monster] bangs at the bars of his cage. The sound of clanging metal rings through the room.[or][BigNameDesc of current-monster] throws himself at the bars of his cage. You try to ignore his angry snarling.[in random order]".
 
 This is the boogeymonster prioritises defeating others rule:
 	if the number of monsters in the location of current-monster > 1: [1 is going to be the boogeymonster itself]
@@ -115,24 +114,24 @@ This is the boogeymonster prioritises defeating others rule:
 		rule succeeds.
 The boogeymonster prioritises defeating others rule is listed last in the boogeymonster priority attack rules.
 
-To compute the flying player taunting of (M - a boogeymonster):
-	say "[one of]The [M] clearly refuses to move from your location until you stop floating.[or][stopping]".
+To compute the flying player taunting of (M - boogeymonster):
+	say "[one of][BigNameDesc of M] clearly refuses to move from your location until you stop floating.[or][stopping]".
 
-The latex punishment rule of a boogeymonster is usually the no latex punishment rule.
+The latex punishment rule of boogeymonster is usually the no latex punishment rule.
 
-To say LandingTaunt of (M - a boogeymonster):
-	say "The [M] growls with impatience.";
+To say LandingTaunt of (M - boogeymonster):
+	say "[BigNameDesc of M] growls with impatience.";
 	humiliate 50.
 
-To say StrikingSuccessFlav of (M - a boogeymonster) on (B - a body part):
-	say "The [M] strikes your [TargetName of B] with a spiked tentacle!";
+To say StrikingSuccessFlav of (M - boogeymonster) on (B - a body part):
+	say "[BigNameDesc of M] strikes your [TargetName of B] with a spiked tentacle!";
 	BodyRuin 1. [The boogeymonster automatically does 1 damage, and 2 if he hits.]
 		
-To say StrikingFailureFlav of (M - a boogeymonster) on (B - a body part):
-	say "You try to dodge the [M]'s tentacle, but it still manages to land a glancing blow!  Ouch!";
+To say StrikingFailureFlav of (M - boogeymonster) on (B - a body part):
+	say "You try to dodge [NameDesc of M]'s tentacle, but it still manages to land a glancing blow!  Ouch!";
 	BodyRuin 1.
 
-To compute striking attack of (M - a boogeymonster):
+To compute striking attack of (M - boogeymonster):
 	let B be a random body part;
 	if B is a fuckhole, now B is hips;
 	if B is hair, now B is breasts;
@@ -145,30 +144,30 @@ To compute striking attack of (M - a boogeymonster):
 
 To compute (M - a monster) attacking (C - a clothing):
 	if C is displacable:
-		say "The [M] pulls the crotch of your [printed name of C] to the side!";
+		say "[BigNameDesc of M] pulls the crotch of your [printed name of C] to the side!";
 		displace C;
 	otherwise:
-		say "The [M] rips off your [printed name of C]!";
+		say "[BigNameDesc of M] rips off your [printed name of C]!";
 		destroy C.
 	
-To compute (M - a boogeymonster) attacking (C - a clothing):
-	say "The [M] tears off your [printed name of C]!";
+To compute (M - boogeymonster) attacking (C - a clothing):
+	say "[BigNameDesc of M] tears off your [printed name of C]!";
 	destroy C.
 
 Chapter 2 - Nightmares
 
-boogeymonster-nightmare is a kind of diaper punishment. The priority of a boogeymonster-nightmare is 5.
+boogeymonster-nightmare is a kind of diaper punishment. The priority of boogeymonster-nightmare is 5.
 
-Definition: a boogeymonster-nightmare (called P) is appropriate:
+Definition: boogeymonster-nightmare (called P) is appropriate:
 	if current-monster is not boogeymonster, decide no;
 	decide yes.
 
 To say NightmareStartFlav:
-	say "The [current-monster]'s body looms over yours and then envelops it, shrouding you in darkness. Suddenly, you hear a voice in your head. [line break][first custom style]'I AM YOUR NIGHTMARE...'[roman type][line break]And then the ground disappears, and [one of]you are floating through nothingness... or are you just hovering still?  It's hard to tell[or]once again you are sent through the darkness to another reality[stopping]. ";
+	say "[BigNameDesc of current-monster]'s body looms over yours and then envelops it, shrouding you in darkness. Suddenly, you hear a voice in your head. [line break][first custom style]'I AM YOUR NIGHTMARE...'[roman type][line break]And then the ground disappears, and [one of]you are floating through nothingness... or are you just hovering still?  It's hard to tell[or]once again you are sent through the darkness to another reality[stopping]. ";
 
 Section - School Nightmare
 
-boogeymonster-nightmare-school is a boogeymonster-nightmare.
+boogeymonster-nightmare-school is boogeymonster-nightmare.
 
 The priority of boogeymonster-nightmare-school is 3. [This is super harsh so doesn't ever happen first. It happens after all the other eligible ones have happened.]
 
@@ -192,7 +191,7 @@ To compute punishment of (P - boogeymonster-nightmare-school):
 	now the bladder of the player is 0;
 	now the urine-soak of D is the soak-limit of D;
 	if diaper lover >= 4, now the mess of D is 30;
-	say "And then you do - or rather, the scene disappears. You are lying on your back in the [location of the player], but now wearing a [D]. It feels impossibly heavy, and you feel extremely fatigued. The [M] is nowhere to be seen.";
+	say "And then you do - or rather, the scene disappears. You are lying on your back in the [location of the player], but now wearing a [D]. It feels impossibly heavy, and you feel extremely fatigued. [BigNameDesc of M] is nowhere to be seen.";
 	now the fatigue of the player is the buckle threshold of the player;
 	let N be a random alive gladiator;
 	if N is nothing, now N is a random alive royal guard;
@@ -215,7 +214,7 @@ To compute punishment of (P - boogeymonster-nightmare-school):
 
 Section - Airplane Nightmare
 
-boogeymonster-nightmare-airplane is a boogeymonster-nightmare.
+boogeymonster-nightmare-airplane is boogeymonster-nightmare.
 
 The priority of boogeymonster-nightmare-airplane is 4.
 
@@ -239,7 +238,7 @@ To compute punishment of (N - boogeymonster-nightmare-airplane):
 	let P be a random white pacifier;
 	unless P is worn:
 		destroy P;
-		repeat with B running through worn ballgags:
+		repeat with B running through worn clothing penetrating face:
 			destroy B;
 		summon P cursed;
 	if rectum > 1, now rectum is 1;
@@ -271,7 +270,7 @@ To compute punishment of (N - boogeymonster-nightmare-airplane):
 		DiaperAddictUp 2;
 		if diaper lover >= 3, now rectum is 10;
 		now the bladder of the player is 10;
-	say "You open your eyes. You are lying on your back in the [location of the player], but now wearing a [D][if F is worn], [F][end if][if B is worn], [printed name of B][end if] and [P]. The [ShortDesc of D] feels extremely heavy[if the player is bursting], you feel desperate for the toilet[end if], and you feel extremely fatigued. The [M] is nowhere to be seen.";
+	say "You open your eyes. You are lying on your back in the [location of the player], but now wearing a [D][if F is worn], [F][end if][if B is worn], [printed name of B][end if] and [P]. The [ShortDesc of D] feels extremely heavy[if the player is bursting], you feel desperate for the toilet[end if], and you feel extremely fatigued. [BigNameDesc of M] is nowhere to be seen.";
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
@@ -280,7 +279,7 @@ To compute punishment of (N - boogeymonster-nightmare-airplane):
 
 Section - TV Nightmare
 
-boogeymonster-nightmare-tv is a boogeymonster-nightmare.
+boogeymonster-nightmare-tv is boogeymonster-nightmare.
 
 Figure of boogeymonster tv cutscene is the file "Special/Cutscene/cutscene-boogeymonster3.png".
 
@@ -307,7 +306,7 @@ To compute punishment of (N - boogeymonster-nightmare-tv):
 		summon P cursed;
 	now the bladder of the player is 0;
 	now the urine-soak of D is the soak-limit of D;
-	say "You open your eyes. You are lying on your back in the [location of the player], but now wearing a [D][if P is worn] and [P][end if]. The [ShortDesc of D] feels extremely heavy, and you feel extremely fatigued. The [M] is nowhere to be seen.";
+	say "You open your eyes. You are lying on your back in the [location of the player], but now wearing a [D][if P is worn] and [P][end if]. The [ShortDesc of D] feels extremely heavy, and you feel extremely fatigued. [BigNameDesc of M] is nowhere to be seen.";
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
@@ -317,7 +316,7 @@ To compute punishment of (N - boogeymonster-nightmare-tv):
 
 Section - Magic Marker Nightmare
 
-boogeymonster-nightmare-magic-marker is a boogeymonster-nightmare.
+boogeymonster-nightmare-magic-marker is boogeymonster-nightmare.
 
 Definition: boogeymonster-nightmare-magic-marker (called P) is appropriate:
 	if current-monster is not boogeymonster, decide no;
@@ -352,13 +351,11 @@ To compute punishment of (N - boogeymonster-nightmare-magic-marker):
 	say "[first custom style]'How could you, [NameBimbo]?  We trusted you with our son and our house and this is what you get up to behind our backs?!  No wonder our Devlin is so much less mature than his peers, with you for a role model. Get off our property right now, and never come back.'[roman type][line break][second custom style]'Noooooo!'[roman type]  You whine as you are forcibly ejected from their home, onto the strange street in a foreign neighbourhood, the next city over from your own house - over an hour's drive away. In the cold dark wearing nothing but a superheavy overflowing diaper, a baby bib that hardly covers your chest, and a rattle you can't let go of. Who knows how long it'll be before you can find somewhere to wash it off!  You fall to the ground, close your eyes and begin to cry.";
 	let T be a random change-self tattoo;
 	if T is worn:
-		say "You open your eyes. You are lying on your back in the [location of the player]. The [M] is nowhere to be seen.";
+		say "You open your eyes. You are lying on your back in the [location of the player]. [BigNameDesc of M] is nowhere to be seen.";
 	otherwise:
 		summon T;
-		if diaper lover >= 3: 
-			now T is a random cum-when-messing tattoo;
-			summon T;
-		say "You open your eyes. You are lying on your back in the [location of the player], but you now have a [T][if T is cum-when-messing tattoo] and a [random change-self tattoo][end if]!  The [M] is nowhere to be seen.";
+		if diaper lover >= 3, summon cum-when-messing tattoo;
+		say "You open your eyes. You are lying on your back in the [location of the player], but you now have a [T][if cum-when-messing tattoo is worn] and a [cum-when-messing tattoo][end if]!  [BigNameDesc of M] is nowhere to be seen.";
 	regionally place M;
 	distract M;
 	increase the raw delicateness of the player by 3;
@@ -367,7 +364,7 @@ To compute punishment of (N - boogeymonster-nightmare-magic-marker):
 
 Section - Courtroom Nightmare
 
-boogeymonster-nightmare-courtroom is a boogeymonster-nightmare.
+boogeymonster-nightmare-courtroom is boogeymonster-nightmare.
 
 Definition: boogeymonster-nightmare-courtroom (called P) is appropriate:
 	if current-monster is not boogeymonster, decide no;
@@ -410,7 +407,7 @@ To compute punishment of (N - boogeymonster-nightmare-courtroom):
 	let A be a random off-stage pair of anklecuffs;
 	if A is actually summonable, summon A cursed;
 	now the mess of D is 20;
-	say "When you open your eyes, you find yourself lying on your back in the [location of the player], wearing an impossibly full [ShortDesc of D], covered by a [ShortDesc of O][if A is worn clothing]. A pair of anklecuffs keeps your feet locked close together[end if]. The [M] is nowhere to be seen.";[Plain white diaper and pink onesie, maybe bondage?]
+	say "When you open your eyes, you find yourself lying on your back in the [location of the player], wearing an impossibly full [ShortDesc of D], covered by a [ShortDesc of O][if A is worn clothing]. A pair of anklecuffs keeps your feet locked close together[end if]. [BigNameDesc of M] is nowhere to be seen.";[Plain white diaper and pink onesie, maybe bondage?]
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
@@ -420,7 +417,7 @@ To compute punishment of (N - boogeymonster-nightmare-courtroom):
 
 Chapter 3 - Damage
 
-To compute damage of (M - a boogeymonster):
+To compute damage of (M - boogeymonster):
 	if the health of M > 0:
 		if M is uninterested:
 			say "It growls viciously!  Uh-oh...";
@@ -432,17 +429,17 @@ To compute damage of (M - a boogeymonster):
 	otherwise:
 		compute death of M;
 
-To compute unique death of (M - a boogeymonster):
+To compute unique death of (M - boogeymonster):
 	let B be a random off-stage tincture of strength;
-	say "The [M] falls to the ground, defeated. [if B is tincture]He dropped a [printed name of B]![end if]";
+	say "[BigNameDesc of M] falls to the ground, defeated. [if B is tincture]He dropped a [printed name of B]![end if]";
 	if B is tincture:
 		now B is in the location of the player;
 		compute autotaking B.
 
-To uniquely destroy (M - a boogeymonster):
+To uniquely destroy (M - boogeymonster):
 	now M is captive.
 
-To loot (M - a boogeymonster):
+To loot (M - boogeymonster):
 	let X be a random off-stage plentiful ring;
 	unless X is nothing:
 		now X is in the location of the player;

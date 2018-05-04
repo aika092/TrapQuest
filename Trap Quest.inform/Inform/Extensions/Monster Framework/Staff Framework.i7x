@@ -50,10 +50,13 @@ To regionally place (M - a staff member):
 Definition: a staff member (called M) is human:
 	decide yes.
 
+Definition: a staff member (called M) is uniquely unfriendly:
+	decide no.
+
 To compute perception of (M - a staff member):
 	now M is interested;
 	calm M;
-	say "The [M] notices you[if the player is sluttily dressed]. [otherwise]!  [end if]";
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed]. [otherwise]!  [end if]";
 	if detention chair is grabbing the player:
 		compute detention chair tease of M;
 	otherwise if armband is worn:
@@ -73,12 +76,12 @@ To compute (M - a staff member) reacting to armband replacement:
 	calm M.
 
 To say ArmbandCalming of (M - a staff member):
-	if M is unfriendly, say "The [M] calms down.".
+	if M is unfriendly, say "[BigNameDesc of M] calms down.".
 
 Part - Protection
 
 To compute (M - a staff member) protecting against (X - a monster):
-	say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING!'[end if][roman type][line break]The [M] turns aggressive.";
+	say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
 	anger M.
 
 Part - Combat
@@ -98,7 +101,7 @@ The unique punishment rule of a staff member is usually the staff member unique 
 Part - Defeat
 
 To compute unique death of (M - a staff member):
-	say "The [M] slumps to the ground. Before [he of M] disappears, [he of M] mutters some words under [his of M] breath. Suddenly your [armband] fizzles into thin air!";
+	say "[BigNameDesc of M] slumps to the ground. Before [he of M] disappears, [he of M] mutters some words under [his of M] breath. Suddenly your [armband] fizzles into thin air!";
 	now armband is in Holding Pen.
 
 
@@ -157,6 +160,13 @@ An emerald-teacher is a kind of teacher. A ruby-teacher is a kind of teacher. A 
 
 The printed name of teacher is "[if item described is in the location of the player][TQlink of item described][end if][input-style]teacher[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
 
+To say NameDesc of (M - a teacher):
+	say "[input-style][teacher-name of M][roman type]".
+To say BigNameDesc of (M - a teacher):
+	say "[input-style][teacher-name of M][roman type]".
+	
+Definition: a teacher (called M) is fetish appropriate:
+	decide yes.
 
 Part - Lessons
 
@@ -200,6 +210,7 @@ To compute potential lesson:
 				compute detention of lesson-teacher of chosen-lesson;
 			otherwise:
 				set up chosen-lesson;
+				if image cutscenes is 1, display monster-image of lesson-teacher of chosen-lesson;
 				compute teaching of chosen-lesson;
 			now class-time is 300.
 
@@ -230,10 +241,10 @@ To compute detention of (M - a staff member):
 	otherwise compute chair detention of M.
 
 To say LateDetention of (M - a staff member):
-	say "The [M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE!  Class is already over!  It's detention for you, young Miss. Come with me now!'[roman type][line break]".
+	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE!  Class is already over!  It's detention for you, young Miss. Come with me now!'[roman type][line break]".
 
 To say GenericDetention of (M - a staff member):
-	say "The [M] looks furious. [line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
+	say "[BigNameDesc of M] looks furious. [line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
 
 dq-staff-detention is a diaper punishment.  the priority of dq-staff-detention is 5.
 
@@ -269,7 +280,7 @@ To compute chair detention of (M - a staff member):
 	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit.[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
 	if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	if (diaper quest is 1 or a random number between 0 and 3 < diaper lover) and the number of worn diapers is 0, compute DQChairSetup of M;
-	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4]The [M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise]The [M] drags you over to the [detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise], quickly binding[end if] you in place with the straps. ";
+	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise], quickly binding[end if] you in place with the straps. ";
 	if the player is able to speak:
 		say "[if the player is able to speak][line break][speech style of M]'[one of]These are the rules: You must announce out loud whenever you orgasm, and whenever someone speaks to you, you must say [']Thank you for putting me in my place, Sir or Ma[']am.'[or]I[']d tell you the rules, but unfortunately we have been through this before.'[stopping][roman type][line break][end if]She points to a camera in the upper corner of the room, facing the chair. [line break][speech style of M]I will be watching. I will release you when I believe you have learned your lesson.'[roman type][line break]";
 	otherwise:
@@ -310,7 +321,7 @@ To compute wand chair detention:
 		let M be a random staff member in Holding Pen;
 		if M is staff member:
 			now M is in the location of the player;
-			say "The [M] returns and after looking at your exhausted state gives you a wide smirk. [big he of M] doesn't say anything but just releases you from the bindings before sauntering off.";
+			say "[BigNameDesc of M] returns and after looking at your exhausted state gives you a wide smirk. [big he of M] doesn't say anything but just releases you from the bindings before sauntering off.";
 			distract M;
 		otherwise:
 			say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
@@ -335,7 +346,7 @@ To say detention chair tease response of (M - a monster):
 			say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame.";
 			humiliate 60;[it's extra humiliating because you had to thank them]
 		otherwise:
-			say "The lens on the camera in the corner seems to increase its focus. Thank the [M]?[line break]"; [###Selkie: That sounds a bit far-fetched. What about: "The red light on the camera glows more intensely"?]
+			say "The lens on the camera in the corner seems to increase its focus. Thank [NameDesc of M]?[line break]"; [###Selkie: That sounds a bit far-fetched. What about: "The red light on the camera glows more intensely"?]
 			if the player consents:
 				say "[variable custom style]'Thank you for putting me in my place, [if M is female]Ma'am[otherwise]Sir[end if].'[roman type][line break]";
 				say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame, unable to look [him of M] in the eye as you [if the delicateness of the player < 3]growl[otherwise if the delicateness of the player < 6]mutter[otherwise]recite[end if] the words.";
@@ -442,7 +453,7 @@ To compute remedial detention of (M - a staff member):
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	otherwise compute DQChairSetup of M;]
-	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4]The [M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise]The [M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your head, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rythm begins playing into your ears.";
+	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your head, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rythm begins playing into your ears.";
 	if diaper quest is 0, say "Short clips of [if tg fetish is 1]transexual [end if]pornstars stripping off their clothes appear on the screen, and the music's volume slowly rises as a husky feminine voice begins speaking right into your ear.[line break][first custom style]'Welcome to my classroom, baby. You can call me Mistress Professor. Are you ready for a lesson?'[roman type][line break]A hypnotic swirling pattern fades into the screen as male actors gradually begin to appear in the clips, and you suddenly realize how hard it is to pull your eyes away from the screen. You realize you have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute room leaving of M;
@@ -475,7 +486,7 @@ To compute rem chair detention:
 			let M be a random staff member in Holding Pen;
 			if M is staff member:
 				now M is in the location of the player;
-				say "Panning clips of pornstars [if bukkake fetish is 1]with cum plastered all over their faces[otherwise if diaper quest is 0]displaying their gaping holes to the camera[otherwise]PLACEHOLDER[end if] cycle on the screen as the hypnotic swirling pattern fades and the syncopated rythm winds down. [line break][first custom style]'Thanks for learning. That's all for today![roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and the [M] reenters the room. [big he of M] doesn't say anything as she removes your headphones and frees you from your bindings.";
+				say "Panning clips of pornstars [if bukkake fetish is 1]with cum plastered all over their faces[otherwise if diaper quest is 0]displaying their gaping holes to the camera[otherwise]PLACEHOLDER[end if] cycle on the screen as the hypnotic swirling pattern fades and the syncopated rythm winds down. [line break][first custom style]'Thanks for learning. That's all for today![roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and [NameDesc of M] reenters the room. [big he of M] doesn't say anything as she removes your headphones and frees you from your bindings.";
 				distract M;
 				now the location of the player is not bossed;
 			otherwise:

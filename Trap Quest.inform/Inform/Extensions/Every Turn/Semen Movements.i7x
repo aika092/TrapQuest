@@ -85,9 +85,22 @@ REQUIRES COMMENTING
 +!]
 To check goddess eligibility:
 	let H be a random off-stage laurel wreath;
-	if H is actually summonable and ((the children of the player > a random number between 1 and 2) or (the children of the player > 0 and slow pregnancy is 1)):
-		say "[bold type]A laurel wreath appears on your head![roman type][line break]";
-		summon H cursed.
+	if (the children of the player > a random number between 1 and 2) or (the children of the player > 0 and slow pregnancy is 1):
+		if H is actually summonable:
+			say "[bold type]A laurel wreath appears on your head![roman type][line break]";
+			summon H cursed;
+		otherwise if the class of the player is bunny and bunny tail plug is off-stage and asshole is not actually occupied:
+			repeat with O running through worn total protection dresses:
+				say "Your [O] vanishes!";
+				destroy O;
+			repeat with O running through worn total protection knickers:
+				say "Your [O] vanishes!";
+				destroy O;
+			repeat with O running through worn total protection trousers:
+				say "Your [O] vanishes!";
+				destroy O;
+			say "[bold type]A bunny tail plug materialises inside your [asshole]![roman type][line break]";
+			summon bunny tail plug cursed.
 
 
 [!<SayConceptionFlav>+
@@ -120,6 +133,12 @@ To compute enema holding:
 		otherwise if the squirt timer of belly > 0:
 			now the squirt timer of belly is 0;
 			if currently-squirting is 0, AssSquirt;
+			if rubber bunny ears is worn and the class of the player is bunny and the number of laid medium eggs in the location of the player > 1 and carrot daggers is off-stage:
+				say "[bold type]Suddenly, [if the number of medium eggs in the location of the player is 2]the two[otherwise]two of the[end if] eggs beneath you shine a bright orange and change shape![roman type][line break]In their place are now a pair of latex carrots.[line break][variable custom style]What in the world?![roman type][line break]";
+				destroy a random laid medium egg in the location of the player;
+				destroy a random laid medium egg in the location of the player;
+				now carrot daggers is in the location of the player;
+				compute autotaking carrot daggers;
 		otherwise:
 			increase the holding strain of belly by time-seconds;
 			let rem be the remainder after dividing the holding strain of belly by belly strain balance;

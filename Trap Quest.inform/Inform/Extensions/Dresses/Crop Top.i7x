@@ -13,7 +13,7 @@ To decide which number is the initial outrage of (C - a crop top):
 To decide which number is the original price of (C - a crop top):
 	decide on 5.
 
-To uniquely set up (C - a crop top):
+To set up magic state of (C - a crop top):
 	do nothing.
 
 To set up influence of (C - a crop top):
@@ -71,8 +71,8 @@ A size does matter crop top has a number called charge.
 
 There is 1 size does matter crop top.
 
-To uniquely set up (C - a size does matter crop top):
-	do nothing.
+[To uniquely set up (C - a size does matter crop top):
+	do nothing.]
 
 To decide which number is the initial outrage of (C - a size does matter crop top):
 	decide on 3.

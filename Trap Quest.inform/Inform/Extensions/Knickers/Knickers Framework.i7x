@@ -57,8 +57,7 @@ To uniquely set up (K - a knickers):
 	repair K;
 	if K is diaper and diaper quest is 1, now the soak-limit of K is 18 + the DQBulk of K * 3;
 	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting;
-	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection;
-	set up magic state of K.
+	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection.
 
 To set up influence of (C - a knickers):
 	set up random-based influence of C.
@@ -79,9 +78,8 @@ To decide which object is the unique-upgrade-target of (C - a knickers):
 This is the remove inappropriate knickers rule:
 	repeat with B running through plug panties:
 		unless B is WC plug panties, now B is in Holding Pen;
-	repeat with B running through crotch ropes:
-		now B is in Holding Pen;
-	repeat with B running through crotchless panties:
+	now crotch rope is in Holding Pen;
+	repeat with B running through crotchless-panties:
 		now B is in Holding Pen;
 	repeat with B running through microshorts:
 		now B is in Holding Pen.
@@ -145,7 +143,9 @@ Report wearing knickers:
 		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is female]ass [end if] plug starts vibrating!  That can't be good...";
 	otherwise if the noun is unsure and the noun is cursed:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
-		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][line break][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][line break][end if] conform to the contours of your [HipDesc] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable!  [end if]These panties are cursed!"; [Crowdsourced from Anya Snowdrifter]
+		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][line break][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][line break][end if] conform to the contours of your [HipDesc] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable!  [end if]These panties are cursed!"; [Written by Anya Snowdrifter]
+	if the size of penis > the penis-capacity of the noun and the noun is crotch-intact and the noun is pussy covering:
+		say "Your [ShortDesc of penis] [if penis is exposed]remains visible, peeking[otherwise]peeks[end if] out the side of the fabric.".
 
 
 Check taking off worn knickers:

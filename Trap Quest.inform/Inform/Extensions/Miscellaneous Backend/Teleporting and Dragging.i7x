@@ -22,7 +22,7 @@ To teleport to (R - a room):
 		unless T is ghostly tentacle, dislodge T;
 	repeat with C running through held store clothing:
 		now C is stolen;
-		now a random shopkeeper is released;
+		now shopkeeper is released;
 		if there is a worn tethering lipstick collar, end tethering;
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
 	now the player is in R;
@@ -51,7 +51,7 @@ To fix map-drag to (R - a room):
 			now L is nothing.
 
 To say DragFlav of (M - a monster) to (R - a room):
-	say "The [M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
+	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
 
 To say DragArrival of (M - a monster) to (R - a room):
 	say "".
@@ -62,10 +62,9 @@ To check shopstealing of (M - a monster):
 		repeat with C running through held store clothing:
 			now C is stolen;
 		if X > 0:
-			say "The shopkeeper sees the [M] [']helping['] you to leave. He seems to think it's your fault. [line break][speech style of M]'[one of]Stop Thief!'[or]Guards!  Guards!  Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
-			let S be a random shopkeeper;
-			now S is interested;
-			anger S.
+			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault. [line break][speech style of M]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
+			now shopkeeper is interested;
+			anger shopkeeper.
 
 
 Teleporting and Dragging ends here.
