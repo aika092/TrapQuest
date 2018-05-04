@@ -18,7 +18,7 @@ To decide which number is the damage improvement of (W - a fake nails):
 	decide on 0.
 
 To compute attack of (W - a fake nails) at (M - a monster):
-	say "You slash at the [M] with your [W]!".
+	say "You slash at [NameDesc of M] with your [W]!".
 
 Definition: a fake nails (called C) is removable: [Some clothing can never be removed, even by monsters.]
 	decide no.

@@ -15,7 +15,7 @@ To decide which number is the damage improvement of (W - a mittens):
 	decide on X.
 
 To compute attack of (W - a mittens) at (M - a monster):
-	say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at the [M] with your [printed name of W].".
+	say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W].".
 	
 To say ShortDesc of (W - a mittens):
 	say "pink mittens".

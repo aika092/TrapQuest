@@ -171,12 +171,14 @@ To say ShortDesc of vagina:
 			say "[PussyGape openness of vagina]";
 			if the latex-transformation of the player < 4:
 				if the soreness of vagina > 7:
-					say ", very sore";
+					say ", very sore ";
 				otherwise if the soreness of vagina > 3:
-					say ", throbbing";
+					say ", throbbing ";
+				otherwise:
+					say " ";
 			otherwise:
-				say ", numb";
-		say " [vagina]".
+				say ", numb ";
+		say "[vagina]".
 
 [!<SayMediumDescOfVagina>+
 
@@ -307,15 +309,15 @@ To PussyClose (X - a number):
 				let I be a random insertable thing penetrating vagina;
 				if I is an insertable thing and the openness of vagina + 1 < the girth of I:
 					say "Your [printed name of I] shoots out of your [vagina] with some force[run paragraph on]";
-					if there is a worn pussy protection clothing:
-						if there is a worn possession pussy protection clothing:
-							say ", phasing through your [printed name of a random worn possession pussy protection clothing]!";
-							repeat with C running through worn pussy protection clothing:
+					if there is pussy covering clothing:
+						if there is possession pussy covering clothing:
+							say ", phasing through your [ShortDesc of a random possession covering clothing]!";
+							repeat with C running through pussy covering clothing:
 								if C is fluid vulnerable and C is not possession:
 									if a random number between 1 and the number of worn possession clothing is 1, now the magic-type of C is possession;[Possessed items will protect your clothing, because it gets hairy to describe only one of 2-3 items not getting ripped. To compensate, the possession has a chance to "spread"]
 						otherwise:
-							say ", ripping through your [printed name of random worn not possession pussy protection clothing]!";
-							repeat with C running through worn pussy protection clothing:
+							say ", ripping through your [ShortDesc of random worn not possession pussy covering clothing]!";
+							repeat with C running through pussy covering clothing:
 								if C is overdress or C is trousers:
 									if C is zippable, now C is crotch-unzipped;
 									otherwise now C is crotch-ripped;

@@ -19,7 +19,7 @@ To summon (T - a bright-hair tattoo):
 To decide which number is the initial outrage of (T - a bright-hair tattoo):
 	decide on 2.
 To decide which number is the initial cringe of (T - a bright-hair tattoo):
-	decide on 10.
+	decide on 3.
 
 Bright Hair Tattoo ends here.
 

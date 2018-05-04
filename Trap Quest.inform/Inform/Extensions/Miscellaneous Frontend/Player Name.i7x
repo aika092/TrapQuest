@@ -6,7 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 To say NameBimbo:
-	if armband is worn and the armband-print of armband is not "new recruit":
+	if armband is worn and the armband-print of armband is not "new recruit" and the armband-title of armband is not "":
 		say "[armband-title of armband]";
 	otherwise if the player-name is 0:
 		if the bimbo of the player < 5 and the player is male:

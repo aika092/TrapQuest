@@ -130,7 +130,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out CandyObtaining:
-	say "You press the button[if there is worn a bound-behind wrist bond] with your nose[end if]. ";
+	say "You press the button[if the player is wrist bound behind] with your nose[end if]. ";
 	now seconds is 3;
 	let C be nothing;
 	if starting-pack-given is 0:

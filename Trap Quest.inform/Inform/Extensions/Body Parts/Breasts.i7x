@@ -148,8 +148,29 @@ REQUIRES COMMENTING
 +!]
 Definition: breasts is showing cleavage:
 	if the largeness of breasts < 4, decide no;
-	if there is worn actually dense fully covering top-placed clothing, decide no;
+	if there is worn actually dense fully covering actually breast covering clothing, decide no;
 	decide yes.
+
+
+Definition: a clothing (called C) is ridiculously low cut or higher:
+	if C is chestless or C is fully exposing, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is very low cut or higher:
+	if C is chestless or C is fully exposing or C is ridiculously low cut, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is low cut or higher:
+	if C is chestless or C is fully exposing or C is ridiculously low cut or C is very low cut, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is average cut or higher:
+	if C is average cut or C is high cut or C is fully covering, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is high cut or higher:
+	if C is high cut or C is fully covering, decide yes;
+	decide no.
 
 [!<DecideWhichNumberIsTheLargenessOfBreasts>+
 

@@ -39,7 +39,6 @@ Definition: a maternity dress (called C) is end of transformation chain:
 	decide no.
 	
 To uniquely set up (M - a maternity dress):
-	set up magic state of M;
 	if lactation fetish is 1, now M is milk production.
 
 To compute periodic effect of (M - a maternity dress):

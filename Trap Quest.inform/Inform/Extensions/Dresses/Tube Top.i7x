@@ -215,8 +215,7 @@ Part 8 - Jacket
 A jacket is a kind of tube top. The soak-limit of a jacket is usually 12. A jacket is usually dense.
 
 To uniquely set up (C - a jacket):
-	if a random number between 1 and 4 is 1, now C is dominance;
-	set up magic state of C.
+	if a random number between 1 and 4 is 1, now C is dominance.
 
 To set up influence of (C - a jacket):
 	set up random-based influence of C.

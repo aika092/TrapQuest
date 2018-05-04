@@ -240,16 +240,15 @@ Section - Pedestals
 Carry out taking museum-store clothing:
 	now the noun is normal;
 	if the location of the player is mansion28 and there is a worn lipstick collar:
-		let M be a random vampiress;
 		let L be a random lipstick collar;
 		now L is tethering;
-		say "The barrier flashes as your hands pass through, and you hear a chilling rattling noise as a brilliantly pink chain shoots out of your collar and [if M is in the location of the player] faithfully secures itself around the [M]'s outstretched wrist. She grins, proving its strength with a firm tug. [otherwise]twists down the hall, and immediately pulling taught. You hear a sultry voice giggling down the hall! [end if][line break][speech style of M]'It would be a shame if you left without paying, now wouldn[']t it?'[roman type][line break][line break][line break]";
-		unless M is alive:
-			summon M in the mansion;
-			say "[SummoningFlav of M]";
-			set up M;
-			now M is interested;
-			anger M.
+		say "The barrier flashes as your hands pass through, and you hear a chilling rattling noise as a brilliantly pink chain shoots out of your collar and [if vampiress is in the location of the player] faithfully secures itself around [NameDesc of vampiress][']s outstretched wrist. She grins, proving its strength with a firm tug. [otherwise]twists down the hall, and immediately pulling taught. You hear a sultry voice giggling down the hall! [end if][line break][speech style of vampiress]'It would be a shame if you left without paying, now wouldn[']t it?'[roman type][line break][line break][line break]";
+		unless vampiress is alive:
+			summon vampiress in the mansion;
+			say "[SummoningFlav of vampiress]";
+			set up vampiress;
+			now vampiress is interested;
+			anger vampiress.
 			
 
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". The description is "[PedestalDesc]". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
@@ -304,7 +303,7 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 Check drinking a pedestal:
 	unless the noun is erect, say "How would you drink that?" instead;
 	if the player is upright, say "You need to be on your knees first." instead;
-	if there is a worn ballgag, say "You would need to remove your gag first." instead.
+	if the player is gagged, say "You would need to remove your gag first." instead.
 	
 Carry out drinking a pedestal:
 	if diaper quest is 1:

@@ -1,16 +1,21 @@
 Gags by Bondage begins here.
 
-A ballgag is a kind of bondage. A ballgag is usually unique. A ballgag is usually leather. The text-shortcut of ballgag is "gag". Understand "gag" as ballgag.
+A gag is a kind of bondage. A gag is usually unique. A gag is usually leather. The text-shortcut of gag is "gag". Understand "gag" as gag.
+
+A ballgag is a kind of gag.
 
 [!<YourselfIsGagged>+
 
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is gagged:
-	repeat with C running through worn ballgags:
-		if C is not penetrating face, now C is penetrating face; [Failsafe that should pick up bugs and fix them]
-		decide yes;
+Definition: yourself is gagged:[Refers specifically to gags that occupy face]
+	repeat with C running through worn gags:
+		if C is ringagged:
+			if C is penetrating face, now C is not penetrating face; [Failsafe that should pick up bugs and fix them]
+		otherwise:
+			if C is not penetrating face, now C is penetrating face; [Failsafe that should pick up bugs and fix them]
+			decide yes;
 	decide no.
 
 To decide which number is the initial outrage of (C - a small ballgag):
@@ -102,20 +107,19 @@ Include Ring Gag by Bondage.
 
 Chapter - Wearability
 
-ballgag wearability rules is a rulebook. The wearability rules of ballgag is usually ballgag wearability rules.
+gag wearability rules is a rulebook. The wearability rules of gag is usually gag wearability rules.
 
-This is the ballgag already worn rule:
-	repeat with O running through worn ballgag:
+This is the gag already worn rule:
+	repeat with O running through worn gags:
 		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
 		rule fails.
-The ballgag already worn rule is listed in the ballgag wearability rules.
+The gag already worn rule is listed in the gag wearability rules.
 
 This is the mouth already full rule:
 	if face is actually occupied:
-		if summoning is 0, say "Your mouth is already occupied.";
+		if summoning is 0, say "Your mouth is [if wearing-target is ringagged]currently[otherwise]already[end if] occupied.";
 		rule fails.
-The mouth already full rule is listed in the ballgag wearability rules.
-
+The mouth already full rule is listed in the gag wearability rules.
 
 Gags ends here.
 

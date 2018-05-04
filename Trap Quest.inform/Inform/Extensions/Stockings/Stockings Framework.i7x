@@ -16,7 +16,6 @@ To decide which number is the hindrance-modifier of (S - a stockings):
 	decide on X.
 
 To uniquely set up (H - a stockings):
-	set up magic state of H;
 	let R be a random number between 1 and 7;
 	if R is 1, now the magic-type of H is confidence;
 	if R is 2, now the magic-type of H is endurance;

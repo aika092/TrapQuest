@@ -30,7 +30,7 @@ The printed name of lolita magical dress is usually "[TQlink of item described][
 To compute SelfExamineDesc of (O - a lolita magical dress):
 	say "[if the top-layer of O > 1 or the mid-layer of O > 1]Over this you[otherwise]You[end if] are wearing a [ShortDesc of O]. ".
 
-To compute ShortDesc of (O - a lolita magical dress):
+To say ShortDesc of (O - a lolita magical dress):
 	say "lolita magical dress".
 
 To say ClothingDesc of (O - a lolita magical dress):
@@ -50,7 +50,7 @@ The printed name of exposing magical dress is usually "[TQlink of item described
 To compute SelfExamineDesc of (O - an exposing magical dress):
 	say "You are wearing a [ShortDesc of O]. ".
 
-To compute ShortDesc of (O - an exposing magical dress):
+To say ShortDesc of (O - an exposing magical dress):
 	say "exposing magical dress".
 
 To say ClothingDesc of (O - an exposing magical dress):

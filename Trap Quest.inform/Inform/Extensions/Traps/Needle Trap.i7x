@@ -104,25 +104,6 @@ To cutscene needle breasts:
 		otherwise:
 			display figure of needle cutscene 3.
 
-Definition: a clothing (called C) is ridiculously low cut or higher:
-	if C is chestless or C is fully exposing, decide no;
-	decide yes.
-
-Definition: a clothing (called C) is very low cut or higher:
-	if C is chestless or C is fully exposing or C is ridiculously low cut, decide no;
-	decide yes.
-
-Definition: a clothing (called C) is low cut or higher:
-	if C is chestless or C is fully exposing or C is ridiculously low cut or C is very low cut, decide no;
-	decide yes.
-
-Definition: a clothing (called C) is average cut or higher:
-	if C is average cut or C is high cut or C is fully covering, decide yes;
-	decide no.
-
-Definition: a clothing (called C) is high cut or higher:
-	if C is high cut or C is fully covering, decide yes;
-	decide no.
 
 To compute (Y - a needle trap) injecting into (X - belly):
 	let needle-blocker be nothing;

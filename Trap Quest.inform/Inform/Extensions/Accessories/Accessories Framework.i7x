@@ -31,8 +31,14 @@ To decide which number is the heaviness of (C - an accessory):
 	if C is bracelet, decide on 2;
 	decide on 1.
 
+To set up magic state of (A - an accessory):
+	do nothing.
+
 To uniquely set up (A - an accessory):
 	unless A is immune to change or A is unique, now A is a random accessory-colour.
+
+To uniquely set up (C - an accessory):[Is this needed?]
+	do nothing.
 
 To say accessorydesc:
 	if item described is necklace:

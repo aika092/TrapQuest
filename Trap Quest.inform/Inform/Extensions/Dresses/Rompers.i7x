@@ -4,7 +4,6 @@ A romper is a kind of overdress. A romper is usually unskirted. A romper is usua
 
 To uniquely set up (C - a romper):
 	repair C;
-	set up magic state of C;
 	now the raw-magic-modifier of C is 0.
 
 To set up influence of (C - a romper):

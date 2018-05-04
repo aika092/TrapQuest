@@ -27,9 +27,6 @@ To say ClothingDesc of (C - a ballet heels):
 	say "A pair of black latex ballet heels, with an extreme [heel-height of C] inch heel to force you onto tip toes at all times. They [if C is worn]are[otherwise]look[end if] impossible to walk in by anyone except an expert!";
 	say "[SteadinessDesc of C]".
 
-To uniquely set up (C - a ballet heels):
-	do nothing.
-
 Definition: a ballet heels (called C) is ballet related:
 	decide yes.
 

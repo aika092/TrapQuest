@@ -115,8 +115,7 @@ To decide which number is the initial outrage of (C - a fetish maid outfit):
 
 To uniquely set up (C - a fetish maid outfit):
 	repair C;
-	now the armour of C is 6;
-	set up magic state of C.
+	now the armour of C is 6.
 
 To decide which object is the potential-upgrade-target of (M - a fetish maid outfit):
 	let C be a random pink maid outfit;
@@ -158,8 +157,7 @@ To decide which number is the initial outrage of (C - a slutty maid outfit):
 
 To uniquely set up (C - a slutty maid outfit):
 	repair C;
-	now the armour of C is 2;
-	set up magic state of C.
+	now the armour of C is 2.
 
 To decide which object is the potential-upgrade-target of (M - a slutty maid outfit):
 	let C be a random V-shape maid outfit;
@@ -181,8 +179,7 @@ To decide which number is the initial outrage of (C - a V-shape maid outfit):
 
 To uniquely set up (C - a V-shape maid outfit):
 	now the armour of C is 8;
-	repair C;
-	set up magic state of C.
+	repair C.
 	
 Definition: a V-shape maid outfit (called C) is is uniquely nipple exposing:
 	if the largeness of breasts > 6, decide yes;
@@ -197,7 +194,7 @@ Part 8 - Fishnet Maid Outfit
 
 A fishnet maid outfit is a kind of maid outfit. There is 1 fishnet maid outfit. A fishnet maid outfit is fully covering. A fishnet maid outfit is mesh. A fishnet maid outfit is usually unskirted. A fishnet maid outfit is usually crotch-intact. The text-shortcut of fishnet maid outfit is "mo8". The printed name of fishnet maid outfit is usually "[TQlink of item described][clothing-title-before]fishnet maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "fish", "net" as fishnet maid outfit.
 
-To decide which figure-name is clothing-image of (C - a fetish maid outfit):
+To decide which figure-name is clothing-image of (C - a fishnet maid outfit):
 	decide on figure of maid outfit 8.
 
 To say ClothingDesc of (M - a fishnet maid outfit):
@@ -208,8 +205,7 @@ To decide which number is the initial outrage of (C - a fishnet maid outfit):
 
 To uniquely set up (C - a fishnet maid outfit):
 	now the armour of C is 1;
-	repair C;
-	set up magic state of C.
+	repair C.
 
 To decide which object is the potential-upgrade-target of (M - a fishnet maid outfit):
 	decide on a random off-stage black fetish hobble dress.

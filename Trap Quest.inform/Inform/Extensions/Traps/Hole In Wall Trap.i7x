@@ -114,7 +114,7 @@ To HoleWait:
 		now the boredom of M is 30;
 		say "A little while later you feel someone gripping you by your hips!  [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'PLEASE REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
 		now the player is in the location of hole-in-wall;
-		say "You look around and see the [M], having already lost interest with you after rescuing you, is busying itself with other things.";
+		say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
 		check immobility.
 
 hole-in-wall punishment is a kind of object. hole-in-wall punishment has a number called priority. The priority of hole-in-wall punishment is usually 2.
@@ -171,7 +171,7 @@ To compute punishment of (P - hole-spank):
 			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
 			DelicateUp 1;
 		otherwise:
-			if there is worn ass covering clothing, say "Thanks to your [if there is a worn diaper]diaper[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
+			if there is ass covering clothing, say "Thanks to your [if there is a worn diaper]diaper[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
 			otherwise say "You suffer through the pain silently.";
 		let I be the incontinence of the player;
 		if diaper lover <= 0, now I is 3;
@@ -185,7 +185,7 @@ To compute punishment of (P - hole-spank):
 			say "The pain of the spanking episode causes you to involuntarily wet yourself.";
 			now delayed urination is 1;
 			try urinating;
-	say "Just as suddenly as he or she began, the mysterious spanker stops. [one of]You wonder if they've gone, or whether they're still there, silently watching you[or]You listen, but can't hear anyone. Are they still there?[or]You listen for footsteps, but hear nothing. Are they there, watching?  Or did they simply walk off and leave you, still stuck?[or]You think - [i]hope[/i] - they've gone.[at random].".
+	say "Just as suddenly as he or she began, the mysterious spanker stops. [one of]You wonder if they've gone, or whether they're still there, silently watching you[or]You listen, but can't hear anyone. Are they still there?[or]You listen for footsteps, but hear nothing. Are they there, watching?  Or did they simply walk off and leave you, still stuck?[or]You think - [i]hope[/i] - they've gone.[at random]".
 
 
 hole-wank is hole-in-wall punishment.
@@ -294,14 +294,14 @@ Definition: hole-piercing (called P) is appropriate:
 	if diaper quest is 1, decide no;
 	if the player is male, decide no;
 	if the player is pussy protected, decide no;
-	if there is a worn clitoris piercing and there is a worn clitoris lead, decide no;
+	if clitoris piercing is worn and clitoris lead is worn, decide no;
 	decide yes.
 
 To compute punishment of (P - hole-piercing):
 	now the priority of P is 1;
-	let C be a random clitoris piercing;
+	let C be clitoris piercing;
 	say "You feel cold smooth fingers grab hold of your [if C is worn][ShortDesc of C][otherwise]clit[end if]!  [line break][variable custom style]Eek![roman type][line break]";
-	if C is worn, now C is a random clitoris lead;
+	if C is worn, now C is clitoris lead;
 	summon C cursed;
 	say "Suddenly, a hot burning sensation!";
 	DelicateUp 2;

@@ -29,7 +29,7 @@ Check knifing:
 		if the player is immobile, say "You are a bit tied up right now!" instead;
 	otherwise:
 		if the noun is monster, try slapping the noun instead;
-		if the noun is ass hook and the player is bound-in-front, say "You can't do that when your wrists are bound together in front of you!";
+		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!";
 		if the noun is not vines and the noun is not ass hook, say "How would you cut that?".
 Carry out knifing:
 	now seconds is 6;
@@ -84,7 +84,7 @@ Carry out knifing:
 Report knifing:
 	let M be a random friendly robochef in the location of the player;
 	if M is a monster:
-		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED.....PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED!  RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered the [M]!";
+		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED.....PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED!  RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
 		anger M;
 		now M is interested;
 		now the boredom of M is 0.

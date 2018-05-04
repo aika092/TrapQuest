@@ -34,7 +34,7 @@ To decide which number is the initial outrage of (B - a yellow buttockless pants
 
 To decide which object is the potential-upgrade-target of (C - a yellow buttockless pants):
 	if the number of worn knickers is 0:
-		if the player is male, decide on a random off-stage pouch panties;
+		if the player is male, decide on a random off-stage pouch-panties;
 		otherwise decide on a random off-stage crotch rope;
 	otherwise if the number of worn skirted clothing is 0:
 		decide on a random off-stage naughty skirt;

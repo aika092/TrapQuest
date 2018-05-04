@@ -27,7 +27,7 @@ Check inserting something into:
 		if the noun is clothing:
 			if the noun is ass plugging and the second noun is asshole, try wearing the noun instead;
 			if the noun is vagina plugging and the second noun is vagina, try wearing the noun instead;
-			if the noun is ballgag and the second noun is face, try wearing the noun instead;
+			if the noun is gag and the second noun is face, try wearing the noun instead;
 			if the noun is insertable, try plugging the second noun with the noun instead;
 		say "[variable custom style]I'm pretty sure I'm supposed to wear that, not stuff it inside of myself![if the bimbo of the player > 14]That does sound fun, though...[end if][roman type][line break]" instead;
 	if the second noun is hips:
@@ -116,7 +116,7 @@ The standard report wearing rule is not listed in the report wearing rulebook.
 Carry out wearing clothing:
 	if the noun is ass plugging, now the noun is penetrating asshole;
 	if the noun is vagina plugging and the player is female, now the noun is penetrating vagina;
-	if the noun is ballgag, now the noun is penetrating face;
+	if the noun is ballgag, now the noun is penetrating face; [as opposed to ring gags, which take up the face slot but do not necessarily penetrate face]
 	now seconds is 6;
 	if the noun is bottom layer, layer the noun correctly; [Cage, knickers and trousers can do some funky stuff like going under skirts]
 	otherwise layer the noun correctly on top;

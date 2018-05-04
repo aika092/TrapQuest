@@ -26,9 +26,6 @@ To say ClothingDesc of (C - a lipstick heels):
 	say "A unique pair of black leather [heel-height of C] inch stiletto heels, where the sharp strong heel looks like a stick of red lipstick. [if C is not worn][otherwise if the make-up of face > 1]Somehow you can sense that they are greatly empowering your kicks[otherwise if the make-up of face > 0]Somehow you can sense that they are empowering your kicks[otherwise]They don't seem to currently have any effect. Maybe it's because you're not currently wearing any make up[end if].";
 	say "[SteadinessDesc of C]".
 
-To uniquely set up (C - a lipstick heels):
-	do nothing.
-
 To decide which number is the damage modifier of (H - a lipstick heels):
 	[Double damage on crit with heels]
 	if attack-type is 3:

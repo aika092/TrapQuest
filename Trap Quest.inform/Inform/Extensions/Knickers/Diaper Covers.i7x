@@ -50,8 +50,7 @@ To say selfexamineuniquetitle of (K - a diaper cover):
 
 To uniquely set up (K - a diaper cover):
 	repair K;
-	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting;
-	set up magic state of K.
+	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting.
 
 [To restock (C - a diaper cover):
 	let B be a random basic loot diaper cover;

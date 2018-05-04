@@ -30,7 +30,6 @@ To uniquely set up (C - a court heels):
 	if C is glass, now the text-shortcut of C is "gch";
 	if C is leather, now the text-shortcut of C is "lch";
 	if C is pvc, now the text-shortcut of C is "pch";
-	set up magic state of C;
 	let R be a random number between 1 and 8;
 	if C is cursed:
 		if R <= 2:

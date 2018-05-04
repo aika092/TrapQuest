@@ -1,8 +1,11 @@
 Target Tattoo by Tattoos begins here.
 
-target tattoo is a kind of chest tattoo. There is 1 target tattoo. The printed name of an target tattoo is "Target tattoo".
-Definition: A target tattoo (called T) is eligible:
+target tattoo is a kind of chest tattoo. There is 1 target tattoo. The printed name of a target tattoo is "Target tattoo".
+Definition: a target tattoo (called A) is drawable:
+	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;
+	decide yes.
+Definition: A target tattoo (called T) is eligible:
 	if the noun is clothing:
 		if the semen-soak of the noun + the urine-soak of the noun > 0, decide yes;
 	decide no.

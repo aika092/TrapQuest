@@ -203,22 +203,18 @@ To decide which number is the weight of (C - a waddle diaper):
 	if C is cursed, decide on 6;
 	if C is blessed, decide on 4;
 	decide on 5;
-	
-To curse (D - a waddle diaper):
-	if D is not blessed:
-		if D is worn and D is bland, say "Your [ShortDesc of D] expands and expands, pushing your thighs even further apart!  The stupidly thick padding in between your legs is now so thick that it sags far below your knees!";
-		now D is cursed;
-	otherwise:
-		if D is worn, say "Your [ShortDesc of D] expands a bit, pushing your thighs further apart!  The very thick padding in between your legs is now so thick that it sags down to your knees!";
-		now D is bland.
 
-To bless (D - a waddle diaper):
-	if D is bland:
-		if D is worn, say "Your [ShortDesc of D] shrinks a little, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches down to your knees.";
-		now D is blessed;
-	otherwise if D is cursed:
-		if D is worn, say "Your [ShortDesc of D] shrinks a noticeably, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches below your knees.";
-		now D is bland.
+To say CurseCurseFlav of (D - a waddle diaper):
+	if D is worn and D is bland, say "Your [ShortDesc of D] expands and expands, pushing your thighs even further apart!  The stupidly thick padding in between your legs is now so thick that it sags far below your knees!".
+	
+To say CurseBlandFlav of (D - a waddle diaper):
+	if D is worn, say "Your [ShortDesc of D] expands a bit, pushing your thighs further apart!  The very thick padding in between your legs is now so thick that it sags down to your knees!".
+
+To say BlessBlessFlav of (D - a waddle diaper):
+	if D is worn, say "Your [ShortDesc of D] shrinks a little, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches down to your knees.".
+	
+To say BlessBlandFlav of (D - a waddle diaper):
+	if D is worn, say "Your [ShortDesc of D] shrinks a noticeably, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches below your knees.".
 
 To compute unique periodic effect of (D - a waddle diaper):
 	if the total-soak of D > the soak-limit of D / 2 or D is messed:
@@ -401,23 +397,23 @@ To decide which number is the unique outrage of (D - an blue bear diaper):
 
 Chapter 15 Bunny Diaper
 
-A bunny diaper is a kind of disposable diaper. There is 1 bunny diaper. The printed name of bunny diaper is usually "[TQlink of item described][clothing-title-before]bunny diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny diaper is "bnd".
+A bunny pattern diaper is a kind of disposable diaper. There is 1 bunny pattern diaper. The printed name of bunny pattern diaper is usually "[TQlink of item described][clothing-title-before]bunny pattern diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny pattern diaper is "bpd".
 
-To decide which figure-name is clothing-image of (C - a bunny diaper):
-	decide on figure of bunny diaper.
+To decide which figure-name is clothing-image of (C - a bunny pattern diaper):
+	decide on figure of bunny pattern diaper.
 
-To say ClothingDesc of (C - bunny diaper):
+To say ClothingDesc of (C - bunny pattern diaper):
 	say "A white adult diaper, with a cute bunny, teddy and butterfly pattern. It has a normal-ish amount of padding. ";
 	
-Figure of bunny diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper15.png".
+Figure of bunny pattern diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper15.png".
 
-The soak-limit of bunny diaper is 28. The DQFigure of bunny diaper is DQSmall.
+The soak-limit of bunny pattern diaper is 28. The DQFigure of bunny pattern diaper is DQSmall.
 
-To decide which number is the original price of (C - a bunny diaper):
+To decide which number is the original price of (C - a bunny pattern diaper):
 	decide on 5;
 
-To say selfexamineuniquetitle of (K - a bunny diaper):
-	say "bunny diaper".
+To say selfexamineuniquetitle of (K - a bunny pattern diaper):
+	say "bunny pattern diaper".
 
 
 Chapter 16 Blue and Pink Diaper
@@ -588,6 +584,29 @@ Definition: a demon diaper (called D) is eligible:
 Definition: a demon diaper (called D) is demonic:
 	decide yes.
 
+Chapter 24 Bunny Diaper
+
+A bunny diaper is a kind of disposable diaper. There is 1 bunny diaper. The printed name of bunny diaper is usually "[TQlink of item described][clothing-title-before]bunny diaper[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny diaper is "bnd". The soak-limit of a bunny diaper is usually 24.
+
+To decide which figure-name is clothing-image of (C - a bunny diaper):
+	decide on figure of bunny diaper.
+
+To say ClothingDesc of (C - a bunny diaper):
+	say "A small brown diaper that does up with pink buttons to seal the tabs. The white cottontail on the back makes it rather obvious what the theme of the diaper is.".
+
+To say selfexamineuniquetitle of (K - a bunny diaper):
+	say "bunny diaper".
+
+Figure of bunny diaper is the file "Items\Clothes\Lower\Underwear\Diapers\diaper24.png".
+The DQFigure of bunny diaper is usually DQBunny. 
+
+Report wearing bunny diaper:
+	let H be a random off-stage black bunny hat;
+	if H is actually summonable:
+		summon H cursed;
+		now the raw-magic-modifier of H is 2;
+		now H is strength-influencing;
+		say "As you finish putting it on, a [H] appears on your head!".
 
 
 Diapers ends here.

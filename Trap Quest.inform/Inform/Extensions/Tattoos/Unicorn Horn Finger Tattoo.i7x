@@ -2,7 +2,7 @@ Unicorn Horn Finger Tattoo by Tattoos begins here.
 
 unicorn horn finger tattoo is a kind of body tattoo. Figure of unicorn horn finger tattoo is the file "Items/Tats/tattoo62.png". There is 1 unicorn horn finger tattoo.
 Definition: a unicorn horn finger tattoo (called T) is eligible:
-	if the noun is gloves or the noun is magic wand or the noun is fairy wand or the noun is royal scepter or the noun is purity clothing or the noun is minotaur horn or the noun is magic lamp, decide yes;
+	if the noun is gloves or the noun is magic wand or the noun is fairy wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp, decide yes;
 	decide no.
 To say tattoo-desc of (T - a unicorn horn finger tattoo):
 	if images visible is 1, display figure of unicorn horn finger tattoo;

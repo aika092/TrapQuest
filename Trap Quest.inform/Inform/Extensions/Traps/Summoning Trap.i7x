@@ -86,6 +86,14 @@ To summon (M - a monster):
 		summon M in the hotel;
 	otherwise if M is fourth level:
 		summon M in the mansion;
+	otherwise if M is in the dungeon: [This is used during fainting to reset monster that don't spawn normally]
+		summon M in the dungeon;
+	otherwise if M is in the woods:
+		summon M in the woods;
+	otherwise if M is in the hotel:
+		summon M in the hotel;
+	otherwise if M is in the mansion:
+		summon M in the mansion;
 	if M is nonexistant and M is on-stage, set up M.
 
 To summon (M - a monster) in (D - the dungeon):

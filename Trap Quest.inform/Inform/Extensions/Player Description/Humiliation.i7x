@@ -37,6 +37,32 @@ To decide which number is HUMILIATION-SHAMELESS:
 
 To decide which number is HUMILIATION-BROKEN:
 	decide on HUMILIATION-SHAMELESS + 8000.
+
+Definition: yourself (called Y) is proud:
+	if the humiliation of the player < HUMILIATION-PROUD, decide yes;
+	decide no.
+
+Definition: yourself (called Y) is modest:
+	if the humiliation of the player < HUMILIATION-MODEST, decide yes;
+	decide no.
+
+Definition: yourself (called Y) is ashamed:
+	if the humiliation of the player >= HUMILIATION-MODEST, decide yes;
+	decide no.
+
+Definition: yourself (called Y) is disgraced:
+	if the humiliation of the player >= HUMILIATION-DISGRACED, decide yes;
+	decide no.
+
+Definition: yourself (called Y) is shameless:
+	if the humiliation of the player >= HUMILIATION-SHAMELESS, decide yes;
+	decide no.
+
+Definition: yourself (called Y) is broken:
+	if the humiliation of the player >= HUMILIATION-BROKEN, decide yes;
+	decide no.
+
+
 	
 
 Humiliation ends here.

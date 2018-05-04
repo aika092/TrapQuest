@@ -446,12 +446,13 @@ REQUIRES COMMENTING
 
 +!]
 To HairRedDown (X - a number):
+	if frozen hair is 1:
+		say "Your hair would change colour but the divine power of Aika prevents it.";
 	while X > 0 and the redness of hair > natural redness * 3:
 		if frozen hair is 0:
 			now the previous hair redness of face is the redness of hair;
 			if the redness of hair > 0:
-				decrease the redness of hair by 1;
-				say "Your hair loses some colour.".
+				decrease the redness of hair by 1.
 
 [!<HairBrightUpX>+
 
@@ -476,12 +477,13 @@ REQUIRES COMMENTING
 
 +!]
 To HairBrightDown (X - a number):
+	if frozen hair is 1:
+		say "Your hair would change colour but the divine power of Aika prevents it.";
 	while X > 0 and the brightness of hair > natural brightness * 3:
 		if frozen hair is 0:
 			now the previous hair brightness of face is the brightness of hair;
 			if the brightness of hair > 0:
-				decrease the brightness of hair by 1;
-				say "Your hair colour darkens.".
+				decrease the brightness of hair by 1.
 
 [!<HairBlondeUpX>+
 
@@ -506,12 +508,13 @@ REQUIRES COMMENTING
 
 +!]
 To HairBlondeDown (X - a number):
+	if frozen hair is 1:
+		say "Your hair would change colour but the divine power of Aika prevents it.";
 	while X > 0 and the blondeness of hair > natural blondeness * 3:
 		if frozen hair is 0:
 			now the previous hair blondeness of face is the blondeness of hair;
 			if the blondeness of hair > 0:
-				decrease the blondeness of hair by 1;
-				say "Your hair loses some colour.".
+				decrease the blondeness of hair by 1.
 
 [!<HairPermanentCheck>+
 

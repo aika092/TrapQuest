@@ -141,8 +141,6 @@ Include Status Bar by Miscellaneous Frontend.
 Include Player Title by Miscellaneous Frontend.
 Include Disclaimer by Miscellaneous Frontend.
 
-Include Room Descriptions by Miscellaneous Backend. [TODO: Move to Rooms Framework]
-
 Include Game Settings by Miscellaneous Backend. 
 Include Fetish Settings by Miscellaneous Backend. 
 
@@ -416,6 +414,7 @@ Include Mechanical Joint by Collectibles.
 Include Metal Disc by Collectibles.
 Include Royal Sigil by Collectibles.
 Include Playing Cards by Collectibles.
+Include Unicorn Horn by Collectibles.
 
 Include Teleporting and Dragging by Miscellaneous Backend.
 
@@ -438,6 +437,7 @@ Include Cookie by Food.
 Include Stuffed Mushroom by Food.
 Include Gelatin by Food.
 Include Candy Corn by Food.
+Include Chocolate Egg by Food.
 
 Include Hotel Feeding Bowls by Objects.
 Include Chocolates Bag by Objects.
@@ -500,6 +500,7 @@ Include Puppy Ears by Headgear.
 Include Glittering Rose by Headgear.
 Include Cumdumpster Hat by Headgear.
 Include Heart Hairpin by Headgear.
+Include Bunny Ears by Headgear.
 
 Include Shoes Framework by Shoes.
 Include Thigh High Boots by Shoes.
@@ -520,6 +521,7 @@ Include Baby Booties by Shoes.
 Include Mary Janes by Shoes.
 Include Sandals by Shoes.
 Include Trainee Boots by Shoes.
+Include Bunny Booties by Shoes.
 
 Include Bra Framework by Bra.
 Include Training Bra by Bra.
@@ -634,6 +636,7 @@ Include Rubber Dress by Dresses.
 Include Gingham Dress by Dresses.
 Include Magical Dress by Dresses.
 Include Christmas Dress by Dresses.
+Include Bunny Outfit by Dresses.
 
 Include Corsets Framework by Corsets.
 Include Gothic Corset by Corsets.
@@ -678,6 +681,7 @@ Include Wool Stockings by Stockings.
 Include Striped Stockings by Stockings.
 Include Magical Stockings by Stockings.
 Include Christmas Socks by Stockings.
+Include Bunny Socks by Stockings.
 Include Cafe Maid Stockings by Stockings.
 
 Include Accessories Framework by Accessories.
@@ -720,6 +724,8 @@ Include Magic Wand by Equippables.
 Include Kitty Claws by Equippables.
 Include Mittens by Equippables.
 Include Swords by Equippables.
+Include Prayer Beads by Equippables.
+Include Magic Pistol by Equippables.
 
 Include Pink Spraybottle by Equippables.
 Include Mopping by Actions.
@@ -727,6 +733,7 @@ Include Spritzing by Actions.
 
 Include Wasp Cloud by Equippables.
 Include Vampiric Claws by Equippables.
+Include Carrot Daggers by Equippables.
 Include Royal Scepter by Equippables.
 Include Pocketbooks by Equippables.
 Include Midnight Tanto by Equippables.
@@ -742,6 +749,7 @@ Include Wrist Bondage by Bondage.
 Include Ankle Bondage by Bondage.
 Include Gags by Bondage.
 Include Chastity Cage by Bondage.
+Include Serving Table by Bondage.
 Include Pet Collar by Bondage.
 
 Include Sex Toy Framework by Sex Toys.
@@ -752,6 +760,7 @@ Include Jelly Dildo by Sex Toys.
 Include Mamba by Sex Toys.
 Include Johnson by Sex Toys.
 Include Cat Tail Plug by Sex Toys.
+Include Bunny Tail Plug by Sex Toys.
 Include Puppy Tail Plug by Sex Toys.
 Include Demon Tail Plug by Sex Toys.
 Include Prostate Massager Plug by Sex Toys.
@@ -808,6 +817,7 @@ Include Unfaithful Tattoo by Tattoos.
 Include Bat Tattoo by Tattoos.
 Include Target Tattoo by Tattoos.
 Include Showtime Tattoo by Tattoos.
+Include Marker Chest Tattoo by Tattoos.
 
 Include Heavyweight Tattoo by Tattoos.
 Include Witchcraft Tattoo by Tattoos.
@@ -1015,12 +1025,14 @@ Include Gargoyle by Monster.
 Include Boogeymonster by Monster.
 Include Golem by Monster.
 Include Pimp by Monster.
+Include Unicorn by Monster.
 
 Include Staff Framework by Monster Framework.
 Include Receptionist by Monster.
 Include Headmistress by Monster.
 Include Nurse by Monster.
 Include Teachers Sapphire by Monster.
+Include Teachers Emerald by Monster.
 
 Include Student Framework by Monster Framework.
 Include Students Amicable by Monster.

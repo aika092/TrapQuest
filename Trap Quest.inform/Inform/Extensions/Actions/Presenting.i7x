@@ -228,7 +228,7 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 				otherwise if the second noun is friendly intelligent monster:
 					say FriendlyPissRequest of the second noun;
 			say PissRequestFlav of the second noun;
-			if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][line break][first custom style]I can hardly believe what I'm doing!  How degrading...[roman type][line break][or][stopping]";
+			if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing!  How degrading...[roman type][line break][or][stopping]";
 			now presented-orifice is belly;
 		otherwise:
 			if the player is able to speak and auto is 0 and the humiliation of the player < HUMILIATION-BROKEN:
@@ -237,7 +237,7 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 				otherwise if the second noun is friendly intelligent monster:
 					say FriendlyOralRequest of the second noun;
 			say OralRequestFlav of the second noun;
-			if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][line break][first custom style]I can hardly believe what I'm doing!  How degrading...[roman type][line break][or][stopping]";
+			if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing!  How degrading...[roman type][line break][or][stopping]";
 			now presented-orifice is face;
 		now the the player-reaction of the player is submitting;
 		humiliate (SEVERE-HUMILIATION - SLIGHT-HUMILIATION);

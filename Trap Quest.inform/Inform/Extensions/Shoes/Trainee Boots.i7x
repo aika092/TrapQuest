@@ -4,6 +4,8 @@ Trainee Boots by Shoes begins here.
 
 A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[TQlink of item described][item style]trainee thigh highs[clothing-title-after][TQxlink of item described][verb-desc of item described]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized.  A trainee thigh highs has a number called train-charge.
 
+To set up magic state of (C - trainee thigh highs):
+	do nothing.
 
 Figure of trainee thigh highs is the file "Items\Clothes\Lower\Feet\Boots\thighhighs1.png".
 

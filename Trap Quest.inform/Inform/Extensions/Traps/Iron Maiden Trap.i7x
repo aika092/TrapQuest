@@ -3,6 +3,9 @@ Iron Maiden Trap by Traps begins here.
 An iron-maiden is a kind of trap. The printed name of iron-maiden is "[TQlink of item described]iron maiden[TQxlink of item described][verb-desc of item described]". The description of an iron-maiden is "A human-shaped solid metal cage.". There is 1 swing iron-maiden. Understand "iron", "maiden" as iron-maiden. The text-shortcut of an iron-maiden is "irm".
 
 To say ShortDesc of (T - an iron-maiden):
+	say "iron maiden".
+
+To say MediumDesc of (T - an iron-maiden):
 	say "The two halves of the iron maiden trap are lying horizontally on the ground. ".
 
 To decide which number is the girth of (D - an iron-maiden):

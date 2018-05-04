@@ -282,7 +282,7 @@ To say GiantDesc:
 	if images visible is 1:
 		if pregnancy fetish is 1, display figure of giant pregnant statue;
 		otherwise display figure of giant-statue;
-	if a random vine boss is alive or doomed is 5:
+	if vine boss is alive or doomed is 5:
 		say "An enormous statue of a blindfolded [if pregnancy fetish is 1]pregnant [end if]woman on all fours. [if doomed is 5]Green vines hang from almost every inch of her body, as if holding her down for the massive, sickly purple creepers plugging her mouth and [asshole][otherwise]Massive green vines are crammed into her mouth and wrapped around her wrists and ankles[end if]. [unless the item described is active]Somehow you get the impression that...she[']s the one holding them?[otherwise if the charge of the item described > 250]A solitary white flower has sprouted up on each her nipples, covering them.[otherwise if the charge of the item described > 150 and bukkake fetish is 1]Tiny white flowers have sprouted on her chin and breasts, clumped together in a way that makes it look like the statue is splattered with [semen].[otherwise if the charge of the item described > 150]Tiny white flowers have sprouted on her belly and chest, conspicuously concentrated around her erogenous zones.[otherwise if the charge of the item described > 70]Waves of excitement periodically pass through them, followed by a bloom and immediate wilting of white flowers all over her body.[otherwise]You can see large bulges moving through them, flowers blossoming all over her body in time with the gentle undulations down their lengths. Whitish fluid is slowly leaking out of her unattended [vagina].[end if]";
 	otherwise:
 		say "An enormous statue of a blindfolded [if pregnancy fetish is 1]pregnant [end if]woman on her knees. [unless the item described is active]She appears to be in the middle of praying[otherwise if the charge of the item described > 250]Her hands are cupping her breasts, her prominent stony nipples poking out between her fingers[otherwise if the charge of the item described > 150]She has one hand across her breasts, pinching a stony nipple, and a second touching her flawless marble clit[otherwise if the charge of the item described > 70]One arm is underneath her breasts, pushing them together enticingly as her free hand explores between her legs, her flawless marble clit just visible between the knuckles of her stony fingers[otherwise]Her hands are between her legs, spreading her stone labia wide, as if to entice any and every passer-by[end if].";
@@ -330,7 +330,7 @@ To decide which object is the summonChoice of (G - a giant-statue):
 
 To say ActiveWarning of (G - a giant-statue):
 	if the location of the player is Woods30:
-		if a random vine boss is alive or doomed is 5:
+		if vine boss is alive or doomed is 5:
 			say "You hear a deep rumble, watching the vines tighten around the giant-statue's wrists and ankles. A cloud of glittering orange pollen explodes over you as flowers bloom across her chest. [if the player is upright and the player is not immobile]An overwhelming sense of vertigo immediately drops you to your knees.[end if] You feel strange.";
 			if the pregnancy of the player is 1 and the womb volume of vagina is not 30, increase the womb volume of vagina by 1;
 		otherwise:
@@ -418,16 +418,16 @@ To decide which monster is the summonChoice of (S - a mysterious-mummy):
 		now M is a random off-stage acolyte;
 	otherwise if N is 2 and the number of off-stage mansion dwelling gladiators > 0:
 		now M is a random off-stage mansion dwelling gladiator;
-	otherwise if N is 3 and the number of off-stage gargoyles > 0:
+	otherwise if N is 3 and gargoyle is off-stage:
 		now M is a random off-stage gargoyle;
 	otherwise if N is 4 and the number of off-stage mansion dwelling mannequins > 0:
 		now M is a random off-stage mansion dwelling mannequin;
 	otherwise if N is 5 and the number of off-stage mansion dwelling demonesses > 0:
 		now M is a random off-stage mansion dwelling demoness;
-	otherwise if N is 6 and the number of off-stage kitsunes > 0:
-		now M is a random off-stage kitsune;
-	otherwise if N is 7 and the number of off-stage hellhounds > 0 and mythical creature fetish is 1:
-		now M is a random off-stage hellhound;
+	otherwise if N is 6 and kitsune is off-stage:
+		now M is kitsune;
+	otherwise if N is 7 and hellhound is off-stage and mythical creature fetish is 1:
+		now M is hellhound;
 	decide on M.
 
 To say PortalHint of (S - a mysterious-mummy):
@@ -455,7 +455,9 @@ To say PortalHint of (S - a mysterious-mummy):
 To say ActiveWarning of (S - a mysterious-mummy):
 	let G be a random number between 1 and 3;
 	let N be the next-summon of S;
-	if N is 2:[gladiator]
+	unless S is in the location of the player:
+		say "You hear the shuffling of fabric somewhere else in the mansion...";
+	otherwise if N is 2:[gladiator]
 		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. [run paragraph on]";
 		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if trap fetish is 0]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [line break][first custom style]C-cowards! You can't become a real woman if y-[roman type][line break]The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
 	otherwise if N is 1:[cultist]

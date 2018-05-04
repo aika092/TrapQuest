@@ -59,6 +59,7 @@ To decide which number is the calculated sex addiction of the player:
 	let S be the raw sex addiction of the player;
 	repeat with C running through worn wearthings:
 		increase S by the sex-addiction-influence of C;
+		if diaper quest is 0, increase S by the bimbo-influence of C;
 	if submissive sex addict is 1, increase S by 8;
 	if there is a worn slimegirl:
 		let I be the intensity of a random slimegirl;
@@ -145,8 +146,8 @@ To SexAddictUp (X - a number):
 		if a random number between 1 and 8 > K: [Sometimes confidence clothing stops sex addiction increases]
 			if the raw sex addiction of the player < 20 and a random number between 5 and 30 > the raw sex addiction of the player:
 				if (highest sex addiction < the sex addiction of the player and X is 0 or the sex addiction of the player is 19) and diaper quest is 0: [We only want to output 1 thing from this list even if sex addiction goes up multiple times]
-					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]I am not going to let anything else fuck me. At all. That is NOT happening again.[end if][roman type][line break]";
-					if the sex addiction of the player is 2, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Please please please don't make me have to fuck anything...[otherwise]If I can't avoid things fucking me, my situation is only going to get worse and worse. I've got to keep level headed.[end if][roman type][line break]";
+					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Am I really going to have to get fucked in this game?![otherwise]I can't believe I've only been here a short while and I've already had sex...[end if][roman type][line break]";
+					if the sex addiction of the player is 2, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]The sex is all avoidable, right?[otherwise]If I can't avoid getting fucked, my situation is only going to get worse and worse. I've got to keep level headed.[end if][roman type][line break]";
 					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy this world a little bit more. I have a to find a way out![roman type][line break]";
 					if the sex addiction of the player is 4, say "[first custom style]I have to avoid the sex!  The game is rigged to make me get addicted...[roman type][line break]";
 					if the sex addiction of the player is 5, say "[first custom style]I am not enjoying this. I am NOT enjoying this!!!  Why does my body feel like it's disagreeing with me?[roman type][line break]";

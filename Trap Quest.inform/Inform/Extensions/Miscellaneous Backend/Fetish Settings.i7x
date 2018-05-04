@@ -92,6 +92,9 @@ choice
 0 [starting body shape]
 0 [bonus liquid]
 0 [bondage protection]
+0 [christmas content]
+0 [easter content] [currently does nothing]
+0 [april fools content]
 
 
 [!<DecideWhichNumberIsPlayerGender>+
@@ -635,6 +638,14 @@ To decide which number is tentacle fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 61 of the Table of Player Options.
 
+To decide which number is lady fetish:
+	decide on 0.
+	[decide on 1.][might have three possibilities at full effectiveness, but for sanity's sake I'm acting as if it would only be 0 or 1]
+
+To decide which number is full-lady fetish:[lady fetish should come with a disclaimer that futa may be unavoidable. full-lady indicates that futa is off and lady fetish is on]
+	if lady fetish is 1 and trap fetish is 1, decide on 1;
+	decide on 0.
+
 [!<DecideWhichNumberIsStartingBodyShape>+
 
 REQUIRES COMMENTING
@@ -652,6 +663,18 @@ To decide which number is bonus liquid:
 
 To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
+
+To decide which number is christmas content:
+	if the player is not a march 2018 top donator, decide on 0;
+	decide on the choice in row 65 of the Table of Player Options.
+
+To decide which number is easter content:
+	if the player is not a march 2018 top donator, decide on 0;
+	decide on the choice in row 66 of the Table of Player Options.
+
+To decide which number is april fools content:
+	if the player is not a march 2018 top donator, decide on 0;
+	decide on the choice in row 67 of the Table of Player Options.
 
 [!<AThingIsAFlatchestedTrap>+
 
@@ -698,6 +721,8 @@ title	subtable	description	toggle
 "RANDOMISE CHOICES"	--	--	randomise choices rule
 ["RANDOMISE CHOICES and surprise me"	--	--	secret randomise choices rule]
 "NIGHTMARE MODE: Choose everything!"	--	--	nightmare mode rule
+"ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
+[DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
 
 [!<tableOfDiaperFetishOptions:Table>*
 
@@ -710,8 +735,10 @@ title	subtable	description	toggle
 "Fashion victim (more cursed/forced/transforming clothing) - 6 points ([if unlucky is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	unlucky toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if tough-shit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tough-shit toggle rule
 "Limited Saves - 4 points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	save game toggle rule
-"Male-to-female sex change - 2 points ([if TG fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	TG fetish toggle rule
-[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. Put them above the TG fetish row instead.]
+"Male-to-female sex change - 2 points ([if the player is female]disabled since player is female[otherwise if TG fetish is 0]not chosen[otherwise][bold type]chosen[roman type][end if])"	--	--	TG fetish toggle rule
+"ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
+[DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
+
 
 Include Fetish Options by Fetish Settings.
 Include Handicap Options by Fetish Settings.
@@ -719,9 +746,9 @@ Include Benefit Options by Fetish Settings.
 Include DQ Benefit Options by Fetish Settings.
 Include Background Options by Fetish Settings.
 Include Secret Options by Fetish Settings.
+Include Festive Options by Fetish Settings.
 
 Part - Points
-
 
 [!<DecideWhichNumberIsPositivePointsCost>+
 
@@ -889,6 +916,8 @@ This is the randomise bonuses rule:
 					follow max belly size rule;
 				otherwise:
 					follow max ass size rule.
+
+
 
 
 Fetish Settings ends here.

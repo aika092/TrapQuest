@@ -3,8 +3,7 @@ Region Building Hotel by Rooms begins here.
 
 
 Figure of hotel loading is the file "Special/Loading/loading4.png".
-Figure of dq hotel loading is the file "Special/Loading/loading8.png".
-Figure of dq hotel messy loading is the file "Special/Loading/loading9.png".
+Figure of dq hotel loading is the file "Special/Loading/loading2.png".
 
 [!<SetUpTheHotel>+
 
@@ -17,8 +16,6 @@ To Set Up The Hotel:
 		if images visible is 1:
 			if diaper quest is 0:
 				display figure of hotel loading;
-			otherwise if a random number between 0 and 5 < rectum or there is a worn messed knickers:
-				display figure of dq hotel messy loading;
 			otherwise:
 				display figure of dq hotel loading;
 		say "Now loading the hotel region!";

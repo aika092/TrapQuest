@@ -61,8 +61,7 @@ To decide which number is the initial cringe of (C - a teddybear playsuit):
 
 To uniquely set up (C - a teddybear playsuit):
 	repair C;
-	now the armour of C is 8;
-	set up magic state of C.
+	now the armour of C is 8.
 
 Definition: a teddybear playsuit (called C) is ballet related:
 	decide yes.
@@ -88,8 +87,7 @@ To decide which number is the initial cringe of (C - a waddle outfit):
 
 To uniquely set up (C - a waddle outfit):
 	repair C;
-	now the armour of C is 15;
-	set up magic state of C.
+	now the armour of C is 15.
 
 Part 4 - White Sissy Dress
 

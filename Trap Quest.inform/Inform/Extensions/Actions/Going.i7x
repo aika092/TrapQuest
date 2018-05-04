@@ -50,7 +50,7 @@ REQUIRES COMMENTING
 
 +!]
 Check going while the player is clothing stuck:
-	say "You can't because your [a random stuck clothing worn by the player] is stuck in place!" instead.
+	say "You can't because your [random worn stuck clothing] is stuck in place!" instead.
 
 [!<CheckGoingEast>+
 
@@ -122,8 +122,8 @@ Carry out going up (this is the hotel-setup rule):
 			repeat with M running through alive nonsetup monsters:
 				set up M;
 			[deploy a random off-stage camera trap in the location of HotelBedPatrons;]
-		if a random demon lord is off-stage and the xavier-power of a random mechanic > 4:
-			unseal xavier from a random mechanic.
+		if demon lord is off-stage and the xavier-power of mechanic > 4:
+			unseal xavier from mechanic.
 
 [!<TheWoodsSetUpRule>+
 
@@ -448,26 +448,26 @@ Check going:
 		say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	if the player is flying, say "You're not even touching the ground!" instead;
 	let S be the strength of the player + 15;
-	repeat with ST running through revealed sprinkle traps in the room noun from the location of the player:
+	let L be the room noun from the location of the player;
+	repeat with ST running through revealed sprinkle traps in L:
 		unless ST is expired:
 			say "There is a sprinkler currently dispensing [SprinkleLiquid of ST] in that room, are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through revealed hypno traps in the room noun from the location of the player:
+	repeat with ST running through revealed hypno traps in L:
 		unless ST is expired:
 			say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through revealed haunted mirror traps in the room noun from the location of the player:
+	repeat with ST running through revealed haunted mirror traps in L:
 		unless ST is expired:
 			say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through futanari slutty sisters in the room noun from the location of the player:
-		unless the sleep of ST > 0:
+	repeat with ST running through futanari slutty sisters in L:
+		unless the sleep of ST > 0 or ST is off-stage:
 			say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through robomatron in the room noun from the location of the player:
-		unless the sleep of ST > 0:
-			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
-			unless the player consents, say "You change your mind." instead;
+	if robomatron is alive and robomatron is in L and the sleep of robomatron <= 0:
+		say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
+		unless the player consents, say "You change your mind." instead;
 	now seconds is 3; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, moving is not submissive!  Monsters are not delayed by a going action.]
@@ -577,7 +577,7 @@ Check going:
 			if the class of the player is catgirl or the class of the player is puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
 			if the class of the player is adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
 			if a random number between E and (the difficulty of M + 3) > 2 and M is blocker, say "[MovementBlock of M]" instead;
-			otherwise say "[if M is blocker]You manage to quickly crawl past the [M] before [he of M] can catch you![end if]";
+			otherwise say "[if M is blocker]You manage to quickly crawl past [NameDesc of M] before [he of M] can catch you![end if]";
 		if S > (B2 / 2) + 1: [If this isn't true, the player will never be able to crawl, even with 0 fatigue.]
 			let R be a random number from 0 to the fatigue of the player;
 			if debugmode is 1, say "[line break]Player [S * 1] | [(R / 10) + (B2 / 2)] Knees[paragraph break]";
@@ -638,8 +638,7 @@ REQUIRES COMMENTING
 +!]
 Carry Out Going (this is the monsters-go-next rule):
 	repeat with M running through alive simulated monsters:
-		unless M is vine boss, compute turn 2 of M;
-
+		unless M is vine boss, compute turn 2 of M.
 
 [!<DelayCrawling>+
 
@@ -690,7 +689,7 @@ REQUIRES COMMENTING
 
 +!]
 To say MovementBlock of (M - a monster):
-	say "The [M] manages to get in front of you and block your path, slowing down your movement!";
+	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!";
 
 [!<CarryOutGoingWhileThePlayerIsInDungeon41AndDungeon41IsGuarded>+
 
@@ -700,17 +699,16 @@ REQUIRES COMMENTING
 Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 	let X be the number of held stolen clothing;
 	let flav-said be 0;
-	let S be a random shopkeeper;
 	repeat with C running through store clothing held by the player:
-		if S is not mating:
-			if flav-said is 0, say "The shopkeeper sees you trying to leave.  [line break][first custom style]'[one of]Stop Thief!'[or]Guards!  Guards!  Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon.  Looks like you're in trouble with the law!";
+		if shopkeeper is not mating:
+			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon.  Looks like you're in trouble with the law!";
 			now C is stolen;
 			repeat with M running through alive royal guards:
 				deinterest M;
-				if the sleep of M > 0 and M is in the location of the player, say "The [M] hears the alarm and wakes up!";
+				if the sleep of M > 0 and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
 				now the sleep of M is 0;
-			now S is interested;
-			anger S;
+			now shopkeeper is interested;
+			anger shopkeeper;
 		otherwise:
 			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what she wants. I hope you find it useful!'[roman type][line break]";
 			now C is normal;
@@ -739,11 +737,11 @@ Report going:
 						if the largeness of breasts > 7, calm M;
 					otherwise:
 						if the largeness of breasts > 13, calm M;
-					if M is unfriendly, now the variety of M is the largeness of breasts + 1;
+					if M is unfriendly, now the growth-target of M is the largeness of breasts + 1;
 				if M is unfriendly:
 					now the boredom of M is 0;
 					now M is interested;	
-					say "The [M] is attracted by the sound of your cowbell!  Uh-oh.";]
+					say "[BigNameDesc of M] is attracted by the sound of your cowbell!  Uh-oh.";]
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:
 		now the room-entering of the player is 1;
 		choose a trap to trigger.

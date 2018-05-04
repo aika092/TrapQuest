@@ -2,12 +2,20 @@ Headmistress by Monster begins here.
 
 headmistress is a staff member. headmistress is captive. headmistress is female.
 
-headmistress is in School08. The printed name of headmistress is "[if item described is in the location of the player][TQlink of item described][end if][input-style]headmistress[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of headmistress is "[HeadmistressDesc]". The text-shortcut of headmistress is "hdm".
+headmistress is in School08. The text-shortcut of headmistress is "hdm".
 
 Figure of headmistress is the file "NPCs/School/headmistress1.png".
 
-To say HeadmistressDesc:
-	if images visible is 1, display the figure of headmistress;
+To decide which figure-name is the monster-image of (M - headmistress):
+	decide on figure of headmistress.
+
+To say ShortDesc of (M - headmistress):
+	say "headmistress".
+
+To say MediumDesc of (M - headmistress):
+	say "headmistress".
+
+To say MonsterDesc of (M - headmistress):
 	say "This woman looks neither young nor old - she's clearly an adult but you can't tell if she's 20 or 40. Her very slim figure is complemented by perfect D cup breasts and not insignificant hips. A tight red latex dress with a very deep V-neck clings tightly to her, allowing you to appreciate all of her curves. The dress, although very provocative and not reaching below mid-thigh, somehow gives her an aura of extreme dominance. This sensation is further enhanced by her straight neat black hair and harsh make up which gives her face a rather... fierce appearance.";
 	say "[variable custom style]It's like I can actually feel raw power coming from her. [if the bimbo of the player <= 10]I need to be careful[otherwise]I'd better do whatever she says[end if].[roman type][line break]".
 

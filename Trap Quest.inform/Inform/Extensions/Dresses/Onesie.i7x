@@ -20,7 +20,6 @@ To decide which number is the heel-skill-influence of (O - a onesie):
 
 To uniquely set up (C - a onesie):
 	repair C;
-	set up magic state of C;
 	now C is absorption.
 	
 To decide what number is the original price of (C - a onesie):
@@ -77,7 +76,6 @@ To say ClothingDesc of (C - a velcro onesie):
 	say "A pink onesie which fully covers your arms and legs. A large open flap at the back [if C is worn]exposes[otherwise]would expose[end if] your [if there is worn top level protection clothing][random worn top level protection clothing][otherwise][fuckholes][end if] to the world. It has a velcro strip which looks like it should be able to close, but in fact the velcro doesn't stick at all. This means it [if C is worn]looks[otherwise]would look[end if] like you've purposefully left it open so everyone can see inside. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
 
 To uniquely set up (C - a velcro onesie):
-	set up magic state of C;
 	now C is absorption.
 
 To decide which number is the initial outrage of (C - a velcro onesie):

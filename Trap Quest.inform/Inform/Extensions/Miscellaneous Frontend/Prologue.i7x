@@ -3,13 +3,11 @@ Prologue by Miscellaneous Frontend begins here.
 Figure of Trap Quest Logo is the file "Special/Logos/TrapQuestLogo1.png".
 Figure of Diaper Quest Logo is the file "Special/Logos/TrapQuestLogo2.png".
 
-[!<SayTrapQuest>+
-
-REQUIRES COMMENTING
-
-+!]
-To say Trap Quest:
+To say Misheard Trap Quest:
 	say "[if diaper quest is 1]Die Per[otherwise]Trap[end if] Quest".
+
+To say Trap Quest:
+	say "[if diaper quest is 1]Diaper[otherwise]Trap[end if] Quest".
 
 [!<Prologue>+
 
@@ -23,11 +21,15 @@ To Prologue:
 		otherwise display the figure of Trap Quest Logo;
 		wait 3000 ms before continuing;
 		clear the screen;
-	say "[second custom style]'Nintendolls are passionately dedicated to pushing the boundaries of technology in video games. As you know we've been developing virtual reality for some time. We think we're finally ready for mass production, and we have made just one game so far - for proof of concept and to demonstrate the power of the machine. That game, of course, is [Trap Quest].'";
-	say "[line break][roman type]'[Trap Quest]', the first ever fully virtual video game. And you're the person from the public that gets to play it first. Not only that, there are millions of dollars in prize money to be won. All your life's problems could be solved in just a couple of hours time - you could live a life of luxury and no work!  You still can't get over it. Just two weeks ago you found the golden ticket in your cereal pack, and now here you are being led down a series of corridors in Nintendolls['] massive R&D building by two [if diaper quest is 1]very friendly[otherwise if the player is male]very attractive ladies[otherwise]undignified harlots[end if] each wearing an outrageously skimpy latex uniform / micro bikini that leaves [if diaper quest is 0]very [end if]little to the imagination.";
+	say "[second custom style]'Nintendolls are passionately dedicated to pushing the boundaries of technology in video games. As you know we've been developing virtual reality for some time. We think we're finally ready for mass production, and we have made just one game so far - for proof of concept and to demonstrate the power of the machine. That game, of course, is [Misheard Trap Quest].'";
+	say "[line break][roman type]'[Misheard Trap Quest]', the first ever fully virtual video game. And you're the person from the public that gets to play it first. Not only that, there are millions of dollars in prize money to be won. All your life's problems could be solved in just a couple of hours time - you could live a life of luxury and no work!  You still can't get over it. Just two weeks ago you found the golden ticket in your cereal pack, and now here you are being led down a series of corridors in Nintendolls['] massive R&D building by two [if diaper quest is 1]very friendly[otherwise if the player is male]very attractive ladies[otherwise]undignified harlots[end if] each wearing an outrageously skimpy latex uniform / [if diaper quest is 0]micro [end if]bikini that leaves [if diaper quest is 0]very [end if]little to the imagination.";
 	if image cutscenes is 1:
-		if the player is male, display figure of cutscene prologue male;
-		otherwise display figure of cutscene prologue female;
+		if the player is male:
+			if diaper quest is 0, display figure of cutscene tq prologue male;
+			otherwise display figure of cutscene dq prologue male;
+		otherwise:
+			if diaper quest is 0, display figure of cutscene tq prologue female;
+			otherwise display figure of cutscene dq prologue female;
 	if diaper quest is 1:
 		say "[line break][first custom style]'The name of the game is a bit weird. I'm guessing it's a rogue-like?'[roman type][line break]You ask politely, trying to ignore their unusual outfits.";
 		say "[second custom style]'What do you mean?  And yes, good guess, it is a rogue-like!'[line break][roman type]The girls don't seem very smart, so you drop the line of questioning. You [if the player is male]lose yourself in a daydream where these two nurses take care of you in a rather... intimate manner[otherwise]frown, distracted by your mild annoyance at these women using their bodies to get ahead in the world. It's not your idea of feminism at all. You politely nod and say 'yep' every now and then but in your mind you're lecturing them on how their actions are causing problems for hundreds of other women[end if]. You get handed a lengthy contract on a clipboard and quickly sign your signature on the last page. Health and safety bullshit probably - you definitely can't be bothered to read that right now.";

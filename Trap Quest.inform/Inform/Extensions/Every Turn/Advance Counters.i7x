@@ -112,7 +112,7 @@ This is the sacred pool decay rule:
 		decrease the charge of the sacred pool by counters-seconds.
 The sacred pool decay rule is listed in the advance counters rules.
 
-This is the living tentacles decay rule:
+This is the living tentacles decay rule:[TODO: migrate to perioidical effect function for living tentacles]
 	let L be a random living tentacles;
 	if the charge of L > 0:
 		decrease the charge of L by counters-seconds.
@@ -204,23 +204,6 @@ REQUIRES COMMENTING
 This is the recent breasts largeness rule:
 	now recent-breasts-largeness is the largeness of breasts.
 The recent breasts largeness rule is listed in the advance counters rules.
-
-[!<TheKitsuneVanishesRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the kitsune vanishes rule:
-	let M be a random kitsune;
-	if the vanish timer of M > -1:
-		if the vanish timer of M is 0:
-			if M is in the location of the player:
-				say "The kitsune vanishes in a puff of pink smoke!";
-			regionally place M;
-			bore M;
-			set up disguise of M;
-		decrease the vanish timer of M by 1.
-The kitsune vanishes rule is listed in the advance counters rules.
 
 [!<TheFirstAidCooldownRule>+
 

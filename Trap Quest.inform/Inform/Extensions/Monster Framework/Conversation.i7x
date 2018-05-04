@@ -49,24 +49,25 @@ To compute talk option (N - 1) to (M - a monster):
 	otherwise:
 		say "[RepeatGreeting of M]";[This is the default greeting for most monsters]
 	if M is interested:
-		if seduced is 0:
+		if seduced is 0 or M is not intelligent:
 			compute greeting response of M;[This is something that should be specific to every monster]
 		otherwise:
 			say "[BimboSeduced of M]";
 	otherwise:
-		if M is intelligent, now the boredom of M is 0;
+		now the boredom of M is 0;
 		check perception of M.
-		
 		
 [Submissive and dominant are switched for the monster, since they were on bottom when they got fucked, and on top when they fucked you.]
 To compute greeting response of (M - a monster):
+	if M is not intelligent:
+		say "[MuteGreetResponse of M]";
 	if M is penetrating a fuckhole and M is unfriendly:
 		say "[AsDominantResponse of M]";
 	otherwise if M is penetrating a fuckhole:
 		say "[AsPartnerResponse of M]";
 	otherwise if there is a monster penetrating a fuckhole:
 		if a random monster penetrating a fuckhole is unfriendly, say "[midDominanceResponse of M]"; [is the player currently being dominated by another monster?]
-		otherwise say "[InSexResponse of M]"; [is the player currently having consensual sex]
+		otherwise say "[InSexResponse of M]"; [are we currently having player-initiated sex]
 	otherwise if the times-fucked of M > the times-dominated of M:
 		say "[DominantResponse of M]";
 	otherwise if the times-dominated of M > the times-fucked of M:
@@ -106,7 +107,7 @@ To say FirstGreeting of (M - a monster):
 			if M is neuter:
 				say "[first custom style]'Hi there.'[roman type][line break]";
 			otherwise if M is not male:
-				say "[first custom style]'[one of]Hello, I'm [NameBimbo]'[or]Hey. Are you trapped in here too?'[or]Hey, what's up?'[at random][roman type][line break]";
+				say "[first custom style]'[one of]Hello, I'm [NameBimbo].'[or]Hey. Are you trapped in here too?'[or]Hey, what's up?'[at random][roman type][line break]";
 			otherwise:
 				say "[first custom style]'[one of]Hey man. Got some time?'[or]Hey, I'm [NameBimbo].'[or]Hey, do you have a minute?'[at random][roman type][line break]";
 	otherwise if bimbo of the player < 10:
@@ -313,16 +314,20 @@ To say CheerSeduce of (M - a monster):
 
 To say BimboSeduced of (M - a monster):
 	if M is neuter:
-		say "Something seems to suddenly switch in the [M]'s demeanour and its stance becomes aggressive.";
+		say "Something seems to suddenly switch in [NameDesc of M]'s demeanour and its stance becomes aggressive.";
 		anger M;
 		now the boredom of M is 0;
 	otherwise if the class of the player is cheerleader and M is unfriendly and a random number between 1 and 3 is 1 and M is not grabbing the player:
-		say "Something seems to suddenly switch in the [M]'s head, [his of M] grin changing into a nonplussed grimace. It must be something you said, the [M] doesn't look interested in you anymore.[line break]";[You ran your mouth so much the monster lost interest.]
+		say "Something seems to suddenly switch in [NameDesc of M]'s head, [his of M] grin changing into a nonplussed grimace. It must be something you said, [NameDesc of M] doesn't look interested in you anymore.[line break]";[You ran your mouth so much the monster lost interest.]
 		now the scared of M is 30;
 	otherwise:
-		say "Something seems to suddenly switch in the [M]'s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
+		say "Something seems to suddenly switch in [NameDesc of M]'s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
 		anger M;
 		now the boredom of M is 0.
+
+[Mute NPCs]
+To say MuteGreetResponse of (M - a monster):
+	say "The response comes telepathically.[line break][speech style of M]'Speech is for humans.'[roman type][line break]".
 
 [This is a response to a first time greeting.]
 To say FirstResponse of (M - a monster):
@@ -337,7 +342,7 @@ To say UnfriendlyResponse of (M - a monster):
 	say "[speech style of M]'Shut up.'[roman type][line break]"
 
 To say AsDominantResponse of (M - a monster):
-	say "The [M] emits a primal growl.".
+	say "[BigNameDesc of M] emits a primal growl.".
 	
 To say AsPartnerResponse of (M - a monster):
 	say "[speech style of M]'Stop ruining the moment!'[roman type]".
@@ -377,7 +382,9 @@ To compute talk option (N - 2) to (M - a monster):
 		if I is 1, now I is 2;
 		now Q is a random number between (I - 1) and 6;
 		now the conversation-sequence of M is Q;
-	if player is seductive and M is raunchy and a random number between 1 and 4 is 1:
+	if M is not intelligent:
+		say "[MuteQuestionResponse of M]";
+	otherwise if player is seductive and M is raunchy and a random number between 1 and 4 is 1:
 		now M is interested;
 		say "[BimboSeduce of M]";
 		say "[BimboSeduced of M]";
@@ -437,7 +444,7 @@ To compute answer of (M - a monster) to (Q - a number):
 [this is where we determine whether or not a monster is willing to punish the player for questioning them so much. We also put the "uninterested" stuff here.]
 To compute annoyance of (M - a monster):
 	if M is uninterested: 
-		say "The [M] doesn't seem to realize you're talking to [him of M].";
+		say "[BigNameDesc of M] doesn't seem to realize you're talking to [him of M].";
 	otherwise if M is unfriendly:
 		say "[speech style of M]Shut up.[roman type][line break]";
 	otherwise if the questioned of M > the annoyance threshold of M:
@@ -453,10 +460,10 @@ To say AnnoyedWarn of (M - a monster):
 To compute teaching of (M - a monster):
 	let R be a random number between 1 and 3;
 	if R is 1:
-		say "The [M] teaches you a fun magic trick. You're amazed and impressed at how much one can do with simple finesse!";
+		say "[BigNameDesc of M] teaches you a fun magic trick. You're amazed and impressed at how much one can do with simple finesse!";
 		IntUp 1;
 	otherwise:
-		say "The [M] teaches you a 'fun' magic trick. You're not impressed.";
+		say "[BigNameDesc of M] teaches you a 'fun' magic trick. You're not impressed.";
 		Dignify 200;
 	if the questioned of M <= 190:
 		increase the questioned of M by 100;[The questioned gain is separated from the main function so we can easily customize as needed]
@@ -505,6 +512,11 @@ To say AdviceQuestion of (M - a monster):
 		
 [this is where the player does or does not learn a skill. I figure that since this involves heavy code, it should keep the "say" for later]
 
+[Mute NPCs]
+To say MuteQuestionResponse of (M - a monster):
+	say "[variable custom style]'Are you [if the bimbo of the player < 10]sentient[otherwise]aware what's going on and stuff[end if]?'[roman type][line break]";
+	say "The response comes telepathically.[line break][speech style of M]'Yes I am sentient. Yes I am of sexual maturity for my species. No more questions.'[roman type][line break]".
+
 To say WhereAnswer of (M - a monster):
 	say "[speech style of M]'We're here. Obviously.'[roman type][line break]".
 	
@@ -534,10 +546,10 @@ To compute talk option (N - 3) to (M - a monster):
 		say "[BimboSeduced of M]";
 	otherwise:
 		say "[DrinkRequest of M]";
-		if M is not intelligent:
-			say "It doesn't look like the [M] speaks English.";
-		otherwise if M is uninterested:
-			say "The [M] doesn't seem to realise you're talking to [him of M].";
+		if M is uninterested:
+			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
+		otherwise if M is not intelligent:
+			say "It doesn't look like [he of M] intends to respond.";
 		otherwise if M is willing to urinate and watersports fetish is 1 and a random number between 1 and 20 < the urine taste addiction of the player:
 			compute M urinating;
 		otherwise if the semen taste addiction of the player > 5 and M is willing to do oral and (M is male or M is wench):
@@ -576,7 +588,7 @@ To compute friendly drink of (M - a monster):
 	if M is intelligent:
 		say "[speech style of M]'Sorry, I don[']t have anything.'[roman type][line break]";
 	otherwise:
-		say "The [M] looks at you blankly.".
+		say "[BigNameDesc of M] looks at you blankly.".
 
 To compute unfriendly drink of (M - a monster):
 	if M is intelligent:
@@ -586,7 +598,7 @@ To compute unfriendly drink of (M - a monster):
 			say "[speech style of M]'I[']ll give you something to drink all right!'[roman type][line break]";
 			now M is interested;
 	otherwise:
-		say "The [M] looks at you blankly.".
+		say "[BigNameDesc of M] looks at you blankly.".
 
 To compute desperate drinking to (M - a monster):
 	say "You spot a [M]! You [if the player is upright]drop to your knees and [end if]beg [him of M] to give you something to drink.";
@@ -609,10 +621,10 @@ To compute talk option (N - 4) to (M - a monster):
 		say "[BimboSeduced of M]";
 	otherwise:
 		say "[FoodRequest of M]";
-		if M is not intelligent:
-			say "It doesn't look like the [M] speaks English.";
-		otherwise if M is uninterested:
-			say "The [M] doesn't seem to realise you're talking to [him of M].";
+		if M is uninterested:
+			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
+		otherwise if M is not intelligent:
+			say "It doesn't look like [he of M] intends to respond.";
 		otherwise if M is friendly:
 			compute friendly food of M;
 		otherwise if M is unfriendly:
@@ -643,7 +655,7 @@ To compute friendly food of (M - a monster):
 		if there is held food or there is on-stage candy:
 			say "[FriendlyFoodRefuseFlav of M]";
 		otherwise if C is candy:
-			say "[FriendlyFoodAgreeFlav of M][line break]The [M] gives you a [C], which you eat immediately.";
+			say "[FriendlyFoodAgreeFlav of M][line break][BigNameDesc of M] gives you a [C], which you eat immediately.";
 			now C is held by the player;
 			try TQeating C;
 		otherwise:
@@ -651,7 +663,7 @@ To compute friendly food of (M - a monster):
 	otherwise if M is intelligent:
 		say "[FriendlyFoodApologiseFlav of M]";
 	otherwise:
-		say "The [M] looks at you blankly.".
+		say "[BigNameDesc of M] looks at you blankly.".
 
 To say FriendlyFoodRefuseFlav of (M - a monster):
 	say "[speech style of M]'Seems to me that you have food of your own. Why don't you eat that first?'[roman type][line break]".
@@ -679,7 +691,7 @@ To compute unfriendly food of (M - a monster):
 			say "[UnfriendlyFoodLewdFlav of M]";
 			now M is interested;
 	otherwise:
-		say "The [M] looks at you blankly.".
+		say "[BigNameDesc of M] looks at you blankly.".
 		
 To compute desperate eating to (M - a monster): [Currently unused]
 	say "You spot a [M]! You [if the player is upright]drop to your knees and [end if]beg [him of M] to give you something to eat.";

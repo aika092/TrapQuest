@@ -51,7 +51,7 @@ To compute class outfit of (H - a royal circlet):
 		now the raw-magic-modifier of B is (the milk volume of breasts + a random number between -2 and 6) / 5;
 	otherwise if there is a worn milking basque and A is actually summonable:
 		say "[bold type]Your [printed name of H] [bold type]shines brightly, and anklecuffs materialise around your feet![roman type][line break]";
-		summon A cursed;
+		summon A locked;
 	otherwise if there is a worn crotch-ripped milking basque and the number of embodied things penetrating a fuckhole is 0:
 		now B is a random worn milking basque;
 		say "Your [printed name of H] shines brightly, and your [printed name of B] magically repairs itself.[line break]";

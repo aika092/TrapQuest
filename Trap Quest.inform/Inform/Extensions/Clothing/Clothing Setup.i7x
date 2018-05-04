@@ -75,14 +75,37 @@ A time based rule (this is the shop cycling rule):[if the player is in the room,
 		if E is clothing, destroy E;
 		set up store.
 
+[!<SetUpClothing>+
+
+Uses the setUpMagicStateOfClothing, UniquelySetUpClothing, and SetUpInfluenceOfClothing functions to set up 
+the clothing "C."
+
+@param <Clothing>:<C> The clothing to set up.
+
++!]
 To set up (C - a clothing):
 	if C is zippable, now C is crotch-zipped;
 	set up influence of C;
+	set up magic state of C;
 	uniquely set up C.
 
-To uniquely set up (C - a clothing):
-	set up magic state of C. [If you are creating a unique setup clause for your item, you probably want to include this, otherwise the item will not vary in magic state.]
+[!<UniquelySetUpClothing>+
 
+Defines any special code that needs to run when this clothing is being set up
+
+@param <Clothing>:<C> The clothing to set up.
+
++!]
+To uniquely set up (C - a clothing):
+	do nothing.
+
+[!<SetUpMagicStateOfClothing>+
+
+Used in the setUpClothing function. Sets up the magic modifier for this clothing and handles the BUC state of this clothing. Be careful modifying this for items because it could mean the item doesn't vary.
+
+@param <Clothing>:<C> The clothing to set up.
+
++!]
 To set up magic state of (C - a clothing):
 	now the raw-magic-modifier of C is 0;
 	now C is bland;

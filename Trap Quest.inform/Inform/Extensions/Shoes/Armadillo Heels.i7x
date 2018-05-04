@@ -23,9 +23,6 @@ To say ClothingDesc of (C - an armadillo heels):
 	say "A unique pair of multicoloured [heel-height of C] inch stiletto heels, with a unique [']armadillo shaped['] curve, that properly forces you onto the points of your toes. Walking in them is [if C is not worn]going to be [end if]very difficult, but there's probably some kind of benefit for wearing them.";
 	say "[SteadinessDesc of C]".
 
-To uniquely set up (C - an armadillo heels):
-	do nothing.
-
 To set up influence of (C - an armadillo heels):
 	now C is anal-sex-addiction-influencing.
 

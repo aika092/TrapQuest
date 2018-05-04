@@ -217,7 +217,7 @@ The player can't attack with fake nails rule is listed in the ability to slap ru
 
 [!<ThePlayerCanNotAttackWhenBoundBehindRule>+
 
-This rule causes a slap to fail if the player is wearing a wrist bond with its "bound-behind" flag set to true. If the player is attacking manually, outputs a message explaining why the slap failed.
+This rule causes a slap to fail if the player is wearing a wrist lockable clothing with its "wrist-bound-behind" flag set to true. If the player is attacking manually, outputs a message explaining why the slap failed.
 
 +!]
 This is the player can't attack when bound behind rule:
@@ -380,7 +380,7 @@ REQUIRES COMMENTING
 +!]
 To compute surrender to (M - a monster):
 	let N be a random intelligent dangerous monster in the location of the player;
-	say "You consider attacking the [M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
+	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
 	now surrendered is 1;
 	try kneeling.
 
@@ -394,7 +394,7 @@ To say SurrenderFlav of (M - a monster):
 		if the player is able to speak:
 			if the humiliation of the player >= 40000, say "[variable custom style]'[one of]Please use my body to your heart's desire.'[or]I understand my place.'[or]I am yours to use. Please do not show me any mercy.'[in random order][roman type][line break]";
 			otherwise say "[variable custom style]'[one of]Do what you want with me, just please don't be rough!'[or]I'll do whatever you say, just please don't hurt me!'[or]You're the boss... just please be kind to me!'[or]I'm delicate, please don't break me!'[or]I'm just a poor weakling, please show me mercy!'[in random order][roman type][line break]";
-	if the player is able to use their hands, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if the [M] even understands your actions[end if].".
+	if the player is able to use their hands, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
 
 
 Part 4 - Damage Calculation
@@ -513,7 +513,7 @@ To say DamageReactWeak of (M - a monster):
 	say "The [noun] takes the hit, fighting to maintain [his of M] balance!".
 
 To say DamageReactSubmissive of (M - a monster):
-	say "The [M] takes the hit, [his of M] eyes lingering on your crotch as [he of M] fights to maintain [his of M] balance.".
+	say "[BigNameDesc of M] takes the hit, [his of M] eyes lingering on your crotch as [he of M] fights to maintain [his of M] balance.".
 
 [!<SayDamageFlavourOfNumberOnMonster>+
 
@@ -528,9 +528,9 @@ To say damage-flavour of (N - a number) on (M - a monster):
 	otherwise if N < 3:
 		say "That felt quite weak, but hopefully it hurt a bit.";
 	otherwise if N < 6:
-		say "The [M] definitely felt that. A respectable hit!";
+		say "[BigNameDesc of M] definitely felt that. A respectable hit!";
 	otherwise if N < 9:
-		say "The [M] visibly recoils from the hit. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
+		say "[BigNameDesc of M] visibly recoils from the hit. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
 	otherwise if N < 13:
 		say "Wow, you felt that connect with incredible force. A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 	otherwise:

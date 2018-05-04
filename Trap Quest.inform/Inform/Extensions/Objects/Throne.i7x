@@ -60,7 +60,7 @@ Check entering the throne:
 		if R < 3 and (the latex-transformation of the player > 3 or the noun is transformed), now R is 3;
 		if first-throne is 0:
 			now first-throne is 1;
-			now R is a random number between 4 and 6;
+			if tough-shit is 0, now R is a random number between 4 and 6;
 		if R is 1:
 			let H be a random tiara;
 			summon H cursed;

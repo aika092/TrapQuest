@@ -78,6 +78,7 @@ To decide which number is the flat strength of the player:
 		if the milk volume of breasts > 34, increase S by 1;
 		if the milk volume of breasts > 37, increase S by 1;
 		if the milk volume of breasts > 40, increase S by 1;
+	if the class of the player is bunny, increase S by the total squirtable fill of belly / 5;
 	if strength-tincture-timer > 0:
 		increase S by strength-tincture-bonus;
 	increase S by ((pink-nugget-timer + default-candy-duration - 1) / default-candy-duration) * 6;

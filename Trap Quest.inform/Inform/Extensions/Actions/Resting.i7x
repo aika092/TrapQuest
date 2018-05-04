@@ -36,13 +36,13 @@ Carry out resting:
 		compute extra turn;
 		repeat with M running through dangerous monsters:
 			if the alert of the player is 0:
-				if debugmode is 1, say "The [M] in [location of M] might make the player alert if it is close enough..";
+				if debugmode is 1, say "[BigNameDesc of M] in [location of M] might make the player alert if it is close enough..";
 				if M is in the location of the player or M is nearby, now the alert of the player is 1;
 				if the alert of the player is 1 and M is nearby:
 					say "You see a threatening looking [M] that is lurking nearby. ";
 					break;
 				otherwise if the alert of the player is 1:
-					say "Your rest is interrupted by the [M].";
+					say "Your rest is interrupted by [NameDesc of M].";
 					break;
 	if there is a worn maternity dress and there is a worn yoga pants:
 		while the body soreness of the player > 0 and the alert of the player is 0:

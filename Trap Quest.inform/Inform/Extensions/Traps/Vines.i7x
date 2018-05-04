@@ -22,6 +22,9 @@ To say VineDesc:
 	say "Seemingly intelligent vines with oozing, phallic tips. They [if the player is vine-cursed]seem irrationally eager to penetrate your body.[otherwise]only seem interested in penetrating your body.[end if][if egg laying fetish is 1] Some of them are covered in large yellow splotches, as if they needed any help looking bizarre[end if]".
 	
 To say ShortDesc of (T - a vine):
+	say "vine".
+	
+To say MediumDesc of (T - a vine):
 	say "Strong, living vines worm through the soil [if the player is vine-cursed]underneath your feet.[otherwise]around your feet.[end if]  ".
 
 To say PregGrowth of (M - a vine):
@@ -34,7 +37,7 @@ Returns yes if the player is grabbed by a vine.
 +!]
 Definition: yourself is vine stuck:
 	if there is a vine grabbing the player, decide yes;
-	if there is a fairy witch grabbing the player, decide yes;
+	if fairy-witch is grabbing the player, decide yes;
 	decide no.
 
 [!<YourselfIsVineFucked>+
@@ -55,7 +58,7 @@ Definition: a vine (called V) is aggressive:
 	if V is penetrating a body part or V is grabbing the player, decide yes;
 	if the TrapNo of V < 0, decide no;
 	if the player is diaper focused and the player is not in WoodsBoss01, decide no;
-	if a random vine boss is off-stage, decide no;
+	if vine boss is off-stage, decide no;
 	if busy is 1, decide no;
 	if the player is monster fucked or the player is trap stuck, decide no;
 	if asshole is actually occupied and (the player is male or vagina is actually occupied), decide no;
@@ -184,7 +187,7 @@ To compute (V - a vine) penetrating (F - vagina):
 	otherwise if vagina is actually occupied:
 		let T be a random thing penetrating vagina;
 		if T is disembodied:
-			say "The vine powerfully pulls out the [T] and throws it on the ground.";
+			say "The vine powerfully pulls out the [ShortDesc of T] and throws it on the ground.";
 			dislodge T;
 			now T is in the location of the player;
 	otherwise:
@@ -204,9 +207,9 @@ REQUIRES COMMENTING
 +!]
 To compute (V - a vine) attacking (K - a clothing):
 	if K is rippable:
-		say "A large vine [one of]comes up from within the ground right under your butt, and starts[or]is[stopping] trying to force its way through your [printed name of K]!";
+		say "A large vine [one of]comes up from within the ground right under your butt, and starts[or]is[stopping] trying to force its way through your [ShortDesc of K]!";
 		if the armour of K < the damage of K or K is zippable:
-			say "[if K is zippable]The vine finds the zipper and easily forces its way through![otherwise]The vine pushes straight through your [printed name of K], it's now permanently ripped![end if]";
+			say "[if K is zippable]The vine finds the zipper and easily forces its way through![otherwise]The vine pushes straight through your [ShortDesc of K], it's now permanently ripped![end if]";
 			rip K;
 		otherwise:
 			say "The [clothing-material of K] is weakening!";
@@ -215,7 +218,7 @@ To compute (V - a vine) attacking (K - a clothing):
 		say "The vine pulls your [if K is hobble-skirted]skirt up, exposing your crotch[otherwise if K is trousers]waistband down to your knees[otherwise]crotch section to one side[end if]!";
 		displace K;
 	otherwise:
-		say "The vine [one of]grabs[or]wiggles into[cycling] your [printed name of K] and [one of]rips[or]powerfully tears[cycling] it off!";
+		say "The vine [one of]grabs[or]wiggles into[cycling] your [ShortDesc of K] and [one of]rips[or]powerfully tears[cycling] it off!";
 		destroy K;
 
 [!<SayAssholePenetrationFlavOfVine>+
@@ -253,10 +256,10 @@ To compute vines fucking:
 			otherwise:
 				CumFaceUp 2;
 		if the TrapNo of V is 1:
-			say "Another vine joins the first in fucking your [if V is penetrating asshole][asshole][otherwise][vagina][end if]!  Shit!";
+			say "Another vine joins the first in fucking your [if V is penetrating asshole][asshole][otherwise][vagina][end if]! Shit!";
 			Ruin a random fuckhole penetrated by V;
 		if the TrapNo of V is 2:
-			say "A third vine squeezes into your [if V is penetrating asshole][asshole][otherwise][vagina][end if]!  You are being stretched!";
+			say "A third vine squeezes into your [if V is penetrating asshole][asshole][otherwise][vagina][end if]! You are being stretched!";
 			Ruin a random fuckhole penetrated by V;
 		if the TrapNo of V is 3:
 			say "A fourth vine somehow manages to squeeze into your [if V is penetrating asshole][asshole][otherwise][vagina][end if], and they all continue fucking you!";
@@ -281,7 +284,7 @@ To compute vines fucking:
 				PussyFill ((a random number between 1 and 3) + (a random number between 1 and 3) + the stance of the player);
 				let F be a random fairy grabbing the player;
 				if F is monster and the pregnancy of the player is 0 and pregnancy fetish is 1:
-					say "Your belly [if slow pregnancy > 2]grows rapidly, emitting magenta light[otherwise]emits magenta light for several seconds, illuminating the vegetal mass between your legs[end if] as the [F] grins up at you, fingering herself as she floats away.[run paragraph on]";
+					say "Your belly [if slow pregnancy > 2]grows rapidly, emitting magenta light[otherwise]emits magenta light for several seconds, illuminating the vegetal mass between your legs[end if] as [NameDesc of F] grins up at you, fingering herself as she floats away.[run paragraph on]";
 					now the pregnancy of the player is 1;
 					if slow pregnancy > 2, now the womb volume of vagina is 30;
 					if image cutscenes is 1, display figure of fairy cutscene 19;
@@ -297,7 +300,7 @@ To compute vines fucking:
 			now V is not penetrating asshole;
 			now V is not penetrating vagina;
 			now V is unrevealed;
-			TimesFuckedUp a random vine boss by 1;[Princesses should avoid this!]
+			TimesFuckedUp vine boss by 1;[Princesses should avoid this!]
 			if V is in WoodsBoss01:
 				remove V from play;
 				now the TrapNo of V is 0;
@@ -321,10 +324,13 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling vines:
-	if there is a fairy witch grabbing the player, say "They're too strong. Its like the fairy is empowering them!" instead;
+	if there is a fairy-witch grabbing the player, say "They're too strong. Its like the fairy is empowering them!" instead;
 	if the noun is not grabbing the player:
 		repeat with V running through vines grabbing the player:
 			try pulling V instead;
+		if woman-barbara is in the location of the player and the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 5:
+			if the player is not able to manually use their hands, do nothing instead;
+			WomanVinePull instead;
 		say "You can't see any such thing." instead;
 	let R be a random number from 7 to 13;
 	if the TrapNo of the noun > 0 and the noun is penetrating a fuckhole:

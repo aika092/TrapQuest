@@ -2,7 +2,7 @@ Freedom Tattoo by Tattoos begins here.
 
 freedom tattoo is a kind of ass tattoo. Figure of freedom tattoo is the file "Items/Tats/tattoo2.png". There is 1 freedom tattoo.
 Definition: a freedom tattoo (called B) is eligible:	
-	if the noun is ankle bond or the noun is wrist bond or the noun is ballgag or the noun is chastity cage or the noun is submissive collar or the noun is skeleton key, decide yes;
+	if the noun is bondage or the noun is submissive collar or the noun is skeleton key, decide yes;
 	decide no.
 To say tattoo-desc of (T - a freedom tattoo):
 	if images visible is 1, display figure of freedom tattoo;

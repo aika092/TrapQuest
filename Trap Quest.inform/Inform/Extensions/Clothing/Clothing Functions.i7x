@@ -124,6 +124,9 @@ To destroy (C - a clothing):
 	if clothing-imprinting > 0 and C is worn, imprint C;
 	only destroy C.
 
+To only destroy (C - a thing):
+	destroy C.
+
 [!<OnlyDestroyClothing>+
 
 REQUIRES COMMENTING

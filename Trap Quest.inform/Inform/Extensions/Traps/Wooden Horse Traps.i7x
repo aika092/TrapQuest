@@ -55,7 +55,7 @@ Carry Out HorsePressing:
 			let W be a random off-stage pair of wristcuffs;
 			if W is clothing:
 				summon W locked;
-				now W is bound-in-front;
+				now W is wrist-bound-in-front;
 		otherwise:
 			say "Nothing seems to happen."; [TODO think of something to do here]
 	otherwise if B is horse-blade:

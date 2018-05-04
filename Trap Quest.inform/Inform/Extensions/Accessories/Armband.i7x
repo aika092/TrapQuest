@@ -15,7 +15,7 @@ To decide which figure-name is the clothing-image of (C - armband):
 
 To say ClothingDesc of (C - armband):
 	if the armband-print of C is "new recruit", say "A neon pink armband with a clear plastic sleeve which you would expect to be used to hold an ID card. It does have a card inside, but instead of a photo of yourself there are just the words 'NEW RECRUIT' in big bumpy letters that look like they are made out of [accessory-colour of C].";
-	otherwise say "A neon pink armband with a clear plastic sleeve. The card inside reads the words '[armband-title of C] the [armband-print of C]' in big bumpy letters that look like they are made out of [accessory-colour of C].".
+	otherwise say "A neon pink armband with a clear plastic sleeve. The card inside reads the words '[NameBimbo] the [armband-print of C]' in big bumpy letters that look like they are made out of [accessory-colour of C].".
 
 To decide which indexed text is jewellery-shortcut of (A - armband):
 	decide on "ab".

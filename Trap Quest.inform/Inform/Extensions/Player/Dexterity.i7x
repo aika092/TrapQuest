@@ -70,8 +70,7 @@ To decide which number is the flat dexterity of the player:
 		increase D by 1;
 	[decrease D by the redness of hair - natural redness;]
 	if the player is breasts blinded, decrease D by 2;
-	if there is a worn bound-behind unblessed wrist bond, decrease D by 1;
-	if there is a worn unblessed ankle bond, decrease D by 1;
+	decrease D by the bondage dexterity penalty of the player;
 	if the player is bursting and the bladder of the player > 6, decrease D by (the bladder of the player - 6);
 	if the player is craving, decrease D by 1;
 	if the player is desperately craving, decrease D by 2;
@@ -83,6 +82,7 @@ To decide which number is the flat dexterity of the player:
 	if the player is overburdened, decrease D by 3;
 	decrease D by the incidents of enema-stat-loss;
 	if life-elixir-timer > 0, increase D by 10;
+	if the class of the player is bunny and the player is in the woods, increase D by 3;
 	if acceleration-tincture-timer > 0:
 		increase D by acceleration-tincture-bonus;
 	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 6;

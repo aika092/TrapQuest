@@ -9,8 +9,7 @@ To decide which number is the dexterity-influence of (C - a clubbing dress):
 	decide on D.
 
 To uniquely set up (C - a clubbing dress):
-	if a random number between 1 and 5 is 1, now C is protection;
-	set up magic state of C.
+	if a random number between 1 and 5 is 1, now C is protection.
 
 To decide which number is the original price of (C - a clubbing dress):
 	decide on 4.

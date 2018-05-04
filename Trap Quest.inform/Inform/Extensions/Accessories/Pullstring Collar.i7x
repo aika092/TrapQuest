@@ -66,7 +66,7 @@ Check pulling a pullstring collar:
 			if no-panties permanent fetish is 0:
 				say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
 				let C be a random worn knickers;
-				if C is total protection knickers or C is pussy protection knickers:
+				if C is pussy covering knickers:
 					if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself. No need to duplicate that text here.]
 				otherwise:
 					say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";

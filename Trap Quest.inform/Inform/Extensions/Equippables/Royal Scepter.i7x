@@ -20,7 +20,7 @@ To decide which number is the damage improvement of (W - a royal scepter):
 	decide on X.
 
 To compute attack of (W - a royal scepter) at (M - a monster):
-	say "You blast the [M] with a[if the charge of W is 3] pulsing[end if] wave of magic.".
+	say "You blast [NameDesc of M] with a[if the charge of W is 3] pulsing[end if] wave of magic.".
 
 Definition: a royal scepter (called T) is unlimited horniness:
 	decide yes.
@@ -65,7 +65,7 @@ This is the betrothal rule:[This only triggers when the player is fucked by a mo
 		if the times-fucked of current-monster > 1 or current-monster is friendly:
 			now princess-consort is current-monster;
 			now S is worn by the player;
-			say "You look up at the [current-monster] and your eyes meet. A [printed name of S] appears in your hand, as if to symbolize your lasting connection.".
+			say "You look up at [NameDesc of current-monster] and your eyes meet. A [printed name of S] appears in your hand, as if to symbolize your lasting connection.".
 [The betrothal rule is part of the end of sex rules]
 
 To punish infidelity:

@@ -24,8 +24,8 @@ To decide which number is the intelligence-influence of (C - a stethoscope):
 Check taking off a stethoscope:
 	if the flat intelligence of the player < the intelligence-influence of the noun + 1, say "As you try to take [the noun] off, you feel consciousness slipping from you. You decide to leave it on..." instead.
 
-To uniquely set up (C - a stethoscope):
-	do nothing.
+[To uniquely set up (C - a stethoscope):
+	do nothing. redundant]
 
 Part 1 - Doctor Stethoscope
 

@@ -1,1 +1,1 @@
-Candy Corn.i7x by Food - an extension with the right filename but in the wrong author's folder (the extension says it is 'Candy Corn by Candy')<br>
+Ring gag.i7x by Bondage - an extension stored in the correct author's folder, but with the wrong filename (the extension says it is 'Opengag by Bondage')<br>

@@ -15,7 +15,7 @@ To say DevourFlav of (C - a pink nugget):
 
 Carry out TQeating pink nugget:
 	say "[DevourFlav of the noun] As the candy reaches your stomach you suddenly feel ";
-	if a random number between 1 and 4 is 1:
+	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper lover < 3):
 		now auto is 1; [required for able to masturbate check to not spit out flavour]
 		say "an overpowering arousal flood your entire body. You can actually feel your pupils dilate as your heartbeat thumps loud and fast. [line break][variable custom style][one of]Uh-oh, it seems like some of these nuggets increase a different kind of blood flow...[or][if the bimbo of the player < 7]Oh god, I wanted strength, not this again![otherwise if the bimbo of the player < 14 and the player is able to masturbate]Oh no, not again! I should find somewhere private to sort myself out.[otherwise]Ooh, I need to cum so bad... I'm sure someone here can help me...[end if][stopping][roman type][line break]";
 		now auto is 0;

@@ -20,7 +20,7 @@ To decide which number is the damage improvement of (W - a pom-pom):
 	decide on -5.
 
 To compute attack of (W - a pom-pom) at (M - a monster):
-	say "You shake your [printed name of W] in the [M]'s face. [big he of M] seems to find that really annoying.".
+	say "You shake your [printed name of W] in [NameDesc of M]'s face. [big he of M] seems to find that really annoying.".
 
 To compute attack effect of (E - a pom-pom):[TODO: maybe add an effect where upskirts affect combat in some way?]
 	if attack-type is 3:

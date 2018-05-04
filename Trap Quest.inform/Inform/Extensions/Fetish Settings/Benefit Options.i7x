@@ -24,7 +24,7 @@ title	subtable	description	toggle
 "Bondage protection (most common ways of getting bondage including chastity are prevented) ([if bondage protection is 0]Not enabled - costs 4 points to enable[otherwise]Enabled - 4 points used[end if])"	--	--	bondage protection toggle rule
 "Spontaneous tattoos (If this is disabled, tattoos won't spawn on their own until you get one voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise]Enabled - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
 "Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and other headgears will appear much more rarely) - 6 points ([if roleplay fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	roleplay fetish toggle rule
-"Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used.  [bonus liquid cost].)"	--	--	bonus liquid rule
+"Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used.  [bonus liquid cost].)"	--	--	bonus liquid toggle rule
 
 
 The reset rules is a rulebook.
@@ -368,9 +368,14 @@ This is the bondage protection reset rule:
 	now choice in row 64 of the Table of Player Options is 0.
 The bondage protection reset rule is listed in the reset rules.
 
-To say bonus liquid cost: if bonus liquid < max bonus liquid, say "Next increase costs [bonus liquid + 1] points"; if bonus liquid is max bonus liquid, say "You are at maximum bonus liquid". 
-This is the bonus liquid rule: if bonus liquid < max bonus liquid and points count > bonus liquid,  increase choice in row 63 of the Table of Player Options by 1. 
-This is the bonus liquid reset rule: now choice in row 63 of the Table of Player Options is 0. The bonus liquid reset rule is listed in the reset rules.
+To say bonus liquid cost:
+	if bonus liquid < max bonus liquid, say "Next increase costs [bonus liquid + 1] points"; 
+	if bonus liquid is max bonus liquid, say "You are at maximum bonus liquid". 
+This is the bonus liquid toggle rule: 
+	if bonus liquid < max bonus liquid and points count > bonus liquid, increase choice in row 63 of the Table of Player Options by 1. 
+This is the bonus liquid reset rule:
+	now choice in row 63 of the Table of Player Options is 0. 
+The bonus liquid reset rule is listed in the reset rules.
 
 Benefit Options ends here.
 

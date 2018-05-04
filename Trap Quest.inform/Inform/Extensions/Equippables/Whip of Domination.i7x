@@ -53,7 +53,7 @@ To compute slaying bonus of (W - a whip of domination):
 		say "The [random worn whip of domination] sends positive feelings of confidence flowing through your body!".
 
 To compute attack of (W - a whip of domination) at (M - a monster):
-	say "[if the player is feeling dominant and a random number between 4 and 8 < the sex addiction of the player]With a powerful piercing laugh, you skilfully slash[otherwise if the player is feeling dominant]You feel confident inside as you skilfully lash[otherwise if the player is not feeling submissive]You strike[otherwise if the delicateness of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]!  [if W is cursed]After striking the [M], the whip flicks back with recoil, hitting you as well!  [line break][variable custom style]Oww[one of]!  Is this whip cursed?[or][stopping]![roman type][line break][end if]";
+	say "[if the player is feeling dominant and a random number between 4 and 8 < the sex addiction of the player]With a powerful piercing laugh, you skilfully slash[otherwise if the player is feeling dominant]You feel confident inside as you skilfully lash[otherwise if the player is not feeling submissive]You strike[otherwise if the delicateness of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]!  [if W is cursed]After striking [NameDesc of M], the whip flicks back with recoil, hitting you as well!  [line break][variable custom style]Oww[one of]!  Is this whip cursed?[or][stopping]![roman type][line break][end if]";
 	if a random number between 1 and 2 is 1 and W is cursed:
 		DelicateUp 1.
 
@@ -76,7 +76,7 @@ To compute offer reward of (M - a demoness) for (T - a whip of domination):
 		now D is solid gold;
 		set shortcut of D;
 		now D is carried by the player;
-		say "The [M] summons a [D] out of nowhere, and hands it to you.".
+		say "[BigNameDesc of M] summons a [D] out of nowhere, and hands it to you.".
 
 To decide which number is the bartering value of (T - a whip of domination) for (M - a dominatrix):
 	decide on 5.
@@ -96,7 +96,7 @@ To compute offer reward of (M - a dominatrix) for (T - a whip of domination):
 		now D is solid gold;
 		set shortcut of D;
 		now D is carried by the player;
-		say "The [M] summons a [D] out of nowhere, and hands it to you.".
+		say "[BigNameDesc of M] summons a [D] out of nowhere, and hands it to you.".
 
 Whip of Domination ends here.
 

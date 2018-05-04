@@ -22,6 +22,9 @@ To say ClothingDesc of (C - a cowbell):
 To say ShortDesc of (C - a cowbell):
 	say "cowbell".
 
+Definition: a cowbell (called C) is cow themed:
+	decide yes.
+
 Carry out going when there is a worn cowbell:
 	now a random worn cowbell is clanking.
 

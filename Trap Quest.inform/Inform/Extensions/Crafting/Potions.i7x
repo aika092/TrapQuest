@@ -44,7 +44,7 @@ Carry out quaffing potion of balance:
 
 Section 2 Potion of the Womb
 
-A potion of the womb is a kind of potion. The printed name of potion of the womb is "[TQlink of item described]potion of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of the womb is "[TQlink of item described]potions of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of the womb is "pw". The description of potion of the womb is "A round clear hip flask filled with a dose of smoky pink liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of the womb.
+A potion of the womb is a kind of potion. The printed name of potion of the womb is "[TQlink of item described]potion of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of the womb is "[TQlink of item described]potions of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of the womb is "potw". The description of potion of the womb is "A round clear hip flask filled with a dose of smoky pink liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of the womb.
 
 To decide which number is the alchemy key of (A - a potion of the womb):
 	decide on 7.
@@ -61,7 +61,7 @@ Carry out quaffing potion of the womb:
 			if there is an alive fairy and inhuman pregnancy > 0 and the noun is not cursed:
 				now the father is a random alive fairy;
 			otherwise if the noun is blessed:
-				now the father is a random shopkeeper;
+				now the father is shopkeeper;
 			otherwise:
 				now the father is random creampie pole trap; [Tentacles for players who have them enabled]
 		otherwise if the pregnancy of the player is 1:
@@ -116,7 +116,7 @@ The potion of bull strength specific recipe rule is listed in the specific recip
 To compute recipe specific cursing of (T - a potion of bull strength):
 	let K be the alchemy key of T;
 	if the noun is bottle:
-		if the fill-colour of the noun is white and the noun is minotaur horn and the noun is monster-origin:
+		if the fill-colour of the noun is white and the noun is horn and the noun is monster-origin:
 			now T is bland;
 			if the noun is blessed or (a random number between 1 and 7 <= the number of worn blue scrunchies and the class of the player is schoolgirl):
 				now T is blessed;

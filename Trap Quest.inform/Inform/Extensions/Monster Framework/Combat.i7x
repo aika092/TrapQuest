@@ -20,13 +20,13 @@ To compute correct delay of (M - a monster): [Default behaviour of delayed monst
 	otherwise compute delay of M.
 
 To compute DQ delay of (M - a monster): 
-	say "The [M] doesn't do anything, as if waiting to see what you do next.".
+	say "[BigNameDesc of M] doesn't do anything, as if waiting to see what you do next.".
 
 To compute delay of (M - a monster):
-	say "The [M] doesn't do anything, as if waiting to see what you do next.".
+	say "[BigNameDesc of M] doesn't do anything, as if waiting to see what you do next.".
 	
 To compute paralysis of (M - a monster):
-	say "The [M] doesn't seem able to move!";
+	say "[BigNameDesc of M] doesn't seem able to move!";
 
 To compute attack of (M - a monster):
 	now current-monster is M;
@@ -103,7 +103,7 @@ This function runs any code that needs to be executed whenever the player finish
 
 +!]
 To orgasm (M - a monster):
-	if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
+	if ritual-beads is worn or the class of the player is priestess:
 		compute priestessBlessing of M;
 	if the class of the player is princess, follow the betrothal rule;
 	[if there is a held notebook, now study-buddy is M;]
@@ -123,15 +123,25 @@ To compute refactoryReset of (M - a monster):
 		increase the refactory-period of M by the intelligence of the player.
 
 To compute priestessBlessing of (M - a monster):
-	say "You can feel a surge in your holy aura and a voice appears in your head: 'Dutiful Sister, there is still more work to be done!'";
-	decrease the charge of the dungeon altar by 150.
+	if the class of the player is priestess:
+		say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
+		decrease the charge of the dungeon altar by 150;
+	let R be ritual-beads;
+	if R is worn and the player is a March 2018 top donator:
+		if the charge of R < the notches of R:
+			say "The [printed name of R] seems to grow heavier inside you.";
+			increase the charge of R by 1;
+		otherwise:
+			say "The [printed name of R] shifts slightly inside of you, but doesn't seem to get any heavier. Maybe its full?".
+			
+		
 
 To say sleeping tip:
 	if tutorial is 0, say "[one of][item style]Newbie tip: The enemy has fallen asleep!  However in this game you can't just kill sleeping enemies, you have to attack them like normal. Usually, this results in them waking back up again, so you'll still have a fight on your hands![roman type][line break][or][stopping]".
 
 To compute replacement of (T - a thing) in (O - an orifice):
 	unless O is actually occupied or current-monster is not intelligent:
-		say "The [current-monster] pushes the [T] back into place in your [variable O].";
+		say "[BigNameDesc of current-monster] pushes the [T] back into place in your [variable O].";
 		now T is worn by the player;
 		now T is penetrating O;
 		now current-monster is not retaining T;
@@ -149,26 +159,26 @@ To compute replacement of (D - a clothing):
 		if D is worn:
 			unless there is a worn tail plug:
 				if D is crotch-displaced:
-					say "The [current-monster] puts your [ShortDesc of D] back in place before letting you go.";
+					say "[BigNameDesc of current-monster] puts your [ShortDesc of D] back in place before letting you go.";
 					replace D;
 				otherwise if D is crotch-unzipped:
-					say "The [current-monster] zips your [ShortDesc of D] back up before letting you go.";
+					say "[BigNameDesc of current-monster] zips your [ShortDesc of D] back up before letting you go.";
 					now D is crotch-zipped;
 		otherwise if D is actually summonable:
-			say "The [current-monster] puts you back into your [ShortDesc of D] before letting you go.";
+			say "[BigNameDesc of current-monster] puts you back into your [ShortDesc of D] before letting you go.";
 			now D is worn by the player; [If we summon it, it will have all its stats reset.]
 		otherwise:
-			say "The [current-monster], unable to replace your [D], just drops it onto the ground.";
+			say "[BigNameDesc of current-monster], unable to replace your [D], just drops it onto the ground.";
 			now D is in the location of the player;
 		now current-monster is not retaining D.
 
 This is the default facial climax rule:
 	if current-monster is penetrating face, compute facial climax of current-monster;
-	if the sleep of current-monster is 0, replace any gags.
+	if the sleep of current-monster + the rounds of sex left of current-monster is 0, replace any gags.
 The default facial climax rule is listed in the default end of sex rules.
 
 To replace any gags:
-	repeat with G running through ballgags retained by current-monster:
+	repeat with G running through gags retained by current-monster:
 		compute replacement of G in face.
 
 To TimesFuckedUp (M - a monster) by (N - a number):
@@ -231,7 +241,7 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 
 This is the default anal climax rule:
 	if current-monster is penetrating asshole, compute anal climax of current-monster;
-	if the sleep of current-monster is 0:
+	if the sleep of current-monster + the rounds of sex left of current-monster is 0:
 		replace any buttplugs;
 		replace any diapers.
 The default anal climax rule is listed in the default end of sex rules.
@@ -255,7 +265,7 @@ To compute anal climax of (M - a monster):
 
 This is the default vaginal climax rule:
 	if current-monster is penetrating vagina, compute vaginal climax of current-monster;
-	if the sleep of current-monster is 0:
+	if the sleep of current-monster + the rounds of sex left of current-monster is 0:
 		replace any cuntplugs;
 		replace any diapers.
 The default vaginal climax rule is listed in the default end of sex rules.
@@ -289,7 +299,7 @@ To compute cleavage climax of (M - a monster):
 	now M is not penetrating breasts.
 
 To say CleavageClimaxFlav of (M - a monster):
-	say "The [M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
+	say "[BigNameDesc of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
 
 [Similarly, these are BLAND EXAMPLES of what progress sex might look like for your monster.]
 
@@ -329,7 +339,7 @@ To compute anal sex of (M - a monster):
 	if the class of the player is living sex doll:
 		say SexDollAnal of M;
 	otherwise if M is not intelligent:
-		say "The [M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [asshole]!";
+		say "[BigNameDesc of M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [asshole]!";
 	otherwise if the reaction of the player is 2:[begging]
 		compute begging of M in asshole;	
 	otherwise if the reaction of the player is 1:[submitting]
@@ -345,7 +355,7 @@ The default vaginal sex rule is listed in the default progress sex rules.
 
 To compute vaginal sex of (M - a monster):
 	if M is not intelligent:
-		say "The [M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [vagina]!";
+		say "[BigNameDesc of M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [vagina]!";
 	otherwise if the reaction of the player is 2:
 		compute begging of M in vagina;
 	otherwise if the reaction of the player is 1:
@@ -405,7 +415,7 @@ This is the flying player taunting rule:
 The flying player taunting rule is listed last in the default taunting rules.
 
 To compute the flying player taunting of (M - a monster):
-	if a random number between 1 and 6 is 1, say "The [M] continues to wait for you to land.". [This should preferably be replaced for all monsters.]
+	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait for you to land.". [This should preferably be replaced for all monsters.]
 
 This is the monster fucked player taunting rule:
 	if there is a matron grabbing the player and current-monster is not matron: [TODO make a 'player is engaged' rulebook]
@@ -429,7 +439,7 @@ This is the dildo stuck player taunting rule:
 The dildo stuck player taunting rule is listed last in the default taunting rules.
 
 To compute the dildo stuck taunting of (M - a monster):
-	if a random number between 1 and 6 is 1, say "The [M] continues to wait for you to get off the dildo.". [This should preferably be replaced for all monsters. Remember you can also use this function to have the monster interact with the player while they are stuck on the dildo.]
+	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait for you to get off the dildo.". [This should preferably be replaced for all monsters. Remember you can also use this function to have the monster interact with the player while they are stuck on the dildo.]
 
 This is the trap stuck player taunting rule:
 	if the player is trap stuck:
@@ -438,7 +448,7 @@ This is the trap stuck player taunting rule:
 The trap stuck player taunting rule is listed last in the default taunting rules.
 
 To compute the default taunting of (M - a monster):
-	say "The [M] watches [if M is intelligent]with a facial expression of a mixture of incredulity and entertainment[otherwise]silently[end if].".
+	say "[BigNameDesc of M] watches [if M is intelligent]with a facial expression of a mixture of incredulity and entertainment[otherwise]silently[end if].".
 
 This is the busy waiting rule:
 	if busy is 1:
@@ -447,7 +457,7 @@ This is the busy waiting rule:
 The busy waiting rule is listed last in the default taunting rules.
 
 To compute the busy waiting of (M - a monster):
-	if a random number between 1 and 6 is 1, say "The [M] continues to wait.". [This should preferably be replaced for all monsters.]
+	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait.". [This should preferably be replaced for all monsters.]
 
 Chapter 4 Punishment
 
@@ -478,7 +488,7 @@ This is the default latex punishment rule:
 		rule succeeds.
 
 To say LatexPunishmentFlav of (M - a monster):
-	say "The [M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds. Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".
+	say "[BigNameDesc of M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds. Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".
 
 This is the monster pulls collar rule:
 	if there is a worn pullstring collar:
@@ -489,7 +499,7 @@ The monster pulls collar rule is listed last in the monster punishment rules.
 This is the default pullstring rule:
 	if current-monster is intelligent and the collar-pulled of current-monster is 0:
 		let P be a random worn pullstring collar;
-		say "The [current-monster] notices your [ShortDesc of P]!  After a brief moment of consideration, [he of current-monster] takes hold of the string and pulls it!";
+		say "[BigNameDesc of current-monster] notices your [ShortDesc of P]!  After a brief moment of consideration, [he of current-monster] takes hold of the string and pulls it!";
 		now monster-puller is current-monster;
 		try pulling P;
 		now monster-puller is the player;
@@ -616,7 +626,7 @@ Definition: a monster (called M) is butt slut immune: [Can the monster ignore th
 	if M is concealment immune, decide yes; [If they're immune to it all, they're immune to butt slut!]
 	decide no.
 
-Definition: a monster (called M) is able to remove cursed plugs: [Can the monster remove all plugs & ballgags?]
+Definition: a monster (called M) is able to remove cursed plugs: [Can the monster remove all plugs & gags?]
 	if the player is diaper focused or the player is a blowjob slut, decide yes;
 	decide no.
 
@@ -632,7 +642,7 @@ This is the default monster convinced rule:
 			say "[PresentAcceptanceFlav of current-monster]";
 			rule succeeds;
 		otherwise if (presented-orifice is face or presented-orifice is belly) and current-monster is intelligent and there is a worn tongue piercing:
-			say "The [current-monster] was about to ignore you, but it seems that your tongue piercing made your request extremely convincing!";
+			say "[BigNameDesc of current-monster] was about to ignore you, but it seems that your tongue piercing made your request extremely convincing!";
 			now the chosen-orifice of current-monster is presented-orifice;
 			rule succeeds;
 		otherwise:
@@ -641,10 +651,10 @@ This is the default monster convinced rule:
 		say "[PresentRejectionFlav of current-monster]".
 
 To say PresentAcceptanceFlav of (M - a monster):
-	say "The [M] seems convinced by your request!".
+	say "[BigNameDesc of M] seems convinced by your request!".
 
 To say PresentRejectionFlav of (M - a monster):
-	say "The [M] seems to ignore your request.".
+	say "[BigNameDesc of M] seems to ignore your request.".
 
 This is the monster choosing an orifice rule:
 	if debugmode > 0, say "Valid body parts are: [list of actual target body parts].";
@@ -673,7 +683,7 @@ To compute SelectionWaiting of (M - a monster):
 	otherwise do nothing. [The monster waits its turn.]
 
 To say SelectionFrustrated of (M - a monster):
-	say "The [M] seems to look very frustrated, and then gives up.";
+	say "[BigNameDesc of M] seems to look very frustrated, and then gives up.";
 	bore M.
 
 This is the selection frustrated rule:
@@ -711,7 +721,7 @@ To compute (M - a monster) attacking (C - a diaper):
 		say "[UnzipFlav of M at C]";
 		now C is crotch-unzipped;
 	otherwise if C is actually strippable:
-		say "The [M] effortlessly pulls off your [ShortDesc of C]!";
+		say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
 		if M is intelligent:
 			now C is in Holding Pen;
 			now M is retaining C;
@@ -724,37 +734,37 @@ To compute (M - a monster) attacking (C - a diaper):
 
 To compute (M - a monster) removing (C - a thing): [This is used for removing insertables]
 	if M is intelligent:
-		say "The [M] effortlessly pulls out your [ShortDesc of C].";
+		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C].";
 		now C is in holding pen;
 		now M is retaining C;
 	otherwise:
-		say "The [M] effortlessly pulls out your [ShortDesc of C] and discards it onto the floor.";
+		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;
 	dislodge C.
 
 To say UnzipFlav of (M - a monster) at (C - a clothing):
-	say "The [M] pulls down the zipper on your [ShortDesc of C][if the number of ass covering clothing is 1], exposing your [fuckholes][end if]!".
+	say "[BigNameDesc of M] pulls down the zipper on your [ShortDesc of C][if the number of ass covering clothing is 1], exposing your [fuckholes][end if]!".
 
 To say PullAttempt of (M - a monster) at (C - a clothing):
-	say "The [M] pulls at your [ShortDesc of C] to try and rip it off!".
+	say "[BigNameDesc of M] pulls at your [ShortDesc of C] to try and rip it off!".
 	
 To compute (M - a monster) destroying (C - a clothing):
-	say "The [M] rips it off, destroying it completely!";
+	say "[BigNameDesc of M] rips it off, destroying it completely!";
 	destroy C.
 
 To compute (M - a monster) ripping (C - a clothing):
-	say "The [M] manages to create a tear in the fabric!  Your [ShortDesc of C] is now permanently ripped.";
+	say "[BigNameDesc of M] manages to create a tear in the fabric!  Your [ShortDesc of C] is now permanently ripped.";
 	now C is crotch-ripped.
 
 To compute (M - a monster) displacing (C - a clothing):
-	say "The [M] [DisplacesFlav of C].";
+	say "[BigNameDesc of M] [DisplacesFlav of C].";
 	displace C.
 
 To say DisplacesFlav of (C - a clothing):
 	say "pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] up, exposing your crotch[otherwise if C is trousers]waistband of your [ShortDesc of C] down to your knees[otherwise]crotch section of your [ShortDesc of C] to one side[end if]".
 
 To compute (M - a monster) replacing (C - a clothing):
-	say "The [M] pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] back down[otherwise if C is trousers]waistband of your [ShortDesc of C] back up to its proper place[otherwise]crotch section of your [ShortDesc of C] back in place[end if].";
+	say "[BigNameDesc of M] pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] back down[otherwise if C is trousers]waistband of your [ShortDesc of C] back up to its proper place[otherwise]crotch section of your [ShortDesc of C] back in place[end if].";
 	replace C.
 
 To say WeakenFlav of (M - a monster) on (C - a clothing):
@@ -826,12 +836,12 @@ To compute (M - a monster) entering anally:
 To compute (M - a monster) entering (F - a fuckhole):[Generic function that shouldn't realistically come up.]
 	if F is not actually occupied:
 		set up sex length of M in F;
-		say "The [M] forces [him of M]self into your [variable F]";
+		say "[BigNameDesc of M] forces [him of M]self into your [variable F]";
 		now M is penetrating F;
 		ruin F;
 		compute unique penetration effect of M in F;
 	otherwise:
-		say "The [M] sees that you are already occupied and loses interest";
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest";
 		Bore M.
 
 To compute (M - a monster) entering (F - asshole):
@@ -845,7 +855,7 @@ To compute (M - a monster) entering (F - asshole):
 		get anal penetration image for M;
 		say GangAnnounce;
 	otherwise:
-		say "The [M] sees that you are already occupied and loses interest.";
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
 		distract M.
 
 This is the monster vagina insertion rule:
@@ -894,7 +904,7 @@ To compute (M - a monster) entering (F - vagina):
 		get vaginal penetration image for M;
 		say GangAnnounce;
 	otherwise:
-		say "The [M] sees that you are already occupied and loses interest.";
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
 		distract M.
 
 This is the monster mouth insertion rule:
@@ -928,7 +938,7 @@ To compute (M - a monster) entering mouth:
 		get facial penetration image for M;
 		say GangAnnounce;
 	otherwise:
-		say "The [M] sees that you are already occupied and loses interest.";
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
 		distract M.
 
 This is the monster breasts insertion rule:
@@ -947,7 +957,7 @@ To compute (M - a monster) entering breasts:
 	get breasts penetration image for M.
 
 To say BreastsPenetrationFlav of (M - a monster):
-	say "The [M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
+	say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
 	
 	
 This is the monster begin urination rule:
@@ -980,14 +990,14 @@ To compute (M - a monster) urinating:
 To say UrinationFlav of (M - a monster):
 	if M is male:
 		if M is intelligent:
-			say "[one of]The [M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![or]The [M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style][line break]What the actual fuck.[roman type][line break][end if]";
+			say "[one of][BigNameDesc of M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
 		otherwise:
-			say "The [M] points [his of M] [manly-penis] towards your face. A golden stream of [urine] shoots out, headed straight for you!";
+			say "[BigNameDesc of M] points [his of M] [manly-penis] towards your face. A golden stream of [urine] shoots out, headed straight for you!";
 	otherwise:
 		if M is intelligent:
-			say "[one of]The [M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart her pussy lips, she allows a golden stream of [urine] to start to squirt straight at your face![or]The [M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style][line break]What the actual fuck.[roman type][line break][end if]";
+			say "[one of][BigNameDesc of M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart her pussy lips, she allows a golden stream of [urine] to start to squirt straight at your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
 		otherwise:
-			say "The [M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
+			say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
 
 
 Chapter 6 Damaging and Tripping
@@ -1058,9 +1068,9 @@ Definition: a monster (called M) is a tripper:
 
 To say TripChanceFlav of (M - a monster):
 	if the last-tripped of M > 4:
-		say "The [M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]!  [big he of M] is clearly going to try and trip you soon.";
+		say "[BigNameDesc of M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]!  [big he of M] is clearly going to try and trip you soon.";
 	otherwise if the last-tripped of M > 2:
-		say "The [M] [one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order]. There's a chance [he of M] is planning to trip you up.[if newbie tips is 1 and tutorial is 0][one of][item style]This would be a good time to stick to slapping until the NPC makes [his of M] trip attack.[roman type][line break][or][stopping][end if]".
+		say "[BigNameDesc of M] [one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order]. There's a chance [he of M] is planning to trip you up.[if newbie tips is 1 and tutorial is 0][one of][item style]This would be a good time to stick to slapping until the NPC makes [his of M] trip attack.[roman type][line break][or][stopping][end if]".
 
 Definition: a jismbodied ghost (called M) is a tripper:
 	decide yes.
@@ -1089,11 +1099,11 @@ To compute tripping attack of (M - a monster):
 	otherwise:
 		say "[MonsterFailedTripFlav of M]";
 		if the blind-status of M is 1 and a random number between 1 and 2 is 1:
-			say "The [M] is no longer blind!";
+			say "[BigNameDesc of M] is no longer blind!";
 			now the blind-status of M is 0.
 
 To say MonsterTripAnnounceFlav of (M - a monster):
-	say "The [M] tries to trip you up!".
+	say "[BigNameDesc of M] tries to trip you up!".
 
 To say MonsterTrippedFlav of (M - a monster):
 	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise]and[end if] fall to the ground!".
@@ -1111,14 +1121,14 @@ To compute striking attack of (M - a monster):
 	otherwise:	
 		say "[StrikingFailureFlav of M on B]";
 		if the blind-status of M is 1 and a random number between 1 and 2 is 1:
-			say "The [M] is no longer blind!";
+			say "[BigNameDesc of M] is no longer blind!";
 			now the blind-status of M is 0.
 
 To say StrikingSuccessFlav of (M - a monster) on (B - a body part):
-	say "The [M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
 
 To say StrikingFailureFlav of (M - a monster) on (B - a body part):
-	say "The [M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
+	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
 
 To say TargetName of (B - a body part):
 	if B is face:
@@ -1215,10 +1225,10 @@ To compute (P - a clothing) protecting (B - thighs):
 		BodyRuin 1.
 
 To compute (S - a clothing) damaging (M - a monster):
-	if S is spikey, say "The [M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari slutty sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
-	otherwise say "Somehow, the [M] hurts [himself of M] as [he of M] attacks!";
+	if S is spikey, say "[BigNameDesc of M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari slutty sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
+	otherwise say "Somehow, [NameDesc of M] hurts [himself of M] as [he of M] attacks!";
 	if S is spikey and S is a striped top and the poison-status of M is 0:
-		say "After striking you, the [M] takes on an unhealthy shade of green!";
+		say "After striking you, [NameDesc of M] takes on an unhealthy shade of green!";
 		now the poison-status of M is 1;
 	decrease the health of M by 4.
 
@@ -1257,7 +1267,7 @@ To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
 	decrease the health of M by N.
 
 To say AllyDamageFlav of (X - a monster) on (M - a monster):
-	say "The [X] strikes the [M]!".
+	say "The [X] strikes [NameDesc of M]!".
 
 
 

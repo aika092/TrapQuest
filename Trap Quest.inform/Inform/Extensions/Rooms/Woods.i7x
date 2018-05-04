@@ -79,7 +79,7 @@ Woods09 is a dodgy jungle room. The printed name of Woods09 is "Stone Clearing".
 REQUIRES COMMENTING
 
 *!]
-Woods10 is a dodgy jungle room. The printed name of Woods10 is "Statue Clearing". "Right in the middle of this clearing is a [if diaper quest is 1]fountain of a peeing woman[otherwise]statue of a man and woman having sex[end if]. [if a random vine boss is off-stage]The grass and trees here seems especially lush and vibrant.[otherwise]Thick green vines are draped over the man's shoulders, giving him the appearance of having a cape.[end if]". The shape of Woods10 is L2/0-0-1-1-1-1.
+Woods10 is a dodgy jungle room. The printed name of Woods10 is "Statue Clearing". "Right in the middle of this clearing is a [if diaper quest is 1]fountain of a peeing woman[otherwise]statue of a man and woman having sex[end if]. [if vine boss is off-stage]The grass and trees here seems especially lush and vibrant.[otherwise]Thick green vines are draped over the man's shoulders, giving him the appearance of having a cape.[end if]". The shape of Woods10 is L2/0-0-1-1-1-1.
 
 [!<woods11:JungleRoom>*
 
@@ -198,7 +198,7 @@ Woods26 is an important mandatory jungle room. The printed name of Woods26 is "S
 REQUIRES COMMENTING
 
 *!]
-Woods27 is a dodgy jungle room. The printed name of Woods27 is "The Well". "[if a random vine boss is off-stage]An overgrown clearing with a brick well surrounded by four stone statues in the center. Each statue is intricately carved, all depicting a blissfully masturbating nude woman.[otherwise]An overgrown clearing with a dilapidated brick well in the center. It is surrounded by four pillars of varying height, all completely encased with solid vine.[end if]".
+Woods27 is a dodgy jungle room. The printed name of Woods27 is "The Well". "[if vine boss is off-stage]An overgrown clearing with a brick well surrounded by four stone statues in the center. Each statue is intricately carved, all depicting a blissfully masturbating nude woman.[otherwise]An overgrown clearing with a dilapidated brick well in the center. It is surrounded by four pillars of varying height, all completely encased with solid vine.[end if]".
 
 [!<woods28:JungleRoom>*
 
@@ -219,7 +219,7 @@ Woods29 is a mandatory jungle room. The printed name of Woods29 is "Pumpkin Patc
 REQUIRES COMMENTING
 
 *!]
-Woods30 is a mandatory dodgy jungle room. The printed name of Woods30 is "Giant Statue". "There is an enormous statue of a naked woman [if doomed is 5]laying in the center of this clearing. Green vines are wrapped around her body, as if holding her down for the massive, sickly purple creepers plugging her holes.[otherwise if a random vine boss is off-stage]kneeling in the center of this clearing.[otherwise]on all fours in the center of this clearing. Massive green vines are crammed into her mouth and wrapped around her wrists and ankles.[end if]". The shape of Woods30 is L2/0-0-0-1-0-1.
+Woods30 is a mandatory dodgy jungle room. The printed name of Woods30 is "Giant Statue". "There is an enormous statue of a naked woman [if doomed is 5]laying in the center of this clearing. Green vines are wrapped around her body, as if holding her down for the massive, sickly purple creepers plugging her holes.[otherwise if vine boss is off-stage]kneeling in the center of this clearing.[otherwise]on all fours in the center of this clearing. Massive green vines are crammed into her mouth and wrapped around her wrists and ankles.[end if]". The shape of Woods30 is L2/0-0-0-1-0-1.
 
 [!<stairway03:JungleRoom>*
 

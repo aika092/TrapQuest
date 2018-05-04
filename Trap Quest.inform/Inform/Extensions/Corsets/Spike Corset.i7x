@@ -13,8 +13,7 @@ To say ClothingDesc of (C - a spike corset):
 	say "A black overbust corset with terrifying large metal spikes at the bust, and a low bust line to allow for a lot of cleavage.[if C is worn][line break]It looks like it would be a bad idea for enemies to attack your breasts now![end if]".
 
 To uniquely set up (C - a spike corset):
-	if a random number between 1 and 2 is 1, now C is dominance;
-	set up magic state of C. [It never gets a magic enhancement.]
+	if a random number between 1 and 2 is 1, now C is dominance.
 
 Definition: a spike corset (called C) is untransformable:
 	decide yes.

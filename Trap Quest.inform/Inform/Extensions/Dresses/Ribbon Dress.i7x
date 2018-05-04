@@ -15,8 +15,7 @@ To decide which number is the initial outrage of (C - a ribbon dress):
 
 To uniquely set up (C - a ribbon dress):
 	now the armour of C is 1;
-	repair C;
-	set up magic state of C.
+	repair C.
 
 To say ShortDesc of (C - a ribbon dress):
 	say "flimsy set of red ribbons".

@@ -14,7 +14,7 @@ Check giving:
 	if the player is flying, say "You aren't even on the ground!" instead;
 	if the noun is body part and the second noun is monster, try direct-presenting the noun to the second noun instead;
 	if the noun is body part, try presenting the noun instead;
-	if the second noun is wench and the second noun is dangerous and the noun is desirable knickers and the variety of the second noun < 4:
+	if the second noun is wench and the second noun is dangerous and the noun is desirable knickers and the second noun is not horny-wench:
 		now seconds is 4;
 		compute the second noun WenchReceiving the noun instead;
 		do nothing instead; [Weird bug where the above command doesn't do the "instead" bit.]
@@ -36,7 +36,7 @@ Check giving:
 		if the noun is vessel:
 			if the doses of the noun is 0, say "That's empty." instead;
 			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, say "Why would she want that?" instead;
-			if the variety of the second noun >= 3 and the second noun is captive, say "[second custom style]'Don[']t worry about paying me. You can use my altar for free!'[roman type][line break]" instead;
+			if the curse-quest of the second noun >= 3 and the second noun is captive, say "[second custom style]'Don[']t worry about paying me. You can use my altar for free!'[roman type][line break]" instead;
 			if the noun is not held by the player, say "You should probably pick it up first." instead;
 			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 			say "The [second noun] brings the [noun] to her mouth and starts drinking!  She downs the whole drink in one, without stopping for a breath. ";
@@ -72,16 +72,16 @@ Check giving:
 				increase the altar-uses of the second noun by N;
 			do nothing instead;
 		otherwise:
-			if the variety of the second noun is 1 and the noun is fae mushroom:
+			if the curse-quest of the second noun is 1 and the noun is fae mushroom:
 				remove the noun from play;
 				say "[second custom style]'Great work!  But I'm afraid I need something else as well. Somewhere in this world, there's a scroll which contains the instructions for the ritual required to remove the curse. If you can find that, and bring it back here, then I can do the rest[one of]. Maybe it's being kept in some kind of library?'[or].'[stopping][roman type][line break]";
-				now the variety of the second noun is 2;
+				now the curse-quest of the second noun is 2;
 				now the second noun is interested instead;
-			otherwise if the variety of the second noun is 2 and the noun is recipe for latex curse reversal:
+			otherwise if the curse-quest of the second noun is 2 and the noun is recipe for latex curse reversal:
 				say "[second custom style]'Nice, you got it!  All right leave the rest to me...'[roman type][line break]The [second noun] takes the recipe and studies it carefully, muttering words you don't understand whilst stirring the mushroom into some kind of murky liquid. With a hum and a wave of her wand, you feel the curse leaving you!  [if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human. What a relief![line break][second custom style]'[one of]You know that was the most interesting thing I've had to do this century, I've been DYING of boredom here. You're all right kid. Feel[or]You should probably be more careful in the future, or eventually we'll run out of mushrooms to turn you back. See you around baby - you should still feel[stopping] free to come by any time if you want to use my altar.'[roman type][line break]";
 				now the latex-transformation of the player is 0;
 				if the pregnancy of the player is 2, now the pregnancy of the player is 1;
-				now the variety of the second noun is 3 instead;
+				now the curse-quest of the second noun is 3 instead;
 			otherwise:
 				say "Why would she want that?" instead;
 	try offering the noun to the second noun instead.

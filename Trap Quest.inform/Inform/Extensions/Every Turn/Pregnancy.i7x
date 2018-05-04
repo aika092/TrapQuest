@@ -208,7 +208,7 @@ To compute pregnancy:
 				if the size of M > max breast size, now the size of M is max breast size;
 				say "A maternity bra materialises over your breasts!";
 			otherwise if the class of the player is fertility goddess and a random number between 1 and 20 is 1:
-				if a random worn overdress is cursed:
+				if there is a worn cursed overdress:
 					if the thickness of hips < 10:
 						say "You feel your hips widen in order to prepare for your inevitable labour!";
 					otherwise if extreme proportions fetish is 1 and the thickness of hips < 20:

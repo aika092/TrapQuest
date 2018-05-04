@@ -1,6 +1,6 @@
 Ankle Bondage by Bondage begins here.
 
-An ankle bond is a kind of bondage. Understand "cuffs" as ankle bond.
+An ankle bond is a kind of bondage. Understand "cuffs" as ankle bond. An ankle bond is usually ankle-bound.
 
 Include Dungeon Chains by Objects.
 
@@ -41,10 +41,11 @@ Chapter - Wearability
 ankle bond wearability rules is a rulebook. The wearability rules of ankle bond is usually ankle bond wearability rules.
 
 This is the ankle bond already worn rule:
-	repeat with O running through worn ankle bond:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
-		rule fails.
-The ankle bond already worn rule is listed in the ankle bond wearability rules.
+	if wearing-target is ankle locking:
+		repeat with O running through worn ankle locking clothing:
+			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+			rule fails.
+The ankle bond already worn rule is listed in the global wearability rules.
 
 This is the overdress ankle bondage clash rule:
 	if wearing-target is crotch covering and wearing-target is unskirted:

@@ -228,6 +228,20 @@ Include Plugging by Actions.
 Check taking off sex toy:
 	try unplugging the noun instead.
 
+To compute toyInsertion of (S - a thing) into (F - a fuckhole):
+	compute insertionRuin of S into F;
+	now S is penetrating F.
+
+To compute insertionRuin of (S - a thing) into (F - a fuckhole):
+	if the girth of S > the openness of F - 4:
+		say "The [printed name of S] [if the girth of S > the openness of F + 1]is so large compared to the openness of your [variable F] that it makes you a bit sore just putting[otherwise]stimulates you as you put[end if] it in.";
+		ruin F;
+		if the girth of S > the openness of F + 1, ruin F;
+	otherwise if the girth of S > the openness of F - 2:
+		say "Oof!  You definitely felt that as you pushed it inside.";
+	otherwise:
+		say "Your [variable F] is loose enough to let the [printed name of S] slip in easily.".
+
 Chapter 1 - Dongs
 
 [Dongs can be used for masturbation but don't stay inside unless cursed or blocked from leaving by underwear. I wanted to call them dildos but the code argued with squirt dildos.]
@@ -294,7 +308,7 @@ To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a plug):
 	say "[speech style of M]'Pff, that's not big enough for me, it'd fall right out!'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a plug):
-	say "[speech style of M]'Ooh, fine, you've tempted me.'[roman type][line break]The [M] unzips the crotch of her latex outfit, and with a lewd, shameless face, works the plug into her asshole, before zipping her outfit back up. [line break][speech style of M]'Tada!'[roman type][line break]".
+	say "[speech style of M]'Ooh, fine, you've tempted me.'[roman type][line break][BigNameDesc of M] unzips the crotch of her latex outfit, and with a lewd, shameless face, works the plug into her asshole, before zipping her outfit back up. [line break][speech style of M]'Tada!'[roman type][line break]".
 
 Definition: a plug (called C) is untransformable:
 	if C is plentiful, decide no;
@@ -351,8 +365,6 @@ To decide which object is the concealer of (C - a tail plug):
 To say CurrentlyVisibleFlav of (C - a tail plug):
 	let S be a random worn actually dense potentially asshole covering clothing;
 	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
-
-
 
 Sex Toy Framework ends here.
 

@@ -26,6 +26,9 @@ To decide which object is the unique-upgrade-target of (C - a royal dress):
 Definition: a royal dress (called C) is royal attire:
 	decide yes.
 
+To set up magic state of (O - a royal dress):
+	do nothing.[We don't want to set magic state yet]
+
 Part 1 - Ballgown Royal Dress
 
 A ballgown royal dress is a kind of royal dress. There is 1 ballgown royal dress. A ballgown royal dress is high cut. A ballgown royal dress is optional-top-displacable. The text-shortcut of ballgown royal dress is "rd1".
@@ -53,9 +56,6 @@ To decide which figure-name is clothing-image of (C - a lolita royal dress):
 To say ClothingDesc of (O - a lolita royal dress):
 	say "A frilly hime lolita dress that [if the thickness of hips > 5 and O is worn]would be just below knee height on a normal sized ass, but yours prevents it from sitting properly and so it only covers just beneath your rear[otherwise]is just below knee height[end if]. It is layered with bows and lace, making it incredibly innocent looking. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
 
-To uniquely set up (O - a lolita royal dress):
-	do nothing. [We don't want to set magic state yet]
-
 Definition: a lolita royal dress (called C) is untransformable:
 	if diaper quest is 1 and there is an off-stage baby royal dress, decide no;
 	if the class of the player is princess, decide yes;
@@ -79,9 +79,6 @@ To decide which number is the initial cringe of (C - a baby royal dress):
 
 To say ShortDesc of (O - a baby royal dress):
 	say "pink princess pattern baby dress";
-
-To uniquely set up (O - a baby royal dress):
-	do nothing. [We don't want to set magic state yet]
 
 Definition: a baby royal dress (called O) is fetish appropriate:
 	if the player is diapered, decide yes;

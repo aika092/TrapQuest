@@ -12,8 +12,7 @@ To say ShortDesc of (C - a basque):
 	say "modest basque".
 
 To uniquely set up (C - a basque):
-	repair C;
-	set up magic state of C.
+	repair C.[huh?]
 
 This is the remove inappropriate basques rule:
 	repeat with B running through basques:
@@ -46,6 +45,9 @@ A cow print milking basque is a kind of milking basque. The printed name of cow 
 There is 1 cow print milking basque.
 
 Figure of cow print basque is the file "Items\Clothes\Upper\Dresses\Basques\basque2.png".
+
+Definition: a cow print milking basque (called C) is cow themed:
+	decide yes.
 
 To say ClothingDesc of (O - a cow print milking basque):
 	say "This tight cow patterned undergarment keeps your body's shape looking and feeling smooth.[if O is worn and lactation fetish is 1][line break]You feel that it somehow magically messes with your body's lactation, sending some of it to other parts of your body...[end if]".

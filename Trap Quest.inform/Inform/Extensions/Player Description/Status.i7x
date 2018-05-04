@@ -77,5 +77,15 @@ To say ChildrenDesc:
 		say "You have given birth to [children] [if children is 1]child[otherwise]children[end if].".
 
 
+[!<SayDiaperDisciplineDesc>+
+
+Let the player know who has currently ordered them to stay in a diaper.
+
++!]
+To say DiaperDisciplineDesc:
+	repeat with M running through alive monsters:
+		say "[if the diaper-duration of M > 0][BigNameDesc of M] has ordered you to stay in diapers. [end if]".
+
+
 Status ends here.
 

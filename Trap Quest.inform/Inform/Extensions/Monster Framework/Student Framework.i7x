@@ -7,9 +7,6 @@ Definition: a student (called M) is school dwelling:
 
 The printed name of student is "[if item described is in the location of the player][TQlink of item described][end if][input-style]student [student-name of item described][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". 
 
-A monster can be tq-dq, tq-only, dq-only (this is the monster-game property). A monster is usually tq-dq.
-[A student can be bratty, preppy, shy, supercool, tryhard, amicable (this is the student-personality property).]
-
 To decide which number is the starting difficulty of (M - a student):
 	decide on 7.
 
@@ -43,6 +40,15 @@ To regionally place (M - a student):
 Definition: a student (called M) is human:
 	decide yes.
 
+Definition: a student (called M) is uniquely unfriendly:
+	decide no.
+
+To say NameDesc of (M - a student):
+	say "[input-style][student-name of M][roman type]".
+
+To say BigNameDesc of (M - a student):
+	say "[input-style][student-name of M][roman type]".
+
 
 Part - Rank, Name and Print
 
@@ -69,15 +75,27 @@ Definition: a student (called M) is promotable:
 To update name of (M - a student):
 	do nothing.
 
-To promote (M - a student):
+To silently promote (M - a student):
 	if M is promotable:
 		increase the current-rank of M by 1;
 		update name of M.
 
-To demote (M - a student):
+To silently demote (M - a student):
 	if M is demotable:
 		decrease the current-rank of M by 1;
 		update name of M.
+
+To promote (M - a student):
+	if M is promotable:
+		say "[BigNameDesc of M][']s armband transforms and [he of M] becomes ";
+		silently promote M;
+		say "[NameDesc of M]!".
+
+To demote (M - a student):
+	if M is demotable:
+		say "[BigNameDesc of M][']s armband transforms and [he of M] becomes ";
+		silently demote M;
+		say "[NameDesc of M]!".
 
 Definition: a student (called M) is lesson-appropriate:
 	if chosen-lesson is not lesson, decide no;
@@ -120,7 +138,7 @@ Part - Perception
 To compute perception of (M - a student):
 	now M is interested;
 	calm M;
-	say "The [M] notices you[if the player is sluttily dressed]. [otherwise]!  [end if]";
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed]. [otherwise]!  [end if]";
 	if detention chair is grabbing the player:
 		compute detention chair tease of M;
 	otherwise if armband is worn:
@@ -142,13 +160,13 @@ To compute (M - a student) reacting to armband replacement:
 
 To say ArmbandCalming of (M - a student):
 	if the health of M >= the maxhealth of M:
-		if M is unfriendly, say "The [M] calms down.";
+		if M is unfriendly, say "[BigNameDesc of M] calms down.";
 		now the scared of M is 0.
 
 Part - Protection
 
 To compute (M - a student) protecting against (X - a monster):
-	say "[speech style of M]'[if X is staff member]Eek!  [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek!  I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break]The [M] turns to run away.";
+	say "[speech style of M]'[if X is staff member]Eek!  [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek!  I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
 	now the scared of M is 100;
 	anger M.
 

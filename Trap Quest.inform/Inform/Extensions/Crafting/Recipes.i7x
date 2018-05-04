@@ -171,7 +171,7 @@ Recipe for electric fan is a kind of recipe. The printed name of recipe for elec
 To decide which number is the recipe key of (C - a recipe for electric fan):
 	decide on 21.
 
-Recipe for potion of bull strength is a kind of recipe. The printed name of recipe for potion of bull strength is "[TQlink of item described]recipe for potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The description of recipe for potion of bull strength is "This recipe says 'Minotaur Horn Filled With Milk Matured In Your Belly'.". There is 1 recipe for potion of bull strength. The text-shortcut of recipe for potion of bull strength is "rps".
+Recipe for potion of bull strength is a kind of recipe. The printed name of recipe for potion of bull strength is "[TQlink of item described]recipe for potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The description of recipe for potion of bull strength is "This recipe says 'horn Filled With Milk Matured In Your Belly'.". There is 1 recipe for potion of bull strength. The text-shortcut of recipe for potion of bull strength is "rps".
 Definition: a recipe for potion of bull strength (called R) is appropriate:
 	if weight gain fetish is 0 or lactation fetish is 0, decide no;
 	decide yes.

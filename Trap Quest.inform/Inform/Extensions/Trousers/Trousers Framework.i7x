@@ -13,7 +13,6 @@ To decide which number is the initial outrage of (C - a trousers):
 
 To uniquely set up (C - a trousers):
 	repair C;
-	set up magic state of C;
 	now the raw-magic-modifier of C is 0.
 
 To set up influence of (C - a trousers):

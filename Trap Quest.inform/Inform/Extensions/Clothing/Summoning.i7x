@@ -15,7 +15,7 @@ To summon (C - a clothing):
 	compute unique summoning of C;
 	if C is ass plugging, now C is penetrating asshole;
 	if C is vagina plugging and the player is female, now C is penetrating vagina;
-	if C is ballgag, now C is penetrating face.
+	if C is ballgag, now C is penetrating face.[a ballgag is any gag that occupies the player's face. I.e. most gags]
 
 To compute unique summoning of (C - a thing):
 	do nothing.
@@ -85,6 +85,9 @@ This definition determines whether or not an item can be conventionally "destroy
 
 +!]
 Definition: a thing (called C) is destructible:
+	decide yes.
+Definition: a thing (called C) is indestructible:
+	if C is destructible, decide no;
 	decide yes.
 
 [!<ThingIsTearable>+

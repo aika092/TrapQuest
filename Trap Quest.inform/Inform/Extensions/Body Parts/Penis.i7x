@@ -36,6 +36,7 @@ Definition: penis is tiny:
 	if the size of penis > 0 and the size of penis < 4, decide yes;
 	decide no.
 
+
 [!<PenisIsLewdlyExposed>+
 
 REQUIRES COMMENTING
@@ -107,7 +108,8 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a clothing (called C) is potentially penis covering:[does not check if penis is visible, only if it is covered by something.]
-	if C is potentially pussy covering clothing, decide yes;
+	if C is potentially pussy covering clothing:
+		if the size of penis <= the penis-capacity of C, decide yes;
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
 		if C is not super-short and C is not short, decide yes; [long skirts protect against exposure]
@@ -204,7 +206,7 @@ To say TotalDesc of penis:
 	if the size of penis > 0:
 		if there is worn chastity cage:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
-		otherwise if there is a worn pussy covering clothing:
+		otherwise if there is pussy covering clothing:
 			say "You have a [ShortDesc of penis] and [ShortBallsDesc]. ";
 		otherwise:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
@@ -232,15 +234,15 @@ REQUIRES COMMENTING
 
 +!]
 To say PenisModesty:
-	if penis is exposed:
-		if there is a pussy covering clothing:
-			let W be a random pussy covering clothing;
-			say "It is clearly visible [if W is actually dense]poking out of[otherwise]through[end if] your [selfexamineuniquetitle of W]. ";
+	if penis is at least partially exposed:
+		let W be a random pussy covering clothing;
+		if W is clothing:
+			say "It is [if penis is exposed]clearly[otherwise]partially[end if] visible [if W is actually dense]poking out of[otherwise]through[end if] your [ShortDesc of W]. ";
 		otherwise:
 			say "You have no clothing covering it. ";
 	otherwise if the size of penis > 0:
 		let W be a random worn actually penis covering clothing;
-		say "It can't be seen thanks to the [selfexamineuniquetitle of W]. ".
+		say "It can't be seen thanks to the [ShortDesc of W]. ".
 
 Part 3 - Modify Penis Stats
 

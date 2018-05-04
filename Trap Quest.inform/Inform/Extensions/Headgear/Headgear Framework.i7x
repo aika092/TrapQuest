@@ -26,27 +26,27 @@ To compute hair colour change of (H - a headgear):
 		if H is redness-neutral, now C is 1;[when we can't increase redness we force check brightness. NOTE: brightness increase is most likely.]
 		if C is 1:
 			if the brightness of hair < 3 and H is brightness-positive:
+				say "You feel your [printed name of H] changing your hair colour.";
 				HairBrightUp 1;
-				say "You feel your [printed name of H] changing your hair colour.";
 			if the brightness of hair > 0 and H is brightness-negative:
-				HairBrightDown 1;
 				say "You feel your [printed name of H] changing your hair colour.";
+				HairBrightDown 1;
 			if H is brightness-neutral, now C is 2;[we couldn't increase brightness so we try blondeness]
 		if C is 2:
 			if the blondeness of hair < 3 and H is blondeness-positive:
-				HairBlondeUp 1;
 				say "Your feel your [printed name of H] changing your hair colour.";
+				HairBlondeUp 1;
 			if the blondeness of hair > 0 and H is blondeness-negative:
-				HairBrightDown 1;
 				say "You feel your [printed name of H] changing your hair colour.";
-				if H is blondeness-neutral, now C is 3;[couldn't increase blondeness so let's try redness]
+				HairBlondeDown 1;
+			if H is blondeness-neutral, now C is 3;[couldn't increase blondeness so let's try redness]
 		if C is 3:
 			if the redness of hair < 3 and H is redness-positive:
-				HairRedUp 1;
 				say "You feel your [printed name of H] changing your hair colour.";
+				HairRedUp 1;
 			if the redness of hair > 0 and H is redness-negative:
-				HairRedDown 1;
-				say "You feel your [printed name of H] changing your hair colour.".
+				say "You feel your [printed name of H] changing your hair colour.";
+				HairRedDown 1.
 
 To compute hair colour darken of (H - a headgear): [Some awesome headgears darken hair when blessed]
 	if H is blessed and frozen hair is 0:
@@ -54,7 +54,7 @@ To compute hair colour darken of (H - a headgear): [Some awesome headgears darke
 		if the colour-charge of H > the hair threshold of H * 3:
 			now the colour-charge of H is 0;
 			if the redness of hair > natural redness * 3 or the brightness of hair > natural brightness * 3 or the blondeness of hair > natural blondeness * 3:
-				say "You feel your headband darkening hair colour. ";
+				say "You feel the blessed holy power your [ShortDesc of H] darkening your hair colour. ";
 				HairBrightDown 1;
 				HairBlondeDown 1;
 				HairRedDown 1.
@@ -66,8 +66,9 @@ To set up magic state of (C - a headgear):
 	now the raw-magic-modifier of C is 1.
 
 To compute periodic effect of (H - a headgear):
-	compute hair growth of H;
-	compute hair colour change of H;
+	if diaper quest is 0:
+		compute hair growth of H;
+		compute hair colour change of H;
 	compute outfit of H;
 	compute unique periodic effect of H.
 

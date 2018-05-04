@@ -554,7 +554,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: outrageous-gag (called A) is applicable:
-	if the humiliation of the player < 25000 and the bimbo of the player < 14 and there is a worn ballgag, decide yes;
+	if the humiliation of the player < HUMILIATION-DISGRACED + 1000 and the bimbo of the player < 14 and there is a worn gag, decide yes;
 	decide no.
 
 [!<ReflectOnOutrageousGag>+
@@ -563,10 +563,11 @@ REQUIRES COMMENTING
 
 +!]
 To reflect on (A - outrageous-gag):
-	let G be a random worn ballgag;
+	let G be a random worn gag;
 	if G is small ballgag, say "[variable custom style]I can't even talk with this ballgag in my mouth, and it's making me drool everywhere. Yuck!";
 	if G is large ballgag or G is huge ballgag, say "[variable custom style][if the intelligence of the player < 9]Ow ow ow, this ballgag is making my jaw ache!  Get it off![otherwise]I can't even talk with this ballgag in my mouth, and it's making me drool everywhere. Yuck![end if]";
-	if G is cock pacifier, say "[variable custom style][if the semen taste addiction of the player > 11]I guess it's pretty embarrassing to have this fake [manly-penis] in my mouth, but at least it keeps me hydrated!  Yum![otherwise]This [manly-penis] pacifier is so humiliating. Not only can everyone see that I've got a pacifier in my mouth, but while it's in my mouth I'm basically permanently sucking [manly-penis]![end if]".
+	if G is cock pacifier, say "[variable custom style][if the semen taste addiction of the player > 11]I guess it's pretty embarrassing to have this fake [manly-penis] in my mouth, but at least it keeps me hydrated!  Yum![otherwise]This [manly-penis] pacifier is so humiliating. Not only can everyone see that I've got a pacifier in my mouth, but while it's in my mouth I'm basically permanently sucking [manly-penis]![end if]";
+	if G is opengag, say "[variable custom style]I can't even talk with this gag in my mouth, and it makes me look like I'm always ready to suck dick. Yuck!";
 
 [!<chubbySlut:HumiliatingSituation>*
 
@@ -581,7 +582,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: chubby-slut (called A) is applicable:
-	if the humiliation of the player < 25000 and the fat-weight of the player > 8 and weight gain fetish is 1, decide yes;
+	if the humiliation of the player < HUMILIATION-DISGRACED + 1000 and the fat-weight of the player > 8 and weight gain fetish is 1, decide yes;
 	decide no.
 
 [!<ReflectOnChubbySlut>+
@@ -612,7 +613,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: crotch-on-show (called A) is applicable:
-	if the humiliation of the player < 8000 and the bimbo of the player < 6 and the player is not crotch covered, decide yes;
+	if the humiliation of the player < HUMILIATION-MODEST and the bimbo of the player < 6 and the player is not crotch covered, decide yes;
 	decide no.
 
 [!<ReflectOnCrotchOnShow>+
@@ -733,7 +734,7 @@ To say StatsChangedFlav:
 		if N is 3:
 			if the old intelligence of the player is 0:
 				now the old intelligence of the player is the flat intelligence of the player;
-			otherwise if the flat intelligence of the player < the old intelligence of the player - 2:
+			otherwise if the flat intelligence of the player > the old intelligence of the player + 2:
 				if the flat intelligence of the player < 6:
 					if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]The fog is starting to clear, I think?[roman type][line break][or][stopping]";
 					otherwise say "[one of][line break][second custom style][line break]I think I can remember my name... Jessica?[roman type][line break][or][stopping]";
@@ -754,7 +755,7 @@ To say StatsChangedFlav:
 					otherwise say "[one of][line break][second custom style][line break]Hmm, turns out that P = NP. I can't believe I just did that in my head. Though it'd be more fun if the P stood for Penis!  . [roman type][line break][or][stopping]";
 				now the old intelligence of the player is the flat intelligence of the player;
 				break;
-			otherwise if the flat intelligence of the player > the old intelligence of the player + 2:
+			otherwise if the flat intelligence of the player < the old intelligence of the player - 2:
 				if the flat intelligence of the player < 3:
 					if the bimbo of the player < 9, say "[one of][line break][first custom style][line break]Can't... think... straight...[roman type][line break][or][stopping]";
 					otherwise say "[one of][line break][second custom style][line break]Keep trying to think about stuff, but, like, I just keep thinking about [manly-penis]s.. tee-hee![roman type][line break][or][stopping]";

@@ -29,8 +29,8 @@ To decide which number is the damage improvement of (W - a puppy mittens):
 	decide on X.
 
 To compute attack of (W - a puppy mittens) at (M - a monster):
-	if the damage improvement of W < 0, say "You [if the bimbo of the player < 12][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at the [M] with your [printed name of W]!";
-	otherwise say "You slap at the [M] with your puppy paws.".
+	if the damage improvement of W < 0, say "You [if the bimbo of the player < 12][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W]!";
+	otherwise say "You slap at [NameDesc of M] with your puppy paws.".
 
 To uniquely set up (C - a puppy mittens):
 	now C is endurance.

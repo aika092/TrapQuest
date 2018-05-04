@@ -26,7 +26,7 @@ To say MonsterOfferAcceptFlav of (M - a gladiator) to (T - a pure totem):
 	say "[speech style of M]Ha! What could you possibly have that would spare you from my-...[roman type]".
 
 To say MonsterTakeFlav of (M - a gladiator) to (T - a pure totem):
-	say "The [M]'s eyes grow wide, and she takes the [printed name of T] from you with a shaky hand.".
+	say "[BigNameDesc of M]'s eyes grow wide, and she takes the [printed name of T] from you with a shaky hand.".
 
 To compute resolution of (M - a gladiator) taking (T - a pure totem):
 	say OfferThanksFlav of M for T;

@@ -12,6 +12,7 @@ another-turn is a number that varies.
 REQUIRES COMMENTING
 Oh, so this is how time works!  So "seconds" represents how many seconds of the current round has elapsed. And if seconds is 0, the round hasn't really started, so monsters and background activities don't progress.
 ### But the "run the engine" function seems bizarre to Selkie, looking equivalent to just writing:
+### The another-turn flag can be set to 1 for various reasons, which causes the "engine" to run again without giving the player a chance to act. The player can only have a turn if another-turn is STILL 0 at the end of the turn
 
 	now another-turn is 0;
 	run the engine once;
@@ -47,6 +48,7 @@ To run the engine once:
 			compute compulsory actions; [things that must happen]
 			unless another-turn is 1, compute instinctive actions;
 			unless another-turn is 1, compute automatic actions;  [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
+			unless another-turn is 1, compute optional actions;  [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, now seconds is 0;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
@@ -148,7 +150,8 @@ To compute turn:
 		decrease earnings by seconds;
 		if debugmode > 0, say "[earnings].";
 		if the player is a cheater and unlucky < 2 and earnings < starting-earnings - 500, compute trolling; [When the player is cheating and has played for a little while, we'll trigger this.]
-		if the number of worn fuck-me tattoos is 0 and earnings < starting-earnings - 480, compute april fools; [Lol.]
+		if april fools done is 0: [This stops us checking immobility and danger every single turn forever]
+			if the player is not immobile and the player is not in danger and earnings < starting-earnings - 480, compute april fools;
 	otherwise: [failsafe]
 		now earnings is 999999;
 	compute MonsterSetUpFix;

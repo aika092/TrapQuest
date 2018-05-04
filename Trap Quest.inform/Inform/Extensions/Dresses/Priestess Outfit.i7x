@@ -1,6 +1,6 @@
 Priestess Outfit by Dresses begins here.
 
-A priestess outfit is a kind of overdress. A priestess outfit is usually unique. A priestess outfit is usually low cut.
+A priestess outfit is a kind of overdress. A priestess outfit is usually unique. A priestess outfit is usually low cut. Understand "gown", "white" as priestess outfit.
 
 To compute SelfExamineDesc of (C - a priestess outfit):
 	say "You are wearing a [ShortDesc of C]. ".
@@ -37,27 +37,30 @@ To decide which number is the initial outrage of (C - a flowing priestess outfit
 	decide on 2.
 
 To decide which object is the potential-upgrade-target of (C - a flowing priestess outfit):
-	decide on a random off-stage modest priestess outfit.
+	decide on a random off-stage dainty priestess outfit.
 
-Part 2 - Modest Priestess Outfit
+Part 2 - Dainty Priestess Outfit
 
-A modest priestess outfit is a kind of priestess outfit. There is 1 modest priestess outfit.
+A dainty priestess outfit is a kind of priestess outfit. There is 1 dainty priestess outfit.
 
-Figure of modest priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess1.png".
+Figure of dainty priestess outfit is the file "Items\Clothes\Upper\Special\Priestess\priestess1.png".
 
-The printed name of modest priestess outfit is usually "[TQlink of item described][clothing-title-before]modest priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of modest priestess outfit is "mpo".
+The printed name of dainty priestess outfit is usually "[TQlink of item described][clothing-title-before]dainty priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of dainty priestess outfit is "dpo".
 
-To decide which figure-name is clothing-image of (C - a modest priestess outfit):
-	decide on figure of modest priestess outfit.
+To decide which figure-name is clothing-image of (C - a dainty priestess outfit):
+	decide on figure of dainty priestess outfit.
 
-To say ClothingDesc of (C - a modest priestess outfit):
+To say ClothingDesc of (C - a dainty priestess outfit):
 	say "This white gown comes with shoulder straps, gold ribbon at the waist and a relatively forgiving thigh length skirt. Compared to most of the clothing in this game, this outfit is still quite modest.".
 
-To decide which number is the initial outrage of (C - a modest priestess outfit):
+To decide which number is the initial outrage of (C - a dainty priestess outfit):
 	decide on 4.
 
-To decide which object is the potential-upgrade-target of (C - a modest priestess outfit):
+To decide which object is the potential-upgrade-target of (C - a dainty priestess outfit):
 	decide on a random off-stage revealing priestess outfit.
+
+Definition: a dainty priestess outfit (called C) is slitted:
+	decide yes.
 
 Part 3 - Revealing Priestess Outfit
 

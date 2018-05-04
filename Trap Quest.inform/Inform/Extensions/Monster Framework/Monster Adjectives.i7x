@@ -14,7 +14,6 @@ To decide which number is the maxhealth of (M - a monster):
 	decide on 1 + (the difficulty of M * (4 + game difficulty)).
 A monster has a number called boredom. The boredom of a monster is usually 0. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
 A monster has a number called friendly boredom. The friendly boredom of a monster is usually 0. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
-A monster has a number called variety. The variety of a monster is usually 0. [Monsters with variations or varied states can use this variable to track that.]
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
  A monster can be captive or released. A monster is usually released. [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.]
  A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
@@ -33,6 +32,15 @@ A monster is usually female. [Male = Do they have a sex organ that can ejaculate
  A monster can be moved. A monster is usually not moved. [Has the monster moved this turn?]
  A monster can be seeked. A monster is usually not seeked. [Has the monster moved aggressively this turn?]
  A monster can be notebook-studied. A monster is usually not notebook-studied.
+ 
+A monster can be tq-dq, tq-only, dq-only (this is the monster-game property). A monster is usually tq-dq.
+Definition: a monster (called M) is fetish appropriate:
+	if diaper quest is 1 and M is tq-only, decide no;
+	if diaper quest is 0 and M is dq-only, decide no;
+	decide yes.
+
+Definition: a monster (called M) is always-feminine: [Do we always refer to them with feminine pronouns even when they have a penis?]
+	decide no.
 
 [These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap.]
 Definition: a monster (called M) is dungeon dwelling:
@@ -127,6 +135,7 @@ Understand "NPC", "enemy" as a monster.
 A monster can be wrapped or unwrapped. A monster is usually unwrapped. [Are they wearing a condom?]
 A monster has a number called selection-frustration. [Have they tried the same body part several times without success?]
 A monster can be mating. [Has the player given birth to their spawn?]
+A monster has a number called waitress-boredom.
 
 Definition: a monster (called M) is blocker:
 	decide yes.

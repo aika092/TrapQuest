@@ -165,7 +165,7 @@ Let's see whether the player pukes up anything from their gag reflex being trigg
 To PukeUp:
 	let M be a random thing penetrating face;
 	if the player is a deepthroater or the player is not gag-prone:
-		say "The [M] almost makes you gag but you are able to [if the throatskill of the player is 1]use your [one of]new [or][or]experienced [or]expert [or]perfected [or]world renowned [stopping]deepthroating skills[otherwise]put mind over matter and control your gag reflex[end if] to accommodate [his of M] length without throwing up.";
+		say "[BigNameDesc of M] almost makes you gag but you are able to [if the throatskill of the player is 1]use your [one of]new [or][or]experienced [or]expert [or]perfected [or]world renowned [stopping]deepthroating skills[otherwise]put mind over matter and control your gag reflex[end if] to accommodate [his of M] length without throwing up.";
 		let T be a random tongue piercing;
 		let P be a random pink pacifier;
 		if T is actually summonable and a random number between 15 and the semen taste addiction of the player >= 15:
@@ -175,7 +175,7 @@ To PukeUp:
 			say "[bold type]Your baby's bonnet flutters wildly and a large pink pacifier appears in your mouth!  You can't remove it![roman type]  But it does make you feel stronger...";
 			summon P cursed;
 	otherwise:
-		say "The [M] being down your throat makes you gag, and as it pulls out you puke up the [semen] from your belly.";
+		say "[BigNameDesc of M] being down your throat makes you gag, and as it pulls out you puke up the [semen] from your belly.";
 		PukeUp a random number between 1 and (the stomach-semen of the player + the semen volume of belly).
 
 [!<PukeUpX>+

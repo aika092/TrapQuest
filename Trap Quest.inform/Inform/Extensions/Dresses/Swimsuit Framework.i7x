@@ -10,8 +10,7 @@ To say ShortDesc of (C - a swimsuit):
 
 To uniquely set up (C - a swimsuit):
 	if a random number between 1 and 2 is 1, now C is dominance;
-	if a random number between 1 and 3 is 1, now C is protection;
-	set up magic state of C.
+	if a random number between 1 and 3 is 1, now C is protection.
 
 
 

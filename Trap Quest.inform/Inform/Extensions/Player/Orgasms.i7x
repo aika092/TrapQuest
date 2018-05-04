@@ -421,8 +421,8 @@ REQUIRES COMMENTING
 This is the drilldo orgasm resolution rule:
 	if there is a dildo trap penetrating a fuckhole:
 		repeat with R running through dildo traps penetrating a fuckhole:
-			compute orgasm resolution of R;
 			dislodge R;
+			compute orgasm resolution of R;
 		try kneeling.
 The drilldo orgasm resolution rule is listed last in the orgasm resolution rules.
 
@@ -442,7 +442,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the game ending orgasm rule:
-	if the raw intelligence of the player is 0 and infinite mode is 0:
+	if the raw intelligence of the player is 0 and infinite mode is 0 and diaper quest is 0:
 		say "The game would normally end here, but you can keep playing if you really want. Keep playing? [yesnolink] ";
 		if the player consents:
 			say "Fine, keep playing to your heart's content.";

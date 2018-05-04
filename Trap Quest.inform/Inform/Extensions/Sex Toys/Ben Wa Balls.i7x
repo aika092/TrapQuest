@@ -35,7 +35,7 @@ To decide which number is the original price of (C - ben wa balls):
 
 To uniquely set up (C - ben wa balls):
 	let R be a random number between 1 and 10;
-	if R is 1, now C is endurance;
+	if R is 1, now C is endurance.
 
 Ben Wa Balls ends here.
 

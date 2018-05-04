@@ -29,6 +29,6 @@ To decide which number is the delicateness-influence of (C - a rubber duck gag):
 	decide on S.
 
 Definition: A rubber duck gag (called B) is fetish appropriate:
-	decide no. [Never appears randomly]
+	decide no.[Never appears randomly]
 
 Rubber Duck Gag ends here.

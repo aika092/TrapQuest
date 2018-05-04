@@ -84,9 +84,6 @@ To say ClothingDesc of (C - a blue superheroine outfit):
 To say ShortDesc of (C - a blue superheroine outfit):
 	say "blue lycra outfit".
 
-To uniquely set up (C - a blue superheroine outfit):
-	repair C.
-
 Report wearing a blue superheroine outfit when there is a worn diaper:
 	if image cutscenes is 1, display figure of superhero cutscene 1.
 

@@ -72,10 +72,10 @@ To say DecantingFlav of (V - a vessel):
 To say DecantingFlav of (V - a squirt dildo):
 	say "You squeeze the dildo and release inside the [second noun]. A [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if] flows into the dildo.".
 
-To say DecantingFlav of (V - a cocktail glass):
+To say DecantingFlav of (V - a cocktail-glass):
 	say "You dip the cocktail glass inside the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
 
-To say DecantingFlav of (V - a golden chalice):
+To say DecantingFlav of (V - a gold chalice):
 	say "You dip the chalice inside the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
 
 To say DecantingFlav of (V - a baby's bottle):
@@ -83,10 +83,18 @@ To say DecantingFlav of (V - a baby's bottle):
 
 To say DecantingFlav of (V - a novelty mug):
 	say "You dip the mug inside the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
+	
+waitress-dips is a number that varies.
 
 Report decanting something with:
 	if the fill-colour of the second noun is creamy:
 		compute father material of the second noun into the noun;
+	if the noun is waitress vessel, increase waitress-dips by 1;
+	if the noun is cocktail-glass or (the noun is waitress vessel and waitress-dips > 3):
+		let H be a random off-stage waitress bunny ears;
+		if H is actually summonable:
+			say "[bold type]Suddenly [ShortDesc of H] appear on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me look like a bunny waitress?[otherwise]Haha, it's like I'm a bunny waitress![end if][roman type][line break]";
+			summon H cursed;
 	repeat with T running through all untriggered swing traps in the location of the player:
 		trigger T.
 

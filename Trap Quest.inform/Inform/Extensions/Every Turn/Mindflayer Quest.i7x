@@ -56,7 +56,7 @@ A later time based rule (this is the mindflayer quest rule):
 	if mindflayer spawned is 1 and mindflayer quest is 0:
 		say "You hear a strange tapping sound, and suddenly a voice rings out as though from a PA system! [line break][second custom style]'Testing, testing. Is this thing on? Hello, testers! It appears a monster from a not-yet-implemented area has inadvertently been introduced into the live test area. We[']re not really sure how this happened, but this does highlight the importance of your job as testers. We don[']t seem to be able to despawn it ourselves, if one of you could be a dear and destroy it so we can analyse its data we would really appreciate it.[roman type][line break]";
 		now mindflayer quest is 1;
-	if mindflayer quest is 1 and the number of alive mind flayers is 0:
+	if mindflayer quest is 1 and mind flayer is off-stage:
 		say "The PA system comes alive again. [line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it, it[']s an item from later in the game so it[']s probably pretty powerful.'[roman type][line break]";
 		now mindflayer quest is 2.
 

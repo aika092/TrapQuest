@@ -15,6 +15,9 @@ To decide which number is the initial outrage of (C - a chainmail top):
 To decide which number is the original price of (C - a chainmail top):
 	decide on 5.
 
+To set up magic state of (C - a chainmail top):
+	do nothing.
+
 To uniquely set up (C - a chainmail top):
 	if a random number between 1 and 3 is 1, now C is endurance.
 

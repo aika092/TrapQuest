@@ -15,7 +15,7 @@ Carry out TQeating toffee:
 	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]!  ";
 	FatigueDown 80;
 	bodyheal 2;
-	if a random number between 1 and 4 is 1 or tutorial is 1:
+	if (a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper lover < 3)) or tutorial is 1:
 		say "[if toffee-poison-timer > 0]You feel more of the intelligence draining poison enter your veins.[otherwise]But your brain suddenly clouds over and it's much more difficult to think. The toffee was poisoned![end if]";
 		increase toffee-poison-timer by default-candy-duration / 2.
 

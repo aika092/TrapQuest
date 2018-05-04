@@ -288,7 +288,7 @@ A time based rule (this is the glue-stuck-mutation rule):
 		[if the player is flying:
 			let M be a random monster in the location of the player;
 			if M is a monster:
-				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and the [M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again!  Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
+				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again!  Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
 			otherwise:
 				say "[one of]You bob blissfully above the puddle of glue[or]You feel a bit worried about the glue puddle below you[or][line break][first custom style]I hope I don't land in the glue when I finally descend![roman type][line break][or]The glue puddle seems to draw your eye[or]The glue puddle beckons to you.[stopping]";
 				stop;]
@@ -388,7 +388,7 @@ To compute glue escaping:
 					let M be a random intelligent monster in the location of the player;
 					if M is monster and M is not ghost:
 						if M is not acquaintance: [if they like you they're not going to be mean.]
-							say "The [M] smirks at your glue-smeared form, apparently amused by your successful struggle.";
+							say "[BigNameDesc of M] smirks at your glue-smeared form, apparently amused by your successful struggle.";
 							if a random number between 1 and 3 is 1:
 								say  " But then, with a gentle shove, [he of M] pushes you again towards the glue! You teeter...";
 								now seconds is 0;
@@ -402,7 +402,7 @@ To compute glue escaping:
 			let M be a random intelligent monster in the location of the player; [Selkie: changed "room" to "location of the player" since I had the insane cultist suddenly pull me free, when I was in the dungeon]
 			if M is monster and M is acquaintance:
 				say "[first custom style]'You poor[one of],weak [or], helpless[or], foolish[or][at random] little thing. Let me see if I can [one of]get you free!'[or]help.'[at random][roman type][line break]";
-				say "[if M is a random woman][OldWomanName][otherwise]The [M][end if] grabs you and pulls hard...[line break]";
+				say "[BigNameDesc of M] grabs you and pulls hard...[line break]";
 				[check glue G freeing by M;]
 				if a random number between 1 and 2 is 1:
 					say "[big he of M] pulls you free!";
@@ -727,11 +727,11 @@ Check GlueRubbing:
 				try GlueRubbing C on the second noun instead;
 		otherwise if the noun is hips or the noun is asshole:
 			if the player is wrist bound in front, say "You can't really reach your butt to wipe off the glue there with your wrists bound in front of you." instead;
-			if there is a worn ass covering clothing:
+			if there is an ass covering clothing:
 				if the latex-transformation of the player > 3, say "You sense that if you touched even just a part of your shiny new skin to another part while this glue is sticky, it will be joined together forever, stuck there!" instead;
 				if the noun is asshole:
 					say "You think that'd be a super [i]bad[/i] idea." instead;
-			repeat with C running through worn ass covering clothing:
+			repeat with C running through ass covering clothing:
 				try GlueRubbing C on the second noun instead;
 		otherwise if the noun is breasts:
 			if the player is wrist bound behind, say "You can't reach your [BreastDesc] with your wrists bound behind you." instead;
@@ -769,22 +769,22 @@ Otherwise, the monster reacts to seeing the player stuck and struggling and vuln
 +!]
 To compute glued reaction of (M - a monster):
 	if a random number between 1 and 3 < 3:  [+? "and M is intelligent"? ]
-		say "The [M] [if M is intelligent][one of]looks at you with amusement[or]grins at your hampered situation[at random][otherwise][one of]senses your vulnerability[or]sees your helplessness[at random][end if]";
+		say "[BigNameDesc of M] [if M is intelligent][one of]looks at you with amusement[or]grins at your hampered situation[at random][otherwise][one of]senses your vulnerability[or]sees your helplessness[at random][end if]";
 		FavourDown M;
 		humiliate 200;
 		if M is objectifying the player:
 			now M is interested;
 			if M is intelligent:
-				say "[one of]You hear the [M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
+				say "[one of]You hear [NameDesc of M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
 			otherwise:
-				say "The [M] sees your hampered vulnerability and begins oiling [him of M]self up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
+				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [him of M]self up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
 		otherwise if M is friendly and M is interested:
-			say "[one of]The [M] rolls [his of M] eyes before [his of M] expression shifts and become s a little more... calculating, then[or]Once again, [his of M] expression alters, making you shiver, before [he of M][stopping] turns to leave you alone.";
+			say "[one of][BigNameDesc of M] rolls [his of M] eyes before [his of M] expression shifts and become s a little more... calculating, then[or]Once again, [his of M] expression alters, making you shiver, before [he of M][stopping] turns to leave you alone.";
 			distract M;
 		otherwise:
 			anger M;
 			now the sex-length of M is 3;
-			say "The [M] seems to realise your predicament!  Oh, no...";
+			say "[BigNameDesc of M] seems to realise your predicament!  Oh, no...";
 			now M is interested;
 	otherwise:
 		compute kneeling reaction of M.

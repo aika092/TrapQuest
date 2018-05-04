@@ -123,9 +123,8 @@ A time based rule (this is the puddles disappearing rule):
 		if the slime-puddle of H > 0, decrease the slime-puddle of H by 1;
 	repeat with R running through placed jungle rooms:
 		if R is smoky:
-			let M be a random wild gladiator;
-			decrease the smoke of M by 1;
-			if the smoke of M < 0, now R is not smoky;
+			decrease the smoke of wild gladiator by 1;
+			if the smoke of wild gladiator < 0, now R is not smoky;
 		if the semen-puddle of R > 0:
 			decrease the semen-puddle of R by 1;
 			if R is Woods30, ChargeUp giant-statue by 7;

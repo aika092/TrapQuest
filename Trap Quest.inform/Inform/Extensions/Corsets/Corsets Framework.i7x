@@ -41,7 +41,6 @@ Report examining corsets:
 	if newbie tips is 1, say "Corsets [if the number of worn corsets is 0]would [end if]help keep your belly in control[one of], as large bellies can make movement difficult[or][stopping].".
 
 To uniquely set up (C - a corset):
-	set up magic state of C;
 	let R be a random number between 1 and 7;
 	if R is 1, now the magic-type of C is confidence;
 	if R is 2, now the magic-type of C is endurance;

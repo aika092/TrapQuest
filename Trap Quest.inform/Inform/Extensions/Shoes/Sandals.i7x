@@ -18,7 +18,10 @@ Definition: a sandals (called C) is rigid:
 
 To decide which number is the hindrance modifier of (C - a sandals):
 	decide on 4.
-	
+
+To set up magic state of (C - a sandals):
+	do nothing.
+
 To uniquely set up (C - a sandals):
 	now the heel-height of C is 1.
 	

@@ -1,8 +1,8 @@
 Living Belt of Sturdiness by Belts Suspenders begins here.
 
-The living belt of sturdiness is a belt. Figure of living belt of sturdiness is the file "Items\Clothes\Lower\Waist\Belts\belt2.png". The living belt of sturdiness is unique. The living belt of sturdiness is biological. The printed name of living belt of sturdiness is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of living belt of sturdiness is "lbs".
+living belt of sturdiness is a belt. Figure of living belt of sturdiness is the file "Items\Clothes\Lower\Waist\Belts\belt2.png". living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of living belt of sturdiness is "lbs".
 
-The living belt of sturdiness has a number called buildup. The buildup of the living belt of sturdiness is 0.
+living belt of sturdiness has a number called buildup. The buildup of the living belt of sturdiness is 0.
 
 Definition: a living belt of sturdiness (called C) is father material:
 	decide yes.
@@ -13,13 +13,12 @@ To decide which figure-name is clothing-image of (C - the living belt of sturdin
 To say ClothingDesc of (C - living belt of sturdiness):
 	say "This 'belt' is a loop of living metallic silver tentacles that are slowly undulating. They look almost robotic in nature but they are warm to the touch and not as solid as a real metal.";
 	if item described is penetrating a fuckhole:
-		say "[line break]";
 		say "[if item described is filling asshole and item described is filling vagina]The tentacles are[otherwise]The tentacle is[end if] currently penetrating you and filling you to the brim. ";
 		if item described is thrusting, say "[if item described is filling asshole and item described is filling vagina and (the anal sex addiction of the player > 6 or the vaginal sex addiction of the player > 6)]Moreover, the tentacles are fucking you simultaneously in a deliciously teasing[otherwise if the anal sex addiction of the player > 6]Moreover, the tentacle is fucking you in a deliciously teasing[otherwise if item described is filling asshole and item described is filling vagina] Even worse, the tentacles are fucking you simultaneously in a frustratingly distracting[otherwise] Even worse, the tentacle is fucking you in a frustratingly distracting[end if] slow, strong and steady manner.";
 		otherwise say line break.
 
 To say ShortDesc of (Y - living belt of sturdiness):
-	say "belt of living sex tentacles".
+	say "living belt".
 
 Definition: a living belt of sturdiness (called C) is product:
 	decide yes.
@@ -36,6 +35,9 @@ To decide which number is the girth of (I - the living belt of sturdiness):
 
 To decide which number is the initial outrage of (C - living belt of sturdiness):
 	decide on 16.
+
+To set up magic state of (C - living belt of sturdiness):
+	do nothing.
 
 To uniquely set up (C - living belt of sturdiness):
 	now the buildup of C is 0.

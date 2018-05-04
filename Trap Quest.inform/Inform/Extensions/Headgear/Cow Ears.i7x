@@ -5,6 +5,12 @@ A cow ears is a kind of headgear. A cow ears is usually manly. There is 1 cow ea
 Definition: a cow ears (called C) is fluid immune:
 	decide yes.
 
+Definition: an object (called C) is cow themed:
+	decide no.
+
+Definition: a cow ears (called C) is cow themed:
+	decide yes.
+
 The printed name of cow ears is usually "[TQlink of item described][clothing-title-before]pair of cow ears[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cow ears is "cwes".
 
 To decide which figure-name is the clothing-image of (C - a cow ears):
@@ -26,17 +32,15 @@ To compute unique periodic effect of (H - a cow ears):
 cow-horny-charge is a number that varies.
 
 To compute cowgirl horniness:[cowgirls get horny if they're in the dungeon at the same time as the minotaur.]
-	if the player is in the dungeon and there is an alive minotaurs and the class of the player is cowgirl:
-		let M be a random minotaur in the location of the player;
-		if M is monster and the arousal of the player < 3000 and the player is able to get horny:
-			say "All it takes is one whiff of the [M]'s virile musk to send a wave of arousal rippling through your body. [line break][second custom style]M-moooo.[roman type][line break]";
+	if the player is in the dungeon and minotaur is alive and the class of the player is cowgirl:
+		if minotaur is in the location of the player and the arousal of the player < 3000 and the player is able to get horny:
+			say "All it takes is one whiff of the [minotaur]'s virile musk to send a wave of arousal rippling through your body. [line break][second custom style]M-moooo.[roman type][line break]";
 			now the arousal of the player is 3500;[the cowgirl is instantly horny in the same room as the minotaur, no matter what]
-		otherwise if M is monster and a random number between 1 and 3 is 1:
-			say "Spending time close to the [M] is causing your body to react to his potent virile hormones. You [if the arousal of the player > 1]get even more aroused![otherwise]can feel arousal building up inside you![end if]";
+		otherwise if minotaur is in the location of the player and a random number between 1 and 3 is 1:
+			say "Spending time close to the [minotaur] is causing your body to react to his potent virile hormones. You [if the arousal of the player > 1]get even more aroused![otherwise]can feel arousal building up inside you![end if]";
 			arouse 300;
-		otherwise if the player is in Dungeon36 and M is not monster and a random number between 1 and 3 is 1:
-			now M is a random minotaur;
-			say "Although the [M] isn't around, his musk still hangs over his cage, slowly building up your arousal.";
+		otherwise if the player is in Dungeon36 and minotaur is not in the location of the player and a random number between 1 and 3 is 1:
+			say "Although the [minotaur] isn't around, his musk still hangs over his cage, slowly building up your arousal.";
 			arouse 150;
 		otherwise:
 			increase cow-horny-charge by 1;
@@ -81,7 +85,8 @@ To compute class outfit of (H - a cow ears):
 				destroy D;
 		summon P cursed;
 		if T is actually summonable, summon T;
-	otherwise if C is actually summonable:
+		now cow-summoned is 1;
+	otherwise if the class of the player is cowgirl and C is actually summonable:
 		say "[bold type]You feel a sudden coldness on your chest. You look down to see that a cowbell has appeared![roman type][line break]";
 		summon C cursed;
 	otherwise if the class of the player is cowgirl and G is actually summonable:

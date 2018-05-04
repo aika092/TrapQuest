@@ -134,15 +134,18 @@ REQUIRES COMMENTING
 
 +!]
 To say ShortDesc of asshole:
-	say "[AssGape openness of asshole]";
-	if the latex-transformation of the player < 4:
-		if the soreness of asshole > 7:
-			say ", very sore";
-		otherwise if the soreness of asshole > 3:
-			say ", sore";
-	otherwise:
-		say ", numb";
-	say " [asshole]".
+	if diaper quest is 0:
+		say "[AssGape openness of asshole]";
+		if the latex-transformation of the player < 4:
+			if the soreness of asshole > 7:
+				say ", very sore ";
+			otherwise if the soreness of asshole > 3:
+				say ", sore ";
+			otherwise:
+				say " ";
+		otherwise:
+			say ", numb ";
+	say "[asshole]".
 
 [!<SayMediumDescOfAsshole>+
 

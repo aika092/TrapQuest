@@ -26,6 +26,7 @@ Carry out going west when the location of the player is School33:
 
 dungeon-favour is a number that varies.
 dungeon-time is a number that varies.
+dungeon-tests is a number that varies. dungeon-tests is usually 0.
 
 A time based rule (this is the dungeon sentence progress rule):
 	if dungeon chains is worn:
@@ -56,16 +57,15 @@ To compute dungeon chain binding of (M - a monster):
 	now dungeon chains is worn by the player;
 	now dungeon chains is stuck;
 	now dungeon chains is locked;
-	let W be a random pair of handcuffs;
-	say "You are locked into ankle chains.[if W is actually summonable][M] also puts you in handcuffs![end if]";
-	if W is actually summonable, summon W locked;
-	now W is bound-behind;
+	say "You are locked into ankle chains.[if pair of handcuffs is actually summonable][M] also puts you in handcuffs![end if]";
+	if pair of handcuffs is actually summonable, summon pair of handcuffs locked;
+	now pair of handcuffs is wrist-bound-behind;
 	repeat with C running through things penetrating face:
 		say "[M] removes your [ShortDesc of C], presumably to make sure that you are still able to drink.";
 		now C is in Dungeon33.
 
 To say DungeonLockPrepFlav of (M - a monster):
-	say "[speech style of M]'This has only ever been necessary once before.'[roman type][line break]The [M] grabs your arm.  ".
+	say "[speech style of M]'This has only ever been necessary once before.'[roman type][line break][BigNameDesc of M] grabs your arm.  ".
 
 To say DungeonLockFlav of (M - a monster):
 	say "[speech style of M]'Hold still.'[roman type][line break]".
@@ -79,7 +79,7 @@ To compute dungeon drink confiscating of (M - a monster):
 		now B is in School33.
 
 To say DungeonDrinkFlav of (M - a monster):
-	say "[speech style of M]'You won't be needing these.'[roman type][line break]The [M] confiscates all of your drinks!".
+	say "[speech style of M]'You won't be needing these.'[roman type][line break][BigNameDesc of M] confiscates all of your drinks!".
 
 To say DungeonLockLeaveFlav of (M - a monster):
 	say "With that [he of M] turns to leave you alone.".
@@ -113,6 +113,7 @@ To compute dungeon checkup of (M - a monster):
 	now M is in the location of the player;
 	say DungeonCheckupArrivalFlav of M;
 	compute dungeon test of M;
+	increase dungeon-tests by 1;
 	check dungeon release of M;
 	say DungeonCheckupDepartureFlav of M;
 	try M going north.
@@ -153,7 +154,7 @@ To execute (T - dungeon-food-test):
 	say "[speech style of M]'Here's your food, little slave.'[roman type][line break][M] drops a dog bowl in front of you! It's filled with mushy peas[if watersports fetish is 1] drowned in [urine][otherwise if diaper quest is 0] drowned in [semen][end if].  Do you [if the player is upright]get down on your knees and [end if]eat it? [yesnolink]";
 	if the player consents:
 		StomachFoodUp 1;
-		say "You [if the player is upright]kneel and [end if] begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as the [M] watches you with a mocking sneer.  When you are finished [he of M] takes the bowl away.";
+		say "You [if the player is upright]kneel and [end if] begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer.  When you are finished [he of M] takes the bowl away.";
 		humiliate 200;
 		if watersports fetish is 1:
 			UrineTasteAddictUp 1;
@@ -185,9 +186,9 @@ Definition: dungeon-oral-test (called T) is eligible:
 To execute (T - dungeon-oral-test):
 	let M be dungeon-test-monster;
 	if M is male:
-		say "[big he of M] positions [his of M] [manly-penis] in front of your mouth.  [speech style of M]'Suck it.'[roman type][line break]Do you perform fellatio on [him of M]? [yesnolink]";
+		say "[big he of M] positions [his of M] [manly-penis] in front of your mouth.  [line break][speech style of M]'Suck it.'[roman type][line break]Do you perform fellatio on [him of M]? [yesnolink]";
 	otherwise:
-		say "[big he of M] bends over, pushing [his of M] ass into your face and more importantly [his of M] asshole over your mouth.  [speech style of M]'Lick it.'[roman type][line break]Do you perform anilingus on [him of M]? [yesnolink]";
+		say "[big he of M] bends over, pushing [his of M] ass into your face and more importantly [his of M] asshole over your mouth.  [line break][speech style of M]'Lick it.'[roman type][line break]Do you perform anilingus on [him of M]? [yesnolink]";
 	if the player consents:
 		say "You [if M is male]accept [his of M] rod into your mouth and begin to work[otherwise]push your tongue into [his of M] sweaty hole and begin to lick[end if] away.  [big he of M] seems happy to let you do all of the work, holding [himself of M] completely still.  Even though it's not dirty, your tongue is still able to detect that unmistakable taste of ass[if M is male] - [he of M] must have recently been ruining some poor other student's butt[end if]. After what can't have been much more than ten seconds [M] seems satisfied.  It doesn't look like [he of M] intends for you to bring [him of M] to orgasm right now, and [he of M] withdraws.  [if the oral sex addiction of the player > 4]You are so used to bringing your partners to completion that this leaves you feeling somewhat uncomfortable![otherwise]You're just glad that it was all over so quickly.[end if]";
 		OralSexAddictUp 1;
@@ -196,6 +197,16 @@ To execute (T - dungeon-oral-test):
 	otherwise:
 		say "[big he of M] growls at your lack of compliance.[line break][speech style of M]'You'd really rather stay here even longer?  Fine by me.'[roman type][line break]".
 
+[dungeon-breakout-test is a dungeon-test.
+Definition: dungeon-breakout-test (called T) is eligible:
+	let M be a random tentacle monster in the location of the player;
+	if M is monster and M is massive:
+		if dungeon-tests > 4, decide yes;
+	decide no.
+To execute (T - dungeon-breakout-test):
+	let M be dungeon-test-monster;
+	let X be a random tentacle monster in the location of the player;
+	say "The [X] busts you out of jail!";]
 
 
 School Dungeon ends here.

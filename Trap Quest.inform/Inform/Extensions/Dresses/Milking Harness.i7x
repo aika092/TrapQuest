@@ -25,7 +25,7 @@ Definition: a milking harness (called C) is untransformable:
 	decide yes.
 
 To uniquely set up (C - a milking harness):
-	set up magic state of C.
+	do nothing.
 
 To set up influence of (C - a milking harness):
 	set up taste-based influence of C.

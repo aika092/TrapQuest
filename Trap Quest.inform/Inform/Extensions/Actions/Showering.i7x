@@ -155,20 +155,9 @@ REQUIRES COMMENTING
 
 +!]
 To wash salves:
-	repeat with C running through worn salves:
-		say "The water washes the [printed name of C] from your ";
-		if C is covering breasts:
-			say "[BreastDesc].";
-		otherwise if C is covering hips:
-			say "[HipDesc].";
-		otherwise if C is covering belly:
-			say "[BellyDesc].";
-		otherwise if C is covering asshole:
-			say "[asshole].";
-		otherwise if C is covering vagina:
-			say "[vagina].";
-		otherwise:
-			say "body.";
+	repeat with C running through worn true salves:
+		let B be a random body part covered by C;
+		if B is body part, say "The water washes the [ShortDesc of C] from your [variable B].";
 		destroy C.
 
 Showering ends here.

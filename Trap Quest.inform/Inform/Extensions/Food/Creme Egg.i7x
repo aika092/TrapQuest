@@ -21,7 +21,7 @@ To say DevourFlav of (C - a creme egg):
 
 Carry out TQeating creme egg:
 	say "[DevourFlav of the noun] As your tongue hits the centre, you ";
-	if a random number between 1 and 4 is 1:
+	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper lover < 3):
 		if diaper quest is 1 or (diaper lover > 0 and a random number between 1 and 2 is 1):
 			if diaper lover >= 4 and a random number between 1 and 3 > 1:
 				say "taste something extremely sour. [line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";

@@ -102,7 +102,7 @@ This is the monster notices the player urinating rule:
 			say GroundPeeDeclaration of current-monster;
 		if current-monster is unfriendly and current-monster is uninterested:
 			now current-monster is interested;
-			say "The [current-monster] looks [if the player is upright]like [he of current-monster] wants to fight[otherwise]aggressive[end if]!".
+			say "[BigNameDesc of current-monster] looks [if the player is upright]like [he of current-monster] wants to fight[otherwise]aggressive[end if]!".
 The monster notices the player urinating rule is listed in the motion reaction rules.
 
 To compute monster sleeping:
@@ -113,7 +113,10 @@ To compute sleeping of (M - a monster):
 	compute scared reduction of M;
 	compute questioned reduction of M;
 	compute boredom reduction of M;
-	compute sleep reduction of M;
+	compute periodic healing of M;
+	compute periodic recovery of M;
+	compute sleep reduction of M;[needs to come after healing and recovery]
+	compute unique periodic effect of M.
 
 To compute scared reduction of (M - a monster):
 	if the scared of M > 0:
@@ -130,14 +133,39 @@ To compute boredom reduction of (M - a monster):
 	if the boredom of M > 0:
 		decrease the boredom of M by seconds;
 		if the boredom of M <= 0:
-			now the boredom of M is 0.
+			now the boredom of M is 0;
+	if the waitress-boredom of M > 0:
+		decrease the waitress-boredom of M by seconds;
+		if the waitress-boredom of M <= 0:
+			now the waitress-boredom of M is 0.
 
 To compute sleep reduction of (M - a monster):
 	if the sleep of M > 0:
 		decrease the sleep of M by seconds;
 		if the sleep of M <= 0:
 			now the sleep of M is 0;
-			if M is in the location of the player, say "The [M] wakes up!  [if M is unfriendly]Uh-oh...[end if]". 
+			if M is in the location of the player, say "[BigNameDesc of M] wakes up!  [if M is unfriendly]Uh-oh...[end if]". 
+
+To compute periodic healing of (M - a monster):
+	if the sleep of M <= 0:
+		if M is uninterested, MonsterHeal M by 2;[Uninterested monsters heal every turn.]
+	otherwise:
+		MonsterHeal M by 4.[Sleeping monsters always get to heal, and they heal double]
+
+To MonsterHeal (M - a monster) by (N - a number):
+	if the health of M < the maxhealth of M:
+		increase the health of M by N;
+		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]	
+
+To compute periodic recovery of (M - a monster):
+	unless the class of the player is princess and the sleep of M > 0, decrease the refactory-period of M by 4;
+	if the class of the player is princess and princess-consort is M:
+		if the refactory-period of M <= 0:
+			if the refactory-period of M > -4, say "A strange tingle passes through your body[if the player is very horny], and you suddenly find yourself stricken with need[end if] as thoughts of the [princess-consort] begin to swirl around inside your head. Somehow, you know you won't be able to satisfy yourself at all until you see to [his of M] needs.[line break][variable custom style][if the player is not a pervert]Ugh, its not my job to get anyone off! Stop messing with my head, game![otherwise if the sex addiction of the player < 12]I guess I should go see [him of M] quick so I can get it over with.[otherwise]Looks like [he of M] needs my help. I don't want to keep [him of M] waiting![end if][roman type][line break]";
+			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
+
+To compute unique periodic effect of (M - a monster):
+	do nothing.
 
 To compute survival reward of (C - a clothing):
 	do nothing.

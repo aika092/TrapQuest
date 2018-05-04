@@ -49,7 +49,7 @@ Report taking off something:
 	do nothing;
 	if the noun is actually breast covering:
 		repeat with M running through willing to do titfucks dangerous intelligent monsters in the location of the player:
-			say "The [M] looks at you inquisitively, clearly interested in what you might have in mind.";
+			say "[BigNameDesc of M] looks at you inquisitively, clearly interested in what you might have in mind.";
 			humiliate 125;
 	if the noun is scrunchie:
 		if the player is ponytailed, say "You remove one scrunchie, and the rest of your hair appears magically inside the other in a perfect ponytail!";

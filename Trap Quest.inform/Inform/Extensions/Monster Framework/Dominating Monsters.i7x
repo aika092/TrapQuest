@@ -9,8 +9,8 @@ Determines whether or not the player can successfully fuck a monster or not.
 
 +!]
 [Definition: a person is domlicious:
-	if there is a worn cursed ass covering clothing, decide no;
-	if there is a worn cursed pussy covering clothing, decide no;
+	if there is a cursed ass covering clothing, decide no;
+	if there is a cursed pussy covering clothing, decide no;
 	if size of penis is 0 and the player is male and asshole is actually occupied, decide no;
 	if the player is female and vagina is actually occupied, decide no;
 	if the player is feeling submissive, decide no;
@@ -82,7 +82,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use the [M] as your own personal cocksleeve!  Then [he of M] runs away, upset and angry.[otherwise]You finger-bang the [M] into submission. [big he of M] runs away, upset and angry.[end if]";
+	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, upset and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, upset and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -114,7 +114,7 @@ REQUIRES COMMENTING
 Check dominating:
 	if the noun is not monster, say "What would be the point of that?" instead;
 	if diaper quest is 1, say "I think you're playing the wrong game." instead;
-	if the noun is not wenchy[ or (the noun is acolyte and the player is not a september 2017 top donator)], say "The [the noun] doesn't look like someone you could successfully dominate." instead;
+	if the noun is not wenchy, say "The [the noun] doesn't look like someone you could successfully dominate." instead;
 	if (the noun is male and the noun is not gladiator):
 		let C be 5;
 		if the player is horny, decrease C by 1;
@@ -126,20 +126,21 @@ Check dominating:
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don[']t see the point." instead;
 	let D be asshole;[what are you going to use to fuck the monster]
 	if the player is female, now D is vagina;
-	if the player is male, now D is penis;
-	if the player is barbie or (the noun is male and the noun is not gladiator), now D is asshole;
+	if the player is male:
+		now D is penis;
+		if the player is barbie or (the noun is male and the noun is not gladiator), now D is asshole;
 	if D is penis:
 		if there is a worn undisplacable potentially penis covering clothing, say "You'll have to find a way to remove your [printed name of a random worn undisplacable potentially penis covering clothing] first." instead;
 		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;[your chastity?]
 		if there is a worn condom of kings or there is a worn restricting research airhancer, say "You wouldn't feel anything from it, so you don't see the point." instead;
 	otherwise if D is vagina:
-		if there is a worn undisplacable pussy covering clothing, say "You'll have to remove your [printed name of a random worn undisplacable pussy covering clothing] first." instead;
+		if there is undisplacable pussy covering clothing, say "You'll have to remove your [printed name of a random undisplacable pussy covering clothing] first." instead;
 		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;
 		if vagina is actually occupied, say "You need to remove your [printed name of a random worn clothing penetrating vagina] first!" instead;	
 	otherwise:
 		if there is a worn undisplacable ass covering clothing, say "You[']ll have to find a way to get your [printed name of a random worn undisplacable ass covering clothing] out of the way first." instead;
 		if asshole is actually occupied, say "You need to remove your [printed name of a random worn clothing penetrating asshole] first!" instead;	
-	if the delicateness of the player > 5 and the difficulty of the noun > 13 and the delicateness of the player > (the difficulty of the noun - the times-dominated of the noun) / 2, say "[He of the noun] looks way too tough for that. What if something went wrong...?" instead;[players with very high delicateness will be too afraid to try and dominate strong monsters unless they've already dominated them a few times before]
+	if the player is feeling submissive and the player is not a nympho, say "Wouldn't it be easier to ask [him of the noun] to fuck me? It would probably be more fun that way, too!" instead;[players with very high delicateness will be too afraid to dominate unless they have high sex obsession too]
 	if the number of dangerous monsters in the location of the player > 1, say "You're outnumbered right now. You should try to find some place more secluded before trying something so bold." instead;
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	unless the noun is interested:
@@ -171,7 +172,7 @@ Carry out dominating:
 	otherwise:[Value of 2? Player failed and is getting punished]
 		now M is interested;
 		unless M is unfriendly, anger M;[this handles edge cases where the player goes for a monster that isn't paying attention to the player.]
-		now the stance of the player is 1; [Does this *tell* the player they've fallen to their knees? MG says: The flavour should usually imply the player is on their knees, but specific functions can override that with DominanceFailure of M.]
+		now the stance of the player is 1; [The flavour should usually imply the player is on their knees, but specific functions can override that with DominanceFailure of M.]
 		FatigueUp 50;
 		now player-fucking is 1;
 		say DominanceFailure of M;
@@ -291,7 +292,7 @@ This function determines what happens when a monster fails its "submissiveness" 
 
 +!]
 To say DominanceSuccess of (M - a monster):
-	say "You successfully force the [M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve!  [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
+	say "You successfully force [NameDesc of M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve!  [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
 
 [!<ComputeSuccessfulDominanceOfMonster>+
 
@@ -305,7 +306,7 @@ To compute successful dominance of (M - a monster):
 	if the player is male, check virginity;
 	DominateUp M;
 	DifficultyUp M by 2;
-	say "[line break]The [M] slinks away as soon as [he of M] has the strength.[line break]You feel more [if the player is male]manly[otherwise]dominant[end if]!".
+	say "[line break][BigNameDesc of M] slinks away as soon as [he of M] has the strength.[line break]You feel more [if the player is male]manly[otherwise]dominant[end if]!".
 
 [!<ComputeUniqueDominanceRewardOfMonster>+
 
@@ -381,19 +382,19 @@ To replace (M - a monster) after domination:
 Copy Paste.
 
 To watersports dominate (M - a monster):[Boring, needs changing for wenchy monsters]
-	say "You fuck the [M] and urinate on [him of M].";
+	say "You fuck [NameDesc of M] and urinate on [him of M].";
 
 To oral dominate (M - a monster):[Boring, needs changing for wenchy monsters]
-	say "You make the [M] to give you a blowjob.";
+	say "You make [NameDesc of M] to give you a blowjob.";
 
 To anal dominate (M - a monster):[Boring, needs changing for wenchy monsters]
-	say "You fuck the [M] in the ass.";
+	say "You fuck [NameDesc of M] in the ass.";
 
 To vaginal dominate (M - a monster):[Boring, needs changing for wenchy monsters]
-	say "You fuck the [M] right in the pussy.";
+	say "You fuck [NameDesc of M] right in the pussy.";
 
 To female dominate (M - a monster):[Boring, needs changing]
-	say "You make the [M] eat you out";
+	say "You make [NameDesc of M] eat you out";
 
 To say AfterDominationComment (N - a number) of (M - a monster):
 	say "I'll pay you back for that...".
@@ -409,7 +410,7 @@ The text in this function should output whenever the player unsuccessfully domin
 
 +!]
 To say DominanceFailure of (M - a monster):
-	say "You try to force yourself on the [M], but [he of M] turns the tables and forces you to your knees instead!";
+	say "You try to force yourself on [NameDesc of M], but [he of M] turns the tables and forces you to your knees instead!";
 
 [Usually when you mess up you'll be punished by having some clothes torn off, but if you're not wearing anything you'll have to deal with a more intense punishment courtesy of nintendolls]
 [!<ComputeFailedDominancePunishmentOfMonster>+
@@ -426,7 +427,7 @@ To compute failed dominance punishment of (M - a monster):
 		if the number of worn not sissifying removable clothing > 0:
 			compute angry punishment of M;
 		otherwise:
-			say "The [M] seems to lose interest you and begins walking off, but it looks like the game isn[']t done with you yet!";
+			say "[BigNameDesc of M] seems to lose interest you and begins walking off, but it looks like the game isn[']t done with you yet!";
 			compute sissification;
 		Bore M.
 
@@ -438,7 +439,7 @@ The text here should output when M teleports to another room after the player un
 
 +!]
 To say DominanceFailed of (M - a monster):
-	say "[line break]The [M] hurries off before you have a chance to stop [him of M].".
+	say "[line break][BigNameDesc of M] hurries off before you have a chance to stop [him of M].".
 
 [!<ComputeSissification>+
 

@@ -29,7 +29,7 @@ To set up influence of (C - a lip piercing):
 	set up taste-based influence of C.
 
 To say PiercingFlav of (P - a lip piercing):
-	say "An arm comes down with a searing hot needle!  You scream [if there is a worn ballgag]through your gag [end if]as you are painfully pierced just below your bottom lip. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
+	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as you are painfully pierced just below your bottom lip. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
 
 Check taking off lip piercing:
 	say "That's permanently welded into your lip!" instead. 

@@ -243,7 +243,7 @@ To compute submission success of (M - a thing) in (F - a fuckhole):
 		if a random number between 0 and the raw vaginal sex addiction of the player is 0 and the player is horny, VaginalSexAddictUp 1.
 
 To say submission success of (M - a thing) in (F - a fuckhole):
-	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of the [M], you have successfully stopped your [variable F] getting more sore![end if]".
+	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of [NameDesc of M], you have successfully stopped your [variable F] getting more sore![end if]".
 		
 
 

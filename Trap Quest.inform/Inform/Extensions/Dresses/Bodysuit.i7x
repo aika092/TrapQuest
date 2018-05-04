@@ -45,7 +45,6 @@ To decide which number is the bimbo-influence of (C - a bodysuit):
 	decide on 1.
 
 To uniquely set up (C - a bodysuit):
-	set up magic state of C;
 	if C is cursed:
 		if a random number between 1 and 2 is 1, now the magic-type of C is posture training;
 	otherwise:

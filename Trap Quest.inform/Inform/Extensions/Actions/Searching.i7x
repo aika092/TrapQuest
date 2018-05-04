@@ -51,9 +51,10 @@ REQUIRES COMMENTING
 To First Time Search (X - a container):
 	now seconds is 6;
 	if X is trapped:
-		let R be a random number from 0 to 29; [###Selkie: Is 29 right, now that Int varies from 0-20?]
-		if debugmode is 1, say "Search check: Player [intelligence of the player] | [R].5 Click Trap[paragraph break]";
-		if R < the intelligence of the player:
+		let R be a random number from 0 to 25;
+		let I be the intelligence of the player + (the number of worn bunny ears * 10);
+		if debugmode is 1, say "Search check: Player [I + 0] | [R].5 Click Trap[paragraph break]";
+		if R < I:
 			if the bimbo of the player < 18:
 				if the bimbo of the player < 8 or a random number from the bimbo of the player to 20 < 18:
 					say "Uh- oh, looks like this [noun] is trapped with a [random click trap in the location of the player]!  Better leave it alone...";

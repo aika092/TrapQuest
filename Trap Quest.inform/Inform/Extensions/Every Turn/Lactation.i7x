@@ -22,20 +22,20 @@ A time based rule (this is the lactation rule):
 		let L be 200 / R + 1;
 		if the remainder after dividing time-earnings by L < time-seconds:
 			let flav-said be 0;
-			if there is a worn ass covering milking basque:
+			if there is an ass covering milking basque:
 				let previous-size be the largeness of belly;
 				Assfill 1 Milk;
 				if the largeness of belly > previous-size:
 					say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait.. what?!?! What the hell is this basque doing to me?  That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
 					now flav-said is 1;
-			if the number of worn ass covering white milking basques is 0: [this way, cow print milking basques do both]
+			if the number of ass covering white milking basques is 0: [this way, cow print milking basques do both]
 				let previous-size be the largeness of breasts;
 				MilkUp 1;
 				if the largeness of breasts > previous-size:
 					say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
 					now flav-said is 1;
 			if a random number between 1 and  10 is 1 and the lactation rate of the player > 0:
-				say "You feel your [unless there is a worn ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
+				say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
 				decrease the lactation rate of the player by 1;
 	if the milk volume of breasts > 0:
 		if the lactation rate of the player > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]

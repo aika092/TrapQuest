@@ -2,15 +2,19 @@ RoboButler by Monster begins here.
 
 [A captive robobutler has been tipped recently. A released robobutler is annoyed at the lack of a tip recently.]
 
-A robobutler is a kind of robot. Understand "butler" as robobutler. A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118.
+A robobutler is a kind of robot. Understand "butler" as robobutler. A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118. A robobutler has a number called planned-punishment.
 
 Figure of robobutler is the file "NPCs/Hotel/Robot/robobutler1.png". The description of robobutler is usually "[RoboButlerDesc]".
 
-A polite robobutler is a kind of robobutler. There is 1 polite robobutler. The text-shortcut of polite robobutler is "prb".
-The printed name of polite robobutler is "[if item described is in the location of the player][TQlink of item described][end if][input-style]polite RoboButler[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
-An unemotional robobutler is a kind of robobutler. There is 1 unemotional robobutler. The text-shortcut of unemotional robobutler is "urb".
-The printed name of unemotional robobutler is "[if item described is in the location of the player][TQlink of item described][end if][input-style]unemotional RoboButler[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
+polite robobutler is a robobutler. The text-shortcut of polite robobutler is "prb".
+unemotional robobutler is a robobutler. The text-shortcut of unemotional robobutler is "urb".
 
+To say ShortDesc of (M - a robobutler):
+	say "RoboButler".
+To say MediumDesc of (M - polite robobutler):
+	say "polite RoboButler".
+To say MediumDesc of (M - unemotional robobutler):
+	say "unemotional RoboButler".
 
 To say RoboButlerDesc:
 	if images visible is 1, display figure of robobutler;
@@ -48,7 +52,7 @@ To say LeftoverDesc (N - 118):
 Part 2 - Perception
 
 To compute perception of (M - a robobutler):
- 	say "The [M] notices you!";
+ 	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
  	if the class of the player is maid:
  		say "It seems to recognise you as a member of staff and leaves you alone.";
@@ -57,23 +61,23 @@ To compute perception of (M - a robobutler):
 		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
 		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
-		now the variety of M is 3;
+		now the planned-punishment of M is 3;
 		anger M;
 	otherwise if the number of worn catsuits > 0 or the class of the player is vixen:
 		say "Its eyes turn red and it spins toward you. [line break][speech style of M]'BURGLAR DETECTED! CRIMINAL APPREHENSION PROGRAM INITIATED!'[roman type][line break]";
-		now the variety of M is 4;
+		now the planned-punishment of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
  		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
  		anger M;
- 		now the variety of M is 2;
+ 		now the planned-punishment of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
  		say "Its eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
  		anger M;
- 		now the variety of M is 1;
+ 		now the planned-punishment of M is 1;
  	otherwise:
 		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
-		now the variety of M is 0;
+		now the planned-punishment of M is 0;
 		calm M.
 
 Report going in the presence of a robobutler:
@@ -89,38 +93,38 @@ Definition: a robobutler (called M) is willing to forcefeed:
 
 To compute forcefeed of (M - a robobutler):
 	if the player is immobile:
-		say "[one of]The [M] waits beside you patiently.[or][cycling]";		
+		say "[one of][BigNameDesc of M] waits beside you patiently.[or][cycling]";		
 	otherwise:
 		if the player is not in the target-room of M:
 			drag to the target-room of M by M;
 		otherwise:
-			say "[speech style of M]'DINNER IS SERVED. PLEASE HELP YOURSELF.'[roman type]  The [M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
+			say "[speech style of M]'DINNER IS SERVED. PLEASE HELP YOURSELF.'[roman type]  [BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 		try BowlFeeding a random feeding bowls;
 		satisfy M for 500 seconds.
 
 To compute (M - a robobutler) cuffing:
 	let W be a random off-stage pair of wristcuffs;
 	let A be a random off-stage pair of anklecuffs;
-	let B be a random off-stage fetish appropriate ballgag;
+	let B be a random off-stage fetish appropriate gag;
 	if W is actually summonable:
-		say "The [M] pulls out a [printed name of W] and locks them onto your wrists. [line break][speech style of M]CRIME SPREE COMPLETE.[roman type][line break]";
+		say "[BigNameDesc of M] pulls out a [printed name of W] and locks them onto your wrists. [line break][speech style of M]CRIME SPREE COMPLETE.[roman type][line break]";
 		summon W locked;
 	otherwise if A is actually summonable:
-		say "The [M] pulls out a [printed name of A] and locks them onto your ankles. [line break][speech style of M]CRIME TERMINATED.[roman type][line break]";
+		say "[BigNameDesc of M] pulls out a [printed name of A] and locks them onto your ankles. [line break][speech style of M]CRIME TERMINATED.[roman type][line break]";
 		summon A locked;
 	otherwise if B is actually summonable:
-		say "The [M] pulls out a [printed name of B] and forces it into your mouth. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]";
+		say "[BigNameDesc of M] pulls out a [printed name of B] and forces it into your mouth. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]";
 		summon B locked;
 	otherwise:
 		repeat with C running through worn bondage:
 			if C is unlocked, now C is locked;
-			increase the sentence of a random prison guard by 1;
-		say "The [M]'s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
+			increase the sentence of prison guard by 1;
+		say "[BigNameDesc of M]'s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
 
 The unique punishment rule of a robobutler is usually the robobutler punishment rule.
 This is the robobutler punishment rule:
 	let M be current-monster;
-	if the variety of M is 5:
+	if the planned-punishment of M is 5:
 		let N be a random alive mechanic;
 		if N is nothing, now N is a random alive demon lord;
 		if N is monster:
@@ -136,20 +140,20 @@ This is the robobutler punishment rule:
 		otherwise:
 			compute M cuffing;
 		rule succeeds;
-	otherwise if the variety of M is 4:
+	otherwise if the planned-punishment of M is 4:
 		let N be a random alive mechanic;
 		if N is nothing, now N is a random alive demon lord;
 		if N is monster, compute M cuffing;
 		otherwise compute angry punishment of M;
-		now the variety of M is 5;
+		now the planned-punishment of M is 5;
 		rule succeeds;
-	otherwise if the variety of M is 3:
+	otherwise if the planned-punishment of M is 3:
 		let O be asshole;
 		if vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0, now O is vagina;
 		let P be a random off-stage plug;
 		now the size of P is a random number between the openness of O and the openness of O - 2;
 		if the size of P is 0, now the size of P is 1;
-		say "[speech style of M]'CORRECTING ANOMALOUS DISCHARGE.'[roman type] The [M] pulls out a [printed name of P], and pushes it into your [variable O]!";
+		say "[speech style of M]'CORRECTING ANOMALOUS DISCHARGE.'[roman type] [BigNameDesc of M] pulls out a [printed name of P], and pushes it into your [variable O]!";
 		now P is cursed;
 		if O is vagina:
 			summon P vaginally;
@@ -157,8 +161,8 @@ This is the robobutler punishment rule:
 			summon P;
 		satisfy M for 500 seconds;
 		rule succeeds;
-	otherwise if the variety of M is 2:
-		say "[speech style of M]'ADMINISTERING COLLAGEN SERUM.'[roman type] The [M] uses a small needle to inject something into your lips. Your eyes go wide as they swell up like inflatable pillows.";
+	otherwise if the planned-punishment of M is 2:
+		say "[speech style of M]'ADMINISTERING COLLAGEN SERUM.'[roman type] [BigNameDesc of M] uses a small needle to inject something into your lips. Your eyes go wide as they swell up like inflatable pillows.";
 		LipsUp 1;
 		satisfy M for 500 seconds;
 		rule succeeds;[He doesn't drag you if he increases the size of your lips.]
@@ -167,23 +171,23 @@ This is the robobutler punishment rule:
 	rule succeeds.
 
 To say DragFlav of (M - a robobutler) to (R - a room):
-	say "The [M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
+	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
 	
 To say DragArrival of (M - a robomaid) to (R - Hotel20):
 	say "[speech style of M]'LAUNDRY PROTOCOL INITIATED. PLEASE REMAIN SEATED.'[roman type][line break]";
 
 To say DragArrival of (M - a robobutler) to (R - Hotel18):
-	if the variety of M is not 5, say "[speech style of M]'DINNER IS SERVED. PLEASE HELP YOURSELF.'[roman type]  The [M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
+	if the planned-punishment of M is not 5, say "[speech style of M]'DINNER IS SERVED. PLEASE HELP YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 	otherwise say DragArrival of M to Stairwell01.
 
 To say DragArrival of (M - a robobutler) to (R - a room):
-	if the variety of M is 5:
+	if the planned-punishment of M is 5:
 		say "[speech style of M]CRIMINAL DELIVERY PROGRAM COMPLETE. PLEASE WAIT PATIENTLY DURING REFORM PROCESS![roman type][line break]";
 	otherwise:
 		say "[speech style of M]'ASSISTED MOVEMENT PROGRAM COMPLETE.'[roman type][line break]";
 
 To say StrikingFlav of (M - a robot) on (B - a body part):
-	say "The [M] attempts to strike you [TargetName of B] with a powerful metal fist!  ".
+	say "[BigNameDesc of M] attempts to strike you [TargetName of B] with a powerful metal fist!  ".
 
 To say StrikingSuccessFlav of (M - a robot) on (B - a body part):
 	say "[StrikingFlav of M on B][one of]That's going to leave a bruise[or]It's a direct hit[or]It leaves a sore red mark where it hit[at random]!".
@@ -205,7 +209,7 @@ To compute greeting response of (M - a robobutler):
 	otherwise if M is captive:
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 	otherwise:
-		say "The [M] ignores you.";
+		say "[BigNameDesc of M] ignores you.";
 	unless the class of the player is maid, now M is interested.
 
 To say robogreeting:
@@ -220,11 +224,11 @@ To compute answer of (M - a robobutler):
 	otherwise if M is not buddy:
 		compute annoyance of M;
 	otherwise if C is clothing:
-		say "The [M] points at your [printed name of C]. [line break][first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
+		say "[BigNameDesc of M] points at your [printed name of C]. [line break][first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
 		now C is sure;
 		FavourDown M by 2;
 		if M is not buddy:
-			say "The [M] turns around, facing away. One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
+			say "[BigNameDesc of M] turns around, facing away. One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
 	otherwise:
 		say "[first custom style]'NOT CURRENTLY, [robogreeting]. APOLOGIES.'[roman type][line break]".
 
@@ -249,19 +253,25 @@ Part 5 - Variants
 
 Section 1 - RoboMaid
  
- A robomaid is a kind of robobutler. Understand "maid" as robomaid. The description of robobutler is usually "[RoboMaidDesc]".
+A robomaid is a kind of robobutler. Understand "maid" as robomaid. The description of robobutler is usually "[RoboMaidDesc]".
 
-A dainty robomaid is a kind of robomaid. There is 1 dainty robomaid. The text-shortcut of robomaid is "drm".
-The printed name of dainty robomaid is "[if item described is in the location of the player][TQlink of item described][end if][input-style]dainty RoboMaid[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".
-A milkmaid is a kind of robomaid. There is 1 milkmaid. The text-shortcut of milkmaid is "cmm".
-The printed name of milkmaid is "[if item described is in the location of the player][TQlink of item described][end if][input-style]malfunctioning MilkMaid[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "mal", "malfunc", "malfunctioning", "milk", "malfunction" as milkmaid.
+dainty robomaid is a robomaid. The text-shortcut of robomaid is "drm".
+milkmaid is a robomaid. The text-shortcut of milkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "milk", "malfunction" as milkmaid.
+
+To say ShortDesc of (M - a robomaid):
+	say "RoboMaid".
+To say ShortDesc of (M - a milkmaid):
+	say "milkmaid".
+
+To say MediumDesc of (M - a dainty robomaid):
+	say "dainty RoboMaid".
 
 To say RoboMaidDesc:
 	if images visible is 1, display figure of robobutler;
 	say "A tall, spindly robot with old fashioned joints and a fixed facial expression etched into [his of the item described] polished metal face. [big he of the item described] is wearing a frilly black dress, complete with a white apron and a matching headpiece. [if the item described is dainty robomaid]The plunging neckline that shows off [his of the item described] suggestively welded chest, and one of [his of the item described] arms has a permanent bend in it, giving [him of the item described] the look of a dainty French maid[otherwise if trap fetish is 0]The plunging neckline shows off [his of the item described] ridiculous chest, and [he of the item described] has a rather conspicuous tent near the crotch. One of [his of the item described] arms is holding a plate of white bottles, giving [him of the item described] the look of a hard working French maid[otherwise]The plunging neckline shows off [his of the item described] ridiculous chest, which was apparently custom welded to have a matching pair of 'nipples' tent the flimsy fabric. One of [his of the item described] arms is holding a plate of white bottles, giving [him of the item described] the look of a hard working French maid[end if]. [His of the item described] [']eyes['] glow brightly as [he of the item described] glides around silently on [his of the item described] wheeled feet.".
 
 To compute perception of (M - a robomaid):
- 	say "The [M] notices you!";
+ 	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
  	if the class of the player is maid:
  		say "It seems to recognise you as a member of staff and leaves you alone.";
@@ -278,7 +288,7 @@ To compute perception of (M - a robomaid):
 		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
 		calm M.
 
-To compute perception of (M - a milkmaid):
+To compute perception of (M - milkmaid):
 	if the class of the player is maid:
 		if breasts is lewdly exposed:
 			say "It glides towards you, addressing you in a monotone. [line break][speech style of M]HEY GIRLFRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEE HEE. TEE HEE.[roman type][line break]It seems to abruptly lose interest.";
@@ -303,39 +313,39 @@ The unique punishment rule of a robomaid is the robomaid punishment rule.
 This is the robomaid punishment rule:
 	if presented-orifice is not nothing, say "[speech style of current-monster]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
 	if the player is immobile:
-		say "[one of]The [current-monster] waits beside you patiently.[or][cycling]";
+		say "[one of][BigNameDesc of current-monster] waits beside you patiently.[or][cycling]";
 	otherwise if current-monster is milkmaid:
 		if the class of the player is maid:
 			let C be a random worn top-placed breast covering clothing;
 			if C is clothing:
 				if C is not-top-displacable:
-					say "The [current-monster] tears off your [printed name of C], exposing your [ShortDesc of breasts]!";
+					say "[BigNameDesc of current-monster] tears off your [printed name of C], exposing your [ShortDesc of breasts]!";
 					destroy C;
 				otherwise:
-					say "The [current-monster] yanks open your [printed name of C], exposing your [ShortDesc of breasts]!";
+					say "[BigNameDesc of current-monster] yanks open your [printed name of C], exposing your [ShortDesc of breasts]!";
 					now C is top-displaced;
 				rule succeeds;
 			otherwise if the largeness of breasts < 2:
-				say "The [current-monster] splashes your chest with a vial of pink liquid, which causes your [ShortDesc of breasts] to suddenly grow!";
+				say "[BigNameDesc of current-monster] splashes your chest with a vial of pink liquid, which causes your [ShortDesc of breasts] to suddenly grow!";
 				BustUp a random number between 2 and 3;
 				bore current-monster for 500 seconds;
 				rule succeeds;
 		let R be a random number between 1 and 2;
 		if face is actually occupied:
 			let G be a random clothing penetrating face;
-			say "[speech style of current-monster]ORAL OBSTRUCTION DETECTED.[roman type][line break]The [current-monster] tears out your [printed name of G].";
+			say "[speech style of current-monster]ORAL OBSTRUCTION DETECTED.[roman type][line break][BigNameDesc of current-monster] tears out your [printed name of G].";
 			destroy G;
 			rule succeeds;
 		otherwise if R is 1 or the class of the player is maid:
 			if trap fetish is 0:
-				say "[speech style of current-monster]'OOH. OOOH. I NEED YOU. TO SUCK. ME.[roman type] The [current-monster]'s dress shifts, and a metallic tentacle slithers out from underneath, dripping pointing at you menacingly as it dribbles [semen] along the floor. It curls around your neck and effortlessly forces its way into your mouth. You have no choice but to swallow as it pumps refrigerated [semen] into your mouth, trailing a line of the stuff down your chin when she finally withdraws and begins to wander off.";
+				say "[speech style of current-monster]'OOH. OOOH. I NEED YOU. TO SUCK. ME.[roman type] [BigNameDesc of current-monster]'s dress shifts, and a metallic tentacle slithers out from underneath, dripping pointing at you menacingly as it dribbles [semen] along the floor. It curls around your neck and effortlessly forces its way into your mouth. You have no choice but to swallow as it pumps refrigerated [semen] into your mouth, trailing a line of the stuff down your chin when she finally withdraws and begins to wander off.";
 				now current-monster is penetrating face;
 				StomachSemenUp 3;
 				now current-monster is not penetrating face;
 				bore current-monster for 500 seconds;
 				rule succeeds;
 			otherwise:
-				say "The [current-monster] removes a bottle from her tray and forces it in into your hands.";
+				say "[BigNameDesc of current-monster] removes a bottle from her tray and forces it in into your hands.";
 				let C be a random off-stage can;
 				now the fill-colour of C is creamy;
 				now the max-doses of C is 2;
@@ -344,14 +354,14 @@ This is the robomaid punishment rule:
 				now the text-shortcut of C is "cmc";
 		otherwise:
 			if lactation fetish is 1:
-				say "The [current-monster] hugs you to her chest, forcing a rubber teat into your mouth! [line break][speech style of current-monster]'DRINK UP. HONEYBUNCH.'[roman type] Suction kicks in, and you have no choice but to swallow several gulps of ice cold milk before she releases you and begins to wander off.";
+				say "[BigNameDesc of current-monster] hugs you to her chest, forcing a rubber teat into your mouth! [line break][speech style of current-monster]'DRINK UP. HONEYBUNCH.'[roman type] Suction kicks in, and you have no choice but to swallow several gulps of ice cold milk before she releases you and begins to wander off.";
 				bore current-monster for 500 seconds;
 				increase the fat-burning of the player by 250;
 				StomachUp 3;
 				MilkTasteAddictUp 1;
 				rule succeeds;
 			otherwise:
-				say "The [current-monster] removes a bottle from her tray and forces it in into your hands.";
+				say "[BigNameDesc of current-monster] removes a bottle from her tray and forces it in into your hands.";
 				let C be a random off-stage can;
 				now the fill-colour of C is white;
 				now the max-doses of C is 2;
@@ -361,7 +371,7 @@ This is the robomaid punishment rule:
 		if the player is not in the target-room of current-monster:
 			drag to the target-room of current-monster by current-monster;
 		otherwise:
-			say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  The [current-monster] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of current-monster] demands.";
+			say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  [BigNameDesc of current-monster] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of current-monster] demands.";
 		try BowlFeeding a random feeding bowls;
 		let M be a random robochef;
 		anger M;
@@ -382,13 +392,13 @@ This is the robomaid punishment rule:
 		if N is dangerous:
 			say "[speech style of current-monster]'PLEASE WAIT PATIENTLY FOR FURTHER SERVICE.'[roman type]";
 		otherwise:
-			say "[speech style of current-monster]'ATTENTION. DECENCY ASSISTANCE REQUIRED.'[roman type] The [current-monster]'s eyes blink purple several times, and the [N] suddenly wheels around. Uh-oh.";
+			say "[speech style of current-monster]'ATTENTION. DECENCY ASSISTANCE REQUIRED.'[roman type] [BigNameDesc of current-monster]'s eyes blink purple several times, and the [N] suddenly wheels around. Uh-oh.";
 			anger N;
 		bore current-monster for 500 seconds;
 		rule succeeds;
 	otherwise:
 		if the player is not in the target-room of current-monster, drag to the target-room of current-monster by current-monster;
-		otherwise say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  The [current-monster] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of current-monster] demands.";
+		otherwise say "[speech style of current-monster]'THE FIRST COURSE IS SERVED. ENJOY.'[roman type]  [BigNameDesc of current-monster] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of current-monster] demands.";
 		try BowlFeeding a random feeding bowls;
 		let M be a random robochef;
 		anger M;

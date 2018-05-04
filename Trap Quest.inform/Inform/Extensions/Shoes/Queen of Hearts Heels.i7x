@@ -47,10 +47,5 @@ To compute recipe specific cursing of (T - a queen of hearts heels):
 Definition: a queen of hearts heels (called C) is strut enabling:
 	decide yes.
 
-To uniquely set up (C - a queen of hearts heels):
-	do nothing.
-
-
-
 Queen of Hearts Heels ends here.
 

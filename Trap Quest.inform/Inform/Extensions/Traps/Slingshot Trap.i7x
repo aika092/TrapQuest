@@ -24,7 +24,7 @@ To trigger (Y - a slingshot):
 	now the reset-timer of Y is 9999;
 	say "As your feet leave the ground, you hear the 'twang' of a strong elastic band. ";
 	let C be a random off-stage crotch rope;
-	if the player is male, now C is a random off-stage pouch panties;
+	if the player is male, now C is a random off-stage pouch-panties;
 	if diaper focus is 1 and diaper lover > 0, now C is a random off-stage eligible disposable diaper;
 	if C is actually summonable:
 		say "You yelp in surprise as you feel some kind of underwear fly up your legs and into place at your hips!  [if the player is male]You stare inquisitively[otherwise]You pull helplessly[end if] at your new [printed name of C]. You are unsurprised to find that it won't come off.";

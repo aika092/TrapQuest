@@ -76,8 +76,7 @@ A time based rule (this is the compute doom rule):
 					DelicateUp 2;
 				Resolve Doom;[spawn valleyhotep and remove the pink bubble]
 		otherwise:
-			let M be a random herald;
-			if the gifted of M > 0, decrease the gifted of M by 1.
+			if the gifted of herald > 0, decrease the gifted of herald by 1.
 
 [!<ResolveDoom>+
 
@@ -108,7 +107,7 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 			now T is in the location of A;
 			if A is in the location of the player, say "The [A] gives birth to a [T]!";[TODO: improve]
 	repeat with M running through tentacle monsters:
-		now the variety of M is 3.
+		now the evolved of M is 3.
 		
 
 

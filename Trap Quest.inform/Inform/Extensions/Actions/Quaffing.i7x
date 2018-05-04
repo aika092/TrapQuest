@@ -10,7 +10,7 @@ Check quaffing:
 	if the player is overly full, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;
 	if the player is wrist bound behind, say "You won't be able to drink this with your hands bound behind you." instead;
 	if the player is wrist bound in front and there are worn heels and the player is upright and the noun is not held by the player, say "With your hands tied together you won't be able to balance well enough to pick that up without getting on your knees." instead;
-	if the player is gagged, say "The glass container is too delicate, you can't get anything past your [printed name of random worn ballgag] safely!" instead;
+	if there is a worn ballgag, say "The glass container is too delicate, you can't get anything past your [printed name of random worn ballgag] safely!" instead;
 	if face is actually occupied, say "Your mouth is currently occupied!" instead.
 
 Carry out quaffing:

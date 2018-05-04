@@ -40,7 +40,7 @@ To decide which number is the outrage of (C - a vessel):
 		decide on 11;
 	otherwise if C is baby's bottle:
 		decide on 8;
-	otherwise if C is cocktail glass:
+	otherwise if C is cocktail-glass:
 		decide on 3;
 	otherwise:
 		decide on 0.
@@ -71,12 +71,15 @@ To say fluids of (C - a clothing):
 To decide which number is the initial outrage of (C - a thing):
 	decide on 0. [Default assumption is that it is not humiliating.]
 
+Definition: a number (called N) is too boring:
+	if diaper quest is 1, decide no;
+	if the bimbo of the player > 7 and N + 7 is not too humiliating and N <= 11, decide yes;
+	decide no.
 
 Definition: a clothing (called C) is too boring:
 	if diaper quest is 1, decide no;
-	if the bimbo of the player > 7 and the outrage of C + 7 is not too humiliating and the outrage of C < 11 and C is dense and C is not super-short and C is not short, decide yes;
+	if the outrage of C is too boring and C is actually dense and C is not super-short[ and C is not short], decide yes;
 	decide no.
-
 
 Definition: a clothing (called C) is almost too much:
 	if the outrage of C + 2 is too humiliating and the outrage of C > 0, decide yes;

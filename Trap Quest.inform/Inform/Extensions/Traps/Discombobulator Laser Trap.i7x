@@ -35,7 +35,7 @@ To trigger (Y - a discombobulator laser trap):
 	if tutorial is 1, now C is a random worn dress;
 	if X > the dexterity of the player or tutorial is 1:
 		if C is clothing:
-			say "It hits your [C], which starts to shimmer!";
+			say "It hits your [ShortDesc of C], which starts to shimmer!";
 			potentially transform C;
 		otherwise:
 			say "It hits your skin directly, but nothing seems to happen...";

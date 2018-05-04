@@ -183,7 +183,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the TG fetish toggle rule:
-	if TG fetish is 0, now choice in row 10 of the Table of Player Options is 1;
+	if TG fetish is 0 and the player is male, now choice in row 10 of the Table of Player Options is 1;
 	otherwise now choice in row 10 of the Table of Player Options is 0.
 
 This is the TG nightmare rule:

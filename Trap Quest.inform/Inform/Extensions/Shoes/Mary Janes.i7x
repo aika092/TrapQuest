@@ -24,9 +24,6 @@ To say UniqueShortDesc of (C - a mary janes):
 	say "mary janes".
 To say ClothingDesc of (C - a mary janes):
 	say "A pair of flat mary janes, made out of a high quality leather.".
-
-To uniquely set up (C - a mary janes):
-	do nothing.
 	
 To decide which object is the potential-upgrade-target of (C - a mary janes):
 	decide on a random off-stage plentiful ballet shoes.

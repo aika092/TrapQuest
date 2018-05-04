@@ -186,7 +186,7 @@ To say variable (P - a body part):
 	otherwise if P is face:
 		say "mouth";
 	otherwise:
-		say "[P]".
+		say "[ShortDesc of P]".
 
 [!<SayPlayerPenis>+
 
@@ -342,13 +342,16 @@ To say milk:
 	otherwise:
 		say "[if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
 
+To say man of (M - a monster):
+	say "[if M is neuter]thing[otherwise if lady fetish is 1 or M is female]woman[otherwise]man[end if]".
+
 [!<SayHeOfMonster>+
 
 REQUIRES COMMENTING
 
 +!]
 To say he of (M - a monster):
-	say "[if M is neuter]it[otherwise if M is male]he[otherwise]she[end if]".
+	say "[if M is neuter]it[otherwise if M is male and M is not always-feminine]he[otherwise]she[end if]".
 
 [!<SayBigHeOfMonster>+
 
@@ -356,7 +359,7 @@ REQUIRES COMMENTING
 
 +!]
 To say big he of (M - a monster):
-	say "[if M is neuter]It[otherwise if M is male]He[otherwise]She[end if]".
+	say "[if M is neuter]It[otherwise if M is male and M is not always-feminine]He[otherwise]She[end if]".
 
 [!<SayHimOfMonster>+
 
@@ -364,7 +367,7 @@ REQUIRES COMMENTING
 
 +!]
 To say him of (M - a monster):
-	say "[if M is neuter]it[otherwise if M is male]him[otherwise]her[end if]".
+	say "[if M is neuter]it[otherwise if M is male and M is not always-feminine]him[otherwise]her[end if]".
 
 [!<SayHisOfMonster>+
 
@@ -372,7 +375,7 @@ REQUIRES COMMENTING
 
 +!]
 To say his of (M - a monster):
-	say "[if M is neuter]its[otherwise if M is male]his[otherwise]her[end if]".
+	say "[if M is neuter]its[otherwise if M is male and M is not always-feminine]his[otherwise]her[end if]".
 
 [!<SayBigHisOfMonster>+
 
@@ -380,7 +383,7 @@ REQUIRES COMMENTING
 
 +!]
 To say big his of (M - a monster):
-	say "[if M is neuter]Its[otherwise if M is male]His[otherwise]Her[end if]".
+	say "[if M is neuter]Its[otherwise if M is male and M is not always-feminine]His[otherwise]Her[end if]".
 
 [!<SayHimselfOfMonster>+
 
@@ -388,10 +391,11 @@ REQUIRES COMMENTING
 
 +!]
 To say himself of (M - a monster):
-	say "[if M is neuter]itself[otherwise if M is female]herself[otherwise]himself[end if]".
+	say "[if M is neuter]itself[otherwise if M is male and M is not always-feminine]himself[otherwise]herself[end if]".
 
-To say penisDesc of (M - a monster):
-	say manly-penis;
+To say DickDesc of (M - a monster):
+	if full-lady fetish is 1, say "strapon";
+	otherwise say manly-penis.
 
 [!<SayDaddyOfMonster>+
 
@@ -402,9 +406,9 @@ To say daddy of (M - a monster):
 	if the class of the player is santa's little helper and M is male:
 		say "Santa";
 	otherwise if the bimbo of the player > 18:
-		say "[if M is male]Papa[otherwise]Mama[end if]";
+		say "[if M is male and M is not always-feminine]Papa[otherwise]Mama[end if]";
 	otherwise:
-		say "[if M is male]Daddy[otherwise]Mummy[end if]".
+		say "[if M is male and M is not always-feminine]Daddy[otherwise]Mummy[end if]".
 
 [!<SayHoneyOfMonster>+
 

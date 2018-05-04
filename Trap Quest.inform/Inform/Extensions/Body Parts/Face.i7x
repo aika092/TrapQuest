@@ -233,9 +233,9 @@ To say TotalDesc of face:
 	if the number of things penetrating face > 0 or the latex-transformation of the player > 6:
 		let B be a random thing penetrating face;
 		if the latex-transformation of the player > 6:
-			say " Your rubber mouth[if B is ballgag], currently occupied by a [printed name of B],[end if] has no tongue or inner moisture, permanently open and fixed in a submissive O-shape.";
+			say " Your rubber mouth[if B is gag], currently occupied by a [ShortDesc of B],[end if] has no tongue or inner moisture, permanently open and fixed in a submissive O-shape.";
 		otherwise:
-			say " Your mouth is currently occupied by a [printed name of B].".
+			say " Your mouth is currently occupied by a [ShortDesc of B].".
 
 [!<SayMakeUpDesc>+
 

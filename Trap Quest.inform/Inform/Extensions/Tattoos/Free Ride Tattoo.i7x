@@ -2,6 +2,7 @@ Free Ride Tattoo by Tattoos begins here.
 
 free ride tattoo is a kind of face tattoo. There is 1 free ride tattoo.
 Definition: a free ride tattoo (called T) is drawable:
+	if diaper quest is 1, decide no;
 	if T is worn, decide no;
 	decide yes.
 Definition: a free ride tattoo (called T) is eligible:

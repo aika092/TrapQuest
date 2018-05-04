@@ -8,29 +8,41 @@ Definition: a fairy (called M) is father material:
 Figure of fairy is the file "NPCs/Forest/Fairy/fairy1.png". 
 Figure of diaper fairy is the file "NPCs/Forest/Fairy/fairy2.png".
 
+To decide which figure-name is the monster-image of (M - a fairy):
+	if diaper quest is 1, decide on the figure of diaper fairy;
+	otherwise decide on the figure of fairy.
+
 Definition: A fairy (called M) is woods dwelling:
 	decide yes.
 
-The description of fairy is usually "[FairyDesc]".
+To say ShortDesc of (M - a fairy):
+	say "fairy".
 
-A fist sized fairy is a kind of fairy. There is 1 fist sized fairy.
-The printed name of fist sized fairy is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]fist sized fairy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]".[possible switch into variation of normal fairy?]  The text-shortcut of fist sized fairy is "ffa".
-A mischievous fairy is a kind of fairy. There is 1 mischievous fairy. 
-The printed name of mischievous fairy is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]mischievous fairy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of mischievous fairy is "mfa".
-A cheeky fairy is a kind of fairy. There is 1 cheeky fairy.
-The printed name of cheeky fairy is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]cheeky fairy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of cheeky fairy is "cfa".
-A giggling fairy is a kind of fairy. There is 1 giggling fairy.
-The printed name of giggling fairy is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]giggling fairy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of giggling fairy is "gfa".
-A playful fairy is a kind of fairy. There is 1 playful fairy.
-The printed name of playful fairy is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]playful fairy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of playful fairy is "pfa".
+fist sized fairy is a fairy. The text-shortcut of fist sized fairy is "ffa".
+To say MediumDesc of (M - fist sized fairy):
+	say "fist sized fairy".
 
-To say FairyDesc:
+mischievous fairy is a fairy. The text-shortcut of mischievous fairy is "mfa".
+To say MediumDesc of (M - mischievous fairy):
+	say "mischievous fairy".
+
+cheeky fairy is a fairy. The text-shortcut of cheeky fairy is "cfa".
+To say MediumDesc of (M - cheeky fairy):
+	say "cheeky fairy".
+
+giggling fairy is a fairy. The text-shortcut of giggling fairy is "gfa".
+To say MediumDesc of (M - giggling fairy):
+	say "giggling fairy".
+
+playful fairy is a fairy. The text-shortcut of playful fairy is "pfa".
+To say MediumDesc of (M - playful fairy):
+	say "playful fairy".
+
+To say MonsterDesc of (M - a fairy):
 	if diaper quest is 1:
-		if images visible is 1, display the figure of diaper fairy;
-		say "A fairy";
+		say "A fairy.";
 	otherwise:
-		if images visible is 1, display the figure of fairy;
-		say "A tiny [if the item described is blue fairy]blue[otherwise if the item described is fairy witch]green[otherwise]pink[end if] skinned woman, just about twice the size of your fist. She has four wings, [if the item described is blue fairy]long flowing blue[otherwise if the item described is fairy witch]braided green[otherwise]cropped pink[end if] hair, and is completely naked. Her breasts are big for her size, probably about a [if the item described is fairy witch]GG[otherwise]D[end if] cup for a normal sized woman, and her [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down her erratic, unpredictable movements at all.".
+		say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned woman, just about twice the size of your fist. She has four wings, [if M is blue-fairy]long flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and is completely naked. Her breasts are big for her size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized woman, and her [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down her erratic, unpredictable movements at all.".
 
 To set up (M - a fairy):
 	reset M;
@@ -42,7 +54,7 @@ To decide which number is the maxhealth of (M - a fairy):
 	decide on 1 + (the difficulty of M * (1 + game difficulty)).
 
 This is the spawn initial fairy rule:
-	while the number of alive fairies < 2:
+	while the number of alive fairy < 2:
 		let M be a random off-stage fairy;
 		summon M in the woods.
 The spawn initial fairy rule is listed in the setting up woods monsters rules.
@@ -56,7 +68,7 @@ To say PregGrowth of (M - a fairy):
 To compute labour to (M - a fairy):
 	If M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise if M is the father]The [father] appears almost as if on cue!  She[otherwise if M is in the location of the player]The [M][otherwise]A [M] appears almost as if on cue! She[end if] lands on your bloated belly, giggling in delight. [if M is in the location of the player]Your belly begins to glow with a strong pink hue, as if there is a giant pink light-bulb inside of it. As you feel the head start to emerge, the fairy goes into an orgasmic spasm - watching your birthing is making her cum!  You slowly give birth to the human baby girl as the fairy makes sexual sounds and furiously fingers herself above your head. [end if][if bukkake fetish is 1 and M is in the location of the player]The fairy's projectile squirt douses your face and chest like a powerhose as she climaxes, forcing you to cough and splutter as you push the rest of the baby out of your [vagina].[end if][if M is not in the location of the player]She stays sitting on your belly, stroking it, as you painfully push the newborn out of your [vagina]. Finally your ideal is over, and after a final loving pat, the fairy takes flight.[end if][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise if M is the father]The [father] appears almost as if on cue!  She[otherwise if M is in the location of the player][BigNameDesc of M][otherwise]A [M] appears almost as if on cue! She[end if] lands on your bloated belly, giggling in delight. [if M is in the location of the player]Your belly begins to glow with a strong pink hue, as if there is a giant pink light-bulb inside of it. As you feel the head start to emerge, the fairy goes into an orgasmic spasm - watching your birthing is making her cum!  You slowly give birth to the human baby girl as the fairy makes sexual sounds and furiously fingers herself above your head. [end if][if bukkake fetish is 1 and M is in the location of the player]The fairy's projectile squirt douses your face and chest like a powerhose as she climaxes, forcing you to cough and splutter as you push the rest of the baby out of your [vagina].[end if][if M is not in the location of the player]She stays sitting on your belly, stroking it, as you painfully push the newborn out of your [vagina]. Finally your ideal is over, and after a final loving pat, the fairy takes flight.[end if][line break]";
 		if image cutscenes is 1:
 			if M is in the location of the player, display figure of fairy cutscene 1;
 			otherwise display figure of fairy cutscene 2;
@@ -93,7 +105,7 @@ Definition: a fairy (called M) is uniquely unfriendly:
 
 To compute perception of (M - a fairy):
 	now M is interested;
-	say "The [M] giggles and focuses her eyes on you[if the player is sluttily dressed], even though she's naked herself[end if]. [if M is unfriendly]She starts flying towards you...[otherwise]She doesn't seem aggressive right now.[end if]";
+	say "[BigNameDesc of M] giggles and focuses her eyes on you[if the player is sluttily dressed], even though she's naked herself[end if]. [if M is unfriendly]She starts flying towards you...[otherwise]She doesn't seem aggressive right now.[end if]";
 	if image cutscenes is 1, display interaction of M.
 
 To display interaction of (M - a fairy):
@@ -101,7 +113,7 @@ To display interaction of (M - a fairy):
 
 To compute DQ perception of (M - a fairy):
 	now M is interested;
-	say "The [M] giggles and focuses her eyes on you. [if M is unfriendly]She starts flying towards you...[otherwise]She doesn't seem aggressive right now.[end if]".
+	say "[BigNameDesc of M] giggles and focuses her eyes on you. [if M is unfriendly]She starts flying towards you...[otherwise]She doesn't seem aggressive right now.[end if]".
 	
 To make (M - a fairy) expectant:
 	do nothing.
@@ -114,9 +126,9 @@ To say SummoningFlav of (M - a fairy):
 
 To say MonsterOfferAcceptFlav of (M - a fairy) to (T - a thing):
 	if M is unfriendly:
-		say "The [M] giggles. [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M]For me?  Wee, thank you!  Okay, I'll leave you alone for a while. But I get bored so quickly...'[otherwise]Haha, okay, I'll leave you alone for a little bit then.'[end if][roman type][line break]";
+		say "[BigNameDesc of M] giggles. [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M]For me?  Wee, thank you!  Okay, I'll leave you alone for a while. But I get bored so quickly...'[otherwise]Haha, okay, I'll leave you alone for a little bit then.'[end if][roman type][line break]";
 	otherwise:
-		say "The [M] seems elated. [line break][speech style of M]'Wow, thank you so much!  It's like Christmas!'[roman type][line break]".
+		say "[BigNameDesc of M] seems elated. [line break][speech style of M]'Wow, thank you so much!  It's like Christmas!'[roman type][line break]".
 
 To say GroundPeeReaction of (M - a fairy):
 	say "[speech style of M]'Tee-hee, you're such a naughty minx!'[roman type][line break]".
@@ -128,13 +140,13 @@ To compute enema floor reaction of (M - a fairy):
 	say "[EnemaFloorReactionFlav of M]".
 
 To say EnemaFloorReactionFlav of (M - a fairy):
-	say "The [M] [if M is interested]seems to by entertained by the noises your [asshole] is making[otherwise]turns and laughs at you[end if]. [line break][speech style of M]'O-M-G, you are so naughty!!!'[roman type][line break][if the humiliation of the player < 25000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	say "[BigNameDesc of M] [if M is interested]seems to by entertained by the noises your [asshole] is making[otherwise]turns and laughs at you[end if]. [line break][speech style of M]'O-M-G, you are so naughty!!!'[roman type][line break][if the humiliation of the player < 25000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
 
 Part 3 - Protection
 
 To compute protection of (M - a fairy):
 	if the boredom of M <= 0:
-		say "Suddenly a naughty grin appears on the face of the [M]. It looks like she's bored of being friendly..."; 
+		say "Suddenly a naughty grin appears on the face of [NameDesc of M]. It looks like she's bored of being friendly..."; 
 	otherwise if the player is in danger:
 		let X be M;
 		repeat with U running through dangerous monsters in the location of the player:
@@ -149,19 +161,19 @@ To compute protection of (M - a fairy):
 	
 To compute (M - a fairy) protecting against (X - a monster):
 	if the player is monster stuck:
-		say "[one of][or][or]The [M] giggles, seemingly very entertained.[or][or][cycling]";
+		say "[one of][or][or][BigNameDesc of M] giggles, seemingly very entertained.[or][or][cycling]";
 	otherwise if X is not fairy and the pregnancy of the player > 0:
 		compute X receiving 2 damage from M;
 	otherwise if X is fairy:
-		say "[one of]The [M] giggles, seemingly very entertained.[or][or][cycling]";
+		say "[one of][BigNameDesc of M] giggles, seemingly very entertained.[or][or][cycling]";
 	otherwise if M is guardian:
 		compute X receiving 2 damage from M;
 	otherwise:
-		say "[speech style of M]'Well it's been fun, but I better buzz off!'[roman type][line break]The [M] flies off at the first sign of trouble.";
+		say "[speech style of M]'Well it's been fun, but I better buzz off!'[roman type][line break][BigNameDesc of M] flies off at the first sign of trouble.";
 		distract M;
 
 To say AllyDamageFlav of (M - a fairy) on (X - a monster):
-	say "[speech style of M]'[if the pregnancy of the player > 0]Don't harm the baby!'[otherwise]Don't hurt my friend!'[end if][roman type][line break]The [M] darts around the [X], firing little bolts of magic.".
+	say "[speech style of M]'[if the pregnancy of the player > 0]Don't harm the baby!'[otherwise]Don't hurt my friend!'[end if][roman type][line break][BigNameDesc of M] darts around the [X], firing little bolts of magic.".
 
 Part 4 - Combat
 
@@ -170,12 +182,12 @@ To compute boredom reduction of (M - a fairy):
 		decrease the boredom of M by seconds;
 		if the boredom of M <= 0:
 			now the boredom of M is 0;
-			if M is interested and M is unfriendly and M is in the location of the player, say "The [M]'s eyes narrow, and she suddenly takes an aggressive stance, grinning. Looks like she's gotten bored of just hanging around...".
+			if M is interested and M is unfriendly and M is in the location of the player, say "[BigNameDesc of M]'s eyes narrow, and she suddenly takes an aggressive stance, grinning. Looks like she's gotten bored of just hanging around...".
 
 Section 1 - Attack
 
 To say MovementBlock of (M - a fairy):
-	say "[one of]The [M] flies rapidly around your head, blocking your path.[or]The [M] flies rapidly around your head, distracting you and blocking your path.[or]The [M] flies rapidly around your head, disorienting you and locking your path.[or]The [M] flies rapidly around your head, confusing you and blocking your path.[in random order]".
+	say "[one of][BigNameDesc of M] flies rapidly around your head, blocking your path.[or][BigNameDesc of M] flies rapidly around your head, distracting you and blocking your path.[or][BigNameDesc of M] flies rapidly around your head, disorienting you and locking your path.[or][BigNameDesc of M] flies rapidly around your head, confusing you and blocking your path.[in random order]".
 
 To compute submission reaction of (M - a fairy):
 	do nothing; [The fairy is not delayed by the player's actions]
@@ -187,20 +199,20 @@ This is the fairy attacks then gets bored rule:
 	follow the fairy attack rules;
 	if the rule succeeded: [Should always happen with the current code]
 		if M is not grabbing the player:
-			say "The [M] seems satisfied and loses interest in messing with you.";
+			say "[BigNameDesc of M] seems satisfied and loses interest in messing with you.";
 			bore M for 120 seconds;
 		rule succeeds.
 The fairy attacks then gets bored rule is listed in the fairy attacks then gets bored rules.
 
 This is the fairy doesn't want to have sex rule:
-	if presented-orifice is not nothing, say "The [current-monster] giggles at your display. [line break][speech style of current-monster]'I don't know what you think I'm going to do to you, honey, but it certainly isn't that!  How would that even work?'[roman type][line break]".
+	if presented-orifice is not nothing, say "[BigNameDesc of current-monster] giggles at your display. [line break][speech style of current-monster]'I don't know what you think I'm going to do to you, honey, but it certainly isn't that!  How would that even work?'[roman type][line break]".
 The fairy doesn't want to have sex rule is listed first in the fairy attack rules.
 
 This is the fairy plays diaper quest rule:
 	if diaper quest is 1:
 		let C be a random worn transformable clothing;
 		if C is clothing and a random number between 1 and 3 > 1:
-			say "The [current-monster] whizzes by, brushing against your [C] as she does!";
+			say "[BigNameDesc of current-monster] whizzes by, brushing against your [C] as she does!";
 			potentially transform C;
 		otherwise if there are worn heels and a random number between 1 and 2 is 1:
 			compute fairy meddling on thighs;	
@@ -212,13 +224,13 @@ The fairy plays diaper quest rule is listed in the fairy attack rules.
 
 This is the fairy tries to impregnate the player rule:
 	if pregnancy fetish is 1 and there is a vine grabbing the player and the class of the player is faerie:
-		say "The [current-monster] continues to [one of]whiz about underneath you[or]hover beneath your legs[at random], throwing glittering dust over the horny vines twisting through the soil.";
+		say "[BigNameDesc of current-monster] continues to [one of]whiz about underneath you[or]hover beneath your legs[at random], throwing glittering dust over the horny vines twisting through the soil.";
 		if image cutscenes is 1, display figure of fairy cutscene 18;
 		rule succeeds;
 	if the class of the player is faerie and the player is female and the pregnancy of the player is 0:
 		let V be a random vine;
 		now current-monster is grabbing the player; [Necessary for the part of the code that takes place in Vines.i7x]
-		say "The [current-monster] whizzes between your legs, tossing a handful of glittering dust at the soil underneath you. She lands on your shoulders as several vines suddenly shoot out of the ground and seize you by the wrists and ankles! [line break][speech style of current-monster]'It must be awful walking around like that without a bun in your oven. Don't worry, I'll make sure you get knocked up!'[roman type][line break]";
+		say "[BigNameDesc of current-monster] whizzes between your legs, tossing a handful of glittering dust at the soil underneath you. She lands on your shoulders as several vines suddenly shoot out of the ground and seize you by the wrists and ankles! [line break][speech style of current-monster]'It must be awful walking around like that without a bun in your oven. Don't worry, I'll make sure you get knocked up!'[roman type][line break]";
 		unless V is in the location of the player:
 			now V is in the location of the player;
 			now V is revealed;
@@ -226,7 +238,7 @@ This is the fairy tries to impregnate the player rule:
 		now V is grabbing the player;
 		rule succeeds;
 	if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0 and the semen volume of vagina < 15 and the largeness of belly < 10 and a random number between 1 and 2 is 1 and the virgin of the player is 0:
-		say "The [current-monster] whizzes past you, briefly brushing against your belly as she does. She turns and smirks as your belly rumbles, and visibly glows pink as it swells in front of your eyes.";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your belly as she does. She turns and smirks as your belly rumbles, and visibly glows pink as it swells in front of your eyes.";
 		if image cutscenes is 1:
 			if the largeness of belly > 5, display figure of fairy cutscene 7;
 			otherwise display figure of fairy cutscene 3;
@@ -260,7 +272,7 @@ The fairy anal rule is listed in the butt slut eligibility rules.
 This is the fairy tries to shrink the penis of the player rule:
 	if pregnancy fetish is 1 and the player is male and the size of penis > min penis size and a random number between 1 and 2 is 1:
 		PenisDown 1;
-		say "The [current-monster] whizzes past you, briefly brushing against your crotch as she does. She turns and smirks as your [player-penis] [Shrink]s into a [ShortDesc of penis].";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your crotch as she does. She turns and smirks as your [player-penis] [Shrink]s into a [ShortDesc of penis].";
 		rule succeeds.
 The fairy tries to shrink the penis of the player rule is listed last in the fairy attack rules.
 
@@ -275,7 +287,7 @@ Definition: breasts (called XXX) is fairy targetable:
 		decide yes;
 	if earnings - last-lactated-time < 10 and the milk volume of breasts > 0:
 		[Selkie: when I had this here instead of in the fairy-meddling-on-breasts function, it was triggering this text twice every time TQ decided what the fairy would target, even if she didn't end up deciding on the breasts. I don't understand why it always produced a pair of them!
-		say "The [current-monster][']s eyes light up, and she smacks her little lips. 'Mmm, I smell milky goodness!'";]
+		say "[BigNameDesc of current-monster][']s eyes light up, and she smacks her little lips. 'Mmm, I smell milky goodness!'";]
 		now decideToSuckle is 1;
 		decide yes;
 	let B be a random worn bra;
@@ -296,12 +308,12 @@ To compute fairy meddling on (XXX - breasts):
 	if decideToSuckle is 1:
 		compute fairySuckling of current-monster;
 	otherwise if B is a bra:
-		say "The [current-monster] whizzes past you, briefly brushing against your chest as she does. She turns and smirks as you see your bra grow.";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your chest as she does. She turns and smirks as you see your bra grow.";
 		unless B is cursed, now B is cursed;
 		increase the size of B by a random number from 1 to 2;
 		if the size of B > max breast size, now the size of B is max breast size;
 	otherwise:
-		say "The [current-monster] whizzes past you, briefly brushing against your chest as she does. She turns and smirks as your chest glows pink[unless the player is top heavy], and visibly swells in front of your eyes[end if].[if lactation fetish is 1]  Your now [BreastDesc] feel... active.[end if]";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your chest as she does. She turns and smirks as your chest glows pink[unless the player is top heavy], and visibly swells in front of your eyes[end if].[if lactation fetish is 1]  Your now [BreastDesc] feel... active.[end if]";
 		if the largeness of breasts < 3:
 			if image cutscenes is 1, display the figure of fairy cutscene 10;
 		otherwise if the largeness of breasts < 4:
@@ -333,7 +345,7 @@ To compute fairySuckling of (M - a fairy):
 	now decideToSuckle is 0;
 	increase FairySuckled by 1;
 	if fM > 7, now fM is 7;
-	say "The [M][']s eyes light up, and she smacks her little lips. [one of]Her tiny nose sniffs deeply, and she shuts her eyes for a moment in pleasure.[or]'Mmm, I smell milky goodness!'[or]'Ooh, a pretty cow for me to play with.'[or]'Yum, milk!'[or]'Mmm, milk!'[or]'Yum, milky goodness!'[at random]";
+	say "[BigNameDesc of M][']s eyes light up, and she smacks her little lips. [one of]Her tiny nose sniffs deeply, and she shuts her eyes for a moment in pleasure.[or]'Mmm, I smell milky goodness!'[or]'Ooh, a pretty cow for me to play with.'[or]'Yum, milk!'[or]'Mmm, milk!'[or]'Yum, milky goodness!'[at random]";
 	if image cutscenes is 1, display figure of fairy cutscene 8;
 	[Let's say the fairy is about size 7, so she can't drink more than that]
 	let NipsWereNkd be 0; [This will be set to 1 if the player had their nipples already sluttily exposed. Not really used, but could be for some humiliating text.]
@@ -341,7 +353,7 @@ To compute fairySuckling of (M - a fairy):
 	if bottom level lactation cover is nothing and random worn nipple covering clothing is nothing:
 		[So this is the case of nipples uncovered: tempting targets]
 		now NipsWereNkd is 1;
-		say "The [M] [one of]notices your naked teats[or]eyes your breasts[or]eyes focus on your chest[or]narrows her eyes[at random], and purses her lips as if sucking. ";
+		say "[BigNameDesc of M] [one of]notices your naked teats[or]eyes your breasts[or]eyes focus on your chest[or]narrows her eyes[at random], and purses her lips as if sucking. ";
 		if FairySuckled is 1:
 			say "Ooh - you feel both your nipples suddenly spring even more erect than they were, like they're just [italic type]begging[roman type] for some attention!";
 		otherwise if FairySuckled is 2:
@@ -433,11 +445,11 @@ To compute fairySuckling of (M - a fairy):
 		arouse 100;
 		increase the lactation rate of the player by 2; [Cowgirls get even milkier!]
 	if FairySuckled is 1:
-		say "When you regain your senses, the [M] is fluttering smugly above you and just out of reach, watching you as if considering doing more. Both your nipples now feel like signal flares crying out for you or [italic type]anyone[roman type] to... No! You're worried that if anything touched them right now, you'd come on the spot.";
+		say "When you regain your senses, [NameDesc of M] is fluttering smugly above you and just out of reach, watching you as if considering doing more. Both your nipples now feel like signal flares crying out for you or [italic type]anyone[roman type] to... No! You're worried that if anything touched them right now, you'd come on the spot.";
 	otherwise if FairySuckled is 2:
 		say "Your breasts do feel like they've been drained a little, but at the same time, you can't help but wonder whether her feeding might somehow make your body think you're breastfeeding a child? [italic type]That wouldn't make me lactate even more... would it?[roman type][line break]";
 	otherwise:
-		say "[one of]Your breasts feel emptier, but you worry that her feeding is somehow making your body think you're breastfeeding a child! [italic type]Is she training me to lactate?[roman type][or]The [M] belches prettily, watching you with satisfaction, and you feel a funny sort of [italic type]echo[roman type] ripple through the flesh deep inside your [BreastDesc].[at random][line break]";
+		say "[one of]Your breasts feel emptier, but you worry that her feeding is somehow making your body think you're breastfeeding a child! [italic type]Is she training me to lactate?[roman type][or][BigNameDesc of M] belches prettily, watching you with satisfaction, and you feel a funny sort of [italic type]echo[roman type] ripple through the flesh deep inside your [BreastDesc].[at random][line break]";
 	arouse 500;
 	MilkDown fM;
 	increase the lactation rate of the player by fM / 2;
@@ -451,14 +463,14 @@ Definition: hips (called XXX) is fairy targetable:
 To compute fairy meddling on (XXX - hips):
 	let G be a random worn currently visible undies;
 	if G is transformable clothing:
-		say "The [current-monster] whizzes past you, briefly brushing against your [G] as she does. ";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [G] as she does. ";
 		potentially transform G;
 		if G is worn:
-			say "The [current-monster] looks confused, but just harrumphs. ";
+			say "[BigNameDesc of current-monster] looks confused, but just harrumphs. ";
 		otherwise:
-			say "The [current-monster] looks at it and giggles.";
+			say "[BigNameDesc of current-monster] looks at it and giggles.";
 	otherwise:
-		say "The [current-monster] whizzes past you, briefly brushing against your ass as she does. She turns and smirks as your hips rumble, and visibly swell in front of your eyes.";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your ass as she does. She turns and smirks as your hips rumble, and visibly swell in front of your eyes.";
 		if image cutscenes is 1:
 			if the thickness of hips > 8:
 				display figure of fairy cutscene 6;
@@ -473,7 +485,7 @@ Definition: belly (called XXX) is fairy targetable:
 	decide no.
 
 To compute fairy meddling on (XXX - belly):
-	say "The [current-monster] whizzes past you, briefly brushing against your belly as she does. She turns and smirks as your belly rumbles[unless there is a worn corset], and visibly swells in front of your eyes[end if].";
+	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your belly as she does. She turns and smirks as your belly rumbles[unless there is a worn corset], and visibly swells in front of your eyes[end if].";
 	now current-monster is penetrating asshole; [Required for semen source tracking]
 	if weight gain fetish is 1 and the flesh volume of belly < 9, increase the flesh volume of belly by 2;
 	otherwise AssFill 4;
@@ -483,12 +495,12 @@ To compute fairy meddling on (XXX - belly):
 		otherwise display figure of fairy cutscene 3.
 Definition: face (called XXX) is fairy targetable:
 	if the make-up of face < 3, decide yes;
-	if the lips of face < 3 and current-monster is blue fairy, decide yes;
+	if the lips of face < 3 and current-monster is blue-fairy, decide yes;
 	decide no.
 
 To compute fairy meddling on (XXX - face):
-	say "The [current-monster] whizzes over your head, tossing a handful of glittering dust at your face. She giggles as it settles on your cheeks, adding a new layer of makeup. [if current-monster is blue fairy and the lips of face < 2 + artificial enhancements fetish]Your face tingles as your lips grow thicker.[end if]";
-	if current-monster is blue fairy, LipsUp 1;
+	say "[BigNameDesc of current-monster] whizzes over your head, tossing a handful of glittering dust at your face. She giggles as it settles on your cheeks, adding a new layer of makeup. [if current-monster is blue-fairy and the lips of face < 2 + artificial enhancements fetish]Your face tingles as your lips grow thicker.[end if]";
+	if current-monster is blue-fairy, LipsUp 1;
 	FaceUp 1.
 
 Definition: hair (called XXX) is fairy targetable:
@@ -496,8 +508,8 @@ Definition: hair (called XXX) is fairy targetable:
 	decide no.
 
 To compute fairy meddling on (XXX - hair):
-	say "The [current-monster] whizzes past you, briefly brushing against your hair as she does. She turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue fairy] and tingle as it changes color[end if].";
-	if current-monster is blue fairy:
+	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as she does. She turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue-fairy] and tingle as it changes color[end if].";
+	if current-monster is blue-fairy:
 		if the brightness of hair < 3:
 			HairBrightUp 1;
 		otherwise if the blondeness of hair < 3:
@@ -514,7 +526,7 @@ Definition: thighs (called XXX) is fairy targetable:
 
 To compute fairy meddling on (XXX - thighs):
 	let H be a random worn heels;
-	say "The [current-monster] whizzes past you, briefly brushing against your [printed name of H] as she does. She turns and smirks as you feel the height of your heels grow.";
+	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [printed name of H] as she does. She turns and smirks as you feel the height of your heels grow.";
 	increase the heel-height of H by 1.
 
 Definition: vagina (called XXX) is fairy targetable:
@@ -525,13 +537,13 @@ Definition: vagina (called XXX) is fairy targetable:
 To compute fairy meddling on (XXX - vagina):
 	let D be a random worn uncursed currently visible diaper;
 	if D is diaper and diaper quest is 0:
-		say "The [current-monster] whizzes past you, briefly brushing against your [printed name of D] as she does. ";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [printed name of D] as she does. ";
 		potentially transform D;
 	otherwise:
 		increase the bladder of the player by 7;
 		if the bladder of the player < 14, now the bladder of the player is 14;
 		if the bladder of the player > 20, now the bladder of the player is 20;
-		say  "The [current-monster] whizzes past you, briefly brushing against your waist as she does. She turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
+		say  "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as she does. She turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
 
 [Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off?  And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off?  Just an idea.]
 [Aika: Maybe we do need a more reliable way to deal with fairies. Something like the spraybottle idea but accessible to any class (or at least most)]
@@ -544,10 +556,10 @@ The fairy tries meddling rule is listed last in the fairy attack rules.
 
 This is the fairy reduces stats rule:
 	if a random number between 1 and 2 is 1:
-		say "The [current-monster] whizzes past you, briefly brushing against your legs as she does. She turns and smirks. Your legs feel weak!";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your legs as she does. She turns and smirks. Your legs feel weak!";
 		DexDown 1;
 	otherwise:
-		say "The [current-monster] whizzes past you, briefly brushing against your arms as she does. She turns and smirks. Your arms feel weak!";
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your arms as she does. She turns and smirks. Your arms feel weak!";
 		StrengthDown 1;
 	rule succeeds.
 The fairy reduces stats rule is listed last in the fairy attack rules.
@@ -578,15 +590,15 @@ To compute unique death of (M - a fairy):
 
 To say damage-flavour of (N - a number) on (M - a fairy):
 	if N is 0:
-		say "The [M] flutters backwards, dodging your attack!  [if attack-type is 1][line break][otherwise][one of]Maybe leg based attacks are too unreliable to reach the [M]?[or][or][or][cycling][end if]";
+		say "[BigNameDesc of M] flutters backwards, dodging your attack!  [if attack-type is 1][line break][otherwise][one of]Maybe leg based attacks are too unreliable to reach [NameDesc of M]?[or][or][or][cycling][end if]";
 	otherwise if N is 1:
 		say "That felt extremely weak, you doubt it hurt much at all.";
 	otherwise if N is 2:
 		say "That felt quite weak, but hopefully it hurt a bit.";
 	otherwise if N < 5:
-		say "The [M] definitely felt that. A respectable hit!";
+		say "[BigNameDesc of M] definitely felt that. A respectable hit!";
 	otherwise if N < 7:
-		say "The [M] visibly recoils from the hit. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
+		say "[BigNameDesc of M] visibly recoils from the hit. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
 	otherwise if N < 9:
 		say "Wow, you felt that connect with incredible force. A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 	otherwise:
@@ -740,7 +752,7 @@ Section 2 - Questioning
 
 To compute annoyance of (M - a fairy):
 	if M is uninterested:
-		say "The [M] doesn't seem to realize you are talking to her.";
+		say "[BigNameDesc of M] doesn't seem to realize you are talking to her.";
 	otherwise if M is unfriendly:
 		say "[speech style of M]'Hush now, it's playtime!'[roman type][line break]";
 	otherwise:
@@ -760,7 +772,7 @@ To say WhereAnswer of (M - a fairy):
 	if image cutscenes is 1, display figure of fairy interact 11.
 
 To say WhoAnswer of (M - a fairy):
-	say "[speech style of M]'[if M is fist sized fairy]Tinkerbell[otherwise if M is mischievous fairy]Jasmine[otherwise if M is cheeky fairy]Trixxy[otherwise if M is giggling fairy]Ditzi[otherwise if M is playful fairy]Ninona[otherwise]I don't know! Teehee!'[end if][if M is not blue fairy] the fairy!  Pleased to meet you.'[end if][roman type][line break]";
+	say "[speech style of M]'[if M is fist sized fairy]Tinkerbell[otherwise if M is mischievous fairy]Jasmine[otherwise if M is cheeky fairy]Trixxy[otherwise if M is giggling fairy]Ditzi[otherwise if M is playful fairy]Ninona[otherwise]I don't know! Teehee!'[end if][if M is not blue-fairy] the fairy!  Pleased to meet you.'[end if][roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 10.
 
 To say StoryAnswer of (M - a fairy):
@@ -783,7 +795,7 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - a fairy):
 	if the number of worn slimegirls is 0:
-		say "[if M is mating][line break][speech style of M]'You just want me to get you pregnant again, don't you?  Maybe you're becoming as addicted to pregnancy as a real fairy!'[otherwise]The [M] has an evil look in her eye. [speech style of M]'Oh don't worry, I'll fill you up!'[end if][roman type][line break]";
+		say "[if M is mating][line break][speech style of M]'You just want me to get you pregnant again, don't you?  Maybe you're becoming as addicted to pregnancy as a real fairy!'[otherwise][BigNameDesc of M] has an evil look in her eye. [speech style of M]'Oh don't worry, I'll fill you up!'[end if][roman type][line break]";
 		if image cutscenes is 1, display figure of fairy interact 13;
 		say "With a wave of her hands, your belly starts to expand. It keeps on growing until you feel very, very full. [if the largeness of belly < max belly size]It's not just your stomach that she has filled up...[end if]";
 		if hunger mechanics is 1, StomachFoodUp 1 + diaper quest;
@@ -800,9 +812,9 @@ To compute friendly drink of (M - a fairy):
 				if the semen volume of belly < 20, assfill 1;
 				if the semen volume of vagina < 15, PussyFill 1;
 		distract M;
-		say "The [M] seems satisfied and looks to leave you alone.";
+		say "[BigNameDesc of M] seems satisfied and looks to leave you alone.";
 	otherwise:
-		say "The [M] looks at your [BellyDesc]. [line break][speech style of M]'Looks like you're pretty full already! *Giggle*'[roman type][line break]".
+		say "[BigNameDesc of M] looks at your [BellyDesc]. [line break][speech style of M]'Looks like you're pretty full already! *Giggle*'[roman type][line break]".
 		
 To compute unfriendly drink of (M - a fairy):
 	compute friendly drink of M.
@@ -826,92 +838,93 @@ Part 5 - Variants
 
 Section 1 - Blue Fairy
 
-An blue fairy is a kind of fairy. There is 1 blue fairy.
-The printed name of an blue fairy is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]blue fairy[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of blue fairy is "bfa".
+blue-fairy is a fairy. The text-shortcut of blue-fairy is "bfa". Understand "blue", "fairy" as blue-fairy.
+To say MediumDesc of (M - blue-fairy):
+	say "blue fairy".
 
-To say WhoAnswer of (M - a blue fairy):
+To say WhoAnswer of (M - blue-fairy):
 	say "[speech style of M]'I don't know! Teehee!'[roman type][line break]".
 
-To say WhereAnswer of (M - a blue fairy):
+To say WhereAnswer of (M - blue-fairy):
 	say "[speech style of M]'[if the class of the player is faerie][one of]Um...I-is this a test?[or]I don't know, but it sure is fun here![at random][otherwise]Who cares? Isn't it fun here?[end if].'[roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 11.
 
-To say StoryAnswer of (M - a blue fairy):
-	say "[speech style of M]'[if pregnancy fetish is 1]I make humans look sexier so they're more fun to get knocked up! Isn[']t that fun?'[otherwise]I like big boobies, and the best way to see some boobies is messing with people!'[end if][roman type][line break]";
+To say StoryAnswer of (M - blue-fairy):
+	say "[speech style of M]'[one of][if pregnancy fetish is 1]I make humans look sexier so they're more fun to get knocked up! Isn[']t that fun?'[otherwise]I like big boobies, and the best way to see some boobies is messing with people!'[end if][or]A long time ago, I figured out humans [if pregnancy fetish is 1]get inseminated more if they look hotter[otherwise]have the best boobies[end if], except that ugly altar witch. It changed everything for me!'[or]I think I'm a princess or something. Mostly I just like to have lots of fun messing with people!'[or]My favorite color is blue, so I'm blue. And my favorite things are boobs, so I play with boobs! Teehee!'[at random][roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 8.
 
-To set up (M - a fairy):
+To set up (M - blue-fairy):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 4;
 	now the health of M is the maxhealth of M.
 
-To decide which number is the maxhealth of (M - a blue fairy):
+To decide which number is the maxhealth of (M - blue-fairy):
 	decide on 5 + (the difficulty of M * (2 + game difficulty)).
 
-To compute unique death of (M - a blue fairy):
+To compute unique death of (M - blue-fairy):
 	say "The [noun] drops slowly to the ground, like a feather, where she disappears in a puff of blue smoke.";
 	loot M;
 	loot M;
 	loot M.
 
-[Of course, 'current-monster' here is the blue fairy]
-This is the blue fairy powerup rule:
-	if current-monster is blue fairy:
+[Of course, 'current-monster' here is the blue-fairy]
+This is the blue-fairy powerup rule:
+	if current-monster is blue-fairy:
 		repeat with N running through dangerous monsters in the location of the player:
 			if N is not current-monster and the refactory-period of current-monster <= 0 and the health of N < the maxhealth of N:
-				say "The [current-monster] floats over the [N], giggling as she sprinkles glittering blue fairy dust over [his of N] head. [big he of N] shakes [his of N] head as all of [his of N] wounds close simultaneously.";
+				say "[BigNameDesc of current-monster] floats over [NameDesc of N], giggling as she sprinkles glittering blue-fairy dust over [his of N] head. [big he of N] shakes [his of N] head as all of [his of N] wounds close simultaneously.";
 				now the health of N is the maxhealth of N;
 				now the refactory-period of current-monster is 200;
 				bore current-monster for 120 seconds;
 				rule succeeds.
-The blue fairy powerup rule is listed first in the fairy attacks then gets bored rules.
+The blue-fairy powerup rule is listed first in the fairy attacks then gets bored rules.
 
 Section 2 - Fairy Witch
 
-A fairy witch is a kind of fairy. There is 1 fairy witch.
-The printed name of fairy witch is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]fairy witch[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of fairy witch is "faw".
+fairy-witch is a fairy. The text-shortcut of fairy-witch is "faw". Understand "fairy", "witch" as fairy-witch.
+To say MediumDesc of (M - fairy-witch):
+	say "fairy witch".
 
-To say AdviceAnswer of (M - a fairy witch):
+To say AdviceAnswer of (M - fairy-witch):
 	let S be a random on-stage sword;
 	unless S is sword, now S is a random dildo sword;
 	if diaper quest is 1, say "[speech style of M]'[one of]Wearing heels can help your kicks and make you look more like a grown up, but they sure are difficult to walk in if you're wearing a diaper!'[or]Cumming while in a diaper isn't just humiliating, it's likely to get you addicted to diapers if you do it too much!  Which kinda sounds fun, hehe!'[or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. She trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there[']s no such thing as impervious to magic. That[']s cheating!'[in random order][roman type][line break].";
-	otherwise say "[speech style of M]'[one of]Those horny vines you find around here aren't just plants. They're all part of the same forest lord who wants to [if the player is female]do fun stuff to your pussy[otherwise]do fun stuff with your butthole[end if]! He lives underground!'[or][if egg laying fetish is 1 and mythical creature fetish is 1]Um. Wasps won't come inside you, but they sure do love cumming on eggs. If you don't see many wasps around, just leave them some eggs to find'[otherwise if pregnancy fetish is 1]Be careful around dark magic when you're pregnant. If you're not careful it might reverse it somehow!'[otherwise]Cultivate your relatiponship with the forest lord! He's friendly to everyone, even mean altar witches![end if][or]There's a sword here in the woods! It can only be pulled by from the stone by[if S is dildo sword] the true slut of yore![otherwise if S is demon broadsword]...um...whoever turns it on the most, I guess![otherwise if S is gladiator sword] the one true woman![otherwise]a holy virgin warrior![end if]'[or]There are some elixirs so powerful you'll get pregnant just by drinking them!'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]Those horny vines you find around here aren't just plants. They're all part of the same forest lord who wants to [if the player is female]do fun stuff to your pussy[otherwise]do fun stuff with your butthole[end if]! He lives underground!'[or][if egg laying fetish is 1 and mythical creature fetish is 1]Wasps won't come inside you, but they sure do love cumming on eggs. If you don't see many wasps around, just leave them some eggs to find!'[otherwise if pregnancy fetish is 1]Be careful around dark magic when you're pregnant. If you're not careful it might reverse it somehow!'[otherwise]Cultivate your relatiponship with the forest lord! He's friendly to everyone, even mean altar witches with tiny boobs![end if][or]There's a sword here in the woods! It can only be pulled by from the stone by[if S is dildo sword] the true slut of yore![otherwise if S is demon broadsword]...um...whoever turns it on the most, I guess![otherwise if S is gladiator sword] a warrior with a true woman's heart![otherwise]a powerful virgin warrior! Or was it powerful virgin. I don't really remember, that sword is boring anyway![end if]'[or]Penises like it when you kiss them with your [if the player is female]pussy[otherwise]asshole[end if]! Yeah, its true![or]There are some elixirs so powerful you'll get pregnant just by drinking them! Make sure you drink everything you find!'[in random order][roman type][line break].";
 	if image cutscenes is 1, display figure of fairy interact 12.
 
-To set up (M - a fairy):
+To set up (M - fairy-witch):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 6;
 	now the health of M is the maxhealth of M.
-	[if the player is not a february 2018 top donator, remove M from play.]
 
-Definition: a fairy witch (called M) is blocker:
+Definition: fairy-witch (called M) is blocker:
 	if M is airborne, decide no;
 	decide yes.
 
-To compute unique death of (M - a fairy witch):
+To compute unique death of (M - fairy-witch):
 	if M is airborne:
 		say "The [noun] drops slowly to the ground, like a feather, where she disappears in a puff of smoke.";
 	otherwise:
 		say "The [noun] falls over, disappearing in a puff of smoke.";
 	loot M.
 
-To say MovementBlock of (M - a fairy witch):
-	say "[one of]The [M] summons a wall of vines to block your path![or]The [M] uses magic to bend a tree branch across your path![or]The [M] catches your ankle with a vine, yanking you back toward her.[or]The [M] summons a patch of brambles to block your path![in random order]".
+To say MovementBlock of (M - fairy-witch):
+	say "[one of][BigNameDesc of M] summons a wall of vines to block your path![or][BigNameDesc of M] uses magic to bend a tree branch across your path![or][BigNameDesc of M] catches your ankle with a vine, yanking you back toward her.[or][BigNameDesc of M] summons a patch of brambles to block your path![in random order]".
 
-To compute sex resist slap of (M - a fairy witch):
-	say "The [M] giggles at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random]. [line break][speech style of M]Heeheehee![roman type][line break]".
+To compute sex resist slap of (M - fairy-witch):
+	say "[BigNameDesc of M] giggles at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random]. [line break][speech style of M]Heeheehee![roman type][line break]".
 
-To say WhereAnswer of (M - a fairy witch):
+To say WhereAnswer of (M - fairy-witch):
 	say "[speech style of M]'[if the class of the player is faerie][one of]Heehee, you[']re at home!'[or]The forest of Bimbacia, silly![at random][otherwise]The forest of Bimbacia, the vines lord's domain![end if].'[roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 11.
 
-To say WhoAnswer of (M - a fairy witch):
-	say "[speech style of M]'Sabina, the eldest fairy witch!  Pleased to meet you.'[roman type][line break]";
+To say WhoAnswer of (M - fairy-witch):
+	say "[speech style of M]'Sabina, elder fairy witch!  Pleased to meet you.'[roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 10.
 
-To compute FairyGrab of (M - a fairy witch):
+To compute FairyGrab of (M - fairy-witch):
 	let V be a random off-stage vine;
 	if the player is upright, now the stance of the player is 1;
 	now M is grabbing the player;
@@ -920,9 +933,9 @@ To compute FairyGrab of (M - a fairy witch):
 		now V is unrevealed;
 		now the TrapNo of V is -400;
 
-[The fairy witch restrains you if there are vines in the area or a monster that wants to fuck you.]
-This is the fairy witch enabler rule:
-	if current-monster is fairy witch:
+[The fairy-witch restrains you if there are vines in the area or a monster that wants to fuck you.]
+This is the fairy-witch enabler rule:
+	if current-monster is fairy-witch:
 		let N be a random vine;
 		let V be a random dangerous virginity taking monster in the location of the player;
 		if N is in the location of the player, now V is N;
@@ -930,43 +943,43 @@ This is the fairy witch enabler rule:
 			let D be the dexterity of the player;
 			let R be a random number from (the difficulty of current-monster * -1) to D;
 			if current-monster is airborne:
-				say "The [current-monster] lands on the ground [if V is monster]next to the [V][otherwise]among the vines[end if], making intricate gestures with her tiny hands as the soil around her begins to shift and rumble.[line break][speech style of current-monster]'Hoooaaah...'[roman type][line break]";
+				say "[BigNameDesc of current-monster] lands on the ground [if V is monster]next to the [V][otherwise]among the vines[end if], making intricate gestures with her tiny hands as the soil around her begins to shift and rumble.[line break][speech style of current-monster]'Hoooaaah...'[roman type][line break]";
 				now current-monster is not airborne;
 			otherwise if the player is upright:		
 				if R < 0:
-					say "The [current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]They lash out before you can react, yanking you to the ground and pinning your wrists down tightly[or]You don't have any time to react as they roughly sweep you off your feet and pin your wrists on the ground in front of you[or]They quickly lash out and grab your wrists, yanking you to the ground and pinning your hands to the soil[or]You don't have enough time to react as they yank to the ground and swiftly pin your wrists to the soil[at random].[line break][speech style of current-monster]'Now, you're not going anywhere. Teehee!'[roman type][line break]";
+					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]They lash out before you can react, yanking you to the ground and pinning your wrists down tightly[or]You don't have any time to react as they roughly sweep you off your feet and pin your wrists on the ground in front of you[or]They quickly lash out and grab your wrists, yanking you to the ground and pinning your hands to the soil[or]You don't have enough time to react as they yank you to the ground and swiftly pin your wrists to the soil[at random].[line break][speech style of current-monster]'Now, you're not going anywhere. Teehee!'[roman type][line break]";
 					compute FairyGrab of current-monster;
 				otherwise:
-					say "The [current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You swiftly dodge out of the way as they lash out at you[or]They lash out at you, but you manage to get out of the way in time[or]You barely have enough time to get out of the way as they lash out at you[or]They quickly lash out at you, almost grabbing ahold of your wrists[at random].";
+					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You swiftly dodge out of the way as they lash out at you[or]They lash out at you, but you manage to get out of the way in time[or]You barely have enough time to get out of the way as they lash out at you[or]They quickly lash out at you, almost grabbing ahold of your wrists[at random].";
 			otherwise:
 				if R < 3:
-					say "The [current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You don't have time to react as they lash out at you, seizing you by the wrists and roughly pinning them to the ground[or]They quickly grab your wrists and pin them to the ground![or]You can't react fast enough! They grab your wrists and roughly pin them to the ground[or]They lash out at you, seizing your wrists and pinning them to the groun[at random].[line break][speech style of current-monster]'You're not going anywhere, Teehee!'[roman type][line break]";
+					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You don't have time to react as they lash out at you, seizing you by the wrists and roughly pinning them to the ground[or]They quickly grab your wrists and pin them to the ground![or]You can't react fast enough! They grab your wrists and roughly pin them to the ground[or]They lash out at you, seizing your wrists and pinning them to the groun[at random].[line break][speech style of current-monster]'You're not going anywhere, Teehee!'[roman type][line break]";
 					now current-monster is grabbing the player;	
 				otherwise:
-					say "The [current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You barely have time to react as they lash out at you, scrambling out of the way before they can grab you[or]They lash out at you, but you manage to get away from them in time[or]You have just enough time to get away before they can grab you[or]They almost grab you before you get away[at random]!";
+					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You barely have time to react as they lash out at you, scrambling out of the way before they can grab you[or]They lash out at you, but you manage to get away from them in time[or]You have just enough time to get away before they can grab you[or]They almost grab you before you get away[at random]!";
 			rule succeeds;
-		otherwise if current-monster is not airborne:[If the fairy witch touched down, she takes a turn to get back up]
+		otherwise if current-monster is not airborne:[If the fairy-witch touched down, she takes a turn to get back up]
 			if the player is monster fucked:
-				say "The [current-monster] seems satisfied, waving for the vines to release you as her wings lift her back up into the air.";
+				say "[BigNameDesc of current-monster] seems satisfied, waving for the vines to release you as her wings lift her back up into the air.";
 				now current-monster is airborne;
 				dislodge current-monster;
 				satisfy current-monster;
 			otherwise if the player is vine stuck:
 				if the player is vine fucked:
-					say "The [current-monster] giggles, [one of]continuing to gesture with her hands as she watches the vines fuck you[or]content to watch as the vines ravish you[or]happy to watch as the vines violate you[at random].";
+					say "[BigNameDesc of current-monster] giggles, [one of]continuing to gesture with her hands as she watches the vines fuck you[or]content to watch as the vines ravish you[or]happy to watch as the vines violate you[at random].";
 				otherwise:
-					say "The [current-monster] giggles, waiting for something to happen.";
+					say "[BigNameDesc of current-monster] giggles, waiting for something to happen.";
 			otherwise:
 				let V be a random vine in the location of the player;
 				if V is vine and the TrapNo of V < -700:
-					say "The [current-monster] seems satisfied, giggling as her wings lift her back up into the air.";
+					say "[BigNameDesc of current-monster] seems satisfied, giggling as her wings lift her back up into the air.";
 					dislodge current-monster;
 					satisfy current-monster;
 				otherwise:
-					say "The [current-monster] looks frustrated for a moment, but seems to get over it quickly as her wings lift her back up into the air.";
+					say "[BigNameDesc of current-monster] looks frustrated for a moment, but seems to get over it quickly as her wings lift her back up into the air.";
 				now current-monster is airborne;
 			rule succeeds.
-The fairy witch enabler rule is listed first in the fairy attacks then gets bored rules.
+The fairy-witch enabler rule is listed first in the fairy attacks then gets bored rules.
 
 Fairy ends here.
 

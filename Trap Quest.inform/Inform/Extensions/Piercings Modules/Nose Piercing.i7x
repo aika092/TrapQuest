@@ -14,7 +14,7 @@ To decide which object is the concealer of (C - a nose piercing):
 	decide on a random worn hood.
 
 To say PiercingFlav of (P - a nose piercing):
-	say "An arm comes down with a searing hot needle!  You scream [if there is a worn ballgag]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
+	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
 	
 
 

@@ -169,6 +169,20 @@ To decide which object is the biggest jewel:
 			now bigJ is J;
 	decide on bigJ.
 
+[!<RecideWhichObjectIsTheBiggestHeldJewel>+
+
+Maybe an NPC wants to take away the player's best jewel.
+
++!]
+To decide which object is the biggest held jewel:
+	let N be 0;
+	let bigJ be nothing;
+	repeat with J running through held plentiful accessories:
+		if the price of J > N:
+			now N is the price of J;
+			now bigJ is J;
+	decide on bigJ.
+
 
 
 Executing Fainting ends here.

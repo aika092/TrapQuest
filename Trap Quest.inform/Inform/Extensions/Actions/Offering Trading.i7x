@@ -86,7 +86,7 @@ To compute (M - a monster) considering (T - a thing):
 	if a random number between 5 and 25 <= the intelligence of the player, increase I by 1;
 	if a random number between 10 and 25 <= the intelligence of the player, increase I by 1;
 	if M is not interested:
-		say "The [M] isn[']t even looking at you.";
+		say "[BigNameDesc of M] isn[']t even looking at you.";
 	otherwise if convincing power > 0 and (M is friendly or (convincing power + I) >= the square root of (a random number between 1 and 10)):
 		say MonsterOfferAcceptFlav of M to T;
 		say MonsterTakeFlav of M to T;
@@ -99,24 +99,24 @@ To compute (M - a monster) considering (T - a thing):
 		say MonsterOfferRejectFlav of M to T.
 
 To say MonsterOfferRejectFlav of (M - a monster) to (T - a thing):
-	if M is intelligent, say "[if M is unfriendly]The [M] smiles.[otherwise]The [M] looks a bit confused.[end if]  [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
-	otherwise say "The [M] completely ignores the [T].".
+	if M is intelligent, say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if]  [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
+	otherwise say "[BigNameDesc of M] completely ignores the [T].".
 
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - a thing):
 	if M is intelligent:
 		if M is unfriendly:
-			say "The [M] smiles.  [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really?  Thanks a lot!  Maybe I've made a mistake judging you.  You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that.  Thanks a bunch.  We're cool now.'[otherwise]Fair enough, have it your way.  I'll leave you alone... this time.'[end if][roman type][line break]";
+			say "[BigNameDesc of M] smiles. [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really? Thanks a lot! Maybe I've made a mistake judging you.  You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that.  Thanks a bunch.  We're cool now.'[otherwise]Fair enough, have it your way.  I'll leave you alone... this time.'[end if][roman type][line break]";
 		otherwise:
-			say "The [M] seems elated.  [line break][speech style of M]'Wow, thank you so much!  How generous of you.'[roman type][line break]";
+			say "[BigNameDesc of M] seems elated. [line break][speech style of M]'Wow, thank you so much!  How generous of you.'[roman type][line break]";
 	otherwise:
-		say "The [M] turns its full attention to the [T], completely ignoring you for now!".	
+		say "[BigNameDesc of M] turns its full attention to the [T], completely ignoring you for now!".	
 
 To say MonsterTakeFlav of (M - a monster) to (T - a thing):
-	say "The [M] takes the [T].".
+	say "[BigNameDesc of M] takes the [T].".
 
 To compute resolution of (M - a monster) taking (T - a thing):
 	if M is unfriendly and M is intelligent:
-		say "The [M] seems to lose interest in you for now.";
+		say "[BigNameDesc of M] seems to lose interest in you for now.";
 		bore M;
 		FavourUp M by the bartering value of T for M;
 	otherwise if M is intelligent:

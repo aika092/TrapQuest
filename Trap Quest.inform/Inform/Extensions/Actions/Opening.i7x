@@ -25,7 +25,12 @@ Check opening a container:
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	if autoopen is 0 and the prevsearch of the noun is 2 or the prevsearch of the noun is 4:
 		say "Are you sure you want to open this trapped container? [yesnolink] ";
-		unless the player consents, say "You decide against it." instead;
+		if the player consents:
+			if diaper quest is 1 and bunny glasses is off-stage and bunny glasses is actually summonable:
+				say "As you decide to open it anyway, a [ShortDesc of bunny glasses] appears on your face!";
+				summon bunny glasses cursed;
+		otherwise:
+			say "You decide against it." instead;
 	if the prevsearch of the noun is 0 and the noun is not pink wardrobe and the bimbo of the player <= 12 and autosearch is 1 and the player is upright and autoopen is 0 and the player is able to use manual dexterity and the player is not breasts blinded and tutorial is 0:
 		if the delicateness of the player > 1:
 			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10].  [line break][variable custom style]This game is mental.  I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";

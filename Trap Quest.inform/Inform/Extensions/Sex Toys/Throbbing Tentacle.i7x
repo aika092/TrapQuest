@@ -28,6 +28,9 @@ To compute periodic effect of (P - a throbbing-tentacle):
 			otherwise:
 				vaginally orgasm shamefully.
 
+To set up magic state of (P - a throbbing-tentacle):
+	do nothing.
+
 To uniquely set up (P - a throbbing-tentacle):
 	do nothing.[No enchantments here!]
 

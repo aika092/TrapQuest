@@ -72,14 +72,14 @@ To decide which number is the damage improvement of (W - a sword of purity):
 	increase X by the magic-modifier of W;
 	decide on X.
 
-To uniquely set up (W - a sword of purity):
+To set up magic state of (W - a sword of purity):
 	do nothing. 
 
 To decide which number is the vaginal-sex-influence of (W - a sword of purity):
 	decide on 3.
 
 To compute attack of (W - a sword of purity) at (M - a monster):
-	say "[one of]You slash at the [M] with your [W].[or]You scratch the [M] with the tip of your [W].[or]You can hear a holy orchestra in the background as you fiercely slash at the [M] with your [W].[or]You leave a trail of golden light as you slice the [M] with your [W].[at random]".
+	say "[one of]You slash at [NameDesc of M] with your [W].[or]You scratch [NameDesc of M] with the tip of your [W].[or]You can hear a holy orchestra in the background as you fiercely slash at [NameDesc of M] with your [W].[or]You leave a trail of golden light as you slice [NameDesc of M] with your [W].[at random]".
 
 To compute attack effect of (W - a sword of purity):
 	do nothing.
@@ -155,7 +155,7 @@ To decide which number is the damage improvement of (W - a dildo sword):
 	decide on X.
 
 To compute attack of (W - a dildo sword) at (M - a monster):
-	say "The floppy [W] makes a [if the magic-modifier of W > 3]dull thud[otherwise]loud slapping sound[end if] as it hits the [M].".
+	say "The floppy [W] makes a [if the magic-modifier of W > 3]dull thud[otherwise]loud slapping sound[end if] as it hits [NameDesc of M].".
 
 Definition: a dildo sword (called S) is insertable:
 	decide yes.
@@ -226,7 +226,7 @@ To compute attack effect of (W - a gladiator sword):[The gladiator sword becomes
 		if the burden of W < 0, now the burden of W is 0.
 
 To compute attack of (W - a gladiator sword) at (M - a monster):
-	say "You [one of]slash at the [M] with[or]scratch the [M] with the tip of[at random] your [W].".
+	say "You [one of]slash at [NameDesc of M] with[or]scratch [NameDesc of M] with the tip of[at random] your [W].".
 
 To decide which number is the damage improvement of (W - a gladiator sword):
 	let X be 3;
@@ -289,9 +289,9 @@ To decide which number is the initial outrage of (C - a demon broadsword):
 
 To compute attack of (W - a demon broadsword) at (M - a monster):
 	if W is dildoed:
-		say "The stiff [W] makes a [if the arousal of W > 5]satisfying thud[otherwise]loud slapping sound[end if] as it hits the [M].";
+		say "The stiff [W] makes a [if the arousal of W > 5]satisfying thud[otherwise]loud slapping sound[end if] as it hits [NameDesc of M].";
 	otherwise:
-		say "The [printed name of W] shrieks as it slices through the air, towards the [M]!".
+		say "The [printed name of W] shrieks as it slices through the air, towards [NameDesc of M]!".
 
 To compute attack effect of (W - a demon broadsword):
 	if attack-type is 1:
@@ -310,7 +310,7 @@ To compute attack effect of (W - a demon broadsword):
 
 To decide which number is the damage improvement of (W - a demon broadsword):
 	if W is dildoed:
-		if the number of on-stage demon lords > 0, decide on the favour of a random demon lord;
+		if demon lord is alive, decide on the favour of demon lord;
 		decide on the arousal of W;
 	otherwise:
 		decide on 2 + the arousal of W / 2.[This damage sounds really good, but remember that some late-game enemies have upwards of 70 health, and you need to be careful about how much you use this weapon to fight.]
@@ -363,7 +363,7 @@ Report taking a demon broadsword:
 	try wearing the noun;
 
 Report wearing a demon broadsword:
-	if the player is a sissy or the class of the player is princess or the class of the player is royal slave or a random demon lord is alive or there is a worn demonic wearthing:
+	if the player is a sissy or the class of the player is princess or the class of the player is royal slave or demon lord is alive or there is a worn demonic wearthing:
 		say "It shivers visibly as your fingers close around the hilt![line break]";
 		compute demon punishment of the noun;
 	otherwise:
@@ -412,11 +412,11 @@ To decide which number is the damage improvement of (W - a giant rattle):
 	increase X by the magic-modifier of W;
 	decide on X.
 
-To uniquely set up (W - a giant rattle):
+To set up magic state of (W - a giant rattle):
 	do nothing. 
 
 To compute attack of (W - a giant rattle) at (M - a monster):
-	say "The [W] rattles as it hits the [M] with a loud smack.".
+	say "The [W] rattles as it hits [NameDesc of M] with a loud smack.".
 
 To compute attack effect of (W - a giant rattle):
 	if the raw-magic-modifier of W > -2 and attack-type is 1:
@@ -441,7 +441,7 @@ To say SwordDesc of (S - a voidblade):
 	say "The blade of this sword seems to be made of pure darkness, with a swirling sea of pink motes floating in it. When you look at it, you somehow think of the [great one]s, and you know its power comes from surrendering that which does not venerate them.".
 
 To compute attack of (W - a voidblade) at (M - a monster):
-	say "The [printed name of W] seems to slice through reality itself as it arcs towards the [M]!".
+	say "The [printed name of W] seems to slice through reality itself as it arcs towards [NameDesc of M]!".
 
 To compute attack effect of (W - a voidblade):
 	say "As you swing the blade, you cannot help but gaze into the swirling black and pink void it leaves in its wake. You feel like a tiny portion of your sense of self is being sucked into it.";

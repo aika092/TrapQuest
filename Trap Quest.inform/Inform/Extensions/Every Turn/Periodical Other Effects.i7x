@@ -38,7 +38,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
 			set real breast size;
 		if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
-		if TG fetish is 2 and the real size of penis <= min penis size and the player is male:
+		if TG fetish is 2 and the size of penis <= min penis size and the player is male:
 			if tg-tracking > 1:
 				say DefaultSexChangeFlav;
 				sexchange the player;
@@ -86,18 +86,6 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		compute latex transformation;
 	[Spawning and buffing of weak enemies]
 	if the remainder after dividing local-earnings by 413 < local-seconds:
-		[let dollscount be 0;
-		let mancount be 0;
-		repeat with M running through alive monsters in the Dungeon:
-			if M is sex doll, increase dollscount by 1;
-		repeat with M running through alive monsters in the Woods:
-			if M is mannequin, increase mancount by 1;
-		if diaper quest is 0 and dollscount < 6 and the player is in the Dungeon:
-			let M be a random off-stage sex doll;
-			if M is monster:
-				set up M;
-				summon M in the dungeon;
-			if dollscount is 5, deploy a random woman with variety 1;]
 		let P be a random alive prison guard;
 		if there is worn locked clothing:
 			if P is prison guard:
@@ -192,16 +180,19 @@ To compute hair colour decay:
 		now R is a random number between 1 and 3;
 		increase X by 1;
 		if R is 1:
-			unless a random worn headgear is blondeness-positive:
+			unless there is worn blondeness-positive headgear:
 				HairBlondeDown 1;
+				say "Your hair loses some colour and lightness.";
 				now R is 0;
 		otherwise if R is 2:
-			unless a random worn headgear is redness-positive:
+			unless there is worn redness-positive headgear:
 				HairRedDown 1;
+				say "Your hair loses some colour.";
 				now R is 0;				
 		otherwise if R is 3:
-			unless a random worn headgear is brightness-positive:
+			unless there is worn brightness-positive headgear:
 				HairBrightDown 1;
+				say "Your hair colour darkens.";
 				now R is 0;
 		if X > 20, now R is 0.	
 

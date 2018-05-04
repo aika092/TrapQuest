@@ -12,11 +12,11 @@ Check mopping:
 	if the player is not prone, say "You have to get on your knees first." instead;
 	if the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player < 1, say "But there's no mess to clean?" instead;
 	if the noun is pink spraybottle:
-		if there is a dangerous monster in the location of the player, say "You need to deal with the [printed name of a random dangerous monster in the location of the player] first!" instead;
+		if there is a dangerous monster in the location of the player, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 		if the noun is not worn by the player, say "But you're not holding the cloth..." instead;
 	if the noun is face and the player is not craving:
 		if the semen taste addiction of the player * the thirst of the player < 18 and the class of the player is not catgirl or (the class of the player is catgirl and the semen taste addiction of the player * the thirst of the player < 9), say "[if the semen taste addiction of the player > 14 or the humiliation of the player > HUMILIATION-BROKEN or (the class of the player is catgirl and (the humiliation of the player > HUMILIATION-MODEST + 4000 or the semen taste addiction of the player > 7))]Why lick it off the floor when you could have it fresh and warm straight from the source![otherwise]You can't bring yourself to do something so degrading...[end if]" instead;
-		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the semen taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [printed name of a random monster in the location of the player]. [if the semen taste addiction of the player > 14 or (the class of the player is catgirl and the semen taste addiction of the player > 7)][line break][second custom style]no matter how much you want to...[roman type][line break][end if]" instead;
+		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the semen taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [random monster in the location of the player]. [if the semen taste addiction of the player > 14 or (the class of the player is catgirl and the semen taste addiction of the player > 7)][line break][second custom style]no matter how much you want to...[roman type][line break][end if]" instead;
 	if the noun is not face and the noun is not pink spraybottle, say "How would you clean with something like that?".
 	[if the second noun is clothing:
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
@@ -75,34 +75,44 @@ Carry out mopping pink spraybottle:[TODO:  breasts largeness 10+ will touch the 
 			decrease F by 1;
 			decrease E by 1;
 			increase D by 1; Couldn't get this to work]
-	While the A > 0 and E > 0:[Clean up is in order of thickness. urine is thinnest, followed by milk, followed by semen.]
-		decrease A by 1;
-		decrease E by 1;
-		increase D by 1;
-	While B > 0 and E > 0:
-		decrease B by 1;
-		decrease E by 1;
-		increase D by 1;
-	While C > 0 and E > 0:
-		decrease C by 1;
-		decrease E by 1;
-		increase D by 1;
+	if the urine-puddle of the location of the player > 0 and E > 0:[Clean up is in order of thickness. urine is thinnest, followed by milk, followed by semen.]
+		if the urine-puddle of the location of the player > E:
+			increase D by E;
+			decrease the urine-puddle of the location of the player by E;
+			now E is 0;
+		otherwise:
+			increase D by the urine-puddle of the location of the player;
+			decrease E by the urine-puddle of the location of the player;
+			now the urine-puddle of the location of the player is 0;
+	if the milk-puddle of the location of the player > 0 and E > 0:
+		if the milk-puddle of the location of the player > E:
+			increase D by E;
+			decrease the milk-puddle of the location of the player by E;
+			now E is 0;
+		otherwise:
+			increase D by the milk-puddle of the location of the player;
+			decrease E by the milk-puddle of the location of the player;
+			now the milk-puddle of the location of the player is 0;
+	if the semen-puddle of the location of the player > 0 and E > 0:
+		if the semen-puddle of the location of the player > E:
+			increase D by E;
+			decrease the semen-puddle of the location of the player by E;
+			now E is 0;
+		otherwise:
+			increase D by the semen-puddle of the location of the player;
+			decrease E by the semen-puddle of the location of the player;
+			now the semen-puddle of the location of the player is 0;
 	FatigueUp 25;
-	if the noun is cursed, FatigueUp 25;
-	now the urine-puddle of the location of the player is A;
-	now the milk-puddle of the location of the player is B;
-	now the the semen-puddle of the location of the player is C;
-	if the total puddle > 0:
-		say "Keep going?";
-		if the player consents:
-			compute extra turn;
-			try mopping the noun.
+	if the noun is cursed, FatigueUp 25.
+
+was-mopping is a number that varies.
 
 Report Mopping:
 	if the noun is face, let M be a random actually summonable cat ears;
 	if M is cat ears and a random number between 1 and 3 is 1:
 		say "[bold type]You feel a headband with cat ears materialise on your head.[roman type]  [if the bimbo of the player > 12][line break][second custom style]Teehee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][line break][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
-		summon M.
+		summon M;
+	now was-mopping is 1.
 		
 
 Understand "clean puddle with [something]", "mop up puddle with [something]", "clean mess with [something]", "clean with [something]", "[something] puddle", "clean room with [something]"  as mopping. 
