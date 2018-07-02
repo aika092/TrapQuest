@@ -13,6 +13,8 @@ To decide which number is the diaper-addiction-influence of (T - a cloth revolut
 	decide on 3.
 To decide which number is the initial cringe of (T - a cloth revolution tattoo):
 	decide on 8.
+Definition: a cloth revolution tattoo (called T) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
 Cloth Revolution Tattoo ends here.
 

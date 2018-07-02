@@ -20,7 +20,7 @@ A lolita magical dress is a kind of magical dress.
 
 There is 1 lolita magical dress. 
 
-Figure of lolita magical dress is the file "Items\Clothes\Upper\Special\MahouShoujo\magicaldress1.png".
+Figure of lolita magical dress is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress1.png".
 
 To decide which figure-name is the clothing-image of (O - a lolita magical dress):
 	decide on figure of lolita magical dress.
@@ -40,7 +40,7 @@ An exposing magical dress is a kind of magical dress. An exposing magical dress 
 
 There is 1 exposing magical dress.
 
-Figure of exposing magical dress is the file "Items\Clothes\Upper\Special\MahouShoujo\magicaldress2.png".
+Figure of exposing magical dress is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress2.png".
 
 To decide which figure-name is the clothing-image of (O - an exposing magical dress):
 	decide on figure of exposing magical dress.
@@ -58,6 +58,25 @@ To say ClothingDesc of (O - an exposing magical dress):
 
 Definition: an exposing magical dress (called C) is nudism-enabling:
 	decide yes.
+
+magical-maid-outfit is a magical dress. Understand "magical", "maid", "outfit" as magical-maid-outfit. magical-maid-outfit is fully exposing. magical-maid-outfit is arm exposing. magical-maid-outfit is crotch-intact. magical-maid-outfit is unskirted.
+
+Figure of magical-maid-outfit is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress3.png".
+
+To decide which figure-name is the clothing-image of (O - magical-maid-outfit):
+	decide on figure of magical-maid-outfit.
+
+The printed name of magical-maid-outfit is usually "[TQlink of item described][clothing-title-before]magical maid outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+
+To compute SelfExamineDesc of (O - magical-maid-outfit):
+	say "You are wearing a [ShortDesc of O]. ".
+
+To say ShortDesc of (O - magical-maid-outfit):
+	say "magical maid outfit".
+
+To say ClothingDesc of (O - magical-maid-outfit):
+	say "A white one-piece leotard with big maid-like frills all around the chest where a giant hole leaves [if O is worn]your [BreastDesc][otherwise]the wearer's chest[end if] completely exposed and a giant blue bow at the neckline makes it feel like an anime superheroine outfit.".
+
 
 
 Magical Dress ends here.

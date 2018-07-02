@@ -1,6 +1,6 @@
 Golden Phallus by Sex Toys begins here.
 
-A golden phallus is a kind of dong. A golden phallus is unique. The printed name of golden phallus is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]golden [if the bimbo of the player < 8]phallus[otherwise]dildo[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden phallus is "gd". The size of golden phallus is usually 3. There is 1 golden phallus. Figure of golden phallus is the file "Items\Accessories\Toys\goldenphallus1.png". The text-shortcut of a golden phallus is "gp". A golden phallus is usually metal.
+A golden phallus is a kind of dong. A golden phallus is unique. The printed name of golden phallus is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]golden [if the bimbo of the player < 8]phallus[otherwise]dildo[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden phallus is "gd". The size of golden phallus is usually 3. There is 1 golden phallus. Figure of golden phallus is the file "Items/Accessories/Toys/goldenphallus1.png". The text-shortcut of a golden phallus is "gp". A golden phallus is usually metal.
 
 To decide which figure-name is clothing-image of (C - a golden phallus):
 	decide on figure of golden phallus.
@@ -11,8 +11,8 @@ To say ClothingDesc of (C - golden phallus):
 To say ShortDesc of (C - golden phallus):
 	say "golden [if the bimbo of the player < 8]phallus[otherwise]dildo[end if]".
 
-To decide which number is the masturbation-bonus of (C - a golden phallus):
-	decide on 0.
+To decide which number is the raw-masturbation-bonus of (C - a golden phallus):
+	decide on -1.[offsets the default, which is +1]
 	
 To compute climax effect of (C - a golden phallus):
 	let B be the body soreness of the player;

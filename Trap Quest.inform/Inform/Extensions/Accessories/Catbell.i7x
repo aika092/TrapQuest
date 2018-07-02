@@ -15,7 +15,7 @@ To decide which number is the initial cringe of (C - a catbell):
 To set up influence of (C - a catbell):
 	set up taste-based influence of C.
 
-Figure of catbell is the file "Items\Accessories\Neck\catbell1.png".
+Figure of catbell is the file "Items/Accessories/Neck/catbell1.png".
 
 To decide which figure-name is clothing-image of (C - a catbell):
 	decide on figure of catbell.

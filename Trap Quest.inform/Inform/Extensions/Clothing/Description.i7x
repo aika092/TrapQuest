@@ -1,6 +1,6 @@
 Description by Clothing begins here.
 
-Figure of no-image-yet is the file "Special\noimage.png".
+Figure of no-image-yet is the file "Special/noimage.png".
 
 To decide which figure-name is the clothing-image of (C - a clothing):
 	decide on figure of no-image-yet. 
@@ -129,6 +129,8 @@ Report examining clothing:
 	if the noun is worn and (the noun is knickers or the noun is bra or the noun is sex toy or the noun is chastity cage or the noun is condom of kings or the noun is corset):
 		if the noun is currently visible:
 			say "[CurrentlyVisibleFlav of the noun]";
+		otherwise if the noun is currently at least partially visible:
+			say "[CurrentlyPartiallyConcealedFlav of the noun]";
 		otherwise:
 			say "[CurrentlyConcealedFlav of the noun]".
 
@@ -138,26 +140,27 @@ Report examining protection clothing:
 To say CurrentlyConcealedFlav of (C - a clothing):
 	say "It can't be seen thanks to your [ShortDesc of concealer of C].".
 
+To say CurrentlyPartiallyConcealedFlav of (C - a clothing):
+	say "Your [ShortDesc of at least partial concealer of C] fails to completely hide the fact that you're wearing it.".
+
 To say CurrentlyVisibleFlav of (C - a clothing):
 	say "It is currently visible to anyone who looks at you.".
 
 To say CurrentlyVisibleFlav of (C - a sex toy):
 	say "It is currently visible to anyone who looks at you from the right angle.".
 
+To say CurrentlyPartiallyConcealedFlav of (C - a diaper):
+	say "The shape of it is clearly visible through your [ShortDesc of at least partial concealer of C].".
+			
 To say CurrentlyVisibleFlav of (C - a diaper):
-	let visible-check be 0;
-	repeat with O running through actually dense bottom-layer-concealing clothing:
-		if the bottom-layer of O > the bottom-layer of C and visible-check is 0:
-			now visible-check is 1;
-			say "The shape of it is clearly visible through your [ShortDesc of O].";
-	if visible-check is 0, say "It is currently visible to anyone who looks at you.".
+	say "It is currently visible to anyone who looks at you.".
 
 Report examining clothing:
 	say PlayerThoughts of the noun.
 
 To say PlayerThoughts of (C - a clothing):
 	if the noun is diaper and C is not worn and the number of worn knickers is 0 and earnings > starting-earnings - 250 and the diaper addiction of the player < 4:
-		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did wet myself I'd rather it was into a diaper than onto [if the player is female]my legs and [end if]the floor where everyone can watch it.[line break]...I can't believe I'm considering wearing this!  But surely they wouldn't put it here for no reason...[roman type][line break]";
+		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did wet myself I'd rather it was into a diaper than onto [if the player is female]my legs and [end if]the floor where everyone can watch it.[line break]... I can't believe I'm considering wearing this!  But surely they wouldn't put it here for no reason...[roman type][line break]";
 	otherwise if the number of worn clothing is 0 and earnings > starting-earnings - 250 and the player is male and the bimbo of the player < 4:
 		say "[first custom style][one of][if the outrage of C - 9 is too humiliating]Heh, what sort of chick would be caught dead in this?[otherwise]I hope I find someone to wear this![end if][or]Wait a minute, is this supposed to be for ME to wear?!?![or]Surely this isn't meant for me, right?[stopping][roman type][line break]";
 	otherwise if C is short-skirt-disallowed:

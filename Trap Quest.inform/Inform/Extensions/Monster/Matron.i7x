@@ -349,7 +349,7 @@ To compute unique diaper change effect of (M - matron):
 
 This is the matron confiscates grown up items rule:
 	let M be current-monster;
-	if the class of the player is adult baby:
+	if the player is an adult baby:
 		let N be the number of held vessels;
 		if baby's bottle is held, decrease N by 1;
 		if N > 0 and a random number between 1 and 4 is 1:
@@ -379,7 +379,7 @@ This is the matron confiscates grown up items rule:
 			FavourDown M by 1;
 			rule succeeds;
 	otherwise if there is no worn headgear and M is unfriendly:
-		let H be a random off-stage baby bonnet;
+		let H be a random off-stage victorian-baby-bonnet;
 		if H is actually summonable:
 			summon H cursed;
 			say "[BigNameDesc of M] strokes your [ShortHairDesc]. [line break][speech style of M]'I've decided to make you my personal baby!  We're going to have such fun together!'[roman type][line break]She puts a [H] on your head!  [if the diaper addiction of the player < 10][line break][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise]Yay!  I want to stay with Nanny forever![end if][roman type][line break]".
@@ -399,7 +399,7 @@ To say ForcefeedDeclarationFlav of (M - matron):
 	if the feedingtone of M is 2: [If this is a friendly requested feeding]
 		say "[speech style of M]'Is baby ready for [if the size of penis > 4]his[otherwise]her[end if] dindins? '[roman type][line break]";
 	otherwise if the feedingtone of M is 1: [If this is an unfriendly requested feeding]
-		say "[speech style of M]'Of course, honey! I have just the thing for naughty little minxs like you...'[roman type][line break]";
+		say "[speech style of M]'Of course, honey! I have just the thing for naughty little minxes like you...'[roman type][line break]";
 	otherwise if the feedingtone of M is 3: [if this is an unfriendly requested drink]
 		say "Is my naughty baby thirsty? I have a sippy cup with your name on it...";
 	otherwise if the health of M < the maxhealth of M: [is there a way to have this happen ONLY if the feeding is a direct result of combat?]
@@ -428,7 +428,7 @@ To compute forcefeed round (N - 2) of (M - matron):
 To compute forcefeed round (N - 1) of (M - matron):
 	say "[speech style of M]'Come on you messy baby, time for your sippy cup.'[roman type]  Before you can react, a toddler's drinking cup is shoved into your mouth, and you are sipping down a mystery liquid that tastes a lot like fruit juice, but a bit more sour. [if incontinence < 5]Your stomach feels a little off...[otherwise if the diaper addiction of the player > 12]For a moment you almost forget you're not just a big baby.[otherwise]You feel the liquid enter your belly, and your bladder relax.[end if][line break]";
 	let B be a random off-stage bib;
-	if B is bib and the class of the player is adult baby:
+	if B is bib and the player is an adult baby:
 		summon B cursed;
 		say "[speech style of M]'Ooh, that bib just looks so perfect on you, I think I'll have to let you keep it!'[roman type]  [BigNameDesc of M] leaves the bib on. [if the strength-influence of B > 0]You can feel it making you a bit stronger!  [end if]";
 	otherwise if the number of worn bibs is 0:
@@ -657,7 +657,7 @@ To compute unfriendly drink of (M - matron):
 To compute friendly drink of (M - matron):
 	if the cringe appearance of the player < 8 and M is not motherly: [motherly should be replaced by diaper-disciplining if that is what will be used for matron]
 		say "[speech style of M]'Sorry, I only have a special sippy cup designed for big babies. You'll have to find someone else to help you.'[roman type][line break]";
-	otherwise: [Should these scenes use forcefeed or have their own dialog?]
+	otherwise: [Should these scenes use forcefeed or have their own dialogue?]
 		say "[speech style of M]'Aww, is Mommy's little [if the size of penis > 4]boy[otherwise]girl[end if] thirsty? Let me get you your sippy cup...'[roman type][line break][BigNameDesc of M] grabs a pink toddler sippy cup and hands it to you.";
 		if the delicateness of the player < 7 and the thirst of the player < 4:
 			say "However, you are not nearly thirsty enough to drink out of something like this. Instead, you throw the cup on the ground, where it tumbles harmlessly.";

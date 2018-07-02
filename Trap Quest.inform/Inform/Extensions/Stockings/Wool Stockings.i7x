@@ -1,8 +1,8 @@
 Wool Stockings by Stockings begins here.
 
-A woven stockings is a kind of stockings. There is 1 unique woven stockings. A woven stockings is usually wool. A woven stockings is usually dense. The text-shortcut of woven stockings is "wst".
+A woven stockings is a kind of stockings. There is 1 unique woven stockings. A woven stockings is usually wool. A woven stockings is usually dense. The text-shortcut of woven stockings is "wlst".
 
-Figure of wool stockings is the file "Items\Clothes\Lower\Legs\woolstockings1.png".
+Figure of wool stockings is the file "Items/Clothes/Lower/Legs/woolstockings1.png".
 
 To decide which figure-name is clothing-image of (C - a woven stockings):
 	decide on figure of wool stockings.
@@ -19,6 +19,9 @@ To decide which number is the initial outrage of (C - a woven stockings):
 
 To decide which number is the initial cringe of (C - a woven stockings):
 	decide on 7.
+
+Definition: a woven stockings (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
 Definition: a woven stockings (called C) is sissifying:
 	decide yes.

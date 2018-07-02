@@ -1,6 +1,6 @@
 Kitty Claws by Equippables begins here.
 
-A kitty claws is a kind of gloves. A kitty claws is usually unique. A kitty claws is usually wool. There is 1 kitty claws. The printed name of kitty claws is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of kitty claws[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "Items\Accessories\Equippables\kittyclaws1.png". Figure of kitty claws 2 is the file "Items\Accessories\Equippables\kittyclaws2.png". Understand "paws" as kitty claws.
+A kitty claws is a kind of gloves. A kitty claws is usually unique. A kitty claws is usually wool. There is 1 kitty claws. The printed name of kitty claws is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of kitty claws[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "Items/Accessories/Equippables/kittyclaws1.png". Figure of kitty claws 2 is the file "Items/Accessories/Equippables/kittyclaws2.png". Understand "paws" as kitty claws.
 
 To decide which figure-name is clothing-image of (C - a kitty claws):
 	if C is cursed, decide on figure of kitty claws 1;

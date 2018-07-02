@@ -1,7 +1,7 @@
 Cat Ears by Headgear begins here.
 
 
-A cat ears is a kind of headgear. A cat ears is usually manly. There is 1 cat ears. Figure of cat ears is the file "Items\Accessories\Head\catears1.png". Understand "pair", "of" as cat ears. A cat ears is blondeness-negative. A cat ears is brightness-positive. A cat ears is redness-negative. A cat ears is usually hair growing. A cat ears is usually dexterity-influencing. A cat ears is usually roleplay.
+A cat ears is a kind of headgear. A cat ears is usually manly. There is 1 cat ears. Figure of cat ears is the file "Items/Accessories/Head/catears1.png". Understand "pair", "of" as cat ears. A cat ears is blondeness-negative. A cat ears is brightness-positive. A cat ears is redness-negative. A cat ears is usually hair growing. A cat ears is usually dexterity-influencing. A cat ears is usually roleplay.
 
 kitty-summoned is a number that varies.
 

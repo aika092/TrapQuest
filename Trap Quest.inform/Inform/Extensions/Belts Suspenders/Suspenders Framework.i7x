@@ -56,8 +56,13 @@ Report wearing suspenders:
 
 To decide which number is the knee-modifier of (C - a suspenders):
 	let S be a random worn stockings;
-	if S is stockings, decide on the knee-modifier of S;
-	decide on 0.
+	let N be 0;
+	if S is stockings:
+		now N is the knee-modifier of S;
+		if N > 3, now N is 2;
+		if C is blessed, increase N by 1;
+		if C is cursed, decrease N by 1;
+	decide on N.
 
 To decide which object is the coverer of (C - a suspenders):
 	repeat with R running through worn knee-length or longer clothing:

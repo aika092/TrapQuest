@@ -15,6 +15,7 @@ Check entering furniture:
 	if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 	if the player is urine averse and the urine-puddle of the location of the player > 0 and the noun is not royal bed, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type]" instead;
 	if the noun is soggy hotel bed, say "[variable custom style]I'm not getting in those sheets again, they're soaked![roman type][line break]" instead;
+	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
 	if the noun is hammock:
 		if there are revealed aggressive vines in the location of the player and the player is prone, say "You can't kneel on the hammock like that while these threatening vines are nearby!  Try standing first?" instead;
 		say "Rest on the hammock until you feel completely better? [yesnolink] ";
@@ -24,8 +25,18 @@ Check entering furniture:
 		say "Kneel on the bench [if the fatigue of the player is 0 and the body soreness of the player is 0 and the milk volume of breasts > 0]to get your udders milked[otherwise]until you feel completely better[end if]?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][line break][end if][yesnolink] ";
 		unless the player consents, say "You change your mind." instead;
 	if the noun is kneeling stool:
-		if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
 		say "Kneel on the stool until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] [yesnolink] ";
+		unless the player consents, say "You change your mind." instead;
+	if the noun is dildo rocking stool:
+		let F be asshole;
+		if the player is female, now F is vagina;
+		if the girth of the noun - the openness of F >= the sex addiction of the player / 2:
+			if debugmode is 1, say "If debugmode was disabled, the player would refuse.";
+			otherwise say "[variable custom style]There's no way I'm going to try and put that thing inside of me![roman type][line break]" instead;
+		if the player is female and the player is pussy protected, say "You'd need to get your [ShortDesc of random top level protection clothing] out of the way first." instead;
+		if the player is male and the player is ass protected, say "You'd need to get your [ShortDesc of random top level ass protection clothing] out of the way first." instead;
+		if F is actually occupied, say "You'd need to get the [ShortDesc of random thing filling F] out of your [variable F] first." instead;
+		say "Lower your [variable F] onto the large dildo and kneel on the stool until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] [yesnolink] ";
 		unless the player consents, say "You change your mind." instead;
 	if the noun is royal bed:
 		if the body soreness of the player is 0 and the fatigue of the player is 0, say "You are uninjured, so this would do nothing." instead;
@@ -214,7 +225,7 @@ Called whenever the player stops resting, regardless of the reason why. Does not
 
 +!]
 To compute rest ending of (F - a furniture):
-	do nothing.
+	dislodge F.
 
 Furniture Framework ends here.
 

@@ -1,6 +1,6 @@
 Sex Doll by Monster begins here.
 
-A sex doll is a kind of monster. A sex doll is male. The leftover-type of a sex doll is usually 103. The poison-status of a sex doll is -1.
+A sex doll is a kind of monster. A sex doll is male. A sex doll is neuter. The leftover-type of a sex doll is usually 103. The poison-status of a sex doll is -1.
 
 Definition: a sex doll (called M) is willing to do titfucks:
 	decide no. 
@@ -84,9 +84,9 @@ To say MonsterDesc of (M - a sex doll):
 	if M is creamfilled-sex-doll:
 		say "An inflatable male sex doll with a greasy moustache and [if M is creepy sex doll]black[otherwise if M is expressionless sex doll]yellow[otherwise if M is animated sex doll]gray[otherwise if M is zombielike sex doll]red[end if] 'hair' that couldn't look more fake if it were drawn on in permanent marker. At its crotch is a plastic dildo and loose rubber nutsack.";
 	otherwise if inflation fetish is 1:
-		say "An inflatable female sex doll with spherical breasts and tiny pink nipples. 'She' has [if M is wandering sex doll]black[otherwise if M is mindless sex doll]yellow[otherwise if M is puppetlike sex doll]gray[otherwise if M is uncanny sex doll]red[end if] hair and scarlet lips. At its crotch is a pink dildo [if trap fetish is 0]and a pair of flesh-coloured ping-pong balls[otherwise]and a black strip of plastic, probably meant to represent a strap-on[end if]. There are small suction cups on her palms.";
+		say "An inflatable female sex doll with spherical breasts and tiny pink nipples. 'She' has [if M is wandering sex doll]black[otherwise if M is mindless sex doll]yellow[otherwise if M is puppetlike sex doll]gray[otherwise if M is uncanny sex doll]red[end if] hair and scarlet lips. At its crotch is a pink dildo [if futanari fetish is 1]and a pair of flesh-coloured ping-pong balls[otherwise]and a black strip of plastic, probably meant to represent a strap-on[end if]. There are small suction cups on her palms.";
 	otherwise:
-		say "An inflatable female sex doll with conical breasts and small suction cups on 'her' palms. She has [if M is wandering sex doll]black[otherwise if M is mindless sex doll]yellow[otherwise if M is puppetlike sex doll]gray[otherwise if M is uncanny sex doll]red[end if] hair and scarlet lips. At her crotch is a black strip of plastic set with a pink dildo[if trap fetish is 0] and a pair of flesh-coloured ping-pong balls, which appear[otherwise], which appears[end if] to be filled with some sort of dark liquid.";
+		say "An inflatable female sex doll with conical breasts and small suction cups on 'her' palms. She has [if M is wandering sex doll]black[otherwise if M is mindless sex doll]yellow[otherwise if M is puppetlike sex doll]gray[otherwise if M is uncanny sex doll]red[end if] hair and scarlet lips. At her crotch is a black strip of plastic set with a pink dildo[if futanari fetish is 1] and a pair of flesh-coloured ping-pong balls, which appear[otherwise], which appears[end if] to be filled with some sort of dark liquid.";
 	if M is not liquidfilled:
 		say "[if the bimbo of the player > 11][line break][variable custom style][one of]Hee hee, look at her boobies![or]I bet she's squeaky![or]She doesn't look tough. I should be gentle when I'm getting on my knees.[in random order][otherwise if the bimbo of the player > 7][variable custom style][one of]It doesn't look strong, but I don't want to give the wrong idea by touching it.[or]Not many men would use a sex doll with a dildo on it. That thing is probably here for me.[in random order][otherwise if the player is female][line break][first custom style][one of]That's the last thing I need to deal with, a moving balloon animal.[or]So creepy. I'm popping it.[or]If that thing comes anywhere near me, I'm popping it.[or]A sex doll? I think I'm going to throw up.[in random order][otherwise][first custom style][one of]Whoa, I knew this place had cool stuff! [or]Heh, don't mind if I- wait, is that a dildo?[or]Just like the blow-up doll I have at home. Minus the dildo.[or]The doll doesn't look like it has anything in it. Probably a blow-up doll.[or]Heh, maybe I should take that dildo. Chicks love toys.[in random order][end if][roman type][line break]";
 	otherwise:
@@ -193,18 +193,11 @@ To compute the flying player taunting of (M - a sex doll):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".
 
-To compute anal sex of (M - a sex doll):
-	compute fuckhole sex of M.
+To compute sexDumb of (M - a sex doll) in (F - a fuckhole):
+	say "The sex doll is fucking your [if M is penetrating asshole][asshole][otherwise][vagina][end if][one of] slowly but steadily[or] silently[or], seemingly unable to hear your screams[or] as if controlled by invisible puppet strings[or] in a very strict rhythm[or], with machine like precision and timing[or], with no signs of emotion or conscious thought[or] [if the bimbo of the player < 14]as if you were some kind of object[otherwise]like the fucktoy that you are[end if][at random]!  [if the bimbo of the player < 11][line break][first custom style]Shit...[otherwise][line break][second custom style]Aaah!!![end if][roman type][line break]".
 
-To compute vaginal sex of (M - a sex doll):
-	compute fuckhole sex of M.
-
-To compute fuckhole sex of (M - a sex doll):
-	say "The sex doll is fucking your [if M is penetrating asshole][asshole][otherwise][vagina][end if][one of] slowly but steadily[or] silently[or], seemingly unable to hear your screams[or] as if controlled by invisible puppet strings[or] in a very strict rhythm[or], with machine like precision and timing[or], with no signs of emotion or conscious thought[or] [if the bimbo of the player < 14]as if you were some kind of object[otherwise]like the fucktoy that you are[end if][at random]!  [if the bimbo of the player < 11][line break][first custom style]Shit...[otherwise][line break][second custom style]Aaah!!![end if][roman type][line break]";
-	decrease the sex-length of M by 1;
-	if the reaction of the player > 0, say "[one of]You feel further humiliated by the fact that you are letting the doll fuck you.[or][or][or][cycling]";
-	if M is penetrating asshole, ruin asshole;
-	otherwise ruin vagina.
+To (M - a sex doll) sex reaction:
+	if the reaction of the player > 0, say "You feel further humiliated by the fact that you are letting a mere doll fuck you.".
 
 To compute unique climax of (M - a sex doll) in (F - asshole):
 	TimesFuckedUp M by 1;
@@ -280,7 +273,7 @@ To compute (M - a sex doll) entering mouth:
 		if M is not creamfilled-sex-doll:
 			say "[BigNameDesc of M] walks round to your face and waits there for a few seconds, motionless. It looked like it was about to mess with you, but something seemed to change its mind.";
 		otherwise if bukkake fetish is 1:
-			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen!  Could change I guess if there's opengags put into the game]
+			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen!  Could change I guess if there's open gags put into the game]
 			say "[BigNameDesc of M] moves round to your face, air hissing quietly as its rubber sack slowly expands. A beat after the noise stops, the doll suddenly begins blasting your face with a torrent of pure white ejaculate! You're completely plastered by the time it deflates.";
 			CumFaceUp 8;
 		otherwise:

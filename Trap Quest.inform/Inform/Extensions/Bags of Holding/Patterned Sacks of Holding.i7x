@@ -9,7 +9,7 @@ Part 1 - Cock Patterned Sack of Holding
 
 A cock patterned sack of holding is a kind of patterned sack of holding. There is 1 cock patterned sack of holding. The printed name of cock patterned sack of holding is usually "[TQlink of item described][clothing-title-before]cock patterned bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of cock patterned sack of holding is the file "Items\Accessories\Bags\bag2.png".
+Figure of cock patterned sack of holding is the file "Items/Accessories/Bags/bag2.png".
 
 To decide which figure-name is clothing-image of (C - a cock patterned sack of holding):
 	decide on figure of cock patterned sack of holding.
@@ -28,7 +28,7 @@ Part 2 - Boob Patterned Sack of Holding
 
 A boob patterned sack of holding is a kind of patterned sack of holding. There is 1 boob patterned sack of holding. The printed name of boob patterned sack of holding is usually "[TQlink of item described][clothing-title-before]boob patterned bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of boob patterned sack of holding is the file "Items\Accessories\Bags\bag3.png".
+Figure of boob patterned sack of holding is the file "Items/Accessories/Bags/bag3.png".
 
 To decide which figure-name is clothing-image of (C - a boob patterned sack of holding):
 	decide on figure of boob patterned sack of holding.
@@ -47,7 +47,7 @@ Part 3 - Dirty Little Whore Sack of Holding
 
 A dirty little whore sack of holding is a kind of patterned sack of holding. There is 1 dirty little whore sack of holding. The printed name of dirty little whore sack of holding is usually "[TQlink of item described][clothing-title-before]dirty little whore bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of dirty little whore sack of holding is the file "Items\Accessories\Bags\bag4.png".
+Figure of dirty little whore sack of holding is the file "Items/Accessories/Bags/bag4.png".
 
 To decide which figure-name is clothing-image of (C - a dirty little whore sack of holding):
 	decide on figure of dirty little whore sack of holding.

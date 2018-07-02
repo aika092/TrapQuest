@@ -29,7 +29,7 @@ Figure of Woman 4 is the file "NPCs/MultiFloor/Woman/woman4.png".
 Figure of Woman 5 is the file "NPCs/MultiFloor/Woman/woman5.png". 
 Figure of Woman 6 is the file "NPCs/MultiFloor/Woman/woman6.png".
 
-Understand "mysterious" as woman-barbara. 
+Understand "mysterious", "woman" as woman-barbara. 
 The text-shortcut of woman is "wo".
 
 To say MediumDesc of (M - woman-barbara):
@@ -60,7 +60,8 @@ To say MonsterDesc of (M - woman-barbara):
 	if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a black lace bra that almost looks too small, since it covers very little. [big he of M] is also wearing a skimpy pink thong. You can tell by [his of M] facial expressions that she's having more trouble than usual thinking straight.";
 	if the woman-bimbo of M is 5, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a tiny sheer black crop top that really doesn't prevent you seeing anything. [big he of M] is also wearing an almost invisible silver g-string. You can tell by [his of M] facial expressions that she's having huge amounts of trouble thinking straight.";
 	if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all. [big his of M] facial expression is one of empty-headed bliss.";
-	if M is tentacle-pregnant, say "[big his of M] massive bulging belly is a clear sign that [he of M][']s pregnant, and probably with something inhuman.".
+	if M is tentacle-pregnant, say "[big his of M] massive bulging belly is a clear sign that [he of M][']s pregnant, and probably with something inhuman.";
+	if the human-toilet-scene of M is 1, say "[big he of M] is wearing oversized nipple rings and has the words 'TOILET SLUT' and 'URINAL GIRL' permanently written onto [his of M] flesh.".
 
 To set up (M - woman-barbara):
 	now the monstersetup of M is 1;
@@ -80,7 +81,7 @@ Definition: woman-barbara (called M) is babifying the player:
 	decide no.
 
 To WomanSluttify:
-	if woman-barbara is introduced and the woman-bimbo of woman-barbara < 6 and the woman-old-bimbo of woman-barbara is the woman-bimbo of woman-barbara:
+	if woman-barbara is introduced and the woman-bimbo of woman-barbara < 6:
 		increase the woman-bimbo of woman-barbara by 1;
 		decrease the difficulty of woman-barbara by 2;
 		update name of woman-barbara.
@@ -112,7 +113,11 @@ To update name of (M - woman-barbara):
 To vanish (M - a monster):
 	if M is woman and M is introduced:
 		remove M from play;
-	if the woman-status of M is 90 and the vine-scene of M is 5 and pregnancy fetish is 1 and inhuman pregnancy > 1, now M is tentacle-pregnant.
+	if the woman-status of M is 90 and the vine-scene of M is 5:
+		FavourDown M;
+		WomanSluttify;
+		if pregnancy fetish is 1 and inhuman pregnancy > 1:
+			now M is tentacle-pregnant.
 
 This is the spawn initial barbara rule:
 	if diaper quest is 0, summon woman-barbara in the woods.
@@ -156,6 +161,11 @@ To compute motion of (M - woman-barbara):
 		otherwise if A is a random N-viable direction and P is not Dungeon12:
 			try M going A.
 
+To compute (M - woman-barbara) seeking (D - a direction):
+	if the woman-status of M < 90: [90 or above means she's spawned to get fucked, so she should stay still]
+		try M going D;
+		compute motion reactions of M.
+
 Part 3 - Compute Woman Spawning
 
 [
@@ -172,12 +182,15 @@ STATES:
 91: Appeared by being fucked by mechanic in the hotel
 92: Appeared to try the deepthroat discount challenge with the shopkeeper
 94: Interacting with a hypno trap
+95: Released from the toilet
 99: Dead
 ]
 
 To deploy (M - woman-barbara) with woman-status (V - a number):
 	now the woman-status of M is V;
-	if M is off-stage and M is introduced and M is not permanently dead:
+	now the sleep of M is 0;
+	now the boredom of M is 0;
+	if M is off-stage and M is introduced and M is not permanently dead and (the player is in the dungeon or the player is in the woods or the player is in the hotel): [stops barbara spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
 		now the health of M is the maxhealth of M;
 		if V is 0 or V is 1 or V is 4:
 			regionally place M;
@@ -271,29 +284,38 @@ Report going when there is an aggressive vine in the location of the player and 
 		say "As you arrive here you see that [NameDesc of woman-barbara] is here, on [his of woman-barbara] hands and knees, with strong green vines wrapped around [his of woman-barbara] wrists and ankles, holding them in place.".
 
 A time based rule (this is the barbara vines rule):
-	if the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 4 and woman-barbara is in the location of the player:
-		let W be woman-barbara;
-		increase the vine-scene of W by 1;
-		if the vine-scene of W is 1:
-			say "[second custom style]'[NameBimbo], thank goodness you're here! Quick, help me please, it's going to - unf!!!'[roman type][line break][BigNameDesc of W] is cut off as a thick green vine pushes its way into [his of W] cunt. It looks like you could [bold type]pull[roman type] on the vines to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
-		otherwise if the vine-scene of W is 2:
-			say "[second custom style]'Come on [NameBimbo], what's the hold-up?! Aaaahn~'[roman type][line break]A second green vine finds room in [NameDesc of W][']s pussy next to the first, stretching it wide.";
-		otherwise if the vine-scene of W is 3:
-			say "[second custom style]'Okay okay let's make a deal, if you help me I'll give you a fshashahahahahaaaaaah...'[roman type][line break]A third thick vine somehow pushes in beside the first two, the intense sensation caused by their combined girth clearly making it difficult for [NameDesc of W] to speak.";
-		otherwise if the vine-scene of W is 4:
-			say "[second custom style]'Please help me please help me please help me I'll give you all I haaaaa~'[roman type][line break]A fourth vine makes its way into the already fully stuffed cavern that is [NameDesc of W][']s cunt. It is now gaped wider than should be physically possible, in the real world. All fourth vines piston in and out with unforgiving strength and speed.";
-		otherwise if the vine-scene of W is 5:
-			say "[second custom style]'Gzzt... cumming... Gah!'[roman type][line break][NameDesc of W] climaxes at the same time as the vines, her belly exploding outwards as her womb is inflated full of tentacle seed.[line break][second custom style]'You fucking bitch...'[roman type][line break][big he of W] murmurs before passing out.";
-			if living belt of sturdiness is off-stage:
-				now living belt of sturdiness is in the location of the player;
-				now living belt of sturdiness is blessed;
-				now living belt of sturdiness is sure;
-				say "A vine, seemingly gleeful at your collaboration, snakes up out of the soil completely before coiling around itself into a circle and turning a metallic silver. There is now a [living belt of sturdiness] on the ground in front of you!";
-				compute autotaking living belt of sturdiness;
-			repeat with V running through vines in the location of the player:
-				now the TrapNo of V is -750;
-				now V is unrevealed;
-			now the sleep of W is 500;
+	if the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 4:
+		if there are vines in the location of woman-barbara:
+			let W be woman-barbara;
+			increase the vine-scene of W by 1;
+			if the vine-scene of W is 1:
+				 if W is in the location of the player, say "[second custom style]'[NameBimbo], thank goodness you're here! Quick, help me please, it's going to - unf!!!'[roman type][line break][BigNameDesc of W] is cut off as a thick green vine pushes its way into [his of W] cunt. It looks like you could [bold type]pull[roman type] on the vines to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
+			otherwise if the vine-scene of W is 2:
+				if W is in the location of the player, say "[second custom style]'Come on [NameBimbo], what's the hold-up?! Aaaahn~'[roman type][line break]A second green vine finds room in [NameDesc of W][']s pussy next to the first, stretching it wide.";
+			otherwise if the vine-scene of W is 3:
+				if W is in the location of the player, say "[second custom style]'Okay okay let's make a deal, if you help me I'll give you a fshashahahahahaaaaaah...'[roman type][line break]A third thick vine somehow pushes in beside the first two, the intense sensation caused by their combined girth clearly making it difficult for [NameDesc of W] to speak.";
+			otherwise if the vine-scene of W is 4:
+				if W is in the location of the player, say "[second custom style]'Please help me please help me please help me I'll give you all I haaaaa~'[roman type][line break]A fourth vine makes its way into the already fully stuffed cavern that is [NameDesc of W][']s cunt. It is now gaped wider than should be physically possible, in the real world. All fourth vines piston in and out with unforgiving strength and speed.";
+			otherwise if the vine-scene of W is 5:
+				if W is in the location of the player:
+					say "[second custom style]'Gzzt... cumming... Gah!'[roman type][line break][NameDesc of W] climaxes at the same time as the vines, her belly exploding outwards as her womb is inflated full of tentacle seed.[line break][second custom style]'You fucking bitch...'[roman type][line break][big he of W] murmurs before passing out.";
+					if living belt of sturdiness is off-stage:
+						now living belt of sturdiness is in the location of the player;
+						now living belt of sturdiness is blessed;
+						now living belt of sturdiness is sure;
+						say "A vine, seemingly gleeful at your collaboration, snakes up out of the soil completely before coiling around itself into a circle and turning a metallic silver. There is now a [living belt of sturdiness] on the ground in front of you!";
+						compute autotaking living belt of sturdiness;
+					repeat with V running through vines in the location of the player:
+						now the TrapNo of V is -750;
+						now V is unrevealed;
+					now the sleep of W is 500;
+				otherwise:
+					decrease the vine-scene of W by 1; [We stall at this point until the player returns]
+		otherwise: [Barbara has somehow moved on. But the scene still happened! So let's make sure that's taken into account with these numbers.]
+			now the vine-scene of woman-barbara is 5;
+			repeat with V running through alive vines:
+				if the TrapNo of V < -750, now the TrapNo of V is -750;
+				now V is unrevealed.
 
 To WomanVinePull:
 	let W be woman-barbara;
@@ -340,7 +362,7 @@ This is the mechanic facefucks barbara rule:
 		if the mechanic-scene of W is 1:
 			say "[BigNameDesc of mechanic] gives you a brief look.[line break][speech style of mechanic]'Don't interrupt me and I'll make it worth your while.'[roman type][line break][big he of mechanic] holds a golden ring in the air, and then turns his attention back to the face [he of mechanic] has turned into a temporary cocksleeve. It looks like you could attack the mechanic to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
 		otherwise if the mechanic-scene of W is 2:
-			say "[BigNameDesc of mechanic] chuckles.[line break][speech style of mechanic]'Yes that's right, you dumb slut. Nobody's coming to save you. And all it took was a tiny bribe for your little [']friend['] over there to pussy out.'[roman type][line break][big he of mechanic] picks up the speed, causing [NameDesc of W] to make gagging sounds as [he of W] thrusts.";
+			say "[BigNameDesc of mechanic] chuckles.[line break][speech style of mechanic]'Yes that's right, you dumb slut. Nobody's coming to save you. And all it took was a tiny bribe for your little [']friend['] over there to [pussy] out.'[roman type][line break][big he of mechanic] picks up the speed, causing [NameDesc of W] to make gagging sounds as [he of W] thrusts.";
 		otherwise if the mechanic-scene of W is 3:
 			say "[BigNameDesc of mechanic] grunts.[line break][speech style of mechanic]'Fuck, this bitch's throat is tight!'[roman type][line break]";
 		otherwise if the mechanic-scene of W is 4:
@@ -369,7 +391,7 @@ This is the woman spawning to get shopkeeper discount rule:
 The woman spawning to get shopkeeper discount rule is listed last in the womanspawning rules.
 
 Report going when shopkeeper is in the location of the player and woman-barbara is in the location of the player and the woman-bimbo of woman-barbara <= 2 and the shopkeeper-scene of woman-barbara is 0 and woman-barbara is not interested and shopkeeper is not interested:
-	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-barbara] is on [his of woman-barbara] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-barbara] mouth. [big he of woman-barbara] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-barbara] throat. Lewd gagging noises fill the room as the distension in [his of woman-barbara] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn girl, you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-barbara][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past her jaw. Noises of weak resistance emnate from [NameDesc of woman-barbara][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-barbara] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-barbara] and [he of woman-barbara] falls back choking, spewing up lumps of thick [semen].[line break][second custom style]'Did I win?'[roman type][line break]Is all [he of woman-barbara] manages to say before [he of woman-barbara] collpses backward onto the ground.[line break][first custom style]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-barbara] has already passed out cold.";
+	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-barbara] is on [his of woman-barbara] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-barbara] mouth. [big he of woman-barbara] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-barbara] throat. Lewd gagging noises fill the room as the distension in [his of woman-barbara] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn girl, you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-barbara][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past her jaw. Noises of weak resistance emanate from [NameDesc of woman-barbara][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-barbara] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-barbara] and [he of woman-barbara] falls back choking, spewing up lumps of thick [semen].[line break][second custom style]'Did I win?'[roman type][line break]Is all [he of woman-barbara] manages to say before [he of woman-barbara] collapses backward onto the ground.[line break][first custom style]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-barbara] has already passed out cold.";
 	now the sleep of woman-barbara is 200;
 	increase the delayed sluttification of woman-barbara by 1;
 	now the woman-status of woman-barbara is 92;
@@ -389,7 +411,7 @@ A time based rule (this is the barbara hypno hotel rule):
 				now Y is not untriggered;
 				now the reset-timer of Y is 250;
 				now the woman-status of woman-barbara is 94;
-				say "[bold type]You spot [NameDesc of woman-barbara] nearby![roman type] [big he of woman-barbara] appears to be standing there, oblivious to your presence, transfixed by a screen. On the screen is [hypno content of Y]. You suppose that you could go and attempt to rescue her, but you might get stuck looking at the screen yourself...";
+				say "[bold type]You spot [NameDesc of woman-barbara] nearby![roman type] [big he of woman-barbara] appears to be standing there, oblivious to your presence, transfixed by a screen. On the screen is [hypno content of Y]. You suppose you could go and attempt to rescue her, but you might get stuck looking at the screen yourself...";
 				now the hypno-scene of woman-barbara is 1;
 				increase the delayed sluttification of woman-barbara by 2.
 
@@ -401,6 +423,46 @@ To compute barbara hypno shared progression:
 To compute barbara hypno solo progression:
 	say "[BigNameDesc of woman-barbara] drools a bit as she watches the screen.";
 	increase the delayed sluttification of woman-barbara by 1.
+
+Chapter - Human Toilet Scene
+
+woman-barbara has a number called human-toilet-scene.
+
+To check barbara toilet:
+	if the human-toilet-scene of woman-barbara > 1:
+		say "You feel more dominant!";
+		DelicateDown 1;
+	otherwise if the human-toilet-scene of woman-barbara is 0 and woman-barbara is not permanently dead and the player is in Hotel38 and woman-barbara is not nearby and woman-barbara is not in the location of the player and the woman-bimbo of woman-barbara >= 5 and the woman-status of woman-barbara < 10:
+		let barbara-toilet-choice be 0;
+		now the human-toilet-scene of woman-barbara is 1;
+		say "A groaning, gurgling noise from below you makes you notice that the woman below you looks different from usual.";
+		if image cutscenes is 1, display figure of barbara cutscene 4;
+		say "[big he of woman-barbara][']s completely naked and has 'URINAL GIRL' and 'TOILET SLUT' written on [his of woman-barbara] skin in permanent ink. [big he of woman-barbara] has oversized nipple piercings and a collar symbolizing [his of woman-barbara] slave status and buzzing vibrators in both of [his of woman-barbara] lower holes. The most notable thing, however, is [his of woman-barbara] giant bulging belly, presumably from all the pee [he of woman-barbara][']s had to drink recently.";
+		say "Looking [if the player is female]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-barbara]! [big he of woman-barbara] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-barbara]'Wease eh ee ow! Weeeease!'[roman type][line break]Do you look for a way to help her escape? [yesnolink]";
+		if the player consents:
+			now barbara-toilet-choice is 1;
+			if the player is not able to use manual dexterity:
+				say "Unfortunately without proper use of your hands and fingers you are unable to find any way to free [him of woman-barbara].";
+				now barbara-toilet-choice is 2;
+			otherwise if the intelligence of the player < a random number between 2 and 7:
+				say "Unfortunately, possibly due to your low smarts, you are unable to find any way to free [him of woman-barbara].";
+				now barbara-toilet-choice is 2;
+		if barbara-toilet-choice is 1:
+			say "Feeling around the base of the toilet, you find a latch! Moments later you have parted the front of the toilet bowl and [NameDesc of woman-barbara] is clambering out of [his of woman-barbara] prison. [big he of woman-barbara] rolls over onto [his of woman-barbara] side and prompty pukes up a gallon of [urine].[line break][speech style of woman-barbara]'Thank you so much for saving me...'[roman type][line break]That's all [he of woman-barbara] can manage before passing out.";
+			deploy woman-barbara with woman-status 95;
+			now woman-barbara is in the location of the player;
+			UrinePuddleUp 30;
+			now the sleep of woman-barbara is 300;
+			FavourUp woman-barbara;
+		otherwise:
+			say "[if the player is not a pervert]You mumble a weak excuse[otherwise if the player is a nympho]Cackling to yourself, you give one of [NameDesc of woman-barbara][']s nipple piercings a painful tug and slap [his of woman-barbara] distended belly[otherwise]You giggle quietly to yourself as you look at [his of woman-barbara] situation[end if] before wandering off. ";
+			if barbara-toilet-choice is 1:
+				say "You feel more dominant!";
+				DelicateDown 1;
+			now the human-toilet-scene of woman-barbara is 2;
+			now woman-barbara is permanently dead;
+			say "You hear a clock ticking, followed by a faint bell alarm. Then you hear a loud mechanical 'SHUNK' coming from the toilet. [BigNameDesc of woman-barbara] beings sobbing gently to [himself of woman-barbara]. You get the feeling that the lock on the toilet has been reinforced, and you've missed your only chance to ever free [him of woman-barbara]...".
+		
 
 
 Part 4 - Wandering
@@ -462,6 +524,7 @@ This is the woman gives birth to a tentacle monster rule:
 			now woman-barbara is not tentacle-pregnant;
 			distract woman-barbara;
 			now the sleep of woman-barbara is 100;
+			increase the delayed sluttification of woman-barbara by 1;
 			now M is interested;
 			anger M;
 			rule succeeds.
@@ -545,7 +608,7 @@ This is the barbara unique punishment rule:
 		now woman-barbara is retaining J;
 	otherwise:
 		say "[BigNameDesc of woman-barbara] spreads [his of woman-barbara] cheeks and moves [his of woman-barbara] crack towards your face.";
-		if face is not actually occupied, say "[line break][second custom style]'[if the woman-bimbo of woman-barbara < 5]Lick my asshole, cunt. Show me you admit defeat.'[otherwise]Wanna taste?'[end if][roman type][line break]Do you lick [NameDesc of woman-barbara][']s butthole? [yesnolink]";
+		if face is not actually occupied, say "[line break][second custom style]'[if the woman-bimbo of woman-barbara < 5]Lick my asshole, [cunt]. Show me you admit defeat.'[otherwise]Wanna taste?'[end if][roman type][line break]Do you lick [NameDesc of woman-barbara][']s butthole? [yesnolink]";
 		if face is not actually occupied and the player consents:
 			say "You [if the player is not a pervert]reluctantly[otherwise if the player is not a nympho]obediently[otherwise]happily[end if] tongue her loose hole, [if the player is not a pervert]wincing with shame[otherwise if the player is not a nympho]and start to get turned on[end if] when she sighs with pleasure. ";
 			if the raw delicateness of the player < the raw anal sex addiction of the player * 2:
@@ -738,7 +801,9 @@ To compute talk option (N - 1) to (M - woman-barbara):
 		if the woman-old-bimbo of M is not the woman-bimbo of M, say "[second custom style]'My name is [current-name of M] now, by the way.'[roman type][line break]"; 
 	otherwise if the woman-status of M is 90:
 		say "[second custom style]'Let's keep away from those vines, shall we?'[roman type][line break]";
-	otherwise if the woman-status of M is 91:
+	otherwise if the woman-status of M is 95:
+		say "[second custom style]'Thank you so much for saving me from that toilet prison. It was on a timer and if nobody saved me within the next few minutes, it would have locked permanently!'[roman type][line break]";
+	otherwise:
 		say "[second custom style]'I'm not sure I want to talk right now.'[roman type][line break]";
 	now the woman-old-bimbo of M is the woman-bimbo of M;
 	now the old-name of M is the current-name of M;

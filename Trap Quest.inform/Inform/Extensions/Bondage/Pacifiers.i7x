@@ -13,6 +13,9 @@ Definition: A cock pacifier (called P) is fetish appropriate:
 	if diaper quest is 1, decide no;
 	decide yes.
 
+Definition: a baby pacifier (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
+
 A cock pacifier is a kind of pacifier. There is 1 cock pacifier. The printed name of cock pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]cock pacifier[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cock pacifier is "cpc".
 A baby pacifier is a kind of pacifier.
 A pink pacifier is a kind of baby pacifier. There is 1 pink pacifier. The printed name of pink pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pink pacifier[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink pacifier is "ppa".
@@ -69,11 +72,11 @@ Carry out drinking cock pacifier:
 	say "You suck as hard as you can on your pacifier, triggering it to ejaculate [semen] down your throat.[line break][second custom style][if the semen taste addiction of the player > 8]Mm, that's actually pretty tasty...[otherwise][line break][first custom style]Eww. So slimy...[end if][roman type][line break]";
 	StomachSemenUp 1.
 
-Figure of cock pacifier is the file "Items\Accessories\Head\cockpacifier1.png".
-Figure of pink pacifier is the file "Items\Accessories\Head\pacifier1.png".
-Figure of tiger pacifier is the file "Items\Accessories\Head\pacifier2.png".
-Figure of white pacifier is the file "Items\Accessories\Head\pacifier3.png".
-Figure of sparkly princess pacifier is the file "Items\Accessories\Head\pacifier4.png".
+Figure of cock pacifier is the file "Items/Accessories/Head/cockpacifier1.png".
+Figure of pink pacifier is the file "Items/Accessories/Head/pacifier1.png".
+Figure of tiger pacifier is the file "Items/Accessories/Head/pacifier2.png".
+Figure of white pacifier is the file "Items/Accessories/Head/pacifier3.png".
+Figure of sparkly princess pacifier is the file "Items/Accessories/Head/pacifier4.png".
 
 To decide which figure-name is clothing-image of (C - a cock pacifier):
 	decide on figure of cock pacifier.

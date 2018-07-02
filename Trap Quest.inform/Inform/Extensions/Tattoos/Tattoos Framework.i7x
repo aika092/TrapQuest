@@ -159,6 +159,19 @@ To decide which object is the concealer of (T - a lower back tattoo):
 To decide which number is the initial outrage of (T - a lower back tattoo):
 	decide on 5.
 
+Section 6b - Upper Back Tattoos
+
+A upper back tattoo is a kind of tattoo.
+Definition: a upper back tattoo (called A) is drawable:
+	if there is a worn upper back tattoo, decide no;
+	decide yes.
+
+To decide which object is the concealer of (T - a upper back tattoo):
+	decide on a random worn actually dense breast covering clothing.
+
+To decide which number is the initial outrage of (T - a upper back tattoo):
+	decide on 4.
+
 
 Section 7 - Body Tattoos
 

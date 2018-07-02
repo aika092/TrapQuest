@@ -12,15 +12,23 @@ To compute SelfExamineDesc of (H - a scrunchie):
 
 This is the scrunchie must be the same colour rule:
 	if there is a worn blue scrunchie:
-		if wearing-target is pink scrunchie or wearing-target is rubber scrunchie:
+		if wearing-target is scrunchie and wearing-target is not blue scrunchie:
 			if summoning is 0, say "That's the wrong coloured scrunchie!";
 			rule fails;
 	if there is a worn pink scrunchie:
-		if wearing-target is blue scrunchie or wearing-target is rubber scrunchie:
+		if wearing-target is scrunchie and wearing-target is not pink scrunchie:
 			if summoning is 0, say "That's the wrong coloured scrunchie!";
 			rule fails;
+	if there is a worn monkey scrunchie:
+		if wearing-target is scrunchie and wearing-target is not monkey scrunchie:
+			if summoning is 0, say "That's the wrong coloured scrunchie!";
+			rule fails;
+	if there is a worn pair of helium balloons:
+		if wearing-target is scrunchie:
+			if summoning is 0, say "You are already wearing two hair ties!";
+			rule fails;
 	if there is a worn rubber scrunchie:
-		if wearing-target is pink scrunchie or wearing-target is blue scrunchie:
+		if wearing-target is scrunchie and wearing-target is not rubber scrunchie:
 			if summoning is 0, say "Your [printed name of random worn scrunchie] emits a sharp noise, as if preventing you from applying the new scrunchie.";
 			rule fails.
 The scrunchie must be the same colour rule is listed in the headgear wearability rules.
@@ -39,6 +47,7 @@ Does the player have a ponytail?
 
 +!]
 Definition: yourself is ponytailed:
+	if the player is pigtailed, decide no;
 	let S be the number of worn scrunchies;
 	if S is 1 and the largeness of hair > 4, decide yes;
 	decide no.
@@ -49,6 +58,7 @@ Does the player have pigtails?
 
 +!]
 Definition: yourself is pigtailed:
+	if there is a worn pair of helium balloons, decide yes;
 	let S be the number of worn scrunchies;
 	if S is 2 and the largeness of hair > 1, decide yes;
 	decide no.
@@ -72,7 +82,7 @@ Chapter 1 - Pink Scrunchie
 
 [Obtained from the mannequin]
 
-A pink scrunchie is a kind of scrunchie. There are 2 pink scrunchies. Figure of pink scrunchie is the file "Items\Accessories\Head\scrunchie1.png".
+A pink scrunchie is a kind of scrunchie. There are 2 pink scrunchies. Figure of pink scrunchie is the file "Items/Accessories/Head/scrunchie1.png".
 
 The printed name of a pink scrunchie is "[TQlink of item described][clothing-title-before]pink scrunchie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The printed plural name of a pink scrunchie is "[TQlink of item described][clothing-title-before]pink scrunchies[clothing-title-after][TQxlink of item described][verb-desc of item described]".
@@ -120,7 +130,7 @@ Chapter 2 - Blue Scrunchie
 
 [The first is obtained from dungeon apothecary, second is obtained from hotel library.]
 
-A blue scrunchie is a kind of scrunchie. 1 blue scrunchie is in Dungeon27. 1 blue scrunchie is in Hotel25. Figure of blue scrunchie is the file "Items\Accessories\Head\scrunchie2.png".
+A blue scrunchie is a kind of scrunchie. 1 blue scrunchie is in Dungeon27. 1 blue scrunchie is in Hotel25. Figure of blue scrunchie is the file "Items/Accessories/Head/scrunchie2.png".
 
 Definition: A blue scrunchie (called S) is immune to change:
 	decide yes.
@@ -141,7 +151,7 @@ Check wearing blue scrunchie:
 
 Report wearing blue scrunchie:
 	if diaper quest is 1:
-		if the player is ponytailed, say "Your hair magically changes colour and is now platinum blonde!";
+		if the player is pigtailed, say "Your hair magically changes colour and is now platinum blonde!";
 		otherwise say "Your hair magically changes colour and is now dark brown!".
 
 To decide which number is the intelligence-influence of (H - a blue scrunchie):
@@ -215,7 +225,7 @@ To decide which object is the potential-upgrade-target of (C - a blue scrunchie)
 
 Chapter 3 - Monkey Scrunchie
 
-A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies. Figure of monkey scrunchie is the file "Items\Accessories\Head\scrunchie3.png".
+A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies. Figure of monkey scrunchie is the file "Items/Accessories/Head/scrunchie3.png".
 
 To decide which figure-name is the clothing-image of (C - a monkey scrunchie):
 	decide on figure of monkey scrunchie.
@@ -256,12 +266,12 @@ The printed name of a rubber scrunchie is "[TQlink of item described][clothing-t
 
 Chapter 5 - Helium Balloons
 
-A pair of helium balloons is a kind of scrunchie.  A pair of helium balloons is usually latex.  Figure of helium balloons is the file "Items\Accessories\Head\scrunchie4.png". There is 1 pair of helium balloons.
+A pair of helium balloons is a kind of scrunchie.  A pair of helium balloons is usually latex.  Figure of helium balloons is the file "Items/Accessories/Head/scrunchie4.png". There is 1 pair of helium balloons.
 
 To decide which figure-name is the clothing-image of (C - a pair of helium balloons):
 	decide on figure of helium balloons.
 
-The printed name of a pair of helium baloons is "[TQlink of item described][clothing-title-before]pair of helium baloons[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of a pair of helium balloons is "[TQlink of item described][clothing-title-before]pair of helium balloons[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
 To decide which number is the initial outrage of (H - a pair of helium balloons):
 	decide on 11.
@@ -270,7 +280,7 @@ To say ShortDesc of (H - a pair of helium balloons):
 	say "pair of helium balloons".
 
 To say ClothingDesc of (H - a pair of helium balloons):
-	say "Two helium baloons rise from each of your pigtails, attached by a piece of string. One has '100% bimbo' written on it, and the other has 'I suck' written on it .".
+	say "Two helium balloons rise from each of your pigtails, attached by a piece of string. One has '100% bimbo' written on it, and the other has 'I suck' written on it .".
 
 Definition: a pair of helium balloons (called C) is untransformable:
 	decide yes.

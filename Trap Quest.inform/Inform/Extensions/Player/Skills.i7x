@@ -113,6 +113,8 @@ REQUIRES COMMENTING
 *@]
 The player has a number called fuckskill. The fuckskill of the player is usually 0.
 
+The player has a number called buttskill. The buttskill of the player is usually 0.
+
 Part 1 - Mercy
 
 [!<TeachBeggingForMercy>+
@@ -301,7 +303,7 @@ To teach identifying:
 			say "[bold type]**You have learned how to identify!**[line break]Every now and then when you find a cursed item in a container, you will immediately be able to tell that it is cursed. The higher your intelligence, the higher the chance.[roman type][line break]";
 			now the identifyskill of the player is 1;
 		otherwise:
-			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
+			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the incidents of enema-int-loss > 0]butt-clenching[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
 	otherwise:
 		say "[bold type]You have already heard and memorised these hints![roman type][line break]".
 
@@ -668,6 +670,25 @@ This is the milkskill learn rule:
 		now the milkskill of the player is 1.
 The milkskill learn rule is listed in the skill cheating rules.
 
+Part 16 - Butt Skill
+
+To teach buttskill:
+	if the buttskill of the player is 0:
+		if (there is a worn chastity cage or the anal sex addiction of the player > 3 or the player is barbie) and the humiliation of the player > HUMILIATION-MODEST:[maybe a donator gate here or something]
+			say "[bold type]**You have learned how to masturbate anally**[roman type]";
+			now the buttskill of the player is 1;
+		otherwise:
+			say "You [if the humiliation of the player > HUMILIATION-MODEST]can already masturbate the normal way, so you don't see the usefulness of this tip. Maybe you'd pay more attention if you had fewer options.[otherwise]have no intention of degrading yourself like that, so you ignore the advice![end if]".
+
+This is the buttskill list rule:
+	if the buttskill of the player is 1, say "You know how to masturbate anally".
+The buttskill list rule is listed in the skill listing rules.
+
+This is the buttskill learn rule:
+	if the player is a May 2018 top donator:
+		if the buttskill of the player is 0, say "You now know how to masturbate anally.";
+		now the buttskill of the player is 1.
+The buttskill learn rule is listed in the skill cheating rules.
 
 
 Skills ends here.

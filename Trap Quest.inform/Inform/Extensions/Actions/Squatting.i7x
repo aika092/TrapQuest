@@ -36,10 +36,10 @@ Check squatting:
 	if there is an enema-filling the player monster, say "You can't do that while the [random enema-filling the player monster] is still administering your enema!" instead;
 	if the humiliation of the player < public-squatting-limit:
 		if there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 17:
-			if the player is a march 2017 top donator and debugmode > 0, say "If debug mode was disabled, the player would refuse.";
+			if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 			otherwise say "[variable custom style]I can't bring myself to do that with people watching.[roman type][line break]" instead;
 		otherwise if the player is in HoleInWall or the player is in Blindfolded:
-			if the player is a march 2017 top donator and debugmode > 0, say "If debug mode was disabled, the player would refuse.";
+			if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 			otherwise say "[variable custom style]I can't bring myself to do that when I don't know who could be watching![roman type][line break]" instead;
 	if the player is ass protected:
 		let P be a random bottom level protection clothing worn by the player;

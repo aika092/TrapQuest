@@ -6,7 +6,7 @@ A potion is a kind of alchemy product. Understand "potions" as a potion.
 
 Section 1 Potion of Balance
 
-A potion of balance is a kind of potion. The printed name of potion of balance is "[TQlink of item described]potion of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of balance is "[TQlink of item described]potions of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of balance is "pb". The description of potion of balance is "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of balance. 
+A potion of balance is a kind of potion. The printed name of potion of balance is "[TQlink of item described]potion of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of balance is "[TQlink of item described]potions of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of balance is "pba". The description of potion of balance is "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of balance. 
 
 To decide which number is the alchemy key of (A - a potion of balance):
 	decide on 6.
@@ -101,7 +101,7 @@ Carry out quaffing potion of blessing:
 
 Section 4 Potion of Bull Strength
 
-A potion of bull strength is a kind of potion. The printed name of potion of bull strength is "[TQlink of item described]potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of bull strength is "[TQlink of item described]potions of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of bull strength is "pb". The description of potion of bull strength is "A round clear hip flask filled with a dose of murky white liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of bull strength. 
+A potion of bull strength is a kind of potion. The printed name of potion of bull strength is "[TQlink of item described]potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of bull strength is "[TQlink of item described]potions of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of bull strength is "pbu". The description of potion of bull strength is "A round clear hip flask filled with a dose of murky white liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of bull strength. 
 
 To decide which number is the alchemy key of (A - a potion of bull strength):
 	decide on 12.

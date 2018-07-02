@@ -19,13 +19,18 @@ current-clothing is a thing that varies.
 
 Definition: a thing (called C) is currently perceivable:
 	if C is carried, decide yes;
-	if C is currently visible, decide yes;
+	if C is currently at least partially visible, decide yes;
 	decide no.
 
 Definition: a thing (called C) is currently visible:
 	decide no.
 
-Definition: a wearthing (called C) is currently visible: [Is the item worn and currently visible to onlookers?]
+Definition: a wearthing (called C) is currently visible: [Is the item worn and currently completely visible to onlookers?]
+	if C is not worn, decide no;
+	if the at least partial concealer of C is clothing, decide no;
+	decide yes.
+
+Definition: a wearthing (called C) is currently at least partially visible: [Is the item worn and currently knowable to onlookers?]
 	if C is not worn, decide no;
 	if the concealer of C is clothing, decide no;
 	decide yes.
@@ -80,9 +85,18 @@ To decide which object is the concealer of (C - a clothing):
 					decide on O;
 	decide on nothing.
 
+To decide which object is the at least partial concealer of (C - a wearthing):
+	decide on the concealer of C. [For most items there's no difference.]
+
 To decide which object is the concealer of (K - a diaper):
 	repeat with C running through worn potentially asshole covering clothing:
-		if (C is knee-length or (C is short and the player is upright)) and C is crotch-in-place, decide on C; [only skirts can hide diapers, everything else it's still clear what you're wearing.]
+		if C is actually dense skirted clothing, decide on C; [only skirts can hide diapers, everything else it's still clear what you're wearing.]
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (K - a knickers): [soiled undergarments may be slightly visible but the onlooker can't tell that they're soiled]
+	repeat with C running through worn potentially at least partially asshole covering clothing:
+		if C is not K and the bottom-layer of C > the bottom-layer of K or C is skirted:
+			decide on C;
 	decide on nothing.
 
 To decide which object is the concealer of (S - a sex toy):

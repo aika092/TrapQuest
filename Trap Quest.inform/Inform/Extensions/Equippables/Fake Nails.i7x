@@ -2,7 +2,7 @@ Fake Nails by Equippables begins here.
 
 A fake nails is a kind of equippable. A fake nails is usually slap ready. The printed name of fake nails is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]set of fake nails[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of fake nails is "fn". There is 1 unique fake nails. Understand "set", "set of" as fake nails. Fake nails is usually plastic.
 
-Figure of fake nails is the file "Items\Accessories\Equippables\fakenails1.png".
+Figure of fake nails is the file "Items/Accessories/Equippables/fakenails1.png".
 
 To decide which figure-name is the clothing-image of (C - a fake nails):
 	decide on figure of fake nails.

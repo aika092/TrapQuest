@@ -22,6 +22,7 @@ The can't put what's not held rule is not listed in the check putting it on rule
 
 Check inserting something into:
 	if the second noun is orifice:
+		if the noun is lubricant, try orilubing the noun with the second noun instead;
 		if the noun is disembodied:
 			try plugging the second noun with the noun instead;
 		if the noun is clothing:
@@ -29,7 +30,8 @@ Check inserting something into:
 			if the noun is vagina plugging and the second noun is vagina, try wearing the noun instead;
 			if the noun is gag and the second noun is face, try wearing the noun instead;
 			if the noun is insertable, try plugging the second noun with the noun instead;
-		say "[variable custom style]I'm pretty sure I'm supposed to wear that, not stuff it inside of myself![if the bimbo of the player > 14]That does sound fun, though...[end if][roman type][line break]" instead;
+			say "[variable custom style]I'm pretty sure I'm supposed to wear that, not stuff it inside of myself![if the bimbo of the player > 14]That does sound fun, though...[end if][roman type][line break]" instead;
+		say "[variable custom style]I'm pretty sure I'm not supposed to stuff that inside of myself![if the bimbo of the player > 14]That does sound fun, though...[end if][roman type][line break]" instead;
 	if the second noun is hips:
 		try plugging asshole with the noun instead; [The game registers "ass" as hips, the player probably meant their asshole]
 	if the second noun is dungeon altar or the second noun is woods altar:

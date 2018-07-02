@@ -24,7 +24,25 @@ Part 1 - Gloves
 
 A gloves is a kind of equippable. A gloves is usually slap ready. Understand "pair", "pair of", "glove" as gloves.
 
-Part 2 - Wearability
+Part 2 - Wands
+
+A vibe-wand is a kind of equippable. A vibe-wand is usually slap ready. Understand "vibe", "vibrator", "wand", "vibrating" as vibe-wand. A vibe-wand is usually projectile. A vibe-wand is usually plastic.
+
+To compute climax effect of (E - a vibe-wand):
+	do nothing.
+
+To decide which number is the masturbation-bonus of (E - a vibe-wand):
+	let X be 1;
+	if E is cursed, now X is -1;[You could potentially want a cursed vibrator if you like to spend a lot of time masturbating]
+	if E is blessed, now X is 2;
+	increase X by the magic-modifier of E;
+	increase X by the raw-masturbation-bonus of E;
+	decide on X.
+
+To decide which number is the raw-masturbation-bonus of (E - a vibe-wand):
+	decide on 0.
+
+Part 3 - Wearability
 
 equippable wearability rules is a rulebook. The wearability rules of equippable is usually equippable wearability rules.
 

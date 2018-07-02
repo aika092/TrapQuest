@@ -277,6 +277,11 @@ To decide which number is the movement reduction of the player:
 [This is all the things that reduce movement capabilities when standing but do not inherently increase trip hazard.]
 	let X be 0;
 	let flav-said be 0;
+	if there is a worn ball-and-chain:
+		increase X by 6;
+		if movement-reduction-flav-said is 0:
+			say "Your [ShortDesc of a random worn ball-and-chain] is severely hindering your movement[one of], making it significantly easier for monsters to stop you from escaping[or][stopping]!";
+			now movement-reduction-flav-said is 1;
 	if the player is hobbling:
 		increase X by 4;
 		if movement-reduction-flav-said is 0:
@@ -321,12 +326,9 @@ To decide which number is the trip hazard of the player:
 [This is all the things that could make the player trip regardless of whether they are wearing heels (but including heels).]
 	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed, decide on 0;
 	let X be 0;
-	if there are worn heels:
-		repeat with C running through worn clothing:
-			increase X by the hindrance of C;
+	let H be a random worn hindrance-enabling shoes;
+	if H is shoes, increase X by the hindrance of H;
 	increase X by the slipperiness of the location of the player;
-	[if attack-type is 3, increase X by 3; [Kicks make tripping by monsters this turn easier]
-	if attack-type is 2, increase X by 1; [Knees make tripping by monsters this turn easier]]
 	let Q be the largeness of hair - 14;
 	if the player is ponytailed, decrease Q by 3;
 	if the player is pigtailed, decrease Q by 6;
@@ -448,168 +450,170 @@ Check going:
 		say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	if the player is flying, say "You're not even touching the ground!" instead;
 	let S be the strength of the player + 15;
-	let L be the room noun from the location of the player;
-	repeat with ST running through revealed sprinkle traps in L:
-		unless ST is expired:
-			say "There is a sprinkler currently dispensing [SprinkleLiquid of ST] in that room, are you sure you want to try and go that way? [yesnolink] ";
+	if seconds is 0:
+		let L be the room noun from the location of the player;
+		repeat with ST running through revealed sprinkle traps in L:
+			unless ST is expired:
+				say "There is a sprinkler currently dispensing [SprinkleLiquid of ST] in that room, are you sure you want to try and go that way? [yesnolink] ";
+				unless the player consents, say "You change your mind." instead;
+		repeat with ST running through revealed hypno traps in L:
+			unless ST is expired:
+				say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? [yesnolink] ";
+				unless the player consents, say "You change your mind." instead;
+		repeat with ST running through revealed haunted mirror traps in L:
+			unless ST is expired:
+				say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? [yesnolink] ";
+				unless the player consents, say "You change your mind." instead;
+		repeat with ST running through futanari slutty sisters in L:
+			unless the sleep of ST > 0 or ST is off-stage:
+				say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
+				unless the player consents, say "You change your mind." instead;
+		if robomatron is alive and robomatron is in L and the sleep of robomatron <= 0:
+			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
 			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through revealed hypno traps in L:
-		unless ST is expired:
-			say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? [yesnolink] ";
-			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through revealed haunted mirror traps in L:
-		unless ST is expired:
-			say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? [yesnolink] ";
-			unless the player consents, say "You change your mind." instead;
-	repeat with ST running through futanari slutty sisters in L:
-		unless the sleep of ST > 0 or ST is off-stage:
-			say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
-			unless the player consents, say "You change your mind." instead;
-	if robomatron is alive and robomatron is in L and the sleep of robomatron <= 0:
-		say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type]  [end if]Are you sure you want to try and go that way? [yesnolink] ";
-		unless the player consents, say "You change your mind." instead;
-	now seconds is 3; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
+	if seconds is 0, now seconds is 3; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, moving is not submissive!  Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
-	if the player is prone and the player is zeroG:
-		say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
-		silently try standing;
-	if the player is prone and a random number between -3 and 3 > the weight of the player:
-		say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
-		silently try standing;
-	if there is a worn tethering lipstick collar:
-		if a random number between (the strength of the player / 2) and the strength of the player < a random number between 8 and 13:
-			say "[TetherMove]";
-			now another-turn is 1 instead;
-	[All these checks only take place if the player is WALKING as opposed to crawling.]
-	if the player is upright:
-		[Firstly, monsters each get a chance to block the player, this is only likely to happen if the player has low dexterity or lots of movement reductions.]
-		repeat with M running through dangerous monsters in the location of the player:
-			if M is successfully blocking:
-				now seconds is 2;
-				say "[MovementBlock of M]" instead;
-		[Here we increase heel experience. NB even if the player falls over, they still gain heel experience.]
-		if there are worn heels:
-			let C be a random heels worn by the player;
-			[Posture training makes heel skill experience go up faster]
-			repeat with D running through posture training clothing worn by the player:
-				increase the heel time of the player by 1;
-				unless D is cursed, increase the heel time of the player by 2;
-			[Computing heel skill experience: Queen of Hearts heels prevent this experience gain]
-			unless C is queen of hearts heels:
-				let K be the heel-height of C - the raw heel skill of the player;
-				if C is platform heels, decrease K by 2;
-				if K < 1, now K is 1;
-				increase the heel time of the player by K;
-		[Now we check if the player trips over because of trip hazards in their current situation]
-		let X be the trip hazard of the player;
-		let D be a random number between 0 and 25; [NB dexterity is NOT used here, only when dealing with monsters and traps.]
-		if tutorial is 1:
-			now D is X + 1;
-			if the player is in Tutorial02, decrease X by 1;
-		if debugmode is 1, say "Walking attempt: Player ([D].5 | [X] Heels)[line break]";
-		if D is X and there are worn heels, say "You feel very unstable, and are barely managing to keep your balance on your [printed name of random worn heels]!"; [The player barely managed to succeed the roll.]
-		if D < X:
-			follow the trip reasons rules; [Here we explain to the player why they tripped]
-			if there is a worn heels, say "[if the heel skill of the player < 4][line break][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][line break][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating.. but in a fun way.[in random order][end if][roman type][line break]";
-			try kneeling;
-			if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
-			say "[bold type]You are still in the [location of the player].[roman type]" instead;
-		otherwise:
-			[Fat burning (exercise) only happens when the player does NOT trip over.]
-			increase the fat-burning of the player by 1;
+	if seconds is 3: [only in normal moves, not in double moves]
+		if the player is prone and the player is zeroG:
+			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
+			silently try standing;
+		if the player is prone and a random number between -3 and 3 > the weight of the player:
+			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
+			silently try standing;
+		if there is a worn tethering lipstick collar:
+			if a random number between (the strength of the player / 2) and the strength of the player < a random number between 8 and 13:
+				say "[TetherMove]";
+				now another-turn is 1 instead;
+		[All these checks only take place if the player is WALKING as opposed to crawling.]
+		if the player is upright:
+			[Firstly, monsters each get a chance to block the player, this is only likely to happen if the player has low dexterity or lots of movement reductions.]
+			repeat with M running through dangerous monsters in the location of the player:
+				if M is successfully blocking:
+					now seconds is 2;
+					say "[MovementBlock of M]" instead;
+			[Here we increase heel experience. NB even if the player falls over, they still gain heel experience.]
 			if there are worn heels:
-				let H be a random worn heels;
-				increase the fat-burning of the player by a random number from 0 to the hindrance of H;
-		if the player is crawling: [Stupidly huge diapers will always cause major issues, this is separate to tripping hazards so that we can very accurately control the chances of it occurring.]
-			let Di be a random diaper worn by the player;
-			let R be a random number between 1 and 10;
-			if the weight of Di is 6: [Very very big]
-				if R > 8: [20% chance]
-					say "Your baby-like waddling caused by your extremely bloated [printed name of Di] causes you to stumble, and you don't make it very far this turn. [bold type]You are still in the [location of the player][roman type].";
-					say "[variable custom style]Maybe I should crawl for now instead?[roman type][line break]" instead;
-				otherwise if R > 6: [25% chance (assuming we didn't fall over)]
-					if the humiliation of the player < HUMILIATION-MODEST - 1000, say "You waddle forward, cringing with humiliation about the size of your diaper and the babyish way you are walking.";
-			otherwise: [Cartoonishly big]
-				if R > 5: [50% chance]
-					say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps. You don't make it very far this turn. [bold type]You are still in the [location of the player][roman type]." instead;
-				otherwise: [100% chance (assuming we didn't fall over)]
-					say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps. It takes a lot of effort to make it to the door of the next room, but you manage it this time.";
-					say "[variable custom style]Maybe I should crawl for now instead?[roman type][line break]";	
-		otherwise: [Okay, the player is definitely not falling over! Assuming there are no super-giant diapers, let's output some flavour text to the player and deal with some other potential situations.]
-			if the player is wobbling or the player is hobbling or the player is swaying or the player is staggering:
-				let R be a random number from 1 to 7;
-				if R is 1, say "You shuffle along as fast as your [if the player is ankle bound][printed name of random ankle bond worn by the player][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][printed name of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [printed name of random diaper worn by the player] [end if][if there are worn heels]and [printed name of random heels worn by the player] [end if]will let you.";
-			otherwise if the player is waddling:
-				if the strut of the player is 1:
-					now the strut of the player is 0;
-					say "[bold type]The awkwardness of wearing a diaper forces you to stop strutting.[roman type][line break]";
-				otherwise:	
-					let R be a random number from 1 to 7;
-					if R is 1:
-						let X be the weight of a random diaper worn by the player;
-						say "[if X > 5]You walk very slowly with the most exaggerated waddle, caused by your [one of]almost impossibly inflated[or]extremely bloated[or]ridiculously oversized[in random order] diaper.[otherwise if X > 3]Your movement is significantly slowed because your [one of]incredibly inflated[or]very bloated[or]oversized[in random order] diaper is forcing you to waddle instead of walk.[otherwise]Your movement is slightly hampered by the way that your [one of]inflated[or]bloated[or]expanded[in random order] diaper is making you waddle.[end if]";
-						humiliate X * TRIVIAL-HUMILIATION * 2;
-			otherwise if there is a worn cowbell and a random number between 1 and 15 is 1:
-				say "Your cowbell [one of]rings[or]continues to ring[stopping] loudly as you walk.";
-			otherwise if the strut of the player is 1 and there is a worn heels:
-				let R be a random number from the bimbo of the player to 23;
-				if R is 23, say "You strut provocatively to the [travel-direction of the player].";
-			otherwise if a random number from the bimbo of the player to 150 < 6 and there are worn stiletto heels or there are worn boots:
-				if the player is in the Dungeon, say "You are shamefully aware of the lewd 'click-clack' that your [printed name of a random worn heels] make on the stone floor as you walk.";
-			otherwise if the semen coating of thighs > 4 and a random number from 1 to (15 - the semen coating of thighs) is 1:
-				say "You leave footprints of [semen] as you walk.";
-	[All these checks only take place if the player is CRAWLING as opposed to walking.]
-	if the player is prone:
-		[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
-		if trap warning is 1:
-			if the noun is a direction: [We do this just in case the player says "go wardrobe" or something retarded like that.]
-				if the room noun from the location of the player is smoky:
-					say "There is [if the player is in the Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees. Are you sure you want to try and crawl that way? [yesnolink] ";
-					unless the player consents:
-						now seconds is 0; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
-						say "You change your mind." instead;
-		let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]
-		repeat with M running through dangerous monsters in the location of the player:
-			let E be 1;
-			if M is insane gladiator or M is wild gladiator, increase E by 10;
-			if the class of the player is catgirl or the class of the player is puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
-			if the class of the player is adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
-			if a random number between E and (the difficulty of M + 3) > 2 and M is blocker, say "[MovementBlock of M]" instead;
-			otherwise say "[if M is blocker]You manage to quickly crawl past [NameDesc of M] before [he of M] can catch you![end if]";
-		if S > (B2 / 2) + 1: [If this isn't true, the player will never be able to crawl, even with 0 fatigue.]
-			let R be a random number from 0 to the fatigue of the player;
-			if debugmode is 1, say "[line break]Player [S * 1] | [(R / 10) + (B2 / 2)] Knees[paragraph break]";
-			if S < (R / 10) + (B2 / 2): [High fatigue combined with heavy body can prevent the player from crawling this turn.]
-				delay crawling instead;
+				let C be a random heels worn by the player;
+				[Posture training makes heel skill experience go up faster]
+				repeat with D running through posture training clothing worn by the player:
+					increase the heel time of the player by 1;
+					unless D is cursed, increase the heel time of the player by 2;
+				[Computing heel skill experience: Queen of Hearts heels prevent this experience gain]
+				unless C is queen of hearts heels:
+					let K be the heel-height of C - the raw heel skill of the player;
+					if C is platform heels, decrease K by 2;
+					if K < 1, now K is 1;
+					increase the heel time of the player by K;
+			[Now we check if the player trips over because of trip hazards in their current situation]
+			let X be the trip hazard of the player;
+			let D be a random number between 0 and 25; [NB dexterity is NOT used here, only when dealing with monsters and traps.]
+			if tutorial is 1:
+				now D is X + 1;
+				if the player is in Tutorial02, decrease X by 1;
+			if debugmode is 1, say "Walking attempt: Player ([D].5 | [X] Heels)[line break]";
+			if D is X and there are worn heels, say "You feel very unstable, and are barely managing to keep your balance on your [printed name of random worn heels]!"; [The player barely managed to succeed the roll.]
+			if D < X:
+				follow the trip reasons rules; [Here we explain to the player why they tripped]
+				if there is a worn heels, say "[if the heel skill of the player < 4][line break][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][line break][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating.. but in a fun way.[in random order][end if][roman type][line break]";
+				try kneeling;
+				if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
+				say "[bold type]You are still in the [location of the player].[roman type]" instead;
 			otherwise:
-				if the weight of breasts < 10:
-					if the largeness of belly < 5:
-						say "You crawl forward on your hands and knees[if the bimbo of the player > 8], your [HipDesc] high in the air and your face close to the ground[end if].";
-					otherwise if the largeness of belly < 8:
-						say "You crawl forward on your hands and knees,[if the bimbo of the player > 8] your [HipDesc] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
-					otherwise:
-						say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [HipDesc] high in the air and your face close to the ground.";
+				[Fat burning (exercise) only happens when the player does NOT trip over.]
+				increase the fat-burning of the player by 1;
+				let H be a random worn hindrance-enabling shoes;
+				if H is shoes, increase the fat-burning of the player by a random number from 0 to the hindrance of H;
+			if the player is crawling: [Stupidly huge diapers will always cause major issues, this is separate to tripping hazards so that we can very accurately control the chances of it occurring.]
+				let Di be a random diaper worn by the player;
+				let R be a random number between 1 and 10;
+				if the weight of Di is 6: [Very very big]
+					if R > 8: [20% chance]
+						say "Your baby-like waddling caused by your extremely bloated [printed name of Di] causes you to stumble, and you don't make it very far this turn. [bold type]You are still in the [location of the player][roman type].";
+						say "[variable custom style]Maybe I should crawl for now instead?[roman type][line break]" instead;
+					otherwise if R > 6: [25% chance (assuming we didn't fall over)]
+						if the humiliation of the player < HUMILIATION-MODEST - 1000, say "You waddle forward, cringing with humiliation about the size of your diaper and the babyish way you are walking.";
+				otherwise: [Cartoonishly big]
+					if R > 5: [50% chance]
+						say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps. You don't make it very far this turn. [bold type]You are still in the [location of the player][roman type]." instead;
+					otherwise: [100% chance (assuming we didn't fall over)]
+						say "Your [printed name of Di] is so big you can hardly move!  Your waddle is so extreme that you can only take the tiniest of steps. It takes a lot of effort to make it to the door of the next room, but you manage it this time.";
+						say "[variable custom style]Maybe I should crawl for now instead?[roman type][line break]";	
+			otherwise: [Okay, the player is definitely not falling over! Assuming there are no super-giant diapers, let's output some flavour text to the player and deal with some other potential situations.]
+				if the player is wobbling or the player is hobbling or the player is swaying or the player is staggering:
+					let R be a random number from 1 to 7;
+					if R is 1, say "You shuffle along as fast as your [if there is a worn ball-and-chain][ShortDesc of a random worn ball-and-chain][otherwise if the player is ankle bound][ShortDesc of random worn ankle-bound clothing][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][printed name of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [printed name of random diaper worn by the player] [end if][if there are worn heels]and [printed name of random heels worn by the player] [end if]will let you.";
+				otherwise if the player is waddling:
+					if the strut of the player is 1:
+						now the strut of the player is 0;
+						say "[bold type]The awkwardness of wearing a diaper forces you to stop strutting.[roman type][line break]";
+					otherwise:	
+						let R be a random number from 1 to 7;
+						if R is 1:
+							let X be the weight of a random diaper worn by the player;
+							say "[if X > 5]You walk very slowly with the most exaggerated waddle, caused by your [one of]almost impossibly inflated[or]extremely bloated[or]ridiculously oversized[in random order] diaper.[otherwise if X > 3]Your movement is significantly slowed because your [one of]incredibly inflated[or]very bloated[or]oversized[in random order] diaper is forcing you to waddle instead of walk.[otherwise]Your movement is slightly hampered by the way that your [one of]inflated[or]bloated[or]expanded[in random order] diaper is making you waddle.[end if]";
+							humiliate X * TRIVIAL-HUMILIATION * 2;
+				otherwise if there is a worn cowbell and a random number between 1 and 15 is 1:
+					say "Your cowbell [one of]rings[or]continues to ring[stopping] loudly as you walk.";
+				otherwise if the strut of the player is 1 and there is a worn heels:
+					let R be a random number from the bimbo of the player to 23;
+					if R is 23, say "You strut provocatively to the [travel-direction of the player].";
+				otherwise if a random number from the bimbo of the player to 150 < 6 and there are worn stiletto heels or there are worn boots:
+					if the player is in the Dungeon, say "You are shamefully aware of the lewd 'click-clack' that your [printed name of a random worn heels] make on the stone floor as you walk.";
+				otherwise if the semen coating of thighs > 4 and a random number from 1 to (15 - the semen coating of thighs) is 1:
+					say "You leave footprints of [semen] as you walk.";
+		[All these checks only take place if the player is CRAWLING as opposed to walking.]
+		if the player is prone:
+			[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
+			if trap warning is 1:
+				if the noun is a direction: [We do this just in case the player says "go wardrobe" or something retarded like that.]
+					if the room noun from the location of the player is smoky:
+						say "There is [if the player is in the Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees. Are you sure you want to try and crawl that way? [yesnolink] ";
+						unless the player consents:
+							now seconds is 0; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
+							say "You change your mind." instead;
+			let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]
+			repeat with M running through dangerous monsters in the location of the player:
+				let E be 1;
+				if M is insane gladiator or M is wild gladiator, increase E by 10;
+				if there is a worn ball-and-chain, increase E by 10;
+				if the class of the player is catgirl or the class of the player is puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
+				if the player is an adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
+				if a random number between E and (the difficulty of M + 3) > 2 and M is blocker, say "[MovementBlock of M]" instead;
+				otherwise say "[if M is blocker]You manage to quickly crawl past [NameDesc of M] before [he of M] can catch you![end if]";
+			if S > (B2 / 2) + 1: [If this isn't true, the player will never be able to crawl, even with 0 fatigue.]
+				let R be a random number from 0 to the fatigue of the player;
+				if debugmode is 1, say "[line break]Player [S * 1] | [(R / 10) + (B2 / 2)] Knees[paragraph break]";
+				if S < (R / 10) + (B2 / 2): [High fatigue combined with heavy body can prevent the player from crawling this turn.]
+					delay crawling instead;
 				otherwise:
-					if the weight of breasts < 15:
+					if the weight of breasts < 10:
 						if the largeness of belly < 5:
-							say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you[if the bimbo of the player > 8], your [HipDesc] high in the air and your face close to the ground[end if].";
+							say "You crawl forward on your hands and knees[if the bimbo of the player > 8], your [HipDesc] high in the air and your face close to the ground[end if].";
 						otherwise if the largeness of belly < 8:
-							say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
+							say "You crawl forward on your hands and knees,[if the bimbo of the player > 8] your [HipDesc] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
 						otherwise:
-							say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [ShortDesc of hips] high in the air and your [BreastDesc] to drag along the floor.";
+							say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [HipDesc] high in the air and your face close to the ground.";
 					otherwise:
-						if the largeness of belly < 5:
-							say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you[if the bimbo of the player > 8], your [ShortDesc of hips] high in the air and your face close to the ground[end if].";
-						otherwise if the largeness of belly < 8:
-							say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air, and[end if] your [BellyDesc] rubbing along the floor.";
+						if the weight of breasts < 15:
+							if the largeness of belly < 5:
+								say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you[if the bimbo of the player > 8], your [HipDesc] high in the air and your face close to the ground[end if].";
+							otherwise if the largeness of belly < 8:
+								say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
+							otherwise:
+								say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [ShortDesc of hips] high in the air and your [BreastDesc] to drag along the floor.";
 						otherwise:
-							say "You manage to shovel your [BreastDesc] and [BellyDesc] along the ground and crawl forward.";
-				if there is a worn cowbell and a random number between 1 and 15 is 1, say "Your cowbell continues to ring loudly as you walk.";
-				now seconds is 6;
-		otherwise:
-			forbid crawling instead; [Since the player can just choose to faint when they want, this will do for now.]
+							if the largeness of belly < 5:
+								say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you[if the bimbo of the player > 8], your [ShortDesc of hips] high in the air and your face close to the ground[end if].";
+							otherwise if the largeness of belly < 8:
+								say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air, and[end if] your [BellyDesc] rubbing along the floor.";
+							otherwise:
+								say "You manage to shovel your [BreastDesc] and [BellyDesc] along the ground and crawl forward.";
+					if there is a worn cowbell and a random number between 1 and 15 is 1, say "Your cowbell continues to ring loudly as you walk.";
+					now seconds is 6;
+			otherwise:
+				forbid crawling instead; [Since the player can just choose to faint when they want, this will do for now.]
 	[Some traps trigger as you try and leave the room. If they are triggered, they often prevent movement.]
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player:
 		now the room-entering of the player is 0;
@@ -637,8 +641,9 @@ REQUIRES COMMENTING
 
 +!]
 Carry Out Going (this is the monsters-go-next rule):
-	repeat with M running through alive simulated monsters:
-		unless M is vine boss, compute turn 2 of M.
+	if seconds is 3: [only in normal moves, not in double moves]
+		repeat with M running through alive simulated monsters:
+			unless M is vine boss, compute turn 2 of M.
 
 [!<DelayCrawling>+
 
@@ -723,35 +728,15 @@ REQUIRES COMMENTING
 
 +!]
 Report going:
+	Do important going resolution.
+
+To do important going resolution:
 	now the location of the player is discovered;
 	if map images is 1:
 		map-draw the location of the player;
-	[if there is a worn cowbell:
-		repeat with M running through uninterested released nearby monsters:
-			[Since adding the fairy-suckling attack, the "and M is not fairy" is commented out]
-			if the sleep of M is 0 and the boredom of M < 30 [and M is not fairy] :
-				if M is gladiator:
-					if the player is top heavy:
-						calm M;
-					otherwise if extreme proportions fetish is 0:
-						if the largeness of breasts > 7, calm M;
-					otherwise:
-						if the largeness of breasts > 13, calm M;
-					if M is unfriendly, now the growth-target of M is the largeness of breasts + 1;
-				if M is unfriendly:
-					now the boredom of M is 0;
-					now M is interested;	
-					say "[BigNameDesc of M] is attracted by the sound of your cowbell!  Uh-oh.";]
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:
 		now the room-entering of the player is 1;
-		choose a trap to trigger.
-
-[!<ReportGoing>+
-
-REQUIRES COMMENTING
-
-+!]
-Report going:
+		choose a trap to trigger;
 	if the location of the player is Dungeon12:
 		remove all interest.
 
@@ -961,11 +946,14 @@ To Test A Wire Trap:
 			let C be a random number between 0 and 15;
 			increase R by C + the memory of T;
 			if debugmode is 1, say "+ [C] + [the memory of T] ";
+		if there are worn rollerskates and the player is in the dungeon, decrease R by (15 - the dexterity of the player);
 		if debugmode is 1, say "= [R] | 15.5 Wire Trigger[line break]";
 		if R > 15:
-			say "[bold type]You [if there is worn ankle bond]carefully sidestep[otherwise]gracefully step[end if] over [if the location of the player is in the Mansion]a protruding floorboard[otherwise]a tripwire[end if].[roman type][line break]";
+			let AnkB be a random worn ankle-bound clothing;
+			say "[bold type]You [if there are worn rollerskates]manage to leap[otherwise if AnkB is clothing]carefully sidestep[otherwise]gracefully step[end if] over [if the location of the player is in the Mansion]a protruding floorboard[otherwise]a tripwire[end if].[roman type][line break]";
 		otherwise:
-			say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you walked right into a [if the location of the player is in the Mansion]raised floorboard[otherwise]tripwire[end if]![roman type]  Oops![line break]";
+			if there are worn rollerskates and the player is in the dungeon, say "[bold type][if T is tripwire trap]Your rollerskates make it incredibly difficult to clear the tripwire[otherwise]You skate straight into a tripwire[end if]![roman type][line break]";
+			otherwise say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you walked right into a [if the location of the player is in the Mansion]raised floorboard[otherwise]tripwire[end if]![roman type]  Oops![line break]";
 			trigger a wire trap;
 	otherwise:
 		if the largeness of breasts < 16 or the location of the player is in the Mansion:

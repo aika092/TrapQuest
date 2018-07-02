@@ -127,7 +127,7 @@ To decide which number is the outrage of (B - breasts):
 	let O be the semen coating of B * 2;
 	unless diaper quest is 1 and the breastskill of the player is 1:
 		increase O by the largeness of breasts / 3;
-		if there is a worn currently visible top-displaced clothing, increase O by 1;
+		if there is a worn currently at least partially visible top-displaced clothing, increase O by 2;
 		if B is lewdly exposed, decide on the lewdly exposed outrage of B + O;
 		if B is at least partially lewdly exposed, decide on the at least partially lewdly exposed outrage of B + O;
 	decide on O. [not humiliating by default]

@@ -10,7 +10,7 @@ TentInt is a number that varies. TentInt is 1.[### Since this is only used withi
 
 The printed name of severed-tentacle is usually "[TQlink of item described][clothing-title-before][if there is a worn severed-tentacle]The Master[otherwise]severed tentacle[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of severed-tentacle is "sev".
 
-Figure of severed tentacle is the file "Items\Accessories\Head\severedtentacle1.png".
+Figure of severed tentacle is the file "Items/Accessories/Head/severedtentacle1.png".
 
 To decide which figure-name is the clothing-image of (C - a severed-tentacle):
 	decide on figure of severed tentacle.

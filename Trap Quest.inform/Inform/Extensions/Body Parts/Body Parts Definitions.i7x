@@ -139,7 +139,7 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
-	decide on the lewdly exposed outrage of F - 2. [allows us to easily tweak this number]
+	decide on the lewdly exposed outrage of F - 3. [allows us to easily tweak this number]
 
 [!<GapeFuckholeTimesNumber>+
 
@@ -172,7 +172,7 @@ Increases the soreness of a fuckhole "F" by a given number and handles all effec
 +!]
 To ruin (F - a fuckhole) times (X - a number):
 	now the previous soreness of F is the soreness of F;
-	increase the buildup of F by 1;
+	unless F is vagina and the player is male, increase the buildup of F by 1;
 	while X > 0:
 		decrease X by 1;
 		if the soreness of F > 8 and there is a worn cum dump's undergarment, now the soreness of F is 8; [undergarment prevents fainting from soreness]
@@ -185,7 +185,7 @@ To ruin (F - a fuckhole) times (X - a number):
 			now the buildup of F is 0;
 		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and the number of worn for deposit only tattoos is 0:
 			check soreness fainting of F;
-		RuinRoll F;
+		unless F is vagina and the player is male, RuinRoll F;
 		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say "[RuinedFlav of F]".
 
 [!<HealFuckholeX>+
@@ -341,7 +341,9 @@ Definition: a body part (called B) is at least partially exposed:
 To decide which number is the lewdly exposed outrage of (B - a body part):
 	decide on 0. [not humiliating by default]
 To decide which number is the at least partially lewdly exposed outrage of (B - a body part):
-	decide on 0. [not humiliating by default]
+	let C be the lewdly exposed outrage of B - 3;
+	if C < 0, decide on 0;
+	decide on C.
 To decide which number is the outrage of (B - a body part):
 	let O be 0;
 	if B is exposed, increase O by the semen coating of B * 2;

@@ -115,14 +115,14 @@ To say UniqueClothingDesc of (G - green-g-string):
 To decide which number is the penis-capacity of (G - green-g-string):
 	decide on 6.
 
-Figure of g-string 1 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring1.png".
-Figure of g-string 2 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring2.png".
-Figure of g-string 3 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring3.png".
-Figure of g-string 4 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring4.png".
-Figure of g-string 5 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring5.png".
-Figure of g-string 6 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring6.png".
-Figure of g-string 7 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring7.png".
-Figure of g-string 8 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring8.png".
+Figure of g-string 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring1.png".
+Figure of g-string 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring2.png".
+Figure of g-string 3 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring3.png".
+Figure of g-string 4 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring4.png".
+Figure of g-string 5 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring5.png".
+Figure of g-string 6 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring6.png".
+Figure of g-string 7 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring7.png".
+Figure of g-string 8 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring8.png".
 
 [Below are from Lucas]
 
@@ -150,9 +150,9 @@ To say UniqueClothingDesc of (G - orange-g-string):
 To decide which number is the penis-capacity of (G - orange-g-string):
 	decide on 6.
 	
-Figure of g-string 9 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring9.png".	
-Figure of g-string 10 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring10.png".	
-Figure of g-string 11 is the file "Items\Clothes\Lower\Underwear\Skimpy\Gstring\gstring11.png".	
+Figure of g-string 9 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring9.png".	
+Figure of g-string 10 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring10.png".	
+Figure of g-string 11 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring11.png".	
 
 
 G-Strings ends here.

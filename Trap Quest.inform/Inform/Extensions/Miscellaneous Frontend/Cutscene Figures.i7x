@@ -237,9 +237,12 @@ Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1
 Figure of Barbara Cutscene 1 is the file "Special/Cutscene/cutscene-barbara-special1.png".
 Figure of Barbara Cutscene 2 is the file "Special/Cutscene/cutscene-barbara-react1.png".
 Figure of Barbara Cutscene 3 is the file "Special/Cutscene/cutscene-barbara-punish1.png".
+Figure of Barbara Cutscene 4 is the file "Special/Cutscene/cutscene-barbara-toilet1.png".
 
 Figure of Vines Cutscene 1 is the file "Special/Cutscene/cutscene-vines1.png".
 Figure of Vines Cutscene 2 is the file "Special/Cutscene/cutscene-vines2.png".
+Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".
+Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.png".
 Figure of Vine Boss Cutscene 1 is the file "Special/Cutscene/cutscene-vineboss1.png".
 
 Figure of Throne Cutscene 1 is the file "Special/Cutscene/cutscene-throne1.png".
@@ -293,6 +296,10 @@ Figure of Lake Monster Cutscene is the file "Special/Cutscene/cutscene-lake1.png
 Figure of Lips Cutscene is the file "Special/Cutscene/cutscene-lips1.png".
 
 Figure of Ballet Cutscene is the file "Special/Cutscene/cutscene-ballet-strut1.png".
+
+Figure of Teacher Brooke Cutscene 1 is the file "Special/Cutscene/cutscene-brooke-race1.png".
+Figure of Teacher Hannah Cutscene 1 is the file "Special/Cutscene/cutscene-hannah-bondage1.png".
+Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
 
 Figure of Full Term Pregnancy is the file "Special/Cutscene/cutscene-pregnancy1.png".
 Figure of Giant Pregnancy is the file "Special/Cutscene/cutscene-pregnancy2.png".

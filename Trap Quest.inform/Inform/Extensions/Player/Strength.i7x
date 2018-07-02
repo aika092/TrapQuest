@@ -83,6 +83,7 @@ To decide which number is the flat strength of the player:
 		increase S by strength-tincture-bonus;
 	increase S by ((pink-nugget-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	decrease S by ((liquorice-timer + default-candy-duration - 1) / default-candy-duration) * 1;
+	decrease S by adult-baby-int * 3;
 	if the the boost-cooldown of nurse > 0, increase S by 2;
 	if cookie-poison-timer > 0, now S is S / 2;
 	increase S by the number of worn piercings;

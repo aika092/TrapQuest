@@ -1,21 +1,60 @@
 Condom Pack by Collectibles begins here.
 
 
-A condom-pack is a kind of thing. There is 1 condom-pack. The description of condom-pack is "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: magical safety enchantment causes used condoms to be ungraspable by women and traps. Attempt to use sharp objects or teeth.'". The printed name of condom-pack is "[TQlink of item described]condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-pack is "cdp". Understand "pack", "condom pack", "condom box", "box", "super", "safe" as condom-pack.
+condom-pack is a thing. The description of condom-pack is "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: magical safety enchantment causes used condoms to be ungraspable by women and traps. Attempt to use sharp objects or teeth.'". The printed name of condom-pack is "[TQlink of item described]condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-pack is "cdp". Understand ["condom", ]"pack", "condom pack", "condom box", "box", "super", "safe" as condom-pack. condom-pack can be condom-trapped.
 
 Definition: a thing (called C) is condom-providing:
 	decide no.
 
-Definition: a condom-pack (called C) is condom-providing:
+Definition: condom-pack (called C) is condom-providing:
+	if C is condom-trapped, decide no;
 	decide yes.
 
-Definition: a condom-pack (called B) is immune to change:
+Definition: condom-pack (called B) is immune to change:
 	decide yes.
+
+Definition: condom-pack (called C) is product:
+	decide yes.
+
+To decide which number is the alchemy key of (C - condom-pack):
+	decide on 28.
+
+Definition: condom-pack (called C) is recipe specific:
+	decide yes.
+
+This is the condom pack specific recipe rule:
+	now the Product in row 44 of the Table of Alchemy is 28;
+	now the Recipe in row 44 of the Table of Alchemy is 1.
+The condom pack specific recipe rule is listed in the specific recipe rules.
+
+To compute recipe specific cursing of (C - condom-pack):
+	if the noun is piece of rubber, now C is not condom-trapped;
+	otherwise now C is condom-trapped.
+
+Report going when condom-pack is carried:
+	if condom-pack is condom-trapped and a random number between 1 and 20 is 1:
+		say "[bold type]Suddenly your new condom pack soars out of your bag and into the air! [roman type]Condoms start flying out of it in all directions and magically filling themselves with [semen].";
+		repeat with C running through worn condom pinnable clothing:
+			let N be a random number between 2 and 4;
+			say "Some condoms zoom towards your [ShortDesc of C] and stick to it, making it a ";
+			increase the used condoms of C by N;
+			say "[C]!";
+		say "The condom pack falls to the ground, inert[one of]. It must have been cursed...[or].[stopping]";
+		now condom-pack is in the location of the player.
+	
 
 Definition: a clothing (called C) is condom pinnable:
+	if C is totally-exclusive or C is top-exclusive:
+		unless C is biological or C is metal or C is bondage, decide yes;
+	decide no.
+
+Definition: a shoes (called C) is condom pinnable:
 	decide no.
 
 Definition: an overdress (called C) is condom pinnable:
+	decide yes.
+
+Definition: a stockings (called C) is condom pinnable:
 	decide yes.
 
 Definition: a belt (called C) is condom pinnable:
@@ -37,8 +76,9 @@ To decide which number is the total condoms of (C - a clothing):
 
 To decide which number is the condom outrage of (C - a clothing):
 	let O be 0;
+	if the used condoms of C > 0, increase O by 2;
 	increase O by 2 * the used condoms of C;
-	increase O by the empty condoms of C;
+	increase O by (2 * the empty condoms of C) / 3;
 	decide on O.
 
 To decide which number is total used condoms:
@@ -140,7 +180,7 @@ To say CondomPinReactionFlav of (M - a monster) on (C - a clothing):
 condom is a backdrop. condom is everywhere. the description of condom is "[if total used condoms > 0]A full, used condom pinned to your clothing[otherwise if total pinned condoms > 0]An empty condom pinned to your clothing[otherwise]There are no condoms to be seen[end if].". Understand "condoms", "used condoms", "full condoms", "used condom", "full condom", "empty condom", "empty condoms" as condom.
 
 check examining condom:
-	if total pinned condoms is 0 and (there is a held condom-pack or there is a condom-pack in the location of the player), try examining a random condom-pack instead.
+	if total pinned condoms is 0 and (condom-pack is held or condom-pack is in the location of the player), try examining condom-pack instead.
 
 check drinking condom:
 	if total drinkable condoms > 0, compute condom biting instead.

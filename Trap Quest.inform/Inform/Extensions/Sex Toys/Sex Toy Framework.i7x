@@ -249,8 +249,10 @@ Chapter 1 - Dongs
 A dong is a kind of sex toy. Understand "dildo" as dong.
 
 To decide which number is the masturbation-bonus of (C - a sex toy):
-	decide on 1.
+	decide on 1 + the magic-modifier of C + the raw-masturbation-bonus of C.
 
+To decide which number is the raw-masturbation-bonus of (C - a sex toy):
+	decide on 0.
 
 Chapter 2 - Plugs
 
@@ -267,11 +269,11 @@ To say PlugSize (N - a number):
 
 A plug is usually ass plugging.
 
-Figure of small plug is the file "Items\Accessories\Toys\plug1.png".
-Figure of medium plug is the file "Items\Accessories\Toys\plug2.png".
-Figure of large plug is the file "Items\Accessories\Toys\plug3.png".
-Figure of huge plug is the file "Items\Accessories\Toys\plug4.png".
-Figure of monstrous plug is the file "Items\Accessories\Toys\plug5.png".
+Figure of small plug is the file "Items/Accessories/Toys/plug1.png".
+Figure of medium plug is the file "Items/Accessories/Toys/plug2.png".
+Figure of large plug is the file "Items/Accessories/Toys/plug3.png".
+Figure of huge plug is the file "Items/Accessories/Toys/plug4.png".
+Figure of monstrous plug is the file "Items/Accessories/Toys/plug5.png".
 
 To decide which figure-name is the clothing-image of (P - a plug):
 	if the size of P < 3:

@@ -10,10 +10,10 @@ To decide which figure-name is the clothing-image of (H - a court heels):
 	if H is pvc, decide on the figure of pvc court heels;
 	decide on the figure of satin court heels.
 
-Figure of glass court heels is the file "Items\Clothes\Lower\Feet\Heels\Court\court1.png".
-Figure of leather court heels is the file "Items\Clothes\Lower\Feet\Heels\Court\court2.png".
-Figure of satin court heels is the file "Items\Clothes\Lower\Feet\Heels\Court\court3.png".
-Figure of pvc court heels is the file "Items\Clothes\Lower\Feet\Heels\Court\court4.png".
+Figure of glass court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/court1.png".
+Figure of leather court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/court2.png".
+Figure of satin court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/court3.png".
+Figure of pvc court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/court4.png".
 
 To decide which number is the unique outrage of (C - a court heels):
 	decide on -1.

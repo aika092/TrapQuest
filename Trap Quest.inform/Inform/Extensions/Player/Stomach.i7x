@@ -105,6 +105,7 @@ To StomachSemenUp (X - a number):
 	if the semen taste addiction of the player > 14, arouse 500;
 	if X > 0:
 		say "[SemenEncounterFlav]";
+		now cold turkey is 0;
 	while X > 0:
 		increase the stomach-semen of the player by 1;
 		decrease X by 1;
@@ -168,12 +169,16 @@ To PukeUp:
 		say "[BigNameDesc of M] almost makes you gag but you are able to [if the throatskill of the player is 1]use your [one of]new [or][or]experienced [or]expert [or]perfected [or]world renowned [stopping]deepthroating skills[otherwise]put mind over matter and control your gag reflex[end if] to accommodate [his of M] length without throwing up.";
 		let T be a random tongue piercing;
 		let P be a random pink pacifier;
+		let C be a random worn cursed clothing;
 		if T is actually summonable and a random number between 15 and the semen taste addiction of the player >= 15:
 			say "[bold type]A cold metal piercing suddenly appears in your mouth, embedded into your tongue!  You've never had something like that in your mouth before, so it's difficult to stop thinking about the [if the bimbo of the player < 10]unwelcome [end if]intrusion. Even worse, you can feel its cursed magic somehow preventing you from speaking properly![roman type][line break]";
 			summon T cursed;
 		otherwise if there is a worn baby bonnet and P is actually summonable:
 			say "[bold type]Your baby's bonnet flutters wildly and a large pink pacifier appears in your mouth!  You can't remove it![roman type]  But it does make you feel stronger...";
 			summon P cursed;
+		if nun blowjob tattoo is worn and C is clothing:
+			say "You feel your [nun blowjob tattoo] sending holy magic to your [ShortDesc of C], uncursing it!";
+			bless C;
 	otherwise:
 		say "[BigNameDesc of M] being down your throat makes you gag, and as it pulls out you puke up the [semen] from your belly.";
 		PukeUp a random number between 1 and (the stomach-semen of the player + the semen volume of belly).

@@ -92,10 +92,10 @@ To say OptionalDescription:
 		otherwise:
 			if the player is upright, say "Vines are holding your ankles still!  ";
 			otherwise say "Vines are holding your wrists and ankles down, keeping you on your knees. ";
-	otherwise if the player is monster fucked:
-		say "The [random monster penetrating a body part] is [if diaper quest is 1]punishing you[otherwise][one of]having fun with your body[or]using your body as a playground[or]currently defiling your body[at random][end if]. ";
+	otherwise if the player is live fucked:
+		say "The [FuckerDesc of random live thing penetrating a body part] is [if diaper quest is 1]punishing you[otherwise][one of]having fun with your body[or]using your body as a playground[or]currently defiling your body[at random][end if]. ";
 	otherwise if there is a monster grabbing the player:
-		say "The [random monster grabbing the player] [if diaper quest is 1]is punishing you[otherwise][GrabStatus of a random monster grabbing the player][end if]. ";
+		say "[BigNameDesc of a random monster grabbing the player] [if diaper quest is 1]is punishing you[otherwise][GrabStatus of a random monster grabbing the player][end if]. ";
 	if diaper quest is 1, say "[PerceivedAdultDesc][InternalsDesc][SorenessDesc][DiaperDisciplineDesc]";
 	otherwise say "[PerceivedBimboDesc][InternalsDesc][SorenessDesc][line break][StatusDesc][BimboDesc]".
 

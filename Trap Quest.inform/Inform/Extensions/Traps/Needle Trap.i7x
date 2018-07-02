@@ -128,7 +128,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 	if needle-blocker is clothing and tutorial is 0:
 		say "The needle is blocked by your [ShortDesc of needle-blocker]!  Phew!";
 	otherwise if diaper quest is 1:
-		if a random number between 1 and 2 is 1:
+		if a random number between 1 and 2 is 1 and tutorial is 0:
 			say "Owww, that really hurt!  You watch the large balloon at the back end of the needle empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
 			BladderUp 5;
 			if rectum > 0, increase rectum by 2;

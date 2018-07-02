@@ -400,7 +400,7 @@ To compute failed dominance punishment of (M - witch):
 		compute angry punishment of M;[if you're not naked she will punish you further.]
 		say "[big he of M] appears to be satisfied with that and leaves you alone.";
 	otherwise if vine boss is alive and the times-dominated of M > a random number between 1 and 0:[She warned you!]
-		if the number of worn not sissifying removable clothing > 0:
+		if the number of worn not sissifying tearable clothing > 0:
 			compute angry punishment of M;
 		otherwise if watersports fetish is 1:[We don't compute urination of M here because she's not finished with you yet, also we want her to stay mad.]
 			say angry punishment insult of M;

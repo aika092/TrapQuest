@@ -2,8 +2,6 @@ Public Version Stuff by Miscellaneous Backend begins here.
 
 A module is a kind of piercing. n ass module is a kind of module. A breast module is a kind of module. A crotch module is a kind of module. A lips module is a kind of module. A heel module is a kind of module.
 
-april fools done is a number that varies.
-
 To say ModuleFlav of (M - a module):
 	do nothing.
 
@@ -31,10 +29,6 @@ Definition: a person is the donator:
 Definition: a person is a top donator:
 	decide yes.
 
-Definition: a person is a january 2017 top donator:
-	decide yes.
-Definition: a person is a march 2017 top donator:
-	decide yes.
 Definition: a person is a may 2017 top donator:
 	decide yes.
 Definition: a person is a july 2017 top donator:
@@ -44,10 +38,6 @@ Definition: a person is a september 2017 top donator:
 Definition: a person is a november 2017 top donator:
 	decide yes.
 Definition: a person is a january 2018 top donator:
-	decide yes.
-Definition: a person is a january 2017 top diaper donator:
-	decide yes.
-Definition: a person is a march 2017 top diaper donator:
 	decide yes.
 Definition: a person is a may 2017 top diaper donator:
 	decide yes.
@@ -59,10 +49,6 @@ Definition: a person is a november 2017 top diaper donator:
 	decide yes.
 Definition: a person is a january 2018 top diaper donator:
 	decide yes.
-Definition: a person is a january 2017 diaper donator:
-	decide yes.
-Definition: a person is a march 2017 diaper donator:
-	decide yes.
 Definition: a person is a may 2017 diaper donator:
 	decide yes.
 Definition: a person is a july 2017 diaper donator:
@@ -72,10 +58,6 @@ Definition: a person is a september 2017 diaper donator:
 Definition: a person is a november 2017 diaper donator:
 	decide yes.
 Definition: a person is a january 2018 diaper donator:
-	decide yes.
-Definition: a person is a march 2018 diaper donator:
-	decide yes.
-Definition: a person is a march 2018 top donator:
 	decide yes.
 
 To check donators status:

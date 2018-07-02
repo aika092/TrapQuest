@@ -157,7 +157,8 @@ To fill in table blanks:
 	unless there is a choice in row 64 of the Table of Player Options, now choice in row 64 of Table of Player Options is 0;
 	unless there is a choice in row 65 of the Table of Player Options, now choice in row 65 of Table of Player Options is 0;
 	unless there is a choice in row 66 of the Table of Player Options, now choice in row 66 of Table of Player Options is 0;
-	unless there is a choice in row 67 of the Table of Player Options, now choice in row 67 of Table of Player Options is 0.
+	unless there is a choice in row 67 of the Table of Player Options, now choice in row 67 of Table of Player Options is 0;
+	unless there is a choice in row 68 of the Table of Player Options, now choice in row 68 of Table of Player Options is 1.
 
 To correct table entries:
 	if the player is not the donator:
@@ -174,15 +175,12 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	if the player is not the donator:
-		choose the row with a toggle of roleplay fetish toggle rule in the Table of Benefit Options;
-		blank out the whole row;
-		now choice in row 47 of Table of Player Options is 0;
 	if the player is not a march 2018 top donator:
 		choose the row with a subtable of Table of Festive Options in the Table of Kink Options;
 		blank out the whole row;
-		choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
-		blank out the whole row;
+		if the player is not a march 2018 diaper donator:
+			choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
+			blank out the whole row.
 
 To retrieve settings:
 	if tutorial is 1:
@@ -238,13 +236,7 @@ To configure gender:
 		now the size of penis is 7;
 		now the real size of penis is 7;
 	otherwise:
-		if diaper quest is 1:
-			now the flesh volume of breasts is 6;
-			now the real flesh volume of breasts is 6;
-			now the real largeness of breasts is 4;
-			now the thickness of hips is 5;
-			now the real thickness of hips is 5;
-			now the flesh volume of hips is 5;
+		if diaper quest is 1, configure dq female proportions;
 		now choice in row 29 of the Table of Player Options is 0; [We set min penis size points to 0, since you shouldn't be able to put points in here if you are female.]
 		now choice in row 10 of the Table of Player Options is 0; [Similarly TG fetish must be off.]
 		choose the row with a toggle of TG fetish toggle rule in the Table of Fetish Options;

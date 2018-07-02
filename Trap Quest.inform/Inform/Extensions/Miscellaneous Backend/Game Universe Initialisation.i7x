@@ -127,7 +127,7 @@ To initialise wardrobe:
 	otherwise now the heel-height of C is 2;
 	now C is a random basic loot bra;
 	now C is in pink wardrobe;
-	now C is a random basic loot skirt;
+	now C is a random basic loot short or longer skirt;
 	now C is in pink wardrobe;
 	now C is a random basic loot stockings;
 	now C is in pink wardrobe;

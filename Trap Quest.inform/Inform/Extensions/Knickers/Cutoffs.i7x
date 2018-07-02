@@ -25,7 +25,7 @@ To decide which figure-name is clothing-image of (C - neat cutoffs):
 
 To say ClothingDesc of (K - neat cutoffs):
 	say "Extremely tiny denim shorts, these are skimpier than most common underwear. They are so tight that they [if K is worn]are[otherwise]would be[end if] impossible to displace without completely removing them.".
-Figure of neat cutoffs is the file "Items\Clothes\Lower\Underwear\Skimpy\Cutoffs\cutoffs1.png".
+Figure of neat cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs1.png".
 
 Part 2 - Torn Cutoffs
 
@@ -36,7 +36,7 @@ To decide which figure-name is clothing-image of (C - torn cutoffs):
 
 To say ClothingDesc of (K - torn cutoffs):
 	say "Extremely tiny denim shorts, these are skimpier than most common underwear. The waist is wide enough that wearing them [if K is worn]is[otherwise]would be[end if] pretty comfortable.".
-Figure of torn cutoffs is the file "Items\Clothes\Lower\Underwear\Skimpy\Cutoffs\cutoffs2.png".
+Figure of torn cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs2.png".
 
 Definition: torn cutoffs is displacable:
 	decide yes.
@@ -55,10 +55,14 @@ To decide which number is the initial outrage of (C - heart window cutoffs):
 
 To say ClothingDesc of (K - heart window cutoffs):
 	say "Denim shorts with a heart shaped hole at the back and front that exposes [if K is worn]your[otherwise]the wearer's[end if] [genitals].".
-Figure of heart window cutoffs is the file "Items\Clothes\Lower\Underwear\Skimpy\Cutoffs\cutoffs3.png".
+Figure of heart window cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs3.png".
 
 Definition: heart window cutoffs (called K) is untransformable:
 	decide yes.
+
+Definition: heart window cutoffs (called C) is heart themed:
+	decide yes.
+
 
 Cutoffs ends here.
 

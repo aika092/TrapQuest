@@ -99,7 +99,7 @@ To compute death of (M - a monster):
 				now M is not withholding K;
 				compute autotaking K;
 		let J be a random worn demon codpiece;
-		if J is clothing and M is wenchy and the player is the donator, follow the demon junk punishment rule;
+		if J is clothing and M is wenchy, follow the demon junk punishment rule;
 		if there is a worn notebook, compute studying 1 of M;
 		if M is in the location of the player:
 			destroy M;

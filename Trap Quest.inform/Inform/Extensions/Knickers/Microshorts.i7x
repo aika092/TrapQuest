@@ -18,7 +18,7 @@ gold-microshorts is a microshorts. The armour of gold-microshorts is 4. The prin
 To decide which figure-name is clothing-image of (H - gold-microshorts):
 	decide on figure of gold-microshorts.
 
-Figure of gold-microshorts is the file "Items\Clothes\Lower\Underwear\Skimpy\microshorts1.png".
+Figure of gold-microshorts is the file "Items/Clothes/Lower/Underwear/Skimpy/microshorts1.png".
 
 To say UniqueTitle of (K - gold-microshorts):
 	say "shiny gold microshorts".
@@ -40,7 +40,7 @@ To decide which figure-name is clothing-image of (H - black-microshorts):
 To say ClothingDesc of (K - black-microshorts):
 	say "These super-tiny super-shiny super-skimpy black microshorts just scream 'the only thing I care about is how sexy I look'.".
 
-Figure of black-microshorts is the file "Items\Clothes\Lower\Underwear\Skimpy\microshorts2.png".
+Figure of black-microshorts is the file "Items/Clothes/Lower/Underwear/Skimpy/microshorts2.png".
 
 To say UniqueTitle of (K - black-microshorts):
 	say "shiny black microshorts".

@@ -19,6 +19,7 @@ Definition: dominatrix (called M) is willing to do anal:
 	decide yes.
 
 Definition: dominatrix (called M) is hotel dwelling:
+	if diaper quest is 1, decide no;
 	decide yes.
 
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/dominatrix1.png".
@@ -76,7 +77,7 @@ To say DominatrixComment of (M - dominatrix):
 		if the player is female and the bimbo of the player < 7:
 			say "[first custom style][one of]That thing must be a fucking joke. She can[']t honestly expect me to let her put that in me.[or]Is that a HORSE penis?[or]I know I[']ve been acting like a tart, but she[']s obviously trying to insinuate I[']m some sort of animal![or]That evil woman...she probably plans on putting that monster inside me.[or]So this is how she rewards her slaves? I[']m not looking forward to dealing with the nintendolls when I get out...[in random order]";
 		otherwise if the player is female and the bimbo of the player < 14:
-			say "[variable custom style][one of]That dildo is massive. I guess I should prepare myself.[or]So far I[']ve taken everything else she[']s done to me. I know it's wrong, but I[']m looking forward to taking that too.[or]This must have been her game from the start. She[']s been training me this whole time, and now I don[']t think there[']s any way I can avoid having that monster stuffed inside me. I might as well try to enjoy it.[or]I feel like I owe it to her to let her fuck me with that strapon. But...she[']s done nothing but bully and fuck me since we met.[or][first custom style]If she tells me she wants to put that thing inside me...I know I[']ll try to say no, but...[second custom style]submitting just feels too good.[or]I[']m addicted to getting fucked by her huge strapon. This game has changed me into such a pervert....[or][first custom style]I am certain I can[']t handle a dildo that size. [second custom style]But I'll try anything for my Mistress.[in random order]";
+			say "[variable custom style][one of]That dildo is massive. I guess I should prepare myself.[or]So far I[']ve taken everything else she[']s done to me. I know it's wrong, but I[']m looking forward to taking that too.[or]This must have been her game from the start. She[']s been training me this whole time, and now I don[']t think there[']s any way I can avoid having that monster stuffed inside me. I might as well try to enjoy it.[or]I feel like I owe it to her to let her fuck me with that strapon. But... she[']s done nothing but bully and fuck me since we met.[or][first custom style]If she tells me she wants to put that thing inside me... I know I[']ll try to say no, but...[second custom style]submitting just feels too good.[or]I[']m addicted to getting fucked by her huge strapon. This game has changed me into such a pervert....[or][first custom style]I am certain I can[']t handle a dildo that size. [second custom style]But I'll try anything for my Mistress.[in random order]";
 		otherwise if the bimbo of the player < 7:
 			say "[first custom style][one of]I can[']t exactly let her offer me up to the patrons, but I don[']t want that monster anywhere near me.[or]Again?! Why is it bigger again?[or]S-she can[']t honestly expect me to take that thing? I[']m a guy, I'm built to fuck things, not the other way around![or]WHAT THE FUCK, THAT[']S HUGE![or][if the size of penis < 1]The size of that thing is fucking insane. Why don[']t I get one of those?[otherwise if the size of penis < 5]This sucks. Everybody gets to be bigger than me. I couldn[']t even top that if I tried...[otherwise if the size of penis < 9]I have a normal dick size, but I[']m not even half as big as that thing. Everything in this game is out to make me feel like a chick.[otherwise]My dick is supposed to be huge, but now this shit? Ugh whatever, I might as well take the patron bullshit, I[']m not letting this chick fuck me any more.[end if][in random order]";
 		otherwise if the bimbo of the player < 14:
@@ -444,8 +445,21 @@ To say PenetrationFlav of (M - dominatrix) in (F - asshole):
 
 To compute anal sex of (M - dominatrix):
 	if the reaction of the player is 0:
-		say "You try to get away, but she's much too strong for you.[one of]If anything, your struggles have just made the fucking even more brutal on your poor [asshole].[or]Instead, she seems to be taking the disobedience as motivation to fuck you even harder![or][or][at random]";[Friendly sex dominatrix has either let go or started torturing the player by now.]
-	otherwise if the strap-on girth of M >= 6 and refactoryperiod is 0 and the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking:
+		compute sexResist of M in asshole;
+	otherwise:
+		compute sexSubmit of M in asshole;	
+	decrease the sex-length of M by 1;
+	if M is not friendly-fucking:
+		ruin asshole;
+		if refactoryperiod > 0 and the disappointment of M is 0:
+			say "[BigNameDesc of M] tuts and shakes her head in disapproval. [line break][speech style of M]'Did I say you could cum?  I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
+			now the disappointment of M is 1.
+
+To compute sexResist of (M - dominatrix) in (F - a fuckhole):
+	say "You try to get away, but she's much too strong for you.[one of]If anything, your struggles have just made the fucking even more brutal on your poor [asshole].[or]Instead, she seems to be taking the disobedience as motivation to fuck you even harder![or][or][at random]".[Friendly sex dominatrix has either let go or started torturing the player by now.]
+
+To compute sexSubmit of (M - a dominatrix) in (F - a fuckhole):
+	if the strap-on girth of M >= 6 and refactoryperiod is 0 and the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking:
 		say "[BigNameDesc of M] starts pumping even faster. [line break][speech style of M]'Cum, slave, cum for me now!'[roman type][line break][if the player is not a pervert]As much as you try to stop yourself, the feeling in your [asshole] is too intense and you can't help but obey her command![otherwise]You feel the pressure building inside of you and gleefully comply![end if]";
 		anally orgasm shamefully;
 		heal asshole times 2; [To prevent fainting]
@@ -455,13 +469,7 @@ To compute anal sex of (M - dominatrix):
 		say "[BigNameDesc of M] continues to powerfully pummel away with her [ShortStrapOn of M]. [one of]You can very clearly feel the realistic contours of her rubber [manly-penis] as it rubs mercilessly against the sensitive walls of your [asshole].[or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear she's deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
 		ruin asshole;
 		if M is friendly-fucking and refactoryperiod > 0:
-			compute anal climax of M;
-	decrease the sex-length of M by 1;
-	if M is not friendly-fucking:
-		ruin asshole;
-		if refactoryperiod > 0 and the disappointment of M is 0:
-			say "[BigNameDesc of M] tuts and shakes her head in disapproval. [line break][speech style of M]'Did I say you could cum?  I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
-			now the disappointment of M is 1.
+			compute anal climax of M.
 
 To compute MasturbationReaction of (M - dominatrix):
 	if M is penetrating asshole and M is not friendly-fucking:
@@ -740,14 +748,14 @@ To compute failed dominance punishment of (M - dominatrix):
 		if asshole is actually occupied:
 			let J be a random off-stage plentiful accessory;
 			now J is ruby;
-			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...I already know what would happen if you ever tried using your GIANT [manly-penis] on my pussy, and there[']s no way I[']m going to let you turn ME into your on-demand fuckhole. Nooo-siree!'[roman type][line break][BigNameDesc of M] makes a fearful face, holding you down as [he of M] quickly slips a plastic cage over your [ShortDesc of penis]. [line break][speech style of M]I don't know if my mind could handle cumming hard from your BIG juicy [manly-penis], and thanks to this cage, I won[']t have to find out. Can you believe how lucky I am?'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but more you think about it, the less you can deny how lucky [he of M] was to have a cage on hand. [big he of M] got off pretty easy! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it just completely slips your mind. You feel a swell of confidence![otherwise]It sucks to be all caged up, but it's for [his of M] own protection! A dominant, hung guy like you can turn girls like [him of M] into total sluts if [he of M] isn't careful. Knowing [he of M] has to go to such great lengths to protect [him of M]self fills you with a swell of confidence![end if] You take the [printed name of J] from [him of M] and stand tall.";
+			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'... I already know what would happen if you ever tried using your GIANT [manly-penis] on my [pussy], and there[']s no way I[']m going to let you turn ME into your on-demand fuckhole. Nooo-siree!'[roman type][line break][BigNameDesc of M] makes a fearful face, holding you down as [he of M] quickly slips a plastic cage over your [ShortDesc of penis]. [line break][speech style of M]I don't know if my mind could handle cumming hard from your BIG juicy [manly-penis], and thanks to this cage, I won[']t have to find out. Can you believe how lucky I am?'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but more you think about it, the less you can deny how lucky [he of M] was to have a cage on hand. [big he of M] got off pretty easy! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it just completely slips your mind. You feel a swell of confidence![otherwise]It sucks to be all caged up, but it's for [his of M] own protection! A dominant, hung guy like you can turn girls like [him of M] into total sluts if [he of M] isn't careful. Knowing [he of M] has to go to such great lengths to protect [him of M]self fills you with a swell of confidence![end if] You take the [printed name of J] from [him of M] and stand tall.";
 			now J is held by the player;
 			Dignify 330 - the intelligence of the player * 5;
 			let C be a random off-stage chastity cage;
 			Summon C cursed;
 		otherwise:
 			let P be a random off-stage sex toy;
-			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'...I already know what would happen if I let you try that MONSTER cock on my pussy![roman type][line break][BigNameDesc of M] makes a fearful face, keeping as far a distance from you as possible as [he of M] [if P is dong]slides[otherwise]pushes[end if] a [printed name of P] into your [asshole]. [line break][speech style of M]'Please be satisfied with this gift from my collection. I know it's not much, really, but right now it's the only thing I have to make sure you don[']t try to MINDBREAK me with your GIANT dick!'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but the more you think about it, the less you can deny how dominant you feel getting a reward simply for trying to have sex with [him of M]! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it completely slips your mind. You feel a swell of confidence![otherwise]You feel a swell of confidence! Not only is your penis HUGE, [he of M][']s giving you something for free! WOW![end if] You give [him of M] your best dominant smirk and stand tall.";
+			say "[big he of M] raises [his of M] hand as if to strike you, but something seems to change slightly in [his of M] expression as [his of M] eyes pass over your crotch. [line break][speech style of M]'... I already know what would happen if I let you try that MONSTER cock on my [pussy]![roman type][line break][BigNameDesc of M] makes a fearful face, keeping as far a distance from you as possible as [he of M] [if P is dong]slides[otherwise]pushes[end if] a [printed name of P] into your [asshole]. [line break][speech style of M]'Please be satisfied with this gift from my collection. I know it's not much, really, but right now it's the only thing I have to make sure you don[']t try to MINDBREAK me with your GIANT dick!'[roman type][line break][if the intelligence of the player > 15][big he of M][']s obviously exaggerating a little bit, but the more you think about it, the less you can deny how dominant you feel getting a reward simply for trying to have sex with [him of M]! You feel a swell of confidence![otherwise if the intelligence of the player > 7]You know there's something a little off about all this, but you[']re just so happy to know your [ShortDesc of penis] is actually huge after all that it completely slips your mind. You feel a swell of confidence![otherwise]You feel a swell of confidence! Not only is your penis HUGE, [he of M][']s giving you something for free! WOW![end if] You give [him of M] your best dominant smirk and stand tall.";
 			if the size of P > the openness of asshole, now the size of P is the openness of asshole;
 			Summon P;
 			Dignify 155 - the intelligence of the player * 4;
@@ -776,7 +784,7 @@ To compute failed dominance punishment of (M - dominatrix):
 		Bore M;
 		DifficultyUp M by 1;
 	otherwise:
-		let C be the number of worn not sissifying not latex removable clothing;
+		let C be the number of worn not sissifying not latex tearable clothing;
 		if C > 0:
 			compute angry punishment of M;
 		otherwise:

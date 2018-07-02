@@ -11,10 +11,7 @@ Definition: a knickers (called D) is unmessed rather than messed:
 	if the mess of D <= 0, decide yes;
 	decide no.
 
-Check going down when the player is in Woods16 and diaper quest is 1:
-	say "[variable custom style]Something tells me that this area isn't ready for me yet.[roman type][line break]" instead.
-
-Check going down when the player is in Woods16 and there is a worn messed knickers:
+Check going down when the player is in Woods16 and there is a worn messed knickers and diaper quest is 0:
 	say "[variable custom style]I'm not going into some small closed space while wearing this smelly thing![roman type][line break]" instead.
 
 Definition: a knickers (called D) is unsoiled rather than soiled:

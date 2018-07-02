@@ -5,7 +5,7 @@ A black-and-yellow striped stockings is a kind of stockings. There is 1 black-an
 To decide which figure-name is clothing-image of (C - a black-and-yellow striped stockings):
 	decide on figure of black-and-yellow striped stockings.
 
-Figure of black-and-yellow striped stockings is the file "Items\Clothes\Lower\Legs\stripedstockings1.png".
+Figure of black-and-yellow striped stockings is the file "Items/Clothes/Lower/Legs/stripedstockings1.png".
 
 To say ClothingDesc of (C - a black-and-yellow striped stockings):
 	say "Fuzzy black and yellow stockings[if the class of the player is broodmother]. They feel like they[']ve become somewhat hard, and their tops fade into your skin[end if].".
@@ -27,7 +27,7 @@ A red-and-white striped stockings is a kind of stockings. There is 1 red-and-whi
 To decide which figure-name is clothing-image of (C - a red-and-white striped stockings):
 	decide on figure of red-and-white striped stockings.
 
-Figure of red-and-white striped stockings is the file "Items\Clothes\Lower\Legs\stripedstockings2.png".
+Figure of red-and-white striped stockings is the file "Items/Clothes/Lower/Legs/stripedstockings2.png".
 
 To say ClothingDesc of (C - a red-and-white striped stockings):
 	say "A pair of festive red and white striped thigh-high stockings.".

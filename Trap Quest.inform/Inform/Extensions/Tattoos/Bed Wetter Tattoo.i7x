@@ -16,6 +16,8 @@ To decide which number is the initial cringe of (T - a bed-wetter tattoo):
 	decide on 10.
 To compute inking effect of (T - a bed-wetter tattoo):
 	now incontinence is 15.
+Definition: a bed-wetter tattoo (called T) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
 Bed Wetter Tattoo ends here.
 

@@ -11,10 +11,10 @@ Definition: an adult baby slave (called M) is raunchy:
 Figure of AABS is the file "NPCs/MultiFloor/BabySlave/AABS.png". Figure of BABS is the file "NPCs/MultiFloor/BabySlave/BABS.png".
 
 To decide which figure-name is the monster-image of (M - angelic adult baby slave):
-	display the Figure of AABS.
+	decide on the Figure of AABS.
 
 To decide which figure-name is the monster-image of (M - bratty adult baby slave):
-	display the figure of BABS.
+	decide on the figure of BABS.
 
 To say ShortDesc of (M - an adult baby slave):
 	say "adult baby slave".
@@ -152,7 +152,7 @@ To compute perception of (M - an adult baby slave):
 	otherwise if M is angelic adult baby slave and (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
 		distract M;
-	otherwise if M is angelic adult baby slave and (there is a worn currently visible diaper or M is aware that the player needs a change):
+	otherwise if M is angelic adult baby slave and (there is a worn currently at least partially visible diaper or M is aware that the player needs a change):
 		compute diaper check of M;
 	otherwise if the diaper-duration of M > 0:
 		if there is a worn diaper:
@@ -164,7 +164,7 @@ To compute perception of (M - an adult baby slave):
 	otherwise if M is unfriendly:
 		say "She eyes you mischievously and, compelled by some dark, childish impulse, she seems ready to pounce at you in a moments notice.";
 		now the sex-length of M is 3;
-	otherwise if the class of the player is adult baby and M is friendly:
+	otherwise if the player is an adult baby and M is friendly:
 		say "[speech style of M]'Oh my god! You're just too cute! Mommy has to see you later!'[roman type][line break]Mommy?";
 		FavourUp M by 3;
 	otherwise if there is a worn waddle diaper and M is friendly:
@@ -418,7 +418,7 @@ The monster convinced rule of an adult baby slave is usually the adult baby slav
 
 To say PresentFriendlyAcceptanceFlav of (M - an adult baby slave): 
 	if presented-orifice is face:
-		say "[speech style of M][one of]'That sounds like lot'sa fun!'[or]'Yay! I get to play with my best friend!'[or]'Like a play-date? Sounds fun!'[or]'Yeah! ...I might have to use my diaper though.'[at random][roman type][line break]";
+		say "[speech style of M][one of]'That sounds like lot'sa fun!'[or]'Yay! I get to play with my best friend!'[or]'Like a play-date? Sounds fun!'[or]'Yeah! ... I might have to use my diaper though.'[at random][roman type][line break]";
 	if presented-orifice is asshole and diaper lover >= 4:
 		say "[speech style of M]'Having trouble? I think I might have something to help.'[roman type][line break]";
 

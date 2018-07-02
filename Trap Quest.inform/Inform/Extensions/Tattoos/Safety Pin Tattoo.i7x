@@ -13,6 +13,8 @@ To decide which number is the delicateness-influence of (T - safety pin tattoo):
 	decide on -2.
 To decide which number is the initial cringe of (T - safety pin tattoo):
 	decide on 4.
+Definition: safety pin tattoo (called T) is baby themed:
+	decide yes.
 
 Safety Pin Tattoo ends here.
 

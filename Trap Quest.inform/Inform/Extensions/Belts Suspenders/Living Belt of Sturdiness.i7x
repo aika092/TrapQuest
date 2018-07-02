@@ -1,6 +1,6 @@
 Living Belt of Sturdiness by Belts Suspenders begins here.
 
-living belt of sturdiness is a belt. Figure of living belt of sturdiness is the file "Items\Clothes\Lower\Waist\Belts\belt2.png". living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of living belt of sturdiness is "lbs".
+living belt of sturdiness is a belt. Figure of living belt of sturdiness is the file "Items/Clothes/Lower/Waist/Belts/belt2.png". living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of living belt of sturdiness is "lbs".
 
 living belt of sturdiness has a number called buildup. The buildup of the living belt of sturdiness is 0.
 

@@ -242,7 +242,7 @@ Carry out taking museum-store clothing:
 	if the location of the player is mansion28 and there is a worn lipstick collar:
 		let L be a random lipstick collar;
 		now L is tethering;
-		say "The barrier flashes as your hands pass through, and you hear a chilling rattling noise as a brilliantly pink chain shoots out of your collar and [if vampiress is in the location of the player] faithfully secures itself around [NameDesc of vampiress][']s outstretched wrist. She grins, proving its strength with a firm tug. [otherwise]twists down the hall, and immediately pulling taught. You hear a sultry voice giggling down the hall! [end if][line break][speech style of vampiress]'It would be a shame if you left without paying, now wouldn[']t it?'[roman type][line break][line break][line break]";
+		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and secures itself to a tiny hook in the floor. [if vampiress is in the location of the player][BigNameDesc of vampiress] grins as the chain pulls taut[otherwise]You hear a sultry voice giggling down the hall as the chain pulls taut[end if].[line break][speech style of vampiress]'It would be a shame if you left without paying, now wouldn[']t it?'[roman type][line break][line break][line break]";
 		unless vampiress is alive:
 			summon vampiress in the mansion;
 			say "[SummoningFlav of vampiress]";

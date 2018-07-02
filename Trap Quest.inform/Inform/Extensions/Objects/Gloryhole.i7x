@@ -89,7 +89,7 @@ Check entering gloryhole:
 	otherwise do nothing instead.
 
 To say GloryHoleSuction:
-	if the player is upright, say "Suddenly, a powerful and invisible suction force presses your body powerfully against the wall!  Your face is forced against the groin of the man in the painting[if the largeness of breasts > 2] and your [ShortDesc of breasts] are lewdly squooshed up against the wall[end if]!   You are completely unable to move!  ".
+	if the player is upright, say "Suddenly, a powerful and invisible suction force presses your body powerfully against the wall!  Your face is forced against the groin of the man in the painting[if the largeness of breasts > 2] and your [ShortDesc of breasts] are lewdly squooshed up against the wall[end if]!  You are completely unable to move! ".
 	[Selkie: This would seem like a good place to *also* milk the breasts - perhaps if they're uncovered and milky?]
 
 To compute gloryhole blowjob receipt:
@@ -141,8 +141,8 @@ To compute gloryhole genital modification:
 		summon T;
 		say "You feel a sharp pain near your crotch and pull your body back. You now have a 'SLUT' tattoo!  [line break][variable custom style][if the bimbo of the player < 13]Fuck![otherwise]Heh. It's making me feel even more [one of]girly[or]giddy[at random]![end if][roman type][line break]";
 	otherwise if clitoris piercing is eligible:
-		summon clitoris piercing cursed;
-		say "You feel a sharp hot pain in your clit!  You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [clitoris piercing]!";
+		summon normal clit piercing cursed;
+		say "You feel a sharp hot pain in your clit!  You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [normal clit piercing]!";
 	otherwise if C is chastity cage:
 		summon C cursed;
 		say "[if the player is male]Before you can react, someone on the other end of the hole has forced something hard and plastic around your [ShortDesc of penis]!  The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]!  [line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";
@@ -163,7 +163,7 @@ To say SexResistFlav of (G - gloryhole):
 		if a random number between 1 and (the semen taste addiction of the player * the semen taste addiction of the player * the semen taste addiction of the player) > 700:
 			say "You can't bring yourself to stop right now!  [SexSubmissionFlav of G]";
 		otherwise:
-			say "You shuffle backwards, removing the [manly-penis] from you mouth and giving the anonymous man blue balls. [line break][first custom style]'[one of]Fucking bitch!  Come back here!'[or]What the fuck?  You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]!  Finish sucking my cock you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
+			say "You shuffle backwards, removing the [manly-penis] from you mouth and giving the anonymous man blue balls. [line break][first custom style]'[one of]Fucking bitch!  Come back here!'[or]What the fuck?  You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]! Finish sucking my cock you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
 			dislodge G;
 	otherwise if G is normal glory hole:
 		say "You try to pull away but the magical suction is holding you tightly against the wall[if the player is not a pervert][one of]!  You can't even pull your eyes away from the large painting of the cock in front of your face[or][or][or][or][or][cycling][end if]!";

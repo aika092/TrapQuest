@@ -5,7 +5,7 @@ Definition: a bitch tattoo (called T) is drawable:
 	if there is a worn lower back tattoo, decide no;
 	decide no.
 Definition: a bitch tattoo (called T) is eligible:
-	if the noun is sissifying clothing, decide yes;
+	if the noun is sissifying clothing or the noun is heart themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - a bitch tattoo):
 	say "The word [i]Bitch[if the player is a flatchested trap]boy[end if][/i] has been tattooed on your lower back in thick cursive letters, followed by a pink heart. [if the player is a flatchested trap]It definitely doesn't make you feel very manly...[otherwise]It makes you feel trashy[end if].".

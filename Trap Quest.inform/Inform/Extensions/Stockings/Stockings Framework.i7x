@@ -89,6 +89,10 @@ To say ShortDesc of (C - a socks):
 To say ShortestDesc of (C - a stockings):
 	say "pair of socks".
 
+Definition: a socks (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	if the initial cringe of C > 0, decide yes;
+	decide no.
+
 
 Part - Wearability
 

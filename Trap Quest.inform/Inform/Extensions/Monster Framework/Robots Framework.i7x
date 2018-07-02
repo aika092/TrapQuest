@@ -1,6 +1,6 @@
 Robots Framework by Monster Framework begins here.
 
-A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The text-shortcut of robot is "ro". The poison-status of a robot is -1.
+A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1.
 
 To say waitingflav of (M - a robot):
 	do nothing.
@@ -17,6 +17,10 @@ To compute (S - a striped top) damaging (M - a robot):
 To compute kneeling reaction of (M - a robot):
 	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";	
 	humiliate 75.
+
+To compute DQ kneeling reaction of (M - a robot):
+	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";	
+	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 To compute lead holding of (M - a robot):
 	do nothing.
@@ -67,6 +71,10 @@ To say ClothesPeeReaction of (M - a robot):
 
 To say DiaperReaction of (M - a robot):
 	say "[BigNameDesc of M]'s blank metal expression does not change, so it's hard to gauge whether it saw or understood what you just did in front of it.".
+	
+
+To say BecomesAggressive of (M - a robot):
+	say "[BigNameDesc of M][']s eyes turn red![line break][speech style of M]'[one of]CHOOSING PUNISHMENT ROUTINE.'[or]EXECUTING [if the player is upright]COMBAT.EXE[otherwise]PUNISHMENT.BAT[end if].'[in random order][roman type][line break]".
 
 To compute (M - a monster) stomping (N - a robot):
 	if M is in the location of the player, say "[M] growls at the [N], which the [N] seems to interpret as a command, and it scurries away quickly.";

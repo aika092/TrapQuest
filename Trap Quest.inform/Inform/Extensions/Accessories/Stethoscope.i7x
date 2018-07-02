@@ -31,7 +31,7 @@ Part 1 - Doctor Stethoscope
 
 A doctor stethoscope is a kind of stethoscope. There is 1 doctor stethoscope.
 
-Figure of stethoscope 1 is the file "Items\Accessories\Neck\stethoscope1.png".
+Figure of stethoscope 1 is the file "Items/Accessories/Neck/stethoscope1.png".
 
 To decide which figure-name is clothing-image of (C - a doctor stethoscope):
 	decide on figure of stethoscope 1.
@@ -54,7 +54,7 @@ Part 2 - Cock Stethoscope
 
 A cock stethoscope is a kind of stethoscope. There is 1 cock stethoscope.
 
-Figure of stethoscope 2 is the file "Items\Accessories\Neck\stethoscope2.png".
+Figure of stethoscope 2 is the file "Items/Accessories/Neck/stethoscope2.png".
 
 To decide which figure-name is clothing-image of (C - a cock stethoscope):
 	decide on figure of stethoscope 2.

@@ -23,6 +23,16 @@ To decide which number is the kick damage of the player:
 
 permanent-kick-bonus is a number that varies.
 
+kick-fatigue is a number that varies.
+kick-fatigue-delay is a number that varies.
+
+A time based rule (this is the kick fatigue recovery rule):
+	if kick-fatigue-delay > 0:
+		decrease kick-fatigue-delay by 1;
+	otherwise if kick-fatigue > 0:
+		decrease kick-fatigue by 1.
+
+
 Kicking is an action applying to one thing.
 
 [!<CheckKicking>+
@@ -52,6 +62,9 @@ Carry out kicking:
 	reset submitted monsters;
 	increase the fat-burning of the player by 45;
 	let A be the kick damage of the player;
+	decrease A by kick-fatigue;
+	now kick-fatigue-delay is 2;
+	increase kick-fatigue by 1;
 	now seconds is 6;
 	let H be a random heels worn by the player;
 	if H is heels:

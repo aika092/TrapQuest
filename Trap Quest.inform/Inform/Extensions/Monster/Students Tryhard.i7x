@@ -140,6 +140,52 @@ To say DamageReaction (N - a number) of (M - student-candy):
 	say "[speech style of M]'[one of]HISS!'[or]NROOWL!'[or]OW, F- I mean, NYOUCH![at random][roman type]".
 
 
+Part - Raye
+
+student-raye is a dq-only tryhard student.
+
+The text-shortcut of student-raye is "stra".
+
+Figure of raye 1 is the file "NPCs/School/Student/student21a.png".
+Figure of raye 2 is the file "NPCs/School/Student/student21b.png".
+Figure of raye 3 is the file "NPCs/School/Student/student21c.png".
+
+To decide which figure-name is the monster-image of (M - student-raye):
+	if the current-rank of M is 3, decide on figure of raye 1;
+	if the current-rank of M is 4, decide on figure of raye 2;
+	decide on figure of raye 3.
+
+To say MonsterDesc of (M - student-raye):
+	say "This shy looking woman is wearing a white T-shirt that says 'Yes, Daddy?' in pink writing. [if the current-rank of M is 3]A floral pattern skirt would be hiding her large white diaper if she wasn't frequently raising it up to make sure everyone gets cheeky views of her nappy[otherwise]She is no longer wearing a skirt, allowing her large white nappy to be on display at all times. She doesn't seem embarrassed about this in the slightest[end if]. Her brown hair is in pigtails with pink fluffy scrunchies[if the current-rank of M is 5]. She's visibly horny and keeps her thighs widely spread at all times, as if begging to be touched through her padding[end if].".
+
+The min-rank of student-raye is 3.
+The current-rank of student-raye is 3.
+The max-rank of student-raye is 5.
+
+To update name of (M - student-raye):
+	if the current-rank of M is 3:
+		now the student-name of M is "Raye";
+		now the student-print of M is "padded flasher";
+	otherwise if the current-rank of M is 4:
+		now the student-name of M is "Rae";
+		now the student-print of M is "skirtless babygirl";
+	otherwise:
+		now the student-name of M is "Rainbow";
+		now the student-print of M is "desperate diapergirl".
+
+To say StoryAnswer of (M - student-raye):
+	say "[speech style of M]'[if the current-rank of M is 3]I wear diapers for my boyfriend. I only do it for him, you know? Not because it's my thing myself. But here they're helping me get over my embarrassment and understand why diapers can be sexy[otherwise]Did you know that until recently I didn't even have a diaper fetish? How dumb was that?! Haha[end if]!'[roman type][line break][one of][big his of M] eyes fall to the junction of your own legs, and [he of M] looks thoughtful.[or]You notice [he of M]'s eyeing the area of your own groin with a speculative look.[or]You feel a little worried by the way [he of M] is considering your own situation.[at random]".
+
+To say WhereAnswer of (M - student-raye):
+	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]using [end if]your nappy! And then others will be proud of you!'[roman type][line break]".
+
+To say EscapeAnswer of (M - student-raye):
+	say "[speech style of M]'More people who you can show off your diaper to, of course!'[roman type][line break]".
+	
+To compute teaching of (M - student-raye):
+	say "[speech style of M]'This is a diaper. Babygirls like us wear them to look cute and because we can't control our tinkles.'[roman type][line break]".
+
+
 Part - Default Conversation
 
 

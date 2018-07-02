@@ -10,9 +10,9 @@ The printed name of pink bodice is "[TQlink of item described][clothing-title-be
 The printed name of black bodice is "[TQlink of item described][clothing-title-before]black blouse[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The printed name of white-bodice is "[TQlink of item described][clothing-title-before]white blouse[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of black blouse is the file "Items\Clothes\Upper\Blouses\blouse1.png".
-Figure of pink blouse is the file "Items\Clothes\Upper\Blouses\blouse2.png".
-Figure of white blouse is the file "Items\Clothes\Upper\Blouses\blouse3.png".
+Figure of black blouse is the file "Items/Clothes/Upper/Blouses/blouse1.png".
+Figure of pink blouse is the file "Items/Clothes/Upper/Blouses/blouse2.png".
+Figure of white blouse is the file "Items/Clothes/Upper/Blouses/blouse3.png".
 
 To decide which figure-name is clothing-image of (C - a bodice):
 	decide on figure of black blouse.

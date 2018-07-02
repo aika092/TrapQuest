@@ -4,11 +4,11 @@ Johnson by Sex Toys begins here.
 
 A johnson is a kind of dong. There is 1 johnson. The printed name of a johnson is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][DongSize the size of the item described] [DongColor of the item described] dildo[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of johnson is "dl".
 
-Figure of johnson 1 is the file "Items\Accessories\Toys\johnson1.png".
-Figure of johnson 2 is the file "Items\Accessories\Toys\johnson2.png".
-Figure of johnson 3 is the file "Items\Accessories\Toys\johnson3.png".
-Figure of johnson 4 is the file "Items\Accessories\Toys\johnson4.png".
-Figure of johnson 5 is the file "Items\Accessories\Toys\johnson5.png".
+Figure of johnson 1 is the file "Items/Accessories/Toys/johnson1.png".
+Figure of johnson 2 is the file "Items/Accessories/Toys/johnson2.png".
+Figure of johnson 3 is the file "Items/Accessories/Toys/johnson3.png".
+Figure of johnson 4 is the file "Items/Accessories/Toys/johnson4.png".
+Figure of johnson 5 is the file "Items/Accessories/Toys/johnson5.png".
 
 To decide which figure-name is clothing-image of (C - a johnson):
 	if C is refreshment, decide on figure of johnson 1;

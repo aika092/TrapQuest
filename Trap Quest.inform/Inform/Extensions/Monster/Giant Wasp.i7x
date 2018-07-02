@@ -29,7 +29,7 @@ Understand "newborn", "nwsp" as giant wasp when the item described is newborn-wa
 buzzing giant wasp is a giant wasp. The printed name of buzzing giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]buzzing[end if] giant wasp[monster-title-after of item described]". The text-shortcut of buzzing giant wasp is "bwsp".
 fluttering giant wasp is a giant wasp. The printed name of fluttering giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fluttering[end if] giant wasp[monster-title-after of item described]". The text-shortcut of fluttering giant wasp is "fwsp".
 hovering giant wasp is a giant wasp. The printed name of hovering giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]hovering[end if] giant wasp[monster-title-after of item described]". The text-shortcut of hovering giant wasp is "hwsp".
-fuzzy giant wasp is a giant wasp. The printed name of fuzzy giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fuzzy[end if] giant wasp[monster-title-after of item described]". The text-shortcut of fuzzy giant wasp is "fwsp".
+fuzzy giant wasp is a giant wasp. The printed name of fuzzy giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fuzzy[end if] giant wasp[monster-title-after of item described]". The text-shortcut of fuzzy giant wasp is "fzwp".
 erratic giant wasp is a giant wasp. The printed name of erratic giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]erratic[end if] giant wasp[monster-title-after of item described]". The text-shortcut of erratic giant wasp is "ewsp".
 
 vicious giant wasp is a giant wasp. The printed name of vicious giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]vicious[end if] giant wasp[monster-title-after of item described]". The text-shortcut of vicious giant wasp is "vwsp".
@@ -274,7 +274,7 @@ To set up sex length of (M - a giant wasp) in (B - asshole):
 	set up sex length 4 of M in B.
 
 To compute striking attack of (M - a giant wasp):
-	say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]Its getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
+	say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
 	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 9.
 
 Section 2 - Damage
@@ -322,7 +322,7 @@ To say MediumDesc of (M - domesticated wasp):
 	say "[if M is daddy-wasp]daddy [otherwise if M is newborn-wasp]newborn [end if] domesticated wasp"
 
 To say MonsterDesc of (M - domesticated wasp):
-	say "This giant flying insect has a tiny fairy perched on its back, controlling it with a pair of fibrous green reigns. Despite its clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating ovipositor extending from its underbelly.".
+	say "This giant flying insect has a tiny fairy perched on its back, controlling it with a pair of fibrous green reins. Despite its clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating ovipositor extending from its underbelly.".
 
 To set up (M - domesticated wasp):
 	reset M;
@@ -335,7 +335,7 @@ To set up (M - domesticated wasp):
 		remove M from play.
 
 To say SummoningFlav of (M - domesticated wasp):
-	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown wasp emerges from the egg. A fairy emerges shortly from the passage, and quickly swings a set of green reigns over its head as it lifts off the ground.";
+	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown wasp emerges from the egg. A fairy emerges shortly from the passage, and quickly swings a set of green reins over its head as it lifts off the ground.";
 	otherwise say "You hear an egg cracking somewhere close by.".
 
 To say DamageReactHealthy of (M - domesticated wasp):
@@ -345,7 +345,7 @@ To say DamageReactDamaged of (M - domesticated wasp):
 	say "The wasp drops a few inches, buzzing as it takes the hit!".
 
 To say DamageReactTired of (M - domesticated wasp):
-	say "The wasps's buzzing starts growing weaker.".
+	say "The wasp's buzzing starts growing weaker.".
 
 To say DamageReactWeak of (M - domesticated wasp):
 	say "The wasp rider seems to be struggling to keep her mount under control!".
@@ -366,7 +366,7 @@ To say MonsterFailedTripFlav of (M - domesticated wasp):
 	say "[one of]You manage to avoid it catching you.[or]Luckily, you're fast enough to avoid it catching you.[at random]".
 
 To compute delay of (M - domesticated wasp):
-	say "The wasp rider pulls back on [NameDesc of M]'s reigns [line break][speech style of M]'[one of]Lets see her beg. Heheh.'[or]So, should he violate you anally or anally?'[or]He's about to breed your starfish! Why don't you show it to him?'[or]Wait. I want to see her ask for it.'[or]Show it to him, loser. Show him.'[in random order][roman type][line break]".
+	say "The wasp rider pulls back on [NameDesc of M]'s reins [line break][speech style of M]'[one of]Let's see her beg. Heheh.'[or]So, should he violate you anally or anally?'[or]He's about to breed your starfish! Why don't you show it to him?'[or]Wait. I want to see her ask for it.'[or]Show it to him, loser. Show him.'[in random order][roman type][line break]".
 
 To compute unique death of (M - domesticated wasp):
 	[let F be a random off-stage fairy;
@@ -382,7 +382,7 @@ To compute unique death of (M - domesticated wasp):
 		now W is in the location of the player.
 
 To compute (M - a giant wasp) fathering (W - a domesticated wasp):
-	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with her hair drawn back into a ponytail bursts from the bushes. She sprinkles the wasp with a handful of glittering dust as she wraps a pair of fibrous reigns around his head, causing it to go through the entire metamorphosis a normal wasp goes through in its youth, but in the span of only a few seconds. The fairy seems too aborbed with her new mount to care about you.";	
+	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with her hair drawn back into a ponytail bursts from the bushes. She sprinkles the wasp with a handful of glittering dust as she wraps a pair of fibrous reins around his head, causing it to go through the entire metamorphosis a normal wasp goes through in its youth, but in the span of only a few seconds. The fairy seems too absorbed with her new mount to care about you.";	
 	now W is in the location of M;
 	newbornSetup W;
 	now the fertilization-cooldown of M is 200;
@@ -438,7 +438,7 @@ To say midDominanceResponse of (M - domesticated wasp):
 
 To say InSexResponse of (M - domesticated wasp):
 	if M is unfriendly:
-		say "[speech style of M]'[one of]Sorry, but when he has a need to seed, he has a need to seed. Or egg. I guess.'[or]But if he doesn't fuck you, where would he put all his eggs? They wouldn't fit in me. Stupid.'[or]Oh come on, its not like it's going to go on forever.'[or]'Stop being a selfish bitch. He has needs too!'[or]Where else do you expect him to put his eggs? So stupid...'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Sorry, but when he has a need to seed, he has a need to seed. Or egg. I guess.'[or]But if he doesn't fuck you, where would he put all his eggs? They wouldn't fit in me. Stupid.'[or]Oh come on, it's not like it's going to go on forever.'[or]'Stop being a selfish bitch. He has needs too!'[or]Where else do you expect him to put his eggs? So stupid...'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Looks fun, but we have important training to do!'[roman type][line break]".
 
@@ -459,19 +459,19 @@ To say WhoAnswer of (M - domesticated wasp):
 	if image cutscenes is 1, display figure of fairy interact 10.
 
 To say StoryAnswer of (M - domesticated wasp):
-	say "[speech style of M]'[one of]There were always rumors among fairies that wasps could be tamed, but I was the only fairy cool enough to try.'[or]I thought waiting around getting pregnant all the time was dumb, so I decided to become a wasp tamer.'[at random][roman type][line break]";
+	say "[speech style of M]'[one of]There were always rumours among fairies that wasps could be tamed, but I was the only fairy cool enough to try.'[or]I thought waiting around getting pregnant all the time was dumb, so I decided to become a wasp tamer.'[at random][roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 8.
 
 To say EscapeAnswer of (M - domesticated wasp):
 	if the class of the player is faerie:
-		say "[speech style of M]'[one of]Weak fairies like you aren't supposed to leave. I think.'[or]I can see why you would want to leave. Its a giant clam fest around here. Can't help, sorry.'[or]There's a mansion somewhere you could hide in. Its overrated.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Weak fairies like you aren't supposed to leave. I think.'[or]I can see why you would want to leave. It's a giant clam-fest around here. Can't help, sorry.'[or]There's a mansion somewhere you could hide in. It's overrated.'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Why? Are you scared of me? Heheheh...'[or]Don't you remember how you got here? Just go that way.'[or]There[']s a set of doors somewhere, but behind them everything is all lame and clean. You[']d probably fit right in.'[as decreasingly likely outcomes][roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 11.
 
 To say AdviceAnswer of (M - domesticated wasp):
 	if the class of the player is faerie, say "[speech style of M][one of]And give you an advantage? No way!'[or]Like I'd share my secrets with you!'[or]If you tried to ride a wasp you'd crush it. Idiot.'[at random][roman type][line break]";
-	otherwise say "[speech style of M]'[one of]The demoness really loves it when you resist her. The more you fight, the bigger the mess you get. Its fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. She created a minotaur to watch it, but it wouldn't stop breeding her, so she put him in a giant bird cage.'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]The demoness really loves it when you resist her. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. She created a minotaur to watch it, but it wouldn't stop breeding her, so she put him in a giant bird cage.'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
 	if image cutscenes is 1, display figure of fairy interact 12.
 
 To compute perception of (M - domesticated wasp):
@@ -483,14 +483,14 @@ To compute perception of (M - domesticated wasp):
 		if E is 1:
 			say "[BigNameDesc of M] and its rider seem to notice you! [line break][speech style of M]'That[']s her! Get her!'[roman type][line break] The fairy snaps her reigns as the wasp heads straight for you!";
 		otherwise:
-			say "[BigNameDesc of M] and its rider seem to notice you! [line break][speech style of M]'She's perfect breeding material! Get her!'[roman type][line break] The fairy snaps her reigns as the wasp heads straight for you!";		
+			say "[BigNameDesc of M] and its rider seem to notice you! [line break][speech style of M]'She's perfect breeding material! Get her!'[roman type][line break] The fairy snaps her reins as the wasp heads straight for you!";		
 		anger M;
 		now M is interested;
 	otherwise if F is 1:
 		if E is 1:
 			say "[BigNameDesc of M] flies up to you, and its rider looks you up and down. [line break][speech style of M]'Hey. You look pretty cool!'[roman type][line break]";
 		otherwise:
-			say "[BigNameDesc of M] flies right up to you, and its rider pulls back sharply on the reigns. [line break][speech style of M]'You should hang out with me if you need someone to show you the ropes.'[roman type][line break]";
+			say "[BigNameDesc of M] flies right up to you, and its rider pulls back sharply on the reins. [line break][speech style of M]'You should hang out with me if you need someone to show you the ropes.'[roman type][line break]";
 			FavourDown M by 1;
 		now M is interested;
 	otherwise if the class of the player is faerie or the class of the player is priestess:
@@ -508,7 +508,7 @@ To compute perception of (M - domesticated wasp):
 
 To compute (M - domesticated wasp) protecting against (X - a monster): [Default protection if not defined for the monster]
 	if X is demoness or the number of worn demonic clothing > 0:
-		say "[one of][BigNameDesc of M]'s rider watches, totally enthralled.[or][or][BigNameDesc of M]'s rider pulls out a tiny journal, recording your performance.[or][or][BigNameDesc of M] and its rider watch your performance, throoughly entertained.[or][or]Your actions appear to interest [NameDesc of M]'s, who watches with excitement.[cycling]";
+		say "[one of][BigNameDesc of M]'s rider watches, totally enthralled.[or][or][BigNameDesc of M]'s rider pulls out a tiny journal, recording your performance.[or][or][BigNameDesc of M] and its rider watch your performance, thoroughly entertained.[or][or]Your actions appear to interest [NameDesc of M]'s, who watches with excitement.[cycling]";
 	otherwise:
 		say "[one of][BigNameDesc of M] watches, seemingly not noticing your situation.[or][BigNameDesc of M] appears not to have noticed what's going on![or][BigNameDesc of M] is looking the other way, and doesn't see your humiliating situation.[or][BigNameDesc of M] seems confused by your actions.[or][BigNameDesc of M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really. Besides, it's not like [NameDesc of M] cares. Right?[cycling]".
 

@@ -2,6 +2,9 @@ Childish Backpacks of Holding by Bags of Holding begins here.
 
 A childish backpack of holding is a kind of bag of holding.
 
+Definition: a childish backpack of holding (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
+
 To decide which number is the initial cringe of (C - a childish backpack of holding):
 	decide on 5.
 
@@ -16,7 +19,7 @@ Part 1 - Jewel Pattern Backpack of Holding
 
 A jewel pattern backpack of holding is a kind of childish backpack of holding. A jewel pattern backpack of holding is usually leather. There is 1 jewel pattern backpack of holding. The printed name of jewel pattern backpack of holding is usually "[TQlink of item described][clothing-title-before]jewel pattern backpack of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of jewel pattern backpack of holding is the file "Items\Accessories\Bags\bag18.png".
+Figure of jewel pattern backpack of holding is the file "Items/Accessories/Bags/bag18.png".
 
 To decide which figure-name is clothing-image of (C - a jewel pattern backpack of holding):
 	decide on figure of jewel pattern backpack of holding.
@@ -29,7 +32,7 @@ Part 2 - Kitty Cat Pattern Backpack of Holding
 
 A kitty cat pattern backpack of holding is a kind of childish backpack of holding. A kitty cat pattern backpack of holding is usually leather. There is 1 kitty cat pattern backpack of holding. The printed name of kitty cat pattern backpack of holding is usually "[TQlink of item described][clothing-title-before]kitty cat pattern backpack of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of kitty cat pattern backpack of holding is the file "Items\Accessories\Bags\bag19.png".
+Figure of kitty cat pattern backpack of holding is the file "Items/Accessories/Bags/bag19.png".
 
 To decide which figure-name is clothing-image of (C - a kitty cat pattern backpack of holding):
 	decide on figure of kitty cat pattern backpack of holding.
@@ -42,7 +45,7 @@ Part 3 - Bubbles Pattern Backpack of Holding
 
 A bubbles pattern backpack of holding is a kind of childish backpack of holding. A bubbles pattern backpack of holding is usually leather. There is 1 bubbles pattern backpack of holding. The printed name of bubbles pattern backpack of holding is usually "[TQlink of item described][clothing-title-before]bubbles pattern backpack of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of bubbles pattern backpack of holding is the file "Items\Accessories\Bags\bag20.png".
+Figure of bubbles pattern backpack of holding is the file "Items/Accessories/Bags/bag20.png".
 
 To decide which figure-name is clothing-image of (C - a bubbles pattern backpack of holding):
 	decide on figure of bubbles pattern backpack of holding.

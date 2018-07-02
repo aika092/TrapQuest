@@ -9,7 +9,7 @@ There is 1 baby booties.
 To decide which figure-name is the clothing-image of (H - a baby booties):
 	decide on the figure of baby booties.
 
-Figure of baby booties is the file "Items\Clothes\Lower\Feet\Booties\booties1.png".
+Figure of baby booties is the file "Items/Clothes/Lower/Feet/Booties/booties1.png".
 
 To decide which number is the unique outrage of (C - a baby booties):
 	decide on 6.
@@ -25,6 +25,9 @@ To say UniqueShortDesc of (C - a baby booties):
 
 To say ClothingDesc of (C - a baby booties):
 	say "A pair of pink and white baby booties, made out of a soft cotton.".
+
+Definition: a baby booties (called C) is babywear: [Is it something that an NPC could put on someone to babify them?]
+	decide yes.
 
 To decide which number is the dexterity-influence of (C - a baby booties):
 	decide on 1.
@@ -58,7 +61,7 @@ To say ClothingDesc of (C - a baby slippers):
 To decide which figure-name is the clothing-image of (H - a baby slippers):
 	decide on the figure of baby slippers.
 
-Figure of baby slippers is the file "Items\Clothes\Lower\Feet\Booties\booties2.png".
+Figure of baby slippers is the file "Items/Clothes/Lower/Feet/Booties/booties2.png".
 
 To decide which number is the unique cringe of (C - a baby slippers):
 	decide on 12.

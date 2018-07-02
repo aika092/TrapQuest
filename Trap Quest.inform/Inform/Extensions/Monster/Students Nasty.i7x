@@ -135,10 +135,10 @@ To update name of (M - student-katya):
 	if the current-rank of M < 4, now the text-shortcut of M is "stka".
 
 To say FirstResponse of (M - student-katya):
-	say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my cunt for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. Please watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside herself and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend!  Please, do you know where I can find more cock?  I feel so empty and sad when there's no cock inside of me!'[roman type][line break][end if]".
+	say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my [cunt] for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. Please watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside herself and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend!  Please, do you know where I can find more cock?  I feel so empty and sad when there's no cock inside of me!'[roman type][line break][end if]".
 
 To say WhoAnswer of (M - student-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][student-name of M]['], should I allow you to talk to me[otherwise]My name is ['][student-name of M]['] because the only important thing about me is my cunt[end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][student-name of M]['], should I allow you to talk to me[otherwise]My name is ['][student-name of M]['] because the only important thing about me is my [cunt][end if].'[roman type][line break]".
 
 To say WhereAnswer of (M - student-katya):
 	if the rank of the player is 1, say "[speech style of M]'[if the current-rank of M < 4]We're in a pathetic excuse for an institution that tries to turn people from dominant divas into worthless whimpering worms. But only if you're so weak that you can't resist their techniques[otherwise]It would take a very weird set of events for me to be a domesticated fuckdoll but for you to be rank one. How unusual. I, err, I mean, welcome to my favourite place, Slut School[end if].'[roman type][line break]";
@@ -149,13 +149,13 @@ To say EscapeAnswer of (M - student-katya):
 	otherwise say "[speech style of M]'[if the current-rank of M < 4]I don't know yet, but I plan to be the first sane person here to find out[otherwise]I'm hoping there's even bigger and juicier [manly-penis]s to serve[end if].'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your cunt as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your cunt won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful!  Except that it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your [cunt] as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your [cunt] won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful!  Except that it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]".
 
 To say StoryAnswer of (M - student-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I'm as hot as a supermodel I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his tiny dick!  He thinks that by sending me here he can get me to 'learn my place' and become his little housewife and the perfect little subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to masturbate every few minutes to keep my pathetic cunt hot and wet at all times. Who knows when the next person will want to use me?  A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best!  He must be coming to collect me soon. I can't wait until I can fill myself with his glorious cock, it's been so long!  I'm hoping he'll bring his best friends so they can use me whenever they want, too!  Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break!  It'll all be okay again once I'm stuffed to the brim with cock[end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I'm as hot as a supermodel I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his tiny dick!  He thinks that by sending me here he can get me to 'learn my place' and become his little housewife and the perfect little subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to masturbate every few minutes to keep my pathetic [cunt] hot and wet at all times. Who knows when the next person will want to use me?  A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best!  He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long!  I'm hoping he'll bring his best friends so they can use me whenever they want, too!  Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break!  It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]".
 
 To compute teaching of (M - student-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]I could, if I chose to associate with people this far beneath me[otherwise if the current-rank of M is 4]No, sorry. You have to learn who's in charge the hard way to truly understand your place[otherwise]Let me teach you how to be a perfect cunt-warmer. Step one: Have a cunt. Step two: Keep it full of cock as much as possible. That's it, I've taught you all I know[end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]I could, if I chose to associate with people this far beneath me[otherwise if the current-rank of M is 4]No, sorry. You have to learn who's in charge the hard way to truly understand your place[otherwise]Let me teach you how to be a perfect [cunt]-warmer. Step one: Have a [cunt]. Step two: Keep it full of [manly-penis] as much as possible. That's it, I've taught you all I know[end if].'[roman type][line break]".
 
 To compute friendly drink of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]Do I look like a fucking vending machine to you?'[otherwise]I'm sorry, but the only [tasty] thing I drink nowadays is dick juice. And if you want your own, you'll have to use those lips of yours to earn it yourself!'[end if][roman type][line break]".
@@ -250,6 +250,49 @@ To update name of (M - student-tanya):
 To say StoryAnswer of (M - student-tanya):
 	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear!  And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
+Part - Emily
+
+student-emily is a dq-only nasty student.
+
+The text-shortcut of student-emily is "stem".
+
+Figure of emily is the file "NPCs/School/Student/student22.png".
+
+To decide which figure-name is the monster-image of (M - student-emily):
+	decide on figure of emily.
+
+To say MonsterDesc of (M - student-emily):
+	say "This young asian woman is wearing a short pink babydoll dress above bare thighs and knee-high pink socks. [big he of M] is so tall that it always feels like [he of M][']s looking down at you. [big his of M] expression suggests that she genuinely is.".
+
+The current-rank of student-emily is 3.
+The max-rank of student-emily is 4.
+
+To update name of (M - student-emily):
+	if the current-rank of M is 3:
+		now the student-name of M is "Emily";
+		now the student-print of M is "elegant enfant";
+	otherwise:
+		now the student-name of M is "Ember";
+		now the student-print of M is "elegant emptier".
+
+To say WhoAnswer of (M - student-emily):
+	say "[speech style of M]'I'm the Queen Bee of these parts, bitch. Ugly worms like you aren't going to get very far while there are people like me around.'[roman type][line break]".
+
+To say WhereAnswer of (M - student-emily):
+	say "[speech style of M]'[if the rank of the player is 1]A place where ugly bitches like you get turned into cute girls like me.'[otherwise]It's simple, you get promoted by behing the hottest, most attractive diaper babe here. Which means that you have no chance, haha.'[end if][roman type][line break]".
+
+To say EscapeAnswer of (M - a nasty student):
+	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's a photo of you underneath the words [']NEVER GONNA MAKE IT OUT OF RUBY['] that we like to laugh at as we walk past!'[otherwise]I've heard there's a photo of me on the wall that people like to look at for inspiration.'[end if][roman type][line break]".
+
+To say StoryAnswer of (M - student-emily):
+	say "[speech style of M]'There's nobody out there who can look as sexy in diapers as I can. I've come here to prove that compared to me you are all disgusting slobs.'[roman type][line break]".
+
+To say AdviceAnswer of (M - student-emily):
+	say "[speech style of M]'Give up while you still have [if there is a worn dry knickers]dry underwear[otherwise]a shred of dignity remaining[end if]. It won't last long.'[roman type][line break]".
+
+To compute teaching of (M - student-emily):
+	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
+
 
 Part - Default Conversation
 
@@ -272,7 +315,7 @@ To say AdviceAnswer of (M - a nasty student):
 	say "[speech style of M]'Quit now before you end up in the School Dungeon.'[roman type][line break]".
 
 To compute teaching of (M - a nasty student):
-	say "[speech style of M]'Why would I?  I don't owe you anything.'[roman type][line break]".
+	say "[speech style of M]'Why would I? I don't owe you anything.'[roman type][line break]".
 
 To compute friendly drink of (M - a nasty student):
 	say "[speech style of M]'Do I look like I'm in the mood to help you out?!'[roman type][line break]".

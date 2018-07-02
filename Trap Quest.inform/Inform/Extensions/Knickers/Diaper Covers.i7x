@@ -3,6 +3,9 @@ Diaper Covers by Knickers begins here.
 
 diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. The soak-limit of a diaper cover is usually 24. A diaper cover is usually diaper-addiction-influencing.
 
+Definition: a diaper cover (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
+
 Definition: a diaper cover (called D) is fetish appropriate:
 	if diaper lover >= 1, decide yes;
 	decide no.
@@ -66,7 +69,7 @@ A frilly white diaper cover is a kind of diaper cover. There is 1 frilly white d
 
 The printed name of frilly white diaper cover is usually "[TQlink of item described][clothing-title-before]frilly white diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of frilly white diaper cover is the file "Items\Clothes\Lower\Underwear\Diapers\Covers\diapercover1.png".
+Figure of frilly white diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover1.png".
 
 To decide which figure-name is clothing-image of (C - a frilly white diaper cover):
 	decide on figure of frilly white diaper cover.
@@ -84,7 +87,7 @@ A teddy bear diaper cover is a kind of diaper cover. A teddy bear diaper cover i
 
 The printed name of teddy bear diaper cover is usually "[TQlink of item described][clothing-title-before]teddy bear diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of teddy bear diaper cover is the file "Items\Clothes\Lower\Underwear\Diapers\Covers\diapercover2.png".
+Figure of teddy bear diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover2.png".
 
 To decide which figure-name is clothing-image of (C - a teddy bear diaper cover):
 	decide on figure of teddy bear diaper cover.

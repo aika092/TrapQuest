@@ -62,9 +62,11 @@ To First Time Search (X - a container):
 					otherwise now the prevsearch of X is 2;
 				otherwise:
 					say "It looks like this [noun] is trapped!  But you're eager to have fun, so you decide to open it anyway...";
+					now autoopen is 1;
 					try opening X;
 			otherwise:
 				say "Ooh, you find a trap, how exciting!  You open the [X] to trigger it!";
+				now autoopen is 1;
 				try opening X;
 		otherwise:
 			say "You can't seem to find any traps, maybe it's safe?";
@@ -100,6 +102,7 @@ To Second Time Search (X - a container):
 							now the prevsearch of X is 4;
 						otherwise:
 							say "It looks like this [noun] is trapped after all!  But you're eager to have fun, so you decide to open it anyway...";
+							now autoopen is 1;
 							try opening X;
 					otherwise:
 						say "Ooh, you find a trap after all, how exciting!  You open the [X] to trigger it.";

@@ -6,7 +6,7 @@ A white monokini is a kind of monokini. A white monokini is usually sheer. There
 
 The printed name of white monokini is usually "[TQlink of item described][clothing-title-before]white onepiece swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of white monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\monokini3.png".
+Figure of white monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini3.png".
 
 To decide which number is the initial outrage of (C - a white monokini):
 	decide on 6.
@@ -30,7 +30,7 @@ A green monokini is a kind of monokini. There is 1 green monokini. A green monok
 
 The printed name of green monokini is usually "[TQlink of item described][clothing-title-before]green onepiece swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of green monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\monokini1.png".
+Figure of green monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini1.png".
 
 To decide which figure-name is clothing-image of (C - a green monokini):
 	decide on figure of green monokini.
@@ -50,7 +50,7 @@ A grey monokini is a kind of monokini. There is 1 grey monokini. The text-shortc
 
 The printed name of grey monokini is usually "[TQlink of item described][clothing-title-before]grey onepiece swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of grey monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\monokini2.png".
+Figure of grey monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini2.png".
 
 To decide which figure-name is clothing-image of (C - a grey monokini):
 	decide on figure of grey monokini.

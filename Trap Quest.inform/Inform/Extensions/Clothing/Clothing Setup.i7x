@@ -19,6 +19,7 @@ Is this something that can appear in the shop?
 +!]
 Definition: a clothing (called C) is shop-eligible:
 	if C is not basic loot, decide no;
+	if C is not fetish appropriate, decide no;
 	if C is accessory or C is wrist bond or C is ankle bond or C is diaper, decide no;
 	let X be 0;
 	repeat with P running through store clothing in Dungeon41:
@@ -59,6 +60,11 @@ To Set Up Store:
 			now T is in Dungeon41;
 			now T is store;
 			increase shop-clothing by 1;
+	let H be a random off-stage designer handbag of holding;
+	if H is clothing:
+		now H is in Dungeon41;
+		now H is store;
+		increase shop-clothing by 1;
 	repeat with C running through store clothing:
 		decurse C;
 		if the raw-magic-modifier of C < 0, now the raw-magic-modifier of C is 0;

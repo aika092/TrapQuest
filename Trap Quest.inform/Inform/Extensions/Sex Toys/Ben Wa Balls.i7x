@@ -2,7 +2,7 @@ Ben Wa Balls by Sex Toys begins here.
 
 A ben wa balls is a kind of plug. The printed name of ben wa balls is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]ben wa balls[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of ben wa balls is usually "[TQlink of item described][clothing-title-before]sets of ben wa balls[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ben wa balls is "bwb". There is 1 ben wa balls.
 
-Figure of ben wa balls is the file "Items\Accessories\Toys\benWaBalls1.png".
+Figure of ben wa balls is the file "Items/Accessories/Toys/benWaBalls1.png".
 
 To decide which figure-name is clothing-image of (C - ben wa balls):
 	decide on figure of ben wa balls.

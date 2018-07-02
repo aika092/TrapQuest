@@ -7,19 +7,18 @@ To decide which number is the cringe of (C - an object):
 
 To decide which number is the cringe of (C - a wearthing):
 	if C is worn:
-		if C is not currently visible, decide on 0;
+		if C is not currently at least partially visible, decide on 0;
 	decide on the unworn cringe of C.
 
 To decide which number is the unworn cringe of (C - a clothing):
 	if C is messed knickers, decide on 20;
 	let O be the initial cringe of C;
-	increase O by the fluid outrage of C;
 	if C is worn currently visible clothing:
-		if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, increase O by 3; [This item should be blocking the crotch but it isn't. How outrageous!]
-		if C is worn currently visible knickers, increase O by 3; [Having one's knickers exposed is very childlike.]
-	if C is crotch covering fluid vulnerable clothing:
-		if C is wet, increase O by 3; [Wet = soiled as far as anyone who is looking at you is concerned.]
-		if the total-soak of C >= the soak-limit of C, increase O by 3;
+		increase O by the fluid outrage of C;
+		if C is crotch covering fluid vulnerable clothing:
+			if C is wet, increase O by 3; [Wet = soiled as far as anyone who is looking at you is concerned.]
+			if the total-soak of C >= the soak-limit of C, increase O by 3;
+	if C is worn currently at least partially visible knickers, increase O by 3; [Having one's knickers exposed is very childlike.]
 	if O > 20, now O is 20;
 	decide on O.
 	

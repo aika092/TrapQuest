@@ -155,7 +155,7 @@ REQUIRES COMMENTING
 
 +!]
 To announce sissification:
-	if the number of worn sissifying clothing > 1, say "[one of]You [if the bimbo of the player < 9]reluctantly [end if]admit to yourself that you are now officially a sissy. You become acutely aware that 'sissy' is now your official title. You realise you feel more comfortable [bold type]beg[roman type]ging[bold type] for mercy[roman type] now.[or][stopping]".
+	if the player is a sissy, say "[one of]You [if the bimbo of the player < 9]reluctantly [end if]admit to yourself that you are now officially a sissy. You become acutely aware that 'sissy' is now your official title. You realise you feel more comfortable [bold type]beg[roman type]ging[bold type] for mercy[roman type] now.[or][stopping]".
 
 [!<CheckVirginity>+
 
@@ -169,8 +169,8 @@ To check virginity:
 			otherwise say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
 			now the virgin of the player is 0;
 		otherwise:
-			if virgincursed is 1, say "[variable custom style][one of]I don[']t think that counts as real sex...I have to find a way to be more dominant.[or]I didn[']t feel like I was in charge at all...there[']s no way it counts...[or]No way that counts...I[']m gonna be a virgin forever...[stopping][roman type][line break]";
-			otherwise say "[variable custom style][if the size of penis < 4]I guess that was sex, but...I can[']t tell anybody that happened. No way I[']m calling this my first...[otherwise]I guess I'm still a virgin after that, but that was still awesome![end if][roman type][line break]".
+			if virgincursed is 1, say "[variable custom style][one of]I don[']t think that counts as real sex... I have to find a way to be more dominant.[or]I didn[']t feel like I was in charge at all...there[']s no way it counts...[or]No way that counts... I[']m gonna be a virgin forever...[stopping][roman type][line break]";
+			otherwise say "[variable custom style][if the size of penis < 4]I guess that was sex, but... I can[']t tell anybody that happened. No way I[']m calling this my first...[otherwise]I guess I'm still a virgin after that, but that was still awesome![end if][roman type][line break]".
 
 [!<VirginRemoveCurse>+
 

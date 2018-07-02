@@ -1,6 +1,6 @@
 Teddy Bear Pantyhose by Trousers begins here.
 
-teddy bear pantyhose is a kind of trousers. There is 1 unique teddy bear pantyhose. The armour of teddy bear pantyhose is 6. The printed name of teddy bear pantyhose is usually "[TQlink of item described][clothing-title-before]teddy bear pantyhose[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of teddy bear pantyhose is "tph". Figure of teddy bear pantyhose is the file "Items\Clothes\Lower\Pants\pantyhose1.png". 
+teddy bear pantyhose is a kind of trousers. There is 1 unique teddy bear pantyhose. The armour of teddy bear pantyhose is 6. The printed name of teddy bear pantyhose is usually "[TQlink of item described][clothing-title-before]teddy bear pantyhose[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of teddy bear pantyhose is "tph". Figure of teddy bear pantyhose is the file "Items/Clothes/Lower/Pants/pantyhose1.png". 
 
 To decide which figure-name is clothing-image of (H - a teddy bear pantyhose):
 	decide on figure of teddy bear pantyhose.

@@ -9,7 +9,7 @@ Part 1 - Polka Dot Business Dress
 
 A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is high cut. A polka dot business dress is usually knee-length. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[TQlink of item described][clothing-title-before]polka dot business dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of polka dot business dress is the file "Items\Clothes\Upper\Business\businessdress2.png".
+Figure of polka dot business dress is the file "Items/Clothes/Upper/Business/businessdress2.png".
 
 To decide which figure-name is clothing-image of (C - a polka dot business dress):
 	decide on figure of polka dot business dress.
@@ -31,7 +31,7 @@ Part 2 - Pinstripe Business Dress
 
 A pinstripe business dress is a kind of business dress. There is 1 unique pinstripe business dress. A pinstripe business dress is low cut. A pinstripe business dress is only arm covering. A pinstripe business dress is usually short. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is usually "[TQlink of item described][clothing-title-before]pinstripe business dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of pinstripe business dress is the file "Items\Clothes\Upper\Business\businessdress1.png".
+Figure of pinstripe business dress is the file "Items/Clothes/Upper/Business/businessdress1.png".
 
 To decide which figure-name is clothing-image of (C - a pinstripe business dress):
 	decide on figure of pinstripe business dress.
@@ -56,7 +56,7 @@ Part 3 - Fetish Business Dress
 
 A fetish business dress is a kind of business dress. There is 1 unique latex fetish business dress. A fetish business dress is low cut. The text-shortcut of fetish business dress is "fbd". A fetish business dress is usually butt-windowed. The printed name of fetish business dress is usually "[TQlink of item described][clothing-title-before]fetish business dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of fetish business dress is the file "Items\Clothes\Upper\Business\businessdress3.png".
+Figure of fetish business dress is the file "Items/Clothes/Upper/Business/businessdress3.png".
 
 To decide which figure-name is clothing-image of (C - a fetish business dress):
 	decide on figure of fetish business dress.

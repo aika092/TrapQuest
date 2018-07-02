@@ -54,7 +54,7 @@ To say BlessBlandFlav of (B - a thing):
 	do nothing.
 
 To bless (B - a thing):
-	if B is cursable:
+	if B is cursable or B is cursed clothing:
 		if B is not cursed and B is blessable:
 			say BlessBlessFlav of B;
 			now B is blessed;

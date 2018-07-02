@@ -7,7 +7,7 @@ The printed name of cultist robe is usually "[TQlink of item described][clothing
 Definition: a cultist robe (called C) is cult garb:
 	decide yes.
 
-Figure of cultist robe is the file "Items\Clothes\Upper\Special\cultistrobe1.png".
+Figure of cultist robe is the file "Items/Clothes/Upper/Special/cultistrobe1.png".
 
 To decide which figure-name is clothing-image of (C - a cultist robe):
 	decide on figure of cultist robe.

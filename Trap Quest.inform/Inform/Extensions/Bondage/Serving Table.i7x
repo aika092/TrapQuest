@@ -8,7 +8,7 @@ To decide which number is the initial outrage of (C - a serving table):
 To decide which figure-name is clothing-image of (C - a serving table):
 	decide on figure of serving table.
 
-Figure of serving table is the file "Items\Accessories\Other\servingtable1.png".
+Figure of serving table is the file "Items/Accessories/Other/servingtable1.png".
 
 To say ShortDesc of (C - a serving table):
 	say "serving table".
@@ -30,6 +30,9 @@ The serving table prevents standing rule is listed in the ability to stand rules
 
 To compute periodic effect of (C - a serving table):
 	if the number of alive royal guards is 0, follow the spawn initial royal guard rule; [the player can always find a friendly guard to serve drinks]
+	if the player is upright:
+		say "[bold type]The serving table [one of]tries[or]keeps trying[stopping] to force you back onto your knees as soon as it can![roman type][line break]";
+		try kneeling;
 	if (cocktail-glass is empty or cocktail-glass is not held) and (champagne-glass is empty or champagne-glass is not held):
 		say "[bold type]The serving table vanishes![roman type][line break]";
 		only destroy C.

@@ -7,7 +7,7 @@ A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usua
 To set up magic state of (C - trainee thigh highs):
 	do nothing.
 
-Figure of trainee thigh highs is the file "Items\Clothes\Lower\Feet\Boots\thighhighs1.png".
+Figure of trainee thigh highs is the file "Items/Clothes/Lower/Feet/Boots/thighhighs1.png".
 
 To decide which figure-name is the clothing-image of (C - a trainee thigh highs):
 	decide on figure of trainee thigh highs.

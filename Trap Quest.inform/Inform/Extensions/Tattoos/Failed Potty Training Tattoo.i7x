@@ -14,6 +14,8 @@ To compute inking effect of (T - a failed potty training tattoo):
 	now incontinence is 15.
 To decide which number is the initial cringe of (T - a failed potty training tattoo):
 	decide on 15.
+Definition: a failed potty training tattoo (called T) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
 Failed Potty Training Tattoo ends here.
 

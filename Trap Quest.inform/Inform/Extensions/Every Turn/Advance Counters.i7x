@@ -112,7 +112,7 @@ This is the sacred pool decay rule:
 		decrease the charge of the sacred pool by counters-seconds.
 The sacred pool decay rule is listed in the advance counters rules.
 
-This is the living tentacles decay rule:[TODO: migrate to perioidical effect function for living tentacles]
+This is the living tentacles decay rule:[TODO: migrate to periodical effect function for living tentacles]
 	let L be a random living tentacles;
 	if the charge of L > 0:
 		decrease the charge of L by counters-seconds.

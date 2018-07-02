@@ -11,6 +11,11 @@ Definition: a monster (called M) is fucking daddy's hole:
 	if M is penetrating asshole and M is not mating, decide yes;
 	decide no.
 
+Definition: a monster (called M) is wrong race fucking:
+	if M is not penetrating a body part, decide no;
+	if once-you-go-black tattoo is worn and M is human and M is not dark skinned, decide yes;
+	decide no.
+
 [!<SayMaintainYourDignity>+
 
 REQUIRES COMMENTING
@@ -75,7 +80,9 @@ Check resisting:
 	let M be a random monster penetrating an orifice;
 	if vampiress is penetrating an orifice, now M is vampiress;
 	if there is a fucking daddy's hole monster:
-		say "[one of][if the player is able to speak]You find yourself resisting the assault. [line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to touch you there.[end if][or][stopping]";
+		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
+	otherwise if there is a wrong race fucking monster:
+		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
 		say "Your gaping [if the player is male][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
 		now forced submit is 1;
@@ -158,18 +165,60 @@ Report resisting:
 			if the player is not feeling dominant and M is male intelligent monster:
 				let T be a random daddy's wild child tattoo;
 				if there is a worn tattoo and T is not worn:
-					summon T; [###Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like '[BigNameDesc of M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
+					summon T; [Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like '[BigNameDesc of M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
 					say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
 					try examining T.
 
-[!<SaySexResistFlavOfThing>+
 
-REQUIRES COMMENTING
-
-+!]
 To say SexResistFlav of (T - a thing):
-	if T is penetrating a body part, say "[one of]You struggle in vain to free yourself![or]You try to crawl away but are being held in place![or]You resist being used as much as you can![purely at random]";
-	otherwise say "You struggle in vain to free yourself!".
+	if diaper quest is 1, say DQResistFlav of T;
+	otherwise say "[if T is penetrating a body part][one of]You struggle in vain to free yourself![or]You try to crawl away but are being held in place![or]You resist being used as much as you can![purely at random][otherwise][DefaultResistFlav of T][end if]".
+
+To say DQResistFlav of (T - a thing):
+	say "You struggle in vain to free yourself!".
+
+To say DQResistFlav of (M - a monster):
+	if M is changing the player:
+		say DQChangeResistFlav of M;
+	otherwise if M is spanking the player:
+		say DQSpankResistFlav of M;
+	otherwise if M is enema-filling the player:
+		say DQEnemaResistFlav of M;
+	otherwise if M is masturbating the player:
+		say DQMasturbationResistFlav of M;
+	otherwise:
+		say DefaultResistFlav of M.
+
+To say DQSpankResistFlav of (M - a monster):
+	say "[one of]You wriggle around to make it as difficult as possible for [NameDesc of M] to hit the spots [he of M][']s focusing on[or]You flail your legs and body, trying to throw off [NameDesc of M][']s aim[or]You keep moving to try to reduce the number of spanks that hit the same spot[in random order].";
+	if the player is able to speak, say "[variable custom style]'[if the bimbo of the player >= 13][one of]OUCHIES[or]It huuuurts[or]I'm sorry I'm sorry I'm sorry[or]I'm sorry for being a naughty baby, please stooop[or]Waaaaah! Stop it[in random order][otherwise if there are worn messed knickers][one of]No, not on my messy bottom, please stop[or]Please don't, it feels so gross[or]I'm sorry for pooping myself, please stop[or]Please don't hit me there right now[in random order][otherwise][one of]This is not okay[or]Ow ow ow, what the hell[or]Stop hitting me like I'm a baby[or]This is completely inappropriate[or]I'm not your disobedient child[or]This is really uncool[or]Fuck off[or][in random order][end if]!'[roman type][line break]";
+	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
+
+To say DQEnemaResistFlav of (M - a monster):
+	say "[if M is penetrating asshole][one of]You try to wrestle free before [NameDesc of M] gets any more inside you but [his of M] grip remains firm[or]You try to pull away from the enema in vain[or]Your belly gurgles as you sway side to side, trying to make it more difficult for [NameDesc of M] to continue filling you up[in random order][otherwise][one of]You try to escape before the enema can begin, but [NameDesc of M][']s grip on you is too strong[or]Realising what's about to happen you pull away with all your strength but it's too little too late[or]You wiggle your butt to try and stop [NameDesc of M] from proceeding but you just can't get away[in random order][end if].";
+	if the player is able to speak, say "[variable custom style]'[if the water volume of belly >= 15][one of]Too much! That's too much now[or]I'm so full it hurts, please no more[or]I'm too full, I can't take any more[or]Uuugh, please no more[in random order][otherwise if M is not penetrating asshole][one of]Is this really necessary?[or]Can't we settle this some other way[or]No, I don't need to be cleaned out[or]I don't need help doing something like this[in random order][otherwise if the bimbo of the player >= 13][one of]What are you doing [daddy of M]? It feels weird[or]Please let me push it out now [daddy of M][or]I'm sorry I'll be a good girl from now on, please let me go potty now[or]It feels weird [daddy of M][in random order][otherwise][one of]Stop this immediately[or]Leave my bowels alone[or]You are not a medical professional[or]This can't be happening[or]I DON'T NEED THIS! STOP IT AT ONCE[or]Let me go right now, I need to get to the toilet[or]This feels so wrong[or][in random order][end if]!'[roman type][line break]";
+	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
+
+To say DQChangeResistFlav of (M - a monster):
+	if there are worn messed knickers, say "You pull away as best as you can, trying to escape before [NameDesc of M] exposes the mess you've made in your pants.";
+	otherwise say "[one of]You wriggle around to make it as difficult as possible for [NameDesc of M] to change you[or]You flail your legs, trying to get [NameDesc of M] away[or]You scrabble at the ground to try and get away before you [if there are worn knickers]lose your [ShortDesc of random worn knickers][otherwise]are diapered[end if] but it's no use[in random order].";
+	if the player is able to speak, say "[variable custom style]'[if the diaper addiction of the player >= 12][one of]I don't need a change yet[or]I don't wanna[or]This is boring[or]You're a mean poopyhead[in random order][otherwise if there are worn messed knickers][one of]This isn't what it looks like[or]Please don't reveal my shame[in random order][otherwise if there are worn knickers][one of]This was just a one-off, I don't need diapers[or]Don't you dare expose my... my...[or]What do you think you're doing?[or]Please stop, I'm not actually diaper-dependent[in random order][otherwise][one of]Nooo, I don't want to be kept in nappies[or]Let me go, I could do this myself if I wanted[or]I'm not a baby, stop treating me like one[or]This is completely inappropriate[in random order][end if]!'[roman type][line break]";
+	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
+
+To say DQMasturbationResistFlav of (M - a monster):
+	say "[one of]You shift your [if there is a worn diaper]padded [end if]loins left to right, trying to get [NameDesc of M] to let go[or]You flail your legs in rebellion[or]You clench your fists and try as hard as possible not to [if the player is horny]cum[otherwise]enjoy it[end if][in random order].";
+	if the player is able to speak:
+		if the player is a nympho:
+			say "[variable custom style]'[if the player is horny][one of]It feels too good, you're gonna make me...[or]EEEE! You're gonna make me go cummies[or]Aaah! Please [daddy of M] am I allowed to make cummies?[or]It's... ugh... it's so good... I can't hold back much longer[in random order][otherwise if the player is diapered][one of]You're gonna have to do better than that to make me cum in my diaper[or]You're making my nappy feel so good[or]I'm not gonna make it easy for you to give me a diapergasm[or]*giggle* Uh-oh, I think I'm in trouble[in random order][otherwise][one of]Nuh-uh, good babies don't go cummies outside of their nappies[or]You're so NAUGHTY[or]Ooh [daddy of M] when you touch me there I feel so weird inside[or]Stop, I've been too naughty to be given squirt squirt time[in random order][end if]!'[roman type][line break]";
+		otherwise if the player is a pervert:
+			say "[variable custom style]'[if the player is very horny][one of]It feels so fucking good, you're gonna make me...[or]Oh wow, you're gonna make me cum[or]Aaah! Please stop... no wait... please don't stop[or]It's... it's too much... I can't hold back much longer[in random order][otherwise if there are worn wet knickers][one of]I can't believe this is happening through my wet [ShortDesc of a random worn knickers][or]Ahh... it's squelching against me[or]I can't let you make me cum through my soggy undies[or]Come on, at least let me take my underwear off first[in random order][otherwise if the player is diapered][one of]I'm not gonna make it easy for you, you motherfucker[or]Why does it feel so good, even though it's through my padding?[or]I can't believe I'm enjoying this while I'm diapered[or]No please stop... if I get too turned on by this, I'll have to admit I'm turning into a perverted diaper addict[or]No... please stop making me love diapers so much[in random order][otherwise][one of]This is... this isn't how I wanted this to happen[or]I'm... unf... not enjoying this... ooh, don't stop...[or]Let's settle this a different way, before I get too hot and bothered...[or]This is not a normal way for people to punish others[or]Everyone's so obsessed with sex around here. Stop trying to turn me into another drooling nympho[in random order][end if]!'[roman type][line break]";
+		otherwise:
+			say "[variable custom style]'[if the player is very horny][one of]Oh no, I can feel it, I'm gonna...[or]Oh no, quick, stop, you're gonna make me cum[or]This is too much... I can't hold it back... please stop before I...[in random order][otherwise if there are worn wet knickers][one of]Stop being so gross[or]This is disgusting[or]Who would do such a thing through soggy undies[or]It feel's all yucky and clammy! Stop it already[or]I don't need you to do that to remind me that it's wet down there, I'm very well aware[or]This is not the sort of way I like to get off[in random order][otherwise if the player is diapered][one of]Stop! I'm not some weird diaper fetishist[or]Stop this at once, this is not the sort of thing to do to someone who's wearing a diaper[or]I can't believe this is happening while I'm diapered[or]Only a pervert could enjoy this while diapered[or]You're not going to make me like this[in random order][otherwise][one of]What the hell[or]Do you really think I'm going to just let you?[or]Fuck you, I won't let you make me enjoy this[or]This is the last time I'm ever going to let myself get caught like this[in random order][end if]!'[roman type][line break]";
+	otherwise:
+		say "[variable custom style][muffled sounds][roman type][line break]".
+
+To say DefaultResistFlav of (T - a thing):
+	say "You struggle in vain to free yourself!".
 
 [!<ComputeSexResistPunishmentOfMonster>+
 
@@ -394,10 +443,25 @@ REQUIRES COMMENTING
 
 +!]
 To compute sex resist anger of (M - a monster):
-	say "[BigNameDesc of M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
+	if diaper quest is 1 and M is intelligent:
+		say DQResistChastise of M;
+	otherwise:
+		say "[BigNameDesc of M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
 	FavourDown M.
 
+To say DQResistChastise of (M - a monster):
+	if M is masturbating the player:
+		say DQResistMasturbationChastise of M;
+	otherwise if M is changing the player:
+		say DQResistChangeChastise of M;
+	otherwise:
+		say "[BigNameDesc of M] [one of]laughs[or]growls[or]frowns[or]harrumphs[at random].[line break][speech style of M]'[one of]See now, this is why you need to be treated like a baby.'[or]Such childish behaviour.'[or]Aww, is the little baby having a tantrum?'[or]Good girls don't fight back.'[or]If you don't take this like a grown-up then that just shows that you still don't deserve to be treated as one.'[or]Hold still you little brat!'[or]You're just going to make [daddy of M] more mad!'[or]The more you struggle the longer this will take!'[in random order][roman type][line break]".
 
+To say DQResistMasturbationChastise of (M - a monster):
+	say "[BigNameDesc of M] [one of]laughs[or]smirks[or]chuckles[at random].[line break][speech style of M]'[one of]Uh-oh, is my little baby getting a bit flustered down there?'[or]You're getting a bit worked up, aren't you?'[or]Are you trying to tell me you don't like it? I don't believe you!'[or]Your body is telling me the truth of how good this feels!'[or]You should be thanking me!'[or]Haha, stop pretending you don't want more.'[in random order][roman type][line break]".
+
+To say DQResistChangeChastise of (M - a monster):
+	say "[BigNameDesc of M] [one of]tuts condescendingly[or]scowls[or]makes a noise like an angry parent[at random].[line break][speech style of M]'[one of]Hey, no messing around now, or I'll be keeping you in diapers for even longer!'[or]This is for your own good, you silly baby!'[or]All you're doing is making me angrier.'[or]You are NOT acting like someone who's ready for big girl panties.'[or]Is this the way that someone who's trying to prove they're big girl should act? I don't think so.'[or]All you're doing is proving that you're just a pathetic child.'[in random order][roman type][line break]".
 
 Resisting ends here.
 

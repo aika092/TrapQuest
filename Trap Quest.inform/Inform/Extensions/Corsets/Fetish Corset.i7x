@@ -4,7 +4,7 @@ A fetish corset is a kind of corset. A fetish corset is usually latex. A fetish 
 
 The printed name of fetish corset is usually "[TQlink of item described][clothing-title-before]fetish corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of fetish corset is usually "[TQlink of item described][clothing-title-before]fetish corsets[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of fetish corset is "fco".
 
-Figure of Fetish Corset is the file "Items\Clothes\Upper\Corsets\fetishcorset1.png".
+Figure of Fetish Corset is the file "Items/Clothes/Upper/Corsets/fetishcorset1.png".
 
 To decide which figure-name is clothing-image of (C - a fetish corset):
 	decide on figure of fetish corset.

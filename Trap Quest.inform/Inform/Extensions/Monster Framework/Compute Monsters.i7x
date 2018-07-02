@@ -81,6 +81,7 @@ To compute action (N - a number) of (M - a monster):
 	[If N is 1, this is a full action
 	if N is 2, this is a passive action (no attacking)]
 	compute unique early action of M;
+	if M is in the location of the player and M is not penetrating a body part and M is not grabbing the player and M is friendly and (M is interested or N is 1), check disapproval of M;
 	if M is interested:
 		if the scared of M > 0 and M is not penetrating a body part:
 			compute fleeing of M;
@@ -88,6 +89,7 @@ To compute action (N - a number) of (M - a monster):
 				bore M for 100 seconds;
 		otherwise if M is in the location of the player:
 			if N is 1:
+				[unless M is penetrating a body part or M is grabbing the player or M is unfriendly, check disapproval of M;]
 				if M is penetrating a body part or M is grabbing the player or M is unfriendly:
 					check attack of M;
 				otherwise:

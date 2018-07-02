@@ -16,7 +16,7 @@ To decide which number is the initial outrage of (C - a pullstring collar):
 Check wearing a pullstring collar:
 	say "It's in two pieces, there's no way for it to stay on!" instead.
 
-Figure of pullstring collar is the file "Items\Accessories\Neck\collar2.png".
+Figure of pullstring collar is the file "Items/Accessories/Neck/collar2.png".
 
 To decide which figure-name is clothing-image of (C - a pullstring collar):
 	decide on figure of pullstring collar.

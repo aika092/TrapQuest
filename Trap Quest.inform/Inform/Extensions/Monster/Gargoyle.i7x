@@ -1,6 +1,6 @@
 Gargoyle by Monster begins here.
 
-gargoyle is a monster. gargoyle can be excited. gargoyle is not excited. The poison-status of gargoyle is -1. The paralyze-status of gargoyle is -1. The blind-status of gargoyle is -1.
+gargoyle is a monster. gargoyle can be excited. gargoyle is not excited. The poison-status of gargoyle is -1. The paralyze-status of gargoyle is -1. The blind-status of gargoyle is -1. gargoyle has a number called guarding. The guarding of gargoyle is 0.
 
 Definition: gargoyle (called M) is mansion dwelling:
 	decide yes.
@@ -26,12 +26,14 @@ To set up (M - gargoyle):
 	now the monstersetup of M is 1;
 	now the difficulty of M is 8;
 	now the blue-balls of M is 5;
-	now M is in Mansion26;
+	let R be a random no-roof haunted room;
+	unless R is room, now R is Mansion25;
+	now M is in R;
 	now the health of M is the maxhealth of M;
 	now M is captive.
 
 This is the spawn initial gargoyle rule:
-	if gargoyle is off-stage and the player is the donator and diaper quest is 0:
+	if gargoyle is off-stage and diaper quest is 0:
 		summon gargoyle in the mansion;
 		set up gargoyle.
 The spawn initial gargoyle rule is listed in the setting up mansion monsters rules.
@@ -128,7 +130,7 @@ This is the gargoyle dive bomb rule:
 	if the location of current-monster is not the location of the player:
 		now current-monster is not airborne;[the gargoyle will try to chase the player normally instead]
 	if current-monster is airborne and the player is not immobile:
-		drag to Mansion17 by current-monster;[really just important that you get dropped off near the bedroom.]
+		drag to Mansion16 by current-monster;[really just important that you get dropped off near the bedroom.]
 		silently try kneeling;
 		now current-monster is grabbing the player;
 		unless vampiress is alive:
@@ -144,18 +146,29 @@ This is the gargoyle dive bomb rule:
 The gargoyle dive bomb rule is listed last in the gargoyle priority attack rules.
 
 To say DragFlav of (M - gargoyle) to (R - a room):
+	[if the player is airborne:
+		say "[BigNameDesc of M] snatches you out of the air and carries you [if the distance of R > 1]all the way [end if]to the [R]!";
+		now the 
+	otherwise:] [###Selkie wonders why the airborne case is commented out. Incomplete?]
 	say "[BigNameDesc of M] snatches you off the ground and carries you [if the distance of R > 1]all the way [end if]to the [R]!".
 
 This is the gargoyle air lifting rule:
 	if current-monster is grabbing the player and current-monster is doing nothing special:
 		if vampiress is penetrating an orifice:[the gargoyle holds you down until her mistress is having sex with you.]
-			say "[BigNameDesc of current-monster] releases you and takes off in the direction of [his of current-monster] stony perch.";
+			say "[BigNameDesc of current-monster] releases you and takes off into the sky.";
 			now current-monster is not grabbing the player;
 			bore current-monster;
-			now current-monster is in mansion26;
+			now current-monster is in a random placed no-roof room;
+			while current-monster is in Sky01:
+				now current-monster is in a random placed no-roof room;
+			now the guarding of current-monster is 0;
 		otherwise:
 			say "[BigNameDesc of current-monster] holds you down silently in wait.";
-		if vampiress is uninterested, now vampiress is interested;
+			if the guarding of current-monster < 5, increase the guarding of current-monster by 1;
+			if the guarding of current-monster > 5 and vampiress is not in the location of the player:
+				say "You hear high pitched shrieking as dozens of bats fly in through some narrow, high windows, converging in a twisting mass of flapping wings and black fur. Just as suddenly as they appeared, the bats disperse, leaving a [printed name of vampiress] standing in the doorway.";
+				now vampiress is in the location of the player;
+			if vampiress is uninterested, now vampiress is interested;
 		rule succeeds.
 The gargoyle air lifting rule is listed last in the gargoyle priority attack rules.
 

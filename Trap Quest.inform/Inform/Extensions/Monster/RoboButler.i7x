@@ -31,7 +31,7 @@ To set up (M - a robobutler):
 This is the spawn initial robobutler rule:
 	if the number of alive robobutlers is 0:
 		let M be a random robobutler;
-		while M is robomaid and (the player is not the donator or diaper quest is 1):
+		while M is robomaid and diaper quest is 1:
 			now M is a random robobutler;
 		if debugmode > 0, say "Summoning butler in hotel.";
 		summon M in the hotel.
@@ -263,12 +263,14 @@ To say ShortDesc of (M - a robomaid):
 To say ShortDesc of (M - a milkmaid):
 	say "milkmaid".
 
-To say MediumDesc of (M - a dainty robomaid):
+To say MediumDesc of (M - dainty robomaid):
 	say "dainty RoboMaid".
+To say MediumDesc of (M - milkmaid):
+	say "MilkMaid".
 
 To say RoboMaidDesc:
 	if images visible is 1, display figure of robobutler;
-	say "A tall, spindly robot with old fashioned joints and a fixed facial expression etched into [his of the item described] polished metal face. [big he of the item described] is wearing a frilly black dress, complete with a white apron and a matching headpiece. [if the item described is dainty robomaid]The plunging neckline that shows off [his of the item described] suggestively welded chest, and one of [his of the item described] arms has a permanent bend in it, giving [him of the item described] the look of a dainty French maid[otherwise if trap fetish is 0]The plunging neckline shows off [his of the item described] ridiculous chest, and [he of the item described] has a rather conspicuous tent near the crotch. One of [his of the item described] arms is holding a plate of white bottles, giving [him of the item described] the look of a hard working French maid[otherwise]The plunging neckline shows off [his of the item described] ridiculous chest, which was apparently custom welded to have a matching pair of 'nipples' tent the flimsy fabric. One of [his of the item described] arms is holding a plate of white bottles, giving [him of the item described] the look of a hard working French maid[end if]. [His of the item described] [']eyes['] glow brightly as [he of the item described] glides around silently on [his of the item described] wheeled feet.".
+	say "A tall, spindly robot with old fashioned joints and a fixed facial expression etched into [his of the item described] polished metal face. [big he of the item described] is wearing a frilly black dress, complete with a white apron and a matching headpiece. [if the item described is dainty robomaid]The plunging neckline that shows off [his of the item described] suggestively welded chest, and one of [his of the item described] arms has a permanent bend in it, giving [him of the item described] the look of a dainty French maid[otherwise if futanari fetish is 1]The plunging neckline shows off [his of the item described] ridiculous chest, and [he of the item described] has a rather conspicuous tent near the crotch. One of [his of the item described] arms is holding a plate of white bottles, giving [him of the item described] the look of a hard working French maid[otherwise]The plunging neckline shows off [his of the item described] ridiculous chest, which was apparently custom welded to have a matching pair of 'nipples' tent the flimsy fabric. One of [his of the item described] arms is holding a plate of white bottles, giving [him of the item described] the look of a hard working French maid[end if]. [His of the item described] [']eyes['] glow brightly as [he of the item described] glides around silently on [his of the item described] wheeled feet.".
 
 To compute perception of (M - a robomaid):
  	say "[BigNameDesc of M] notices you!";
@@ -337,7 +339,7 @@ This is the robomaid punishment rule:
 			destroy G;
 			rule succeeds;
 		otherwise if R is 1 or the class of the player is maid:
-			if trap fetish is 0:
+			if futanari fetish is 1:
 				say "[speech style of current-monster]'OOH. OOOH. I NEED YOU. TO SUCK. ME.[roman type] [BigNameDesc of current-monster]'s dress shifts, and a metallic tentacle slithers out from underneath, dripping pointing at you menacingly as it dribbles [semen] along the floor. It curls around your neck and effortlessly forces its way into your mouth. You have no choice but to swallow as it pumps refrigerated [semen] into your mouth, trailing a line of the stuff down your chin when she finally withdraws and begins to wander off.";
 				now current-monster is penetrating face;
 				StomachSemenUp 3;

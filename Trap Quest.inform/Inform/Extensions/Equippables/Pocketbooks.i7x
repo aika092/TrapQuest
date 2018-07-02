@@ -1,6 +1,6 @@
 Pocketbooks by Equippables begins here.
 
-A pocketbook is a kind of equippable. A pocketbook is usually leather. A pocketbook is usually manly. A pocketbook is usually rare. Understand "pocket", "book" as pocketbook. The text-shortcut of a pocketbook is usually "pb".
+A pocketbook is a kind of equippable. A pocketbook is usually leather. A pocketbook is usually manly. A pocketbook is usually rare. Understand "pocket", "book" as pocketbook. The text-shortcut of a pocketbook is usually "pktb".
 
 Browsing is an action applying to one thing. Understand "skim [something]", "browse [something]" as browsing.
 
@@ -100,7 +100,7 @@ To say ShortDesc of (C - a book of regrets):
 To decide which number is the price of (C - a book of regrets):
 	decide on 5.
 
-Carry out browsing book of regrets:[TODO: player says something like "I didn't write that, but its accurate" to replace the lack of colored text]
+Carry out browsing book of regrets:[TODO: player says something like "I didn't write that, but it's accurate" to replace the lack of coloured text]
 	say "You open up the book to a random page, and are [one of][or]once again [stopping]shocked to immediately find a passage in your handwriting, almost like a diary.[line break]";
 	let R be a random number between 1 and 4;
 	let P be 0;
@@ -200,7 +200,7 @@ Carry out browsing book of anal:[If books are never made easier to get, this pro
 	let R be a random number between 1 and 7;
 	now auto is 1;[must be set before checking whether or not the player is able.]
 	if the player is horny and R >= 4 and the player is able to masturbate:
-		say " [line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I[']m about to do this...[otherwise if the analvirgin of the player is 1]T-that was...H-he came right when...and...and...I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself....[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";	
+		say " [line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I[']m about to do this...[otherwise if the analvirgin of the player is 1]T-that was...H-he came right when...and...and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself....[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";	
 		try masturbating;
 	otherwise if R < 4:
 		if R is 1:
@@ -279,12 +279,12 @@ To compute studying (N - a number) of (M - a monster):
 	if the class of the player is schoolgirl, decrease C by the number of worn scrunchies;
 	if N is 0:[sex]
 		if M is notebook-studied:
-			say "A yellow bolt shoots out of the [printed name of G] disappears into [NameDesc of M]'s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourable on you now.";
+			say "A yellow bolt shoots out of the [printed name of G] disappears into [NameDesc of M]'s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourably on you now.";
 			FavourUp M by 1;
 		if a random number between 0 and the times-fucked of M < C:
 			say "The [printed name of G] shivers, as if a draft were passing through its pages. Looks like it wants to know more about [NameDesc of M]!";
 		otherwise:
-			say "The [printed name of G] falls open, filling several pages with detailed sketches of [NameDesc of M]'s genitals, which slowly meld with the inscruable script that covers the rest of its pages. The book seems a lot stronger!";
+			say "The [printed name of G] falls open, filling several pages with detailed sketches of [NameDesc of M]'s genitals, which slowly meld with the inscrutable script that covers the rest of its pages. The book seems a lot stronger!";
 			now M is notebook-studied;
 	otherwise:[kill]
 		if M is notebook-studied:
@@ -298,7 +298,7 @@ To compute studying (N - a number) of (M - a monster):
 						FavourDown X by 1;
 				say "The [printed name of G] shivers, emitting a blast of red light that covers everything in the room. [if the number of monsters in the location of the player < 2]It doesn't seem to do anything[otherwise]The [printed name of a random monster in the location of the player] seems affected by it[end if].";
 		otherwise:
-			say "The [printed name of G] falls open, filling a few with detailed sketches of [NameDesc of M], which slowly meld with the inscruable scrip that covers the rest of its pages. The book seems a bit stronger!";
+			say "The [printed name of G] falls open, filling a few with detailed sketches of [NameDesc of M], which slowly meld with the indecipherable script that covers the rest of its pages. The book seems a bit stronger!";
 			now M is notebook-studied.
 		
 	

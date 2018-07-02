@@ -45,6 +45,7 @@ REQUIRES COMMENTING
 To decide which number is the standing challenge of the player:
 	[This is what makes it more difficult for the player to stand up.]
 	let W be the weight of the player;
+	if ball-and-chain is worn, decrease W by the heaviness of ball-and-chain; [the ball and chain doesn't influence your ability to stand up]
 	if there is a worn heels, increase W by 3 + (the heel-height of a random worn heels * 2);
 	if the player is wrist bound, increase W by 3;
 	if the player is wrist bound behind, increase W by 7;

@@ -44,7 +44,7 @@ A cyan tube top is a kind of tube top. The printed name of cyan tube top is usua
 
 There is 1 cyan tube top.
 
-Figure of cyan tube top is the file "Items\Clothes\Upper\TubeTops\tubetop1.png".
+Figure of cyan tube top is the file "Items/Clothes/Upper/TubeTops/tubetop1.png".
 
 To decide which figure-name is clothing-image of (C - a cyan tube top):
 	decide on figure of cyan tube top.
@@ -63,7 +63,7 @@ The printed name of silver tube top is usually "[TQlink of item described][cloth
 
 There is 1 silver tube top.
 
-Figure of silver tube top is the file "Items\Clothes\Upper\TubeTops\tubetop3.png".
+Figure of silver tube top is the file "Items/Clothes/Upper/TubeTops/tubetop3.png".
 
 To decide which figure-name is clothing-image of (C - a silver tube top):
 	decide on figure of silver tube top.
@@ -88,7 +88,7 @@ The printed name of pink rubber tube top is usually "[TQlink of item described][
 
 There is 1 pink rubber tube top.
 
-Figure of pink rubber tube top is the file "Items\Clothes\Upper\TubeTops\tubetop7.png".
+Figure of pink rubber tube top is the file "Items/Clothes/Upper/TubeTops/tubetop7.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber tube top):
 	decide on figure of pink rubber tube top.
@@ -113,7 +113,7 @@ There is 1 tartan tube top. A tartan tube top is usually dense.
 
 The printed name of tartan tube top is usually "[TQlink of item described][clothing-title-before]schoolgirl tube top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of tartan tube top is "sgt".
 
-Figure of Schoolgirl Tube Top is the file "Items\Clothes\Upper\TubeTops\tubetop2.png".
+Figure of Schoolgirl Tube Top is the file "Items/Clothes/Upper/TubeTops/tubetop2.png".
 
 To decide which figure-name is clothing-image of (C - a tartan tube top):
 	decide on figure of schoolgirl tube top.
@@ -123,6 +123,10 @@ To say ClothingDesc of (C - a tartan tube top):
 
 To say ShortDesc of (C - a tartan tube top):
 	say "sexy tartan boob tube".
+
+Definition: a tartan tube top (called C) is heart themed:
+	decide yes.
+
 
 To decide which number is the initial outrage of (C - a tartan tube top):
 	decide on 2.
@@ -146,7 +150,7 @@ The printed name of red tube top is usually "[TQlink of item described][clothing
 
 There is 1 red tube top.
 
-Figure of Red Tube Top is the file "Items\Clothes\Upper\TubeTops\tubetop4.png".
+Figure of Red Tube Top is the file "Items/Clothes/Upper/TubeTops/tubetop4.png".
 
 To decide which figure-name is clothing-image of (C - a red tube top):
 	decide on figure of red tube top.
@@ -165,7 +169,7 @@ The printed name of pink tube top is usually "[TQlink of item described][clothin
 
 There is 1 pink tube top.
 
-Figure of pink tube top is the file "Items\Clothes\Upper\TubeTops\tubetop5.png".
+Figure of pink tube top is the file "Items/Clothes/Upper/TubeTops/tubetop5.png".
 
 To decide which figure-name is clothing-image of (C - a pink tube top):
 	decide on figure of pink tube top.
@@ -184,7 +188,7 @@ The printed name of yellow exposing tube top is usually "[TQlink of item describ
 
 There is 1 yellow exposing tube top.
 
-Figure of yellow exposing tube top is the file "Items\Clothes\Upper\TubeTops\tubetop6.png".
+Figure of yellow exposing tube top is the file "Items/Clothes/Upper/TubeTops/tubetop6.png".
 
 To decide which figure-name is clothing-image of (C - a yellow exposing tube top):
 	decide on figure of yellow exposing tube top.
@@ -236,7 +240,7 @@ The printed name of rubber jacket is usually "[TQlink of item described][clothin
 A rubber jacket is usually latex.
 There is 1 rubber jacket.
 
-Figure of rubber jacket is the file "Items\Clothes\Upper\Latex\latexjacket1.png".
+Figure of rubber jacket is the file "Items/Clothes/Upper/Latex/latexjacket1.png".
 
 To decide which figure-name is clothing-image of (C - a jacket):
 	decide on figure of rubber jacket.

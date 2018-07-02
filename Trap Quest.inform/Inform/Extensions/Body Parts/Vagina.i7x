@@ -387,7 +387,7 @@ To WombFill (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if vagina is accepting womb semen, increase the womb volume of vagina by 1;
-		if slow pregnancy > 1 and the pregnancy of the player is 0 and pregnancy fetish is 1 and the virgin of the player is 0, compute sudden pregnancy.
+		if (slow pregnancy > 1 or (tentacles tattoo is worn and there is a tentacle monster penetrating vagina or there is a vine penetrating vagina or there is a creampie pole trap penetrating vagina)) and the pregnancy of the player is 0 and pregnancy fetish is 1 and the virgin of the player is 0, compute sudden pregnancy.
 		
 
 [!<ComputeSuddenPregnancy>+
@@ -397,9 +397,9 @@ REQUIRES COMMENTING
 +1]
 To compute sudden pregnancy:
 	let M be a random family thing penetrating vagina; [Whatever just jizzed in the player should already by inseminating vagina thanks to the fact that we just computed the father material of vagina above]
-	let R be a random number between 1 and (5 - the pregnancy rate of the player);
-	if slow pregnancy is 2, now R is a random number between 1 and (10 - the pregnancy rate of the player); [It's less likely you'll get instantly pregnant if there's a chance you'll get pregnant normally]
-	if debugmode > 0, say "Instant pregnancy check: R ([R]) must be 1.";
+	let R be a random number between 1 and (10 - the pregnancy rate of the player); [It's less likely you'll get instantly pregnant if there's a chance you'll get pregnant normally]
+	if slow pregnancy is 3, now R is a random number between 1 and (5 - the pregnancy rate of the player);
+	if debugmode > 0, say "Instant pregnancy check: R ([R]) must be 1 or womb volume ([womb volume of vagina]) must be at max of 5.";
 	if (R < 2 or the womb volume of vagina >= 5) and M is a thing: [Max womb volume = instant guaranteed preggers]
 		now the father is M;
 		now the pregnancy of the player is 1;

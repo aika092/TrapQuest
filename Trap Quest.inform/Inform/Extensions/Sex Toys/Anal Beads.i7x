@@ -40,7 +40,7 @@ To compute periodic effect of (C - an expansion anal beads):
 			if the size of C > the openness of F, Ruin F;
 			if the player is male, PenisUp 1.
 
-Figure of anal beads is the file "Items\Accessories\Toys\analbeads1.png".
+Figure of anal beads is the file "Items/Accessories/Toys/analbeads1.png".
 
 To decide which figure-name is clothing-image of (C - an anal beads):
 	decide on figure of anal beads.

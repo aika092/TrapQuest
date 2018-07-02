@@ -1,6 +1,5 @@
 Cringe Appearance by Player begins here.
 
-
 [!<DecideWhichNumberIsTheCringeAppearanceOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -67,7 +66,7 @@ To decide which number is appearance-cringe-level:
 	let O be 0;
 	now cringe-target is arms;
 	now appearance-cringe-target is arms;
-	repeat with C running through worn currently visible wearthings:
+	repeat with C running through worn currently at least partially visible wearthings:
 		let OC be the cringe of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;
@@ -89,7 +88,7 @@ REQUIRES COMMENTING
 To decide which number is cumulative-cringe-level:
 	let A be appearance-cringe-level;
 	let O be A / 2;
-	repeat with C running through worn currently visible wearthings:
+	repeat with C running through worn currently at least partially visible wearthings:
 		if the cringe of C > O, increase O by 1;
 	repeat with C running through body parts:
 		if the cringe of C > O, increase O by 1;

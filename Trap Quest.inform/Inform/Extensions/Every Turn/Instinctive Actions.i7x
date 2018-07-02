@@ -22,7 +22,7 @@ REQUIRES COMMENTING
 To Compute Compulsions:
 	now autodrink is 1;
 	let B be a random held actually drinkable bottle;
-	if there is a worn drinkme tattoo and B is bottle and the player is not in danger:
+	if there is a worn drinkme tattoo and B is bottle and the player is not in danger and the player is able to drink:
 		say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
 		try drinking B;
 		now another-turn is 1;
@@ -68,7 +68,7 @@ REQUIRES COMMENTING
 
 +!]
 To Compute Broken Actions:
-	if the humiliation of the player >= 40000 and the player is prone and the player is not immobile and resting is 0 and busy is 0:
+	if diaper quest is 0 and the humiliation of the player >= 40000 and the player is prone and the player is not immobile and resting is 0 and busy is 0:
 		if there is a willing to shag monster in the location of the player:
 			let M be a random willing to shag monster in the location of the player;
 			compute broken sex of M.

@@ -13,5 +13,20 @@ Understand the magic-curse property as describing a collectible when a collectib
 To decide which number is the heaviness of (C - a collectible):
 	decide on 1.
 
+a mass collectible is a kind of collectible.
+
+To decide which number is the heaviness of (C - a mass collectible):
+	decide on 0.
+	
+Definition: a mass collectible (called C) is fetish appropriate:
+	decide yes.
+	
+Definition: a mass collectible (called C) is ingredient:
+	decide no.
+	
+Include Sanity Token by Collectibles.
+Include Defiance Token by Collectibles.
+Include Fabric Token by Collectibles.
+
 Collectible Definition ends here.
 

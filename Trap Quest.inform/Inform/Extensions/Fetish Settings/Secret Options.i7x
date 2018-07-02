@@ -9,10 +9,10 @@ REQUIRES COMMENTING
 Table of Secret Options
 title	subtable	description	toggle
 "[roman type]Previous Menu (shortcut: press Q)"	--	--	quit rule
-"Secret (only one): Tattoos (You secretly wonder what it would be like to be covered in tattoos) - 7 points ([if tattoo-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tattoo fetish toggle rule
-"Secret (only one): Piercings (You secretly wonder what it would be like to be heavily pierced) - 7 points ([if piercing-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 piercing fetish toggle rule
-"Secret (only one): Humiliation (You secretly find humiliation kind of exhilarating) - 7 points ([if humiliation-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 humiliation fetish toggle rule
-"Secret (only one): Silicone (You secretly find the idea of artificial enhancement exciting[if artificial enhancements fetish is 0] - Only Available with Artificial Enhancements Selected!)[otherwise])[end if] - 7 points ([if artificial-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 artificial fetish toggle rule
+"Secret (only one): You secretly wonder what it would be like to be covered in tattoos (+1 strength & dex per two tattoos) - 7 points ([if tattoo-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	tattoo fetish toggle rule
+"Secret (only one): You secretly wonder what it would be like to be heavily pierced (+1 strength & dex per piercing) - 7 points ([if piercing-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 piercing fetish toggle rule
+"Secret (only one): You secretly find humiliation kind of exhilarating (up to +5 strength & dex depending on decency) - 7 points ([if humiliation-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 humiliation fetish toggle rule
+"Secret (only one): You secretly find the idea of artificial enhancement exciting[if artificial enhancements fetish is 0] - Only Available with Artificial Enhancements Selected![otherwise] - (up to +5 strength & dex depending on breast, hip and lip enhancements)[end if] - 7 points ([if artificial-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 artificial fetish toggle rule
 	
 
 [!<emptySecretRules:Rulebook>*

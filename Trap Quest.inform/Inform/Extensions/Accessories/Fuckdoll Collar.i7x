@@ -20,7 +20,7 @@ To decide which number is the titfuck-addiction-influence of (C - a fuckdoll col
 	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on S.
 
-Figure of fuckdoll collar is the file "Items\Accessories\Neck\collar4.png".
+Figure of fuckdoll collar is the file "Items/Accessories/Neck/collar4.png".
 
 To decide which figure-name is clothing-image of (C - a fuckdoll collar):
 	decide on figure of fuckdoll collar.
@@ -42,7 +42,7 @@ collar-latex-cursed is a number that varies.
 To compute periodic effect of (C - a fuckdoll collar):
 	if inflation fetish is 1 and the latex-transformation of the player is 0 and collar-latex-cursed is 0:
 		now collar-latex-cursed is 1;
-		say "[bold type]You feel different[roman type], but you can't put your finger on why. Maybe you feel a tiny bit.. numb?";
+		say "[bold type]You feel different[roman type], but you can't put your finger on why. Maybe you feel a tiny bit... numb?";
 		now the latex-transformation of the player is 1.
 
 

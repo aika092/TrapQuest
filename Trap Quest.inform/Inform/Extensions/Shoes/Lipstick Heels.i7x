@@ -8,7 +8,7 @@ The printed name of lipstick heels is usually "[TQlink of item described][item s
 To decide which figure-name is the clothing-image of (H - a lipstick heels):
 	decide on the figure of lipstick heels.
 
-Figure of lipstick heels is the file "Items\Clothes\Lower\Feet\Heels\Special\lipstick1.png".
+Figure of lipstick heels is the file "Items/Clothes/Lower/Feet/Heels/Special/lipstick1.png".
 
 To decide which number is the unique outrage of (C - a lipstick heels):
 	decide on 4.

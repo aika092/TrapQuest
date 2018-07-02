@@ -1,8 +1,11 @@
 Gingham Dress by Dresses begins here.
 
-A gingham dress is a kind of overdress. A gingham dress is usually unique. A schoolgirl outfit is usually short. A gingham dress is usually not-top-displacable. A gingham dress is usually intelligence-influencing.
+A gingham dress is a kind of overdress. A gingham dress is usually unique. A gingham dress is usually not-top-displacable. A gingham dress is usually intelligence-influencing.
 
 Definition: a gingham dress (called C) is schoolgirl-enabling:
+	decide yes.
+
+Definition: a gingham dress (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 	
 Part 1 - Gingham Schoolgirl Outfit
@@ -13,7 +16,7 @@ The printed name of gingham schoolgirl outfit is usually "[TQlink of item descri
 
 There is 1 gingham schoolgirl outfit.
 
-Figure of gingham schoolgirl outfit is the file "Items\Clothes\Upper\Special\Schoolgirl\schoolgirl5.png".
+Figure of gingham schoolgirl outfit is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl5.png".
 
 To decide which figure-name is clothing-image of (C - a gingham schoolgirl outfit):
 	decide on figure of gingham schoolgirl outfit.
@@ -42,7 +45,7 @@ The printed name of super short gingham dress is usually "[TQlink of item descri
 
 There is 1 super short gingham dress.
 
-Figure of super short gingham dress is the file "Items\Clothes\Upper\Special\Schoolgirl\ginghamdress1.png".
+Figure of super short gingham dress is the file "Items/Clothes/Upper/Special/Schoolgirl/ginghamdress1.png".
 
 To decide which figure-name is clothing-image of (C - a super short gingham dress):
 	decide on figure of super short gingham dress.

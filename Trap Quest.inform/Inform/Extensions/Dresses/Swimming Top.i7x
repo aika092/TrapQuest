@@ -2,7 +2,7 @@ Swimming Top by Dresses begins here.
 
 A swimming top is a kind of swimsuit. A swimming top is manly. A swimming top is fully covering. The printed name of swimming top is "[TQlink of item described][clothing-title-before]swimming top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of swimming top is "swt". A swimming top is not-top-displacable. A swimming top is usually sheer-when-wet. There is 1 swimming top.
 
-Figure of swimming top dry is the file "Items\Clothes\Upper\Swimming\Tops\swimmingtop1.png". Figure of swimming top wet is the file "Items\Clothes\Upper\Swimming\Tops\swimmingtop2.png".
+Figure of swimming top dry is the file "Items/Clothes/Upper/Swimming/Tops/swimmingtop1.png". Figure of swimming top wet is the file "Items/Clothes/Upper/Swimming/Tops/swimmingtop2.png".
 
 To decide which figure-name is the clothing-image of (C - a swimming top):
 	if C is actually dense, decide on figure of swimming top dry;

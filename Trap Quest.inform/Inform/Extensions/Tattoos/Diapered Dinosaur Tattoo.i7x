@@ -15,6 +15,8 @@ To decide which number is the diaper-addiction-influence of (T - diapered dinosa
 	decide on 4.
 To decide which number is the initial cringe of (T - diapered dinosaur tattoo):
 	decide on 8.
+Definition: diapered dinosaur tattoo (called T) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
 Diapered Dinosaur Tattoo ends here.
 

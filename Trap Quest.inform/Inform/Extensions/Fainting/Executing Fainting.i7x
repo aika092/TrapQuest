@@ -152,7 +152,7 @@ Some things don't get reset when the player faints.
 
 +!]
 Definition: A thing (called I) is immune to change:
-	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is penetrating a body part or I is store clothing or I is in a pedestal, decide yes;
+	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is in HoleInWall or I is penetrating a body part or I is store clothing or I is in a pedestal, decide yes;
 	decide no.
 
 [!<RecideWhichObjectIsTheBiggestJewel>+

@@ -315,7 +315,7 @@ To compute (M - a mannequin) entering anally:
 	now the sex-length of M is 0.
 
 This is the mannequin forces orgasm through diaper rule:
-	if there is a worn total protection diaper and the player is diaper focused and the player is a bit horny and the player is not grossed out:
+	if there is a worn total protection diaper and the player is diaper focused and the player is a bit horny and the player is able to orgasm:
 		let M be current-monster;
 		let D be a random worn diaper;
 		while the coverer of D is clothing:
@@ -327,7 +327,7 @@ This is the mannequin forces orgasm through diaper rule:
 		bore M;
 		FavourUp M;
 		rule succeeds;
-	otherwise if there is a worn diaper and diaper lover >= 3 and the stomach-food of the player > 3 + incontinence and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
+	otherwise if (there is a worn diaper or diaper quest is 1) and diaper lover >= 3 and the stomach-food of the player > 3 + incontinence and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
 		let M be current-monster;
 		say "You see [NameDesc of M] moving something towards your face and expect her to apply a new layer of make up. But instead, she pushes a small white pill into your mouth and down your throat!  You are forced to swallow it before you can react!  You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
 		increase rectum by the stomach-food of the player;
@@ -345,7 +345,10 @@ The mannequin diaper quest rules is a rulebook. The diaper quest rules of a mann
 The mannequin forces orgasm through diaper rule is listed first in the mannequin diaper quest rules.
 
 This is the mannequin donates clothing rule:
-	let S be a random off-stage woven stockings;
+	if current-monster is able to donate babywear:
+		compute babywear donation of current-monster;
+		rule succeeds.
+	[let S be a random off-stage woven stockings;
 	if S is actually summonable and the number of worn shoes is 0:
 		summon S cursed;
 		say "[BigNameDesc of current-monster] produces a [printed name of S] and pushes them onto your feet!  Uh-oh!  ";
@@ -374,7 +377,7 @@ This is the mannequin donates clothing rule:
 		summon M cursed;
 		say "[BigNameDesc of current-monster] produces a [M] and pulls it up your legs onto your waist!  Uh-oh!  ";
 		satisfy current-monster;
-		rule succeeds.
+		rule succeeds.]
 The mannequin donates clothing rule is listed last in the mannequin diaper quest rules.
 
 This is the mannequin applies make-up in diaper quest rule:

@@ -577,7 +577,7 @@ To ElderEmpower (T - a headgear):[default]
 To ElderEmpower (W - a laurel wreath):
 	say "You feel cold and wet on your arms as the manacles suddenly turn into tentacles! More tentacles appear on either side and begin to thrash out at everything you're wearing below your head!";
 	repeat with C running through worn clothing:
-		if C is not laurel wreath and C is not sack of holding and C is not equippable and C is not bondage and C is not piercing:
+		if C is not laurel wreath and (C is destructible or C is overdress) and C is not equippable and C is not bondage:
 			say "Your [C] is torn apart!";
 			destroy C;
 	say "Your clothing removed, you begin to feel terrible foreboding. But as suddenly as they appeared, the tentacles simply vanish. As you consider how lucky you were, though, a sudden pain from your neck rips through your body! You get up with a start, and feel a warm, pulsing lump attached to you. One that should definitely be there. It[']s definitely okay that it is there. As you think this, purple tentacles come out of it and wrap around your body, accentuating your curves. How thoughtful.";
@@ -594,7 +594,7 @@ To ElderEmpower (T - a flower hairclip):
 		humiliate 100;
 		Intdown 2;
 		reset elder altar;
-		now voidblade summoned is 1.[Its kind of inefficient to have a flag like this for every class. We should attach it to the headgear or make it into more of a one-time deal]
+		now voidblade summoned is 1.[It's kind of inefficient to have a flag like this for every class. We should attach it to the headgear or make it into more of a one-time deal]
 
 To ElderEmpower (T - a runic headband):
 	let R be ritual-beads;
@@ -617,7 +617,7 @@ To ElderOffer:
 	say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There[']s no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
 	if the number of worn headgear > 0:
 		ElderEmpower a random worn headgear;
-	if the charge of elder altar < 1:[if nothing happend with your headgear, its time to breed]
+	if the charge of elder altar < 1:[if nothing happened with your headgear, it's time to breed]
 		if the player is female, ElderBreed vagina;
 		otherwise ElderBreed asshole;
 		reset elder altar.

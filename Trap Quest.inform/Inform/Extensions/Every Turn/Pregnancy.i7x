@@ -227,7 +227,7 @@ To compute pregnancy:
 					now the semen volume of vagina is temp;
 			if the number of things inseminating vagina > 1 and image cutscenes is 1, display figure of full term pregnancy;
 			check for extreme pregnancies;
-	otherwise if the womb volume of vagina > 30 and the womb volume of vagina < 50 and the pregnancy of the player is 1: [Here we compute the grow of a megapregnancy]
+	otherwise if the womb volume of vagina > 30 and the womb volume of vagina < 50 and the pregnancy of the player is 1: [Here we compute the growth of a mega-pregnancy]
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay:
 			let B be the largeness of belly;
 			now maximum-pregnancy-delay-tracker is 0;
@@ -328,6 +328,10 @@ To compute tentacle birth:
 		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type]";
 		summon T cursed;
 		now the raw-magic-modifier of T is the children of the player / 2;
+	if there is a worn tattoo and the number of worn ass tattoos is 0:
+		say "Suddenly a new tattoo appears on you!";
+		summon tentacles tattoo;
+		try examining tentacles tattoo;
 	let M be a random off-stage tentacle monster;
 	compute set up M.
 

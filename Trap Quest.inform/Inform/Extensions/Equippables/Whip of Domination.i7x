@@ -2,7 +2,7 @@ Whip of Domination by Equippables begins here.
 
 A whip of domination is a kind of equippable. A whip of domination is usually slap ready. There is 1 unique leather whip of domination. The printed name of whip of domination is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]whip of domination[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of whip of domination is "whi".
 
-Figure of whip of domination is the file "Items\Accessories\Equippables\whipofdomination1.png".
+Figure of whip of domination is the file "Items/Accessories/Equippables/whipofdomination1.png".
 
 To decide which figure-name is the clothing-image of (W - a whip of domination):
 	decide on figure of whip of domination.

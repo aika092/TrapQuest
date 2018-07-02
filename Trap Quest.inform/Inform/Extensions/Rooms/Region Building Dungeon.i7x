@@ -1,10 +1,6 @@
 Region Building Dungeon by Rooms begins here.
 
 
-Figure of dungeon loading is the file "Special/Loading/loading7.png".
-Figure of dq dungeon loading is the file "Special/Loading/loading5.png".
-[Figure of dq dungeon messy loading is the file "Special/Loading/loading9.png".] [why is this commented out?]
-
 [!<SetUpTheDungeon>+
 
 REQUIRES COMMENTING
@@ -16,8 +12,6 @@ To Set Up The Dungeon:
 		if images visible is 1:
 			if diaper quest is 0:
 				display figure of dungeon loading;
-			[otherwise if diaper lover >= 4:
-				display figure of dq dungeon messy loading;]
 			otherwise:
 				display figure of dq dungeon loading;
 		say "Now loading the dungeon region!";
@@ -50,7 +44,8 @@ To Set Up The Dungeon:
 		now K is off-stage;
 		now K is bland;
 	now a random off-stage kneeling stool is in a random sandy unrelaxing placed room;
-	now a random off-stage kneeling stool is in a random sandy unrelaxing placed room;
+	if diaper quest is 0, now a random dildo rocking stool is in a random sandy unrelaxing placed room;
+	otherwise now a random off-stage kneeling stool is in a random sandy unrelaxing placed room;
 	if weight gain fetish is 1:
 		now a random off-stage kneeling stool is in a random sandy unrelaxing placed room;
 		now a random kneeling stool in The Dungeon is cursed;

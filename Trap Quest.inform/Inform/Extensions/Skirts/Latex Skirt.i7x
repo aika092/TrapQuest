@@ -9,7 +9,7 @@ Part 1 - Longer Rubber Skirt
 
 A longer rubber skirt is a kind of rubber skirt.
 
-There is 1 longer rubber skirt. Printed name of longer rubber skirt is "[TQlink of item described][clothing-title-before]latex skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of longer rubber skirt is "ls". Figure of longer rubber skirt is the file "Items\Clothes\Lower\Skirts\Latex\latexskirt1.png".
+There is 1 longer rubber skirt. Printed name of longer rubber skirt is "[TQlink of item described][clothing-title-before]latex skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of longer rubber skirt is "ls". Figure of longer rubber skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt1.png".
 
 To decide which figure-name is clothing-image of (C - a longer rubber skirt):
 	decide on figure of longer rubber skirt.
@@ -30,7 +30,7 @@ A shorter rubber skirt is a kind of rubber skirt. A shorter rubber skirt is usua
 To decide which number is the initial outrage of (C - a shorter rubber skirt):
 	decide on 6.
 
-A black rubber skirt is a kind of shorter rubber skirt. There is 1 black rubber skirt. Figure of black rubber skirt is the file "Items\Clothes\Lower\Skirts\Latex\latexskirt2.png". Printed name of black rubber skirt is "[TQlink of item described][clothing-title-before]short black latex skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black rubber skirt is "sbs".
+A black rubber skirt is a kind of shorter rubber skirt. There is 1 black rubber skirt. Figure of black rubber skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt2.png". Printed name of black rubber skirt is "[TQlink of item described][clothing-title-before]short black latex skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black rubber skirt is "sbs".
 
 To decide which figure-name is clothing-image of (C - a black rubber skirt):
 	decide on figure of black rubber skirt.
@@ -40,7 +40,7 @@ To say ClothingDesc of (C - a black rubber skirt):
 
 Part 3 - Pink Rubber Miniskirt
 
-A pink rubber miniskirt is a kind of shorter rubber skirt. There is 1 latex pink rubber miniskirt. Printed name of pink rubber miniskirt is "[TQlink of item described][clothing-title-before]pink latex miniskirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink rubber miniskirt is "prm". Figure of pink rubber miniskirt is the file "Items\Clothes\Lower\Skirts\Latex\latexminiskirt1.png".
+A pink rubber miniskirt is a kind of shorter rubber skirt. There is 1 latex pink rubber miniskirt. Printed name of pink rubber miniskirt is "[TQlink of item described][clothing-title-before]pink latex miniskirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink rubber miniskirt is "prm". Figure of pink rubber miniskirt is the file "Items/Clothes/Lower/Skirts/Latex/latexminiskirt1.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber miniskirt):
 	decide on figure of pink rubber miniskirt.

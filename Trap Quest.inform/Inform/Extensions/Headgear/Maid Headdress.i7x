@@ -55,6 +55,7 @@ Report going:
 		now the crawl count of the player is 0.
 
 To decide which thing is chosen-maid-outfit:
+	if the magic-power of the player > 0 and magical-maid-outfit is off-stage, decide on magical-maid-outfit;
 	if diaper quest is 1, decide on a random off-stage playdude maid outfit;
 	let B be the bimbo of the player;
 	increase B by a random number from -6 to 6;
@@ -111,7 +112,7 @@ Definition: a maid headdress (called M) is untransformable:
 
 Part 1 - Black Maid Headdress
 
-A black maid headdress is a kind of maid headdress. There is 1 black maid headdress. Figure of maid headdress is the file "Items\Accessories\Head\maidheaddress1.png". 
+A black maid headdress is a kind of maid headdress. There is 1 black maid headdress. Figure of maid headdress is the file "Items/Accessories/Head/maidheaddress1.png". 
 
 The printed name of maid headdress is usually "[TQlink of item described][clothing-title-before]maid headdress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
@@ -126,7 +127,7 @@ To say ShortDesc of (H - maid headdress):
 
 Part 2 - Cafe Maid Headdress
 
-A cafe maid headdress is a kind of maid headdress. There is 1 cafe maid headdress. Figure of cafe maid headdress is the file "Items\Accessories\Head\maidheaddress2.png". The text-shortcut of cafe maid headdress is "mch". A cafe maid headdress is usually strength-influencing. A cafe maid headdress is usually not roleplay.
+A cafe maid headdress is a kind of maid headdress. There is 1 cafe maid headdress. Figure of cafe maid headdress is the file "Items/Accessories/Head/maidheaddress2.png". The text-shortcut of cafe maid headdress is "mch". A cafe maid headdress is usually strength-influencing. A cafe maid headdress is usually not roleplay.
 
 The printed name of cafe maid headdress is usually "[TQlink of item described][clothing-title-before]cafe maid headdress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

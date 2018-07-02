@@ -132,7 +132,7 @@ To compute priestessBlessing of (M - a monster):
 			say "The [printed name of R] seems to grow heavier inside you.";
 			increase the charge of R by 1;
 		otherwise:
-			say "The [printed name of R] shifts slightly inside of you, but doesn't seem to get any heavier. Maybe its full?".
+			say "The [printed name of R] shifts slightly inside of you, but doesn't seem to get any heavier. Maybe it's full?".
 			
 		
 
@@ -327,7 +327,7 @@ To compute facial sex of (M - a monster):
 			if a random number between 1 and 2 is 1:
 				decrease the sex-length of M by 1;
 		otherwise:
-			say OralSubmissionResponse of M;[The idea here is that the player and "M" are working together, so we don't uncessarily restrict outselves with two flavour functions]
+			say OralSubmissionResponse of M;[The idea here is that the player and "M" are working together, so we don't unnecessarily restrict ourselves with two flavour functions]
 			decrease the sex-length of M by 1;
 		if the sex-length of M > 2 and the lips of face > 2, decrease the sex-length of M by 1.
 
@@ -337,15 +337,16 @@ The default anal sex rule is listed in the default progress sex rules.
 
 To compute anal sex of (M - a monster):
 	if the class of the player is living sex doll:
-		say SexDollAnal of M;
+		say sexDollSex of M in asshole;
 	otherwise if M is not intelligent:
-		say "[BigNameDesc of M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [asshole]!";
+		compute sexDumb of M in asshole;
 	otherwise if the reaction of the player is 2:[begging]
 		compute begging of M in asshole;	
 	otherwise if the reaction of the player is 1:[submitting]
 		compute sexSubmit of M in asshole;
 	otherwise:[resisting]
 		compute sexResist of M in asshole;
+	compute M sexRuin in asshole;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -354,14 +355,17 @@ This is the default vaginal sex rule:
 The default vaginal sex rule is listed in the default progress sex rules.
 
 To compute vaginal sex of (M - a monster):
-	if M is not intelligent:
-		say "[BigNameDesc of M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [vagina]!";
+	if the class of the player is living sex doll:
+		say sexDollSex of M in vagina;
+	otherwise if M is not intelligent:
+		compute sexDumb of M in vagina;
 	otherwise if the reaction of the player is 2:
 		compute begging of M in vagina;
 	otherwise if the reaction of the player is 1:
 		compute sexSubmit of M in vagina;
 	otherwise:
 		compute sexResist of M in vagina;
+	compute M sexRuin in vagina;
 	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
@@ -773,6 +777,7 @@ To say WeakenFlav of (M - a monster) on (C - a clothing):
 [!<SetUpSexLengthOfMonsterInBodypart>+
 
 Sets the sex-length property of a monster "M" based on a body part "B". 
+sex-length is the duration of sexual acts with the monster, not the length of their dick (assuming they even have one). 
 
 @param <Monster>:<M> The monster that is planning to fuck the player
 @param <BodyPart>:<B> The bodypart "M" is planning to fuck

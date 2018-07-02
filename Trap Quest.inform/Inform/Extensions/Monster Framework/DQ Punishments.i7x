@@ -144,11 +144,14 @@ Definition: a monster (called M) is eager to masturbate:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn chastity cage, decide no;
-	if the player is not a bit horny or refactoryperiod > 0, decide no;
+	if (the player is not a bit horny and M is only willing to masturbate horny players) or refactoryperiod > 0, decide no;
 	decide yes.
 
 Definition: a monster (called M) is willing to masturbate:
 	decide no.
+
+Definition: a monster (called M) is only willing to masturbate horny players: [If this is changed for an intelligent NPC make sure to change MasturbationDeclarationFlav as well]
+	decide yes.
 
 Definition: masturbation-session (called P) is appropriate:
 	if current-monster is willing to masturbate and current-monster is eager to masturbate, decide yes;
@@ -251,12 +254,13 @@ Definition: a monster (called M) is eager to donate babywear:
  	decide no.
  
  Definition: a monster (called M) is able to donate babywear:
-	if there is confiscatable clothing, decide yes;
+	if there is babywearable clothing, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is babywearable:
-	if C is on-stage or C is not babywear or C is not actually summonable, decide no;
-	decide yes.
+	if C is on-stage or C is not babywear, decide no;
+	if C is actually summonable, decide yes;
+	decide no.
 
 Definition: a monster (called M) is willing to donate babywear:
 	if M is willing to confiscate, decide yes;

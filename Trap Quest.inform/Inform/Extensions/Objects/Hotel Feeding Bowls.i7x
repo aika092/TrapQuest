@@ -14,7 +14,7 @@ Definition: a feeding bowls (called F) is TQEdible:
 Check BowlFeeding:
 	now a random feeding bowls is in Hotel18;
 	if the player is immobile, say "You're a bit tied up at the moment!" instead;
-	if the player is in danger, say "You can't do that while in combat!" instead;
+	if the player is in danger and seconds is 0, say "You can't do that while in combat!" instead;
 	if the player is not able to eat, say "You are currently unable to eat." instead;
 	unless the player is prone, say "You would need to be on your knees to feed from these." instead.
 

@@ -11,7 +11,7 @@ A monster can be friendly-fucking. [Are they having consensual sex with you?]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
-	decide on 1 + (the difficulty of M * (4 + game difficulty)).
+	decide on 1 + (the difficulty of M * (3 + game difficulty)).
 A monster has a number called boredom. The boredom of a monster is usually 0. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
 A monster has a number called friendly boredom. The friendly boredom of a monster is usually 0. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
@@ -19,7 +19,10 @@ A monster has a room called target-room. [Any monster that can change locations 
  A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
  A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked?  Most monsters will only tolerate one.]
  Definition: A monster (called M) is wenchy:
+	if M is manly-wenchy, decide yes;[So the monster needs only one, not both]
 	decide no.
+Definition: A monster (called M) is manly-wenchy:[specifically refers to monsters that the player will "ride" to dominate them.]
+ 	decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-fucked, but for dominant sex.]
  A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
  Definition: A monster (called M) is father material:[This means the monster can father children.]

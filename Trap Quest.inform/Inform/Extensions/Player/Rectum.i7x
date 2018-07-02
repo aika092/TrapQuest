@@ -72,7 +72,7 @@ To compute real messing:
 			compute messing;
 	if (can-mess-now is 1 or suppository > 0) and the player is feeling full:
 		let D be a random eligible diaper;
-		say "[one of][bold type][or][stopping]Your tummy rumbles ominously[one of]. [line break][variable custom style]That can't be a good sign[if the incontinence of the player < 4]. I'm starting to feel like I need to go number two[end if]...[or][stopping].[roman type][line break]";
+		say "[one of][bold type][or][stopping]Your tummy rumbles ominously[one of]. [line break][variable custom style]That can't be a good sign[if the incontinence of the player < 4]. I'm starting to feel like I need to go number two[end if]...[or][stopping][roman type][line break]";
 		if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper:
 			say "As if reacting to your tummy, ";
 			let K be a random worn knickers;
@@ -299,7 +299,7 @@ Check messing:
 	if the diaper addiction of the player < 4 and suppository is 0, say "[variable custom style]I can't bring myself to do that on purpose.[roman type][line break]" instead;
 	unless diaper lover >= 4 or (there is a worn total protection diaper and the player is not immobile and the player is not in danger and there is an alive matron and a random number between 1 and rectum > 3 and the player is in the hotel), say "Something tells you that if you did this, there would be no way to immediately get changed. [line break][variable custom style]No way am I doing that.[roman type][line break]" instead;
 	if the humiliation of the player < 30000 and there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 17:
-		if the player is a march 2017 top donator and debugmode > 0, say "If debug mode was disabled, the player would refuse.";
+		if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 		otherwise say "[variable custom style]I can't bring myself to do that with people watching.[roman type][line break]" instead.
 
 [!<CarryOutMessing>+

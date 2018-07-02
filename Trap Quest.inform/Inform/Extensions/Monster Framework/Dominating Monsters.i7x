@@ -115,7 +115,7 @@ Check dominating:
 	if the noun is not monster, say "What would be the point of that?" instead;
 	if diaper quest is 1, say "I think you're playing the wrong game." instead;
 	if the noun is not wenchy, say "The [the noun] doesn't look like someone you could successfully dominate." instead;
-	if (the noun is male and the noun is not gladiator):
+	if the noun is manly-wenchy:
 		let C be 5;
 		if the player is horny, decrease C by 1;
 		if the player is very horny, decrease C by 1;
@@ -128,7 +128,7 @@ Check dominating:
 	if the player is female, now D is vagina;
 	if the player is male:
 		now D is penis;
-		if the player is barbie or (the noun is male and the noun is not gladiator), now D is asshole;
+		if the player is barbie or the noun is manly-wenchy, now D is asshole;
 	if D is penis:
 		if there is a worn undisplacable potentially penis covering clothing, say "You'll have to find a way to remove your [printed name of a random worn undisplacable potentially penis covering clothing] first." instead;
 		if there is a worn chastity cage, say "You'll have to find a way to get out of your chastity first!" instead;[your chastity?]
@@ -167,7 +167,7 @@ Carry out dominating:
 		say DominanceSuccess of M;
 		compute successful dominance of M;
 		let J be a random worn demon codpiece;
-		if J is clothing and the player is the donator, follow the demon junk reward rule;
+		if J is clothing, follow the demon junk reward rule;
 		replace M after domination;
 	otherwise:[Value of 2? Player failed and is getting punished]
 		now M is interested;
@@ -286,7 +286,7 @@ To decide which number is the physical dominance roll for (M - a monster):
 
 [!<SayDominanceSuccessOfMonster>+
 
-This function determines what happens when a monster fails its "submissiveness" check. Usually that means a """""""short""""""" sex scene. computeSuccessfulDominanceOfMonster is called after this, which handles anything that should happen when the player successfully dominates a monster
+This function determines what happens when a monster fails its "submissiveness" check. Usually that means a "short" sex scene. computeSuccessfulDominanceOfMonster is called after this, which handles anything that should happen when the player successfully dominates a monster
 
 @param <Monster>:<M> The monster the player dominated
 
@@ -427,7 +427,7 @@ To compute failed dominance punishment of (M - a monster):
 		if the number of worn not sissifying removable clothing > 0:
 			compute angry punishment of M;
 		otherwise:
-			say "[BigNameDesc of M] seems to lose interest you and begins walking off, but it looks like the game isn[']t done with you yet!";
+			say "[BigNameDesc of M] seems to lose interest you and begins walking off.";
 			compute sissification;
 		Bore M.
 
@@ -451,12 +451,13 @@ To compute sissification:
 	if the player is male and H is actually summonable:
 		say "[bold type]A silky pink bow appears in your hair!  [line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it...only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon H cursed;
-	otherwise if H is worn and the number of off-stage sissifying fetish appropriate actually summonable clothing > 0:
+	otherwise if H is worn and the number of off-stage sissifying fetish appropriate actually summonable clothing > 0:[idk what's causing the run-time error here]
 		let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
 		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [printed name of S] [bold type]appear on you!  [line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
 		summon S cursed;
 		announce sissification;
 	otherwise:
+		say "The [if the player is male]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		DelicateUp 1.
 
 

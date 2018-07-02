@@ -147,6 +147,12 @@ To decide which number is the bimbo tolerance of (M - a wench):
 	if there is a worn demon codpiece, decide on 1;
 	decide on 12.
 
+To decide which number is the outrage tolerance of (M - a wench):
+	decide on 8.
+
+To say DisapprovalFlav of (M - a wench):
+	say "[BigNameDesc of M] [one of]snarls[or]harrumphs[in random order].[line break][speech style of M]'[one of]Are you trying to make fun of me, choosing to look like that?!'[or]Are you trying to provoke me?'[or]If you're appearing like that in front of me, you must want me to [']play['] with you, right?'[in random order][roman type][line break]".
+
 To compute appearance assessment of (M - a wench):
 	if there is a worn currently visible messed knickers:
 		say "[speech style of M]'Eww, gross!!!  Get away from me, poopy butt!'[roman type]  [BigNameDesc of M] quickly moves away from you.";
@@ -156,9 +162,11 @@ To compute appearance assessment of (M - a wench):
 		say "[speech style of M]'[one of]I think it's time to remind you that you're my bitch.'[or]You again!  You want some more, huh?'[in random order][roman type][line break]";
 		if image cutscenes is 1, display figure of wench interact 9;
 	otherwise if M is buddy:
-		say "[speech style of M]'[one of]Hey again. Let's stick together.'[or]Oh hey!  I'm glad to see you're still around.'[in random order][roman type][line break]";
+		if the appearance of the player > the outrage tolerance of M, say "[speech style of M]'[one of]Oh... hi. You're not seriously planning on wandering around here like that are you? You look even worse than me.'[or]Oh hey there! Wow... you're sure looking rather... provocative. Don't tell me you like this place?'[in random order][roman type][line break]";
+		otherwise say "[speech style of M]'[one of]Hey again. Let's stick together.'[or]Oh hey!  I'm glad to see you're still around.'[in random order][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Who... who are you?  You're friendly, right?  Please don't say you're going to try and fuck me too?'[or]Hi there... *whimper*'[stopping][roman type][line break]".
+		if the appearance of the player > the outrage tolerance of M, say "[speech style of M]'[one of]Oh gosh, you look so... lewd. You're making me feel funny... down there...'[or]Wow. If even a brave adventurer like you looks like that, maybe we should all just give up and screw each other until we're mindless bimbos...'[in random order][roman type][line break]";
+		otherwise say "[speech style of M]'[one of]Who... who are you?  You're friendly, right?  Please don't say you're going to try and fuck me too?'[or]Hi there... *whimper*'[stopping][roman type][line break]".
 
 To compute perception of (M - a wench):
 	now M is interested;
@@ -275,7 +283,7 @@ To compute kneeling reaction of (M - a wench):
 			if M is horny-wench:
 				say "[speech style of M][one of]Finally, a bigger slut than me...[or]Yes! Yes! I'm so horny![or]Fuck! Fuck yes, stay down there![or]Don't get up, I really need your mouth. I need it so fucking bad...[or]You're going to help me? Thanks so much...[at random][roman type]";
 			otherwise:
-				say "[speech style of M]'[if the class of the player is maid][one of]Hey maid, I'm dirty, come clean me up.'[or]Open your mouth baby, I need help cleaning up.'[in random order][otherwise if the player is male and there is a worn chastity cage][one of]You're not going to fuck anybody when you're locked up like that. Now open up.'[or]Oooh, is poor widdle baby locked up in a cage? Don't worry, I've got milk for you right here.'[or]Hmm, I bet you'd like to fuck this pussy. Too bad you're all caged up! Now open wide.'[in random order][otherwise if the size of penis > 0 and the size of penis <= 3][one of]Hey baby dick, how'd you like to eat my pussy? That's probably the only action you'll ever get from a woman.'[or]With a [player-penis] that tiny, I bet you can't even cum. Luckily, you can still help ME cum if you lend me your mouth for a minute.'[or]Wow, what a tiny [player-penis]! You'll never satisfy anyone with that! I really hope your tongue isn't that small.'[or]If you open your mouth, I'll give you a taste of a real man's cum.'[in random order][otherwise if the size of penis > 5][one of]Wow, a [player-penis] that big and you're still on your knees? I'm going to enjoy having you eat my pussy.'[or]I bet you thought you were going to fuck me. Wrong! Now open up, bitch.'[in random order][otherwise][one of]Open wide, bitch.'[or]Open up, bitch.'[or]You thirsty, bitch?'[or]I hope you're thirsty.'[or]I hope you're good at eating pussy.'[in random order][end if][roman type][line break]";
+				say "[speech style of M]'[if the class of the player is maid][one of]Hey maid, I'm dirty, come clean me up.'[or]Open your mouth baby, I need help cleaning up.'[in random order][otherwise if the player is male and there is a worn chastity cage][one of]You're not going to fuck anybody when you're locked up like that. Now open up.'[or]Oooh, is poor widdle baby locked up in a cage? Don't worry, I've got milk for you right here.'[or]Hmm, I bet you'd like to fuck this [pussy]. Too bad you're all caged up! Now open wide.'[in random order][otherwise if the size of penis > 0 and the size of penis <= 3][one of]Hey baby dick, how'd you like to eat my [pussy]? That's probably the only action you'll ever get from a woman.'[or]With a [player-penis] that tiny, I bet you can't even cum. Luckily, you can still help ME cum if you lend me your mouth for a minute.'[or]Wow, what a tiny [player-penis]! You'll never satisfy anyone with that! I really hope your tongue isn't that small.'[or]If you open your mouth, I'll give you a taste of a real man's cum.'[in random order][otherwise if the size of penis > 5][one of]Wow, a [player-penis] that big and you're still on your knees? I'm going to enjoy having you eat my [pussy].'[or]I bet you thought you were going to fuck me. Wrong! Now open up, bitch.'[in random order][otherwise][one of]Open wide, bitch.'[or]Open up, bitch.'[or]You thirsty, bitch?'[or]I hope you're thirsty.'[or]I hope you're good at eating [pussy].'[in random order][end if][roman type][line break]";
 		humiliate 75.
 
 To say WaitingFlav of (M - a wench):
@@ -486,7 +494,7 @@ To say MouthPenetrationFlav of (M - a wench):
 	if M is horny-wench or M is friendly-fucking:
 		say "She buries your nose into her cum-dripping asshole and covers your mouth with her cum-filled [vagina]. You can't breathe![line break][line break][line break][speech style of M]'[one of]Please lick it all out of me!'[or]I really need to feel your tongue...'[or]Don't worry, it tastes really good!'[purely at random][roman type][line break]";
 	otherwise:
-		say "She buries your nose into her cum-dripping asshole and covers your mouth with her cum-filled [vagina]. You can't breathe![line break][line break][line break][speech style of M]'[one of]Drink bitch, drink!'[or]Eat my pussy bitch!'[or]How do you like the taste of my pussy, bitch?'[or]Lick my pussy clean you fucking whore!'[purely at random][roman type][line break]";
+		say "She buries your nose into her cum-dripping asshole and covers your mouth with her cum-filled [vagina]. You can't breathe![line break][line break][line break][speech style of M]'[one of]Drink bitch, drink!'[or]Eat my [pussy] bitch!'[or]How do you like the taste of my [pussy], bitch?'[or]Lick my [pussy] clean you fucking whore!'[purely at random][roman type][line break]";
 
 To say SpitroastPrep of (M - a monster) with (O - a wench) in (F - vagina):
 	if M is intelligent, say "[BigNameDesc of M] pushes your legs apart and kneels between them.";
@@ -616,7 +624,7 @@ To say DominanceFailure of (M - a wench):
 To compute failed dominance punishment of (M - a wench):
 	if the player is female or the appearance of the player >= 8 and M is not objectifying the player:
 		say "[speech style of M]'Now what, you fucking bitch...'[roman type][line break][BigNameDesc of M] looks like [he of M][']s about to do something to you, but seems to catch herself and releases you with a sigh.";
-		if the number of worn not sissifying removable clothing > 0:
+		if the number of worn tearable not sissifying clothing > 0:
 			compute angry punishment of M;
 			Calm M;
 		otherwise:
@@ -715,7 +723,7 @@ To oral dominate (M - a wench):[TODO: update]
 			now the bladder of the player is 0;
 			say "[AfterDominationComment 4 of M]";
 		otherwise:
-			say "You force [NameDesc of M] onto her back, sitting on her face. [if the bimbo of the player < 12][line break][first custom style]'[one of]No offense meant[or]Nothing personal[at random], I promise.'  [otherwise][line break][second custom style]'Let's see how you like it!'  [end if][roman type][line break]";
+			say "You force [NameDesc of M] onto her back, sitting on her face. [if the bimbo of the player < 12][line break][first custom style]'[one of]No offence meant[or]Nothing personal[at random], I promise.'  [otherwise][line break][second custom style]'Let's see how you like it!'  [end if][roman type][line break]";
 			if the semen volume of vagina > 0:
 				say "Pulling your asscheeks apart, you position your dripping wet folds over her mouth and your [asshole] over her nose, cutting off her airflow. She squirms petulantly, weakly clawing at your thighs to try and make you get up, but fails because she is weakened from the preceding fight. Reluctantly, she opens her mouth and pushes her tongue into your [vagina]. You sigh in pleasure, massaging your breasts as the sensations cause your vaginal muscles to loosen and allow [semen] to dribble out onto her face. The wench grabs your thighs, suddenly a lot more eager to fuck you with her tongue. You reach back to rub her gash, which she was probably planning to have you clean out yourself. You're sure you'd be able to orgasm if the wench continued on like this, but the slipperiness of the [semen] drooling out of your pussy makes you a lot less sensitive. So, you eventually grow bored and stand up.";
 				now the semen volume of vagina is 0;
@@ -813,11 +821,11 @@ To say SubmissiveGreeting of (M - a wench):
 		if the player is female:
 			say "[variable custom style]'[one of]You got fucking cum in my mouth!'[or]You got cum in my fucking mouth, you bitch!'[or]Why did you put all that disgusting slime in my mouth?'[at random][roman type][line break]";
 		otherwise:
-			say "[variable custom style]'[one of]You're fucking gross, bitch! You got jizz in my fucking mouth!'[or]You got cum in my mouth, bitch!'[or]Gross bitches like you are exactly why I never eat pussy.'[at random][roman type][line break]";
+			say "[variable custom style]'[one of]You're fucking gross, bitch! You got jizz in my fucking mouth!'[or]You got cum in my mouth, bitch!'[or]Gross bitches like you are exactly why I never eat [pussy].'[at random][roman type][line break]";
 	otherwise if the semen taste addiction of the player < 13:
 		say "[variable custom style]'[one of]Hey. Are you going to make me clean you out again?'[or]I guess it wasn't that bad eating you out...'[or]I get it if you're feeling a little gummed up, but do you have to use me every time?'[at random][roman type][line break]";
 	otherwise:
-		say "[second custom style]'[one of]Hey sexy, want me to lick up more of that cum?'[or]Hey girl, still feeling dirty, because I'm feeling hungry.'[or]Feeling a little full, baby? I can help.'[or]Let me lick that yummy [semen] out of your pussy!'[at random][roman type][line break]".
+		say "[second custom style]'[one of]Hey sexy, want me to lick up more of that cum?'[or]Hey girl, still feeling dirty, because I'm feeling hungry.'[or]Feeling a little full, baby? I can help.'[or]Let me lick that yummy [semen] out of your [pussy]!'[at random][roman type][line break]".
 
 To say FirstResponse of (M - a wench):
 	if the strength of the player > 7:
@@ -870,7 +878,7 @@ To say DominantResponse of (M - a wench):
 		if M is friendly, say "[speech style of M]'Haha, just kidding.'[roman type][line break]";
 		if image cutscenes is 1, display figure of wench interact 6;
 	otherwise if the times-fucked of M > 1:
-		say "[speech style of M]'[one of]Hey there. I thought of a new nickname for you. Cunt Wipe. How does that sound?'[or]Oh, look, it's my favourite cunt wipe!'[or][if M is friendly]Hey, it's my favourite cunt wipe!'[otherwise]Look who it is! I just got fucked so I really need a cleaning.'[end if][stopping][roman type][line break]";
+		say "[speech style of M]'[one of]Hey there. I thought of a new nickname for you. [big cunt] Wipe. How does that sound?'[or]Oh, look, it's my favourite [cunt] wipe!'[or][if M is friendly]Hey, it's my favourite [cunt] wipe!'[otherwise]Look who it is! I just got fucked so I really need a cleaning.'[end if][stopping][roman type][line break]";
 		if image cutscenes is 1, display figure of wench interact 6;
 	otherwise if bukkake fetish is 1 and the semen coating of face < 1 and M is unfriendly:
 		say "[speech style of M]'[one of]Wasn't there cum on your face last time I saw you. Oh well, I can replace it.'[or]Hey, what happened to all that cum on your face? Eh, whatever. I'm replacing it anyway.'[or]Wow, your face is completely clean! I bet you fucking ate it, didn't you.'[at random][roman type][line break]";

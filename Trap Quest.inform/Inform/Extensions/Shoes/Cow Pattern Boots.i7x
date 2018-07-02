@@ -13,7 +13,7 @@ There is 1 cow pattern boots.
 To decide which figure-name is the clothing-image of (H - a cow pattern boots):
 	decide on the figure of cow boots.
 
-Figure of cow boots is the file "Items\Clothes\Lower\Feet\Boots\cowboots1.png".
+Figure of cow boots is the file "Items/Clothes/Lower/Feet/Boots/cowboots1.png".
 
 To decide which number is the unique outrage of (C - a cow pattern boots):
 	decide on 1.

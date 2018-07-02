@@ -10,7 +10,11 @@ There is 1 queen of hearts heels.
 To decide which figure-name is the clothing-image of (H - a queen of hearts heels):
 	decide on the figure of queen of hearts heels.
 
-Figure of queen of hearts heels is the file "Items\Clothes\Lower\Feet\Heels\Special\queen1.png".
+Figure of queen of hearts heels is the file "Items/Clothes/Lower/Feet/Heels/Special/queen1.png".
+
+Definition: a queen of hearts heels (called C) is heart themed:
+	decide yes.
+
 
 To decide which number is the unique outrage of (C - a queen of hearts heels):
 	decide on 1.

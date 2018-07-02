@@ -70,6 +70,7 @@ Check giving:
 				if N > 0, say "[second custom style]'Ooh, that feels [if N > 1]incredible[otherwise]goood[end if]!  You've earned [if N is 1]one use[otherwise][N] uses[end if] of the altar[one of]. Hey, don't judge me!  I'm not the one who NEEDS to wear nappies[or][stopping].'[roman type][line break]";
 				otherwise say "[second custom style]'Ooh, that feels pretty fucking good!  You've not earned any uses of the altar though, since I had to use my magic to remove that curse[one of]. What, you thought I wouldn't notice that you were stuck in it?'[or].'[stopping][roman type][line break]";
 				increase the altar-uses of the second noun by N;
+				now seconds is 6;
 			do nothing instead;
 		otherwise:
 			if the curse-quest of the second noun is 1 and the noun is fae mushroom:

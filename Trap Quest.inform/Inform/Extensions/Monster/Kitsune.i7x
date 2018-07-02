@@ -24,6 +24,10 @@ To say ShortDesc of (M - kitsune):
 To say MediumDesc of (M - kitsune):
 	say "[ShortDesc of M]".
 
+To say FullMonsterDesc of (M - a kitsune):
+	if images visible is 1 and the target-disguise of M is M, display monster-image of M;
+	say MonsterDesc of M.
+
 To say MonsterDesc of (M - kitsune):
 	if the target-disguise of M is M:
 		say "A beautiful if quite unusual woman stands before you. You could almost convince yourself she was a perfectly ordinary human, if not for the fox ears and bushy tails playfully dancing behind her. Her hair, or fur, or whatever is a soft pink, and she wears a black and gold kimono. She glances at you with a small smirk, as though you were a particularly interesting rodent.";

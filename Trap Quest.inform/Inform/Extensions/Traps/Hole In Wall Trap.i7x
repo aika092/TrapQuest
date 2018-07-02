@@ -17,6 +17,12 @@ To say ShortDesc of (T - hole-in-wall):
 To say SuddenPregTitle of (M - hole-in-wall):
 	say "anonymous man".
 
+To say PregGrowth of (T - hole-in-wall):
+	say "the unknown man's [child]".
+
+To say FuckerDesc of (T - hole-in-wall):
+	say "anonymous man".
+
 Definition: hole-in-wall (called T) is live:
 	decide yes.
 
@@ -40,8 +46,6 @@ This is the spawn hole-in-wall rule:
 			set shortcut of A.
 The spawn hole-in-wall rule is listed last in the set up hotel traps rules.
 
-To say PregGrowth of (T - hole-in-wall):
-	say "the unknown man's [child]".
 
 To compute HoleInWallEntrance:
 	increase the times-stuck of hole-in-wall by 1;
@@ -299,9 +303,9 @@ Definition: hole-piercing (called P) is appropriate:
 
 To compute punishment of (P - hole-piercing):
 	now the priority of P is 1;
-	let C be clitoris piercing;
+	let C be normal clit piercing;
 	say "You feel cold smooth fingers grab hold of your [if C is worn][ShortDesc of C][otherwise]clit[end if]!  [line break][variable custom style]Eek![roman type][line break]";
-	if C is worn, now C is clitoris lead;
+	if there is a worn clitoris piercing, now C is clitoris lead;
 	summon C cursed;
 	say "Suddenly, a hot burning sensation!";
 	DelicateUp 2;

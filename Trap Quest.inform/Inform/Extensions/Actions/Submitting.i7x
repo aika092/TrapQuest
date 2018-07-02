@@ -25,8 +25,8 @@ REQUIRES COMMENTING
 +!]
 Check submitting:
 	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
-	if there is a fucking daddy's hole monster:
-		try resisting instead; [See resisting for more info on this mechanic]
+	if there is a fucking daddy's hole monster or there is a wrong race fucking monster:
+		try resisting instead; [See resisting for more info on these mechanics]
 
 [!<CarryOutSubmitting>+
 

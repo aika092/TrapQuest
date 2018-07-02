@@ -16,9 +16,11 @@ To decide which number is the overload of (C - an underdress):
 To decide which number is the overload of (C - a corset):
 	decide on the number of in-play corsets.
 To decide which number is the overload of (C - a knickers):
-	decide on the number of in-play knickers - 1 - the number of knickers in Dungeon41.
+	let K be the number of in-play knickers + diaper quest - 1 - the number of knickers in Dungeon41;
+	if diaper lover > 0, decrease K by the number of in-play diapers - the number of diapers in Dungeon41;
+	decide on K.
 To decide which number is the overload of (C - a diaper):
-	if diaper quest is 1, decide on 0;
+	if diaper quest is 1, decide on 100;
 	decide on the number of in-play knickers - 1.
 To decide which number is the overload of (C - a trousers):
 	decide on the number of in-play trousers + 1.
@@ -34,9 +36,11 @@ To decide which number is the overload of (C - a bra):
 To decide which number is the overload of (C - a lubricant):
 	decide on the number of in-play lubricants + 2.
 To decide which number is the overload of (C - a vessel):
+	if the number of in-play vessels > 4, decide on 99;
 	decide on the number of in-play vessels.
 To decide which number is the overload of (C - a can):
-	decide on the number of in-play cans.
+	if the number of held non-empty bottles > 2, decide on 99;
+	decide on the number of in-play non-empty vessels.
 To decide which number is the overload of (C - an accessory):
 	if the number of in-play plentiful accessories > 4, decide on 999;
 	decide on 1 + (the number of in-play plentiful accessories / 2).
@@ -160,7 +164,7 @@ To compute generic treasure to (X - a thing):
 			compute autotaking Z;
 		otherwise:
 			say "Oh no, it's empty. Boo!";
-	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 100 - (10 * the number of on-stage rare clothing):
+	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 100 - (10 * the number of in-play rare clothing):
 		let C be a random off-stage rare fetish appropriate clothing;
 		now C is in X;
 		say "You find a [printed name of C]!  This must be a rare item!";
@@ -170,11 +174,18 @@ To compute generic treasure to (X - a thing):
 		let C be a random off-stage snack;
 		now C is in X;
 		increase snacks-found by 1;
-		say "You find a [printed name of C]!  This [one of]looks like it [or][stopping]should help!";
-		if newbie tips is 1, say "[one of][item style]Newbie tip: You've found a snack!  These food items will do something good to your stats. But also if you're patient, there's a certain chef you might meet who can upgrade them into even more incredible treats in exchange for jewellery.[roman type][line break][or][stopping]";
+		say "You find a [printed name of C]! This [one of]looks like it [or][stopping]should help!";
+		if newbie tips is 1, say "[one of][item style]Newbie tip: You've found a snack! These food items will do something good to your stats. But also if you're patient, there's a certain chef you might meet who can upgrade them into even more incredible treats in exchange for jewellery.[roman type][line break][or][stopping]";
 		compute autotaking C;
-	otherwise if a random number between 1 and 3 is [1]0:
-		say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty. Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]";
+	otherwise if a random number between 1 and 4 is 1:
+		let T be a random off-stage fetish appropriate mass collectible;
+		if T is a thing:
+			now T is in X;
+			say "You find a [ShortDesc of T]! Nice.";
+			if newbie tips is 1, say "[one of][item style]Newbie tip: You've found a token! These can be cashed in by using them at a crafting station, and will do something good. The beneficial effect will scale with however many you collect so it's no problem to wait a while before cashing them in.[roman type][line break][or][stopping]";
+			compute autotaking T;
+		otherwise:
+			say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty. Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]";
 	otherwise:
 		now treasure-necessity is [a random number between 1 and] max-overload;
 		if debugmode is 1, say "Obtaining item with maximum overload of [treasure-necessity]; ";

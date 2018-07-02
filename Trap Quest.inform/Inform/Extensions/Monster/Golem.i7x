@@ -2,7 +2,7 @@ Golem by Monster begins here.
 
 golem is a monster. golem is neuter. The poison-status of golem is -1.
 
-The text-shortcut of golem is "sg". Understand "silicone", "flesh" as golem.
+The text-shortcut of golem is "gol". Understand "silicone", "flesh" as golem.
 
 To say ShortDesc of (M - golem):
 	say "golem".

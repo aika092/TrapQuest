@@ -16,6 +16,11 @@ Definition: yourself is wrist bound behind:
 
 A clothing can be ankleless, ankle-unbound or ankle-bound (this is the ankle-restriction property). Clothing is usually ankleless.
 Definition: a clothing is ankle locking if it is not ankleless.
+[!<YourselfIsAnkleBound>
+
+REQUIRES COMMENTING
+
++!]
 Definition: yourself is ankle bound:
 	if there is worn ankle-bound clothing, decide yes;
 	decide no.
@@ -39,7 +44,7 @@ To decide which number is the bondage dexterity penalty of the player:
 		increase D by (the restrictivity of C) * (the restrictivity of C); [The more parts of the body this item connects, the more harshly it affects the player's dexterity.]
 	decide on D.
 
-bondage is a kind of clothing. bondage is usually metal. 
+bondage is a kind of clothing. bondage is usually metal.  bondage is usually unique.
 
 
 Definition: a bondage (called C) is too boring:

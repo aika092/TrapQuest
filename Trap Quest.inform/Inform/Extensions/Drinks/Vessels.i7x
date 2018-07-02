@@ -91,7 +91,7 @@ To say ShortDesc of (B - a vessel):
 To say ShortVesselDesc of (V - a vessel):
 	say "drinking vessel".
 
-A squirt dildo is a kind of vessel. The max-doses of a squirt dildo is usually 1. There is 1 squirt dildo. The printed name of squirt dildo is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]squirt dildo[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". A squirt dildo is usually disembodied. The text-shortcut of squirt dildo is "sqd". Figure of squirt dildo is the file "Items\Accessories\Vessels\squirtdildo1.png".
+A squirt dildo is a kind of vessel. The max-doses of a squirt dildo is usually 1. There is 1 squirt dildo. The printed name of squirt dildo is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]squirt dildo[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". A squirt dildo is usually disembodied. The text-shortcut of squirt dildo is "sqd". Figure of squirt dildo is the file "Items/Accessories/Vessels/squirtdildo1.png".
 To decide which figure-name is the vessel-image of (V - a squirt dildo):
 	decide on the figure of squirt dildo.
 Report plugging something with a squirt dildo:
@@ -108,7 +108,7 @@ To say ShortVesselDesc of (V - a squirt dildo):
 Definition: a squirt dildo (called C) is inflation themed:
 	decide yes.
 
-baby's bottle is a vessel. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items\Accessories\Vessels\babybottle1.png".
+baby's bottle is a vessel. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".
 To decide which figure-name is the vessel-image of (V - baby's bottle):
 	decide on the figure of baby's bottle.
 Definition: baby's bottle (called C) is pregnancy related:
@@ -131,7 +131,7 @@ To say VesselDesc of (V - baby's bottle):
 To say ShortVesselDesc of (V - baby's bottle):
 	say "baby's bottle".
 	
-cocktail-glass is a waitress vessel. cocktail-glass is open topped. The max-doses of cocktail-glass is 2. The printed name of cocktail-glass is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]cocktail glass[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cocktail-glass is "cg". Understand "cocktail", "glass" as cocktail-glass. Figure of cocktail glass is the file "Items\Accessories\Vessels\cocktailglass1.png".
+cocktail-glass is a waitress vessel. cocktail-glass is open topped. The max-doses of cocktail-glass is 2. The printed name of cocktail-glass is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]cocktail glass[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cocktail-glass is "cg". Understand "cocktail", "glass" as cocktail-glass. Figure of cocktail glass is the file "Items/Accessories/Vessels/cocktailglass1.png".
 To decide which figure-name is the vessel-image of (V - cocktail-glass):
 	decide on the figure of cocktail glass.
 To say VesselDesc of (V - cocktail-glass):
@@ -139,7 +139,7 @@ To say VesselDesc of (V - cocktail-glass):
 To say ShortVesselDesc of (V - cocktail-glass):
 	say "cocktail glass".
 
-champagne-glass is a waitress vessel. champagne-glass is open topped. The max-doses of champagne-glass is 1. The printed name of champagne-glass is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]champagne glass[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of champagne-glass is "cgl". Understand "champagne", "glass" as champagne-glass. Figure of champagne glass is the file "Items\Accessories\Vessels\champagneglass1.png".
+champagne-glass is a waitress vessel. champagne-glass is open topped. The max-doses of champagne-glass is 1. The printed name of champagne-glass is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]champagne glass[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of champagne-glass is "cgl". Understand "champagne", "glass" as champagne-glass. Figure of champagne glass is the file "Items/Accessories/Vessels/champagneglass1.png".
 To decide which figure-name is the vessel-image of (V - champagne-glass):
 	decide on the figure of champagne glass.
 To say VesselDesc of (V - champagne-glass):
@@ -147,7 +147,7 @@ To say VesselDesc of (V - champagne-glass):
 To say ShortVesselDesc of (V - champagne-glass):
 	say "champagne glass".
 
-gold chalice is a vessel. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items\Accessories\Vessels\goldenchalice1.png".
+gold chalice is a vessel. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items/Accessories/Vessels/goldenchalice1.png".
 To decide which figure-name is the vessel-image of (V - gold chalice):
 	decide on the figure of gold chalice.
 To say VesselDesc of (V - gold chalice):
@@ -156,9 +156,9 @@ To say ShortVesselDesc of (V - gold chalice):
 	say "golden chalice".
 
 novelty mug is a vessel. novelty mug is open topped. The max-doses of a novelty mug is usually 2. The printed name of novelty mug is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]novelty mug[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of novelty mug is "nm".
-Figure of boob mug is the file "Items\Accessories\Vessels\mug1.png".
-Figure of cow mug is the file "Items\Accessories\Vessels\mug2.png".
-Figure of coffee mug is the file "Items\Accessories\Vessels\mug3.png".
+Figure of boob mug is the file "Items/Accessories/Vessels/mug1.png".
+Figure of cow mug is the file "Items/Accessories/Vessels/mug2.png".
+Figure of coffee mug is the file "Items/Accessories/Vessels/mug3.png".
 To decide which figure-name is the vessel-image of (V - novelty mug):
 	if diaper quest is 1, decide on the figure of coffee mug;
 	if lactation fetish is 1, decide on the figure of cow mug;
@@ -189,8 +189,8 @@ To compute cursed drinking (X - novelty mug):
 			say "You feel your [BreastDesc] slightly swell.".
 
 teapot is a vessel. The max-doses of teapot is 2. The printed name of teapot is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]teapot[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of teapot is "tp".
-Figure of penis teapot is the file "Items\Accessories\Vessels\teapot1.png".
-Figure of kitty teapot is the file "Items\Accessories\Vessels\teapot2.png".
+Figure of penis teapot is the file "Items/Accessories/Vessels/teapot1.png".
+Figure of kitty teapot is the file "Items/Accessories/Vessels/teapot2.png".
 To decide which figure-name is the vessel-image of (V - teapot):
 	if diaper quest is 1, decide on figure of kitty teapot;
 	decide on the figure of penis teapot.
@@ -214,7 +214,7 @@ To compute cursed drinking (X - teapot):
 		say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The teapot changed everything inside it into [semen]! [if the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 0][one of][line break][variable custom style]'Either the teapot or the drink colour is cursed, but I don[']t know which...'[roman type][line break][or][stopping][end if][line break]";
 		StomachSemenUp 1.
 
-witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items\Accessories\Vessels\goblet1.png".
+witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items/Accessories/Vessels/goblet1.png".
 To decide which figure-name is the vessel-image of (V - witch's goblet):
 	decide on the figure of witch's goblet.
 To say ShortVesselDesc of (V - witch's goblet):
@@ -227,7 +227,7 @@ To compute drinking (X - witch's goblet):
 	compute cursed drinking X.[We do not check whether this is blessed.]
 	
 	
-horn is a vessel. horn is open topped. The max-doses of horn is 2. The printed name of horn is "[TQlink of item described][unless curse-ID of the item described is unsure][magic-curse] [end if]minotaur horn[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of horn is "mho". Figure of horn is the file "Items\Accessories\Vessels\horn1.png". Understand "minotaur" as horn.
+horn is a vessel. horn is open topped. The max-doses of horn is 2. The printed name of horn is "[TQlink of item described][unless curse-ID of the item described is unsure][magic-curse] [end if]minotaur horn[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of horn is "mho". Figure of horn is the file "Items/Accessories/Vessels/horn1.png". Understand "minotaur" as horn.
 To decide which figure-name is the vessel-image of (V - horn):
 	decide on the figure of horn.
 To say VesselDesc of (V - horn):

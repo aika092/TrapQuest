@@ -309,7 +309,7 @@ To say CheerSeduce of (M - a monster):
 	if M is unfriendly:
 		say "[second custom style]'[one of]Aren[']t you like, excited to fuck a super hot cheerleader?[or]I love talking almost as much as I love fucking. And I reeeaally love fucking.'[or]Do you even want to have sex with me? I[']ve been talking pretty long and you[']re not fucking me yet.'[or]People tell me to shut up all the time, but it's like, I have so many interesting things to say!'[or]My name is [NameBimbo], but most people call me shut up slut!'[or]I[']m on the cheerleading team!'[or]Go Team!'[in random order][roman type][line break]";
 	otherwise:
-		say "[second custom style]'[one of]Want to know why they call me the head cheerleader?'[or]Anal is like, waayy underrated. I can prove it if you want.'[or]Oooooh...I have a great idea. Let's have sex!'[or]I[']m on the cheerleading team. Wanna fuck me?'[or]Cheerleading isn[']t hard, it's easy. Just like meee~'[or]I like to fuck bareback. Figured you would want to know.'[or]Hey cutie, want to be the top of the pyramid?'[at random][roman type][line break]".
+		say "[second custom style]'[one of]Want to know why they call me the head cheerleader?'[or]Anal is like, waayy underrated. I can prove it if you want.'[or]Oooooh... I have a great idea. Let's have sex!'[or]I[']m on the cheerleading team. Wanna fuck me?'[or]Cheerleading isn[']t hard, it's easy. Just like meee~'[or]I like to fuck bareback. Figured you would want to know.'[or]Hey cutie, want to be the top of the pyramid?'[at random][roman type][line break]".
 	
 
 To say BimboSeduced of (M - a monster):

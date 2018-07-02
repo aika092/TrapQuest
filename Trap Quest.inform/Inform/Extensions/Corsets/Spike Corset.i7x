@@ -4,7 +4,7 @@ A spike corset is a kind of corset. A spike corset is usually leather. A spike c
 
 The printed name of spike corset is usually "[TQlink of item described][clothing-title-before]spike corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of spike corset is "spc".
 
-Figure of spike corset is the file "Items\Clothes\Upper\Corsets\spikecorset1.png".
+Figure of spike corset is the file "Items/Clothes/Upper/Corsets/spikecorset1.png".
 
 To decide which figure-name is clothing-image of (C - a spike corset):
 	decide on figure of spike corset.

@@ -53,9 +53,9 @@ To say ShortDesc of (C - a ballgag):
 	say "ballgag".
 
 
-Figure of small ballgag is the file "Items\Accessories\Head\ballgag1.png".
-Figure of large ballgag is the file "Items\Accessories\Head\ballgag2.png".
-Figure of huge ballgag is the file "Items\Accessories\Head\ballgag3.png".
+Figure of small ballgag is the file "Items/Accessories/Head/ballgag1.png".
+Figure of large ballgag is the file "Items/Accessories/Head/ballgag2.png".
+Figure of huge ballgag is the file "Items/Accessories/Head/ballgag3.png".
 
 To decide which figure-name is clothing-image of (C - a small ballgag):
 	decide on figure of small ballgag.

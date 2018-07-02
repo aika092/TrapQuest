@@ -124,7 +124,7 @@ To compute unique final action of (M - ghostly tentacle):
 	do nothing.
 
 To say SummoningFlav of (M - a ghost):
-	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if trap fetish is 0]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediately [if bukkake fetish is 1 and trap fetish is 1]ejaculates all over her face[otherwise if trap fetish is 1]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [printed name of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over her face[otherwise if futanari fetish is 0]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [semen] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
 To say he of (M - a ghost):
@@ -230,44 +230,36 @@ To say AssholePenetrationFlav of (M - a ghost):
 To compute unique penetration effect of (M - jismbodied ghost) in (F - a fuckhole):
 	let C be a random worn total protection clothing;[The jismbodied ghost leaves semen on everything it touches]
 	if C is clothing and bukkake fetish is 1, CumSoak 5 on C.
+ 
+To compute sexDumb of (M - a monster) in (F - a fuckhole):[submit and resist are the same for the ghost]
+	compute sexSubmit of M in F.
 
-To compute anal sex of (M - a ghost):
-	compute fuckhole sex of M.
+To say sexSubmitFondleFlav of (M - a ghost) in (O - an orifice):
+	say "A pair of ghostly hands materialise underneath you, [one of]eagerly fondling your [BreastDesc][or]cruelly twisting your nipples[or]tweaking your nipples and palming your [BreastDesc][or][if the largeness of breasts < 4]shamelessly manhandling your [BreastDesc][otherwise]cruelly slapping your [BreastDesc][end if][or]playing with your [BreastDesc][at random] as [NameDesc of M] [one of]pistons[or]slams[or]thrusts[at random] in and out of your [variable O].".
 
-To compute fuckhole sex of (M - a ghost):
-	say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][or][M submission sex 7][at random]";
-	if M is penetrating vagina, ruin vagina;
-	otherwise ruin asshole;
-	decrease the sex-length of M by 1;
-	say "[one of][M sex reaction][or][cycling]".
+To say sexSubmitPushFlav of (M - a ghost) in (O - an orifice):
+	let F be a random monster penetrating face;
+	say "You [one of]suddenly feel a hand on your back, pushing you into the [if F is monster][F][otherwise]floor[end if][or]hear someone grunting heavily behind you[at random] as [NameDesc of M] [one of]pistons[or]slams[at random] in and out of your [variable O].".
 
-To say (M - a ghost) submission sex (N - a number):
-	let O be a random orifice penetrated by M;
-	if N is 1:
-		if the reaction of the player is 0:
-			say "[if the relevant sex addiction of M > 12][BigNameDesc of M] pistons in and out of your [variable O], panting heavily. You're enjoying it so much you can hardly think![otherwise if the relevant sex addiction of M > 7][BigNameDesc of M] fucks your [variable O] with fast, hard thrusts. You close your eyes and tilt your head to the ground, trying to ignore how good it feels.[otherwise][BigNameDesc of M] plunges in and out of your [variable O] with wild abandon! It's so intense you can hardly think![end if]";
-		if the reaction of the player > 0:
-			say "[if the relevant sex addiction of M < 6][BigNameDesc of M] slams in and out of your [variable O]. It's extra humiliating because you're letting it happen![otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] slams in and out of your [variable O], panting heavily. You try to convince yourself you're not letting it happen because you enjoy it.[otherwise][BigNameDesc of M] fucks your [variable O] with fast, hard thrusts. You close your eyes and tilt your head to the ground, losing yourself to pleasure.[end if]";
-	if N is 2:
-		if the reaction of the player is 0:
-			say "[if there is a worn ballgag and the bimbo of the player > 12][BigNameDesc of M] slams in and out of your [variable O]. You feel slightly annoyed that your [random worn ballgag] is muffling your moans.[otherwise if there is a worn ballgag and the bimbo of the player > 7][BigNameDesc of M] slams in and out of your [variable O]. You[']re glad it isn[']t attached to any real man with how terribly your [ShortDesc of random worn ballgag] muffles the sound of your moans.[otherwise if the player is gagged][BigNameDesc of M] relentlessly pounds your [variable O]. Your grunts of displeasure are conveniently muffled by the [ShortDesc of random worn ballgag] in your mouth.[otherwise if the relevant sex addiction of M > 12][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You arch your back and shamelessly moan in pleasure.[otherwise if the relevant sex addiction of M > 7][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You arch your back and emit an involuntary moan of pleasure.[otherwise][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You dig your fingernails into the floorboards, growling with displeasure.[end if]";
-		otherwise:
-			say "[if the relevant sex addiction of M < 7][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You clench your fists and try to ignore your growing fear and embarrassment.[otherwise if the humiliation of the player < 15000][BigNameDesc of M] fucks your [variable O] with, rough, brutal thrusts. You can almost feel your dignity crumbling, every thrust humiliating you more and more.[otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] plows in and out of your [variable O]. There's something so invigorating about letting it happen![otherwise][BigNameDesc of M] plows in and out of your [variable O]. It's so satisfying to let it happen![end if]";
-	if N is 3:
-		say "A pair of ghostly hands materialise underneath you, [one of]eagerly fondling your [BreastDesc][or]cruelly twisting your nipples[or]tweaking your nipples and palming your [BreastDesc][or][if the largeness of breasts < 4]shamelessly manhandling your [BreastDesc][otherwise]cruelly slapping your [BreastDesc][end if][or]playing with your [BreastDesc][at random] as [NameDesc of M] [one of]pistons[or]slams[or]thrusts[at random] in and out of your [variable O].";
-	if N is 4:
-		let F be a random monster penetrating face;
-		say "You [one of]suddenly feel a hand on your back, pushing you into the [if F is monster][F][otherwise]floor[end if][or]hear someone grunting heavily behind you[at random] as [NameDesc of M] [one of]pistons[or]slams[at random] in and out of your [variable O].";
-	if N is 3:
-		let C be a random worn skirted clothing;
-		if C is nothing, let C be a random worn crotch covering clothing;
-		say "You feel a hand [if C is clothing]slip underneath your [printed name of C] and fondle your [AssDesc][otherwise]smack your [AssDesc][end if] as [NameDesc of M] plows your [variable O], followed shortly by several more, which take turns fondling your body from impossible angles.";
-	if N is 6:
-		if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like an animal. Even disembodied dicks are more manly than you![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how minuscule your [ShortDesc of penis] is, considering it's actually attached to someone.[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling proud of how minuscule your [sissy-penis] is by comparison.[otherwise if the bimbo of the player < 3]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how powerless you are against a real dick in action.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigNameDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to have a [manly-penis] slamming in and out of your ass.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] relentlessly pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10][BigNameDesc of M] relentlessly pounds your sensitive prostate, continuing to remind you who the 'man' is between the two of you.[otherwise if the bimbo of the player < 12]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole]. You find yourself biting your lower lip, secretly savouring the feeling of helplessness.[otherwise if the bimbo of the player < 14]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] pounds your [asshole]. Phew, it sure knows how to show a girl a good time![end if]";
-		otherwise say "[if the relevant sex addiction of M < 8][BigNameDesc of M] fucks your [variable O] with all the callousness and vigour of an actual man![otherwise if relevant sex addiction of M < 13][BigNameDesc of M] fucks your [variable O] hard and fast! You pretend you only like it because it's not attached to any man you can see.[otherwise][BigNameDesc of M] fucks your [variable O] with all the roughness and power of an actual man! You're half disappointed you don't have one to thank for all this hard fucking.[end if]";
-	if N is 7:
-		let F be the openness of O - the girth of M;
-		say "[if the F < 0 and the relevant sex addiction of M > 11][BigNameDesc of M] is roughly fucking your [variable O] at breakneck speed. It's even better because it barely fits![otherwise if F < -2]The thickness of [NameDesc of M]'s [manly-penis] is VERY noticeable as [he of M] slams it in and out of your tight [variable O].[otherwise if F < 0][BigNameDesc of M] ruts you like an animal. Each of [his of M] thrusts reach nice and deep, as if to acclimate your tight [variable O] to the feeling of [manly-penis].[otherwise if F > 4][BigNameDesc of M] pounds your [variable O] mercilessly, but your [variable O] is so stretched that it doesn't feel rough at all.[otherwise if F > 2][BigNameDesc of M] fucks you hard and fast. However, your [variable O] is loose enough that it doesn[']t actually feel rough at all.[otherwise][BigNameDesc of M]'s thrusts come quickly, greedily seeking the inner reaches of your [variable O].[end if]".
+To say sexSubmitBiteFlav of (M - a ghost) in (O - an orifice):
+	let F be the openness of O - the girth of M;
+	say "[if the F < 0 and the relevant sex addiction of M > 11][BigNameDesc of M] is roughly fucking your [variable O] at breakneck speed. It's even better because it barely fits![otherwise if F < -2]The thickness of [NameDesc of M]'s [manly-penis] is VERY noticeable as [he of M] slams it in and out of your tight [variable O].[otherwise if F < 0][BigNameDesc of M] ruts you like an animal. Each of [his of M] thrusts reach nice and deep, as if to acclimate your tight [variable O] to the feeling of [manly-penis].[otherwise if F > 4][BigNameDesc of M] pounds your [variable O] mercilessly, but your [variable O] is so stretched it doesn't feel rough at all.[otherwise if F > 2][BigNameDesc of M] fucks you hard and fast. However, your [variable O] is loose enough that it doesn[']t actually feel rough at all.[otherwise][BigNameDesc of M]'s thrusts come quickly, greedily seeking the inner reaches of your [variable O].[end if]".
+
+To say sexSubmitSqueezeFlav of (M - a ghost) in (O - an orifice):
+	let C be a random worn skirted clothing;
+	if C is nothing, let C be a random worn crotch covering clothing;
+	say "You feel a hand [if C is clothing]slip underneath your [printed name of C] and fondle your [AssDesc][otherwise]smack your [AssDesc][end if] as [NameDesc of M] plows your [variable O], followed shortly by several more, which take turns fondling your body from impossible angles.".
+
+To say sexSubmitEmbarrassFlav of (M - a ghost) in (O - an orifice):
+	if the reaction of the player is 0:
+		say "[if there is a worn ballgag and the bimbo of the player > 12][BigNameDesc of M] slams in and out of your [variable O]. You feel slightly annoyed that your [random worn ballgag] is muffling your moans.[otherwise if there is a worn ballgag and the bimbo of the player > 7][BigNameDesc of M] slams in and out of your [variable O]. You[']re glad it isn[']t attached to any real man with how terribly your [ShortDesc of random worn ballgag] muffles the sound of your moans.[otherwise if the player is gagged][BigNameDesc of M] relentlessly pounds your [variable O]. Your grunts of displeasure are conveniently muffled by the [ShortDesc of random worn ballgag] in your mouth.[otherwise if the relevant sex addiction of M > 12][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You arch your back and shamelessly moan in pleasure.[otherwise if the relevant sex addiction of M > 7][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You arch your back and emit an involuntary moan of pleasure.[otherwise][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You dig your fingernails into the floorboards, growling with displeasure.[end if]";
+	otherwise:
+		say "[if the relevant sex addiction of M < 7][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You clench your fists and try to ignore your growing fear and embarrassment.[otherwise if the humiliation of the player < 15000][BigNameDesc of M] fucks your [variable O] with, rough, brutal thrusts. You can almost feel your dignity crumbling, every thrust humiliating you more and more.[otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] plows in and out of your [variable O]. There's something so invigorating about letting it happen![otherwise][BigNameDesc of M] plows in and out of your [variable O]. It's so satisfying to let it happen![end if]".
+
+To say sexSubmitSplitFlav of (M - a ghost) in (O - an orifice):
+	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like an animal. Even disembodied dicks are more manly than you![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how minuscule your [ShortDesc of penis] is, considering it's actually attached to someone.[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling proud of how minuscule your [sissy-penis] is by comparison.[otherwise if the bimbo of the player < 3]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how powerless you are against a real dick in action.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigNameDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to have a [manly-penis] slamming in and out of your ass.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] relentlessly pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10][BigNameDesc of M] relentlessly pounds your sensitive prostate, continuing to remind you who the 'man' is between the two of you.[otherwise if the bimbo of the player < 12]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole]. You find yourself biting your lower lip, secretly savouring the feeling of helplessness.[otherwise if the bimbo of the player < 14]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] pounds your [asshole]. Phew, it sure knows how to show a girl a good time![end if]";
+	otherwise say "[if the relevant sex addiction of M < 8][BigNameDesc of M] fucks your [variable O] with all the callousness and vigour of an actual man![otherwise if relevant sex addiction of M < 13][BigNameDesc of M] fucks your [variable O] hard and fast! You pretend you only like it because it's not attached to any man you can see.[otherwise][BigNameDesc of M] fucks your [variable O] with all the roughness and power of an actual man! You're half disappointed you don't have one to thank for all this hard fucking.[end if]".
+
 
 The ghost vagina insertion rules is a rulebook. The blessings block ghosts rule is listed last in the ghost vagina insertion rules. The monster penetrating vagina rule is listed last in the ghost vagina insertion rules.
 
@@ -275,9 +267,6 @@ To say VaginaPenetrationFlav of (M - a ghost):
 	let C be a random worn total protection clothing;
 	let P be a random sex toy penetrating vagina;
 	say "[BigNameDesc of M] floats behind you, [one of]surprising you[or]once again surprising you[stopping] [if C is clothing] as a very tangible cockhead brushes your clit through your [printed name of C].[otherwise if P is worn]with a very tangible shaft rubbing itself on your inner thighs.[otherwise]with a very tangible tip rubbing your [vagina].[end if][if C is clothing] [one of]Instead of being blocked or delayed by the layer of [clothing-material of C] protecting your hole, it simply passes through![or]It simply passes through the layer of [clothing-material of C] covering your hole.[at random][end if] You [if the openness of asshole < 3]grunt[otherwise if the relevant sex addiction of M < 8]gasp[otherwise]sigh[end if] as it slowly slides its way in[if P is worn], ignoring your [printed name of P] completely as it[otherwise] and[end if] begins to thrust.".
-
-To compute vaginal sex of (M - a ghost):
-	compute fuckhole sex of M.
 
 The ghost mouth insertion rules is a rulebook.
 
@@ -476,7 +465,7 @@ The ghost winding rule is listed last in the ghost priority attack rules.
 	let C be a random pussy covering clothing;
 	if the player is male and penis is lewdly exposed:
 		say "POSSESSED";
-	otherwise if the player is pee protected or there is a worn chastity cage or (the player is female and trap fetish is 1):
+	otherwise if the player is pee protected or there is a worn chastity cage or (the player is female and futanari fetish is 0):
 		say "bukkake";
 	otherwise:
 		say "[BigNameDesc of M] ATTACHES ITSELF TO YOU".[The monster waits its turn.]]

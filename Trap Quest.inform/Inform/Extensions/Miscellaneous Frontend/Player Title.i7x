@@ -124,7 +124,15 @@ To say TitleBimbo:
 			say " [if highest body part sex addiction > the semen addiction of the player / 2][one of]collection of meat-holes[or]walking selection of fuckholes[or]cock sleeve[or]fuck toy[sticky random][otherwise][one of]cum dumpster[or]semen receptacle[or]human vacuum[sticky random][end if]";
 		otherwise if the player is queen of spades and the player is female and the bimbo of the player > 7:
 			say " queen of spades";
-		if the player is a sissy, say " sissy";
+		if the player is a sissy:
+			say " sissy[if the player is an adult baby] baby[end if]";
+		otherwise if the player is an adult baby:
+			if there are worn messed knickers:
+				say " messy baby";
+			otherwise if the sex addiction of the player > 14 and the diaper addiction of the player > 14:
+				say " diaper slut";
+			otherwise: 
+				say " adult baby";
 		if T is not "adventurer":
 			if armband is worn, say " [armband-print of armband]";
 			if T is "catgirl" and the player is male and the bimbo of the player < 13 and the largeness of breasts < 6:
@@ -153,7 +161,7 @@ To say TitleBimbo:
 				say " adventurer";
 			otherwise if the delicateness of the player > 12 and diaper lover is 0:
 				say " delicate flower";
-			otherwise if the player is female and the virgin of the player is 0 and the analvirgin of the player is 1 and trap fetish is 0:
+			otherwise if the player is female and the virgin of the player is 0 and the analvirgin of the player is 1:
 				say " anal virgin";
 			otherwise if the size of penis > 7:
 				say " [one of]shemale[or]dickgirl[sticky random]";

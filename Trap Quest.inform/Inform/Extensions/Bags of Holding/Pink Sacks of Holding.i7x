@@ -13,7 +13,7 @@ Part 1 - I Heart Cock Pink Sack of Holding
 
 An I heart cock pink sack of holding is a kind of pink sack of holding. There is 1 I heart cock pink sack of holding. The printed name of I heart cock pink sack of holding is usually "[TQlink of item described][clothing-title-before]I heart cock pink bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of I heart cock pink sack of holding is the file "Items\Accessories\Bags\bag5.png".
+Figure of I heart cock pink sack of holding is the file "Items/Accessories/Bags/bag5.png".
 
 To decide which figure-name is clothing-image of (C - an I heart cock pink sack of holding):
 	decide on figure of I heart cock pink sack of holding.
@@ -31,7 +31,7 @@ Part 2 - Bimbo Pink Sack of Holding
 
 A bimbo pink sack of holding is a kind of pink sack of holding. There is 1 bimbo pink sack of holding. The printed name of bimbo pink sack of holding is usually "[TQlink of item described][clothing-title-before]bimbo pink bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of bimbo pink sack of holding is the file "Items\Accessories\Bags\bag6.png".
+Figure of bimbo pink sack of holding is the file "Items/Accessories/Bags/bag6.png".
 
 To decide which figure-name is clothing-image of (C - a bimbo pink sack of holding):
 	decide on figure of bimbo pink sack of holding.

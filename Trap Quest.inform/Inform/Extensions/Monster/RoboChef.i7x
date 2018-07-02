@@ -82,6 +82,19 @@ To compute motion of (M - a robochef):
 
 Part 3 - Perception
 
+
+Definition: a robochef (called M) is outrage disapproving:
+	if the class of the player is maid, decide no;
+	let A be the appearance of the player;
+	let L be the latest-appearance of M;
+	now the latest-appearance of M is A;
+	if A > L and asshole is lewdly exposed, decide yes;
+	decide no.
+
+To compute disapproval of (M - a robochef):
+	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]'VALID BREWING ORIFICE HAS BEEN EXPOSED. THANK YOU FOR AGREEING TO ASSUME ROLE OF [']COOKING ASSISTANT[']. SOUP BREWING PROGRAM INITIATED.'[roman type][line break]";
+	anger M.
+
 To compute perception of (M - a robochef):
 	say "[BigNameDesc of M] notices you!";
 	if the number of plentiful accessories retained by M > 0:
@@ -148,10 +161,8 @@ To set up sex length of (M - a robochef) in (F - asshole):
 To say AssholePenetrationFlav of (M - a robochef):
 	say "[BigNameDesc of M] forces its glass [manly-penis] into your [asshole]!".
 
-To compute anal sex of (M - a robochef):
-	say "[BigNameDesc of M] continues to [one of]methodically plow[or]emotionlessly fuck[or]steadily thrust into[in random order] your [asshole]!";
-	decrease the sex-length of M by 1;
-	ruin asshole.
+To compute sexDumb of (M - a robochef) in (F - a fuckhole):
+	say "[BigNameDesc of M] continues to [one of]methodically plow[or]emotionlessly fuck[or]steadily thrust into[in random order] your [variable F]!".
 
 To decide which number is the condom resistance of (M - a robochef):
 	if the number of off-stage bag lunches is 0, decide on 99;

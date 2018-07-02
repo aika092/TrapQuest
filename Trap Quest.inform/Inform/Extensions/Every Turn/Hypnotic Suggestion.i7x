@@ -124,5 +124,38 @@ This is the autopush hypno rule:
 		now another-turn is 1.
 The autopush hypno rule is listed in the hypno triggers rules.
 
+This is the autospread hypno rule:
+	if hypno-trigger is "pussy" and hypno-trigger-pussy is 1 and the player is female and vagina is not lewdly exposed:
+		say "[bold type]Having heard the word 'pussy', you find you automatically start trying to get your [vagina] on display.[roman type][line break]";
+		repeat with C running through worn potentially at least partially vagina covering skirted clothing: [We do skirted first to try and make sure that the order makes sense]
+			if C is displacable:
+				say "You pull up your [ShortDesc of C]!";
+				displace C;
+			otherwise:
+				say "You try to remove your [ShortDesc of C]!";
+				try taking off C;
+		repeat with C running through worn potentially at least partially vagina covering trousers: [We do trousers next to try and make sure that the order makes sense]
+			if C is displacable:
+				say "You pull down your [ShortDesc of C]!";
+				displace C;
+			otherwise if C is zippable:
+				say "You unzip your [ShortDesc of C]!";
+				now C is crotch-unzipped;
+			otherwise:
+				say "You try to remove your [ShortDesc of C]!";
+				try taking off C;
+		repeat with C running through worn potentially at least partially vagina covering unskirted clothing: [We do everything else last to try and make sure that the order makes sense]
+			if C is displacable:
+				say "You pull your [ShortDesc of C] to the side!";
+				displace C;
+			otherwise if C is zippable:
+				say "You unzip your [ShortDesc of C]!";
+				now C is crotch-unzipped;
+			otherwise:
+				say "You try to remove your [ShortDesc of C]!";
+				try taking off C;
+		now another-turn is 1.
+The autospread hypno rule is listed in the hypno triggers rules.
+
 Hypnotic Suggestion ends here.
 

@@ -3,6 +3,7 @@ Stop Button by Objects begins here.
 
 A stop button is a kind of thing. A stop button is usually not portable. 1 stop button is in Hotel36. The description of a stop button is "[StopButtonDesc]". The printed name of a stop button is "[TQlink of item described]STOP button[TQxlink of item described][verb-desc of item described]". The text-shortcut of stop button is "stp". Figure of stop button is the file "Env/Hotel/capsule1.png".
 
+
 To say StopButtonDesc:
 	if images visible is 1, display figure of stop button;
 	say "The capsule has a giant red button on the top with STOP in big letters on it. Above it, a large mechanical counter reads '$[25000 * the wealth of the player]'. Maybe it ends the game[if the wealth of the player > 0], and that's your prize money[end if]! Are you ready for the game to end?".

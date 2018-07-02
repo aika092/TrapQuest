@@ -61,6 +61,11 @@ REQUIRES COMMENTING
 
 +!]
 To AnalSexAddictUp (X - a number):
+	if there is a worn pure totem:
+		let S be a random worn pure totem;
+		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
+		only destroy S;
+		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
 		if the raw anal sex addiction of the player < 10, increase the raw anal sex addiction of the player by 1.
@@ -71,11 +76,6 @@ REQUIRES COMMENTING
 
 +!]
 To AnalSexAddictDown (X - a number):
-	if there is a worn pure totem:
-		let S be a random worn pure totem;
-		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
-		only destroy S;
-		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
 		if the raw anal sex addiction of the player > 1, decrease the raw anal sex addiction of the player by 1.

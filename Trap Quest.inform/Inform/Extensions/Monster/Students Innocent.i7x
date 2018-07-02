@@ -124,6 +124,38 @@ To say WhereAnswer of (M - student-austin):
 	say "[speech style of M]'[if the rank of the player is 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other girls were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
 
+Part - Polly
+
+student-polly is a dq-only innocent student.
+
+The text-shortcut of student-polly is "stpo".
+
+Figure of polly is the file "NPCs/School/Student/student20.png".
+
+To decide which figure-name is the monster-image of (M - student-polly):
+	decide on figure of polly.
+
+To say MonsterDesc of (M - student-polly):
+	say "This quiet girl is wearing an excessively feminine baby pink babydoll dress with a big bow on the front. The rest of her attire is similarly styled - her white court heels have pink bows on the toes, and white cotton stockings reach up to her thighs. Her nails are painted pink and her baby pink headband has bows and flowers on it. Her very long flowing platinum blonde hair is so perfectly curly and full-bodied that you're sure it must be a wig. A subtle [if the current-rank of M is 3]crinkling[otherwise]squelching[end if] whenever she moves lets you know that she's padded[unless the current-rank of M is 3] and she's definitely not dry[end if].".
+
+The min-rank of student-polly is 3.
+The current-rank of student-polly is 3.
+The max-rank of student-polly is 4.
+
+To update name of (M - student-polly):
+	now the student-print of M is "beautiful babydoll";
+	if the current-rank of M is 3:
+		now the student-name of M is "Polly";
+	otherwise:
+		now the student-name of M is "Potty".
+
+To say StoryAnswer of (M - student-polly):
+	say "[speech style of M]'I have a weak bladder, and so I've been wearing diapers for a long time. It's made it difficult to find lasting romance. The headmistress told me that there's a huge number of people out there who find people like me really adorable, and the teachers here are helping me understand how to make sure I'm exactly like the girl in their fantasies.'[roman type][line break]".
+
+To say WhereAnswer of (M - student-polly):
+	say "[speech style of M]'I thought we were just supposed to do whatever the teachers tell us?'[roman type][line break]".
+
+
 Part - Default Conversation
 
 To say WhoAnswer of (M - an innocent student):
@@ -133,7 +165,7 @@ To say WhereAnswer of (M - an innocent student):
 	say "[speech style of M]'[if the rank of the player is 1]We're in some kind of special school. To get good at making other people happy.'[otherwise]I dunno, some of the things they want us to do are pretty crazy. Surely there's another way?'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - an innocent student):
-	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's a few more rooms, like a junk room, and a sewing room, and I think that's about all I've seen so far.'[otherwise]I've not got any better an idea than you, I'm afraid!  I'm looking forward to finding out though.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's a few more rooms, like a junk room, and a sewing room, and I think that's about all I've seen so far.'[otherwise]I've not got any better an idea than you, I'm afraid! I'm looking forward to finding out though.'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - an innocent student):
 	say "[speech style of M]'I was kind of hoping you'd have advice for me!'[roman type][line break]".

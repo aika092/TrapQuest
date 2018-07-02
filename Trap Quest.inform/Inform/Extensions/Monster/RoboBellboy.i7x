@@ -26,7 +26,7 @@ To say MediumDesc of (M - wheeled robobellboy):
 
 To say RoboBellboyDesc:
 	if images visible is 1, display figure of robobellboy;
-	say "A small, bucket-shaped robot with a red uniform stylishly painted onto its clunky body. The words  '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[end if]' are printed directly onto its metal chassis, which has a seam running straight down the center, allowing it to open up like a door. It has a single, rectangular [']eye['], which glows faintly as it glides around silently on a single, oversized wheel. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like arms.".
+	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words  '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the center, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
 
 To set up (M - a robobellboy):
 	reset M;
@@ -68,7 +68,7 @@ To compute perception of (M - a robobellboy):
 	if there is a worn messed knickers:
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. PLEASE ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
-	if the employee-record of senior robobellboy > 3:
+	otherwise if the employee-record of senior robobellboy > 3:
 		say "Its eyes turn red. [line break][speech style of M]'YOUR PERFORMANCE HAS RECEIVED BAD REVIEWS. PLEASE ALLOW ME TO ADMINISTER TRAINING.'[roman type][line break]";
 	otherwise if the class of the player is maid or the class of the player is hotel employment:
 		say "[first custom style]'SERVANT, YOUR SERVICES ARE REQUIRED.'[roman type][line break]";
@@ -97,7 +97,7 @@ To compute perception of (M - senior robobellboy):
 	otherwise if diaper quest is 1:[eventually he should have training for diaper quest players too.]
 		say "It appears to be completely uninterested in you and continues on its way.";
 		bore M;
-	if the training-progress of M > 2:
+	otherwise if the training-progress of M > 2:
 		say "Its eyes turn red. [line break][speech style of M]'GOOD GOING TRAINEE. PLEASE KNEEL FOR YOUR TRAINING COMPLETION CEREMONY.'[roman type][line break]";
 	otherwise if (the class of the player is trained hooker or the class of the player is succubus) and the refactory-period of mechanic + the refactory-period of demon lord <= 0:
 		say "Its eyes turn red. [line break][speech style of M]'HELLO EMPLOYEE. SUBMIT IMMEDIATELY FOR PERFORMANCE REVIEW.'[roman type][line break]";
@@ -172,7 +172,8 @@ To compute maid forcing of (M - a robobellboy):
 	compute whore forcing of M.[Selkie says: I think it might be fun if the bellboy drags the player through the hotel, forcing them to clean up all the dirty floors with their tongue][Selkie thinks a scene where you're dragged through to polish and clean various parts of the hotel would be fun. It could choose randomly between lovingly cleaning the dildo seat, the modification machine, the hypno screens, the dominatrix's X-frame, the toilets, .... polishing the cocks of the robots, cleaning the portal and then being dragged away before you could use it to escape. Just humiliating scenes. Maybe one where you have to wash a dirty patron, or make the bed or wash the semen-stained sheets from one of the rooms. Let me know if you'd like me to write them. You'd either need to select only rooms visited, or else say they're dragged so quickly from room to room they can't remember the confusing turns that got them to places they hadn't visited.]
 	
 To compute whore forcing of (M - a robobellboy):
-	if the location of the player is the target-room of M:
+	now the target-room of M is the location of a random on-stage HotelBedPatrons;
+	if the location of the player is the target-room of M or there is a HotelBedPatrons in the location of the player:
 		say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
 		bore M for 400 seconds;
 		FavourUp M;
@@ -316,6 +317,9 @@ Section 1 - Senior Robobellboy
 senior robobellboy is a robobellboy. senior robobellboy has a number called training-progress. The training-progress of senior robobellboy is 0. senior robobellboy has a number called employee-record. The employee-record of senior robobellboy is 0. The text-shortcut of senior robobellboy is "srb".
 
 To say ShortDesc of (M - senior robobellboy):
+	say "senior RoboBellboy".
+
+To say MediumDesc of (M - senior robobellboy):
 	say "senior RoboBellboy".
 
 To ProgressUp (M - senior robobellboy):

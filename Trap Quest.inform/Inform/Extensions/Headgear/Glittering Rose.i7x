@@ -4,7 +4,7 @@ A glittering rose is a kind of headgear. There is 1 glittering rose. A glitterin
 
 The printed name of glittering rose is usually "[TQlink of item described][clothing-title-before]glittering rose[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of glittering rose is "fah".
 
-Figure of glittering rose is the file "Items\Accessories\Head\rose1.png".
+Figure of glittering rose is the file "Items/Accessories/Head/rose1.png".
 
 To decide which figure-name is the clothing-image of (C - a glittering rose):
 	decide on figure of glittering rose.
@@ -39,24 +39,23 @@ To decide which number is the dexterity-influence of (C - a glittering rose):
 fairy-summoned is a number that varies.
 
 To compute class outfit of (H - a glittering rose):
-	if the player is the donator:
-		let B be a random off-stage butterfly wings;
-		let W be a random off-stage fairy wand;
-		if B is actually summonable or (B is butterfly wings and fairy-summoned is 0):
-			if fairy-summoned is 0:
-				repeat with O running through worn dresses:
-					say "Your [O] vanishes!";
-					destroy O;
-			summon B;
-			now B is cursed;
-			now the raw-magic-modifier of B is 0;
-			say "A giant pair of wings appear on your back. You feel lighter!";
-			now fairy-summoned is 1;
-		otherwise if W is fairy wand:
-			summon W;
-			now W is cursed;
-			now the raw-magic-modifier of W is the number of alive fairy / 2;
-			say "You notice a peculiar warm feeling in your hand, and look down to see a tiny pink wand just barely large enough for you resting in your grasp".
+	let B be a random off-stage butterfly wings;
+	let W be a random off-stage fairy wand;
+	if B is actually summonable or (B is butterfly wings and fairy-summoned is 0):
+		if fairy-summoned is 0:
+			repeat with O running through worn dresses:
+				say "Your [O] vanishes!";
+				destroy O;
+		summon B;
+		now B is cursed;
+		now the raw-magic-modifier of B is 0;
+		say "A giant pair of wings appear on your back. You feel lighter!";
+		now fairy-summoned is 1;
+	otherwise if W is fairy wand:
+		summon W;
+		now W is cursed;
+		now the raw-magic-modifier of W is the number of alive fairy / 2;
+		say "You notice a peculiar warm feeling in your hand, and look down to see a tiny pink wand just barely large enough for you resting in your grasp".
 
 
 Glittering Rose ends here.

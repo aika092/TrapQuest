@@ -20,8 +20,12 @@ To decide which figure-name is clothing-image of (C - a heart stockings):
 To say ClothingDesc of (C - a heart stockings):
 	say "These black fishnet thigh high stockings have large gaps in between the fabric showing lots of skin, and a black bow with a red heart decorating the top of each.".
 
-Figure of mesh stockings A is the file "Items\Clothes\Lower\Legs\meshstockings1.png".
-Figure of mesh stockings B is the file "Items\Clothes\Lower\Legs\meshstockings2.png".
+Definition: a heart stockings (called C) is heart themed:
+	decide yes.
+
+
+Figure of mesh stockings A is the file "Items/Clothes/Lower/Legs/meshstockings1.png".
+Figure of mesh stockings B is the file "Items/Clothes/Lower/Legs/meshstockings2.png".
 
 To decide which number is the initial outrage of (C - a mesh stockings):
 	decide on 7.

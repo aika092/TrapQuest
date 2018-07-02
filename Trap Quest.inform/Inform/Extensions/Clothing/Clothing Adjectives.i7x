@@ -273,6 +273,9 @@ Definition: yourself is naked:
 	decide yes.
 Definition: a clothing (called C) is leghole free: [Anything that must be pulled down the legs like jeans is NOT leghole free.]
 	decide yes.
+Definition: a clothing (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	if C is babywear, decide yes;
+	decide no.
 Definition: a clothing (called C) is babywear: [Is it something that an NPC might put on a player to make them look more like a baby?]
 	decide no.
 Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
@@ -299,7 +302,7 @@ Definition: a clothing (called C) is desirable:
 	if C is store, decide no;
 	if C is diaper or C is cursed or C is ass plugging or C is vagina plugging, decide no;
 	if C is not worn by the player and C is not held by the player, decide no;
-	if C is worn and C is not currently visible, decide no;
+	if C is worn and C is not currently perceivable, decide no;
 	if C is knickers and C is not total protection, decide no;
 	if C is dirty, decide no;
 	decide yes.

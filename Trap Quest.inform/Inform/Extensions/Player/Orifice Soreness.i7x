@@ -116,6 +116,9 @@ REQUIRES COMMENTING
 *!]
 latest-vagina-invader is an object that varies.
 
+To say FuckerDesc of (T - a thing): [Sometimes we want to say something else other than its name, e.g. the hole in wall.]
+	say ShortDesc of T.
+
 [!<CommunicateStrugglingOfFuckhole>+
 
 REQUIRES COMMENTING
@@ -127,8 +130,8 @@ To communicate struggling of (F - a fuckhole):
 		if (F is asshole and latest-asshole-invader is not T) or (F is vagina and latest-vagina-invader is not T): [We haven't recently discussed how this is tearing the player apart]
 			if F is asshole, now latest-asshole-invader is T;
 			otherwise now latest-vagina-invader is T;
-			if ungape is 0, say "The [T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]!  Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
-			otherwise say "The [T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]!  Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
+			if ungape is 0, say "The [FuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]!  Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
+			otherwise say "The [FuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]!  Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
 
 [!<RuinRollFuckhole>+
 
@@ -162,7 +165,7 @@ To RuinRoll (F - a fuckhole):
 		if the soreness of F <= the previous soreness of F and the soreness of F < 10 and there is a live thing penetrating F and the reaction of the player > 0:
 			compute submission success of a random live thing penetrating F in F; [Tell the player they succeeded at resisting soreness]
 		otherwise if the soreness of F <= the previous soreness of F and the soreness of F < 10 and there is a live thing penetrating F and the number of lubricants covering F > 0:
-			say "The [lubricant] sloshing around inside your [variable F] has helped you take the [random live thing penetrating F] without getting any more sore!".
+			say "The [lubricant] sloshing around inside your [variable F] has helped you take the [FuckerDesc of random live thing penetrating F] without getting any more sore!".
 
 [NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions. The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
 
@@ -174,7 +177,7 @@ REQUIRES COMMENTING
 
 +!]
 To say RuinedFlav of (F - a fuckhole):
-	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If the [random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
+	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If the [FuckerDesc of random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
 
 [!<HealFuckholeTimesNumber>+
 
@@ -243,7 +246,7 @@ To compute submission success of (M - a thing) in (F - a fuckhole):
 		if a random number between 0 and the raw vaginal sex addiction of the player is 0 and the player is horny, VaginalSexAddictUp 1.
 
 To say submission success of (M - a thing) in (F - a fuckhole):
-	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of [NameDesc of M], you have successfully stopped your [variable F] getting more sore![end if]".
+	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of the [FuckerDesc of M], you have successfully stopped your [variable F] getting more sore![end if]".
 		
 
 

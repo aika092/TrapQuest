@@ -301,7 +301,7 @@ To say FairyName: [assuming the current-monster is a fairy, we include that as a
 		say "[one of]fairy[or]pesky fairy[or][current-monster][or]tiny woman[or]darting fairy[at random]".
 
 To compute fairy meddling on (XXX - breasts):
-	let B be a random worn currently visible bra;
+	let B be a random worn currently at least partially visible bra;
 	[Selkie: Let the fairies mess with your lactation rate, by suckling.
 	 It now does something more in the case where the class of the player is cowgirl!
 	 Aika noted this would get a bit tedious after you've seen it a few times. My plan is to work in more variability. This may suffice...?]
@@ -461,7 +461,7 @@ Definition: hips (called XXX) is fairy targetable:
 	decide no.
 
 To compute fairy meddling on (XXX - hips):
-	let G be a random worn currently visible undies;
+	let G be a random worn currently at least partially visible undies;
 	if G is transformable clothing:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [G] as she does. ";
 		potentially transform G;
@@ -535,7 +535,7 @@ Definition: vagina (called XXX) is fairy targetable:
 	decide no.
 
 To compute fairy meddling on (XXX - vagina):
-	let D be a random worn uncursed currently visible diaper;
+	let D be a random worn uncursed currently at least partially visible diaper;
 	if D is diaper and diaper quest is 0:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [printed name of D] as she does. ";
 		potentially transform D;
@@ -710,7 +710,7 @@ To say SubmissiveResponse of (M - a fairy):
 			say "[speech style of M]'Ooh, You[']re a lucky girl.'[roman type] You don[']t really feel like that was helpful...";
 			if image cutscenes is 1, display figure of fairy interact 7;
 		otherwise if the father is sex doll:
-			say "[speech style of M]'Oooh...I don[']t want to spoil the surprise for you.'[roman type] That's helpful...";
+			say "[speech style of M]'Oooh... I don[']t want to spoil the surprise for you.'[roman type] That's helpful...";
 			if image cutscenes is 1, display figure of fairy interact 7;
 		otherwise if the father is shopkeeper or the father is demon lord:
 			say "[speech style of M]'Whoever the daddy is, he[']s big and strong!'[roman type] You don[']t really feel like that was helpful...";
@@ -788,7 +788,7 @@ To say EscapeAnswer of (M - a fairy):
 
 To say AdviceAnswer of (M - a fairy):
 	if diaper quest is 1, say "[speech style of M]'[one of]Wearing heels can help your kicks and make you look more like a grown up, but they sure are difficult to walk in if you're wearing a diaper!'[or]Cumming while in a diaper isn't just humiliating, it's likely to get you addicted to diapers if you do it too much!  Which kinda sounds fun, hehe!'[or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. She trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there[']s no such thing as impervious to magic. That[']s cheating!'[in random order][roman type][line break].";
-	otherwise say "[speech style of M]'[one of]Those horny vines you find around here sure can be tough, but they[']re so clumsy! If you don[']t want them to [if the player is female]do fun stuff to your pussy[otherwise]do fun stuff with your butthole[end if], try and find a pair of underwear that they[']ll have lots of trouble with!'[or][if egg laying fetish is 1]Have you ever noticed how all underground creatures seem to lay eggs? If you know there[']s a real monster around, you should stay away from its lair unless your belly is ready to take lots and lots of eggs!'[otherwise if pregnancy fetish is 1]Have you ever noticed how people treat you differently when you[']re pregnant. Well, monsters do too, so try to stick near them if there[']s someone trying to take advantage of your big belly to get something from you! And if you can[']t find a monster, come find me, I[']ll protect you!'[otherwise]Have you ever noticed how vines don[']t bother you once they[']ve had their fun? If you don[']t want to fight with them, just let them fuck you! They can't tell where you are until you get up afterwards, so you can rest all you want before you're ready for more semen![end if][or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. She trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there[']s no such thing as impervious to magic. That[']s cheating!'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]Those horny vines you find around here sure can be tough, but they[']re so clumsy! If you don[']t want them to [if the player is female]do fun stuff to your [pussy][otherwise]do fun stuff with your butthole[end if], try and find a pair of underwear that they[']ll have lots of trouble with!'[or][if egg laying fetish is 1]Have you ever noticed how all underground creatures seem to lay eggs? If you know there[']s a real monster around, you should stay away from its lair unless your belly is ready to take lots and lots of eggs!'[otherwise if pregnancy fetish is 1]Have you ever noticed how people treat you differently when you[']re pregnant. Well, monsters do too, so try to stick near them if there[']s someone trying to take advantage of your big belly to get something from you! And if you can[']t find a monster, come find me, I[']ll protect you!'[otherwise]Have you ever noticed how vines don[']t bother you once they[']ve had their fun? If you don[']t want to fight with them, just let them fuck you! They can't tell where you are until you get up afterwards, so you can rest all you want before you're ready for more semen![end if][or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. She trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there[']s no such thing as impervious to magic. That[']s cheating!'[in random order][roman type][line break].";
 	if image cutscenes is 1, display figure of fairy interact 12.
 
 Section 3 - Drink Requesting
@@ -846,7 +846,7 @@ To say WhoAnswer of (M - blue-fairy):
 	say "[speech style of M]'I don't know! Teehee!'[roman type][line break]".
 
 To say WhereAnswer of (M - blue-fairy):
-	say "[speech style of M]'[if the class of the player is faerie][one of]Um...I-is this a test?[or]I don't know, but it sure is fun here![at random][otherwise]Who cares? Isn't it fun here?[end if].'[roman type][line break]";
+	say "[speech style of M]'[if the class of the player is faerie][one of]Um... I-is this a test?[or]I don't know, but it sure is fun here![at random][otherwise]Who cares? Isn't it fun here?[end if].'[roman type][line break]";
 	if image cutscenes is 1, display figure of fairy interact 11.
 
 To say StoryAnswer of (M - blue-fairy):
@@ -890,7 +890,7 @@ To say AdviceAnswer of (M - fairy-witch):
 	let S be a random on-stage sword;
 	unless S is sword, now S is a random dildo sword;
 	if diaper quest is 1, say "[speech style of M]'[one of]Wearing heels can help your kicks and make you look more like a grown up, but they sure are difficult to walk in if you're wearing a diaper!'[or]Cumming while in a diaper isn't just humiliating, it's likely to get you addicted to diapers if you do it too much!  Which kinda sounds fun, hehe!'[or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. She trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there[']s no such thing as impervious to magic. That[']s cheating!'[in random order][roman type][line break].";
-	otherwise say "[speech style of M]'[one of]Those horny vines you find around here aren't just plants. They're all part of the same forest lord who wants to [if the player is female]do fun stuff to your pussy[otherwise]do fun stuff with your butthole[end if]! He lives underground!'[or][if egg laying fetish is 1 and mythical creature fetish is 1]Wasps won't come inside you, but they sure do love cumming on eggs. If you don't see many wasps around, just leave them some eggs to find!'[otherwise if pregnancy fetish is 1]Be careful around dark magic when you're pregnant. If you're not careful it might reverse it somehow!'[otherwise]Cultivate your relatiponship with the forest lord! He's friendly to everyone, even mean altar witches with tiny boobs![end if][or]There's a sword here in the woods! It can only be pulled by from the stone by[if S is dildo sword] the true slut of yore![otherwise if S is demon broadsword]...um...whoever turns it on the most, I guess![otherwise if S is gladiator sword] a warrior with a true woman's heart![otherwise]a powerful virgin warrior! Or was it powerful virgin. I don't really remember, that sword is boring anyway![end if]'[or]Penises like it when you kiss them with your [if the player is female]pussy[otherwise]asshole[end if]! Yeah, its true![or]There are some elixirs so powerful you'll get pregnant just by drinking them! Make sure you drink everything you find!'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]Those horny vines you find around here aren't just plants. They're all part of the same forest lord who wants to [if the player is female]do fun stuff to your [pussy][otherwise]do fun stuff with your butthole[end if]! He lives underground!'[or][if egg laying fetish is 1 and mythical creature fetish is 1]Wasps won't come inside you, but they sure do love cumming on eggs. If you don't see many wasps around, just leave them some eggs to find!'[otherwise if pregnancy fetish is 1]Be careful around dark magic when you're pregnant. If you're not careful it might reverse it somehow!'[otherwise]Cultivate your relationship with the forest lord! He's friendly to everyone, even mean altar witches with tiny boobs![end if][or]There's a sword here in the woods! It can only be pulled by from the stone by[if S is dildo sword] the true slut of yore![otherwise if S is demon broadsword]...um...whoever turns it on the most, I guess![otherwise if S is gladiator sword] a warrior with a true woman's heart![otherwise]a powerful virgin warrior! Or was it powerful virgin. I don't really remember, that sword is boring anyway![end if]'[or]Penises like it when you kiss them with your [if the player is female][pussy][otherwise]asshole[end if]! Yeah, it's true![or]There are some elixirs so powerful you'll get pregnant just by drinking them! Make sure you drink everything you find!'[in random order][roman type][line break].";
 	if image cutscenes is 1, display figure of fairy interact 12.
 
 To set up (M - fairy-witch):
@@ -950,10 +950,10 @@ This is the fairy-witch enabler rule:
 					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]They lash out before you can react, yanking you to the ground and pinning your wrists down tightly[or]You don't have any time to react as they roughly sweep you off your feet and pin your wrists on the ground in front of you[or]They quickly lash out and grab your wrists, yanking you to the ground and pinning your hands to the soil[or]You don't have enough time to react as they yank you to the ground and swiftly pin your wrists to the soil[at random].[line break][speech style of current-monster]'Now, you're not going anywhere. Teehee!'[roman type][line break]";
 					compute FairyGrab of current-monster;
 				otherwise:
-					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You swiftly dodge out of the way as they lash out at you[or]They lash out at you, but you manage to get out of the way in time[or]You barely have enough time to get out of the way as they lash out at you[or]They quickly lash out at you, almost grabbing ahold of your wrists[at random].";
+					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You swiftly dodge out of the way as they lash out at you[or]They lash out at you, but you manage to get out of the way in time[or]You barely have enough time to get out of the way as they lash out at you[or]They quickly lash out at you, almost grabbing hold of your wrists[at random].";
 			otherwise:
 				if R < 3:
-					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You don't have time to react as they lash out at you, seizing you by the wrists and roughly pinning them to the ground[or]They quickly grab your wrists and pin them to the ground![or]You can't react fast enough! They grab your wrists and roughly pin them to the ground[or]They lash out at you, seizing your wrists and pinning them to the groun[at random].[line break][speech style of current-monster]'You're not going anywhere, Teehee!'[roman type][line break]";
+					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You don't have time to react as they lash out at you, seizing you by the wrists and roughly pinning them to the ground[or]They quickly grab your wrists and pin them to the ground![or]You can't react fast enough! They grab your wrists and roughly pin them to the ground[or]They lash out at you, seizing your wrists and pinning them to the ground[at random].[line break][speech style of current-monster]'You're not going anywhere, Teehee!'[roman type][line break]";
 					now current-monster is grabbing the player;	
 				otherwise:
 					say "[BigNameDesc of current-monster] raises her hands up above her head as several vines push out of the soil underneath her. [one of]You barely have time to react as they lash out at you, scrambling out of the way before they can grab you[or]They lash out at you, but you manage to get away from them in time[or]You have just enough time to get away before they can grab you[or]They almost grab you before you get away[at random]!";

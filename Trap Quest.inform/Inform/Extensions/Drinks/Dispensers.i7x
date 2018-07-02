@@ -40,7 +40,7 @@ REQUIRES COMMENTING
 @inherits <Dispenser>
 
 @!]
-A tank is a kind of dispenser. 1 tank is in Dungeon12. 7 tanks are in Holding Pen. Figure of tank is the file "Env\Dungeon\tank1.png".
+A tank is a kind of dispenser. 1 tank is in Dungeon12. 7 tanks are in Holding Pen. Figure of tank is the file "Env/Dungeon/tank1.png".
 The printed name of a tank is usually "[TQlink of item described][if the doses of item described > 0][fill-colour of the item described][otherwise]empty[end if] tank[if the fill-type of item described is remembered and the doses of item described > 0] ([FillName the fill-type of item described])[end if][shortcut-desc][TQxlink of item described]". The text-shortcut of a tank is usually "ta". Understand the fill-colour property as describing a tank when the doses of item described > 0.
 
 [!<Bucket>@
@@ -50,7 +50,7 @@ REQUIRES COMMENTING
 @inherits <Dispenser>
 
 @!]
-A bucket is a kind of dispenser. 8 buckets are in Holding Pen. Figure of bucket is the file "Env\Forest\bucket1.png". The printed name of bucket is "[TQlink of item described][if the doses of item described <= 0]empty [end if]bucket[shortcut-desc][TQxlink of item described]". The text-shortcut of a bucket is usually "bu".
+A bucket is a kind of dispenser. 8 buckets are in Holding Pen. Figure of bucket is the file "Env/Forest/bucket1.png". The printed name of bucket is "[TQlink of item described][if the doses of item described <= 0]empty [end if]bucket[shortcut-desc][TQxlink of item described]". The text-shortcut of a bucket is usually "bu".
 
 [!<RefillDispenser>+
 

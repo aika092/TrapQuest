@@ -51,7 +51,7 @@ To say MainStatsBar:
 	say "STR: [VagueStrength] DEX: [VagueDex] INT: [VagueInt]".
 
 To say HighResBarSecondRow:
-	say "STATUS: [VagueInternalFeeling]   APPEARANCE: [VagueHumiliation] [VagueAppearance]  [VagueDignity]   SLAP: [slap damage of the player - combat bonus remainder] KNEE: [knee damage of the player - combat bonus remainder] KICK: [kick damage of the player - combat bonus remainder][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if]".
+	say "STATUS: [VagueInternalFeeling]   APPEARANCE: [VagueHumiliation] [VagueAppearance]  [VagueDignity]   SLAP: [slap damage of the player - combat bonus remainder] KNEE: [knee damage of the player - combat bonus remainder][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [kick damage of the player - combat bonus remainder][if kick-fatigue > 0](-[kick-fatigue])[end if][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if]".
 
 To say HighResBarThirdRow:
 	say "[if diaper quest is 0]TITS: [VagueBreast] BELLY: [VagueBelly][otherwise]STOMACH: [VagueStomach][end if] [if diaper quest is 1 and there is a worn diaper]DIAPER: [VagueDiaper][otherwise if diaper quest is 1 and there is a worn knickers]UNDIES: [VagueDiaper][otherwise if diaper quest is 0]HIPS: [VagueHips][end if]".
@@ -75,7 +75,7 @@ To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
 
 To say LowResCombat:
-	say "SLAP POWER: [slap damage of the player - combat bonus remainder] KNEE POWER: [knee damage of the player - combat bonus remainder] KICK POWER: [kick damage of the player - combat bonus remainder][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if]".
+	say "SLAP POWER: [slap damage of the player - combat bonus remainder] KNEE POWER: [knee damage of the player - combat bonus remainder][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [kick damage of the player - combat bonus remainder][if kick-fatigue > 0](-[kick-fatigue])[end if][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if]".
 
 
 
@@ -102,9 +102,13 @@ Table of Debug Low Res Status
 left	central	right
 "[TitleBimbo]"	""	""
 "STR:[flat strength of the player]/30 DEX:[flat dexterity of the player]/30 INT:[flat intelligence of the player]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
-"APPEARANCE:[appearance of the player]/20 [if appearance-outrage-level > 5](caused by [MediumDesc of appearance-outrage-target] [bracket][appearance-outrage-level][close bracket]) [end if] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
+"[DebugLowResAppearance] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
 "FATIGUE:[fatigue of the player] HEALTH:[body soreness of the player]/10 ASSHOLE:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player]"	""	""
-"STATUS: [VagueInternalFeeling] SLAP DICE: 2d[slap damage of the player - combat bonus remainder] KNEE DICE: 2d[knee damage of the player - combat bonus remainder] KICK DICE: 2d[kick damage of the player - combat bonus remainder]"	""	""
+"STATUS: [VagueInternalFeeling] SLAP DICE: 2d[slap damage of the player - combat bonus remainder] KNEE DICE: 2d[knee damage of the player - combat bonus remainder][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK DICE: 2d[kick damage of the player - combat bonus remainder][if kick-fatigue > 0](-[kick-fatigue])[end if]"	""	""
+
+To say DebugLowResAppearance:
+	if diaper quest is 1 and the cringe appearance of the player >= the appearance of the player, say "BABY APPEARANCE:[cringe appearance of the player]/20 [if appearance-cringe-level > 5](caused by [MediumDesc of appearance-cringe-target] [bracket][appearance-cringe-level][close bracket]) [end if]";
+	otherwise say "APPEARANCE:[appearance of the player]/20 [if appearance-outrage-level > 5](caused by [MediumDesc of appearance-outrage-target] [bracket][appearance-outrage-level][close bracket]) [end if]";
 
 Part - Rose
 

@@ -303,7 +303,7 @@ To say VeryTightVaginaPenetrationFlav of (M - a monster):[Ideal spread of variat
 	say "[if the vaginal sex addiction of the player < 3]You tremble with humiliation as [NameDesc of M] guides [his of M] shaft into your [vagina], feeling yourself slowly stretching to accept [his of M] thick, veiny [DickDesc of M]. The worst part is that [he of M] doesn't hide the fact that your pain is why it feels so good for him, groaning in pleasure as [he of M] sinks inch after inch of [his of M] throbbing [DickDesc of M] into your defenceless hole. [big he of M] places [his of M] hands on your hips as [he of M] bottoms out.[otherwise if the vaginal sex addiction of the player < 6]You tremble with reluctant excitement as [NameDesc of M] guides [his of M] shaft into your [vagina], feeling yourself slowly stretching to accept [his of M] thick, veiny [DickDesc of M]. [big he of M] makes it quite clear that he's enjoying himself, hissing and groaning in pleasure as inch after inch of throbbing [DickDesc of M] sinks into your stiff hole. [big he of M] places [his of M] hands on your hips as [he of M] bottoms out.[otherwise][big his of M]other hand is used to hold the base of [his of M] shaft as you guide it into your [vagina]. You shiver with excitement as [NameDesc of M] guides [his of M] shaft into your [vagina], feeling yourself slowly stretching to accept [his of M] thick, yummy [DickDesc of M]. [big his of M] every hiss and groan of pleasure just makes you feel more proud, grinning from ear to ear as inch after inch of [his of M] throbbing member sinks into your waiting hole. [big he of M] places [his of M] hands on your hips as [he of M] bottoms out.[end if]".
 
 To say LessTightVaginaPenetrationFlav of (M - a monster):[Ideal spread of variations: low addiction: 3 mid: 2, high: 1]
-	say "[if the vaginal sex addiction of the player < 3]You stifle a moan of pleasure as [NameDesc of M] guides [his of M] tip into your [vagina]. [big he of M] places [his of M] hands on your hips as [he of M] drives in inch after awful inch of [his of M] thick [DickDesc of M], tightening [his of M] grip as [he of M] bottoms out.[otherwise if the vaginal sex addiction of the player < 6]You moan in pleasure, fighting back the urge to push back against [him of M] as [NameDesc of M] pushes [his of M] [DickDesc of M] into your [vagina]. [big he of M] doesn't stop there, driving in inch after, thick, veiny inch of until he finally bottoms out. You feel [his of M] grip tigthen, assuring you that you[']re in for a good, rough fuck.[otherwise]You moan as loudly as you can, enthusistically pushing back against [him of M] as [NameDesc of M]'s thick, veiny [DickDesc of M] sinks into your waiting hole. [big he of M] doesn't stop there, driving in inch after inch, smacking your ass as [he of M] finally bottoms out. You feel [his of M] grip tighten, reassuring you that you're in for the good, rough fuck you so desperately want.[end if]".
+	say "[if the vaginal sex addiction of the player < 3]You stifle a moan of pleasure as [NameDesc of M] guides [his of M] tip into your [vagina]. [big he of M] places [his of M] hands on your hips as [he of M] drives in inch after awful inch of [his of M] thick [DickDesc of M], tightening [his of M] grip as [he of M] bottoms out.[otherwise if the vaginal sex addiction of the player < 6]You moan in pleasure, fighting back the urge to push back against [him of M] as [NameDesc of M] pushes [his of M] [DickDesc of M] into your [vagina]. [big he of M] doesn't stop there, driving in inch after, thick, veiny inch of until he finally bottoms out. You feel [his of M] grip tighten, assuring you that you[']re in for a good, rough fuck.[otherwise]You moan as loudly as you can, enthusiastically pushing back against [him of M] as [NameDesc of M]'s thick, veiny [DickDesc of M] sinks into your waiting hole. [big he of M] doesn't stop there, driving in inch after inch, smacking your ass as [he of M] finally bottoms out. You feel [his of M] grip tighten, reassuring you that you're in for the good, rough fuck you so desperately want.[end if]".
 
 To say LessLooseVaginaPenetrationFlav of (M - a monster):[Ideal spread of variations: low addiction: 2 mid: 2, high: 2]
 	say "[if the vaginal sex addiction of the player < 3]You close your eyes and shamefully lower your head as [his of M] [DickDesc of M] slides into your [vagina], softly whimpering in pleasure. It doesn't take long for [him of M] to bottom out, placing [his of M] hands on either of your hips and gripping them tightly.[otherwise if the vaginal sex addiction of the player < 5]You try and fail not to push back against [him of M] as [his of M] [DickDesc of M] slides into your [vagina], uttering a defeated moan of pleasure. It doesn't take long for [him of M] to bottom out, placing [his of M] hands on either of your hips and gripping them tightly.[otherwise]You push back against [NameDesc of M] as [he of M] guides [his of M] [DickDesc of M] into your [vagina], shamelessly moaning in pleasure as [he of M] slides in. It doesn't take long for [him of M] to bottom out, placing [his of M] hands on either of your hips and gripping them tightly.[end if]".
@@ -372,9 +372,24 @@ To say FriendlyVeryLooseVaginaPenetrationFlav of (M - a monster):[low bimbo: 1 m
 
 Chapter 2 - Continue Sex
 
+To compute (M - a monster) sexRuin in (F - a fuckhole):
+	if the class of the player is living sex doll:
+		do nothing;
+	otherwise if M is not intelligent or the reaction of the player is 0:
+		ruin F;
+	otherwise if the reaction of the player is 1:
+		do nothing;
+		[if a random number between 1 and 2 is 1, ruin F; ###MG: Can't remember if the lack of soreness gain in the original function was intentional. Commented out.]
+	otherwise:
+		do nothing.
+		[if a random number between 1 and the charisma of the player is 1, ruin F. Same here.]
 
-To say SexDollAnal of (M - a monster):
-	say "As [NameDesc of M] continues to use your [asshole] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping rosebud feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or][BigNameDesc of M] continues to use your super loose [asshole]![or]You continue to squeal as [NameDesc of M] fucks your [asshole]![cycling].".
+To say sexDollSex of (M - a monster) in (F - a fuckhole):
+	say "As [NameDesc of M] continues to use your [variable F] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping [if F is asshole]rosebud[otherwise]cunt[end if] feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or][BigNameDesc of M] continues to use your super loose [variable F]![or]You continue to squeal as [NameDesc of M] fucks your [variable F]![cycling].".
+
+To compute sexDumb of (M - a monster) in (F - a fuckhole):
+	say "[BigNameDesc of M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [variable F]!";
+	ruin F.
 
 [!<ComputeBeggingOfMonsterInFuckhole>+
 
@@ -390,17 +405,17 @@ To say (M - a monster) mercy sex (N - a number):
 	let O be a random orifice penetrated by M;
 	if N is 1:
 		say "[BigNameDesc of M] rubs your back, fucking your [variable O] with slow strokes.";
-	if N is 2:
+	otherwise if N is 2:
 		say "[BigNameDesc of M] slows down a bit, but there's still quite a bit of power to [his of M] thrusts.";
-	if N is 3:
+	otherwise if N is 3:
 		say "[BigNameDesc of M] pounds your [variable O], slightly softening [his of M] grip and controlling [his of M] pace.";
-	if N is 4:
+	otherwise if N is 4:
 		say "[BigNameDesc of M] fucks your [variable O] with shallow strokes. You can tell from the softening of [his of M] grip that [he of M][']s trying not to hurt you.";
-	if N is 5:
+	otherwise if N is 5:
 		say "[BigNameDesc of M] slowly plows your [variable O], loosening [his of M] grip slightly so you know [he of M][']s not trying to hurt you.";
-	if N is 6:
+	otherwise if N is 6:
 		say "[BigNameDesc of M] slowly drives [his of M] [DickDesc of M] in and out of your [variable O].";
-	if N is 7:
+	otherwise:
 		say "[BigNameDesc of M] fucks your [variable O] slowly and methodically, breathing evenly as if trying to maintain focus.".
 
 [!<ComputeSexSubmitOfMonsterInFuckhole>+
@@ -411,25 +426,25 @@ Handles the player using submit whilst being penetrated by a monster "M" in a fu
 @param <Fuckhole>:<F> The fuckhole "M" is fucking
 +!]
 To compute sexSubmit of (M - a monster) in (F - a fuckhole):
-	say M submission sex (a random number between 1 and 6);
+	say M submission sex (a random number between 1 and 7);
 	ruin F.
-
+ 
 [Often there will be situations where you want to override some, but not all of this. This function should probably be broken into smaller ones like "SubmissionBreastFondle of M", "SubmissionReflection of M", etc. This would also make it a lot easier to have monsters rip the player's clothes off or do other things randomly during sex]
 To say (M - a monster) submission sex (N - a number):[We care about friendly fucking here but not during rough sex.]
 	let O be a random orifice penetrated by M;
 	if N is 1:
 		say sexSubmitFondleFlav of M in O;
-	if N is 2:
+	otherwise if N is 2:
 		say sexSubmitPushFlav of M in O;
-	if N is 3:
+	otherwise if N is 3:
 		say sexSubmitBiteFlav of M in O;
-	if N is 4:
+	otherwise if N is 4:
 		say sexSubmitSqueezeFlav of M in O;
-	if N is 5:
+	otherwise if N is 5:
 		say sexSubmitReflectFlav of M in O;
-	if N is 6:
+	otherwise if N is 6 or O is vagina:
 		say sexSubmitEmbarrassFlav of M in O;
-	if N is 7:
+	otherwise:
 		say sexSubmitSplitFlav of M in O.
 
 To say sexSubmitFondleFlav of (M - a monster) in (O - an orifice):
@@ -443,8 +458,8 @@ To say sexSubmitBiteFlav of (M - a monster) in (O - an orifice):
 
 To say sexSubmitSqueezeFlav of (M - a monster) in (O - an orifice):
 	let C be a random worn skirted clothing;
-		if C is nothing, let C be a random worn crotch covering clothing;
-		say "[BigNameDesc of M] [if C is clothing]pushes [his of M] hand underneath your [printed name of C][otherwise]squeezes your [AssDesc][end if] as [he of M] plows your [variable O], [if M is friendly-fucking]taking full advantage of this opportunity to play with your body.[otherwise]making sure to keep one hand on your hips in case you try to get away.[end if]".
+	if C is nothing, let C be a random worn crotch covering clothing;
+	say "[BigNameDesc of M] [if C is clothing]pushes [his of M] hand underneath your [printed name of C][otherwise]squeezes your [AssDesc][end if] as [he of M] plows your [variable O], [if M is friendly-fucking]taking full advantage of this opportunity to play with your body.[otherwise]making sure to keep one hand on your hips in case you try to get away.[end if]".
 
 To say sexSubmitReflectFlav of (M - a monster) in (O - an orifice):
 	say "[if the relevant sex addiction of M < 6][BigNameDesc of M] plows [his of M] [DickDesc of M] in and out of your [variable O]. It's extra humiliating because you're letting [him of M] do it![otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] slams [his of M] [DickDesc of M] in and out of your [variable O], panting heavily. You try to convince yourself you're not doing this because you enjoy it.[otherwise][BigNameDesc of M] fucks your [variable O] with fast, hard thrusts. You close your eyes as you eagerly push back against [him of M], determined to enjoy it as much as possible.[end if]".
@@ -464,9 +479,10 @@ Handles the player using resist whilst being penetrated by a monster "M" in a fu
 @param <Fuckhole>:<F> The fuckhole "M" is fucking
 +!]
 To compute sexResist of (M - a monster) in (F - a fuckhole):
-	say M rough sex (a random number between 1 and 5);
+	say M rough sex (a random number between 1 and 6);
 	ruin F.
 
+[TODO: break up like sexsubmit]
 To say (M - a monster) rough sex (N - a number):
 	let O be a random orifice penetrated by M;
 	if N is 1:
@@ -761,7 +777,7 @@ To say PullOutFlav of (M - a monster) in (F - a fuckhole):
 
 [!<SayMessyPullOutFlavOfMonsterInFuckhole>+
 
-Displays some text describing a monster "M" pulling out of a fuckhole "F" and punishing the player in some otherway
+Displays some text describing a monster "M" pulling out of a fuckhole "F" and punishing the player in some other way
 
 @param <Monster>:<M> The monster the player just had sex with
 @param <Fuckhole>:<F> The fuckhole the monster is pulling out of

@@ -82,7 +82,9 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is craving:
-	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 14, decide yes;
+	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 14:
+		if cold turkey > the semen taste addiction of the player * 20, decide no;
+		decide yes;
 	decide no.
 
 [!<YourselfIsDesperatelyCraving>+
@@ -91,7 +93,9 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is desperately craving:
-	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 17, decide yes;
+	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 17:
+		if cold turkey > the semen taste addiction of the player * 20, decide no;
+		decide yes;
 	decide no.
 
 

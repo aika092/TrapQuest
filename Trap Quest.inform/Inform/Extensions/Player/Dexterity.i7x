@@ -87,6 +87,7 @@ To decide which number is the flat dexterity of the player:
 		increase D by acceleration-tincture-bonus;
 	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	if the the boost-cooldown of nurse > 0, increase D by 2;
+	increase D by adult-baby-dex * 3;
 	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
 		increase D by 1;
 		if the silicone volume of breasts > 18, increase D by 3;

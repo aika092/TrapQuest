@@ -1,11 +1,12 @@
 Royal Scepter by Equippables begins here.
 
-A royal scepter is a kind of equippable. There is 1 royal scepter. A royal scepter is usually unique. A royal scepter is usually slap ready. A royal scepter is usually manly. A royal scepter is usually plastic. A royal scepter has a number called charge. The charge of a royal scepter is usually 1. A royal scepter is usually projectile.
+A royal scepter is a kind of vibe-wand. There is 1 royal scepter. A royal scepter is usually unique. A royal scepter is usually manly. A royal scepter is usually plastic. A royal scepter has a number called charge. The charge of a royal scepter is usually 1.
 
 The printed name of royal scepter is usually "[TQlink of item described][clothing-title-before]royal scepter[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of royal scepter is "rs". 
 
 To say ClothingDesc of (W - a royal scepter):
-	say "A long staff with a gem encrusted version of a royal crest on top. There is a large orb in the center, which [if the charge of W < 0]seems to darken the area around it, like a black hole.[otherwise]slightly illuminates the area around it, like a torch.[end if] If you look closely, you can see a faint image of the [princess-consort] swirling around inside it. Somehow, you know you can find [him of princess-consort] in the [bold type][the location of princess-consort][roman type]".
+	say "A gem encrusted wand vibrator, with opaque crystal ball set into the top. The ball [if the charge of W < 0]seems to draw in the light around it[otherwise]illuminates the area around it[end if], and when you look closely, you can see a faint image of the [princess-consort] swirling around inside it. Somehow, you know you can find [him of princess-consort] in the [bold type][the location of princess-consort][roman type]".
+
 To say ShortDesc of (W - a royal scepter):
 	say "royal scepter".
 
@@ -27,7 +28,29 @@ Definition: a royal scepter (called T) is unlimited horniness:
 Definition: a royal scepter (called T) is royal attire:
 	decide yes.
 
-princess-consort is a thing that varies. princess-consort is the throne.
+
+To compute climax effect of (E - a royal scepter):
+	if princess-consort is penetrating a body part:
+		say "Your [ShortDesc of E] pulses, and a pleasant feeling wells up inside of you";
+		dignify the charge of E * 3;
+	otherwise if princess-consort is not the throne:
+		if there is a live thing penetrating a body part:
+			say "Your [ShortDesc of E] pulses, and you feel a horrible sense of shame in your heart from touching yourself while someone other than the [princess-consort] was inside you.";
+			humiliate STRONG-HUMILIATION;
+		otherwise:
+			say "Your [ShortDesc of E] pulses, and you feel a powerful sense of yearning deep in your heart as an image of the [princess-consort] appears in your mind.";
+			Arouse 2000;
+			if the refactory-period of princess-consort > 0, decrease the refactory-period of princess-consort by the charge of E * 20.
+		
+
+To decide which number is the raw-masturbation-bonus of (E - a royal scepter):
+	if princess-consort is penetrating a body part:
+		decide on 3;
+	otherwise if princess-consort is the throne:
+		decide on 1;
+	decide on -2.
+
+princess-consort is a thing that varies. princess-consort is the throne.[IDK if namedesc will work right]
 
 This is the betrothal rule:[This only triggers when the player is fucked by a monster, for now.]
 	let S be a random royal scepter;

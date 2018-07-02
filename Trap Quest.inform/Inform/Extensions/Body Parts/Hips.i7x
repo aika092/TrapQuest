@@ -375,8 +375,14 @@ To HipUp (X - a number):
 						now the flesh volume of hips is the thickness of hips * (extreme proportions fetish + 1); [The two values are mirrored when we're not tracking fatness separately]
 					otherwise:
 						if the flesh volume of hips < (the thickness of hips - 1) * (extreme proportions fetish + 1), FatAssUp 1; [Ass size increases a bit if hips are really big in comparison]
+			otherwise if weight gain fetish is 1 and the flesh volume of hips < max ass size:
+				FatAssUp 1;
 			otherwise:
-				say "[one of]You feel your [ShortDesc of hips] try to expand further, but it physically can't grow any more![or]Once again your [ShortDesc of hips] fails to grow any further.[stopping]". [This will not display when extreme proportions fetish is enabled, this is intentional]
+				say "[one of]You feel your [ShortDesc of hips] try to expand further, but it physically can't grow any more![or]Once again your [ShortDesc of hips] fails to grow any further.[stopping]"; [This will not display when extreme proportions fetish is enabled, this is intentional]
+				if there is a worn tattoo and the number of worn ass tattoos is 0 and lactation fetish is 1:
+					summon prime USDA tattoo;
+					say "A brand appears on your butt!";
+					try examining prime USDA tattoo.
 
 [!<HipDownX>+
 
@@ -384,7 +390,9 @@ REQUIRES COMMENTING
 
 +!]
 To HipDown (X - a number):
-	if there is a restricting salve covering hips:
+	if prime USDA tattoo is worn:
+		say "[one of]You feel your [ShortDesc of hips] try to shrink, but your [ShortDesc of prime USDA tattoo] prevents it![or]Once again your [ShortDesc of hips] fail to shrink.[stopping]";
+	otherwise if there is a restricting salve covering hips:
 		say "[one of]You feel your [ShortDesc of hips] try to shrink, but the salve of restriction prevents it![or]Once again your [ShortDesc of hips] fail to shrink any further.[stopping]";
 	otherwise:
 		while X > 0:
@@ -413,6 +421,10 @@ To AssSwell (X - a number):
 				increase the flesh volume of hips by 1;
 			otherwise if X is 0:
 				say "Your [ShortDesc of hips] try to get fatter but have reached their limit!";
+				if there is a worn tattoo and the number of worn ass tattoos is 0:
+					summon prime USDA tattoo;
+					say "A brand appears on your butt!";
+					try examining prime USDA tattoo;
 	otherwise:
 		HipUp X.
 

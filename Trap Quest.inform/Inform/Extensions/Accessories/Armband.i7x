@@ -1,11 +1,11 @@
 Armband by Accessories begins here.
 
-armband is an accessory. armband is unique. armband is silk. armband has an indexed text called armband-title. armband has an indexed text called armband-print. The description of armband is "[ClothingDesc of item described]". The text-shortcut of armband is "armb".
+armband is an accessory. armband is unique. armband is plastic. armband has an indexed text called armband-title. armband has an indexed text called armband-print. The description of armband is "[ClothingDesc of item described]". The text-shortcut of armband is "armb".
 armband has a number called stolen-strength.
 
 The printed name of armband is usually "[TQlink of item described][item style][accessory-colour of the item described] armband[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of armband is the file "Items\Accessories\Arm\armband1.png".
+Figure of armband is the file "Items/Accessories/Arm/armband1.png".
 
 To say ShortDesc of (C - armband):
 	say "'[armband-print of C]' [accessory-colour of C] armband".

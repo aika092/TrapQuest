@@ -16,7 +16,7 @@ To compute SelfExamineDesc of (O - a milking harness):
 To say ShortDesc of (C - a milking harness):
 	say "plug panties connected to a milking contraption".
 
-Figure of milking harness is the file "Items\Clothes\Upper\Special\milkingharness1.png".
+Figure of milking harness is the file "Items/Clothes/Upper/Special/milkingharness1.png".
 
 To decide which number is the initial outrage of (C - a milking harness):
 	decide on 19.

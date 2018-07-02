@@ -7,7 +7,7 @@ The printed name of striped top is usually "[TQlink of item described][clothing-
 To say selfexaminetitle of (B - a striped top):
 	say "fuzzy black and yellow top".
 
-Figure of striped top is the file "Items\Clothes\Upper\Special\stripedtop1.png".
+Figure of striped top is the file "Items/Clothes/Upper/Special/stripedtop1.png".
 
 To decide which figure-name is clothing-image of (C - a striped top):
 	decide on figure of striped top.

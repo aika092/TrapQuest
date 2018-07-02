@@ -53,7 +53,7 @@ REQUIRES COMMENTING
 To decide which number is cumulative-outrage-level:
 	let A be appearance-outrage-level;
 	let O be A / 2;
-	repeat with C running through worn currently visible wearthings:
+	repeat with C running through worn currently at least partially visible wearthings:
 		if the outrage of C > O, increase O by 1;
 	repeat with C running through body parts:
 		if the outrage of C > O, increase O by 1;
@@ -78,7 +78,7 @@ Here we decide what is the most embarrassing visible item of clothing OR BODY PA
 To decide which number is appearance-outrage-level:
 	let O be 0;
 	now appearance-outrage-target is arms;
-	repeat with C running through worn currently visible wearthings:
+	repeat with C running through worn currently at least partially visible wearthings:
 		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;

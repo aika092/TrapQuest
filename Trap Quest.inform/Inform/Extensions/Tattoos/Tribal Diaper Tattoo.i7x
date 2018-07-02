@@ -14,6 +14,8 @@ To decide which number is the diaper-addiction-influence of (T - tribal diaper t
 	decide on 3.
 To decide which number is the initial cringe of (T - tribal diaper tattoo):
 	decide on 10.
+Definition: tribal diaper tattoo (called T) is baby themed:
+	decide yes.
 
 Tribal Diaper Tattoo ends here.
 

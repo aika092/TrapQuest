@@ -64,7 +64,7 @@ To say WaddleDiaperCheckFlav of (M - a monster):
 
 To say DiaperCheckFlav of (M - a monster):
 	let D be a random worn knickers;
-	say "[one of][big he of M] swiftly walks up to you and holds [if diaper lover < 3]a hand to the front[otherwise]hands to the front and back[end if] of your [D], pushing firmly to get a good feel. [or][big he of M] swiftly walks up to you with a sly grin. [big he of M] [if diaper lover < 3]presses [his of M] hand against the front[otherwise]presses [his of M] hands into the front and back[end if] of your [D]. [big he of M] pushes it firmly to get a good feel of how [if diaper lover < 3]wet[otherwise]used[end if] it is. [in random order]".
+	say "[one of][big he of M] swiftly walks up to you and holds [if diaper lover < 3]a hand to the front[otherwise]hands to the front and back[end if] of your [MediumDesc of D], pushing firmly to get a good feel. [or][big he of M] swiftly walks up to you with a sly grin. [big he of M] [if diaper lover < 3]presses [his of M] hand against the front[otherwise]presses [his of M] hands into the front and back[end if] of your [MediumDesc of D]. [big he of M] pushes it firmly to get a good feel of how [if diaper lover < 3]wet[otherwise]used[end if] it is. [in random order]".
 
 To say DiaperCheckReactionFlav of (M - a monster):
 	let D be a random worn knickers;
@@ -103,7 +103,7 @@ To say DiaperCheckResultsMessedFlav of (M - a monster):
 
 To say DiaperCheckResultsMessedReactionFlav of (M - a monster):
 	let D be a random worn knickers;
-	if the player is upset about mess, say "[one of]You are relieved that you're going to be rescued from your gross situation. [or]The only thing you care about right now is getting out of this [ShortDesc of D], so [his of M] words are a welcome relief! [or]You actually feel gratitude for the fact you're going to be helped out of your smelly [ShortDesc of D]! [in random order]";
+	if the player is upset about mess, say "[one of]You are relieved that you're going to be rescued from your gross situation. [or]The only thing you care about right now is getting out of this [MediumDesc of D], so [his of M] words are a welcome relief! [or]You actually feel gratitude for the fact you're going to be helped out of your smelly [MediumDesc of D]! [in random order]";
 	otherwise say "[if the delicateness of the player < 7][one of]You wrinkle your nose. You don't want to be changed like a little child![or]You growl, angry at the concept that you need someone else to change you.[or]You harrumph with disdain at the idea.[in random order][otherwise if the delicateness of the player < 12][one of]You wriggle nervously on the spot.[or]You smile sheepishly.[or]You feel a bit uncomfortable, but know it needs to be done.[or]You tremble on the spot.[in random order][otherwise if the delicateness of the player > 15][one of]You wiggle happily on the spot.[or]You smile inwardly, excited at the prospect of a change.[or]You make a gleeful gurgling sound.[or]A euphoric shiver of anticipation rushes through your veins.[in random order][otherwise][one of]You smile nervously, and with more than a hint of excitement.[or]Your heart flutters and you immediately adopt a submissive pose.[or]You happily submit to the change.[in random order][end if]";
 	if the player is able to speak, say "[run paragraph on][line break][variable custom style]'[if the humiliation of the player >= 40000]Yes [daddy of M].'[otherwise if the delicateness of the player < 7][one of]Just get me out of this thing, please!!!'[or]This isn't funny!  Please help me out...'[or]Look, I'm not some diaper loving weirdo, but please god, yes, get me into a clean one!'[in random order][otherwise if the delicateness of the player > 14][one of]I'm ready for my change now...'[or]I'm sorry, I didn't mean to do a stinky!'[or]I'm sorry, I couldn't hold it in...'[or]*giggle* I love the squishy sound your hand makes against my diaper!'[or]Thank you [daddy of M]!'[or]Tee-hee, [NameBimbo] needs a new nappy!'[or]Ooh, I hope my new diaper is even prettier than this one!'[or]*giggle* I love it when you change me, [daddy of M].'[in random order][otherwise if the diaper addiction of the player < 11][one of]Go on then, get on with it!'[or]Yeah, yeah, I understand the drill. Let's get it over with.'[in random order][otherwise][one of]Ooh yay, I can't wait to get into a new comfy diaper!'[or]Oh, thank you so much!'[or]This diaper feels good, but I guess a new one will feel even better.'[in random order][end if][roman type][line break]";
 	otherwise say muffled sounds.
@@ -481,7 +481,7 @@ To compute masturbation of (M - a monster):
 		say "You hardly feel anything thanks to your rubbery genitals.";
 	otherwise if the sex-length of M > 0:
 		say "[MasturbationFlav of M]";
-		Arouse 1000 + (the difficulty of M * 100);
+		arouse 1000 + the masturbation skill of M;
 		ruin vagina;
 		if there is worn vagina plugging clothing and the player is female:
 			let K be a random worn vagina plugging clothing;
@@ -503,10 +503,13 @@ To compute masturbation of (M - a monster):
 
 To decide which number is the masturbation length of (M - a monster):
 	decide on a random number between 3 and 5.
+	
+To decide which number is the masturbation skill of (M - a monster):
+	decide on the difficulty of M * 100.
 
 To say MasturbationDeclarationFlav of (M - a monster):
 	if M is intelligent:
-		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy?  Let [daddy of M] help with that...'[at random][roman type]  ".
+		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy?  Let [daddy of M] help with that...'[at random][roman type][line break]".
 
 To say MasturbationStartFlav of (M - a monster):
 	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is female]your [vagina][otherwise]your [ShortDesc of penis][end if]!".
@@ -516,7 +519,7 @@ To say MasturbationFlav of (M - a monster):
 
 To say DiaperMasturbationFlav of (M - a monster):
 	let D be a random worn diaper;
-	say "[BigNameDesc of M] rubs passionately at the front of your [D].".
+	say "[BigNameDesc of M] rubs passionately at the front of your [MediumDesc of D].".
 
 To say MasturbationAftermath of (M - a monster):
 	say "[variable custom style]";
@@ -530,7 +533,7 @@ To say MasturbationAfterFlav of (M - a monster):
 	say "After this [he of M] seems satisfied, and [if refactoryperiod > 0]flexes [his of M] wrist muscles in pride before leaving you to recover.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]leaves you alone.[end if]".
 
 To say MasturbationTeaseFlav of (M - a monster):
-	if M is intelligent, say "smiles as [he of M] sees your flustered face. [line break][speech style of M]'[one of]Aww, is the little baby all hot and bothered under her nappy?  I think I'll leave you that way.'[or]I guess you'll have to finish yourself off if you want release.'[or]I think I'll leave you like that, all hot and flustered, desperate for a Mommy or Daddy to finish you off.'[or]That's right, I'm stopping there. No cummies for you today, hah!'[in random order][roman type][line break]";
+	if M is intelligent, say "smiles as [he of M] sees your flustered face. [line break][speech style of M]'[one of]Aww, is the little baby all hot and bothered under her nappy? I think I'll leave you that way.'[or]I guess you'll have to finish yourself off if you want release.'[or]I think I'll leave you like that, all hot and flustered, desperate for a Mommy or Daddy to finish you off.'[or]That's right, I'm stopping there. No cummies for you today, hah!'[in random order][roman type][line break]";
 	otherwise say "leaves you alone with your arousal.".
 
 Section - Enema
@@ -678,7 +681,7 @@ To decide which number is the max-forcefeed-length of (M - a monster): [Set this
 [
 Let's imagine that we are on chosen-forcefeed-round 6 and we have 3 rounds of feeding left. 
 So we want to decrease chosen-forcefeed-round by at least 1, and no more than 3 (saved in the below function as N), since we need to at the very least be able to go 3 > 2 > 1 in the last 3 rounds of feeding.
-Rather than completely random, we choose a random number between 1 and N squared and then apply squre root to give us a nice logarithmic probability curve, to make it rarer that we subtract the maximum.
+Rather than completely random, we choose a random number between 1 and N squared and then apply square root to give us a nice logarithmic probability curve, to make it rarer that we subtract the maximum.
 
 And just for my sanity, let's look at the edge cases to show that nothing super ridiculous should ever happen:
 Chosen-forcefeed-round = 2, sex-length = 1;  N = 1; S = 1; sex-length is reduced and so then we exit forcefeeding.
@@ -760,7 +763,6 @@ To compute confiscate of (M - a monster):
 	say "[ConfiscationReaction of M on C]";
 	say "[ConfiscationAfterFlav of M on C]";
 	satisfy M.
-
 
 To say ConfiscationDeclarationFlav of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[if C is plentiful accessory]Where did you get this jewellery, little one?  Babies can't be trusted with expensive items like these. I'll have to confiscate it.'[otherwise if C is equippable]What are you doing handling something this dangerous?  Little kids can't be trusted to not hurt themselves. I'll have to take it off of you.'[otherwise]This is not clothing for babies!  I'm confiscating it.'[end if][roman type][line break]".

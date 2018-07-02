@@ -143,7 +143,7 @@ REQUIRES COMMENTING
 To compute toilet use:
 	if there is displacable pee covering clothing or the player is able to use the toilet past their diaper, say "Pulling the crotch fabric of your [ShortDesc of random displacable pee covering clothing] to one side, you ";
 	otherwise say "You ";
-	say "sit on the nearby toilet and release your hold on your bladder.";
+	say "sit on the nearby toilet [if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2]above [NameDesc of woman-barbara][']s ring-gagged face [end if]and release your hold on your bladder.";
 	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied:
 		say "With an embarrassing sound, you excavate your bowels too[if the diaper addiction of the player < 10 and the bimbo of the player < 10]. [line break][variable custom style]Well I'm glad that's taken care of.[roman type][line break][otherwise].[end if]";
 		reset rectum;
@@ -159,7 +159,8 @@ To compute toilet use:
 		compute toilet reaction of M;
 	if incontinence > 0:
 		decrease incontinence by 1;
-		say "You feel as if you've regained some control over your bladder[if diaper lover >= 3] and bowels[end if]!".
+		say "You feel as if you've regained some control over your bladder[if diaper lover >= 3] and bowels[end if]!";
+	check barbara toilet.
 
 [!<ComputeUrinalUse>+
 
@@ -301,7 +302,7 @@ To compute pee protected urination:
 				if K is not sK and X < N:
 					say urinationoverflow of K;
 					if diaper lover >= 1:
-						let H be a random off-stage baby bonnet;
+						let H be a random off-stage victorian-baby-bonnet;
 						if H is actually summonable:
 							say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet!";
 							summon H cursed;
@@ -368,7 +369,7 @@ REQUIRES COMMENTING
 +!]
 To end urination:
 	now player-urinating is 0;
-	if target-poster is a poster:
+	if target-poster is a wetting poster:
 		if the old-peereaction of target-poster > 0:
 			say "[FlashFlav of a random camera trap in the location of the player]";
 			say "It was in a perfect position to capture a full shot of you peeing.";
