@@ -140,7 +140,10 @@ To compute (M - a mechanic) considering (T - a pink spraybottle):
 		now M is withholding T;
 	otherwise:
 		say "[speech style of M]'I can see that it's not broken. Congratulations, you aren[']t the most useless maid ever. Incredible...'[roman type] He doesn[']t seem very interested in the [noun].".
-	
+
+
+Include Mopping by Actions.
+Include Spritzing by Actions.
 
 
 Pink Spraybottle ends here.

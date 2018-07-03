@@ -100,7 +100,7 @@ This is the sex addiction description rule:
 		otherwise:
 			say "You [if submissive sex addict is 0]have begun to [end if]understand the appeal of dominance and submission [if diaper quest is 0]during sex[otherwise]as erotic tools[end if], [if the player is feeling submissive]and you yourself feel much more comfortable taking on the submissive role[otherwise]but to be honest this is hardly the time nor the place to be thinking about such things, if you can help it[end if].";
 	otherwise if the sex addiction of the player < 10:
-		say "You have a very high sex drive for someone of your age. You are always thinking about something lewd and you get horny frequenty and easily. ";
+		say "You have a very high sex drive for someone of your age. You are always thinking about something lewd and you get horny frequently and easily. ";
 		if the player is feeling dominant:
 			say "You love the idea of getting on top of someone and taking control, showing them who's boss in a very erotic manner.";
 		otherwise:
@@ -182,11 +182,13 @@ This is the semen feel addiction description rule:
 		otherwise if the semen addiction of the player < 11:
 			say "You are beginning to quite like the feel of [semen][if bukkake fetish is 1] on your skin[end if].";	
 		otherwise if the semen addiction of the player < 13:
-			say "Your favourite part of sex is the feeling of getting creampied by a fresh hot load.";
+			say "[if the player is not a pervert]If you had to choose, you'd say your[otherwise]Your[end if] favourite part of sex is the feeling of getting creampied by a fresh hot load.";
 		otherwise if the semen addiction of the player < 15:
-			say "You [if bukkake fetish is 1]like to wear recent cumblasts on your body as a symbol of pride[otherwise]love the wholesome sense of fulfilment you experience when you feel a man orgasm inside of you[end if].";
+			if the player is a pervert, say "You [if bukkake fetish is 1]like to wear recent cumblasts on your body as a symbol of pride[otherwise]love the wholesome sense of fulfilment you experience when you feel a man orgasm inside of you[end if].";
+			otherwise say "You [if bukkake fetish is 1]can't help but love the feeling of wearing cum on your face and body[otherwise]can't help but love the warm sticky experience when a man orgasms inside of you[end if], even though you know you should find it disgusting.";
 		otherwise if the semen addiction of the player < 17:
-			say "You are so addicted to getting creampied [if bukkake fetish is 1]and covered in [semen] [end if]that an average human load often isn't enough to satisfy your needs. You find yourself more attracted to giant men[if mythical creature fetish is 1], inhuman monsters[end if] and group sessions.";
+			if the player is a pervert, say "You are so addicted to getting creampied [if bukkake fetish is 1]and covered in [semen] [end if]that an average human load often isn't enough to satisfy your needs. You find yourself more attracted to giant men[if mythical creature fetish is 1], inhuman monsters[end if] and group sessions.";
+			otherwise say "You are so desperate to experience that awesome feeling of getting creampied [if bukkake fetish is 1]and covered in [semen] [end if]that you find yourself willing to offer your body for degrading sex just to experience it, even though the sex itself isn't your thing.";
 		otherwise:
 			say "You are so addicted to [semen] that you refuse to let it leave your [if the player is male][asshole][otherwise]holes[end if] for as long as you can hold it in[if bukkake fetish is 1]. You don't even consider ever wiping it off your face or body - that would be like throwing hard-earned medals and trophies in the bin[end if].".
 The semen feel addiction description rule is listed in the addiction listing rules.
@@ -250,7 +252,7 @@ This is the urine taste addiction description rule:
 		otherwise if the urine taste addiction of the player < 17:
 			say "You get aroused when people use you as a human urinal, and savour the taste of [urine] as if it was a delicacy.";
 		otherwise:
-			say "You are addicted to [urine]. You love the taste [urine] so much that you are desperate to find more people to use you as a human urinal. You are extremely aroused by the mere thought of getting pissed on.".
+			say "You are addicted to [urine]. You love the taste [urine] so much that you are [if the player is a pervert]desperate to find more people to use you as a human urinal. You are [end if]extremely aroused by the mere thought of getting pissed on.".
 The urine taste addiction description rule is listed in the addiction listing rules.
 
 [!<TheCurrentWearingDiaperState>+

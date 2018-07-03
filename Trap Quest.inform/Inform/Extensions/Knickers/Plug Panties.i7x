@@ -39,8 +39,8 @@ To compute SelfExamineDesc of (K - a vibrating plug panties):
 	say "A pair of latex plug panties covers your [ShortDesc of hips]. ";
 	say "The in-built plugs keep your [if the player is female][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating!  This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
 
-Figure of female latex plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\latexplugpanties1.png".
-Figure of male latex plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\latexplugpanties2.png".
+Figure of female latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties1.png".
+Figure of male latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties2.png".
 
 To say CurseCurseFlav of (B - a vibrating plug panties):
 	if B is in the location of the player, say "The ass plug of the latex plug panties starts vibrating!!".
@@ -79,7 +79,7 @@ To decide which figure-name is clothing-image of (C - a pump plug panties):
 
 To say ClothingDesc of (P - a pump plug panties):
 	say "These panties have an in-built anal plug that would prevent anything escaping. There is a hollow tube through the centre of the plug with a hole at the base and the tip. The latex material looks very tough.".
-Figure of pump plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\pumpplugpanties1.png". 
+Figure of pump plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/pumpplugpanties1.png". 
 
 Carry out kneeling when there is a worn pump plug panties:
 	let P be a random worn pump plug panties;
@@ -118,8 +118,8 @@ To set up influence of (C - a WC plug panties):
 To say WCPantiesVibeFlav:
 	say "[variable custom style][one of][if the anal sex addiction of the player < 4]Holy crap, I can't believe how good this feels...[otherwise]Mmm, so good...[end if][or][if the player is a pervert]I've been a good girl, and this is my reward![otherwise]It's making wetting myself feel amazing...![end if][or][if the player is horny]I'm going to cum soon![otherwise]Mmmm. More...[end if][then at random][roman type][line break]".
 
-Figure of female WC plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\WcLatexPant.png".
-Figure of male WC plug panties is the file "Items\Clothes\Lower\Underwear\Special\Plug\WcLatexPant2.png".
+Figure of female WC plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/WcLatexPant.png".
+Figure of male WC plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/WcLatexPant2.png".
 
 
 Plug Panties ends here.

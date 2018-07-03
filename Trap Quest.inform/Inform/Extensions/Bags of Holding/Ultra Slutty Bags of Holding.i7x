@@ -10,7 +10,7 @@ A condom rolls bag of holding is a kind of ultra slutty bag of holding. A condom
 Definition: a condom rolls bag of holding (called C) is condom-providing:
 	decide yes.
 
-Figure of condom rolls bag of holding is the file "Items\Accessories\Bags\bag14.png".
+Figure of condom rolls bag of holding is the file "Items/Accessories/Bags/bag14.png".
 
 To decide which figure-name is clothing-image of (C - a condom rolls bag of holding):
 	decide on figure of condom rolls bag of holding.

@@ -34,6 +34,5 @@ To set up magic state of (P - a throbbing-tentacle):
 To uniquely set up (P - a throbbing-tentacle):
 	do nothing.[No enchantments here!]
 
-
 Throbbing Tentacle ends here.
 

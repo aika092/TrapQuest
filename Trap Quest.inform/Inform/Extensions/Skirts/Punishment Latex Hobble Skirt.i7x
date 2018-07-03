@@ -2,7 +2,7 @@ Punishment Latex Hobble Skirt by Skirts begins here.
 
 A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is usually unique. A punishment skirt is usually butt-windowed. The armour of punishment skirt is usually 12. 
 
-There is 1 punishment skirt. Printed name of punishment skirt is "[TQlink of item described][clothing-title-before]latex backless hobble skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of punishment skirt is "hs". Figure of punishment skirt is the file "Items\Clothes\Lower\Skirts\punishmentskirt1.png". Understand "backless", "hobble" as punishment skirt. A punishment skirt is usually crotch-assless.
+There is 1 punishment skirt. Printed name of punishment skirt is "[TQlink of item described][clothing-title-before]latex backless hobble skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of punishment skirt is "hs". Figure of punishment skirt is the file "Items/Clothes/Lower/Skirts/punishmentskirt1.png". Understand "backless", "hobble" as punishment skirt. A punishment skirt is usually crotch-assless.
 
 To decide which figure-name is clothing-image of (C - a punishment skirt):
 	decide on figure of punishment skirt.

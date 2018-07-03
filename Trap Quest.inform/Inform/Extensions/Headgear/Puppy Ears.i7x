@@ -1,6 +1,6 @@
 Puppy Ears by Headgear begins here.
 
-A puppy ears is a kind of headgear. A puppy ears is usually manly. There is 1 puppy ears. Figure of puppy ears is the file "Items\Accessories\Head\puppyears1.png". Understand "pair", "of" as puppy ears. A puppy ears is blondeness-negative. A puppy ears is brightness-positive. A puppy ears is redness-negative. A puppy ears is usually hair growing. A puppy ears is usually dexterity-influencing. A puppy ears is usually roleplay.
+A puppy ears is a kind of headgear. A puppy ears is usually manly. There is 1 puppy ears. Figure of puppy ears is the file "Items/Accessories/Head/puppyears1.png". Understand "pair", "of" as puppy ears. A puppy ears is blondeness-negative. A puppy ears is brightness-positive. A puppy ears is redness-negative. A puppy ears is usually hair growing. A puppy ears is usually dexterity-influencing. A puppy ears is usually roleplay.
 
 Definition: a puppy ears (called C) is fluid immune:
 	decide yes.

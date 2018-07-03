@@ -183,8 +183,8 @@ To check glue tripping:
 			now HairDiff is the largeness of hair - 10;
 			if HairDiff < 0, now HairDiff is 0;
 		[Heels make it harder to get up if you fall, and more likely to fall]
-		let H be a random worn heels in the location of the player;
-		if H is heels:
+		let H be a random worn hindrance-enabling shoes;
+		if H is shoes:
 			now HeelsDiff is the hindrance of H;
 		let N be a random number between 1 and Dex;
 		[To prevent them getting infinitely stuck, each time they get glued down, we increment times-stuck so the chance tapers off quickly for this trap]
@@ -223,7 +223,7 @@ To check glue tripping:
 				now G is grabbing the player;
 				now the stance of the player is 1;
 				if N > GS + BaseDiff + HairDiff:
-					say "[one of]A moment of wobbling on your [printed name of H] is your undoing - your heel catches in the glue and sends you tumbling into it![or]Your inadequate heels skill once again sends you into the puddle of glue! Your ankle turns in your [printed name of H]![stopping] [bold type]You are on you knees![roman type][line break]";
+					say "[one of]A moment of wobbling on your [ShortDesc of H] is your undoing - your heel catches in the glue and sends you tumbling into it![or]Your inadequate heels skill once again sends you into the puddle of glue! Your ankle turns in your [ShortDesc of H]![stopping] [bold type]You are on you knees![roman type][line break]";
 				otherwise if N > GS:
 					say "[one of]Because you were on your knees, you failed to avoid the mass of glue.[or]On your knees, you feel the familiar sticky grip of the glue seizing your skin.[or]Your knees slide into the glue, and stop.[stopping]";
 				otherwise:

@@ -1,7 +1,7 @@
 Tiara by Headgear begins here.
 
 
-A tiara is a kind of headgear. A tiara is usually metal. There is 1 tiara. Figure of tiara is the file "Items\Accessories\Head\royaltiara1.png". A tiara is blondeness-positive. A tiara is brightness-positive. A tiara is redness-positive. A tiara is usually hair growing. A tiara is usually intelligence-influencing. A tiara is usually roleplay.
+A tiara is a kind of headgear. A tiara is usually metal. There is 1 tiara. Figure of tiara is the file "Items/Accessories/Head/royaltiara1.png". A tiara is blondeness-positive. A tiara is brightness-positive. A tiara is redness-positive. A tiara is usually hair growing. A tiara is usually intelligence-influencing. A tiara is usually roleplay.
 
 The printed name of tiara is usually "[TQlink of item described][clothing-title-before]tiara[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of tiara is "ti".
 

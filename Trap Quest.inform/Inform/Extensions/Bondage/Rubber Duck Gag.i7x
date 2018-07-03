@@ -5,13 +5,13 @@ A rubber duck gag is a kind of ballgag. There is 1 rubber duck gag. The printed 
 To say ShortDesc of (C - a rubber duck gag):
 	say "rubber duck gag".
 
-Figure of rubber duck gag is the file "Items\Accessories\Head\duckgag1.png".
+Figure of rubber duck gag is the file "Items/Accessories/Head/duckgag1.png".
 
 To decide which figure-name is clothing-image of (C - a rubber duck gag):
 	decide on figure of rubber duck gag.
 
 To say ClothingDesc of (C - a rubber duck gag):
-	say "This small rubber duck shaped gag stops you from speaking but without stretching your jaw too badly in the process.".
+	say "This small rubber duck shaped gag stops you from speaking but without stretching your jaws too badly in the process.".
 
 Definition: a rubber duck gag (called C) is untransformable:
 	decide yes.

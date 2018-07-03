@@ -52,7 +52,14 @@ This is the maid class rule:
 			now player-class is "maid";
 		rule succeeds.
 The maid class rule is listed in the player class rules.
-maid is a text that varies. maid is "maid".
+[!<TextIsMaid>+
+
+Thanks to the magical maid multi-class, we have multiple different texts that need to be able to return true for the class of the player being maid.
+
++!]
+Definition: a text (called T) is maid:
+	if T is "maid" or T is "fully trained maid" or T is "magical maid", decide yes;
+	decide no.
 
 [!<TheCheerleaderClassRule>+
 
@@ -122,7 +129,7 @@ This is the virgin warrior class rule:
 		rule succeeds.
 The virgin warrior class rule is listed in the player class rules.
 Definition: a text (called T) is virgin warrior:
-	if T is "virgin warrior" or T is "virgin warrior priestess", decide yes;
+	if T is "virgin warrior" or T is "virgin warrior priestess" or T is "virgin magical girl", decide yes;
 	decide no.
 
 [!<TheSchoolgirlClassRule>+
@@ -297,30 +304,6 @@ This is the santa class rule:
 The santa class rule is listed in the player class rules.
 Definition: a text (called T) is santa's little helper:
 	if T is "santa's little helper" or T is "christmas tree", decide yes;
-	decide no.
-
-[!<TheAdultBabyClassRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the adult baby class rule:
-	if there is a worn baby bonnet and (there is a worn onesie or there is a worn baby-dress):
-		now player-class is "little one";
-		if the intelligence of the player > 10, now player-class is "big baby";
-		if the sex addiction of the player > 14, now player-class is "diaper slut";
-		if the player is a flatchested trap and the number of worn sissifying clothing > 0, now player-class is "sissy baby";
-		if the incontinence of the player > 7 and diaper lover >= 4, now player-class is "messy baby";
-		rule succeeds.
-The adult baby class rule is listed in the player class rules.
-
-[!<TextIsAdultBaby>+
-
-We have a lot of different texts that need to be able to return true for the class of the player being adult baby.
-
-+!]
-Definition: a text (called T) is adult baby:
-	if T is "little one" or T is "diaper slut" or T is "big baby" or T is "sissy baby" or T is "messy baby", decide yes;
 	decide no.
 
 [!<TheWenchedClassRule>+
@@ -690,11 +673,11 @@ The magical girl class rule is listed in the player class rules.
 
 [!<TextIsMagicalGirl>+
 
-Thanks to the magical neko multi-class, we have multiple different texts that need to be able to return true for the class of the player being magical girl.
+Thanks to the various magical girl multi-classes, we have multiple different texts that need to be able to return true for the class of the player being magical girl.
 
 +!]
 Definition: a text (called T) is magical girl:
-	if T is "magical girl" or T is "magical neko", decide yes;
+	if T is "magical girl" or T is "magical neko" or T is "virgin magical girl" or T is "magical maid", decide yes;
 	decide no.
 
 [!<TheCowSlaveClassRule>+
@@ -771,6 +754,28 @@ This is the virgin warrior priestess class rule:
 		now the player-class is "virgin warrior priestess";
 		rule succeeds.
 The virgin warrior priestess class rule is listed first in the player class rules.
+
+[!<TheMagicalMaidClassRule>+
+
+The magical maid is a combination class of the maid and magical girl. It needs the maid headdress and magical maid outfit.
+
++!]
+This is the magical maid class rule:
+	if there is a worn maid headdress and magical-maid-outfit is worn:
+		now the player-class is "magical maid";
+		rule succeeds.
+The magical maid class rule is listed first in the player class rules.
+
+[!<TheVirginMagicalGirlClassRule>+
+
+The virgin magical girl is a combination class of the virgin warrior and magical girl. It needs the flower hairclip or heart hairpin and virgin magical girl outfit.
+
++!]
+This is the virgin magical girl class rule:
+	if (there is a worn flower hairclip or there is a worn heart hairpin) and virgin magical girl outfit is worn:
+		now the player-class is "virgin magical girl";
+		rule succeeds.
+The virgin magical girl class rule is listed first in the player class rules.
 
 [!<TheLivingSexDollClassRule>+
 

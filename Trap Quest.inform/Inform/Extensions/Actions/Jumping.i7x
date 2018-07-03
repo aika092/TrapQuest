@@ -23,9 +23,9 @@ Check jumping:
 	if the player is drill stuck, jump from the drill instead;
 	if the player is hook stuck, jump from the hook instead;
 	if the player is bouncer stuck, jump from the baby bouncer instead;
-	if there are worn heels:
-		let H be a random worn heels;
-		if the hindrance of H > 2, say "You aren't confident enough in heels to jump, you might twist your ankle on the way down!" instead;
+	let H be a random worn shoes;
+	if H is shoes:
+		if the hindrance of H > 2, say "You aren't confident enough in [ShoeType of H] to jump, you might twist your ankle on the way down!" instead;
 	if the player is immobile:
 		now seconds is 0;
 		say "You're a bit stuck right now!" instead;

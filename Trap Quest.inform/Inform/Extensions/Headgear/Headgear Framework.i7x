@@ -129,5 +129,32 @@ Carry out wearing headgear:
 		now the noun is cursed.
 
 
+Include Tiara by Headgear.
+Include Maid Headdress by Headgear.
+Include Scrunchies by Headgear.
+Include Cow Ears by Headgear.
+Include Runic Headband by Headgear.
+Include Flower Hairclip by Headgear.
+Include Laurel Wreath by Headgear.
+Include Royal Circlet by Headgear.
+Include Rubber Top Hat by Headgear.
+Include Hoods by Headgear.
+Include Cat Ears by Headgear.
+Include Sissy Bow by Headgear.
+Include Baby Bonnet by Headgear.
+Include Santa Hat by Headgear.
+Include Demon Horns by Headgear.
+Include Severed Tentacle by Headgear.
+Include Wasp Antennae by Headgear.
+Include Cultist Veil by Headgear.
+Include Vampiric Fangs by Headgear.
+Include Fox Ears by Headgear.
+Include Puppy Ears by Headgear.
+Include Glittering Rose by Headgear.
+Include Cumdumpster Hat by Headgear.
+Include Heart Hairpin by Headgear.
+Include Bunny Ears by Headgear.
+
+
 Headgear Framework ends here.
 

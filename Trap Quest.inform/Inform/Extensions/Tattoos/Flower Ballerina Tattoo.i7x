@@ -15,6 +15,8 @@ To decide which number is the delicateness-influence of (T - a flower ballerina 
 	decide on 1.
 To decide which number is the initial cringe of (T - a flower ballerina tattoo):
 	decide on 5.
+Definition: a flower ballerina tattoo (called T) is ballet related:
+	decide yes.
 
 
 Flower Ballerina Tattoo ends here.

@@ -729,15 +729,23 @@ The pull lever unique option rule is listed in the unique options rules.
 CraftListing is an action applying to nothing.
 Carry out CraftListing:
 	repeat with F running through carried ingredient things:
-		say "[F] ".
+		say "[F] ";
+	if there is a held sanity token, say "[random held sanity token] ([number of held sanity tokens]) "; [Even if there are 10 held we only want to write it once]
+	if there is a held fabric token, say "[random held fabric token] ([number of held fabric tokens]) "; [Even if there are 10 held we only want to write it once]
+	if there is a held defiance token, say "[random held defiance token] ([number of held defiance tokens]) ". [Even if there are 10 held we only want to write it once]
 Understand "list craftables" as CraftListing.
 
 AltarListing is an action applying to nothing.
 Carry out AltarListing:
-	repeat with F running through held sure unblessed blessable clothing:
+	say "[bold type]Worn: [roman type]";
+	repeat with F running through worn unblessed blessable clothing:
 		say "[F] ";
-	repeat with F running through held unsure blessable clothing:
-		say "[F] ".
+	say "[line break][bold type]Not Worn: [roman type]";
+	repeat with F running through carried sure unblessed blessable clothing:
+		say "[F] ";
+	repeat with F running through carried unsure blessable clothing:
+		say "[F] ";
+	say "[line break]".
 Understand "list blessables" as AltarListing.
 
 

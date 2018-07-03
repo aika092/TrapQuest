@@ -19,7 +19,7 @@ Check attacking:
 	let K be the knee damage of the player - combat bonus remainder;
 	let Ki be the kick damage of the player - combat bonus remainder;
 	[let Ki2 be the kick damage of the player / 4;]
-	say "You need to be more specific, please choose between [bold type]kick [bracket]ki[close bracket] ([Ki] average damage)[roman type], [bold type]knee [bracket]kn[close bracket] ([K] average damage)[roman type] and [bold type]slap [bracket]sl[close bracket] ([Sl] average damage)[roman type]." instead.
+	say "You need to be more specific, please choose between [bold type]kick [bracket]ki[close bracket] ([Ki] [if kick-fatigue > 0](-[kick-fatigue]) [end if]average damage)[roman type], [bold type]knee [bracket]kn[close bracket] ([K] [if knee-fatigue > 0](-[knee-fatigue]) [end if]average damage)[roman type] and [bold type]slap [bracket]sl[close bracket] ([Sl] average damage)[roman type]." instead.
 Understand "kill [something]", "murder [something]", "destroy [something]", "stamp on [something]", "stamp [something]", "k [something]", "at [something]", "break [something]" as attacking.
 
 Attacking ends here.

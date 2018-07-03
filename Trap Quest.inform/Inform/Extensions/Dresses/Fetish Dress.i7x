@@ -2,14 +2,14 @@ Fetish Dress by Dresses begins here.
 
 A fetish dress is a kind of overdress. A fetish dress is usually latex.
 
-Figure of Latex Dress 1 is the file "Items\Clothes\Upper\Latex\latexdress1.png".
-Figure of Latex Dress 2 is the file "Items\Clothes\Upper\Latex\latexdress2.png".
-Figure of Latex Dress 3 is the file "Items\Clothes\Upper\Latex\latexdress3.png".
-Figure of Latex Dress 4 is the file "Items\Clothes\Upper\Latex\latexdress4.png".
-Figure of Latex Dress 5 is the file "Items\Clothes\Upper\Latex\latexdress5.png".
-Figure of Latex Dress 6 is the file "Items\Clothes\Upper\Latex\latexdress6.png".
-Figure of Latex Dress 7 is the file "Items\Clothes\Upper\Latex\latexdress7.png".
-Figure of Latex Dress 8 is the file "Items\Clothes\Upper\Latex\latexdress8.png".
+Figure of Latex Dress 1 is the file "Items/Clothes/Upper/Latex/latexdress1.png".
+Figure of Latex Dress 2 is the file "Items/Clothes/Upper/Latex/latexdress2.png".
+Figure of Latex Dress 3 is the file "Items/Clothes/Upper/Latex/latexdress3.png".
+Figure of Latex Dress 4 is the file "Items/Clothes/Upper/Latex/latexdress4.png".
+Figure of Latex Dress 5 is the file "Items/Clothes/Upper/Latex/latexdress5.png".
+Figure of Latex Dress 6 is the file "Items/Clothes/Upper/Latex/latexdress6.png".
+Figure of Latex Dress 7 is the file "Items/Clothes/Upper/Latex/latexdress7.png".
+Figure of Latex Dress 8 is the file "Items/Clothes/Upper/Latex/latexdress8.png".
 
 To compute SelfExamineDesc of (O - a fetish dress):
 	say "A [ShortDesc of O] clings tightly to your body, showing off your curves[if the largeness of breasts > 4] and ample cleavage[end if]. ".

@@ -8,7 +8,7 @@ To say tattoo-desc of (T - a heavyweight tattoo):
 	if images visible is 1, display figure of heavyweight tattoo;
 	say "The word 'Heavy' is inked on the back your left leg and the word 'Weight' on the back of your right leg. You feel as if it is somehow weighing you down.".
 To decide which number is the heaviness of (T - a heavyweight tattoo):
-	decide on 8.
+	decide on 10.
 
 Heavyweight Tattoo ends here.
 

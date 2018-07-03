@@ -2,7 +2,7 @@ Lycra Bodysuit by Dresses begins here.
 
 A lycra-bodysuit is a kind of overdress. A lycra-bodysuit is usually unique. A lycra-bodysuit is usually low cut. A lycra-bodysuit is usually crotch-exposing. A lycra-bodysuit is usually unskirted. A lycra-bodysuit is usually leg covering. A lycra-bodysuit is usually only arm covering. A lycra-bodysuit is lycra. There is 1 lycra-bodysuit. The printed name of lycra-bodysuit is "[TQlink of item described][clothing-title-before]lycra bodysuit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of lycra-bodysuit is "lyb". A lycra-bodysuit is usually totally-exclusive. A lycra-bodysuit is usually sheer. Understand "bodysuit" as lycra-bodysuit.
 
-Figure of lycra-bodysuit is the file "Items\Clothes\Upper\Exposing\lycrabodysuit1.png".
+Figure of lycra-bodysuit is the file "Items/Clothes/Upper/Exposing/lycrabodysuit1.png".
 
 To decide which figure-name is clothing-image of (C - a lycra-bodysuit):
 	decide on figure of lycra-bodysuit.

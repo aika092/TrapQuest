@@ -142,6 +142,11 @@ To Print Drinks Table:
 	repeat with N running from 1 to the number of rows in the Table of Drinks: 
 		say "[appearance in row N of Table of Drinks] [Magic in row N of Table of Drinks] [Known in row N of Table of Drinks][line break]" .
 
+Include Bottles by Drinks.
+Include Cans by Drinks.
+Include Vessels by Drinks.
+Include Drink Effects by Drinks.
+Include Dispensers by Drinks.
 
 Drinks Framework ends here.
 

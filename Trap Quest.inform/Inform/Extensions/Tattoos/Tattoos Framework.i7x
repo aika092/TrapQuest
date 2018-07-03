@@ -159,6 +159,19 @@ To decide which object is the concealer of (T - a lower back tattoo):
 To decide which number is the initial outrage of (T - a lower back tattoo):
 	decide on 5.
 
+Section 6b - Upper Back Tattoos
+
+A upper back tattoo is a kind of tattoo.
+Definition: a upper back tattoo (called A) is drawable:
+	if there is a worn upper back tattoo, decide no;
+	decide yes.
+
+To decide which object is the concealer of (T - a upper back tattoo):
+	decide on a random worn actually dense breast covering clothing.
+
+To decide which number is the initial outrage of (T - a upper back tattoo):
+	decide on 4.
+
 
 Section 7 - Body Tattoos
 
@@ -208,6 +221,139 @@ Definition: a dq tattoo (called A) is drawable:
 	if diaper quest is 0, decide no;
 	if A is worn, decide no;
 	decide yes. [So these can be selected randomly!]
+
+Include Buttslut Tattoo by Tattoos.
+Include Put It In My Ass Tattoo by Tattoos.
+Include Freedom Tattoo by Tattoos.
+Include Spank Me Tattoo by Tattoos.
+Include Spank My Kitty Tattoo by Tattoos.
+Include Just The Tip Tattoo by Tattoos.
+Include Tentacles Tattoo by Tattoos.
+Include Prime USDA Tattoo by Tattoos.
+
+Include Funcenter Tattoo by Tattoos.
+Include Daddy's Cock Only Tattoo by Tattoos.
+Include Anal Dragon Tattoo by Tattoos.
+Include Anal Star Tattoo by Tattoos.
+Include Butt Slut Asshole Tattoo by Tattoos.
+Include Butterfly Wings Asshole Tattoo by Tattoos.
+Include Eat Your Heart Out Tattoo by Tattoos.
+Include Spit First Tattoo by Tattoos.
+Include Asshole Cupid Tattoo by Tattoos.
+
+Include No Panties Tattoo by Tattoos.
+Include Topless Tattoo by Tattoos.
+Include Hundred Percent Cunt Tattoo by Tattoos.
+Include For Deposit Only Tattoo by Tattoos.
+Include Born To Lose Tattoo by Tattoos.
+Include Lucky You Tattoo by Tattoos.
+Include Forever Tattoo by Tattoos.
+Include Slut Tattoo by Tattoos.
+Include Womb Diagram Tattoo by Tattoos.
+Include Zip Tattoo by Tattoos.
+Include Bird Nest Tattoo by Tattoos.
+Include Demon Tattoo by Tattoos.
+Include Let it Die Tattoo by Tattoos.
+Include Daddy's Little Girl Tattoo by Tattoos.
+Include Whore is my Mind Tattoo by Tattoos.
+Include Pussy Deluxe Tattoo by Tattoos.
+Include Worthless Cunt Tattoo by Tattoos.
+Include Xavier's Cunt Tattoo by Tattoos.
+Include Slut for Black Cock Tattoo by Tattoos.
+Include Cumlust Tattoo by Tattoos.
+
+Include Wet Dream Tattoo by Tattoos.
+Include You Live You Learn Tattoo by Tattoos.
+Include Overcome Tattoo by Tattoos.
+Include Cupcake Tattoo by Tattoos.
+Include Sissy Black Cock Whore Tattoo by Tattoos.
+Include Atlas Tattoo by Tattoos.
+Include True Love Tattoo by Tattoos.
+Include Unfaithful Tattoo by Tattoos.
+Include Bat Tattoo by Tattoos.
+Include Target Tattoo by Tattoos.
+Include Showtime Tattoo by Tattoos.
+Include Marker Chest Tattoo by Tattoos.
+
+Include Heavyweight Tattoo by Tattoos.
+Include Witchcraft Tattoo by Tattoos.
+Include White Trash Tattoo by Tattoos.
+Include Ribbon Bow Tattoo by Tattoos.
+
+Include Semen Demon Tattoo by Tattoos.
+Include Stupid Whore Tattoo by Tattoos.
+Include Tear It Up Daddy Tattoo by Tattoos.
+Include Anal Slut Tattoo by Tattoos.
+Include Princess Tattoo by Tattoos.
+Include Property Tattoo by Tattoos.
+Include Bitch Tattoo by Tattoos.
+
+Include My Vagina Tattoo by Tattoos.
+Include Once You Go Black Tattoo by Tattoos.
+
+Include Virgin Void Tattoo by Tattoos.
+Include Black Hole Tattoo by Tattoos.
+Include Double Penetration Tattoo by Tattoos.
+Include Cum Dump Tattoo by Tattoos.
+Include Clit Piercing Tattoo by Tattoos.
+Include Cum Dumpster Lip Tattoo by Tattoos.
+Include Nothing's Sacred Tattoo by Tattoos.
+Include Fuckin Classy Tattoo by Tattoos.
+Include No Regrets Tattoo by Tattoos.
+Include Angel Tattoo by Tattoos.
+Include Demongirl Tattoo by Tattoos.
+Include Bed Wetter Tattoo by Tattoos.
+Include Bred Bull Tattoo by Tattoos.
+Include Ink Me Tattoo by Tattoos.
+Include Abyssal Tattoo by Tattoos.
+Include Nintendolls Brand Tattoo by Tattoos.
+Include Bright Hair Tattoo by Tattoos.
+Include Pentagram Tattoo by Tattoos.
+Include Tally Tattoos by Tattoos.
+Include Black Owned Tattoo by Tattoos.
+Include Black Cock Only Tattoo by Tattoos.
+Include Failed Potty Training Tattoo by Tattoos.
+Include Weakness Tattoo by Tattoos.
+Include Dolly Tattoo by Tattoos.
+Include Thorny Tattoo by Tattoos.
+
+Include Empty Mind Tattoo by Tattoos.
+Include Cheating Whore Tattoo by Tattoos.
+Include Fuck Me Tattoo by Tattoos.
+Include Free Ride Tattoo by Tattoos.
+
+Include Safety Pin Tattoo by Tattoos.
+Include Cloth Revolution Tattoo by Tattoos.
+Include Take It Easy Tattoo by Tattoos.
+Include Flower Ballerina Tattoo by Tattoos.
+Include Bird Kitty Tattoo by Tattoos.
+Include Paw Print Tattoo by Tattoos.
+Include Tribal Diaper Tattoo by Tattoos.
+Include Unicorn Horn Finger Tattoo by Tattoos.
+Include Cupcake Wrist Tattoo by Tattoos.
+Include Lipstick Crystal Tattoo by Tattoos.
+Include DrinkMe Tattoo by Tattoos.
+Include Nun Blowjob Tattoo by Tattoos.
+Include Babygirl Tattoo by Tattoos.
+Include Royal Hearts Tattoo by Tattoos.
+Include Princess Castle Tattoo by Tattoos.
+Include Kitty Cat Tattoo by Tattoos.
+Include Birds Tattoo by Tattoos.
+Include Ribbon Bow Neck Tattoo by Tattoos.
+Include Teapot Tattoo by Tattoos.
+Include Elephant Tattoo by Tattoos.
+Include Diapered Dinosaur Tattoo by Tattoos.
+Include Daddys Wild Child Tattoo by Tattoos.
+Include Can't Change Self Tattoo by Tattoos.
+Include Cum When Messing Tattoo by Tattoos.
+
+Include Demon Belly Mark by Tattoos.
+Include Demon Link Mark by Tattoos.
+
+Include Whip Tattoo by Tattoos.
+
+Include Inking by Actions.
+
 
 Tattoos Framework ends here.
 

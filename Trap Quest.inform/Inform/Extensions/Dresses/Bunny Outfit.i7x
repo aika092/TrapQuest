@@ -18,7 +18,7 @@ Part 1 - Bunny Waitress Outfit
 
 bunny waitress outfit is a bunny outfit. The printed name of bunny waitress outfit is "[TQlink of item described][clothing-title-before]bunny waitress outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny waitress outfit is "bwo".
 
-Figure of bunny waitress outfit is the file "Items\Clothes\Upper\Special\Bunny\bunny1.png".
+Figure of bunny waitress outfit is the file "Items/Clothes/Upper/Special/Bunny/bunny1.png".
 
 To decide which figure-name is clothing-image of (C - a bunny waitress outfit):
 	decide on figure of bunny waitress outfit.
@@ -36,7 +36,7 @@ Part 2 - Black Latex Bunny Outfit
 
 black rubber bunny outfit is a bunny outfit. The printed name of black rubber bunny outfit is "[TQlink of item described][clothing-title-before]black latex bunny outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black rubber bunny outfit is "blbo".
 
-Figure of black rubber bunny outfit is the file "Items\Clothes\Upper\Special\Bunny\bunny2.png".
+Figure of black rubber bunny outfit is the file "Items/Clothes/Upper/Special/Bunny/bunny2.png".
 
 To decide which figure-name is clothing-image of (C - a black rubber bunny outfit):
 	decide on figure of black rubber bunny outfit.
@@ -55,7 +55,7 @@ Part 3 - Cream Latex Bunny Outfit
 
 cream rubber bunny outfit is a bunny outfit. The printed name of cream rubber bunny outfit is "[TQlink of item described][clothing-title-before]cream latex bunny outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cream rubber bunny outfit is "clbo".
 
-Figure of cream rubber bunny outfit is the file "Items\Clothes\Upper\Special\Bunny\bunny3.png".
+Figure of cream rubber bunny outfit is the file "Items/Clothes/Upper/Special/Bunny/bunny3.png".
 
 To decide which figure-name is clothing-image of (C - a cream rubber bunny outfit):
 	decide on figure of cream rubber bunny outfit.
@@ -74,7 +74,7 @@ Part 4 - DQ Bunny Outfit
 
 dq bunny outfit is a bunny outfit. dq bunny outfit is fully covering. The printed name of dq bunny outfit is "[TQlink of item described][clothing-title-before]bunny outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of dq bunny outfit is "bo".
 
-Figure of dq bunny outfit is the file "Items\Clothes\Upper\Special\Bunny\bunny4.png".
+Figure of dq bunny outfit is the file "Items/Clothes/Upper/Special/Bunny/bunny4.png".
 
 To decide which number is the initial outrage of (C - dq bunny outfit):
 	decide on 0.
@@ -104,7 +104,7 @@ bunny dress is a bunny outfit. bunny dress is no-crotch. bunny dress is super-sh
 
 The printed name of bunny dress is "[TQlink of item described][clothing-title-before]bunny dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny dress is "bnyd".
 
-Figure of bunny dress is the file "Items\Clothes\Upper\Special\Bunny\bunny5.png".
+Figure of bunny dress is the file "Items/Clothes/Upper/Special/Bunny/bunny5.png".
 
 To decide which figure-name is clothing-image of (C - bunny dress):
 	decide on figure of bunny dress.

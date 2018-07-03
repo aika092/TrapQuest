@@ -2,7 +2,7 @@ Bunny Socks by Stockings begins here.
 
 bunny socks is a socks.  The text-shortcut of bunny socks is "bnys".
 
-Figure of bunny socks is the file "Items\Clothes\Lower\Legs\socks3.png".
+Figure of bunny socks is the file "Items/Clothes/Lower/Legs/socks3.png".
 
 To decide which figure-name is clothing-image of (C - bunny socks):
 	decide on figure of bunny socks.

@@ -232,10 +232,10 @@ To finally humiliate (X - a number):
 	if the humiliation of the player + X >= 40000:
 		if (there is a worn immodest warrior chestpiece or mindbreak protection is 1) and the player-class is not succubus:
 			now humiliation-restriction is 1; [Player can't snap]
-		otherwise if there is a worn modest warrior chestpiece:
+		otherwise if there is a worn holy warrior chestpiece:
 			let P be a random plate warrior chestpiece;
 			say "[bold type]You feel your mind about to snap - and then, it just doesn't. You feel excited about getting humiliated, but still feel focused on your [if the bimbo of the player < 15]original goal[otherwise]quest to stay a virgin[end if]. Suddenly you feel your chestpiece transform around you - the metal slithers and slides around you, reshaping into plate armour that leaves your [ShortDesc of breasts] completely uncovered.[roman type][line break][variable custom style]Ooh, even more naughty!  How perfect.[roman type][line break]";
-			repeat with M running through modest warrior chestpieces: [banish them from ever appearing again]
+			repeat with M running through holy warrior chestpieces: [banish them from ever appearing again]
 				now M is in Holding Pen;
 			summon P cursed;
 			if P is not worn, now the player is wearing P;

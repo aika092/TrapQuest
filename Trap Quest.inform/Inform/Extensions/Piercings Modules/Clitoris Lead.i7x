@@ -1,6 +1,6 @@
 Clitoris Lead by Piercings Modules begins here.
 
-clitoris lead is a piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. Figure of clitoris lead is the file "Items\Accessories\Piercings\clitlead1.png".
+clitoris lead is a piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. Figure of clitoris lead is the file "Items/Accessories/Piercings/clitlead1.png".
 
 To decide which figure-name is the clothing-image of (C - a clitoris lead):
 	decide on figure of clitoris lead.

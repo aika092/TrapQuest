@@ -79,6 +79,14 @@ The knickers trousers clash rule is listed in the knickers wearability rules.
 
 trousers removability rules is a rulebook. The removability rules of trousers is usually trousers removability rules.
 
+Include Yoga Pants by Trousers.
+Include PJ Bottoms by Trousers.
+Include Jeans by Trousers.
+Include Buttocksless Pants by Trousers.
+Include Leggings by Trousers.
+Include Latex Pants by Trousers.
+Include Bloomers by Trousers.
+Include Teddy Bear Pantyhose by Trousers.
 
 Trousers Framework ends here.
 

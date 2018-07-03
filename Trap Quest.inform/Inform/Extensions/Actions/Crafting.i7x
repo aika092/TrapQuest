@@ -15,6 +15,10 @@ Check crafting:
 		if the doses of the noun is 0:
 			now seconds is 2;
 			say "You place the empty [noun] into the bowl. Nothing happens. Maybe if it actually had liquid in it..." instead;
+	if the charge of alchemist's table > 0:
+		now seconds is 2;
+		say "Nothing happens. Maybe try again a bit later." instead;
+	if the noun is mass collectible, compute mass collectible reward of the noun instead;
 	if the noun is not ingredient thing:
 		now seconds is 2;
 		say "Nothing happens." instead.
@@ -36,20 +40,19 @@ Carry out crafting:
 		now T is a random off-stage product-highlighted thing;
 		if T is a thing:
 			repeat with R running through on-stage product-highlighted things:
-				if R is visible, say "The [R] [if R is held]in your hands [end if]suddenly vanishes[one of]!   Maybe you can only have one at a time?[or]![stopping]";
+				if R is visible, say "The [ShortDesc of R] [if R is held]in your hands [end if]suddenly vanishes[one of]! Maybe you can only have one at a time?[or]![stopping]";
 				destroy R;
 			compute recipe specific cursing of T;
-			now T is unsure;
+			if T is clothing or T is alchemy product, now T is unsure;
 			now T is carried by the player;
 			if the noun is bottle:
-				say "The liquid swirls around, and then in a puff of smoke, it turns into a [T]!  Magic!  ";
+				say "The liquid swirls around, and then in a puff of smoke, it turns into a [T]! Magic! ";
 			otherwise:
 				say "In a puff of smoke, the [noun] turns into a [T]!  Magic!  ";
 				destroy the noun;
-			say "You pick it up.[line break]The bowl stops glowing[one of] - maybe you will have to wait a while until the magic returns[or][stopping].";
+			say "You pick it up.";
 			increase times-crafted by 1;
-			now the charge of alchemist's table is 325 - (the intelligence of the player * 10);
-			if the craftskill of the player is 1, now the charge of alchemist's table is the charge of alchemist's table / 4;
+			reset alchemy charge;
 			let H be a random worn blue scrunchie;
 			if H is clothing, compute class outfit of H;
 			if H is clothing, MagicPowerUp 1;
@@ -82,6 +85,11 @@ Definition: a thing (called T) is maybe-cursed:
 	if T is bottle or T is collectible or T is clothing:
 		if T is cursed, decide yes;
 	decide no.
+
+To reset alchemy charge:
+	now the charge of alchemist's table is 325 - (the intelligence of the player * 10);
+	if the craftskill of the player is 1, now the charge of alchemist's table is the charge of alchemist's table / 4;
+	say "The bowl stops glowing[one of] - maybe you will have to wait a while until the magic returns[or][stopping].".
 
 
 

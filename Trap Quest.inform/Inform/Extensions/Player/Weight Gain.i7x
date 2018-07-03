@@ -36,6 +36,7 @@ To decide which number is the relieved heaviness of (H - a thing):
 	if there is a worn bag of holding, decide on 0;
 	decide on the heaviness of H.
 
+
 [!<DecideWhichNumberIstheRelievedHeavinessOfFood>+
 
 REQUIRES COMMENTING
@@ -68,7 +69,7 @@ REQUIRES COMMENTING
 To decide which number is inventory weight:
 	let I be 0;
 	repeat with H running through things carried by the player:
-		increase I by the relieved  heaviness of H;
+		increase I by the relieved heaviness of H;
 	decide on I / 3.
 
 [!<DecideWhichNumberIsWornWeight>+
@@ -106,9 +107,11 @@ Carry out going:
 			if newbie tips is 1, say "[one of][item style]Newbie tip: Woah there!  You're carrying an awful lot of stuff in your inventory. Every item in your inventory, except a small few (e.g. the pink pill), weighs you down, meaning your fatigue increases faster. Clothing you're wearing weighs you down a lot lot less than the clothing you're carrying. Metal items and drinks tend to weigh even more than everything else. You should consider making a trip back to the starting room, and put all your spare stuff you can't wear in the pink wardrobe, where it'll be safe even if you faint.[roman type][line break][or][stopping]";
 		if inventory weight > 15:
 			if newbie tips is 1, say "[one of][item style]Newbie tip: Warning!  You are extremely overloaded. You need to carry around less stuff than that if you want to be able to remain standing for a long period of time.[roman type][line break][or][stopping]";
-		[repeat with H running through heels worn by the player:
-			FatigueUp (the hindrance of H + 1) / 2;]
-		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].".
+		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].";
+	if there is a worn ball-and-chain:
+		say "Your [ShortDesc of a random worn ball-and-chain] drags heavily behind you.";
+		if the player is prone:
+			FatigueUp 1.[even when kneeling]
 
 A time based rule (this is the training rule):
 	if the flesh volume of thighs > 0 or the flesh volume of belly > 0:

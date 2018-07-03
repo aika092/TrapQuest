@@ -1,7 +1,7 @@
 Summoning Trap by Traps begins here.
 
 
-A summoning trap is a kind of trap. There are 20 click summoning traps.
+A summoning trap is a kind of trap. There are 6 click summoning traps.
 
 [This is the spawn initial dungeon summoning traps rule:
 	repeat with N running from 1 to 3:
@@ -15,7 +15,7 @@ This is the spawn initial woods summoning traps rule:
 		let R be a random trappable click untrapped placed jungle room;
 		let T be a random off-stage summoning trap;
 		deploy T in R.
-The spawn initial woods summoning traps rule is listed in the set up woods traps rules.
+The spawn initial woods summoning traps rule is listed in the set up woods traps rules.]
 
 This is the spawn initial hotel summoning traps rule:
 	repeat with N running from 1 to 3:
@@ -24,7 +24,7 @@ This is the spawn initial hotel summoning traps rule:
 		deploy T in R.
 The spawn initial hotel summoning traps rule is listed in the set up hotel traps rules.
 
-This is the spawn initial mansion summoning traps rule:
+[This is the spawn initial mansion summoning traps rule:
 	repeat with N running from 1 to 3:
 		let R be a random trappable click untrapped placed haunted room;
 		let T be a random off-stage summoning trap;

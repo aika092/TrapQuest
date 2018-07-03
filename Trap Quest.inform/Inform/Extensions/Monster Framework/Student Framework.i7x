@@ -31,6 +31,7 @@ To set up (M - a student):
 		now M is in a random placed academic room;
 	now the difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
+	if the current-rank of M < the min-rank of M, now the current-rank of M is the min-rank of M;
 	update name of M.
 
 To regionally place (M - a student):
@@ -55,6 +56,22 @@ Part - Rank, Name and Print
 A student has a number called current-rank. The current-rank of a student is usually 1.
 A student has a number called min-rank. The min-rank of a student is usually 1.
 A student has a number called max-rank. The max-rank of a student is usually 5.
+
+Definition: a student (called M) is rank1:
+	if the current-rank of M is 1, decide yes;
+	decide no.
+Definition: a student (called M) is rank2:
+	if the current-rank of M is 2, decide yes;
+	decide no.
+Definition: a student (called M) is rank3:
+	if the current-rank of M is 3, decide yes;
+	decide no.
+Definition: a student (called M) is rank4:
+	if the current-rank of M is 4, decide yes;
+	decide no.
+Definition: a student (called M) is rank5:
+	if the current-rank of M is 5, decide yes;
+	decide no.
 
 A student has an indexed text called student-name. The student-name of a student is usually "Anonymous".
 A student has an indexed text called student-print. The student-print of a student is usually "student".
@@ -106,6 +123,32 @@ Definition: a student (called M) is lesson-appropriate:
 	if the current-rank of M is 5 and the lesson-teacher of chosen-lesson is diamond-teacher, decide yes;
 	decide no.
 
+
+Part - Updating Students
+
+To update students:
+	repeat with M running through alive students:
+		if the max-rank of M < the rank of the player, destroy M;
+	if the rank of the player is 2, set up rank three students;
+	if the rank of the player is 3, set up rank four students;
+	if the rank of the player is 4, set up rank five students.
+	
+school-earnings-latest is a number that varies. [let's track how long it's been since the player last stepped into the school]
+
+Report going up when the location of the player is School01: [The player has returned to the school! Let's promote some students that would otherwise never get put in the player's class again.]
+	compute background student promotions.
+
+To compute background student promotions:
+	if school-earnings-latest is 0:
+		now school-earnings-latest is earnings;
+	otherwise:
+		repeat with M running through alive students: [Essentially what we do here is limit background promotions to one every 150 seconds that passes in the game universe]
+			if the max-rank of M < the rank of the player:
+				destroy M; [just to catch anyone who fell through the update students net somehow]
+			otherwise if the current-rank of M < the rank of the player and school-earnings-latest - earnings >= 150:
+				silently promote M;
+				decrease school-earnings-latest by 150.
+		
 
 Part - Stats
 

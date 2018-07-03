@@ -13,7 +13,7 @@ To set up influence of (C - a bloomers):
 
 sissy-bloomers is a bloomers. sissy-bloomers is sheer. sissy-bloomers is nylon. The armour of sissy-bloomers is 3. The printed name of sissy-bloomers is "[TQlink of item described][clothing-title-before]pair of sheer nylon bloomers[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "pair", "of", "sheer", "bloomers" as sissy-bloomers. The text-shortcut of sissy-bloomers is "bl".
 
-Figure of sissy-bloomers is the file "Items\Clothes\Lower\Underwear\Bloomers\bloomers1.png".
+Figure of sissy-bloomers is the file "Items/Clothes/Lower/Underwear/Bloomers/bloomers1.png".
 
 To decide which figure-name is clothing-image of (H - sissy-bloomers):
 	decide on figure of sissy-bloomers.
@@ -56,7 +56,7 @@ To say ClothingDesc of (K - crotchless bloomers):
 To say UniqueTitle of (K - crotchless bloomers):
 		say "sexy crotchless sissy-bloomers".
 
-Figure of crotchless bloomers is the file "Items\Clothes\Lower\Underwear\Bloomers\bloomers2.png".
+Figure of crotchless bloomers is the file "Items/Clothes/Lower/Underwear/Bloomers/bloomers2.png".
 
 To uniquely set up (C - crotchless bloomers):
 	if a random number between 1 and 3 is 1, now C is protection.

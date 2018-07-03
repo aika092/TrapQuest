@@ -4,13 +4,13 @@ A ballet corset is a kind of corset. A ballet corset is usually top-exclusive. A
 
 The printed name of ballet corset is usually "[TQlink of item described][clothing-title-before]ballet corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ballet corset is "blco".
 
-Figure of ballet corset is the file "Items\Clothes\Upper\Corsets\balletcorset1.png".
+Figure of ballet corset is the file "Items/Clothes/Upper/Corsets/balletcorset1.png".
 
 To decide which figure-name is clothing-image of (C - a ballet corset):
 	decide on figure of ballet corset.
 
 To say ClothingDesc of (C - a ballet corset):
-	say "A [unless the outrage of C is too humiliating][second custom style]supercute[roman type][end if] pink overbust corset with an attached short frilly tutu.".
+	say "A [unless the outrage of C is too humiliating][second custom style]super-cute[roman type][end if] pink overbust corset with an attached short frilly tutu.".
 
 To say ShortDesc of (C - a ballet corset):
 	say "ballet corset".
@@ -22,7 +22,7 @@ Definition: a ballet corset (called C) is strut enabling:
 	if there is a worn thigh high ballet boots, decide yes;
 	decide no.
 
-Definition: a ballet corset (called C) is untansformable:
+Definition: a ballet corset (called C) is untransformable:
 	if there is a worn thigh high ballet boots, decide yes;
 	decide no.
 

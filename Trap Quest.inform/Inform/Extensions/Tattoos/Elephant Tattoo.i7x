@@ -6,7 +6,7 @@ Definition: elephant tattoo (called T) is drawable:
 	if diaper quest is 0 and T is not eligible, decide no;
 	decide yes. [So this can be selected randomly in DQ!]
 Definition: elephant tattoo (called T) is eligible:
-	if the noun is tail plug or the noun is grey monokini or the noun is grey string monokini or the noun is hood or the noun is wc catsuit or the noun is busy patterned romper or the noun is metallic purple rubber dress or the noun is warrior chestpiece or the noun is grey-briefs or the noun is silver-panties or the noun is silver-g-string, decide yes;
+	if the noun is heart themed or the noun is tail plug or the noun is grey monokini or the noun is grey string monokini or the noun is hood or the noun is wc catsuit or the noun is busy patterned romper or the noun is metallic purple rubber dress or the noun is warrior chestpiece or the noun is grey-briefs or the noun is silver-panties or the noun is silver-g-string, decide yes;
 	decide no.
 To say tattoo-desc of (T - elephant tattoo):
 	if images visible is 1, display figure of elephant tattoo;

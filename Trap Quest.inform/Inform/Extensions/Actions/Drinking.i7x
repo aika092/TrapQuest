@@ -119,10 +119,10 @@ Definition: yourself (called Y) is able to drink:
 			unless the drinking-target is cock pacifier:
 				if autodrink is 0, say "The cock pacifier is so tightly connected to your face that there's no way you can drink anything else with it on!";
 				decide no;
-		otherwise if T is ballgag and autodrink is 0 and drinking-target is held bottle:
-			if T is baby pacifier or (artificial enhancements fetish is 0 and a random number between 1 and 3 > 1) or (artificial enhancements fetish is 1 and a random number between the lips of face and 5 > 2):[3 > 2!]
-				say "You manage to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T].";
-			otherwise:
+		otherwise if T is ballgag and drinking-target is held bottle:
+			if T is baby pacifier or (autodrink is 0 and (artificial enhancements fetish is 0 and a random number between 1 and 3 > 1) or (artificial enhancements fetish is 1 and a random number between the lips of face and 5 > 2)):[3 > 2!]
+				if autodrink is 0, say "You manage to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T].";
+			otherwise if autodrink is 0:
 				if the doses of drinking-target is 1:
 					say "You try to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T], but you don't manage it!  The liquid drips down your chin to the ground.";
 					decrease the doses of drinking-target by 1;

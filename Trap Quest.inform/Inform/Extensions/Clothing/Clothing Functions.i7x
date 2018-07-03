@@ -21,6 +21,10 @@ To say ShortDesc of (C - a clothing):
 To say ShortestDesc of (C - a clothing):
 	say "item of clothing".
 
+To decide which number is the masturbation-bonus of (C - a clothing):
+	let X be 0;
+	decrease X by the total-soak of C / 3.
+
 To compute periodic effect of (C - a wearthing):
 	do nothing.
 
@@ -141,8 +145,8 @@ To only destroy (C - clothing):
 	clean C;
 	now the water-soak of C is 0;
 	dislodge C;
+	repair C;
 	now C is not stuck;
-	now C is crotch-in-place;
 	if C is strut enabling and C is worn and the strut of the player is 1 and the strutskill of the player is 0 and the number of worn strut enabling clothing is 1, now the strut of the player is 0;
 	now C is bland;
 	now C is unsure;

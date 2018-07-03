@@ -16,6 +16,12 @@ Definition: a tentacle monster (called M) is willing to do oral:
 Definition: a tentacle monster (called M) is willing to do titfucks:
 	decide yes.
 
+Definition: a tentacle monster (called M) is virginity taking:
+	decide yes.
+
+ Definition: A tentacle monster (called M) is father material:[This means the monster can father children.]
+	decide yes.
+
 Figure of Tentacle monster is the file "NPCs/Bosses/TQ Tentacle 1.png".
 There are 20 tentacle monsters. The text-shortcut of tentacle monster is "tnm".
 
@@ -120,7 +126,7 @@ To compute perception of (M - a tentacle monster):
 		say "It doesn't seem aggressive.";
 		calm M;
 	otherwise:
-		say "It looks like [if M is newborn]it's coming straight for you![otherwise if inhuman pregnancy is 2]it wants to breed again![otherwise]you're its next target![end if]";
+		say "It looks like [if M is newborn]it's coming straight for you![otherwise if inhuman pregnancy is 2]it wants to breed![otherwise]you're its next target![end if]";
 		anger M;
 
 To compute (M - a monster) stomping (N - a tentacle monster):
@@ -325,7 +331,7 @@ To say SelectionFrustrated of (M - a tentacle monster):
 	bore M.
 
 To say BreastsPenetrationFlav of (M - a tentacle monster):
-	say "[BigNameDesc of M] coils a [DickDesc of M] around your [ShortDesc of breasts], squeezing them together as it forces its way between them and begins to thrust.".
+	say "[BigNameDesc of M] coils a [DickDesc of M] around your [ShortDesc of breasts], squeezing them together as it forces its way between their curves and begins to thrust.".
 
 To say TitfuckResistFlav of (M - a tentacle monster):
 	let C be a random worn top level covering nipple covering clothing;
@@ -373,7 +379,19 @@ To compute unique death of (M - a tentacle monster):
 		MagicPowerUp 4;
 	if the magic-power of the player > 1:
 		let H be a random off-stage heart hairpin;
-		if H is actually summonable:
+		if the class of the player is virgin warrior and virgin magical girl outfit is off-stage:
+			repeat with O running through worn chest covering clothing:
+				say "Your [O] vanishes!";
+				destroy O;
+			repeat with O running through worn dresses:
+				say "Your [O] vanishes!";
+				destroy O;
+			repeat with O running through worn skirts:
+				say "Your [O] vanishes!";
+				destroy O;
+			summon virgin magical girl outfit cursed;
+			say "[bold type]Thin white fabric appears to cover your chest and waist![roman type][line break]";
+		otherwise if H is actually summonable:
 			say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
 			summon H cursed;
 			if the player is male and (tg fetish >= 2 or (the size of penis <= min penis size and tg fetish is 1)):

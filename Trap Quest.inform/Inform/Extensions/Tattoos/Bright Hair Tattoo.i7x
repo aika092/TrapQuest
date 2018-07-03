@@ -2,6 +2,7 @@ Bright Hair Tattoo by Tattoos begins here.
 
 bright-hair tattoo is a kind of body tattoo. There is 1 bright-hair tattoo. The printed name of bright-hair tattoo is "[if the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3]bright-hair tattoo[otherwise]ultra pink hair tattoo[end if]". Understand "is best", "bright", "pink hair", "bright hair", "hair tattoo", "ultra" as bright-hair tattoo.
 Definition: a bright-hair tattoo (called T) is drawable:
+	if T is worn, decide no;
 	if diaper quest is 0, decide yes;
 	decide no.
 Definition: a bright-hair tattoo (called T) is eligible:

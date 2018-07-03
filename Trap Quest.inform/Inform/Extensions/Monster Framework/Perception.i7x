@@ -3,6 +3,8 @@ Perception by Monster Framework begins here.
 Part 1 - Perception
 
 A monster has a number called favour. The favour of a monster is usually 13. [The favour of an NPC determines when it turns unfriendly.]
+A monster has a number called latest-appearance. [The last time the NPC saw the player, what did they look like? We only update this when the player looked worse than before, or the NPC gets bored then rediscovers the player. So flashing an NPC 5 times in quick succession is not any worse than flashing them once.]
+A monster has a number called latest-cringe. [The last time the NPC saw the player, how childish did they look?]
 
 perceiving is a number that varies. [We want to suppress some text while we are in the middle of perception.]
  
@@ -11,6 +13,7 @@ To FavourReset (M - a monster):
 
 To decide which number is the default favour of (M - a monster):
 	decide on 13.
+
 
 Chapter 1 - Check Perception
 
@@ -57,8 +60,12 @@ To check perception of (M - a monster):
 				if C is crotch-displaced, compute curtsey reaction of M.
 
 To compute correct perception of (M - a monster):
-	if diaper quest is 1, compute DQ perception of M;
-	otherwise compute perception of M.
+	now the latest-appearance of M is the appearance of the player;
+	if diaper quest is 1:
+		now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ oherwise we're wasting CPU cycles]
+		compute DQ perception of M;
+	otherwise:
+		compute perception of M.
 
 To reset orifice selection of (M - a monster):
 	now the chosen-orifice of M is nothing;
@@ -83,13 +90,14 @@ To compute curtsey reaction of (M - a monster):
 		resolve sudden appearance change of M;
 	otherwise:
 		say CurtseyReactionFlav of M;
-		if M is unfriendly, say "[big he of M] takes an offensive stance!".
+		if M is unfriendly, say BecomesAggressive of M.
 
 To say CurtseyReactionFlav of (M - a monster):
 	if there are worn currently visible knickers:
 		say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'Erm, I can see your underwear.'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] seems completely unaffected[one of] by your sudden display of submissive humility[or][or][cycling].".
+
 		
 
 Chapter 2 - Aggro Framework
@@ -165,10 +173,12 @@ Definition: a monster (called M) is objectifying the player:
 		decide yes;
 	decide no.
 
-To decide which number is the bimbo tolerance of (M - a monster):
+To decide which number is the bimbo tolerance of (M - a monster): [What number of outrage they become immediately unfriendly.]
 	if M is wenchy and there is a worn demon codpiece, decide on 1;
 	decide on 16.
-	
+
+To decide which number is the outrage tolerance of (M - a monster): [What number of outrage they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
+	decide on 20.
 	
 
 To compute sudden babification of (M - a monster):
@@ -183,14 +193,60 @@ Definition: a monster (called M) is babifying the player:
 		now the babification of M is 0;
 		decide no;
 	if the babification of M is 1, decide yes;
-	if the class of the player is adult baby, decide yes; [not sure about this]
-	if the bimbo of the player >= 20 or the cringe appearance of the player >= 20 or the cringe appearance of the player > the cringe tolerance of M:
+	if the bimbo of the player >= 20 or the cringe appearance of the player >= 20 or the cringe appearance of the player > the bab tolerance of M:
 		now the babification of M is 1;
 		decide yes;
 	decide no.
 
-To decide which number is the cringe tolerance of (M - a monster):
+To decide which number is the bab tolerance of (M - a monster): [What number of cringe they become immediately unfriendly.]
 	decide on 16.
+
+To decide which number is the cringe tolerance of (M - a monster): [What number of cringe they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
+	decide on 20.
+
+To say BecomesAggressive of (M - a monster):
+	say "[big he of M] takes an offensive stance![if M is intelligent][line break][speech style of M]'[one of]There's only one thing for it.'[or]There's only one thing to do, then...'[or]Okay then, let's do this.'[or]You do realise what I'm going to do now, right?'[in random order][roman type][line break][end if]".
+
+Definition: a monster (called M) is outrage disapproving:
+	if the outrage tolerance of M < 20: [for efficiency we'll make this check first]
+		let A be the appearance of the player;
+		let L be the latest-appearance of M;
+		now the latest-appearance of M is A;
+		if A > L and A > the outrage tolerance of M, decide yes;
+	decide no.
+
+Definition: a monster (called M) is cringe disapproving:
+	if diaper quest is 1 and the cringe tolerance of M < 20:
+		let C be the cringe appearance of the player;
+		let L be the latest-cringe of M;
+		now the latest-cringe of M is C;
+		if C > L and C > the cringe tolerance of M, decide yes;
+	decide no.
+
+To check disapproval of (M - a monster):
+	if M is outrage disapproving, compute disapproval of M;
+	if M is cringe disapproving, compute cringe disapproval of M.
+
+To compute disapproval of (M - a monster):
+	FavourDown M;
+	say "[DisapprovalFlav of M]";
+	if M is unfriendly, say BecomesAggressive of M.
+
+To compute cringe disapproval of (M - a monster):
+	FavourDown M;
+	say "[CringeDisapprovalFlav of M]";
+	if M is unfriendly, say BecomesAggressive of M.
+
+To say DisapprovalFlav of (M - a monster):
+	if M is intelligent, say "[BigNameDesc of M] [one of]narrows [his of M] eyes[or]widens [his of M] eyes[or]purses [his of M] lips[or]tuts[in random order].[line break][speech style of M]'[one of]I see, that's how it is.'[or]Wow.'[or]You really are something else...'[or]You're really begging for it, aren't you?'[or]I can't believe what I'm seeing!'[or]Gosh!'[in random order][roman type][line break]";
+	otherwise say "[BigNameDesc of M] seems to react badly to your new appearance! ".
+
+To say CringeDisapprovalFlav of (M - a monster):
+	if M is intelligent, say "[BigNameDesc of M] [one of]coughs[or]purses [his of M] lips[or]tuts[or]smirks[or]smiles[in random order].[line break][speech style of M]'[one of]Do you realise how childish you look right now?'[or]You're looking more and more like a baby, you know.'[or]An adult wouldn't let me catch [if the player is male]him[otherwise]her[end if] looking like that...'[or]You're really begging to be treated like a child, aren't you?'[or]I can't believe how immature you look right now!'[or]You aren't exactly a beacon of [maturity] right now, you know.'[or]That is NOT how you go about getting me to respect your [maturity].'[or]You're discarding all semblance of [maturity] then, are you?'[in random order][roman type][line break]";
+	otherwise say "[BigNameDesc of M] seems to react badly to your new appearance! ".
+
+
+Section - Aggro Stages
 
 Definition: a monster (called M) is normally annoyed:
 	if the favour of M > the aggro limit of M, decide yes;

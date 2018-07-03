@@ -1,6 +1,6 @@
 Swords by Equippables begins here.
 
-A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal. Understand "sword" as sword. Understand "statue", "stone" as sword when item described is in Woods26 and item described is not held. Figure of sword is the file "Items\Accessories\Equippables\sword1.png".
+A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal. Understand "sword" as sword. Understand "statue", "stone" as sword when item described is in Woods26 and item described is not held. Figure of sword is the file "Items/Accessories/Equippables/sword1.png".
 
 To decide which figure-name is clothing-image of (C - a sword):
 	decide on figure of sword.
@@ -135,7 +135,7 @@ Section 2 - Dildo Sword
 
 A dildo sword is a kind of sword. There is 1 dildo sword. A dildo sword is usually unique. A dildo sword is usually plastic. A dildo sword has a number called dildo girth. The dildo girth of a dildo sword is usually 5. The text-shortcut of dildo sword is "ds". The printed name of dildo sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]dildo in the statue[otherwise]dildo sword[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". 
 
-Figure of dildo sword is the file "Items\Accessories\Equippables\sword2.png".
+Figure of dildo sword is the file "Items/Accessories/Equippables/sword2.png".
 
 To decide which figure-name is clothing-image of (C - a dildo sword):
 	decide on figure of dildo sword.
@@ -389,9 +389,12 @@ A giant rattle is a kind of equippable. A giant rattle is usually slap ready. A 
 Definition: A giant rattle (called S) is immune to change:
 	decide yes.
 
+Definition: a giant rattle (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
+
 The printed name of giant rattle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]giant rattle[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of giant rattle is "rat".
 
-Figure of giant rattle is the file "Items\Accessories\Equippables\rattle1.png".
+Figure of giant rattle is the file "Items/Accessories/Equippables/rattle1.png".
 
 To decide which figure-name is clothing-image of (C - a giant rattle):
 	decide on figure of giant rattle.
@@ -454,7 +457,60 @@ To decide which number is the damage improvement of (W - a voidblade):
 	decide on X.
 
 Definition: a voidblade (called W) is cult garb:
-	decide yes.	
+	decide yes.
+
+Section 7 - Sissy Slut's Longsword
+
+[gets stronger whenever you have a prostate orgasm]
+
+sissy-sword is a sword. sissy-sword is unique. sissy-sword has a number called charge. 
+
+The printed name of sissy-sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sissy slut's longsword[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sissy-sword is "ssl". Understand "ssh", "sissy", "slut", "slut's", "longsword", "long" as sissy-sword.
+
+Definition: sissy-sword (called C) is sissifying:
+	decide yes.
+	[if there is a worn chastity cage or there is a worn ass plugging clothing, decide yes;
+	decide no.]
+
+To decide which number is the delicateness-influence of (C - a sissy-sword):
+	let X be 0;
+	increase X by the magic-modifier of C;
+	if C is blessed, decide on X;
+	if C is cursed, decide on X + 3;
+	decide on X + 2.
+
+To compute periodical effect of (S - sissy-sword):
+	if the charge of S > 0 and the player is not live fucked:[Your sword won't lose charge while you're having sex]
+		decrease the charge of S by 2;
+		if the charge of S > 0, say "[one of]Your [ShortDesc of S] grows slightly cooler[or][or][or][cycling]";
+		otherwise say "The [ShortDesc of S] cools off completely.".
+
+To say SwordDesc of (S - a sissy-sword):[I always use pink, so I described it as blue. It can always be changed]
+	let C be the number of worn chastity cages + the number of worn ass plugging clothing;
+	say "A sword that's really more of a dagger. The blade is four inches long, with a [if C <= 0]angry red[otherwise if the charge of S > 50]powder blue[otherwise if the charge of S > 0]light blue[otherwise]dark, crystalline blue[end if] gemstone set into the hilt, which is [if the charge of S > 50]rather warm[otherwise if the charge of S > 0]slightly warm[otherwise]strangely cool[end if] to the touch. [unless C > 0]For some reason, it seems like it doesn't accept you.[end if]".
+
+To decide which number is the damage improvement of (W - sissy-sword):
+	if the number of worn chastity cages + the number of worn ass plugging clothing is 0, decide on -3;
+	let X be 2;
+	increase X by the magic-modifier of W;
+	if the player is a sissy, increase X by 2;
+	if the charge of W > 50, increase X by 2;
+	if the charge of W > 0, increase X by 1;
+	increase X by the semen volume of belly / 3;[can get strong quickly, but is high risk]
+	decide on X.
+
+To compute attack of (W - sissy-sword) at (M - a monster):
+	say "You [one of]lean close to[or]get in close to[or]get very close to[or]get very close to[at random] [NameDesc of M] and [one of]swipe at [him of M] with your[or]poke [him of M] with your[or]slash [him of M] with your[at random] [ShortDesc of W].".
+
+This is the sissy-swords butt slut rule:
+	if sissy-sword is worn, increase the desirability of asshole by 10.
+The sissy-swords butt slut rule is listed in the butt slut eligibility rules.
+
+This is the sissy-swords resolution rule:
+	if sissy-sword is worn and the player is male and (there is a worn chastity cage or there is a worn ass plugging clothing):
+		say "Your [ShortDesc of sissy-sword] emits a burst of warmth as the gemstone in the hilt turns a shade of bright blue.";
+		increase the charge of sissy-sword by a random number between 60 and 70.
+The sissy-swords resolution rule is listed in the orgasm resolution rules.
 
 Swords ends here.
 

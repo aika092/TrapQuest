@@ -202,6 +202,18 @@ To RandomAddictUp (X - a number):[###Should this have a chance at increasing tit
 		if N is 3, VaginalSexAddictUp 1;
 		decrease X by 1.
 
+[!<FuckholeAddictDownX>+
+
+REQUIRES COMMENTING
+
++!]
+To FuckholeAddictDown (X - a number):
+	while X > 0:
+		let N be a random number between 1 and 2;
+		if N is 1 and the player is female, VaginalSexAddictDown 1;
+		otherwise AnalSexAddictDown 1;
+		decrease X by 1.
+
 [!<Player>@<fuckedCount:Integer>*
 
 The number of times the player has had submissive sex with unfriendly monsters

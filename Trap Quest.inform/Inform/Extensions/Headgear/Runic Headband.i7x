@@ -1,7 +1,7 @@
 Runic Headband by Headgear begins here.
 
 
-A runic headband is a kind of headgear. A runic headband is usually silk. There is 1 runic headband. Figure of runic headband is the file "Items\Accessories\Head\runicheadband1.png". A runic headband is usually hair growing. A runic headband is usually roleplay.
+A runic headband is a kind of headgear. A runic headband is usually silk. There is 1 runic headband. Figure of runic headband is the file "Items/Accessories/Head/runicheadband1.png". A runic headband is usually hair growing. A runic headband is usually roleplay.
 
 Definition: a runic headband (called C) is fluid immune:
 	decide yes.

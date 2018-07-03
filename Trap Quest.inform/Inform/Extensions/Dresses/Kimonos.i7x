@@ -16,7 +16,7 @@ To say ShortDesc of (C - an illusory kimono):
 To decide which figure-name is clothing-image of (C - an illusory kimono):
 	decide on figure of kimono.
 
-Figure of kimono is the file "Items\Clothes\Upper\Special\kimono1.png".
+Figure of kimono is the file "Items/Clothes/Upper/Special/kimono1.png".
 
 To say ClothingDesc of (C - an illusory kimono):
 	say "A beautiful flower-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. ".

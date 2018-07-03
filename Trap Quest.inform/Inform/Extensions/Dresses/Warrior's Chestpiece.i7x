@@ -47,13 +47,17 @@ The printed name of ornate warrior chestpiece is usually "[TQlink of item descri
 
 There is 1 ornate warrior chestpiece.
 
-Figure of ornate warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior1.png".
+Figure of ornate warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior1.png".
 
 To decide which figure-name is clothing-image of (C - an ornate warrior chestpiece):
 	decide on figure of ornate warrior chestpiece.
 
 To say ClothingDesc of (O - an ornate warrior chestpiece):
 	say "This is less of a bra and more of a metal chestpiece, by beginning at your shoulders and your sides, travelling around your neck and underneath your bustline and narrowing and ending at your nipples from below, it manages to provide some protection to your upper chest whilst completely exposing essentially the entirety of your breasts. An ornate golden necklace shaped out of what seems to be hearts and religious iconography sits proudly on top of your cleavage, but hides nothing.[line break]It is impossible to wear other necklaces or collars whilst wearing this chestpiece.".
+
+Definition: an ornate warrior chestpiece (called C) is heart themed:
+	decide yes.
+
 
 To decide which number is the initial outrage of (C - an ornate warrior chestpiece):
 	decide on 8.
@@ -70,7 +74,7 @@ The printed name of leaf pattern warrior chestpiece is usually "[TQlink of item 
 
 There is 1 leaf pattern warrior chestpiece.
 
-Figure of leaf pattern warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior3.png".
+Figure of leaf pattern warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior3.png".
 
 To decide which figure-name is clothing-image of (C - a leaf pattern warrior chestpiece):
 	decide on figure of leaf pattern warrior chestpiece.
@@ -87,6 +91,10 @@ To decide which number is the heaviness of (C - a leaf pattern warrior chestpiec
 To decide which object is the potential-upgrade-target of (C - a leaf pattern warrior chestpiece):
 	decide on a random off-stage ornate warrior chestpiece.
 
+Definition: a leaf pattern warrior chestpiece (called C) is untransformable:
+	if the class of the player is virgin warrior and C is not upgradable, decide yes; [Sometimes the ornate warrior chestpiece won't spawn because the neck slot is already taken]
+	decide no.
+
 Part 3 - Reinforced Warrior Chestpiece
 
 A reinforced warrior chestpiece is a kind of holy warrior chestpiece. A reinforced warrior chestpiece is usually high cut. A reinforced warrior chestpiece is usually belly covering. 
@@ -95,7 +103,7 @@ The printed name of reinforced warrior chestpiece is usually "[TQlink of item de
 
 There is 1 reinforced warrior chestpiece.
 
-Figure of reinforced warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior4.png".
+Figure of reinforced warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior4.png".
 
 To decide which figure-name is clothing-image of (C - a reinforced warrior chestpiece):
 	decide on figure of reinforced warrior chestpiece.
@@ -120,7 +128,7 @@ The printed name of plate warrior chestpiece is usually "[TQlink of item describ
 
 There is 1 plate warrior chestpiece.
 
-Figure of plate warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior2.png".
+Figure of plate warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior2.png".
 
 To decide which figure-name is clothing-image of (C - a plate warrior chestpiece):
 	decide on figure of plate warrior chestpiece.
@@ -142,7 +150,7 @@ The printed name of hide warrior chestpiece is usually "[TQlink of item describe
 
 There is 1 hide warrior chestpiece.
 
-Figure of hide warrior chestpiece is the file "Items\Clothes\Upper\Special\Warrior\warrior5.png".
+Figure of hide warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior5.png".
 
 To decide which figure-name is clothing-image of (C - a hide warrior chestpiece):
 	decide on figure of hide warrior chestpiece.
@@ -169,7 +177,7 @@ Part 6 - Golden Warrior Priestess Outfit
 
 A golden warrior priestess outfit is a kind of immodest warrior chestpiece. There is 1 golden warrior priestess outfit. A golden warrior priestess outfit is usually metal. A golden warrior priestess outfit is usually super-short. A golden warrior priestess outfit is usually belly exposing. A golden warrior priestess outfit is usually ridiculously low cut. A golden warrior priestess outfit is usually totally-exclusive.
 
-Figure of golden warrior priestess outfit is the file "Items\Clothes\Upper\Special\Warrior\priestess5.png".
+Figure of golden warrior priestess outfit is the file "Items/Clothes/Upper/Special/Warrior/priestess5.png".
 
 The printed name of golden warrior priestess outfit is usually "[TQlink of item described][clothing-title-before]golden warrior priestess outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden warrior priestess outfit is "gpo".
 
@@ -204,6 +212,46 @@ To compute virginity-loss of (H - a golden warrior priestess outfit):
 		now the humiliation of the player is 39999;
 	only destroy H.
 
+Part 7 - Virgin Magical Girl Outfit
+
+virgin magical girl outfit is an immodest warrior chestpiece. virgin magical girl outfit is knee-length. virgin magical girl outfit is belly exposing. virgin magical girl outfit is low cut. virgin magical girl outfit is totally-exclusive.
+
+Figure of virgin magical girl outfit is the file "Items/Clothes/Upper/Special/Warrior/magicaldress3.png".
+
+The printed name of virgin magical girl outfit is usually "[TQlink of item described][clothing-title-before]virgin magical girl outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of virgin magical girl outfit is "vmgo".
+
+To decide which figure-name is clothing-image of (C - virgin magical girl outfit):
+	decide on figure of virgin magical girl outfit.
+
+To say ClothingDesc of (C - virgin magical girl outfit):
+	say "This flimsy floral outfit consists of just a few small patches of fabric stuck to you in strategic locations and a sheer skirt that only covers your backside. Overall it covers your nipples and crotch but not much else. Emeralds adorn the golden neckline and belt sections, emphasising its magical nature.".
+
+To say ShortDesc of (C - virgin magical girl outfit):
+	say "magical girl outfit".
+
+To decide which number is the initial outrage of (C - virgin magical girl outfit):
+	decide on 6.
+
+Definition: virgin magical girl outfit (called C) is untransformable:
+	if the class of the player is virgin warrior or the class of the player is magical girl, decide yes;
+	decide no.
+
+Definition: virgin magical girl outfit (called C) is slitted:
+	decide yes.
+
+To compute virginity-loss of (H - virgin magical girl outfit):
+	say "As the [H] dissolves into nothingness, A burst of dark magical energy shoots out from your body and surges into every tentacle monster in the world, empowering them and growing them to their maximum size. You shiver with [joy (the bimbo of the player - 3)] [if there is a tentacle monster penetrating a fuckhole]as the tentacle inside you doubles and triples in size![otherwise if there is a tentacle monster in the location of the player]at the prospect of what's about to happen to you...[otherwise]at the prospect of having to battle your way through this place now that it is filled with very powerful and very very big tentacle monstrosities.[end if]";
+	repeat with M running through alive tentacle monsters:
+		now M is massive;
+		set up M;
+	decrease the virgin bonus of the player by 1;
+	only destroy H.
+
+To compute periodic effect of (H - virgin magical girl outfit):
+	let W be a random off-stage heart wand;
+	if W is actually summonable:
+		say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+		summon W.
 
 Warrior's Chestpiece ends here.
 

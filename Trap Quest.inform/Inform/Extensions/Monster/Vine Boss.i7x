@@ -15,7 +15,7 @@ To decide which figure-name is the monster-image of (M - vine boss):
 
 To say MonsterDesc of (M - vine boss):
 	say "[one of]A 10 foot mass of seething plant matter, with primitive club-like arms and a pair of beady red eyes. Its body is supported by a trunk of interwoven vines, but the centre and top looks vaguely like a giant flower.[or]A sentient mass of seething plant matter. Its [']body['] is supported by a vast network of living vines, all of which seem to perk up at your presence. You can feel invisible eyes peering at you from the giant pink flower that makes its [']head['] boring holes through your skull.[in random order]";
-	say "[if the bimbo of the player > 15][line break][second custom style][one of]I can't get away. I guess I'll just have to get on my knees then![or]It looks strong! Strong enough to hold me down for a good LONG time![in random order][otherwise if the bimbo of the player > 5][line break][variable custom style][one of]I'm trapped down here. I wonder what it's going to do to me.[or]Some of these vines look a lot like bellends. Oh no...[or]If the vines are penises, I wonder where its balls are.[in random order][otherwise if the player is female][line break][first custom style][one of]It's terrifying![or]What is THAT?![or]I don't think I can fight it...but I don't think I have any choice.[or]I don't want any of those vines to touch me.[or]It looks extremely powerful.[in random order][otherwise][first custom style][one of]I'm getting a final boss vibe here.[or]I'm not scared, but...I still want to get out of here.[or]It would be less scary with tits.[or]Nowhere to run. Me or the monster.[or]It looks pretty powerful. But it can't be prepared for THESE GUNS![in random order][end if][roman type][line break]".
+	say "[if the bimbo of the player > 15][line break][second custom style][one of]I can't get away. I guess I'll just have to get on my knees then![or]It looks strong! Strong enough to hold me down for a good LONG time![in random order][otherwise if the bimbo of the player > 5][line break][variable custom style][one of]I'm trapped down here. I wonder what it's going to do to me.[or]All those vines look so strong. Oh no...[or]This may have been a mistake...[in random order][otherwise if the player is female][line break][first custom style][one of]It's terrifying![or]What is THAT?![or]I don't think I can fight it...but I don't think I have any choice.[or]I don't want any of those vines to touch me.[or]It looks extremely powerful.[in random order][otherwise][first custom style][one of]I'm getting a final boss vibe here.[or]I'm not scared, but... I still want to get out of here.[or]Nowhere to run. Me or the monster.[or]It looks pretty powerful. But it can't be prepared for THESE GUNS![in random order][end if][roman type][line break]".
 
 To set up (M - vine boss):
 	reset M;
@@ -28,12 +28,6 @@ Definition: vine boss (called M) is concealment immune: [Can the monster ignore 
 
 Definition: vine boss (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
 	decide yes.
-
-This is the remove inappropriate bossfights rule:
-	remove vine boss from play;
-	repeat with V running through vines:
-		destroy V.
-The remove inappropriate bossfights rule is listed in the diaper quest fix rules.
 
 Part 1 - Perception
 
@@ -49,6 +43,33 @@ To say BecomesBoredFlav of (M - vine boss):
 Part 2 - Combat
 
 Section 1 - Attack
+
+Definition: vine boss (called M) is a tripper:
+	if diaper quest is 1, decide yes;
+	decide no.
+
+To decide which number is the tripping max of (M - vine boss): [he can trip you no matter what your attack type]
+	let D be the difficulty of M;
+	increase D by the trip hazard of the player * 2;
+	if attack-type is 3, now D is D * 2;
+	if attack-type is 0 or attack-type is 1, now D is D / 2;
+	if D < 1, decide on 1;
+	decide on D.
+
+To say MonsterTripAnnounceFlav of (M - vine boss):
+	say "[BigNameDesc of M] sends a vine swiping across the ground at your feet!".
+
+To say MonsterTrippedFlav of (M - vine boss):
+	say "It sends you flying off of your feet and face-planting into the ground!".
+
+To say MonsterFailedTripFlav of (M - vine boss):
+	say "You manage to hop over the vine like a skipping rope.".
+
+To say StrikingSuccessFlav of (M - vine boss) on (B - a body part):
+	say "[BigNameDesc of M] whips a powerful vine right [TargetName of B]!  Ouch!!".
+
+To say StrikingFailureFlav of (M - vine boss) on (B - a body part):
+	say "[BigNameDesc of M] sends a vine to whack you [TargetName of B] but you avoid it just in time!".
 
 To TimesFuckedUp (M - vine boss) by (N - a number):
 	DirectTimesFuckedUp M by N;
@@ -111,7 +132,7 @@ This is the do nothing while the player is vine fucked rule:
 The do nothing while the player is vine fucked rule is listed last in the vine boss attack rules.
 
 This is the vine boss spawns more vines rule:
-	if the number of vines in the location of the player is 0 or a random number between -6 and 4 > the number of vines in the location of the player:
+	if the number of vines in the location of the player is 0 or a random number between -6 and (4 - diaper quest) > the number of vines in the location of the player:
 		say "[BigNameDesc of current-monster] roars as [if the number of aggressive vines in the location of the player > 0]more [end if]vines squirm through the dirt towards you!";
 		let V be a random off-stage vines;
 		now V is in the location of the player;
@@ -121,32 +142,48 @@ This is the vine boss spawns more vines rule:
 The vine boss spawns more vines rule is listed last in the vine boss attack rules.
 
 This is the vine boss attacking ass covering clothing rule:
-	let C be a random worn top level ass protection clothing;
-	if C is clothing:
-		compute current-monster attacking C;
-		rule succeeds.
+	if diaper quest is 0:
+		let C be a random worn top level ass protection clothing;
+		if C is clothing:
+			compute current-monster attacking C;
+			rule succeeds.
 The vine boss attacking ass covering clothing rule is listed last in the vine boss attack rules.
 
 This is the vine boss removing butt plug rule:
-	let C be a random worn insertable thing penetrating asshole;
-	if C is a thing:
-		compute current-monster removing C;
-		rule succeeds.
+	if diaper quest is 0:
+		let C be a random worn insertable thing penetrating asshole;
+		if C is a thing:
+			compute current-monster removing C;
+			rule succeeds.
 The vine boss removing butt plug rule is listed last in the vine boss attack rules.
 
 This is the vine boss attacking pussy covering clothing rule:
-	let C be a random worn top level protection clothing;
-	if C is clothing:
-		compute current-monster attacking C;
-		rule succeeds.
+	if diaper quest is 0:
+		let C be a random worn top level protection clothing;
+		if C is clothing:
+			compute current-monster attacking C;
+			rule succeeds.
 The vine boss attacking pussy covering clothing rule is listed last in the vine boss attack rules.
 
 This is the vine boss removing cunt plug rule:
-	let C be a random worn insertable thing penetrating vagina;
-	if C is a thing:
-		compute current-monster removing C;
-		rule succeeds.
+	if diaper quest is 0:
+		let C be a random worn insertable thing penetrating vagina;
+		if C is a thing:
+			compute current-monster removing C;
+			rule succeeds.
 The vine boss removing cunt plug rule is listed last in the vine boss attack rules.
+
+This is the vine boss makes the player diapered rule:
+	if diaper quest is 1 and the number of worn diapers is 0:
+		let C be a random worn knickers;
+		if C is clothing:
+			compute current-monster attacking C;
+			if C is worn, destroy C;
+		let D be a random eligible diaper;
+		say "You watch as a couple of vines descend from above, holding a [MediumDesc of D] between them! Within moments they have fastened it onto you.";
+		summon D cursed;
+		rule succeeds.
+The vine boss makes the player diapered rule is listed last in the vine boss attack rules.
 
 This is the vine boss makes the player sore rule:
 	let R be a random number between 1 and 2;

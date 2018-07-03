@@ -12,7 +12,7 @@ bunny waitress ears is a bunny ears. bunny waitress ears is satin. bunny waitres
 Definition: bunny waitress ears (called C) is fluid immune:
 	decide no.
 
-Figure of bunny waitress ears is the file "Items\Accessories\Head\bunnyears1.png". 
+Figure of bunny waitress ears is the file "Items/Accessories/Head/bunnyears1.png". 
 
 The printed name of bunny waitress ears is "[TQlink of item described][clothing-title-before]pair of bunny ears[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny waitress ears is "bne".
 
@@ -75,7 +75,7 @@ To compute unique periodic effect of (C - bunny waitress ears):
 			now the service-ready of C is 1.
 
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):
-	if (the class of the player is bunny or serving table is worn) and bunny waitress ears is worn and M is intelligent and M is human and M is friendly and T is non-empty:
+	if ((the class of the player is bunny and bunny waitress ears is worn) or serving table is worn) and M is intelligent and M is human and M is friendly and T is non-empty:
 		if the fill-colour of T is golden or the fill-colour of T is murky or the fill-colour of T is creamy:
 			if M is female, decide on 2;
 		otherwise:
@@ -161,7 +161,7 @@ rubber bunny ears is a bunny ears. rubber bunny ears is latex. rubber bunny ears
 Definition: rubber bunny ears (called C) is fluid immune:
 	decide yes.
 
-Figure of rubber bunny ears is the file "Items\Accessories\Head\bunnyears2.png". 
+Figure of rubber bunny ears is the file "Items/Accessories/Head/bunnyears2.png". 
 
 The printed name of rubber bunny ears is "[TQlink of item described][clothing-title-before]latex bunny ears hood[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of rubber bunny ears is "lbe". Understand "hood" as rubber bunny ears.
 
@@ -228,9 +228,9 @@ To decide which object is the potential-upgrade-target of (C - black bunny hat):
 To decide which object is the potential-upgrade-target of (C - white-bunny-hat):
 	decide on a random off-stage brown bunny hat.
 
-Figure of black bunny hat is the file "Items\Accessories\Head\bunnyhat1.png". 
-Figure of white bunny hat is the file "Items\Accessories\Head\bunnyhat2.png". 
-Figure of brown bunny hat is the file "Items\Accessories\Head\bunnyhat3.png". 
+Figure of black bunny hat is the file "Items/Accessories/Head/bunnyhat1.png". 
+Figure of white bunny hat is the file "Items/Accessories/Head/bunnyhat2.png". 
+Figure of brown bunny hat is the file "Items/Accessories/Head/bunnyhat3.png". 
 
 To decide which figure-name is the clothing-image of (C - black bunny hat):
 	decide on figure of black bunny hat.
@@ -242,16 +242,16 @@ To decide which figure-name is the clothing-image of (C - brown bunny hat):
 	decide on figure of brown bunny hat.
 
 To say ClothingDesc of (H - black bunny hat):
-	say "A black woolen hat with pink bunny ears on top.".
+	say "A black woollen hat with pink bunny ears on top.".
 
 To say ClothingDesc of (H - white-bunny-hat):
-	say "A white woolen hat with pink bunny ears on top and a pink bow at the side.".
+	say "A white woollen hat with pink bunny ears on top and a pink bow at the side.".
 
 Definition: white-bunny-hat (called H) is bow themed:
 	decide yes.
 
 To say ClothingDesc of (H - brown bunny hat):
-	say "A brown woolen hat with floppy bunny ears at the side and a cute bunny face on the front.".
+	say "A brown woollen hat with floppy bunny ears at the side and a cute bunny face on the front.".
 	
 To say ShortDesc of (H - a bunny hat):
 	say "bunny hat".
@@ -301,7 +301,7 @@ Part 4 - Bunny Glasses
 
 bunny glasses is a bunny ears. bunny glasses is plastic.
 
-Figure of bunny glasses is the file "Items\Accessories\Head\bunnyears3.png". 
+Figure of bunny glasses is the file "Items/Accessories/Head/bunnyears3.png". 
 
 The printed name of bunny glasses is "[TQlink of item described][clothing-title-before]bunny glasses[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bunny glasses is "bgl".
 

@@ -31,7 +31,7 @@ Part 1 - Backless Negligee
 	
 A backless negligee is a kind of negligee. There is 1 backless negligee.
 
-Figure of backless negligee is the file "Items\Clothes\Upper\Exposing\Negligees\backlessnegligee1.png".
+Figure of backless negligee is the file "Items/Clothes/Upper/Exposing/Negligees/backlessnegligee1.png".
 
 To decide which figure-name is clothing-image of (C - a backless negligee):
 	decide on figure of backless negligee.
@@ -43,7 +43,7 @@ Part 2 - Lacy Negligee
 
 A lacy negligee is a kind of negligee. There is 1 lacy negligee. A lacy negligee is usually super-short. A lacy negligee is usually ridiculously low cut. 
 
-Figure of lacy negligee is the file "Items\Clothes\Upper\Exposing\Negligees\negligee1.png".
+Figure of lacy negligee is the file "Items/Clothes/Upper/Exposing/Negligees/negligee1.png".
 
 To decide which figure-name is clothing-image of (C - a lacy negligee):
 	decide on figure of lacy negligee.

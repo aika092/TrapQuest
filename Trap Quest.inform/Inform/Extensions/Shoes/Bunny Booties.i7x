@@ -7,7 +7,7 @@ The printed name of bunny booties is "[TQlink of item described][item style][clo
 To decide which figure-name is the clothing-image of (H - bunny booties):
 	decide on the figure of bunny booties.
 
-Figure of bunny booties is the file "Items\Clothes\Lower\Feet\Booties\booties3.png".
+Figure of bunny booties is the file "Items/Clothes/Lower/Feet/Booties/booties3.png".
 
 To decide which number is the unique cringe of (C - bunny booties):
 	decide on 12.
@@ -28,6 +28,9 @@ To set up influence of (C - bunny booties):
 	now C is diaper-addiction-influencing.
 
 Definition: bunny booties (called C) is untransformable:
+	decide yes.
+
+Definition: a bunny booties (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
 Bunny Booties ends here.

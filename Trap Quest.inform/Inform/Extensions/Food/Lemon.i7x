@@ -1,6 +1,6 @@
 Lemon by Food begins here.
 
-A lemon is a kind of snack. The printed name of lemon is "[TQlink of item described]lemon[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of lemon is "[TQlink of item described]lemons[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of lemon is "le". The description of lemon is "A smallish lemon that you could eat. It would probably be quite sour". There are 4 lemons.
+A lemon is a kind of snack. The printed name of lemon is "[TQlink of item described]lemon[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of lemon is "[TQlink of item described]lemons[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of lemon is "lem". The description of lemon is "A smallish lemon that you could eat. It would probably be quite sour". There are 4 lemons.
 
 To say ShortDesc of (C - a lemon):
 	say "lemon".

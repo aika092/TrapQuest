@@ -10,14 +10,10 @@ Definition: a buttslut tattoo (called B) is drawable:
 	decide no.
 To say tattoo-desc of (T - a buttslut tattoo):
 	if images visible is 1, display figure of buttslut tattoo;
-	say "The words BUTT SLUT cover the entirety of your [if the thickness of hips > 7]giant[otherwise if the thickness of hips > 5]huge[end if] ass cheeks, in a large and colourful classic tattoo font.[line break][if the bimbo of the player < 7][line break][variable custom style]But I'm not! *sob*[otherwise if the bimbo of the player < 14][variable custom style]Well now everything is going to aim for my [asshole], isn't it?![otherwise][line break][second custom style]This way everything and everyone knows that my [asshole] is open for business![end if][roman type][line break]".
+	say "The words BUTT SLUT cover the entirety of your [if the thickness of hips > 7]giant[otherwise if the thickness of hips > 5]huge[end if] ass cheeks, in a large and colourful classic tattoo font.[line break][if the anal sex addiction of the player < 3][line break][variable custom style]But I'm not! *sob*[otherwise if the anal sex addiction of the player < 7][variable custom style]Well now everything is going to aim for my [asshole], isn't it?![otherwise][line break][second custom style]This way everything and everyone knows that my [asshole] is open for business![end if][roman type][line break]".
 To decide which number is the initial outrage of (T - a buttslut tattoo):
 	decide on 13.
-[!<TheButtslutTattooButtSlutRule>+
 
-Increases the chance of anal sex
-
-+!]
 This is the buttslut tattoo butt slut rule:
 	if there is a worn buttslut tattoo, increase the desirability of asshole by 5.
 The buttslut tattoo butt slut rule is listed in the butt slut eligibility rules.

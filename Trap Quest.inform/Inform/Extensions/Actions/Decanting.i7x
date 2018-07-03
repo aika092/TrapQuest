@@ -10,7 +10,7 @@ Check decanting something with:
 	if the second noun is the dungeon altar, try praying instead;
 	if the second noun is the woods altar, try praying instead;
 	if the second noun is alchemist's table, try crafting instead;
-	if the second noun is container or the noun is orifice, try inserting the noun into the second noun instead;
+	if the second noun is container or the second noun is orifice, try inserting the noun into the second noun instead;
 	if the noun is lubricant and the second noun is not dispenser, try orilubing the noun with the second noun instead;
 	if the noun is knife, try knifing the second noun with the noun instead;
 	if the noun is salve, try salverubbing the noun on the second noun instead;
@@ -41,7 +41,7 @@ Carry out decanting something with:
 		let B be a random number between 0 and 5;
 		if the corruption of the sacred pool > 150 or the charge of the noun > 0, now B is a random number between 6 and 10;
 		let D be the Appearance corresponding to an Magic of B in the Table of Drinks;
-		say "You dip the [noun] into the [second noun] and take it back out with a serving of [D] liquid. ";
+		say "You dip the [ShortDesc of the noun] into the [MediumDesc of the second noun] and take it back out with a serving of [D] liquid. ";
 		now the fill-colour of the noun is fill-colour of the second noun;
 		now the doses of the noun is the max-doses of the noun;
 		if B < 6, increase the corruption of the sacred pool by the max-doses of the noun * 3;

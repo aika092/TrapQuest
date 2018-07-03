@@ -9,9 +9,9 @@ To decide which figure-name is the clothing-image of (H - a wedge heels):
 	if H is pvc, decide on the figure of pvc wedge heels;
 	if H is satin, decide on the figure of satin wedge heels.
 
-Figure of pvc wedge heels is the file "Items\Clothes\Lower\Feet\Heels\Wedge\wedge1.png".
-Figure of leather wedge heels is the file "Items\Clothes\Lower\Feet\Heels\Wedge\wedge2.png".
-Figure of satin wedge heels is the file "Items\Clothes\Lower\Feet\Heels\Wedge\wedge3.png".
+Figure of pvc wedge heels is the file "Items/Clothes/Lower/Feet/Heels/Wedge/wedge1.png".
+Figure of leather wedge heels is the file "Items/Clothes/Lower/Feet/Heels/Wedge/wedge2.png".
+Figure of satin wedge heels is the file "Items/Clothes/Lower/Feet/Heels/Wedge/wedge3.png".
 
 To decide which number is the unique outrage of (C - a wedge heels):
 	decide on -1.
@@ -29,6 +29,11 @@ To decide which number is the original price of (C - a wedge heels):
 To say ClothingDesc of (C - a wedge heels):
 	say "A pair of [heel-height of C] inch wedge [if C is leather]heels made of black leather patterer with pink and white alt-girl hearts and skeletons.[otherwise if C is pvc]boots made of some combination of PVC, other plastics and cardboard. They have a slutty leopard print and open toes.[otherwise if C is satin]heels that are smart and black. Relatively modest compared to most of the clothes you've seen in this game.[end if]";
 	say "[SteadinessDesc of C]".
+
+Definition: a wedge heels (called C) is heart themed:
+	if C is leather, decide yes;
+	decide no.
+
 
 To uniquely set up (C - a wedge heels):
 	if C is pvc, now the text-shortcut of C is "pwh";

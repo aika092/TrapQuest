@@ -38,7 +38,7 @@ To say MonsterDesc of (M - mechanic):
 		if lady fetish is 1:
 			say "[first custom style][one of]She's not just hot, she's got style too![or]She doesn't seem like my type.[or]I bet she's the one behind all the robots. Maybe she'll agree to turn them off if I give her a good dicking.'[or][big he of M] looks like the star in some cheap porn movie, but that's my favorite kind![in random order][roman type][line break]";	
 		otherwise:
-			say "[first custom style][one of]Where did he get those clothes? He looks awesome!'[or]Seems like a normal dude. I wonder how he managed to get this far?[or]He must be the one responsible for all the robots I[']ve been seeing. Maybe he knows a way to turn them off?'[or]He looks like the male star in a cheap porn movie, but its probably better than walking around in a skirt![in random order][roman type][line break]";	
+			say "[first custom style][one of]Where did he get those clothes? He looks awesome!'[or]Seems like a normal dude. I wonder how he managed to get this far?[or]He must be the one responsible for all the robots I[']ve been seeing. Maybe he knows a way to turn them off?'[or]He looks like the male star in a cheap porn movie, but it's probably better than walking around in a skirt![in random order][roman type][line break]";	
 	otherwise if the bimbo of the player < 4:
 		say "[first custom style][one of]There is obviously something wrong with [him of M]. Just look at those clothes.'[or]Typical. Even authority figures in this game have no choice but to dress like that.'[or][big he of M] might be another player, but, [he of M] doesn't look affected at all.'[in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 8 and the player is male:
@@ -46,7 +46,7 @@ To say MonsterDesc of (M - mechanic):
 	otherwise if the bimbo of the player < 8:
 		say "[first custom style][one of][big his of M] wrench is so big and hard. I could probably use it to protect myself from all the perverts around here!'[or][big he of M][']s pretty good looking. Obviously I[']d never give nintendolls the pleasure, but at least they know what to model for.'[or]I can[']t keep from looking at [his of M] crotch. Those fucking nintendolls must be messing with my head!'[in random order][roman type][line break]";	
 	otherwise if the bimbo of the player < 12:
-		say "[variable custom style][one of]I[']d play with [his of M] wrench! Wait...'[or][big he of M] looks really intelligent. Totallyfuckbuddy material, as long as [he of M] respects my boundaries!'[or]I can[']t stop myself from staring at [his of M] [if full-lady fetish is 1]crotch. I[']m not even that attracted to [him of M], but I just know [his of M] dick is really big[otherwise]belt. Its not really fair to have so many toys out in the open like that[end if]!'[in random order][roman type][line break]";
+		say "[variable custom style][one of]I[']d play with [his of M] wrench! Wait...'[or][big he of M] looks really intelligent. Totallyfuckbuddy material, as long as [he of M] respects my boundaries!'[or]I can[']t stop myself from staring at [his of M] [if full-lady fetish is 1]crotch. I[']m not even that attracted to [him of M], but I just know [his of M] dick is really big[otherwise]belt. It's not really fair to have so many toys out in the open like that[end if]!'[in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 16:
 		say "[second custom style][one of]I'd play with [his of M] wrench. All night if [he of M] let me...[or][big he of M][']s SO cute, but, I don[']t want to just get on my knees right away. I should cook [him of M] dinner first.'[or]I bet [he of M]'s the smart guy that made all those fun robots!'[in random order][roman type][line break]";
 	otherwise:
@@ -131,10 +131,21 @@ To compute motion of (M - mechanic):
 Part 1 - Perception
 
 To decide which number is the bimbo tolerance of (M - mechanic):
-	decide on 9.
+	if diaper quest is 1, decide on 8;
+	decide on 12.
+
+To decide which number is the outrage tolerance of (M - mechanic):
+	if diaper quest is 1, decide on 5;
+	decide on 8.
+
+To decide which number is the bab tolerance of (M - mechanic):
+	decide on 13.
 
 To decide which number is the cringe tolerance of (M - mechanic):
 	decide on 9.
+
+To say BecomesAggressive of (M - a mechanic):
+	say "[big he of M] [if diaper quest is 0]unzips [his of M] jeans[otherwise]grips his wrench menacingly[end if][line break][speech style of M]'[one of]I guess I've reached my limit.'[or]I think it's time we take our relationship to the next level.'[or]It'd be a crime NOT to do this, really...'[in random order][roman type][line break]".
 
 To compute perception of (M - mechanic):
 	now M is interested;
@@ -160,7 +171,7 @@ To compute perception of (M - mechanic):
 	otherwise if (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
 		distract M;
-	otherwise if diaper quest is 1 and ((there is a worn currently visible diaper and M is not uniquely unfriendly) or M is aware that the player needs a change):
+	otherwise if diaper quest is 1 and ((there is a worn currently at least partially visible diaper and M is not uniquely unfriendly) or M is aware that the player needs a change):
 		compute diaper check of M;
 	otherwise if the diaper-duration of M > 0:
 		if there is a worn diaper:
@@ -179,23 +190,31 @@ To compute perception of (M - mechanic):
 		say "[speech style of M]'[if diaper quest is 0]Hey, [bitch]. [end if]You obviously don[']t know anything about that outfit you[']re wearing. Let me teach you a little lesson.'[roman type][line break]";
 		anger M;
 	otherwise if M is objectifying the player:
-		say "[speech style of M]'You look like you're up for a fuck. Let's get it on.' [if the sex addiction of the player < 12][line break][variable custom style]Uh-oh...[end if][roman type][line break]";
+		say "[speech style of M]'You look like you're up for a fuck. Let's get it on.'[roman type][line break][if the sex addiction of the player < 12][variable custom style]Uh-oh...[roman type][line break][end if]";
 		anger M;
 	otherwise if M is babifying the player:
-		say "[speech style of M]'You look like a stupid big baby!  Let me help you enjoy yourself...'  [roman type][if the bimbo of the player < 12]Uh-oh...[otherwise][line break][end if]";
+		say "[speech style of M]'You look like a stupid big baby!  Let me help you enjoy yourself...'[roman type][line break][if the bimbo of the player < 12][variable custom style]Uh-oh...[roman type][line break][end if]";
 		anger M;
 	otherwise if the player is prone and M is not retaining a random mystical amulet:
-		say "[speech style of M]'Hey there, you look like you could use some help. Stay there for a moment, and let me give you this gift...'  [roman type][line break]";
+		say "[speech style of M]'Hey there, you look like you could use some help. Stay there for a moment, and let me give you this gift...'[roman type][line break]";
 		anger M;
 	otherwise if M is unfriendly:
 		say "[speech style of M]'[if diaper quest is 0]You know what time it is, [slut][otherwise]I'm still angry with you. I dare you to fight me again[end if].'[roman type][line break]";
-	otherwise if diaper quest is 1 and M is retaining a random mystical amulet and M is retaining a pink spraybottle:
+	otherwise if diaper quest is 0 and M is retaining a random mystical amulet and M is retaining a pink spraybottle:
 		let S be a random pink spraybottle retained by M;
 		now S is spray;
-		say "[speech style of M]'Hey there. I guess it's time I returned this to you.'[roman type] [BigNameDesc of M] hands you another [ShortDesc of S].";
+		say "[speech style of M]'Hey there. I guess it's time I returned this to you.'[roman type][line break][BigNameDesc of M] hands you another [ShortDesc of S].";
 		now S is held by the player;
 		now S is not retained by M;
 		now M is not withholding S;
+	otherwise if M is cringe disapproving:
+		say "[speech style of M]'I know I'm technically staff, but there are limits to how ridiculous a person can look before I myself can't help but enjoy a play session with them...'[roman type][line break]";
+		FavourDown M;
+		if M is unfriendly, say BecomesAggressive of M;
+	otherwise if M is outrage disapproving:
+		say "[speech style of M]'[if diaper quest is 0][one of]Dayum girl, you're making it difficult for me to keep my hands off of the merchandise, you know? Unless you're one of those 'free use' fetishists... Maybe you want me to fuck you[or]Your appearance still screams 'free use', you know[stopping][otherwise]Wow, you look pretty hot, babe! But you know this is an ADULT BABY fetish hotel, right? You're supposed to look like a pathetic baby, not a glamour model[end if].'[roman type][line break]";
+		FavourDown M;
+		if M is unfriendly, say BecomesAggressive of M;
 	otherwise:
 		say "[speech style of M]'Hey there. [if M is retaining a random mystical amulet]Thanks again for the amulet.'[otherwise]Enjoying your stay?'[end if][roman type][line break]";
 		calm M.
@@ -300,7 +319,7 @@ To compute xavier reward of (M - mechanic):
 	otherwise if R is 2:
 		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. Instead of pain, though, you just feel your joints tingling, as if being massaged by a thousand tiny fingers. After a few moments, the lightning stops. You feel FLEXIBLE!";
 		DexUp 4;
-	otherwise if R is 3 and J is actually summonable and the player is male and the player is the donator:
+	otherwise if R is 3 and J is actually summonable and the player is male:
 		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your crotch. Light converges around your [ShortDesc of penis] and a [printed name of J] materializes around your waist! You feel dominant!";
 		summon J;
 		bless J;

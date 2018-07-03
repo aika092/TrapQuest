@@ -10,9 +10,9 @@ To compute SelfExamineDesc of (O - a royal dress):
 To say ShortDesc of (O - a royal dress):
 	say "pink silky royal dress";
 
-Figure of Royal Dress 1 is the file "Items\Clothes\Upper\Dresses\Royal\royaldress1.png". 
-Figure of Royal Dress 2 is the file "Items\Clothes\Upper\Dresses\Royal\royaldress2.png".
-Figure of Royal Dress 3 is the file "Items\Clothes\Upper\Dresses\Royal\royaldress3.png".
+Figure of Royal Dress 1 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress1.png". 
+Figure of Royal Dress 2 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress2.png".
+Figure of Royal Dress 3 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress3.png".
 
 To decide which number is the intelligence-influence of (O - a royal dress):
 	let I be 1;
@@ -83,6 +83,9 @@ To say ShortDesc of (O - a baby royal dress):
 Definition: a baby royal dress (called O) is fetish appropriate:
 	if the player is diapered, decide yes;
 	decide no.
+
+Definition: a baby royal dress (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
 Definition: a baby royal dress (called C) is untransformable:
 	if the class of the player is princess, decide yes;

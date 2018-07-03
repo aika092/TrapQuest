@@ -209,14 +209,14 @@ REQUIRES COMMENTING
 To Jump From The Dildo:
 	now seconds is 6;
 	let Y be a random trap penetrating a fuckhole;
+	let H be a random worn hindrance-enabling shoes;
 	if the player is clothing stuck:
 		let C be a random stuck clothing worn by the player;
 		if C is cursed:
 			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
 		otherwise:
 			say "You can't jump because your [printed name of C] is stuck in place.";
-	otherwise if there are worn heels:
-		let H be a random worn heels;
+	otherwise if H is shoes:
 		let D be the dexterity of the player;
 		let W be the weight of the player;
 		let Hi be the hindrance of H + (W / 5);
@@ -224,26 +224,26 @@ To Jump From The Dildo:
 			if sex fainting is 0:
 				compute automatic jump success of Y;
 			otherwise:
-				say "You aren't steady enough to jump in these heels, there's just no way you can use your ankles to jump with these on!";
+				say "You aren't steady enough to jump in these [ShoeType of H], there's just no way you can use your ankles to jump with these on!";
 		otherwise if Hi / 2 > D:
 			if sex fainting is 0:
 				compute automatic jump success of Y;
 			otherwise:
-				say "Your body is just too heavy[if the hindrance of H > 1] and your heels are too high[end if], you don't have the dexterity you need to jump off the dildo!";
+				say "Your body is just too heavy[if the hindrance of H > 1] and your [ShoeType of H] are too high[end if], you don't have the dexterity you need to jump off the dildo!";
 		otherwise:
 			let R be a random number between Hi / 2 and Hi;
 			if debugmode is 1, say "[line break]Player [D * 5].5 | [R] Dildo Pole[line break]";
 			if D < R:
 				if Y is penetrating vagina:
-					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
+					say "You manage to jump whilst in your [ShoeType of H] and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 					ruin vagina;
 					if Y is creampie pole trap, PussyFill 2;
 				otherwise:
-					say "You manage to jump whilst in your heels and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
+					say "You manage to jump whilst in your [ShoeType of H] and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 					ruin asshole;
 					if Y is creampie pole trap, assFill 2;
 			otherwise:
-				say "You manage to jump whilst in your heels and the dildo exits you, and luckily you jump high enough that it misses your crotch on the way back down, and bends at an awkward angle.";
+				say "You manage to jump whilst in your [ShoeType of H] and the dildo exits you, and luckily you jump high enough that it misses your crotch on the way back down, and bends at an awkward angle.";
 				now busy is 0;
 				if a random number between 1 and 6 is 1, HairRedDown 1;
 				repeat with X running through all dildo traps:

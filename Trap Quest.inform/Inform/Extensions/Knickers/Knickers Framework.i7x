@@ -145,7 +145,7 @@ Report wearing knickers:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
 		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][line break][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][line break][end if] conform to the contours of your [HipDesc] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable!  [end if]These panties are cursed!"; [Written by Anya Snowdrifter]
 	if the size of penis > the penis-capacity of the noun and the noun is crotch-intact and the noun is pussy covering:
-		say "Your [ShortDesc of penis] [if penis is exposed]remains visible, peeking[otherwise]peeks[end if] out the side of the fabric.".
+		unless there is a worn chastity cage, say "Your [ShortDesc of penis] [if penis is exposed]remains visible, peeking[otherwise]peeks[end if] out the side of the fabric.".
 
 
 Check taking off worn knickers:
@@ -160,6 +160,30 @@ Check taking off worn knickers:
 		try tearing off the noun;
 		if the noun is glued:
 			do nothing instead.
+
+
+Include Plug Panties by Knickers.
+Include Cutoffs by Knickers.
+Include Bikini Bottoms by Knickers.
+Include Crotch Rope by Knickers.
+Include Pouch Panties by Knickers.
+Include Crotchless Panties by Knickers.
+Include Cum Dump's Undergarment by Knickers.
+Include Hotpants by Knickers.
+Include Bloomers by Knickers.
+Include Microshorts by Knickers.
+Include Demon Lord's Codpiece by Knickers.
+
+Include Undies by Knickers.
+Include G-strings by Knickers.
+Include Thongs by Knickers.
+Include Briefs by Knickers.
+Include Panties by Knickers.
+
+
+Include Diaper Framework by Knickers.
+Include Diapers by Knickers.
+Include Diaper Covers by Knickers.
 
 Knickers Framework ends here.
 

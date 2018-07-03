@@ -95,6 +95,7 @@ choice
 0 [christmas content]
 0 [easter content] [currently does nothing]
 0 [april fools content]
+1 [futanari fetish]
 
 
 [!<DecideWhichNumberIsPlayerGender>+
@@ -374,7 +375,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is trap fetish:
-	if diaper quest is 1, decide on 0;
+	if diaper quest is 1 or (the player is male and TG fetish is 0), decide on 0;
 	decide on choice in row 34 of the Table of Player Options.
 
 [!<DecideWhichNumberIsMindbreakProtection>+
@@ -643,7 +644,7 @@ To decide which number is lady fetish:
 	[decide on 1.][might have three possibilities at full effectiveness, but for sanity's sake I'm acting as if it would only be 0 or 1]
 
 To decide which number is full-lady fetish:[lady fetish should come with a disclaimer that futa may be unavoidable. full-lady indicates that futa is off and lady fetish is on]
-	if lady fetish is 1 and trap fetish is 1, decide on 1;
+	if lady fetish is 1 and futanari fetish is 0, decide on 1;
 	decide on 0.
 
 [!<DecideWhichNumberIsStartingBodyShape>+
@@ -665,16 +666,19 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	if the player is not a march 2018 top donator, decide on 0;
+	if the player is not a march 2018 top donator and the player is not a march 2018 diaper donator, decide on 0;
 	decide on the choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
-	if the player is not a march 2018 top donator, decide on 0;
+	if the player is not a march 2018 top donator and the player is not a march 2018 diaper donator, decide on 0;
 	decide on the choice in row 66 of the Table of Player Options.
 
 To decide which number is april fools content:
-	if the player is not a march 2018 top donator, decide on 0;
+	if the player is not a march 2018 top donator and the player is not a march 2018 diaper donator, decide on 0;
 	decide on the choice in row 67 of the Table of Player Options.
+
+To decide which number is futanari fetish:
+	decide on the choice in row 68 of the Table of Player Options.
 
 [!<AThingIsAFlatchestedTrap>+
 
@@ -746,6 +750,7 @@ Include Benefit Options by Fetish Settings.
 Include DQ Benefit Options by Fetish Settings.
 Include Background Options by Fetish Settings.
 Include Secret Options by Fetish Settings.
+Include Body Limit Options by Fetish Settings.
 Include Festive Options by Fetish Settings.
 
 Part - Points

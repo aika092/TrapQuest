@@ -7,6 +7,7 @@ Definition: a true love tattoo (called T) is drawable:
 	if max breast size < 5, decide no;
 	decide yes.
 Definition: a true love tattoo (called T) is eligible:
+	if the noun is heart themed, decide yes;
 	if the noun is clothing:
 		if the noun is breast covering and the noun is not nipple covering, decide yes;
 	decide no.

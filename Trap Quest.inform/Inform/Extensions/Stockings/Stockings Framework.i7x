@@ -89,6 +89,10 @@ To say ShortDesc of (C - a socks):
 To say ShortestDesc of (C - a stockings):
 	say "pair of socks".
 
+Definition: a socks (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	if the initial cringe of C > 0, decide yes;
+	decide no.
+
 
 Part - Wearability
 
@@ -149,6 +153,18 @@ This is the worn leg covering clothing prevents removal of stockings rule:
 			if summoning is 0, say "You would need to remove your [C] first.";
 			rule fails.
 The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.
+
+
+Include Mesh Stockings by Stockings.
+Include Nylon Stockings by Stockings.
+Include Latex Stockings by Stockings.
+Include Cotton Stockings by Stockings.
+Include Wool Stockings by Stockings.
+Include Striped Stockings by Stockings.
+Include Magical Stockings by Stockings.
+Include Christmas Socks by Stockings.
+Include Bunny Socks by Stockings.
+Include Cafe Maid Stockings by Stockings.
 
 
 Stockings Framework ends here.

@@ -76,6 +76,9 @@ To compute (M - a monster) stomping (N - djinn):
 
 Part 2 - Perception
 
+To decide which number is the outrage tolerance of (M - a djinn): [What number of outrage they are unimpressed and lose favour.]
+	if diaper quest is 1, decide on 6;
+	decide on 10.
 
 To calm (M - djinn):
 	if the favour of M <= the aggro limit of M and the wish history of M is 2: [the only way the djinn becomes friendly again is if you sucked his cock]
@@ -90,8 +93,18 @@ To compute appearance assessment of (M - djinn):
 		distract M;
 	otherwise:
 		if the wish history of M is 2:
-			say "[speech style of M]'Oh it's you again. [one of]You'll be pleased to hear that I no longer have to grant you any wishes. I'm free to mess with you, though.'[or]What should I do to you this time...'[stopping][roman type][line break]";
-			compute djinn messing of M;
+			if the appearance of the player <= the outrage tolerance of M:
+				say "[speech style of M]'Oh it's you again. [one of]You'll be pleased to hear that I no longer have to grant you any wishes. I'm free to mess with you, though.'[or]What should I do to you this time...'[stopping][roman type][line break]";
+				compute djinn messing of M;
+			if the appearance of the player > the outrage tolerance of M:
+				if diaper quest is 0, say "[speech style of M]'[one of]The fates tempt me! You are looking mighty appealing right now...'[or]Goodness gracious! Now that is quite the sight! Do you know what I usually do with humans I see that look like you?'[in random order][roman type][line break]";
+				otherwise say "[speech style of M]'[one of]Wow, now that's probably a bit too far! You should try and make your appearance less obscene before you offend my eyes further...'[or]Goodness gracious! Now that is quite the sight! Do you know what I usually do with humans I see that look like you?'[in random order][roman type][line break]";
+				FavourDown M;
+			if M is unfriendly:
+				if diaper quest is 0, say "You and [NameDesc of M] both glance down and notice that [his of M] [manly-penis] is quickly getting larger and harder.[line break][speech style of M]'[one of]You've caused this, so you're going to have to take responsibility for it.'[or]Well, you know what this means...'[stopping][roman type][line break]";
+				otherwise say "[BigNameDesc of M] hums to [himself of M] for a few moments as [he of M] considers [his of M] options.[line break][speech style of M]'In fact I'm afraid I'm going to have to help you make your appearance less erotic, the only way I know how...'[roman type][line break]";
+			otherwise:
+				say "[big he of M] seems content to follow and observe you with mild interest for now.";
 		otherwise if the class of the player is priestess or the class of the player is succubus or the class of the player is cultist:
 			say "[speech style of M]'[one of]I am bound...oh. You already work for someone else. Right, forget I said anything.'[or]We meet again, acolyte. '[at random][roman type][line break]";
 		otherwise if the player is able to speak:
@@ -117,7 +130,7 @@ To compute perception of (M - djinn):
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Whore, your holes are required.'[or]You look like a [tasty] mortal. Bow before me!'[or]Come here, young one. My shaft isn't going to pleasure itself...'[in random order][roman type][line break]";
 		permanently anger M;
 	otherwise if M is unfriendly or the wish history of M is 1:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again!  Did you think you'd been forgiven?  No, you will be my sex pet forever.'[or]Ah, perfect, I was just wondering where you had got to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again!  Did you think you'd been forgiven? No, you will be my sex pet forever.'[or]Ah, perfect, I was just wondering where you had got to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
 		permanently anger M;
 	otherwise:
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
@@ -126,10 +139,10 @@ To compute perception of (M - djinn):
 To compute DQ perception of (M - djinn):
 	now M is interested;
 	if M is babifying the player:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh look, a little baby. Does someone need looking after?'[or]Oh it's the little baby again!  Back for more?'[or]Come here again, young one.'[stopping][roman type]  He looks aggressive!";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh look, a little baby. Does someone need looking after?'[or]Oh it's the little baby again!  Back for more?'[or]Come here again, young one.'[stopping][roman type] [big he of M] looks aggressive!";
 		anger M;
 	otherwise if M is unfriendly:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again!  Did you think you'd been forgiven?  No, you will suffer my wrath forever.'[or]Ah, perfect, I was just wondering where you had gotten to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again! Did you think you'd been forgiven? No, you will suffer my wrath forever.'[or]Ah, perfect, I was just wondering where you had gotten to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
 	otherwise:
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		compute appearance assessment of M.
@@ -310,7 +323,7 @@ This is the wishing for a change rule:
 		if djinn is waiting for a wish:
 			if the wish history of djinn is 0 and (there is a worn diaper or there is a worn messed knickers):
 				let D be a random worn knickers;
-				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your [printed name of D].";[djinnaybe have Djinn punish by adding locking plastic panties, with key given to matron?]
+				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
 				if total-soak of D > 0 or the mess of D > 0:
 					say "A cloud of baby powder releases from the seams of your [printed name of D]. It feels[if the mess of D > 0], and smells,[end if] as if it were brand new!";
 					now the urine-soak of D is 0;
@@ -349,14 +362,12 @@ To compute djinn messing of (M - djinn):
 		compute M transforming C;
 	otherwise:
 		say "He points at your legs, and you feel a bit more stiff...";
-		DexDown 1;
-	say "He seems satisfied with that and calms down, seemingly content to follow and observe you with mild interest for now.";
-	calm M.
+		DexDown 1.
 
 To compute (M - djinn) transforming (C - a clothing):
 	say "He points at your [C], and a bolt of magic lightning erupts from his finger!  Your [C] starts to shimmer...";
 	let enhanced be 0;
-	if [the player is a may 2017 top donator and ]a random number between 2 and 6 > the raw-magic-modifier of C, now enhanced is 1;
+	if a random number between 2 and 6 > the raw-magic-modifier of C, now enhanced is 1;
 	[Below is a slightly modified version of the "potentially transform (C - a clothing)" code.]
 	if C is upgradable:
 		let D be the upgrade-target of C;
@@ -427,7 +438,7 @@ To compute wrapped climax of (M - djinn) in (F - a fuckhole):
 	otherwise compute condom success of M in F.
 
 To say CondomStrain of (M - djinn) in (F - a fuckhole):
-	say "[speech style of M]'Yes... yes... [if F is asshole]I can feel it coming!'[otherwise]Your cunt is pleasing to me, mortal!'[end if][roman type] [BigNameDesc of M] bellows as [he of M] ejaculates, filling the condom with wave after wave of fresh [semen]. You can feel it shifting inside of you, almost as if [his of M] little baby-making bastards were struggling to bust out of their flimsy latex prison. It stretches further and further as it struggles to contain the rest of [his of M] cum, rounding out as the commotion inside reaches its peak.[line break]".
+	say "[speech style of M]'Yes... yes... [if F is asshole]I can feel it coming!'[otherwise]Your [cunt] is pleasing to me, mortal!'[end if][roman type] [BigNameDesc of M] bellows as [he of M] ejaculates, filling the condom with wave after wave of fresh [semen]. You can feel it shifting inside of you, almost as if [his of M] little baby-making bastards were struggling to bust out of their flimsy latex prison. It stretches further and further as it struggles to contain the rest of [his of M] cum, rounding out as the commotion inside reaches its peak.[line break]".
 
 To compute post climax effect of (M - djinn) in (F - asshole):
 	if M is interested:
@@ -461,7 +472,7 @@ To say CondomFailFlav of (M - djinn) in (F - vagina):
 	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [line break][speech style of M]Hahaha! Your mortal condom was no match for my divine sperm![roman type][line break][end if]".
 
 To say CreampieFlav of (M - djinn) in (F - vagina):
-	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your cunt is pleasing to me, mortal[end if]!'[roman type] [BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
+	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type] [BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
 
 To compute labour to (M - djinn):
 	if M is regional and M is alive:

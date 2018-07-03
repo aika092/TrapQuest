@@ -109,5 +109,15 @@ The bra corset clash rule is listed in the bra wearability rules.
 Check taking off worn corsets:
 	if the player is wrist bound, say "You won't be able to successfully get this off whilst your wrists are bound..." instead.
 
+Include Gothic Corset by Corsets.
+Include Satin Corset by Corsets.
+Include Vinyl Corset by Corsets.
+Include Leather Corset by Corsets.
+Include Fetish Corset by Corsets.
+Include Bat Corset by Corsets.
+Include Santa Corset by Corsets.
+Include Spike Corset by Corsets.
+Include Ballet Corset by Corsets.
+
 Corsets Framework ends here.
 

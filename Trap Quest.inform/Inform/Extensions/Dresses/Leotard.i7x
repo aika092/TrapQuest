@@ -10,7 +10,7 @@ A pink leotard is a kind of leotard. A sexy blue leotard is a kind of leotard.
 The printed name of pink leotard is usually "[TQlink of item described][clothing-title-before]pink leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink leotard is "ple".
 The printed name of sexy blue leotard is usually "[TQlink of item described][clothing-title-before]sexy blue leotard[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sexy blue leotard is "ble".
 
-Figure of pink leotard is the file "Items\Clothes\Upper\Leotards\leotard1.png". Figure of sexy blue leotard is the file "Items\Clothes\Upper\Leotards\leotard2.png".
+Figure of pink leotard is the file "Items/Clothes/Upper/Leotards/leotard1.png". Figure of sexy blue leotard is the file "Items/Clothes/Upper/Leotards/leotard2.png".
 
 There is 1 pink leotard. There is 1 unique sexy blue leotard.
 

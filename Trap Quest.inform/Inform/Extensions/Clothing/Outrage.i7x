@@ -6,11 +6,11 @@ To decide which number is the outrage of (C - an object):
 
 To decide which number is the outrage of (C - a wearthing):
 	if C is worn:
-		if C is not currently visible, decide on 0;
+		if C is not currently at least partially visible, decide on 0;
 	decide on the unworn outrage of C.
 
 To decide which number is the unworn outrage of (C - a clothing):
-	if C is messed knickers and diaper quest is 0, decide on 20;
+	if C is messed knickers and diaper quest is 0 and C is currently visible, decide on 20;
 	let O be the initial outrage of C;
 	if the player is male:
 		unless C is manly:
@@ -21,7 +21,7 @@ To decide which number is the unworn outrage of (C - a clothing):
 		if C is plentiful accessory, now O is 1;
 		if C is undies and C is total protection:
 			if the armour of C > 6 and O > 2 and O < 6, now O is 2;
-	if diaper quest is 0, increase O by the fluid outrage of C;
+	if diaper quest is 0 and C is currently visible, increase O by the fluid outrage of C;
 	increase O by the condom outrage of C;
 	if O < 9 and C is condom pinned, now O is 9; [can't have condoms pinned to your clothing for less than 9 outrage]
 	if C is breast covering and C is actually sheer and O < the at least partially lewdly exposed outrage of breasts and breasts is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of breasts; [EXPERIMENTAL: This is an item that partially exposes the player's breasts and therefore can't be less humiliating than being partially topless.]

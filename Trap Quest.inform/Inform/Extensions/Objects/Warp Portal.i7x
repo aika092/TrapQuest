@@ -9,9 +9,6 @@ To say WarpPortalDesc:
 Definition: warp portal (called I) is immune to change:
 	decide yes.
 
-To say unique-verb-desc of (T - a big red button):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]push[close bracket][as]push [text-shortcut of T][end link]".
-
 Check entering a warp portal:
 	try going north instead.
 
@@ -39,6 +36,30 @@ To teleport via (W - a warp portal):
 		say "As you go through the portal, you appear back in the Hotel again.";
 	display entire map.
 	
+
+Part - School Portal	
+
+school portal is a warp portal. The description of school portal is "[SchoolWarpPortalDesc]". The text-shortcut of school portal is "swpo".
+To say SchoolWarpPortalDesc:
+	say "This giant swirling green portal will probably take you to the school.".
+
+Definition: school portal (called I) is immune to change:
+	decide yes.
+
+To teleport via (W - school portal):
+	say "As you go through the portal, you appear back in the School again, just in front of the classroom. After you've gone through, the portal closes behind you.";
+	if armband is sapphire:
+		now the player is in School07;
+	otherwise if armband is emerald:
+		now the player is in School03;
+	otherwise if armband is ruby:
+		now the player is in School26;
+	otherwise if armband is pink diamond:
+		now the player is in School25;
+	otherwise:
+		now the player is in School24;
+	destroy W;
+	display entire map.
 
 
 Warp Portal ends here.

@@ -1,7 +1,7 @@
 Hoods by Headgear begins here.
 
 
-A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. A hood is usually roleplay. A black hood is a kind of hood. A black hood is usually strength-influencing. A black hood is usually dexterity-influencing. A white hood is a kind of hood. There is 1 black hood. There is 1 white hood. Figure of latex hood is the file "Items\Accessories\Head\latexhood1.png". Figure of WC hood is the file "Items\Accessories\Head\WcLatexHood.png". A hood is usually oral-sex-addiction-influencing. A white hood is usually urine-taste-addiction-influencing.
+A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. A hood is usually roleplay. A black hood is a kind of hood. A black hood is usually strength-influencing. A black hood is usually dexterity-influencing. A white hood is a kind of hood. There is 1 black hood. There is 1 white hood. Figure of latex hood is the file "Items/Accessories/Head/latexhood1.png". Figure of WC hood is the file "Items/Accessories/Head/WcLatexHood.png". A hood is usually oral-sex-addiction-influencing. A white hood is usually urine-taste-addiction-influencing.
 
 Definition: a hood (called C) is ringagged:
 	decide yes.

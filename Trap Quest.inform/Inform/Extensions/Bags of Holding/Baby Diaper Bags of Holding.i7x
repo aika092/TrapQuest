@@ -12,7 +12,7 @@ Part 1 - Baby Buggy Diaper Bag of Holding
 
 A baby buggy diaper bag of holding is a kind of baby diaper bag of holding. A baby buggy diaper bag of holding is usually cotton. There is 1 baby buggy diaper bag of holding. The printed name of baby buggy diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby buggy diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of baby buggy diaper bag of holding is the file "Items\Accessories\Bags\bag22.png".
+Figure of baby buggy diaper bag of holding is the file "Items/Accessories/Bags/bag22.png".
 
 To decide which figure-name is clothing-image of (C - a baby buggy diaper bag of holding):
 	decide on figure of baby buggy diaper bag of holding.
@@ -27,7 +27,7 @@ Part 2 - Baby Car Diaper Bag of Holding
 
 A baby car diaper bag of holding is a kind of baby diaper bag of holding. A baby car diaper bag of holding is usually cotton. There is 1 baby car diaper bag of holding. The printed name of baby car diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby car diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of baby car diaper bag of holding is the file "Items\Accessories\Bags\bag23.png".
+Figure of baby car diaper bag of holding is the file "Items/Accessories/Bags/bag23.png".
 
 To decide which figure-name is clothing-image of (C - a baby car diaper bag of holding):
 	decide on figure of baby car diaper bag of holding.

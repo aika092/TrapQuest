@@ -32,7 +32,7 @@ The printed name of longsleeved cheerleader outfit is usually "[TQlink of item d
 
 There is 1 longsleeved cheerleader outfit.
 
-Figure of longsleeved cheerleader outfit is the file "Items\Clothes\Upper\Special\Cheerleader\cheerleader2.png".
+Figure of longsleeved cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader2.png".
 
 To decide which number is the initial outrage of (C - a longsleeved cheerleader outfit):
 	decide on 3.
@@ -54,8 +54,8 @@ The printed name of supershort cheerleader outfit is usually "[TQlink of item de
 
 There is 1 supershort cheerleader outfit.
 
-Figure of supershort cheerleader outfit is the file "Items\Clothes\Upper\Special\Cheerleader\cheerleader3.png".
-Figure of DQ supershort cheerleader outfit is the file "Items\Clothes\Upper\Special\Cheerleader\cheerleader5.png".
+Figure of supershort cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader3.png".
+Figure of DQ supershort cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader5.png".
 
 To decide which number is the initial outrage of (C - a supershort cheerleader outfit):
 	decide on 10.
@@ -88,7 +88,7 @@ The printed name of vest top cheerleader outfit is usually "[TQlink of item desc
 
 There is 1 vest top cheerleader outfit.
 
-Figure of vest top cheerleader outfit is the file "Items\Clothes\Upper\Special\Cheerleader\cheerleader4.png".
+Figure of vest top cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader4.png".
 
 To decide which number is the initial outrage of (C - a vest top cheerleader outfit):
 	decide on 4.

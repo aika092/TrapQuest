@@ -98,7 +98,18 @@ The overdress skirts clash rule is listed in the overdress wearability rules.
 
 Check taking off worn skirt:
 	if the noun is living belt of sturdiness:
-		if the noun is penetrating a fuckhole, say "You're going to have to find some way to remove it from your insides first!" instead;
+		if the noun is penetrating a fuckhole, say "You're going to have to find some way to remove it from your insides first!" instead.
+
+Include Microskirts by Skirts.
+Include Miniskirt by Skirts.
+Include Gown of Purity by Skirts.
+Include Sequins Belt by Skirts.
+Include Chainmail Skirt by Skirts.
+Include Latex Skirt by Skirts.
+Include Naughty Leather Skirt by Skirts.
+Include Punishment Latex Hobble Skirt by Skirts.
+Include Office Skirt by Skirts.
+Include Flowing White Skirt by Skirts.
 
 
 Skirts Framework ends here.

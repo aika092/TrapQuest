@@ -4,7 +4,7 @@ A girly bow court heels is a kind of court heels.  The printed name of girly bow
 
 There is 1 leather girly bow court heels.
 
-Figure of girly bow court heels is the file "Items\Clothes\Lower\Feet\Heels\Court\court5.png".
+Figure of girly bow court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/court5.png".
 
 To decide which figure-name is the clothing-image of (H - a girly bow court heels):
 	decide on figure of girly bow court heels.

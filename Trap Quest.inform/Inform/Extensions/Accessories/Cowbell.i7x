@@ -12,7 +12,7 @@ To decide which number is the initial outrage of (C - a cowbell):
 To set up influence of (C - a cowbell):
 	set up taste-based influence of C.
 
-Figure of cowbell is the file "Items\Accessories\Neck\cowbell1.png".
+Figure of cowbell is the file "Items/Accessories/Neck/cowbell1.png".
 
 To decide which figure-name is clothing-image of (C - a cowbell):
 	decide on figure of cowbell.

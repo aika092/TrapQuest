@@ -1,7 +1,7 @@
 Cumdumpster Hat by Headgear begins here.
 
 
-A cumdumpster hat is a kind of headgear. There is 1 polyester cumdumpster hat. Figure of cumdumpster hat is the file "Items\Accessories\Head\cumdumpsterhat1.png". A cumdumpster hat is usually hair growing. A cumdumpster hat is usually roleplay.
+A cumdumpster hat is a kind of headgear. There is 1 polyester cumdumpster hat. Figure of cumdumpster hat is the file "Items/Accessories/Head/cumdumpsterhat1.png". A cumdumpster hat is usually hair growing. A cumdumpster hat is usually roleplay.
 
 Definition: a cumdumpster hat (called C) is fluid immune:
 	decide no.

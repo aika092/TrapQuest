@@ -1,7 +1,7 @@
 Sacks of Holding by Bags of Holding begins here.
 
 A sack of holding is a kind of bag of holding. Understand "bag" as sack of holding. There is 1 sack of holding. 
-Figure of sack of holding is the file "Items\Accessories\Bags\bag1.png".
+Figure of sack of holding is the file "Items/Accessories/Bags/bag1.png".
 
 To decide which figure-name is clothing-image of (C - a sack of holding):
 	decide on figure of sack of holding.

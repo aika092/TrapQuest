@@ -1,12 +1,10 @@
 Vines by Traps begins here.
 
-
 This is the spawn initial woods vines rule:
-	if diaper quest is 0:
-		repeat with N running from 1 to 5:
-			let R be a random trappable placed jungle room;
-			let T be a random off-stage vine;
-			if the number of vines in R is 0, deploy T in R.
+	repeat with N running from 1 to 5:
+		let R be a random trappable placed jungle room;
+		let T be a random off-stage vine;
+		if the number of vines in R is 0, deploy T in R.
 The spawn initial woods vines rule is listed in the set up woods traps rules.
 
 vine are a kind of trap. The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]". There are 16 revealed vines. Understand "living", "vine", "vines" as vines when item described is in the location of the player. The printed plural name of vines is "vines". The description of vines is "[VineDesc]". Figure of vines is the file "Env/Forest/vines1.png". The text-shortcut of a vine is "vin".
@@ -19,7 +17,8 @@ To decide which number is the girth of (V - a vine):
 
 To say VineDesc:
 	if images visible is 1, display figure of vines;
-	say "Seemingly intelligent vines with oozing, phallic tips. They [if the player is vine-cursed]seem irrationally eager to penetrate your body.[otherwise]only seem interested in penetrating your body.[end if][if egg laying fetish is 1] Some of them are covered in large yellow splotches, as if they needed any help looking bizarre[end if]".
+	if diaper quest is 0, say "Seemingly intelligent vines with oozing, phallic tips. They [if the player is vine-cursed]seem irrationally eager to penetrate your body.[otherwise]only seem interested in penetrating your body.[end if][if egg laying fetish is 1] Some of them are covered in large yellow splotches, as if they needed any help looking bizarre[end if]";
+	otherwise say "These vines are moving around like tentacles and seem to be somehow intelligent!".
 	
 To say ShortDesc of (T - a vine):
 	say "vine".
@@ -46,7 +45,7 @@ Returns yes if the player is being fucked by one or more vines.
 
 +!]
 Definition: yourself is vine fucked:
-	if there is a vine penetrating a fuckhole, decide yes;
+	if there is a vine penetrating a body part, decide yes;
 	decide no.
 
 [!<VineIsAgressive>+
@@ -57,10 +56,13 @@ REQUIRES COMMENTING
 Definition: a vine (called V) is aggressive:
 	if V is penetrating a body part or V is grabbing the player, decide yes;
 	if the TrapNo of V < 0, decide no;
-	if the player is diaper focused and the player is not in WoodsBoss01, decide no;
 	if vine boss is off-stage, decide no;
 	if busy is 1, decide no;
-	if the player is monster fucked or the player is trap stuck, decide no;
+	if the player is monster fucked or the player is trap stuck or (the player is monster stuck and diaper quest is 1), decide no;
+	if diaper quest is 1:
+		if there is a worn wet diaper or there is a worn messed diaper, decide yes;
+		if there is a worn diaper and the player is prone, decide yes;
+		decide no;
 	if asshole is actually occupied and (the player is male or vagina is actually occupied), decide no;
 	decide yes.
 
@@ -101,12 +103,18 @@ To compute vines kneeling:
 	repeat with V running through aggressive vines in the location of the player:
 		if the player is vine stuck and the player is not vine fucked:
 			compute V penetrating;
+		otherwise if diaper quest is 1 and refactoryperiod <= 0:
+			let D be a random worn diaper;
+			say "Squirming living vines [one of]rise up from the ground and begin rubbing[or]squirm and rub[stopping] against the crotch of your diaper! Your [genitals] [one of]is stimulated through your padding[or]feels amazing[or]tingles with delight[or]pulses with pleasure[at random]...";
+			if the player is not a pervert, say "[variable custom style][one of]Not good, not good![or]I need to get out of here! Or at least stand up high enough that these guys can't reach me...[or][if the diaper addiction of the player < 8]No, I don't want to be turned on in my diaper[otherwise]Enough with making me turned on all the time, I just want to wear my diapers in peace[end if]![or]This game is totally trying to give me a diaper fetish, isn't it?[then at random][roman type][line break]"; 
+			ruin vagina;
+			ruin vagina;
 		otherwise if the player is not vine stuck:
 			now V is revealed;
 			let D be the dexterity of the player;
 			let R be a random number from 1 to D;
-			if R <= 3 or (R <= 6 and the class of the player is schoolgirl):
-				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their oozing, bulbous tips [if the raw sex addiction of the player > 6]is strangely hypnotic, and before you realize it,[otherwise]is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before you realize it,[end if] they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
+			if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
+				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realize it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 				now V is grabbing the player;
 				if image cutscenes is 1, display figure of vines cutscene 2;
 			otherwise:
@@ -126,17 +134,20 @@ REQUIRES COMMENTING
 
 +!]
 To compute (V - a vine) penetrating:
-	let H be a random number from 1 to 14;
-	if the player is prone, now H is 14;
-	let R be a random number between 1 and 2;
-	if the player is a butt slut or the player is male, now R is 1;
-	if the player is a pussy slut and the player is not a butt slut, now R is 2;
-	if H < the thickness of hips and H < 10: [Vines will always succeed on a roll above 9]
-		say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [HipDesc]. It recoils back into the ground.";
-	otherwise if R is 1:
-		compute V penetrating asshole;
+	if diaper quest is 1:
+		compute vine diaper torture of V;
 	otherwise:
-		compute V penetrating vagina.
+		let H be a random number from 1 to 14;
+		if the player is prone, now H is 14;
+		let R be a random number between 1 and 2;
+		if the player is a butt slut or the player is male, now R is 1;
+		if the player is a pussy slut and the player is not a butt slut, now R is 2;
+		if H < the thickness of hips and H < 10: [Vines will always succeed on a roll above 9]
+			say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [HipDesc]. It recoils back into the ground.";
+		otherwise if R is 1:
+			compute V penetrating asshole;
+		otherwise:
+			compute V penetrating vagina.
 
 To compute (V - a vine) penetrating (F - asshole):
 	let K be a random worn top level ass protection clothing;
@@ -300,12 +311,50 @@ To compute vines fucking:
 			now V is not penetrating asshole;
 			now V is not penetrating vagina;
 			now V is unrevealed;
-			TimesFuckedUp vine boss by 1;[Princesses should avoid this!]
+			TimesFuckedUp vine boss by 1; [Princesses should avoid this!]
 			if V is in WoodsBoss01:
 				remove V from play;
 				now the TrapNo of V is 0;
 			otherwise:
 				now the TrapNo of V is -750.
+
+To compute vine diaper torture of (V - a vine):
+	let D be a random worn diaper;
+	increase the TrapNo of V by 1;
+	if the TrapNo of V is 1:
+		if the player is in WoodsBoss01:
+			now the player is in a random placed jungle room;
+			now the location of the player is discovered;
+			now the location of the player is seen;
+			now V is in the location of the player;
+			display entire map;
+			say "A portal opens underneath your body and before you can react you are falling through the sky face first! The ground rushes up to reach you but vines catch your feet just in time. You are now back in the woods. The vines pull your feet back through a new portal above you and then after you are halfway up through this new portal your OWN diapered butt appears below you in front of your face! You are bent at the waist and your feet touch the ground. Your butt is placed into the perfect position so that your face is resting against the back of your diaper. You end up face-planting the back of your own [MediumDesc of D]!";
+		otherwise:
+			say "Before you can escape the vines more have grabbed hold of your thighs. More have descended from the trees above and wrapped around your torso, trapping your arms against your body. [if the player is prone]The vines yank and pull you up onto your two feet. [end if][one of]Your eyes widen in [horror the diaper addiction of the player] as a shimmering portal appears in the air in front of you at waist height and through it you can see the top of someone's head and behind it, the ground. It takes several moments before you can comprehend what you are seeing: it's you yourself, but from above! This doesn't make any sense! And then the vines start to force your head through the portal and your own head disappears from your vision and is replaced by a back and a diapered posterior, your OWN diapered butt in fact! As you are bent at the waist and your upper body is moved forward through the portal your butt is placed into the perfect position so that your face ends up vertically descending onto the back of it. You end up face-planting the back of your own[or]You are once again forced halfway through a portal which forces your own face into the back of your own[stopping] [MediumDesc of D]!";
+		if image cutscenes is 1:
+			if there is a worn messed diaper, display figure of vines cutscene 3b;
+			otherwise display figure of vines cutscene 3a;
+		say "It's like the vines want you to experience your own [if D is messed]smelly[otherwise]soggy[end if] shame right up close and personal. You could either [link][bold type]submit[roman type][end link] and rub your own face in the seat of your diaper, or [link][bold type]resist[roman type][end link] and see how the vines act themselves.";
+	otherwise if the reaction of the player is 0: [resisting]
+		say "[one of]Seemingly unamused by your disobedience, the vines begin to spank your thighs from behind![or]The vines punish the backs of your thighs with several stinging swats![stopping]";
+		DelicateUp 1;
+		BodyRuin 1;
+	otherwise:
+		say "You [if the diaper addiction of the player < 8][one of]reluctantly[or]sob quietly to yourself as you[or]try to think about more pleasant things while you[at random] [end if][one of]nuzzle your own [if D is messed]dirty[otherwise]wet[end if] diaper with your face[or]push your nose deep into the padding of your [MediumDesc of D][or]grind your padded butt into your own scrunched up face[or]motorboat your own [if D is messed]smelly, squishy[otherwise]soggy[end if] padding[in random order][if the diaper addiction of the player > 15][one of] with pride[or] without a second thought[or], cooing happily as you do[or], enjoying the pleasant sensations[at random][end if].";
+		say "[one of]You feel your personality being slowly reshaped as you become more and more accustomed to the weird feelings, sounds and scents of diapers.[or][stopping]";
+		DiaperAddictUp 1;
+		ruin vagina;
+	if the TrapNo of V > 3:
+		say "After this the vines seem to grow bored, and after removing your upper half from the portal it disappears. The vines release you, retreating back into the trees and disappearing into the ground.";
+		now V is not grabbing the player;
+		now V is unrevealed;
+		TimesFuckedUp vine boss by 1;
+		now the TrapNo of V is -750;
+		if witch is unfriendly and witch is interested, satisfy witch.
+
+To say SexSubmissionFlav of (T - a vine):
+	if T is penetrating a body part, say "[one of]You stay still and let the vines take what they want.[or]You relax and allow the vines to plunder your depths.[or]You surrender to the pleasurable sensations of getting [if inhuman pregnancy > 0]bred[otherwise]plowed[end if] by alien vines.[or]You give into the pleasure and let the vines use you freely.[or]You obediently let the vines claim their prize.[purely at random]".
+	
 
 Part - Escaping from Vines
 
@@ -324,7 +373,7 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling vines:
-	if there is a fairy-witch grabbing the player, say "They're too strong. Its like the fairy is empowering them!" instead;
+	if there is a fairy-witch grabbing the player, say "They're too strong. It's like the fairy is empowering them!" instead;
 	if the noun is not grabbing the player:
 		repeat with V running through vines grabbing the player:
 			try pulling V instead;
@@ -332,6 +381,7 @@ Check pulling vines:
 			if the player is not able to manually use their hands, do nothing instead;
 			WomanVinePull instead;
 		say "You can't see any such thing." instead;
+	if the TrapNo of the noun > 0 and diaper quest is 1, say "It's too late for that, there are way too many of them holding you in this position for you to escape now!" instead;
 	let R be a random number from 7 to 13;
 	if the TrapNo of the noun > 0 and the noun is penetrating a fuckhole:
 		if R < the soreness of a random fuckhole penetrated by the noun:
@@ -353,8 +403,12 @@ To VinePull:
 	if the player is prone, increase V by (a random number from 0 to 4 + a random number from 0 to 5);
 	if debugmode is 1, say "Player [X].5 |  [V] Vines.";
 	if X < V:
-		if the player is prone, say "[one of][if the TrapNo of the noun < 3]You pull at the vines but they are holding your wrists tightly. Maybe try again?[otherwise]You pull at the vines but they are holding your wrists tightly. Uh-oh, they're slowing down...[end if][or][if the TrapNo of the noun < 3]You pull at the vines with all your might, but their grip is just too tight. Maybe you should try again?[otherwise]You pull at the vines with all your might, but their grip is just too tight. It seems like they're slowing down...[end if][or][if the TrapNo of the noun < 3]You try to yank your hands free, but the vines have you bound too well. Nothing to do but take it or try again.[otherwise]You try to work your hands free, but it's no use. In fact, it seems like they grip you even tighter. What now?[end if][or][if the TrapNo of the noun < 3]You pull one hand free only to have it immediately grabbed and pinned to the ground once more. Maybe try again?[otherwise]You pull one hand free only to have it immediately grabbed and pinned to the ground once more. The vines seem like they're slowing down...[end if][in random order]";
-		otherwise say "[one of][if the TrapNo of the noun < 3]You pull at the vines but they are holding your ankles tightly. Maybe try again?[otherwise]You pull at the vines but they are holding your ankles tightly. Uh-oh, they're slowing down...[end if][or][if the TrapNo of the noun < 3]You pull at the vines with all your might, but their grip is just too tight. Maybe you should try again?[otherwise]You pull at the vines with all your might, but their grip is just too tight. It seems like they're slowing down...[end if][or][if the TrapNo of the noun < 3]You try to free yourself as best you can without falling over. It doesn't work, but you can always try again.[otherwise]You try to free yourself as best you can without falling over. It doesn't work, but it does seem like they're slowing down.[end if][or][if the TrapNo of the noun < 3]You manage to get a few to let go, but several more immediately take their place. Maybe try again?[otherwise]You manage to get a few to let go, but several more immediately take their place. They seem to tighten their grip. What now?[end if][in random order]";
+		if diaper quest is 1:
+			say "You pull at the vines but they are holding your wrists tightly. There's no escape this time!";
+		otherwise if the player is prone:
+			say "[one of][if the TrapNo of the noun < 3]You pull at the vines but they are holding your wrists tightly. Maybe try again?[otherwise]You pull at the vines but they are holding your wrists tightly. Uh-oh, they're slowing down...[end if][or][if the TrapNo of the noun < 3]You pull at the vines with all your might, but their grip is just too tight. Maybe you should try again?[otherwise]You pull at the vines with all your might, but their grip is just too tight. It seems like they're slowing down...[end if][or][if the TrapNo of the noun < 3]You try to yank your hands free, but the vines have you bound too well. Nothing to do but take it or try again.[otherwise]You try to work your hands free, but it's no use. In fact, it seems like they grip you even tighter. What now?[end if][or][if the TrapNo of the noun < 3]You pull one hand free only to have it immediately grabbed and pinned to the ground once more. Maybe try again?[otherwise]You pull one hand free only to have it immediately grabbed and pinned to the ground once more. The vines seem like they're slowing down...[end if][in random order]";
+		otherwise:
+			say "[one of][if the TrapNo of the noun < 3]You pull at the vines but they are holding your ankles tightly. Maybe try again?[otherwise]You pull at the vines but they are holding your ankles tightly. Uh-oh, they're slowing down...[end if][or][if the TrapNo of the noun < 3]You pull at the vines with all your might, but their grip is just too tight. Maybe you should try again?[otherwise]You pull at the vines with all your might, but their grip is just too tight. It seems like they're slowing down...[end if][or][if the TrapNo of the noun < 3]You try to free yourself as best you can without falling over. It doesn't work, but you can always try again.[otherwise]You try to free yourself as best you can without falling over. It doesn't work, but it does seem like they're slowing down.[end if][or][if the TrapNo of the noun < 3]You manage to get a few to let go, but several more immediately take their place. Maybe try again?[otherwise]You manage to get a few to let go, but several more immediately take their place. They seem to tighten their grip. What now?[end if][in random order]";
 	otherwise:
 		say "You manage to loosen the vines and free your [if the player is prone]wrists and [end if]ankles!  ";
 		now the noun is not grabbing the player;

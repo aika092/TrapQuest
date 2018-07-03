@@ -73,7 +73,7 @@ To say MonsterDesc of (M - a gladiator):
 	if M is awakened:
 		if the M is wild gladiator:
 			say "[variable custom style]She looks pretty tough...[roman type][line break]";
-		otherwise if trap fetish is 1:
+		otherwise if futanari fetish is 0:
 			say "Her arms are bulging with huge muscles[if gladiatorcurse is 1], which seem to pulsate with the dim glow of the pentagram on her stomach.[otherwise], covered in strange tattoos[end if][roman type][line break]";
 		otherwise:
 			say "Oh, and she has a massive 9 inch futa cock proudly erect and pushing through her belt. [line break][variable custom style][if the sex addiction of the player < 8]I don't want that thing anywhere near me![otherwise if the size of penis > 8]Heh, still not as big as mine.[otherwise]Oh my, that's huge...[end if][roman type][line break]";
@@ -211,7 +211,7 @@ Definition: a gladiator (called M) is uniquely unfriendly:
 			if the gladiator-friendly-level of M > the largeness of breasts, decide yes;] [Removed as gladiator now follows standard favour rules]
 	decide no.
 
-To decide which number is the cringe tolerance of (M - a gladiator):
+To decide which number is the bab tolerance of (M - a gladiator):
 	decide on 9.
 
 To decide which number is gladiator-ideal-level of (M - a gladiator):
@@ -262,7 +262,7 @@ To compute appearance assessment of (M - a gladiator):
 	if the player is a flatchested trap or (the player is male and the size of penis <= min penis size and tg fetish >= 1):
 		if M is insane gladiator:
 			if tg fetish >= 1:
-				say "[speech style of M]'Your penis...I'll fix it. I'll make it better. Yes. I won't have to look at it anymore...'[roman type]";
+				say "[speech style of M]'Your penis... I'll fix it. I'll make it better. Yes. I won't have to look at it anymore...'[roman type]";
 			otherwise:
 				if the size of penis <= min penis size, say "[speech style of M]'Worthless. Disgusting...so disgusting... I hate it.'[roman type]";[TODO: further punishing from insane gladiator]
 				otherwise say "[speech style of M]'Penis...Disgusting. I'll fix it. Yes, I'll shrink it. Smaller. Tiny. Yes.'[roman type]";
@@ -360,23 +360,31 @@ To compute perception of (M - a gladiator):
 			permanently anger M;
 			if the player is queen of spades and a random number between 6 and 13 < the bimbo of the player, compute racial submission to M;
 	otherwise if M is diaper focused:
-		say "[speech style of M]'Oh my goddess, what are you wearing?!  There's no way I can abide seeing an adult like this.'[roman type][line break]";
+		say "[speech style of M]'Oh my goddess, what are you wearing?! There's no way I can abide seeing an adult like this.'[roman type][line break]";
 		anger M;
 	otherwise:
 		compute appearance assessment of M;
 	if image cutscenes is 1, display interaction of M.	
+
+To decide which number is the outrage tolerance of (M - a gladiator): [What number of outrage they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
+	if diaper quest is 1, decide on 4;
+	decide on 20.
+
+To decide which number is the cringe tolerance of (M - a gladiator): [What number of cringe they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
+	if diaper quest is 1, decide on 6;
+	decide on 20.
 	
 To compute DQ appearance assessment of (M - a gladiator):
 	if there is a worn currently visible messed knickers:
 		say "[speech style of M]'[one of]Horrible!  Even babies like you should be able to find someone to change you rather than wandering around with such a nasty smell following you. I don't think I will ever be able to look at you with respect again.'[or]I guess disgusting babies like you never change.'[stopping][roman type][line break]She turns to leave you alone.";
 		FavourDown M by 4;
 		distract M;
-	otherwise if the cringe appearance of the player > 6:
+	otherwise if the cringe appearance of the player > the cringe tolerance of M:
 		if M is buddy, say "[speech style of M]'Hmm, I'll come back later, when you've hopefully had a chance to find some more grown-up clothing.'[roman type][line break]";
 		otherwise say "[speech style of M]'You are just asking to be treated like a little girl, you know that?  Grown women wouldn't be seen in such childish clothing.'[roman type][line break]";
 		distract M;
 		FavourDown M by 2;
-	otherwise if the appearance of the player > 4:
+	otherwise if the appearance of the player > the outrage tolerance of M:
 		say "[speech style of M]'Truly adult women don't need to look like sluts in order prove their [maturity], you know. I'm going to leave you to hopefully improve your appearance before we next meet.'[roman type][line break]";
 		distract M;
 		FavourDown M by 2;
@@ -392,7 +400,7 @@ To compute DQ perception of (M - a gladiator):
 	otherwise if M is uniquely unfriendly:
 		say "[speech style of M]'[if the times-fucked of M is 0][one of]Goodness gracious, this has gone too far!  Clearly I need to take your care into my own hands.'[or]You need more than a diaper check, little one. You need reconditioning. Come here.'[or]Come here. I am going to train you further.'[then at random][otherwise]You again!  [one of]On your knees!'[or]Your appearance has not improved since our last session. Clearly I must punish you further.'[at random][end if][roman type][line break]";
 		anger M;
-	otherwise if there is a worn currently visible diaper or M is aware that the player needs a change:
+	otherwise if there is a worn currently at least partially visible diaper or M is aware that the player needs a change:
 		compute diaper check of M;
 	otherwise if the diaper-duration of M > 0:
 		if there is a worn diaper:
@@ -406,7 +414,7 @@ To compute DQ perception of (M - a gladiator):
 	otherwise:
 		let F be the favour of M;
 		compute DQ appearance assessment of M;
-		if M is interested: [If she is interested he hasn't finished speaking.]
+		if M is interested: [If she is interested she hasn't finished speaking.]
 			if M is unfriendly:
 				say "[speech style of M][if the player is upright]Get on your knees, and get what's coming to you.'[otherwise]In fact, stay right there, I'm going to treat you the way you deserve.'[end if][roman type][line break]";
 			otherwise if the favour of M < F and M is not buddy:
@@ -447,11 +455,11 @@ Section 1 - Protect and Attack
 
 To compute (M - a gladiator) protecting against (X - monster):
 	unless X is male gladiator:
-		say "[BigNameDesc of M] grins and follows the [X].";
+		say "[speech style of M]'[one of]Learn from this battle.'[or]How will you handle uneven battle?'[or]Now you face us together!'[or]A real woman continues to fight even when outnumbered!'[at random][roman type][line break][BigNameDesc of M] grins and follows the [X].";
 		anger M;
 	otherwise if the player is monster fucked:
 		if M is wild gladiator:
-			say "[speech style of M]'Such is the law of the jungle.'[roman type] [BigNameDesc of M] smiles to herself and turns to leave.";
+			say "[speech style of M]'Such is the law of the jungle.'[roman type][line break][BigNameDesc of M] smiles to herself and turns to leave.";
 		otherwise:
 			say "[speech style of M]'Women should not be caught doing such things... as you are a friend I will turn a blind eye this once.'[roman type][line break][BigNameDesc of M] turns to leave.";
 		FavourDown M;
@@ -938,15 +946,15 @@ To say DamageReactHealthy of (M - a gladiator):
 To say DamageReactDamaged of (M - a gladiator):
 	if diaper quest is 0 and M is not awakened and gladiatorcurse > -1:
 		if gladiatorcurse is 1: 
-			if trap fetish is 0:
+			if futanari fetish is 1:
 				say "She doubles over, growling fiercely. [line break][speech style of M]'You..HNNG...think I choose to stay here, but in reality I was...RRR!..defeated when I tried going up.[roman type][line break]She tears off her loincloth and takes a staggering step back, the area around you dimming slowly as her body wreathes itself in ominous red light. You watch in [horror the sex addiction of the player] as it converges on her crotch, forming a huge 9-inch penis right where her clit should be.[line break][speech style of M]'[one of]I was cursed to bear the mark of the lesser sex ever since. You will regret revealing my shame.'[or]His curse...it's awakening! GRAAAAH!'[stopping][roman type][line break]";
 				if image cutscenes is 1, display figure of gladiator cutscene 2;
 			otherwise:
 				say "She doubles over, growling fiercely. [line break][speech style of M]'Obviously you..HNNG...you only understand force...[roman type][line break][BigNameDesc of M] tears off her loincloth as a glowing pentagram etches itself into her skin. You watch in [horror] as her arms suddenly bulge with new muscle. [line break][speech style of M]'[one of]Normally I can hold the curse at bay...you brought this on yourself.'[or]The curse! It's taking over! GRAAAAH!'[stopping][roman type][line break]";
 		otherwise:
-			say "She growls fiercely. [line break][speech style of M]'You... HNNG... you've done it now...'[roman type][line break]You watch in [horror the sex addiction of the player] as [if trap fetish is 1]her arms suddenly bulge with new muscle, and arcane tattoos slowly etch themselves into her skin. [otherwise]her clit starts to throb and swell, and before you know it, a huge 9 inch penis stands proudly erect from the tops of her vulva.[end if][line break][speech style of M]'[one of][if trap fetish is 1]That magical traitor in the woods cursed me after I accepted her promises of power, but I know now that there are no shortcuts to true strength. You[']ll understand too.'[otherwise]Yes, that[']s right, I[']m part male, ever since that magical traitor in the woods planted this curse on me. Don[']t expect me to ever forgive you for revealing my shame.'[end if][or]The curse... it awakens... GRAAAH!'[stopping][roman type][line break]";
-			if image cutscenes is 1 and trap fetish is 0, display figure of gladiator cutscene 1;
-		if trap fetish is 1:
+			say "She growls fiercely. [line break][speech style of M]'You... HNNG... you've done it now...'[roman type][line break]You watch in [horror the sex addiction of the player] as [if futanari fetish is 0]her arms suddenly bulge with new muscle, and arcane tattoos slowly etch themselves into her skin. [otherwise]her clit starts to throb and swell, and before you know it, a huge 9 inch penis stands proudly erect from the tops of her vulva.[end if][line break][speech style of M]'[one of][if futanari fetish is 0]That magical traitor in the woods cursed me after I accepted her promises of power, but I know now that there are no shortcuts to true strength. You[']ll understand too.'[otherwise]Yes, that[']s right, I[']m part male, ever since that magical traitor in the woods planted this curse on me. Don[']t expect me to ever forgive you for revealing my shame.'[end if][or]The curse... it awakens... GRAAAH!'[stopping][roman type][line break]";
+			if image cutscenes is 1 and futanari fetish is 1, display figure of gladiator cutscene 1;
+		if futanari fetish is 0:
 			DifficultyUp M by 5;
 			if the health of M < the difficulty of M, now the health of M is the difficulty of M;
 		otherwise:
@@ -1014,7 +1022,8 @@ To compute failed dominance punishment of (M - a gladiator):
 		otherwise:
 			say "[if the number of things penetrating face > 0][line break][speech style of M]'Oh. Right.'[roman type][line break][end if] [BigNameDesc of M] smiles gravely, and without any further warning she slams you into the ground, overwhelming you with a series of concentrated blows using the hilt of her sword.";
 			now the body soreness of the player is 10;
-			if the number of worn not sissifying removable clothing is 0 and the player is male, compute sissification;
+			let X be the number of worn tearable sissifying clothing;
+			if X is the number of worn tearable clothing and the player is male, compute sissification;[something on this line is causing a huge amount of lag]
 			otherwise compute angry punishment of M;
 			if the player is female:
 				say "[speech style of M]You have no chance of defeating me until you have attained the honour of a true woman[roman type][line break]";
@@ -1130,7 +1139,7 @@ To oral dominate (M - a gladiator):
 			if image cutscenes is 1, display figure of gladiator cutscene 17;
 		Dignify 5;
 	otherwise:
-		say "You force [NameDesc of M] to her knees and [if there is bottom level protection clothing]taking your [ShortDesc of penis] out of your [printed name of random bottom level protection clothing], [end if]drop your fully erect [ShortDesc of penis] onto her chin. [line break][speech style of M]'...Is that it? Ugh, I deserve this.'[roman type][line break]She purses her lips around your shaft, instantly taking the whole thing. You place a hand on the back of her head, plaintively humping her face. The sound of her noisy slurping pushes you over the edge almost immediately, causing you to spurt your load directly onto her tongue. She pulls off, swallowing it with barely a glance in your direction.";
+		say "You force [NameDesc of M] to her knees and [if there is bottom level protection clothing]taking your [ShortDesc of penis] out of your [printed name of random bottom level protection clothing], [end if]drop your fully erect [ShortDesc of penis] onto her chin. [line break][speech style of M]'... Is that it? Ugh, I deserve this.'[roman type][line break]She purses her lips around your shaft, instantly taking the whole thing. You place a hand on the back of her head, plaintively humping her face. The sound of her noisy slurping pushes you over the edge almost immediately, causing you to spurt your load directly onto her tongue. She pulls off, swallowing it with barely a glance in your direction.";
 		Dignify 5;
 	orgasm.
 
@@ -1412,7 +1421,7 @@ To set up (M - insane gladiator):
 	now the health of M is the maxhealth of M;
 	now the difficulty of M is 6;
 	if doomed is 5, DifficultyUp M by 4;
-	if trap fetish is 0:
+	if futanari fetish is 1:
 		now M is male;
 	now M is curse-activated.
 
@@ -1465,6 +1474,10 @@ To say CondomPieFlav of (M - insane gladiator):
 To say CondomPinFlav of (M - insane gladiator) on (C - a clothing):
 	say "Completely of its own accord, the [C] rises off the floor, tying itself off as it flies through the air toward your [C].";
 	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]!  [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]".
+
+To say DefaultDeepthroatDeclaration of (M - insane gladiator):
+	say "[first custom style]'[one of]I'll put it in your throat. Yes.'[or]Deepthroat. Yes.'[or]Gag on it. Slutty.'[in random order]'[roman type][line break]";
+	if image cutscenes is 1, display figure of gladiator cutscene 8.
 
 To say PullOutFlav of (M - insane gladiator):
 	say "[one of][BigNameDesc of M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or][BigNameDesc of M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [line break][speech style of M]'[one of]I came, but I'm still horny. I need to keep going. Yes...'[or]More. I need more. Yes...'[at random][roman type][line break]She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her [semen]-dripping knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
@@ -1524,7 +1537,7 @@ To set up (M - wild gladiator):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 11;
-	if trap fetish is 0:
+	if futanari fetish is 1:
 		now M is male;
 		DifficultyUp M by 2;
 	if doomed is 5, DifficultyUp M by 1;
@@ -1532,7 +1545,7 @@ To set up (M - wild gladiator):
 	now M is curse-activated.
 
 To say SummoningFlav of (M - wild gladiator):
-	if M is in the location of the player, say "You hear some grunting inside the statue, primal, but distinctly sexual in tone. A nude woman drops out of the stony opening[if trap fetish is 0], scanning the surrounding area as she strokes the softening [manly-penis] hanging between her legs[otherwise], resting an intimidating looking sword over her shoulder as she scans the surrounding area[end if].";
+	if M is in the location of the player, say "You hear some grunting inside the statue, primal, but distinctly sexual in tone. A nude woman drops out of the stony opening[if futanari fetish is 1], scanning the surrounding area as she strokes the softening [manly-penis] hanging between her legs[otherwise], resting an intimidating looking sword over her shoulder as she scans the surrounding area[end if].";
 	otherwise say "You hear leaves rustling from somewhere nearby.".
 
 Definition: wild gladiator (called M) is uniquely unfriendly:
@@ -1627,7 +1640,7 @@ To say CondomPieFlav of (M - wild gladiator):
 	say "[one of][BigNameDesc of M] roars with pleasure, tightening her grip as the condom begins to fill up with warm [semen]. She continues fucking you until her magical supply of [semen] has been completely and thoroughly emptied inside of it. [line break][speech style of M]'Recover. I will return when I am ready for your next tribute.'[roman type][line break]You feel her hands squeeze your hips as she pulls out and carefully peels it off.[or][BigNameDesc of M] grunts, her [manly-penis] throbbing as she unloads into the thin latex condom. She sighs in satisfaction, roughly shoving you off her [manly-penis] before climbing to her feet and carefully peeling it off.[or][line break][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type][line break]You're used to this series of events by now, and find yourself clenching around [NameDesc of M]'s [manly-penis] as the condom catches several jets of [semen]. You wait expectantly, and after a few seconds she pulls out and climbs to her feet, removing the condom with a satisfying snap.[then at random]".
 
 To say PullOutFlav of (M - wild gladiator):
-	say "[one of][BigNameDesc of M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or][BigNameDesc of M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [line break][speech style of M]'[one of]I am not finished yet. Not at all....I will have to claim you thoroughly.'[or]We[']re not done yet, are we slut? You deserve to be claimed very thoroughly.'[or]I am afraid you have given me no choice. I will have to claim you.....thoroughly.'[at random][roman type][line break]She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her slick knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
+	say "[one of][BigNameDesc of M] roars with pleasure, tightening her grip as her [manly-penis] explodes deep inside your [vagina][or][BigNameDesc of M] grunts, hilting you as her throbbing [manly-penis] unloads into your [vagina][at random]. Semen dribbles down the side of your leg as she slowly pulls out, panting with excitement. [line break][speech style of M]'[one of]I am not finished yet. Not at all.... I will have to claim you thoroughly.'[or]We[']re not done yet, are we slut? You deserve to be claimed very thoroughly.'[or]I am afraid you have given me no choice. I will have to claim you.....thoroughly.'[at random][roman type][line break]She instantly flattens you with her full weight, pressing her breasts into your back as she grinds her slick knob between your cheeks. You feel her arms lock underneath you as she abruptly [one of]slams[or]rams[or]shoves[at random] her [manly-penis] into your [asshole] and begins pounding you at full force.".
 
 To say angry punishment clothing destruction of (M - wild gladiator) on (C - a clothing):
 	say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]Challenge me now, whore, and see what happens. Perhaps then you will not be so disrespectful.'[otherwise if C is ass covering and the player is male]You belong to me. Perhaps if your [asshole] is on display, the jungle will reveal to you the slut you really are?[otherwise if C is ass covering]You belong to me. Perhaps if your [fuckholes] are on display, the jungle will reveal to you the slut you really are.'[otherwise]I own you, slut. You will no longer delude yourself by concealing your body from me!'[end if][roman type][line break]".

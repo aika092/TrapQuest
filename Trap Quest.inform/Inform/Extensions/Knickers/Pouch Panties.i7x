@@ -19,7 +19,7 @@ To decide which figure-name is clothing-image of (C - pouch-panties):
 
 To say ClothingDesc of (K - pouch-panties):
 	say "This pair of black girly panties is backless to allow full access to [if K is not worn]the wearer's[otherwise]your[end if] [asshole]. At the front, there is an added pouch for [if K is not worn or the size of penis is 0]the wearer's[otherwise]your[end if] penis.".
-Figure of pouch panties is the file "Items\Clothes\Lower\Underwear\Special\pouchpanties1.png".
+Figure of pouch panties is the file "Items/Clothes/Lower/Underwear/Special/pouchpanties1.png".
 
 To decide which number is the initial outrage of (C - pouch-panties):
 	decide on 9.

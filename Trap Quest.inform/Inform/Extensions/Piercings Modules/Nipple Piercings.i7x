@@ -3,7 +3,7 @@ Nipple Piercings by Piercings Modules begins here.
 
 A nipple piercing is a kind of piercing.
 
-A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[TQlink of item described][item style]nipple chain[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items\Accessories\Piercings\nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing.  A nipple chain has a number called arousal-charge.
+A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[TQlink of item described][item style]nipple chain[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing.  A nipple chain has a number called arousal-charge.
 
 [!<TheCowChainSlutRule>+
 

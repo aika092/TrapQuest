@@ -65,8 +65,12 @@ Carry out showering WoodsScenery01:
 	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the pool and wash yourself with the water. ";
 	now tracked-semen is 0;
 	Wash Salves;
-	if bukkake fetish is 1 or lactation fetish is 1, SlimeGirlCheck;
-	if the rule failed:
+	if bukkake fetish is 1 or lactation fetish is 1:
+		SlimeGirlCheck;
+		if the rule failed:
+			compute showering;
+			now seconds is 12 + tracked-semen;
+	otherwise:
 		compute showering;
 		now seconds is 12 + tracked-semen.
 

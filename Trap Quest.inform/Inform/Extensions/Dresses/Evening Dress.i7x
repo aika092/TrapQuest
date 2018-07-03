@@ -4,10 +4,10 @@ An evening dress is a kind of overdress. An evening dress is usually satin. An e
 
 The printed name of evening dress is usually "[TQlink of item described][clothing-title-before]evening dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of evening dress is "ed".
 
-Figure of Evening Dress 1 is the file "Items\Clothes\Upper\Dresses\Evening\eveningdress1.png".
-Figure of Evening Dress 2 is the file "Items\Clothes\Upper\Dresses\Evening\eveningdress2.png".
-Figure of Evening Dress 3 is the file "Items\Clothes\Upper\Dresses\Evening\eveningdress3.png".
-Figure of Evening Dress 4 is the file "Items\Clothes\Upper\Dresses\Evening\eveningdress4.png".
+Figure of Evening Dress 1 is the file "Items/Clothes/Upper/Dresses/Evening/eveningdress1.png".
+Figure of Evening Dress 2 is the file "Items/Clothes/Upper/Dresses/Evening/eveningdress2.png".
+Figure of Evening Dress 3 is the file "Items/Clothes/Upper/Dresses/Evening/eveningdress3.png".
+Figure of Evening Dress 4 is the file "Items/Clothes/Upper/Dresses/Evening/eveningdress4.png".
 
 To compute SelfExamineDesc of (O - an evening dress):
 	say "A [ShortDesc of O] flows down your whole body and clings tightly to your legs. ";

@@ -1,25 +1,19 @@
 Baby Bonnet by Headgear begins here.
 
-A baby bonnet is a kind of headgear. A baby bonnet is usually silk. There is 1 baby bonnet. Figure of baby bonnet is the file "Items\Accessories\Head\babybonnet1.png". A baby bonnet is blondeness-negative. A baby bonnet is brightness-negative. A baby bonnet is redness-negative. A baby bonnet is usually hair growing. A baby bonnet is usually diaper-addiction-influencing.
+A baby bonnet is a kind of headgear.  A baby bonnet is blondeness-negative. A baby bonnet is brightness-negative. A baby bonnet is redness-negative. A baby bonnet is usually hair growing. A baby bonnet is usually diaper-addiction-influencing. Understand "baby", "bonnet" as a baby bonnet. The printed name of baby bonnet is usually "[TQlink of item described][clothing-title-before][clothing-material of item described] baby bonnet[clothing-title-after][TQxlink of item described][verb-desc of item described]". 
 
-The printed name of baby bonnet is usually "[TQlink of item described][clothing-title-before]baby bonnet[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby bonnet is "bon".
+Definition: a baby bonnet (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide yes.
 
-To decide if a baby bonnet is roleplay:
-	if diaper lover >= 1, decide yes;
-	decide no.
-
-To decide which figure-name is the clothing-image of (C - a baby bonnet):
-	decide on figure of baby bonnet.
-	
-To say ClothingDesc of (H - a baby bonnet):
-	say "A Victorian style pink baby bonnet, that covers the top, back and sides of your head.".
-	
 To say ShortDesc of (H - a baby bonnet):
 	say "pink baby bonnet".
 
 To compute SelfExamineDesc of (H - a baby bonnet):
 	let X be the largeness of hair;
 	say "You are wearing a pink baby bonnet which [if the largeness of hair < 6]completely[otherwise if the largeness of hair < 8]mostly[otherwise]only partially[end if] covers your [ShortDesc of hair]. ".
+
+Definition: a baby bonnet (called C) is condom pinnable:
+	decide yes.
 
 baby-summoned is a number that varies.
 
@@ -68,8 +62,46 @@ To compute class outfit of (H - a baby bonnet):
 		summon P cursed;
 		now the raw-magic-modifier of P is 0.
 
-Definition: a baby bonnet (called C) is condom pinnable:
-	decide yes.
+
+
+victorian-baby-bonnet is a baby bonnet. The text-shortcut of victorian-baby-bonnet is "vbon".
+
+To decide if victorian-baby-bonnet is roleplay:
+	if diaper lover >= 1, decide yes;
+	decide no.
+
+Figure of victorian baby bonnet is the file "Items/Accessories/Head/babybonnet1.png".
+
+To decide which figure-name is the clothing-image of (C - victorian-baby-bonnet):
+	decide on figure of victorian baby bonnet.
+	
+To say ClothingDesc of (H - victorian-baby-bonnet):
+	say "A Victorian style pink baby bonnet, that covers the top, back and sides of your head.".
+	
+To decide which object is the potential-upgrade-target of (H - victorian-baby-bonnet):
+	decide on rubber-baby-bonnet.
+
+Definition: victorian-baby-bonnet (called H) is untransformable:
+	decide no.
+
+
+rubber-baby-bonnet is a baby bonnet. The text-shortcut of rubber-baby-bonnet is "lbon".
+
+To decide if rubber-baby-bonnet is roleplay:
+	if diaper lover >= 1, decide yes;
+	decide no.
+
+Figure of rubber baby bonnet is the file "Items/Accessories/Head/babybonnet2.png".
+
+To decide which figure-name is the clothing-image of (C - rubber-baby-bonnet):
+	decide on figure of rubber baby bonnet.
+	
+To say ClothingDesc of (H - rubber-baby-bonnet):
+	say "A fetish-focused pink baby bonnet made of rubber, that covers the top, back and sides of your head, as well as your mouth.".
+
+
+
+
 
 
 Baby Bonnet ends here.

@@ -36,7 +36,7 @@ Part - Pink Sissy Bow
 
 A pink sissy bow is a kind of sissy bow. There is 1 pink sissy bow. The printed name of sissy bow is usually "[TQlink of item described][clothing-title-before]sissy bow[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of sissy bow is "ssb".
 
-Figure of sissy bow is the file "Items\Accessories\Head\sissybow1.png".
+Figure of sissy bow is the file "Items/Accessories/Head/sissybow1.png".
 
 To decide which figure-name is the clothing-image of (C - a sissy bow):
 	decide on figure of sissy bow.
@@ -66,7 +66,7 @@ Part - Baby Sissy Bow
 
 A baby sissy bow is a kind of sissy bow. There is 1 baby sissy bow. The printed name of baby sissy bow is usually "[TQlink of item described][clothing-title-before]baby sissy bow[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby sissy bow is "bsb".
 
-Figure of baby sissy bow is the file "Items\Accessories\Head\sissybow2.png".
+Figure of baby sissy bow is the file "Items/Accessories/Head/sissybow2.png".
 
 To decide which figure-name is the clothing-image of (C - a baby sissy bow):
 	decide on figure of baby sissy bow.

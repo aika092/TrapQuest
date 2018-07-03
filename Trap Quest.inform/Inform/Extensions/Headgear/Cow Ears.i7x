@@ -1,6 +1,6 @@
 Cow Ears by Headgear begins here.
 
-A cow ears is a kind of headgear. A cow ears is usually manly. There is 1 cow ears. Figure of cow ears is the file "Items\Accessories\Head\cowears1.png". Understand "pair", "of" as cow ears. A cow ears is usually hair growing. A cow ears is usually milk-taste-addiction-influencing. A cow ears is usually roleplay. [###Selkie: should it also sometimes increase lactation rate?]
+A cow ears is a kind of headgear. A cow ears is usually manly. There is 1 cow ears. Figure of cow ears is the file "Items/Accessories/Head/cowears1.png". Understand "pair", "of" as cow ears. A cow ears is usually hair growing. A cow ears is usually milk-taste-addiction-influencing. A cow ears is usually roleplay. [###Selkie: should it also sometimes increase lactation rate?]
 
 Definition: a cow ears (called C) is fluid immune:
 	decide yes.
@@ -78,7 +78,7 @@ To compute class outfit of (H - a cow ears):
 		now B is milk production;
 		now the raw-magic-modifier of B is the largeness of breasts / 4;
 		now cow-summoned is 1;
-	otherwise if (the largeness of breasts > 15 or (the largeness of breasts > 8 and the largeness of breasts >= max breast size)) and (T is actually summonable or pierce is 1):
+	otherwise if (the largeness of breasts > 15 or (the largeness of breasts > 8 and the largeness of breasts >= max breast size)) and (T is actually summonable or pierce is 1) and the class of the player is "cowgirl": [Not for multiclasses, since we probably can't destroy the dress]
 		say "[bold type]Your cow ears barely noticeably quiver, and then suddenly you feel searing pain from your breasts! [if pierce is 1 and there is worn breast covering clothing]The clothing covering your breasts tears to shreds as a[otherwise]A[end if] [if pierce is 1]pair of high-gauge rings have appeared in your nipples[end if][if pierce is 1 and T is actually summonable], and even worse the [otherwise if T is actually summonable]The [otherwise]![end if][if T is actually summonable]Nintendolls logo is now branded just below your breasts![end if][roman type][line break]";[possible break this up in some way.]
 		if pierce is 1:
 			repeat with D running through worn breast covering clothing:

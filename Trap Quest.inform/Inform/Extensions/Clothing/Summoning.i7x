@@ -85,6 +85,7 @@ This definition determines whether or not an item can be conventionally "destroy
 
 +!]
 Definition: a thing (called C) is destructible:
+	if C is metal, decide no;
 	decide yes.
 Definition: a thing (called C) is indestructible:
 	if C is destructible, decide no;

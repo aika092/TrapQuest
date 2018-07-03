@@ -249,8 +249,10 @@ Chapter 1 - Dongs
 A dong is a kind of sex toy. Understand "dildo" as dong.
 
 To decide which number is the masturbation-bonus of (C - a sex toy):
-	decide on 1.
+	decide on 1 + the magic-modifier of C + the raw-masturbation-bonus of C.
 
+To decide which number is the raw-masturbation-bonus of (C - a sex toy):
+	decide on 0.
 
 Chapter 2 - Plugs
 
@@ -267,11 +269,11 @@ To say PlugSize (N - a number):
 
 A plug is usually ass plugging.
 
-Figure of small plug is the file "Items\Accessories\Toys\plug1.png".
-Figure of medium plug is the file "Items\Accessories\Toys\plug2.png".
-Figure of large plug is the file "Items\Accessories\Toys\plug3.png".
-Figure of huge plug is the file "Items\Accessories\Toys\plug4.png".
-Figure of monstrous plug is the file "Items\Accessories\Toys\plug5.png".
+Figure of small plug is the file "Items/Accessories/Toys/plug1.png".
+Figure of medium plug is the file "Items/Accessories/Toys/plug2.png".
+Figure of large plug is the file "Items/Accessories/Toys/plug3.png".
+Figure of huge plug is the file "Items/Accessories/Toys/plug4.png".
+Figure of monstrous plug is the file "Items/Accessories/Toys/plug5.png".
 
 To decide which figure-name is the clothing-image of (P - a plug):
 	if the size of P < 3:
@@ -365,6 +367,21 @@ To decide which object is the concealer of (C - a tail plug):
 To say CurrentlyVisibleFlav of (C - a tail plug):
 	let S be a random worn actually dense potentially asshole covering clothing;
 	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
+
+
+Include Golden Phallus by Sex Toys.
+Include Throbbing Tentacle by Sex Toys.
+Include Vibrator by Sex Toys.
+Include Jelly Dildo by Sex Toys.
+Include Mamba by Sex Toys.
+Include Johnson by Sex Toys.
+Include Cat Tail Plug by Sex Toys.
+Include Bunny Tail Plug by Sex Toys.
+Include Puppy Tail Plug by Sex Toys.
+Include Demon Tail Plug by Sex Toys.
+Include Prostate Massager Plug by Sex Toys.
+Include Anal Beads by Sex Toys.
+Include Ben Wa Balls by Sex Toys.
 
 Sex Toy Framework ends here.
 

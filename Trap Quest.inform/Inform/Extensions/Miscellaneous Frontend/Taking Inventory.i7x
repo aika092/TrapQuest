@@ -70,8 +70,11 @@ Carry Out ItemListing:
 		say "[bold type]Loot:[roman type][line break]";
 		repeat with T running through held uncatalogued collectibles:
 			unless T is TQedible:
-				say "[T][line break]";
+				unless T is mass collectible, say "[T][line break]";
 				now T is catalogued;
+		if there is a held sanity token, say "[random held sanity token] (x[number of held sanity tokens]) "; [Even if there are 10 held we only want to write it once]
+		if there is a held fabric token, say "[random held fabric token] (x[number of held fabric tokens]) "; [Even if there are 10 held we only want to write it once]
+		if there is a held defiance token, say "[random held defiance token] (x[number of held defiance tokens]) "; [Even if there are 10 held we only want to write it once]
 	if there are carried uncatalogued clothing:
 		say "[bold type]Unworn clothing:[roman type][line break]";
 		repeat with T running through carried uncatalogued clothing:

@@ -40,5 +40,15 @@ Check wearing piercing:
 Check taking off piercing:
 	say "You can't take that off, it's permanently pierced into your skin!" instead.
 
+Include Nipple Piercings by Piercings Modules.
+Include Tongue Piercing by Piercings Modules.
+Include Earrings by Piercings Modules.
+Include Clitoris Piercing by Piercings Modules.
+Include Nose Piercing by Piercings Modules.
+Include Lip Piercing by Piercings Modules.
+Include Clitoris Lead by Piercings Modules.
+Include Cow Nipple Piercing by Piercings Modules.
+Include Module Framework by Piercings Modules.
+
 Piercing Framework ends here.
 

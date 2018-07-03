@@ -257,7 +257,7 @@ The monster convinced rule of hellhound is usually the hellhound never convinced
 
 To compute (M - hellhound) entering anally:
 	let C be a random off-stage pet collar;
-	if the player is the donator and C is actually summonable and M is willing to creampie asshole:
+	if C is actually summonable and M is willing to creampie asshole:
 		summon C cursed;
 		now M is covering C;
 		say "[BigNameDesc of M] uses its giant mouth to swing the collar over your head and onto your neck, where it immediately seals itself with cursed magic. [BigNameDesc of M] still has the leash in its mouth, which it uses to hold you strictly in place. There's no way you can escape now!";[The hellhound does this instead of penetrating you for this turn]

@@ -9,6 +9,10 @@ REQUIRES COMMENTING
 Capsule is a room. The printed name of Capsule is "Virtual Reality Machine".
 "A small metal chamber with nothing but a big red button.[TutorialCapsule]".
 
+
+To say unique-verb-desc of (T - a big red button):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]push[close bracket][as]push [text-shortcut of T][end link]".
+
 [!<bigRedButton:Item>*
 
 REQUIRES COMMENTING

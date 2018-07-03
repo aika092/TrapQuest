@@ -71,9 +71,7 @@ To decide which number is fetish-bonus of the player:
 		let X be the humiliation of the player / 8000;
 		decide on X;
 	otherwise if artificial-fetish is 1:
-		compute enhancement;
-		let X be the enhanced of the player / 10;
-		decide on X;
+		decide on player-enhancement / 8;
 	otherwise:
 		decide on 0.
 

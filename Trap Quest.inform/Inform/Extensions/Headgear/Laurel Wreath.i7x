@@ -2,7 +2,7 @@ Laurel Wreath by Headgear begins here.
 
 
 
-A laurel wreath is a kind of headgear. A laurel wreath is usually biological. There is 1 laurel wreath. Figure of laurel wreath is the file "Items\Accessories\Head\laurelwreath1.png". A laurel wreath is blondeness-positive. A laurel wreath is brightness-positive. A laurel wreath is redness-positive. A laurel wreath is usually manly. A laurel wreath is usually hair growing. A laurel wreath is usually vaginal-sex-addiction-influencing.
+A laurel wreath is a kind of headgear. A laurel wreath is usually biological. There is 1 laurel wreath. Figure of laurel wreath is the file "Items/Accessories/Head/laurelwreath1.png". A laurel wreath is blondeness-positive. A laurel wreath is brightness-positive. A laurel wreath is redness-positive. A laurel wreath is usually manly. A laurel wreath is usually hair growing. A laurel wreath is usually vaginal-sex-addiction-influencing.
 
 To decide if a laurel wreath is roleplay:
 	if pregnancy fetish is 1 and the player is originally female, decide yes;

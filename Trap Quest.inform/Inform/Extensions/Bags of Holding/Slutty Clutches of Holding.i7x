@@ -16,7 +16,7 @@ A dirty whore clutch of holding is a kind of slutty clutch of holding. There is 
 To decide which figure-name is clothing-image of (C - a dirty whore clutch of holding):
 	decide on figure of dirty whore clutch of holding.
 
-Figure of dirty whore clutch of holding is the file "Items\Accessories\Bags\bag7.png".
+Figure of dirty whore clutch of holding is the file "Items/Accessories/Bags/bag7.png".
 
 To say ClothingDesc of (C - a dirty whore clutch of holding):
 	say "A magic pink clutch that sits under your armpit and holds all your spare items and negates their weight. A pattern on the front says 'Dirty Whore'. A warning on the label says '[BagHoldingWarning] clutch'.".
@@ -28,7 +28,7 @@ Part 2 - Semen Pattern Clutch of Holding
 
 A semen pattern clutch of holding is a kind of slutty clutch of holding. There is 1 semen pattern clutch of holding. The printed name of semen pattern clutch of holding is usually "[TQlink of item described][clothing-title-before]semen pattern clutch of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of semen pattern clutch of holding is the file "Items\Accessories\Bags\bag8.png".
+Figure of semen pattern clutch of holding is the file "Items/Accessories/Bags/bag8.png".
 
 To decide which figure-name is clothing-image of (C - a semen pattern clutch of holding):
 	decide on figure of semen pattern clutch of holding.
@@ -43,7 +43,7 @@ Part 3 - Cunt Clutch of Holding
 
 A cunt clutch of holding is a kind of slutty clutch of holding. There is 1 cunt clutch of holding. The printed name of cunt clutch of holding is usually "[TQlink of item described][clothing-title-before]cunt clutch of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of cunt clutch of holding is the file "Items\Accessories\Bags\bag10.png".
+Figure of cunt clutch of holding is the file "Items/Accessories/Bags/bag10.png".
 
 To decide which figure-name is clothing-image of (C - a cunt clutch of holding):
 	decide on figure of cunt clutch of holding.
@@ -58,7 +58,7 @@ Part 4 - Ass Clutch of Holding
 
 An ass clutch of holding is a kind of slutty clutch of holding. There is 1 ass clutch of holding. The printed name of ass clutch of holding is usually "[TQlink of item described][clothing-title-before]ass clutch of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of ass clutch of holding is the file "Items\Accessories\Bags\bag12.png".
+Figure of ass clutch of holding is the file "Items/Accessories/Bags/bag12.png".
 
 To decide which figure-name is clothing-image of (C - an ass clutch of holding):
 	decide on figure of ass clutch of holding.
@@ -73,7 +73,7 @@ Part 5 - Basic Bitch Clutch of Holding
 
 A basic bitch clutch of holding is a kind of slutty clutch of holding. There is 1 basic bitch clutch of holding. The printed name of basic bitch clutch of holding is usually "[TQlink of item described][clothing-title-before]basic bitch clutch of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of basic bitch clutch of holding is the file "Items\Accessories\Bags\bag13.png".
+Figure of basic bitch clutch of holding is the file "Items/Accessories/Bags/bag13.png".
 
 To decide which figure-name is clothing-image of (C - a basic bitch clutch of holding):
 	decide on figure of basic bitch clutch of holding.

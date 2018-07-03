@@ -28,7 +28,7 @@ To say ClothingDesc of (K - white-hotpants):
 To say UniqueTitle of (K - white-hotpants):
 	say "tiny white cotton hotpants".
 
-Figure of white-hotpants is the file "Items\Clothes\Lower\Underwear\Skimpy\hotpants1.png".
+Figure of white-hotpants is the file "Items/Clothes/Lower/Underwear/Skimpy/hotpants1.png".
 
 To decide which number is the initial outrage of (C - white-hotpants):
 	decide on 6.

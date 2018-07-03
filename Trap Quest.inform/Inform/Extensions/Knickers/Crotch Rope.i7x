@@ -16,7 +16,7 @@ To decide which figure-name is clothing-image of (C - crotch rope):
 
 To say ClothingDesc of (K - crotch rope):
 	say "This thick rope has a large brutal knot over your [vagina] and then splits into two ropes to allow full access to your [asshole].[if vagina is actually occupied]Your [random thing penetrating vagina] is thankfully preventing the knot from rubbing against your sensitive crotch.[end if]".
-Figure of crotch rope is the file "Items\Clothes\Lower\Underwear\Special\crotchrope1.png".
+Figure of crotch rope is the file "Items/Clothes/Lower/Underwear/Special/crotchrope1.png".
 
 To say selfexamineuniquetitle of (K - crotch rope):
 	say "tight, rough crotch rope".

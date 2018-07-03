@@ -1,7 +1,7 @@
 Fudge by Food begins here.
 
 
-A fudge is a kind of candy. The printed name of fudge is "[TQlink of item described]fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of fudge is "[TQlink of item described]pieces of fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fudge is "fu". The description of fudge is "A piece of fudge, still in its wrapper. It will definitely significantly increase your energy, and hopefully it isn't poisoned.". There is 1 fudge.
+A fudge is a kind of candy. The printed name of fudge is "[TQlink of item described]fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of fudge is "[TQlink of item described]pieces of fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fudge is "fud". The description of fudge is "A piece of fudge, still in its wrapper. It will definitely significantly increase your energy, and hopefully it isn't poisoned.". There is 1 fudge.
 
 fudge-poison-timer is a number that varies.
 

@@ -2,7 +2,7 @@ Vibrator by Sex Toys begins here.
 
 A vibrator is a kind of dong. There is 1 vibrator. The size of a vibrator is usually 3. The printed name of a vibrator is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]vibrator[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of vibrator is "vi". Understand "vibe" as vibrator.
 
-Figure of vibrator is the file "Items\Accessories\Toys\vibrator1.png".
+Figure of vibrator is the file "Items/Accessories/Toys/vibrator1.png".
 
 To decide which figure-name is clothing-image of (C - a vibrator):
 	decide on figure of vibrator.
@@ -34,7 +34,7 @@ To compute periodic effect of (P - a vibrator):
 To decide which number is the original price of (C - a vibrator):
 	decide on 4.
 	
-To decide which number is the masturbation-bonus of (C - a vibrator):
+To decide which number is the raw-masturbation-bonus of (C - a vibrator):
 	decide on 3.
 
 To uniquely set up (C - a vibrator):

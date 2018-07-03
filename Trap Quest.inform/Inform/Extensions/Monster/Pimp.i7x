@@ -84,7 +84,7 @@ Part 1 - Perception
 To decide which number is the bimbo tolerance of (M - pimp):
 	decide on 20.
 
-To decide which number is the cringe tolerance of (M - pimp):
+To decide which number is the bab tolerance of (M - pimp):
 	decide on 20.
 
 To compute perception of (M - pimp):

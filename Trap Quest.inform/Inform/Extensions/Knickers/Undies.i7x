@@ -30,7 +30,7 @@ To compute periodic effect of (P - an undies):
 				say "You feel your [printed name of P] [Shrink] your manhood to better conceal your [ShortDesc of penis]!".
 
 Report wearing undies:
-	if the armour of the noun < the size of penis:
+	if the penis-capacity of the noun < the size of penis:
 		say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
 	
 This is the remove inappropriate undies rule:

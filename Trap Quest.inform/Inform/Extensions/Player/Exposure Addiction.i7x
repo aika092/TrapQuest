@@ -38,6 +38,7 @@ The knickers can't be summoned with no panties fetish rule is listed in the knic
 topless permanent fetish is a number that varies. topless permanent fetish is 0.
 
 To decide which number is topless-fetish:
+	if diaper quest is 1, decide on 0;
 	if topless permanent fetish is 1 or there is a worn topless tattoo or the humiliation of the player >= 35000, decide on 1;
 	otherwise decide on 0.
 

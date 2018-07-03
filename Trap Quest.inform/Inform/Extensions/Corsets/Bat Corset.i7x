@@ -7,7 +7,7 @@ Definition: a bat corset (called C) is fluid immune:
 
 The printed name of bat corset is usually "[TQlink of item described][clothing-title-before]bat corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of bat corset is "bco".
 
-Figure of Bat Corset is the file "Items\Clothes\Upper\Corsets\batcorset1.png".
+Figure of Bat Corset is the file "Items/Clothes/Upper/Corsets/batcorset1.png".
 
 To decide which figure-name is clothing-image of (C - a bat corset):
 	decide on figure of bat corset.

@@ -109,6 +109,8 @@ REQUIRES COMMENTING
 +!]
 Definition: a clothing (called C) is potentially penis covering:[does not check if penis is visible, only if it is covered by something.]
 	if C is potentially pussy covering clothing:
+		if there is a worn chastity cage:
+			if the size of penis > 3 and the penis-capacity of C >= 3, decide yes;[when you're in chastity, certain clothing can still cover a penis that otherwise wouldn't fit]
 		if the size of penis <= the penis-capacity of C, decide yes;
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]

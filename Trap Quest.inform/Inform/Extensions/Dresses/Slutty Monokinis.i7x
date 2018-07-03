@@ -8,7 +8,7 @@ The armour of yellow string monokini is usually 1. The soak-limit of yellow stri
 
 The printed name of yellow string monokini is usually "[TQlink of item described][clothing-title-before]yellow string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of yellow string monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini1.png".
+Figure of yellow string monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini1.png".
 
 To decide which number is the initial outrage of (C - a yellow string monokini):
 	decide on 13.
@@ -28,7 +28,7 @@ A purple strap monokini is a kind of strap monokini. There is 1 purple strap mon
 
 The printed name of purple strap monokini is usually "[TQlink of item described][clothing-title-before]purple strap swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of purple strap monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini2.png".
+Figure of purple strap monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini2.png".
 
 To decide which figure-name is clothing-image of (C - a purple strap monokini):
 	decide on figure of purple strap monokini.
@@ -46,7 +46,7 @@ A grey string monokini is a kind of string monokini. There is 1 grey string mono
 
 The printed name of grey string monokini is usually "[TQlink of item described][clothing-title-before]grey string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of grey string monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini3.png".
+Figure of grey string monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini3.png".
 
 To decide which figure-name is clothing-image of (C - a grey string monokini):
 	decide on figure of grey string monokini.
@@ -65,7 +65,7 @@ A black string monokini is a kind of string monokini. There is 1 black string mo
 
 The printed name of black string monokini is usually "[TQlink of item described][clothing-title-before]black string swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of black string monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini4.png".
+Figure of black string monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini4.png".
 
 To decide which figure-name is clothing-image of (C - a black string monokini):
 	decide on figure of black string monokini.
@@ -84,7 +84,7 @@ A blue slut monokini is a kind of slut monokini. There is 1 blue slut monokini.
 
 The printed name of blue slut monokini is usually "[TQlink of item described][clothing-title-before]blue monokini[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of blue slut monokini is "bm".
 
-Figure of blue slut monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini5.png".
+Figure of blue slut monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini5.png".
 
 To decide which figure-name is clothing-image of (C - a blue slut monokini):
 	decide on figure of blue slut monokini.
@@ -106,7 +106,7 @@ A pink minimalist monokini is a kind of minimalist monokini. There is 1 pink min
 
 The printed name of pink minimalist monokini is usually "[TQlink of item described][clothing-title-before]pink minimalist swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of pink minimalist monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini6.png".
+Figure of pink minimalist monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini6.png".
 
 To decide which number is the initial outrage of (C - a pink minimalist monokini):
 	decide on 8.
@@ -128,7 +128,7 @@ A blue minimalist monokini is a kind of minimalist monokini. There is 1 blue min
 
 The printed name of blue minimalist monokini is usually "[TQlink of item described][clothing-title-before]blue minimalist swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of blue minimalist monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini7.png".
+Figure of blue minimalist monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini7.png".
 
 To decide which figure-name is clothing-image of (C - a blue minimalist monokini):
 	decide on figure of blue minimalist monokini.
@@ -146,7 +146,7 @@ A pink strap monokini is a kind of strap monokini. There is 1 pink strap monokin
 
 The printed name of pink strap monokini is usually "[TQlink of item described][clothing-title-before]pink strap swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of pink strap monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini8.png".
+Figure of pink strap monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini8.png".
 
 To decide which figure-name is clothing-image of (C - a pink strap monokini):
 	decide on figure of pink strap monokini.
@@ -164,7 +164,7 @@ A purple minimalist monokini is a kind of minimalist monokini. There is 1 purple
 
 The printed name of purple minimalist monokini is usually "[TQlink of item described][clothing-title-before]purple minimalist swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of purple minimalist monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini9.png".
+Figure of purple minimalist monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini9.png".
 
 To decide which figure-name is clothing-image of (C - a purple minimalist monokini):
 	decide on figure of purple minimalist monokini.
@@ -183,7 +183,7 @@ A white slut monokini is a kind of slut monokini. There is 1 white slut monokini
 
 The printed name of white slut monokini is usually "[TQlink of item described][clothing-title-before]white monokini[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of white slut monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini10.png".
+Figure of white slut monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini10.png".
 
 To decide which figure-name is clothing-image of (C - a white slut monokini):
 	decide on figure of white slut monokini.
@@ -201,11 +201,11 @@ To set up influence of (C - a white slut monokini):
 
 Part 11 - Black Mesh Monokini
 
-A black mesh monokini is a kind of string monokini. There is 1 black mesh monokini. The text-shortcut of black mesh monokini is "bms". A black mesh monokini is see-through. A black mesh monokini is normally-nipple-covering.
+A black mesh monokini is a kind of string monokini. There is 1 black mesh monokini. The text-shortcut of black mesh monokini is "bmsh". A black mesh monokini is see-through. A black mesh monokini is normally-nipple-covering.
 
 The printed name of black mesh monokini is usually "[TQlink of item described][clothing-title-before]black mesh swimsuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of black mesh monokini is the file "Items\Clothes\Upper\Swimming\Monokinis\stringmonokini11.png".
+Figure of black mesh monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini11.png".
 
 To decide which figure-name is clothing-image of (C - a black mesh monokini):
 	decide on figure of black mesh monokini.

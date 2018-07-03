@@ -146,7 +146,7 @@ To say AdviceAnswer of (M - a staff member):
 	say "[speech style of M]'Don't take off your armband.'[roman type][line break]".
 
 To compute teaching of (M - a staff member):
-	say "[speech style of M]'Is that supposed to be some kind of joke?'[roman type][line break]".
+	say "[speech style of M]'[one of]Is that supposed to be some kind of joke?'[or]Haha, very funny.'[or]Are you trying to insult me or something?'[in random order][roman type][line break]".
 
 To decide which number is the annoyance threshold of (M - a staff member):
 	decide on 999999.
@@ -164,9 +164,6 @@ To say NameDesc of (M - a teacher):
 	say "[input-style][teacher-name of M][roman type]".
 To say BigNameDesc of (M - a teacher):
 	say "[input-style][teacher-name of M][roman type]".
-	
-Definition: a teacher (called M) is fetish appropriate:
-	decide yes.
 
 Part - Lessons
 
@@ -182,7 +179,11 @@ This is the class-time cooldown rule:
 	if class-time < 1000: [We use 1000 to represent that the player hasn't been to a class before]
 		decrease class-time by counters-seconds;
 		if class-time <= 0 and class-time + counters-seconds > 0 and armband is worn:
-			say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock!  [line break][variable custom style][one of]Huh?!  Does this mean it's time for the next class or something?[or]Time for class again...[stopping][roman type][line break]".
+			say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock! ";
+			if (the player is in the Dungeon or the player is in the Woods or the player is in the Hotel or the player is in the Mansion) and the number of warp portals in the location of the player is 0:
+				now school portal is in the location of the player;
+				say "A shimmering green [school portal] appears [if north is N-viable]to the north, blocking that exit[otherwise if the player is in the woods]in front of the trees to the north[otherwise]on the north wall[end if].";
+			say "	[line break][variable custom style][one of]Huh?!  Does this mean it's time for the next class or something?[or]Time for class again...[stopping][roman type][line break]".
 The class-time cooldown rule is listed in the advance counters rules.
 
 Definition: a lesson (called L) is correctly-ranked:
@@ -426,7 +427,7 @@ Cup challenge
 -TQ: The other four cups are filled with semen
 -One cup has a birth control pill dissolved in it
 -One cup has a negative pill dissolved in it
-	-DQ: its that kind of pill.
+	-DQ: it's that kind of pill.
 	-TQ: arousal pill?
 -One cup is just the substance.
 -One cup has a thing added to it that tells the player's armband detention is over
@@ -434,14 +435,14 @@ Cup challenge
 -The player will get fucked while they fiddle around with the cups
 
 Aika: I like a lot of these ideas but most of them give the player a way to rebel, which then obviously needs to be handled somehow.
-MG: The idea with a lot of these was to give the player a bit of a minigame to play. I think the detention should have ways to minimize its effects built in, that way if the player has already seen this type of detention, they aren't bored, and I think its very thematic to be rebellious during detention.
+MG: The idea with a lot of these was to give the player a bit of a mini-game to play. I think the detention should have ways to minimize its effects built in, that way if the player has already seen this type of detention, they aren't bored, and I think it's very thematic to be rebellious during detention.
 
 ]
 
 [Two ideas here:
 The player watches a pornographic video in class and has to write a report on what insights the narrator had on "<insert idea here>"
 
-The player is strapped into a chair and has to watch a "remedial" seminar to make up for lost class time. Really its a hypno screen that the player has to stare at for a while
+The player is strapped into a chair and has to watch a "remedial" seminar to make up for lost class time. Really it's a hypno screen that the player has to stare at for a while
 
 ]
 
@@ -453,8 +454,8 @@ To compute remedial detention of (M - a staff member):
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	otherwise compute DQChairSetup of M;]
-	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your head, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rythm begins playing into your ears.";
-	if diaper quest is 0, say "Short clips of [if tg fetish is 1]transexual [end if]pornstars stripping off their clothes appear on the screen, and the music's volume slowly rises as a husky feminine voice begins speaking right into your ear.[line break][first custom style]'Welcome to my classroom, baby. You can call me Mistress Professor. Are you ready for a lesson?'[roman type][line break]A hypnotic swirling pattern fades into the screen as male actors gradually begin to appear in the clips, and you suddenly realize how hard it is to pull your eyes away from the screen. You realize you have no choice but to fight off the hypnosis until you're released!";
+	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
+	if diaper quest is 0, say "Short clips of [if tg fetish is 1]transsexual [end if]pornstars stripping off their clothes appear on the screen, and the music's volume slowly rises as a husky feminine voice begins speaking right into your ear.[line break][first custom style]'Welcome to my classroom, baby. You can call me Mistress Professor. Are you ready for a lesson?'[roman type][line break]A hypnotic swirling pattern fades into the screen as male actors gradually begin to appear in the clips, and you suddenly realize how hard it is to pull your eyes away from the screen. You realize you have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute room leaving of M;
 	now M is in Holding Pen;
@@ -486,16 +487,16 @@ To compute rem chair detention:
 			let M be a random staff member in Holding Pen;
 			if M is staff member:
 				now M is in the location of the player;
-				say "Panning clips of pornstars [if bukkake fetish is 1]with cum plastered all over their faces[otherwise if diaper quest is 0]displaying their gaping holes to the camera[otherwise]PLACEHOLDER[end if] cycle on the screen as the hypnotic swirling pattern fades and the syncopated rythm winds down. [line break][first custom style]'Thanks for learning. That's all for today![roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and [NameDesc of M] reenters the room. [big he of M] doesn't say anything as she removes your headphones and frees you from your bindings.";
+				say "Panning clips of pornstars [if bukkake fetish is 1]with cum plastered all over their faces[otherwise if diaper quest is 0]displaying their gaping holes to the camera[otherwise]PLACEHOLDER[end if] cycle on the screen as the hypnotic swirling pattern fades and the syncopated rhythm winds down. [line break][first custom style]'Thanks for learning. That's all for today![roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and [NameDesc of M] re-enters the room. [big he of M] doesn't say anything as [he of M] removes your headphones and frees you from your bindings.";
 				distract M;
 				now the location of the player is not bossed;
 			otherwise:
-				say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
+				say "BUG: There's no teacher to summon to release the player. The player will be released anyway so the game doesn't freeze!";
 			now detention chair is not grabbing the player.
 		
 
 To say RemHypnoContent:
-	if diaper quest is 0, say "[one of]A clip of a [if tg fetish is 1]transexual [end if]pornstar getting gangbanged by five guys shows on the screen.[or]A zoomed in shot of a pornstar being anally destroyed by two [manly-penis]s at once shows on the screen.[or]The screen shows a pornstar getting her makeup ruined as her partner fucks her face.[or]The screen shows a pornstar grinning as her partner smacks her in the face, slamming his dick in and out of her [asshole].[or]The video shows a pair of [if tg fetish is 1]transexual [end if]pornstars taking turns getting spitroasted by a group of 9 guys.[in random order]";
+	if diaper quest is 0, say "[one of]A clip of a [if tg fetish is 1]transsexual [end if]pornstar getting gangbanged by five guys shows on the screen.[or]A zoomed in shot of a pornstar being anally destroyed by two [manly-penis]s at once shows on the screen.[or]The screen shows a pornstar getting her makeup ruined as her partner fucks her face.[or]The screen shows a pornstar grinning as her partner smacks her in the face, slamming his dick in and out of her [asshole].[or]The video shows a pair of [if tg fetish is 1]transsexual [end if]pornstars taking turns getting spit roasted by a group of 9 guys.[in random order]";
 	otherwise say "PLACEHOLDER".
 
 To say RemHypnoMantra:

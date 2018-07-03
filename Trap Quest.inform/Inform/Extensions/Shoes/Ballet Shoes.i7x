@@ -46,7 +46,7 @@ The printed name of ballet shoes is usually "[TQlink of item described][item sty
 To decide which figure-name is the clothing-image of (H - a ballet shoes):
 	decide on the figure of ballet shoes.
 
-Figure of ballet shoes is the file "Items\Clothes\Lower\Feet\Ballet\balletshoes1.png".
+Figure of ballet shoes is the file "Items/Clothes/Lower/Feet/Ballet/balletshoes1.png".
 
 There is 1 ballet shoes.
 
@@ -70,7 +70,7 @@ A sissy ballet boots is a kind of ballet shoes. A sissy ballet boots is usually 
 To decide which figure-name is the clothing-image of (H - a sissy ballet boots):
 	decide on the figure of sissy ballet boots.
 
-Figure of sissy ballet boots is the file "Items\Clothes\Lower\Feet\Ballet\balletshoes2.png".
+Figure of sissy ballet boots is the file "Items/Clothes/Lower/Feet/Ballet/balletshoes2.png".
 
 There is 1 sissy ballet boots.
 
@@ -92,7 +92,7 @@ A thigh high ballet boots is a kind of ballet shoes. A thigh high ballet boots i
 To decide which figure-name is the clothing-image of (H - a thigh high ballet boots):
 	decide on the figure of thigh high ballet boots.
 
-Figure of thigh high ballet boots is the file "Items\Clothes\Lower\Feet\Ballet\balletshoes3.png".
+Figure of thigh high ballet boots is the file "Items/Clothes/Lower/Feet/Ballet/balletshoes3.png".
 
 There is 1 thigh high ballet boots.
 
@@ -106,7 +106,7 @@ To decide which number is the unique outrage of (C - a thigh high ballet boots):
 To decide which number is the unique cringe of (C - a thigh high ballet boots):
 	decide on 3.
 
-Definition: a thigh high ballet boots (called C) is untansformable:
+Definition: a thigh high ballet boots (called C) is untransformable:
 	if there is a worn ballet corset, decide yes;
 	decide no.
 

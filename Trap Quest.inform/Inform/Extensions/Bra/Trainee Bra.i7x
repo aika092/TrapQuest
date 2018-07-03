@@ -34,8 +34,8 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 	BraGrow C;
 	if a random number between 1 and 50 is 1:
 		if artificial enhancements fetish is 1:
-			if the training-progress of C is 3:
-				say "Your [printed name of C] emits [the training-progress of C + 1] short tones, tightening slightly each time. You feel a pinch as the bra emits a [the training-progress of C + 1]th, sustained tone and drops off your chest completely. Looking down, you realize the silicone pads have seamlessly attached themselves to your chest. You have breast implants!";
+			if the training-progress of C >= 3:
+				say "Your [printed name of C] emits [the training-progress of C + 1] short tones, tightening slightly each time. You feel a pinch as the bra emits a [the training-progress of C + 2]th, sustained tone and drops off your chest completely. Looking down, you realize the silicone pads have seamlessly attached themselves to your chest. You have breast implants!";
 				BustImplantsUp 5;
 				now the training-progress of C is 0;
 				destroy C;
@@ -47,12 +47,12 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				arouse 100 + the sensitivity of breasts * 10;
 				increase the training-progress of C by 1;
 		otherwise:
-			say "Your [printed name of C] [if the training-progress of C < 0]tightens and emits a short tone[otherwise]tightens and emits [the training-progress of C + 1] short tones[end if] as warm fluid begins seeping through the flexible lining of the bra, soaking into your skin. You hear another tone after a while, and look down [if the training-progress of C is 3]to see the bra dropping off your chest completely![otherwise]to see the silhouette of the bra hasn't changed! Your breasts must be bigger![end if][line break]";
+			say "Your [printed name of C] [if the training-progress of C < 0]tightens and emits a short tone[otherwise]tightens and emits [the training-progress of C + 1] short tones[end if] as warm fluid begins seeping through the flexible lining of the bra, soaking into your skin. You hear another tone after a while, and look down [if the training-progress of C >= 3]to see the bra dropping off your chest completely![otherwise]to see the silhouette of the bra hasn't changed! Your breasts must be bigger![end if][line break]";
 			increase the training-progress of C by 1;
 			if the training-progress of C < 1, BustUp 1;
 			otherwise BustUp the training-progress of C;
 			if lactation fetish is 1, increase the lactation rate of the player by 1;
-			if the training-progress of C is 3:
+			if the training-progress of C >= 3:
 				now the training-progress of C is 0;
 				destroy C;
 				ProgressUp senior robobellboy.

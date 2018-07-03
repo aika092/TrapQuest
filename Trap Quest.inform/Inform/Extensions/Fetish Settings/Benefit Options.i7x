@@ -12,14 +12,10 @@ title	subtable	description	toggle
 "Reset Choices"	--	--	reset rule
 "CHOOSE A BACKGROUND (5 points) [if background-nurse + background-sporty + background-waitress + background-pure <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
 "CHOOSE A SECRET (7 points) [if tattoo-fetish + piercing-fetish + humiliation-fetish + artificial-fetish <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Secret Options	--	--
+"CHOOSE BODY SHAPE LIMITATIONS"	Table of Body Limit Options	--	--
 "Extra Strength: [bonus strength] ([bonus strength points] points used. [bonus strength cost].)"	--	--	bonus strength rule
 "Extra Dexterity: [bonus dexterity] ([bonus dexterity points] points used. [bonus dexterity cost].)"	--	--	bonus dexterity rule
 "Extra Intelligence: [bonus intelligence] ([bonus intelligence points] points used. [bonus intelligence cost].)"	--	--	bonus intelligence rule
-"Reduce Maximum Breast Size ([MaxBreastSizeDesc] - [max breast size points] points used. [bonus breast cost].)"	--	--	max breast size rule
-"Reduce Maximum Ass Size ([MaxAssSizeDesc] - [max ass size points] points used)"	--	--	max ass size rule
-"Reduce Maximum Belly Size [if weight gain fetish is 1 or pregnancy fetish is 1 or inflation fetish is 1](Except [end if][if weight gain fetish is 1]fat[end if][if weight gain fetish is 1 and (pregnancy fetish is 1 or inflation fetish is 1)] and [end if][if pregnancy fetish is 1]pregnancy[end if][if pregnancy fetish is 1 and inflation fetish is 1] and [end if][if inflation fetish is 1]air inflation[end if][if weight gain fetish is 1 or pregnancy fetish is 1 or inflation fetish is 1])[end if] ([MaxBellySizeDesc] - [max belly size points] points used)"	--	--	max belly size rule
-"Increase Minimum Penis Size ([if the player is female]Disabled since player is female[otherwise if min penis size is 0]No penis - 0 points used. [bonus penis cost][otherwise if min penis size is 1]Less than 1 inch - 1 point used. [bonus penis cost][otherwise if min penis size is 2]1 inch - 1 point used. [bonus penis cost][otherwise][min penis size] inch - [min penis size points] points used. [bonus penis cost][end if][if the player is male and tg fetish >= 1]  When this size is reached, TG can occur.[end if])"	--	--	min penis size rule
-"Flatchested until sex change; disable futanari content ([if the player is female and trap fetish is 0]Free to enable, as the player is female[otherwise if TG fetish is 0 and trap fetish is 0]Free to enable, since TG fetish is disabled.[otherwise if trap fetish is 0]Not enabled - costs 3 points to enable[otherwise if trap fetish is 1 and the player is male and tg fetish >= 1]Enabled - 3 points used[otherwise if trap fetish is 1]Enabled - free to disable[end if])"	--	--	trap fetish toggle rule
 "Mindbreak protection (player can't get broken: humiliation, bimbo and sex addiction cap slightly lowered) ([if mindbreak protection is 0]Not enabled - costs 4 points to enable[otherwise]Enabled - 4 points used[end if])"	--	--	mindbreak protection toggle rule
 "Bondage protection (most common ways of getting bondage including chastity are prevented) ([if bondage protection is 0]Not enabled - costs 4 points to enable[otherwise]Enabled - 4 points used[end if])"	--	--	bondage protection toggle rule
 "Spontaneous tattoos (If this is disabled, tattoos won't spawn on their own until you get one voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise]Enabled - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
@@ -213,108 +209,6 @@ This is the bonus intelligence reset rule:
 	now choice in row 23 of the Table of Player Options is 0;
 	now choice in row 26 of the Table of Player Options is 0.
 The bonus intelligence reset rule is listed in the reset rules.
-
-[!<TheMaxBreastSizeRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the max breast size rule:
-	if max breast size <= min breast size:
-		do nothing;
-	otherwise if choice in row 33 of the Table of Player Options < max breast size points and choice in row 33 of the Table of Player Options  < 4:
-		increase choice in row 33 of the Table of Player Options by 1;
-	otherwise if points count > 0 and max breast size points < 6:
-		increase choice in row 27 of the Table of Player Options by 1.
-
-This is the max breast size reset rule:
-	now choice in row 33 of the Table of Player Options is 0;
-	now choice in row 27 of the Table of Player Options is 0.
-The max breast size reset rule is listed in the reset rules.
-
-[!<SayBonusBreastCost>+
-
-REQUIRES COMMENTING
-
-+!]
-To say bonus breast cost:
-	if max breast size <= min breast size:
-		say "No more points can be spent here due to starting proportions";
-	otherwise if choice in row 33 of the Table of Player Options < max breast size points and choice in row 33 of the Table of Player Options < 4:
-		say "Next increase is free";
-	otherwise if max breast size points < 6:
-		say "Next increase costs 1 point";
-	otherwise:
-		say "No more points can be spent here".
-
-[!<TheMaxAssSizeRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the max ass size rule:
-	if points count > 0 and max ass size points < 6 and max ass size - 2 >= min ass size, increase choice in row 28 of the Table of Player Options by 1.
-
-This is the max ass size reset rule:
-	now choice in row 28 of the Table of Player Options is 0.
-The max ass size reset rule is listed in the reset rules.
-
-[!<TheMaxBellyCountSizeRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the max belly size rule:
-	if points count > 0 and max belly size points < 3, increase choice in row 37 of the Table of Player Options by 1.
-
-This is the max belly size reset rule:
-	now choice in row 37 of the Table of Player Options is 0.
-The max belly size reset rule is listed in the reset rules.
-
-[!<TheMinPenisSizeRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the min penis size rule:
-	if min penis size points is 1 and micro-choice < 2:
-		increase choice in row 30 of the Table of Player Options by 1;
-	otherwise:
-		if min penis size points < 5 and the player is male and points count > 0 or tg fetish >= 1, increase choice in row 29 of the Table of Player Options by 1.
-
-This is the min penis size reset rule:
-	now choice in row 29 of the Table of Player Options is 0;
-	now choice in row 30 of the Table of Player Options is 0.
-The min penis size reset rule is listed in the reset rules.
-
-[!<SayBonusPenisCost>+
-
-REQUIRES COMMENTING
-
-+!]
-To say bonus penis cost:
-	if tg fetish >= 1:
-		say "All increases are free. ";
-	otherwise if min penis size points is 1 and micro-choice < 2:
-		say "Next increase is free. ";
-	otherwise if min penis size is 7:
-		say "You are at maximum minimum penis length. ";
-	otherwise:
-		say "Next increase costs 1 point. ".
-
-
-[!<TheTrapFetishToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the trap fetish toggle rule:
-	if trap fetish is 0 and points count >= 3, now choice in row 34 of the Table of Player Options is 1;
-	otherwise now choice in row 34 of the Table of Player Options is 0.
-
-This is the trap fetish reset rule:
-	now choice in row 34 of the Table of Player Options is 0.
-The trap fetish reset rule is listed in the reset rules.
 
 [!<TheMindbreakProtectionToggleRule>+
 

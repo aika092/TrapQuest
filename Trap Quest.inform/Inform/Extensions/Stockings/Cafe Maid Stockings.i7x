@@ -4,7 +4,7 @@ cafe maid stockings is a stockings. cafe maid stockings is cotton. cafe maid sto
 
 The printed name of cafe maid stockings is "[TQlink of item described][clothing-title-before]cafe maid stockings[clothing-title-after][TQxlink of item described][verb-desc of item described]". 
 
-Figure of cafe maid stockings is the file "Items\Clothes\Lower\Legs\cafestockings1.png".
+Figure of cafe maid stockings is the file "Items/Clothes/Lower/Legs/cafestockings1.png".
 
 To decide which figure-name is clothing-image of (C - a cafe maid stockings):
 	decide on figure of cafe maid stockings.

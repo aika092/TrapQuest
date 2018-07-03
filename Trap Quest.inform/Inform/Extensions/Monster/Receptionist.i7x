@@ -56,7 +56,7 @@ To compute perception of (M - receptionist):
 		now armband is carried by the player;
 		now the armband-print of armband is "new recruit";
 		try examining the armband;
-		say "Do you wear the armband?";
+		say "Do you wear the armband? [yesnolink]";
 		if the player consents:
 			try wearing armband;
 		otherwise:

@@ -22,7 +22,7 @@ Part 1 - I Love Cock in my Ass Vest Top
 
 An my ass vest top is a kind of vest top. The printed name of my ass vest top is usually "[TQlink of item described][clothing-title-before]I love cock in my ass vest top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of my ass vest top is "lcv". Understand "I love", "cock", "in my" as my ass vest top.
 
-Figure of my ass vest top is the file "Items\Clothes\Upper\Vests\vest1.png".
+Figure of my ass vest top is the file "Items/Clothes/Upper/Vests/vest1.png".
 
 There is 1 my ass vest top.
 
@@ -42,7 +42,7 @@ Part 2 - Yes My Tits would like a Drink Vest Top
 
 A my tits would like a drink vest top is a kind of vest top. The printed name of my tits would like a drink vest top is usually "[TQlink of item described][clothing-title-before]my tits would like a drink vest top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of my tits would like a drink vest top is "mtv".
 
-Figure of my tits would like a drink vest top is the file "Items\Clothes\Upper\Vests\vest2.png".
+Figure of my tits would like a drink vest top is the file "Items/Clothes/Upper/Vests/vest2.png".
 
 There is 1 my tits would like a drink vest top.
 
@@ -62,7 +62,7 @@ Part 3 - Real Cowgirls Ride Their Bulls Bareback Vest Top
 
 A real cowgirls ride their bulls bareback vest top is a kind of vest top. The printed name of real cowgirls ride their bulls bareback vest top is usually "[TQlink of item described][clothing-title-before]real cowgirls ride their bulls bareback vest top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of real cowgirls ride their bulls bareback vest top is "rcv".
 
-Figure of real cowgirls ride their bulls bareback vest top is the file "Items\Clothes\Upper\Vests\vest3.png".
+Figure of real cowgirls ride their bulls bareback vest top is the file "Items/Clothes/Upper/Vests/vest3.png".
 
 There is 1 real cowgirls ride their bulls bareback vest top.
 
@@ -82,7 +82,7 @@ Part 4 - Rubber Vest Top
 
 A rubber vest top is a kind of vest top. The printed name of rubber vest top is usually "[TQlink of item described][clothing-title-before]latex vest top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of rubber vest top is "lvt".
 
-Figure of rubber vest top is the file "Items\Clothes\Upper\Vests\vest4.png".
+Figure of rubber vest top is the file "Items/Clothes/Upper/Vests/vest4.png".
 
 There is 1 rubber vest top. A rubber vest top is latex. A rubber vest top is very low cut.
 

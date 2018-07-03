@@ -1,6 +1,6 @@
 Rope Harness by Dresses begins here.
 
-A rope harness is a kind of overdress. A rope harness is usually hemp. A rope harness is usually see-through. A rope harness is usually fully exposing. A rope harness is usually belly covering. A rope harness is usually unskirted. There is rope harness. Figure of rope harness is the file "Items\Clothes\Upper\Exposing\ropeharness1.png". The soak-limit of a rope harness is usually 7.  A rope harness has a number called charge.
+A rope harness is a kind of overdress. A rope harness is usually hemp. A rope harness is usually see-through. A rope harness is usually fully exposing. A rope harness is usually belly covering. A rope harness is usually unskirted. There is rope harness. Figure of rope harness is the file "Items/Clothes/Upper/Exposing/ropeharness1.png". The soak-limit of a rope harness is usually 7.  A rope harness has a number called charge.
 
 To decide which number is the original price of (C - a rope harness):
 	decide on 5.

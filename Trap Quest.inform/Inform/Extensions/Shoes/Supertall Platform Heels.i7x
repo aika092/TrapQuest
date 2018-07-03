@@ -4,8 +4,8 @@ A tall platform heels is a kind of platform heels. A tall platform heels is usua
 
 There are 2 tall platform heels.
 
-Figure of 9 inch pvc platform heels is the file "Items\Clothes\Lower\Feet\Heels\Platform\platform1b.png".
-Figure of 10 inch pvc platform heels is the file "Items\Clothes\Lower\Feet\Heels\Platform\platform1c.png".
+Figure of 9 inch pvc platform heels is the file "Items/Clothes/Lower/Feet/Heels/Platform/platform1b.png".
+Figure of 10 inch pvc platform heels is the file "Items/Clothes/Lower/Feet/Heels/Platform/platform1c.png".
 
 To decide which figure-name is the clothing-image of (H - a tall platform heels):
 	if the heel-height of H >= 10, decide on the figure of 10 inch pvc platform heels;

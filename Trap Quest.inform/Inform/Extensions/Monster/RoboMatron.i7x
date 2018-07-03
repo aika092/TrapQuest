@@ -24,6 +24,9 @@ This is the spawn initial robomatron rule:
 		summon robomatron in the hotel.
 The spawn initial robomatron rule is listed in the setting up hotel monsters rules.
 
+Definition: robomatron (called M) is too intimidating:
+	decide no. [Player should never surrender to final boss]
+
 Part 1 - Perception
 
 To compute perception of (M - robomatron):
@@ -37,7 +40,7 @@ To compute perception of (M - robomatron):
 	if diaper lover > 2 and D is not messed diaper:
 		say "NO MESSED DIAPER DETECTED. INCREASING POWER LEVEL BY 2.";
 		DifficultyUp M by 2;
-	unless D is diaper and the total-soak of D  < the soak-limit of D:
+	unless D is diaper and the total-soak of D  < the soak-limit of D / 2 and D is not messed:
 		say "NO FULLY USED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
 		DifficultyUp M by 1;
 	if D is diaper and the total-soak of D is 0:

@@ -34,7 +34,7 @@ Part 1 - Snowman Dress
 
 A snowman dress is a kind of standard christmas dress. A snowman dress is only arm covering. There is 1 snowman dress. The printed name of snowman dress is "[TQlink of item described][clothing-title-before]snowman dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of snowman dress is "snwd".
 
-Figure of snowman dress is the file "Items\Clothes\Upper\Dresses\Christmas\christmasdress1.png".
+Figure of snowman dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress1.png".
 
 To decide which figure-name is clothing-image of (C - a snowman dress):
 	decide on figure of snowman dress.
@@ -49,7 +49,7 @@ Part 2 - Deer Dress
 
 A deer dress is a kind of standard christmas dress. There is 1 deer dress. The printed name of deer dress is "[TQlink of item described][clothing-title-before]deer dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of deer dress is "drd".
 
-Figure of deer dress is the file "Items\Clothes\Upper\Dresses\Christmas\christmasdress2.png".
+Figure of deer dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress2.png".
 
 To decide which figure-name is clothing-image of (C - a deer dress):
 	decide on figure of deer dress.
@@ -64,7 +64,7 @@ Part 3 - Gingerbread Dress
 
 A gingerbread dress is a kind of standard christmas dress. A gingerbread dress is only arm covering. There is 1 gingerbread dress. The printed name of gingerbread dress is "[TQlink of item described][clothing-title-before]gingerbread dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of gingerbread dress is "gbd".
 
-Figure of gingerbread dress is the file "Items\Clothes\Upper\Dresses\Christmas\christmasdress3.png".
+Figure of gingerbread dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress3.png".
 
 To decide which figure-name is clothing-image of (C - a gingerbread dress):
 	decide on figure of gingerbread dress.
@@ -79,7 +79,7 @@ Part 4 - Christmas Tree Dress
 
 A christmas tree dress is a kind of christmas dress. There is 1 christmas tree dress. The printed name of christmas tree dress is "[TQlink of item described][clothing-title-before]christmas tree dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of christmas tree dress is "ctd".
 
-Figure of christmas tree dress is the file "Items\Clothes\Upper\Dresses\Christmas\christmasdress4.png".
+Figure of christmas tree dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress4.png".
 
 To decide which figure-name is clothing-image of (C - a christmas tree dress):
 	decide on figure of christmas tree dress.

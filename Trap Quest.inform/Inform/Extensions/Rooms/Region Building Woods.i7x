@@ -3,9 +3,6 @@ Region Building Woods by Rooms begins here.
 
 
 
-Figure of woods loading is the file "Special/Loading/loading1.png".
-Figure of dq woods loading is the file "Special/Loading/loading8.png".
-Figure of dq woods messy loading is the file "Special/Loading/loading9.png".
 
 
 [!<SetUpTheWoods>+
@@ -19,8 +16,6 @@ To Set Up The Woods:
 		if images visible is 1:
 			if diaper quest is 0:
 				display figure of woods loading;
-			otherwise if a random number between 0 and 5 < rectum or there is a worn messed knickers:
-				display figure of dq woods messy loading;
 			otherwise:
 				display figure of dq woods loading;
 		say "Now loading the woods region!";

@@ -2,9 +2,9 @@ Chainmail Top by Dresses begins here.
 
 A chainmail top is a kind of overdress. A chainmail top is usually unskirted. A chainmail top is usually belly exposing. A chainmail top is usually metal. A chainmail top is usually rare. A chainmail top is usually sheer. A chainmail top is usually manly. There is 1 chainmail top. A chainmail top is usually optional-top-displacable.
 
-Figure of chainmail top is the file "Items\Clothes\Upper\Exposing\chainmailtop1.png".
+Figure of chainmail top is the file "Items/Clothes/Upper/Exposing/chainmailtop1.png".
 
-The printed name of chainmail top is usually "[TQlink of item described][clothing-title-before]chainmail top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of chainmail top is "ct".
+The printed name of chainmail top is usually "[TQlink of item described][clothing-title-before]chainmail top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of chainmail top is "cmtp".
 
 To compute SelfExamineDesc of (C - a chainmail top):
 	say "A [ShortDesc of C] hangs loosely over your chest. ".

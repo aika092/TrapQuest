@@ -17,6 +17,15 @@ To decide which number is the knee damage of (P - a person):
 	if the player is zeroG, now A is 0;
 	decide on A.
 
+knee-fatigue is a number that varies.
+knee-fatigue-delay is a number that varies.
+
+A time based rule (this is the knee fatigue recovery rule):
+	if knee-fatigue-delay > 0:
+		decrease knee-fatigue-delay by 1;
+	otherwise if knee-fatigue > 0:
+		decrease knee-fatigue by 1.
+
 permanent-knee-bonus is a number that varies.
 
 Kneeing is an action applying to one thing.
@@ -47,38 +56,19 @@ Carry out kneeing:
 	reset submitted monsters;
 	increase the fat-burning of the player by 30;
 	let A be the knee damage of the player;
+	decrease A by knee-fatigue;
+	now knee-fatigue-delay is 2;
+	increase knee-fatigue by 1;
 	now seconds is 6;
-	if there are worn heels and the player is grounded and 1 is 0: [removed for new combat mechanics test]
-		let H be a random worn heels;
-		increase the heel time of the player by the hindrance of H / 2;
-		let X be the hindrance of H;
-		let D be a random number between 0 and 32;
-		if (the living belt of sturdiness is worn and the living belt of sturdiness is not cursed) or there is a worn yoga pants, now D is 9999;
-		if debugmode is 1, say "Kneeing attempt: Player ([D].5 | [X] Heels[line break]";
-		if D + 2 < X:
-			say "As you attempt to knee the [noun] you lose your balance and go flying!  Whoops.";
-			try kneeling;
-		otherwise if D < X:
-			say "You knee [the noun] with all your might.";
-			damage A on the noun;
-			say "Before you can get both heels securely on the floor again, you wobble and fall!  Oopsie!";
-			try kneeling;
-		otherwise:
-			say "You knee [the noun] with all your might.";
-			damage A on the noun;
+	if the player is zeroG:
+		say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
+	otherwise if the weight of the player < 1:
+		say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
+	otherwise if the player is diaper kicking:
+		say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
 	otherwise:
-		if the player is zeroG:
-			say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
-			damage A on the noun;
-		otherwise if the weight of the player < 1:
-			say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
-			damage A on the noun;
-		otherwise if the player is diaper kicking:
-			say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
-			damage A on the noun;
-		otherwise:
-			say "You knee [the noun] with all your might.";
-			damage A on the noun;
+		say "You knee [the noun] with all your might.";
+	damage A on the noun;
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "knee [something]", "kn [something]" as kneeing.
 

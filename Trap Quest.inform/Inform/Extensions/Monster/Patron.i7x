@@ -40,8 +40,8 @@ To say MediumDesc of (M - impatient patron):
 An experienced patron is a kind of patron.
 well dressed patron is an experienced patron. A suited patron is an experienced patron. The text-shortcut of well dressed patron is "wdp". The text-shortcut of suited patron is "spa".
 To decide which figure-name is the monster-image of (M - an experienced patron):
-	if M is well dressed patron or interracial fetish is 1, display figure of black experienced patron;
-	otherwise display figure of white experienced patron.
+	if M is well dressed patron or interracial fetish is 1, decide on figure of black experienced patron;
+	otherwise decide on figure of white experienced patron.
 To say PatronDesc of (M - an experienced patron): [TODO: change for lady fetish]
 	if diaper quest is 1, say "This man is wearing a smart suit and has quite a serious mature face. [if the player is not a pervert][line break][first custom style][one of]He isn't thinking that this is going to get sexual, is he?[or]Not again![stopping][otherwise if the player is feeling submissive][line break][second custom style][one of]I hope he gives obedient babies their cummies![or]Yay, Daddy's home![stopping][otherwise][line break][variable custom style]Something tells me he's going to want to be in charge...[end if][roman type][line break]";
 	otherwise say "This particular man is wearing a smart suit and he doesn't stare at you like you might expect, seeming only mildly interested. You guess that he's been with a lot of whores in his time, and just wants a body to use to get his rocks off.[line break][if the player is not a pervert][line break][first custom style]Trust me, I'm not interested in you either, buddy.[otherwise if the humiliation of the player > 32500][line break][variable custom style]Well he's right, I'm just an object to be used.[otherwise if the humiliation of the player > 22500][line break][second custom style]He certainly knows how to frustrate an attention whore like me![otherwise][variable custom style]The least he could do is at least appreciate my beauty![end if][roman type][line break]".
@@ -55,8 +55,8 @@ chubby patron is a gross patron. hairy patron is a gross patron. The text-shortc
 To decide which number is the girth of (M - gross patron):
 	decide on 2.
 To decide which figure-name is the monster-image of (M - a gross patron):
-	if M is hairy patron or interracial fetish is 1, display figure of black gross patron;
-	otherwise display figure of white gross patron.
+	if M is hairy patron or interracial fetish is 1, decide on figure of black gross patron;
+	otherwise decide on figure of white gross patron.
 To say PatronDesc of (M - a gross patron): [TODO: change for lady fetish]
 	say "This particular man is quite overweight, his hairy belly hangs out from his shirt and his gross [if item described is hairy patron]hairy[otherwise]flabby[end if] chest is fully visible.[line break][if item described is penetrating a body part and the relevant sex addiction of item described < 4][line break][first custom style]Oh my god, he's so gross![otherwise if the sex addiction of the player < 7][line break][variable custom style]I do NOT want to go anywhere near his [manly-penis]![otherwise if the humiliation of the player < 27500][variable custom style]He's pretty gross.[otherwise][variable custom style]He's disgusting, I'm disgusting. We make a perfect match.[end if][roman type][line break]".
 To say MediumDesc of (M - chubby patron):
@@ -69,8 +69,8 @@ menacing patron is a dickhead patron. sneering patron is a dickhead patron. The 
 To decide which number is the girth of (M - dickhead patron):
 	decide on 4.
 To decide which figure-name is the monster-image of (M - a dickhead patron):
-	if M is menacing patron or interracial fetish is 1, display figure of black dickhead patron;
-	otherwise display figure of white dickhead patron.
+	if M is menacing patron or interracial fetish is 1, decide on figure of black dickhead patron;
+	otherwise decide on figure of white dickhead patron.
 To say PatronDesc of (M - a dickhead patron): [TODO: change for lady fetish]
 	say "This particular man stares at you with narrow eyes. It looks like he's both aroused and disgusted by you.[line break][if the player is not a pervert][line break][first custom style]I'm just disgusted.[otherwise if the humiliation of the player > 31500][line break][variable custom style]I'm disgusted by me too.[otherwise if the sex addiction of the player > 12][line break][second custom style]I'm just aroused![otherwise][variable custom style]The feeling is mutual![end if][roman type][line break]".
 To say MediumDesc of (M - menacing patron):
@@ -208,9 +208,9 @@ To compute perception of (M - a patron):
 	otherwise if M is gross patron:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]How much does anal cost?'[otherwise if the chosen-orifice of M is vagina]How much do you charge for bareback sex?'[otherwise]How much for a blowjob?'[end if][roman type][line break]";
 	otherwise if M is experienced patron:
-		say "[speech style of M]'[if the chosen-orifice of M is asshole]You're going to let me fuck your asshole today.'[otherwise if the chosen-orifice of M is vagina]Turn around and show me your cunt.'[otherwise]Open, and suck it.'[end if][roman type][line break]";
+		say "[speech style of M]'[if the chosen-orifice of M is asshole]You're going to let me fuck your asshole today.'[otherwise if the chosen-orifice of M is vagina]Turn around and show me your [cunt].'[otherwise]Open, and suck it.'[end if][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if the chosen-orifice of M is asshole]How many men have already creamed up your asshole today, cunt?  Well, I'm next.'[otherwise if the chosen-orifice of M is vagina and pregnancy fetish + the pregnancy of the player is 1]I think I'm going to try and get you pregnant today.'[otherwise if the chosen-orifice of M is vagina]You're not going to be able to walk properly after I'm done with your cunt.'[otherwise]You're going to drink my cum, and you're going to thank me for it afterwards.'[end if][roman type][line break]".
+		say "[speech style of M]'[if the chosen-orifice of M is asshole]How many men have already creamed up your asshole today, [cunt]?  Well, I'm next.'[otherwise if the chosen-orifice of M is vagina and pregnancy fetish + the pregnancy of the player is 1]I think I'm going to try and get you pregnant today.'[otherwise if the chosen-orifice of M is vagina]You're not going to be able to walk properly after I'm done with your [cunt].'[otherwise]You're going to drink my cum, and you're going to thank me for it afterwards.'[end if][roman type][line break]".
 
 To say CondomRejectFlav of (M - a dickhead patron):
 	say "[if chosen-orifice of M is vagina and pregnancy fetish + the pregnancy of the player is 1][line break][speech style of M]'Didn[']t you hear me? I[']m gonna get you pregnant.'[roman type][line break]Looks like there[']s no way out of a creampie...[otherwise][line break][speech style of M]'No thanks.'[roman type][line break]Looks like [he of M]'s going in bare...".
@@ -355,7 +355,7 @@ To compute payment of (M - a patron):
 			if O > a random number between 8 and 16 or the class of the player is trained hooker:
 				loot M;
 				say "[BigNameDesc of M] pauses, and then [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald]n[end if] [dropped-item] next to it.";
-				say "[speech style of M]'[if there is a worn pussy deluxe tattoo and the number of worn tattoos is 1]Your [one of]cunt[or]pussy[or]vag[as decreasingly likely outcomes] tattoo is[otherwise if there is a worn pussy deluxe tattoo]Your tattoos are[otherwise]That [C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if]  pretty [if the initial outrage of C > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if], [one of]so here's something extra as a tip[or]you deserve extra[or]I think you've earned this much[or]you deserve a reward[or]here's something towards your next sexy purchase[or]and I'm feeling generous[at random].'[roman type][line break]";
+				say "[speech style of M]'[if there is a worn pussy deluxe tattoo and the number of worn tattoos is 1]Your [one of][cunt][or][pussy][or]vag[as decreasingly likely outcomes] tattoo is[otherwise if there is a worn pussy deluxe tattoo]Your tattoos are[otherwise]That [C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if]  pretty [if the initial outrage of C > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if], [one of]so here's something extra as a tip[or]you deserve extra[or]I think you've earned this much[or]you deserve a reward[or]here's something towards your next sexy purchase[or]and I'm feeling generous[at random].'[roman type][line break]";
 			if the class of the player is hotel employment, increase the employee-record of senior robobellboy by 1;
 	say "[BigNameDesc of M] leaves the way he came.";
 	destroy M.
@@ -465,30 +465,19 @@ To compute facial sex of (M - a patron):
 			say OralSubmissionResponse of M;
 			decrease the sex-length of M by 1.
 
-To compute anal sex of (M - a patron):
-	if the reaction of the player is 2 and M is not dickhead patron and M is not pissed off:
-		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
-		if a random number between 1 and 3 > 1, ruin asshole;
-	otherwise if the reaction of the player > 0:
-		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][or][M submission sex 7][at random]";
-		ruin asshole;
-	otherwise:
-		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][or][M rough sex 6][at random]";
-		ruin asshole;
-	decrease the sex-length of M by 1;
-	say "[one of][M sex reaction][or][cycling]".
+To compute (M - a patron) sexRuin in (F - a fuckhole):
+	unless the class of the player is living sex doll:
+		if the reaction of the player is 0:
+			if M is dickhead patron or M is pissed off or a random number between 1 and 3 > 1, ruin F;
+		otherwise: 
+			ruin F.
 
-To compute vaginal sex of (M - a patron):
-	if the reaction of the player is 2:
-		say "[one of][M mercy sex 1][or][M mercy sex 2][or][M mercy sex 3][or][M mercy sex 4][or][M mercy sex 5][or][M mercy sex 6][or][M mercy sex 7][at random]";
-	otherwise if the reaction of the player is 1:
-		say "[one of][M submission sex 1][or][M submission sex 2][or][M submission sex 3][or][M submission sex 4][or][M submission sex 5][or][M submission sex 6][at random]";
-		ruin vagina;
+To compute begging of (M - a monster) in (F - a fuckhole):
+	if M is not dickhead patron and M is not pissed off:
+		say (M) mercy sex (a random number between 1 and 7);
+		if a random number between 1 and 3 > 1, ruin F;
 	otherwise:
-		say "[one of][M rough sex 1][or][M rough sex 2][or][M rough sex 3][or][M rough sex 4][or][M rough sex 5][at random]";
-		ruin vagina;
-	decrease the sex-length of M by 1;
-	say "[one of][M sex reaction][or][cycling]".
+		say M submission sex (a random number between 1 and 7).
 
 To compute post climax effect of (M - a patron) in (F - vagina):
 	let T be a random vagina-tally tattoo;

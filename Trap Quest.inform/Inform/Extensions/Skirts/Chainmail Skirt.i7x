@@ -1,6 +1,6 @@
 Chainmail Skirt by Skirts begins here.
 
-A chainmail skirt is a kind of miniskirt. A chainmail skirt is usually see-through. A chainmail skirt is rare. A chainmail skirt is metal. There is 1 chainmail skirt. Figure of chainmail skirt is the file "Items\Clothes\Lower\Skirts\chainmailskirt1.png".
+A chainmail skirt is a kind of miniskirt. A chainmail skirt is usually see-through. A chainmail skirt is rare. A chainmail skirt is metal. There is 1 chainmail skirt. Figure of chainmail skirt is the file "Items/Clothes/Lower/Skirts/chainmailskirt1.png".
 
 The printed name of a chainmail skirt is "[TQlink of item described][clothing-title-before]chainmail skirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of chainmail skirt is "cs". 
 

@@ -4,7 +4,7 @@ A heart hairpin is a kind of headgear. There is one heart hairpin. A heart hairp
 
 The printed name of heart hairpin is usually "[TQlink of item described][clothing-title-before]heart hairpin[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of heart hairpin is "hhp".
 
-Figure of heart hairpin is the file "Items\Accessories\Head\hearthairpin1.png".
+Figure of heart hairpin is the file "Items/Accessories/Head/hearthairpin1.png".
 
 To decide which figure-name is the clothing-image of (C - a heart hairpin):
 	decide on figure of heart hairpin.
@@ -22,6 +22,10 @@ To say ShortDesc of (H - a heart hairpin):
 
 To compute SelfExamineDesc of (H - a heart hairpin):
 	say "You are wearing a hairpin shaped like a heart with wings. It makes you feel positively magical[if H is not removable]. In fact for some reason you can't even make yourself consider taking it off, as though it is intimately tied to you[end if].".
+
+Definition: a heart hairpin (called C) is heart themed:
+	decide yes.
+
 
 Definition: a heart hairpin is removable:
 	if the magic-power of the player > 2:
@@ -43,9 +47,10 @@ magic-summoned is a number that varies. magic-summoned is usually 0.
 
 To compute class outfit of (H - a heart hairpin):
 	let D be a random off-stage lolita magical dress;
+	if the virgin bonus of the player > 0 and virgin magical girl outfit is off-stage, now D is virgin magical girl outfit;
 	let W be a random off-stage heart wand;
 	let S be a random off-stage magical stockings;
-	if D is actually summonable:
+	if D is actually summonable and virgin magical girl outfit is not worn:
 		if magic-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] vanishes!";
@@ -53,7 +58,7 @@ To compute class outfit of (H - a heart hairpin):
 			repeat with O running through worn skirts:
 				say "Your [O] vanishes!";
 				destroy O;
-		say "[bold type]You feel a rush of magic as a frilly pink dress materializes around you.[roman type][line break]";
+		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materializes around you.[roman type][line break]";
 		summon D cursed;
 		now magic-summoned is 1;
 	otherwise if S is actually summonable:

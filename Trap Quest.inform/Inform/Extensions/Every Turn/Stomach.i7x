@@ -100,13 +100,10 @@ A time based rule (this is the compute stomach rule):
 	compute corset strain;
 	let T be the thirst of the player;
 	if the player is craving and the stomach-semen of the player is 0:
-		increase cold turkey by time-seconds;
-		if cold turkey > the semen taste addiction of the player * 40:
-			now the raw semen taste addiction of the player is 14;
-			say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
-			now cold turkey is 0;
-	otherwise if the stomach-semen of the player is 0:
-		now cold turkey is 0;
+		if cold turkey <= the semen taste addiction of the player * 20:
+			increase cold turkey by time-seconds;
+			if cold turkey > the semen taste addiction of the player * 20:
+				say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
 	[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
 	if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
 		let N be (the stomach-food of the player / 4) + 1;
@@ -289,7 +286,7 @@ REQUIRES COMMENTING
 Definition: yourself is upset about mess:
 	if there is a worn messed diaper:
 		let D be a random worn messed diaper;
-		if the class of the player is adult baby and the bimbo of the player > the mess of D, decide no;
+		if the player is an adult baby and the bimbo of the player > the mess of D, decide no;
 		if the diaper addiction of the player > 10, decide no;
 		decide yes;
 	otherwise if there is a worn messed knickers:
@@ -312,7 +309,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a thing is urine averse:
-	if the class of the player is adult baby, decide no;
+	if the player is an adult baby, decide no;
 	if diaper lover >= 1 and the diaper addiction of the player < 10 and the humiliation of the player < 40000, decide yes;
 	decide no.
 

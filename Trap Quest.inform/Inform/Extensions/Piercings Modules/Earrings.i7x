@@ -71,14 +71,14 @@ To say ClothingDesc of (C - a pair of earrings):
 To say ShortDesc of (C - a pair of earrings):
 	say "pair of [if C is cursed]ultra slutty[otherwise if C is blessed]hooped[otherwise]cock-shaped[end if] earrings".
 
-Figure of earrings bukkake cock is the file "Items\Accessories\Piercings\Earrings2a.png".
-Figure of earrings cock is the file "Items\Accessories\Piercings\Earrings2b.png".
-Figure of earrings hoop is the file "Items\Accessories\Piercings\Earrings3a.png".
-Figure of earrings cock ass is the file "Items\Accessories\Piercings\Earrings1a.png".
-Figure of earrings holes is the file "Items\Accessories\Piercings\Earrings1b.png".
-Figure of earrings gangbang is the file "Items\Accessories\Piercings\Earrings1c.png".
-Figure of earrings sucking cock is the file "Items\Accessories\Piercings\Earrings1d.png".
-Figure of earrings toilet is the file "Items\Accessories\Piercings\Earrings1e.png".
+Figure of earrings bukkake cock is the file "Items/Accessories/Piercings/Earrings2a.png".
+Figure of earrings cock is the file "Items/Accessories/Piercings/Earrings2b.png".
+Figure of earrings hoop is the file "Items/Accessories/Piercings/Earrings3a.png".
+Figure of earrings cock ass is the file "Items/Accessories/Piercings/Earrings1a.png".
+Figure of earrings holes is the file "Items/Accessories/Piercings/Earrings1b.png".
+Figure of earrings gangbang is the file "Items/Accessories/Piercings/Earrings1c.png".
+Figure of earrings sucking cock is the file "Items/Accessories/Piercings/Earrings1d.png".
+Figure of earrings toilet is the file "Items/Accessories/Piercings/Earrings1e.png".
 
 To decide which number is the bimbo-influence of (C - a pair of earrings):
 	decide on 1.

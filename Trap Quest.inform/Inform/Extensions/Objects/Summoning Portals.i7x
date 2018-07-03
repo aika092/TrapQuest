@@ -100,7 +100,7 @@ Chooses which monster summoning portal "S" is about to spawn, then returns it. I
 
 +!]
 To decide which number is the active threshold of (S - a summoning portal):
-	decide on 120.
+	decide on 150.
 
 [!<ComputeSummoningCheckOfPortal>+
 
@@ -184,7 +184,7 @@ A time based rule (this is the dungeon summoning rule):
 	
 To compute (S - summoning-circle) regionally summoning (M - a monster):
 	summon M in the dungeon;
-	now the charge of S is 170 + the number of alive monsters in the Dungeon * 3.
+	now the charge of S is the active threshold of S + 50 + the number of alive monsters in the Dungeon * 3.
 
 To decide which object is the summonChoice of (S - a summoning-circle):
 	let N be the next-summon of S;
@@ -311,7 +311,7 @@ A time based rule (this is the woods summoning rule):
 To compute (G - giant-statue) regionally summoning (M - a monster):
 	summon M in the Woods;
 	now the next-summon of G is a random number between 0 and 5;
-	now the charge of G is the active threshold of G + 70 + (the number of alive monsters in the woods * 2);
+	now the charge of G is the active threshold of G + 70 + (the number of monsters in the woods * 30);
 
 To decide which object is the summonChoice of (G - a giant-statue):
 	let N be the next-summon of G;
@@ -436,7 +436,7 @@ To say PortalHint of (S - a mysterious-mummy):
 		if N is 1:[cultist]
 			say "A squirming woman wrapped from head to toe in white linen. Her arms are crossed in front of her chest, but it looks like her wrists are being held together by an invisible rope. There's nothing sexual about the way she's standing, but whenever you look at her it feels like you're watching a really intense gangbang. ";
 		otherwise if N is 2:[gladiator]
-			say "A tall, busty woman wrapped from head to toe in white linen. An iron sword has been jammed into the planks underneath her, sticking straight up with its hilt [if trap fetish is 1]buried in her [vagina]. Feminine fluids slowly trickle down the blade[otherwise]buried up her ass. The cloth is distorted by a banana-like shape near her crotch, which twitches slightly[end if] as her visibly muscular arms struggle against their strong wrappings.";
+			say "A tall, busty woman wrapped from head to toe in white linen. An iron sword has been jammed into the planks underneath her, sticking straight up with its hilt [if futanari fetish is 0]buried in her [vagina]. Feminine fluids slowly trickle down the blade[otherwise]buried up her ass. The cloth is distorted by a banana-like shape near her crotch, which twitches slightly[end if] as her visibly muscular arms struggle against their strong wrappings.";
 		otherwise if N is 3:[gargoyle; shouldn't happen]
 			say "A crouched woman completely encased in white linen. She's completely motionless, but you can hear her stomach rumbling audibly from some distance away.";
 		otherwise if N is 4:[mannequin]
@@ -459,7 +459,7 @@ To say ActiveWarning of (S - a mysterious-mummy):
 		say "You hear the shuffling of fabric somewhere else in the mansion...";
 	otherwise if N is 2:[gladiator]
 		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. [run paragraph on]";
-		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if trap fetish is 0]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [line break][first custom style]C-cowards! You can't become a real woman if y-[roman type][line break]The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
+		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if futanari fetish is 1]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [line break][first custom style]C-cowards! You can't become a real woman if y-[roman type][line break]The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
 	otherwise if N is 1:[cultist]
 		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. You recognize the person as another cultist as they move closer, but this one seems different from the others, somehow.[line break][first custom style]Ready yourself, sister! Your last rite of passage is at hand!'[roman type][line break]The first two cultists lead her up to the [printed name of S], leaving as the linen begins to unravel. She seems to be repeating some chant under her breath as the mummy explodes forward, completely covering her in strips of frayed fabric.";
 	otherwise if N is 5:[demoness]

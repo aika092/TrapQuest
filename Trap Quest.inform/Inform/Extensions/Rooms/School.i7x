@@ -79,10 +79,10 @@ To decide which number is the entry-rank of (R - School28):
 	decide on 3.
 
 [Rooms Above Upper Hallway]
-School29 is a lecture academic room. The printed name of School29 is "Ruby Classroom". "This 'classroom' has TODO.". The shape of School29 is L5/0-0-0-0-1-0. The grid position of School29 is <5,11,9>. School29 is north of School26.
+School29 is a lecture academic room. The printed name of School29 is "Ruby Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with photos of [if diaper quest is 1]sexy adult women in dry diapers[otherwise]voluptuous women pleasuring themselves[end if].". The shape of School29 is L5/0-0-0-0-1-0. The grid position of School29 is <5,11,9>. School29 is north of School26.
 To decide which number is the entry-rank of (R - School29):
 	decide on 3.
-School30 is a lecture academic room. The printed name of School30 is "Pink Diamond Classroom". "This 'classroom' has TODO.". The shape of School30 is L5/0-0-0-0-1-0. The grid position of School30 is <5,13,9>. School30 is north of School25.
+School30 is a lecture academic room. The printed name of School30 is "Pink Diamond Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with photos of [if diaper quest is 1]sexy adult women using their diapers[otherwise]voluptuous women taking cocks in all their holes[end if].". The shape of School30 is L5/0-0-0-0-1-0. The grid position of School30 is <5,13,9>. School30 is north of School25.
 To decide which number is the entry-rank of (R - School30):
 	decide on 4.
 School31 is an academic room. The printed name of School31 is "Trophy Hall". "A series of trophies, each for a different [if diaper quest is 1]baby related[otherwise]extremely lewd[end if] act, sit on shelves that line the east and west walls.". The shape of School31 is L5/0-0-1-0-1-0. The grid position of School31 is <5,12,9>. School31 is north of School24.

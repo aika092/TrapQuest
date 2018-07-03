@@ -35,7 +35,7 @@ virtuous royal guard is a royal guard. The text-shortcut of virtuous royal guard
 To say MediumDesc of (M - virtuous royal guard):
 	say "virtuous royal guard".
 
-solemn royal guard is a royal guard.The text-shortcut of solemn royal guard is "srg".
+solemn royal guard is a royal guard. The text-shortcut of solemn royal guard is "srg".
 To say MediumDesc of (M - solemn royal guard):
 	say "solemn royal guard".
 
@@ -64,7 +64,7 @@ To set up (M - a royal guard):
 	now the health of M is the maxhealth of M;
 	if M is prison guard, now the sentence of M is a random number between 3 and 4.
 
-Definition: a royal guard (called M) is wenchy:
+Definition: a royal guard (called M) is manly-wenchy:
 	decide yes.
 
 This is the spawn initial royal guard rule:
@@ -199,18 +199,36 @@ Definition: a royal guard (called M) is objectifying the player:
 	if the appearance of the player > the bimbo tolerance of M, decide yes;
 	decide no.
 
-To decide which number is the cringe tolerance of (M - a royal guard):
+To decide which number is the bab tolerance of (M - a royal guard):
 	if the class of the player is princess, decide on 12;
 	decide on 8.
+
+To decide which number is the cringe tolerance of (M - a royal guard):
+	if the class of the player is princess, decide on 20;
+	decide on 4.
+
+To decide which number is the outrage tolerance of (M - a royal guard):
+	if the class of the player is princess, decide on 20;
+	if diaper quest is 0, decide on 5;
+	decide on 7.
 
 Definition: a royal guard (called M) is normally guardian:
 	if the favour of M > the aggro limit of M + 10, decide yes;
 	if the class of the player is princess, decide yes;
 	decide no.
 
+To say DisapprovalFlav of (M - a royal guard):
+	say "[BigNameDesc of M] [one of]coughs awkwardly[or]subtly adjusts [his of M] crotch[or]struggles to hide [his of M] erection[or]blushes a deep shade of red[or]covers [his of M] eyes with [his of M] arm[in random order]".
+
+To say CringeDisapprovalFlav of (M - a royal guard):
+	say "[speech style of M]'[one of]It's the law down here that people must be treated as the age that they appear...'[or]Such a childish appearance is against the law...'[in random order][roman type][line break][BigNameDesc of M] frowns with frustration.";
+
+To say BecomesAggressive of (M - a royal guard):
+	say "[speech style of M]'[one of]That's just too far! You are under arrest.'[or]This is too unacceptable. You leave me no choice but to arrest you.'[in random order][roman type][line break][big he of M] takes an offensive stance!".
+
 To compute appearance assessment of (M - a royal guard):
 	if there is a worn currently visible messed knickers:
-		if the player is a january 2017 diaper donator and the player is diaper focused:[may need to be brought down a donator level]
+		if the player is diaper focused:
 			say "[speech style of M]'Oh my goodness, you really are a baby aren't you?!  I guess you really do need help looking after...'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Good lord... what the hell happened inside your undergarments?!   I'm sorry [if the class of the player is princess and M is friendly]princess, but that is too much for me to handle. You need a chambermaid, not a bodyguard!'[otherwise]but on second thoughts, I'm not coming near you.'[end if][roman type][line break]";
@@ -223,14 +241,13 @@ To compute appearance assessment of (M - a royal guard):
 		otherwise say "[speech style of M]'I am rather disgusted by your appearance[if the player is not live fucked]. Go away and clean yourself up[end if]!'[roman type][line break]";
 		distract M;
 		FavourDown M by 2;
-	otherwise if the appearance of the player > 5:
-		if M is buddy, say "[speech style of M]'[if the size of penis > 3 and the player is not crotch covered][one of]Good sir, may I ask that in the future, you kindly put that away. I do not want to have to arrest you. [or]Fine sir, I am an officer of the law. In the future please put that away. [or]Well met!  Erm, in the future would you please cover that up, I am after all an officer of the law. [in random order][otherwise if the player is male and the player is exposed][one of]Hello, miss- oh, uh...I'm sorry, I have a cold. Please do try to cover yourself up before a steward of the law!  [or]Fair...man, please do understand that you must cover yourself up when presenting yourself to a officer of the law. [or]Greetings, young one. Alas you must cover yourself up for the next time we meet, I do not wish to arrest you. [in random order][otherwise if the player is exposed][one of]Fair maiden, well met!  However in the future please cover yourself up when presenting yourself to a steward of the law. [or]It is good to see you!  However please consider that it is very foolish to provoke a steward of the law with your appearance. [or]By the gods, young miss! I was not mentally prepared to see your intimate parts whilst on patrol. It would be prudent to avoid this happening again, forcing me to consider arresting you. [in random order][otherwise][one of]It is good to see you, young one, but please for the love of all things proper, present yourself more appropriately. I am bound by the law to arrest and punish temptresses. [or]Well met!  But I must say I disapprove of your appearance, and would strongly recommend remedying this before the next time we meet. [in random order][end if]";
+	otherwise if the appearance of the player > the outrage tolerance of M:
+		if M is buddy, say "[speech style of M]'[if the size of penis > 3 and the player is not crotch covered][one of]Good sir, may I ask that in the future, you kindly put that away. I do not want to have to arrest you. [or]Fine sir, I am an officer of the law. In the future please put that away. [or]Well met!  Erm, in the future would you please cover that up, I am after all an officer of the law. [in random order][otherwise if the player is male and the player is exposed][one of]Hello, miss- oh, uh... I'm sorry, I have a cold. Please do try to cover yourself up before a steward of the law!  [or]Fair...man, please do understand that you must cover yourself up when presenting yourself to a officer of the law. [or]Greetings, young one. Alas you must cover yourself up for the next time we meet, I do not wish to arrest you. [in random order][otherwise if the player is exposed][one of]Fair maiden, well met!  However in the future please cover yourself up when presenting yourself to a steward of the law. [or]It is good to see you!  However please consider that it is very foolish to provoke a steward of the law with your appearance. [or]By the gods, young miss! I was not mentally prepared to see your intimate parts whilst on patrol. It would be prudent to avoid this happening again, forcing me to consider arresting you. [in random order][otherwise][one of]It is good to see you, young one, but please for the love of all things proper, present yourself more appropriately. I am bound by the law to arrest and punish temptresses. [or]Well met!  But I must say I disapprove of your appearance, and would strongly recommend remedying this before the next time we meet. [in random order][end if]";
 		otherwise say "[speech style of M]'[if the size of penis > 3 and the player is not crotch covered][one of]Young man, in the future please put that away. I do not want to have to arrest you. [or]Young man, I am an officer of the law. In the future, put that away. [or]Cover that up, I am an officer of the law!  [in random order][otherwise if the player is male and the player is exposed][one of]Young lady- oh, uh... Please try to cover yourself up before a steward of the law!  [or]Young... man, you must learn to cover yourself up when presenting yourself to an officer of the law. [or]Cover yourself up, the next time we meet, I am not afraid to arrest you. [in random order][otherwise if the player is exposed][one of]Young lady, in the future please cover yourself up when presenting yourself to a steward of the law!  [or]Young lady, it is very foolish to provoke a steward of the law. Please remember to cover yourself up!  [or]Temptress! Cover yourself by the next time we meet. I am a steward of the law!  [in random order][otherwise][one of]You there, you look like a common harlot!  You are lucky I am not arresting you on the spot. [or]Wench! I am a steward of the crown, it is improper for you to present yourself in front of me in such attire. [in random order][end if]";
 		FavourDown M by 2;
 	otherwise:	
 		say "[speech style of M]'Greetings, traveller. I hope your visit to these regions has been engaging?  ";
-		if there is a worn currently visible diaper, say "[if M is unfriendly and a random worn diaper is visible]Ugh, are you aware that your childish undergarments are showing?!  What a disgrace. [otherwise if M is unfriendly]I can see the shape of your undergarments through your clothing, you know. [otherwise]Err, interesting undergarment choice. Do you have some kind of condition?  [end if]".
-	
+		if there is a worn currently at least partially visible diaper, say "[if M is unfriendly and a random worn diaper is currently visible]Ugh, are you aware that your childish undergarments are showing?!  What a disgrace. [otherwise if M is unfriendly]I can see the shape of your undergarments through your clothing, you know. [otherwise]Err, interesting undergarment choice. Do you have some kind of condition?  [end if]".
 
 To compute perception of (M - a royal guard):
 	now M is interested;
@@ -312,11 +329,11 @@ To compute DQ appearance assessment of (M - a royal guard):
 		distract M;
 	otherwise if the class of the player is princess:
 		say "[one of][big he of M] smiles politely.[or][big he of M] bows gracefully.[or][line break][speech style of M]'Your Highness!'[roman type][line break][at random]";
-	otherwise if the cringe appearance of the player > 4:
+	otherwise if the cringe appearance of the player > the cringe tolerance of M:
 		if M is buddy, say "[speech style of M]'Erm, I'm sure I've just caught you at a bad moment, but you really should find more dignified clothing that reflects your [maturity] if you wish for use to remain amicable. ";
 		otherwise say "[speech style of M]'[if the times-changed of M is 0]You don't look like a grown adventurer to me. Go away and find some more appropriate attire before I am forced to treat you as though you have the [maturity] that you outwardly represent!  [otherwise]You still look like a little girl. I suggest finding something more appropriate, and urgently. [end if]";
 		FavourDown M by 2;
-	otherwise if the appearance of the player > 7:
+	otherwise if the appearance of the player > the outrage tolerance of M:
 		if M is buddy, say "[speech style of M]'I understand that you're trying to look like an adult, but your appearance is a disgrace. Please try and find something more sensible to wear before we meet again. ";
 		otherwise say "[speech style of M]'I am rather disgusted by your appearance. You look like a common whore. Find something more dignified to wear before crossing paths with me again, or I will be forced to treat you with the lack of respect that you deserve. ";
 		FavourDown M by 2;
@@ -341,7 +358,7 @@ To compute DQ perception of (M - a royal guard):
 	otherwise if (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
 		distract M;
-	otherwise if there is a worn currently visible diaper or M is aware that the player needs a change:
+	otherwise if there is a worn currently at least partially visible diaper or M is aware that the player needs a change:
 		compute diaper check of M;
 	otherwise if the diaper-duration of M > 0:
 		if there is a worn diaper:
@@ -935,7 +952,7 @@ This is the guard punishes diaper rule:
 		let M be current-monster;
 		let A be a random off-stage pair of anklecuffs;
 		let H be a random off-stage pair of handcuffs;
-		if D is messed and the player is a january 2017 diaper donator:
+		if D is messed:
 			compute diaper change of M;
 		otherwise if A is actually summonable and D is not messed:
 			say "The guard [if diaper quest is 0]notices you wearing a diaper, and clearly decides he'd rather not rip such a humiliating item of clothing off you. [big he of M] decides instead[otherwise]decides[end if] to 'improve' your situation by pulling out a pair of ankle cuffs, and binding your ankles together![line break][bold type]You are now ankle bound.[roman type][line break]";
@@ -946,7 +963,7 @@ This is the guard punishes diaper rule:
 			now H is wrist-bound-in-front;
 		otherwise if the player is able to pee and the player is not bursting and face is not actually occupied:
 			follow the guard forcefeeds the player rule;
-		otherwise if the player is diaper focused and the player is a january 2017 diaper donator:
+		otherwise if the player is diaper focused:
 			follow the guard spanks the player rule;
 		otherwise:
 			say "The guard, who sees the diaper, appears to consider your predicament with your diaper[if there is worn ankle bond or there is worn wrist bond] and bondage[end if]. [big he of M] looks you in the eyes and shakes [his of M] head, before chuckling to himself taking pity on your helplessness.";

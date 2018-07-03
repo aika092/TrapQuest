@@ -275,7 +275,11 @@ Hotel37 is a mandatory important untrappable modern room. The printed name of Ho
 REQUIRES COMMENTING
 
 *!]
-Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0]Human[otherwise]Hotel[end if] Toilet". "A single toilet [if watersports fetish is 1 and diaper quest is 0]box sits in the middle of the room. A slave, covered completely in black latex, lies with their head inside the box and their wrists bound to the sides. Using the toilet would inevitably involve the slave being forced to drink every last drop[otherwise]sits at the south end of the room[end if].". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
+Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara > 1][NameDesc of woman-barbara] the Permanent[otherwise if watersports fetish is 1 and diaper quest is 0]Human[otherwise]Hotel[end if] Toilet". "[HotelToiletDesc]". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
+
+To say HotelToiletDesc:
+	if watersports fetish is 1 and diaper quest is 0, say "A single toilet box sits in the middle of the room. [if the human-toilet-scene of woman-barbara > 1][BigNameDesc of woman-barbara] is permanently stuck here with [his of woman-barbara] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-barbara] lower holes, oversized piercings on [his of woman-barbara] nipples, and the phrases 'TOILET SLUT' and 'URINAL GIRL' permanently inked onto her skin.[otherwise]A slave, covered completely in black latex, lies with their head inside the box and their wrists bound to the sides. Using the toilet would inevitably involve the slave being forced to drink every last drop.[end if]";
+	otherwise say "A single toilet sits at the south end of the room.".
 
 [!<hotel39:ModernRoom>*
 

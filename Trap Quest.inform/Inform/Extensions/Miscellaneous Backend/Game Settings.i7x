@@ -866,7 +866,7 @@ To decide which number is remaining game saves: decide on (max game save counter
 The check game save counter rules are a rulebook. The check game save counter rules have default success.
 Check game save counter: 
 	if (remaining game saves <= 0) and (the player is not in Hotel36) and save game limit is 1:
-		say "You dont have a permission to save the game. Nintendodolls, with love.";
+		say "You don't have a permission to save the game. Nintendolls, with love.";
 		rule fails.
 The increase game save counter rules are a rulebook. The increase game save counter rules have default success.
 To increase game save counter: 

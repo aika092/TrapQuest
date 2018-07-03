@@ -48,7 +48,7 @@ An organza nightie is a kind of nightie. There is 1 organza nightie.
 
 The printed name of organza nightie is usually "[TQlink of item described][clothing-title-before]organza nightie[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of organza nightie is "oni".
 
-Figure of organza nightie is the file "Items\Clothes\Upper\Exposing\Nighties\nightie1.png".
+Figure of organza nightie is the file "Items/Clothes/Upper/Exposing/Nighties/nightie1.png".
 
 To decide which figure-name is clothing-image of (C - an organza nightie):
 	decide on figure of organza nightie.
@@ -71,7 +71,7 @@ The printed name of nightgown is usually "[TQlink of item described][clothing-ti
 To decide what number is the price of (C - a nightgown):
 	decide on 3.
 
-Figure of nightgown is the file "Items\Clothes\Upper\Exposing\Nighties\nightie2.png".
+Figure of nightgown is the file "Items/Clothes/Upper/Exposing/Nighties/nightie2.png".
 
 To decide which figure-name is clothing-image of (C - a nightgown):
 	decide on figure of nightgown.
@@ -109,7 +109,7 @@ Definition: a pink nightie (called C) is sissifying:
 
 The printed name of pink nightie is usually "[TQlink of item described][clothing-title-before]pink nightie[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 
-Figure of pink nightie is the file "Items\Clothes\Upper\Exposing\Nighties\nightie3.png".
+Figure of pink nightie is the file "Items/Clothes/Upper/Exposing/Nighties/nightie3.png".
 
 To decide which figure-name is clothing-image of (C - a pink nightie):
 	decide on figure of pink nightie.
@@ -135,7 +135,7 @@ A flimsy pink nightie is a kind of nightie. A flimsy pink nightie is usually sup
 
 The printed name of flimsy pink nightie is usually "[TQlink of item described][clothing-title-before]flimsy pink nightie[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of flimsy pink nightie is "fpn".
 
-Figure of flimsy pink nightie is the file "Items\Clothes\Upper\Exposing\Nighties\nightie4.png".
+Figure of flimsy pink nightie is the file "Items/Clothes/Upper/Exposing/Nighties/nightie4.png".
 
 To decide which figure-name is clothing-image of (C - a flimsy pink nightie):
 	decide on figure of flimsy pink nightie.

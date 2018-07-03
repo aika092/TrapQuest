@@ -12,7 +12,7 @@ Report wearing a mystical amulet:
 To decide which number is the initial outrage of (C - a mystical amulet):
 	decide on 0.
 
-Figure of mystical amulet is the file "Items\Accessories\Neck\amulet1.png".
+Figure of mystical amulet is the file "Items/Accessories/Neck/amulet1.png".
 
 To decide which figure-name is clothing-image of (C - a mystical amulet):
 	decide on figure of mystical amulet.

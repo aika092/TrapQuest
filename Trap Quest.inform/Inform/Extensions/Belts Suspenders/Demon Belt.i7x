@@ -1,6 +1,6 @@
 Demon Belt by Belts Suspenders begins here.
 
-The demon belt is a belt. Figure of demon belt is the file "Items\Clothes\Lower\Waist\Belts\belt3.png". The demon belt is unique. The demon belt is leather. The printed name of demon belt is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]demon belt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon belt is "dbl". 
+The demon belt is a belt. Figure of demon belt is the file "Items/Clothes/Lower/Waist/Belts/belt3.png". The demon belt is unique. The demon belt is leather. The printed name of demon belt is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]demon belt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of demon belt is "dbl". 
 
 To decide which figure-name is clothing-image of (C - demon belt):
 	decide on figure of demon belt.

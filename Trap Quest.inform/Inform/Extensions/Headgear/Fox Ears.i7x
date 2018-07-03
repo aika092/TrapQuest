@@ -5,7 +5,7 @@ A fox ears is a kind of headgear. There is 1 fox ears. A fox ears is biological.
 The printed name of fox ears is usually "[TQlink of item described][clothing-title-before]fox ears[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 The text-shortcut of fox ears is "fe".
 
-Figure of fox ears is the file "Items\Accessories\Head\foxears1.png".
+Figure of fox ears is the file "Items/Accessories/Head/foxears1.png".
 
 To decide which figure-name is the clothing-image of (C - a fox ears):
 	decide on figure of fox ears.

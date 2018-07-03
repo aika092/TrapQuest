@@ -22,16 +22,16 @@ Definition: a futanari slutty sister (called M) is willing to do titfucks:
 	decide no.
 
 To say cock of (M - a futanari slutty sister):
-	say "[if trap fetish is 1]strapon[otherwise if mythical creature fetish is 1]horsecock[otherwise][manly-penis][end if]".
+	say "[if futanari fetish is 0]strapon[otherwise if mythical creature fetish is 1]horsecock[otherwise][manly-penis][end if]".
 
 To say ShortDesc of (M - a bulging slutty sister):
 	say "[if the belly contents of M > 14]bulging[otherwise if the belly contents of M > 7]bloated[otherwise if the belly contents of M > 0]cumfilled[otherwise]empty[end if] slutty sister".
 
 To say ShortDesc of (M - a futanari slutty sister):
-	say "[if trap fetish is 1]strapon[otherwise]futanari[end if] slutty sister".
+	say "[if futanari fetish is 0]strapon[otherwise]futanari[end if] slutty sister".
 
 To say MediumDesc of (M - a slutty sister):
-	say "[if trap fetish is 1]strapon[otherwise]futanari[end if] slutty sister".
+	say ShortDesc of M.
 
 To decide which figure-name is the monster-image of (M - a slutty sister):
 	decide on figure of slutty sister.
@@ -39,10 +39,10 @@ To decide which figure-name is the monster-image of (M - a slutty sister):
 To say MonsterDesc of (M - a slutty sister):
 	say "This is one of the two girls who [if the bimbo of the player < 8]tricked[otherwise if the bimbo of the player < 13][']helped['][otherwise]helped[end if] you into the game. She is dressed exactly how you remember - a tiny white latex microskirt with a blue line at the waist, and a small white latex bra with blue straps. ";
 	if item described is futanari slutty sister:
-		say "However, [if trap fetish is 1]you're pretty sure the foot long, mega thick strapon dildo dangling between her legs wasn't there before.[otherwise]you're pretty sure that in real life she didn't have a foot long, mega thick [cock of item described] dangling between her legs.[end if] [line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh!  So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]";
+		say "However, [if futanari fetish is 0]you're pretty sure the foot long, mega thick strapon dildo dangling between her legs wasn't there before.[otherwise]you're pretty sure that in real life she didn't have a foot long, mega thick [cock of item described] dangling between her legs.[end if] [line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh!  So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]";
 	otherwise if item described is bulging slutty sister:
-		say "She currently has a [if the belly contents of item described > 14]giant bulging belly[otherwise if the belly contents of item described > 7]large, bloated belly[otherwise if the belly contents of item described > 0]visibly full belly[otherwise]flat, empty belly[end if]";
-		if the belly contents of item described > 0, say " that is full of her sister[']s [semen]. [line break][variable custom style][if item described is penetrating face][']Mmmmmmmmph!['][otherwise if the semen addiction of the player < 10]I'm so glad that's inside her and not inside me![otherwise if the semen taste addiction of the player < 15 and the belly contents of item described > 7]I think my stomach would explode if I had to drink all of that...[otherwise]I bet her sister's cum tastes soooo good!![end if][roman type][line break]";
+		say "She currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of item described > 14]giant bulging belly[otherwise if the belly contents of item described > 7]large, bloated belly[otherwise if the belly contents of item described > 0]visibly distended belly[otherwise]flat, empty belly[end if]";
+		if the belly contents of item described > 0, say " full of her sister[']s [semen]. [line break][variable custom style][if item described is penetrating face][']Mmmmmmmmph!['][otherwise if the semen addiction of the player < 10]I'm so glad that's inside her and not inside me![otherwise if the semen taste addiction of the player < 15 and the belly contents of item described > 7]I think my stomach would explode if I had to drink all of that...[otherwise]I bet her sister's cum tastes soooo good!![end if][roman type][line break]";
 		otherwise say ".".
 
 To set up (M - a slutty sister):
@@ -54,7 +54,7 @@ To set up (M - a slutty sister):
 	now M is in Hotel36.
 
 To decide which number is the maxhealth of (M - a slutty sister):
-	decide on 30.
+	decide on 20 + (4 * game difficulty).
 
 To decide which number is the girth of (M - a futanari slutty sister):
 	decide on 10.
@@ -121,7 +121,7 @@ To compute perception of (M - a slutty sister):
 		bore M;
 	otherwise:
 		say "[second custom style]'[if M is futanari slutty sister][one of]About fucking time, I was getting tired of just fucking Little Miss Cum Balloon here over and over.'[or]Yum, let's go again.'[stopping][otherwise][one of]Ooh, yay, you made it at last!  Yep, we're the final boss!  Surprise!  Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][end if][roman type][line break]";
-		if the times-met of M is 0 and M is futanari slutty sister and image cutscenes is 1 and trap fetish is 0, display figure of slutty sisters cutscene 1;
+		if the times-met of M is 0 and M is futanari slutty sister and image cutscenes is 1 and futanari fetish is 1, display figure of slutty sisters cutscene 1;
 		anger M.
 
 Part 2 - Motion
@@ -190,8 +190,11 @@ To say StrikingSuccessFlav of (M - a futanari slutty sister) on (B - a body part
 To say StrikingFailureFlav of (M - a futanari slutty sister) on (B - a body part):
 	say "[BigNameDesc of M] spins rapidly towards you, but you manage to jump out the way!".
 
+To say StrikingFailureFlav of (M - a futanari slutty sister) on (B - a body part):
+	say "[BigNameDesc of M] uses her wand to send several arcs of blue energy toward you, but you duck out of the way!".
+
 To say StrikingSuccessFlav of (M - a bulging slutty sister) on (B - a body part):
-	say "[BigNameDesc of M] scratches you [TargetName of B] with her sharp nails!".
+	say "[BigNameDesc of M] uses her wand to strike you [TargetName of B] with several arcs of blue energy!".
 
 To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part):
 	if the belly contents of M > 7:
@@ -202,7 +205,7 @@ To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part)
 
 To compute tripping attack of (M - a futanari slutty sister):
 	if there is a dangerous bulging slutty sister in the location of the player and bukkake fetish is 1:
-		if a random number between the dexterity of the player - the semen addiction of the player and 4 < 8:
+		if a random number between (the dexterity of the player - the semen addiction of the player) and 4 < 8:
 			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4  > 12: 
 				say "[BigNameDesc of M] delicately strokes her [cock of M], aiming it at you. You react quickly as a huge, unrealistic jet of [semen] blasts from the tip, catching most of it in your mouth and letting the rest splatter liberally across your face and [BreastDesc].";
 				StomachSemenUp 4;
@@ -212,6 +215,9 @@ To compute tripping attack of (M - a futanari slutty sister):
 				say "[BigNameDesc of M] delicately strokes her [cock of M], aiming it at you. You [if the semen addiction of the player < 5][one of]are too shocked to dodge[or]are too slow to dodge[stopping][otherwise]too turned on to dodge[end if] as a huge, unrealistic jet of [semen] blasts from the tip and hits you straight in the mouth, coating your face and [BreastDesc].";
 				CumFaceUp 5;
 				CumTitsUp 5;
+		otherwise:
+			say "[BigNameDesc of M] delicately strokes her [cock of M], aiming it at you at you at the last second. You react quickly enough to dodge out of the way as a quick jet of [semen] blasts from the tip and splatters on the floor.";
+			PuddleUp semen by 1;
 	otherwise:
 		compute striking attack of M.
 
@@ -326,7 +332,7 @@ To compute unique climax of (M - a futanari slutty sister) in (F - vagina):
 	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done. Phew...'[roman type]  [BigNameDesc of M] collapses onto her ass, her [cock of M] quickly going limp as she pulls out.".
 
 To say CreampieFlav of (M - a futanari slutty sister) in (F - a fuckhole):
-	say "[second custom style]'Unf... So [if the openness of F < 8]tight, so [end if]good!  Aaah!'[roman type]  [BigNameDesc of M][if trap fetish is 1]'s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]!  It feels like there's a powerful hosepipe shoved inside your belly!";
+	say "[second custom style]'Unf... So [if the openness of F < 8]tight, so [end if]good!  Aaah!'[roman type][line break][BigNameDesc of M][if futanari fetish is 0][']s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]!  It feels like there's a powerful hosepipe shoved inside your belly!";
 
 Section 2 - Damage
 
@@ -367,7 +373,10 @@ To compute damage of (M - a bulging slutty sister):
 		compute death of M.
 
 To compute unique death of (M - a bulging slutty sister):
-	say "[second custom style]'Aack!  [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show her who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M]'s body flutters suddenly as if it was a malfunctioning hologram, and then disappears completely.".
+	let V be a random off-stage nintendolls-wand;
+	say "[second custom style]'Aack!  [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show her who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M]'s body flutters suddenly as if it was a malfunctioning hologram, and then disappears completely[if V is clothing], leaving [his of M] wand behind[end if].";
+	if V is clothing:
+		now V is in the location of the player.[you might still be in combat, so no autotaking.]
 
 To compute unique death of (M - a futanari slutty sister):
 	say "[second custom style]'Unf!  [if there is a dangerous bulging slutty sister in the location of the player]Fuck her up, sis...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M]'s body flutters suddenly as if it was a malfunctioning hologram, and then disappears completely.".
@@ -470,7 +479,7 @@ To say FirstGreeting of (M - a slutty sister):
 	otherwise if the bimbo of the player < 10 and the player is female:
 		say "'Don[']t come any closer. I just want to press that button. [if M is futanari slutty sister]I-if I touch you on the way by, it's an accident.[otherwise]This game isn[']t fun at all. Honest.[end if]'";
 	otherwise if the bimbo of the player < 10:
-		say "'I am a guy and that means I can[']t let you fuck me! [if M is futanari slutty sister]It doesn[']t matter how your...uh...I[']m going to push that button.[otherwise]I[']m not going to rest until you[']re ready to let me push your buttons! Wait....[end if]'";
+		say "'I am a guy and that means I can[']t let you fuck me! [if M is futanari slutty sister]It doesn[']t matter how your...uh... I[']m going to push that button.[otherwise]I[']m not going to rest until you[']re ready to let me push your buttons! Wait....[end if]'";
 	otherwise if the bimbo of the player < 15:
 		say "[variable custom style]'Really? All I have to do to leave this game is have a little sex? I guess that[']s fair, since I had so much fun playing.'";
 	otherwise:

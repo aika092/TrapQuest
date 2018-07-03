@@ -5,7 +5,7 @@ A puppy bone gag is a kind of ballgag. There is 1 puppy bone gag. The printed na
 To say ShortDesc of (C - a puppy bone gag):
 	say "puppy bone gag".
 
-Figure of puppy bone gag is the file "Items\Accessories\Head\bonegag1.jpg".
+Figure of puppy bone gag is the file "Items/Accessories/Head/bonegag1.jpg".
 
 To decide which figure-name is clothing-image of (C - a puppy bone gag):
 	decide on figure of puppy bone gag.

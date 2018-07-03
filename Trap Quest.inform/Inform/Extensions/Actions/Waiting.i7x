@@ -65,7 +65,7 @@ Report waiting:
 		let M be a random expectant intelligent monster in the location of the player;
 		if M is nothing, now M is a random expectant monster in the location of the player;
 		say "[CorrectWaitingFlav of M]";
-		if there is a worn demon codpiece and the player is the donator, follow the demon junk punishment rule;
+		if there is a worn demon codpiece, follow the demon junk punishment rule;
 	otherwise if the player is in Iron Maiden:
 		say "You stand completely still, helplessly stuck inside [one of]your claustrophobic metal prison[or]the tight sarcophagus[or]your tentacled cage[or]the miniature cell[in random order].";
 	otherwise:

@@ -39,7 +39,7 @@ To say stud:
 	otherwise if the delicateness of the player < 14:
 		say "[if diaper lover >= 1]Sir[otherwise][one of]stud[or]handsome[or]stud[or]sailor[as decreasingly likely outcomes][end if]";
 	otherwise:
-		say "[if diaper lover >= 1]daddy[otherwise]Master[end if]".
+		say "[if diaper lover >= 1 and the bimbo of the player > 12]daddy[otherwise]Master[end if]".
 
 [!<SayMistress>+
 
@@ -54,7 +54,7 @@ To say mistress:
 	otherwise if the delicateness of the player < 14:
 		say "[if diaper lover >= 1]Missus[otherwise][one of]beauty[or]Madame[or]Missus[as decreasingly likely outcomes][end if]";
 	otherwise:
-		say "[if diaper lover >= 1]mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
+		say "[if diaper lover >= 1 and the bimbo of the player > 12]mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
 
 [!<SayStud>+
 
@@ -123,7 +123,7 @@ REQUIRES COMMENTING
 +!]
 To say bitch:
 	if diaper quest is 1, say "[if the diaper addiction of the player < 8]meanie[otherwise if the diaper addiction of the player < 14]dumbo[otherwise]stupid-head[end if]";
-	otherwise say "[one of]bitch[or]cunt[as decreasingly likely outcomes]".
+	otherwise say "[one of]bitch[or][cunt][as decreasingly likely outcomes]".
 
 [!<SayBeautiful>+
 
@@ -135,7 +135,7 @@ To say beautiful:
 
 [!<SayGenitals>+
 
-REQUIRES COMMENTING
+Whatever is the player's current sex organ (i.e. no including asshole)
 
 +!]
 To say genitals:
@@ -281,7 +281,7 @@ REQUIRES COMMENTING
 
 +!]
 To say semen-adjective:
-	say "[if the semen taste addiction of the player < 3]appalling[otherwise if the semen taste addiction of the player < 5]disgusting[otherwise if the semen taste addiction of the player < 8	]unpleasant[otherwise if the semen taste addiction of the player < 10]strange[otherwise if the semen taste addiction of the player < 13]strangely pleasant[otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random][otherwise][one of]heavenly[or]yummy[at random][end if]".
+	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling[otherwise if the semen taste addiction of the player < 5]disgusting[otherwise if the semen taste addiction of the player < 8	]unpleasant[otherwise if the semen taste addiction of the player < 10]strange[otherwise if the semen taste addiction of the player < 13]strangely pleasant[otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random][otherwise][one of]heavenly[or]yummy[at random][end if]". [if the semen addictions are too far apart this may not make sense]
 
 [!<SaySemen>+
 
@@ -377,6 +377,7 @@ REQUIRES COMMENTING
 To say his of (M - a monster):
 	say "[if M is neuter]its[otherwise if M is male and M is not always-feminine]his[otherwise]her[end if]".
 
+
 [!<SayBigHisOfMonster>+
 
 REQUIRES COMMENTING
@@ -393,9 +394,27 @@ REQUIRES COMMENTING
 To say himself of (M - a monster):
 	say "[if M is neuter]itself[otherwise if M is male and M is not always-feminine]himself[otherwise]herself[end if]".
 
-To say DickDesc of (M - a monster):
-	if full-lady fetish is 1, say "strapon";
-	otherwise say manly-penis.
+[!<SayDickDescOfMonster>+
+
+General purpose method of referring to a monster, "M"'s penis
+
++!]
+ To say DickDesc of (M - a monster):
+ 	if full-lady fetish is 1, say "strapon";
+ 	otherwise say manly-penis.
+ 
+[!<SayLongDickDescOfMonster>+
+
+Specific method of referring to a monster "M"'s penis. Should only be used every once in a while.
+
++!]
+To say LongDickDesc of (M - a monster):
+	if full-lady fetish is 1, say "strapon dildo";
+	otherwise say "hard [manly-penis]".
+
+To say HoleDesc of (M - a monster):
+	if lady fetish is 2, say "[asshole]";
+	say "[vagina]".
 
 [!<SayDaddyOfMonster>+
 
@@ -531,6 +550,13 @@ To say horror:
 To say horror (N - a number):
 	increase N by a random number between 1 and -1;
 	say "[if N < 3]horror[otherwise if N < 5]shock[otherwise if N < 7]concern[otherwise if N < 9]confusion[otherwise if N < 12]mild surprise[otherwise]awe[end if]".
+
+To say joy:
+	say "[joy the bimbo of the player]".
+
+To say joy (N - a number):
+	increase N by a random number between 1 and -1;
+	say "[if N < 3]anger[otherwise if N < 5]frustration[otherwise if N < 7]annoyance[otherwise if N < 9]mixed emotions[otherwise if N < 12]a nervous thrill[otherwise if N < 15]joy[otherwise]glee[end if]".
 	
 
 [!<SayGreatOne>+
@@ -560,6 +586,27 @@ Aika's first DQ hypnosis test
 To say maturity:
 	say "maturity";
 	now hypno-trigger is "maturity".
+
+To say pussy:
+	say "pussy";
+	now hypno-trigger is "pussy".
+
+To say caps pussy:
+	say "PUSSY";
+	now hypno-trigger is "pussy".
+
+To say cunt:
+	say "cunt";
+	now hypno-trigger is "pussy".
+
+To say big cunt:
+	say "Cunt";
+	now hypno-trigger is "pussy".
+
+To say caps cunt:
+	say "CUNT";
+	now hypno-trigger is "pussy".
+
 
 Variable Text ends here.
 
