@@ -344,5 +344,32 @@ To trigger (Y - a grabby trap):
 	say "A pair of hands burst from the floor and grab your ankles.".
 
 
+
+Include Dildo Pole Trap by Traps.
+Include Bukkake Traps by Traps.
+Include Makeup Pad Trap by Traps.
+Include Ass Hook Trap by Traps.
+Include Wooden Horse Traps by Traps.
+Include Rocking Horse Trap by Traps.
+Include Slingshot Trap by Traps.
+Include Pink Smoke Pad Trap by Traps.
+Include Needle Trap by Traps.
+Include Paddle Trap by Traps.
+Include Summoning Trap by Traps.
+Include Sprinkle Trap by Traps.
+Include Hypno Traps by Traps.
+Include Tripwire Trap by Traps.
+Include Camera Trap by Traps.
+Include Magic Dust Trap by Traps.
+Include Vines by Traps.
+Include Baby Bouncer by Traps.
+Include Discombobulator Laser Trap by Traps.
+Include Haunted Mirror Trap by Traps.
+Include Iron Maiden Trap by Traps.
+Include Glue Trap by Traps.
+Include Hole In Wall Trap by Traps.
+
+Include Throne by Objects.
+
 Trap Framework ends here.
 

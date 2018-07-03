@@ -139,7 +139,61 @@ Check taking off worn overdresses:
 	if the player is wrist bound, say "You won't be able to successfully get this off whilst your wrists are bound..." instead;
 	if the noun is crotch covering and the player is ankle bound, say "You won't be able to successfully get this off whilst your ankles are bound..." instead.
 
+Include Swimsuit Framework by Dresses.
+Include Swimming Top by Dresses.
+Include Monokinis by Dresses.
+Include Slutty Monokinis by Dresses.
 
+Include Royal Dress by Dresses.
+Include Catsuit by Dresses.
+Include Leotard by Dresses.
+Include Fishnet Dress by Dresses.
+Include Maid Outfit by Dresses.
+Include Blouse by Dresses.
+Include Fetish Dress by Dresses.
+Include Tube Top by Dresses.
+Include Nighties by Dresses.
+Include Cheerleader Outfit by Dresses.
+Include Priestess Outfit by Dresses.
+Include Schoolgirl Outfit by Dresses.
+Include Evening Dress by Dresses.
+Include Maternity Dress by Dresses.
+Include Basque by Dresses.
+Include Milking Harness by Dresses.
+Include Fertility Goddess Outfit by Dresses.
+Include Pink Rubber Dress by Dresses.
+Include Warrior's Chestpiece by Dresses.
+Include T-Shirts by Dresses.
+Include Superheroine Outfit by Dresses.
+Include Clubbing Dress by Dresses.
+Include Rope Harness by Dresses.
+Include Negligee by Dresses.
+Include Chainmail Top by Dresses.
+Include Bodysuit by Dresses.
+Include Shirt by Dresses.
+Include Fishnet Top by Dresses.
+Include Crop Top by Dresses.
+Include Onesie by Dresses.
+Include Blazing Dress by Dresses.
+Include Striped Top by Dresses.
+Include Cultist Robe by Dresses.
+Include Vest Top by Dresses.
+Include Sequins Outfit by Dresses.
+Include Kimonos by Dresses.
+Include Butterfly Wings by Dresses.
+Include Lycra Bodysuit by Dresses.
+Include Diaper Dresses by Dresses.
+Include Ribbon Dress by Dresses.
+Include Business Dresses by Dresses.
+Include Rompers by Dresses.
+Include Dining Dresses by Dresses.
+Include Rubber Dress by Dresses.
+Include Gingham Dress by Dresses.
+Include Magical Dress by Dresses.
+Include Christmas Dress by Dresses.
+Include Bunny Outfit by Dresses.
+Include Open Front Dress by Dresses.
+Include Latex Dungarees by Dresses.
 
 Dresses Framework ends here.
 

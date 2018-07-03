@@ -68,6 +68,14 @@ To say ShortDesc of (T - a bondage):
 To uniquely set up (C - a bondage):
 	now the raw-magic-modifier of C is 0.
 
+
+Include Wrist Bondage by Bondage.
+Include Ankle Bondage by Bondage.
+Include Gags by Bondage.
+Include Chastity Cage by Bondage.
+Include Serving Table by Bondage.
+Include Pet Collar by Bondage.
+Include Ball and Chain by Bondage.
 Include Wrist Collar Bar by Bondage.
 
 

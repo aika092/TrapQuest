@@ -125,7 +125,43 @@ To set up magic state of (C - a clothing):
 	let R be a random number between 0 and 8;
 	if the raw-magic-modifier of C is 0 and R <= 1, now C is cursed;
 	if R >= 7 and C is not cursed, now C is blessed.
+	
 
+Include Outrage by Clothing.
+Include Cringe by Clothing.
+Include Price by Clothing.
+Include Printed Names by Clothing.
+Include Description by Clothing.
+Include Layering by Clothing.
+Include Visibility by Clothing.
+Include Summoning by Clothing.
+Include Wearability by Clothing.
+Include Removability by Clothing.
+Include Magic State by Clothing.
+Include Transformation by Clothing.
+Include Influence by Clothing.
+Include Imprinting by Clothing.
+
+
+Include Headgear Framework by Headgear.
+Include Shoes Framework by Shoes.
+Include Bra Framework by Bra.
+Include Knickers Framework by Knickers.
+Include Trousers Framework by Trousers.
+Include Dresses Framework by Dresses.
+Include Corsets Framework by Corsets.
+Include Skirts Framework by Skirts.
+Include Belt Framework by Belts Suspenders.
+Include Suspenders Framework by Belts Suspenders.
+Include Stockings Framework by Stockings.
+Include Accessories Framework by Accessories.
+Include Piercing Framework by Piercings Modules.
+Include Equippables Framework by Equippables.
+Include Bondage Framework by Bondage.
+Include Sex Toy Framework by Sex Toys.
+Include Condom of Kings by Clothing.
+Include Tattoos Framework by Tattoos.
+Include Bags of Holding Framework by Bags of Holding.
 
 Clothing Setup ends here.
 

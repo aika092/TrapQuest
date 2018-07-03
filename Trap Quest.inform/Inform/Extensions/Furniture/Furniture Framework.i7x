@@ -227,5 +227,22 @@ Called whenever the player stops resting, regardless of the reason why. Does not
 To compute rest ending of (F - a furniture):
 	dislodge F.
 
+Include Kneeling Stool by Furniture.
+Include Dildo Rocking Stool by Furniture.
+Include Milking Bench by Furniture.
+Include Hammock by Furniture.
+Include Hotel Bed by Furniture.
+Include Royal Bed by Furniture.
+Include Prison Guard's Bed by Furniture.
+Include Hotel Chairs by Furniture.
+Include Modification Machine by Furniture.
+Include Cot by Furniture.
+Include Bunk Bed by Furniture.
+Include Lecture Chair by Furniture.
+Include Guest Bed by Furniture.
+Include Master Bed by Furniture.
+Include Med Bay Bed by Furniture.
+Include Detention Chair by Furniture.
+
 Furniture Framework ends here.
 

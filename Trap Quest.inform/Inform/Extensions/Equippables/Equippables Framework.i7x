@@ -72,5 +72,30 @@ Check taking off worn gloves:
 	if E is clothing and E is not the noun:
 		say "You would need to stop wielding the [E] first." instead.
 
+			
+Include Whip of Domination by Equippables.
+Include Magic Wand by Equippables.
+Include Kitty Claws by Equippables.
+Include Mittens by Equippables.
+Include Swords by Equippables.
+Include Prayer Beads by Equippables.
+
+Include Pink Spraybottle by Equippables.
+
+Include Wasp Cloud by Equippables.
+Include Vampiric Claws by Equippables.
+Include Carrot Daggers by Equippables.
+Include Royal Scepter by Equippables.
+Include Pocketbooks by Equippables.
+Include Midnight Tanto by Equippables.
+Include Puppy Mittens by Equippables.
+Include Fairy Wand by Equippables.
+Include Nintendolls Wand by Equippables.
+Include Fake Nails by Equippables.
+Include Totem of Purity by Equippables.
+Include Pom Poms by Equippables.
+Include Heart Wand by Equippables.
+Include Magic Pistol by Equippables.
+
 Equippables Framework ends here.
 

@@ -325,7 +325,7 @@ Check masturbating:
 		if asshole is actually occupied, say "Your ass is already occupied by the [printed name of a random thing penetrating asshole]!" instead;
 		if the number of bottom level ass protection clothing > 0, say "You would need to displace your [printed name of a random bottom level ass protection clothing] first." instead;
 		if there is a live thing penetrating vagina, say "You can't do that because [NameDesc of a random live thing penetrating vagina] is in the way!" instead;
-		if the player is not a May 2018 top donator, say Latest Debug Needed instead;
+		if the player is not a may 2018 top donator, say Latest Debug Needed instead;
 		now asswank is 1;
 	if the player is pee protected and the player is male and auto is 0:
 		say "You [if asswank is 1]are still wearing your[otherwise]will get yourself off through your[end if] [printed name of random bottom level pee protection clothing worn by the player] which will cause you to ejaculate into it, is that what you want? [yesnolink] ";

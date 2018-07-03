@@ -155,5 +155,17 @@ This is the worn leg covering clothing prevents removal of stockings rule:
 The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.
 
 
+Include Mesh Stockings by Stockings.
+Include Nylon Stockings by Stockings.
+Include Latex Stockings by Stockings.
+Include Cotton Stockings by Stockings.
+Include Wool Stockings by Stockings.
+Include Striped Stockings by Stockings.
+Include Magical Stockings by Stockings.
+Include Christmas Socks by Stockings.
+Include Bunny Socks by Stockings.
+Include Cafe Maid Stockings by Stockings.
+
+
 Stockings Framework ends here.
 

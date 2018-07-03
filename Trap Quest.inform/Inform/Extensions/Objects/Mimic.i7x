@@ -204,8 +204,11 @@ To compute mimic teasing (N - 2):[snickering mimic;reverses bust and hip size, t
 		BustUp H;
 	DelicateUp 1.
 
+
+Include MimicInvestigating by Actions.
+
 Check attacking memic:
-	if the noun is container, try mimicInvestigating the noun instead;
+	if the noun is container, try mimicInvestigating the noun instead.
 
 Mimic ends here.
 

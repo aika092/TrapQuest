@@ -134,5 +134,20 @@ To compute failed transform of (C - a bag of holding):
 	increase the transform-attempts of C by 1;
 	say "The [C] seems to [if the transform-attempts of C > 1]once again [end if]resist being transformed!".
 
+Include Sacks of Holding by Bags of Holding.
+Include Patterned Sacks of Holding by Bags of Holding.
+Include Pink Sacks of Holding by Bags of Holding.
+Include Slutty Clutches of Holding by Bags of Holding.
+Include Clutches of Holding by Bags of Holding.
+Include Ultra Slutty Bags of Holding by Bags of Holding.
+Include Handbags of Holding by Bags of Holding.
+
+[DQ bags begin here]
+Include Satchels of Holding by Bags of Holding.
+Include Backpacks of Holding by Bags of Holding.
+Include Childish Backpacks of Holding by Bags of Holding.
+Include Diaper Bags of Holding by Bags of Holding.
+Include Baby Diaper Bags of Holding by Bags of Holding.
+
 Bags of Holding Framework ends here.
 

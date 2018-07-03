@@ -14,6 +14,8 @@ To reverse undo weirdness:
 To compute trolling:
 	do nothing.
 
+
+april fools done is a number that varies.
 To compute april fools:
 	do nothing.
 
@@ -39,6 +41,10 @@ Definition: a person is a november 2017 top donator:
 	decide yes.
 Definition: a person is a january 2018 top donator:
 	decide yes.
+Definition: a person is a march 2018 top donator:
+	decide yes.
+Definition: a person is a may 2018 top donator:
+	decide yes.
 Definition: a person is a may 2017 top diaper donator:
 	decide yes.
 Definition: a person is a july 2017 top diaper donator:
@@ -49,6 +55,10 @@ Definition: a person is a november 2017 top diaper donator:
 	decide yes.
 Definition: a person is a january 2018 top diaper donator:
 	decide yes.
+Definition: a person is a march 2018 top diaper donator:
+	decide yes.
+Definition: a person is a may 2018 top diaper donator:
+	decide yes.
 Definition: a person is a may 2017 diaper donator:
 	decide yes.
 Definition: a person is a july 2017 diaper donator:
@@ -58,6 +68,10 @@ Definition: a person is a september 2017 diaper donator:
 Definition: a person is a november 2017 diaper donator:
 	decide yes.
 Definition: a person is a january 2018 diaper donator:
+	decide yes.
+Definition: a person is a march 2018 diaper donator:
+	decide yes.
+Definition: a person is a may 2018 diaper donator:
 	decide yes.
 
 To check donators status:
@@ -72,6 +86,9 @@ Carry out debugging:
 		say "Debug mode off.";
 		decrease debugmode by 1.
 Understand "debug" as debugging.
+
+To say Latest Debug Needed:
+	say "".
 
 Definition: an object (called K) is thigh-spreading:
 	decide no.

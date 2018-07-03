@@ -12,5 +12,11 @@ This is the belt already worn rule:
 		rule fails.
 The belt already worn rule is listed in the belt wearability rules.
 
+
+
+Include Living Belt of Sturdiness by Belts Suspenders.
+Include String Belt by Belts Suspenders.
+Include Demon Belt by Belts Suspenders.
+
 Belt Framework ends here.
 

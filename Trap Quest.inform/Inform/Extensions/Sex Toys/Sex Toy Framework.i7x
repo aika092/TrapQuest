@@ -368,5 +368,20 @@ To say CurrentlyVisibleFlav of (C - a tail plug):
 	let S be a random worn actually dense potentially asshole covering clothing;
 	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
 
+
+Include Golden Phallus by Sex Toys.
+Include Throbbing Tentacle by Sex Toys.
+Include Vibrator by Sex Toys.
+Include Jelly Dildo by Sex Toys.
+Include Mamba by Sex Toys.
+Include Johnson by Sex Toys.
+Include Cat Tail Plug by Sex Toys.
+Include Bunny Tail Plug by Sex Toys.
+Include Puppy Tail Plug by Sex Toys.
+Include Demon Tail Plug by Sex Toys.
+Include Prostate Massager Plug by Sex Toys.
+Include Anal Beads by Sex Toys.
+Include Ben Wa Balls by Sex Toys.
+
 Sex Toy Framework ends here.
 

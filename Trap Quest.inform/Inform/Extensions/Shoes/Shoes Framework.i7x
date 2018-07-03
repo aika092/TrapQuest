@@ -118,5 +118,25 @@ Carry out taking off shoes while the player is dildo stuck:
 		otherwise ruin vagina.
 
 
+Include Thigh High Boots by Shoes.
+Include Peep Toe Heels by Shoes.
+Include Platform Heels by Shoes.
+Include Supertall Platform Heels by Shoes.
+Include Dildo Heels by Shoes.
+Include Court Heels by Shoes.
+Include Girly Bow Court Heels by Shoes.
+Include Wedge Heels by Shoes.
+Include Ballet Heels by Shoes.
+Include Queen of Hearts Heels by Shoes.
+Include Cow Pattern Boots by Shoes.
+Include Ballet Shoes by Shoes.
+Include Lipstick Heels by Shoes.
+Include Armadillo Heels by Shoes.
+Include Baby Booties by Shoes.
+Include Bunny Booties by Shoes.
+Include Mary Janes by Shoes.
+Include Sandals by Shoes.
+Include Trainee Boots by Shoes.
+
 Shoes Framework ends here.
 

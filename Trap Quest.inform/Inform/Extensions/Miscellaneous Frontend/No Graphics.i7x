@@ -24,7 +24,6 @@ keriaxfuck is a number that varies.
 keriaxshopblow is a number that varies.
 
 tile finder is a room that varies.
-
 To initialise map stuff:
 	do nothing.
 To terminate map stuff:
@@ -171,6 +170,8 @@ Figure of wench4 is the file "NPCs/Dungeon/Wench/wench4b.png".
 Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png". Figure of Shopkeeper 2 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
 Figure of slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
+
+Include Low Res Figures by Miscellaneous Frontend.
 
 No Graphics ends here.
 

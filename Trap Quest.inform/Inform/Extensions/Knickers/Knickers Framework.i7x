@@ -161,5 +161,29 @@ Check taking off worn knickers:
 		if the noun is glued:
 			do nothing instead.
 
+
+Include Plug Panties by Knickers.
+Include Cutoffs by Knickers.
+Include Bikini Bottoms by Knickers.
+Include Crotch Rope by Knickers.
+Include Pouch Panties by Knickers.
+Include Crotchless Panties by Knickers.
+Include Cum Dump's Undergarment by Knickers.
+Include Hotpants by Knickers.
+Include Bloomers by Knickers.
+Include Microshorts by Knickers.
+Include Demon Lord's Codpiece by Knickers.
+
+Include Undies by Knickers.
+Include G-strings by Knickers.
+Include Thongs by Knickers.
+Include Briefs by Knickers.
+Include Panties by Knickers.
+
+
+Include Diaper Framework by Knickers.
+Include Diapers by Knickers.
+Include Diaper Covers by Knickers.
+
 Knickers Framework ends here.
 

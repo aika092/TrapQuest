@@ -99,6 +99,12 @@ This is the cursed stockings prevents removal of suspenders rule:
 			rule fails.
 The cursed stockings prevents removal of suspenders rule is listed in the suspenders removability rules.
 
+Include Sissy Suspenders by Belts Suspenders.
+Include Bridal Sissy Suspenders by Belts Suspenders.
+Include White Suspenders by Belts Suspenders.
+Include Black Suspenders by Belts Suspenders.
+Include Red Suspenders by Belts Suspenders.
+
 
 Suspenders Framework ends here.
 

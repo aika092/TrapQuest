@@ -233,6 +233,30 @@ Report wearing a bra:
 		if the noun is chastity bra, say "[one of][line break][variable custom style]Wow, this is heavy...[roman type][line break][or][stopping]";
 	if the noun is cursed, say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bra![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart. This must be a cursed bra![end if]".
 
+Include Training Bra by Bra.
+Include Wonder Bra by Bra.
+Include Exercise Bra by Bra.
+Include Fetish Bra by Bra.
+Include Maternity Bra by Bra.
+Include Chastity Bra by Bra.
+Include Bikini Top by Bra.
+Include White String Bikini Top by Bra.
+Include Red String Bikini Top by Bra.
+Include Cow Print Bikini Top by Bra.
+Include Purple Bikini Top by Bra.
+Include Leopard Print Bikini Top by Bra.
+Include Silver Bikini Top by Bra.
+Include Cream Bikini Top by Bra.
+Include White Bikini Top by Bra.
+Include Pink Bikini Top by Bra.
+Include Purple String Bikini Top by Bra.
+Include Nipple Ring Bikini Top by Bra.
+Include Cupless Bra by Bra.
+Include Ribbon Bra by Bra.
+Include Spike Bra by Bra.
+Include Sheer Bra by Bra.
+Include Trainee Bra by Bra.
+Include Pasties by Bra.
 
 Bra Framework ends here.
 

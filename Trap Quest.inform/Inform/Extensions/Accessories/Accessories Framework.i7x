@@ -109,5 +109,28 @@ To decide which indexed text is jewellery-shortcut of (A - an accessory):
 	decide on "r".
 
 
+Include Rings by Accessories.
+Include Necklaces by Accessories.
+Include Bracelets by Accessories.
+Include Stethoscope by Accessories.
+Include Cowbell by Accessories.
+Include Catbell by Accessories.
+Include Slave Collar by Accessories.
+Include Necktie by Accessories.
+Include Pullstring Collar by Accessories.
+Include Focus Band by Accessories.
+Include Steel Collar by Accessories.
+Include Mystical Amulet by Accessories.
+Include Soulstone by Accessories.
+Include Bib by Accessories.
+Include Vampiric Cape by Accessories.
+Include Lipstick Collar by Accessories.
+Include Cumslut Collar by Accessories.
+Include Fuckdoll Collar by Accessories.
+Include Research Airhancer by Accessories.
+
+Include Armband by Accessories.
+
+
 Accessories Framework ends here.
 
