@@ -154,7 +154,7 @@ A room can be unspawnable. A room is usually not unspawnable. [An unspawnable ro
 REQUIRES COMMENTING
 
 +@!]
-A room can be bossed. A room is usually not bossed. [This is a room that NPCs will never walk into voluntarily. Main use should be for boss rooms.]
+A room can be bossed or unbossed. A room is usually unbossed. [This is a room that NPCs will never walk into voluntarily. Main use should be for boss rooms.]
 
 
 [!<Room>@<IsBathroom>+

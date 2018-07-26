@@ -1,12 +1,12 @@
 Mystical Amulet by Accessories begins here.
 
-A mystical amulet is a kind of neckwear. A mystical amulet is usually manly. There is 1 unique metal mystical amulet in Dungeon36. Printed name of mystical amulet is "[TQlink of item described][clothing-title-before]mystical amulet[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of mystical amulet is "mys".
+The mystical amulet is neckwear. mystical amulet is manly. mystical amulet is unique. mystical amulet is metal. mystical amulet is in Dungeon36. Printed name of mystical amulet is "[TQlink of item described][clothing-title-before]mystical amulet[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of mystical amulet is "mys".
 
-Check taking a mystical amulet:
+Check taking mystical amulet:
 	if there is an alive captive dungeon boss in Dungeon36 and the noun is in Dungeon36:
 		say "It is out of reach inside the cage!" instead.
 
-Report wearing a mystical amulet:
+Report wearing mystical amulet:
 	say "[variable custom style]Wow, I feel great![roman type][line break]".
 
 To decide which number is the initial outrage of (C - a mystical amulet):

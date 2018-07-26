@@ -1,6 +1,6 @@
 Equippables Framework by Equippables begins here.
 
-An equippable is a kind of clothing. An equippable can be slap ready, knee ready or kick ready. An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee.
+An equippable is a kind of clothing. An equippable can be slap ready, knee ready or kick ready (this is the equippable-type property). An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee.
 
 Definition: an equippable (called C) is stealable: [Some clothing can never be stolen or destroyed, even by monsters.]
 	if diaper quest is 1, decide yes;
@@ -96,6 +96,7 @@ Include Totem of Purity by Equippables.
 Include Pom Poms by Equippables.
 Include Heart Wand by Equippables.
 Include Magic Pistol by Equippables.
+Include Wrench by Equippables.
 
 Equippables Framework ends here.
 

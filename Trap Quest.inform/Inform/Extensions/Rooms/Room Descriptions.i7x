@@ -21,7 +21,7 @@ REQUIRES COMMENTING
 +!]
 To say RoomTrapDesc:
 	repeat with T running through revealed traps in the location of the player:
-		say MediumDesc of T;
+		say EnvironmentDesc of T;
 	if the location of the player is smoky, say "[if the player is in the Mansion]Blackish-green[otherwise]Pink[end if] smoke wafts around the lower portion of this room. ";
 	say "[PuddleDesc]";
 	repeat with D running through directions:
@@ -32,6 +32,8 @@ To say RoomTrapDesc:
 				say "A thin wire [if the location of the player is no-roof]is strung tightly between two trees either side of the [trap-direction of A] exit[otherwise]crosses the [trap-direction of A] exit of the room[end if] at knee height. ";
 	if the location of the player is garlic, say "[if the location of the player is Mansion23]Something about this room feels less... alive than everywhere else[otherwise if the location of the player is no-roof]There is a glowing crest on the ground here, emanating a gentle aura of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[otherwise]There is a glowing crest painted onto the floorboards in this room, emanating a pleasant feeling of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[end if].";
 	say "[RoomMonsterDesc]".
+
+
 
 [!<RoomMonsterDesc>+
 

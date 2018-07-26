@@ -25,6 +25,8 @@ To decide which number is the appearance of the player: [When an NPC looks at th
 	let A be 0;
 	increase A by (the number of live things penetrating a body part * 3);
 	if appearance-explained is 1, say "After sex status, outrage is [A]; ";
+	increase A by alcohol-level;
+	if appearance-explained is 1, say "After alcohol, outrage is [A]; ";
 	increase A by cumulative-outrage-level;
 	if appearance-explained is 1, say "After clothing & nudity, outrage is [A]; ";
 	repeat with C running through worn wearthings:
@@ -52,12 +54,15 @@ REQUIRES COMMENTING
 +!]
 To decide which number is cumulative-outrage-level:
 	let A be appearance-outrage-level;
-	let O be A / 2;
+	let A2 be (A * 2) / 3;
+	let O be A2;
 	repeat with C running through worn currently at least partially visible wearthings:
-		if the outrage of C > O, increase O by 1;
+		if the outrage of C > A2, increase O by 1;
 	repeat with C running through body parts:
-		if the outrage of C > O, increase O by 1;
-	if O > A, decide on A; [wearing twenty outrage 2 items shouldn't be outrage 20 overall]
+		if the outrage of C > A2, increase O by 1;
+	if O > A:
+		if appearance-explained is 1, say "(cumulative outrage level is [A]) ";
+		decide on A; [wearing twenty outrage 2 items shouldn't be outrage 20 overall]
 	if appearance-explained is 1, say "(cumulative outrage level is [O]) ";
 	if O > 20, decide on 20;
 	decide on O.

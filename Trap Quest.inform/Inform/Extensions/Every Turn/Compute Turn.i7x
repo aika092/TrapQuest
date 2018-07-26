@@ -52,9 +52,11 @@ To run the engine once:
 			unless another-turn is 1, now seconds is 0;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
-	if another-turn is 1 and the player is live fucked:
+	if another-turn is 1 and the player is live fucked and wanking is 0:
 		let M be a random live thing penetrating a body part;
-		if (M is not minotaur or M is awake monster) and M is not ghostly tentacle and wanking is 0: [If it's an asleep minotaur we don't ask this]
+		if the humiliation of the player >= 40000:
+			try submitting;
+		otherwise if (M is not minotaur or M is awake monster) and M is not ghostly tentacle and wanking is 0: [If it's an asleep minotaur we don't ask this]
 			say "[if the player-reaction of the player is resisting]Keep resisting?[otherwise]Do you want to resist?[end if] [yesnolink] ";
 			if the player consents, try resisting;
 			otherwise try submitting;
@@ -158,7 +160,9 @@ To compute turn:
 	compute flight; [Flight stuff must go first and last - the concept is it's checking if anything that happened caused the player to start flying.]
 	if the player is upright, compute player standing;
 	otherwise compute player kneeling;
+	if debugmode > 1, say "BEFORE PERIODIC.";
 	compute periodic effects with earnings local-earnings and seconds local-seconds;
+	if debugmode > 1, say "AFTER PERIODIC.";
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
 	if debugmode > 1, say "BEFORE TIME BASED.";

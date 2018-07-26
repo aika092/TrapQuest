@@ -375,14 +375,10 @@ Chapter 2 - Continue Sex
 To compute (M - a monster) sexRuin in (F - a fuckhole):
 	if the class of the player is living sex doll:
 		do nothing;
-	otherwise if M is not intelligent or the reaction of the player is 0:
-		ruin F;
-	otherwise if the reaction of the player is 1:
-		do nothing;
-		[if a random number between 1 and 2 is 1, ruin F; ###MG: Can't remember if the lack of soreness gain in the original function was intentional. Commented out.]
+	otherwise if M is not intelligent or the reaction of the player < 2:
+		ruin F; [The RuinRoll function handles the chance of avoiding soreness for submitting]
 	otherwise:
-		do nothing.
-		[if a random number between 1 and the charisma of the player is 1, ruin F. Same here.]
+		if a random number between 1 and the charisma of the player is 1, ruin F.
 
 To say sexDollSex of (M - a monster) in (F - a fuckhole):
 	say "As [NameDesc of M] continues to use your [variable F] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping [if F is asshole]rosebud[otherwise]cunt[end if] feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or][BigNameDesc of M] continues to use your super loose [variable F]![or]You continue to squeal as [NameDesc of M] fucks your [variable F]![cycling].".
@@ -740,7 +736,7 @@ To say CreampieReactionFlav to (M - a monster) in (F - a fuckhole):
 	do nothing.
 
 To say CreampieReactionFlav to (M - a monster) in (F - vagina):
-	if pregnancy fetish is 1 and M is male and the pregnancy of the player is 0, say "[first custom style][if the bimbo of the player < 6][one of]I can[']t believe [he of M] came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant.... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t [he of M] know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is [he of M] really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][end if][roman type][line break]".
+	if pregnancy fetish is 1 and M is male and the pregnancy of the player is 0, say "[variable custom style][if the bimbo of the player < 6][one of]I can[']t believe [he of M] came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant.... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t [he of M] know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is [he of M] really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][end if][roman type][line break]".
 
 [!<SayCondomPieFlavOfMonsterInFuckhole>+
 

@@ -180,7 +180,7 @@ To check perception of (M - a patron):
 			increase the times-met of M by 1. [For patrons, we don't reset their chosen orifice to nothing.]
 
 To compute the orifice choosing of (M - a patron):
-	if debugmode is 1, say "The list of actual target body parts are: [list of actual target body parts].";
+	if debugmode > 0, say "The list of actual target body parts are: [list of actual target body parts].";
 	if the chosen-orifice of current-monster is nothing or the chosen-orifice of current-monster is not an actual target, now the chosen-orifice of current-monster is a random actual target body part.
 
 To compute perception of (M - a patron):

@@ -59,9 +59,9 @@ Check kneeling:
 				say "[variable custom style]I may be on my knees, but I'm not going to just submit![roman type][line break]" instead;
 		otherwise:
 			say "You are already kneeling!" instead;
-	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player:
+	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player and auto is 0:
 		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet. [line break][first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
-	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 10 and the bimbo of the player < 8 and the player is in danger and the player is not very horny and the delicateness of the player < 4:
+	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the sex addiction of the player < 10 and the bimbo of the player < 8 and the player is in danger and the player is not very horny and the delicateness of the player < 4 and auto is 0:
 		say "[variable custom style]No way, I'm fighting until I drop![roman type][line break]" instead.
 
 [!<CarryOutKneeling>+
@@ -71,15 +71,16 @@ REQUIRES COMMENTING
 +!]
 Carry out kneeling:
 	now the stance of the player is 1;
-	repeat with X running through open topped vessels carried by the player:
-		let R be a random number between 1 and the dexterity of the player;
-		if debugmode > 0, say "[ShortVesselDesc of X]: Player Dex Roll [R] | 3.5 Spill Evasion Difficulty.";
-		if the doses of X > 0 and R < 4 and seconds > 0:
-			say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
-			now the doses of X is 0;
-			if the service-ready of bunny waitress ears is 1 and bunny waitress ears is worn, compute service spill punishment of bunny waitress ears;
-	if seconds > 0 and the class of the player is maid and there is a worn spray pink spraybottle:
-		compute a random pink spraybottle breaking;
+	if seconds > 0:
+		repeat with X running through carried open topped non-empty vessels:
+			let R be a random number between 1 and the dexterity of the player;
+			if debuginfo > 0, say "[input-style][ShortVesselDesc of X] balance check: dexterity d[dexterity of the player] ([R]) | (3.5) spill evasion difficulty[roman type][line break]";
+			if R < 4:
+				say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
+				now the doses of X is 0;
+				if the service-ready of bunny waitress ears is 1 and bunny waitress ears is worn, compute service spill punishment of bunny waitress ears;
+		if the class of the player is maid and there is a worn spray pink spraybottle:
+			compute a random pink spraybottle breaking;
 	let R be a random number between (the bimbo of the player / 2) and the bimbo of the player;
 	if there is a dangerous intelligent monster in the location of the player and seconds > 0 and the fatigue of the player > the buckle threshold of the player:
 		say "[bold type]You drop to your knees, [if the bimbo of the player < 12]trying not to make eye contact[otherwise]quivering in anticipation[end if].[roman type][line break]";
@@ -115,7 +116,7 @@ REQUIRES COMMENTING
 
 +!]
 Check kneeling when the location of the player is smoky:
-	if the player is upright and seconds is 0:
+	if the player is upright and seconds is 0 and auto is 0:
 		say "There is [if the player is in the Mansion]blackish-green[otherwise]pink[end if] smoke in this room, are you sure you want to? [yesnolink] ";
 		unless the player consents, do nothing instead.
 
@@ -126,7 +127,7 @@ REQUIRES COMMENTING
 
 +!]
 Check kneeling when the location of the player is glue-puddled:
-	if the player is upright and seconds is 0:
+	if the player is upright and seconds is 0 and auto is 0:
 		say "There is a very sticky-looking puddle of glue covering most of the floor here, are you sure you want to? [yesnolink] ";
 		if the player consents:
 			check glue tripping;
@@ -141,7 +142,7 @@ Report kneeling when the player is in danger and seconds > 1: [This is where we 
 	otherwise now N is a random dangerous monster in the location of the player;
 	compute correct kneeling reaction of N;
 	if the class of the player is princess, humiliate SLIGHT-HUMILIATION - TRIVIAL-HUMILIATION;
-	if newbie tips is 1 and the soreness of asshole > 5 or the soreness of vagina > 5, say "[one of][item style]Newbie tip: You could always try 'offer mouth' to avoid your sore holes getting any sorer!  Of course, it'll increase humiliation, and there's a chance it won't work.[roman type][line break][or][stopping]";
+	if newbie tips is 1 and the soreness of asshole > 5 or the soreness of vagina > 5, say "[one of][item style]Newbie tip: You could always try 'offer mouth' to avoid your sore holes getting any sorer! Of course, it'll increase humiliation, and there's a chance it won't work.[roman type][line break][or][stopping]";
 	repeat with M running through dangerous monsters in the location of the player:
 		make M expectant. [Here we note that the monster is expectantly waiting to see if the player offers up a particular orifice.]
 

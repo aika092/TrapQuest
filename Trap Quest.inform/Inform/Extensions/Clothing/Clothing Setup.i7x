@@ -105,6 +105,11 @@ Defines any special code that needs to run when this clothing is being set up
 To uniquely set up (C - a clothing):
 	do nothing.
 
+Definition: a clothing (called C) is discovered varied:
+	if C is not cursable, decide no; [Items that can't be cursed also can't get these things]
+	if C is rare or C is unique, decide no; [rare items shouldn't be found with like a -3]
+	decide yes.
+
 [!<SetUpMagicStateOfClothing>+
 
 Used in the setUpClothing function. Sets up the magic modifier for this clothing and handles the BUC state of this clothing. Be careful modifying this for items because it could mean the item doesn't vary.
@@ -113,17 +118,19 @@ Used in the setUpClothing function. Sets up the magic modifier for this clothing
 
 +!]
 To set up magic state of (C - a clothing):
-	now the raw-magic-modifier of C is 0;
-	now C is bland;
-	increase the raw-magic-modifier of C by a random number between -1 and 1;
-	increase the raw-magic-modifier of C by a random number between -1 and 1;
-	increase the raw-magic-modifier of C by a random number between -1 and 1;
-	increase the raw-magic-modifier of C by a random number between -1 and 1;
-	increase the raw-magic-modifier of C by a random number between -1 and 1;
-	if a random number between -7 and unlucky is 1 and the raw-magic-modifier of C is 0, now the raw-magic-modifier of C is -1;
-	if the raw-magic-modifier of C < 0, now C is cursed;
-	let R be a random number between 0 and 8;
-	if the raw-magic-modifier of C is 0 and R <= 1, now C is cursed;
+	if C is discovered varied:
+		now the raw-magic-modifier of C is 0;
+		now C is bland;
+		increase the raw-magic-modifier of C by a random number between -1 and 1;
+		increase the raw-magic-modifier of C by a random number between -1 and 1;
+		increase the raw-magic-modifier of C by a random number between -1 and 1;
+		increase the raw-magic-modifier of C by a random number between -1 and 1;
+		increase the raw-magic-modifier of C by a random number between -1 and 1;
+		set up BUC of C.
+
+To set up BUC of (C - a clothing):
+	let R be a random number between (0 - unlucky) and 8;
+	if R <= 2, now C is cursed;
 	if R >= 7 and C is not cursed, now C is blessed.
 	
 
@@ -141,7 +148,7 @@ Include Magic State by Clothing.
 Include Transformation by Clothing.
 Include Influence by Clothing.
 Include Imprinting by Clothing.
-
+Include Quests by Clothing.
 
 Include Headgear Framework by Headgear.
 Include Shoes Framework by Shoes.
@@ -162,6 +169,8 @@ Include Sex Toy Framework by Sex Toys.
 Include Condom of Kings by Clothing.
 Include Tattoos Framework by Tattoos.
 Include Bags of Holding Framework by Bags of Holding.
+
+
 
 Clothing Setup ends here.
 

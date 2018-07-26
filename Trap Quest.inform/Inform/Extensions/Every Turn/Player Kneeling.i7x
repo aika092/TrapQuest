@@ -19,20 +19,23 @@ To compute player kneeling:
 	otherwise compute vines fucking;
 	compute pink smoke.
 
+To decide which number is fatigue bonus:
+	decide on 5.
+
 [!<ComputeFatigueLoss>+
 
 REQUIRES COMMENTING
 
 +!]
 To compute fatigue loss:
-	if the fatigue of the player > the fatimod of the player:
+	if the fatigue of the player > fatimod + fatigue bonus:
 		let F be 0;
 		if the player is tired, now F is 1;
-		if debugmode is 1, say "Fatigue [the fatigue of the player] -> ";
-		FatigueDown the fatimod of the player;
+		if debuginfo > 1, say "[input-style]Fatigue recovery turn ([fatimod]): [the fatigue of the player] - ([fatimod]+[fatigue bonus]) -> ";
+		FatigueDown fatimod + fatigue bonus;
+		if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]";
 		if F is 1 and the player is not tired, say "Your legs are starting to feel a bit better.";
-		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].";
-		increase the fatimod of the player by 1;
+		increase fatimod by 1;
 	otherwise if the fatigue of the player > 0:
 		now the fatigue of the player is 0;
 		if the body soreness of the player < 10, say "Your legs feel [if the body soreness of the player is 0]completely rested[otherwise]ready to go[end if].".

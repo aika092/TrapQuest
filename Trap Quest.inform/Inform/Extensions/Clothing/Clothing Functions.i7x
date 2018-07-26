@@ -38,7 +38,7 @@ To say clothing-title-before:
 	say "[item style][cumdesc][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][if item described is glued]glued [end if][raw-magic-modifier-desc]".
 	
 To say clothing-title-after:
-	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][shortcut-desc][ownership-desc][displacement-desc][roman type]".
+	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][quest-desc][shortcut-desc][ownership-desc][displacement-desc][roman type]".
 	
 To say shortcut-desc:
 	if shortcuts is 1 and inline hyperlinks is 0 and the text-shortcut of item described is not "", say "[bracket][text-shortcut of item described][close bracket]".
@@ -64,7 +64,8 @@ To damage (K - clothing):
 	let D be 0;
 	unless K is possession and a random number between 1 and 7 < 4, increase D by 1;
 	if D is 0, say "[line break]The [K] glows faintly, regenerating the damage as it happens.";
-	increase the damage of K by D.
+	increase the damage of K by D;
+	if D > 0 and debuginfo > 0, say "[input-style][ShortDesc of K] damage [damage of K - 1] -> [damage of K][roman type][line break]".
 
 
 [!<RepairClothing>+

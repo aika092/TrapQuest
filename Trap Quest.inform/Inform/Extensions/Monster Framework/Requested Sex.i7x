@@ -40,7 +40,7 @@ To say PresentFriendlyAcceptanceFlav of (M - a monster):
 	otherwise say "[BigNameDesc of M] seems convinced by your request!".
 
 To say PresentFriendlyRejectionFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[if presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover from our last session!'[otherwise if presented-orifice is a potential target]Not interested.'[otherwise]Not today, honey. I don't feel like it.'[end if][roman type][line break]";
+	if M is intelligent, say "[speech style of M]'[if presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover from our last session!'[otherwise if presented-orifice is a potential target]Not today, honey. I don't feel like it.'[otherwise]Not interested.'[end if][roman type][line break]";
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To say FriendlyBreastsPenetrationFlav of (M - a monster):

@@ -9,7 +9,7 @@ LATEX TRANSFORMATION GUIDELINES:
 4+: Orifice soreness no longer impacts: unable to feel pleasure or orgasm
 5+: No need to drink or pee, one-way valves
 6+: Further decreased weight, body soreness no longer exists, no milk in breasts
-7+: Unable to speak, makeup max
+7+: not able to speak, makeup max
 8: Transformation complete, lose fingers, only able to carry one item.
 ]
 

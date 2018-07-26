@@ -29,6 +29,9 @@ To set up influence of (C - an armadillo heels):
 To decide what number is the price of (C - an armadillo heels):
 	decide on 3.
 
+Definition: an armadillo heels (called C) is party related:
+	decide yes.
+
 To compute periodic effect of (C - an armadillo heels):
 	if the soreness of asshole is 10 or the soreness of vagina is 10:
 		increase the heal-charge of C by 1;

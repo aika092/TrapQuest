@@ -69,10 +69,10 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 
 To say MonsterDesc of (M - an acolyte):
 	say "A veiled woman in a sheer black robe. What you can see of her expression suggests she[']s not exactly all there. Still, despite looking like she hasn't seen the sun in a few years she does seem to be in quite good shape and could be unexpectedly dangerous.";
-	if diaper quest is 0, say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]Yay, another sister in service of the [great one]s! Wait, what?[or]I hope my sister's not sad that the [great one]s haven't blessed her yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M]'s sexy but seems kind of dangerous...[end if][roman type][line break]".
+	if diaper quest is 0, say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]Yay, another sister in service of the [great one]s! Wait, what?[or]I hope my sister's not sad that the [great one]s haven't blessed her yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
 
 To say MonsterDesc of (M - a mindless acolyte):
-	say "A veiled woman in a sheer black robe. While you cannot clearly see her eyes, her mouth gapes vacantly and the cords of drool running from it betray how empty her mind must be.[if pregnancy fetish is 1] [big he of M] is massively pregnant, and her only motion is to absently rub her belly every so often.[end if]";
+	say "A veiled woman in a sheer black robe. While you cannot clearly see her eyes, her mouth gapes vacantly and the cords of drool running from it betray how empty her mind must be[if pregnancy fetish is 1]. [big he of M] is massively pregnant, and her only motion is to absently rub her belly every so often[end if].";
 	if diaper quest is 0, say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]That's not how I'm supposed to end up, is it?[or]I need to make sure they don't do that to me...[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]They look like they have things really easy, maybe it wouldn't be so bad to join them...[or]My sisters look really happy...[in random order][otherwise if the bimbo of the player <= 8][first custom style]Well they're sure creepy.[otherwise][second custom style]That's kind of a hot look on them...[end if][roman type][line break]".
 
 To say MonsterDesc of (M - clairvoyant acolyte):
@@ -113,8 +113,8 @@ This is the spawn initial acolytes rule:
 		let M be a random off-stage intelligent acolyte;
 		set up M;
 		summon M in the mansion;
-	if the number of alive mindless acolytes is 0:
-		let M be a random mindless acolyte;
+	while the number of alive mindless acolyte < 2:
+		let M be a random off-stage mindless acolyte;
 		set up M;
 		summon M in the mansion;
 		now M is in Mansion23.
@@ -153,8 +153,12 @@ To compute perception of (M - a mindless acolyte):
 		anger M;
 	otherwise:
 		say "[BigNameDesc of M] does not react to your presence in any way!";
+	commence doom.
+	
+To commence doom:
 	if doom counter is 0:
-		say "You feel a sudden sense of impending doom...";
+		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
+		if newbie tips is 1, say "[one of][item style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to reclose the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
 		now doom counter is 1.
 
 To compute perception of (M - an acolyte):
@@ -183,15 +187,13 @@ To compute perception of (M - an acolyte):
 		anger M.
 
 To compute appearance assessment of (M - clairvoyant acolyte):
-	if there is a worn mystical amulet:
+	if mystical amulet is worn:
 		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic. You could gain great favor from the [great one]s were you to gift it to them at their altar.'[roman type][line break]";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I knew you were coming, sister.[or]Sister, do you come for a prophecy?'[or]The Herald will arrive soon, sister. Why do you waste time?'[at random][roman type]";
 	otherwise:
 		say "[speech style of M]'[one of]A non-believer? Here? Now? The [great one]s test us...[or]I knew you were coming, non-believer. You cannot stop what has already been set in motion.[or]Do not try to oppose us, non-believer. We serve a greater will...'[stopping][roman type]";
-	if doom counter is 0:
-		say "You feel a sudden sense of impending doom...";
-		now doom counter is 1.
+	commence doom.
 
 To compute perception of (M - clairvoyant acolyte):
 	if doomed is 5 and the class of the player is not cultist:
@@ -475,7 +477,6 @@ To say DominanceFailure of (M - an acolyte):
 To decide which number is the physical dominance roll for (M - a mindless acolyte):
 	if the size of penis <= 3 or the player is a sissy or there is an alive herald, decide on -1;
 	let R be (the strength of the player + the dominance of the player + 2) / 2 - (the difficulty of M / 2 + the difficulty of M / 3);[the mindless cultist is more submissive than most]
-	if debugmode > 0, say "R is [R].[line break]";
 	if R > 0:
 		if a random number between 1 and 2 is 1, decide on 1;[The player is far stronger than the monster's difficulty]
 	decide on 0.
@@ -564,7 +565,7 @@ To say DominanceSuccess of (M - a mindless acolyte):[vaginal sex only]
 	otherwise vaginal dominate M.
 	[Still TODO: female stuff]
 
-To compute successful dominance of (M - a monster):
+To compute successful dominance of (M - an acolyte):
 	compute unique dominance reward of M;
 	if the player is male, check virginity;
 	DominateUp M;
@@ -791,8 +792,8 @@ To compute (M - clairvoyant acolyte) entering mouth:
 			say "[BigNameDesc of M] tries to roll you over onto your back!";
 		let R be a random number between the difficulty of M * 3 and 27;
 		let B be the weight of the player + (the strength of the player / 3);
-		if presented-orifice is face or the player is clit stuck or M is friendly-fucking, now B is 0; [If the player consents, she flips you automatically]
-		if debugmode is 1, say "Player [B * 1].5 | [R] Girl[line break]";
+		if presented-orifice is face or the player is subdued or M is friendly-fucking, now B is 0; [If the player consents, she flips you automatically]
+		if debuginfo > 0, say "[input-style]Cultist flip check: [if presented-orifice is face]player presented mouth = automatic success[otherwise if the player is subdued]player subdued by held clothing = automatic success[otherwise if M is friendly-fucking]player initiated sex = automatic success[otherwise]flip skill ([difficulty of M * 3]) ==> RNG([difficulty of M * 3]~27) = [R] | [B * 1].5 = ([weight of the player].5) weight + ([strength of the player / 3]) strength[end if][roman type][line break]";
 		if R > B:
 			now the suffocation of M is 0;
 			if presented-orifice is face or M is friendly-fucking, say "You let her, and she immediately sits on your face. ";

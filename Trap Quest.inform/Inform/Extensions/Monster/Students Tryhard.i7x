@@ -38,7 +38,7 @@ To say StoryAnswer of (M - student-laci):
 	say "[speech style of M]'[if diaper quest is 1]I've been sent here to prove my [maturity]. And as you can see, I am wearing sexy ADULT panties!  You can see them, right???  No nappies here!'[otherwise if the current-rank of M is 1]My boyfriend has a fetish for upskirts so I'm here to train to be less shy in short skirts and always bend over at the waist. Am I doing it right?'[otherwise]My boyfriend is going to to nuts when he sees me waltzing around in tiny skirts like this!  I'm going to get the prize for best girlfriend ever!'[end if][roman type][line break]".
 
 To say WhereAnswer of (M - student-laci):
-	say "[speech style of M]'[if the rank of the player is 1]Um, dumb-head alert!  Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practice makes perfect. Oops, I dropped my pen, tee-hee!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert!  Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practice makes perfect. Oops, I dropped my pen, tee-hee!'[end if][roman type][line break]".
 
 Part - Misty
 
@@ -64,13 +64,13 @@ To update name of (M - student-misty):
 		now the student-print of M is "tight topped trollop";
 	otherwise if the current-rank of M is 3:
 		now the student-name of M is "Misty";
-		now the student-name of M is "technically-not-topless tart";
+		now the student-print of M is "technically-not-topless tart";
 	otherwise:
 		now the student-name of M is "Minxie";
-		now the student-name of M is "sheer shirted slut";
+		now the student-print of M is "sheer shirted slut";
 
 To say WhereAnswer of (M - student-misty):
-	say "[speech style of M]'[if the rank of the player is 1]This is an... exotic skills college. But surely you know this already?'[otherwise]You've got to be willing to try anything once. And then twice. And then three times...'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]This is an... exotic skills college. But surely you know this already?'[otherwise]You've got to be willing to try anything once. And then twice. And then three times...'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - student-misty):
 	say "[speech style of M]'There's a lot of money in winning wet T-shirt contests in my home town. With the skills and techniques [if the current-rank of M is 2]I'll learn here, I'll be brave enough to sign up and wear daring enough clothing to win[otherwise if the current-rank of M is 3]I'm learning here, I'll have no trouble showing off my practically bare tits to the crowd and raking in the dosh[otherwise]I've learned here, I think I'm going to do much better than just rake in all that prize money. I reckon a glamour model scout will notice me in no time, and after I suck his [manly-penis] a few times I'm sure I can convince him to offer me a lucrative contract[end if]!'[roman type][line break]".
@@ -186,6 +186,45 @@ To compute teaching of (M - student-raye):
 	say "[speech style of M]'This is a diaper. Babygirls like us wear them to look cute and because we can't control our tinkles.'[roman type][line break]".
 
 
+Part - Rain
+
+student-rain is a tq-only tryhard student.
+
+The text-shortcut of student-rain is "stra".
+
+Figure of rain is the file "NPCs/School/Student/student26.png".
+
+To decide which figure-name is the monster-image of (M - student-rain):
+	decide on figure of rain.
+
+To say MonsterDesc of (M - student-rain):
+	say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parting above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M is 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
+
+The min-rank of student-rain is 3.
+The current-rank of student-rain is 3.
+The max-rank of student-rain is 5.
+
+To update name of (M - student-rain):
+	if the current-rank of M is 3:
+		now the student-name of M is "Rain";
+		now the student-print of M is "racy runt";
+	otherwise:
+		now the student-name of M is "Rainbow";
+		now the student-print of M is "raunchy runt".
+
+To say StoryAnswer of (M - student-rain):
+	say "[speech style of M]'[if the current-rank of M is 3]I'm learning to be a slut for my boyfriend. I only do it for him, you know? Not because it's my thing myself. But I'm *very* good at doing anything I set my mind to[otherwise]Did you know that until recently I didn't even crave cock? How dumb was that?! Haha! Now I can't get enough[end if]!'[roman type][line break][one of][big his of M] eyes fall to the junction of your own legs, and [he of M] looks thoughtful.[or]You notice [he of M]'s eyeing the area of your own groin with a speculative look..[at random]".
+
+To say WhereAnswer of (M - student-rain):
+	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]how much you love[otherwise]your skill with a[end if] [manly-penis]! And then others will be proud of you!'[roman type][line break]".
+
+To say EscapeAnswer of (M - student-rain):
+	say "[speech style of M]'More people who you can [if the current-rank of M > 3]spread your cunt for[otherwise]show off your cunt to[end if], of course!'[roman type][line break]".
+	
+To compute teaching of (M - student-rain):
+	say "[speech style of M]'This is a cunt. This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
+
+
 Part - Default Conversation
 
 
@@ -193,7 +232,7 @@ To say WhoAnswer of (M - a tryhard student):
 	say "[speech style of M]'My teacher says it is [student-name of M], so it's [student-name of M].'[roman type][line break]".
 
 To say WhereAnswer of (M - a tryhard student):
-	say "[speech style of M]'[if the rank of the player is 1]God, how can you not even know where we are!  Unless, wait, is that something the teachers will mark you up for?!'[otherwise]By FOCUSING ON YOUR STUDIES!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]God, how can you not even know where we are!  Unless, wait, is that something the teachers will mark you up for?!'[otherwise]By FOCUSING ON YOUR STUDIES!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a tryhard student):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]It's pretty cool, but I don't see why you should be allowed to know before you've earned the rank!'[otherwise]I know the answers, of course, but I'm... err... not allowed to tell you. Yeah...'[end if][roman type][line break]".

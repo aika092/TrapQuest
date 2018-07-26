@@ -101,13 +101,15 @@ REQUIRES COMMENTING
 +!]
 Carry out going:
 	if the player is upright:
-		if debugmode is 1, say "Fatigue [the fatigue of the player] -> ";
-		FatigueUp fatigue weight / 4;
+		let W be fatigue weight / 4;
+		if W > 0:
+			if debuginfo > 1, say "[input-style]Walking fatigue: inventory weight ([W]); [the fatigue of the player] -> ";
+			FatigueUp W;
+			if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]";
 		if inventory weight > 10:
 			if newbie tips is 1, say "[one of][item style]Newbie tip: Woah there!  You're carrying an awful lot of stuff in your inventory. Every item in your inventory, except a small few (e.g. the pink pill), weighs you down, meaning your fatigue increases faster. Clothing you're wearing weighs you down a lot lot less than the clothing you're carrying. Metal items and drinks tend to weigh even more than everything else. You should consider making a trip back to the starting room, and put all your spare stuff you can't wear in the pink wardrobe, where it'll be safe even if you faint.[roman type][line break][or][stopping]";
 		if inventory weight > 15:
 			if newbie tips is 1, say "[one of][item style]Newbie tip: Warning!  You are extremely overloaded. You need to carry around less stuff than that if you want to be able to remain standing for a long period of time.[roman type][line break][or][stopping]";
-		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].";
 	if there is a worn ball-and-chain:
 		say "Your [ShortDesc of a random worn ball-and-chain] drags heavily behind you.";
 		if the player is prone:
@@ -115,14 +117,19 @@ Carry out going:
 
 A time based rule (this is the training rule):
 	if the flesh volume of thighs > 0 or the flesh volume of belly > 0:
+		if debuginfo > 1, say "[input-style]Exercise check: exercise count ([fat-burning of the player]) | (400) exercise target[roman type][line break]";
 		if the fat-burning of the player > 400:
 			while the fat-burning of the player > 0:
 				let R be a random number between 1 and 2;
 				if R is 1 and the flesh volume of thighs > 0:
+					if debuginfo > 0, say "[input-style]Exercise choice: thighs fatness [flesh volume of thighs] -> ";
 					FatThighsDown 1;
+					if debuginfo > 0, say "[flesh volume of thighs][roman type][line break]";
 					now the fat-burning of the player is 0;
 				if R is 2 and the flesh volume of belly > 0:
+					if debuginfo > 0, say "[input-style]Exercise choice: belly fatness [flesh volume of belly] -> ";
 					FatBellyDown 1;
+					if debuginfo > 0, say "[flesh volume of belly][roman type][line break]";
 					now the fat-burning of the player is 0;
 			say "[bold type]Your recent exercise has helped you stay fit![roman type]  You can tell that you've burned some calories.";
 	otherwise if the fat-burning of the player > 40 + ((the raw dexterity of the player + the raw strength of the player) * 25):

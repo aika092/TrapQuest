@@ -65,13 +65,16 @@ This is the spawn initial mansion bukkake traps rule:
 			unless there is a bukkake hose in R, deploy T in R.
 The spawn initial mansion bukkake traps rule is listed in the set up mansion traps rules.
 
-[!<BukkakeTrapDoor>@<SayShortDesc>+
+[!<BukkakeTrapDoor>@<SayEnvironmentDesc>+
 
-REQUIRES COMMENTING
+This is what is put in the room description when the trap is visible (revealed).
 
 +@!]
-To say ShortDesc of (T - a bukkake trap door):
+To say EnvironmentDesc of (T - a bukkake trap door):
 	say "A trap door hangs open in the ceiling. ".
+
+To say ShortDesc of (T - a bukkake trap door):
+	say "bukkake trap door".
 
 [!<BukkakeHose>@
 
@@ -104,8 +107,12 @@ To trigger (Y - a bukkake trap door):
 		CumFaceUp 50;
 		if the number of worn nudism-disabling clothing is 0 and image cutscenes is 1, display figure of bukkake door cutscene 1;
 	let R be a random number between 7 and 13;
-	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed, now R is -9999;
-	if debugmode is 1, say "Player [Strength of the player - weight of the player] |  [R].5 Bukkake[paragraph break]";
+	if the player is upright:
+		if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed:
+			now R is -9999;
+			if debuginfo > 0, say "[input-style]Remain upright check: living belt of sturdiness = automatic success[roman type][line break]";
+		otherwise if debuginfo > 0:
+			say "[input-style]Remain upright check: strength ([Strength of the player]) - weight [weight of the player] = [Strength of the player - weight of the player] | ([R].5) d7+6.5 deluge difficulty[roman type][line break]";
 	unless R < strength of the player - the weight of the player or the player is prone:
 		say "The weight of the deluge forces you onto your knees. ";
 		try kneeling.

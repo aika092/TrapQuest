@@ -478,9 +478,12 @@ To compute tripping attack of (M - a ghost):
 	otherwise:
 		say "A pair of ghostly hands materialise next to [NameDesc of M] and rush toward you!";
 	let D be the tripping roll of M;
-	if C is trousers, increase D by 5;
-	if C is knickers, increase D by 2;
-	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Monster[line break]";
+	if C is trousers:
+		increase D by 5;
+		if debuginfo > 0, say "[input-style][ShortDesc of C] gives ghost an extra tripping bonus of +5.[roman type][line break]";
+	if C is knickers:
+		increase D by 2;
+		if debuginfo > 0, say "[input-style][ShortDesc of C] gives ghost an extra tripping bonus of +2.[roman type][line break]";
 	if C is trousers, now C is crotch-displaced;
 	if D >= the dexterity of the player:
 		say "[MonsterTrippedFlav of M]";
@@ -762,9 +765,12 @@ To compute tripping attack of (M - ghostly tentacle):
 	otherwise:
 		say "[BigNameDesc of M] rears back and immediately rushes toward you!";
 	let D be the tripping roll of M;
-	if C is trousers, increase D by 4;
-	if C is knickers, increase D by 5 - the armour of C;
-	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Monster[line break]";
+	if C is trousers:
+		increase D by 4;
+		if debuginfo > 0, say "[input-style][ShortDesc of C] gives ghost an extra tripping bonus of +4.[roman type][line break]";
+	if C is knickers:
+		increase D by the armour of C;
+		if debuginfo > 0, say "[input-style][ShortDesc of C] gives ghost an extra tripping bonus of +[the armour of C].[roman type][line break]";
 	if C is trousers, now C is crotch-displaced;
 	if D >= the dexterity of the player:
 		say "[MonsterTrippedFlav of M]";

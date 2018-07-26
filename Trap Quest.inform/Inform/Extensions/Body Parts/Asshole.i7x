@@ -217,7 +217,7 @@ To say AssholeModesty:
 		otherwise if asshole is not actually occupied:
 			say "It is completely unprotected. ";
 	otherwise:
-		say "It can't be seen thanks to the [ShortDesc of the concealer of asshole]. ";
+		say "It [if vagina is at least partially exposed]is partially concealed by[otherwise]can't be seen thanks to[end if] the [ShortDesc of the concealer of asshole]. ";
 	if asshole is actually occupied:
 		let P be a random thing penetrating asshole;
 		if P is monster:
@@ -252,6 +252,7 @@ To gape (A - asshole) times (X - a number):
 			if the player is male and the virgin of the player is 1:
 				if the sex addiction of the player < 10 and the bimbo of the player < 10 and the humiliation of the player < HUMILIATION-SHAMELESS, now virgincursed is 2;
 				otherwise now virgincursed is 3;
+				progress quest of anal-virginity-quest;
 		if the openness of asshole < 10:
 			if the openness of asshole is 0:
 				say "[first custom style][line break][one of]Eek.. my asshole is being forced open![or]Ack. My ass is being forced open again![stopping][roman type][line break]";

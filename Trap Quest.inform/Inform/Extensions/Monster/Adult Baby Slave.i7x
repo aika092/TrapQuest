@@ -328,10 +328,10 @@ To compute (M - an adult baby slave) entering mouth:
 			say "You ready yourself for the coming experience.";
 		otherwise:
 			say "[BigNameDesc of M] [one of]begins[or]is[stopping] trying to tickle you into submission, causing you to laugh hysterically!";
-		let R be a random number between the difficulty of M * 2 and 4;
-		let B be the the strength of the player;
+		let R be a random number between the difficulty of M * 3 and 27;
+		let B be the weight of the player + (the strength of the player / 3);
 		if presented-orifice is face or the player is subdued or M is friendly-fucking, now B is 0; [If the player consents, she flips you automatically]
-		if debugmode is 1, say "Player [B * 1].5 | [R] Girl[line break]";
+		if debuginfo > 0, say "[input-style]Adult baby slave flip check: [if presented-orifice is face]player presented mouth = automatic success[otherwise if the player is subdued]player subdued by held clothing = automatic success[otherwise if M is friendly-fucking]player initiated sex = automatic success[otherwise]flip skill ([difficulty of M * 3]) ==> RNG([difficulty of M * 3]~27) = [R] | [B * 1].5 = ([weight of the player].5) weight + ([strength of the player / 3]) strength[end if][roman type][line break]";
 		if R > B:
 			now the suffocation of M is 0; [This is what we use to track how many turns the adult baby slave has been forcing the player to hold their breath.]
 			if presented-orifice is face or M is friendly-fucking, say "You lay still, letting her plop her padded behind on your face. ";

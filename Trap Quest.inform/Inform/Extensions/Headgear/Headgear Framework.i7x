@@ -4,9 +4,9 @@ Headgear Framework by Headgear begins here.
 A headgear is a kind of clothing. Headgear is usually unique. A headgear can be hair growing. A headgear is usually not hair growing. The soak-limit of a headgear is usually 7. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]  A headgear has a number called hair-charge.  A headgear has a number called colour-charge.  A headgear has a number called outfit-charge.
 A headgear can be roleplay. A headgear is usually not roleplay.
 
-headgear can be blondeness-neutral, blondeness-positive, blondeness-negative. headgear is usually blondeness-neutral.
-headgear can be brightness-neutral, brightness-positive, brightness-negative. headgear is usually brightness-neutral.
-headgear can be redness-neutral, redness-positive, redness-negative. headgear is usually redness-neutral.
+headgear can be blondeness-neutral, blondeness-positive, blondeness-negative (this is the blondeness-influence property). headgear is usually blondeness-neutral.
+headgear can be brightness-neutral, brightness-positive, brightness-negative (this is the brightness-influence property). headgear is usually brightness-neutral.
+headgear can be redness-neutral, redness-positive, redness-negative (this is the redness-influence property). headgear is usually redness-neutral.
 
 To say ShortDesc of (C - a headgear):
 	say "headwear".
@@ -124,9 +124,12 @@ This is the headgear already worn rule:
 The headgear already worn rule is listed in the headgear wearability rules.
 
 Carry out wearing headgear:
-	if the noun is not cursed:
+	compute HeadgearAutoCursing of the noun.
+
+To compute HeadgearAutoCursing of (H - a headgear):
+	if H is not cursed:
 		say "As you put it on, it becomes cursed, sealing itself to your [ShortDesc of hair]!";
-		now the noun is cursed.
+		now H is cursed.
 
 
 Include Tiara by Headgear.
@@ -154,6 +157,7 @@ Include Glittering Rose by Headgear.
 Include Cumdumpster Hat by Headgear.
 Include Heart Hairpin by Headgear.
 Include Bunny Ears by Headgear.
+Include Combat Visor by Headgear.
 
 
 Headgear Framework ends here.

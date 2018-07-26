@@ -89,8 +89,22 @@ REQUIRES COMMENTING
 This is the alchemy charge decay rule:
 	if the charge of alchemist's table > 0:
 		decrease the charge of alchemist's table by counters-seconds;
-		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type]  It just be ready for another ingredient to transform!".
+		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
 The alchemy charge decay rule is listed in the advance counters rules.
+
+[!<TheScienceChargeDecayRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the science charge decay rule:
+	if the charge of science table > 0:
+		decrease the charge of science table by counters-seconds;
+		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The left hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!";
+	if the second charge of science table > 0:
+		decrease the charge of science table by counters-seconds;
+		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
+The science charge decay rule is listed in the advance counters rules.
 
 [!<TheLaundryChargeDecayRule>+
 

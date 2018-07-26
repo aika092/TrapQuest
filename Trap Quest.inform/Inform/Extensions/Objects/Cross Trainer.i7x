@@ -30,6 +30,8 @@ Check entering cross trainer:
 			if T is 0, say "You stand on the cross trainer and push forward. The cross trainer kicks into motion and you start striding forward, exercising all your important muscles. [if the bimbo of the player > 14][line break][second custom style]All my important muscles except my butthole, teehee!  [roman type][line break][end if]You [one of]get into a great rhythm, enjoying the exercise so much that you don't want to stop![or]once again slip into an enjoyable rhythm that makes you feel great![stopping]";
 			otherwise say "[one of]You continue to enthusiastically exercise on the machine.[or][cycling][one of]You're slowly getting tired, but it's worth it to feel so great![or][stopping]";
 			increase T by 1;
+			compute arm fat burning;
+			compute hip fat burning;
 			compute extra turn;
 		if the player is in danger, say "[bold type]You notice that you are in danger, so you stop.[roman type][line break]" instead;
 		otherwise say "[variable custom style][one of]Well, that was an interesting experience![or]I feel great![stopping][roman type][line break]" instead.

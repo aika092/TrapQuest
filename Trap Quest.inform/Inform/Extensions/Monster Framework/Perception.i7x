@@ -37,6 +37,8 @@ To check perception of (M - a monster):
 			otherwise:
 				compute correct perception of M;
 			increase the times-met of M by 1;
+			if M is friendly human monster and breasts is exposed:
+				progress quest of chest-exposing-quest from M;
 			if M is unfriendly:
 				now the previous-babification of M is 1;
 				now the previous-objectification of M is 1;
@@ -51,7 +53,7 @@ To check perception of (M - a monster):
 					if M is friendly, say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them. If thirsty, you could even 'ask [M] [item style]for drink'.[roman type][line break][or][stopping]";
 					otherwise say "[one of][item style]Newbie tip: You have been noticed by an NPC!  Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away!  If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
 				reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
-			if hypno-curtsey-trigger is 1 and the player is upright and M is intelligent friendly monster and there is a worn knee-length or longer crotch-in-place clothing:
+			if hypno-curtsey-trigger is 1 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
 				let C be a random worn knee-length or longer crotch-in-place clothing;
 				say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
 				now auto is 1;
@@ -62,7 +64,7 @@ To check perception of (M - a monster):
 To compute correct perception of (M - a monster):
 	now the latest-appearance of M is the appearance of the player;
 	if diaper quest is 1:
-		now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ oherwise we're wasting CPU cycles]
+		now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ otherwise we're wasting CPU cycles]
 		compute DQ perception of M;
 	otherwise:
 		compute perception of M.

@@ -47,6 +47,7 @@ To decide which number is the tolerance of (F - a fuckhole):
 	if there is a lubricant covering F:
 		increase T by 3;
 		decrease the timer of a random lubricant covering F by 20;
+	increase T by (alcohol-level + (a random number between 0 and 1)) / 2;
 	if there is a live thing penetrating F and the reaction of the player > 0: [Since you can only submit and resist to living things]
 		increase T by 2;
 		if the soreness of F > 8, increase T by 2;
@@ -130,8 +131,8 @@ To communicate struggling of (F - a fuckhole):
 		if (F is asshole and latest-asshole-invader is not T) or (F is vagina and latest-vagina-invader is not T): [We haven't recently discussed how this is tearing the player apart]
 			if F is asshole, now latest-asshole-invader is T;
 			otherwise now latest-vagina-invader is T;
-			if ungape is 0, say "The [FuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]!  Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
-			otherwise say "The [FuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]!  Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
+			if ungape is 0, say "The [FuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
+			otherwise say "The [FuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
 
 [!<RuinRollFuckhole>+
 
@@ -150,18 +151,26 @@ To RuinRoll (F - a fuckhole):
 		let X be the tolerance of F; 
 		if X < 1, now X is 1; [Always a small chance of avoiding soreness]
 		if X > 9 and the latex-transformation of the player <= 3, now X is 9; [Minimum chance is 10%]
-		decrease X by a random number between 1 and 10;
+		let R be a random number between 1 and 10;
+		let R2 be a random number between 0 and 5;
+		if debuginfo > 0, say "[input-style]Soreness increase roll: d10 ([R]) | ([X].5) [F] tolerance[roman type][line break]";
+		decrease X by R;
 		if X < 0 and the soreness of F < 10, increase the soreness of F by 1; [Increase soreness if RNG dictates]
 		if the virgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is female and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
 			gape F times 1;
 		otherwise if the analvirgin of the player is 1 and there is a live virginity taking thing penetrating F and F is asshole:
 			gape F times 1;
 		otherwise if X < -5 and the soreness of F < 10: [Double soreness and gape increasing]
+			if debuginfo > 0, say "[input-style]BONUS DOUBLE SORENESS [if the largest girth inside F > the openness of F]& GAPE [end if](difference was greater than 5)[roman type][line break]";
 			communicate struggling of F;
 			increase the soreness of F by 1;
 			if the largest girth inside F > the openness of F, gape F times 1;
-		otherwise if the largest girth inside F > the openness of F + a random number between 0 and 5:
+		otherwise if the largest girth inside F > the openness of F + R2:
+			if debuginfo > 0, say "[input-style]Gape increase roll: girth ([largest girth inside F - 1].5) | [the openness of F + R2] = ([openness of F]) current gape + ([R2]) d6-1[roman type][line break]";
 			gape F times 1;
+		otherwise:
+			if debuginfo > 0, say "[input-style]Gape increase roll: girth ([largest girth inside F - 1].5) | [the openness of F + R2] = ([openness of F]) current gape + ([R2]) d6-1[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Total [F] soreness change: [previous soreness of F] -> [soreness of F][roman type][line break]";
 		if the soreness of F <= the previous soreness of F and the soreness of F < 10 and there is a live thing penetrating F and the reaction of the player > 0:
 			compute submission success of a random live thing penetrating F in F; [Tell the player they succeeded at resisting soreness]
 		otherwise if the soreness of F <= the previous soreness of F and the soreness of F < 10 and there is a live thing penetrating F and the number of lubricants covering F > 0:

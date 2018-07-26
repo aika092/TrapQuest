@@ -113,7 +113,7 @@ Are hips at their maximum size?
 
 +!]
 Definition: yourself is bottom heavy:
-	if the thickness of hips < 10 - max ass size modifier or the flesh volume of hips < max ass size, decide no;
+	if the thickness of hips < 10 - max ass size modifier or (the flesh volume of hips + the silicone volume of hips) < max ass size, decide no;
 	decide yes.
 
 To decide which number is min ass size:
@@ -138,9 +138,13 @@ REQUIRES COMMENTING
 To compute hip fat burning:
 	if the flesh volume of hips > 0:
 		let F be 200 - (the flesh volume of hips * 10);
-		if (a random number between 20 and F) + a random number between 20 and F < the fat-burning of hips:
+		let R be (a random number between 20 and F) + a random number between 20 and F;
+		if debuginfo > 0, say "[input-style]Butt weight loss check: butt exercise count ([fat-burning of hips].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of hips * 10]) ass fat[roman type][line break]";
+		if R <= the fat-burning of hips:
 			say "Your recent exercise has reduced the size of your ass!";
+			if debuginfo > 0, say "[input-style]Exercise result: butt fatness [flesh volume of hips] -> ";
 			FatAssDown 1;
+			if debuginfo > 0, say "[flesh volume of hips][roman type][line break]";
 			now the fat-burning of hips is 0.
 
 [!<DecideWhichNumberIsTotalVolumeOfHips>+

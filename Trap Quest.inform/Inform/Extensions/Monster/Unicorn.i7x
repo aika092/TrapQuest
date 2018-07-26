@@ -72,7 +72,7 @@ To compute appearance assessment of (M - a unicorn):
 					now the stance of the player is 1;
 				otherwise:
 					let B be the blue-balls of M;
-					say "Your eyes are suddenly drawn to the horn on [NameDesc of M]'s forehead, but you manage to fight off a strange urge to immediately get on your knees. The unicorn starts to back away, [if B <= 3]doubled over, [end if]with both hands covering [his of M] crotch.[line break][speech style of M][if B <= 3]'[one of]G-gotta go!'[or]See you l-later!'[or]T-there's something I need to do!'[in random order][otherwise]'...'[roman type][line break]";
+					say "Your eyes are suddenly drawn to the horn on [NameDesc of M]'s forehead, but you manage to fight off a strange urge to immediately get on your knees. The unicorn starts to back away, [if B <= 3]doubled over, [end if]with both hands covering [his of M] crotch.[line break][speech style of M][if B <= 3]'[one of]G-gotta go!'[or]See you l-later!'[or]T-there's something I need to do!'[in random order][otherwise]'...'[end if][roman type][line break]";
 					if B <= 3, now the scared of M is 40;
 		otherwise:
 			say "[BigNameDesc of M] freezes.[line break][speech style of M]'[one of]W-What do you want?'[or]I-if you're here to attack me, I-I'll...'[or]J-Just so you know, I c-can defeat you.[or]I-I[']m not scared of you!'[in random order][roman type][line break]";

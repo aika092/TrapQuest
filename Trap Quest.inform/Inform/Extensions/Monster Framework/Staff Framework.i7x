@@ -41,7 +41,11 @@ To set up (M - a staff member):
 	while M is in School01 or M is off-stage:
 		now M is in a random placed academic room;
 	now the difficulty of M is the starting difficulty of M;
-	now the health of M is the maxhealth of M.
+	now the health of M is the maxhealth of M;
+	uniquely set up M.
+
+To uniquely set up (M - a staff member):
+	do nothing.
 
 To regionally place (M - a staff member):
 	while M is not in the school or M is in the location of the player or M is nearby:
@@ -84,6 +88,9 @@ To compute (M - a staff member) protecting against (X - a monster):
 	say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
 	anger M.
 
+To compute (M - a staff member) protecting against (X - nurse):
+	do nothing. [The nurse assaults the player on the bed, and this shouldn't upset the staff!]
+
 Part - Combat
 
 This is the staff member unique punishment rule:
@@ -119,7 +126,7 @@ To say WhoQuestion of (M - a staff member):
 	say "[variable custom style]'What do you teach?'[roman type][line break]".
 
 To say WhereQuestion of (M - a staff member):
-	say "[variable custom style]'[if the rank of the player is 1]Where [one of]are we?'[or]am I?'[at random][otherwise]What's the best way to increase my rank?'[end if][roman type][line break]".
+	say "[variable custom style]'[if the rank of the player <= 1]Where [one of]are we?'[or]am I?'[at random][otherwise]What's the best way to increase my rank?'[end if][roman type][line break]".
 
 To say EscapeQuestion of (M - a staff member):
 	say "[variable custom style]'What stuff is there to find deeper in the school?'[roman type][line break]".
@@ -134,7 +141,7 @@ To say WhoAnswer of (M - a staff member):
 	say "[speech style of M]'I should clearly be teaching you not to ask stupid questions!'[roman type][line break]".
 
 To say WhereAnswer of (M - a staff member):
-	say "[speech style of M]'[if the rank of the player is 1]Geez, you're pretty far gone, aren't you?'[otherwise]Ranks are earned, and not without effort. It's important you realise that.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you?'[otherwise]Ranks are earned, and not without effort. It's important you realise that.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a staff member):
 	say "[speech style of M]'Wouldn't you like to know.'[roman type][line break]".
@@ -342,12 +349,12 @@ To say detention chair tease of (M - a teacher):
 To say detention chair tease response of (M - a monster):
 	if the player is able to speak:[Possibly mention a camera being in the room so low delicateness players have an incentive to obey]
 		if the delicateness of the player > 12 or the fatigue of the player > 200:
-			if the delicateness of the player <= 12, say "You're just too tired to fight it, and say the words without hesitation.[line break]";
+			if the delicateness of the player <= 12, say "You're just too tired to fight it, and say the words without hesitation.[line break]";[if we say this, it's because the player is really fatigued]
 			say "[variable custom style]'Thank you for putting me in my place, [if M is female]Ma'am[otherwise]Sir[end if].'[roman type][line break]";
 			say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame.";
 			humiliate 60;[it's extra humiliating because you had to thank them]
 		otherwise:
-			say "The lens on the camera in the corner seems to increase its focus. Thank [NameDesc of M]?[line break]"; [###Selkie: That sounds a bit far-fetched. What about: "The red light on the camera glows more intensely"?]
+			say "[one of]You feel the camera on the edge of your vision, watching you[or]You know the camera is pointing right at you[at random]. Thank [NameDesc of M]?[line break]";
 			if the player consents:
 				say "[variable custom style]'Thank you for putting me in my place, [if M is female]Ma'am[otherwise]Sir[end if].'[roman type][line break]";
 				say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame, unable to look [him of M] in the eye as you [if the delicateness of the player < 3]growl[otherwise if the delicateness of the player < 6]mutter[otherwise]recite[end if] the words.";
@@ -369,7 +376,7 @@ This is the detention orgasm announcement rule:
 				humiliate 45;
 			humiliate 100;
 		otherwise:
-			say "The lens on the camera in the corner zooms out to focus on you, and you can't help but feel someone on the other end is looking right at you. Announce that you just came?[line break]";
+			say "[one of]You can't help but feel like you're being watched right now[or]You know you can't pretend that didn't just happen[or]The camera in the corner is pointing right at you[or]You know the camera was pointing right at you when you came[at random]. Announce that you just came?[line break]";
 			if the player consents:
 				say "[variable custom style]'[one of]GUESS WHO JUST CAME FROM BEING IN DETENTION!'[or]I[']M A [if diaper quest is 1]NAUGHTY BABY[otherwise]DIRTY SLUT[end if] WHO CAME FROM BEING IN DETENTION!'[or]LOOK AT ME! DETENTION MADE ME CUM!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";[TODO: more interesting + nearby monsters react]
 				repeat with M running through monsters in the location of the player:
@@ -379,7 +386,7 @@ This is the detention orgasm announcement rule:
 			otherwise:
 				say "You [if the delicateness of the player < 2]look right at the camera, refusing to say anything[otherwise]look away from the camera and say nothing[end if][if the number of monsters in the location of the player > 0], hoping your silence will prevent anyone around you from catching on[end if].";
 				repeat with M running through monsters in the location of the player:
-					if (the player is male and a random number between 1 and 2 is 1) or a random number between 1 and 4 is 1:
+					if (the player is male and a random number between 1 and 2 is 1) or a random number between 1 and 4 is 1:[it's a lot harder to hide an orgasm when you just jizzed everywhere]
 						say detention orgasm reaction of M;
 						humiliate 40;
 				increase detention-turns by 4;
@@ -395,47 +402,16 @@ To say detention orgasm reaction of (M - a teacher):
 [
 More detention ideas:
 
-Portfolio
--Player is stripped and has a set number pictures taken of their body. They need to get each picture captioned to end the detention.
--Player is given a picture portfolio and a marker to carry. The player can offer the marker or the portfolio to a student, who will then add a caption.
--The player can caption the pictures themselves, but the ink will erase itself from the picture unless the player has a high enough humiliation level to write something scandalous.
-	-bodily fluids will also work as captions.
--The player won't be able to leave the school until they finish the portfolio. Pink pill should still teleport, and fainting should probably end it. 
-	-Possibly they won't be able to put clothes back on until they complete it.
--Player has to print out a set number of humiliating pictures and hang them up around campus/hand them out to students
-
-Apology
--Player has to wear the "sorry outfit/collar". They need to visit a set number of staff members in order to take it off.
-	-Not sure what the sorry outfit could be.
-	-Maybe the outfit involves some really big plugs
-	-Possibly it's really gross?
--The player's armband prevents the player from the school until the "sorry item" is gone. Pink pill would still teleport, though, and fainting should probably end the detention.
--The "sorry item" forces the player to apologize to everyone they meet, as long as they are able to speak.
--The apology wouldn't be assigned if the player is wearing a gag, and the player would have their gag confiscated if a teacher saw it.
-	-The gameplay here forks for players: They can try to hide and meet as few people as possible on their way to each of the teachers, or try to get away with wearing a gag through each of the halls without meeting a teacher too early.
-
-Hypno
--Player is strapped into a chair and forced to wear headphones, etc. Could be the detention chair or another one. The player is forced to watch a video hypnotizing them to be slutty or something, and there's a narrator that says stuff into the player's ear so waiting around through the punishment duration doesn't get stale.
-
 Hole
 -Player has to work a gloryhole for high level students. (timer)
 
-Cup challenge
--The player is cuffed and locked into a gloryhole. The player will be presented a number of opaque cups. The player's detention ends when the timer is finished, or when the player drinks the right cup.
--One cup is milk
--DQ: The other four cups are filled with water
--TQ: The other four cups are filled with semen
--One cup has a birth control pill dissolved in it
--One cup has a negative pill dissolved in it
-	-DQ: it's that kind of pill.
-	-TQ: arousal pill?
--One cup is just the substance.
--One cup has a thing added to it that tells the player's armband detention is over
--Each cup has a volume and weight written on it. The player can get ahead by memorizing what the weight should be per volume of substance and picking the one that's off
--The player will get fucked while they fiddle around with the cups
+Tutoring
+-Player is paired up with a student of higher or equal rank(or lower rank if absolutely necessary)
+-Sex here, maybe?
 
-Aika: I like a lot of these ideas but most of them give the player a way to rebel, which then obviously needs to be handled somehow.
-MG: The idea with a lot of these was to give the player a bit of a mini-game to play. I think the detention should have ways to minimize its effects built in, that way if the player has already seen this type of detention, they aren't bored, and I think it's very thematic to be rebellious during detention.
+Conference(maybe this would be better as a thing that happens naturally)
+-The player is taken to the headmistress, who contacts someone the player knows (ex, room-mate 1, room-mate 2, room-mate 1 and 2)
+-The person comments on the player's appearance somehow, and (maybe) has the chance to mess with the player remotely
 
 ]
 
@@ -455,7 +431,7 @@ To compute remedial detention of (M - a staff member):
 	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	otherwise compute DQChairSetup of M;]
 	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
-	if diaper quest is 0, say "Short clips of [if tg fetish is 1]transsexual [end if]pornstars stripping off their clothes appear on the screen, and the music's volume slowly rises as a husky feminine voice begins speaking right into your ear.[line break][first custom style]'Welcome to my classroom, baby. You can call me Mistress Professor. Are you ready for a lesson?'[roman type][line break]A hypnotic swirling pattern fades into the screen as male actors gradually begin to appear in the clips, and you suddenly realize how hard it is to pull your eyes away from the screen. You realize you have no choice but to fight off the hypnosis until you're released!";
+	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish is 1]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress. [line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realize how [if the player is male]hard[otherwise if the player is female]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the center of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute room leaving of M;
 	now M is in Holding Pen;
@@ -466,28 +442,33 @@ To compute remedial detention of (M - a staff member):
 To compute rem chair detention:
 	if detention chair is grabbing the player:
 		if detention-turns > 0:
+			let C be a random number between 2 and 40;
 			let N be a random number between the sex addiction of the player and (the intelligence of the player * -1);
+			say RemHypnoContent;
 			if N < -9:
-				say "[one of]You manage to shut everything out completely, drowning out the professor's voice by humming in your head.[or]You focus on ignoring the professor's voice, visualizing yourself breaking free of the straps.[or]You shut your eyes, focusing everything on keeping the professor's voice from penetrating your thoughts.[or]You tear your eyes away from the screen, focusing on ignoring everything the narrator whispers into your ears.[at random]";
+				say "The music thumps relentlessly as you [if the sex addiction of the player < 5]do your best to ignore[otherwise]space out through[end if] the rest of the chapter, heart pounding as you [if the sex addiction of the player < 5]try not to watch[otherwise]watch[end if] the graphic sex on the screen.";
+				Arouse 50;
 			otherwise if N < -3:
-				say "[one of]You manage to tear your eyes away from the screen, but the narrator's voice in your head still sends shivers down your spine![or]You look away from the screen, but the professor's voice still sends tingles through your body.[or]You manage to keep your eyes shut, but you can't shut out the narrator's voice in your head![or]You tears your eyes away from the screen, but the narrator's voice remains loud and clear in your ear![at random]";
-				say RemHypnoMantra;
+				say "The music thumps relentlessly as you struggle through the rest of the chapter, feeling slight echoes of what the professor's interns are doing to her body.";
 				humiliate TRIVIAL-HUMILIATION + TRIVIAL-HUMILIATION;
+				Arouse 100;
+				FatigueUp 3;
 			otherwise if N < 6:
-				say RemHypnoContent;
-				say "[one of]The professor's voice seems to reverberate in your head as you unsuccessfully try to tear your eyes off the screen.[or]Your eyes refuse to look away from the screen, and no matter what you do the voice of the professor continues to penetrate your thoughts![or]You try to keep your eyes shut, but they're glued to the screen! The professor's voice seems to resonate with everything happening in front of you.[or]You can't tear your eyes away from the screen, and you find yourself repeating everything the professor whispers in your ear.[at random]";		
-				say RemHypnoMantra;
+				say "The music washes over you as you [if the sex addiction of the player < 5]reluctantly[otherwise]struggle to[end if] take in the rest of the chapter, feeling echoes of what the professor's interns are doing to her body.";
 				humiliate SLIGHT-HUMILIATION;
+				Arouse 100;
+				FatigueUp 7;
 			otherwise:
-				say RemHypnoContent;
-				say "[one of]You hang on the professor's every word as you stare at the screen.[or]You don't even think of looking away, taking in the professor's voice as you stare at the screen.[or]You can't help staring at the screen, letting the music reverberate in your head as the professor whispers in your ear.[or]You let the professor's voice wash over you as you take in everything on the screen.[at random]";
-				say RemHypnoMantra;
+				say "The music washes over you as [if the intelligence of the player > 10]you attentively take in[otherwise]your mind absorbs[end if] the rest of the chapter, feeling everything the professor's interns are doing to her body.";
 				humiliate SLIGHT-HUMILIATION + TRIVIAL-HUMILIATION;
+				if a random number between 1 and 4 is 1, RandomAddictUp 1;
+				Arouse 300;
+				FatigueUp 10;
 		otherwise:
 			let M be a random staff member in Holding Pen;
 			if M is staff member:
 				now M is in the location of the player;
-				say "Panning clips of pornstars [if bukkake fetish is 1]with cum plastered all over their faces[otherwise if diaper quest is 0]displaying their gaping holes to the camera[otherwise]PLACEHOLDER[end if] cycle on the screen as the hypnotic swirling pattern fades and the syncopated rhythm winds down. [line break][first custom style]'Thanks for learning. That's all for today![roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and [NameDesc of M] re-enters the room. [big he of M] doesn't say anything as [he of M] removes your headphones and frees you from your bindings.";
+				say "The camera pans over the professor's body, zooming in [if bukkake fetish is 1]on the cum plastered all over her face[otherwise if diaper quest is 0]on her gaping holes[otherwise]PLACEHOLDER[end if] as the hypnotic pattern finally fades and the syncopated rhythm winds down. [line break][first custom style]'That's all for today ladies. Study hard!'[roman type][line break]The screen flickers off, and a few moments pass before you hear the door unlock and [NameDesc of M] re-enters the room. [big he of M] doesn't say anything as [he of M] removes your headphones and frees you from your bindings.";
 				distract M;
 				now the location of the player is not bossed;
 			otherwise:
@@ -496,11 +477,7 @@ To compute rem chair detention:
 		
 
 To say RemHypnoContent:
-	if diaper quest is 0, say "[one of]A clip of a [if tg fetish is 1]transsexual [end if]pornstar getting gangbanged by five guys shows on the screen.[or]A zoomed in shot of a pornstar being anally destroyed by two [manly-penis]s at once shows on the screen.[or]The screen shows a pornstar getting her makeup ruined as her partner fucks her face.[or]The screen shows a pornstar grinning as her partner smacks her in the face, slamming his dick in and out of her [asshole].[or]The video shows a pair of [if tg fetish is 1]transsexual [end if]pornstars taking turns getting spit roasted by a group of 9 guys.[in random order]";
-	otherwise say "PLACEHOLDER".
-
-To say RemHypnoMantra:
-	if diaper quest is 0, say "[line break][first custom style]'[one of]Doesn[']t that look good, baby?'[or]Wouldn[']t that feel good, baby?'[or]It always feels good to say yes.'[or]You love saying yes.'[or]No means yes. Yes means yes.'[or]Don[']t you wish that was you?'[or]Let him do it, baby.'[or]One isn[']t enough for you, baby.'[or]Teach him no means yes.'[or]Scream when you want it. Hope they realize the truth when they say you don[']t.'[in random order][roman type][line break]";[The goal of the "hypnosis" is to progress the player toward being fully broken]
+	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns. [line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish is 1]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if]. [line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
 	otherwise say "PLACEHOLDER".
 
 

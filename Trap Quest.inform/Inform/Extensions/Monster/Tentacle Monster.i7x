@@ -269,6 +269,7 @@ This is the tentacle monster climaxes rule:
 	if the magic-power of the player > 0:
 		say "You feel something draining from your body...[line break]";
 		MagicPowerDown 1;
+	progress quest of tentacle-quest;
 	say "[BigNameDesc of M] [one of]seems to stop[or]once again stops[stopping] moving as its tentacles rest peacefully on the ground and its single eye closes.[unless M is massive][line break][one of]It appears to have entered some kind of dormant state. You watch with silent awe as it[or]The monster[stopping] smoothly but rapidly grows in size until its main body is [end if][if M is newborn]as big as yours, and its many tentacles have thickened to the width of a small bottle.[otherwise if M is large]as big as a car, and its multitude of tentacles have thickened to the width of your forearm.[otherwise][one of]Much to your relief it doesn't seem to grow any larger.[or][stopping][end if][if the bimbo of the player < 11 and M is large and the openness of asshole < 9 and the openness of vagina < 9][line break][first custom style]'Holy shit. I am getting the fuck out of here while this thing is sleeping. I could never take that...'[roman type][line break][end if]";
 	if M is not massive:
 		DifficultyUp M by 3;

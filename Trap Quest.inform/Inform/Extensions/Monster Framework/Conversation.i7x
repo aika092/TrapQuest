@@ -48,6 +48,7 @@ To compute talk option (N - 1) to (M - a monster):
 		say "[FirstGreeting of M]"; [Note that the player has already "met" most monsters at least once if the monster is interested.]
 	otherwise:
 		say "[RepeatGreeting of M]";[This is the default greeting for most monsters]
+	if M is a friendly interested human monster and breasts is exposed, progress quest of chest-exposing-quest from M;
 	if M is interested:
 		if seduced is 0 or M is not intelligent:
 			compute greeting response of M;[This is something that should be specific to every monster]

@@ -48,7 +48,7 @@ To say ExtractFlav of (V - a baby's bottle):
 Pouring it into is an action applying to two things.
 Check pouring something into:
 	if the second noun is face, try drinking the noun instead;
-	if the second noun is alchemist's table, try crafting the noun instead;
+	if the second noun is crafting-table, try crafting the noun instead;
 	if the second noun is wishing well, try wellwishing the noun instead;
 	unless the second noun is pedestal, try extracting the second noun with the noun instead.
 Understand "pour [something] into [something]", "pour [something] in [something]", "empty [something] into [something]", "empty [something] in [something]", "decant [something] into [something]", "decant [something] in [something]", "siphon [something] into [something]", "siphon [something] in [something]", "siphon [something] to [something]" as pouring it into.

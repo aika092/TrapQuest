@@ -60,6 +60,7 @@ To compute virginity loss:
 		say "Your holy aura seems to diminish with the loss of your purity, enhancing the shame you are feeling. A strange new feeling of purpose passes through you, and you groan as your [vagina] loosens painfully. [line break][variable custom style]I guess all I'm good for is sex now...[roman type][line break]";
 		if the openness of vagina < 10, increase the openness of vagina by 1;
 		decrease the virgin bonus of the player by 1;
+	progress quest of vaginal-virginity-quest;
 	if the openness of vagina < 10, increase the openness of vagina by 1.
 
 
@@ -127,7 +128,7 @@ To virginpunish:
 		let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
 		if S is clothing:
 			say "[VirginFlav]";
-			say "[bold type]As if reacting to your feelings, you suddenly feel a [printed name of S] [bold type]appear on you!  [line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
+			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
 			summon S cursed;
 			now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
 			announce sissification;
@@ -139,7 +140,7 @@ To virginpunish:
 			say "[VirginFlav]";
 			let C be a random off-stage chastity cage;
 			if C is actually summonable:
-				say "[bold type]As if reacting to your feelings, you suddenly feel a [printed name of C] [bold type]appear on you!  [line break][variable custom style]How am I ever supposed to lose my virginity now?  I'm stuck like this forever...[roman type][line break]";
+				say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of C] [bold type]appear on you![line break][variable custom style]How am I ever supposed to lose my virginity now?  I'm stuck like this forever...[roman type][line break]";
 				summon C cursed;
 		otherwise if the raw sex addiction of the player < 15 and the raw sex addiction of the player < the raw delicateness of the player:
 			say "[VirginFlav]";

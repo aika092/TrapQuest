@@ -67,7 +67,7 @@ The reset overburdened rule is listed in the advance counters rules.
 Report taking something:
 	if player-overburdened is -1:
 		if the player is overburdened:
-			say "[bold type]You are now carrying a lot of food drink and jewellery. Your dexterity will be reduced until you drop some.[roman type][line break]".
+			say "[bold type]You are now carrying a lot of food [if there are carried plentiful accessories]drink and jewellery[otherwise]and drink[end if]. Your dexterity will be reduced until you drop some.[roman type][line break]".
 
 Check inserting food into bag of holding:
 	say "A warning on the [second noun] says that this would be a horrible idea." instead.

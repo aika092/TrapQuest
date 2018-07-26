@@ -1,6 +1,6 @@
 Throbbing Tentacle by Sex Toys begins here.
 
-A throbbing-tentacle is a kind of dong. There is one unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
+A throbbing-tentacle is a kind of dong. There is 1 unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
 
 To say ClothingDesc of (C - a throbbing-tentacle):
 	say "[if the player is wearing a throbbing-tentacle]You can barely see the end of the Master sticking out of you, slowly waving.[otherwise]Your Master, presently no longer in his home. You feel empty without him in your hole.[end if]".
@@ -29,7 +29,7 @@ To compute periodic effect of (P - a throbbing-tentacle):
 				vaginally orgasm shamefully.
 
 To set up magic state of (P - a throbbing-tentacle):
-	do nothing.
+	do nothing. [Currently redundant, but just in case we end up making a default dong / sex toy rule and forget about this edge case]
 
 To uniquely set up (P - a throbbing-tentacle):
 	do nothing.[No enchantments here!]

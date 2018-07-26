@@ -9,7 +9,7 @@ Check decanting something with:
 	if the second noun is DungeonScenery03 or the second noun is WoodsScenery01 or the second noun is sacred pool, say "This might be allowed in a future release, but you can't right now!" instead;
 	if the second noun is the dungeon altar, try praying instead;
 	if the second noun is the woods altar, try praying instead;
-	if the second noun is alchemist's table, try crafting instead;
+	if the second noun is crafting-table, try crafting instead;
 	if the second noun is container or the second noun is orifice, try inserting the noun into the second noun instead;
 	if the noun is lubricant and the second noun is not dispenser, try orilubing the noun with the second noun instead;
 	if the noun is knife, try knifing the second noun with the noun instead;

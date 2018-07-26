@@ -41,7 +41,7 @@ To compute class outfit of (H - bunny waitress ears):
 				destroy O;
 		say "[bold type]You feel your bunny waitress ears twitch as if they were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
 		summon B cursed;
-		now the raw-magic-modifier of B is ((4 - the silicone volume of breasts) / 5) - 1;
+		if artificial enhancements fetish is 1, now the raw-magic-modifier of B is ((4 - the silicone volume of breasts) / 5) - 1;
 		if bunny-summoned < 1, now bunny-summoned is 1.
 
 This is the bunny waitress inappropriate rule:

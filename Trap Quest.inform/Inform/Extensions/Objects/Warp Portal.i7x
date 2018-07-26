@@ -2,7 +2,7 @@ Warp Portal by Objects begins here.
 
 
 
-A warp portal is a kind of thing. A warp portal is not portable. There is 1 warp portal in Hotel40. There is 1 warp portal. The printed name of warp portal is "[TQlink of item described]warp portal[TQxlink of item described][verb-desc of item described]". The description of warp portal is "[WarpPortalDesc]". The text-shortcut of warp portal is "wpo".
+A warp portal is a kind of thing. A warp portal is not portable. The printed name of warp portal is "[TQlink of item described]warp portal[TQxlink of item described][verb-desc of item described]". The description of warp portal is "[WarpPortalDesc]". The text-shortcut of warp portal is "wpo".
 To say WarpPortalDesc:
 	say "This giant swirling green portal in the north wall will probably take you to another part of the game.".
 
@@ -25,9 +25,12 @@ Check an actor going (this is the can't go that way except for warp portals rule
 		otherwise:
 			stop the action with library message going action number 6 for the door gone through.
 
+hotel portal is a warp portal. hotel portal is in Hotel40. 
+dungeon portal is a warp portal.
+
 To teleport via (W - a warp portal):
 	if the player is in Hotel40:
-		unless there is a warp portal in Dungeon42, now a random off-stage warp portal is in Dungeon42;
+		unless there is a warp portal in Dungeon42, now dungeon portal is in Dungeon42;
 		now Dungeon42 is discovered;
 		now the player is in Dungeon42;
 		say "As you go through the portal, you appear back in the Dungeon[one of]!  There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]";
@@ -59,6 +62,7 @@ To teleport via (W - school portal):
 	otherwise:
 		now the player is in School24;
 	destroy W;
+	now the location of the player is discovered;
 	display entire map.
 
 

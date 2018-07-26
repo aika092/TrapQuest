@@ -95,13 +95,13 @@ The unpresentable body part rule is listed in the default presentable rules.
 REQUIRES COMMENTING
 
 +!]
-This is the lack of interested monsters rule:
-	if the number of interested monsters in the location of the player is 0 and (the number of giant wasps in the location of the player is 0 and the player-class is broodmother):
+[This is the lack of interested monsters rule:
+	if the number of interested monsters in the location of the player + the number of friendly raunchy monsters in the location of the player is 0 and (the number of giant wasps in the location of the player is 0 and the player-class is broodmother):
 		if auto is 0:
 			if there is an interested monster in the location of the player, say "There's nobody about to fuck you.";
 			otherwise say "But there's nobody even looking at you.";
 		rule fails.
-The lack of interested monsters rule is listed in the global presentable rules.
+The lack of interested monsters rule is listed in the global presentable rules.]
 
 [!<ThePlayerCanOnlyPresentWhileKneelingRule>+
 
@@ -177,8 +177,22 @@ Check presenting:
 	[Low priority is anything intelligent or raunchy (will bang)]
 	if M is nothing, now M is a random interested intelligent monster in the location of the player;
 	if M is nothing, now M is a random interested raunchy monster in the location of the player;
-	[Low priority is anything interested at all]
+	[Lower priority is anything interested at all]
 	if M is nothing, now M is a random interested monster in the location of the player;
+	[###Now we do that all the friendly ones again but without the interested clause###]
+	[Medium priority is anything that will use that body part]
+	if M is nothing:
+		if the noun is face:
+			now M is a random willing to do oral monster in the location of the player;
+			if M is nothing, now M is a random willing to urinate monster in the location of the player;
+		if the noun is breasts, now M is a random willing to do titfucks monster in the location of the player;
+		if the noun is vagina, now M is a random willing to do vaginal monster in the location of the player;
+		if the noun is asshole, now M is a random willing to do anal monster in the location of the player;
+	[Low priority is anything intelligent or raunchy (will bang)]
+	if M is nothing, now M is a random intelligent monster in the location of the player;
+	if M is nothing, now M is a random raunchy monster in the location of the player;
+	[Lower priority is anything at all]
+	if M is nothing, now M is a random monster in the location of the player;
 	if M is monster:
 		if M is not penetrating a body part, try direct-presenting the noun to M instead;
 		otherwise say "But the [ShortDesc of M] is already inside you!" instead;
@@ -190,6 +204,7 @@ REQUIRES COMMENTING
 
 +!]
 Check direct-presenting something to:
+	if tutorial is 1, say "You haven't been told to do that! Please follow the tutorial instructions." instead;
 	if the noun is hips, try direct-presenting asshole to the second noun instead;
 	if the second noun is summoning portal:
 		try appeasing the noun with the second noun instead;
@@ -205,7 +220,7 @@ Check direct-presenting something to:
 			say "You would need to be standing up." instead;
 		say "You can only present either your mouth or [genitals] to the hole." instead;
 	if the second noun is not monster, say "You're going to present your [noun] to that how exactly?" instead;
-	if the second noun is uninterested, say "You should probably get [his of the second noun] attention first. Maybe try [bold type]greet[roman type]ing [him of the second noun]." instead;
+	if the second noun is uninterested and (the boredom of the second noun is 0 or the second noun is unfriendly), say "You should probably get [his of the second noun] attention first. Maybe try [bold type]greet[roman type]ing [him of the second noun]." instead; [We are happy for the player to present to uninterested NPCs only if the NPC is friendly and not just about to notice the player]
 	unless the noun is actually presentable, do nothing instead.
 
 [!<CarryOutDirectPresentingSomethingTo>+
@@ -214,6 +229,8 @@ REQUIRES COMMENTING
 
 +!]
 Carry out direct-presenting something to:[TODO: make this less humiliating for a princess]
+	now the second noun is interested;
+	now the boredom of the second noun is 0;
 	if suggestion-type is 5:
 		now suggestion-tracking is 1;
 	if the noun is face:
@@ -284,6 +301,7 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 		unless there is a worn just the tip tattoo, humiliate (SEVERE-HUMILIATION + MODERATE-HUMILIATION);
 	if there is a worn demon codpiece, follow the demon junk punishment rule;
 	if the second noun is friendly, check consensual submissive sex of the second noun;
+	if the noun is fuckhole and the second noun is dark skinned male monster, progress quest of interracial-sex-quest;
 	now seconds is 4.
 
 Understand "present [something]", "offer [something]", "spread [something]", "suggest [something]", "display [something]", "put penis in [something]", "put cock in [something]", "put dick in [something]", "take penis in [something]", "take cock in [something]", "take dick in [something]" as presenting.

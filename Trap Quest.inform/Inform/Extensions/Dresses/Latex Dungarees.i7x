@@ -23,7 +23,7 @@ To decide which figure-name is clothing-image of (C - a blue-latex-dungarees):
 	decide on figure of blue-latex-dungarees.
 
 To say ClothingDesc of (C - a blue-latex-dungarees):
-	say "A blue latex outfit with ruffles at the legholes and neckline. It's like a pair of latex sissy bloomers attached to a latex sissy top.".
+	say "A blue latex outfit with ruffles at the leg holes and neckline. It's like a pair of latex sissy bloomers attached to a latex sissy top.".
 
 To say ShortDesc of (C - a blue-latex-dungarees):
 	say "latex dungarees".

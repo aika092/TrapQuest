@@ -94,6 +94,7 @@ To compute perception of (M - pimp):
 	if the times-met of M is 0:
 		say "[first custom style]'Hey, did I give you permission to work in my brothel?  I don't think so. Well anyway, you're now one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. And that means every time you fuck a [if interracial fetish is 1]brotha[otherwise]dude[end if], I get a cut. Any single item of jewellery will do. If not, you get the back of my hand. So what's it going to be, [if diaper quest is 1]kiddo[otherwise]slut[end if]?'[roman type][line break]";
 		increase the times-met of M by 1; [just to be sure]
+		now the last-interaction of M is 2;
 	otherwise:
 		say "[first custom style]'Nice work, bitch. Now give me what's mine.'[roman type][line break]".
 
@@ -126,7 +127,7 @@ Section 1 - Protect and Attack
 The latex punishment rule of pimp is usually the no latex punishment rule.
 
 This is the pimp convinced rule:
-	say "[PresentRejectionFlav of current-monster]".
+	if presented-orifice is not nothing, say "[PresentRejectionFlav of current-monster]".
 The monster convinced rule of pimp is usually the pimp convinced rule.
 
 To say PresentRejectionFlav of (M - pimp):

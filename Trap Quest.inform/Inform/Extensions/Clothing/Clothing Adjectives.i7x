@@ -175,7 +175,7 @@ Clothing can be top-intact or top-ripped. Clothing is usually top-intact.
 Definition: a clothing is breast exposing rather than breast covering if it is chestless.
 Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing and it is top-intact and it is top-placed.
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
-Clothing can be top-displacable, optional-top-displacable, or not-top-displacable. Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
+Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
 Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped.
 Clothing can be normally-nipple-covering or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
 Definition: a clothing (called C) is nipple exposing rather than nipple covering:

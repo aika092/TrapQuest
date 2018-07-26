@@ -96,6 +96,7 @@ choice
 0 [easter content] [currently does nothing]
 0 [april fools content]
 1 [futanari fetish]
+0 [alcohol fetish]
 
 
 [!<DecideWhichNumberIsPlayerGender>+
@@ -680,6 +681,10 @@ To decide which number is april fools content:
 To decide which number is futanari fetish:
 	decide on the choice in row 68 of the Table of Player Options.
 
+To decide which number is alcohol fetish:
+	if the player is not a july 2018 top donator and the player is not a july 2018 diaper donator, decide on 0;
+	decide on the choice in row 69 of the Table of Player Options.
+
 [!<AThingIsAFlatchestedTrap>+
 
 REQUIRES COMMENTING
@@ -788,6 +793,7 @@ To decide which number is positive points count:
 	if bondage prisoner is 1, increase X by 8;
 	if ungape is 1, increase X by 2;
 	if tentacle fetish is 1, increase X by 6;
+	if alcohol fetish is 1, increase X by 2;
 	if tough-shit is 1, increase X by 8;
 	if save game limit is 1, increase X by 4;
 	increase X by natural redness;

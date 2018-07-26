@@ -1,9 +1,7 @@
 Sacred Pool by Objects begins here.
 
 
-The sacred pool is a thing. the sacred pool is not portable. The printed name of sacred pool is "[TQlink of item described]sacred pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of sacred pool is "sap". the sacred pool has a number called corruption. The corruption of sacred pool is usually 0. Instead of entering sacred pool, try showering sacred pool. the sacred pool has a number called charge. the charge of the sacred pool is usually 0. The sacred pool is in Mansion25. The description of sacred pool is usually "[PoolDesc]". 
-
-[TODO: corrupting the pool increases doom.]
+The sacred pool is a thing. the sacred pool is not portable. The printed name of sacred pool is "[TQlink of item described]sacred pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of sacred pool is "sap". the sacred pool has a number called corruption. Instead of entering sacred pool, try showering sacred pool. the sacred pool has a number called charge. the charge of the sacred pool is usually 0. The sacred pool is in Mansion25. The description of sacred pool is usually "[PoolDesc]". Understand "water" as sacred pool.
 
 To say PoolDesc:
 	[if images visible is 1, display figure of sacred pool;]

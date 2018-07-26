@@ -69,12 +69,12 @@ To say MonsterDesc of (M - a gladiator):
 	otherwise if diaper quest is 1:
 		say "This tall dark-skinned woman looks very proud of her adult, curvy body shape. Her breasts are completely bare.";
 	otherwise:
-		say "[one of]This woman is scantily clad, but the iron shortsword she's carrying in her hands makes her look quite intimidating and dangerous. She is wearing a leather belt, from which hangs a loincloth that only comes halfway down her thighs. Thick plates are held to her ankles, forearms, and shoulders by black straps, all of which are made of solid gold. A scarlet cape is draped over her shoulders, which are covered by loose black hair. Her large breasts are completely exposed, as well as the [if M is proud-gladiator]ebony[otherwise if M is determined gladiator]dark brown[otherwise if M is amazonian gladiator]bronze[otherwise]caramel[end if] skin of her taut stomach and muscular legs. She wears a perpetual sneer as she prowls through the dungeon like a hungry puma.[or]This woman is wearing a leather belt, a loincloth that comes about halfway down her thighs, ankle and forearm protectors, made of solid gold, and thick shoulder plates, from which flows a scarlet cape. She is otherwise completely naked, nearly every inch of her flawless [if M is proud-gladiator]ebony[otherwise if M is determined gladiator]dark brown[otherwise if M is amazonian gladiator]bronze[otherwise]caramel[end if] skin exposed, including her impressive breasts, taut stomach, and muscular thighs. Despite her freely styled hair, her perpetual sneer and iron shortsword make her look intimidating and very dangerous.[in random order] [if doomed is 5]Her irises seem to glow with a strange pink light.[end if]";
+		say "[one of]This woman is scantily clad, but the iron shortsword she's carrying in her hands makes her look quite intimidating and dangerous. She is wearing a leather belt, from which hangs a loincloth that only comes halfway down her thighs. Thick plates are held to her ankles, forearms, and shoulders by black straps, all of which are made of solid gold. A scarlet cape is draped over her shoulders, which are covered by loose black hair. Her large breasts are completely exposed, as well as the [if M is proud-gladiator]ebony[otherwise if M is determined gladiator]dark brown[otherwise if M is amazonian gladiator]bronze[otherwise]caramel[end if] skin of her taut stomach and muscular legs. She wears a perpetual sneer as she prowls through the dungeon like a hungry puma.[or]This woman is wearing a leather belt, a loincloth that comes about halfway down her thighs, ankle and forearm protectors, made of solid gold, and thick shoulder plates, from which flows a scarlet cape. She is otherwise completely naked, nearly every inch of her flawless [if M is proud-gladiator]ebony[otherwise if M is determined gladiator]dark brown[otherwise if M is amazonian gladiator]bronze[otherwise]caramel[end if] skin exposed, including her impressive breasts, taut stomach, and muscular thighs. Despite her freely styled hair, her perpetual sneer and iron shortsword make her look intimidating and very dangerous.[in random order][if doomed is 5]Her irises seem to glow with a strange pink light.[end if]";
 	if M is awakened:
 		if the M is wild gladiator:
 			say "[variable custom style]She looks pretty tough...[roman type][line break]";
 		otherwise if futanari fetish is 0:
-			say "Her arms are bulging with huge muscles[if gladiatorcurse is 1], which seem to pulsate with the dim glow of the pentagram on her stomach.[otherwise], covered in strange tattoos[end if][roman type][line break]";
+			say "Her arms are bulging with huge muscles, [if gladiatorcurse is 1]which seem to pulsate with the dim glow of the pentagram on her stomach[otherwise]covered in strange tattoos[end if].[roman type][line break]";
 		otherwise:
 			say "Oh, and she has a massive 9 inch futa cock proudly erect and pushing through her belt. [line break][variable custom style][if the sex addiction of the player < 8]I don't want that thing anywhere near me![otherwise if the size of penis > 8]Heh, still not as big as mine.[otherwise]Oh my, that's huge...[end if][roman type][line break]";
 	otherwise:
@@ -108,9 +108,6 @@ Definition: a gladiator (called M) is human:
 To decide which number is the girth of (M - a gladiator):
 	if M is male, decide on 4;
 	decide on 0.
-
-[To say DickDesc of (M - a monster):
-	say manly-penis.]
 
 To decide which number is the semen load of (M - a gladiator):
 	if gladiatorcurse is 0, decide on 4;
@@ -367,11 +364,11 @@ To compute perception of (M - a gladiator):
 	if image cutscenes is 1, display interaction of M.	
 
 To decide which number is the outrage tolerance of (M - a gladiator): [What number of outrage they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
-	if diaper quest is 1, decide on 4;
+	if diaper quest is 1, decide on 5;
 	decide on 20.
 
 To decide which number is the cringe tolerance of (M - a gladiator): [What number of cringe they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
-	if diaper quest is 1, decide on 6;
+	if diaper quest is 1, decide on 7;
 	decide on 20.
 	
 To compute DQ appearance assessment of (M - a gladiator):
@@ -543,7 +540,7 @@ The gladiator unique punishment rules is a rulebook. The unique punishment rule 
 This is the gladiator demon conversion rule:
 	let M be current-monster;
 	if M is uninterested and M is not male, rule succeeds;[Handled first so we know the gladiator doesn't want to do anything to you this turn.]
-	if debugmode > 0, say "delayed stand is [delayed stand]";
+	if debugmode > 1, say "delayed stand is [delayed stand]";
 	if M is not male and the player is soulless and the class of the player is not succubus and M is not wild gladiator and delayed stand is 0:[This prevents a glitch with autostanding and the gladiator dragging]
 		let player-moved be 0;
 		now the target-room of M is Dungeon33;
@@ -570,7 +567,7 @@ The gladiator demon conversion rule is listed first in the gladiator unique puni
 This is the gladiator sex conversion rule:
 	let M be current-monster;
 	if M is uninterested and M is not male, rule succeeds;[Handled first so we know the gladiator doesn't want to do anything to you this turn.]
-	if debugmode > 0, say "delayed stand is [delayed stand]";
+	if debugmode > 1, say "delayed stand is [delayed stand]";
 	if M is not male and M is not wild gladiator and delayed stand is 0 and the player is male and (the size of penis <= min penis size or the real size of penis <= min penis size) and tg fetish >= 1:
 		let player-moved be 0;
 		now the target-room of M is Dungeon33;

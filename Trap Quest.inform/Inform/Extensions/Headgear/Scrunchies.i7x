@@ -120,6 +120,7 @@ To compute class outfit of (H - a pink scrunchie):
 		now the raw-magic-modifier of C is 0;
 		now cheerleader-summoned is 1;
 		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
+		now the quest of C is upskirt-quest;
 	otherwise if P is actually summonable:
 		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type]";
 		summon P cursed;
@@ -190,6 +191,7 @@ To compute class outfit of (H - a blue scrunchie):
 			summon O cursed;
 			now the raw-magic-modifier of O is 0;
 			now O is confidence;
+			if tentacle-quest is appropriate, now the quest of O is tentacle-quest;
 		otherwise if S is actually summonable and there is a worn tartan tube top and there is a worn tartan miniskirt and there is a worn necktie:
 			summon S cursed;
 			now the raw-magic-modifier of S is 1;
@@ -212,6 +214,7 @@ To compute class outfit of (H - a blue scrunchie):
 			now schoolgirl-summoned is 1;
 			summon R cursed;
 			now the raw-magic-modifier of R is 1;
+			if tentacle-quest is appropriate, now the quest of R is tentacle-quest;
 			say "[bold type]A black fleece appears on you, followed by a short skirt and a matching tie![line break][variable custom style]I guess that makes me a [if diaper quest is 1]naughty[otherwise]slutty[end if] schoolgirl. [if the bimbo of the player < 8]Sigh...[end if][roman type][line break]";
 		otherwise if there is a worn schoolgirl outfit and S is actually summonable:
 			summon S cursed;

@@ -79,7 +79,7 @@ Report wearing corset:
 	if the noun is cursed, say "The [clothing-material of the noun] seals itself to your skin! This corset must be cursed!".
 
 Report taking off a corset:
-	if the largeness of belly > 2, say "As you loosen the straps of the [printed name of noun] your belly [if the largeness of belly > 5]suddenly shoots outwards[otherwise]rounds out[end if], relieved from the pressure.".
+	if the largeness of belly > 2, say "As you loosen the straps of the [ShortDesc of the noun] your belly [if the largeness of belly > 5]suddenly shoots outwards[otherwise]rounds out[end if], relieved from the pressure.".
 
 
 
@@ -89,7 +89,7 @@ corset wearability rules is a rulebook. The wearability rules of corset is usual
 
 This is the corset already worn rule:
 	repeat with O running through worn corsets:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 		rule fails.
 The corset already worn rule is listed in the corset wearability rules.
 
@@ -102,7 +102,7 @@ The belly too big for corset rule is listed in the corset wearability rules.
 This is the bra corset clash rule:
 	repeat with B running through worn breast covering corsets:
 		if summoning is 0:
-			say "You can't wear that over your [printed name of B], [if wearing-target is exclusive]the [printed name of wearing-target] is [bold type]exclusive[roman type]![otherwise if B is exclusive]the [printed name of B] is [bold type]exclusive[roman type]![otherwise]it should go underneath.[end if]";
+			say "You can't wear that over your [ShortDesc of B], [if wearing-target is exclusive]the [ShortDesc of wearing-target] is [bold type]exclusive[roman type]![otherwise if B is exclusive]the [ShortDesc of B] is [bold type]exclusive[roman type]![otherwise]it should go underneath.[end if]";
 			rule fails.
 The bra corset clash rule is listed in the bra wearability rules.
 

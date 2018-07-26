@@ -253,7 +253,7 @@ Dungeon35 is a mandatory labyrinth room. The printed name of Dungeon35 is "Under
 REQUIRES COMMENTING
 
 *!]
-Dungeon36 is a mandatory sandy labyrinth room. The printed name of Dungeon36 is "Cage Room". "The room is massive and complex, making it one of the few areas you've seen of the dungeon that required some level of craftsmanship. In the centre of the room is a large cage made of extremely heavy metal, built in a bell-shape. It is suspended by a tough-looking chain that keeps the entire contraption about eighteen inches off the ground. [if there is an alive captive dungeon boss and the flat intelligence of the player > 7]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm. Looking up at the chain that keeps the cage suspended, you notice that it doesn't appear to coordinate to any device or lever in the room. To lower the monster and open the cage, you'd need to find something elsewhere.[otherwise if minotaur is an alive captive monster]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm.[otherwise]The cage is open and empty.[end if][if there is a mystical amulet in Dungeon36][line break]In the middle of the cage, you can see a valuable looking amulet.[end if]". The semen-puddle of Dungeon36 is usually 2. [He's a messy guy.]
+Dungeon36 is a mandatory sandy labyrinth room. The printed name of Dungeon36 is "Cage Room". "The room is massive and complex, making it one of the few areas you've seen of the dungeon that required some level of craftsmanship. In the centre of the room is a large cage made of extremely heavy metal, built in a bell-shape. It is suspended by a tough-looking chain that keeps the entire contraption about eighteen inches off the ground. [if there is an alive captive dungeon boss and the flat intelligence of the player > 7]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm. Looking up at the chain that keeps the cage suspended, you notice that it doesn't appear to coordinate to any device or lever in the room. To lower the monster and open the cage, you'd need to find something elsewhere.[otherwise if minotaur is an alive captive monster]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm.[otherwise]The cage is open and empty.[end if][if mystical amulet is in Dungeon36][line break]In the middle of the cage, you can see a valuable looking amulet.[end if]". The semen-puddle of Dungeon36 is usually 2. [He's a messy guy.]
 
 [!<TheNoMinotaurSemenInDQRule>+
 
@@ -378,7 +378,9 @@ Check turning DungeonScenery06:
 	now seconds is 2;
 	if M is not monster, say "Nothing seems to happen." instead;
 	now M is released;
-	say "You hear a mechanism whirring, and what sounds like a metal door swing open." instead.
+	say "You hear a mechanism whirring, and what sounds like a metal door swing open.";
+	progress quest of lever-quest;
+	do nothing instead.
 
 [!<CheckPushingDungeonScenery06>+
 

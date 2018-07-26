@@ -23,6 +23,8 @@ To say HumiliationDesc:
 		say "You are mentally broken - your submission to the monsters and the people in this game and your frequent state of slutty dressing has taken its toll. You no longer have any will to fight back. You can't help but actively seek out more ways to publicly embarrass yourself and encourage people to objectify your body, as you consider yourself nothing but an object, and a pretty worthless one at that. Willingly performing degrading acts now turns you on, and you secretly seek out new ways to achieve this thrill.".
 
 
+[Here is the definition of the HUMILIATION-xxx values (functions). Also, refer to HOLY BIBLE OF HUMILIATION GUIDELINES]
+
 To decide which number is HUMILIATION-PROUD:
 	decide on 8000.
 
@@ -38,32 +40,32 @@ To decide which number is HUMILIATION-SHAMELESS:
 To decide which number is HUMILIATION-BROKEN:
 	decide on HUMILIATION-SHAMELESS + 8000.
 
-Definition: yourself (called Y) is proud:
-	if the humiliation of the player < HUMILIATION-PROUD, decide yes;
+Definition: yourself (called Y) is proud:[In a range of 3000 around the limit]
+	if the humiliation of the player - 1500 < HUMILIATION-PROUD + 1500 , decide yes;
 	decide no.
 
 Definition: yourself (called Y) is modest:
-	if the humiliation of the player < HUMILIATION-MODEST, decide yes;
+	if the humiliation of the player - 1500 < HUMILIATION-MODEST + 1500, decide yes;
 	decide no.
 
-Definition: yourself (called Y) is ashamed:
-	if the humiliation of the player >= HUMILIATION-MODEST, decide yes;
+Definition: yourself (called Y) is ashamed:[The sign is flipped, so we add the range on opposite sides]
+	if the humiliation of the player + 1500 >= HUMILIATION-MODEST - 1500, decide yes;
 	decide no.
 
 Definition: yourself (called Y) is disgraced:
-	if the humiliation of the player >= HUMILIATION-DISGRACED, decide yes;
+	if the humiliation of the player + 1500 >= HUMILIATION-DISGRACED - 1500, decide yes;
 	decide no.
 
 Definition: yourself (called Y) is shameless:
-	if the humiliation of the player >= HUMILIATION-SHAMELESS, decide yes;
+	if the humiliation of the player + 1500 >= HUMILIATION-SHAMELESS - 1500, decide yes;
 	decide no.
 
-Definition: yourself (called Y) is broken:
+Definition: yourself (called Y) is broken:[The broken threshold is flatout]
 	if the humiliation of the player >= HUMILIATION-BROKEN, decide yes;
 	decide no.
 
 
-	
+
 
 Humiliation ends here.
 

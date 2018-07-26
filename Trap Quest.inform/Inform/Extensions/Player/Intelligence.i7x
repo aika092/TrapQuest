@@ -57,12 +57,14 @@ To decide which number is the flat intelligence of the player:
 	increase I by ((strawberry-lace-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	if the the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
 	if toffee-poison-timer > 0, now I is I / 2;
-	if the bimbo of the player is 19 and I > 5:
+	if (the bimbo of the player is 19 or hungover > 0) and I > 5:
 		now I is 5;
 	if  I > 2 and the bimbo of the player is 20 or the soreness of asshole is 10 or the soreness of vagina is 10 or the player is extremely horny:
 		now I is 2;
 	if temp_int_dam > 0, decrease I by temp_int_dam;
+	now I is (I * (5 - alcohol-level)) / 5;
 	if I < 1, decide on 1;
+	if I > 30, decide on 30;
 	decide on I.
 
 

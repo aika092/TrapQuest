@@ -9,7 +9,7 @@ Definition: a demoness (called M) is raunchy:
 	decide yes.
 
 Definition: a demoness (called M) is wenchy:
-	if the player is a May 2018 top donator, decide yes;
+	if the player is the donator, decide yes;
 	decide no.
 
 A demoness has a number called excitement. The excitement of a demoness is usually 0.
@@ -153,10 +153,10 @@ To decide which number is the bimbo tolerance of (M - a demoness):
 	decide on 14.
 
 To decide which number is the outrage tolerance of (M - a demoness): [only used in DQ]
-	decide on 7.
+	decide on 8.
 
 To decide which number is the cringe tolerance of (M - a demoness):
-	decide on 6.
+	decide on 8.
 
 Definition: a demoness (called M) is loving the booty:
 	if the thickness of hips > 4 and the number of worn cursed plug panties is 0 and the player is not diapered, decide yes;
@@ -173,7 +173,7 @@ Definition: a demoness (called M) is outrage disapproving:
 	decide no.
 
 To say DisapprovalFlav of (M - a demoness):
-	say "[BigNameDesc of M] [one of]narrows [his of M] eyes[or]widens [his of M] eyes[or]purses [his of M] lips[or]tuts[in random order].[line break][speech style of M]'[if diaper quest is 1][one of]Even though you are presenting yourself to me so lewdly, you don't really look like someone with any [maturity].'[or]Is this really how you present yourself in front of your superiors?!'[in random order][otherwise][one of]My my, how did I not notice how delicious your ass is?'[or]Oh my... If you show me your curves like that, I'm going to get all exicted.'[in random order][end if][roman type][line break]".
+	say "[BigNameDesc of M] [one of]narrows [his of M] eyes[or]widens [his of M] eyes[or]purses [his of M] lips[or]tuts[in random order].[line break][speech style of M]'[if diaper quest is 1][one of]Even though you are presenting yourself to me so lewdly, you don't really look like someone with any [maturity].'[or]Is this really how you present yourself in front of your superiors?!'[in random order][otherwise][one of]My my, how did I not notice how delicious your ass is?'[or]Oh my... If you show me your curves like that, I'm going to get all excited.'[in random order][end if][roman type][line break]".
 
 To say BecomesAggressive of (M - a demoness):
 	say "[big he of M] takes an offensive stance![line break][speech style of M]'[if the player is prone][one of]Stay down, mortal.'[or]Stay right there, weakling.'[or]I command you to remain on your knees, and prepare yourself for this...'[in random order][otherwise]Get on your knees at once, and prepare yourself...'[end if][roman type][line break]".
@@ -636,15 +636,15 @@ This is the demoness attacking ass covering clothing rule:
 The demoness attacking ass covering clothing rule is listed last in the demoness asshole insertion rules.
 
 To compute (M - a demoness) attacking (C - a clothing):
-	say "[BigNameDesc of M] touches a finger to the crotch of your [C] and you can feel the heat... she's trying to burn them off!";
+	say "[BigNameDesc of M] touches a finger to the crotch of your [ShortDesc of C] and you can feel the heat... she's trying to burn them off!";
 	let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;
-	if debugmode is 1, say "Player [the defence of the player].5 | [R] Demoness[line break]";
+	if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 	if R > the defence of the player:
 		say "She burns them completely off!";
 		destroy C;
 	otherwise if R > the defence of the player - 3 and C is rippable:
-		say "She has managed to create a hole at the crotch of your [printed name of C]!";
 		rip C;
+		say "She has managed to create a hole at the crotch of your [C]!";
 	otherwise:
 		say "She's slowly burning them off!";
 		damage C.
@@ -1418,7 +1418,7 @@ To compute failed dominance punishment of (M - a demoness):
 			say "Being surrounded by so many naked men [if the player is male]makes you feel like you accidentally stumbled into a locker room[otherwise]makes you feel almost special[end if], but as the first imp slides his [manly-penis] into your mouth, it becomes totally clear that they see you as nothing more than a cheap cocksleeve. There's little time to breathe or even swallow as the first imp cums and the second imp takes [his of M] place, and [if the delicateness of the player + the semen taste addiction of the player < 5]as much as you hate the taste of [semen][otherwise]as much as you try to gulp it down[end if], there's always a little bit left that you haven't swallowed, sitting in your mouth as the third and fourth imp's balls slap your chin. [if the player is male]Your [asshole] isn't[otherwise]Your holes aren't[end if] exempt from their treatment, and the imps take turns racing each other to see which end they can fill faster. There's always more [semen], and if a hole is freed another [manly-penis] is always there to fill the void. They make sure you know you're nothing but a convenient set of holes, and those holes are [i]in use[/i].";
 			StomachSemenUp 5;
 			now M is penetrating vagina;
-			if the player is female, WombFill 5;
+			if the player is female, PussyFill 5;
 			now M is not penetrating vagina;
 			now M is penetrating asshole;
 			AssFill 5;
@@ -1474,7 +1474,7 @@ To say DominanceSuccess of (M - a demoness):
 	now the excitement of M is 0;
 	if watersports fetish is 1 and the player is desperate to pee:
 		watersports dominate M;
-	if the size of penis > 0:
+	otherwise if the size of penis > 0:
 		vaginal dominate M;
 	otherwise:
 		oral dominate M.
@@ -1536,7 +1536,7 @@ To oral dominate (M - a demoness):
 			say "[if the player is not able to speak]You shake your head. [otherwise if the sex addiction of the player < 7][line break][variable custom style]'I[']m not letting you trick me.'[roman type][line break][otherwise if the sex addiction of the player < 12][line break][variable custom style]'Sorry, I just really need this.'[roman type][line break][otherwise][line break][variable custom style]'Come on, it[']ll be a lot of fun...'[roman type][line break][end if][BigNameDesc of M] nods, holding eye contact with you as [he of M] leans forward and plants a kiss on your clit. Ripples of heat spread out from the point of contact as [he of M] teases your folds with the very tip of [his of M] tongue, making sure to thoroughly cultivate your frustration before suddenly shoving you away.";
 			heal vagina times 10;
 		otherwise:
-			say "[if the player is not able to speak]You shake your head. [otherwise if the sex addiction of the player < 7][line break][variable custom style]'I[']m not letting you trick me.'[roman type][line break][otherwise if the sex addiction of the player < 12][line break][variable custom style]'Sorry, I just really need this.'[roman type][line break][otherwise][line break][variable custom style]'Come on, it[']ll be a lot of fun...'[roman type][line break][end if][BigNameDesc of M] nods, as [he of M] slips between your legs, chuckling to [him of M]self as [he of M] gently pushes your asscheeks apart. You feel [his of M] nails dig into you as [he of M] firmly plants [his of M] lips on your anal ring, and ripples of heat spread out around it. [big he of M] teases the inner edges of your sphincter with [his of M] tongue as arousal rapidly builds up inside you, making sure to thoroughly cultivate your frustration... only then to suddenly duck under you and shove you away!";
+			say "[if the player is not able to speak]You shake your head. [otherwise if the sex addiction of the player < 7][line break][variable custom style]'I[']m not letting you trick me.'[roman type][line break][otherwise if the sex addiction of the player < 12][line break][variable custom style]'Sorry, I just really need this.'[roman type][line break][otherwise][line break][variable custom style]'Come on, it[']ll be a lot of fun...'[roman type][line break][end if][BigNameDesc of M] nods, as [he of M] slips between your legs, chuckling to [him of M]self as [he of M] gently pushes your asscheeks apart. You feel [his of M] nails dig into you as [he of M] firmly plants [his of M] lips on your anal ring, and ripples of heat spread out around it. [big he of M] teases the inner edges of your sphincter with [his of M] tongue as arousal rapidly builds up inside you, making sure to thoroughly cultivate your frustration...only to suddenly duck under you and shove you away!";
 			heal asshole times 10;
 		Arouse 3000;
 		Dignify 75;
@@ -1555,6 +1555,7 @@ To watersports dominate (M - a demoness):
 		Dignify 200;
 		now the bladder of the player is 0;
 		DifficultyUp M by 2;
+		Anger M;
 		FavourDown M by 2;
 		say AfterDominationComment 5 of M.
 
@@ -1639,7 +1640,7 @@ To compute perception of (M - abyssal demoness):
 This is the demoness ghost summoning rule:
 	let M be current-monster;
 	if M is abyssal demoness:
-		if the channelling of M is 0,	say "[BigNameDesc of M] stretches her hands out in front of her, forming a triangle with her fingers as she concentrates. It's like she's draining the heat from the air around you.";
+		if the channelling of M is 0, say "[BigNameDesc of M] stretches her hands out in front of her, forming a triangle with her fingers as she concentrates. It's like she's draining the heat from the air around you.";
 		otherwise say "[BigNameDesc of M] is still concentrating on...whatever it is she's doing!";
 		repeat with G running through on-stage ghosts:
 			now G is interested;
@@ -1658,7 +1659,7 @@ To compute (M - abyssal demoness) entering anally:
 	if the soreness of asshole < 10, ruin asshole.
 
 To say SummoningFlav of (M - a demoness):
-	if M is in the location of the player, say "The air around you grows unbearable cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind her.";
+	if M is in the location of the player, say "The air around you grows unbearably cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind her.";
 	otherwise say "You hear the sound of inhuman laughter.".
 
 Demoness ends here.

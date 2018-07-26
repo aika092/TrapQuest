@@ -82,6 +82,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 		now the urine-soak of C is (the urine-soak of D * the soak-limit of C) / the soak-limit of D;
 	now the used condoms of C is the used condoms of D;
 	now the empty condoms of C is the empty condoms of D;
+	now the quest of C is the quest of D;
 	compute C unique inheriting from D.
 
 To compute (C - a clothing) unique inheriting from (D - a clothing):

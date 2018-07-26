@@ -37,7 +37,7 @@ School13 is an academic room. The printed name of School13 is "Detention Room". 
 School14 is a lecture academic room. The printed name of School14 is "Sapphire Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with motifs of high heels and pouting lips.". The shape of School14 is L5/0-0-0-0-1-0. The grid position of School14 is <5,15,7>. School14 is north of School07.
 To decide which number is the entry-rank of (R - School14):
 	decide on 1.
-School15 is an academic room. The printed name of School15 is "Junk Room". "This room has a few items of clothing discarded rather messily all around. Weird mystic runes adorn the ceiling and doorway, suggesting that some kind of magic is in action here. A door at the north end of the room says 'Science Lab'". The shape of School15 is L5/0-0-1-0-1-0. The grid position of School15 is <5,14,7>. School15 is north of School06.
+School15 is an academic room. The printed name of School15 is "Junk Room". "This room has a few items of clothing discarded rather messily all around. Weird mystic runes adorn the ceiling and doorway, [if the donations of School15 < 5]pulsing a powerful purple, [end if]suggesting that some kind of magic is in action here. A door at the north end of the room says 'Science Lab'". The shape of School15 is L5/0-0-1-0-1-0. The grid position of School15 is <5,14,7>. School15 is north of School06.
 To decide which number is the entry-rank of (R - School15):
 	decide on 2.
 School16 is an academic room. The printed name of School16 is "Assembly Hall". "A raised podium with a microphone at the front of the room makes it clear that this is an assembly hall, but the lack of other furniture makes it seem rather eerie and... clinical.". The shape of School16 is L5/0-0-0-0-1-0. The grid position of School16 is <5,13,7>. School16 is north of School05.
@@ -74,7 +74,7 @@ To decide which number is the entry-rank of (R - School26):
 School27 is an academic room. The printed name of School27 is "Staff Room". "This doesn't look like any staff room you've ever seen before. [if diaper quest is 1]There's nothing here...[otherwise]Instead of any furniture there's just video cameras, piercing and tattoo needles held on giant robotic arms all poised and ready, pointing at... a gloryhole?![end if]". The shape of School27 is L5/0-0-0-1-0-0. The grid position of School27 is <5,10,8>. School27 is west of School26.
 To decide which number is the entry-rank of (R - School27):
 	decide on 6.
-School28 is an academic room. The printed name of School28 is "Science Lab". "Tall lab benches sit to the left and right. Each one has a metal bowl embedded in it. Maybe you can [bold type]craft[roman type] something in each.". The shape of School28 is L5/0-0-0-0-0-1. The grid position of School28 is <5,14,8>. School28 is east of School25.
+School28 is an academic room. The printed name of School28 is "Science Lab". "A large metal lab bench has two metal bowls embedded into it. Maybe you can [bold type]craft[roman type] something in each.". The shape of School28 is L5/0-0-0-0-0-1. The grid position of School28 is <5,14,8>. School28 is east of School25.
 To decide which number is the entry-rank of (R - School28):
 	decide on 3.
 
@@ -96,6 +96,23 @@ Include School Dungeon by Rooms.
 
 
 The School is a region. School01, School02, School03, School04, School05, School06, School07, School08, School09, School10, School11, School12, School13, School14, School15, School16, School17, School18, School19, School20, School21, School22, School23, School24, School25, School26, School27, School28, School29, School30, School31, School33, School34, School35 are in The School.
+
+Part - Junk Room Stuff
+
+School15 has a number called donations.
+Check taking clothing when the player is in School15:
+	if the noun is not held and the donations of School15 < 5, say "The magic in the room somehow keeps the [ShortDesc of the noun] stuck to the ground! Maybe the magic will weaken if you leave a few of your own possesions here?" instead.
+
+Carry out taking clothing when the player is in School15:
+	decrease the donations of School15 by 5;
+	say "The magic runes around the ceiling and doorway [if the donations of School15 < 5]come back to life, glowing their powerful purple once again[otherwise]quickly pulse five times before returning to being inactive.".
+
+Report dropping clothing when the noun is in School15:
+	if the noun is cursed:
+		say "The magic runes around the ceiling and doorway turn black for a moment before [if the donations of School15 < 5]returning to their previous purple pulse[otherwise]returning to being grey and inactive[end if]. Maybe [if the noun is sure]because [end if]the [ShortDesc of the noun] was cursed?";
+	otherwise:
+		increase the donations of School15 by 1;
+		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
 
 
 School ends here.

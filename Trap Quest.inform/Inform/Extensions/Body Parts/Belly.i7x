@@ -936,6 +936,7 @@ To AssSquirt:
 				otherwise:
 					say "[EggBeginsFlav]";
 				lay large-egg-count large eggs;
+				progress quest of egg-laying-quest;
 				now seconds is 6;
 				compute extra turn;
 			increase element-count by 1;
@@ -962,7 +963,7 @@ To AssSquirt:
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
 					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper lover >= 3 and the player is full][one of]murky[or]lumpy[in random order] brown water[otherwise if there is a worn total protection diaper]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
-					say "[if the player is ass protected]into your [printed name of random bottom level ass protection clothing worn by the player][otherwise if collecting is bottle]into the [collecting][otherwise]onto your [ShortDesc of thighs][end if].";
+					say "[if the player is ass protected]into your [ShortDesc of random bottom level ass protection clothing worn by the player][otherwise if collecting is bottle]into the [collecting][otherwise]onto your [ShortDesc of thighs][end if].";
 					if there is a worn total protection diaper and the player is full and diaper lover >= 3:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is bottle:
@@ -1150,7 +1151,7 @@ REQUIRES COMMENTING
 
 +!]
 To lay (X - a number) medium eggs:
-	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third [line break][variable custom style](owww!)[roman type][line break][end if][if X > 3], then a fourth[end if][if X > 4], then a fifth[end if][if X > 5], then a sixth [line break][variable custom style](my poor [asshole] can't survive much more of this...)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth [line break][variable custom style](there's no way this was all inside me..)[roman type][line break][end if][if X > 8], then a ninth[end if] full sized egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
+	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third [variable custom style](owww!)[roman type][end if][if X > 3], then a fourth[end if][if X > 4], then a fifth[end if][if X > 5], then a sixth [line break][variable custom style](my poor [asshole] can't survive much more of this...)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth [line break][variable custom style](there's no way this was all inside me..)[roman type][line break][end if][if X > 8], then a ninth[end if] full sized egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
 	otherwise say "Full sized chicken-like eggs one by one force their way from your [asshole]. There are so many that you quickly lose count, it's at least ten but you really have no idea.";
 	if X > 1 and the latex-transformation of the player < 3:
 		say "The eggs are much too big to be passed comfortably, and the ordeal inevitably stimulates your ass just as much as a good rough fucking would.";
@@ -1432,8 +1433,10 @@ To compute enema reactions:
 			if C is diaper:
 				compute diaper mess reaction of M;
 			otherwise if C is clothing:
+				say "[EnemaReactionFlav of M into C]";
 				compute enema reaction of M into C;
 			otherwise:
+				say "[EnemaFloorReactionFlav of M]";
 				compute enema floor reaction of M;
 			now M is reacted-already.
 
@@ -1446,7 +1449,6 @@ To compute enema floor reaction of (M - a monster):
 	FavourDown M;
 	humiliate 200;
 	if player-squatting is 1, humiliate 500;
-	say "[EnemaFloorReactionFlav of M]";
 	if M is unfriendly and diaper quest is 1:
 		now M is interested;
 	otherwise if M is friendly and M is interested:
@@ -1468,6 +1470,9 @@ REQUIRES COMMENTING
 +!]
 To compute enema reaction of (M - a monster) into (C - a clothing):
 	compute enema floor reaction of M.
+
+To say EnemaReactionFlav of (M - a monster) into (C - a clothing):
+	say EnemaFloorReactionFlav of M.
 
 
 

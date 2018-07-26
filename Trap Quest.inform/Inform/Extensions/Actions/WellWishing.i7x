@@ -12,8 +12,10 @@ Check WellWishing:
 	if the noun is bottle:
 		unless the noun is open topped, say "It probably makes more sense to try that with something that has an open top." instead;
 		 if the doses of the noun < 1, say "But it's empty?" instead;
-	otherwise if the noun is plentiful accessory:
-		if the noun is infernal gem, say "It probably makes more sense to use something like jewellery." instead;
+	otherwise if the noun is not a plentiful accessory:
+		unless the noun is infernal gem, say "It probably makes more sense to use something like jewellery." instead;
+	[otherwise:
+		say "It probably makes more sense to use something like jewellery." instead;]
 	if the player is in danger, say "You can't do that in the middle of a fight!" instead.
 
 [!<wellWishes:Integer>*
@@ -64,6 +66,14 @@ Carry out WellWishing:
 		let K be a random skeleton key;
 		now K is carried by the player;
 		say "Suddenly, you find a [K] in your hand!";
+	otherwise if (hungover > 0 or alcohol > 0 or toffee-poison-timer > 0 or fudge-poison-timer > 0 or cookie-poison-timer > 0) and P + a random number between 1 and 16 > 10 - (wishskill of the player * 3):
+		say "[first custom style]Wish...granted.[roman type][line break]";
+		now hungover is 0;
+		now alcohol is 0;
+		now toffee-poison-timer is 0;
+		now fudge-poison-timer is 0;
+		now cookie-poison-timer is 0;
+		say "Your body is cleansed of all poisons and toxins!";
 	otherwise if the player is a sissy and the soreness of asshole > 0:
 		say "[first custom style]I know... what you really wish for...[roman type][line break]Your [asshole] tingles as it spontaneously fills up with [semen], which washes away all feelings of soreness and tension.";
 		AssFill the soreness of asshole;

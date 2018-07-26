@@ -13,6 +13,9 @@ The remove inappropriate dining dresses rule is listed in the diaper quest fix r
 Definition: a dining dress (called C) is slitted: [Slitted skirts don't block knee attacks]
 	decide yes.
 
+Definition: a dining dress (called C) is party related:
+	decide yes.
+
 Part 1 - Red Dining Dress
 
 A red dining dress is a kind of dining dress. There is 1 red dining dress. The text-shortcut of red dining dress is "rdd". The printed name of red dining dress is usually "[TQlink of item described][clothing-title-before]red dining dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".

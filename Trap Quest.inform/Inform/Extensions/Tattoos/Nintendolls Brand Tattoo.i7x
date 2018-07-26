@@ -3,6 +3,7 @@ Nintendolls Brand Tattoo by Tattoos begins here.
 nintendolls-brand tattoo is a kind of body tattoo. There is 1 nintendolls-brand tattoo.
 The printed name of nintendolls-brand tattoo is usually "nintendolls brand tattoo".
 Definition: a nintendolls-brand tattoo (called T) is drawable:
+	if T is worn, decide no;
 	if lactation fetish is 1, decide yes;
 	decide no.
 Definition: a nintendolls-brand tattoo (called T) is eligible:

@@ -31,7 +31,8 @@ REQUIRES COMMENTING
 +!]
 To anally orgasm shamefully:
 	if the player is not able to orgasm:
-		say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is male]prostate[otherwise]asshole[end if], only to have it just...stop. [line break][variable custom style][one of]I was pretty sure I was about to cum...[if the class of the player is royal slave]maybe it has something to do with this [printed name of a random headgear worn by the player]?[end if][or]Again? Am I not allowed to cum or something?[if the class of the player is royal slave] Maybe it's because I'm not acting like a slave...[end if][stopping][roman type][line break]";
+		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is male]prostate[otherwise]asshole[end if], only to have it just...stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
+		otherwise say "You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is male:
@@ -40,7 +41,7 @@ To anally orgasm shamefully:
 		punish shameful male orgasm;
 	otherwise:
 		say "[one of][if there is a worn asshole tattoo]You feel your [random asshole tattoo worn by the player] spark with delight as your extremely sensitive[otherwise]Your[end if] [asshole] [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]!  You feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first anal orgasm[if tg fetish >= 1] as a girl[end if]![roman type][line break][or][bold type]Your [asshole] feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [roman type]You feel a wave of pleasure and your muscles tense then relax as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]";
-		say "[if the humiliation of the player < 20000][line break][first custom style]What a shameful way to orgasm...[otherwise if the humiliation of the player < 30000][line break][variable custom style]Cumming like that is so humiliating. So why do I find myself just getting turned on even more?[otherwise][line break][second custom style]I came just from my butthole... I'm so dirty![end if][roman type][line break]";
+		say "[if the player is not disgraced][line break][first custom style]What a shameful way to orgasm...[otherwise if the player is not shameless][line break][variable custom style]Cumming like that is so humiliating. So why do I find myself just getting turned on even more?[otherwise][line break][second custom style]I came just from my butthole... I'm so dirty![end if][roman type][line break]";
 		orgasm;
 		SexAddictUp 1 + the number of monsters penetrating vagina;
 	if refactoryperiod > 0:
@@ -48,9 +49,10 @@ To anally orgasm shamefully:
 			let P be a random off-stage shameful orgasm poster;
 			say "[FlashFlav of a random camera trap in the location of the player]";
 			say "It captured the moment as you began orgasming.";
-			say "[one of][line break][variable custom style][if the humiliation of the player < 20000]Oh shit. I bet I didn't look very dignified right then.[otherwise]Now everyone will know that I came from my [asshole].[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
+			say "[one of][line break][variable custom style][if the player is not disgraced]Oh shit. I bet I didn't look very dignified right then.[otherwise]Now everyone will know that I came from my [asshole].[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
 			set up P;
-		humiliate 250;
+		severeHumiliate;
+		progress quest of anal-orgasm-quest;
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling;
 	otherwise:
@@ -63,7 +65,8 @@ REQUIRES COMMENTING
 +!]
 To vaginally orgasm shamefully:
 	if the player is not able to orgasm:
-		say "You feel the beginnings of a [one of][or]familiar [stopping] wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [vagina], only to have it just...stop. [line break][variable custom style][one of]I was pretty sure I was about to cum...does it have something to do with this [printed name of a random headgear worn by the player]?[or]Again? Am I not allowed to cum or something? Maybe they want me to act more like a slave first...[stopping][roman type][line break]";
+		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping] wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [vagina], only to have it just...stop. [line break][variable custom style][one of]I was pretty sure I was about to cum...does it have something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe they want me to act more like a slave first...[stopping][roman type][line break]";
+		otherwise say "You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is male: [normal shameful male orgasm]
@@ -76,7 +79,7 @@ To vaginally orgasm shamefully:
 		otherwise say "[one of][if the sex addiction of the player < 8][line break][first custom style]I can't believe I just came...[otherwise if the raw sex addiction of the player < 13][line break][variable custom style]I just came... I didn't know it would feel so good.[otherwise][line break][second custom style]That felt sooooo good... I want more![end if][or][if the sex addiction of the player < 8][first custom style]I have to find a way to stop orgasming like this...[otherwise if the sex addiction of the player < 13][first custom style]If this keeps happening, I know I'll get addicted. [second custom style]I might be already...[otherwise][second custom style]That felt so FUCKING good! More![end if][stopping][roman type][line break]";
 		SexAddictUp 1 + the number of monsters penetrating asshole;
 		orgasm;
-		humiliate 150;
+		strongHumiliate;
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling.
 
@@ -89,7 +92,7 @@ To breasts orgasm shamefully:
 	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from getting tit-fucked!  [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
 	if the player is male, punish shameful male orgasm;
-	humiliate 250;
+	severeHumiliate;
 	if newbie tips is 1, say shameful tip;
 	if the player is upright, try kneeling.
 
@@ -108,7 +111,11 @@ REQUIRES COMMENTING
 
 +!]
 To punish shameful male orgasm:
-	if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
+	if TG fetish is 3 and the size of penis <= min penis size:
+		say DefaultSexChangeFlav;
+		say "The fact that this is happening as you shudder through yet another anal orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
+		sexchange the player;
+	otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
 		if the size of penis > min penis size and the latex-transformation of the player <= 3:
 			PenisDown 1;
 			say "The shameful nature of your orgasm makes your manhood [Shrink] into a [ShortDesc of penis].";
@@ -180,9 +187,9 @@ REQUIRES COMMENTING
 
 +!]
 This is the player becomes fatigued from orgasming rule:
-	if the fatigue of the player < the tired threshold of the player:
+	if the fatigue of the player < the tired threshold of the player / 2:
 		say "Your powerful orgasm leaves you feeling a bit tired.";
-		now the fatigue of the player is the tired threshold of the player.
+		now the fatigue of the player is the tired threshold of the player / 2.
 The player becomes fatigued from orgasming rule is listed last in the orgasm fatigue effects rules.
 
 [!<ThePlayerBecomesVeryFatiguedFromOrgasmingWithAPlugRule>+
@@ -192,9 +199,9 @@ REQUIRES COMMENTING
 +!]
 This is the player becomes very fatigued from orgasming with a plug rule:
 	let P be a random sex toy penetrating asshole;
-	if the fatigue of the player < the very tired threshold of the player and P is sex toy:
-		say "Your [asshole] powerfully spasms around your [P], increasing the intensity of your orgasm and leaving you feeling extremely fatigued.";
-		now the fatigue of the player is the very tired threshold of the player.
+	if the fatigue of the player < the tired threshold of the player and P is sex toy:
+		say "Your [asshole] powerfully spasms around your [ShortDesc of P], increasing the intensity of your orgasm and leaving you feeling fatigued.";
+		now the fatigue of the player is the tired threshold of the player.
 The player becomes very fatigued from orgasming with a plug rule is listed first in the orgasm fatigue effects rules.
 
 [!<TheEjaculationHandledSeparatelyForFuckingNPCsRule>+
@@ -403,7 +410,7 @@ This is the hentai orgasm resolution rule:
 		let M be the milk volume of breasts / 5;
 		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor.[end if][line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";
 		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed. [line break][variable custom style]Huh! I thought that only happened in Hentai fiction![roman type][line break]I hope that's not going to happen [i]every[/i] time![or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come![roman type][line break]Surely, not?  Please?[or]Oh, no! [line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
-		humiliate 40;
+		moderateHumiliate;
 		if N is clothing, milksoak M on N;
 		otherwise milkpuddleup M;
 		decrease the milk volume of breasts by M.
@@ -431,6 +438,7 @@ This is the drilldo orgasm resolution rule:
 		repeat with R running through dildo traps penetrating a fuckhole:
 			dislodge R;
 			compute orgasm resolution of R;
+		check immobility;
 		try kneeling.
 The drilldo orgasm resolution rule is listed last in the orgasm resolution rules.
 
@@ -565,7 +573,7 @@ Definition: a fuckhole (called F) is pushed over the edge:
 	let O1 be a random number between N and A;
 	let O2 be a random number between N and A;
 	let O3 be a random number between N and A;
-	if debugmode > 0, say "Orgasm check: [O1] and [O2] to be above arousal-based minimum of [A].";
+	if debuginfo > 0, say "[input-style]Orgasm check: stimulation ([N]) & [one of]arousal-based [or][stopping]orgasm resistance ([A]); RNG([A]~[N]) = [O1] and RNG([A]~[N]) = [O2] must both be above minimum value of [A].[roman type][line break]";
 	if O1 > A and O2 > A[ and O3 > A], decide yes; [With O2: If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%;   With O3: If N = A+1 then orgasm chance is 1 in 8; if N = A+2 then orgasm chance is 8 in 27 (just under 1 in 3); if N = A+3 then orgasm chance is 27 in 64 which is over 40%]
 	decide no.
 

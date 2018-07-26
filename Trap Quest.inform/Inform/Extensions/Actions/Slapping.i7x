@@ -13,32 +13,52 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the slap damage of (P - a person):
+	if damage-explained > 1, say "[input-style]Base slap damage calculation: [bracket]1 (base damage) ";
 	let A be 1;
-	[if diaper quest is 1, now A is 1;]
 	increase A by the number of worn thorny tattoos;
+	if damage-explained > 1 and there is a worn thorny tattoo, say "+[number of worn thorny tattoos] (thorny tattoo) ";
 	now punch is 0;
 	let S be a random worn slap ready equippable;
 	if S is equippable:
-		increase A by the damage improvement of S;
+		let N be the damage improvement of S;
+		increase A by N;
+		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of S] bonus) ";
 	otherwise:
-		if the delicateness of the player < 8 and a random number between -2 and the delicateness of the player <= 2:
+		if the player is feeling dominant and a random number between -2 and the delicateness of the player <= 2:
 			now punch is 1;
 			increase A by 1;
-	unless there is a worn slap ready projectile equippable, increase A by combat bonus;
-	if there is a worn demon horns and the total-souls of the player > 9, increase A by 3;
-	if there is a worn living tentacles:
-		let L be a random worn living tentacles;
+			if damage-explained > 1, say "+1 (random dominant player bonus) ";
+	unless there is a worn slap ready projectile equippable:
+		increase A by combat bonus;
+		if damage-explained > 1, say combat bonus explanation;
+	if there is a worn demon horns and the total-souls of the player > 9:
+		increase A by 3;
+		if damage-explained > 1, say "+3 (over 9 souls collected) ";
+	let L be a random worn living tentacles;
+	if L is living tentacles:
 		if the charge of L > 50: 
 			increase A by 3;
+			if damage-explained > 1, say "+3 (living tentacles charge > 50) ";
 		otherwise if the charge of L > 0:
 			increase A by 2;
+			if damage-explained > 1, say "+2 (living tentacles charge > 0) ";
 		otherwise:
 			increase A by 1;  
+			if damage-explained > 1, say "+1 (living tentacles) ";
 	unless there is a worn slap ready projectile equippable:
-		if the breastskill of the player is 0, decrease A by the largeness of breasts / 6;
-		if the player is wrist bound, decrease A by 2;
-		if the weight of the player < 1, decrease A by 2;
-		if the player is zeroG, now A is 0;
+		if the breastskill of the player is 0:
+			let N be the largeness of breasts / 6;
+			decrease A by N;
+			if damage-explained > 1 and N > 0, say "-[N] (large breasts) ";
+		if the player is wrist bound:
+			decrease A by 2;
+			if damage-explained > 1, say "-2 (wrists bound) ";
+		if the weight of the player < 1:
+			decrease A by 2;
+			if damage-explained > 1, say "-2 (very low weight) ";
+		if the player is zeroG:
+			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
+			now A is 0;
 	decide on A.	
 
 Slapping is an action applying to one thing.
@@ -68,7 +88,9 @@ Carry out slapping:
 	now attack-type is 1;
 	reset submitted monsters;
 	increase the fat-burning of arms by 20;
+	now damage-explained is debuginfo;
 	let A be the slap damage of the player;
+	if damage-explained > 0, say "[if damage-explained > 1][close bracket] = [A]; [otherwise][input-style]Slap attack: [A][end if][roman type][line break]";
 	let S be a random worn slap ready equippable;
 	if S is equippable:
 		compute attack of S at the noun;

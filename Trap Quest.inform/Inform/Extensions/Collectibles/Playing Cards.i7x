@@ -15,7 +15,7 @@ To say ShortDesc of (C - pack of playing cards):
 Report taking pack of playing cards:
 	if diaper quest is 0 and hypno-trigger-pussy is 0 and (the player is female or tg fetish is 1) and the player is a may 2018 top donator:
 		now hypno-trigger-pussy is 1;
-		say "As you collect up the cards, you find your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way that they're so... daringly on display, open and inviting! The words 'pussy' and 'cunt' consume your inner thoughts...".
+		say "You collect up the cards, your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words 'pussy' and 'cunt' consume your inner thoughts...".
 	
 	
 Part - Poker Table

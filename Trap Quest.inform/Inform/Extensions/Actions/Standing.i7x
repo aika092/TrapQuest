@@ -27,7 +27,8 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the standing strength of the player:
 	[This is what the player uses to try and stand up. It is the strength of the player times 13, scaled down by body soreness 10% each time.]
-	decide on (the strength of the player * 13) * (10 - the body soreness of the player);
+	decide on ((the strength of the player * 13) * (10 - the body soreness of the player)) / 10. [If you change this you need to change the debuginfo output in the main function below]
+
 
 [!<DecideWhichNumberIsTheStandingCapabilityOfThePlayer>+
 
@@ -35,15 +36,15 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the standing capability of the player:
-	decide on the standing strength of the player - the fatigue of the player;
+	decide on the standing strength of the player - the fatigue of the player. [If you change this you need to change the debuginfo output in the main function below]
 
 [!<DecideWhichNumberIsTheStandingChallengeOfThePlayer>+
 
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the standing challenge of the player:
-	[This is what makes it more difficult for the player to stand up.]
+To decide which number is the standing challenge of the player: [If you change this you need to change the debuginfo output in the main function below]
+	[This is what makes it more difficult for the player to stand up.] 
 	let W be the weight of the player;
 	if ball-and-chain is worn, decrease W by the heaviness of ball-and-chain; [the ball and chain doesn't influence your ability to stand up]
 	if there is a worn heels, increase W by 3 + (the heel-height of a random worn heels * 2);
@@ -102,16 +103,20 @@ Check standing:
 		now the last-interaction of M is 0; [Naughty player, standing is not submissive!]
 	if the largeness of hair > 7:
 		repeat with M running through dangerous flightless monsters in the location of the player: [This is the monster standing on their hair. Easier to do but requires hair length 7 or higher.]
-			let H be 15 - the largeness of hair;
+			let H be 20 - the largeness of hair;
 			increase H by 2 * the number of worn scrunchies; [Wearing scrunchies makes it harder to step on their hair.]
-			if a random number between 1 and the difficulty of M > H: 
+			let RM be a random number between 1 and the difficulty of M;
+			if debuginfo > 0, say "[input-style][ShortDesc of M][']s stand on long hair check: [ShortDesc of M][']s block skill d[difficulty of M] ([RM]) | [H].5 = (20.5) hair stand difficulty check - ([largeness of hair]) player hair length [if there are worn scrunchies]+ ([2 * number of worn scrunchies]) ponytail / pigtails bonus[end if][roman type][line break]";
+			if RM > H: 
 				now seconds is 6;
 				say "[LongHairStandingBlock of M]" instead;
 	otherwise if tutorial is 0:
 		repeat with M running through dangerous intelligent flightless monsters in the location of the player: [This is the monster grabbing their hair.]
 			let H be 20 - the largeness of hair;
 			decrease H by 2 * the number of worn scrunchies; [Wearing scrunchies makes it easier to grab their hair.]
-			if a random number between 1 and the difficulty of M > H:
+			let RM be a random number between 1 and the difficulty of M;
+			if debuginfo > 0, say "[input-style][ShortDesc of M][']s grab short hair check: [ShortDesc of M][']s block skill d[difficulty of M] ([RM]) | [H].5 = (20.5) grab difficulty check - ([largeness of hair]) player hair length [if there are worn scrunchies]- ([2 * number of worn scrunchies]) ponytail / pigtails penalty[end if][roman type][line break]";
+			if RM > H:
 				now seconds is 6;
 				say "[StandingBlock of M]" instead;
 	[
@@ -123,15 +128,19 @@ Check standing:
 	While struggling to stand, you can probably crawl.
 	Unless your weight count is greater than your strength plus 5, you will be able to try and crawl.
 	]
+	let R be a random number between 1 + (the standing capability of the player / 2) and the standing capability of the player;
+	if debuginfo > 0, say "[input-style]Stand up viability check: strength ([strength of the player]) * 13 = [the strength of the player * 13]; scaled by health ([10 - the body soreness of the player]0%) = [standing strength of the player]; reduced by current fatigue ([fatigue of the player]) = [standing capability of the player] | [standing challenge of the player] = ([the weight of the player]) weight [if ball-and-chain is worn]- (the heaviness of ball-and-chain) ignoring ball and chain weight [end if][if there are worn heels]+ ([3 + (the heel-height of a random worn heels * 2)]) heel penalty [end if][if the player is wrist bound]+ (3) wrist bondage penalty [end if][if the player is wrist bound behind]+ (7) wrists bound behind additional penalty[end if][roman type][line break]";
 	if the standing capability of the player >= the standing challenge of the player:
 	[if this isn't true, then the player will never be able to stand up like this]
-		let R be a random number between 1 and the standing capability of the player;
-		if debugmode is 1, say "Stand up check: player [R].5 vs difficulty check of [the standing capability of the player].";
+		if debuginfo > 0, say "[input-style]Stand up check: d[standing capability of the player / 2]+[standing capability of the player / 2] ([R]) | [standing challenge of the player][roman type][line break]";
 		if the number of heavy body parts is 0, say "You [if the player is tired]strain[otherwise]attempt[end if] to get yourself back on your [feet][if the player is wrist bound in front] whilst your wrists are bound together in front of you[otherwise if the player is wrist bound behind] whilst your wrists are bound together behind you[end if]. ";
 		otherwise say "You [if the player is tired]strain[otherwise]attempt[end if] to get the weight off your [HeavyThings] and onto your [feet][if the player is wrist bound in front] whilst your wrists are bound together in front of you[otherwise if the player is wrist bound behind] whilst your wrists are bound together behind you[end if]. ";
 		if R < the standing challenge of the player and tutorial is 0:
 			now seconds is 6;
 			say "You don't manage it this time." instead;
+	otherwise if the fatigue of the player > 0:
+		say "Your legs are feeling tired. [if the number of heavy body parts > 0]Your [HeavyThings] are just too huge. [end if][if there are worn heels]You are wearing [feet] that are difficult to balance on. [end if][if the body soreness of the player > 0]You are injured and need to heal. [end if][if the player is wrist bound in front]Your wrists are bound in front of you. [otherwise if the player is wrist bound behind]Your wrists are bound behind you. [end if]There is just no way you are ever going to manage to stand up in your current state.";
+		say "[bold type]You need to wait for your energy to recover.[roman type][line break]" instead;
 	otherwise if the body soreness of the player > 0:
 		say "Your legs are feeling battered and weak. [if the number of heavy body parts > 0]Your [HeavyThings] are just too huge. [end if][if there are worn heels]You are wearing [feet] that are difficult to balance on. [end if][if the player is wrist bound in front]Your wrists are bound in front of you. [otherwise if the player is wrist bound behind]Your wrists are bound behind you. [end if]There is just no way you are ever going to manage to stand up in your current state.";
 		say "[bold type]You need to go find some furniture to rest on.[roman type][line break]" instead;
@@ -154,7 +163,7 @@ REQUIRES COMMENTING
 Carry out standing:
 	now seconds is 5;
 	if the weight of the player > 5, increase the fat-burning of the player by the weight of the player / 4;
-	now the fatimod of the player is 1;
+	now fatimod is 1;
 	now stance of the player is 0.
 
 [!<ReportStanding>+

@@ -19,8 +19,11 @@ The spawn initial hotel hypno traps rule is listed first in the set up hotel tra
 
 The description of a hypno trap is "A monitor revealed from within a hidden compartment in a wall. On the screen is [hypno content of item described]. It's difficult to look away once you start watching it.".
 
-To say ShortDesc of (T - a hypno trap):
+To say EnvironmentDesc of (T - a hypno trap):
 	say "A large [if T is expired]blank TV screen[otherwise if T is diaper hypno trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you. ".
+
+To say ShortDesc of (T - a hypno trap):
+	say "hypno screen".
 
 To trigger (Y - a hypno trap):
 	now Y is revealed;

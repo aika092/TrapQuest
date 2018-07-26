@@ -2,7 +2,7 @@ Heart Hairpin by Headgear begins here.
 
 A heart hairpin is a kind of headgear. There is one heart hairpin. A heart hairpin is usually metal. A heart hairpin is blondeness-positive. A heart hairpin is brightness-positive. A heart hairpin is redness-positive. A heart hairpin is usually roleplay. A heart hairpin is usually intelligence-influencing.
 
-The printed name of heart hairpin is usually "[TQlink of item described][clothing-title-before]heart hairpin[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of heart hairpin is "hhp".
+The printed name of heart hairpin is usually "[TQlink of item described][clothing-title-before]heart hairpin[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "hair", "pin" as heart hairpin. The text-shortcut of heart hairpin is "hhp".
 
 Figure of heart hairpin is the file "Items/Accessories/Head/hearthairpin1.png".
 

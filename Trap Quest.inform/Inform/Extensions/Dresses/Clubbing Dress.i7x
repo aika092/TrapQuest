@@ -20,6 +20,12 @@ To decide which number is the initial outrage of (C - a clubbing dress):
 To say ShortDesc of (C - a clubbing dress):
 	say "clubbing dress".
 
+Definition: a thing is party related:
+	decide no.
+
+Definition: a clubbing dress (called C) is party related:
+	decide yes.
+
 To decide which object is the unique-upgrade-target of (C - a clubbing dress):
 	if diaper quest is 1 and a random number between 1 and 2 is 1, decide on a random off-stage bodice;
 	decide on nothing.

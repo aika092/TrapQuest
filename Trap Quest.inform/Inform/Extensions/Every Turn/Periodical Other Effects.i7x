@@ -39,12 +39,12 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			set real breast size;
 		if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
 		if TG fetish is 2 and the size of penis <= min penis size and the player is male:
-			if tg-tracking > 1:
+			if tg-tracking > 0:
 				say DefaultSexChangeFlav;
 				sexchange the player;
 			otherwise:
 				increase tg-tracking by 1;
-		otherwise if the player is male and (the size of penis < the real size of penis or TG fetish is 2):
+		otherwise if the player is male and the size of penis < the real size of penis:
 			if the real size of penis > min penis size:	
 				decrease the real size of penis by 1;
 				if TG fetish is 2 and the size of penis < the real size of penis, decrease the real size of penis by 1; [if your penis has shrunk a lot, this is going to happen even faster!]
@@ -100,9 +100,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			let S be the thickness of hips + the largeness of breasts;
 			let X be max ass size + max breast size + 1;
 			let R be a random number between 1 and X;
+			let SR be a random number between S and time-tracking;
  			decrease time-tracking by 1;
-			if debugmode > 0, say "Golem Check: [time-tracking] | [R].";
-			if time-tracking < 350 and a random number between S and time-tracking < R:[more likely the larger the difference between S and R.]
+			if debugmode > 0, say "[input-style]Golem spawn check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 350]; time ticker not yet below 350 so automatic failure[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([R].5) d[X]+0.5 max possible body shape[end if][roman type][line break]"; 
+			if time-tracking < 350 and SR < R:[more likely the larger the difference between S and R.][Aika thinks this is going to take forever to be true because it looks like time-tracking is only decremented from 400 once every 413 seconds]
 				set up M;
 				if the player is in the Dungeon:
 					now M is in Stairwell01;

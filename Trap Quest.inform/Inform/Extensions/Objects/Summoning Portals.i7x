@@ -165,7 +165,7 @@ To compute portal reset of (S - a summoning portal):
 
 Chapter 1 - Summoning Circle
 
-The summoning-circle is in Dungeon33. The summoning-circle is a summoning portal. The printed name of summoning-circle is "[TQlink of item described]summoning circle[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of summoning-circle is "A softly glowing pentagram, with candles placed at all five points of the star. The shape in the center of the circle glints subtly in the light, as if it were a mirror. [if the item described is active][PortalHint of the item described][end if]". Understand "summon", "summoning", "circle", "summoning circle" as summoning-circle.
+The summoning-circle is in Dungeon33. The summoning-circle is a summoning portal. The printed name of summoning-circle is "[TQlink of item described]summoning circle[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of summoning-circle is "A softly glowing pentagram, with candles placed at all five points of the star. The shape in the center of the circle glints subtly in the light like a mirror. [if the item described is active][PortalHint of the item described] The energy around the circle is slowly building, as if it were hungry for something. Maybe you can find some way to [bold type]appease[roman type] it[end if]". Understand "summon", "summoning", "circle", "summoning circle" as summoning-circle.
 
 To say PortalHint of (S - a summoning-circle):
 	let N be the next-summon of S;
@@ -203,7 +203,8 @@ To decide which object is the summonChoice of (S - a summoning-circle):
 To say ActiveWarning of (S - a summoning-circle):
 	say "[bold type][if the location of the player is Dungeon33]The [printed name of summoning-circle] slowly lights up, and you can feel dark energy gathering around you...[otherwise]A pulse of energy passes through the dungeon, and something changes in the air. It's almost like there's a draft.[end if][roman type][line break]";
 	if the location of the player is Dungeon33, say "[variable custom style]Is something going to come through that?[roman type][line break]";
-	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Teehee, cumming.[otherwise]...[end if][roman type][line break]".
+	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Teehee, cumming.[otherwise]...[end if][roman type][line break]";
+	if newbie tips is 1, say "[one of][item style]Newbie Tip: Uh oh, looks like the dungeon's summoning portal just activated! It will slowly count down until it releases a brand new monster into the dungeon. Try increasing its timer by entering it or offering items to it![roman type][or][stopping]".
 
 Check entering summoning-circle:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -287,7 +288,7 @@ To say GiantDesc:
 	otherwise:
 		say "An enormous statue of a blindfolded [if pregnancy fetish is 1]pregnant [end if]woman on her knees. [unless the item described is active]She appears to be in the middle of praying[otherwise if the charge of the item described > 250]Her hands are cupping her breasts, her prominent stony nipples poking out between her fingers[otherwise if the charge of the item described > 150]She has one hand across her breasts, pinching a stony nipple, and a second touching her flawless marble clit[otherwise if the charge of the item described > 70]One arm is underneath her breasts, pushing them together enticingly as her free hand explores between her legs, her flawless marble clit just visible between the knuckles of her stony fingers[otherwise]Her hands are between her legs, spreading her stone labia wide, as if to entice any and every passer-by[end if].";
 	if the item described is active:
-		say "[PortalHint of the item described]";
+		say PortalHint of the item described;
 	say "There is a small stone slab in front of the statue, lined with incense candles. Maybe you're supposed to offer something to it?".
 
 [Forest hints are sound based.]
@@ -328,20 +329,22 @@ To decide which object is the summonChoice of (G - a giant-statue):
 		now M is a random off-stage fairy;
 	decide on M.
 
+[Chopped out of the ActiveWarning function]
+[if the pregnancy of the player is 1 and the womb volume of vagina is not 30, increase the womb volume of vagina by 1;]
+[if the lactation rate of the player < lactation fetish, increase the lactation rate of the player by 1;][if fetish is 1, increase it to 1.]
+[if the player is not immobile and the player is upright, silently try kneeling;
+otherwise FatigueUp 30;
+Arouse 300;]
+[Arouse 100;]
 To say ActiveWarning of (G - a giant-statue):
 	if the location of the player is Woods30:
-		if vine boss is alive or doomed is 5:
-			say "You hear a deep rumble, watching the vines tighten around the giant-statue's wrists and ankles. A cloud of glittering orange pollen explodes over you as flowers bloom across her chest. [if the player is upright and the player is not immobile]An overwhelming sense of vertigo immediately drops you to your knees.[end if] You feel strange.";
-			if the pregnancy of the player is 1 and the womb volume of vagina is not 30, increase the womb volume of vagina by 1;
-		otherwise:
-			say "You hear a deep rumble, watching as the giant statue's arms slowly reach up and palm her gigantic breasts. [if the player is upright and the player is not immobile]Your knees buckle, and a powerful tingle passes through your whole body as you immediately drop to your knees[otherwise]A powerful tingle passes through your whole body, like a forceful gust of wind.[end if].";
-			if the lactation rate of the player < lactation fetish, increase the lactation rate of the player by 1;[if fetish is 1, increase it to 1.]
-		if the player is not immobile and the player is upright, silently try kneeling;
-		otherwise FatigueUp 30;
-		Arouse 300;
+		if vine boss is alive or doomed is 5, say "You hear a deep rumble, watching the vines tighten around the giant-statue's wrists and ankles, and the purple creepers begin twisting inside her. Raw, carnal energy begins building up around you as flowers bloom across her chest.";
+		otherwise say "You hear a deep rumble, watching as the giant statue's arms slowly reach up and palm her gigantic breasts. Raw, carnal energy begins to build up around you as a forceful gust of wind rattles the trees.";
 	otherwise:
 		say "You hear a rumble far off in the distance, and a really strange heated feeling comes over you as the noise passes through the trees.";
-		Arouse 100.
+	if the location of the player is Woods30, say "[variable custom style]What happens when she comes?[roman type][line break]";
+	otherwise say "[variable custom style]Is the woods getting...horny?[roman type][line break]";
+	if newbie tips is 1, say "[one of][item style]Newbie tip: Uh oh, looks like the woods summoning portal just activated! It will slowly count down until it releases a brand new monster into the woods. Try offering items soaked with bodily fluids to it, or performing sexual actions to increase the timer![roman type][or][stopping]".
 
 Carry out appeasing something with giant-statue:
 	now the noun is in the location of the player;
@@ -350,13 +353,13 @@ Carry out appeasing something with giant-statue:
 		ChargeUp the second noun by the price of the noun * 8;
 		destroy the noun;
 	if the noun is pure totem:
-		say "Glowing vines reach out of the ground, grasping the [printed name of the noun] as it lights up. Waves of relief passes through your surroundings as the creepers slowly but surely drag the idol underneath the soil.";
+		say "Glowing vines reach out of the ground, grasping the [printed name of the noun] as it lights up. Waves of relief passes through your surroundings as they slowly but surely drag the idol underneath the soil.";
 		ChargeUp the second noun by 100;[the lower the charge, the more effective this is]
 		ChargeUp the second noun by 100;
 		ChargeUp the second noun by 100;
 		destroy the noun;
 	otherwise if the noun is sex toy:
-		say "Glowing vines reach out of the ground, twisting around the [printed name of the noun] as it lights up. Large, pulsating veins bulge out along its surface, which seems to grow thicker and harder until finally it explodes, [semen] cascading liberally over your surroundings as the [noun] disappears fully beneath the soil.";
+		say "Glowing vines reach out of the ground, twisting around the [printed name of the noun] as it lights up. Large, pulsating veins bulge out along its surface, grows thicker and harder until finally it explodes, [semen] cascading liberally over your surroundings as the [noun] disappears fully beneath the soil.";
 		destroy the noun;
 		SemenPuddleUp the size of the noun;[this is where the real power is]
 		ChargeUp the second noun by 30;
@@ -377,11 +380,17 @@ Carry out appeasing something with giant-statue:
 
 Chapter 3 - Staff Door
 
-[There's an impassable set of doors in the "staff center."]
+[The maintenance-door is in Hotel212. The maintenance-door is a summoning portal. The printed name of maintenance-door is "[TQlink of item described]maintenance door[TQxlink of item described][shortcut-desc][verb-desc of item described]"; Understand "maintenance", "door" as maintenance-door. The text-shortcut of maintenance-door is "lod".]
+
+[There's a maintenance hatch in one of the rooms. The player can get into it if they qualify as "hotel employment", if they have enough intelligence to guess the door code, or if they find the door code somewhere in the hotel, like at the bottom of a food bowl, or written on a scrap of paper in a patron's pocket.
+
+Once in the room, the player can see what type of monster the room is about to summon next, before being dragged out by a robotic bouncer. 
+
+]
 
 Chapter 4 - Mysterious Mummy
 
-The mysterious-mummy is in Mansion14. The mysterious-mummy is a summoning portal. The printed name of mysterious-mummy is "[TQlink of item described][MummyType of the item described] mummy[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of mysterious-mummy is "[PortalHint of the item described] There is a circle etched into the wood at its feet, lined with wax candles.". Understand "mysterious", "mystery", "mummy" as mysterious-mummy. The text-shortcut of mysterious-mummy is "mym". mysterious-mummy has a number called cult-cooldown. The cult-cooldown of mysterious-mummy is usually 0.
+The mysterious-mummy is in Mansion14. The mysterious-mummy is a summoning portal. The printed name of mysterious-mummy is "[TQlink of item described][MummyType of the item described] mummy[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of mysterious-mummy is "[PortalHint of the item described] There is a circle etched into the wood at her feet, lined with wax candles. [if the item described is active]Distinctly unclean energy slowly gathers around her,[end if]". Understand "mysterious", "mystery", "mummy" as mysterious-mummy. The text-shortcut of mysterious-mummy is "mym". mysterious-mummy has a number called cult-cooldown. The cult-cooldown of mysterious-mummy is usually 0.
 
 A time based rule (this is the mansion summoning rule):
 	if the player is in the mansion:
@@ -456,7 +465,7 @@ To say ActiveWarning of (S - a mysterious-mummy):
 	let G be a random number between 1 and 3;
 	let N be the next-summon of S;
 	unless S is in the location of the player:
-		say "You hear the shuffling of fabric somewhere else in the mansion...";
+		say "You hear the shuffling of fabric somewhere else in the mansion, and immediately have the feeling that something very [i]unclean[/i] is happening nearby.";
 	otherwise if N is 2:[gladiator]
 		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. [run paragraph on]";
 		say "As they move closer, you recognize a gladiator holding an iron shortsword gripped in her hand, and [if bukkake fetish is 1]surprisingly, a creamy trail of [semen] marking out the path behind her[otherwise]a surprisingly unhinged look on her face[end if]. The cultists drag the gladiator up to the [printed name of S] with some difficulty, sporting bruises [if futanari fetish is 1]and cum splatters all over their bodies[otherwise]and some abnormally large breasts[end if] as they pull the gladiator to her feet and quickly jam her sword into the planks before escaping the way they came. [line break][first custom style]C-cowards! You can't become a real woman if y-[roman type][line break]The gladiator is cut off as several long strips of linen seize her all at once and in an instant she is completely bound from head to toe in white linen.";
@@ -464,12 +473,19 @@ To say ActiveWarning of (S - a mysterious-mummy):
 		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, pulling someone behind them. You recognize the person as another cultist as they move closer, but this one seems different from the others, somehow.[line break][first custom style]Ready yourself, sister! Your last rite of passage is at hand!'[roman type][line break]The first two cultists lead her up to the [printed name of S], leaving as the linen begins to unravel. She seems to be repeating some chant under her breath as the mummy explodes forward, completely covering her in strips of frayed fabric.";
 	otherwise if N is 5:[demoness]
 		say "You hear some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through on their hands and knees. A demoness comes into view behind them, her heels *click* *clacking* on the wood floor as she confidently struts past them. [line break][first custom style]'[one of]The moment of my rebirth is at hand. Go.'[or]Leave me. You are not worthy to witness my transformation.'[or]Get out of my sight or my rebirth is going to wait until I finish ruining you two again.'[at random][roman type][line break]The cultists nod reverently, crawling away quickly as the demoness walks up to the mummified figure and expectantly holds out her hand. [one of]To your surprise, the mummy takes[or]The mummy seems to hesitate before taking[stopping] it, exploding forward in a rush of fabric as it completely covers her in strips of frayed linen.";
-	otherwise if N is 4 or N is 7:[mannequin;TODO]
+	otherwise if N is 4:[mannequin;TODO]
 		say "One of the many mannequins shuffles its way out of the crowd, holding a small make-up kit. It clicks awkwardly as it lurches up to the mummy and delicately applies blush, lipstick and then mascara to the wrappings on its face. A black glow slowly begins to gather around it as the mannequin trudges back into the crowd.";
 	otherwise if N is 7:[hellhound]
 		say "You hear awkward clicking as a mannequin slowly shuffles forward from the crowd, holding a leather collar and leash in its hands. The mummy's hips swell visibly as it drops to its hands and knees, a red glow concentrating around its body as the mannequin clumsily places the collar in the mummy's hands and trudges back into the 'crowd'.";
 	otherwise:
-		say "You hear a peal of mocking laughter as the mummy's wrappings pull taut around its chest, and it falls forward onto its knees, arms suddenly snapping together behind its back. A bright green glow begins to build up around the now kneeling figure, along with that really strange feeling that permeates every other room in the mansion.".
+		say "You hear a peal of mocking laughter as the mummy's wrappings pull taut around its chest, and it falls forward onto its knees, arms suddenly snapping together behind its back. A bright green glow begins to build up around the now kneeling figure, along with that really strange feeling that permeates every other room in the mansion.";
+	if S is in the location of the player:
+		say " Distinctly unclean energy seems to slowly gather around it.";
+	if the location of the player is Woods30, say "[variable custom style]Something is happening.[roman type][line break]";
+	otherwise say "[variable custom style]I wonder what's going on?[roman type][line break]";
+		[Arouse 100;]
+	if newbie tips is 1, say "[one of][item style]Newbie tip: Uh oh, looks like the mansion summoning portal just activated! It will slowly count down until it releases a brand new monster into the mansion. Try offering items soaked in bodily fluids to it to increase the timer![roman type][or][stopping]".
+	
 
 To ChargeUp (S - a mysterious-mummy) by (X - a number):
 	decrease X by the reset-count of S * 10;

@@ -23,7 +23,7 @@ To say VineDesc:
 To say ShortDesc of (T - a vine):
 	say "vine".
 	
-To say MediumDesc of (T - a vine):
+To say EnvironmentDesc of (T - a vine):
 	say "Strong, living vines worm through the soil [if the player is vine-cursed]underneath your feet.[otherwise]around your feet.[end if]  ".
 
 To say PregGrowth of (M - a vine):
@@ -82,6 +82,7 @@ To compute vines standing:
 				if the heel-height of a random heels worn by the player > the heel skill of the player, decrease D by 1;
 				if the heel-height of a random heels worn by the player > the heel skill of the player + 1, decrease D by 1;
 			let R be a random number from 1 to D;
+			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl and the player is vine-cursed]4[otherwise]2[end if].5) vine difficulty[roman type][line break]";
 			if R <= 2 or (R <= 4 and the class of the player is schoolgirl and the player is vine-cursed):
 				say "[one of]Vines slither up your legs, locking them in place. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Living vines grab your ankles and feet, locking them in place. There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. Before you can react, several more burst out of the ground and wrap around your ankles.[or]Vines shoot out of the ground and wrap around your ankles![or]A pair of vines shoot out of the soil. You try to move out of the way, but it's too late! They wrap around your ankles and pin them to the ground.[then at random]";
 				now V is grabbing the player;
@@ -113,6 +114,7 @@ To compute vines kneeling:
 			now V is revealed;
 			let D be the dexterity of the player;
 			let R be a random number from 1 to D;
+			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
 			if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
 				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realize it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 				now V is grabbing the player;
@@ -312,6 +314,7 @@ To compute vines fucking:
 			now V is not penetrating vagina;
 			now V is unrevealed;
 			TimesFuckedUp vine boss by 1; [Princesses should avoid this!]
+			progress quest of tentacle-quest;
 			if V is in WoodsBoss01:
 				remove V from play;
 				now the TrapNo of V is 0;
@@ -397,12 +400,12 @@ REQUIRES COMMENTING
 To VinePull:
 	let S be the dexterity of the player;
 	let X be a random number between square root of S and S;
-	let V be a random number between 5 and 20;
+	let V be a random number between 5 and 19;
 	let T be the TrapNo of the noun;
 	increase X by T;
 	if the player is prone, increase V by (a random number from 0 to 4 + a random number from 0 to 5);
-	if debugmode is 1, say "Player [X].5 |  [V] Vines.";
-	if X < V:
+	if debuginfo > 0, say "[input-style]Vines escape check: dexterity roll RNG([square root of S]~[S + 0]) + turns ([T]) = [X] | [V].5 = [if the player is prone](d5-1 + d6-1) player on knees bonus + [end if](d15+4.5) grapple roll[roman type][line break]";
+	if X <= V:
 		if diaper quest is 1:
 			say "You pull at the vines but they are holding your wrists tightly. There's no escape this time!";
 		otherwise if the player is prone:
@@ -410,7 +413,7 @@ To VinePull:
 		otherwise:
 			say "[one of][if the TrapNo of the noun < 3]You pull at the vines but they are holding your ankles tightly. Maybe try again?[otherwise]You pull at the vines but they are holding your ankles tightly. Uh-oh, they're slowing down...[end if][or][if the TrapNo of the noun < 3]You pull at the vines with all your might, but their grip is just too tight. Maybe you should try again?[otherwise]You pull at the vines with all your might, but their grip is just too tight. It seems like they're slowing down...[end if][or][if the TrapNo of the noun < 3]You try to free yourself as best you can without falling over. It doesn't work, but you can always try again.[otherwise]You try to free yourself as best you can without falling over. It doesn't work, but it does seem like they're slowing down.[end if][or][if the TrapNo of the noun < 3]You manage to get a few to let go, but several more immediately take their place. Maybe try again?[otherwise]You manage to get a few to let go, but several more immediately take their place. They seem to tighten their grip. What now?[end if][in random order]";
 	otherwise:
-		say "You manage to loosen the vines and free your [if the player is prone]wrists and [end if]ankles!  ";
+		say "You manage to loosen the vines and free your [if the player is prone]wrists and [end if]ankles! ";
 		now the noun is not grabbing the player;
 		if the noun is penetrating a fuckhole:
 			say "The vine[if the TrapNo of the noun > 0]s[end if] in your [if the noun is penetrating asshole][asshole][otherwise][vagina][end if] pull[if the TrapNo of the noun is 0]s[end if] out and go[if the TrapNo of the noun is 0]es[end if] back into the ground, ready to strike again. ";

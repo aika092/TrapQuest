@@ -121,6 +121,7 @@ To fill in table blanks:
 	unless there is a choice in row 35 of the Table of Settings, now choice in row 35 of Table of Settings is 1;
 	unless there is a choice in row 36 of the Table of Settings, now choice in row 36 of Table of Settings is 0;
 	unless there is a choice in row 37 of the Table of Settings, now choice in row 37 of Table of Settings is 0;
+	unless there is a choice in row 38 of the Table of Settings, now choice in row 38 of Table of Settings is 0;
 	[Allows old save files to load properly]
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
 	unless there is a choice in row 33 of the Table of Player Options, now choice in row 33 of Table of Player Options is 0;
@@ -158,7 +159,8 @@ To fill in table blanks:
 	unless there is a choice in row 65 of the Table of Player Options, now choice in row 65 of Table of Player Options is 0;
 	unless there is a choice in row 66 of the Table of Player Options, now choice in row 66 of Table of Player Options is 0;
 	unless there is a choice in row 67 of the Table of Player Options, now choice in row 67 of Table of Player Options is 0;
-	unless there is a choice in row 68 of the Table of Player Options, now choice in row 68 of Table of Player Options is 1.
+	unless there is a choice in row 68 of the Table of Player Options, now choice in row 68 of Table of Player Options is 1;
+	unless there is a choice in row 69 of the Table of Player Options, now choice in row 69 of Table of Player Options is 0.
 
 To correct table entries:
 	if the player is not the donator:

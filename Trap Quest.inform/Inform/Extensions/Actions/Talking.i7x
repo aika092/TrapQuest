@@ -103,7 +103,7 @@ Check talking:
 		if the player is flying and the player is in the Woods, say "You are too high up, they can't hear you." instead;
 		if the sleep of the noun > 0, say SleepTalkFail of the noun instead;
 		[if the noun is not intelligent, say "It doesn't look like it can speak. You could try [bold type]poking[roman type] [him of the noun] instead?" instead;]
-		if the player is not able to speak, say "You are currently unable to speak!  You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
+		if the player is not able to speak, say "You are currently not able to speak!  You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 
@@ -162,7 +162,7 @@ Check questioning:
 	if the noun is a monster:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		if the sleep of the noun > 0, say SleepTalkFail of the noun instead;
-		if the player is not able to speak, say "You are currently unable to speak!" instead;
+		if the player is not able to speak, say "You are currently not able to speak!" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 
@@ -190,7 +190,7 @@ Check drink requesting:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		unless the player is thirsty, say "You aren't thirsty, so don't see the point." instead;
 		if the sleep of the noun > 0, say SleepTalkFail of the noun instead;
-		if the player is not able to speak, say "You are currently unable to speak!" instead;
+		if the player is not able to speak, say "You are currently not able to speak!" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 
@@ -218,7 +218,7 @@ Check food requesting:
 		if the player is flying and the player is in the Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		unless the player is hungry, say "You aren't hungry, so don't see the point." instead;
 		if the sleep of the noun > 0, say SleepTalkFail of the noun instead;
-		if the player is not able to speak, say "You are currently unable to speak!" instead;
+		if the player is not able to speak, say "You are currently not able to speak!" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 

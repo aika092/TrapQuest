@@ -172,6 +172,18 @@ Definition: a clothing (called C) is high cut or higher:
 	if C is high cut or C is fully covering, decide yes;
 	decide no.
 
+Definition: a clothing (called C) is ridiculously low cut or lower:
+	if C is fully exposing or C is ridiculously low cut, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is very low cut or lower:
+	if C is very low cut or C is ridiculously low cut or lower, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is low cut or lower:
+	if C is low cut or C is very low cut or lower, decide yes;
+	decide no.
+
 [!<DecideWhichNumberIsTheLargenessOfBreasts>+
 
 REQUIRES COMMENTING
@@ -713,18 +725,18 @@ REQUIRES COMMENTING
 To say BreastModesty:
 	if breasts is lewdly exposed:
 		if there is a worn breast covering top-placed clothing:
-			say "Your chest is clearly visible through your [random worn breast covering top-placed clothing]. ";
+			say "Your chest is clearly visible through your [ShortDesc of random worn breast covering top-placed clothing]. ";
 		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [random worn breast covering clothing]. ";
+			say "Your nipples are clearly visible through your [ShortDesc of random worn breast covering clothing]. ";
 		otherwise:
 			say "They are completely uncovered, on display for anyone who wants to [if the bimbo of the player < 5]perv on[otherwise if the bimbo of the player < 10]ogle at[otherwise]get intimate with[end if] them. ";
 	otherwise if breasts is at least partially lewdly exposed:
 		if there is a worn breast covering top-placed clothing:
-			say "Your chest is partially visible through your [random worn breast covering top-placed clothing]. ";
+			say "Your chest is partially visible through your [ShortDesc of random worn breast covering top-placed clothing]. ";
 		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [random worn nipple covering top-placed clothing]. ";
+			say "Your nipples are clearly visible through your [ShortDesc of random worn nipple covering top-placed clothing]. ";
 	otherwise if breasts are not exposed:
-		say "[BreastsTheyAre] hidden safely behind your [random worn actually dense nipple covering clothing]. ".
+		say "[BreastsTheyAre] hidden safely behind your [ShortDesc of random worn actually dense nipple covering clothing]. ".
 
 [!<SayBreastCupNumber>+
 
@@ -1026,6 +1038,18 @@ To BustImplantsDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the silicone volume of breasts > 0, decrease the silicone volume of breasts by 1.
+
+To stimulate (X - breasts):
+	if breasts is pushed over the edge:
+		breasts orgasm shamefully;
+	otherwise if the sensitivity of breasts >= 2:
+		arouse (the square root of (the sensitivity of breasts * 1000)) * 10;
+		if the sensitivity of breasts >= 10:
+			say "[one of]The nerves in your breasts explode with sensation!  [if the player is female]Your [vagina] gushes with pleasure.[otherwise if the size of penis > 0]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
+		otherwise if the sensitivity of breasts >= 6:
+			say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or the player is male and the size of penis is 0]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+		otherwise:
+			say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
 
 Breasts ends here.
 

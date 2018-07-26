@@ -13,13 +13,14 @@ Definition: A gloryhole (called I) is immune to change:
 	decide yes.
 
 This is the gloryhole chooses random hallway rule:
-	let R be a random number between 1 and 2;
-	if diaper quest is 1:
-		destroy gloryhole;
-	otherwise if R is 1:
-		now gloryhole is in a random unpinned untrappable labyrinth room;
-	otherwise:
-		now gloryhole is in a random unpinned untrappable modern room.
+	if gloryhole is off-stage:
+		let R be a random number between 1 and 2;
+		if diaper quest is 1:
+			destroy gloryhole;
+		otherwise if R is 1:
+			now gloryhole is in a random unpinned untrappable labyrinth room;
+		otherwise:
+			now gloryhole is in a random unpinned untrappable unbossed modern room.
 The gloryhole chooses random hallway rule is listed in the setup starting items rules.
 
 Check climbing gloryhole:

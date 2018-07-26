@@ -19,10 +19,10 @@ To restock (C - a bracelet):
 	let B be a random basic loot bracelet;
 	if B is bracelet, now B is in Standard Item Pen.
 
-This is the setup starting bracelets rule:
+[This is the setup starting bracelets rule:
 	let C be a random bracelet;
 	restock C.
-The setup starting bracelets rule is listed in the setup starting items rules.
+The setup starting bracelets rule is listed in the setup starting items rules.]
 
 Bracelets ends here.
 

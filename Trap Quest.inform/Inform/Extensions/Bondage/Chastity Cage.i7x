@@ -74,6 +74,12 @@ This is the can't phase cage through clothes rule:
 		rule fails.
 The can't phase cage through clothes rule is listed in the chastity cage wearability rules.
 
+This is the can't cage ken rule:
+	if the player is male and the size of penis is 0:
+		if summoning is 0, say "But you don't have a penis right now!";
+		rule fails.
+The can't cage ken rule is listed in the chastity cage wearability rules.
+
 This is the players in chastity can't wear vagina plugging clothes rule:
 	if vagina is actually occupied and wearing-target is vagina plugging:
 		if summoning is 0, say "You can't get the plug in past your chastity belt, and so can't wear these.";

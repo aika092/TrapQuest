@@ -17,10 +17,9 @@ To decide which number is the initial cringe of (C - a maid headdress):
 To compute unique periodic effect of (H - a maid headdress):
 	let S be a random worn pink spraybottle;
 	if S is clothing and the work ethic of S < 0:[not cleaning enough? You might be punished!]
-		[if debugmode > 0, say "The work ethic of S is [the work ethic of S]";]
 		let R be a random number between -4000 and -130;
-		[if debugmode > 0, say "R is [R]";]
-		if S is clothing and the work ethic of S < R, compute spraybottle punishment.
+		if debuginfo > 1, say "[input-style]Maid work ethic check: RNG(-4000~-130) = [R] | ([work ethic of S]) work ethic[roman type][line break]";
+		if the work ethic of S < R, compute spraybottle punishment.
 
 Report going:
 	if the player is prone:
@@ -41,6 +40,7 @@ Report going:
 				summon M cursed;
 			otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
 				say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
+		if the crawl count of the player >= 20, progress quest of crawling-quest;
 		if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
 		if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
 			if the largeness of breasts > 10 and the semen coating of breasts is 0:

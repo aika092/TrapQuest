@@ -333,6 +333,7 @@ To decide which number is the trip hazard of the player:
 	if the player is ponytailed, decrease Q by 3;
 	if the player is pigtailed, decrease Q by 6;
 	if Q > 0, increase X by Q;
+	if X < 0, decide on 0;
 	decide on X.
 
 [!<tripReasonsRules:Rulebook>*
@@ -497,7 +498,7 @@ Check going:
 			if there are worn heels:
 				let C be a random heels worn by the player;
 				[Posture training makes heel skill experience go up faster]
-				repeat with D running through posture training clothing worn by the player:
+				repeat with D running through worn posture training clothing:
 					increase the heel time of the player by 1;
 					unless D is cursed, increase the heel time of the player by 2;
 				[Computing heel skill experience: Queen of Hearts heels prevent this experience gain]
@@ -512,8 +513,8 @@ Check going:
 			if tutorial is 1:
 				now D is X + 1;
 				if the player is in Tutorial02, decrease X by 1;
-			if debugmode is 1, say "Walking attempt: Player ([D].5 | [X] Heels)[line break]";
-			if D is X and there are worn heels, say "You feel very unstable, and are barely managing to keep your balance on your [printed name of random worn heels]!"; [The player barely managed to succeed the roll.]
+			if debuginfo > 0 and X > 0, say "[input-style]Walking check: d26-1 ([D]) | ([X - 1].5) trip likelihood[roman type][line break]";
+			if X > 0 and D is X and there are worn heels, say "You feel very unstable, and are barely managing to keep your balance on your [ShortDesc of random worn heels]!"; [The player barely managed to succeed the roll.]
 			if D < X:
 				follow the trip reasons rules; [Here we explain to the player why they tripped]
 				if there is a worn heels, say "[if the heel skill of the player < 4][line break][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][line break][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating.. but in a fun way.[in random order][end if][roman type][line break]";
@@ -543,7 +544,7 @@ Check going:
 			otherwise: [Okay, the player is definitely not falling over! Assuming there are no super-giant diapers, let's output some flavour text to the player and deal with some other potential situations.]
 				if the player is wobbling or the player is hobbling or the player is swaying or the player is staggering:
 					let R be a random number from 1 to 7;
-					if R is 1, say "You shuffle along as fast as your [if there is a worn ball-and-chain][ShortDesc of a random worn ball-and-chain][otherwise if the player is ankle bound][ShortDesc of random worn ankle-bound clothing][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][printed name of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [printed name of random diaper worn by the player] [end if][if there are worn heels]and [printed name of random heels worn by the player] [end if]will let you.";
+					if R is 1, say "You shuffle along as fast as your [if there is a worn ball-and-chain][ShortDesc of a random worn ball-and-chain][otherwise if the player is ankle bound][ShortDesc of random worn ankle-bound clothing][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][ShortDesc of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [ShortDesc of random diaper worn by the player] [end if][if there are worn heels]and [ShortDesc of random heels worn by the player] [end if]will let you.";
 				otherwise if the player is waddling:
 					if the strut of the player is 1:
 						now the strut of the player is 0;
@@ -578,13 +579,19 @@ Check going:
 				let E be 1;
 				if M is insane gladiator or M is wild gladiator, increase E by 10;
 				if there is a worn ball-and-chain, increase E by 10;
-				if the class of the player is catgirl or the class of the player is puppygirl, now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
-				if the player is an adult baby and there are worn mittens, now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
-				if a random number between E and (the difficulty of M + 3) > 2 and M is blocker, say "[MovementBlock of M]" instead;
+				if the class of the player is catgirl or the class of the player is puppygirl:
+					now E is (the number of worn nudism-disabling clothing * 20) - 120; [The more worn clothing, the worse this is]
+				otherwise if the player is an adult baby and there are worn mittens:
+					now E is -100; [So a 1 in 11 chance or so for a difficulty 10 monster]
+				otherwise:
+					if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: [if M is insane gladiator or M is wild gladiator]+ powerful gladiator bonus (10) [end if][if there is a worn ball-and-chain]+ ball and chain bonus (10) [end if][if E > 1]= [E]; [end if]";
+				let ER be a random number between E and (the difficulty of M + 3);
+				if debuginfo > 0, say "[input-style][ShortDesc of M] level ([difficulty of M]) + 3 = [difficulty of M + 3]; [if E is 1]d[difficulty of M + 3] ([ER])[otherwise]RNG([E]~[difficulty of M + 3]) = [ER][end if] | (2.5) crawl blocking difficulty[roman type][line break]";
+				if ER > 2 and M is blocker, say "[MovementBlock of M]" instead;
 				otherwise say "[if M is blocker]You manage to quickly crawl past [NameDesc of M] before [he of M] can catch you![end if]";
 			if S > (B2 / 2) + 1: [If this isn't true, the player will never be able to crawl, even with 0 fatigue.]
 				let R be a random number from 0 to the fatigue of the player;
-				if debugmode is 1, say "[line break]Player [S * 1] | [(R / 10) + (B2 / 2)] Knees[paragraph break]";
+				if debuginfo > 0, say "[line break][input-style]Crawl check: strength ([S - 15]) + 15 = [S * 1] | [(R / 10) + (B2 / 2)] = ([R / 10]) d[fatigue of the player / 10] fatigue + ([B2 / 2]) player body shape[roman type][line break]";
 				if S < (R / 10) + (B2 / 2): [High fatigue combined with heavy body can prevent the player from crawling this turn.]
 					delay crawling instead;
 				otherwise:
@@ -823,10 +830,15 @@ REQUIRES COMMENTING
 +!]
 To Test a Sticky Trap:
 	let D be a random number from 1 to the dexterity of the player;
+	let R be a random number between 5 and 10;
+	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed:
+		if debuginfo > 0, say "[input-style]Trap balance check: Automatic success from living belt of sturdiness[roman type][line break]";
+		now D is 9999;
+	otherwise if debuginfo > 0:
+		say "[input-style]Trap balance check: dexterity d[dexterity of the player] ([D]) [if there are worn sandals]+ sandals bonus (4) = [D + 4] [end if]| ([R].5) d6+4.5 hazard difficulty[roman type][line break]";
 	if there is a worn sandals, increase D by 4;
-	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed, now D is 9999;
 	say "The [if the player is in the Woods]floor in this room is particularly soft and your [feet] get momentarily stuck[otherwise if the player is in the Mansion]floor in this part of the mansion is very uneven[otherwise]wooden floor in this room has been recently polished[end if][run paragraph on]";
-	if D < a random number between 5 and 10:
+	if D < R:
 		say "[if the player is in the Woods], which knocks you off balance![otherwise] which causes you to slip and fall![end if]";
 		try kneeling;
 		let T be a random untriggered sticky trap in the location of the player;
@@ -874,9 +886,14 @@ To Test A Pressure Trap:
 		say "[bold type]You feel the stone slab underneath your feet depress as you step on it...[roman type][line break]";
 		trigger a pressure trap;
 	otherwise:
-		let R be ((a random number between 0 and the dexterity of the player) + (a random number between 0 and the dexterity of the player));
-		if there is a worn sandals, increase R by 4;
-		if debugmode is 1, say "Player [R] | 13.5 Pressure Pad[line break]";
+		let A be a random number between 1 and the dexterity of the player;
+		let B be a random number between 1 and the dexterity of the player;
+		let R be A + B;
+		if debuginfo > 0, say "[input-style]Pressure plate reaction check: dexterity d[dexterity of the player] ([A]) + dexterity d[dexterity of the player] ([B * 1]) ";
+		if there is a worn sandals:
+			increase R by 4;
+			if debuginfo > 0, say "+ sandals bonus (4) ";
+		if debuginfo > 0, say "= [R] | (13.5) pressure pad difficulty[roman type][line break]";
 		if R > 13:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
 			if B > 16:
@@ -940,14 +957,16 @@ To Test A Wire Trap:
 		let B be a random number between 2 and the intelligence of the player;
 		let R be A + B;
 		if there is a worn sandals, increase R by 4;
-		if debugmode is 1, say "Player [A] + [B * 1] ";
+		if debuginfo > 0, say "[input-style]Tripwire spot check: intelligence d[intelligence of the player - 1]+1 ([A]) + intelligence d[intelligence of the player - 1]+1 ([B * 1]) ";
 		[If the wire is known to be there, we want it to be substantially easier to avoid whilst standing.]
 		if T is tripwire trap:
-			let C be a random number between 0 and 15;
+			let C be a random number between 1 and 10;
 			increase R by C + the memory of T;
-			if debugmode is 1, say "+ [C] + [the memory of T] ";
-		if there are worn rollerskates and the player is in the dungeon, decrease R by (15 - the dexterity of the player);
-		if debugmode is 1, say "= [R] | 15.5 Wire Trigger[line break]";
+			if debuginfo > 0, say "+ previously encountered bonus d10 ([C]) [if the memory of T > 0]+ recently encountered bonus ([the memory of T]) [end if]";
+		if there are worn rollerskates and the player is in the dungeon:
+			decrease R by (15 - the dexterity of the player);
+			if debuginfo > 0, say "- rollerskates penalty (15) + rollerskates dexterity bonus ([the dexterity of the player]) ";
+		if debuginfo > 0, say "= [R] | (15.5) tripwire difficulty[roman type][line break]";
 		if R > 15:
 			let AnkB be a random worn ankle-bound clothing;
 			say "[bold type]You [if there are worn rollerskates]manage to leap[otherwise if AnkB is clothing]carefully sidestep[otherwise]gracefully step[end if] over [if the location of the player is in the Mansion]a protruding floorboard[otherwise]a tripwire[end if].[roman type][line break]";

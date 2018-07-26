@@ -32,11 +32,11 @@ Carry out resting:
 	while the fatigue of the player > 0 and the alert of the player is 0:
 		say  "You [one of][or]continue to [stopping][if the largeness of breasts > 13]use your [BreastDesc] as pillows to [end if]rest.";
 		now seconds is 6;
-		if there is a worn nightie, increase the fatimod of the player by 2;
+		if there is a worn nightie, increase fatimod by 2;
 		compute extra turn;
-		repeat with M running through dangerous monsters:
+		repeat with M running through dangerous monsters: [More computationally efficient to check whether all monsters are dangerous rather than if all monsters are nearby as the first discriminator]
 			if the alert of the player is 0:
-				if debugmode is 1, say "[BigNameDesc of M] in [location of M] might make the player alert if it is close enough..";
+				if debugmode is 1, say "[BigNameDesc of M] in [location of M] might make the player alert if it is close enough...";
 				if M is in the location of the player or M is nearby, now the alert of the player is 1;
 				if the alert of the player is 1 and M is nearby:
 					say "You see a threatening looking [M] that is lurking nearby. ";

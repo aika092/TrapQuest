@@ -3,8 +3,11 @@ Wooden Horse Traps by Traps begins here.
 
 A wooden horse is a kind of trap. The text-shortcut of a wooden horse is "wdh". The printed name of wooden horse is "[TQlink of item described]wooden horse[TQxlink of item described][verb-desc of item described]".
 
-To say ShortDesc of (T - a wooden horse):
+To say EnvironmentDesc of (T - a wooden horse):
 	say "A large wooden horse lies dormant on the ground. ".
+
+To say ShortDesc of (T - a wooden horse):
+	say "wooden horse".
 
 To decide which number is the girth of (T - a wooden horse):
 	decide on 1.
@@ -204,9 +207,6 @@ This is the spawn initial woods wild horse traps rule:
 		let T be a random off-stage wild horse;
 		deploy T in R.
 The spawn initial woods wild horse traps rule is listed in the set up woods traps rules.
-
-To say ShortDesc of (T - a wild horse):
-	say "A large wooden horse lies dormant on the ground. ".
 
 To trigger (Y - a wild horse):
 	now the motion of the player is 0;

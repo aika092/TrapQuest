@@ -37,9 +37,6 @@ Definition: a wasp-cloud is removable:
 To compute attack of (W - a wasp-cloud) at (M - a monster):
 	say "Your cloud of wasps charges at [M], brutally stinging them!".
 
-To set up magic state of (W - a wasp-cloud):
-	do nothing.
-
 
 Wasp Cloud ends here.
 

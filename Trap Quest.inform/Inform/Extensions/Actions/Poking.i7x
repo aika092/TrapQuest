@@ -46,6 +46,7 @@ To compute poking of (M - a monster):
 	now the sleep of M is 0;
 	decrease the favour of M by 1;
 	now seconds is 2;
+	progress quest of poking-quest;
 	compute correct perception of M.
 			
 Understand "poke [something]", "awake [something]", "wake [something]" as poking.

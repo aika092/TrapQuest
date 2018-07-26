@@ -13,9 +13,6 @@ To decide which number is the initial outrage of (C - a crop top):
 To decide which number is the original price of (C - a crop top):
 	decide on 5.
 
-To set up magic state of (C - a crop top):
-	do nothing.
-
 To set up influence of (C - a crop top):
 	set up stat-based influence of C.
 

@@ -250,6 +250,7 @@ To decide which number is the anal-sex-addiction-influence of (G - pale blue-bri
 	if G is blessed, decide on 1;
 	decide on 2.
 To decide which number is the vaginal-sex-addiction-influence of (G - pale blue-briefs):
+	if the player is male, decide on 0;
 	if G is blessed, decide on 1;
 	decide on 2.
 To compute periodic effect of (G - pale blue-briefs):

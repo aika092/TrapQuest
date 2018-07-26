@@ -74,7 +74,7 @@ REQUIRES COMMENTING
 
 +!]
 To say SubduedGrabFlav of (M - a monster) on (C - a clothing):
-	say "[BigNameDesc of M] grabs hold of your [C]!  There's no getting away now...".
+	say "[BigNameDesc of M] grabs hold of your [ShortDesc of C]! There's no getting away now...".
 
 [!<SaySubduedGrabFlavOfClothing>+
 

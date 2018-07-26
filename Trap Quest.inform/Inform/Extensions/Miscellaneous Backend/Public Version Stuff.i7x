@@ -45,6 +45,8 @@ Definition: a person is a march 2018 top donator:
 	decide yes.
 Definition: a person is a may 2018 top donator:
 	decide yes.
+Definition: a person is a july 2018 top donator:
+	decide yes.
 Definition: a person is a may 2017 top diaper donator:
 	decide yes.
 Definition: a person is a july 2017 top diaper donator:
@@ -59,6 +61,8 @@ Definition: a person is a march 2018 top diaper donator:
 	decide yes.
 Definition: a person is a may 2018 top diaper donator:
 	decide yes.
+Definition: a person is a july 2018 top diaper donator:
+	decide yes.
 Definition: a person is a may 2017 diaper donator:
 	decide yes.
 Definition: a person is a july 2017 diaper donator:
@@ -72,6 +76,8 @@ Definition: a person is a january 2018 diaper donator:
 Definition: a person is a march 2018 diaper donator:
 	decide yes.
 Definition: a person is a may 2018 diaper donator:
+	decide yes.
+Definition: a person is a july 2018 diaper donator:
 	decide yes.
 
 To check donators status:

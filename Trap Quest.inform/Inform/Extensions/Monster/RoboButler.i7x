@@ -58,7 +58,10 @@ To compute perception of (M - a robobutler):
  		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
+		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party related wearthing):
+			serve alcohol from M;
+		otherwise:
+			say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
 		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
 		now the planned-punishment of M is 3;
@@ -78,6 +81,23 @@ To compute perception of (M - a robobutler):
  	otherwise:
 		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
 		now the planned-punishment of M is 0;
+		calm M.
+
+To serve alcohol from (M - a robobutler):
+	now autodrink is 1;
+	if the player is able to drink:
+		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'PARTYGOER DETECTED. PLEASE HAVE ANOTHER DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass and pours a shot of [one of]gin[or]vodka[or]white rum[or]sambuca[purely at random] from a bottle. It doesn't seem like it's looking for 'no' as an answer. Do you drink the shot? [yesnolink]";
+		if the player consents:
+			StomachUp 1;
+			say "You [unless the player is feeling dominant]obediently [end if]down the fiery liquid in one, feeling the effects almost instantly. ";
+			satisfy M;
+			increase alcohol level;
+		otherwise:
+			say "Its eyes flash red for a brief moment.[line break][first custom style]'PARTYPOOPER DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break]It turns to leave you alone, for now.";
+			FavourDown M;
+			bore M;
+	otherwise:
+		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'PARTYGOER DETECTED. I HOPE YOU ARE ENJOYING THE PARTY.'[roman type][line break]";
 		calm M.
 
 Report going in the presence of a robobutler:

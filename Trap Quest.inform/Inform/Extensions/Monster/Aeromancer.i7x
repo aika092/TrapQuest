@@ -317,26 +317,34 @@ Definition: an aeromancer (called M) is ballooned:
 	decide no.
 
 To compute unique early action of (M - an aeromancer):
-	compute ballooning of M.
+	unless M is penetrating a body part, compute ballooning of M.
 
 To compute ballooning of (M - an aeromancer):
 	if M is ballooned:
-		if M is not wand-empowered, decrease the balloon of M by 1;
-		if the balloon of M is 1:
-			if M is in the location of the player, say "[BigNameDesc of M]'s breasts deflate and she returns to the ground.";
+		if M is not wand-empowered:
+			decrease the balloon of M by 1;
+			if debuginfo > 0, say "[input-style]Aeromancer air loss: [balloon of M + 1] -> [balloon of M][roman type][line break]";
+		if the balloon of M <= 1:
+			if M is in the location of the player, say "[BigNameDesc of M]'s breasts deflate and [he of M] returns to the ground.";
 			if M is in the Woods, DifficultyDown M by 6;
 			otherwise DifficultyDown M by 4;
 			now M is flightless;
 	otherwise:
 		if M is in the location of the player and M is dangerous:
 			increase the balloon of M by 1;
-			if the balloon of M > a random number between 3 and 8:
+			let R be a random number between 2 and 5;
+			if debuginfo > 0, say "[input-style]Aeromancer power-up check: air stored ([balloon of M]) | ([R].5) d4+1.5 power-up threshold[roman type][line break]";
+			if the balloon of M > R:
 				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...'  [or]Ultimate Airbag Transformation - Engage!'  [stopping][roman type][BigNameDesc of M] pushes her wand between her breasts and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as her breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through her tight top and destroying it permanently[end if]!  They begin to lift her off of the ground until she is hovering gracefully a foot in the air. [if M is wand-empowered]She's definitely going to be a lot more powerful now.[otherwise]You feel she's probably a lot more powerful until she lands.[end if]";
 				now M is airborne;
 				if M is in the Woods, DifficultyUp M by 6;
 				otherwise DifficultyUp M by 4;
 				increase the previously-ballooned of M by 1;
 				if image cutscenes is 1, display figure of aeromancer cutscene 1.
+
+
+To compute unique dislodging of (M - an aeromancer):
+	now the balloon of M is 1.
 	
 
 Section 1 - Attack
@@ -586,7 +594,6 @@ To say StrikingFailureFlav of (M - an aeromancer) on (B - a body part):
 To compute tripping attack of (M - an aeromancer):
 	say "A strong gust of wind flies past your [feet], threatening to trip you up and throw you to the ground!";
 	let D be the tripping roll of M;
-	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Aeromancer[line break]";
 	if D >= the dexterity of the player and M is not-blinded:
 		say "[MonsterTrippedFlav of M]";
 		try kneeling;

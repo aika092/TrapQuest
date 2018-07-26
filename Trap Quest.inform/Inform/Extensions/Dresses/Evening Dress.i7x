@@ -32,6 +32,9 @@ The remove inappropriate evening dress rule is listed in the diaper quest fix ru
 Definition: an evening dress (called C) is end of transformation chain:
 	decide yes.
 
+Definition: an evening dress (called C) is party related:
+	decide yes.
+
 Part 1 - Red Evening Dress
 
 A red evening dress is a kind of evening dress. A red evening dress is usually crotch-exposing. A red evening dress is usually fully exposing. A red evening dress is usually belly exposing. There is 1 red evening dress. The text-shortcut of red evening dress is "rev". A red evening dress is not-top-displacable.

@@ -281,7 +281,7 @@ REQUIRES COMMENTING
 
 +!]
 To say semen-adjective:
-	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling[otherwise if the semen taste addiction of the player < 5]disgusting[otherwise if the semen taste addiction of the player < 8	]unpleasant[otherwise if the semen taste addiction of the player < 10]strange[otherwise if the semen taste addiction of the player < 13]strangely pleasant[otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random][otherwise][one of]heavenly[or]yummy[at random][end if]". [if the semen addictions are too far apart this may not make sense]
+	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling [otherwise if the semen taste addiction of the player < 5]disgusting [otherwise if the semen taste addiction of the player < 8]unpleasant [otherwise if the semen taste addiction of the player < 10]strange [otherwise if the semen taste addiction of the player < 13]strangely pleasant [otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random] [otherwise][one of]heavenly[or]yummy[at random] [end if]". [if the semen addictions are too far apart this may not make sense]
 
 [!<SaySemen>+
 
@@ -296,7 +296,7 @@ To say semen:
 	otherwise if the semen addiction of the player < 13:
 		say "[one of]cum[or]spunk[or]jizz[or]jism[or]spooge[or]semen[or]man cream[as decreasingly likely outcomes]";
 	otherwise:
-		say "[if a random number between the semen addiction of the player and 20 > 19][semen-adjective] [end if][one of]cum[or][if pregnancy fetish is 1]baby batter[otherwise]man juice[end if][or][if pregnancy fetish is 1]baby gravy[otherwise]man milk[end if][or]dick juice[or]happy batter[or]cock snot[as decreasingly likely outcomes]".
+		say "[if a random number between the semen addiction of the player and 20 > 19][semen-adjective][end if][one of]cum[or][if pregnancy fetish is 1]baby batter[otherwise]man juice[end if][or][if pregnancy fetish is 1]baby gravy[otherwise]man milk[end if][or]dick juice[or]happy batter[or]cock snot[as decreasingly likely outcomes]".
 
 [!<SayTastedSemen>+
 
@@ -557,6 +557,22 @@ To say joy:
 To say joy (N - a number):
 	increase N by a random number between 1 and -1;
 	say "[if N < 3]anger[otherwise if N < 5]frustration[otherwise if N < 7]annoyance[otherwise if N < 9]mixed emotions[otherwise if N < 12]a nervous thrill[otherwise if N < 15]joy[otherwise]glee[end if]".
+
+[!<BlushingPrettily>+
+
+A humiliation reaction: expands to something grammatically equivalent to "blushing prettily".
+
++!]
+To say BlushingPrettily:
+		say "[if the humiliation of the player < HUMILIATION-PROUD][one of]glaring around angrily[or]grinding your teeth[or]growling under your breath[at random][otherwise if the humiliation of the player < HUMILIATION-MODEST][one of]fighting off a feeling of shame[or]feeling your cheeks warm[or]pursing your lips[or]blinking rapidly and look away[or]swallowing in shame[at random][otherwise][one of]feeling your cheeks flush[or]blushing prettily[or]cringing at how you must look[or]feeling your face flush bright pink[at random][end if]".
+
+[!<BlushPrettily>+
+
+A humiliation reaction: expands to something grammatically equivalent to "blush prettily".
+
++!]
+To say BlushPrettily:
+		say "[if the humiliation of the player < HUMILIATION-PROUD][one of]glare around angrily[or]grind your teeth[or]growl under your breath[at random][otherwise if the humiliation of the player < HUMILIATION-MODEST][one of]fight off a feeling of shame[or]feel your cheeks warm[or]purse your lips[or]blink rapidly and look away[or]swallow in shame[at random][otherwise][one of]feel your cheeks flush[or]blush prettily[or]cringe at how you must look[or]feel your face flush bright pink[at random][end if]".
 	
 
 [!<SayGreatOne>+

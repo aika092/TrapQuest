@@ -55,7 +55,7 @@ To trigger (Y - a magic dust trap):
 				otherwise:
 					FaceUp 1;
 		otherwise:
-			say "It gets all over your [C], which starts to shimmer!";
+			say "It gets all over your [ShortDesc of C], which starts to shimmer!";
 			potentially transform C;
 		identify glitter;
 	otherwise:

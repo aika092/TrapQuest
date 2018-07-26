@@ -16,6 +16,7 @@ The text-shortcut of sex doll is "sd".
 To say ShortDesc of (M - a sex doll):
 	say "sex doll".
 
+[###Selkie wonders why only creamfilled- and airfilled-sex-doll are hyphenated.]
 A creamfilled-sex-doll is a kind of sex doll.
 creepy sex doll is a creamfilled-sex-doll. The text-shortcut of creepy sex doll is "csd".
 To say MediumDesc of (M - creepy sex doll):
@@ -236,7 +237,9 @@ To compute the default taunting of (M - a sex doll):
 	say "[DollWait of M]".
 
 To compute the dildo stuck taunting of (M - a sex doll):
-	say "[DollWait of M]".
+	say "[DollWait of M]";
+	if doll-stuck-num > 0:
+		say "The expressionless gaze of the [printed name of M] as [he of M] patiently watches you rotate around, makes your blood burn in humiliation. You [BlushPrettily], imagining it 'thinking' you're [one of]no better than it, a mere toy for people's amusement[or]just like it[or]wishing you could move freely, like it[or]trying to show people you're like a doll, yourself[or]not better than it[at random].[line break]".
 
 To say DollWait of (M - a sex doll):
 	say "[one of][BigNameDesc of M] stands in front of you, motionless.[or][or][cycling]".
@@ -391,7 +394,7 @@ To say DamageReactWeak of (M - a sex doll):
 	say "The doll looks unstable, like it's about to burst!".
 
 To compute unique death of (M - a sex doll):
-	if a random number between 1 and 2 is 1:
+	if a random number between 1 and 2 is 1 or the number of in-play piece of rubber is 0:
 		let S be a random off-stage squirt dildo;
 		let R be a random off-stage piece of rubber;
 		if M is creamfilled-sex-doll and bukkake fetish is 1:
@@ -411,6 +414,9 @@ To compute unique death of (M - a sex doll):
 	otherwise:
 		say "The doll deflates and disappears.";
 	destroy M.
+
+To loot (M - a sex doll):
+	do nothing.
 
 
 Sex Doll ends here.

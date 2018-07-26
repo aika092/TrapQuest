@@ -26,8 +26,17 @@ To update name of (M - student-rosie):
 		now the student-name of M is "Rosie";
 		now the student-print of M is "farmyard fuckdoll".
 
+To decide which number is the starting difficulty of (M - student-rosie):
+	decide on 8 + the current-rank of M.[She's farm tough!]
+
 To say StoryAnswer of (M - student-rosie):
-	say "[speech style of M]'I'm just an honest hard-working farmer's daughter. Dad's farm's shop has started to go bankrupt because everyone is going to the competing shop over the road, where the woman who runs the place wears super skimpy clothing and flirts with all the horny customers. I'm hoping if I can do the same for Daddy's shop, business will go back to normal. But first I need to learn to overcome my shyness!  So I've come here, the best slut school in all the lands!'[roman type][line break]".
+	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's daughter. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] flirts with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em horny too!  All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best slut school in all of Bimbacia won't let me down!'[roman type][line break]".
+
+To say AdviceAnswer of (M - student-rosie):
+	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said n['] it never hurt me none!'[roman type][line break]".
+
+To compute teaching of (M - student-rosie):
+	say "[speech style of M]'I'm here to learn, not sell my daddy's hard won farmin['] secrets!'[roman type][line break]".
 
 Part - Rachel
 
@@ -57,6 +66,9 @@ To update name of (M - student-rachel):
 
 To say StoryAnswer of (M - student-rachel):
 	say "[speech style of M]'I first came here because my boobs were tiny and while I wanted a boob-job, I knew I would feel self-conscious once I got my new puppies. Slut School is helping me to feel braver and braver each day, meaning I feel daring enough to show off more and more of these massive puppies!'[roman type][line break]".
+
+To say AdviceAnswer of (M - student-rachel):
+	say "[speech style of M]'[one of]It's really hard to get around on your knees when you have tits as big as these puppies. Try to stay on your feet!'[or]You don't always have to wear a bra that fits. Sometimes it only matters that you're close enough.'[at random][roman type][line break]".
 
 Part - Jessica
 
@@ -88,20 +100,77 @@ To update name of (M - student-jessica):
 To say StoryAnswer of (M - student-jessica):
 	say "[speech style of M]'I've always been a good girl but my Daddy wants me to be more proud of my [if the current-rank of M is 1]erm, well, never mind[otherwise]diapers[end if]. So I've been sent here to learn!'[roman type][line break]".
 
+Part - Minnie
+
+student-minnie is a tq-only amicable student.
+
+The text-shortcut of student-minnie is "stmn".
+
+Figure of minnie is the file "NPCs/School/Student/student23.png".
+
+To decide which figure-name is the monster-image of (M - student-minnie):
+	decide on figure of minnie.
+
+To say MonsterDesc of (M - student-minnie):
+	say "This tall leggy blonde is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny purple sequins pasties shaped like hearts and similar red hearts [if the current-rank of M is 3]barely cover [his of M] pussy[otherwise]don't even cover [his of M] pussy properly, obscuring her clit but leaving her labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, a pierced belly, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
+
+The min-rank of student-minnie is 3.
+The current-rank of student-minnie is 3.
+The max-rank of student-minnie is 4.
+
+To update name of (M - student-minnie):
+	if the current-rank of M is 3:
+		now the student-name of M is "Minnie";
+	otherwise:
+		now the student-name of M is "Mimi";
+	now the student-print of M is "minimalist".
+
+To say StoryAnswer of (M - student-minnie):
+	say "[speech style of M]'Isn't it great here? You can be your true self without being weight down by the rules of [']normal decent society[']. Once I found out that they not only were happy with how I want to dress but also want to help me become even more brave, I knew I wanted to stay here forever!'[roman type][line break]".
+
+To say EscapeAnswer of (M - student-minnie):
+	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's some cool tables and bowls that look like smart people could use them to turn stuff into other stuff! Does that make any sense?'[otherwise]A little birdie told me that what's further inside the school really helps you keep your head screwed on, but I don't really know what that means, to be honest.'[end if][roman type][line break]".
+
+To say AdviceAnswer of (M - student-minnie):
+	say "[speech style of M]'Embrace your inner exhibitionist and enjoy yourself!'[roman type][line break]".
+
+To compute teaching of (M - student-minnie):
+	say "[speech style of M]'Feeling comfortable in your own skin isn't something you need to be taught, it's just that you need to *unlearn* the idea that people should wear clothes!'[roman type][line break]".
+
 
 Part - Default Conversation
+
+To compute student perception of (M - an amicable student):
+	say "[one of][big he of M] waves enthusiastically[or][big he of M] smiles warmly[at random].";
+	compute appearance assessment of M.
+
+To compute appearance assessment of (M - an amicable student):
+	if the class of the player is schoolgirl:
+		say "[line break][speech style of M]'That outfit looks great on you!'[roman type][line break]";
+	otherwise if the player is a sissy:
+		say "[line break][speech style of M]'You look adorable in those clothes! Did your boyfriend pick those out for you?'[roman type][line break]";
+	otherwise if the class of the player is princess:
+		say "[line break][speech style of M]'I'm glad you finally decided to come to class! Everyone was wondering when you'd stop being so stubborn.'[roman type][line break]";
+	otherwise:
+		say "[line break][speech style of M]'[if the times-met of M < 2]Hello, have we met?'[otherwise][one of]Hi!'[or]Hello there!'[at random][end if][roman type][line break]";
+
+To compute nonstudent perception of (M - an amicable student):
+	say "[speech style of M]'[one of]Uh oh[or]Oh no[or]Wait a second[or]Um, hold on[or]OMG[in random order], [one of]I think you left your armband at home[or]you must have left your armband in your last class[or]someone stole your armband[or]your armband is missing[at random]! I have to find a teacher!'[roman type][line break][Big he of M] frantically walks away!";
+	[anger M;]
+	now the scared of M is 100.
 
 To say WhoAnswer of (M - an amicable student):
 	say "[speech style of M]'My name is [student-name of M], [if the times-met of M < 2]pleased to meet you[otherwise]good to see you again[end if]!'[roman type][line break]".
 
 To say WhereAnswer of (M - an amicable student):
-	say "[speech style of M]'[if the rank of the player is 1]We're in [slut school]!  Welcome!'[otherwise]The better you are at being a good girl, the higher rank you'll be able to reach. And if any other students try to give you grief, just ignore them and focus on yourself.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in [slut school]! Welcome!'[otherwise]The better you are at being a good girl, the higher rank you'll be able to reach. And if any other students try to give you grief, just ignore them and focus on yourself.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - an amicable student):
-	say "[speech style of M]'[if the current-rank of M > the rank of the player]Ooh there's some cool stuff, I can tell you that. Just you wait and see!'[otherwise]I've not got any better an idea than you, I'm afraid!  I'm looking forward to finding out though.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M > the rank of the player]Ooh there's some cool stuff, I can tell you that. Just you wait and see!'[otherwise]I've not got any better an idea than you, I'm afraid! I'm looking forward to finding out though.'[end if][roman type][line break]".
 
+[Matches default
 To say AdviceAnswer of (M - an amicable student):
-	say "[speech style of M]'You should try and pace yourself. Trying to jump in the deep end before you're ready probably won't go too well.'[roman type][line break]".
+	say "[speech style of M]'You should try and pace yourself. Trying to jump in the deep end before you're ready probably won't go too well.'[roman type][line break]".]
 
 To compute teaching of (M - an amicable student):
 	say "[speech style of M]'Haha, no, I'm not a teacher!'[roman type][line break]".

@@ -254,7 +254,7 @@ REQUIRES COMMENTING
 
 +!]
 To reflect on (A - outrageous-bra):
-	say "[first custom style]I can't believe [one of]I'm wearing this[or][if the largeness of breasts > 2]I'm supporting my tits with this[otherwise]I'm pointlessly wearing this[end if][at random] ridiculous [random worn bra][first custom style]!".
+	say "[first custom style]I can't believe [one of]I'm wearing this[or][if the largeness of breasts > 2]I'm supporting my tits with this[otherwise]I'm pointlessly wearing this[end if][at random] ridiculous [ShortDesc of random worn bra]!".
 
 [!<outrageousKnickers:HumiliatingSituation>*
 

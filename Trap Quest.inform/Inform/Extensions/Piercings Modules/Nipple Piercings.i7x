@@ -3,7 +3,7 @@ Nipple Piercings by Piercings Modules begins here.
 
 A nipple piercing is a kind of piercing.
 
-A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[TQlink of item described][item style]nipple chain[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing.  A nipple chain has a number called arousal-charge.
+A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[TQlink of item described][clothing-title-before]nipple chain[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing.  A nipple chain has a number called arousal-charge.
 
 [!<TheCowChainSlutRule>+
 
@@ -66,16 +66,16 @@ The nipple chain already worn rule is listed in the nipple piercing wearability 
 
 This is the overdress nipple chain clash rule:
 	if wearing-target is nipple covering or wearing-target is ridiculously low cut or higher:
-		repeat with N running through nipple chains worn by the player:
+		repeat with N running through worn nipple chains:
 			if N is not blessed:
-				if summoning is 0, say "Your [printed name of N] are somehow preventing you from wearing the [printed name of wearing-target]![one of][or][or][line break]Maybe if you blessed the chain?[as decreasingly likely outcomes]";
+				if summoning is 0, say "Your [ShortDesc of N] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you blessed it?";
 				rule fails.
 The overdress nipple chain clash rule is listed in the overdress wearability rules.
 
 This is the bra nipple chain clash rule:
 	if wearing-target is nipple covering:
-		repeat with N running through nipple chains worn by the player:
-			if summoning is 0, say "Your [printed name of N] are somehow preventing you from wearing the [printed name of wearing-target]!";
+		repeat with N running through worn nipple chains:
+			if summoning is 0, say "Your [ShortDesc of N] is preventing you from ever wearing any kind of bra!";
 			rule fails.
 The bra nipple chain clash rule is listed in the bra wearability rules.
 

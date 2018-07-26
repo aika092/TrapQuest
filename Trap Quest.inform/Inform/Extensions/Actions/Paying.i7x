@@ -27,7 +27,7 @@ Check paying:
 		repeat with C running through store clothing held by the player:
 			now C is normal;
 		now seconds is 2;
-		say "[first custom style]'What's mine is yours!'[roman type][line break]" instead.
+		say "[speech style of shopkeeper]'What's mine is yours!'[roman type][line break]" instead.
 
 [!<CarryOutPaying>+
 
@@ -58,8 +58,8 @@ Carry out paying:
 		repeat with J running through chosen jewellery:
 			only destroy J;
 		now Z is normal;
-		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say "[first custom style]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
-		otherwise say "[first custom style]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].".
+		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say "[speech style of shopkeeper]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
+		otherwise say "[speech style of shopkeeper]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].".
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 
 [!<ReportTakingStoreClothingWhileThePlayerIsInDungeon41AndDungeon41IsGuardedAndARandomShopkeeperIsNotMatingThePlayer>+
@@ -70,22 +70,22 @@ REQUIRES COMMENTING
 Report taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating:
 	let P be the price of the noun;
 	if the total wealth of the player < P:
-		if debugmode is 1, say "Total wealth: [Total wealth of the player]. Item cost: [P].";
-		say "[first custom style]'I'm sorry, you can't afford [if P - the total wealth of the player < 3]that. You're not far off, though. [otherwise]that. [end if]";
-		if diaper quest is 0, say "But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[first custom style] another method of... [']payment[']. No guarantees that it'll convince me, though.'";
+		if debuginfo > 1, say "[input-style]Total wealth: [Total wealth of the player]; Item cost: [P][roman type][line break]";
+		say "[speech style of shopkeeper]'I'm sorry, you can't afford [if P - the total wealth of the player < 3]that. You're not far off, though. [otherwise]that. [end if]";
+		if diaper quest is 0, say "But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[speech style of shopkeeper] another method of... [']payment[']. No guarantees that it'll convince me, though.'";
 		say "[roman type][line break]";
 	otherwise:
 		let jewellery be list of held plentiful currently perceivable accessories;
 		truncate jewellery to 8 entries;
 		let chosen jewellery be jewellery priced at P;
 		if the number of held plentiful currently perceivable accessories is 0:
-			say "[first custom style]'I'm sorry, you can't afford that. ";
-			if diaper quest is 0, say "But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[first custom style] another method of... [']payment[']. No guarantees that it'll convince me, though.'";
+			say "[speech style of shopkeeper]'I'm sorry, you can't afford that. ";
+			if diaper quest is 0, say "But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[speech style of shopkeeper] another method of... [']payment[']. No guarantees that it'll convince me, though.'";
 			say "[roman type][line break]";
 		otherwise if the number of entries of chosen jewellery is 0:
-			say "[first custom style]'Hmm, I'm having trouble working out how best you can afford that, my brain can't handle all those different possible combinations. Maybe try dropping a few items of jewellery then picking up the [noun] again?'[roman type][line break]";
+			say "[speech style of shopkeeper]'Hmm, I'm having trouble working out how best you can afford that, my brain can't handle all those different possible combinations. Maybe try dropping a few items of jewellery then picking up the [noun] again?'[roman type][line break]";
 		otherwise:
-			say "[first custom style]'That will cost you your [chosen jewellery][first custom style].'[roman type][line break]";
+			say "[speech style of shopkeeper]'That will cost you your [chosen jewellery][speech style of shopkeeper].'[roman type][line break]";
 			try paying.
 
 [!<DecideWhichNumberIsTheTotalValueOfJewellery>+

@@ -74,11 +74,11 @@ the presentable rules of face is usually the face presentable rules.
 REQUIRES COMMENTING
 
 +!]
-[This is the unable to speak to present rule:
+[This is the not able to speak to present rule:
 	if the player is not able to speak:
-		if auto is 0, say "You can't do that whilst unable to speak!";
+		if auto is 0, say "You can't do that whilst not able to speak!";
 		rule fails.
-The unable to speak to present rule is listed in the face presentable rules.]
+The not able to speak to present rule is listed in the face presentable rules.]
 
 [!<TheFaceOccupiedRule>+
 

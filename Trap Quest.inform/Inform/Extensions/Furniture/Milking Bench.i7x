@@ -86,6 +86,7 @@ To compute furniture resting on (M - a milking bench):
 		if M is in the location of the player:
 			say "The machine finally stops milking you.";
 			if the alert of the player is 0, say "[if the bimbo of the player < 11][line break][first custom style]I feel so much better![otherwise][line break][second custom style]I'm full of energy again. Yum![end if][roman type][line break]";
+		if the units collected of M > 0, progress quest of milking-quest;
 		let B be a random off-stage can;
 		if B is can and the units collected of M > 0:
 			now B is in the location of M;

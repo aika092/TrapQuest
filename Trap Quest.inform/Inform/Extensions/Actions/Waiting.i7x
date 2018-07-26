@@ -38,7 +38,7 @@ Check waiting:
 					say "[BigNameDesc of M]'s [manly-penis] twitches inside of you.";
 					ruin asshole;
 			if the sleep of M is 0:
-				say "[BigNameDesc of M] pulls out of you, and assuming that you are unconscious, and wanders off to search for other victims.";
+				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as his still semi-hard schlong breaks its airtight seal, and assuming that you are unconscious, and wanders off to search for other victims.";
 				bore M for 50 seconds;
 				regionally place M;
 		otherwise:
@@ -68,8 +68,11 @@ Report waiting:
 		if there is a worn demon codpiece, follow the demon junk punishment rule;
 	otherwise if the player is in Iron Maiden:
 		say "You stand completely still, helplessly stuck inside [one of]your claustrophobic metal prison[or]the tight sarcophagus[or]your tentacled cage[or]the miniature cell[in random order].";
+	otherwise if doll-stuck-num > 0:
+		say "You [doll-stuck], [BlushingPrettily].";
 	otherwise:
 		say "Time passes.".
+
 
 [!<SayCorrectWaitingFlavOfMonster>+
 

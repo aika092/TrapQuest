@@ -6,7 +6,7 @@ times-crafted is a number that varies.
 Crafting is an action applying to one thing.
 Check crafting:
 	if the noun is not carried, say "You need to be holding something to craft with it." instead;
-	if the player is not in Dungeon37, say "There isn't any alchemy equipment nearby." instead;
+	unless there is a crafting-table in the location of the player, say "There isn't any alchemy equipment nearby." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the player is immobile, say "You're kind of tied up at the moment." instead;
 	if the player is in danger, say "You can't do delicate alchemy right now, you have to defend yourself against the [random unfriendly interested monster in the location of the player]!" instead;
@@ -15,7 +15,7 @@ Check crafting:
 		if the doses of the noun is 0:
 			now seconds is 2;
 			say "You place the empty [noun] into the bowl. Nothing happens. Maybe if it actually had liquid in it..." instead;
-	if the charge of alchemist's table > 0:
+	unless there is a ready for alchemy crafting-table in the location of the player:
 		now seconds is 2;
 		say "Nothing happens. Maybe try again a bit later." instead;
 	if the noun is mass collectible, compute mass collectible reward of the noun instead;
@@ -34,7 +34,7 @@ Carry out crafting:
 	otherwise:
 		say "You place the [noun] into the bowl.";
 	let T be nothing;
-	if the crafting key of the noun > 0 and the charge of alchemist's table <= 0:
+	if the crafting key of the noun > 0 and there is a ready for alchemy crafting-table in the location of the player:
 		now current-crafting-key is the crafting key of the noun;
 		now current-alchemy-key is Product corresponding to an Ingredient of current-crafting-key in the Table of Alchemy;
 		now T is a random off-stage product-highlighted thing;
@@ -86,10 +86,6 @@ Definition: a thing (called T) is maybe-cursed:
 		if T is cursed, decide yes;
 	decide no.
 
-To reset alchemy charge:
-	now the charge of alchemist's table is 325 - (the intelligence of the player * 10);
-	if the craftskill of the player is 1, now the charge of alchemist's table is the charge of alchemist's table / 4;
-	say "The bowl stops glowing[one of] - maybe you will have to wait a while until the magic returns[or][stopping].".
 
 
 

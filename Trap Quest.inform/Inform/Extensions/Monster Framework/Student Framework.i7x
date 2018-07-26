@@ -8,7 +8,7 @@ Definition: a student (called M) is school dwelling:
 The printed name of student is "[if item described is in the location of the player][TQlink of item described][end if][input-style]student [student-name of item described][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". 
 
 To decide which number is the starting difficulty of (M - a student):
-	decide on 7.
+	decide on 6 + the current-rank of M.
 
 Definition: a student (called M) is blocker:
 	decide no.
@@ -172,7 +172,7 @@ To compute fleeing of (M - a student):
 		try M going A;
 	otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 		try M going A;
-	repeat with N running through staff members in the location of M:  [Students alert teachers if they have been hurt.]
+	repeat with N running through staff members in the location of M:[Students alert teachers if they have been hurt.]
 		now N is interested;
 		anger N.
 
@@ -249,7 +249,7 @@ To say WhoQuestion of (M - a student):
 	say "[variable custom style]'What's your name?'[roman type][line break]".
 
 To say WhereQuestion of (M - a student):
-	say "[variable custom style]'[if the rank of the player is 1]Where [one of]are we?'[or]am I?'[at random][otherwise]What's the best way to increase my rank?'[end if][roman type][line break]".
+	say "[variable custom style]'[if the rank of the player <= 1]Where [one of]are we?'[or]am I?'[at random][otherwise]What's the best way to increase my rank?'[end if][roman type][line break]".
 
 To say EscapeQuestion of (M - a student):
 	say "[variable custom style]'What stuff is there to find deeper in the school?'[roman type][line break]".
@@ -261,7 +261,7 @@ To say WhoAnswer of (M - a student):
 	say "[speech style of M]'My name is [student-name of M], at least until a teacher changes it!'[roman type][line break]".
 
 To say WhereAnswer of (M - a student):
-	say "[speech style of M]'[if the rank of the player is 1]We're in [slut school].'[otherwise]The better you are at being a good girl, the higher rank you'll be able to reach.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in [slut school].'[otherwise]The better you are at being a good girl, the higher rank you'll be able to reach.'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - a student):
 	say "[speech style of M]'I came to this school to learn to be a better [if diaper quest is 1]girl[otherwise]slut[end if]. What more do you need to know?'[roman type][line break]".

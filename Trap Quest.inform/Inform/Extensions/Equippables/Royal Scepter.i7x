@@ -50,7 +50,7 @@ To decide which number is the raw-masturbation-bonus of (E - a royal scepter):
 		decide on 1;
 	decide on -2.
 
-princess-consort is a thing that varies. princess-consort is the throne.[IDK if namedesc will work right]
+princess-consort is a thing that varies. princess-consort is the throne.[IDK if NameDesc will work right]
 
 This is the betrothal rule:[This only triggers when the player is fucked by a monster, for now.]
 	let S be a random royal scepter;

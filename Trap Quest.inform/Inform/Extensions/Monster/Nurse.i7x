@@ -40,6 +40,7 @@ Definition: nurse (called M) is dangerous:
 Definition: nurse (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if the noun is south and M is in School11, decide yes; [The nurse always blocks the entrance into the med bay if she is 'dangerous' - either you're fighting her or she's not willing to give you another 'boost'.]
 	let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
 	if R > the dexterity of the player, decide yes;
 	decide no.
 
@@ -122,7 +123,7 @@ To say WhoAnswer of (M - a nurse):
 	say "[speech style of M]'I'm the nurse! Glad to make your acquaintance, dear.'[roman type][line break]".
 
 To say WhereAnswer of (M - a nurse):
-	say "[speech style of M]'[if the rank of the player is 1]You[']re in the nurse's office sweetie. If you[']re not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I[']m not sure. Just do your best on your schoolwork and I[']m sure you[']ll be all ranked up in no time!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You[']re in the nurse's office sweetie. If you[']re not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I[']m not sure. Just do your best on your schoolwork and I[']m sure you[']ll be all ranked up in no time!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a nurse):
 	say "[speech style of M]'[one of]Mmm, I don[']t know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don[']t know too much about that.'[or]Sorry honey, but I don[']t know much about that. Maybe when you[']re all done here you should try increasing your rank?'[at random][roman type][line break]".
