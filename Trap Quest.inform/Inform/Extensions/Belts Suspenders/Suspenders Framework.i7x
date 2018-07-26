@@ -35,10 +35,12 @@ Report wearing stockings when there are worn suspenders:
 		say "The clips on your [printed name of S] snap onto the [noun] and refuse to let go!  Even worse, your stockings shrink a little, sealing themselves to your legs. It seems that they're cursed now...";
 		now the noun is cursed;
 		now S is sure;
+		compute summoned quest of the noun;
 	otherwise if S is not cursed and the noun is cursed:
 		say "The clips on your [printed name of S] snap onto the [noun] and refuse to let go!  Even worse, your suspenders seal themselves to your hips. It seems that they're cursed now...";
 		now S is cursed;
-		now S is sure.
+		now S is sure;
+		compute summoned quest of S.
 
 Report wearing suspenders when there are worn stockings:
 	let S be a random worn stockings;
@@ -46,10 +48,12 @@ Report wearing suspenders when there are worn stockings:
 		say "The clips on your [noun] snap onto the [printed name of S] and refuse to let go!  Even worse, your stockings shrink a little, sealing themselves to your legs. It seems that they're cursed now...";
 		now S is cursed;
 		now S is sure;
+		compute summoned quest of S;
 	otherwise if S is cursed and the noun is not cursed:
 		say "The clips on your [noun] snap onto the [printed name of S] and refuse to let go!  Even worse, your suspenders seal themselves to your hips. It seems that they're cursed now...";
 		now the noun is cursed;
-		now S is sure.
+		now S is sure;
+		compute summoned quest of the noun.
 
 Report wearing suspenders:
 	if the noun is unsure and the noun is cursed, say "You finish slipping your [printed name of the noun] onto your hips. As you let go you feel the clothing seal itself to your hips. These suspenders are cursed!".

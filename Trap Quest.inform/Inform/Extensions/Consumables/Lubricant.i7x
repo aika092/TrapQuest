@@ -62,6 +62,7 @@ Check orilubing something with:
 		if the noun is penetrating the second noun, try squirting the noun instead;
 		otherwise say "You need to put it in your [variable second noun] first." instead;
 	if the noun is make up kit, try brushing the noun with the second noun instead;
+	if the noun is powder and the second noun is clothing, try PowderRubbing the noun on the second noun instead;
 	if the noun is not lubricant, say "This verb is used for lubrication!" instead;
 	if the second noun is not an orifice:
 		if the second noun is hips, try orilubing the noun with asshole instead;

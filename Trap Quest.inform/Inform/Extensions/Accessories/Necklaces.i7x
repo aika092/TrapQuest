@@ -7,9 +7,6 @@ A neckwear is a kind of clothing. A neckwear is neck covering. A neckwear is met
 Definition: a neckwear (called C) is untransformable:
 	decide yes.
 
-[To set up magic state of (C - a neckwear):
-	do nothing. Redundant]
-
 There are 6 necklaces.
 
 To say ShortDesc of (C - a necklace):
@@ -35,10 +32,10 @@ To restock (C - a necklace):
 	let B be a random basic loot necklace;
 	if B is necklace, now B is in Standard Item Pen.
 
-This is the setup starting necklaces rule:
+[This is the setup starting necklaces rule:
 	let C be a random necklace;
 	restock C.
-The setup starting necklaces rule is listed in the setup starting items rules.
+The setup starting necklaces rule is listed in the setup starting items rules.]
 
 A submissive collar is a kind of neckwear.
 

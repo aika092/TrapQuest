@@ -72,6 +72,7 @@ choice
 1 [Trap Warning]
 0 [Save Game Limit]
 0 [Wonderfuller Clothing]
+0 [Previous supporter ID]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -363,6 +364,20 @@ Are there clothes on the Wonderfuller model?
 To decide which number is wonderfuller clothing:
 	if the player is not a march 2018 top donator, decide on 0;
 	decide on choice in row 37 of the Table of Settings.
+
+
+[!<DecideWhichNumberIsPreviousSupporterID>+
+
+Which was the previous supporter used? Because we want to avoid it next time
+
++!]	
+To decide which number is previous supporter ID:
+	decide on choice in row 38 of the Table of Settings.
+
+To record supporter ID as (N - a number):
+	now choice in row 38 of the Table of Settings is N;
+	write File of Preferences from the Table of Settings.
+
 
 
 [!<tableOfGameSettings:Table>*

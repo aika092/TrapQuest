@@ -288,7 +288,7 @@ This is the player can't kick with knees rule:
 	repeat with C running through worn knee-length or longer clothing:
 		if [C is hobble-skirted and ]C is crotch-in-place and C is not slitted:
 			if autoattack is 0:
-				say "You can't raise your knee like that whilst sporting a long skirt!";
+				say "You can't raise your knee like that whilst sporting a [if C is knee-length]tight knee length[otherwise]long[end if] skirt!";
 				now focused-thing is C;
 			if the player is upright and the player is in danger, now focused-thing is C; [This way the player can conveniently hike it]
 			rule fails.
@@ -362,7 +362,7 @@ Definition: a monster (called M) is too intimidating:
 	if M is uninterested or M is friendly, decide no;
 	if the health of M < the maxhealth of M, decide no;
 	let R be a random number between 10 and the delicateness of the player;
-	if debugmode is 1, say "Surrender check of [R] | [15 - (the difficulty of M / 8)].";
+	if debuginfo > 0, say "[input-style]automatic surrender check: player submission [one of](delicateness) [or][stopping]roll d[delicateness of the player - 9]+9 ([R]) | ([15 - (the difficulty of M / 8)].5) [ShortDesc of M] vulnerability[roman type][line break]";
 	if R > 15 - (the difficulty of M / 8), decide yes;
 	decide no.
 
@@ -382,7 +382,9 @@ To compute surrender to (M - a monster):
 	let N be a random intelligent dangerous monster in the location of the player;
 	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
 	now surrendered is 1;
-	try kneeling.
+	now auto is 1;
+	try kneeling;
+	now auto is 0.
 
 [!<SaySurrenderFlavOfMonster>+
 
@@ -438,6 +440,11 @@ A time based rule (this is the combat bonus rule):
 		now combat bonus remainder is 0;
 	if the player is breasts blinded, decrease N by 2;
 	now combat bonus is N.
+
+To say combat bonus explanation:
+	let N be combat bonus - combat bonus remainder;
+	if the player is breasts blinded, increase N by 2;
+	say "[if N >= 0]+[end if][N] (strength component) [if combat bonus remainder is 1]+1 (strength component fluctuation) [end if][if the player is breasts blinded]-2 (blinded by breasts) [end if]".
 
 
 [!<DecideWhichNumberIsTheDamageModifierOfThing>+
@@ -496,7 +503,7 @@ To say DamageReaction (N - a number) of (M - a monster):
 		say DamageReactTired of M;
 	otherwise if M is dominantSexReady:
 		say DamageReactSubmissive of M;
-		if newbie tips is 1, say "[one of][item style]Newbie tip: Looks like the monster is beginning to reconsider [his of M] options! If you'd rather not get rid of [him of M], try dominating them with 'dominate [M].'[roman type][line break][or][stopping]";
+		if newbie tips is 1, say "[one of][item style]Newbie tip: Looks like the [he of M] would rather fuck than fight! Maybe you can see if [he of M][']ll let you be on top with 'dominate [MediumDesc of M].'[roman type][line break][or][stopping]";
 	otherwise:
 		say DamageReactWeak of M.
 
@@ -550,6 +557,8 @@ REQUIRES COMMENTING
 *!]
 Attack-damage is a number that varies.
 
+damage-explained is a number that varies. [We output debug info]
+
 [!<DamageOnMonster>+
 
 REQUIRES COMMENTING
@@ -559,25 +568,39 @@ To damage (A - a number) on (M - a monster):
 	now seconds is 6;
 	[Roll for damage - essentially 2dX]
 	now attack-damage is (a random number between 1 and A) + (a random number between 1 and A);
-	if debugmode is 1, say "Rolled [attack-damage].";
+	if damage-explained > 0, say "[input-style]=> [if A < 1]RNG(A~1)[otherwise]2d[A][end if] = [attack-damage]; ";
 	now critical is 0;
+	let crit-said be 0;
 	[Held items have some damage bonus or reduction rules]
 	repeat with T running through worn clothing:
-		increase attack-damage by the damage modifier of T;
+		let N be the damage modifier of T;
+		if N is not 0:
+			increase attack-damage by N;
+			if damage-explained > 0, say "[if N >= 0]+[end if][N] ([if critical is 1 and crit-said is 0]CRITICAL HIT [end if]bonus from [ShortDesc of T]) ";
+			now crit-said is critical;
 	[Minimum damage is 1]
-	if attack-damage < 1, now attack-damage is 1;
+	if attack-damage < 1:
+		if damage-explained > 0, say "+[1 + (attack-damage * -1)] (minimum damage is 1) ";
+		now attack-damage is 1;
 	[Balancing attempt]
-	if a random number between -3 and 4 > attack-damage, increase attack-damage by 1;
+	if a random number between -3 and 4 > attack-damage:
+		increase attack-damage by 1;
+		if damage-explained > 0, say "+1 (random bonus for low damage hits) ";
 	[Specific Monsters can add or subtract damage]
-	increase attack-damage by the damage modifier of M;
+	let N be the damage modifier of M;
+	if N is not 0:
+		increase attack-damage by N;
+		if damage-explained > 0, say "[if N >= 0]+[end if][N] (damage [if N < 0]reduction[otherwise]amplification[end if] of [ShortDesc of M]) ";
 	[Damage calculation over, deal damage now.]	
+	if damage-explained > 0, say "[attack-damage] damage applied to [ShortDesc of M] results in [health of M] -> ";
 	decrease the health of M by attack-damage;
+	if damage-explained > 0, say "[the health of M] HP[roman type][line break]";
 	if the health of M > 0:
 		say "[Damage-flavour of attack-damage on M]";
-	otherwise:
+	otherwise if attack-damage > 0:
 		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster. Not relevant to the other clause but putting it here because why not.]
-	if debugmode is 1, say "After final monster and clothing specific changes, player deals [attack-damage] damage, [M] has [the health of M] HP left.";
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
+	if M is fairy, now the boredom of M is 0;[Should prevent exploit where you can infinitely kick the fairy to farm exercise points.]
 	anger M;
 	reset orifice selection of M;
 	now the boredom of M is 0;
@@ -586,20 +609,20 @@ To damage (A - a number) on (M - a monster):
 		compute damage of M;
 	otherwise if the health of M < 1: [This could happen if an allied NPC damages it this turn, but the player fails to do any damage.]
 		now the health of M is 1;
+		if damage-explained > 0, say "[input-style]HP set to 1 since NPCs are not allowed to get the last hit[roman type][line break]";
+	now damage-explained is 0;
 	[Check for weapons effects]
 	repeat with E running through worn equippables:
 		compute attack effect of E;
-	[Regardless of final attack used, wearing heels whilst defeating an enemy massively increases heel skill]
-	if there are worn heels, increase the heel time of the player by the difficulty of M * 5;
-	[Check for bonuses]
-	if the health of M < 1:
+	[Check for bonuses and remove dead NPCs]
+	if the health of M <= 0:
 		repeat with T running through worn clothing:
 			compute slaying bonus of T;
-	[If the player has killed something, let's remove it and potentially reward the player.]
-	if the health of M <= 0:
+		[Regardless of final attack used, wearing heels whilst defeating an enemy massively increases heel skill]
+		if there are worn heels, increase the heel time of the player by the difficulty of M * 5;
 		compute slaying bonus of M;
 		finally destroy M;
-		if the number of interested unfriendly monsters in the location of the player is 0 and side images is 1 and character-version is 0:
+		if the number of dangerous monsters in the location of the player is 0 and side images is 1 and character-version is 0:
 			now danaume-arms-victory is 1;
 			display character window.
 

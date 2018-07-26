@@ -135,6 +135,13 @@ To compute (M - a slutty sister) seeking (D - a direction):
 To compute fleeing of (M - a slutty sister):
 	do nothing.
 
+To compute room leaving of (M - a slutty sister): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
+	if M is in Hotel36:
+		finally destroy M;
+		say "BUG: slutty sister forced to leave room. Please report this to Aika with the following information:[line break]Current monster's turn: [current-monster][line break]Player's location: [location of the player][line break]NPC state: [unless M is interested]not [end if]interested; [unless the sleep of M > 0]not [end if]asleep[paragraph break]";
+	otherwise:
+		now M is in Hotel36.
+
 To compute sleep reduction of (M - a slutty sister):
 	if the sleep of M > 0:
 		decrease the sleep of M by seconds;

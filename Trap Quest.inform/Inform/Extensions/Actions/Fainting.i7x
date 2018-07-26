@@ -13,7 +13,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry Out AutoFainting:
-	say "[if the player is able to speak]Say[otherwise]Think[end if] the 'safe word' phrase?  This will make you lose your most valuable jewellery. [yesnolink] ";
+	say "[if the player is able to speak]Say[otherwise]Think[end if] the 'safe word' phrase? This will make you lose your most valuable jewellery. [yesnolink] ";
 	if the player consents:
 		now the fainting reason of the player is 50;
 		execute fainting.

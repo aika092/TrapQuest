@@ -29,7 +29,7 @@ To compute furniture resting on (F - med bay bed):
 			otherwise say "your boobs shake too, as if resonating with the device. ";
 			if artificial enhancements fetish is 1, BustImplantsUp 6;
 			otherwise BustUp 6;
-			say "[if the largeness of breasts > B and artificial enhancements fetish is 1]You now have [BreastDesc][otherwise]Your breasts feel noticeably bigger[end if]![line break][speech style of nurse]'Oh wow don't they look amazing? You must be very proud!'[roman type][line break]After that, the [nurse] unbuckles the straps holding you down and allows you to leave.";
+			say "[if the largeness of breasts > B and artificial enhancements fetish is 1]You now have [BreastDesc][otherwise]Your breasts feel noticeably bigger[end if]![line break][speech style of nurse]'Oh wow don't they look amazing? You must be very proud!'[roman type][line break]After that, [NameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
 		otherwise if the body soreness of the player > 0 or the player is tired:
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;
@@ -46,7 +46,7 @@ To compute furniture resting on (F - med bay bed):
 					anger nurse;
 					compute forcefeed of nurse;
 			otherwise:
-				say "[big he of nurse] lovingly massages your shoulders as you lie stuck there.[line break][speech style of nurse]'Does that feel good, [honey of nurse]?'[roman type][line break][one of]Actually, it[or]It[stopping] really does!  Within moments you feel rested and healed. The [nurse] unbuckles the straps holding you down and allows you to leave.";
+				say "[big he of nurse] lovingly massages your shoulders as you lie stuck there.[line break][speech style of nurse]'Does that feel good, [honey of nurse]?'[roman type][line break][one of]Actually, it[or]It[stopping] really does!  Within moments you feel rested and healed. [BigNameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
 		otherwise if the boost-cooldown of nurse <= 0:
 			say "[big he of nurse] opens a locked cabinet [one of]revealing an array of different coloured syringes[or]and peruses [his of nurse] different coloured syringes[stopping].[line break][speech style of nurse]'What to give you [one of]today[or]this time[stopping]...'[roman type][line break]";
 			let R be a random number between 1 and 3;
@@ -61,7 +61,7 @@ To compute furniture resting on (F - med bay bed):
 			otherwise:
 				say "But you also feel your loins tingle strongly and your eyes glaze over as a huge rush of sexual arousal floods through you...";
 				arouse 3500;
-			say "After that, the [nurse] unbuckles the straps holding you down and allows you to leave.";
+			say "After that, [NameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
 		otherwise:
 			compute normal rest of F;
 	dislodge F.

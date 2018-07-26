@@ -80,9 +80,9 @@ To compute player standing:
 	otherwise now W is W / 2;
 	if W > the strength of the player * 4, now W is the strength of the player * 4; [Any player of any weight should be able to stand up for at least 20 rounds]
 	if W > 0: [W > 0 is there because fatigue increases very slowly when the player is superlight]
-		if debugmode is 1, say "Fatigue [the fatigue of the player] -> ";
+		if debuginfo > 1, say "[input-style]Fatigue: weight ([W]); [the fatigue of the player] -> ";
 		FatigueUp W;
-		if debugmode is 1, say "[the fatigue of the player] | [the buckle threshold of the player].";
+		if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]";
 	otherwise:
 		unless the player is flying, FatigueUp 1; [It still increases though]
 	if diaper quest is 0 and the location of the player is Dungeon19:

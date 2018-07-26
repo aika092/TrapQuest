@@ -11,9 +11,9 @@ To decide which number is the oral sex addiction of the player: [For now, this i
 	if diaper quest is 1, decide on 0;
 	let S be the semen taste addiction of the player / 2;
 	[repeat with C running through worn wearthings:
-		increase S by the oral-sex-addiction-influence of C;
+		increase S by the oral-sex-addiction-influence of C;]
 	if S > 10, decide on 10;
-	if S < 1, decide on 1;]
+	if S < 1, decide on 1;
 	decide on S.
 
 [!<DecideWhichNumberIsTheOralSexAddictionInfluenceOfWearthing>+

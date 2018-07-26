@@ -267,7 +267,7 @@ To compute (M - hellhound) entering anally:
 To say VaginaPenetrationFlav of (M - hellhound):
 	say FuckholePenetrationFlav of M.
 
-To set up sex length of (M - a monster) in (B - a body part):
+To set up sex length of (M - hellhound) in (B - a body part):
 	if the sex-length of M < 5, now the sex-length of M is a random number between 3 and 4;
 	if the sex-length of M > 5, now the sex-length of M is 5.
 

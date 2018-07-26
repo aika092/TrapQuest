@@ -85,12 +85,12 @@ To compute broken sex of (M - a monster):
 	if broken-present-cooldown <= 0:
 		now auto is 1;
 		now B is a random actually presentable orifice;
-		now auto is 0;
 		if B is not face and face is actually presentable and M is male and the player is craving and M is willing to do oral, now B is face;
 		if the player is a butt slut and asshole is actually presentable and M is willing to do anal, now B is asshole;
 		if the player is a pussy slut and vagina is actually presentable and M is willing to do vaginal, now B is vagina;
 		if the player is a tit slut and M is male and M is willing to do titfucks and breasts are actually presentable, now B is breasts;
 		if the sensitivity of breasts > 7 and there is a worn nipple chain and M is male and M is willing to do titfucks, now B is breasts;
+		now auto is 0;
 	otherwise:
 		decrease broken-present-cooldown by seconds;
 	if B is body part and the sex addiction of the player > a random number between 12 and 18: [If B is nothing, this means there's no sex we can have right now.]

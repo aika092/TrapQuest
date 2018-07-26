@@ -5,7 +5,7 @@ An iron-maiden is a kind of trap. The printed name of iron-maiden is "[TQlink of
 To say ShortDesc of (T - an iron-maiden):
 	say "iron maiden".
 
-To say MediumDesc of (T - an iron-maiden):
+To say EnvironmentDesc of (T - an iron-maiden):
 	say "The two halves of the iron maiden trap are lying horizontally on the ground. ".
 
 To decide which number is the girth of (D - an iron-maiden):
@@ -36,6 +36,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, before falling open, clanging to the ground and allowing you back out in the open. [if the number of body parts penetrated by M > 1]But you're still being invaded! With effort, you squirm and wriggle, but feel the stretched-out tentacles resisting as the walls fall away. Finally, with some force, you manage to pull them out, freeing your orifices from their alien cock invasion. [otherwise if M is penetrating a body part]As the walls fall away, the tentacle is rather violently pulled out of your [random body part penetrated by M]. [end if][line break][variable custom style]Phew, I'm free![roman type][line break]";
 			now the player is in the location of M;
 			if M is penetrating face and (the stomach-semen of the player + the semen volume of belly > 0), PukeUp;
+			if M is penetrating a body part, progress quest of tentacle-quest;
 			dislodge M;
 		otherwise if diaper quest is 1:
 			say "The tentacles [one of]begin to push against your body all over, but putting particular pressure on your [BellyDesc][if there is a worn diaper] and diaper[end if]. They [or][stopping][one of]wiggle and squirm[or]continue to writhe around you[or]press into and tickle you[then at random], [if there is a worn diaper]stimulating you and [end if][one of]making it difficult to hold onto your bladder[if diaper lover >= 4] and bowels[end if][or]making your tummy gurgle[cycling]!";
@@ -99,7 +100,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 
 Report urinating when the player is in Iron Maiden:
 	unless there is a worn diaper:
-		say "You can't help but wish you were wearing a diaper - at least then you wouldn't be able to smell the stink of your own [urine] so strongly inside this tiny metal box!  You can't help but [if the delicateness of the player < 10]feel a bit more submissive[otherwise]cry a little[end if].";
+		say "[if diaper lover > 0]You can't help but wish you were wearing a diaper - at least then you wouldn't be able to smell the stink of your own [urine] so strongly inside this tiny metal box!  [end if]You can't help but [if the delicateness of the player < 10]feel a bit more submissive[otherwise]cry a little[end if].";
 		DiaperAddictUp 1;
 		DelicateUp 1.
 

@@ -109,7 +109,7 @@ To StomachSemenUp (X - a number):
 	while X > 0:
 		increase the stomach-semen of the player by 1;
 		decrease X by 1;
-	if there is a male monster penetrating face or there is a neuter monster penetrating face and the latex-transformation of the player < 5, PukeUp;
+	if (there is a male monster penetrating face or there is a neuter monster penetrating face or gloryhole is penetrating face) and the latex-transformation of the player < 5, PukeUp;
 	if there is a worn tethering lipstick collar, end tethering.
 
 [!<StomachSemenDownX>+
@@ -181,7 +181,8 @@ To PukeUp:
 			bless C;
 	otherwise:
 		say "[BigNameDesc of M] being down your throat makes you gag, and as it pulls out you puke up the [semen] from your belly.";
-		PukeUp a random number between 1 and (the stomach-semen of the player + the semen volume of belly).
+		PukeUp a random number between 1 and (the stomach-semen of the player + the semen volume of belly);
+	progress quest of cum-swallowing-quest.
 
 [!<PukeUpX>+
 

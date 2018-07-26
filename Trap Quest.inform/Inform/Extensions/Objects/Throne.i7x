@@ -10,8 +10,11 @@ To say ThroneDesc:
 		if images visible is 1, display figure of potty throne;
 		say "A pink chair cheaply fashioned into a princess theme, with the words 'Lil Lady' below a black bow on the backrest. A hole in the middle of the seat contains a potty.".
 
-To say ShortDesc of (T - a throne):
-	say "A pink [TQlink of throne]throne[TQxlink of throne][verb-desc of throne] is sitting proudly at the west end of the room. ".
+To say EnvironmentDesc of (T - throne):
+	say "A pink [throne] is sitting proudly at the west end of the room. ".
+
+To say ShortDesc of (T - throne):
+	say "throne".
 
 [!<YourselfIsThroneStuck>+
 
@@ -54,18 +57,35 @@ Check entering the throne:
 	if the charge of the throne <= 0:
 		now the charge of the throne is 300;
 		let R be a random number from 1 to 6;
-		if there is worn headgear, increase R by 1;
-		if the class of the player is princess, increase R by 1;
-		if R is 2 and asshole is actually occupied, now R is 3;
-		if R < 3 and (the latex-transformation of the player > 3 or the noun is transformed), now R is 3;
+		let R-old be R;
+		if debuginfo > 0, say "[input-style]Throne roll: d6 ([R]) ";
+		if there is worn headgear:
+			increase R by 1;
+		if debuginfo > 0, say "+ headgear bonus ([if there is worn headgear]1[otherwise]0[end if]) ";
+		if the class of the player is princess:
+			increase R by 1;
+		if debuginfo > 0, say "+ Princess bonus ([if the class of the player is princess]1[otherwise]0[end if]) ";
+		if R is 2 and asshole is actually occupied:
+			now R is 3;
+			if debuginfo > 0, say "+ plugged bonus (1) ";
+		if R < 3 and (the latex-transformation of the player > 3 or the noun is transformed):
+			if debuginfo > 0, say "+ transformed bonus ([3 - R]) ";
+			now R is 3;
 		if first-throne is 0:
 			now first-throne is 1;
-			if tough-shit is 0, now R is a random number between 4 and 6;
+			if tough-shit is 0:
+				now R is a random number between 4 and 6;
+				now R-old is R;
+				if debuginfo > 0, say "; FIRST TIME REROLL d3+3 ([R]) ";
+		if debuginfo > 0:
+			if diaper quest is 0, say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2) Tentacle Trap; 3) [if the class of the player is princess]Guard dream[otherwise]Body expansion[end if]; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Hair reduction; 8) Humiliation reduction[roman type][line break]";
+			otherwise say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2-3) Potty; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Humiliation reduction[roman type][line break]";
 		if R is 1:
 			let H be a random tiara;
 			summon H cursed;
 			say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the player is an adult baby or the player is a sissy))):
+			if debuginfo > 0 and diaper quest is 0, say "[input-style]Player is a bab - Potty override![roman type][line break]";
 			if the noun is transformed:
 				let K be a random worn knickers;
 				if rectum > 3:
@@ -96,7 +116,7 @@ Check entering the throne:
 			now busy is 1;
 			say "Two tentacle-like binds wrap around your thighs and hold your legs in place.[paragraph break][if the bimbo of the player < 13][line break][first custom style]Oh shit.[otherwise][line break][second custom style]Ooh, what now?[end if][line break][roman type][line break]A dildo shoots up from a hidden hole in the seat of the throne!  ";
 			let A be a random number between 12 and 22;
-			if debugmode is 1, say "[line break]Player [the defence of the player].5 | [A] Throne[line break]";
+			if debuginfo > 0, say "[input-style]Throne dildo attack check: d11+11 ([A]) | ([the anal defence of the player].5) anal defence[roman type][line break]";
 			if A > the anal defence of the player:
 				say "The dildo shoots up from the hole in the seat of the throne!  ";
 				if the player is ass protected:
@@ -195,14 +215,15 @@ Check pulling the throne:
 	if the throne is not untriggered, say "You've already escaped from the tentacles!" instead;
 	if the bimbo of the player > 14:
 		now seconds is 6;
+		if debuginfo > 0, say "[input-style]Binds rip check: bimbo ([bimbo of the player]) > 14; automatic failure[roman type][line break]";
 		say "You're enjoying the sensation in your belly too much to fight against it." instead;
 	now seconds is 6;
 	let T be the TrapNo of the throne;
 	let S be the strength of the player;
 	let B be the turns of the throne;
-	let X be a random number from 0 to S;
+	let X be a random number from 1 to S;
 	increase X by B;
-	if debugmode is 1, say "Player [X] | 12.5 Throne.";
+	if debuginfo > 0, say "[input-style]Binds rip check: strength d[S + 0] ([X - B]) + turns ([B + 0]) = [X] | (12.5) throne binds toughness[roman type][line break]";
 	if X < 13:
 		say "You struggle to break the bonds of the tentacles[if B > 3] with increasing urgency[end if], but you can't break free!" instead;
 	otherwise:
@@ -226,7 +247,7 @@ A time based rule (this is the compute throne rule):
 	if the throne is triggered:
 		if the player is throne stuck and the throne is not filling asshole:
 			let A be a random number between 12 and 22;
-			if debugmode is 1, say "[line break]Player [the defence of the player].5 | [A] Throne[line break]";
+			if debuginfo > 0, say "[input-style]Throne dildo attack check: d11+11 ([A]) | ([the anal defence of the player].5) anal defence[roman type][line break]";
 			if A > the anal defence of the player:
 				say "The dildo shoots up from the hole in the seat of the throne for another attempt!  ";
 				if the player is ass protected:

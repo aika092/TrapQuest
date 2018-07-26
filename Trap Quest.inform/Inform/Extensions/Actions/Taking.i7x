@@ -16,7 +16,7 @@ Check taking something:
 	if the player is wrist bound and there is a worn heels and the player is upright:
 		let X be the trip hazard of the player;
 		let D be a random number between 0 and 17; [NB dexterity is NOT used here, only when dealing with monsters and traps.]
-		if debugmode is 1, say "Walking attempt: Player ([D].5 | [X] Heels)[line break]";
+		if debuginfo > 0, say "[input-style]Heels + wrist bondage balance check: Always d18 ([D + 1]) | ([X].5) situational difficulty level[roman type][line break]";
 		if D < X:
 			say "As you try to bend over, you slip and fall!";
 			now seconds is 1;

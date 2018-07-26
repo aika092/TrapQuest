@@ -2,6 +2,12 @@ Hole In Wall Trap by Traps begins here.
 
 hole-in-wall is a trap. The printed name of hole-in-wall is "[TQlink of item described]hole[TQxlink of item described][verb-desc of item described]". The description of hole-in-wall is "There is a medium sized hole in one wall a couple feet above the ground. [if the times-stuck of item described is 0]You can see a shiny golden ring sparkling in the darkness through the hole. [end if]You would struggle to crawl through but it might be possible.". hole-in-wall is sticky. Understand "hole", "hole in", "wall" as hole-in-wall. The text-shortcut of hole-in-wall is "hiw". hole-in-wall has a number called times-stuck.
 
+This is the holeinwall prevents standing rule:
+	if the player is in HoleInWall:
+		if auto is 0, say "You're stuck halfway in a hole, there's no way you can stand up!";
+		rule fails.
+The holeinwall prevents standing rule is listed in the ability to stand rules.
+
 Definition: hole-in-wall (called M) is father material:
 	decide yes.
 
@@ -11,8 +17,11 @@ To say StickyTriggerFlav of (T - hole-in-wall):
 To say unique-verb-desc of (T - hole-in-wall):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]enter[close bracket][as]enter [text-shortcut of T][end link]".
 
+To say EnvironmentDesc of (T - hole-in-wall):
+	say "There is a medium sized [printed name of T] in one wall a couple feet above the ground[if there is a solid gold ring in HoleInWall]. You can see a shiny golden ring sparkling in the darkness through the hole[end if]. ".
+
 To say ShortDesc of (T - hole-in-wall):
-	say "There is a medium sized [printed name of T] in one wall a couple feet above the ground[if there is a solid gold ring in HoleInWall]. You can see a shiny golden ring sparkling in the darkness through the hole[end if].".
+	say "hole in the wall".
 
 To say SuddenPregTitle of (M - hole-in-wall):
 	say "anonymous man".

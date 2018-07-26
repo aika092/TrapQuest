@@ -75,6 +75,7 @@ Carry Out ItemListing:
 		if there is a held sanity token, say "[random held sanity token] (x[number of held sanity tokens]) "; [Even if there are 10 held we only want to write it once]
 		if there is a held fabric token, say "[random held fabric token] (x[number of held fabric tokens]) "; [Even if there are 10 held we only want to write it once]
 		if there is a held defiance token, say "[random held defiance token] (x[number of held defiance tokens]) "; [Even if there are 10 held we only want to write it once]
+		say "[line break]";
 	if there are carried uncatalogued clothing:
 		say "[bold type]Unworn clothing:[roman type][line break]";
 		repeat with T running through carried uncatalogued clothing:
@@ -189,6 +190,28 @@ Carry Out FoodListing:
 		repeat with T running through held uncatalogued pink pill:
 			say "[T][line break]";
 			now T is catalogued;
+	now inventory-busy is 0;
+	now disambiguation-busy is false.
+
+LootListing is an action applying to nothing. Understand "loot", "list loot", "collectibles", "list collectibles", "items", "list items" as LootListing.
+
+[!<CarryOutLootListing>+
+
+REQUIRES COMMENTING
+
++!]
+Carry Out LootListing:
+	reset entire catalogue;
+	if inventory hyperlinks is 0, now disambiguation-busy is true; [disables hyperlinks until set to false]
+	now inventory-busy is 1;
+	repeat with T running through held uncatalogued collectibles:
+		unless T is TQedible:
+			unless T is mass collectible, say "[T][line break]";
+			now T is catalogued;
+	if there is a held sanity token, say "[random held sanity token] (x[number of held sanity tokens]) "; [Even if there are 10 held we only want to write it once]
+	if there is a held fabric token, say "[random held fabric token] (x[number of held fabric tokens]) "; [Even if there are 10 held we only want to write it once]
+	if there is a held defiance token, say "[random held defiance token] (x[number of held defiance tokens]) "; [Even if there are 10 held we only want to write it once]
+	say "[line break]";
 	now inventory-busy is 0;
 	now disambiguation-busy is false.
 

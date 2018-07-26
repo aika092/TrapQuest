@@ -23,6 +23,7 @@ title	subtable	description	toggle
 "Big Black Cocks - 2 points ([if interracial fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	interracial fetish toggle rule
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - 6 points ([if mythical creature fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	mythical creature fetish toggle rule
 "Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if tentacle fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	tentacle fetish toggle rule
+"Alcohol - 2 points ([if the player is not a july 2018 top donator and the player is not a july 2018 diaper donator]alpha testers only for now![otherwise if alcohol fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if TG fetish is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	TG fetish toggle rule
 [DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. But them above this row instead.]
 
@@ -238,6 +239,16 @@ This is the tentacle fetish toggle rule:
 This is the tentacle nightmare rule:
 	now choice in row 61 of the Table of Player Options is 1.
 The tentacle nightmare rule is listed in the nightmare mode rules.
+
+
+
+This is the alcohol fetish toggle rule:
+	if alcohol fetish is 0, now choice in row 69 of the Table of Player Options is 1;
+	otherwise now choice in row 69 of the Table of Player Options is 0.
+	
+This is the alcohol nightmare rule:
+	now choice in row 69 of the Table of Player Options is 1.
+The alcohol nightmare rule is listed in the nightmare mode rules.
 
 Fetish Options ends here.
 

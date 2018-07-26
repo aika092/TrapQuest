@@ -9,7 +9,7 @@ Definition: eat-your-heart-out tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - eat-your-heart-out tattoo):
 	if images visible is 1, display figure of eat-your-heart-out tattoo;
-	say "An anatomically correct heart is tattoed over your asshole, with the words 'EAT YOUR HEART OUT' surrounding it in black ink. It seems to attract attention to your [asshole] but also makes you feel more dominant.".
+	say "An anatomically correct heart is tattooed over your asshole, with the words 'EAT YOUR HEART OUT' surrounding it in black ink. It seems to attract attention to your [asshole] but also makes you feel more dominant.".
 
 To decide which number is the delicateness-influence of (T - eat-your-heart-out tattoo):
 	decide on -2.

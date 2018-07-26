@@ -34,14 +34,14 @@ To say WhoAnswer of (M - student-stacey):
 	say "[big he of M] checks [his of M] armband.[line break][speech style of M]'Oh yeah I remember now, it's [student-name of M]!  *giggle*'[roman type][line break]".
 
 To say WhereAnswer of (M - student-stacey):
-	say "[speech style of M]'[if the rank of the player is 1]We're back at school. This is where dumb girls like us end up!'[otherwise]Ooh, there are ranks?  I just thought these arm-thingies were to help us remember our names!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're back at school. This is where dumb girls like us end up!'[otherwise]Ooh, there are ranks?  I just thought these arm-thingies were to help us remember our names!'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - an student-stacey):
 	say "[speech style of M]'[if the current-rank of M is 1]I've heard a rumour that the smarterest girls let guys stick it up their butt. But I'm a bit scared to try...'[otherwise]When you suck on a [manly-penis], if you do it for long enough then some [tasty] juice comes out!  And the more of that you drink, the more smarterer you get!  So I try to get as much of it as possible.'[end if][roman type][line break]".
 
 Part - Holly
 
-student-holly is a ditzy student.
+student-holly is a ditzy student. Understand "holly", "honey" as student-holly.
 
 The text-shortcut of student-holly is "stho".
 
@@ -62,6 +62,9 @@ To update name of (M - student-holly):
 	otherwise:
 		now the student-name of M is "Honey";
 		now the student-print of M is "mouthful".
+
+To say WhoAnswer of (M - student-holly):
+	say "[speech style of M]'OHMYGOD it's a really long story, wow, I'm not really sure if I want to get into that right now because telling you all that would just take SO. LONG. I mean people are always telling me my life story is really long, and I'm like [']Oh my god, it's not even my fault if you don't want to pay attention. Rude,['] and then I'm like [']Story time!['] and then I tell them my life story, and its actually super long. I was talking to Andrew the other day, and...wait, do you know Andrew? [one of]You don't know Andrew. Ok, Andrew was Linda's BEST FRIEND in college. They went to the bathroom together all the time! I think Andrew is probably gay because he was always in different clothes after he came out of the bathroom with Linda, and I was like [']OHMYGOD, you really need someone to watch you when you're changing clothes? Are you gay? WOW!['] Ok, you know Andrew.[or]I told you already. He's the gay guy that always did Linda's makeup when they were in the bathroom together, but to be honest he wasn't very good at it because her mascara was always runny and stuff, and her lipstick was smeared, like, everywhere. Ok, you know Andrew.[stopping] Anyway, Andrew told me he had this super long thing to show me and I was like [']WOW, that sounds super long['], and then he took out his [manly-penis] and I was like, [']That's really long,['] and then he got a boner and I was like [']UM, do I look like a man to you?['] I hate Andrew. Anyway, my name is [student-name of M]!  *giggle*'[roman type][line break]".
 
 To say StoryAnswer of (M - student-holly):
 	say "[speech style of M]'OHMYGOD so like this guy I know well I don't KNOW know him but you know I know him, told me this girl called Sarah, you know Sarah?  You don't know Sarah. Sarah's like this girl I know. Sarah knows this place right, where I would totally fit in!  That's what Dave told me. Dave is the guy who knows Sarah, you know. You know Dave?  You don't know Dave. Dave is this guy I know. But not like KNOW know. So Dave says Sarah says that Linda once went to this place that I'd really fit in. You know Linda?  Come on, you must know Linda. Anyway, Linda knows Sarah, you know?  So, like I said, Sarah knew about this place. Well I guess she still knows. I doubt she's forgotten she knows. Ha ha!  And now I know. So once I knew about it, I knew it was like, the place for me. And now I'm here I KNOW know it's the place for me. I just know I know, you know?'[roman type][line break]".
@@ -102,24 +105,75 @@ To update name of (M - student-jill):
 		now the student-print of M is "bubbly [if diaper quest is 1]babygirl[otherwise]babe[end if]".
 
 To say StoryAnswer of (M - student-jill):
-	say "[speech style of M]'Can you believe I used to be stressed all the time?  Work, bills, responsibilities... it was all getting to me!  But then I met Daddy and soon I realised I didn't need to worry any more. I'm so thankful for having someone to make all the important scary decisions for me, so I've come here to learn how to make him happier and be the best [if diaper quest is 1]babygirl[otherwise]big-titted sugar-baby[end if] I can be!'[roman type][line break]".
+	say "[speech style of M]'Can you believe I used to be stressed all the time? Work, bills, responsibilities... it was all getting to me!  But then I met Daddy and soon I realised I didn't need to worry any more. I'm so thankful for having someone to make all the important scary decisions for me, so I've come here to learn how to make him happier and be the best [if diaper quest is 1]babygirl[otherwise]big-titted sugar-baby[end if] I can be!'[roman type][line break]".
+
+Part - Bree
+
+student-bree is a tq-only ditzy student.
+
+The text-shortcut of student-bree is "stbr".
+
+Figure of bree is the file "NPCs/School/Student/student24.png".
+
+To decide which figure-name is the monster-image of (M - student-bree):
+	decide on figure of bree.
+
+To say MonsterDesc of (M - student-bree):
+	say "This very well-tanned woman looks very fake. Her long bleach blonde hair frames a fully made-up face with long fake eye-lashes and full, pouty dicksucking lips[if artificial enhancements fetish is 1] that have almost certainly had some cosmetic enhancement to become quite so thick and pillowy[end if]. [if the current-rank of M > 2][big his of M][otherwise][big he of M] looks slightly shy about the fact that [his of M][end if] huge D cup boobs are completely bare, the heavily bronzed skin rendering [his of M] nipples almost completely camoflagued. [big his of M] only item of clothing is a very skimpy pink thongkini covering her loins, decorated with a few lines of pearly beads, one of which has the large pearl letters 'S', 'E', 'X' and 'Y' hanging from it. [big his of M] face seems permanently fixed into a sexy pout, regardless of how [he of M] actually feels inside.".
+
+The min-rank of student-bree is 2.
+The current-rank of student-bree is 3.
+The max-rank of student-bree is 4.
+
+To update name of (M - student-bree):
+	if the current-rank of M is 2:
+		now the student-name of M is "Brenda";
+	otherwise if the current-rank of M is 3:
+		now the student-name of M is "Bree";
+	otherwise:
+		now the student-name of M is "Brandy";
+	now the student-print of M is "blonde bimbo".
+
+To say FirstResponse of (M - student-bree):
+	say "[speech style of M]'Hello there, darling.'[roman type][line break]".
+
+To say RepeatResponse of (M - student-bree):
+	say "[speech style of M]'Hello again, darling.'[roman type][line break]".
+
+To say WhoAnswer of (M - student-bree):
+	say "[speech style of M]'My name's [student-name of M], darling.'[roman type][line break]".
+
+To say WhereAnswer of (M - student-bree):
+	say "[speech style of M]'[if the rank of the player <= 1]This is [slut school], darling, welcome!'[otherwise]Oh darling, can't you tell what gets all the praise and glory around these parts?'[end if][roman type][line break]".
+
+To say EscapeAnswer of (M - student-bree):
+	say "[speech style of M]'[if the current-rank of M > the rank of the player]Oh darling, there are so many [manly-penis]s to suck! And so little time!'[otherwise]Oh darling, I bet there are even more [manly-penis]s! And even bigger ones too!'[end if][roman type][line break]".
+
+To say AdviceAnswer of (M - student-bree):
+	say "[speech style of M]'Darling, you need to [if breasts are lewdly exposed]get those big ol['] titties of yours some more attention! And get a few more [manly-penis]s up in between them...'[otherwise if the largeness of breasts > 3]get your tits out! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and yours aren't?'[otherwise]get a real rack! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and you don't even have any?'[end if][roman type][line break]".
+
+To compute teaching of (M - student-bree):
+	say "[speech style of M]'Oh darling, I'm as dumb as a doormat. The only thing I can teach is how to be airheaded!'[roman type][line break]".
+
+To say StoryAnswer of (M - student-bree):
+	say "[speech style of M]'Oh darling, how long do you have? My story begins with my first [manly-penis], it was Brian from maths class, [if TG fetish is 1]or wait, was *I* Brian? And then there was that thing involving that witch... and a curse... my memory is going all fuzzy... huh? What were we talking about?'[roman type][line break][otherwise]and as soon as I got my lips around that thick, juicy shaft of his I was completely addicted, oh [NameBimbo] darling it was just so incredibly dreamy, you have no idea, and the cum... oh the cum! Ahhhh...'[roman type][line break][BigNameDesc of M] seems to dift off into a daydream.[end if]".
 
 
 Part - Default Conversation
 
-To say WhoAnswer of (M - an ditzy student):
+To say WhoAnswer of (M - a ditzy student):
 	say "[speech style of M]'They call me [student-name of M]!  *giggle*'[roman type][line break]".
 
-To say WhereAnswer of (M - an ditzy student):
-	say "[speech style of M]'[if the rank of the player is 1]Um, we're in [slut school], it's like the best place ever!'[otherwise]You've just gotta, like, do what they say, and then just totally be a bit better than the others.'[end if][roman type][line break]".
+To say WhereAnswer of (M - a ditzy student):
+	say "[speech style of M]'[if the rank of the player <= 1]Um, we're in [slut school], it's like the best place ever!'[otherwise]You've just gotta, like, do what they say, and then just totally be a bit better than the others.'[end if][roman type][line break]".
 
-To say EscapeAnswer of (M - an ditzy student):
+To say EscapeAnswer of (M - a ditzy student):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]You know what's funny?  I literally can't even remember!  Ha ha!'[otherwise]Dunno but I bet it's totally rad!'[end if][roman type][line break]".
 
-To say AdviceAnswer of (M - an ditzy student):
+To say AdviceAnswer of (M - a ditzy student):
 	say "[speech style of M]'Just [if diaper quest is 1]chill out[otherwise]stay loose[end if] and let it happen, that's always worked for me!'[roman type][line break]".
 
-To compute teaching of (M - an ditzy student):
+To compute teaching of (M - a ditzy student):
 	say "[speech style of M]'Um no, do I look smart to you?!'[roman type][line break]".
 
 Students Ditzy ends here.

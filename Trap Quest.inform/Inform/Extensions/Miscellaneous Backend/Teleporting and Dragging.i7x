@@ -3,6 +3,11 @@ Teleporting and Dragging by Miscellaneous Backend begins here.
 monster-dragging is a number that varies.
 
 To teleport to (R - a room):
+	if doll-stuck-num > 0:
+		let T be a random dildo trap penetrating a fuckhole;
+		say "The [printed name of T] is ripped free from you. Owww!";
+		BodyRuin 1;
+		dislodge T;
 	repeat with C running through stuck clothing worn by the player:
 		say "Your [printed name of C] is ripped from your body by the force of the [if monster-dragging is 0]portal[otherwise]pull[end if], and destroyed. ";
 		destroy C;

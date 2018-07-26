@@ -7,7 +7,7 @@ Definition: a hundred percent cunt tattoo (called A) is drawable:
 	if TG fetish is 0 and the player is male, decide no;
 	decide yes.
 Definition: a hundred percent cunt tattoo (called T) is eligible:	
-	if the noun is not manly clothing and the noun is knickers or the noun is trousers, decide yes;
+	if the noun is not manly clothing and (the noun is knickers or the noun is trousers), decide yes;
 	decide no.
 To say tattoo-desc of (T - a hundred percent cunt tattoo):
 	if images visible is 1, display figure of hundred percent cunt tattoo;

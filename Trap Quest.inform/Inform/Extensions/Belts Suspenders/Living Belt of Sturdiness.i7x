@@ -36,9 +36,6 @@ To decide which number is the girth of (I - the living belt of sturdiness):
 To decide which number is the initial outrage of (C - living belt of sturdiness):
 	decide on 16.
 
-To set up magic state of (C - living belt of sturdiness):
-	do nothing.
-
 To uniquely set up (C - living belt of sturdiness):
 	now the buildup of C is 0.
 

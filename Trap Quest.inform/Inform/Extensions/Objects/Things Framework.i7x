@@ -48,8 +48,9 @@ Include Altars by Objects.
 Include Lake Monster by Objects.
 Include Slimegirl by Objects.
 Include Sacred Pool by Objects.
+Include Hot Tub by Objects.
 Include Pink Wardrobe by Objects.
-Include Alchemist's Table by Objects.
+Include Crafting Table by Objects.
 Include Podium by Objects.
 Include Well by Objects.
 Include Dungeon Statue by Objects.

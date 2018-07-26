@@ -8,8 +8,8 @@ Definition: djinn (called M) is father material:
 Definition: djinn (called M) is dark skinned:
 	decide yes.
 
-Definition: djinn (called M) is woods dwelling:
-	decide yes.
+[Definition: djinn (called M) is woods dwelling:
+	decide yes.] [He shouldn't be able to respawn]
 
 Definition: djinn (called M) is raunchy:
 	decide yes.
@@ -42,7 +42,7 @@ To decide which number is the girth of (M - djinn):
 	decide on 5.
 
 This is the spawn initial djinn rule:
-	if djinn is off-stage:
+	if djinn is off-stage and the wishes of a random magic lamp <= 0:
 		summon djinn in the woods.
 The spawn initial djinn rule is listed in the setting up woods monsters rules.
 
@@ -78,7 +78,7 @@ Part 2 - Perception
 
 To decide which number is the outrage tolerance of (M - a djinn): [What number of outrage they are unimpressed and lose favour.]
 	if diaper quest is 1, decide on 6;
-	decide on 10.
+	decide on 9.
 
 To calm (M - djinn):
 	if the favour of M <= the aggro limit of M and the wish history of M is 2: [the only way the djinn becomes friendly again is if you sucked his cock]
@@ -98,7 +98,7 @@ To compute appearance assessment of (M - djinn):
 				compute djinn messing of M;
 			if the appearance of the player > the outrage tolerance of M:
 				if diaper quest is 0, say "[speech style of M]'[one of]The fates tempt me! You are looking mighty appealing right now...'[or]Goodness gracious! Now that is quite the sight! Do you know what I usually do with humans I see that look like you?'[in random order][roman type][line break]";
-				otherwise say "[speech style of M]'[one of]Wow, now that's probably a bit too far! You should try and make your appearance less obscene before you offend my eyes further...'[or]Goodness gracious! Now that is quite the sight! Do you know what I usually do with humans I see that look like you?'[in random order][roman type][line break]";
+				otherwise say "[speech style of M]'[one of]Wow, now that's probably a bit too far! You should try and make your appearance less obscene before you offend my eyes further...'[or]Goodness gracious! Now that is quite the sight! Do you know what I usually do with humans I see who look like you?'[in random order][roman type][line break]";
 				FavourDown M;
 			if M is unfriendly:
 				if diaper quest is 0, say "You and [NameDesc of M] both glance down and notice that [his of M] [manly-penis] is quickly getting larger and harder.[line break][speech style of M]'[one of]You've caused this, so you're going to have to take responsibility for it.'[or]Well, you know what this means...'[stopping][roman type][line break]";
@@ -148,8 +148,8 @@ To compute DQ perception of (M - djinn):
 		compute appearance assessment of M.
 
 To decide which number is the bimbo tolerance of (M - djinn):
-	if interracial fetish is 1, decide on 11;
-	decide on 14.
+	if interracial fetish is 1, decide on 13;
+	decide on 16.
 
 
 Part 3 - Djinn Wishing
@@ -560,7 +560,6 @@ To say StrikingFailureFlav of (M - djinn) on (B - a body part):
 To compute tripping attack of (M - djinn):
 	say "[BigNameDesc of M] uses a mystical force to try and pick you up off the ground!";
 	let D be the tripping roll of M;
-	if debugmode is 1, say "Player [dexterity of the player] | [D].5 djinn[line break]";
 	if D >= the dexterity of the player and M is not-blinded:
 		say "[MonsterTrippedFlav of M]";
 		try kneeling;

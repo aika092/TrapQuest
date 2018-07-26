@@ -226,11 +226,13 @@ This is the witch summons cursed clothing rule:
 			now the heel-height of H is 3;
 			now H is posture training;
 			now the raw-magic-modifier of H is -1;
+			compute summoned quest of H;
 		otherwise if C is actually summonable:
 			say "[one of][BigNameDesc of M] points at your [BellyDesc], balling up her hands and dropping them to her sides. You feel the air forced out of your lungs as a tight corset materialises around your waist.[or][BigNameDesc of M] points at your [BellyDesc], balling up her hands and dropping them to her sides. You gasp as air is forced out of your lungs by the tight corset that appears around your waist.[or][BigNameDesc of M] points at your [BellyDesc], balling up her hands and dropping them to her sides. Air is forced out of your lungs as a tight corset materialises around your waist.[or][BigNameDesc of M] points at your [BellyDesc], balling up her hands and dropping them to her sides. Air is forcefully ejected from your lungs as a tight corset materialises around your waist.[in random order]";
 			summon C cursed;
 			now C is posture training;
 			now the raw-magic-modifier of C is -1;
+			compute summoned quest of C;
 		otherwise if G is actually summonable:[TODO: update for opengags]
 			if G is opengag:
 				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as she uncurls her fingers. [big he of M] smirks as a [printed name of G] materializes in your mouth.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as she uncurls her fingers. A rigid [printed name of G] attaches itself to your face as [he of M] finishes her spell.[at random][line break][variable custom style]'UUOAAH!?!'[roman type][line break]";

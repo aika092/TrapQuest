@@ -7,10 +7,21 @@ REQUIRES COMMENTING
 
 +@!]
 To compute cursed drinking (X - a bottle):
+	compute default cursed drinking X.
+
+
+To compute default cursed drinking (X - a bottle):
 	if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
 	otherwise say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping]";
-	let R be a random number from 1 to 7;
-	if the fill-type of X is lowest-cursed, now R is 8;
+	let R be a random number from 1 to (7 + alcohol fetish);
+	if the fill-type of X is lowest-cursed, now R is 9;
+	if debuginfo > 0:
+		if R is 9:
+			say "[input-style]Normal cursed drink roll: Overridden; [fill-colour of X] is arousal drink[roman type][line break]";
+		otherwise if diaper quest is 0:
+			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) Hair + 1; 3) Dex - 1; 4) Strength - 1; 5) Penis - 1 / Breasts + 2; 6) Hips + 2; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
+		otherwise:
+			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) Hair + 1; 3) Dex - 1; 4) Strength - 1; 5-6) Penis - 1 / Arousal + 2000; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
 	if R is 1:
 		let S be the raw sex addiction of the player;
 		SexAddictUp 1;
@@ -48,6 +59,13 @@ To compute cursed drinking (X - a bottle):
 		DexDown 1;
 		IntDown 1;
 	if R is 8:
+		if alcohol fetish is 0:
+			now R is 9;
+		otherwise:
+			say "It tastes extremely alcoholic! It's like you just drank a double-shot of vodka. All your abilities are dimmed until you sober up.";
+			increase alcohol level;
+			increase alcohol level;
+	if R is 9:
 		say "Your crotch feels all tingly!";
 		arouse 2000.
 
@@ -86,6 +104,7 @@ To compute drinking (X - a bottle):
 			compute cursed drinking X;
 			if (the fill-type of X < lowest-cursed or the fill-type of X > highest-cursed) and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1:
 				now the curse-ID of X is sure; [We know this potion is good so the vessel must be cursed!]
+		progress quest of curse-drinking-quest from the fill-type of X;
 	otherwise:
 		if the fill-type of X < lowest-cursed and the stomach of the player > stomach-max and the stomach-water of the player > 2 and a random number between 1 and the stomach of the player > overfull-quotient:
 			say "With your stomach so full, you to fail to properly appreciate the taste, and the effects are wasted.";
@@ -246,7 +265,8 @@ To compute drinking effect (N - 20):
 		say "A slimy feel, and a bitter salty taste. [if the semen taste addiction of the player < 6]Yuck!  Your worst fears are confirmed, you just drank someone's [semen]![otherwise if the semen taste addiction of the player < 10]Holy shit, this drink is someone's [semen]![otherwise if the semen taste addiction of the player < 13]Oh, looks like you're drinking someone's [semen]!  It's actually quite tasty though.[otherwise]Oh yay, it's your favourite drink, some unknown stud's [semen]![end if]";
 	otherwise:
 		say "A slimy feel, and a bitter salty taste. Yep, that's some more [semen], [if the semen taste addiction of the player < 6]yuck![otherwise if the semen taste addiction of the player < 10]how naughty.[otherwise if the semen taste addiction of the player < 13]not bad.[otherwise]your favourite drink![end if]";
-	StomachSemenUp 1.
+	StomachSemenUp 1;
+	progress quest of creampie-drinking-quest.
 
 [!<ComputeDrinkingEffect21>+
 
@@ -260,7 +280,8 @@ To compute drinking effect (N - 21):
 	otherwise:
 		say "You close your eyes and drink the [if the urine taste addiction of the player > 11]tasty [end if][urine]. [if the urine taste addiction of the player < 7]You shudder with shame and disgust.[otherwise if the urine taste addiction of the player < 13]You catch yourself licking your lips afterwards![otherwise]You lick your lips with glee.[end if]";
 	humiliate 175;
-	UrineTasteAddictUp 1.
+	UrineTasteAddictUp 1;
+	progress quest of piss-drinking-quest.
 
 [!<ComputeDrinkingEffect22>+
 
@@ -274,7 +295,8 @@ To compute drinking effect (N - 22):
 		say "Another healthy gulp of [milk]. Yum!";
 	increase the fat-burning of the player by 250;
 	if the noun is blessed, increase the fat-burning of the player by 200;
-	MilkTasteAddictUp 1.
+	MilkTasteAddictUp 1;
+	progress quest of milk-drinking-quest.
 
 [!<ComputeDrinkingEffect23>+
 

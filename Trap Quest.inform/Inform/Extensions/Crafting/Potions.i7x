@@ -167,6 +167,8 @@ Carry out quaffing space mead:
 	StomachUp 4;
 	humiliate 500;
 	say "You feel more full, but somehow it also feels as though a vast emptiness has eaten away at your sense of self.";
+	increase alcohol level;
+	increase alcohol level.
 	
 
 

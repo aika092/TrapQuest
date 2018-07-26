@@ -3,8 +3,11 @@ Paddle Trap by Traps begins here.
 
 A paddle trap is a kind of trap. There are 10 swing paddle traps. The description of paddle trap is "A small but heavy wooden paddle with a long plank and hinge that attaches it to the roof.".
 
-To say ShortDesc of (T - a paddle trap):
+To say EnvironmentDesc of (T - a paddle trap):
 	say "A wooden spanking paddle hangs down from the ceiling. ".
+
+To say ShortDesc of (T - a paddle trap):
+	say "spanking paddle trap".
 
 To trigger (Y - a paddle trap):
 	now Y is not untriggered;

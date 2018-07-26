@@ -10,7 +10,7 @@ Carry out rubbing a magic lamp:
 	say "You rub the lamp. ";
 	if the wishes of the noun > 0:
 		let M be a random off-stage djinn;
-		say "The djinn appears!  [line break][first custom style]'You again. [if the wishes of the noun is 3]You'll be pleased to hear that since you are my new owner, you get three wishes whenever you want. You could use all three in a row to gain lots of strength, or maybe you want to save them to allow me to help you escape when you're in trouble. Really, it's up to you[otherwise if the wishes of the noun is 2]You have two wishes left. Speak your will and then leave me to my misery[otherwise]This is your final wish. Better make it count[end if].'[roman type][line break]";
+		say "The djinn appears! [line break][first custom style]'You again. [if the wishes of the noun is 3]You'll be pleased to hear that since you are my new owner, you get three wishes whenever you want. You could use all three in a row to gain lots of strength, or maybe you want to save them to allow me to help you escape when you're in trouble. Really, it's up to you[otherwise if the wishes of the noun is 2]You have two wishes left. Speak your will and then leave me to my misery[otherwise]This is your final wish. Better make it count[end if].'[roman type][line break]";
 		compute djinn wishing of M;
 	otherwise:
 		say "Nothing happens.". [###Selkie: Might it be fun to punish them with a bad wish result? "Ha! Exceeding your wish limit means [i]I[/i] get to choose the wish to grant on you!"]

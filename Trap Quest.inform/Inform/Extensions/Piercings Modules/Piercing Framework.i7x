@@ -24,9 +24,6 @@ To say PiercingFlav of (P - a piercing):
 Definition: a piercing (called C) is too boring:
 	decide no.
 
-To set up magic state of (C - a piercing):
-	do nothing.
-
 Definition: a piercing (called C) is untransformable:
 	decide yes.
 

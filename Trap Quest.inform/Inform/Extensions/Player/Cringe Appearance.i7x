@@ -87,13 +87,16 @@ REQUIRES COMMENTING
 +!]
 To decide which number is cumulative-cringe-level:
 	let A be appearance-cringe-level;
-	let O be A / 2;
+	let A2 be (A * 2) / 3;
+	let O be A2;
 	repeat with C running through worn currently at least partially visible wearthings:
-		if the cringe of C > O, increase O by 1;
+		if the cringe of C > A2, increase O by 1;
 	repeat with C running through body parts:
-		if the cringe of C > O, increase O by 1;
-	if O > A, decide on A; [wearing twenty cringe 2 items shouldn't be cringe 20 overall]
-	if appearance-explained is 1, say "(cumulative outrage level is [O]) ";
+		if the cringe of C > A2, increase O by 1;
+	if O > A:
+		if appearance-explained is 1, say "(cumulative cringe level is [A]) ";
+		decide on A; [wearing twenty cringe 2 items shouldn't be cringe 20 overall]
+	if appearance-explained is 1, say "(cumulative cringe level is [O]) ";
 	if O > 20, decide on 20;
 	decide on O.
 

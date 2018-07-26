@@ -23,7 +23,7 @@ To compute furniture resting on (F - modification machine):
 		say "[bold type]A robotic contraption you hadn't noticed with a large sucker on the end shoots down over your crotch![roman type]  You can't see what's happening but feel your insides behind your crotch twisting and turning and rearranging themselves[if the size of penis > 0], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]!  The sucker pulls back allowing you to realise that a brand new woman's [variable custom style][vagina][roman type] has taken its place. ";
 		SexChange the player;
 	otherwise if artificial enhancements fetish is 1 and a random number between 20 and 30 < player-enhancement and the player is not wearing a module and the player is the donator:
-		say "A recording begins to play a tinny female voice as you settle into the chair. [line break][second custom style]'Hello TESTER [NameBimbo]! You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D! If you consent, you will be credited $50000 towards your winnings. Do you agree to participate, TESTER [NameBimbo]?'[roman type][line break]";
+		say "A recording begins to play a tinny female voice as you settle into the chair. [line break][second custom style]'Hello TESTER [NameBimbo]! You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D! If you consent, you will be credited $50000 towards your winnings. Do you agree to participate, TESTER [NameBimbo]?'[roman type] [yesnolink]";
 		if the player consents:
 			let M be a random module;
 			say "[ModuleFlav of M]";
@@ -45,9 +45,13 @@ To compute furniture resting on (F - modification machine):
 		otherwise:
 			say "You feel smarter!";
 			IntUp 1;
-	otherwise if artificial enhancements fetish is 1 and the player is not top heavy and a random number between 1 and 3 > 1:
-		say "Two robotic arms with needles head straight for your [BreastDesc]!  You are completely unable to move as they pierce your flesh and begin pumping what has to be [if the silicone volume of breasts > 0]even more [end if]silicone into your chest. You watch in [horror] as they swell considerably in size.";
-		BustImplantsUp 3 + (3 * extreme proportions fetish);
+	otherwise if artificial enhancements fetish is 1 and (the player is not top heavy or the player is not bottom heavy) and a random number between 1 and 3 > 1:
+		if the player is top heavy or (the total volume of hips < the largeness of breasts and the player is not bottom heavy):
+			say "Two robotic arms with needles head straight for your butt cheeks! You are completely unable to move as they pierce your flesh and begin pumping what has to be [if the silicone volume of hips > 0]even more [end if]silicone into your rump. You watch in [horror] as both buttocks swell considerably in size.";
+			AssImplantsUp 2 + (2 * extreme proportions fetish);
+		otherwise:
+			say "Two robotic arms with needles head straight for your [BreastDesc]! You are completely unable to move as they pierce your flesh and begin pumping what has to be [if the silicone volume of breasts > 0]even more [end if]silicone into your chest. You watch in [horror] as they swell considerably in size.";
+			BustImplantsUp 3 + (3 * extreme proportions fetish);
 	otherwise if diaper quest is 1:
 		compute F babifying;
 	otherwise:

@@ -171,6 +171,10 @@ Definition: a clothing (called C) is knee-length or shorter:
 	if C is skirted and C is not hobble-skirted, decide yes;
 	decide no.
 
+Definition: a clothing (called C) is short or shorter:
+	if C is knee-length or longer, decide no;
+	decide yes.
+
 To NeedleDelicateUp:
 	if a random number between the delicateness of the player and 10 < 9, DelicateUp 1.
 

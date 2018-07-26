@@ -126,7 +126,7 @@ The autopush hypno rule is listed in the hypno triggers rules.
 
 This is the autospread hypno rule:
 	if hypno-trigger is "pussy" and hypno-trigger-pussy is 1 and the player is female and vagina is not lewdly exposed:
-		say "[bold type]Having heard the word 'pussy', you find you automatically start trying to get your [vagina] on display.[roman type][line break]";
+		say "[bold type]Having heard the word 'pussy', you find yourself automatically trying to get your [vagina] on display.[roman type][line break]";
 		repeat with C running through worn potentially at least partially vagina covering skirted clothing: [We do skirted first to try and make sure that the order makes sense]
 			if C is displacable:
 				say "You pull up your [ShortDesc of C]!";

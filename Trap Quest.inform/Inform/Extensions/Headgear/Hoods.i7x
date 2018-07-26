@@ -117,11 +117,8 @@ To compute class outfit of (H - a white hood):
 		summon B cursed;
 		now the raw-magic-modifier of B is 0;
 		if toilet-summoned < 2, now toilet-summoned is 2;
-	otherwise if P is actually summonable or (P is knickers and toilet-summoned < 3):
+	otherwise if P is actually summonable or (P is knickers and toilet-summoned < 3 and asshole is not actually occupied and vagina is not actually occupied):
 		if toilet-summoned < 3:
-			repeat with K running through worn sex toy:
-				say "Your [K] vanishes!";
-				destroy K;
 			repeat with K running through worn knickers:
 				say "Your [K] vanishes!";
 				destroy K;

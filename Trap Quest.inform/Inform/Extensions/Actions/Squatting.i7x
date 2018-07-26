@@ -42,13 +42,13 @@ Check squatting:
 			if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 			otherwise say "[variable custom style]I can't bring myself to do that when I don't know who could be watching![roman type][line break]" instead;
 	if the player is ass protected:
-		let P be a random bottom level protection clothing worn by the player;
+		let P be a random worn bottom level ass protection clothing;
 		if P is not cursed:
 			say "Do you really want to push the contents of your belly out into your [printed name of P]? [yesnolink] ";
 			if the player consents, say "";
 			otherwise say "Then you should probably [if P is displacable][bold type]displace[roman type] it[otherwise]get it out of the way[end if] first." instead;
 	if the player is able to use a toilet and the location of the player is toilets:
-		say "Did you mean to use the toilet?";
+		say "Did you mean to use the toilet? [yesnolink]";
 		if the player consents:
 			now seconds is 6;
 			compute toilet use instead;

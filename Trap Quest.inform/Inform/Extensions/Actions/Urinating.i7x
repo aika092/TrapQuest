@@ -102,7 +102,7 @@ Check urinating:
 				otherwise:
 					if P is pants pee refusal inducing and (debugmode is 0 or the player is not a september 2017 top donator), do nothing instead;
 	if the player is prone and the location of the player is bathroom and delayed urination is 0:
-		say "Do you really want to try to pee on the floor here? [yesnolink] ";
+		say "Do you really want to try to pee on the floor here, while kneeling? [yesnolink] ";
 		if the player consents:
 			if (the delicateness of the player < 4 or (the humiliation of the player < HUMILIATION-MODEST + 3000 and there is an intelligent monster in the location of the player)):
 				if debugmode > 0 and the player is a september 2017 top donator, say "If debugmode was disabled, the player would refuse to pee.";
@@ -145,7 +145,29 @@ To compute toilet use:
 	otherwise say "You ";
 	say "sit on the nearby toilet [if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2]above [NameDesc of woman-barbara][']s ring-gagged face [end if]and release your hold on your bladder.";
 	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied:
-		say "With an embarrassing sound, you excavate your bowels too[if the diaper addiction of the player < 10 and the bimbo of the player < 10]. [line break][variable custom style]Well I'm glad that's taken care of.[roman type][line break][otherwise].[end if]";
+		say "With an embarrassing sound, you evacuate your bowels too. ";
+		if the large egg count of belly > 0:
+			let X be the large egg count of belly;
+			say "Your [asshole] is stretched obscenely by the giant egg[if X > 1]s[end if]!";
+			let E be a random large egg;
+			now E is penetrating asshole; [For size calculations]
+			ruin asshole times X;
+			now E is not penetrating asshole;
+		otherwise if the medium egg count of belly > 0:
+			let X be the medium egg count of belly;
+			say "Your [asshole] is stretched wide by the uncomfortably large egg[if X > 1]s[end if]!";
+			let E be a random medium egg;
+			now E is penetrating asshole; [For size calculations]
+			ruin asshole times X;
+			now E is not penetrating asshole;
+		otherwise if the small egg count of belly > 0:
+			let X be the small egg count of belly;
+			say "Your [asshole] is stimulated as the small egg[if X > 1]s come[otherwise] comes[end if] popping out!";
+			let E be a random small egg;
+			now E is penetrating asshole; [For size calculations]
+			ruin asshole times X;
+			now E is not penetrating asshole;
+		say "[if the diaper addiction of the player < 10 and the bimbo of the player < 10][line break][variable custom style]Well I'm glad that's taken care of.[roman type][line break][otherwise][line break][end if]";
 		reset rectum;
 		now the water volume of belly is 0;
 		now the semen volume of belly is 0;
@@ -160,6 +182,7 @@ To compute toilet use:
 	if incontinence > 0:
 		decrease incontinence by 1;
 		say "You feel as if you've regained some control over your bladder[if diaper lover >= 3] and bowels[end if]!";
+	progress quest of careful-peeing-quest;
 	check barbara toilet.
 
 [!<ComputeUrinalUse>+
@@ -176,7 +199,8 @@ To compute urinal use:
 		compute toilet reaction of M;
 	if incontinence > 0:
 		decrease incontinence by 1;
-		say "You feel as if you've regained some control over your bladder[if diaper lover >= 3] and bowels[end if]!".
+		say "You feel as if you've regained some control over your bladder[if diaper lover >= 3] and bowels[end if]!";
+	progress quest of careful-peeing-quest.
 
 [!<ComputeToiletReactionOfMonster>+
 
@@ -237,6 +261,7 @@ To start urination:
 			if incontinence > 0:
 				decrease incontinence by 1;
 				say "You feel as if you've regained some control over your bladder!";
+			progress quest of careful-peeing-quest;
 			say "[PeeReaction 0]";
 		otherwise if resting is 1 and there is a hotel bed in the location of the player:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] soaks into the sheets and mattress.";
@@ -718,7 +743,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PeeReaction (N - 3):
-	let M be a random monster penetrating a body part;
+	let M be a random awake monster penetrating a body part;
 	let K be a random worn bottom level pee protection clothing;
 	if M is monster:
 		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go into your [K] right in front of [NameDesc of M].";

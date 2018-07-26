@@ -22,14 +22,19 @@ Closing your eyes you can feel another shiver run though you. Taking a deep brea
 	let B be a random off-stage plentiful bracelet;
 	if the charge of podium > 0 or the class of the player is princess or the class of the player is royal slave or the number of alive royal guards is 0:
 		now the charge of the podium is 500;
+		if debuginfo > 0, say "[input-style]Stage roll: guard scene not possible ([if the number of alive royal guards is 0]no alive guards[otherwise if the charge of podium > 0]stage already used recently[otherwise if the class of the player is princess]princess can't be sold[otherwise]royal slave can't be sold[end if]); so gold bracelet not available.[roman type][line break]";
 		say "[if (the sex addiction of the player < 10 and diaper quest is 0) or (the diaper addiction of the player < 10 and diaper quest is 1)]You realise you're actually getting aroused by the thought!  You push the bizarre fantasy to the back of your mind, and[otherwise]Your imagination runs wild!  You feel a bit more aroused from the experience. You[end if] get down from the stage." instead;
 	otherwise if a random number between 1 and 3 > 1 and B is bracelet and the number of on-stage solid gold bracelets is 0:
+		if debuginfo > 0, say "[input-style]Stage roll: d3 ([a random number between 2 and 3] / (1.5) bracelet[roman type][line break]";
 		now B is solid gold;
 		set shortcut of B;
 		now B is in the location of the player;
 		say "[if (the sex addiction of the player < 10 and diaper quest is 0) or (the diaper addiction of the player < 10 and diaper quest is 1)]You realise you're actually getting aroused by the thought!  You push the bizarre fantasy to the back of your mind, and[otherwise]Your imagination runs wild!  You feel a bit more aroused from the experience. You[end if] open your eyes. Looking down you see that a shiny [printed name of B] has fallen down to the ground behind the stage. It looks valuable!  Maybe it was stealthily dropped by a slave who didn't want it becoming the property of her new master...";
 		compute autotaking B;
 	otherwise:
+		if debuginfo > 0:
+			if B is bracelet and the number of on-stage solid gold bracelets is 0, say "[input-style]Stage roll: d3 ([a random number between 2 and 3] | (1.5) bracelet[roman type][line break]";
+			otherwise say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); guard scene selected automatically.[roman type][line break]";
 		let M be a random alive royal guard;
 		anger M;
 		now M is interested;

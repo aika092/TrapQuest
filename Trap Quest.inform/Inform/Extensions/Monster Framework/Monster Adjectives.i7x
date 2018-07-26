@@ -61,7 +61,7 @@ Definition: a monster (called M) is school dwelling:
 Definition: a monster (called M) is raunchy:
 	decide no.
 A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around?  (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
-A monster can be strangers, survived or triumphant. A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
+A monster can be strangers, survived or triumphant (this is the monster-history property). A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
 [The following variables are used for deciding what body parts can be automatically presented to a monster.]
 Definition: a monster (called M) is willing to do vaginal:
 	if M is male, decide yes;

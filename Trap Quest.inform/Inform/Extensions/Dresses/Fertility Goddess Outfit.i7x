@@ -64,7 +64,7 @@ Part 3 - Living Tentacles
 
 A living tentacles is a kind of fertility outfit. A living tentacles is usually biological. A living tentacles is usually fully exposing. A living tentacles is usually belly exposing. A living tentacles is usually unskirted. A living tentacles is usually bottom-exclusive. There is 1 living tentacles. 
 
-Living tentacles has a number called charge. The charge of living tentacles is usually 0.
+Living tentacles has a number called charge. The charge of living tentacles is usually 0. The text-shortcut of living tentacles is "lvtl".
 
 The printed name of living tentacles is usually "[TQlink of item described][clothing-title-before]living tentacles[clothing-title-after][TQxlink of item described][verb-desc of item described]".
 

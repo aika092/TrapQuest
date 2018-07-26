@@ -175,8 +175,10 @@ Calls sayFurnitureRestingDesc, increments seconds by 6, calls UniqueFurnitureSor
 To compute soreness refresh of (F - a furniture):
 	say  "[RestingDesc of F]";
 	now seconds is 6;
+	if debuginfo > 0, say "[input-style]Body damage [body soreness of the player] -> ";
 	compute unique soreness effect of F;
 	BodyHeal 1;
+	if debuginfo > 0, say "[body soreness of the player][roman type][line break]";
 	compute normal effect of F.
 
 [!<computeUniqueFurnitureSorenessEffect>+

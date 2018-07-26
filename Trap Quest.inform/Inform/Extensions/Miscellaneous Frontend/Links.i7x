@@ -61,7 +61,7 @@ REQUIRES COMMENTING
 
 +!]
 To say verb-desc of (T - a thing):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][if T is ingredient and T is carried and the player is in the location of the alchemist's table and the charge of the alchemist's table <= 0] [link][bracket]craft[close bracket][as]put [text-shortcut of T] in bowl[end link][end if][if the player is in Hotel16 and T is portable and T is not person] [link][bracket]chute[close bracket][as]put [text-shortcut of T] in chute[end link][end if][if T is portable and (T is not worn or T is not cursed clothing) and the number of interested intelligent monsters in the location of the player is 1 and the bartering value of T for a random interested intelligent monster in the location of the player > 0] [link][bracket]offer[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random interested intelligent monster in the location of the player][end link][end if][if T is portable and T is held and there is an open pink wardrobe in the location of the player and (T is not worn or T is not cursed)] [link][bracket]wardrobe[close bracket][as]put [text-shortcut of T] in pink wardrobe[end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][if (T is ingredient or T is mass collectible) and T is carried and there is a ready for alchemy crafting table in the location of the player] [link][bracket]craft[close bracket][as]put [text-shortcut of T] in bowl[end link][end if][if the player is in Hotel16 and T is portable and T is not person] [link][bracket]chute[close bracket][as]put [text-shortcut of T] in chute[end link][end if][if T is portable and (T is not worn or T is not cursed clothing) and the number of interested intelligent monsters in the location of the player is 1 and the bartering value of T for a random interested intelligent monster in the location of the player > 0] [link][bracket]offer[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random interested intelligent monster in the location of the player][end link][end if][if T is portable and T is held and there is an open pink wardrobe in the location of the player and (T is not worn or T is not cursed)] [link][bracket]wardrobe[close bracket][as]put [text-shortcut of T] in pink wardrobe[end link][end if]".
 
 [!<SayUniqueVerbDescOfThing>+
 
@@ -117,7 +117,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - a clothing):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is held and T is not piercing and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if T is worn and T is not piercing and (T is not cursed or newbie tips is 1)] [link][bracket]r[close bracket][as]rm [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]we[close bracket][as]we [text-shortcut of T][end link][end if][displacelinks of T][if the player is in Dungeon28 or the player is in Tutorial05] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Woods30 and T is not worn and T is dirty and the giant-statue is active] [link][bracket]statue[close bracket][as]place [text-shortcut of T] in front of statue[end link][end if][if the player is in Dungeon33 and T is not worn and T is dirty and the summoning-circle is active] [link][bracket]circle[close bracket][as]throw [text-shortcut of T] in circle[end link][end if][if the player is in Hotel19 and T is worn and the charge of a random knife <= 0] [link][bracket]cut[close bracket][as]cut [text-shortcut of T] with knife[end link][end if][if (the player is in Dungeon35 or the player is in Woods05) and T is carried and T is dirty] [link][bracket]wash[close bracket][as]wash [text-shortcut of T] in water[end link][end if][wipelinks of T][if there is glue in the location of the player and the stickiness of the player > 0] [link][bracket]scrub glue[close bracket][as]rub glue on [text-shortcut of T][end link][end if][if T is diaper and the urine-soak of T + the mess of T > 0 and there is an alive friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is held and T is not piercing and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if T is worn and T is not piercing and (T is not cursed or newbie tips is 1)] [link][bracket]r[close bracket][as]rm [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]we[close bracket][as]we [text-shortcut of T][end link][end if][displacelinks of T][if the player is in Dungeon28 or the player is in Tutorial05] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Woods30 and T is not worn and T is dirty and the giant-statue is active] [link][bracket]statue[close bracket][as]place [text-shortcut of T] in front of statue[end link][end if][if the player is in Dungeon33 and T is not worn and T is dirty and the summoning-circle is active] [link][bracket]circle[close bracket][as]throw [text-shortcut of T] in circle[end link][end if][if the player is in Hotel19 and T is worn and the charge of a random knife <= 0] [link][bracket]cut[close bracket][as]cut [text-shortcut of T] with knife[end link][end if][if (the player is in Dungeon35 or the player is in Woods05 or the player is in Hotel19 or the player is in Mansion25 or the player is in School21) and T is carried and T is dirty] [link][bracket]wash[close bracket][as]wash [text-shortcut of T] in water[end link][end if][wipelinks of T][if there is glue in the location of the player and the stickiness of the player > 0] [link][bracket]scrub glue[close bracket][as]rub glue on [text-shortcut of T][end link][end if][if T is diaper and the urine-soak of T + the mess of T > 0 and there is an alive friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if]".
 
 [!<SayDisplaceLinksOfClothing>+
 
@@ -170,7 +170,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - a vessel):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if the doses of T > 0] [link][bracket]dri[close bracket][as]dr [text-shortcut of T][end link][end if][if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if there is a dispenser in the location of the player] [link][bracket]dip[close bracket][as]dip [text-shortcut of T][end link][end if][if the doses of T > 0 and there is a carried squirt dildo and T is not squirt dildo] [link][bracket]decant[close bracket][as]decant [text-shortcut of T] into squirt dildo[end link][end if][if the doses of T > 0 and the fill-type of T >= 20 and there is a friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if][if the doses of T > 0 and waitress bunny ears is worn and there is a friendly human intelligent monster in the location of the player] [link][bracket]serve[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random friendly human intelligent monster in the location of the player][end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if the doses of T > 0] [link][bracket]dri[close bracket][as]dr [text-shortcut of T][end link][end if][if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if there is a dispenser in the location of the player] [link][bracket]dip[close bracket][as]dip [text-shortcut of T][end link][end if][if the doses of T > 0 and there is a carried squirt dildo and T is not squirt dildo] [link][bracket]decant[close bracket][as]decant [text-shortcut of T] into squirt dildo[end link][end if][if the doses of T > 0 and the fill-type of T >= 20 and there is a friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if][if the doses of T > 0 and ((the class of the player is bunny and bunny waitress ears is worn) or serving table is worn) and there is a friendly human intelligent monster in the location of the player] [link][bracket]serve[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random friendly human intelligent monster in the location of the player][end link][end if]".
 
 [!<SayUniqueVerbDescOfSquirtDildo>+
 
@@ -240,7 +240,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - a dildo trap):
-	if inline hyperlinks >= 2, say "[if T is penetrating a fuckhole] [link][bracket]jump[close bracket][as]jump[end link][end if]".
+	if inline hyperlinks >= 2 and T is penetrating a fuckhole, say " [link][bracket]jump[close bracket][as]jump[end link][if doll-stuck-num > 0] [link][bracket]submit[close bracket][as]submit[end link][end if]".
 
 [!<SayUniqueVerbDescOfBabyBouncer>+
 
@@ -591,9 +591,9 @@ To compute options:
 		if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][if the player is in School34][link]long wait[end link][otherwise][link]wait[end link][end if] ";
 		unless the player is immobile, say "[if west is N-viable][link]west[end link] [end if][if north is N-viable][link]north[end link] [end if][if south is N-viable][link]south[end link] [end if][if east is N-viable][link]east[end link] [end if][if the room up of the location is a room][link]up[end link] [end if][if the room down of the location is a room][link]down[end link] [end if]";
 		if the player is prone and there is a worn pink spraybottle and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
-		if the player is in Dungeon35 or the player is in Woods05:
-			if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0), say "[link]wash in water[end link] ";
-		say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0][link]wank[end link] [end if][if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
+		if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
+			if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]wash in water[end link] ";
+		say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and (the player is female or the size of penis > 0)][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
 		if inline hyperlinks >= 3 and the player is not immobile:
 			say "[line break]";
 			if diaper quest is 0:
@@ -626,7 +626,7 @@ To compute options:
 								say "[C] ";
 								now C is catalogued;
 					now summoning is 0;
-				otherwise if there is an interested monster in the location of the player and the player is prone:
+				otherwise if there is a monster in the location of the player and the player is prone:
 					now auto is 1;
 					repeat with P running through actually presentable body parts:
 						say "[link]present [P][end link] ";
@@ -665,7 +665,7 @@ To compute options:
 					repeat with F running through worn top-displaced clothing:
 						if F is not catalogued, say "[F] ";
 						now F is catalogued;
-				if the player is in the location of the alchemist's table and the charge of the alchemist's table <= 0:
+				if there is a ready for alchemy crafting table in the location of the player:
 					say "[link]list craftables[end link] ";
 				if the player is in the location of the dungeon altar and the charge of the dungeon altar < 100:
 					say "[link]list blessables[end link] [link]lie on altar[end link] ";
@@ -674,18 +674,25 @@ To compute options:
 						if the urine-soak of F + the mess of F > 0:
 							if F is not catalogued, say "[F] ";
 							now F is catalogued;
+					repeat with F running through held vessels:
+						if F is non-empty and the fill-type of F >= 20:
+							if F is not catalogued, say "[F] ";
+							now F is catalogued;
+				if the player is in Hotel16:
+					say "[link]list clothing[end link] [link]list loot[end link] ";
 			if the player is glue stuck and the player is not immobile, say "[link]scrub glue[end link] ";
 			if there is held lubricant and (the soreness of asshole > 3 and asshole is not actually occupied) or (the soreness of vagina > 3 and vagina is not actually occupied):
 				unless there is a held catalogued lubricant, say "[printed name of a random held lubricant] ";
 				now a random held lubricant is catalogued;
-			if the player is in the location of the woods altar or the player is in the location of WoodsScenery04:
+			if (the player is in the location of the woods altar and (the altar-uses of witch > 0 or the curse-quest of witch >= 3 or witch is not in the location of the player or witch is unfriendly)) or the player is in the location of WoodsScenery04:
 				repeat with F running through held plentiful accessories:
 					if F is not catalogued, say "[F] ";
 					now F is catalogued;
 			if there is an interested mechanic in the location of the player:
-				repeat with F running through held mystical amulets:
-					if F is not catalogued, say "[F] ";
-					now F is catalogued;
+				if mystical amulet is held:
+					let G be mystical amulet;
+					say "[G] ";
+					now G is catalogued;
 	now focused-thing is nothing;
 	now hyperlink extras is 0.
 
@@ -745,7 +752,7 @@ Carry out AltarListing:
 		say "[F] ";
 	repeat with F running through carried unsure blessable clothing:
 		say "[F] ";
-	say "[line break]".
+	say "[line break][if there are worn tattoos]You can also [bold type]place[roman type] a tattoo on the altar.[end if]".
 Understand "list blessables" as AltarListing.
 
 

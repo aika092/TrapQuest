@@ -206,9 +206,7 @@ To compute clothes forcing of (M - a robobellboy):
 	otherwise:
 		compute bra forcing of M.
 
-Definition: a clothing (called C) is ridiculously low cut or lower:
-	if C is fully exposing or C is ridiculously low cut, decide yes;
-	decide no.
+
 
 Definition: a clothing (called C) is super-slutty-bra:
 	if C is unique, decide no;
@@ -323,7 +321,8 @@ To say MediumDesc of (M - senior robobellboy):
 	say "senior RoboBellboy".
 
 To ProgressUp (M - senior robobellboy):
-	if the training-progress of M >= 0, increase the training-progress of M by 1.
+	if the training-progress of M >= 0, increase the training-progress of M by 1;
+	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head. [line break][second custom style][if the class of the player is trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. PLEASE SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
 
 To compute unique death of (M - senior robobellboy):
 	say "[BigNameDesc of M] falls apart and clatters to the ground.";
@@ -358,6 +357,7 @@ To compute trainee forcing of (M - senior robobellboy):
 			say "It's motionless for a second, then it closes its chest compartment without releasing you. [line break][speech style of M]'ERROR LINE 35, CANVAS UNSUITABLE...ADMINISTERING FINAL EXAM'[roman type][line break]";
 			compute whore forcing of M;
 		now the training-progress of M is -1;
+		bore M;
 	otherwise if the training-progress of M is -1:
 		compute whore forcing of M;
 	otherwise if a random number between 1 and 2 is 1 and the number of worn breast covering clothing is 0:
@@ -381,7 +381,7 @@ To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C cursed;
-		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT PROGRAM INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. PLEASE WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:

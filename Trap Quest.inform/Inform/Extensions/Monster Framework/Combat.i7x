@@ -278,7 +278,8 @@ To compute vaginal climax of (M - a monster):
 	compute climax of M in vagina.
 
 This is the default cleavage climax rule:
-	if current-monster is penetrating breasts, compute cleavage climax of current-monster.
+	if current-monster is penetrating breasts, compute cleavage climax of current-monster;
+	progress quest of titfuck-quest.
 The default cleavage climax rule is listed in the default end of sex rules.
 
 This is the suggestion satisfied rule:
@@ -316,7 +317,10 @@ This is the default facial sex rule:
 The default facial sex rule is listed in the default progress sex rules.
 
 To compute facial sex of (M - a monster):
-	if the oral sex addiction of the player > 6, arouse 200;
+	compute default facial sex of M.
+
+To compute default facial sex of (M - a monster):
+	if the oral sex addiction of the player > 6, arouse 400;
 	if the sex-length of M is 1:
 		say NearingClimaxOral of M;
 		decrease the sex-length of M by 1;
@@ -336,6 +340,9 @@ This is the default anal sex rule:
 The default anal sex rule is listed in the default progress sex rules.
 
 To compute anal sex of (M - a monster):
+	compute default anal sex of M.
+
+To compute default anal sex of (M - a monster):
 	if the class of the player is living sex doll:
 		say sexDollSex of M in asshole;
 	otherwise if M is not intelligent:
@@ -355,6 +362,9 @@ This is the default vaginal sex rule:
 The default vaginal sex rule is listed in the default progress sex rules.
 
 To compute vaginal sex of (M - a monster):
+	compute default vaginal sex of M.
+
+To compute default vaginal sex of (M - a monster):
 	if the class of the player is living sex doll:
 		say sexDollSex of M in vagina;
 	otherwise if M is not intelligent:
@@ -374,7 +384,7 @@ This is the default titfuck rule:
 The default titfuck rule is listed in the default progress sex rules.
 
 To compute titfuck of (M - a monster):
-	humiliate 75;
+	[humiliate 75;]
 	if the reaction of the player is 0:
 		if M is male and M is intelligent:
 			say TitfuckResistFlav of M;
@@ -383,16 +393,7 @@ To compute titfuck of (M - a monster):
 	otherwise:
 		say TitfuckReceiveFlav of M;
 		decrease the sex-length of M by 1;
-	if breasts is pushed over the edge:
-		breasts orgasm shamefully;
-	otherwise if the sensitivity of breasts >= 2:
-		arouse (the square root of (the sensitivity of breasts * 1000)) * 10;
-		if the sensitivity of breasts >= 10:
-			say "[one of]The nerves in your breasts explode with sensation!  [if the player is female]Your [vagina] gushes with pleasure.[otherwise if the size of penis > 0]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
-		otherwise if the sensitivity of breasts >= 6:
-			say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or the player is male and the size of penis is 0]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
-		otherwise:
-			say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
+	stimulate breasts.
 
 Chapter 2 Priority Attack
 
@@ -683,7 +684,7 @@ To compute SelectionFailure of (M - a monster):
 
 [If you want monsters to wait around forever for their turn, then they should have their own one of these with no random chance.]
 To compute SelectionWaiting of (M - a monster):
-	if a random number between 1 and 5 is 1, say SelectionFrustrated of M;
+	if a random number between 1 and 10 is 1, say SelectionFrustrated of M;
 	otherwise do nothing. [The monster waits its turn.]
 
 To say SelectionFrustrated of (M - a monster):
@@ -701,6 +702,9 @@ This is the monster insertion rule:
 	follow the insertion rules of current-monster. [We don't need "rule succeeds" here because the rule that called the sex attempt rules doesn't check.]
 The monster insertion rule is listed last in the sex attempt rules.
 
+To say ClothingAttackDebug of (M - a monster) on (C - a clothing) with (R - a number):
+	say "[input-style][ShortDesc of M] Clothing Destruction Check: burn ability ([if the difficulty of M < 6]2d[7 - the difficulty of M]+[(the difficulty of M - 1) * 2][otherwise if the difficulty of M > 6]2d[the difficulty of M - 5]+10[otherwise]6 + 6[end if]) = [R] | [the defence of the player].5 underwear defence[roman type][line break]".
+
 To compute (M - a monster) attacking (C - a clothing): [This should change for any special flavour or varied mechanics on how the clothing is removed.]
 	if C is crotch-zipped and M is intelligent:
 		say "[UnzipFlav of M at C]";
@@ -708,7 +712,7 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 	otherwise:
 		say "[PullAttempt of M at C]";
 		let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;
-		if debugmode is 1, say "Player [the defence of the player].5 | [R] [M][line break]";
+		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 		if R > the defence of the player:
 			compute M destroying C;
 		otherwise if R > the defence of the player - 2 and C is rippable:
@@ -1000,7 +1004,7 @@ To say UrinationFlav of (M - a monster):
 			say "[BigNameDesc of M] points [his of M] [manly-penis] towards your face. A golden stream of [urine] shoots out, headed straight for you!";
 	otherwise:
 		if M is intelligent:
-			say "[one of][BigNameDesc of M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart her pussy lips, she allows a golden stream of [urine] to start to squirt straight at your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
+			say "[one of][BigNameDesc of M] smiles, taking a handful of your [ShortDesc of hair] and yanking your head back. Pulling apart [his of M] pussy lips, [he of M] allows a golden stream of [urine] to start to squirt straight at your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] pussy, headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
 		otherwise:
 			say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
 
@@ -1030,19 +1034,19 @@ Otherwise say that it was unsuccessful.
 To decide which number is the tripping roll of (M - a monster):
 	let T be the tripping max of M;
 	let D be the dexterity of the player;
-	if debugmode is 1, say "Tripping Max of [M] is [T].";
+	if debuginfo > 1, say "[input-style]Tripping Max of [ShortDesc of M] is [T].[roman type][line break]";
 	if T <= 0: [In some cases the player can never fall over, e.g. living belt of sturdiness, or they slapped]
 		decide on 0;
 	otherwise if T < D: [We want to make sure there is always a slight chance of the trip being successful on super fast players]
-		if debugmode is 1, say "This is lower than dex ([D]), so tripping has minimum likelihood (2 in [D]).";
+		if debuginfo > 1, say "[input-style]This is lower than dex ([D]), so tripping has minimum likelihood of [if the remainder after dividing D by 2 is 1]1 in [(D + 1) / 2][otherwise]2 in [D + 1][end if] (d[D + 1]).[roman type][line break]";
 		now T is a random number between 1 and (D + 1);
 	otherwise if (T / 2) > D + 3: [We want to make sure there is always a chance of the trip failing against super slow players]
-		if debugmode is 1, say "This is really high, so tripping is capped at maximum likelihood ([T - D] in [T + 3 - D]).";
+		if debuginfo > 1, say "[input-style]This is really high, so tripping is capped at maximum likelihood of [T - D] in [T + 3 - D]; RNG([T]~[D - 3]).[roman type][line break]";
 		now T is a random number between T and D - 3; [trip will fail if the RNG hits D - 1 or lower]
 	otherwise: [This is the normal calculation]
-		if debugmode is 1, say "This is a reasonable number, so tripping has normal roll ([T / 2] to [T]).";
+		if debuginfo > 1, say "[input-style]This is a reasonable number, so tripping has normal roll of RNG([T / 2]~[T]).[roman type][line break]";
 		now T is a random number between T and (T / 2);
-	if debugmode is 1, say "Tripping Roll Result of [M] is [T], which needs to be above or equal to dexterity ([D]).";
+	if debuginfo > 0, say "[input-style][ShortDesc of M] tripping attack: tripping roll ([T]) | ([dexterity of the player - 1].5) dexterity[roman type][line break]";
 	decide on T.
 
 To decide which number is the tripping max of (M - a monster):

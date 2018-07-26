@@ -95,7 +95,9 @@ To decide which number is the flat dexterity of the player:
 	if cookie-poison-timer > 0, decrease D by 2;
 	if the player is grossed out and D > 6, now D is 6;
 	if temp_dex_dam > 0, decrease D by temp_dex_dam;
+	now D is (D * (5 - alcohol-level)) / 5;
 	if D < 0, decide on 0;
+	if D > 30, decide on 30;
 	decide on D.
 
 

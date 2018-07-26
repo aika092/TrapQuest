@@ -42,11 +42,18 @@ REQUIRES COMMENTING
 
 +!]
 Report slapping:
+	compute arm fat burning.
+
+To compute arm fat burning:
 	if the flesh volume of arms > 0:
 		let F be 200 - (the flesh volume of arms * 10);
-		if (a random number between 20 and F) + a random number between 20 and F < the fat-burning of arms:
+		let R be (a random number between 20 and F) + a random number between 20 and F;
+		if debuginfo > 0, say "[input-style]Arm weight loss check: arm exercise count ([fat-burning of arms].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of arms * 10]) arm fat[roman type][line break]";
+		if R <= the fat-burning of arms:
 			say "Your recent exercise has burned some fat from your arms!";
+			if debuginfo > 0, say "[input-style]Exercise result: arm fatness [flesh volume of arms] -> ";
 			FatArmsDown 1;
+			if debuginfo > 0, say "[flesh volume of arms][roman type][line break]";
 			now the fat-burning of arms is 0.
 
 Part 2 - Description

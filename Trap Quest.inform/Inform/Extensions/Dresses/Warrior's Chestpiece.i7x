@@ -21,9 +21,6 @@ To set up influence of (C - a warrior chestpiece):
 
 A holy warrior chestpiece is a kind of warrior chestpiece.
 
-To set up magic state of (C - a holy warrior chestpiece):
-	do nothing.
-
 To uniquely set up (C - a holy warrior chestpiece):
 	now C is protection.
 

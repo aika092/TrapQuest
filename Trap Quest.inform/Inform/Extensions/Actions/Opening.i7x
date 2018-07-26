@@ -72,12 +72,10 @@ Report opening a container:
 			say "How lame, it's empty.";
 		otherwise:
 			say "The [noun] still contains [ShortDesc of list of things in the noun].";
-		if the noun is not friendly:
-			say "CLICK!  Opening this container has triggered a trap!";
-			let T be a random untriggered click trap in the location of the noun;
-			trigger T;
-			repeat with C running through all closed containers in the location of the player:
-				now the prevsearch of C is 0.
+		if the noun is trapped:
+			say "CLICK! Opening this container has triggered a trap!";
+			repeat with T running through untriggered click traps in the location of the player:
+				if the click-trigger of T is the noun, trigger T.
 The reveal any newly visible interior rule is not listed in the report opening rulebook.
 The standard report opening rule is not listed in the report opening rulebook.
 

@@ -64,7 +64,9 @@ A trap can be potentially sticky. A trap is usually not potentially sticky.
 A click trap means it's triggered by opening a container in the room.
 
 *@!]
-A trap can be triggerless, click, pressure, wire, swing, sticky. A trap is usually triggerless.
+A trap can be triggerless, click, pressure, wire, swing, sticky (this is the trigger-type property).
+
+A trap has an object called the click-trigger.
 
 Understand "trap" as trap.
 
@@ -97,12 +99,12 @@ REQUIRES COMMENTING
 *@!]
 A trap has a number called TrapNo. The TrapNo of a trap is usually 0.
 
-[!<SayShortDescOfTrap>+
+[!<Trap>@<SayEnvironmentDesc>+
 
-REQUIRES COMMENTING
+This is what is put in the room description when the trap is visible (revealed).
 
-+!]
-To say ShortDesc of (T - a trap):[some traps do not have this]
++@!]
+To say EnvironmentDesc of (T - a trap):[some traps do not have this]
 	do nothing.
 
 [!<Trap>@<IsRelevant>+

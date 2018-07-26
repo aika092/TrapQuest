@@ -130,6 +130,9 @@ To say VesselDesc of (V - baby's bottle):
 	say "A bottle with a sucker for a lid, traditionally for babies to drink breast milk from.".
 To say ShortVesselDesc of (V - baby's bottle):
 	say "baby's bottle".
+
+alcohol is a number that varies.
+hungover is a number that varies.
 	
 cocktail-glass is a waitress vessel. cocktail-glass is open topped. The max-doses of cocktail-glass is 2. The printed name of cocktail-glass is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]cocktail glass[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cocktail-glass is "cg". Understand "cocktail", "glass" as cocktail-glass. Figure of cocktail glass is the file "Items/Accessories/Vessels/cocktailglass1.png".
 To decide which figure-name is the vessel-image of (V - cocktail-glass):
@@ -146,6 +149,157 @@ To say VesselDesc of (V - champagne-glass):
 	say "A trashy pink bubbly wine vessel, with the words 'SEXY BITCH' across one side in tacky fake diamonds.".
 To say ShortVesselDesc of (V - champagne-glass):
 	say "champagne glass".
+
+To compute cursed drinking (X - a waitress vessel):
+	if alcohol fetish is 1:
+		say "It tastes very alcoholic, like a strong cocktail! All your abilities are dimmed until you sober up.";
+		increase alcohol level;
+	otherwise:
+		compute default cursed drinking X.
+
+To compute cursed drinking (X - champagne-glass):
+	if alcohol fetish is 1:
+		say "It tastes like real champagne, and the alcohol hits you hard! All your abilities are dimmed until you sober up.";
+		increase alcohol level;
+	otherwise:
+		compute default cursed drinking X.
+
+To decide which number is alcohol-level-tier (N - a number):
+	decide on 313 * N.
+
+To increase alcohol level:
+	let A be alcohol-level;
+	if hungover > 0:
+		now hungover is 0;
+		increase A by 1;
+	dignify 500;
+	if A > 3:
+		compute drunken adventure;
+	otherwise:
+		now alcohol is alcohol-level-tier (A + 1);
+		if newbie tips is 1 and A is 0, say "[one of][item style]Newbie tip: You're getting a bit drunk! Each level of drunkness makes you look more slutty and significantly decreases all your stats. But it also improves your self-respect and hampers dignity loss[if diaper quest is 0] and soreness gain. So it's only a good idea to seek out alcohol if you're planning to act like a total slut anyway[end if]. Oh yeah, and if your drunk level gets too high, your player might go on a bit of a drunken journey of their own...[roman type][line break][or][stopping]".
+		
+
+To decide which number is alcohol-level:
+	if alcohol <= 0 or alcohol fetish is 0, decide on 0; [Put at the top for efficiency]
+	if alcohol > alcohol-level-tier 3, decide on 4;
+	if alcohol > alcohol-level-tier 2, decide on 3;
+	if alcohol > alcohol-level-tier 1, decide on 2;
+	decide on 1.
+
+A time based rule (this is the sobering up rule):
+	let A be alcohol-level;
+	if A > 0:
+		decrease alcohol by time-seconds;
+		if A > alcohol-level, say "[bold type][if A > 1]You feel a bit less drunk. You're slowly sobering[otherwise]You've completely sobered[end if] up![roman type][line break]";
+	if hungover > 0:
+		decrease hungover by time-seconds;
+		if hungover <= 0, say "[bold type]Your hangover headache has faded away and you can think more clearly again.[roman type][line break]";
+
+To compute drunken adventure:
+	say "You are now so drunk that you are going to not be able to hold back from doing some rather naughty things. Time slows down as you experience a brief moment of clarity; this must be Nintendolls['] doing. You have a chance to remove consent, otherwise you're saying that you're happy with whatever happens next.";
+	now the fainting reason of the player is 1234;
+	try autofainting;
+	if the fainting reason of the player is 1234: [player didn't faint]
+		repeat with T running through things penetrating a body part:
+			unless T is worn, dislodge T;
+		repeat with T running through things grabbing the player:
+			unless T is worn, dislodge T;
+		repeat with M running through alive monsters:
+			now M is uninterested;
+			now the boredom of M is 0;
+			now the sleep of M is 0;
+			now the scared of M is 0;
+		now alcohol is 0;
+		now hungover is 500;
+		now the player is in Dungeon11;
+		now the stance of the player is 1;
+		now the fatigue of the player is 0;
+		now the stomach-water of the player is 0;
+		now the stomach-food of belly is 1;
+		if watersports mechanics is 1:
+			now the bladder of the player is 10;
+			now the delayed bladder of the player is 4;
+		if rectum > 0, now rectum is 10;	
+		now the small egg count of belly is 0;
+		now the medium egg count of belly is 0;
+		now the large egg count of belly is 0;
+		now the milk volume of belly is 0;
+		now the urine volume of belly is 0;
+		now the semen volume of belly is 0;
+		now the water volume of belly is 0;
+		say "You wake up lying face down in the Throne Room, dizzy and confused, and with a pounding headache that is making it difficult to think properly.[line break][variable custom style]What the hell [one of]happened[or]did I do this time[stopping]?[roman type][line break]";
+		let condoms-used be 0;
+		if diaper quest is 0:
+			if there is worn condom pinnable clothing and a random number between 1 and 2 is 1:
+				now condoms-used is the number of worn condom pinnable clothing;
+				say "As if to answer your question, you realise that there are now ";
+				repeat with C running through worn condom pinnable clothing:
+					increase the used condoms of C by a random number between 2 and 8;
+					say "[used condoms of C] used condoms pinned to your [ShortDesc of C]";
+					if condoms-used is 1:
+						say "!";
+					otherwise if condoms-used is 2:
+						say " and ";
+					otherwise:
+						say ", ";
+					if condoms-used > 1, decrease condoms-used by 1; [we keep it at 1 for the pregnancy check below]
+				say "[variable custom style]Oh [if the player is not a pervert]god[otherwise]wow[end if], I really banged all these men?![roman type][line break]";
+			otherwise:
+				SemenPuddleUp 10;
+				if the player is female:
+					now the semen volume of vagina is 5;
+					now the womb volume of vagina is 3;
+				if the raw semen taste addiction of the player < 20, increase the raw semen taste addiction of the player by 1;
+				say "As if to answer your question, you puke up a thick wad of sticky [semen], just as your [fuckholes] begins to leak [if the player is female]their[otherwise]its[end if] own helpings of [semen] onto the stone ground around you. You also realise that your body and clothes are covered in [semen].";
+				repeat with C running through worn fluid vulnerable clothing:
+					increase the semen-soak of C by the soak-limit of C - the total-soak of C;
+				repeat with C running through worn clothing:
+					if C is displacable, displace C;
+					if C is top-displacable or C is optional-top-displacable, now C is top-displaced;
+					if C is crotch-zipped, now C is crotch-unzipped;
+					if C is crotch-intact and C is pussy covering and C is not metal and C is not biological, now C is crotch-ripped;
+				now the semen coating of belly is 10;
+				now the semen coating of breasts is 10;
+				now the semen coating of face is 10;
+				now the semen coating of hair is the largeness of hair;
+				now the semen coating of thighs is 10;
+		otherwise:
+			let K be a random worn knickers;
+			if K is knickers:
+				say "Your [ShortDesc of K] are utterly soaked.";
+			otherwise:
+				now K is a random eligible diaper;
+				summon K;
+				say "You are wearing a [ShortDesc of K] which is already utterly soaked.";
+			increase the urine-soak of K by the soak-limit of K - the total-soak of K;
+		if pregnancy fetish is 1 and the pregnancy of the player is 0 and condoms-used is 0:
+			let M be a random alive father material monster;
+			if M is monster:
+				now M is inseminating vagina;
+				now the pregnancy of the player is 1;
+				say "A little kick from your belly lets you know that you're no longer eating for one.[line break][variable custom style][if the player is not a pervert]Oh no way you've got to be kidding me! Who in hell is the father?![otherwise]And I guess I shouldn't drink while knocked up...[end if][roman type][line break]";
+		if there is a worn tattoo:
+			repeat with T running through worn tally tattoos:
+				increase the tallies of T by a random number between 4 and 7;
+			let T be a random drawable tattoo;
+			if T is tattoo:
+				summon T;
+				say "You rub a sore spot on your skin and realise that you now have a new tattoo!";
+				try examining T;
+		if watersports mechanics is 1, say "You feel desperate to use the loo.";
+		now champagne-glass is carried by the player;
+		now the fill-colour of champagne-glass is clear;
+		now champagne-glass is sure;
+		now champagne-glass is cursed;
+		now the doses of champagne-glass is 1;
+		say "You notice that your champagne glass is fill of a clear liquid that smells very strongly of alcohol. The glass seems to glow with a dark aura, suggesting that it might be the glass, rather than the liquid, that is somehow making the drink alcoholic.".
+			
+
+		
+		
+	
+	
 
 gold chalice is a vessel. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items/Accessories/Vessels/goldenchalice1.png".
 To decide which figure-name is the vessel-image of (V - gold chalice):

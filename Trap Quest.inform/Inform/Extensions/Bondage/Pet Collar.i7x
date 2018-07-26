@@ -2,7 +2,7 @@ Pet Collar by Bondage begins here.
 
 A pet collar is a kind of neckwear. A pet collar is usually leather. There is 1 unique pet collar.
 
-The printed name of pet collar is "[TQlink of item described][clothing-title-before]pet collar and leash[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pet collar is "pcl".
+The printed name of pet collar is "[TQlink of item described][clothing-title-before]pet collar and leash[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pet collar is "pcl". Understand "and leash", "leash" as pet collar.
 
 Figure of pet collar is the file "Items/Accessories/Neck/petcollar1.png".
 

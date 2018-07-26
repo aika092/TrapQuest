@@ -64,6 +64,7 @@ To initialise latex prisoner:
 		if C is heels:
 			now C is posture training;
 			now the heel-height of C is 2;
+			compute quest of C;
 		if C is vibrating plug panties:
 			now the damage of C is 7;
 			now C is penetrating asshole;
@@ -143,11 +144,13 @@ To initialise wardrobe:
 		now a random bunny diaper is normal; [Just in case it had been put in the shop]
 	repeat with X running through clothing in pink wardrobe:
 		if X is blessed, now X is bland;
-		unless X is cursed, now X is blandness;
+		if X is cursed, assign quest to X;
+		otherwise now X is blandness;
 		now X is normal;
 	now champagne-glass is sure;
 	now champagne-glass is bland;
 	now champagne-glass is in pink wardrobe;
+	if the player is the donator, now combat visor is in pink wardrobe;
 	if christmas content is 1, now a random santa hat is in pink wardrobe.
 
 ["only destroy": with the new imprinting functionality when clothing is destroyed, Aika introduced the concept of "only destroy". This is used when you want to destroy clothing without causing any imprinting effect on the player.]

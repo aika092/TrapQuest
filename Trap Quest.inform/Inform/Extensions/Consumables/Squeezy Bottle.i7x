@@ -31,8 +31,12 @@ Check drinking a squeezy bottle:
 	now seconds is 6;
 	let R be a random number between 1 and 3;
 	if R is 1:
-		say "Some kind of extremely spicy liquid burns your throat!  [line break][variable custom style]Eek!  [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
-		DelicateUp 1;
+		if alcohol fetish is 1:
+			say "Some kind of alcoholic drink burns your throat![line break][variable custom style]Eek! [one of]That's strong stuff[or]It happened again[stopping]![roman type][line break]";
+			increase alcohol level;
+		otherwise:
+			say "Some kind of extremely spicy liquid burns your throat![line break][variable custom style]Eek! [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
+			DelicateUp 1;
 	otherwise:
 		say "Water squirts from the bottle into your mouth.";
 	StomachUp 1 instead.

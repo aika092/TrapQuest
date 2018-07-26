@@ -58,8 +58,8 @@ To compute real messing:
  	let can-mess-now be 0;
 	if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now can-mess-now is 1;
  	let I be 9 - (incontinence + suppository);
+	if debuginfo > 0 and can-mess-now is 1 and rectum > 1, say "[input-style]Mess self-control check: 9 - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
  	if I < 4, now I is 4;
-	if debugmode >= 1 and rectum > I and can-mess-now is 1, say "Rectum of [rectum] vs continence of [I * 1].";
 	if rectum >= I and can-mess-now is 1:
  		say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents!  ";
  		compute messing;

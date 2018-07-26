@@ -47,7 +47,7 @@ A large ballgag is a kind of ballgag. There is 1 large ballgag. The printed name
 A huge ballgag is a kind of ballgag. There is 1 huge ballgag. The printed name of huge ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]huge ballgag[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ballgag is "hga".
 
 To compute SelfExamineDesc of (C - a ballgag):
-	say "You are unable to speak due to your mouth being filled by [ShortDesc of C]. ".
+	say "You are not able to speak due to your mouth being filled by [ShortDesc of C]. ".
 
 To say ShortDesc of (C - a ballgag):
 	say "ballgag".

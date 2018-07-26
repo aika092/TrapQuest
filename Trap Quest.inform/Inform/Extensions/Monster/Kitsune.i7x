@@ -161,19 +161,19 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		now D is in the location of M;
 		say "A headband with a pair of fox ears on it appears on the ground!";
 		now the special-gifted of M is 1;
-	else if the favour of M > 16 and the special-gifted of M is 1:
+	else if the favour of M > 13 and the special-gifted of M is 1:
 		say "[speech style of M]'Hmm, something else interesting. How about these sandals, only slightly used?'[roman type][line break]";
 		let D be a random sandals;
 		now D is in the location of M;
 		say "A pair of wooden sandals appears on the ground!";
 		now the special-gifted of M is 2;
-	else if the favour of M > 24 and the special-gifted of M is 2:
+	else if the favour of M > 18 and the special-gifted of M is 2:
 		say "[speech style of M]'You could use some class. Have this!'[roman type][line break]";
 		let D be a random illusory kimono;
 		now D is in the location of M;
 		say "A strange, shimmering kimono appears on the ground!";
 		now the special-gifted of M is 3;
-	else if the favour of M > 32 and the special-gifted of M is 3:
+	else if the favour of M > 23 and the special-gifted of M is 3:
 		say "[speech style of M]'Okay, now this is my best little present. Enjoy!'[roman type][line break]";
 		let D be a random midnight tanto;
 		now D is in the location of M;
@@ -206,6 +206,7 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 			if the size of I > max breast size and max breast size >= min size of I, now the size of I is max breast size;
 		now I is in the location of M;
 		say "A [printed name of I] appears on the ground!";
+		compute autotaking I;
 		restock I.
 
 

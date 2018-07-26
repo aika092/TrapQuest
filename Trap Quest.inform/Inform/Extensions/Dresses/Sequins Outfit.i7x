@@ -34,6 +34,9 @@ To decide which number is the original price of (C - a sequins outfit):
 Definition: a sequins outfit (called C) is untransformable:
 	decide yes.
 
+Definition: a sequins outfit (called C) is party related:
+	decide yes.
+
 Part 2 - Sequins Dress
 
 A sequins dress is a kind of overdress. A sequins dress is usually top-exclusive. A sequins dress is usually unskirted. A sequins dress is usually crotch-intact. A sequins dress is usually very low cut. There is 1 sequins dress.
@@ -69,6 +72,9 @@ This is the remove inappropriate sequins dress rule:
 	repeat with B running through sequins dress:
 		now B is in Holding Pen.
 The remove inappropriate sequins dress rule is listed in the diaper quest fix rules.
+
+Definition: a sequins dress (called C) is party related:
+	decide yes.
 
 
 

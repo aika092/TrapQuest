@@ -196,7 +196,7 @@ To compute (M - vampiress) attacking (C - knickers):
 	otherwise:
 		say "[PullAttempt of M at C]";
 		let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;
-		if debugmode is 1, say "Player [the defence of the player].5 | [R] [M][line break]";
+		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 		if R > the defence of the player:
 			compute M destroying C;
 		otherwise if R > the defence of the player - 2 and C is rippable:
@@ -225,7 +225,8 @@ To say LongDickDesc of (M - a vampiress):
 	otherwise say "large [manly-penis]";
 
 To say DickDesc of (M - a vampiress):
-	say "strapon";
+	if futanari fetish is 0, say "strapon";
+	otherwise say "[manly-penis]".
 
 To say TwosomePrep of (M - vampiress) in (F - asshole):
 	if there is a worn chastity cage:
@@ -566,7 +567,7 @@ To say AdviceAnswer of (M - vampiress):
 
 To compute teaching of (M - vampiress):
 	if the player is a May 2018 top donator:
-		say "[speech style of M]'Its so annoying when you want to cum, but you can't touch yourself, isn't it? If you angle your hips like this, you won't need to touch your[if the size of penis > 5] yummy [player-penis][otherwise if the size of penis > 0] adorable little [player-penis][otherwise if the player is female] dainty little honeypot[end if][if the player is barbie]...oh, I guess you don't have genitals anyway.[otherwise] at all![end if]'[roman type][line break]";
+		say "[speech style of M]'It's so annoying when you want to cum, but you can't touch yourself, isn't it? If you angle your hips like this, you won't need to touch your[if the size of penis > 5] yummy [player-penis][otherwise if the size of penis > 0] adorable little [player-penis][otherwise if the player is female] dainty little honeypot[end if][if the player is barbie]...oh, I guess you don't have genitals anyway.[otherwise] at all![end if]'[roman type][line break]";
 		teach buttskill;
 		increase the questioned of M by 100;[She gains the same amount of "annoyance" regardless of whether or not she's annoyed already]
 	otherwise:

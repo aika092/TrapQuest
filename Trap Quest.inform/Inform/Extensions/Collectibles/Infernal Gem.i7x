@@ -27,7 +27,7 @@ To say OfferThanksFlav of (M - a mechanic) for (T - an infernal gem):
 	otherwise if the xavier-power of M < 5:
 		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I[']m actually feeling generous!'[roman type]";
 	otherwise:
-		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah...YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".	
+		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah...YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
 
 To compute resolution of (M - a mechanic) taking (T - an infernal gem):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;

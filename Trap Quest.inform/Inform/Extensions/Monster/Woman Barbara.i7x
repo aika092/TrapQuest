@@ -289,7 +289,7 @@ A time based rule (this is the barbara vines rule):
 			let W be woman-barbara;
 			increase the vine-scene of W by 1;
 			if the vine-scene of W is 1:
-				 if W is in the location of the player, say "[second custom style]'[NameBimbo], thank goodness you're here! Quick, help me please, it's going to - unf!!!'[roman type][line break][BigNameDesc of W] is cut off as a thick green vine pushes its way into [his of W] cunt. It looks like you could [bold type]pull[roman type] on the vines to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
+				 if W is in the location of the player, say "[second custom style]'[NameBimbo], thank goodness you're here! Quick, help me please, it's going to - unf!!!'[roman type][line break][BigNameDesc of W] is cut off as a thick green vine pushes its way into [his of W] cunt. It looks like you could [if inline hyperlinks >= 2][link]pull vines[as]pull[end link][otherwise][bold type]pull[roman type][end if] on the vines to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
 			otherwise if the vine-scene of W is 2:
 				if W is in the location of the player, say "[second custom style]'Come on [NameBimbo], what's the hold-up?! Aaaahn~'[roman type][line break]A second green vine finds room in [NameDesc of W][']s pussy next to the first, stretching it wide.";
 			otherwise if the vine-scene of W is 3:
@@ -371,6 +371,7 @@ This is the mechanic facefucks barbara rule:
 			set shortcut of J;
 			now J is in the location of the player;
 			say "[BigNameDesc of mechanic] moans as [he of mechanic] cums, [his of mechanic] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [Big he of mechanic] removes [his of mechanic] [manly-penis] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W][']s eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of mechanic] drops the [J] in front of you.[line break][speech style of mechanic]'Money well spent.'[roman type][line break]";
+			now the latest-appearance of mechanic is the appearance of the player; [to stop him suddenly noticing the player and deciding to bang]
 			satisfy mechanic;
 			increase the delayed sluttification of W by 1;
 			FavourDown W;
@@ -378,6 +379,11 @@ This is the mechanic facefucks barbara rule:
 			compute autotaking J;
 		rule succeeds.
 The mechanic facefucks barbara rule is listed in the mechanic priority attack rules.
+
+To say WaitingFlav of (M - a mechanic):
+	unless the woman-status of woman-barbara is 91 and the mechanic-scene of woman-barbara <= 5 and woman-barbara is in the location of the player:
+		say WaitingSpeechFlav of M;
+		say WaitingActionFlav of M.
 
 Chapter - Shopkeeper Discount Scene
 
@@ -448,7 +454,7 @@ To check barbara toilet:
 				say "Unfortunately, possibly due to your low smarts, you are unable to find any way to free [him of woman-barbara].";
 				now barbara-toilet-choice is 2;
 		if barbara-toilet-choice is 1:
-			say "Feeling around the base of the toilet, you find a latch! Moments later you have parted the front of the toilet bowl and [NameDesc of woman-barbara] is clambering out of [his of woman-barbara] prison. [big he of woman-barbara] rolls over onto [his of woman-barbara] side and prompty pukes up a gallon of [urine].[line break][speech style of woman-barbara]'Thank you so much for saving me...'[roman type][line break]That's all [he of woman-barbara] can manage before passing out.";
+			say "Feeling around the base of the toilet, you find a latch! Moments later you have parted the front of the toilet bowl and [NameDesc of woman-barbara] is clambering out of [his of woman-barbara] prison. [big he of woman-barbara] rolls over onto [his of woman-barbara] side and promptly pukes up a gallon of [urine].[line break][speech style of woman-barbara]'Thank you so much for saving me...'[roman type][line break]That's all [he of woman-barbara] can manage before passing out.";
 			deploy woman-barbara with woman-status 95;
 			now woman-barbara is in the location of the player;
 			UrinePuddleUp 30;
@@ -555,7 +561,7 @@ To compute (M - woman-barbara) protecting against (X - a monster):
 			say "[BigNameDesc of M] giggles. [line break][second custom style]'Have fun, I won't get in your way!'[roman type][line break]";
 			deinterest M;
 		otherwise:
-			say "[BigNameDesc of M] sobs. [line break][second custom style]'I'm so sorry, I couldn't stop it!'[roman type][line break][big he of M] runs off.";
+			say "[BigNameDesc of M] sobs. [line break][second custom style]'I'm so sorry, I couldn't stop [him of X]!'[roman type][line break][big he of M] runs off.";
 			deinterest M;
 			WomanSluttify;
 			Vanish M;
@@ -801,6 +807,13 @@ To compute talk option (N - 1) to (M - woman-barbara):
 		if the woman-old-bimbo of M is not the woman-bimbo of M, say "[second custom style]'My name is [current-name of M] now, by the way.'[roman type][line break]"; 
 	otherwise if the woman-status of M is 90:
 		say "[second custom style]'Let's keep away from those vines, shall we?'[roman type][line break]";
+	otherwise if the woman-status of M is 94:
+		if there is a revealed hypno trap in the location of M:
+			say "[second custom style]'Huh? Oh crap, another hypno trap! Let's get out of here!'[roman type][line break]";
+			compute room leaving of M;
+			now M is uninterested;
+		otherwise:
+			say "[second custom style]'Those TV screens are so difficult to stop watching...'[roman type][line break]";
 	otherwise if the woman-status of M is 95:
 		say "[second custom style]'Thank you so much for saving me from that toilet prison. It was on a timer and if nobody saved me within the next few minutes, it would have locked permanently!'[roman type][line break]";
 	otherwise:
@@ -831,9 +844,9 @@ To compute talk option (N - 2) to (M - woman-barbara):
 		if the woman-bimbo of M < 3:	
 			say  "[second custom style]'[one of]Why am I back down here? Well the shop and altar are often useful, and until the royal guards turn aggressive it's a bit safer than anywhere else.'[or][if minotaur is alive]The [ShortDesc of minotaur]? There's a lever in the prison guard's room that I bet releases him, but I'm too scared to try it.'[otherwise]I can't believe you have slain the [ShortDesc of minotaur] either! You're amazing!'[end if][or]The royal bed? I think it heals you to full, but I'm not sure it's worth it, I bet it also helps turn you into a bimbo.'[in random order][roman type][line break]";
 		otherwise if the woman-bimbo of M < 5:	
-			say  "[second custom style]'[one of]Why am I back down here? Well the sex dolls are easy to beat, and that shopkeeper is just so delicious...'[or][if minotaur is captive]The [ShortDesc of minotaur]?  There's a lever in the prison guard's room that I'm always tempted to try out...'[otherwise]I can't believe you have slain the minotaur either! You're amazing!'[end if][or]The statue with the huge penis? Yeah it somehow magically heals your orifices, and it helps you get used to the taste of semen, which is a good thing, right?'[in random order][roman type][line break]";
+			say  "[second custom style]'[one of]Why am I back down here? Well the sex dolls are easy to beat, and that shopkeeper is just so delicious...'[or][if minotaur is captive]The [ShortDesc of minotaur]?  There's a lever in the prison guard's room that I'm always tempted to try out...'[otherwise]I can't believe you have released the minotaur either! You're so daring!'[end if][or]The statue with the huge penis? Yeah it somehow magically heals your orifices, and it helps you get used to the taste of semen, which is a good thing, right?'[in random order][roman type][line break]";
 		otherwise:
-			say  "[second custom style]'[one of]Why am I back down here? Well I wanted to see if I could beat up a royal guard. Turns out I can't, but don't worry, he gave me a consolation prize! *giggle*'[or][if minotaur is captive]The [ShortDesc of minotaur] cage?  There's a lever somewhere apparently, and when I find it I'm definitely going to try it out!'[otherwise]I can't believe you have slain the [ShortDesc of minotaur] either!  I kind of wish I'd tried my self first though...'[end if][in random order][roman type][line break]";
+			say  "[second custom style]'[one of]Why am I back down here? Well I wanted to see if I could beat up a royal guard. Turns out I can't, but don't worry, he gave me a consolation prize! *giggle*'[or][if minotaur is captive]The [ShortDesc of minotaur] cage?  There's a lever somewhere apparently, and when I find it I'm definitely going to try it out!'[otherwise]I can't believe we've released the [ShortDesc of minotaur] either! How fun...'[end if][in random order][roman type][line break]";
 	otherwise if the woman-status of M is 3:
 		if the woman-bimbo of M < 5:	
 			say  "[second custom style]'[one of]Why am I back down here?  Can you keep a secret?  I may have pulled the lever for the [ShortDesc of minotaur]! Tee hee!'[or]If I were you, I've leave the Dungeon before it finds you!'[or]I don't know what happens if the [ShortDesc of minotaur] catches you, but something tells me it's pretty unique!'[cycling][roman type][line break]";
@@ -844,6 +857,8 @@ To compute talk option (N - 2) to (M - woman-barbara):
 			say "[second custom style]'[one of]I'm still looking for the way out. I hope you haven't fallen into complete depravity yet, have you?'[or]From the looks of it, I'd say that the mechanic looks like he's probably the most dangerous of the lot. But it's just a hunch.'[or]I'd just had way too much trouble with those vines, so I came up here to get away from here. And now I have to deal with robots! Grr!'[in random order][roman type][line break]";
 		otherwise:
 			say "[second custom style]'[one of]I'm getting myself some deliciously thick robot cock!  What about you?'[or]I don't know who's the strongest here, but it's definitely not me!  Tee hee.'[or]Ooh, yes, you must try the modification machine in room 101 - I feel much more ready to [']take on['] the monsters now, if you know what I mean.'[in random order][roman type][line break]";
+	otherwise if there is a revealed hypno trap in the location of M: [looking at hypno trap]
+		say "[second custom style]'Uuuuuuuuh...'[roman type][line break]";
 	otherwise if the woman-status of M >= 90:
 		say "[second custom style]'I'm sorry I don't really feel in the mood to answer questions right now.'[roman type][line break]".
 	

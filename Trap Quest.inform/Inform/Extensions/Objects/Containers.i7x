@@ -21,23 +21,19 @@ REQUIRES COMMENTING
 *@!]
 Containers can be emptied. A container is usually not emptied.
 
-[!<ContainerIsFriendly>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a container is friendly:
-	if it is trapped, decide no;
-	decide yes.
-
 [!<AContainerIsTrapped>+
 
 REQUIRES COMMENTING
 
 +!]
-Definition: a container is trapped:
-	if there is an untriggered click trap in the location of it, decide yes;
+Definition: a container (called C) is trapped rather than untrapped:
+	if the trigger-target of C is a trap, decide yes;
 	decide no.
+
+To decide which object is the trigger-target of (C - a container):
+	repeat with T running through click traps in the location of C:
+		if the click-trigger of T is C, decide on T;
+	decide on nothing.
 
 [!<LargeSack>@
 
@@ -263,7 +259,8 @@ A pedestal can be wood, stone, clay, terracotta or marble(this is the pedestal-v
 There are 5 not trappable pedestals.
 
 To say PedestalDesc:
-	say "A [pedestal-variant of the item described] pedestal[if there is a thing in item described] bearing a [printed name of a random thing in the item described][end if], which is protected by a glass case. [if the item described is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if the item described is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of the item described] basin protrudes from one side.[otherwise if the item described is erect and diaper quest is 1]A [pedestal-variant of the item described][one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if the item described is erect]A [pedestal-variant of the item described][one of]...[or] [stopping]penis protrudes from one side of the pedestal.[otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of the item described] on the inside of case, written in roman numerals.".
+	say "A [pedestal-variant of the item described] pedestal[if there is a thing in item described] bearing a [printed name of a random thing in the item described][end if], which is protected by a glass case. [if the item described is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if the item described is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of the item described] basin protrudes from one side.[otherwise if the item described is erect and diaper quest is 1]A [pedestal-variant of the item described][one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if the item described is erect]A [pedestal-variant of the item described][one of]...[or] [stopping]penis protrudes from one side of the pedestal.[otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of the item described] on the inside of case, written in roman numerals.";
+	if newbie tips is 1, say "[item style]You need to [if item described is erect]get on your knees and suck on this pedestal[otherwise if item described is chilled]pour a container with milk in it into this pedestal[otherwise if item described is parched]pour a container with urine in it into this pedestal[otherwise]pour a container with semen in it into this pedestal[end if] to open it.[roman type][line break]".
 
 To lock pedestals:
 	let V be 1;
@@ -316,11 +313,12 @@ Carry out drinking a pedestal:
 		StomachSemenUp the paid of the noun;
 	now the paid of the noun is 0;
 	say "You hear a distinctive *shunk* as the glass dome splits and slowly opens.";
-	repeat with X running through things in the noun:
-		now X is normal;
 	now the paid of the noun is 0;
 	now the noun is open;
-	now seconds is 6.
+	now seconds is 6;
+	repeat with X running through things in the noun:
+		now X is normal;
+		compute autotaking X.
 
 Carry out pouring something into:[TODO: more interesting]
 	if the second noun is fertile and the fill-colour of the noun is creamy:

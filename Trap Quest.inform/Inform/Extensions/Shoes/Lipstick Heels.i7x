@@ -35,7 +35,7 @@ To decide which number is the damage modifier of (H - a lipstick heels):
 		let R be a random number between 1 and (7 - (M * 2));
 		if R is 1:
 			now critical is 1;
-			decide on the strength of the player / 3.
+			decide on combat bonus.
 
 
 Lipstick Heels ends here.

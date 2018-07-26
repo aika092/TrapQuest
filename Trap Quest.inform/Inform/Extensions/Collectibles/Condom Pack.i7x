@@ -133,6 +133,7 @@ To compute condom filling of (M - a monster):
 	if newbie tips is 1, say "[one of][item style]Newbie tip: You've got a condom on your clothes!  That's right, NPCs will invariably pin the condoms they use to your clothing and this increases how humiliating the clothing is, and therefore your appearance rating. You can't remove the condoms from the clothing yourself - blame the makers of the game and their ability to manipulate the rules of this universe. You can however bite and drink them - this obviously makes you drink a humiliating dose of [semen], but it also halves the amount that the condom increases the outrage of the item. Of course, the best solution is probably to eventually remove the piece of clothing when it gets too ridiculous.[roman type][line break][or][stopping]";
 	increase the used condoms of C by 1;
 	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]!  [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]";
+	progress quest of condom-creampie-quest;
 	if C is string belt:
 		let H be a random off-stage cumdumpster hat;
 		if H is actually summonable:
@@ -165,7 +166,7 @@ The text output of this function should be displayed whenever the player puts a 
 
 +!]
 To say CondomManualFlav of (M - a monster):
-	say "You take out a condom and quickly roll it down [his of M] length, making [one of]sure the rubber is in intimate contact with every inch of the massive tool[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] massive tool.".
+	say "You take out a condom and quickly roll it down [his of M] length, making [one of]sure the rubber is in intimate contact with every inch of the[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] massive tool.".
 
 To say CondomRejectFlav of (M - a monster):
 	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".

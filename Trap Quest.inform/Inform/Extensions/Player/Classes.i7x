@@ -627,6 +627,8 @@ This is the trained hooker class rule:
 			now the player-class is "trained fuck princess";
 		otherwise if there is a worn maid headdress:
 			now the player-class is "fully trained maid";
+		otherwise if the latex-transformation of the player is 8:
+			now the player-class is "rentable doll";
 		otherwise:
 			now the player-class is "trained hooker".
 The trained hooker class rule is listed in the player class rules.

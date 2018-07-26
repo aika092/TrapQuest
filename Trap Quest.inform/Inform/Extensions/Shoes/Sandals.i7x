@@ -25,11 +25,8 @@ To set up magic state of (C - a sandals):
 To uniquely set up (C - a sandals):
 	now the heel-height of C is 1.
 	
-To decide which object is the potential-upgrade-target of (C - a sandals):
-	decide on nothing.
-
-To decide which object is the unique-upgrade-target of (C - a sandals):
-	decide on nothing.
+Definition: a sandals (called C) is untransformable:
+	decide yes.
 
 Sandals ends here.
 

@@ -191,6 +191,7 @@ Definition: a birth control for sissies T-shirt is pregnancy related:
 	decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a birth control for sissies T-shirt):
+	if the player is male, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
@@ -246,6 +247,7 @@ Definition: an I'm knocked up T-shirt is pregnancy related:
 	decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - an I'm knocked up T-shirt):
+	if the player is male, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.

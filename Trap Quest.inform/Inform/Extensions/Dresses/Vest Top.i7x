@@ -78,6 +78,12 @@ To say ShortDesc of (C - a real cowgirls ride their bulls bareback vest top):
 To decide which number is the initial outrage of (C - a real cowgirls ride their bulls bareback vest top):
 	decide on 2.
 
+Definition: A real cowgirls ride their bulls bareback vest top (called C) is pregnancy related:
+	decide yes.
+
+Definition: A real cowgirls ride their bulls bareback vest top (called C) is interracial related:
+	decide yes.
+
 Part 4 - Rubber Vest Top
 
 A rubber vest top is a kind of vest top. The printed name of rubber vest top is usually "[TQlink of item described][clothing-title-before]latex vest top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of rubber vest top is "lvt".

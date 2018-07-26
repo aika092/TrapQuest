@@ -14,7 +14,7 @@ Definition: a cum-dump tattoo (called T) is eligible:
 	decide no.
 To say tattoo-desc of (T - a cum-dump tattoo):
 	if images visible is 1, display figure of cum-dump tattoo;
-	say "The words 'Cum Dump' are inked in cursive in the middle of a heart made of flowers, on your right thigh. You feel it increasing your desire of [semen], in both your upper and lower holes.".
+	say "The words 'Cum Dump' are inked in cursive script in the middle of a heart made of flowers, on your right thigh. You feel it increasing your desire of [semen], in both your upper and lower holes.".
 
 To decide which number is the semen addiction influence of (C - a cum-dump tattoo):
 	decide on 2.

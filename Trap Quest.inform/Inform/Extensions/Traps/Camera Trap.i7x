@@ -12,6 +12,17 @@ This is the spawn initial hotel camera traps rule:
 		if N > 4, now T is triggerless.
 The spawn initial hotel camera traps rule is listed in the set up hotel traps rules.
 
+[!<CameraTrap>@<SayEnvironmentDesc>+
+
+This is what is put in the room description when the trap is visible (revealed).
+
++@!]
+To say EnvironmentDesc of (T - a camera trap):
+	say "A camera is embedded in one wall, quite low down to get a compromising angle when it takes a photo. ".
+
+To say ShortDesc of (T - a bukkake trap door):
+	say "camera".
+
 To trigger (Y - a camera trap):
 	let P be a random off-stage upskirt poster;
 	if ((the number of worn trousers is 0 and the number of worn skirted clothing > 0) or asshole is lewdly exposed or the flesh volume of hips > 5) and P is poster:

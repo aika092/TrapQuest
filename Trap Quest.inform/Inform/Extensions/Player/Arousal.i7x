@@ -233,7 +233,7 @@ REQUIRES COMMENTING
 Definition: yourself is able to get horny:
 	if the class of the player is princess and princess-consort is monster and the refactory-period of princess-consort > 0, decide no;
 	if the latex-transformation of the player > 3, decide no;
-	if the player is male and the size of penis is 0, decide no;
+	[if the player is male and the size of penis is 0, decide no;]
 	decide yes.
 
 [!<ThingIsUnlimitedHorniness>+

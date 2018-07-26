@@ -24,6 +24,9 @@ To deploy (T - a trap) in (G - a room):
 		increase R by 1;
 		if R is 5, now R is 1;
 	if the player is female and T is dildo trap and a random number between 1 and 2 is 1, now T is vaginal;
+	if T is click:
+		now the click-trigger of T is a random untrapped container in the location of T;
+		if the click-trigger of T is nothing, now the click-trigger of T is a random container in the location of T;
 	if T is wire or T is pressure, choose direction of T;
 	if debugmode is 1, say "Deploying a [printed name of T] in [printed name of G].".
 

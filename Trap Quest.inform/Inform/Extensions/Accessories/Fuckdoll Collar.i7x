@@ -11,6 +11,7 @@ To decide which number is the anal-sex-addiction-influence of (C - a fuckdoll co
 	decide on S.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a fuckdoll collar):
+	if the player is male, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on S.

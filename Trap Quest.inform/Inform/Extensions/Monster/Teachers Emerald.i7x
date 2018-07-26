@@ -28,7 +28,7 @@ To say WhoAnswer of (M - teacher-seraphina):
 	say "[speech style of M]'Can you not guess what [']assets['] I bring to the table?'[roman type][line break]".
 
 To say WhereAnswer of (M - teacher-seraphina):
-	say "[speech style of M]'[if the rank of the player is 1]Exactly where you need to be.'[otherwise]Leave your ego at the door.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Exactly where you need to be.'[otherwise]Leave your ego at the door.'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - teacher-seraphina):
 	say "[speech style of M]'Just always remember - bigger is better. No exceptions!'[roman type][line break]".
@@ -106,7 +106,7 @@ To compute teaching of (L - tits-lesson):
 	otherwise:
 		let S be a random promotable student in the location of the player;
 		if student-rachel is in the location of the player, now S is student-rachel;
-		say "[NameDesc of M] makes you all stand and practice a few poses that are designed to emphasise your breasts, including pushing your shoulders back, squeezing your tits in between your arms, and bending over at the waist. Soon you are all tired and [he of M] looks satisfied.[line break][speech style of M]'Okay, that's enough for today. [if S is student][NameDesc of S], you have made brilliant progress since you first started coming to my classes. I think you deserve a promotion. For the rest of you, [end if]I'm going to assign you some optional [']homework[']. I've informed the nurse of our little problems here... and I do mean little. So the next time you go to visit her, you can expect her to be giving each and everyone one of you a nice... enhancement. If you don't want it, then you'd better not go see her before the next time we meet.'[roman type][line break]With that, [NameDesc of M] packs up her things and begins to walk for the door.[line break][speech style of M]'Until next time, then!'[roman type][line break]";
+		say "[NameDesc of M] makes you all stand and practice a few poses that are designed to emphasise your breasts, including pushing your shoulders back, squeezing your tits in between your arms, and bending over at the waist. Soon you are all tired and [he of M] looks satisfied.[line break][speech style of M]'Okay, that's enough for today. [if S is student][student-name of S], you have made brilliant progress since you first started coming to my classes. I think you deserve a promotion. For the rest of you, [end if]I'm going to assign you some optional [']homework[']. I've informed the nurse of our little problems here... and I do mean little. So the next time you go to visit her, you can expect her to be giving each and everyone one of you a nice... enhancement. If you don't want it, then you'd better not go see her before the next time we meet.'[roman type][line break]With that, [NameDesc of M] packs up [his of M] things and begins to walk for the door.[line break][speech style of M]'Until next time, then!'[roman type][line break]";
 		if S is student, promote S;
 		now the breast-enhancement of nurse is 1.
 
@@ -193,7 +193,7 @@ To say WhoAnswer of (M - teacher-hannah):
 	say "[speech style of M]'Compliance.'[roman type][line break]".
 
 To say WhereAnswer of (M - teacher-hannah):
-	say "[speech style of M]'[if the rank of the player is 1]A place for disobedient brats like yourself to learn a thing or two about following instructions.'[otherwise]Never question. Always obey.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]A place for disobedient brats like yourself to learn a thing or two about following instructions.'[otherwise]Never question. Always obey.'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - teacher-hannah):
 	say "[speech style of M]'Following orders becomes easier once you truly accept that you are beneath us.'[roman type][line break]".
@@ -226,21 +226,21 @@ To compute teaching of (L - pain-lesson):
 		now seconds is 12;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
 	otherwise if diaper quest is 0 and clitoris piercing is eligible:
-		say "Well, today we'll be finding out the first step. Anyone who wants to be able to progress further in this class you must make a permanent change in order to prove your dedication.'[roman type][line break][big he of M] holds up a small, glittering metal object.[line break][speech style of M]'Personally, I think that every slut should have their clit pierced. It's not just a way to enhance the feelings, it's a symbol that constantly reminds you of your place in the world. And, of course, it means that everyone that sees it will know that you've gone through excruciating pain just to decorate yourself as a submissive.'[roman type][line break][big he of M] begins putting on hygienic latex gloves and produces a professional-looking sterilized piercing kit. Everyone in the room looks very nervous.[line break][speech style of M]'So, who's going to dedicate themselves to progress?'[roman type][line break]Do you let her give you a clitoris piercing? [yesnolink]";
+		say "Well, today we'll be finding out the first step. Anyone who wants to be able to progress further in this class you must make a permanent change in order to prove your dedication.'[roman type][line break][big he of M] holds up a small, glittering metal object.[line break][speech style of M]'Personally, I think that every slut should have their clit pierced. It's not just a way to enhance the feelings, it's a symbol that constantly reminds you of your place in the world. And, of course, it means that everyone that sees it will know that you've gone through excruciating pain just to decorate yourself as a submissive.'[roman type][line break][big he of M] begins putting on hygienic latex gloves and produces a professional-looking sterilized piercing kit. Everyone in the room looks very nervous.[line break][speech style of M]'So, who's going to dedicate themselves to progress?'[roman type][line break]Do you let her give you a clitoris piercing? [yesnolink]";[possibly more indication here that everyone will follow you]
 		if the player consents:
 			let ST be a random tryhard student in the location of the player;
 			if ST is nothing, now ST is a random student in the location of the player;
 			let ST2 be a random demotable student in the location of the player;
 			say "You [if the player is feeling dominant]confidently[otherwise]hesitantly[end if] rise to your feet and take a step forward. Then [NameDesc of ST] finds the courage to follow your example and follow you towards the front. One by one, all the other students join you until all of you have decided to do it. ";
 			if ST2 is a student and ST2 is not ST:
-				say "All of you, that is, except [NameDesc of ST2], who remains seated, teeth gritted, probably too scared of the prospect of imminent pain. [NameDesc of M][']s face sours when [he of M] sees this.[line break][speech style of M]'Really, [student-name of ST2]? You can't even bring yourself to do it when every single one of your peers has taken the plunge? Maybe you're just not cut out for this rank at all.'[roman type][line break]";
+				say "All of you, that is, except [NameDesc of ST2], who remains seated, teeth gritted, probably too scared of the prospect of imminent pain. [NameDesc of M][']s face sours.[line break][speech style of M]'Really, [student-name of ST2]? You can't even bring yourself to do it when every single one of your peers has taken the plunge? Maybe you're just not cut out for this rank at all.'[roman type][line break]";
 				demote ST2;
 				say "[NameDesc of ST2] gasps with indignation but [NameDesc of M] is remorseless and points towards the door.[line break][speech style of M]'Get out of my sight.'[roman type][line break]";
 				try ST2 going south;
 				say "As soon as [NameDesc of ST2] is gone, [NameDesc of M][']s expression turns back into a proud, almost loving smile.";
 			otherwise:
-				say "Upon seeing this, [NameDesc of M][']s expression turns into a proud, almost loving smile.";
-			say "[speech style of M]'Well done, all of you! You won't regret making this commitment. And for you all to do it at the same time! How poetic. Well, [NameBimbo], as the first one to volunteer, I guess you're up first.'[roman type][line break]You are strapped down tightly on top of a desk to avoid any dangerous movement during the procedure. A gloved hand pinches your most sensitive, delicate part and holds it in place. You don't have to wait long before the searing hot needle appears in her hand and before you know it, the piercing is underway. Searing white hot pain shoots through you, and you can't help but wail [if diaper lover > 0]like a baby [end if] as it happens.";
+				say "[BigNameDesc of M][']s expression turns into a proud, almost loving smile.";
+			say "[speech style of M]'Well done, all of you! You won't regret making this commitment. And for you all to do it at the same time! How poetic. Well, [NameBimbo], as the first one to volunteer, I guess you're up first.'[roman type][line break]You are strapped down tightly on top of a desk to avoid any dangerous movement during the procedure. [NameDesc of M] pinches your most sensitive, delicate part between [his of M] fingers and holds it in place. You don't have to wait long before the searing hot needle appears in her hand and before you know it, the piercing is underway. Searing white hot pain shoots through you, and you can't help but wail [if diaper lover > 0]like a baby [end if] as it happens.";
 			DelicateUp 3;
 			say "And then it's all over, and you are sent to sit back down as the rest of the students each have their own loud intense episode. By the time they're all finished, your own pain has already dulled to a faint throb. But you still feel much more timid than you did five minutes ago. [BigNameDesc of M] beams at the room which is now full of pale faces, all hardly able to believe what they just consented to undergo.[line break][speech style of M]'Well done, all of you! I hope you'll remember this moment for the rest of time. This was the moment you truly began to accept your destiny and dedicate yourself to the pursuit of perfection. Bravo. Well, I think that's enough for now, don't you? Until next time!'[roman type][line break][BigNameDesc of M] waves cheerfully to you all and begins to leave.";
 			summon normal clit piercing; [not cursed]
@@ -254,28 +254,25 @@ To compute teaching of (L - pain-lesson):
 			let ST be a random promotable student in the location of the player;
 			if ST is nothing, now ST is a random student in the location of the player;
 			let competition-success be 0;
-			say "You [if the player is feeling submissive]hesitantly [end if]stand up and look around. [BigNameDesc of ST] has also risen to [his of ST] feet. It looks like you'll be competing with each other. [BigNameDesc of M] makes you come to the front and expose your cunts to the class.[line break][speech style of M]'Being a submissive doesn't mean you have to be a wimp.'[roman type][line break]She gets a length of chain about three feet long and connects one end to your clit piercing, and the other to [NameDesc of ST][']s. Your hands are each cuffed behind your backs. You and [NameDesc of ST] look at each other nervously.[line break][speech style of M]'Okay girls, now show me how brave you are. Each take a step back.'[roman type][line break]You wince but do as you are told. The chain is brought completely taut which pulls your clits to their limits, stretching them tight and causing more than a little bit of pain. When [he of M] is satisfied that you're in the right positions [he of M] draws a line in chalk in front of each of your toes and then speaks again.[line break][speech style of M]'Hopefully the task is self-evident. The first person to take a step forward loses. May the most dedicated slut win!'[roman type][line break]Then [his of M] smile turns into a wide evil grin.[line break][speech style of M]'Oh and I almost forgot. The loser will have the privilege of keeping that chain forever as their own personal leash.'[roman type][line break]Your heart leaps as a feeling of [horror the bimbo of the player] washes over you. The stakes are higher than you realised.";
-			say "Seconds pass and the pain in your clit seems to steadily increase. Either that or your tolerance for the existing pain is gradually floundering.";
+			say "You [if the player is feeling submissive]hesitantly [end if]stand up and look around. [BigNameDesc of ST] has also risen to [his of ST] feet. It looks like you'll be competing with each other. [BigNameDesc of M] makes you come to the front and expose your cunts to the class.[line break][speech style of M]'Being a submissive doesn't mean you have to be a wimp.'[roman type][line break]She gets a length of chain about three feet long and connects one end to your clit piercing, and the other to [NameDesc of ST][']s. Your hands are each cuffed behind your backs and you look at each other nervously.[line break][speech style of M]'Okay girls, now show me how brave you are. Each take a step back.'[roman type][line break]You wince but do as you are told. The chain is brought completely taut which pulls your clits to their limits, stretching them tight and causing more than a little bit of pain. When [he of M] is satisfied that you're in the right positions [he of M] draws a line in chalk in front of each of your toes and then speaks again.[line break][speech style of M]'Hopefully the task is self-evident. The first person to take a step forward loses. May the most dedicated slut win!'[roman type][line break]Then [his of M] smile turns into a wide evil grin.[line break][speech style of M]'Oh and I almost forgot. The loser will have the privilege of keeping that chain forever as their own personal leash.'[roman type][line break]Your heart leaps as a feeling of [horror the bimbo of the player] washes over you. The stakes are higher than you realised.";
 			DelicateUp 1;
-			say "Give up and step forward? [yesnolink]";
+			say "Seconds pass and the pain in your clit seems to steadily increase. Either that or your tolerance for the existing pain is gradually floundering. Give up and step forward? [yesnolink]";
 			unless the player consents:
-				say "You clench your fists behind your back and strengthen your resolve. Surely [NameDesc of ST] will cave first!";
+				say "You clench your fists behind your back and strengthen your resolve against the pain. Surely [NameDesc of ST] will cave first!";
 				if ST is innocent student or a random number between 1 and 3 is 1:
 					say "[ClitPiercingConcede of ST]";
 					now competition-success is 1;
 				otherwise:
-					say "Time ticks by as you both hold fast. The room is completely silent other than the occasional grunt of discomfort from you or your opponent.";
 					DelicateUp 1;
-					say "Give up and step forward? [yesnolink]";
+					say "Time ticks by as you both hold fast. The room is completely silent other than the occasional grunt of discomfort from you or your opponent. Give up and step forward? [yesnolink]";
 					unless the player consents:
 						say "You grind your teeth but don't give in. If [NameDesc of ST] is feeling as much pain as you then surely [he of ST] can't last any longer!";
 						if ST is not tryhard student and a random number between 1 and 2 is 1:
 							say "[ClitPiercingConcede of ST]";
 							now competition-success is 1;
 						otherwise:
-							say "You both pant and whine but neither of you will give in. The pain is now almost unbearable - your knees are shaking and your entire body begs for you to let it move forward.";
 							DelicateUp 2;
-							say "Give up and step forward? [yesnolink]";
+							say "You both pant and whine but neither of you will give in. The pain is now almost unbearable - your knees are shaking and your entire body begs for you to let it move forward. Give up and step forward? [yesnolink]";
 							unless the player consents:
 								say "You've come this far, you can't give in now that you've already suffered so much! You stare daggers at [NameDesc of ST] and don't move a muscle. You feel your mind warping as you let the pain wash through you - you've used so much willpower in this one encounter that you know you're not going to have much left to stay strong in future predicaments.";
 								DelicateUp 5;
@@ -298,14 +295,21 @@ To compute teaching of (L - pain-lesson):
 				promote ST;
 				say "[speech style of M]'As for you [NameBimbo], you're going to regret your lack of dedication.'[roman type][line break][BigNameDesc of M] snaps her fingers and the chain falls from [NameDesc of ST][']s clit piercing but remains sealed to yours. You give it a tug but it won't come off - it's clearly permanently fixed on! Your clit throbs with renewed sensitivity, and you immediately can tell that if anyone was to grab hold of this chain, there'd just be no way you'd be able to fight back any more, or refuse their commands at all.";
 				summon clitoris lead;
-				say "[variable custom style]And I'm going to be wearing this forever?![roman type][line break][BigNameDesc of M] chuckles.[line break][speech style of M]'Well that's two girls who are much closer to being a proper submissive. A job well done if I say so myself. Until next time, class!'[roman type][line break]";
+				say "[variable custom style]And I'm going to be wearing this forever?![roman type][line break][BigNameDesc of M] chuckles.[line break][speech style of M]'Well that's two girls who are much closer to being a proper submissive. A job well done if I say so myself. To be honest, that's all I can teach you now, I'll allow you to progress.'[roman type][line break]";
+				now armband is ruby;
+				say "You watch as the ID card inside your armband transforms!";
+				now the armband-title of armband is "Princess";
+				now the armband-print of armband is "properly pierced pet";
+				say ClothingDesc of armband;
+				say "[BigNameDesc of M] claps her hands to silence the background chatter.[line break][speech style of M]'Okay that's enough excitement for today. Class dismissed!'[roman type][line break]";
+				update students; [an important line which makes boring old students disappear and new cool ones appear]
 			now seconds is 60;
 		otherwise:
 			say "[if the player is feeling dominant]There's no way you're going to risk any more pain right now! You fold you arms and audibly huff. The other students seem to be influenced by you and in the end, nobody volunteers at all[otherwise]You look around but nobody is making any move to go forward, and you don't have the bravery to go through it alone[end if]. [BigNameDesc of M] frowns.[line break][speech style of M]'You do realise, by all being complete wusses that you've essentially proven my point? Bah. Well, we'll try again next time, and see if any of you have grown some kahunas. Now get out of my sight.'[roman type][line break]";
 			now seconds is 12;
 	otherwise if wrist collar bar is actually summonable:
 		say "Well, I think we should try taking away someone's ability to use their wrists for a while, and see how they feel after that.'[roman type][line break][big his of M] eyes scan the room and then fall on you.[line break][speech style of M]'Yes, this will be perfect for you!'[roman type][line break][BigNameDesc of M] [if wrist collar bar is held]takes the [ShortDesc of wrist collar bar] from your possession[otherwise]produces a [ShortDesc of wrist collar bar] from underneath [his of M] desk and carries it over to you. [big he of M] makes you stand up and then uses it to strictly bind your wrists to your neck behind your back.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! Keep it on until next time we have this class and I'll reward you with a promotion, okay?'[roman type][line break]You whine but nod - it's not like you've got much choice!";
-		if image cutscenes is 1, display figure of teacher hannah cutscene 1;
+		if image cutscenes is 1 and diaper quest is 1, display figure of teacher hannah cutscene 1;
 		summon wrist collar bar locked;
 	otherwise:
 		say "Well, actually all the things I wanted to suggest aren't possible right now. Oh well. I'll probably have more potential actions in a future version of the game.'[roman type][line break]";

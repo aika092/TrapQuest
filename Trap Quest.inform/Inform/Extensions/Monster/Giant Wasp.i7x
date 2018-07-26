@@ -275,7 +275,7 @@ To set up sex length of (M - a giant wasp) in (B - asshole):
 
 To compute striking attack of (M - a giant wasp):
 	say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
-	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 9.
+	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 4.
 
 Section 2 - Damage
 
@@ -316,10 +316,10 @@ Part 6 - Variants
 
 Section 1 - Domesticated wasp
 
-domesticated wasp is a giant wasp. The printed name of domesticated wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy [otherwise if item described is newborn-wasp]newborn [end if]domesticated wasp[monster-title-after of item described]". The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
+domesticated wasp is a giant wasp. The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
 
 To say MediumDesc of (M - domesticated wasp):
-	say "[if M is daddy-wasp]daddy [otherwise if M is newborn-wasp]newborn [end if] domesticated wasp"
+	say "[if M is daddy-wasp]daddy [otherwise if M is newborn-wasp]newborn [end if]domesticated wasp"
 
 To say MonsterDesc of (M - domesticated wasp):
 	say "This giant flying insect has a tiny fairy perched on its back, controlling it with a pair of fibrous green reins. Despite its clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating ovipositor extending from its underbelly.".
@@ -471,7 +471,7 @@ To say EscapeAnswer of (M - domesticated wasp):
 
 To say AdviceAnswer of (M - domesticated wasp):
 	if the class of the player is faerie, say "[speech style of M][one of]And give you an advantage? No way!'[or]Like I'd share my secrets with you!'[or]If you tried to ride a wasp you'd crush it. Idiot.'[at random][roman type][line break]";
-	otherwise say "[speech style of M]'[one of]The demoness really loves it when you resist her. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. She created a minotaur to watch it, but it wouldn't stop breeding her, so she put him in a giant bird cage.'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]The demoness really loves it when you resist her. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. She [if mythical creature fetish is 0]enchanted a great warrior to watch over[otherwise]created a terrible minotaur to guard[end if] it, but she had to confine [him of minotaur], because she made [him of minotaur] too powerful to control! Or maybe she was just really attracted to [him of minotaur]. Anyway, [he of minotaur] still has the amulet. It's yours if you can sneak past [him of minotaur]!'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
 	if image cutscenes is 1, display figure of fairy interact 12.
 
 To compute perception of (M - domesticated wasp):

@@ -52,7 +52,7 @@ REQUIRES COMMENTING
 
 +!]
 To DiaperAddictUp (X - a number):
-	while X > 0:
+	while X > 0 and diaper lover > 0:
 		decrease X by 1;
 		if the raw diaper addiction of the player < 20:
 			increase the raw diaper addiction of the player by 1.

@@ -9,14 +9,10 @@ To compute SelfExamineDesc of (O - a cheerleader outfit):
 	say "You are wearing a [ShortDesc of O]. ".
 
 This is the cheerleaders upskirt fetish rule:
-	if there is a worn cheerleader outfit and the player is female and diaper focus is 0:
-		if summoning is 0, say "You can't get it on past your knees, your [printed name of random worn cheerleader outfit] is somehow magically resisting you wearing underwear![line break][variable custom style]Oh I get it, because of the stereotypical cheerleader upskirt fetish. People are supposed to catch glimpses of my [vagina]![roman type][line break]";
+	if there is a worn cheerleader outfit and diaper focus is 0:
+		if summoning is 0, say "You can't get it on past your knees, your [printed name of random worn cheerleader outfit] is somehow magically resisting you wearing this![line break][variable custom style]Oh I get it, because of the stereotypical cheerleader upskirt fetish. People are supposed to catch glimpses of my [if there are worn knickers]undies[otherwise][player-crotch][end if]![roman type][line break]";
 		rule fails.
-The cheerleaders upskirt fetish rule is listed in the knickers wearability rules.
-
-[This is the cheerleader shut up rule:
-	if the class of the player is cheerleader, rule succeeds.
-The cheerleader shut up rule is listed in the blowjob slut eligibility rules.]
+The cheerleaders upskirt fetish rule is listed in the trousers wearability rules.
 
 To set up influence of (C - a cheerleader outfit):
 	now C is oral-sex-addiction-influencing.
@@ -102,6 +98,8 @@ To say ClothingDesc of (C - a vest top cheerleader outfit):
 To decide which object is the potential-upgrade-target of (C - a vest top cheerleader outfit):
 	decide on a random off-stage supershort cheerleader outfit.
 
+
+	
 
 
 Cheerleader Outfit ends here.

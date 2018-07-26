@@ -486,6 +486,11 @@ To AltarReward (T - ankle bond):
 	otherwise:
 		say "Nothing seems to happen.".
 
+To AltarReward (T - a tattoo):
+	say "You watch as the tattoo slowly fades from existence!";
+	destroy the noun;
+	reset dungeon altar.
+
 To AltarReward (T - a bottle):
 	if the noun is cursed:
 		say "A voice appears in your head:  '[GoddessAddress] I shall remove this curse for you!'";
@@ -555,7 +560,7 @@ To WoodsOffer (T - an accessory):
 To WitchCheck (M - witch):
 	if the altar-uses of witch <= 0 and the curse-quest of witch < 3:
 		if witch is captive or witch is uninterested:
-			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing!  No using that without my permission!'[or]You again!  You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
+			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing! No using that without my permission!'[or]You again!  You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
 			anger witch;
 			now witch is interested;
 			now witch is released;
@@ -679,8 +684,7 @@ To ElderBreed (F - asshole):
 []
 To ElderSacrifice (T - a thing):
 	say "The [printed name of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if] It finally vanishes in a puff of smoke.";
-	let N be a random mystical amulet;
-	if the noun is N and there is a worn tattoo:
+	if T is mystical amulet and there is a worn tattoo:
 		increase the charge of the elder altar by 200;
 		say "You feel that the dark beings this altar belongs to are especially pleased! You feel a sudden burning sensation as some jagged black marks burn themselves into your skin!";
 		let M be mechanic;[We want to put the mechanic into a state where his quest is inactive and he's also unable to turn into Xavier, since his power has now been permanently lost to him]
@@ -694,7 +698,7 @@ To ElderSacrifice (T - a thing):
 			now whisper-tracking is 1;
 		if doom counter > 0:
 			increase doom counter by 5;
-	otherwise if the noun is bland:
+	otherwise if T is bland:
 		increase the charge of the elder altar by 50;
 	otherwise:
 		increase the charge of the elder altar by 25;
@@ -887,6 +891,7 @@ Definition: a thing (called T) is blessable:
 
 Definition: a clothing (called T) is blessable:
 	if T is blessed, decide no;
+	if T is bland and T is not cursable, decide no;
 	if T is not accessory or T is unique: [non-unique accessories (jewellery) is not applicable]
 		if T is worn by the player or T is carried by the player, decide yes;
 	decide no.
@@ -916,7 +921,7 @@ Check putting something on dungeon altar:
 Check putting something on woods altar:
 	try praying the noun with the second noun instead;
 
-Understand "place [something] on [something]", "offer [something] on [something]", "use [something] on [something]" as praying it with.
+Understand "place [something] on [something]", "offer [something] on [something]"[, "use [something] on [something]"] as praying it with.
 
 
 

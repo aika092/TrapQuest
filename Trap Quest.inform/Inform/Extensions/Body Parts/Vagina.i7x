@@ -256,7 +256,7 @@ To say VaginaModesty:
 			say "It is completely unprotected. ";
 	otherwise:
 		let W be a random worn potentially at least partially vagina covering clothing;
-		say "It can't be seen thanks to the [if vagina is exposed][random thing penetrating vagina][otherwise][selfexamineuniquetitle of W][end if]. ";[if vagina exposed is legacy code from when plugs could improve your modesty]
+		say "It [if vagina is at least partially exposed]is partially concealed by[otherwise]can't be seen thanks to[end if] the [if vagina is exposed][random thing penetrating vagina][otherwise][selfexamineuniquetitle of W][end if]. ";[if vagina exposed is legacy code from when plugs could improve your modesty]
 	if vagina is actually occupied:
 		let P be a random thing penetrating vagina;
 		if P is monster:
@@ -349,7 +349,7 @@ Chapter 3 - Contents and Pregnancy
 
 [!<PussyFillX>+
 
-REQUIRES COMMENTING
+This function should be called whenever semen enters the player's vagina
 
 +!]
 To PussyFill (X - a number):
@@ -373,6 +373,8 @@ To PussyFill (X - a number):
 		decrease X by 1;
 		if vagina is accepting womb semen and the semen volume of vagina > the womb volume of vagina * 4, WombFill 1; [Too big a creampie causes more cum to get into the womb]
 		otherwise increase the semen volume of vagina by 1;
+	now M is a random thing penetrating vagina;
+	if M is a thing, progress quest of vaginal-creampie-quest from M;
 	[[Pussy gets opened and ruined if there was any semen squirting this turn.]
 	if flav-said > 0 and invigoration-elixir-timer is 0:
 		ruin vagina;]
@@ -383,6 +385,11 @@ Definition: vagina (called V) is accepting womb semen: [If the womb is full or c
 	if the womb volume of vagina < 5 and the pregnancy of the player is 0, decide yes;
 	decide no.
 
+[!<WombFillX>+
+
+This function should be called whenever semen enters the player's womb.
+
++!]
 To WombFill (X - a number):
 	while X > 0:
 		decrease X by 1;
@@ -399,7 +406,7 @@ To compute sudden pregnancy:
 	let M be a random family thing penetrating vagina; [Whatever just jizzed in the player should already by inseminating vagina thanks to the fact that we just computed the father material of vagina above]
 	let R be a random number between 1 and (10 - the pregnancy rate of the player); [It's less likely you'll get instantly pregnant if there's a chance you'll get pregnant normally]
 	if slow pregnancy is 3, now R is a random number between 1 and (5 - the pregnancy rate of the player);
-	if debugmode > 0, say "Instant pregnancy check: R ([R]) must be 1 or womb volume ([womb volume of vagina]) must be at max of 5.";
+	if debuginfo > 0 and M is a thing, say "[input-style]Instant pregnancy avoidance check for [ShortDesc of M]: [if womb volume of vagina >= 5]max womb volume of 5 = automatic failure[otherwise]10 - pregnancy rate ([pregnancy rate of the player]) ==> d[10 - pregnancy rate of the player] ([R]) | (1.5) conception avoidance difficulty level[end if][roman type][line break]";
 	if (R < 2 or the womb volume of vagina >= 5) and M is a thing: [Max womb volume = instant guaranteed preggers]
 		now the father is M;
 		now the pregnancy of the player is 1;

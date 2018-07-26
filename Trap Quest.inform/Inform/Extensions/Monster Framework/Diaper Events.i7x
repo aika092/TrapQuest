@@ -778,6 +778,8 @@ To say ConfiscationFlav of (M - a monster) on (C - a clothing):
 
 To say body area of (C - a clothing):
 	say "body".
+To say body area of (C - an equippable):
+	say "[if C is slap ready]hand[otherwise]body[end if]".
 To say body area of (C - a ring):
 	say "finger".
 To say body area of (C - a bracelet):

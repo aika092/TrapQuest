@@ -620,7 +620,7 @@ To decide which figure-name is clothing-image of (C - a rubber diaper):
 	decide on figure of rubber diaper.
 
 To say ClothingDesc of (C - a rubber diaper):
-	say "A small white diaper covered with a thick outer layer of sheer pink latex. Yellow frills trace the legholes and a matching super-super-short latex yellow skirt is attached at the waistband.".
+	say "A small white diaper covered with a thick outer layer of sheer pink latex. Yellow frills trace the leg holes and a matching super-super-short latex yellow skirt is attached at the waistband.".
 
 To say selfexamineuniquetitle of (K - a rubber diaper):
 	say "rubber diaper".

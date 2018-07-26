@@ -17,7 +17,7 @@ Check showering:
 	if the player is immobile, say "You're a bit immobile at the moment!" instead;
 	if the player is flying, say "You aren't even touching the ground!" instead;
 	if the player is in danger, say "You can't do that in the middle of combat!" instead;
-	if the noun is not WoodsScenery01 and the noun is not DungeonScenery03 and the noun is not sacred pool, say "How would that work exactly?" instead;
+	if the noun is not WoodsScenery01 and the noun is not DungeonScenery03 and the noun is not sacred pool and the noun is not hot-tub, say "How would that work exactly?" instead;
 	if there is a worn unmessed diaper:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper!  Are you sure you want to? [yesnolink] ";
 		unless the player consents, say "Action cancelled." instead;
@@ -130,7 +130,11 @@ REQUIRES COMMENTING
 
 +!]
 To wash clothing in water body:
+	let quest-only-once be 0;
 	repeat with C running through worn clothing:
+		if quest-only-once is 0 and the water-soak of C is 0 and the quest of C is swimming-quest:
+			now quest-only-once is 1;
+			progress quest of swimming-quest;
 		if the semen-soak of C > 0:
 			increase tracked-semen by the semen-soak of C / 2;
 		if the urine-soak of C > 0:

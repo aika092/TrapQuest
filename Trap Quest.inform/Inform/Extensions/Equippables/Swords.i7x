@@ -72,9 +72,6 @@ To decide which number is the damage improvement of (W - a sword of purity):
 	increase X by the magic-modifier of W;
 	decide on X.
 
-To set up magic state of (W - a sword of purity):
-	do nothing. 
-
 To decide which number is the vaginal-sex-influence of (W - a sword of purity):
 	decide on 3.
 
@@ -414,9 +411,6 @@ To decide which number is the damage improvement of (W - a giant rattle):
 	let X be 0;
 	increase X by the magic-modifier of W;
 	decide on X.
-
-To set up magic state of (W - a giant rattle):
-	do nothing. 
 
 To compute attack of (W - a giant rattle) at (M - a monster):
 	say "The [W] rattles as it hits [NameDesc of M] with a loud smack.".

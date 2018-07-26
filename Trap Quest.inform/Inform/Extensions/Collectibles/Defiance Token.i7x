@@ -7,7 +7,7 @@ To say ShortDesc of (C - defiance token):
 
 To compute mass collectible reward of (T - a defiance token):
 	let N be (the number of held defiance tokens + 1) / 2;
-	say "You place [if number of held defiance tokens is 1]the metal token[otherwise]all [number of held defiance tokens] metal tokens[end if] into the bowl and there [if number of held defiance tokens is 1]it instantly turns[otherwise]they instantly turn[end if] into a silvery gas. As this gas fills the room and you breathe it in, ";
+	say "You place [if number of held defiance tokens is 1]the metal token[otherwise if number of held defiance tokens is 2]both metal tokens[otherwise]all [number of held defiance tokens] metal tokens[end if] into the bowl and there [if number of held defiance tokens is 1]it instantly turns[otherwise]they instantly turn[end if] into a silvery gas. As this gas fills the room and you breathe it in, ";
 	say "you feel that your [if the player is feeling submissive]love for being dominated[otherwise if the player is not feeling dominant]tolerance for being dominated[otherwise]fear of pain[end if] has become [if N > 7]massively [otherwise if N > 3]significantly [end if]lessened.";
 	DelicateDown N;
 	repeat with X running through held defiance tokens:

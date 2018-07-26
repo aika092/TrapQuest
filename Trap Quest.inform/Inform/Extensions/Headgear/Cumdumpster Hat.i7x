@@ -15,7 +15,7 @@ To say ClothingDesc of (H - a cumdumpster hat):
 	say "This black and white truckers hat [if H is worn]sits on your head. It [end if]has 'Cum Dumpster' written across the front in gothic letters[if the total condoms of H is 0 and the appearance of the player > 6]. The writing could be seen as ironic on such an otherwise normal hat if it wasn't for how the rest of you currently looks[end if].".
 	
 To say ShortDesc of (H - a cumdumpster hat):
-	say "cum dumpster hat.".
+	say "cum dumpster hat".
 
 To compute SelfExamineDesc of (H - cumdumpster hat):
 	let X be the largeness of hair;

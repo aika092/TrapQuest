@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 +!]
 Rule for constructing the status line:
 	if the player is not in Capsule and the player is not in Start:
-		if debugmode > 0:
+		if debuginfo > 0:
 			fill status bar with Table of Debug Low Res Status;
 		otherwise:
 			if choice in row 19 of Table of Settings is 1 or diaper quest is 1, fill status bar with Table of Low Res Status;
@@ -103,7 +103,7 @@ left	central	right
 "[TitleBimbo]"	""	""
 "STR:[flat strength of the player]/30 DEX:[flat dexterity of the player]/30 INT:[flat intelligence of the player]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
 "[DebugLowResAppearance] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
-"FATIGUE:[fatigue of the player] HEALTH:[body soreness of the player]/10 ASSHOLE:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player]"	""	""
+"FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the magic-power of the player > 0] MAGIC:[magic-power of the player][end if]"	""	""
 "STATUS: [VagueInternalFeeling] SLAP DICE: 2d[slap damage of the player - combat bonus remainder] KNEE DICE: 2d[knee damage of the player - combat bonus remainder][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK DICE: 2d[kick damage of the player - combat bonus remainder][if kick-fatigue > 0](-[kick-fatigue])[end if]"	""	""
 
 To say DebugLowResAppearance:
@@ -347,7 +347,7 @@ To say VagueAppearance:
 		say "Cumdump";
 	let O be appearance-outrage-level;
 	if B > 5 and O > 5:
-		say " (caused by [MediumDesc of appearance-outrage-target][if debugmode > 0] [bracket][O][close bracket][end if])".
+		say " (caused by [MediumDesc of appearance-outrage-target][if debuginfo > 0] [bracket][O][close bracket][end if])".
 
 [!<SayVagueCringeHumiliation>+
 
@@ -403,7 +403,7 @@ To say VagueCringeAppearance:
 	otherwise:
 		say "Booboo";
 	if B > 5 and appearance-cringe-level > 5:
-		say " (caused by [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumDesc of cringe-target][end if][if debugmode > 0] [bracket][appearance-cringe-level][close bracket][end if])".
+		say " (caused by [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumDesc of cringe-target][end if][if debuginfo > 0] [bracket][appearance-cringe-level][close bracket][end if])".
 
 [!<SayVagueAddiction>+
 
@@ -686,8 +686,17 @@ REQUIRES COMMENTING
 +!]
 To say VagueInternals:
 	let fine be 1;
+	let A be alcohol-level;
 	if the player is breasts blinded:
 		say "Blinded";
+		now fine is 0;
+	if A > 0:
+		if fine is 0, say " & ";
+		say "[if A is 1]Buzzed[otherwise if A is 2]Tipsy[otherwise if A is 3]Drunk[otherwise if A is 4]Very Drunk[otherwise]Extremely Drunk[end if]";
+		now fine is 0;
+	if hungover > 0:
+		if fine is 0, say " & ";
+		say "Hungover";
 		now fine is 0;
 	if the player is grossed out:
 		if fine is 0, say " & ";

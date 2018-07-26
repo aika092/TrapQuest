@@ -26,9 +26,6 @@ To decide which object is the unique-upgrade-target of (C - a royal dress):
 Definition: a royal dress (called C) is royal attire:
 	decide yes.
 
-To set up magic state of (O - a royal dress):
-	do nothing.[We don't want to set magic state yet]
-
 Part 1 - Ballgown Royal Dress
 
 A ballgown royal dress is a kind of royal dress. There is 1 ballgown royal dress. A ballgown royal dress is high cut. A ballgown royal dress is optional-top-displacable. The text-shortcut of ballgown royal dress is "rd1".

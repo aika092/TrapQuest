@@ -161,7 +161,7 @@ Report wearing endurance clothing:
 	say "A strong feeling of energy flows through you[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report plugging something with endurance clothing:
-	say "A strong feeling of energy flows through you[if the noun is unidentified]. This must be a magic [ShortDesc of the second noun][end if]!".
+	say "A strong feeling of energy flows through you[if the second noun is unidentified]. This must be a magic [ShortDesc of the second noun][end if]!".
 
 Report wearing bed wetting clothing:
 	say "Your bladder tingles slightly[if incontinence < 10], and you somehow can tell you have less control over not wetting yourself![end if]".

@@ -69,17 +69,25 @@ double-moved is a number that varies.
 After going when there are worn rollerskates:
 	if the player is upright:
 		increase double-moved by 1;
-		if a random number between 0 and (double-moved - 2) > a random number between 0 and 2 and the noun is N-viable and the player is not in the woods:
-			say "You can't stop yourself[if the slipperiness of the location of the player > 0] on this slippery ground[end if]! You keep travelling towards the next room.";
+		let Z be a random number between 0 and (double-moved - 2);
+		let X be a random number between 0 and 2;
+		if debugmode > 0, say "[noun] is [unless the noun is N-viable]not [end if]N-viable; the room [noun] from [the location of the player] is [room noun from the location of the player].";
+		if debuginfo > 1 and double-moved > 2 and the noun is N-viable and the player is not in the woods, say "[input-style]Rollerstakes doublemove check: doublemove charge-up ([double-moved - 1]) -> d[double-moved - 1]-1 ([Z]) | ([X]) d3-1 doublemove threshold[roman type][line break]";
+		if Z > X and the noun is N-viable and the player is not in the woods:
+			say "[bold type]You can't stop yourself[if the slipperiness of the location of the player > 0] on this slippery ground[end if]![roman type] You keep travelling towards the next room.";
 			now seconds is 6;
 			now double-moved is 0;
+			let R be the location of the player;
+			now R is discovered;
 			try going the noun;
+			if map images is 1, display entire map; [to prevent map glitches]
 		otherwise:
 			do important going resolution;
 			try looking;
 	otherwise:
 		do important going resolution;
-		try looking.
+		try looking;
+	if (the noun is up or the noun is down) and map images is 1, display entire map.
 		
 
 Rollerskates Framework ends here.

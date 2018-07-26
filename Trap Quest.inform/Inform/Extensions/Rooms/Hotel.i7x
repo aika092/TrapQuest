@@ -156,7 +156,7 @@ Hotel20 is a mandatory important modern room. The printed name of Hotel20 is "La
 REQUIRES COMMENTING
 
 *!]
-Hotel21 is an important modern room. The printed name of Hotel21 is "Staff Room". "You would expect there to be lots of comfortable furniture for resting in here, but there isn't. Across one wall there is a single row of chairs, each [if diaper quest is 1]decorated with a cute dolphin pattern, as if they were made for kids[otherwise]boasting a huge metal dildo in the seat, guaranteeing [end if][if the bimbo of the player < 12 and diaper quest is 0]an uncomfortable sit down[otherwise if diaper quest is 0][line break][second custom style]a fun time[roman type][line break][end if]!". The shape of Hotel21 is L3/0-0-0-1-1-1.
+Hotel21 is an important modern room. The printed name of Hotel21 is "Staff Room". "You would expect there to be lots of comfortable furniture for resting in here, but there isn't. Across one wall there is a single row of chairs, each [if diaper quest is 1]decorated with a cute dolphin pattern, as if they were made for kids[otherwise]boasting a huge metal dildo in the seat, guaranteeing [end if][if the bimbo of the player < 12 and diaper quest is 0]an uncomfortable sit down[otherwise if diaper quest is 0][second custom style]a fun time[roman type][end if]!". The shape of Hotel21 is L3/0-0-0-1-1-1.
 
 [!<hotel22:ModernRoom>*
 

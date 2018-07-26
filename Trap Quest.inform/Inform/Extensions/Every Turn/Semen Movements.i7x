@@ -50,18 +50,16 @@ A time based rule (this is the compute cum movements rule):
 						if the class of the player is cheerleader, increase PR by 3;
 						if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]
 						let R be a random number from PR to 5;
-						if debugmode > 0 and slow pregnancy < 3 and the virgin of the player is 0, say "Conception check: random number between [PR] (pregnancy resistance) and 5 = [R]; this needs to be lower or equal to womb volume of [womb volume of vagina].";
-						if R <= the womb volume of vagina and the number of family things > 0 and the virgin of the player is 0 and slow pregnancy < 3:
-							say "[ConceptionFlav]";
-							now the pregnancy of the player is 1;
-							check goddess eligibility;
+						if the number of family things > 0 and the virgin of the player is 0 and slow pregnancy < 3:
+							if debuginfo > 0, say "[input-style]Conception avoidance check: pregnancy resistance ([PR]) ==> RNG([PR]~5) = [R] | ([womb volume of vagina].5) womb volume[roman type][line break]";
+							if R <= the womb volume of vagina:
+								say "[ConceptionFlav]";
+								now the pregnancy of the player is 1;
+								check goddess eligibility;
 			if the remainder after dividing time-earnings by (vagina-semen-frequency * 2) < time-seconds and the latex-transformation of the player <= 3: [half the time we are going to cause womb absorption, the other half is pussy trickling]:
 				if the pregnancy of the player is 0 and the womb volume of vagina > 0: [Womb semen isn't absorbed during a pregnancy!]
 					let S be a random number between 1 and 3;
-					[if S is 1:
-						say "[one of]You feel a warm feeling in your womb.[or]You feel some pressure lifted from within your womb.[or]Heat rises from your womb up to your chest.[at random]";
-						WombEmpty 1;
-						Bustup 1;]
+					if debuginfo > 0, say "[input-style]Womb absorption roll: d3 ([S + 0]) | 1)Creampie addiction + 3; 2)Intelligence + 1; 3)Hip width + 1[roman type][line break]";
 					if S is 1:
 						say "[one of]A burning sense of passion runs through you.[or]Your womb sends a wave of ecstasy over your body.[or]You feel your womb cry out for more [semen].[at random]";
 						WombEmpty 1;

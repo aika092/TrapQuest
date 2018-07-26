@@ -3,6 +3,17 @@ Haunted Mirror Trap by Traps begins here.
 
 A haunted mirror trap is a kind of trap. There are 5 pressure haunted mirror traps.
 
+[!<HauntedMirrorTrap>@<SayEnvironmentDesc>+
+
+This is what is put in the room description when the trap is visible (revealed).
+
++@!]
+To say EnvironmentDesc of (T - a haunted mirror trap):
+	say "A haunted mirror sits exposed on one wall. Being here is dangerous, as it constantly threatens to catch your eye. ".
+
+To say ShortDesc of (T - a haunted mirror trap):
+	say "haunted mirror".
+
 This is the spawn initial mansion mirror traps rule:
 	repeat with N running from 1 to 3:
 		let R be a random trappable placed haunted room;
@@ -64,7 +75,7 @@ Definition: mirror nipple tweak is acceptable:
 	decide yes.
 To compute resolution of (X - mirror nipple tweak):
 	let C be bottom level lactation cover;
-	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [C][end if] until they reach their nipples. [if times-mirrored is 0]You jump with surprise as you realise the mirror isn't lying - you are also doing this yourself!  Your expression changes to one of sinister glee, and you realise that you have somehow been possessed by the mirror, and it temporarily has control over your entire body. [end if]You are absolutely powerless to fight back as you watch yourself begin to twist your nipples roughly, until you squeal with pain. Or rather you would if you could, but instead your face just turns into one of lustful glee. [if times-mirrored is 0]It's almost as if the possession can also influence your thoughts, because despite the pain, you're also getting aroused!  [otherwise]Once again, you find the almost unbearable pain somehow turning you on![end if]";
+	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [ShortDesc of C][end if] until they reach their nipples. [if times-mirrored is 0]You jump with surprise as you realise the mirror isn't lying - you are also doing this yourself!  Your expression changes to one of sinister glee, and you realise that you have somehow been possessed by the mirror, and it temporarily has control over your entire body. [end if]You are absolutely powerless to fight back as you watch yourself begin to twist your nipples roughly, until you squeal with pain. Or rather you would if you could, but instead your face just turns into one of lustful glee. [if times-mirrored is 0]It's almost as if the possession can also influence your thoughts, because despite the pain, you're also getting aroused!  [otherwise]Once again, you find the almost unbearable pain somehow turning you on![end if]";
 	DelicateUp 1;
 	Arouse 1000;
 	if times-mirrored is 0, say "You feel the possessing spirit lose control of your body as you finally manage to tear your eyes away from the mirror.".
@@ -83,7 +94,7 @@ Definition: mirror forced masturbation is one-turn:
 To compute resolution of (X - mirror forced masturbation):
 	now auto is 2;
 	let K be a random worn top level protection clothing;
-	say "Your reflection moves [if the largeness of breasts < 4 and the size of penis < 7 and the player is male]his[otherwise]her[end if] hand down to your [if K is clothing][K] and begins rubbing enthusiastically[otherwise if the player is male][player-penis] and begins stroking gleefully[otherwise][vagina] fingering herself gleefully[end if]. [one of]It's a very weird feeling, being mind controlled and being forced to watch it. [or][stopping]";
+	say "Your reflection moves [if the largeness of breasts < 4 and the size of penis < 7 and the player is male]his[otherwise]her[end if] hand down to your [if K is clothing][ShortDesc of K] and begins rubbing enthusiastically[otherwise if the player is male][player-penis] and begins stroking gleefully[otherwise][vagina] fingering herself gleefully[end if]. [one of]It's a very weird feeling, being mind controlled and being forced to watch it. [or][stopping]";
 	if the player is not a bit horny:
 		say "[if the player is male]Your [player-penis] soon reaches full mast as your arousal quickly builds[otherwise]Your arousal quickly builds as your arm breaks into a steady rhythm[end if]. ";
 		now the arousal of the player is 5000;
@@ -100,7 +111,7 @@ Definition: mirror breast growth is acceptable:
 
 To compute resolution of (X - mirror breast growth):
 	let C be bottom level lactation cover;
-	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [C][end if] and groping your chest. You watch as you are forced to massage your own breasts lovingly, with a cheeky grin stretched across your face. [if the player is able to speak]You even snigger out loud[otherwise]Your face mimes silent laughter[end if] as your breasts visibly expand!";
+	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [ShortDesc of C][end if] and groping your chest. You watch as you are forced to massage your own breasts lovingly, with a cheeky grin stretched across your face. [if the player is able to speak]You even snigger out loud[otherwise]Your face mimes silent laughter[end if] as your breasts visibly expand!";
 	BustUp 4.
 
 mirror hip growth is a mirror attack.

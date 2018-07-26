@@ -56,7 +56,7 @@ To say StoryAnswer of (M - student-winnie):
 	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real?  But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-winnie):
-	say "[speech style of M]'[if the rank of the player is 1]We're in Slut School, obviously!  Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously!  Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
 
 Part - Lottie
 
@@ -85,7 +85,7 @@ To say StoryAnswer of (M - student-lottie):
 	say "[speech style of M]'I love my boyfriend but he's into some weird stuff!  I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-lottie):
-	say "[speech style of M]'[if the rank of the player is 1]Don't believe the propaganda, this place is for one thing only - training people to enjoy being adult babies.'[otherwise]We can take things to, err, speed up our metabolic functions. But I don't know if I can bring myself to do it...'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Don't believe the propaganda, this place is for one thing only - training people to enjoy being adult babies.'[otherwise]We can take things to, err, speed up our metabolic functions. But I don't know if I can bring myself to do it...'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - student-lottie):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]Nothing of much interest, to be perfectly honest.'[otherwise]More and more baby themed rooms, I'm sure.'[end if][roman type][line break]".
@@ -121,7 +121,7 @@ To say StoryAnswer of (M - student-austin):
 	say "[speech style of M]'I'm a latex fashion model but my agent says I'm too shy in front of a camera to properly make it big. He suggested I come here to learn how to [']loosen up[']...'[roman type][line break]".
 
 To say WhereAnswer of (M - student-austin):
-	say "[speech style of M]'[if the rank of the player is 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other girls were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other girls were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
 
 Part - Polly
@@ -162,7 +162,7 @@ To say WhoAnswer of (M - an innocent student):
 	say "[speech style of M]'My name is [student-name of M][if the current-rank of M > 1], or so I've been told. I didn't realise I was going to have to change my name[end if]...'[roman type][line break]".
 
 To say WhereAnswer of (M - an innocent student):
-	say "[speech style of M]'[if the rank of the player is 1]We're in some kind of special school. To get good at making other people happy.'[otherwise]I dunno, some of the things they want us to do are pretty crazy. Surely there's another way?'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in some kind of special school. To get good at making other people happy.'[otherwise]I dunno, some of the things they want us to do are pretty crazy. Surely there's another way?'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - an innocent student):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's a few more rooms, like a junk room, and a sewing room, and I think that's about all I've seen so far.'[otherwise]I've not got any better an idea than you, I'm afraid! I'm looking forward to finding out though.'[end if][roman type][line break]".

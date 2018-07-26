@@ -80,6 +80,8 @@ Include Students Innocent by Monster.
 Include Students Nasty by Monster.
 Include Students Ditzy by Monster.
 
+Include Supporter Framework by Monster Framework.
+
 Include Woman Barbara by Monster.
 
 Include Talking by Actions.

@@ -172,12 +172,12 @@ Carry out dominating:
 	otherwise:[Value of 2? Player failed and is getting punished]
 		now M is interested;
 		unless M is unfriendly, anger M;[this handles edge cases where the player goes for a monster that isn't paying attention to the player.]
-		now the stance of the player is 1; [The flavour should usually imply the player is on their knees, but specific functions can override that with DominanceFailure of M.]
+		now the stance of the player is 1;[The flavour should usually imply the player is on their knees, but specific functions can override that with DominanceFailure of M.]
 		FatigueUp 50;
 		now player-fucking is 1;
 		say DominanceFailure of M;
 		compute failed dominance punishment of M;
-		unless M is interested:
+		unless M is interested:[If the monster is still interested it usually means they're about to fuck the player]
 			say DominanceFailed of M;
 			replace M after domination;
 	now player-fucking is 0.
@@ -190,26 +190,30 @@ Understand "dominate [something]", "fuck [something]", "dom [something]", "screw
 [!<DecideWhichNumberIsTheDominanceOfThePlayer>+
 
 This function calculates the "dominance score" of the player, which is derived from the player's sex addiction, delicateness, and orifice openness, in addition to penis size and the enchantment types of any pieces of worn clothing. Male players always have an inherent advantage, so we try to compensate a little bit by taking the average gape of both holes for female players. If the player learns the fuckskill, orifice openness and sex addiction are omitted from the calculation.
-@return <Integer> A higher value indicates the player is more dominant. A smaller value indicates the player is less dominant.
+Selkie: what would add a lot of value to this comment is some concrete examples of dominance values to use.
+MG: generally the purpose of this function is to pit it against monsters, so it's more about whether the player's "score" is higher than whatever value we get from the monster
+
+@return <Integer> The player's dominance score. Low values indicate the player is more submissive, higher values indicate the player is more dominant. The default value for male players is 12. The default value for female players is 8.
 +!]
 To decide which number is the dominance of the player:
-	let D be 3; [The player is naturally a little dominant]
+	let D be 5; [The player is naturally a little dominant]
 	decrease D by the delicateness of the player;
 	decrease D by the number of worn temptation clothing * 2;
 	increase D by the number of worn dominance clothing * 2;
-	increase D by the size of penis;
+	unless there is a worn chastity cage, increase D by the size of penis;[really only counts for "manly-wenchy" situations]
+	if the player is female and tg fetish is 0, increase D by 3;
 	if fuckskill is 0:[note that default openness is 1, so all players can gain something from having the skill.]
 		if the player is male, decrease D by the openness of asshole / 2;
 		otherwise decrease D by (the openness of vagina + the openness of asshole) / 4;
 		decrease D by the sex addiction of the player / 4;
-	decide on D + 2.
+	decide on D.
 
 [!<DecideWhichNumberIsTheSubmissivenessOfMonster>+
 
 Does the monster submit to sex, or do they turn the tables; broken up so it's easier to balance the numbers. 
 1st check: Checks the physical dominance roll function for M, and if the result is not 0, returns the result
 2nd check: Takes a random number between the dominance of a player and 1/2 the player's strength, then compares the result "N" against the difficulty of M - the times-dominated of M, "D". If N is greater than or equal to D, the player wins with no further check.
-3rd check: Retry 2nd check. I made a rule during a play-through that I'd accept a failure if I failed again after using undo once, so I think it's fair to simply include that in the check.
+3rd check: Retry 2nd check. I made a rule during a play-through that I'd accept a failure if I failed again after using undo once, so it felt right to simply include that in the check.
 4th check: If M has a maxhealth of 40 or more and their health is 10 or less, retry 2nd check.
 
 @param <Monster>:<M> The monster the player is trying to dominate
@@ -256,7 +260,9 @@ Outputs the strength of the player's current domination attempt for a particular
 
 +!]
 To decide which number is the mental dominance roll for (M - a monster):
-	decide on a random number between (the strength of the player / 2) and the dominance of the player;[The minimum value here is always 3 assuming no negative modifiers on dominance.]
+	decide on a random number between (the strength of the player / 2) and the dominance of the player.[The minimum value here is always 3 assuming no negative modifiers on dominance.]
+[Selkie: Then why is there a test for the dominance of the player <= -1, elsewhere?
+MG: That's in the demon codpiece description. Its meant to be a hint that submissive monsters are aggressive to players who wear the codpiece. Dominance is all about context. Note the fact that M is a parameter for this function]
 
 [!<DecideWhichNumberIsSubmissivenessBaseOfMonster>+
 
@@ -335,13 +341,15 @@ This function is called when the player is about to "dominantly ride" a male mon
 
 +!]
 To say PowerBottomComment of (M - a monster):
-	if the bimbo of the player < 6:
+	if the player is not able to speak:
+		say "You give [NameDesc of M] a smouldering look, hopefully conveying how [if the bimbo of the player < 6]dominant you are even though you're about to sit on [his of M] [DickDesc of M][otherwise if the bimbo of the player < 12]compromising this situation is for [him of M] and [his of M] [DickDesc of M][otherwise]much you want to sit on [his of M] [DickDesc of M][end if].";
+	otherwise if the bimbo of the player < 6:
 		if the player is male:
 			say "[first custom style]'[one of]I don't care, I've fucking earned this. Your dick is MINE.'[or][if the size of penis < the girth of M]You think you're so fucking great because you're bigger than me? Better know how to fucking use it.'[otherwise]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type]";
 		otherwise:
 			say "[first custom style]'[one of]Oh we're going to fuck, but you're not going to be doing the fucking.'[or]This time, you're MY fucktoy.'[or]That didn[']t go the way you'd hoped, now did it?'[at random][roman type]";
 	otherwise if the bimbo of the player < 12:
-		say "[variable custom style][one of]I[']m going to be on top this time.'[or]I hope you're not a quick-shot, sweetie.'[or]So, are you excited? You get to be fucktoy now!'[at random][roman type]";
+		say "[variable custom style]'[one of]I[']m going to be on top this time.'[or]I hope you're not a quick-shot, sweetie.'[or]So, are you excited? You get to be fucktoy now!'[at random][roman type]";
 	otherwise:
 		say "[second custom style]'[one of]Are you ready, sugar?'[or]So, stud, why don[']t we get down to business?'[or]Don[']t worry baby, I[']ll do everything.'[or]Don[']t worry about a thing, honey, you[']re in [NameBimbo][']s hands.'[at random][roman type]";
 

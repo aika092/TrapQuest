@@ -12,7 +12,7 @@ To FacePiss from (M - an object):
 		say "Your ring gag means that the [urine] flows straight into your mouth, forcing you to swallow it.";
 		DrinkPiss from M;
 	otherwise:
-		if the thirst of the player is 5 and the humiliation of the player < HUMILIATION-DISGRACED + 3500:
+		if the thirst of the player is 5 and the player is not disgraced:
 			say "Your thirst overwhelms you and you can't help but open your mouth to wet your tongue and throat.";
 			DrinkPiss from M;
 		otherwise if the player is desperate to drink urine:
@@ -120,11 +120,12 @@ To DrinkPiss from (M - an object):
 	UrineTasteAddictUp 1;
 	let P be a random worn WC plug panties;
 	if P is clothing:
-		say "[bold type]Your [if the player is female][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type]  Suddenly [if the player is female]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed!  Wow!";
+		say "[bold type]Your [if the player is female][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is female]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed!  Wow!";
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
 		now the soreness of vagina is 0;
-		now the tolerated of vagina is 0.
+		now the tolerated of vagina is 0;
+	progress quest of piss-drinking-quest.
 
 To compute unique piss drink effect of (M - an object):
 	do nothing.
@@ -503,6 +504,10 @@ To compute angry punishment of (M - a monster):
 			say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed!  ";
 			say angry punishment clothing destruction of M on C;
 		destroy C.
+		
+[To be displayed when a monster tries to angry punish the player but couldn't find anything to tear off/steal]
+To say AngryFizzleFlav of (M - a monster):
+	do nothing.
 
 [!<ComputeHappyRewardOfMonster>+
 
@@ -526,9 +531,9 @@ This should display some text when a monster decides to punish the player for so
 +!]
 To say angry punishment insult of (M - a monster):
 	if M is intelligent and M is not friendly-fucking:
-		say "[first custom style]'Fucking bitch!  Learn your place.'[roman type][line break]";
+		say "[speech style of M]'Fucking bitch!  Learn your place.'[roman type][line break]";
 	otherwise if M is intelligent:
-		say "[first custom style]'Whatever, fucking bitch.'[roman type][line break]";
+		say "[speech style of M]'Whatever, fucking bitch.'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] looks very [if the bimbo of the player < 12]angry[otherwise]disappointed[end if]!".
 
@@ -557,7 +562,10 @@ To say angry punishment clothing destruction of (M - a monster) on (C - a clothi
 To say VirginityTaken of (M - a monster):
 	say "[if the sex addiction of the player < 5][BigNameDesc of M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, a single tear rolling down your face as [his of M] [DickDesc of M] pierces your hymen, removing your virginity forever. You don't struggle, absorbed with dread that [he of M] could be the first of dozens, if not hundreds of sex partners to dominate and fuck you. Apparently not concerned with giving you time with your thoughts, [NameDesc of M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [DickDesc of M] into your [vagina]. After what feels like an eternity, every moment more painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise if the sex addiction of the player < 10][BigNameDesc of M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, worriedly biting your lip as [his of M] [DickDesc of M] pierces your hymen, removing your virginity forever. You are paralysed with indecision, not sure if the fact that [he of M] could be the first of dozens, if not hundreds of sex partners is something that scares you or arouses you. Apparently not concerned with giving you time with your thoughts, [NameDesc of M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [DickDesc of M] into your [vagina]. After what feels like an eternity, every moment more painful and strangely satisfying than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[otherwise][BigNameDesc of M][']s other hand is used to guide [his of M] shaft into your [vagina]. You look over your shoulder, grinning in satisfaction as [his of M] [DickDesc of M] pierces your hymen, removing your virginity forever. You stay still as best you can, hoping to preserve your tightness for the dozens, if not hundreds of sex partners you'll have in the future. Apparently not concerned with giving you time with your thoughts, [NameDesc of M] places [his of M] hands on your hips and continues forcing more and more of [his of M] [DickDesc of M] into your [vagina]. After what feels like an eternity, every moment more decadently painful than the last, [he of M] bottoms out, tightening [his of M] grip so you can't get away.[end if]".
 
-To say MouthPenetrationFlav of (M - a monster):[This probably needs changing for every monster!]
+To say MouthPenetrationFlav of (M - a monster):
+	say DefaultMouthPenetrationFlav of M.
+		
+To say DefaultMouthPenetrationFlav of (M - a monster):[This probably needs changing for every monster!]
 	if presented-orifice is face:
 		say FriendlyMouthPenetrationFlav of M;
 	otherwise if there is a worn ringagged clothing:

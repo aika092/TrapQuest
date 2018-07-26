@@ -136,6 +136,7 @@ A time based rule (this is the compute stomach rule):
 				if C is blessed, now X is 8;
 				if C is cursed, now X is 3;
 				let R be a random number between 1 and 10;
+				if debuginfo > 0, say "[input-style]Cock pacifier roll d10 ([R]): 1-[X])Normal water; [X + 1]-10)Semen[roman type][line break]";
 				if R > X:
 					say "It shoots warm [semen] into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 11][line break][variable custom style]Mmm, delicious cum![otherwise if the semen taste addiction of the player > 7][variable custom style]It's making me drink [semen] again![otherwise][line break][first custom style]Oh my god, that was [semen] it just made me swallow!  Gross![end if][roman type][line break]";
 					StomachSemenUp 1;
@@ -148,7 +149,7 @@ A time based rule (this is the compute stomach rule):
 		let I be 3[ - the incontinence of the player];
 		let R be (a random number between I and 30) + (a random number between I and 30);
 		if (there is a worn bed wetting clothing or there is a worn bed-wetter tattoo) and resting is 1, now R is 1;
-		if debugmode is 1, say "Urination roll of [R] vs bladder of [the bladder of the player].";
+		if debuginfo > 1, say "[input-style]Urine hold check: [if R is 1]magic bed wetting effect = automatic failure[otherwise]2d28+4 ([R]) | ([bladder of the player - 1].5) bladder volume[end if][roman type][line break]";
 		if R < the bladder of the player, now delayed urination is 1;
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
 		bladderup (1 + (xavier-belt-link * 2)) * the delayed bladder of the player;

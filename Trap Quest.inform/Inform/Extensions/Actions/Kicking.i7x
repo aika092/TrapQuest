@@ -6,19 +6,31 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the kick damage of the player:
+	if damage-explained > 1, say "[input-style]Base kick damage calculation: [bracket]3 (base damage) ";
 	let A be 3;
-	if there are worn shoes:
-		let H be a random shoes worn by the player;
+	let H be a random worn shoes;
+	if H is shoes:
 		let K be the magic-modifier of H;
 		if H is heels, now K is 0;
 		increase K by the kick-bonus of H;
 		increase A by K / 2;
+		if damage-explained > 1, say "[if K / 2 >= 0]+[end if][K / 2] ([ShortDesc of H]) ";
 	increase A by combat bonus;
+	if damage-explained > 1, say combat bonus explanation;
 	increase A by permanent-kick-bonus;
-	if the weight of the player < 1, decrease A by 2;
-	if there is a worn demon horns and the total-souls of the player > 9, increase A by 3;
-	if the player is diaper kicking, decrease A by 1;
-	if the player is zeroG, now A is 0;
+	if damage-explained > 1 and permanent-kick-bonus is not 0, say "[if permanent-kick-bonus >= 0]+[end if][permanent-kick-bonus] (imprinted kick bonus) ";
+	if the weight of the player < 1:
+		decrease A by 2;
+		if damage-explained > 1, say "-2 (very low weight) ";
+	if there is a worn demon horns and the total-souls of the player > 9:
+		increase A by 3;
+		if damage-explained > 1, say "+3 (over 9 souls collected) ";
+	if the player is diaper kicking:
+		decrease A by 1;
+		if damage-explained > 1, say "-1 (diaper penalty) ";
+	if the player is zeroG:
+		if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
+		now A is 0;
 	decide on A.
 
 permanent-kick-bonus is a number that varies.
@@ -61,8 +73,12 @@ Carry out kicking:
 	now attack-type is 3;
 	reset submitted monsters;
 	increase the fat-burning of the player by 45;
+	now damage-explained is debuginfo;
 	let A be the kick damage of the player;
+	if damage-explained > 0, say "[if damage-explained > 1][close bracket] = [A]; [otherwise][input-style]Kick attack: [A] [end if]";
 	decrease A by kick-fatigue;
+	if kick-fatigue > 0 and damage-explained > 0, say "-[kick-fatigue] (kick fatigue)";
+	if damage-explained > 0, say "[roman type][line break]";
 	now kick-fatigue-delay is 2;
 	increase kick-fatigue by 1;
 	now seconds is 6;
@@ -85,11 +101,10 @@ Carry out kicking:
 			damage A on the noun;
 			FatigueUp 2;
 		otherwise:
-			say "You kick [the noun] with all your might.";
+			say "You kick [NameDesc of the noun] with all your might.";
 			damage A on the noun;
 			FatigueUp 2;
-	repeat with M running through unfriendly interested monsters in the location of the player:
-		reset submitted monsters. [Otherwise kneeling makes them delayed]
+	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "kick [something]", "ki [something]" as kicking.
 
 

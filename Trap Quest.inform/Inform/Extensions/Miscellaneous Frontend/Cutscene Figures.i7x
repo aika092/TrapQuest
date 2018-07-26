@@ -224,6 +224,11 @@ Figure of Minotaur Cutscene 6 is the file "Special/Cutscene/cutscene-minotaur-sp
 Figure of Wasp Cutscene 1 is the file "Special/Cutscene/cutscene-wasp-sex1.png".
 
 Figure of Mindflayer Cutscene 1 is the file "Special/Cutscene/cutscene-mindflayer-perception1.png".
+Figure of Mindflayer Cutscene 2 is the file "Special/Cutscene/cutscene-mindflayer-suck1.png".
+Figure of Mindflayer Cutscene 3 is the file "Special/Cutscene/cutscene-mindflayer-suck2.png".
+Figure of Mindflayer Cutscene 4 is the file "Special/Cutscene/cutscene-mindflayer-suck3.png".
+Figure of Mindflayer Cutscene 5 is the file "Special/Cutscene/cutscene-mindflayer-drained1.png".
+Figure of Mindflayer Cutscene 6 is the file "Special/Cutscene/cutscene-mindflayer-drained2.png".
 
 Figure of Tentacle Cutscene 1 is the file "Special/Cutscene/cutscene-tentacle-birth1.png".
 Figure of Tentacle Cutscene 2 is the file "Special/Cutscene/cutscene-tentacle-belly1.png".

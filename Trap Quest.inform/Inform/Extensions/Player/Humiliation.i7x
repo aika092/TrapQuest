@@ -6,27 +6,74 @@ The value all changes in humiliation come back to. When this value is increased,
 
 ]
 To decide which number is HUMILIATION-BASE:
-	decide on 3 + game difficulty / 2.
+	decide on 3 + game difficulty / 2.[minimum 3, maximum 5.]
 
 [
 
-Spending a turn strutting
+Events that won't mean much unless they happen continuously for a very long time. It takes 2000 of these to change humiliation level
 
 ]
 To decide which number is TRIVIAL-HUMILIATION:
-	decide on HUMILIATION-BASE;
+	decide on HUMILIATION-BASE;[minimum 3, maximum 5]
 
+[
+
+Events that won't mean much unless they happen very often.
+It takes 400 of these to change humiliation level
+
+]
 To decide which number is SLIGHT-HUMILIATION:	
-	decide on HUMILIATION-BASE * 5;
+	decide on HUMILIATION-BASE * 5;[minimum 15, maximum 25]
 
+[
+
+Events that will mean something if they happen very often, but won't matter much if they only happen rarely. It takes 200 of these to change humiliation level
+
+]
 To decide which number is MODERATE-HUMILIATION:
-	decide on HUMILIATION-BASE * 10;
+	decide on HUMILIATION-BASE * 10;[minimum 30, maximum 50]
 
+[
+
+Events that will mean a lot if they happen often, but are less meaningful if they are rare. It takes 100 of these to change humiliation level
+
+]
 To decide which number is STRONG-HUMILIATION:
-	decide on HUMILIATION-BASE * 20;
+	decide on HUMILIATION-BASE * 20;[minimum 60, maximum 100.]
 
+[
+
+Events that are meaningful even if they are rare, and very meaningful if they are not. It takes 50 of these to change humiliation level
+
+]
 To decide which number is SEVERE-HUMILIATION:
-	decide on HUMILIATION-BASE * 50;
+	decide on HUMILIATION-BASE * 50;[minimum 150, maximum 250]
+
+[
+
+Events that are always meaningful, even when rare. It takes 20 of these to change humiliation level
+
+]
+To decide which number is OBSCENE-HUMILIATION:
+	decide on HUMILIATION-BASE * 100;[minimum 300, maximum 500]
+
+
+[
+
+Events that are meaningful even if they happen only once. It takes 10 of these to change humiliation level
+
+]
+To decide which number is ULTRA-HUMILIATION:
+	decide on HUMILIATION-BASE * 200;[minimum 600, maximum 1000]
+
+[
+
+Events that can single handedly push the player to a new humiliation level, even if they only happen once. 
+It takes 7 pf these to change humiliation level
+
+]
+To decide which number is TOTAL-HUMILIATION:
+	decide on HUMILIATION-BASE * 300;[minimum 900, maximum 1500]
 
 [
 
@@ -189,18 +236,44 @@ To decide which number is the humiliation-influence of (C - a confidence clothin
 
 [!<HumiliateX>+
 
-REQUIRES COMMENTING
+The humiliation function multiplies whatever number is plugged into it, so the same event is less humiliating if it occurs when the player is shameless rather than proud. A humiliate 100 at 0 humiliation humiliates 450. At 10000 humiliation it humiliates 400. At 20000 humiliation it humiliates 350. At 30000 humiliation it humiliates 300 and at 40000 humiliation it humiliates 250. As such, any number plugged into this function from anywhere is larger than it seems.
+
+Once the humiliation amount is decided, the number is passed to the delayed humiliation number, which allows the game to store multiple humiliation hits without exploding with output.
 
 +!]
 To humiliate (X - a number):
-	[Humiliation number is how humiliating the act is. A humiliate 100 at 0 humiliation humiliates 450. At 10000 humiliation it humiliates 400. At 20000 humiliation it humiliates 350. At 30000 humiliation it humiliates 300 and at 40000 humiliation it humiliates 250.]
 	let B be 0;
 	repeat with C running through worn clothing:
 		increase B by the humiliation-influence of C;
 	while 10 - B < 0:
 		decrease B by 1;
 	let H be (X * (35000 + ((10 - B) * 1000) - (the humiliation of the player / 2))) / 10000;
+	now H is (H * (5 - alcohol-level)) / 5; [alcohol reduces dignity loss]
 	delayed humiliate H.
+
+To trivialHumiliate:
+	humiliate TRIVIAL-HUMILIATION.
+
+To slightHumiliate:
+	humiliate SLIGHT-HUMILIATION.
+
+To moderateHumiliate:
+	humiliate MODERATE-HUMILIATION.
+
+To strongHumiliate:
+	humiliate STRONG-HUMILIATION.
+
+To severeHumiliate:
+	humiliate SEVERE-HUMILIATION.
+
+To obsceneHumiliate:
+	humiliate OBSCENE-HUMILIATION.
+
+To ultraHumiliate:
+	humiliate ULTRA-HUMILIATION.
+
+To totalHumiliate:
+	humiliate TOTAL-HUMILIATION.
 
 [!<SayBrokenFlav>+
 
@@ -308,7 +381,9 @@ To blush (X - a number):
 
 [!<DignifyX>+
 
-REQUIRES COMMENTING
+Unlike numbers plugged into the humiliation function, these numbers are mostly raw. This means that dignity gains 
+are more significant the higher the player's humiliation, and less significant the lower it gets. Note that the player 
+cannot lose dignity once their humiliation score passes above 40000, or HUMILIATION-BROKEN
 
 +!]
 To Dignify (X - a number):

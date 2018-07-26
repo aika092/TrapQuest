@@ -95,9 +95,11 @@ To compute facial sex of (M - mind flayer):
 		say "The creature[']s tentacles continue to suck on your head! You feel terribly light-headed but euphoric at the same time!";
 		Intdown 1;
 		arouse 50;
+		if image cutscenes is 1, display figure of mindflayer cutscene 3;
 	otherwise if the raw intelligence of the player is 4:
 		say "With a final squelching sound not unlike a straw struggling to pull the last drops of liquid from a cup, you feel the suction on your head come to a climax. The euphoria becomes so strong that so do you!";
 		Intdown 2;
+		if image cutscenes is 1, display figure of mindflayer cutscene 4;
 		if the player is able to get horny:
 			if the player is female:
 				vaginally orgasm shamefully;
@@ -111,6 +113,7 @@ To compute facial sex of (M - mind flayer):
 		
 To compute (M - mind flayer) entering mouth:
 	say "[MouthPenetrationFlav of M]";
+	if image cutscenes is 1, display figure of mindflayer cutscene 2;
 	if the raw intelligence of the player > 3:
 		now the sex-length of M is 4;
 		now the feeding of M is 1;
@@ -123,9 +126,11 @@ To compute facial climax of (M - mind flayer):
 	if the raw intelligence of the player > 3 and the feeding of M is 1:
 		say "The creature pulls away its tentacles from your head, seemingly satisfied for the moment.";
 		bore M;
+		if image cutscenes is 1, display figure of mindflayer cutscene 5;
 	otherwise if the feeding of M is 1:
 		say "The creature pulls its tentacles away, seemingly satisfied for the moment.";
 		bore M;
+		if image cutscenes is 1, display figure of mindflayer cutscene 6;
 		let T be a random empty-mind tattoo;
 		if there is a worn tattoo:
 			say "As it pulls away, the word 'EMPTY' suddenly appears on your forehead!";
@@ -147,7 +152,9 @@ This is the mind flayer psychic attack rule:
 		say "The creature releases a wave of psychic force!";
 		if (13 - a random number between 1 and the raw intelligence of the player) > 0:
 			say "The force strikes you head on, and you feel a sudden wave of fatigue!";
-			FatigueUp the difficulty of M;
+			let X be the difficulty of M;
+			if the buckle threshold of the player / 7 > X, now X is the buckle threshold of the player / 7;
+			FatigueUp X;
 		otherwise:
 			say "You are able to shake the attack off!";
 	otherwise:

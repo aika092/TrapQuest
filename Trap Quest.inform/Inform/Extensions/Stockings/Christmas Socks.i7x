@@ -1,6 +1,6 @@
 Christmas Socks by Stockings begins here.
 
-A deer socks is a kind of socks. There is 1 deer socks. The text-shortcut of deer socks is "drs".
+A deer socks is a kind of socks. There is 1 deer socks. The text-shortcut of deer socks is "dso".
 
 Figure of deer socks is the file "Items/Clothes/Lower/Legs/socks1.png".
 

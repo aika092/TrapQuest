@@ -181,9 +181,11 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			say "[one of]You are still trying to work out what that means when[or]Once again[stopping] she dives underwater, and suddenly you feel something poking forcefully at your [asshole]. She's... she's trying to force herself in!";
 			let R be a random number between the swimming modifier of the player / 2 and the dexterity of the player;
 			say "[bold type]Do you want to try and escape?[roman type] [yesnolink] [line break]";
-			unless the player consents, now R is -9999;
+			if the player consents:
+				if debuginfo > 0, say "[input-style]Escape from slimegirl check: swimming modifier ([swimming modifier of the player / 2]); dexterity ([dexterity of the player]) -> RNG([swimming modifier of the player / 2]~[dexterity of the player]) = [R] | (7.5) slimegirl invasion skill[roman type][line break]";
+			otherwise:
+				now R is -9999;
 			if the player is prone, decrease R by 2;
-			if debugmode is 1, say "Slimegirl Roll of [R], needs to be less than 8.[line break]";
 			if R < 8:
 				unless R <= -9999, say "It's no good, she's too fast for you!  You can't get away!  ";
 				say "You feel [if the openness of asshole < 8]your [asshole] forced wide as [NameDesc of M] swims up inside you and into your belly![otherwise]her wiggling as [NameDesc of M] swims up into your [asshole] and into your belly![end if]";

@@ -6,7 +6,7 @@ Fatigue by Player begins here.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called fatigue. The fatigue of the player is usually 0. [Min 0 No Max]
+The player has a number called fatigue.
 
 
 [!<Player>@<fatiMod:Integer>*
@@ -14,9 +14,9 @@ The player has a number called fatigue. The fatigue of the player is usually 0. 
 Increases by 1 each turn the player spends on their knees. Essentially the longer you rest in a row the faster you regain energy.
 
 *@!]
-The player has a number called fatimod. The fatimod of the player is usually 1.
+fatimod is a number that varies. fatimod is 1.
 
-The player has a number called stance. The stance of the player is usually 0. [0-standing, 1-kneeling]
+The player has a number called stance. The stance of the player is 0. [0-standing, 1-kneeling]
 [!<YourselfIsUpright>+
 
 Is the player standing?

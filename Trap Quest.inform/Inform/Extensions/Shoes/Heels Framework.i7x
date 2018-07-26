@@ -72,7 +72,7 @@ To decide which number is the damage modifier of (H - a heels):
 		if H is cursed, now R is a random number between 1 and 10;
 		if R is 1:
 			now critical is 1;
-			decide on the strength of the player / 3.
+			decide on combat bonus.
 
 To decide which number is the hindrance of (C - a heels):
 	let X be 0;

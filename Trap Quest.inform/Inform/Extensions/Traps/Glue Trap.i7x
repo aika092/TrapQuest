@@ -23,8 +23,11 @@ Carry out TQeating glue:
 To say GlueDesc:
 	say "A [if the item described is full-strength][one of]faintly glowing[or]luminous[stopping] shiny [active-colour of the item described] patch of sticky exudate[otherwise]thick layer of rubbery-looking [active-colour of the item described] ooze. It looks like a cross between melted silly-putty and the coating they put on flypaper[end if].".
 
+To say MediumDesc of (G - a glue):
+	say "pool of [the active-colour of G] [if the glue is not full-strength]once-[otherwise]mildly [end if]sticky glue".
+
 To say ShortDesc of (G - a glue):
-	say "A puddle of [the active-colour of G] [if the glue is not full-strength]once-[otherwise]mildly [end if]sticky glue.";
+	say "[the active-colour of G] glue".
 
 Understand the glue-strength property as describing a glue.
 
@@ -33,6 +36,17 @@ Tearing off is an action applying to one thing.
 [They can rub clothing in glue to soak up glue and weaken the bond. But if they later wear it, it will get stuck!]
 
 A glue trap is a kind of trap. A glue trap can be industrial or organic. A glue trap is usually organic. The description of glue trap is "[GluetrapDesc]". There are 4 potentially click glue traps.
+
+[!<GlueTrap>@<SayEnvironmentDesc>+
+
+This is what is put in the room description when the trap is visible (revealed).
+
++@!]
+To say EnvironmentDesc of (T - a glue trap):
+	say "A [if T is organic]squishy looking rock has split down the middle[otherwise]nozzle sits overhead[end if] here, where glue previously burst out from. ".
+
+To say ShortDesc of (T - a glue trap):
+	say "glue trap".
 
 [!<YourselfIsGlueStuck>+
 
@@ -357,10 +371,10 @@ To compute glue escaping:
 				say "Your [if the player is male]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
 			otherwise:
 				say "Your [if the strength of the player < 10]weak little [end if]muscles simply aren't strong enough to pull free of this glue as things stand!";
-			say "Unless you have clothes to rub in the glue and scrape it away or soak it up, looks like you might have to wait for the glue to weaken, or for someone to rescue you!";
+			say "Unless you have clothes to [bold type]rub[roman type] in the glue and scrape it away or soak it up, looks like you might have to wait for the glue to weaken, or for someone to rescue you!";
 		let T be a random number between 1 and the strength of the player;
 		FatigueUp 2;
-		if debugmode is 1, say "DEBUG: Player str = [strength of the player]. is random strength roll = [T] > Bond grip = [bond-grip]? (Does the player succeed at tugging free of the glue?).[line break]";
+		if debuginfo > 0, say "[input-style]Glue escape check: strength roll d[strength of the player] ([T]) | ([bond-grip].5) glue strength[roman type][line break]";
 		if T > bond-grip: [Less than this and it's a fail]
 			[[decrease the glue-strength of G by T;]] [Aika had said: The whole point of pulling is that we expect it to possibly succeed outright if the player is strong enough!  So let's make that at least vaguely possible. Also this now makes it much more realistic that the player could succeed so hard that they fail.]
 			[[if the glue-strength of G < 1:]]
@@ -395,14 +409,14 @@ To compute glue escaping:
 								check glue tripping;
 			[###We could consider decreasing glue-strength of G by 1 here, arguing that they've slightly weakened the glue puddle by pulling some glue free of it.]
 		otherwise if T <= 2 and the strength of the player > 3: [Unless they're super weak, consider 1 to 2 a fumble.]
-			say "Oh dear: that was such a weak pull that you feel the glue try to strengthen its grip.[line break]";
+			say "Oh dear: that was such a weak pull that you feel the glue try to strengthen its grip.";
 			now seconds is 0;
 			check glue tripping;
 		otherwise:
 			let M be a random intelligent monster in the location of the player; [Selkie: changed "room" to "location of the player" since I had the insane cultist suddenly pull me free, when I was in the dungeon]
 			if M is monster and M is acquaintance:
-				say "[first custom style]'You poor[one of],weak [or], helpless[or], foolish[or][at random] little thing. Let me see if I can [one of]get you free!'[or]help.'[at random][roman type][line break]";
-				say "[BigNameDesc of M] grabs you and pulls hard...[line break]";
+				say "[speech style of M]'You poor[one of],weak [or], helpless[or], foolish[or][at random] little thing. Let me see if I can [one of]get you free!'[or]help.'[at random][roman type][line break]";
+				say "[BigNameDesc of M] grabs you and pulls hard...";
 				[check glue G freeing by M;]
 				if a random number between 1 and 2 is 1:
 					say "[big he of M] pulls you free!";
@@ -461,8 +475,10 @@ To compute the mutation effects of (G - a glue):
 	let X be 0;
 	let StartS be the stickiness of the player;
 	let Tough be 20 - the delicateness of the player;
-	let R be a random number between 1 and Tough + a random number between 1 and 10;
-	if debugmode is 1, say "###Debug mutation: Tough = [Tough], R [R] < glue strength [glue-strength of G]?[line break]";
+	let R be a random number between 1 and Tough;
+	let R2 be a random number between 1 and 10;
+	if debuginfo > 0, say "[input-style]Glue effect resist check: dominance d[Tough] ([R]) + d10 ([R2]) = [R + R2] | ([glue-strength of G - 1].5) glue strength[roman type][line break]";
+	increase R by R2;
 	if R >= the glue-strength of G:
 		say "You feel your body [one of]fighting against[or]resisting[at random] a [one of]burning, internal tingle[or]penetrating, icky feeling[or]weird inner sensation[at random].";
 	otherwise:
@@ -488,7 +504,7 @@ To compute the mutation effects of (G - a glue):
 			otherwise:
 				now X is a random number between 1 and 4;
 				[Lip increases have a big effect, so make that rarer]
-				if X is 1 and a random number between 1 and 3 is 1:
+				if X is 1 and a random number between 1 and 2 is 1:
 					say "The painful tingling from the glue seems to concentrate in your lips... you feel some of the glue squeeze through the pores, and see your lips visibly inflate before your eyes!";
 					LipsUp 1;
 				otherwise if X <= 2:
@@ -604,7 +620,7 @@ To compute the mutation effects of (G - a glue):
 				otherwise if lactation fetish is 1 or extreme proportions fetish is 1:
 					increase the lactation rate of the player by 2;
 					say "You feel the fumes penetrate your [BreastDesc], which flush with an inner warmth.";
-				otherwise if TG fetish is 1 and the size of penis > min penis size:
+				otherwise if TG fetish >= 1 and the size of penis > min penis size:
 					PenisDown 1;
 					say "Your penis [Shrink]s into a [ShortDesc of penis].";
 				otherwise if artificial enhancements fetish is 1 or extreme proportions fetish is 1:

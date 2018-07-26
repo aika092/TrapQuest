@@ -46,7 +46,7 @@ To compute student perception of (M - a headmistress):
 			say "Hmmm... your mind appears already too far gone for us to really have much fun with you, but if your owner really wants you to go through the lessons, that's fine with me.'";
 		otherwise if the class of the player is princess:
 			say "We had one of your kind before and she didn't manage to fit in. I wonder if you'll prove similarly challenging.'";
-		otherwise if there is a worn mystical amulet:
+		otherwise if mystical amulet is worn:
 			say "I sense you have a large part to play in the destiny of this world. But whether that aligns with my own interests remains to be seen. I will be watching you closely.'";
 		otherwise if the appearance of the player > 11 and diaper quest is 0:
 			say "If your appearance is anything to go by, you're going to fly through the ranks. Still, we must confirm this by starting you off at the bottom.'";
@@ -72,7 +72,7 @@ To say WhoAnswer of (M - a headmistress):
 	say "[speech style of M]'[one of]It is rather obvious that I am the headmistress of this school. [or][stopping]While it is not the focus of this institution, it would behoove you to learn not to ask stupid questions.'[roman type][line break]".
 
 To say WhereAnswer of (M - a headmistress):
-	say "[speech style of M]'[if the rank of the player is 1]You are in the headmistress' office, young miss. You can find your classes at the end of the hall on the right.'[otherwise]Ranks are earned, and not without effort. Do not forget that.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You are in the headmistress' office, young miss. You can find your classes at the end of the hall on the right.'[otherwise]Ranks are earned, and not without effort. Do not forget that.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a headmistress):
 	say "[speech style of M]'Your instructors will let you know when you are ready for higher level curriculum.'[roman type][line break]".

@@ -487,7 +487,7 @@ To compute facial sex of (M - a wrestler):
 			say "A stranger walks past the doorway and does a double take. [line break][speech style of N]'What do we have here?'[roman type][line break]You watch as he strips off his pants and immediately begins stroking his rapidly hardening cock. He must think this is some sort of show!";
 	if the reaction of the player is 0:
 		say OralResisting of M;
-	if P is patron and P is not penetrating asshole and a random number between 1 and 2 is 1 and the number of things penetrating asshole is 0:
+	if P is patron and P is not penetrating asshole and (a random number between 1 and 2 is 1 or M is not friendly-fucking) and asshole is not actually occupied:
 		say "[BigNameDesc of M] suddenly stops what she[']s doing to talk to the [P]![line break][speech style of M]'Hey, why don[']t you join in? We have a spot for you right here!'[roman type][line break][big he of M] pushes your asscheeks apart, and [if the anal sex addiction of the player < 4]to your horror[otherwise if the anal sex addiction of the player < 8]to your [italic type]total[roman type] surprise[otherwise]to your delight[end if] the [P] immediately climbs on top of you and [if the openness of asshole < 2]forces[otherwise if the openness of asshole < 6]pushes[otherwise]slides[end if] his [manly-penis] into your [asshole].[line break][speech style of P]'[one of]Sweet![or]Finally.[or]About time.[or]I hope this is ok!'[at random][roman type][line break]";
 		if the sex-length of M < 4, now the sex-length of M is 4;
 		now P is penetrating asshole;
@@ -777,19 +777,19 @@ Section 3 - Dominant Sex
 To say DominanceSuccess of (M - a wrestler):
 	say "You slam [NameDesc of M] against a wall, pushing her to her knees as you [if there is bottom level protection clothing]fish your [ShortDesc of penis] out of your pants[otherwise if the player is a bit horny]slowly pump your [ShortDesc of penis][otherwise]slowly pump your hardening cock[end if].[line break]";
 	if the size of penis > 8:
-		say "[speech style of M]'So...BIG...'[roman type] A little bit of drool rolls out of [NameDesc of M]'s mouth as [he of M] stares at your [manly-penis]. [if watersports fetish is 1 and the player is desperate to pee][line break][speech style of M]'Please make me your toilet. Please let me drink your [one of]urine[or]piss[or]pee[at random]...'[roman type][line break][otherwise][speech style of M]'Please fuck my mouth. Please give me all your [semen]...'[end if] [big he of M] pulls her mouth wide open, tongue lolling out as [he of M] gazes up at you, begging desperately for a taste of whatever you have to give her. You slam it in without a moment of hesitation, pinning her wrists against the wall as your [manly-penis] hits the back of her throat. [big he of M] doesn't put up a shred of resistance, moaning reverently as you repeatedly gag her on your monstrous tool. [big he of M] face-fucks [himself of M] with even more enthusiasm whenever there's any space between strokes. It's too intense, and before you've had a chance to really show her what you've got, your [ShortDesc of penis] is buried in her throat, pumping a [load] directly into her hungry belly.";
+		say "[speech style of M]'So...BIG...'[roman type] A little bit of drool rolls out of [NameDesc of M]'s mouth as [he of M] stares at your [manly-penis]. [if watersports fetish is 1 and the player is desperate to pee][line break][speech style of M]'Please make me your toilet. Please let me drink your [one of]urine[or]piss[or]pee[at random]...'[roman type][line break][otherwise][speech style of M]'Please fuck my mouth. Please give me all your [semen]...'[end if] [big he of M] pulls her mouth wide open, tongue lolling out as [he of M] gazes up at you, begging desperately for a taste of whatever you have to give her. You slam it in without a moment of hesitation, pinning her wrists against the wall as your [manly-penis] hits the back of her throat. [big he of M] doesn't put up a shred of resistance, moaning reverently as you repeatedly gag her on your monstrous tool. [big he of M] face-fucks [himself of M] with even more enthusiasm whenever there's any space between strokes. It's too intense, and before you've had a chance to really show her what you've got, your [ShortDesc of penis] is pumping a [load] directly into her hungry belly.";
 		orgasm;
 		if watersports fetish is 1 and the player is desperate to pee:
 			say "But even as [he of M] swallows wave after wave of [semen], the look in her eye as you pull out tells you [he of M] still isn[']t satisfied. You tilt her head up, relief washing over your body as you empty your bladder directly into her mouth, and then all over her face. [big he of M] swallows as you step away, straightening up.";
 			if image cutscenes is 1, display figure of wrestler cutscene 2;
 			Dignify 100;
 			now the bladder of the player is 0;
-			say "[AfterDominationComment 1 of M]";
+			say AfterDominationComment 1 of M;
 		otherwise:
 			say "You pull out slowly, allowing her to fully clean your softening shaft with her tongue as you stretch and straighten up.";
 			Dignify 50;
-			say "[AfterDominationComment 2 of M]";
-	otherwise if the size of penis > 3:[TODO: below]
+			say AfterDominationComment 2 of M;
+	otherwise if the size of penis > 3:
 		say "[if watersports fetish is 1 and the player is desperate to pee][line break][speech style of M]'Looks like it's my turn to be the toilet! Don't worry, I'll swallow every drop of your [one of]urine[or]piss[or]pee[at random].'[roman type][line break][otherwise][line break][speech style of M]'I'm on the bottom again! Ooh! I'm gonna swallow every last drop! Just watch!'[roman type][line break][end if] [big he of M] grabs your [ShortDesc of penis] with [if the size of penis > 6]both hands[otherwise]one hand[end if], glancing up at you as [he of M] accepts it into [his of M] mouth. [big his of M] eyes roll as [he of M] pushes further and further onto your meat, her tongue lapping at the underside of your shaft. [big he of M] soon removes [if the size of penis > 6]her hands, emitting a happy noise[otherwise]her hand, humming proudly[end if] as her nose bumps up against your belly, and you feel her lower lip against your sack.";
 		if watersports fetish is 1 and the player is desperate to pee:
 			say "It's just not in you not to give her what [he of M] wants, and with a heavy sigh you allow all your stress to flow out directly [if the size of penis > 6]into her belly, filling it with frothy warmth[otherwise]into her mouth, filling her belly with frothy warm[end if]. True to her word [he of M] swallows every drop, licking her lips as you step away and straighten up.";
@@ -861,6 +861,9 @@ To compute successful dominance of (M - a wrestler):[She doesn't increase her di
 To say AfterDominationComment (N - a number) of (M - a wrestler):
 	if N is 1, say "[second custom style]'[one of]Thanks for the yummy piss!'[or]Thanks for making me your toilet!'[or]I love toilet time...'[at random][roman type]";
 	if N is 2, say "[second custom style]'[one of]You should come see my mistress sometime![or]There's no way I'm gonna let myself lose to you again! Get ready, hot stuff!'[or]Let's see if you can beat me like that next time, sexy!'[at random][roman type]".
+
+To say DominanceFailure of (M - a wrestler):
+	say "You grapple with [NameDesc of M] until [he of M] overpowers you and pins you on the ground underneath [him of M].";
 
 [To compute failed dominance punishment of (M - a wrestler):TODO
 	humiliate 30;

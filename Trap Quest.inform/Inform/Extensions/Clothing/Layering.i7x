@@ -14,6 +14,7 @@ To decide which number is max-top-layer:
 	decide on X.
 
 Definition: a clothing (called C) is top-layer-highlighted:
+	if C is not worn, decide no;
 	if C is not top layer, decide no;
 	if the top-layer of C is current-layer, decide yes;
 	decide no.
@@ -29,6 +30,7 @@ To decide which number is max-mid-layer:
 	decide on X.
 
 Definition: a clothing (called C) is mid-layer-highlighted:
+	if C is not worn, decide no;
 	if C is not mid layer, decide no;
 	if the mid-layer of C is current-layer, decide yes;
 	decide no.
@@ -47,6 +49,7 @@ To decide which number is max-bottom-layer:
 	decide on X.
 
 Definition: a clothing (called C) is bottom-layer-highlighted:
+	if C is not worn, decide no;
 	if C is not bottom layer, decide no;
 	if the bottom-layer of C is current-layer, decide yes;
 	decide no.
@@ -74,7 +77,11 @@ To compress top layers:
 		if C is clothing:
 			now the top-layer of C is correct-layer;
 			increase correct-layer by 1;
-		increase current-layer by 1.
+		increase current-layer by 1;
+	if current-layer >= 10:
+		say "BUG: Top layered clothing is incorrectly layered after attempted compression. There are [N] items:[line break]";
+		repeat with C running through worn top layer clothing:
+			say "[C] with top-layer [top-layer of C].";
 
 To compress mid layers:
 	let N be the number of worn mid layer clothing;
@@ -85,19 +92,31 @@ To compress mid layers:
 		if C is clothing:
 			now the mid-layer of C is correct-layer;
 			increase correct-layer by 1;
-		increase current-layer by 1.
+		increase current-layer by 1;
+	if current-layer >= 10:
+		say "BUG: mid layered clothing is incorrectly layered after attempted compression. There are [N] items:[line break]";
+		repeat with C running through worn mid layer clothing:
+			say "[C] with mid-layer [mid-layer of C].";
 
 To compress bottom layers:
 	let N be the number of worn bottom layer clothing;
 	now current-layer is 0;
 	let correct-layer be 1;
-	while correct-layer <= N:
-		let C be a random worn bottom-layer-highlighted clothing;
+	if debugmode is 2:
+		say "Compressing bottom layers. There are [N] items:[line break]";
+		repeat with C running through worn bottom layer clothing:
+			say "[C] with bottom-layer [bottom-layer of C].";
+	while correct-layer <= N and current-layer <= 10:
+		let C be a random bottom-layer-highlighted clothing;
 		if debugmode is 2, say "current-layer: [current-layer], correct-layer: [correct-layer], C: [C].";
 		if C is clothing:
 			now the bottom-layer of C is correct-layer;
 			increase correct-layer by 1;
 		increase current-layer by 1;
+	if current-layer >= 10:
+		say "BUG: Bottom layered clothing is incorrectly layered after attempted compression. There are [N] items:[line break]";
+		repeat with C running through worn bottom layer clothing:
+			say "[C] with bottom-layer [bottom-layer of C].";
 	if debugmode is 2:
 		repeat with C running through worn clothing:
 			if the bottom-layer of C > 0:
@@ -116,6 +135,10 @@ To layer (C - a clothing) correctly:
 	now the top-layer of C is 0;
 	now the mid-layer of C is 0;
 	now the bottom-layer of C is 0;
+	if debugmode is 2:
+		say "layering items correctly. these are the bottom layer items:[line break]";
+		repeat with X running through worn bottom layer clothing:
+			say "[X] with bottom-layer [bottom-layer of X].";
 	if C is top layer:
 		let MTL be max-top-layer + 1;
 		repeat with CL running from 1 to MTL:
@@ -125,13 +148,17 @@ To layer (C - a clothing) correctly:
 				if H is clothing:
 					check that C usually goes under H;
 					if the rule succeeded: [We've found its home, underneath H, which means it steals H's layer and everything else has to move up one. Selkie thinks that if the rule didn't succeed, then it goes on top and there was nothing else to do.]
-						repeat with CL2 running from max-top-layer to CL:
+						let CL2 be max-top-layer;
+						while CL2 >= CL:
 							now current-layer is CL2;
-							let H2 be a random worn top-layer-highlighted clothing;
+							if debugmode is 2, say "So now we are on clothing Layer [CL2], ";
+							let H2 be a random top-layer-highlighted clothing;
 							if H2 is clothing:
+								if debugmode is 2, say "we increase the layer of [H2] by 1 from [top-layer of H2] to [top-layer of H2 + 1].";
 								increase the top-layer of H2 by 1;
 							otherwise:
 								say "[type 1 layering bug]";
+							decrease CL2 by 1;
 						now the top-layer of C is CL;
 				otherwise if CL is max-top-layer + 1: [It goes on top]
 					now the top-layer of C is CL;
@@ -145,13 +172,17 @@ To layer (C - a clothing) correctly:
 				if H is clothing:
 					check that C usually goes under H;
 					if the rule succeeded: [We've found its home, underneath H, which means it steals H's layer and everything else has to move up one.]
-						repeat with CL2 running from max-mid-layer to CL:
+						let CL2 be max-mid-layer;
+						while CL2 >= CL:
 							now current-layer is CL2;
-							let H2 be a random worn mid-layer-highlighted clothing;
+							if debugmode is 2, say "So now we are on clothing Layer [CL2], ";
+							let H2 be a random mid-layer-highlighted clothing;
 							if H2 is clothing:
+								if debugmode is 2, say "we increase the layer of [H2] by 1 from [mid-layer of H2] to [mid-layer of H2 + 1].";
 								increase the mid-layer of H2 by 1;
 							otherwise:
 								say "[type 3 layering bug]";
+							decrease CL2 by 1;
 						now the mid-layer of C is CL;
 				otherwise if CL is max-mid-layer + 1: [It goes on top]
 					now the mid-layer of C is CL;
@@ -164,18 +195,23 @@ To layer (C - a clothing) correctly:
 			if debugmode is 2, say "At Clothing Layer [CL], ";
 			if the bottom-layer of C is 0: [If we haven't found its place yet]
 				now current-layer is CL;
-				let H be a random worn bottom-layer-highlighted clothing;
+				let H be a random bottom-layer-highlighted clothing;
 				if debugmode is 2, say "we have [H].";
 				if H is clothing:
 					check that C usually goes under H;
 					if the rule succeeded: [We've found its home, underneath H, which means it steals H's layer and everything else has to move up one.]
-						repeat with CL2 running from max-bottom-layer to CL:
+						if debugmode is 2, say "We are putting [C] underneath this, and will now iterate from [max-bottom-layer] to [CL].";
+						let CL2 be max-bottom-layer;
+						while CL2 >= CL:
 							now current-layer is CL2;
-							let H2 be a random worn bottom-layer-highlighted clothing;
+							if debugmode is 2, say "So now we are on clothing Layer [CL2], ";
+							let H2 be a random bottom-layer-highlighted clothing;
 							if H2 is clothing:
+								if debugmode is 2, say "we increase the layer of [H2] by 1 from [bottom-layer of H2] to [bottom-layer of H2 + 1].";
 								increase the bottom-layer of H2 by 1;
 							otherwise:
 								say "[type 5 layering bug]";
+							decrease CL2 by 1;
 						now the bottom-layer of C is CL;
 				otherwise if CL is max-bottom-layer + 1: [It goes on top]
 					now the bottom-layer of C is CL;

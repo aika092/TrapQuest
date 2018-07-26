@@ -89,6 +89,7 @@ To decide which number is the flat strength of the player:
 	increase S by the number of worn piercings;
 	if temp_str_dam > 0, decrease S by temp_str_dam;
 	if S < 1, decide on 1;
+	if S > 30, decide on 30;
 	decide on S.	
 
 

@@ -29,6 +29,7 @@ To trigger (Y - a slingshot):
 	if C is actually summonable:
 		say "You yelp in surprise as you feel some kind of underwear fly up your legs and into place at your hips!  [if the player is male]You stare inquisitively[otherwise]You pull helplessly[end if] at your new [printed name of C]. You are unsurprised to find that it won't come off.";
 		summon C cursed;
+		compute summoned quest of C;
 	otherwise if C is clothing:
 		say "You jump in surprise as you feel an item of clothing thud against your [ShortDesc of hips]. You look around and see that there is now a [printed name of C] on the ground behind you.";
 		now C is in the location of the player;

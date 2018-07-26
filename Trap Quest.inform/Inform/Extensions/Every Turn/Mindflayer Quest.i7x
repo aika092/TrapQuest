@@ -30,11 +30,11 @@ A time based rule (this is the mindflayer spawns rule):
 	if mindflayer spawned is 0 and diaper quest is 0 and the remainder after dividing time-earnings by 417 < time-seconds:
 		let M be a random off-stage mind flayer;
 		let R be (a random number between 1 and 5) + (a random number between 2 and 6);
-		if debugmode > 0, say "Mindflayer check: [the raw intelligence of the player - the starting intelligence of the player] | [R].";
+		if debugmode > 0, say "[input-style]Mindflayer spawn check: intelligence gained ([the raw intelligence of the player - the starting intelligence of the player]) | ([R].5) 2d5+1.5[roman type][line break]";
 		if R < the raw intelligence of the player - the starting intelligence of the player:
 			set up M;
 			now mindflayer spawned is 1;
-			say "You feel a strange pressure in your mind for just a moment[if debugmode > 0] (The mindflayer has just been spawned!)[end if].";
+			say "You feel a strange pressure in your mind for just a moment[if debugmode > 0] (The mindflayer has just been spawned!)[line break][otherwise]. It feels like something new and terrifying has arrived...[end if]";
 			if the player is in the Dungeon:
 				now M is in a random placed sandy room;
 				while M is nearby or M is in the location of the player or the location of M is an unplaced room:

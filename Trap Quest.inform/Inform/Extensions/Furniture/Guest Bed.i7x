@@ -88,7 +88,7 @@ To say RestingDesc of (F - a guest bed):
 			now F is penetrating O;
 			increase the holeCount of F by 1;
 			humiliate the holeCount of F;
-			if debugmode > 0, say "increase tentacle count to [the holeCount of F].";
+			if debugmode > 0, say "[input-style]increase tentacle count to [the holeCount of F].[roman type][line break]";
 		if F is penetrating face:
 			say "[one of]You taste them.[or]It tastes so good.[or]Filling your belly.[or]Only service.[then at random]";
 		if F is penetrating a fuckhole:

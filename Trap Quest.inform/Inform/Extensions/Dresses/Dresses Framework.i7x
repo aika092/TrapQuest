@@ -23,20 +23,20 @@ underdress wearability rules is a rulebook. The wearability rules of underdress 
 
 This is the underdress already worn rule:
 	repeat with O running through worn underdresses:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 		rule fails.
 The underdress already worn rule is listed in the underdress wearability rules.
 
 This is the underdress necklace clash rule:
 	if wearing-target is neck covering:
 		repeat with O running through worn neck covering clothing:
-			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 			rule fails.
 The underdress necklace clash rule is listed in the underdress wearability rules.
 
 This is the trousers underdress exclusive clash rule:
 	repeat with C running through worn hobble-skirted underdresses:
-		if summoning is 0, say "You can't wear that under your [printed name of C] because the [printed name of C]'s skirt is too long and tight!";
+		if summoning is 0, say "You can't wear that under your [ShortDesc of C] because the [ShortDesc of C][']s skirt is too long and tight!";
 		rule fails.
 The trousers underdress exclusive clash rule is listed in the trousers wearability rules.
 
@@ -81,7 +81,7 @@ This is the setup starting overdresses rule:
 The setup starting overdresses rule is listed in the setup starting items rules.
 
 Report wearing overdress:
-	if the noun is unsure and the noun is cursed, say "You finish wearing the [noun] and then you realise that the [clothing-material of the noun] is clinging extremely tightly to your skin. You try to pull it off but can't. It's cursed!";
+	if the noun is unsure and the noun is cursed, say "You finish wearing the [ShortDesc of the noun] and then you realise that the [clothing-material of the noun] is clinging extremely tightly to your skin. You try to pull it off but can't. It's cursed!";
 
 To say ShortDesc of (O - an overdress):
 	say "[printed name of O]".
@@ -100,24 +100,24 @@ overdress wearability rules is a rulebook. The wearability rules of overdress is
 
 This is the overdress already worn rule:
 	repeat with O running through worn overdresses:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 		rule fails.
 The overdress already worn rule is listed in the overdress wearability rules.
 
 This is the overdress necklace clash rule:
 	if wearing-target is neck covering:
 		repeat with O running through worn neck covering clothing:
-			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+			if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 			rule fails.
 The overdress necklace clash rule is listed in the overdress wearability rules.
 
 This is the trousers overdress exclusive clash rule:
 	repeat with C running through worn crotch-in-place hobble-skirted overdresses:
-		if summoning is 0, say "You can't wear that under your [printed name of C] because the [printed name of C]'s skirt is too long and tight!";
+		if summoning is 0, say "You can't wear that under your [ShortDesc of C] because the [ShortDesc of C][']s skirt is too long and tight!";
 		rule fails.
 	[repeat with C running through worn crotch covering overdresses:
 		if wearing-target is exclusive or C is exclusive:
-			if summoning is 0, say "You can't wear that with your [printed name of C] because [if wearing-target is exclusive]the [printed name of wearing-target][otherwise]the [printed name of C][end if] is [bold type]exclusive[roman type]!";
+			if summoning is 0, say "You can't wear that with your [ShortDesc of C] because [if wearing-target is exclusive]the [ShortDesc of wearing-target][otherwise]the [ShortDesc of C][end if] is [bold type]exclusive[roman type]!";
 			rule fails.]
 The trousers overdress exclusive clash rule is listed in the trousers wearability rules.
 
@@ -125,13 +125,13 @@ This is the skirt overdress clash rule:
 	if wearing-target is skirted:
 		repeat with C running through worn overdress:
 			if C is skirted or C is crotch covering:
-				if summoning is 0, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [printed name of C]!";
+				if summoning is 0, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [ShortDesc of C]!";
 				rule fails.
 The skirt overdress clash rule is listed in the skirt wearability rules.
 
 This is the bra overdress clash rule:
 	repeat with B running through worn breast covering overdresses:
-		if summoning is 0, say "You can't wear that over your [printed name of B], [if wearing-target is exclusive]the [printed name of wearing-target] is [bold type]exclusive[roman type]![otherwise if B is exclusive]the [printed name of B] is [bold type]exclusive[roman type]![otherwise]it should go underneath.[end if]";
+		if summoning is 0, say "You can't wear that over your [ShortDesc of B], [if wearing-target is exclusive]the [ShortDesc of wearing-target] is [bold type]exclusive[roman type]![otherwise if B is exclusive]the [ShortDesc of B] is [bold type]exclusive[roman type]![otherwise]it should go underneath.[end if]";
 		rule fails.
 The bra overdress clash rule is listed in the bra wearability rules.
 
