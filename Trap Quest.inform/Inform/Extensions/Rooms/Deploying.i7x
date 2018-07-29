@@ -61,7 +61,7 @@ To deploy tank in (G - a room):
 		now a random off-stage paddle trap is in G;
 		if debugmode is 1, say "The tank is trapped with a paddle trap.[paragraph break]";
 	let T be a random tank in Holding Pen;
-	now the doses of T is a random number from 3 to 8;
+	now the doses of T is a random number from 2 + bonus liquid to 8;
 	now T is in G.
 
 [!<DeployBucketInRoom>+
@@ -74,7 +74,7 @@ To deploy bucket in (G - a room):
 	if the number of on-stage iron-maidens is 0:
 		now a random off-stage iron-maiden is in G;
 	let T be a random bucket in Holding Pen;
-	now the doses of T is a random number from 3 to 8;
+	now the doses of T is a random number from 2 + bonus liquid to 8;
 	now T is in G.
 
 [!<DeployMinibarInRoom>+
