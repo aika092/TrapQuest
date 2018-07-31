@@ -14,7 +14,7 @@ Determines whether or not the player can successfully fuck a monster or not.
 	if size of penis is 0 and the player is male and asshole is actually occupied, decide no;
 	if the player is female and vagina is actually occupied, decide no;
 	if the player is feeling submissive, decide no;
-	if there is a worn let it die tattoo and a random number between 1 and 2 is 1, decide no;
+	if let it die tattoo is worn and a random number between 1 and 2 is 1, decide no;
 	if the latex-transformation of the player >= 6, decide no;
 	if there is a dangerous monster in the location of the player, decide no;
 	if the size of penis > 0 and penis is not sex available, decide no;
@@ -160,7 +160,9 @@ REQUIRES COMMENTING
 Carry out dominating:
 	let M be the noun;
 	now player-fucking is 0;[we set this to 1 after we're finished determining success]
-	if the health of M >= (the number of worn let it die tattoos  * -10) + (the number of worn dominance clothing * 2) + (the maxhealth of M / 2) or the delicateness of the player is 20, now player-fucking is -1;[anymore than 50% hp and it's auto loss]
+	let R be (the number of worn dominance clothing * 2) + (the maxhealth of M / 2);
+	if let it die tattoo is worn, decrease R by 10;
+	if the health of M >= R	or the delicateness of the player is 20, now player-fucking is -1;[anymore than 50% hp and it's auto loss]
 	if player-fucking is 0, now player-fucking is the submissiveness of M;[submissiveness of M will set player-fucking based on the monster]
 	otherwise say DomThreshold player-fucking;
 	if player-fucking is 1:[Value of 1? The player is successful!]

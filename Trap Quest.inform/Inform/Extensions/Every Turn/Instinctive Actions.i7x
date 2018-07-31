@@ -22,7 +22,7 @@ REQUIRES COMMENTING
 To Compute Compulsions:
 	now autodrink is 1;
 	let B be a random held actually drinkable bottle;
-	if there is a worn drinkme tattoo and B is bottle and the player is not in danger and the player is able to drink:
+	if drinkme tattoo is worn and B is bottle and the player is not in danger and the player is able to drink:
 		say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
 		try drinking B;
 		now another-turn is 1;

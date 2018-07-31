@@ -254,11 +254,11 @@ previous penis length is a number that varies.
 To PenisUp (X - a number):
 	if the player is female, now X is 0;
 	now previous penis length is the size of penis;
-	if there is a worn cumlust tattoo:
+	if cumlust tattoo is worn:
 		OralSexAddictUp X;
 		now X is 0;
 	if tg fetish is 2, now X is -1; [no text flavour]
-	if there is a worn bitch tattoo, now X is X / 2;
+	if bitch tattoo is worn, now X is X / 2;
 	if X is 0:
 		say "[if the player is male]Your [manly-penis] can't seem to grow any larger![end if]";
 	while X > 0:
@@ -279,7 +279,7 @@ To PenisDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the size of penis > min penis size:
-			let R be a random number from 1 to (the pregnancy rate of the player + TG fetish + the number of worn dolly tattoos);
+			let R be a random number from 1 to (the pregnancy rate of the player + TG fetish);
 			decrease the size of penis by a random number from 1 to R;
 		otherwise if the player is male and the size of penis is 0 and previous penis length is 0:
 			say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but since you have nothing left, it can't!";

@@ -414,9 +414,8 @@ To end urination:
 			say "[bold type]Your [ShortDesc of T] [bold type]summons a diaper onto your crotch!  It doesn't seem happy that you weren't wearing one when you peed...[roman type][line break]";
 			summon D cursed;
 	if resting is 1 and diaper lover >= 1:
-		let BW be a random bed-wetter tattoo;
-		if there is a worn tattoo and BW is not worn:
-			summon BW;
+		if there is a worn tattoo and bed-wetter tattoo is not worn:
+			summon bed-wetter tattoo;
 			say "A tattoo appears on you that says 'BED WETTER'. [line break][variable custom style][if the diaper addiction of the player < 10]I can't believe this!  The fuck![otherwise if the diaper addiction of the player < 14]I can't deny it's true...[otherwise]I am a naughty bedwetter, and now everyone will know that![end if][roman type][line break]";
 	if diaper lover >= 1 and delayed urination is 1, increase incontinence by 1;
 	if delayed urination is 1:

@@ -6,7 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a monster (called M) is fucking daddy's hole:
-	unless there is a worn daddy's cock only tattoo, decide no;
+	unless daddy's cock only tattoo is worn, decide no;
 	unless there is a mating monster, decide no;
 	if M is penetrating asshole and M is not mating, decide yes;
 	decide no.
@@ -162,12 +162,11 @@ Report resisting:
 		otherwise:
 			say SexResistFlav of M;
 			if M is monster, compute sex resist punishment of M;
-			if the player is not feeling dominant and M is male intelligent monster:
-				let T be a random daddy's wild child tattoo;
-				if there is a worn tattoo and T is not worn:
-					summon T; [Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like '[BigNameDesc of M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
+			if the player is not feeling dominant and M is male intelligent human monster:
+				if there is a worn tattoo and daddy's wild child tattoo is not worn:
+					summon daddy's wild child tattoo; [Selkie: this seems a bit abrupt and understated. Wouldn't it be good to say something like '[BigNameDesc of M] looks at you with a cruel gleam|glint|look in his eye, and his lips curl. '{one of}So, you think you're too dignified for fucking?|I think a slut like you needs to learn her place|Oh, you still think you can resist? Let's permanently mark you to make you think twice, in future.|...{at random}'[line break]He snaps his fingers and you feel a burning on your skin. '] [Aika: Eh, seems like a lot of work to make sure it makes sense for each different intelligent male NPC. Also the tattoo is actually beneficial, not a punishment]
 					say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
-					try examining T.
+					try examining daddy's wild child tattoo.
 
 
 To say SexResistFlav of (T - a thing):

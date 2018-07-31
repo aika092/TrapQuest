@@ -1,6 +1,10 @@
 Once You Go Black Tattoo by Tattoos begins here.
 
-once-you-go-black tattoo is an upper back tattoo. The printed name of once-you-go-black tattoo is "once you go black tattoo". Understand "once", "you", "go black", "black" as once-you-go-black tattoo. Figure of once-you-go-black tattoo is the file "Items/Tats/tattoo89.png". once-you-go-black tattoo is interracial related. 
+once-you-go-black tattoo is an upper back tattoo. The tattoo-title of once-you-go-black tattoo is "once you go black". Understand "once", "you", "go black", "black" as once-you-go-black tattoo. 
+Figure of once-you-go-black tattoo is the file "Items/Tats/tattoo89.png".
+
+Definition: once-you-go-black tattoo (called C) is interracial themed:
+	decide yes.
 
 Definition: once-you-go-black tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;
@@ -10,7 +14,7 @@ Definition: once-you-go-black tattoo (called T) is drawable:
 	decide yes.
 
 Definition: once-you-go-black tattoo (called T) is eligible:
-	if the noun is interracial related clothing, decide yes;
+	if the noun is interracial themed clothing, decide yes;
 	decide no.
 
 To say tattoo-desc of (T - once-you-go-black tattoo):

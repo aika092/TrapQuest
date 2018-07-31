@@ -29,5 +29,8 @@ Definition: a golden phallus (called C) is ingredient:
 Definition: a golden phallus (called C) is inflation themed:
 	decide yes.
 
+Definition: a golden phallus (called C) is magic themed:
+	decide yes.
+
 Golden Phallus ends here.
 

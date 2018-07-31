@@ -14,7 +14,7 @@ REQUIRES COMMENTING
 
 +!]
 Check rinsing it in:
-	if the second noun is not WoodsScenery01 and the second noun is not DungeonScenery03 and the noun is not HotelScenery04 and the second noun is not sacred pool, say "How would that work exactly?" instead;
+	if the second noun is not WoodsScenery01 and the second noun is not DungeonScenery03 and the second noun is not HotelScenery04 and the second noun is not sacred pool, say "How would that work exactly?" instead;
 	if the noun is body part, say "You'll need to wash your whole body in the water[if inline hyperlinks < 2] with 'wash in water'[end if]." instead;
 	if the noun is not clothing, say "You can't clean that in the water!" instead;
 	if the semen-soak of the noun is 0 and the milk-soak of the noun is 0 and the urine-soak of the noun is 0, say "That is completely clean already." instead;

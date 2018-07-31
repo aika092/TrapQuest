@@ -19,7 +19,7 @@ To decide which number is the damage improvement of (W - a vampiric claws):
 	increase X by the dexterity of the player / 5;
 	if the player is craving, decrease X by 1;
 	if the player is desperately craving, decrease X by 2;
-	if there is a worn abyssal tattoo, increase X by 2;
+	if abyssal tattoo is worn, increase X by 2;
 	decide on X.
 
 To compute attack of (W - a vampiric claws) at (M - a monster):

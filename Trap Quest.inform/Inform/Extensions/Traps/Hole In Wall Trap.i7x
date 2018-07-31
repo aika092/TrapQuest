@@ -228,7 +228,7 @@ To compute punishment of (P - hole-wank):
 				humiliate 300;
 				DelicateUp 1;
 				DiaperAddictUp 1;
-			if the number of worn for deposit only tattoos is 0 and the player is extremely horny or vagina is pushed over the edge:
+			if for deposit only tattoo is not worn and the player is extremely horny or vagina is pushed over the edge:
 				vaginally orgasm shamefully;
 			increase wank-attempts by 1;
 			compute extra turn;
@@ -288,18 +288,16 @@ hole-tattoo is hole-in-wall punishment.
 Definition: hole-tattoo (called P) is appropriate:
 	if there is worn belly covering clothing, decide no;
 	if the number of worn tattoos is 0, decide no;
-	let T be a random princess tattoo;
-	if T is drawable, decide yes;
+	if princess tattoo is drawable, decide yes;
 	decide no.
 
 To compute punishment of (P - hole-tattoo):
 	now the priority of P is 1;
-	let T be a random princess tattoo;
-	summon T;
+	summon princess tattoo;
 	say "All of a sudden you hear a low electric buzzing!  [line break][variable custom style]That can't be good. [roman type][line break]Suddenly a sharp pain hits your lower back!";
 	DelicateUp 1;
 	say "You [if the delicateness of the player < 9]begrudgingly [end if]hold perfectly still as the stranger gives you a tramp stamp tattoo!  When it is complete, you can feel the magic inside the ink come alive. Not only can you feel that it is affecting your body and mind, but even though you can't physically see the tattoo you can see a picture of it clearly in your inner mind.";
-	try examining T.
+	try examining princess tattoo.
 
 
 hole-piercing is hole-in-wall punishment.

@@ -1,16 +1,16 @@
 Clit Piercing Tattoo by Tattoos begins here.
 
-clit-piercing tattoo is a body tattoo. The printed name of clit-piercing tattoo is "clit piercing tattoo". Understand "clit","piercing" as clit-piercing tattoo. Figure of clit-piercing tattoo is the file "Items/Tats/tattoo82.png".
-Definition: a clit-piercing tattoo (called T) is drawable:
+clit-piercing tattoo is a body tattoo. The tattoo-title of clit-piercing tattoo is "clit piercing". Understand "clit","piercing" as clit-piercing tattoo. Figure of clit-piercing tattoo is the file "Items/Tats/tattoo82.png".
+Definition: clit-piercing tattoo (called T) is drawable:
 	decide no.
-To say tattoo-desc of (T - a clit-piercing tattoo):
+To say tattoo-desc of (T - clit-piercing tattoo):
 	if images visible is 1, display figure of clit-piercing tattoo;
 	say "A detailed vagina with a pierced clitoris is tattooed in your armpit. Its magic seems to influence enemies to go for your [vagina].".
 
-To decide which object is the concealer of (T - a clit-piercing tattoo):
+To decide which object is the concealer of (T - clit-piercing tattoo):
 	decide on a random worn actually dense overdress.
 
-To decide which number is the initial outrage of (T - a clit-piercing tattoo):
+To decide which number is the initial outrage of (T - clit-piercing tattoo):
 	decide on 15.
 
 This is the clit-piercing tattoo pussy slut rule:

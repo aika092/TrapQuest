@@ -14,5 +14,8 @@ Definition: a research airhancer (called C) is removable:
 Definition: a research airhancer (called C) is inflation themed:
 	decide yes.
 
+Definition: a research airhancer (called C) is magic themed:
+	decide yes.
+
 Research Airhancer ends here.
 

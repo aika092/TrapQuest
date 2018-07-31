@@ -74,13 +74,12 @@ To compute labour to (M - a fairy):
 			otherwise display figure of fairy cutscene 2;
 		say "[one of]Just as you think things can't get any weirder, the fairy flies down and kisses the baby on the cheek. This causes your new daughter to sprout wings, her skin turns pink, and she starts giggling. You watch stunned as your new fairy daughter starts flying - she goes up into the sky and out of view.[or]Just like last time, the fairy flies down and kisses the baby on the cheek, transforming her into a fairy. Your new fairy daughter flies up into the sky and out of view.[stopping][roman type][line break]";
 		let R be a random off-stage glittering rose;
-		let T be a random womb diagram tattoo;
 		if R is actually summonable and (M is the father or M is mating):
 			say "The glitter seems to coalesce from the air around you, forming itself into rose-shaped bow, which settles neatly on your head.";
 			summon R cursed;
-		otherwise if there is a worn tattoo and T is actually summonable:
+		otherwise if there is a worn tattoo and womb diagram tattoo is actually summonable:
 			say "Looking down, you see that you have a new tattoo on your crotch - it's a diagram of a womb!";
-			summon T;
+			summon womb diagram tattoo;
 		otherwise:
 			say "You can't help feeling like it would better to just forget about getting out of this game and just have fun getting pregnant.";
 			DexUp 1;

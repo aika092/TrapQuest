@@ -211,7 +211,7 @@ Does the player love them some black cock?
 +!]
 Definition: yourself is queen of spades:
 	if interracial fetish is 0, decide no;
-	if there is a worn interracial related thing, decide yes;
+	if there is a worn interracial themed thing, decide yes;
 	decide no.
 
 [!<TheMythicalCreatureFetishToggleRule>+

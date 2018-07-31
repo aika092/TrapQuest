@@ -47,7 +47,7 @@ Definition: pimp (called M) is willing to let go:
 	decide no.
 
 To set up (M - pimp):
-	if the player is not the donator or pimp-dead is 1, remove M from play;
+	if pimp-dead is 1, remove M from play;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 10;
 	now the health of M is the maxhealth of M.

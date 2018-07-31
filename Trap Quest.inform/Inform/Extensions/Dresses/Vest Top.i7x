@@ -81,7 +81,7 @@ To decide which number is the initial outrage of (C - a real cowgirls ride their
 Definition: A real cowgirls ride their bulls bareback vest top (called C) is pregnancy related:
 	decide yes.
 
-Definition: A real cowgirls ride their bulls bareback vest top (called C) is interracial related:
+Definition: A real cowgirls ride their bulls bareback vest top (called C) is interracial themed:
 	decide yes.
 
 Part 4 - Rubber Vest Top

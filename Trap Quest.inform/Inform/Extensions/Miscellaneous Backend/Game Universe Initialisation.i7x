@@ -16,8 +16,7 @@ To Start The Machine:
 	move toilet backdrop to all toilets rooms;
 	now the player is in Dungeon12;
 	if spontaneous tattoos is 1:
-		let T be a random ink-me tattoo;
-		summon T;
+		summon ink-me tattoo;
 		say "You notice that [if latex prisoner is 0]you are naked, and that [end if]you have a tattoo of the words 'INK ME' on the back of your left hand.[line break]";
 	if background-nurse is 1:
 		let B be a random bandage;

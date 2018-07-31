@@ -176,14 +176,14 @@ To ruin (F - a fuckhole) times (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the soreness of F > 8 and there is a worn cum dump's undergarment, now the soreness of F is 8; [undergarment prevents fainting from soreness]
-		if the number of worn for deposit only tattoos is 0 and the player is extremely horny or F is pushed over the edge:
+		if for deposit only tattoo is not worn and the player is extremely horny or F is pushed over the edge:
 			if F is vagina, vaginally orgasm shamefully;
 			otherwise anally orgasm shamefully;
 		otherwise if the buildup of F >= 20 and the soreness of F < 10:
 			say "Regardless of how insensitive your [variable F] is, there's no way it can take an infinite fucking. Over time, you feel it getting slowly more and more sore...";
 			now the soreness of F is 10;
 			now the buildup of F is 0;
-		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and the number of worn for deposit only tattoos is 0:
+		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and for deposit only tattoo is not worn:
 			check soreness fainting of F;
 		unless F is vagina and the player is male, RuinRoll F;
 		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say "[RuinedFlav of F]".
@@ -377,11 +377,11 @@ Definition: a body part is occupied:
 Some things can make an orifice 'appear' occupied to living things (not dildo traps etc.). E.g. salve of concealment.
 
 +!]
-Definition: a body part is fake occupied:
-	repeat with C running through concealment salve covering it:
+Definition: a body part (called B) is fake occupied:
+	repeat with C running through concealment salve covering B:
 		unless C is cursed, decide yes;
-	if there is a pentagram tattoo covering it, decide yes;
-	if there is an illusory kimono covering it, decide yes;
+	if pentagram tattoo is worn and B is vagina, decide yes;
+	if there is an illusory kimono covering B, decide yes;
 	decide no.
 
 [!<BodyPartIsActuallyOccupied>+

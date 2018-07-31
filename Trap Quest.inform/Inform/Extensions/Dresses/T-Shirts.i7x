@@ -71,7 +71,10 @@ To decide which object is the potential-upgrade-target of (C - a Boobies T-shirt
 
 Part 2 - Gang Bang Girl T-shirt
 
-A Gang Bang Girl T-shirt is a kind of T-shirt. The printed name of Gang Bang Girl T-shirt is usually "[TQlink of item described][clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". A Gang Bang Girl T-shirt is interracial related. The text-shortcut of Gang Bang Girl T-shirt is "ggt".
+A Gang Bang Girl T-shirt is a kind of T-shirt. The printed name of Gang Bang Girl T-shirt is usually "[TQlink of item described][clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of Gang Bang Girl T-shirt is "ggt".
+
+Definition: a Gang Bang Girl T-shirt (called C) is interracial themed:
+	decide yes.
 
 Figure of Gang Bang Girl T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt1.png".
 

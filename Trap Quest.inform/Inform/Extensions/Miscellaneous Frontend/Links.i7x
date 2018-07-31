@@ -61,7 +61,7 @@ REQUIRES COMMENTING
 
 +!]
 To say verb-desc of (T - a thing):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][if (T is ingredient or T is mass collectible) and T is carried and there is a ready for alchemy crafting table in the location of the player] [link][bracket]craft[close bracket][as]put [text-shortcut of T] in bowl[end link][end if][if the player is in Hotel16 and T is portable and T is not person] [link][bracket]chute[close bracket][as]put [text-shortcut of T] in chute[end link][end if][if T is portable and (T is not worn or T is not cursed clothing) and the number of interested intelligent monsters in the location of the player is 1 and the bartering value of T for a random interested intelligent monster in the location of the player > 0] [link][bracket]offer[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random interested intelligent monster in the location of the player][end link][end if][if T is portable and T is held and there is an open pink wardrobe in the location of the player and (T is not worn or T is not cursed)] [link][bracket]wardrobe[close bracket][as]put [text-shortcut of T] in pink wardrobe[end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][if (T is ingredient or T is mass collectible) and T is carried and there is a ready for alchemy crafting-table in the location of the player] [link][bracket]craft[close bracket][as]put [text-shortcut of T] in bowl[end link][end if][if the player is in Hotel16 and T is portable and T is not person] [link][bracket]chute[close bracket][as]put [text-shortcut of T] in chute[end link][end if][if T is portable and (T is not worn or T is not cursed clothing) and the number of interested intelligent monsters in the location of the player is 1 and the bartering value of T for a random interested intelligent monster in the location of the player > 0] [link][bracket]offer[close bracket][as]offer [text-shortcut of T] to [text-shortcut of random interested intelligent monster in the location of the player][end link][end if][if T is portable and T is held and there is an open pink wardrobe in the location of the player and (T is not worn or T is not cursed)] [link][bracket]wardrobe[close bracket][as]put [text-shortcut of T] in pink wardrobe[end link][end if]".
 
 [!<SayUniqueVerbDescOfThing>+
 
@@ -665,7 +665,7 @@ To compute options:
 					repeat with F running through worn top-displaced clothing:
 						if F is not catalogued, say "[F] ";
 						now F is catalogued;
-				if there is a ready for alchemy crafting table in the location of the player:
+				if there is a ready for alchemy crafting-table in the location of the player:
 					say "[link]list craftables[end link] ";
 				if the player is in the location of the dungeon altar and the charge of the dungeon altar < 100:
 					say "[link]list blessables[end link] [link]lie on altar[end link] ";
@@ -745,6 +745,8 @@ Understand "list craftables" as CraftListing.
 AltarListing is an action applying to nothing.
 Carry out AltarListing:
 	say "[bold type]Worn: [roman type]";
+	repeat with F running through worn tattoos:
+		say "[F] ";
 	repeat with F running through worn unblessed blessable clothing:
 		say "[F] ";
 	say "[line break][bold type]Not Worn: [roman type]";
@@ -752,7 +754,8 @@ Carry out AltarListing:
 		say "[F] ";
 	repeat with F running through carried unsure blessable clothing:
 		say "[F] ";
-	say "[line break][if there are worn tattoos]You can also [bold type]place[roman type] a tattoo on the altar.[end if]".
+	say line break.
+	[say "[line break][if there are worn tattoos]You can also [bold type]place[roman type] a tattoo on the altar.[end if]".]
 Understand "list blessables" as AltarListing.
 
 

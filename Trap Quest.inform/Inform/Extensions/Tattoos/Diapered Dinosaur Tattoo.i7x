@@ -1,6 +1,7 @@
 Diapered Dinosaur Tattoo by Tattoos begins here.
 
-diapered dinosaur tattoo is a dq tattoo. Figure of diapered dinosaur tattoo is the file "Items/Tats/tattoo74.png".
+diapered dinosaur tattoo is a dq tattoo. The tattoo-title of diapered dinosaur tattoo is "diapered dinosaur".
+Figure of diapered dinosaur tattoo is the file "Items/Tats/tattoo74.png".
 Definition: diapered dinosaur tattoo (called T) is eligible:
 	if the noun is little dinosaur onesie, decide yes;
 	decide no.

@@ -6,6 +6,9 @@ An infernal gem is a kind of collectible. There are 4 infernal gems. The printed
 To say ShortDesc of (C - an infernal gem):
 	say "magic red gem".
 
+Definition: an infernal gem (called D) is demonic:
+	decide yes.
+
 To decide which number is the crafting key of (C - an infernal gem):
 	decide on 45.
 

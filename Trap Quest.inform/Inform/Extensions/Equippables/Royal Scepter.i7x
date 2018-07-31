@@ -96,13 +96,11 @@ To punish infidelity:
 	humiliate the charge of S * 40;
 	decrease the charge of S by 1;
 	if S is blessed, now S is bland;
-	let U be a random unfaithful tattoo;
-	let W be a random cheating whore tattoo;
-	if U is not worn and there is not a worn true love tattoo and there is a worn tattoo:
-		summon U;
+	if unfaithful tattoo is not worn and true love tattoo is not worn and there is a worn tattoo:
+		summon unfaithful tattoo;
 		say "You feel a searing pain as the word 'UNFAITHFUL' burns itself into your chest in big red letters.";
-	otherwise if W is not worn and there is a worn tattoo:
-		summon W;
+	otherwise if cheating whore tattoo is not worn and there is a worn tattoo:
+		summon cheating whore tattoo;
 		say "You experience a heavy feeling of shame as the words 'CHEATING WHORE' etch themselves into your cheeks.";
 	otherwise if a random number between 1 and 2 is 1 and there is a worn plentiful accessory:
 		let J be random worn plentiful accessory;

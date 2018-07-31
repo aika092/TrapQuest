@@ -66,8 +66,8 @@ Check praying something with:
 	otherwise if the noun is a monster:
 		say "Something tells you [he of the noun] won't let you." instead;
 	otherwise:
-		if the noun is worn by the player and the second noun is dungeon altar, say "You lie on the altar, focusing your thoughts on the [printed name of noun].";
-		otherwise say "You place the [printed name of noun] on the altar.";
+		if the noun is worn and the second noun is dungeon altar, say "You lie on the altar, focusing your thoughts on the [ShortDesc of the noun].";
+		otherwise say "You place the [ShortDesc of the noun] on the altar.";
 	if the second noun is dungeon altar:
 		if the noun is unicorn-horn:
 			say "The smell of spring rain fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow.";
@@ -253,9 +253,8 @@ Carry out praying something with:
 					if the size of penis is previous penis length, SexAddictDown 2;
 					break;
 				if R is 9:
-					let T be a random angel tattoo;
-					if there is a worn tattoo and T is not worn:
-						summon T;
+					if there is a worn tattoo and angel tattoo is not worn:
+						summon angel tattoo;
 						say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 						break;
 			reset dungeon altar;
@@ -291,7 +290,7 @@ Carry out praying something with:
 				say "The [printed name of T] shines brightly and loses its curse!";
 				bless T;
 			if bless-count is 0:
-				say "The [printed name of noun] disappears into nothingness.";
+				say "The [ShortDesc of the noun] disappears into nothingness.";
 				remove the noun from play;
 		if witch is in the location of the player:
 			if the altar-uses of witch <= 0 and the curse-quest of witch < 3:
@@ -354,8 +353,8 @@ To say GoddessAddress:
 
 To AltarUniqueReward of (T - a headgear):
 	if the class of the player is adventurer and the virgin of the player is 1 and T is not runic headband and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:[no headband for pigtails]
-		say "A shimmering blue light surrounds you as your [ShortDesc of noun] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
-		only destroy the noun;
+		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		only destroy T;
 		let R be a random runic headband;
 		summon R cursed;
 		reset dungeon altar.
@@ -393,9 +392,9 @@ To AltarPray (P - a person):
 		if the class of the player is priestess and (the virgin of the player is 0 or the player is male) and the player is a March 2018 top donator:
 			let T be ritual-beads;
 			if T is actually summonable and T is off-stage:
-				say "You feel your [asshole] being forced open as a [printed name of T] materializes in your ass.";
 				summon T;
 				now T is blessed;
+				say "You feel your [asshole] being forced open as a [printed name of T] materializes in your ass.";
 				break;
 		if permanent makeup is 1:
 			say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
@@ -455,62 +454,64 @@ To AltarPray (P - a person):
 			if the size of penis is previous penis length, SexAddictDown 2;
 			break;
 		if R is 9:
-			if there is a worn tattoo and the number of worn angel tattoos is 0:
-				summon a random angel tattoo;
+			if there is a worn tattoo and angel tattoo is not worn:
+				summon angel tattoo;
 				say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 				break;
 	reset dungeon altar.
 
 
 To AltarReward (T - wrist bond):
-	if the noun is cursed:
-		say "*Click!*  It would appear that the [printed name of noun] has magically unlocked!";
-		bless the noun;
+	if T is cursed:
+		say "*Click!*  It would appear that the [ShortDesc of T] has magically unlocked!";
+		bless T;
 		reset dungeon altar;
 	otherwise:
 		say "Nothing seems to happen.".
 
 To AltarReward (T - chastity cage):
-	if the noun is cursed:
-		say "*Click!*  It would appear that the [printed name of noun] has magically unlocked!";
-		bless the noun;
+	if T is cursed:
+		say "*Click!*  It would appear that the [ShortDesc of T] has magically unlocked!";
+		bless T;
 		reset dungeon altar;
 	otherwise:
 		say "Nothing seems to happen.".
 
 To AltarReward (T - ankle bond):
-	if the noun is cursed:
-		say "*Click!*  It would appear that the [printed name of noun] has magically unlocked!";
-		bless the noun;
+	if T is cursed:
+		say "*Click!*  It would appear that the [ShortDesc of T] has magically unlocked!";
+		bless T;
 		reset dungeon altar;
 	otherwise:
 		say "Nothing seems to happen.".
 
-To AltarReward (T - a tattoo):
+To AltarPray (T - a tattoo):
 	say "You watch as the tattoo slowly fades from existence!";
-	destroy the noun;
+	destroy T;
+	now T is in Holding Pen;
+	AltarUniqueReward of T;
 	reset dungeon altar.
 
 To AltarReward (T - a bottle):
-	if the noun is cursed:
+	if T is cursed:
 		say "A voice appears in your head:  '[GoddessAddress] I shall remove this curse for you!'";
-		bless the noun;
-		now the curse-ID of the noun is sure;
+		bless T;
+		now the curse-ID of T is sure;
 		reset dungeon altar;
-	otherwise if the noun is blessed:
-		say "Nothing happens. It [if the noun is sure]is already[otherwise]must already be[end if] blessed!";
-		now the noun is sure;
+	otherwise if T is blessed:
+		say "Nothing happens. It [if T is sure]is already[otherwise]must already be[end if] blessed!";
+		now T is sure;
 	otherwise:
-		say "A voice appears in your head:  '[GoddessAddress] I tried, but different magic is needed to bless this item!  Seek the witch in the lands above[unless the class of the player is priestess]. Now allow me to rest for a minute, I must recover from the attempt[end if].'";
+		say "A voice appears in your head:  '[GoddessAddress] I tried, but different magic is needed to bless this item! Seek the witch in the lands above[unless the class of the player is priestess]. Now allow me to rest for a minute, I must recover from the attempt[end if].'";
 		unless the class of the player is priestess, now the charge of the second noun is 60;
-		now the curse-ID of the noun is sure.
+		now the curse-ID of T is sure.
 
 To AltarReward (T - a clothing):
-	say "A voice appears in your head:  '[GoddessAddress] [if the noun is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
+	say "A voice appears in your head:  '[GoddessAddress] [if T is cursed]I shall remove this curse for you!'[otherwise]I shall bless this item for you!'[end if]";
 	now T is sure;
 	bless T;
 	if T is not blessed and T is worn and T is not piercing: [i.e. it was cursed]
-		say "Would you like to remove the [noun] immediately? [yesnolink] ";
+		say "Would you like to remove the [ShortDesc of T] immediately? [yesnolink] ";
 		if the player consents, try taking off T.
 
 [To AltarReward (T - an insertable):
@@ -523,7 +524,7 @@ To AltarReward (T - a clothing):
 
 []
 To WoodsOffer (T - an accessory):
-	let max-bless-count be the price of the noun;
+	let max-bless-count be the price of T;
 	if max-bless-count < 2, now max-bless-count is 2;
 	let bless-count be max-bless-count;
 	now bless-count is bless-count / 2;
@@ -552,8 +553,8 @@ To WoodsOffer (T - an accessory):
 			say "The [printed name of T] shines brightly and loses its curse!";
 			bless T;
 		if bless-count is 0:
-			say "The [printed name of noun] disappears into nothingness.";
-			remove the noun from play;
+			say "The [ShortDesc of T] disappears into nothingness.";
+			remove T from play;
 	if witch is in the location of the player, WitchCheck witch.
 
 []
@@ -592,7 +593,7 @@ To ElderEmpower (W - a laurel wreath):
 	now fertility-summoned is 1.
 
 To ElderEmpower (T - a flower hairclip):
-	if voidblade summoned is not 1 and there is a worn abyssal tattoo:
+	if voidblade summoned is not 1 and abyssal tattoo is worn:
 		say "The darkness of the room grows profound, and you can feel it pressing into you almost like a weight. The only sensation you can feel for what seems like forever is the pressure of the dark. One minute or a thousand years, you are no longer able to even sense time. Time no longer exists. The world no longer exists. You no longer exist. Yes. Forget... Suddenly pink motes begin to flow from your body, and you feel a sense of joy at somehow knowing those are your useless former life leaving you. They form into the shape of a sword, and as the lights come back up, a shard of the darkness remains.";
 		let W be a random voidblade;
 		now W is in Mansion23;
@@ -690,8 +691,7 @@ To ElderSacrifice (T - a thing):
 		let M be mechanic;[We want to put the mechanic into a state where his quest is inactive and he's also unable to turn into Xavier, since his power has now been permanently lost to him]
 		if M is monster:
 			now power-stolen of M is 1;
-		let T be a random abyssal tattoo;
-		summon T;[The reward item is a tattoo, I don't want it to care about other tattoos because otherwise you could effectively get nothing for doing this]
+		summon abyssal tattoo;[The reward item is a tattoo, I don't want it to care about other tattoos because otherwise you could effectively get nothing for doing this]
 	otherwise if T is cursed:
 		increase the charge of the elder altar by 100;
 		if whispered > 0 and whisper-type is 2:
@@ -707,7 +707,7 @@ To ElderSacrifice (T - a thing):
 voidblade summoned is a number that varies. voidblade summoned is usually 0.
 
 To ElderSacrifice (T - ritual-beads):
-	say "The [printed name of T] bursts into ominous black flames![if the noun is worn] Fortunately, it seems they are not actually hot.[end if]";
+	say "The [ShortDesc of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if]";
 	let N be the charge of T;
 	if N < 2:
 		say "The flames flicker and die within moments, leaving the beads completely unharmed. Maybe you need to find some way to empower them?";

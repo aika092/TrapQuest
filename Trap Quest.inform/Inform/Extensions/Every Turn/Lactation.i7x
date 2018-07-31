@@ -8,8 +8,8 @@ REQUIRES COMMENTING
 +!]
 A time based rule (this is the lactation rule):
 	let R be the lactation rate of the player;
-	repeat with C running through worn clothing:
-		if C is milk production:
+	repeat with C running through worn wearthing:
+		if C is milk production clothing:
 			increase R by 2;
 			if C is blessed, decrease R by 1;
 			if C is cursed, increase R by 1;

@@ -34,5 +34,8 @@ To decide which number is the raw-masturbation-bonus of (E - a fairy wand):
 To compute attack of (W - a fairy wand) at (M - a monster):
 	say "You flick the wand, zapping [NameDesc of M] with pink bolts of magic".
 
+Definition: a fairy wand (called C) is magic themed:
+	decide yes.
+
 Fairy Wand ends here.
 

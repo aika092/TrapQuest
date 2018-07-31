@@ -52,7 +52,7 @@ To decide which number is the strength-influence of (H - a cultist veil):
 	if the class of the player is cultist:
 		repeat with L running through cursed clothing worn by the player:
 			if L is not H, increase S by 1;
-	if there is a worn abyssal tattoo:
+	if abyssal tattoo is worn:
 		let I be the intelligence of the player;
 		increase S by I / 6;
 	decide on S.
@@ -62,7 +62,7 @@ To decide which number is the dexterity-influence of (H - a cultist veil):
 	if the class of the player is cultist:
 		repeat with L running through cursed clothing worn by the player:
 			if L is not H, increase D by 1;
-	if there is a worn abyssal tattoo:
+	if abyssal tattoo is worn:
 		let I be the intelligence of the player;
 		increase D by I / 6;
 	decide on D.

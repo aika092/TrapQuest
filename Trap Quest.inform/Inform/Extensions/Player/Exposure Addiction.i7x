@@ -3,7 +3,7 @@ Exposure Addiction by Player begins here.
 no-panties permanent fetish is a number that varies. no-panties permanent fetish is 0.
 
 To decide which number is no-panties-fetish:
-	if no-panties permanent fetish is 1 or the diaper addiction of the player > 15 or there is a worn no-panties tattoo or there is a worn daddy's little girl tattoo or the humiliation of the player >= 40000, decide on 1;
+	if no-panties permanent fetish is 1 or the diaper addiction of the player > 15 or no-panties tattoo is worn or daddy's little girl tattoo is worn or the humiliation of the player >= 40000, decide on 1;
 	otherwise decide on 0.
 
 Definition: a knickers (called C) is no-panties-disallowed:
@@ -39,7 +39,7 @@ topless permanent fetish is a number that varies. topless permanent fetish is 0.
 
 To decide which number is topless-fetish:
 	if diaper quest is 1, decide on 0;
-	if topless permanent fetish is 1 or there is a worn topless tattoo or the humiliation of the player >= 35000, decide on 1;
+	if topless permanent fetish is 1 or topless tattoo is worn or the humiliation of the player >= 35000, decide on 1;
 	otherwise decide on 0.
 
 Definition: a clothing (called C) is topless-fetish-disallowed:
@@ -58,12 +58,12 @@ A time based rule (this is the fighting against topless fetish rule):
 	if the player is fighting against topless:
 		if braless reminder <= 0:
 			let C be a random worn topless-fetish-disallowed clothing;
-			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [ShortDesc of C]! [one of][if there is a worn topless tattoo]Your heart aches and you[otherwise]You[end if] want to free your [BreastDesc]. It lowers your awareness and consumes your thought.[or][stopping][roman type][line break]";
+			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [ShortDesc of C]! [one of][if topless tattoo is worn]Your heart aches and you[otherwise]You[end if] want to free your [BreastDesc]. It lowers your awareness and consumes your thought.[or][stopping][roman type][line break]";
 			now braless reminder is 30;
 		decrease braless reminder by 1.
 
 Report wearing topless-fetish-disallowed clothing:
-	if the player is fighting against topless, say "You feel very uncomfortable wearing this, [if there is a worn topless tattoo]the tattooed eye in your chest aches[otherwise]because you know they want to see your [BreastDesc][end if].".
+	if the player is fighting against topless, say "You feel very uncomfortable wearing this, [if topless tattoo is worn]the tattooed eye in your chest aches[otherwise]because you know they want to see your [BreastDesc][end if].".
 
 This is the bra can't be summoned with braless fetish rule:
 	if summoning is 1 and (topless-fetish is 1 or the class of the player is faerie):

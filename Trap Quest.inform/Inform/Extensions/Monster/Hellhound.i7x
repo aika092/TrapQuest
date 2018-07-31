@@ -230,11 +230,10 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 		UnKnot M in F;
 		dislodge M;
 		bore M;
-	let T be a random paw print tattoo;
-	if there is a worn tattoo and T is not worn:
-		summon T;
+	if there is a worn tattoo and paw print tattoo is off-stage:
+		summon paw print tattoo;
 		say "[bold type]A new tattoo appears on your wrist![roman type][line break]";
-		try examining T.
+		try examining paw print tattoo.
 
 To say DragFlav of (M - hellhound) to (R - a room):
 	say "[bold type][BigNameDesc of M][bold type] turns around and walks off, either oblivious or uncaring that due to the fact its giant cock is still knotted inside your body, you get dragged along with it.[roman type][line break]".

@@ -36,13 +36,12 @@ Definition: demon codpiece (called D) is demonic:
 
 To SexChange (J - demon codpiece):
 	now J is temptation;
-	let T be a random off-stage cumlust tattoo;
 	if the player is female:
-		say "The [printed name of J] disappears in a flash of scarlet flames!";
+		say "The [ShortDesc of J] disappears in a flash of scarlet flames!";
 		destroy J;
-	otherwise if the size of penis is 0 and T is actually summonable and there is a worn tattoo:	
-		say "The [printed name of J] disappears in a flash of scarlet flames, leaving behind a red symbol, which lights up as it draws a pair of puckered lips where your penis used to be!"; [###Selkie: ooh, nice! I'd *love* to see an Icarus cut scene for *that*!]
-		summon T;
+	otherwise if the size of penis is 0 and cumlust tattoo is actually summonable and there is a worn tattoo:	
+		say "The [ShortDesc of J] disappears in a flash of scarlet flames, leaving behind a red symbol, which lights up as it draws a pair of puckered lips where your penis used to be!"; [###Selkie: ooh, nice! I'd *love* to see an Icarus cut scene for *that*!]
+		summon cumlust tattoo;
 		destroy J;
 	otherwise:
 		transform J into pouch-panties.
@@ -80,8 +79,8 @@ This is the demon junk punishment rule:
 			say "[DefaultSexchangeFlav]";
 			SexChange the player;
 			if the number of worn crotch tattoos is 0:
-				let T be a random xavier's cunt tattoo;
 				say "You feel a piercing pain above your [vagina], and look down to see the words 'Xavier[']s Cunt' burned into your skin.";
+				summon xavier's cunt tattoo;
 			otherwise:
 				VaginalSexAddictUp 5;
 				Arouse 5000;

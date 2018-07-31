@@ -2,7 +2,10 @@ Mamba by Sex Toys begins here.
 
 [MAMBA; bbc dildo]
 	
-A mamba is a kind of dong. There is 1 rare mamba. The size of a mamba is usually 8. A mamba is interracial related. The printed name of a mamba is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]mamba[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of mamba is "ma".
+A mamba is a kind of dong. There is 1 rare mamba. The size of a mamba is usually 8. The printed name of a mamba is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]mamba[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of mamba is "ma".
+
+Definition: A mamba (called C) is interracial themed:
+	decide yes.
 
 Figure of mamba is the file "Items/Accessories/Toys/mamba1.png".
 

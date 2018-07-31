@@ -67,5 +67,8 @@ To compute takeoff of (W - a magic wand):
 Definition: a magic wand (called C) is inflation themed:
 	decide yes.
 
+Definition: a magic wand (called C) is magic themed:
+	decide yes.
+
 Magic Wand ends here.
 

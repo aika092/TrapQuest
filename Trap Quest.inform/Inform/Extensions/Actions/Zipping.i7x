@@ -52,7 +52,7 @@ Check rezipping:
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that." instead;
 	repeat with C running through clothing worn by the player:
 		if C is top level protection and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
-	if there is a worn zip tattoo, say "Somehow your zip tattoo is preventing you from rezipping it!" instead;
+	if zip tattoo is worn, say "Somehow your zip tattoo is preventing you from rezipping it!" instead;
 	repeat with M running through unfriendly interested released monsters in the location of the player:
 		unless the sleep of M > 0, say "[BigNameDesc of M] gets in the way and stops you from touching the zip on your [noun]." instead.
 

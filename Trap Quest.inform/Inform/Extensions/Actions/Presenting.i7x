@@ -280,9 +280,8 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 		now the the player-reaction of the player is submitting;
 		now presented-orifice is vagina;
 		humiliate (SEVERE-HUMILIATION - MODERATE-HUMILIATION);
-		let T be a random no-regrets tattoo;
-		if there is a worn tattoo [and the humiliation of the player < HUMILIATION-DISGRACED + 1000 ]and the vaginal sex addiction of the player < 4 and T is not worn:
-			summon T;
+		if there is a worn tattoo [and the humiliation of the player < HUMILIATION-DISGRACED + 1000 ]and the vaginal sex addiction of the player < 4 and no-regrets tattoo is off-stage:
+			summon no-regrets tattoo;
 			say "Your skin stings as a tattoo is suddenly seared into your torso!  It says 'No Regrets'.";
 	otherwise if the noun is asshole and the humiliation of the player < HUMILIATION-BROKEN:
 		if the player is able to speak and auto is 0:
@@ -294,11 +293,10 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 		if the humiliation of the player < HUMILIATION-MODEST  - 3500, say "[one of][line break][first custom style]Oh my god, how humiliating is this!  What am I becoming...[roman type][line break][stopping]";
 		now the the player-reaction of the player is submitting;
 		now presented-orifice is asshole;
-		let T be a random just the tip tattoo;
-		if there is a worn tattoo and the humiliation of the player < HUMILIATION-MODEST - 1000 and T is not worn and the second noun is unfriendly:
-			summon T;
+		if there is a worn tattoo and the humiliation of the player < HUMILIATION-MODEST - 1000 and just the tip tattoo is not worn and just the tip tattoo is drawable and the second noun is unfriendly:
+			summon just the tip tattoo;
 			say "Your skin stings as a tattoo is suddenly seared into your butt cheek!  It says 'Just the Tip'.";
-		unless there is a worn just the tip tattoo, humiliate (SEVERE-HUMILIATION + MODERATE-HUMILIATION);
+		unless just the tip tattoo is worn, humiliate (SEVERE-HUMILIATION + MODERATE-HUMILIATION);
 	if there is a worn demon codpiece, follow the demon junk punishment rule;
 	if the second noun is friendly, check consensual submissive sex of the second noun;
 	if the noun is fuckhole and the second noun is dark skinned male monster, progress quest of interracial-sex-quest;

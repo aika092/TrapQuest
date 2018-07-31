@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 @inherits <Thing>
 
 @!]
-A wearthing is a kind of thing. A wearthing can be interracial related.
+A wearthing is a kind of thing.
 
 Definition: a wearthing (called C) is ballet related:
 	decide no.
@@ -273,6 +273,12 @@ Definition: yourself is naked:
 	decide yes.
 Definition: a clothing (called C) is leghole free: [Anything that must be pulled down the legs like jeans is NOT leghole free.]
 	decide yes.
+Definition: a thing (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
+	decide no.
+Definition: a thing (called C) is interracial themed: [Is it something that implies BBC love?]
+	decide no.
+Definition: a thing (called C) is magic themed: [Is it something that implies magic?]
+	decide no.
 Definition: a clothing (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
 	if C is babywear, decide yes;
 	decide no.

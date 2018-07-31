@@ -548,6 +548,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is tough-shit:
+	if born to lose tattoo is worn, decide on 1;
 	decide on choice in row 51 of the Table of Player Options.
 
 [!<DecideWhichNumberIsBackgroundNurse>+

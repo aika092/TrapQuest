@@ -110,7 +110,7 @@ REQUIRES COMMENTING
 This is the priestess class rule:
 	if there is a worn runic headband and there is a worn priestess outfit:
 		now player-class is "priestess";
-		if there is a worn abyssal tattoo, now player-class is "dark priestess";
+		if abyssal tattoo is worn, now player-class is "dark priestess";
 		rule succeeds.
 The priestess class rule is listed in the player class rules.
 
@@ -312,7 +312,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the wenched class rule:
-	if there is a worn property-tattoo:
+	if property-tattoo is worn:
 		now the player-class is "wench".
 The wenched class rule is listed last in the player class rules.
 wenched is a text that varies. wenched is "wench".
@@ -338,7 +338,7 @@ This is the succubus class rule:
 	if there is a worn demon horns and there is a worn soulstone:
 		now the player-class is "succubus";
 		if demon lord is mating, now player-class is "demon concubine";
-		if there is a worn abyssal tattoo, now player-class is "abyssal succubus";
+		if abyssal tattoo is worn, now player-class is "abyssal succubus";
 		rule succeeds.
 The succubus class rule is listed in the player class rules.
 
@@ -439,7 +439,7 @@ REQUIRES COMMENTING
 This is the cultist class rule:
 	if there is a worn cultist veil[ and there is a worn cultist robe]:[Testing this out to see if it would be overpowered]
 		now the player-class is "cultist";
-		if there is a worn abyssal tattoo, now player-class is "cultist seer";
+		if abyssal tattoo is worn, now player-class is "cultist seer";
 		rule succeeds.
 The cultist class rule is listed in the player class rules.
 
@@ -797,7 +797,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the adventurer class rule:
-	if there is a worn property-tattoo:
+	if property-tattoo is worn:
 		decide no;
 	otherwise:
 		now player-class is "adventurer".

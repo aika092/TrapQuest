@@ -15,7 +15,7 @@ This is the vines prevent standing rule:
 The vines prevent standing rule is listed in the ability to stand rules.
 
 This is the xavier prevents standing rule:
-	if there is a worn xavier's cunt tattoo and there is a demon lord in the location of the player:
+	if xavier's cunt tattoo is worn and there is a demon lord in the location of the player:
 		if auto is 0, say "You try to stand up, but your crotch tattoo seems to take control and stop you getting up from your knees in Xavier's presence!";
 		rule fails.
 The xavier prevents standing rule is listed in the ability to stand rules.

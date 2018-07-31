@@ -1,8 +1,20 @@
 Tattoos Framework by Tattoos begins here.
 
-Tattoo is a kind of wearthing. Tattoo is wearable. The description of tattoo is usually "[tattoo-desc of item described]".
+A tattoo is a kind of wearthing. A tattoo is wearable. The description of tattoo is usually "[tattoo-desc of item described]". Understand "tattoo" as tattoo.
+
+The printed name of a tattoo is "[TQlink of item described][MediumDesc of item described][TQxlink of item described][verb-desc of item described]".
+
 Report examining a tattoo:
 	say "[visibility-desc of the noun][outrage-desc of the noun]".
+
+To say TQlink of (T - a tattoo):
+	if inline hyperlinks >= 1, say "[link]".
+
+To say TQxlink of (T - a tattoo):
+	if inline hyperlinks >= 1, say "[as]x [ShortDesc of T][end link]".
+
+To say verb-desc of (T - a tattoo):
+	if inline hyperlinks >= 2, say "[if the player is in Dungeon28 or the player is in Tutorial05] [link][bracket]altar[close bracket][as]put [ShortDesc of T] on altar[end link][end if]".
 
 Definition: a tattoo (called T) is drawable:
 	decide yes.
@@ -14,9 +26,17 @@ Definition: a tattoo (called T) is actually summonable:
 	if the number of worn tattoos is 0, decide no;
 	if T is drawable, decide yes;
 	decide no.
+
+A tattoo has an indexed-text called the tattoo-title. The tattoo-title of a tattoo is "MISSING NAME". Understand the tattoo-title property as describing a tattoo.
 	
 To say tattoo-desc of (T - a tattoo):
-	say "".
+	say "This is a [ShortDesc of T]".
+
+To say ShortDesc of (T - a tattoo): [If this isn't unique it needs to be changed so that it is unique, or the TQxlink needs changing]
+	say "[tattoo-title of T] tattoo".
+
+To say MediumDesc of (T - a tattoo):
+	say ShortDesc of T.
 
 To summon (T - a tattoo):
 	now T is worn by the player.
@@ -64,9 +84,6 @@ To decide which number is the unworn cringe of (T - a tattoo):
 
 Check taking off tattoo:
 	say "That's permanently inked into your skin!" instead.
-
-To say ShortDesc of (T - a tattoo):
-	say "[T]".
 
 Section 1 - Ass Tattoos
 
@@ -137,8 +154,8 @@ Definition: a leg tattoo (called A) is drawable:
 	decide yes.
 
 To decide which object is the concealer of (T - a leg tattoo):
-	if there is a worn actually dense trousers, decide on a random worn actually dense trousers;
-	decide on a random worn actually dense stockings.
+	let C be a random worn leg covering actually dense clothing;
+	decide on C.
 	
 To decide which number is the initial outrage of (T - a leg tattoo):
 	decide on 4.

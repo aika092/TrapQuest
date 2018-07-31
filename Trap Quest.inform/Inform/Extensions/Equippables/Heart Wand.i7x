@@ -32,6 +32,9 @@ To compute attack of (W - a heart wand) at (M - a monster):
 Definition: a heart wand (called C) is heart themed:
 	decide yes.
 
+Definition: a heart wand (called C) is magic themed:
+	decide yes.
+
 
 Heart Wand ends here.
 

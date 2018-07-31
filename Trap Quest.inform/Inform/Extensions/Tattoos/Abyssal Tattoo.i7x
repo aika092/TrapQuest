@@ -1,14 +1,16 @@
 Abyssal Tattoo by Tattoos begins here.
 
-abyssal tattoo is a kind of body tattoo. There is 1 abyssal tattoo.
-The printed name of abyssal tattoo is usually "abyssal markings".
-Definition: an abyssal tattoo (called T) is eligible:
+abyssal tattoo is a body tattoo. The tattoo-title of abyssal tattoo is "abyssal markings". 
+Understand "markings" as abyssal tattoo.
+To say ShortDesc of (T - abyssal tattoo):
+	say "abyssal markings".
+Definition: abyssal tattoo (called T) is eligible:
 	decide no.
-To say tattoo-desc of (T - an abyssal tattoo):
+To say tattoo-desc of (T - abyssal tattoo):
 	say "Jagged black lines snake across your skin. They almost seem to move if you look away from them then suddenly back... [if the player-class is faerie or the player-class is fertility goddess]You can feel it making you more fertile.[end if]".
-To decide which object is the concealer of (T - an abyssal tattoo):
+To decide which object is the concealer of (T - abyssal tattoo):
 	decide on a random worn actually dense belly covering clothing.
-To decide which number is the strength-influence of (T - an abyssal tattoo):
+To decide which number is the strength-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is vampire spawn, increase X by 4;
 	if the player-class is virgin warrior, increase X by 2;
@@ -16,14 +18,14 @@ To decide which number is the strength-influence of (T - an abyssal tattoo):
 	if the player-class is puppygirl, increase X by 2;
 	if the player-class is cowgirl, increase X by 3;
 	decide on X.
-To decide which number is the dexterity-influence of (T - an abyssal tattoo):
+To decide which number is the dexterity-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is succubus, increase X by 4;
 	if the player-class is vixen, increase X by 2;
 	if the player-class is catgirl, increase X by 2;
 	if the player-class is cheerleader, increase X by 2;
 	decide on X.
-To decide which number is the intelligence-influence of (T - an abyssal tattoo):
+To decide which number is the intelligence-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is cultist, increase X by 4;
 	if the player-class is schoolgirl, increase X by 2;
@@ -31,26 +33,26 @@ To decide which number is the intelligence-influence of (T - an abyssal tattoo):
 	if the player-class is priestess, increase X by 2;
 	if the player-class is princess, increase X by 2;
 	decide on X.[Add tailored stuff for all classes]
-To decide which number is the delicateness-influence of (T - an abyssal tattoo):
+To decide which number is the delicateness-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is maid, increase X by 2;
 	if the player-class is puppygirl, increase X by 2;
 	if the player-class is princess, increase X by 2;
 	decide on X.
-To decide which number is the titfuck-addiction-influence of (T - an abyssal tattoo):
+To decide which number is the titfuck-addiction-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is cowgirl, increase X by 2;
 	decide on X.
-To decide which number is the semen-addiction-influence of (T - an abyssal tattoo):
+To decide which number is the semen-addiction-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is cheerleader, increase X by 2;
 	decide on X.
-To decide which number is the sex-addiction-influence of (C - an abyssal tattoo):
+To decide which number is the sex-addiction-influence of (C - abyssal tattoo):
 	let X be 0;
 	if the player-class is priestess, increase X by 2;
 	decide on X.
 
-To summon (T - an abyssal tattoo):
+To summon (T - abyssal tattoo):
 	if the player-class is faerie or the player-class is fertility goddess:
 		increase the pregnancy rate of the player by 1;
 	now T is worn by the player.

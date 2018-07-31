@@ -313,10 +313,10 @@ To finally humiliate (X - a number):
 			summon P cursed;
 			if P is not worn, now the player is wearing P;
 			now humiliation-restriction is 1;
-		otherwise if the player-class is succubus and there is not a worn abyssal tattoo:
+		otherwise if the player-class is succubus and abyssal tattoo is not worn:
 			say "A sudden pain explodes from the stone in your chest! It sears through your mind and pushes all thought from it! Before you can recover, you feel a wave of pleasure surge through you. Everything feels so floaty and warm... You hear the voice in your mind say [line break][variable custom style]'Yes, that[']s it, just let it all go...'[roman type][line break]and you surrender to the euphoria and stop trying to think at all. As your awareness begins to fade, you hear your own voice laugh evilly.";
 			end the story finally;
-		otherwise if the player-class is succubus and there is a worn abyssal tattoo:
+		otherwise if the player-class is succubus and abyssal tattoo is worn:
 			now humiliation-restriction is 1;
 			say "[bold type]You feel the jagged black marks on your skin pulse and burn, then tighten around you. It seems like the powers who rule at the elder altar have more use for you, and are unwilling to let the demonic entity in the soulstone take you over quite yet![roman type][line break]";
 	if the humiliation of the player < 40000 and humiliation-restriction is 0:
@@ -327,9 +327,8 @@ To finally humiliate (X - a number):
 		if the humiliation of the player >= 40000 and the player-class is not succubus:
 			now the raw delicateness of the player is 20;
 			say "[bold type]You feel yourself shivering with a strange sense of adrenaline and pleasure. Your mind has finally snapped, and you no longer can see yourself as anything but an object to be acted upon by others, especially when you are on your knees. You get the feeling that this change in outlook is permanent, [if the bimbo of the player < 11]which makes you both very concerned and even more aroused[otherwise]which just makes you aroused and excited[end if]. From now on when on your knees, you will usually automatically submit to anyone you see.[roman type][line break]"; [Should only happen once when 40k is hit]
-			let T be a random worthless cunt tattoo;
-			if T is drawable and there is a worn tattoo:
-				summon T;
+			if worthless cunt tattoo is drawable and there is a worn tattoo:
+				summon worthless cunt tattoo;
 				say "The words 'Worthless Cunt' suddenly appear in permanent ink, above your crotch!";
 	otherwise:
 		arouse X / 4; [Still happens even with mindbreak enabled.]
@@ -389,7 +388,7 @@ cannot lose dignity once their humiliation score passes above 40000, or HUMILIAT
 To Dignify (X - a number):
 	if the humiliation of the player < 40000:
 		if the player is soulless and the class of the player is not succubus, now X is 0;
-		if there is a worn no-regrets tattoo, now X is X / 2;
+		if no-regrets tattoo is worn, now X is X / 2;
 		if the humiliation of the player < X, now the humiliation of the player is 0;
 		otherwise decrease the humiliation of the player by X.
 
