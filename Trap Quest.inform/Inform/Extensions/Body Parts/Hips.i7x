@@ -169,7 +169,7 @@ To decide which number is the weight of (XXX - hips):
 		if S is cursed, increase H by 4;
 		if S is bland and H > 3, decrease H by 3;
 		if S is blessed and H > 3, decrease H by 6;
-	if there is a worn abyssal tattoo and the class of the player is silicone queen:
+	if abyssal tattoo is worn and the class of the player is silicone queen:
 		decrease H by the silicone volume of hips / 4; [Ass implants weigh less for the silicone queen if they've got the abyssal tattoo bonus]
 	if H > 1, now H is H / 2;
 	if the latex-transformation of the player > 1 and H > 6, now H is 6;

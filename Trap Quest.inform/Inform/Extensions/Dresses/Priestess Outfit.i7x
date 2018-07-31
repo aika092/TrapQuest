@@ -19,6 +19,9 @@ To uniquely set up (C - a priestess outfit):
 To set up influence of (C - a priestess outfit):
 	set up stat-based influence of C.
 
+Definition: a priestess outfit (called C) is magic themed:
+	decide yes.
+
 Part 1 - Flowing Priestess Outfit
 
 A flowing priestess outfit is a kind of priestess outfit. There is 1 flowing priestess outfit.

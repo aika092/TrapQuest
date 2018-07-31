@@ -20,5 +20,8 @@ Carry out casting:
 	now the quest-status of herald is 2;
 	destroy the noun.
 
+Definition: a dark scroll (called C) is magic themed:
+	decide yes.
+
 Dark Scroll ends here.
 

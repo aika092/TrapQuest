@@ -93,7 +93,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the too much dignity to present asshole rule:
-	if the humiliation of the player < HUMILIATION-PROUD + 2000 and the player is not horny and the virgin bonus of the player <= 0 and the number of worn just the tip tattoos is 0 and debugmode < 1:
+	if the humiliation of the player < HUMILIATION-PROUD + 2000 and the player is not horny and the virgin bonus of the player <= 0 and just the tip tattoo is not worn and debugmode < 1:
 		if auto is 0, say "You have too much self respect to do that!";
 		rule fails.
 The too much dignity to present asshole rule is listed in the asshole presentable rules.
@@ -104,7 +104,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the player hates anal sex rule:
-	if the anal sex addiction of the player + 2 < the soreness of asshole and the player is not horny and the virgin bonus of the player <= 0 and the number of worn just the tip tattoos is 0 and debugmode < 1:
+	if the anal sex addiction of the player + 2 < the soreness of asshole and the player is not horny and the virgin bonus of the player <= 0 and just the tip tattoo is not worn and debugmode < 1:
 		if auto is 0, say "You don't like anal sex enough to ask for it while you are already feeling so [if the soreness of asshole < 5]raw[otherwise]sore[end if]!";
 		rule fails.
 The player hates anal sex rule is listed in the asshole presentable rules.
@@ -267,9 +267,8 @@ To gape (A - asshole) times (X - a number):
 			increase the openness of asshole by 1;
 			now ruined is 2;
 	if the player is female and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo:
-		let T be a random asshole-cupid tattoo;
-		if T is drawable:
-			summon T;
+		if asshole-cupid tattoo is drawable:
+			summon asshole-cupid tattoo;
 			say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]!  [line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
 	if virgincursed > 1:
 		if virgincursed is 2:

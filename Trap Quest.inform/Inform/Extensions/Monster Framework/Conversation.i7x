@@ -12,10 +12,8 @@ Are you at risk of saying something lewd instead of what you intended?
 Definition: yourself is seductive:
 	if diaper quest is 1 and there is a worn baby pacifier, decide yes;
 	if the class of the player is cheerleader, decide yes;
-	repeat with C running through clothing worn by the player:
-		if C is temptation, decide yes;
-	repeat with T running through tattoos worn by the player:
-		if T is spank my kitty tattoo, decide yes;
+	if there is worn temptation clothing, decide yes;
+	if spank my kitty tattoo is worn, decide yes;
 	decide no.
 
 

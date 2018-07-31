@@ -42,7 +42,6 @@ To decide which number is the calculated semen addiction of the player:
 	if there is a worn slimegirl:
 		let I be the intensity of a random slimegirl;
 		increase S by I * 3;
-	if there is a worn wet dream tattoo, increase S by 2;
 	if S < the semen taste addiction of the player, decide on the semen taste addiction of the player;
 	if S < recent-bimbo / 3, now S is recent-bimbo / 3;
 	if S > 20, decide on 20;

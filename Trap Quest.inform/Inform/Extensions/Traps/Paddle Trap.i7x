@@ -69,9 +69,8 @@ To trigger (Y - a paddle trap):
 		otherwise:
 			say "It spanks you on your poor ass cheeks!  Owww![line break][second custom style]Ooh, I've been a bad girl...[if the bimbo of the player < 6][line break][first custom style]What the fuck, did I just think that?![end if][roman type][line break]";
 			DelicateUp 1;
-	let T be a random spank tattoo;
-	if T is drawable and there is a worn tattoo and the delicateness of the player > 8:
-		summon T;
+	if spank tattoo is drawable and there is a worn tattoo and the delicateness of the player > 8:
+		summon spank tattoo;
 		say "Your skin stings with pain as a 'Spank Me' tattoo is suddenly burned onto your butt!".
 
 

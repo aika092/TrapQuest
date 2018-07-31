@@ -1,6 +1,7 @@
 Safety Pin Tattoo by Tattoos begins here.
 
-safety pin tattoo is a dq tattoo. Figure of safety pin tattoo is the file "Items/Tats/tattoo55.png".
+safety pin tattoo is a dq tattoo. The tattoo-title of safety pin tattoo is "safety pin".
+Figure of safety pin tattoo is the file "Items/Tats/tattoo55.png".
 Definition: safety pin tattoo (called T) is eligible:
 	if the noun is diaper or the noun is mechanical joint or the noun is diaper cover, decide yes;
 	decide no.

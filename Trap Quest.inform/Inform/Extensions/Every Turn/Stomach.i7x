@@ -145,10 +145,10 @@ A time based rule (this is the compute stomach rule):
 					StomachUp 1;
 	let bladder-prompt be 6;
 	if the incontinence of the player > 0, now bladder-prompt is 4;
-	if the bladder of the player > bladder-prompt or (resting is 1 and (there is a worn bed wetting clothing or there is a worn bed-wetter tattoo)):
+	if the bladder of the player > bladder-prompt or (resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn)):
 		let I be 3[ - the incontinence of the player];
 		let R be (a random number between I and 30) + (a random number between I and 30);
-		if (there is a worn bed wetting clothing or there is a worn bed-wetter tattoo) and resting is 1, now R is 1;
+		if (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and resting is 1, now R is 1;
 		if debuginfo > 1, say "[input-style]Urine hold check: [if R is 1]magic bed wetting effect = automatic failure[otherwise]2d28+4 ([R]) | ([bladder of the player - 1].5) bladder volume[end if][roman type][line break]";
 		if R < the bladder of the player, now delayed urination is 1;
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:

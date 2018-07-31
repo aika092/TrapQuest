@@ -586,7 +586,7 @@ To say DominanceSuccess of (M - an acolyte):
 		say "[big he of M] clasps her hands together, uttering a harsh word under her breath as her robe instantly tears itself to shreds, leaving only her hood. [line break][speech style of M]'[one of]Take me, non-believer. It is the will of the [great one]s...'[or]Defile me, non-believer. I am tested by the [great one]s...'[or]Defile me, non-believer. It is the will of the [great one]s...'[or]Take me, non-believer. Your role in their plan has yet to be fulfilled...'[at random][roman type][line break]";
 		if watersports fetish is 1 and the player is desperate to pee, watersports dominate M;
 		otherwise vaginal dominate M;
-	otherwise if the player is female or (the size of penis <= 3 and (the number of worn cumlust tattoos is 1 or TG fetish is 1)):
+	otherwise if the player is female or (the size of penis <= 3 and (cumlust tattoo is worn or TG fetish is 1)):
 		say "[big he of M] nods in no direction in particular. [line break][speech style of M]'[one of]You must be cleansed before you become a vessel.'[or]It is their will that your body be cleansed...'[or]You must be cleansed before your role in their plan can be fulfilled...'[or]I understand. I will attend to the new vessel...'[at random][roman type][line break]";
 		female dominate M;
 	otherwise:

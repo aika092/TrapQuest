@@ -138,8 +138,7 @@ To compute gloryhole painting blowjob:
 To compute gloryhole genital modification:
 	let C be a random off-stage chastity cage;
 	if there is a worn tattoo and the number of worn crotch tattoos is 0:
-		let T be a random slut tattoo;
-		summon T;
+		summon slut tattoo;
 		say "You feel a sharp pain near your crotch and pull your body back. You now have a 'SLUT' tattoo!  [line break][variable custom style][if the bimbo of the player < 13]Fuck![otherwise]Heh. It's making me feel even more [one of]girly[or]giddy[at random]![end if][roman type][line break]";
 	otherwise if clitoris piercing is eligible:
 		summon normal clit piercing cursed;

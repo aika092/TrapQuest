@@ -12,7 +12,7 @@ To decide which figure-name is the clothing-image of (C - a runic headband):
 	decide on figure of runic headband.
 
 To say ClothingDesc of (H - a runic headband):
-	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around. You have no idea what they mean.[if there is a worn abyssal tattoo] The runes have turned black, and almost seem wet with some kind of sludge.[end if]".
+	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around. You have no idea what they mean.[if abyssal tattoo is worn] The runes have turned black, and almost seem wet with some kind of sludge.[end if]".
 
 To say ShortDesc of (H - a runic headband):
 	say "runic headband".
@@ -70,6 +70,9 @@ To compute hair colour change of (H - runic headband):
 	compute hair colour darken of H.
 
 Definition: a runic headband (called C) is condom pinnable:
+	decide yes.
+
+Definition: a runic headband (called C) is magic themed:
 	decide yes.
 
 

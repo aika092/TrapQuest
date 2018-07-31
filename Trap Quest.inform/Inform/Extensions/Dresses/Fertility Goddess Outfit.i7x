@@ -4,6 +4,8 @@ A fertility outfit is a kind of overdress. A fertility outfit is usually unique.
 
 Definition: a fertility outfit (called C) is pregnancy related:
 	decide yes.
+Definition: a fertility outfit (called C) is magic themed:
+	decide yes.
 
 Figure of goddess tunic is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess1.png".
 Figure of ivy leaves is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess2.png".

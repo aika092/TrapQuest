@@ -144,7 +144,9 @@ REQUIRES COMMENTING
 
 +!]
 To compute generic treasure to (X - a thing):
-	if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 50 - (10 * (the number of on-stage elixirs + the number of on-stage potions + the number of on-stage salves)):
+	let luck be 0;
+	if lucky you tattoo is worn, now luck is 50;
+	if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < luck + 50 - (10 * (the number of on-stage elixirs + the number of on-stage potions + the number of on-stage salves)):
 		let Z be nothing;
 		let R be a random number from 1 to 3;
 		if R is 1:
@@ -164,13 +166,13 @@ To compute generic treasure to (X - a thing):
 			compute autotaking Z;
 		otherwise:
 			say "Oh no, it's empty. Boo!";
-	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 100 - (10 * the number of in-play rare clothing):
+	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < luck + 100 - (10 * the number of in-play rare clothing):
 		let C be a random off-stage rare fetish appropriate clothing;
 		now C is in X;
 		say "You find a [printed name of C]!  This must be a rare item!";
 		if C is diaper cover, say "[one of][item style]Newbie tip: You've found a diaper cover!  This can only be worn over a diaper, and reduces how much a soggy diaper weighs you down. They will often take a long time for enemies to get past.[roman type][line break][or][stopping]";
 		compute autotaking C;
-	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < 100 - (5 * snacks-found):
+	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < luck + 100 - (5 * snacks-found):
 		let C be a random off-stage snack;
 		now C is in X;
 		increase snacks-found by 1;

@@ -1,6 +1,7 @@
 My Vagina Tattoo by Tattoos begins here.
 
-my-vagina tattoo is an upper back tattoo. The printed name of my-vagina tattoo is "my vagina tattoo". Understand "my vagina", "vagina tattoo" as my-vagina tattoo. Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.png".
+my-vagina tattoo is an upper back tattoo. The tattoo-title of my-vagina tattoo is "my vagina". 
+Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.png".
 
 Definition: my-vagina tattoo (called T) is drawable:
 	if diaper quest is 1, decide no;

@@ -263,6 +263,9 @@ REQUIRES COMMENTING
 Definition: an alchemy product (called A) is product:
 	decide yes.
 
+Definition: an alchemy product (called C) is magic themed:
+	decide yes.
+
 [Giving each alchemy product a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
 [!<Thing>@<WhichNumberIsTheAlchemyKey>+
 

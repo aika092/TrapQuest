@@ -44,11 +44,10 @@ To compute wetting failure:
 	if the raw diaper addiction of the player > 6, now the raw diaper addiction of the player is 6;
 	now wetting-valued is -1;
 	if tough-shit is 1:
-		let T be a random off-stage failed potty training tattoo;
-		if T is tattoo and there is a worn tattoo:
-			summon T;
+		if failed potty training tattoo is off-stage and there is a worn tattoo:
+			summon failed potty training tattoo;
 			say "Ouch!  You yelp as you feel a sharp, strong pain in your belly.";
-			try examining T;
+			try examining failed potty training tattoo;
 			delicateup 1;
 		otherwise:
 			now incontinence is 15;

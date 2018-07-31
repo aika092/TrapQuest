@@ -605,7 +605,7 @@ To decide which number is the enjoyment of (F - a fuckhole):
 				if the player is queen of spades, increase A by 1;
 			otherwise:
 				if the player is queen of spades, decrease A by 2;
-				if M is penetrating vagina, decrease A by the number of worn black hole tattoos;
+				if M is penetrating vagina and black hole tattoo is worn, decrease A by 1;
 	if A < 0, decide on 0;
 	decide on A.
 

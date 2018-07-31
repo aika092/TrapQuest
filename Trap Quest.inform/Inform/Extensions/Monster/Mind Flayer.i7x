@@ -131,10 +131,9 @@ To compute facial climax of (M - mind flayer):
 		say "The creature pulls its tentacles away, seemingly satisfied for the moment.";
 		bore M;
 		if image cutscenes is 1, display figure of mindflayer cutscene 6;
-		let T be a random empty-mind tattoo;
-		if there is a worn tattoo:
+		if there is a worn tattoo and empty-mind tattoo is not worn:
 			say "As it pulls away, the word 'EMPTY' suddenly appears on your forehead!";
-			summon T;
+			summon empty-mind tattoo;
 	otherwise:
 		say "You aren[']t quite sure what happened while you were blacked out [if the bimbo of the player > 8]but you are quite concerned![otherwise].[end if]The creature, seemingly satisfied, haughtily walks away.";
 		increase the domination of the player by 4;

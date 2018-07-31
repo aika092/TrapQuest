@@ -1,6 +1,7 @@
 Tribal Diaper Tattoo by Tattoos begins here.
 
-tribal diaper tattoo is a dq tattoo. Figure of tribal diaper tattoo is the file "Items/Tats/tattoo61.png".
+tribal diaper tattoo is a dq tattoo. The tattoo-title of tribal diaper tattoo is "tribal diaper".
+Figure of tribal diaper tattoo is the file "Items/Tats/tattoo61.png".
 Definition: tribal diaper tattoo (called T) is eligible:
 	if the noun is mittens, decide yes;
 	decide no.

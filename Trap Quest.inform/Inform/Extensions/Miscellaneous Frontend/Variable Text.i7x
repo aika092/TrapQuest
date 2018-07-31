@@ -345,6 +345,9 @@ To say milk:
 To say man of (M - a monster):
 	say "[if M is neuter]thing[otherwise if lady fetish is 1 or M is female]woman[otherwise]man[end if]".
 
+To say he of (M - a thing):
+	say "[if M is live]they[otherwise]it[end if]".
+
 [!<SayHeOfMonster>+
 
 REQUIRES COMMENTING
@@ -353,6 +356,9 @@ REQUIRES COMMENTING
 To say he of (M - a monster):
 	say "[if M is neuter]it[otherwise if M is male and M is not always-feminine]he[otherwise]she[end if]".
 
+To say big he of (M - a thing):
+	say "[if M is live]They[otherwise]It[end if]".
+	
 [!<SayBigHeOfMonster>+
 
 REQUIRES COMMENTING
@@ -361,6 +367,9 @@ REQUIRES COMMENTING
 To say big he of (M - a monster):
 	say "[if M is neuter]It[otherwise if M is male and M is not always-feminine]He[otherwise]She[end if]".
 
+To say him of (M - a thing):
+	say "[if M is live]them[otherwise]it[end if]".
+	
 [!<SayHimOfMonster>+
 
 REQUIRES COMMENTING
@@ -368,6 +377,9 @@ REQUIRES COMMENTING
 +!]
 To say him of (M - a monster):
 	say "[if M is neuter]it[otherwise if M is male and M is not always-feminine]him[otherwise]her[end if]".
+
+To say his of (M - a thing):
+	say "[if M is live]their[otherwise]its[end if]".
 
 [!<SayHisOfMonster>+
 
@@ -378,6 +390,9 @@ To say his of (M - a monster):
 	say "[if M is neuter]its[otherwise if M is male and M is not always-feminine]his[otherwise]her[end if]".
 
 
+To say big his of (M - a thing):
+	say "[if M is live]Their[otherwise]Its[end if]".
+
 [!<SayBigHisOfMonster>+
 
 REQUIRES COMMENTING
@@ -386,6 +401,9 @@ REQUIRES COMMENTING
 To say big his of (M - a monster):
 	say "[if M is neuter]Its[otherwise if M is male and M is not always-feminine]His[otherwise]Her[end if]".
 
+To say himself of (M - a thing):
+	say "[if M is live]themselves[otherwise]itself[end if]".
+	
 [!<SayHimselfOfMonster>+
 
 REQUIRES COMMENTING

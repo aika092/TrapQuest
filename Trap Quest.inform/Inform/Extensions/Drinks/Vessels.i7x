@@ -273,7 +273,7 @@ To compute drunken adventure:
 				summon K;
 				say "You are wearing a [ShortDesc of K] which is already utterly soaked.";
 			increase the urine-soak of K by the soak-limit of K - the total-soak of K;
-		if pregnancy fetish is 1 and the pregnancy of the player is 0 and condoms-used is 0:
+		if the player is female and pregnancy fetish is 1 and the pregnancy of the player is 0 and condoms-used is 0:
 			let M be a random alive father material monster;
 			if M is monster:
 				now M is inseminating vagina;
@@ -379,6 +379,8 @@ Definition: witch's goblet (called T) is blessable:
 	decide no.
 To compute drinking (X - witch's goblet):
 	compute cursed drinking X.[We do not check whether this is blessed.]
+Definition: a witch's goblet (called C) is magic themed:
+	decide yes.
 	
 	
 horn is a vessel. horn is open topped. The max-doses of horn is 2. The printed name of horn is "[TQlink of item described][unless curse-ID of the item described is unsure][magic-curse] [end if]minotaur horn[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of horn is "mho". Figure of horn is the file "Items/Accessories/Vessels/horn1.png". Understand "minotaur" as horn.

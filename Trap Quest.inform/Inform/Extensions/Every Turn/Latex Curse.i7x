@@ -58,7 +58,7 @@ To compute latex transformation:
 			repeat with C running through worn clothing:
 				if C is fake nails, only destroy C;
 				if C is bracelet or C is wrist bond:
-					say "Your [printed name of C] fall off your wrists and onto the ground.";
+					say "Your [ShortDesc of C] fall off your wrists and onto the ground.";
 					now C is in the location of the player;
 		say "[roman type][line break]".
 
@@ -71,6 +71,12 @@ REQUIRES COMMENTING
 This is the sex dolls have no voice rule:
 	if the latex-transformation of the player > 6, rule fails.
 The sex dolls have no voice rule is listed in the player voice rules.
+
+[How many seconds pass before latex transformation progresses]
+To decide which number is latex transformation rate:
+	let N be 264;
+	if dolly tattoo is worn, decrease N by 69;
+	decide on N.
 
 
 Latex Curse ends here.

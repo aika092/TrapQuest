@@ -88,7 +88,7 @@ To compute teaching of (L - tits-lesson):
 			say "[variable custom style]I guess this isn't too bad.[roman type][line break]";
 		say "[M] makes you stand in a line so that [he of M] can inspect your titty graffiti. Eventually [he of M] reaches you and makes you puff our your chest as she reads the small black letters.";
 		compute tits marker reaction of S;
-		say "[big he of M] coughs loudly and then raises [his of M] voice.[line break][speech style of M]'Okay, let's raise the stakes a bit. I have a spell that can turn any ink into a permanent tattoo. Anyone who says they are willing to have their words become a permanent public declaration on bosom will graduate this class and become a ruby student. Anyone interested?'[roman type][line break]Do you volunteer to have the words '[tattoo-text of marker chest tattoo]' permanently inked on your chest? [yesnolink]";
+		say "[big he of M] coughs loudly and then raises [his of M] voice.[line break][speech style of M]'Okay, let's raise the stakes a bit. I have a spell that can turn any ink into a permanent tattoo. Anyone who says they are willing to have their words become a permanent public declaration on bosom will graduate this class and become a ruby student. Anyone interested?'[roman type][line break]Do you volunteer to have the words '[tattoo-title of marker chest tattoo]' permanently inked on your chest? [yesnolink]";
 		if the player consents:
 			say "Everybody looks awkward and casts their eyes downward, but you cause the silence to be broken by a few awed gasps as you raise your hand.[line break][speech style of M]'Oh yes, I had a feeling about you.'[roman type][line break][NameDesc of M] grins and with a flourish of her spellbook, everybody's words disappear from their chest, except yours. You test your own ink with a finger and find that it indeed will not rub off or smudge at all.";
 			now marker chest tattoo is worn by the player;
@@ -114,13 +114,13 @@ To compute tits marker choice of (S - a student):
 	say "thinks for a few moments [himself of S] before taking the pen to your skin. ";
 	let R be a random number between 1 and 3;
 	if R is 1:
-		now the tattoo-text of marker chest tattoo is "photos welcome";
+		now the tattoo-title of marker chest tattoo is "photos welcome";
 	otherwise if R is 2:
-		now the tattoo-text of marker chest tattoo is "I love being topless";
+		now the tattoo-title of marker chest tattoo is "I love being topless";
 	otherwise:
-		now the tattoo-text of marker chest tattoo is "please stare at my tits";
+		now the tattoo-title of marker chest tattoo is "please stare at my tits";
 	now the tattoo-outrage of marker chest tattoo is 8;
-	say "[big he of S] writes '[tattoo-text of marker chest tattoo]' onto your body![line break]".
+	say "[big he of S] writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
 To compute tits marker reaction of (S - a student):
 	say "[speech style of lesson-teacher of tits-lesson]'Hmm, this is fine. Nothing special, but does the job. Not bad, [NameDesc of S].'[roman type][line break]".
@@ -130,13 +130,13 @@ To compute tits marker choice of (S - a ditzy student):
 	say "umms to [himself of S] for a few moments [himself of S] before making a gleeful 'ooh!' sound and then taking the pen to your skin. ";
 	let R be a random number between 1 and 3;
 	if R is 1:
-		now the tattoo-text of marker chest tattoo is "fuckballs";
+		now the tattoo-title of marker chest tattoo is "fuckballs";
 	otherwise if R is 2:
-		now the tattoo-text of marker chest tattoo is "fuck bags";
+		now the tattoo-title of marker chest tattoo is "fuck bags";
 	otherwise:
-		now the tattoo-text of marker chest tattoo is "cock pillows";
+		now the tattoo-title of marker chest tattoo is "cock pillows";
 	now the tattoo-outrage of marker chest tattoo is 11;
-	say "[big he of S] writes '[tattoo-text of marker chest tattoo]' onto your body![line break]".
+	say "[big he of S] writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
 To compute tits marker reaction of (S - a ditzy student):
 	say "[speech style of lesson-teacher of tits-lesson]'Hmm. A bit crude, but I guess it does the job. You'd certainly get more attention.'[roman type][line break]".
@@ -146,13 +146,13 @@ To compute tits marker choice of (S - a nasty student):
 	say "doesn't hesitate before taking the pen to your skin. ";
 	let R be a random number between 1 and 3;
 	if R is 1:
-		now the tattoo-text of marker chest tattoo is "ugly bitches need bigger boobs";
+		now the tattoo-title of marker chest tattoo is "ugly bitches need bigger boobs";
 	otherwise if R is 2:
-		now the tattoo-text of marker chest tattoo is "worthless whore with mediocre boobs";
+		now the tattoo-title of marker chest tattoo is "worthless whore with mediocre boobs";
 	otherwise:
-		now the tattoo-text of marker chest tattoo is "please look at my disgusting tits";
+		now the tattoo-title of marker chest tattoo is "please look at my disgusting tits";
 	now the tattoo-outrage of marker chest tattoo is 13;
-	say "[big he of S] grins a wide, evil grin and then writes '[tattoo-text of marker chest tattoo]' onto your body![line break]".
+	say "[big he of S] grins a wide, evil grin and then writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
 To compute tits marker reaction of (S - a nasty student):
 	say "[speech style of lesson-teacher of tits-lesson]'No, no no! This is all wrong. Who would want such a horrible message written on their breasts?! Get it together, [NameDesc of S].'[roman type][line break]".
@@ -162,11 +162,11 @@ To compute tits marker choice of (S - a tryhard student):
 	say "doesn't hesitate before taking the pen to your skin. ";
 	let R be a random number between 1 and 2;
 	if R is 1:
-		now the tattoo-text of marker chest tattoo is "it's hard not to look, isn't it?";
+		now the tattoo-title of marker chest tattoo is "it's hard not to look, isn't it?";
 	otherwise:
-		now the tattoo-text of marker chest tattoo is "if you can read this, you owe me a drink";
+		now the tattoo-title of marker chest tattoo is "if you can read this, you owe me a drink";
 	now the tattoo-outrage of marker chest tattoo is 13;
-	say "[big he of S] grins a wide, evil grin and then writes '[tattoo-text of marker chest tattoo]' onto your body![line break]".
+	say "[big he of S] grins a wide, evil grin and then writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
 To compute tits marker reaction of (S - a tryhard student):
 	say "[speech style of lesson-teacher of tits-lesson]'Great idea, [NameDesc of S]! I love it. Attention grabbing without being too crass.'[roman type][line break]".

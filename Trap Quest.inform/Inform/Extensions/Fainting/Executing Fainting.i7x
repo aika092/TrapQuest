@@ -40,9 +40,8 @@ To Execute Fainting:
 		let A be a random off-stage mindless acolyte;
 		set up A;
 		summon A in the mansion;
-	let T be a random property-tattoo;
 	if the number of worn lower back tattoos is 0 and there is a worn tattoo and the player can see a royal guard:
-		summon T;
+		summon property-tattoo;
 		now newly-tattooed is 1;
 	if there is a tentacle monster in the location of the player, now tentacled is 1;
 	let J be the biggest jewel;

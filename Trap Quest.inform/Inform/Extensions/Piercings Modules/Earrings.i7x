@@ -1,13 +1,16 @@
 Earrings by Piercings Modules begins here.
 
-A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings is interracial related. A pair of earrings has a number called variation.
+A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation.
+
+Definition: a pair of earrings (called C) is interracial themed:
+	if C is cursed, decide yes;
+	decide no.
 
 To uniquely set up (C - a pair of earrings):
 	now the variation of C is a random number between 1 and 3.
 
 To say CurseCurseFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!";
-	now C is interracial related.
+	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!".
 	
 To say CurseBlandFlav of (C - a pair of earrings):
 	say "Your [printed name of C] transform in shape, and are now penis shaped again!".
@@ -16,8 +19,7 @@ To say BlessBlessFlav of (C - a pair of earrings):
 	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!".
 	
 To say BlessBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones!  I guess these are pretty trashy too...[end if][roman type][line break]";
-	now C is not interracial related.
+	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones!  I guess these are pretty trashy too...[end if][roman type][line break]".
 
 To decide which number is the initial outrage of (C - a pair of earrings):
 	if C is cursed, decide on 12;

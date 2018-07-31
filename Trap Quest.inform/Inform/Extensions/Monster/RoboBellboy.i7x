@@ -349,10 +349,11 @@ To compute trainee forcing of (M - senior robobellboy):
 			if T is drawable and the concealer of T is nothing:
 				summon T;
 				say "A tiny needle shoots out, moving rapidly as it prints a [printed name of T] onto the skin above your [genitals].";
-			otherwise:
-				let F be a random off-stage free ride tattoo;
+			otherwise if free ride tattoo is not worn:
 				say "A tiny needle shoots out toward your face, moving rapidly as it prints the words 'Free Ride' onto your right cheek.";
-				summon F;
+				summon free ride tattoo;
+			otherwise:
+				say "[big he of M] seems to struggle to find an appropriate tattoo template and closes the compartment again silently.";
 		otherwise:
 			say "It's motionless for a second, then it closes its chest compartment without releasing you. [line break][speech style of M]'ERROR LINE 35, CANVAS UNSUITABLE...ADMINISTERING FINAL EXAM'[roman type][line break]";
 			compute whore forcing of M;

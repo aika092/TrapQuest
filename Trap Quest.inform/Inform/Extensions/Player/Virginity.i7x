@@ -44,11 +44,10 @@ To compute virginity loss:
 		say "[if the player is not a pervert]You feel pure despair and[otherwise if the player is not a nympho]You shudder involuntarily as[otherwise]Perverse arousal mixed with a vague sense of self-disgust consumes you as[end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
 		now flav-said is 1;
 		now the virgin bonus of the player is -1;
-		let T be a random virgin void tattoo;
-		if T is drawable and there is a worn tattoo:
-			summon T;
-			say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso!  You take a look:  ";
-			try examining T;
+		if virgin void tattoo is drawable and there is a worn tattoo:
+			summon virgin void tattoo;
+			say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso!  You take a look: ";
+			try examining virgin void tattoo;
 	if the number of worn purity clothing > 0, say "Your aura of purity gone, your pure items lose their desire to travel with you.";
 	repeat with H running through worn purity clothing:
 		compute virginity-loss of H;

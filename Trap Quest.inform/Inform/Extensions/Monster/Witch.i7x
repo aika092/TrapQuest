@@ -412,10 +412,9 @@ To compute failed dominance punishment of (M - witch):
 		now M is in Woods16;
 	otherwise:
 		say "[speech style of M]Let's see if you fuck with me again after this![roman type][line break]";
-		let T be a random weakness tattoo;
-		unless T is worn and there is a worn tattoo:
+		if weakness tattoo is not worn and there is a worn tattoo:
 			say "[BigNameDesc of M] hits your ankle with a bolt of energy from [his of M] fingertip, growling an incantation under [his of M] breath. You feel strength drain from your body as a tiny black star appears on your skin. [big he of M] appears to be satisfied, and leaves you alone.";
-			summon T;
+			summon weakness tattoo;
 		otherwise:
 			say "[BigNameDesc of M] fires a bolt of energy into your chest, repeating a short chant as strength permanently leaves your body. [big he of M] appears to be satisfied with that and leaves you alone.";
 			StrengthDown 5;

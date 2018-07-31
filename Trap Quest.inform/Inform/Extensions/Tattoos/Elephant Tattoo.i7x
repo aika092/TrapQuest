@@ -1,6 +1,7 @@
 Elephant Tattoo by Tattoos begins here.
 
-elephant tattoo is a dq tattoo. Figure of elephant tattoo is the file "Items/Tats/tattoo73.png".
+elephant tattoo is a dq tattoo. The tattoo-title of elephant tattoo is "elephant".
+Figure of elephant tattoo is the file "Items/Tats/tattoo73.png".
 Definition: elephant tattoo (called T) is drawable:
 	if T is worn, decide no;
 	if diaper quest is 0 and T is not eligible, decide no;

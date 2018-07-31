@@ -14,7 +14,7 @@ To decide which number is the charisma of the player:
 	if the class of the player is royal slave, decrease X by 2;
 	if the class of the player is succubus, increase X by 1;
 	if there is a worn book of regrets, increase X by 1;
-	decrease X by the number of worn bitch tattoos;
+	if bitch tattoo is worn, decrease X by 1;
 	decide on X.
 
 [!<offerItTo:Action>*

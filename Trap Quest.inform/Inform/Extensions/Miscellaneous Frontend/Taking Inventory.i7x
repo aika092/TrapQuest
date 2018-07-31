@@ -215,6 +215,22 @@ Carry Out LootListing:
 	now inventory-busy is 0;
 	now disambiguation-busy is false.
 
+TattooListing is an action applying to nothing. Understand "tattoo", "list tattoo", "tats", "list tats", "tattoos", "list tattoos" as TattooListing.
+
+[!<CarryOutTattooListing>+
+
+REQUIRES COMMENTING
+
++!]
+Carry Out TattooListing:
+	if inventory hyperlinks is 0, now disambiguation-busy is true; [disables hyperlinks until set to false]
+	now inventory-busy is 1;
+	repeat with T running through worn tattoos:
+		say "[T][line break]";
+	say "[unless there is a worn tattoo]You have no tattoos.[end if][line break]";
+	now inventory-busy is 0;
+	now disambiguation-busy is false.
+
 To say ShortDesc of (L - a list of things):
 	let E be the number of entries in L;
 	repeat with C running through L:

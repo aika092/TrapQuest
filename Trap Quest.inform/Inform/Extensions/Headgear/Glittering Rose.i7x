@@ -26,13 +26,13 @@ To decide if a glittering rose is roleplay:
 
 To decide which number is the strength-influence of (C - a glittering rose):
 	let X be the total fill of belly / 3;
-	if there is a worn abyssal tattoo, increase X by 2;
+	if abyssal tattoo is worn, increase X by 2;
 	decrease X by the intelligence of the player / 5;[the higher your intelligence, the larger the debuff]
 	decide on X.
 	
 To decide which number is the dexterity-influence of (C - a glittering rose):
 	let X be the total fill of belly / 3;
-	if there is a worn abyssal tattoo, increase X by 2;
+	if abyssal tattoo is worn, increase X by 2;
 	decrease X by the intelligence of the player / 5;
 	decide on X.
 

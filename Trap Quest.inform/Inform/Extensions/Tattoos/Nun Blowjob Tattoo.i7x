@@ -1,6 +1,7 @@
 Nun Blowjob Tattoo by Tattoos begins here.
 
-nun blowjob tattoo is a body tattoo. Figure of nun blowjob tattoo is the file "Items/Tats/tattoo86.png".
+nun blowjob tattoo is a body tattoo. The tattoo-title of nun blowjob tattoo is "nun blowjob".
+Figure of nun blowjob tattoo is the file "Items/Tats/tattoo86.png".
 Definition: nun blowjob tattoo (called T) is drawable:
 	if T is worn, decide no;
 	if diaper quest is 1, decide no;

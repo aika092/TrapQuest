@@ -5,6 +5,9 @@ A gothic corset is a kind of corset. A gothic corset is usually leather. There i
 Definition: a gothic corset (called C) is fluid immune:
 	decide yes.
 
+Definition: a gothic corset (called C) is magic themed:
+	decide yes.
+
 The printed name of gothic corset is usually "[TQlink of item described][clothing-title-before]gothic corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of gothic corset is usually "[TQlink of item described][clothing-title-before]gothic corsets[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of gothic corset is "gco".
 
 Figure of Gothic Corset is the file "Items/Clothes/Upper/Corsets/gothiccorset1.png".

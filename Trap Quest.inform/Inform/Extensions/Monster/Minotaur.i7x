@@ -276,9 +276,8 @@ To compute vaginal sex of (M - minotaur):
 		PussyFill 2;
 		say "[one of][BigNameDesc of M] seems completely spent - [he of M] pulls your bloated body off [his of M] shaft and leaves you to recover[or][BigNameDesc of M], spent, pulls your bloated body off [his of M] deflating shaft and leaves you to recover[or][BigNameDesc of M] pulls your bloated body off [his of M] shaft as [his of M] ejaculation finally ends, leaving you on the floor to recover[or][BigNameDesc of M] removes [his of M] deflating shaft from your [vagina], completely spent[at random]. [big he of M] stalks off, probably looking for another woman to breed.";
 		let H be a random off-stage cow ears;
-		let T be a random bred by a bull tattoo;
-		if there is a worn tattoo and T is not worn:
-			summon T;
+		if there is a worn tattoo and bred by a bull tattoo is not worn:
+			summon bred by a bull tattoo;
 			say "The words 'BRED BY A BULL' materialise on your left side!  They are now permanently inked onto your skin.";
 		otherwise if H is actually summonable and lactation fetish is 1: 
 			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";

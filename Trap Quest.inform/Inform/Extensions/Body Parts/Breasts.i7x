@@ -85,7 +85,7 @@ To decide which number is the sensitivity of breasts:
 		if there is a worn nipple chain, increase S by 1;
 	increase S by the raw sensitivity of breasts;
 	if there is a worn nipple chain, increase S by 2;
-	if there is a worn true love tattoo, increase S by 2;
+	if true love tattoo is worn, increase S by 2;
 	decide on S.
 
 [!<BreastsIsLewdlyExposed>+
@@ -233,9 +233,8 @@ To decide which number is the supportable weight of breasts:
 		if S is cursed, increase O by 4;
 		otherwise decrease O by 3;
 		if S is blessed, decrease O by 3;
-	if there is a worn Atlas tattoo:
-		decrease O by 3;
-	if there is a worn abyssal tattoo and the class of the player is silicone queen:
+	if Atlas tattoo is worn, decrease O by 3;
+	if abyssal tattoo is worn and the class of the player is silicone queen:
 		decrease O by the silicone volume of breasts / 6; [breast implants weigh half as much for the silicone queen if you've got the bonus]
 	if the air volume of breasts <= 0 and O < 0, now O is 0; [Can't have negative weight without inflation fetish]
 	decide on O.

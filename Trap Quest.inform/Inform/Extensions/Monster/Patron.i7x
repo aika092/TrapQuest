@@ -341,21 +341,21 @@ To compute payment of (M - a patron):
 		say "[speech style of M]'[one of]I'm not paying you after that.'[or]If you want to get paid, you'll behave yourself next time.'[or]I'm not going to pay you. In fact I might complain.'[or]I'll be back, and next time be obedient and you'll actually earn a payment.'[in random order][roman type][line break]";
 		decrease the employee-record of senior robobellboy by 1;[Until you start a training regimen, you can only earn strikes]
 	otherwise:
-		if the number of worn free ride tattoos is 0 or a random number between 1 and 2 is 1:
+		if free ride tattoo is not worn or a random number between 1 and 2 is 1:
 			loot M;
 			say "[BigNameDesc of M] [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald]n[end if] [dropped-item] [one of]at your feet[or]on the ground in front of you[or]onto the bed[purely at random].";
 		say "[speech style of M]'[if M is inexperienced patron][one of]Thanks for the great time!'[or]That was fun, I'll be back again!'[or]You blew my mind, babe.'[or]That was definitely worth the money.'[or]I think that's the hardest I've ever orgasmed, thank you so much.'[or]Here's your payment, as promised!'[in random order][otherwise if M is gross patron][one of]Thanks.'[or]That was good.'[or]Expensive, but worth it.'[or]I'll be back again.'[in random order][otherwise if M is experienced patron][one of]Until next time.'[or]Your performance was acceptable.'[or]You earned it.'[or]Buy yourself something nice.'[in random order][otherwise][one of]Keep the change, you filthy animal.'[or]To be honest I'm impressed that you've survived.'[or]You don't even deserve this much.'[or]Until next time, whore.'[or]Try harder next time.'[in random order][end if][roman type][line break]";
 		let C be a random worn clothing;
-		if diaper quest is 0 and (there is a worn pussy deluxe tattoo or (C is clothing and M is not dickhead patron)):
+		if diaper quest is 0 and (pussy deluxe tattoo is worn or (C is clothing and M is not dickhead patron)):
 			repeat with N running from 1 to 10: [We give the RNG several chances to not look at something boring like a ring.]
 				if the initial outrage of C <= 3, now C is a random worn clothing;
-			if there is a worn pussy deluxe tattoo, now C is a random worn pussy deluxe tattoo;
+			if pussy deluxe tattoo is worn, now C is pussy deluxe tattoo;
 			let O be the initial outrage of C;
 			if C is tattoo, now O is the outrage of C; [initial outrage would be 0]
 			if O > a random number between 8 and 16 or the class of the player is trained hooker:
 				loot M;
 				say "[BigNameDesc of M] pauses, and then [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald]n[end if] [dropped-item] next to it.";
-				say "[speech style of M]'[if there is a worn pussy deluxe tattoo and the number of worn tattoos is 1]Your [one of][cunt][or][pussy][or]vag[as decreasingly likely outcomes] tattoo is[otherwise if there is a worn pussy deluxe tattoo]Your tattoos are[otherwise]That [C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if]  pretty [if the initial outrage of C > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if], [one of]so here's something extra as a tip[or]you deserve extra[or]I think you've earned this much[or]you deserve a reward[or]here's something towards your next sexy purchase[or]and I'm feeling generous[at random].'[roman type][line break]";
+				say "[speech style of M]'[if pussy deluxe tattoo is worn and the number of worn tattoos is 1]Your [one of][cunt][or][pussy][or]vag[as decreasingly likely outcomes] tattoo is[otherwise if pussy deluxe tattoo is worn]Your tattoos are[otherwise]That [ShortDesc of C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if]  pretty [if the initial outrage of C > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if], [one of]so here's something extra as a tip[or]you deserve extra[or]I think you've earned this much[or]you deserve a reward[or]here's something towards your next sexy purchase[or]and I'm feeling generous[at random].'[roman type][line break]";
 			if the class of the player is hotel employment, increase the employee-record of senior robobellboy by 1;
 	say "[BigNameDesc of M] leaves the way he came.";
 	destroy M.
@@ -436,7 +436,7 @@ To compute facial dodging of (M - a patron):
 
 To compute facial climax of (M - a patron):
 	compute default facial climax for M;
-	let T be a random mouth-tally tattoo;
+	let T be mouth-tally tattoo;
 	if T is worn:
 		say "Taking out his permanent marker, [NameDesc of M] [if M is pissed off]growls while adding[otherwise]adds[end if] another strike to the tally on your cheek.";
 		increase the tallies of T by 1;
@@ -480,7 +480,7 @@ To compute begging of (M - a monster) in (F - a fuckhole):
 		say M submission sex (a random number between 1 and 7).
 
 To compute post climax effect of (M - a patron) in (F - vagina):
-	let T be a random vagina-tally tattoo;
+	let T be vagina-tally tattoo;
 	if T is worn:
 		say "Taking out his permanent marker, [NameDesc of M] adds another strike to the tally at your crotch.";
 		increase the tallies of T by 1;
@@ -490,7 +490,7 @@ To compute post climax effect of (M - a patron) in (F - vagina):
 	compute payment of M.
 
 To compute post climax effect of (M - a patron) in (F - asshole):
-	let T be a random asshole-tally tattoo;
+	let T be asshole-tally tattoo;
 	if T is worn:
 		say "Taking out his permanent marker, [NameDesc of M] adds another strike to the tally next to your [asshole].";
 		increase the tallies of T by 1;

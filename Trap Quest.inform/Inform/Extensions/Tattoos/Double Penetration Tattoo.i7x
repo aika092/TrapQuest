@@ -1,6 +1,7 @@
 Double Penetration Tattoo by Tattoos begins here.
 
 double penetration tattoo is a body tattoo. Figure of double penetration tattoo is the file "Items/Tats/tattoo80.png".
+The tattoo-title of double penetration tattoo is "double penetration".
 Definition: a double penetration tattoo (called T) is drawable:
 	if T is worn, decide no;
 	if diaper quest is 1, decide no;

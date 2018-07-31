@@ -1,8 +1,8 @@
 Crafting Table by Objects begins here.
 
-a crafting-table is a kind of thing. a crafting-table is not portable. The printed name of crafting-table is "[TQlink of item described][ShortDesc of item described] with [if the charge of item described <= 0][item style]glowing bowl[roman type][otherwise]dull bowl[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of crafting-table is "crft". Understand "wooden bowl", "bowl", "dull bowl", "with glowing bowl", "glowing",  "table", "alchemy table", "alchemists", "alchemist's" as crafting-table. 
+a crafting-table is a kind of thing. a crafting-table is not portable. The printed name of crafting-table is "[TQlink of item described][ShortDesc of item described] with [if the charge of item described <= 0][item style]glowing bowl[roman type][otherwise]dull bowl[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of crafting-table is "crft". Understand "wooden bowl", "bowl", "dull bowl", "with glowing bowl", "glowing", "table" as crafting-table. 
 
-The description of crafting table is "A [if the charge of item described <= 0]glowing bowl[otherwise]currently dull bowl[end if] sits on a large wooden crafting table.".
+The description of crafting-table is "A [if the charge of item described <= 0]glowing bowl[otherwise]currently dull bowl[end if] sits on a large wooden crafting table.".
 
 To say ShortDesc of (C - a crafting-table):
 	say "crafting-table".
@@ -29,7 +29,7 @@ To reset alchemy charge of (C - a crafting-table):
 
 
 
-the alchemist's table is a crafting-table. alchemist's table is in Dungeon37.  The text-shortcut of alchemist's table is "at".  The indefinite article of alchemist's table is "an".
+the alchemist's table is a crafting-table. alchemist's table is in Dungeon37.  The text-shortcut of alchemist's table is "at".  The indefinite article of alchemist's table is "an". Understand "alchemy", "alchemists" as alchemist's table.
 
 the science table is a crafting-table. science table is in School28. The text-shortcut of science table is "scit". science table has a number called second charge.
 The printed name of science table is "[TQlink of item described][ShortDesc of item described] with [if the charge of science table <= 0 and the second charge of science table <= 0]two glowing bowls[otherwise if the charge of science table <= 0 or the second charge of science table <= 0 ]one glowing bowl[otherwise]two dull bowls[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]".

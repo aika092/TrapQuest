@@ -110,7 +110,7 @@ To compute perception of (M - demon lord):
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH GIRL!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, GIRL! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
 		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
-	otherwise if the player-class is succubus and M is mating and the number of worn pentagram tattoo is 0:
+	otherwise if the player-class is succubus and M is mating and pentagram tattoo is not worn:
 		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type]";
 	otherwise:
 		say "[first custom style]'YOU!  GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
@@ -178,12 +178,9 @@ This is the demon transformation rule:
 		now the humiliation of the player is 0;
 		bore M;
 		rule succeeds;
-	otherwise if the player-class is the succubus and M is mating and the number of worn pentagram tattoos is 0:
-		let T be a random off-stage pentagram tattoo;
-		if T is tattoo:[TODO: think of tattoo alternative here]
-			say "The demon lord traces his finger around your vagina, burning the shape of a pentagram around it! [line break][first custom style]'THIS HOLE IS FOR MY PERSONAL USE ONLY, CONCUBINE! MY WARD WILL SEE THIS IS SO!'[roman type][line break]Xavier considers the situation for a moment, then seems to decide he'll hammer the point home, as it were!";
-			summon T;
-			now T is covering vagina.
+	otherwise if the player-class is the succubus and M is mating and pentagram tattoo is not worn:
+		say "The demon lord traces his finger around your vagina, burning the shape of a pentagram around it![line break][first custom style]'THIS HOLE IS FOR MY PERSONAL USE ONLY, CONCUBINE! MY WARD WILL SEE THIS IS SO!'[roman type][line break]Xavier considers the situation for a moment, then seems to decide he'll hammer the point home, as it were!";
+		summon pentagram tattoo.
 
 This is the xavier prioritises defeating others rule:
 	if the number of monsters in the location of current-monster > 1: [1 is going to be xavier himself]
@@ -280,10 +277,9 @@ To compute post climax effect of (M - demon lord) in (F - vagina):
 	if the class of the player is succubus:
 		say "You feel fulfilled as [NameDesc of M][']s mighty seed flows into your [vagina]!";
 		dignify 900;
-	let T be a random xavier's cunt tattoo;
 	if there is a worn tattoo and the number of worn crotch tattoos is 0:
 		say "With a single finger, [NameDesc of M] burns two words onto your skin, just above your [vagina]. You stare down in disbelief at it - now permanently branded as 'Xavier's Cunt'.";
-		summon T;
+		summon xavier's cunt tattoo;
 		say "[speech style of M]'THE ETERNAL BOND IS COMPLETE. YOU'RE MINE NOW.'[roman type][line break]".
 
 To compute post climax effect of (M - demon lord) in (F - asshole):
@@ -419,7 +415,6 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	now the priority of P is 0; [can only happen once]
 	let M be current-monster;
 	let K be a random worn knickers;
-	let T be a random demon link mark;
 	let D be a random demon diaper;
 	say "[DemonNightmareStartFlav]";
 	say "[second custom style]'Well aren't you a scrumptious one.'[roman type][line break]You find yourself alone kneeling in front of a seven foot high lady demon in a luxurious castle bedroom. Her curvaceous figure and powerful limbs are matched by a deep, confident and yet still very feminine voice. Her only item of clothing is a chunky diaper with a red pentagram printed on the front. It looks completely unused. [line break][second custom style]'Excellent, a vacancy just opened up. I have the perfect role for you[if K is clothing]. Now remove that undergarment[end if].'[roman type][line break]";
@@ -433,8 +428,8 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	say "[second custom style]'Okay now here, put this on.'[roman type][line break]Again before you can really choose whether to accept, it's just happening. A big thick pink diaper is rocketing across the room towards your nether regions, and before you can say 'Hmm I'm not sure if I'm completely comfortable with where this is going' it is forcing your feet through its leg-holes. You look down and see it too has a big pentagram etched in the front. You start to feel rather nervous, and this feeling is exacerbated by her next words.[line break][second custom style]'Let us begin the ritual.'[roman type][line break]Words of trepidation choke up in your throat due to the size and sheer aura of dominance surrounding the demoness. She guides you gently but firmly over to a pentagram on the floor in the centre of her bedroom. As she takes both your hands in hers the pentagram's lines immediately start shining with a brilliant purple glow.[line break][second custom style]'Repeat after me. [']I, [NameBimbo]['],'[line break][variable custom style]'I, [NameBimbo]...'[roman type][line break]Something inside you is entranced by her magnificence and anyway you can't see any other reasonable course of action. It feels like she could probably crush you with a small flick of her tail.[line break][second custom style]'Consent to serve...'[line break][variable custom style]'Consent to serve...'[line break][second custom style]'My body and padding shall be hers...'[line break][variable custom style]'My body and padding shall be hers...'  Wait, what am I getting myself into?[line break][second custom style]'In her time of need...'[line break][variable custom style]'In her time of need...'[line break][second custom style]'Wherever I may be.'[line break][variable custom style]'Wherever I may be.'[roman type][line break]The glowing begins to fade.";
 	summon D;
 	if there is a worn tattoo and the number of worn crotch tattoos is 0:
-		summon T;
-		say "A sharp sting over your crotch lets you know you suddenly have a new tattoo!  You can't see it but you can sense you have a pentagram permanently marked above your crotch. ";
+		summon demon link mark;
+		say "A sharp sting over your crotch lets you know you suddenly have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked above your crotch. ";
 	now xavier-diaper-link is 1;
 	say "You feel a weird pang behind your [genitals]. Like it's not completely yours any more.[line break][second custom style]'Now follow me. And remember, potty [if the player is male and the bimbo of the player < 10]boys[otherwise]girls[end if] are supposed to be seen, not heard.'[roman type][line break]You are led from the bedroom throughout the castle, accompanying your Mistress on her queenly duties, including inspecting the troops, settling disputes amongst the common demons, and eating dinner with some demon knights. During this whole time you stay silent with your head down, standing two paces behind her, to her left side. At dinner you are seated next to her, but you are so small compared to her and the other demons that you might as well be a child, feeling a little lost in the adult- that is, the demon-sized chair. Your feet don't even touch the floor, meaning all your weight is on your thick padding. Towards the end of the meal, you notice your Lady arch her back and sigh gently. None of the other demons show that they noticed, if indeed any did. At the same time you feel the weirdest sensation - [if diaper lover >= 3]your sphincter opens wide to allow a thick soft log to exit. At the same time [end if]urine squirts out of your urethra, even though you can feel you're not pushing and nothing is exiting your bladder. It's like a ghost is sitting in your exact position, with his or her pee[if diaper lover >= 3] and poop[end if] materialising as it emerges!  The hissing and crinkling sounds fill the hall, making your face turn red. You understand what is happening - the Demon Queen is going to the toilet, but it's appearing in your diaper instead of hers!  And since she's so much bigger than you, she has a [italic type]lot[roman type] of waste to get out of her system. Your padding bulges from beneath you, visibly pushing you an inch higher up off of the chair.";
 	say "[second custom style]'Really now, how disgusting!'[roman type][line break]Your Mistress chides you in a fake offended tone. [line break][second custom style]'Using your diaper at the dinner table. Really now!  Get out of here [if diaper lover >= 3]before you stink the whole room up[otherwise]now[end if]!  Get a change and then return to my chambers. I'll punish you later.'[roman type][line break]With face and ears as red as hers and a full [if diaper lover >= 3]and [end if]soggy nappy you sulkily waddle your way out of the room, studying the ground intensely as you do. You are halfway through the castle back to the waterfall when you hear a gurgling sound coming from below. Moments later your diaper is completely dry and clean!  [line break][variable custom style]Wow, that's... magic.[roman type][line break]You wait for the Queen to return to her bedroom, which takes hours. During this time you end up testing your diaper yourself, and find that after a [if diaper lover is 3]few moments[otherwise]minute or so[end if] it cleans itself in the same way. Finally, your Mistress returns.[line break][second custom style]'Excellent job, pet. You'll make a good potty servant. It's a shame you'll have to do it from afar for now though. I can feel that Xavier's magic is fading. Soon you will return to the mortal realm... for now. However, you are now eternally bonded to me, until the day I sever the connection or you die. So I'm sure you'll never forget me.'[roman type][line break]She and her world start to fade away.[line break][second custom style]'If I were you, I would try and keep hold of that diaper for as long as possible...'[roman type][line break]";
@@ -515,7 +510,6 @@ To compute punishment of (P - xavier-nightmare-belt):
 	let M be current-monster;
 	let K be a random worn knickers;
 	if K is diaper, now K is nothing;
-	let T be a random demon belly mark;
 	let D be a random eligible diaper;
 	let BL be a random worn belt;
 	say "[DemonNightmareStartFlav]";
@@ -536,8 +530,8 @@ To compute punishment of (P - xavier-nightmare-belt):
 	summon demon belt cursed;
 	now xavier-belt-link is 1;
 	if there is a worn tattoo and the number of worn belly tattoos is 0:
-		summon T;
-		say "A tingling feeling over your belly lets you know you also have a new tattoo!  You can't see it but you can sense you have a pentagram permanently marked around your belly button.";
+		summon demon belly mark;
+		say "A tingling feeling over your belly lets you know you also have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked around your belly button.";
 	say "[first custom style]'Okay, now your job is to try and finish this. And you'd better try your hardest - if you can't get through it all in twenty minutes, you'll spend the rest of your time here strapped to an automatic spanking machine.'[roman type][line break]You frown, still confused. In front of you is a bowl of runny green soup[if diaper lover >= 3] and a small loaf of crusty bread[end if]. Even though you're feeling very full, surely it won't take you longer than a few minutes to finish the [if diaper lover >= 3]meal[otherwise]liquid snack[end if]. You sit down, wincing as your belly [if diaper lover >= 3]growls angrily[otherwise]sloshes loudly[end if] as you move. You pick up your first spoonful of the soup and bring it to your lips, pleasantly surprised by the healthy taste of peas and mint. You swallow it without a problem[if diaper lover >= 3], quickly following it up with a bite of the bread[end if].[line break][bold type]GRUMBLE[roman type][line break]As soon as it makes its way to your stomach, you feel the magic of your new belt at work. ";
 	if diaper lover < 3 and images visible is 1, display figure of cutscene-xavier-nightmare-belt-clean;
 	say "The matter inside you doubles, triples, quadruples in volume, and keeps going!  Your belly bulges and swells and expands, making you look like you're eight months pregnant. The pressure on your bladder[if diaper lover >= 3] and bowels[end if] is now immediately too much - you instantly wet[if diaper lover >= 3] and mess[end if] yourself, beginning to fill your [if D is worn]new [end if]diaper with your shame. By the time your belly has visibly deflated a bit and you are able to regain control of your body, your diaper is already feeling rather soggy and full.";

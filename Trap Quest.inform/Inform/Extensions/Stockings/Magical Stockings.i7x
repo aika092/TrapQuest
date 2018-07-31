@@ -26,5 +26,8 @@ To decide which number is the dexterity-influence of (S - a magical stockings):
 	if M > 0, decide on 1;
 	decide on 0.
 
+Definition: a magical stockings (called C) is magic themed:
+	decide yes.
+
 Magical Stockings ends here.
 

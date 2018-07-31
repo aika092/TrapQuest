@@ -59,7 +59,8 @@ To compute class outfit of (H - a cow ears):
 	let P be a random off-stage cow piercing;
 	let pierce be 0;
 	if P is cow piercing and the number of worn nipple piercing is 0, now pierce is 1;
-	let T be a random off-stage nintendolls-brand tattoo;
+	let T be nintendolls-brand tattoo;
+	if T is on-stage, now T is nothing;
 	if Q is actually summonable:
 		say "[bold type]Your cow ears barely noticeably quiver, and then a [ShortDesc of Q] materialises on your chest.[roman type][line break]";
 		summon Q cursed;

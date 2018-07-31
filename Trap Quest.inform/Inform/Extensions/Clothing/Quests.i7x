@@ -289,7 +289,7 @@ To decide what number is the quest-weighting of (Q - interracial-sex-quest) for 
 	if Q is not appropriate, decide on 0;
 	if the sex-addiction-influence of C < 0, decide on 0;
 	if C is penetrating asshole, decide on 0;
-	if C is interracial related, decide on 20;
+	if C is interracial themed, decide on 20;
 	if C is ass covering:
 		if C is not displacable and C is not zippable, decide on 0;
 	decide on 3.

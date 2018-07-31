@@ -16,6 +16,9 @@ To decide which number is the strength-influence of (O - a magical dress):
 To compute periodic effect of (H - a magical dress): [tentacle monsters grow and pop out almost instantly]
 	if the pregnancy of the player is 1 and the father is tentacle monster, now maximum-pregnancy-delay-tracker is maximum-pregnancy-delay + 1.
 
+Definition: a magical dress (called C) is magic themed:
+	decide yes.
+
 A lolita magical dress is a kind of magical dress.
 
 There is 1 lolita magical dress. 

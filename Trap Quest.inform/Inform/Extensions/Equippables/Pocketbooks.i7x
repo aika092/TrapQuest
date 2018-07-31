@@ -85,6 +85,9 @@ To decide which number is the humiliation-influence of (C - a pocket necronomico
 	increase B by the magic-modifier of C;
 	decide on B.
 
+Definition: a pocket necronomicon (called C) is magic themed:
+	decide yes.
+
 Section 2 - Book of Do Overs
 
 [book of regrets can be found in the library]

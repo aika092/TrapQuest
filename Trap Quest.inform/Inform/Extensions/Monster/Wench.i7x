@@ -753,10 +753,9 @@ To compute unique dominance reward of (M - a wench):
 	otherwise:
 		SexAddictDown R;
 	if the times-dominated of M > 0:
-		let T be a random demongirl tattoo;
-		if there is a worn tattoo and T is not worn:
-			summon T;
-			say "A drawing of a demon girl appears on your left arm!  You feel more dominant.";
+		if there is a worn tattoo and demongirl tattoo is not worn:
+			summon demongirl tattoo;
+			say "A drawing of a demon girl appears on your left arm! You feel more dominant.";
 	now player-fucking is 0.
 
 To say AfterDominationComment (N - a number) of (M - a wench):

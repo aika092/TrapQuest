@@ -110,7 +110,7 @@ A time based rule (this is the lubricant drying rule):
 	repeat with L running through lubricants covering an orifice:
 		if there is a worn refreshment clothing:
 			do nothing;
-		otherwise if there is a worn spit first tattoo and L is covering asshole and a random number between 1 and 3 > 1: [The tattoo makes it take much longer for the lube to dry on assholes]
+		otherwise if spit first tattoo is worn and L is covering asshole and a random number between 1 and 3 > 1: [The tattoo makes it take much longer for the lube to dry on assholes]
 			do nothing;
 		otherwise if seconds < the timer of L:
 			decrease the timer of L by seconds;

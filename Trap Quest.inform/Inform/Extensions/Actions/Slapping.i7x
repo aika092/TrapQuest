@@ -15,8 +15,9 @@ REQUIRES COMMENTING
 To decide which number is the slap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base slap damage calculation: [bracket]1 (base damage) ";
 	let A be 1;
-	increase A by the number of worn thorny tattoos;
-	if damage-explained > 1 and there is a worn thorny tattoo, say "+[number of worn thorny tattoos] (thorny tattoo) ";
+	if thorny tattoo is worn:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (thorny tattoo) ";
 	now punch is 0;
 	let S be a random worn slap ready equippable;
 	if S is equippable:

@@ -26,6 +26,8 @@ To compute SelfExamineDesc of (H - a heart hairpin):
 Definition: a heart hairpin (called C) is heart themed:
 	decide yes.
 
+Definition: a heart hairpin (called C) is magic themed:
+	decide yes.
 
 Definition: a heart hairpin is removable:
 	if the magic-power of the player > 2:

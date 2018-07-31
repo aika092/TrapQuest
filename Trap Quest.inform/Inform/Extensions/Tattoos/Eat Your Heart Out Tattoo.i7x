@@ -3,7 +3,9 @@ Eat Your Heart Out Tattoo by Tattoos begins here.
 Definition: a thing (called C) is heart themed:
 	decide no.
 
-eat-your-heart-out tattoo is an asshole tattoo. Figure of eat-your-heart-out tattoo is the file "Items/Tats/tattoo81.png". The printed name of eat-your-heart-out tattoo is "butt slut [if there is a worn buttslut tattoo]asshole [end if]tattoo". Understand "eat", "heart", "eat your heart","eat your heart out" as eat-your-heart-out tattoo.
+eat-your-heart-out tattoo is an asshole tattoo. The tattoo-title of eat-your-heart-out tattoo is "eat your heart out".
+Figure of eat-your-heart-out tattoo is the file "Items/Tats/tattoo81.png".
+Understand "eat", "heart", "eat your heart" as eat-your-heart-out tattoo.
 Definition: eat-your-heart-out tattoo (called T) is eligible:	
 	if the noun is heart themed, decide yes;
 	decide no.

@@ -82,7 +82,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
 		compute stat healing;
 	[Latex Transformation]
-	if the remainder after dividing local-earnings by (264 - (the number of worn dolly tattoos * 20)) < local-seconds:
+	if the remainder after dividing local-earnings by latex transformation rate < local-seconds:
 		compute latex transformation;
 	[Spawning and buffing of weak enemies]
 	if the remainder after dividing local-earnings by 413 < local-seconds:
@@ -175,7 +175,7 @@ REQUIRES COMMENTING
 +!]
 To compute hair colour decay:
 	let R be 1;
-	if there is a worn bright-hair tattoo or diaper quest is 1, now R is 0; [This tattoo stops hair from decaying]
+	if bright-hair tattoo is worn or diaper quest is 1, now R is 0; [This tattoo stops hair from decaying]
 	let X be 0;
 	while R > 0:
 		now R is a random number between 1 and 3;

@@ -523,11 +523,10 @@ REQUIRES COMMENTING
 +!]
 To hair permanent check:
 	unless the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3:
-		let T be a random bright-hair tattoo;
-		if there is a worn tattoo and T is not worn:
-			summon T;
+		if there is a worn tattoo and bright-hair tattoo is not worn:
+			summon bright-hair tattoo;
 			say "[bold type]A new tattoo has appeared on your arm![roman type][line break]";
-			try examining T.
+			try examining bright-hair tattoo.
 
 
 

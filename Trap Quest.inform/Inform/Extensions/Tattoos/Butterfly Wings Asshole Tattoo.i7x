@@ -1,6 +1,7 @@
 Butterfly Wings Asshole Tattoo by Tattoos begins here.
 
-butterfly-wings tattoo is an asshole tattoo. Figure of butterfly-wings tattoo is the file "Items/Tats/tattoo87.png". The printed name of butterfly-wings tattoo is "butterfly wings asshole tattoo". Understand "butterfly", "wings", "asshole tattoo" as butterfly-wings tattoo.
+butterfly-wings tattoo is an asshole tattoo. The tattoo-title of butterfly-wings tattoo is "butterfly wings asshole". 
+Figure of butterfly-wings tattoo is the file "Items/Tats/tattoo87.png". Understand "butterfly", "wings", "asshole tattoo" as butterfly-wings tattoo.
 
 Definition: butterfly-wings tattoo (called T) is eligible:	
 	if the noun is butterfly wings or the noun is glittering rose or the noun is fairy wand or the noun is pink hair or the noun is fae mushroom, decide yes;

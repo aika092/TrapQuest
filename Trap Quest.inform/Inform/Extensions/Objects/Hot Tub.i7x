@@ -12,6 +12,7 @@ Carry out showering hot-tub:
 	now the stance of the player is 1;
 	wash salves;
 	compute showering;
+	now seconds is tracked-semen + 1;
 	say "Your time in the water leaves you feeling completely refreshed!";
 	now the fatigue of the player is 0;
 	let M be a random alive male teacher;
@@ -25,7 +26,8 @@ Carry out showering hot-tub:
 			now the chosen-orifice of M is presented-orifice;
 			now M is friendly-fucking;
 			FavourUp M by the sex desire of M;
-			follow the insertion rules of M;
+			now current-monster is M;
+			follow the monster mouth insertion rules;
 		otherwise:
 			compute angry punishment of M;
 			satisfy M.
