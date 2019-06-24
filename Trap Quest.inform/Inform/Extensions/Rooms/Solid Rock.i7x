@@ -125,9 +125,13 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 REQUIRES COMMENTING
 
 +!]
-Check going to Solid Rock:
+[Check going to Solid Rock:
 	if the noun is down, try foodlisting instead;
-	unless the noun is north and there is a warp portal in the location of the player, say "You can't go that way." instead.
+	let W be a random warp portal in the location of the player;
+	unless W is warp portal and the covered-direction of W is the noun:
+		if the actor is the player:
+			say "[We] [can't go] that way." (A);
+		stop the action.]
 
 
 Solid Rock ends here.

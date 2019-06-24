@@ -19,8 +19,7 @@ To say ClothingDesc of (C - a white string bikini top):
 To decide which number is the initial outrage of (C - a white string bikini top):
 	decide on 6.
 
-To decide which object is the potential-upgrade-target of (C - a white string bikini top):
-	decide on a random off-stage purple string bikini top.
+Definition: a white string bikini top is white themed: decide yes.
 
 White String Bikini Top ends here.
 

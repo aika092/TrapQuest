@@ -16,6 +16,8 @@ Include Puddles by Rooms.
 Include Dungeon by Rooms.
 Include Woods by Rooms.
 Include Hotel by Rooms.
+Include Laundry Robots by Objects.
+Include Barriers by Rooms.
 Include Mansion by Rooms.
 Include School by Rooms.
 

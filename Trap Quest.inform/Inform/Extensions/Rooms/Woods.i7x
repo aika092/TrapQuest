@@ -44,7 +44,7 @@ Woods04 is a dodgy jungle room. The printed name of Woods04 is "Twisting Pathway
 REQUIRES COMMENTING
 
 *!]
-Woods05 is a mandatory important jungle room. The printed name of Woods05 is "Waterfall Clearing". "A beautiful clearing with a cliff above a pool of water. A steady stream of water is falling down into the plunge pool from the top of the cliff.". The shape of Woods05 is L2/0-0-0-1-0-0. The first forbidden direction of Woods05 is west.
+Woods05 is a mandatory important water-bodied jungle room. The printed name of Woods05 is "Waterfall Clearing". "A beautiful clearing with a cliff above a pool of water. A steady stream of water is falling down into the plunge pool from the top of the cliff.". The shape of Woods05 is L2/0-0-0-1-0-0. The first forbidden direction of Woods05 is west.
 
 [!<woods06:JungleRoom>*
 
@@ -122,6 +122,13 @@ REQUIRES COMMENTING
 
 *!]
 Woods16 is a mandatory jungle room. The printed name of Woods16 is "Hole in the Ground". "There appears to be a hole in the ground here. You could climb down it, but something tells you it is extremely dangerous.". The shape of Woods16 is L2/0-0-1-1-1-1.
+Report going when the player is in Woods16:
+	if clumsy is 1 and the player is upright and the noun is not up and (a random number between 1 and 5 is 1 or clumsy april fools is 1):
+		say "In a rare moment of clumsiness, your toe hits a snag and you accidentally tumble down into the giant hole in the centre of this area!";
+		say aprilFoolsClumsyFlav;
+		if seconds is 0, allocate 3 seconds; [Just in case]
+		try going down;
+		try kneeling;
 
 [!<woods17:JungleRoom>*
 
@@ -191,7 +198,7 @@ Woods25 is a dodgy jungle room. The printed name of Woods25 is "Shallow Woods". 
 REQUIRES COMMENTING
 
 *!]
-Woods26 is an important mandatory jungle room. The printed name of Woods26 is "Sword in the Stone". "A stone [if diaper quest is 1]slab in the centre of this clearing has a giant rattle embedded in it. Surely t[otherwise if (the player is female and the virgin of the player is 1) or (tg fetish >= 1 and the player is male)]slab in the centre of this clearing has a shining sword stuck in it. T[otherwise]statue in the center of this clearing has a floppy dildo sticking out of it. It doesn't look useful for anything, but t[end if]here's probably no harm in seeing if you can pull it out.". The shape of Woods26 is L2/0-0-1-1-1-1. 
+Woods26 is an important mandatory jungle room. The printed name of Woods26 is "Sword in the Stone". "A stone slab in the centre of this clearing [if which-sword is in Woods26]has a shining sword stuck in it. There's probably no harm in seeing if you can pull it out?[otherwise]no longer has its magic sword stuck in it[end if]". The shape of Woods26 is L2/0-0-1-1-1-1.
 
 [!<woods27:JungleRoom>*
 
@@ -205,7 +212,7 @@ Woods27 is a dodgy jungle room. The printed name of Woods27 is "The Well". "[if 
 REQUIRES COMMENTING
 
 *!]
-Woods28 is a dodgy jungle room. The printed name of Woods28 is "Abandoned Nest". "A small clearing, hidden underneath a dense canopy of trees. Broken eggs are strewn across the area, all brown and no smaller than a football. [line break][variable custom style][if egg laying fetish is 0]Looks like whatever was here is long gone now.[otherwise]You can't help the feeling that whatever came out of those eggs...is still here.[end if][roman type][line break]". The shape of Woods28 is L2/0-0-0-1-0-0. 
+Woods28 is a dodgy jungle room. The printed name of Woods28 is "Abandoned Nest". "A small clearing, hidden underneath a dense canopy of trees. Broken eggs are strewn across the area, all brown and no smaller than a football. [line break][variable custom style][if egg laying fetish is 0]Looks like whatever was here is long gone now.[otherwise]You can't help the feeling that whatever came out of those eggs... is still here.[end if][roman type][line break]". The shape of Woods28 is L2/0-0-0-1-0-0.
 
 [!<woods29:JungleRoom>*
 
@@ -240,14 +247,16 @@ Stairwell02 is a mandatory untrappable jungle room. The printed name of Stairwel
 REQUIRES COMMENTING
 
 *!]
-WoodsBoss01 is a room. The printed name of WoodsBoss01 is "Underground Chamber". "This appears to be the home of the body of the monster controlling the vines.". WoodsBoss01 is below Woods16.
+WoodsBoss01 is a bossed room. The printed name of WoodsBoss01 is "Underground Chamber". "This appears to be the home of the body of the monster controlling the vines.". WoodsBoss01 is below Woods16.
+Definition: WoodsBoss01 is nonstandard: decide yes.
 
 [!<sky01:Room>*
 
 REQUIRES COMMENTING
 
 *!]
-Sky01 is a room. The printed name of Sky01 is "Up in the Sky". "You can see all of the Woods from up here!".
+Sky01 is a no-roof room. The printed name of Sky01 is "Up in the Sky". "You can see all of the Woods from up here!".
+Definition: Sky01 is nonstandard: decide yes.
 
 [Selkie wonders: what happens if you add a new room here, but forget to add it to the statement: "The Woods is a region. Woods01,..., Woods30, Stairwell02 are in The Woods."  Bad things?  If so: remember to adjust that definition, if you add new rooms here. Like uncommenting "Stairwell03"...]
 
@@ -256,14 +265,21 @@ Sky01 is a room. The printed name of Sky01 is "Up in the Sky". "You can see all 
 REQUIRES COMMENTING
 
 *!]
-WoodsScenery01 is scenery. WoodsScenery01 is in Woods05. The printed name of WoodsScenery01 is "Waterfall". The description of WoodsScenery01 is "A clear waterfall[one of].[or] that you could use as a shower.[stopping]". Understand "waterfall", "pool", "water", "fall" as WoodsScenery01. Instead of entering WoodsScenery01, try showering WoodsScenery01.
+WoodsScenery01 is a water-body-scenery. WoodsScenery01 is in Woods05. The printed name of WoodsScenery01 is "Waterfall". Understand "waterfall", "pool", "fall" as WoodsScenery01. Instead of entering WoodsScenery01, try showering WoodsScenery01. The text-shortcut of WoodsScenery01 is "wtfl".
+To say ExamineDesc of (C - WoodsScenery01):
+	say "A clear waterfall[one of].[or] that you could use as a shower.[stopping]".
+To decide which figure-name is the examine-image of (C - WoodsScenery01):
+	decide on figure of DungeonScenery03.
 
 [!<woodsScenery04:Scenery>*
 
 REQUIRES COMMENTING
 
 *!]
-WoodsScenery04 is a scenery. WoodsScenery04 is in Woods27. The description of WoodsScenery04 is "A dilapidated brick well.". Understand "well", "brick", "wishing well" as WoodsScenery04.
+WoodsScenery04 is a scenery. WoodsScenery04 is in Woods27. Understand "well", "brick", "wishing well" as WoodsScenery04.
+
+To say ExamineDesc of (C - WoodsScenery04):
+	say "A dilapidated brick well.".
 
 The block climbing rule is not listed in the check climbing rulebook.
 
@@ -284,7 +300,8 @@ Check climbing something:
 	if the noun is not WoodsScenery03, say "How would that work?" instead;
 	if the player is prone, say "You need to be standing up to climb a ladder." instead;
 	if the player is ankle bound, say "You can't climb the ladder with your ankles bound." instead;
-	if the player is immobile, say "Aren't you a bit busy?" instead.
+	if the player is immobile, say "Aren't you a bit busy?" instead;
+	if the uses of WoodsScenery03 is 0, say "You've already seen what's through there, no need to look again." instead.
 
 [!<CarryOutClimbingWoodsScenery03>+
 
@@ -292,7 +309,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out climbing WoodsScenery03:
-	if the uses of WoodsScenery03 is 0, say "You've already seen what's through there, no need to look again." instead;
+	allocate 6 seconds;
 	say "You climb the ladder and put your face through the statue's hole.[line break]";
 	let R be a random number between 1 and 3 - (diaper quest + ungape);
 	if R is 1:
@@ -304,9 +321,9 @@ Carry out climbing WoodsScenery03:
 		say "The statue appears to continue on the other side of the wall - you can't see what's inside.[if the openness of asshole < 10][line break]While your head is in the statue's asshole, you feel your own sphincter suddenly stretch![end if]";
 		gape asshole times 5;
 	if R is 2:
-		say "The statue appears to continue on the other side of the wall - the belly of the statue is filled with [if diaper quest is 0][semen][otherwise if diaper lover >= 4 and there are worn knickers]food[otherwise]water[end if]![if the largeness of belly < 10][line break]While your head is in there, you feel your own belly suddenly fill from the inside![end if]";
+		say "The statue appears to continue on the other side of the wall - the belly of the statue is filled with [if diaper quest is 0][semen][otherwise if diaper messing >= 4 and there are worn knickers]food[otherwise]water[end if]![if the largeness of belly < 10][line break]While your head is in there, you feel your own belly suddenly fill from the inside![end if]";
 		if diaper quest is 1:
-			if diaper lover >= 4 and there are worn knickers:
+			if diaper messing >= 4 and there are worn knickers:
 				increase rectum by 12;
 			otherwise:
 				increase the water volume of belly by belly limit - the total fill of belly;

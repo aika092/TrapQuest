@@ -19,17 +19,14 @@ To say ClothingDesc of (C - a training bra):
 	say "A small cream training bra, meant for girls who are still developing breasts.".
 
 To decide which number is the initial outrage of (C - a training bra):
-	if the player is female or the bimbo of the player > 9, decide on 1;
 	decide on 0.
 
 To decide which number is the initial cringe of (C - a training bra):
-	decide on 7.
+	decide on 2 + (diaper quest * 3).
 
 To decide which object is the unique-upgrade-target of (C - a training bra):
 	decide on nothing.
 
-To decide which object is the potential-upgrade-target of (C - a training bra):
-	decide on a random off-stage exercise bra.
 
 Training Bra ends here.
 

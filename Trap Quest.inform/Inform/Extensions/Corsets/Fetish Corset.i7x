@@ -1,8 +1,10 @@
 Fetish Corset by Corsets begins here.
 
-A fetish corset is a kind of corset. A fetish corset is usually latex. A fetish corset is usually top-exclusive. A fetish corset is usually sheer. There is 1 unique fetish corset.
+A fetish corset is a kind of corset. A fetish corset is usually latex. A fetish corset is usually top-exclusive. A fetish corset is usually sheer. There is 1 transformation-rare fetish corset.
 
-The printed name of fetish corset is usually "[TQlink of item described][clothing-title-before]fetish corset[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of fetish corset is usually "[TQlink of item described][clothing-title-before]fetish corsets[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of fetish corset is "fco".
+The printed name of fetish corset is usually "[clothing-title-before]fetish corset[clothing-title-after]". The printed plural name of fetish corset is usually "[clothing-title-before]fetish corsets[clothing-title-after]". The text-shortcut of fetish corset is "fco".
+
+Definition: a fetish corset is yellow themed: decide yes.
 
 Figure of Fetish Corset is the file "Items/Clothes/Upper/Corsets/fetishcorset1.png".
 
@@ -14,6 +16,9 @@ To say ClothingDesc of (C - a fetish corset):
 
 To say ShortDesc of (C - a fetish corset):
 	say "fetish corset".
+
+To decide which number is the initial outrage of (C - a fetish corset):
+	decide on 7.
 
 Fetish Corset ends here.
 

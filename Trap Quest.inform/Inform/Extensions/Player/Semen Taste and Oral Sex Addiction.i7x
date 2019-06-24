@@ -7,11 +7,20 @@ Part 1 - Calculate Oral Sex Addiction
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the oral sex addiction of the player: [For now, this is synonymous with semen taste]
+To decide which number is the oral sex addiction of the player:
+	decide on previous-oral-sex-addiction.
+
+[!<DecideWhichNumberIsTheCalculatedOralSexAddictionOfThePlayer>+
+
+REQUIRES COMMENTING
+
++!]
+To decide which number is the calculated oral sex addiction of the player:
 	if diaper quest is 1, decide on 0;
-	let S be the semen taste addiction of the player / 2;
-	[repeat with C running through worn wearthings:
-		increase S by the oral-sex-addiction-influence of C;]
+	let S be the raw oral sex addiction of the player;
+	if submissive sex addict is 1, increase S by 3;
+	repeat with C running through worn wearthings:
+		increase S by the oral-sex-addiction-influence of C;
 	if S > 10, decide on 10;
 	if S < 1, decide on 1;
 	decide on S.
@@ -51,7 +60,11 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the semen-taste-addiction-influence of (C - a clothing):
-	decide on the oral-sex-addiction-influence of C.
+	if C is semen-taste-addiction-influencing:
+		let S be 0;
+		decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
+		decide on S;
+	decide on 0.
 
 [!<DecideWhichNumberIsTheSemenTasteAddictionOfThePlayer>+
 
@@ -113,10 +126,9 @@ The player has a number called raw semen taste addiction. The raw semen taste ad
 
 [!<Player>@<rawOralSexAddiction:Integer>*
 
-Not used because it's currently the same thing as semen taste addiction
 
 *@!]
-[The player has a number called raw oral sex addiction. The raw oral sex addiction of the player is usually 1. [Min 1 Max 10]]
+The player has a number called raw oral sex addiction. The raw oral sex addiction of the player is usually 1. [Min 1 Max 10]
 
 
 [!<OralSexAddictUpX>+
@@ -125,15 +137,36 @@ REQUIRES COMMENTING
 
 +!]
 To OralSexAddictUp (X - a number):
-	SemenTasteAddictUp X * 2.
+	if there is a worn pure totem:
+		let S be a random worn pure totem;
+		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
+		only destroy S;
+		decrease X by 3;
+	let S be the raw oral sex addiction of the player * -1;
+	while X > 0:
+		decrease X by 1;
+		SilentlyOralSexAddictUp;
+		if X is 0:
+			increase S by the raw oral sex addiction of the player;
+			if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the oral sex addiction of the player > 6]orally fixated[otherwise]interested in performing oral sex[end if].".
 
-[!<OralSexAddictDownX>+
+To SilentlyOralSexAddictUp:
+	if the raw oral sex addiction of the player < 10, increase the raw oral sex addiction of the player by 1.
 
-REQUIRES COMMENTING
-
-+!]
 To OralSexAddictDown (X - a number):
-	SemenTasteAddictDown X * 2.
+	let S be the raw oral sex addiction of the player;
+	SilentlyOralSexAddictDown X;
+	decrease S by the raw oral sex addiction of the player;
+	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the oral sex addiction of the player > 6]orally fixated[otherwise]interested in performing oral sex[end if].".
+
+
+To SilentlyOralSexAddictDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		SilentlyOralSexAddictDown.
+
+To SilentlyOralSexAddictDown:
+	if the raw oral sex addiction of the player > 1, decrease the raw oral sex addiction of the player by 1.
 
 
 [!<SemenTasteAddictUpX>+
@@ -146,23 +179,30 @@ To SemenTasteAddictUp (X - a number):
 		now X is 0;
 	if there is a worn pure totem:
 		let S be a random worn pure totem;
-		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
+		say "Your [printed name of S] glows brightly and slowly disintegrates.";
 		only destroy S;
 		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
-		if the raw semen taste addiction of the player < 20:
+		if the raw semen taste addiction of the player < 20 and (watersports fetish is 1 or a random number between -1 and yellow theme bonus < 1): [When watersports is disabled, yellow items help suppress semen taste addiction gains]
 			increase the raw semen taste addiction of the player by 1.
 
-[!<SemenTasteAddictDownX>+
 
-REQUIRES COMMENTING
 
-+!]
 To SemenTasteAddictDown (X - a number):
+	let S be the raw semen taste addiction of the player;
+	SilentlySemenTasteAddictDown X;
+	decrease S by the raw semen taste addiction of the player;
+	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the semen taste addiction of the player > 14]addicted to the taste of [semen][otherwise if the semen taste addiction of the player > 6]interested in drinking [semen][otherwise]tolerant of the taste of [semen][end if].".
+
+To SilentlySemenTasteAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw semen taste addiction of the player > 1, decrease the raw semen taste addiction of the player by 1.
+		SilentlySemenTasteAddictDown;
+
+To SilentlySemenTasteAddictDown:
+	if the raw semen taste addiction of the player > 1, decrease the raw semen taste addiction of the player by 1.
+
 
 
 Semen Taste and Oral Sex Addiction ends here.

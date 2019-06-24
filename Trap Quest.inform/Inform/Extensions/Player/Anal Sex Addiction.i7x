@@ -44,7 +44,7 @@ To decide which number is the anal-sex-addiction-influence of (C - a clothing):
 		decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 		decide on S;
 	decide on 0.
-	
+
 Part 2 - Modify Anal Sex Addiction
 
 
@@ -70,15 +70,19 @@ To AnalSexAddictUp (X - a number):
 		decrease X by 1;
 		if the raw anal sex addiction of the player < 10, increase the raw anal sex addiction of the player by 1.
 
-[!<AnalSexAddictDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To AnalSexAddictDown (X - a number):
+	let S be the raw anal sex addiction of the player;
+	SilentlyAnalSexAddictDown X;
+	decrease S by the raw anal sex addiction of the player;
+	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if][if the anal sex addiction of the player > 6]less desperate for[otherwise]less interested in[end if] anal sex.".
+
+To SilentlyAnalSexAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw anal sex addiction of the player > 1, decrease the raw anal sex addiction of the player by 1.
+		SilentlyAnalSexAddictDown.
+
+To SilentlyAnalSexAddictDown:
+	if the raw anal sex addiction of the player > 1, decrease the raw anal sex addiction of the player by 1.
 
 
 

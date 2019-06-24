@@ -39,8 +39,7 @@ Definition: a clothing (called C) is bottom layer:
 	if C is crotch covering, decide yes;
 	decide no.
 
-Definition: a chastity cage (called C) is bottom layer:
-	decide yes.
+Definition: a chastity cage is bottom layer: decide yes.
 
 To decide which number is max-bottom-layer:
 	let X be 0;
@@ -63,9 +62,9 @@ To layer (C - a clothing) correctly on top:
 	if C is belly covering, now the mid-layer of C is max-mid-layer + 1;
 	if C is crotch covering, now the bottom-layer of C is max-bottom-layer + 1;
 	if C is chastity cage, now the bottom-layer of C is 1;
-	if C is disposable diaper:
+	if C is crotch-tie-up:
 		now the bottom-layer of C is 1 + the number of worn chastity cages;
-		repeat with O running through worn crotch covering clothing: 
+		repeat with O running through worn crotch covering clothing:
 			increase the bottom-layer of O by 1.
 
 To compress top layers:
@@ -190,7 +189,7 @@ To layer (C - a clothing) correctly:
 					say "[type 4 layering bug]";
 	if C is bottom layer:
 		let MBL be max-bottom-layer + 1;
-		if debugmode is 2, say "Layering data:  C is [C]. Max bottom layer is [MBL].";
+		if debugmode is 2, say "Layering data: C is [C]. Max bottom layer is [MBL].";
 		repeat with CL running from 1 to MBL:
 			if debugmode is 2, say "At Clothing Layer [CL], ";
 			if the bottom-layer of C is 0: [If we haven't found its place yet]
@@ -219,7 +218,7 @@ To layer (C - a clothing) correctly:
 					say "[type 6 layering bug]".
 
 To say type (N - a number) layering bug:
-	say "Uh-oh, A type [N] layering bug has cropped up!  Aika apologises and asks that you [bold type]undo one turn if you are a donator[roman type], immediately save the game and make a bug report with the save file (and an explanation of what just happened)!".
+	say "Uh-oh, A type [N] layering bug has cropped up! Aika apologises and asks that you [bold type]undo one turn if you are a donator[roman type], immediately save the game and make a bug report with the save file (and an explanation of what just happened)!".
 
 
 To check that (C - a clothing) usually goes under (D - a clothing): [I tried making this with "Definition:" but the compiler didn't like me defining a second parameter.]
@@ -230,7 +229,7 @@ To check that (C - a clothing) usually goes under (D - a skirt): [This will only
 
 To check that (C - a chastity cage) usually goes under (D - a clothing):
 	rule succeeds.
-	
+
 To check that (C - a knickers) usually goes under (D - a trousers):
 	rule succeeds.
 

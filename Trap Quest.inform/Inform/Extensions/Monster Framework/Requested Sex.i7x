@@ -25,15 +25,15 @@ To check consensual submissive sex of (M - a monster):
 		if presented-orifice is nothing, say "[BigNameDesc of M] can't seem to understand what you want from [him of M].".
 
 To decide which number is the sex desire of (M - a monster):
-	decide on 1. [How much favour does the player gain from fucking them?]
+	decide on 1.[How much favour does the player gain from fucking them?]
 
 This is the default monster friendly convinced rule:
 	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 0:
 		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
-		say "[PresentFriendlyAcceptanceFlav of current-monster]";
+		say PresentFriendlyAcceptanceFlav of current-monster;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
-		say "[PresentFriendlyRejectionFlav of current-monster]".
+		say PresentFriendlyRejectionFlav of current-monster.
 
 To say PresentFriendlyAcceptanceFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'You're on!'[roman type][line break]";
@@ -44,7 +44,7 @@ To say PresentFriendlyRejectionFlav of (M - a monster):
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To say FriendlyBreastsPenetrationFlav of (M - a monster):
-	say "[BigNameDesc of M] places [his of M] [manly-penis] in between your [ShortDesc of breasts], and begins thrusting!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
+	say "[BigNameDesc of M] places [his of M] [DickDesc of M] in between your [ShortDesc of breasts], and begins thrusting!".[This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
 
 To say FriendlySexResistFlav of (T - a thing):
 	say "You squirm but can't get away!".

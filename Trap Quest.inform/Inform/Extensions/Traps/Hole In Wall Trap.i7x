@@ -1,6 +1,12 @@
 Hole In Wall Trap by Traps begins here.
 
-hole-in-wall is a trap. The printed name of hole-in-wall is "[TQlink of item described]hole[TQxlink of item described][verb-desc of item described]". The description of hole-in-wall is "There is a medium sized hole in one wall a couple feet above the ground. [if the times-stuck of item described is 0]You can see a shiny golden ring sparkling in the darkness through the hole. [end if]You would struggle to crawl through but it might be possible.". hole-in-wall is sticky. Understand "hole", "hole in", "wall" as hole-in-wall. The text-shortcut of hole-in-wall is "hiw". hole-in-wall has a number called times-stuck.
+hole-in-wall is a trap. The printed name of hole-in-wall is "[TQlink of item described]hole[TQxlink of item described][verb-desc of item described]". hole-in-wall is sticky. Understand "hole", "hole in", "wall" as hole-in-wall. The text-shortcut of hole-in-wall is "hiw". hole-in-wall has a number called times-stuck.
+
+To decide which figure-name is the examine-image of (C - hole-in-wall):
+	decide on figure of gloryhole.
+
+To say ExamineDesc of (C - hole-in-wall):
+	say "There is a medium sized hole in one wall a couple feet above the ground. [if the times-stuck of C is 0]You can see a shiny golden ring sparkling in the darkness through the hole. [end if]You would struggle to crawl through but it might be possible.".
 
 This is the holeinwall prevents standing rule:
 	if the player is in HoleInWall:
@@ -8,8 +14,7 @@ This is the holeinwall prevents standing rule:
 		rule fails.
 The holeinwall prevents standing rule is listed in the ability to stand rules.
 
-Definition: hole-in-wall (called M) is father material:
-	decide yes.
+Definition: hole-in-wall is father material: decide yes.
 
 To say StickyTriggerFlav of (T - hole-in-wall):
 	say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!".
@@ -30,10 +35,11 @@ To say PregGrowth of (T - hole-in-wall):
 	say "the unknown man's [child]".
 
 To say FuckerDesc of (T - hole-in-wall):
-	say "anonymous man".
+	say "the anonymous [man of mechanic]".
+To say BigFuckerDesc of (T - hole-in-wall):
+	say "The anonymous [man of mechanic]".
 
-Definition: hole-in-wall (called T) is live:
-	decide yes.
+Definition: hole-in-wall is live: decide yes.
 
 Definition: hole-in-wall (called M) is family:
 	if M is inseminating vagina and M is father material, decide yes; [the people that fuck you are human so we don't need to wall this off behind inhuman pregnancy]
@@ -62,7 +68,8 @@ To compute HoleInWallEntrance:
 		if P is not hole-punishment-not-found and the priority of P is 1, now the priority of P is 2;
 	now the stance of the player is 1;
 	now the player is in HoleInWall;
-	check immobility.
+	check immobility;
+	refresh the map-window.
 
 Check entering hole-in-wall:
 	try HoleEntering the noun instead.
@@ -72,13 +79,12 @@ Check HoleEntering:
 	if the noun is warp portal, try entering the noun instead;
 	if the noun is not hole-in-wall, say "This verb is for entering holes in walls." instead;
 	if the player is immobile, say "You're currently immobile!" instead;
-	if the player is upright, say "You'd need to be on your knees." instead;
-	[###Selkie: what about if the player is flying?] 
-	now seconds is 3;
+	if the player is upright or the player is flying, say "You'd need to be on your knees." instead;
+	allocate 3 seconds;
 	if the largeness of breasts > 15, say "You try but your [MediumDesc of breasts] are just too big, you won't be able to fit through!" instead.
 
 Carry Out HoleEntering:
-	say "Your top half makes it inside!  But you struggle to get your [if the largeness of belly > 3][BellyDesc][otherwise if the thickness of hips > 4][HipDesc][otherwise]butt[end if] through. You try to push yourself back out but that doesn't work either; your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get them out!  You've somehow managed to get yourself stuck halfway through this hole!  [one of]You're trapped like this[or]You're once again trapped[stopping] until someone comes and helps you out!  [bold type][TQlink]wait[TQdlink][roman type].";
+	say "Your top half makes it inside! But you struggle to get your [if the largeness of belly > 3][BellyDesc][otherwise if the thickness of hips > 4 and the total volume of hips > 4][MediumDesc of hips][otherwise if the thickness of hips > 4][ShortDesc of hips][otherwise if the total volume of hips > 4][AssDesc][otherwise]butt[end if] through. You try to push yourself back out but that doesn't work either; your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get them out!  You've somehow managed to get yourself stuck halfway through this hole! [one of]You're trapped like this[or]You're once again trapped[stopping] until someone comes and helps you out! All you can do is [bold type][TQlink]wait[TQdlink][roman type].";
 	compute HoleInWallEntrance.
 
 Understand "climb through [something]", "climb into [something]", "crawl into [something]", "climb in [something]", "crawl in [something]", "crawl through [something]" as HoleEntering.
@@ -89,15 +95,15 @@ To trigger (Y - hole-in-wall):
 	if the largeness of breasts > 15:
 		say "Fortunately your breasts are just too big to fit through the hole and act as airbags as they cushion your collision with the wall.";
 	otherwise if R > the dexterity of the player:
-		say "Your front half crashes through the hole before you can stop yourself!  [one of]You try to pull backward, but your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get back out!  You try to go forward but your [if the thickness of hips > 4][HipDesc][otherwise]butt[end if] is too big. You're trapped like this[or]You're once again trapped[stopping] until someone comes and helps you out!  [bold type][TQlink]wait[TQdlink][roman type].";
+		say "Your front half crashes through the hole before you can stop yourself! [one of]You try to pull backward, but your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get back out! You try to go forward but your [if the thickness of hips > 4 and the total volume of hips > 4][MediumDesc of hips] are[otherwise]butt is[end if] too big. You're trapped like this[or]You're once again trapped[stopping] until someone comes and helps you out! [bold type][TQlink]wait[TQdlink][roman type].";
 		compute HoleInWallEntrance;
 	otherwise:
 		say "You [if the times-stuck of Y > 0]are ready for it this time and [end if]manage to raise your hands in a way that prevents you from falling through the hole. Phew!".
 
 hole-in-wall-turns is a number that varies.
 
-To say his of (M - hole-in-wall):
-	say "his".
+To decide which text is his of (M - hole-in-wall):
+	decide on "his".
 
 This is the hole-in-wall immobility rule:
 	if the player is in HoleInWall, rule fails.
@@ -107,7 +113,7 @@ To HoleWait:
 	let break-wait be 0;
 	while hole-in-wall-turns < 11 and the player is in HoleInWall and break-wait is 0 and delayed fainting is 0:
 		say "You continue [one of]kneeling[or]waiting[or]waiting for someone to come save you[or]kneeling half inside the hole[or]waiting in the darkness[or]waiting, straining with your ears to try and hear anything[or]kneeling, your rear end poking vulnerably and maybe [i]enticingly[/i] into the room behind you[as decreasingly likely outcomes].";
-		now seconds is 6;
+		allocate 6 seconds;
 		compute extra turn;
 		if the remainder after dividing hole-in-wall-turns by 3 is 0:
 			choose hole-in-wall punishment;
@@ -128,6 +134,7 @@ To HoleWait:
 		say "A little while later you feel someone gripping you by your hips!  [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'PLEASE REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
 		now the player is in the location of hole-in-wall;
 		say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
+		refresh the map-window;
 		check immobility.
 
 hole-in-wall punishment is a kind of object. hole-in-wall punishment has a number called priority. The priority of hole-in-wall punishment is usually 2.
@@ -137,8 +144,7 @@ chosen hole-in-wall punishment is hole-in-wall punishment that varies. hole-puni
 To compute punishment of (P - hole-in-wall punishment):
 	say "BUG - the hole-in-wall punishment '[P]' has no execution function!".
 
-Definition: hole-in-wall punishment (called P) is appropriate:
-	decide no.
+Definition: hole-in-wall punishment is appropriate: decide no.
 
 Definition: hole-in-wall punishment (called P) is prioritised:
 	if the priority of P is current-priority, decide yes;
@@ -154,14 +160,13 @@ To choose hole-in-wall punishment:
 
 
 hole-spank is hole-in-wall punishment.
-Definition: hole-spank (called P) is appropriate:
-	decide yes.
+Definition: hole-spank is appropriate: decide yes.
 
 To compute punishment of (P - hole-spank):
 	now the priority of P is 1;
 	say "Suddenly you feel a hand groping your butt!  [line break][variable custom style][if the delicateness of the player < 8]What the fuck, let go of me!  [otherwise]Who's this?  [end if][roman type][line break]All of a sudden the anonymous hand pulls back, and comes down hard with a spank!  Two, three, four, five, six!  Your rear is assaulted by a series of blows.";
 	if the latex-transformation of the player > 5:
-		say "You hardly feel anything thanks to your rubbery butt cheeks.";		
+		say "You hardly feel anything thanks to your rubbery butt cheeks.";
 	otherwise:
 		let pain-factor be 4;
 		if there is worn ass plugging clothing:
@@ -173,7 +178,7 @@ To compute punishment of (P - hole-spank):
 			decrease pain-factor by a random number between 0 and 1;
 		let D be a random worn diaper;
 		if D is diaper:
-			if D is messed:
+			if D is perceived messed:
 				say "[one of]The gross squishiness of your messy diaper being spanked makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
 				humiliate 150;
 				DelicateUp 1;
@@ -182,23 +187,24 @@ To compute punishment of (P - hole-spank):
 				decrease pain-factor by 2;
 		if a random number between 0 and 2 < pain-factor:
 			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
-			DelicateUp 1;
+			PainUp 1;
 		otherwise:
 			if there is ass covering clothing, say "Thanks to your [if there is a worn diaper]diaper[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
 			otherwise say "You suffer through the pain silently.";
 		let I be the incontinence of the player;
 		if diaper lover <= 0, now I is 3;
-		if the player is able to expel and a random number between (15 - I) and 15 < the total squirtable fill of belly + (pain-factor * 3) and the latex-transformation of the player < 5 and currently-squirting is 0:
+		let TB be the total squirtable fill of belly;
+		if TB > 0 and the player is able to expel and a random number between (15 - I) and 15 < TB + (pain-factor * 3) and the latex-transformation of the player < 5 and currently-squirting is 0:
 			say "The pain of the spanking episode causes you to expel your [enema].";
 			asssquirt;
-		otherwise if diaper lover >= 4 and I > a random number between 1 and (7 - pain-factor) and the player is full and there is a worn total protection soilable knickers:
+		otherwise if diaper messing >= 4 and I > a random number between 1 and (7 - pain-factor) and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:
 			say "The pain from the spanking causes you to lose control of your sphincter!";
 			compute messing;
 		otherwise if I > a random number between 1 and (7 - pain-factor) and the bladder of the player > 4 and the delicateness of the player > 8:
 			say "The pain of the spanking episode causes you to involuntarily wet yourself.";
 			now delayed urination is 1;
 			try urinating;
-	say "Just as suddenly as he or she began, the mysterious spanker stops. [one of]You wonder if they've gone, or whether they're still there, silently watching you[or]You listen, but can't hear anyone. Are they still there?[or]You listen for footsteps, but hear nothing. Are they there, watching?  Or did they simply walk off and leave you, still stuck?[or]You think - [i]hope[/i] - they've gone.[at random]".
+	say "Just as suddenly as he or she began, the mysterious spanker stops. [one of]You wonder if they've gone, or whether they're still there, silently watching you.[or]You listen, but can't hear anyone. Are they still there?[or]You listen for footsteps, but hear nothing. Are they there, watching? Or did they simply walk off and leave you, still stuck?[or]You think - [italic type]hope[roman type] - they've gone.[at random]".
 
 
 hole-wank is hole-in-wall punishment.
@@ -222,12 +228,10 @@ To compute punishment of (P - hole-wank):
 			otherwise:
 				say "Your new tormentor goes all out, using both hands to rub circles in opposite directions all over your [if the player is male][player-penis][otherwise][vagina] and clit[end if]!";
 			Arouse 1000;
-			let D be a random worn messed diaper;
+			let D be a random worn perceived messed diaper;
 			if D is diaper:
 				say "[one of]The gross squishiness of your messy diaper being used to masturbate you makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
-				humiliate 300;
 				DelicateUp 1;
-				DiaperAddictUp 1;
 			if for deposit only tattoo is not worn and the player is extremely horny or vagina is pushed over the edge:
 				vaginally orgasm shamefully;
 			increase wank-attempts by 1;
@@ -250,7 +254,7 @@ To compute punishment of (P - hole-strip):
 		say "pull it away!";
 		displace C;
 	otherwise:
-		say "yank it off of you!";
+		say "yank it off of you, pushing it through the hole[one of] so that you can see what you're now missing[or][stopping]!";
 		now C is in the location of the player;
 	say "[variable custom style][if the humiliation of the player < 18500]Oh god, how embarrassing![otherwise]Hey, that's mean![end if][roman type][line break]";
 	if there is a worn top level protection clothing and a random number between 1 and 2 is 1, now the priority of P is 2.
@@ -288,16 +292,16 @@ hole-tattoo is hole-in-wall punishment.
 Definition: hole-tattoo (called P) is appropriate:
 	if there is worn belly covering clothing, decide no;
 	if the number of worn tattoos is 0, decide no;
-	if princess tattoo is drawable, decide yes;
+	if princess-tattoo is drawable, decide yes;
 	decide no.
 
 To compute punishment of (P - hole-tattoo):
 	now the priority of P is 1;
-	summon princess tattoo;
+	summon princess-tattoo;
 	say "All of a sudden you hear a low electric buzzing!  [line break][variable custom style]That can't be good. [roman type][line break]Suddenly a sharp pain hits your lower back!";
-	DelicateUp 1;
+	PainUp 1;
 	say "You [if the delicateness of the player < 9]begrudgingly [end if]hold perfectly still as the stranger gives you a tramp stamp tattoo!  When it is complete, you can feel the magic inside the ink come alive. Not only can you feel that it is affecting your body and mind, but even though you can't physically see the tattoo you can see a picture of it clearly in your inner mind.";
-	try examining princess tattoo.
+	try examining princess-tattoo.
 
 
 hole-piercing is hole-in-wall punishment.
@@ -315,9 +319,9 @@ To compute punishment of (P - hole-piercing):
 	if there is a worn clitoris piercing, now C is clitoris lead;
 	summon C cursed;
 	say "Suddenly, a hot burning sensation!";
-	DelicateUp 2;
-	say "You can't help but scream in pain as [if C is clitoris lead]it is heated up and a [ShortDesc of C] is attached to it[otherwise]your clitoris is pierced with a burning hot needle and a [ShortDesc of C] is slotted inside. [end if][line break][variable custom style][if the bimbo of the player < 12]This is not good.[otherwise]Uh-oh, I think I might be in a bit of a pickle here!  *giggle*[end if][roman type][line break]";
-	try examining C.
+	PainUp 2;
+	say "You can't help but scream in pain as [if C is clitoris lead]it is heated up and a [ShortDesc of C] is attached to it[otherwise]your clitoris is pierced with a burning hot needle and a [ShortDesc of C] is slotted inside[end if].[line break][variable custom style][if the bimbo of the player < 12]This is not good.[otherwise]Uh-oh, I think I might be in a bit of a pickle here! *giggle*[end if][roman type][line break]";
+	say FullExamineDesc of C.
 
 
 hole-plug is hole-in-wall punishment.
@@ -329,27 +333,29 @@ To compute punishment of (P - hole-plug):
 	now the priority of P is 1;
 	let C be a random off-stage basic plug;
 	if C is plug:
-		now the size of C is the openness of asshole + 2;
-		if the size of C > 10, now the size of C is 10;
-		say "Suddenly you feel a hand groping your butt!  [line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand quickly pulls your [list of worn total protection clothing] out of the way and then begins to slowly massage your [asshole] with a thumb. [line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the player is a pervert)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C]!";
+		[now the size of C is the openness of asshole + 2;
+		if the size of C > 10, now the size of C is 10;]
+		say "Suddenly you feel a hand groping your butt![line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand [if there is worn total protection clothing]quickly pulls your [list of worn total protection clothing] out of the way and then [end if]begins to slowly massage your [asshole] with a thumb.[line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the player is a pervert)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C]!";
 		repeat with D running through worn total protection clothing:
 			if D is zippable:
-				now D is crotch-unzipped;
+				ZipDown D;
 			otherwise if D is displacable:
 				displace D;
 			otherwise:
 				now D is in the location of hole-in-wall;
-		summon C cursed;
+		summon C cursed with quest;
 		ruin asshole;
-		try examining C.
+		say FullExamineDesc of C.
 
 
 hole-gatling-fuck is hole-in-wall punishment.
-Definition: hole-gatling-fuck (called P) is appropriate:
-	if diaper quest is 1 or the player is diaper focused, decide no;
-	decide yes.
+Definition: hole-gatling-fuck is appropriate if diaper quest is 0 and the player is not diaper focused.
+hole-in-wall has a number called gatling-girth.
+To decide which number is the girth of (H - hole-in-wall):
+	decide on gatling-girth of H.
 
 To compute punishment of (P - hole-gatling-fuck):
+	now gatling-girth of hole-in-wall is 2;
 	let F be asshole;
 	choose a sex method;
 	if targeted-body-part is vagina, now F is vagina;
@@ -357,7 +363,7 @@ To compute punishment of (P - hole-gatling-fuck):
 	say "A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of men. Then out of nowhere, you feel someone gripping you by the hips!  [line break][variable custom style]Are they going to help pull me out?[roman type][line break]";
 	let C be a random worn top level protection clothing;
 	if F is asshole, now C is a random worn top level ass protection clothing;
-	say "Your question is answered as the hands begin to [if C is clothing]pull at your clothing[otherwise]find their way towards your [variable F][end if]. [line break][variable custom style]No, he's going to fuck me![roman type][line break]";
+	say "Your question is answered as the hands begin to [if C is clothing]pull at your clothing[otherwise]find their way towards your [variable F][end if].[line break][variable custom style]No, he's going to fuck me![roman type][line break]";
 	while C is clothing:
 		if C is displacable:
 			say "The anonymous man [DisplacesFlav of C].";
@@ -376,17 +382,31 @@ To compute punishment of (P - hole-gatling-fuck):
 	let men-fucked be 0;
 	now a hole-in-wall is penetrating F;
 	while hole-in-wall-turns < 10 and the player is in HoleInWall and delayed fainting is 0:
-		if men-fucked is 0, say "Soon you feel a rock-hard [manly-penis] pushing against your [variable F]. There's absolutely nothing you can do as it squeezes its way in and starts pumping in and out. The faceless man quickly hits a very fast pace and must really enjoy your body because within seconds he is ejaculating inside of you! You feel cum shoot into your [variable F].";
+		if men-fucked is 0, say "Soon you feel a rock-hard [manly-penis] pushing against your [variable F]. There's absolutely nothing you can do as it squeezes its way in and starts pumping in and out. The faceless man quickly hits a very fast pace and must really enjoy your body because within seconds he is ejaculating inside of you! You feel [semen] shoot into your [variable F].";
 		otherwise say "[one of]Another man takes his place[or]You feel another hard [manly-penis] slap against your [buttcheeks][or]Yet another man joins in[or]The manly chatter in the [location of hole-in-wall] is still just as loud as ever, and another [manly-penis] pokes at your hole[then at random]!  You [if the relevant sex addiction of hole-in-wall < 4][one of]grimace[or]squeal[or]groan[or]scrunch your eyes[or]growl[in random order][otherwise if the relevant sex addiction of hole-in-wall < 7][one of]squirm[or]shudder[or]curl your toes[or]can't help but moan[in random order][otherwise][one of]coo[or]sigh with pleasure[or]moan lewdly[or]squeal with glee[in random order][end if] as [one of]the anonymous man[or]the next stranger[or]the nameless assailant[or]your new unnamed partner[or]the mystery man[in random order] [one of]shoves his [manly-penis] inside[or]pushes his way into[or]mercilessly forces himself into[or]eases his [manly-penis] inside[or]pushes forward, filling[in random order] your [variable F]. [one of]Just like the man before him[or]Again[or]Just like before[or]Once again[or]Just like his fellow quick-trigger friends[cycling] it only takes him [one of]about ten thrusts[or]a few moments[or]a matter of seconds[in random order] [if the semen addiction of the player > 14][one of]until he is giving you that creampie you so desperately need[or]before he is giving you yet another amazing creampie[or]before he climaxes inside of you, giving you that amazing warm sticky feeling on the inside[or]and then suddenly he is finishing inside of you, marking you as his on the inside[in random order][otherwise][one of]until he is filling you with his [semen][or]before he is giving you another creampie[or]before he climaxes inside of you[or]and then suddenly he is finishing inside of you[in random order][end if].";
-		if F is asshole, AssFill 2;
-		otherwise PussyFill 2;
+		if F is asshole, AssFill the girth of hole-in-wall;
+		otherwise PussyFill the girth of hole-in-wall;
 		ruin F;
 		increase men-fucked by 1;
 		increase hole-in-wall-turns by 1;
 		compute extra turn;
+	while hole-in-wall-turns < 13 and the player is in HoleInWall and delayed fainting is 0:
+		if gatling-girth of hole-in-wall < 5:
+			now gatling-girth of hole-in-wall is 5 + (mythical creature fetish * 3);
+			say "[if mythical creature fetish is 1]The ground trembles as something heavy stomps slowly towards you[otherwise][first custom style]'Ho ho ho.'[roman type][line break]A deep booming voice chuckles to [himself of shopkeeper] behind you[end if].[line break][italic type]THUNK[roman type][line break]A semi-erect [manly-penis] that seems as thick and heavy as [if mythical creature fetish is 1]an elephant's trunk[otherwise]your arm[end if] slaps against your [AssDesc].[line break][variable custom style][one of]What the hell is that[if mythical creature fetish is 1]? It's definitely not human![otherwise]?![end if][or]Here we go again...[stopping][roman type][line break]The giant [manly-penis] pushes its tip up against your [variable F] [if the girth of hole-in-wall - the insertableGirthAcceptance of F > 3]stretching your hole impossibly as it forces its way inside[otherwise if the girth of hole-in-wall - the insertableGirthAcceptance of F > 0]stretching your hole wider as it pushes its way inside[otherwise]slipping inside your stretchy hole with a loud slurping sound[end if].";
+		otherwise:
+			say "You lie still as the giant dong [one of]uses your [variable F] as a handy warm cocksleeve[or]thrusts in and out of your poor stretched [variable F][or]fucks you in the [variable F][in random order].";
+		ruin F;
+		if hole-in-wall-turns is 12:
+			say "Finally it reaches its peak, pulling out before slamming all the way in with one powerful thrust, where it begins pumping shot after shot of hot [semen].";
+			if F is asshole, AssFill the girth of hole-in-wall;
+			otherwise PussyFill the girth of hole-in-wall;
+			increase men-fucked by 1;
+		increase hole-in-wall-turns by 1;
+		compute extra turn;
 	say "Finally the loud sound of a crowd of men begins to die away as they bore of you and dissipate.";
 	dislodge hole-in-wall.
-	
+
 
 Hole In Wall Trap ends here.
 

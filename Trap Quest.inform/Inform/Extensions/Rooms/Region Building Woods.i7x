@@ -15,11 +15,16 @@ To Set Up The Woods:
 		clear the screen;
 		if images visible is 1:
 			if diaper quest is 0:
-				display figure of woods loading;
+				if a random number between 0 and tentacle fetish > 0:
+					display figure of woods vines loading;
+				otherwise if a random number between 0 and lactation fetish > 0:
+					display figure of woods fairy loading;
+				otherwise:
+					display figure of woods loading;
 			otherwise:
 				display figure of dq woods loading;
 		say "Now loading the woods region!";
-		wait 50 ms before continuing;
+		render buffered stuff;
 	Scramble Woods;
 	now the uses of WoodsScenery03 is 1;
 	now a random hammock is in a random dodgy unrelaxing room;
@@ -34,7 +39,7 @@ To Set Up The Woods:
 			let Y be a random large sack in Holding Pen;
 			if R is 2, now Y is a random tree stump crate in Holding Pen;
 			now Y is in G;
-	unless there is an on-stage sword, set up sword in the stone;
+	unless there is an on-stage sword, now which-sword is in Woods26;
 	follow the set up woods traps rules;
 	repeat with M running through alive monsters in the woods:
 		if the location of M is not placed, now M is in a random placed dodgy room;

@@ -13,20 +13,29 @@ To Set Up The Hotel:
 		clear the screen;
 		if images visible is 1:
 			if diaper quest is 0:
-				display figure of hotel loading;
-			otherwise if the bimbo of the player >= 10:
-				if diaper lover >= 3, display figure of dq hotel insane messy loading;
-				otherwise display figure of dq hotel insane loading;
+				let R be a random number between 1 and 3;
+				if R is 1:
+					if a random number between 0 and (pregnancy fetish * 2) > 0, display figure of hotel pregnant loading 1;
+					otherwise display figure of hotel loading 1;
+				otherwise if R is 2:
+					display figure of hotel loading 2;
+				otherwise:
+					display figure of hotel loading 3;
 			otherwise:
 				display figure of dq hotel loading;
 		say "Now loading the hotel region!";
-		wait 10 ms before continuing;
+		render buffered stuff;
 	Scramble Hotel;
 	repeat with G running through trappable modern rooms:
 		unless G is the location of the player:
 			if G is guest:
 				if G is not Hotel02:
 					let H be a random off-stage hotel bed;
+					if G is Hotel33: [Ensure that the one put in Hotel33 (player's bedroom) is a normal bed]
+						now H is a random HotelBedBoring;
+						if H is on-stage:
+							let H2 be a random off-stage hotel bed;
+							if H2 is hotel bed, now H2 is in the location of H;
 					if H is hotel bed, now H is in G;
 				if a random number between 1 and 4 is 1, deploy minibar in G;
 				let R be a random number from 1 to 5;
@@ -49,10 +58,14 @@ To Set Up The Hotel:
 		let R be a random off-stage appropriate recipe;
 		if R is recipe, now R is in Hotel25;
 	follow the set up hotel traps rules;
-	if inflation fetish is 1, now a random recipe for latex curse reversal is in Hotel25;
+	if debugmode > 0, say "Finished setting up traps.";
 	repeat with M running through alive monsters in the hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
-	if the player is a november 2017 top donator or the player is a november 2017 diaper donator, set up the school;
+	[change the down exit of School01 to Hotel29;]
+	if armband is off-stage and receptionist is undefeated and the player is a top donator: [Player can engage with the school side quest the first time they find this room]
+		set up receptionist;
+		now receptionist is in Hotel40;
+		now the destination of hotel portal is the school;
 	if debugmode is 0 and loading scenes is 1, clear the screen.
 
 [!<ScrambleHotel>+

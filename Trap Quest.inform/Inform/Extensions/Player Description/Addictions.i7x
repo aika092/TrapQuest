@@ -22,7 +22,7 @@ Triggers the addiction listing rulebook which goes through all the rules below, 
 +!]
 Carry out Addiction Listing:
 	follow the addiction listing rules.
-Understand "addictions", "likes", "preferences", "tastes", "desires" as addiction listing.
+Understand "addictions", "likes", "preferences", "tastes", "desires", "attitudes" as addiction listing.
 
 [
 THE TRINITY OF ADDICTIONS BIBLE:
@@ -83,47 +83,48 @@ We explain how much the player is a pervert and how much they crave sex and orga
 
 +!]
 This is the sex addiction description rule:
-	if the sex addiction of the player < 4:
-		say "You have a relatively [if the player is male]normal[otherwise]low[end if] sex drive for someone of your age. You masturbate [if the player is male]semi-frequently to keep the pipes clean but[otherwise]rather infrequently and always[end if] in the privacy of your own room, and usually to bog-standard vanilla porn. ";
-		if the player is feeling dominant:
-			if diaper quest is 0, say "You plan to fight anything that would try to have sex with you, and when the only option (except using your safe word) is to get it on, you don't plan to make it easy for your dominator.";
-			otherwise say "You plan to fight anything that would try to dominate you, and when the only option (except using your safe word) is to allow it to happen, you don't plan to make it easy for your dominator.";
-		otherwise if the player is feeling submissive:
-			say "Of course, that won't stop you from obediently submitting to [if diaper quest is 0]sex when it is demanded of you by a superior[otherwise]superiors, whatever they might demand[end if].";
+	if the humiliation of the player < 40000:
+		if the sex addiction of the player < 4:
+			say "You have a relatively [if the player is male]normal[otherwise]low[end if] sex drive for someone of your age. You masturbate [if the player is male]semi-frequently to keep the pipes clean but[otherwise]rather infrequently and always[end if] in the privacy of your own room, and usually to bog-standard vanilla porn. ";
+			if the player is feeling dominant:
+				if diaper quest is 0, say "You plan to fight anything that would try to have sex with you, and when the only option (except using your safe word) is to get it on, you don't plan to make it easy for your dominator.";
+				otherwise say "You plan to fight anything that would try to dominate you, and when the only option (except using your safe word) is to allow it to happen, you don't plan to make it easy for your dominator.";
+			otherwise if the player is feeling submissive:
+				say "Of course, that won't stop you from obediently submitting to [if diaper quest is 0]sex when it is demanded of you by a superior[otherwise]superiors, whatever they might demand[end if].";
+			otherwise:
+				say "However you are becoming more and more aware that [if diaper quest is 0]your body[otherwise]submission[end if] is a tool that you can use to pacify aggressive enemies or maybe even convince people to treat you favourably.";
+		otherwise if the sex addiction of the player < 7:
+			say "You [if submissive sex addict is 0]are starting to [end if]have sex on the brain more than normal, and find yourself getting aroused more easily. ";
+			if the player is feeling dominant:
+				if diaper quest is 0, say "If you were to choose engage in sex, you'd most certainly want to be on top.";
+				otherwise say "If you were to engage in any kind of erotic act, you'd definitely want it to be on your terms, with you in control.";
+			otherwise:
+				say "You [if submissive sex addict is 0]have begun to [end if]understand the appeal of dominance and submission [if diaper quest is 0]during sex[otherwise]as erotic tools[end if], [if the player is feeling submissive]and you yourself feel much more comfortable taking on the submissive role[otherwise]but to be honest this is hardly the time nor the place to be thinking about such things, if you can help it[end if].";
+		otherwise if the sex addiction of the player < 10:
+			say "You have a very high sex drive for someone of your age. You are always thinking about something lewd and you get horny frequently and easily. ";
+			if the player is feeling dominant:
+				say "You love the idea of getting on top of someone and taking control, showing them who's boss in a very erotic manner.";
+			otherwise:
+				say "You understand that dominance and submission make up a key part of [if diaper quest is 0]sex and other [end if]erotic encounters, [if the player is feeling submissive]and it is very clear to you that your place is always on the bottom[otherwise]and you're still trying to work out whether you are better at being on top or bottom[end if].";
+		otherwise if the sex addiction of the player < 13:
+			say "You get aroused very easily, and it's sometimes difficult to do the 'right' thing when the 'wrong' thing is more likely to result in an orgasm. ";
+			if the player is feeling dominant:
+				say "You love the idea of getting on top of someone and taking control, dominating them until they squeal for mercy.";
+			otherwise:
+				say "You [if the player is not feeling submissive]like to be on top, but will also happily bottom if it's demanded of you[otherwise if highest body part sex addiction < 6 and diaper quest is 0]are eager to have your body trained and reconditioned to love getting used in all the different ways possible[otherwise]aren't even sure that being dominated is the 'wrong' thing any more[end if].";
+		otherwise if the sex addiction of the player < 16:
+			say "You crave sexual release. As soon as you cum, you start think about how great your next orgasm will be. You can't really think of many situations where you would refuse to let someone play with you. ";
+			if the player is feeling dominant:
+				say "Of course, you'd fight to be on top if you could.  But getting off is more important than winning.";
+			otherwise:
+				say "You [if the player is not feeling submissive]like to pretend to fight back but in reality you are happy being on the bottom[otherwise if highest body part sex addiction < 6 and diaper quest is 0]can't wait to have your body used in any way your dominators can think of, regardless of whether you enjoy it or not, until your body is forced to grow to love it[otherwise]are now so naturally submissive that you would be a little horrified if someone was to ask you to dominate them[end if].";
 		otherwise:
-			say "However you are becoming more and more aware that [if diaper quest is 0]your body[otherwise]submission[end if] is a tool that you can use to pacify aggressive enemies or maybe even convince people to treat you favourably.";
-	otherwise if the sex addiction of the player < 7:
-		say "You [if submissive sex addict is 0]are starting to [end if]have sex on the brain more than normal, and find yourself getting aroused more easily. ";
-		if the player is feeling dominant:
-			if diaper quest is 0, say "If you were to choose engage in sex, you'd most certainly want to be on top.";
-			otherwise say "If you were to engage in any kind of erotic act, you'd definitely want it to be on your terms, with you in control.";
-		otherwise:
-			say "You [if submissive sex addict is 0]have begun to [end if]understand the appeal of dominance and submission [if diaper quest is 0]during sex[otherwise]as erotic tools[end if], [if the player is feeling submissive]and you yourself feel much more comfortable taking on the submissive role[otherwise]but to be honest this is hardly the time nor the place to be thinking about such things, if you can help it[end if].";
-	otherwise if the sex addiction of the player < 10:
-		say "You have a very high sex drive for someone of your age. You are always thinking about something lewd and you get horny frequently and easily. ";
-		if the player is feeling dominant:
-			say "You love the idea of getting on top of someone and taking control, showing them who's boss in a very erotic manner.";
-		otherwise:
-			say "You understand that dominance and submission make up a key part of [if diaper quest is 0]sex and other [end if]erotic encounters, [if the player is feeling submissive]and it is very clear to you that your place is always on the bottom[otherwise]and you're still trying to work out whether you are better at being on top or bottom[end if].";
-	otherwise if the sex addiction of the player < 13:
-		say "You get aroused very easily, and it's sometimes difficult to do the 'right' thing when the 'wrong' thing is more likely to result in an orgasm. ";
-		if the player is feeling dominant:
-			say "You love the idea of getting on top of someone and taking control, dominating them until they squeal for mercy.";
-		otherwise:
-			say "You [if the player is not feeling submissive]like to be on top, but will also happily bottom if it's demanded of you[otherwise if highest body part sex addiction < 6 and diaper quest is 0]are eager to have your body trained and reconditioned to love getting used in all the different ways possible[otherwise]aren't even sure that being dominated is the 'wrong' thing any more[end if].";
-	otherwise if the sex addiction of the player < 16:
-		say "You crave sexual release. As soon as you cum, you start think about how great your next orgasm will be. You can't really think of many situations where you would refuse to let someone play with you. ";
-		if the player is feeling dominant:
-			say "Of course, you'd fight to be on top if you could.  But getting off is more important than winning.";
-		otherwise:
-			say "You [if the player is not feeling submissive]like to pretend to fight back but in reality you are happy being on the bottom[otherwise if highest body part sex addiction < 6 and diaper quest is 0]can't wait to have your body used in any way your dominators can think of, regardless of whether you enjoy it or not, until your body is forced to grow to love it[otherwise]are now so naturally submissive that you would be a little horrified if someone was to ask you to dominate them[end if].";
-	otherwise:
-		say "Your one track mind thinks of little except how you're going to find someone to [if diaper quest is 0]fuck. Even while in the middle of sex you're already trying to work out how to minimise the sad, empty time between one [manly-penis] pulling out and the next one filling you up[otherwise][']play['] with you. Even whilst in the middle of , you're already thinking about how to minimise the sad, empty time between one [']playtime['] and the next[end if]. ";
-		if the player is feeling dominant:
-			say "You're liable to pounce anyone you see and demand that they [if diaper quest is 0]let you ride their [manly-penis] or tongue[otherwise][']play['] with you[end if].";
-		otherwise:
-			say "You [if the player is not feeling submissive]like to pretend to fight back but in reality you wouldn't dare to take on the dominant role if you can avoid it[otherwise if highest body part sex addiction < 6 and diaper quest is 0]are well aware that your only purpose in life is to be a living fucktoy for other superior beings, and it doesn't matter at all whether you enjoy it. You'll be forced to get used to it eventually either way[otherwise if diaper quest is 0]are well aware that your only purpose in life is to be a living fucktoy for other superior beings, and you love every minute of it[otherwise]are well aware that your only purpose in life is to be a living playdoll for other people to use for their pleasure, you just hope that you get some orgasms of your own while they're at it[end if]!";
-	if debuginfo > 0, say "[input-style](Sex addiction [sex addiction of the player] / 20; Delicateness [delicateness of the player] / 20)[roman type][line break]".
+			say "Your one track mind thinks of little except how you're going to find someone to [if diaper quest is 0]fuck. Even while in the middle of sex you're already trying to work out how to minimise the sad, empty time between one [manly-penis] pulling out and the next one filling you up[otherwise][']play['] with you. Even whilst in the middle of , you're already thinking about how to minimise the sad, empty time between one [']playtime['] and the next[end if]. ";
+			if the player is feeling dominant:
+				say "You're liable to pounce anyone you see and demand that they [if diaper quest is 0]let you ride their [manly-penis] or tongue[otherwise][']play['] with you[end if].";
+			otherwise:
+				say "You [if the player is not feeling submissive]like to pretend to fight back but in reality you wouldn't dare to take on the dominant role if you can avoid it[otherwise if highest body part sex addiction < 6 and diaper quest is 0]are well aware that your only purpose in life is to be a living fucktoy for other superior beings, and it doesn't matter at all whether you enjoy it. You'll be forced to get used to it eventually either way[otherwise if diaper quest is 0]are well aware that your only purpose in life is to be a living fucktoy for other superior beings, and you love every minute of it[otherwise]are well aware that your only purpose in life is to be a living playdoll for other people to use for their pleasure, you just hope that you get some orgasms of your own while they're at it[end if]!";
+		if debuginfo > 0, say "[input-style](Sex addiction [sex addiction of the player] / 20; Delicateness [delicateness of the player] / 20)[roman type][line break]".
 The sex addiction description rule is listed in the addiction listing rules.
 
 [!<TheOralSexAddictionDescriptionRule>+
@@ -132,8 +133,9 @@ We explain how much the player likes performing oral sex.
 
 +!]
 This is the oral sex addiction description rule:
-	if diaper quest is 0, say "[if the player is a pervert and the oral sex addiction of the player <= 3]You gain no personal pleasure from performing oral sex[otherwise if the oral sex addiction of the player <= 1]You hate the idea of having a dick in your mouth[otherwise if the oral sex addiction of the player <= 3]You dislike pleasuring people with your mouth[otherwise if the oral sex addiction of the player <= 5 and the anal sex addiction of the player <= 5]You don't mind giving blowjobs. It's often better than the alternatives[otherwise if the oral sex addiction of the player <= 5]You don't mind giving blowjobs, but you usually find other types of sex more fun[otherwise if the oral sex addiction of the player <= 7]You love giving blowjobs!  The bigger the [manly-penis], the better. You've yet to find a [manly-penis] that you can't fit in your mouth[otherwise if the oral sex addiction of the player <= 9]You take great pleasure in savouring a tasty [manly-penis] or pussy with your mouth. You're the type of girl who eagerly asks permission to suck someone's [manly-penis][otherwise]You have an oral fixation, and you never tire of the feeling of a tasty [manly-penis] on your tongue. Your addiction is so strong that you never completely close your mouth, preferring to instead keep it in a permanent provocative pout - that is, when it's not already wrapped around a nice big shaft[end if].";
-	if debuginfo > 0, say "[input-style](Oral sex addiction [oral sex addiction of the player] / 10)[roman type][line break]".
+	if diaper quest is 0:
+		say "[if (the player is a pervert or the semen taste addiction of the player >= 11) and the oral sex addiction of the player <= 3]You gain no personal pleasure from performing oral sex[otherwise if the oral sex addiction of the player <= 1]You hate the idea of having a dick in your mouth[otherwise if the oral sex addiction of the player <= 3]You dislike pleasuring people with your mouth[otherwise if the oral sex addiction of the player <= 5 and the anal sex addiction of the player <= 5]You don't mind giving blowjobs. It's often better than the alternatives[otherwise if the oral sex addiction of the player <= 5]You don't mind giving blowjobs, but you usually find other types of sex more fun[otherwise if the oral sex addiction of the player <= 7]You love giving blowjobs! The bigger the [manly-penis], the better. You've yet to find a [manly-penis] that you can't fit in your mouth[otherwise if the oral sex addiction of the player <= 9]You take great pleasure in savouring a tasty [manly-penis] or pussy with your mouth. You're the type of girl who eagerly asks permission to suck someone's [manly-penis][otherwise]You have an oral fixation, and you never tire of the feeling of a tasty [manly-penis] on your tongue. Your addiction is so strong that you never completely close your mouth, preferring to instead keep it in a permanent provocative pout - that is, when it's not already wrapped around a nice big shaft[end if][if the oral sex addiction of the player <= 3 and the semen taste addiction of the player >= 11], but you'll tolerate giving a blowjob if you're craving for a taste of some more [semen][end if].";
+		if debuginfo > 0, say "[input-style](Oral sex addiction [oral sex addiction of the player] / 10)[roman type][line break]".
 The oral sex addiction description rule is listed in the addiction listing rules.
 
 [!<TheTitfuckAddictionDescriptionRule>+
@@ -155,12 +157,12 @@ We explain how much the player likes receiving vaginal sex and the idea of getti
 This is the vaginal sex addiction description rule:
 	if the player is female and diaper quest is 0:
 		say "[if the vaginal sex addiction of the player <= 3 and the virgin of the player is 1 and the anal sex addiction of the player > 5]You've never tried vaginal sex, but why would you?  Your [asshole] makes a perfectly good substitute[otherwise if the vaginal sex addiction of the player <= 3 and the virgin of the player is 1]You've never tried vaginal sex, and you have no particular desire to lose your virginity today[otherwise if the vaginal sex addiction of the player <= 3]Your [vagina] feels completely content being empty and remaining that way[otherwise if the vaginal sex addiction of the player <= 5]You are acutely aware of how good it feels when you have a [manly-penis] in your [vagina][otherwise if the vaginal sex addiction of the player <= 7]Every now and then you feel your [vagina] throb with a deep ache, a desire to be filled by a big [manly-penis][otherwise if the anal sex addiction of the player <= 9]After a while of being empty, your [vagina] begins to feel a deep longing to be filled, stretched and plundered by a big fat [manly-penis][otherwise]As soon as your greedy cunt is empty you begin to crave that feeling of being filled to the brim by [manly-penis], or toys, or anything!  It's like an itch that always needs scratching[end if]. ";
-		if debuginfo > 0, say "[input-style](Vaginal sex addiction [vaginal sex addiction of the player] / 10)[roman type][line break]";
 		if pregnancy fetish is 1:
 			if the pregnancy of the player is 0, say "[if the semen addiction of the player <= 6 and the vaginal sex addiction of the player <= 3]Especially because you have no intention of getting pregnant any time soon![otherwise if the semen addiction of the player <= 5]You are terrified of getting pregnant.[otherwise if the semen addiction of the player <= 9]You would prefer to keep the risk of getting pregnant low, if possible.[otherwise if the semen addiction of the player <= 13]The idea of getting knocked up turns you on.[otherwise if the children of the player is 0]You are desperate to find out what it's like to get pregnant and give birth to a child![otherwise]You long for that feeling of waddling around with a giant pregnant belly and you can't wait to experience the miracle of childbirth again and again![end if]";
 			otherwise say "[if the semen addiction of the player <= 5]You feel shame and despair at the fact that you have gotten pregnant.[otherwise if the semen addiction of the player <= 8]You are eager for this shameful and rather inconvenient pregnancy to be over.[otherwise if the semen addiction of the player <= 13]Being pregnant turns you on, and you are quietly fascinated to see how large your belly will grow.[otherwise if the children of the player is 0]You love the feel of being pregnant and are happy for it to last as long as possible, but are also very excited to experience the miracle of childbirth![otherwise if the largeness of belly < 8]You are impatient for your belly to grow even bigger! You long for that feeling of waddling around with a giant pregnant belly so big that you can hardly move, never mind fight.[otherwise]You love love love your giant pregnant belly but you also can't wait to experience the miracle of childbirth again, so that you can go find another stud to knock you up and begin the process again from the start![end if]";
 		otherwise:
-			say line break.
+			say line break;
+		if debuginfo > 0, say "[input-style](Vaginal sex addiction [vaginal sex addiction of the player] / 10)[roman type][line break]".
 The vaginal sex addiction description rule is listed in the addiction listing rules.
 
 Definition: yourself is afraid of a creampie:
@@ -185,7 +187,7 @@ This is the semen feel addiction description rule:
 		otherwise if the semen addiction of the player < 9:
 			say "You are slowly getting used to the texture and smell of [semen].";
 		otherwise if the semen addiction of the player < 11:
-			say "You are beginning to quite like the feel of [semen][if bukkake fetish is 1] on your skin[end if].";	
+			say "You are beginning to quite like the feel of [semen][if bukkake fetish is 1] on your skin[end if].";
 		otherwise if the semen addiction of the player < 13:
 			say "[if the player is not a pervert]If you had to choose, you'd say your[otherwise]Your[end if] favourite part of sex is the feeling of getting creampied by a fresh hot load.";
 		otherwise if the semen addiction of the player < 15:
@@ -212,6 +214,17 @@ This is the anal sex addiction description rule:
 		if debuginfo > 0, say "[input-style](Anal sex addiction [anal sex addiction of the player] / 10)[roman type][line break]".
 The anal sex addiction description rule is listed in the addiction listing rules.
 
+[!<TheBBBSexAddictionDescriptionRule>+
+
+We explain how much the player likes interracial sex.
+
++!]
+This is the bbc addiction description rule:
+	if interracial fetish is 1:
+		say "[if the bbc addiction of the player <= 2]You actively dislike the idea of having sex with a black person.[line break][variable custom style]It's just a sexual preference, so that means it's not racist, I think?[roman type][line break][otherwise if the bbc addiction of the player <= 4]You appreciate sleeping with a black person just as much as a white person.[line break][variable custom style]I don't see the world in those colours. Any more.[roman type][line break][otherwise if the bbc addiction of the player <= 6]You find yourself daydreaming about having sex with black people specifically.[line break][variable custom style]There's just something so exciting, thinking about how much my racist parents would hate it if they knew.[roman type][line break][otherwise if the bbc addiction of the player <= 8]Your love of [blackcock] is rather overpowering. You find it very difficult to look at a black [man of shopkeeper] above the waist.[line break][variable custom style]Mmm yeah, I love big black ones the best for sure...[roman type][line break][otherwise]You are completely addicted to worshipping [blackcock]. You find yourself being bored by white [manly-penis], and usually rather unimpressed by their size. [blackcock in title case], on the other hand, makes you feel almost instantly subservient to the owner, and you can think of little else than getting yourself off on [his of shopkeeper] glorious meat-stick.[end if]";
+		if debuginfo > 0, say "[input-style](BBC addiction [bbc addiction of the player] / 10)[roman type][line break]".
+The bbc addiction description rule is listed in the addiction listing rules.
+
 [!<TheSemenTasteAddictionDescriptionRule>+
 
 We explain how much the player likes tasting and drinking semen.
@@ -226,7 +239,7 @@ This is the semen taste addiction description rule:
 		otherwise if the semen taste addiction of the player < 9:
 			say "You are slowly getting used to the taste of [semen].";
 		otherwise if the semen taste addiction of the player < 11:
-			say "You actually quite like the taste of [semen].";	
+			say "You actually quite like the taste of [semen].";
 		otherwise if the semen taste addiction of the player < 13:
 			say "You frequently lick your lips in case you can find and taste a bit more [semen].";
 		otherwise if the semen taste addiction of the player < 15:
@@ -252,7 +265,7 @@ This is the urine taste addiction description rule:
 		otherwise if the urine taste addiction of the player < 9:
 			say "You are slowly getting used to the taste of [urine].";
 		otherwise if the urine taste addiction of the player < 11:
-			say "You actually quite like the taste of [urine].";	
+			say "You actually quite like the taste of [urine].";
 		otherwise if the urine taste addiction of the player < 13:
 			say "You enjoy the experience of people pissing in your mouth.";
 		otherwise if the urine taste addiction of the player < 15:
@@ -286,7 +299,7 @@ This is the diaper addiction description rule:
 		otherwise if the diaper addiction of the player < 9:
 			say "You gain no sexual pleasure from [CurrentWearingDiaperState] but you are [if there is a worn diaper]getting used to it[otherwise]open to the idea[end if].";
 		otherwise if the diaper addiction of the player < 11:
-			say "There's something weirdly [one of]comforting[or]enjoyable[stopping] about [CurrentWearingDiaperState].";	
+			say "There's something weirdly [one of]comforting[or]enjoyable[stopping] about [CurrentWearingDiaperState].";
 		otherwise if the diaper addiction of the player < 13:
 			say "You actively enjoy wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if].";
 		otherwise if the diaper addiction of the player < 15:
@@ -294,8 +307,26 @@ This is the diaper addiction description rule:
 		otherwise if the diaper addiction of the player < 17:
 			say "You get extremely turned on by wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if]. It's one of your favourite things to do, and you start to crave it if you haven't done it in a while. Wearing normal underwear feels wrong and uncomfortable.";
 		otherwise:
-			say "You are completely addicted to wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if], the bigger and puffier the better. The act of soiling one makes you extremely aroused  You feel great comfort and bliss from [CurrentWearingDiaperState] and so you hate not being in one.";
-		if debuginfo > 0, say "[input-style](Diaper addiction [diaper addiction of the player] / 20)[roman type][line break]".
+			say "You are completely addicted to wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if], the bigger and puffier the better. The act of soiling one makes you extremely aroused[if the diaper addiction of the player >= 20], and you love staying in a used diaper for as long as you're allowed, because it feels incredible[end if]. You get great comfort and bliss from [CurrentWearingDiaperState] and so you hate not being in one.";
+		if debuginfo > 0, say "[input-style](Diaper addiction [diaper addiction of the player] / 20)[roman type][line break]";
+	if diaper lover > 0:
+		if the player is incontinent:
+			say "You have no control over your [if diaper messing >= 3]bodily functions[otherwise]bladder[end if]; you can't even feel when you're full, and your body just goes as soon as it is ready.";
+		otherwise if the incontinence of the player >= 8:
+			say "You only have the tiniest amount of control over your [if diaper messing >= 3]bodily functions[otherwise]bladder[end if] - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s potty[otherwise]toilet[end if].";
+		otherwise if the incontinence of the player >= 6:
+			say "You have lost a lot of your ability to hold onto your bladder[if diaper messing >= 3] and bowels[end if], which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s potty[otherwise]toilet[end if] in time.";
+		otherwise if the incontinence of the player >= 4:
+			say "You are starting to have real problems with continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a toilet in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
+		otherwise if the incontinence of the player >= 2:
+			say "You have a significantly weak bladder[if diaper messing >= 3] and disobedient bowels[end if]. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a toilet[otherwise]you're not diapered[end if].";
+		otherwise if the incontinence of the player > 0:
+			say "You have a slightly weak bladder, which makes your need to go toilet slightly more urgent than for the average adult.";
+		otherwise if the incontinence of the player < 0:
+			say "You are even better at holding onto your bladder[if diaper messing >= 3] and bowels[end if] than you were when you entered the game.";
+		otherwise:
+			say "You are fully [if the player is a pervert]potty trained[otherwise]continent[end if].";
+		if debuginfo > 0, say "[input-style](Incontinence [incontinence of the player] / 10[if the max-incontinence of the player < 10] [bracket]capped at [max-incontinence of the player][close bracket][end if])[roman type][line break]".
 The diaper addiction description rule is listed in the addiction listing rules.
 
 
@@ -330,6 +361,10 @@ This is the bottomless exposure addiction description rule:
 	if no-panties-fetish is 1, say "You feel extremely uncomfortable wearing [if the diaper addiction of the player > 15]big girl panties, since you miss the comfort and security of diapers whenever you do[otherwise if diaper quest is 1]big girl panties, since deep down you know you don't deserve them[otherwise]panties, as you have an extremely powerful fetish for going commando[end if].".
 The bottomless exposure addiction description rule is listed in the addiction listing rules.
 
+This is the humiliation description rule:
+	say HumiliationDesc;
+	if debuginfo > 0, say "[input-style]([if the humiliation of the player >= 40000]Sex addiction [sex addiction of the player] / 20; Delicateness [delicateness of the player] / 20; [end if]Humiliation: [humiliation of the player] / 40000)[roman type][line break]".
+The humiliation description rule is listed in the addiction listing rules.
 
 
 

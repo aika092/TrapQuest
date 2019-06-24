@@ -1,6 +1,25 @@
 Students Innocent by Monster begins here.
 
-An innocent student is a kind of student.
+An innocent student is a kind of student. Understand "nervous" as an innocent student.
+
+To say MediumDesc of (M - an innocent student):
+	say "nervous [rank-colour of item described] student [student-name of item described]".
+
+To decide which number is the dedication of (M - an innocent student): [We can use this for various calculations to check which students do what]
+	decide on a random number between 0 and 3.
+
+To decide which number is the vindictiveness of (M - an innocent student): [We can use this for various calculations to check which students do what]
+	decide on a random number between 0 and 1.
+
+To decide which number is the heel-skill of (M - an innocent student):
+	decide on 0.
+
+To compute student perception of (M - an innocent student):
+	if the appearance of the player < 12 and the cringe appearance of the player < 15:
+		say "It doesn't look like [he of M] is going to engage you in conversation unless you start it.";
+	otherwise:
+		say "[speech style of M]'[one of]You look so... just too... ugh! And[or]You know[or]That's too far! And[or]I hate how[cycling] you're making me look bad in comparison!'[roman type][line break]";
+		FavourDown M.
 
 Part - Hailey
 
@@ -58,41 +77,11 @@ To say StoryAnswer of (M - student-winnie):
 To say WhereAnswer of (M - student-winnie):
 	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously!  Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
 
-Part - Lottie
+To decide which number is the heel-skill of (M - student-winnie):
+	decide on -2.
 
-student-lottie is a dq-only innocent student.
-
-The text-shortcut of student-lottie is "stlo".
-
-Figure of lottie is the file "NPCs/School/Student/student9.png".
-
-To decide which figure-name is the monster-image of (M - student-lottie):
-	decide on figure of lottie.
-
-To say MonsterDesc of (M - student-lottie):
-	say "This tall brunette is wearing a modest schoolgirl uniform with a tartan dress. [big he of M] has a red pacifier in [his of M] mouth [if the current-rank of M is 1]and seems a bit unsure about it[otherwise]which [he of M] is sucking on nervously[end if]. [big he of M] is studying a little carton of what looks like [if diaper lover >= 3]fibre supplements[otherwise]caffeinated teabags[end if] with a frown.".
-
-The max-rank of student-lottie is 1.
-
-To update name of (M - student-lottie):
-	now the student-print of M is "little learner";
-	if the current-rank of M is 1:
-		now the student-name of M is "Lottie";
-	otherwise:
-		now the student-name of M is "Lollie".
-
-To say StoryAnswer of (M - student-lottie):
-	say "[speech style of M]'I love my boyfriend but he's into some weird stuff!  I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
-
-To say WhereAnswer of (M - student-lottie):
-	say "[speech style of M]'[if the rank of the player <= 1]Don't believe the propaganda, this place is for one thing only - training people to enjoy being adult babies.'[otherwise]We can take things to, err, speed up our metabolic functions. But I don't know if I can bring myself to do it...'[end if][roman type][line break]".
-
-To say EscapeAnswer of (M - student-lottie):
-	say "[speech style of M]'[if the current-rank of M > the rank of the player]Nothing of much interest, to be perfectly honest.'[otherwise]More and more baby themed rooms, I'm sure.'[end if][roman type][line break]".
-
-To say AdviceAnswer of (M - student-lottie):
-	say "[speech style of M]'Always read the label.'[roman type][line break]".
-
+To decide which number is the dedication of (M - student-winnie): [We can use this for various calculations to check which students do what]
+	decide on 3.
 
 Part - Austin
 
@@ -124,42 +113,71 @@ To say WhereAnswer of (M - student-austin):
 	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other girls were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
 
-Part - Polly
 
-student-polly is a dq-only innocent student.
 
-The text-shortcut of student-polly is "stpo".
+Part - Rachel
 
-Figure of polly is the file "NPCs/School/Student/student20.png".
+student-rachel is a dq-only innocent student.
 
-To decide which figure-name is the monster-image of (M - student-polly):
-	decide on figure of polly.
+The text-shortcut of student-rachel is "strs".
 
-To say MonsterDesc of (M - student-polly):
-	say "This quiet girl is wearing an excessively feminine baby pink babydoll dress with a big bow on the front. The rest of her attire is similarly styled - her white court heels have pink bows on the toes, and white cotton stockings reach up to her thighs. Her nails are painted pink and her baby pink headband has bows and flowers on it. Her very long flowing platinum blonde hair is so perfectly curly and full-bodied that you're sure it must be a wig. A subtle [if the current-rank of M is 3]crinkling[otherwise]squelching[end if] whenever she moves lets you know that she's padded[unless the current-rank of M is 3] and she's definitely not dry[end if].".
+Figure of rachel 1 is the file "NPCs/School/Student/student28a.jpg".
+Figure of rachel 2 is the file "NPCs/School/Student/student28b.jpg".
+Figure of rachel 3 is the file "NPCs/School/Student/student28c.jpg".
 
-The min-rank of student-polly is 3.
-The current-rank of student-polly is 3.
-The max-rank of student-polly is 4.
-
-To update name of (M - student-polly):
-	now the student-print of M is "beautiful babydoll";
-	if the current-rank of M is 3:
-		now the student-name of M is "Polly";
+To decide which figure-name is the monster-image of (M - student-rachel):
+	if the current-rank of M >= 4:
+		decide on figure of rachel 3;
+	otherwise if the current-rank of M is 3:
+		decide on figure of rachel 2;
 	otherwise:
-		now the student-name of M is "Potty".
+		decide on figure of rachel 1.
 
-To say StoryAnswer of (M - student-polly):
-	say "[speech style of M]'I have a weak bladder, and so I've been wearing diapers for a long time. It's made it difficult to find lasting romance. The headmistress told me that there's a huge number of people out there who find people like me really adorable, and the teachers here are helping me understand how to make sure I'm exactly like the girl in their fantasies.'[roman type][line break]".
+To say MonsterDesc of (M - student-rachel):
+	if the current-rank of M <= 2:
+		say "This woman is in her late twenties or early thirties. She is wearing a smart white blouse and red skirt. Her brunette hair is kept short and neat. She looks like a respectable businesswoman... or at least she would, if it wasn't for the huge double-diaper she's sporting under her skirt. She keeps pulling up her skirt to look at the already-damp padding underneath, and then blushing furiously, as if she couldn't really believe it was there until she checked again with her own two eyes.";
+	otherwise if the current-rank of M is 3:
+		say "This woman is in her late twenties or early thirties. She was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of her boobs. Her smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that she's got on underneath, which if anything is even thicker than before. Her short brunette hair has been put in little pigtails. She still constantly blushes wherever she goes.";
+	otherwise:
+		say "This woman is in her late twenties or early thirties. Her tight pink blouse have been replaced by a tight pink crop top that doesn't cover her belly button and reads 'BABYGIRL' on the front in large white letters. Her short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of her thick double diaper are on show, even as she tries to pull down on the tiny microskirt to get it to stretch as far as it can. She seems so embarrassed that she's moments away from tears at all times. It's crazy to think that just a short while ago this was woman was a respected young professional.";
 
-To say WhereAnswer of (M - student-polly):
-	say "[speech style of M]'I thought we were just supposed to do whatever the teachers tell us?'[roman type][line break]".
+The current-rank of student-rachel is 2.
+The max-rank of student-rachel is 4.
+
+To update name of (M - student-rachel):
+	if the current-rank of M < 3:
+		now the student-name of M is "Rachel";
+		now the student-print of M is "blushing businesswoman";
+	otherwise if the current-rank of M is 3:
+		now the student-name of M is "Ray";
+		now the student-print of M is "shining secretary";
+	otherwise:
+		now the student-name of M is "Ray-Ray";
+		now the student-print of M is "bright babygirl";
+
+To say WhoAnswer of (M - student-rachel):
+	say "[speech style of M]'My name is [student-name of M] Sunshine. I know, how appropriate...'[roman type][line break]".
+
+To say StoryAnswer of (M - student-rachel):
+	say "[speech style of M]'My boss... Mr Blair... knows I will do anything he says, because if I get fired, I lose the rights to the incredible mansion my aunt left me in her will. So he's getting me to wear diapers and dress more baby-like and I'm not allowed to change myself and... it's quickly becoming too much! Hopefully here they can teach me some techniques on how to [please] him without going too far...'[roman type][line break]".
+
+To say WhereAnswer of (M - student-rachel):
+	say "[speech style of M]'[if the rank of the player <= 1]Something we all need to learn... how to sometimes swallow your pride for the greater good.'[otherwise]Swallow your pride... and whatever food and drink Master tells you to...'[end if][roman type][line break]".
+
+To say AdviceAnswer of (M - student-rachel):
+	say "[speech style of M]'Whatever they tell you to do, you've just got to say [']Yes Mister['] and then get on with it! If you can bring yourself to...'[roman type][line break]".
+
+To say EscapeAnswer of (M - student-rachel):
+	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's nothing I care about. It seems like this entire place is just designed to make you feel like a big baby.'[otherwise]Probably loads more nasty things designed to make us feel even more like submissive babygirls...'[end if][roman type][line break]".
+
+To compute teaching of (M - student-rachel):
+	say "[speech style of M]'No, sorry, I'm not any good at this yet. I'm the one who needs extra help...'[roman type][line break]".
 
 
 Part - Default Conversation
 
 To say WhoAnswer of (M - an innocent student):
-	say "[speech style of M]'My name is [student-name of M][if the current-rank of M > 1], or so I've been told. I didn't realise I was going to have to change my name[end if]...'[roman type][line break]".
+	say "[speech style of M]'My name is [student-name of M][if the current-rank of M > the min-rank of M], or so I've been told. I didn't realise I was going to have to change my name[end if]...'[roman type][line break]".
 
 To say WhereAnswer of (M - an innocent student):
 	say "[speech style of M]'[if the rank of the player <= 1]We're in some kind of special school. To get good at making other people happy.'[otherwise]I dunno, some of the things they want us to do are pretty crazy. Surely there's another way?'[end if][roman type][line break]".

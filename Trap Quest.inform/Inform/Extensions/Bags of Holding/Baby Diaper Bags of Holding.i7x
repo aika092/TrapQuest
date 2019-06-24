@@ -5,12 +5,12 @@ A baby diaper bag of holding is a kind of bag of holding.
 To decide which number is the initial cringe of (C - a baby diaper bag of holding):
 	decide on 10.
 
-Definition: a baby diaper bag of holding (called C) is untransformable:
-	decide yes.
+Definition: a baby diaper bag of holding is transformation-protected: decide yes.
+Definition: a baby diaper bag of holding is pink themed: decide yes.
 
 Part 1 - Baby Buggy Diaper Bag of Holding
 
-A baby buggy diaper bag of holding is a kind of baby diaper bag of holding. A baby buggy diaper bag of holding is usually cotton. There is 1 baby buggy diaper bag of holding. The printed name of baby buggy diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby buggy diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A baby buggy diaper bag of holding is a kind of baby diaper bag of holding. A baby buggy diaper bag of holding is usually cotton. There is 1 baby buggy diaper bag of holding. The printed name of baby buggy diaper bag of holding is usually "[clothing-title-before]baby buggy diaper bag of holding[clothing-title-after]".
 
 Figure of baby buggy diaper bag of holding is the file "Items/Accessories/Bags/bag22.png".
 
@@ -25,7 +25,7 @@ To say ClothingDesc of (C - a baby buggy diaper bag of holding):
 
 Part 2 - Baby Car Diaper Bag of Holding
 
-A baby car diaper bag of holding is a kind of baby diaper bag of holding. A baby car diaper bag of holding is usually cotton. There is 1 baby car diaper bag of holding. The printed name of baby car diaper bag of holding is usually "[TQlink of item described][clothing-title-before]baby car diaper bag of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A baby car diaper bag of holding is a kind of baby diaper bag of holding. A baby car diaper bag of holding is usually cotton. There is 1 baby car diaper bag of holding. The printed name of baby car diaper bag of holding is usually "[clothing-title-before]baby car diaper bag of holding[clothing-title-after]".
 
 Figure of baby car diaper bag of holding is the file "Items/Accessories/Bags/bag23.png".
 

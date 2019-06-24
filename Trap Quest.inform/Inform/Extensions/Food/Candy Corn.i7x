@@ -1,6 +1,14 @@
 Candy Corn by Food begins here.
 
-A candy corn is a kind of candy. The printed name of candy corn is "[TQlink of item described]pack of candy corn[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of candy corn is "[TQlink of item described]packs of candy corn[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of candy corn is "crn". The description of candy corn is "A translucent packet of white, orange and yellow candies.". There is 1 candy corn.
+A candy corn is a kind of candy. The printed name of candy corn is "[TQlink of item described]pack of candy corn[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of candy corn is "[TQlink of item described]packs of candy corn[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of candy corn is "crn". There is 1 candy corn.
+To say ExamineDesc of (B - a candy corn):
+	say "A translucent packet of white, orange and yellow candies.".
+
+
+Figure of candy corn is the file "Items/Collectibles/candycorn1.jpg".
+
+To decide which figure-name is the examine-image of (F - a candy corn):
+	decide on figure of candy corn.
 
 To decide which number is the crafting key of (C - a candy corn):
 	decide on 46.
@@ -8,18 +16,17 @@ To decide which number is the crafting key of (C - a candy corn):
 To say ShortDesc of (C - a candy corn):
 	say "candy corn".
 
-Definition: a candy corn (called C) is low tier:
-	decide yes.
+Definition: a candy corn is low tier: decide yes.
 
 To say DevourFlav of (C - a candy corn):
 	say "You open the [C] and [if the player is in danger]devour it all as quickly as you can[otherwise if the fat-weight of the player > 28]greedily dump it all into your mouth, immediately swallowing them whole[otherwise if the fat-weight of the player > 12]speedily devour it two or three pieces at a time[otherwise]pop each piece in your mouth one at a time, savouring the taste[end if]. ".
 
 Carry out TQeating candy corn:
 	if diaper quest is 1:
-		say "[second custom style]TASTY.... TASTY... TASTY![roman type]  The word reverberates in your head over and over again. ";
+		say "[second custom style]TASTY... TASTY... TASTY! [roman type]The word reverberates in your head over and over again. ";
 		if hypno-trigger-tasty is 0:
 			say "That was weird...";
-			if the player is a November 2017 diaper donator, now hypno-trigger-tasty is 1;
+			now hypno-trigger-tasty is 1;
 		otherwise:
 			say "You suddenly feel very hungry for [tasty] things!";
 	otherwise:
@@ -50,7 +57,7 @@ Carry out TQeating candy corn:
 				BodyHeal 1;
 				FatigueDown 26;
 			otherwise if the sex addiction of the player < 13:
-				say "a distinct...freeing feeling settles in your chest.";
+				say "a distinct... freeing feeling settles in your chest.";
 				SexAddictUp 1;
 			otherwise if the sex addiction of the player > 13:
 				say "a weirdly reassuring feeling settles in your chest.";

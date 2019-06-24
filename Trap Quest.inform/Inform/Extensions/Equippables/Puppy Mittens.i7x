@@ -1,6 +1,6 @@
 Puppy Mittens by Equippables begins here.
 
-A puppy mittens is a kind of gloves. A puppy mittens is usually unique. A puppy mittens is usually leather. A puppy mittens is usually manly. There is 1 puppy mittens. The printed name of puppy mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of puppy mittens[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of puppy mittens is "pm". Figure of puppy mittens is the file "Items/Accessories/Equippables/puppymittens1.png".
+A puppy mittens is a kind of gloves. A puppy mittens is usually unique. A puppy mittens is usually leather. A puppy mittens is usually manly. There is 1 puppy mittens. The printed name of puppy mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of puppy mittens[clothing-title-after]". The text-shortcut of puppy mittens is "pm". Figure of puppy mittens is the file "Items/Accessories/Equippables/puppymittens1.png".
 
 To decide which figure-name is clothing-image of (C - a puppy mittens):
 	decide on figure of puppy mittens.
@@ -12,6 +12,9 @@ To say ClothingDesc of (W - a puppy mittens):
 To say ShortDesc of (W - a puppy mittens):
 	say "black leather puppy mittens".
 
+Definition: a puppy mittens is dog themed: decide yes.
+Definition: a puppy mittens is black themed: decide yes.
+
 This is the puppy mittens prevent manual dexterity rule:
 	if there are worn puppy mittens:
 		if manual hands attempt is 1, say "Your puppy mittens mean you don't have the manual dexterity to do that.";
@@ -19,7 +22,7 @@ This is the puppy mittens prevent manual dexterity rule:
 The puppy mittens prevent manual dexterity rule is listed in the manual dexterity restriction rules.
 
 To decide which number is the initial outrage of (C - a puppy mittens):
-	decide on 2.
+	decide on 3.
 
 To decide which number is the damage improvement of (W - a puppy mittens):
 	let X be -2;

@@ -1,6 +1,6 @@
 Stethoscope by Accessories begins here.
 
-A stethoscope is a kind of neckwear. The printed name of stethoscope is "[TQlink of item described][clothing-title-before]stethoscope[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A stethoscope is a kind of neckwear. The printed name of stethoscope is "[clothing-title-before]stethoscope[clothing-title-after]".
 
 A stethoscope is unique.
 
@@ -22,7 +22,7 @@ To decide which number is the intelligence-influence of (C - a stethoscope):
 	decide on I.
 
 Check taking off a stethoscope:
-	if the flat intelligence of the player < the intelligence-influence of the noun + 1, say "As you try to take [the noun] off, you feel consciousness slipping from you. You decide to leave it on..." instead.
+	if saved-flat-intelligence < the intelligence-influence of the noun + 1, say "As you try to take [the noun] off, you feel consciousness slipping from you. You decide to leave it on..." instead.
 
 [To uniquely set up (C - a stethoscope):
 	do nothing. redundant]
@@ -39,15 +39,19 @@ To decide which figure-name is clothing-image of (C - a doctor stethoscope):
 To say ClothingDesc of (C - a doctor stethoscope):
 	say "You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.".
 
-Definition: a doctor stethoscope (called C) is untransformable:
-	if diaper quest is 1, decide yes;
-	decide no.
+Definition: a doctor stethoscope is transformation-protected if diaper quest is 1.
+Definition: a doctor stethoscope is product: decide yes.
+Definition: a doctor stethoscope is yellow themed: decide yes.
+Definition: a doctor stethoscope is black themed: decide yes.
 
-Definition: a doctor stethoscope (called W) is product:
-	decide yes.
-	
 To decide which number is the alchemy key of (W - a doctor stethoscope):
 	decide on 16.
+
+To decide which object is the unique-upgrade-target of (C - a doctor stethoscope):
+	decide on a random cock stethoscope.
+
+Check wearing a doctor stethoscope: [When you craft with the wrong recipe, it becomes the lewd form immediately.]
+	if the noun is cursed and the noun is upgradable, potentially transform the noun.
 
 
 Part 2 - Cock Stethoscope
@@ -60,10 +64,12 @@ To decide which figure-name is clothing-image of (C - a cock stethoscope):
 	decide on figure of stethoscope 2.
 
 To decide which number is the initial outrage of (C - a cock stethoscope):
-	decide on 9.
+	decide on 7.
+
+Definition: a cock stethoscope is penis themed: decide yes.
 
 To say ClothingDesc of (C - a cock stethoscope):
-	say "A normal doctor's stethoscope but with cocks for your ears and at the sensor end. You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.". 
+	say "A normal doctor's stethoscope but with cocks for your ears and at the sensor end. You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.".
 
 
 

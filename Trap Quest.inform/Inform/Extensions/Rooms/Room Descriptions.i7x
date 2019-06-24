@@ -1,6 +1,6 @@
 Room Descriptions by Rooms begins here.
 
-
+Definition: a room is nonstandard: decide no. [A nonstandard room has no doors, traps, etc to describe]
 
 [!<AfterLooking>+
 
@@ -10,7 +10,8 @@ REQUIRES COMMENTING
 After looking:
 	repeat with L running through leftovers in the location of the player:
 		say "[Description of L]";
-	if the location of the player is not Capsule and the location of the player is not Start and the location of the player is not WoodsBoss01 and the location of the player is not Blindfolded and the location of the player is not Loading and the location of the player is not Iron Maiden and the location of the player is not HoleInWall and the location of the player is not Sky01, say "[RoomTrapDesc][if inline hyperlinks < 2][DoorDesc][end if]".
+	[if the location of the player is not Capsule and the location of the player is not Start and the location of the player is not WoodsBoss01 and the location of the player is not blindroom and the location of the player is not Loading and the location of the player is not Iron Maiden and the location of the player is not HoleInWall and the location of the player is not DiaperPail and the location of the player is not Sky01,]
+	unless the location of the player is nonstandard, say "[RoomTrapDesc][if inline hyperlinks < 2 and map images is 0][DoorDesc][end if]".
 The can't push what's fixed in place rule is not listed in the check pushing rulebook.
 
 
@@ -22,7 +23,7 @@ REQUIRES COMMENTING
 To say RoomTrapDesc:
 	repeat with T running through revealed traps in the location of the player:
 		say EnvironmentDesc of T;
-	if the location of the player is smoky, say "[if the player is in the Mansion]Blackish-green[otherwise]Pink[end if] smoke wafts around the lower portion of this room. ";
+	if the location of the player is smoky, say "[if playerRegion is Mansion]Blackish-green[otherwise]Pink[end if] smoke wafts around the lower portion of this room. ";
 	say "[PuddleDesc]";
 	repeat with D running through directions:
 		let X be 0;
@@ -61,10 +62,10 @@ To say DoorDesc:
 	let X be the number of N-viable directions;
 	let Y be 0;
 	if X is 1:
-		say "[if the player is in the Woods]You can continue[otherwise]There is a doorway[end if] to the ";
+		say "[if playerRegion is Woods]You can continue[otherwise]There is a doorway[end if] to the ";
 		now Y is 1;
 	otherwise if X > 0:
-		say "[if the player is in the Woods]You can continue[otherwise]There are doorways[end if] to the ";
+		say "[if playerRegion is Woods]You can continue[otherwise]There are doorways[end if] to the ";
 	repeat with D running through N-viable directions:
 		if Y is 1, say "[D]";
 		otherwise say "[if X is 1] and [end if][D][if X > 2], [end if]";
@@ -76,6 +77,14 @@ To say DoorDesc:
 			say "The door to the [D] has a threatening looking [rank-colour of the entry-rank of R] rune on the door.".
 
 
+To decide which direction is the opposite-direction of (D - a direction):
+	if D is north, decide on south;
+	if D is south, decide on north;
+	if D is west, decide on east;
+	if D is east, decide on west;
+	if D is up, decide on down;
+	if D is down, decide on up.
+
 [!<SayHyperDescOfDirection>+
 
 REQUIRES COMMENTING
@@ -84,8 +93,8 @@ REQUIRES COMMENTING
 To say hyperdesc of (D - a direction):
 	say "[TQlink][D][TQdlink]".
 
-	
-	
+
+
 [This is a rule that comes with the base code, we are removing it to add our own directly below. We are doing this because the original code doesn't list the items inside a container in the things the player can see in a room.]
 The you-can-also-see rule is not listed in the for printing the locale description rulebook.
 
@@ -147,7 +156,7 @@ For printing the locale description (this is the you-can-also-see-modified rule)
 				[unfilter list recursion;]
 			end the listing nondescript items activity with the domain;
 	continue the activity.
-	
+
 [!<ToSayFullTextOfContainer>+
 
 REQUIRES COMMENTING
@@ -166,12 +175,26 @@ REQUIRES COMMENTING
 +!]
 To say full text of (C - a pedestal):
 	say "[C] ";
-	if C is closed, now disambiguation-busy is true; [disables hyperlinks until set to false]
+	if C is closed, now links-disabled is true; [disables hyperlinks until set to false]
 	if there is a thing in C, say "[if C is closed](closed)[otherwise](open)[end if] (which contains [a list of things in C])";
 	otherwise say "(empty)";
-	now disambiguation-busy is false.
+	now links-disabled is false.
 
-
+water-body is a backdrop. Understand "water" as water-body.
+A water-body-scenery is a kind of thing. A water-body-scenery is not portable.
+Definition: a water-body-scenery is immune to change: decide yes.
+To say FullExamineDesc of (C - water-body):
+	let T be a random water-body-scenery in the location of the player;
+	if T is water-body-scenery:
+		say FullExamineDesc of T;
+	otherwise:
+		say ExamineDesc of C.
+To say ExamineDesc of (C - water-body):
+	let T be a random water-body-scenery in the location of the player;
+	if T is water-body-scenery:
+		say ExamineDesc of T;
+	otherwise:
+		say "This body of water is large enough to wash yourself in.".
 
 
 

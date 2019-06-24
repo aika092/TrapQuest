@@ -35,22 +35,14 @@ A time based rule (this is the mindflayer spawns rule):
 			set up M;
 			now mindflayer spawned is 1;
 			say "You feel a strange pressure in your mind for just a moment[if debugmode > 0] (The mindflayer has just been spawned!)[line break][otherwise]. It feels like something new and terrifying has arrived...[end if]";
-			if the player is in the Dungeon:
-				now M is in a random placed sandy room;
-				while M is nearby or M is in the location of the player or the location of M is an unplaced room:
-					now M is in a random placed sandy room;
-			otherwise if the player is in the Woods:
-				now M is in a random placed dodgy room;
-				while M is nearby or M is in the location of the player or the location of M is an unplaced room:
-					now M is in a random placed dodgy room;
-			otherwise if the player is in the Hotel:
-				now M is in a random placed modern room;
-				while M is nearby or M is in the location of the player or the location of M is an unplaced room:
-					now M is in a random placed modern room;
-			otherwise if the player is in the Mansion:
-				now M is in a random placed haunted room;
-				while M is nearby or M is in the location of the player or the location of M is an unplaced room:
-					now M is in a random placed haunted room.
+			if playerRegion is Woods:
+				summon M in the woods;
+			otherwise if playerRegion is Mansion:
+				summon M in the mansion;
+			otherwise if playerRegion is Hotel:
+				summon M in the hotel;
+			otherwise:
+				summon M in the dungeon.
 
 A later time based rule (this is the mindflayer quest rule):
 	if mindflayer spawned is 1 and mindflayer quest is 0:
@@ -72,13 +64,13 @@ A time based rule (this is the mindflayer domination rule):
 			otherwise if the location of the player is smoky and the largeness of breasts < max breast size:
 				say "You see images of yourself with incredible breasts, and you hear a voice in your head! [line break][first custom style]'Breathe deep and become the [whore] you know yourself to be.'[roman type][line break]You fall to your knees!";
 				try silently kneeling;
-			otherwise if (a random number between 1 and 3 < 3) and (the raw semen taste addiction of the player < 20):
+			otherwise if (a random number between 1 and 3 < 3) and (the raw oral sex addiction of the player < 10):
 				say "Images of erect penises fill your mind, and you hear a voice in your head! [line break][first custom style]'You hunger to taste the prize inside of us.'[roman type][line break]You feel a sudden strange longing to fill your mouth with [manly-penis]!";
-				SemenTasteAddictUp 1;
+				OralSexAddictUp 1;
 			otherwise if (a random number between 1 and 2 < 3)	and (the humiliation of the player < 40000):
 				say "You see images of yourself mindlessly complying as men use every part of your body, and you hear a voice in your head! [line break][first custom style]'A man chooses, an object obeys.'[roman type][line break]You feel less and less like a person!";
 				humiliate 400;
-			otherwise: 
+			otherwise:
 				say "Images of erect penises fill your mind, and you hear a voice in your head! [line break][first custom style]'Put us in you and revel in serving us.'[roman type][line break]You feel a sudden strange longing to fill your holes with [manly-penis]!";
 				SexAddictUp 1;
 		otherwise:

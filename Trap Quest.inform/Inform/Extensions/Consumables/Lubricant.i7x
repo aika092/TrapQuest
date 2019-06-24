@@ -1,7 +1,20 @@
 Lubricant by Consumables begins here.
 
 
-A lubricant is a kind of collectible. There are 15 lubricants. The description of lubricant is usually "[LubeDesc]". Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu". [lubricants hotlinks don't work]
+A lubricant is a kind of collectible. There are 9 lubricants. Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu".
+
+Definition: a lubricant is anal sex themed: decide yes.
+
+To say ExamineDesc of (B - a lubricant):
+	if diaper focus is 1:
+		say "A small bottle of baby oil, with a crude drawing of a cloth diaper on the front. Though it's usually used to make baby's skin softer, you can also apply this to an orifice to make it slippery and less likely to get sore.";
+	otherwise:
+		say "A small bottle of water-based lubricant, with a crude drawing of a strawberry on the front. You can apply this to an orifice to make it slippery and less likely to get sore.".
+
+Figure of lubricant is the file "Items/Collectibles/lube1.png".
+
+To decide which figure-name is the examine-image of (C - a lubricant):
+	decide on figure of lubricant.
 
 To decide which number is the crafting key of (C - a lubricant):
 	decide on 35.
@@ -12,18 +25,12 @@ To say ShortDesc of (C - a lubricant):
 	say "[lubricant]".
 
 To say lubricant:
-	if diaper focus is 1: 
-		say "baby oil";
-	otherwise if the bimbo of the player < 8: 
-		say "lubricant";
-	otherwise: 
-		say "lube".
-
-To say LubeDesc:
 	if diaper focus is 1:
-		say "A small bottle of baby oil, with a crude drawing of a cloth diaper on the front. Though it's usually used to make baby's skin softer, you can also apply this to an orifice to make it slippery and less likely to get sore.";
+		say "baby oil";
+	otherwise if the bimbo of the player < 8:
+		say "lubricant";
 	otherwise:
-		say "A small bottle of water-based lubricant, with a crude drawing of a strawberry on the front. You can apply this to an orifice to make it slippery and less likely to get sore.".
+		say "lube".
 
 Lubing is an action applying to one thing.
 Check lubing:
@@ -57,7 +64,7 @@ The lube prevents gag reflex rule is listed in the gag reflex rules.
 
 Orilubing it with is an action applying to two things.
 Check orilubing something with:
-	if the second noun is a dispenser, try decanting instead;
+	if the second noun is a dispenser, try decanting the noun with the second noun instead;
 	if the noun is squirt dildo and the second noun is a fuckhole:
 		if the noun is penetrating the second noun, try squirting the noun instead;
 		otherwise say "You need to put it in your [variable second noun] first." instead;
@@ -73,10 +80,11 @@ Check orilubing something with:
 	if the latex-transformation of the player > 3, say "You don't see how that would help, your latex insides are naturally smooth and slippery and not at risk of getting sore." instead;
 	if the second noun is actually occupied:
 		say "You can't lube up your [variable second noun] while there is something in it." instead;
+	if the player is not able to manually use their hands, do nothing instead;
 	if the player is monster fucked, say "You're a little busy right now!" instead.
 
 Carry out orilubing something with:
-	now seconds is 6;
+	allocate 6 seconds;
 	let F be the second noun;
 	if the bimbo of the player < 8:
 		say "You delicately apply [lubricant] to your [variable F], until it feels a little less dry. ";
@@ -92,7 +100,7 @@ Understand "use [something] on [something]", "apply [something] on [something]",
 
 Check drinking lubricant:
 	if the sex addiction of the player < 8 and the thirst of the player < 4, say "You aren't thirsty or perverted enough to bring yourself to do that." instead.
-	
+
 Carry out drinking lubricant:
 	say "[if the bimbo of the player < 10]You hold your nose and squeeze the flavoured lube into your mouth, swallowing tentatively. [otherwise]You happily squeeze the flavoured lube into your mouth. [end if]It coats the inside of your throat![line break][if the oral sex addiction of the player > 6][line break][second custom style]I'm probably better at deepthroating now![roman type][line break][end if]";
 	SemenTasteAddictUp 1;
@@ -119,7 +127,7 @@ A time based rule (this is the lubricant drying rule):
 			repeat with F running through orifices covered by L:
 				now L is not covering F;
 				say "[bold type]The lubricant coating your [variable F][bold type] has dried up[roman type].".
-			
+
 To restock (C - a lubricant):
 	let B be a random off-stage lubricant;
 	if B is lubricant, now B is in Standard Item Pen.

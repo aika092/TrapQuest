@@ -16,20 +16,30 @@ title	subtable	description	toggle
 "Extra Strength: [bonus strength] ([bonus strength points] points used. [bonus strength cost].)"	--	--	bonus strength rule
 "Extra Dexterity: [bonus dexterity] ([bonus dexterity points] points used. [bonus dexterity cost].)"	--	--	bonus dexterity rule
 "Extra Intelligence: [bonus intelligence] ([bonus intelligence points] points used. [bonus intelligence cost].)"	--	--	bonus intelligence rule
-"Mindbreak protection (player can't get broken: humiliation, bimbo and sex addiction cap slightly lowered) ([if mindbreak protection is 0]Not enabled - costs 4 points to enable[otherwise]Enabled - 4 points used[end if])"	--	--	mindbreak protection toggle rule
-"Bondage protection (most common ways of getting bondage including chastity are prevented) ([if bondage protection is 0]Not enabled - costs 4 points to enable[otherwise]Enabled - 4 points used[end if])"	--	--	bondage protection toggle rule
-"Spontaneous tattoos (If this is disabled, tattoos won't spawn on their own until you get one voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise]Enabled - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
-"Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and other headgears will appear much more rarely) - 6 points ([if roleplay fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	roleplay fetish toggle rule
-"Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used.  [bonus liquid cost].)"	--	--	bonus liquid toggle rule
+"Mindbreak protection (player can't get broken: humiliation, bimbo and sex addiction cap slightly lowered) ([if mindbreak protection is 0]Not enabled - costs 4 points to enable[otherwise][bold type]Enabled[roman type] - 4 points used[end if])"	--	--	mindbreak protection toggle rule
+"Bondage protection (most common ways of getting bondage including chastity are prevented) ([if bondage protection is 0]Not enabled - costs 4 points to enable[otherwise][bold type]Enabled[roman type] - 4 points used[end if])"	--	--	bondage protection toggle rule
+"Spontaneous tattoos (If this is disabled, tattoos won't spawn on their own until you get one voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise][bold type]Enabled[roman type] - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
+"Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and you can choose to start that class journey straight away. However you'll never be able to get that headgear the normal way.) - ([if roleplay fetish is 0]Not enabled - costs 1 point to enable[otherwise][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	roleplay fetish toggle rule
+"Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used. [bonus liquid cost].)"	--	--	bonus liquid toggle rule
+"Combat visor (lets you see some of the behind-the-scenes numbers being calculated. Can be removed but then can't be worn again): [if combatvisor is 1][bold type]Enabled[roman type] - 1 point used[otherwise]Disabled - costs 1 point to enable[end if]"	--	--	combat visor toggle rule
+[ALL BENEFIT OPTIONS MUST GO ABOVE THE COMBAT VISOR LINE, WHICH IS REMOVED WHEN THE PLAYER IS THE DONATOR]
 
+To compute random bonuses:
+	let N be 0;
+	follow the reset rule;
+	while N < 500 and points count > 0:
+		increase N by 1;
+		choose a random row in the Table of Benefit Options;
+		if diaper quest is 1, choose a random row in the Table of Diaper Quest Benefit Options;
+		if there is toggle entry and toggle entry is not quit rule and toggle entry is not reset rule and toggle entry is not spontaneous tattoos toggle rule and toggle entry is not combat visor toggle rule and (a random number between 1 and 3 is 1 or toggle entry is not bonus liquid toggle rule):
+			follow toggle entry;
+		otherwise if there is subtable entry:
+			if subtable entry is Table of Secret Options  or subtable entry is Table of Background Options:
+				choose a random row in subtable entry;
+				if there is toggle entry and toggle entry is not quit rule, follow toggle entry.
 
 The reset rules is a rulebook.
 
-[!<TheResetRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the reset rule:
 	follow the empty background rules;
 	follow the empty secret rules;
@@ -37,7 +47,7 @@ This is the reset rule:
 
 [!<SayMaxBreastsSizeDesc>+
 
-REQUIRES COMMENTING
+This is the max size that breasts can go to.
 
 +!]
 To say MaxBreastSizeDesc:
@@ -45,7 +55,7 @@ To say MaxBreastSizeDesc:
 
 [!<DecideWhichNumberIsMaxBellySizeModifier>+
 
-REQUIRES COMMENTING
+Used for calculating what the max belly size is. This is how much less than normal max it is.
 
 +!]
 To decide which number is max belly size modifier:
@@ -57,7 +67,7 @@ To decide which number is max belly size modifier:
 
 [!<DecideWhichNumberIsMaxBellySize>+
 
-REQUIRES COMMENTING
+Normal max is 10. We reduce by 3 per rank of max belly size points.
 
 +!]
 To decide which number is max belly size:
@@ -232,9 +242,10 @@ This is the spontaneous tattoos toggle rule:
 	if spontaneous tattoos is 0, now choice in row 36 of the Table of Player Options is 1;
 	otherwise now choice in row 36 of the Table of Player Options is 0.
 
-This is the spontaneous tattoos reset rule:
+[This doesn't cost points and the player will probably want to choose the same thing each time.]
+[This is the spontaneous tattoos reset rule:
 	now choice in row 36 of the Table of Player Options is 0.
-The spontaneous tattoos reset rule is listed in the reset rules.
+The spontaneous tattoos reset rule is listed in the reset rules.]
 
 [!<TheRoleplayFetishToggleRule>+
 
@@ -242,7 +253,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the roleplay fetish toggle rule:
-	if roleplay fetish is 0 and points count >= 6, now choice in row 47 of the Table of Player Options is 1;
+	if roleplay fetish is 0 and points count >= 1, now choice in row 47 of the Table of Player Options is 1;
 	otherwise now choice in row 47 of the Table of Player Options is 0.
 
 This is the roleplay fetish reset rule:
@@ -263,13 +274,18 @@ This is the bondage protection reset rule:
 The bondage protection reset rule is listed in the reset rules.
 
 To say bonus liquid cost:
-	if bonus liquid < max bonus liquid, say "Next increase costs [bonus liquid + 1] points"; 
-	if bonus liquid is max bonus liquid, say "You are at maximum bonus liquid". 
-This is the bonus liquid toggle rule: 
-	if bonus liquid < max bonus liquid and points count > bonus liquid, increase choice in row 63 of the Table of Player Options by 1. 
+	if bonus liquid < max bonus liquid, say "Next increase costs [bonus liquid + 1] points";
+	if bonus liquid is max bonus liquid, say "You are at maximum bonus liquid".
+This is the bonus liquid toggle rule:
+	if bonus liquid < max bonus liquid and points count > bonus liquid, increase choice in row 63 of the Table of Player Options by 1.
 This is the bonus liquid reset rule:
-	now choice in row 63 of the Table of Player Options is 0. 
+	now choice in row 63 of the Table of Player Options is 0.
 The bonus liquid reset rule is listed in the reset rules.
+
+
+This is the combat visor toggle rule:
+	if combatvisor is 0 and points count >= 1, now choice in row 76 of the Table of Player Options is 1;
+	otherwise now choice in row 76 of the Table of Player Options is 0.
 
 Benefit Options ends here.
 

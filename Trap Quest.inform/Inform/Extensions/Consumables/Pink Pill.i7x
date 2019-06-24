@@ -1,8 +1,15 @@
 Pink Pill by Consumables begins here.
 
+The pink pill is a thing. The printed name of pink pill is "[TQlink of item described]pink pill[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink pill is "pi". Understand "pp" as pink pill.
+To say ExamineDesc of (B - pink pill):
+	say "A small pink pill. You get the feeling it may help you out if you use it in a desperate time of need. It is virtually weightless.".
 
+Definition: pink pill is pink themed: decide yes.
 
-The pink pill is a thing. The description of pink pill is "A small pink pill. You get the feeling it may help you out if you use it in a desperate time of need. It is virtually weightless.". The printed name of pink pill is "[TQlink of item described]pink pill[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink pill is "pi". Understand "pp" as pink pill.
+Figure of pink pill is the file "Items/Collectibles/pill1.jpg".
+
+To decide which figure-name is the examine-image of (P - pink pill):
+	decide on the figure of pink pill.
 
 Check taking pink pill:
 	if the noun is carried by the player, try PinkEating the noun instead.
@@ -16,13 +23,13 @@ PinkEating is an action applying to one thing.
 Check PinkEating:
 	if the player is in Dungeon12 or the player is not virtual, say "For some reason, something inside of you is telling you that this would be a horrible idea." instead;
 Carry out PinkEating:
-	now seconds is 6;
+	allocate 6 seconds;
 	say "As you eat the pill, you feel yourself sucked through a portal. ";
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;
 	say " The scenery around you slightly changes, and you are now in [Dungeon12]!  ";
 	repeat with M running through things in the location of the player:
 		if M is grabbing the player or M is penetrating a body part:
-			unless M is disembodied:
+			if M is embodied:
 				if M is monster, say "[line break][BigNameDesc of M] loses [his of M] grip on you!";
 				if M is penetrating asshole:
 					now the player-reaction of the player is resisting;

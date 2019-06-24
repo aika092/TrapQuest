@@ -1,6 +1,6 @@
 Trainee Bra by Bra begins here.
 
-A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after][TQxlink of item described][verb-desc of item described]". A trainee bra has a number called train-charge.
+A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
 
 Figure of trainee bra is the file "Items/Clothes/Upper/Bras/traineebra1.png".
 
@@ -9,6 +9,11 @@ To decide which figure-name is clothing-image of (C - a trainee bra):
 
 To say ClothingDesc of (C - a trainee bra):
 	say "This silicone bra is outfitted with a pair of squishy pads, which mould flawlessly to accommodate your [BreastDesc]. Anyone looking at you would have to pay close attention to notice that the pads are making your bust seem a lot more impressive than it really is. Metal accents give the bra a futuristic high-tech appearance, and keep the straps in place with surprising security.".
+
+Definition: a trainee bra is grey themed: decide yes.
+Definition: a trainee bra is transformation-protected: decide yes.
+Definition: a trainee bra is whore themed: decide yes.
+Definition: a trainee bra is removable if it is not magnetized.
 
 A trainee bra is usually latex. The support of a trainee bra is usually -10. The min size of trainee bra is usually 20. The max size of trainee bra is usually 20. A trainee bra is usually top-exclusive.
 
@@ -21,8 +26,8 @@ To decide which number is the perceived-bimbo-influence of (C - a trainee bra):
 trainee bra removability rules is a rulebook. The removability rules of trainee bra is usually trainee bra removability rules.
 
 This is the magnetized trainee bra can't be removed rule:
-	if the noun is magnetized:
-		if summoning is 0, say "The magnetic latches keep the [printed name of the noun] all but immobile. You[']ll need to find a way to deactivate it if you want to get it off.";
+	if the wearing-target is magnetized:
+		if summoning is 0 and autoremove is false, say "The magnetic latches keep the [printed name of wearing-target] all but immobile. You[']ll need to find a way to deactivate it if you want to get it off.";
 		rule fails.
 The magnetized trainee bra can't be removed rule is listed in the trainee bra removability rules.
 

@@ -14,8 +14,7 @@ To determine items for (R - a recipe):
 	
 
 ['Appropriate' means the player has enabled the right fetishes in order to be allowed to find this recipe.]
-Definition: a recipe (called R) is appropriate:
-	decide yes.
+Definition: a recipe is appropriate: decide yes.
 
 ['Acceptable' means a recipe the player has access to the information of at this moment in time.]
 Definition: a recipe (called R) is acceptable:

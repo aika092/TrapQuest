@@ -2,10 +2,9 @@ Cultist Robe by Dresses begins here.
 
 A cultist robe is a kind of overdress. A cultist robe is knee-length. A cultist robe is sheer. A cultist robe is usually silk. There is 1 unique cultist robe.
 
-The printed name of cultist robe is usually "[TQlink of item described][clothing-title-before]cultist robe[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of cultist robe is "cro".
+The printed name of cultist robe is usually "[clothing-title-before]cultist robe[clothing-title-after]". The text-shortcut of cultist robe is "cro".
 
-Definition: a cultist robe (called C) is cult garb:
-	decide yes.
+Definition: a cultist robe is cult garb: decide yes.
 
 Figure of cultist robe is the file "Items/Clothes/Upper/Special/cultistrobe1.png".
 
@@ -21,9 +20,9 @@ To say ShortDesc of (C - a cultist robe):
 To compute SelfExamineDesc of (C - a cultist robe):
 	say "A sheer black robe loosely fits you.".
 
-Definition: a cultist robe (called C) is untransformable:
-	if the class of the player is cultist, decide yes;
-	decide no.
+Definition: a cultist robe is transformation-protected if the class of the player is cultist.
+Definition: a cultist robe is black themed: decide yes.
+Definition: a cultist robe is slitted: decide yes.
 
 Cultist Robe ends here.
 

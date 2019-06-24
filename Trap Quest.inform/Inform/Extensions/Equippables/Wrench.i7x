@@ -2,7 +2,7 @@ Wrench by Equippables begins here.
 
 A wrench is a kind of equippable. A wrench is unique. There are 5 wrenches. A wrench is usually slap ready. A wrench is usually metal.[ Figure of sword is the file "Items/Accessories/Equippables/sword1.png".]
 
-The printed name of wrench is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]wrench[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of wrench is "wrn".
+The printed name of wrench is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]wrench[clothing-title-after]". The text-shortcut of wrench is "wrn".
 
 [To decide which figure-name is clothing-image of (C - wrench):
 	decide on figure of sword.]
@@ -10,8 +10,7 @@ The printed name of wrench is "[TQlink of item described][item style][unless mag
 To say ClothingDesc of (S - a wrench):
 	say "An oversized steel wrench that you took from the mechanic.".
 
-Definition: a wrench is cursable:
-	decide no.
+Definition: a wrench is cursable: decide no.
 
 To say ShortDesc of (S - wrench):
 	say "wrench".
@@ -39,12 +38,11 @@ To say MonsterOfferAcceptFlav of (M - mechanic) to (T - a wrench):
 
 To compute resolution of (M - mechanic) taking (T - a wrench):
 	if the wrench-timer of M > 0:
-		increase the xavier-power of M by 1;
 		now the wrench-timer of M is -1;
 	say OfferThanksFlav of M for T.
 
 To say MonsterOfferAcceptFlav of (M - a demoness) to (T - a wrench):
-	say "[speech style of M]'[one of]I'll return to him, but how did YOU get it?'[or]How did you...Never mind. I'll return it to him.'[stopping][roman type]".
+	say "[speech style of M]'[one of]I'll return to him, but how did YOU get it?'[or]How did you... Never mind. I'll return it to him.'[stopping][roman type]".
 
 To say OfferThanksFlav of (M - a demoness) for (T - a wrench):
 	say "[if the class of the player is succubus]Our[otherwise]My[end if] master grows stronger.".
@@ -53,7 +51,6 @@ To compute resolution of (M - a demoness) taking (T - an infernal gem):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;
 	otherwise FavourUp M by (the bartering value of T for M) / 2;
 	if the wrench-timer of mechanic > 0:
-		increase the xavier-power of mechanic by 1;
 		now the wrench-timer of mechanic is -1;
 	say OfferThanksFlav of M for T;
 	compute offer reward of M for T;

@@ -2,7 +2,10 @@ Stuffed Mushroom by Food begins here.
 
 
 
-A stuffed mushroom is a kind of chef food. There is 1 stuffed mushroom. The printed name of a stuffed mushroom is "[TQlink of item described]stuffed mushroom[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a stuffed mushroom is "[TQlink of item described]stuffed mushrooms[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of stuffed mushroom is usually "sm". The description of a stuffed mushroom is "A large mushroom [if the quality of the noun > -1]stuffed with tasty ingredients. It smells so good.[otherwise if diaper quest is 1]stuffed with tasty ingredients. It has a really sharp odour.[otherwise if the quality of the noun is -1]stuffed with tasty ingredients. It has a really sharp odour. Like someone came on it.[otherwise]cooked and glazed with 100% pure [semen].[end if]".
+A stuffed mushroom is a kind of chef food. There is 1 stuffed mushroom. The printed name of a stuffed mushroom is "[TQlink of item described]stuffed mushroom[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a stuffed mushroom is "[TQlink of item described]stuffed mushrooms[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of stuffed mushroom is usually "sm".
+
+To say ExamineDesc of (C - a stuffed mushroom):
+	say "A large mushroom [if the quality of C > -1]stuffed with tasty ingredients. It smells so good.[otherwise if diaper quest is 1]stuffed with tasty ingredients. It has a really sharp odour.[otherwise if the quality of C is -1]stuffed with tasty ingredients. It has a really sharp odour. Like someone came on it.[otherwise]cooked and glazed with 100% pure [semen].[end if]".
 
 To say ShortDesc of (C - a stuffed mushroom):
 	say "stuffed mushroom".
@@ -26,20 +29,17 @@ Carry out TQeating stuffed mushroom:
 		BodyHeal the fat of the noun;
 		Humiliate 40 - the semen taste addiction of the player;
 		StomachSemenUp 2;
-		StomachFoodUp 2;
 	otherwise if a random number between 3 and the quality of the noun is 3:
 		say "You feel way healthier after such a filling meal, albeit pretty lethargic.";
 		DexDown 1;
 	otherwise:
 		say "You feel a lot healthier after such a filling meal, but you feel pretty weighed down too. Really, really weighed down.";
 		BustUp the fat of the noun;
-		if weight gain fetish is 1:
-			FatAssUp the fat of the noun;
-		otherwise:
-			HipUp the fat of the noun;
+		AssSwell the fat of the noun;
+	StomachFoodUp 2;
 	BodyHeal the fat of the noun;
 	increase the fat of the noun by 2;[relevant for the report eating function.]
-	now seconds is 6.
+	allocate 6 seconds.
 
 
 Stuffed Mushroom ends here.

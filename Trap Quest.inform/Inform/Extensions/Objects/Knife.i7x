@@ -1,10 +1,23 @@
 Knife by Objects begins here.
 
 
-A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. The description of knife is "A large sharp butcher's knife chained to the worktop. You can't take it away with you but you might be able to use it to destroy some items of clothing you don't like wearing.". A knife has a number called charge.
+A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. A knife has a number called charge.
 
-Definition: A knife (called I) is immune to change:
-	decide yes.
+Figure of knife is the file "Env/Hotel/knife1.png".
+
+To decide which figure-name is the examine-image of (K - a knife):
+	decide on figure of knife.
+
+To say ExamineDesc of (C - a knife):
+	say "A large sharp kitchen knife chained to the worktop. You can't take it away with you but you might be able to use it to destroy some items of clothing you don't like wearing.".
+
+Definition: A knife is immune to change: decide yes.
+
+Check going when there is a knife in the location of the player:
+	force clothing-focus redraw. [This forces the clothing window to redraw]
+
+Report going when there is a knife in the location of the player:
+	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 This is the knife charge decay rule:
 	repeat with K running through knife:
@@ -17,8 +30,8 @@ Knifing it with is an action applying to two things.
 Check knifing:
 	if the second noun is not knife and (the second noun is not sword or the second noun is not metal) and the second noun is not midnight tanto, say "How would you cut anything with that?" instead;
 	if the second noun is knife:
-		if the player is not able to manually use manual dexterity, do nothing instead;
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
+		if the player is not able to manually use manual dexterity, do nothing instead;
 		if the noun is hair:
 			if the largeness of hair <= favourite hair length, say "[variable custom style][if the bimbo of the player < 10]I feel comfortable with[otherwise if the bimbo of the player < 15]I like[otherwise]I LOVE[end if] my hair being this length.[roman type][line break]" instead;
 		otherwise if the noun is worn clothing:
@@ -31,8 +44,10 @@ Check knifing:
 		if the noun is monster, try slapping the noun instead;
 		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!";
 		if the noun is not vines and the noun is not ass hook, say "How would you cut that?".
+
 Carry out knifing:
-	now seconds is 6;
+	allocate 6 seconds;
+	force clothing-focus redraw; [This forces the clothing window to redraw]
 	if the noun is hair:
 		say "You use the knife to cut your [ShortDesc of hair] to your favourite length.";
 		while the largeness of hair > favourite hair length:
@@ -41,6 +56,7 @@ Carry out knifing:
 			otherwise:
 				decrease the raw largeness of hair by 1;
 		say "You now have [ShortDesc of hair].";
+		now the charge of the second noun is 500;
 	otherwise if the noun is ass hook:
 		let S be the dexterity of the player;
 		if S < 9, now S is 9;
@@ -78,13 +94,13 @@ Carry out knifing:
 			say "The knife seems to be completely dull at the moment!  You give up.";
 		otherwise:
 			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter!  It is completely destroyed!  The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
-			now the charge of the second noun is 300;
+			now the charge of the second noun is 500;
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]
 Report knifing:
 	let M be a random friendly robochef in the location of the player;
 	if M is a monster:
-		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED.....PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED!  RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
+		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED!  RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
 		anger M;
 		now M is interested;
 		now the boredom of M is 0.

@@ -1,6 +1,6 @@
 Platform Heels by Shoes begins here.
 
-A platform heels is a kind of heels.  The printed name of platform heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch platform heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of platform heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch platform heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of platform heels is "phe".
+A platform heels is a kind of heels.  The printed name of platform heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch platform heels[clothing-title-after]".  The printed plural name of platform heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch platform heels[clothing-title-after]".  The text-shortcut of platform heels is "phe".
 
 There is 1 leather platform heels. There is 1 latex platform heels. There is 1 pvc platform heels.
 
@@ -23,7 +23,7 @@ To say UniqueShortDesc of (C - a platform heels):
 	say "platform heels".
 
 To say ClothingDesc of (C - a platform heels):
-	say "A [if the heel-height of C is 9]unique yellow [otherwise if the heel-height of C is 10]unique red [end if]pair of [heel-height of C] inch [if C is latex]black latex[otherwise if C is leather]black leather[otherwise if C is pvc and the heel-height of C < 9]red PVC[end if] platform shoes with strong chunky heels and platforms.";
+	say "A [if the heel-height of C is 9]unique yellow [otherwise if the heel-height of C is 10]unique red [end if]pair of [heel-height of C] inch [if C is latex]black latex[otherwise if C is leather]black leather[otherwise if C is pvc and the heel-height of C < 9]red PVC[end if] platform shoes with strong chunky heels and platforms[if C is latex] made out of cork[end if].";
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a platform heels):
@@ -46,9 +46,9 @@ To decide which object is the potential-upgrade-target of (C - a platform heels)
 	if the heel-height of C >= 6 and C is plentiful, decide on a random off-stage tall platform heels;
 	decide on nothing.
 
-Definition: a platform heels (called C) is untransformable:
-	if the class of the player is silicone queen, decide yes;
-	decide no.
+Definition: a platform heels is disintegration-protected if the class of the player is silicone queen.
+Definition: a platform heels is red themed if it is pvc.
+Definition: a platform heels is black themed if it is not pvc.
 
 
 Platform Heels ends here.

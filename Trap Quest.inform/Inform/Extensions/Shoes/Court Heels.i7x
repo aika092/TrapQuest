@@ -1,8 +1,8 @@
 Court Heels by Shoes begins here.
 
-A court heels is a kind of stiletto heels.  The printed name of court heels is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of court heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of court heels is "che".
+A court heels is a kind of stiletto heels.  The printed name of court heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after]".  The printed plural name of court heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch court heels[clothing-title-after]".  The text-shortcut of court heels is "che".
 
-There is 1 satin court heels. There is 1 leather court heels. There is 1 pvc court heels. There is 1 glass court heels. 
+There is 1 satin court heels. There is 1 leather court heels. There is 1 pvc court heels. There is 1 glass court heels.
 
 To decide which figure-name is the clothing-image of (H - a court heels):
 	if H is glass, decide on figure of glass court heels;
@@ -17,6 +17,10 @@ Figure of pvc court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/cour
 
 To decide which number is the unique outrage of (C - a court heels):
 	decide on -1.
+
+Definition: a court heels is pink themed if it is pvc.
+Definition: a court heels is red themed if it is leather.
+Definition: a court heels is black themed if it is satin.
 
 To say UniqueShortDesc of (C - a court heels):
 	say "court heels".

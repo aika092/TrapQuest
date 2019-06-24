@@ -1,6 +1,6 @@
 Condom of Kings by Clothing begins here.
 
-A condom of kings is a kind of clothing. A condom of kings is usually unique. A condom of kings is usually latex. A condom of kings can be creamfilled. A condom of kings is usually not creamfilled. There is 1 condom of kings. The printed name of condom of kings is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][if item described is creamfilled]cum filled [end if][raw-magic-modifier-desc]condom of kings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of condom of kings is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]condoms of kings[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom of kings is "cok".
+A condom of kings is a kind of clothing. A condom of kings is usually unique. A condom of kings is usually latex. A condom of kings can be creamfilled. A condom of kings is usually not creamfilled. There is 1 condom of kings. The printed name of condom of kings is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][if item described is creamfilled]cum filled [end if][raw-magic-modifier-desc]condom of kings[clothing-title-after]". The printed plural name of condom of kings is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]condoms of kings[clothing-title-after]". The text-shortcut of condom of kings is "cok".
 
 To say ClothingDesc of (C - a condom of kings):
 	if C is worn and C is cursed:[Cursed, but not worn condoms look different.]
@@ -8,14 +8,12 @@ To say ClothingDesc of (C - a condom of kings):
 	otherwise:
 		say "This condom has a royal seal printed towards the head. [if C is worn]A strange magic is preventing your [ShortDesc of penis] from ever going soft, although the rubbery material is too thick for you to feel anything from dominant sex. Your manly erection makes you feel like a king![otherwise]The material looks much too thick for you to feel anything through it, so there wouldn[']t be a point to having sex with it on. Only a king would bother with a sword that never leaves its sheath.[end if]". [since you'll be embarrassed wearing a condom of kings and nothing else, I figure it's fine to have it keep your player erect.]
 
-Definition: a condom of kings (called C) is product:
-	decide yes.
+Definition: a condom of kings is product: decide yes.
 
 To decide which number is the alchemy key of (C - a condom of kings):
 	decide on 13.
 
-Definition: a condom of kings (called C) is recipe specific:
-	decide yes.
+Definition: a condom of kings is recipe specific: decide yes.
 
 To set up magic state of (C - a condom of kings):
 	do nothing.
@@ -74,8 +72,7 @@ To compute periodic effect of (C - a condom of kings):
 		if a random number between -250 and 13 > the size of penis and the size of penis < 10:
 			PenisUp 1.
 
-Definition: a condom of kings (called C) is stealable:
-	decide no.
+Definition: a condom of kings is stealable: decide no.
 
 Condom of Kings ends here.
 

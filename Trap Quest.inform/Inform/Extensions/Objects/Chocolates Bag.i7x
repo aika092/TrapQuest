@@ -1,6 +1,10 @@
 Chocolates Bag by Objects begins here.
 
-chocolates bag is a thing. chocolates bag is not portable. The printed name of chocolates bag is "[TQlink of item described]chocolates bag[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolates bag is "chb". The description of chocolates bag is "Several pink dog bowls, secured to the floor. You feel that nothing good is likely to come of eating from any of them.".
+chocolates bag is a thing. chocolates bag is not portable. The printed name of chocolates bag is "[TQlink of item described]chocolates bag[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolates bag is "chb".
+To say ExamineDesc of (C - chocolates bag):
+	say "A bag full of chocolates.".
+To decide which figure-name is the examine-image of (C - chocolates bag):
+	decide on figure of chocolates bag.
 
 Check TQEating chocolates bag:
 	say "It's tightly tied shut and you can't open it!" instead.
@@ -8,16 +12,16 @@ Check TQEating chocolates bag:
 Check taking chocolates bag:
 	say "It's tightly tied shut and you can't open it!  It also seems to be completely immobile, as if it's been glued to the floor!" instead.
 
-Definition: chocolates bag (called F) is TQEdible:
-	decide yes.
+Definition: chocolates bag is TQEdible:	decide yes.
 
 chocolate-announced is a number that varies.
 
+Figure of chocolates bag is the file "Env/MultiFloor/DQChocolates1.png".
 Figure of chocolates cutscene 1 is the file "Special/Cutscene/DQChocolates1.png".
 Figure of chocolates cutscene 2 is the file "Special/Cutscene/DQChocolates2.png".
 
 A time based rule (this is the chocolates stalking rule):
-	if diaper quest is 1 and the player is in a region:
+	if christmas content is 1:
 		while chocolates bag is not regional:
 			now chocolates bag is in a random placed room;
 			if debugmode is 1, say "now chocolates bag is in [location of chocolates bag].";
@@ -26,10 +30,9 @@ A time based rule (this is the chocolates stalking rule):
 			if chocolate-announced is 0:
 				say "The [chocolates bag] on the ground suddenly springs into the air as if by magic!  ";
 				now chocolate-announced is 1;
-				if image cutscenes is 1:
-					if there is worn messed knickers, display figure of chocolates cutscene 2;
-					otherwise display figure of chocolates cutscene 1;
-			say "Several chocolate buttons soar out of the bag and fly directly into your mouth!  You [one of]are forced to quickly chomp and swallow them all down to prevent yourself from choking![or]gulp them all down obediently.[stopping]";
+				if there is worn perceived messed knickers, cutshow figure of chocolates cutscene 2 for chocolates bag;
+				otherwise cutshow figure of chocolates cutscene 1 for chocolates bag;
+			say "Several chocolate buttons soar out of the bag and fly directly into your mouth! You [one of]are forced to quickly chomp and swallow them all down to prevent yourself from choking![or]gulp them all down obediently.[stopping]";
 			StomachFoodUp 2;
 		otherwise if chocolate-announced is 1:
 			if chocolates bag is in the location of the player:

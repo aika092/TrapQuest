@@ -1,12 +1,25 @@
 Creme Egg by Food begins here.
 
 
-A creme egg is a kind of candy. The printed name of creme egg is "[TQlink of item described]creme egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of creme egg is "[TQlink of item described]creme eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of creme egg is "ce". The description of creme egg is "A small chocolate egg, still in its wrapper. A mystery filling awaits inside.". There are 2 creme eggs.
+A creme egg is a kind of candy. The printed name of creme egg is "[TQlink of item described]creme egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of creme egg is "[TQlink of item described]creme eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of creme egg is "ce". There are 2 creme eggs.
+To say ExamineDesc of (C - a creme egg):
+	say "A small chocolate egg, still in its wrapper. A mystery filling awaits inside.".
 
-A golden creme egg is a kind of creme egg. There is 1 golden creme egg. The printed name of golden creme egg is "[TQlink of item described]golden creme egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden creme egg is "gce". The description of golden creme egg is "A small chocolate egg with a mystery filling, still in its wrapper. Its golden wrapping indicates that it's of a higher quality than usual.".
+Figure of creme egg is the file "Items/Collectibles/creme1.jpg".
+Figure of golden creme egg is the file "Items/Collectibles/creme2.jpg".
 
-Definition: a golden creme egg (called C) is top tier:
-	decide yes.
+To decide which figure-name is the examine-image of (F - creme egg):
+	decide on figure of creme egg.
+
+
+A golden creme egg is a kind of creme egg. There is 1 golden creme egg. The printed name of golden creme egg is "[TQlink of item described]golden creme egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden creme egg is "gce".
+To say ExamineDesc of (C - a golden creme egg):
+	say "A small chocolate egg with a mystery filling, still in its wrapper. Its golden wrapping indicates that it's of a higher quality than usual.".
+
+Definition: a golden creme egg is top tier: decide yes.
+
+To decide which figure-name is the examine-image of (F - a golden creme egg):
+	decide on figure of golden creme egg.
 
 creme-egg-timer is a number that varies.
 
@@ -21,9 +34,9 @@ To say DevourFlav of (C - a creme egg):
 
 Carry out TQeating creme egg:
 	say "[DevourFlav of the noun] As your tongue hits the centre, you ";
-	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper lover < 3):
+	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper messing < 3):
 		if diaper quest is 1 or (diaper lover > 0 and a random number between 1 and 2 is 1):
-			if diaper lover >= 4 and a random number between 1 and 3 > 1:
+			if diaper messing >= 4 and a random number between 1 and 3 > 1:
 				say "taste something extremely sour. [line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";
 				increase suppository by 1;
 			otherwise:

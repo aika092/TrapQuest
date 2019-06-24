@@ -21,18 +21,19 @@ To explain appearance:
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the appearance of the player: [When an NPC looks at the player, how slutty do they look?]
+To decide which number is the appearance of the player: [Update values first]
+	potentially update appearance and cringe levels;
+	decide on the saved appearance of the player.
+
+To decide which number is the saved appearance of the player: [When an NPC looks at the player, how slutty do they look?]
 	let A be 0;
 	increase A by (the number of live things penetrating a body part * 3);
 	if appearance-explained is 1, say "After sex status, outrage is [A]; ";
-	increase A by alcohol-level;
-	if appearance-explained is 1, say "After alcohol, outrage is [A]; ";
-	increase A by cumulative-outrage-level;
+	increase A by calculated-cumulative-outrage-level;
 	if appearance-explained is 1, say "After clothing & nudity, outrage is [A]; ";
 	repeat with C running through worn wearthings:
 		if C is currently visible:
 			increase A by the perceived-bimbo-influence of C;
-			[if diaper quest is 1 and C is knickers and C is not diaper and asshole is not lewdly exposed, increase A by 3; [Dignified people don't have their underwear visible]]
 	if appearance-explained is 1, say "After magic clothing effects, outrage is [A].";
 	if A < 0, decide on 0;
 	if A > 20, decide on 20;
@@ -44,7 +45,7 @@ To decide which number is the appearance of the player: [When an NPC looks at th
 REQUIRES COMMENTING
 
 *!]
-outrage-target is a thing that varies. 
+outrage-target is a thing that varies.
 
 
 [!<DecideWhichNumberIsCumulativeOutrageLevel>+
@@ -53,19 +54,22 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is cumulative-outrage-level:
-	let A be appearance-outrage-level;
-	let A2 be (A * 2) / 3;
-	let O be A2;
+	let A be calculated-appearance-outrage-level; [Outrage of the lewdest worn thing / exposed body part]
+	let A2 be A / 2;
+	let A3 be A - A2;
+	let N be 0;
+	let maxSimilarItems be 4;
 	repeat with C running through worn currently at least partially visible wearthings:
-		if the outrage of C > A2, increase O by 1;
+		if the outrage of C >= A2, increase N by 1;
 	repeat with C running through body parts:
-		if the outrage of C > A2, increase O by 1;
-	if O > A:
-		if appearance-explained is 1, say "(cumulative outrage level is [A]) ";
-		decide on A; [wearing twenty outrage 2 items shouldn't be outrage 20 overall]
-	if appearance-explained is 1, say "(cumulative outrage level is [O]) ";
-	if O > 20, decide on 20;
-	decide on O.
+		if the outrage of C >= A2, increase N by 1;
+	if N > maxSimilarItems, now N is maxSimilarItems;
+	decrease A by (A3 * (maxSimilarItems - N)) / maxSimilarItems; [The more items there are within 50% of A, the less we subtract from A. And if there are lots of lewd items within 50% of A, appearance hits its max value for this item, i.e. its raw outrage rating.]
+	if appearance-explained is 1, say "(cumulative outrage level is [A]) ";
+	if A > 20, decide on 20;
+	decide on A.
+
+calculated-cumulative-outrage-level is a number that varies.
 
 
 [!<appearanceOutrageTarget:Thing>*
@@ -73,7 +77,7 @@ To decide which number is cumulative-outrage-level:
 REQUIRES COMMENTING
 
 *!]
-appearance-outrage-target is a thing that varies. 
+appearance-outrage-target is a thing that varies.
 
 [!<DecideWhichNumberIsAppearanceOutrageLevel>+
 
@@ -98,9 +102,64 @@ To decide which number is appearance-outrage-level:
 
 calculated-appearance-outrage-level is a number that varies.
 
+The appearance needs updating rules is a rulebook.
+The appearance validation check update rules is a rulebook.
+
+
+previous-items-worn is a list of things that varies.
+An appearance needs updating rule (this is the previous items worn check rule):
+	let L be the list of worn wearthings;
+	let LN be the number of entries in L;
+	if LN is not the number of entries in previous-items-worn, rule succeeds;
+	repeat with N running from 1 to LN:
+		if entry N of L is not entry N of previous-items-worn, rule succeeds.
+An appearance validation check update rule (this is the previous items worn update rule):
+	now previous-items-worn is the list of worn wearthings.
+
+previous-items-displaced is a number that varies.
+An appearance needs updating rule (this is the displaced items worn check rule):
+	if the number of worn crotch-displaced clothing + the number of worn top-displaced clothing + the number of worn crotch-ripped clothing + the number of worn crotch-unzipped clothing is not previous-items-displaced, rule succeeds.
+An appearance validation check update rule (this is the displaced items worn update rule):
+	now previous-items-displaced is the number of worn crotch-displaced clothing + the number of worn top-displaced clothing + the number of worn crotch-ripped clothing + the number of worn crotch-unzipped clothing.
+
+previous-body-parts-glazed is a number that varies.
+An appearance needs updating rule (this is the glazed body parts check rule):
+	if diaper quest is 0 and the number of glazed body parts is not previous-body-parts-glazed, rule succeeds.
+An appearance validation check update rule (this is the glazed body parts update rule):
+	now previous-body-parts-glazed is the number of glazed body parts.
+
+previous-clothing-glazed is a number that varies.
+An appearance needs updating rule (this is the glazed clothing check rule):
+	if diaper quest is 0 and the number of dirty clothing is not previous-clothing-glazed, rule succeeds.
+An appearance validation check update rule (this is the glazed clothing update rule):
+	now previous-clothing-glazed is the number of dirty clothing.
+
+previous-stance is a number that varies.
+An appearance needs updating rule (this is the stance changed check rule):
+	if the stance of the player is not previous-stance:
+		now previous-stance is the stance of the player;
+		rule succeeds.
+
+
+[This behaviour is designed to minimise CPU cycles as best as possible.]
+To potentially update appearance and cringe levels:
+	follow the appearance needs updating rules;
+	if the rule succeeded:
+		update appearance level;
+		follow the appearance validation check update rules. [Update the values for items worn etc.]
+An advance counters rule (this is the update appearance and cringe rule):
+	potentially update appearance and cringe levels.
+
+
 To update appearance level:
 	now calculated-appearance-outrage-level is appearance-outrage-level;
-	if diaper quest is 1, now calculated-cringe-level is appearance-cringe-level.
+	now calculated-cumulative-outrage-level is cumulative-outrage-level;
+	update cringe level.
+
+To update cringe level:
+	if diaper quest is 1:
+		now calculated-cringe-level is appearance-cringe-level;
+		now calculated-cumulative-cringe-level is cumulative-cringe-level.
 
 
 Appearance ends here.

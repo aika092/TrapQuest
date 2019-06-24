@@ -144,6 +144,7 @@ REQUIRES COMMENTING
 +!]
 To destroy (I - a trap):
 	now the reset-timer of I is 0;
+	now the TrapNo of I is 0;
 	now I is not expired;
 	now I is untriggered;
 	now I is not triggered;
@@ -158,8 +159,8 @@ REQUIRES COMMENTING
 
 +!]
 To print the you can't go message:
-	(- L__M(##Go, 2, 0); -).
-	[say "You can't go that way.".]
+	[(- L__M(##Go, 2, 0) -).]
+	say "You can't go that way.".
 
 [!<PrintTheYouCannotSeeMessage>+
 
@@ -167,8 +168,8 @@ REQUIRES COMMENTING
 
 +!]
 To print the you can't see message:
-	(- L__M(##Miscellany, 30, 0); -).
-	[say "There doesn't seem to be any such thing.".]
+	[(- L__M(##Miscellany, 30, 0) -).]
+	say "There doesn't seem to be any such thing.".
 
 [!<Trap>@<isRevealed:Boolean>*
 
@@ -303,6 +304,18 @@ Definition: a room is pressure untrapped:
 	if it is pressure trapped, decide no;
 	decide yes.
 
+To say TriggeredTrapReactFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]smirks[or]harrumphs[or]chuckles[or]clicks [his of M] tongue[at random].[line break][speech style of M]'[one of]I didn't see that coming[or]Trust you to fall for that[or]Whoopsie[or]Mind yourself[or]That was clumsy of you[or]How unfortunate[or]Watch yourself around here[or]You've got to be more careful than that[or]That sort of thing will keep happening if you're not careful[in random order].'[roman type][line break]".
+To say HarshTrapReactFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]gasps[or][if M is human]puts [his of M] hand in front of [his of M] mouth[otherwise]looks shocked[end if][or][if M is human]raises [his of M] eyebrows[otherwise][end if][at random].[line break][speech style of M]'[one of]Really now[or]Idiot[or]You've got to be more careful than that[or]That was rather predicable[in random order].'[roman type][line break]".
+To say NastyTrapReactFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]makes a disgusted sound[or]almost chokes in surprise[or]grimaces[at random].[line break][speech style of M]'[one of]Yuck.'[or]How could you let that happen to you? Do you have no shame?'[or]Oh my lord! What a disgrace.'[in random order][roman type][line break]".
+To say LewdTrapReactFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]widens [his of M] eyes[or][if M is human]puts [his of M] hand in front of [his of M] mouth[otherwise]looks surprised[end if][or][if M is human]raises [his of M] eyebrows[otherwise][end if][at random].[line break][speech style of M]'[one of]I didn't know you were into things like that.'[or]Are you really doing what it looks like you're doing?!'[or][if diaper quest is 0]Slut[otherwise]What a silly baby[end if].'[or]That's a pretty outrageous thing to be caught doing, you know.'[or]Do my eyes deceive me, or are you...?!'[in random order][roman type][line break]";
+	moderateHumiliate;
+	FavourDown M with consequences.
+
+
 
 Part 1 Grabby Traps
 
@@ -316,7 +329,9 @@ REQUIRES COMMENTING
 @inherits <Trap>
 
 @!]
-A grabby trap is a kind of trap. A grabby trap is usually potentially wire. The text-shortcut of a grabby trap is "ha". [There are 10 grabby traps.] The printed name of a grabby trap is "[TQlink of item described]clammy hand[TQxlink of item described][verb-desc of item described]". The description of a grabby trap is "A hand sticking out of the floor, holding your ankle. You'll have to wrench yourself out of its grip!".
+A grabby trap is a kind of trap. A grabby trap is usually potentially wire. The text-shortcut of a grabby trap is "ha". [There are 10 grabby traps.] The printed name of a grabby trap is "[TQlink of item described]clammy hand[TQxlink of item described][verb-desc of item described]".
+To say ExamineDesc of (C - a grabby trap):
+	say "A hand sticking out of the floor, holding your ankle. You'll have to wrench yourself out of its grip!".
 
 [!<TheSpawnInitialGrabbyTrapsRule>+
 
@@ -347,31 +362,6 @@ To trigger (Y - a grabby trap):
 
 
 
-Include Dildo Pole Trap by Traps.
-Include Bukkake Traps by Traps.
-Include Makeup Pad Trap by Traps.
-Include Ass Hook Trap by Traps.
-Include Wooden Horse Traps by Traps.
-Include Rocking Horse Trap by Traps.
-Include Slingshot Trap by Traps.
-Include Pink Smoke Pad Trap by Traps.
-Include Needle Trap by Traps.
-Include Paddle Trap by Traps.
-Include Summoning Trap by Traps.
-Include Sprinkle Trap by Traps.
-Include Hypno Traps by Traps.
-Include Tripwire Trap by Traps.
-Include Camera Trap by Traps.
-Include Magic Dust Trap by Traps.
-Include Vines by Traps.
-Include Baby Bouncer by Traps.
-Include Discombobulator Laser Trap by Traps.
-Include Haunted Mirror Trap by Traps.
-Include Iron Maiden Trap by Traps.
-Include Glue Trap by Traps.
-Include Hole In Wall Trap by Traps.
-
-Include Throne by Objects.
 
 Trap Framework ends here.
 

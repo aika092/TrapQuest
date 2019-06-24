@@ -31,7 +31,7 @@ This is the addicts refuse to drink other liquids rule:
 The addicts refuse to drink other liquids rule is listed last in the global drinkability rules.
 
 This is the just use your mouth to drink rule:
-	if drinking-target is carried and the player is not able to use their hands:
+	if drinking-target is carried and (the player is not able to use their hands or the player is wrist bound behind):
 		if autodrink is 0, say "Since you don't have the use of your hands, you're going to have to put that on the ground[if the player is upright] and kneel down[end if] if you want to drink it.";
 		rule fails.
 The just use your mouth to drink rule is listed in the global drinkability rules.
@@ -48,7 +48,7 @@ This is the bottles can't be drunk while inside you rule:
 		rule fails.
 The bottles can't be drunk while inside you rule is listed in the global drinkability rules.
 
-Check drinking squeezy bottle when the semen taste addiction of the player is 20 or the player is desperately craving or the urine taste addiction of the player > 15:
+Check drinking squeezy-bottle when the semen taste addiction of the player is 20 or the player is desperately craving or the urine taste addiction of the player > 15:
 	if the thirst of the player is 5:
 		say "[variable custom style]I guess I should drink something to stop myself fainting...[roman type][line break]";
 	otherwise:
@@ -70,37 +70,30 @@ Understand "suck [something]", "suck on [something]", "gulp [something]", "gulp 
 
 Check drinking a bottle:
 	if the noun is not actually drinkable, do nothing instead;
-	if the noun is not held and the player is upright:
-		if the player is able to use their hands:
+	if the noun is not held:
+		if the player is prone or (the player is able to use their hands and the player is not wrist bound behind):
 			try taking the noun;
 			if the noun is held:
 				compute extra turn;
 				if the player is in danger, say "[bold type]You are in danger, so you stop.[roman type][line break]" instead;
 		otherwise:
 			say "You're going to have to kneel down if you want to drink that." instead;
-	if the player is overly full and the stomach-water of the player > 2:
-		say "You are already feeling very full. Are you sure you want to force even more down (you will have a significantly reduced chance of gaining positive effects)? [yesnolink] ";
-		unless the player consents, do nothing instead.
+	if the noun is not held, do nothing instead; [We need to double check that the player still has the drink. The Drink Me Tattoo, for example, could cause it to have already been consumed during the above 'compute extra turn' function.]
+	if autodrink is 0 and the player is overly full and the stomach-water of the player > 2:
+		say "You are already feeling very full. Are you sure you want to force even more down (you will have a significantly reduced chance of gaining positive effects)? ";
+		unless the player is bimbo consenting, do nothing instead.
 
 Carry out drinking a bottle when the player is prone:
 	if the noun is not held, say "You bend forward and grab the [noun] with your teeth.".
 
-Definition: an object (called A) is drinkable:
-	decide no.
-Definition: a bottle (called A) is drinkable:
-	decide yes.
-Definition: DungeonScenery01 (called A) is drinkable:
-	decide yes.
-Definition: DungeonScenery03 (called A) is drinkable:
-	decide yes.
-Definition: WoodsScenery01 (called A) is drinkable:
-	decide yes.
-Definition: lubricant (called A) is drinkable:
-	decide yes.
-Definition: cock pacifier (called A) is drinkable:
-	decide yes.
-Definition: pedestal (called A) is drinkable:
-	decide yes.
+Definition: an object is drinkable: decide no.
+Definition: a bottle is drinkable: decide yes.
+Definition: DungeonScenery01 is drinkable: decide yes.
+Definition: water-body is drinkable: decide yes.
+Definition: water-body-scenery is drinkable: decide yes.
+Definition: lubricant is drinkable: decide yes.
+Definition: cock pacifier is drinkable: decide yes.
+Definition: pedestal is drinkable: decide yes.
 
 Definition: yourself (called Y) is able to drink:
 	if the latex-transformation of the player > 4:
@@ -115,17 +108,17 @@ Definition: yourself (called Y) is able to drink:
 			decide no;
 	if face is actually occupied:
 		let T be a random thing penetrating face;
-		if T is cock pacifier:
+		if T is cursed cock pacifier:
 			unless the drinking-target is cock pacifier:
 				if autodrink is 0, say "The cock pacifier is so tightly connected to your face that there's no way you can drink anything else with it on!";
 				decide no;
-		otherwise if T is ballgag and drinking-target is held bottle:
+		otherwise if T is cursed ballgag and drinking-target is held bottle:
 			if T is baby pacifier or (autodrink is 0 and (artificial enhancements fetish is 0 and a random number between 1 and 3 > 1) or (artificial enhancements fetish is 1 and a random number between the lips of face and 5 > 2)):[3 > 2!]
 				if autodrink is 0, say "You manage to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T].";
 			otherwise if autodrink is 0:
 				if the doses of drinking-target is 1:
-					say "You try to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T], but you don't manage it!  The liquid drips down your chin to the ground.";
-					decrease the doses of drinking-target by 1;
+					say "You try to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T], but you don't manage it! The liquid drips down your chin to the ground.";
+					DoseDown drinking-target;
 					if drinking-target is can:
 						say "You discard the empty can.";
 						destroy drinking-target;
@@ -134,14 +127,14 @@ Definition: yourself (called Y) is able to drink:
 						say "The [ShortDesc of drinking-target] is now empty.";
 						decide no;
 				otherwise:
-					decrease the doses of drinking-target by 1;
+					DoseDown drinking-target;
 					say "You try to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T], but you don't manage it!  The liquid drips down your chin to the ground.";
 					decide no;
 		otherwise:
 			if autodrink is 0, say "The [T] is preventing you from doing that!";
 			decide no;
 	decide yes.
-		
+
 
 Check drinking:
 	now drinking-target is the noun;
@@ -152,34 +145,29 @@ Check drinking:
 
 Check drinking a dispenser:
 	say "You can't reach!" instead.
-	
+
 Check drinking a monster:
-	try drink requesting instead.
-	
+	try drink requesting the noun instead.
+
 Check drinking an alchemy product:
 	try quaffing the noun instead.
 
-Check drinking DungeonScenery03:
+Check drinking water-body-scenery:
+	try drinking water-body instead.
+
+Check drinking water-body:
 	if a random lake monster is in the location of the player, say "You don't dare go near the tentacle monster." instead;
-	say "You try tasting it. Ugh, it tastes horrible!  That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
-	
-Carry out drinking DungeonScenery03:
+	allocate 2 seconds;
+	say "You try tasting it. Ugh, it tastes horrible! That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
+
+Carry out drinking water-body:
 	say "You place your lips in the water and sip. It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
-	now seconds is 6;
-	StomachUp 2;
-	if the stomach-water of the player < 0, now the stomach-water of the player is 0.
-	
-Check drinking WoodsScenery01:
-	say "You try tasting it. Ugh, it tastes horrible!  That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
-	
-Carry out drinking WoodsScenery01:
-	say "You place your lips in the water and sip. It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
-	now seconds is 6;
+	allocate 6 seconds;
 	StomachUp 2;
 	if the stomach-water of the player < 0, now the stomach-water of the player is 0.
 
 Carry out drinking a vessel:
-	now seconds is 6;
+	allocate 6 seconds;
 	if the noun is a squirt dildo:
 		say "You put the dildo in your mouth and squeeze. You gulp down the liquid that comes out.";
 		humiliate 50;
@@ -187,7 +175,7 @@ Carry out drinking a vessel:
 		say "You put the bottle in your mouth and suck. You gulp down the liquid as it comes out.";
 		humiliate 40;
 	compute drinking the noun;
-	decrease the doses of the noun by 1;
+	DoseDown the noun;
 	if the doses of the noun is 0, say "[line break]The [noun] is now empty.";
 	StomachUp 2.
 
@@ -198,12 +186,15 @@ Check drinking a living tentacles:
 Carry out drinking a living tentacles:
 	let L be the noun;
 	say "You tenderly grasp one of the tentacles wrapping around your body and take it into your mouth. It begins to throb excitedly, and the rest of the tentacles tighten and rub against you as well. You begin to forcefully suck on it almost by instinct, and quickly feel it increasing its pace. Your whole body shudders as you feel its orgasm yourself, flooding through you, as thick cords of [semen] pump down your throat. Wrung out by the sensation still echoing through your body, you shiver in delight as it withdraws, spent for the moment.";
-	now seconds is 6;
+	allocate 6 seconds;
 	StomachSemenUp 2;
 	now the charge of L is 100.
-	
+
 Report drinking a vessel:
 	if the doses of the noun is 0, cancel father material of the noun.
+
+Carry out drinking a carried bottle:
+	force inventory-focus redraw. [Forces redraw of inventory window]
 
 The block drinking rule is not listed in the check drinking rulebook.
 

@@ -1,9 +1,9 @@
 Fuckdoll Collar by Accessories begins here.
 
-A fuckdoll collar is a kind of submissive collar. There is 1 unique leather fuckdoll collar. Printed name of fuckdoll collar is "[TQlink of item described][clothing-title-before]fuckdoll collar[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of fuckdoll collar is "fdc".
+A fuckdoll collar is a kind of submissive collar. There is 1 leather womanly fuckdoll collar. Printed name of fuckdoll collar is "[clothing-title-before]fuckdoll collar[clothing-title-after]". The text-shortcut of fuckdoll collar is "fdc".
 
 To decide which number is the initial outrage of (C - a fuckdoll collar):
-	decide on 12.
+	decide on 16.
 
 To decide which number is the anal-sex-addiction-influence of (C - a fuckdoll collar):
 	let S be 1;
@@ -28,7 +28,7 @@ To decide which figure-name is clothing-image of (C - a fuckdoll collar):
 
 To say ClothingDesc of (C - a fuckdoll collar):
 	say "This pink leather collar has the word 'FUCK DOLL' printed on the front in glittery letters.".
-	
+
 To say ShortDesc of (C - a fuckdoll collar):
 	say "fuckdoll collar".
 
@@ -37,6 +37,9 @@ To decide which number is the bartering value of (T - a fuckdoll collar) for (M 
 
 To decide which number is the bartering value of (T - a fuckdoll collar) for (M - a dominatrix):
 	decide on 4.
+
+Definition: a fuckdoll collar is gem themed: decide yes.
+Definition: a fuckdoll collar is pink themed: decide yes.
 
 collar-latex-cursed is a number that varies.
 

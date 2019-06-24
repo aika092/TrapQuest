@@ -9,7 +9,7 @@ The setting up school monsters rules is a rulebook.
 To regionally place (M - a monster):
 	remove M from play;
 	bore M for 0 seconds; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
-	now M is released;
+	[now M is unleashed;]
 	now the health of M is the maxhealth of M;
 	while M is not regional or M is in the location of the player or M is nearby:
 		now M is in a random placed room.
@@ -32,17 +32,14 @@ To set up (M - a monster):
 
 [!<ComputeMonsterSetUpFix>+
 
-REQUIRES COMMENTING
+Every turn we quickly check if there are any NPCs in a weird state in the location of the player
 
 +!]
 To compute MonsterSetUpFix:
-	repeat with M running through alive monsters in the location of the player:
-		if monstersetup of M is 0:
-			Set Up M.
+	repeat with M running through nonsetup monsters in the location of the player:
+		Set Up M.
 
-Definition: a monster (called M) is nonsetup:
-	if the monstersetup of M is 0, decide yes;
-	decide no.
+Definition: a monster is nonsetup if the monstersetup of it is 0.
 
 Set Up Monsters ends here.
 

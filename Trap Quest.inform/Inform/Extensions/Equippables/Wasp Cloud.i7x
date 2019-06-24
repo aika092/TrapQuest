@@ -2,7 +2,7 @@ Wasp Cloud by Equippables begins here.
 
 A wasp-cloud is a kind of equippable. There is 1 wasp-cloud. A wasp-cloud is usually unique. A wasp-cloud is usually slap ready. A wasp-cloud is usually manly. A wasp-cloud is usually biological. A wasp-cloud has a number called swarm. Understand "wasp", "cloud", "swarm" as wasp-cloud. A wasp-cloud is usually projectile.
 
-The printed name of wasp-cloud is usually "[TQlink of item described][clothing-title-before]wasp cloud[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of wasp-cloud is "wac". 
+The printed name of wasp-cloud is usually "[clothing-title-before]wasp cloud[clothing-title-after]". The text-shortcut of wasp-cloud is "wac". 
 
 To say ClothingDesc of (W - a wasp-cloud):
 	say "A [if the swarm of W > 19]titanic [otherwise if the swarm of W > 15]massive [otherwise if the swarm of W > 11]enormous [otherwise if the swarm of W > 8]huge [otherwise if the swarm of W > 5]large [otherwise][end if] swarm of wasps buzzes [if the swarm of W > 14]loudly [end if]around you.".
@@ -29,10 +29,6 @@ To decide which number is the damage improvement of (W - a wasp-cloud):
 	let X be 0;
 	increase X by the swarm of W / 2;
 	decide on X;
-	
-Definition: a wasp-cloud is removable:
-	if there is a worn wasp-antennae:
-		decide no.
 
 To compute attack of (W - a wasp-cloud) at (M - a monster):
 	say "Your cloud of wasps charges at [M], brutally stinging them!".

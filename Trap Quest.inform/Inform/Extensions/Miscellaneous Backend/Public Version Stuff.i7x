@@ -22,63 +22,36 @@ To compute april fools:
 To decide which number is cheater-validation:
 	decide on 0.
 
-Definition: yourself is a cheater:
-	decide no.
+Definition: yourself is a cheater: decide no.
 
-Definition: a person is the donator:
-	decide yes.
+Definition: a person is the donator: decide yes.
 
-Definition: a person is a top donator:
-	decide yes.
+Definition: a person is a top donator: decide yes.
 
-Definition: a person is a may 2017 top donator:
-	decide yes.
-Definition: a person is a july 2017 top donator:
-	decide yes.
-Definition: a person is a september 2017 top donator:
-	decide yes.
-Definition: a person is a november 2017 top donator:
-	decide yes.
-Definition: a person is a january 2018 top donator:
-	decide yes.
-Definition: a person is a march 2018 top donator:
-	decide yes.
-Definition: a person is a may 2018 top donator:
-	decide yes.
-Definition: a person is a july 2018 top donator:
-	decide yes.
-Definition: a person is a may 2017 top diaper donator:
-	decide yes.
-Definition: a person is a july 2017 top diaper donator:
-	decide yes.
-Definition: a person is a september 2017 top diaper donator:
-	decide yes.
-Definition: a person is a november 2017 top diaper donator:
-	decide yes.
-Definition: a person is a january 2018 top diaper donator:
-	decide yes.
-Definition: a person is a march 2018 top diaper donator:
-	decide yes.
-Definition: a person is a may 2018 top diaper donator:
-	decide yes.
-Definition: a person is a july 2018 top diaper donator:
-	decide yes.
-Definition: a person is a may 2017 diaper donator:
-	decide yes.
-Definition: a person is a july 2017 diaper donator:
-	decide yes.
-Definition: a person is a september 2017 diaper donator:
-	decide yes.
-Definition: a person is a november 2017 diaper donator:
-	decide yes.
-Definition: a person is a january 2018 diaper donator:
-	decide yes.
-Definition: a person is a march 2018 diaper donator:
-	decide yes.
-Definition: a person is a may 2018 diaper donator:
-	decide yes.
-Definition: a person is a july 2018 diaper donator:
-	decide yes.
+Definition: a person is a may 2017 top donator: decide yes.
+Definition: a person is a july 2017 top donator: decide yes.
+Definition: a person is a september 2017 top donator: decide yes.
+Definition: a person is a november 2017 top donator: decide yes.
+Definition: a person is a january 2018 top donator: decide yes.
+Definition: a person is a march 2018 top donator: decide yes.
+Definition: a person is a may 2018 top donator: decide yes.
+Definition: a person is a july 2018 top donator: decide yes.
+Definition: a person is a may 2017 top diaper donator: decide yes.
+Definition: a person is a july 2017 top diaper donator: decide yes.
+Definition: a person is a september 2017 top diaper donator: decide yes.
+Definition: a person is a november 2017 top diaper donator: decide yes.
+Definition: a person is a january 2018 top diaper donator: decide yes.
+Definition: a person is a march 2018 top diaper donator: decide yes.
+Definition: a person is a may 2018 top diaper donator: decide yes.
+Definition: a person is a july 2018 top diaper donator: decide yes.
+Definition: a person is a may 2017 diaper donator: decide yes.
+Definition: a person is a july 2017 diaper donator: decide yes.
+Definition: a person is a september 2017 diaper donator: decide yes.
+Definition: a person is a november 2017 diaper donator: decide yes.
+Definition: a person is a january 2018 diaper donator: decide yes.
+Definition: a person is a march 2018 diaper donator: decide yes.
+Definition: a person is a may 2018 diaper donator: decide yes.
+Definition: a person is a july 2018 diaper donator: decide yes.
 
 To check donators status:
 	do nothing.
@@ -96,11 +69,15 @@ Understand "debug" as debugging.
 To say Latest Debug Needed:
 	say "".
 
-Definition: an object (called K) is thigh-spreading:
-	decide no.
+Definition: an object is thigh-spreading: decide no.
 To decide which number is the DQBulk of (K - an object):
 	decide on 0.
 
+To say chess moves:
+	say "".
+
+To compute chess soiling:
+	do nothing.
 
 Include No Graphics by Miscellaneous Frontend.
 

@@ -59,9 +59,10 @@ To UrineTasteAddictUp (X - a number):
 		decrease X by 3;
 	if the latex-transformation of the player > 4:
 		now X is 0;
+	let YTB be yellow theme bonus;
 	while X > 0:
 		decrease X by 1;
-		if the raw urine taste addiction of the player < 20:
+		if the raw urine taste addiction of the player < 20 and a random number between -1 and yellow theme bonus < 1:
 			increase the raw urine taste addiction of the player by 1.
 
 [!<UrineTasteAddictDownX>+

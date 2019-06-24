@@ -13,7 +13,14 @@ attack-type is a number that varies. attack-type is usually 0.
 1 - Slap
 2 - Knee
 3 - Kick
+4 - Bomb
+5 - Zap
 ]
+
+Definition: yourself is blinded:
+	if the player is breasts blinded, decide yes;
+	if the semen coating of face > 8, decide yes;
+	decide no.
 
 Part 1 - Ability to attack
 
@@ -26,10 +33,11 @@ autoattack is a number that varies.
 
 [!<autoslap:Integer>*
 
-REQUIRES COMMENTING
+Have we already checked this turn whether the player can do this? And if so, what was the answer?
 
 *!]
 autoslap is a number that varies. autoslap is 1.
+autozap is a number that varies. autozap is 1.
 
 [!<autoknee:Integer>*
 
@@ -80,12 +88,28 @@ Definition: yourself is able to slap:
 		now autoattack is 0;
 		if autoslap is 1, decide yes;
 		if autoslap is -1, decide no;
+	now attack-type is 1;
 	follow the ability to slap rules;
 	if the rule failed:
 		now autoslap is -1;
 		now autoattack is 0;
 		decide no;
 	now autoslap is 1;
+	now autoattack is 0;
+	decide yes.
+
+Definition: yourself is able to zap:
+	if autoattack is 1 and autozap is not 0:
+		now autoattack is 0;
+		if autozap is 1, decide yes;
+		if autozap is -1, decide no;
+	now attack-type is 5;
+	follow the ability to slap rules;
+	if the rule failed:
+		now autozap is -1;
+		now autoattack is 0;
+		decide no;
+	now autozap is 1;
 	now autoattack is 0;
 	decide yes.
 
@@ -188,32 +212,31 @@ This is the player can't attack when immobile except vines rule:
 		rule fails.
 The player can't attack when immobile except vines rule is listed in the ability to slap rules.
 
-[!<ThePlayerCanNotAttackWhenExtremelyHornyRule>+
+[!<ThePlayerCanNotAttackWhenGaggingForCockRule>+
 
-This rule causes an attack to fail when the player is extremely horny, as defined by the ThingIsExtremelyHorny definition. If the player is attacking manually, outputs a message explaining why the attack failed
+This rule causes an attack to fail when the player is extremely horny or otherwise desperate for sex, as defined by the ThingIsGaggingForCock definition. If the player is attacking manually, outputs a message explaining why the attack failed
 
 +!]
-This is the player can't attack when extremely horny rule:
-	if the player is extremely horny:
-		if autoattack is 0, say "Your mind is too busy thinking about how you could get off.";
+This is the player can't attack because they're gagging for cock rule:
+	if the player is gagging for cock:
+		if autoattack is 0, say "Your mind is too excited about the prospect of [if the player is gagging for black cock]getting to worship that [BlackCock].[otherwise if diaper quest is 1]playtime. You need to cum so bad![otherwise]sex. You need to cum so bad![end if]";
 		rule fails.
 
-The player can't attack when extremely horny rule is listed in the ability to slap rules.
-The player can't attack when extremely horny rule is listed in the ability to knee rules.
-The player can't attack when extremely horny rule is listed in the ability to kick rules.
+The player can't attack because they're gagging for cock rule is listed in the ability to slap rules.
+The player can't attack because they're gagging for cock rule is listed in the ability to knee rules.
+The player can't attack because they're gagging for cock rule is listed in the ability to kick rules.
 
 [!<ThePlayerCanNotAttackWithFakeNailsRule>+
 
-This rule causes a slap to fail if the player is wearing unblessed fake nails. If the player is attacking manually, outputs a message explaining why the slap failed.
+This rule causes a slap to fail if the player is wearing unblessed fake-nails. If the player is attacking manually, outputs a message explaining why the slap failed.
 
 +!]
-This is the player can't attack with fake nails rule:
-	repeat with N running through worn fake nails:
-		unless N is blessed:
-			if autoattack is 0, say "You're too worried about breaking a nail to do that!";
-			rule fails.
+This is the player can't attack with fake-nails rule:
+	if fake-nails is worn and fake-nails is not blessed and attack-type is 1:
+		if autoattack is 0, say "You're too worried about breaking a nail to do that!";
+		rule fails.
 
-The player can't attack with fake nails rule is listed in the ability to slap rules.
+The player can't attack with fake-nails rule is listed in the ability to slap rules.
 
 [!<ThePlayerCanNotAttackWhenBoundBehindRule>+
 
@@ -222,7 +245,7 @@ This rule causes a slap to fail if the player is wearing a wrist lockable clothi
 +!]
 This is the player can't attack when bound behind rule:
 	if the player is wrist bound behind:
-		if autoattack is 0, say "You can't do that with your wrists bound behind you!";
+		if autoattack is 0, say "You can't do that with your [if gape-gloves is worn]your hands glued to your [AssDesc][otherwise]wrists bound behind you[end if]!";
 		rule fails.
 The player can't attack when bound behind rule is listed in the ability to slap rules.
 
@@ -232,8 +255,8 @@ This rule causes a knee or a kick to fail if the player is wearing a messy diape
 
 +!]
 This is the player can't attack with mess rule:
-	if the player is upset about mess:
-		if autoattack is 0, say "You can't bring yourself to do that whilst wearing a squishy messy diaper!";
+	if the player is upset about sitting in mess:
+		if autoattack is 0, say "You can't bring yourself to do that whilst wearing [if there is a worn diaper]a squishy messy diaper[otherwise]messy underwear[end if]!";
 		rule fails.
 
 The player can't attack with mess rule is listed in the ability to knee rules.
@@ -272,11 +295,12 @@ This rule causes a knee to fail if the player is wearing a hobble-skirted clothi
 +!]
 This is the player can't knee with hobble skirt rule:
 	repeat with C running through worn crotch-in-place hobble-skirted clothing:
-		if autoattack is 0:
-			say "You can't raise your knee whilst sporting a hobble skirt!";
-			now focused-thing is C;
-		if the player is upright and the player is in danger, now focused-thing is C; [This way the player can conveniently hike it]
-		rule fails.
+		unless C is crotch-unzipped or C is slitted:
+			if autoattack is 0:
+				say "You can't raise your knee whilst sporting a hobble skirt!";
+				now focused-thing is C;
+			if the player is upright and the player is in danger, now focused-thing is C; [This way the player can conveniently hike it]
+			rule fails.
 The player can't knee with hobble skirt rule is listed in the ability to knee rules.
 
 [!<ThePlayerCanNotKickWithKneesRule>+
@@ -286,9 +310,9 @@ This rule causes a kick to fail if the player is wearing a knee-length or hobble
 +!]
 This is the player can't kick with knees rule:
 	repeat with C running through worn knee-length or longer clothing:
-		if [C is hobble-skirted and ]C is crotch-in-place and C is not slitted:
+		if C is crotch-in-place and C is not slitted and C is not crotch-unzipped:
 			if autoattack is 0:
-				say "You can't raise your knee like that whilst sporting a [if C is knee-length]tight knee length[otherwise]long[end if] skirt!";
+				say "You can't raise your feet high enough whilst sporting a [if C is knee-length]tight[otherwise]long[end if] skirt!";
 				now focused-thing is C;
 			if the player is upright and the player is in danger, now focused-thing is C; [This way the player can conveniently hike it]
 			rule fails.
@@ -306,6 +330,34 @@ This is the player can't attack with stuck shoes rule:
 
 The player can't attack with stuck shoes rule is listed in the ability to knee rules.
 The player can't attack with stuck shoes rule is listed in the ability to kick rules.
+
+[!<ThePlayerCanNotAttackCagedMonstersRule>+
+
+Someone in a cage is too far away for combat.
+
++!]
+This is the player can't attack caged monsters rule:
+	if the noun is caged monster:
+		if autoattack is 0, say "You can't reach [him of the noun] through the cage!";
+		rule fails.
+
+The player can't attack caged monsters rule is listed in the ability to slap rules.
+The player can't attack caged monsters rule is listed in the ability to knee rules.
+The player can't attack caged monsters rule is listed in the ability to kick rules.
+
+[!<ThePlayerCanNotAttackDefeatedMonstersRule>+
+
+Someone in a permanently defeated state is not a combat target.
+
++!]
+This is the player can't attack defeated monsters rule:
+	if the noun is defeated monster:
+		if autoattack is 0, say "[BigNameDesc of the noun] is no longer a threat. You have no reason to do that.";
+		rule fails.
+
+The player can't attack defeated monsters rule is listed in the ability to slap rules.
+The player can't attack defeated monsters rule is listed in the ability to knee rules.
+The player can't attack defeated monsters rule is listed in the ability to kick rules.
 
 [!<YourselfIsAbleToAutomaticallySlap>+
 
@@ -343,13 +395,6 @@ Definition: yourself is able to automatically kick:
 	if the player is able to kick, decide yes;
 	decide no.
 
-Part 2 - Attacking Actions
-
-Include Attacking by Actions.
-Include Slapping by Actions.
-Include Kneeing by Actions.
-Include Kicking by Actions.
-
 Part 3 - Automatic Surrender
 
 [!<MonsterIsTooIntimidating>+
@@ -358,12 +403,12 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a monster (called M) is too intimidating:
-	if the delicateness of the player < 15, decide no;
+	if the player is not feeling submissive, decide no;
 	if M is uninterested or M is friendly, decide no;
 	if the health of M < the maxhealth of M, decide no;
-	let R be a random number between 10 and the delicateness of the player;
-	if debuginfo > 0, say "[input-style]automatic surrender check: player submission [one of](delicateness) [or][stopping]roll d[delicateness of the player - 9]+9 ([R]) | ([15 - (the difficulty of M / 8)].5) [ShortDesc of M] vulnerability[roman type][line break]";
-	if R > 15 - (the difficulty of M / 8), decide yes;
+	let R be a random number between 1 and the delicateness of the player;
+	if debuginfo > 0, say "[input-style]automatic surrender check: player submission (delicateness) roll d[delicateness of the player] ([R]) + [ShortDesc of M] scariness ([the difficulty of M / 4]) = [R + (the difficulty of M / 4)] | (15.5) surrender threshold[roman type][line break]";
+	if R + (the difficulty of M / 4) > 15, decide yes;
 	decide no.
 
 [!<surrendered:Integer>*
@@ -381,10 +426,14 @@ REQUIRES COMMENTING
 To compute surrender to (M - a monster):
 	let N be a random intelligent dangerous monster in the location of the player;
 	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
+	compute silent surrender to M.
+
+To compute silent surrender to (M - a monster):
 	now surrendered is 1;
-	now auto is 1;
-	try kneeling;
-	now auto is 0.
+	if the player is upright:
+		now auto is 1;
+		try kneeling;
+		now auto is 0.
 
 [!<SaySurrenderFlavOfMonster>+
 
@@ -396,7 +445,7 @@ To say SurrenderFlav of (M - a monster):
 		if the player is able to speak:
 			if the humiliation of the player >= 40000, say "[variable custom style]'[one of]Please use my body to your heart's desire.'[or]I understand my place.'[or]I am yours to use. Please do not show me any mercy.'[in random order][roman type][line break]";
 			otherwise say "[variable custom style]'[one of]Do what you want with me, just please don't be rough!'[or]I'll do whatever you say, just please don't hurt me!'[or]You're the boss... just please be kind to me!'[or]I'm delicate, please don't break me!'[or]I'm just a poor weakling, please show me mercy!'[in random order][roman type][line break]";
-	if the player is able to use their hands, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
+	if the player is able to use their hands and the player is not wrist bound behind, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
 
 
 Part 4 - Damage Calculation
@@ -431,20 +480,20 @@ REQUIRES COMMENTING
 
 +!]
 A time based rule (this is the combat bonus rule):
-	let N be the flat strength of the player / combat scaling;
+	let N be saved-flat-strength / combat scaling;
 	let N2 be the remainder after dividing the strength of the player by combat scaling;
 	if a random number between 1 and combat scaling <= N2:
 		increase N by 1;
 		now combat bonus remainder is 1;
 	otherwise:
 		now combat bonus remainder is 0;
-	if the player is breasts blinded, decrease N by 2;
+	if the player is blinded, decrease N by 2;
 	now combat bonus is N.
 
 To say combat bonus explanation:
 	let N be combat bonus - combat bonus remainder;
-	if the player is breasts blinded, increase N by 2;
-	say "[if N >= 0]+[end if][N] (strength component) [if combat bonus remainder is 1]+1 (strength component fluctuation) [end if][if the player is breasts blinded]-2 (blinded by breasts) [end if]".
+	if the player is blinded, increase N by 2;
+	say "[if N >= 0]+[end if][N] (strength component) [if combat bonus remainder is 1]+1 (strength component fluctuation) [end if][if the player is breasts blinded]-2 (blinded by breasts) [otherwise if the player is blinded]-2 (blinded by cum) [end if]".
 
 
 [!<DecideWhichNumberIsTheDamageModifierOfThing>+
@@ -486,7 +535,7 @@ To compute damage of (M - a monster):
 		anger M;
 		now the boredom of M is 0;
 	otherwise:
-		say "The [noun] drops slowly to the ground defeated, and disappears."; 
+		say "The [noun] drops slowly to the ground defeated, and disappears.";
 		compute death of the noun.
 
 [!<SayDamageReactionOfMonster>+
@@ -496,14 +545,14 @@ REQUIRES COMMENTING
 +!]
 To say DamageReaction (N - a number) of (M - a monster):
 	if N > (the maxhealth of M / 4) * 3:
-		say DamageReactHealthy of M;	
+		say DamageReactHealthy of M;
 	otherwise if N > (the maxhealth of M / 4) * 2:
 		say DamageReactDamaged of M;
 	otherwise if N > (the maxhealth of M / 4):
 		say DamageReactTired of M;
-	otherwise if M is dominantSexReady:
+	otherwise if diaper quest is 0 and M is dominantSexReady:
 		say DamageReactSubmissive of M;
-		if newbie tips is 1, say "[one of][item style]Newbie tip: Looks like the [he of M] would rather fuck than fight! Maybe you can see if [he of M][']ll let you be on top with 'dominate [MediumDesc of M].'[roman type][line break][or][stopping]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like the [he of M] would rather fuck than fight! Maybe you can see if [he of M][']ll let you be on top with 'dominate [MediumDesc of M].'[roman type][line break][or][stopping]";
 	otherwise:
 		say DamageReactWeak of M.
 
@@ -530,18 +579,18 @@ REQUIRES COMMENTING
 To say damage-flavour of (N - a number) on (M - a monster):
 	if N is 0:
 		say "You're pretty sure that did nothing at all.";
-	otherwise if N is 1:
-		say "That felt extremely weak, you doubt it hurt much at all.";
 	otherwise if N < 3:
+		say "That felt extremely weak, you doubt it hurt much at all.";
+	otherwise if N < 5:
 		say "That felt quite weak, but hopefully it hurt a bit.";
-	otherwise if N < 6:
+	otherwise if N < 8:
 		say "[BigNameDesc of M] definitely felt that. A respectable hit!";
-	otherwise if N < 9:
+	otherwise if N < 11:
 		say "[BigNameDesc of M] visibly recoils from the hit. A [if critical is 1][bold type]critical hit[roman type][otherwise]strong hit[end if]!";
-	otherwise if N < 13:
+	otherwise if N < 15:
 		say "Wow, you felt that connect with incredible force. A super strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 	otherwise:
-		say "POW!  Your attack is accompanied by a loud sound. An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
+		say "POW! Your attack is accompanied by a loud sound. An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 
 [!<critical:Integer>*
 
@@ -565,7 +614,7 @@ REQUIRES COMMENTING
 
 +!]
 To damage (A - a number) on (M - a monster):
-	now seconds is 6;
+	allocate 6 seconds;
 	[Roll for damage - essentially 2dX]
 	now attack-damage is (a random number between 1 and A) + (a random number between 1 and A);
 	if damage-explained > 0, say "[input-style]=> [if A < 1]RNG(A~1)[otherwise]2d[A][end if] = [attack-damage]; ";
@@ -591,7 +640,7 @@ To damage (A - a number) on (M - a monster):
 	if N is not 0:
 		increase attack-damage by N;
 		if damage-explained > 0, say "[if N >= 0]+[end if][N] (damage [if N < 0]reduction[otherwise]amplification[end if] of [ShortDesc of M]) ";
-	[Damage calculation over, deal damage now.]	
+	[Damage calculation over, deal damage now.]
 	if damage-explained > 0, say "[attack-damage] damage applied to [ShortDesc of M] results in [health of M] -> ";
 	decrease the health of M by attack-damage;
 	if damage-explained > 0, say "[the health of M] HP[roman type][line break]";
@@ -601,15 +650,18 @@ To damage (A - a number) on (M - a monster):
 		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster. Not relevant to the other clause but putting it here because why not.]
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
 	if M is fairy, now the boredom of M is 0;[Should prevent exploit where you can infinitely kick the fairy to farm exercise points.]
-	anger M;
 	reset orifice selection of M;
 	now the boredom of M is 0;
 	[Call the damage function of the monster]
 	if attack-damage > 0:
 		compute damage of M;
-	otherwise if the health of M < 1: [This could happen if an allied NPC damages it this turn, but the player fails to do any damage.]
-		now the health of M is 1;
-		if damage-explained > 0, say "[input-style]HP set to 1 since NPCs are not allowed to get the last hit[roman type][line break]";
+		anger M;
+		if M is undefeated and M is not caged, compute combatProvoked of M; [All NPCs should become unfriendly here, if able.]
+	otherwise:
+		if the health of M < 1: [This could happen if an allied NPC damages it this turn, but the player fails to do any damage.]
+			now the health of M is 1;
+			if damage-explained > 0, say "[input-style]HP set to 1 since NPCs are not allowed to get the last hit[roman type][line break]";
+		compute failed damage of M; [Perhaps we want the NPC to become unfriendly even if the attack failed.]
 	now damage-explained is 0;
 	[Check for weapons effects]
 	repeat with E running through worn equippables:
@@ -622,12 +674,15 @@ To damage (A - a number) on (M - a monster):
 		if there are worn heels, increase the heel time of the player by the difficulty of M * 5;
 		compute slaying bonus of M;
 		finally destroy M;
-		if the number of dangerous monsters in the location of the player is 0 and side images is 1 and character-version is 0:
-			now danaume-arms-victory is 1;
-			display character window.
+		if the player is not in danger and side images > 0 and character-version is 0:
+			now danaume-arms-victory is 1.
+			[display character window.]
 
+To compute failed damage of (M - a monster):
+	do nothing.
 
-
+To compute combatProvoked of (M - a monster):
+	now M is unleashed.
 
 
 Attacking Monsters ends here.

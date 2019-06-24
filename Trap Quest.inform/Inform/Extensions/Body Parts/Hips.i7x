@@ -9,7 +9,51 @@ REQUIRES COMMENTING
 @inherits <Flesh>
 
 @!]
-hips is a flesh. hips is everywhere. The description of hips is "[TotalDesc of hips]". Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips.
+hips is a flesh. hips is everywhere. Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips. The text-shortcut of hips is "hips".
+
+To decide which number is the usualHipModesty of (C - a clothing):
+	if C is skirt-covering-crotch, decide on 100;
+	if C is crotch covering:
+		if the armour of C > 0, decide on the armour of C;
+		decide on 6; [This is really just a best estimate; but most crotchless outfits e.g. catsuits still cover some butt cheeks. Can obviously be manually overridden.]
+	decide on 0.
+
+To decide which number is the hipModesty of (C - an object):
+	if C is worn not-butt-windowed clothing, decide on the usualHipModesty of C;
+	decide on 0.
+
+To decide which number is the hipModesty of (C - a knickers):
+	if C is butt-windowed or C is actually sheer, decide on 0;
+	decide on the armour of C.
+
+To decide which number is the hipModesty of (C - a trousers):
+	if C is butt-windowed or C is crotch-displaced or C is actually sheer, decide on 0;
+	decide on 99.
+
+To decide which number is the hipExposure of (C - an object):
+	decide on (7 + (the total volume of hips / 2)) - the hipModesty of C.
+
+To decide which object is the at least partial concealer of (H - hips):
+	let O be 0;
+	let P be nothing;
+	repeat with C running through worn clothing:
+		if the hipModesty of C > O:
+			now O is the hipModesty of C;
+			now P is C;
+	decide on P.
+
+To decide which number is the unique outrage of (H - hips):
+	let C be the at least partial concealer of H;
+	let O be the hipExposure of C;
+	if the strut of the player > 0 and the player is upright, increase O by 5;
+	increase O by the thickness of hips / 4;
+	if O > 20, decide on 20;
+	decide on O.
+
+Definition: hips is at least partially exposed if the hipExposure of the at least partial concealer of hips > 0.
+
+To say FullExamineDesc of (B - hips):
+	say "[TotalDesc of hips]".
 
 [!<Hips>@<thickness:Integer>*
 
@@ -79,9 +123,13 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is max ass size:
-	if there is a restricting salve covering hips, decide on the thickness of hips;
-	if extreme proportions fetish is 1, decide on 20 - max ass size modifier;
+	if there is a restricting salve covering hips, decide on the total volume of hips;
+	if extreme proportions fetish is 1 and the player is not a flatchested trap, decide on 20 - max ass size modifier;
 	otherwise decide on 10 - max ass size modifier.
+To decide which number is max hip size:
+	decide on max ass size.
+	[if there is a restricting salve covering hips, decide on the thickness of hips;
+	decide on 10 - max ass size modifier.]
 
 [!<SayMaxAssSizeDesc>+
 
@@ -113,8 +161,19 @@ Are hips at their maximum size?
 
 +!]
 Definition: yourself is bottom heavy:
-	if the thickness of hips < 10 - max ass size modifier or (the flesh volume of hips + the silicone volume of hips) < max ass size, decide no;
+	if there is a restricting salve covering hips, decide yes;
+	if the thickness of hips < max hip size or the total weighty volume of hips < max ass size, decide no;
 	decide yes.
+
+[Three things limit hip size: ass size (when weight gain fetish is on), starting value, and the real thickness of hips.]
+To decide which number is min hip size:
+	let A be 1 + (starting body shape * 2);
+	let B be the real thickness of hips;
+	let C be 1;
+	if weight gain fetish is 1 or artificial enhancements fetish is 1, let C be the total weighty volume of hips - 1;
+	if A > B and A > C, decide on A;
+	if B > C, decide on B;
+	decide on C.
 
 To decide which number is min ass size:
 	decide on 1 + (starting body shape * 2).
@@ -137,7 +196,7 @@ REQUIRES COMMENTING
 +!]
 To compute hip fat burning:
 	if the flesh volume of hips > 0:
-		let F be 200 - (the flesh volume of hips * 10);
+		let F be (200 - (exercise theme bonus * 40)) - (the flesh volume of hips * 10);
 		let R be (a random number between 20 and F) + a random number between 20 and F;
 		if debuginfo > 0, say "[input-style]Butt weight loss check: butt exercise count ([fat-burning of hips].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of hips * 10]) ass fat[roman type][line break]";
 		if R <= the fat-burning of hips:
@@ -147,13 +206,13 @@ To compute hip fat burning:
 			if debuginfo > 0, say "[flesh volume of hips][roman type][line break]";
 			now the fat-burning of hips is 0.
 
-[!<DecideWhichNumberIsTotalVolumeOfHips>+
+To decide which number is the total volume of hips:
+	let X be the flesh volume of hips + the air volume of hips + the silicone volume of hips;
+	if X > 20, decide on 20;
+	decide on X.
 
-REQUIRES COMMENTING
-
-+!]
-To decide which number is total volume of hips:
-	let X be flesh volume of hips + air volume of hips + silicone volume of hips;
+To decide which number is the total weighty volume of hips:
+	let X be the flesh volume of hips + the silicone volume of hips;
 	if X > 20, decide on 20;
 	decide on X.
 
@@ -176,6 +235,8 @@ To decide which number is the weight of (XXX - hips):
 	if the latex-transformation of the player > 5 and  H > 0, now H is 0;
 	decide on H.
 
+
+
 Part 2 - Description
 
 [!<SayShortDescOfHips>+
@@ -185,17 +246,28 @@ REQUIRES COMMENTING
 +!]
 To say ShortDesc of hips:
 	let X be the thickness of hips;
-	[if extreme proportions fetish is 1, now X is (X + 1) / 2;]
-	if X < 3, say "androgynous hips";
-	if X is 3, say "slight hips";
-	if X is 4, say "defined hips";
-	if X is 5, say  "womanly hips";
-	if X is 6, say "pronounced hips";
-	if X is 7, say "[if pregnancy fetish is 1]childbearing[otherwise]very pronounced[end if] hips";
-	if X is 8, say "wide, [if pregnancy fetish is 1]childbearing[otherwise]cartoonishly pronounced[end if] hips";
-	if X is 9, say "extraordinarily wide[if pregnancy fetish is 1][one of], twin childbearing[or][stopping][end if] hips";
-	if X > 9, say "impossibly wide hips[if pregnancy fetish is 1][one of], for bearing several children (or one giant monster's offspring!)[run paragraph on][or][stopping][end if]";
-	say " and [AssDesc]".
+	if X < 2, say "androgynous hips";
+	if X is 2, say "slight hips";
+	if X is 3, say "slim hips";
+	if X is 4, say "normal hips";
+	if X is 5, say "defined hips";
+	if X is 6, say "womanly hips";
+	if X is 7, say "pronounced hips";
+	if X is 8, say "[if pregnancy fetish is 1]childbearing[otherwise]very pronounced[end if] hips";
+	if X is 9, say "wide, [if pregnancy fetish is 1]childbearing[otherwise]cartoonishly pronounced[end if] hips";
+	if X is 10, say "extraordinarily wide[if pregnancy fetish is 1][one of], twin childbearing[or][stopping][end if] hips";
+	if X > 10, say "[if X > 18]extremely ridiculously[otherwise if X > 16]stupendously[otherwise if X > 14]stupidly[otherwise if X > 12]very[end if] impossibly wide hips[if pregnancy fetish is 1][one of], for bearing several children (or one giant monster's offspring!)[run paragraph on][or][stopping][end if]".
+
+To say MediumDesc of hips:
+	say "[ShortDesc of hips] and [AssDesc]".
+
+To say AppearanceDesc of (H - hips):
+	if the strut of the player > 0 and the player is upright, say "provocatively swaying ".
+
+To say MediumAppearanceDesc of (H - hips):
+	say AppearanceDesc of H;
+	if the strut of the player > 0 and the player is upright, say MediumDesc of H;
+	otherwise say AssDesc.
 
 [!<SayTotalDescOfHips>+
 
@@ -203,13 +275,18 @@ REQUIRES COMMENTING
 
 +!]
 To say TotalDesc of hips:
-	if there is worn knickers:
-		compute SelfExamineDesc of a random worn knickers;
-	otherwise if the thickness of hips > 3 and the total volume of hips > 4:
-		say "Your [if the bimbo of the player > 6]alluring [end if][ShortDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if]. ";
+	if the thickness of hips > 3 and the total volume of hips > 4:
+		say "Your [if the bimbo of the player > 6]alluring [end if][MediumDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if]. ";
 	otherwise:
 		say "You have [MediumDesc of hips]. [if the thickness of hips > 6 + the flesh volume of thighs]You have a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together. [end if]";
-	say "[AssFillDesc][AssImplantsDesc][HipWeight]".
+	say "[AssFillDesc][AssImplantsDesc][HipWeight]";
+	if the strut of the player > 0 and the player is upright, say "You are strutting, which causes your hips to sway provocatively.";
+	let C be the at least partial concealer of hips;
+	if C is clothing:
+		say "Your [ShortDesc of C] [AssModestyDesc of C]. The shape of your hips is still visible through the fabric.";
+	otherwise:
+		say "Your buttcheeks are currently completely visible.".
+
 
 [!<SayAssDesc>+
 
@@ -218,16 +295,16 @@ REQUIRES COMMENTING
 +!]
 To say AssDesc:
 	let A be the total volume of hips;
-	if A < 3, say "tiny flat butt";
+	if A < 3, say "tiny flat butt cheeks";
 	if A is 3, say "tight well toned tush";
 	if A is 4, say "toned butt cheeks";
-	if A is 5, say  "roundish but tight bum";
-	if A is 6, say "cute curvy butt";
+	if A is 5, say  "roundish but tight butt cheeks";
+	if A is 6, say "cute curvy butt cheeks";
 	if A is 7, say "eye-turning bubble butt";
 	if A is 8, say "well cushioned bottom";
-	if A is 9, say "[if weight gain fetish is 1]chunky[otherwise]thick[end if], wobbly ass";
+	if A is 9, say "[if weight gain fetish is 1]chunky[otherwise]thick[end if], wobbly ass cheeks";
 	if A is 10, say "oversized [if weight gain fetish is 1]fat girl [end if]ass cheeks";
-	if A is 11, say "humongous fat girl bottom";
+	if A is 11, say "humongous [if weight gain fetish is 1]fat girl [end if]bottom";
 	if A is 12, say "Kardashian sized protruding butt cheeks";
 	if A is 13, say "giant wobbling butt cheeks";
 	if A is 14, say "giant bouncing ass cheeks";
@@ -245,7 +322,7 @@ REQUIRES COMMENTING
 
 +!]
 To say HipDesc:
-	say ShortDesc of hips;
+	say MediumDesc of hips;
 	if the total volume of hips is 14, say ", each one large larger than a watermelon";
 	if the total volume of hips is 15, say " that sway wildly as you [if the player is upright]walk[otherwise]crawl[end if]";
 	if the total volume of hips is 16, say " that force you to waddle awkwardly[if the player is upright] as you walk[end if]";
@@ -270,9 +347,6 @@ To say HipDesc:
 			say " (which are exaggerated by an extremely bloated and weighty diaper)";
 		otherwise:
 			say " (which are greatly exaggerated by an incredibly heavy and saturated diaper)".
-
-To say MediumDesc of hips:
-	say HipDesc.
 
 [!<SayHipWeight>+
 
@@ -359,6 +433,7 @@ Part 3 - Modify Hips Stats
 
 Chapter 1 - Thickness
 
+bigHipBalance is a number that varies.
 
 [!<HipUpX>+
 
@@ -369,24 +444,38 @@ To HipUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if there is a restricting salve covering hips:
-			say "[one of]You feel your [ShortDesc of hips] try to expand further, but the salve of restriction prevents it![or]Once again your [ShortDesc of hips] fails to grow any further.[stopping]";
+			if X is 0, say "[one of]You feel your [if weight gain fetish is 1][ShortDesc of hips][otherwise][MediumDesc of hips][end if] try to expand further, but the salve of restriction prevents it![or]Once again your [if weight gain fetish is 1][ShortDesc of hips][otherwise][MediumDesc of hips][end if] fail to grow any further.[stopping]";
+		otherwise if bigHipBalance + 5 < the thickness of hips:
+			increase bigHipBalance by a random number between 5 and 10; [The larger hips are, the longer on average it'll take before the next increase.]
 		otherwise:
-			if the thickness of hips < 10 and the thickness of hips < max ass size:
+			now bigHipBalance is 0;
+			if the thickness of hips < max hip size:
 				increase the thickness of hips by 1;
-				if the thickness of hips > 6 + the flesh volume of thighs, say "[one of]Your hips have now grown so wide that they leave you with a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together.[or][stopping]";
+				if the thickness of hips > 7 + the flesh volume of thighs, say ThighGapFlav;
 				if X is 0:
-					if weight gain fetish is 0:
-						now the flesh volume of hips is the thickness of hips * (extreme proportions fetish + 1); [The two values are mirrored when we're not tracking fatness separately]
+					if weight gain fetish is 0 and artificial enhancements fetish is 0:
+						if the flesh volume of hips < the thickness of hips, now the flesh volume of hips is the thickness of hips; [The two values are initially mirrored when we're not tracking fatness or implants separately]
+						if the flesh volume of hips is 4, cutshow figure of body reaction 10 for hips;
+						if the flesh volume of hips is 6, cutshow figure of body reaction 11 for hips;
 					otherwise:
-						if the flesh volume of hips < (the thickness of hips - 1) * (extreme proportions fetish + 1), FatAssUp 1; [Ass size increases a bit if hips are really big in comparison]
-			otherwise if weight gain fetish is 1 and the flesh volume of hips < max ass size:
-				FatAssUp 1;
-			otherwise:
-				say "[one of]You feel your [ShortDesc of hips] try to expand further, but it physically can't grow any more![or]Once again your [ShortDesc of hips] fails to grow any further.[stopping]"; [This will not display when extreme proportions fetish is enabled, this is intentional]
+						if the total weighty volume of hips < the thickness of hips - 1, FatAssUp 1; [Ass size increases a bit if hips are really big in comparison]
+			otherwise if the total weighty volume of hips < max ass size:
+				say "[one of]Your [ShortDesc of hips] can't physically grow any wider! But your buttocks still expand outwards behind you, still getting even fatter and wider.[or][stopping]";
+				FatAssUp X + 1; [To stop repeated flavour in the assup function we do it all at once]
+				now X is 0;
+			otherwise if X is 0:
+				say "[one of]You feel your [MediumDesc of hips] try to expand further, but they physically can't grow any more![or]Once again your [MediumDesc of hips] fail to grow any further.[stopping]"; [This will not display when extreme proportions fetish is enabled, this is intentional]
 				if there is a worn tattoo and the number of worn ass tattoos is 0 and lactation fetish is 1:
 					summon prime USDA tattoo;
 					say "A brand appears on your butt!";
 					try examining prime USDA tattoo.
+
+To say ThighGapFlav:
+	say "[one of][UniqueThighGapFlav][or][stopping]".
+
+To say UniqueThighGapFlav:
+	say "Your hips have now grown so wide they leave you with a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together.";
+	cutshow figure of body reaction 7 for hips.
 
 [!<HipDownX>+
 
@@ -400,13 +489,13 @@ To HipDown (X - a number):
 		say "[one of]You feel your [ShortDesc of hips] try to shrink, but the salve of restriction prevents it![or]Once again your [ShortDesc of hips] fail to shrink any further.[stopping]";
 	otherwise:
 		while X > 0:
-			if the thickness of hips <= the real thickness of hips:
+			if the thickness of hips <= min hip size:
 				say "[one of]You feel your [ShortDesc of hips] try to shrink, for some reason it doesn't work![or]Once again your [ShortDesc of hips] fail to shrink any further.[stopping]";
 				now X is 0;
 			otherwise:
 				decrease X by 1;
-				if the thickness of hips > min ass size, decrease the thickness of hips by 1;
-	if weight gain fetish is 0, now the flesh volume of hips is the thickness of hips. [The two values are mirrored when we're not tracking fatness separately]
+				decrease the thickness of hips by 1;
+				if weight gain fetish is 0, FatAssDown 1. [The two values are mirrored when we're not tracking fatness separately]
 
 Chapter 2 - Buttocks
 
@@ -417,18 +506,7 @@ REQUIRES COMMENTING
 +!]
 To AssSwell (X - a number):
 	if weight gain fetish is 1:
-		while X > 0:
-			decrease X by 1;
-			if there is a restricting salve covering hips:
-				say "[one of]You feel your [ShortDesc of hips] try to get fatter, but the salve of restriction prevents it![or]Once again your [ShortDesc of hips] fails to get any fatter.[stopping]";
-			otherwise if total volume of hips < max ass size:
-				increase the flesh volume of hips by 1;
-			otherwise if X is 0:
-				say "Your [ShortDesc of hips] try to get fatter but have reached their limit!";
-				if there is a worn tattoo and the number of worn ass tattoos is 0:
-					summon prime USDA tattoo;
-					say "A brand appears on your butt!";
-					try examining prime USDA tattoo;
+		FatAssUp X;
 	otherwise:
 		HipUp X.
 
@@ -444,8 +522,11 @@ To AssInflate (X - a number):
 		decrease X by 1;
 		if total volume of hips < max ass size:
 			increase the air volume of hips by 1;
+			if X is 0:
+				if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
+				if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
 		otherwise if X is 0:
-			say "Your [ShortDesc of hips] try to inflate further but have reached their limit!".	
+			say "Your [AssDesc] try to inflate further but have reached their limit!".
 
 [!<AssImplantsUpX>+
 
@@ -456,14 +537,16 @@ To AssImplantsUp (X - a number):
 	let attempt-done be 0;
 	while X > 0:
 		decrease X by 1;
-		if the thickness of hips < max ass size:
+		if the total weighty volume of hips < max ass size:
+			if the total volume of hips >= max ass size, decrease the air volume of hips by 1;
 			increase silicone volume of hips by 1;
-		otherwise if air volume of hips > 0:
-			decrease air volume of hips by 1;
-			increase silicone volume of hips by 1;
+			if the thickness of hips < total weighty volume of hips - 3 and the thickness of hips < max hip size, HipUp 1; [Hip size increases a bit if ass is really big in comparison, excluding air]
+			if X is 0:
+				if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
+				if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
 		otherwise if attempt-done < 2:
-			say "Your [ShortDesc of hips] are just too big, the skin won't stretch any further!  Your new [if the silicone volume of hips > 0]and improved [end if]implants shrink under the pressure.";
-			now attempt-done is 2;
+			say "Your [AssDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of hips > 0]and improved [end if]implants shrink under the pressure.";
+			now attempt-done is 2.
 
 [!<AssImplantsDownX>+
 
@@ -474,7 +557,7 @@ To AssImplantsDown (X - a number):
 	while X > 0:
 		if the silicone volume of hips > 0:
 			decrease silicone volume of hips by 1;
-		
+
 
 Chapter 3 - Fat
 
@@ -485,9 +568,25 @@ REQUIRES COMMENTING
 
 +!]
 To FatAssUp (X - a number):
-	if weight gain fetish is 1:
-		AssSwell X;
-		if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][item style]Newbie tip: You're starting to pack on the pounds in the butt area!  That's making you heavier and therefore you'll tire out faster. However, it is fully reversible!  Every turn you 'resist' during sex will exercise your butt muscles a bit, and help you lose that fat. Also, picking items up off the ground when standing exercises that butt slowly but surely. It also increases fatigue, though.[roman type][line break][or][stopping]".
+	while X > 0:
+		decrease X by 1;
+		if there is a restricting salve covering hips:
+			say "[one of]You feel your [AssDesc] try to get fatter, but the salve of restriction prevents it![or]Once again your [AssDesc] fails to get any fatter.[stopping]";
+			now X is 0;
+		otherwise if the total weighty volume of hips < max ass size:
+			if the total volume of hips >= max ass size, decrease the air volume of hips by 1;
+			increase the flesh volume of hips by 1;
+			if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
+			if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
+			if the total volume of hips is 8 and the flesh volume of thighs > 4 and the flesh volume of belly > 3, cutshow figure of body reaction 12 for hips;
+			if the thickness of hips < total weighty volume of hips - 3 and the thickness of hips < max hip size, HipUp 1; [Hip size increases a bit if ass is really big in comparison, excluding air]
+		otherwise if X is 0:
+			say "Your [AssDesc] try to get fatter but have reached their limit!";
+			if there is a worn tattoo and the number of worn ass tattoos is 0 and (weight gain fetish is 1 or lactation fetish is 1):
+				summon prime USDA tattoo;
+				say "A brand appears on your butt!";
+				try examining prime USDA tattoo;
+	if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][newbie style]Newbie tip: You're starting to pack on the pounds in the butt area! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Every turn you 'resist' during sex will exercise your butt muscles a bit, and help you lose that fat. Also, picking items up off the ground when standing exercises that butt slowly but surely. It also increases fatigue, though.[roman type][line break][or][stopping]".
 
 [!<FatAssDownX>+
 
@@ -495,9 +594,25 @@ REQUIRES COMMENTING
 
 +!]
 To FatAssDown (X - a number):
-	while X > 0 and weight gain fetish is 1:
-		if the flesh volume of hips > 0, decrease the flesh volume of hips by 1;
-		decrease X by 1.
+	if prime USDA tattoo is worn:
+		say "[one of]You feel your [AssDesc] try to shrink, but your [ShortDesc of prime USDA tattoo] prevents it![or]Once again your [AssDesc] fail to shrink.[stopping]";
+	otherwise if there is a restricting salve covering hips:
+		say "[one of]You feel your [AssDesc] try to shrink, but the salve of restriction prevents it![or]Once again your [AssDesc] fail to shrink any further.[stopping]";
+	otherwise:
+		while X > 0:
+			if the flesh volume of hips > min ass size, decrease the flesh volume of hips by 1;
+			decrease X by 1.
+
+
+
+Section - Image for graphics window
+
+The text-shortcut of hips is "hips".
+Figure of CumHipsButton is the file "Special/Buttons/cumhips.png".
+
+To decide which figure-name is the examine-image of (T - hips):
+	if T is overglazed, decide on Figure of CumHipsButton;
+	decide on figure of no-image-yet.
 
 Hips ends here.
 

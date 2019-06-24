@@ -2,7 +2,7 @@ Bodysuit by Dresses begins here.
 
 bodysuit is a kind of overdress. A bodysuit is fully covering. A bodysuit is usually unskirted. A bodysuit is usually leg covering. A bodysuit is usually only arm covering. A bodysuit is usually zippable. A bodysuit is usually crotch-intact. A bodysuit is usually not-top-displacable.
 
-The printed name of bodysuit is usually "[TQlink of item described][clothing-title-before][clothing-material of item described] bodysuit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of bodysuit is usually "[clothing-title-before][clothing-material of item described] bodysuit[clothing-title-after]".
 
 This is the remove inappropriate bodysuits rule:
 	repeat with B running through rubber bodysuits:
@@ -39,14 +39,13 @@ To uniquely set up (C - a bodysuit):
 
 Report wearing bodysuit:
 	say "It takes a long time to get it [if the largeness of breasts > 9]over your [BreastDesc]![otherwise if the largeness of belly > 4]over your [BellyDesc]![otherwise]on.[end if]";
-	now seconds is 12.
+	allocate 12 seconds.
 
-Definition: a bodysuit (called C) is end of transformation chain:
-	decide yes.
-	
+Definition: a bodysuit is end of transformation chain: decide yes.
+
 Part - Latex Bodysuit
 
-A rubber bodysuit is a kind of bodysuit. A rubber bodysuit is usually sheer. A rubber bodysuit is usually neck covering. There is 1 latex rubber bodysuit.  The text-shortcut of rubber bodysuit is "lab".
+A rubber bodysuit is a kind of bodysuit. A rubber bodysuit is usually sheer. A rubber bodysuit is usually neck covering. There is 1 manly latex rubber bodysuit.  The text-shortcut of rubber bodysuit is "lab".
 
 Figure of latex bodysuit 1 is the file "Items/Clothes/Upper/Latex/bodysuit1.png".
 
@@ -61,25 +60,32 @@ To say ShortDesc of (O - a rubber bodysuit):
 
 Part - Full Body Baby Romper
 
-full body baby romper is a kind of bodysuit. There is 1 unique full body baby romper. The text-shortcut of full body baby romper is "fbbr".
+full body baby romper is a kind of bodysuit. There is 1 transformation-rare full body baby romper. The text-shortcut of full body baby romper is "fbbr".
 
-The printed name of full body baby romper is usually "[TQlink of item described][clothing-title-before]full body baby romper[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of full body baby romper is usually "[clothing-title-before]full body baby romper[clothing-title-after]".
 
 Figure of full body baby romper is the file "Items/Clothes/Upper/Rompers/romper5.png".
 
 To decide which figure-name is clothing-image of (C - a full body baby romper):
 	decide on figure of full body baby romper.
 
-Definition: a full body baby romper (called C) is babywear:
-	decide yes.
+Definition: a full body baby romper is babywear: decide yes.
+Definition: a full body baby romper is bear themed: decide yes.
+Definition: a full body baby romper is cat themed: decide yes.
+Definition: a full body baby romper is bow themed: decide yes.
+Definition: a full body baby romper is drink themed: decide yes.
+Definition: a full body baby romper is pink themed: decide yes.
 
 To say ClothingDesc of (C - a full body baby romper):
 	say "This snug pink romper stretches all the way down [if C is worn]your[otherwise]the wearer's[end if] arms and legs. A colourful pattern of rubber ducks, smiling suns, teddies, sippy cups and socks leaves no doubt as to the age appropriateness of the garment.".
 
 To say ShortDesc of (O - a full body baby romper):
+	say "baby romper".
+To say MediumDesc of (O - a full body baby romper):
 	say "full body baby romper".
 
 To decide which number is the initial outrage of (C - a full body baby romper):
+	if diaper quest is 0, decide on 6;
 	decide on 0.
 
 To decide which number is the initial cringe of (C - a full body baby romper):

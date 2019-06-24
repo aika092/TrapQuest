@@ -2,15 +2,11 @@ Shoes Framework by Shoes begins here.
 
 shoes is a kind of clothing. The soak-limit of a shoes is usually 7.
 
-Include Rollerskates Framework by Shoes.
-Include Heels Framework by Shoes.
 
 Definition: a shoes (called C) is hindrance-enabling: [Is it more likely to fall over when wearing these shoes compared to barefoot?]
 	decide no.
-Definition: a heels (called C) is hindrance-enabling:
-	decide yes.
-Definition: a rollerskates (called C) is hindrance-enabling:
-	decide yes.
+Definition: a heels is hindrance-enabling: decide yes.
+Definition: a rollerskates is hindrance-enabling: decide yes.
 
 To say ShoeType of (S - a shoes):
 	say "shoes".
@@ -21,8 +17,7 @@ To say ShortestDesc of (C - a shoes):
 To decide which number is the kick-bonus of (S - a shoes):
 	decide on 0.
 
-Definition: a shoes (called C) is ingredient:
-	decide yes.
+Definition: a shoes is ingredient: decide yes.
 
 To decide which number is the crafting key of (C - a shoes):
 	decide on 51.
@@ -70,19 +65,19 @@ shoes wearability rules is a rulebook. The wearability rules of shoes is usually
 
 This is the shoes already worn rule:
 	repeat with S running through shoes worn by the player:
-		if summoning is 0, say "You can't wear those because you are already wearing a [printed name of S]!";
+		if summoning is 0 and autowear is false, say "You can't wear those because you are already wearing a [printed name of S]!";
 		rule fails.
 The shoes already worn rule is listed in the shoes wearability rules.
 
 This is the knickers stuck shoes clash rule:
 	repeat with C running through worn stuck shoes:
-		if summoning is 0, say "You can't put these on because your [printed name of C] are stuck!";
+		if summoning is 0 and autowear is false, say "You can't put these on because your [printed name of C] are stuck!";
 		rule fails.
 The knickers stuck shoes clash rule is listed in the knickers wearability rules.
 
 This is the trousers stuck shoes clash rule:
 	repeat with C running through worn stuck shoes:
-		if summoning is 0, say "You can't put these on because your [printed name of C] are stuck!";
+		if summoning is 0 and autowear is false, say "You can't put these on because your [printed name of C] are stuck!";
 		rule fails.
 The trousers stuck shoes clash rule is listed in the trousers wearability rules.
 
@@ -117,26 +112,6 @@ Carry out taking off shoes while the player is dildo stuck:
 		if T is penetrating asshole, ruin asshole;
 		otherwise ruin vagina.
 
-
-Include Thigh High Boots by Shoes.
-Include Peep Toe Heels by Shoes.
-Include Platform Heels by Shoes.
-Include Supertall Platform Heels by Shoes.
-Include Dildo Heels by Shoes.
-Include Court Heels by Shoes.
-Include Girly Bow Court Heels by Shoes.
-Include Wedge Heels by Shoes.
-Include Ballet Heels by Shoes.
-Include Queen of Hearts Heels by Shoes.
-Include Cow Pattern Boots by Shoes.
-Include Ballet Shoes by Shoes.
-Include Lipstick Heels by Shoes.
-Include Armadillo Heels by Shoes.
-Include Baby Booties by Shoes.
-Include Bunny Booties by Shoes.
-Include Mary Janes by Shoes.
-Include Sandals by Shoes.
-Include Trainee Boots by Shoes.
 
 Shoes Framework ends here.
 

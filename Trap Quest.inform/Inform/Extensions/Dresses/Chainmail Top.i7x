@@ -4,10 +4,12 @@ A chainmail top is a kind of overdress. A chainmail top is usually unskirted. A 
 
 Figure of chainmail top is the file "Items/Clothes/Upper/Exposing/chainmailtop1.png".
 
-The printed name of chainmail top is usually "[TQlink of item described][clothing-title-before]chainmail top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of chainmail top is "cmtp".
+The printed name of chainmail top is usually "[clothing-title-before]chainmail top[clothing-title-after]". The text-shortcut of chainmail top is "cmtp".
 
 To compute SelfExamineDesc of (C - a chainmail top):
 	say "A [ShortDesc of C] hangs loosely over your chest. ".
+
+Definition: a chainmail top is grey themed: decide yes.
 
 To decide which number is the initial outrage of (C - a chainmail top):
 	decide on 8.
@@ -20,7 +22,7 @@ To uniquely set up (C - a chainmail top):
 
 To decide which figure-name is clothing-image of (C - a chainmail top):
 	decide on figure of chainmail top.
-	
+
 To say ClothingDesc of (C - a chainmail top):
 	say "A small loop of chainmail armour shaped to allow it to be worn to cover your chest.".
 
@@ -30,7 +32,7 @@ To say ShortDesc of (C - a chainmail top):
 To set up influence of (C - a chainmail top):
 	set up stat-based influence of C.
 
-To decide which object is the potential-upgrade-target of (C - a chainmail top):
+To decide which object is the unique-upgrade-target of (C - a chainmail top):
 	decide on a random off-stage fishnet top.
 
 This is the remove inappropriate chainmail tops rule:

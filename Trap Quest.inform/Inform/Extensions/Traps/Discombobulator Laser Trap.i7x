@@ -1,7 +1,9 @@
 Discombobulator Laser Trap by Traps begins here.
 
 
-A discombobulator laser trap is a kind of trap. There are 20 potentially click potentially wire discombobulator laser traps. The description of a discombobulator laser trap is "A futuristic looking laser ray gun pokes out from its hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if].".
+A discombobulator laser trap is a kind of trap. There are 20 potentially click potentially wire discombobulator laser traps.
+To say ExamineDesc of (C - a discombobulator laser trap):
+	say "A futuristic looking laser ray gun pokes out from its hidden compartment in [if C is in The Woods]a tree[otherwise]the wall[end if].".
 
 This is the spawn initial dungeon laser traps rule:
 	repeat with N running from 1 to (4 + (unlucky * 2)):
@@ -30,18 +32,26 @@ To trigger (Y - a discombobulator laser trap):
 	now Y is revealed;
 	now Y is expired;
 	let X be a random number between 8 and 30;
-	say "A laser ray gun appears from within a hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if], and fires a shot right at you!  ";
-	let C be a random worn currently uncovered transformable clothing;
+	say "A laser ray gun appears from within a hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if], and fires a shot right at you! ";
+	let C be a random worn currently uncovered upgradable clothing;
+	if C is nothing, now C is a random worn currently uncovered transformation chain transformable clothing;
+	if C is nothing, now C is a random worn currently uncovered transformable clothing;
 	if tutorial is 1, now C is a random worn dress;
 	if X > the dexterity of the player or tutorial is 1:
 		if C is clothing:
 			say "It hits your [ShortDesc of C], which starts to shimmer!";
 			potentially transform C;
+			if C is not worn:
+				repeat with M running through reactive monsters:
+					say SuddenTransformTrapReactFlav of M;
 		otherwise:
-			say "It hits your skin directly, but nothing seems to happen...";
+			say "It hits your skin directly, making you feel weaker...";
+			StrengthDown 1;
 	otherwise:
 		say "With lightning reflexes, you avoid the path of the laser ray.".
 
+To say SuddenTransformTrapReactFlav of (M - a monster):
+	say TriggeredTrapReactFlav of M.
 
 
 Discombobulator Laser Trap ends here.

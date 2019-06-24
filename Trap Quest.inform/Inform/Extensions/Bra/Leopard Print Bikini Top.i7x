@@ -1,6 +1,8 @@
 Leopard Print Bikini Top by Bra begins here.
 
-A leopard print bikini top is a kind of bikini top. Figure of bikini 5 is the file "Items/Clothes/Upper/Bras/bikini5.png". A leopard print bikini top is very low cut. The text-shortcut of leopard print bikini top is "lpb". Understand "skimpy" as leopard print bikini top.
+A leopard print bikini top is a kind of bikini top. Figure of bikini 5 is the file "Items/Clothes/Upper/Bras/bikini5.png". The text-shortcut of leopard print bikini top is "lpb". Understand "skimpy" as leopard print bikini top.
+
+Definition: a leopard print bikini top is class-transformation-protected if the class of the player is barbarian.
 
 There is 1 leopard print bikini top.
 
@@ -19,10 +21,8 @@ To say ClothingDesc of (C - a leopard print bikini top):
 To decide which number is the initial outrage of (C - a leopard print bikini top):
 	decide on 4.
 
-To decide which object is the potential-upgrade-target of (C - a leopard print bikini top):
-	if a random number between 1 and 2 is 1, decide on a random off-stage pink bikini top;
-	decide on a random off-stage silver bikini top.
-
+Definition: a leopard print bikini top is leopard themed: decide yes.
+Definition: a leopard print bikini top is yellow themed: decide yes.
 
 Leopard Print Bikini Top ends here.
 

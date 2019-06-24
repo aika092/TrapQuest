@@ -1,13 +1,21 @@
 Open Front Dress by Dresses begins here.
 
-an open-front-dress is a kind of overdress.  an open-front-dress is super-short. an open-front-dress is arm exposing.
+an open-front-dress is a kind of overdress. an open-front-dress is super-short. an open-front-dress is arm exposing. an open-front-dress is transformation-rare.
 
 To decide which number is the initial outrage of (C - an open-front-dress):
-	decide on 7.
+	decide on 10.
 To decide which number is the initial cringe of (C - an open-front-dress):
 	decide on 2.
 
-yellow-open-front-dress is an open-front-dress. The printed name of yellow-open-front-dress is "[TQlink of item described][clothing-title-before]yellow open front dress[clothing-title-after][TQxlink of item described][verb-desc of item described]". Understand "yellow", "open front", "front", "dress" as yellow-open-front-dress.  The text-shortcut of yellow-open-front-dress is "yofd". yellow-open-front-dress is unique.
+To decide which object is the unique-upgrade-target of (C - an open-front-dress):
+	now theme-share-target is C;
+	let K be a random off-stage transformation-eligible more-cringeworthy super-short colour-sharing overdress;
+	if K is nothing, now K is a random off-stage transformation-eligible more-cringeworthy super-short overdress;
+	decide on K.
+
+yellow-open-front-dress is an open-front-dress. The printed name of yellow-open-front-dress is "[clothing-title-before]yellow open front dress[clothing-title-after]". Understand "yellow", "open front", "front", "dress" as yellow-open-front-dress. The text-shortcut of yellow-open-front-dress is "yofd".
+
+Definition: yellow-open-front-dress is yellow themed: decide yes.
 
 Figure of yellow-open-front-dress is the file "Items/Clothes/Upper/Exposing/openfrontdress1.png".
 
@@ -20,12 +28,7 @@ To say ClothingDesc of (C - yellow-open-front-dress):
 To say ShortDesc of (C - yellow-open-front-dress):
 	say "yellow open front dress".
 
-To decide which object is the potential-upgrade-target of (C - yellow-open-front-dress):
-	decide on a random off-stage yellow sissy baby dress.
 
-Definition: yellow-open-front-dress (called C) is end of transformation chain:
-	if diaper quest is 0, decide yes;
-	if there is an off-stage yellow sissy baby dress, decide no;
-	decide yes.
+Definition: yellow-open-front-dress is end of transformation chain if diaper quest is 0.
 
 Open Front Dress ends here.

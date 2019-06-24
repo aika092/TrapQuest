@@ -51,7 +51,7 @@ Hotel05 is a guest modern room. The printed name of Hotel05 is "Room 104". "A no
 REQUIRES COMMENTING
 
 *!]
-Hotel06 is a guest modern room. The printed name of Hotel06 is "[if diaper quest is 1]Pretty Princess[otherwise]Karma Sutra[end if] Penthouse Suite". "This huge bedroom has [if diaper quest is 1]pink girls everything, reminding you of the Royal Chambers, but this has a much more modern feel[otherwise].a large wooden four poster bed as its centrepiece, each poster shaped as a giant [manly-penis] and with elegant carvings of humans engaged in group orgies[end if].". The shape of Hotel06 is L3/0-0-0-1-0-0.
+Hotel06 is a guest modern room. The printed name of Hotel06 is "[if diaper quest is 1]Pretty Princess[otherwise]Karma Sutra[end if] Penthouse Suite". "This huge bedroom has [if diaper quest is 1]pink girls everything, reminding you of the Royal Chambers, but this has a much more modern feel[otherwise]a large wooden four poster bed as its centrepiece, each poster shaped as a giant [manly-penis] and with elegant carvings of humans engaged in group orgies[end if].". The shape of Hotel06 is L3/0-0-0-1-0-0.
 
 [!<hotel07:ModernRoom>*
 
@@ -240,7 +240,7 @@ Hotel32 is a guest modern room. The printed name of Hotel32 is "Room 105". "An u
 REQUIRES COMMENTING
 
 *!]
-Hotel33 is a guest modern room. The printed name of Hotel33 is "Room 106". "A bedroom. You can't notice anything unusual at all at first, but something feels oddly out of place. It takes you a few moments to realise that even though the colours and style are different, the shape of the room and the location of the furniture and doors is eerily similar to your own bedroom at home in the real world. [line break][variable custom style]Well that's a bit freaky.[roman type][line break]". The shape of Hotel33 is L3/0-0-1-1-0-0.
+Hotel33 is a guest modern room. The printed name of Hotel33 is "Room 106". "This room is an [italic type]exact[roman type] replica of your own bedroom at home in the real world![line break][variable custom style]Fuck! Well this is a bit freaky...[roman type][line break]". The shape of Hotel33 is L3/0-0-1-1-0-0.
 
 [!<hotel34:ModernRoom>*
 
@@ -275,10 +275,10 @@ Hotel37 is a mandatory important untrappable modern room. The printed name of Ho
 REQUIRES COMMENTING
 
 *!]
-Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara > 1][NameDesc of woman-barbara] the Permanent[otherwise if watersports fetish is 1 and diaper quest is 0]Human[otherwise]Hotel[end if] Toilet". "[HotelToiletDesc]". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
+Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara > 1][NameDesc of woman-barbara] the Permanent[otherwise if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1]Human[otherwise]Hotel[end if] Toilet". "[HotelToiletDesc]". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
 
 To say HotelToiletDesc:
-	if watersports fetish is 1 and diaper quest is 0, say "A single toilet box sits in the middle of the room. [if the human-toilet-scene of woman-barbara > 1][BigNameDesc of woman-barbara] is permanently stuck here with [his of woman-barbara] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-barbara] lower holes, oversized piercings on [his of woman-barbara] nipples, and the phrases 'TOILET SLUT' and 'URINAL GIRL' permanently inked onto her skin.[otherwise]A slave, covered completely in black latex, lies with their head inside the box and their wrists bound to the sides. Using the toilet would inevitably involve the slave being forced to drink every last drop.[end if]";
+	if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, say "A single toilet box sits in the middle of the room. [if the human-toilet-scene of woman-barbara > 1][BigNameDesc of woman-barbara] is stuck[otherwise]A slave is lying[end if] here with [his of woman-barbara] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-barbara] lower holes, oversized piercings on [his of woman-barbara] nipples, and the phrases 'TOILET SLUT' and 'URINAL GIRL' permanently inked onto [his of woman-barbara] skin[if the human-toilet-scene of woman-barbara <= 1]. Using the toilet would inevitably involve the slave being forced to drink every last drop[end if].";
 	otherwise say "A single toilet sits at the south end of the room.".
 
 [!<hotel39:ModernRoom>*
@@ -295,6 +295,7 @@ REQUIRES COMMENTING
 *!]
 Hotel40 is a mandatory modern room. The printed name of Hotel40 is "[if there is a warp portal in Hotel40]Hotel Portal Room[otherwise]Empty Room[end if]". "[if there is a warp portal in Hotel40]This room has a swirling green portal in the north wall.[otherwise]This room has very little in it.[end if]". The shape of Hotel40 is L3/0-0-0-1-1-1.
 
+Hotel41 is a mandatory modern room. The printed name of Hotel41 is "Maintenance Room". "A small room with tools of varying complexity lined up on the many shelves adorning its walls.".
 
 [!<SayNoChairs>+
 
@@ -309,21 +310,33 @@ To say NoChairs:
 REQUIRES COMMENTING
 
 *!]
-The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, Hotel36, Hotel37, Hotel38, Hotel39, Hotel40 are in The Hotel.
+The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, Hotel36, Hotel37, Hotel38, Hotel39, Hotel40, Hotel41 are in The Hotel.
 
-[!<hotelScenery01:Scenery>*
+[!<hotelScenery01:Thing>*
 
 REQUIRES COMMENTING
 
 *!]
-HotelScenery01 is scenery. HotelScenery01 is in Hotel16. The printed name of HotelScenery01 is "Tattoo Machine". The description of HotelScenery01 is "The black cushioned table almost seems like an uncomfortable bed. [one of]On closer examination, you can read that the screen has some words on it. It says[or]The screen says[stopping] 'Please [bold type]insert[roman type] your inspirational object into the payment slot.'". Understand "bed", "table", "visual", "display", "unit", "screen", "slot", "hole", "chute", "inspiration", "machine", "laundry" as HotelScenery01.
+HotelScenery01 is a thing. HotelScenery01 is not portable. HotelScenery01 is in Hotel16. The printed name of HotelScenery01 is "[TQlink of item described]chute[TQxlink of item described]". Understand "bed", "table", "visual", "display", "unit", "screen", "slot", "hole", "chute", "inspiration", "machine", "tattoo machine", "laundry" as HotelScenery01. The text-shortcut of HotelScenery01 is "chute". Figure of chute is the file "Env/Hotel/chute1.png".
+To say ExamineDesc of (C - HotelScenery01):
+	say "The black cushioned table almost seems like an uncomfortable bed. [one of]On closer examination, you can read that the screen has some words on it. It says[or]The screen says[stopping] 'Please [bold type]insert[roman type] your inspirational object into the payment slot.'".
+To decide which figure-name is the examine-image of (C - HotelScenery01):
+	decide on figure of chute.
+Check going when HotelScenery01 is in the location of the player:
+	force inventory-focus redraw. [This forces the inventory window to redraw]
+Report going when HotelScenery01 is in the location of the player:
+	force inventory-focus redraw. [This forces the inventory window to redraw]
 
 [!<hotelScenery04:Scenery>*
 
 REQUIRES COMMENTING
 
 *!]
-HotelScenery04 is scenery. HotelScenery04 is in Hotel19. The printed name of HotelScenery04 is "sink". The description of HotelScenery04 is "A large sink[one of].[or] that you could use to wash clothing.[stopping]". Understand "sink", "water", "basin" as HotelScenery04.
+HotelScenery04 is scenery. HotelScenery04 is in Hotel19. The printed name of HotelScenery04 is "sink". Understand "water", "basin" as HotelScenery04. The text-shortcut of HotelScenery04 is "sink". Figure of kitchen sink is the file "Env/Hotel/sink1.png".
+To say ExamineDesc of (C - HotelScenery04):
+	say "A large sink[one of].[or] that you could use to wash clothing.[stopping]".
+To decide which figure-name is the examine-image of (C - HotelScenery04):
+	decide on figure of kitchen sink.
 
 [!<CheckEnteringHotelScenery01>+
 
@@ -333,8 +346,6 @@ REQUIRES COMMENTING
 Check entering HotelScenery01:
 	say "You don't see any point unless you want to [bold type]insert[roman type] something into the hole." instead.
 
-Include Laundry Robots by Objects.
-Include Barriers by Rooms.
 
 
 Hotel ends here.

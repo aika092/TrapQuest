@@ -1,10 +1,8 @@
 RoboMatron by Monster begins here.
 
-robomatron is a robot. robomatron is intelligent.
-The description of robomatron is "[RoboMatronDesc]". Understand "matron", "matronbot" as robomatron. The text-shortcut of robomatron is "mtb".
+robomatron is a robot. robomatron is intelligent. Understand "matron", "matronbot" as robomatron. The text-shortcut of robomatron is "mtb".
 
-Definition: A robomatron (called M) is hotel dwelling:
-	decide no. [Stops it spawning via spawning trap]
+Definition: A robomatron is hotel dwelling: decide no. [Stops it spawning via spawning trap]
 
 To say ShortDesc of (M - robomatron):
 	say "MatronBot".
@@ -12,8 +10,13 @@ To say ShortDesc of (M - robomatron):
 To say MediumDesc of (M - robomatron):
 	say "MatronBot".
 
-To say RoboMatronDesc:
-	say "This huge humanoid robot looks very robust and powerful.".
+To say MonsterDesc of (M - robomatron):
+	say "This huge humanoid robot looks like it's come straight out of a comic book. Eight arms, each wielding some kind of baby related item at the end, are backed up by two further flying hands, carrying further implements with which to advance your babification. There's no mistake about it - this is some kind of Final Boss.".
+
+Figure of robomatron is the file "NPCs/Bosses/matronbot1.png".
+
+To decide which figure-name is the monster-image of (M - robomatron):
+	decide on figure of robomatron.
 
 To set up (M - robomatron):
 	reset M;
@@ -27,32 +30,28 @@ This is the spawn initial robomatron rule:
 		summon robomatron in the hotel.
 The spawn initial robomatron rule is listed in the setting up hotel monsters rules.
 
-Definition: robomatron (called M) is too intimidating:
-	decide no. [Player should never surrender to final boss]
+Definition: robomatron is too intimidating: decide no. [Player should never surrender to final boss]
 
 Part 1 - Perception
 
 To compute perception of (M - robomatron):
 	now M is interested;
 	now the difficulty of M is 5;
-	say "[BigNameDesc of M] notices you!  [speech style of M]'TEST SUBJECT DETECTED. FINAL BOSS ROUTINE ENGAGED. SCANNING STATUS...[line break]";
+	say "[BigNameDesc of M] notices you![line break][speech style of M]'TEST SUBJECT DETECTED. FINAL BOSS ROUTINE ENGAGED. SCANNING STATUS...[line break]";
 	let D be a random worn diaper;
-	unless D is a worn total protection diaper:
-		say "NO [if there is a worn diaper]INTACT [end if]DIAPER DETECTED. INCREASING POWER LEVEL BY 3.";
+	unless D is a total protection diaper:
+		say "NO [if D is diaper]INTACT [end if]DIAPER DETECTED. INCREASING POWER LEVEL BY 3.";
 		DifficultyUp M by 3;
-	if diaper lover > 2 and D is not messed diaper:
-		say "NO MESSED DIAPER DETECTED. INCREASING POWER LEVEL BY 2.";
-		DifficultyUp M by 2;
-	unless D is diaper and the total-soak of D  < the soak-limit of D / 2 and D is not messed:
-		say "NO FULLY USED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
+	if diaper lover > 3 and D is not messed diaper:
+		say "NO MESSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
 		DifficultyUp M by 1;
-	if D is diaper and the total-soak of D is 0:
+	if D is unsoiled diaper:
 		say "COMPLETELY UNUSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
 		DifficultyUp M by 1;
 	unless there is a worn pacifier:
-		say "NO PACIFIER DETECTED. INCREASING POWER LEVEL BY 2.";
-		DifficultyUp M by 2;
-	unless the player is incontinent:
+		say "NO PACIFIER DETECTED. INCREASING POWER LEVEL BY 1.";
+		DifficultyUp M by 1;
+	if the incontinence of the player < the max-incontinence of the player:
 		say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
 		DifficultyUp M by 2;
 	if the cringe appearance of the player < 10:
@@ -63,11 +62,12 @@ To compute perception of (M - robomatron):
 		say "PREPARE YOURSELF.'[roman type][line break]";
 	otherwise:
 		calm M;
-		say "SUBJECT'S TRANSFORMATION IS COMPLETE. TERMINATING FINAL BOSS ROUTINE.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.".
+		say "SUBJECT'S TRANSFORMATION IS COMPLETE. TERMINATING FINAL BOSS ROUTINE.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.";
+	now the health of M is the maxhealth of M.
 
 Part 2 - Motion
 
-To compute motion of (M - robomatron):
+To compute monstermotion of (M - robomatron):
 	do nothing.
 
 To compute (M - robomatron) seeking (D - a direction):
@@ -84,20 +84,16 @@ To compute kneeling reaction of (M - robomatron):
 	say "[BigNameDesc of M] stands over you, [his of M] powerful arms folded in front of [him of M]. [line break][speech style of M]'DETERMINING APPROPRIATE PUNISHMENT ROUTINE.'[roman type][line break]";
 	humiliate 75.
 
-Definition: robomatron (called M) is willing to spank:
-	decide yes.
+Definition: robomatron is willing to spank: decide yes.
 
-Definition: robomatron (called M) is willing to spank gently:
-	decide no.
+Definition: robomatron is willing to spank gently: decide no.
 
 To decide which number is the spanking length of (M - robomatron):
 	decide on a random number between 3 and 4.
 
-Definition: robomatron (called M) is willing to deliver enemas:
-	decide yes.
+Definition: robomatron is willing to deliver enemas: decide yes.
 
-Definition: robomatron (called M) is eager to enhance the spanking:
-	decide yes.
+Definition: robomatron is eager to enhance the spanking: decide yes.
 
 To say SpankingMercyRejectionFlav of (M - robomatron):
 	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type]  It doesn't look like [NameDesc of M] plans to be nice.".
@@ -106,7 +102,7 @@ To say SpankingStartFlav of (M - robomatron):
 	say "[BigNameDesc of M] grabs you by the ankles and pulls you into the air, so that you are hanging vertically upside down!  [line break][variable custom style][if the player is able to speak]'Eek! Put me down!!!'[otherwise]What?! No way, I can't get punished like this[one of][or] again[stopping]![end if][roman type][line break]".
 
 To say SpankingDeclarationFlav of (M - robomatron):
-	say "[speech style of M]'ULTIMATE SPANKING ROUTINE INITIATED.'[roman type]  ".
+	say "[speech style of M]'ULTIMATE SPANKING ROUTINE INITIATED.'[roman type][line break]".
 
 To say SpankingFlav of (M - robomatron):
 	say "[BigNameDesc of M]'s arm rotates fully at the elbow, delivering [one of]five[or]four[or]six[as decreasingly likely outcomes] powerful blows to your [buttcheeks] with [his of M] hard metal hand. [if there is a worn diaper][DiaperSoftenFlav of M][end if]".
@@ -144,7 +140,7 @@ To say EnemaAfterFlav of (M - robomatron):
 
 To compute enema floor reaction of (M - robomatron):
 	humiliate 200;
-	if player-squatting is 1, humiliate 500;
+	if voluntarySquatting is 1, humiliate 500;
 	say "[BigNameDesc of M]'s eyes turn red. [line break][speech style of M]BAD GIRL. BAD GIRL.'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
 	anger M;
 	now M is interested.

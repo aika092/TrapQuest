@@ -10,8 +10,6 @@ REQUIRES COMMENTING
 @!]
 A wearthing is a kind of thing.
 
-Definition: a wearthing (called C) is ballet related:
-	decide no.
 
 [!<Clothing>@
 
@@ -38,7 +36,7 @@ Clothing can be dense, sheer-when-wet, sheer, see-through (this is the clothing-
 
 [!<Clothing>@<IsActuallySheer>+
 
-REQUIRES COMMENTING
+Currently see-through.
 
 +@!]
 Definition: a clothing (called C) is actually sheer:
@@ -47,12 +45,10 @@ Definition: a clothing (called C) is actually sheer:
 
 [!<Clothing>@<IsActuallyDense>+
 
-REQUIRES COMMENTING
+Currently not see-through.
 
 +@!]
-Definition: a clothing (called C) is actually dense:
-	if C is actually sheer, decide no;
-	decide yes.
+Definition: a clothing is actually dense if it is not actually sheer.
 
 [!<Clothing>@<skirtLength:SkirtLengthEnum>*
 
@@ -104,27 +100,31 @@ Clothing can be unlocked or locked. Clothing is usually unlocked.
 
 Clothing has a number called effect. The effect of clothing is usually 1.
 Clothing has a number called soak-limit. The soak-limit of a clothing is usually 10.
-Clothing has a number called semen-soak. The semen-soak of clothing is usually 0. 
-Clothing has a number called urine-soak. The urine-soak of clothing is usually 0. 
-Clothing has a number called milk-soak. The milk-soak of clothing is usually 0. 
-Clothing has a number called water-soak. The water-soak of clothing is usually 0. 
+Clothing has a number called semen-soak. The semen-soak of clothing is usually 0.
+Clothing has a number called urine-soak. The urine-soak of clothing is usually 0.
+Clothing has a number called milk-soak. The milk-soak of clothing is usually 0.
+Clothing has a number called water-soak. The water-soak of clothing is usually 0.
 To decide which number is the total-soak of (C - a clothing):
 	decide on the semen-soak of C + the urine-soak of C + the milk-soak of C + the water-soak of C.
 To compute drying of (C - a clothing):
 	if the total-soak of C > 0:
-		if the water-soak of C > 0:
-			if a random number between 1 and 3 is 1:
-				decrease the water-soak of C by 1;
-		if the milk-soak of C > 0:
-			if a random number between 1 and 12 is 1:
-				decrease the milk-soak of C by 1;
-		if the urine-soak of C > 0:
-			if a random number between 1 and 10 is 1:
-				decrease the urine-soak of C by 1;
-		if the semen-soak of C > 0:
-			if a random number between 1 and 16 is 1:
-				decrease the semen-soak of C by 1;
-		if the total-soak of C is 0 and C is in the location of the player or C is held, say "[if C is held]Your[otherwise]The[end if] [ShortDesc of C] is now completely dry.".
+		if C is fluid immune:
+			WaterEmpty C;
+			clean C;
+		otherwise:
+			if the water-soak of C > 0:
+				if a random number between 1 and 10 is 1:
+					decrease the water-soak of C by 1;
+			if the milk-soak of C > 0:
+				if a random number between 1 and 16 is 1:
+					decrease the milk-soak of C by 1;
+			if the urine-soak of C > 0:
+				if a random number between 1 and 14 is 1:
+					decrease the urine-soak of C by 1;
+			if the semen-soak of C > 0:
+				if a random number between 1 and 20 is 1:
+					decrease the semen-soak of C by 1;
+			if the total-soak of C is 0 and C is in the location of the player or C is held, say "[if C is held]Your[otherwise]The[end if] [ShortDesc of C] is now completely dry.".
 [Clothing has a number called semen-limit. The semen-limit of clothing is usually 10.
 Clothing has a number called urine-limit. The urine-limit of clothing is usually 10.
 Clothing has a number called milk-limit. The milk-limit of clothing is usually 10.]
@@ -132,37 +132,41 @@ Clothing has a number called top-layer. The top-layer of clothing is usually 0.
 Clothing has a number called mid-layer. The mid-layer of clothing is usually 0.
 Clothing has a number called bottom-layer. The bottom-layer of clothing is usually 0.
 Clothing can be crotch-intact, crotch-skirted, crotch-zipped, crotch-unzipped, crotch-ripped, crotch-exposing, no-crotch (this is the crotch-layering property). Clothing is usually no-crotch.
+
+[How is this item put on and taken off?]
+Definition: a clothing is crotch-pullup if it is not no-crotch and it is unskirted.
+Definition: a clothing is crotch-tie-up if it is not no-crotch and it is not crotch-pullup.
+
 Clothing can be crotch-in-place or crotch-displaced. Clothing is usually crotch-in-place.
 [!<ClothingIsDisplacable>+
 
 Can this be displaced at the crotch?
 
 +!]
-Definition: a clothing is displacable:
-	decide no.
+Definition: a clothing is displacable: decide no.
 
 [!<ClothingIsUndisplacable>+
 
 Is this unable to be displaced at the crotch?
 
 +!]
-Definition: a clothing is undisplacable:
-	if it is displacable, decide no;
-	decide yes.
+Definition: a clothing is undisplacable if it is not displacable.
+
 [!<ClothingIsRippable>+
 
 Can this be ripped at the crotch?
 
 +!]
-Definition: a clothing is rippable:
-	decide no.
+Definition: a clothing is rippable: decide no.
 
 Clothing can be not-enema-helping or enema-helping. Clothing is usually not-enema-helping.
 Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-normal.
 Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt-windowed. [A butt window exposes underwear but not the asshole itself.]
 Clothing have a number called armour. The armour of clothing is usually 0. Clothing have a number called damage. The damage of clothing is usually 0.
 Clothing can be zippable or unzippable. Clothing is usually unzippable.
-Clothing can be plentiful, rare, unique (this is the clothing-rarity property). Clothing is usually plentiful.
+Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful. [Plentiful shows up in containers. Rare shows up much less often in special containers and in the junk room. Transformation rare are (mostly) slutty items that mainly appear from transformations. Unique are items with their own spawning mechanics that shouldn't be spawned in other ways.]
+Definition: a clothing is transformation-eligible if (it is plentiful or it is transformation-rare) and it is fetish appropriate.
+Definition: a clothing is non-unique if it is not unique.
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
 Clothing can be leg exposing or leg covering. Clothing is usually leg exposing.
@@ -185,21 +189,18 @@ Definition: a clothing (called C) is uniquely nipple exposing: [Allows us to cre
 	decide no.
 Clothing can be milking flappable or milking unflappable. Clothing is usually milking unflappable. [Are there flaps that allow for breast feeding / milking?]
 Clothing can be totally-exclusive, top-exclusive, bottom-exclusive, not-exclusive (this is the clothing-exclusivity property). Clothing is usually not-exclusive. [Exclusive means nothing can go above or below it.]
-Definition: a clothing is exclusive:
-	if it is not-exclusive, decide no;
-	decide yes.
+Definition: a clothing is exclusive if it is not not-exclusive.
 Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
-Clothing can be swimwear. Clothing is usually not swimwear. [Items flagged as swimwear help with activities in bodies of water (mostly escaping from monsters living there)]
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, and stumbling. Clothing has a magic-type. The magic-type of clothing is usually blandness.
-Clothing can be normal, store, museum-store, stolen (this is the ownership property). Clothing is usually normal.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, and stumbling. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+[Clothing can be blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, or stumbling (this is the magic-type property). Clothing is usually blandness.]
+A thing can be unowned, store, museum-store, stolen (this is the ownership property). A thing is usually unowned.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
-To decide which number is the penis-capacity of (C - a clothing):
+To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
 	decide on 10.
-[what's the largest size of penis it can cover?]
 Clothing can be stuck. Clothing is usually not stuck.
 [!<YourselfIsClothingStuck>+
 
@@ -237,7 +238,7 @@ Is the player unable to move because a monster is holding onto a subduing clothi
 Definition: yourself is subdued:
 	repeat with C running through worn subduing clothing:
 		repeat with M running through monsters covering C:
-			if M is not in the location of the player, now M is not covering C; [As a safety feature we force monsters to let go of subduing clothing if they're no longer in the same room]
+			if M is not in the location of the player or M is not dangerous, now M is not covering C; [As a safety feature we force monsters to let go of subduing clothing if they're no longer attacking the player]
 			otherwise decide yes;
 	decide no.
 [!<SubduedImmobilityRule>+
@@ -248,42 +249,27 @@ Allows us to flag the player as immobile if they are subdued.
 This is the subdued immobility rule:
 	if the player is subdued, rule fails.
 The subdued immobility rule is listed in the immobility rules.
-Definition: a clothing (called C) is nudism-enabling:
-	decide no. [If the player is wearing this, they are wearing something that counts as clothing!]
+Definition: a clothing is nudism-enabling: decide no. [If the player is wearing this, they are wearing something that counts as clothing!]
 Definition: a clothing (called C) is nudism-disabling:
 	if C is nudism-enabling, decide no;
 	decide yes.
-Definition: an accessory (called C) is nudism-enabling:
-	decide yes.
-Definition: a sex toy (called C) is nudism-enabling:
-	decide yes.
-Definition: a piercing (called C) is nudism-enabling:
-	decide yes.
-Definition: a bondage (called C) is nudism-enabling:
-	decide yes.
-Definition: an equippable (called C) is nudism-enabling:
-	decide yes.
-Definition: a bag of holding (called C) is nudism-enabling:
-	decide yes.
+Definition: an accessory is nudism-enabling: decide yes.
+Definition: a sex toy is nudism-enabling: decide yes.
+Definition: a piercing is nudism-enabling: decide yes.
+Definition: a bondage is nudism-enabling: decide yes.
+Definition: an equippable is nudism-enabling: decide yes.
+Definition: a bag of holding is nudism-enabling: decide yes.
 Definition: yourself is clothed:
 	if there is worn nudism-disabling clothing, decide yes;
 	decide no.
 Definition: yourself is naked:
 	if the player is clothed, decide no;
 	decide yes.
-Definition: a clothing (called C) is leghole free: [Anything that must be pulled down the legs like jeans is NOT leghole free.]
-	decide yes.
-Definition: a thing (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
-	decide no.
-Definition: a thing (called C) is interracial themed: [Is it something that implies BBC love?]
-	decide no.
-Definition: a thing (called C) is magic themed: [Is it something that implies magic?]
-	decide no.
-Definition: a clothing (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
-	if C is babywear, decide yes;
-	decide no.
-Definition: a clothing (called C) is babywear: [Is it something that an NPC might put on a player to make them look more like a baby?]
-	decide no.
+
+
+
+
+
 Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
 	decide no.
 
@@ -316,8 +302,6 @@ Definition: a clothing (called C) is desirable:
 Definition: a clothing (called C) is slitted: [Slitted skirts don't block knee attacks]
 	decide no.
 
-
-Include Orifice Protection by Clothing.
 
 
 Clothing Adjectives ends here.

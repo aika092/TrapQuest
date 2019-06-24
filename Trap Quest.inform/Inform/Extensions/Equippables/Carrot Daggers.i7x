@@ -2,12 +2,15 @@ Carrot Daggers by Equippables begins here.
 
 carrot daggers is an equippable. carrot daggers is unique. carrot daggers is slap ready. carrot daggers is manly. carrot daggers is latex.
 
-The printed name of carrot daggers is "[TQlink of item described][clothing-title-before]carrot[if item described is blessed] dagger[end if]s[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of carrot daggers is "cdg". Understand "carrots" as carrot daggers.
+The printed name of carrot daggers is "[clothing-title-before]carrot[if item described is blessed] dagger[end if]s[clothing-title-after]". The text-shortcut of carrot daggers is "cdg". Understand "carrots" as carrot daggers.
 
 Figure of carrot daggers is the file "Items/Accessories/Equippables/carrots1.png".
 
 To decide which figure-name is the clothing-image of (W - carrot daggers):
 	decide on figure of carrot daggers.
+
+Definition: carrot daggers is food themed: decide yes.
+Definition: carrot daggers is orange themed: decide yes.
 
 To say ClothingDesc of (W - carrot daggers):
 	say "Two carrots made out of latex[if W is blessed]. The tips are surprisingly sharp[end if].".
