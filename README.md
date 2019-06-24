@@ -1,4 +1,7 @@
 # TrapQuest
+
+**PLEASE NOTE THAT THIS IS NOW OVER SIX MONTHS OLD DUE TO CODE REWORKS MAKING IT DIFFICULT TO EXTRACT IMAGES FROM THE CODE. AIKA IS WORKING ON A FIX.**
+
 Partially redacted public version of the source code for the indie adult roguelike game.
 
 Read this first:
