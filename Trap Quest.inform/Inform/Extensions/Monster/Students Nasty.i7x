@@ -1,6 +1,12 @@
 Students Nasty by Monster begins here.
 
-A nasty student is a kind of student.
+A nasty student is a kind of student. Understand "mean" as a nasty student.
+
+To say MediumDesc of (M - a nasty student):
+	say "mean [rank-colour of item described] student [student-name of item described]".
+
+To decide which number is the vindictiveness of (M - a nasty student): [We can use this for various calculations to check which students do what]
+	decide on a random number between 2 and 4.
 
 Part - Abbi
 
@@ -68,7 +74,7 @@ To update name of (M - student-lucy):
 		now the student-print of M is "boisterous brat";
 	otherwise:
 		now the student-name of M is "Lucky";
-		now the student-name of M is "feisty fiend".
+		now the student-print of M is "feisty fiend".
 
 To say WhoAnswer of (M - student-lucy):
 	say "[speech style of M]'[if the current-rank of M is 1]Thanks to YOU, I have to be [student-name of M] again. I'll never forget what you did to me, you [bitch].'[otherwise]You can call me Queen [student-name of M][end if].'[roman type][line break]".
@@ -143,7 +149,7 @@ To compute appearance assessment of (M - student-katya):
 		say "[big he of M] makes a face like [he of M]'s planning to do something to you, but seems to think better of it.";
 
 To say FirstResponse of (M - student-katya):
-	say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my [cunt] for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. Please watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside herself and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend!  Please, do you know where I can find more cock?  I feel so empty and sad when there's no cock inside of me!'[roman type][line break][end if]".
+	say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my [cunt] for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside herself and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock?  I feel so empty and sad when there's no cock inside of me!'[roman type][line break][end if]".
 
 To say WhoAnswer of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][student-name of M]['], should I allow you to talk to me[otherwise]My name is ['][student-name of M]['] because the only important thing about me is my [cunt][end if].'[roman type][line break]".
@@ -229,77 +235,6 @@ To update name of (M - student-belinda):
 To say StoryAnswer of (M - student-belinda):
 	say "[speech style of M]'My boyfriend wants me to call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. Apparently this place is going to convince me it's fun to act like a bratty girl. We'll see...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
-Part - Tanya
-
-student-tanya is a dq-only nasty student.
-
-The text-shortcut of student-tanya is "stta".
-
-Figure of tanya is the file "NPCs/School/Student/student16.png".
-
-To decide which figure-name is the monster-image of (M - student-tanya):
-	decide on figure of tanya.
-
-To say MonsterDesc of (M - student-tanya):
-	say "This skinny woman has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of m] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
-
-The max-rank of student-tanya is 2.
-
-To update name of (M - student-tanya):
-	if the current-rank of M is 1:
-		now the student-name of M is "Tanya";
-		now the student-print of M is "rainbow rebel";
-		now the text-shortcut of student-tanya is "stta";
-	otherwise:
-		now the student-name of M is "Temper";
-		now the student-print of M is "lil monster";
-		now the text-shortcut of student-tanya is "stte".
-
-To say StoryAnswer of (M - student-tanya):
-	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear!  And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
-
-Part - Emily
-
-student-emily is a dq-only nasty student.
-
-The text-shortcut of student-emily is "stem".
-
-Figure of emily is the file "NPCs/School/Student/student22.png".
-
-To decide which figure-name is the monster-image of (M - student-emily):
-	decide on figure of emily.
-
-To say MonsterDesc of (M - student-emily):
-	say "This young Asian woman is wearing a short pink babydoll dress above bare thighs and knee-high pink socks. [big he of M] is so tall that it always feels like [he of M][']s looking down at you. [big his of M] expression suggests that she genuinely is.".
-
-The current-rank of student-emily is 3.
-The max-rank of student-emily is 4.
-
-To update name of (M - student-emily):
-	if the current-rank of M is 3:
-		now the student-name of M is "Emily";
-		now the student-print of M is "elegant enfant";
-	otherwise:
-		now the student-name of M is "Ember";
-		now the student-print of M is "elegant emptier".
-
-To say WhoAnswer of (M - student-emily):
-	say "[speech style of M]'I'm the Queen Bee of these parts, bitch. Ugly worms like you aren't going to get very far while there are people like me around.'[roman type][line break]".
-
-To say WhereAnswer of (M - student-emily):
-	say "[speech style of M]'[if the rank of the player <= 1]A place where ugly bitches like you get turned into cute girls like me.'[otherwise]It's simple, you get promoted by being the hottest, most attractive diaper babe here. Which means that you have no chance, haha.'[end if][roman type][line break]".
-
-To say EscapeAnswer of (M - student-emily):
-	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's a photo of you underneath the words [']NEVER GONNA MAKE IT OUT OF RUBY['] that we like to laugh at as we walk past!'[otherwise]I've heard there's a photo of me on the wall that people like to look at for inspiration.'[end if][roman type][line break]".
-
-To say StoryAnswer of (M - student-emily):
-	say "[speech style of M]'There's nobody out there who can look as sexy in diapers as I can. I've come here to prove that compared to me you are all disgusting slobs.'[roman type][line break]".
-
-To say AdviceAnswer of (M - student-emily):
-	say "[speech style of M]'Give up while you still have [if there is a worn dry knickers]dry underwear[otherwise]a shred of dignity remaining[end if]. It won't last long.'[roman type][line break]".
-
-To compute teaching of (M - student-emily):
-	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
 
 Part - Hiroko
 
@@ -323,7 +258,7 @@ To update name of (M - student-hiroko):
 		now the student-name of M is "Hiroko";
 		now the student-print of M is "heavenly hostess";
 	otherwise:
-		now the student-name of M is "Hyacinth";
+		now the student-name of M is "Hostess-sama";
 		now the student-print of M is "heavenly harlot".
 
 To say WhoAnswer of (M - student-hiroko):
@@ -339,72 +274,13 @@ To say StoryAnswer of (M - student-hiroko):
 	say "[speech style of M]'There's nobody out there who can look as perfect as me. I've come here to prove that [if the current-rank of M > 3]nobody can worship a [manly-penis] like I can[otherwise]compared to me you are all disgusting sluts with no class[end if].'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-hiroko):
-	say "[speech style of M]'Give up while you still havea shred of dignity remaining. It won't last long.'[roman type][line break]".
+	say "[speech style of M]'Give up while you still have a shred of dignity remaining. It won't last long.'[roman type][line break]".
 
 To compute teaching of (M - student-hiroko):
 	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
 
 
 Part - Default Conversation
-
-[Called when a nasty student beats a player in combat and if a nasty student notices a player with high delicateness. Note: although other types of student have perception functions that avoid them interacting with the player, it is still possible to fight all types of students if you attack them.]
-This is the nasty-bullying rule:
-	if diaper quest is 1, compute dq bullying of current-monster;
-	otherwise compute tq bullying of current-monster;
-	rule succeeds.
-The unique punishment rule of a nasty student is usually the nasty-bullying rule.
-
-[This function handles bullying from a nasty student]
-To compute tq bullying of (M - a nasty student):
-	if the player is upright:
-		say "[speech style of M]'[one of]It's not your lucky day today. Get on your knees, [bitch].'[or]Guess what? I'll go easy on you if you get on your knees right now.'[or]You look pretty fun to mess with. Get on your knees.'[at random][roman type][line break]Do you get on your knees?";
-		if the player consents:
-			try kneeling;
-	if the player is prone:
-		let R be a random number between 1 and 4;
-		if R is 1 and asshole is exposed:
-			let P be a random sex toy penetrating asshole;
-			if P is clothing:
-				say "[speech style of M]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of M] smacks your ass roughly, making sure your palm connects with your [ShortDesc of P] so you feel it all the way inside your [asshole].";
-			otherwise:
-				now P is a random off-stage dong;
-				let pN be the openness of asshole - size of P;
-				say "[speech style of M]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of M] pulls out a [ShortDesc of P], [if pN < 0]laughing cruelly at your whimper of pain as [he of M] roughly forces it into your [asshole][otherwise if pN < 3]slamming it into your [asshole][end if] and harshly swats your ass. [big his of M] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
-				summon P;
-			ruin asshole times 2;
-		otherwise if R <= 2 and watersports fetish is 1:
-			say PissDrinkThreat of M;
-			FacePiss from M;
-		otherwise:
-			compute angry punishment of M;
-			Bore M;
-	otherwise:
-		say "[speech style of M]'[one of]I guess you really want to fight.'[or]Oops, looks like you pissed me off.'[or]Now I'm mad. Come on then.'[at random][roman type][line break]";
-		anger M.
-
-To say angry punishment insult of (M - a nasty student):
-	say "[first custom style]'Your outfit is fucking ugly.'[roman type][line break]".
-
-To say angry punishment accessory confiscation of (M - a nasty student):
-	say "[first custom style]'Haha, YOINK!'[roman type][line break]".
-
-To say angry punishment clothing destruction of (M - a nasty student) on (C - a clothing):
-	say "[first custom style]'Trust me, you're going to look way hotter like this!'[roman type][line break]".
-
-To compute dq bullying of (M - a nasty student):[TODO]
-	compute angry punishment of M;
-	Bore M.
-
-[If the player looks easy to mess with, nasty students will try to bully you.]
-To compute student perception of (M - a nasty student):
-	if the delicateness of the player <= (10 + the charisma of the player) or diaper quest is 1:[there's no dq bullying implemented yet, so it doesn't happen in dq]
-		say "[one of]It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or][stopping]";
-	otherwise:
-		compute appearance assessment of M.[calls the nasty-bullying rule]
-
-[Appearance assessment triggers the "bullying rule," which is also the nasty student's punishment rule]
-To compute appearance assessment of (M - a nasty student):
-	follow the nasty-bullying rule.
 
 To compute nonstudent perception of (M - a nasty student):
 	say "[speech style of M]'Your days are numbered if you keep walking around here with no armband.'[roman type][line break][Big he of M] walks away!";
@@ -414,9 +290,34 @@ To compute nonstudent perception of (M - a nasty student):
 To compute (M - a nasty student) protecting against (X - a monster):
 	compute default protecting of M.
 
+
+[If the player looks easy to mess with, nasty students will try to bully you.]
+To compute student perception of (M - a nasty student):
+	if the delicateness of the player <= (10 + the charisma of the player) or diaper quest is 1:[there's no dq bullying implemented yet, so it doesn't happen in dq]
+		say "[one of]It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or][stopping]";
+	otherwise:
+		compute appearance assessment of M.[calls the bullying rule]
+
+[Appearance assessment triggers the "bullying rule," which is also the nasty student's punishment rule]
+To compute appearance assessment of (M - a nasty student):
+	follow the bullying rule.
+
+
+To say FirstTimeBullyDemandFlav of (M - a nasty student):
+	say "[speech style of M]'[one of]It's not your lucky day today. Get on your knees, [bitch].'[or]Guess what? I'll go easy on you if you get on your knees right now.'[or]You look pretty fun to mess with. Get on your knees.'[at random][roman type][line break]".
+
+To say FirstTimeBullyFlav of (M - a nasty student):
+	say "[speech style of M]'[one of]It's not your lucky day, [bitch].'[or]You look pretty fun to mess with. I wonder if you'll even fight back.'[at random][roman type][line break]".
+
+To say RepeatBullyDemandFlav of (M - a nasty student):
+	say "[speech style of M]'[one of]Well, well, well, look who it is. Get on your knees, [bitch].'[or]How dare you STAND in my presence? Get on your knees, worm!'[or]I'm sorry, did I give you permission to be on your feet in my presence? Get on the ground, now!'[at random][roman type][line break]".
+
+To say RepeatBullyFlav of (M - a nasty student):
+	say "[speech style of M]'[one of]Well, well, well, look who it is. My favourite footrest.'[or]Oops! I bet you weren't hoping to run into me today, huh?'[or]Oh, what perfect timing!'[at random][roman type][line break]".
+
 To say FirstResponse of (M - a nasty student):
 	say "[big he of M] narrows [his of M] eyes.[line break][speech style of M]'What the fuck do you want?'[roman type][line break]".
-	
+
 To say RepeatResponse of (M - a nasty student):
 	say FirstResponse of M.
 

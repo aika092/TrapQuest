@@ -1,10 +1,10 @@
 Thigh High Boots by Shoes begins here.
 
 
-A thigh high boots is a kind of boots.  The printed name of thigh high boots is usually "[TQlink of item described][item style][clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The printed plural name of thigh high boots is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of thigh high boots is "thb".
+A thigh high boots is a kind of boots.  The printed name of thigh high boots is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after]".  The printed plural name of thigh high boots is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after]".  The text-shortcut of thigh high boots is "thb".
 
-Definition: a thigh high boots (called C) is fluid immune:
-	decide yes.
+Definition: a thigh high boots is fluid immune: decide yes.
+Definition: a thigh high boots is black themed: decide yes.
 
 There is 1 latex thigh high boots. There is 1 leather thigh high boots.
 
@@ -57,11 +57,15 @@ To uniquely set up (C - a WC thigh high boots):
 To set up influence of (C - a WC thigh high boots):
 	now C is urine-taste-addiction-influencing.
 
+Definition: a WC thigh high boots is toilet themed: decide yes.
+Definition: a WC thigh high boots is black themed: decide no.
+Definition: a WC thigh high boots is white themed: decide yes.
+
 Report kicking when there are worn WC thigh high boots:
 	let C be a random WC thigh high boots;
 	if C is kicking:
 		if the powerup of C < 20 and (a random number between 1 and powerup of C) + (a random number between 1 and powerup of C) <= 2:
-			say "[bold type]You feel the kicking enchantment leave your [C][bold type] and the stumbling enchantment return. It looks like it's decided you've been shirking your toilet duties![roman type][line break]";
+			say "[bold type]You feel the kicking enchantment leave your [ShortDesc of C] and the stumbling enchantment return. It looks like it's decided you've been shirking your toilet duties![roman type][line break]";
 			now C is stumbling;
 			now the powerup of C is 0;
 		otherwise:

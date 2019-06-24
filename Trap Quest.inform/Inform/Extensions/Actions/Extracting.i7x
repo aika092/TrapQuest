@@ -5,13 +5,14 @@ Extracting it with is an action applying to two things. [The second noun is the 
 Check extracting something with:
 	if the noun is not bottle or the second noun is not bottle, say "This verb is for transferring liquid between two containers." instead;
 	if the noun is squirt dildo and the second noun is can, say "The dildo can't fit inside the hole." instead;
-	if the doses of the second noun is 0, say "But the [second noun] is empty." instead;
+	if the player is not able to manually use manual dexterity, do nothing instead;
+	if the doses of the second noun is 0, say "But the [ShortDesc of second noun] is empty." instead;
 	if the noun is penetrating a fuckhole, say "The [noun] is currently inside you..." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the doses of the noun > 0:
-		say "Are you sure you wish to empty your [noun] of its current contents? [yesnolink] ";
-		if the player consents:
-			say "You empty the contents of the [noun] onto the ground.";
+		say "Are you sure you wish to empty your [noun] of its current contents? ";
+		if the player is bimbo consenting:
+			say "You empty the contents of the [ShortDesc of the noun] onto the ground.";
 			dump the noun;
 		otherwise:
 			say "You change your mind." instead.
@@ -21,29 +22,29 @@ Carry out extracting something with:
 	if the second noun is player-origin, now the noun is player-origin;
 	otherwise now the noun is monster-origin;
 	if the doses of the second noun > the max-doses of the noun:
-		now the doses of the noun is the max-doses of the noun;
-		decrease the doses of the second noun by the max-doses of the noun;
+		DoseFill the noun;
+		DoseDown the second noun by the max-doses of the noun;
 	otherwise:
-		now the doses of the noun is the doses of the second noun;
-		now the doses of the second noun is 0;
+		SetDose the noun to the doses of the second noun;
+		DoseEmpty the second noun;
 	if the fill-colour of the second noun is creamy, compute father material of the second noun into the noun;
 	if the second noun is can:
-		say "You discard the empty [second noun].";
+		say "You discard the empty [ShortDesc of the second noun].";
 		destroy the second noun;
-	now seconds is 6.
+	allocate 6 seconds.
 
 Report extracting something with:
 	say ExtractFlav of the noun;
-	if the doses of the second noun is 0, say "The [second noun] is now empty.".
+	if the doses of the second noun is 0, say "The [ShortDesc of the second noun] is now empty.".
 
 To say ExtractFlav of (V - a vessel):
-	say "You pour [PotionType of the second noun] from the [second noun] into the [noun].".
+	say "You pour [PotionType of the second noun] from the [ShortDesc of the second noun] into the [ShortDesc of the noun].".
 
 To say ExtractFlav of (V - a squirt dildo):
-	say "You squeeze the dildo and release inside the [second noun], and [PotionType of the second noun] flows into the dildo.".
+	say "You squeeze the dildo and release inside the [ShortDesc of the second noun], and [PotionType of the second noun] flows into the dildo.".
 
 To say ExtractFlav of (V - a baby's bottle):
-	say "Removing the lid of the bottle, you pour [PotionType of the second noun] from the [second noun] into the [noun], then replace the lid.".
+	say "Removing the lid of the bottle, you pour [PotionType of the second noun] from the [ShortDesc of the second noun] into the [ShortDesc of the noun], then replace the lid.".
 
 Pouring it into is an action applying to two things.
 Check pouring something into:

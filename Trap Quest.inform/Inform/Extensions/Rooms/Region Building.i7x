@@ -1,11 +1,6 @@
 Region Building by Rooms begins here.
 
 
-Include Region Building Dungeon by Rooms.
-Include Region Building Woods by Rooms.
-Include Region Building Hotel by Rooms.
-Include Region Building Mansion by Rooms.
-Include Region Building School by Rooms.
 
 
 [!<targetFloor:Room>*
@@ -179,7 +174,7 @@ To solve the puzzle:
 			now target-puzzle-piece is P;
 			now chosen-puzzle-direction is a random empty puzzle socket direction;
 			if debugmode is 1, say "Direction is [chosen-puzzle-direction]. ";
-			if chosen-puzzle-direction is the final one and only-singles-left is 0, now closing-forbidden is 1;
+			if chosen-puzzle-direction is the-final-one and only-singles-left is 0, now closing-forbidden is 1;
 			otherwise now closing-forbidden is 0;
 			if debugmode is 1, say "Closing is [if closing-forbidden is 0]not [end if]forbidden.";
 			let the current position be the grid position of target-puzzle-piece;
@@ -359,8 +354,7 @@ To make all directions possible for (R - a room):
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is empty puzzle socket:
-	decide no.
+Definition: a direction is empty puzzle socket: decide no.
 
 [!<WestIsEmptyPuzzleSocket>+
 
@@ -408,7 +402,7 @@ Definition: south (called D) is empty puzzle socket:
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is the final one:
+Definition: a direction (called D) is the-final-one:
 	let N be Neighbour Finder;
 	repeat with R running through placed puzzle piece rooms:
 		now Neighbour Finder is R;
@@ -462,8 +456,7 @@ Definition: a room (called R) is fully ready:
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is solvable puzzle socket:
-	decide no.
+Definition: a direction is solvable puzzle socket: decide no.
 
 [!<WestIsSolvablePuzzleSocket>+
 
@@ -515,8 +508,7 @@ Definition: south (called D) is solvable puzzle socket:
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is fully solvable puzzle socket:
-	decide no.
+Definition: a direction is fully solvable puzzle socket: decide no.
 
 [!<WestIsFullySolvablePuzzleSocket>+
 

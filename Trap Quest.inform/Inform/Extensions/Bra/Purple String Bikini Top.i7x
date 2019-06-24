@@ -2,7 +2,7 @@ Purple String Bikini Top by Bra begins here.
 
 A purple string bikini top is a kind of string bikini top. Figure of bikini 10 is the file "Items/Clothes/Upper/Bras/bikini10.png". The text-shortcut of purple string bikini top is "psb".
 
-There is 1 unique purple string bikini top. A purple string bikini top is ridiculously low cut.
+There is 1 transformation-rare purple string bikini top. A purple string bikini top is ridiculously low cut.
 
 To say ShortDesc of (B - a purple string bikini top):
 	say "purple string bikini top".
@@ -19,8 +19,8 @@ To say ClothingDesc of (C - a purple string bikini top):
 To decide which number is the initial outrage of (C - a purple string bikini top):
 	decide on 9.
 
-To decide which object is the potential-upgrade-target of (C - a purple string bikini top):
-	decide on a random off-stage red string bikini top.
+
+Definition: a purple string bikini top is purple themed: decide yes.
 
 Purple String Bikini Top ends here.
 

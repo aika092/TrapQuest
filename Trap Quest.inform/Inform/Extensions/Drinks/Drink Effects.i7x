@@ -16,7 +16,10 @@ To compute default cursed drinking (X - a bottle):
 	let R be a random number from 1 to (7 + alcohol fetish);
 	if the fill-type of X is lowest-cursed, now R is 9;
 	if debuginfo > 0:
-		if R is 9:
+		if alcohol-level > 0:
+			say "[input-style]Normal cursed drink roll: Overridden; player is getting drunk[roman type][line break]";
+			now R is 8;
+		otherwise if R is 9:
 			say "[input-style]Normal cursed drink roll: Overridden; [fill-colour of X] is arousal drink[roman type][line break]";
 		otherwise if diaper quest is 0:
 			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) Hair + 1; 3) Dex - 1; 4) Strength - 1; 5) Penis - 1 / Breasts + 2; 6) Hips + 2; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
@@ -51,7 +54,7 @@ To compute default cursed drinking (X - a bottle):
 			otherwise:
 				now R is 8;
 		otherwise:
-			say "You feel your hips widen!";
+			say "You feel your hips try to widen!";
 			HipUp 1;
 	if R is 7:
 		say "You feel awful!  You're a little weaker, slower and can't think as clearly...";
@@ -63,7 +66,7 @@ To compute default cursed drinking (X - a bottle):
 			now R is 9;
 		otherwise:
 			say "It tastes extremely alcoholic! It's like you just drank a double-shot of vodka. All your abilities are dimmed until you sober up.";
-			increase alcohol level;
+			if alcohol <= 0, increase alcohol level;
 			increase alcohol level;
 	if R is 9:
 		say "Your crotch feels all tingly!";
@@ -83,7 +86,7 @@ REQUIRES COMMENTING
 
 +@!]
 To compute drinking (X - a bottle):
-	if the X is cursed or the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed:
+	if the X is cursed or (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed):
 		if X is blessed:
 			say "This tastes a bit bitter, but could be worse. Somehow the blessing of your vessel is counteracting the curse of the liquid!";
 			now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
@@ -108,6 +111,7 @@ To compute drinking (X - a bottle):
 	otherwise:
 		if the fill-type of X < lowest-cursed and the stomach of the player > stomach-max and the stomach-water of the player > 2 and a random number between 1 and the stomach of the player > overfull-quotient:
 			say "With your stomach so full, you to fail to properly appreciate the taste, and the effects are wasted.";
+			now the curse-ID of X is sure; [We know this potion is good so the vessel must be fine too!]
 		otherwise:
 			compute drinking effect the fill-type of X;
 			if the fill-type of X < lowest-cursed or the fill-type of X > highest-cursed or (X is can or (X is sure and X is not cursed)):
@@ -139,20 +143,28 @@ To compute drinking effect (N - 1):
 	dignify 800;
 	if the noun is blessed, dignify 700.
 
+thickDrinkTick is a number that varies.
+
 [!<ComputeDrinkingEffect2>+
 
 REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 2):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. This makes you feel less perverted![otherwise]More sex-addiction reducing potion. Excellent![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste.  [otherwise]More thick sanity potion. Excellent! [end if]";
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
-	if the noun is blessed or a random number between 1 and 3 is 1:
-		DiaperAddictDown 1;
+	if thickDrinkTick is 0:
+		now thickDrinkTick is 1;
+		TitfuckAddictDown 1;
 		AnalSexAddictDown 1;
+		BBCAddictDown 1;
+	otherwise:
+		now thickDrinkTick is 0;
+		DiaperAddictDown 1;
 		OralSexAddictDown 1;
-		VaginalSexAddictDown 1;
-		TitfuckAddictDown 1.
+		VaginalSexAddictDown 1.
+
+
 
 [!<ComputeDrinkingEffect3>+
 
@@ -189,14 +201,14 @@ To compute drinking effect (N - 4):
 		HairDown 2;
 		say "You feel your hair shrink in size.";
 	otherwise:
-		if the thickness of hips > the largeness of breasts and the flesh volume of breasts > the real flesh volume of breasts:
+		if the thickness of hips > the real thickness of hips and (the thickness of hips > the largeness of breasts or the flesh volume of breasts <= the real flesh volume of breasts):
 			HipDown 1;
-			say "You feel lighter!";
+			say "You feel thinner!";
 		otherwise if the flesh volume of breasts > the real flesh volume of breasts:
 			Bustdown 3;
 			say "You feel lighter!";
 		otherwise:
-			say "Your breasts refuse to shrink...";
+			say "Your breasts and hips refuse to shrink...";
 	if the noun is blessed:
 		if the thickness of hips > the largeness of breasts, HipDown 1;
 		otherwise Bustdown 1.
@@ -242,8 +254,8 @@ To compute drinking effect (N - 7):
 		increase the raw-magic-modifier of C by 2;
 		if the raw-magic-modifier of C > 5, now the raw-magic-modifier of C is 5;
 		now C is identified;
-		say "You sense that something good has happened, but you don't know where[if debugmode >= 1 and the player is a july 2017 top donator] (DEBUG: It was the [C] in the [location of C])[end if].".
-		
+		say "You sense that something good has happened, but you don't know where[if debugmode >= 1] (DEBUG: It was the [C] in the [location of C])[end if].".
+
 
 
 Definition: a clothing (called C) is positive-magic-enhanceable:
@@ -251,8 +263,7 @@ Definition: a clothing (called C) is positive-magic-enhanceable:
 	if the raw-magic-modifier of C < 0, decide no;
 	decide yes.
 
-Definition: a clothing (called C) is magic-enhanceable:
-	decide yes.
+Definition: a clothing is magic-enhanceable if it is cursable.
 
 
 [!<ComputeDrinkingEffect20>+

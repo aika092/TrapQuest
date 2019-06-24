@@ -5,7 +5,7 @@ Definition: a clothing (called C) is short-skirt-disallowed:
 		if C is actually dense trousers:
 			unless C is crotch-exposing or C is crotch-ripped or C is crotch-assless, decide yes;
 		if C is actually dense skirted clothing:
-			unless C is super-short or (C is short and short skirts permanent fetish < 2), decide yes;
+			unless C is super-short or (C is short and short skirts permanent fetish < 2) or C is not crotch-in-place, decide yes;
 	decide no.
 
 short skirts permanent fetish is a number that varies. short skirts permanent fetish is 0.
@@ -20,7 +20,7 @@ A time based rule (this is the fighting against short skirts fetish rule):
 		if short skirts reminder <= 0:
 			let C be a random worn skirted short-skirt-disallowed clothing;
 			if C is nothing, now C is a random worn short-skirt-disallowed trousers;
-			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel extremely uncomfortable in your [ShortDesc of C]!  [one of]You can feel your body desperately wishing to be free of them, and it's somehow restricting your physical strength.[or][stopping][roman type][line break]";
+			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel extremely uncomfortable in your [ShortDesc of C]! [one of]You can feel your body desperately wishing to be in a much shorter skirt, and it's somehow restricting your physical strength.[or][stopping][roman type][line break]";
 			now short skirts reminder is 30;
 		decrease short skirts reminder by 1.
 

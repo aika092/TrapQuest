@@ -1,6 +1,6 @@
 Tattoos Framework by Tattoos begins here.
 
-A tattoo is a kind of wearthing. A tattoo is wearable. The description of tattoo is usually "[tattoo-desc of item described]". Understand "tattoo" as tattoo.
+A tattoo is a kind of wearthing. A tattoo is wearable. Understand "tattoo" as tattoo.
 
 The printed name of a tattoo is "[TQlink of item described][MediumDesc of item described][TQxlink of item described][verb-desc of item described]".
 
@@ -16,10 +16,11 @@ To say TQxlink of (T - a tattoo):
 To say verb-desc of (T - a tattoo):
 	if inline hyperlinks >= 2, say "[if the player is in Dungeon28 or the player is in Tutorial05] [link][bracket]altar[close bracket][as]put [ShortDesc of T] on altar[end link][end if]".
 
-Definition: a tattoo (called T) is drawable:
+Definition: a tattoo (called T) is drawable: [Can the inking machine select this?]
 	decide yes.
 
-Definition: a tattoo (called T) is eligible:
+Definition: a tattoo (called T) is eligible: [Does the inking machine understand the relevance of the noun to inspire this?]
+	[if debugmode > 1, say "Now checking eligibility of [T].";]
 	decide no.
 
 Definition: a tattoo (called T) is actually summonable:
@@ -27,8 +28,21 @@ Definition: a tattoo (called T) is actually summonable:
 	if T is drawable, decide yes;
 	decide no.
 
-A tattoo has an indexed-text called the tattoo-title. The tattoo-title of a tattoo is "MISSING NAME". Understand the tattoo-title property as describing a tattoo.
-	
+A tattoo has a text called the tattoo-title. The tattoo-title of a tattoo is "MISSING NAME". Understand the tattoo-title property as describing a tattoo.
+
+tattooNameCount is a number that varies.
+To TattooNameAssign (T - a tattoo):
+	if the tattoo-title of T is "MISSING NAME":
+		now the tattoo-title of T is substituted form of "MISSING NAME [tattooNameCount]";
+		increase tattooNameCount by 1;
+	now the text-shortcut of T is the substituted form of "[tattoo-title of T]".
+When play begins: [This will help with debugging as we will be able to tell the various missing name tattoos apart when they are referenced in an error report]
+	repeat with T running through tattoos:
+		TattooNameAssign T.
+
+To say ExamineDesc of (T - a tattoo):
+	say tattoo-desc of T.
+
 To say tattoo-desc of (T - a tattoo):
 	say "This is a [ShortDesc of T]".
 
@@ -39,6 +53,7 @@ To say MediumDesc of (T - a tattoo):
 	say ShortDesc of T.
 
 To summon (T - a tattoo):
+	progress quest of inking-quest;
 	now T is worn by the player.
 
 To decide which number is the heaviness of (T - a tattoo):
@@ -51,7 +66,7 @@ To decide which object is the concealer of (T - a tattoo):
 	decide on nothing.
 
 To say visibility-desc of (T - a tattoo):
-	if the concealer of T is not nothing, say "It currently can't be seen thanks to your [concealer of T].";
+	if the concealer of T is a thing, say "It currently can't be seen thanks to your [concealer of T].";
 	otherwise say "It can currently be seen by anyone who looks at you.".
 
 To say outrage-desc of (T - a tattoo):
@@ -59,7 +74,7 @@ To say outrage-desc of (T - a tattoo):
 		let C be the concealer of T;
 		if C is clothing:
 			if the unworn outrage of C < the unworn outrage of T, say "[variable custom style]I'm so glad this [ShortDesc of C] is covering up my tattoo. I can't let anyone see it, it's too embarrassing![roman type][line break]";
-			otherwise say "[if T is not asshole tattoo][line break][variable custom style]I know it's an awful, trashy tattoo, but I think I'd actually rather have it on display than wear this ridiculous [ShortDesc of C]![roman type][line break]";
+			otherwise say "[if T is not asshole-tattoo][line break][variable custom style]I know it's an awful, trashy tattoo, but I think I'd actually rather have it on display than wear this ridiculous [ShortDesc of C]![roman type][line break]";
 		otherwise:
 			say "[variable custom style]How humiliating. I need to find something to wear to cover this up![roman type][line break]".
 
@@ -95,27 +110,25 @@ Definition: an ass tattoo (called A) is drawable:
 To decide which object is the concealer of (T - an ass tattoo):
 	decide on a random worn potentially asshole covering clothing.
 
-Section 2 - Asshole Tattoos
+Section 2 - Asshole tattoos
 
-An asshole tattoo is a kind of tattoo.
-Definition: an asshole tattoo (called A) is drawable:
-	if there is a worn asshole tattoo, decide no;
+An asshole-tattoo is a kind of tattoo. Understand "asshole tattoo" as asshole-tattoo.
+Definition: an asshole-tattoo (called A) is drawable:
+	if there is a worn asshole-tattoo, decide no;
 	if diaper quest is 1, decide no;
 	decide yes.
 
-To decide which object is the concealer of (T - an asshole tattoo):
+Definition: an asshole-tattoo is anal sex themed: decide yes.
+
+To decide which object is the concealer of (T - an asshole-tattoo):
 	decide on the concealer of asshole.
 
-To decide which number is the initial outrage of (T - an asshole tattoo):
-	decide on 16.
+To decide which number is the initial outrage of (T - an asshole-tattoo):
+	decide on 14.
 
-To decide which number is the anal sensitivity influence of (C - an asshole tattoo):
+To decide which number is the anal sensitivity influence of (C - an asshole-tattoo):
 	decide on 1.
 
-Does the player mean examining an asshole tattoo: it is unlikely.
-Does the player mean presenting an asshole tattoo: it is very unlikely.
-Does the player mean orilubing something with an asshole tattoo: it is very unlikely.
-Does the player mean plugging an asshole tattoo with something: it is very unlikely.
 
 Section 3 - Crotch Tattoos
 
@@ -129,7 +142,7 @@ To decide which object is the concealer of (T - a crotch tattoo):
 	decide on a random worn potentially vagina covering clothing.
 
 To decide which number is the initial outrage of (T - a crotch tattoo):
-	decide on 14.
+	decide on 11.
 
 
 Section 4 - Chest Tattoos
@@ -143,7 +156,7 @@ To decide which object is the concealer of (T - a chest tattoo):
 	decide on a random worn actually dense fully covering actually breast covering clothing.
 
 To decide which number is the initial outrage of (T - a chest tattoo):
-	decide on 8.
+	decide on 7.
 
 
 Section 5 - Leg Tattoos
@@ -156,9 +169,9 @@ Definition: a leg tattoo (called A) is drawable:
 To decide which object is the concealer of (T - a leg tattoo):
 	let C be a random worn leg covering actually dense clothing;
 	decide on C.
-	
+
 To decide which number is the initial outrage of (T - a leg tattoo):
-	decide on 4.
+	decide on 3.
 To decide which number is the cringe of (T - a leg tattoo):
 	decide on 0.
 
@@ -187,7 +200,7 @@ To decide which object is the concealer of (T - a upper back tattoo):
 	decide on a random worn actually dense breast covering clothing.
 
 To decide which number is the initial outrage of (T - a upper back tattoo):
-	decide on 4.
+	decide on 3.
 
 
 Section 7 - Body Tattoos
@@ -203,15 +216,15 @@ Definition: a body tattoo (called A) is drawable:
 To decide which object is the concealer of (T - a body tattoo):
 	decide on nothing.
 
-Section 8 - Face Tattoos
+Section 8 - Face tattoos
 
-A face tattoo is a kind of body tattoo.
+A face-tattoo is a kind of body tattoo. Understand "face tattoo" as a face-tattoo.
 
-To decide which object is the concealer of (T - a face tattoo):
-	if there is a worn hood, decide on a random worn hood;
-	decide on a random worn cultist veil.
+To decide which object is the concealer of (T - a face-tattoo):
+	if cultist veil is worn, decide on cultist veil;
+	decide on a random worn hood.
 
-To decide which number is the initial outrage of (T - a face tattoo):
+To decide which number is the initial outrage of (T - a face-tattoo):
 	decide on 10.
 
 Section 9 - Belly Tattoos
@@ -226,7 +239,7 @@ To decide which object is the concealer of (T - a belly tattoo):
 	decide on a random worn actually dense belly covering clothing.
 
 To decide which number is the initial outrage of (T - a belly tattoo):
-	decide on 3.
+	decide on 2.
 
 
 Section 10 - DQ Tattoos
@@ -238,138 +251,6 @@ Definition: a dq tattoo (called A) is drawable:
 	if diaper quest is 0, decide no;
 	if A is worn, decide no;
 	decide yes. [So these can be selected randomly!]
-
-Include Buttslut Tattoo by Tattoos.
-Include Put It In My Ass Tattoo by Tattoos.
-Include Freedom Tattoo by Tattoos.
-Include Spank Me Tattoo by Tattoos.
-Include Spank My Kitty Tattoo by Tattoos.
-Include Just The Tip Tattoo by Tattoos.
-Include Tentacles Tattoo by Tattoos.
-Include Prime USDA Tattoo by Tattoos.
-
-Include Funcenter Tattoo by Tattoos.
-Include Daddy's Cock Only Tattoo by Tattoos.
-Include Anal Dragon Tattoo by Tattoos.
-Include Anal Star Tattoo by Tattoos.
-Include Butt Slut Asshole Tattoo by Tattoos.
-Include Butterfly Wings Asshole Tattoo by Tattoos.
-Include Eat Your Heart Out Tattoo by Tattoos.
-Include Spit First Tattoo by Tattoos.
-Include Asshole Cupid Tattoo by Tattoos.
-
-Include No Panties Tattoo by Tattoos.
-Include Topless Tattoo by Tattoos.
-Include Hundred Percent Cunt Tattoo by Tattoos.
-Include For Deposit Only Tattoo by Tattoos.
-Include Born To Lose Tattoo by Tattoos.
-Include Lucky You Tattoo by Tattoos.
-Include Forever Tattoo by Tattoos.
-Include Slut Tattoo by Tattoos.
-Include Womb Diagram Tattoo by Tattoos.
-Include Zip Tattoo by Tattoos.
-Include Bird Nest Tattoo by Tattoos.
-Include Demon Tattoo by Tattoos.
-Include Let it Die Tattoo by Tattoos.
-Include Daddy's Little Girl Tattoo by Tattoos.
-Include Whore is my Mind Tattoo by Tattoos.
-Include Pussy Deluxe Tattoo by Tattoos.
-Include Worthless Cunt Tattoo by Tattoos.
-Include Xavier's Cunt Tattoo by Tattoos.
-Include Slut for Black Cock Tattoo by Tattoos.
-Include Cumlust Tattoo by Tattoos.
-
-Include Wet Dream Tattoo by Tattoos.
-Include You Live You Learn Tattoo by Tattoos.
-Include Overcome Tattoo by Tattoos.
-Include Cupcake Tattoo by Tattoos.
-Include Sissy Black Cock Whore Tattoo by Tattoos.
-Include Atlas Tattoo by Tattoos.
-Include True Love Tattoo by Tattoos.
-Include Unfaithful Tattoo by Tattoos.
-Include Bat Tattoo by Tattoos.
-Include Target Tattoo by Tattoos.
-Include Showtime Tattoo by Tattoos.
-Include Marker Chest Tattoo by Tattoos.
-
-Include Heavyweight Tattoo by Tattoos.
-Include Witchcraft Tattoo by Tattoos.
-Include White Trash Tattoo by Tattoos.
-Include Ribbon Bow Tattoo by Tattoos.
-
-Include Semen Demon Tattoo by Tattoos.
-Include Stupid Whore Tattoo by Tattoos.
-Include Tear It Up Daddy Tattoo by Tattoos.
-Include Anal Slut Tattoo by Tattoos.
-Include Princess Tattoo by Tattoos.
-Include Property Tattoo by Tattoos.
-Include Bitch Tattoo by Tattoos.
-
-Include My Vagina Tattoo by Tattoos.
-Include Once You Go Black Tattoo by Tattoos.
-
-Include Virgin Void Tattoo by Tattoos.
-Include Black Hole Tattoo by Tattoos.
-Include Double Penetration Tattoo by Tattoos.
-Include Cum Dump Tattoo by Tattoos.
-Include Clit Piercing Tattoo by Tattoos.
-Include Cum Dumpster Lip Tattoo by Tattoos.
-Include Nothing's Sacred Tattoo by Tattoos.
-Include Fuckin Classy Tattoo by Tattoos.
-Include No Regrets Tattoo by Tattoos.
-Include Angel Tattoo by Tattoos.
-Include Demongirl Tattoo by Tattoos.
-Include Bed Wetter Tattoo by Tattoos.
-Include Bred Bull Tattoo by Tattoos.
-Include Ink Me Tattoo by Tattoos.
-Include Abyssal Tattoo by Tattoos.
-Include Nintendolls Brand Tattoo by Tattoos.
-Include Bright Hair Tattoo by Tattoos.
-Include Pentagram Tattoo by Tattoos.
-Include Tally Tattoos by Tattoos.
-Include Black Owned Tattoo by Tattoos.
-Include Black Cock Only Tattoo by Tattoos.
-Include Failed Potty Training Tattoo by Tattoos.
-Include Weakness Tattoo by Tattoos.
-Include Dolly Tattoo by Tattoos.
-Include Thorny Tattoo by Tattoos.
-
-Include Empty Mind Tattoo by Tattoos.
-Include Cheating Whore Tattoo by Tattoos.
-Include Fuck Me Tattoo by Tattoos.
-Include Free Ride Tattoo by Tattoos.
-
-Include Safety Pin Tattoo by Tattoos.
-Include Cloth Revolution Tattoo by Tattoos.
-Include Take It Easy Tattoo by Tattoos.
-Include Flower Ballerina Tattoo by Tattoos.
-Include Bird Kitty Tattoo by Tattoos.
-Include Paw Print Tattoo by Tattoos.
-Include Tribal Diaper Tattoo by Tattoos.
-Include Unicorn Horn Finger Tattoo by Tattoos.
-Include Cupcake Wrist Tattoo by Tattoos.
-Include Lipstick Crystal Tattoo by Tattoos.
-Include DrinkMe Tattoo by Tattoos.
-Include Nun Blowjob Tattoo by Tattoos.
-Include Babygirl Tattoo by Tattoos.
-Include Royal Hearts Tattoo by Tattoos.
-Include Princess Castle Tattoo by Tattoos.
-Include Kitty Cat Tattoo by Tattoos.
-Include Birds Tattoo by Tattoos.
-Include Ribbon Bow Neck Tattoo by Tattoos.
-Include Teapot Tattoo by Tattoos.
-Include Elephant Tattoo by Tattoos.
-Include Diapered Dinosaur Tattoo by Tattoos.
-Include Daddys Wild Child Tattoo by Tattoos.
-Include Can't Change Self Tattoo by Tattoos.
-Include Cum When Messing Tattoo by Tattoos.
-
-Include Demon Belly Mark by Tattoos.
-Include Demon Link Mark by Tattoos.
-
-Include Whip Tattoo by Tattoos.
-
-Include Inking by Actions.
 
 
 Tattoos Framework ends here.

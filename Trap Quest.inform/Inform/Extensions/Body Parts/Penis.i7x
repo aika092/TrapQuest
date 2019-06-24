@@ -9,7 +9,9 @@ REQUIRES COMMENTING
 @inherits <BodyPart>
 
 @!]
-penis is a body part. penis is everywhere. The description of penis is "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
+penis is a body part. penis is everywhere. The text-shortcut of penis is "penis".
+To say FullExamineDesc of (B - penis):
+	say "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
@@ -26,6 +28,38 @@ REQUIRES COMMENTING
 
 *@!]
 penis has a number called real size. The real size of penis is usually 0.
+
+[!<Penis>@<rawness:Integer>*
+
+Factored in for masturbation-related scenes.
+
+*@!]
+penis has a number called rawness. The rawness of penis is usually 0.
+
+To decide which number is the max-rawness of (P - penis):
+	let X be the size of penis;
+	if there is a worn focus band, increase X by 2;
+	let P be a random worn insertable thing penetrating asshole;
+	if P is clothing and P is suppression, increase X by 1;
+	if the player is horny, decrease X by 1;
+	if the player is very horny, decrease X by 2;
+	if the player is extremely horny, decrease X by 2;
+	decide on X.
+
+To RawUp (P - penis):
+	increase the rawness of penis by 1.
+
+To decide which number is sexual-penis-length:
+	if there is a worn strapon-panties:
+		let C be a random worn strapon-panties;
+		if the size of penis < the strap-length of C or C is gem-strapon or C is demon codpiece, decide on the strap-length of C;
+	decide on the size of penis.
+
+To say sexual-player-penis:
+	if there is a worn strapon-panties:
+		say ShortPenisFlav of a random worn strapon-panties;
+	otherwise:
+		say player-penis.
 
 [!<PenisIsTiny>+
 
@@ -47,7 +81,7 @@ Definition: penis is lewdly exposed:
 	decide no.
 
 To decide which number is the lewdly exposed outrage of (P - penis):
-	decide on 12 - the size of penis. [allows us to easily tweak this number]
+	decide on 11 - (the size of penis / 2). [allows us to easily tweak this number]
 
 [!<PenisIsAtLeastPartiallyLewdlyExposed>+
 
@@ -59,7 +93,7 @@ Definition: penis is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (P - penis):
-	decide on 10 - the size of penis. [allows us to easily tweak this number]
+	decide on 8 - (the size of penis / 2). [allows us to easily tweak this number]
 
 [!<PenisIsExposed>+
 
@@ -154,8 +188,18 @@ Part 2 - Description
 REQUIRES COMMENTING
 
 +!]
-To say ShortDesc of penis:
-	say "[PenisFlavour the size of penis]".
+To say ShortDesc of (P - penis):
+	say PenisFlavour (the size of penis).
+
+[!<SaySexDescOfPenis>+
+To be used when we potentially want to refer to a "feminine penis"
++!]
+To say SexDesc of (P - penis):
+	if there is a worn strapon-panties:
+		say PenisFlavour of a random worn strapon-panties;
+	otherwise:
+		if the player is female, say "[vagina]";[shouldn't happen]
+		otherwise say PenisFlavour (the size of penis).
 
 [!<SayMediumDescOfPenis>+
 
@@ -187,17 +231,59 @@ REQUIRES COMMENTING
 
 +!]
 To say PenisFlavour (N - a number):
-	if N is 0, say "barbie doll style lack of genitalia";
-	if N is 1, say "less than 1 inch, clitoris-like pee pee";
-	if N is 2, say "1 inch micropenis";
-	if N is 3, say "worthless 3 inch pecker";
-	if N is 4, say "tiny 4 inch willy";
-	if N is 5, say "small 5 inch dick";
-	if N is 6, say "average 6 inch prick";
-	if N is 7, say "above average 7 inch cock";
-	if N is 8, say "large 8 inch dong";
-	if N is 9, say "giant 10 inch tool";
-	if N is 10, say "12 inch monster".
+	if N is 0:
+		say "barbie doll style lack of genitalia";
+	otherwise:
+		if N is 1, say "[PenisSizeFlav N], [PenisShaftFlav N]";
+		otherwise say "[PenisSizeFlav N] [PenisShaftFlav N]".
+
+[!<SayPenisSizeFlavNumber>+
+
+REQUIRES COMMENTING
+
++!]
+To say PenisSizeFlav (N - a number):
+	if N is 1, say "less than 1 inch";
+	if N is 2, say "1 inch";
+	if N is 3, say "worthless 3 inch";
+	if N is 4, say "tiny 4 inch";
+	if N is 5, say "small 5 inch";
+	if N is 6, say "average 6 inch";
+	if N is 7, say "above average 7 inch";
+	if N is 8, say "large 8 inch";
+	if N is 9, say "giant 10 inch";
+	if N is 10, say "huge 12 inch";[natural max]
+	if N is 11, say "massive 15 inch";
+	if N > 11, say "ridiculously huge 20 inch".
+
+[!<SayPenisShaftFlavNumber>+
+
+REQUIRES COMMENTING
+
++!]
+To say PenisShaftFlav (N - a number):
+	if N is 1, say "clitoris-like pee pee";
+	if N is 2, say "micropenis";
+	if N is 3, say "pecker";
+	if N is 4, say "willy";
+	if N is 5, say "dick";
+	if N is 6, say "prick";
+	if N is 7, say "cock";
+	if N is 8, say "dong";
+	if N is 9, say "tool";[10]
+	if N > 9, say "monster".[12, 15, 20. 12 is natural max]
+
+[!<SaySexShaft>+
+
+REQUIRES COMMENTING
+
++!]
+To say SexShaft:
+	let S be a random worn strapon-panties;
+	if S is clothing:
+		say ShaftDesc of S;
+	otherwise:
+		say "shaft".
 
 [!<SayTotalDescOfPenis>+
 
@@ -255,9 +341,9 @@ To PenisUp (X - a number):
 	if the player is female, now X is 0;
 	now previous penis length is the size of penis;
 	if cumlust tattoo is worn:
-		OralSexAddictUp X;
+		SemenTasteAddictUp X;
 		now X is 0;
-	if tg fetish is 2, now X is -1; [no text flavour]
+	if fast tg is 3, now X is -1; [no text flavour]
 	if bitch tattoo is worn, now X is X / 2;
 	if X is 0:
 		say "[if the player is male]Your [manly-penis] can't seem to grow any larger![end if]";
@@ -265,10 +351,16 @@ To PenisUp (X - a number):
 		decrease X by 1;
 		if the size of penis < 10:
 			increase the size of penis by 1;
+			if the size of penis is 8, cutshow figure of body reaction 3 for penis;
+			if the size of penis is 9, cutshow figure of body reaction 8 for penis;
+			if the size of penis is 10, cutshow figure of body reaction 9 for penis;
 			say "You feel your penis grow into a [ShortDesc of penis]!";
 		otherwise:
-			dignify 15;
-			if X is 0, say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!".
+			dignify 50;
+			if X is 0, say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
+	let C be a random worn strapon-panties;
+	if C is clothing and previous penis length < the strap-length of C and the size of penis >= the strap-length of C:
+		say PenisHarden of C.
 
 Shrink is a text that varies. Shrink is "shrink".
 
@@ -281,14 +373,20 @@ To PenisDown (X - a number):
 		if the size of penis > min penis size:
 			let R be a random number from 1 to (the pregnancy rate of the player + TG fetish);
 			decrease the size of penis by a random number from 1 to R;
+			if the size of penis <= 4 and the size of penis > 1 and previous penis length > 4, cutshow figure of body reaction 4 for penis;
 		otherwise if the player is male and the size of penis is 0 and previous penis length is 0:
 			say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but since you have nothing left, it can't!";
 			now X is 0;
 	if the size of penis < min penis size, now the size of penis is min penis size;
-	let C be a random worn chastity cage;
-	if the size of penis <= 0 and C is a thing and previous penis length > 0:
-		say "Your [C] drops off and falls to the floor.";
-		now C is in the location of the player;
+	if the size of penis <= 0 and previous penis length > 0:
+		let C be a random worn chastity cage;
+		cutshow figure of body reaction 4 for penis;
+		if C is a thing:
+			say "Your [C] drops off and falls to the floor.";
+			now C is in the location of the player;
+	let C be a random worn strapon-panties;
+	if C is clothing and previous penis length >= the strap-length of C and the size of penis < the strap-length of C:
+		say PenisSoften of C;
 	if previous penis length > the size of penis + 2:
 		now Shrink is "shrivel";
 	otherwise:

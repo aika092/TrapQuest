@@ -2,7 +2,7 @@ Wrist Collar Bar by Bondage begins here.
 
 wrist collar bar is a bondage. wrist collar bar is wrist-bound-behind. wrist collar bar is neck covering. wrist collar bar is neck-bound. wrist collar bar is leather.
 
-The printed name of wrist collar bar is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]wrist collar bar[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of wrist collar bar is "wclb".
+The printed name of wrist collar bar is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]wrist collar bar[clothing-title-after]". The text-shortcut of wrist collar bar is "wclb".
 
 Figure of wrist collar bar is the file "Items/Accessories/Arm/wristcollarbar1.png".
 

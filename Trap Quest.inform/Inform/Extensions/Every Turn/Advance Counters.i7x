@@ -102,8 +102,8 @@ This is the science charge decay rule:
 		decrease the charge of science table by counters-seconds;
 		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The left hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!";
 	if the second charge of science table > 0:
-		decrease the charge of science table by counters-seconds;
-		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
+		decrease the second charge of science table by counters-seconds;
+		if the second charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
 The science charge decay rule is listed in the advance counters rules.
 
 [!<TheLaundryChargeDecayRule>+
@@ -178,9 +178,12 @@ This is the mess gross out resolution rule:
 	otherwise now previous-mess-upset is 0;
 	if P is not previous-mess-upset:
 		if P is 0 and previous-urine-upset is 0:
-			if diaper lover is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping]!  All arousal immediately disappears as the reality of your situation hits you.[roman type][line break]";
-			otherwise say "[bold type][one of]You can't believe what has just happened!  Until you get changed, your dexterity will be significantly reduced and you won't be able to knee or kick enemies.[or]Once again your dexterity is significantly limited until you can escape the gross [random worn messed knickers].[stopping][roman type][line break]";
-		now the arousal of the player is 0.
+			if the player is upset about sitting in mess:
+				if diaper messing is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping][if the player is not magically horny]! All arousal immediately disappears as the reality of your situation hits you[end if].[roman type][line break]";
+				otherwise say "[bold type][one of]You can't believe what has just happened! Until you get changed, your dexterity will be significantly reduced and you won't be able to knee or kick enemies.[or]Once again your dexterity is significantly limited until you can escape the gross [random worn messed knickers].[stopping][roman type][line break]";
+			otherwise:
+				say "[bold type]You are [one of][or]once again [stopping]completely grossed out[if the player is not magically horny]! All arousal immediately disappears as the smell hits your nostrils[end if].[roman type][line break]";
+		if the player is not magically horny, now the arousal of the player is 0.
 The mess gross out resolution rule is listed in the advance counters rules.
 
 [!<previousTooFull:Integer>*
@@ -196,11 +199,12 @@ REQUIRES COMMENTING
 
 +!]
 This is the too full resolution rule:
-	let P be previous-too-full;
-	if the player is overly full, now previous-too-full is 1;
-	otherwise now previous-too-full is 0;
-	if P is not previous-too-full:
-		if P is 0, say "[bold type]Your stomach is now overly full!  [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
+	if diaper quest is 0:
+		let P be previous-too-full;
+		if the player is overly full, now previous-too-full is 1;
+		otherwise now previous-too-full is 0;
+		if P is not previous-too-full:
+			if P is 0, say "[bold type]Your stomach is now overly full!  [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
 The too full resolution rule is listed in the advance counters rules.
 
 [!<recentBreastsLargeness:Integer>*

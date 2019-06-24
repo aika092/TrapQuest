@@ -1,6 +1,6 @@
 Focus Band by Accessories begins here.
 
-A focus band is a kind of bracelet. There is 1 unique latex focus band. Printed name of focus band is "[TQlink of item described][clothing-title-before]focus band[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of focus band is "fcb".
+A focus band is a kind of bracelet. There is 1 unique latex focus band. Printed name of focus band is "[clothing-title-before]focus band[clothing-title-after]". The text-shortcut of focus band is "fcb".
 
 Figure of focus band is the file "Items/Accessories/Arm/focusband1.png".
 
@@ -14,6 +14,7 @@ To say ShortDesc of (C - a focus band):
 
 To decide which number is the bartering value of (T - a focus band) for (M - a gladiator):
 	decide on 4.
+Definition: a focus band is black themed: decide yes.
 
 Focus Band ends here.
 

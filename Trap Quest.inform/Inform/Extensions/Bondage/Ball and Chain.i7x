@@ -9,7 +9,7 @@ To compute SelfExamineDesc of (A - ball-and-chain):
 To say ShortDesc of (A - ball-and-chain):
 	say "ball and chain".
 
-ball-and-chain is an ankle bond. The printed name of ball-and-chain is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]ball and chain[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ball-and-chain is "bnc". Understand "ball", "and", "chain", "ball and chain" as ball-and-chain. ball-and-chain is ankle-unbound.
+ball-and-chain is an ankle bond. The printed name of ball-and-chain is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]ball and chain[clothing-title-after]". The text-shortcut of ball-and-chain is "bnc". Understand "ball", "and", "chain", "ball and chain" as ball-and-chain. ball-and-chain is ankle-unbound.
 
 [Figure of anklecuffs is the file "Items/Accessories/Leg/anklecuffs1.png".]
 

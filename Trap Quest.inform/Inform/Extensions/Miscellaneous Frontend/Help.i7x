@@ -1,8 +1,5 @@
 Help by Miscellaneous Frontend begins here.
 
-Include Menus by Third Party Extensions.
-
-Include Basic Help Menu by Third Party Extensions.
 
 Understand "help" or "hint" or "hints" or "about" or "info" or "settings" or "menu" or "options" as asking for help.
 
@@ -17,7 +14,6 @@ REQUIRES COMMENTING
 Table of Basic Help Options (continued)
 title	subtable	description	toggle
 "Change Settings"	Table of Game Settings	--	--
-"Instructions for playing [story title] (For more detailed information, read the wiki)"	Table of trap quest instructions	--	--
 "Credits"	--	"Inform 7 is the work of Graham Nelson, and [story title] was compiled using Inform 7 for Windows.
 
 Several extensions the game uses were written by Third Party Extensions.
@@ -28,11 +24,14 @@ The Trap Quest cover art was made by blackshirtboy (http://blackshirtboy.deviant
 
 There are two drawn character windows; one is hand drawn by Danaume and one was made in Photoshop by Keriax, using an image drawn by Sarath as the base (with permission).
 
-Beta testing on all releases was done by the good people at www.tfgamessite.com. They have also helped steer the game in the direction it has taken, with their feedback. Similarly the fans have 
+Beta testing on all releases was done by the good people at www.tfgamessite.com. They have also helped steer the game in the direction it has taken, with their feedback. Similarly the fans have
 
-Trap Quest itself and 90% of all the descriptions, storyline and flavour you see in the game were all written by Aika. The other 10% of flavour was done by volunteer contributors, the most notable of whom is MG."	--
+Trap Quest itself and 90% of all the descriptions, storyline and flavour you see in the game were all written by Aika. The other 10% of flavour was done by volunteer contributors, the most notable of whom is MG.
+
+The game's own code and art is owned by Lame Games Limited, registered in England and Wales."	--
 "Contacting the Author"	--	"Feel free to contact me at aika092@gmail.com. Also you can visit my alternative hentai forum at www.ulmf.org."	--
 
+[
 [!<tableOfTrapQuestInstructions:Table>*
 
 REQUIRES COMMENTING
@@ -158,7 +157,7 @@ To say ClothingHelp:
 
 [bold type]Insertable Sex Toys:[roman type] Blocks an orifice making it less likely or impossible that a monster will use you there. Keeps in liquids. Some can be used when masturbating for additional effects.";
 	say "
-	
+
 [bold type]Accessories:[roman type] These are mostly jewellery, which act as the in-game currency. Some others will boost your stats, such as the stethoscope. If you're not strong enough to carry all your money, I guess you'll have to wear some!
 
 [bold type]Bondage:[roman type] These are bad for you and will prevent you from performing certain actions.
@@ -277,7 +276,7 @@ To say FetishHelp:
 [bold type]Bondage Prisoner:[roman type] Your character starts the game in lots of restrictive bondage that prevents you from performing lots of actions. Try to get rid of it all as soon as possible!  Not for beginners.
 
 [bold type]Forgetful Airhead:[roman type] Whenever you lose intelligence, the game will forget some of the things it would usually remember, for example which coloured drinks have been confirmed beneficial or cursed, and which containers you found traps in. You also receive a slight intelligence penalty.".
-
+]
 
 Help ends here.
 

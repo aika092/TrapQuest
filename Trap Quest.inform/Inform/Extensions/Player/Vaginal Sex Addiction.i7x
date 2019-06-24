@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the vaginal sex addiction of the player:
-	if diaper quest is 1, decide on 0;
+	if diaper quest is 1 or the player is male, decide on 0;
 	decide on previous-vaginal-sex-addiction.
 
 [!<DecideWhichNumberIsTheCalculatedVaginalSexAddictionOfThePlayer>+
@@ -69,17 +69,21 @@ To VaginalSexAddictUp (X - a number):
 		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
-		if the raw vaginal sex addiction of the player < 10, increase the raw vaginal sex addiction of the player by 1. 
+		if the raw vaginal sex addiction of the player < 10, increase the raw vaginal sex addiction of the player by 1.
 
-[!<VaginalSexAddictDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To VaginalSexAddictDown (X - a number):
+	let S be the raw vaginal sex addiction of the player;
+	SilentlyVaginalSexAddictDown X;
+	decrease S by the raw vaginal sex addiction of the player;
+	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if][if the vaginal sex addiction of the player > 6]less desperate for[otherwise]less interested in[end if] vaginal sex.".
+
+To SilentlyVaginalSexAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw vaginal sex addiction of the player > 1, decrease the raw vaginal sex addiction of the player by 1.
+		SilentlyVaginalSexAddictDown.
+
+To SilentlyVaginalSexAddictDown:
+	if the raw vaginal sex addiction of the player > 1, decrease the raw vaginal sex addiction of the player by 1.
 
 
 

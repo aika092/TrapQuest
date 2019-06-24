@@ -6,20 +6,20 @@ Check squeezing:
 
 Squirting is an action applying to one thing.
 Check squirting:
-	if the noun is lubricant, try lubing instead;
+	if the noun is lubricant, try lubing the noun instead;
 	if the noun is not squirt dildo, say "This verb is for squeezing squirt dildos." instead;
 	if the player is immobile or the player is in danger, say "You're currently too busy to do that!" instead;
 	if the doses of the noun is 0, say "Nothing happens, because it's empty." instead;
 	if the noun is not penetrating an orifice:
-		say "This will empty the [noun] onto the ground, is that what you want? [yesnolink] ";
-		if the player consents:
-			say "You empty the contents of the [noun] onto the ground.";
+		say "This will empty the [noun] onto the ground, is that what you want? ";
+		if the player is consenting:
+			say "You empty the contents of the [ShortDesc of the noun] onto the ground.";
 			dump the noun;
-			now seconds is 6 instead;
+			allocate 6 seconds instead;
 		otherwise:
 			say "You change your mind." instead;
 	if the latex-transformation of the player > 4 and the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white:
-		now seconds is 2;
+		allocate 2 seconds;
 		say "Nothing seems to happen. That's weird..." instead;
 	if the noun is penetrating face, try drinking the noun instead.
 
@@ -57,13 +57,13 @@ Carry out squirting:
 			otherwise if the fill-type of the noun is 1:
 				say "The dignity improving effects of the potion are seemingly negated by the humiliating method of consumption!";
 			otherwise if the fill-type of the noun is 2:
-				say "You feel notably less [if diaper quest is 0]sex-obsessed[otherwise]obsessed with diapers[end if]!";
 				SexAddictDown 1;
 				DiaperAddictDown 1;
 				AnalSexAddictDown 1;
 				OralSexAddictDown 1;
 				VaginalSexAddictDown 1;
 				TitfuckAddictDown 1;
+				BBCAddictDown 1;
 			otherwise if the fill-type of the noun is 3:
 				if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20: [once the player's sex addiction hits max, they no longer can regain intelligence]
 					say "You feel more wise, and more awake!";
@@ -97,8 +97,8 @@ Carry out squirting:
 				otherwise:
 					say "Nothing seems to happen.";
 			now the Known corresponding to an Magic of the fill-type of the noun in the Table of Drinks is 1;
-	decrease the doses of the noun by 1;
-	now seconds is 3.
+	DoseDown the noun;
+	allocate 3 seconds.
 
 Understand "squirt [something]", "squeeze [something]" as squirting.
 

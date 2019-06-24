@@ -10,8 +10,7 @@ To say ClothingDesc of (W - vampiric claws):
 To say ShortDesc of (W - vampiric claws):
 	say "vampiric claws".
 
-Definition: a vampiric claws is removable:
-	decide no.
+Definition: a vampiric claws is removable: decide no.
 
 To decide which number is the damage improvement of (W - a vampiric claws):
 	let X be 0;

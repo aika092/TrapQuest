@@ -8,7 +8,7 @@ To Set Up Clothing:
 		set up store.
 
 To decurse (C - a clothing):
-	if C is cursed, now C is bland;
+	if C is cursed, silently bless C;
 	if C is posture training or C is constriction or C is milk production, now C is blandness;
 	if C is stumbling or C is temptation or C is bed wetting, now C is blandness.
 
@@ -53,17 +53,16 @@ To Set Up Store:
 		let L be a random shop-eligible clothing;
 		now L is in Dungeon41;
 		now L is store;
-		increase shop-clothing by 1;	
+		increase shop-clothing by 1;
 	if the number of trousers in Dungeon41 is 0: [We want at least one pair of trousers]
-		let T be a random off-stage trousers;
+		let T be a random off-stage fetish appropriate trousers;
 		unless T is nothing:
 			now T is in Dungeon41;
 			now T is store;
 			increase shop-clothing by 1;
-	let H be a random off-stage designer handbag of holding;
-	if H is clothing:
-		now H is in Dungeon41;
-		now H is store;
+	if designer handbag of holding is off-stage:
+		now designer handbag of holding is in Dungeon41;
+		now designer handbag of holding is store;
 		increase shop-clothing by 1;
 	repeat with C running through store clothing:
 		decurse C;
@@ -83,7 +82,7 @@ A time based rule (this is the shop cycling rule):[if the player is in the room,
 
 [!<SetUpClothing>+
 
-Uses the setUpMagicStateOfClothing, UniquelySetUpClothing, and SetUpInfluenceOfClothing functions to set up 
+Uses the setUpMagicStateOfClothing, UniquelySetUpClothing, and SetUpInfluenceOfClothing functions to set up
 the clothing "C."
 
 @param <Clothing>:<C> The clothing to set up.
@@ -118,6 +117,8 @@ Used in the setUpClothing function. Sets up the magic modifier for this clothing
 
 +!]
 To set up magic state of (C - a clothing):
+	if C is alwaysSure, now C is sure;
+	if C is alwaysIdentified, now C is identified;
 	if C is discovered varied:
 		now the raw-magic-modifier of C is 0;
 		now C is bland;
@@ -132,43 +133,8 @@ To set up BUC of (C - a clothing):
 	let R be a random number between (0 - unlucky) and 8;
 	if R <= 2, now C is cursed;
 	if R >= 7 and C is not cursed, now C is blessed.
-	
 
-Include Outrage by Clothing.
-Include Cringe by Clothing.
-Include Price by Clothing.
-Include Printed Names by Clothing.
-Include Description by Clothing.
-Include Layering by Clothing.
-Include Visibility by Clothing.
-Include Summoning by Clothing.
-Include Wearability by Clothing.
-Include Removability by Clothing.
-Include Magic State by Clothing.
-Include Transformation by Clothing.
-Include Influence by Clothing.
-Include Imprinting by Clothing.
-Include Quests by Clothing.
 
-Include Headgear Framework by Headgear.
-Include Shoes Framework by Shoes.
-Include Bra Framework by Bra.
-Include Knickers Framework by Knickers.
-Include Trousers Framework by Trousers.
-Include Dresses Framework by Dresses.
-Include Corsets Framework by Corsets.
-Include Skirts Framework by Skirts.
-Include Belt Framework by Belts Suspenders.
-Include Suspenders Framework by Belts Suspenders.
-Include Stockings Framework by Stockings.
-Include Accessories Framework by Accessories.
-Include Piercing Framework by Piercings Modules.
-Include Equippables Framework by Equippables.
-Include Bondage Framework by Bondage.
-Include Sex Toy Framework by Sex Toys.
-Include Condom of Kings by Clothing.
-Include Tattoos Framework by Tattoos.
-Include Bags of Holding Framework by Bags of Holding.
 
 
 

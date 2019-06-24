@@ -13,9 +13,7 @@ discount is a number that varies. discount is 0.
 REQUIRES COMMENTING
 
 +!]
-Definition: A room (called R) is guarded:
-	if there is a shopkeeper in R, decide yes;
-	decide no.
+Definition: A room is guarded if shopkeeper is in it and shopkeeper is awake and shopkeeper is threatening and (shopkeeper is interested or the class of the player is not vixen).
 
 [!<DecideWhichNumberIsTheTotalWealthOfThePlayer>+
 

@@ -41,7 +41,8 @@ REQUIRES COMMENTING
 Before doing something when a leftover is the second noun:
 	print the you can't see message instead.
 
-The description of a leftover is "[LeftoverDesc the leftover-type of the item described]";
+To say ExamineDesc of (L - a leftover):
+	say "[LeftoverDesc the leftover-type of the L]".
 
 [!<SayLeftoverDesc>+
 

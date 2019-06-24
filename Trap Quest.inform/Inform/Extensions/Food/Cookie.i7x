@@ -1,22 +1,23 @@
 Cookie by Food begins here.
 
 
-A cookie is a kind of chef food. There is 1 cookie. The printed name of a cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper lover >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise]glazed cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a cookie is "[TQlink of item described]cookies[shortcut-desc][TQxlink of item described][verb-desc of item described]". The description of a cookie is "[CookieDesc]". The text-shortcut of a cookie is "cas".
+A cookie is a kind of chef food. There is 1 cookie. The printed name of a cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper messing >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise]glazed cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a cookie is "[TQlink of item described]cookies[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a cookie is "cas".
+
+To say ExamineDesc of (C - a cookie):
+	if the quality of C > 1:
+		say "A chocolate chip cookie.";
+	otherwise if the quality of C > -1:
+		say "A sugar cookie.";
+	otherwise if diaper quest is 1:
+		say "[if diaper messing >= 3]A cookie made with prunes instead of chocolate chips[otherwise]This cookie has been made with way too much salt, so eating it will probably make you thirsty[end if].";
+	otherwise if the quality of C > -2:
+		say "A penis shaped cookie.";
+	otherwise:
+		say "A penis shaped cookie covered in white 'glaze'.".
 
 To say ShortDesc of (C - a cookie):
 	say "cookie".
 
-To say CookieDesc:
-	if the quality of the noun > 1:
-		say "A chocolate chip cookie.";
-	otherwise if the quality of the noun > -1:
-		say "A sugar cookie.";
-	otherwise if diaper quest is 1:
-		say "[if diaper lover >= 3]A cookie made with prunes instead of chocolate chips[otherwise]This cookie has been made with way too much salt, so eating it will probably make you thirsty[end if].";
-	otherwise if the quality of the noun > -2:
-		say "A penis shaped cookie.";
-	otherwise:
-		say "A penis shaped cookie covered in white 'glaze'.".
 
 cookie-poison-timer is a number that varies.
 
@@ -26,7 +27,7 @@ To say DevourFlav of (C - a cookie):
 Carry out TQeating cookie:
 	say "[DevourFlav of the noun]";
 	if the quality of the noun <= -1 and diaper quest is 1:
-		if diaper lover >= 3:
+		if diaper messing >= 3:
 			say "Your stomach gurgles worryingly as the prunes start to work their magic...";
 			now suppository is 1;
 		otherwise:
@@ -49,7 +50,7 @@ Carry out TQeating cookie:
 		StomachFoodUp 1;
 		StomachFoodDown the fat of the noun;
 	bodyHeal 2;
-	now seconds is 6.
+	allocate 6 seconds.
 
 a time based rule (this is the cookie poison decay rule):
 	if cookie-poison-timer > 0:

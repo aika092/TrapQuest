@@ -11,11 +11,16 @@ To Set Up The Dungeon:
 		clear the screen;
 		if images visible is 1:
 			if diaper quest is 0:
-				display figure of dungeon loading;
+				if a random number between 0 and 1 < pregnancy fetish:
+					display figure of dungeon pregnant loading;
+				otherwise if a random number between 0 and 1 < mythical creature fetish:
+					display figure of dungeon minotaur loading;
+				otherwise:
+					display figure of dungeon loading;
 			otherwise:
 				display figure of dq dungeon loading;
 		say "Now loading the dungeon region!";
-		wait 50 ms before continuing;
+		render buffered stuff;
 	if debugmode is 1, say "[bold type]SETTING UP DUNGEON NOW[roman type][line break][line break]";
 	while the number of unplaced rooms in The Dungeon > 5:
 		Scramble Dungeon;
@@ -49,8 +54,7 @@ To Set Up The Dungeon:
 	if weight gain fetish is 1:
 		now a random off-stage kneeling stool is in a random sandy unrelaxing placed room;
 		now a random kneeling stool in The Dungeon is cursed;
-	if lactation fetish is 1:
-		now a random milking bench is in a random sandy unrelaxing placed room;
+	if lactation fetish is 1, now dungeon-milking-bench is in a random sandy unrelaxing placed room;
 	repeat with G running through important rooms in The Dungeon:
 		unless G is the location of the player:
 			let Y be a random treasure chest in Holding Pen;
@@ -71,7 +75,11 @@ To Set Up The Dungeon:
 	follow the set up dungeon traps rules;
 	repeat with M running through alive monsters in the dungeon:
 		if the location of M is not placed, now M is in a random placed sandy room;
-	if a random number between 3 and 1 is 1, now gladiatorcurse is 1;
+	if a random number between 1 and 3 is 1, now gladiatorcurse is 1;
+	if the player is a top donator:
+		set up the school;
+		now the destination of dungeon portal is the school;
+	now DogPetName is the substituted form of "[PossiblePetName]";
 	if debugmode is 0 and loading scenes is 1, clear the screen.
 
 [!<ScrambleDungeon>+

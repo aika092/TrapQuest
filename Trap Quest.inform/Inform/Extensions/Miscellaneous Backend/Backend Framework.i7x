@@ -1,9 +1,6 @@
 Backend Framework by Miscellaneous Backend begins here.
 
 
-Include Game Settings by Miscellaneous Backend. 
-Include Fetish Settings by Miscellaneous Backend. 
-
 Include Engine Initialisation by Miscellaneous Backend.
 Include Game Universe Initialisation by Miscellaneous Backend.
 
@@ -204,6 +201,6 @@ Include Forbidden Actions by Actions.
 
 Include Actions with Missing Nouns by Actions.
 
-Include Tutorial by Miscellaneous Frontend.
+
 
 Backend Framework ends here.

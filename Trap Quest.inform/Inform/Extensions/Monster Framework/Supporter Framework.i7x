@@ -4,37 +4,39 @@ Part - Fixed Definitions
 
 A supporter is a kind of monster. A supporter is usually intelligent. Understand "player" as a supporter. The text-shortcut of a supporter is usually "sptr".
 
-A supporter has an indexed text called supporter-name. Understand the supporter-name property as describing a supporter. 
+A supporter has an indexed text called supporter-name. Understand the supporter-name property as describing a supporter.
 
 A supporter can be strapped. [Are they a lady wearing a strap-on?]
 
-Definition: a supporter (called M) is raunchy:
-	decide yes.
+Definition: a supporter is raunchy: decide yes.
 
-Definition: a supporter (called M) is willing to urinate:
-	decide yes.
+Definition: a supporter is willing to do vaginal: decide yes.
 
-Definition: a supporter (called M) is human:
-	decide yes.
-	
+Definition: a supporter is willing to do anal: decide yes.
+
+Definition: a supporter is willing to do oral: decide yes.
+
+Definition: a supporter is willing to urinate: decide yes.
+
+Definition: a supporter is human: decide yes.
+
 To say ShortDesc of (M - a supporter):
-	say "Player [NameDesc of M]".
-
+	say "[supporter-name of M]".
 To say MediumDesc of (M - a supporter):
-	say "Player [NameDesc of M]".
+	say "Player [ShortDesc of M]".
 
 To say NameDesc of (M - a supporter):
-	say "[supporter-name of M]".
-
+	say "[input-style][FuckerDesc of M][roman type]".
 To say BigNameDesc of (M - a supporter):
 	say NameDesc of M.
+To say FuckerDesc of (M - a supporter):
+	say "[supporter-name of M]".
+To say BigFuckerDesc of (M - a supporter):
+	say "[supporter-name of M]".
 
-Definition: a supporter (called M) is not-the-same:
-	if the leftover-type of M is previous supporter ID, decide no;
-	decide yes.
+Definition: a supporter is not-the-same if the leftover-type of it is not previous supporter ID.
 
-Definition: a supporter (called M) is fetish appropriate:
-	decide yes.
+Definition: a supporter is fetish appropriate: decide yes.
 
 supporter-summoned is a number that varies.
 
@@ -108,7 +110,7 @@ To say LongDickDesc of (M - a supporter):
 	if futanari fetish is 0, say " strapon dildo".
 
 Definition: A supporter (called M) is willing to shag:
-	if the sleep of M is 0 and the scared of M is 0 and the boredom of M < 120, decide yes;
+	if M is awake and the scared of M is 0 and the boredom of M < 120, decide yes;
 	decide no.
 
 To decide which number is the bartering value of (T - a thing) for (M - a supporter):
@@ -139,11 +141,11 @@ To compute perception of (M - a supporter):
 		compute appearance assessment of M.
 
 To compute appearance assessment of (M - a supporter):
-	if the appearance of the player > the outrage tolerance of M:
+	if the saved appearance of the player > the outrage tolerance of M:
 		FavourDown M by 2;
 		if M is friendly, say FriendlySluttyPerception of M;
 		otherwise say "[UnfriendlySluttyPerception of M][big he of M] takes an aggressive pose.";
-	otherwise:	
+	otherwise:
 		say BoringPerception of M;
 	if M is friendly:
 		say "[BigNameDesc of M] promptly loses interest in you.";
@@ -180,8 +182,10 @@ To UnidentifiablePosterReaction of (M - a supporter):
 	say "You turn bright red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player.
 
-Definition: a supporter (called M) is eager to get angry:
-	decide no.
+Definition: a supporter is eager to get angry: decide no.
+
+To say SuddenTransformTrapReactFlav of (M - a supporter):
+	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'Ooh, you look much more [beautiful] now!'[roman type][line break]".
 
 [Oral]
 
@@ -211,26 +215,6 @@ To compute strapon facial sex of (M - a supporter):
 To say StraponOralResisting of (M - a supporter):
 	say "[one of]You try as hard as you can to pull away, but [his of M] grip is simply too strong![or]You pull up, but [he of M] makes sure to shove you right back down![or]You grunt and try to pull away, but [he of M] simply holds you in place.[or]You try to pull [his of M] hands away, but [he of M][']s much too strong for you.[or][if the relevant sex addiction of M < 6]You stay completely still, blatantly refusing to do anything at all to the dildo.[otherwise if the relevant sex addiction of M < 14]You stay completely still, knowing that if you willingly suck on the dildo you might like it and not stop.[otherwise]You playfully pull away, forcing [NameDesc of M] to push your head up and down [himself of M].[end if][in random order]".
 
-To compute facesit sex of (M - a supporter):
-	if the oral sex addiction of the player > 6, arouse 400;
-	if the sex-length of M is 1:
-		say NearingClimaxFacesit of M;
-		decrease the sex-length of M by 1;
-	otherwise:
-		if the reaction of the player is 0:
-			say FacesitResisting of M;
-			say FacesitResistingResponse of M;
-			if a random number between 1 and 2 is 1:
-				decrease the sex-length of M by 1;
-		otherwise:
-			say FacesitSubmissionResponse of M;
-			decrease the sex-length of M by 1;
-		if the sex-length of M > 2 and the lips of face > 2, decrease the sex-length of M by 1.
-
-To say FacesitResisting of (M - a supporter):
-	say "[one of]You try as hard as you can to pull away, but [his of M] thighs are firmly gripping your head![or]You try to pull up, but [he of M] is much too heavy for your neck muscles to do anything![or]You flail with your legs but it doesn't make any difference![in random order]".
-
-
 To compute facial climax of (M - a supporter):
 	if M is male: [Actual penis]
 		compute default facial climax for M;
@@ -245,23 +229,21 @@ To compute facial strapon climax of (M - a supporter):
 		say "In a skilful display, you take the whole dildo down your throat without gagging.";
 	otherwise:
 		say "You can't help but gag on the dildo as it pounds against the entrance to your throat, bringing tears to your eyes.";
-		DelicateUp 1;
+		PainUp 1;
 	say "[big he of M] pulls out, satisfied, and loses interest.";
-	TimesFuckedUp M by 1;
+	TimesSubmittedUp M by 1;
 	bore M.
+
+To compute unique facesit climax effect of (M - a supporter):
+	say "[BigNameDesc of M] gets off of your face and lies down on the ground, where [he of M] promptly falls asleep.";
+	compute M sleeping 200 after sex;
+	Bore M.
 
 This is the supporter facesitting prevents breathing rule:
 	repeat with M running through female supporters penetrating face:
 		unless M is strapped, decide yes;
 	decide no.
-The supporter facesitting prevents breathing rule is listed in the breathing blocking rules. 
-
-To compute facesit climax of (M - a supporter):
-	say FacesitClimaxFlav of M;
-	say "[BigNameDesc of M] gets off of your face and lies down on the ground, where [he of M] promptly falls asleep.";
-	TimesFuckedUp M by 1;
-	compute M sleeping 200 after sex;
-	bore M.
+The supporter facesitting prevents breathing rule is listed in the breathing blocking rules.
 
 [Vaginal and Anal]
 
@@ -296,15 +278,35 @@ To compute anal sex of (M - a supporter):
 	otherwise: [Supporter's choice]
 		compute supporter sex of M in asshole.
 
+To compute (M - a supporter) sexRuin in (F - a fuckhole):
+	if the class of the player is living sex doll:
+		do nothing;
+	otherwise if M is not intelligent or the reaction of the player < 2:
+		ruin F; [The RuinRoll function handles the chance of avoiding soreness for submitting]
+	otherwise:
+		if a random number between 1 and the charisma of the player is 1, ruin F.
+
 To compute strapon sex of (M - a supporter) in (F - a fuckhole):
 	if the reaction of the player is 2:[begging]
-		compute begging of M in F;	
+		compute sexBegging of M in F;
 	otherwise if the reaction of the player is 1:[submitting]
 		compute sexSubmit of M in F;
 	otherwise:[resisting]
 		compute sexResist of M in F;
-	compute M sexRuin in F;
+	[compute M sexRuin in F;]
 	decrease the sex-length of M by 1.
+
+To say sexSubmitNearingClimax of (M - a supporter) in (F - a fuckhole):
+	if M is male:
+		say "[one of][BigNameDesc of M] grabs your hips with both hands as [he of M] speeds up.[or][BigNameDesc of M] spanks your [AssDesc] as [he of M] speeds up.[or][BigNameDesc of M] seems to speeding up![at random]";
+	otherwise:
+		say M submission sex (a random number between 1 and 7).
+
+To say sexRoughNearingClimax of (M - a supporter) in (F - a fuckhole):
+	if M is male:
+		say sexSubmitNearingClimax of M in F;
+	otherwise:
+		say M rough sex (a random number between 1 and 6).
 
 To compute supporter sex of (M - a supporter) in (F - a fuckhole):
 	if the reaction of the player > 0:[submitting]
@@ -332,7 +334,7 @@ To compute supporter climax of (M - a supporter) in (F - a fuckhole):
 	say ClimaxFlav of M in F.
 
 
-		
+
 
 
 
@@ -348,19 +350,18 @@ A supporter is usually male. The leftover-type of a supporter is usually 201.
 To say LeftoverDesc (N - 201):
 	say "The bloated, cumfilled and unconscious body of another player is on the ground here.[line break]".
 
-The supporter-name of a supporter is usually "NAME MISSING". 
+The supporter-name of a supporter is usually "NAME MISSING".
 
 To say MonsterDesc of (M - a supporter):
 	say "This player's NPC is missing its description!".
-	
+
 [Are they dark skinned?]
 
 Section - Incremental Changes
 
 [Each month the supporter can improve something from here]
 
-Definition: a supporter (called M) is father material:
-	decide no. [Can be changed to yes]
+Definition: a supporter is father material: decide no. [Can be changed to yes]
 
 To set up (M - a supporter):
 	reset M;
@@ -385,11 +386,14 @@ To decide which number is the outrage tolerance of (M - a supporter):
 	decide on 10.
 
 To compute post climax effect of (M - a supporter) in (F - a fuckhole):
-	compute M sleeping 200 after sex;
-	bore M.
+	if M is male:
+		compute M sleeping 200 after sex;
+		bore M;
+	otherwise:
+		satisfy M.
 
 The blind-status of a supporter is usually 0. [Can be changed to -1 to make them immune]
-	
+
 [###SUPPORTERS WITH A PENIS ONLY###]
 
 To decide which number is the condom resistance of (M - a supporter):
@@ -424,10 +428,10 @@ To say UnfriendlySluttyPerception of (M - a supporter): [The NPC has just spotte
 
 To say BoringPerception of (M - a supporter): [The NPC has spotted the player who doesn't look slutty enough to decrease their friendliness]
 	say "[speech style of M]'[one of]Another player, huh? Stay out of my way, I'm just here to fuck sluts[or]You again. Sorry, you're still not slutty enough for me to be bothered to try and fuck you[stopping].'[roman type][line break]".
-	
+
 To say IdentifiablePosterReactionFlav of (M - a supporter):
 	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
-	
+
 To say UnidentifiablePosterReactionFlav of (M - a supporter):
 	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if the player is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
 
@@ -531,12 +535,12 @@ To say SexResistSlapFlav of (M - a supporter):
 
 
 To say speech style of (M - a supporter): [This is the default rule for whether their speech is in pink or dark red text but it can be changed so that for example a rather effeminate man has pink text]
-	if M is always-feminine or M is female, say second custom style; 
+	if M is presenting as female, say second custom style;
 	otherwise say first custom style.
 
 To compute (M - a monster) stomping (N - a supporter): [For when the minotaur, xavier etc. encounters our NPC]
 	if N is in the location of the player, say "[BigNameDesc of M] picks [NameDesc of N] off of the ground with two mighty hands and before you can say [']I'm not sure that's going to fit['] [he of M] has impaled [NameDesc of N] on [his of M] giant [DickDesc of M]. [BigNameDesc of N] shrieks in surprise and pain but there's absolutely nothing either of you can do before [NameDesc of M] is already climaxing, pumping gallons of [semen] into [NameDesc of N][']s rapidly swelling belly. As [NameDesc of N] inevitably passes out from the experience, [NameDesc of M] peels [NameDesc of N][']s body off of [his of M] [LongDickDesc of M] like a used condom and discards it on the ground, before turning to you, with a still-burning sexual hunger in [his of M] eyes.";
-	otherwise say "You hear the sort of shriek you'd hear from a [if N is female or N is always-feminine]woman[otherwise]man[end if] if [he of N] was suddenly impaled on a giant [ShortDesc of M] penis, coming from [if N is nearby]nearby![otherwise]somewhere in the region![end if]";
+	otherwise say "You hear the sort of shriek you'd hear from a [man of N] if [he of N] was suddenly impaled on a giant [ShortDesc of M] penis, coming from [if N is nearby]nearby![otherwise]somewhere in the region![end if]";
 	destroy N;
 	let L be a random off-stage leftover;
 	now L is in the location of M;
@@ -549,13 +553,13 @@ To compute sudden objectification of (M - a supporter): [The player's appearance
 	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yes, that's right I'm the boss, and you're my little [whore]...'[otherwise if the player is monster fucked]That does look like a lot of fun! Maybe it's time I joined in...'[otherwise]You know what? I think you've swirled far enough down the drain of slutdom that it's finally worth giving you a once-over.'[end if][roman type][line break]".
 
 To compute MasturbationReaction of (M - a supporter):
-	if the sleep of M is 0:
+	if M is awake:
 		if M is penetrating a body part:
 			if M is friendly-fucking:
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
 				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily. [line break][first custom style]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
-				DelicateUp 1;
+				PainUp 1;
 				now wanking is 0;
 		otherwise:
 			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]Wow, I guess that means you want to fuck, huh?'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break][big he of M] flexes [his of M] neck muscles in anticipation.";
@@ -617,7 +621,7 @@ To say StraponOralSubmissionResponse of (M - a supporter): [The player is suckin
 
 To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strapon facefucking]
 	say "[BigNameDesc of M] picks up the speed and power, trying to get [his of M] strapon all the way down your throat.".
-	
+
 [Vaginal & Anal]
 
 To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
@@ -628,19 +632,22 @@ To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
 
 [Oral]
 
-To say CommencingFacesitFlav of (M - a supporter): [The NPC sits on the player's face.]
+To say FacesitResisting of (M - a monster):[The player is refusing to perform for your NPC.]
+	say "[one of]You try as hard as you can to pull away, but [his of M] thighs are firmly gripping your head![or]You try to pull up, but [he of M] is much too heavy for your neck muscles to do anything![or]You flail with your legs but it doesn't make any difference![in random order]".
+
+To say CommencingFacesitFlav of (M - a monster): [The NPC sits on the player's face.]
 	say "[BigNameDesc of M] flips you onto your back and before you know it, your head is between [his of M] thighs and [his of M] bare-naked crotch is being lowered right onto your face! It seems like [he of M] has no intention of letting you go before you make [him of M] cum.".
 
-To say FacesitResistingResponse of (M - a supporter): [The player is refusing to play ball and perform cunnilingus / anilingus. How does the NPC act?]
+To say FacesitResistingResponse of (M - a monster): [The player is refusing to play ball and perform cunnilingus / anilingus. How does the NPC act?]
 	say "[one of][BigNameDesc of M] shows no sign of getting bored, and just gently rocks back and forth on your face.[or][BigNameDesc of M] squeezes tight on your head with [his of M] thighs, as if giving a polite warning that [he of M] has complete power over you in this position.[or][BigNameDesc of M] displays a great amount of patience and just remains sitting there, [his of M] crotch remaining right on top of your mouth.[or][BigNameDesc of M] slowly grinds away on your face.[in random order]".
 
-To say FacesitSubmissionResponse of (M - a supporter): [Normal facesitting oral sex. Explain what's happening!]
+To say FacesitSubmissionResponse of (M - a monster): [Normal facesitting oral sex. Explain what's happening!]
 	say "[one of][BigNameDesc of M] stays still and lets you tongue [his of M] folds. You can hear [him of M] sighing gently with pleasure.[or][BigNameDesc of M] shifts forward ever so slightly, guiding your mouth to [his of M] asshole, which you begin to tongue obediently.[or][BigNameDesc of M] leans forward so that your tongue has better access to [his of M] clit. As you let your tongue run across it, you hear [him of M] cooing softly.[or][BigNameDesc of M] grinds in perfect rhythm with the back and forth movements of your tongue. [big he of M] squeals in joy at the sensation.[in random order]".
 
-To say NearingClimaxFacesit of (M - a supporter): [Next turn your NPC is going to cum! Give a hint to the player by changing up the flavour. Also this allows the climax to make more sense (rather than her sitting still and the player refusing to tongue, and then suddenly there's an orgasm!)]
+To say NearingClimaxFacesit of (M - a monster): [Next turn your NPC is going to cum! Give a hint to the player by changing up the flavour. Also this allows the climax to make more sense (rather than her sitting still and the player refusing to tongue, and then suddenly there's an orgasm!)]
 	say "[one of][BigNameDesc of M] grunts as [he of M] begins to grind your face with passion![or][BigNameDesc of M] leans back so [he of M] can play with [his of M] clit, and begins to rub [his of M] pussy and asshole all over your face with vigour![in random order]".
 
-To say FacesitClimaxFlav of (M - a supporter):
+To say FacesitClimaxFlav of (M - a monster):
 	say "[BigNameDesc of M] begins to grind with increasing speed and desperation until with an almost mindless groan [he of M] orgasms, soaking your face with [if the oral sex addiction of the player < 4]gross and sticky [otherwise if the oral sex addiction of the player > 6]delicious [end if]girlcum.[line break][speech style of M]'Yes, yes, oh fuck yes this is what I needed! Your face makes a damn good sex toy'[roman type][line break]".
 
 [Vaginal & Anal]
@@ -671,7 +678,7 @@ To compute the flying player taunting of (M - a supporter):
 To say LandingTaunt of (M - a supporter):
 	say "[BigNameDesc of M] smirks.[line break][speech style of M]'[one of]Like a lead balloon[or]Oof, that looked like it hurt[in random order]!'[roman type][line break]";
 	humiliate 50.
-	
+
 [###PREGNANCY STUFF###]
 
 To compute labour to (M - a supporter): [This can't happen until father material is switched to yes]
@@ -697,7 +704,7 @@ To say ClothesPeeReaction of (M - a supporter):
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
 		now M is interested.
 
-To say FloorPeeReaction of (M - a supporter):
+To say GroundPeeReaction of (M - a supporter):
 	say "[ClothesPeeReaction of M]".
 
 To say UrinationFlav of (M - a supporter):
@@ -709,19 +716,21 @@ To say PissDrinkThreat of (M - a supporter):
 [###DIAPER STUFF###]
 
 To say DiaperReaction of (M - a supporter):
-	if M is unfriendly:
-		say "A mocking grin appears on [NameDesc of M][']s face.[line break][speech style of M]'[if M is interested]Is that how I make you feel[otherwise]Haha, all I have to do is be in the same room as you and you wet yourself in fear[end if]?'[roman type][line break]";
+	if there is a currently visible diaper or the player is shameless or M is concealment immune:
+		if M is unfriendly:
+			say "A mocking grin appears on [NameDesc of M][']s face.[line break][speech style of M]'[if M is interested]Is that how I make you feel[otherwise]Haha, all I have to do is be in the same room as you and you wet yourself in fear[end if]?'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'Wow, just like a big baby.'[roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
+			FavourDown M;
+			say "[speech style of M]'[if M is unfriendly]That's it, I've made up my mind. I'm going to make you my little baby bitch[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
+			if M is unfriendly, now M is interested;
+		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
+		otherwise say "You turn bright red.";
 	otherwise:
-		say "[speech style of M]'Wow, just like a big baby.'[roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
-		FavourDown M by 1;
-		say "[speech style of M]'[if M is unfriendly]That's it, I've made up my mind. I'm going to make you my little baby bitch[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
-		if M is unfriendly, now M is interested;
-	if the humiliation of the player < 15000, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
-	otherwise say "You turn bright red.".
+		say "It seems that [NameDesc of M] is unaware of what you've just done.".
 
 To say RockingReactionSpeech of (M - a supporter): [When your NPC sees them rocking on the rocking horse trap in the woods]
 	say "[one of][line break][speech style of M]'Hahahahaha! If you could only see this from my perspective! You look SO pathetic right now!'[roman type][line break][or][stopping]".
 
-Include Supporters by Monster.
 
 Supporter Framework ends here.

@@ -66,7 +66,7 @@ Carry out SalveRubbing:
 	destroy S.
 	
 Report SalveRubbing:
-	now seconds is 6;
+	allocate 6 seconds;
 	
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
 

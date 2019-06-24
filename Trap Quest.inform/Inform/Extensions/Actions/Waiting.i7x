@@ -10,37 +10,38 @@ REQUIRES COMMENTING
 +!]
 Check waiting:
 	if the player is flying and last-turn-flight is 1:
-		say "Do you want to keep waiting until you deflate? [yesnolink] ";
-		if the player consents, skywait instead;
+		say "Do you want to keep waiting until you deflate? ";
+		if the player is in agreement, skywait instead;
 	otherwise if the player is pole stuck and the player is not monster fucked and sex fainting is 1:
-		say "Do you want to keep waiting until something changes that might make it possible for you to get off the trap? [yesnolink] ";
-		if the player consents, dildowait instead;
+		say "Do you want to keep waiting until something changes that might make it possible for you to get off the trap? ";
+		if the player is in agreement, dildowait instead;
 	otherwise if the player is hook stuck and the player is not monster fucked and sex fainting is 1:
-		say "Do you want to keep waiting until something changes that might make it possible for you to pull out the hook? [yesnolink] ";
-		if the player consents, hookwait instead;
-	otherwise if the player is in Blindfolded:
-		say "Do you want to keep waiting until something changes? [yesnolink] ";
-		if the player consents, urinalwait instead;
+		say "Do you want to keep waiting until something changes that might make it possible for you to pull out the hook? ";
+		if the player is in agreement, hookwait instead;
+	otherwise if the player is in UrinalBlindfolded:
+		say "Do you want to keep waiting until something changes? ";
+		if the player is in agreement, urinalwait instead;
 	otherwise if the player is in HoleInWall:
-		say "Do you want to keep waiting until something changes? [yesnolink] ";
-		if the player consents, holewait instead;
+		say "Do you want to keep waiting until something changes? ";
+		if the player is in agreement, holewait instead;
 	otherwise if detention chair is grabbing the player:
-		say "Do you want to keep waiting until detention is over? [yesnolink] ";
-		if the player consents, detentionchairwait instead;
+		say "Do you want to keep waiting until detention is over? ";
+		if the player is in agreement, detentionchairwait instead;
 	otherwise if the player is live fucked or there is a thing grabbing the player:
 		let M be a random live thing penetrating a body part;
-		if M is minotaur and the sleep of M > 0:
+		if M is minotaur and M is asleep:
 			say "You lay there and wait, hoping not to faint before he wakes up.";
-			while the sleep of M > 0 and delayed fainting is 0:
-				now seconds is 6;
+			while M is asleep and delayed fainting is 0:
+				allocate 6 seconds;
 				compute extra turn;
 				if a random number between 1 and 6 is 1 and the player is not in Dungeon12:
 					say "[BigNameDesc of M]'s [manly-penis] twitches inside of you.";
 					ruin asshole;
-			if the sleep of M is 0:
+			if M is awake:
 				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as his still semi-hard schlong breaks its airtight seal, and assuming that you are unconscious, and wanders off to search for other victims.";
 				bore M for 50 seconds;
 				regionally place M;
+				display entire map;
 		otherwise:
 			try submitting instead.
 
@@ -50,8 +51,8 @@ REQUIRES COMMENTING
 
 +!]
 Carry out waiting:
-	now seconds is 6;
-	if newbie tips is 1 and the player is prone and the player is not in danger, say "[one of][item style]Newbie tip: you can use 'rest' to wait until your fatigue has returned to 0. It will automatically stop if a dangerous enemy comes by.[roman type][line break][or][stopping]".
+	allocate 6 seconds;
+	if newbie tips is 1 and the player is prone and the player is not in danger, say "[one of][newbie style]Newbie tip: you can use 'rest' to wait until your fatigue has returned to 0. It will automatically stop if a dangerous enemy comes by. You can also use 'long wait' to wait until something changes.[roman type][line break][or][stopping]".
 
 The standard report waiting rule is not listed in the report waiting rulebook.
 
@@ -90,11 +91,11 @@ REQUIRES COMMENTING
 +!]
 To say DQWaitingFlav of (M - a monster):
 	if M is intelligent:
-		if there is worn messed knickers:
+		if there is worn perceived messed knickers:
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player > 14]Aww, is it time to get changed already?'[otherwise]Please just get me out of this thing...'[end if][roman type][line break]";
 			otherwise say "[variable custom style][if the bimbo of the player > 14]Aww I guess I should let [him of M] change me.[otherwise]Thank god, at last I'll get out of this mess.[end if][roman type][line break]";
 		otherwise:
-			say "[if the player is a nympho and the player is able to speak and the player is a bit horny][line break][variable custom style]'[one of]Are you going to help me get my cummies?'[or]Please help me cum!'[or]I've been a good baby, will you please let me cum?'[at random][roman type][line break][otherwise if the diaper addiction of the player > 14 and there is a worn messed knickers and the player is able to speak][line break][variable custom style]'[one of]I hope you're going to change me!'[or]I need a change, are you going to help me?'[at random][roman type][line break][otherwise if the diaper addiction of the player > 14 and the player is diapered and the player is able to speak][line break][variable custom style]'[one of]Do what you want with me.'[or]Go ahead, do what you like.'[at random][roman type][line break][otherwise if the player is able to speak and the diaper addiction of the player > 14][line break][variable custom style]'[one of]I need a new nappy, can you help?'[or]I've been a naughty baby and lost my nappy, can you change me?'[or]If you're going to put a diaper on me, make sure it's a big puffy one!'[at random][roman type][line break][otherwise if the delicateness of the player < 6 and M is female and the player is able to speak and the player is not horny and the player is not a nympho][line break][variable custom style]'Do your worst, [bitch].'[roman type][line break][otherwise if the player is feeling dominant and the player is able to speak and the player is not horny and the player is not a nympho][line break][variable custom style]'[one of]Do your worst.'[or]I'm not scared of you. Let's see what you've got.'[or]Go on, get it over with. I can take it.'[at random][roman type][line break][otherwise if the player is not feeling submissive and the player is able to speak and the player is not a nympho][line break][variable custom style]'[one of]I'm not going to let you make me cry!'[or]Go on then, I can take it. I think.'[or]Please don't be too cruel.'[at random][roman type][line break][otherwise]You wait to see what [NameDesc of M] has in mind.[end if]";
+			say "[if the player is a nympho and the player is able to speak and the player is a bit horny][line break][variable custom style]'[one of]Are you going to help me get my cummies?'[or]Please help me cum!'[or]I've been a good baby, will you please let me cum?'[at random][roman type][line break][otherwise if the diaper addiction of the player > 14 and there is a worn perceived messed knickers and the player is able to speak][line break][variable custom style]'[one of]I hope you're going to change me!'[or]I need a change, are you going to help me?'[at random][roman type][line break][otherwise if the diaper addiction of the player > 14 and the player is diapered and the player is able to speak][line break][variable custom style]'[one of]Do what you want with me.'[or]Go ahead, do what you like.'[at random][roman type][line break][otherwise if the player is able to speak and the diaper addiction of the player > 14][line break][variable custom style]'[one of]I need a new nappy, can you help?'[or]I've been a naughty baby and lost my nappy, can you change me?'[or]If you're going to put a diaper on me, make sure it's a big puffy one!'[at random][roman type][line break][otherwise if the delicateness of the player < 6 and M is female and the player is able to speak and the player is not horny and the player is not a nympho][line break][variable custom style]'Do your worst, [bitch].'[roman type][line break][otherwise if the player is feeling dominant and the player is able to speak and the player is not horny and the player is not a nympho][line break][variable custom style]'[one of]Do your worst.'[or]I'm not scared of you. Let's see what you've got.'[or]Go on, get it over with. I can take it.'[at random][roman type][line break][otherwise if the player is not feeling submissive and the player is able to speak and the player is not a nympho][line break][variable custom style]'[one of]I'm not going to let you make me cry!'[or]Go on then, I can take it. I think.'[or]Please don't be too cruel.'[at random][roman type][line break][otherwise]You wait to see what [NameDesc of M] has in mind.[end if]";
 	otherwise:
 		say "You stay still and wait to see how [NameDesc of M] will assault you.".
 
@@ -146,11 +147,11 @@ To say WaitingSpeechFlav of (M - a monster):
 
 To say WaitingActionFlav of (M - a monster):
 	if the player is feeling dominant:
-		say "You [one of]stare daggers[or]glare fiercely[or]frown[as decreasingly likely outcomes] at the [ShortDesc of M].";
+		say "You [one of]stare daggers[or]glare fiercely[or]frown[as decreasingly likely outcomes] at [NameDesc of M].";
 	otherwise if the player is feeling submissive:
-		say "You [one of]submissively avoid the [ShortDesc of M]'s eyes[or]keep your gaze fixed downwards[or]obediently stay perfectly still[or]bow your head in submission[in random order].";
+		say "You [one of]submissively avoid [NameDesc of M][']s eyes[or]keep your gaze fixed downwards[or]obediently stay perfectly still[or]bow your head in submission[in random order].";
 	otherwise:
-		say "You stay still and wait to see [if M is willing to shag]how the [ShortDesc of M] will [one of]play with[or]fuck[or]use[or]dominate[as decreasingly likely outcomes] you[otherwise][one of]what the [ShortDesc of M] plans to do with you[or]how [NameDesc of M] punishes you[in random order][end if].".
+		say "You stay still and wait to see [if M is willing to shag]how [NameDesc of M] will [one of]play with[or]fuck[or]use[or]dominate[as decreasingly likely outcomes] you[otherwise][one of]what [NameDesc of M] plans to do with you[or]how [NameDesc of M] punishes you[in random order][end if].".
 
 [!<SkyWait>+
 
@@ -159,7 +160,7 @@ REQUIRES COMMENTING
 +!]
 To SkyWait:
 	while the player is flying and delayed fainting is 0:
-		now seconds is 6;
+		allocate 6 seconds;
 		compute extra turn.
 
 [!<DildoWait>+
@@ -171,7 +172,7 @@ To DildoWait:
 	let prev-weight be the weight of the player;
 	let prev-dex be the dexterity of the player;
 	while the player is pole stuck and the player is not monster fucked and the weight of the player >= prev-weight and the dexterity of the player <= prev-dex and delayed fainting is 0 and sex fainting is 1:
-		now seconds is 6;
+		allocate 6 seconds;
 		compute extra turn;
 	if the player is pole stuck:
 		if the weight of the player < prev-weight, say "You've lost a bit of weight, you should check if that changes anything!";
@@ -184,7 +185,7 @@ REQUIRES COMMENTING
 +!]
 To HookWait:
 	if woman-barbara is regional and the woman-status of woman-barbara is 1:
-		now seconds is 6;
+		allocate 6 seconds;
 		now woman-barbara is interested;
 		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as she looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner!  Salvation![end if]";
 		now woman-barbara is in the location of the player;
@@ -212,7 +213,7 @@ To HookWait:
 				decrease N by 1;
 				say "[BigNameDesc of woman-barbara] keeps fucking you with the ass hook! [line break][second custom style]'[one of]Are you going to cum from your naughty butthole?'[or]Wee! Isn't this fun?'[or]Why are you screaming? Am I not doing it hard enough for you?'[or]This is what you meant by [']Get me off['], right?'[or]You look so sexy right now![or]I'm getting horny just watching you squirm![in random order][roman type][line break]";
 				ruin asshole;
-				now seconds is 6;
+				allocate 6 seconds;
 				compute extra turn;
 			if delayed fainting is 0 and N > 0:
 				say "[second custom style]'Now wasn't that a lovely treat!  I hope you can do the same for me soon.'[roman type][line break][big he of woman-barbara] wanders off, ignoring your pleas to help you down.";
@@ -222,7 +223,7 @@ To HookWait:
 	otherwise:
 		let prev-dex be the dexterity of the player;
 		while the player is hook stuck and the player is not monster fucked and the dexterity of the player <= prev-dex and delayed fainting is 0 and sex fainting is 1:
-			now seconds is 6;
+			allocate 6 seconds;
 			compute extra turn;
 		if the player is hook stuck:
 			if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".

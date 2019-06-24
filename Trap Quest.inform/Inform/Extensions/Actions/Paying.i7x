@@ -25,8 +25,8 @@ Check paying:
 	if shopkeeper is not in Dungeon41, say "You need a shopkeeper here to pay for something." instead;
 	if shopkeeper is mating:
 		repeat with C running through store clothing held by the player:
-			now C is normal;
-		now seconds is 2;
+			now C is unowned;
+		allocate 2 seconds;
 		say "[speech style of shopkeeper]'What's mine is yours!'[roman type][line break]" instead.
 
 [!<CarryOutPaying>+
@@ -37,27 +37,27 @@ REQUIRES COMMENTING
 Carry out paying:
 	let Z be a random off-stage clothing;
 	repeat with C running through store clothing held by the player:
-		say "Pay for [printed name of C]? [yesnolink] ";
-		if the player consents:
+		say "Pay for [ShortDesc of C]? ";
+		if the player is bimbo consenting:
 			now Z is C;
 			break;
 	if Z is off-stage:
 		repeat with C running through stolen clothing held by the player:
-			say "Pay for [printed name of C]? [yesnolink] ";
-			if the player consents:
+			say "Pay for [ShortDesc of C]? ";
+			if the player is bimbo consenting:
 				now Z is C;
 				break;
 	if Z is off-stage:
 		say "Paying cancelled.";
 	otherwise:
-		now seconds is 4;
+		allocate 4 seconds;
 		let P be the price of Z;
 		let jewellery be list of held plentiful currently perceivable accessories;
 		truncate jewellery to 8 entries;
 		let chosen jewellery be jewellery priced at P;
 		repeat with J running through chosen jewellery:
 			only destroy J;
-		now Z is normal;
+		now Z is unowned;
 		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say "[speech style of shopkeeper]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
 		otherwise say "[speech style of shopkeeper]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].".
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
@@ -67,7 +67,7 @@ Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopke
 REQUIRES COMMENTING
 
 +!]
-Report taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating:
+Report taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating and shopkeeper is interested and shopkeeper is friendly:
 	let P be the price of the noun;
 	if the total wealth of the player < P:
 		if debuginfo > 1, say "[input-style]Total wealth: [Total wealth of the player]; Item cost: [P][roman type][line break]";
@@ -78,14 +78,19 @@ Report taking store clothing while the player is in Dungeon41 and Dungeon41 is g
 		let jewellery be list of held plentiful currently perceivable accessories;
 		truncate jewellery to 8 entries;
 		let chosen jewellery be jewellery priced at P;
+		let E be the number of entries in chosen jewellery;
 		if the number of held plentiful currently perceivable accessories is 0:
 			say "[speech style of shopkeeper]'I'm sorry, you can't afford that. ";
 			if diaper quest is 0, say "But if you want to try and convince me, you could [if the player is upright]get on your knees and [end if][bold type]present[speech style of shopkeeper] another method of... [']payment[']. No guarantees that it'll convince me, though.'";
 			say "[roman type][line break]";
-		otherwise if the number of entries of chosen jewellery is 0:
+		otherwise if E is 0:
 			say "[speech style of shopkeeper]'Hmm, I'm having trouble working out how best you can afford that, my brain can't handle all those different possible combinations. Maybe try dropping a few items of jewellery then picking up the [noun] again?'[roman type][line break]";
 		otherwise:
-			say "[speech style of shopkeeper]'That will cost you your [chosen jewellery][speech style of shopkeeper].'[roman type][line break]";
+			say "[speech style of shopkeeper]'That will cost you your ";
+			while E > 0:
+				let J be the entry E of chosen jewellery;
+				say "[ShortDesc of J][if E > 2], [otherwise if E is 2] and [otherwise].'[roman type][line break][end if]";
+				decrease E by 1;
 			try paying.
 
 [!<DecideWhichNumberIsTheTotalValueOfJewellery>+

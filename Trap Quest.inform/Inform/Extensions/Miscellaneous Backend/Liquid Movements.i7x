@@ -8,6 +8,7 @@ semen is a liquid-object.
 urine is a liquid-object.
 milk is a liquid-object.
 water is a liquid-object.
+murkwater is a liquid-object.
 
 To say variable (L - a liquid-object):
 	say "[L]".
@@ -17,19 +18,23 @@ To say variable (L - urine):
 	say "[urine]".
 To say variable (L - milk):
 	say "[milk]".
+To say variable (L - murkwater):
+	say "murky liquid".
 
 To reset soak flavour:
 	repeat with T running through soaked clothing:
 		now T is unsoaked;
 	repeat with T running through soaked body parts:
 		now T is unsoaked.
-		
+
 
 To LiquidSoak (L - a liquid-object) On (O - an object):
 	say "Error - no LiquidSoak function for soaking [L] on [O].".
-	
+
 To LiquidSoak (L - semen) On (B - a body part):
-	if diaper quest is 0, increase the semen coating of B by 1.
+	if diaper quest is 0:
+		if the semen coating of B is 0, force inventory-focus redraw; [Forces redraw of inventory window for wipe buttons to appear]
+		increase the semen coating of B by 1.
 To LiquidSoak (L - urine) On (B - a body part):
 	do nothing.
 To LiquidSoak (L - urine) On (B - hair):
@@ -38,31 +43,56 @@ To LiquidSoak (L - milk) On (B - a body part):
 	do nothing.
 To LiquidSoak (L - water) On (B - a body part):
 	do nothing.
+To LiquidSoak (L - murkwater) On (B - an object):
+	LiquidSoak semen on B.
 To LiquidSoak (L - semen) On (C - a clothing):
-	increase the semen-soak of C by 1.
+	SemenSoakUp C by 1.
 To LiquidSoak (L - urine) On (C - a clothing):
-	increase the urine-soak of C by 1.
+	UrineSoakUp C by 1.
 To LiquidSoak (L - milk) On (C - a clothing):
-	increase the milk-soak of C by 1.
+	MilkSoakUp C by 1.
 To LiquidSoak (L - water) On (C - a clothing):
-	increase the water-soak of C by 1.
+	WaterSoakUp C by 1.
 
 To Squirt (L - a liquid-object) On (C - an object) by (N - a number):
-	unless C is not thighs and bukkake fetish is 0, UniqueSquirt L on C by N;
+	unless C is not thighs and bukkake fetish is 0 and L is not water, UniqueSquirt L on C by N;
 	now C is soaked.
 
+Definition: a clothing is liquid-soak-appropriate if it is crotch covering or bukkake fetish is 1.
+
 To Squirt (L - a liquid-object) On (C - a clothing) by (N - a number):
-	if bukkake fetish is 1 or C is crotch covering:
+	if L is water or C is liquid-soak-appropriate:
 		now C is soaked;
 		if C is fluid vulnerable and C is worn, say ", [if N > 5]drenching[otherwise if the total-soak of C is 0]wetting[otherwise][one of]spreading through[or]permeating[or]extending throughout[at random][end if] it.";
+		if C is worn:
+			force clothing-focus redraw;
+		otherwise if C is held:
+			force inventory-focus redraw;
 		UniqueSquirt L on C by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - an object) by (N - a number):
 	say "Error - no Soak function for soaking [L] on [C].".
 
+
+times-bukkaked is a number that varies.
+
+To display cumshot reaction to (N - a number):
+	if N >= 10:
+		cutshow figure of cumshot reaction 5 for face;
+	otherwise if times-bukkaked < 5:
+		cutshow figure of cumshot reaction 1 for face;
+	otherwise if the semen addiction of the player < 7 and the semen taste addiction of the player < 7:
+		cutshow figure of cumshot reaction 4 for face;
+	otherwise if the semen taste addiction of the player > 14:
+		cutshow figure of cumshot reaction 3 for face;
+	otherwise:
+		cutshow figure of cumshot reaction 2 for face;
+
+
 To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 	let M be N / 2; [headgear & hair]
 	if L is semen:
+		increase times-bukkaked by 1;
 		let LC be a random worn lipstick collar;
 		if LC is clothing, increase N by 1;
 		if N > a random number between 0 and 3, SemenAddictUp 1;
@@ -77,9 +107,9 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 			decrease N by 1;
 		if the semen coating of C > 0:
 			say "[SemenEncounterFlav]";
-			if newbie tips is 1, say "[one of][item style]Newbie tip: You've got cum on your face!  That's not great - you'll be extremely humiliated if anyone sees you. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'. Your chest and belly work similarly.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got cum on your face!  That's not great - you'll be extremely humiliated if anyone sees you. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'. Your chest and belly work similarly.[roman type][line break][or][stopping]";
 			if LC is tethering lipstick collar, end tethering;
-			if the make-up of face > 0 and permanent makeup is 0 and a random number between 1 and 6 is 1:
+			if face is temporarily made up and a random number between 1 and 6 is 1:
 				say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
 				FaceDown 1;
 		if the semen coating of C >= 10 and N > 0:
@@ -98,6 +128,12 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 				say "The [variable L] washes all the [semen] off of your face. ";
 				PuddleUp semen by the semen coating of C;
 				now the semen coating of C is 0;
+		if face is temporarily made up:
+			if the make-up of face > N:
+				say "The [variable L] washes some of the make-up from your face. ";
+			otherwise:
+				say "The [variable L] washes all the make-up from your face. ";
+			FaceDown N;
 		if breasts is unsoaked, say "The [variable L] steadily flows down your face to your [BreastDesc].";
 		Squirt L on Breasts by N.
 
@@ -224,7 +260,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 		while the semen coating of C < 10 and N > 0:
 			LiquidSoak L on C;
 			decrease N by 1;
-		if newbie tips is 1 and the semen coating of C > 0, say "[one of][item style]Newbie tip: You've got cum on your thighs!  That's bad for you - you'll have reduced dexterity until it's gone. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe thighs with X'.[roman type][line break][or][stopping]";
+		if newbie tips is 1 and the semen coating of C > 0, say "[one of][newbie style]Newbie tip: You've got cum on your thighs!  That's bad for you - you'll have reduced dexterity until it's gone. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe thighs with X'.[roman type][line break][or][stopping]";
 	otherwise:
 		if the semen coating of C > 0:
 			if the semen coating of C > N:
@@ -291,7 +327,7 @@ To puddle water before (L - a liquid-object) from (C - a clothing):
 	while the water-soak of C > 0 and the total-soak of C > the soak-limit of C:
 		PuddleUp L by 1;
 		decrease the water-soak of C by 1.
-		
+
 
 To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 	while C is able to take more liquid and N > 0:
@@ -307,7 +343,17 @@ To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 				say "The [variable L] flows down to the ground.";
 				PuddleUp L by N;
 		otherwise if C is crotch covering:
-			if C is fluid vulnerable: [liquid can soak all the way through]	
+			if C is listed in the list of stacked diapers: [handle liquid soaking down from one diaper to another]
+				let X be 100;
+				let Y be the number of entries in the list of stacked diapers;
+				repeat with Z running from 1 to Y:
+					if entry Z in the list of stacked diapers is C, now X is Z + 1;
+				if X <= Y:
+					let CC be entry X in the list of stacked diapers;
+					say "It leaks out and down into your [ShortDesc of CC].";
+					Squirt L on CC by N;
+					now N is 0;
+			if C is fluid vulnerable and N > 0: [liquid can soak all the way through]
 				repeat with CC running through worn unsoaked crotch covering clothing:
 					if the bottom-layer of CC is the bottom-layer of CC - 1 and CC is somewhat fluid vulnerable:
 						say "It reaches your [ShortDesc of CC]";
@@ -343,7 +389,7 @@ To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 				if hips is unsoaked, say "The [variable L] flows down to your loins.";
 				Squirt L on hips by N;
 		otherwise if C is breast covering:
-			if C is fluid vulnerable: [liquid can soak all the way through]	
+			if C is fluid vulnerable: [liquid can soak all the way through]
 				if the top-layer of C is 1:
 					Squirt L on breasts by N;
 					now N is 0;
@@ -434,7 +480,7 @@ REQUIRES COMMENTING
 
 +!]
 To WaterSoak (X - a number) on (C - a clothing):
-	if C is fluid vulnerable and C is worn, say "[water] soaks into your [ShortDesc of C][if bukkake fetish is 0 and C is not crotch covering].[end if]";
+	if C is fluid vulnerable and C is worn, say "[water] soaks into your [ShortDesc of C]";
 	Squirt water on C by X;
 	reset soak flavour.
 
@@ -445,7 +491,7 @@ REQUIRES COMMENTING
 +!]
 To WaterSoak (C - a clothing):
 	WaterSoak 1 on C.
-	
+
 
 [!<CumFaceUpX>+
 
@@ -465,7 +511,9 @@ REQUIRES COMMENTING
 To CumFaceDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the semen coating of face > 0, decrease the semen coating of face by 1.
+		if the semen coating of face > 0:
+			decrease the semen coating of face by 1;
+			if the semen coating of face is 0, force inventory-focus redraw. [Forces redraw of inventory window]
 
 [!<CumTitsUpX>+
 
@@ -486,7 +534,9 @@ REQUIRES COMMENTING
 To CumTitsDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the semen coating of breasts > 0, decrease the semen coating of breasts by 1.
+		if the semen coating of breasts > 0:
+			decrease the semen coating of breasts by 1;
+			if the semen coating of breasts is 0, force inventory-focus redraw. [Forces redraw of inventory window]
 
 [!<CumBellyUpX>+
 
@@ -506,7 +556,9 @@ REQUIRES COMMENTING
 To CumBellyDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the semen coating of belly > 0, decrease the semen coating of belly by 1.
+		if the semen coating of belly > 0:
+			decrease the semen coating of belly by 1;
+			if the semen coating of belly is 0, force inventory-focus redraw. [Forces redraw of inventory window]
 
 [!<CumThighsUpX>+
 
@@ -527,7 +579,9 @@ REQUIRES COMMENTING
 To CumThighsDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the semen coating of thighs > 0, decrease the semen coating of thighs by 1.
+		if the semen coating of thighs > 0:
+			decrease the semen coating of thighs by 1;
+			if the semen coating of thighs is 0, force inventory-focus redraw. [Forces redraw of inventory window]
 
 
 [!<BellyIsDrippable>+

@@ -41,12 +41,12 @@ To Execute Takeoff:
 			now C is in the location of the player;
 	if there is a worn magic wand:
 		compute takeoff of a random worn magic wand;
-	if the player is in the woods:
-		say "Before you know it, you are high up in the sky!  You can see the entirety of the woods from here!";
-		repeat with R running through placed jungle rooms:
+	if the location of the player is no-roof:
+		say "Before you know it, you are high up in the sky! You can see the entirety of the woods from here!";
+		repeat with R running through placed no-roof rooms:
 			now R is discovered;
 		now the player is in Sky01;
-		if map images is 1, display entire map;
+	refresh the map-window;
 	now the alert of the player is 1. [You stop resting]
 
 [!<ExecuteLanding>+
@@ -68,7 +68,7 @@ To Execute Landing:
 		say LandingTaunt of M;
 		now monster-flav is 1;
 	say "[bold type]As you land, you fall to your knees.[roman type][line break]";
-	if map images is 1, display entire map;
+	if map images > 0, display entire map;
 	if the player is upright:
 		try kneeling;
 	otherwise if the location of the player is glue-puddled:
@@ -99,7 +99,7 @@ Part 2 - Various Levels of Flight
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is grounded:
+Definition: yourself is grounded:
 	if the weight of the player > 2, decide yes;
 	decide no.
 
@@ -108,7 +108,7 @@ Definition: a person (called P) is grounded:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is on tiptoes:
+Definition: yourself is on tiptoes:
 	if there is a worn butterfly wings, decide yes;
 	if the weight of the player < 3 and the weight of the player > -3, decide yes;
 	decide no.
@@ -118,7 +118,7 @@ Definition: a person (called P) is on tiptoes:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is zeroG:
+Definition: yourself is zeroG:
 	if the weight of the player < -2 and the weight of the player > -6, decide yes;
 	decide no.
 
@@ -127,7 +127,7 @@ Definition: a person (called P) is zeroG:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is flying:
+Definition: yourself is flying:
 	if the player is immobile, decide no;
 	if there is a worn butterfly wings, decide no;
 	if the latex-transformation of the player > 5, decide no;
@@ -139,8 +139,8 @@ Definition: a person (called P) is flying:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is too high to see:
-	if the player is flying and the player is in the Woods, decide yes;
+Definition: yourself is too high to see:
+	if the player is flying and playerRegion is Woods, decide yes;
 	decide no.
 
 

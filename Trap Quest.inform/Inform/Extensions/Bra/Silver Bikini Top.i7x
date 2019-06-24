@@ -19,8 +19,8 @@ To say ClothingDesc of (C - a silver bikini top):
 To decide which number is the initial outrage of (C - a silver bikini top):
 	decide on 5.
 
-To decide which object is the potential-upgrade-target of (C - a silver bikini top):
-	decide on a random off-stage white string bikini top.
+Definition: a silver bikini top is silver themed: decide yes.
+Definition: a silver bikini top is pink themed: decide yes.
 
 Silver Bikini Top ends here.
 

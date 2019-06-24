@@ -1,6 +1,6 @@
 Midnight Tanto by Equippables begins here.
 
-A midnight tanto is a kind of equippable. There is 1 midnight tanto. A midnight tanto is usually unique. A midnight tanto is usually slap ready. A midnight tanto is usually metal. The printed name of midnight tanto is usually "[TQlink of item described][clothing-title-before]Midnight Tanto[clothing-title-after][TQxlink of item described][verb-desc of item described]". 
+A midnight tanto is a kind of equippable. There is 1 midnight tanto. A midnight tanto is usually unique. A midnight tanto is usually slap ready. A midnight tanto is usually metal. The printed name of midnight tanto is usually "[clothing-title-before]Midnight Tanto[clothing-title-after]". 
 
 To say ClothingDesc of (W - a midnight tanto):
 	say "A Japanese-style knife, its blade is so black as to appear unnatural.".

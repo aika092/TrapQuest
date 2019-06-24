@@ -1,6 +1,9 @@
 Camera Trap by Traps begins here.
 
-A camera trap is a kind of trap. There are 10 potentially sticky camera traps. The description of a camera trap is "A modern looking camera is embedded in a wall at ankle height. It is pointing upwards and looks like it could take some extremely high resolution images.".
+A camera trap is a kind of trap. There are 10 potentially sticky camera traps.
+
+To say ExamineDesc of (C - a camera trap):
+	say "A modern looking camera is embedded in a wall at ankle height. It is pointing upwards and looks like it could take some extremely high resolution images.".
 
 This is the spawn initial hotel camera traps rule:
 	repeat with N running from 1 to 8:
@@ -10,7 +13,7 @@ This is the spawn initial hotel camera traps rule:
 		let T be a random off-stage camera trap;
 		deploy T in R;
 		if N > 4, now T is triggerless.
-The spawn initial hotel camera traps rule is listed in the set up hotel traps rules.
+The spawn initial hotel camera traps rule is listed last in the set up hotel traps rules.
 
 [!<CameraTrap>@<SayEnvironmentDesc>+
 
@@ -20,7 +23,7 @@ This is what is put in the room description when the trap is visible (revealed).
 To say EnvironmentDesc of (T - a camera trap):
 	say "A camera is embedded in one wall, quite low down to get a compromising angle when it takes a photo. ".
 
-To say ShortDesc of (T - a bukkake trap door):
+To say ShortDesc of (T - a camera trap):
 	say "camera".
 
 To trigger (Y - a camera trap):
@@ -42,6 +45,13 @@ A poster is a kind of thing. A poster is not portable. The printed name of a pos
 A poster can be unspotted or spotted. A poster is usually unspotted. [Has the player seen it before?]
 A poster can be identifiable or unidentifiable. A poster is usually identifiable. [Can the player be identified from the poster?]
 Understand "banner" as poster. Understand "new" as a poster when the item described is unspotted and the item described is on-stage. [For debugging purposes]
+
+Figure of poster is the file "Env/Multifloor/poster1.png".
+Figure of banner is the file "Env/Hotel/banner1.png".
+
+To decide which figure-name is the examine-image of (C - a poster):
+	if C is in the hotel, decide on figure of banner;
+	decide on figure of poster.
 
 A poster has a text called title.
 [The below variables are to track the state of the player at the time the image was taken.]
@@ -78,7 +88,8 @@ To set up (P - a poster):
 	distribute P.
 
 To develop (P - a poster):
-	now the old-gender of P is player-gender;
+	if the player is female, now the old-gender of P is 1;
+	otherwise now the old-gender of P is 0;
 	now the old-stance of P is the stance of the player;
 	now the old-breasts of P is the largeness of breasts;
 	now the old-belly of P is the largeness of belly;
@@ -147,13 +158,13 @@ Check examining an unspotted poster:
 A time based rule (this is the player spots poster rule):
 	let P be a random unspotted poster in the location of the player;
 	if P is poster:
-		if the player is in the hotel:
+		if playerRegion is Hotel:
 			say "You stop in your tracks and look up, [if the player is gagged]and your mouth would be agape if it wasn't gagged[otherwise]mouth agape[end if] as you see the large object above your head. A giant banner hangs from the ceiling, with a photo of you in it. ";
 		otherwise:
-			say "You yelp in surprise as you enter this room and immediately spot a large poster of a lewd scene on [if the player is in the Woods]a giant tree[otherwise]a wall[end if]. The image is one of you, taken by a camera trap earlier in the game. ";
+			say "You yelp in surprise as you enter this room and immediately spot a large poster of a lewd scene on [if playerRegion is Woods]a giant tree[otherwise]a wall[end if]. The image is one of you, taken by a camera trap earlier in the game. ";
 		say "[line break][ShortDesc of P][TitleDesc of P]";
 		say "[if the humiliation of the player < 10000][line break][first custom style][one of]Oh my god!  No no no no no!  How many people have seen this?  I feel so ashamed...[or]Oh no! There's one here too?![or]Oh no!  How may of these are there?![or]No no no, not another one!  There are pictures of me everywhere![then at random][otherwise if the humiliation of the player < 20000][line break][variable custom style][one of]Oh no!  How do I take this down?!  How embarrassing![or]Eek!  Another one!  How awful...[or]Fucking hell, how many pictures of me are there?[then at random][otherwise if the humiliation of the player < 30000][variable custom style][one of]Ooh!  What meanie put this up without asking me?  I should have at least been asked![or]If I find who put this up they're going to be in big trouble![or]That's so mean!  But kind of hot...[or]How do I get myself into these situations! *giggle*[then at random][otherwise if the humiliation of the player < 40000][line break][second custom style]I can't believe how much this is turning me on, to be objectified like that![otherwise][second custom style]I deserved that.[end if][roman type][line break]";
-		if the humiliation of the player < 20000, say "[if the player is in the hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high!  [line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it!  [line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
+		if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high!  [line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it!  [line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
 		say "[one of]Dare you look closer at your own shameful image?[or][stopping]";
 		humiliate the lewdness of P;
 		now P is spotted.
@@ -161,15 +172,14 @@ A time based rule (this is the player spots poster rule):
 A time based rule (this is the monster spots poster rule):
 	let P be a random spotted poster in the location of the player;
 	if P is poster:
-		repeat with M running through intelligent monsters in the location of the player:
-			if M is not disapproving P:
-				if the sleep of M is 0 and M is interested or the boredom of M > 30: [Essentially we don't want to do this check if the monster is just about to 'notice' the player.]
-					say "[BigNameDesc of M] spots the [if P is in the hotel]banner[otherwise]poster[end if] of you in this room!";
-					if P is identifiable:
-						IdentifiablePosterReaction of M;
-					otherwise:
-						UnidentifiablePosterReaction of M;
-					now M is disapproving P.
+		repeat with M running through reactive monsters:
+			if M is not disapproving P and (M is interested or the boredom of M > 30): [Essentially we don't want to do this check if the monster is just about to 'notice' the player.]
+				say "[BigNameDesc of M] spots the [if P is in the hotel]banner[otherwise]poster[end if] of you in this room!";
+				if P is identifiable:
+					IdentifiablePosterReaction of M;
+				otherwise:
+					UnidentifiablePosterReaction of M;
+				now M is disapproving P.
 
 To IdentifiablePosterReaction of (M - a monster):
 	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'Wait a second, is this YOU?!  Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
@@ -192,7 +202,7 @@ To say PosterCum of (P - a poster):
 
 Chapter 1 Upskirt Poster
 
-An upskirt poster is a kind of poster. The description of an upskirt poster is "[UpskirtPosterDesc]". An upskirt poster has a number called upskirt successful.
+An upskirt poster is a kind of poster. An upskirt poster has a number called upskirt successful.
 There are 10 upskirt posters. An upskirt poster is usually unidentifiable.
 
 To compute unique variables of (P - an upskirt poster):
@@ -215,7 +225,7 @@ To compute title of (P - an upskirt poster):
 	otherwise if the old-knickers of P is diaper:
 		if P is in the hotel, now the title of P is "DIAPERED CRYBABY";
 		otherwise now the title of P is "A properly padded peepot.";
-	otherwise if the old-overdress of P is royal attire:
+	otherwise if the old-overdress of P is royalty themed:
 		if P is in the hotel, now the title of P is "HER ROYAL SLUTNESS";
 		otherwise now the title of P is "A royal slip-up!";
 	otherwise if there is a lewdly exposed fuckhole:
@@ -234,29 +244,29 @@ To compute title of (P - an upskirt poster):
 		otherwise:
 			now the title of P is "An arse to remember.".
 
-To say UpskirtPosterDesc:
-	say "An extremely detailed [if upskirt successful of item described is 1]upskirt [end if]photo of you from behind, on your hands and knees. ";
-	if old-father of item described is a thing and old-belly of item described > 3:
-		say "You are visibly pregnant[if the pregnancy of the player is 0] with [PregGrowth of old-father of item described] inside your[otherwise]with a[end if] [if old-belly of item described > 5]giant[otherwise]large[end if] belly.";
-	if old-skirt of item described is clothing or old-overdress of item described is skirted clothing, say "[if old-skirt of item described is clothing]Due to your compromising position, your [ShortDesc of old-skirt of item described] does nothing to protect your modesty. [otherwise]You are wearing a [ShortDesc of old-overdress of item described]. However it does nothing to protect your modesty. [end if]";
-	if genitals visible of item described is 1 or asshole visible of item described is 1, say "Your [if genitals visible of item described is 1 and old-gender of item described is 0][PenisFlavour old-penislength of item described][otherwise if genitals visible of item described is 1][vagina][end if][if genitals visible of item described is 1 and asshole visible of item described is 1] and [end if][if asshole visible of item described is 1][asshole][end if] [if genitals visible of item described is 1 and asshole visible of item described is 1]are[otherwise]is[end if] fully visible. ";
-	if old-trousers of item described is clothing or old-knickers of item described is clothing:
+To say ExamineDesc of (C - an upskirt poster):
+	say "An extremely detailed [if upskirt successful of C is 1]upskirt [end if]photo of you from behind, on your hands and knees. ";
+	if old-father of C is a thing and old-belly of C > 3:
+		say "You are visibly pregnant[if the pregnancy of the player is 0] with [PregGrowth of old-father of C] inside your[otherwise]with a[end if] [if old-belly of C > 5]giant[otherwise]large[end if] belly.";
+	if old-skirt of C is clothing or old-overdress of C is skirted clothing, say "[if old-skirt of C is clothing]Due to your compromising position, your [ShortDesc of old-skirt of C] does nothing to protect your modesty. [otherwise]You are wearing a [ShortDesc of old-overdress of C]. However it does nothing to protect your modesty. [end if]";
+	if genitals visible of C is 1 or asshole visible of C is 1, say "Your [if genitals visible of C is 1 and old-gender of C is 0][PenisFlavour old-penislength of C][otherwise if genitals visible of C is 1][vagina][end if][if genitals visible of C is 1 and asshole visible of C is 1] and [end if][if asshole visible of C is 1][asshole][end if] [if genitals visible of C is 1 and asshole visible of C is 1]are[otherwise]is[end if] fully visible. ";
+	if old-trousers of C is clothing or old-knickers of C is clothing:
 		say "You are wearing a ";
-		if old-trousers of item described is clothing:
-			say "[ShortDesc of old-trousers of item described]. ";
+		if old-trousers of C is clothing:
+			say "[ShortDesc of old-trousers of C]. ";
 		otherwise:
-			say "[selfexamineuniquetitle of old-knickers of item described]";
-			if the old-knickers-mess of item described > 0:
+			say "[selfexamineuniquetitle of old-knickers of C]";
+			if the old-knickers-mess of C > 0:
 				say "that have an extremely visible bulge on the backdoor, showing that you messed yourself";
-			otherwise if the old-knickers-semen of item described > 0:
-				say "[if the old-knickers-semen of item described > the soak-limit of old-knickers of item described / 2] that is soaked in [semen][otherwise]that has evidence of drippings of [semen][end if]";
-			otherwise if the old-knickers-urine of item described > 0:
-				say "[if the old-knickers-urine of item described > the soak-limit of old-knickers of item described / 2] that is soaked in [urine][otherwise]that has evidence of drippings of [urine][end if]";
-			otherwise if the old-knickers-water of item described > 0:
-				say "[if the old-knickers-urine of item described > the soak-limit of old-knickers of item described / 2] that is soaked[otherwise]that is damp[end if]";
+			otherwise if the old-knickers-semen of C > 0:
+				say "[if the old-knickers-semen of C > the soak-limit of old-knickers of C / 2] that is soaked in [semen][otherwise]that has evidence of drippings of [semen][end if]";
+			otherwise if the old-knickers-urine of C > 0:
+				say "[if the old-knickers-urine of C > the soak-limit of old-knickers of C / 2] that is soaked in [urine][otherwise]that has evidence of drippings of [urine][end if]";
+			otherwise if the old-knickers-water of C > 0:
+				say "[if the old-knickers-urine of C > the soak-limit of old-knickers of C / 2] that is soaked[otherwise]that is damp[end if]";
 			say ". ";
-	if old-cumthighs of item described > 0, say "Your thighs are [if old-cumthighs of item described > 7]caked[otherwise if old-cumthighs of item described > 3]covered[otherwise]splattered[end if] with [semen].";
-	say "It seems unlikely someone could recognize you just from this image. [TitleDesc of item described]".
+	if old-cumthighs of C > 0, say "Your thighs are [if old-cumthighs of C > 7]caked[otherwise if old-cumthighs of C > 3]covered[otherwise]splattered[end if] with [semen].";
+	say "It seems unlikely someone could recognize you just from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - an upskirt poster):
 	say "The photo shows you at a [if upskirt successful of P is 1]convenient upskirt[otherwise]compromising[end if] angle. There is a perfect view of your [if asshole visible of P is 1]naughty bits[otherwise if upskirt successful of P is 1 and old-trousers of P is nothing and old-knickers of P is clothing][selfexamineuniquetitle of old-knickers of P][otherwise]butt[end if].".
@@ -270,7 +280,7 @@ To decide which number is the lewdness of (P - an upskirt poster):
 
 Chapter 2 Shameful Orgasm Poster
 
-A shameful orgasm poster is a kind of poster. The description of a shameful orgasm poster is "[ShamefulPosterDesc]". A shameful orgasm poster has an object called old-stimulant. A shameful orgasm poster has a number called old-sex-addiction. A shameful orgasm poster has a number called old-latex-transformation. There are 10 shameful orgasm posters.
+A shameful orgasm poster is a kind of poster. A shameful orgasm poster has an object called old-stimulant. A shameful orgasm poster has a number called old-sex-addiction. A shameful orgasm poster has a number called old-latex-transformation. There are 10 shameful orgasm posters.
 
 To compute unique variables of (P - a shameful orgasm poster):
 	now the old-sex-addiction of P is the sex addiction of the player;
@@ -287,7 +297,7 @@ To compute title of (P - a shameful orgasm poster):
 		otherwise:
 			now the title of P is "The latex sex doll enjoys itself a bit too much!";
 	otherwise if old-stimulant of P is monster or diaper quest is 1:
-		if the old-overdress of P is royal attire:
+		if the old-overdress of P is royalty themed:
 			if P is in the hotel:
 				now the title of P is "FIT TO RULE?";
 			otherwise if the old-bimbo of P > 10:
@@ -348,20 +358,20 @@ To compute title of (P - a shameful orgasm poster):
 			if P is in the hotel, now the title of P is "GAPE QUEEN";
 			otherwise now the title of P is "A true anal addict!".
 
-To say ShamefulPosterDesc:
-	say "[ShortDesc of item described]";
+To say ExamineDesc of (C - a shameful orgasm poster):
+	say "[ShortDesc of C]";
 	say "[PosterGenitals]";
-	say "[if old-sex-addiction of item described < 6]Your face is twisted in a mixture of pleasure, pain, shame and despair[otherwise if old-sex-addiction of item described < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if] [if old-stimulant of item described is male monster]as the [old-stimulant of item described] [one of]ruins[or]plows into[or]makes love to[at random] your [asshole][otherwise if old-stimulant of item described is a thing]as the [old-stimulant of item described] [one of]causes you to orgasm[or]forces you to climax[or]makes you cum from your [asshole][at random][otherwise][one of]you cum from your [asshole][or]your [asshole] causes you to orgasm[at random][end if]. ";
-	if old-overdress of item described is clothing:
-		compute SelfExamineDesc of old-overdress of item described;
-	otherwise if old-bra of item described is clothing:
-		let B be old-breasts of item described;
-		let O be old-bra of item described;
+	say "[if old-sex-addiction of C < 6]Your face is twisted in a mixture of pleasure, pain, shame and despair[otherwise if old-sex-addiction of C < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if] [if old-stimulant of C is male monster]as the [old-stimulant of C] [one of]ruins[or]plows into[or]makes love to[at random] your [asshole][otherwise if old-stimulant of C is a thing]as the [old-stimulant of C] [one of]causes you to orgasm[or]forces you to climax[or]makes you cum from your [asshole][at random][otherwise][one of]you cum from your [asshole][or]your [asshole] causes you to orgasm[at random][end if]. ";
+	if old-overdress of C is clothing:
+		compute SelfExamineDesc of old-overdress of C;
+	otherwise if old-bra of C is clothing:
+		let B be old-breasts of C;
+		let O be old-bra of C;
 		[say "You have [if B < 2]flat [otherwise if B < 16][CupDesc of B][otherwise]stupidly giant [end if] tits [ShortDesc of O]. ";]
-	if old-skirt of item described is clothing, say "You are wearing a [ShortDesc of old-skirt of item described]. ";
-	if old-trousers of item described is clothing, say "You are [if old-overdress of item described is clothing]also [end if]wearing a [ShortDesc of old-trousers of item described]. ";
-	say "[PosterCum of item described]";
-	say "It is very easy to recognize you from this image. [TitleDesc of item described]".
+	if old-skirt of C is clothing, say "You are wearing a [ShortDesc of old-skirt of C]. ";
+	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
+	say "[PosterCum of C]";
+	say "It is very easy to recognize you from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a shameful orgasm poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if]You are in the throes of an orgasm[if old-stimulant of P is a thing] caused by the [old-stimulant of P][end if]. ".
@@ -375,7 +385,7 @@ Chapter 3 Masturbation Poster
 
 A masturbation poster is a kind of poster.
 
-A masturbation poster is a kind of poster. The description of a masturbation poster is "[MasturbationPosterDesc]". A masturbation poster has an object called old-stimulant. A masturbation poster has a number called old-sex-addiction. A masturbation poster has an object called old-monster. There are 10 masturbation posters.
+A masturbation poster is a kind of poster. A masturbation poster has an object called old-stimulant. A masturbation poster has a number called old-sex-addiction. A masturbation poster has an object called old-monster. There are 10 masturbation posters.
 
 To compute title of (P - a masturbation poster):
 	if old-monster of P is monster:
@@ -405,7 +415,7 @@ To compute title of (P - a masturbation poster):
 			if P is in the hotel, now the title of P is "I LOVE MY PANTIES";
 			otherwise now the title of P is "Look at me doing grown-up things in my big girl panties!";
 	otherwise:
-		if the old-overdress of P is royal attire:
+		if the old-overdress of P is royalty themed:
 			if P is in the hotel:
 				now the title of P is "OUR ROYAL HORNDOG";
 			otherwise if the humiliation of the player < 17500:
@@ -446,22 +456,22 @@ To compute unique variables of (P - a masturbation poster):
 	now the old-sex-addiction of P is the sex addiction of the player;
 	now the old-monster of P is a random intelligent monster in the location of the player.
 
-To say MasturbationPosterDesc:
-	say "[ShortDesc of item described]";
+To say ExamineDesc of (C - a masturbation poster):
+	say "[ShortDesc of C]";
 	say "[PosterGenitals]";
-	say "[if old-sex-addiction of item described < 8]Your expression is one of nervous relief[otherwise if old-sex-addiction of item described < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if]. ";
-	if old-monster of item described is monster:
-		say "The [old-monster of item described] is staring at you with a [if old-monster of item described is robot]never changing[otherwise if old-monster of item described is intelligent]disapproving[otherwise]questioning[end if] face. ";
-	if old-overdress of item described is clothing:
-		say "You are wearing a [ShortDesc of old-overdress of item described]. ";
-	otherwise if old-bra of item described is clothing:
-		let B be old-breasts of item described;
-		let O be old-bra of item described;
+	say "[if old-sex-addiction of C < 8]Your expression is one of nervous relief[otherwise if old-sex-addiction of C < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if]. ";
+	if old-monster of C is monster:
+		say "The [old-monster of C] is staring at you with a [if old-monster of C is robot]never changing[otherwise if old-monster of C is intelligent]disapproving[otherwise]questioning[end if] face. ";
+	if old-overdress of C is clothing:
+		say "You are wearing a [ShortDesc of old-overdress of C]. ";
+	otherwise if old-bra of C is clothing:
+		let B be old-breasts of C;
+		let O be old-bra of C;
 		[say "You have [if B < 2]flat [otherwise if B < 16][CupDesc of B][otherwise]stupidly giant [end if] tits [ShortDesc of O]. ";]
-	if old-skirt of item described is clothing, say "You are wearing a [ShortDesc of old-skirt of item described]. ";
-	if old-trousers of item described is clothing, say "You are [if old-overdress of item described is clothing]also [end if]wearing a [ShortDesc of old-trousers of item described]. ";
-	say "[PosterCum of item described]";
-	say "It is very easy to recognize you from this image. [TitleDesc of item described]".
+	if old-skirt of C is clothing, say "You are wearing a [ShortDesc of old-skirt of C]. ";
+	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
+	say "[PosterCum of C]";
+	say "It is very easy to recognize you from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a masturbation poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing straight. [otherwise]on your hands and knees. [end if][if old-stimulant of P is insertable thing]You are fucking yourself with your [old-stimulant of P]. [otherwise if old-stimulant of P is knickers]You are very visibly pleasuring yourself through your [selfexamineuniquetitle of old-knickers of P]. [otherwise if old-stimulant of P is clothing]You are very visibly pleasuring yourself through your clothing. [otherwise]It is very clear that you are wanking. [end if]".
@@ -476,7 +486,7 @@ To decide which number is the lewdness of (P - a masturbation poster):
 
 Chapter 4 Wetting Poster
 
-A wetting poster is a kind of poster. The description of a wetting poster is "[WettingPosterDesc]". A wetting poster has an object called urination-target. A wetting poster has a number called old-humiliation. A wetting poster has a number called old-peereaction. A wetting poster has an object called old-monster.
+A wetting poster is a kind of poster. A wetting poster has an object called urination-target. A wetting poster has a number called old-humiliation. A wetting poster has a number called old-peereaction. A wetting poster has an object called old-monster.
 There are 10 wetting posters.
 
 To compute unique variables of (P - a wetting poster):
@@ -488,7 +498,7 @@ To compute unique variables of (P - a wetting poster):
 To compute title of (P - a wetting poster):
 	if urination-target of P is diaper:
 		if old-peereaction of P is 2:
-			if the old-overdress of P is royal attire:
+			if the old-overdress of P is royalty themed:
 				if P is in the hotel, now the title of P is "PRINCESS POTTYPANTS";
 				otherwise now the title of P is "A royal relief!";
 			otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
@@ -526,7 +536,7 @@ To compute title of (P - a wetting poster):
 			if P is in the hotel, now the title of P is "MESSY MISSY";
 			otherwise now the title of P is "Uh-oh, someone needs an urgent change!";
 	otherwise if old-peereaction is 3:
-		if the old-overdress of P is royal attire:
+		if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "PRINCESS PUDDLEPANTS";
 			otherwise now the title of P is "A royal mess!";
 		otherwise if the old-overdress of P is maid outfit:
@@ -549,7 +559,7 @@ To compute title of (P - a wetting poster):
 			if P is in the hotel, now the title of P is "PISS PERVERT";
 			otherwise now the title of P is "Caught in the act!  What a pervert.";
 	otherwise:
-		if the old-overdress of P is royal attire:
+		if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "PRINCESS PUDDLES";
 			otherwise now the title of P is "A royal mess!";
 		otherwise if the old-overdress of P is maid outfit:
@@ -566,26 +576,26 @@ To compute title of (P - a wetting poster):
 			if P is in the hotel, now the title of P is "CAUGHT IN THE ACT";
 			otherwise now the title of P is "Use a toilet, you filthy slut!";
 
-To say WettingPosterDesc:
-	say "[ShortDesc of item described]";
+To say ExamineDesc of (C - a wetting poster):
+	say "[ShortDesc of C]";
 	say "[PosterGenitals]";
-	if old-peereaction of item described is 2:
-		if old-monster of item described is monster, say "Your eyes are locked onto the [old-monster of item described], [if old-humiliation of item described < 20000]and your pale facial expression is one of pure terror that they might notice what you are doing[otherwise if old-humiliation of item described < 31000]your cheeks are red and you are biting your lip, clearly embarrassed that they might be aware of what you're doing[otherwise]and your mouth is open in an almost ecstatic grin, you are clearly in the middle of demanding their attention as you wet yourself[end if]. ";
-		otherwise say "[if the old-special of item described is gag]It's difficult to understand your facial expression because of the [old-special of item described] in your mouth[otherwise if old-bimbo of item described < 7]You don't look very happy with yourself[otherwise if old-bimbo of item described < 12]You have a calm, relaxed facial expression, and seem at peace with your situation[otherwise]Your facial expression is contorted with pleasure, your tongue is hanging out and your eyes have rolled to the back of your head[end if]. ";
-	otherwise if old-monster of item described is monster:
-		say "[if old-humiliation of item described < 27500]Your entire face has gone beetroot red as you have allowed the [old-monster of item described] to see you [urinate][otherwise]Your eyes are pointed downwards in shame as you submissively make sure the [old-monster of item described] can very clearly see you [urinate][end if]. ";
-	otherwise if old-peereaction of item described is 3:
-		say "[if old-bimbo of item described > 9]You have a naughty, guilty grin on your face[otherwise]You have a disgusted look on your face[end if]. ";
-	otherwise if urination-target of item described is a room:
-		say "[if urination-target of item described is in the Woods or old-humiliation of item described >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor. [line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through!  [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
-	if old-overdress of item described is clothing, say "You are wearing a [ShortDesc of old-overdress of item described]. ";
-	if old-trousers of item described is clothing, say "You are [if old-overdress of item described is clothing]also [end if]wearing a [ShortDesc of old-trousers of item described]. ";
-	say "[PosterCum of item described]";
-	say "It is very easy to recognize you just from this image. [TitleDesc of item described]".
+	if old-peereaction of C is 2:
+		if old-monster of C is monster, say "Your eyes are locked onto the [old-monster of C], [if old-humiliation of C < 20000]and your pale facial expression is one of pure terror that they might notice what you are doing[otherwise if old-humiliation of C < 31000]your cheeks are red and you are biting your lip, clearly embarrassed that they might be aware of what you're doing[otherwise]and your mouth is open in an almost ecstatic grin, you are clearly in the middle of demanding their attention as you wet yourself[end if]. ";
+		otherwise say "[if the old-special of C is gag]It's difficult to understand your facial expression because of the [old-special of C] in your mouth[otherwise if old-bimbo of C < 7]You don't look very happy with yourself[otherwise if old-bimbo of C < 12]You have a calm, relaxed facial expression, and seem at peace with your situation[otherwise]Your facial expression is contorted with pleasure, your tongue is hanging out and your eyes have rolled to the back of your head[end if]. ";
+	otherwise if old-monster of C is monster:
+		say "[if old-humiliation of C < 27500]Your entire face has gone beetroot red as you have allowed the [old-monster of C] to see you [urinate][otherwise]Your eyes are pointed downwards in shame as you submissively make sure the [old-monster of C] can very clearly see you [urinate][end if]. ";
+	otherwise if old-peereaction of C is 3:
+		say "[if old-bimbo of C > 9]You have a naughty, guilty grin on your face[otherwise]You have a disgusted look on your face[end if]. ";
+	otherwise if urination-target of C is a room:
+		say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor. [line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through!  [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
+	if old-overdress of C is clothing, say "You are wearing a [ShortDesc of old-overdress of C]. ";
+	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
+	say "[PosterCum of C]";
+	say "It is very easy to recognize you just from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a wetting poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly wetting yourself into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly peeing onto the floor of the [urination-target of P]. [otherwise]You are very visibly peeing onto the ground. [end if]";
-	if image cutscenes is 1 and the title of P is "TEACHER'S PET" and the class of the player is schoolgirl, display figure of teachers pet cutscene 1.
+	if the title of P is "TEACHER'S PET" and the class of the player is schoolgirl, cutshow figure of teachers pet cutscene 1 for P.
 
 To decide which number is the lewdness of (P - a wetting poster):
 	let N be 200;
@@ -598,7 +608,7 @@ To decide which number is the lewdness of (P - a wetting poster):
 
 Chapter 5 Expulsion Poster
 
-An expulsion poster is a kind of poster. The description of an expulsion poster is "[ExpulsionPosterDesc]".
+An expulsion poster is a kind of poster.
 There are 10 expulsion posters.
 
 An expulsion poster has a number called old-small-eggs. An expulsion poster has a number called old-medium-eggs. An expulsion poster has a number called old-large-eggs. An expulsion poster has a number called old-milk-count. An expulsion poster has a number called old-urine-count. An expulsion poster has a number called old-semen-count. An expulsion poster has a number called old-water-count. An expulsion poster has an object called old-headgear.
@@ -618,7 +628,7 @@ To compute title of (P - an expulsion poster):
 		if old-large-eggs of P > 0:
 			if P is in the hotel, now the title of P is "BRED BY TENTACLES";
 			otherwise now the title of P is "Whatever is inside that egg, you can be sure it's not of this world.";
-		otherwise if the old-overdress of P is royal attire:
+		otherwise if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "QUEEN CHICKEN";
 			otherwise now the title of P is "Royal princess caught laying mystery eggs!  Is she an alien?";
 		otherwise if P is in the hotel:
@@ -686,7 +696,7 @@ To compute title of (P - an expulsion poster):
 					if R is 2, now the title of P is "Only a baby would make this kind of mess!";
 					if R is 3, now the title of P is "An adult baby demonstrating how difficult it can be to find a potty in time.";
 					if R is 4, now the title of P is "Dumb baby doesn't know what a toilet looks like!";
-		if the old-overdress of P is royal attire:
+		if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "DISHONOURED ROYALTY";
 			otherwise now the title of P is "Royal princess caught in sex scandal!";
 		otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
@@ -720,21 +730,21 @@ To compute title of (P - an expulsion poster):
 			if P is in the hotel, now the title of P is "ASSCUM CRAZED SLUT";
 			otherwise now the title of P is "This whore is famous throughout the lands for being able to take huge amounts of cum in her belly. It all comes out sooner or later, though.".
 
-To say ExpulsionPosterDesc:
-	say "[ShortDesc of item described]";
+To say ExamineDesc of (C - an expulsion poster):
+	say "[ShortDesc of C]";
 	say "[PosterGenitals]";
-	if old-small-eggs of item described > 0 or old-medium-eggs of item described > 0 or old-large-eggs of item described > 0, say "[if old-large-eggs of item described > 0]The gigantic size of the egg leaving your [asshole] has caused your face to twist in a mixture of pleasure, pain, shame and despair[otherwise if old-bimbo of item described < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if] as you push [if old-small-eggs of item described + old-medium-eggs of item described + old-large-eggs of item described > 1]them[otherwise]it[end if] out. ";
-	otherwise say "[if old-milk-count of item described + old-urine-count of item described + old-semen-count of item described > 6]A [one of]huge torrent[or]powerful cascade[or]heavy flow[at random][otherwise]A [one of]moderate flow[or]number of squirts[or]steady trickle[at random][end if] of [if the liquid types of item described > 1]multiple bodily fluids mixed together[otherwise if old-milk-count of item described > 0][milk][otherwise if old-urine-count of item described > 0][urine][otherwise if the old-semen-count of item described > 0][semen][otherwise]enema water[end if] travels from your [asshole] to the ground. You have a very [if the old-bimbo of item described < 7][one of]distressed[or]upset[or]surprised[at random][otherwise if old-bimbo of item described < 12][one of]goofy[or]embarrassed[or]dreamy[sticky random][otherwise][one of]lewd[or]aroused[or]calm[sticky random][end if] expression on your face. ";
-	if old-overdress of item described is clothing:
-		say "You are wearing a [ShortDesc of old-overdress of item described].";
-	otherwise if old-bra of item described is clothing:
-		let B be old-breasts of item described;
-		let O be old-bra of item described;
+	if old-small-eggs of C > 0 or old-medium-eggs of C > 0 or old-large-eggs of C > 0, say "[if old-large-eggs of C > 0]The gigantic size of the egg leaving your [asshole] has caused your face to twist in a mixture of pleasure, pain, shame and despair[otherwise if old-bimbo of C < 11]You face is contorted into an expression of guilty pleasure[otherwise]Your face is one of pure bliss and ecstasy[end if] as you push [if old-small-eggs of C + old-medium-eggs of C + old-large-eggs of C > 1]them[otherwise]it[end if] out. ";
+	otherwise say "[if old-milk-count of C + old-urine-count of C + old-semen-count of C > 6]A [one of]huge torrent[or]powerful cascade[or]heavy flow[at random][otherwise]A [one of]moderate flow[or]number of squirts[or]steady trickle[at random][end if] of [if the liquid types of C > 1]multiple bodily fluids mixed together[otherwise if old-milk-count of C > 0][milk][otherwise if old-urine-count of C > 0][urine][otherwise if the old-semen-count of C > 0][semen][otherwise]enema water[end if] travels from your [asshole] to the ground. You have a very [if the old-bimbo of C < 7][one of]distressed[or]upset[or]surprised[at random][otherwise if old-bimbo of C < 12][one of]goofy[or]embarrassed[or]dreamy[sticky random][otherwise][one of]lewd[or]aroused[or]calm[sticky random][end if] expression on your face. ";
+	if old-overdress of C is clothing:
+		say "You are wearing a [ShortDesc of old-overdress of C].";
+	otherwise if old-bra of C is clothing:
+		let B be old-breasts of C;
+		let O be old-bra of C;
 		[say "You have [if B < 2]flat [otherwise if B < 16][CupDesc of B][otherwise]stupidly giant [end if] tits [ShortDesc of O]. ";]
-	if old-skirt of item described is clothing, say "You are wearing a [ShortDesc of old-skirt of item described]. ";
-	if old-trousers of item described is clothing, say "You are [if old-overdress of item described is clothing]also [end if]wearing a [ShortDesc of old-trousers of item described]. ";
-	say "[PosterCum of item described]";
-	say "It is very easy to recognize you from this image. [TitleDesc of item described]".
+	if old-skirt of C is clothing, say "You are wearing a [ShortDesc of old-skirt of C]. ";
+	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
+	say "[PosterCum of C]";
+	say "It is very easy to recognize you from this image. [TitleDesc of C]".
 
 To decide which number is the liquid types of (P - an expulsion poster):
 	let N be 0;

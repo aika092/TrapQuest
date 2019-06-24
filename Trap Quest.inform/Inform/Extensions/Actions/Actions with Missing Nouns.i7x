@@ -215,8 +215,8 @@ REQUIRES COMMENTING
 Check AutoGlueWiping:
 	let C be a random carried unglued clothing;
 	if C is clothing and the player is glue stuck and the noun is glue, try GlueRubbing the noun on C instead;
-	say "Scrub glue on what?" instead.
-Understand "scrub [glue]" as AutoGlueWiping.
+	say "Brush glue on what?" instead.
+Understand "brush [something]" as AutoGlueWiping.
 
 
 

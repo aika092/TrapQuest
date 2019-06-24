@@ -1,6 +1,12 @@
 Students Tryhard by Monster begins here.
 
-A tryhard student is a kind of student.
+A tryhard student is a kind of student. Understand "dedicated" as a tryhard student.
+
+To say MediumDesc of (M - a tryhard student):
+	say "dedicated [rank-colour of item described] student [student-name of item described]".
+
+To decide which number is the dedication of (M - a tryhard student): [We can use this for various calculations to check which students do what]
+	decide on a random number between 2 and 5.
 
 Part - Laci
 
@@ -89,10 +95,10 @@ student-candy is a tryhard student.
 
 The text-shortcut of student-candy is "stca".
 
-Figure of candy is the file "NPCs/School/Student/student5.png".
+Figure of student-candy is the file "NPCs/School/Student/student5.png".
 
 To decide which figure-name is the monster-image of (M - student-candy):
-	decide on figure of candy.
+	decide on figure of student-candy.
 
 To say MonsterDesc of (M - student-candy):
 	say "This tall blonde woman is wearing a super skimpy pink kitty themed outfit made out of a tiny tube top and even tinier microskirt. [big he of M] has a tattoo of a tiger on [his of M] leg and a black-and-white braid in [his of M] hair. [if the current-rank of M > 1]A sequins necklace in the style of a paw print hangs above [his of M] chest. [end if][big his of M] make up is rather heavily done[if diaper quest is 1] but still looks very grown-up[end if]. [big his of M] expression exudes focus and confidence.".
@@ -121,12 +127,12 @@ To say FirstResponse of (M - student-candy):
 			say "[big he of M] puts on [his of M] sweetest kitty cat voice.[line break][speech style of M]'Nyaa! You're cute, but just you wait, one day I'm going to be the cutest cat you've ever seen!'[roman type][line break]";
 	otherwise:
 		say "[big he of M] puts on [his of M] sweetest kitty cat voice.[line break][speech style of M]'Nyaa!  Aren't I just the cutest cat you've ever seen?'[roman type][line break]";
-	
+
 To say RepeatResponse of (M - student-candy):
 	say FirstResponse of M.
 
 To say StoryAnswer of (M - student-candy):
-	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my owner!  I'm good at following instructions. No actually, I'm the BEST at following instructions!  My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this school can help me out.'[otherwise]My owner wants me to be his 24/7 live-in pet girl but I'm still learning how to properly please men. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
+	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my owner!  I'm good at following instructions. No actually, I'm the BEST at following instructions!  My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this school can help me out.'[otherwise]My owner wants me to be his 24/7 live-in pet girl but I'm still learning how to properly [please] men. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
 
 To say DamageReaction (N - a number) of (M - student-candy):
 	if N > (the maxhealth of M / 4) * 3:
@@ -138,52 +144,6 @@ To say DamageReaction (N - a number) of (M - student-candy):
 	otherwise:
 		say "The [noun] takes the hit, fighting to maintain [his of M] balance!";
 	say "[speech style of M]'[one of]HISS!'[or]NROOWL!'[or]OW, F- I mean, NYOUCH![at random][roman type]".
-
-
-Part - Raye
-
-student-raye is a dq-only tryhard student.
-
-The text-shortcut of student-raye is "stra".
-
-Figure of raye 1 is the file "NPCs/School/Student/student21a.png".
-Figure of raye 2 is the file "NPCs/School/Student/student21b.png".
-Figure of raye 3 is the file "NPCs/School/Student/student21c.png".
-
-To decide which figure-name is the monster-image of (M - student-raye):
-	if the current-rank of M is 3, decide on figure of raye 1;
-	if the current-rank of M is 4, decide on figure of raye 2;
-	decide on figure of raye 3.
-
-To say MonsterDesc of (M - student-raye):
-	say "This shy looking woman is wearing a white T-shirt that says 'Yes, Daddy?' in pink writing. [if the current-rank of M is 3]A floral pattern skirt would be hiding her large white diaper if she wasn't frequently raising it up to make sure everyone gets cheeky views of her nappy[otherwise]She is no longer wearing a skirt, allowing her large white nappy to be on display at all times. She doesn't seem embarrassed about this in the slightest[end if]. Her brown hair is in pigtails with pink fluffy scrunchies[if the current-rank of M is 5]. She's visibly horny and keeps her thighs widely spread at all times, as if begging to be touched through her padding[end if].".
-
-The min-rank of student-raye is 3.
-The current-rank of student-raye is 3.
-The max-rank of student-raye is 5.
-
-To update name of (M - student-raye):
-	if the current-rank of M is 3:
-		now the student-name of M is "Raye";
-		now the student-print of M is "padded flasher";
-	otherwise if the current-rank of M is 4:
-		now the student-name of M is "Rae";
-		now the student-print of M is "skirtless babygirl";
-	otherwise:
-		now the student-name of M is "Rainbow";
-		now the student-print of M is "desperate diapergirl".
-
-To say StoryAnswer of (M - student-raye):
-	say "[speech style of M]'[if the current-rank of M is 3]I wear diapers for my boyfriend. I only do it for him, you know? Not because it's my thing myself. But here they're helping me get over my embarrassment and understand why diapers can be sexy[otherwise]Did you know that until recently I didn't even have a diaper fetish? How dumb was that?! Haha[end if]!'[roman type][line break][one of][big his of M] eyes fall to the junction of your own legs, and [he of M] looks thoughtful.[or]You notice [he of M]'s eyeing the area of your own groin with a speculative look.[or]You feel a little worried by the way [he of M] is considering your own situation.[at random]".
-
-To say WhereAnswer of (M - student-raye):
-	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]using [end if]your nappy! And then others will be proud of you!'[roman type][line break]".
-
-To say EscapeAnswer of (M - student-raye):
-	say "[speech style of M]'More people who you can show off your diaper to, of course!'[roman type][line break]".
-	
-To compute teaching of (M - student-raye):
-	say "[speech style of M]'This is a diaper. Babygirls like us wear them to look cute and because we can't control our tinkles.'[roman type][line break]".
 
 
 Part - Rain
@@ -198,11 +158,11 @@ To decide which figure-name is the monster-image of (M - student-rain):
 	decide on figure of rain.
 
 To say MonsterDesc of (M - student-rain):
-	say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parting above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M is 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
+	say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parting above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M >= 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
 
 The min-rank of student-rain is 3.
 The current-rank of student-rain is 3.
-The max-rank of student-rain is 5.
+The max-rank of student-rain is 6.
 
 To update name of (M - student-rain):
 	if the current-rank of M is 3:
@@ -213,20 +173,34 @@ To update name of (M - student-rain):
 		now the student-print of M is "raunchy runt".
 
 To say StoryAnswer of (M - student-rain):
-	say "[speech style of M]'[if the current-rank of M is 3]I'm learning to be a slut for my boyfriend. I only do it for him, you know? Not because it's my thing myself. But I'm *very* good at doing anything I set my mind to[otherwise]Did you know that until recently I didn't even crave cock? How dumb was that?! Haha! Now I can't get enough[end if]!'[roman type][line break][one of][big his of M] eyes fall to the junction of your own legs, and [he of M] looks thoughtful.[or]You notice [he of M]'s eyeing the area of your own groin with a speculative look..[at random]".
+	say "[speech style of M]'[if the current-rank of M is 3]I'm learning to be a slut for my boyfriend. I only do it for him, you know? Not because it's my thing myself. But I'm *very* good at doing anything I set my mind to[otherwise]Did you know that until recently I didn't even crave cock? How dumb was that?! Haha! Now I can't get enough[end if]!'[roman type][line break][one of][big his of M] eyes fall to the junction of your own legs, and [he of M] looks thoughtful.[or]You notice [he of M]'s eyeing the area of your own groin with a speculative look.[at random]".
 
 To say WhereAnswer of (M - student-rain):
 	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]how much you love[otherwise]your skill with a[end if] [manly-penis]! And then others will be proud of you!'[roman type][line break]".
 
 To say EscapeAnswer of (M - student-rain):
 	say "[speech style of M]'More people who you can [if the current-rank of M > 3]spread your cunt for[otherwise]show off your cunt to[end if], of course!'[roman type][line break]".
-	
+
 To compute teaching of (M - student-rain):
 	say "[speech style of M]'This is a cunt. This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
 
 
 Part - Default Conversation
 
+To compute student perception of (M - a tryhard student):
+	if the current-rank of M > the rank of the player:
+		say "[big he of M] glances at your armband and turns away without acknowledging you[one of]. It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or].[stopping]";
+	otherwise:
+		compute appearance assessment of M.
+
+To compute appearance assessment of (M - a tryhard student):
+	if the class of the player is schoolgirl:
+		say "[big he of M] looks you up and down and [his of M] face seems to light up.";
+	otherwise if the current-rank of M < the rank of the player:
+		say "[big his of M] eyes linger on your armband for a moment before flitting up to your face.";
+	otherwise:
+		say "[big he of M] glances at your armband before speaking.";
+	say "[line break][speech style of M]'[one of]Hello! Do you want to share notes?[or]Hi! Any advice for an eager student?'[or]Hello. Plan on staying long? I think we might be able to share notes.'[at random][roman type][line break]";
 
 To say WhoAnswer of (M - a tryhard student):
 	say "[speech style of M]'My teacher says it is [student-name of M], so it's [student-name of M].'[roman type][line break]".

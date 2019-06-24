@@ -1,12 +1,12 @@
 Crotch Rope by Knickers begins here.
 
-crotch rope is a knickers. crotch rope is unique. crotch rope is hemp. The armour of crotch rope is 15. The printed name of crotch rope is "[TQlink of item described][clothing-title-before]crotch rope[clothing-title-after][TQxlink of item described][verb-desc of item described]". The soak-limit of crotch rope is 3. The text-shortcut of crotch rope is "cr". A crotch rope is crotch-assless.
+crotch rope is a knickers. crotch rope is unique. crotch rope is hemp. The armour of crotch rope is 15. The printed name of crotch rope is "[clothing-title-before]crotch rope[clothing-title-after]". The soak-limit of crotch rope is 3. The text-shortcut of crotch rope is "cr". A crotch rope is crotch-assless.
 
 To decide which number is the penis-capacity of (K - crotch rope):
 	decide on 0.
 
-Definition: crotch rope is displacable:
-	decide no.
+Definition: crotch rope is displacable: decide no.
+Definition: crotch rope is black themed: decide yes.
 
 To compute SelfExamineDesc of (K - crotch rope):
 	say "A coarse rope with a large knot at your crotch is wrapped around your [ShortDesc of hips]. ";
@@ -25,7 +25,7 @@ To say ShortDesc of (K - crotch rope):
 	say "crotch rope".
 
 To decide which number is the initial outrage of (C - crotch rope):
-	decide on 12.
+	decide on the lewdly exposed outrage of vagina - 1.
 
 To set up influence of (C - crotch rope):
 	now C is anal-sex-addiction-influencing.

@@ -1,7 +1,9 @@
 Banana by Food begins here.
 
 
-A banana is a kind of snack. The printed name of banana is "[TQlink of item described]banana[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of banana is "[TQlink of item described]bananas[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of banana is "ban". The description of banana is "A smallish banana that you could peel and eat.". There are 5 bananas.
+A banana is a kind of snack. The printed name of banana is "[TQlink of item described]banana[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of banana is "[TQlink of item described]bananas[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of banana is "ban". There are 5 bananas.
+To say ExamineDesc of (B - a banana):
+	say "A smallish banana that you could peel and eat.".
 
 To say ShortDesc of (C - a banana):
 	say "banana".

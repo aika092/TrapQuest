@@ -1,6 +1,12 @@
 Satchels of Holding by Bags of Holding begins here.
 
 A satchel of holding is a kind of bag of holding.
+Definition: a satchel of holding is pink themed: decide yes.
+
+
+To decide which object is the potential-upgrade-target of (C - a sack of holding):
+	if the transform-attempts of C < a random number between 0 and unlucky, decide on nothing;
+	decide on a random off-stage satchel of holding.
 
 To decide which number is the initial outrage of (C - a satchel of holding):
 	decide on 1.
@@ -9,10 +15,10 @@ To decide which number is the initial cringe of (C - a satchel of holding):
 	decide on 2.
 
 To decide which object is the potential-upgrade-target of (C - a satchel of holding):
-	if the transform-attempts of C < a random number between 0 and 1, decide on nothing;
+	if the transform-attempts of C < a random number between 0 and unlucky, decide on nothing;
 	decide on a random off-stage backpack of holding.
 
-A pink satchel of holding is a kind of satchel of holding. A pink satchel of holding is usually leather. There is 1 pink satchel of holding. The printed name of pink satchel of holding is usually "[TQlink of item described][clothing-title-before]pink satchel of holding[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A pink satchel of holding is a kind of satchel of holding. A pink satchel of holding is usually leather. There is 1 pink satchel of holding. The printed name of pink satchel of holding is usually "[clothing-title-before]pink satchel of holding[clothing-title-after]".
 
 Figure of pink satchel of holding is the file "Items/Accessories/Bags/bag16.png".
 

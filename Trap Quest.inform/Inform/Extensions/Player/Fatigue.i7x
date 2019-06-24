@@ -57,10 +57,9 @@ REQUIRES COMMENTING
 
 +!]
 To FatigueUp (X - a number):
-	increase the fatigue of the player by X.
-	[while X > 0:
-		increase the fatigue of the player by 1;
-		decrease X by 1.]
+	if X > 0, now fatimod is 0; [Gaining fatigue resets the bonus you get for resting several turns in a row]
+	increase the fatigue of the player by X;
+	if the fatigue of the player > the buckle threshold of the player, now the fatigue of the player is the buckle threshold of the player.
 
 [!<FatigueDownX>+
 

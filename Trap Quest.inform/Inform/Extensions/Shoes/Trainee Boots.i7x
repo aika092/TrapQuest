@@ -2,7 +2,7 @@ Trainee Boots by Shoes begins here.
 
 
 
-A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[TQlink of item described][item style]trainee thigh highs[clothing-title-after][TQxlink of item described][verb-desc of item described]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized.  A trainee thigh highs has a number called train-charge.
+A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[clothing-title-before][heel-height of item described] inch trainee thigh highs[clothing-title-after]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized.  A trainee thigh highs has a number called train-charge.
 
 To set up magic state of (C - trainee thigh highs):
 	do nothing.
@@ -13,13 +13,16 @@ To decide which figure-name is the clothing-image of (C - a trainee thigh highs)
 	decide on figure of trainee thigh highs.
 
 To say ClothingDesc of (C - a trainee thigh highs):
-	say "These silicon socks fit perfectly to the contours of your legs, metal accents giving the socks a futuristic high-tech appearance. Your ankle is held up by a metal stiletto, and the way it pinches your thigh makes your butt look big.".
+	say "These silicon socks fit perfectly to the contours of your legs, metal accents giving the socks a futuristic high-tech appearance[if C is worn]. Your ankle is held up by a metal stiletto, and the way it pinches your thigh makes your butt look big[end if].".
 
 To say UniqueShortDesc of (C - a trainee thigh highs):
-	say "trainee thigh high socks.".
+	say "trainee thigh high socks".
 
 To decide which number is the perceived-bimbo-influence of (C - a trainee thigh highs):
 	decide on 1.
+Definition: a trainee thigh highs is transformation-protected: decide yes.
+Definition: a trainee thigh highs is whore themed: decide yes.
+Definition: a trainee thigh highs is removable if it is not magnetized.
 
 Check taking off trainee thigh highs:
 	if the noun is magnetized, say "The edges of your [printed name of the noun] are all but immobile. You[']ll need to find some way of loosening them before you can try getting them off." instead.[TODO: first person with intelligence variance.]

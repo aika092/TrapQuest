@@ -1,18 +1,26 @@
 Mind Flayer by Monster begins here.
 
-mind flayer is a monster. mind flayer is intelligent. mind flayer is neuter. Understand "mindflayer" as mind flayer.
+mind flayer is a monster. mind flayer is neuter. Understand "mindflayer" as mind flayer.
 
 mind flayer has a number called feeding. The feeding of mind flayer is 0.
 
-Definition: mind flayer (called M) is willing to do oral:
-	decide yes.
+Definition: mind flayer is willing to do oral: decide yes.
 
 The text-shortcut of mind flayer is "mf".
 
 Figure of mindflayer is the file "NPCs/MultiFloor/mindflayer1.png".
 
+Figure of Mindflayer Cutscene 1 is the file "Special/Cutscene/cutscene-mindflayer-perception1.png".
+Figure of Mindflayer Cutscene 2 is the file "Special/Cutscene/cutscene-mindflayer-suck1.png".
+Figure of Mindflayer Cutscene 3 is the file "Special/Cutscene/cutscene-mindflayer-suck2.png".
+Figure of Mindflayer Cutscene 4 is the file "Special/Cutscene/cutscene-mindflayer-suck3.png".
+Figure of Mindflayer Cutscene 5 is the file "Special/Cutscene/cutscene-mindflayer-drained1.png".
+Figure of Mindflayer Cutscene 6 is the file "Special/Cutscene/cutscene-mindflayer-drained2.png".
+
 To decide which figure-name is the monster-image of (M - mind flayer):
 	decide on figure of mindflayer.
+To decide which figure-name is the oral-sex-monster-image of (M - mind flayer):
+	decide on figure of mindflayer cutscene 2.
 
 To say ShortDesc of (M - mind flayer):
 	say "mindflayer".
@@ -22,29 +30,29 @@ To say MediumDesc of (M - mind flayer):
 
 To say MonsterDesc of (M - mind flayer):
 	say "A lean humanoid with slimy looking purple skin. [big he of M] wears a loose robe. Slowly waving tentacles surround [his of M] mouth. Though [his of M] eyes are pure white, [he of M] exudes an aura of intelligence and menace.".
-	
+
 To set up (M - mind flayer):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 13;
 	now the health of M is the maxhealth of M;
 	anger M.
-	
+
 hastur is an action applying to nothing.
 Carry out hastur:
 	if mindflayer spawned is 0 and the player is a top donator:
 		set up mind flayer;
 		now mindflayer spawned is 1;
 		say "You get an ominous feeling inside you suddenly. You probably shouldn[']t have said that!";
-		if the player is in the Woods:
+		if playerRegion is Woods:
 			now mind flayer is in a random placed dodgy room;
 			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
 				now mind flayer is in a random placed dodgy room;
-		otherwise if the player is in the Hotel:
+		otherwise if playerRegion is Hotel:
 			now mind flayer is in a random placed modern room;
 			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
 				now mind flayer is in a random placed modern room;
-		otherwise if the player is in the Mansion:
+		otherwise if playerRegion is Mansion:
 			now mind flayer is in a random placed haunted room;
 			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
 				now mind flayer is in a random placed haunted room;
@@ -55,7 +63,7 @@ Carry out hastur:
 	otherwise:
 		say "That probably wasn[']t a good idea, but luckily nothing seems to have come from it.".
 Understand "hastur" as hastur.
-	
+
 Part 1 - Perception
 
 To compute perception of (M - mind flayer):
@@ -65,9 +73,9 @@ To compute perception of (M - mind flayer):
 		say "It doesn't look like it's interested in you.";
 		bore M for 500 seconds;
 	otherwise:
-		if image cutscenes is 1, display figure of mindflayer cutscene 1;
+		alwayscutshow figure of mindflayer cutscene 1 for M;
 		anger M.
-		
+
 To compute (M - a minotaur) stomping (N - mind flayer):
 	if M is in the location of the player, say "[BigNameDesc of M] angrily glares and stamps at the [N], which looks shockingly nonplussed and crosses its spindly arms. As [NameDesc of M] begins to charge, suddenly the [N] glares harshly and the mighty creature confusedly slams into a wall, head first. As it lays stunned on the ground, the [N] almost casually wraps its tentacles around the beast's head. It lets out a blood-curdling moo as the [N][']s tentacles push their way through its skull and gruesomely extract its brain!";
 	otherwise say "You hear a blood-curdling moo from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
@@ -88,18 +96,18 @@ To say MouthPenetrationFlav of (M - mind flayer):
 		say "The creature tentatively sniffs at your forehead, then lets out an exultant shriek as it wraps its tentacles around your skull!";
 	otherwise:
 		say "The creature tentatively sniffs at your head, but its expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as it fixes a piercing gaze on you...".
-		
+
 
 To compute facial sex of (M - mind flayer):
 	if the raw intelligence of the player > 4:
 		say "The creature[']s tentacles continue to suck on your head! You feel terribly light-headed but euphoric at the same time!";
 		Intdown 1;
 		arouse 50;
-		if image cutscenes is 1, display figure of mindflayer cutscene 3;
+		cutshow figure of mindflayer cutscene 3 for M;
 	otherwise if the raw intelligence of the player is 4:
 		say "With a final squelching sound not unlike a straw struggling to pull the last drops of liquid from a cup, you feel the suction on your head come to a climax. The euphoria becomes so strong that so do you!";
 		Intdown 2;
-		if image cutscenes is 1, display figure of mindflayer cutscene 4;
+		cutshow figure of mindflayer cutscene 4 for M;
 		if the player is able to get horny:
 			if the player is female:
 				vaginally orgasm shamefully;
@@ -110,27 +118,24 @@ To compute facial sex of (M - mind flayer):
 	otherwise:
 		say "The creature[']s gaze fills what little mind you have, and you feel yourself go blank!";
 	decrease the sex-length of M by 1.
-		
-To compute (M - mind flayer) entering mouth:
-	say "[MouthPenetrationFlav of M]";
-	if image cutscenes is 1, display figure of mindflayer cutscene 2;
+
+To set up sex length of (M - mind flayer) in (B - face):
 	if the raw intelligence of the player > 3:
 		now the sex-length of M is 4;
 		now the feeding of M is 1;
 	otherwise:
 		now the sex-length of M is 1;
-		now the feeding of M is 0;
-	now M is penetrating face.
-	
+		now the feeding of M is 0.
+
 To compute facial climax of (M - mind flayer):
 	if the raw intelligence of the player > 3 and the feeding of M is 1:
 		say "The creature pulls away its tentacles from your head, seemingly satisfied for the moment.";
 		bore M;
-		if image cutscenes is 1, display figure of mindflayer cutscene 5;
+		cutshow figure of mindflayer cutscene 5 for M;
 	otherwise if the feeding of M is 1:
 		say "The creature pulls its tentacles away, seemingly satisfied for the moment.";
 		bore M;
-		if image cutscenes is 1, display figure of mindflayer cutscene 6;
+		cutshow figure of mindflayer cutscene 6 for M;
 		if there is a worn tattoo and empty-mind tattoo is not worn:
 			say "As it pulls away, the word 'EMPTY' suddenly appears on your forehead!";
 			summon empty-mind tattoo;
@@ -140,7 +145,7 @@ To compute facial climax of (M - mind flayer):
 		if the domination of the player > 40: [cap at an arbitrarily high number that we should never reach just to avoid a potential issue]
 			now the domination of the player is 40;
 		bore M.
-		
+
 Section 1 - Attack
 
 The mind flayer attack rules is a rulebook. The attack rules of mind flayer is usually the mind flayer attack rules.
@@ -211,14 +216,13 @@ To say DamageReactTired of (M - mind flayer):
 
 To say DamageReactWeak of (M - mind flayer):
 	say "The creature's expression grows frantic as it senses its life is in jeopardy!".
-		
+
 To compute unique death of (M - mind flayer):
-	say "The [noun] screams hideously as it collapses to the ground. ";
-	let B be a random off-stage severed-tentacle;
-	if B is a thing:
-		now B is in the location of the player;
-		say "Its body disappears, leaving behind a [printed name of B].";
-		compute autotaking B;
+	say "[BigNameDesc of M] screams hideously as it collapses to the ground. ";
+	if severed-tentacle is off-stage:
+		now severed-tentacle is in the location of the player;
+		say "Its body disappears, leaving behind a [ShortDesc of severed-tentacle].";
+		compute autotaking severed-tentacle;
 	otherwise:
 		say "Its body disappears".
 

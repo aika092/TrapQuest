@@ -1,23 +1,32 @@
 Chastity Cage by Bondage begins here.
 
-A chastity cage is a kind of bondage. A chastity cage is usually unique. A chastity cage is usually sheer. There is 1 chastity cage. The printed name of chastity cage is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]chastity [if the player is male]cage[otherwise]belt[end if][clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of chastity cage is "cha". Chastity cage is usually crotch-assless. Chastity cage is usually crotch-intact. Understand "belt" as chastity cage.
+A chastity cage is a kind of bondage. A chastity cage is usually unique. A chastity cage is usually sheer. There is 1 chastity cage. The printed name of chastity cage is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]chastity [if the player is male]cage[otherwise]belt[end if][clothing-title-after]". The text-shortcut of chastity cage is "cha". Chastity cage is usually crotch-assless. Chastity cage is usually crotch-intact. Understand "belt" as chastity cage.
 
-Definition: a chastity cage (called C) is sissifying:
-	decide yes.
+Definition: a chastity cage is sissifying: decide yes.
+Definition: a chastity cage is pink themed if the player is male.
+Definition: a chastity cage is grey themed if the player is female.
+Definition: a chastity cage is crotch-pullup: decide no.
 
 To decide which number is the delicateness-influence of (C - a chastity cage):
 	decide on 1.
 
 To decide which number is the initial outrage of (C - a chastity cage):
-	decide on 15.
+	decide on 18.
 
 [!<ClothingIsUrinationBlocking>+
 
 Some things like chastity cages can allow urination and ejaculation through freely.
 
 +!]
-Definition: a chastity cage is urination blocking:
+Definition: a chastity cage is urination blocking: decide no.
+
+outrageous-chastity is a humiliating situation.
+Definition: outrageous-chastity (called A) is applicable:
+	if the player is not disgraced and the bimbo of the player < 12 and there is a worn chastity cage and diaper quest is 0, decide yes;
 	decide no.
+To reflect on (A - outrageous-chastity):
+	if the player is male, say "[variable custom style][if the player is horny]I need to cum so badly, but this chastity cage won't let me... I just feel so helpless![otherwise if the analvirgin of the player is 1]But if this chastity cage is stopping me from having sex with my penis, how is this game going to be about sex?[otherwise if the soreness of asshole < 8]This chastity cage!  They've locked away the only manly part of me left.[otherwise]Get this stupid chastity cage off me!  My poor [asshole] can't take much more of this...[end if][roman type][line break]";
+	otherwise say "[variable custom style][if the player is horny]I need to cum so badly, but this chastity cage won't let me... I just feel so helpless![otherwise if the virgin of the player is 1]I guess this chastity belt is preserving my virginity, but getting fucked in the [asshole] isn't preserving my dignity...[otherwise if pregnancy fetish is 1 and the pregnancy of the player is 0]Well I guess having to wear a chastity belt is one way to make sure I don't get pregnant, but it does mean that my [asshole] is the only thing left for monsters and traps...[otherwise if the pregnancy of the player > 0]What the fuck is the point of wearing this chastity belt when I'm already pregnant?![otherwise if the soreness of asshole < 8]I'm not even a virgin, but I'm stuck in this stupid chastity belt!  Everything in the game will just want to fuck my [asshole] now...[otherwise]Get this stupid chastity cage off me!  My poor [asshole] can't take much more of this...[end if][roman type][line break]".
 
 To decide which figure-name is clothing-image of (C - a chastity cage):
 	if the player is male, decide on figure of male chastity cage;
@@ -64,7 +73,7 @@ chastity cage wearability rules is a rulebook. The wearability rules of chastity
 
 This is the chastity cage already worn rule:
 	repeat with O running through worn chastity cage:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
 		rule fails.
 The chastity cage already worn rule is listed in the chastity cage wearability rules.
 
@@ -76,13 +85,13 @@ The can't phase cage through clothes rule is listed in the chastity cage wearabi
 
 This is the can't cage ken rule:
 	if the player is male and the size of penis is 0:
-		if summoning is 0, say "But you don't have a penis right now!";
+		if summoning is 0 and autowear is false, say "But you don't have a penis right now!";
 		rule fails.
 The can't cage ken rule is listed in the chastity cage wearability rules.
 
 This is the players in chastity can't wear vagina plugging clothes rule:
-	if vagina is actually occupied and wearing-target is vagina plugging:
-		if summoning is 0, say "You can't get the plug in past your chastity belt, and so can't wear these.";
+	if the player is female and there is a worn chastity cage and wearing-target is vagina plugging:
+		if summoning is 0 and autowear is false, say "You can't get the plug in past your chastity belt, and so can't wear these.";
 		rule fails.
 The players in chastity can't wear vagina plugging clothes rule is listed in the global wearability rules.
 

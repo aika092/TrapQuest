@@ -6,11 +6,13 @@ The value all changes in humiliation come back to. When this value is increased,
 
 ]
 To decide which number is HUMILIATION-BASE:
-	decide on 3 + game difficulty / 2.[minimum 3, maximum 5.]
+	decide on (7 + game difficulty) / 2.[minimum 3, maximum 5.]
 
 [
 
-Events that won't mean much unless they happen continuously for a very long time. It takes 2000 of these to change humiliation level
+Events that won't mean much unless they happen continuously for a very long time. It takes 2000 of these to change humiliation level.
+
+Only a little humiliating
 
 ]
 To decide which number is TRIVIAL-HUMILIATION:
@@ -21,13 +23,17 @@ To decide which number is TRIVIAL-HUMILIATION:
 Events that won't mean much unless they happen very often.
 It takes 400 of these to change humiliation level
 
+A little humiliating.
+
 ]
-To decide which number is SLIGHT-HUMILIATION:	
+To decide which number is SLIGHT-HUMILIATION:
 	decide on HUMILIATION-BASE * 5;[minimum 15, maximum 25]
 
 [
 
 Events that will mean something if they happen very often, but won't matter much if they only happen rarely. It takes 200 of these to change humiliation level
+
+Fairly humiliating.
 
 ]
 To decide which number is MODERATE-HUMILIATION:
@@ -37,6 +43,8 @@ To decide which number is MODERATE-HUMILIATION:
 
 Events that will mean a lot if they happen often, but are less meaningful if they are rare. It takes 100 of these to change humiliation level
 
+Pretty humiliating.
+
 ]
 To decide which number is STRONG-HUMILIATION:
 	decide on HUMILIATION-BASE * 20;[minimum 60, maximum 100.]
@@ -45,6 +53,8 @@ To decide which number is STRONG-HUMILIATION:
 
 Events that are meaningful even if they are rare, and very meaningful if they are not. It takes 50 of these to change humiliation level
 
+Incredibly humiliating
+
 ]
 To decide which number is SEVERE-HUMILIATION:
 	decide on HUMILIATION-BASE * 50;[minimum 150, maximum 250]
@@ -52,6 +62,8 @@ To decide which number is SEVERE-HUMILIATION:
 [
 
 Events that are always meaningful, even when rare. It takes 20 of these to change humiliation level
+
+unforgettable humiliating event
 
 ]
 To decide which number is OBSCENE-HUMILIATION:
@@ -62,14 +74,18 @@ To decide which number is OBSCENE-HUMILIATION:
 
 Events that are meaningful even if they happen only once. It takes 10 of these to change humiliation level
 
+humiliating event among humiliating events
+
 ]
 To decide which number is ULTRA-HUMILIATION:
 	decide on HUMILIATION-BASE * 200;[minimum 600, maximum 1000]
 
 [
 
-Events that can single handedly push the player to a new humiliation level, even if they only happen once. 
-It takes 7 pf these to change humiliation level
+Events that can single handedly push the player to a new humiliation level, even if they only happen once.
+It takes 7 of these to change humiliation level
+
+https://www.youtube.com/watch?v=s8w3p6-Y4ZQ
 
 ]
 To decide which number is TOTAL-HUMILIATION:
@@ -80,13 +96,13 @@ To decide which number is TOTAL-HUMILIATION:
 Balancing humiliation:
 All humiliation events should use one of the above constants, and then relate to each other based on those constants
 
-Eating food with semen on it, for example, is 
+Eating food with semen on it, for example, is
 
 MODERATE-HUMILIATION - SLIGHT-HUMILIATION * 2
 
 There is a noticeable difference between this event and the average moderate event, but not enough that it can be fully described as a slight event.
 
-Submitting for a round during sex is 
+Submitting for a round during sex is
 
 MODERATE-HUMILIATION + SLIGHT-HUMILIATION * 3
 
@@ -119,7 +135,6 @@ Moderate - Trivial * 2 (~40)
 Drinking from the baby's bottle
 
 Moderate (~50)
-Per additional monster that notices you in a humiliating state in the same turn
 Per dangerous monster that witnesses a floating player land
 Per unit of urine already in a diaper when it is worn
 (Periodical) Per size of belly when a male player realises they look pregnant
@@ -220,7 +235,7 @@ The player has a number called delayed humiliation.
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the humiliation-influence of (C - a clothing):
+To decide which number is the humiliation-influence of (C - a wearthing):
 	decide on 0.
 
 [Blouses, gown of purity and confidence items slightly lower the strength of the humiliation]
@@ -247,33 +262,83 @@ To humiliate (X - a number):
 		increase B by the humiliation-influence of C;
 	while 10 - B < 0:
 		decrease B by 1;
-	let H be (X * (35000 + ((10 - B) * 1000) - (the humiliation of the player / 2))) / 10000;
-	now H is (H * (5 - alcohol-level)) / 5; [alcohol reduces dignity loss]
+	let H be (X * (35000 + ((10 - B) * 1000) - (the humiliation of the player / 2))) / 15000;
+	let A be alcohol-level;
+	if alcohol fetish is 0, now A is 1; [balancing mechanic for when it's disabled]
+	now H is (H * (5 - A)) / 5; [alcohol reduces dignity loss]
 	delayed humiliate H.
 
 To trivialHumiliate:
 	humiliate TRIVIAL-HUMILIATION.
 
+To say trivialHumiliateRefect:
+	say HumiliateReflect TRIVIAL-HUMILIATION.
+
 To slightHumiliate:
 	humiliate SLIGHT-HUMILIATION.
+
+To say slightHumiliateRefect:
+	say HumiliateReflect SLIGHT-HUMILIATION.
 
 To moderateHumiliate:
 	humiliate MODERATE-HUMILIATION.
 
+To say moderateHumiliateReflect:
+	say HumiliateReflect MODERATE-HUMILIATION.
+
 To strongHumiliate:
 	humiliate STRONG-HUMILIATION.
+
+To say strongHumiliateReflect:
+	say HumiliateReflect STRONG-HUMILIATION.
 
 To severeHumiliate:
 	humiliate SEVERE-HUMILIATION.
 
+To say severeHumiliateReflect:
+	say HumiliateReflect SEVERE-HUMILIATION.
+
 To obsceneHumiliate:
 	humiliate OBSCENE-HUMILIATION.
+
+To say obsceneHumiliateReflect:
+	say HumiliateReflect OBSCENE-HUMILIATION.
 
 To ultraHumiliate:
 	humiliate ULTRA-HUMILIATION.
 
+To say ultraHumiliateReflect:
+	say HumiliateReflect ULTRA-HUMILIATION.
+
 To totalHumiliate:
 	humiliate TOTAL-HUMILIATION.
+
+To say totalHumiliateReflect:
+	say HumiliateReflect TOTAL-HUMILIATION.
+
+To decide which number is DIGNITY-BASE:
+	decide on 5 - game difficulty / 2.[minimum 3, maximum 5.]
+
+To trivialDignify:[5 - 3]
+	dignify DIGNITY-BASE.
+
+To slightDignify:[10 - 6]
+	dignify DIGNITY-BASE * 2.
+
+To moderateDignify:[25 - 15]
+	dignify DIGNITY-BASE * 5.
+
+To strongDignify:[50 - 30]
+	dignify DIGNITY-BASE * 10.
+
+To severeDignify:[75 - 45]
+	dignify DIGNITY-BASE * 15.
+
+To obsceneDignify:[150 - 90]
+	dignify DIGNITY-BASE * 30.
+
+To ultraDignify:[300 - 180]
+	dignify DIGNITY-BASE * 60.
 
 [!<SayBrokenFlav>+
 
@@ -310,7 +375,7 @@ To finally humiliate (X - a number):
 			say "[bold type]You feel your mind about to snap - and then, it just doesn't. You feel excited about getting humiliated, but still feel focused on your [if the bimbo of the player < 15]original goal[otherwise]quest to stay a virgin[end if]. Suddenly you feel your chestpiece transform around you - the metal slithers and slides around you, reshaping into plate armour that leaves your [ShortDesc of breasts] completely uncovered.[roman type][line break][variable custom style]Ooh, even more naughty!  How perfect.[roman type][line break]";
 			repeat with M running through holy warrior chestpieces: [banish them from ever appearing again]
 				now M is in Holding Pen;
-			summon P cursed;
+			summon P;
 			if P is not worn, now the player is wearing P;
 			now humiliation-restriction is 1;
 		otherwise if the player-class is succubus and abyssal tattoo is not worn:
@@ -326,16 +391,13 @@ To finally humiliate (X - a number):
 		2Humiliate X;
 		if the humiliation of the player >= 40000 and the player-class is not succubus:
 			now the raw delicateness of the player is 20;
-			say "[bold type]You feel yourself shivering with a strange sense of adrenaline and pleasure. Your mind has finally snapped, and you no longer can see yourself as anything but an object to be acted upon by others, especially when you are on your knees. You get the feeling that this change in outlook is permanent, [if the bimbo of the player < 11]which makes you both very concerned and even more aroused[otherwise]which just makes you aroused and excited[end if]. From now on when on your knees, you will usually automatically submit to anyone you see.[roman type][line break]"; [Should only happen once when 40k is hit]
+			say "[bold type]You feel yourself shivering with a strange sense of adrenaline and pleasure. Your mind has finally snapped, and you no longer can see yourself as anything but an object to be acted upon by others, especially when you are on your knees. You get the feeling that this change in outlook is permanent, [if the bimbo of the player < 11]which makes you both very concerned and even more aroused[otherwise]which just makes you aroused and excited[end if]. From now on when on your knees, you will usually automatically submit to anyone you see[if no-panties-fetish is 1 and diaper quest is 0]. Furthermore you now find the idea of wearing panties disgusting - a worthless fucktoy like yourself should have [his of the player] holes visible and open for business at all times[end if].[roman type][line break]"; [Should only happen once when 40k is hit]
 			if worthless cunt tattoo is drawable and there is a worn tattoo:
 				summon worthless cunt tattoo;
 				say "The words 'Worthless Cunt' suddenly appear in permanent ink, above your crotch!";
 	otherwise:
 		arouse X / 4; [Still happens even with mindbreak enabled.]
-	let H be a random flower hairclip;
-	if the player is female and the virgin of the player is 1 and the virgin bonus of the player > 0 and H is actually summonable and a random number between (unlucky * 5000) and the humiliation of the player > 8500 and the latex-transformation of the player < 7:
-		say "[bold type]Just as you think you can't take the humiliation any more, you feel a white rose hairclip appear in your hair. Its brilliant purity reminds you of your own intact virginity, which makes you feel slightly calmer.[roman type][line break]";
-		summon H cursed;
+	progress quest of clown-quest;
 	now the delayed humiliation of the player is 0.
 
 [!<2HumiliateX>+
@@ -350,7 +412,7 @@ To 2Humiliate (X - a number):
 		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of][line break][first custom style]Oh god, what am I doing?[if the player is female][line break]I'm willingly doing everything I would normally stand against![end if][roman type][line break]You can feel the lights in the back of your head slowly shutting down and accepting your inevitable spiral into sexual shame.[or][stopping]";
 		if the humiliation of the player > 24000 and the humiliation of the player < 25000, say "[one of][line break][second custom style]Like, whatever, I guess[roman type][line break]You are getting so used to humiliating yourself that it doesn't affect you as much as it used to. You definitely don't feel like anyone has any reason to respect you any more, but you're not even that bothered by that.[or][stopping]";
 		if the humiliation of the player > 32000 and the humiliation of the player < 33000, say "[one of][line break][second custom style]Things are so much easier when I just accept that I'm worthless.[roman type][line break]You now have barely a shred of self respect or dignity left. You are not far off from being unable to see yourself as anything but an object to be used.[or][stopping]";
-		if newbie tips is 1 and the humiliation of the player > 8000, say "[one of][item style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
+		if newbie tips is 1 and the humiliation of the player > 8000, say "[one of][newbie style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
 	otherwise:
 		if the humiliation of the player > 8000 and the humiliation of the player < 9000, say "[one of]You hear a voice in your head! [line break][first custom style]'Why hello there... It seems you don[']t quite get what you are. Start picking up the slack or eventually I[']ll need to take control...'[roman type] You start to feel a bit light-headed.[line break][or][stopping]";
 		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of]You hear the voice again! [line break][first custom style]'Seriously, what part of this do you not understand? Start acting a proper demon already.'[roman type] For some reason you find her voice very persuasive![line break][or][stopping]";
@@ -380,8 +442,8 @@ To blush (X - a number):
 
 [!<DignifyX>+
 
-Unlike numbers plugged into the humiliation function, these numbers are mostly raw. This means that dignity gains 
-are more significant the higher the player's humiliation, and less significant the lower it gets. Note that the player 
+Unlike numbers plugged into the humiliation function, these numbers are mostly raw. This means that dignity gains
+are more significant the higher the player's humiliation, and less significant the lower it gets. Note that the player
 cannot lose dignity once their humiliation score passes above 40000, or HUMILIATION-BROKEN
 
 +!]

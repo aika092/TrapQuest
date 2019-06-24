@@ -32,11 +32,10 @@ To decide which number is the heel skill of the player:
 	let temp be the raw heel skill of the player;
 	repeat with C running through worn wearthings:
 		increase temp by the heel-skill-influence of C;
-	if background-waitress is 1, increase temp by 1;	
 	if temp < 0, decide on 0;
 	if temp > 10, decide on 10;
 	decide on temp.
-	
+
 Part 2 - Modify Heel Skill
 
 
@@ -96,7 +95,7 @@ REQUIRES COMMENTING
 +!]
 To 2HeelDown:
 	if the raw heel skill of the player > 1, decrease the raw heel skill of the player by 1.
-	
+
 
 Heel Skill ends here.
 

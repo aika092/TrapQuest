@@ -1,6 +1,6 @@
 Anal Beads by Sex Toys begins here.
 
-An anal beads is a kind of plug. The printed name of anal beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of anal beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. The notches of an anal beads is usually 0. An anal beads has a number called notch-taken. The notch-taken of an anal beads is usually 0. Understand "bead", "anal", "beads" as anal beads.
+An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after]". The printed plural name of anal beads is usually "[clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after]". The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. The notches of an anal beads is usually 0. An anal beads has a number called notch-taken. The notch-taken of an anal beads is usually 0. Understand "bead", "anal", "beads" as anal beads.
 
 To summon (S - an anal beads):
 	now S is not penetrating vagina;
@@ -18,11 +18,8 @@ To uniquely set up (C - an anal beads):
 	if R is 5, now C is stumbling;
 	if R is 6, now C is refreshment.
 
-To decide which object is the potential-upgrade-target of (C - an anal beads):
-	decide on nothing.
-
-Definition: an anal beads (called C) is untransformable:
-	decide yes.
+Definition: an anal beads is transformation-protected: decide yes.
+Definition: an anal beads is black themed: decide yes.
 
 To compute periodic effect of (C - an expansion anal beads):
 	increase the toy-charge of C by 1;
@@ -64,7 +61,7 @@ To compute toyInsertion of (S - an anal beads) into (F - a fuckhole):
 		compute insertionRuin of S into F;
 		increase the notch-taken of S by 1;
 		decrease N by 1;
-	unless S is penetrating F, now S is penetrating F;	
+	unless S is penetrating F, now S is penetrating F;
 	if the notch-taken of S < the notches of S:
 		say "You manage to force in [oldN] bead[if oldN > 1]s[end if], before your sphincter involuntarily tightens up from its ordeal. Looks like you'll have to keep going if you want all of them in...";
 	otherwise:
@@ -115,7 +112,7 @@ To compute (M - a monster) removing (C - an anal beads):
 		if the notch-taken of C - R > 0:
 			say "[big he of M] gives your [AssDesc] a vicious smack and leaves you alone.";
 			decrease the notch-taken of C by R;
-			DelicateUp 1;
+			PainUp 1;
 			bore M;
 		otherwise:
 			now the notch-taken of C is 0;
@@ -174,17 +171,19 @@ To decide which number is the original price of (C - an anal beads):
 [Haunted beads: locked at ass openness + 1. Beads only come out if pulled by npc or if repeatedly blessed.]
 
 
-Ritual-beads is an anal beads. The printed name of ritual-beads is usually "[TQlink of item described][clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads. Ritual-beads has a number called charge. The charge of ritual-beads is 0.
+Ritual-beads is an anal beads. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads. Ritual-beads has a number called charge. The charge of ritual-beads is 0.
 
 To say ClothingDesc of (P - ritual-beads):
-	say "A set of [the notches of P] brown beads, connected by a thin cord, each bead slightly thicker than the last.  [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
+	say "A set of [the notches of P] brown beads, connected by a thin cord, each bead slightly thicker than the last. You can sense it wants you to [if P is not worn]wear it and then [end if]'honour the Goddess of service'. You could also try presenting it to the dungeon altar for judgement. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
+
+To say ShortDesc of (P - ritual-beads):
+	say "ritual beads".
 
 To uniquely set up (C - a ritual-beads):
 	now the size of C is 3;
 	now the notches of C is 3.
 
-Definition: ritual-beads is cult garb:
-	decide yes.
+Definition: ritual-beads is cult garb: decide yes.
 
 [To decide which number is the size of (C - ritual-beads):
 	if the notch-taken of C < 2, decide on 1;

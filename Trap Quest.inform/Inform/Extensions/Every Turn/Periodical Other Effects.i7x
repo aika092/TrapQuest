@@ -11,10 +11,10 @@ domination-time is a number that varies. domination-time is 30.
 
 [!<timeTracking:Integer>*
 
-REQUIRES COMMENTING
+Golem spawn timer. After it gets below 285 the golem starts to build up to spawning much quicker.
 
 *!]
-time-tracking is a number that varies. time-tracking is 400.
+time-tracking is a number that varies. time-tracking is 300.
 tg-tracking is a number that varies.
 
 temp_str_dam is a number that varies. temp_str_dam is 0.
@@ -32,45 +32,50 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	[If enough experience has been gained, level up heel skill]
 	if the heel time of the player  > (the raw heel skill of the player * 250) + 100 and the player is upright, HeelUp 1;
 	[Real world changes]
-	if the remainder after dividing local-earnings by 300 < local-seconds:
-		if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts:
-			repeat with N running from 1 to 3:
-				if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
-			set real breast size;
-		if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
-		if TG fetish is 2 and the size of penis <= min penis size and the player is male:
+	if the remainder after dividing local-earnings by (500 / (fast breast expansion + 1)) < local-seconds:
+		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1000 / (fast breast expansion + 1)) < local-seconds:
+			if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts:
+				repeat with N running from 1 to 3:
+					if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
+				set real breast size;
+			if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
+		if fast TG is 3 and the size of penis <= min penis size and the player is male:
 			if tg-tracking > 0:
 				say DefaultSexChangeFlav;
 				sexchange the player;
 			otherwise:
 				increase tg-tracking by 1;
 		otherwise if the player is male and the size of penis < the real size of penis:
-			if the real size of penis > min penis size:	
+			if the real size of penis > min penis size:
 				decrease the real size of penis by 1;
-				if TG fetish is 2 and the size of penis < the real size of penis, decrease the real size of penis by 1; [if your penis has shrunk a lot, this is going to happen even faster!]
+				if fast TG is 3 and the size of penis < the real size of penis, decrease the real size of penis by 1; [if your penis has shrunk a lot, this is going to happen even faster!]
 		if the raw largeness of hair > the real largeness of hair and the real largeness of hair < 10, increase the real largeness of hair by 1;
 		if the openness of asshole > the real openness of asshole and ungape is 0, increase the real openness of asshole by 1;
 		if the openness of vagina > the real openness of vagina and ungape is 0, increase the real openness of vagina by 1;
 		if the latex-transformation of the player <= 2 and ungape is 0:
-			if the openness of asshole > the real openness of asshole and (the openness of asshole - the real openness of asshole) >= (the openness of vagina - the real openness of vagina):
+			if the openness of asshole > the real openness of asshole and (the openness of asshole - the real openness of asshole) >= (the openness of vagina - the real openness of vagina) and gape-gloves is not worn:
 				say "Your [asshole] regains a little tightness.";
 				Assclose 1;
 			otherwise if the openness of vagina > the real openness of vagina:
 				say "Your [vagina] regains a little tightness.";
 				Pussyclose 1;
+			otherwise if the openness of asshole > the real openness of asshole and gape-gloves is worn:
+				say "Your [asshole] can't regain its tightness like normal because you're permanently pulling it open with your fingers!";
 	if ungape is 1:
 		if the openness of vagina > 2 and vagina is not actually occupied, decrease the openness of vagina by 1;
-		if the openness of asshole > 2 and asshole is not actually occupied, decrease the openness of asshole by 1;
-	[Virgin Bonus increase]
-	if the remainder after dividing local-earnings by 1015 < local-seconds:
+		if the openness of asshole > 2 and asshole is not actually occupied:
+			if gape-gloves is worn, say "[one of]Your [asshole] can't regain its tightness like normal because you're permanently pulling it open with your fingers![or][stopping]";
+			otherwise decrease the openness of asshole by 1;
+	[Regular bonuses for maintaining pride in virginity / continence]
+	if the remainder after dividing local-earnings by 1425 < local-seconds:
 		if diaper focus >= 1:
 			if wetting-valued >= 3, diaperreward;
-		otherwise if the player is female and the virgin of the player is 1 and virginity-valued is 1:
+		otherwise if the player is female and the virgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
 			virginreward;
 	[Virgin Curse]
 	if the remainder after dividing local-earnings by 297 < local-seconds and the player is male and the virgin of the player is 1 and virgincursed > 0:
 		virginpunish;
-	[Various periodic decays]	
+	[Various periodic decays]
 	if the remainder after dividing local-earnings by 611 < local-seconds:
 		compute hair colour decay;
 	if the remainder after dividing local-earnings by 49 < local-seconds:
@@ -97,25 +102,28 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					summon M in the dungeon;
 		if the number of alive golem is 0 and the player is the donator and diaper quest is 0:
 			let M be a random off-stage golem;
-			let S be the thickness of hips + the largeness of breasts;
 			let X be max ass size + max breast size + 1;
-			let R be a random number between 1 and X;
+			let S be X - (the thickness of hips + the largeness of breasts);
 			let SR be a random number between S and time-tracking;
- 			decrease time-tracking by 1;
-			if debugmode > 0, say "[input-style]Golem spawn check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 350]; time ticker not yet below 350 so automatic failure[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([R].5) d[X]+0.5 max possible body shape[end if][roman type][line break]"; 
-			if time-tracking < 350 and SR < R:[more likely the larger the difference between S and R.][Aika thinks this is going to take forever to be true because it looks like time-tracking is only decremented from 400 once every 413 seconds]
-				set up M;
-				if the player is in the Dungeon:
-					now M is in Stairwell01;
-				otherwise if the player is in the Woods:
-					now M is in Stairwell02;
-				otherwise if the player is in the Hotel:
-					now M is in Hotel01;
-				otherwise if the player is in the Mansion:
-					now M is in Mansion01;
-				now M is captive;
-				say "Some speakers come to life, and you hear an announcement! [line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
-				now time-tracking is 400;
+ 			if time-tracking < 1000:
+				decrease time-tracking by 1;
+				if debuginfo > 0, say "[input-style]Golem spawn prevention check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 285]; time ticker not yet below 293 so automatic success[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([X].5) max possible body shape[end if][roman type][line break]";
+			if time-tracking < 293:
+				if SR < X:[more likely the larger the larger the player's body has gotten.][Aika thinks this is going to take forever to be true because it looks like time-tracking is only decremented from 400 once every 413 seconds]
+					set up M;
+					if playerRegion is Dungeon:
+						now M is in Stairwell01;
+					otherwise if playerRegion is Woods:
+						now M is in Stairwell02;
+					otherwise if playerRegion is Hotel:
+						now M is in Hotel01;
+					otherwise if playerRegion is Mansion:
+						now M is in Mansion01;
+					now M is guarding;
+					say "Some speakers come to life, and you hear an announcement! [line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
+					now time-tracking is 1000;
+				otherwise: [Aika has added this is a good way to fix the issue]
+					decrease time-tracking by X;
 	[succubus souls]
 	if the remainder after dividing local-earnings by 250 < local-seconds and the player-class is succubus:
 		if the souls of the player is greater than 0:
@@ -140,9 +148,9 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					increase the raw-magic-modifier of D by 1;
 			otherwise if a random number between 1 and 2 > 1:
 				Dignify 800;
+				say "[bold type]You feel one of the souls you have devoured fading away, and you exalt in your power over these weak mortals.[roman type][line break]";
 				SexAddictDown 1;
 				SemenAddictDown 1;
-				say "[bold type]You feel one of the souls you have devoured fading away, and you exalt in your power over these weak mortals.[roman type][line break]";
 			otherwise if the raw heel skill of the player < 10 or the largeness of breasts < 5 or the thickness of hips < 5:
 				if the raw heel skill of the player < 10:
 					HeelUp 1;
@@ -189,13 +197,13 @@ To compute hair colour decay:
 			unless there is worn redness-positive headgear:
 				HairRedDown 1;
 				say "Your hair loses some colour.";
-				now R is 0;				
+				now R is 0;
 		otherwise if R is 3:
 			unless there is worn brightness-positive headgear:
 				HairBrightDown 1;
 				say "Your hair colour darkens.";
 				now R is 0;
-		if X > 20, now R is 0.	
+		if X > 20, now R is 0.
 
 [!<ComputeMakeupDecay>+
 
@@ -226,16 +234,6 @@ To compute orifice soreness decay:
 			otherwise:
 				heal vagina times 1.
 
-[!<ComputeSpecialDecay>+
-
-REQUIRES COMMENTING
-
-+!]
-To compute special decay:[doesn't seem to happen anywhere for some reason]
-	if the class of the player is cheerleader:
-		let O be a random overdress worn by the player;
-		if O is blessed and a random number between 1 and 170 is 1 and the largeness of breasts > the real largeness of breasts and the largeness of breasts > 3, BustDown 1;
-		if O is blessed and a random number between 1 and 170 is 1 and the thickness of hips > the real thickness of hips and the thickness of hips > 3, HipDown 1.
 
 [!<ComputeInflationDecay>+
 
@@ -258,7 +256,7 @@ To compute inflation decay:
 	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air!  How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
 
 
-		
+
 To compute stat healing:
 	if temp_str_dam > 0 and a random number between 1 and 10 > temp_str_dam:
 		decrease temp_str_dam by 1;
@@ -269,7 +267,7 @@ To compute stat healing:
 	if temp_int_dam > 0 and a random number between 1 and 10 > temp_int_dam:
 		decrease temp_int_dam by 1;
 		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
-		
+
 
 
 

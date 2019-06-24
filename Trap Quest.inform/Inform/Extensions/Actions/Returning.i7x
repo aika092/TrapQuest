@@ -38,7 +38,7 @@ REQUIRES COMMENTING
 
 +!]
 Check returning:
-	unless the player is in The Dungeon or the player is in The Woods, say "This currently only works in the Dungeon and the Woods." instead;
+	unless playerRegion is Dungeon or playerRegion is Woods, say "This currently only works in the Dungeon and the Woods." instead;
 	if the player is in Remembered Location, say "You're already here!" instead;
 
 [!<CarryOutReturning>+

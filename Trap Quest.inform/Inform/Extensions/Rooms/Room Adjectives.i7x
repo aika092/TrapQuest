@@ -27,14 +27,14 @@ A room can be creaky. A room is usually not creaky. [A creaky room in the mansio
 REQUIRES COMMENTING
 
 +@!]
-A room can be garlic. A room is usually not garlic. [Normal ghosts can't enter these rooms and can't ambush you in them.] 
+A room can be garlic. A room is usually not garlic. [Normal ghosts can't enter these rooms and can't ambush you in them.]
 
 [!<Room>@<HasNoRoof>+
 
 REQUIRES COMMENTING
 
 +@!]
-A room can be no-roof. A room is usually not no-roof.[This room doesn't have a ceiling.]
+A room can be roofed or no-roof. A room is usually roofed. [Does it have a ceiling.]
 
 [!<Room>@<IsGuest>+
 
@@ -140,59 +140,33 @@ A room has a direction called second forbidden direction. The second forbidden d
 REQUIRES COMMENTING
 
 *@!]
-A room can be use-the-floor, urinals or toilets (this is the toilet facilities property). A room is usually use-the-floor.
+A room can be use-the-floor, water-bodied, urinals or toilets (this is the toilet facilities property). A room is usually use-the-floor.
+
+Definition: a room is bathroom if it is urinals or it is toilets.
 
 [!<Room>@<IsUnspawnable>+
 
-REQUIRES COMMENTING
+An unspawnable room cannot have the player stay there upon a map reset, they get moved to a default other location in the region.
 
 +@!]
-A room can be unspawnable. A room is usually not unspawnable. [An unspawnable room cannot have the player stay there upon a map reset, they get moved to a default other location in the region.]
+A room can be unspawnable. A room is usually not unspawnable.
 
 [!<Room>@<IsBossed>+
 
-REQUIRES COMMENTING
+This is a room that NPCs will never walk into voluntarily. Main use should be for boss rooms.
 
 +@!]
-A room can be bossed or unbossed. A room is usually unbossed. [This is a room that NPCs will never walk into voluntarily. Main use should be for boss rooms.]
+A room can be bossed or unbossed. A room is usually unbossed.
 
 
-[!<Room>@<IsBathroom>+
+Definition: A room is furnished rather than unfurnished if there is furniture in it.
 
-REQUIRES COMMENTING
-
-@+!]
-Definition: a room (called R) is bathroom:
-	if R is use-the-floor, decide no;
-	decide yes.
-
-
-[!<RoomIsFurnished>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: A room (called R) is furnished:
-	if there is furniture in R, decide yes;
-	decide no.
-
-[!<RoomIsUnfurnished>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: A room (called R) is unfurnished:
-	if R is furnished, decide no;
-	decide yes.
-	
 [!<RoomIsUnusual>+
 
 REQUIRES COMMENTING
 
 +!]
-Definition: A room (called R) is unusual:
-	if there is a dispenser in R, decide yes;
-	decide no.
+Definition: A room is unusual if there is a dispenser in it.
 
 Room Adjectives ends here.
 

@@ -13,21 +13,23 @@ Check crafting:
 	if the player is prone, say "You would need to be standing up." instead;
 	if the noun is bottle:
 		if the doses of the noun is 0:
-			now seconds is 2;
+			allocate 2 seconds;
 			say "You place the empty [noun] into the bowl. Nothing happens. Maybe if it actually had liquid in it..." instead;
 	unless there is a ready for alchemy crafting-table in the location of the player:
-		now seconds is 2;
+		allocate 2 seconds;
 		say "Nothing happens. Maybe try again a bit later." instead;
-	if the noun is mass collectible, compute mass collectible reward of the noun instead;
+	if the noun is mass collectible:
+		increase times-crafted by 1;
+		compute mass collectible reward of the noun instead;
 	if the noun is not ingredient thing:
-		now seconds is 2;
+		allocate 2 seconds;
 		say "Nothing happens." instead.
 
 Carry out crafting:
-	now seconds is 6;
+	allocate 6 seconds;
 	if the noun is bottle:
 		say "You pour a dose of [fill-colour of the noun] liquid into the bowl.";
-		decrease the doses of the noun by 1;
+		DoseDown the noun;
 		if the noun is can and the doses of the noun is 0:
 			say "You discard the empty can.";
 			destroy the noun;
@@ -37,20 +39,24 @@ Carry out crafting:
 	if the crafting key of the noun > 0 and there is a ready for alchemy crafting-table in the location of the player:
 		now current-crafting-key is the crafting key of the noun;
 		now current-alchemy-key is Product corresponding to an Ingredient of current-crafting-key in the Table of Alchemy;
-		now T is a random off-stage product-highlighted thing;
+		now T is a random product-highlighted thing;
 		if T is a thing:
 			repeat with R running through on-stage product-highlighted things:
 				if R is visible, say "The [ShortDesc of R] [if R is held]in your hands [end if]suddenly vanishes[one of]! Maybe you can only have one at a time?[or]![stopping]";
 				destroy R;
+			if the recipe of current-alchemy-key is memorised, progress quest of recipe-quest;
 			compute recipe specific cursing of T;
 			if T is clothing or T is alchemy product, now T is unsure;
 			now T is carried by the player;
 			if the noun is bottle:
 				say "The liquid swirls around, and then in a puff of smoke, it turns into a [T]! Magic! ";
 			otherwise:
-				say "In a puff of smoke, the [noun] turns into a [T]!  Magic!  ";
+				say "In a puff of smoke, the [noun] turns into a [T]! Magic! ";
 				destroy the noun;
 			say "You pick it up.";
+			if the recipe of current-alchemy-key is memorised and Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0:
+				say "Hmm. Since you have memorised the correct recipe for crafting a [ShortDesc of T] you are confident that [bold type]the one you have just crafted is cursed.[line break][variable custom style]I probably shouldn't use this.[roman type][line break]";
+				if T is clothing or T is alchemy product, now T is sure;
 			increase times-crafted by 1;
 			reset alchemy charge;
 			let H be a random worn blue scrunchie;
@@ -73,18 +79,13 @@ To compute recipe specific cursing of (T - a thing):
 		otherwise:
 			now T is cursed;
 	otherwise:
-		if (a random number between 2 and 12 <= the number of worn blue scrunchies and the class of the player is schoolgirl) or (a random number between 1 and 30 < the flat intelligence of the player and the recipe of K is memorised):
+		if (a random number between 2 and 5 <= the number of worn blue scrunchies and the class of the player is schoolgirl) or (a random number between 1 and 30 < saved-flat-intelligence and the recipe of K is memorised):
 			now T is blessed;
 		otherwise:
 			now T is bland.
 Understand "craft [something]", "brew [something]", "craft with [something]", "brew with [something]", "do alchemy with [something]", "perform alchemy with [something]" as crafting.
 
 
-[avoids errors if the item is not something that can be cursed]
-Definition: a thing (called T) is maybe-cursed:
-	if T is bottle or T is collectible or T is clothing:
-		if T is cursed, decide yes;
-	decide no.
 
 
 

@@ -29,7 +29,7 @@ A clothing can be neckless, neck-unbound or neck-bound (this is the neck-restric
 Definition: a clothing is neck locking if it is not neckless.
 Definition: a clothing is neck locked if it is neck-bound and there is worn neck covering clothing.
 
-Definition: a clothing is restrictive rather than unrestrictive if the restrictivity of it > 0. 
+Definition: a clothing is restrictive rather than unrestrictive if the restrictivity of it > 0.
 
 To decide which number is the restrictivity of (C - a clothing):
 	let R be 0;
@@ -38,23 +38,22 @@ To decide which number is the restrictivity of (C - a clothing):
 	if C is neck locked, increase R by 1;
 	decide on R.
 
-To decide which number is the bondage dexterity penalty of the player: 
+To decide which number is the bondage dexterity penalty of the player:
 	let D be 0;
 	repeat with C running through worn restrictive clothing:
 		increase D by (the restrictivity of C) * (the restrictivity of C); [The more parts of the body this item connects, the more harshly it affects the player's dexterity.]
 	decide on D.
 
-bondage is a kind of clothing. bondage is usually metal.  bondage is usually unique.
+bondage is a kind of clothing. bondage is usually metal.  bondage is usually unique. bondage is usually manly.
 
 
-Definition: a bondage (called C) is too boring:
-	decide no.
+Definition: a bondage is discovered varied: decide no.
 
-Definition: a bondage (called C) is stealable:
-	decide no.
+Definition: a bondage is too boring: decide no.
 
-Definition: a bondage (called C) is untransformable:
-	decide yes.
+Definition: a bondage is stealable: decide no.
+
+Definition: a bondage is disintegration-protected: decide yes.
 
 To decide which number is the bartering value of (T - a bondage) for (M - a dominatrix):
 	decide on 2.
@@ -69,14 +68,6 @@ To uniquely set up (C - a bondage):
 	now the raw-magic-modifier of C is 0.
 
 
-Include Wrist Bondage by Bondage.
-Include Ankle Bondage by Bondage.
-Include Gags by Bondage.
-Include Chastity Cage by Bondage.
-Include Serving Table by Bondage.
-Include Pet Collar by Bondage.
-Include Ball and Chain by Bondage.
-Include Wrist Collar Bar by Bondage.
 
 
 Bondage Framework ends here.

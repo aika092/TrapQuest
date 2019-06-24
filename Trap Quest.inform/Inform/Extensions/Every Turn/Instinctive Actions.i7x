@@ -22,7 +22,7 @@ REQUIRES COMMENTING
 To Compute Compulsions:
 	now autodrink is 1;
 	let B be a random held actually drinkable bottle;
-	if drinkme tattoo is worn and B is bottle and the player is not in danger and the player is able to drink:
+	if drinkme tattoo is worn and B is bottle and the player is not almost too full and a random number between 1 and 10 is 1 and the player is not in danger and the player is able to drink and the class of the player is not bunny and (the class of the player is not royal slave or the fill-type of B <= highest-cursed): [Need to make sure that royal slaves and bunny waitresses don't just drink all their stock]
 		say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
 		try drinking B;
 		now another-turn is 1;
@@ -55,13 +55,18 @@ To Compute Compulsions:
 			now P is penetrating vagina;
 		now another-turn is 1;
 	now autodrink is 0;
-	let V be a random cultist veil in the location of the player;
-	if the humiliation of the player >= 40000 and V is actually summonable:
+	if the player is broken and cultist veil is in the location of the player and cultist veil is actually summonable:
 		say "You see a black veil and suddenly feel so ashamed that your worthless face is on display, as though you were a person and not simply a selection of holes to be used. You silently lift the veil over your face, as is proper.";
-		now V is worn by the player;
-		now another-turn is 1.
-		
-		
+		summon cultist veil;
+		now another-turn is 1;
+	if the traitor-hypno of hypno-lesson > 0:
+		if ex-princess is in the location of the player and ex-princess is caged and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
+			decrease the traitor-hypno of hypno-lesson by 1;
+			say "Something inside you urges you to [second custom style]help your friend[roman type].";
+			compute urinal use;
+			now another-turn is 1.
+
+
 [!<ComputeBrokenActions>+
 
 REQUIRES COMMENTING
@@ -71,7 +76,14 @@ To Compute Broken Actions:
 	if diaper quest is 0 and the humiliation of the player >= 40000 and the player is prone and the player is not immobile and resting is 0 and busy is 0:
 		if there is a willing to shag monster in the location of the player:
 			let M be a random willing to shag monster in the location of the player;
-			compute broken sex of M.
+			compute broken sex of M;
+	otherwise if the arousal of the player >= maximum arousal:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
+		if the player is able to automatically masturbate:
+			say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
+			now auto is 1;
+			try masturbating;
+			now auto is 0.
 
 broken-present-cooldown is a number that varies.
 

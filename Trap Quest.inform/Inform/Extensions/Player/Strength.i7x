@@ -49,7 +49,6 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the strength of the player:
-	if saved-strength < 0, now saved-strength is the flat strength of the player scaled;
 	decide on saved-strength.
 
 [!<DecideWhichNumberIsTheFlatStrengthOfThePlayer>+
@@ -81,7 +80,9 @@ To decide which number is the flat strength of the player:
 	if the class of the player is bunny, increase S by the total squirtable fill of belly / 5;
 	if strength-tincture-timer > 0:
 		increase S by strength-tincture-bonus;
-	increase S by ((pink-nugget-timer + default-candy-duration - 1) / default-candy-duration) * 6;
+	increase S by fullness-bonus;
+	increase S by the theme bonus of the strength theme rules;
+	increase S by ((pink-nougat-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	decrease S by ((liquorice-timer + default-candy-duration - 1) / default-candy-duration) * 1;
 	decrease S by adult-baby-int * 3;
 	if the the boost-cooldown of nurse > 0, increase S by 2;
@@ -90,7 +91,7 @@ To decide which number is the flat strength of the player:
 	if temp_str_dam > 0, decrease S by temp_str_dam;
 	if S < 1, decide on 1;
 	if S > 30, decide on 30;
-	decide on S.	
+	decide on S.
 
 
 [!<DecideWhichNumberIsTheStartingStrengthOfThePlayer>+
@@ -100,7 +101,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the starting strength of the player:
 	decide on 7 + bonus strength + background-sporty.
-	
+
 Part 2 - Modify Strength
 
 

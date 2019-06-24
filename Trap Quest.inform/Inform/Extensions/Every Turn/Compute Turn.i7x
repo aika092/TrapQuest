@@ -17,23 +17,44 @@ Oh, so this is how time works!  So "seconds" represents how many seconds of the 
 	now another-turn is 0;
 	run the engine once;
 	check immobility;
-	if side images > 0 and the player is virtual, display stuff.
+	if the player is virtual, display stuff.
 +!]
 Every turn:
 	if seconds > 0, run the engine;
 	compute options;
+	if the player is virtual or (tutorial is 1 and the graphics-window is g-present):
+		display stuff;
+		if inventory-visible > 0, display inventory stuff;
+		display inventory-focus stuff;
+		if solo-scene is 0, display regular focus stuff;
+		now solo-scene is 0;
+		if bubble-needs-overwriting is 1:
+			display entire map;
+			now bubble-needs-overwriting is 0;
+		render map buttons;
+	now focused-thing is nothing;
 	now seconds is 0.
+
+To allocate (N - a number) seconds:
+	if seconds is 0 and N > 0:
+		if solo-scene is 0, zero the focus-link-table;
+		if debugmode > 1, say "Zeroing focus stuff and allocating [N] seconds.";
+		zero focus stuff; [We've just been told that we're going to need to run the engine. Let's empty the lists of images to display and begin building it anew.]
+		render buffered stuff; [Gives the player some feedback to know that their command went through]
+	now seconds is N.
+
+To force allocate (N - a number) seconds:
+	now seconds is 0; [This way we force the recalculation of the focus window]
+	allocate N seconds.
 
 To run the engine:
 	now another-turn is 1;
 	while another-turn is 1:
 		now another-turn is 0;
-		run the engine once;
-	check immobility;
-	if side images > 0 and the player is virtual, display stuff.
+		run the engine once.
 
 To run the engine once:
-	if seconds is 0, now seconds is 1; [We are having another turn even if seconds wasn't set!]
+	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
 	Store Previous Sizes;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
@@ -49,7 +70,7 @@ To run the engine once:
 			unless another-turn is 1, compute instinctive actions;
 			unless another-turn is 1, compute automatic actions;  [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, compute optional actions;  [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
-			unless another-turn is 1, now seconds is 0;
+			unless another-turn is 1, allocate 0 seconds;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
 	if another-turn is 1 and the player is live fucked and wanking is 0:
@@ -57,10 +78,21 @@ To run the engine once:
 		if the humiliation of the player >= 40000:
 			try submitting;
 		otherwise if (M is not minotaur or M is awake monster) and M is not ghostly tentacle and wanking is 0: [If it's an asleep minotaur we don't ask this]
-			say "[if the player-reaction of the player is resisting]Keep resisting?[otherwise]Do you want to resist?[end if] [yesnolink] ";
-			if the player consents, try resisting;
+			say "[if the player-reaction of the player is resisting]Keep resisting?[otherwise]Do you want to resist?[end if] ";
+			if the player is consenting, try resisting;
 			otherwise try submitting;
-	if another-turn is 0 and diaper-scene-unhandled is 1, compute unhandled diaper scene. [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
+	if another-turn is 0: [We only look at this stuff on the last turn before the player has control returned to them]
+		check unhandled diaper scene; [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
+		[Sometimes when time moves forward we need to refresh the map back to normal from unique situations. We can't do this in a time based rulebook because 'display entire map' breaks the rulebook.]
+		if temporary-map-figure is not figure of no-image-yet:
+			now temporary-map-figure is the figure of no-image-yet;
+			unless there is g-animated g-looping cutscene animation track, display entire map; [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
+		otherwise if there is g-animated g-looping cutscene animation track:
+			repeat with G running through g-animated g-looping cutscene animation tracks:
+				cease animation of G;
+			display entire map;
+	update saved stats;
+	fix status bar.
 
 
 [!<ComputeExtraTurn>+
@@ -93,6 +125,7 @@ REQUIRES COMMENTING
 
 +!]
 To store previous sizes:
+	now autozap is 0;
 	now autoslap is 0;
 	now autokick is 0;
 	now autoknee is 0;
@@ -166,23 +199,26 @@ To compute turn:
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
 	if debugmode > 1, say "BEFORE TIME BASED.";
-	follow the time based rulebook;
+	if timeBombTime > 0, progress stopped time;
+	otherwise follow the time based rulebook;
 	if debugmode > 1, say "AFTER TIME BASED.";
 	if the player is flying or last-turn-flight is 0: [This means, the turn that the player lands monsters don't get to act.]
 		if debugmode > 1, say "BEFORE MONSTERS.";
-		if delayed fainting is 0, compute monsters;
+		if delayed fainting is 0 and timeBombTime <= 0, compute monsters;
 		if debugmode > 1, say "AFTER MONSTERS.";
 	compute monster sleeping;
 	now counters-seconds is local-seconds;
 	follow the advance counters rules;
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
-	follow the later time based rulebook;
+	repeat with M running through alive dying monsters:
+		finally destroy M;
+	if timeBombTime <= 0, follow the later time based rulebook;
 	Reset Flags;
 	compute flight; [Flight stuff must go last in the compute time order - the concept is it's checking if anything that happened caused the player to start flying.]
-	now seconds is 0;
+	allocate 0 seconds;
 	if newbie tips is 1, say other tips.
-	
+
 
 
 

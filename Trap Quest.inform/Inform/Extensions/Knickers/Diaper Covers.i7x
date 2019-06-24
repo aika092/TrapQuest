@@ -1,25 +1,17 @@
 Diaper Covers by Knickers begins here.
 
 
-diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. The soak-limit of a diaper cover is usually 24. A diaper cover is usually diaper-addiction-influencing.
+diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. The soak-limit of a diaper cover is usually 24. A diaper cover is usually diaper-addiction-influencing.
 
-Definition: a diaper cover (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
-	decide yes.
-
-Definition: a diaper cover (called D) is fetish appropriate:
-	if diaper lover >= 1, decide yes;
-	decide no.
-
-Definition: a diaper cover (called C) is product:
-	if diaper quest is 0, decide no;
-	decide yes.
+Definition: a diaper cover is baby themed: decide yes.
+Definition: a diaper cover is pink themed: decide yes.
+Definition: a diaper cover is fetish appropriate if diaper lover > 0.
+Definition: a diaper cover is product if it is fetish appropriate.
+Definition: a diaper cover is recipe specific: decide yes.
 
 To decide which number is the alchemy key of (C - a diaper cover):
 	if diaper quest is 0, decide on 0;
 	decide on 18.
-
-Definition: a diaper cover (called C) is recipe specific:
-	decide yes.
 
 To compute recipe specific cursing of (T - a diaper cover):
 	if the noun is knickers:
@@ -37,7 +29,7 @@ To compute recipe specific cursing of (T - a diaper cover):
 To decide what number is the price of (C - a diaper cover):
 	decide on 2.
 
-The printed name of diaper cover is usually "[TQlink of item described][clothing-title-before]diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper cover is "dc".
+The printed name of diaper cover is usually "[clothing-title-before]diaper cover[clothing-title-after]". The text-shortcut of diaper cover is "dc".
 
 To say ShortDesc of (C - a diaper cover):
 	say selfexamineuniquetitle of C.
@@ -46,7 +38,7 @@ To say ClothingDesc of (C - a diaper cover):
 	say "A large diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. [if C is worn and there is a worn diaper]You can feel it making it much easier to walk in your nappy.[end if]".
 
 To compute SelfExamineDesc of (K - a diaper cover):
-	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn not-exclusive diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
 To say selfexamineuniquetitle of (K - a diaper cover):
 	say "diaper cover".
@@ -67,7 +59,7 @@ The setup starting diaper cover rule is listed in the setup starting items rules
 
 A frilly white diaper cover is a kind of diaper cover. There is 1 frilly white diaper cover.
 
-The printed name of frilly white diaper cover is usually "[TQlink of item described][clothing-title-before]frilly white diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of frilly white diaper cover is usually "[clothing-title-before]frilly white diaper cover[clothing-title-after]".
 
 Figure of frilly white diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover1.png".
 
@@ -85,7 +77,7 @@ To say selfexamineuniquetitle of (K - a frilly white diaper cover):
 
 A teddy bear diaper cover is a kind of diaper cover. A teddy bear diaper cover is usually cotton. There is 1 teddy bear diaper cover.
 
-The printed name of teddy bear diaper cover is usually "[TQlink of item described][clothing-title-before]teddy bear diaper cover[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of teddy bear diaper cover is usually "[clothing-title-before]teddy bear diaper cover[clothing-title-after]".
 
 Figure of teddy bear diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover2.png".
 
@@ -101,19 +93,21 @@ To compute SelfExamineDesc of (K - a teddy bear diaper cover):
 To say selfexamineuniquetitle of (K - a teddy bear diaper cover):
 	say "pink teddy bear diaper cover".
 
+Definition: a teddy bear diaper cover is bear themed: decide yes.
+
 Chapter 1 Wearability
 
 diaper cover wearability rules is a rulebook. The wearability rules of a diaper cover is usually diaper cover wearability rules.
 
 This is the diaper cover already worn rule:
 	repeat with O running through worn diaper covers:
-		if summoning is 0, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
 		rule fails.
 The diaper cover already worn rule is listed in the diaper cover wearability rules.
 
 This is the diaper covers disabled rule:
 	if diaper lover <= 0 and wearing-target is diaper cover:
-		if summoning is 0, say "You can't wear this, you should even be able to see this, whoops!  Please report the bug.";
+		if summoning is 0 and autowear is false, say "You can't wear this, you should even be able to see this, whoops!  Please report the bug.";
 		rule fails.
 The diaper covers disabled rule is listed in the diaper cover wearability rules.
 
@@ -121,19 +115,19 @@ The diaper covers disabled rule is listed in the diaper cover wearability rules.
 This is the diaper cover overdress clash rule:
 	if summoning is 0:
 		repeat with C running through worn crotch covering overdresses:
-			say "You can't wear that over your [printed name of C]!";
+			if autowear is false, say "You can't wear that over your [printed name of C]!";
 			rule fails.
 The diaper cover overdress clash rule is listed in the diaper cover wearability rules.
 
 This is the diaper cover only goes over diapers rule:
 	if the number of worn diapers is 0:
-		if summoning is 0, say "Why would you wear this if you're not wearing a diaper?";
+		if summoning is 0 and autowear is false, say "Why would you wear this if you're not wearing a diaper?";
 		rule fails.
 The diaper cover only goes over diapers rule is listed in the diaper cover wearability rules.
 
 This is the diaper cover can't go over waddle diapers rule:
-	if there is a worn waddle diaper:
-		if summoning is 0, say "That diaper is way too big to fit a cover over!";
+	if there is a worn totally-exclusive diaper:
+		if summoning is 0 and autowear is false, say "That diaper is way too big to fit a cover over!";
 		rule fails.
 The diaper cover can't go over waddle diapers rule is listed in the diaper cover wearability rules.
 

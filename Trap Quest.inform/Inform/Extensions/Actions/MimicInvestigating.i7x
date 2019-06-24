@@ -25,7 +25,7 @@ Carry Out MimicInvestigating:
 		increase investigation-attempts by 1.
 
 Report MimicInvestigating:
-	now seconds is 3.
+	allocate 3 seconds.
 
 MimicInvestigating ends here.
 

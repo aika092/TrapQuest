@@ -1,6 +1,15 @@
 Dildo Pole Trap by Traps begins here.
 
 
+Figure of Pole Cutscene 1 is the file "Special/Cutscene/cutscene-pole1.png".
+Figure of Pole Cutscene 2 is the file "Special/Cutscene/cutscene-pole2.png".
+Figure of Pole Cutscene 3 is the file "Special/Cutscene/cutscene-pole3.png".
+Figure of Creampie Pole Cutscene 1 is the file "Special/Cutscene/cutscene-pole-creampie1.png".
+Figure of Creampie Pole Cutscene 2 is the file "Special/Cutscene/cutscene-pole-creampie2.png".
+Figure of Creampie Pole Cutscene 3 is the file "Special/Cutscene/cutscene-pole-creampie3.png".
+Figure of Creampie Pole Cutscene 4 is the file "Special/Cutscene/cutscene-pole-creampie4.png".
+Figure of Creampie Pole Cutscene 5 is the file "Special/Cutscene/cutscene-pole-creampie5.png".
+
 [!<DildoTrap>@
 
 REQUIRES COMMENTING
@@ -9,23 +18,11 @@ REQUIRES COMMENTING
 
 @!]
 A dildo trap is a kind of trap. A dildo trap is usually potentially wire. The text-shortcut of a dildo trap is "dt".
+Figure of dildo trap is the file "Env/MultiFloor/dildopole1.png".
 
+To decide which figure-name is the examine-image of (C - a dildo trap):
+	decide on figure of dildo trap.
 
-[!<DildoTrap>@<target:TargetEnum>*
-
-REQUIRES COMMENTING
-
-*@!]
-A dildo trap can be anal or vaginal. A dildo trap is usually anal.
-
-[!<YourselfIsDildoStuck>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is dildo stuck:
-	if there is a dildo trap penetrating a fuckhole, decide yes;
-	decide no.
 
 [!<DildoTrap>@<SayEnvironmentDesc>+
 
@@ -63,7 +60,7 @@ REQUIRES COMMENTING
 +@!]
 To trigger (Y - a dildo pole trap):
 	trigger pole trap Y;
-	if Y is penetrating a fuckhole and image cutscenes is 1, compute pole cutscene image of Y.
+	if Y is penetrating a fuckhole, compute pole cutscene image of Y.
 
 [!<DildoTrap>@<ComputeOrgasmResolution>+
 
@@ -84,11 +81,11 @@ REQUIRES COMMENTING
 +@!]
 To compute pole cutscene image of (Y - a dildo trap):
 	if Y is penetrating asshole:
-		display figure of pole cutscene 3;
+		cutshow figure of pole cutscene 3 for Y;
 	otherwise if a random number between 1 and 2 is 1:
-		display figure of pole cutscene 1;
+		cutshow figure of pole cutscene 1 for Y;
 	otherwise:
-		display figure of pole cutscene 2.
+		cutshow figure of pole cutscene 2 for Y.
 
 
 [This does the majority of the mechanics for a standard dildo trap entering you.]
@@ -98,7 +95,7 @@ REQUIRES COMMENTING
 
 +@!]
 To trigger pole trap (Y - a dildo trap):
-	now the motion of the player is 0;
+	now the player-motion of the player is 0;
 	now the reset-timer of Y is 250;
 	if the player is prone:
 		if the class of the player is living sex doll:
@@ -119,40 +116,27 @@ To trigger pole trap (Y - a dildo trap):
 		now Y is not untriggered;
 		now Y is revealed;
 		say "[bold type]A dildo on a pole shoots out of a trap door underneath you and towards your crotch![roman type][line break]";
-		if the player is a butt slut or the player is male, now Y is anal;
-		let target-check be 0;
-		if Y is anal and the player is ass protected, now target-check is 1;
-		if Y is vaginal and the player is pussy protected, now target-check is 1;
+		let target-BP be asshole;
+		if the player is female and a random number between 1 and 2 is 1, now target-BP is vagina;
+		let O be a random top level protection clothing;
+		if target-BP is asshole, now O is a random top level ass protection clothing;
 		[Having an the orifice already occupied overrides all other checks]
-		if Y is anal and asshole is actually occupied, now target-check is 2;
-		if Y is vaginal and vagina is actually occupied, now target-check is 2;
-		if target-check is 2:
-			if Y is anal, let P be a random thing filling asshole;
-			otherwise let P be a random thing filling vagina;
-			say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [if Y is anal][ShortDesc of random thing filling asshole][otherwise][ShortDesc of random thing filling vagina][end if], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole![end if]";
-			if P is jelldo:
-				do nothing;
-			otherwise if Y is anal:
-				let P be a random thing filling asshole;
-				ruin asshole times 2;
+		if target-BP is actually occupied:
+			let P be a random thing filling target-BP;
+			say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [ShortDesc of P], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole[end if]!";
+			if P is not jelldo:
+				ruin target-BP times 2;
 				if P is anal beads and the notch-taken of P < the notches of P:
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
-			otherwise:
-				let P be a random thing filling vagina;
-				ruin vagina times 2;
-				if P is anal beads and the notch-taken of P < the notches of P:
-					increase the notch-taken of P by 1;
-					say "Another bead is forced inside!";
-		otherwise if target-check is 1:
-			let O be a random top level protection clothing worn by the player;
-			if O is a random bottom level protection clothing worn by the player:
+		otherwise if O is clothing:
+			if O is bottom level ass protection or (target-BP is vagina and O is bottom level protection):
 				let A be a random number between 5 and 12;
 				let D be the anal defence of the player;
-				if Y is vaginal, now D is the vaginal defence of the player;
+				if target-BP is vagina, now D is the vaginal defence of the player;
 				if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([D].5) orifice defence[roman type][line break]";
 				if A > D and O is not diaper and O is not chastity cage:
-					compute Y penetration of O;
+					compute Y penetration of O into target-BP;
 				otherwise:
 					if O is diaper:
 						say "The dildo hits the thick padding of your [ShortDesc of O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
@@ -169,39 +153,40 @@ To trigger pole trap (Y - a dildo trap):
 			let A be a random number between 5 and 12;
 			if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([defence of the player].5) butt cheek defence[roman type][line break]";
 			if A > the defence of the player:
-				compute Y penetration of nothing;
+				compute Y penetration of nothing into target-BP;
 			otherwise:
-				say "The dildo bounces harmlessly off your [HipDesc].".
+				say "The dildo bounces harmlessly off your [AssDesc].".
 
-To compute (Y - a dildo trap) penetration of (C - an object):
-	let G be nothing; [Groin: will be pussy or anus]
-	if Y is anal:
-		now G is asshole;
-	otherwise:
-		now G is vagina;
+To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhole):
 	now Y is penetrating G;
 	say "You gasp as the dildo goes straight [if C is not nothing]through your [printed name of C] and[end if] into your [variable G]!";
 	ruin G;
 	if C is not nothing:
 		if C is not clothing:
-			say "Programming error: someone passed non-clothing to compute dildo penetration";
+			say "Programming error: someone passed non-clothing to compute dildo penetration.";
 		otherwise if C is rippable:
 			say "Your [ShortDesc of C] is now torn at the crotch.";
 			rip C;
 		otherwise:
 			say "Your [ShortDesc of C] is destroyed.";
 			destroy C;
-	if Y is penetrating G and the number of worn ballet related wearthing >= 2:
-		say "[one of]But that's not all! There's a padded flange at the base of the dildo, and you feel it press up against your [variable G]. It lifts your feet right off the floor! OMG! You won't be able to jump off this trap![or]Once again, you feel the padded rim squish your [variable G] and lift you bodily off the floor![stopping]";
+	repeat with M running through reactive monsters:
+		say DildoTrapReactFlav of M;
+	if Y is penetrating G and there is worn ballet related clothing:
+		say "[one of][bold type]But that's not all! [roman type]There's a padded flange at the base of the dildo, and you feel it press up against your [variable G]. It lifts your feet right off the floor! OMG! You won't be able to jump off this trap![or]Once again, you feel the padded rim squish your [variable G] and lift you bodily off the floor![stopping]";
 		now doll-stuck is "[one of]turn[or]rotate[or]twirl around[at random] like a [one of]pretty[or]dainty[or]delicate[at random] [one of]ballerina dolly[or]toy ballerina[at random] in a music box";
 		now doll-stuck-num is 1;
 		now doll-stuck-kind is 1; [ballerina]
 		say "You slowly [doll-stuck]. [one of]Your ankles flex, trying futilely to stretch down to touch the floor, but it's useless! You're impaled, suspended helplessly above the ground. And then the pole starts slowly turning, and of course, you move with it, unable to do anything to prevent it.  A wave of humiliation washes through you, and the dildo briefly vibrates, as if sensing your shame and rubbing it in. But how will you ever get off here?[line break]As if in response to your thought, a picture of a pretty ballerina in a frilly, wispy tutu, turning in a music box, flashes into your mind[or]You try to stretch your toes to the floor, but fail[or]The tinkly music starts up again, as the pole starts turning you[stopping]. You feel a mental pressure to submit, and adopt the required pose.".
 
+
+To say DildoTrapReactFlav of (M - a monster):
+	say HarshTrapReactFlav of M.
+
 [Aika said:
 Currently submitting only works on live things penetrating a body part.
-Since dildo traps aren’t alive we need some additional code to make sure
-the game doesn’t tell the player they’re not allowed to do it.
+Since dildo traps aren't alive we need some additional code to make sure
+the game doesn't tell the player they're not allowed to do it.
 Suggested:
 "Check submitting when there is a dildo trap penetrating a fuckhole and there is worn ballet related clothing:"
 and
@@ -231,18 +216,18 @@ To compute DollObservation humiliation:
 	if doll-stuck-num is 0: [Just being defensive]
 		stop;
 	[For each (hostile-ish?) monster watching, adding its contribution.]
-	repeat with M running through intelligent monsters in the location of the player:
+	repeat with M running through reactive monsters:
 		[Could test for friendly or unfriendly in the taunting function]
 		compute the dildo stuck taunting of M;
 		if M is friendly:
-			if the humiliation of the player <= HUMILIATION-MODEST, say "[one of]You hope [he of M] won't think less of you.[or][variable custom style]How embarrassing![variable custom style][or]You sense [he of M] losing respect for you.[or]How bad would it be if they let your friends watch through the eyes of these NPCs?[or]Mild disgust curdles [his of M] expression.[or][Big he of M] looks highly unimpressed by your shameful display.[in random order]";
+			if the player is modest, say "[one of]You hope [he of M] won't think less of you.[or][variable custom style]How embarrassing![variable custom style][or]You sense [he of M] losing respect for you.[or]How bad would it be if they let your friends watch through the eyes of these NPCs?[or]Mild disgust curdles [his of M] expression.[or][Big he of M] looks highly unimpressed by your shameful display.[in random order]";
 			otherwise say "[one of][variable custom style]I wonder if [he of M] is enjoying the show?[roman type][line break][or][variable custom style]What does [he of M] want?[roman type][line break][or][Big his of M] disgust actually makes the experience more exciting.[or][Big he of M] shakes [his of M] head at your lewd display.[in random order]";
 			FavourDown M;
-		humiliate MODERATE-HUMILIATION;
+		moderateHumiliate;
 	[Sex dolls are not intelligent. But I think it'd be especially humiliating to be posing like a doll in front of a doll.]
 	repeat with M running through sex dolls in the location of the player:
 		compute the dildo stuck taunting of M;
-		humiliate MODERATE-HUMILIATION.
+		moderateHumiliate.
 
 [!<DollyPose>+
 
@@ -252,7 +237,7 @@ They no longer react if you're resisting, only if submitting.
 
 +@!]
 To DollyPose:
-	now seconds is 6;
+	allocate 6 seconds;
 	let T be a random dildo trap penetrating a fuckhole;
 	if Doll-stuck-kind is 1:
 		say "You arch both arms over your head like you've seen ballerinas do. The dildo vibrates angrily and [one of]you sense it wants more. You[or]you know what that means. You[or]it's trained you to know what that means. You[stopping] curve your fingers elegantly, touching the tips together. [one of]Smiling prettily, you hold the pose and keep the smile fixed as you slowly turn[or]With a rictus grin, you rotate on your pole as the music tinkles out[or]You smile sickly, arms arched prettily, toes pointed, turning on your mounting pole[at random]. ";
@@ -278,33 +263,20 @@ Check resisting when doll-stuck-num > 0:
 		say "The pole gives a brief angry vibration, as if determined to punish you for your resistance!";
 		increase doll-stuck-num by 1;
 	if T is penetrating a fuckhole, ruin a random fuckhole penetrated by T; [Seems clear to Aika that this should go after the narration. Added a check in case the player is let go. Selkie: It does mean if they orgasm, they suffer no damage that round, probably fair enough!]
-	now seconds is 6;
+	allocate 6 seconds;
 	do nothing instead.
 
-[!<YourselfIsPoleStuck>+
 
-Doesn't include drill traps
+dildoJumpSucceeded is initially true.
 
-+!]
-Definition: a yourself is pole stuck:
-	if there is a dildo pole trap penetrating a fuckhole, decide yes;
-	if there is a creampie pole trap penetrating a fuckhole, decide yes;
-	if there is a ghostly dildo pole trap penetrating a fuckhole, decide yes;
-	decide no.
-
-	
-[!<JumpFromTheDildo>+
-
-REQUIRES COMMENTING
-
-+!]
 To Jump From The Dildo:
 	if doll-stuck-num > 0:
 		say "How? Your feet aren't even touching the ground. You [doll-stuck].";
 		increase doll-stuck-num by 1;
-		now seconds is 6;
+		allocate 6 seconds;
 		stop;
-	now seconds is 6;
+	allocate 6 seconds;
+	compute upright fatigue gain;
 	let Y be a random trap penetrating a fuckhole;
 	let H be a random worn hindrance-enabling shoes;
 	if the player is clothing stuck:
@@ -313,11 +285,18 @@ To Jump From The Dildo:
 			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
 		otherwise:
 			say "You can't jump because your [printed name of C] is stuck in place.";
-	otherwise if H is shoes:
+	otherwise if H is shoes or (dildoJumpSucceeded is true and clumsy is 1 and a random number between 1 and 2 is 1):
 		let D be the dexterity of the player;
 		let W be the weight of the player;
-		let Hi be the hindrance of H + (W / 5);
-		if the hindrance of H > 5:
+		let Hi be 0;
+		if (dildoJumpSucceeded is false or clumsy is 0), let Hi be the hindrance of H + (W / 5);
+		let M be a random dangerous royal guard in the location of the player;
+		if M is royal guard and the player is not monster fucked and the player is female:
+			say "Before you can manage to make the jump, [NameDesc of M] has [one of]walked up to you and [or][stopping]taken hold of your waist. Uh-oh...";
+		otherwise if dildoJumpSucceeded is true and clumsy is 1:
+			compute jump bounce of Y;
+			say aprilFoolsClumsyFlav;
+		otherwise if the hindrance of H > 5:
 			if sex fainting is 0:
 				compute automatic jump success of Y;
 			otherwise:
@@ -331,36 +310,44 @@ To Jump From The Dildo:
 			let R be a random number between Hi / 2 and Hi;
 			if debuginfo > 0, say "[input-style]Jump from pole check: dexterity ([D * 5].5) | [R] = RNG([Hi / 2]~[Hi]) <= [Hi] = ([hindrance of H]) [ShoeType of H] hindrance + ([W / 5]) weight[roman type][line break]";
 			if D < R:
-				if Y is penetrating vagina:
-					say "You manage to jump whilst in your [ShoeType of H] and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [vagina]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
-					ruin vagina;
-					if Y is creampie pole trap, PussyFill 2;
-				otherwise:
-					say "You manage to jump whilst in your [ShoeType of H] and the dildo very almost exits you, but then you fall back on it hard!  [if a random trap penetrating a fuckhole is dildo pole trap]You basically just fucked yourself with the dildo![otherwise]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [asshole]![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
-					ruin asshole;
-					if Y is creampie pole trap, assFill 2;
+				compute jump bounce of Y;
 			otherwise:
 				say "You manage to jump whilst in your [ShoeType of H] and the dildo exits you, and luckily you jump high enough that it misses your crotch on the way back down, and bends at an awkward angle.";
 				now busy is 0;
-				if a random number between 1 and 6 is 1, HairRedDown 1;
-				repeat with X running through all dildo traps:
-					if X is penetrating a fuckhole:
-						now X is not penetrating asshole;
-						now X is not penetrating vagina;
-						now X is expired;
+				if a random number between 1 and 3 is 1, HairRedDown 1;
+				dislodge Y;
+				now dildoJumpSucceeded is true;
+				now Y is expired;
 	otherwise:
 		say "You jump and the dildo exits you, and luckily you jump high enough that it misses your crotch on the way back down, and bends at an awkward angle.";
 		now busy is 0;
 		dislodge Y;
+		now dildoJumpSucceeded is true;
 		now Y is expired.
+
+To compute jump bounce of (Y - a trap):
+	let H be a random worn hindrance-enabling shoes;
+	let F be a random fuckhole penetrated by Y;
+	say "You [if H is shoes]manage to jump whilst in your [ShoeType of H][otherwise]jump a bit clumsily[end if] and the dildo very nearly exits you, but then you fall back on it hard! [if Y is creampie pole trap]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [variable F]![otherwise]You basically just fucked yourself with the dildo![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
+	if Y is creampie pole trap:
+		get creampie cutscene of Y;
+		if F is vagina, PussyFill 2;
+		otherwise assFill 2;
+	ruin F;
+	now dildoJumpSucceeded is false;
+	repeat with M running through reactive monsters:
+		say DildoBounceTrapReactFlav of M.
+
+To say DildoBounceTrapReactFlav of (M - a monster):
+	say LewdTrapReactFlav of M.
 
 [!<ComputeAutomaticJumpSuccessOfTrap>+
 
-REQUIRES COMMENTING
+If the player can't faint, then we need to find another way of them getting off of the trap.
 
 +!]
 To compute automatic jump success of (Y - a trap):
-	say "Your high heels cause you to have to make the tiniest of movements as you try and inch yourself off the dildo, slowly fucking yourself raw.";
+	say "Your high heels force you to have to make the tiniest of movements as inch yourself off the dildo, slowly fucking yourself raw.";
 	now the soreness of a random fuckhole penetrated by Y is 10;
 	now busy is 0;
 	dislodge Y;
@@ -375,7 +362,9 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The printed name of dildo pole trap is "[TQlink of item described]dildo pole trap[TQxlink of item described][verb-desc of item described]". The description of a dildo pole trap is "A metal pole with a flesh coloured dildo on the end. [if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if item described is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if item described is penetrating vagina][vagina]!  [otherwise][asshole]!  [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]".
+A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The printed name of dildo pole trap is "[TQlink of item described]dildo pole trap[TQxlink of item described][verb-desc of item described]".
+To say ExamineDesc of (C - a dildo pole trap):
+	say "A metal pole with a flesh coloured dildo on the end. [if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if C is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if C is penetrating vagina][vagina]!  [otherwise][asshole]!  [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]".
 
 [!<TheSpawnInitialDildoPoleTrapsRule>+
 
@@ -383,11 +372,10 @@ REQUIRES COMMENTING
 
 +!]
 This is the spawn initial dildo pole traps rule:
-	if diaper quest is 0:
-		repeat with N running from 1 to 4:
-			let R be a random untrapped trappable placed labyrinth room;
-			let T be a random off-stage dildo pole trap;
-			unless there is a dildo trap in R, deploy T in R.
+	repeat with N running from 1 to 4:
+		let R be a random untrapped trappable placed labyrinth room;
+		let T be a random off-stage dildo pole trap;
+		unless there is a dildo trap in R, deploy T in R.
 The spawn initial dildo pole traps rule is listed in the set up dungeon traps rules.
 
 
@@ -402,7 +390,9 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A drill pole trap is a kind of dildo trap. There are 10 drill pole traps. The printed name of drill pole trap is "[TQlink of item described]drill pole trap[TQxlink of item described][verb-desc of item described]". The description of a drill pole trap is "A metal pole with a flesh coloured dildo on the end. When it is inside you, it spins rapidly! Usually...".
+A drill pole trap is a kind of dildo trap. There are 10 drill pole traps. The printed name of drill pole trap is "[TQlink of item described]drill pole trap[TQxlink of item described][verb-desc of item described]".
+To say ExamineDesc of (C - a drill pole trap):
+	say "A metal pole with a flesh coloured dildo on the end. When it is inside you, it spins rapidly! Usually...".
 
 [!<TheSpawnInitialDrillPoleTrapsRule>+
 
@@ -410,21 +400,12 @@ REQUIRES COMMENTING
 
 +@!]
 This is the spawn initial drill pole traps rule:
-	if diaper quest is 0:
-		repeat with N running from 1 to 4:
-			let R be a random untrapped trappable placed jungle room;
-			let T be a random off-stage drill pole trap;
-			unless there is a dildo trap in R, deploy T in R.
+	repeat with N running from 1 to 4:
+		let R be a random untrapped trappable placed jungle room;
+		let T be a random off-stage drill pole trap;
+		unless there is a dildo trap in R, deploy T in R.
 The spawn initial drill pole traps rule is listed in the set up woods traps rules.
 
-[!<YourselfIsDrillStuck>+
-
-Drill traps only
-
-+!]
-Definition: a thing is drill stuck:
-	if there is a drill pole trap penetrating a fuckhole, decide yes;
-	decide no.
 
 [!<DrillPoleTrap>@<Trigger>+
 
@@ -434,7 +415,7 @@ REQUIRES COMMENTING
 To trigger (Y - a drill pole trap):
 	trigger pole trap Y;
 	if Y is penetrating a fuckhole:
-		if image cutscenes is 1, compute pole cutscene image of Y;
+		compute pole cutscene image of Y;
 		say "After it shoots in, it starts to spin round, pushing its way deeper. When it is fully inside you, it doesn't stop spinning!".
 
 [!<DrillPoleTrap>@<ComputeOrgasmResolution>+
@@ -447,9 +428,8 @@ To compute orgasm resolution of (R - a drill pole trap):
 		let D be a random off-stage plentiful dong;
 		if D is nothing, now D is a random off-stage plentiful plug;
 		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
-		if R is penetrating vagina, summon D vaginally;
-		otherwise summon D;
-		now D is cursed;
+		if R is penetrating vagina, summon D cursed vaginally with quest;
+		otherwise summon D cursed with quest;
 	otherwise:
 		compute orgasm retraction of R.
 
@@ -472,6 +452,7 @@ To Jump From The Drill:
 			now X is not penetrating asshole;
 			now X is not penetrating vagina;
 			now X is expired;
+			compute upright fatigue gain;
 		otherwise:
 			if the player is very horny:
 				say "You're so desperate for an orgasm that you're finding it difficult to bring yourself to try to jump free. Try again?";
@@ -479,10 +460,15 @@ To Jump From The Drill:
 				say "The extreme spinning of the dildo has left you temporarily stunned and unable to move!  Try again?";
 			otherwise:
 				say "You're currently enjoying the feeling of the spinning dildo too much to bring yourself to jump off it. Try again?";
+			repeat with M running through reactive monsters:
+				say DrillStayTrapReactFlav of M;
 	otherwise:
 		say "You can no longer even attempt to gather your thoughts enough to jump from the spinning dildo. Even if you could, your body is now in a mixture of pain and ecstasy that you are now completely addicted to. The drilling rubber phallus forces you to have orgasm after shameful orgasm, but quickly your mind goes blank and you white out.";
 		now the fainting reason of the player is 17;
 		execute fainting.
+
+To say DrillStayTrapReactFlav of (M - a monster):
+	say LewdTrapReactFlav of M.
 
 Part 3 - Creampie Pole Trap
 
@@ -493,10 +479,13 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A creampie pole trap is a kind of dildo trap. There are 10 creampie pole traps. The printed name of creampie pole trap is "[TQlink of item described][if pregnancy fetish is 1]insemination[otherwise]creampie[end if] pole trap[TQxlink of item described][verb-desc of item described]". The description of a creampie pole trap is "A metal pole with a flesh coloured dildo on the end. It has a hole in the tip which shoots [semen] upon successful penetration.[one of]  It rises so high up off the ground that even on tip toes you can't get it out of your [if item described is vaginal][vagina]![otherwise][asshole]![end if][or]  Maybe if you [bold type]jump[roman type] high enough you can get off it?[or][stopping]". Understand "insemination" as a creampie pole trap.
+A creampie pole trap is a kind of dildo trap. There are 10 creampie pole traps. The printed name of creampie pole trap is "[TQlink of item described][if pregnancy fetish is 1]insemination[otherwise]creampie[end if] pole trap[TQxlink of item described][verb-desc of item described]".
+To say ExamineDesc of (C - a creampie pole trap):
+	let F be a random fuckhole penetrated by C;
+	say "A metal pole with a flesh coloured dildo on the end. It has a hole in the tip which shoots [semen] upon successful penetration[if F is fuckhole]. [one of]It rises so high up off the ground that even on tip toes you can't get it out of your [variable F]![or]Maybe if you [bold type]jump[roman type] high enough you can get off it?[or][stopping][otherwise].[end if]".
+Understand "insemination" as a creampie pole trap.
 
-Definition: a creampie pole trap (called M) is father material:
-	decide yes.
+Definition: a creampie pole trap is father material: decide yes.
 
 [!<TheSpawnInitialCreampiePoleTrapsRule>+
 
@@ -504,13 +493,35 @@ REQUIRES COMMENTING
 
 +!]
 This is the spawn initial creampie pole traps rule:
-	if diaper quest is 0:
-		repeat with N running from 1 to 4:
-			let R be a random untrapped trappable placed modern room;
-			let T be a random off-stage creampie pole trap;
-			unless there is a dildo trap in R, deploy T in R.
+	repeat with N running from 1 to 2:
+		let R be a random untrapped trappable placed modern room;
+		let T be a random off-stage creampie pole trap;
+		unless there is a dildo trap in R, deploy T in R.
 The spawn initial creampie pole traps rule is listed in the set up hotel traps rules.
 
+
+A creampie pole trap has a number called previous-cutscene.
+
+To get creampie cutscene of (Y - a creampie pole trap):
+	let R be a random number between 1 and 3;
+	if Y is penetrating vagina:
+		while R is the previous-cutscene of Y:
+			let R be a random number between 1 and 3;
+		if R is 1:
+			cutshow figure of creampie pole cutscene 1 for Y;
+		otherwise if R is 2:
+			cutshow figure of creampie pole cutscene 2 for Y;
+		otherwise:
+			cutshow figure of creampie pole cutscene 3 for Y;
+	if Y is penetrating asshole:
+		let R be a random number between 1 and 2;
+		while R is the previous-cutscene of Y:
+			let R be a random number between 1 and 2;
+		if R is 1:
+			cutshow figure of creampie pole cutscene 4 for Y;
+		otherwise:
+			cutshow figure of creampie pole cutscene 5 for Y;
+	now the previous-cutscene of Y is R.
 
 
 [!<CreampiePoleTrap>@<Trigger>+
@@ -522,25 +533,10 @@ To trigger (Y - a creampie pole trap):
 	trigger pole trap Y;
 	if Y is penetrating a fuckhole:
 		let B be the largeness of belly;
-		say "Your insides feel weird as the rubber toy shoots a gratuitous load of warm [semen] inside you!  This is [one of]some kind of[or]another[stopping] [if pregnancy fetish is 1]insemination[otherwise]creampie[end if] trap!";
-		if Y is penetrating vagina:
-			if image cutscenes is 1:
-				let R be a random number between 1 and 3;
-				if R is 1:
-					display figure of creampie pole cutscene 1;
-				otherwise if R is 2:
-					display figure of creampie pole cutscene 2;
-				otherwise:
-					display figure of creampie pole cutscene 3;
-			PussyFill 6;
-		if Y is penetrating asshole:
-			if image cutscenes is 1:
-				let R be a random number between 1 and 2;
-				if R is 1:
-					display figure of creampie pole cutscene 4;
-				otherwise:
-					display figure of creampie pole cutscene 5;
-			AssFill 6;
+		say "Your insides feel weird as the rubber toy shoots a gratuitous load of warm [semen] inside you! This is [one of]some kind of[or]another[stopping] [if pregnancy fetish is 1]insemination[otherwise]creampie[end if] trap!";
+		get creampie cutscene of Y;
+		if Y is penetrating vagina, PussyFill 6;
+		if Y is penetrating asshole, AssFill 6;
 		if the largeness of belly > B, say "You feel your belly physically expand.";
 	otherwise:
 		let X be a random worn top level protection clothing;
@@ -561,9 +557,8 @@ To compute orgasm resolution of (R - a creampie pole trap):
 		let D be a random off-stage dong;
 		if D is nothing or D is throbbing-tentacle, let D be a random off-stage plug;
 		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
-		if R is penetrating vagina, summon D vaginally;
-		otherwise summon D;
-		now D is cursed;
+		if R is penetrating vagina, summon D cursed vaginally with quest;
+		otherwise summon D cursed with quest;
 	otherwise:
 		compute orgasm retraction of R.
 
@@ -576,7 +571,9 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A ghostly dildo pole trap is a kind of dildo trap. There are 10 ghostly dildo pole traps. The printed name of ghostly dildo pole trap is "[TQlink of item described]ghostly dildo pole trap[TQxlink of item described][verb-desc of item described]". The description of a ghostly dildo pole trap is "A seemingly incorporeal pole with a translucent dildo on the end.".
+A ghostly dildo pole trap is a kind of dildo trap. There are 10 ghostly dildo pole traps. The printed name of ghostly dildo pole trap is "[TQlink of item described]ghostly dildo pole trap[TQxlink of item described][verb-desc of item described]".
+To say ExamineDesc of (C - a ghostly dildo pole trap):
+	say "A seemingly incorporeal pole with a translucent dildo on the end.".
 
 [!<TheSpawnInitialGhostlyDildoPoleTrapsRule>+
 
@@ -584,11 +581,10 @@ REQUIRES COMMENTING
 
 +@!]
 This is the spawn initial ghostly dildo pole traps rule:
-	if diaper quest is 0:
-		repeat with N running from 1 to 4:
-			let R be a random untrapped trappable placed haunted room;
-			let T be a random off-stage ghostly dildo pole trap;
-			unless there is a dildo trap in R, deploy T in R.
+	repeat with N running from 1 to 3:
+		let R be a random untrapped trappable placed haunted room;
+		let T be a random off-stage ghostly dildo pole trap;
+		unless there is a dildo trap in R, deploy T in R.
 The spawn initial ghostly dildo pole traps rule is listed in the set up mansion traps rules.
 
 [!<GhostlyDildoPoleTrap>@<Trigger>+
@@ -597,7 +593,7 @@ REQUIRES COMMENTING
 
 +@!]
 To trigger (Y - a ghostly dildo pole trap):
-	now the motion of the player is 0;
+	now the player-motion of the player is 0;
 	now the reset-timer of Y is 250;
 	if the player is prone:
 		say "A ghostly dildo on a pole shoots out of a trap door underneath you and passes straight through your body. That was weird...";
@@ -606,34 +602,23 @@ To trigger (Y - a ghostly dildo pole trap):
 		now Y is revealed;
 		let target-check be 0;
 		say "[bold type]A ghostly dildo on a pole shoots out of a trap door underneath you and towards your crotch![roman type][line break]";
-		if the player is a butt slut or the player is male, now Y is anal;
-		if Y is anal and asshole is actually occupied, now target-check is 2;
-		if Y is vaginal and vagina is actually occupied, now target-check is 2;
-		if target-check is 2:
-			say "The dildo forcefully bashes into your [if Y is anal][printed name of random thing filling asshole][otherwise][printed name of random thing filling vagina][end if], sending powerful vibrations flying through your sensitive hole!";
-			if Y is anal:
-				let P be a random thing filling asshole;
-				ruin asshole times 2;
-				if P is anal beads and the notch-taken of P < the notches of P:
-					increase the notch-taken of P by 1;
-					say "Another bead is forced inside!";
-			otherwise:
-				let P be a random thing filling vagina;
-				ruin vagina times 2;
+		let target-BP be asshole;
+		if the player is female and a random number between 1 and 2 is 1, now target-BP is vagina;
+		let O be a random top level protection clothing;
+		if target-BP is asshole, now O is a random top level ass protection clothing;
+		[Having an the orifice already occupied overrides all other checks]
+		if target-BP is actually occupied:
+			let P be a random thing filling target-BP;
+			say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [ShortDesc of P], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole[end if]!";
+			if P is not jelldo:
+				ruin target-BP times 2;
 				if P is anal beads and the notch-taken of P < the notches of P:
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
 		otherwise:
-			let O be a random top level protection clothing worn by the player;
-			[###Selkie: Should O also be damaged by this?]
-			if Y is anal:
-				now Y is penetrating asshole;
-				say "You gasp as the dildo goes straight [if O is clothing]through your [printed name of O], as if it wasn't there, and [end if]into your [asshole]!";
-				ruin asshole;
-			otherwise:
-				now Y is penetrating vagina;
-				say "You gasp as the dildo goes straight [if O is clothing]through your [printed name of O], as if it wasn't there, and [end if]into your [vagina]!";
-				ruin vagina.
+			now Y is penetrating target-BP;
+			say "You gasp as the dildo goes straight [if O is clothing]through your [ShortDesc of O], as if it wasn't there, and [end if]into your [variable target-BP]!";
+			ruin target-BP.
 
 [!<GhostlyDildoPoleTrap>@<ComputeOrgasmResolution>+
 
@@ -646,33 +631,11 @@ To compute orgasm resolution of (R - a ghostly dildo pole trap):
 		if D is nothing or D is throbbing-tentacle, let D be a random off-stage plug;
 		say "The dildo detaches from the pole as your knees buckle, solidifying completely into a [printed name of D] as you fall to the floor.";
 		sizeUp D by 1;
-		if R is penetrating vagina, summon D vaginally;
-		otherwise summon D;
-		now D is cursed;
+		if R is penetrating vagina, summon D cursed vaginally with quest;
+		otherwise summon D cursed with quest;
 	otherwise:
 		compute orgasm retraction of R.
 
-
-[New doll posing (ballerina initially) music box variables.]
-
-[doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to
- force you to pose like a little dolly.  In this case, the only such trap will be one that makes you pose
- like a ballerina - because you're wearing ballerina wearables.
- If it's set to "", it's a flag that you're not currently stuck like that.
- To be used in case we use some randomness to decide whether the 'pose' attack initiates.
- In this first implementation, it will always do it if you have two ballerina wearthings.
- I had to add doll-stuck-num, even though redundant, because you can't test 'if doll-stuck is ""' inside say "...".
- Aika has hijacked doll-stuck-num to count the turns the player has been impaled.
-    doll-stuck-num: Number of turns the player has been turning around, posed like a doll in a music box.
- doll-stuck-kind is used to record the kind of doll the dildo wants you to pose as:
- doll-stuck-kind:
-	0: Not doll stuck at all.
-	1: Ballerina.
-	2: TBD
-]
-doll-stuck is a text that varies.  doll-stuck is "". 
-doll-stuck-num is a number that varies.  doll-stuck-num is 0.
-doll-stuck-kind is a number that varies.  doll-stuck-kind is 0.
 
 Dildo Pole Trap ends here.
 

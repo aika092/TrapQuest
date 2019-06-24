@@ -1,12 +1,14 @@
 Royal Bed by Furniture begins here.
 
 
-royal bed is a kind of furniture. 1 royal bed is in Dungeon12. The printed name of royal bed is "[TQlink of item described]royal bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of royal bed is "[RoyalBedDesc]". royal bed is permanent fixture. The text-shortcut of royal bed is "ryb".
+royal bed is a kind of furniture. 1 royal bed is in Dungeon12. The printed name of royal bed is "[TQlink of item described]royal bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of royal bed is "ryb".
 
-To say RoyalBedDesc:
-	if images visible is 1, display figure of royal bed;
+To decide which figure-name is the examine-image of (C - a royal bed):
+	decide on figure of royal bed.
+
+To say ExamineDesc of (C - a royal bed):
 	say "A large pink four poster bed with pink drapes, fluffy pink pillows, and a luxurious pink duvet. [if diaper lover >= 1]On closer inspection, you realise that all the sheets are made of thin waterproof latex.[one of][line break][variable custom style]Is the person that sleeps here a bed-wetter?[roman type][line break][or][stopping][otherwise if the body soreness of the player is 0]It looks like an injured person could have a nice rest here.[otherwise]You get the feeling having a rest here would be great for your health![end if]".
-	
+
 Figure of royal bed is the file "Env/Dungeon/bed1.png".
 
 Check sleeping:
@@ -55,8 +57,8 @@ To compute furniture resting on (F - the royal bed):
 			now the bladder of the player is 0;
 			now N is bed wetting;
 		otherwise:
-			say "You instantly feel fully healed!  Magic!  [bold type]As you get up, a sheer nightie shimmers into being around your body.[roman type][line break][variable custom style]Ooh, I feel a bit lethargic now.[roman type][line break]";
-		summon N cursed;
+			say "You instantly feel fully healed! Magic! [bold type]As you get up, a sheer nightie shimmers into being around your body.[roman type][line break][variable custom style]Ooh, I feel a bit lethargic now.[roman type][line break]";
+		summon N cursed with quest;
 	otherwise:
 		say "You instantly feel fully healed!  Magic!  ";
 		if the size of penis > 10 - the delicateness of the player:
@@ -72,7 +74,7 @@ To compute furniture resting on (F - the royal bed):
 	now the body soreness of the player is 0;
 	now the stance of the player is 0;
 	if the fatigue of the player > the fatigue of the player / 2, now the fatigue of the player is the fatigue of the player / 2;
-	now seconds is 6.
+	allocate 6 seconds.
 
 
 

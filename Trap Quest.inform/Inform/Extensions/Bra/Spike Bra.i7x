@@ -4,7 +4,7 @@ A spike bra is a kind of bra. Figure of spike bra 1 is the file "Items/Clothes/U
 
 A pink spike bra is a kind of spike bra. A pink spike bra is usually cotton. The soak-limit of a pink spike bra is usually 18.
 
-There is 1 unique top-exclusive spike bra. There is 1 unique top-exclusive pink spike bra. The text-shortcut of spike bra is "spb".
+There is 1 unique spike bra. There is 1 unique pink spike bra. The text-shortcut of spike bra is "spb".
 
 To say ShortDesc of (B - a spike bra):
 	say "spike bra".
@@ -25,17 +25,22 @@ To decide which figure-name is clothing-image of (C - a pink spike bra):
 To say ClothingDesc of (C - a pink spike bra):
 	say "A lavender coloured bra with innocent looking flowers above dangerous looking spikes.".
 
-To decide which object is the potential-upgrade-target of (C - a pink spike bra):
+Definition: a pink spike bra is flower themed: decide yes.
+Definition: a pink spike bra is pink themed: decide yes.
+Definition: a pink spike bra is black themed: decide no.
+
+To decide which object is the unique-upgrade-target of (C - a pink spike bra):
 	decide on a random off-stage spike bra.
 
-Definition: a spike bra (called C) is product:
-	decide yes.
+Definition: a spike bra is black themed: decide yes.
+Definition: a spike bra is disintegration-protected: decide yes.
+Definition: a spike bra is uncovered themed: decide yes.
+Definition: a spike bra is product: decide yes.
 
 To decide which number is the alchemy key of (C - a spike bra):
 	decide on 14.
 
-Definition: a spike bra (called C) is recipe specific:
-	decide yes.
+Definition: a spike bra is recipe specific: decide yes.
 
 This is the spike bra specific recipe rule:
 	now the Product in row 26 of the Table of Alchemy is 14;
@@ -46,7 +51,7 @@ This is the spike bra specific recipe rule:
 		now the Product in row 24 of the Table of Alchemy is 14;
 		now the Recipe in row 24 of the Table of Alchemy is 1;
 		now the Product in row 25 of the Table of Alchemy is 14;
-		now the Recipe in row 25 of the Table of Alchemy is 1.	
+		now the Recipe in row 25 of the Table of Alchemy is 1.
 The spike bra specific recipe rule is listed in the specific recipe rules.
 
 To compute recipe specific cursing of (T - a spike bra):
@@ -79,7 +84,7 @@ To compute periodic effect of (B - a spike bra):
 		Dignify 200.
 
 To decide which number is the initial outrage of (C - a spike bra):
-	decide on 6.
+	decide on 5.
 
 To decide which number is the initial outrage of (C - a pink spike bra):
 	decide on 1.

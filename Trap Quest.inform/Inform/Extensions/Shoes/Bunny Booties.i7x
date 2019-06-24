@@ -2,7 +2,7 @@ Bunny Booties by Shoes begins here.
 
 bunny booties is a shoes. bunny booties is cotton. bunny booties is unique.
 
-The printed name of bunny booties is "[TQlink of item described][item style][clothing-title-before]pair of bunny booties[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of bunny booties is "bub".
+The printed name of bunny booties is "[clothing-title-before]pair of bunny booties[clothing-title-after]". The text-shortcut of bunny booties is "bub".
 
 To decide which figure-name is the clothing-image of (H - bunny booties):
 	decide on the figure of bunny booties.
@@ -27,10 +27,8 @@ To decide which number is the dexterity-influence of (C - bunny booties):
 To set up influence of (C - bunny booties):
 	now C is diaper-addiction-influencing.
 
-Definition: bunny booties (called C) is untransformable:
-	decide yes.
-
-Definition: a bunny booties (called C) is baby themed: [Is it something that only an adult baby fetishist would have?]
-	decide yes.
+Definition: bunny booties is transformation-protected: decide yes.
+Definition: bunny booties is brown themed: decide yes.
+Definition: bunny booties is baby themed: decide yes.
 
 Bunny Booties ends here.
