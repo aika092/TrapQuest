@@ -5,5 +5,5 @@
 Partially redacted public version of the source code for the indie adult roguelike game.
 
 Read this first:
-https://github.com/aika092/TrapQuest/wiki/Getting-Started
+https://github.com/aika092/TrapQuest/wiki/
 
