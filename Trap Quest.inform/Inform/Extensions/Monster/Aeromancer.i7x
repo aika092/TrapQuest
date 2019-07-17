@@ -1197,7 +1197,7 @@ To compute aeromancer science of (M - confident aeromancer):
 	otherwise: [Selkie: it'd be sweet if she could add a step or two to a latex-doll transformation that was underway]
 		say "A beam flies straight from her wand to your face!";
 		if a random number between 1 and 3 > 1 and (the raw largeness of hair + 1) < max hair length:
-			say "Your hair grows and rapidly shifts in color!";
+			say "Your hair grows and rapidly shifts in colour!";
 			HairUp 2;
 		if a random number between 1 and 3 > 1 and the make-up of face < 3:
 			say "Your make up gets thicker!";

@@ -530,7 +530,7 @@ Definition: hair (called XXX) is fairy targetable:
 	decide no.
 
 To compute fairy meddling on (XXX - hair):
-	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as she does. She turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue-fairy] and tingle as it changes color[end if].";
+	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as she does. She turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue-fairy] and tingle as it changes colour[end if].";
 	if current-monster is blue-fairy:
 		if the brightness of hair < 3:
 			HairBrightUp 1;
@@ -953,7 +953,7 @@ To say WhereAnswer of (M - blue-fairy):
 	alwayscutshow figure of fairy interact 11 for M.
 
 To say StoryAnswer of (M - blue-fairy):
-	say "[speech style of M]'[one of][if pregnancy fetish is 1]I make humans look sexier so they're more fun to get knocked up! Isn[']t that fun?'[otherwise]I like big boobies, and the best way to see some boobies is messing with people!'[end if][or]A long time ago, I figured out humans [if pregnancy fetish is 1]get inseminated more if they look hotter[otherwise]have the best boobies[end if], except that ugly altar witch. It changed everything for me!'[or]I think I'm a princess or something. Mostly I just like to have lots of fun messing with people!'[or]My favorite color is blue, so I'm blue. And my favorite things are boobs, so I play with boobs! Teehee!'[at random][roman type][line break]";
+	say "[speech style of M]'[one of][if pregnancy fetish is 1]I make humans look sexier so they're more fun to get knocked up! Isn[']t that fun?'[otherwise]I like big boobies, and the best way to see some boobies is messing with people!'[end if][or]A long time ago, I figured out humans [if pregnancy fetish is 1]get inseminated more if they look hotter[otherwise]have the best boobies[end if], except that ugly altar witch. It changed everything for me!'[or]I think I'm a princess or something. Mostly I just like to have lots of fun messing with people!'[or]My favourite colour is blue, so I'm blue. And my favourite things are boobs, so I play with boobs! Teehee!'[at random][roman type][line break]";
 	alwayscutshow figure of fairy interact 8 for M.
 
 To set up (M - blue-fairy):

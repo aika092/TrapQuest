@@ -633,7 +633,7 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 		if the player is bimbo consenting:
 			say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit lightheaded. [severeHumiliateReflect]";
 			if the semen volume of belly + the urine volume of belly > 0:
-				say "Then, all of a sudden, you and the other students all been squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing and gagging.";
+				say "Then, all of a sudden, you and the other students all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing and gagging.";
 				StomachSemenUp (the semen volume of belly + 1) / 2;
 				StomachUp (the total fluid fill of belly - the semen volume of belly) / 2;
 				if the urine volume of belly > 0, UrineTasteAddictUp 1;

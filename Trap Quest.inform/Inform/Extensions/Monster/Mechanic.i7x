@@ -41,7 +41,7 @@ To say MonsterComment of (M - mechanic):
 		do nothing;
 	otherwise if the bimbo of the player < 4 and the player is male:[Originally this was one big block, but it was impossible to debug so now it's separated.]
 		if lady fetish is 1:
-			say "[first custom style][one of]She's not just hot, she's got style too![or]She doesn't seem like my type.[or]I bet she's the one behind all the robots. Looks like I'll have to work my magic on her.'[or][big he of M] looks like the star in some cheap porn movie, but that's my favorite kind![in random order][roman type][line break]";
+			say "[first custom style][one of]She's not just hot, she's got style too![or]She doesn't seem like my type.[or]I bet she's the one behind all the robots. Looks like I'll have to work my magic on her.'[or][big he of M] looks like the star in some cheap porn movie, but that's my favourite kind![in random order][roman type][line break]";
 		otherwise:
 			say "[first custom style][one of]Where did he get those clothes? He looks awesome!'[or]Seems like a normal dude. I wonder how he managed to get this far?[or]He must be the one responsible for all the robots I[']ve been seeing. Maybe he knows a way to turn them off?'[or]He looks like the male star in a cheap porn movie, but it's probably better than walking around in a skirt![in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 4:

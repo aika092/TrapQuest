@@ -680,7 +680,7 @@ To compute damage of (M - a tentacle monster):
 		compute death of M.
 
 To compute unique death of (M - a tentacle monster):
-	say "[if the evolved of M is 3][BigNameDesc of M] has lost the last of its energy, and its powerful limbs fall to the ground with a thud. Its white color fades to black, and the body slowly melts away into nothingness[otherwise][BigNameDesc of M] has lost the last of its energy, and its powerful limbs fall to the ground with a thud. Its single eye closes and then the body slowly melts away into nothingness[end if].";
+	say "[if the evolved of M is 3][BigNameDesc of M] has lost the last of its energy, and its powerful limbs fall to the ground with a thud. Its white colour fades to black, and the body slowly melts away into nothingness[otherwise][BigNameDesc of M] has lost the last of its energy, and its powerful limbs fall to the ground with a thud. Its single eye closes and then the body slowly melts away into nothingness[end if].";
 	if M is massive, loot M;
 	if M is newborn:
 		MagicPowerUp 1;
