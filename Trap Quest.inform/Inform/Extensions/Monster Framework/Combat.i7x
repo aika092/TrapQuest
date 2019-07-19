@@ -685,7 +685,7 @@ Definition: a monster (called M) is able to remove plugs: [Can the monster remov
 This is the default monster convinced rule:
 	if presented-orifice is a reasonable target:
 		if a random number between -1 and the charisma of the player >= 0:
-			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 			say "[PresentAcceptanceFlav of current-monster]";
 			rule succeeds;
 		otherwise if (presented-orifice is face or presented-orifice is belly) and current-monster is intelligent and there is a worn tongue piercing:

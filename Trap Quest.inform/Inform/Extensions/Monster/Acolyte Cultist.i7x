@@ -233,7 +233,7 @@ To compute perception of (M - an acolyte):
 
 To compute appearance assessment of (M - clairvoyant acolyte):
 	if mystical amulet is worn:
-		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic[end if]. You could gain great favor from the [great one]s were you to gift it to them at their altar.'";
+		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic[end if]. You could gain great favour from the [great one]s were you to gift it to them at their altar.'";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I knew you were coming, sister.'[or]Sister, do you come for a prophecy?'[or]The Herald will arrive soon, sister. Why do you waste time?'[at random]";
 	otherwise:

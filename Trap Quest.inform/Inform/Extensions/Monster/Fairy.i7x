@@ -574,7 +574,7 @@ This is the fairy tries meddling rule:
 	if B is body part:
 		let M be current-monster;
 		unless current-monster is fairyDistracted, compute fairy meddling on B;
-		otherwise say "[BigNameDesc of current-monster] [one of]is so busy talking to you that [he of M] doesn't immediatley mess with you.[or]briefly forgets to mess with you.[at random]";
+		otherwise say "[BigNameDesc of current-monster] [one of]is so busy talking to you that [he of M] doesn't immediately mess with you.[or]briefly forgets to mess with you.[at random]";
 		rule succeeds.
 The fairy tries meddling rule is listed last in the fairy attack rules.
 

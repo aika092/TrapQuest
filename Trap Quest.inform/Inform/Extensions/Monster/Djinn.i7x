@@ -546,7 +546,7 @@ This is the djinn monster convinced rule:
 
 This is the djinn friendly convinced rule:
 	if presented-orifice is a reasonable target and (the refactory-period of current-monster <= 0 or (presented-orifice is face and the wish history of current-monster is 2)):
-		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say "[PresentFriendlyAcceptanceFlav of current-monster]";
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:

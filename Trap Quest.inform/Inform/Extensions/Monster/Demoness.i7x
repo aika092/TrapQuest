@@ -1048,7 +1048,7 @@ This is the demoness friendly convinced rule:
 				FavourDown M;
 			Bore M;
 	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 0:
-		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say PresentFriendlyAcceptanceFlav of M;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:

@@ -173,10 +173,10 @@ To compute periodic effect of (G - gem-strapon):
 		if the strap-length of G > 5:
 			say "The gemstones covering your strap-on lose some of their brightness, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 		otherwise if the strap-length of G < 5:
-			say "The gemstones covering your strap-on regain some of their color, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
+			say "The gemstones covering your strap-on regain some of their colour, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 	otherwise if the strap-length of G > 3:
 		now the strap-length of G is 3;
-		say "The gemstones covering your strap-on lose almost all of their color, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
+		say "The gemstones covering your strap-on lose almost all of their colour, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 
 
 
