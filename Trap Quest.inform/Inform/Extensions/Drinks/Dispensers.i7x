@@ -134,7 +134,7 @@ To say ShortDesc of (C - a bucket):
 
 [!<RefillDispenser>+
 
-Assigns a fill color to a dispenser based on the value of its integer argument.
+Assigns a fill colour to a dispenser based on the value of its integer argument.
 
 @param<Dispenser>:<C> A dispenser, to be assigned a fill-colour
 @param<Integer>:<N> A number representing a fill-colour
@@ -214,7 +214,7 @@ To say ExamineDesc of (D - an alchemical vat):
 	say "A huge wrought iron vat, resting on the floor between two counters. You can reach into it if you stretch your arm, but it would be pretty challenging to drink from directly. [run paragraph on]";
 	if the doses of D > 0:
 		let X be the fill-type of D;
-		say "[if the doses of D < 3]The nearly empty vat contains [end if][if the doses of D is 3]The mostly empty vat contains [end if][if the doses of D is 4]The half full vat contains [end if][if the doses of D is 5]The over halfway full vat contains [end if][if the doses of D is 6]The mostly full vat contains [end if][if the doses of D is 7]The nearly full vat contains [end if][if the doses of D is 8]The tank is completely full of [end if] murky liquid, which doesn't seem to remain one color for more than a couple moments.";
+		say "[if the doses of D < 3]The nearly empty vat contains [end if][if the doses of D is 3]The mostly empty vat contains [end if][if the doses of D is 4]The half full vat contains [end if][if the doses of D is 5]The over halfway full vat contains [end if][if the doses of D is 6]The mostly full vat contains [end if][if the doses of D is 7]The nearly full vat contains [end if][if the doses of D is 8]The tank is completely full of [end if] murky liquid, which doesn't seem to remain one colour for more than a couple moments.";
 	otherwise:
 		say "It is empty anyway.".
 

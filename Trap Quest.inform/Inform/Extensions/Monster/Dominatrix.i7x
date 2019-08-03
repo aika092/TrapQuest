@@ -619,7 +619,7 @@ This is the dominatrix friendly convinced rule:
 		if current-monster is not retaining a plentiful accessory or the sex-length of current-monster < 1[ or the number of cots in the location of the player is 0]:[Has the player paid yet? If they have had a session already, did they pay for that one?]
 			say "[PresentFriendlyRejectionFlav of current-monster]";
 		otherwise:
-			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 			say "[PresentFriendlyAcceptanceFlav of current-monster]";
 			rule succeeds;
 	otherwise if presented-orifice is not nothing:

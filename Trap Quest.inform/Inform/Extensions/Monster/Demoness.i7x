@@ -1048,7 +1048,7 @@ This is the demoness friendly convinced rule:
 				FavourDown M;
 			Bore M;
 	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 0:
-		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say PresentFriendlyAcceptanceFlav of M;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
@@ -1385,7 +1385,7 @@ To say RepeatResponse of (M - a demoness):
 		otherwise:
 			say "[speech style of M]'[one of]All mortals are beneath me, but especially vermin like you.'[or]If you are not intimidated by me already, I'll fix that.'[or]Addressing me directly... you[']ll suffer for that.'[or]I will cook your soul at a slow burn, mortal.'[or]The power of speech is wasted on creatures like you.'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Hi. Know any weaklings I can crush? I[']m getting a bit bored.'[or]Hey. Do me a favor and don't give that witch anything.'[or]Hey there. Tell Xavier I said hi. You[']ll know him when you see him.'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]Hi. Know any weaklings I can crush? I[']m getting a bit bored.'[or]Hey. Do me a favour and don't give that witch anything.'[or]Hey there. Tell Xavier I said hi. You[']ll know him when you see him.'[at random][roman type][line break]".
 
 To say SubmissiveResponse of (M - a demoness):
 	if M is unfriendly, say "[speech style of M]'[one of]Hmm, strange decision to show your face here again.'[or]Ready to get tortured again, are we?'[or]Hahaha... your eagerness for punishment [please]s me!'[or]I won't make you bleed... but you'll wish I did.'[at random][roman type][line break]";

@@ -452,7 +452,7 @@ A time based rule (this is the compute brood rule):
 				destroy E;
 			otherwise:
 				let W be a random off-stage wasp-cloud;
-				say "You watch in amazement as a white egg changes color to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognize you as their mother!";
+				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognize you as their mother!";
 				summon W;
 				now the swarm of W is 3;
 				now total-wasps is 3;
