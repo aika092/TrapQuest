@@ -120,7 +120,7 @@ Check urinating:
 					say "Do you really want to try to pee inside your [printed name of P]? ";
 					if the player is bimbo consenting, say "";
 					otherwise say "Then you should probably get it out of the way first." instead;
-			otherwise:
+			otherwise if P is clothing:
 				say "Do you want to get your clothes out of the way first? ";
 				if the player is bimbo consenting:
 					repeat with C running through worn pee covering clothing:
@@ -422,35 +422,39 @@ To compute pee protected urination:
 		let K be a random worn bottom level soakable pee protection clothing;
 		let oldSoak be 99;
 		unless K is nothing, let oldSoak be the urine-soak of K;
-		let flav-said be 0;
 		let N be 6;
 		if the bladder of the player < 6, now N is the bladder of the player;
 		if the bladder of the player > 12 and K is clothing and the bladder of the player >= the soak-limit of K, now N is the soak-limit of K - the total-soak of K; [Fill up the underwear in one turn if this is going to take forever]
-		repeat with X running from 1 to N:
-			if K is nothing:
-				if resting is 1 and there is a hotel bed in the location of the player:
-					if flav-said is 0, say "Your [urine] soaks into the sheets and mattress.";
-					now a random hotel bed in the location of the player is soggy;
+		if K is portal-pants:
+			say "Your [urine] flows out of your [genitals][run paragraph on]";
+			Squirt urine on K by N;
+		otherwise:
+			let flav-said be 0;
+			repeat with X running from 1 to N:
+				if K is nothing:
+					if resting is 1 and there is a hotel bed in the location of the player:
+						if flav-said is 0, say "Your [urine] soaks into the sheets and mattress.";
+						now a random hotel bed in the location of the player is soggy;
+					otherwise:
+						UrinePuddleUp 1;
+						if flav-said is 0, say "Your [urine] drips through your clothing and onto the ground.";
 				otherwise:
-					UrinePuddleUp 1;
-					if flav-said is 0, say "Your [urine] drips through your clothing and onto the ground.";
-			otherwise:
-				if flav-said is 0, say "Your [urine] flows into your [ShortDesc of K][unless K is fluid immune or K is diaper], soaking it[end if].";
-				UrineSoakUp K by 1;
-				if K is diaper and there is a worn I love my wet nappies T-shirt and the diaper addiction of the player > 10, appropriate-cutscene-display figure of wet nappies diaper cutscene 1;
-				if K is cursed diaper and the location of the player is toilets, appropriate-cutscene-display figure of toilet diaper cutscene 1;
-				if K is diaper and the location of the player is UrinalBlindfolded and the class of the player is human toilet, appropriate-cutscene-display figure of human toilet diaper cutscene 1;
-				let sK be a random worn bottom level soakable pee protection clothing;
-				if K is not sK and X < N:
-					say urinationoverflow of K;
-					now overflowed is 1;
-					if diaper lover >= 1:
-						let H be a random off-stage victorian-baby-bonnet;
-						if H is actually summonable:
-							say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet!";
-							summon H cursed;
-					now K is sK;
-			now flav-said is 1;
+					if flav-said is 0, say "Your [urine] flows into your [ShortDesc of K][unless K is fluid immune or K is diaper], soaking it[end if].";
+					UrineSoakUp K by 1;
+					if K is diaper and there is a worn I love my wet nappies T-shirt and the diaper addiction of the player > 10, appropriate-cutscene-display figure of wet nappies diaper cutscene 1;
+					if K is cursed diaper and the location of the player is toilets, appropriate-cutscene-display figure of toilet diaper cutscene 1;
+					if K is diaper and the location of the player is UrinalBlindfolded and the class of the player is human toilet, appropriate-cutscene-display figure of human toilet diaper cutscene 1;
+					let sK be a random worn bottom level soakable pee protection clothing;
+					if K is not sK and X < N:
+						say urinationoverflow of K;
+						now overflowed is 1;
+						if diaper lover >= 1:
+							let H be a random off-stage victorian-baby-bonnet;
+							if H is actually summonable:
+								say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet!";
+								summon H cursed;
+						now K is sK;
+				now flav-said is 1;
 		if oldSoak is 0 and K is worn diaper and the urine-soak of K > 0:
 			if royal scepter is worn:
 				say "Your [royal scepter] shines brightly! It feels like it has gained some power that will decay over time.";
@@ -591,7 +595,23 @@ To say urinationoverflow of (K - a diaper):
 	say "But your poor diaper is so completely full for your [urine] that it can't hold any more! You feel the diaper overflow through the leg holes.".
 
 To check piss maidification:
-	if the class of the player is not maid and (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is actually summonable)):
+	if the class of the player is maid:
+		say "[bold type]Your [ShortDesc of a random worn maid headdress] causes you to feel deep shame at causing messes rather than cleaning them![roman type][line break]";
+		if watersports fetish is 1 and bukkake fetish is 1 and a random number between 1 and 2 is 1:
+			say "A bucket full of [urine] appears above your head, and tips over, dousing you in the warm golden stuff.";
+			Squirt urine on face by 40;
+		otherwise if watersports fetish is 1:
+			let N be the number of carried vessels;
+			if N > 0:
+				say "Your [if N is 1][ShortDesc of a random carried vessel] is[otherwise]drinking vessels are all[end if] filled to the brim with [urine]!";
+				repeat with V running through carried vessels:
+					now the fill-colour of V is golden;
+					now the doses of V is the max-doses of V;
+			compute service spill punishment;
+		otherwise if the player is not incontinent:
+			say "You feel a twinge from behind your bladder, as if it is punishing you by making you gradually more incontinent...";
+			increase incontinence by 1;
+	otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is actually summonable)):
 		let C be a random pink spraybottle;
 		compute maidification of C;
 		say "A [C] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
@@ -622,6 +642,7 @@ Definition: yourself is incontinent:
 To decide which number is bladder-risky-level:
 	let N be 10;
 	decrease N by the incontinence of the player;
+	decrease N by the womb volume of vagina / 10;
 	increase N by yellow theme bonus;
 	if N < 4, decide on 4;
 	decide on N.

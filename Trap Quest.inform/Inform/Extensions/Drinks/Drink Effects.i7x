@@ -57,7 +57,7 @@ To compute default cursed drinking (X - a bottle):
 			say "You feel your hips try to widen!";
 			HipUp 1;
 	if R is 7:
-		say "You feel awful!  You're a little weaker, slower and can't think as clearly...";
+		say "You feel awful! You're a little weaker, slower and can't think as clearly...";
 		StrengthDown 1;
 		DexDown 1;
 		IntDown 1;
@@ -96,7 +96,7 @@ To compute drinking (X - a bottle):
 			now the curse-ID of X is sure;
 		otherwise if X is gold chalice and X is not cursed:
 			if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
-			otherwise say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping]  ";
+			otherwise say "[one of]Ugh, this does not taste nice at all. A cursed drink?[or]Another cursed drink. Nasty![or]Another cursed drink. Eww![or]Another cursed drink. How many are there?![or]Another cursed drink. Fuck![stopping] ";
 			say "Luckily, the gold chalice seems to somehow absorb the curse!";
 			now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
 			curse X;
@@ -151,7 +151,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 2):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste.  [otherwise]More thick sanity potion. Excellent! [end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. [otherwise]More thick sanity potion. Excellent! [end if]";
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
 	if thickDrinkTick is 0:
 		now thickDrinkTick is 1;
@@ -182,8 +182,8 @@ REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 4):
-	if diaper quest is 1, say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another stabilising drink. Lovely!  [end if]";
-	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely!  [end if]";
+	if diaper quest is 1, say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another stabilising drink. Lovely! [end if]";
+	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely! [end if]";
 	if diaper quest is 1:
 		if incontinence < 10 and incontinence > a random number between 0 and 4:
 			say "You feel slightly more in control of your bodily functions.";
@@ -230,8 +230,8 @@ REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 6):
-	if the Known corresponding to an Magic of N in the Table of Drinks is 0, say "Mmm, tastes like medicine!  ";
-	otherwise say "More soothing medicine!  ";
+	if the Known corresponding to an Magic of N in the Table of Drinks is 0, say "Mmm, tastes like medicine! ";
+	otherwise say "More soothing medicine! ";
 	say "You feel [if the soreness of asshole > 0 or the soreness of vagina > 0]less sore[end if][if (the soreness of asshole > 0 or the soreness of vagina > 0) and the arousal of the player >= 3000] and [end if][if the arousal of the player >= 3000]a bit less aroused[end if][if the soreness of asshole <= 0 and the soreness of vagina <= 0 and the arousal of the player < 3000]vaguely more clear-headed[end if].";
 	heal asshole times 3;
 	heal vagina times 3;
@@ -243,7 +243,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 7):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]This drink fizzes and bubbles in your mouth!  [otherwise]Another magic bubbly drink![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]This drink fizzes and bubbles in your mouth! [otherwise]Another magic bubbly drink![end if]";
 	let C be a random positive-magic-enhanceable in-play clothing;
 	if C is in the location of the player or C is held:
 		say "You see the [C] glow blue for a moment as it turns into a ";
@@ -273,7 +273,7 @@ REQUIRES COMMENTING
 +!]
 To compute drinking effect (N - 20):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
-		say "A slimy feel, and a bitter salty taste. [if the semen taste addiction of the player < 6]Yuck!  Your worst fears are confirmed, you just drank someone's [semen]![otherwise if the semen taste addiction of the player < 10]Holy shit, this drink is someone's [semen]![otherwise if the semen taste addiction of the player < 13]Oh, looks like you're drinking someone's [semen]!  It's actually quite tasty though.[otherwise]Oh yay, it's your favourite drink, some unknown stud's [semen]![end if]";
+		say "A slimy feel, and a bitter salty taste. [if the semen taste addiction of the player < 6]Yuck! Your worst fears are confirmed, you just drank someone's [semen]![otherwise if the semen taste addiction of the player < 10]Holy shit, this drink is someone's [semen]![otherwise if the semen taste addiction of the player < 13]Oh, looks like you're drinking someone's [semen]! It's actually quite tasty though.[otherwise]Oh yay, it's your favourite drink, some unknown stud's [semen]![end if]";
 	otherwise:
 		say "A slimy feel, and a bitter salty taste. Yep, that's some more [semen], [if the semen taste addiction of the player < 6]yuck![otherwise if the semen taste addiction of the player < 10]how naughty.[otherwise if the semen taste addiction of the player < 13]not bad.[otherwise]your favourite drink![end if]";
 	StomachSemenUp 1;
@@ -286,7 +286,7 @@ REQUIRES COMMENTING
 +!]
 To compute drinking effect (N - 21):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
-		if the urine taste addiction of the player < 10, say "A very bitter taste. Yuck, yuck, yuck, it's [urine]![one of]  You feel completely humiliated[if the humiliation of the player > 22500], which of course just turns you on even more[end if].[or].[or].[in random order]";
+		if the urine taste addiction of the player < 10, say "A very bitter taste. Yuck, yuck, yuck, it's [urine]![one of] You feel completely humiliated[if the humiliation of the player > 22500], which of course just turns you on even more[end if].[or].[or].[in random order]";
 		otherwise say "A very bitter taste. Ooh yum, it's [urine]!";
 	otherwise:
 		say "You close your eyes and drink the [if the urine taste addiction of the player > 11]tasty [end if][urine]. [if the urine taste addiction of the player < 7]You shudder with shame and disgust.[otherwise if the urine taste addiction of the player < 13]You catch yourself licking your lips afterwards![otherwise]You lick your lips with glee.[end if]";
@@ -301,7 +301,7 @@ REQUIRES COMMENTING
 +!]
 To compute drinking effect (N - 22):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
-		say "A very familiar taste. Oh nice, it's [milk]!  That must be healthy.";
+		say "A very familiar taste. Oh nice, it's [milk]! That must be healthy.";
 	otherwise:
 		say "Another healthy gulp of [milk]. Yum!";
 	increase the fat-burning of the player by 250;
@@ -315,7 +315,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute drinking effect (N - 23):
-	say "You close your eyes and drink the mix of liquids.[one of]  You cringe and shudder in shame[if the humiliation of the player > 29500], which of course just turns you on even more[end if].[or].[or].[in random order]";
+	say "You close your eyes and drink the mix of liquids.[one of] You cringe and shudder in shame[if the humiliation of the player > 29500], which of course just turns you on even more[end if].[or].[or].[in random order]";
 	humiliate 250;
 	StomachSemenUp 1;
 	if lactation fetish is 1, increase the fat-burning of the player by 250.

@@ -104,8 +104,10 @@ To compute labour to (M - a fairy):
 			DexUp 1;
 			IntDown 1;
 		if M is not the father, now M is the father;[She may not have been the one to impregnate you, but she still "delivered" the baby!]
+	otherwise if M is alive:
+		Delay Labour;
 	otherwise:
-		Delay Labour.
+		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break]You are filled with a desire to [if Woods01 is discovered]return to[otherwise]find[end if] the Woods.".
 
 To say NonAliveFatherBirthFlav of (M - a fairy):
 	say "[if playerRegion is Woods]You should probably make sure the exit to your vagina is clear[otherwise]Something tells you that you should return to the Woods[end if]!".

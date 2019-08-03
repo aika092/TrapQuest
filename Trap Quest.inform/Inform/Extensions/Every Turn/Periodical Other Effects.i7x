@@ -92,10 +92,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	[Spawning and buffing of weak enemies]
 	if the remainder after dividing local-earnings by 413 < local-seconds:
 		let P be a random alive prison guard;
-		if there is worn locked clothing:
-			if P is prison guard:
+		if (ex-princess is caged and skeleton key is not in-play) or there is worn locked clothing:
+			if P is prison guard and there is worn locked clothing:
 				decrease the sentence of P by 2;
-			otherwise:
+			otherwise if P is not prison guard:
 				let M be a random off-stage prison guard;
 				if M is monster:
 					set up M;

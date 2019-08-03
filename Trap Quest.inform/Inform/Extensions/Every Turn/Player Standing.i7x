@@ -31,7 +31,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself (called Y) is tired:
-	if the fatigue of the player > the tired threshold of the player, decide yes;
+	if the fatigue of the player >= the tired threshold of the player, decide yes;
 	decide no.
 
 [!<PersonIsVeryTired>+
@@ -40,7 +40,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself (called Y) is very tired:
-	if the fatigue of the player > the very tired threshold of the player, decide yes;
+	if the fatigue of the player >= the very tired threshold of the player, decide yes;
 	decide no.
 
 [!<DecideWhichNumberIsTheFatigueInfluenceOfClothing>+

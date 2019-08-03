@@ -19,6 +19,9 @@ To decide which number is the slap damage of (P - a person):
 	if thorny tattoo is worn:
 		increase A by 1;
 		if damage-explained > 1, say "+1 (thorny tattoo) ";
+	if wasp sting tattoo is worn:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (wasp tattoo) ";
 	now punch is 0;
 	let S be a random worn slap ready equippable;
 	if S is equippable:
@@ -111,6 +114,9 @@ Understand "slap [something]", "hit [something]", "punch [something]", "slash [s
 To decide which number is the zap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base zap damage calculation: [bracket]0 (base damage) ";
 	let A be 0;
+	if fire palm tattoo is worn:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (fire palm tattoo) ";
 	if currentZapper is not yourself:
 		let N be the damage improvement of currentZapper;
 		increase A by N;

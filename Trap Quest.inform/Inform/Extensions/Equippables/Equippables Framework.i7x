@@ -41,6 +41,41 @@ Part 1 - Gloves
 
 A gloves is a kind of equippable. A gloves is usually slap ready. Understand "pair", "pair of", "glove" as gloves.
 
+
+tongue-gloves is a gloves. tongue-gloves is unique. tongue-gloves is biological. The printed name of tongue-gloves is "[clothing-title-before]tongue gloves[clothing-title-after]". The text-shortcut of tongue-gloves is "tgvs". Understand "tongue", "gloves" as tongue-gloves.
+
+Figure of white tongue gloves is the file "Items/Accessories/Equippables/tonguegloves1a.png".
+Figure of tonguing white tongue gloves is the file "Items/Accessories/Equippables/tonguegloves1b.png".
+Figure of black tongue gloves is the file "Items/Accessories/Equippables/tonguegloves2a.png".
+Figure of tonguing black tongue gloves is the file "Items/Accessories/Equippables/tonguegloves2b.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-gloves):
+	if tonguesBlack is true:
+		if C is tonguing, decide on figure of tonguing black tongue gloves;
+		decide on figure of black tongue gloves;
+	otherwise:
+		if C is tonguing, decide on figure of tonguing white tongue gloves;
+		decide on figure of white tongue gloves.
+
+To say ClothingDesc of (C - tongue-gloves):
+	say "A pair of [tonguesColour] gloves that nearly reach your armpit, with tongues for laces. [TongueStatus of C]".
+
+To say ShortDesc of (C - tongue-gloves):
+	say "pair of tongued gloves".
+
+Definition: tongue-gloves is demonic: decide yes.
+Definition: tongue-gloves is tongued: decide yes.
+Definition: tongue-gloves is transformation-protected: decide yes.
+Definition: tongue-gloves is white themed if tonguesBlack is false.
+Definition: tongue-gloves is black themed if tonguesBlack is true.
+
+To decide which number is the initial outrage of (C - tongue-gloves):
+	if C is tonguing, decide on 14;
+	decide on 4.
+
+
+
+
 Part 2 - Wands
 
 A vibe-wand is a kind of equippable. A vibe-wand is usually zap ready. Understand "vibe", "vibrator", "wand", "vibrating" as vibe-wand. A vibe-wand is usually projectile. A vibe-wand is usually plastic.

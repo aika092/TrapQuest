@@ -30,6 +30,8 @@ To decide which number is the sex-addiction-influence of (C - a clothing):
 		decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 		if diaper quest is 0, decide on S + the bimbo-influence of C;
 		decide on S;
+	otherwise if C is tongued and C is black themed:
+		decide on -1;
 	if diaper quest is 0, decide on the bimbo-influence of C;
 	decide on 0.
 

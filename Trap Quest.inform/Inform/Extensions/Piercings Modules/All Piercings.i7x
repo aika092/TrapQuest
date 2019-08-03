@@ -6,6 +6,7 @@ A piercing is a kind of clothing. A piercing is usually unique. A piercing is us
 Definition: a piercing is removable: decide no. [Some clothing can never be removed, even by monsters.]
 Definition: a piercing is magic-enhanceable: decide no.
 Definition: a piercing is destructible: decide no.
+The transform-resistance of a piercing is usually 1.
 
 Check taking off piercing:
 	say "That's permanently welded into your skin!" instead. [We don't use the removability rules so that we can define custom phrases]
@@ -442,6 +443,7 @@ The crotch module pussy slut rule is listed in the pussy slut eligibility rules.
 
 
 A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
+The transform-resistance of a pair of earrings is usually 0.
 
 Definition: a pair of earrings is toilet themed if it is cursed and watersports fetish is 1.
 Definition: a pair of earrings is interracial themed if it is cursed and watersports fetish is 0.
@@ -472,7 +474,9 @@ To decide which number is the initial outrage of (C - a pair of earrings):
 	decide on 6.
 
 To decide which object is the concealer of (C - a pair of earrings):
-	decide on a random worn hood.
+	if there is a worn hood, decide on a random worn hood;
+	if the largeness of hair > 12, decide on hair;
+	decide on nothing.
 
 To decide which figure-name is the clothing-image of (C - a pair of earrings):
 	if C is cursed:
@@ -723,7 +727,7 @@ To say ShortDesc of (C - an ugly nose piercing):
 	say "ugly high gauge nose piercing".
 
 To decide which number is the initial outrage of (C - an ugly nose piercing):
-	decide on 11.
+	decide on 7.
 
 Definition: an ugly nose piercing is eligible: decide no.
 

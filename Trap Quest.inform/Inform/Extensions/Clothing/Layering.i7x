@@ -259,6 +259,9 @@ To check that (C - a diaper cover) usually goes under (D - a dress):
 To check that (C - an underdress) usually goes under (D - a trousers):
 	rule succeeds.
 
+To check that (C - an underdress) usually goes under (D - an overdress):
+	rule succeeds.
+
 To check that (C - a bra) usually goes under (D - a corset):
 	rule succeeds.
 

@@ -121,7 +121,7 @@ This is the virgin warrior class rule:
 		rule succeeds.
 The virgin warrior class rule is listed in the player class rules.
 Definition: a text (called T) is virgin warrior:
-	if T is "virgin warrior" or T is "virgin warrior priestess" or T is "virgin magical girl", decide yes;
+	if T is "virgin warrior" or T is "virgin symbiote warrior" or T is "virgin warrior priestess" or T is "virgin magical girl", decide yes;
 	decide no.
 
 [!<TheSchoolgirlClassRule>+
@@ -313,6 +313,32 @@ This is the puppygirl class rule:
 The puppygirl class rule is listed in the player class rules.
 puppygirl is a text that varies. puppygirl is "puppygirl".
 puppy is a text that varies. puppy is "puppygirl".
+
+
+
+[!<TheSymbioteClassRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the symbiote class rule:
+	if spiked-tiara is worn:
+		if the virgin of the player is 1 and the quest of spiked-tiara is virginity-retention-quest, now player-class is "virgin symbiote warrior";
+		otherwise now player-class is "symbiote";
+		rule succeeds.
+The symbiote class rule is listed in the player class rules.
+
+[!<TextIsSymbiote>+
+
+Thanks to the virgin symbiote warrior multi-class, we have multiple different texts that need to be able to return true for the class of the player being a symbiote.
+
++!]
+Definition: a text (called T) is symbiote:
+	if T is "symbiote" or T is "virgin symbiote warrior", decide yes;
+	decide no.
+
+
+
 
 [!<TheSantaClassRule>+
 

@@ -18,7 +18,7 @@ Has special effects with the waitress bunny class.
 
 @!]
 A waitress vessel is a kind of vessel.
-Definition: a waitress vessel is party related: decide yes.
+Definition: a waitress vessel is party themed: decide yes.
 Definition: a waitress vessel is pink themed: decide yes.
 Definition: a bottle (called T) is serve-ready:
 	if T is probably-serve-ready and there is a friendly human intelligent monster in the location of the player, decide yes;
@@ -111,7 +111,7 @@ Report plugging something with a squirt dildo:
 	now the second noun is sure.
 Definition: a squirt dildo is basic loot: decide no.
 To compute cursed drinking (X - a squirt dildo):
-	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]! [line break][variable custom style]'One of these is cursed, but I don[']t know which...'[roman type][line break]";
+	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]! [line break][variable custom style][if X is sure and X is cursed]This vessel is cursed... it's going to turn anything that's inside it into [semen][otherwise if X is sure]This potion colour must be cursed... and that's causing it to turn into [semen] when I try to drink it from here[otherwise]One of these is cursed, but I don't know which[end if]...[roman type][line break]";
 	StomachSemenUp 1.
 To say VesselDesc of (V - a squirt dildo):
 	say "This dildo has a hollow inside, hollow balls at the base and a hole at the top. By squeezing the base you can squirt the contents out of the dildo, and by releasing you can capture a bit of whatever liquid the dildo is in.".
@@ -426,6 +426,7 @@ To decide which number is the bartering value of (T - horn) for (M - a demon lor
 To decide which number is the bartering value of (T - horn) for (M - a witch):
 	decide on 5.
 To decide which number is the bartering value of (T - horn) for (M - a wench):
+	if M is horny-wench, decide on 0;
 	decide on 5.
 To decide which number is the bartering value of (T - horn) for (M - a shopkeeper):
 	decide on 8.

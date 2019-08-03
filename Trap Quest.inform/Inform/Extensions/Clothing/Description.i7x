@@ -30,6 +30,7 @@ To say MediumAppearanceDesc of (C - a clothing):
 	if the used condoms of C > 0, say " with [used condoms of C] used condom[if the used condoms of C > 1]s[end if]".
 
 To say AppearanceDesc of (C - a clothing):
+	if C is tonguing, say "salivating and licking ";
 	if C is perceived messed knickers:
 		say "messy ";
 	otherwise if the known-total-soak of C > 0:

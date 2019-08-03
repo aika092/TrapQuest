@@ -540,7 +540,7 @@ To say EscapeAnswer of (M - an acolyte):
 To say AdviceAnswer of (M - an acolyte):
 	say "[first custom style]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. She won't give it back...'[or]I think this place is haunted. And if it wasn[']t before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed sisters. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great one]s out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great one]s and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[at random][roman type][line break]".
 
-To decide which number is the mild-annoyance threshold of (M - a monster):
+To decide which number is the mild-annoyance threshold of (M - an acolyte):
 	decide on 150.
 
 To compute annoyance of (M - an acolyte):

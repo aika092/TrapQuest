@@ -149,9 +149,9 @@ To compute labour to (M - a patron):
 	otherwise:
 		Delay Labour.
 
-To say men of (M - a patron):
-	if lady fetish is 1, say "women";
-	say "men".
+To say NonAliveFatherBirthFlav of (M - a patron):
+	say "You are filled with a desire to return to the Hotel!".
+
 
 To compute fatherhood to (M - a patron):
 	dislodge M.
@@ -225,7 +225,7 @@ A time based rule (this is the patron encountering rule):
 					compute patronMeeting of M with P;
 				destroy P;
 				zero focus stuff; [Flags the focus window for a full redraw (prevents the patron from appearing in it at the end of the turn).]
-			if SRBSummoned is false and senior robobellboy is off-stage and the employee-record of senior robobellboy < a random number between -5 and 0:
+			if SRBSummoned is false and senior robobellboy is off-stage and (whoring feedback tattoo is worn or the employee-record of senior robobellboy < a random number between -5 and 0):
 				summon senior robobellboy;
 				now SRBSummoned is true;
 		otherwise if R <= 15 and debuginfo > 1:
@@ -479,7 +479,7 @@ To compute appearance assessment of (M - a gross patron):
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]I can't believe I get to fuck a princess!'[otherwise if the chosen-orifice of M is vagina]Wow, the royal [pussy]. I'm so lucky I get to fuck you!'[otherwise]Your nobles promised me a blowjob tonight, and I'm pretty sure they meant you'd be giving one to me.'[end if][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]How much does anal cost?'[otherwise if the chosen-orifice of M is vagina]How much do you charge for bareback sex?'[otherwise]How much for a blowjob?'[end if][roman type][line break]";
-	
+
 To compute appearance assessment of (M - an experienced patron):
 	if the class of the player is princess:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]Tonight, you will be using your asshole to satisfy me. Begin at once.'[otherwise if the chosen-orifice of M is vagina]Your [cunt] belongs to me tonight, your higness. Do not disappoint me.'[otherwise]You are swallowing every single drop, your highness.'[end if][roman type][line break]";
@@ -528,7 +528,7 @@ To compute (M - a patron) protecting against (X - a monster):
 	do nothing.
 
 To decide which number is the condom resistance of (M - a patron):
-	if fishbowl is in the location of the player, decide on 20;
+	if fishbowl is in the location of the player or woman-barbara is in the location of the player, decide on 20;
 	if M is dickhead patron, decide on 1;
 	decide on 0.
 

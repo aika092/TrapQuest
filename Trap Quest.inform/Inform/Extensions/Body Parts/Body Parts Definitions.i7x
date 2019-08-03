@@ -102,10 +102,12 @@ REQUIRES COMMENTING
 a fuckhole has a number called buildup.
 
 To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
+	let T be 2 + diaper quest + ungape;
+	if measurement tattoo is worn, increase T by 3;
 	if diaper quest is 1 or ungape is 1:
-		decide on (the sex addiction of the player / 3) + 3;
+		decide on (the sex addiction of the player / 3) + T;
 	otherwise:
-		decide on (the sex addiction of the player / 5) + the openness of F + 2.
+		decide on (the sex addiction of the player / 5) + the openness of F + T.
 
 To fill (F - a fuckhole) times (X - a number):
 	if F is asshole, AssFill X;

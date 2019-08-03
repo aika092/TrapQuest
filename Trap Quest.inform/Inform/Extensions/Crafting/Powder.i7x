@@ -133,6 +133,7 @@ Carry Out PowderRubbing a powder of escape on a thing:
 	otherwise:
 		say "With a flash of silver it is suddenly no longer on your body but instead in your [if there is a worn bag of holding][ShortDesc of a random worn bag of holding][otherwise]hands[end if]!";
 		dislodge the second noun;
+		now the second noun is unlocked;
 		now the second noun is carried by the player.
 
 
