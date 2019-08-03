@@ -123,13 +123,13 @@ A theme blocking rule:
 A theme sharing rule (this is the ballet matching rule):
 	if theme-target is ballet related and theme-share-target is ballet related, rule succeeds.
 The ballet matching rule is listed in the interesting theme sharing rules.
-Definition: an object is party related: decide no.
+Definition: an object is party themed: decide no.
 A theme blocking rule:
-	if theme-target is party related and the number of worn party related wearthings > 1:
-		add "party related" to interesting-themes-shared-list;
-		if the upgrade-target of theme-target is not party related, increase interesting-themes-shared by 1.
+	if theme-target is party themed and the number of worn party themed wearthings > 1:
+		add "party themed" to interesting-themes-shared-list;
+		if the upgrade-target of theme-target is not party themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the party matching rule):
-	if theme-target is party related and theme-share-target is party related, rule succeeds.
+	if theme-target is party themed and theme-share-target is party themed, rule succeeds.
 The party matching rule is listed in the interesting theme sharing rules.
 
 Definition: an object is inflation themed: decide no.

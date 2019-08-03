@@ -36,7 +36,7 @@ To compute teaching of (L - kissing-lesson):
 	let tonguedPerson be the player;
 	if the player is consenting:
 		increase KissRating by 1;
-		say "You close your eyes and move your face forward until your lips touch, tilting your head slightly to allow them to lock. [teacher-name of M] moans with satisfaction. You could push your tongue into [his of M] mouth, and take control, or wait for [his of M] to push into yours. [strongHumiliateReflect]Do you want to attempt to assert dominance?";
+		say "You close your eyes and move your face forward until your lips touch, tilting your head slightly to allow them to lock. [teacher-name of M] moans with satisfaction. [severeHumiliateReflect] You could push your tongue into [his of M] mouth, and take control, or wait for [his of M] to push into yours. Do you want to attempt to assert dominance?";
 		if the player is consenting:
 			say "You begin to push your tongue inside [teacher-name of M][']s mouth, surprising [him of M]. [big he of M] blocks with [his of M] own tongue, and they slither on top of each other for a few seconds as you fight to enter each other's mouths. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if]. Eventually ";
 			if a random number between 1 and the delicateness of the player < 7:
@@ -86,7 +86,7 @@ To compute teaching of (L - kissing-lesson):
 				now N is 10;
 				say "You wrestle free and step back.";
 			otherwise:
-				say "You feel humiliated that you've let [him of M] [one of][or]continue to [stopping]do this to you in front of your classmates! [moderateHumiliateReflect]";
+				say "You feel humiliated that you've let [him of M] [one of][or]continue to [stopping]do this to you in front of your classmates! [strongHumiliateReflect]";
 				arouse 500 + (1000 * player-groped-level);
 				if player-groped-level > 1:
 					if vagina is orgasming:
@@ -206,6 +206,8 @@ To compute labour to (M - teacher-rochelle):
 	otherwise:
 		say DefaultBirthScene.
 
+
+The lesson-teacher of eating-lesson is teacher-rochelle.
 practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-rochelle.
 
 To compute teaching of (L - practical-lesson):
@@ -236,7 +238,7 @@ To compute teaching of (L - practical-lesson):
 			if the player is female and ass-count > 0 and vagina is not actually occupied and the number of worn chastity cage is 0, say "You aren't allowed to use your [vagina] while there's someone else's ass juices on [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L], as that would be unhealthy.";
 			if face is not actually occupied:
 				say "[line break]Use your mouth? ";
-				unless pussy-count is 0 and ass-count is 0 and slobber-owner is the player, say "(you'll have to slurp up [if pussy-count > 1][pussy-count] lots of vaginal juices [otherwise if pussy-count >  0]the taste of someone's pussy juice [end if][if pussy-count >  0 and ass-count > 0]and [end if][if ass-count > 1][ass-count] lots of ass juices[otherwise if ass-count >  0]the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0][NameDesc of slobber-owner][']s slobber[end if]). ";
+				unless pussy-count is 0 and ass-count is 0 and slobber-owner is the player, say "(you'll have to slurp up[if pussy-count > 1] [pussy-count] lots of vaginal juices[otherwise if pussy-count > 0] the taste of someone's pussy juice[end if][if pussy-count > 0 and ass-count > 0] and[end if][if ass-count > 1] [ass-count] lots of ass juices[otherwise if ass-count >  0] the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0] [NameDesc of slobber-owner][']s slobber[end if]). ";
 				say "";
 				if the player is consenting:
 					now the lesson-teacher of L is penetrating face;
@@ -542,6 +544,8 @@ To compute facial climax of (M - an ultimate-lesson-actor):
 		compute deepthroat creampie of M;
 	if M is interested and the rounds of sex left of M <= 0:[possibly allows for another round of sex]
 		satisfy M.[dislodges him automatically]
+To compute sudden objectification of (M - an ultimate-lesson-actor):
+	do nothing.
 
 
 To compute tongue demand of (M - an ultimate-lesson-actor):
@@ -757,7 +761,7 @@ To compute conclusion of (L - ultimate-lesson):
 				if the current-rank of ST is 6, now the student-print of ST is "golden gangbang goddess";
 		otherwise:
 			say "Congratulations, [NameBimbo], you did it. You've become the epitome of a modern fuckpuppet. I couldn't be prouder. Now, come kiss my cock and claim your reward.";
-		say "You cross the room and kneel at [NameDesc of M][']s feet, looking up at [his of M] gentle smile.[line break][speech style of M]'Go ahead.'[roman type][line break]You plant your lips on [his of M] cockhead[if the player is feeling dominant], but without breaking eye contact with [him of M] at any time[otherwise]with eyes submissively lowered[end if].";
+		say "You cross the room and kneel at [NameDesc of M][']s feet, looking up at [his of M] gentle smile.[line break][speech style of M]'Go ahead.'[roman type][line break]You plant your lips on [his of M] cockhead[if the player is feeling dominant], but without breaking eye contact with [him of M] at any time[otherwise] with eyes submissively lowered[end if].";
 		now armband is solid gold;
 		say "You watch as the ID card inside your armband transforms!";
 		now the armband-title of armband is "";
@@ -770,8 +774,9 @@ To compute conclusion of (L - ultimate-lesson):
 			now the location of ex-princess is discovered;
 			now School33 is discovered;
 			teleport to the location of ex-princess;
+			now the stance of the player is 0;
 			say MonsterDesc of ex-princess;
-			say "[BigNameDesc of M] leans against the cell's metal bars.[speech style of M]'This is the [ShortDesc of headmistress][']s favourite toy. And now that you're all gold-star students, [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
+			say "[BigNameDesc of M] leans against the cell's metal bars.[speech style of M]'This is the [ShortDesc of headmistress][']s favourite toy. And now that you're [if there is a student in the location of the player]all gold-star students[otherwise]a gold-star student[end if], [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
 			compute mandatory room leaving of M.
 
 

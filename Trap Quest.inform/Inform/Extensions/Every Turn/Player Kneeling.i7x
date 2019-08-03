@@ -20,7 +20,7 @@ To compute player kneeling:
 	compute pink smoke.
 
 To decide which number is fatigue bonus:
-	decide on 10.
+	decide on 20.
 
 [!<ComputeFatigueLoss>+
 

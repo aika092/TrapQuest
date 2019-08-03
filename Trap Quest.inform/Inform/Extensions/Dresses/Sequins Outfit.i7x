@@ -33,7 +33,7 @@ To decide which number is the original price of (C - a sequins outfit):
 
 Definition: a sequins outfit is transformation-protected: decide yes.
 
-Definition: a sequins outfit is party related: decide yes.
+Definition: a sequins outfit is party themed: decide yes.
 Definition: a sequins outfit is gem themed: decide yes.
 
 Part 2 - Sequins Dress
@@ -74,7 +74,7 @@ This is the remove inappropriate sequins dress rule:
 		now B is in Holding Pen.
 The remove inappropriate sequins dress rule is listed in the diaper quest fix rules.
 
-Definition: a sequins dress is party related: decide yes.
+Definition: a sequins dress is party themed: decide yes.
 Definition: a sequins dress is gem themed: decide yes.
 
 

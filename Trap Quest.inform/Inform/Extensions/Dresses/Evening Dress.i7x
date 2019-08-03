@@ -28,7 +28,7 @@ This is the remove inappropriate evening dress rule:
 The remove inappropriate evening dress rule is listed in the diaper quest fix rules.
 
 Definition: an evening dress is end of transformation chain: decide yes.
-Definition: an evening dress is party related: decide yes.
+Definition: an evening dress is party themed: decide yes.
 
 outrageous-evening-dress is a humiliating situation.
 Definition: outrageous-evening-dress (called A) is applicable:

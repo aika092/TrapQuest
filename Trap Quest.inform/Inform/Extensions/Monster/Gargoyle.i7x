@@ -14,10 +14,34 @@ To say ShortDesc of (M - gargoyle):
 To say MediumDesc of (M - gargoyle):
 	say "stone [ShortDesc of M]".
 
-Figure of gargoyle is the file "NPCs/Mansion/gargoyle1.png".
+Figure of sleeping gargoyle is the file "NPCs/Mansion/Gargoyle/gargoyle1.png".
+Figure of awake gargoyle is the file "NPCs/Mansion/Gargoyle/gargoyle2.png".
+Figure of flying gargoyle is the file "NPCs/Mansion/Gargoyle/gargoyle3.png".
+Figure of dismounting gargoyle is the file "NPCs/Mansion/Gargoyle/gargoyle4.png".
+
+Figure of gargoyle BJ 1 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj1.png".
+Figure of gargoyle BJ 2 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj2.png".
+Figure of gargoyle BJ 3 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj3.png".
+Figure of gargoyle BJ 4 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj4.png".
+Figure of gargoyle BJ 5 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj5.png".
+Figure of gargoyle BJ 6 is the file "NPCs/Mansion/Gargoyle/gargoyle-bj6.png".
+[Figure of gargoyle cunnilingus 1 is the file "NPCs/Mansion/Gargoyle/gargoyle-cunnilingus1.png".]
 
 To decide which figure-name is the monster-image of (M - gargoyle):
-	decide on figure of gargoyle.
+	if M is not dangerous, decide on the friendly-monster-image of M;
+	if M is airborne, decide on figure of flying gargoyle;
+	decide on figure of dismounting gargoyle.
+
+To decide which figure-name is the friendly-monster-image of (M - gargoyle):
+	if the sleep of M <= 0 and M is vigilant, decide on figure of awake gargoyle;
+	decide on figure of sleeping gargoyle.
+
+To decide which figure-name is the sex-profile of (M - gargoyle):
+	if diaper quest is 0 and M is grabbing the player:
+		if the size of penis > 0, decide on figure of gargoyle BJ 2;
+		[decide on figure of gargoyle cunnilingus 1;]
+	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
+
 
 To say MonsterDesc of (M - gargoyle):
 	say "An eerie stone statue of [if mythical creature fetish is 1]a [man of M] with long, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, and although rendered in stone, [he of M] gives you the feeling of a beast lying in wait, ready to pounce[otherwise]a winged [man of M] wearing an ill-fitting robe, draped open by [his of M] elbows, leaving her chest completely exposed. She is resting on one knee and her head is bowed, as if offering deference to her master. There's something way too realistic about her. You get the feeling she might wake up and attack you at any time[end if]. [if M is vigilant]She appraises you silently from atop her pedestal, never moving, not even to blink.[end if]".
@@ -253,7 +277,8 @@ To compute blowjob initiation of (M - gargoyle):
 	[now M is penetrating penis.]
 
 To say BlowjobInitiationFlav of (M - gargoyle):
-	say "[BigNameDesc of M] [if mythical creature fetish is 1]wraps [his of M] tail around your waist, pinning your arms[otherwise]pins you down face up, holding your arms[end if] to your sides as [he of M] [if the size of penis > 8]wraps [his of M] surprisingly soft breasts around your [ShortDesc of penis] and hungrily pulls the tip into [his of M] mouth[otherwise]wraps [his of M] surprisingly soft lips around your [ShortDesc of penis][end if].[line break]".
+	say "[BigNameDesc of M] [if mythical creature fetish is 1]wraps [his of M] tail around your waist, pinning your arms[otherwise]pins you down face up, holding your arms[end if] to your sides as [he of M] [if the size of penis > 8]wraps [his of M] surprisingly soft breasts around your [ShortDesc of penis] and hungrily pulls the tip into [his of M] mouth[otherwise]wraps [his of M] surprisingly soft lips around your [ShortDesc of penis][end if].[line break]";
+	cutshow Figure of gargoyle BJ 1 for M.
 
 To compute blowjob sex of (M - gargoyle):
 	let A be 500;
@@ -282,8 +307,10 @@ To compute blowjob sex of (M - gargoyle):
 To say BlowjobSubmissionFlav of (M - gargoyle):
 	if the size of penis > 8:[boobjob!]
 		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M]'s breasts bump your sack as [he of M] works your [manly-penis], torturing the tip with practised movements of her tongue and lips.[at random]";
+		cutshow Figure of gargoyle BJ 3 for M;
 	otherwise if the size of penis > 2:
 		say "[one of][BigNameDesc of M] slurps away at your [Shortdesc of penis], teasing your most sensitive parts with her tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from balls to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls her tongue around your tip as she mercilessly pumps you with [his of M] lips.[at random]";
+		cutshow Figure of gargoyle BJ 4 for M;
 	otherwise:[doubt this will come up so it's mostly copypasta]
 		say "[one of][BigNameDesc of M] relentlessly teases your [Shortdesc of penis] with her tongue.[or][BigNameDesc of M] teases your [Shortdesc of penis] with the very tip of her tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with her tongue.[in random order]".
 
@@ -301,6 +328,8 @@ To compute blowjob ejaculation of (M - gargoyle):
 	PenisDown 1;
 	increase the satiated of M by 1;
 	if the blue-balls of M > 2, decrease the blue-balls of M by 2;
+	if the size of penis > 8, cutshow Figure of gargoyle BJ 5 for M;
+	otherwise cutshow Figure of gargoyle BJ 6 for M;
 	Bore M;
 	say "As your [ShortDesc of penis] softens, you realize it's far smaller than it was before! [BigNameDesc of M] must have converted a couple inches into an extra meal for [him of M]self! You feel drained!".
 

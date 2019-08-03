@@ -1210,8 +1210,12 @@ To lay (X - a number) small eggs:
 			let S be a random available small egg;
 			now S is in the location of the player;
 			now S is laid;
-		if the semen volume of belly > 6, appropriate-cutscene-display figure of egg laying 1;
-		otherwise appropriate-cutscene-display figure of egg laying 2.
+		if egg laying fetish is 0:
+			appropriate-cutscene-display figure of egg laying 8;
+		otherwise if the semen volume of belly > 6:
+			appropriate-cutscene-display figure of egg laying 1;
+		otherwise:
+			appropriate-cutscene-display figure of egg laying 2.
 
 [!<LayXMediumEggs>+
 

@@ -42,6 +42,9 @@ To check perception of (M - a monster):
 			otherwise:
 				compute correct perception of M;
 				progress quest of whore-exposing-quest for M;
+				if topless temporary fetish > 0 and M is intelligent and breasts is lewdly exposed:
+					decrease topless temporary fetish by 1;
+					if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
 				if the times-met of M < 0, now the times-met of M is 0;
 				increase the times-met of M by 1;
 				if M is friendly human monster and breasts is exposed:

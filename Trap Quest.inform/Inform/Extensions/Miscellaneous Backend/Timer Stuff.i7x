@@ -403,7 +403,7 @@ To compute unique setup of (T - a cutscene animation track):
 	now the animationColour of T is lightModeWhite.
 
 To commence animation of (T - a cutscene animation track):
-	if the map-window is g-present and T is not g-animated:
+	if animationsEnabled is 1 and the map-window is g-present and T is not g-animated:
 		compute unique setup of T;
 		now the frame-tick of T is 1;
 		now the target-window of T is the map-window;

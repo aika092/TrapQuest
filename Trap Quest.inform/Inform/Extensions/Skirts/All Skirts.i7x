@@ -569,9 +569,9 @@ To decide which object is the unique-upgrade-target of (C - a sequins belt):
 	decide on a random off-stage sequins dress.
 
 To transform (D - a sequins belt) into (C - a sequins outfit):
-	say "Your [D] transforms into ";
+	say "[bold type]Your [D] [bold type]transforms into ";
 	silently transform D into C;
-	say "a [C] in front of your eyes!  ";
+	say "a [C] [bold type]in front of your eyes![roman type]  ";
 	say "[TransformReaction of C]".
 
 

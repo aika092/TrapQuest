@@ -22,6 +22,9 @@ To say DevourFlav of (C - a candy corn):
 	say "You open the [C] and [if the player is in danger]devour it all as quickly as you can[otherwise if the fat-weight of the player > 28]greedily dump it all into your mouth, immediately swallowing them whole[otherwise if the fat-weight of the player > 12]speedily devour it two or three pieces at a time[otherwise]pop each piece in your mouth one at a time, savouring the taste[end if]. ".
 
 Carry out TQeating candy corn:
+	compute CandyCornEat.
+
+To compute CandyCornEat:
 	if diaper quest is 1:
 		say "[second custom style]TASTY... TASTY... TASTY! [roman type]The word reverberates in your head over and over again. ";
 		if hypno-trigger-tasty is 0:
@@ -31,7 +34,7 @@ Carry out TQeating candy corn:
 			say "You suddenly feel very hungry for [tasty] things!";
 	otherwise:
 		let R be a random number between 1 and 4;
-		say "[DevourFlav of the noun]You feel the sweets fizzing in your stomach as you throw away the bag, and [run paragraph on]";
+		say "You feel the sweets fizzing in your stomach, and [run paragraph on]";
 		if R > 2:
 			if R > 3 and the number of worn somewhat fluid vulnerable clothing > 0 and bukkake fetish + watersports fetish > 0:
 				say "a cloud of pink mist explodes from the torn plastic, enveloping your body!";

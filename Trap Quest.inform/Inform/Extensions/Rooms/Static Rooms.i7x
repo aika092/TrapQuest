@@ -117,5 +117,7 @@ Definition: DiaperPail is nonstandard: decide yes.
 Figure of DiaperPailBackground is the file "Map/pail1.jpg".
 
 
+
+
 Static Rooms ends here.
 

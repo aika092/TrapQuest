@@ -253,5 +253,21 @@ Definition: a dq tattoo (called A) is drawable:
 	decide yes. [So these can be selected randomly!]
 
 
+Section 11 - Hand tattoos
+
+A hand-tattoo is a kind of body tattoo. Understand "hand tattoo" as a hand-tattoo.
+
+To decide which object is the concealer of (T - a hand-tattoo):
+	decide on a random worn actually dense finger covering clothing.
+
+To decide which number is the initial outrage of (T - a hand-tattoo):
+	decide on 1.
+
+Definition: a hand-tattoo (called A) is drawable:
+	if A is worn or the number of worn hand-tattoo >= 2, decide no;
+	if A is eligible, decide yes;
+	decide no.
+
+
 Tattoos Framework ends here.
 

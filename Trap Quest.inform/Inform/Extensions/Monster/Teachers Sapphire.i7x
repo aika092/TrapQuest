@@ -23,11 +23,11 @@ To decide which figure-name is the pacified-image of (M - teacher-serenity):
 
 To say MonsterDesc of (M - teacher-serenity):
 	if M is sex-enslaved:
-		say "[BigNameDesc of M] has had both the top and bottom sections of [his of M] dress removed, leaving [him of M] with little more than a belt. [big his of M] exposed nipples are tortured by connected nipple clamps, which she can't remove because [his of M] wrists are bound behind [his of M] back. [big his of M] pussy is kept constantly stimulated by a vibrating wand, strapped to one thigh. [big his of M] chunky heels have been slightly elongated to make them more difficult to constantly stand on, and locked on with padlocks. A nose hook and ballgag completes the humiliating look.";
+		say "[BigNameDesc of M] has had the fabric of [his of M] dress removed, leaving [him of M] with little more than a belt, and [his of M] top pulled down beneath [his of M] breasts. [big his of M] exposed nipples are tortured by connected nipple clamps, which [he of M] can't remove because [his of M] wrists are bound behind [his of M] back. [big his of M] pussy is kept constantly stimulated by a vibrating wand, strapped to one thigh. A ballgag sits in [his of M] mouth and a nose hook makes sure [he of M] looks much uglier than before. [big his of M] chunky heels have been further elongated to make them more difficult to constantly stand on, and locked on with padlocks. A nose hook and ballgag completes the humiliating look.";
 	otherwise if M is diaper-enslaved:
-		say "[BigNameDesc of M][']s comfortable heels have been replaced by an ingeniously evil combination of rollerskates and ankle spreader. [big he of M] has to constantly wave [his of M] arms to remain even vaguely balanced! An ironic fate considering [his of M] previous pride in [his of M] balance in heels. Meanwhile, [his of M] dress has been replaced by a leotard and a very thick diaper, and a pacifier on a string around [his of M] neck, completing the diaper-slave look.";
+		say "[BigNameDesc of M][']s comfortable chunky heels have been replaced by an ingeniously evil combination of rollerskates and ankle spreader bar. [big he of M] has to constantly wave [his of M] arms to remain even vaguely balanced! An ironic fate considering [his of M] previous pride in [his of M] balance in heels. Meanwhile, [his of M] top and skirt have been replaced by a yellow babydoll leotard and a very thick diaper, and a pacifier on a string around [his of M] neck, completing the diaper-slave look.";
 	otherwise:
-		say "This tall stick figure of a [man of M] has red hair and a serious face. [big his of M] tight pink latex dress [if diaper quest is 1]makes [his of M] look very adult and in-charge[otherwise]is ever so slightly translucent, allowing you to just about make out [his of M] nipples[end if]. [big his of M] general demeanour is one of purpose and impatience.".
+		say "This tall tanned stick figure of a [man of M] has ginger hair and a serious face. [big his of M] tight yellow sleeveless top and flowing dress [if diaper quest is 1]and matching tall chunky heels make [his of M] look very adult and in-charge[otherwise]matches [his of M] tall chunky heels[end if]. [big his of M] general demeanour is one of purpose and impatience.".
 
 The teacher-name of teacher-serenity is "Serenity".
 
@@ -107,12 +107,14 @@ To decide which figure-name is the pacified-image of (M - teacher-angela):
 	decide on figure of enslaved diapered angela.
 
 To say MonsterDesc of (M - teacher-angela):
-	if M is sex-enslaved:
-		say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']cheap whore[']. All [his of M] clothes have gone, replaced by two thigh straps that each hold the controls to a wired vibrator, one going to the vibe in [his of M] pussy, and the other to the vibe in [his of M] ass. Given the orgasm-addled, vacant expression on [his of M] face, it's difficult to tell if [he of M] is somehow unable or just unwilling to remove the vibrators or turn them off.";
-	otherwise if M is diaper-enslaved:
-		say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']naughty kid who found [his of M] mother's make up set[']. And yet, even though [his of M] dignified dress and underwear has been replaced with nothing but a bib and a rather giant diaper, [his of M] face is one of empty-headed bliss.";
+	if M is defeated:
+		if M is sex-enslaved:
+			say "[BigNameDesc of M][']s face looks a lot less special with no make up except for some cheap pink lipstick to match [his of M] slutty pink stockings. All the rest of [his of M] clothes have gone. Each stocking has the controls to a wired vibrator clipped to the top, one going to the vibe in [his of M] pussy, and the other to the vibe in [his of M] ass. Given the orgasm-addled, vacant expression on [his of M] face, it's difficult to tell if [he of M] is somehow unable or just unwilling to remove the vibrators or turn them off.";
+		otherwise if M is diaper-enslaved:
+			say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']naughty kid who found [his of M] mother's make up set[']. And yet, even though [his of M] dignified dress and underwear has been replaced with nothing but baby mittens, a bib and a rather giant diaper, [his of M] face is one of empty-headed bliss. [big his of M] bright pink bib reads 'Mittens, Sins and Diaper Pins'.";
+		say "It would also appear that it's now impossible for [his of M] to stand up straight - [he of M][']s stuck in that same 90 degrees bent over position that [he of M] used to love so much - but it feels like it has very different implications now[if M is diaper-enslaved and diaper messing >= 3]. It looks like [he of M][']s constantly trying to mess [himself of M][end if].";
 	otherwise:
-		say "Clad in [his of M] tight red latex dress, this [man of M] looks very elegant and proud. [big his of M] face is heavily but immaculately made up with deep red lips and very striking eyes. [big his of M] medium length brown hair sits stiffly on [his of M] shoulders and [his of M] hands tend to remain held confrontationally on [his of M] hips, encased in black rubber gloves.".
+		say "Clad in [his of M] tight purple latex dress, this [man of M] looks very elegant, provocative and proud. [big his of M] face is immaculately made up with deep red lips and very striking eyes. [big his of M] medium length brown hair sits stiffly on [his of M] shoulders and [he of M] tends to lean forward over [his of M] students,to give them an eyeful of  both [his of M] expertly made up face and impressive cleavage, left visible thanks to the low cut of [his of M] dress.".
 
 The teacher-name of teacher-angela is "Angela".
 

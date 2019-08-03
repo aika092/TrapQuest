@@ -177,7 +177,8 @@ To fill in table blanks:
 	unless there is a choice in row 73 of the Table of Player Options, now choice in row 73 of Table of Player Options is 0;
 	unless there is a choice in row 74 of the Table of Player Options, now choice in row 74 of Table of Player Options is 0;
 	unless there is a choice in row 75 of the Table of Player Options, now choice in row 75 of Table of Player Options is 0;
-	unless there is a choice in row 76 of the Table of Player Options, now choice in row 76 of Table of Player Options is 0.
+	unless there is a choice in row 76 of the Table of Player Options, now choice in row 76 of Table of Player Options is 0;
+	unless there is a choice in row 77 of the Table of Player Options, now choice in row 77 of Table of Player Options is 1.
 
 To correct table entries:
 	[if the player is not the donator:
@@ -194,10 +195,10 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	if the player is not a march 2018 top donator and the player is not a march 2018 diaper donator:
+	if the player is not a top donator:
 		choose the row with a subtable of Table of Festive Options in the Table of Kink Options;
 		blank out the whole row;
-		if the player is not a march 2018 diaper donator:
+		if the player is not a top donator:
 			choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
 			blank out the whole row;
 	if the player is not a top donator:

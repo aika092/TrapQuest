@@ -34,14 +34,14 @@ To say FuckerDesc of (M - a supporter):
 To say BigFuckerDesc of (M - a supporter):
 	say "[supporter-name of M]".
 
-Definition: a supporter is not-the-same if the leftover-type of it is not previous supporter ID.
+Definition: a supporter is not-the-same if it is supporter-jim [the leftover-type of it is not previous supporter ID]. [For testing. TODO change back]
 
 Definition: a supporter is fetish appropriate: decide yes.
 
 supporter-summoned is a number that varies.
 
 This is the spawn initial dungeon supporter rule:
-	if diaper quest is 0 and supporter-summoned is 0 and a random number between 1 and 3 is 1: [Because there's a 1 in 3 chance of it appearing in the dungeon, woods or hotel respectively]
+	if supportersEnabled is 1 and supporter-summoned is 0 and a random number between 1 and 3 is 1: [Because there's a 1 in 3 chance of it appearing in the dungeon, woods or hotel respectively]
 		let M be a random not-the-same fetish appropriate supporter;
 		if debugmode > 1, say "Now summoning [NameDesc of M].";
 		summon M in the dungeon;
@@ -50,7 +50,7 @@ This is the spawn initial dungeon supporter rule:
 The spawn initial dungeon supporter rule is listed in the setting up dungeon monsters rules.
 
 This is the spawn initial woods supporter rule:
-	if diaper quest is 0 and supporter-summoned is 0 and a random number between 1 and 2 is 1: [Because there's now a 1 in 2 chance of it appearing in the woods or hotel respectively]
+	if supportersEnabled is 1 and supporter-summoned is 0 and a random number between 1 and 2 is 1: [Because there's now a 1 in 2 chance of it appearing in the woods or hotel respectively]
 		let M be a random not-the-same fetish appropriate supporter;
 		if debugmode > 1, say "Now summoning [NameDesc of M].";
 		summon M in the woods;
@@ -59,7 +59,7 @@ This is the spawn initial woods supporter rule:
 The spawn initial woods supporter rule is listed in the setting up woods monsters rules.
 
 This is the spawn initial hotel supporter rule:
-	if diaper quest is 0 and supporter-summoned is 0: [If it didn't appear in the dungeon or woods then it will definitely appear in the hotel]
+	if supportersEnabled is 1 and supporter-summoned is 0: [If it didn't appear in the dungeon or woods then it will definitely appear in the hotel]
 		let M be a random not-the-same fetish appropriate supporter;
 		if debugmode > 1, say "Now summoning [NameDesc of M].";
 		summon M in the hotel;

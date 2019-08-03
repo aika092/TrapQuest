@@ -35,11 +35,11 @@ This is the knickers can't be summoned with no panties fetish rule:
 The knickers can't be summoned with no panties fetish rule is listed in the knickers wearability rules.
 
 
-topless permanent fetish is a number that varies. topless permanent fetish is 0.
+topless temporary fetish is a number that varies.
 
 To decide which number is topless-fetish:
 	if diaper quest is 1, decide on 0;
-	if topless permanent fetish is 1 or topless tattoo is worn, decide on 1;
+	if topless temporary fetish > 0 or topless tattoo is worn, decide on 1;
 	otherwise decide on 0.
 
 Definition: a clothing (called C) is topless-fetish-disallowed:

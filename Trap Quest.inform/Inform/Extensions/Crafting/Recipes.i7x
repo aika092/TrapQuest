@@ -217,7 +217,7 @@ To decide which number is the recipe key of (R - a recipe for notebook):
 
 
 Recipe for codpiece is a kind of recipe. The printed name of recipe for codpiece is "[TQlink of item described]recipe for codpiece[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for codpiece. The text-shortcut of recipe for codpiece is "rfc".
-Definition: a recipe for codpiece is appropriate if diaper quest is 0.
+Definition: a recipe for codpiece is appropriate if Demon codpiece is fetish appropriate.
 To decide which number is the recipe key of (R - a recipe for codpiece):
 	decide on 23.
 

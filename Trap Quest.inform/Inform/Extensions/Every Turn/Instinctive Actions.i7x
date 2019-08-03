@@ -78,7 +78,7 @@ To Compute Broken Actions:
 			let M be a random willing to shag monster in the location of the player;
 			compute broken sex of M;
 	otherwise if the arousal of the player >= maximum arousal:
-		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
+		[say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";] [How did this get here?!]
 		if the player is able to automatically masturbate:
 			say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
 			now auto is 1;

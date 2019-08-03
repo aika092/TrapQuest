@@ -10,6 +10,7 @@ Definition: a royal guard is raunchy: decide yes.
 
 Figure of Royal Guard is the file "NPCs/Dungeon/royalguard1.png".
 Figure of Female Royal Guard is the file "NPCs/Dungeon/royalguard2.png".
+Figure of Prison Guard is the file "NPCs/Dungeon/prisonguard1.png".
 
 Figure of Guard Interact 1 is the file "Special/Cutscene/cutscene-guard-interact1.png".
 Figure of Guard Interact 2 is the file "Special/Cutscene/cutscene-guard-interact2.png".
@@ -21,6 +22,7 @@ Figure of Guard Cutscene 1 is the file "Special/Cutscene/cutscene-guard-skill1.p
 
 To decide which figure-name is the monster-image of (M - a royal guard):
 	if lady fetish is 1, decide on figure of female royal guard;
+	if M is prison guard, decide on figure of prison guard;
 	decide on figure of royal guard.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - a royal guard):
@@ -394,8 +396,8 @@ To compute jailor perception of (M - a royal guard):
 	otherwise:
 		say "[first custom style]'I guess it is time you were released.'[roman type][line break]";
 		compute bondage releasing of M;
-	say "[big he of M] turns away to leave you alone.";
-	distract M.
+		say "[big he of M] turns away to leave you alone.";
+		distract M.
 
 To compute DQ appearance assessment of (M - a royal guard):
 	if there is a worn currently visible messed knickers:
@@ -805,7 +807,7 @@ To compute cleavage climax of (M - a royal guard):
 
 To compute happy reward of (M - a royal guard):
 	if M is prison guard and (there is worn locked clothing or skeleton key is off-stage):
-		let L be a random locked clothing;
+		let L be a random worn locked clothing;
 		if L is clothing:
 			say "[speech style of M]'I guess I probably won't get in too much trouble for letting you out a little early...'[roman type][line break][big he of M] takes his key and unlocks your [ShortDesc of L] for you.[speech style of M]'Just don't tell anyone I did that.'[roman type][line break]";
 			now L is unlocked;
@@ -1594,6 +1596,7 @@ To compute failed dominance punishment of (M - a royal guard):
 			let B be a random actually summonable bondage;
 			if B is clothing:
 				summon B locked;
+				if B is wrist bond, now B is wrist-bound-behind;
 				say "[BigNameDesc of M] pulls out a [ShortDesc of B] and quickly snaps it into place on you. [line break][speech style of M]'I am about to show you your place, wench. That will help you remember.'[roman type][line break]";
 			otherwise:
 				say "[speech style of M]'You need to be shown your place.'[roman type][line break]";

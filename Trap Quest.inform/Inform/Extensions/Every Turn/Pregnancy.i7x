@@ -223,6 +223,8 @@ To compute pregnancy:
 					if there is a worn cursed pregnancy related clothing and the player is not bottom heavy:
 						say "You feel your hips widen in order to prepare for your inevitable labour!";
 						HipUp 1;
+		otherwise:
+			compute pregnancy annoyance;
 		if the womb volume of vagina is 30: [Pregnancy has reached full term just now! Here we choose the father and check for and trigger super-pregnancies]
 			if the father is the throne:
 				now the father is the new father;
@@ -231,7 +233,7 @@ To compute pregnancy:
 					now the pregnancy of the player is 0;
 					WombEmpty the womb volume of vagina;
 			check for extreme pregnancies;
-			if the womb volume of vagina is 30, say "You feel like your pregnancy has [one of]now reached full term. You'll be ready to pop soon[or]once again reached full term[stopping].";
+			say "[if the womb volume of vagina is 30]You feel like your pregnancy has [one of]now reached full term. You'll be ready to pop soon[or]once again reached full term[stopping]. [end if][bold type][one of]Being so heavily pregnant is making you feel very submissive. You [or]You're once again so heavily pregnant that you [stopping]will feel much more submissive until you give birth.[roman type][line break]";
 	otherwise if the womb volume of vagina > 30 and the womb volume of vagina < 50 and the pregnancy of the player is 1: [Here we compute the growth of a mega-pregnancy]
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay or (slow pregnancy is 2 and maximum-pregnancy-delay-tracker > 1): [if slow pregnancy is 2 that means we grow babies super super fast]
 			let B be the largeness of belly;
@@ -246,6 +248,8 @@ To compute pregnancy:
 					if the womb volume of vagina is 50:
 						say "You feel like your mega-pregnancy has [one of]finally reached full term. You'll be ready to pop soon[or]once again finally reached full term[stopping].";
 						cutshow figure of giant pregnancy for belly;
+		otherwise:
+			compute pregnancy annoyance;
 	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0:
 		now maximum-pregnancy-delay-tracker is 0;
 		increase slow-pregnancy-tracker by 1;
@@ -278,7 +282,9 @@ To compute pregnancy:
 				WombEmpty the womb volume of vagina;
 			otherwise:
 				now successful-pregnancy is 1; [labour was delayed, we still reset this flag so it's in the correct state for when we try again next time]
-			now auto is 0.
+			now auto is 0;
+		otherwise:
+			compute pregnancy annoyance.
 
 To compute pregnancy clothing displacement:
 	repeat with P running through worn pee covering clothing:
@@ -295,7 +301,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PregFlav:
-	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type]  [if the bimbo of the player < 13][line break][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][line break][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
+	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type] [if the bimbo of the player < 13][line break][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][line break][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
 
 [!<SayDefaultBirthScene>+
 
@@ -350,7 +356,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PregnancyBugFlav:
-	say "In some weird twist of this virtual game, you can literally feel the moment where someone up high decides you don't deserve a pregnancy, presses a button, and all the body mass inside you turns into liquid!  Your poor womb is now just completely over-full of [semen]!  It all comes gushing out in a torrent, coating your thighs and the ground.".
+	say "In some weird twist of this virtual game, you can literally feel the moment where someone up high decides you don't deserve a pregnancy, presses a button, and all the body mass inside you turns into liquid! Your poor womb is now just completely over-full of [semen]! It all comes gushing out in a torrent, coating your thighs and the ground.".
 
 [!<CheckForExtremePregnancies>+
 
@@ -372,6 +378,41 @@ To check for extreme pregnancies:
 		cutshow figure of full term pregnancy for belly.
 
 
+[Being pregnant is no walk in the park]
+To compute pregnancy annoyance:
+	if the class of the player is not fertility goddess:
+		if (the player is in Hotel18 or the player is in School17) and the player is not overly full and the player is able to eat and the player is not immobile and the player is not in danger:
+			let T be feeding bowls;
+			if the player is in School17, now T is food machine;
+			say "Your pregnancy-hormone-addled brain suddenly gives you a deep craving for the [MediumDesc of T] in this room. Do you obey your cravings and eat up? ";
+			if the player is bimbo consenting:
+				let saved-secs be seconds;
+				now seconds is -9999;
+				try TQEating T;
+				unless seconds is -9999, now another-turn is 1; [We're only adding another turn of time moving forward if the eating was successful]
+				now seconds is saved-secs;
+			otherwise:
+				say "Unable to get the nutrients it needs from your stomach, your womb draws what it needs directly from your muscles. You feel a bit weaker...";
+				StrengthDown 1;
+		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 2 is 1:
+			if the bladder of the player < 6, now the bladder of the player is 6;
+			if the player is bursting, say "[bold type]Your unborn baby kicks hard down on your bladder.[line break][variable custom style]Oof![roman type][line break]You're suddenly desperate for the loo!";
+		otherwise if a random number between 1 and 4 is 1 and the player is not very horny:
+			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";
+			arouse 3000;
+		otherwise if the womb volume of vagina > a random number between 15 and 75
+ and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
+			say "The weight of your unborn baby is making your feet and back ache. [bold type]You need to sit down and rest soon.[roman type][line break]";
+			now the fatigue of the player is the very tired threshold of the player;
+		otherwise if the womb volume of vagina > 15:
+			say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb.";
+			increase the fatigue of the player by the womb volume of vagina;
+		otherwise:
+			say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]";
+	otherwise if the womb volume of vagina > 15:
+		say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb, but your magically protected womb prevents you from suffering any negative effects.";
+	otherwise:
+		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".
 
 Pregnancy ends here.
 

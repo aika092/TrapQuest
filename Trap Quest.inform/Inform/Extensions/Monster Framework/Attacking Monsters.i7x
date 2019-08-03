@@ -641,9 +641,9 @@ To damage (A - a number) on (M - a monster):
 		increase attack-damage by N;
 		if damage-explained > 0, say "[if N >= 0]+[end if][N] (damage [if N < 0]reduction[otherwise]amplification[end if] of [ShortDesc of M]) ";
 	[Damage calculation over, deal damage now.]
-	if damage-explained > 0, say "[attack-damage] damage applied to [ShortDesc of M] results in [health of M] -> ";
+	if damage-explained > 0, say "[line break][health of M] HP - [attack-damage] damage -> ";
 	decrease the health of M by attack-damage;
-	if damage-explained > 0, say "[the health of M] HP[roman type][line break]";
+	if damage-explained > 0, say "[health of M] HP[roman type][line break]";
 	if the health of M > 0:
 		say "[Damage-flavour of attack-damage on M]";
 	otherwise if attack-damage > 0:
