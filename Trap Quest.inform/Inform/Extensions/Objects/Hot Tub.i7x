@@ -33,7 +33,7 @@ To compute showering hot-tub:
 			now M is in the location of the player;
 			now M is interested;
 			calm M;
-			say "Just as you're ready to get out, [NameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.[line break][speech style of M]'Wearing a diaper in the pool? What a naughy [boy of the player]. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of M] starts to move [his of M] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of M] play with you...[line break]Do you let [his of M] masturbate you through your soaked padding? ";
+			say "Just as you're ready to get out, [NameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.[line break][speech style of M]'Wearing a diaper in the pool? What a naughty [boy of the player]. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of M] starts to move [his of M] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of M] play with you...[line break]Do you let [his of M] masturbate you through your soaked padding? ";
 			if the player is bimbo consenting:
 				compute masturbation of M;
 			otherwise:

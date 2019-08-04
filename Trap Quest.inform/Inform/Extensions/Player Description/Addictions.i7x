@@ -119,7 +119,7 @@ This is the sex addiction description rule:
 			otherwise:
 				say "You [if the player is not feeling submissive]like to pretend to fight back but in reality you are happy being on the bottom[otherwise if highest body part sex addiction < 6 and diaper quest is 0]can't wait to have your body used in any way your dominators can think of, regardless of whether you enjoy it or not, until your body is forced to grow to love it[otherwise]are now so naturally submissive that you would be a little horrified if someone was to ask you to dominate them[end if].";
 		otherwise:
-			say "Your one track mind thinks of little except how you're going to find someone to [if diaper quest is 0]fuck. Even while in the middle of sex you're already trying to work out how to minimise the sad, empty time between one [manly-penis] pulling out and the next one filling you up[otherwise][']play['] with you. Even whilst in the middle of , you're already thinking about how to minimise the sad, empty time between one [']playtime['] and the next[end if]. ";
+			say "Your one track mind thinks of little except how you're going to find someone to [if diaper quest is 0]fuck. Even while in the middle of sex you're already trying to work out how to minimise the sad, empty time between one [manly-penis] pulling out and the next one filling you up[otherwise][']play['] with you. Even whilst in the middle of it, you're already thinking about how to minimise the sad, empty time between one [']playtime['] and the next[end if]. ";
 			if the player is feeling dominant:
 				say "You're liable to pounce anyone you see and demand that they [if diaper quest is 0]let you ride their [manly-penis] or tongue[otherwise][']play['] with you[end if].";
 			otherwise:

@@ -117,7 +117,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the semen-volume of (F - a fuckhole):
-	if F is vagina , decide on the total volume of vagina;
+	if F is vagina, decide on the total volume of vagina;
 	if F is asshole, decide on the semen volume of belly;
 	decide on 0.
 

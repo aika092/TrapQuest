@@ -286,7 +286,7 @@ To say HotelToiletDesc:
 REQUIRES COMMENTING
 
 *!]
-Hotel39 is a mandatory modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the center seem a bit out of place.".
+Hotel39 is a mandatory modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the centre seem a bit out of place.".
 
 [!<hotel40:ModernRoom>*
 

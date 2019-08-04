@@ -1,7 +1,7 @@
 Woods Statue by Objects begins here.
 
 
-WoodsScenery02 is a thing. WoodsScenery02 is in Woods10. WoodsScenery02 is not portable. Understand "statue","man","penis", "statue's", "head", "hand", "foot" as WoodsScenery02. WoodsScenery02 has a number called doses. The doses of WoodsScenery02 is usually 1. Figure of WoodsScenery02 is the file "Env/Forest/statue2.png". Figure of WoodsScenery02b is the file "Env/Forest/statue7.png".
+WoodsScenery02 is a thing. WoodsScenery02 is in Woods10. WoodsScenery02 is not portable. Understand "statue", "man", "penis", "statue's", "head", "hand", "foot" as WoodsScenery02. WoodsScenery02 has a number called doses. The doses of WoodsScenery02 is usually 1. Figure of WoodsScenery02 is the file "Env/Forest/statue2.png". Figure of WoodsScenery02b is the file "Env/Forest/statue7.png".
 The printed name of WoodsScenery02 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 WoodsScenery02 has a number called charge.
 The text-shortcut of WoodsScenery02 is "sta".

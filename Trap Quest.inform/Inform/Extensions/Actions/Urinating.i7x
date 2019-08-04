@@ -952,7 +952,7 @@ REQUIRES COMMENTING
 To say ClothesPeeDeclaration of (M - a monster):
 	if delayed urination is 0: [Voluntary urination]
 		say "[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder in shame as you allow [NameDesc of M] to watch you.[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
-	otherwise:  [Accidental urination]
+	otherwise: [Accidental urination]
 		if the humiliation of the player < HUMILIATION-SHAMELESS - 2000, say "[if the player is able to speak][line break][variable custom style]'Eek!  Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you wet yourself.";
 		otherwise say "[BrokenPeeFlav during sex with M]";
 	say ClothesPeeReaction of M.

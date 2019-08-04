@@ -99,7 +99,7 @@ To say MonsterDesc of (M - lycra-clad mannequin):
 	say "An unsettling female mannequin, with a warm tanned skin tone and a politely smiling facial expression, painted in 'night on the town' make up. Reddish-brown hair rests on her shoulders, kept mostly tidy thanks to a ponytail. Her grey playsuit boasts a very low V neck that almost exposes her belly button, and is ever so slightly sheer, giving you glimpses of what is underneath. Or rather, what would be underneath if she wasn't a doll".
 
 To say MonsterDesc of (M - latex-clad mannequin):
-	say "An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair, and is modelling a provocative pink latex dress. The V neck is so low that her belly button is left bare. A pair of grey latex knee-length boots adorn her feet, and a small hangbag hangs delicately from one shoulder.".
+	say "An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair, and is modelling a provocative pink latex dress. The V neck is so low that her belly button is left bare. A pair of grey latex knee-length boots adorn her feet, and a small handbag hangs delicately from one shoulder.".
 
 To say MonsterDesc of (M - swimmer mannequin):
 	say "An unsettling female mannequin complete with striking makeup and a blank stare. 'She' has armpit-length black ponytailed hair and is modelling a tight blue one-piece swimsuit. A small handbag hangs from one of her shoulders.".

@@ -479,7 +479,7 @@ To compute appearance assessment of (M - a gross patron):
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]I can't believe I get to fuck a princess!'[otherwise if the chosen-orifice of M is vagina]Wow, the royal [pussy]. I'm so lucky I get to fuck you!'[otherwise]Your nobles promised me a blowjob tonight, and I'm pretty sure they meant you'd be giving one to me.'[end if][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]How much does anal cost?'[otherwise if the chosen-orifice of M is vagina]How much do you charge for bareback sex?'[otherwise]How much for a blowjob?'[end if][roman type][line break]";
-	
+
 To compute appearance assessment of (M - an experienced patron):
 	if the class of the player is princess:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]Tonight, you will be using your asshole to satisfy me. Begin at once.'[otherwise if the chosen-orifice of M is vagina]Your [cunt] belongs to me tonight, your higness. Do not disappoint me.'[otherwise]You are swallowing every single drop, your highness.'[end if][roman type][line break]";

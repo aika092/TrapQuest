@@ -54,7 +54,7 @@ To compute latex transformation:
 			FaceUp 3;
 			LipsUp 3;
 		if the latex-transformation of the player is 8:
-			say "You feel yourself stop breathing and your heart stop beating, but you realise you no longer need either, you don't have flesh or blood or anything inside you, just tubes and air. Your hands and feet lose their digits and their shape and just turn into rounded ends, as if you were wearing fully rounded mittens. [if the number of things held by the player > 0]You drop everything that you are carrying. It seems unlikely that you'll be able to carry more than one thing carefully in between your two doll stumps now.[end if][line break]You have completely transformed into a latex sex doll.";
+			say "You feel yourself stop breathing and your heart stop beating, but you realise you no longer need either; you don't have flesh or blood or anything inside you, just tubes and air. Your hands and feet lose their digits and their shape and just turn into rounded ends, as if you were wearing fully rounded mittens. [if the number of things held by the player > 0]You drop everything that you are carrying. It seems unlikely that you'll be able to carry more than one thing carefully in between your two doll stumps now.[end if][line break]You have completely transformed into a latex sex doll.";
 			appropriate-cutscene-display figure of latex curse 3;
 			repeat with H running through things carried by the player:
 				now H is in the location of the player;

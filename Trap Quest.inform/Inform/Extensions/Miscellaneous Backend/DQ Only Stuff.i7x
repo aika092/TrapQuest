@@ -127,7 +127,7 @@ Figure of Jammy Messy Loading Animation Frame 46 is the file "Special/Animations
 Figure of Jammy Messy Loading Animation Frame 49 is the file "Special/Animations/JammyLoading/frame_000049.jpeg".
 Figure of Jammy Messy Loading Animation Frame 52 is the file "Special/Animations/JammyLoading/frame_000052.jpeg".
 Figure of Jammy Messy Loading Animation Frame 55 is the file "Special/Animations/JammyLoading/frame_000055.jpeg".
-[Figure of Jammy Messy Loading Animation Frame 58 is the file "Special/Animations/JammyLoading/frame_000058.jpeg".
+Figure of Jammy Messy Loading Animation Frame 58 is the file "Special/Animations/JammyLoading/frame_000058.jpeg".
 Figure of Jammy Messy Loading Animation Frame 61 is the file "Special/Animations/JammyLoading/frame_000061.jpeg".
 Figure of Jammy Messy Loading Animation Frame 64 is the file "Special/Animations/JammyLoading/frame_000064.jpeg".
 Figure of Jammy Messy Loading Animation Frame 67 is the file "Special/Animations/JammyLoading/frame_000067.jpeg".
