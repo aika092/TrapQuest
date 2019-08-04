@@ -15,7 +15,7 @@ To uniquely set up (C - a strapon-panties):
 	now the strap-length of C is a random number between 4 and 6.
 
 Definition: A strapon-panties (called P) is fetish appropriate:
-	if the player is the donator, decide yes;
+	if diaper quest is 0 and the player is the donator, decide yes;
 	decide no.
 
 [is it a strapon or a penis]
@@ -264,6 +264,5 @@ To decide which number is the dexterity-influence of (C - ghost-strapon):
 
 Definition: ghost-strapon is blessable: decide no.
 
-Include Demon Lord's Codpiece by Knickers.
 
 Strapon ends here.

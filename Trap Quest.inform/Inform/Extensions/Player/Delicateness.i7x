@@ -37,6 +37,7 @@ To decide which number is the delicateness of the player:
 	if the humiliation of the player >= 40000, decide on 20;
 	let S be the raw delicateness of the player;
 	if submissive sex addict is 1, increase S by 7;
+	if the womb volume of vagina >= 30 and the class of the player is not fertility goddess, increase S by 3;
 	repeat with C running through worn wearthings:
 		increase S by the delicateness-influence of C;
 	if mindbreak protection is 1 and S > 16, decide on 16;

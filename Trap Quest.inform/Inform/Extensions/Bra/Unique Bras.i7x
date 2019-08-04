@@ -1,4 +1,82 @@
-Trainee Bra by Bra begins here.
+Unique Bras by Bra begins here.
+
+A chastity bra is a kind of bra. A chastity bra is usually not-top-displacable. Figure of metal bra is the file "Items/Clothes/Upper/Bras/metalbra1.png". A chastity bra is usually metal.
+
+There is 1 chastity bra. The text-shortcut of chastity bra is "cbr".
+
+The min size of a chastity bra is usually 4. The max size of a chastity bra is usually 8. The support of a chastity bra is usually -4.
+
+Definition: a chastity bra is grey themed: decide yes.
+
+To say ShortDesc of (B - a chastity bra):
+	say "chastity bra".
+
+To say selfexaminetitle of (B - a chastity bra):
+	say "shiny metal chastity bra".
+
+To decide which figure-name is clothing-image of (C - a chastity bra):
+	decide on figure of metal bra.
+
+To say ClothingDesc of (C - a chastity bra):
+	say "A heavy, shiny silver [printed name of C], which has very strong restraints to prevent excessive breast growth.";
+
+To decide which number is the initial outrage of (C - a chastity bra):
+	decide on 3.
+
+To compute bra strain of (B - a chastity bra):
+	while the size of B < the largeness of breasts + the leniency of B and the largeness of breasts > 1:
+		if the air volume of breasts > 0:
+			decrease the air volume of breasts by 1;
+		otherwise if the milk volume of breasts > the flesh volume of breasts:
+			decrease the milk volume of breasts by 1;
+		otherwise if the flesh volume of breasts > 0:
+			decrease the flesh volume of breasts by 1;
+		otherwise:
+			decrease the silicone volume of breasts by 1;
+	say "[one of]You can feel your [printed name of B] preventing your [BreastDesc] from growing any further.[or][then purely at random]".
+
+
+
+
+
+
+tongue-bra is a bra. tongue-bra is unique. tongue-bra is biological. tongue-bra is ridiculously low cut. The printed name of tongue-bra is "[clothing-title-before]tongue bra[clothing-title-after]". The text-shortcut of tongue-bra is "tgbr". Understand "tongue", "bra" as tongue-bra.
+The min size of tongue-bra is 20. The max size of tongue-bra is 20. The support of tongue-bra is 0.
+
+Figure of white tongue bra is the file "Items/Clothes/Upper/Bras/tonguebra1a.png".
+Figure of tonguing white tongue bra is the file "Items/Clothes/Upper/Bras/tonguebra1b.png".
+Figure of black tongue bra is the file "Items/Clothes/Upper/Bras/tonguebra2a.png".
+Figure of tonguing black tongue bra is the file "Items/Clothes/Upper/Bras/tonguebra2b.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-bra):
+	if tonguesBlack is true:
+		if C is tonguing, decide on figure of tonguing black tongue bra;
+		decide on figure of black tongue bra;
+	otherwise:
+		if C is tonguing, decide on figure of tonguing white tongue bra;
+		decide on figure of white tongue bra.
+
+To say ClothingDesc of (C - tongue-bra):
+	say "This [tonguesColour] bra sits under your bust, with several large red tongues that rise up and barely cover your nipples and breast flesh. [TongueStatus of C]".
+
+To say ShortDesc of (C - tongue-bra):
+	say "tongued bra".
+To say MediumDesc of (B - tongue-bra):
+	say "[tonguesColour] [selfexaminetitle of B]".
+
+Definition: tongue-bra is demonic: decide yes.
+Definition: tongue-bra is tongued: decide yes.
+Definition: tongue-bra is transformation-protected: decide yes.
+Definition: tongue-bra is white themed if tonguesBlack is false.
+Definition: tongue-bra is black themed if tonguesBlack is true.
+
+To decide which number is the initial outrage of (C - tongue-bra):
+	if C is tonguing, decide on 17;
+	decide on 7.
+
+
+
+
 
 A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
 
@@ -65,5 +143,6 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				ProgressUp senior robobellboy.
 
 
-Trainee Bra ends here.
+
+Unique Bras ends here.
 

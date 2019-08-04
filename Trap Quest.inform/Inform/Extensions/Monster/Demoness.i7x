@@ -1074,7 +1074,6 @@ To compute unique penetration effect of (M - demoness) in (F - vagina):
 		say "[speech style of M]All gone! Hahaha![roman type]";
 		ruin vagina.
 
-
 To say FriendlyVaginaPenetrationFlav of (M - a demoness):
 	say FriendlyVaginaPenPrep of M;
 	if futanari fetish is 0:

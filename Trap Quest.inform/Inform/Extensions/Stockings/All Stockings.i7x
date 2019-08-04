@@ -7,6 +7,7 @@ A stockings is a kind of clothing. Understand "pair", "pair of" as stockings. Th
 
 Definition: a stockings is same-type if theme-share-target is stockings.
 
+
 Report examining stockings:
 	if the number of worn stockings is 0 and newbie tips is 1, say "Stockings and socks make wearing heels more comfortable, and therefore slightly improve your ability to walk in them[unless the noun is socks]. Stockings also improve your knee damage[end if].".
 
@@ -519,6 +520,43 @@ Definition: a woven stockings is pink themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a woven stockings):
 	if diaper lover > 0 and the number of worn trousers is 0, decide on a random off-stage teddy bear pantyhose.
+
+
+
+tongue-stockings is a stockings. tongue-stockings is unique. tongue-stockings is biological. tongue-stockings is dense. The printed name of tongue-stockings is "[clothing-title-before]tongue stockings[clothing-title-after]". The text-shortcut of tongue-stockings is "tgsk". Understand "tongue", "stockings" as tongue-stockings.
+
+Figure of white tongue stockings is the file "Items/Clothes/Lower/Legs/tonguestockings1a.png".
+Figure of tonguing white tongue stockings is the file "Items/Clothes/Lower/Legs/tonguestockings1b.png".
+Figure of black tongue stockings is the file "Items/Clothes/Lower/Legs/tonguestockings2a.png".
+Figure of tonguing black tongue stockings is the file "Items/Clothes/Lower/Legs/tonguestockings2b.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-stockings):
+	if tonguesBlack is true:
+		if C is tonguing, decide on figure of tonguing black tongue stockings;
+		decide on figure of black tongue stockings;
+	otherwise:
+		if C is tonguing, decide on figure of tonguing white tongue stockings;
+		decide on figure of white tongue stockings.
+
+To say ClothingDesc of (C - tongue-stockings):
+	say "A pair of [tonguesColour] thigh-high stockings with tongues for laces. [TongueStatus of C]".
+
+To say ShortDesc of (C - tongue-stockings):
+	say "pair of tongued stockings".
+
+Definition: tongue-stockings is demonic: decide yes.
+Definition: tongue-stockings is tongued: decide yes.
+Definition: tongue-stockings is transformation-protected: decide yes.
+Definition: tongue-stockings is white themed if tonguesBlack is false.
+Definition: tongue-stockings is black themed if tonguesBlack is true.
+
+To decide which number is the initial outrage of (C - tongue-stockings):
+	if C is tonguing, decide on 14;
+	decide on 4.
+
+To decide which object is the unique-upgrade-target of (C - a stockings):
+	if there is a worn demonic wearthing and tongue-stockings is off-stage, decide on tongue-stockings;
+	decide on nothing.
 
 
 All Stockings ends here.

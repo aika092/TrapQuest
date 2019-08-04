@@ -2,6 +2,10 @@ Catsuit by Dresses begins here.
 
 catsuit is a kind of overdress. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually unskirted. A catsuit is usually leg covering. A catsuit is usually only arm covering. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit.
 
+To decide which object is the unique-upgrade-target of (C - a catsuit):
+	if there is a worn demonic wearthing, decide on tongue-suit;
+	decide on nothing.
+
 Report wearing catsuit:
 	say "It takes a long time to get it [if the largeness of breasts > 9]over your [BreastDesc]![otherwise if the largeness of belly > 4]over your [BellyDesc]![otherwise]on.[end if]";
 	allocate 12 seconds.
@@ -72,6 +76,7 @@ To decide which number is the initial outrage of (C - a pink catsuit):
 
 To decide which number is the original price of (C - a pink catsuit):
 	decide on 8.
+
 
 
 Part 2 - Black Catsuit

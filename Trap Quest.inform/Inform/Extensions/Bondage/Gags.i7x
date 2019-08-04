@@ -98,6 +98,38 @@ To decide which object is the unique-upgrade-target of (C - a large ballgag):
 
 Definition: A ballgag is fetish appropriate if diaper quest is 0.
 
+
+A bit gag is a kind of ballgag. There is 1 bit gag. The printed name of bit gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]bit gag[clothing-title-after]". The text-shortcut of bit gag is "pbg".
+
+To say ShortDesc of (C - a bit gag):
+	say "bit gag".
+
+Figure of bit gag is the file "Items/Accessories/Head/bitgag1.jpg".
+
+To decide which figure-name is clothing-image of (C - a bit gag):
+	decide on figure of bit gag.
+
+To say ClothingDesc of (C - a bit gag):
+	say "This red cylindrical gag stops you from speaking properly but without stretching your jaw too badly in the process.".
+
+Definition: a bit gag is dog themed: decide yes.
+Definition: a bit gag is orange themed: decide yes.
+Definition: a bit gag is fetish appropriate: decide no. [Never appears randomly]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 outrageous-gag is a humiliating situation.
 Definition: outrageous-gag (called A) is applicable:
 	if the player is not disgraced and the bimbo of the player < 14 and there is a worn gag, decide yes;

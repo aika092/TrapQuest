@@ -239,7 +239,7 @@ To set up (Q - quiz-woods-candy):
 	increase the askedAlready of Q by 1;
 	now the correctAnswer of Q is a random number between 1 and 3;
 	let N be 1;
-	while N < 3:
+	while N <= 3:
 		let T be "";
 		if N is the correctAnswer of Q:
 			repeat with C running through candy machines:

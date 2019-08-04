@@ -274,13 +274,13 @@ A time based rule (this is the woman spawning rule):
 			unless woman-barbara is in the location of the player or woman-barbara is nearby or woman-barbara is stranger or the woman-status of woman-barbara >= 80, vanish woman-barbara.
 
 This is the woman spawning to help the player with bondage rule:
-	if there is worn locked clothing and a random number between 1 and 20 is 1:
+	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1:
 		deploy woman-barbara with woman-status 2;
 		rule succeeds.
 The woman spawning to help the player with bondage rule is listed last in the womanspawning rules.
 
 This is the woman spawning as a stool rule:
-	if the player is a december 2018 top donator and the stool-scene of woman-barbara is 0:
+	if the player is the donator and the stool-scene of woman-barbara is 0:
 		let R be a random number between 2 and 100; [This will be faster than checking her region so we prioritise it]
 		if debuginfo > 1 and (playerRegion is Dungeon or playerRegion is Hotel), say "[input-style]Barbara stool scene summon check: RNG(2~100) = [R], needs to be below Barbara sluttiness ([woman-bimbo of woman-barbara]).[roman type][line break]";
 			if R < the woman-bimbo of woman-barbara and (playerRegion is Dungeon or playerRegion is Hotel):
@@ -385,9 +385,8 @@ To WomanVinePull:
 	let W be woman-barbara;
 	allocate 6 seconds;
 	if the traitor-hypno of hypno-lesson > 0:
-		decrease the traitor-hypno of hypno-lesson by 1;
 		say "Something inside you urges you to [second custom style]help your friend[roman type] instead. You stand and watch.";
-		if the vine-scene of W < 4, now another-turn is 1; [So two turns will pass. One turn doesn't seem significant enough.]
+		if the vine-scene of W >= 4, decrease the traitor-hypno of hypno-lesson by 1;
 	otherwise:
 		say "You yank at the vines holding one of [NameDesc of W][']s wrists and it loosens enough for [him of W] to pull free. Then with your help [he of W] is able to quickly loosen the rest, pull the dastardly ones inside of [him of W] out and then finally stand up!";
 		if the vine-scene of W is 1:
@@ -639,7 +638,7 @@ The woman spawning to get shopkeeper discount rule is listed last in the womansp
 Report going when shopkeeper is in the location [of the player ]and woman-barbara is in the location [of the player ]and the woman-bimbo of woman-barbara <= 2 and the shopkeeper-scene of woman-barbara is 0 and woman-barbara is not interested and shopkeeper is not interested:
 	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-barbara] is on [his of woman-barbara] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-barbara] mouth. [big he of woman-barbara] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-barbara] throat. Lewd gagging noises fill the room as the distension in [his of woman-barbara] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn girl, you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-barbara][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past her jaw. Noises of weak resistance emanate from [NameDesc of woman-barbara][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-barbara] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-barbara] and [he of woman-barbara] falls back choking, spewing up lumps of thick [semen].[line break][second custom style]'Did I win?'[roman type][line break]Is all [he of woman-barbara] manages to say before [he of woman-barbara] collapses backward onto the ground.[line break][first custom style]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-barbara] has already passed out cold.";
 	now the sleep of woman-barbara is 200;
-	increase the delayed sluttification of woman-barbara by 1;
+	[increase the delayed sluttification of woman-barbara by 1;]
 	now the woman-status of woman-barbara is 92;
 	now the shopkeeper-scene of woman-barbara is 1.
 

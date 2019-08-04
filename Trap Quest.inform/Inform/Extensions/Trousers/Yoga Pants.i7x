@@ -26,13 +26,6 @@ To compute periodic effect of (C - a yoga pants):
 
 Definition: a yoga pants is strut enabling if it is blessed.
 
-To summon (C - a yoga pants) cursed:
-	summon C;
-	now C is cursed;
-	repeat with K running through worn knickers:
-		if K is blessed, curse K;
-		curse K.
-
 To decide which object is the unique-upgrade-target of (C - a yoga pants):
 	if diaper lover > 0, decide on a random off-stage kitty cat pyjama bottoms;
 	decide on nothing.

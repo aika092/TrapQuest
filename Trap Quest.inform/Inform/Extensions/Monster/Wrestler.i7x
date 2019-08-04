@@ -12,9 +12,7 @@ Definition: a wrestler is willing to urinate: decide yes.
 
 Definition: a wrestler is raunchy: decide yes.
 
-Definition: A wrestler (called M) is hotel dwelling:
-	if diaper quest is 1, decide no;
-	decide yes.
+Definition: a wrestler is hotel dwelling: decide yes.
 
 To say ShortDesc of (M - a wrestler):
 	say "wrestler".
@@ -268,6 +266,8 @@ This is the wrestler puts slaves in the urinal rule:
 		rule succeeds;
 	otherwise if watersports fetish is 1 and (the urinal-boredom of M is 0 or the class of the player is human toilet) and R is 1:
 		if Hotel31 is the location of the player:
+			repeat with N running through monsters:
+				dislodge N;
 			now M is grabbing the player;
 			now the sex-length of M is a random number between 10 and 30;
 			say "[BigNameDesc of M] forces your back against the wall in between the two urinals. Before you can move, [he of M] has secured your ankles to two strong metal anklecuffs connected by short chains to the wall. [if the bimbo of the player < 10]As you fruitlessly pull at the chains, [otherwise if the class of the player is human toilet]You hold the chains in silent obedience as[otherwise]You hold the chains in silent bemusement as [end if] [he of M] clamps two more cuffs around your wrists, securing them strictly to your ankles and preventing you from even standing up. Finally [he of M] gives you a passionate kiss on the lips as [he of M] pulls a thick woolly blindfold over your eyes.[line break][second custom style]'I'll be back for you in a bit, beautiful. Enjoy yourself!'[roman type][line break]";
@@ -948,7 +948,8 @@ To say DominanceFailure of (M - a wrestler):
 To compute failed dominance punishment of (M - a wrestler):
 	let C be a random worn chastity cage;
 	if C is clothing:
-		let B be a random off-stage actually summonable bondage;
+		let B be a random off-stage actually summonable opengag;
+		if B is not a gag, now B is a random off-stage actually summonable bondage;
 		if B is clothing:
 			say "[line break][speech style of M]'You're into bondage, right? I bet you'll like this, then!'[roman type][line break][big he of M] pulls out a [Shortdesc of B] and locks it into place.";
 			summon B cursed;

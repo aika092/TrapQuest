@@ -1,5 +1,8 @@
 School Stuff by DQ Only Stuff begins here.
 
+
+The lesson-teacher of eating-lesson is teacher-hannah.
+
 Part - Ruby Teacher Brooke
 
 teacher-brooke is a ruby-teacher. teacher-brooke is dq-only.
@@ -347,7 +350,11 @@ To compute teaching of (L - chess-lesson):
 			otherwise:
 				summon D;
 		say "[speech style of M]'This diaper is made of a special material that will expand almost endlessly as you keep filling it up. Trust me, that's going to be important later.'[roman type][line break]And then you are all marched to the assembly hall, where it feels like every single other person in the school seems to already be waiting!";
-		repeat with X running through alive human monsters in the school:
+		repeat with X running through undefeated staff members in the school:
+			now X is in School16;
+			now X is interested;
+			calm X;
+		repeat with X running through undefeated students in the school:
 			now X is in School16;
 			now X is interested;
 			calm X;
@@ -1551,8 +1558,9 @@ To compute teaching of (L - ultimate-lesson):
 			now the location of ex-princess is discovered;
 			now School33 is discovered;
 			teleport to the location of ex-princess;
+			now the stance of the player is 0;
 			say MonsterDesc of ex-princess;
-			say "[BigNameDesc of M] leans against the cell wall.[speech style of M]'The diaper pail you saw outside leads into this chamber. In there is the [ShortDesc of headmistress][']s favourite toy. And now that you're all gold-star students, [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
+			say "[BigNameDesc of M] leans against the cell wall.[speech style of M]'The diaper pail you saw outside leads into this chamber. In there is the [ShortDesc of headmistress][']s favourite toy. And now that you're [if there is a student in the location of the player]all gold-star students[otherwise]a gold-star student[end if], [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
 			compute mandatory room leaving of M;
 	now bigGameLoop is 0;
 	conclude consenting.
