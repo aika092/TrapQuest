@@ -337,7 +337,7 @@ Definition: a lesson is correctly-ranked if the lesson-teacher of it is correctl
 Definition: a lesson is lesson-appropriate: decide yes.
 
 Definition: a lesson (called L) is appropriate:
-	if the lesson-teacher of L is emerald-teacher and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and wrist collar bar is worn, decide no; [Most if not all other emerald lessons should let releasing the wrist collar bar take priority]
+	if the lesson-teacher of L is emerald-teacher and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
 	if the lesson-teacher of L is alive and the lesson-teacher of L is undefeated and L is lesson-appropriate, decide yes;
 	decide no.
 
@@ -508,7 +508,7 @@ To compute detention of (M - a staff member):
 	otherwise compute chair detention of M.
 
 To say LateDetention of (M - a staff member):
-	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE!  Class is already over!  It's detention for you, young Miss. Come with me now!'[roman type][line break]".
+	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE! Class is already over! It's detention for you, young Miss. Come with me now!'[roman type][line break]".
 
 To say GenericDetention of (M - a staff member):
 	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
@@ -544,7 +544,7 @@ To compute chair detention of (M - a staff member):
 	now detention chair is detention-wand;
 	now detention-turns is a random number between 15 and 25;
 	drag to School13 by M;
-	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit.[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
+	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise if class-time < (lessonFrequency * -3)]If you can't get to class on time then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit.[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
 	if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	if (diaper quest is 1 or a random number between 0 and 3 < diaper lover) and the number of worn diapers is 0, compute DQChairSetup of M;
 	say "[if the delicateness of the player > 10]You crawl over to the [ShortDesc of detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise]quickly binding[end if] you in place with the straps. ";

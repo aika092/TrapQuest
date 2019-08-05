@@ -71,10 +71,10 @@ To compute teaching of (L - tits-lesson):
 			repeat with C running through worn actually breast covering clothing:
 				say "Your [ShortDesc of C] disintegrates in a burst of black flame!";
 				destroy C;
-			if topless permanent fetish is 0:
+			if topless temporary fetish is 0:
 				say "You suddenly feel very comfortable with having your [BreastDesc] on full display. In fact, the idea of wearing something that covers you up now feels just objectively... wrong. Your magnificent mammaries and proudly erect nipples are destined to be gazed upon! It would be wrong of you to deprive anyone of that wonderful privilege.";
-				now topless permanent fetish is 1;
-			say "[M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. Until next time.'[roman type][line break][Big he of M] disbands the class.";
+				now topless temporary fetish is 20;
+			say "[M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. [NameBimbo] will certainly have to learn [his of the player] lesson the practical way - TWENTY TIMES, in in fact. Anyway, until next time.'[roman type][line break][Big he of M] disbands the class.";
 	otherwise if the breast-enhancement of nurse > 0 and the number of worn chest tattoos is 0 and breasts is showing cleavage:
 		let S be random student in the location of the player;
 		say "[big he of M] opens a desk drawer and retrieves several black marker pens.[line break][speech style of M]'Today we will be helping each other learn to be proud of displaying their cleavage. Firstly, let's split into groups.'[roman type][line break][NameDesc of M] assigns people into pairs. You are partnered with [NameDesc of S].[line break][speech style of M]'You will each be writing a phrase on your partner's cleavage. I want you to come up with something cheeky that will make the wearer's titty-meat nice and eye catching. Don't worry, it's not permanent.'[roman type][line break]Each pair is handed a pen. You are given the pen for your pair, so you go first. [if the player is a nympho]A naughty thought comes to your mind, and you write 'stick your dick here'[otherwise if the player is a pervert]After thinking for a few moments you write 'one for the wank bank'[otherwise]You struggle to think of anything inventive, and end up just writing 'hot stuff'[end if] on [NameDesc of S][']s cleavage.[line break]But then it's [his of S] turn. [big he of S] takes the pen off you and ";
@@ -221,10 +221,13 @@ pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
 To compute teaching of (L - pain-lesson):
 	let M be the lesson-teacher of L;
 	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as she paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to her. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
-	if the player is wrist bound or the player is ankle bound:
-		if wrist collar bar is worn:
-			say "Well [NameBimbo] found that out last time we all gathered for this lesson, didn't she? And I'm glad to see that she is still wearing her bondage as instructed.'[roman type][line break][BigNameDesc of M] produces a key and slots it into the lock, freeing you from the bondage of your [ShortDesc of wrist collar bar].";
-			only destroy wrist collar bar;
+	if the player is wrist bound or the player is ankle bound or portal gag is worn:
+		if wrist collar bar is worn or portal gag is worn:
+			let W be wrist collar bar;
+			if W is not worn, now W is portal gag;
+			say "Well [NameBimbo] found that out [if wrist collar bar is worn]last time we all gathered for this lesson[otherwise]recently[end if], didn't [he of the player]? And I'm glad to see that [he of the player] is still wearing [his of the player] bondage as instructed.'[roman type][line break][if W is locked][BigNameDesc of M] produces a key and slots it into the lock, allowing you to remove the [ShortDesc of W] whenever you like.[end if]";
+			now W is unlocked;
+			if portal-pants is worn, now portal-pants is unlocked;
 			say "[speech style of M]'I guess it's only fair that I keep my end of the bargain and promote you, then.'[roman type][line break]";
 		otherwise:
 			say "Well [NameBimbo] here already knows how to show the world that [he of the player][']s a wimp. [big he of the player] is walking around with [his of the player] [if the player is wrist bound]wrists[end if][if the player is wrist bound and the player is ankle bound] and [end if][if the player is ankle bound]ankles[end if] bound! Bravo! I think it's only fair that I promote you for your exemplary dedication to servitude.";
@@ -238,7 +241,7 @@ To compute teaching of (L - pain-lesson):
 		say "[variable custom style]Boy, that sure went well![roman type][line break]";
 		allocate 12 seconds;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
-	otherwise if diaper quest is 0 and clitoris piercing is eligible:
+	otherwise if diaper quest is 0 and clitoris piercing is eligible and (a random number between 1 and 3 > 1 or portal gag is not actually summonable):
 		say "Well, today we'll be finding out the first step. Anyone who wants to be able to progress further in this class you must make a permanent change in order to prove your dedication.'[roman type][line break][big he of M] holds up a small, glittering metal object.[line break][speech style of M]'Personally, I think that every slut should have their clit pierced. It's not just a way to enhance the feelings, it's a symbol that constantly reminds you of your place in the world. And, of course, it means that everyone that sees it will know that you've gone through excruciating pain just to decorate yourself as a submissive.'[roman type][line break][big he of M] begins putting on hygienic latex gloves and produces a professional-looking sterilized piercing kit. Everyone in the room looks very nervous.[line break][speech style of M]'So, who's going to dedicate themselves to progress?'[roman type][line break]Do you let her give you a clitoris piercing? ";[possibly more indication here that everyone will follow you]
 		if the player is bimbo consenting:
 			let ST be a random tryhard student in the location of the player;
@@ -328,12 +331,28 @@ To compute teaching of (L - pain-lesson):
 		otherwise:
 			say "[if the player is feeling dominant]There's no way you're going to risk any more pain right now! You fold you arms and audibly huff. The other students seem to be influenced by you and in the end, nobody volunteers at all[otherwise]You look around but nobody is making any move to go forward, and you don't have the bravery to go through it alone[end if]. [BigNameDesc of M] frowns.[line break][speech style of M]'You do realise, by all being complete wusses that you've essentially proven my point? Bah. Well, we'll try again next time, and see if any of you have grown some kahunas. Now get out of my sight.'[roman type][line break]";
 			allocate 12 seconds;
-	otherwise if wrist collar bar is actually summonable:
-		say "Well, I think we should try taking away someone's ability to use their wrists for a while, and see how they feel after that.'[roman type][line break][big his of M] eyes scan the room and then fall on you.[line break][speech style of M]'Yes, this will be perfect for you!'[roman type][line break][BigNameDesc of M] [if wrist collar bar is held]takes the [ShortDesc of wrist collar bar] from your possession[otherwise]produces a [ShortDesc of wrist collar bar] from underneath [his of M] desk and carries it over to you. [big he of M] makes you stand up and then uses it to strictly bind your wrists to your neck behind your back.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! Keep it on until next time we have this class and I'll reward you with a promotion, okay?'[roman type][line break]You whine but nod - it's not like you've got much choice!";
-		if diaper lover > 0, fullscreencutshow figure of teacher hannah cutscene 1 for M;
-		summon wrist collar bar locked;
-		say "You are surprised at how comfortable your arms are, forced to bend into this backwards position![line break][variable custom style]I must be getting more flexible![roman type][line break]";
-		DexUp 1;
+	otherwise if wrist collar bar is actually summonable or portal gag is actually summonable:
+		allocate 12 seconds;
+		if wrist collar bar is actually summonable and (portal gag is not actually summonable or a random number between 1 and 3 is 1): [TODO: change to 1 in 2 once players have had some fun with the portal]
+			say "Well, I think we should try taking away someone's ability to use their wrists for a while, and see how they feel after that.'[roman type][line break][big his of M] eyes scan the room and then fall on you.[line break][speech style of M]'Yes, this will be perfect for you!'[roman type][line break][BigNameDesc of M] [if wrist collar bar is held]takes the [ShortDesc of wrist collar bar] from your possession[otherwise]produces a [ShortDesc of wrist collar bar] from underneath [his of M] desk and carries it over to you[end if]. [big he of M] makes you stand up and then uses it to strictly bind your wrists to your neck behind your back.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! [bold type]Keep it on until next time we have this class [speech style of M] and I'll reward you with a promotion, okay?'[roman type][line break]You whine but nod - it's not like you've got much choice!";
+			if diaper lover > 0, fullscreencutshow figure of teacher hannah cutscene 1 for M;
+			summon wrist collar bar locked;
+			say "You are surprised at how comfortable your arms are, forced to bend into this backwards position![line break][variable custom style]I must be getting more flexible![roman type][line break]";
+			DexUp 1;
+		otherwise:
+			say "Well, I think we should try taking away someone's right to choose how their mouth is used, and see how they feel after that.'[roman type][line break][big his of M] eyes scan the room and then fall on you.[line break][speech style of M]'Yes, this will be perfect for you!'[roman type][line break][BigNameDesc of M] [if portal gag is held]takes the [ShortDesc of portal gag] from your possession[otherwise]produces a magical ballgag with a swirling portal where the ball should be, and carries it over to you[end if]. [big he of M] wraps the strap around your face and locks it into place, so there's now a magical portal fixed in your permanently open mouth! [BigNameDesc of M] holds up another identical portal, attached to similar leather straps.[line break][speech style of M]'Whoever holds this owns your mouth, now. Do you understand what happens when something is inserted here?'[roman type][line break]You whine but nod.[line break][speech style of M]'Now, who should I give it to...'[roman type][line break]";
+			summon portal gag locked;
+			if portal-pants is actually summonable and (watersports fetish is 1 or watersports mechanics is 0): [Can't do this if player needs to pee but isn't into piss drinking]
+				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] straps the other half of the portal equipment over your crotch, so that your [if the player is male][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to stop yourself from keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the toilet before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
+				summon portal-pants locked;
+			otherwise:
+				let N be a random alive male teacher;
+				if N is nothing or a random number between 1 and 3 is 1, now N is M;
+				now portal-pants is in Holding Pen;
+				now N is retaining portal-pants;
+				say "[if N is M][BigNameDesc of M] pockets the device.[line break][speech style of M]'I think I'll keep it for myself.'[otherwise][BigNameDesc of M] twirls the device in [his of M] hand. I think I'll give it to Teacher [teacher-name of N]. Something tells me [he of N] will be able to find some good uses for your mouth! If you haven't met [him of M] yet, [he of M][']s the proud owner of a rather juicy [manly-penis], which pretty soon your mouth and tongue are likely to be well acquainted with, I should think!'[end if][roman type][line break]";
+			say "You emit a muffled whine through the gag.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! [bold type]Keep it on until next time we have this class [speech style of M]and I'll reward you with a promotion, okay?'[roman type][line break]As [NameDesc of M] dismisses the class, there's nothing you can do but groan and accept your new fate. There is a small silver lining - you can feel that the magic power of the portal gag has slightly rubbed off on you, adding to your own magic power reserves.";
+			MagicPowerUp 2;
 	otherwise:
 		say "Well, actually all the things I wanted to suggest aren't possible right now. Oh well. I'll probably have more potential actions in a future version of the game.'[roman type][line break]";
 		allocate 6 seconds.
@@ -418,6 +437,14 @@ To compute teaching of (L - toy-lesson):
 				otherwise if the size of CP > the insertableGirthAcceptance of asshole:
 					say "You try your best but it's just too big! You hang your head in shame as you put the [MediumDesc of CP] back onto the table. [BigNameDesc of M] shakes [his of M] head in disappointment.[line break][speech style of M]'I had higher expectations of you.'[roman type][line break]";
 					add 0 to LN;
+					if there is a worn tattoo and the number of worn crotch tattoo is 0:
+						if the player is female or fast tg is 3:
+							say "[BigNameDesc of M] touches the space above your [genitals] with a finger. [big his of M] finger is burning hot!";
+							PainUp 1;
+							summon measurement tattoo;
+							say "[speech style of M]'Since you want to try and get such big things inside you, this should help you manage it.'[roman type][line break]When [he of M] removes [his of M] finger, you have a new tattoo!";
+							try examining measurement tattoo;
+							if the player is male, SexChange the player;
 				otherwise:
 					now CP is worn by the player;
 					now CP is sure;
@@ -434,7 +461,7 @@ To compute teaching of (L - toy-lesson):
 						obsceneDignify;
 			otherwise:
 				say "[speech style of M]'[student-name of ST], [one of]you're up[or]you're next[or]go ahead[then at random].'[roman type][line break]";
-				let STD be the dedication of ST * 2;
+				let STD be (the dedication of ST + (a random number between 0 and 2)) * 2;
 				let E be the number of entries in LP;
 				let STP be entry E of LP;
 				repeat with P running through LP:

@@ -1,6 +1,6 @@
 Combat Visor by Headgear begins here.
 
-combat visor is a clothing. combat visor is plastic. combat visor is unique. Figure of combat visor is the file "Items/Accessories/Head/combatvisor1.png". The text-shortcut of combat visor is "cbv".
+combat visor is a clothing. combat visor is plastic. combat visor is sure. combat visor is identified. combat visor is unique. Figure of combat visor is the file "Items/Accessories/Head/combatvisor1.png". The text-shortcut of combat visor is "cbv".
 
 The printed name of combat visor is "[clothing-title-before]combat visor[clothing-title-after]".
 

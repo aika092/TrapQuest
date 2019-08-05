@@ -358,6 +358,40 @@ To say ShortDesc of (C - a string belt):
 	say "string belt".
 
 
+
+
+
+tongue-belt is a belt. tongue-belt is unique. tongue-belt is biological. The printed name of tongue-belt is "[clothing-title-before]tongue belt[clothing-title-after]". The text-shortcut of tongue-belt is "tgbt". Understand "tongue", "belt" as tongue-belt.
+
+Figure of tongue belt is the file "Items/Clothes/Lower/Waist/Belts/tonguebelt1a.png".
+Figure of tonguing belt is the file "Items/Clothes/Lower/Waist/Belts/tonguebelt1b.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-belt):
+	if C is tonguing, decide on figure of tonguing belt;
+	decide on figure of tongue belt.
+
+To say ClothingDesc of (C - tongue-belt):
+	say "A belt made completely out of large red demonic tongues. [TongueStatus of C]".
+
+To say ShortDesc of (C - tongue-belt):
+	say "pair of tongued belt".
+
+Definition: tongue-belt is demonic: decide yes.
+Definition: tongue-belt is tongued: decide yes.
+Definition: tongue-belt is transformation-protected: decide yes.
+
+To decide which number is the initial outrage of (C - tongue-belt):
+	if C is tonguing, decide on 11;
+	decide on 3.
+
+To decide which object is the unique-upgrade-target of (C - a belt):
+	if C is not demonic and there is a worn demonic wearthing and tongue-belt is off-stage, decide on tongue-belt;
+	decide on nothing.
+
+
+
+
+
 a white suspenders is a kind of suspenders. There is 1 white suspenders. A white suspenders is usually nylon. A white suspenders is usually sheer. The printed name of a white suspenders is usually "[clothing-title-before]pair of white sheer suspenders[clothing-title-after]". The printed plural name of a white suspenders is usually "[clothing-title-before]pairs of white sheer suspenders[clothing-title-after]". The text-shortcut of white suspenders is "wss". Figure of white suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders3.png". Understand "sheer" as white suspenders.
 Definition: a white suspenders is white themed: decide yes.
 
@@ -369,6 +403,7 @@ To say ClothingDesc of (S - a white suspenders):
 
 To decide which number is the initial outrage of (C - a white suspenders):
 	decide on 1.
+
 
 
 All Belts ends here.

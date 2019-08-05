@@ -245,7 +245,7 @@ Definition: A tentacle monster (called M) is willing to shag:
 	decide no.
 
 To decide which number is the rounds of sex left of (M - a tentacle monster):
-	if the class of the player is schoolgirl and the class of the player is magical girl and there is a heart wand in the location of the player and the player is able to orgasm and the player is not unable to orgasm so soon, decide on 2; [If the player will win the fight when they orgasm, the sex never ends.]
+	if the class of the player is schoolgirl and the class of the player is magical girl and there is a heart wand in the location of the player and the player is able to orgasm and the player is not unable to orgasm so soon and M is penetrating a fuckhole, decide on 2; [If the player will win the fight when they orgasm, the sex never ends.]
 	decide on the sex-length of M.
 
 To say PregGrowth of (M - a tentacle monster):

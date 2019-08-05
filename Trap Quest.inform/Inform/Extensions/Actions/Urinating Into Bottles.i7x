@@ -18,30 +18,30 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
 	if the player is not disgraced and there is a reactive monster and debugmode is 0, say "You consider yourself too dignified to do that in front of someone right now. Peeing on the floor would be humiliating enough." instead;
 	unless the noun is a vessel or the noun is a pedestal, say "How would you pee into that?" instead;
-	say "Do you want to get your clothes out of the way first? ";
-	if the player is bimbo consenting:
-		repeat with C running through worn pee covering clothing:
-			if C is crotch-zipped:
-				say "You unzip your [ShortDesc of C].";
-				ZipDown C;
-				now C is temporarily-displaced;
-			otherwise if C is displacable:
-				say "You pull your [ShortDesc of C] out of the way.";
-				now C is crotch-displaced;
-				now C is temporarily-displaced;
-			allocate 2 seconds;
-	if there is worn pee covering clothing, say "If you peed right now, it'd be inside your [MediumDesc of random worn pee covering clothing]." instead;
-	if the player is prone:
-		say "If you peed right now, it'd be on the floor because you're not standing." instead;
+	if the noun is a vessel and the noun is not open topped, say "You can only pee into open topped containers." instead;
+	if the noun is erect pedestal, say "There's no opening where you can pee." instead;
+	if the player is prone, say "You can only do that when standing." instead;
+	if there is worn pee covering clothing:
+		say "Do you want to get your clothes out of the way first? ";
+		if the player is bimbo consenting:
+			repeat with C running through worn pee covering clothing:
+				if C is crotch-zipped:
+					say "You unzip your [ShortDesc of C].";
+					ZipDown C;
+					now C is temporarily-displaced;
+				otherwise if C is displacable:
+					say "You pull your [ShortDesc of C] out of the way.";
+					now C is crotch-displaced;
+					now C is temporarily-displaced;
+				allocate 2 seconds;
+		if there is worn pee covering clothing, say "If you peed right now, it'd be inside your [MediumDesc of random worn pee covering clothing]." instead;
 	if the noun is a vessel:
-		if the noun is not open topped, say "You can only pee into open topped containers." instead;
 		if the doses of the noun > 0 and the fill-type of the noun is not 21:
 			say "Are you sure you wish to empty your [noun] of its current contents ([PotionType of the noun])? ";
 			if the player is consenting, dump the noun;
 			otherwise say "You change your mind." instead;
 	otherwise if the noun is pedestal:
-		if the noun is erect, say "There's no opening where you can pee.";
-		if the player is pee protected or there is a worn pee covering undisplacable clothing, say "You can't get your genitals close enough to the carving for that to work.";
+		if the player is pee protected or there is a worn pee covering undisplacable clothing, say "You can't get your genitals close enough to the carving for that to work." instead;
 	otherwise:
 		say "How would you pee into that?" instead.
 

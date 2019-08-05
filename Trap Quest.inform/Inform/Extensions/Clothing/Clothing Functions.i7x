@@ -277,8 +277,8 @@ To only destroy (C - clothing):
 	now C is not glued;
 	if C is strut enabling and C is worn and the strut of the player is 1 and the strutskill of the player is 0 and the number of worn strut enabling clothing is 1, now the strut of the player is 0;
 	unless C is headgear, now C is bland; [The state of headgear is important and shouldn't be reset]
+	if C is discovered varied, now C is blandness;
 	unless C is alwaysSure, now C is unsure;
-	now C is blandness;
 	unless C is alwaysIdentified, now C is unidentified;
 	now the raw-magic-modifier of C is 0;
 	now C is unowned;

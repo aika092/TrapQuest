@@ -47,6 +47,7 @@ To decide which number is the implant of ultimate-lesson-yes:
 
 robomatron is a monster.
 boogeymonster is a monster.
+
 Include Wench by Monster.
 Include Sex Doll by Monster.
 Include Minotaur by Monster.
@@ -77,6 +78,7 @@ Include School Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
 Include Bunny Ears TQ by Headgear.
 Include Rugged Headband by Headgear.
+Include Spiked Tiara by Headgear.
 
 Include Dildo Pole Trap by Traps.
 Include Bukkake Traps by Traps.
@@ -84,6 +86,9 @@ Include Wooden Horse Traps by Traps.
 
 Include Gape Gloves by Equippables.
 Include Heavy Club by Equippables.
+
+Include Portal Pants by Knickers.
+Include Portal Gag by Bondage.
 
 
 Include Break Room Girl by Nintendolls Job Epilogues.

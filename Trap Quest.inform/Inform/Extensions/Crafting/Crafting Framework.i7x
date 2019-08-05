@@ -137,7 +137,8 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	[Here we can identify that some ingredients will never appear and are therefore inappropriate to put on a recipe.]
 	if the Recipe in row K of the Table of Alchemy is 1, decide no; [We have already assigned this ingredient to a recipe]
 	if (K is 20 and diaper quest is 1) or (K is 22 and lactation fetish is 0) or (K is 21 and watersports mechanics is 0) or (K is 23 and ((lactation fetish is 0 and watersports fetish is 0) or diaper quest is 1)), decide no;
-	if (K is 24 or K is 25 or K is 49 or K is 16) and egg laying fetish is 0, decide no; [all three types of eggs and wasp wing]
+	if (K is 24 or K is 25 or K is 49) and egg laying fetish is 0, decide no; [all three types of eggs ]
+	if K is 16 and egg laying fetish is 0 or mythical creature fetish is 0, decide no; [wasp wing]
 	if K is 36 and inflation fetish is 0, decide no;
 	if K is 55 and diaper quest is 0, decide no; [Chocolate eggs]
 	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]

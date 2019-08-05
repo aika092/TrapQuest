@@ -13,6 +13,7 @@ To say ExamineDesc of (B - a make up kit):
 To decide which number is the crafting key of (C - a make up kit):
 	decide on 34.
 To decide which number is the bartering value of (T - a make up kit) for (M - a wench):
+	if M is horny-wench, decide on 0;
 	decide on 3.
 To decide which number is the bartering value of (T - a make up kit) for (M - a gladiator):
 	decide on 1.

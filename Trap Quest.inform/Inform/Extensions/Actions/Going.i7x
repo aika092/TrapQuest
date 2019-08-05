@@ -565,6 +565,7 @@ Check going:
 							allocate 0 seconds; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
 							say "You change your mind." instead;
 			let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]
+			if the pregnancy of the player > 0 and S <= (B2 / 2) + 1, now S is (B2 / 2) + 3; [Pregnant players should not be prevented from ever moving since the pregnancy may have no other way of actually coming out other than a change in location]
 			repeat with M running through dangerous monsters in the location of the player:
 				let E be 1;
 				if M is insane gladiator or M is wild gladiator, increase E by 10;

@@ -1,4 +1,50 @@
-Demon Lord's Codpiece by Knickers begins here.
+Demonic Underwear by Knickers begins here.
+
+
+tongue-panties is a knickers. tongue-panties is unique. tongue-panties is biological. The printed name of tongue-panties is "[clothing-title-before]tongue panties[clothing-title-after]". The text-shortcut of tongue-panties is "tgps". Understand "tongue", "panties" as tongue-panties. The armour of tongue-panties is 10.
+
+Figure of white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1a.png".
+Figure of tonguing white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1b.png".
+Figure of black tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties2a.png".
+Figure of tonguing black tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties2b.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-panties):
+	if tonguesBlack is true:
+		if C is tonguing, decide on figure of tonguing black tongue panties;
+		decide on figure of black tongue panties;
+	otherwise:
+		if C is tonguing, decide on figure of tonguing white tongue panties;
+		decide on figure of white tongue panties.
+
+To say ClothingDesc of (C - tongue-panties):
+	say "This pair of [tonguesColour] panties has several large red tongues emerging from the inside of the fabric. [TongueStatus of C]".
+
+To say ShortDesc of (C - tongue-panties):
+	say "tongued panties".
+To say MediumDesc of (C - tongue-panties):
+	say "[tonguesColour] [ShortDesc of C]".
+To compute SelfExamineDesc of (C - tongue-panties):
+	say "A pair of [MediumDesc of C] covers a decent amount of your [ShortDesc of hips]. ".
+
+
+Definition: tongue-panties is displacable: decide yes.
+
+Definition: tongue-panties is demonic: decide yes.
+Definition: tongue-panties is tongued: decide yes.
+Definition: tongue-panties is transformation-protected: decide yes.
+Definition: tongue-panties is white themed if tonguesBlack is false.
+Definition: tongue-panties is black themed if tonguesBlack is true.
+
+To decide which number is the unique outrage of (C - tongue-panties):
+	if C is tonguing, decide on 14;
+	decide on 4.
+
+To compute periodic effect of (C - tongue-panties):
+	if C is crotch-in-place and the player is prone and there is a reactive dangerous monster and tonguesActive > 0:
+		say "[bold type][BigNameDesc of C] [bold type]uses its tongues to pull itself out of the way, completely of its own volition![roman type][line break]";
+		displace C.
+
+
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
 Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The soak-limit of demon codpiece is 6. The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
@@ -113,7 +159,7 @@ This is the demon junk punishment rule:
 			otherwise:
 				VaginalSexAddictUp 5;
 				Arouse 5000;
-				say "You feel a sudden desperate need to jam a giant cock into your brand new pussy!";
+				say "You feel a sudden desperate need to jam a giant cock into your pantiesnd new pussy!";
 		let M be a random alive mechanic;
 		if M is monster:
 			XavierUp M by 2;
@@ -121,5 +167,5 @@ This is the demon junk punishment rule:
 		IntDown 2;
 		say "A fog settles over your mind, permanently impairing your ability to think about... just about anything, really.".
 
-Demon Lord's Codpiece ends here.
+Demonic Underwear ends here.
 

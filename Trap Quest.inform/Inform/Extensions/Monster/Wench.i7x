@@ -1123,6 +1123,10 @@ To compute desperate drinking to (M - a wench):
 
 Part 5 - Trading
 
+
+To decide which number is the bartering value of (T - a thing) for (M - a horny-wench):
+	decide on 0.
+
 To decide which number is the bartering value of (T - a desirable knickers) for (M - a wench):
 	if M is objectifying the player, decide on 0;
 	decide on 4.

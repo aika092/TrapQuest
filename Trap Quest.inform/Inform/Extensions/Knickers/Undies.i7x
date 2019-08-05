@@ -39,6 +39,10 @@ Report wearing undies:
 	if the penis-capacity of the noun < the size of penis:
 		say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
 
+To decide which object is the unique-upgrade-target of (C - an undies):
+	if there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;
+	decide on nothing.
+
 This is the remove inappropriate undies rule:
 	repeat with B running through g-strings:
 		now B is in Holding Pen;

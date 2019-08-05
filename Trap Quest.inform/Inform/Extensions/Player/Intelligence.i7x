@@ -54,6 +54,7 @@ To decide which number is the flat intelligence of the player:
 	increase I by the theme bonus of the intelligence theme rules;
 	if the arousal of the player >= 5000, decrease I by (the arousal of the player - 2000) / 3000;
 	increase I by ((strawberry-lace-timer + default-candy-duration - 1) / default-candy-duration) * 6;
+	increase I by ((magic-smarts-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	if the the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
 	if toffee-poison-timer > 0, now I is I / 2;
 	if (the bimbo of the player is 19 or hungover > 0 or the player is fighting against topless or the player is fighting against no-panties) and I > 5:

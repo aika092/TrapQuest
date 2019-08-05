@@ -3,6 +3,8 @@ Serving Table by Bondage begins here.
 serving-bondage is a kind of bondage. The text-shortcut of serving-bondage is "svt".
 The clothingFocusPriority of serving-bondage is -2.
 
+Definition: a serving-bondage is actually summonable: decide no. [Shouldn't be selected randomly as a bondage to summon]
+
 Definition: a serving-bondage is drink themed: decide yes.
 To decide which number is the initial outrage of (C - a serving-bondage):
 	decide on 9.

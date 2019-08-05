@@ -60,8 +60,10 @@ To compute perception of (M - a robobutler):
  		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
-		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party related wearthing):
+		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party themed wearthing):
 			serve alcohol from M;
+		otherwise if a random number between 0 and watersports fetish is 1:
+			serve urine from M;
 		otherwise:
 			say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
@@ -100,6 +102,23 @@ To serve alcohol from (M - a robobutler):
 			bore M;
 	otherwise:
 		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'PARTYGOER DETECTED. I HOPE YOU ARE ENJOYING THE PARTY.'[roman type][line break]";
+		calm M.
+
+To serve urine from (M - a robobutler):
+	now autodrink is 1;
+	if the player is able to drink:
+		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [urine]. It doesn't seem like it's looking for 'no' as an answer. Do you drink the shot? ";
+		if the player is bimbo consenting:
+			StomachUp 1;
+			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck yuck yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
+			satisfy M;
+			UrineTasteAddictUp 1;
+		otherwise:
+			say "Its eyes flash red for a brief moment.[line break][first custom style]'RELUCTANCE DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break]It turns to leave you alone, for now.";
+			FavourDown M;
+			bore M;
+	otherwise:
+		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'GREETINGS VISITOR.'[roman type][line break]";
 		calm M.
 
 Report going in the presence of a robobutler:

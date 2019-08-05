@@ -720,7 +720,7 @@ To say DamageReactSubmissive of (M - vampiress):
 To compute unique death of (M - vampiress):
 	let X be nothing;
 	let R be a random number between 0 and 5;
-	if (full-lady fetish is 1 or a random number between 1 and 3 is 3) and gem-strapon is off-stage and the player is an October 2018 top donator:
+	if (full-lady fetish is 1 or a random number between 1 and 3 is 3) and gem-strapon is off-stage and the player is the donator:
 		now X is gem-strapon;
 	otherwise if R > 3:
 		repeat with B running through off-stage cans:

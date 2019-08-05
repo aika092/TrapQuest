@@ -106,6 +106,8 @@ Include Chocolates Bag by Objects.
 Include Chocolate Egg by Food.
 Include Bunny Ears DQ by Headgear.
 rugged-headband is a headgear. domination-quest is a headgear-clothing-quest. rugged-summoned is a number that varies.
+spiked-tiara is a headgear.
+portal-pants is a knickers. portal-pants is unique. portal gag is a bondage.
 
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".

@@ -12,6 +12,9 @@ To decide which figure-name is Figure of acolyte 3:
 To decide which figure-name is Figure of acolyte 4:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of aeromancer cutscene 7:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of demoness cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of demoness cutscene 2:
@@ -229,6 +232,10 @@ To decide which figure-name is Figure of Body Reaction 12:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 13:
 	decide on figure of small image.
+To decide which figure-name is Figure of Body Reaction 14:
+	decide on figure of small image.
+To decide which figure-name is Figure of Body Reaction 15:
+	decide on figure of small image.
 
 To decide which figure-name is Figure of Cumshot Reaction 1:
 	decide on figure of small image.
@@ -254,6 +261,8 @@ To decide which figure-name is Figure of Egg Laying 5:
 To decide which figure-name is Figure of Egg Laying 6:
 	decide on figure of small image.
 To decide which figure-name is Figure of Egg Laying 7:
+	decide on figure of small image.
+To decide which figure-name is Figure of Egg Laying 8:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Enslaved Angela:
@@ -365,6 +374,8 @@ To decide which figure-name is Figure of Vines Cutscene 5:
 To decide which figure-name is Figure of Vines Cutscene 7:
 	decide on figure of small image.
 To decide which figure-name is Figure of Vine Boss Cutscene 1:
+	decide on figure of small image.
+To decide which figure-name is Figure of Vine Boss Cutscene 2:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Water Bomb:

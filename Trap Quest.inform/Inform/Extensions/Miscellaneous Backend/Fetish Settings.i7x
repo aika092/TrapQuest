@@ -104,6 +104,7 @@ choice
 -1 [clumsy]
 0 [slow birth]
 0 [combatvisor]
+1 [supportersEnabled]
 
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
@@ -379,15 +380,15 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	if the player is not a march 2018 top donator and (diaper quest is 0 or the player is not a march 2018 diaper donator), decide on 0;
+	if the player is not a top donator, decide on 0;
 	decide on the choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
-	if the player is not a march 2018 top donator and (diaper quest is 0 or the player is not a march 2018 diaper donator), decide on 0;
+	if the player is not a top donator, decide on 0;
 	decide on the choice in row 66 of the Table of Player Options.
 
 To decide which number is april fools content:
-	if the player is not a march 2018 top donator and (diaper quest is 0 or the player is not a march 2018 diaper donator), decide on 0;
+	if the player is not a top donator, decide on 0;
 	decide on the choice in row 67 of the Table of Player Options.
 
 To decide which number is futanari fetish:
@@ -401,6 +402,12 @@ To decide which number is incontinence protection:
 To decide which number is combatvisor:
 	if the player is the donator, decide on 0;
 	decide on the choice in row 76 of the Table of Player Options.
+
+
+To decide which number is supportersEnabled:
+	if diaper quest is 1, decide on 0;
+	if the player is not the donator, decide on 1;
+	decide on the choice in row 77 of the Table of Player Options.
 
 
 
@@ -530,6 +537,7 @@ To decide which number is points count:
 	decrease X by roleplay fetish;
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decrease X by combatvisor;
+	if supportersEnabled is 0 and diaper quest is 0, decrease X by 1;
 	decide on X.
 
 
