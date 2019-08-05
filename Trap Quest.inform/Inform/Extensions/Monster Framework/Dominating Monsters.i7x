@@ -293,7 +293,7 @@ Carry out dominating:
 Report dominating:
 	allocate 6 seconds;
 
-Understand "dominate [something]", "fuck [something]", "dom [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]" as dominating.
+Understand "dominate [something]", "fuck [something]", "dom [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]", "top [something] as dominating.
 
 [!<DecideWhichNumberIsTheDominanceOfThePlayer>+
 

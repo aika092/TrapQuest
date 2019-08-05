@@ -177,7 +177,7 @@ REQUIRES COMMENTING
 +!]
 Report standing:
 	say "You get off your knees successfully. [bold type]You are now standing.[roman type]".
-Understand "arise", "get up", "unkneel", "lift me", "st" as standing.
+Understand "arise", "get up", "unkneel", "lift me", "stop kneeling", "st" as standing.
 Instead of exiting, try standing.
 
 To say GrabbedStandingBlock of (M - a monster):

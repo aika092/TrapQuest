@@ -195,7 +195,7 @@ Definition: pimp is willing to deliver enemas: decide yes.
 Definition: pimp is willing to confiscate: decide yes.
 
 To say DQSpankResistReactionFlav of (M - pimp):
-	say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]Oh knock that off. You knew you had this comin['], insubordinate bitch!'[or]You're getting docked big time for this, I hope you know that!'[or]Oh now cut it off or you'll earn 10 more whaps for that!'[or]Stupid little tramps like you thinkin tantrums will get you anywhere.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]Oh knock that off. You knew you had this comin['], insubordinate bitch!'[or]You're getting docked big time for this, I hope you know that!'[or]Oh now cut it off or you'll earn 10 more whaps for that!'[or]Stupid little tramps like you thinkin['] tantrums will get you anywhere.'[in random order][roman type][line break]".
 
 Section 3 - Damage
 
@@ -253,7 +253,7 @@ To say AnnoyedResponse of (M - pimp):
 	say "[speech style of M]'[one of]Bitch, I SAID shut up.'[or]Shut the fuck up, bitch!'[or]You betta shut your ass up, bitch.'[at random][roman type]".
 
 To say TauntRejected of (M - pimp):
-	say "[speech style of M]'[one of]You better stop runnin that mouth, bitch.'[or]I'm warning you, bitch. I don't let anyone run their fuckin mouth to me.'[or]You sure that's what you wanted to say, bitch?'[at random][roman type][line break][BigNameDesc of M] seems even more determined to beat you!".
+	say "[speech style of M]'[one of]You better stop runnin['] that mouth, bitch.'[or]I'm warning you, bitch. I don't let anyone run their fuckin['] mouth to me.'[or]You sure that's what you wanted to say, bitch?'[at random][roman type][line break][BigNameDesc of M] seems even more determined to beat you!".
 
 To say PleadRejected of (M - pimp):
 	say "[speech style of M]'Don't try and act all friendly now. It's too late for that!'[roman type][line break]".

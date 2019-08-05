@@ -2,7 +2,7 @@ Kitsune by Monster begins here.
 
 kitsune is a monster. kitsune is intelligent. kitsune has a number called vanish timer. The vanish timer of kitsune is -1. kitsune has a number called times-revealed. kitsune has a number called special-gifted. kitsune has a monster called target-disguise.
 
-Understand "vampiress", "seductive" as kitsune when the target-disguise of the item described is vampiress. Understand "cultist", "acolyte", "ardent" as kitsune when the target-disguise of the item described is acolyte.
+Understand "vamp", "vampire", "vampiress", "seductive" as kitsune when the target-disguise of the item described is vampiress. Understand "cultist", "acolyte", "ardent" as kitsune when the target-disguise of the item described is acolyte.
 
 Definition: kitsune is mansion dwelling: decide yes.
 

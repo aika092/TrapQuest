@@ -347,7 +347,7 @@ To say ExamineDesc of (C - DungeonScenery04):
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". Understand "photo", "picture", "frame" as DungeonScenery05.
+DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". Understand "photo", "photograph", "photo frame", "picture", "frame" as DungeonScenery05.
 To say ExamineDesc of (C - DungeonScenery05):
 	say "[if the faint count of the player is 0]A pink photo frame. There is currently no picture in the frame.[otherwise]The photo within the pink frame shows you[RealDesc][end if]".
 

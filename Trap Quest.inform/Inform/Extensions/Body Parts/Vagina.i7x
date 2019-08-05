@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female. The text-shortcut of vagina is "vagina".
+vagina is a fuckhole. vagina is everywhere. Understand "pussy", "cunny", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female. The text-shortcut of vagina is "vagina".
 
 To say FullExamineDesc of (B - vagina):
 	say "[if the player is female][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".

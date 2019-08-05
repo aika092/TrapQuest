@@ -203,7 +203,7 @@ Carry Out FoodListing:
 			now T is catalogued;
 	now inventory-busy is 0.
 
-LootListing is an action applying to nothing. Understand "loot", "list loot", "collectibles", "list collectibles", "items", "list items" as LootListing.
+LootListing is an action applying to nothing. Understand "item list", "loot", "list loot", "collectibles", "list collectibles", "items", "list items" as LootListing.
 
 [!<CarryOutLootListing>+
 

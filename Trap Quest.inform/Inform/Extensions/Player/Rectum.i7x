@@ -405,7 +405,7 @@ REQUIRES COMMENTING
 
 *!]
 Messing is an action applying to nothing.
-Understand "poo", "poop", "crap", "shit", "mess" as messing.
+Understand "poo", "poop", "crap", "shit", "mess", "soil", "defecate" as messing.
 
 [!<CheckMessing>+
 

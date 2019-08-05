@@ -4,7 +4,7 @@ A robochef is a kind of robot. A robochef is intelligent. A robochef is male. A 
 
 Figure of robochef is the file "NPCs/Hotel/Robot/robochef1.png". The text-shortcut of robochef is "rc".
 
-There is 1 robochef. Understand "chef", "busy" as robochef.
+There is 1 robochef. Understand "chef", "cook", "busy", "robot chef", "chefbot" as robochef.
 
 To say ShortDesc of (M - a robochef):
 	say "RoboChef".

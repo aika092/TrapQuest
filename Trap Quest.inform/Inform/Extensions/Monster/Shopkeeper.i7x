@@ -10,7 +10,7 @@ Definition: shopkeeper is raunchy: decide yes.
 
 Definition: shopkeeper is manly-wenchy: decide yes.
 
-shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
+shopkeeper is in Dungeon41. Understand "shop", "keeper", "shopkeep", "store owner", "storeowner", "merchant" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
 
 Figure of clothed shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4.png".
 Figure of female shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper5.png".

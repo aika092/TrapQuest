@@ -82,7 +82,7 @@ To say MediumDesc of (M - rubberdoll wrestler):
 
 To say MonsterDesc of (M - a wrestler):
 	if M is fucked-silly, say "An unconscious latex clad wrestler on the ground here has a bulging belly and still has [semen] slowly flowing out of her gaped cunt.";
-	otherwise say "This woman is covered head to toe in a shiny black latex catsuit. It conceals every inch of her skin except the lower half of her face and her eyes. Other than that it completely seals her in, although a zip at the crotch suggests that may be under her control. [if diaper quest is 0]The figure-hugging rubber outfit does nothing to conceal her generous curves[otherwise]And just as well - the figure-hugging rubber outfit does nothing to conceal her generous curves, including the large diaper bulge around her crotch[end if]. Her two perfectly round breasts must be a G cup, if not larger. 'voluptuous' is the word to describe her body, from her alluring hips to her powerful thighs, down the well-muscled legs surely balanced on two high black platform fetish heels. The outfit sports a pair of cat ears on top of her head and has purple accents on the inner thighs, armpits and the back of her head, all of it working together to give the impression of some kind of wrestling outfit.".
+	otherwise say "This woman is covered head to toe in a shiny black latex catsuit. It conceals every inch of her skin except the lower half of her face and her eyes. Other than that it completely seals her in, although a zip at the crotch suggests that may be under her control. [if diaper quest is 0]The figure-hugging rubber outfit does nothing to conceal her generous curves[otherwise]And just as well - the figure-hugging rubber outfit does nothing to conceal her generous curves, including the large diaper bulge around her crotch[end if]. Her two perfectly round breasts must be a G cup, if not larger. 'Voluptuous' is the word to describe her body, from her alluring hips to her powerful thighs, down the well-muscled legs surely balanced on two high black platform fetish heels. The outfit sports a pair of cat ears on top of her head and has purple accents on the inner thighs, armpits and the back of her head, all of it working together to give the impression of some kind of wrestling outfit.".
 
 To say MonsterComment of (M - a wrestler):
 	if diaper quest is 0, say "[variable custom style][if the bimbo of the player < 5 and the player is male][one of]Man, that's a pretty hot outfit. I wouldn't mind a poster of her on my wall.[or]She's definitely my type.[stopping][otherwise if the bimbo of the player < 5]How can [he of M] look so happy when she's wearing something so constricting?[otherwise if the bimbo of the player < 8][one of]I wonder if [he of M] actually knows how to wrestle.[or]She looks pretty darn strong. I should be careful.[stopping][otherwise if the bimbo of the player < 11][one of]She looks like [he of M] could teach me a thing or two...[or]I wonder what it feels like in there.[or]I wish I was as happy as [he of M] looks.[in random order][otherwise if watersports fetish is 1]She seems kinky. I wonder if I'll be able to keep up?[otherwise if the bimbo of the player < 14]Fuck, [he of M] is hot. I wish I was that hot.[otherwise]Pff, I bet I can fuck better than her, no matter how flexible [he of M] looks.[end if][roman type][line break]".
@@ -115,7 +115,7 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a wrestler):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a woman covered head to toe in shiny latex materializes on the pad. [line break][speech style of M]'I hope my mistress is ready for me.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a [man of M] covered head to toe in shiny latex materializes on the pad. [line break][speech style of M]'I hope my mistress is ready for me.'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of squeaky rubber clothing coming from another part of the hotel.".
 
@@ -413,16 +413,16 @@ To compute (M - a wrestler) diving into (F - a fuckhole):
 		say "[BigNameDesc of M] slides a full three fingers into your [variable F].";
 		if the player is female, cutshow figure of wrestler fingers 3 for M;
 	otherwise if the fingers of M is 4:
-		say "[BigNameDesc of M] forces all four of her fingers into your [variable F].";
+		say "[BigNameDesc of M] forces all four of [his of M] fingers into your [variable F].";
 	otherwise if the fingers of M is 5:
-		say "[BigNameDesc of M] slides all four of her fingers [italic type]and[roman type] her thumb into your [variable F], all the way up to her knuckles. [big he of M] can't manage to push it in any further than that!";
+		say "[BigNameDesc of M] slides all four of [his of M] fingers [italic type]and[roman type] [his of M] thumb into your [variable F], all the way up to [his of M] knuckles. [big he of M] can't manage to push it in any further than that!";
 		if the player is female, cutshow figure of wrestler fingers 5 for M;
 	otherwise:
-		say "[BigNameDesc of M] slides all four of her fingers [italic type]and[roman type] her thumb into your [variable F], all the way up to her knuckles. [big he of M] keeps pushing with all her might, and all of a sudden, her whole fist slides in!";
+		say "[BigNameDesc of M] slides all four of [his of M] fingers [italic type]and[roman type] [his of M] thumb into your [variable F], all the way up to [his of M] knuckles. [big he of M] keeps pushing with all [his of M] might, and all of a sudden, [his of M] whole fist slides in!";
 		if the player is male, cutshow figure of wrestler fingers 4 for M;
 		otherwise cutshow figure of wrestler fingers 6 for M;
 	say "[variable custom style][if the relevant sex addiction of M < 9][one of]Oof[or]'That's too much!'[or]I'm being stretched![in random order][otherwise][one of]This is new...![or]Oof, I feel more loose already...[or]Here we go again![stopping][end if][roman type][line break]";
-	say "She starts moving her [if the fingers of M is 6]fist[otherwise]fingers[end if] in a thrusting motion.".
+	say "She starts moving [his of M] [if the fingers of M is 6]fist[otherwise]fingers[end if] in a thrusting motion.".
 
 To compute anal sex of (M - a wrestler):
 	compute M fisting asshole;
@@ -440,17 +440,17 @@ To compute (M - a wrestler) fisting (F - a fuckhole):
 	compute M getting fingers into F;
 	if the fingers of M > old-fingers:
 		if the fingers of M is 6:
-			say "[BigNameDesc of M] keeps pushing with all her might, and all of a sudden, her whole fist slides in!";
-			say "[variable custom style][if the relevant sex addiction of M < 8]'AAAAAAAAAH!'[otherwise if the relevant sex addiction of M < 14]There's no way...?!?! Oh my god, it's really happening, I'm being fisted![otherwise]She got the whole fist in, I'm so proud!  Fist fuck me, baby![end if][roman type][line break]";
+			say "[BigNameDesc of M] keeps pushing with all [his of M] might, and all of a sudden, [his of M] whole fist slides in!";
+			say "[variable custom style][if the relevant sex addiction of M < 8]'AAAAAAAAAH!'[otherwise if the relevant sex addiction of M < 14]There's no way...?!?! Oh my god, it's really happening, I'm being fisted![otherwise][big he of M] got the whole fist in, I'm so proud!  Fist fuck me, baby![end if][roman type][line break]";
 			if the player is male, cutshow figure of wrestler fingers 4 for M;
 			otherwise cutshow figure of wrestler fingers 6 for M;
 		otherwise:
-			say "[BigNameDesc of M], having loosened you up, finds room for another finger!  [big he of M] now has [fingers of M] fingers inside your [variable F]. [big he of M] continues her furious thrusting!";
+			say "[BigNameDesc of M], having loosened you up, finds room for another finger!  [big he of M] now has [fingers of M] fingers inside your [variable F]. [big he of M] continues [his of M] furious thrusting!";
 			if the fingers of M is 5 and the player is female, cutshow figure of wrestler fingers 5 for M;
 			if the fingers of M is 3 and the player is female, cutshow figure of wrestler fingers 3 for M;
 			if the fingers of M is 2 and the player is male, cutshow figure of wrestler fingers 2 for M;
 	otherwise:
-		say "[BigNameDesc of M] keeps thrusting away, [one of]using her strong muscles to keep the pounding strong and hard[or]varying the speed of her pumps to keep you on your toes[or]putting her body weight into it[in random order]. Your [variable F] struggles to keep up with her girth and speed!";
+		say "[BigNameDesc of M] keeps thrusting away, [one of]using [his of M] strong muscles to keep the pounding strong and hard[or]varying the speed of [his of M] pumps to keep you on your toes[or]putting [his of M] body weight into it[in random order]. Your [variable F] struggles to keep up with [his of M] girth and speed!";
 	decrease the sex-length of M by 1.
 
 To TimesSubmittedUp (M - a wrestler):
@@ -463,7 +463,7 @@ To compute unique climax of (M - a wrestler) in (F - a fuckhole):
 	compute M leaving F.
 
 To compute (M - a wrestler) leaving (F - a fuckhole):
-	say "[BigNameDesc of M] pulls her [if the fingers of M is 6]fist out of your [variable F] with a loud POP. [otherwise]fingers slowly out of your [variable F]. [end if]It looks like she's satisfied with herself.";
+	say "[BigNameDesc of M] pulls [his of M] [if the fingers of M is 6]fist out of your [variable F] with a loud POP. [otherwise]fingers slowly out of your [variable F]. [end if]It looks like she's satisfied with herself.";
 	say "[second custom style]'That was fun. Let's do it again soon.'[roman type][line break][BigNameDesc of M] seems to lose interest in you for now.";
 	FavourUp M;
 	bore M.
@@ -485,7 +485,7 @@ This is the wrestler friendly convinced rule:
 			if watersports fetish is 1, compute friendly drink of current-monster;
 			otherwise say "[PresentFriendlyRejectionFlav of current-monster]";
 		otherwise:
-			say "[BigNameDesc of current-monster] unzips her catsuit revealing a very wet, rosy [vagina]. [one of]She eagerly pushes your head between her legs, spreading her engorged outer lips as [if the oral sex addiction of the player < 3]you hesitantly push your tongue into her needy folds.[otherwise]you begin to using your tongue to please her tender folds.[end if] [line break][speech style of current-monster]'Hey, wait a sec. Why don[']t I get down there and do some licking of my own? You keep going, and we[']ll see who comes first!'[or][speech style of current-monster]'Want to see which of us comes first? I[']m betting on you!'[stopping][roman type][line break]";
+			say "[BigNameDesc of current-monster] unzips her catsuit, revealing a very wet, rosy [vagina]. [one of]She eagerly pushes your head between her legs, spreading her engorged outer lips as [if the oral sex addiction of the player < 3]you hesitantly push your tongue into her needy folds.[otherwise]you begin to using your tongue to please her tender folds.[end if] [line break][speech style of current-monster]'Hey, wait a sec. Why don[']t I get down there and do some licking of my own? You keep going, and we[']ll see who comes first!'[or][speech style of current-monster]'Want to see which of us comes first? I[']m betting on you!'[stopping][roman type][line break]";
 			if the player is bimbo consenting:
 				now chosen-orifice of current-monster is face;
 				now current-monster is friendly-fucking;
@@ -518,7 +518,7 @@ To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	if C is clothing:
 		if C is displacable, displace C;
 		otherwise now C is in the location of the player;
-	say "[BigNameDesc of M] joins you on the floor, [if C is clothing and the size of penis <= the armour of C and the size of penis > 2]fishing your [ShortDesc of penis] out of your [printed name of C][otherwise if C is clothing]pulling down your [printed name of C][otherwise if the player is male]stroking your [ShortDesc of penis][otherwise]eagerly licking your outer lips[end if] as [he of M] pulls you on top of her. [if the oral sex addiction of the player < 3][one of]Already feeling her probing tongue on your [genitals], you lean in and start some hesitant probing of your own.[or]You take the time to build up some extra courage before hesitantly forcing your tongue to work.[at random][otherwise if the oral sex addiction of the player < 7][one of]Already feeling her probing tongue on your [genitals], you lean in and do some eager probing of your own.[or]You find yourself ruminating on how enticing her [vagina] looks for a moment before diving in.[at random][otherwise][one of]You don't even wait for her to start, eagerly shoving your face in her crotch and sending your tongue to work[or]You immediately dive in, desperate to get a taste of her beautiful crotch.[at random][end if]";
+	say "[BigNameDesc of M] joins you on the floor, [if C is clothing and the size of penis <= the armour of C and the size of penis > 2]fishing your [ShortDesc of penis] out of your [printed name of C][otherwise if C is clothing]pulling down your [printed name of C][otherwise if the player is male]stroking your [ShortDesc of penis][otherwise]eagerly licking your outer lips[end if] as [he of M] pulls you on top of [him of M]. [if the oral sex addiction of the player < 3][one of]Already feeling [his of M] probing tongue on your [genitals], you lean in and start some hesitant probing of your own.[or]You take the time to build up some extra courage before hesitantly forcing your tongue to work.[at random][otherwise if the oral sex addiction of the player < 7][one of]Already feeling [his of M] probing tongue on your [genitals], you lean in and do some eager probing of your own.[or]You find yourself ruminating on how enticing [his of M] [vagina] looks for a moment before diving in.[at random][otherwise][one of]You don't even wait for [him of M] to start, eagerly shoving your face in [his of M] crotch and sending your tongue to work[or]You immediately dive in, desperate to get a taste of [his of M] beautiful crotch.[at random][end if]";
 	if the player is male, cutshow figure of wrestler cutscene 9 for M;
 	otherwise cutshow figure of wrestler cutscene 8 for M.
 
@@ -535,7 +535,7 @@ To compute facial sex of (M - a wrestler):
 	if the reaction of the player is 0:
 		say OralResisting of M;
 	otherwise if P is patron and asshole is not actually occupied and (a random number between 1 and 2 is 1 or M is not friendly-fucking):
-		say "[BigNameDesc of M] suddenly stops what she[']s doing to talk to the [P]![line break][speech style of M]'Hey, why don[']t you join in? We have a spot for you right here!'[roman type][line break][big he of M] pushes your [AssDesc] apart, and [if the anal sex addiction of the player < 4]to your horror[otherwise if the anal sex addiction of the player < 8]to your [italic type]total[roman type] surprise[otherwise]to your delight[end if] the [P] immediately climbs on top of you and [if the openness of asshole < 2]forces[otherwise if the openness of asshole < 6]pushes[otherwise]slides[end if] [his of P] [manly-penis] into your [asshole].[line break][speech style of P]'[one of]Sweet!'[or]Finally.'[or]About time.'[at random][roman type][line break]";
+		say "[BigNameDesc of M] suddenly stops what [he of M][']s doing to talk to the [P]![line break][speech style of M]'Hey, why don[']t you join in? We have a spot for you right here!'[roman type][line break][big he of M] pushes your [AssDesc] apart, and [if the anal sex addiction of the player < 4]to your horror[otherwise if the anal sex addiction of the player < 8]to your [italic type]total[roman type] surprise[otherwise]to your delight[end if] the [P] immediately climbs on top of you and [if the openness of asshole < 2]forces[otherwise if the openness of asshole < 6]pushes[otherwise]slides[end if] [his of P] [manly-penis] into your [asshole].[line break][speech style of P]'[one of]Sweet!'[or]Finally.'[or]About time.'[at random][roman type][line break]";
 		now the sex-length of M is a random number between 3 and 4;
 		now P is penetrating asshole;
 	otherwise if P is patron and P is penetrating asshole:

@@ -1,6 +1,6 @@
 RoboBellboy by Monster begins here.
 
-A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
+A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy", "robot bellboy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
 
 Definition: A robobellboy is hotel dwelling: decide yes.
 
@@ -29,7 +29,7 @@ To decide which figure-name is the monster-image of (M - a robobellboy):
 	decide on figure of robobellboy.
 
 To say MonsterDesc of (M - a robobellboy):
-	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words  '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the center, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
+	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words  '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
 
 To set up (M - a robobellboy):
 	reset M;

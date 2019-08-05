@@ -135,7 +135,7 @@ To Second Time Search (X - a container):
 		if the prevsearch of X is 1 or the prevsearch of X is 3, say "You have already searched that. You found nothing.";
 		otherwise say "You have already searched that. You found a [ShortDesc of trigger-target of X]!".
 
-Understand "investigate [something]", "inspect [something]" as searching.
+Understand "investigate [something]", "inspect [something]", "look through [something]", "look over [something]" as searching.
 
 [!<RuleForSupplyingMissingNounsWhileSearching>+
 

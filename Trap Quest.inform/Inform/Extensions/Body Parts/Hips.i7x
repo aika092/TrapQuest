@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Flesh>
 
 @!]
-hips is a flesh. hips is everywhere. Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips. The text-shortcut of hips is "hips".
+hips is a flesh. hips is everywhere. Understand "arse", "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips. The text-shortcut of hips is "hips".
 
 To decide which number is the usualHipModesty of (C - a clothing):
 	if C is skirt-covering-crotch, decide on 100;

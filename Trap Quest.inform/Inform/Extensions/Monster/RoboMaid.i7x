@@ -1,6 +1,6 @@
 RoboMaid by Monster begins here.
 
-A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "maid", "robomaid" as robomaid. The leftover-type of a robomaid is usually 127.
+A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "maid", "robomaid", "robot maid" as robomaid. The leftover-type of a robomaid is usually 127.
 
 [The robomaid does the following things:
 	punishment:

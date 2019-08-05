@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-asshole is a fuckhole. asshole is everywhere.  Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
+asshole is a fuckhole. asshole is everywhere. Understand "butthole", "anus", "ass hole", "butt hole", "arsehole", "arse hole", "bussy", "sphincter" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
 
 To say FullExamineDesc of (B - asshole):
 	say "[TotalDesc of asshole][AssholeModesty]".

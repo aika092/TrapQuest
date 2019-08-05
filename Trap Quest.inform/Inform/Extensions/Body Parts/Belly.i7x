@@ -13,7 +13,7 @@ REQUIRES COMMENTING
 belly is a flesh. Belly is everywhere. The text-shortcut of belly is "belly".
 To say FullExamineDesc of (B - belly):
 	say "[TotalDesc of belly]".
-Understand "torso", "waist", "tummy", "stomach" as belly.
+Understand "torso", "waist", "tummy", "stomach", "midsection" as belly.
 
 [!<Belly>@<fleshVolume:Integer>*
 

@@ -13,7 +13,7 @@ penis is a body part. penis is everywhere. The text-shortcut of penis is "penis"
 To say FullExamineDesc of (B - penis):
 	say "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
-Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
+Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weenie", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
 [!<Penis>@<size:Integer>*
 

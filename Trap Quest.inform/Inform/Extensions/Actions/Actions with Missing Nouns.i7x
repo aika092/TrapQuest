@@ -15,7 +15,7 @@ Check AutoSlapping:
 		let M be a random monster in the location of the player;
 		try slapping M instead;
 	say "[if there is a monster in the location of the player]Slap who?[otherwise]But there's nobody to slap...[end if]" instead.
-Understand "hit", "slap", "punch", "slash", "slash at", "swipe", "swipe at", "scratch", "thrust", "swing at", "sa", "sl" as AutoSlapping.
+Understand "hit", "slap", "punch", "slash", "slash at", "swipe", "swipe at", "scratch", "thrust", "swing at", "backhand", "sa", "sl" as AutoSlapping.
 
 AutoKneeing is an action applying to nothing.
 
@@ -32,7 +32,7 @@ Check AutoKneeing:
 		let M be a random monster in the location of the player;
 		try kneeing M instead;
 	say "[if there is a monster in the location of the player]Knee who?[otherwise]But there's nobody to knee...[end if]" instead.
-Understand "knee", "kn" as AutoKneeing.
+Understand "knee strike", "knee", "kn" as AutoKneeing.
 
 AutoKicking is an action applying to nothing.
 

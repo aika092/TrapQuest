@@ -49,7 +49,7 @@ Check jumping:
 	otherwise:
 		say "You jump, making your wobbly bits wobble. [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face!  Ouch![end if]";
 	compute upright fatigue gain.
-Understand "leap", "bounce", "ju", "cheer" as jumping.
+Understand "leap", "bounce", "ju", "cheer", "hop" as jumping.
 
 
 Jumping ends here.

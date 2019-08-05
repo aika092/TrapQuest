@@ -400,7 +400,7 @@ Check cocksucking:
 	if the noun is monster, try direct-presenting face to the noun instead;
 	otherwise try drinking the noun instead.
 
-Understand "suck off [something]", "give [something] blowjob", "give [something] head", "offer [something] tongue", "offer [something] blowjob", "offer tongue to [something]", "offer blowjob to [something]", "offer mouth to [something]", "offer face to [something]",   "present tongue to [something]", "present blowjob to [something]", "present mouth to [something]", "present tongue to [something]", "present face to [something]", "suggest tongue to [something]", "suggest blowjob to [something]", "suggest mouth to [something]",  "suggest face to [something]", "bj [something]" as cocksucking.
+Understand "suck off [something]", "give [something] blowjob", "give [something] head", "offer [something] tongue", "offer [something] blowjob", "offer tongue to [something]", "offer blowjob to [something]", "offer mouth to [something]", "offer face to [something]", "present tongue to [something]", "present blowjob to [something]", "present mouth to [something]", "present tongue to [something]", "present face to [something]", "suggest tongue to [something]", "suggest blowjob to [something]", "suggest mouth to [something]", "suggest face to [something]", "bj [something]", "blow [something]", "fellate [something]", "give [something] fellatio", as cocksucking.
 
 [!<cockSomething:Action>*
 

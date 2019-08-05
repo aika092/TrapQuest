@@ -693,7 +693,7 @@ Report Masturbating:
 	now wanking is 0;
 	now auto is 0.[###Maybe this should also be set to zero whenever the ability to masturbate rules are unsuccessfully checked]
 
-Understand "wank", "play with me", "play with self", "play with privates", "masturbate", "play with breasts", "play with breast", "play with boobs", "play with tits", "massage breasts", "massage boobs", "massage breast", "massage tits", "massage", "massage self", "massage me", "wank self", "wank me" , "fap" as masturbating.
+Understand "wank", "play with me", "play with self", "play with privates", "masturbate", "play with breasts", "play with breast", "play with boobs", "play with tits", "massage breasts", "massage boobs", "massage breast", "massage tits", "massage", "massage self", "massage me", "wank self", "wank me", "fap", "jack off" as masturbating.
 
 [!<ComputeMasturbationReactionOfMonster>+
 

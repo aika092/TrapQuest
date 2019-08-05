@@ -99,7 +99,7 @@ REQUIRES COMMENTING
 Carry out talking:
 	say "[one of]NB there are five talking phrases, [bold type]talk to[roman type] (or [bold type]greet[roman type]), [bold type]question[roman type], [bold type]ask (somebody) for a drink[roman type], [bold type]ask (somebody) for food[roman type], [bold type]ask (somebody) to leave[roman type].[or][stopping]";
 	try greeting the noun.
-Understand "talk [something]", "talk to [something]", "talk with [something]", "speak [something]", "speak to [something]", "speak with [something]", "chat [something]", "chat to [something]", "chat with [something]" as talking.
+Understand "talk [something]", "talk to [something]", "talk with [something]", "speak [something]", "speak to [something]", "speak with [something]", "chat [something]", "chat to [something]", "chat with [something]", "converse with [something]" as talking.
 
 conversation-target is a person that varies.
 
@@ -132,7 +132,7 @@ Carry out greeting:
 		if the noun is monster, compute correct perception of the noun;
 	otherwise:
 		compute talk option 1 to the noun.
-Understand "greet [something]", "gr [something]" as greeting.
+Understand "greet [something]", "gr [something]", "say hello to [something]", "say hi to [something]" as greeting.
 
 Questioning is an action applying to one thing.
 
@@ -233,7 +233,7 @@ Carry out dismissal:
 	allocate 6 seconds;
 	now conversation-target is the noun;
 	compute talk option 5 to the noun.
-Understand "dismiss [something]", "ask [something] to leave", "say goodbye to [something]" as dismissal.
+Understand "dismiss [something]", "ask [something] to leave", "say bye to [something]", "say goodbye to [something]", "end conversation with [something]" as dismissal.
 
 
 

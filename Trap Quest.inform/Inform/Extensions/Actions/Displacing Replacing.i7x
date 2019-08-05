@@ -120,7 +120,7 @@ To say ReplaceFlav of (C - a clothing):
 Report replacing:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-Understand "fix [something]", "replace [something]", "adjust [something]", "unmove [something]" as replacing.
+Understand "fix [something]", "repair [something]", "replace [something]", "adjust [something]", "unmove [something]" as replacing.
 
 
 Displacing Replacing ends here.

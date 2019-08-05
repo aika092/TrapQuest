@@ -140,7 +140,7 @@ Check kneeling when the location of the player is glue-puddled:
 		otherwise:
 			do nothing instead.
 
-Understand "kneel", "kneel down", "crawl", "prone", "drop me", "kn" as kneeling.
+Understand "kneel", "kneel down", "crawl", "prone", "drop me", "get on knees", "kn" as kneeling.
 
 Report kneeling when the player is in danger and seconds > 1: [This is where we output the reaction of a dominant monster to you conceding a fight before it's over.]
 	let N be nothing;

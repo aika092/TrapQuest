@@ -2,7 +2,7 @@ RoboButler by Monster begins here.
 
 [An unconcerned robobutler has been tipped recently. An unleashed robobutler is annoyed at the lack of a tip recently.]
 
-A robobutler is a kind of robot. Understand "butler" as robobutler. A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118. A robobutler has a number called planned-punishment.
+A robobutler is a kind of robot. Understand "butler", "butlerbot", "robot butler" as robobutler. A robobutler is usually intelligent. The leftover-type of a robobutler is usually 118. A robobutler has a number called planned-punishment.
 
 Figure of robobutler is the file "NPCs/Hotel/Robot/robobutler1.png".
 

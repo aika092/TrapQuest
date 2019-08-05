@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Flesh>
 
 @!]
-breasts is a flesh. breasts is everywhere. Understand "tits", "breast", "boobs", "cleavage", "bust" as breasts. Understand "chest" as breasts when the number of treasure chests in the location of the player is 0. The text-shortcut of breasts is "breasts".
+breasts is a flesh. breasts is everywhere. Understand "tits", "titties", "jugs", "udders", "breast", "boobs", "cleavage", "bust", "funbags", "boobies" as breasts. Understand "chest" as breasts when the number of treasure chests in the location of the player is 0. The text-shortcut of breasts is "breasts".
 To say FullExamineDesc of (B - breasts):
 	say "[TotalDesc of breasts][line break]".
 

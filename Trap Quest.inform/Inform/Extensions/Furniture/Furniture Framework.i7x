@@ -60,7 +60,7 @@ Check entering furniture:
 	compute furniture resting on the noun;
 	do nothing instead.
 
-Understand "kneel on [something]", "kn on [something]", "sleep in [something]", "sl in [something]", "sl on [something]", "rest in [something]", "sleep on [something]", "lie on [something]", "rest on [something]", "re on [something]", "re in [something]", "nap on [something]", "recover on [something]", "lie in [something]", "sit on [something]" as entering.
+Understand "kneel on [something]", "kn on [something]", "sleep in [something]", "sl in [something]", "sl on [something]", "rest in [something]", "sleep on [something]", "lie on [something]", "rest on [something]", "re on [something]", "re in [something]", "nap on [something]", "recover on [something]", "lie in [something]", "sit on [something]", "get on [something]", "get in [something]" as entering.
 
 [!<computeMonsterDetectionFurniture>+
 

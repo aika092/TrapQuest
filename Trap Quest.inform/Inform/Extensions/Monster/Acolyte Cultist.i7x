@@ -1,6 +1,6 @@
 Acolyte Cultist by Monster begins here.
 
-An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte is usually female. The difficulty of an acolyte is usually 6. Understand "cultist" as acolyte.
+An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte is usually female. The difficulty of an acolyte is usually 6. Understand "cultist", "ardent" as acolyte.
 
 Definition: An acolyte is wenchy: decide yes.
 
