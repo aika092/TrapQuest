@@ -7,7 +7,7 @@ To say ShortDesc of (C - a truffle):
 	say "truffle".
 
 To say ExamineDesc of (C - a truffle):
-	say "[if the quality of C > -1]A chocolate truffle, garnished with a thick sugary glaze.[otherwise if diaper quest is 1]A chocolate truffle, with a pacifier design stencilled into its surface. You can't be confident of what it's filled with.[otherwise if the quality of C > -2]A chocolate truffle with a design stencilled into its surface to make it look like the tip of an erect penis. complete with a really suggestive trail of sugary glaze.[otherwise]What used to be a chocolate truffle until someone put their [manly-penis] in it and filled the center with [semen]. Looking at it reminds you of a well fucked hole.[end if]". 
+	say "[if the quality of C > -1]A chocolate truffle, garnished with a thick sugary glaze.[otherwise if diaper quest is 1]A chocolate truffle, with a pacifier design stencilled into its surface. You can't be confident of what it's filled with.[otherwise if the quality of C > -2]A chocolate truffle with a design stencilled into its surface to make it look like the tip of an erect penis. complete with a really suggestive trail of sugary glaze.[otherwise]What used to be a chocolate truffle until someone put their [manly-penis] in it and filled the centre with [semen]. Looking at it reminds you of a well fucked hole.[end if]".
 
 truffle-confidence-timer is a number that varies.
 
@@ -36,7 +36,7 @@ Carry out TQeating truffle:
 				say "[first custom style]I'm so disgusting. I can[']t believe I really ate that...[roman type]";
 				SemenAddictUp 1;
 				Humiliate 125;
-			Arouse the semen addiction of the player * 20;	
+			Arouse the semen addiction of the player * 20;
 			StomachSemenUp 1;
 	otherwise if a random number between 3 and the quality of the noun is 3:
 		say "The rich chocolate leaves you feeling really satisfied, and you feel like you could put up with a lot as long as you still feel that great taste in the back of your mouth";

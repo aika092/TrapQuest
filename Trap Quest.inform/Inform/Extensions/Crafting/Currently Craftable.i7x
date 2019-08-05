@@ -11,7 +11,7 @@ craft-target is a object which varies. craft-target is nothing.
 [Set items from 'nothing' to the correct item if held by the player. Extra item slots not needed for this recipe are set from 'nothing' to 'the player' so that when checking if a recipe is craftable, we can just check if any of the crafting slots are still 'nothing'.]
 To determine items for (R - a recipe):
 	do nothing.[recipes should have their own version of this function]
-	
+
 
 ['Appropriate' means the player has enabled the right fetishes in order to be allowed to find this recipe.]
 Definition: a recipe is appropriate: decide yes.

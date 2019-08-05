@@ -1684,7 +1684,7 @@ To say AttentionExceeded of (M - a gladiator) with (N - a monster):
 	say "[speech style of M]'I will do far more than simply watch.'[roman type][line break]".
 
 To say AttentionAccepted of (M - a gladiator) with (N - a monster):
-	say "[speech style of M]'Fine. I will watch you embarass yourself.'[roman type][line break]".	
+	say "[speech style of M]'Fine. I will watch you embarass yourself.'[roman type][line break]".
 
 Section 2 - Questioning
 

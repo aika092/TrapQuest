@@ -7,7 +7,7 @@ To say ExamineDesc of (B - a banana):
 
 To say ShortDesc of (C - a banana):
 	say "banana".
-	
+
 Carry out TQeating banana:
 	DexUp 1.
 
