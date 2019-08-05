@@ -286,7 +286,7 @@ To decide which number is the weight of (XXX - breasts):
 		now S is S / 2;
 		if S < 1, now S is 1;
 	if the latex-transformation of the player > 1 and S > 10, now S is 10;
-	if the latex-transformation of the player > 5 and  S > 0, now S is 0;
+	if the latex-transformation of the player > 5 and S > 0, now S is 0;
 	decide on S.
 
 [!<BreastsIsHeavy>+
@@ -529,7 +529,7 @@ To say BreastDesc:
 	if X is 19, say "back breaking, comically sized mountain peaks";
 	if X is 20, say "impossibly voluminous globes".
 
-[To be used in sentences like  "Your breasts <bounce> as you strut along." ]
+[To be used in sentences like "Your breasts <bounce> as you strut along." ]
 [!<SayBreastBounceDesc>+
 
 REQUIRES COMMENTING
@@ -664,7 +664,7 @@ To say BreastKneelingDesc:
 		if X is 7, say " that hang and sway as you crawl. ";
 		if X is 8, say " that are constantly distracting you as you try to crawl around. ";
 		if X is 9, say " that get in the way of your elbows as you crawl. ";
-		if X is 10, say " that keep bumping into each other and  bouncing off each other as you crawl. ";
+		if X is 10, say " that keep bumping into each other and bouncing off each other as you crawl. ";
 		if X is 11, say " that are forcing your chest and head closer to the ground, and pushing your ass into the air. ";
 		if X is 12, say " that keep touching the ground as you crawl. ";
 		if X is 13, say " that are so large, that your nipples keep rubbing against the ground as you crawl. ";
@@ -696,7 +696,7 @@ To say BreastFillDesc:
 		say "They feel like they are extremely bloated with [milk]. ";
 	if the silicone volume of breasts is 0:
 		say "";
-	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts  > the silicone volume of breasts * 2:
+	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts > the silicone volume of breasts * 2:
 		say "They contain a pair of small silicone implants. ";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts > the silicone volume of breasts:
 		say "They contain a pair of decently sized silicone implants. ";
@@ -710,7 +710,7 @@ To say BreastFillDesc:
 		say "They are slightly inflated with air. ";
 	otherwise if the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts:
 		say "They are inflated with a decent amount of air. ";
-	otherwise if the flesh volume of breasts  + the milk volume of breasts + the silicone volume of breasts is the air volume of breasts or the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts / 2:
+	otherwise if the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts is the air volume of breasts or the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts / 2:
 		say "They are ballooned with a huge amount of air. ";
 	otherwise:
 		say "They are ballooned with a massive amount of air. ".
@@ -746,11 +746,11 @@ To say BreastWeight:
 		otherwise if W < 21:
 			say "They are weighing you down to the point where it's a constantly noticeable burden. ";
 		otherwise if W < 27:
-			say "They are weighing you down a lot, your back is not happy!  ";
+			say "They are weighing you down a lot; your back is not happy!  ";
 		otherwise if W < 33:
 			say "They are ridiculously heavy, and you can't help but lean forward as they pull your upper body towards the ground. ";
 		otherwise:
-			say "They are much heavier than any real world breasts ever would be. [if the player is upright]Normal walking is out of the question, you are going to have to kneel down and rest every few minutes. [end if]".
+			say "They are much heavier than any real world breasts ever would be. [if the player is upright]Normal walking is out of the question; you are going to have to kneel down and rest every few minutes. [end if]".
 
 [!<SayBreastModesty>+
 

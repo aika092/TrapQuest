@@ -408,7 +408,7 @@ Capture other ways the player might try to offer oral sex
 
 *!]
 Cocksomething is an action applying to nothing.
-Understand "suck penis",  "suck cock", "suck dick", "offer tongue", "present tongue", "offer blowjob", "suggest tongue", "suggest blowjob" as cocksomething.
+Understand "suck penis", "suck cock", "suck dick", "offer tongue", "present tongue", "offer blowjob", "suggest tongue", "suggest blowjob" as cocksomething.
 
 [!<CheckCockSomething>+
 

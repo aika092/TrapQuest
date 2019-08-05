@@ -298,7 +298,7 @@ To say AssDesc:
 	if A < 3, say "tiny flat butt cheeks";
 	if A is 3, say "tight well toned tush";
 	if A is 4, say "toned butt cheeks";
-	if A is 5, say  "roundish but tight butt cheeks";
+	if A is 5, say "roundish but tight butt cheeks";
 	if A is 6, say "cute curvy butt cheeks";
 	if A is 7, say "eye-turning bubble butt";
 	if A is 8, say "well cushioned bottom";

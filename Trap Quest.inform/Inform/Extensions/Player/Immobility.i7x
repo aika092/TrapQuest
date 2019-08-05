@@ -82,7 +82,7 @@ Definition: yourself is dildo stuck:
  In this first implementation, it will always do it if you have two ballerina wearthings.
  I had to add doll-stuck-num, even though redundant, because you can't test 'if doll-stuck is ""' inside say "...".
  Aika has hijacked doll-stuck-num to count the turns the player has been impaled.
-    doll-stuck-num: Number of turns the player has been turning around, posed like a doll in a music box.
+	doll-stuck-num: Number of turns the player has been turning around, posed like a doll in a music box.
  doll-stuck-kind is used to record the kind of doll the dildo wants you to pose as:
  doll-stuck-kind:
 	0: Not doll stuck at all.

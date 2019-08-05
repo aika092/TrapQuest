@@ -206,7 +206,7 @@ To say TotalDesc of asshole:
 		if the soreness of asshole is 6, say "feels sore most of the way inside. ";
 		if the soreness of asshole is 7, say "feels sore, from the entrance to the deepest point inside you. ";
 		if the soreness of asshole is 8, say "feels completely ruined. ";
-		if the soreness of asshole is 9, say "has been ruined so hard, it feels like it's on fire!  ";
+		if the soreness of asshole is 9, say "has been ruined so hard, it feels like it's on fire! ";
 		if the soreness of asshole is 10, say "has been completely destroyed by fuckings, you feel like you're about to faint!!  ";
 	otherwise:
 		say "feels numb. ";

@@ -59,7 +59,7 @@ After processing hyperlinks for a g-window (called win) (this is the request hyp
 Section - Selecting the replacement command
 
 [The latest version of Inline Hyperlinks by Erik Temple replaces this function]
-	
+
 Last for processing hyperlinks (this is the default hyperlink command replacement rule):
 	repeat through the Table of Glulx Hyperlink Replacement Commands:
 		if the hyperlink ID is link ID entry:

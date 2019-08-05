@@ -156,11 +156,11 @@ Apparently, because I am writing these things now, that would indicate that I
 can document things. Woop!
 
  @param <Integer>:<a> The integer, a, is given to the function as a gift from
- 				      three wise programmers.
+					three wise programmers.
  @param  <String>:<b> The String, b, is given to the function by a wandering
- 					  shepherd.
+					shepherd.
  @param <Boolean>:<c> The boolean, c, is given to the function by a daft old
- 					  geezer that appeared from nowhere.
+					geezer that appeared from nowhere.
 
  @return <Boolean> Returns whether the programmer can document things or not.
   Mainly not since this is kinda a fake function...

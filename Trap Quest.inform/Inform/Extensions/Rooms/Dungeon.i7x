@@ -306,7 +306,7 @@ Dungeon41 is a mandatory untrappable labyrinth room. The printed name of Dungeon
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery02 is scenery. DungeonScenery02 is in Dungeon15. The printed name of DungeonScenery02 is "Ditch". Understand "swimming","pool","swimming pool", "ditch" as DungeonScenery02. Instead of entering DungeonScenery02, say "There's nothing interesting down there.".
+DungeonScenery02 is scenery. DungeonScenery02 is in Dungeon15. The printed name of DungeonScenery02 is "Ditch". Understand "swimming", "pool", "swimming pool", "ditch" as DungeonScenery02. Instead of entering DungeonScenery02, say "There's nothing interesting down there.".
 
 To say ExamineDesc of (C - DungeonScenery02):
 	say "There is a large ditch here, which looks like it once held water for people to swim in. [one of]It's completely empty now though.[or]There's no point going in there.[stopping]".

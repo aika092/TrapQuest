@@ -255,7 +255,7 @@ REQUIRES COMMENTING
 	change the east exit of Mansion12 to Solid Rock;
 	change the east exit of Mansion22 to Solid Rock;
 	change the west exit of Mansion22 to Solid Rock.]
-	
+
 
 [
 THE PLAN:

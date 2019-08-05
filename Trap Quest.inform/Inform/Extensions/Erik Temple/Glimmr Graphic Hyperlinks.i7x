@@ -77,13 +77,13 @@ Include (-
 
 [ SetGraphLink g;
 	if (g.(+ ref number +)) {
-	            if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_request_mouse_event(g.(+ ref number +));
+				if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_request_mouse_event(g.(+ ref number +));
 	}
 ];
 
 [ IgnoreLinks g;
 	if (g.(+ ref number +)) {
-	            if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_cancel_mouse_event(g.(+ ref number +));
+				if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_cancel_mouse_event(g.(+ ref number +));
 	}
 ];
 

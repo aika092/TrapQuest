@@ -244,23 +244,23 @@ To check glue tripping:
 		let X be N - (GS + BaseDiff + HairDiff + HeelsDiff);
 		[How negative X is, tells how badly they failed the dexterity check.
 		 Which difficulty modifier tipped them into failure tells us why they tripped.
-		    (NB BaseDiff = 0 implies they were standing, > 0 they were kneeling)
+			(NB BaseDiff = 0 implies they were standing, > 0 they were kneeling)
 			HairDiff = 0 if their hair is short OR they were standing.
 		 Example 1:
 		  Dex 18. glue-str 12, BaseDiff 0, HairDiff 0, HeelsDiff 3 (Tot 15):
-		    N = 18 --> X =  3 - Dex saved
-		    N = 15 --> X =  0 - fell due to Heels
-		    N = 13 --> X = -1 - fell due to Heels
-		    N = 15 --> X = -2 - fell due to dex
+			N = 18 --> X =  3 - Dex saved
+			N = 15 --> X =  0 - fell due to Heels
+			N = 13 --> X = -1 - fell due to Heels
+			N = 15 --> X = -2 - fell due to dex
 		 Example 2:
 		  Dex 25. glue-str 10, BaseDiff 5, HairDiff 6, HeelsDiff 2 (Tot 23):
-		    N = 24 --> X =  1 - saved by dex
-		    N = 22 --> X = -3 - fell due to Heels
-		    N = 21 --> X = -2 - fell due to Heels
-		    N = 20 --> X = -3 - fell due to Hair
-		    N = 15 --> X = -5 - fell due to kneeling
-		    N = 10 --> X = -13- fell due to bad dex check
-		    ]
+			N = 24 --> X =  1 - saved by dex
+			N = 22 --> X = -3 - fell due to Heels
+			N = 21 --> X = -2 - fell due to Heels
+			N = 20 --> X = -3 - fell due to Hair
+			N = 15 --> X = -5 - fell due to kneeling
+			N = 10 --> X = -13- fell due to bad dex check
+			]
 		if debugmode is 1, say "###debug: Check glue tripping: X = [X], dex = [Dex], N = [N]; GS = [GS], BaseDiff =[BaseDiff], HairDiff = [HairDiff], HeelsDiff = [HeelsDiff], TS = [TS], Flat Dex = [saved-flat-dexterity][line break]";
 		if X < 0:
 			[the player gets (more?) stuck]
