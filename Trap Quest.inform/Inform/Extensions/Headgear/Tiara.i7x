@@ -47,8 +47,7 @@ To compute class outfit of (H - a tiara):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your tiara shines brightly, and a [if R is baby royal dress]childish[otherwise]silky[end if] pink dress materialises around you.[roman type][line break]";
-		summon R;
-		now the raw-magic-modifier of R is 0;
+		summon R uncursed;
 		now tiara-summoned is 1;
 		increase the raw-magic-modifier of R by the number of friendly alive royal guards;
 		decrease the raw-magic-modifier of R by the number of unfriendly alive royal guards.

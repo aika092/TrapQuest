@@ -64,6 +64,8 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a monster is human: decide no.
+Definition: a monster is infernal: decide no.
+
 
 [!<MinotaurIsFamily>+
 
@@ -210,6 +212,8 @@ To compute pregnancy:
 				now slow-pregnancy-tracker is 0;
 				increase the womb volume of vagina by 1; [1 or more, +1]
 				if the womb volume of vagina > 30, now the womb volume of vagina is 30; [Important so that this doesn't get confused with a super-pregnancy]
+			otherwise:
+				compute pregnancy annoyance;
 			if the largeness of belly > B or the womb volume of vagina is 30:
 				say PregGrowth;
 				if M is actually summonable and a random number between 1 and 55 - (20 * unlucky) is 1 and the largeness of breasts < 17:
@@ -223,8 +227,6 @@ To compute pregnancy:
 					if there is a worn cursed pregnancy related clothing and the player is not bottom heavy:
 						say "You feel your hips widen in order to prepare for your inevitable labour!";
 						HipUp 1;
-		otherwise:
-			compute pregnancy annoyance;
 		if the womb volume of vagina is 30: [Pregnancy has reached full term just now! Here we choose the father and check for and trigger super-pregnancies]
 			if the father is the throne:
 				now the father is the new father;
@@ -248,8 +250,8 @@ To compute pregnancy:
 					if the womb volume of vagina is 50:
 						say "You feel like your mega-pregnancy has [one of]finally reached full term. You'll be ready to pop soon[or]once again finally reached full term[stopping].";
 						cutshow figure of giant pregnancy for belly;
-		otherwise:
-			compute pregnancy annoyance;
+			otherwise:
+				compute pregnancy annoyance;
 	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0:
 		now maximum-pregnancy-delay-tracker is 0;
 		increase slow-pregnancy-tracker by 1;
@@ -261,7 +263,7 @@ To compute pregnancy:
 				let M be the father;
 				compute labour to M;[Dead fathers are handled in fatherhood of M]
 				if successful-pregnancy is 1:
-					compute fatherhood to M;
+					compute fatherhood to the father;
 				[if there is worn temporarily-displaced clothing:
 					say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
 					repeat with P running through worn temporarily-displaced clothing:
@@ -313,6 +315,49 @@ To say DefaultBirthScene:
 	say "[PregFlav]You feel yourself start to give birth. You feel a burning desire for the father of the child to appear, but nobody does, and without the father there to assist with the delivery you feel yourself begin to pass out due to the pain. In your groggy state you think you see some cherubic angels appear and begin to take the baby up into the heavens. [line break][second custom style]'Don't worry [TitleBimbo], we'll take care of this one for you. Good luck on your quest!'[roman type][line break]When you properly regain your senses, there are no babies, no cherubs, just you on the floor with a rapidly deflating belly and your vaginal juices sprayed across the ground below your crotch.[if the pregnancy rate of the player is 1][line break]Deep down, you can feel your womb crying out to begin the process all over again.[end if]";
 	if the pregnancy rate of the player < 2, increase the pregnancy rate of the player by 1.
 
+To compute tentacle birth:
+	compute pregnancy clothing displacement;
+	say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a slimy tentacle about as thick as an ordinary penis push its way out of your [vagina] quickly followed by several more. [or]You [if the bimbo of the player < 13]wince with fear and then shudder with shame when[otherwise]brace yourself with gleeful anticipation when[end if] you begin to feel the familiar dark red tentacles begin to push themselves out of your [vagina]. [stopping]";
+	cutshow figure of tentacle cutscene 1;
+	say "They all wrap around your hips and clench tightly as the monster inside you slowly and determinedly pries itself from your struggling hole. The slow movement of the huge dark red creature is accompanied by lewd squelches and slurps and some loud moaning, which you then realise is coming from yourself. Your [vagina] is forced to stretch further still as the critter reaches its widest point at your entrance and then with a loud POP it flies out and lands on the ground. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'child': a [if extreme proportions fetish is 1]beachball sized[otherwise]basketball sized[end if] heap of vulnerable looking flesh with a single eye and several phallic tentacled appendages. Before your eyes its flesh starts to slowly solidify and it gives you a long and seemingly thoughtful stare before dragging itself out of sight with its tentacles.[or]Once again you watch it start to build its strength and drag itself away.[stopping]";
+	let T be a random off-stage living tentacles;
+	if laurel wreath is worn and T is clothing:
+		repeat with O running through worn dresses:
+			say "Your [O] vanishes!";
+			destroy O;
+		repeat with O running through worn skirts:
+			say "Your [O] vanishes!";
+			destroy O;
+		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type]";
+		summon T;
+		now the raw-magic-modifier of T is childValue times 6;
+	if there is a worn tattoo and the number of worn ass tattoos is 0:
+		say "Suddenly a new tattoo appears on you!";
+		summon tentacles tattoo;
+		try examining tentacles tattoo;
+	let M be a random off-stage tentacle monster;
+	compute birth set up of M.
+
+To compute infernal birth:
+	let M be a random imp;
+	let I be the number of off-stage imps;
+	if I is 0:
+		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creatures growing inside of you. The process is incredibly long and painful, and you almost pass out a few times from the pain. A portal opens up between your legs as the first of your red-skinned devil offspring is born, swallowing [him of M] up before you even have the chance to see what [he of M] looks like. The second, and finally the third birth pass in exactly the same way, and although you know its probably for the best, you can't help feeling a pang of regret as the portal closes, severing your connection with your children forever.";
+		DelicateUp 1;
+	otherwise:
+		let X be a random number between 1 and I;
+		if X > 3, now X is 3;
+		compute pregnancy clothing displacement;
+		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expression on [his of M][otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
+		StrengthUp 1;
+		DexUp 1;
+		DelicateUp 2;
+		while X > 0:
+			decrease X by 1;
+			let N be a random off-stage imp;
+			if N is a monster:
+				compute birth set up of N.
+
 
 [!<ComputeGodBirth>+
 
@@ -347,7 +392,7 @@ To Delay Labour:
 			increase contractionTracker by 1;
 	now successful-pregnancy is 0.
 
-To say NonAliveFatherBirthFlav of (M - a monster):
+To say NonAliveFatherBirthFlav of (M - a thing):
 	say "You should probably make sure the exit to your vagina is clear!".
 
 [!<SayPregnancyBugFlav>+
@@ -381,7 +426,7 @@ To check for extreme pregnancies:
 [Being pregnant is no walk in the park]
 To compute pregnancy annoyance:
 	if the class of the player is not fertility goddess:
-		if (the player is in Hotel18 or the player is in School17) and the player is not overly full and the player is able to eat and the player is not immobile and the player is not in danger:
+		if (the player is in Hotel18 or the player is in School17) and the stomach-food of the player < 2 and the player is able to eat and the player is not immobile and the player is not in danger:
 			let T be feeding bowls;
 			if the player is in School17, now T is food machine;
 			say "Your pregnancy-hormone-addled brain suddenly gives you a deep craving for the [MediumDesc of T] in this room. Do you obey your cravings and eat up? ";
@@ -389,7 +434,8 @@ To compute pregnancy annoyance:
 				let saved-secs be seconds;
 				now seconds is -9999;
 				try TQEating T;
-				unless seconds is -9999, now another-turn is 1; [We're only adding another turn of time moving forward if the eating was successful]
+				unless seconds is -9999:
+					now another-turn is 1; [We're only adding another turn of time moving forward if the eating was successful]
 				now seconds is saved-secs;
 			otherwise:
 				say "Unable to get the nutrients it needs from your stomach, your womb draws what it needs directly from your muscles. You feel a bit weaker...";
@@ -400,8 +446,7 @@ To compute pregnancy annoyance:
 		otherwise if a random number between 1 and 4 is 1 and the player is not very horny:
 			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";
 			arouse 3000;
-		otherwise if the womb volume of vagina > a random number between 15 and 75
- and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
+		otherwise if the womb volume of vagina > a random number between 15 and 75 and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
 			say "The weight of your unborn baby is making your feet and back ache. [bold type]You need to sit down and rest soon.[roman type][line break]";
 			now the fatigue of the player is the very tired threshold of the player;
 		otherwise if the womb volume of vagina > 15:

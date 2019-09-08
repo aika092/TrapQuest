@@ -165,7 +165,7 @@ To decide which number is the lewdly exposed outrage of (F - face):
 To decide which number is the cringe of (F - face):
 	let O be alcohol-level * 3;
 	if F is exposed:
-		if the make-up of face >= 3, increase O by 7;
+		if the make-up of face >= 3, increase O by 4;
 	decide on O.
 
 [!<DecideWhichNumberIsTheDesireOfFace>+

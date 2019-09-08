@@ -88,9 +88,9 @@ Living Sex Doll - self-repairing]
 
 
 
-all-you-can-eat tattoo is a crotch tattoo. The tattoo-title of all-you-can-eat tattoo is "all you can eat".
+all-you-can-eat tattoo is a crotch tattoo. The tattoo-title of all-you-can-eat tattoo is "sundae".
 Definition: all-you-can-eat tattoo is drawable:
-	if the player is male or there is a worn crotch tattoo, decide no;
+	if the player is male or there is a worn crotch tattoo or diaper quest is 1, decide no;
 	decide yes.
 Definition: all-you-can-eat tattoo is eligible:
 	if the noun is food themed, decide yes;
@@ -288,7 +288,7 @@ To say tattoo-desc of (T - bed-wetter tattoo):
 To decide which object is the concealer of (T - bed-wetter tattoo):
 	decide on a random worn actually dense arm covering clothing.
 To decide which number is the initial cringe of (T - bed-wetter tattoo):
-	decide on 10.
+	decide on 7.
 Definition: bed-wetter tattoo is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
@@ -602,7 +602,7 @@ Check taking off diaper:
 
 
 cheating whore tattoo is an ass tattoo. The tattoo-title of cheating whore tattoo is "cheating whore".
-Definition: cheating whore tattoo is eligible: decide no.
+Definition: cheating whore tattoo is drawable: decide no.
 Definition: cheating whore tattoo is whore themed: decide yes.
 To say tattoo-desc of (T - cheating whore tattoo):
 	say "The word 'CHEATING' is tattooed on your left butt cheek and 'WHORE' tattooed on your right, clearly identifying you as the dirtiest kind of slut.".
@@ -1644,7 +1644,7 @@ To decide which object is the concealer of (T - marker chest tattoo):
 
 measurement tattoo is a crotch tattoo. The tattoo-title of measurement tattoo is "measurement".
 Definition: measurement tattoo is drawable:
-	if the player is male or there is a worn crotch tattoo, decide no;
+	if the player is male or there is a worn crotch tattoo or diaper quest is 1, decide no;
 	decide yes.
 Definition: measurement tattoo is eligible:
 	if the noun is lubricant or the noun is piece of rubber or the noun is sex toy or the noun is zippable clothing, decide yes;
@@ -2684,7 +2684,6 @@ Definition: true love tattoo is boob themed: decide yes.
 Book - U Tattoos
 
 unfaithful tattoo is a chest tattoo. The tattoo-title of unfaithful tattoo is "unfaithful".
-Definition: unfaithful tattoo is eligible: decide no.
 Definition: unfaithful tattoo is drawable: decide no.
 To say tattoo-desc of (T - unfaithful tattoo):
 	say "The word 'UNFAITHFUL' is emblazoned just below your collarbone in big red letters, identifying you as the worst kind of slut.".

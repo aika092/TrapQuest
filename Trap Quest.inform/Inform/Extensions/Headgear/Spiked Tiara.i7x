@@ -1,6 +1,6 @@
 Spiked Tiara by Headgear begins here.
 
-spiked-tiara is a headgear. spiked-tiara is biological. spiked-tiara is blondeness-negative. spiked-tiara is brightness-positive. spiked-tiara is redness-negative. spiked-tiara is sex-addiction-influencing.
+spiked-tiara is a headgear. spiked-tiara is biological. spiked-tiara is blondeness-negative. spiked-tiara is brightness-positive. spiked-tiara is redness-negative. spiked-tiara is sex-addiction-influencing. Understand "spiked", "tiara" as spiked-tiara.
 
 Definition: spiked-tiara is tongued: decide yes.
 

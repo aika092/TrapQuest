@@ -199,6 +199,7 @@ To compute DjinnDisappointedAfter of (M - a monster):
 		permanently anger M;
 		now the wish history of M is 1;
 		bore M;
+		now the boredom of M is 0; [He'll be interested straight away]
 	otherwise:
 		let L be a random magic lamp;
 		say "The djinn claps [his of M] hands and disappears back into the lamp.";

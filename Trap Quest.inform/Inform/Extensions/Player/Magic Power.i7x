@@ -5,7 +5,23 @@ Magic Power by Player begins here.
 To MagicPowerUp (X - a number):
 	while X > 0:
 		decrease X by 1;
-		increase the magic-power of the player by 1.
+		let B be acolyte-undergarment;
+		let G be acolyte-chestpiece;
+		if B is worn or G is worn:
+			if B is not worn:
+				MagicSteal G;
+			otherwise if G is not worn:
+				MagicSteal B;
+			otherwise:
+				if the charge of B > the charge of G:
+					MagicSteal G;
+				otherwise if the charge of B < the charge of G:
+					MagicSteal B;
+				otherwise:
+					if a random number between 1 and 2 is 1, MagicSteal G;
+					otherwise MagicSteal B;
+		otherwise:
+			increase the magic-power of the player by 1.
 
 [###Selkie: might be fun to have a [Smartening] function that would say, depending on intelligence, stuff like "getting smarterer", "getting better at thinking and stuff", "becoming way smarter", "becoming less sluggish", "working more smoothly", "operating more efficiently", "functioning keenly", "sparkling with brilliance".]
 To MagicPowerDown (X - a number):
@@ -92,11 +108,11 @@ To compute learning of (S - a magic-spell):
 	now the outrageousness of S is the naughtiness entry;
 	now the incantation of S is the phrase entry;
 	now the text-shortcut of S is the phrase entry;
-	say "You have learned how to [MagicSpellEffect of S]! The magic incantation is '[incantation of S]'.[SpelloutrageousnessInfo of S]";
+	say "You have learned how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'.[SpelloutrageousnessInfo of S]";
 	blank out the whole row.
 
 To say ExamineDesc of (S - a magic-spell):
-	say "You know how to [MagicSpellEffect of S]! The magic incantation is '[incantation of S]'.[SpelloutrageousnessInfo of S]".
+	say "You know how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'.[SpelloutrageousnessInfo of S]".
 
 To say SpelloutrageousnessInfo of (S - a magic-spell):
 	if debuginfo > 0, say "[input-style]outrageousness rating: [outrageousness of S]/20[roman type][line break]".
@@ -195,7 +211,7 @@ A game universe initialisation rule:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "want to have massive fake ass cheeks and even bigger cock pillow tits";
 		now the naughtiness entry is 9;
-	if ungape is 0:
+	if ungape is 0 and diaper quest is 0:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "have assfucked so many cocks that my butthole won't close up any more";
 		now the naughtiness entry is 10;
@@ -226,7 +242,13 @@ A game universe initialisation rule:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "am going tinkles in my diaper";
 		now the naughtiness entry is 11;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "want my mommy";
+		now the naughtiness entry is 5;
 		if diaper messing >= 3:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love doing stinkies in my panties";
+			now the naughtiness entry is 14;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "get turned on when I poop my panties";
 			now the naughtiness entry is 16.
@@ -274,7 +296,7 @@ Report Spellcasting magic-blinking:
 			bore M for 0 seconds;
 			now the favour of M is F; [no favour change]
 			now M is moved; [won't move again this turn]
-		now the player is in R;
+		teleport to R;
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 

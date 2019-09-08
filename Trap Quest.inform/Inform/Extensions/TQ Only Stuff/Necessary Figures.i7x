@@ -100,6 +100,7 @@ Figure of Wild Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladi
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
 
+Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
 
 Figure of quiz lesson is the file "Special/Cutscene/cutscene-hyacinthe-quiz1.jpg".

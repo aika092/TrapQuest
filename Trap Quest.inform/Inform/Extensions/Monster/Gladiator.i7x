@@ -146,7 +146,7 @@ To compute unique periodic effect of (M - a gladiator):
 				if M is asleep, say "A few drops of milk drip from [NameDesc of M]'s nipples onto the floor.";
 				otherwise say "You make eye contact with [NameDesc of M] as a few drops of milk drip from [his of M] nipples onto the floor. [big he of M] puffs [him of M]self up with pride.";
 			MilkPuddleUp 1 in (the location of M);
-		otherwise if M is not asleep and the refactory-period of M <= the refactory-time of M * -1 and M is male:[is she horny?]
+		otherwise if M is not asleep and M is not dangerous and the refactory-period of M <= the refactory-time of M * -1 and M is male:[is she horny?]
 			if M is in the location of the player, say "You see [NameDesc of M] find a corner and begin to masturbate, sighing with pleasure as [he of M] blows [his of M] load on the ground.";
 			SemenPuddleUp 1 in (the location of M);
 			now the refactory-period of M is -4.
@@ -1163,6 +1163,30 @@ To compute domination interference of (M - wild gladiator) for (N - a monster):
 	now player-fucking is DOMINANT-FAILURE;
 	if M is not unfriendly, anger M.
 
+To say DominationReaction of (M - a gladiator) to (N - a monster):
+	if player-fucking is DOMINANT-SHAMEFUL:
+		say "[line break][speech style of M]'Weak.'[roman type][line break][BigNameDesc of M] seems unimpressed at your display of 'dominance'.";
+		FavourDown M by 1;
+		make M expectant;
+	otherwise:
+		if M is unfriendly:
+			if player-fucking is DOMINANT-NEUTRAL, FavourUp M by 1;
+			otherwise FavourUp M by 2;
+			say "[line break][speech style of M]'It seems you are not worthless as a warrior. [if M is unfriendly]However, I will not spare you. Prepare yourself.'[roman type][line break][BigNameDesc of M] resumes [his of M] aggressive stance![otherwise]I will spare you, for now.'[roman type][line break][BigNameDesc of M] turns to leave[end if]";
+			make M expectant;
+		otherwise:
+			FavourUp M by 1;
+			say "[line break][speech style of M]'Hm. Impressive.'[roman type][line break][BigNameDesc of M] nods approvingly.";
+		if M is unfriendly, Bore M;
+
+To say DominationFailedReaction of (M - a gladiator) to (N - a monster):
+	if N is interested:
+		say "[line break][speech style of M]'Remain where you are. [big he of N] is not finished.'[roman type][line break][BigNameDesc of M] watches you closely to make sure you don't get up.";
+	otherwise:
+		say "[line break][speech style of M]'It is clear to me that you are not worthy of being seen as a warrior.'[roman type][line break][BigNameDesc of M] assumes a fighting stance.";
+	anger M;
+	make M expectant.
+
 To say DominanceIntro of (M - a gladiator):
 	say "You grab [NameDesc of M] by the wrist and try to wrench the sword out of [his of M] hand. [big he of M] tries to sweep your legs out from under you, but [his of M] balance is thrown off by [his of M] erection, and [he of M] ends up falling on [his of M] ass. [PowerBottomComment of M] You sit in [his of M] lap, looking [him of M] in the eye as you grind on [his of M] [LongDickDesc of M]. [big his of M] eyes [if M is wild gladiator]narrow[otherwise]widen[end if]. [line break][speech style of M]'[if M is insane gladiator][one of]Making me hard...'[or]Slutty whore...'[at random][otherwise if M is wild gladiator][one of]You forget your role.'[or]You doubt my abilities?'[at random][otherwise][one of]T-that is my lesser part! S-stop this at once!'[or]B-but that's my...'[or]W-what?! You wanted that?!'[at random][end if][roman type][line break]";
 	if there is a held condom-providing thing:
@@ -1589,7 +1613,7 @@ Section 1 - Greeting
 
 [I couldn't think of much else for the gladiator's unfriendly response, which is unfortunate since it will be the only one seen for most players. Submissiveresponse is fairly robust, but once again, it is less depthy when the gladiator is unfriendly.]
 To say FirstResponse of (M - a gladiator):
-	if the largeness of breasts > 6 or the breast-happy of M is 1:
+	if the largeness of breasts > 6 and the breast-happy of M is 1:
 		say "[speech style of M]'[one of]What impressive breasts...-ahem, hello sister! Welcome!'[or]Hello. It is rare I meet such a well endowed woman out of the blue.'[at random][roman type][line break]";
 	otherwise if the class of the player is virgin warrior:
 		say "[speech style of M]'[one of]'Welcome......I see you follow the path of purity. Watch yourself, sister.'[or]Welcome, warrior of purity. Not many can walk such a difficult path.'[at random][roman type][line break]";
@@ -1684,7 +1708,7 @@ To say AttentionExceeded of (M - a gladiator) with (N - a monster):
 	say "[speech style of M]'I will do far more than simply watch.'[roman type][line break]".
 
 To say AttentionAccepted of (M - a gladiator) with (N - a monster):
-	say "[speech style of M]'Fine. I will watch you embarass yourself.'[roman type][line break]".	
+	say "[speech style of M]'Fine. I will watch you embarass yourself.'[roman type][line break]".
 
 Section 2 - Questioning
 

@@ -71,7 +71,7 @@ It is possible for the player to know (sure) or not know (unsure) the BUC status
 
 *@!]
 A bottle has a curse-ID.
-Understand the curse-ID property as describing a bottle .
+Understand the curse-ID property as describing a bottle.
 A bottle is usually unsure.
 
 [!<Bottle>@<magicCurse:MagicCurseEnum>*

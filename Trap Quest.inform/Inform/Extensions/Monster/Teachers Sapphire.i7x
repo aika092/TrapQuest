@@ -72,7 +72,7 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 			now the armband-print of armband is "prancing [if diaper quest is 1]princess[otherwise]paramour[end if]";
 			say ClothingDesc of armband;
 			say "You are so distracted with examining your new armband that you almost don't even notice that [ST] is being kept in a kneeling position, and the teacher is spanking [him of ST] with a large wooden paddle. By the time you're properly paying attention the show is over leaving the poor [boy of ST][']s sobbing the only audible sound as the others silently file out of the room.";
-			FavourDown ST by 2;
+			HappinessDown ST by 5;
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 			demote ST; [pointless as it's a sapphire course so people can't be demoted but as a reminder to other lessons, this is what should be here]
 	otherwise if the number of students in the location of the player > 1:
@@ -141,7 +141,7 @@ make-up-lesson is a lesson. The lesson-teacher of make-up-lesson is teacher-ange
 To compute teaching of (L - make-up-lesson):
 	let M be the lesson-teacher of L;
 	let P be a random promotable student in the location of the player;
-	if the make-up of face is 2 or permanent makeup is 1 or (the make-up of face is 1 and a random number between 1 and the number of promotable students in the location of the player is 1) or P is nothing or the number of students in the location of the player is 1, now P is the player;
+	if the make-up of face is 2 or permanent makeup is 1 or (the make-up of face is 1 and a random number between 1 and the number of promotable students in the location of the player is 1) or P is nothing or the number of students in the location of the player <= 1, now P is the player;
 	say "[speech style of M]'It iz time for ze regularly scheduled make up lezzon.'[roman type][line break][BigNameDesc of M] paces up and down at the front as [he of M] addresses you all.[line break][speech style of M]'Az per uzual, ze student who haz come to clazz viz ze most beautiful vizage vill increaze her rank. You.'[roman type][line break][big he of M] turns to face the class and points [his of M] finger directly at [if P is the player]you[otherwise][NameDesc of P][end if].[line break][speech style of M]'Go.'[roman type][line break]";
 	if P is the player:
 		now armband is emerald;
@@ -149,6 +149,8 @@ To compute teaching of (L - make-up-lesson):
 		now the armband-title of armband is "Belle";
 		now the armband-print of armband is "bold beauty";
 		say ClothingDesc of armband;
+		repeat with STTH running through tryhard students in the location of the player:
+			HappinessDown STTH;
 		say "In a bit of a surprised daze, you walk out of the room.";
 		try going south;
 		say "[variable custom style]Huh, that was easy.[roman type][line break]";

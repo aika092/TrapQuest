@@ -15,6 +15,7 @@ To say ClothingDesc of (C - portal gag):
 
 Definition: portal gag is fetish appropriate: decide no. [Never appears randomly]
 Definition: portal gag is magic themed: decide yes.
+Definition: portal gag is transformation-protected: decide yes.
 
 To Squirt (L - a liquid-object) on (C - portal gag) by (N - a number):
 	say ", disappearing through the portal.".

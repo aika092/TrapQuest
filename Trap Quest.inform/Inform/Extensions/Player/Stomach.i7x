@@ -46,7 +46,7 @@ Definition: yourself is almost too full:
 old-fullness-bonus is a number that varies.
 
 To decide which number is fullness-bonus:
-	if diaper quest is 0 or diaper messing < 3 or the number of worn soilable knickers is 0 or the player is not almost too full, decide on 0;
+	if diaper quest is 0 or diaper messing < 3 or the number of worn soilable knickers is 0 or the stomach of the player + 1 < stomach-max, decide on 0;
 	decide on potential-fullness-bonus.
 
 To decide which number is potential-fullness-bonus:
@@ -106,8 +106,8 @@ REQUIRES COMMENTING
 To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
-		increase the stomach-food of the player by 1 + (xavier-belt-link * 2);
-		if xavier-throat-link is 1 and rectum > 0 and diaper messing >= 3, increase rectum by 1 + (xavier-belt-link * 2);
+		increase the stomach-food of the player by 1 + xavier-belt-link;
+		if xavier-throat-link is 1 and rectum > 0 and diaper messing >= 3, increase rectum by 1 + xavier-belt-link;
 		decrease X by 1.
 
 [!<StomachFoodDownX>+

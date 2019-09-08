@@ -604,7 +604,7 @@ assfilled is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-To Assfill (X - a number):
+To Assfill (X - a number):[TODO: the slimegirl doesn't like demonic cum]
 	let L be a random worn lipstick collar;
 	if L is clothing, increase X by 1;
 	let M be a random wrapped monster penetrating asshole;
@@ -976,12 +976,17 @@ To AssSquirt:
 				if turn-count is 0 or collecting is a thing:
 					if debugmode is 1, say "there are [open-topped-vessel-count] open topped vessels held by the player.";
 					if the player is not flying and the player is not in HoleInWall and the player is not in DiaperPail and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
+						let LV be the list of carried open topped vessels;
+						if the number of entries in LV > 1:
+							say "You have the following open topped vessels:[line break]";
+							repeat with V running through LV:
+								say "[V][line break]";
 						if the player is upright:
 							repeat with P running through closed pedestals in the location of the player:
 								if collecting is nothing and (P is fertile or P is chilled or P is parched):
 									say "Expel into the [P]? ";
 									if the player is consenting, now collecting is P;
-						repeat with V running through carried open topped vessels:
+						repeat with V running through LV:
 							if collecting is nothing:
 								say "Collect the liquid you're about to expel into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
 								if the player is consenting:

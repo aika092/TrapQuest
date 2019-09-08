@@ -354,10 +354,16 @@ To PussyFill (X - a number):
 		compute condom filling of M;
 	if X > 0:
 		if invigoration-elixir-timer > 0 and the soreness of vagina > 0:
-			say "As the [semen] rushes through your [vagina] into your womb, the lining of your [vagina] is somehow healed!";
+			say "The lining of your [vagina] is somehow healed as the [semen] rushes in!";
 			if the soreness of vagina > X, decrease the soreness of vagina by X;
 			otherwise now the soreness of vagina is 0;
 			now the tolerated of vagina is 0;
+		otherwise if an infernal monster is penetrating vagina or a demonic thing is penetrating vagina:
+			if the class of the player is not worshipper and the class of the player is not succubus:[demonic classes won't be harmed]
+				say "The infernal [semen] stings the lining of your [vagina]!";
+				if the class of the player is priestess, increase the soreness of vagina by X / 2;
+				otherwise increase the soreness of vagina by X / 3;
+			if the soreness of vagina > 10, now the soreness of vagina is 10;
 	let R be a random number between 0 and 5;
 	if there is a live thing penetrating vagina, decrease R by 1;
 	if R < X, SemenAddictUp 1; [The bigger the creampie, the more chance of creampie addiction]
@@ -395,6 +401,15 @@ To WombFill (X - a number):
 			if the class of the player is faerie and the pregnancy of the player is 0:
 				MagicPowerUp 1;
 				say "[one of]Powerful[or]More[stopping] magic courses up through your [vagina] to the rest of your body!";
+			if there is an infernal monster penetrating vagina or there is a demonic thing penetrating vagina:
+				if the class of the player is priestess:
+					say "You feel yourself being weakened as [semen] enters your womb!";
+					if a random number between 1 and 2 is 1, StrengthDown 1;
+					otherwise DexDown 1;
+				otherwise:
+					say "You feel yourself being corrupted as [semen] enters your womb!";
+					if a random number between 1 and 2 is 1, DelicateUp 1;
+					otherwise SexAddictUp 1;
 		if (slow pregnancy > 2 or (tentacles tattoo is worn and (there is a tentacle monster penetrating vagina or there is a vine penetrating vagina or there is a creampie pole trap penetrating vagina))) and the pregnancy of the player is 0 and pregnancy fetish is 1:
 			compute father material of vagina;
 			compute sudden pregnancy.
@@ -415,7 +430,7 @@ REQUIRES COMMENTING
 +1]
 To compute sudden pregnancy:
 	if the pregnancy of the player is 0:
-		let M be a random family thing penetrating vagina; [Whatever just jizzed in the player should already by inseminating vagina thanks to the fact that we just computed the father material of vagina above]
+		let M be a random family thing penetrating vagina;[Whatever just jizzed in the player should already by inseminating vagina thanks to the fact that we just computed the father material of vagina above]
 		let R be a random number between 1 and (5 - the pregnancy rate of the player);
 		if forcedFertility is true:
 			now R is 0;

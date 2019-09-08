@@ -6,7 +6,6 @@ To check attack of (M - a monster):
 	if M is threatening or M is penetrating a body part or M is grabbing the player:
 		now the alert of the player is 1;
 		if M is delayed:
-			now the last-interaction of M is 1;
 			compute correct delay of M;
 		otherwise if the paralyze-status of M > 0:
 			now the last-interaction of M is 1;
@@ -133,7 +132,8 @@ To orgasm (M - a monster):
 		if the player is in Dungeon28, progress quest of altar-sex-quest;
 	if ghost-strapon is worn, compute ghostGrowth of M;
 	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, follow the betrothal rule;
-	if M is intelligent, compute refactoryReset of M;
+	compute refactoryReset of M;
+	if M is infernal, progress quest of demon-slut-quest;
 	if there is a worn notebook, compute studying 0 of M;
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
@@ -141,21 +141,32 @@ To orgasm (M - a monster):
 		ChargeUp giant-statue by 60;
 
 To compute refactoryReset of (M - a monster):
-	now the refactory-period of M is the refactory-time of M;
-	if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
-	if there is a worn enhancing book of anal:
-		FavourUp M;
-		increase the refactory-period of M by the intelligence of the player.
+	if M is intelligent:
+		now the refactory-period of M is the refactory-time of M;
+		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
+		if there is a worn enhancing book of anal:
+			FavourUp M;
+			increase the refactory-period of M by the intelligence of the player.
 
 To compute priestessBlessing of (M - a monster):
 	if the class of the player is priestess:
-		say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
-		decrease the charge of the dungeon altar by 150;
+		if M is infernal:[if M is a demon]
+			say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with [him of M], Sister! Do not insult your goddess!'";
+			increase the charge of the dungeon altar by 30;
+		otherwise:
+			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
+			decrease the charge of the dungeon altar by 150;
+	if M is infernal, RitualUp 2;
+	otherwise RitualUp 1.
+
+To RitualUp (X - a number):
 	let R be ritual-beads;
-	if R is worn and the player is the donator:
-		if the charge of R < the notches of R:
+	if R is worn:
+		while (X > 0 and the charge of R + X > the notches of R):
+			decrease X by 1;
+		if X > 0:
 			say "The [printed name of R] seems to grow heavier inside you.";
-			increase the charge of R by 1;
+			increase the charge of R by X;
 		otherwise:
 			say "The [printed name of R] shifts slightly inside of you, but doesn't seem to get any heavier. Maybe it's full?".
 
@@ -261,7 +272,7 @@ To compute default facial climax for (M - a monster):
 				compute oral creampie of M;
 			otherwise: [submitted, deepthroat]
 				compute deepthroat creampie of M;
-	if M is interested and the rounds of sex left of M <= 0:[possibly allows for another round of sex]
+	if M is interested and the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
 		satisfy M.[dislodges him automatically]
 
 [!<ComputeClimaxOfMonsterInFuckhole>+
@@ -903,8 +914,8 @@ To compute (M - a monster) entering (F - a fuckhole):[Generic function that shou
 		set up sex length of M in F;
 		say "[BigNameDesc of M] forces [him of M]self into your [variable F]";
 		now M is penetrating F;
-		ruin F;
 		compute unique penetration effect of M in F;
+		ruin F;
 	otherwise:
 		say "[BigNameDesc of M] sees that you are already occupied and loses interest";
 		Bore M.

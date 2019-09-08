@@ -47,7 +47,6 @@ A diaper quest fix rule:
 	now the lesson-teacher of quiz-lesson is teacher-hannah.
 
 Definition: quiz-lesson (called L) is lesson-appropriate:
-	if the player is not a february 2019 top donator, decide no;
 	if the number of alive lesson-appropriate students is 0, decide no; [There must be another student]
 	if diaper quest is 1:
 		if the incontinence of the player >= the max-incontinence of the player, decide no;
@@ -74,8 +73,8 @@ To compute teaching of (L - quiz-lesson):
 		if D is not dry clean diaper:
 			if D is clothing, now D is carried by the player;
 			now D is a random off-stage diaper;
-			if there is an off-stage plain diaper, now D is a random off-stage plain diaper;
-			clean D;
+			if there is an off-stage massive diaper, now D is a random off-stage massive diaper;
+			only destroy D;
 			summon D;
 			say "[BigNameDesc of M] gets you a clean [ShortDesc of D] and forces you to wear it in front of your classmates. You turn red but obey [him of M], allowing [him of M] to put you in your new padding.";
 			display stuff;
@@ -146,8 +145,10 @@ To compute teaching of (L - quiz-lesson):
 				UrineTasteAddictUp 1;
 			if watersports fetish is 1, say "[variable custom style][if the semen taste addiction of the player < 6 or the urine taste addiction of the player < 6]Yuck yuck yuck[otherwise if the semen taste addiction of the player < 12 or the urine taste addiction of the player < 12]How humiliating[otherwise]That was surprisingly tasty[end if]![line break]";
 			otherwise say "[variable custom style][if the semen taste addiction of the player < 6]I can't believe that not only am I having to drink [semen], but it's [semen] that's been up my own butt[otherwise if the semen taste addiction of the player < 12]Eww, this has been in my butt[otherwise]That was just as delicious as [semen] that hasn't been up my butt[end if]![line break]";
-			say "[speech style of M]'Wow, look at how fast you gobbled all that down! You're even more of a greedy slut than I thought! Maybe there's hope for you yet.'[roman type][line break][BigNameDesc of M] teases you as [he of M] gives you [ShortDesc of hair] one final sharp tug before letting you go.";
-		FavourDown ST by 10;
+			say "[speech style of M]'Wow, look at how fast you gobbled all that down! You're even more of a greedy slut than I thought! Maybe there's hope for you yet.'[roman type][line break][BigNameDesc of M] teases you as [he of M] gives your [ShortDesc of hair] one final sharp tug before letting you go.";
+			repeat with STD running through students in the location of the player:
+				unless STD is ST, FavourDown STD;
+		HappinessDown ST by 10;
 		say "[speech style of M]'Well, there's nothing much to say except better luck next time [NameBimbo], that's all for today. Class dismissed!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] claps [his of M] hands and the bondage keeping you knelt on top of [NameDesc of ST][']s face disappears![line break][speech style of M]'You actually did it! Congratulations.'[roman type][line break]";
@@ -401,7 +402,6 @@ hypno-lesson is a lesson. The lesson-teacher of hypno-lesson is teacher-hyacinth
 hypno-lesson has a number called traitor-hypno.
 
 Definition: hypno-lesson (called L) is lesson-appropriate:
-	if the player is not an april 2019 top donator, decide no;
 	if chess-lesson is appropriate, decide no; [Chess lesson is way better at the moment]
 	decide yes.
 

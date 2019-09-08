@@ -8,14 +8,14 @@ Definition: A giant wasp (called M) is woods dwelling:
 	if egg laying fetish is 0 or mythical creature fetish is 0, decide no;
 	decide yes.
 
-daddy-wasp is an object that varies.
-newborn-wasp is an object that varies.
+daddy-wasp is an object that varies. daddy-wasp is usually the throne.
+newborn-wasp is an object that varies. newborn-wasp is usually the throne.
 
 To say ShortDesc of (M - a giant wasp):
-	say "giant wasp".
+	say "[ParentDesc of M] wasp".
 
-To say MediumDesc of (M - a giant wasp):
-	say "[if M is daddy-wasp]daddy [otherwise if M is newborn-wasp]newborn [end if]giant wasp".
+To say ParentDesc of (M - a giant wasp):
+	say "[if the item described is daddy-wasp]daddy[otherwise if the item described is newborn-wasp]newborn[otherwise]giant[end if]";
 
 Figure of Giant Wasp is the file "NPCs/Forest/wasp1.png".
 
@@ -27,16 +27,44 @@ To decide which figure-name is the monster-image of (M - a giant wasp):
 Understand "daddy", "dwsp" as giant wasp when the item described is daddy-wasp.
 Understand "newborn", "nwsp" as giant wasp when the item described is newborn-wasp.
 
-buzzing giant wasp is a giant wasp. The printed name of buzzing giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]buzzing[end if] giant wasp[monster-title-after of item described]". The text-shortcut of buzzing giant wasp is "bwsp".
-fluttering giant wasp is a giant wasp. The printed name of fluttering giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fluttering[end if] giant wasp[monster-title-after of item described]". The text-shortcut of fluttering giant wasp is "fwsp".
-hovering giant wasp is a giant wasp. The printed name of hovering giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]hovering[end if] giant wasp[monster-title-after of item described]". The text-shortcut of hovering giant wasp is "hwsp".
-fuzzy giant wasp is a giant wasp. The printed name of fuzzy giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]fuzzy[end if] giant wasp[monster-title-after of item described]". The text-shortcut of fuzzy giant wasp is "fzwp".
-erratic giant wasp is a giant wasp. The printed name of erratic giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]erratic[end if] giant wasp[monster-title-after of item described]". The text-shortcut of erratic giant wasp is "ewsp".
+A mundane-wasp is a kind of giant wasp.
 
-vicious giant wasp is a giant wasp. The printed name of vicious giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]vicious[end if] giant wasp[monster-title-after of item described]". The text-shortcut of vicious giant wasp is "vwsp".
-angry giant wasp is a giant wasp. The printed name of angry giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]angry[end if] giant wasp[monster-title-after of item described]". The text-shortcut of angry giant wasp is "awsp".
-stinging giant wasp is a giant wasp. The printed name of stinging giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]stinging[end if] giant wasp[monster-title-after of item described]". The text-shortcut of stinging giant wasp is "swsp".
-nasty giant wasp is a giant wasp. The printed name of nasty giant wasp is "[monster-title-before of item described][if item described is daddy-wasp]daddy[otherwise if item described is newborn-wasp]newborn[otherwise]nasty[end if] giant wasp[monster-title-after of item described]". The text-shortcut of nasty giant wasp is "nwsp".
+buzzing giant wasp is a mundane-wasp. The text-shortcut of buzzing giant wasp is "bwsp".
+To say MediumDesc of (M - buzzing giant wasp):
+	say "buzzing [ParentDesc of M] wasp".
+erratic giant wasp is a mundane-wasp. The text-shortcut of erratic giant wasp is "ewsp".
+To say MediumDesc of (M - erratic giant wasp):
+	say "erratic [ParentDesc of M] wasp".
+fluttering giant wasp is a mundane-wasp. The text-shortcut of fluttering giant wasp is "fwsp".
+To say MediumDesc of (M - fluttering giant wasp):
+	say "fluttering [ParentDesc of M] wasp".
+hovering giant wasp is a mundane-wasp. The text-shortcut of hovering giant wasp is "hwsp".
+To say MediumDesc of (M - hovering giant wasp):
+	say "hovering [ParentDesc of M] wasp".
+
+A dangerous-wasp is a kind of giant wasp.
+
+vicious giant wasp is a dangerous-wasp. The text-shortcut of vicious giant wasp is "vwsp".
+To say MediumDesc of (M - vicious giant wasp):
+	say "vicious [ParentDesc of M] wasp".
+angry giant wasp is a dangerous-wasp. The text-shortcut of angry giant wasp is "awsp".
+To say MediumDesc of (M - angry giant wasp):
+	say "angry [ParentDesc of M] wasp".
+stinging giant wasp is a dangerous-wasp. The text-shortcut of stinging giant wasp is "swsp".
+To say MediumDesc of (M - stinging giant wasp):
+	say "stinging [ParentDesc of M] wasp".
+nasty giant wasp is a dangerous-wasp. The text-shortcut of nasty giant wasp is "nwsp".
+To say MediumDesc of (M - nasty giant wasp):
+	say "nasty [ParentDesc of M] wasp".
+
+A honey-wasp is a kind of giant wasp.
+
+fuzzy giant wasp is a honey-wasp. The text-shortcut of fuzzy giant wasp is "fzwp".
+To say MediumDesc of (M - fuzzy giant wasp):
+	say "fuzzy [ParentDesc of M] wasp".
+wooly giant wasp is a honey-wasp. The text-shortcut of wooly giant wasp is "wzwp".
+To say MediumDesc of (M - wooly giant wasp):
+	say "wooly [ParentDesc of M] wasp".
 
 To say MonsterDesc of (M - a giant wasp):
 	say "This giant flying insect is larger than you, but is still capable of perfect flight from its rapidly oscillating wings. As with real wasps in the real world, this beast seems to be very aggressive for no clear reason. Aside from its terrifying giant stinger, you can also see an ovipositor extending from its underbelly.".
@@ -192,7 +220,7 @@ To compute anal sex of (M - a giant wasp):
 		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [asshole], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your belly!";
 		assfill 1 medium eggs;
 	if the reaction of the player > 0:
-		say "You submit to the fucking and relax your [asshole] around the ovipositor. This lets another egg travel more easily through the sex organ, bringing [NameDesc of M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]"; [NB: humiliation is carried out inside the "Carry Out Submitting" function.]
+		say "You submit to the fucking and relax your [asshole] around the ovipositor. This lets another egg travel more easily through the sex organ, bringing [NameDesc of M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]";[NB: humiliation is carried out inside the "Carry Out Submitting" function.]
 		if the sex-length of M > 1:
 			decrease the sex-length of M by 1;
 			assfill 1 medium eggs;
@@ -300,9 +328,23 @@ To say CondomRejectFlav of (M - a domesticated wasp):
 To set up sex length of (M - a giant wasp) in (B - asshole):
 	set up sex length 4 of M in B.
 
+
+
 To compute striking attack of (M - a giant wasp):
-	say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
-	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 4.
+	if M is dangerous-wasp and a random number between 1 and 2 is 1 and the player is the donator:
+		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
+		increase wasp-poison-timer by 3 * the difficulty of M;
+	otherwise if M is honey-wasp and a random number between 1 and 2 is 1 and the player is the donator:
+		say "An alien-looking appendage unfurls from [NameDesc of M]'s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]Its getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
+		increase wasp-honey-timer by 5 * the difficulty of M;
+		if wasp-honey-timer > 80:
+			say "[bold type]The honey covering your limbs begins to harden, and within moments it becomes impossible to move at all. [roman type][BigNameDesc of M] bumps you gently with [his of M] body, which in your immobile state causes you to fall over.";
+			now wasp-honey-timer is 100;
+			try kneeling;
+			now the stance of the player is 1; [failsafe]
+	otherwise:
+		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
+		FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 4.
 
 Section 2 - Damage
 
@@ -318,6 +360,31 @@ To compute damage of (M - a giant wasp):
 			anger M;
 	otherwise:
 		compute death of M.
+
+wasp-poison-timer is a number that varies.
+
+a time based rule (this is the wasp poison decay rule):
+	if wasp-poison-timer > 0:
+		decrease wasp-poison-timer by time-seconds;
+		if wasp-poison-timer <= 0:
+			say "[bold type]The wasp's poison seems to have run its course and strength returns to your limbs.[roman type][line break]";
+			now wasp-poison-timer is 0.
+
+wasp-honey-timer is a number that varies.
+
+a time based rule (this is the wasp honey decay rule):
+	if wasp-honey-timer > 0:
+		decrease wasp-honey-timer by time-seconds;
+		if wasp-honey-timer <= 0:
+			say "[bold type]The wasp's honey seems to have completelydried and you can now move normally again.[roman type][line break]";
+			now wasp-honey-timer is 0;
+		otherwise if wasp-honey-timer <= 80 and wasp-honey-timer + time-seconds > 80:
+			say "[bold type]The wasp's honey seems to have dried enough that you can now move at least a little bit.[roman type][line break]".
+
+This is the honey stuck immobility rule:
+	if wasp-honey-timer > 80, rule fails.
+The honey stuck immobility rule is listed in the immobility rules.
+
 
 To say DamageReactHealthy of (M - a giant wasp):
 	say "The [noun] buzzes angrily!".
@@ -343,10 +410,10 @@ Part 6 - Variants
 
 Section 1 - Domesticated wasp
 
-domesticated wasp is a giant wasp. The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
+domesticated wasp is a mundane-wasp. The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
 
 To say MediumDesc of (M - domesticated wasp):
-	say "[if M is daddy-wasp]daddy [otherwise if M is newborn-wasp]newborn [end if]domesticated wasp"
+	say "domesticated [ParentDesc of M] wasp".
 
 To say MonsterDesc of (M - domesticated wasp):
 	say "This giant flying insect has a tiny fairy perched on its back, controlling it with a pair of fibrous green reins. Despite its clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating ovipositor extending from its underbelly.".
@@ -362,7 +429,7 @@ To set up (M - domesticated wasp):
 		remove M from play.
 
 To say SummoningFlav of (M - domesticated wasp):
-	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown wasp emerges from the egg. A fairy emerges shortly from the passage, and quickly swings a set of green reins over its head as it lifts off the ground.";
+	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown wasp emerges from the egg. A red-haired fairy emerges shortly from the passage, and quickly swings a set of green reins over the wasps's head as it lifts off the ground.";
 	otherwise say "You hear an egg cracking somewhere close by.".
 
 To say DamageReactHealthy of (M - domesticated wasp):
@@ -439,35 +506,37 @@ To say FirstResponse of (M - domesticated wasp):
 To say RepeatResponse of (M - domesticated wasp):
 	if the class of the player is faerie:
 		say "[speech style of M]'[one of]You[']re pretty big for a fairy, but I can take you.'[or]Is this what they send to challenge me? A giant?'[or]Hmph. Even a giant is no match for me.'[or]I can take you, easy. Doesn't matter how big you are.[at random][roman type][line break]";
+	otherwise if the class of the player is worshipper or the class of the player is succubus:
+		say "[speech style of M]'[one of]Hey. So is the demon lord a good boss?'[or]So you work for the demon lord? That sounds pretty interesting.'[or]So you work for the demon lord? Do you think you could set me up with an interview?'[at random][roman type][line break]";
 	otherwise if the number of worn demonic clothing > 0:
 		let D be a random worn demonic clothing;
 		say "[speech style of M]'[one of]Hey. You look pretty cool in that [ShortDesc of D], I guess.'[or]What's up? I bet you stole that [ShortDesc of D], didn't you. Nice.'[or]What's up? Nice [ShortDesc of D].'[or]Hey. Suuup.'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]What[']s up, loser?'[or]What's up? My wasp can take on anyone.'[or]Hey. Ever think you can take a wasp? You're wrong. Sorry.'[or]Hey, loser.'[at random][roman type][line break]".
 
-To say AsDominantResponse of (M - domesticated wasp):
-	say "[speech style of M]'Never mess with a wasp rider!'[roman type][line break]".
+To say UnAnnoyedResponse of (M - domesticated wasp):
+	say "[speech style of M]'[one of]Hahaha! What a pervert!'[or]Do you really like getting fucked by a wasp? Gross!'[at random][roman type][line break]";
 
-To say AsPartnerResponse of (M - domesticated wasp):
+To say MildAnnoyedResponse of (M - domesticated wasp):
+	say "[speech style of M]'[one of]Sorry, but when he has a need to seed, he has a need to seed. Or egg. I guess.'[or]But if he doesn't fuck you, where would he put all his eggs? They wouldn't fit in me. Stupid.'[or]Oh come on, it's not like it's going to go on forever.'[or]'Stop being a selfish bitch. He has needs too!'[or]Where else do you expect him to put his eggs? So stupid...'[or]Maybe you should make your butt less fun to breed!'[at random][roman type][line break]";
+
+To say AnnoyedResponse of (M - domesticated wasp):
 	say "[speech style of M]'Stop ruining the moment!'[roman type][line break]".
 
-[This is a response to generic greetings for monsters that have previously dominated the player.]
-To say DominantResponse of (M - domesticated wasp):
-	if M is unfriendly, say "[speech style of M]'[one of]Don[']t worry, he[']s about to make it up to you!'[or]Just for that, I[']m going to make sure he breeds you again!'[at random][roman type][line break]";
-	otherwise say "[speech style of M]'My mount wants what its wants. Maybe you should make your butt less fun to breed!'[roman type][line break]";
+To say PleadRejected of (M - domesticated wasp):
+	say "[speech style of M]'Never mess with a wasp rider!'[roman type][line break]".
 
-[This is a response to greetings while the player is being dominated. Not sure the apostrophes I've used here will work since they are not encased within a [one of] function.]
-To say midDominanceResponse of (M - domesticated wasp):
+To say InvitationAccepted of (M - domesticated wasp) with (N - a monster):
+	say "[speech style of M]'[one of]Well, if you insist.'[or]Well, I guess I can't stop him when you're asking for it like that.'[at random][roman type][line break]".
+
+To say InvitationRejected of (M - domesticated wasp) with (N - a monster):
+	say "[speech style of M]'We have important training to do. Sorry.'[roman type][line break]".
+
+To say AssistanceRejected of (M - domesticated wasp) with (N - a monster):
 	if M is willing to shag and (M is unfriendly or the player is seductive):
 		say "[speech style of M]'He wants to join in too!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'We have important training to do. Sorry.'[roman type][line break]".
-
-To say InSexResponse of (M - domesticated wasp):
-	if M is unfriendly:
-		say "[speech style of M]'[one of]Sorry, but when he has a need to seed, he has a need to seed. Or egg. I guess.'[or]But if he doesn't fuck you, where would he put all his eggs? They wouldn't fit in me. Stupid.'[or]Oh come on, it's not like it's going to go on forever.'[or]'Stop being a selfish bitch. He has needs too!'[or]Where else do you expect him to put his eggs? So stupid...'[at random][roman type][line break]";
-	otherwise:
-		say "[speech style of M]'Looks fun, but we have important training to do!'[roman type][line break]".
+		say InvitationRejected of M with N.
 
 To compute annoyance of (M - domesticated wasp):
 	if M is uninterested:
@@ -498,7 +567,7 @@ To say EscapeAnswer of (M - domesticated wasp):
 
 To say AdviceAnswer of (M - domesticated wasp):
 	if the class of the player is faerie, say "[speech style of M][one of]And give you an advantage? No way!'[or]Like I'd share my secrets with you!'[or]If you tried to ride a wasp you'd crush it. Idiot.'[at random][roman type][line break]";
-	otherwise say "[speech style of M]'[one of]The demoness really loves it when you resist her. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. She [if mythical creature fetish is 0]enchanted a great warrior to watch over[otherwise]created a terrible minotaur to guard[end if] it, but she had to confine [him of minotaur], because she made [him of minotaur] too powerful to control! Or maybe she was just really attracted to [him of minotaur]. Anyway, [he of minotaur] still has the amulet. It's yours if you can sneak past [him of minotaur]!'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]Demons really love it when you resist them. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. She [if mythical creature fetish is 0]enchanted a great warrior to watch over[otherwise]created a terrible minotaur to guard[end if] it, but she had to confine [him of minotaur], because she made [him of minotaur] too powerful to control! Or maybe she was just really attracted to [him of minotaur]. Anyway, [he of minotaur] still has the amulet. It's yours if you can sneak past [him of minotaur]!'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
 	alwayscutshow figure of fairy interact 12 for M.
 
 To compute perception of (M - domesticated wasp):
@@ -533,7 +602,7 @@ To compute perception of (M - domesticated wasp):
 		now M is interested;
 		anger M.
 
-To compute (M - domesticated wasp) protecting against (X - a monster): [Default protection if not defined for the monster]
+To compute (M - domesticated wasp) protecting against (X - a monster):
 	if X is demoness or the number of worn demonic clothing > 0:
 		say "[one of][BigNameDesc of M]'s rider watches, totally enthralled.[or][or][BigNameDesc of M]'s rider pulls out a tiny journal, recording your performance.[or][or][BigNameDesc of M] and its rider watch your performance, thoroughly entertained.[or][or]Your actions appear to interest [NameDesc of M]'s, who watches with excitement.[cycling]";
 	otherwise:

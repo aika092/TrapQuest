@@ -105,6 +105,7 @@ choice
 0 [slow birth]
 0 [combatvisor]
 1 [supportersEnabled]
+0 [strongCurses]
 
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
@@ -422,11 +423,6 @@ Part - Options Menus
 
 
 
-Include Gender Options by Fetish Settings.
-Include Diaper Lover Options by Fetish Settings.
-Include Pregnancy Options by Fetish Settings.
-Include Instant TG Options by Fetish Settings.
-Include Info Options by Fetish Settings.
 
 
 [!<tableOfKinkOptions:Table>*
@@ -482,6 +478,7 @@ To decide which number is positive points count:
 	if tough-shit is 1, increase X by 8;
 	if inventory handicap is 1, increase X by 3;
 	if clumsy is 1, increase X by 5;
+	if strongCurses is 1, increase X by 5;
 	if save game limit > 0, increase X by 2 + (save game limit * 2);
 	increase X by natural redness;
 	increase X by natural blondeness;

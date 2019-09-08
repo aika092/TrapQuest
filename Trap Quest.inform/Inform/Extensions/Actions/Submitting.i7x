@@ -115,7 +115,7 @@ To say SubmissionFlav of (M - a monster):
 
 To make (M - a monster) expectant: [This is in a function so that you can override it in a particular monster's definition if required.]
 	if M is unfriendly and M is not survived, now M is triumphant;
-	now the last-interaction of M is 2.
+	if M is unfriendly or the player is in danger, now the last-interaction of M is 2.
 
 
 [!<ResetSubmittedMonsters>+

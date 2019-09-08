@@ -36,7 +36,7 @@ To say MonsterComment of (M - receptionist):
 To set up (M - receptionist):
 	reset M;
 	now the monstersetup of M is 1;
-	if the player is a top donator, now M is in [School01] Dungeon10;
+	if the player is the donator, now M is in [School01] Dungeon10;
 	now M is guarding;
 	now the difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.

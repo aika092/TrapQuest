@@ -68,15 +68,15 @@ To trigger (Y - a baby bouncer):
 
 
 To say SexSubmissionFlav of (Y - a baby bouncer):
-	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. The gentle treatment of the contraption relaxes you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you feel like a little child[in random order].";
+	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. [if the bounces of Y is 0 and the number of worn diapers is 0]You feel a bit silly, but since you're not wearing a diaper, you resist being made to feel more submissve, for now[otherwise]The gentle treatment of the contraption relaxes you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you feel like a little child[in random order][end if].";
 	increase the bounces of Y by 1;
-	SilentlyDelicateUp 1;
+	if the bounces of Y > 0 or there is a worn diaper, SilentlyDelicateUp 1;
 	humiliate 200 + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
 	now the willingbounce of Y is 0;
 	check bounce release of Y.
 
 To say SexResistFlav of (Y - a baby bouncer):
-	say "You struggle to get out without bouncing!  The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation. The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
+	say "You struggle to get out without bouncing! The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation. The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
 	increase the bounces of Y by 1;
 	ruin vagina times 2;
 	now the willingbounce of Y is 0;

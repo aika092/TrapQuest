@@ -266,29 +266,6 @@ To say SummoningFlav of (M - a tentacle monster):
 	otherwise say "[bold type]You [if S is tentacle-breeder]watch as the hole in the flesh in the wall widens, and a ball of grey flesh drops out to the ground. The newly spawned tentacle monster looks at you with its single eye before scuttling off into the distance[otherwise]hear a loud squelch coming from nearby[end if]![roman type][line break]";
 	compute mandatory room leaving of M.
 
-To compute tentacle birth:
-	compute pregnancy clothing displacement;
-	say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a slimy tentacle about as thick as an ordinary penis push its way out of your [vagina] quickly followed by several more. [or]You [if the bimbo of the player < 13]wince with fear and then shudder with shame when[otherwise]brace yourself with gleeful anticipation when[end if] you begin to feel the familiar dark red tentacles begin to push themselves out of your [vagina]. [stopping]";
-	cutshow figure of tentacle cutscene 1;
-	say "They all wrap around your hips and clench tightly as the monster inside you slowly and determinedly pries itself from your struggling hole. The slow movement of the huge dark red creature is accompanied by lewd squelches and slurps and some loud moaning, which you then realise is coming from yourself. Your [vagina] is forced to stretch further still as the critter reaches its widest point at your entrance and then with a loud POP it flies out and lands on the ground. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'child': a [if extreme proportions fetish is 1]beachball sized[otherwise]basketball sized[end if] heap of vulnerable looking flesh with a single eye and several phallic tentacled appendages. Before your eyes its flesh starts to slowly solidify and it gives you a long and seemingly thoughtful stare before dragging itself out of sight with its tentacles.[or]Once again you watch it start to build its strength and drag itself away.[stopping]";
-	let T be a random off-stage living tentacles;
-	if laurel wreath is worn and T is clothing:
-		repeat with O running through worn dresses:
-			say "Your [O] vanishes!";
-			destroy O;
-		repeat with O running through worn skirts:
-			say "Your [O] vanishes!";
-			destroy O;
-		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type]";
-		summon T;
-		now the raw-magic-modifier of T is childValue times 6;
-	if there is a worn tattoo and the number of worn ass tattoos is 0:
-		say "Suddenly a new tattoo appears on you!";
-		summon tentacles tattoo;
-		try examining tentacles tattoo;
-	let M be a random off-stage tentacle monster;
-	compute birth set up of M.
-
 To compute (M - demon lord) stomping (N - a tentacle monster):
 	if M is in the location of the player, say "With a flick of [his of M] finger, [NameDesc of N] bursts into flames and quickly disappears in a puff of smoke.";
 	destroy N;
@@ -642,7 +619,7 @@ To say CondomForceSuccessFlav of (M - a tentacle monster):
 	say "You grab hold of one of [NameDesc of M][']s [DickDesc of M]s and quickly unroll a condom down its length. To your surprise, several more condoms fly out of your pack thanks and with clear magically influenced purpose, apply themselves to each of [NameDesc of M][']s undulating limbs.";
 
 To say CondomForceFailFlav of (M - a tentacle monster):
-	say "You grab hold of a [DickDesc of M] and try to unroll a condom down its length. [NameDesc of M] quickly smacks your hand away. Looks like [he of M][']s going in bare...";
+	say "You grab hold of a [DickDesc of M] and try to unroll a condom down its length. [BigNameDesc of M] quickly smacks your hand away. Looks like [he of M][']s going in bare...";
 
 To say TitfuckResistFlav of (M - a tentacle monster):
 	let C be a random worn top level covering nipple covering clothing;

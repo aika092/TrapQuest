@@ -104,9 +104,9 @@ To compute drinking (X - a bottle):
 		otherwise:
 			 if (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed) and X is sure and X is not cursed:
 				now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1; [the vessel wasn't cursed so the potion must have been!]
-			compute cursed drinking X;
 			if (the fill-type of X < lowest-cursed or the fill-type of X > highest-cursed) and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1:
 				now the curse-ID of X is sure; [We know this potion is good so the vessel must be cursed!]
+			compute cursed drinking X;
 		progress quest of curse-drinking-quest from the fill-type of X;
 	otherwise:
 		if the fill-type of X < lowest-cursed and the stomach of the player > stomach-max and the stomach-water of the player > 2 and a random number between 1 and the stomach of the player > overfull-quotient:

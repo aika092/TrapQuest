@@ -159,13 +159,58 @@ This is the demon junk punishment rule:
 			otherwise:
 				VaginalSexAddictUp 5;
 				Arouse 5000;
-				say "You feel a sudden desperate need to jam a giant cock into your pantiesnd new pussy!";
+				say "You feel a sudden desperate need to jam a giant cock into your pussy!";
 		let M be a random alive mechanic;
 		if M is monster:
 			XavierUp M by 2;
 	otherwise:
 		IntDown 2;
 		say "A fog settles over your mind, permanently impairing your ability to think about... just about anything, really.".
+
+acolyte-undergarment is a crotchless-panties. acolyte-undergarment is unique. The text-shortcut of acolyte-undergarment is "audg". acolyte-undergarment is metal. The soak-limit of acolyte-undergarment is 0. Understand "gold", "golden", "undergarment", "acolyte", "acolyte's" as acolyte-undergarment. acolyte-undergarment has a number called charge. The charge of acolyte-undergarment is usually 0. Acolyte-undergarment is top-exclusive. The printed name of acolyte-undergarment is "[clothing-title-before]acolyte's undergarment[clothing-title-after]".
+
+Figure of acolyte undergarment is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless7.jpg".
+
+To decide which figure-name is the clothing-image of (C - acolyte-undergarment):
+	decide on figure of acolyte undergarment.
+
+To say ShortDesc of (B - acolyte-undergarment):
+	say "acolyte's undegarment".
+
+To say ClothingDesc of (C - acolyte-undergarment):
+	say "A pair of crotchless golden 'underwear,' with [if the player is male]two matching strings of rubies[otherwise]a string of rubies[end if][if the player is female and C is worn] that stimulate your [vagina] as you walk[otherwise if C is worn]that fit around your [ShortDesc of penis][otherwise]down the middle[end if]. It hides absolutely nothing.[if the charge of C > 0][line break][end if][if the charge of C > 4]The skimpy 'fabric' is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The skimpy 'fabric' is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The skimpy 'fabric' is surprisingly cool to the touch.[end if]";
+
+Definition: acolyte-undergarment is blessable: decide no.
+Definition: acolyte-undergarment is demonic: decide yes.
+Definition: acolyte-undergarment is yellow themed: decide yes.
+Definition: acolyte-undergarment is walking-stimulating: decide yes.
+
+To MagicSteal (C - acolyte-undergarment):
+	if the charge of C < 5:
+		say "Your [printed name of C] absorbs the magical energy!";
+		increase the charge of C by 1;
+		if the charge of C is 5:
+			say "A surge of warmth passes through the fabric, and you get the feeling it has reached maximum power.";
+	otherwise:
+		increase the magic-power of the player by 1.
+
+To decide which number is the vaginal-sex-addiction-influence of (C - acolyte-undergarment):
+	decide on 1 - the magic-modifier of C.
+
+This is the worshipper masochism rule:
+	if acolyte-undergarment is worn:
+		say "The gemstones on your [ShortDesc of acolyte-undergarment] glint in response to your orgasm, and a wave of pain wracks your body.";
+		BodyRuin 1;
+		PainUp 1.
+The worshipper masochism rule is listed last in the orgasm fatigue effects rules.
+
+To decide which number is the dexterity-influence of (C - acolyte-undergarment):
+	if the charge of C < 5:
+		if the magic-modifier of C < 0, decide on the magic-modifier of C;
+		decide on 0;
+	otherwise:
+		if the magic-modifier of C > 0, decide on the magic-modifier of C + 2;
+		decide on 2.
 
 Demonic Underwear ends here.
 

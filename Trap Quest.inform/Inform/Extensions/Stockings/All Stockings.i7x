@@ -156,12 +156,12 @@ This is the worn shoes prevents removal of stockings rule:
 		if autolayerremove is false, rule fails.
 The worn shoes prevents removal of stockings rule is listed in the stockings removability rules.
 
-This is the worn leg covering clothing prevents removal of stockings rule:
+[This is the worn leg covering clothing prevents removal of stockings rule:
 	repeat with C running through worn leg covering clothing:
 		unless C is wearing-target:
 			if summoning is 0 and autoremove is false, say "You would need to remove your [C] first.";
 			if autolayerremove is false, rule fails.
-The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.
+The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.]
 
 
 

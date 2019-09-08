@@ -2,6 +2,7 @@ Diaper Lover Options by Fetish Settings begins here.
 
 To decide which number is diaper messing:
 	if diaper lover <= 0, decide on 0;
+	if choice in row 50 of the Table of Player Options <= 0, decide on 0;
 	if the player is not an april 2019 diaper donator and choice in row 50 of the Table of Player Options >= 6, decide on 5;
 	decide on choice in row 50 of the Table of Player Options.
 
@@ -32,7 +33,7 @@ This is the extreme diaper liker rule:
 	follow quit rule.
 
 This is the extreme diaper hater rule:
-	now choice in row 50 of the Table of Player Options is -1;
+	now choice in row 50 of the Table of Player Options is -2;
 	follow quit rule.
 
 This is the panty messer rule:

@@ -400,7 +400,7 @@ To FakeHairUp (X - a number):
 	otherwise:
 		while X > 0:
 			decrease X by 1;
-			if the fake largeness of hair < 10, increase the fake largeness of hair by 1;
+			if the largeness of hair < max hair length, increase the fake largeness of hair by 1;
 
 [!<FakeHairDownX>+
 

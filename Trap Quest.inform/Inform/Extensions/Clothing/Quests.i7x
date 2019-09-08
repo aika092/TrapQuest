@@ -9,19 +9,23 @@ A headgear-clothing-quest is a kind of clothing-quest. A headgear-clothing-quest
 To decide what number is the quest-weighting of (Q - a clothing-quest) for (C - a clothing): [How often should this appear as the quest?]
 	decide on 0.
 
+To decide what number is the actual-quest-weighting of (Q - a clothing-quest) for (C - a clothing):
+	if C is unremovable and Q is not persistent, decide on 0; [Unremovable objects need quests that are persistent]
+	decide on the quest-weighting of Q for C.
+
 Definition: a clothing-quest is appropriate: decide yes.
 
 To decide which number is the total-quest-weighting of (C - a clothing):
 	let N be 0;
 	repeat with Q running through clothing-quests:
-		increase N by the quest-weighting of Q for C;
+		increase N by the actual-quest-weighting of Q for C;
 	decide on N.
 
 To decide which clothing-quest is the random-quest of (C - a clothing):
 	let R be a random number between 1 and the total-quest-weighting of C;
 	if debugmode is 2, say "Setting up quest for [C]. Total weighting is [R]. ";
 	repeat with Q running through clothing-quests:
-		decrease R by the quest-weighting of Q for C;
+		decrease R by the actual-quest-weighting of Q for C;
 		if R < 1:
 			if debugmode is 2, say "Decided on [Q].";
 			decide on Q;
@@ -34,6 +38,15 @@ To compute quest of (C - a clothing):
 To compute summoned quest of (C - a clothing): [sometimes after summoning an item we want to give it a quest and let the player know]
 	compute quest of C;
 	unless the quest of C is no-clothing-quest, say QuestFlav of C.
+
+To compute new quest of (C - a clothing): [sometimes we want to give the clothing a new quest]
+	let OQ be the quest of C;
+	let N be 200;
+	while N > 0 and the quest of C is OQ:
+		compute quest of C;
+		decrease N by 1;
+	if the quest of C is OQ, say "[BigNameDesc of C] refuses to change its quest!";
+	otherwise say QuestFlav of C.
 
 To assign quest to (C - a clothing):
 	now the quest of C is the random-quest of C;
@@ -121,7 +134,7 @@ To compute quest completion of (Q - a clothing-quest) on (C - a clothing):
 	say "[bold type]";
 	let disappearTime be 0;
 	let QC be questNothingHappens;
-	if Q is disappearing and C is cursed:
+	if Q is disappearing and C is removable and C is cursed:
 		say "You can feel that the magic holding your [ShortDesc of C] together is about to give out.[roman type] Do you want to concentrate really hard to try and get it to stay around? (This may have minor side effects.) ";
 		if the player is consenting:
 			now quest-target is C;
@@ -134,7 +147,7 @@ To compute quest completion of (Q - a clothing-quest) on (C - a clothing):
 	otherwise:
 		say QuestPersistFlav of Q on C;
 		compute persistent reward of Q on C;
-		if C is bland and Q is headgear-clothing-quest, now C is blessed;
+		if C is bland, now C is blessed;
 		if C is cursed, silently bless C;
 	say "[roman type][line break]";
 	compute consequence of QC.
@@ -173,7 +186,7 @@ Part - Chest Exposing Quest
 
 chest-exposing-quest is a clothing-quest. chest-exposing-quest has a number called greet-count. chest-exposing-quest has an object called latest-monster.
 
-Definition: chest-exposing-quest is appropriate if diaper quest is 0 and the largeness of breasts >= 5.
+Definition: chest-exposing-quest is appropriate if diaper quest is 0 and the largeness of breasts >= 2.
 
 To decide what number is the quest-weighting of (Q - chest-exposing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -213,6 +226,8 @@ To decide what number is the quest-weighting of (Q - cum-swallowing-quest) for (
 	if Q is not appropriate, decide on 0;
 	if C is ballgag, decide on 0;
 	if the semen-taste-addiction-influence of C < 0, decide on 0;
+	if the semen taste addiction of the player < 3, decide on 0;
+	if the oral sex addiction of the player < 2, decide on 0;
 	decide on 3.
 
 To say QuestFlav of (Q - cum-swallowing-quest):
@@ -232,6 +247,7 @@ Definition: piss-drinking-quest is appropriate if watersports fetish is 1.
 To decide what number is the quest-weighting of (Q - piss-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
 	if the urine-taste-addiction-influence of C < 0, decide on 0;
+	if the urine taste addiction of the player < 4, decide on 0;
 	if C is ballgag, decide on 0;
 	decide on 3.
 
@@ -318,6 +334,7 @@ Definition: egg-laying-quest is appropriate if egg laying fetish is 1.
 To decide what number is the quest-weighting of (Q - egg-laying-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
 	if C is penetrating asshole, decide on 0;
+	if the number of on-stage eggs is 0, decide on 0;
 	if C is pussy protection, decide on 13;
 	if C is ass covering:
 		if C is not displacable and C is not zippable, decide on 0;
@@ -401,7 +418,8 @@ To decide what number is the quest-weighting of (Q - creampie-drinking-quest) fo
 	if Q is not appropriate, decide on 0;
 	if the semen-taste-addiction-influence of C < 0, decide on 0;
 	if the semen-addiction-influence of C < 0, decide on 0;
-	if C is ballgag or C is penetrating asshole, decide on 0;
+	if C is ballgag or C is penetrating asshole or C is crotch covering, decide on 0;
+	if the semen taste addiction of the player < 3 or the anal sex addiction of the player < 3, decide on 0;
 	decide on 3.
 
 To say QuestFlav of (Q - creampie-drinking-quest):
@@ -416,7 +434,7 @@ Part - Milk Drinking Quest
 
 milk-drinking-quest is a clothing-quest.
 
-Definition: milk-drinking-quest is appropriate if lactation fetish is 1.
+Definition: milk-drinking-quest is appropriate if the milk volume of breasts > 0.
 
 To decide what number is the quest-weighting of (Q - milk-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -611,12 +629,13 @@ Part - Careful Peeing Quest
 
 careful-peeing-quest is a clothing-quest. careful-peeing-quest is persistent.
 
-Definition: careful-peeing-quest is appropriate if diaper lover > 0.
+Definition: careful-peeing-quest is appropriate if diaper lover > 0 and the player is not incontinent.
 
 To decide what number is the quest-weighting of (Q - careful-peeing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
+	if C is pee covering and C is not displacable and C is not zippable, decide on 0;
 	if C is bed wetting, decide on 20;
-	decide on 0.
+	decide on 1.
 
 To say QuestFlav of (Q - careful-peeing-quest):
 	say "You sense that it wants you to pee in toilets and bodies of water.".
@@ -637,7 +656,7 @@ Definition: swimming-quest is appropriate: decide yes.
 
 To decide what number is the quest-weighting of (Q - swimming-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
-	if C is sheer-when-wet, decide on 5;
+	if C is sheer-when-wet, decide on 8;
 	decide on 0.
 
 To say QuestFlav of (Q - swimming-quest):
@@ -792,7 +811,9 @@ Definition: bursting-quest is appropriate if watersports mechanics is 1.
 
 To decide what number is the quest-weighting of (Q - bursting-quest) for (C - a clothing):
 	if bursting-quest is not appropriate, decide on 0;
-	if C is diaper, decide on 1000; [99% of diapers should spawn with this]
+	if C is diaper:
+		if strongCurses is 1, decide on 5;
+		decide on 50; [90% of diapers should spawn with this]
 	decide on 1.
 
 To say QuestFlav of (Q - bursting-quest):
@@ -828,5 +849,160 @@ To compute persistent reward of (Q - next-lesson-quest) on (C - a clothing):
 		say "dropping an [A] into your hand.";
 	otherwise:
 		say "filling your mind with a reminder to eat your fruit.".
+
+
+
+Part - Show and Tell Quest
+
+show-and-tell-quest is a clothing-quest. show-and-tell-quest is persistent.
+
+show-and-tell-quest has an object called latest-exposee.
+show-and-tell-quest has a number called expose-count.
+
+To decide what number is the quest-weighting of (Q - show-and-tell-quest) for (C - a clothing):
+	decide on 0. [Only occurs when the code specifies (e.g. when a stuffie is summoned)]
+
+
+To say QuestFlav of (Q - show-and-tell-quest):
+	say "You sense that it wants you to have lots of people see you carrying it around.".
+
+To say QuestTitle of (Q - show-and-tell-quest):
+	say " (carry around quest)".
+
+To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
+	if the player is a bit horny:
+		say "cooling off your arousal.";
+		now the arousal of the player is 0;
+	otherwise:
+		say "filling your mind with pure thoughts.";
+		SexAddictDown 1.
+
+
+
+To progress quest of (Q - show-and-tell-quest) for (M - a monster):
+	repeat with C running through worn clothing:
+		if C is clothing and the quest of C is Q:
+			if M is not latest-exposee of Q:
+				now the latest-exposee of Q is M;
+				increase the expose-count of Q by 1;
+				if the remainder after dividing expose-count of Q by 5 is 0:
+					compute quest completion of Q on C;
+				otherwise:
+					say "[BigNameDesc of C] shudders happily at being seen with you. Keep it up.".
+
+To compute persistent reward of (Q - whore-exposing-quest) on (C - a clothing):
+	now the expose-count of Q is 0;
+	if C is cursed:
+		compute generic first time class reward of Q on C;
+	otherwise:
+		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop letting everyone know how pathetic a whore you are.[or]even more blessed magic![stopping]".
+
+
+
+Part - Plug Quest
+
+plug-quest is a clothing-quest. plug-quest has a number called plug-count.
+
+Definition: plug-quest is appropriate if asshole is not actually occupied.
+
+To decide what number is the quest-weighting of (Q - plug-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if Q is ass plugging or Q is crotch covering or Q is sex toy, decide on 0;
+	decide on 1.
+
+To say QuestFlav of (Q - plug-quest):
+	say "You sense that it wants you to keep a toy in your butt for a while.".
+
+To say QuestTitle of (Q - plug-quest):
+	say " (butt plug quest)".
+
+To set up (Q - plug-quest):
+	now the plug-count of plug-quest is 0.
+
+A time based rule:
+	let C be a random sex toy penetrating asshole;
+	if C is sex toy:
+		increase the plug-count of plug-quest by 1;
+		if the plug-count of plug-quest > a random number between 25 and 100:
+			progress quest of plug-quest;
+			now the plug-count of plug-quest is 0;
+	otherwise if the plug-count of plug-quest > 0:
+		now the plug-count of plug-quest is 0.
+
+
+
+Part - Hotel Altar Quest
+
+hotel-altar-quest is a clothing-quest.
+
+Definition: hotel-altar-quest is appropriate if Hotel35 is placed and the player is a august 2019 top donator.
+
+To decide what number is the quest-weighting of (Q - hotel-altar-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	decide on 3.
+
+To say QuestFlav of (Q - hotel-altar-quest):
+	say "You sense that it wants you to pray in front of the golden altar in the Hotel.".
+
+To say QuestTitle of (Q - hotel-altar-quest):
+	say " (hotel altar quest)".
+
+
+
+Part - New Region Quest
+
+new-region-quest is a clothing-quest.
+
+Definition: new-region-quest is appropriate if Mansion01 is not placed or Hotel01 is not placed.
+
+To decide what number is the quest-weighting of (Q - new-region-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	decide on 4.
+
+To say QuestFlav of (Q - new-region-quest):
+	say "You sense that it wants you to discover a new region of this world.".
+
+To say QuestTitle of (Q - new-region-quest):
+	say " (region discovery quest)".
+
+
+
+Part - Throne Quest
+
+throne-quest is a clothing-quest.
+
+To decide what number is the quest-weighting of (Q - throne-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if the number of worn headgear is 0, decide on 6;
+	decide on 1.
+
+To say QuestFlav of (Q - throne-quest):
+	say "You sense that it wants you to sit on a royal throne.".
+
+To say QuestTitle of (Q - throne-quest):
+	say " (throne quest)".
+
+To set up (Q - throne-quest):
+	now the charge of throne is 0.
+
+
+
+Part - Attack Provocation Quest
+
+attack-quest is a clothing-quest. attack-quest is persistent.
+
+To decide what number is the quest-weighting of (Q - attack-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if Q is slap ready equippable, decide on 3;
+	decide on 1.
+
+To say QuestFlav of (Q - attack-quest):
+	say "You sense that it wants you to break your alliance with someone following you around by suddenly attacking them.".
+
+To say QuestTitle of (Q - attack-quest):
+	say " (alliance breaking quest)".
+
+
+
 
 Quests ends here.

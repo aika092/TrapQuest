@@ -9,6 +9,10 @@ A ballgag is a kind of gag. A ballgag is transformation-rare.
 
 Definition: a ballgag is same-type if theme-share-target is ballgag.
 
+This is the ball gag oral slut rule:
+	if there is a worn ballgag, decrease the desirability of face by 10.
+The ball gag oral slut rule is listed in the blowjob slut eligibility rules.
+
 [!<YourselfIsGagged>+
 
 REQUIRES COMMENTING
