@@ -98,7 +98,7 @@ To decide which number is the girth of (M - a wrestler):
 			decide on 10;
 		otherwise:
 			decide on the openness of F + 1;
-	decide on 1.
+	decide on 0.
 
 This is the spawn initial wrestler rule:
 	if the number of alive wrestlers is 0:

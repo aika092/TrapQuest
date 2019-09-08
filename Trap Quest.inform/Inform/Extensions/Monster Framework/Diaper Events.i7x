@@ -260,7 +260,7 @@ To compute diaper change of (M - a monster):
 			rule succeeds;
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
 			say DiaperPowderFlav of M;
-			if there is a worn diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;
+			if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;
 			if new-diaper is nothing, now new-diaper is a random eligible plentiful disposable diaper;
 			if new-diaper is nothing, now new-diaper is a random eligible diaper;
 			if new-diaper is not worn:
@@ -289,7 +289,8 @@ To compute diaper change of (M - a monster):
 				if old-diaper is diaper:
 					say DiaperChangeFlav of M;
 					say DiaperChangeComment of M;
-					if oldDiaperLeft is a thing, say DiaperDropFlav of M;
+					if oldDiaperLeft is a thing and oldDiaperLeft is in the location of the player, say DiaperDropFlav of M;
+					if new-diaper is cursed and strongCurses is 1, compute new quest of new-diaper;
 				otherwise:
 					say DiaperDonateFlav of M;
 					say DiaperDonateComment of M;
@@ -384,7 +385,7 @@ To decide which number is the diaper punishment length of (M - a monster):
 	decide on 3.
 
 To say DiaperSpace of (M - a monster):
-	say "[if there is a worn diaper bag of holding and new-diaper is carried diaper]your [ShortDesc of random worn diaper bag of holding][otherwise]seemingly nowhere[end if]".
+	say "[if there is a worn diaper bag of holding and new-diaper is carried diaper]your [ShortDesc of random worn diaper bag of holding][otherwise if there is a worn baby diaper bag of holding and new-diaper is carried diaper]your [ShortDesc of random worn baby diaper bag of holding][otherwise]seemingly nowhere[end if]".
 
 To say DiaperChangeStart of (M - a monster):
 	say "[BigNameDesc of M] rolls you onto your back and pins you down with one strong arm.".
@@ -629,12 +630,10 @@ To compute masturbation climax of (M - a monster):
 	otherwise compute vanilla masturbation climax of M.
 
 To compute diaper masturbation climax of (M - a monster):
-	if the player is female, vaginally orgasm shamefully;
-	otherwise orgasm.
+	vaginally orgasm shamefully.
 
 To compute vanilla masturbation climax of (M - a monster):
-	if the player is female, vaginally orgasm shamefully;
-	otherwise orgasm.
+	vaginally orgasm shamefully.
 
 To compute masturbation aftermath of (M - a monster):
 	say MasturbationAfterFlav of M;

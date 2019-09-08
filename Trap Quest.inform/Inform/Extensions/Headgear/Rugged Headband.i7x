@@ -42,15 +42,8 @@ To compute class outfit of (H - rugged-headband):[TODO: eventually add a loinclo
 		say "[bold type]Your headband flexes, and a [printed name of B] materializes on your crotch![roman type][line break]";
 		summon B.
 
-
-To decide which number is the strength-influence of (C - rugged-headband):
-	let X be 3;
-	if C is cursed, decrease X by 2;
-	if C is blessed, increase X by 1;
-	decide on X.
-
 To decide which number is the intelligence-influence of (C - rugged-headband):
-	let X be -3;
+	let X be -5;
 	if C is cursed, decrease X by 2;
 	if C is blessed, increase X by 2;
 	decide on X.

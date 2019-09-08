@@ -453,7 +453,7 @@ To compute glue escaping:
 		otherwise:
 			let M be a random reactive monster;
 			if M is monster and M is acquaintance:
-				say "[speech style of M]'You poor[one of], weak[or], helpless[or], foolish[or][at random] little thing. Let me see if I can [one of]get you free!'[or]help.'[at random][roman type][line break]";
+				say GluePullAnnounceFlav of M;
 				say "[BigNameDesc of M] grabs you and pulls hard...";
 				[check glue G freeing by M;]
 				if a random number between 1 and 2 is 1:
@@ -475,6 +475,9 @@ To compute glue escaping:
 		allocate 6 seconds;
 	force clothing-focus redraw; [This forces the clothing window to redraw]
 	force inventory-focus redraw. [This forces the inventory window to redraw]
+
+To say GluePullAnnounceFlav of (M - a monster):
+	say "[speech style of M]'You poor[one of], weak[or], helpless[or], foolish[or][at random] little thing. Let me see if I can [one of]get you free!'[or]help.'[at random][roman type][line break]".
 
 To compute glue-freeing by (M - a monster):
 	if the stickiness of the player > 0:

@@ -1,6 +1,6 @@
 Vibrator by Sex Toys begins here.
 
-A vibrator is a kind of dong. There is 1 vibrator. The size of a vibrator is usually 3. The printed name of a vibrator is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]vibrator[clothing-title-after]". The text-shortcut of vibrator is "vi". Understand "vibe" as vibrator.
+A vibrator is a kind of dong. There is 1 vibrator. The size of a vibrator is usually 3. The printed name of a vibrator is usually "[clothing-title-before]vibrator[clothing-title-after]". The text-shortcut of vibrator is "vi". Understand "vibe" as vibrator.
 
 Definition: a vibrator is purple themed: decide yes.
 
@@ -10,7 +10,7 @@ To decide which figure-name is clothing-image of (C - a vibrator):
 	decide on figure of vibrator.
 
 To say ClothingDesc of (C - a vibrator):
-	say "A purple dildo [if the item described is cursed and the curse-ID of the item described is sure]made of cheap plastic. It has large ridges for maximum stimulation[otherwise]made of cheap plastic[end if][if the item described is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
+	say "A purple dildo [if C is cursed and the curse-ID of C is sure]made of cheap plastic. It has large ridges for maximum stimulation[otherwise]made of cheap plastic[end if][if C is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
 
 To say ShortDesc of (C - a vibrator):
 	say "vibrator".

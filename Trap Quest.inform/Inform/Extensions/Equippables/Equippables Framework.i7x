@@ -1,11 +1,14 @@
 Equippables Framework by Equippables begins here.
 
-An equippable is a kind of clothing. An equippable can be slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee.
+An equippable is a kind of clothing. An equippable can be slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee. An equippable is usually unique.
 
 The printed name of an equippable is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
 To say ShortDesc of of (E - an equippable):
 	say "weapon".
+
+To say MediumDesc of of (E - an equippable):
+	say ShortDesc of E.
 
 Definition: an equippable is alwaysSure: decide yes.
 

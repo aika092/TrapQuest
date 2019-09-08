@@ -399,10 +399,18 @@ Part 3 - Automatic Surrender
 
 [!<MonsterIsTooIntimidating>+
 
-REQUIRES COMMENTING
+When the player attacks a monster, determines whether the player will automatically surrender to the monster instead of attacking them.
+
+@param <Monster>:<M> the monster the player is trying to attack
 
 +!]
 Definition: a monster (called M) is too intimidating:
+	if the class of the player is worshipper:
+		if M is infernal:
+			let G be gold-tiara;
+			if M is interested, say "As soon as the thought of harming [NameDesc of M] enters your mind, your [printed name of G] sends a horrible shiver down your spine.";
+			otherwise say "[BigNameDesc of M] turns toward you as soon as the thought of harming [him of M] enters your mind, and your [printed name of G] sends a horrible shiver down your spine.";
+			decide yes;
 	if the player is not feeling submissive, decide no;
 	if M is uninterested or M is friendly, decide no;
 	if the health of M < the maxhealth of M, decide no;
@@ -649,9 +657,9 @@ To damage (A - a number) on (M - a monster):
 	otherwise if attack-damage > 0:
 		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster. Not relevant to the other clause but putting it here because why not.]
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
-	if M is fairy, now the boredom of M is 0;[Should prevent exploit where you can infinitely kick the fairy to farm exercise points.]
 	reset orifice selection of M;
 	now the boredom of M is 0;
+	if M is interested and M is friendly, progress quest of attack-quest;
 	[Call the damage function of the monster]
 	if attack-damage > 0:
 		compute damage of M;

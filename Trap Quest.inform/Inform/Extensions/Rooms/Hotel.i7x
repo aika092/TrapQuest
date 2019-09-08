@@ -254,7 +254,7 @@ Hotel34 is a guest modern room. The printed name of Hotel34 is "Room 107". "The 
 REQUIRES COMMENTING
 
 *!]
-Hotel35 is an important modern room. The printed name of Hotel35 is "Office". "This room has a desk, complete with pens, papers and a lamp. [NoChairs]". The shape of Hotel35 is L3/0-0-1-1-1-1.
+Hotel35 is an important mandatory modern room. The printed name of Hotel35 is "Office". "This room has a desk, complete with pens, papers and a lamp. [NoChairs]". The shape of Hotel35 is L3/0-0-1-1-1-1.
 
 [!<hotel36:ModernRoom>*
 
@@ -286,7 +286,7 @@ To say HotelToiletDesc:
 REQUIRES COMMENTING
 
 *!]
-Hotel39 is a mandatory modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the center seem a bit out of place.".
+Hotel39 is a modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the center seem a bit out of place.".
 
 [!<hotel40:ModernRoom>*
 
@@ -296,6 +296,8 @@ REQUIRES COMMENTING
 Hotel40 is a mandatory modern room. The printed name of Hotel40 is "[if there is a warp portal in Hotel40]Hotel Portal Room[otherwise]Empty Room[end if]". "[if there is a warp portal in Hotel40]This room has a swirling green portal in the north wall.[otherwise]This room has very little in it.[end if]". The shape of Hotel40 is L3/0-0-0-1-1-1.
 
 Hotel41 is a mandatory modern room. The printed name of Hotel41 is "Maintenance Room". "A small room with tools of varying complexity lined up on the many shelves adorning its walls.".
+Hotel42 is a modern room. The printed name of Hotel42 is "Theatre". "A large room, dark room with [if diaper quest is 1]a video of a diapered woman in a straitjacket with a strong vibrating wand taped to her diaper[otherwise]an explicit BDSM porno[end if] is playing on a huge screen. [NoChairs]". The shape of Hotel42 is L3/0-0-0-0-0-1.
+Hotel43 is a modern room. The printed name of Hotel43 is "Donator Hall". "A large room lined with pictures of well-dressed men and women. A long table fills the center of the room. [NoChairs]"
 
 [!<SayNoChairs>+
 
@@ -310,7 +312,7 @@ To say NoChairs:
 REQUIRES COMMENTING
 
 *!]
-The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, Hotel36, Hotel37, Hotel38, Hotel39, Hotel40, Hotel41 are in The Hotel.
+The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, Hotel36, Hotel37, Hotel38, Hotel39, Hotel40, Hotel41, Hotel42, Hotel43 are in The Hotel.
 
 [!<hotelScenery01:Thing>*
 

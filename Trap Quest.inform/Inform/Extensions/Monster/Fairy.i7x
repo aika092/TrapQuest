@@ -785,7 +785,7 @@ To say PregnancyAssessment of (M - fairy-witch):
 		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is royal guard or the father is gladiator:
-		say "[speech style of M]'Um, I think the daddy definitely liked weapons. Does that help?'[roman type]";
+		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is unicorn:
 		say "[speech style of M]'The daddy definitely wasn't a demon. I think. Is that helpful?'[roman type]";
@@ -793,8 +793,9 @@ To say PregnancyAssessment of (M - fairy-witch):
 	otherwise if the father is minotaur:
 		say "[big he of M] recoils, as if [he of M] just got hit in the face.[line break][speech style of M]'The daddy is definitely big and tough. Is that helpful?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 6 for M;
-	otherwise if the father is mechanic or the father is demon lord or the father is hellhound:
+	otherwise if the father is infernal:
 		say "[big he of M] recoils and starts, rubbing [his of M] cheek.[line break][speech style of M]'Whoever the daddy is, [he of mechanic]'s really really mean!'[roman type][line break]";
+		alwayscutshow figure of fairy interact 6 for M;
 	otherwise if the father is fairy:
 		say "[line break][speech style of M]'Tee hee. Its obviously a fairy!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;

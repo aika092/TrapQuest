@@ -26,11 +26,20 @@ To decide which figure-name is the examine-image of (C - a thing):
 Carry out examining a thing:
 	say FullExamineDesc of the noun.
 
+
 To say FullExamineDesc of (C - a thing):
+	say FullTitle of C;
 	say ImageDesc of C;
 	say ExamineDesc of C;
 	say ThemeDesc of C;
 	if C is worn wearthing, say InfluenceDesc of C.
+
+
+To say FullTitle of (C - a thing):
+	let T be links-disabled;
+	now links-disabled is true;
+	say "[bold type][C][roman type][line break]";
+	now links-disabled is T.
 
 To say ImageDesc of (C - a thing):
 	maybe-map-display C.

@@ -57,7 +57,7 @@ To say MonsterDesc of (M - ex-princess):
 		if M is diaper-enslaved, say "The [man of M] who used to be a proud powerful [ShortDesc of M] has been reduced to a long haired baby-bottle sucking bimbo, who wanders the school aimlessly with a calm vacant look on [his of M] face.";
 		otherwise say "The princess has lost all power and all will to fight back against [his of M] captors. [big he of M] lies on [his of M] back, fully naked except for [his of M] tiara, [his of M] hands magically stuck to [his of M] asscheeks, unable to remove [his of M] knees from behind [his of M] shoulders, making it look like [he of M][']s begging anyone and everyone [he of M] sees to ruin [his of M] asshole. [big his of M] buttcheeks have been magically enhanced, and are now triple the size they first were when you met [him of M].";
 	otherwise:
-		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a very high slit at the front, that keeps [his of M] [if diaper lover > 0]diapered [end if]crotch fully visible.".
+		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
 
 To say MonsterComment of (M - ex-princess):
 	say "[line break][variable custom style][one of][big he of M] looks important. I wonder if [he of M] would reward me if I helped break [him of M] out of here...[or]Poor thing is still trapped here. Are they going to keep [him of M] here like this forever?[stopping][roman type][line break]".
@@ -99,6 +99,8 @@ To compute perception of (M - ex-princess):
 		say "[speech style of M]'[big please]... I can't stay sane much longer! You're my only hope...'[roman type][line break]";
 	otherwise if M is defeated:
 		say "[speech style of M]'Please don't look at my disgusting shame! [big please] don't watch!'[roman type][line break]";
+	otherwise if M is messy:
+		compute ChangeRequest of M;
 	otherwise:
 		say "[speech style of M]'Greetings [NameBimbo], saviour of Bimbacia!'[roman type][line break]";
 
@@ -183,7 +185,7 @@ To say FirstResponse of (M - ex-princess):
 	say "[speech style of M]'Who are you?'[roman type][line break]".
 
 To say RepeatResponse of (M - ex-princess):
-	say "[speech style of M]'[big please], you've got to help me get out of here!'[roman type][line break]".
+	say "[speech style of M]'[if M is caged][big please], you've got to help me get out of here!'[otherwise]Oh?'[roman type][line break]".
 
 To say SubmissiveResponse of (M - ex-princess):
 	say "[speech style of M]'[one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][roman type][line break]".
@@ -353,6 +355,7 @@ A later time based rule (this is the school rescue fight rule):
 						destroy N;
 				now M is unconcerned;
 				now M is uninterested;
+				now the refactory-period of M is the messRefactoryLimit of M + 40;
 				now the boredom of M is 0.
 
 To compute (M - ex-princess) enslaving (N - a monster):
@@ -533,6 +536,31 @@ A time based rule (this is the caged princess tortured rule):
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
 			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
 			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N][one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
+
+
+
+Definition: ex-princess is messy if it is unconcerned and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 7.
+
+To say SuddenMessFlav of (M - ex-princess):
+	say "[speech style of M]'Oh crap, here we go again...'[roman type][line break][BigNameDesc of M] grimaces and quickly adopts a squatting stance. Then you hear the loud sound of [his of M] butthole rasping and squelching as [he of M] fills [his of M] huge diaper.";
+	if M is interested:
+		compute ChangeRequest of M;
+	otherwise:
+		check perception of M.
+
+To compute ChangeRequest of (M - ex-princess):
+	if the player is not in danger and the player is not immobile:
+		say "[BigNameDesc of M] looks at you bashfully.[line break][speech style of M]'I'm sorry to ask this of you[one of], but... it seems that I've been cursed to only get a change when someone else makes me... makes me cum... by letting me grind on their face. No matter what I try, I haven't managed to reverse the curse yet. Would you... would you let me... I'm really sorry to ask this of you, but... would you let me use your face[or] again, but is there any chance you'd be willing to let me use your face so that I can get a change[stopping]?'[roman type][line break]Let [NameDesc of M] grind [his of M] messy diaper on your face until [he of M] cums?";
+		if the player is consenting:
+			if the player is upright:
+				say "[bold type]You get on your knees.[roman type][line break]";
+				now the stance of the player is 1;
+			say "[BigNameDesc of M] smiles with shy appreciation as she mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+			now the refactory-period of M is a random number between 0 and 200;
+			DelicateUp 1;
+			SexAddictUp 1;
+		otherwise:
+			say "You wrinkle your nose and step away from [him of M]. [big he of M] looks crestfallen and frustrated.[line break][speech style of M]'...Fine. I won't force you. But don't expect me to be able to help you while I'm stuck like this.'[roman type][line break]".
 
 
 Princess ends here.

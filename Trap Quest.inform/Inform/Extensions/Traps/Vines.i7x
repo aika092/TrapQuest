@@ -425,8 +425,6 @@ To compute vine diaper torture of (V - a vine):
 		otherwise:
 			say "Before you can escape the vines more have grabbed hold of your thighs. More have descended from the trees above and wrapped around your torso, trapping your arms against your body. [if the player is prone]The vines yank and pull you up onto your two feet. [end if][one of]Your eyes widen in [horror the diaper addiction of the player] as a shimmering portal appears in the air in front of you at waist height and through it you can see the top of someone's head and behind it, the ground. It takes several moments before you can comprehend what you are seeing: it's you yourself, but from above! This doesn't make any sense! And then the vines start to force your head through the portal and your own head disappears from your vision and is replaced by a back and a diapered posterior, your OWN diapered butt in fact! As you are bent at the waist and your upper body is moved forward through the portal your butt is placed into the perfect position so that your face ends up vertically descending onto the back of it. You end up face-planting the back of your own[or]You are once again forced halfway through a portal which forces your own face into the back of your own[stopping] [MediumDesc of D]!";
 		compute automatic state check of D;
-		if there is a worn messed diaper, cutshow figure of vines cutscene 3b for V;
-		otherwise cutshow figure of vines cutscene 3a for V;
 		say "It's like the vines want you to experience your own [if D is messed]smelly[otherwise]soggy[end if] shame right up close and personal. You could either [link][bold type]submit[roman type][end link] and rub your own face in the seat of your diaper, or [link][bold type]resist[roman type][end link] and see how the vines act themselves.";
 	otherwise if the reaction of the player is 0: [resisting]
 		say "[one of]Seemingly unamused by your disobedience, the vines begin to spank your thighs from behind![or]The vines punish the backs of your thighs with several stinging swats![stopping]";
@@ -442,7 +440,10 @@ To compute vine diaper torture of (V - a vine):
 		now V is unrevealed;
 		TimesSubmittedUp vine boss by 1;
 		now the TrapNo of V is -750;
-		if witch is unfriendly and witch is interested, satisfy witch.
+		if witch is unfriendly and witch is interested, satisfy witch;
+	otherwise:
+		if there is a worn messed diaper, cutshow figure of vines cutscene 3b for V;
+		otherwise cutshow figure of vines cutscene 3a for V.
 
 This is the vine diaper orgasm resolution rule:
 	if diaper quest is 1:

@@ -88,19 +88,14 @@ There is 1 halloween schoolgirl outfit.
 To say MediumDesc of (C - a halloween schoolgirl outfit):
 	say "halloween-style slutty schoolgirl outfit".
 
-Figure of halloween schoolgirl outfit A is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl1a.png".
-Figure of halloween schoolgirl outfit B is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl1b.png".
+Figure of halloween schoolgirl outfit is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl1.png".
 
 To decide which figure-name is clothing-image of (C - a halloween schoolgirl outfit):
-	decide on figure of halloween schoolgirl outfit a.
+	decide on figure of halloween schoolgirl outfit.
 
 To say ClothingDesc of (C - a halloween schoolgirl outfit):
 	say "A white, relatively modest (for this game) short-sleeved top, fashioned in the style of a schoolgirl uniform that has a small horizontal slit above your breasts to show some cleavage . At the top it has a collar and a rebelliously short tie.[line break]";
 	say "A red tartan miniskirt that barely covers your crotch.".
-
-To say ImageDesc of (C - a halloween schoolgirl outfit):
-	appropriate-display figure of halloween schoolgirl outfit B for C;
-	appropriate-display figure of halloween schoolgirl outfit A for C.
 
 To decide which number is the initial outrage of (C - a halloween schoolgirl outfit):
 	decide on 5.

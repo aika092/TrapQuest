@@ -103,15 +103,6 @@ To breasts orgasm shamefully:
 	if newbie tips is 1, say shameful tip;
 	if the player is upright, try kneeling.
 
-[!<PunishShamefulOrgasm>+
-
-REQUIRES COMMENTING
-
-+!]
-To punish shameful orgasm:
-	if the player is male, punish shameful male orgasm;
-	otherwise punish shameful female orgasm.
-
 [!<PunishShamefulMaleOrgasm>+
 
 REQUIRES COMMENTING
@@ -128,7 +119,11 @@ To punish shameful male orgasm:
 			say "The shameful nature of your orgasm makes your manhood [Shrink] into a [ShortDesc of penis].";
 		slowSexAddictUp 1 + the number of live things penetrating face;
 	otherwise:
-		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.".
+		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
+	if diaper quest is 1, progress quest of asshole-presenting-quest;
+	if the player is male and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
+		summon pink sissy bow cursed;
+		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
 [!<PunishShamefulFemaleOrgasm>+
 
@@ -136,6 +131,7 @@ REQUIRES COMMENTING
 
 +!]
 To punish shameful female orgasm:
+	if diaper quest is 1, progress quest of asshole-presenting-quest;
 	slowSexAddictUp 1.
 
 [!<ShamefulTip>+
@@ -295,12 +291,56 @@ This is the ejaculation into clothing rule:
 		if P is portal-pants:
 			say "Your [ShortDesc of penis] [if the size of penis < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if the size of penis < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if the size of penis < 6]splurts warm [semen][otherwise if the size of penis < 8]drools its thick, creamy load[otherwise]shoots several thick, creamy ropes[end if][run paragraph on]";
 		otherwise if penis is exposed:
-			say "[one of]Your [ShortDesc of penis] [if the size of penis < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if the size of penis < 3]dribbles its small amount of [semen] into[otherwise if the size of penis < 6]splurts warm [semen] into[otherwise if the size of penis < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if the size of penis < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if the size of penis < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if the size of penis < 3]pitifully tiny load[otherwise if the size of penis < 5]warm, gooey load[otherwise if the size of penis < 8]thick, creamy load[otherwise]massive load[end if] , which [if P is fluid immune]slowly rolls down your balls.[otherwise]soaks the inner fabric[end if].[or]Your [Shortdesc of penis] spurts a [if the size of penis < 3]feeble load[otherwise if the size of penis < 5]warm load[otherwise if the size of penis < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise], which creates a noticeable dark spot in the [clothing-material of P] as it soaks up your [semen].[end if][in random order]";
+			say "[one of]Your [ShortDesc of penis] [if the size of penis < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if the size of penis < 3]dribbles its small amount of [semen] into[otherwise if the size of penis < 6]splurts warm [semen] into[otherwise if the size of penis < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if the size of penis < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if the size of penis < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if the size of penis < 3]pitifully tiny load[otherwise if the size of penis < 5]warm, gooey load[otherwise if the size of penis < 8]thick, creamy load[otherwise]massive load[end if] , which [if P is fluid immune]slowly rolls down your balls.[otherwise]soaks the inner fabric[end if].[or]Your [Shortdesc of penis] spurts a [if the size of penis < 3]feeble load[otherwise if the size of penis < 5]warm load[otherwise if the size of penis < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P] as it soaks up your [semen].[end if][in random order]";
 		otherwise:
 			say "[one of]Your [ShortDesc of penis] [if the size of penis < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if the size of penis < 3]a small amount of [semen] slowly dribbles from the tip, collecting in your[otherwise if the size of penis < 6]splurts warm [semen] against your belly, which slowly rolls down into your[otherwise if the size of penis < 9]drools its thick, creamy load into[otherwise]shoots several thick, creamy ropes against your belly, which ooze slowly into your[end if] [printed name of a random bottom level pee protection clothing worn by the player][or]Your [ShortDesc of penis] [if the size of penis < 3]quivers pitifully[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it drips into the [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if the size of penis < 3]pitifully tiny load[otherwise if the size of penis < 5]warm, gooey load[otherwise if the size of penis < 8]thick, creamy load[otherwise]massive load[end if] as it slowly rolls down your belly and [if P is fluid immune]dribbles down your balls.[otherwise]soaks the upper part of the fabric[end if].[or]Your [Shortdesc of penis] spurts a [if the size of penis < 3]feeble load[otherwise if the size of penis < 5]warm load[otherwise if the size of penis < 9]thick load[otherwise]massive, creamy load[end if] against your belly, which slowly rolls down into your [printed name of P], [if P is fluid immune] which doesn't absorb any of the [semen] at all, allowing you to feel your slimy load dribble slowly over your skin.[otherwise], which creates a noticeable dark spot in the [clothing-material of P] as it soaks up your [semen].[end if][in random order]";
 		compute ejaculation;
 		rule succeeds.
 The ejaculation into clothing rule is listed last in the ejaculation rules.
+
+[!<TheDefaultEjaculationRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the ejaculation capture rule:
+	let collecting be nothing;
+	if diaper quest is 0 and the player is not immobile and the player is not in danger and the player is able to use manual dexterity:
+		let LV be the list of carried open topped vessels;
+		if the number of entries in LV > 1:
+			say "You have the following open topped vessels:[line break]";
+			repeat with V running through LV:
+				say "[V][line break]";
+		if the number of entries in LV > 0:
+			repeat with V running through LV:
+				if collecting is nothing:
+					say "Collect the liquid you're about to expel into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
+					if the player is consenting:
+						if the doses of V > 0:
+							say "You tip the contents of the [ShortDesc of V] onto the floor.";
+							dump V;
+						now collecting is V;
+	if collecting is bottle:
+		say "[one of]Your [ShortDesc of penis] [if the size of penis < 3]dribbles its small amount of [semen][otherwise if the size of penis < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [ShortDesc of collecting][or]Your [ShortDesc of penis] [if the size of penis < 3]quivers as it dribbles a tiny amount of [semen][otherwise if the size of penis < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if the size of penis < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise]pulses with primal power as it fires several long ropes of [semen][end if] into the [ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
+		SemenTasteAddictUp 1;
+		now the fill-colour of collecting is creamy;
+		DoseUp collecting by the size of penis / 3;
+		now collecting is player-origin;
+		if a random number between 1 and 5 is 1:
+			if bondage protection is 0 and the player is not immobile and collecting is waitress vessel:
+				compute service spill punishment;
+			otherwise if there is a worn tattoo and drinkme tattoo is not worn:
+				summon drinkme tattoo;
+				say "A new tattoo appears on your leg!";
+				try examining drinkme tattoo;
+				say "[variable custom style]Uh-oh...[roman type][line break]";
+			otherwise if collecting is not cursed:
+				now collecting is cursed;
+				now the curse-ID of collecting is sure;
+				say "Your [ShortVesselDesc of collecting] is surrounded by a dark glow. It has been cursed!";
+		rule succeeds.
+The ejaculation capture rule is listed last in the ejaculation rules.
+
 
 [!<TheDefaultEjaculationRule>+
 

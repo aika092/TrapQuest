@@ -33,7 +33,7 @@ Check pulling a warp portal:
 Check turning a warp portal:
 	if the noun is next-portal-forbidden, say "This portal seems to currently be on the fritz - it's glitching wildly! You can't do anything meaningful to it in this state... you'll have to find your way out by foot." instead;
 	allocate 2 seconds;
-	if (the player is not a top donator and (Hotel01 is not placed or Mansion01 is not placed)) or (the player is a top donator and Hotel01 is not placed and Mansion01 is not placed), say "Nothing happens. Perhaps this lever won't work until you've explored more of the world on your own first..." instead;
+	if (the player is not the donator and (Hotel01 is not placed or Mansion01 is not placed)) or (the player is the donator and Hotel01 is not placed and Mansion01 is not placed), say "Nothing happens. Perhaps this lever won't work until you've explored more of the world on your own first..." instead;
 	rotate the noun attempt 1;
 	say "You hear a mechanism whirring, and the portal shimmers. [DestinationDesc of the noun]" instead.
 
@@ -48,7 +48,7 @@ To rotate (W - a warp portal) attempt (N - a number):
 	if the destination of W is the Mansion and (N is 1 or the location of mansion portal is not discovered or W is in the mansion):
 		now the destination of W is the school;
 		if N is 1, now N is 2;
-	if the destination of W is the school and (N is 1 or the player is not a top donator or W is in the school or (armband is not worn and ex-princess is not unconcerned)):
+	if the destination of W is the school and (N is 1 or the player is not the donator or W is in the school or (armband is not worn and ex-princess is not unconcerned)):
 		now the destination of W is the dungeon;
 		if W is in the Dungeon and N < 3, rotate W attempt (N + 1).
 

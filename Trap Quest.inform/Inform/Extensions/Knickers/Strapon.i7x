@@ -69,7 +69,7 @@ To say PenisSoften of (K - a strapon-dildo):
 	say "The nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materializes out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
 To say PenisHarden of (K - a strapon-dildo):
-	say "The silicon dildo disappears in a rush of 1's and 0's, and you feel a slight jolt as your [player-penis] falls out of the pouch.". [###Selkie: At first sight, I wondered if this meant your penis fell off onto the ground! ;-) ]
+	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.". [###Selkie: At first sight, I wondered if this meant your penis fell off onto the ground! ;-) ]
 
 To say ShortPenisFlav of (K - a strapon-dildo):[used any time you use "player-penis"]
 	if K is dildo-usage:
@@ -110,7 +110,7 @@ Report going while there is a worn equine-strapon:
 		Arouse 20.
 
 To uniquely set up (C - an equine-strapon):
-	now the strap-length of C is a random number between 12 and 12.
+	now the strap-length of C is 12.
 
 Definition: An equine-strapon (called P) is fetish appropriate:
 	if the player is the donator:[for now]

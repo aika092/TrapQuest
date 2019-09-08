@@ -42,6 +42,13 @@ To summon (P - a sex toy) cursed vaginally:
 	summon P vaginally;
 	now P is cursed.
 
+To summon (C - a clothing) uncursed:
+	summon C;
+	if C is locked, now C is unlocked;
+	now the raw-magic-modifier of C is 0;
+	now C is blandness;
+	now C is bland.
+
 To summon (C - a thing) cursed:
 	summon C;
 	if C is locked clothing, now C is unlocked;
@@ -63,7 +70,7 @@ To summon (C - a clothing) locked:
 	summon C;
 	if C is cursed, now C is bland;
 	now C is locked;
-	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked!  You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, he is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat him in combat I'm sure you'd be able to salvage a key from his corpse.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, he is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat him in combat I'm sure you'd be able to salvage a key from his corpse.[roman type][line break][or][stopping]".
 
 Definition: a thing is removable: decide yes.
 Definition: a tattoo is removable: decide no.

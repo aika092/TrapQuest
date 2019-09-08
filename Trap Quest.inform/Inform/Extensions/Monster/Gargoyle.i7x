@@ -189,8 +189,10 @@ This is the gargoyle dive bomb rule:
 			summon vampiress in the mansion;
 			say SummoningFlav of vampiress;
 			set up vampiress;
-			now vampiress is interested;
+		now vampiress is interested;
 		anger vampiress;
+		now neighbour finder is in Mansion16;
+		now vampiress is in a random next door room;
 		now current-monster is not airborne;
 		rule succeeds;
 	otherwise if current-monster is airborne:[She waits silently until she can carry you off]

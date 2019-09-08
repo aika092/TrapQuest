@@ -29,6 +29,8 @@ Figure of Puppy Cutscene 6 is the file "Special/Cutscene/cutscene-puppy6.png".
 Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.png".
 Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.png".
 
+Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
+
 Figure of quiz lesson is the file "Special/Cutscene/cutscene-hannah-quiz1.jpg".
 
 Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".

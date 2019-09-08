@@ -148,7 +148,7 @@ To say WhoAnswer of (M - a headmistress):
 	say "[speech style of M]'[one of]It is rather obvious that I am the headmistress of this school. [or][stopping]While it is not the focus of this institution, it would behoove you to learn not to ask stupid questions.'[roman type][line break]".
 
 To say WhereAnswer of (M - a headmistress):
-	say "[speech style of M]'[if the rank of the player <= 1]You are in the headmistress' office, young miss. You can find your classes at the end of the hall on the right.'[otherwise]Ranks are earned, and not without effort. Do not forget that.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You are in the headmistress['] office, young miss. You can find your classes at the end of the hall on the right.'[otherwise]Ranks are earned, and not without effort. Do not forget that.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a headmistress):
 	say "[speech style of M]'Your instructors will let you know when you are ready for higher level curriculum.'[roman type][line break]".
