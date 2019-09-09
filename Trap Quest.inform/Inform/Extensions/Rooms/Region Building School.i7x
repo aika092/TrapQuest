@@ -122,8 +122,8 @@ To update students:
 		set up rank five students;
 		repeat with M running through fetish appropriate diamond-teacher:
 			set up M;
-		repeat with M running through alive emerald-teacher:
-			destroy M.
+		[repeat with M running through alive emerald-teacher:
+			destroy M.]
 
 Region Building School ends here.
 

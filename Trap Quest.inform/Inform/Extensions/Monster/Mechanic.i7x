@@ -109,6 +109,9 @@ To compute labour to (M - mechanic):
 		Delay Labour.
 
 Definition: mechanic is human: decide yes.
+Definition: mechanic is infernal:[he only counts as infernal if he is able to transform]
+	if the xavier-power of mechanic > 3 or mechanic is retaining mystical amulet, decide yes;
+	decide no.
 
 To compute monstermotion of (M - mechanic):
 	let W be 0;
@@ -800,7 +803,7 @@ To suggestFucker (F - a body part) for (M - mechanic):
 			now player-fucker is F;
 			now player-fuckchoice is FUCK-BLOWJOB;
 	otherwise if F is a fuckhole:
-		say "Do you want to try [if M is retaining a mystical amulet]stealing the amulet. You can't think of anyway to distract [him of M], except your [variable F][otherwise if the wrench-timer of M <= 0]stealing [his of M] wrench. You might be able to use your [variable F] to distract [him of M][otherwise]riding [him of M]? [big he of M] might turn the tables on you[end if]...";
+		say "Do you want to try [if M is retaining a mystical amulet]stealing the amulet. You can't think of anyway to distract [him of M], except your [variable F][otherwise if the wrench-timer of M <= 0]stealing [his of M] wrench? You might be able to use your [variable F] to distract [him of M][otherwise]riding [him of M]? [big he of M] might turn the tables on you[end if]...";
 		if the player is consenting:
 			now player-fucker is F;
 			now player-fuckchoice is FUCK-RIDE;

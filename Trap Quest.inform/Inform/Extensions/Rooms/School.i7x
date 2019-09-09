@@ -44,6 +44,8 @@ School16 is an academic room. The printed name of School16 is "Assembly Hall". "
 School17 is an academic room. The printed name of School17 is "Food Hall". "This room has large machine taking up most of the room with [ExamineDesc of food machine]". The shape of School17 is L5/0-0-1-0-1-0. The grid position of School17 is <5,12,7>. School17 is north of School02.
 School18 is a lecture academic room. The printed name of School18 is "Emerald Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with motifs of spanking equipment, bondage and fetishwear.". The shape of School18 is L5/0-0-0-0-1-0. The grid position of School18 is <5,11,7>. School18 is north of School03.
 School19 is an academic room. The printed name of School19 is "Changing Rooms". "This room has a few hooks to hang up clothing and not much else. A door to the west says 'Swimming Pool' on it[if gloryhole is in School19]. There is a hole at crotch height in the middle of the north wall - maybe it's a glory hole! Above the hole is a painting of a naked man with a rather sizeable [manly-penis]. Considering the nature of this school, it doesn't feel particularly out of place[end if].". The shape of School19 is L5/0-0-0-0-1-1. The grid position of School19 is <5,10,7>. School19 is north of School04.
+To decide which number is the entry-rank of (R - School19):
+	decide on 1.
 
 [Rooms To The Left of Changing Room]
 School20 is a water-bodied academic room. The printed name of School20 is "Swimming Pool". "A medium sized rectangular swimming pool fills the air with the smell of chlorine. To the north is a set of tiered spectator stands. To the west a door reads 'Hot Tub'. To the south the door says 'Gymnasium'.". The shape of School20 is L5/0-0-1-1-1-1. The grid position of School20 is <5,9,7>. School20 is west of School19.
@@ -160,7 +162,7 @@ To compute dungeon chain binding of (M - a monster):
 	now dungeon chains is locked;
 	say "You are locked into ankle chains.[if pair of handcuffs is actually summonable][BigNameDesc of M] also puts you in handcuffs![end if]";
 	if pair of handcuffs is actually summonable, summon pair of handcuffs locked;
-	now pair of handcuffs is wrist-bound-behind;
+	now pair of handcuffs is wrist-bound-in-front;
 	repeat with C running through things penetrating face:
 		say "[M] removes your [ShortDesc of C], presumably to make sure that you are still able to drink.";
 		now C is in Dungeon33.
@@ -175,7 +177,7 @@ To say DungeonLockAfterFlav of (M - a monster):
 	say "[speech style of M]'You will be let out when we believe you have learned your lesson. I guess how long that takes is up to you.'[roman type][line break]".
 
 To compute dungeon drink confiscating of (M - a monster):
-	if there is a held bottle, say "[DungeonDrinkFlav of M]";
+	if there is a held bottle or there is a held TQedible thing, say "[DungeonDrinkFlav of M]";
 	repeat with B running through held TQedible things:
 		now B is in School33;
 	repeat with B running through held bottles:

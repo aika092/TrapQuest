@@ -93,6 +93,7 @@ To decide which number is the flat strength of the player:
 	decrease S by adult-baby-int * 3;
 	if the the boost-cooldown of nurse > 0, increase S by 2;
 	if cookie-poison-timer > 0, now S is S / 2;
+	if wasp-poison-timer > 0, decrease S by wasp-poison-timer / 30;
 	increase S by the number of worn piercings;
 	if temp_str_dam > 0, decrease S by temp_str_dam;
 	if S < 1, decide on 1;

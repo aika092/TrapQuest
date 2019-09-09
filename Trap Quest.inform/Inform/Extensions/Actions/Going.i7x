@@ -460,7 +460,7 @@ Check going:
 			unless ST is asleep or ST is off-stage or the wealth of the player < 20:
 				say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 				unless the player is bimbo consenting, say "You change your mind." instead;
-		if robomatron is alive and robomatron is in L and robomatron is awake:
+		if robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 			unless the player is bimbo consenting, say "You change your mind." instead;
 	if seconds is 0, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
@@ -665,8 +665,9 @@ REQUIRES COMMENTING
 +!]
 Carry Out Going (this is the monsters-go-next rule):
 	if seconds is 3: [only in normal moves, not in double moves]
+		let R be the room noun from the location of the player; [NPCs in the room that the player is entering don't move yet]
 		repeat with M running through alive simulated monsters:
-			unless M is vine boss, compute turn 2 of M.
+			unless M is vine boss or M is in R, compute turn 2 of M.
 
 [!<DelayCrawling>+
 

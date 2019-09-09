@@ -32,37 +32,49 @@ The spawn initial robomatron rule is listed in the setting up hotel monsters rul
 
 Definition: robomatron is too intimidating: decide no. [Player should never surrender to final boss]
 
+To compute friendly boredom of (M - robomatron):
+	if M is not in the location of the player:
+		now M is uninterested;
+		now the boredom of M is 0.
+
 Part 1 - Perception
 
 To compute perception of (M - robomatron):
 	now M is interested;
 	now the difficulty of M is 5;
 	say "[BigNameDesc of M] notices you![line break][speech style of M]'TEST SUBJECT DETECTED. FINAL BOSS ROUTINE ENGAGED. SCANNING STATUS...[line break]";
-	let D be a random worn diaper;
-	unless D is a total protection diaper:
-		say "NO [if D is diaper]INTACT [end if]DIAPER DETECTED. INCREASING POWER LEVEL BY 3.";
-		DifficultyUp M by 3;
-	if diaper lover > 3 and D is not messed diaper:
-		say "NO MESSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
-		DifficultyUp M by 1;
-	if D is unsoiled diaper:
-		say "COMPLETELY UNUSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
-		DifficultyUp M by 1;
-	unless there is a worn pacifier:
-		say "NO PACIFIER DETECTED. INCREASING POWER LEVEL BY 1.";
-		DifficultyUp M by 1;
-	if the incontinence of the player < the max-incontinence of the player:
-		say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
-		DifficultyUp M by 2;
-	if the cringe appearance of the player < 10:
-		say "APPEARANCE INSUFFICIENTLY DEGRADING. INCREASING POWER LEVEL BY 2.";
-		DifficultyUp M by 2;
-	if the difficulty of M > 5:
-		anger M;
-		say "PREPARE YOURSELF.'[roman type][line break]";
-	otherwise:
+	if the wealth of the player < 20:
+		say "INSUFFICIENT FUNDS DETECTED. PUSHING BUTTON AND ENDING THE SIMULATION WILL RESULT IN 12 MONTHS OF SERVITUDE TO NINTENDOLLS. TERMINATING FINAL BOSS ROUTINE. THE CHOICE IS YOURS.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.";
 		calm M;
-		say "SUBJECT'S TRANSFORMATION IS COMPLETE. TERMINATING FINAL BOSS ROUTINE.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.";
+	otherwise:
+		let D be a random worn diaper;
+		unless D is a total protection diaper:
+			say "NO [if D is diaper]INTACT [end if]DIAPER DETECTED. INCREASING POWER LEVEL BY 3.";
+			DifficultyUp M by 3;
+		if diaper messing >= 4 and D is not messed diaper:
+			say "NO MESSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
+			DifficultyUp M by 1;
+		if D is unsoiled diaper:
+			say "COMPLETELY UNUSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
+			DifficultyUp M by 1;
+		if the incontinence of the player < the max-incontinence of the player:
+			say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
+			DifficultyUp M by 2;
+		if the cringe appearance of the player < 14:
+			say "APPEARANCE INSUFFICIENTLY DEGRADING. INCREASING POWER LEVEL BY 2.";
+			DifficultyUp M by 2;
+		if the player is male and TG fetish > 0:
+			say "SEX CHANGE INCOMPLETE. INCREASING POWER LEVEL BY 2.";
+			DifficultyUp M by 2;
+		if the difficulty of M > 5:
+			unless there is a worn pacifier:
+				say "NO PACIFIER DETECTED. INCREASING POWER LEVEL BY 1.";
+				DifficultyUp M by 1;
+			anger M;
+			say "PREPARE YOURSELF.'[roman type][line break]";
+		otherwise:
+			calm M;
+			say "SUBJECT'S TRANSFORMATION IS COMPLETE. TERMINATING FINAL BOSS ROUTINE.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.";
 	now the health of M is the maxhealth of M.
 
 Part 2 - Motion

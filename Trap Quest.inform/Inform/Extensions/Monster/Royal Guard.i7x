@@ -247,6 +247,7 @@ Definition: a royal guard (called M) is distracted:
 		let N be a random undefeated wench in the location of M;
 		if N is monster and (N is uninterested or N is friendly):
 			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the hair and pushes [him of N] onto [his of N] knees.[line break][speech style of M]'[one of]Back for more punishment, I see[or]If you still haven't left these halls, you must really want this[or]I do not approve of your appearance, wench[in random order].'[roman type][line break]Freeing [his of M] [LongDickDesc of M], [NameDesc of M] forces it into [NameDesc of N][']s [one of]mouth[or]cunt[or]asshole[purely at random] before [he of N] can even begin to protest. Several awkward moan-filled seconds later, [NameDesc of N] is discarded onto the stone floor, panting, with a fresh load of [semen] oozing out of [his of N] abused orifice.";
+			now the creampieTimer of N is the semen load of M * 100;
 			now the refactory-period of M is the refactory-time of M;
 			satisfy M;
 			compute mandatory room leaving of M;
@@ -806,16 +807,21 @@ To compute cleavage climax of (M - a royal guard):
 	satisfy M.
 
 To compute happy reward of (M - a royal guard):
-	if M is prison guard and (there is worn locked clothing or skeleton key is off-stage):
-		let L be a random worn locked clothing;
-		if L is clothing:
-			say "[speech style of M]'I guess I probably won't get in too much trouble for letting you out a little early...'[roman type][line break][big he of M] takes his key and unlocks your [ShortDesc of L] for you.[speech style of M]'Just don't tell anyone I did that.'[roman type][line break]";
-			now L is unlocked;
-		otherwise:
-			say "[speech style of M]'I guess you can have this, as long as nobody finds out.'[roman type][line break]";
+	if M is prison guard and ((there is worn locked clothing and M is awake) or skeleton key is off-stage):
+		if M is asleep:
 			now skeleton key is in the location of the player;
-			say "[big he of M] subtley drops a [skeleton key] on the ground.";
+			say "As [NameDesc of M] rolls over in [his of M] sleep, a [skeleton key] falls out of his pocket onto the ground.";
 			compute autotaking skeleton key;
+		otherwise:
+			let L be a random worn locked clothing;
+			if L is clothing:
+				say "[speech style of M]'I guess I probably won't get in too much trouble for letting you out a little early...'[roman type][line break][big he of M] takes his key and unlocks your [ShortDesc of L] for you.[speech style of M]'Just don't tell anyone I did that.'[roman type][line break]";
+				now L is unlocked;
+			otherwise:
+				say "[speech style of M]'I guess you can have this, as long as nobody finds out.'[roman type][line break]";
+				now skeleton key is in the location of the player;
+				say "[big he of M] subtley drops a [skeleton key] on the ground.";
+				compute autotaking skeleton key;
 	otherwise if M is penetrating breasts:
 		say "[big he of M] pulls out a handkerchief as [his of M] cock softens, [his of M] breathing still heavy as [he of M] wipes the creamy remnants of [his of M] load from your cleavage. [line break][speech style of M]'It was an honour to be your consort, my liege. I will serve you any time.'[roman type][line break]";
 		now the semen coating of breasts is 0;
@@ -1550,6 +1556,8 @@ To compute domination interference of (M - a royal guard) for (N - a monster):
 			anger M;
 		otherwise:
 			say "[BigNameDesc of M] clears [his of M] throat and turns to leave.";
+			Bore M;
+			now the scared of M is 30;
 	otherwise if M is interested:
 		say "[BigNameDesc of M] turns to [NameDesc of N]. [line break][speech style of M]'[one of]You there, the princess has need of your services.'[or]You have been drafted. Make certain the princess is satisfied.'[or]It's time you served the crown properly!'[in random order][roman type][line break]".
 

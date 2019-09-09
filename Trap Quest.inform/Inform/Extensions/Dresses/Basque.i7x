@@ -60,8 +60,32 @@ To say ShortDesc of (C - a cow print milking basque):
 To decide which figure-name is clothing-image of (C - a cow print milking basque):
 	decide on figure of cow print basque.
 
+A demonic-milking basque is a kind of milking basque. The printed name of demonic-milking basque is usually "[clothing-title-before]demonic basque[clothing-title-after]". The text-shortcut of demonic-milking basque is "cwb". 
 
+[There is 1 demonic-milking basque.]
 
+To say ClothingDesc of (O - a demonic-milking basque):
+	say "This tight red and [tonguesColour] undergarment keeps your body looking and feeling smooth. The inner surface is covered in slimy [tonguesColour] tongues. [if O is worn and lactation fetish is 1][line break]You feel that their saliva is somehow messing with your body's lactation, sending it to other parts of your body...[TongueStatus of O][otherwise][TongueStatus of O][end if]".
+
+To say ShortDesc of (C - a demonic-milking basque):
+	say "demonic-milking basque".
+
+Definition: a demonic-milking basque is tongued: decide yes.
+Definition: a demonic-milking basque is demonic: decide yes.
+Definition: a demonic-milking basque is red themed: decide yes.
+Definition: a demonic-milking basque is white themed if tonguesBlack is false.
+Definition: a demonic-milking basque is black themed if tonguesBlack is true.
+
+To decide which number is the initial outrage of (C - demonic-milking basque):
+	if C is tonguing, decide on 18;
+	decide on 2.
+
+[TODO:
+
+Exposes parts of chest, belly and back
+
+When you take a bukkake, it gets absorbed into your skin and converted into milk?
+]
 
 Basque ends here.
 

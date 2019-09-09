@@ -46,7 +46,7 @@ REQUIRES COMMENTING
 @!]
 A large sack is a kind of container. A large sack is openable. A large sack is closed. A large sack is not portable. The printed name of a large sack is "[TQlink of item described][if the class of the player is santa's little helper]stocking[otherwise]large sack[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large sack is "sac". 25 trappable large sacks are in Holding Pen. Understand "stocking" as large sack.
 
-Figure of sack is the file "Env/Dungeon/sack1.png".
+Figure of sack is the file "Env/Dungeon/sack1.jpg".
 Figure of giant stocking is the file "Env/Dungeon/giantstocking1.png".
 
 To decide which figure-name is the examine-image of (C - a large sack):
@@ -68,7 +68,7 @@ REQUIRES COMMENTING
 @!]
 A wooden crate is a kind of container. A wooden crate is openable. A wooden crate is closed. A wooden crate is not portable. The printed name of a wooden crate is "[TQlink of item described][if the class of the player is santa's little helper]giant present[otherwise]wooden crate[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of wooden crate is "wcr". 25 trappable wooden crates are in Holding Pen. Understand "giant", "present" as wooden crate.
 
-Figure of wooden crate is the file "Env/Dungeon/crate2.png".
+Figure of wooden crate is the file "Env/Dungeon/crate2.jpg".
 Figure of giant present is the file "Env/Dungeon/giantpresent1.png".
 
 To decide which figure-name is the examine-image of (C - a wooden crate):
@@ -303,7 +303,7 @@ REQUIRES COMMENTING
 
 @!]
 A treasure chest is a kind of container. A treasure chest is openable. A treasure chest is closed. A treasure chest is not portable. The printed name of a treasure chest is "[TQlink of item described]treasure chest[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of treasure chest is "ch".
-Figure of treasure chest is the file "Env/Multifloor/treasurechest1.png".
+Figure of treasure chest is the file "Env/Multifloor/treasurechest1.jpg".
 
 To decide which figure-name is the examine-image of (C - a treasure chest):
 	decide on figure of treasure chest.
@@ -333,11 +333,14 @@ To add treasure to (X - a treasure chest):
 		otherwise:
 			now R is in X;
 			say "You find a [printed name of R] written on the inside of the lid! Interesting...";
-			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a recipe! Recipes allow you to craft certain things at the Apothecary in the Dungeon once you've found the necessary ingredient. Using anything but the correct ingredients will create cursed versions of random craftable items, so it's dangerous to risk it without knowing the recipe, as you won't know that what you've created will have a beneficial effect. You can choose to memorise the recipe, but you can only remember a certain number, depending on your intelligence. For most recipes, memorising it gives you a chance to create a better (e.g. blessed) version of the item.[roman type][line break][or][stopping]";
+			say NewbieMagicSpells;
 			say ExamineDesc of R;
 			say line break;
 	otherwise:
 		compute generic treasure to X.
+
+To say NewbieMagicSpells:
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a recipe! Recipes allow you to craft certain things at the Apothecary in the Dungeon once you've found the necessary ingredient. Using anything but the correct ingredients will create cursed versions of random craftable items, so it's dangerous to risk it without knowing the recipe, as you won't know that what you've created will have a beneficial effect. You can choose to memorise the recipe, but you can only remember a certain number, depending on your intelligence. For most recipes, memorising it gives you a chance to create a better (e.g. blessed) version of the item.[roman type][line break][or][stopping]".
 
 Section - Pedestals
 

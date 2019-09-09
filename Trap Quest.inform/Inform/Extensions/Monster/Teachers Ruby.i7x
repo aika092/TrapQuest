@@ -52,7 +52,7 @@ To decide which number is the practical dirtiness of (M - a tryhard student):
 
 
 eating-lesson is a lesson.
-Definition: eating-lesson is lesson-appropriate if (diaper quest is 0 or diaper messing >= 3) and the player is able to eat.
+Definition: eating-lesson is lesson-appropriate if (diaper quest is 0 or (diaper messing >= 3 and the player is an august 2019 diaper donator)) and the player is able to eat.
 
 To compute teaching of (L - eating-lesson):
 	allocate 40 seconds;
@@ -125,7 +125,7 @@ To compute teaching of (L - eating-lesson):
 			now the armband-print of armband is "greedy [if diaper quest is 0]cum [end if]guzzler";
 			say ClothingDesc of armband;
 			repeat with ST running through students in the location of the player:
-				if ST is not listed in F, FavourDown ST;
+				if ST is not listed in F, HappinessDown ST;
 		otherwise:
 			promote N;
 	if yourself is listed in F, update students; [an important line which makes boring old students disappear and new cool ones appear]

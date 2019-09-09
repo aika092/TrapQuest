@@ -337,7 +337,7 @@ Figure of string belt 4 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt4
 Figure of string belt 5 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt5.png".
 
 To decide which figure-name is the clothing-image of (C - a string belt):
-	let T be the total condoms of C;
+	let T be the used condoms of C;
 	if T > 4:
 		decide on figure of string belt 5;
 	otherwise if T is 4:

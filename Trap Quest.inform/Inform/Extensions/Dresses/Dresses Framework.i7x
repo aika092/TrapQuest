@@ -7,6 +7,10 @@ Definition: an underdress is same-type if theme-share-target is underdress.
 An overdress is a kind of dress.
 Definition: an overdress is same-type if theme-share-target is overdress and (it is unskirted or the number of worn skirts is 0). [Unskirted items will skip skirted dresses if there is a worn skirt.]
 
+Definition: a dress is rippable:
+	if it is crotch covering and it is total protection and it is not ass plugging and it is not vagina plugging, decide yes;
+	decide no.
+
 To decide which object is the potential-upgrade-target of (C - an overdress):
 	[The template is slightly modified for overdresses. It must share a colour or theme.]
 	now theme-share-target is C;
@@ -38,6 +42,7 @@ Part 1 - Underdresses
 An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable. The soak-limit of an underdress is usually 26.
 
 Definition: an underdress is displacable: decide yes.
+
 
 
 Chapter - Wearability
@@ -78,10 +83,6 @@ An overdress is usually knee-length. An overdress is usually average cut. An ove
 
 To uniquely set up (C - an overdress):
 	repair C.
-
-Definition: an overdress is rippable:
-	if it is crotch covering and it is total protection and it is not ass plugging and it is not vagina plugging, decide yes;
-	decide no.
 
 Definition: an overdress is displacable:
 	if it is short or longer, decide yes;

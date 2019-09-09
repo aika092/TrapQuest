@@ -3,7 +3,14 @@ Buttocksless Pants by Trousers begins here.
 buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The armour of buttockless pants is 10. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png". The soak-limit of buttockless pants is usually 17.
 
 To say ShortDesc of (Y - a  buttockless pants):
+	say "pair of buttockless pants".
+To say MediumDesc of (Y - a  buttockless pants):
 	say "pair of lewd buttockless pants".
+
+A diaper quest fix rule:
+	repeat with C running through buttockless pants:
+		now C is transformation-rare.
+
 
 blue buttockless pants is a kind of buttockless pants. There is 1 denim blue buttockless pants. yellow buttockless pants is a kind of buttockless pants. There is 1 leather yellow buttockless pants.
 

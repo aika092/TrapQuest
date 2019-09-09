@@ -57,7 +57,8 @@ To Set Up The Mansion:
 		add treasure to P;
 	now a random master bed is in Mansion16;
 	lock pedestals;
-	if debugmode is 0 and loading scenes is 1, clear the screen.
+	if debugmode is 0 and loading scenes is 1, clear the screen;
+	progress quest of new-region-quest.
 
 [!<ScrambleMansion>+
 

@@ -93,6 +93,7 @@ To decide which number is the flat dexterity of the player:
 		if the silicone volume of breasts > 18, increase D by 3;
 	if fudge-poison-timer > 0, now D is D / 2;
 	if cookie-poison-timer > 0, decrease D by 2;
+	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
 	if the player is grossed out and D > 5, now D is 5;
 	if temp_dex_dam > 0, decrease D by temp_dex_dam;
 	now D is (D * (5 - alcohol-level)) / 5;

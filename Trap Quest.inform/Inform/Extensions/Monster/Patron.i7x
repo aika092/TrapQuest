@@ -450,7 +450,7 @@ To compute perception of (M - a patron):
 	now the chosen-orifice of M is nothing;
 	now the chosen-orifice of M is a random actual target body part;
 	if M is inexperienced patron, decrease the sex-length of M by 2;
-	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if the class of the player is living sex doll:
 		say "[speech style of M]'Oh, I didn't realise this was that new sex doll facility I've heard about. Awesome!'[roman type][line break]";
 	otherwise if M is mating:
@@ -1528,6 +1528,16 @@ To satisfy (M - a patron) for (N - a number) seconds:
 	otherwise:
 		if M is in the location of the player, say "[BigNameDesc of M] seems satisfied, and leaves the we [he of M] came.";
 		destroy M.
+
+Definition: a patron is willing to donate diapers:
+	if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, decide yes;
+	decide no.
+
+Definition: a patron is eager to double diapers:
+	unless the player is an october 2018 diaper donator, decide no;
+	if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, decide yes;
+	decide no.
+
 
 Definition: a patron is willing to spank: decide yes.
 

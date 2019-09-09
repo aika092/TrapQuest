@@ -95,7 +95,7 @@ To set up (M - woman-barbara):
 	now M is in Woods01;
 	calm M.
 
-Definition: woman-barbara is unfriendly rather than friendly if it is angered.
+Definition: woman-barbara is unfriendly rather than friendly if it is angered and it is not pacified.
 Definition: woman-barbara is uniquely unfriendly: decide no.
 Definition: woman-barbara is objectifying the player: decide no.
 Definition: woman-barbara is babifying the player: decide no.

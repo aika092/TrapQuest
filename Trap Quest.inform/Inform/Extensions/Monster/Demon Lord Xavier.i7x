@@ -44,6 +44,8 @@ Definition: demon lord (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120, decide yes;
 	decide no.
 
+Definition: demon lord is infernal: decide yes.
+
 Definition: demon lord is willing to do oral if diaper focus is 1.
 
 Definition: demon lord is willing to do titfucks: decide no.
@@ -121,7 +123,7 @@ To compute perception of (M - demon lord):
 		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type]";
 	otherwise:
 		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
-		if the player-class is succubus and the player is upright:
+		if the class of the player is succubus or the class of the player is worshipper and the player is upright:
 			say "Your master's voice is too commanding for you to even consider resistance!";
 			try kneeling.
 
@@ -338,10 +340,6 @@ To say PullOutFlav of (M - demon lord) in (O - a fuckhole):
 To say MessyPullOutFlav of (M - demon lord) in (O - a fuckhole):
 	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M]'s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] cascading down your legs as [NameDesc of M] gets to [his of M] feet.".
 
-To compute priestessBlessing of (M - demon lord):
-	say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with [him of M], Sister! Do not insult your goddess!'";
-		increase the charge of the dungeon altar by 30.
-
 To say StrikingSuccessFlav of (M - demon lord) on (B - a body part):
 	say "[BigNameDesc of M] strikes you [TargetName of B] with a large claw! Ouch!!";
 
@@ -447,7 +445,6 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	now the priority of P is 0; [can only happen once]
 	let M be current-monster;
 	let K be a random worn knickers;
-	let D be a random demon diaper;
 	say "[DemonNightmareStartFlav]";
 	say "[second custom style]'Well aren't you a scrumptious one.'[roman type][line break]You find yourself alone kneeling in front of a seven foot high lady demon in a luxurious castle bedroom. Her curvaceous figure and powerful limbs are matched by a deep, confident and yet still very feminine voice. Her only item of clothing is a chunky diaper with a red pentagram printed on the front. It looks completely unused. [line break][second custom style]'Excellent, a vacancy just opened up. I have the perfect role for you[if K is clothing]. Now remove that undergarment[end if].'[roman type][line break]";
 	if K is clothing:
@@ -460,7 +457,7 @@ To compute punishment of (P - xavier-nightmare-diaper):
 		otherwise:
 			destroy K;
 	say "[second custom style]'Okay now here, put this on.'[roman type][line break]Again before you can really choose whether to accept, it's just happening. A big thick pink diaper is rocketing across the room towards your nether regions, and before you can say 'Hmm I'm not sure if I'm completely comfortable with where this is going' it is forcing your feet through its leg-holes. You look down and see it too has a big pentagram etched in the front. You start to feel rather nervous, and this feeling is exacerbated by her next words.[line break][second custom style]'Let us begin the ritual.'[roman type][line break]Words of trepidation choke up in your throat due to the size and sheer aura of dominance surrounding the demoness. She guides you gently but firmly over to a pentagram on the floor in the centre of her bedroom. As she takes both your hands in hers the pentagram's lines immediately start shining with a brilliant purple glow.[line break][second custom style]'Repeat after me. [']I, [NameBimbo]['],'[line break][variable custom style]'I, [NameBimbo]...'[roman type][line break]Something inside you is entranced by her magnificence and anyway you can't see any other reasonable course of action. It feels like she could probably crush you with a small flick of her tail.[line break][second custom style]'Consent to serve...'[line break][variable custom style]'Consent to serve...'[line break][second custom style]'My body and padding shall be hers...'[line break][variable custom style]'My body and padding shall be hers...' Wait, what am I getting myself into?[line break][second custom style]'In her time of need...'[line break][variable custom style]'In her time of need...'[line break][second custom style]'Wherever I may be.'[line break][variable custom style]'Wherever I may be.'[roman type][line break]The glowing begins to fade.";
-	summon D;
+	summon demon-diaper;
 	if there is a worn tattoo and the number of worn crotch tattoos is 0:
 		summon demon link mark;
 		say "A sharp sting over your crotch lets you know you suddenly have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked above your crotch. ";
@@ -489,10 +486,9 @@ To compute punishment of (P - xavier-nightmare-gag):
 	now the priority of P is 0; [can only happen once]
 	let M be current-monster;
 	let K be a random worn knickers;
-	let D be a random plain diaper;
 	say "[DemonNightmareStartFlav]";
 	say "[second custom style]'Ooh yes, [he of the player][']s perfect!'[roman type][line break]You find yourself alone kneeling in front of a six foot high female demon in a large posh garden. Her tall, powerful figure is contrasted by a high-pitched feminine voice. She is clutching a large diapered doll with a curiously life-like expression. The garden itself is extremely large and well-kept, the sort of thing you would expect to see at only the grandest of estates. This demon is rich.[line break][second custom style]'Thank you Daddy! [big he of the player][']ll fit right in place!'[line break][variable custom style]Is she calling Xavier 'Daddy'? That probably means this is [his of M] daughter.[roman type][line break]";
-	if K is clothing and K is not an unmessed dry plain diaper and K is not a demon diaper:
+	if K is clothing and K is not an unmessed dry massive diaper and K is not demon-diaper:
 		say "[if K is diaper and the DQBulk of K < 7][second custom style]'That's not near big enough!'[roman type][line break][end if]She points to your [ShortDesc of K], and before you can even react, a huge slice appears all the way across it, and it falls from your body in tatters.";
 		if K is messed: [need to check before we destroy and reset it]
 			if K is perceived unmessed, say "She looks at your bottom with disgust, and you realise it's messy - you must have gone number two without even feeling it.";
@@ -503,8 +499,8 @@ To compute punishment of (P - xavier-nightmare-gag):
 			destroy K;
 	if K is not worn:
 		say "[second custom style]'Okay now it's time to diaper my new water feature!'[line break][variable custom style]Did she say 'water feature'?![roman type][line break]You are too busy thinking about what she just said that you barely even register the big thick disposable diaper rocketing across the room towards your nether regions and taping itself shut around you. This one does not have a big pentagram etched in the front, but is probably twice as bulky.";
-		summon D;
-		now K is D;
+		summon plain-massive-diaper;
+		now K is plain-massive-diaper;
 	clean K;
 	UrineSoakUp K by the soak-limit of K;
 	now xavier-throat-link is 1;
@@ -556,7 +552,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	say "a belt comes whizzing at you from one corner of the room and locks itself around your waist[if BL is belt], destroying your [ShortDesc of BL] as it does[end if]. It has a strange symbol made out of hexagons on the front, and you feel something magic radiate inside of you. You watch in [horror the diaper addiction of the player] as you feel the contents of your bladder [if diaper messing >= 3]and rectum [end if]multiply rapidly in size, making your belly expand and round out. You look like you're six or seven months pregnant.";
 	if BL is belt, destroy BL;
 	summon demon belt cursed;
-	now xavier-belt-link is 1;
+	now xavier-belt-link is 2;
 	if there is a worn tattoo and the number of worn belly tattoos is 0:
 		summon demon belly mark;
 		say "A tingling feeling over your belly lets you know you also have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked around your belly button.";
@@ -584,7 +580,7 @@ Section 4 - Damage
 Definition: demon lord (called M) is damageable:
 	if attack-type is 1:
 		let S be a random worn slap ready equippable;
-		if S is magic themed equippable or S is purity equippable or S is demonic equippable, decide yes;
+		if S is magic themed equippable or S is purity equippable, decide yes;
 	if attack-type is 3 and there is a worn dildo heels, decide yes;
 	if attack-type > 3, decide yes;
 	if the class of the player is princess or the class of the player is priestess or the class of the player is virgin warrior or the class of the player is fertility goddess or there is a worn demonic wearthing, decide yes;
@@ -670,7 +666,7 @@ To say RepeatResponse of (M - demon lord):
 To say NonEnthusiasmResponse of (M - demon lord):
 	if the class of the player is princess:
 		say "[first custom style]'[one of]HAHAHA! THIS IS MY REVENGE, PRINCESS!'[or]LOUDER! ALL OF BIMBACIA MUST KNOW OF YOUR SERVITUDE!'[or]YOUR PUNISHMENT IS ONLY BEGINNING, DEAR PRINCESS!'[or]YOU HAVE ONLY YOURSELF TO BLAME, PRINCESS!'[at random][roman type][line break][BigNameDesc of M] claps you harshly across the ass.";
-		DelicateUp 1;
+		PainUp 1;
 	otherwise:
 		say "[first custom style]'[one of]HAHA, YES, MORTAL! SQUIRM!'[or]HAHAHA! LOUDER! LOUDER!'[or]LOUDER, MORTAL! LOUDER!'[at random][roman type][line break]";
 	if the sex-length of M > 2 and a random number between 1 and 2 is 1, decrease the sex-length of M by 1.
@@ -705,7 +701,7 @@ To compute annoyed punishment of (M - demon lord):
 		summon B locked;
 	otherwise:
 		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M]'s finger, wracking your body with horrible pain.";
-	DelicateUp 3;
+	PainUp 3;
 	now the questioned of M is the mild-annoyance threshold of M.
 
 To say InvitationAccepted of (M - demon lord) with (N - a monster):

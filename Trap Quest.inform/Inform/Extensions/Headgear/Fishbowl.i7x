@@ -95,7 +95,9 @@ To progress quest of (Q - whore-exposing-quest) for (M - a monster):
 			increase the expose-count of Q by 1;
 			if the remainder after dividing expose-count of Q by 7 is 0:
 				repeat with C running through worn clothing:
-					if the quest of C is Q, compute persistent reward of Q on C;
+					if the quest of C is Q, compute quest completion of Q on C;
+			otherwise:
+				say "[BigNameDesc of H] shudders happily at your exposure as a whore. Keep it up.".
 
 To compute persistent reward of (Q - whore-exposing-quest) on (C - a clothing):
 	if C is cursed:

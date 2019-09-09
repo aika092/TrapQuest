@@ -216,7 +216,11 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 				PuddleUp semen by the semen coating of C;
 				now the semen coating of C is 0;
 		if belly is unsoaked, say "The [variable L] steadily flows down your chest to your [BellyDesc].";
-		Squirt L on Belly by N.
+		Squirt L on Belly by N;
+	if acolyte-chestpiece is worn:
+		say "The gemstones adorning your [ShortDesc of acolyte-chestpiece] glint as waves of fatigue and arousal wash through your body.";
+		Arouse 500 * N;
+		FatigueUp N * 15.
 
 To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
 	let BC be a random worn top level belly cover clothing;

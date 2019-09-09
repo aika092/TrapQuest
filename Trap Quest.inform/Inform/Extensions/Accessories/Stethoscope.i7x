@@ -50,7 +50,7 @@ To decide which number is the alchemy key of (W - a doctor stethoscope):
 To decide which object is the unique-upgrade-target of (C - a doctor stethoscope):
 	decide on a random cock stethoscope.
 
-Check wearing a doctor stethoscope: [When you craft with the wrong recipe, it becomes the lewd form immediately.]
+Report wearing a doctor stethoscope: [When you craft with the wrong recipe, it becomes the lewd form immediately.]
 	if the noun is cursed and the noun is upgradable, potentially transform the noun.
 
 

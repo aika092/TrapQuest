@@ -13,6 +13,7 @@ Definition: hellhound (called M) is mansion dwelling:
 	if mythical creature fetish is 0 and diaper quest is 0, decide no;
 	decide yes.
 
+Definition: hellhound is infernal: decide yes.
 
 To say ShortDesc of (M - hellhound):
 	say "[if mythical creature fetish is 1]hellhound[otherwise]puppy slave[end if]".
@@ -93,12 +94,15 @@ To say SummoningFlav of (M - hellhound):
 	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with [his of M] teeth as the portal closes, and the mummy slowly returns to its feet.";
 	say "You hear a chilling howl in the distance.".
 
-To say PregGrowth of (M - hellhound):
-	say "the [ShortDesc of M]".
+Definition: a hellhound (called M) is father material:
+	if the player is a august 2019 top donator, decide yes;
+	decide no.
 
-[Definition: a hellhound (called M) is father material:
-	if mythical creature fetish is 1
-	decide no.]
+[For some reason the 'father material' thing was commented out, and I didn't see this, so I've commented it for now.
+###MG of the future: My guess is that this was commented out due to the new U.K. laws? That's the only explanation that comes to mind for me.
+
+To say PregGrowth of (M - hellhound):
+	say "the [ShortDesc of M]";
 
 To compute labour to (M - hellhound):
 	if M is not alive or M is regional:
@@ -111,7 +115,13 @@ To compute labour to (M - hellhound):
 			DexUp 1;
 			IntUp 1;
 	otherwise:
-		Delay Labour.
+		Delay Labour.]
+
+To say PregGrowth of (M - hellhound):
+	say "the demon spawn".
+
+To compute labour to (M - hellhound):
+	compute infernal birth.
 
 To compute fatherhood to (M - hellhound):
 	distract M.
@@ -401,6 +411,7 @@ To compute punishment of (P - hellhound-hump):
 			let D be a random worn diaper;
 			say "[BigNameDesc of M] [one of]continues to grind away, [if D is diaper]your combined[otherwise][his of M] thick[end if] padding filling the room with a loud rustling racket![or]increases [his of M] tempo even further, doubling the pressure on your [genitals]![or]playfully licks your face as [he of M] keeps rubbing [his of M] diaper against [if D is diaper]yours[otherwise]you[end if].[or]drools on you as [he of M] messily pants with [his of M] tongue hanging over your face. And [he of M] never stops [his of M] grinding![in random order]";
 			decrease the sex-length of M by 1;
+			cutscene display hellhound hump;
 			ruin vagina;
 		otherwise:
 			say "[BigNameDesc of M] reaches [his of M] crescendo, barking happily as [he of M] fills [his of M] padding with [his of M] juices. ";
@@ -410,13 +421,16 @@ To compute punishment of (P - hellhound-hump):
 	otherwise:
 		say "With expert dexterity, [NameDesc of M] rolls you onto your back. Before you can react, [he of M] has leaped fully on top of you, squashing you under [his of M] weight and now the crotches of your diapers are mushed into each other. With what can only be described as an extremely sexual purr, [he of M] begins to grind your loins together through your joint layers padding.";
 		now M is penetrating vagina;
-		if there is a worn perceived messed diaper:
-			cutshow figure of puppy cutscene 3 for M;
-		otherwise if there is a worn perceived wet diaper:
-			cutshow figure of puppy cutscene 2 for M;
-		otherwise:
-			cutshow figure of puppy cutscene 1 for M;
+		cutscene display hellhound hump;
 		ruin vagina.
+
+To cutscene display hellhound hump:
+	if there is a worn perceived messed diaper:
+		cutshow figure of puppy cutscene 3 for hellhound;
+	otherwise if there is a worn perceived wet diaper:
+		cutshow figure of puppy cutscene 2 for hellhound;
+	otherwise:
+		cutshow figure of puppy cutscene 1 for hellhound.
 
 hellhound-facesit is a diaper punishment. The priority of hellhound-facesit is 4.
 Definition: hellhound-facesit (called P) is appropriate:
@@ -506,23 +520,23 @@ Part - Conversation
 
 To compute greeting response of (M - hellhound):
 	if M is not intelligent:
-		say "[MuteGreetResponse of M]";
+		say MuteGreetResponse of M;
 	otherwise:
 		say "[speech style of M]'[one of]Arf[or]Woof[or]Ruff[or]Woof woof[in random order]!'[roman type][line break]".
 
 To compute talk option (N - 2) to (M - hellhound):
 	if M is not intelligent:
-		say "[MuteQuestionResponse of M]";
+		say MuteQuestionResponse of M;
 	otherwise:
-		say "[WhoQuestion of M]";
+		say WhoQuestion of M;
 		compute greeting response of M.
 
 To compute talk option (N - 3) to (M - hellhound):
-	say "[DrinkRequest of M]";
+	say DrinkRequest of M;
 	compute greeting response of M.
 
 To compute talk option (N - 4) to (M - hellhound):
-	say "[FoodRequest of M]";
+	say FoodRequest of M;
 	compute greeting response of M.
 
 

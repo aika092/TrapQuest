@@ -12,7 +12,7 @@ REQUIRES COMMENTING
 An ass hook is a kind of trap. The printed name of ass hook is "[TQlink of item described][if item described is penetrating asshole]ass [end if]hook[TQxlink of item described][verb-desc of item described]". There are 5 wire ass hooks. Understand "rope" as ass hook. The text-shortcut of an ass hook is "aho". Figure of ass hook is the file "Env/Dungeon/asshook1.png". An ass hook has an object called the wedgie-target.
 
 To say ExamineDesc of (C - an ass hook):
-	say "An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?".
+	say "[if playerRegion is school]A strong hook that is usually used to hang gym clothes.[otherwise]An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?[end if]".
 
 To decide which figure-name is the examine-image of (C - an ass hook):
 	if C is penetrating asshole:
@@ -99,9 +99,8 @@ To trigger (Y - an ass hook):
 		otherwise if K is currently uncovered unskirted clothing:
 			if K is diaper:
 				say "tries to hook into your [ShortDesc of K], but the padded material is too thick for it to be able to pull the material into a wedgie.";
-			otherwise if K is displacable: [TODO: change this to a humiliating wedgie which the player has to jump to destroy or strength check to untangle (but could cause further hurt instead)]
+			otherwise if K is displacable:
 				say "hooks into your [K], pulling it up into a painful wedgie!";
-				PainUp 1;
 				now Y is grabbing the player;
 				now the wedgie-target of Y is K;
 				say "It looks like you'll need to [bold type]pull[roman type] the hook to try and save your underwear, or you could [bold type]jump[roman type] if you are happy for them to be destroyed.";
@@ -139,6 +138,7 @@ Check taking off knickers when the player is wedgie hook stuck:
 		if the wedgie-target of H is the noun, say "There's no way you can raise your feet high enough to do that while it's hooked up in a powerful dangling wedgie!" instead.
 
 Check pulling knickers when the player is wedgie hook stuck:
+	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
 [!<CheckPullingAnAssHook>+
@@ -147,6 +147,7 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling an ass hook:
+	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
 [!<HookPull>+
@@ -252,12 +253,33 @@ To Jump From The Hook:
 	otherwise:
 		let H be a random ass hook grabbing the player;
 		let K be the wedgie-target of H;
-		say "Grimacing, you jump into the air and then allow yourself to sail back down. Your [H] instantly rips in two, before falling to the ground, ruined.";
+		say "Grimacing, you jump into the air and then allow yourself to sail back down. Your [K] instantly rips in two, before falling to the ground, ruined.";
 		destroy K;
 		say "It didn't hurt too much more than before, but it's left a red mark.";
 		BodyRuin 1;
 		now H is unrevealed;
-		dislodge H.
+		dislodge H;
+		if playerRegion is school:
+			destroy H;
+			repeat with M running through unfriendly students in the location of the player:
+				FavourDown M;
+				now M is interested.
+
+A time based rule (this is the ass hook wedgie pain rule):
+	let H be a random ass hook grabbing the player;
+	if H is ass hook:
+		say "The pressure of the wedgie on your ass crack is causing you significant pain!";
+		PainUp 1;
+		if playerRegion is school and the number of students in the location of the player is 0:
+			let M be a random alive amicable student;
+			if M is nothing, now M is a random alive staff member;
+			now M is in the location of the player;
+			now M is interested;
+			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is student]Please don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
+			now H is unrevealed;
+			dislodge H;
+			destroy H;
+			distract M.
 
 
 Ass Hook Trap ends here.

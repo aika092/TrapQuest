@@ -23,7 +23,7 @@ Report going:
 	if the player is prone:
 		increase the crawl count of the player by 1;
 		let M be black maid headdress;
-		if diaper quest is 0 and (15 is not too humiliating or playerRegion is Woods) and (the player is not crotch covered or diaper quest is 1) and cat-ears is off-stage, now M is cat-ears;
+		if (15 is not too humiliating or playerRegion is Woods) and (the player is not crotch covered or diaper quest is 1) and cat-ears is off-stage, now M is cat-ears;
 		if M is off-stage and M is actually summonable:
 			let R1 be a random number between 3 and 40;
 			let R2 be a random number between 3 and 40;
@@ -82,7 +82,7 @@ To compute class outfit of (H - a maid headdress):
 	let C be a random off-stage chastity cage;
 	let M be chosen-maid-outfit;
 	let S be a random off-stage cafe maid stockings;
-	if M is actually summonable or maid-summoned is 0:
+	if M is actually summonable or (maid-summoned is 0 and the number of worn maid outfit is 0 and magical-maid-outfit is not worn):
 		if maid-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
@@ -100,13 +100,12 @@ To compute class outfit of (H - a maid headdress):
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 		say "[bold type]Your headdress barely noticeably shakes, and then a [if the bimbo of the player > 4]slutty [end if]maids outfit materialises on you.[roman type][line break]";
-		summon M;
+		summon M uncursed;
 		now maid-summoned is 1;
-		now the raw-magic-modifier of M is 0;
 		increase the raw-magic-modifier of M by the crawl count of the player / 10;
 	otherwise if H is cafe maid headdress and S is actually summonable:
 		say "[bold type]Your headdress barely noticeably shakes, and then a [ShortDesc of S] materialises on your legs.[roman type][line break]";
-		summon S;
+		summon S uncursed;
 		now S is strength-influencing;
 		now the raw-magic-modifier of S is -1;
 		increase the raw-magic-modifier of S by the crawl count of the player / 7;
@@ -118,10 +117,10 @@ To compute class outfit of (H - a maid headdress):
 		let W be a random off-stage heart wand;
 		if S is actually summonable:
 			say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
-			summon S;
+			summon S uncursed;
 		otherwise if W is actually summonable:
 			say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
-			summon W.
+			summon W uncursed.
 
 
 Chapter - Quest

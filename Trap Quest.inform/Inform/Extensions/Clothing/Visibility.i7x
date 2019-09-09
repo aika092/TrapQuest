@@ -124,13 +124,14 @@ To decide which object is the at least partial concealer of (C - a wearthing):
 
 To decide which object is the concealer of (K - a diaper):
 	repeat with C running through worn potentially asshole covering clothing:
-		if C is actually dense skirted clothing, decide on C; [only skirts can hide diapers, everything else it's still clear what you're wearing.]
+		if C is not K and C is actually dense clothing and (C is skirted or (the bottom-layer of C > the bottom-layer of K and the DQBulk of K < 4)):
+			if the skirtLength of C >= the DQBulk of K, decide on C; [only long skirts can hide diapers]
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (K - a knickers): [soiled undergarments may be slightly visible but the onlooker can't tell that they're soiled]
 	repeat with C running through worn potentially at least partially asshole covering clothing:
 		if C is not K and the bottom-layer of C > the bottom-layer of K or C is skirted:
-			decide on C;
+			if C is not skirted or the skirtLength of C >= the DQBulk of K, decide on C;
 	decide on nothing.
 
 To decide which object is the concealer of (S - a sex toy):

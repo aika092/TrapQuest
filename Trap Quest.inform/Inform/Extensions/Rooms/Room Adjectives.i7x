@@ -153,7 +153,7 @@ A room can be unspawnable. A room is usually not unspawnable.
 
 [!<Room>@<IsBossed>+
 
-This is a room that NPCs will never walk into voluntarily. Main use should be for boss rooms.
+This is a room that NPCs will never walk into voluntarily. Main use should be for boss rooms. These rooms should be dead-ends with a single exit, otherwise they might get placed as a key connector in a region, which would be bad since NPCs won't walk here, leaving them stuck in one section of the map.
 
 +@!]
 A room can be bossed or unbossed. A room is usually unbossed.

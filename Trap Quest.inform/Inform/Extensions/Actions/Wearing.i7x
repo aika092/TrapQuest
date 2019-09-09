@@ -16,7 +16,7 @@ Check taking a plentiful accessory:
 	try wearing the noun instead.
 
 Report taking off a plentiful accessory:
-	say "After it's removed, the [BigNameDesc of the noun] suddenly feels like it weighs 100 tonnes! You are forced to drop it to the ground.";
+	say "After it's removed, [NameDesc of the noun] suddenly feels like it weighs 100 tonnes! You are forced to drop it to the ground.";
 	try dropping the noun.
 
 Before wearing a thing:

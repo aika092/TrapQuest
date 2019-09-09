@@ -2,9 +2,12 @@ Staff Framework by Monster Framework begins here.
 
 A staff member is a kind of monster. A staff member is intelligent. A staff member is usually female.
 
+
 Definition: a staff member is school dwelling: decide yes.
 
 Definition: a staff member is motionless-when-defeated: decide yes.
+
+Definition: a staff member is messy if it is diaper-enslaved and diaper messing >= 6.
 
 To say FullMonsterDesc of (M - a staff member):
 	say ImageDesc of M;
@@ -376,10 +379,12 @@ To compute potential lesson:
 					display focus stuff;
 					render buffered stuff;
 					if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
+					now class-time is lessonFrequency;
 					compute teaching of chosen-lesson;
 					increase totalLessonCount by 1;
-					now class-time is lessonFrequency;
 					let B be (the rank of the player * 3) - the bimbo of the player;
+					repeat with C running through worn clothing:
+						if the quest of C is next-lesson-quest, increase B by 2;
 					if B > 0, increase class-time by B * 60. [Lessons are spaced further apart if the player isn't slutty enough for them]
 
 To compute teaching of (L - an object):
@@ -544,7 +549,7 @@ To compute chair detention of (M - a staff member):
 	now detention chair is detention-wand;
 	now detention-turns is a random number between 15 and 25;
 	drag to School13 by M;
-	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise if class-time < (lessonFrequency * -3)]If you can't get to class on time then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit.[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
+	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise if class-time < (lessonFrequency * -3)]If you can't get to class on time then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
 	if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	if (diaper quest is 1 or a random number between 0 and 3 < diaper lover) and the number of worn diapers is 0, compute DQChairSetup of M;
 	say "[if the delicateness of the player > 10]You crawl over to the [ShortDesc of detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise]quickly binding[end if] you in place with the straps. ";
@@ -562,7 +567,8 @@ To compute chair detention of (M - a staff member):
 		now N is uninterested;
 	now the stance of the player is 1;
 	now detention chair is grabbing the player;
-	now detention chair is detention-wand.
+	now detention chair is detention-wand;
+	display entire map. [So that the detention thing takes over the map window]
 
 To DetentionChairWait:
 	while detention chair is grabbing the player:
@@ -596,7 +602,7 @@ To compute wand chair detention:
 			distract M;
 		otherwise:
 			say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
-		now class-time is 0;
+		if class-time < 0, now class-time is 0;
 		dislodge detention chair.
 
 To compute detention chair tease of (M - a monster):
@@ -727,10 +733,12 @@ To compute rem chair detention:
 				now M is in the location of the player;
 				say "The camera pans over the professor's body, zooming in [if bukkake fetish is 1]on the cum plastered all over her face[otherwise if diaper quest is 0]on her gaping holes[otherwise]PLACEHOLDER[end if] as the hypnotic pattern finally fades and the syncopated rhythm winds down. [line break][first custom style]'That's all for today ladies. Study hard!'[roman type][line break]The screen flickers off, and a few moments pass before [NameDesc of M] re-enters the room and frees you from your bindings.";
 				distract M;
+				compute room leaving of M;
+				regionally place M;
 				now the location of the player is not bossed;
 			otherwise:
 				say "BUG: There's no teacher to summon to release the player. The player will be released anyway so the game doesn't freeze!";
-			now class-time is 0;
+			if class-time < 0, now class-time is 0;
 			now detention chair is not grabbing the player.
 
 

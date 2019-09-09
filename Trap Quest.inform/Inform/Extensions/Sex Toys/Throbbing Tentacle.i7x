@@ -27,6 +27,10 @@ Check taking off throbbing-tentacle:
 
 Definition: a throbbing-tentacle is removable: decide no.
 
+Check wearing headgear:
+	if the player is wearing a throbbing-tentacle:
+		say "There is no point in equipping the [noun]. Your head already belongs to The Master.";
+
 To decide which number is the raw-masturbation-bonus of (C - a throbbing-tentacle):
 	decide on 4.[The best masturbation aid]
 

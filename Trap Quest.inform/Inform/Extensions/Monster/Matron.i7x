@@ -319,6 +319,10 @@ To say DiaperChangeStart of (M - matron):
 	let D be a random worn messed diaper;
 	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and plops you down on the giant changing table. She smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps[if D is diaper]. [big he of M] runs [his of M] hand along [NameDesc of D] and clicks [his of M] tongue.[line break][speech style of M]'Uh oh, we really had to go didn't we? Stinky little baby waby yesh we are!'[line break][roman type][otherwise].[end if]".
 
+
+To say DiaperDropFlav of (M - matron):
+	say "[big he of M] leaves the used diaper on the ground next to you.[line break][speech style of M]'Here you go, you can keep this as a lovely souvenir if you like!'[roman type][line break]";
+
 To say DQChangeResistReactionFlav of (M - matron):
 	say "[BigNameDesc of M] tuts.[line break][speech style of M]'[one of]You can kick and fuss if you must but it won't do you a bit of good. You are getting a diaper change, like it or not!'[or]Now young [if the player is presenting as female]lady[otherwise]man[end if] I don't take kindly to little ones who throw fits! Hold still for mommy or I'll make you wish I stopped at one diaper!'[or]OH, we've got some energy now do we? Well I can correct that AFTER, okay sweetie?'[in random order][roman type][line break]".
 

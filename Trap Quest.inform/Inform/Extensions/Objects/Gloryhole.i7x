@@ -64,7 +64,7 @@ Check entering gloryhole:
 	otherwise:
 		if there is a held condom-providing thing and face is not actually occupied:
 			say "Use a condom?";
-			if the player consents:
+			if the player is consenting:
 				say "You delicately place a condom between your lips and put your mouth up to the hole.";
 				now gloryhole is glorywrapped;
 		if gloryhole is gloryunwrapped:

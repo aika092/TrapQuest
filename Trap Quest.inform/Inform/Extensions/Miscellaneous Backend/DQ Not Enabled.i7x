@@ -73,6 +73,8 @@ Include Slutty Clutches of Holding by Bags of Holding.
 Include Clutches of Holding by Bags of Holding.
 Include Ultra Slutty Bags of Holding by Bags of Holding.
 A diaper bag of holding is a kind of bag of holding.
+A baby diaper bag of holding is a kind of bag of holding.
+A stuffie is a kind of equippable. A stuffie is unique.
 
 Include School Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
@@ -88,7 +90,6 @@ Include Gape Gloves by Equippables.
 Include Heavy Club by Equippables.
 
 Include Portal Pants by Knickers.
-Include Portal Gag by Bondage.
 
 
 Include Break Room Girl by Nintendolls Job Epilogues.

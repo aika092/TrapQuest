@@ -34,7 +34,7 @@ To say FuckerDesc of (M - a supporter):
 To say BigFuckerDesc of (M - a supporter):
 	say "[supporter-name of M]".
 
-Definition: a supporter is not-the-same if it is supporter-jim [the leftover-type of it is not previous supporter ID]. [For testing. TODO change back]
+Definition: a supporter is not-the-same if the leftover-type of it is not previous supporter ID.
 
 Definition: a supporter is fetish appropriate: decide yes.
 
@@ -648,7 +648,7 @@ To say NearingClimaxFacesit of (M - a monster): [Next turn your NPC is going to 
 	say "[one of][BigNameDesc of M] grunts as [he of M] begins to grind your face with passion![or][BigNameDesc of M] leans back so [he of M] can play with [his of M] clit, and begins to rub [his of M] pussy and asshole all over your face with vigour![in random order]".
 
 To say FacesitClimaxFlav of (M - a monster):
-	say "[BigNameDesc of M] begins to grind with increasing speed and desperation until with an almost mindless groan [he of M] orgasms, soaking your face with [if the oral sex addiction of the player < 4]gross and sticky [otherwise if the oral sex addiction of the player > 6]delicious [end if]girlcum.[line break][speech style of M]'Yes, yes, oh fuck yes this is what I needed! Your face makes a damn good sex toy'[roman type][line break]".
+	say "[BigNameDesc of M] begins to grind with increasing speed and desperation until with an almost mindless groan [he of M] orgasms, soaking your face with [if the oral sex addiction of the player < 4]gross and sticky [otherwise if the oral sex addiction of the player > 6]delicious [end if]girlcum.[line break][speech style of M]'Yes, yes, oh fuck yes this is what I needed! Your face makes a damn good sex toy.'[roman type][line break]".
 
 [Vaginal & Anal]
 

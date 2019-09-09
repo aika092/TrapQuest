@@ -90,6 +90,8 @@ Carry out knifing:
 	otherwise:
 		if (the noun is bondage or the noun is unremovable) and the noun is not blessed:
 			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![line break][variable custom style]Perhaps if it was blessed?[roman type][line break]";
+		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
+			say "The knife can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";
 		otherwise if the charge of the second noun > 0:
 			say "The knife seems to be completely dull at the moment! You give up.";
 		otherwise:

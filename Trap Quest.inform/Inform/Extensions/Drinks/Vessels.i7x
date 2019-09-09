@@ -111,7 +111,7 @@ Report plugging something with a squirt dildo:
 	now the second noun is sure.
 Definition: a squirt dildo is basic loot: decide no.
 To compute cursed drinking (X - a squirt dildo):
-	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]! [line break][variable custom style][if X is sure and X is cursed]This vessel is cursed... it's going to turn anything that's inside it into [semen][otherwise if X is sure]This potion colour must be cursed... and that's causing it to turn into [semen] when I try to drink it from here[otherwise]One of these is cursed, but I don't know which[end if]...[roman type][line break]";
+	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]! [line break][variable custom style][if the curse-ID of X is sure and X is cursed]This vessel is cursed... it's going to turn anything that's inside it into [semen][otherwise if the curse-ID of X is sure]This potion colour must be cursed... and that's causing it to turn into [semen] when I try to drink it from here[otherwise]One of these is cursed, but I don't know which[end if]...[roman type][line break]";
 	StomachSemenUp 1.
 To say VesselDesc of (V - a squirt dildo):
 	say "This dildo has a hollow inside, hollow balls at the base and a hole at the top. By squeezing the base you can squirt the contents out of the dildo, and by releasing you can capture a bit of whatever liquid the dildo is in.".
@@ -310,6 +310,7 @@ To compute drunken adventure:
 		now champagne-glass is cursed;
 		SetDose champagne-glass to 1;
 		say "You notice that your champagne glass is fill of a clear liquid that smells very strongly of alcohol. The glass seems to glow with a dark aura, suggesting that it might be the glass, rather than the liquid, that is somehow making the drink alcoholic.";
+		update player region;
 		refresh the map-window.
 
 
@@ -389,9 +390,11 @@ To compute cursed drinking (X - teapot):
 		say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The teapot changed everything inside it into [semen]! [if the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 0][one of][line break][variable custom style]'Either the teapot or the drink colour is cursed, but I don[']t know which...'[roman type][line break][or][stopping][end if][line break]";
 		StomachSemenUp 1.
 
-witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items/Accessories/Vessels/goblet1.png".
+witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items/Accessories/Vessels/goblet1.jpg".
 To decide which figure-name is the examine-image of (V - witch's goblet):
 	decide on the figure of witch's goblet.
+To say VesselDesc of (V - witch's goblet):
+	say "This small bronze goblet has some sort of intricate runic pattern circling the outside of the cup. Nothing good could come from drinking from this.".
 To say ShortVesselDesc of (V - witch's goblet):
 	say "witch's goblet".
 Definition: witch's goblet is immune to change: decide yes.

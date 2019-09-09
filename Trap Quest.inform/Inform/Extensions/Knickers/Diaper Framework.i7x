@@ -1,7 +1,9 @@
 Diaper Framework by Knickers begins here.
 
 
-diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 36. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
+diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
+
+The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 A diaper has a number called perceived-urine-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
 
@@ -185,8 +187,6 @@ disposable diaper is a kind of diaper.
 Definition: a disposable diaper is crotch-pullup: decide no.
 pullup diaper is a kind of diaper.
 
-The printed name of diaper is usually "[clothing-title-before]diaper[clothing-title-after]".
-
 The DQFigure of diaper is usually DQMedium.
 
 To compute SelfExamineDesc of (K - a diaper):
@@ -222,13 +222,14 @@ To decide which number is the initial cringe of (C - a diaper):
 	if the urine-soak of C is 0, decrease O by 2;
 	decide on O.
 
-Definition: a diaper (called D) is currently diaper covered: [if it's not, that means it's fully visible. otherwise it means that probably just the shape can be seen.]
+Definition: a diaper (called D) is currently diaper covered rather than currently diaper uncovered: [if it's uncovered, that means it's fully visible. otherwise it means that probably just the shape can be seen.]
 	if D is not worn, decide no;
 	if there is a worn diaper covering clothing, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is diaper covering:
-	if C is potentially at least partially asshole covering not-butt-windowed clothing and C is not knickers, decide yes;
+	if C is potentially at least partially asshole covering not-butt-windowed clothing and C is not knickers:
+		if the skirtLength of C >= the DQBulk of the player, decide yes;
 	decide no.
 
 To decide which number is the unique outrage of (C - a diaper):
@@ -294,12 +295,7 @@ To compute unique periodic effect of (D - a diaper):
 
 Definition: a diaper is basic loot: decide no. [a diaper never spawns from selecting a random basic loot knickers. #MG Seems redundant with the default]
 
-Definition: a diaper (called D) is fetish appropriate:
-	if diaper lover >= 1, decide yes;
-	decide no.
-
-To decide which number is the heaviness of (D - a diaper):
-	decide on the weight of D.
+Definition: a diaper is fetish appropriate if diaper lover >= 1.
 
 To decide which number is the weight of (D - a diaper):
 	let X be 0;
@@ -314,6 +310,7 @@ Definition: a diaper (called D) is eligible: [This allows us to pull diapers tha
 	if D is store, decide no;
 	if D is not plentiful, decide no;
 	if D is off-stage, decide yes;
+	if there is off-stage plentiful unowned diaper, decide no; [There are some off-stage so we want one of them, not this one]
 	if D is in holding pen, decide no;
 	if D is held, decide no;
 	if D is in the location of the player, decide no;

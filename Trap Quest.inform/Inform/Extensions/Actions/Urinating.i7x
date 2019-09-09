@@ -217,8 +217,8 @@ To compute toilet use:
 		say "You feel as if you've regained some control over your bladder[if diaper messing >= 3] and bowels[end if]!";
 	if the player is in Dungeon11:
 		let R be a random number from 1 to 5;
-		let D be a random off-stage plain diaper;
-		if D is nothing, now D is a random off-stage eligible disposable diaper;
+		let D be a random off-stage eligible disposable diaper;
+		if D is nothing, now D is a random eligible diaper;
 		if R is 1 and the player is not diapered:
 			repeat with K running through worn knickers:
 				only destroy K;
@@ -245,13 +245,13 @@ To compute toilet use:
 		otherwise:
 			let C be a random off-stage eligible disposable diaper;
 			if incontinence > 8:
-				now C is a random off-stage plain diaper;
+				now C is a random off-stage plentiful massive diaper;
 			otherwise if incontinence > 7:
-				now C is a random off-stage thick pink diaper;
+				now C is a random off-stage plentiful huge diaper;
 			otherwise if incontinence > 5:
-				now C is a random off-stage blue-and-pink diaper;
+				now C is a random off-stage plentiful large diaper;
 			otherwise if incontinence > 2:
-				now C is a random off-stage princess castle diaper;
+				now C is a random off-stage plentiful medium diaper;
 			otherwise if incontinence > 0:
 				now C is a random off-stage training pants;
 			otherwise:
@@ -372,7 +372,7 @@ To start urination:
 				if the class of the player is priestess:
 					repeat with S running through worn potentially at least partially asshole covering displacable clothing:
 						if S is not K:
-							say "A holy glow surrounds your [ShortDesc of S] as it [if S is skirted]billows upwards[otherwise]falls down[end if], exposing what's underneath!";
+							say "A holy glow surrounds your [ShortDesc of S] as it [if S is skirted]billows upwards[otherwise]falls down[end if], exposing the rapidly yellowing diaper underneath!";
 							displace S;
 				progress quest of altar-sex-quest;
 			if the class of the player is priestess and K is currently visible:
@@ -813,7 +813,7 @@ REQUIRES COMMENTING
 +!]
 To say ToiletPeeReaction of (M - a monster):
 	say "[BigNameDesc of M] frowns with distaste. [line break][speech style of M]'[one of]Disgusting[or]Gross[or]Ugh[in random order]!  [one of][if M is interested]You couldn't wait until we had parted ways[otherwise]I can't believe you'd do that with me standing here... Did you think I was deaf or something[end if][or]Do you enjoy peeing in front of [if M is buddy]friends[otherwise]strangers[end if] or something[or]I'm standing right here, and you just start going to the toilet like that[in random order]?!'[roman type][line break]";
-	unless M is student or M is staff member, FavourDown M with consequences.
+	unless M is staff member, FavourDown M with consequences.
 
 [!<SayPeeReaction1>+
 

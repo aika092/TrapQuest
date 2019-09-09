@@ -51,12 +51,11 @@ To compute class outfit of (H - glittering rose):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-		summon B;
-		now the raw-magic-modifier of B is 0;
+		summon B uncursed;
 		say "A giant pair of wings appear on your back. You feel lighter!";
 		now fairy-summoned is 1;
 	otherwise if W is fairy wand:
-		summon W;
+		summon W uncursed;
 		now the raw-magic-modifier of W is the number of alive fairy / 2;
 		say "You notice a peculiar warm feeling in your hand, and look down to see a tiny pink wand just barely large enough for you resting in your grasp".
 
