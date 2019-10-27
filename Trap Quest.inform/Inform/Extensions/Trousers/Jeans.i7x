@@ -11,7 +11,7 @@ To decide which figure-name is clothing-image of (H - a jeans):
 To say UniqueClothingDesc of (J - a jeans):
 	say "A pair of tight fitting denim jeans with a [if J is crotch-unzipped]open zip[otherwise if J is crotch-ripped]ripped hole[otherwise if J is zippable]convenient zip[otherwise]layer of protective denim[end if] at the crotch.[if J is zippable and diaper quest is 0]The zip goes all the way up the back to potentially allow anal access.[otherwise if J is zippable]The zip goes all the way up the back to allow for easy diaper checks and changes.[end if]".
 
-To say ShortDesc of (Y - a  jeans):
+To say ShortDesc of (Y - a jeans):
 	say "pair of zip up jeans".
 
 To decide which object is the unique-upgrade-target of (C - a jeans):

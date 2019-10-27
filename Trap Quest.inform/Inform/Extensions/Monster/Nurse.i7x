@@ -139,11 +139,11 @@ To compute student perception of (M - nurse):
 	otherwise if the breast-enhancement of M is 1:
 		say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise if the body soreness of the player > 0:
-		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]!  Why don't you come through to the med bay [one of]with me?  I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
+		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
 	otherwise if the player is tired:
 		say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
 	otherwise if the boost-cooldown of M <= 0:
-		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]?  If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]".
 

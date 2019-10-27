@@ -195,7 +195,7 @@ Book - B Tattoos
 babygirl tattoo is a leg tattoo. The tattoo-title of babygirl tattoo is "babygirl".
 Figure of babygirl tattoo is the file "Items/Tats/tattoo66.png".
 To decide which figure-name is the examine-image of (T - babygirl tattoo):
-    decide on figure of babygirl tattoo.
+	decide on figure of babygirl tattoo.
 Definition: babygirl tattoo is drawable:
 	if there is a worn leg tattoo, decide no;
 	if diaper lover <= 0, decide no;
@@ -221,7 +221,7 @@ Definition: bat tattoo is eligible:
 	if the noun is bat corset or the noun is heart themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - bat tattoo):
-    decide on figure of bat tattoo.
+	decide on figure of bat tattoo.
 To say tattoo-desc of (T - bat tattoo):
 	say "A heart with laces sewn into it, and with bat wings, is tattooed onto your chest.".
 To decide which number is the intelligence-influence of (T - bat tattoo):
@@ -238,7 +238,7 @@ To decide which number is the strength-influence of (T - bat tattoo):
 bed-wetter tattoo is a body tattoo. The tattoo-title of bed-wetter tattoo is "bed wetter". Understand "wetter" as bed-wetter tattoo.
 Figure of bed wetter tattoo is the file "Items/Tats/tattoo101.png".
 To decide which figure-name is the examine-image of (T - bed-wetter tattoo):
-    decide on figure of bed wetter tattoo.
+	decide on figure of bed wetter tattoo.
 Definition: bed-wetter tattoo is eligible:
 	if diaper lover <= 0, decide no;
 	if the noun is diaper or the noun is bed wetting clothing, decide yes;
@@ -262,7 +262,7 @@ Definition: bed-wetter tattoo is baby themed: [Is it something that only an adul
 bird kitty tattoo is a body tattoo. The tattoo-title of bird kitty tattoo is "bird and kitty".
 Figure of bird kitty tattoo is the file "Items/Tats/tattoo59.png".
 To decide which figure-name is the examine-image of (T - bird kitty tattoo):
-    decide on figure of bird kitty tattoo.
+	decide on figure of bird kitty tattoo.
 Definition: bird kitty tattoo is eligible:
 	if the noun is cat themed or the noun is bird themed, decide yes;
 	decide no.
@@ -304,7 +304,7 @@ A time based rule (this is the Christmas tattoo rule):
 birds tattoo is a body tattoo. The tattoo-title of birds tattoo is "birds".
 Figure of birds tattoo is the file "Items/Tats/tattoo70.png".
 To decide which figure-name is the examine-image of (T - birds tattoo):
-    decide on figure of birds tattoo.
+	decide on figure of birds tattoo.
 Definition: birds tattoo is eligible:
 	if the noun is egg or the noun is inflation themed or the noun is bird themed, decide yes;
 	decide no.
@@ -326,7 +326,7 @@ Figure of bitch tattoo is the file "Items/Tats/tattoo103.png".
 Figure of bitchboy tattoo is the file "Items/Tats/tattoo104.png".
 To decide which figure-name is the examine-image of (T - bitch tattoo):
 	if the player is a flatchested trap, decide on figure of bitchboy tattoo;
-    decide on figure of bitch tattoo.
+	decide on figure of bitch tattoo.
 To say ShortDesc of (T - bitch tattoo):
 	say "bitch[if the player is a flatchested trap]boy[end if] tattoo".
 Understand "boy", "bitchboy" as bitch tattoo.
@@ -428,7 +428,7 @@ To decide which object is the concealer of (T - black owned tattoo):
 born to lose tattoo is a crotch tattoo. The tattoo-title of born to lose tattoo is "born to lose".
 Figure of born to lose tattoo is the file "Items/Tats/tattoo14.png".
 To decide which figure-name is the examine-image of (T - born to lose tattoo):
-    decide on figure of born to lose tattoo.
+	decide on figure of born to lose tattoo.
 Definition: born to lose tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if the noun is pack of playing cards, decide yes;
@@ -704,7 +704,7 @@ Definition: cupcake tattoo is eligible:
 	if the noun is food themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - cupcake tattoo):
-    decide on figure of cupcake tattoo.
+	decide on figure of cupcake tattoo.
 To say tattoo-desc of (T - cupcake tattoo):
 	say "A large pink cupcake is tattooed on your [BreastDesc]. You sense that it has a chance of helping you out when you get hungry and tired.".
 cupcake-charge is a number that varies.
@@ -733,7 +733,7 @@ Definition: cupcake wrist tattoo is eligible:
 	if the noun is food themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - cupcake wrist tattoo):
-    decide on figure of cupcake wrist tattoo.
+	decide on figure of cupcake wrist tattoo.
 To say tattoo-desc of (T - cupcake wrist tattoo):
 	say "This colourful smiling cupcake is tattooed on the inside of your right wrist. You sense that it has a chance of helping you out when you get hungry and tired.".
 To decide which object is the concealer of (T - cupcake wrist tattoo):
@@ -779,7 +779,7 @@ Definition: daddy's little girl tattoo is eligible:
 		if the fill-colour of the noun is white, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - daddy's little girl tattoo):
-    decide on figure of daddy's little girl tattoo.
+	decide on figure of daddy's little girl tattoo.
 To say tattoo-desc of (T - daddy's little girl tattoo):
 	say "The words 'daddy's little girl' are permanently inked in tiny swirly letters above your crotch. You find yourself feeling weirdly averse to wearing any underwear except diapers.".
 To decide which number is the cringe of (T - daddy's little girl tattoo):
@@ -793,7 +793,7 @@ daddy's wild child tattoo is a body tattoo. The tattoo-title of daddy's wild chi
 Figure of daddy's wild child tattoo is the file "Items/Tats/tattoo76.png".
 Definition: daddy's wild child tattoo is eligible: decide no.
 To decide which figure-name is the examine-image of (T - daddy's wild child tattoo):
-    decide on figure of daddy's wild child tattoo.
+	decide on figure of daddy's wild child tattoo.
 To say tattoo-desc of (T - daddy's wild child tattoo):
 	say "The words 'daddy's wild child' are tattooed in large looping letters on the outside of your right arm.".
 To decide which object is the concealer of (T - daddy's wild child tattoo):
@@ -835,7 +835,7 @@ Definition: demon tattoo is eligible:
 	if the noun is demonic thing, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - demon tattoo):
-    decide on figure of demon tattoo.
+	decide on figure of demon tattoo.
 To say tattoo-desc of (T - demon tattoo):
 	say "A tattoo of a demon's head surrounds your [genitals]. You can feel it somehow giving you power over demons, but you don't know in what manner.".
 Definition: demon tattoo is demonic: decide yes.
@@ -847,7 +847,7 @@ Definition: demon tattoo is demonic: decide yes.
 demongirl tattoo is a body tattoo. The tattoo-title of demongirl tattoo is "demongirl".
 Figure of demongirl tattoo is the file "Items/Tats/tattoo52.png".
 To decide which figure-name is the examine-image of (T - demongirl tattoo):
-    decide on figure of demongirl tattoo.
+	decide on figure of demongirl tattoo.
 Definition: demongirl tattoo is eligible: decide no.
 To say tattoo-desc of (T - demongirl tattoo):
 	say "A drawing of a saucy demongirl is tattooed on your left arm.".
@@ -943,7 +943,7 @@ To decide which number is the initial outrage of (T - a double penetration tatto
 
 drinkme tattoo is a body tattoo. Figure of drinkme tattoo is the file "Items/Tats/tattoo65.png".
 To decide which figure-name is the examine-image of (T - drinkme tattoo):
-    decide on figure of drinkme tattoo.
+	decide on figure of drinkme tattoo.
 Definition: drinkme tattoo is eligible:
 	if the noun is drink themed, decide yes;
 	decide no.
@@ -1000,7 +1000,7 @@ Definition: eat-your-heart-out tattoo is heart themed: decide yes.
 elephant tattoo is a dq tattoo. The tattoo-title of elephant tattoo is "elephant".
 Figure of elephant tattoo is the file "Items/Tats/tattoo73.png".
 To decide which figure-name is the examine-image of (T - elephant tattoo):
-    decide on figure of elephant tattoo.
+	decide on figure of elephant tattoo.
 Definition: elephant tattoo is drawable if it is not worn and (diaper quest is 0 or it is eligible).
 Definition: elephant tattoo is eligible:
 	if the noun is heart themed or the noun is tail plug or the noun is grey themed or the noun is elephant themed, decide yes;
@@ -1047,7 +1047,7 @@ Definition: failed potty training tattoo is drawable: decide no.
 Definition: failed potty training tattoo is eligible: decide no.
 Figure of failed potty training tattoo is the file "Items/Tats/tattoo125.jpg".
 To decide which figure-name is the examine-image of (T - failed potty training tattoo):
-    if diaper lover >= 3, decide on figure of failed potty training tattoo;
+	if diaper lover >= 3, decide on figure of failed potty training tattoo;
 	decide on figure of no-image-yet.
 To say tattoo-desc of (T - failed potty training tattoo):
 	say "The words 'I FAILED POTTY TRAINING' are tattooed on your belly. You can no longer feel how full your bladder [if diaper messing >= 3]or bowels are[otherwise]is[end if].".
@@ -1059,8 +1059,8 @@ To summon (T - failed potty training tattoo):
 	compute inking effect of T.
 To decide which number is the initial cringe of (T - failed potty training tattoo):
 	decide on 15.
-Definition: failed potty training tattoo is baby themed:  decide yes. [Is it something that only an adult baby fetishist would have?]
-Definition: failed potty training tattoo is toilet themed:  decide yes.
+Definition: failed potty training tattoo is baby themed: decide yes. [Is it something that only an adult baby fetishist would have?]
+Definition: failed potty training tattoo is toilet themed: decide yes.
 
 
 
@@ -1069,7 +1069,7 @@ Definition: failed potty training tattoo is toilet themed:  decide yes.
 flower ballerina tattoo is a body tattoo. The tattoo-title of flower ballerina tattoo is "flower ballerina".
 Figure of flower ballerina tattoo is the file "Items/Tats/tattoo58.png".
 To decide which figure-name is the examine-image of (T - flower ballerina tattoo):
-    decide on figure of flower ballerina tattoo.
+	decide on figure of flower ballerina tattoo.
 Definition: flower ballerina tattoo is eligible:
 	if the noun is ballet related or the noun is flower themed, decide yes;
 	decide no.
@@ -1115,7 +1115,7 @@ Definition: for deposit only tattoo is vagina themed: decide yes.
 forever tattoo is a crotch tattoo. The tattoo-title of forever tattoo is "nothing is forever". Understand "nothing is" as forever tattoo.
 Figure of forever tattoo is the file "Items/Tats/tattoo16.png".
 To decide which figure-name is the examine-image of (T - forever tattoo):
-    decide on figure of forever tattoo.
+	decide on figure of forever tattoo.
 Definition: forever tattoo is eligible:
 	if the noun is plentiful accessory, decide yes;
 	decide no.
@@ -1154,7 +1154,7 @@ Definition: freedom tattoo is eligible:
 	if the noun is bondage or the noun is submissive collar or the noun is an unlock-key or the noun is bird themed or the noun is slave-dress, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - freedom tattoo):
-    decide on figure of freedom tattoo.
+	decide on figure of freedom tattoo.
 To say tattoo-desc of (T - freedom tattoo):
 	say "The word 'Freedom' is permanently etched on your right hand butt cheek in a tidy italic font.".
 To decide which number is the dexterity-modifier of (T - freedom tattoo):
@@ -1190,7 +1190,7 @@ Definition: fuckin classy tattoo is eligible:
 	if the noun is gem themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - fuckin classy tattoo):
-    decide on figure of fuckin classy tattoo.
+	decide on figure of fuckin classy tattoo.
 To say tattoo-desc of (T - fuckin classy tattoo):
 	say "The words 'fuckin classy' with a heart are tattooed with a jazzy font on your torso.".
 To decide which object is the concealer of (T - fuckin classy tattoo):
@@ -1224,7 +1224,7 @@ Definition: guns-n-roses tattoo is eligible:
 	if the noun is magic pistol or the noun is flower themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - guns-n-roses tattoo):
-    decide on figure of guns-n-roses tattoo.
+	decide on figure of guns-n-roses tattoo.
 To say tattoo-desc of (T - guns-n-roses tattoo):
 	say "Two large pistols and 2 large roses surround the word 'strength' on your lower back.".
 To decide which number is the initial outrage of (T - guns-n-roses tattoo):
@@ -1243,7 +1243,7 @@ Definition: heavyweight tattoo is eligible:
 	if the noun is egg or the noun is metal disc or the noun is food or the noun is metal clothing, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - heavyweight tattoo):
-    decide on figure of heavyweight tattoo.
+	decide on figure of heavyweight tattoo.
 To say tattoo-desc of (T - heavyweight tattoo):
 	say "The word 'Heavy' is inked on the back your left leg and the word 'Weight' on the back of your right leg. You feel as if it is somehow weighing you down.".
 To decide which number is the heaviness of (T - heavyweight tattoo):
@@ -1286,7 +1286,7 @@ Definition: i-suck tattoo is eligible:
 	if the noun is oral sex themed or the noun is baby's bottle, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - i-suck tattoo):
-    decide on figure of i-suck tattoo.
+	decide on figure of i-suck tattoo.
 To say tattoo-desc of (T - i-suck tattoo):
 	say "The words 'I suck' are written on your arm with red sharpie.".
 To decide which object is the concealer of (T - i-suck tattoo):
@@ -1340,7 +1340,7 @@ A speech penalties rule (this is the spontaneous incontinence rule):
 ink-me tattoo is a body tattoo. The tattoo-title of ink-me tattoo is "ink me". Understand "ink" as ink-me tattoo.
 Figure of ink-me tattoo is the file "Items/Tats/tattoo117.jpg".
 To decide which figure-name is the examine-image of (T - ink-me tattoo):
-    decide on figure of ink-me tattoo.
+	decide on figure of ink-me tattoo.
 Definition: ink-me tattoo is eligible: decide no.
 To say tattoo-desc of (T - ink-me tattoo):
 	say "The words 'INK ME' are tattooed in block capitals on the back of your left hand.".
@@ -1432,7 +1432,7 @@ let it die tattoo is a crotch tattoo. The tattoo-title of let it die tattoo is "
 Figure of let it die tattoo is the file "Items/Tats/tattoo43.png".
 Definition: let it die tattoo is eligible if the noun is monster-drop.
 To decide which figure-name is the examine-image of (T - let it die tattoo):
-    decide on figure of let it die tattoo.
+	decide on figure of let it die tattoo.
 To say tattoo-desc of (T - let it die tattoo):
 	say "The words 'let it die' are permanently inked above your crotch. You feel more reluctant to have dominant sex with defeated opponents.".
 To decide which number is the initial outrage of (T - let it die tattoo):
@@ -1450,7 +1450,7 @@ Definition: lipstick crystal tattoo is eligible:
 	if the noun is make up kit or the noun is plentiful accessory or the noun is gem themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - lipstick crystal tattoo):
-    decide on figure of lipstick crystal tattoo.
+	decide on figure of lipstick crystal tattoo.
 To say tattoo-desc of (T - lipstick crystal tattoo):
 	say "This colourful surrealist lipstick with crystalline rocks poking out the bottom is tattooed on the inside of your right wrist. You feel that it increases your mental resilience depending on your make up level.".
 To decide which object is the concealer of (T - lipstick crystal tattoo):
@@ -1482,7 +1482,7 @@ To decide which number is the initial outrage of (T - loser tattoo):
 lucky you tattoo is a crotch tattoo. The tattoo-title of lucky you tattoo is "lucky you".
 Figure of lucky you tattoo is the file "Items/Tats/tattoo15.png".
 To decide which figure-name is the examine-image of (T - lucky you tattoo):
-    decide on figure of lucky you tattoo.
+	decide on figure of lucky you tattoo.
 Definition: lucky you tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if it is eligible, decide yes;
@@ -1594,7 +1594,7 @@ To decide which number is the initial outrage of (T - no-panties tattoo):
 no-regrets tattoo is a body tattoo. The tattoo-title of no-regrets tattoo is "no regrets".
 Figure of no-regrets tattoo is the file "Items/Tats/tattoo49.png".
 To decide which figure-name is the examine-image of (T - no-regrets tattoo):
-    decide on figure of no-regrets tattoo.
+	decide on figure of no-regrets tattoo.
 Definition: no-regrets tattoo is eligible:
 	if the noun is book of regrets or the noun is pink pill, decide yes;
 	decide no.
@@ -1610,7 +1610,7 @@ To decide which object is the concealer of (T - no-regrets tattoo):
 nothing's sacred tattoo is a body tattoo. The tattoo-title of nothing's sacred tattoo is "nothing's sacred". nothing's sacred tattoo has a number called soul-charge.
 Figure of nothing's sacred tattoo is the file "Items/Tats/tattoo42.png".
 To decide which figure-name is the examine-image of (T - nothing's sacred tattoo):
-    decide on figure of nothing's sacred tattoo.
+	decide on figure of nothing's sacred tattoo.
 Definition: nothing's sacred tattoo is eligible:
 	if the noun is infernal gem or the noun is purity clothing or the noun is runic headband or the noun is witch's goblet or the noun is mystical amulet or the noun is demonic or the noun is soulstone or the noun is blazing dress or the noun is dildo heels, decide yes;
 	decide no.
@@ -1669,7 +1669,7 @@ The once-you-go-black tattoo pussy slut rule is listed in the pussy slut eligibi
 overcome tattoo is a chest tattoo. The tattoo-title of overcome tattoo is "overcome".
 Figure of overcome tattoo is the file "Items/Tats/tattoo24.png".
 To decide which figure-name is the examine-image of (T - overcome tattoo):
-    decide on figure of overcome tattoo.
+	decide on figure of overcome tattoo.
 Definition: overcome tattoo is eligible:
 	if the noun is exercise themed, decide yes;
 	if the noun is clothing:
@@ -1690,7 +1690,7 @@ Book - P Tattoos
 paw print tattoo is a body tattoo. The tattoo-title of paw print tattoo is "paw print".
 Figure of paw print tattoo is the file "Items/Tats/tattoo60.png".
 To decide which figure-name is the examine-image of (T - paw print tattoo):
-    decide on figure of paw print tattoo.
+	decide on figure of paw print tattoo.
 Definition: paw print tattoo is eligible:
 	if the noun is dog themed, decide yes;
 	decide no.
@@ -1767,7 +1767,7 @@ Definition: princess castle tattoo is royalty themed: decide yes.
 princess-tattoo is a lower back tattoo. The tattoo-title of princess-tattoo is "princess tramp stamp".
 Figure of princess-tattoo is the file "Items/Tats/tattoo35.png".
 To decide which figure-name is the examine-image of (T - princess-tattoo):
-    decide on figure of princess-tattoo.
+	decide on figure of princess-tattoo.
 Definition: princess-tattoo is eligible:
 	if the noun is royalty themed, decide yes;
 	decide no.
@@ -1865,7 +1865,7 @@ Definition: respect the pussy tattoo is vagina themed: decide yes.
 ribbon-bow-neck tattoo is a body tattoo. The tattoo-title of ribbon-bow-neck tattoo is "ribbon bow neck".
 Figure of ribbon-bow-neck tattoo is the file "Items/Tats/tattoo71.png".
 To decide which figure-name is the examine-image of (T - ribbon-bow-neck tattoo):
-    decide on figure of ribbon-bow-neck tattoo.
+	decide on figure of ribbon-bow-neck tattoo.
 Definition: ribbon-bow-neck tattoo is eligible:
 	if the noun is bow themed, decide yes;
 	decide no.
@@ -1887,7 +1887,7 @@ Definition: ribbon-bow-neck tattoo is bow themed: decide yes.
 ribbon bow tattoo is a leg tattoo. The tattoo-title of ribbon bow tattoo is "ribbon bow leg".
 Figure of ribbon bow tattoo is the file "Items/Tats/tattoo29.png".
 To decide which figure-name is the examine-image of (T - ribbon bow tattoo):
-    decide on figure of ribbon bow tattoo.
+	decide on figure of ribbon bow tattoo.
 Definition: ribbon bow tattoo is eligible:
 	if the noun is stockings or the noun is bow themed, decide yes;
 	decide no.
@@ -1908,7 +1908,7 @@ Definition: ribbon bow tattoo is bow themed: decide yes.
 royal hearts tattoo is a body tattoo. The tattoo-title of royal hearts tattoo is "royal hearts".
 Figure of royal hearts tattoo is the file "Items/Tats/tattoo67.png".
 To decide which figure-name is the examine-image of (T - royal hearts tattoo):
-    decide on figure of royal hearts tattoo.
+	decide on figure of royal hearts tattoo.
 Definition: royal hearts tattoo is eligible:
 	if the noun is royalty themed or the noun is heart themed, decide yes;
 	decide no.
@@ -1979,7 +1979,7 @@ Definition: semen demon tattoo is semen themed: decide yes.
 showtime tattoo is a leg tattoo. The tattoo-title of showtime tattoo is "showtime".
 Figure of showtime tattoo is the file "Items/Tats/tattoo25.png".
 To decide which figure-name is the examine-image of (T - showtime tattoo):
-    decide on figure of showtime tattoo.
+	decide on figure of showtime tattoo.
 Definition: showtime tattoo is eligible:
 	if the noun is stockings, decide yes;
 	decide no.
@@ -2053,7 +2053,7 @@ To decide which number is the bimbo-influence of (T - slut-tattoo):
 spank tattoo is an ass tattoo. The tattoo-title of spank tattoo is "spank me".
 Figure of spank tattoo is the file "Items/Tats/tattoo3.jpg".
 To decide which figure-name is the examine-image of (T - spank tattoo):
-    decide on figure of spank tattoo.
+	decide on figure of spank tattoo.
 To say tattoo-desc of (T - spank tattoo):
 	say "Your ass cheeks have the words 'Spank Me' permanently inked onto the skin.[if the bimbo of the player > 11 and the thickness of hips > 6][line break][second custom style][line break]I deserve a good spanking for having such a big naughty bum![roman type][line break][end if][if diaper quest is 0 and asshole is lewdly exposed]You can feel the tattoo increasing your dexterity, but also your sensitivity to pain.[otherwise if diaper quest is 0]You can feel that the tattoo is encouraging you to not cover your [asshole] up.[end if]".
 To decide which number is the dexterity-influence of (T - spank tattoo):
@@ -2084,7 +2084,7 @@ Definition: spank my kitty tattoo is eligible:
 	if the noun is butt-windowed clothing or the noun is super-short clothing or the noun is short clothing or the noun is focus band or the noun is cat themed or the noun is impact play themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - spank my kitty tattoo):
-    decide on figure of spank my kitty tattoo.
+	decide on figure of spank my kitty tattoo.
 To say tattoo-desc of (T - spank my kitty tattoo):
 	say "Your left ass cheek has an image of a cute winking pussycat above the words 'spank my kitty', now permanently inked onto your skin.[if the bimbo of the player > 11][line break][second custom style][line break]I wonder if it means the tattoo itself or my [vagina]?[roman type][line break][end if][if diaper quest is 0 and vagina is lewdly exposed]You can feel that it's happy about the fact that your [vagina] is on display.[otherwise if diaper quest is 0]You can feel that the tattoo is encouraging you to not cover your [vagina] up.[end if]".
 To decide which number is the strength-influence of (T - spank my kitty tattoo):
@@ -2151,7 +2151,7 @@ Definition: take it easy tattoo is eligible:
 	if the noun is pink pill or the noun is bandage or the noun is apple or the noun is pyjama bottoms or the noun is romper or the noun is nightie or the noun is pure totem or the noun is baby booties, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - take it easy tattoo):
-    decide on figure of take it easy tattoo.
+	decide on figure of take it easy tattoo.
 To say tattoo-desc of (T - take it easy tattoo):
 	say "A drawing of a palm tree with the phrase 'take it easy' is tattooed on the inside of your left forearm.".
 To decide which object is the concealer of (T - take it easy tattoo):
@@ -2287,7 +2287,7 @@ Definition: tentacles tattoo is pregnancy related: decide yes.
 thorny tattoo is a body tattoo. The tattoo-title of thorny tattoo is "thorny". Understand "thorn" as thorny tattoo.
 Figure of thorny tattoo is the file "Items/Tats/tattoo127.jpg".
 To decide which figure-name is the examine-image of (T - thorny tattoo):
-    decide on figure of thorny tattoo.
+	decide on figure of thorny tattoo.
 Definition: thorny tattoo is eligible:
 	if the noun is purity, decide yes;
 	if the noun is writhing vine, decide yes;
@@ -2386,7 +2386,7 @@ Definition: unicorn-horn-finger tattoo is eligible:
 	if the noun is gloves or the noun is magic themed or the noun is fairy wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - unicorn-horn-finger tattoo):
-    decide on figure of unicorn-horn-finger tattoo.
+	decide on figure of unicorn-horn-finger tattoo.
 To say tattoo-desc of (T - unicorn-horn-finger tattoo):
 	say "This unicorn horn is tattooed on the side of your right index finger. It has a pink bow at the bottom and sparkles shooting out of the tip.".
 To decide which object is the concealer of (T - unicorn-horn-finger tattoo):
@@ -2503,7 +2503,7 @@ Definition: wet dream tattoo is semen themed: decide yes.
 whip tattoo is a body tattoo. The tattoo-title of whip tattoo is "whip".
 Figure of whip tattoo is the file "Items/Tats/tattoo75.png".
 To decide which figure-name is the examine-image of (T - whip tattoo):
-    decide on figure of whip tattoo.
+	decide on figure of whip tattoo.
 Definition: whip tattoo is eligible:
 	if the noun is impact play themed or the noun is writhing vine, decide yes;
 	decide no.
@@ -2558,7 +2558,7 @@ Definition: whore-is-my-mind tattoo is whore themed if the bimbo of the player >
 witchcraft tattoo is a leg tattoo. The tattoo-title of witchcraft tattoo is "witchcraft".
 Figure of witchcraft tattoo is the file "Items/Tats/tattoo27.png".
 To decide which figure-name is the examine-image of (T - witchcraft tattoo):
-    decide on figure of witchcraft tattoo.
+	decide on figure of witchcraft tattoo.
 Definition: witchcraft tattoo is eligible:
 	if the noun is magic themed, decide yes;
 	decide no.
@@ -2628,7 +2628,7 @@ Book - Y Tattoos
 you live you learn tattoo is a chest tattoo. The tattoo-title of you live you learn tattoo is "you live you learn".
 Figure of you live you learn tattoo is the file "Items/Tats/tattoo21.png".
 To decide which figure-name is the examine-image of (T - you live you learn tattoo):
-    decide on figure of you live you learn tattoo.
+	decide on figure of you live you learn tattoo.
 Definition: you live you learn tattoo is drawable:
 	if there is a worn chest tattoo, decide no;
 	if it is eligible, decide yes; [not chosen randomly]

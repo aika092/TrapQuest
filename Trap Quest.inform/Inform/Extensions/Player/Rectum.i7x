@@ -371,7 +371,7 @@ REQUIRES COMMENTING
 
 +!]
 To say diaper mess declaration of (M2 - a monster):
-	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo!  Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".
+	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo! Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".
 
 [!<ComputeDiaperMessReactionOfMonster>+
 
@@ -380,7 +380,7 @@ REQUIRES COMMENTING
 +!]
 To compute diaper mess reaction of (M - a monster):
 	if diaper quest is 1:
-		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me?  You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		unless M is student or M is staff member:
@@ -390,7 +390,7 @@ To compute diaper mess reaction of (M - a monster):
 			FavourDown M by 4;
 			if M is unfriendly and previous-friendly is 1, say BecomesAggressive of M;
 	otherwise:
-		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes]. [line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?!  How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes]. [line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?! How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		if M is friendly or M is uninterested:

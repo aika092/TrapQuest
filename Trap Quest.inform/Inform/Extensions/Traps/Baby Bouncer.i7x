@@ -76,7 +76,7 @@ To say SexSubmissionFlav of (Y - a baby bouncer):
 	check bounce release of Y.
 
 To say SexResistFlav of (Y - a baby bouncer):
-	say "You struggle to get out without bouncing!  The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation. The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
+	say "You struggle to get out without bouncing! The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation. The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
 	increase the bounces of Y by 1;
 	ruin vagina times 2;
 	now the willingbounce of Y is 0;

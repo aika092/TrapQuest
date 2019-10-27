@@ -236,13 +236,13 @@ To compute teaching of (L - practical-lesson):
 			if the player is female and ass-count > 0 and vagina is not actually occupied and the number of worn chastity cage is 0, say "You aren't allowed to use your [vagina] while there's someone else's ass juices on [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L], as that would be unhealthy.";
 			if face is not actually occupied:
 				say "[line break]Use your mouth? ";
-				unless pussy-count is 0 and ass-count is 0 and slobber-owner is the player, say "(you'll have to slurp up [if pussy-count > 1][pussy-count] lots of vaginal juices [otherwise if pussy-count >  0]the taste of someone's pussy juice [end if][if pussy-count >  0 and ass-count > 0]and [end if][if ass-count > 1][ass-count] lots of ass juices[otherwise if ass-count >  0]the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0][NameDesc of slobber-owner][']s slobber[end if]). ";
+				unless pussy-count is 0 and ass-count is 0 and slobber-owner is the player, say "(you'll have to slurp up [if pussy-count > 1][pussy-count] lots of vaginal juices [otherwise if pussy-count > 0]the taste of someone's pussy juice [end if][if pussy-count > 0 and ass-count > 0]and [end if][if ass-count > 1][ass-count] lots of ass juices[otherwise if ass-count > 0]the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0][NameDesc of slobber-owner][']s slobber[end if]). ";
 				say "";
 				if the player is consenting:
 					now the lesson-teacher of L is penetrating face;
 					say "You [if the oral sex addiction of the player < 4]hesitantly[otherwise if the oral sex addiction of the player < 8]gracefully[otherwise]greedily[end if] take the [LongDickDesc of lesson-teacher of L] into your mouth. ";
 					if the player is a deepthroater:
-						say "You skilfully push the massive rod straight down your throat, making proud gagging sounds around it as you do.  You move your head up and down, up and down, essentially fucking your own throat as you do. ";
+						say "You skilfully push the massive rod straight down your throat, making proud gagging sounds around it as you do. You move your head up and down, up and down, essentially fucking your own throat as you do. ";
 						increase stimulation-level by 1;
 					if player-filthiness < ass-count + pussy-count + stimulation-level:
 						now player-filthiness is ass-count + pussy-count + stimulation-level;

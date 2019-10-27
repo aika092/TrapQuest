@@ -73,7 +73,7 @@ To compute insertionRuin of (S - an anal beads) into (F - a fuckhole):
 		ruin F;
 		if the girth of S > the openness of F + 1, ruin F;
 	otherwise if the girth of S > the openness of F - 2:
-		say "Oof!  You definitely felt that as you pushed it inside.";
+		say "Oof! You definitely felt that as you pushed it inside.";
 	otherwise:
 		say "Your [variable F] is loose enough to let the bead slip in easily.".
 

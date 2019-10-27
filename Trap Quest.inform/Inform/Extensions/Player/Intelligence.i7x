@@ -58,7 +58,7 @@ To decide which number is the flat intelligence of the player:
 	if toffee-poison-timer > 0, now I is I / 2;
 	if (the bimbo of the player is 19 or hungover > 0 or the player is fighting against topless or the player is fighting against no-panties) and I > 5:
 		now I is 5;
-	if  I > 2 and the bimbo of the player is 20 or the soreness of asshole is 10 or the soreness of vagina is 10 or the player is extremely horny:
+	if I > 2 and the bimbo of the player is 20 or the soreness of asshole is 10 or the soreness of vagina is 10 or the player is extremely horny:
 		now I is 2;
 	if temp_int_dam > 0, decrease I by temp_int_dam;
 	now I is (I * (5 - alcohol-level)) / 5;

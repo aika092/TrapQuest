@@ -7,7 +7,7 @@ Bimbo by Player begins here.
  semen addiction and semen taste addiction vary between 1 and 20.
  delicateness varies between 1 and 20. (It's calculated here.)
  bimbo is a combination of the openness of the asshole, and either the
- openness of the vagina or the smallness of the penis,  as well as the
+ openness of the vagina or the smallness of the penis, as well as the
  semen addiction, sex addiction, heel skill, the bimbo-influence of
  any clothing worn (including piercings), plus cursed piercings.
  humiliation varies between 0 and 40000.

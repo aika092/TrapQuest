@@ -35,9 +35,9 @@ Decreases the charge of a summoning portal by a given amount
 @param <Integer>:<X> The amount of charge the portal will lose
 
 +!]
-To ChargeDown (S - a summoning portal)  by (X - a number):
+To ChargeDown (S - a summoning portal) by (X - a number):
 	decrease the charge of S by X.
-To ChargeDown (S - summoning-circle)  by (X - a number):
+To ChargeDown (S - summoning-circle) by (X - a number):
 	if the number of alive royal guards is 0, increase X by X * (1 + the number of held stolen clothing);
 	decrease the charge of S by X.
 
@@ -665,7 +665,7 @@ To say MummyType of (S - a mysterious-mummy):
 	otherwise:
 		say "mysterious".
 
-Understand "winged", "crawling",  "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
+Understand "winged", "crawling", "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
 
 To decide which object is the summonChoice of (S - a mysterious-mummy):
 	let N be the next-summon of S;
