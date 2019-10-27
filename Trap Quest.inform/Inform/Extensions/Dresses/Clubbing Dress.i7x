@@ -44,7 +44,7 @@ The remove inappropriate clubbing dresses rule is listed in the diaper quest fix
 
 Part 1 - Pink Clubbing Dress
 
-A pink clubbing dress is a kind of clubbing dress. A pink clubbing dress is usually average cut.  There is 1 pink clubbing dress. Figure of pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress1.png". The text-shortcut of pink clubbing dress is "pcd".
+A pink clubbing dress is a kind of clubbing dress. A pink clubbing dress is usually average cut. There is 1 pink clubbing dress. Figure of pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress1.png". The text-shortcut of pink clubbing dress is "pcd".
 
 The printed name of pink clubbing dress is usually "[clothing-title-before]pink clubbing dress[clothing-title-after]".
 
@@ -236,7 +236,7 @@ To say TransformReaction of (C - an exposing clubbing dress):
 	otherwise if C is almost too much:
 		say "[variable custom style][if breasts is lewdly exposed]Exposing my tits like this[otherwise]Wearing slutty outfits like this[end if] is scary but exhilarating![roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
-		say "[variable custom style]Ooh, nice!  This way I can show off all my assets all the time![roman type][line break]".
+		say "[variable custom style]Ooh, nice! This way I can show off all my assets all the time![roman type][line break]".
 
 Part 9 - Exposing Pink Clubbing Dress
 

@@ -186,7 +186,7 @@ To say AllyDamageFlav of (M - a giant wasp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]speedily flies in to protect you and your eggs. It [or][stopping]stings the [X]!".
 
 To compute anal sex of (M - a giant wasp):
-	say "[BigNameDesc of M] keeps thrusting with its ovipositor!  ";
+	say "[BigNameDesc of M] keeps thrusting with its ovipositor! ";
 	if the medium egg count of belly is 0, cutshow figure of wasp cutscene 1 for M;
 	if a random number between 1 and 2 is 1:
 		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [asshole], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your belly!";
@@ -196,7 +196,7 @@ To compute anal sex of (M - a giant wasp):
 		if the sex-length of M > 1:
 			decrease the sex-length of M by 1;
 			assfill 1 medium eggs;
-	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof!  This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
+	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof! This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
 	decrease the sex-length of M by 1;
 	ruin asshole.
 

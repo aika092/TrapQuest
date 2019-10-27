@@ -23,7 +23,7 @@ http://inform7.com/download/content/6F95/I7_6F95_Linux_all.tar.gz
 
 Also gnome-inform had another issue but it seems a harmless one, at least make -k and make -k install and built a working gnome-inform (so far).
 
-Also had to 
+Also had to
 mv Trap\ Quest.materials/*.png 'Trap Quest Materials'/
 
 And now Trap quest seems to run :)

@@ -295,7 +295,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PregFlav:
-	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type]  [if the bimbo of the player < 13][line break][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][line break][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
+	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type] [if the bimbo of the player < 13][line break][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][line break][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
 
 [!<SayDefaultBirthScene>+
 
@@ -350,7 +350,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PregnancyBugFlav:
-	say "In some weird twist of this virtual game, you can literally feel the moment where someone up high decides you don't deserve a pregnancy, presses a button, and all the body mass inside you turns into liquid!  Your poor womb is now just completely over-full of [semen]!  It all comes gushing out in a torrent, coating your thighs and the ground.".
+	say "In some weird twist of this virtual game, you can literally feel the moment where someone up high decides you don't deserve a pregnancy, presses a button, and all the body mass inside you turns into liquid! Your poor womb is now just completely over-full of [semen]! It all comes gushing out in a torrent, coating your thighs and the ground.".
 
 [!<CheckForExtremePregnancies>+
 
