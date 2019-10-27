@@ -76,7 +76,7 @@ To Set Up The Dungeon:
 	repeat with M running through alive monsters in the dungeon:
 		if the location of M is not placed, now M is in a random placed sandy room;
 	if a random number between 1 and 3 is 1, now gladiatorcurse is 1;
-	if the player is a top donator:
+	if the player is the donator:
 		set up the school;
 		now the destination of dungeon portal is the school;
 	now DogPetName is the substituted form of "[PossiblePetName]";

@@ -47,6 +47,7 @@ To decide which number is the implant of ultimate-lesson-yes:
 
 robomatron is a monster.
 boogeymonster is a monster.
+
 Include Wench by Monster.
 Include Sex Doll by Monster.
 Include Minotaur by Monster.
@@ -72,11 +73,14 @@ Include Slutty Clutches of Holding by Bags of Holding.
 Include Clutches of Holding by Bags of Holding.
 Include Ultra Slutty Bags of Holding by Bags of Holding.
 A diaper bag of holding is a kind of bag of holding.
+A baby diaper bag of holding is a kind of bag of holding.
+A stuffie is a kind of equippable. A stuffie is unique.
 
 Include School Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
 Include Bunny Ears TQ by Headgear.
 Include Rugged Headband by Headgear.
+Include Spiked Tiara by Headgear.
 
 Include Dildo Pole Trap by Traps.
 Include Bukkake Traps by Traps.
@@ -84,6 +88,8 @@ Include Wooden Horse Traps by Traps.
 
 Include Gape Gloves by Equippables.
 Include Heavy Club by Equippables.
+
+Include Portal Pants by Knickers.
 
 
 Include Break Room Girl by Nintendolls Job Epilogues.

@@ -124,7 +124,10 @@ To compute drying of (C - a clothing):
 			if the semen-soak of C > 0:
 				if a random number between 1 and 20 is 1:
 					decrease the semen-soak of C by 1;
-			if the total-soak of C is 0 and C is in the location of the player or C is held, say "[if C is held]Your[otherwise]The[end if] [ShortDesc of C] is now completely dry.".
+			if the total-soak of C is 0 and C is in the location of the player or C is held:
+				if C is worn, force clothing-focus redraw;
+				otherwise force inventory-focus redraw;
+				say "[if C is held]Your[otherwise]The[end if] [ShortDesc of C] is now completely dry.".
 [Clothing has a number called semen-limit. The semen-limit of clothing is usually 10.
 Clothing has a number called urine-limit. The urine-limit of clothing is usually 10.
 Clothing has a number called milk-limit. The milk-limit of clothing is usually 10.]
@@ -194,7 +197,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, and stumbling. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 [Clothing can be blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, or stumbling (this is the magic-type property). Clothing is usually blandness.]
 A thing can be unowned, store, museum-store, stolen (this is the ownership property). A thing is usually unowned.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
@@ -299,9 +302,12 @@ Definition: a clothing (called C) is desirable:
 	if C is dirty, decide no;
 	decide yes.
 
-Definition: a clothing (called C) is slitted: [Slitted skirts don't block knee attacks]
-	decide no.
+Definition: a clothing is slitted: decide no. [Slitted skirts don't block knee attacks]
 
+tonguesActive is a number that varies.
+tonguesBlack is initially false.
+Definition: a clothing is tongued: decide no.
+Definition: a clothing is tonguing if it is tongued and tonguesActive > 0 and it is worn.
 
 
 Clothing Adjectives ends here.

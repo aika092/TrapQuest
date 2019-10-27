@@ -14,10 +14,11 @@ To decide which figure-name is the clothing-image of (H - a baby booties):
 Figure of baby booties is the file "Items/Clothes/Lower/Feet/Booties/booties1.png".
 
 To decide which number is the unique outrage of (C - a baby booties):
-	decide on 6.
+	if diaper quest is 1, decide on 0;
+	decide on the unique cringe of C.
 
 To decide which number is the unique cringe of (C - a baby booties):
-	decide on 10.
+	decide on 6.
 
 To decide which number is the hindrance-modifier of (C - a baby booties):
 	decide on 0.

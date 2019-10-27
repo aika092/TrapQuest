@@ -29,5 +29,6 @@ To decide which number is the delicateness-influence of (C - a rubber duck gag):
 	decide on S.
 
 Definition: A rubber duck gag is fetish appropriate: decide no.[Never appears randomly]
+Definition: A rubber duck gag is babywear: decide yes.[Can be put on the player by NPCs]
 
 Rubber Duck Gag ends here.

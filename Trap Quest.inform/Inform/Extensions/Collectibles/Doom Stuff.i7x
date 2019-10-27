@@ -7,6 +7,8 @@ Figure of reception bell is the file "Items/Collectibles/bell1.png".
 To decide which figure-name is the examine-image of (B - reception bell):
 	decide on figure of reception bell.
 
+Definition: reception bell is ingredient: decide no.
+
 To say ExamineDesc of (C - reception bell):
 	say "The bell from the reception desk.".
 
@@ -30,6 +32,8 @@ To decide which figure-name is the examine-image of (B - black candle):
 To say ExamineDesc of (C - black candle):
 	say "A black candle.".
 
+Definition: black candle is ingredient: decide no.
+
 Report taking black candle:
 	if doom counter is 0:
 		say "You feel a sudden sense of foreboding. Maybe you should have left that alone.";
@@ -51,6 +55,7 @@ To say ShortDesc of (C - doom notes):
 	say "doom notes".
 
 Definition: doom notes is immune to change: decide yes.
+Definition: doom notes is ingredient: decide no.
 
 Doom Stuff ends here.
 

@@ -87,6 +87,7 @@ A later time based rule (this is the compute doom rule):
 			otherwise if doom counter > 450 and doomed is 2:
 				say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 				now doomed is 3;
+				if flower hairclip is worn, transform flower hairclip into spiked-tiara;
 			otherwise if doom counter > 600 and doomed is 3:
 				if the location of the player is not Mansion23:
 					say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";

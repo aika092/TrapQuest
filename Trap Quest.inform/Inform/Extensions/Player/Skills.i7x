@@ -99,6 +99,13 @@ REQUIRES COMMENTING
 *@]
 The player has a number called craftskill. The craftskill of the player is usually 0.
 
+[!<Player>@<floatSkill:Integer>
+
+REQUIRES COMMENTING
+
+*@]
+The player has a number called floatskill. The floatskill of the player is usually 0.
+
 [!<Player>@<wishSkill:Integer>
 
 REQUIRES COMMENTING
@@ -713,6 +720,72 @@ This is the divinationskill learn rule:
 	if the divinationskill of the player is 0, say "When you try to have dominant sex, you are now just as likely to succeed regardless of sex addiction.";
 	now the divinationskill of the player is 1.
 The divinationskill learn rule is listed in the skill cheating rules.
+
+
+Part 18 - Safe Floating
+
+[!<TeachSafeFloating>+
+
+REQUIRES COMMENTING
+
++!]
+To teach safefloating from (M - a monster):
+	say "[speech style of M]'There are some tricks to keeping hold of your items while floating. Let me show you...'[roman type][line break]";
+	if the floatskill of the player is 0:
+		say "[bold type]**You have learned how to hold onto your items while floating!**[roman type][line break]";
+		now the floatskill of the player is 1;
+	otherwise:
+		say "[speech style of M]'...Oh, I've already shown you that? Well then perhaps you'll be interested in how to cast a spell to let you fly whenever you want? If you point at yourself like this, and say the words...'[roman type][line break]";
+		if magic-inflating is uncastable:
+			compute learning of magic-inflating;
+		otherwise:
+			say "You actually already know this spell! Do you want to try to take [NameDesc of M] by surprise and overpower [him of M]?";
+			if the player is consenting:
+				say "You say the words at the same time as [NameDesc of M], and focus your energy on [him of M]:[line break][variable custom style]'I [incantation of magic-inflating]!'[roman type][line break]";
+				if MagicPowerDamage > a random number between 0 and 2:
+					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] lose control of the spell.[line break][speech style of M]'What? NO!'[roman type][line break]But it's too late - [his of M] body is expanding rapidly to stupid sizes! It's only a moment before [he of M][']s soaring up and away into the air. In [his of M] panic, [he of M] drops [his of M] wand! Without that, [he of M] can't reverse the spell! [big he of M] floats further and further away into the sky, probably gone for good.";
+					destroy M;
+					let P be a random off-stage golden phallus;
+					if P is a thing:
+						now P is in the location of the player;
+						compute autotaking P;
+				otherwise:
+					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] almost lose control of the spell. But your magic isn't strong enough, and [he of M] manages to retain control![line break][speech style of M]'What was that? You were trying to overpower me, weren't you? You [bitch]!'[roman type][line break]";
+					anger M;
+					say "[BigNameDesc of M] takes advantage of your magic fatigue[if the player is not wrist bound] and summons cuffs around your wrists. They're now bound behind you[end if][if face is not actually occupied]! A bit gag appears in your mouth[end if]! [big he of M] presses [his of M] wand to your chest and starts the spell... and [big he of M][']s not stopping!";
+					cutshow figure of aeromancer cutscene 7 for M;
+					if the player is not wrist bound:
+						let W be a random off-stage wrist bond;
+						if pair of wristcuffs is off-stage, now W is pair of wristcuffs;
+						if W is wrist bond:
+							summon W locked;
+							now W is wrist-bound-behind;
+					let G be a random bit gag;
+					if G is actually summonable:
+						summon G locked;
+					BustInflate 100;
+			otherwise:
+				say "You decide against it.".
+
+[!<TheFloatSkillListRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the floatskill list rule:
+	if the floatskill of the player is 1, say "When you become lighter than air, you won't drop your items.".
+The floatskill list rule is listed in the skill listing rules.
+
+[!<TheFloatSkillLearnRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the floatskill learn rule:
+	if the floatskill of the player is 0, say "When you become lighter than air, you won't drop your items.";
+	now the floatskill of the player is 1.
+The floatskill learn rule is listed in the skill cheating rules.
+
 
 Skills ends here.
 

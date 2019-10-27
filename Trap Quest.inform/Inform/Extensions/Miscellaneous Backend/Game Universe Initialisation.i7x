@@ -326,7 +326,7 @@ To initialise wardrobe:
 		if C is clothing, add C to L;
 	if diaper focus >= 1:
 		let C be a random eligible diaper;
-		if easter content is 1, now C is a random bunny diaper;
+		if easter content is 1, now C is brown-button-diaper;
 		if C is clothing, add C to L;
 	repeat with X running through L:
 		if X is in Standard Item Pen, restock X;

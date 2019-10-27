@@ -77,6 +77,7 @@ This is the player won't wear humiliating clothes rule:
 		unless wearing-target is reasonable when outrageous:
 			if debugmode is 0:
 				if autowear is false, say "[first custom style]There's just no way I'm letting anybody see me wearing that.[roman type][line break]";
+				if wearing-target is carried stuffie, now wearing-target is in the location of the player;
 				rule fails;
 			otherwise:
 				if autowear is false, say "If debug was disabled, the player would refuse to wear this item.".
@@ -87,6 +88,7 @@ This is the player won't wear childish clothes rule:
 		unless wearing-target is reasonable when cringeworthy:
 			if debugmode is 0:
 				if autowear is false, say "[first custom style]There's just no way I'm letting anybody see me wearing something so childish.[roman type][line break]";
+				if wearing-target is carried stuffie, now wearing-target is in the location of the player;
 				rule fails;
 			otherwise:
 				if autowear is false, say "If debug was disabled, the player would refuse to wear this item.".

@@ -68,7 +68,7 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 
 To say MonsterDesc of (M - an acolyte):
 	if diaper quest is 0, say "A veiled woman in a sheer black robe. What you can see of her expression suggests she[']s not exactly all there. Still, despite looking like she hasn't seen the sun in a few years she does seem to be in quite good shape and could be unexpectedly dangerous.";
-	otherwise say "This woman wears a black hooded robe that covers her eyes and therefore conceals her identity. Her full exposed breasts are pierced and chained together by a light gold chain. The open robe also leaves her massive pink diaper completely visible. A black marked pentagram is marked on the front[if there is a worn demon diaper], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. She has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on her pink pacifier read '777'. She wields a bizarre looking gold and blue sacrificial dagger in her left hand, with several pointed stars and other basic shapes etched into the design.".
+	otherwise say "This woman wears a black hooded robe that covers her eyes and therefore conceals her identity. Her full exposed breasts are pierced and chained together by a light gold chain. The open robe also leaves her massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. She has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on her pink pacifier read '777'. She wields a bizarre looking gold and blue sacrificial dagger in her left hand, with several pointed stars and other basic shapes etched into the design.".
 
 To say MonsterComment of (M - an acolyte):
 	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]Yay, another sister in service of the [great one]s! Wait, what?[or]I hope my sister's not sad that the [great one]s haven't blessed her yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
@@ -233,7 +233,7 @@ To compute perception of (M - an acolyte):
 
 To compute appearance assessment of (M - clairvoyant acolyte):
 	if mystical amulet is worn:
-		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic[end if]. You could gain great favor from the [great one]s were you to gift it to them at their altar.'";
+		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic[end if]. You could gain great favour from the [great one]s were you to gift it to them at their altar.'";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I knew you were coming, sister.'[or]Sister, do you come for a prophecy?'[or]The Herald will arrive soon, sister. Why do you waste time?'[at random]";
 	otherwise:
@@ -540,7 +540,7 @@ To say EscapeAnswer of (M - an acolyte):
 To say AdviceAnswer of (M - an acolyte):
 	say "[first custom style]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. She won't give it back...'[or]I think this place is haunted. And if it wasn[']t before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed sisters. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great one]s out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great one]s and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[at random][roman type][line break]".
 
-To decide which number is the mild-annoyance threshold of (M - a monster):
+To decide which number is the mild-annoyance threshold of (M - an acolyte):
 	decide on 150.
 
 To compute annoyance of (M - an acolyte):

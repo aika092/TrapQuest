@@ -104,8 +104,10 @@ To compute labour to (M - a fairy):
 			DexUp 1;
 			IntDown 1;
 		if M is not the father, now M is the father;[She may not have been the one to impregnate you, but she still "delivered" the baby!]
+	otherwise if M is alive:
+		Delay Labour;
 	otherwise:
-		Delay Labour.
+		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break]You are filled with a desire to [if Woods01 is discovered]return to[otherwise]find[end if] the Woods.".
 
 To say NonAliveFatherBirthFlav of (M - a fairy):
 	say "[if playerRegion is Woods]You should probably make sure the exit to your vagina is clear[otherwise]Something tells you that you should return to the Woods[end if]!".
@@ -530,7 +532,7 @@ Definition: hair (called XXX) is fairy targetable:
 	decide no.
 
 To compute fairy meddling on (XXX - hair):
-	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as she does. She turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue-fairy] and tingle as it changes color[end if].";
+	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as she does. She turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue-fairy] and tingle as it changes colour[end if].";
 	if current-monster is blue-fairy:
 		if the brightness of hair < 3:
 			HairBrightUp 1;
@@ -574,7 +576,7 @@ This is the fairy tries meddling rule:
 	if B is body part:
 		let M be current-monster;
 		unless current-monster is fairyDistracted, compute fairy meddling on B;
-		otherwise say "[BigNameDesc of current-monster] [one of]is so busy talking to you that [he of M] doesn't immediatley mess with you.[or]briefly forgets to mess with you.[at random]";
+		otherwise say "[BigNameDesc of current-monster] [one of]is so busy talking to you that [he of M] doesn't immediately mess with you.[or]briefly forgets to mess with you.[at random]";
 		rule succeeds.
 The fairy tries meddling rule is listed last in the fairy attack rules.
 
@@ -783,7 +785,7 @@ To say PregnancyAssessment of (M - fairy-witch):
 		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is royal guard or the father is gladiator:
-		say "[speech style of M]'Um, I think the daddy definitely liked weapons. Does that help?'[roman type]";
+		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is unicorn:
 		say "[speech style of M]'The daddy definitely wasn't a demon. I think. Is that helpful?'[roman type]";
@@ -791,8 +793,9 @@ To say PregnancyAssessment of (M - fairy-witch):
 	otherwise if the father is minotaur:
 		say "[big he of M] recoils, as if [he of M] just got hit in the face.[line break][speech style of M]'The daddy is definitely big and tough. Is that helpful?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 6 for M;
-	otherwise if the father is mechanic or the father is demon lord or the father is hellhound:
+	otherwise if the father is infernal:
 		say "[big he of M] recoils and starts, rubbing [his of M] cheek.[line break][speech style of M]'Whoever the daddy is, [he of mechanic]'s really really mean!'[roman type][line break]";
+		alwayscutshow figure of fairy interact 6 for M;
 	otherwise if the father is fairy:
 		say "[line break][speech style of M]'Tee hee. Its obviously a fairy!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
@@ -953,7 +956,7 @@ To say WhereAnswer of (M - blue-fairy):
 	alwayscutshow figure of fairy interact 11 for M.
 
 To say StoryAnswer of (M - blue-fairy):
-	say "[speech style of M]'[one of][if pregnancy fetish is 1]I make humans look sexier so they're more fun to get knocked up! Isn[']t that fun?'[otherwise]I like big boobies, and the best way to see some boobies is messing with people!'[end if][or]A long time ago, I figured out humans [if pregnancy fetish is 1]get inseminated more if they look hotter[otherwise]have the best boobies[end if], except that ugly altar witch. It changed everything for me!'[or]I think I'm a princess or something. Mostly I just like to have lots of fun messing with people!'[or]My favorite color is blue, so I'm blue. And my favorite things are boobs, so I play with boobs! Teehee!'[at random][roman type][line break]";
+	say "[speech style of M]'[one of][if pregnancy fetish is 1]I make humans look sexier so they're more fun to get knocked up! Isn[']t that fun?'[otherwise]I like big boobies, and the best way to see some boobies is messing with people!'[end if][or]A long time ago, I figured out humans [if pregnancy fetish is 1]get inseminated more if they look hotter[otherwise]have the best boobies[end if], except that ugly altar witch. It changed everything for me!'[or]I think I'm a princess or something. Mostly I just like to have lots of fun messing with people!'[or]My favourite colour is blue, so I'm blue. And my favourite things are boobs, so I play with boobs! Teehee!'[at random][roman type][line break]";
 	alwayscutshow figure of fairy interact 8 for M.
 
 To set up (M - blue-fairy):

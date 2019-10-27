@@ -52,8 +52,6 @@ To say ClothingDesc of (A - an accessory):
 
 Definition: an accessory is stealable if it is plentiful.
 
-To uniquely set up (C - an accessory):
-	do nothing.
 
 Definition: an accessory is transformation-protected: decide yes.
 

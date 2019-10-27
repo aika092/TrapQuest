@@ -65,7 +65,7 @@ To compute class outfit of (H - rubber top hat):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your [printed name of H] wobbles violently, and a tight rubber pink dress materialises around you.[roman type][line break]";
-		summon R;
+		summon R uncursed;
 		now the raw-magic-modifier of R is the largeness of breasts / 4;
 		if the silicone volume of breasts is 0 and the player is not top heavy:
 			let B be the largeness of breasts;
@@ -74,10 +74,9 @@ To compute class outfit of (H - rubber top hat):
 			say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type]  Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
 		now plastic-summoned is 1;
 	otherwise if the class of the player is silicone queen and P is actually summonable:
-		summon P;
+		summon P uncursed;
 		now P is pvc;
 		now the heel-height of P is 4;
-		now the raw-magic-modifier of P is 0;
 		if the silicone volume of breasts + a random number between 1 and 10 > 10, now P is speed;
 		otherwise now P is unowned;
 		say "[bold type][if the player is upright]You suddenly shoot four inches upwards off the ground![otherwise]The soles of your feet are forced into an arch![end if][roman type][line break]A pair of [printed name of P] have appeared on your feet.";

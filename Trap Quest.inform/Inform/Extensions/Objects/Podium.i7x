@@ -52,14 +52,14 @@ Closing your eyes you can feel another shiver run though you. Taking a deep brea
 			let P be a random pink pacifier;
 			let N be a random off-stage rubber mittens;
 			let D be a random eligible diaper;
-			if P is actually summonable, summon P cursed;
-			if N is actually summonable, summon N cursed;
+			if P is actually summonable, summon P cursed with quest;
+			if N is actually summonable, summon N cursed with quest;
 			if there is a worn diaper:
 				now D is a random worn diaper;
 			otherwise:
 				repeat with K running through worn knickers:
 					only destroy K;
-				summon D cursed;
+				summon D cursed with quest;
 			clean D;
 			WaterEmpty D;
 			UrineSoakUp D by the soak-limit of D;
@@ -110,7 +110,7 @@ Closing your eyes you can feel another shiver run though you. Taking a deep brea
 		if debuginfo > 0:
 			if B is bracelet and the number of on-stage solid gold bracelets is 0, say "[input-style]Stage roll: d3 (2) | (2.5) bracelet[roman type][line break]";
 			otherwise say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
-		summon P cursed;
+		summon P cursed with quest;
 		say "You open your eyes and are shocked to find that you now have a [P]. It's like you've been marked as somebody's property!";
 	otherwise:
 		if debuginfo > 0:

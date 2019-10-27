@@ -30,6 +30,7 @@ To say MediumAppearanceDesc of (C - a clothing):
 	if the used condoms of C > 0, say " with [used condoms of C] used condom[if the used condoms of C > 1]s[end if]".
 
 To say AppearanceDesc of (C - a clothing):
+	if C is tonguing, say "salivating and licking ";
 	if C is perceived messed knickers:
 		say "messy ";
 	otherwise if the known-total-soak of C > 0:
@@ -157,6 +158,9 @@ Report examining clothing:
 		otherwise say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn]r skin will still be visible even when wearing it[otherwise]r skin is still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
 	otherwise if the noun is potentially pussy covering and the size of penis > the penis-capacity of the noun:
 		say "Your [ShortDesc of penis] is too large and [if the noun is worn and penis is at least partially exposed]pokes out beyond the fabric[otherwise]can't be concealed by it[end if].";
+	otherwise if the noun is skirted and there is worn knickers:
+		let K be a random worn knickers;
+		say "The skirt is [if the skirtLength of the noun < the DQBulk of K]not [end if]long enough to cover your [ShortDesc of K][if the noun is short]. It is only long enough to cover your naughty bits when you're standing[end if].";
 	otherwise if the noun is short:
 		say "The skirt is just long enough to cover your [if the size of penis < 4]naughty bits[otherwise][asshole][end if] as long as you never bend over[if the size of penis > 3], but it can't do anything to hide your [ShortDesc of penis], even when you're standing![otherwise].[end if] [if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][first custom style]So, good as long as I don[']t act like a whore.[roman type][line break][second custom style]I can pretend to be modest but put my bits on display at the same time![roman type][line break][end if]";
 	otherwise if the noun is crotch covering and the noun is not total protection:
@@ -198,6 +202,10 @@ To say CurrentlyPartiallyConcealedFlav of (C - a clothing):
 
 To say CurrentlyVisibleFlav of (C - a clothing):
 	say "It is currently visible to anyone who looks at you[if the top-coverer of C is a thing]. The upper part is covered by [NameDesc of top-coverer of C][end if][if the mid-coverer of C is a thing]. The belly part is covered by [NameDesc of mid-coverer of C][end if][if the bottom-coverer of C is a thing]. The lower part is covered by [NameDesc of bottom-coverer of C][end if].".
+
+To say CurrentlyVisibleFlav of (K - a knickers):
+	let C be a random worn skirted clothing;
+	say "It is currently visible to anyone who looks at you[if C is a clothing] because your [C] fails to properly cover it[end if].".
 
 To say CurrentlyVisibleFlav of (C - a sex toy):
 	say "It is currently visible to anyone who looks at you from the right angle.".

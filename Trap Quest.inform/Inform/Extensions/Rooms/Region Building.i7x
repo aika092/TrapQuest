@@ -161,6 +161,7 @@ To solve the puzzle:
 	repeat with R running through puzzle piece rooms:
 		make all directions possible for R;
 	let only-singles-left be 0;
+	let puzzleAttempts be 0;
 	while Terra Incognita is open:
 		let P be a random solvable room;
 		if P is nothing and only-singles-left is 0:
@@ -197,15 +198,25 @@ To solve the puzzle:
 			[We either have finished or need to reset]
 			if debugmode is 1, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
 			if there are unplaced puzzle piece mandatory rooms:
+				increase puzzleAttempts by 1;
 				flip the table around target-floor; [Reset all the rooms, we need to start again!]
 				now only-singles-left is 0;
-				[now debugmode is 1;]
+				if puzzleAttempts >= 20:
+					now debugmode is 1;
+					if puzzleAttempts > 20:
+						say "Alert! The game has encountered a game-breaking bug, it can't find a solution for the map puzzle to this region! Please report this bug to the devs with the transcript above of the game trying to build this region.";
+						say "If you are a developer or tester or just curious, you can keep trying to build the map. Would you like to try to rebuild the map?";
+						unless the player is consenting:
+							say "The game will now abandon trying to build this region. Return from whence you came; do not try to progress through it.";
+							now Terra Incognita is closed;
+							if the player is not a top donator, now debugmode is 0;
 			otherwise:
+				if the player is not a top donator, now debugmode is 0;
 				now Terra Incognita is closed.
 
 [!<FlipTheTableAroundRoom>+
 
-REQUIRES COMMENTING
+Reshuffle the pieces to allow us to start again.
 
 +!]
 To flip the table around (X - a room):
@@ -255,7 +266,7 @@ REQUIRES COMMENTING
 	change the east exit of Mansion12 to Solid Rock;
 	change the east exit of Mansion22 to Solid Rock;
 	change the west exit of Mansion22 to Solid Rock.]
-	
+
 
 [
 THE PLAN:

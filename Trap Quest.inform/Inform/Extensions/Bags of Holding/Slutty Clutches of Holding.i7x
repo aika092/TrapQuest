@@ -84,6 +84,16 @@ To say MediumDesc of (C - an ass clutch of holding):
 Definition: an ass clutch of holding is yellow themed: decide yes.
 Definition: an ass clutch of holding is anal sex themed: decide yes.
 
+
+This is the ass clutch pussy slut rule:
+	if there is a worn ass clutch of holding, decrease the desirability of vagina by 5.
+The ass clutch pussy slut rule is listed in the pussy slut eligibility rules.
+
+This is the ass clutch butt slut rule:
+	if there is a worn ass clutch of holding, increase the desirability of asshole by 5.
+The ass clutch butt slut rule is listed in the butt slut eligibility rules.
+
+
 Part 5 - Basic Bitch Clutch of Holding
 
 A basic bitch clutch of holding is a kind of slutty clutch of holding. There is 1 basic bitch clutch of holding. The printed name of basic bitch clutch of holding is usually "[clothing-title-before]basic bitch clutch of holding[clothing-title-after]".

@@ -37,6 +37,7 @@ To decide which number is the delicateness of the player:
 	if the humiliation of the player >= 40000, decide on 20;
 	let S be the raw delicateness of the player;
 	if submissive sex addict is 1, increase S by 7;
+	if the womb volume of vagina >= 30 and the class of the player is not fertility goddess, increase S by 3;
 	repeat with C running through worn wearthings:
 		increase S by the delicateness-influence of C;
 	if mindbreak protection is 1 and S > 16, decide on 16;
@@ -101,7 +102,7 @@ To PainUp (X - a number): [This one is anticipated to have flavour]
 					if highest delicateness <= the delicateness of the player and (pain-balance > 0 or timesTicked >= 2): [We only say this bit if delicateness actually goes up]
 						if the delicateness of the player is 1, say "[first custom style]Isn't this supposed to be a FUN game?![roman type][line break]";
 						if the delicateness of the player is 2, say "[first custom style]I won't let them break me![roman type][line break]";
-						if the delicateness of the player is 3, say "[first custom style]I've got to stay strong[if there is an unfriendly monster in the location of the player], I can't let them see me back down[end if]![roman type][line break]";
+						if the delicateness of the player is 3, say "[first custom style]I've got to stay strong![roman type][line break]";
 						if the delicateness of the player is 4, say "[first custom style]This is outrageous![roman type][line break]";
 						if the delicateness of the player is 5, say "[first custom style]I'm going to find whoever created this game and kill them![roman type][line break]";
 						if the delicateness of the player is 6, say "[variable custom style]Maybe relaxing and trying to enjoy whatever happens is the best way to survive down here...[roman type][line break]";

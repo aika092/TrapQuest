@@ -71,7 +71,7 @@ To decide which number is the semen load of (M - vampiress):
 Definition: vampiress is human: decide yes.
 
 To check chase boredom of (M - vampiress):
-	if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck:
+	if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck and gargoyle is not grabbing the player:
 		bore M for 0 seconds;
 		compute survival check of M.
 
@@ -139,6 +139,9 @@ To compute perception of (M - vampiress):
 		anger M;
 	otherwise if the class of the player is vixen:
 		say "[speech style of M]'[one of]Did you think you could fool me with that disguise, fox girl? Don't worry, darling. This time, everything you'll be taking from me is free.'[or]There you are, darling. I have something here that you simply must take. I won't take no for an answer, darling.'[stopping][roman type][line break]";
+		anger M;
+	otherwise if the class of the player is barbarian:
+		say "[speech style of M]'[one of]Oh my, a cave[if the player is presenting as female]woman[otherwise]man[end if]? Hm. No point with the pretext then. Get on your knees.'[or]Oh, a barbarian. How retro. Can you get on your knees for me, darling? Do you know that that means?'[or]So, you're a barbarian? Hm. It feels pointless, but we can avoid being violent, can't we? Get on your knees.'[at random][roman type][line break]";
 		anger M;
 	otherwise:
 		compute appearance assessment of M;
@@ -720,7 +723,7 @@ To say DamageReactSubmissive of (M - vampiress):
 To compute unique death of (M - vampiress):
 	let X be nothing;
 	let R be a random number between 0 and 5;
-	if (full-lady fetish is 1 or a random number between 1 and 3 is 3) and gem-strapon is off-stage and the player is an October 2018 top donator:
+	if (full-lady fetish is 1 or a random number between 1 and 3 is 3) and gem-strapon is off-stage and the player is the donator:
 		now X is gem-strapon;
 	otherwise if R > 3:
 		repeat with B running through off-stage cans:
@@ -1090,7 +1093,7 @@ To say AdviceAnswer of (M - vampiress):
 	say "[speech style of M]'[one of]I'm not the only dead thing here, just to warn you. The ghosts here can be quite annoying.'[or]I'd avoid the cultists if I were you. There's a price to be paid for the things that they engage in... But then again, there's a price for just about everything, isn't there?[or]The owners of this house had an odd sense of humor. You might want to avoid the mirrors, and some of the chests are not quite what they seem.'[at random][roman type][line break]".
 
 To compute teaching of (M - vampiress):
-	say "[speech style of M]'It's so annoying when you want to cum, but you can't touch yourself, isn't it? If you angle your hips like this, you won't need to touch your[if the size of penis > 5] yummy [player-penis][otherwise if the size of penis > 0] adorable little [player-penis][otherwise if the player is female] dainty little honeypot[end if][if the player is barbie]... oh, I guess you don't have genitals anyway.[otherwise] at all![end if]'[roman type][line break]";
+	say "[speech style of M]'It's so annoying when you want to cum, but you can't touch yourself, isn't it? If you angle your hips like this, you won't need to touch your[if the size of penis > 5] yummy [player-penis][otherwise if the size of penis > 0] adorable little [player-penis][otherwise if the player is female] dainty little honeypot[end if][if the player is barbie]... oh, I guess you don't have genitals anyway.'[otherwise] at all!'[end if][roman type][line break]";
 	teach buttskill;
 	HeavyConvoFatigue M.
 

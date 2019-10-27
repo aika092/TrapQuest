@@ -75,6 +75,13 @@ Definition: a skirt is ingredient: decide yes.
 To decide which number is the crafting key of (C - a skirt):
 	decide on 54.
 
+[This is supposed to line up with DQBulk]
+To decide which number is the skirtLength of (C - a clothing):
+	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on 0;
+	if C is short, decide on 1;
+	if C is knee-length, decide on 7;
+	decide on 8.
+
 
 Chapter - Wearability
 
@@ -138,7 +145,7 @@ To say ShortDesc of (Y - a chainmail skirt):
 	say "chainmail skirt".
 
 To decide which number is the initial outrage of (C - a chainmail skirt):
-	decide on 10.
+	decide on 1.
 
 To decide which number is the bartering value of (T - a chainmail skirt) for (M - a gladiator):
 	decide on 4.
@@ -487,6 +494,9 @@ To decide which figure-name is clothing-image of (C - office skirt):
 To say ClothingDesc of (C - office skirt):
 	say "This ankle length skirt is made of form-fitting black fabric. It clings tightly to your thighs, making it very challenging to move around freely.".
 
+To decide which number is the skirtLength of (C - office skirt):
+	decide on 7.
+
 To say ShortDesc of (C - office skirt):
 	say "office skirt".
 
@@ -569,9 +579,9 @@ To decide which object is the unique-upgrade-target of (C - a sequins belt):
 	decide on a random off-stage sequins dress.
 
 To transform (D - a sequins belt) into (C - a sequins outfit):
-	say "Your [D] transforms into ";
+	say "[bold type]Your [D] [bold type]transforms into ";
 	silently transform D into C;
-	say "a [C] in front of your eyes!  ";
+	say "a [C] [bold type]in front of your eyes![roman type]  ";
 	say "[TransformReaction of C]".
 
 

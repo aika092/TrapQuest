@@ -115,7 +115,7 @@ To compute persistent reward of (Q - altar-sex-quest) on (C - a clothing):
 			say "A [ShortDesc of F] appears at your feet.";
 			now F is in the location of the player;
 			compute autotaking F;
-		otherwise if ritual-beads is off-stage and diaper quest is 0 and the player is a March 2018 top donator:
+		otherwise if ritual-beads is off-stage and diaper quest is 0 and the player is the donator:
 			say "A [ShortDesc of ritual-beads] appears at your feet.";
 			now ritual-beads is in the location of the player;
 			compute autotaking ritual-beads.

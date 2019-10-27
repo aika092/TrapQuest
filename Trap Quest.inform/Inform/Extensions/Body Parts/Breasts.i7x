@@ -877,9 +877,14 @@ To Bustup (X - a number):
 			if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]Tee hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 15:
-			if the bimbo of the player < 15, say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
-			otherwise say "[one of][line break][second custom style][line break]*giggle* My tits are just ridiculously huge! I wonder if they can grow any bigger?[roman type][line break][or][stopping]";
+			if the bimbo of the player < 15:
+				say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
+				cutshow figure of body reaction 14 for breasts;
+			otherwise:
+				say "[one of][line break][second custom style][line break]*giggle* My tits are just ridiculously huge! I wonder if they can grow any bigger?[roman type][line break][or][stopping]";
+				cutshow figure of body reaction 15 for breasts;
 		compute bra strain;
+		update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
 
 
@@ -973,6 +978,7 @@ To Milkup (X - a number):
 		otherwise:
 			2Milkup; [We do this if the player's breast flesh is completely full of milk but the breasts are still allowed to grow.]
 			increase the flesh volume of breasts by 1;
+			update appearance level;
 	if old-B < the largeness of breasts:
 		say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!";
 		unless last-lactated-time - earnings < 60, trigger lactation; [Don't want to cause lactation super frequently]
@@ -1027,6 +1033,7 @@ To BustInflate (X - a number):
 		decrease X by 1;
 		if the player is not top heavy and inflation fetish is 1, increase the air volume of breasts by 1;
 	compute bra strain;
+	update appearance level;
 	if previous-weight > -6 and the weight of breasts < -5 :
 		say "Your [BreastDesc] are now significantly lighter than air! You can constantly feel their pull, trying to lift you up off the ground.";
 	otherwise if previous-weight > -1 and the weight of breasts < 0:
@@ -1074,6 +1081,7 @@ To BustImplantsUp (X - a number):
 			if blue-rubber-cheerleader-outfit is off-stage, now L is blue-rubber-cheerleader-outfit;
 			if C is a thing and L is a thing, transform C into L;
 	compute bra strain;
+	update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustImplants function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
 
 [!<BustImplantsDownX>+

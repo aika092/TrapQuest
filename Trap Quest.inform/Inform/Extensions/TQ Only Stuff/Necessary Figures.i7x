@@ -7,6 +7,8 @@ Figure of acolyte 2 is the file "NPCs/Mansion/Cultist/cultist2.png".
 Figure of acolyte 3 is the file "NPCs/Mansion/Cultist/cultist3.png".
 Figure of acolyte 4 is the file "NPCs/Mansion/Cultist/cultist4.png".
 
+Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromancer-punish1.jpg".
+
 Figure of demoness cutscene 1 is the file "Special/Cutscene/cutscene-demoness-soul1.png".
 Figure of demoness cutscene 2 is the file "Special/Cutscene/cutscene-demoness-heel1.png".
 Figure of demoness cutscene 3 is the file "Special/Cutscene/cutscene-demoness-heel2.png".
@@ -98,6 +100,7 @@ Figure of Wild Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladi
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
 
+Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
 
 Figure of quiz lesson is the file "Special/Cutscene/cutscene-hyacinthe-quiz1.jpg".
@@ -131,6 +134,8 @@ Figure of Body Reaction 10 is the file "Special/Cutscene/cutscene-body-reaction1
 Figure of Body Reaction 11 is the file "Special/Cutscene/cutscene-body-reaction11.jpg".
 Figure of Body Reaction 12 is the file "Special/Cutscene/cutscene-body-reaction12.jpg".
 Figure of Body Reaction 13 is the file "Special/Cutscene/cutscene-body-reaction13.jpg".
+Figure of Body Reaction 14 is the file "Special/Cutscene/cutscene-body-reaction14.png".
+Figure of Body Reaction 15 is the file "Special/Cutscene/cutscene-body-reaction15.png".
 
 Figure of Cumshot Reaction 1 is the file "Special/Cutscene/cutscene-cumshot-reaction1.png".
 Figure of Cumshot Reaction 2 is the file "Special/Cutscene/cutscene-cumshot-reaction2.png".
@@ -147,6 +152,8 @@ Figure of Egg Laying 4 is the file "Special/Cutscene/cutscene-egg-medium2.jpg".
 Figure of Egg Laying 5 is the file "Special/Cutscene/cutscene-egg-medium3.jpg".
 Figure of Egg Laying 6 is the file "Special/Cutscene/cutscene-egg-large1.jpg".
 Figure of Egg Laying 7 is the file "Special/Cutscene/cutscene-egg-large2.jpg".
+
+Figure of Egg Laying 8 is the file "Special/Cutscene/cutscene-egg-small3.jpg".
 
 Figure of enslaved angela is the file "NPCs/School/Teacher/teacher2b.png".
 Figure of enslaved headmistress is the file "NPCs/School/headmistress2.png".
@@ -226,6 +233,7 @@ Figure of Vines Cutscene 1 is the file "Special/Cutscene/cutscene-vines1.png".
 Figure of Vines Cutscene 5 is the file "Special/Cutscene/cutscene-vines5.png".
 Figure of Vines Cutscene 7 is the file "Special/Cutscene/cutscene-vines7.png".
 Figure of Vine Boss Cutscene 1 is the file "Special/Cutscene/cutscene-vineboss1.png".
+Figure of Vine Boss Cutscene 2 is the file "Special/Cutscene/cutscene-vineboss2.jpg".
 
 Figure of water bomb is the file "Items/Collectibles/bomb2.png".
 Figure of water bomb cutscene 1 is the file "Special/Cutscene/cutscene-water-bomb-explode1.png".
@@ -263,31 +271,45 @@ Figure of condom pigtails is the file "Items/Accessories/Head/scrunchie5.png".
 
 
 
-Figure of anal dragon tattoo is the file "Items/Tats/tattoo7.png".
+Figure of all-you-can-eat tattoo is the file "Items/Tats/tattoo145.jpg".
+To decide which figure-name is the examine-image of (T - all-you-can-eat tattoo):
+    decide on figure of all-you-can-eat tattoo.
+
+Figure of anal dragon tattoo is the file "Items/Tats/tattoo7.jpg".
 To decide which figure-name is the examine-image of (T - anal dragon tattoo):
     decide on figure of anal dragon tattoo.
 
-Figure of anal-slut tattoo is the file "Items/Tats/tattoo34.png".
+Figure of anal-slut tattoo is the file "Items/Tats/tattoo34.jpg".
 To decide which figure-name is the examine-image of (T - anal-slut tattoo):
     decide on figure of anal-slut tattoo.
 
-Figure of anal star tattoo is the file "Items/Tats/tattoo102.png".
-To decide which figure-name is the examine-image of (T - anal-slut tattoo):
-    decide on figure of anal-slut tattoo.
+Figure of anal star tattoo is the file "Items/Tats/tattoo102.jpg".
+To decide which figure-name is the examine-image of (T - anal star tattoo):
+    decide on figure of anal star tattoo.
 
-Figure of angel tattoo is the file "Items/Tats/tattoo51.png".
+Figure of angel tattoo is the file "Items/Tats/tattoo51.jpg".
 To decide which figure-name is the examine-image of (T - angel tattoo):
     decide on figure of angel tattoo.
 
-Figure of asshole-cupid tattoo is the file "Items/Tats/tattoo13.png".
+Figure of asshole-cupid tattoo is the file "Items/Tats/tattoo13.jpg".
 To decide which figure-name is the examine-image of (T - asshole-cupid tattoo):
     decide on figure of asshole-cupid tattoo.
 
-Figure of Atlas tattoo is the file "Items/Tats/tattoo30.png".
+Figure of asshole-tally tattoo 1 is the file "Items/Tats/tattoo147a.jpg".
+Figure of asshole-tally tattoo 2 is the file "Items/Tats/tattoo147b.jpg".
+Figure of asshole-tally tattoo 3 is the file "Items/Tats/tattoo147c.jpg".
+Figure of asshole-tally tattoo 4 is the file "Items/Tats/tattoo147d.jpg".
+To decide which figure-name is the examine-image of (T - asshole-tally tattoo):
+	if the tallies of T >= 10, decide on Figure of asshole-tally tattoo 4;
+	if the tallies of T >= 5, decide on Figure of asshole-tally tattoo 3;
+	if the tallies of T >= 2, decide on Figure of asshole-tally tattoo 2;
+    decide on figure of asshole-tally tattoo 1.
+
+Figure of Atlas tattoo is the file "Items/Tats/tattoo30.jpg".
 To decide which figure-name is the examine-image of (T - Atlas tattoo):
     decide on figure of Atlas tattoo.
 
-Figure of bird nest tattoo is the file "Items/Tats/tattoo36.png".
+Figure of bird nest tattoo is the file "Items/Tats/tattoo36.jpg".
 To decide which figure-name is the examine-image of (T - bird nest tattoo):
     decide on figure of bird nest tattoo.
 
@@ -296,40 +318,40 @@ To decide which figure-name is the examine-image of (T - black cock only tattoo)
     decide on figure of black cock only tattoo.
 
 
-Figure of black hole belly tattoo is the file "Items/Tats/tattoo105.png".
-Figure of black hole tattoo is the file "Items/Tats/tattoo106.png".
+Figure of black hole belly tattoo is the file "Items/Tats/tattoo105.jpg".
+Figure of black hole tattoo is the file "Items/Tats/tattoo106.jpg".
 To decide which figure-name is the examine-image of (T - black hole tattoo):
 	if the player is female and interracial fetish is 1, decide on figure of black hole tattoo;
     decide on figure of black hole belly tattoo.
 
-Figure of black owned tattoo is the file "Items/Tats/tattoo53.png".
+Figure of black owned tattoo is the file "Items/Tats/tattoo53.jpg".
 To decide which figure-name is the examine-image of (T - black owned tattoo):
     decide on figure of black owned tattoo.
 
-Figure of bred by a bull tattoo is the file "Items/Tats/tattoo107.png".
+Figure of bred by a bull tattoo is the file "Items/Tats/tattoo107.jpg".
 To decide which figure-name is the examine-image of (T - bred by a bull tattoo):
     decide on figure of bred by a bull tattoo.
 
 
-Figure of bright hair tattoo is the file "Items/Tats/tattoo108.png".
-Figure of ultra pink hair tattoo is the file "Items/Tats/tattoo109.png".
+Figure of bright hair tattoo is the file "Items/Tats/tattoo108.jpg".
+Figure of ultra pink hair tattoo is the file "Items/Tats/tattoo109.jpg".
 To decide which figure-name is the examine-image of (T - bright-hair tattoo):
 	if the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3, decide on figure of bright hair tattoo;
     decide on figure of ultra pink hair tattoo.
 
-Figure of butt-slut tattoo is the file "Items/Tats/tattoo8.png".
+Figure of butt-slut tattoo is the file "Items/Tats/tattoo8.jpg".
 To decide which figure-name is the examine-image of (T - butt-slut tattoo):
     decide on figure of butt-slut tattoo.
 
-Figure of butterfly-wings tattoo is the file "Items/Tats/tattoo87.png".
+Figure of butterfly-wings tattoo is the file "Items/Tats/tattoo87.jpg".
 To decide which figure-name is the examine-image of (T - butterfly-wings tattoo):
     decide on figure of butterfly-wings tattoo.
 
-Figure of buttslut tattoo is the file "Items/Tats/tattoo1.png".
+Figure of buttslut tattoo is the file "Items/Tats/tattoo1.jpg".
 To decide which figure-name is the examine-image of (T - buttslut tattoo):
     decide on figure of buttslut tattoo.
 
-Figure of clit-piercing tattoo is the file "Items/Tats/tattoo82.png".
+Figure of clit-piercing tattoo is the file "Items/Tats/tattoo82.jpg".
 To decide which figure-name is the examine-image of (T - clit-piercing tattoo):
     decide on figure of clit-piercing tattoo.
 
@@ -337,11 +359,15 @@ Figure of cheating whore tattoo is the file "Items/Tats/tattoo113.jpg".
 To decide which figure-name is the examine-image of (T - cheating whore tattoo):
     decide on figure of cheating whore tattoo.
 
-Figure of cum-dump tattoo is the file "Items/Tats/tattoo83.png".
+Figure of cock expert tattoo is the file "Items/Tats/tattoo139.jpg".
+To decide which figure-name is the examine-image of (T - cock expert tattoo):
+    decide on figure of cock expert tattoo.
+
+Figure of cum-dump tattoo is the file "Items/Tats/tattoo83.jpg".
 To decide which figure-name is the examine-image of (T - cum-dump tattoo):
     decide on figure of cum-dump tattoo.
 
-Figure of cum dumpster lip tattoo is the file "Items/Tats/tattoo41.png".
+Figure of cum dumpster lip tattoo is the file "Items/Tats/tattoo41.jpg".
 To decide which figure-name is the examine-image of (T - cum dumpster lip tattoo):
     decide on figure of cum dumpster lip tattoo.
 
@@ -349,16 +375,16 @@ Figure of cumlust tattoo is the file "Items/Tats/tattoo122.jpg".
 To decide which figure-name is the examine-image of (T - cumlust tattoo):
     decide on figure of cumlust tattoo.
 
-Figure of Daddy's cock only tattoo is the file "Items/Tats/tattoo6.png".
+Figure of Daddy's cock only tattoo is the file "Items/Tats/tattoo6.jpg".
 To decide which figure-name is the examine-image of (T - daddy's cock only tattoo):
     decide on figure of daddy's cock only tattoo.
 
-Figure of double penetration tattoo is the file "Items/Tats/tattoo80.png".
+Figure of double penetration tattoo is the file "Items/Tats/tattoo80.jpg".
 To decide which figure-name is the examine-image of (T - a double penetration tattoo):
     decide on figure of double penetration tattoo.
 
 
-Figure of eat-your-heart-out tattoo is the file "Items/Tats/tattoo81.png".
+Figure of eat-your-heart-out tattoo is the file "Items/Tats/tattoo81.jpg".
 To decide which figure-name is the examine-image of (T - eat-your-heart-out tattoo):
     decide on figure of eat-your-heart-out tattoo.
 
@@ -366,7 +392,7 @@ Figure of empty-mind tattoo is the file "Items/Tats/tattoo114.jpg".
 To decide which figure-name is the examine-image of (T - empty-mind tattoo):
     decide on figure of empty-mind tattoo.
 
-Figure of for deposit only tattoo is the file "Items/Tats/tattoo12.png".
+Figure of for deposit only tattoo is the file "Items/Tats/tattoo12.jpg".
 To decide which figure-name is the examine-image of (T - for deposit only tattoo):
     decide on figure of for deposit only tattoo.
 
@@ -378,39 +404,47 @@ Figure of fuck-me tattoo is the file "Items/Tats/tattoo116.jpg".
 To decide which figure-name is the examine-image of (T - fuck-me tattoo):
     decide on figure of fuck-me tattoo.
 
-Figure of funcenter tattoo is the file "Items/Tats/tattoo5.png".
+Figure of funcenter tattoo is the file "Items/Tats/tattoo5.jpg".
 To decide which figure-name is the examine-image of (T - funcenter tattoo):
     decide on figure of funcenter tattoo.
 
-Figure of hundred percent cunt tattoo is the file "Items/Tats/tattoo11.png".
+Figure of hundred percent cunt tattoo is the file "Items/Tats/tattoo11.jpg".
 To decide which figure-name is the examine-image of (T - hundred percent cunt tattoo):
     decide on figure of hundred percent cunt tattoo.
 
-Figure of jack-of-spades tattoo is the file "Items/Tats/tattoo96.png".
+Figure of jack-of-spades tattoo is the file "Items/Tats/tattoo96.jpg".
 To decide which figure-name is the examine-image of (T - jack-of-spades tattoo):
     decide on figure of jack-of-spades tattoo.
 
-Figure of just the tip tattoo is the file "Items/Tats/tattoo50.png".
+Figure of just the tip tattoo is the file "Items/Tats/tattoo50.jpg".
 To decide which figure-name is the examine-image of (T - just the tip tattoo):
     decide on figure of just the tip tattoo.
 
-Figure of lesbian anilingus tattoo is the file "Items/Tats/tattoo100.png".
+Figure of knock-me-up tattoo is the file "Items/Tats/tattoo142.jpg".
+To decide which figure-name is the examine-image of (T - knock-me-up tattoo):
+    decide on figure of knock-me-up tattoo.
+
+Figure of lesbian anilingus tattoo is the file "Items/Tats/tattoo100.jpg".
 To decide which figure-name is the examine-image of (T - lesbian anilingus tattoo):
     decide on figure of lesbian anilingus tattoo.
 
-Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.png".
+Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.jpg".
 To decide which figure-name is the examine-image of (T - my-vagina tattoo):
     decide on figure of my-vagina tattoo.
 
-Figure of no-panties tattoo is the file "Items/Tats/tattoo10.png".
+Figure of nintendolls-brand tattoo is the file "Items/Tats/tattoo135.jpg".
+To decide which figure-name is the examine-image of (T - nintendolls-brand tattoo):
+    decide on figure of nintendolls-brand tattoo.
+
+Figure of no-panties tattoo is the file "Items/Tats/tattoo10.jpg".
 To decide which figure-name is the examine-image of (T - no-panties tattoo):
     decide on figure of no-panties tattoo.
 
-Figure of nun blowjob tattoo is the file "Items/Tats/tattoo86.png".
+Figure of nun blowjob tattoo is the file "Items/Tats/tattoo86.jpg".
 To decide which figure-name is the examine-image of (T - nun blowjob tattoo):
     decide on figure of nun blowjob tattoo.
 
-Figure of once-you-go-black tattoo is the file "Items/Tats/tattoo89.png".
+Figure of once-you-go-black tattoo is the file "Items/Tats/tattoo89.jpg".
 To decide which figure-name is the examine-image of (T - once-you-go-black tattoo):
     decide on figure of once-you-go-black tattoo.
 
@@ -418,7 +452,7 @@ Figure of pentagram tattoo is the file "Items/Tats/tattoo123.jpg".
 To decide which figure-name is the examine-image of (T - pentagram tattoo):
     decide on figure of pentagram tattoo.
 
-Figure of prime USDA tattoo is the file "Items/Tats/tattoo84.png".
+Figure of prime USDA tattoo is the file "Items/Tats/tattoo84.jpg".
 To decide which figure-name is the examine-image of (T - prime USDA tattoo):
     decide on figure of prime USDA tattoo.
 
@@ -426,39 +460,43 @@ Figure of property-tattoo is the file "Items/Tats/tattoo121.jpg".
 To decide which figure-name is the examine-image of (T - property-tattoo):
     decide on figure of property-tattoo.
 
-Figure of pussy deluxe tattoo is the file "Items/Tats/tattoo46.png".
+Figure of pussy deluxe tattoo is the file "Items/Tats/tattoo46.jpg".
 To decide which figure-name is the examine-image of (T - pussy deluxe tattoo):
     decide on figure of pussy deluxe tattoo.
 
-Figure of put-it-in-my-ass tattoo is the file "Items/Tats/tattoo79.png".
+Figure of put-it-in-my-ass tattoo is the file "Items/Tats/tattoo79.jpg".
 To decide which figure-name is the examine-image of (T - put-it-in-my-ass tattoo):
     decide on figure of put-it-in-my-ass tattoo.
 
-Figure of respect the pussy tattoo is the file "Items/Tats/tattoo98.png".
+Figure of respect the pussy tattoo is the file "Items/Tats/tattoo98.jpg".
 To decide which figure-name is the examine-image of (T - respect the pussy tattoo):
     decide on figure of respect the pussy tattoo.
 
-Figure of semen demon tattoo is the file "Items/Tats/tattoo31.png".
+Figure of semen demon tattoo is the file "Items/Tats/tattoo31.jpg".
 To decide which figure-name is the examine-image of (T - semen demon tattoo):
     decide on figure of semen demon tattoo.
 
-Figure of sissy black cock whore tattoo is the file "Items/Tats/tattoo23.png".
+Figure of sissy black cock whore tattoo is the file "Items/Tats/tattoo23.jpg".
 To decide which figure-name is the examine-image of (T - sissy black cock whore tattoo):
     decide on figure of sissy black cock whore tattoo.
 
-Figure of slut for black cock tattoo is the file "Items/Tats/tattoo54.png".
+Figure of slimecock tattoo is the file "Items/Tats/tattoo134.jpg".
+To decide which figure-name is the examine-image of (T - slimecock tattoo):
+    decide on figure of slimecock tattoo.
+
+Figure of slut for black cock tattoo is the file "Items/Tats/tattoo54.jpg".
 To decide which figure-name is the examine-image of (T - slut for black cock tattoo):
     decide on figure of slut for black cock tattoo.
 
-Figure of slut-tattoo is the file "Items/Tats/tattoo17.png".
+Figure of slut-tattoo is the file "Items/Tats/tattoo17.jpg".
 To decide which figure-name is the examine-image of (T - slut-tattoo):
     decide on figure of slut-tattoo.
 
-Figure of spit first tattoo is the file "Items/Tats/tattoo9.png".
+Figure of spit first tattoo is the file "Items/Tats/tattoo9.jpg".
 To decide which figure-name is the examine-image of (T - spit first tattoo):
     decide on figure of spit first tattoo.
 
-Figure of stupid whore tattoo is the file "Items/Tats/tattoo32.png".
+Figure of stupid whore tattoo is the file "Items/Tats/tattoo32.jpg".
 To decide which figure-name is the examine-image of (T - stupid whore tattoo):
     decide on figure of stupid whore tattoo.
 
@@ -468,19 +506,23 @@ To decide which figure-name is the examine-image of (T - target tattoo):
 	if the player is a flatchested trap, decide on figure of trap target tattoo;
     decide on figure of target tattoo.
 
-Figure of tear it up daddy tattoo is the file "Items/Tats/tattoo33.png".
+Figure of tear it up daddy tattoo is the file "Items/Tats/tattoo33.jpg".
 To decide which figure-name is the examine-image of (T - tear it up daddy tattoo):
     decide on figure of tear it up daddy tattoo.
 
-Figure of tentacles tattoo is the file "Items/Tats/tattoo85.png".
+Figure of tentacles tattoo is the file "Items/Tats/tattoo85.jpg".
 To decide which figure-name is the examine-image of (T - tentacles tattoo):
     decide on figure of tentacles tattoo.
 
-Figure of topless tattoo is the file "Items/Tats/tattoo78.png".
+Figure of topless tattoo is the file "Items/Tats/tattoo78.jpg".
 To decide which figure-name is the examine-image of (T - topless tattoo):
     decide on figure of topless tattoo.
 
-Figure of true love tattoo is the file "Items/Tats/tattoo38.png".
+Figure of traitor tattoo is the file "Items/Tats/tattoo136.jpg".
+To decide which figure-name is the examine-image of (T - traitor tattoo):
+    decide on figure of traitor tattoo.
+
+Figure of true love tattoo is the file "Items/Tats/tattoo38.jpg".
 To decide which figure-name is the examine-image of (T - true love tattoo):
     decide on figure of true love tattoo.
 
@@ -492,7 +534,7 @@ Figure of VIP pussy tattoo is the file "Items/Tats/tattoo97.jpg".
 To decide which figure-name is the examine-image of (T - VIP pussy tattoo):
     decide on figure of VIP pussy tattoo.
 
-Figure of virgin void tattoo is the file "Items/Tats/tattoo40.png".
+Figure of virgin void tattoo is the file "Items/Tats/tattoo40.jpg".
 To decide which figure-name is the examine-image of (T - virgin void tattoo):
     decide on figure of virgin void tattoo.
 
@@ -500,21 +542,25 @@ Figure of weakness tattoo is the file "Items/Tats/tattoo128.jpg".
 To decide which figure-name is the examine-image of (T - weakness tattoo):
     decide on figure of weakness tattoo.
 
-Figure of wet dream tattoo is the file "Items/Tats/tattoo20.png".
+Figure of wet dream tattoo is the file "Items/Tats/tattoo20.jpg".
 To decide which figure-name is the examine-image of (T - wet dream tattoo):
     decide on figure of wet dream tattoo.
 
-Figure of white-trash tattoo is the file "Items/Tats/tattoo28.png".
+Figure of white-trash tattoo is the file "Items/Tats/tattoo28.jpg".
 To decide which figure-name is the examine-image of (T - white-trash tattoo):
     decide on figure of white-trash tattoo.
 
-Figure of whore-is-my-mind tattoo is the file "Items/Tats/tattoo45.png".
+Figure of whore-is-my-mind tattoo is the file "Items/Tats/tattoo45.jpg".
 To decide which figure-name is the examine-image of (T - whore-is-my-mind tattoo):
     decide on figure of whore-is-my-mind tattoo.
 
-Figure of womb diagram tattoo is the file "Items/Tats/tattoo18.png".
+Figure of womb diagram tattoo is the file "Items/Tats/tattoo18.jpg".
 To decide which figure-name is the examine-image of (T - womb diagram tattoo):
     decide on figure of womb diagram tattoo.
+
+Figure of womb heart tattoo is the file "Items/Tats/tattoo143.jpg".
+To decide which figure-name is the examine-image of (T - womb heart tattoo):
+    decide on figure of womb heart tattoo.
 
 Figure of worthless cunt tattoo is the file "Items/Tats/tattoo47.jpg".
 To decide which figure-name is the examine-image of (T - worthless cunt tattoo):
@@ -524,7 +570,7 @@ Figure of xaviers cunt tattoo is the file "Items/Tats/tattoo126.jpg".
 To decide which figure-name is the examine-image of (T - xavier's cunt tattoo):
     decide on figure of xaviers cunt tattoo.
 
-Figure of zip tattoo is the file "Items/Tats/tattoo19.png".
+Figure of zip tattoo is the file "Items/Tats/tattoo19.jpg".
 To decide which figure-name is the examine-image of (T - zip tattoo):
     decide on figure of zip tattoo.
 

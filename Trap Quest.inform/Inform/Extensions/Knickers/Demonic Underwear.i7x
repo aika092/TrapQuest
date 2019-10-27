@@ -1,4 +1,50 @@
-Demon Lord's Codpiece by Knickers begins here.
+Demonic Underwear by Knickers begins here.
+
+
+tongue-panties is a knickers. tongue-panties is unique. tongue-panties is biological. The printed name of tongue-panties is "[clothing-title-before]tongue panties[clothing-title-after]". The text-shortcut of tongue-panties is "tgps". Understand "tongue", "panties" as tongue-panties. The armour of tongue-panties is 10.
+
+Figure of white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1a.png".
+Figure of tonguing white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1b.png".
+Figure of black tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties2a.png".
+Figure of tonguing black tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties2b.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-panties):
+	if tonguesBlack is true:
+		if C is tonguing, decide on figure of tonguing black tongue panties;
+		decide on figure of black tongue panties;
+	otherwise:
+		if C is tonguing, decide on figure of tonguing white tongue panties;
+		decide on figure of white tongue panties.
+
+To say ClothingDesc of (C - tongue-panties):
+	say "This pair of [tonguesColour] panties has several large red tongues emerging from the inside of the fabric. [TongueStatus of C]".
+
+To say ShortDesc of (C - tongue-panties):
+	say "tongued panties".
+To say MediumDesc of (C - tongue-panties):
+	say "[tonguesColour] [ShortDesc of C]".
+To compute SelfExamineDesc of (C - tongue-panties):
+	say "A pair of [MediumDesc of C] covers a decent amount of your [ShortDesc of hips]. ".
+
+
+Definition: tongue-panties is displacable: decide yes.
+
+Definition: tongue-panties is demonic: decide yes.
+Definition: tongue-panties is tongued: decide yes.
+Definition: tongue-panties is transformation-protected: decide yes.
+Definition: tongue-panties is white themed if tonguesBlack is false.
+Definition: tongue-panties is black themed if tonguesBlack is true.
+
+To decide which number is the unique outrage of (C - tongue-panties):
+	if C is tonguing, decide on 14;
+	decide on 4.
+
+To compute periodic effect of (C - tongue-panties):
+	if C is crotch-in-place and the player is prone and there is a reactive dangerous monster and tonguesActive > 0:
+		say "[bold type][BigNameDesc of C] [bold type]uses its tongues to pull itself out of the way, completely of its own volition![roman type][line break]";
+		displace C.
+
+
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
 Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The soak-limit of demon codpiece is 6. The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
@@ -113,7 +159,7 @@ This is the demon junk punishment rule:
 			otherwise:
 				VaginalSexAddictUp 5;
 				Arouse 5000;
-				say "You feel a sudden desperate need to jam a giant cock into your brand new pussy!";
+				say "You feel a sudden desperate need to jam a giant cock into your pussy!";
 		let M be a random alive mechanic;
 		if M is monster:
 			XavierUp M by 2;
@@ -121,5 +167,50 @@ This is the demon junk punishment rule:
 		IntDown 2;
 		say "A fog settles over your mind, permanently impairing your ability to think about... just about anything, really.".
 
-Demon Lord's Codpiece ends here.
+acolyte-undergarment is a crotchless-panties. acolyte-undergarment is unique. The text-shortcut of acolyte-undergarment is "audg". acolyte-undergarment is metal. The soak-limit of acolyte-undergarment is 0. Understand "gold", "golden", "undergarment", "acolyte", "acolyte's" as acolyte-undergarment. acolyte-undergarment has a number called charge. The charge of acolyte-undergarment is usually 0. Acolyte-undergarment is top-exclusive. The printed name of acolyte-undergarment is "[clothing-title-before]acolyte's undergarment[clothing-title-after]".
+
+Figure of acolyte undergarment is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless7.jpg".
+
+To decide which figure-name is the clothing-image of (C - acolyte-undergarment):
+	decide on figure of acolyte undergarment.
+
+To say ShortDesc of (B - acolyte-undergarment):
+	say "acolyte's undegarment".
+
+To say ClothingDesc of (C - acolyte-undergarment):
+	say "A pair of crotchless golden 'underwear,' with [if the player is male]two matching strings of rubies[otherwise]a string of rubies[end if][if the player is female and C is worn] that stimulate your [vagina] as you walk[otherwise if C is worn]that fit around your [ShortDesc of penis][otherwise]down the middle[end if]. It hides absolutely nothing.[if the charge of C > 0][line break][end if][if the charge of C > 4]The skimpy 'fabric' is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The skimpy 'fabric' is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The skimpy 'fabric' is surprisingly cool to the touch.[end if]";
+
+Definition: acolyte-undergarment is blessable: decide no.
+Definition: acolyte-undergarment is demonic: decide yes.
+Definition: acolyte-undergarment is yellow themed: decide yes.
+Definition: acolyte-undergarment is walking-stimulating: decide yes.
+
+To MagicSteal (C - acolyte-undergarment):
+	if the charge of C < 5:
+		say "Your [printed name of C] absorbs the magical energy!";
+		increase the charge of C by 1;
+		if the charge of C is 5:
+			say "A surge of warmth passes through the fabric, and you get the feeling it has reached maximum power.";
+	otherwise:
+		increase the magic-power of the player by 1.
+
+To decide which number is the vaginal-sex-addiction-influence of (C - acolyte-undergarment):
+	decide on 1 - the magic-modifier of C.
+
+This is the worshipper masochism rule:
+	if acolyte-undergarment is worn:
+		say "The gemstones on your [ShortDesc of acolyte-undergarment] glint in response to your orgasm, and a wave of pain wracks your body.";
+		BodyRuin 1;
+		PainUp 1.
+The worshipper masochism rule is listed last in the orgasm fatigue effects rules.
+
+To decide which number is the dexterity-influence of (C - acolyte-undergarment):
+	if the charge of C < 5:
+		if the magic-modifier of C < 0, decide on the magic-modifier of C;
+		decide on 0;
+	otherwise:
+		if the magic-modifier of C > 0, decide on the magic-modifier of C + 2;
+		decide on 2.
+
+Demonic Underwear ends here.
 

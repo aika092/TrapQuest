@@ -6,12 +6,10 @@ To check attack of (M - a monster):
 	if M is threatening or M is penetrating a body part or M is grabbing the player:
 		now the alert of the player is 1;
 		if M is delayed:
-			now the last-interaction of M is 1;
 			compute correct delay of M;
-		otherwise if the paralyze-status of M is 1:
+		otherwise if the paralyze-status of M > 0:
 			now the last-interaction of M is 1;
-			if a random number between 1 and 2 is 1:
-				now the paralyze-status of M is 0;
+			decrease the paralyze-status of M by 1;
 			compute paralysis of M;
 		otherwise:
 			compute attack of M.
@@ -27,16 +25,17 @@ To compute delay of (M - a monster):
 	say "[BigNameDesc of M] doesn't do anything, as if waiting to see what you do next.".
 
 To compute paralysis of (M - a monster):
-	say "[BigNameDesc of M] doesn't seem able to move!";
+	say "[BigNameDesc of M] [if the paralyze-status of M > 0]doesn't seem able to move[otherwise]can move again[end if]!";
 
 To compute attack of (M - a monster):
 	now current-monster is M;
-	if the poison-status of M is 1 and health of M > 1:
-		decrease health of M by 4;
+	if the poison-status of M > 0 and health of M > 1:
+		let N be the maxhealth of M / 10;
+		if N < 1, now N is 1;
+		decrease health of M by N;
 		if health of M < 1:
 			now health of M is 1;
-		if a random number between 1 and 3 is 1:
-			now the poison-status of M is 0;
+		decrease the poison-status of M by 1;
 	follow the monster attack rules.
 
 The monster attack rules is a rulebook.
@@ -133,7 +132,8 @@ To orgasm (M - a monster):
 		if the player is in Dungeon28, progress quest of altar-sex-quest;
 	if ghost-strapon is worn, compute ghostGrowth of M;
 	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, follow the betrothal rule;
-	if M is intelligent, compute refactoryReset of M;
+	compute refactoryReset of M;
+	if M is infernal, progress quest of demon-slut-quest;
 	if there is a worn notebook, compute studying 0 of M;
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
@@ -141,21 +141,32 @@ To orgasm (M - a monster):
 		ChargeUp giant-statue by 60;
 
 To compute refactoryReset of (M - a monster):
-	now the refactory-period of M is the refactory-time of M;
-	if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
-	if there is a worn enhancing book of anal:
-		FavourUp M;
-		increase the refactory-period of M by the intelligence of the player.
+	if M is intelligent:
+		now the refactory-period of M is the refactory-time of M;
+		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
+		if there is a worn enhancing book of anal:
+			FavourUp M;
+			increase the refactory-period of M by the intelligence of the player.
 
 To compute priestessBlessing of (M - a monster):
 	if the class of the player is priestess:
-		say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
-		decrease the charge of the dungeon altar by 150;
+		if M is infernal:[if M is a demon]
+			say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with [him of M], Sister! Do not insult your goddess!'";
+			increase the charge of the dungeon altar by 30;
+		otherwise:
+			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
+			decrease the charge of the dungeon altar by 150;
+	if M is infernal, RitualUp 2;
+	otherwise RitualUp 1.
+
+To RitualUp (X - a number):
 	let R be ritual-beads;
-	if R is worn and the player is the donator:
-		if the charge of R < the notches of R:
+	if R is worn:
+		while (X > 0 and the charge of R + X > the notches of R):
+			decrease X by 1;
+		if X > 0:
 			say "The [printed name of R] seems to grow heavier inside you.";
-			increase the charge of R by 1;
+			increase the charge of R by X;
 		otherwise:
 			say "The [printed name of R] shifts slightly inside of you, but doesn't seem to get any heavier. Maybe it's full?".
 
@@ -195,7 +206,14 @@ To compute replacement of (D - a clothing):
 					ZipUp D;
 		otherwise if D is actually summonable:
 			say "[BigNameDesc of current-monster] puts you back into your [ShortDesc of D] before letting you go.";
+			layer D correctly;
 			now D is worn by the player; [If we summon it, it will have all its stats reset.]
+			now D is identified;
+			now D is sure;
+			compute unique summoning of D;
+			if D is ass plugging or (D is vagina plugging and the player is male), now D is penetrating asshole;
+			if D is vagina plugging and the player is female, now D is penetrating vagina;
+			if D is ballgag, now D is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
 		otherwise:
 			say "[BigNameDesc of current-monster], unable to replace your [D], just drops it onto the ground.";
 			now D is in the location of the player;
@@ -254,7 +272,7 @@ To compute default facial climax for (M - a monster):
 				compute oral creampie of M;
 			otherwise: [submitted, deepthroat]
 				compute deepthroat creampie of M;
-	if M is interested and the rounds of sex left of M <= 0:[possibly allows for another round of sex]
+	if M is interested and the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
 		satisfy M.[dislodges him automatically]
 
 [!<ComputeClimaxOfMonsterInFuckhole>+
@@ -275,10 +293,12 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 		satisfy M.
 
 This is the default anal climax rule:
-	if current-monster is penetrating asshole, compute anal climax of current-monster;
-	if current-monster is awake and the rounds of sex left of current-monster is 0:
-		replace any buttplugs;
-		replace any diapers.
+	if current-monster is penetrating asshole:
+		compute anal climax of current-monster;
+		if current-monster is awake and the rounds of sex left of current-monster is 0:
+			replace any buttplugs;
+			replace any diapers;
+			replace any clothes.
 The default anal climax rule is listed in the default end-of-sex rules.
 
 To replace any buttplugs:
@@ -299,15 +319,18 @@ To compute anal climax of (M - a monster):
 	compute climax of M in asshole.
 
 This is the default vaginal climax rule:
-	if current-monster is penetrating vagina, compute vaginal climax of current-monster;
-	if current-monster is awake and the rounds of sex left of current-monster is 0:
-		replace any cuntplugs;
-		replace any diapers.
+	if current-monster is penetrating vagina:
+		compute vaginal climax of current-monster;
+		if current-monster is awake and the rounds of sex left of current-monster is 0:
+			replace any cuntplugs;
+			replace any diapers;
+			replace any clothes.
 The default vaginal climax rule is listed in the default end-of-sex rules.
 
 To replace any cuntplugs:
 	repeat with G running through sex toys retained by current-monster:
-		compute replacement of G in vagina.
+		if the player is female, compute replacement of G in vagina;
+		otherwise compute replacement of G in asshole.
 
 To compute vaginal climax of (M - a monster):
 	compute climax of M in vagina.
@@ -638,7 +661,7 @@ Definition: a body part (called B) is a reasonable target:
 		if B is actually occupied:
 			repeat with T running through things penetrating B:
 				if T is insertable or T is ballgag:
-					if T is cursed and current-monster is not able to remove cursed plugs, decide no; [There's a cursed thing in the way, so only NPCs that can remove cursed plugs can access this orifice.]
+					if (T is cursed or T is locked) and current-monster is not able to remove cursed plugs, decide no; [There's a cursed thing in the way, so only NPCs that can remove cursed plugs can access this orifice.]
 					if current-monster is not able to remove plugs, decide no; [There's a thing in the way, so only NPCs that can remove plugs can access this orifice.]
 				otherwise: [e.g. a monster / trap is penetrating]
 					decide no;
@@ -685,7 +708,7 @@ Definition: a monster (called M) is able to remove plugs: [Can the monster remov
 This is the default monster convinced rule:
 	if presented-orifice is a reasonable target:
 		if a random number between -1 and the charisma of the player >= 0:
-			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 			say "[PresentAcceptanceFlav of current-monster]";
 			rule succeeds;
 		otherwise if (presented-orifice is face or presented-orifice is belly) and current-monster is intelligent and there is a worn tongue piercing:
@@ -891,8 +914,8 @@ To compute (M - a monster) entering (F - a fuckhole):[Generic function that shou
 		set up sex length of M in F;
 		say "[BigNameDesc of M] forces [him of M]self into your [variable F]";
 		now M is penetrating F;
-		ruin F;
 		compute unique penetration effect of M in F;
+		ruin F;
 	otherwise:
 		say "[BigNameDesc of M] sees that you are already occupied and loses interest";
 		Bore M.
@@ -1021,7 +1044,7 @@ The monster begin urination rules is a rulebook.
 
 This is the monster removing gag for urination rule:
 	let C be a random worn clothing penetrating face;
-	if C is cursed clothing:
+	if C is cursed clothing or C is locked clothing:
 		if current-monster is able to remove cursed plugs:
 			compute current-monster removing C;
 			rule succeeds;
@@ -1279,7 +1302,7 @@ To compute (S - a clothing) damaging (M - a monster):
 	otherwise say "Somehow, [NameDesc of M] hurts [himself of M] as [he of M] attacks!";
 	if S is spikey and S is a striped top and the poison-status of M is 0:
 		say "After striking you, [NameDesc of M] takes on an unhealthy shade of green!";
-		now the poison-status of M is 1;
+		now the poison-status of M is 3;
 	decrease the health of M by 4.
 
 To compute (M - a monster) striking (B - face):

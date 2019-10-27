@@ -20,7 +20,7 @@ To say BigFuckerDesc of (M - Icarus):
 	say "Icarus".
 
 Figure of Icarus 1 is the file "NPCs/MultiFloor/Icarus1.png".
-Figure of Icarus 2 is the file "NPCs/MultiFloor/Icarus2.png".
+Figure of Icarus 2 is the file "NPCs/MultiFloor/Icarus2.jpg".
 
 To decide which figure-name is the monster-image of (M - Icarus):
 	decide on Figure of Icarus 1.
@@ -28,14 +28,14 @@ To decide which figure-name is the monster-image of (M - Icarus):
 To decide which figure-name is the unfriendly-monster-image of (M - Icarus):
 	decide on Figure of Icarus 2.
 
-Figure of Icarus interact 1 is the file "Special/Cutscene/cutscene-Icarus-interact1.png".
-Figure of Icarus interact 2 is the file "Special/Cutscene/cutscene-Icarus-interact2.png".
-Figure of Icarus interact 3 is the file "Special/Cutscene/cutscene-Icarus-interact3.png".
-Figure of Icarus interact 4 is the file "Special/Cutscene/cutscene-Icarus-interact4.png".
-Figure of Icarus interact 5 is the file "Special/Cutscene/cutscene-Icarus-interact5.png".
-Figure of Icarus interact 6 is the file "Special/Cutscene/cutscene-Icarus-interact6.png".
-Figure of Icarus interact 7 is the file "Special/Cutscene/cutscene-Icarus-interact7.png".
-Figure of Icarus interact 8 is the file "Special/Cutscene/cutscene-Icarus-interact8.png".
+Figure of Icarus interact 1 is the file "Special/Cutscene/cutscene-Icarus-interact1.jpg".
+Figure of Icarus interact 2 is the file "Special/Cutscene/cutscene-Icarus-interact2.jpg".
+Figure of Icarus interact 3 is the file "Special/Cutscene/cutscene-Icarus-interact3.jpg".
+Figure of Icarus interact 4 is the file "Special/Cutscene/cutscene-Icarus-interact4.jpg".
+Figure of Icarus interact 5 is the file "Special/Cutscene/cutscene-Icarus-interact5.jpg".
+Figure of Icarus interact 6 is the file "Special/Cutscene/cutscene-Icarus-interact6.jpg".
+Figure of Icarus interact 7 is the file "Special/Cutscene/cutscene-Icarus-interact7.jpg".
+Figure of Icarus interact 8 is the file "Special/Cutscene/cutscene-Icarus-interact8.jpg".
 
 To say MonsterDesc of (M - Icarus):
 	say "This well-built [man of M] has two giant feathery wings rooted in [his of M] back. There's no doubt that [he of M][']s some kind of angel. [big his of M] calm thoughtful gaze gives [him of M] an air of intelligence and wisdom beyond the apparent age of [his of M] body, which looks about 25 years old.".
@@ -153,23 +153,31 @@ To compute perception of (M - Icarus):
 
 Part 3 - Icarus Science
 
-Definition: a clothing is IcarusScienceAppropriate: decide no.
+Definition: a wearthing is IcarusScienceAppropriate: decide no.
+
+To compute IcarusSummon of (C - a wearthing):
+	say IcarusSummonFlav of C;
+	summon C.
 
 To compute IcarusSummon of (C - a clothing):
 	say IcarusSummonFlav of C;
 	summon C cursed with quest.
 
-To decide which figure-name is icarus-clothing-image of (C - a clothing):
+To decide which figure-name is icarus-clothing-image of (C - a wearthing):
 	decide on the examine-image of C.
+
+To say IcarusSummonFlav of (C - a wearthing):
+	say "[ExamineDesc of C]";
+	cutshow the icarus-clothing-image of C for C.
 
 To say IcarusSummonFlav of (C - a clothing):
 	say "A [ShortDesc of C] appears on you!";
 	cutshow the icarus-clothing-image of C for C.
 
 To compute Icarus science of (M - Icarus):
-	let C be a random off-stage IcarusScienceAppropriate clothing;
-	if C is clothing:
-		say "[speech style of M]'[one of]Sweet! Let's do this.' [or]Okay, cool!  Here we go...' [or]Nice! Right, stay still...' [at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
+	let C be a random off-stage IcarusScienceAppropriate wearthing;
+	if C is wearthing:
+		say "[speech style of M]'[one of]Sweet! Let's do this.'[or]Okay, cool!  Here we go...'[or]Nice! Right, stay still...'[at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
 		compute IcarusSummon of C;
 		if M is outrage disapproving:
 			FavourDown M by 1;
@@ -208,8 +216,8 @@ Definition: bondage-ribbons (called C) is IcarusScienceAppropriate:
 	if the player is not wrist bound and C is actually summonable, decide yes;
 	decide no.
 
-Figure of bondage ribbons is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons1.png".
-Figure of bondage ribbons full is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons2.png".
+Figure of bondage ribbons is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons1.jpg".
+Figure of bondage ribbons full is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons2.jpg".
 
 To decide which figure-name is clothing-image of (C - bondage-ribbons):
 	decide on figure of bondage ribbons.
@@ -236,8 +244,8 @@ Definition: chain-collar is grey themed: decide yes.
 Definition: chain-collar is black themed: decide yes.
 Definition: chain-collar is IcarusScienceAppropriate if it is actually summonable.
 
-Figure of chain collar is the file "Items/Accessories/Neck/collar5.png".
-Figure of chain collar full is the file "Items/Accessories/Neck/collar6.png".
+Figure of chain collar is the file "Items/Accessories/Neck/collar5.jpg".
+Figure of chain collar full is the file "Items/Accessories/Neck/collar6.jpg".
 
 To decide which figure-name is clothing-image of (C - chain-collar):
 	decide on figure of chain collar.
@@ -279,9 +287,9 @@ To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt
 
 
 
-icarus-butt is a clothing. icarus-butt is unique.
+icarus-butt is a wearthing.
 Definition: icarus-butt is IcarusScienceAppropriate if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16.
-Figure of icarus-butt is the file "Special/Cutscene/cutscene-icarus-ball1.png".
+Figure of icarus-butt is the file "Special/Cutscene/cutscene-icarus-ball1.jpg".
 To compute IcarusSummon of (C - icarus-butt):
 	say "A volleyball appears behind you, hovering above your butt. It begins bouncing against your [AssDesc], and each time it does, your cheeks swell in size a bit. They don't stop until your buttcheeks are so stupidly big that the volleyball can now balance perfectly still on top of your giant ass cheeks!";
 	increase the flesh volume of hips by 16 - the total volume of hips;
@@ -289,12 +297,70 @@ To compute IcarusSummon of (C - icarus-butt):
 	say TotalDesc of hips;
 	say "The volleyball then vanishes.".
 
-icarus-hips is a clothing. icarus-hips is unique.
+icarus-hips is a wearthing.
 Definition: icarus-hips is IcarusScienceAppropriate if the thickness of hips < max hip size and the thickness of hips <= 6 + the flesh volume of thighs and the thickness of hips > 3 + the flesh volume of thighs.
 To compute IcarusSummon of (C - icarus-hips):
 	say "[BigNameDesc of Icarus] pulls [his of Icarus] hands apart slowly, and you can feel your hips try to widen at the same time!";
 	HipUp 3;
 	say ThighGapFlav.
+
+icarus-lips is a wearthing.
+Definition: icarus-lips is IcarusScienceAppropriate if the lips of face < 2.
+Figure of icarus-lips is the file "Special/Cutscene/cutscene-icarus-lips1.jpg".
+To compute IcarusSummon of (C - icarus-lips):
+	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your face. You feel your lips begin to swell!";
+	now the lips of face is 2;
+	if the make-up of face < 2, now the make-up of face is 2;
+	cutshow figure of icarus-lips for face;
+	say TotalDesc of face.
+
+icarus-hair is a wearthing.
+Definition: icarus-hair is IcarusScienceAppropriate if the largeness of hair < 9 and frozen hair is 0.
+Figure of icarus-hair is the file "Special/Cutscene/cutscene-icarus-hair1.jpg".
+To compute IcarusSummon of (C - icarus-hair):
+	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your hair. ";
+	if artificial enhancements fetish is 1:
+		say "Hair extensions fasten themselves to your hair and change its colour!";
+		now the fake largeness of hair is 9 - the raw largeness of hair;
+	otherwise:
+		say "You feel it rapidly lengthen!";
+		now the raw largeness of hair is 9;
+	now the blondeness of hair is 3;
+	now the brightness of hair is 2;
+	now the redness of hair is 0;
+	cutshow figure of icarus-hair for hair;
+	say TotalDesc of hair.
+
+icarus-belly is a wearthing.
+Definition: icarus-belly is IcarusScienceAppropriate if pregnancy fetish + inflation fetish > 0 and the pregnancy of the player is 0.
+Figure of icarus-belly is the file "Special/Cutscene/cutscene-icarus-belly1.jpg".
+To compute IcarusSummon of (C - icarus-belly):
+	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
+	if pregnancy fetish > 0 and the player is female:
+		now the pregnancy of the player is 1;
+		cancel father material of vagina;
+		now forcedFertility is true;
+		now Icarus is inseminating vagina;
+		compute sudden pregnancy;
+	otherwise:
+		increase the air volume of belly by belly limit - the total fill of belly;
+	cutshow figure of icarus-belly for belly;
+	say TotalDesc of belly.
+
+
+icarus-pasties is a pasties. icarus-pasties is unique. icarus-pasties is sheer. The text-shortcut of icarus-pasties is "psti".
+Figure of icarus-pasties is the file "Items/Clothes/Upper/Bras/pasties2a.jpg".
+Figure of icarus-pasties full is the file "Items/Clothes/Upper/Bras/pasties2b.jpg".
+Definition: icarus-pasties is IcarusScienceAppropriate if it is actually summonable.
+To decide which figure-name is clothing-image of (C - icarus-pasties):
+	decide on figure of icarus-pasties.
+To decide which figure-name is icarus-clothing-image of (C - icarus-pasties):
+	decide on figure of icarus-pasties full.
+To say ClothingDesc of (C - icarus-pasties):
+	say "Two slightly sheer black pasties made of a flimsy fabric are all that cover your nipples.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
+
+
+
 
 Part 4 - Combat
 

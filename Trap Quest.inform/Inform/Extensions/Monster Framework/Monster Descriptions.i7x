@@ -21,9 +21,12 @@ To say FullExamineDesc of (M - a monster):
 	say FullMonsterDesc of M.
 
 To say FullMonsterDesc of (M - a monster):
+	say FullTitle of M;
 	say ImageDesc of M;
 	say MonsterDesc of M;
-	say MonsterComment of M.
+	say MonsterComment of M;
+	if M is messy, say MessyMonsterFlav of M.
+
 
 
 
@@ -44,6 +47,12 @@ To say MonsterFaceDesc of (M - a tentacle monster):
 
 To say MonsterFaceDesc of (M - a fairy):
 	say "entire body".
+
+
+To say MessyMonsterFlav of (M - a monster):
+	say "The back of [his of M] diaper is bulging out and [his of M] face is red with embarrassment. It seems that someone has done a stinky.".
+
+
 
 To decide which number is the health-colour of (M - a monster):
 	let HP be the health of M * 1.0;

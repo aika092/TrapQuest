@@ -57,7 +57,7 @@ Carry out fanning:
 			now R is not smoky;
 	let here-monsters be the list of monsters in R;
 	repeat with M running through the list of monsters in R:
-		if M is caged or M is defeated, remove M from here-monsters;
+		if M is caged or M is defeated or (M is acolyte and M is not unleashed), remove M from here-monsters;
 	let E be the number of entries in here-monsters;
 	if E > 0:
 		say "A strong blast of air blows ";
@@ -69,6 +69,8 @@ Carry out fanning:
 			now M is moved; [won't move again this turn]
 			if M is shopkeeper, anger M;
 		say " to the [D]!";
+		if there is a monster in the location of the player:
+			say "It doesn't affect the [list of monsters in the location of the player]!";
 		if the noun is cursed or (the noun is blessed and OD is N-viable):
 			if the noun is blessed:
 				now D is OD;

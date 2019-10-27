@@ -29,7 +29,7 @@ Carry out inking:
 	otherwise:
 		say "The screen says 'ERROR: Canvas already full. No appropriate templates found.' The arms let go of you and recede into the ceiling.";
 	destroy the noun;
-	now the noun is in Holding Pen; [so it never comes back]
+	if the noun is clothing, now the noun is in Holding Pen; [so it never comes back]
 	allocate 6 seconds.
 
 times-inked is a number that varies.

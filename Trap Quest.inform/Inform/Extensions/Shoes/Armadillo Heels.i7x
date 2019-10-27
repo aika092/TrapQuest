@@ -29,7 +29,7 @@ To set up influence of (C - an armadillo heels):
 To decide what number is the price of (C - an armadillo heels):
 	decide on 3.
 
-Definition: an armadillo heels is party related: decide yes.
+Definition: an armadillo heels is party themed: decide yes.
 Definition: an armadillo heels is brown themed: decide yes.
 
 To compute periodic effect of (C - an armadillo heels):

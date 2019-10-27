@@ -36,10 +36,10 @@ To uniquely set up (C - a sissy bow):
 	now the quest of C is asshole-presenting-quest.
 
 To say QuestFlav of (Q - asshole-presenting-quest):
-	say "You sense that it wants you to offer your asshole up for sex.".
+	say "You sense that it wants you to [if diaper quest is 1]have shameful orgasms[otherwise]offer your asshole up for sex[end if].".
 
 To say QuestTitle of (Q - asshole-presenting-quest):
-	say " (anal offering quest)".
+	say " ([if diaper quest is 1]shameful orgasm[otherwise]anal offering[end if] quest)".
 
 To compute persistent reward of (Q - asshole-presenting-quest) on (C - a clothing):
 	compute generic class reward of Q on C.

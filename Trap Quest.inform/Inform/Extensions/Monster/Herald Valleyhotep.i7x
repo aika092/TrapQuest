@@ -226,7 +226,7 @@ To compute herald's gift:
 		now the quest-status of herald is 1;
 		now S is in the location of the player;
 	otherwise if the quest-status of herald is 2:
-		say "[speech style of herald]Well if it isn't my favorite minion! You did, like, super good sending me that lady, and I want to thank you for it! I know! She had, like, a lot of silly smarts left in [his of herald] brains! Since you work for me it's okay for now if you have some of the leftovers.[roman type][line break]";
+		say "[speech style of herald]Well if it isn't my favourite minion! You did, like, super good sending me that lady, and I want to thank you for it! I know! She had, like, a lot of silly smarts left in [his of herald] brains! Since you work for me it's okay for now if you have some of the leftovers.[roman type][line break]";
 		Intup 2;
 		now the quest-status of herald is 3;
 	otherwise if the gifted of herald is 0:

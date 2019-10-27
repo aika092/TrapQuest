@@ -97,8 +97,10 @@ To decide which number is the girth of (M - a ghost):
 
 This is the spawn initial ghosts rule:
 	if the number of alive ghosts - the number of alive ghostly tentacle <= 0:
-		set up jismbodied ghost;
-		summon jismbodied ghost in the mansion.
+		let M be a random off-stage ghost;
+		if M is ghost:
+			set up M;
+			summon M in the mansion.
 The spawn initial ghosts rule is listed in the setting up mansion monsters rules.
 
 To compute unique unsimulated periodic effect of (M - a ghost):
@@ -170,6 +172,9 @@ Definition: a ghost (called M) is objectifying the player:
 	if the appearance of the player > the bimbo tolerance of M, decide yes;
 	decide no.[The ghost won't go for you unless you're vulnerable or slutty]
 
+To say GhostTip:
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Ghosts are often invincible outside of certain rooms. Look for a description of a crest on the floor, and the ghost 'flickering into the corporeal realm' before you fight them. Also, some have really nasty OHKO attacks, but you can see them coming and move rooms before they go off. Just keep an eye on the text.[roman type][line break][or][stopping]".
+
 To compute perception of (M - a ghost):
 	now M is interested;
 	let A be 0;
@@ -178,6 +183,7 @@ To compute perception of (M - a ghost):
 	if M is unfriendly or the bimbo of the player >= 15 or A is 1:
 		say "[if M is jismbodied ghost][BigNameDesc of M] seems to reform itself, elongating slowly until a foot-long, slimy [manly-penis] thick enough to qualify as lumber is hovering in the air in front of you. [otherwise]Light seems to converge in front of [NameDesc of M], and forming a massive, and very erect [manly-penis] right before your eyes. [end if]From the way it's pointing at you it's not hard to guess at its intentions...";
 		anger M;
+		say GhostTip;
 	otherwise:
 		say "The light cast by [NameDesc of M] seems to change, and it begins to follow you around.".
 
@@ -185,6 +191,7 @@ To compute DQ perception of (M - a ghost):
 	now M is interested;
 	if M is unfriendly:
 		say "[BigNameDesc of M] coos excitedly in a haunting voice. [if M is jismbodied ghost]The small powder ghost begins to energetically dance around [him of M] with increasing speed! [end if]From the way it's flexing its fabric and staring at you it's not hard to guess at its intentions...";
+		say GhostTip;
 	otherwise:
 		say "[BigNameDesc of M][']s expression seems to change from neutral to an evil sneer, and [he of M] begins to follow you around.".
 
@@ -810,6 +817,7 @@ To compute perception of (M - ghostly tentacle):
 	if M is unfriendly or the bimbo of the player >= 15 or A is 1:
 		say "[BigNameDesc of M] slowly unfurls to its full, six foot length, revealing an underside full of giant, octopus-like suckers.";
 		anger M;
+		say GhostTip;
 	otherwise:
 		say "The light cast by [NameDesc of M] seems to change, and it begins to follow you around.".
 
@@ -818,6 +826,7 @@ To compute DQ perception of (M - ghostly tentacle):
 	if M is unfriendly:
 		say "[BigNameDesc of M] giggles, the unearthly sound echoing around the walls. You feel a little colder, and [he of M] stares daggers into your eyes as [he of M] descends towards you! Uh-oh.";
 		anger M;
+		say GhostTip;
 	otherwise:
 		say "The light cast by [NameDesc of M] seems to change, and [he of M] begins to follow you around.".
 

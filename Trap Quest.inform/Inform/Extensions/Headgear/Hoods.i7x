@@ -197,8 +197,7 @@ To compute class outfit of (H - WC hood):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body![line break][variable custom style][if the humiliation of the player < 27500]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
-		summon C;
-		now the raw-magic-modifier of C is 0;
+		summon C uncursed;
 		if toilet-summoned is 0, now toilet-summoned is 1;
 	otherwise if B is actually summonable or (B is boots and toilet-summoned < 2):
 		if toilet-summoned < 2:
@@ -206,8 +205,7 @@ To compute class outfit of (H - WC hood):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your hood pulses once, and then a pair of white latex thigh high boots appear on your feet![roman type][line break]";
-		summon B;
-		now the raw-magic-modifier of B is 0;
+		summon B uncursed;
 		if toilet-summoned < 2, now toilet-summoned is 2;
 	otherwise if P is actually summonable or (P is knickers and toilet-summoned < 3 and asshole is not actually occupied and vagina is not actually occupied):
 		if toilet-summoned < 3:
@@ -215,8 +213,7 @@ To compute class outfit of (H - WC hood):
 				say "Your [K] [wardrobeVanishes of K]!";
 				now K is in pink wardrobe;
 		say "[bold type]Your hood pulses once, and then a pair of white plug panties appear on (and in) you![roman type][line break]";
-		summon P cursed;
-		compute summoned quest of P;
+		summon P cursed with quest;
 		now toilet-summoned is 3;
 		now the raw-magic-modifier of P is 0.
 
@@ -307,8 +304,7 @@ To compute class outfit of (H - clown mask):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your mask emits a high pitched cackling sound, and then a creamy fetish dress materialises over your body![line break][variable custom style]I look so ridiculous! [if the player is shameless]How delicious[otherwise]This is crazy[end if]![roman type][line break]";
-		summon fetish baby dress;
-		now the raw-magic-modifier of fetish baby dress is 0;
+		summon fetish baby dress uncursed;
 		if clown-summoned is 0, now clown-summoned is 1;
 	otherwise if B is actually summonable or (B is shoes and clown-summoned < 2):
 		if clown-summoned < 2:
@@ -322,12 +318,11 @@ To compute class outfit of (H - clown mask):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your mask emits a high pitched laughing sound, and then a pair of latex booties appear on your feet![roman type][line break]";
-		summon B;
-		now the raw-magic-modifier of B is 0;
+		summon B uncursed;
 		if clown-summoned < 2, now clown-summoned is 2;
 	otherwise if M is actually summonable and clown-summoned < 3:
 		say "[bold type]Your mask emits a high pitched giggling sound, and then a pair of blue latex mittens appear on your hands![roman type][line break]";
-		summon M cursed;
+		summon M cursed with quest;
 		now the raw-magic-modifier of M is 0;
 		if clown-summoned < 3, now clown-summoned is 3.
 

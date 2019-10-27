@@ -96,7 +96,7 @@ To decide which number is the damage improvement of (W - sword-of-purity):
 	increase X by the magic-modifier of W;
 	decide on X.
 
-To decide which number is the vaginal-sex-influence of (W - sword-of-purity):
+To decide which number is the vaginal-sex-addiction-influence of (W - sword-of-purity):
 	decide on 3.
 
 To compute attack of (W - sword-of-purity) at (M - a monster):
