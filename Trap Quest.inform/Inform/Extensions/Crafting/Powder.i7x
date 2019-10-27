@@ -32,7 +32,7 @@ Check PowderRubbing a powder of identification on clothing:
 	if the second noun is sure and the second noun is identified, say "[variable custom style]I already know the magic details of this item...[roman type][line break]" instead.
 
 Carry Out PowderRubbing a powder of identification on a thing:
-	say "You sprinkle the powder onto the [ShortDesc of the second noun]. It glitters brightly as its magic properties are revealed to you!  ";
+	say "You sprinkle the powder onto the [ShortDesc of the second noun]. It glitters brightly as its magic properties are revealed to you! ";
 	now the second noun is sure;
 	now the second noun is identified;
 	say "It is a [second noun][if the raw-magic-modifier of the second noun is 0 and the second noun is bland and the second noun is blandness]. [line break][variable custom style]Hmm, how underwhelming[end if].[roman type][line break]";
@@ -62,7 +62,7 @@ Carry Out PowderRubbing a powder of enhancement on a thing:
 	say "You sprinkle the powder onto the [ShortDesc of the second noun]. ";
 	let R be a random number between 2 and 6;
 	if the second noun is cursed or the raw-magic-modifier of the second noun > 4 or R > the raw-magic-modifier of the second noun:
-		say "A green glow surrounds it for a moment!  ";
+		say "A green glow surrounds it for a moment! ";
 		if the noun is cursed:
 			decrease the raw-magic-modifier of the second noun by 1;
 		otherwise:

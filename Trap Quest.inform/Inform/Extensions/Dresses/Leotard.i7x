@@ -1,6 +1,6 @@
 Leotard by Dresses begins here.
 
-A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet.  A leotard has a number called charge.
+A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet. A leotard has a number called charge.
 
 Definition: a leotard is ballet related: decide yes.
 
@@ -64,7 +64,7 @@ To compute periodic effect of (L - a leotard):
 		let H be a random off-stage ballet heels;
 		let S be a random off-stage plentiful ballet shoes;
 		if H is actually summonable and the raw heel skill of the player > 5:
-			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes!  Uh-oh...[otherwise].[end if][roman type][line break]";
+			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes! Uh-oh...[otherwise].[end if][roman type][line break]";
 			summon H cursed with quest;
 		otherwise if S is actually summonable:
 			say "[bold type]Your leotard glows softly, and ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes![otherwise].[end if][roman type][line break]";

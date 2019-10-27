@@ -28,7 +28,7 @@ To compute hair growth of (H - rubber top hat):
 	let X be 0;
 	if H is cursed, now X is -25;
 	if H is blessed, now X is 50;
-	if the largeness of hair <  max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
+	if the largeness of hair < max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
 		say "Your [printed name of H] feels warm. You feel the fake hair extensions in your hair grow in length!";
 		FakeHairUp 1.
 
@@ -71,7 +71,7 @@ To compute class outfit of (H - rubber top hat):
 			let B be the largeness of breasts;
 			while B is the largeness of breasts:
 				BustImplantsUp 1;
-			say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type]  Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
+			say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
 		now plastic-summoned is 1;
 	otherwise if the class of the player is silicone queen and P is actually summonable:
 		summon P;

@@ -3,7 +3,7 @@ Supporters by Monster begins here.
 
 Part - Ai
 
-supporter-ai is a supporter. supporter-ai is female.  The leftover-type of supporter-ai is 202.
+supporter-ai is a supporter. supporter-ai is female. The leftover-type of supporter-ai is 202.
 
 The supporter-name of supporter-ai is "Ai".
 
@@ -391,7 +391,7 @@ To say MonsterFailedTripFlav of (M - supporter-critchett):
 	say "You avoid [his of M] charge and [he of M] nearly falls to the ground instead.".
 
 To say StrikingSuccessFlav of (M - supporter-critchett) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
-	say "[BigNameDesc of M] swings [his of M] enormous tits into you and slams you [TargetName of B]!  Squishy!! But owwwww.".
+	say "[BigNameDesc of M] swings [his of M] enormous tits into you and slams you [TargetName of B]! Squishy!! But owwwww.".
 
 To say StrikingFailureFlav of (M - supporter-critchett) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] swings [his of M] enormous tits into you and tries to slam you [TargetName of B] but you manage to swiftly dodge the blow!".
@@ -685,7 +685,7 @@ To say PresentAcceptanceFlav of (M - supporter-teagan): [Your (aggressive) NPC h
 To say PresentRejectionFlav of (M - supporter-teagan): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] lets out a frustrated sigh.[line break][speech style of M]'Like, can't you see these big, swollen milkbags?'[roman type][line break]".
 
-To compute the busy waiting of (M - supporter-teagan):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+To compute the busy waiting of (M - supporter-teagan): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] paces anxiously as [he of M] continues to wait.".
 
 To compute the default taunting of (M - supporter-teagan): [The NPC isn't able to do their thing right now because the player is busy with a trap or another NPC, but they expect the player will be free soon.]
@@ -709,7 +709,7 @@ To say MonsterFailedTripFlav of (M - supporter-teagan):
 	say "You manage to keep your balance.".
 
 To say StrikingSuccessFlav of (M - supporter-teagan) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
-	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - supporter-teagan) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".

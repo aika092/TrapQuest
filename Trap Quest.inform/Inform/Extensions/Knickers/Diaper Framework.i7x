@@ -253,7 +253,7 @@ To compute periodic effect of (D - a diaper):
 	compute unique periodic effect of D;
 	if D is no protection and D is not zippable and D is cursed or D is blessed:
 		if the number of embodied things penetrating a fuckhole is 0 and the bladder of the player > 4 and the player is not in danger and (the soak-limit of D / 2 > the total-soak of D):
-			say "[bold type]You feel your [D] somehow repair itself!  The rip at the crotch disappears, leaving it looking brand new[if the urine-soak of D > 0] (apart from the [urine])[end if].[roman type][line break]";
+			say "[bold type]You feel your [D] somehow repair itself! The rip at the crotch disappears, leaving it looking brand new[if the urine-soak of D > 0] (apart from the [urine])[end if].[roman type][line break]";
 			repair D;
 	increase the curse-charge of D by 1;
 	if the curse-charge of D > 35:
@@ -265,13 +265,13 @@ To compute periodic effect of (D - a diaper):
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 17 or xavier-diaper-link is 39:
-			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if you are wetting yourself. ";
+			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds and appears as if you are wetting yourself. ";
 			PissSoak 12 on D;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
 		if xavier-diaper-link >= 57 and asshole is not actually occupied:
 			now xavier-diaper-link is 1;
-			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again!  In any case it feels, sounds and appears as if it's you, which is all that really matters. ";
+			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
 			compute messing;
 	if altar-diaper-link > 0 and D is total protection:

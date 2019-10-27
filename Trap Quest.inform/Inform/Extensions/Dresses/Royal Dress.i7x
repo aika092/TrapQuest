@@ -93,7 +93,7 @@ To compute (C - a baby royal dress) unique inheriting from (D - a clothing):
 To transform (D - a clothing) into (C - a baby royal dress):
 	say "Your [D] transforms into ";
 	silently transform D into C;
-	say "a [C] in front of your eyes!  ";
+	say "a [C] in front of your eyes! ";
 	cutshow figure of princess diaper cutscene 1 for C;
 	say "[TransformReaction of C]".
 

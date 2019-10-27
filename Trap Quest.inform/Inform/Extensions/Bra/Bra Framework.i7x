@@ -133,7 +133,7 @@ Report going: [Let's make sure that all bras are a sensible size when encountere
 
 To compute bra strain:
 	repeat with B running through worn bras:
-		if the size of B  + the leniency of B < the largeness of breasts:
+		if the size of B + the leniency of B < the largeness of breasts:
 			compute bra strain of B.
 
 To compute bra strain of (B - a bra):
