@@ -50,6 +50,7 @@ To decide which number is the tolerance of (F - a fuckhole):
 		decrease the timer of a random lubricant covering F by 20;
 	increase T by (alcohol-level + (a random number between 0 and 1)) / 2;
 	if the class of the player is cumdumpster, increase T by 2;
+	if measurement tattoo is worn, increase T by 2;
 	if there is a live thing penetrating F and the reaction of the player > 0: [Since you can only submit and resist to living things]
 		increase T by 2;
 		if the soreness of F > 8, increase T by 2;

@@ -159,9 +159,9 @@ To compute (C - a clothing) unique inheriting from (D - a clothing):
 	do nothing.
 
 To transform (D - a clothing) into (C - a clothing):
-	say "Your [ShortDesc of D] transforms into ";
+	say "[bold type]Your [ShortDesc of D] transforms into ";
 	silently transform D into C;
-	say "a [C][unless D is headgear or the player is in a blindroom] in front of your eyes[end if]! ";
+	say "a [C][bold type][unless D is headgear or the player is in a blindroom] in front of your eyes[end if]![roman type] ";
 	if transformation cutscenes is 1:
 		say FullExamineDesc of C;
 	otherwise:

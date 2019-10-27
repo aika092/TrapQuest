@@ -32,18 +32,18 @@ Check knifing:
 	if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
 		if the player is not able to manually use manual dexterity, do nothing instead;
-		if the noun is hair:
-			if the largeness of hair <= favourite hair length, say "[variable custom style][if the bimbo of the player < 10]I feel comfortable with[otherwise if the bimbo of the player < 15]I like[otherwise]I LOVE[end if] my hair being this length.[roman type][line break]" instead;
-		otherwise if the noun is worn clothing:
-			if the coverer of the noun is clothing, say "You would first need to remove or destroy your [coverer of the noun]." instead;
-		otherwise:
-			say "Why would you want to do that?" instead;
-		if the player is in danger, say "It's a bit dangerous to try and handle a sharp knife with enemies nearby!" instead;
-		if the player is immobile, say "You are a bit tied up right now!" instead;
 	otherwise:
 		if the noun is monster, try slapping the noun instead;
-		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!";
-		if the noun is not vines and the noun is not ass hook, say "How would you cut that?".
+		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!" instead;
+		if the noun is not vines and the noun is not ass hook, say "How would you cut that?" instead;
+	if the noun is hair:
+		if the largeness of hair <= favourite hair length, say "[variable custom style][if the bimbo of the player < 10]I feel comfortable with[otherwise if the bimbo of the player < 15]I like[otherwise]I LOVE[end if] my hair being this length.[roman type][line break]" instead;
+	otherwise if the noun is worn clothing:
+		if the coverer of the noun is clothing, say "You would first need to remove or destroy your [coverer of the noun]." instead;
+	otherwise:
+		say "Why would you want to do that?" instead;
+	if the player is in danger, say "It's a bit dangerous to try and handle a sharp knife with enemies nearby!" instead;
+	if the player is immobile, say "You are a bit tied up right now!" instead.
 
 Carry out knifing:
 	allocate 6 seconds;
@@ -88,8 +88,10 @@ Carry out knifing:
 			otherwise:
 				say "You try, but the vines holding your wrist keep your sword arm firmly pinned to the ground. Maybe you should try again?";
 	otherwise:
-		if the noun is bondage or the noun is unremovable:
-			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it! You give up.";
+		if (the noun is bondage or the noun is unremovable) and the noun is not blessed:
+			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![line break][variable custom style]Perhaps if it was blessed?[roman type][line break]";
+		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
+			say "The knife can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";
 		otherwise if the charge of the second noun > 0:
 			say "The knife seems to be completely dull at the moment! You give up.";
 		otherwise:

@@ -139,7 +139,8 @@ This is the setup starting lubricants rule:
 The setup starting lubricants rule is listed in the setup starting items rules.
 
 To decide which number is the bartering value of (T - a lubricant) for (M - a wench):
-	decide on 5.
+	unless M is horny-wench, decide on 5;
+	decide on 0.
 
 To decide which number is the bartering value of (T - a lubricant) for (M - a wrestler):
 	decide on 3.

@@ -259,6 +259,7 @@ Check drinking time-bomb:
 			check sudden pregnancy;
 		PukeUp the stomach-semen of the player;
 		AssSquirt;
+		reset the Glulx timer;
 	otherwise:
 		let here-monsters be the list of monsters in the location of the player;
 		let E be the number of entries in here-monsters;

@@ -460,7 +460,7 @@ Check going:
 			unless ST is asleep or ST is off-stage or the wealth of the player < 20:
 				say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 				unless the player is bimbo consenting, say "You change your mind." instead;
-		if robomatron is alive and robomatron is in L and robomatron is awake:
+		if robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 			unless the player is bimbo consenting, say "You change your mind." instead;
 	if seconds is 0, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
@@ -565,6 +565,7 @@ Check going:
 							allocate 0 seconds; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
 							say "You change your mind." instead;
 			let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]
+			if the pregnancy of the player > 0 and S <= (B2 / 2) + 1, now S is (B2 / 2) + 3; [Pregnant players should not be prevented from ever moving since the pregnancy may have no other way of actually coming out other than a change in location]
 			repeat with M running through dangerous monsters in the location of the player:
 				let E be 1;
 				if M is insane gladiator or M is wild gladiator, increase E by 10;
@@ -664,8 +665,9 @@ REQUIRES COMMENTING
 +!]
 Carry Out Going (this is the monsters-go-next rule):
 	if seconds is 3: [only in normal moves, not in double moves]
+		let R be the room noun from the location of the player; [NPCs in the room that the player is entering don't move yet]
 		repeat with M running through alive simulated monsters:
-			unless M is vine boss, compute turn 2 of M.
+			unless M is vine boss or M is in R, compute turn 2 of M.
 
 [!<DelayCrawling>+
 

@@ -34,11 +34,12 @@ To Execute Takeoff:
 			humiliate SEVERE-HUMILIATION;
 		dislodge D;
 	let flav-said be 0;
-	repeat with C running through things held by the player:
-		unless C is worn:
-			if flav-said is 0, say "Your sudden flight makes [if there is a worn bag of holding]all your items fall out of your [ShortDesc of random worn bag of holding] and [end if]you drop all the items you're carrying!";
-			now flav-said is 1;
-			now C is in the location of the player;
+	if the floatskill of the player is 0:
+		repeat with C running through things held by the player:
+			unless C is worn:
+				if flav-said is 0, say "Your sudden flight makes [if there is a worn bag of holding]all your items fall out of your [ShortDesc of random worn bag of holding] and [end if]you drop all the items you're carrying!";
+				now flav-said is 1;
+				now C is in the location of the player;
 	if there is a worn magic wand:
 		compute takeoff of a random worn magic wand;
 	if the location of the player is no-roof:

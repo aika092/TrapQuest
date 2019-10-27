@@ -122,6 +122,13 @@ This is the research restriction blocks masturbation rule:
 		rule fails.
 The research restriction blocks masturbation rule is listed last in the masturbation restriction rules.
 
+
+This is the bound hands blocks masturbation rule:
+	if the player is wrist bound behind:
+		if auto is 0, say "You can't reach your [genitals] with your wrists bound behind your back!";
+		rule fails.
+The bound hands blocks masturbation rule is listed last in the masturbation restriction rules.
+
 [!<TheAlreadyWankingRule>+
 
 REQUIRES COMMENTING

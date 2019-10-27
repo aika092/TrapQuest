@@ -85,6 +85,7 @@ To decide which number is the flat dexterity of the player:
 	if acceleration-tincture-timer > 0:
 		increase D by acceleration-tincture-bonus;
 	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 6;
+	increase D by ((magic-speed-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	if the the boost-cooldown of nurse > 0, increase D by 2;
 	increase D by adult-baby-dex * 3;
 	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
@@ -92,6 +93,7 @@ To decide which number is the flat dexterity of the player:
 		if the silicone volume of breasts > 18, increase D by 3;
 	if fudge-poison-timer > 0, now D is D / 2;
 	if cookie-poison-timer > 0, decrease D by 2;
+	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
 	if the player is grossed out and D > 5, now D is 5;
 	if temp_dex_dam > 0, decrease D by temp_dex_dam;
 	now D is (D * (5 - alcohol-level)) / 5;

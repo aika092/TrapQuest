@@ -31,6 +31,9 @@ To say MonsterDesc of (M - nurse):
 
 Definition: nurse is willing to do oral: decide yes.
 
+To regionally place (M - nurse):
+	now M is in School11.
+
 To set up (M - nurse):
 	reset M;
 	now the monstersetup of M is 1;
@@ -99,7 +102,7 @@ To compute (M - nurse) striking (B - a body part):
 To compute damage of (M - nurse):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "She raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don[']t fret dear, this will help you calm down some.'[roman type][line break]";
+			say "She raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -161,13 +164,13 @@ To say WhoAnswer of (M - a nurse):
 	say "[speech style of M]'I'm the nurse! Glad to make your acquaintance, dear.'[roman type][line break]".
 
 To say WhereAnswer of (M - a nurse):
-	say "[speech style of M]'[if the rank of the player <= 1]You[']re in the nurse's office sweetie. If you[']re not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I[']m not sure. Just do your best on your schoolwork and I[']m sure you[']ll be all ranked up in no time!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You're in the nurse's office sweetie. If you're not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I'm not sure. Just do your best on your schoolwork and I'm sure you'll be all ranked up in no time!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a nurse):
-	say "[speech style of M]'[one of]Mmm, I don[']t know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don[']t know too much about that.'[or]Sorry honey, but I don[']t know much about that. Maybe when you[']re all done here you should try increasing your rank?'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Mmm, I don't know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don't know too much about that.'[or]Sorry honey, but I don't know much about that. Maybe when you're all done here you should try increasing your rank?'[at random][roman type][line break]".
 
 To say StoryAnswer of (M - a nurse):
-	say "[speech style of M]'Mmm, well, I started working here because I love making people feel good. Doesn[']t matter where this place came from as long as I can do that.'[roman type][line break]".
+	say "[speech style of M]'Mmm, well, I started working here because I love making people feel good. Doesn't matter where this place came from as long as I can do that.'[roman type][line break]".
 
 To say AdviceAnswer of (M - a nurse):
 	say "[speech style of M]'Remember where this place is so you can come back and let me patch you up when you get hurt, alright honey?'[roman type][line break]".

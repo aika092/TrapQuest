@@ -26,13 +26,18 @@ Definition: a sex toy (called S) is vaginally summonable:
 A sex toy is a kind of clothing. Understand "sex toys" as sex toy. The text-shortcut of a sex toy is "sty".
 A sex toy is usually plastic. A sex toy is usually manly.
 A sex toy has a number called size. The size of a sex toy is usually 0.
-The printed name of a sex toy is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][DongSize the size of the item described] [MediumDesc of item described][clothing-title-after]".
+The printed name of a sex toy is usually "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 Definition: a sex toy is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 A sex toy has a number called toy-charge.
 Definition: a sex toy is magic-enhanceable: decide no.
 Definition: a sex toy is too boring: decide no.
 Definition: a sex toy is transformation-protected: decide yes.
 Definition: a sex toy is disintegration-protected: decide yes.
+
+
+To say DongSize of (C - a sex toy):
+	let N be the size of C;
+	say DongSize N.
 
 To say DongSize (N - a number):
 	say "[if N < 3]small[otherwise if N < 5]medium sized[otherwise if N < 7]large[otherwise if N < 9]huge[otherwise]monstrous[end if]".
@@ -41,7 +46,7 @@ To say ShortDesc of (C - a sex toy):
 	say "sex toy".
 
 To say MediumDesc of (C - a sex toy):
-	say "[DongSize the size of C] [ShortDesc of C]".
+	say "[DongSize of C] [ShortDesc of C]".
 
 Report examining a sex toy:
 	repeat with O running through orifices penetrated by the noun:
@@ -53,6 +58,17 @@ To ToyShortcutAssign (C - a sex toy):
 	if the text-shortcut of C is "sty":
 		now the text-shortcut of C is substituted form of "sty[toyShortcutCount]";
 		increase toyShortcutCount by 1.
+
+
+
+This is the sex toy pussy slut rule:
+	if there is a sex toy penetrating vagina, decrease the desirability of vagina by 7.
+The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
+
+This is the sex toy butt slut rule:
+	if there is a sex toy penetrating asshole, decrease the desirability of asshole by 7.
+The sex toy butt slut rule is listed in the butt slut eligibility rules.
+
 
 
 To decide which number is the original price of (C - a sex toy):
@@ -168,9 +184,6 @@ To decide which number is the girth of (I - a sex toy):
 To decide which number is the girth of (I - a clothing):
 	decide on the plug size of I.
 
-To decide which number is the girth of (I - a monster):
-	decide on 3. [Normal penis girth]
-
 A time based rule (this is the sex toys slipping out rule):
 	repeat with I running through insertable things penetrating a fuckhole:
 		compute gripping of I.
@@ -256,7 +269,6 @@ To decide which number is the bartering value of (T - a sex toy) for (M - a mann
 	unless M is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
-Include Plugging by Actions.
 
 Check taking off sex toy:
 	try unplugging the noun instead.
@@ -313,8 +325,6 @@ Chapter 2 - Plugs
 
 A plug is a kind of sex toy. A basic plug is a kind of plug. The size of plug is usually 4. Understand "butt", "plug" as plug. Understand "small" as plug when the size of item described < 4. Understand "medium", "sized" as plug when the size of item described is 4. Understand "large" as plug when the size of item described < 7 and the size of item described >= 5. Understand "huge" as plug when the size of item described < 9 and the size of item described >= 7. Understand "monstrous" as plug when the size of item described >= 9. The text-shortcut of a plug is "plu".
 
-The printed name of a basic plug is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][MediumDesc of item described][clothing-title-after]".
-
 black-plug is a basic plug. The size of black-plug is 1. The text-shortcut of black-plug is "plu1". Understand "black" as black-plug.
 To say MediumDesc of (P - black-plug):
 	say "small black plug".
@@ -358,6 +368,12 @@ Definition: brown-plug is brown themed: decide yes.
 tiered-plug is a basic plug. The size of tiered-plug is 10. The text-shortcut of tiered-plug is "plu10". Understand "beige" as tiered-plug.
 To say MediumDesc of (P - tiered-plug):
 	say "monstrous beige plug".
+
+To assign size (X - a number) to (C - a basic plug):
+	let P be C;
+	repeat with Z running through basic plugs:
+		if the size of Z is X, now P is Z;
+	if P is not C, silently transform C into P.
 
 To say ShortDesc of (C - a plug):
 	say "plug".

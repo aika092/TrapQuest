@@ -24,7 +24,7 @@ To say ShortDesc of (C - a clubbing dress):
 	say "clubbing dress".
 
 
-Definition: a clubbing dress is party related: decide yes.
+Definition: a clubbing dress is party themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a clubbing dress):
 	if there is a worn diaper:

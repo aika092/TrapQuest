@@ -151,9 +151,14 @@ To compute horse effect of (T - a painted horse):
 		otherwise PainUp 1;
 		arouse 400; [Extra arousal hardcoded in here]
 	otherwise if W > 2 and delayed fainting is 0:
-		compute horse fainting.
+		compute horse pain.
 
-To compute horse fainting:
+To compute horse pain:
+	say "You can't help but cry as the pressure on your [player-crotch] continues to cause you huge amounts of pain!";
+	PainUp 1.
+
+
+[To compute horse fainting:
 	if the soreness of asshole is 10 and the player is male and a random number between 1 and 4 is 1 and the delicateness of the player > 15:
 		say "You can't take the pressure on your crotch any more! You pass out.";
 		now the delayed fainting is 1;
@@ -171,7 +176,7 @@ To compute horse fainting:
 			now the fainting reason of the player is 20;
 		otherwise if the soreness of vagina < 10:
 			increase the soreness of vagina by 1;
-			say "The pressure on your [vagina] is making it steadily more sore!".
+			say "The pressure on your [vagina] is making it steadily more sore!".]
 
 
 Section 2 Wild Horse Trap
@@ -227,7 +232,7 @@ To compute horse effect of (T - a wild horse):
 			bodyruin W / 2;[TODO: light players go flying]
 		try kneeling;
 	otherwise if W > 2 and delayed fainting is 0:
-		compute horse fainting;
+		compute horse pain;
 	decrease the TrapNo of T by 1.
 
 [!<CheckPullingWildHorse>+

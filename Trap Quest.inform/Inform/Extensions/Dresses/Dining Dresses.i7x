@@ -11,7 +11,7 @@ This is the remove inappropriate dining dresses rule:
 The remove inappropriate dining dresses rule is listed in the diaper quest fix rules.
 
 Definition: a dining dress is slitted: decide yes. [Slitted skirts don't block knee attacks]
-Definition: a dining dress is party related: decide yes.
+Definition: a dining dress is party themed: decide yes.
 
 
 Part 1 - Red Dining Dress

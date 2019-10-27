@@ -45,8 +45,8 @@ Definition: pair of trashy handcuffs is pink themed:
 To decide which number is the initial outrage of (W - pair of trashy handcuffs):
 	decide on 6.
 
-A pair of wristcuffs is a wrist bond. The printed name of pair of wristcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of wristcuffs[clothing-title-after]". The text-shortcut of pair of wristcuffs is "wc".
-Definition: a pair of wristcuffs is black themed: decide yes.
+pair of wristcuffs is a wrist bond. The printed name of pair of wristcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of wristcuffs[clothing-title-after]". The text-shortcut of pair of wristcuffs is "wc".
+Definition: pair of wristcuffs is black themed: decide yes.
 
 To decide which number is the initial outrage of (W - pair of wristcuffs):
 	decide on 3.

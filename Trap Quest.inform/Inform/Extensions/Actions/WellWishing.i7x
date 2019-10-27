@@ -65,6 +65,20 @@ Carry out WellWishing:
 		say "[first custom style]Wish... granted.[roman type][line break]";
 		now skeleton key is carried by the player;
 		say "Suddenly, you find a [skeleton key] in your hand!";
+	otherwise if the noun is infernal gem and there is an off-stage pure totem and a random number between 1 and 3 is 1:
+		let S be a random off-stage pure totem;
+		say "[first custom style]Temperance... granted.[roman type][line break]An invisible force gently pushes your hands open, and a tiny ivory carving materialises in your palm.";
+		now S is held by the player;
+	otherwise if permanent makeup is 1 and the noun is plentiful accessory and the noun is not sapphire and the noun is not emerald and the class of the player is not silicone queen and the latex-transformation of the player < 7:
+		say "[first custom style]Wish... granted.[roman type][line break]";
+		now permanent makeup is 0;
+		FaceDown 3;
+		say "Your [if diaper quest is 0]permanent make up is removed and your [end if]face returns to normal!";
+	otherwise if there is worn uncursed piercing and the noun is plentiful accessory and the noun is not sapphire:
+		say "[first custom style]Wish... granted.[roman type][line break]";
+		let PC be a random worn uncursed piercing;
+		say "Your [PC] disappears!";
+		destroy PC;
 	otherwise if (hungover > 0 or alcohol > 0 or toffee-poison-timer > 0 or fudge-poison-timer > 0 or cookie-poison-timer > 0) and P + a random number between 1 and 16 > 10 - (wishskill of the player * 3):
 		say "[first custom style]Wish... granted.[roman type][line break]";
 		say "Your body is cleansed of all poisons and toxins[if alcohol > 0 or hungover > 0]. You feel completely sober[end if]!";
@@ -78,15 +92,6 @@ Carry out WellWishing:
 		AssFill the soreness of asshole;
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
-	otherwise if the noun is infernal gem and there is an off-stage pure totem and a random number between 1 and 3 is 1:
-		let S be a random off-stage pure totem;
-		say "[first custom style]Temperance... granted.[roman type][line break]An invisible force gently pushes your hands open, and a tiny ivory carving materialises in your palm.";
-		now S is held by the player;
-	otherwise if permanent makeup is 1 and the noun is plentiful accessory and the noun is not sapphire and the noun is not emerald and the class of the player is not silicone queen and the latex-transformation of the player < 7:
-		say "[first custom style]Wish... granted.[roman type][line break]";
-		now permanent makeup is 0;
-		FaceDown 3;
-		say "Your [if diaper quest is 0]permanent make up is removed and your [end if]face returns to normal!";
 	otherwise if P + a random number between 1 and 16 > 8 - (wishskill of the player * 3):
 		say "[first custom style]Wish... granted.[roman type][line break]";
 		let S be a random pink spraybottle;

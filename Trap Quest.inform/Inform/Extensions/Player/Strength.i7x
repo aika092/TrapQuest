@@ -78,15 +78,22 @@ To decide which number is the flat strength of the player:
 		if the milk volume of breasts > 37, increase S by 1;
 		if the milk volume of breasts > 40, increase S by 1;
 	if the class of the player is bunny, increase S by the total squirtable fill of belly / 5;
+	if the class of the player is symbiote:
+		if the player is a bit horny, increase S by 1;
+		if the player is horny, increase S by 1;
+		if the player is very horny, increase S by 1;
+		if the player is extremely horny, increase S by 5;
 	if strength-tincture-timer > 0:
 		increase S by strength-tincture-bonus;
 	increase S by fullness-bonus;
 	increase S by the theme bonus of the strength theme rules;
 	increase S by ((pink-nougat-timer + default-candy-duration - 1) / default-candy-duration) * 6;
+	increase S by ((magic-strength-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	decrease S by ((liquorice-timer + default-candy-duration - 1) / default-candy-duration) * 1;
 	decrease S by adult-baby-int * 3;
 	if the the boost-cooldown of nurse > 0, increase S by 2;
 	if cookie-poison-timer > 0, now S is S / 2;
+	if wasp-poison-timer > 0, decrease S by wasp-poison-timer / 30;
 	increase S by the number of worn piercings;
 	if temp_str_dam > 0, decrease S by temp_str_dam;
 	if S < 1, decide on 1;

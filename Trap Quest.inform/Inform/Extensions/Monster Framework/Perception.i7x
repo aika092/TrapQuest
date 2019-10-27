@@ -42,6 +42,10 @@ To check perception of (M - a monster):
 			otherwise:
 				compute correct perception of M;
 				progress quest of whore-exposing-quest for M;
+				if M is intelligent, progress quest of show-and-tell-quest for M;
+				if topless temporary fetish > 0 and M is intelligent and breasts is lewdly exposed:
+					decrease topless temporary fetish by 1;
+					if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
 				if the times-met of M < 0, now the times-met of M is 0;
 				increase the times-met of M by 1;
 				if M is friendly human monster and breasts is exposed:
@@ -58,20 +62,20 @@ To check perception of (M - a monster):
 						if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them. If thirsty, you could even 'ask [ShortDesc of M] for drink'.[roman type][line break][or][stopping]";
 						otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away! If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
 					reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
-				if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
-					let R be a random number between 1 and hypno-curtsey-trigger;
-					let HR be the square root of (the humiliation of the player / 2000);
-					if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
-					if R <= HR:
-						increase hypno-curtsey-trigger by 1;
-						let C be a random worn knee-length or longer crotch-in-place clothing;
-						say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
-						now auto is 1;
-						try displacing C;
-						now auto is 0;
-						if C is crotch-displaced, compute curtsey reaction of M;
-					otherwise:
-						say "You manage to resist the urge to curtsey!";
+					if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
+						let R be a random number between 1 and hypno-curtsey-trigger;
+						let HR be 2 + the square root of (the humiliation of the player / 2000);
+						if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
+						if R <= HR:
+							increase hypno-curtsey-trigger by 1;
+							let C be a random worn knee-length or longer crotch-in-place clothing;
+							say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
+							now auto is 1;
+							try displacing C;
+							now auto is 0;
+							if C is crotch-displaced, compute curtsey reaction of M;
+						otherwise:
+							say "You manage to resist the urge to curtsey!";
 				now the latest-appearance of M is the appearance of the player;
 				if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player.
 
@@ -191,7 +195,7 @@ To compute sudden objectification of (M - a monster):
 		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
 		otherwise say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] suddenly turns hostile!".
+		say "[one of][BigNameDesc of M] suddenly turns hostile[or]Something changes in the way [NameDesc of M] is looking at you, and you get the feeling [he of M]'s become hostile[at random]!".
 
 Definition: a monster (called M) is objectifying the player:
 	if diaper quest is 1, decide no;
@@ -270,14 +274,14 @@ To check disapproval of (M - a monster):
 			check perception of M. [The monster is given an extra chance to assess the player's appearance.]
 
 To compute disapproval of (M - a monster):
+	say DisapprovalFlav of M;
 	FavourDown M;
-	say "[DisapprovalFlav of M]";
 	if M is unfriendly and M is interested:
 		say BecomesAggressive of M.
 
 To compute cringe disapproval of (M - a monster):
+	say CringeDisapprovalFlav of M;
 	FavourDown M;
-	say "[CringeDisapprovalFlav of M]";
 	if M is unfriendly and M is interested:
 		say BecomesAggressive of M.
 
@@ -428,7 +432,7 @@ Definition: a person is nearly outraged:
 	decide no.
 
 To say mortifiedOutfit:
-	say ", which makes you very self-conscious about your [MediumDesc of appearance-outrage-target], and [one of]sends shivers of mortifying humiliation down your spine[or]feel even more nervous about who might be watching you in this awkward situation[or]feel extremely self-conscious[or]feel so uneasy that blood rushes to your head[if the player is upright] and you almost lose your balance[otherwise] and you shudder uncontrollably[end if][or]consumes you with an overwhelming sense of shame[or]find yourself in disbelief that you've allowed yourself to be demeaned like this[or]for a moment feel so bashful and vulnerable that you lose your composure[or]for a moment feel so incredibly shy that you almost want to just hide in a dark corner until the time runs out[or]causes you to cringe with humiliation[in random order]";
+	say ", which makes you very self-conscious about your [MediumDesc of appearance-outrage-target], and [one of]sends shivers of mortifying humiliation down your spine[or]feel even more nervous about who might be watching you in this awkward situation[or]feel so uneasy that blood rushes to your head[if the player is upright] and you almost lose your balance[otherwise] and you shudder uncontrollably[end if][or]consumes you with an overwhelming sense of shame[or]find yourself in disbelief that you've allowed yourself to be demeaned like this[or]for a moment feel so bashful and vulnerable that you lose your composure[or]for a moment feel so incredibly shy that you almost want to just hide in a dark corner until the time runs out[or]causes you to cringe with humiliation[in random order]";
 	humiliate 10 * calculated-appearance-outrage-level.
 
 

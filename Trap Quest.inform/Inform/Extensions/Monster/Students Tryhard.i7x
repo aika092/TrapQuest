@@ -8,6 +8,19 @@ To say MediumDesc of (M - a tryhard student):
 To decide which number is the dedication of (M - a tryhard student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 5.
 
+
+To compute student perception of (M - a tryhard student):
+	if the current-rank of M > the rank of the player:
+		say "[big he of M] glances at your armband and turns away without acknowledging you[one of]. It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or].[stopping]";
+	otherwise if the current-rank of M < the rank of the player:
+		say "[big his of M] eyes linger on your armband for a moment before flitting up to your face.";
+	otherwise:
+		compute appearance assessment of M.
+
+To say LewdAppearanceAssessment of (M - a tryhard student):
+	say "[BigNameDesc of M] [one of]clenches [his of M] fists[or]grinds [his of M] teeth[in random order].[line break][speech style of M]'[one of]You're making the rest of us look bad!'[or]If you look like that, the teachers won't pay all of their attention to me!'[in random order][roman type][line break]".
+
+
 Part - Laci
 
 student-laci is a tryhard student.
@@ -45,49 +58,6 @@ To say StoryAnswer of (M - student-laci):
 
 To say WhereAnswer of (M - student-laci):
 	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert! Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practice makes perfect. Oops, I dropped my pen, tee-hee!'[end if][roman type][line break]".
-
-Part - Misty
-
-student-misty is a tq-only tryhard student.
-
-The text-shortcut of student-misty is "stmi".
-
-Figure of misty is the file "NPCs/School/Student/student4.png".
-
-To decide which figure-name is the monster-image of (M - student-misty):
-	decide on figure of misty.
-
-To say MonsterDesc of (M - student-misty):
-	say "This slim brunette is wearing a tiny white cotton vest and matching skirt that are both extremely thin and have been torn so they are now hardly large enough to be called clothes. [if the current-rank of M is 2][big his of M] small A-cup breasts are almost visible under the fragile top[otherwise if the current-rank of M is 3][big he of M] has poured a bit of water onto both items, meaning they have gone rather see-through, and you can clearly make out [his of M] nipples[otherwise][big he of M] is constantly re-soaking both items from [his of M] bottle of water, to make sure [his of M] clothes are extremely sheer and [his of M] naughty bits completely visible at all times[end if].".
-
-The min-rank of student-misty is 2.
-The max-rank of student-misty is 4.
-The current-rank of student-misty is 2.
-
-To update name of (M - student-misty):
-	if the current-rank of M is 2:
-		now the student-name of M is "Missy";
-		now the student-print of M is "tight topped trollop";
-	otherwise if the current-rank of M is 3:
-		now the student-name of M is "Misty";
-		now the student-print of M is "technically-not-topless tart";
-	otherwise:
-		now the student-name of M is "Minxie";
-		now the student-print of M is "sheer shirted slut";
-
-To say WhereAnswer of (M - student-misty):
-	say "[speech style of M]'[if the rank of the player <= 1]This is an... exotic skills college. But surely you know this already?'[otherwise]You've got to be willing to try anything once. And then twice. And then three times...'[end if][roman type][line break]".
-
-To say StoryAnswer of (M - student-misty):
-	say "[speech style of M]'There's a lot of money in winning wet T-shirt contests in my home town. With the skills and techniques [if the current-rank of M is 2]I'll learn here, I'll be brave enough to sign up and wear daring enough clothing to win[otherwise if the current-rank of M is 3]I'm learning here, I'll have no trouble showing off my practically bare tits to the crowd and raking in the dosh[otherwise]I've learned here, I think I'm going to do much better than just rake in all that prize money. I reckon a glamour model scout will notice me in no time, and after I suck his [manly-penis] a few times I'm sure I can convince him to offer me a lucrative contract[end if]!'[roman type][line break]".
-
-To compute friendly drink of (M - a student-misty):
-	if the current-rank of M is 4:
-		say "[speech style of M]'No way, I need all this water to keep my clothes wet! Find your own drink.'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'Bah. I guess you can have a sip from my water bottle. But only a little mind you, I need the rest [if the current-rank of M is 2]for... reasons[otherwise]to, erm, well, keep myself looking so sexy[end if].'[roman type][line break]";
-		say "You take a sip and feel much better!";
-		StomachUp 2.
 
 Part - Candy
 
@@ -146,61 +116,9 @@ To say DamageReaction (N - a number) of (M - student-candy):
 	say "[speech style of M]'[one of]HISS!'[or]NROOWL!'[or]OW, F- I mean, NYOUCH![at random][roman type]".
 
 
-Part - Rain
-
-student-rain is a tq-only tryhard student.
-
-The text-shortcut of student-rain is "stra".
-
-Figure of rain is the file "NPCs/School/Student/student26.png".
-
-To decide which figure-name is the monster-image of (M - student-rain):
-	decide on figure of rain.
-
-To say MonsterDesc of (M - student-rain):
-	say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parting above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M >= 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
-
-The min-rank of student-rain is 3.
-The current-rank of student-rain is 3.
-The max-rank of student-rain is 6.
-
-To update name of (M - student-rain):
-	if the current-rank of M is 3:
-		now the student-name of M is "Rain";
-		now the student-print of M is "racy runt";
-	otherwise:
-		now the student-name of M is "Rainbow";
-		now the student-print of M is "raunchy runt".
-
-To say StoryAnswer of (M - student-rain):
-	say "[speech style of M]'[if the current-rank of M is 3]I'm learning to be a slut for my boyfriend. I only do it for him, you know? Not because it's my thing myself. But I'm *very* good at doing anything I set my mind to[otherwise]Did you know that until recently I didn't even crave cock? How dumb was that?! Haha! Now I can't get enough[end if]!'[roman type][line break][one of][big his of M] eyes fall to the junction of your own legs, and [he of M] looks thoughtful.[or]You notice [he of M]'s eyeing the area of your own groin with a speculative look.[at random]".
-
-To say WhereAnswer of (M - student-rain):
-	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]how much you love[otherwise]your skill with a[end if] [manly-penis]! And then others will be proud of you!'[roman type][line break]".
-
-To say EscapeAnswer of (M - student-rain):
-	say "[speech style of M]'More people who you can [if the current-rank of M > 3]spread your cunt for[otherwise]show off your cunt to[end if], of course!'[roman type][line break]".
-
-To compute teaching of (M - student-rain):
-	say "[speech style of M]'This is a cunt. This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
-
 
 Part - Default Conversation
 
-To compute student perception of (M - a tryhard student):
-	if the current-rank of M > the rank of the player:
-		say "[big he of M] glances at your armband and turns away without acknowledging you[one of]. It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or].[stopping]";
-	otherwise:
-		compute appearance assessment of M.
-
-To compute appearance assessment of (M - a tryhard student):
-	if the class of the player is schoolgirl:
-		say "[big he of M] looks you up and down and [his of M] face seems to light up.";
-	otherwise if the current-rank of M < the rank of the player:
-		say "[big his of M] eyes linger on your armband for a moment before flitting up to your face.";
-	otherwise:
-		say "[big he of M] glances at your armband before speaking.";
-	say "[line break][speech style of M]'[one of]Hello! Do you want to share notes?[or]Hi! Any advice for an eager student?'[or]Hello. Plan on staying long? I think we might be able to share notes.'[at random][roman type][line break]";
 
 To say WhoAnswer of (M - a tryhard student):
 	say "[speech style of M]'My teacher says it is [student-name of M], so it's [student-name of M].'[roman type][line break]".

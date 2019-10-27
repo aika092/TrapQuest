@@ -121,7 +121,7 @@ This is the virgin warrior class rule:
 		rule succeeds.
 The virgin warrior class rule is listed in the player class rules.
 Definition: a text (called T) is virgin warrior:
-	if T is "virgin warrior" or T is "virgin warrior priestess" or T is "virgin magical girl", decide yes;
+	if T is "virgin warrior" or T is "virgin symbiote warrior" or T is "virgin warrior priestess" or T is "virgin magical girl", decide yes;
 	decide no.
 
 [!<TheSchoolgirlClassRule>+
@@ -219,7 +219,7 @@ Thanks to the cow slave multi-class, we have multiple different texts that need 
 
 +!]
 Definition: a text (called T) is royal slave:
-	if T is "royal slave" or T is "cow slave", decide yes;
+	if T is "royal slave" or T is "cow slave" or T is "demon slave", decide yes;
 	decide no.
 
 
@@ -313,6 +313,32 @@ This is the puppygirl class rule:
 The puppygirl class rule is listed in the player class rules.
 puppygirl is a text that varies. puppygirl is "puppygirl".
 puppy is a text that varies. puppy is "puppygirl".
+
+
+
+[!<TheSymbioteClassRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the symbiote class rule:
+	if spiked-tiara is worn:
+		if the virgin of the player is 1 and the quest of spiked-tiara is virginity-retention-quest, now player-class is "virgin symbiote warrior";
+		otherwise now player-class is "symbiote";
+		rule succeeds.
+The symbiote class rule is listed in the player class rules.
+
+[!<TextIsSymbiote>+
+
+Thanks to the virgin symbiote warrior multi-class, we have multiple different texts that need to be able to return true for the class of the player being a symbiote.
+
++!]
+Definition: a text (called T) is symbiote:
+	if T is "symbiote" or T is "virgin symbiote warrior", decide yes;
+	decide no.
+
+
+
 
 [!<TheSantaClassRule>+
 
@@ -426,7 +452,7 @@ A time based rule (this is the compute brood rule):
 				destroy E;
 			otherwise:
 				let W be a random off-stage wasp-cloud;
-				say "You watch in amazement as a white egg changes color to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognize you as their mother!";
+				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognize you as their mother!";
 				summon W;
 				now the swarm of W is 3;
 				now total-wasps is 3;
@@ -572,8 +598,6 @@ A time based rule (this is the compute whispers rule):
 				Dexup 1;
 			now whisper-type is 0.
 
-
-
 [!<TheVixenClassRule>+
 
 REQUIRES COMMENTING
@@ -667,7 +691,6 @@ Definition: a text (called T) is hotel employment:
 
 Definition: a text (called T) is trained hooker:
 	if the training-progress of senior robobellboy is -1, decide yes.
-
 
 [!<TheCumdumpsterClassRule>+
 
@@ -853,10 +876,25 @@ The virgin magical girl class rule is listed first in the player class rules.
 This is the barbarian class rule:
 	if rugged-headband is worn:
 		if heavy-club is worn:
-			now player-class is "barbarian";
+			now the player-class is "barbarian";
 			rule succeeds.
 The barbarian class rule is listed first in the player class rules.
 barbarian is a text that varies. barbarian is "barbarian".
+
+This is the worshipper class rule:
+	if gold-tiara is worn:
+		if there is a worn demonic-milking basque:
+			now the player-class is "demon slave";
+			rule succeeds;
+		otherwise if the number of worn demonic wearthings > 1:
+			now the player-class is "demon worshipper";
+			rule succeeds.
+The worshipper class rule is listed first in the player class rules.
+
+Definition: a text (called T) is worshipper:
+	if T is "demon slave" or T is "demon worshipper" or T is "demon concubine", decide yes;
+	decide no.
+
 
 [!<TheLivingSexDollClassRule>+
 
@@ -879,6 +917,7 @@ Goes last because it is purely cosmetic and doesn't necessarily use headgear so 
 This is the adult baby class rule:
 	if adult-baby-class is 1, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
+
 
 [!<TheAdventurerClassRule>+
 

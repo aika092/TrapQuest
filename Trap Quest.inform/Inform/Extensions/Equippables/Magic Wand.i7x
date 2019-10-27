@@ -52,16 +52,17 @@ To compute attack effect of (W - a magic wand):
 
 To compute takeoff of (W - a magic wand):
 	let M be a random off-stage aeromancer;
-	if M is monster:
+	if M is monster and a random number between -1 and 2 > the floatskill of the player:
 		now M is in the location of the player;
 		set up M;
-		if playerRegion is Dungeon:
-			say "As you float off, the wand falls out of your hand! [BigNameDesc of M] appears from thin air and immediately catches it.[line break][second custom style]'[one of]Payback time!'[or]I'm really going to enjoy this.'[or]You're about to get the wind knocked into you!'[or]Revenge is a dish best served in a windmill!'[as decreasingly likely outcomes][roman type][line break]";
-		otherwise if playerRegion is Woods:
+		if the location of the player is no-roof:
 			say "As you float off, the wand falls out of your hand! [BigNameDesc of M] appears from thin air and immediately catches it. She waves as you float off into the sky.[line break][second custom style]'[one of]You better hope I don't find you again, I won't go easy on you!'[or]Up up and away!'[or]Don't worry, I'll find YOU!'[in random order][roman type][line break]";
+		otherwise:
+			say "As you float off, the wand falls out of your hand! [BigNameDesc of M] appears from thin air and immediately catches it.[line break][second custom style]'[one of]Payback time!'[or]I'm really going to enjoy this.'[or]You're about to get the wind knocked into you!'[or]Revenge is a dish best served in a windmill!'[as decreasingly likely outcomes][roman type][line break]";
 		now the favour of M is 0;
 		now the balloon of M is 9;
 		now M is wand-empowered;
+		permanently anger M;
 		only destroy W.
 
 Definition: a magic wand is inflation themed: decide yes.

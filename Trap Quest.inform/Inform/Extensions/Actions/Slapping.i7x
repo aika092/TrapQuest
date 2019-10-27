@@ -19,6 +19,9 @@ To decide which number is the slap damage of (P - a person):
 	if thorny tattoo is worn:
 		increase A by 1;
 		if damage-explained > 1, say "+1 (thorny tattoo) ";
+	if wasp sting tattoo is worn:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (wasp tattoo) ";
 	now punch is 0;
 	let S be a random worn slap ready equippable;
 	if S is equippable:
@@ -103,6 +106,7 @@ Carry out slapping:
 				say "[one of]You are feeling so unstable in your [ShortDesc of H] that you don't dare raise your feet.[or][stopping]";
 		say "[if punch is 1][one of]Clenching your fist tight, you[or]You[stopping] punch[otherwise]You slap[end if] [the noun][if heel-H is 1] instead[end if][if the latex-transformation of the player is 8] with your fingerless arms![end if]! ";
 	say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the weight of the player < 1]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if fake-nails is worn and fake-nails is blessed and the number of worn slap ready equippables is 1]Your sharp pink nails cause your slap to deal significant extra damage.[otherwise if there is worn living tentacles]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
+	if there is a worn hostility clothing, compute hostileDamage;
 	damage A on the noun.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
@@ -111,6 +115,9 @@ Understand "slap [something]", "hit [something]", "punch [something]", "slash [s
 To decide which number is the zap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base zap damage calculation: [bracket]0 (base damage) ";
 	let A be 0;
+	if fire palm tattoo is worn:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (fire palm tattoo) ";
 	if currentZapper is not yourself:
 		let N be the damage improvement of currentZapper;
 		increase A by N;

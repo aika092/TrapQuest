@@ -1,6 +1,6 @@
 Teleporting and Dragging by Miscellaneous Backend begins here.
 
-monster-dragging is a number that varies.
+player-dragger is an object that varies.
 
 To teleport to (R - a room):
 	if doll-stuck-num > 0:
@@ -9,18 +9,18 @@ To teleport to (R - a room):
 		BodyRuin 1;
 		dislodge T;
 	repeat with C running through stuck clothing worn by the player:
-		say "Your [printed name of C] is ripped from your body by the force of the [if monster-dragging is 0]portal[otherwise]pull[end if], and destroyed. ";
+		say "Your [printed name of C] is ripped from your body by the force of the [if player-dragger is not monster]portal[otherwise]pull[end if], and destroyed. ";
 		destroy C;
 	repeat with M running through monsters in the location of the player:
 		if R is not Dungeon12 and M is grabbing the player or M is penetrating an orifice:
-			say "[line break]The [printed name of M] is pulled [if monster-dragging is 0]through the portal [end if]with you!";
+			say "[line break]The [printed name of M] is pulled [if player-dragger is not monster]through the portal [end if]with you!";
 			now M is in R;
 			if M is grabbing the player and M is not ghostly tentacle:
 				say "In the confusion, [he of M] loses [his of M] grip on you!";
 				now M is not grabbing the player;
 		if gladiator-sword is worn and M is dangerous, BurdenUp gladiator-sword by 1;
 	repeat with T running through things penetrating a body part:
-		unless T is worn or (T is monster and monster-dragging is 1), dislodge T;
+		unless T is worn or T is player-dragger, dislodge T;
 	repeat with T running through things grabbing the player:
 		unless T is ghostly tentacle, dislodge T;
 	repeat with C running through held store clothing:
@@ -40,9 +40,9 @@ To drag to (R - a room) by (M - a monster):[TODO: player can't be dragged when s
 	say DragFlav of M to R;
 	check shopstealing of M;
 	fix map-drag to R;
-	now monster-dragging is 1;
+	now player-dragger is M;
 	teleport to R;
-	now monster-dragging is 0;
+	now player-dragger is yourself;
 	now M is in the location of the player;
 	say DragArrival of M to R.
 

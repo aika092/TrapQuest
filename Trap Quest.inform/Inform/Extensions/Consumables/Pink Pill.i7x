@@ -5,6 +5,7 @@ To say ExamineDesc of (B - pink pill):
 	say "A small pink pill. You get the feeling it may help you out if you use it in a desperate time of need. It is virtually weightless.".
 
 Definition: pink pill is pink themed: decide yes.
+Definition: pink pill is TQEdible: decide yes.
 
 Figure of pink pill is the file "Items/Collectibles/pill1.jpg".
 

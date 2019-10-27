@@ -31,7 +31,7 @@ Check going west when tutorial is 1:
 Check going north when tutorial is 1:
 	say "There's no going back in this tutorial!" instead.
 
-Tutorial01 is an introductory room. "A weird room with a stone ground and pink walls. Something tells you this is a practice area.[paragraph break][newbie style]Surprise, graphics! Your character starts off [if diaper quest is 1]naked and proud[otherwise]looking rather flat and androgynous[end if] but by the end of the game that will almost certainly not be the case. Anyway, as you're about to be told, there's a container in this room. Containers are your main way of obtaining loot. [if the focus-window is g-present]The padlock image can be clicked on like a button, in order to open the container[otherwise]The hyperlink shortcut 'op' stands for 'open'[end if]. When you find an item, it'll automatically be added to your bag of holding (a magic item which helps you hold infinite items) unless it's something you eat or drink. There's a limit on how many of these items you can carry so you'll have to actively choose to take them manually[if the hyper-window is g-present]. You may also want to check out some of the useful links in the window in the bottom left. The most interesting one right now is probably 'x self'[end if].[roman type][line break]". The printed name of Tutorial01 is "A pink room". The shape of Tutorial01 is L10/0-0-0-1-0-0. The grid position of Tutorial01 is <10,11,12>. Tutorial01 is discovered.
+Tutorial01 is an introductory room. "A weird room with a stone ground and pink walls. Something tells you this is a practice area.[paragraph break][newbie style]Surprise, graphics! Your character starts off [if diaper quest is 1]naked and proud[otherwise]looking rather flat and androgynous[end if] but by the end of the game that will almost certainly not be the case. Anyway, as you're about to be told, there's a container in this room. Containers are your main way of obtaining loot. [bold type][if the focus-window is g-present]The padlock image can be clicked on like a button, in order to open the container[otherwise]The hyperlink shortcut 'op' stands for 'open'[end if]. [newbie style]When you find an item, it'll automatically be added to your bag of holding (a magic item which helps you hold infinite items) unless it's something you eat or drink. There's a limit on how many of these items you can carry so you'll have to actively choose to take them manually[if the hyper-window is g-present]. You may also want to check out some of the useful links in the window in the bottom left. The most interesting one right now is probably 'x self'[end if].[roman type][line break]". The printed name of Tutorial01 is "A pink room". The shape of Tutorial01 is L10/0-0-0-1-0-0. The grid position of Tutorial01 is <10,11,12>. Tutorial01 is discovered.
 
 Check going east when the player is in Tutorial01:
 	unless there is a worn grey monokini, say "You should probably make sure that your naughty bits aren't on display before you continue.[unless there is a held grey monokini] What's in that sack, I wonder?[end if]" instead.
@@ -195,6 +195,7 @@ Check masturbating when tutorial is 1:
 	say "No masturbating in this tutorial, sorry!" instead.
 
 Every turn when tutorial is 1:
+	update appearance level;
 	check for arousal change.
 
 To start the tutorial:

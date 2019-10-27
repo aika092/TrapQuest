@@ -148,7 +148,7 @@ To compute (S - a summoning portal) summoning (M - a monster):
 	if M is nonexistant and M is on-stage, set up M;
 	now M is in the location of S;
 	say SummoningFlav of M;[should describe portal closing up if the player is in the room]
-	now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
+	if M is not interested, now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
 
 [!<ComputePortalRegionallySummoningMonster>+
 
@@ -489,6 +489,11 @@ Carry out appeasing something with giant-statue:
 Chapter 3 - Teleportation Pad
 
 The teleportation-pad is in Hotel41. The teleportation-pad is a summoning portal. The printed name of teleportation-pad is "[TQlink of item described]teleportation pad[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "teleportation", "pad" as teleportation-pad. The text-shortcut of teleportation-pad is "ted".
+
+Figure of teleportation pad is the file "Env/Hotel/teleportationpad1.jpg".
+
+To decide which figure-name is the examine-image of (C - teleportation-pad):
+	decide on figure of teleportation pad.
 
 To say ExamineDesc of (C - teleportation-pad):
 	say "A large metal pad lined with [PortalHint of C] sensors. The surface is strangely mirror like, [if C is active]and you feel like energy is slowly building up around it. Maybe you can try to offer something to [bold type]appease[roman type] it[otherwise]although it doesn't seem to show your reflection[end if].[if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";

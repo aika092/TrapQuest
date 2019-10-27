@@ -12,7 +12,7 @@ To compute SelfExamineDesc of (C - a chainmail top):
 Definition: a chainmail top is grey themed: decide yes.
 
 To decide which number is the initial outrage of (C - a chainmail top):
-	decide on 8.
+	decide on 2.
 
 To decide which number is the original price of (C - a chainmail top):
 	decide on 5.

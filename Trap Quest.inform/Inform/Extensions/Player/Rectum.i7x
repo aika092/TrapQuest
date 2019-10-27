@@ -118,7 +118,7 @@ Checks if a player is messy and really unhappy about it.
 +!]
 Definition: yourself is upset about mess:
 	let D be a random worn perceived messed diaper;
-	if (the location of the player is nonstandard and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player)) or turnsWithSoiledDiaper > 3 * (the square root of the diaper addiction of the player):
+	if (the location of the player is nonstandard and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player or there is a messed knickers in the location of the player or there is a carried messed knickers)) or turnsWithSoiledDiaper > 2 * (the square root of the diaper addiction of the player):
 		decide yes;
 	otherwise if D is diaper:
 		if the player is an adult baby and the bimbo of the player > the known-mess of D, decide no;
@@ -383,7 +383,7 @@ To compute diaper mess reaction of (M - a monster):
 		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
-		unless M is student or M is staff member:
+		unless M is staff member:
 			let previous-friendly be 0;
 			if M is friendly, now previous-friendly is 1;
 			now M is interested;

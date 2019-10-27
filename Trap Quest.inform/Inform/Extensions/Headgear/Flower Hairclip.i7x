@@ -67,6 +67,12 @@ To compute virginity-loss of (H - flower hairclip):
 	decrease the virgin bonus of the player by 1;
 	now H is in the location of the player.
 
+To compute unique periodic effect of (H - flower hairclip):
+	let C be a random worn demonic wearthing;
+	if C is a thing:
+		say "[bold type]Your [ShortDesc of H] reacts strongly to your [ShortDesc of C]![roman type][line break]";
+		transform H into spiked-tiara.
+
 Chapter - Quest
 
 virginity-retention-quest is a headgear-clothing-quest. virginity-retention-quest has a number called virginity-count.

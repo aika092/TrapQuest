@@ -23,6 +23,7 @@ temp_int_dam is a number that varies. temp_int_dam is 0.
 
 Part 1 - Main Procedure
 
+
 [!<ComputePeriodicEffectsWithEarnings>+
 
 REQUIRES COMMENTING
@@ -30,7 +31,7 @@ REQUIRES COMMENTING
 +!]
 To compute periodic effects with earnings (local-earnings - a number) and seconds (local-seconds - a number):
 	[If enough experience has been gained, level up heel skill]
-	if the heel time of the player > (the raw heel skill of the player * 250) + 100 and the player is upright, HeelUp 1;
+	if the heel time of the player > minHeelXP and the player is upright, HeelUp 1;
 	[Real world changes]
 	if the remainder after dividing local-earnings by (500 / (fast breast expansion + 1)) < local-seconds:
 		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1000 / (fast breast expansion + 1)) < local-seconds:
@@ -92,15 +93,15 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	[Spawning and buffing of weak enemies]
 	if the remainder after dividing local-earnings by 413 < local-seconds:
 		let P be a random alive prison guard;
-		if there is worn locked clothing:
-			if P is prison guard:
+		if (ex-princess is caged and skeleton key is not in-play) or there is worn locked clothing:
+			if P is prison guard and there is worn locked clothing:
 				decrease the sentence of P by 2;
-			otherwise:
+			otherwise if P is not prison guard:
 				let M be a random off-stage prison guard;
 				if M is monster:
 					set up M;
 					summon M in the dungeon;
-		if the number of alive golem is 0 and the player is the donator and diaper quest is 0:
+		if the number of alive golem is 0 and diaper quest is 0:
 			let M be a random off-stage golem;
 			let X be max ass size + max breast size + 1;
 			let S be X - (the thickness of hips + the largeness of breasts);
@@ -111,14 +112,14 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			if time-tracking < 293:
 				if SR < X:[more likely the larger the larger the player's body has gotten.][Aika thinks this is going to take forever to be true because it looks like time-tracking is only decremented from 400 once every 413 seconds]
 					set up M;
-					if playerRegion is Dungeon:
-						now M is in Stairwell01;
-					otherwise if playerRegion is Woods:
+					if playerRegion is Woods:
 						now M is in Stairwell02;
 					otherwise if playerRegion is Hotel:
 						now M is in Hotel01;
 					otherwise if playerRegion is Mansion:
 						now M is in Mansion01;
+					otherwise:
+						now M is in Stairwell01;
 					now M is guarding;
 					say "Some speakers come to life, and you hear an announcement! [line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
 					now time-tracking is 1000;

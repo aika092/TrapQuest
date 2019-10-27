@@ -196,7 +196,7 @@ To compute default condom filling of (M - a monster):
 		transform thirsty work condom hat into cumdumpster condom hat.
 
 To say CondomNewbieTip:
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got a condom on your clothes! That's right, NPCs will invariably pin the condoms they use to your clothing and this increases how humiliating the clothing is, and therefore your appearance rating. You can't remove the condoms from the clothing yourself - blame the makers of the game and their ability to manipulate the rules of this universe. You can however bite and drink them - this obviously makes you drink a humiliating dose of [semen], but it also halves the amount that the condom increases the outrage of the item. Of course, the best solution is probably to eventually remove the piece of clothing when it gets too ridiculous.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got a condom on your clothes! That's right, NPCs will invariably pin the condoms they use to your clothing and this increases how humiliating the clothing is, and therefore your appearance rating. You can't remove the condoms from the clothing yourself - blame the makers of the game and their ability to manipulate the rules of this universe. You can however bite and drink them - this obviously makes you drink a humiliating dose of [semen], but it also negates the increased outrage of the item. Of course, the best solution is probably to eventually remove the piece of clothing when it gets too ridiculous.[roman type][line break][or][stopping]".
 
 To say CondomRequestFlav of (M - a monster):
 	if the player is able to speak and M is intelligent:

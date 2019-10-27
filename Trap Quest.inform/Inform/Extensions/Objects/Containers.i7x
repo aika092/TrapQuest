@@ -46,7 +46,7 @@ REQUIRES COMMENTING
 @!]
 A large sack is a kind of container. A large sack is openable. A large sack is closed. A large sack is not portable. The printed name of a large sack is "[TQlink of item described][if the class of the player is santa's little helper]stocking[otherwise]large sack[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large sack is "sac". 25 trappable large sacks are in Holding Pen. Understand "stocking" as large sack.
 
-Figure of sack is the file "Env/Dungeon/sack1.png".
+Figure of sack is the file "Env/Dungeon/sack1.jpg".
 Figure of giant stocking is the file "Env/Dungeon/giantstocking1.png".
 
 To decide which figure-name is the examine-image of (C - a large sack):
@@ -68,7 +68,7 @@ REQUIRES COMMENTING
 @!]
 A wooden crate is a kind of container. A wooden crate is openable. A wooden crate is closed. A wooden crate is not portable. The printed name of a wooden crate is "[TQlink of item described][if the class of the player is santa's little helper]giant present[otherwise]wooden crate[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of wooden crate is "wcr". 25 trappable wooden crates are in Holding Pen. Understand "giant", "present" as wooden crate.
 
-Figure of wooden crate is the file "Env/Dungeon/crate2.png".
+Figure of wooden crate is the file "Env/Dungeon/crate2.jpg".
 Figure of giant present is the file "Env/Dungeon/giantpresent1.png".
 
 To decide which figure-name is the examine-image of (C - a wooden crate):
@@ -303,7 +303,7 @@ REQUIRES COMMENTING
 
 @!]
 A treasure chest is a kind of container. A treasure chest is openable. A treasure chest is closed. A treasure chest is not portable. The printed name of a treasure chest is "[TQlink of item described]treasure chest[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of treasure chest is "ch".
-Figure of treasure chest is the file "Env/Multifloor/treasurechest1.png".
+Figure of treasure chest is the file "Env/Multifloor/treasurechest1.jpg".
 
 To decide which figure-name is the examine-image of (C - a treasure chest):
 	decide on figure of treasure chest.
@@ -323,14 +323,24 @@ REQUIRES COMMENTING
 +!]
 To add treasure to (X - a treasure chest):
 	let R be a random off-stage appropriate recipe;
-	if a random number between 1 and 5 > (2 - the number of worn blue scrunchie) and earnings < starting-earnings - 100 and R is recipe:
-		now R is in X;
-		say "You find a [printed name of R] written on the inside of the lid! Interesting...";
-		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a recipe! Recipes allow you to craft certain things at the Apothecary in the Dungeon once you've found the necessary ingredient. Using anything but the correct ingredients will create cursed versions of random craftable items, so it's dangerous to risk it without knowing the recipe, as you won't know that what you've created will have a beneficial effect. You can choose to memorise the recipe, but you can only remember a certain number, depending on your intelligence. For most recipes, memorising it gives you a chance to create a better (e.g. blessed) version of the item.[roman type][line break][or][stopping]";
-		say ExamineDesc of R;
-		say line break;
+	let S be a random uncastable fetish appropriate magic-spell;
+	if a random number between 1 and 6 > (2 - the number of worn blue scrunchie) and earnings < starting-earnings - 100 and (R is recipe or S is magic-spell):
+		if S is magic-spell and a random number between -16 and the number of in-play recipes > 0:
+			say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...";
+			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a magic spell! Spells consume magic power, which is not particularly plentiful but you should hopefully acquire a bit of it over your adventure. Most spells require you to say the rude words while someone can hear (and understand) you.[roman type][line break][or][stopping]";
+			compute learning of S;
+			cutshow figure of recipe for S;
+		otherwise:
+			now R is in X;
+			say "You find a [printed name of R] written on the inside of the lid! Interesting...";
+			say NewbieMagicSpells;
+			say ExamineDesc of R;
+			say line break;
 	otherwise:
 		compute generic treasure to X.
+
+To say NewbieMagicSpells:
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a recipe! Recipes allow you to craft certain things at the Apothecary in the Dungeon once you've found the necessary ingredient. Using anything but the correct ingredients will create cursed versions of random craftable items, so it's dangerous to risk it without knowing the recipe, as you won't know that what you've created will have a beneficial effect. You can choose to memorise the recipe, but you can only remember a certain number, depending on your intelligence. For most recipes, memorising it gives you a chance to create a better (e.g. blessed) version of the item.[roman type][line break][or][stopping]".
 
 Section - Pedestals
 
@@ -481,9 +491,14 @@ Carry out drinking a pedestal:
 				say "You feel your muscles stiffening[one of][or] further[stopping]...";
 				DexDown 1;
 	otherwise:
-		say "[one of]You put your lips around the [pedestal-variant of the noun] penis, and suck. [if the semen taste addiction of the player < 8][line break][first custom style]I can't believe I'm doing this! Do I really need it open this badly?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] straight down your throat, with quite some force. You cough and splutter![otherwise if the semen taste addiction of the player > 11]The stone penis ejaculates [semen] straight down your throat, with quite some force. [line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight down your throat, with quite some force. [end if][or]You pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly – after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill as you feel it spurt its [semen]. [if the semen taste addiction of the player > 11]Yummy! You swirl it around for a while, savouring the taste properly, before you reluctantly [otherwise]You [end if]swallow it down.[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]gulp it down.[stopping][line break]";[TODO: vary for oral sex addiction]
-		StomachSemenUp the paid of the noun;
-		get oral creampie image for the noun;
+		if a random number between 0 and watersports fetish is 0:
+			say "[one of]You put your lips around the [pedestal-variant of the noun] penis, and suck. [if the semen taste addiction of the player < 8][line break][first custom style]I can't believe I'm doing this! Do I really need it open this badly?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] straight down your throat, with quite some force. You cough and splutter![otherwise if the semen taste addiction of the player > 11]The stone penis ejaculates [semen] straight down your throat, with quite some force. [line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight down your throat, with quite some force. [end if][or]You pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly – after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill as you feel it spurt its [semen]. [if the semen taste addiction of the player > 11]Yummy! You swirl it around for a while, savouring the taste properly, before you reluctantly [otherwise]You [end if]swallow it down.[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]gulp it down.[stopping][line break]";[TODO: vary for oral sex addiction]
+			StomachSemenUp the paid of the noun;
+			get oral creampie image for the noun;
+		otherwise:
+			say "[if the urine taste addiction of the player < 7][line break][first custom style]Your thoughts are interrupted by the penis squirting [urine] straight down your throat, with quite some force. You cough and splutter![otherwise if the urine taste addiction of the player > 13]The stone penis squirts [urine] straight down your throat, with quite some force.[line break][second custom style]Yum![roman type][line break][otherwise]The penis squirts [urine] straight down your throat, with quite some force.[end if][line break]";
+			StomachUp the paid of the noun;
+			UrineTasteAddictUp ((the paid of the noun + 1) / 2);
 	now the paid of the noun is 0;
 	say "You hear a distinctive *shunk* as the glass dome splits and slowly opens.";
 	now the paid of the noun is 0;

@@ -188,6 +188,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			say "[BigNameDesc of M] smacks her lips. [line break][second custom style]'That was [one of]the best feast I've had in a long time[or]just as great as last time[stopping]! I think I'm going to have to travel with you for a while...'[roman type][line break]";
 			say "[one of]You are still trying to work out what that means when[or]Once again[stopping] she dives underwater, and suddenly you feel something poking forcefully at your [asshole]. She's... she's trying to force herself in!";
 			let R be a random number between (the number of worn swimming themed wearthing * 5) and the dexterity of the player;
+			if acolyte-chestpiece is worn, now R is 0;
 			say "[bold type]Do you want to try and escape?[roman type] ";
 			if the player is consenting:
 				if debuginfo > 0, say "[input-style]Escape from slimegirl check: swimming modifier ([the number of worn swimming themed wearthing * 5]); dexterity ([dexterity of the player]) -> RNG([the number of worn swimming themed wearthing * 5]~[dexterity of the player]) = [R] | (7.5) slimegirl invasion skill[roman type][line break]";

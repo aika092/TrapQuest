@@ -43,10 +43,10 @@ To compute SelfExamineDesc of (B - a bra):
 			say " that are overflowing out of the cups of your [selfexaminetitle of B]. ".
 
 Report examining bra:
-	if the largeness of breasts > 2 and newbie tips is 1, say "Bras [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts.".
+	if the largeness of breasts > 2 and newbie tips is 1, say "[if the support of the noun > 0]Bras[otherwise]Most bras (but not this one)[end if] [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts.".
 
 To say selfexaminetitle of (B - a bra):
-	say "[ShortDesc of B]".
+	say ShortDesc of B.
 
 To decide which number is the initial outrage of (C - a bra):
 	decide on 0.
@@ -55,6 +55,7 @@ To compute unique summoning of (C - a bra):
 	if the largeness of breasts >= the min size of C and the largeness of breasts <= the max size of C, now the size of C is the largeness of breasts.
 
 To decide which object is the unique-upgrade-target of (C - a bra):
+	if there is a worn demonic wearthing and tongue-bra is off-stage, decide on tongue-panties;
 	if diaper quest is 1, decide on a random off-stage training bra;
 	decide on nothing.
 

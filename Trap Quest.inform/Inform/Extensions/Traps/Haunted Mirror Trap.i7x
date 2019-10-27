@@ -5,6 +5,8 @@ A haunted mirror trap is a kind of trap. There are 5 pressure haunted mirror tra
 
 
 Figure of haunted mirror is the file "Env/Mansion/mirror1.jpg".
+To decide which figure-name is the examine-image of (T - a haunted mirror trap):
+	decide on figure of haunted mirror.
 
 [!<HauntedMirrorTrap>@<SayEnvironmentDesc>+
 

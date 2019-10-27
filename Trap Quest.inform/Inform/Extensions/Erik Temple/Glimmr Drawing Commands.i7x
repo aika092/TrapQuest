@@ -1800,7 +1800,7 @@ The former does not utilize the "current background-color" global variable, whil
 
 Speed notes:
 
-	Monochrome and polychrome bitmaps are equally fast. Unfortunately, most interpreters are still relatively slow when it comes to drawing rectangles, and since rectangles are the basis of bitmaps, they will draw relatively slowly. If you want to use bitmaps and don't like the performance on your interpreter, contact your friendly neighborhood terp maintainer and ask for improvement! (The current leader is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmaps.)
+	Monochrome and polychrome bitmaps are equally fast. Unfortunately, most interpreters are still relatively slow when it comes to drawing rectangles, and since rectangles are the basis of bitmaps, they will draw relatively slowly. If you want to use bitmaps and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The current leader is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmaps.)
 
 
 Section: Polychrome bitmaps
@@ -1846,7 +1846,7 @@ Short forms:
 
 Speed notes:
 
-	Monochrome bitmaps and polychrome are similar in speed. Unfortunately, most interpreters are still relatively slow when it comes to drawing rectangles, and since rectangles are the basis of bitmaps, they will draw relatively slowly. If you want to use bitmap and don't like the performance on your interpreter, contact your friendly neighborhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmaps.)
+	Monochrome bitmaps and polychrome are similar in speed. Unfortunately, most interpreters are still relatively slow when it comes to drawing rectangles, and since rectangles are the basis of bitmaps, they will draw relatively slowly. If you want to use bitmap and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmaps.)
 
 
 Chapter: Complex commands: Image-maps
@@ -2044,7 +2044,7 @@ The text color for short-form commands is determined by the "current foreground-
 
 Speed notes:
 
-	Bitmap-rendered strings draw a number of bitmaps each time they are redrawn, and bitmaps themselves are composed of multiple rectangle-drawing instructions. As such, bitmap-rendered strings are the most intensive of Glimmr's drawing commands. Because most interpreters are still relatively slow when it comes to drawing rectangles, they will draw relatively slowly. If you want to use bitmap-rendered strings and don't like the performance on your interpreter, contact your friendly neighborhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmap-rendered strings.)
+	Bitmap-rendered strings draw a number of bitmaps each time they are redrawn, and bitmaps themselves are composed of multiple rectangle-drawing instructions. As such, bitmap-rendered strings are the most intensive of Glimmr's drawing commands. Because most interpreters are still relatively slow when it comes to drawing rectangles, they will draw relatively slowly. If you want to use bitmap-rendered strings and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmap-rendered strings.)
 
 
 Section: Image-rendered strings
@@ -2161,7 +2161,7 @@ Begin the new extension by including this line:
 
 	Use authorial modesty.
 
-This will suppress the extension's name when the VERSION command is typed in-game, in favor of a custom colophon (see below).
+This will suppress the extension's name when the VERSION command is typed in-game, in favour of a custom colophon (see below).
 
 Next, declare the font. For a bitmap font (actual data from the Glimmr fonts is used for these examples):
 

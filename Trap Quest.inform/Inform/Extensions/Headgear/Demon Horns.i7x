@@ -72,8 +72,7 @@ To compute class outfit of (H - demon horns):
 				say "Your [ShortDesc of C] [wardrobeVanishes of C]!";
 				now C is in pink wardrobe;
 		say "[bold type]A red dress suddenly appears on your body! You feel it infuse you with fire![roman type][line break]";
-		summon D;
-		now the raw-magic-modifier of D is 0;
+		summon D uncursed;
 		now demon-summoned is 1;
 	otherwise if the blackfire of H is 0 and the total-souls of the player > 9:
 		say "[bold type]Your hunger for souls begins to manifest as an ominous cloud of black, burning motes![roman type][line break]";

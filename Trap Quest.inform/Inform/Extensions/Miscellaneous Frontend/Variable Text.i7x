@@ -366,19 +366,14 @@ To decide which text is man of (M - a thing):
 To decide which text is man of (M - a person):
 	decide on "[if M is neuter]being[otherwise if M is presenting as female]woman[otherwise]man[end if]".
 
-To decide which text is man of (M - yourself):
-	decide on "[if M is presenting as female]woman[otherwise]man[end if]".
-
-
 
 To decide which text is men of (M - a thing):
 	decide on "[if M is live]beings[otherwise]things[end if]".
 
-To decide which text is men of (M - yourself):
-	decide on "[if M is presenting as female]women[otherwise]men[end if]".
-
 To decide which text is men of (M - a person):
 	decide on "[if M is neuter]beings[otherwise if M is presenting as female]women[otherwise]men[end if]".
+
+
 
 [To decide which text is girl:
 	say boy of the player.]
@@ -386,17 +381,11 @@ To decide which text is men of (M - a person):
 To decide which text is boy of (M - a thing):
 	decide on man of M.
 
-To decide which text is boy of (M - yourself):
-	decide on "[if M is presenting as female]girl[otherwise]boy[end if]".
-
 To decide which text is boy of (M - a person):
 	decide on "[if M is neuter]youngling[otherwise if M is presenting as female]girl[otherwise]boy[end if]".
 
 To decide which text is he of (M - a thing):
 	decide on "[if M is live]they[otherwise]it[end if]".
-
-To decide which text is he of (M - yourself):
-	decide on "[if M is presenting as female]she[otherwise]he[end if]".
 
 To decide which text is he of (M - a person):
 	decide on "[if M is neuter]it[otherwise if M is presenting as female]she[otherwise]he[end if]".
@@ -407,26 +396,17 @@ To decide which text is big he of (M - a thing):
 To decide which text is him of (M - a thing):
 	decide on "[if M is live]them[otherwise]it[end if]".
 
-To decide which text is him of (M - yourself):
-	decide on "[if M is presenting as female]her[otherwise]him[end if]".
-
 To decide which text is him of (M - a person):
 	decide on "[if M is neuter]it[otherwise if M is presenting as female]her[otherwise]him[end if]".
 
 To decide which text is his of (M - a thing):
 	decide on "[if M is live]their[otherwise]its[end if]".
 
-To decide which text is his of (M - yourself):
-	decide on "[if M is presenting as female]her[otherwise]his[end if]".
-
 To decide which text is his of (M - a person):
 	decide on "[if M is neuter]its[otherwise if M is presenting as female]her[otherwise]his[end if]".
 
 To decide which text is hers of (M - a thing):
 	decide on "[if M is live]theirs[otherwise]its[end if]".
-
-To decide which text is hers of (M - yourself):
-	decide on "[if M is presenting as female]hers[otherwise]his[end if]".
 
 To decide which text is hers of (M - a person):
 	decide on "[if M is neuter]its[otherwise if M is presenting as female]hers[otherwise]his[end if]".
@@ -671,7 +651,6 @@ A humiliation reaction: expands to a full sentence grammatically equivalent to "
 
 +!]
 To say HumiliateReflect (N - a number):
-	now N is N / (1 + (the humiliation of the player / 8000));
 	say "You [blush N].".
 
 

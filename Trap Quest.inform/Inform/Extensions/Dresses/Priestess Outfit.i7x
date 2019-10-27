@@ -50,6 +50,9 @@ To decide which number is the initial outrage of (C - a flowing priestess outfit
 To decide which object is the unique-upgrade-target of (C - a flowing priestess outfit):
 	decide on a random off-stage dainty priestess outfit.
 
+To decide which number is the skirtLength of (C - a flowing priestess outfit):
+	decide on 10.
+
 Part 2 - Dainty Priestess Outfit
 
 A dainty priestess outfit is a kind of priestess outfit. There is 1 dainty priestess outfit.

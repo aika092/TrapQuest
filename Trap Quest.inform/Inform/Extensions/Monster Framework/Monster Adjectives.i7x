@@ -7,7 +7,7 @@ A monster has a number called sleep. The sleep of a monster is usually 0. [The n
 Definition: A monster is awake rather than asleep if its sleep <= 0 and timeBombTime <= 0.
 A monster has a number called sex-length. The sex-length of a monster is usually 0. [Used in sex to determine how many turns until ejaculation. Also can be used to track something else outside of sex.]
 A monster has a number called difficulty. The difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
-A monster can be friendly-fucking. [Are they having consensual sex with you?]
+A monster can be friendly-fucking. [Are they having non-aggressive sex with you?]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
@@ -40,11 +40,7 @@ A monster can be bossdefeated. A monster is usually not bossdefeated.
  A monster can be double-diaper-committed. A monster is usually not double-diaper-committed.
  A monster has a number called dismissRefused. [Have they refused to be dismissed?]
 
-A monster can be tq-dq, tq-only, dq-only (this is the monster-game property). A monster is usually tq-dq.
-Definition: a monster (called M) is fetish appropriate:
-	if diaper quest is 1 and M is tq-only, decide no;
-	if diaper quest is 0 and M is dq-only, decide no;
-	decide yes.
+Definition: a monster is fetish appropriate: decide yes.
 
 [These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap.]
 Definition: a monster is dungeon dwelling: decide no.
@@ -106,7 +102,7 @@ To decide which number is the blue-balls-limit of (M - a monster):
 	decide on 1.
 A monster has a number called refactory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause.]
 To decide which number is the refactory-time of (M - a monster):
-	decide on 280. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
+	decide on 300. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
 A monster can be dragging.
 A monster has a number called monstersetup. The monstersetup of a monster is usually 0.
 Definition: a monster is nonexistant if the monstersetup of it is 0.
@@ -158,10 +154,7 @@ Last Interaction Reference:
 2: Player delayed the monster by acting submissive this turn
 ]
 
-Definition: A monster (called M) is delayed:
-	if the last-interaction of M is 2:
-		decide yes;
-	decide no.
+Definition: A monster is delayed if the last-interaction of it is 2.
 
 Definition: A person is live: decide yes.
 
@@ -178,6 +171,7 @@ Definition: a monster (called M) is controlling: [Will they grab onto subduing c
 	decide no.
 
 To decide which number is the girth of (M - a monster):
+	if M is male, decide on 2; [Normal penis girth]
 	decide on 0.
 
 To decide which number is the semen load of (M - a monster):
@@ -205,13 +199,8 @@ Definition: a monster is threatening rather than non-threatening if it is unleas
 Definition: a monster is pacified if it is non-threatening and it is not caged. [Will never be unfriendly in its current state]
 Definition: a monster is defeated rather than undefeated if it is fucked-silly or it is sex-enslaved or it is diaper-enslaved. [It's got knocked down, it's not getting up again, it's always going to let you keep it down.]
 
-Definition: a monster is messy if it is diaper-enslaved and the refactory-period of it <= 0 and diaper messing >= 6 and it is not in the school.
+Definition: a monster is messy if it is diaper-enslaved and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 6 and it is not in the school.
 
-Report examining a messy monster:
-	say MessyMonsterFlav of the noun.
-
-To say MessyMonsterFlav of (M - a monster):
-	say "The back of [his of M] diaper is bulging out and [his of M] face is red with embarrassment. It seems that someone has done a stinky.".
 
 
 Monster Adjectives ends here.

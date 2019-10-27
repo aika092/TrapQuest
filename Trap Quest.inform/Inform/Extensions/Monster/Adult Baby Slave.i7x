@@ -180,22 +180,13 @@ To compute perception of (M - an adult baby slave):
 		say "She eyes you mischievously and, compelled by some dark, childish impulse, she seems ready to pounce at you in a moments notice.";
 		now the sex-length of M is 3;
 	otherwise if the player is an adult baby and M is friendly:
-		say "[speech style of M]'Oh my god! You're just too cute! Mommy has to see you later!'[roman type][line break]Mommy?";
+		say "[speech style of M]'Oh my god! You're just too cute! Mommy has to see you later!'[one of][line break][variable custom style]Mommy?[or][stopping][roman type][line break]";
 		FavourUp M by 3;
 	otherwise if there is a worn waddle diaper and M is friendly:
 		say "She looks you up and down and smiles.[line break][speech style of M]'Wow! I'm so jealous of your waddle diaper! I should ask mommy to put me in one!'[roman type][line break]";
 		FavourUp M by 2;
-	otherwise if there is a worn rocking horse diaper and M is friendly:
-		say "She looks you up and down and smiles.[line break][speech style of M]'Hi! Your horsie diaper is adorable!'[roman type][line break]";
-		FavourUp M by 1;
-	otherwise if there is a worn kitty cat diaper and M is friendly:
+	otherwise if there is a worn cat themed diaper and M is friendly:
 		say "She looks you up and down and smiles.[line break][speech style of M]'Your kitty diaper is adorable! I wish mine was so pretty!'[roman type][line break]";
-		FavourUp M by 1;
-	otherwise if there is a worn sissy-diaper and M is friendly:
-		say "She looks you up and down and smiles.[line break][speech style of M]'Your sissy diaper is adorable! I love sissies!'[roman type][line break]";
-		FavourUp M by 1;
-	otherwise if there is a worn baby pattern diaper and M is friendly:
-		say "She looks you up and down and smiles.[line break][speech style of M]'Your baby diaper is adorable! It makes you look just like a real baby!'[roman type][line break]";
 		FavourUp M by 1;
 	otherwise if there is a worn diaper and M is friendly:
 		say "She looks you up and down and smiles.[line break][speech style of M]'Hey! Cute diaper!'[roman type][line break]";

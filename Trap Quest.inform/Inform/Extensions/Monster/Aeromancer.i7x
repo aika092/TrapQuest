@@ -59,6 +59,7 @@ Figure of aeromancer cutscene 3 is the file "Special/Cutscene/cutscene-aeromance
 Figure of aeromancer cutscene 4 is the file "Special/Cutscene/cutscene-aeromancer-fuck1.png".
 Figure of aeromancer cutscene 5 is the file "Special/Cutscene/cutscene-aeromancer-fuck2.png".
 Figure of aeromancer cutscene 6 is the file "Special/Cutscene/cutscene-aeromancer-fuck3.png".
+Figure of aeromancer cutscene 8 is the file "Special/Cutscene/cutscene-aeromancer-fairy1.jpg".
 
 To decide which figure-name is the monster-image of (M - an aeromancer):
 	if M is ballooned:
@@ -147,6 +148,19 @@ To compute (M - a monster) stomping (N - an aeromancer):
 	let L be a random off-stage leftover;
 	now L is in the location of M;
 	now the leftover-type of L is the leftover-type of N.
+
+
+Definition: an aeromancer (called M) is distracted:
+	if inflation fetish is 1 and M is reactive and (M is uninterested or M is friendly):
+		let N be a random undefeated fairy in the location of M;
+		if N is monster and (N is not grabbing the player and N is not penetrating a body part):
+			say "[BigNameDesc of M] looks [if M is interested]straight past you [end if]at [NameDesc of N]. [big he of M] takes out [his of M] golden wand and waves it towards [NameDesc of N].[line break][speech style of M]'I love doing this.'[roman type][line break][BigNameDesc of N] begins to inflate in all directions!";
+			cutshow figure of aeromancer cutscene 8;
+			say "[speech style of N]'What the?!'[roman type][line break]That's all [NameDesc of N] manages to squeak before the air pressure inside [him of N] gets too high and it begins to shoot out of [him of M] like a balloon, sending [him of M] spiralling into the distance. [BigNameDesc of M] laughs joyfully.[line break][speech style of M]'That never gets old!'[roman type][line break]";
+			if N is interested, bore N;
+			regionally place N;
+			decide yes;
+	decide no.
 
 Part 2 - Perception
 
@@ -352,7 +366,7 @@ Definition: an aeromancer (called M) is ballooned:
 	decide no.
 
 To compute unique early action of (M - an aeromancer):
-	unless there is a monster penetrating a body part or there is a thing grabbing the player, compute ballooning of M.
+	unless the player is prone or there is a monster penetrating a body part or there is a thing grabbing the player, compute ballooning of M.
 
 To compute ballooning of (M - an aeromancer):
 	if M is ballooned:
@@ -375,7 +389,7 @@ To compute ballooning of (M - an aeromancer):
 			let R be a random number between 2 and 5;
 			if debuginfo > 0, say "[input-style]Aeromancer power-up check: air stored ([balloon of M]) | ([R].5) d4+1.5 power-up threshold[roman type][line break]";
 			if the balloon of M > R:
-				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...' [or]Ultimate Airbag Transformation - Engage!' [stopping][roman type][BigNameDesc of M] pushes [his of M] wand between [his of M] breasts and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as [his of M] breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through [his of M] tight top and destroying it permanently[end if]! They begin to lift [him of M] off of the ground until [he of M] is hovering gracefully a foot in the air. [if M is wand-empowered][he of M][']s definitely going to be a lot more powerful now.[otherwise]You feel [he of M][']s probably a lot more powerful until [he of M] lands.[end if]";
+				say "[speech style of M]'[one of]I've been waiting for an excuse to use this...' [or]Ultimate Airbag Transformation - Engage!' [stopping][roman type][line break][BigNameDesc of M] pushes [his of M] wand between [his of M] breasts and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as [his of M] breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through [his of M] tight top and destroying it permanently[end if]! They begin to lift [him of M] off of the ground until [he of M] is hovering gracefully a foot in the air. [if M is wand-empowered][he of M][']s definitely going to be a lot more powerful now.[otherwise]You feel [he of M][']s probably a lot more powerful until [he of M] lands.[end if]";
 				now M is airborne;
 				let DAM be the maxhealth of M - the health of M;
 				if M is in the Woods, DifficultyUp M by 6;
@@ -1066,9 +1080,12 @@ To compute annoyance of (M - an aeromancer):
 	alwayscutshow figure of aeromancer interact 17 for M.
 
 To compute teaching of (M - an aeromancer):
-	say "[speech style of M]'Are you a fan of alchemy? If I tell you a secret you have to promise not to tell anyone...'[roman type][line break]";
-	cutshow figure of aeromancer interact 17 for M;
-	teach fastcrafting;
+	if playerRegion is Woods and inflation fetish is 1 and the player is a june 2019 top donator:
+		teach safefloating from M;
+	otherwise:
+		say "[speech style of M]'Are you a fan of alchemy? If I tell you a secret you have to promise not to tell anyone...'[roman type][line break]";
+		cutshow figure of aeromancer interact 17 for M;
+		teach fastcrafting;
 	if the questioned of M <= the mild-annoyance threshold of M:
 		ModerateConvoFatigue M;
 	otherwise:
@@ -1197,7 +1214,7 @@ To compute aeromancer science of (M - confident aeromancer):
 	otherwise: [Selkie: it'd be sweet if she could add a step or two to a latex-doll transformation that was underway]
 		say "A beam flies straight from her wand to your face!";
 		if a random number between 1 and 3 > 1 and (the raw largeness of hair + 1) < max hair length:
-			say "Your hair grows and rapidly shifts in color!";
+			say "Your hair grows and rapidly shifts in colour!";
 			HairUp 2;
 		if a random number between 1 and 3 > 1 and the make-up of face < 3:
 			say "Your make up gets thicker!";

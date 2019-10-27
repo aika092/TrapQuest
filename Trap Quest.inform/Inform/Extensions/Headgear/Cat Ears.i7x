@@ -39,7 +39,7 @@ To compute class outfit of (H - cat-ears):
 	let P be a random off-stage cat tail plug;
 	let M be a random off-stage exposing magical dress;
 	let W be a random off-stage heart wand;
-	if the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
+	if diaper quest is 0 and the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
 		if kitty-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";

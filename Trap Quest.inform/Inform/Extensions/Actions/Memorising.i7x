@@ -29,13 +29,17 @@ Does the player mean memorising a recipe:
 
 Recalling is an action applying to nothing.
 Check recalling:
-	if the number of memorised recipes is 0, say "You haven't committed anything to memory." instead.
+	if the number of memorised recipes + the number of castable magic-spells is 0, say "You haven't committed anything to memory." instead.
 
 Carry out recalling:
 	say "[bold type]MEMORISED RECIPES:[roman type][line break]";
 	repeat with R running through memorised recipes:
-		say "[printed name of R]: [ExamineDesc of R][line break]".
-Understand "recall recipes", "recipes", "memorised recipes", "known recipes" as recalling.
+		say "[printed name of R]: [ExamineDesc of R][line break]";
+	if there is a castable magic-spell:
+		say "[bold type]MEMORISED SPELLS:[roman type][line break]";
+		repeat with R running through castable magic-spells:
+			say "'[link]I [incantation of R][end link]': [MagicSpellEffect of R].[SpellOutrageousnessInfo of R][line break]".
+Understand "recall recipes", "recipes", "memorised recipes", "known recipes", "recall spells", "spells", "memorised spells", "known spells" as recalling.
 
 Memorising ends here.
 

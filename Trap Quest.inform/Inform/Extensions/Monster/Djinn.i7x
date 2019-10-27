@@ -199,6 +199,7 @@ To compute DjinnDisappointedAfter of (M - a monster):
 		permanently anger M;
 		now the wish history of M is 1;
 		bore M;
+		now the boredom of M is 0; [He'll be interested straight away]
 	otherwise:
 		let L be a random magic lamp;
 		say "The djinn claps [his of M] hands and disappears back into the lamp.";
@@ -546,7 +547,7 @@ This is the djinn monster convinced rule:
 
 This is the djinn friendly convinced rule:
 	if presented-orifice is a reasonable target and (the refactory-period of current-monster <= 0 or (presented-orifice is face and the wish history of current-monster is 2)):
-		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
+		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say "[PresentFriendlyAcceptanceFlav of current-monster]";
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
@@ -569,7 +570,7 @@ To say FriendlySexReleaseRefusalSpeech of (M - djinn):
 	say "[speech style of M]'[one of]No no no, you don't stop until I say so.'[or]Do you think you are in charge here?!'[or]Why would I care about what you want? Your feelings are insignificant.'[in random order][roman type][line break]".
 
 To say StrikingSuccessFlav of (M - djinn) on (B - a body part):
-	say "A miniature lightning bolt strikes your [TargetName of B]. The powerful electric shock sizzles painfully against your skin!".
+	say "A miniature lightning bolt strikes you [TargetName of B]. The powerful electric shock sizzles painfully against your skin!".
 
 To compute (S - a spike bra) damaging (M - djinn):
 	say "You see [NameDesc of M] flinch back in pain as his lightning bolt strikes your [printed name of a random spike bra worn by the player]. The attack was somehow reflected!";
@@ -688,6 +689,7 @@ To compute unique death of (M - djinn):
 		say "But wait! The [L] stirs, shooting out of your [if there is a worn bag of holding]bag[otherwise]hands[end if] and to the ground. The djinn is no longer soaring into the air, but sinking towards the lamp! [line break][speech style of M]'No, what?! Where did you get that? How did you know that a meagre oil lamp is the only device that can contain me?! AAAH!'[roman type][line break][BigNameDesc of M] sinks into the entrance of the lamp, shrinking as [he of M] disappears. ";
 		destroy M;
 		now the wishes of L is 3;
+		force inventory-focus redraw;
 		say "You now have a [L]! You pick it back up.";
 		compute autotaking L;
 	otherwise:

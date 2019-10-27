@@ -5,6 +5,9 @@ food machine is a thing. The printed name of food machine is "[TQlink of item de
 To decide which figure-name is the examine-image of (C - food machine):
 	decide on Figure of school foodhall.
 
+To say MediumDesc of (C - food machine):
+	say "mushy [if diaper quest is 0][semen]-glazed [end if]food machine".
+
 To say ExamineDesc of (C - food machine):
 	say "A conveyor belt running around the outside with bowls of food passing round them, much like in a sushi restaurant but slower. The meals pass through a large central metal unit which seems to be where empty bowls are restocked. [if diaper quest is 0]You notice that whenever the meals come out the other side they seem a little more... shiny. Closer inspection reveals that yes, each meal is slowly getting coated in more and more [semen][otherwise if the bimbo of the player < 10]To your dismay you realise all the bowls are filled with baby food such as mushy peas, mashed banana, oatmeal and so on[otherwise]All of the bowls are filled with baby food such as mushy peas, mashed banana, oatmeal and so on[end if]. What is clear from just looking at the machine is that the bowls are secured to the conveyor belt, and there is no cutlery, so you would be forced to eat with your hands or face.".
 
@@ -37,7 +40,7 @@ Carry out MachineFeeding:
 			let H be a random off-stage puppy ears;
 			if H is actually summonable:
 				summon H cursed;
-				say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]! [line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
+				say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]![line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
 
 School Food Machine ends here.
 

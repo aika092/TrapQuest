@@ -468,7 +468,8 @@ To HipUp (X - a number):
 				if there is a worn tattoo and the number of worn ass tattoos is 0 and lactation fetish is 1:
 					summon prime USDA tattoo;
 					say "A brand appears on your butt!";
-					try examining prime USDA tattoo.
+					try examining prime USDA tattoo;
+	update appearance level.
 
 To say ThighGapFlav:
 	say "[one of][UniqueThighGapFlav][or][stopping]".
@@ -525,6 +526,7 @@ To AssInflate (X - a number):
 			if X is 0:
 				if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
 				if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
+				update appearance level;
 		otherwise if X is 0:
 			say "Your [AssDesc] try to inflate further but have reached their limit!".
 
@@ -544,6 +546,7 @@ To AssImplantsUp (X - a number):
 			if X is 0:
 				if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
 				if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
+				update appearance level;
 		otherwise if attempt-done < 2:
 			say "Your [AssDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of hips > 0]and improved [end if]implants shrink under the pressure.";
 			now attempt-done is 2.
@@ -580,6 +583,7 @@ To FatAssUp (X - a number):
 			if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
 			if the total volume of hips is 8 and the flesh volume of thighs > 4 and the flesh volume of belly > 3, cutshow figure of body reaction 12 for hips;
 			if the thickness of hips < total weighty volume of hips - 3 and the thickness of hips < max hip size, HipUp 1; [Hip size increases a bit if ass is really big in comparison, excluding air]
+			update appearance level;
 		otherwise if X is 0:
 			say "Your [AssDesc] try to get fatter but have reached their limit!";
 			if there is a worn tattoo and the number of worn ass tattoos is 0 and (weight gain fetish is 1 or lactation fetish is 1):

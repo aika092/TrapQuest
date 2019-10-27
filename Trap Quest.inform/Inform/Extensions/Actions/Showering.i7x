@@ -46,7 +46,7 @@ Carry out showering:
 	if WoodsScenery01 is in the location of the player: [Unique stuff because of slimegirl]
 		compute showering WoodsScenery01;
 	otherwise:
-		if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the water and begin to wash yourself. ";
+		if seconds is 0 and auto is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the water and begin to wash yourself. ";
 		now tracked-semen is 0;
 		Wash Salves;
 		compute showering;
@@ -112,7 +112,7 @@ To wash clothing in water body:
 			increase tracked-semen by 1;
 		if the milk-soak of C > 0:
 			increase tracked-semen by 1;
-		if C is diaper, say "[if C is perceived messed]You use the water to thoroughly clean your [C] and your loins[otherwise]Your diaper is quickly filled to its limit with water. It is now very heavy and won't be able to hold any more liquid[end if].";
+		if C is diaper, say "[if C is perceived messed and auto is 0]You use the water to thoroughly clean your [C] and your loins[otherwise]Your diaper is quickly filled to its limit with water. It is now very heavy and won't be able to hold any more liquid[end if].";
 		clean C;
 		if C is fluid vulnerable, Drench C.
 

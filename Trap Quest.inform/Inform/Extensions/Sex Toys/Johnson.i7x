@@ -2,7 +2,7 @@ Johnson by Sex Toys begins here.
 
 [GENERIC DILDO]
 
-A johnson is a kind of dong. The printed name of a johnson is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][DongSize the size of the item described] [DongColor of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson. [Understand "blue" as describing a johnson if it is blue themed. Understand "green" as describing a johnson if it is green themed. Understand "white" as describing a johnson if it is white themed. Understand "red" as describing a johnson if it is red themed. Understand "flesh", "coloured" as describing a johnson if it is blandness.]
+A johnson is a kind of dong. The printed name of a johnson is usually "[clothing-title-before][DongSize of the item described] [DongColor of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson. [Understand "blue" as describing a johnson if it is blue themed. Understand "green" as describing a johnson if it is green themed. Understand "white" as describing a johnson if it is white themed. Understand "red" as describing a johnson if it is red themed. Understand "flesh", "coloured" as describing a johnson if it is blandness.]
 
 Definition: a johnson is penis themed: decide yes.
 Definition: a johnson is blue themed if it is refreshment.
@@ -56,7 +56,7 @@ To say DongColor of (D - a johnson):
 	say "[if D is refreshment]blue[otherwise if D is rejuvenation or D is endurance]green[otherwise if D is suppression or D is bed wetting]white[otherwise if D is dominance or D is temptation]red[otherwise]flesh-coloured[end if]".
 
 To say ClothingDesc of (C - a johnson):
-	say "A [DongSize the size of the item described] [DongColor of the item described] dildo.".
+	say "A [DongSize of C] [DongColor of C] dildo.".
 
 
 Johnson ends here.

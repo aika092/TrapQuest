@@ -424,7 +424,7 @@ To say unique-verb-desc of (T - a monster):
 		if T is friendly and T is intelligent:
 			say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
 		otherwise if the player is upright:
-			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
+			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link][if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][end if]";
 		otherwise if T is uninterested:
 			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]".
 

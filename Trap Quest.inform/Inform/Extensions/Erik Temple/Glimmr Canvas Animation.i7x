@@ -1395,7 +1395,7 @@ Glulx has no built-in animation support. Instead, animation is achieved through 
 
 Moreover, the Glulx timer is explicitly not intended to be perfectly reliable. Some interpreters have better timer implementations than others, and combined with performance variability in graphics drawing and other operations, this means that the precise performance of a given animation is not guaranteed to be the same on different Glulx virtual machines.
 
-Finally, many standard graphical effects are not provided in Glulx. Glulx does allow for images to be scaled, but we cannot dynamically rotate a sprite, for example, nor can we affect the opacity of an image. There are labor-intensive ways to at least partially get around these (basically, create multiple versions of each sprite, at different opacities or rotations), but they are limiting.
+Finally, many standard graphical effects are not provided in Glulx. Glulx does allow for images to be scaled, but we cannot dynamically rotate a sprite, for example, nor can we affect the opacity of an image. There are labour-intensive ways to at least partially get around these (basically, create multiple versions of each sprite, at different opacities or rotations), but they are limiting.
 
 Despite all this, animation in Glulx can still work pretty well, as long as we keep things simple and don't expect *too* much from the system. We will also want to test our game on a few different interpreters and systems before releasing it to the world-if it works better in some 'terps than others, we want to be able to communicate that to players.
 
@@ -2063,7 +2063,7 @@ The position of a sprite, "teleporting" from location to location on the canvas:
 
 
 Showing different text strings randomly:
-	*: The flashcard track is an animation track. The indexed-text-reel is {"Eat only meats!", "Capitalize on murder!", "Fleece your neighbor!", "Wear plaid!", "Treacle trickles!"}.
+	*: The flashcard track is an animation track. The indexed-text-reel is {"Eat only meats!", "Capitalize on murder!", "Fleece your neighbour!", "Wear plaid!", "Treacle trickles!"}.
 
 	The card is an image-rendered string. The text-string is "". The background tint is g-white.
 
@@ -2268,7 +2268,7 @@ Section: Types of easing
 
 GCA has 16 easing equations built in, from purely linear to a quadratic curve to a parabolic bounce. If these don't meet your needs, you can also add your own equations (see below for a few notes on rolling your own).
 
-Most of the included equations are available in three flavors each. “Easing out” describes a sequence in which motion starts out moving rapidly and then slows, more or less gradually, to a stop. “Easing in” is the opposite–-slow to fast. “Easing in-out” combines the two effects. Different functions are used to qualify these three basic categories, resulting in the full names of the easing equations: “quadratic easing in” for example, or “circular easing out”.
+Most of the included equations are available in three flavours each. “Easing out” describes a sequence in which motion starts out moving rapidly and then slows, more or less gradually, to a stop. “Easing in” is the opposite–-slow to fast. “Easing in-out” combines the two effects. Different functions are used to qualify these three basic categories, resulting in the full names of the easing equations: “quadratic easing in” for example, or “circular easing out”.
 
 Here are the names of the built-in equations:
 

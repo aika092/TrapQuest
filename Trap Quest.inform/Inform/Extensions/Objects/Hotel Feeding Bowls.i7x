@@ -22,6 +22,9 @@ Check BowlFeeding:
 	if the player is in danger and seconds is 0, say "You can't do that while in combat!" instead;
 	if the player is not able to eat, say "You are currently unable to eat." instead;
 	if there is a worn gag, say "It's not really practical to eat from that while wearing the [random worn gag]." instead;
+	if the player is upright:
+		say "You get on your knees.";
+		now the stance of the player is 1;
 	unless the player is prone, say "You would need to be on your knees to feed from these." instead.
 
 Carry out BowlFeeding:

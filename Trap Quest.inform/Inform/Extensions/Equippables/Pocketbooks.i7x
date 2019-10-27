@@ -60,37 +60,19 @@ Carry out browsing pocket necronomicon:
 	say "You consult the Necronomicon, though it's probably a bad idea.";
 	if the player-class is cultist and the invokeskill of the player is 0:
 		say "Your mind is opened to eldritch vistas by what you've read!";
-		humiliate 200;
+		humiliate 2000;
 		teach invoking;
+	otherwise if the magic-power of the player > 0:
+		let S be a random uncastable fetish appropriate magic-spell;
+		if S is magic-spell:
+			say "Magic flows from your body, turning a black page in the book into the instructions for how to cast a new spell. Wow!";
+			say NewbieMagicSpells;
+			compute learning of S;
+			compute spell consequences of the noun;
+		otherwise:
+			say "It seems you've learned every spell you can, as no new text appears.";
 	otherwise:
-		let R be a random number between 1 and 8;
-		humiliate 350;
- 		if R is 1 and the mercyskill of the player is 0:
- 			say "You find the secrets of submission to those of strength!";
- 			teach begging for mercy;
- 		otherwise if R is 2 and the throatskill of the player is 0:
- 			say "You find a diagram demonstrating how to take a tentacle down the throat comfortably!";
- 			teach deepthroating;
- 		otherwise if R is 3 and the strutskill of the player is 0:
- 			say "You... find some advice on walking in heels. This book really DOES have everything!";
- 			teach strutting;
- 		otherwise if R is 4 and the breastskill of the player is 0:
- 			say "You find a depiction of the fighting style of a strange, bulbous creature. You think you might be able to apply it to yourself!";
- 			teach titjobs;
- 		otherwise if R is 5 and the identifyskill of the player is 0:
- 			say "You find a listing of terrible and cursed artefacts and their properties!";
- 			teach identifying;
- 		otherwise if R is 6 and the bellyskill of the player is 0:
- 			say "You see a diagram of cultists, heavy with the spawn of the old ones. They seem to be standing a particular way, perhaps it is more comfortable?";
- 			teach belly management;
- 		otherwise if R is 7 and the relaxskill of the player is 0:
- 			say "You see an artwork depicting a cultist spreading her fuckholes one hand as she guides two giant cocks inside with the other. You think you can understand how she's able to take them without it hurting.";
- 			teach relaxing;
-		otherwise if R is 8 and the fuckskill of the player is 0:
-			say "You find a depiction of a cultist shape-shifting into some huge creature. The others seem to keep worshipping it.";
-			teach fuckskill;
- 		otherwise:
-			say "You feel your mind slipping away into madness at the revelations of the book!".
+		say "The book has no text on any of the pages. Perhaps if you had more magic power, it would reveal its secrets to you.".
 
 To decide which number is the humiliation-influence of (C - a pocket necronomicon):
 	let B be -1;
@@ -128,7 +110,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		compute messing;
 		now incontinence is 0;
 	otherwise if the player is incontinent and D is diaper and R is 1:
-		say "'[one of]I can't believe I've let myself become this much of a baby. I never should've started wearing diapers! I didn't even mean to use them, they were just supposed to be a joke! But they were so hard to get off, so I thought what could the harm be? Then after that diaper was fully used (why let it go to waste?) and I changed myself, the toilet was so far away when I had to go that it only made sense to use my diaper! At this point I've forgotten what a pot - I mean toilet, feels like[or]I tried using my training potty today, I had the perfect plan! I sat on the potty with my favorite pink diaper on, all I had to do when I felt the slightest need to go is take it off! I waited, and waited, and waited, and I never felt the need to go! I finally decided to check it, and it was already soaking wet! I went who knows how long without even realizing I had soiled my diaper[or]Why do they make it so hard to stop using diapers! They're [italic type]so[roman type] much more convenient than using the potty, of course I started only going potty in them! But now that everyone sees me for the pathetic pottypants baby, I want to start using the potty again, but getting potty trained is so hard[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the diaper addiction of the player > 14]adult[end if]wording, but also because it perfectly represents how you've felt since you completely lost control of your bladder and bowels. Suddenly, the book begins to glow, and the words start erasing themselves from the page! You feel light-headed, and fall to your knees, before suddenly [if D is not total protection]feeling a warm glow from your diaper, as it miraculously repairs itself! Better yet, you can feel[otherwise]feeling[end if] your bladder again! It feels awfully full, until you feel it begin to empty into your diaper!";
+		say "'[one of]I can't believe I've let myself become this much of a baby. I never should've started wearing diapers! I didn't even mean to use them, they were just supposed to be a joke! But they were so hard to get off, so I thought what could the harm be? Then after that diaper was fully used (why let it go to waste?) and I changed myself, the toilet was so far away when I had to go that it only made sense to use my diaper! At this point I've forgotten what a pot - I mean toilet, feels like[or]I tried using my training potty today, I had the perfect plan! I sat on the potty with my favourite pink diaper on, all I had to do when I felt the slightest need to go is take it off! I waited, and waited, and waited, and I never felt the need to go! I finally decided to check it, and it was already soaking wet! I went who knows how long without even realizing I had soiled my diaper[or]Why do they make it so hard to stop using diapers! They're [italic type]so[roman type] much more convenient than using the potty, of course I started only going potty in them! But now that everyone sees me for the pathetic pottypants baby, I want to start using the potty again, but getting potty trained is so hard[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the diaper addiction of the player > 14]adult[end if]wording, but also because it perfectly represents how you've felt since you completely lost control of your bladder and bowels. Suddenly, the book begins to glow, and the words start erasing themselves from the page! You feel light-headed, and fall to your knees, before suddenly [if D is not total protection]feeling a warm glow from your diaper, as it miraculously repairs itself! Better yet, you can feel[otherwise]feeling[end if] your bladder again! It feels awfully full, until you feel it begin to empty into your diaper!";
 		if D is not total protection, repair D;
 		try kneeling;
 		now the bladder of the player is 10;

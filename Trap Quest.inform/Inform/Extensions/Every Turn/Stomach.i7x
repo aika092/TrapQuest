@@ -179,10 +179,10 @@ To compute bladder growth:
 		otherwise if the player is bursting and (R is -1 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
 			progress quest of bursting-quest;
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
-		bladderup (1 + (xavier-belt-link * 2)) * the delayed bladder of the player;
+		bladderup (1 + xavier-belt-link) * the delayed bladder of the player;
 		now the delayed bladder of the player is 0;
 	otherwise if (the remainder after dividing time-earnings by 25 < time-seconds or (chess table is grabbing the player and the chess-victor of chess-lesson is 0)) and the delayed bladder of the player > 0:
-		bladderup 1 + (xavier-belt-link * 2);
+		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 
 

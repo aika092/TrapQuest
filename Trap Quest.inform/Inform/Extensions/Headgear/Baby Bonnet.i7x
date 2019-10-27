@@ -43,8 +43,7 @@ To compute class outfit of (H - a baby bonnet):
 				say "Your [D] [wardrobeVanishes of D]!";
 				now D is in pink wardrobe;
 		say "[bold type]Your bonnet flutters in an invisible wind as a warm, thick onesie appears over you, encasing your torso and limbs in its soft fabric.[roman type][line break]";
-		summon O;
-		now the raw-magic-modifier of O is 0;
+		summon O uncursed;
 		let D be a random worn diaper;
 		if D is diaper:
 			increase the raw-magic-modifier of O by 1;
@@ -53,19 +52,18 @@ To compute class outfit of (H - a baby bonnet):
 		now baby-summoned is 1;
 	otherwise if M is actually summonable:
 		say "[bold type]Your bonnet flutters in an invisible wind as large, round mittens appear around your hands.[roman type][line break]";
-		summon M;
+		summon M cursed with quest;
 		now the raw-magic-modifier of M is 0;
 	otherwise if B is actually summonable:
 		say "[bold type]Your bonnet flutters in an invisible wind as soft pink booties appear around your feet.[roman type][line break]";
-		summon B;
-		now the raw-magic-modifier of B is 0;
+		summon B uncursed;
 	otherwise if P is actually summonable:
 		if the semen taste addiction of the player > 11:
 			now P is a random cock pacifier;
 			say "[bold type]Your bonnet flutters in an invisible wind as a penis shaped pacifier suddenly appears out of nowhere and forces its way into your mouth![roman type][line break]";
 		otherwise:
 			say "[bold type]Your bonnet flutters in an invisible wind as a pacifier suddenly appears out of nowhere and forces its way into your mouth![roman type][line break]";
-		summon P cursed;
+		summon P cursed with quest;
 		now the raw-magic-modifier of P is 0.
 
 

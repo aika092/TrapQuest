@@ -12,9 +12,7 @@ Definition: a wrestler is willing to urinate: decide yes.
 
 Definition: a wrestler is raunchy: decide yes.
 
-Definition: A wrestler (called M) is hotel dwelling:
-	if diaper quest is 1, decide no;
-	decide yes.
+Definition: a wrestler is hotel dwelling: decide yes.
 
 To say ShortDesc of (M - a wrestler):
 	say "wrestler".
@@ -100,7 +98,7 @@ To decide which number is the girth of (M - a wrestler):
 			decide on 10;
 		otherwise:
 			decide on the openness of F + 1;
-	decide on 1.
+	decide on 0.
 
 This is the spawn initial wrestler rule:
 	if the number of alive wrestlers is 0:
@@ -268,6 +266,8 @@ This is the wrestler puts slaves in the urinal rule:
 		rule succeeds;
 	otherwise if watersports fetish is 1 and (the urinal-boredom of M is 0 or the class of the player is human toilet) and R is 1:
 		if Hotel31 is the location of the player:
+			repeat with N running through monsters:
+				dislodge N;
 			now M is grabbing the player;
 			now the sex-length of M is a random number between 10 and 30;
 			say "[BigNameDesc of M] forces your back against the wall in between the two urinals. Before you can move, [he of M] has secured your ankles to two strong metal anklecuffs connected by short chains to the wall. [if the bimbo of the player < 10]As you fruitlessly pull at the chains, [otherwise if the class of the player is human toilet]You hold the chains in silent obedience as[otherwise]You hold the chains in silent bemusement as [end if] [he of M] clamps two more cuffs around your wrists, securing them strictly to your ankles and preventing you from even standing up. Finally [he of M] gives you a passionate kiss on the lips as [he of M] pulls a thick woolly blindfold over your eyes.[line break][second custom style]'I'll be back for you in a bit, beautiful. Enjoy yourself!'[roman type][line break]";
@@ -713,7 +713,7 @@ To say MasturbationTeaseFlav of (M - a wrestler):
 	say "[big he of M] giggles.[line break][speech style of M]'[one of]It's way more fun to be left on the brink of orgasm, don't you think? It's so deliciously frustrating!'[or]Oops! Maybe it ran out of batteries? Nope, I just thought it would be funny to leave you like this, haha! It gets me hot just thinking about how much you must need to cum right now...'[in random order][roman type][line break]".
 
 To say DQMasturbationResistReactionFlav of (M - a wrestler):
-	say "[BigNameDesc of M] narrates [his of M] own performance.[line break][speech style of M]'[one of]What's this folks? The challenger is squirming like a child under the champ's rump... does [he of the player] need to breathe? Hope [he of the player] likes diaper pail flavored air!'[or]Champ is just going to town on the challenger's diaper! [big he of the player] bucks and kicks but those moans tells me there'll be a honeymoon after this!'[or]Cmon tinkles I need SOME sort of work out... want me to lift up a bit?'[or]Oh what's this? Just when the champ was on a roll [he of M] pulls the challenger's legs up in the dreaded changing hold! Oh how humiliating!'[or]I'm barely at a tingle and you're bucking like this? I feel you owe me after this one!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] narrates [his of M] own performance.[line break][speech style of M]'[one of]What's this folks? The challenger is squirming like a child under the champ's rump... does [he of the player] need to breathe? Hope [he of the player] likes diaper pail flavoured air!'[or]Champ is just going to town on the challenger's diaper! [big he of the player] bucks and kicks but those moans tells me there'll be a honeymoon after this!'[or]Cmon tinkles I need SOME sort of work out... want me to lift up a bit?'[or]Oh what's this? Just when the champ was on a roll [he of M] pulls the challenger's legs up in the dreaded changing hold! Oh how humiliating!'[or]I'm barely at a tingle and you're bucking like this? I feel you owe me after this one!'[in random order][roman type][line break]".
 
 Definition: a wrestler is willing to confiscate: decide yes.
 
@@ -948,7 +948,8 @@ To say DominanceFailure of (M - a wrestler):
 To compute failed dominance punishment of (M - a wrestler):
 	let C be a random worn chastity cage;
 	if C is clothing:
-		let B be a random off-stage actually summonable bondage;
+		let B be a random off-stage actually summonable opengag;
+		if B is not a gag, now B is a random off-stage actually summonable bondage;
 		if B is clothing:
 			say "[line break][speech style of M]'You're into bondage, right? I bet you'll like this, then!'[roman type][line break][big he of M] pulls out a [Shortdesc of B] and locks it into place.";
 			summon B cursed;
