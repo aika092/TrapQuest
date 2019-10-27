@@ -128,7 +128,7 @@ Definition: yourself (called Y) is able to drink:
 						decide no;
 				otherwise:
 					DoseDown drinking-target;
-					say "You try to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T], but you don't manage it!  The liquid drips down your chin to the ground.";
+					say "You try to stretch your [LipDesc] wide enough to get some past your [ShortDesc of T], but you don't manage it! The liquid drips down your chin to the ground.";
 					decide no;
 		otherwise:
 			if autodrink is 0, say "The [T] is preventing you from doing that!";

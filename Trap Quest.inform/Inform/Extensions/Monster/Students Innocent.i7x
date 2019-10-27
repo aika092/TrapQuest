@@ -72,10 +72,10 @@ To update name of (M - student-winnie):
 		now the student-name of M is "Winnie".
 
 To say StoryAnswer of (M - student-winnie):
-	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real?  But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
+	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real? But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-winnie):
-	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously!  Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously! Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
 
 To decide which number is the heel-skill of (M - student-winnie):
 	decide on -2.

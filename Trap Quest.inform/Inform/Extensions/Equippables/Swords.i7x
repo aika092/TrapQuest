@@ -120,13 +120,13 @@ To compute sword destiny of (S - sword-of-purity):
 	otherwise if diaper focus is 1 and the player is diapered and the noun is in Woods26:
 		let R be a random rattle;
 		summon R cursed;
-		say "As you pull the sword free, it turns into a [ShortDesc of R], stuck to your hand!  [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
+		say "As you pull the sword free, it turns into a [ShortDesc of R], stuck to your hand! [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
 	otherwise if the virgin of the player is 0 and the player is female:
 		let R be a random dildo sword;
 		summon R cursed;
-		say "As your hands close around the hilt, it turns into a [ShortDesc of R], which sticks to your hand!  [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
+		say "As your hands close around the hilt, it turns into a [ShortDesc of R], which sticks to your hand! [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
 	otherwise if flower hairclip is not actually summonable and flower hairclip is not worn:
@@ -214,7 +214,7 @@ Report plugging something with dildo sword:
 			if inflation fetish is 1, Assfill N * 2 air;
 			otherwise HipUp (N + 1) / 2;
 		otherwise if F is fuckhole:
-			say "it starts wriggling around, stimulating your insides all the way from the deepest point inside to your entrance![roman type] [if N is 5]The tentacle-like movement is extremely powerful and fast, causing your whole body to shudder. It lasts for several seconds!  [otherwise if N > 2]It lasts for a few seconds, enough to make you weak at the knees. [otherwise]It only lasts for a couple of seconds but it still felt intense. [end if]You can't help but become [if the player is a bit horny]further [end if]aroused.";
+			say "it starts wriggling around, stimulating your insides all the way from the deepest point inside to your entrance![roman type] [if N is 5]The tentacle-like movement is extremely powerful and fast, causing your whole body to shudder. It lasts for several seconds! [otherwise if N > 2]It lasts for a few seconds, enough to make you weak at the knees. [otherwise]It only lasts for a couple of seconds but it still felt intense. [end if]You can't help but become [if the player is a bit horny]further [end if]aroused.";
 			arouse 500 * N;
 			finally arouse;
 			if F is fuckhole, ruin F;

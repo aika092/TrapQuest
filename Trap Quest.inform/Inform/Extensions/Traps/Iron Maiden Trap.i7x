@@ -19,7 +19,7 @@ To trigger (Y - an iron-maiden):
 	now Y is revealed;
 	now Y is expired;
 	now iron-maiden-turns is 0;
-	say "As you finish using the bucket and lower your arms, a giant metal contraption springs out of the ground from both in front and behind you, instantly closing around you with a loud CLANG! [one of]You're trapped inside, unable to move a muscle! This must be some kind of Iron Maiden!  In the pitch black darkness you feel something slimy, cold, hard and... wriggling... pressing at you from all directions. The inside lining of the maiden is made of metal tentacles! [or]The Iron Maiden has gotten you again! Once again the slimy metal tentacles press in against you from all directions. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].";
+	say "As you finish using the bucket and lower your arms, a giant metal contraption springs out of the ground from both in front and behind you, instantly closing around you with a loud CLANG! [one of]You're trapped inside, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel something slimy, cold, hard and... wriggling... pressing at you from all directions. The inside lining of the maiden is made of metal tentacles! [or]The Iron Maiden has gotten you again! Once again the slimy metal tentacles press in against you from all directions. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].";
 	now the player is in Iron Maiden;
 	refresh the map-window.
 
@@ -68,7 +68,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 			if M is penetrating face:
 				say "The tentacle in your mouth continues to [one of]fuck your face[or]use your throat as a fuck sock[or]energetically fuck your mouth[or]turn your mouth into its own personal onahole[in random order]!";
 			otherwise if face is not actually occupied:
-				say "Suddenly a tentacle pushes its way into your mouth!  It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
+				say "Suddenly a tentacle pushes its way into your mouth! It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
 				now M is penetrating face;
 				BlowCount;
 			otherwise:
@@ -90,7 +90,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 						say "The metal tentacle in your [vagina] is still [one of]thrusting vigorously[or]plowing away[or]fucking you deep and hard[or]smashing against your cervix as it violates you[in random order]!";
 						ruin vagina;
 					otherwise if vagina is not actually occupied:
-						say "You feel the tip of one metal tentacle find the entrance to your [vagina]!  You don't have a moment to react before it launches forward, sliding inexorably in, penetrating you, bottoming out with one relentless motion!";
+						say "You feel the tip of one metal tentacle find the entrance to your [vagina]! You don't have a moment to react before it launches forward, sliding inexorably in, penetrating you, bottoming out with one relentless motion!";
 						now M is penetrating vagina;
 						ruin vagina;
 						FuckCount;
@@ -104,7 +104,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 					say "The metal tentacle behind you continues to [one of]impale your [asshole] on its seemingly endless length[or]plunder your [asshole], snaking its way up through your colon, with each thrust working closer and closer to your belly itself[or]delve deeper and deeper into your [asshole][or]ruin the deepest parts of your [asshole][in random order]!";
 					ruin asshole;
 				otherwise if asshole is not actually occupied:
-					say "A particularly slimy metal tentacle presses against your [asshole]!  You feel your sphincter quickly losing its battle to remain closed as the unseen tentacle drills its way inside!";
+					say "A particularly slimy metal tentacle presses against your [asshole]! You feel your sphincter quickly losing its battle to remain closed as the unseen tentacle drills its way inside!";
 					now M is penetrating asshole;
 					ruin asshole;
 					AnalCount;

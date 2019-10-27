@@ -100,15 +100,15 @@ REQUIRES COMMENTING
 soon-to-imprint is a room.
 
 A blindroom is a kind of room. The printed name of a blindroom is "Blindfolded".
-Definition: A blindroom  is nonstandard: decide yes.
+Definition: A blindroom is nonstandard: decide yes.
 Check looking:
 	if the player is in a blindroom:
 		say "You can't see anything." instead.
 UrinalBlindfolded is a blindroom. "You are chained to the floor on your knees in between two urinals in the Hotel Bathroom, and your eyes have been covered with a blindfold. You can't see a thing!".
 DiamondLessonBlindfolded is a blindroom. "You are in the diamond classroom, but your eyes have been covered with a blindfold. You can't see a thing!".
-Iron Maiden is a room. "You are trapped inside a claustrophobic metal cage!  It has closed tightly around you, preventing you from moving a muscle. The walls of the cage seem to be lined with slimy tentacles.".
+Iron Maiden is a room. "You are trapped inside a claustrophobic metal cage! It has closed tightly around you, preventing you from moving a muscle. The walls of the cage seem to be lined with slimy tentacles.".
 Definition: Iron Maiden is nonstandard: decide yes.
-HoleInWall is a room. "You are trapped with your front half inside a pitch black room!  You won't be able to get back out without help.". The printed name of HoleInWall is "Hole In Wall".
+HoleInWall is a room. "You are trapped with your front half inside a pitch black room! You won't be able to get back out without help.". The printed name of HoleInWall is "Hole In Wall".
 Definition: HoleInWall is nonstandard: decide yes.
 MimicCrib is a room. "You are trapped inside the living, breathing belly of some kind of shapeshifting creature that has decided to take a twisted form of a crib.". The printed name of MimicCrib is "Inside the 'crib'".
 Definition: MimicCrib is nonstandard: decide yes.

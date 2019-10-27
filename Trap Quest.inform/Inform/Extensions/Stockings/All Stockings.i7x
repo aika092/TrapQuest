@@ -165,7 +165,7 @@ The worn leg covering clothing prevents removal of stockings rule is listed in t
 
 
 
-bunny socks is a socks.  The text-shortcut of bunny socks is "bnys".
+bunny socks is a socks. The text-shortcut of bunny socks is "bnys".
 
 Figure of bunny socks is the file "Items/Clothes/Lower/Legs/socks3.png".
 

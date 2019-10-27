@@ -92,7 +92,7 @@ To update name of (M - student-lottie):
 		now the student-name of M is "Lollie".
 
 To say StoryAnswer of (M - student-lottie):
-	say "[speech style of M]'I love my boyfriend but he's into some weird stuff!  I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
+	say "[speech style of M]'I love my boyfriend but he's into some weird stuff! I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-lottie):
 	say "[speech style of M]'[if the rank of the player <= 1]Don't believe the propaganda, this place is for one thing only - training people to enjoy being adult babies.'[otherwise]We can take things to, err, speed up our metabolic functions. But I don't know if I can bring myself to do it...'[end if][roman type][line break]".
@@ -165,7 +165,7 @@ To update name of (M - student-tanya):
 		now the text-shortcut of student-tanya is "stte".
 
 To say StoryAnswer of (M - student-tanya):
-	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear!  And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
+	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear! And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
 Part - Nasty Student Emily
 
@@ -506,7 +506,7 @@ To compute opponent chess turn:
 		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [his of ST] belly gurgles and the next thing you know, [he of ST][']s whining with shame and [if diaper messing >= 3]messing[otherwise]wetting[end if] [himself of ST].";
 		compute student chess soiling;
 		now the chess-turn of chess-lesson is 1; [Messing doesn't end their turn]
-	otherwise if a random number between 1 and (8 + (mess-factor / 3)) >  4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
+	otherwise if a random number between 1 and (8 + (mess-factor / 3)) > 4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
 		say "[BigNameDesc of ST] keeps thinking.";
 		now the chess-turn of chess-lesson is 1; [Thinking doesn't end their turn]
 	otherwise if student-great-move of chess-lesson <= 0 and a random number between 1 and 3 > 1:
@@ -1033,7 +1033,7 @@ To compute teaching of (L - enema-race-lesson):
 			decrease D1 by 10; [rival moves 5m forward]
 			if M2 >= 0, increase D1 by M2 / 2; [rival's movement reduction from needing to mess]
 			otherwise increase D1 by 1; [rival's mess slowdown penalty]
-			increase D1 by 10;  [player moves 5m forward]
+			increase D1 by 10; [player moves 5m forward]
 			let BK be the buckle threshold of the player;
 			if the fatigue of the player * 3 > BK, decrease D1 by 1;
 			if (the fatigue of the player * 3) / 2 > BK, decrease D1 by 1;
@@ -1237,7 +1237,7 @@ To compute teaching of (L - dodgeball-lesson):
 				if bodyTarget is face, FavourDown ballTarget;
 				if dodgeChoice > 0, say BadDodgeChoice dodgeChoice;
 				say "[BigNameDesc of ballTarget] [one of]groans[or]winces[at random] with discomfort as [he of ballTarget] picks up the ball.";
-				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED;  1: FILLED WITH MESS;  2: DOUBLEFILLED WITH MESS;  3: MESSED ONCE;  4: MESSED AND FILLED WITH MESS;  5: MESSED AND DOUBLEFILLED WITH MESS  6+: Scheduled for elimination]
+				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED; 1: FILLED WITH MESS; 2: DOUBLEFILLED WITH MESS; 3: MESSED ONCE; 4: MESSED AND FILLED WITH MESS; 5: MESSED AND DOUBLEFILLED WITH MESS 6+: Scheduled for elimination]
 			otherwise:
 				if dodgeChoice is 0, say "You try to [one of]bash the ball out of the way but it rebounds off of your hand and hits your arm[or]sidestep but the ball grazes your chest[at random]! ";
 				otherwise say "You [if dodgeChoice is 1]jump into the air[otherwise]duck towards the ground[end if], which turns out to be the wrong thing to do as the ball comes hurtling towards your [if dodgeChoice is 1]upper[otherwise]lower[end if] half[if D is messed]. To make things worse, your sticky messy diaper sloshes underneath you as you do[end if]. ";

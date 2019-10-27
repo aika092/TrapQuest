@@ -3,7 +3,7 @@ Virginity by Player begins here.
 
 [!<Player>@<virgin:Integer>*
 
-For females, has something alive fucked their vagina?  For males, have they had dominant penetrative sex?
+For females, has something alive fucked their vagina? For males, have they had dominant penetrative sex?
 
 *@!]
 The player has a number called virgin. The virgin of the player is usually 1.
@@ -50,7 +50,7 @@ To compute virginity loss:
 		now the virgin bonus of the player is -1;
 		if virgin void tattoo is drawable and there is a worn tattoo:
 			summon virgin void tattoo;
-			say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso!  You take a look: ";
+			say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso! You take a look: ";
 			try examining virgin void tattoo;
 	if the number of worn purity clothing > 0, say "Your aura of purity gone, your pure items lose their desire to travel with you.";
 	repeat with H running through worn purity clothing:
@@ -137,7 +137,7 @@ To virginpunish:
 	[let H be a random off-stage pink sissy bow;
 	if H is actually summonable:
 		say "[VirginFlav]";
-		say "[bold type]A silky pink bow appears in your hair!  [line break][variable custom style]I get it, I'm being treated like a girl.[roman type][line break]";
+		say "[bold type]A silky pink bow appears in your hair! [line break][variable custom style]I get it, I'm being treated like a girl.[roman type][line break]";
 		summon H cursed;
 	otherwise if there is a worn sissy bow and there is off-stage sissifying fetish appropriate actually summonable clothing:]
 	if virgincursed > 0:

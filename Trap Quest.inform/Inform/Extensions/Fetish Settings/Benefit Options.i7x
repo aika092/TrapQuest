@@ -34,7 +34,7 @@ To compute random bonuses:
 		if there is toggle entry and toggle entry is not quit rule and toggle entry is not reset rule and toggle entry is not spontaneous tattoos toggle rule and toggle entry is not combat visor toggle rule and (a random number between 1 and 3 is 1 or toggle entry is not bonus liquid toggle rule):
 			follow toggle entry;
 		otherwise if there is subtable entry:
-			if subtable entry is Table of Secret Options  or subtable entry is Table of Background Options:
+			if subtable entry is Table of Secret Options or subtable entry is Table of Background Options:
 				choose a random row in subtable entry;
 				if there is toggle entry and toggle entry is not quit rule, follow toggle entry.
 

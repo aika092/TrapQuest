@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (H - a rubber trousers):
 To say UniqueClothingDesc of (J - a rubber trousers):
 	say "A pair of tight fitting purple latex trousers with [if J is no protection]an open zip[otherwise]a convenient zip[end if] at the crotch. The zip goes all the way up the back to potentially allow anal access.".
 
-To say ShortDesc of (Y - a  rubber trousers):
+To say ShortDesc of (Y - a rubber trousers):
 	say "pair of zip up latex pants".
 
 This is the remove inappropriate trousers rule:

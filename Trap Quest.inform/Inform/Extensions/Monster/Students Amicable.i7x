@@ -36,7 +36,7 @@ To decide which number is the starting difficulty of (M - student-rosie):
 	decide on 8 + the current-rank of M.[She's farm tough!]
 
 To say StoryAnswer of (M - student-rosie):
-	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's daughter. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] flirts with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em horny too!  All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best slut school in all of Bimbacia won't let me down!'[roman type][line break]".
+	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's daughter. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] flirts with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em horny too! All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best slut school in all of Bimbacia won't let me down!'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-rosie):
 	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said n['] it never hurt me none!'[roman type][line break]".
@@ -125,10 +125,10 @@ To compute (M - an amicable student) protecting against (X - a monster):
 		say "[speech style of M]'Leave her alone!'[roman type][line break][BigNameDesc of M] slaps [NameDesc of X]";
 		compute X receiving 2 damage from M;
 	otherwise if X is staff member:
-		say "[speech style of M]'Eek!  [NameBimbo] is fighting the teachers!'[roman type][line break][BigNameDesc of M] turns to run away.";
+		say "[speech style of M]'Eek! [NameBimbo] is fighting the teachers!'[roman type][line break][BigNameDesc of M] turns to run away.";
 		anger M;
 	otherwise:
-		say "[speech style of M]'[one of]Eek!  I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[roman type][line break][BigNameDesc of M] turns to run away.";
+		say "[speech style of M]'[one of]Eek! I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[roman type][line break][BigNameDesc of M] turns to run away.";
 		now the scared of M is 100;
 		FavourDown M.
 

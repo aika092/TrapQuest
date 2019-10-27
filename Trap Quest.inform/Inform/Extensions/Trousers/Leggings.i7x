@@ -11,7 +11,7 @@ To decide which figure-name is clothing-image of (H - a leggings):
 To say UniqueClothingDesc of (B - a leggings):
 	say "A pair of flimsy extremely sheer white nylon leggings.".
 
-To say ShortDesc of (Y - a  leggings):
+To say ShortDesc of (Y - a leggings):
 	say "pair of white nylon leggings".
 
 To decide which number is the initial outrage of (B - a leggings):
