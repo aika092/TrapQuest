@@ -89,18 +89,18 @@ Carry out knifing:
 				say "You try, but the vines holding your wrist keep your sword arm firmly pinned to the ground. Maybe you should try again?";
 	otherwise:
 		if the noun is bondage or the noun is unremovable:
-			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it!  You give up.";
+			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it! You give up.";
 		otherwise if the charge of the second noun > 0:
-			say "The knife seems to be completely dull at the moment!  You give up.";
+			say "The knife seems to be completely dull at the moment! You give up.";
 		otherwise:
-			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter!  It is completely destroyed!  The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
+			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter! It is completely destroyed! The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
 			now the charge of the second noun is 500;
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]
 Report knifing:
 	let M be a random friendly robochef in the location of the player;
 	if M is a monster:
-		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED!  RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
+		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED! RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
 		anger M;
 		now M is interested;
 		now the boredom of M is 0.

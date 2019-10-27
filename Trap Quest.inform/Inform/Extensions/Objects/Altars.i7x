@@ -20,10 +20,10 @@ Report going when the player is in Dungeon28:
 The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The indefinite article of the woods altar is "an". The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
 
 To decide which figure-name is the examine-image of (C - woods altar):
-	decide on  figure of woods altar.
+	decide on figure of woods altar.
 
 To say ExamineDesc of (C - woods altar):
-	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or]  It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
+	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or] It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
 
 The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "dark altar[shortcut-desc]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al". Figure of elder altar is the file "Env/Mansion/altar1.jpg".
 
@@ -115,12 +115,12 @@ To AltarPunish (C - a clothing):
 	if a random number between 1 and 2 is 1 or tutorial is 1:
 		if C is worn upgradable clothing:
 			potentially transform C;
-			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
 		otherwise:
 			say "Your [C] is momentarily surrounded by a dark glow.";
 			curse the C;
 			now the C is sure;
-			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
 	otherwise:
 		say "Nothing seems to happen.".
 
@@ -187,7 +187,7 @@ To say GoddessAddress:
 
 [To AltarUniqueReward of (T - a headgear):
 	if the class of the player is adventurer and the virgin of the player is 1 and T is not runic headband and runic headband is off-stage and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:
-		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 		only destroy T;
 		summon runic headband cursed;
 		reset dungeon altar.]
@@ -294,7 +294,7 @@ To AltarPray (P - a person):
 				break;
 	if runic headband is actually summonable:
 		summon runic headband cursed;
-		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 	otherwise if flower hairclip is worn:
 		AltarUniqueReward of flower hairclip;
 	reset dungeon altar.
@@ -398,7 +398,7 @@ To WoodsOffer (T - an accessory):
 To WitchCheck (M - witch):
 	if the altar-uses of witch <= 0 and witch is bitchy:
 		if witch is unconcerned or witch is uninterested:
-			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing! No using that without my permission!'[or]You again!  You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
+			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing! No using that without my permission!'[or]You again! You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
 			anger witch;
 			now witch is interested;
 			now witch is unleashed;
@@ -467,7 +467,7 @@ To ElderOffer:
 			ElderConnect;
 		reset elder altar.
 
-To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing Aika: it also needs to do something for males, I assume?  And what about females that are unable to orgasm? ("if the player is not able to get horny")]
+To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing Aika: it also needs to do something for males, I assume? And what about females that are unable to orgasm? ("if the player is not able to get horny")]
 	repeat with C running through top level protection clothing worn by the player:
 		say "Your [C] vanishes in an ominous black flame!";
 		destroy C;
@@ -592,7 +592,7 @@ Provides a reward to the player based on how much the ritual beads have been cha
 +!]
 To compute dark reward of (T - ritual-beads):
 	let N be the charge of T;
-	let R be  0;
+	let R be 0;
 	if N > 8:
 		now R is a random number between 4 and 8;
 	otherwise if N > 6:

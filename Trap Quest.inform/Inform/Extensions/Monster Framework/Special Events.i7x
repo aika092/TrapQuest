@@ -29,7 +29,7 @@ To FacePiss from (M - an object):
 			let V be nothing;[We check if the player wants to collect some in a vessel, and output some unique flavour text.]
 			if the player is not flying and the player is not monster stuck, now V is the juice-collector;
 			if V is held:
-				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [urine]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a toilet is being witnessed saving some for later!  [or][stopping]";[But no extra humiliation hit?]
+				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [urine]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a toilet is being witnessed saving some for later! [or][stopping]";[But no extra humiliation hit?]
 				now the doses of V is max-doses of V;
 				now the fill-colour of V is golden;
 				now V is monster-origin;
@@ -51,7 +51,7 @@ To FacePiss from (M - an object):
 		if the class of the player is human toilet, increase the powerup of C by a random number between 10 and 15;
 		otherwise increase the powerup of C by a random number between 7 and 10;
 		if the powerup of C > 15 and C is stumbling:
-			say "You feel the stumbling enchantment being suppressed, and replaced by one that strengthens your kicks!  Wow!";
+			say "You feel the stumbling enchantment being suppressed, and replaced by one that strengthens your kicks! Wow!";
 			now C is kicking;
 		say "[roman type][line break]".
 
@@ -170,7 +170,7 @@ To DrinkPiss from (M - an object):
 	UrineTasteAddictUp 1;
 	let P be a random worn WC plug panties;
 	if P is clothing:
-		say "[bold type]Your [if the player is female][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is female]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed!  Wow!";
+		say "[bold type]Your [if the player is female][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is female]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed! Wow!";
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
 		now the soreness of vagina is 0;
@@ -530,7 +530,7 @@ To compute angry forgiveness of (M - a monster):
 
 Displays some test describing the player breaking free after resisting in the last turn of a blowjob
 
-@param <Monster>:<M>  The monster having oral sex with the player
+@param <Monster>:<M> The monster having oral sex with the player
 
 +!]
 To say FacialBrokenFree of (M - a monster):
@@ -778,7 +778,7 @@ To compute angry punishment of (M - a monster):
 			say "[BigNameDesc of M] rips your [C] from your [if C is necklace]neck[otherwise if C is bracelet]wrist[otherwise if C is ring]finger[otherwise]body[end if]. ";
 			say angry punishment accessory confiscation of M;
 		otherwise:
-			say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed!  ";
+			say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed! ";
 			say angry punishment clothing destruction of M on C;
 		destroy C.
 
@@ -792,7 +792,7 @@ To compute sissy punishment of (M - a monster):
 		say "[BigNameDesc of M] rips your [C] from your [if C is necklace]neck[otherwise if C is bracelet]wrist[otherwise if C is ring]finger[otherwise]body[end if]. ";
 		say angry punishment accessory confiscation of M;
 	otherwise if C is clothing:
-		say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed!  ";
+		say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed! ";
 		say angry punishment clothing destruction of M on C;
 	if C is clothing, destroy C;
 	otherwise compute sissification.
@@ -829,7 +829,7 @@ This should display some text when a monster decides to punish the player for so
 +!]
 To say angry punishment insult of (M - a monster):
 	if M is intelligent and M is not friendly-fucking:
-		say "[speech style of M]'Fucking bitch!  Learn your place.'[roman type][line break]";
+		say "[speech style of M]'Fucking bitch! Learn your place.'[roman type][line break]";
 	otherwise if M is intelligent:
 		say "[speech style of M]'Whatever, fucking bitch.'[roman type][line break]";
 	otherwise:

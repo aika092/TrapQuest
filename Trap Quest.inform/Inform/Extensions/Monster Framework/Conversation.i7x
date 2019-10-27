@@ -645,7 +645,7 @@ To say DefaultGreeting to (M - a monster):
 			if M is neuter or M is male:
 				say "[first custom style]'[one of]Hello. Again.'[or]Oh. You again.'[or]Hello.'[at random][roman type][line break]";
 			otherwise:
-				say "[first custom style]'[one of]Hi! Glad to see you again.'[or]Hello,  glad to see you're still managing to stay alive in this hell-hole.'[or]Hello again. It's nice to see you!.'[at random][roman type][line break]";
+				say "[first custom style]'[one of]Hi! Glad to see you again.'[or]Hello, glad to see you're still managing to stay alive in this hell-hole.'[or]Hello again. It's nice to see you!.'[at random][roman type][line break]";
 		otherwise:
 			if M is neuter:
 				say "[first custom style]'Hi there.'[roman type][line break]";
@@ -946,9 +946,9 @@ To say DrinkRequest of (M - a monster):
 	if the class of the player is santa's little helper:
 		say "'I'm thirsty. Got any mulled wine?'";
 	otherwise if watersports fetish is 1 and the urine taste addiction of the player > 5 and the urine taste addiction of the player >= the semen taste addiction of the player and M is willing to urinate:
-		say "[if the urine taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your pee if you wanted...'[otherwise if the urine taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [urine] if you'll let me.'[otherwise if the urine taste addiction of the player < 15]I'd love to drink your [urine] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise]Please may I have the privilege of being your toilet?  I promise I'll savour every last drop.'[end if]";
+		say "[if the urine taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your pee if you wanted...'[otherwise if the urine taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [urine] if you'll let me.'[otherwise if the urine taste addiction of the player < 15]I'd love to drink your [urine] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise]Please may I have the privilege of being your toilet? I promise I'll savour every last drop.'[end if]";
 	otherwise if the semen taste addiction of the player > 5 and M is willing to do oral and (M is male or M is wench):
-		say "[if the semen taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your cum if you wanted...'[otherwise if the semen taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [semen] if you'll let me.'[otherwise if the semen taste addiction of the player < 15]I'd love to drink your [semen] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise if M is male]Please may I have the privilege of sucking your cock?  I promise I'll savour every last drop.'[otherwise]Please may I have the privilege of drinking from your [']tap[']?  You seem to have a lot to spare...'[end if]";
+		say "[if the semen taste addiction of the player < 9]Please, do you have anything I could drink? I would even drink your cum if you wanted...'[otherwise if the semen taste addiction of the player < 12]Please, do you have anything I could drink from? I'll even drink your [semen] if you'll let me.'[otherwise if the semen taste addiction of the player < 15]I'd love to drink your [semen] if you'll let me. Anything will do though, I'm very thirsty.'[otherwise if M is male]Please may I have the privilege of sucking your cock? I promise I'll savour every last drop.'[otherwise]Please may I have the privilege of drinking from your [']tap[']? You seem to have a lot to spare...'[end if]";
 	otherwise if the bimbo of the player < 3:
 		say "Please, do you have anything I could drink?'";
 	otherwise if the bimbo of the player < 6:

@@ -34,7 +34,7 @@ Part 1 - Perception
 Definition: vine boss is uniquely unfriendly: decide yes.
 
 To compute perception of (M - vine boss):
-	say "[BigNameDesc of M] notices you, and roars!  Time to decide: fight or flight?".
+	say "[BigNameDesc of M] notices you, and roars! Time to decide: fight or flight?".
 
 To say BecomesBoredFlav of (M - vine boss):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
@@ -63,7 +63,7 @@ To say MonsterFailedTripFlav of (M - vine boss):
 	say "You manage to hop over the vine like a skipping rope.".
 
 To say StrikingSuccessFlav of (M - vine boss) on (B - a body part):
-	say "[BigNameDesc of M] whips a powerful vine right [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] whips a powerful vine right [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - vine boss) on (B - a body part):
 	say "[BigNameDesc of M] sends a vine to whack you [TargetName of B] but you avoid it just in time!".
@@ -225,7 +225,7 @@ To say DamageReactWeak of (M - vine boss):
 
 To compute unique death of (M - vine boss):
 	let B be a random writhing vine;
-	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory!  Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
+	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory! Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
 	repeat with V running through vines:
 		destroy V;
 	now B is in the location of the player;

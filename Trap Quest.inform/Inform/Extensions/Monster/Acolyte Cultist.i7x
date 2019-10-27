@@ -929,7 +929,7 @@ The unique punishment rule of the clairvoyant acolyte is the default unique puni
 To compute facial sex of (M - clairvoyant acolyte):
 	increase the suffocation of M by 3;
 	if the body soreness of the player + the suffocation of M >= 17:
-		say "[BigNameDesc of M] continues to torture you with her crotch. You really need to breathe soon!  You are so exhausted there is nothing you can do, you struggle weakly but her ass cheeks and [vagina] are completely preventing you from breathing. You pass out.";
+		say "[BigNameDesc of M] continues to torture you with her crotch. You really need to breathe soon! You are so exhausted there is nothing you can do, you struggle weakly but her ass cheeks and [vagina] are completely preventing you from breathing. You pass out.";
 		now delayed fainting is 1;
 		now the fainting reason of the player is 9;
 	otherwise:
@@ -942,7 +942,7 @@ To compute facial sex of (M - clairvoyant acolyte):
 			say "[BigNameDesc of M] [one of]tentatively feels the warmth of[or]gently puts pressure against[stopping] your [if D is perceived messed]messy [end if][ShortDesc of D] with her hands. [line break][speech style of M]'[one of]Oh my god, how disgusting! This must be weird for you as well, right? Because it's fucking weird for me.'[or][DiaperHumiliation of M][stopping][roman type][line break]";
 			if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 		otherwise if there is a worn diaper:
-			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from her advantageous position[or][stopping]. [line break][speech style of M]'[one of]What's this?  Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
+			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from her advantageous position[or][stopping]. [line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
 			humiliate 200;
 			arouse 300;]
 		say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise]You still can't breathe. You're going to faint any second now![end if]".

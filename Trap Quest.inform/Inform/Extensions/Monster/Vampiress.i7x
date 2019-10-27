@@ -687,7 +687,7 @@ Section 3 - Damage
 To compute damage of (M - vampiress):
 	if the health of M > 0:
 		if M is uninterested:
-			say "She grins malevolently!  Uh-oh...";
+			say "She grins malevolently! Uh-oh...";
 			now M is interested;
 			anger M;
 			now the sex-length of M is a random number between 2 and 3;
@@ -769,7 +769,7 @@ To say DominanceIntro of (M - vampiress):
 	let X be a random number between 0 and the intelligence of the player;
 	let D be the difficulty of M / 4;
 	if the number of worn removable clothing > 0:
-		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs  [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
+		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
 		if X <= D or the player is prone:
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 			now vhypno is 1;
@@ -850,7 +850,7 @@ To oral dominate (M - vampiress):[You 'feed' the vampiress]
 			say AfterDominationComment 0 of M;
 		orgasm;
 	otherwise if sexual-penis-length > 3:
-		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] stares  at you as [he of M] eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realize how difficult it is to look away. [if R < D]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [him of M]self off in [his of M] hands and gets to [his of M] feet.[otherwise]You think of a way to make looking at [him of M] even more fun, pushing [him of M] off and ejaculating all over [his of M] face[end if][if R < D and face is not actually occupied]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < D]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
+		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] stares at you as [he of M] eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realize how difficult it is to look away. [if R < D]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [him of M]self off in [his of M] hands and gets to [his of M] feet.[otherwise]You think of a way to make looking at [him of M] even more fun, pushing [him of M] off and ejaculating all over [his of M] face[end if][if R < D and face is not actually occupied]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < D]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
 		BlowGet;
 		if R < 0:
 			if face is not actually occupied:
@@ -932,7 +932,7 @@ To check ride dominate of (M - vampiress):
 	let G be the openness of F - the girth of M;
 	let X be a random number between 0 and the intelligence of the player;
 	let D be the difficulty of M / 2;
-	if debugmode > 0, say "[input style]Vampiress riding check:[line break][X] (intelligence roll) vs  [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
+	if debugmode > 0, say "[input style]Vampiress riding check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
 	if X <= D:[She makes you ride her really hard]
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 		now player-fucking is DOMINANT-SHAMEFUL;
@@ -954,7 +954,7 @@ To check sitting dominate of (M - vampiress):
 	let D be the difficulty of M / 2;
 	if the refactory-period of M > 0, decrease D by 5;[if she already hypnotized you, the second time is less likely]
 	let X be a random number between 0 and the intelligence of the player;
-	if debugmode > 0, say "[input style]Vampiress sitting check:[line break][X] (intelligence roll) vs  [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
+	if debugmode > 0, say "[input style]Vampiress sitting check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
 	if X <= D:[She makes you give her round 2]
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 		now player-fucking is DOMINANT-SHAMEFUL;

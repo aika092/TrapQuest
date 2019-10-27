@@ -294,7 +294,7 @@ To compute appearance assessment of (M - a royal guard):
 		if the player is diaper focused:
 			say "[speech style of M]'Oh my goodness, you really are a baby aren't you?! I guess you really do need help looking after...'[roman type][line break]";
 		otherwise:
-			say "[speech style of M]'Good lord... what the hell happened inside your undergarments?!  I'm sorry [if the class of the player is princess and M is friendly]princess, but that is too much for me to handle. You need a chambermaid, not a bodyguard!'[otherwise]but on second thoughts, I'm not coming near you.'[end if][roman type][line break]";
+			say "[speech style of M]'Good lord... what the hell happened inside your undergarments?! I'm sorry [if the class of the player is princess and M is friendly]princess, but that is too much for me to handle. You need a chambermaid, not a bodyguard!'[otherwise]but on second thoughts, I'm not coming near you.'[end if][roman type][line break]";
 			FavourDown M by 4;
 			distract M;
 			if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;

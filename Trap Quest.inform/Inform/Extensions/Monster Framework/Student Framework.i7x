@@ -238,7 +238,7 @@ To FavourDown (M - an amicable student) by (N - a number):
 Part - Protection
 
 To compute (M - a student) protecting against (X - a monster):
-	say "[speech style of M]'[if X is staff member]Eek!  [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek!  I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
+	say "[speech style of M]'[if X is staff member]Eek! [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek! I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
 	now the scared of M is 100;
 	anger M.
 

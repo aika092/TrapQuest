@@ -31,7 +31,7 @@ To say MonsterDesc of (M - receptionist):
 
 
 To say MonsterComment of (M - receptionist):
-	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama!  What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of]She looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, she's probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
+	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of]She looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, she's probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
 
 To set up (M - receptionist):
 	reset M;

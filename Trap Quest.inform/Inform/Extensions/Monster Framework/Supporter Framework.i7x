@@ -472,7 +472,7 @@ To say PresentAcceptanceFlav of (M - a supporter): [Your (aggressive) NPC has de
 To say PresentRejectionFlav of (M - a supporter): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] seems deep in thought.[line break][speech style of M]'Your opinion doesn't matter. The real question is, what do *I* want to do?'[roman type][line break]".
 
-To compute the busy waiting of (M - a supporter):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+To compute the busy waiting of (M - a supporter): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait.".
 
 To compute the default taunting of (M - a supporter): [The NPC isn't able to do their thing right now because the player is busy with a trap or another NPC, but they expect the player will be free soon.]
@@ -495,7 +495,7 @@ To say MonsterFailedTripFlav of (M - a supporter):
 	say "You manage to keep your balance.".
 
 To say StrikingSuccessFlav of (M - a supporter) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
-	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - a supporter) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".

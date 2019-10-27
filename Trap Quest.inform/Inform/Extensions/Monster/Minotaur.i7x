@@ -110,7 +110,7 @@ To say PregGrowth of (M - minotaur):
 To compute labour to (M - minotaur):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half... whatever [he of M] is[end if][roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half... whatever [he of M] is[end if][roman type][line break]";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -284,7 +284,7 @@ To compute vaginal sex of (M - minotaur):
 		say "[one of][BigNameDesc of M] seems completely spent - [he of M] pulls your bloated body off [his of M] shaft and leaves you to recover[or][BigNameDesc of M], spent, pulls your bloated body off [his of M] deflating shaft and leaves you to recover[or][BigNameDesc of M] pulls your bloated body off [his of M] shaft as [his of M] ejaculation finally ends, leaving you on the floor to recover[or][BigNameDesc of M] removes [his of M] deflating shaft from your [vagina], completely spent[at random]. [big he of M] stalks off, probably looking for another woman to breed.";
 		if there is a worn tattoo and bred by a bull tattoo is not worn:
 			summon bred by a bull tattoo;
-			say "The words 'BRED BY A BULL' materialise on your left side!  They are now permanently inked onto your skin.";
+			say "The words 'BRED BY A BULL' materialise on your left side! They are now permanently inked onto your skin.";
 		otherwise if cow-ears is off-stage and cow-ears is actually summonable and lactation fetish is 1:
 			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
 			summon cow-ears cursed;
@@ -331,7 +331,7 @@ To say StrikingSuccessFlav of (M - minotaur) on (B - a body part):
 	BodyRuin 1. [The minotaur automatically does 1 damage, and 2 if he hits.]
 
 To say StrikingFailureFlav of (M - minotaur) on (B - a body part):
-	say "You try to dodge [NameDesc of M]'s fist, but [he of M] still manages to land a glancing blow!  Ouch!";
+	say "You try to dodge [NameDesc of M]'s fist, but [he of M] still manages to land a glancing blow! Ouch!";
 	BodyRuin 1.
 
 To compute striking attack of (M - minotaur):
@@ -350,7 +350,7 @@ This is the minotaur replaces the monster rule:
 	let M be current-monster;
 	let N be a random monster penetrating a fuckhole;
 	if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
-	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately!  [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
+	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately! [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
 	if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 3 for M;
 	now the sex-length of M is 0;
 	now the chosen-orifice of M is asshole;
@@ -403,7 +403,7 @@ To set up sex length of (M - minotaur) in (B - a fuckhole):
 
 
 To say AssholePenetrationFlav of (M - minotaur):
-	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously!  [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
+	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously! [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
 
 
 To say VaginaPenetrationFlav of (M - minotaur):
@@ -415,7 +415,7 @@ To compute damage of (M - minotaur):
 	if the health of M > 0:
 		if M is awake:
 			if M is uninterested:
-				say "[big he of M] growls viciously!  Uh-oh...";
+				say "[big he of M] growls viciously! Uh-oh...";
 				now M is interested;
 				anger M;
 			otherwise:

@@ -96,10 +96,10 @@ Definition: robomatron is willing to deliver enemas: decide yes.
 Definition: robomatron is eager to enhance the spanking: decide yes.
 
 To say SpankingMercyRejectionFlav of (M - robomatron):
-	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type]  It doesn't look like [NameDesc of M] plans to be nice.".
+	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type] It doesn't look like [NameDesc of M] plans to be nice.".
 
 To say SpankingStartFlav of (M - robomatron):
-	say "[BigNameDesc of M] grabs you by the ankles and pulls you into the air, so that you are hanging vertically upside down!  [line break][variable custom style][if the player is able to speak]'Eek! Put me down!!!'[otherwise]What?! No way, I can't get punished like this[one of][or] again[stopping]![end if][roman type][line break]".
+	say "[BigNameDesc of M] grabs you by the ankles and pulls you into the air, so that you are hanging vertically upside down! [line break][variable custom style][if the player is able to speak]'Eek! Put me down!!!'[otherwise]What?! No way, I can't get punished like this[one of][or] again[stopping]![end if][roman type][line break]".
 
 To say SpankingDeclarationFlav of (M - robomatron):
 	say "[speech style of M]'ULTIMATE SPANKING ROUTINE INITIATED.'[roman type][line break]".
@@ -117,7 +117,7 @@ To decide which number is the enema quarts of (M - robomatron):
 	decide on 4.
 
 To say EnemaDeclarationFlav of (M - robomatron):
-	say "[speech style of M]'ULTIMATE ENEMA ROUTINE INITIATED.'[roman type]  ";
+	say "[speech style of M]'ULTIMATE ENEMA ROUTINE INITIATED.'[roman type] ";
 
 To say EnemaStartFlav of (M - robomatron):
 	say "A small tube emerges from [NameDesc of M]'s right palm[one of]. It looks like her whole right arm is also an enema delivery mechanism![or].[stopping]".
@@ -130,13 +130,13 @@ To say EnemaFlav of (M - robomatron):
 	otherwise if the sex-length of M is 2:
 		say "[BigNameDesc of M] shows no signs of pulling [his of M] enema nozzle out of your [asshole] any time soon. Your belly churns and groans as it is filled far past the limits of what it is used to taking. You feel a bit queasy.";
 	otherwise:
-		say "Your belly keeps on expanding until you feel like you're literally about to burst!  It bulges out from your body, making you look nine months pregnant. [line break][variable custom style]How is this even possible?![roman type][line break]".
+		say "Your belly keeps on expanding until you feel like you're literally about to burst! It bulges out from your body, making you look nine months pregnant. [line break][variable custom style]How is this even possible?![roman type][line break]".
 
 To say EnemaAftermath of (M - robomatron):
 	say "[BigNameDesc of M] finally pulls [his of M] hand away, freeing your [asshole].".
 
 To say EnemaAfterFlav of (M - robomatron):
-	say "[speech style of M]'PUNISHMENT CONCLUDED[unless there is a worn total protection diaper]. TOILET QUEST IS NOW ACTIVE. WARNING: EXPULSION IN THIS ROOM IS FORBIDDEN[end if].'[roman type]  [BigNameDesc of M] now seems to be allowing you to leave.".
+	say "[speech style of M]'PUNISHMENT CONCLUDED[unless there is a worn total protection diaper]. TOILET QUEST IS NOW ACTIVE. WARNING: EXPULSION IN THIS ROOM IS FORBIDDEN[end if].'[roman type] [BigNameDesc of M] now seems to be allowing you to leave.".
 
 To compute enema floor reaction of (M - robomatron):
 	humiliate 200;

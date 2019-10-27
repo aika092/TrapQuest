@@ -686,7 +686,7 @@ To say PartnerGreeting to (M - an adult baby slave):
 		say "[variable custom style]'Mmf!'[roman type][line break]";
 	otherwise:
 		say "[variable custom style]'Mmm... Mm-Hmm!'[roman type][line break]";
-	say "[speech style of M]'[one of]Your face feels amazing against my diaper!'[or]I think I'm gonna pee!'[or]How does my diaper taste?'[or]You're making an awful lot of noise down there, baby.'[or]It feels really good when you muffle against my diaper!'[at random][roman type][line break]".	
+	say "[speech style of M]'[one of]Your face feels amazing against my diaper!'[or]I think I'm gonna pee!'[or]How does my diaper taste?'[or]You're making an awful lot of noise down there, baby.'[or]It feels really good when you muffle against my diaper!'[at random][roman type][line break]".
 
 To say InvitationResponse of (M - an adult baby slave) with (N - a monster):
 	FavourDown M;

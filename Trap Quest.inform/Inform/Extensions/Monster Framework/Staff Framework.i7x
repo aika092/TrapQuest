@@ -508,12 +508,12 @@ To compute detention of (M - a staff member):
 	otherwise compute chair detention of M.
 
 To say LateDetention of (M - a staff member):
-	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE!  Class is already over!  It's detention for you, young Miss. Come with me now!'[roman type][line break]".
+	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE! Class is already over! It's detention for you, young Miss. Come with me now!'[roman type][line break]".
 
 To say GenericDetention of (M - a staff member):
 	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
 
-dq-staff-detention is a diaper punishment.  the priority of dq-staff-detention is 5.
+dq-staff-detention is a diaper punishment. the priority of dq-staff-detention is 5.
 
 To compute punishment of (P - a dq-staff-detention):
 	follow the unique punishment rule of current-monster.

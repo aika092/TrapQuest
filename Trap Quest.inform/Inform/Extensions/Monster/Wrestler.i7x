@@ -121,7 +121,7 @@ To say SummoningFlav of (M - a wrestler):
 
 
 To say ToiletPeeReaction of (M - a wrestler):
-	say "[BigNameDesc of M] licks her lips. [line break][speech style of M]'[if watersports fetish is 1]You know, it's unusual getting to watch someone else pee without me being on my knees underneath them[otherwise]Is the big girl trying to prove she doesn't need diapers?  How adorable[end if]!'[roman type][line break]".
+	say "[BigNameDesc of M] licks her lips. [line break][speech style of M]'[if watersports fetish is 1]You know, it's unusual getting to watch someone else pee without me being on my knees underneath them[otherwise]Is the big girl trying to prove she doesn't need diapers? How adorable[end if]!'[roman type][line break]".
 
 
 To IdentifiablePosterReaction of (M - a wrestler):
@@ -168,19 +168,19 @@ To compute perception of (M - a wrestler):
 			say "[second custom style]'What are you doing up there, you crazy bitch?!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 8 for M;
 		otherwise if the class of the player is royal slave:
-			say "[second custom style]'Ooh, another slave!  Can I be your friend?  [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
+			say "[second custom style]'Ooh, another slave! Can I be your friend? [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
 			alwayscutshow figure of wrestler interact 7 for M;
 		otherwise if the class of the player is latex fetish model:
-			say "[second custom style]'Hey, sister!  I didn't know mistress had another rubber slave. Let's fight to see who gets to be on top!'[roman type][line break]";
+			say "[second custom style]'Hey, sister! I didn't know mistress had another rubber slave. Let's fight to see who gets to be on top!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 11 for M;
 		otherwise if the class of the player is maid:
-			say "[second custom style]'[if watersports fetish is 1 and the urinal-boredom of M is 0]Oooh, a slutty maid!  If you're staff, I guess that kind of makes me your boss?  I know a job that's perfect for you. Come with me!'[otherwise]Hey, you're staff, aren't you?  That means you have to let me do whatever I want to you, right?'[end if][roman type][line break]";
+			say "[second custom style]'[if watersports fetish is 1 and the urinal-boredom of M is 0]Oooh, a slutty maid! If you're staff, I guess that kind of makes me your boss? I know a job that's perfect for you. Come with me!'[otherwise]Hey, you're staff, aren't you? That means you have to let me do whatever I want to you, right?'[end if][roman type][line break]";
 			alwayscutshow figure of wrestler interact 5 for M;
 		otherwise if the player is a sissy:
-			say "[second custom style]'Oooh!  A real life sissy!  My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
+			say "[second custom style]'Oooh! A real life sissy! My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 5 for M;
 		otherwise:
-			say "[second custom style]'Hey, wanna wrestle?  Winner gets to be on top!'[roman type][line break]";
+			say "[second custom style]'Hey, wanna wrestle? Winner gets to be on top!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 11 for M;
 		anger M;
 	if M is interested and M is friendly:
@@ -194,19 +194,19 @@ To compute DQ perception of (M - a wrestler):
 		say "[second custom style]'Hey hot stuff, ready for another round?'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 11 for M;
 	otherwise if the class of the player is maid:
-		say "[second custom style]'Hey, you're staff, aren't you?  That means you have to let me do whatever I want to you, right?'[roman type][line break]";
+		say "[second custom style]'Hey, you're staff, aren't you? That means you have to let me do whatever I want to you, right?'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 5 for M;
 		anger M;
 	otherwise if the player is a sissy:
-		say "[second custom style]'Oooh!  A real life sissy!  My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
+		say "[second custom style]'Oooh! A real life sissy! My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 5 for M;
 		anger M;
 	otherwise if there is worn bondage:
-		say "[second custom style]'Ooh, another slave!  Can I be your friend?  [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
+		say "[second custom style]'Ooh, another slave! Can I be your friend? [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
 		alwayscutshow figure of wrestler interact 7 for M;
 		anger M;
 	otherwise if M is unfriendly:
-		say "[second custom style]'Hey, wanna wrestle?  Winner gets to be on top!'[roman type][line break]";
+		say "[second custom style]'Hey, wanna wrestle? Winner gets to be on top!'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 11 for M;
 	if M is interested and M is friendly:
 		say "[second custom style]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel?'[or]Hey there hot stuff. Having a good time?'[stopping][roman type]";
@@ -217,7 +217,7 @@ Part 3 - Combat
 Section 1 - Protection
 
 To compute (M - a wrestler) protecting against (X - a monster):
-	say "[second custom style]'Haha, that looks like fun!  Can I join in?'[roman type][line break]";
+	say "[second custom style]'Haha, that looks like fun! Can I join in?'[roman type][line break]";
 	alwayscutshow figure of wrestler interact 5 for M;
 	anger M;
 	compute attack of M.
@@ -231,7 +231,7 @@ To compute kneeling reaction of (M - a wrestler):
 
 To compute flying player taunting of (M - a wrestler):
 	if a random number from 1 to 6 is 1:
-		say "[BigNameDesc of M] jeers at you. [line break][second custom style]'[one of]Look at this [if weight gain fetish is 1]fat [end if]bitch stuck on the ceiling!  Haha![or]When you get down I'll show you who's boss![or]I can't believe you're still up there![or]I hope you're as disgusted with yourself as I am with you. You can't even move![or]What kind of dumb bitch gets herself stuck on the ceiling?[or]You look absolutely disgraceful, you know that, right?[or][if weight gain fetish is 1]Fatty[otherwise]Someone[end if][']s going to get a pounding when she gets back down here![in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
+		say "[BigNameDesc of M] jeers at you. [line break][second custom style]'[one of]Look at this [if weight gain fetish is 1]fat [end if]bitch stuck on the ceiling! Haha![or]When you get down I'll show you who's boss![or]I can't believe you're still up there![or]I hope you're as disgusted with yourself as I am with you. You can't even move![or]What kind of dumb bitch gets herself stuck on the ceiling?[or]You look absolutely disgraceful, you know that, right?[or][if weight gain fetish is 1]Fatty[otherwise]Someone[end if][']s going to get a pounding when she gets back down here![in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
 		humiliate 20.
 
 To say LandingTaunt of (M - a wrestler):
@@ -319,7 +319,7 @@ This is the wrestler feeds you to master rule:
 			say "[one of][line break][second custom style]'I'm going to take you to meet my owner!'[roman type][line break][or][stopping]";
 			drag to Q by M;
 		if N is in Q:
-			say "[second custom style]'[if N is matron]Mommy, look I've brought a friend!  She needs your special care.'[otherwise]Mistress, I've made a friend!  She wants to learn how to be like me.'[end if][line break]";
+			say "[second custom style]'[if N is matron]Mommy, look I've brought a friend! She needs your special care.'[otherwise]Mistress, I've made a friend! She wants to learn how to be like me.'[end if][line break]";
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]No I don[']t!'[otherwise]Who are you?'[end if]";
 			otherwise say "[variable custom style][if the bimbo of the player < 8]If I could speak I could tell her it's all a big mistake!![otherwise]Who is she?[end if]";
 			say "[roman type][line break]";
@@ -355,7 +355,7 @@ To compute (M - a wrestler) urinating:
 	bore M.
 
 To say PissDrinkThreat of (M - a wrestler):
-	say "[speech style of M]'[one of]For this to be fun, you have to drink it, okay?  Don't make me mad now!'[or]It tastes really good, I promise!  So drink up, or else...'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]For this to be fun, you have to drink it, okay? Don't make me mad now!'[or]It tastes really good, I promise! So drink up, or else...'[in random order][roman type][line break]".
 
 This is the wrestler pisses on the player rule:
 	let M be current-monster;
@@ -441,11 +441,11 @@ To compute (M - a wrestler) fisting (F - a fuckhole):
 	if the fingers of M > old-fingers:
 		if the fingers of M is 6:
 			say "[BigNameDesc of M] keeps pushing with all her might, and all of a sudden, her whole fist slides in!";
-			say "[variable custom style][if the relevant sex addiction of M < 8]'AAAAAAAAAH!'[otherwise if the relevant sex addiction of M < 14]There's no way...?!?! Oh my god, it's really happening, I'm being fisted![otherwise]She got the whole fist in, I'm so proud!  Fist fuck me, baby![end if][roman type][line break]";
+			say "[variable custom style][if the relevant sex addiction of M < 8]'AAAAAAAAAH!'[otherwise if the relevant sex addiction of M < 14]There's no way...?!?! Oh my god, it's really happening, I'm being fisted![otherwise]She got the whole fist in, I'm so proud! Fist fuck me, baby![end if][roman type][line break]";
 			if the player is male, cutshow figure of wrestler fingers 4 for M;
 			otherwise cutshow figure of wrestler fingers 6 for M;
 		otherwise:
-			say "[BigNameDesc of M], having loosened you up, finds room for another finger!  [big he of M] now has [fingers of M] fingers inside your [variable F]. [big he of M] continues her furious thrusting!";
+			say "[BigNameDesc of M], having loosened you up, finds room for another finger! [big he of M] now has [fingers of M] fingers inside your [variable F]. [big he of M] continues her furious thrusting!";
 			if the fingers of M is 5 and the player is female, cutshow figure of wrestler fingers 5 for M;
 			if the fingers of M is 3 and the player is female, cutshow figure of wrestler fingers 3 for M;
 			if the fingers of M is 2 and the player is male, cutshow figure of wrestler fingers 2 for M;
@@ -469,7 +469,7 @@ To compute (M - a wrestler) leaving (F - a fuckhole):
 	bore M.
 
 To say StrikingFlav of (M - a wrestler) on (B - a body part):
-	say "[BigNameDesc of M] grapples you, gripping your [if B is breasts][BreastDesc][otherwise]waist[end if] tightly!  [big he of M] throws you into the close-by wall!  Oof. ".
+	say "[BigNameDesc of M] grapples you, gripping your [if B is breasts][BreastDesc][otherwise]waist[end if] tightly! [big he of M] throws you into the close-by wall! Oof. ".
 
 To say StrikingSuccessFlav of (M - a wrestler) on (B - a body part):
 	say "[StrikingFlav of M on B]";
@@ -642,7 +642,7 @@ This is the wrestler uses your diaper rule:
 				if C is clothing, PissSoak 6 on C;
 				satisfy M;
 		otherwise:
-			say "[BigNameDesc of M] gives you a strong spanking through your [D]!  [line break][speech style of M]'[one of]Do you like to get treated like a bad girl, huh?  Take this!'[or]Time for your punishment, loser!'[or]When you're in a big nappy like that, there's only one appropriate way to punish you!'[in random order][italic type][line break]SMACK SMACK THWACK SMACK[roman type][line break]";
+			say "[BigNameDesc of M] gives you a strong spanking through your [D]! [line break][speech style of M]'[one of]Do you like to get treated like a bad girl, huh? Take this!'[or]Time for your punishment, loser!'[or]When you're in a big nappy like that, there's only one appropriate way to punish you!'[in random order][italic type][line break]SMACK SMACK THWACK SMACK[roman type][line break]";
 			PainUp 1;
 			satisfy M;
 		rule succeeds.
@@ -662,7 +662,7 @@ To compute diaper mess reaction of (M - a wrestler):
 To say DiaperReaction of (M - a wrestler):
 	if there is a currently visible diaper or the player is shameless:
 		if diaper quest is 0:
-			say "[BigNameDesc of M] smirks and looks directly at your dampening crotch. [line break][speech style of M]'[one of]Wow, you're even more kinky than me. There's no way I would let anyone see me wetting myself into such a humiliating diaper.'[or]Hey, you must really get off on humiliation if you keep doing that in front of me. How does it feel to be the filthiest skank in this hotel, especially when there are people like me here?  You're right at the bottom of the pecking order, you know that?'[stopping][roman type][line break]";
+			say "[BigNameDesc of M] smirks and looks directly at your dampening crotch. [line break][speech style of M]'[one of]Wow, you're even more kinky than me. There's no way I would let anyone see me wetting myself into such a humiliating diaper.'[or]Hey, you must really get off on humiliation if you keep doing that in front of me. How does it feel to be the filthiest skank in this hotel, especially when there are people like me here? You're right at the bottom of the pecking order, you know that?'[stopping][roman type][line break]";
 			if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
 		otherwise if M is unfriendly:
 			say "[BigNameDesc of M] watches you with awe. [line break][speech style of M]'Unf, that's so HOT! You're getting me all worked up...'[roman type][line break]";
@@ -791,7 +791,7 @@ Section 2 - Damage
 To compute damage of (M - a wrestler):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The girl looks shocked. [line break][second custom style]'Ooh, I didn't know you wanted to fight!  Why didn't you just say so?'[roman type][line break]";
+			say "The girl looks shocked. [line break][second custom style]'Ooh, I didn't know you wanted to fight! Why didn't you just say so?'[roman type][line break]";
 			cutshow figure of wrestler cutscene 3 for M;
 			now M is interested;
 			anger M;
@@ -814,7 +814,7 @@ To say DamageReactDamaged of (M - a wrestler):
 	say "[big he of M] takes the hit, [one of]somehow [or][stopping]even more turned on by the pain!".
 
 To say DamageReactTired of (M - a wrestler):
-	say "[big he of M] yelps in pain!  [one of]It was a very sexual yelp, though...[or][line break][stopping]".
+	say "[big he of M] yelps in pain! [one of]It was a very sexual yelp, though...[or][line break][stopping]".
 
 To say DamageReactWeak of (M - a wrestler):
 	say "[big he of M] [i]coos[/i] in pain, [if the intelligence of the player > 5]intentionally jiggling [his of M] tits[otherwise]causing [his of M] tits to jiggle[end if] as [he of M] fights to maintain [his of M] balance.".
@@ -1028,7 +1028,7 @@ Part 5 - Conversation
 Section 1 - Greeting
 
 To say FirstResponse of (M - a wrestler):
-	say "[second custom style]'Ooh, [please]d to meet you!  Can we be friends?'[roman type][line break]";
+	say "[second custom style]'Ooh, [please]d to meet you! Can we be friends?'[roman type][line break]";
 	alwayscutshow figure of wrestler interact 1 for M.
 
 To say RepeatResponse of (M - a wrestler):
@@ -1091,7 +1091,7 @@ To say StoryAnswer of (M - a wrestler):
 	alwayscutshow figure of wrestler interact 14 for M.
 
 To say EscapeAnswer of (M - a wrestler):
-	say "[second custom style]'What do you mean escape?  Who would want to leave this paradise?'[roman type][line break][if the bimbo of the player < 10][line break][first custom style]'Wow, useful...'[roman type][line break][end if]";
+	say "[second custom style]'What do you mean escape? Who would want to leave this paradise?'[roman type][line break][if the bimbo of the player < 10][line break][first custom style]'Wow, useful...'[roman type][line break][end if]";
 	alwayscutshow figure of wrestler interact 12 for M.
 
 To say AdviceAnswer of (M - a wrestler):
@@ -1108,7 +1108,7 @@ To compute annoyance of (M - a wrestler):
 
 To compute teaching of (M - a wrestler):
 	if diaper quest is 0:
-		say "[second custom style]'When someone's shoving their massive cock up your you-know-where, it's important to be able to stay loose and let it happen, otherwise you won't enjoy it properly!  Here, let me show you how...'[roman type][line break]";
+		say "[second custom style]'When someone's shoving their massive cock up your you-know-where, it's important to be able to stay loose and let it happen, otherwise you won't enjoy it properly! Here, let me show you how...'[roman type][line break]";
 		if mythical creature fetish is 1, cutshow figure of wrestler cutscene 1 for M;
 		teach relaxing;
 		if the questioned of M <= the mild-annoyance threshold of M:
@@ -1122,7 +1122,7 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - a wrestler):
 	if the player is prone and watersports fetish is 1:
-		say "[BigNameDesc of M]'s eyes light up. [line break][second custom style]'One Toilet Special, coming right up!'[roman type][line break][BigNameDesc of M] doesn't give you a chance to ask what that means before [he of M] has unzipped her crotch and starting pissing straight at you!  [variable custom style][if the urine taste addiction of the player < 6]Shit shit shit![otherwise if the urine taste addiction of the player < 13]That's not what I meant...[otherwise]Ooh, yum![end if]";
+		say "[BigNameDesc of M]'s eyes light up. [line break][second custom style]'One Toilet Special, coming right up!'[roman type][line break][BigNameDesc of M] doesn't give you a chance to ask what that means before [he of M] has unzipped her crotch and starting pissing straight at you! [variable custom style][if the urine taste addiction of the player < 6]Shit shit shit![otherwise if the urine taste addiction of the player < 13]That's not what I meant...[otherwise]Ooh, yum![end if]";
 		FacePiss from M;
 	otherwise:
 		say "[if watersports fetish is 1]You notice a naughty look in her eyes. [line break][second custom style]'[one of]Get on your knees and ask me again.'[or]Haha, sure! But only if you get on your knees first!'[or]Of course, why didn[']t you ask sooner? Get on your knees and open wide!'[or]Totally. Get on your knees and say the word, I[']ve got plenty for you.'[at random][otherwise][second custom style]Haha, no, does it look like this outfit has pockets?[end if][roman type][line break]";
@@ -1143,7 +1143,7 @@ Definition: a wrestler is willing to give snacks: decide yes.
 Section 5 - Trading
 
 To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a thing):
-	say "[speech style of M]'Oh wow, [if T is clothing]that'll look amazing on me[otherwise]that's perfect for my mistress[end if]!  Sure, I'll take that off your hands.'[roman type][line break]";
+	say "[speech style of M]'Oh wow, [if T is clothing]that'll look amazing on me[otherwise]that's perfect for my mistress[end if]! Sure, I'll take that off your hands.'[roman type][line break]";
 	alwayscutshow figure of wrestler interact 15 for M.
 
 To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a thing):

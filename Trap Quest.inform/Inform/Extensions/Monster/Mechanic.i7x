@@ -99,7 +99,7 @@ To say PregGrowth of (M - mechanic):
 To compute labour to (M - mechanic):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  [big he of M][end if] kneels down on one knee and delivers the human baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms and begins to cradle it. [line break][first custom style]'Ssshh, hush there, everything is okay, I'm your daddy little one!'[roman type]  [big he of M] looks at you. [line break][first custom style]'[if the father is mating]A wonderful addition to our family.[otherwise]My first child. How magical - I will remember this moment for ever.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms and begins to cradle it. [line break][first custom style]'Ssshh, hush there, everything is okay, I'm your daddy little one!'[roman type] [big he of M] looks at you. [line break][first custom style]'[if the father is mating]A wonderful addition to our family.[otherwise]My first child. How magical - I will remember this moment for ever.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -177,7 +177,7 @@ To compute perception of (M - mechanic):
 		say "[speech style of M]Have you found it yet, slave?'[roman type][line break]";
 		calm M;
 	otherwise if mystical amulet is worn:
-		say "[speech style of M]'That amulet!  How did you get it?  I have been searching for it for years!  Give it to me!'[roman type][line break]";
+		say "[speech style of M]'That amulet! How did you get it? I have been searching for it for years! Give it to me!'[roman type][line break]";
 		anger M;
 	otherwise if there is a worn messed knickers and diaper quest is 0:
 		say "[speech style of M]'Nope, nope nope, I'm going to pretend I can't smell that.'[roman type][line break]";
@@ -187,7 +187,7 @@ To compute perception of (M - mechanic):
 		say "[speech style of M]'Ooh, a sex doll. Perfect - I'll have a quick break to get my rocks off, then get back to work.'[roman type][line break]";
 		anger M;
 	otherwise if there is a worn steel collar:
-		say "[speech style of M]'There you are!  Do you have the amulet?!  If not, I'm going to give you [if the times-dominated of M > 0]another[otherwise]a[end if] reminder of how much you're my [if diaper quest is 1]slave[otherwise]bitch[end if].'[roman type][line break]";
+		say "[speech style of M]'There you are! Do you have the amulet?! If not, I'm going to give you [if the times-dominated of M > 0]another[otherwise]a[end if] reminder of how much you're my [if diaper quest is 1]slave[otherwise]bitch[end if].'[roman type][line break]";
 		anger M;
 	otherwise if (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
@@ -208,7 +208,7 @@ To compute perception of (M - mechanic):
 		say "[speech style of M]'Hey, fairy. Get the fuck over here and tell me what you've done with my amulet!'[roman type][line break]";
 		anger M;
 	otherwise if M is mating:
-		say "[speech style of M]'Well if it isn't my babymomma!  [if the player is flying]But what are you doing up there?!'[otherwise]How are you doing?'[end if][roman type][line break]";
+		say "[speech style of M]'Well if it isn't my babymomma! [if the player is flying]But what are you doing up there?!'[otherwise]How are you doing?'[end if][roman type][line break]";
 		calm M;
 	otherwise if the class of the player is princess:
 		say "[speech style of M]'[if diaper quest is 0]Hey, [bitch]. [end if]You obviously don[']t know anything about that outfit you[']re wearing. Let me teach you a little lesson.'[roman type][line break]";
@@ -217,7 +217,7 @@ To compute perception of (M - mechanic):
 		say "[speech style of M]'You look like you're up for a fuck. Let's get it on.'[roman type][line break][if the sex addiction of the player < 12][variable custom style]Uh-oh...[roman type][line break][end if]";
 		anger M;
 	otherwise if M is babifying the player:
-		say "[speech style of M]'You look like a stupid big baby!  Let me help you enjoy yourself...'[roman type][line break][if the bimbo of the player < 12][variable custom style]Uh-oh...[roman type][line break][end if]";
+		say "[speech style of M]'You look like a stupid big baby! Let me help you enjoy yourself...'[roman type][line break][if the bimbo of the player < 12][variable custom style]Uh-oh...[roman type][line break][end if]";
 		anger M;
 	otherwise if the player is prone and M is not retaining mystical amulet:
 		say "[speech style of M]'Hey there, you look like you could use some help. Stay there for a moment, and let me give you this gift...'[roman type][line break]";
@@ -261,7 +261,7 @@ To compute robot anger of (M - mechanic):
 To say DiaperReaction of (M - mechanic):
 	if there is a currently visible diaper or the player is shameless:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'We get the most fucked up people in this hotel, don't we?'[roman type][line break]";
-		if the player is modest, say "[variable custom style][if the player is able to speak]'I don't want to have to wear diapers!  You've got to believe me!'[otherwise][big he of M] thinks I want to be seen like this![end if][roman type][line break]";
+		if the player is modest, say "[variable custom style][if the player is able to speak]'I don't want to have to wear diapers! You've got to believe me!'[otherwise][big he of M] thinks I want to be seen like this![end if][roman type][line break]";
 		otherwise say "You [if the player is not disgraced]look down at the ground[otherwise]nod[end if] in shame.";
 	otherwise:
 		say "[BigNameDesc of M] almost seems to be trying to hide a smirk. But there's no way [he of M] could be able to tell what you're doing, right?".
@@ -316,7 +316,7 @@ This is the mechanic claims amulet rule:
 	let A be mystical amulet;
 	if mechanic is in the location of the player and A is held:
 		increase the xavier-power of mechanic by 4;
-		say "The [mechanic] rips the [A] from you.[line break][speech style of mechanic]'At last, it's mine!  It's all mine!'[roman type][line break]";
+		say "The [mechanic] rips the [A] from you.[line break][speech style of mechanic]'At last, it's mine! It's all mine!'[roman type][line break]";
 		now A is in holding pen;
 		now mechanic is retaining A;
 		let S be a random worn steel collar;
@@ -325,12 +325,12 @@ This is the mechanic claims amulet rule:
 			now S is in the location of the player;
 		increase the xavier-power of mechanic by 4;
 		if diaper quest is 0 and ((a random number between 1 and 2 is 1 and the player-class is not succubus) or the class of the player is priestess or there is a worn pure totem):[the mechanic will always transform if you are a demon, or if you've ever successfully stolen anything from him]
-			say "[big he of mechanic] puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room. [line break][speech style of mechanic]'I can feel the power running through my veins!  Yes, yes!  Haha!  I am back, baby!  Here, have a small reward for your troubles...'[roman type][line break]";
+			say "[big he of mechanic] puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room. [line break][speech style of mechanic]'I can feel the power running through my veins! Yes, yes! Haha! I am back, baby! Here, have a small reward for your troubles...'[roman type][line break]";
 			compute xavier reward of mechanic;
 			say "[BigNameDesc of mechanic] starts to wander off, completely ignoring you.";
 			bore mechanic for 500 seconds;
 		otherwise:
-			say "[big he of mechanic] puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room. [line break][speech style of mechanic]'I can feel the power running through my veins!  Yes, yes, this is it!  Behold, my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]";
+			say "[big he of mechanic] puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room. [line break][speech style of mechanic]'I can feel the power running through my veins! Yes, yes, this is it! Behold, my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]";
 			unseal xavier from mechanic;
 		rule succeeds.
 The mechanic claims amulet rule is listed last in the mechanic unique punishment rules.
@@ -381,11 +381,11 @@ This is the mechanic applies collar rule:
 	let C be a random steel collar;
 	if C is actually summonable and C is not in the location of the player and the class of the player is not living sex doll and the bimbo of the player <= 15 and the xavier-power of current-monster < 2 and the player is souled and the power-stolen of current-monster is 0:
 		if there is a monster penetrating face, rule succeeds; [Mechanic waits silently for an opening]
-		say "[speech style of current-monster]'Haha[if diaper quest is 1], you're my baby slave now[end if]!'[roman type][line break]CLUNK!  [BigNameDesc of current-monster] takes this opportunity to force [if C is in the location of the player or C is held]the[otherwise]a smooth, round[end if] steel collar around your neck and click it shut. The locking mechanism is completely internal, meaning it's impossible to remove. [line break][if the player is able to speak][variable custom style]'Hey, what the hell?'[line break][end if][speech style of current-monster]'This is my own special invention. It is completely impossible to take off without my knowledge, and when you get aroused, it will make sure you don't cool off until you orgasm.'[paragraph break]";
+		say "[speech style of current-monster]'Haha[if diaper quest is 1], you're my baby slave now[end if]!'[roman type][line break]CLUNK! [BigNameDesc of current-monster] takes this opportunity to force [if C is in the location of the player or C is held]the[otherwise]a smooth, round[end if] steel collar around your neck and click it shut. The locking mechanism is completely internal, meaning it's impossible to remove. [line break][if the player is able to speak][variable custom style]'Hey, what the hell?'[line break][end if][speech style of current-monster]'This is my own special invention. It is completely impossible to take off without my knowledge, and when you get aroused, it will make sure you don't cool off until you orgasm.'[paragraph break]";
 		summon C;
 		say "[variable custom style][if the bimbo of the player < 10]Fuck, how did I get myself into this mess?[otherwise if the bimbo of the player < 15]I guess I should do whatever [he of current-monster] says...[otherwise]Oooh, this could be a fun game![end if][roman type][line break]";
-		if diaper quest is 0, say "[BigNameDesc of current-monster] rubs [his of current-monster] chin. [line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a large monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to fuck me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh?  Sounds kinky![end if][roman type][line break][big he of current-monster] pauses once more. [line break][speech style of current-monster]'And while you're here, I think you're going to do a little something extra for me.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
-		otherwise say "[BigNameDesc of current-monster] rubs [his of current-monster] chin. [line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a spooky monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to dominate me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh?  Sounds scary but fun![end if][roman type][line break][big he of current-monster] pauses once more. [line break][speech style of current-monster]'And while you're down there, I think I'm going to start training my newest baby slave.'[line break]";
+		if diaper quest is 0, say "[BigNameDesc of current-monster] rubs [his of current-monster] chin. [line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a large monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to fuck me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh? Sounds kinky![end if][roman type][line break][big he of current-monster] pauses once more. [line break][speech style of current-monster]'And while you're here, I think you're going to do a little something extra for me.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
+		otherwise say "[BigNameDesc of current-monster] rubs [his of current-monster] chin. [line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a spooky monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to dominate me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh? Sounds scary but fun![end if][roman type][line break][big he of current-monster] pauses once more. [line break][speech style of current-monster]'And while you're down there, I think I'm going to start training my newest baby slave.'[line break]";
 		say "[variable custom style][if the bimbo of the player < 5]And [he of current-monster] isn[']t even satisfied having me doing [his of current-monster] dirty work for me.[otherwise if the bimbo of the player < 10]I guess I should have seen that coming.[otherwise if the bimbo of the player < 15]I saw that coming![otherwise]Oh yes PLEASE.[end if][roman type][line break]";
 		rule succeeds.
 The mechanic applies collar rule is listed last in the mechanic unique punishment rules.
@@ -630,7 +630,7 @@ To compute unique death of (M - mechanic):
 		now X is a random off-stage strapon-dildo;
 		now the strap-length of X is 8;
 	if X is a thing:
-		say "[BigNameDesc of M] silently slumps to the ground, dead. [big he of M] drops a [printed name of X]!  [line break][variable custom style]I bet that's useful...[roman type][line break]";
+		say "[BigNameDesc of M] silently slumps to the ground, dead. [big he of M] drops a [printed name of X]! [line break][variable custom style]I bet that's useful...[roman type][line break]";
 		now X is in the location of the player;
 		compute autotaking X;
 	otherwise:
@@ -755,7 +755,7 @@ To compute friendly drink of (M - mechanic):
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 
 To compute unfriendly drink of (M - mechanic):
-	say "[speech style of M]'Do you think you DESERVE a drink?  I don't.'[roman type][line break]";
+	say "[speech style of M]'Do you think you DESERVE a drink? I don't.'[roman type][line break]";
 	now M is interested;
 	now the boredom of M is 0.
 

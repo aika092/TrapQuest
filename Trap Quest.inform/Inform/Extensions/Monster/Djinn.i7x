@@ -138,7 +138,7 @@ To compute perception of (M - djinn):
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Whore, your holes are required.'[or]You look like a [tasty] mortal. Bow before me!'[or]Come here, young one. My shaft isn't going to pleasure itself...'[in random order][roman type][line break]";
 		permanently anger M;
 	otherwise if M is unfriendly or the wish history of M is 1:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again!  Did you think you'd been forgiven? No, you will be my sex pet forever.'[or]Ah, perfect, I was just wondering where you had got to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again! Did you think you'd been forgiven? No, you will be my sex pet forever.'[or]Ah, perfect, I was just wondering where you had got to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
 		permanently anger M;
 	otherwise:
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
@@ -147,7 +147,7 @@ To compute perception of (M - djinn):
 To compute DQ perception of (M - djinn):
 	now M is interested;
 	if M is babifying the player:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh look, a little baby. Does someone need looking after?'[or]Oh it's the little baby again!  Back for more?'[or]Come here again, young one.'[stopping][roman type] [big he of M] looks aggressive!";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh look, a little baby. Does someone need looking after?'[or]Oh it's the little baby again! Back for more?'[or]Come here again, young one.'[stopping][roman type] [big he of M] looks aggressive!";
 		anger M;
 	otherwise if M is unfriendly:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again! Did you think you'd been forgiven? No, you will suffer my wrath forever.'[or]Ah, perfect, I was just wondering where you had gotten to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
@@ -186,7 +186,7 @@ To compute djinn wishing of (M - a monster):
 
 To say wishes of (M - a monster):
 	now inventory-busy is 1; [ensures that hyperlinks are enabled]
-	say "What do you wish for?  You can [wish-type]wish for strength[end-wish-type], [wish-type]wish for wisdom[end-wish-type], [wish-type]wish for blessings[end-wish-type], [wish-type]wish for sanity[end-wish-type], [wish-type]wish for safety[end-wish-type], [if diaper quest is 0 and M is in the location of the player][wish-type]wish for a suck of his cock[end-wish-type], [otherwise if M is in the location of the player][wish-type]wish for a spanking[end-wish-type], [end if][if diaper lover >= 1][wish-type]wish for a diaper change[end-wish-type], [end if]or [wish-type]wish for nothing[end-wish-type] to not wish for anything.";
+	say "What do you wish for? You can [wish-type]wish for strength[end-wish-type], [wish-type]wish for wisdom[end-wish-type], [wish-type]wish for blessings[end-wish-type], [wish-type]wish for sanity[end-wish-type], [wish-type]wish for safety[end-wish-type], [if diaper quest is 0 and M is in the location of the player][wish-type]wish for a suck of his cock[end-wish-type], [otherwise if M is in the location of the player][wish-type]wish for a spanking[end-wish-type], [end if][if diaper lover >= 1][wish-type]wish for a diaper change[end-wish-type], [end if]or [wish-type]wish for nothing[end-wish-type] to not wish for anything.";
 	now inventory-busy is 0.
 
 To say DjinnDisappointedBefore of (M - a monster):
@@ -326,7 +326,7 @@ This is the wishing for spanking rule:
 The wishing for spanking rule is listed in the djinn wish rules.
 
 To say SpankingDeclarationFlav of (M - djinn):
-	say "[speech style of M]'Heh, I had a feeling you would choose wisely. I'm going to enjoy this.'[roman type]  ".
+	say "[speech style of M]'Heh, I had a feeling you would choose wisely. I'm going to enjoy this.'[roman type] ".
 
 This is the wishing for a change rule:
 	if (wish-asked is "wish for a change" or wish-asked is "wish for change" or wish-asked is "a change" or wish-asked is "change" or wish-asked is "wish for a diaper change" or wish-asked is "wish for diaper change" or wish-asked is "diaper change" or wish-asked is "a diaper change") and diaper lover >= 1:
@@ -413,7 +413,7 @@ To say SexResistFlav of (M - djinn):
 
 To say angry punishment insult of (M - djinn):
 	if M is not friendly-fucking:
-		say "[first custom style]'You dare to disrespect me?!  Learn your place, worm.'[roman type][line break]";
+		say "[first custom style]'You dare to disrespect me?! Learn your place, worm.'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'There's still some stubbornness left in you. I like that. I'll let you off this time.'[roman type][line break]".[He's not raping you, so he doesn't tear your clothes off, but he isn't all that happy either.]
 
@@ -516,7 +516,7 @@ To say PullAttempt of (M - djinn) at (K - a clothing):
 	say "[BigNameDesc of M] uses a mystical force to pull at your [K]!".
 
 To compute (M - djinn) destroying (K - a clothing):
-	say "With a flick of two of [NameDesc of M]'s fingers, the [K] comes completely off!  It's been entirely destroyed.";
+	say "With a flick of two of [NameDesc of M]'s fingers, the [K] comes completely off! It's been entirely destroyed.";
 	destroy K.
 
 To compute (M - djinn) displacing (C - a clothing):
@@ -566,7 +566,7 @@ To say PresentFriendlyAcceptanceFlav of (M - djinn):
 
 To say FriendlySexReleaseRefusalSpeech of (M - djinn):
 	let F be a random body part penetrated by M;
-	say "[speech style of M]'[one of]No no no, you don't stop until I say so.'[or]Do you think you are in charge here?!'[or]Why would I care about what you want?  Your feelings are insignificant.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]No no no, you don't stop until I say so.'[or]Do you think you are in charge here?!'[or]Why would I care about what you want? Your feelings are insignificant.'[in random order][roman type][line break]".
 
 To say StrikingSuccessFlav of (M - djinn) on (B - a body part):
 	say "A miniature lightning bolt strikes your [TargetName of B]. The powerful electric shock sizzles painfully against your skin!".
@@ -657,7 +657,7 @@ Section 2 - Damage
 To compute damage of (M - djinn):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "[BigNameDesc of M] bellows with anger. [line break][speech style of M]'You dare challenge me to a duel?  Do you not know who I am?!'[roman type][line break]";
+			say "[BigNameDesc of M] bellows with anger. [line break][speech style of M]'You dare challenge me to a duel? Do you not know who I am?!'[roman type][line break]";
 			anger M;
 			now M is interested;
 		otherwise:
@@ -681,14 +681,14 @@ To say DamageReactWeak of (M - djinn):
 	say "The djinn grunts [he of M] takes the hit, eyeing the area around you.".
 
 To compute unique death of (M - djinn):
-	say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees. [line break][speech style of M]'I'll be back, mortal!  I can never be fully defeated. And the next time we meet, I'll be even stronger!'[roman type][line break]";
+	say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees. [line break][speech style of M]'I'll be back, mortal! I can never be fully defeated. And the next time we meet, I'll be even stronger!'[roman type][line break]";
 	let L be a random held magic lamp;
 	if L is nothing, now L is a random magic lamp in the location of the player;
 	if L is magic lamp:
-		say "But wait!  The [L] stirs, shooting out of your [if there is a worn bag of holding]bag[otherwise]hands[end if] and to the ground. The djinn is no longer soaring into the air, but sinking towards the lamp!  [line break][speech style of M]'No, what?!  Where did you get that?  How did you know that a meagre oil lamp is the only device that can contain me?! AAAH!'[roman type][line break][BigNameDesc of M] sinks into the entrance of the lamp, shrinking as [he of M] disappears. ";
+		say "But wait! The [L] stirs, shooting out of your [if there is a worn bag of holding]bag[otherwise]hands[end if] and to the ground. The djinn is no longer soaring into the air, but sinking towards the lamp! [line break][speech style of M]'No, what?! Where did you get that? How did you know that a meagre oil lamp is the only device that can contain me?! AAAH!'[roman type][line break][BigNameDesc of M] sinks into the entrance of the lamp, shrinking as [he of M] disappears. ";
 		destroy M;
 		now the wishes of L is 3;
-		say "You now have a [L]!  You pick it back up.";
+		say "You now have a [L]! You pick it back up.";
 		compute autotaking L;
 	otherwise:
 		say "You feel like you haven't seen the last of [him of M].";
@@ -751,7 +751,7 @@ To say RepeatResponse of (M - djinn):
 		say "[speech style of M]'[one of]Do I not scare you, little one?'[or]Aren't you afraid of me? I would be.'[or]You are not afraid of me? Strange.'[at random][roman type][line break]".
 
 To say SubmissiveResponse of (M - djinn):
-	say "[speech style of M]'[if M is buddy]You are a unique one, daring to face me again considering our... history.'[otherwise]Why do you not fear me, young one?  You are quite the conundrum.'[end if][roman type][line break]".
+	say "[speech style of M]'[if M is buddy]You are a unique one, daring to face me again considering our... history.'[otherwise]Why do you not fear me, young one? You are quite the conundrum.'[end if][roman type][line break]".
 
 To say InvitationAccepted of (M - djinn) with (N - a monster):
 	say "[speech style of M]'Normally, this would be beneath me, but...'[roman type][line break]".
@@ -794,13 +794,13 @@ To say WhereAnswer of (M - djinn):
 	say "[speech style of M]'The cosmos.'[roman type][line break]".
 
 To say WhoAnswer of (M - djinn):
-	say "[speech style of M]'You haven't heard of me?!  I take that as an insult.'[roman type][line break]".
+	say "[speech style of M]'You haven't heard of me?! I take that as an insult.'[roman type][line break]".
 
 To say StoryAnswer of (M - djinn):
-	say "[speech style of M]'Have you seen Aladdin?  Something like that, but with way more sex.'[roman type][line break]".
+	say "[speech style of M]'Have you seen Aladdin? Something like that, but with way more sex.'[roman type][line break]".
 
 To say EscapeAnswer of (M - djinn):
-	say "[speech style of M]'[one of]Why would I tell you that?  What's in it for me if you escape?  Exactly, nothing.'[or]Naturally I am powerful enough to travel between dimensions as I [please]. Mortal plane? Furthest reaches of the cosmos? All child's play. I guess that wouldn't work for you though.'[or]Perhaps if you [if diaper quest is 0]suck my cock[otherwise]call me Daddy[end if] enough times, I will tell you.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Why would I tell you that? What's in it for me if you escape? Exactly, nothing.'[or]Naturally I am powerful enough to travel between dimensions as I [please]. Mortal plane? Furthest reaches of the cosmos? All child's play. I guess that wouldn't work for you though.'[or]Perhaps if you [if diaper quest is 0]suck my cock[otherwise]call me Daddy[end if] enough times, I will tell you.'[in random order][roman type][line break]".
 
 To say AdviceAnswer of (M - djinn):
 	say "[speech style of M]'[one of]Do something too much and you'll get addicted.'[or]Resting on furniture may heal you, but it also resets your exercise counter.'[in random order][roman type][line break]".

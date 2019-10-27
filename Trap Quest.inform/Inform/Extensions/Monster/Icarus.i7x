@@ -169,7 +169,7 @@ To say IcarusSummonFlav of (C - a clothing):
 To compute Icarus science of (M - Icarus):
 	let C be a random off-stage IcarusScienceAppropriate clothing;
 	if C is clothing:
-		say "[speech style of M]'[one of]Sweet! Let's do this.' [or]Okay, cool!  Here we go...' [or]Nice! Right, stay still...' [at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
+		say "[speech style of M]'[one of]Sweet! Let's do this.' [or]Okay, cool! Here we go...' [or]Nice! Right, stay still...' [at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
 		compute IcarusSummon of C;
 		if M is outrage disapproving:
 			FavourDown M by 1;
@@ -199,7 +199,7 @@ To compute Icarus science of (M - Icarus):
 
 
 
-bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut.  bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
+bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
 
 Definition: bondage-ribbons is red themed: decide yes.
 Definition: bondage-ribbons is christmas themed: decide yes.
@@ -255,7 +255,7 @@ To decide which number is the initial outrage of (C - chain-collar):
 
 
 
-leather-jacket is a jacket. leather-jacket is leather.  leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
+leather-jacket is a jacket. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
 
