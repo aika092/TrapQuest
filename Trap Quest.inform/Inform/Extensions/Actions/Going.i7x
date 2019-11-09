@@ -463,11 +463,13 @@ Check going:
 		if robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 			unless the player is bimbo consenting, say "You change your mind." instead;
-	if seconds is 0, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
+	if seconds is 0:
+		if the player is upright, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
+		otherwise allocate 6 seconds;
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, moving is not submissive!  Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
-	if seconds is 3: [only in normal moves, not in double moves]
+	if seconds is 3 or seconds is 6: [only in normal moves, not in double moves]
 		if the player is prone and the player is zeroG:
 			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
 			silently try standing;
@@ -627,7 +629,7 @@ Check going:
 	[Finally we handle portals.]
 	let W be a random warp portal in the location of the player;
 	if W is warp portal and the noun is the covered-direction of W:
-		if the destination of W is the school and class-time < 1000 and class-time > 0 and armband is in-play and armband is not solid gold, say "[if armband is worn]Your armband pulls you away, not wanting to let you in! Perhaps you need to wait until it's time for the next class[otherwise]The warp portal turns momentarily red, and you can't seem to push any part of your body through it, as if it was a metal wall! Perhaps you'd need to be wearing that armband[end if]?" instead;
+		if the destination of W is the school and playerRegion is not school and class-time < 1000 and class-time > 0 and armband is in-play and armband is not solid gold, say "[if armband is worn]Your armband pulls you away, not wanting to let you in! Perhaps you need to wait until it's time for the next class[otherwise]The warp portal turns momentarily red, and you can't seem to push any part of your body through it, as if it was a metal wall! Perhaps you'd need to be wearing that armband[end if]?" instead;
 		if W is school portal and (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, say "Your armband pulls you away, not wanting to let you leave! Perhaps you need to attend class first?" instead;
 		if the player is glue stuck:
 			say "You stretch and strain towards the portal, and finally feel it take a grip on you!";
@@ -665,6 +667,9 @@ REQUIRES COMMENTING
 +!]
 Carry Out Going (this is the monsters-go-next rule):
 	if seconds is 3: [only in normal moves, not in double moves]
+		if the player is in a predicament room:
+			repeat with M running through alive bystanders:
+				compute movement of M;
 		let R be the room noun from the location of the player; [NPCs in the room that the player is entering don't move yet]
 		repeat with M running through alive simulated monsters:
 			unless M is vine boss or M is in R, compute turn 2 of M.
@@ -756,7 +761,6 @@ Report going:
 	Do important going resolution.
 
 To do important going resolution:
-	now the location of the player is discovered;
 	if map images > 0:
 		map-draw around the location of the player;
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:

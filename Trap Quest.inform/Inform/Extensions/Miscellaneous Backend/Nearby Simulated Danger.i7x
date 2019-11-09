@@ -24,6 +24,12 @@ Definition: a room (called R) is nearby:
 		decide yes;
 	decide no.
 
+Definition: a room (called R) is within vision:
+	now neighbour finder is the location of the player;
+	if R is neighbour finder or R is next door, decide yes;
+	decide no.
+
+
 [!<ARoomIsNextDoor>+
 
 REQUIRES COMMENTING

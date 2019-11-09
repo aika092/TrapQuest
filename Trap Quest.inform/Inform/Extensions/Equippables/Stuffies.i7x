@@ -53,13 +53,13 @@ A later time based rule (this is the stuffies want to be held rule):
 				let D be a random number between 1 and the dexterity of the player;
 				if debuginfo > 0, say "[input-style]Stuffie evasion check: d[dexterity of the player] ([D]) | (6.5) Stuffie dodge difficulty[roman type][line break]";
 				if D < 7:
-					say "It connects! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying it around for a while!";
+					say "It connects! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying [him of C] around for a while!";
 					summon C cursed with quest;
 				otherwise:
 					say "You manage to pull your hand away in time.";
 		otherwise if C is carried:
 			now C is in the location of the player;
-		otherwise if C is not held and a random number between 1 and 4 is 1:
+		otherwise if C is not held and a random number between 1 and 4 is 1 and the player is not in a predicament room:
 			now Neighbour Finder is the location of the player;
 			if C is not nearby:
 				let R be a random next door room;

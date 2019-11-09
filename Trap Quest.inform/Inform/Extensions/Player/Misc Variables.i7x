@@ -342,12 +342,6 @@ REQUIRES COMMENTING
 *!]
 FairySuckleSlashes is a number that varies. FairySuckleSlashes is 0.
 
-[!<Player>@<magicPower:Integer>*
-
-This variable builds as you defeat tentacle monsters and allows you to purify the tentacle spawners
-
-*!]
-The player has a number called magic-power. The magic-power of the player is usually 0.
 
 Misc Variables ends here.
 

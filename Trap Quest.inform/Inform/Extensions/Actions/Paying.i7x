@@ -59,7 +59,8 @@ Carry out paying:
 			only destroy J;
 		now Z is unowned;
 		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say "[speech style of shopkeeper]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
-		otherwise say "[speech style of shopkeeper]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].".
+		otherwise say "[speech style of shopkeeper]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].";
+		force inventory-focus redraw. [Forces redraw of inventory window]
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 
 [!<ReportTakingStoreClothingWhileThePlayerIsInDungeon41AndDungeon41IsGuardedAndARandomShopkeeperIsNotMatingThePlayer>+

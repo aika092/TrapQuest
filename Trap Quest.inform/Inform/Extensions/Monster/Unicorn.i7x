@@ -5,7 +5,7 @@ Unicorn is a monster. Unicorn is intelligent. Unicorn is male. Understand "unico
 To decide which number is the girth of (M - a unicorn):
 	decide on 2.
 
-To decide which number is the semen load of (M - unicorn):
+To decide which number is the base semen load of (M - unicorn):
 	decide on 4.
 
 To say LongDickDesc of (M - unicorn):
@@ -21,6 +21,7 @@ To say speech style of (M - unicorn):
 
 Definition: a unicorn is father material: decide no.
 Definition: a unicorn is wenchy: decide yes.
+Definition: a unicorn is human: decide yes.
 
 Definition: A unicorn is woods dwelling: decide yes.
 
@@ -88,7 +89,9 @@ To compute appearance assessment of (M - unicorn):
 To say SatisfiedFlav of (M - unicorn):
 	say "[BigNameDesc of M] looks really satisfied and loses interest.".
 
-Definition: unicorn is presenting as male: decide no.
+Definition: unicorn is presenting as male:
+	if lady fetish is 2, decide yes;
+	decide no.
 
  To say ChestDesc of (M - unicorn):
 	say "chest".
@@ -413,9 +416,9 @@ To anal dominate (M - unicorn):
 			now player-fucking is DOMINANT-SUPER;
 			say AfterDominationComment 5 of M;
 		otherwise:
-			say "You cum within a few seconds, unable to fully enjoy your orgasm thanks to the smug look [he of M]'s wearing the entire time. Its not like you're humiliated or anything, but you certainly don't feel very dominant.";
+			say "You cum within a few seconds, unable to fully enjoy your orgasm thanks to the smug look [he of M][']s wearing the entire time. Its not like you're humiliated or anything, but you certainly don't feel very dominant.";
 			orgasm;
-			Arouse 1000;
+			passively stimulate vagina from M;
 			now player-fucking is DOMINANT-SHAMEFUL;
 			say AfterDominationComment 4 of M;
 	otherwise:
@@ -423,7 +426,7 @@ To anal dominate (M - unicorn):
 		if R > 5 and M is unwrapped and the player is reverse bimbo consenting:
 			say "You immediately stand up off [him of M], very narrowly missing the first salvo of [semen] as it spurts out of [his of M] [DickDesc of M] and falls in an arc across [his of M] belly.";
 			now player-fucking is DOMINANT-NEUTRAL;
-			Arouse 2000;
+			passively stimulate asshole from M times 2;
 			orgasm M;
 			Calm M;
 			FavourUp M by 2;
@@ -451,9 +454,9 @@ To vaginal dominate (M - unicorn):
 			now player-fucking is DOMINANT-SUPER;
 			say AfterDominationComment 5 of M;
 		otherwise:
-			say "You cum within a few seconds, unable to fully enjoy your orgasm thanks to the smug look [he of M]'s wearing the entire time. Its not like you're humiliated or anything, but you certainly don't feel very dominant.";
+			say "You cum within a few seconds, unable to fully enjoy your orgasm thanks to the smug look [he of M][']s wearing the entire time.";
 			orgasm;
-			Arouse 1000;
+			say "It's not like you're humiliated or anything, but you certainly don't feel very dominant.";
 			now player-fucking is DOMINANT-SHAMEFUL;
 			say AfterDominationComment 4 of M;
 	otherwise:
@@ -461,7 +464,7 @@ To vaginal dominate (M - unicorn):
 		if R > 5 and M is unwrapped and the player is reverse bimbo consenting:
 			say "You immediately stand up off [him of M], very narrowly missing the first salvo of [semen] as it spurts out of [his of M] [DickDesc of M] and falls in an arc across [his of M] belly.";
 			now player-fucking is DOMINANT-NEUTRAL;
-			Arouse 2000;
+			passively stimulate vagina from M times 2;
 			orgasm M;
 			Calm M;
 			FavourUp M by 2;
@@ -520,7 +523,7 @@ To weiner dominate (M - unicorn):
 			increase the times-seeded of M by 1;
 			say AfterDominationComment 2 of M;
 	otherwise:
-		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is male and lady fetish is not 1]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]Do you want to fuck [him of M] anyway?";
+		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is male and lady fetish is not 1 and transGender is 0]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]Do you want to fuck [him of M] anyway?";
 		if the player is consenting:
 			Calm M;
 			let H be a random held clothing;
@@ -551,7 +554,7 @@ To say AfterDominationComment (N - a number) of (M - unicorn):
 		say "[speech style of M]'Although you forced yourself on me, in truth, I...er....we won't speak of this again. Goodbye.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Did you have to make a mess of my face?[or]Did you have to make me look like a tart?'[or]My makeup is ruined!'[in random order][roman type][line break]";
-	
+
 
 Part 4 - Conversation
 
@@ -631,6 +634,6 @@ To say EscapeAnswer of (M - unicorn):
 	say "[speech style of M]'[one of]There's a mansion somewhere nearby. But... last time I went there, I met a very forward undead. I wouldn't recommend it[or]There's a hotel nearby, but stay away from the owner. [big he of X]'s spoken for[at random].'[roman type][line break]".
 
 To say AdviceAnswer of (M - unicorn):
-	say "[speech style of M]'[one of]Don't put so much stock in condoms. Sometimes they break, and some men simply prefer unprotected sex. If you ask me, they deserve it.'[or]The mechanic in the hotel is handsome, and also cunning. You would be a fool for trying to outsmart [him of M].'[or]The patrons in the hotel are rather rude, but they will offer you money in exchange for your services. If you aren't saving yourself for anyone, you could take advantage...'[or]Some sex toys are enchanted. Be sure to wear them properly to take advantage of their magic.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Don't put so much stock in condoms. Sometimes they break, and some men simply prefer unprotected sex. If you ask me, they deserve it.'[or]The mechanic in the hotel is cunning in addition to being [if lady fetish is 1]very beautiful[otherwise]handome[end if]. You would be a fool for trying to outsmart [him of mechanic].'[or]The patrons in the hotel are rather rude, but they will offer you money in exchange for your services. If you aren't saving yourself for anyone, you could take advantage...'[or]Some sex toys are enchanted. Be sure to wear them properly to take advantage of their magic.'[at random][roman type][line break]".
 
 Unicorn ends here.

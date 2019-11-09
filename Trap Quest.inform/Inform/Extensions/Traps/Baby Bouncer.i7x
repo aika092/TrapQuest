@@ -1,7 +1,11 @@
 Baby Bouncer by Traps begins here.
 
 
-A baby bouncer is a kind of trap. The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". There are 3 wire baby bouncers. The text-shortcut of a baby bouncer is "bou". Figure of baby bouncer is the file "Env/MultiFloor/babybouncer1.png". A baby bouncer has a number called willingbounce. The willingbounce of a baby bouncer is usually 1.
+A baby bouncer is a kind of trap. The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". There are 3 wire baby bouncers. The text-shortcut of a baby bouncer is "bou". A baby bouncer has a number called willingbounce. The willingbounce of a baby bouncer is usually 1.
+
+Figure of hotel baby bouncer is the file "Env/MultiFloor/babybouncer1.jpg".
+Figure of baby bouncer is the file "Env/MultiFloor/babybouncer2.jpg".
+Figure of empty baby bouncer is the file "Env/MultiFloor/babybouncer3.jpg".
 
 A baby bouncer has a number called bounces.
 
@@ -10,15 +14,15 @@ A baby bouncer has a number called bounces.
 Returns yes if the player is stuck in a baby bouncer.
 
 +!]
-Definition: yourself is bouncer stuck:
-	if there is a baby bouncer grabbing the player, decide yes;
-	decide no.
+Definition: yourself is bouncer stuck if there is a baby bouncer grabbing the player.
 
 To decide which figure-name is the examine-image of (C - a baby bouncer):
+	if C is not grabbing the player, decide on figure of empty baby bouncer;
+	if playerRegion is hotel, decide on figure of hotel baby bouncer;
 	decide on figure of baby bouncer.
 
 To say ExamineDesc of (C - a baby bouncer):
-	say "A large baby bouncer sized to fit an adult. [if C is grabbing the player]You are currently stuck in this contraption, being forced to bounce wildly. Maybe if you [bold type]jump[roman type] high enough, you'll be able to bounce out? It may also let you out if you [bold type]play[roman type] in it long enough.[end if]".
+	say "A large baby bouncer sized to fit an adult. [if C is grabbing the player]You are currently stuck in this contraption, being forced to bounce wildly. Maybe if you [bold type]jump[roman type] it may let you out? Otherwise, you could try submitting (to do nothing) or resisting (to actively struggle against your new bondage).[end if]".
 
 This is the spawn initial dungeon baby bouncer traps rule:
 	if diaper lover > 0:
@@ -68,9 +72,9 @@ To trigger (Y - a baby bouncer):
 
 
 To say SexSubmissionFlav of (Y - a baby bouncer):
-	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. [if the bounces of Y is 0 and the number of worn diapers is 0]You feel a bit silly, but since you're not wearing a diaper, you resist being made to feel more submissve, for now[otherwise]The gentle treatment of the contraption relaxes you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you feel like a little child[in random order][end if].";
 	increase the bounces of Y by 1;
-	if the bounces of Y > 0 or there is a worn diaper, SilentlyDelicateUp 1;
+	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. [if the bounces of Y < 3]You feel a bit silly, but you resist being made to feel more submissve for now[otherwise]The gentle treatment of the contraption finally gets to you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you start to feel like a little child[in random order][end if].";
+	if the bounces of Y > 2, SilentlyDelicateUp 1;
 	humiliate 200 + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
 	now the willingbounce of Y is 0;
 	check bounce release of Y.
@@ -83,8 +87,6 @@ To say SexResistFlav of (Y - a baby bouncer):
 	check bounce release of Y.
 
 To check bounce release of (Y - a baby bouncer):
-	repeat with M running through reactive monsters:
-		say BouncerBounceTrapReactFlav of M;
 	if the bounces of Y >= a random number between 2 and 3:
 		if diaper messing >= 3 and the player is full and asshole is not actually occupied and there is worn total protection soilable knickers and the willingbounce of Y is 0:
 			say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff! You wheeze with discomfort as your rectal muscles spasm uncontrollably. ";
@@ -111,31 +113,18 @@ To Jump From The Baby Bouncer:
 	allocate 6 seconds;
 	compute upright fatigue gain;
 	let Y be a random trap grabbing the player;
-	let D be saved-flat-dexterity;
-	let R be a random number between D / 3 and D * 2;
-	if D > R: [The way Stephy had this coded, the more dex you had, the more difficult it would be to get out.]
-		say "You continue to bounce up and down, [if the diaper addiction of the player < 13]feeling trapped like some pathetic, helpless [otherwise]Enjoying the ride as if you were still a [end if][if there is no worn diaper]child[end if][if there is a worn diaper]baby[end if][if the number of worn perceived messed knickers is 0].[end if][if there is a worn perceived messed knickers], the hot mush caressing you and sifting around your [buttcheeks] certainly not helping you feel any more mature.[end if][if asshole is actually occupied] the [printed name of random thing filling asshole] continues to fuck you with each bounce.[end if][line break]";
-		say "[variable custom style][if the diaper addiction of the player < 8][one of]This is humiliating![or]I'm not a baby! Let me down![or]This is ridiculous! I don't belong in this thing![at random][otherwise if the diaper addiction of the player < 13][one of]I need to get down but this is actually pretty fun![or]If I didn't have other things to do, I could do this all day![or]I can see why real babies have so much fun with these things![at random][otherwise][one of]Wee![or]Yay![or]Higher! Higher![at random][end if][roman type][line break]";
-		if there is a worn diaper, ruin vagina;
-		humiliate 200 + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
-		if asshole is actually occupied, ruin asshole;
-		repeat with M running through reactive monsters:
-			say LewdTrapReactFlav of M;
-	otherwise:
-		say "You manage to bounce high enough to fly from the bouncer, soaring through the air briefly before hitting the ground.[if D < 9]You land hard on your head, dizzying yourself and feeling as though you're going to blackout before regaining your vision and standing, the world still spinning before you.[otherwise if D < 14]You land hard on your feet, losing your balance and falling over. A little worse for the wear, you pick yourself back up and continue what you were doing before those mechanical arms redirected you into that bouncer.[otherwise if D < 19]You land hard on your feet but manage to catch yourself on one knee, bruising it slightly but generally feeling pretty good about your landing.[otherwise]You manage to place both feet down firmly, sticking a perfect landing.[end if]";
-		if D < 9:
-			bodyruin 3;
-		otherwise if D < 14:
-			bodyruin 2;
-		otherwise if D < 19:
-			bodyruin 1;
-		if D < 19:
-			PainUp 1;
-			repeat with M running through reactive monsters:
-				say BouncerJumpTrapReactFlav of M;
-		now busy is 0;
-		now Y is not grabbing the player;
-		now Y is expired.
+	say "You [if the diaper addiction of the player < 8]begrudgingly[otherwise if the diaper addiction of the player < 13]willingly[otherwise]eagerly[end if] bounce up and down, [if the diaper addiction of the player < 13]feeling trapped like some pathetic, helpless [otherwise]Enjoying the ride as if you were still a [end if][if there is no worn diaper]child[end if][if there is a worn diaper]baby[end if][if the number of worn perceived messed knickers is 0].[end if][if there is a worn perceived messed knickers], the hot mush caressing you and sifting around your [buttcheeks] certainly not helping you feel any more mature.[end if][if asshole is actually occupied] the [printed name of random thing filling asshole] continues to fuck you with each bounce.[end if][line break][variable custom style][if the diaper addiction of the player < 8][one of]This is humiliating![or]I'm not a baby! Let me down![or]This is ridiculous! I don't belong in this thing![at random][otherwise if the diaper addiction of the player < 13][one of]I need to get down but this is actually pretty fun![or]If I didn't have other things to do, I could do this all day![or]I can see why real babies have so much fun with these things![at random][otherwise][one of]Wee![or]Yay![or]Higher! Higher![at random][end if][roman type][line break]";
+	if there is a worn diaper, stimulate vagina from Y;
+	humiliate 200 + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
+	if asshole is actually occupied, ruin asshole;
+	DelicateUp 1;
+	DiaperAddictUp 1;
+	repeat with M running through reactive monsters:
+		say BouncerBounceTrapReactFlav of M;
+	say "After you've thoroughly humiliated and degraded yourself by engaging in bouncing around like a baby, the contraption seems satisfied, and lowers itself to the ground, allowing you to step out of its grasp.";
+	now busy is 0;
+	now Y is not grabbing the player;
+	now Y is expired.
 
 Playing is an action applying to nothing.
 Check playing:
@@ -143,25 +132,13 @@ Check playing:
 		allocate 6 seconds;
 		say "You fiddle with your hair for a bit. You're not sure why you did that..." instead.
 Carry out playing:
-	let Y be a random trap grabbing the player;
-	allocate 6 seconds;
-	say "You [if the diaper addiction of the player < 8]begrudgingly[otherwise if the diaper addiction of the player < 13]willingly[otherwise]eagerly[end if] bounce up and down, [if the diaper addiction of the player < 13]feeling trapped like some pathetic, helpless [otherwise]Enjoying the ride as if you were still a [end if][if there is no worn diaper]child[end if][if there is a worn diaper]baby[end if][if the number of worn perceived messed knickers is 0].[end if][if there is a worn perceived messed knickers], the hot mush caressing you and sifting around your [buttcheeks] certainly not helping you feel any more mature.[end if][if asshole is actually occupied] the [printed name of random thing filling asshole] continues to fuck you with each bounce.[end if][line break]";
-	say "[variable custom style][if the diaper addiction of the player < 8][one of]I can't believe I'm doing this, this is humiliating[or]I'm not a baby! Let me down![or]This is ridiculous! I don't belong in this thing![at random][otherwise if the diaper addiction of the player < 13][one of]I need to get down but this is actually pretty fun![or]If I didn't have other things to do, I could do this all day![or]I can see why real babies have so much fun with these things![at random][otherwise][one of]Wee![or]Yay![or]Higher! Higher![at random][end if][roman type][line break]";
-	if there is a worn diaper, ruin vagina;
-	if asshole is actually occupied, ruin asshole;
-	increase the bounces of Y by 1;
-	if there is a worn diaper, DiaperAddictUp 2;
-	otherwise DelicateUp 2;
-	humiliate 500 + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
-	check bounce release of Y.
+	Jump From The Baby Bouncer.
 Understand "play" as playing.
 
 To say BouncerTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 To say BouncerBounceTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.
-To say BouncerJumpTrapReactFlav of (M - a monster):
-	say HarshTrapReactFlav of M.
 
 Baby Bouncer ends here.
 

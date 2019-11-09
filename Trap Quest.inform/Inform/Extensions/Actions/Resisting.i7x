@@ -115,8 +115,8 @@ Check resisting:
 		otherwise say DelicateResRefusalFlav of M;
 		now forced submit is 1;
 		try submitting instead;
-	otherwise if there is a live thing penetrating face:
-		if there is a male monster penetrating face and (a random number between 14 and 19 < the semen taste addiction of the player or the player is desperately craving):
+	otherwise if there is a live thing penetrating face and diaper quest is 0:
+		if there is a male monster penetrating face and (a random number between 14 and 19 < the semen taste addiction of the player or the player is desperately craving semen):
 			now M is a random monster penetrating face;
 			say OralAddResRefusalFlav of M;
 			now forced submit is 2;
@@ -165,7 +165,7 @@ REQUIRES COMMENTING
 
 +!]
 Report resisting:
-	if there is a live thing penetrating a fuckhole and weight gain fetish is 1:
+	if weight gain fetish is 1 and (there is a live thing penetrating a fuckhole or there is a live thing grabbing the player):
 		increase the fat-burning of hips by 20;
 		compute hip fat burning;
 	let M be a random thing grabbing the player;
@@ -177,11 +177,10 @@ Report resisting:
 		otherwise:
 			say SexResistFlav of M;
 			if M is monster, compute sex resist punishment of M;
-			if the delicateness of the player > 10 and M is male intelligent human monster:
-				if there is a worn tattoo and daddy's wild child tattoo is not worn:
-					summon daddy's wild child tattoo;
-					say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
-					try examining daddy's wild child tattoo.
+			if the delicateness of the player > 10 and M is male intelligent human monster and there is a worn tattoo and daddy's wild child tattoo is not worn and a random number between 1 and 10 is 1:
+				summon daddy's wild child tattoo;
+				say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
+				try examining daddy's wild child tattoo.
 
 
 To say SexResistFlav of (T - a thing):
@@ -206,6 +205,9 @@ To say DQResistFlav of (M - a monster):
 	otherwise if M is masturbating the player:
 		say DQMasturbationResistFlav of M;
 		say DQMasturbationResistReactionFlav of M;
+	otherwise if M is feeding the player:
+		say DQFeedingResistFlav of M;
+		say DQFeedingResistReactionFlav of M;
 	otherwise:
 		say DefaultResistFlav of M;
 		say DefaultResistReactionFlav of M.
@@ -253,6 +255,13 @@ To say DQMasturbationResistFlav of (M - a monster):
 To say DQMasturbationResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
 
+
+To say DQFeedingResistFlav of (M - a monster):
+	say DefaultResistFlav of M.
+To say DQFeedingResistReactionFlav of (M - a monster):
+	say "". [Can be customised for specific NPCs]
+
+
 To say DefaultResistFlav of (T - a thing):
 	say "You struggle in vain to free yourself!".
 To say DefaultResistReactionFlav of (T - a thing):
@@ -295,7 +304,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
+	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is male and transGender is 0]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
 
 [!<SayOralAddResRefusalFlavOfMonster>+
 

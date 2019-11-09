@@ -52,13 +52,13 @@ To decide which number is the practical dirtiness of (M - a tryhard student):
 
 
 eating-lesson is a lesson.
-Definition: eating-lesson is lesson-appropriate if (diaper quest is 0 or (diaper messing >= 3 and the player is an august 2019 diaper donator)) and the player is able to eat.
+Definition: eating-lesson is lesson-appropriate if (diaper quest is 0 or diaper messing >= 3) and the player is able to eat.
 
 To compute teaching of (L - eating-lesson):
 	allocate 40 seconds;
 	let M be the lesson-teacher of L;
 	say "[BigNameDesc of M] guides you all to the Food Hall.";
-	repeat with N running through monsters in School17:
+	repeat with N running through monsters in School17: [Clear out the Food Hall of unnecessary NPCs]
 		now N is in School02;
 	repeat with N running through monsters in the location of M:
 		now N is in School17;

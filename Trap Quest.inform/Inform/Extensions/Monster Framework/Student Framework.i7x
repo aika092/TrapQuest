@@ -6,6 +6,7 @@ To decide which number is the aggro limit of (M - a student): [The number at whi
 	decide on 10.
 
 A student has a number called lessonInt1. [Can be used to track various things in a lesson]
+A student has a number called lessonInt2. [Can be used to track various things in a lesson]
 
 Definition: a student is school dwelling: decide yes.
 
@@ -95,6 +96,7 @@ Definition: a student (called M) is demotable:
 	decide no.
 
 Definition: a student (called M) is promotable:
+	if the current-rank of M is 5, decide yes; [everyone can become solid gold from pure diamond]
 	if the max-rank of M > the current-rank of M:
 		repeat with ST running through alive students:
 			if ST is not M and the current-rank of ST is the current-rank of M,	decide yes; [There must be at least 1 student of each rank. So we can't promote this person unless they're not the only one left.]
@@ -126,12 +128,11 @@ To demote (M - a student):
 		say "[NameDesc of M]!".
 
 Definition: a student (called M) is lesson-appropriate:
-	if chosen-lesson is not lesson, decide no;
-	if the current-rank of M is 1 and the lesson-teacher of chosen-lesson is sapphire-teacher, decide yes;
-	if the current-rank of M is 2 and the lesson-teacher of chosen-lesson is emerald-teacher, decide yes;
-	if the current-rank of M is 3 and the lesson-teacher of chosen-lesson is ruby-teacher, decide yes;
-	if the current-rank of M is 4 and the lesson-teacher of chosen-lesson is pink-diamond-teacher, decide yes;
-	if the current-rank of M is 5 and the lesson-teacher of chosen-lesson is diamond-teacher, decide yes;
+	if the current-rank of M is 1 and armband is sapphire, decide yes;
+	if the current-rank of M is 2 and armband is emerald, decide yes;
+	if the current-rank of M is 3 and armband is ruby, decide yes;
+	if the current-rank of M is 4 and armband is pink diamond, decide yes;
+	if the current-rank of M is 5 and armband is pure diamond, decide yes;
 	decide no.
 
 
@@ -144,15 +145,21 @@ To compute background student promotions: [Happens whenever the player returns t
 	if school-earnings-latest is 0:
 		now school-earnings-latest is earnings;
 	otherwise:
-		repeat with M running through alive students: [Essentially what we do here is limit background promotions to one every 150 seconds that passes in the game universe, and make sure that no student is promoted to fill the same role that another already has (so there should be no more than 5 students in a class with the player)]
-			if the max-rank of M < the rank of the player:
+		let LST be the list of alive students;
+		sort LST in random order;
+		repeat with M running through LST: [Essentially what we do here is limit background promotions to one every 120 seconds that passes in the game universe, and make sure that no student is promoted to fill the same role that another already has (so there should be no more than 5 students in a class with the player)]
+			if the max-rank of M < the rank of the player and M is friendly: [bullies stay around]
 				destroy M; [just to catch anyone who fell through the update students net somehow]
-			otherwise if the current-rank of M < the rank of the player and school-earnings-latest - earnings >= 150:
+			otherwise if the current-rank of M < the rank of the player and school-earnings-latest - earnings >= 120:
+				let STPromotable be 1;
 				repeat with N running through alive students:
 					if the current-rank of M is the current-rank of N - 1: [checking the ones 1 higher for ones that already fill the same role]
-						unless (M is innocent student and N is innocent student) or (M is ditzy student and N is ditzy student) or (M is tryhard student and N is tryhard student) or (M is nasty student and N is nasty student) or (M is amicable student and N is amicable student):
-							silently promote M;
-							decrease school-earnings-latest by 150.
+						if (M is innocent student and N is innocent student) or (M is ditzy student and N is ditzy student) or (M is tryhard student and N is tryhard student) or (M is nasty student and N is nasty student) or (M is amicable student and N is amicable student), now STPromotable is 0;
+				if STPromotable is 1 or M is student-katya: [Katya always gets promoted]
+					if debugmode is 1, say "Silently promoting [NameDesc of M] to ";
+					silently promote M;
+					say "[NameDesc of M].";
+					decrease school-earnings-latest by 120.
 
 
 Part - Stats
@@ -175,7 +182,7 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 Part - Motion
 
 To compute monstermotion of (M - a student):
-	if a random number between 1 and 4 is 1, compute room leaving of M.
+	if a random number between 1 and 4 is 1 or (the player is immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)), compute room leaving of M.
 
 To compute (M - a student) seeking (D - a direction):
 	compute monstermotion of M.
@@ -310,7 +317,7 @@ To say SatisfiedFlav of (M - a student):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[if M is friendly][line break][speech style of M]'Okay, we're cool now. Just don't you dare piss me off again.'[roman type][line break]".
 
 To say SatisfiedFlav of (M - a nasty student):
-	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is male]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
+	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is male and transGender is 0]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
 
 To FavourDown (M - a student) by (N - a number):
 	RespectDown M by N.
@@ -394,7 +401,7 @@ To compute group bullying of (M - a student):
 		say "[NameDesc of ST][if E > 2], [otherwise if E is 2] and [end if]";
 	now Neighbour Finder is the location of the player;
 	say "[if E is 1]is[otherwise]are[end if] blocking the [if the number of N-viable directions > 1]exits[otherwise]exit[end if] to the room. Uh-oh.[paragraph break]Your bullies circle in on you, easily overpowering you and wrenching your hands behind your back.";
-	if student-bully-swimming-pool is appropriate:
+	if student-bully-swimming-pool is appropriate and bukkake fetish is 1: [Swimming pool dunk]
 		compute punishment of student-bully-swimming-pool;
 	otherwise if student-bully-wedgie is appropriate and M is not in School10: [Wedgie]
 		repeat with ST running through LST:
@@ -414,7 +421,7 @@ This is the bullying rule:
 		compute punishment of student-bully-swirlie;
 	otherwise if the player is in School19 and student-bully-wedgie is appropriate: [Changing Room]
 		compute punishment of student-bully-wedgie;
-	otherwise if student-bully-swimming-pool is appropriate: [Swimming Pool]
+	otherwise if the player is in School20 and student-bully-swimming-pool is appropriate: [Swimming Pool]
 		compute punishment of student-bully-swimming-pool;
 	otherwise if the number of alive unfriendly students > 2:
 		compute group bullying of current-monster;
@@ -432,17 +439,32 @@ To compute punishment of (P - student-bully-food-hall):
 
 student-bully-swimming-pool is a diaper punishment. The priority of student-bully-swimming-pool is 5.
 Definition: student-bully-swimming-pool is appropriate:
-	if current-monster is student and the player is in School20 and the player is not immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20, decide yes;
+	if current-monster is student and the player is not immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20, decide yes;
 	decide no.
 To compute punishment of (P - student-bully-swimming-pool):
 	if the location of the player is not School20, drag to School20 by current-monster;
 	say "[speech style of current-monster]'[one of]Watch your step, [bitch][or]You stink - you could use a wash[in random order]!'[roman type][line break][BigNameDesc of current-monster] shoves you into the pool!";
 	compute crowd jeering of current-monster;
-	now auto is 1;
-	try showering swimming-pool;
-	now auto is 0;
+	if diaper quest is 0:
+		compute showering swimming-pool;
+	otherwise:
+		now tracked-semen is 0;
+		Wash Salves;
+		compute showering;
+		now another-turn is 1;
 	compute crowd boredom of current-monster;
 	satisfy current-monster.
+
+Check going when the player is in School20:
+	let M be a random alive unfriendly student;
+	if M is student, now current-monster is M;
+	if number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0 and student-bully-swimming-pool is appropriate:
+		allocate 6 seconds;
+		now M is in School20;
+		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
+		compute group bullying of M instead;
+		do nothing instead. [failsafe]
+
 
 
 student-bully-wedgie is a diaper punishment. The priority of student-bully-wedgie is 1.
@@ -473,7 +495,7 @@ To compute punishment of (P - student-bully-wedgie):
 Check going when the player is in School19:
 	let M be a random alive unfriendly student;
 	if M is student, now current-monster is M;
-	if number of alive unfriendly students > a random number between 2 and 3 and the number of monsters in the location of the player is 0 and student-bully-wedgie is appropriate:
+	if number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0 and student-bully-wedgie is appropriate:
 		allocate 6 seconds;
 		now M is in School19;
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
@@ -498,7 +520,7 @@ To compute punishment of (P - student-bully-swirlie):
 Check going when the player is in School10:
 	let M be a random alive unfriendly student;
 	if M is student, now current-monster is M;
-	if number of alive unfriendly students > a random number between 2 and 3 and the number of monsters in the location of the player is 0:
+	if number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0:
 		allocate 6 seconds;
 		now M is in School10;
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
@@ -540,7 +562,7 @@ To compute bully perception of (M - a student):
 	now current-monster is M; [failsafe]
 	anger M;
 	if the player is upright:
-		if student-bully-swimming-pool is appropriate:
+		if the player is in School20 and student-bully-swimming-pool is appropriate:
 			compute punishment of student-bully-swimming-pool;
 		otherwise:
 			if the timesBullied of M is 0, say FirstTimeBullyDemandFlav of M;
@@ -593,7 +615,6 @@ To compute tq bullying of (M - a student):
 			summon P;
 		ruin asshole times 2;
 	otherwise if R <= 2 and watersports fetish is 1:
-		say PissDrinkThreat of M;
 		FacePiss from M;
 	otherwise if R <= 2:
 		compute angry punishment of M;
@@ -729,6 +750,88 @@ To say DismissalResponseBursting of (M - a student):
 	otherwise:
 		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the teachers catch you having an accident[end if]!'[roman type][line break]".
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+[This is the object used for the team predicament where the student is bound behind the player]
+
+quiz-partner is a clothing. quiz-partner is unique. quiz-partner has a person called the bound-target. quiz-partner is layer-exposing.
+quiz-partner is crotch-intact. [This flags that it covers the pussy and ass]
+Definition: quiz-partner is removable: decide no.
+Definition: quiz-partner is fluid vulnerable: decide no.
+Definition: quiz-partner is live: decide yes.
+The printed name of quiz-partner is "[if bound-target of item described is student][student-name of (bound-target of item described)][otherwise]ERROR: no target for quiz-partner clothing item[end if]". The text-shortcut of quiz-partner is "qzp".
+
+To decide which figure-name is clothing-image of (C - quiz-partner):
+	if diaper quest is 0 and the player is in Predicament01 and the questionFails of team-quiz-predicament < 2, decide on figure of quiz predicament room;
+	decide on figure of quiz predicament.
+
+To say ClothingDesc of (C - quiz-partner):
+	let ST be the bound-target of C;
+	if ST is a student:
+		if diaper quest is 0, say "[BigNameDesc of ST] has [his of ST] tongue piercing tightly attached to your [if the player is male]testicle cuffs[otherwise]clit piercing[end if]. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
+		otherwise say "[BigNameDesc of ST] has [his of ST] face tightly bound to the seat of your diaper. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
+
+To decide which number is the initial outrage of (C - quiz-partner):
+	decide on 20.
+
+To compute SelfExamineDesc of (C - quiz-partner):
+	say ClothingDesc of C.
+
+To say ShortDesc of (C - quiz-partner):
+	let ST be the bound-target of C;
+	if ST is a student, say "[student-name of ST]";
+	otherwise say "BUGGED STUDENT".
+
+To compute squirt declarations into (C - quiz-partner):
+	let ST be the bound-target of C;
+	say "You emit a pained whine as your floodgates open, and you begin powerfully expelling pints of [if watersports fetish is 1]murky[otherwise]creamy[end if] sludge from your [asshole], right into [NameDesc of ST][']s face, onto [his of ST] tongue and into [his of ST] mouth.".
+
+To Squirt (L - a liquid-object) On (C - quiz-partner) by (N - a number):
+	if C is unsoaked:
+		let ST be the bound-target of C;
+		say " - [one of]there's literally nothing [he of ST] can do about it other than cough and splutter as you paint [him of ST] with the [if watersports fetish is 1]butt juices[otherwise]asscum[end if][or][BigNameDesc of ST] coughs and splutters as [he of ST] is forced to take the nasty liquid into [his of ST] mouth[stopping].";
+		let R be the location of ST;
+		now ST is in the location of the player; [so that the happiness flavour comes through]
+		HappinessDown ST by 2;
+		now ST is in R;
+		now C is soaked.
+
+Check standing when quiz-partner is worn:
+	say "That's not practical while [quiz-partner] is bound to you." instead.
+
+To compute quiz partner messing:
+	let ST be the bound-target of quiz-partner;
+	say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if rectum >= 30 and asshole is not actually occupied]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if  rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding that is covering[end if] [his of ST] eyes, nose and mouth.";
+	let D be a random worn diaper;
+	if rectum >= 30 and asshole is not actually occupied:
+		MessUp D by 30;
+		now rectum is 1;
+	UrineSoakUp D by the bladder of the player;
+	now the bladder of the player is 0;
+	HappinessDown ST by 5.
+
+To compute periodic effect of (C - quiz-partner):
+	force inventory-focus redraw; [because the image can change]
+	cutshow (clothing-image of C) for C;
+	if the player is not in a predicament room or the player is in Predicament20:
+		let ST be the bound-target of quiz-partner;
+		say "Now that you have reached the final room, the bondage unlocks and [NameDesc of ST] releases [himself of ST]. [big he of ST] quickly runs away from you, through the portal, without saying a word.";
+		only destroy quiz-partner;
+		distract ST.
+
+To say CurrentlyVisibleFlav of (C - quiz-partner):
+	say "".
 
 
 

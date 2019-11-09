@@ -10,6 +10,9 @@ To decide which figure-name is the examine-image of (C - a make up kit):
 To say ExamineDesc of (B - a make up kit):
 	say "A small box which contains an internal mirror and a few brushes. It looks like there's only enough for one use.".
 
+To decide which number is the outrage of (C - a make up kit):
+	decide on 5.
+
 To decide which number is the crafting key of (C - a make up kit):
 	decide on 34.
 To decide which number is the bartering value of (T - a make up kit) for (M - a wench):

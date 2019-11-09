@@ -79,6 +79,7 @@ Carry Out ItemListing:
 			unless T is TQedible:
 				unless T is mass collectible, say "[T][line break]";
 				now T is catalogued;
+		if there is a held magic token, say "[random held magic token] (x[number of held magic tokens]) "; [Even if there are 10 held we only want to write it once]
 		if there is a held sanity token, say "[random held sanity token] (x[number of held sanity tokens]) "; [Even if there are 10 held we only want to write it once]
 		if there is a held fabric token, say "[random held fabric token] (x[number of held fabric tokens]) "; [Even if there are 10 held we only want to write it once]
 		if there is a held defiance token, say "[random held defiance token] (x[number of held defiance tokens]) "; [Even if there are 10 held we only want to write it once]
@@ -225,9 +226,23 @@ Carry Out LootListing:
 	now inventory-busy is 0.
 
 To say MassCollectiblesList:
-	if there is a held sanity token, say "[random held sanity token][inventory style] (x[number of held sanity tokens])[if there is a held fabric token and there is a held defiance token], [otherwise if there is a held fabric token or there is a held defiance token] and [end if]"; [Even if there are 10 held we only want to write it once]
-	if there is a held fabric token, say "[random held fabric token][inventory style] (x[number of held fabric tokens])[if there is a held defiance token] and [end if]"; [Even if there are 10 held we only want to write it once]
-	if there is a held defiance token, say "[random held defiance token][inventory style] (x[number of held defiance tokens])". [Even if there are 10 held we only want to write it once]
+	let TokTypes be 0;
+	if there is a held magic token, increase TokTypes by 1;
+	if there is a held sanity token, increase TokTypes by 1;
+	if there is a held defiance token, increase TokTypes by 1;
+	if there is a held fabric token, increase TokTypes by 1;
+	if there is a held magic token:
+		decrease TokTypes by 1;
+		say "[random held magic token][inventory style] (x[number of held magic tokens])[if TokTypes > 1], [otherwise if TokTypes is 1] and [end if]"; [Even if there are 10 held we only want to write it once]
+	if there is a held sanity token:
+		decrease TokTypes by 1;
+		say "[random held sanity token][inventory style] (x[number of held sanity tokens])[if TokTypes > 1], [otherwise if TokTypes is 1] and [end if]"; [Even if there are 10 held we only want to write it once]
+	if there is a held fabric token:
+		decrease TokTypes by 1;
+		say "[random held fabric token][inventory style] (x[number of held fabric tokens])[if TokTypes > 1], [otherwise if TokTypes is 1] and [end if]"; [Even if there are 10 held we only want to write it once]
+	if there is a held defiance token:
+		[decrease TokTypes by 1;] [currently unnecessary]
+		say "[random held defiance token][inventory style] (x[number of held defiance tokens])". [Even if there are 10 held we only want to write it once]
 
 
 TattooListing is an action applying to nothing. Understand "tattoo", "list tattoo", "tats", "list tats", "tattoos", "list tattoos" as TattooListing.

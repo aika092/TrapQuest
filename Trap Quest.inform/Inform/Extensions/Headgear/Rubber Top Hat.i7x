@@ -21,7 +21,6 @@ To say ShortDesc of (H - rubber top hat):
 	say "mini top hat".
 
 To compute SelfExamineDesc of (H - rubber top hat):
-	let X be the largeness of hair;
 	say "You are wearing a pink latex top hat in your [ShortDesc of hair]. ".
 
 To compute hair growth of (H - rubber top hat):
@@ -61,7 +60,10 @@ To compute class outfit of (H - rubber top hat):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your [printed name of H] wobbles violently, and a tight rubber pink dress materialises around you.[roman type][line break]";
@@ -98,7 +100,7 @@ To say QuestFlav of (Q - titfuck-desirability-quest):
 To say QuestTitle of (Q - titfuck-desirability-quest):
 	say " (fuckable tits quest)".
 
-To compute generic first time class reward of (Q - puddle-cleaning-quest) on (C - a clothing):
+To compute generic first time class reward of (Q - titfuck-desirability-quest) on (C - a clothing):
 	let D be a random off-stage ring;
 	if D is ring:
 		now D is pure diamond;

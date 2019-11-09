@@ -20,37 +20,38 @@ To decide which number is the initial cringe of (C - a maid headdress):
 
 
 Report going:
-	if the player is prone:
-		increase the crawl count of the player by 1;
-		let M be black maid headdress;
-		if (15 is not too humiliating or playerRegion is Woods) and (the player is not crotch covered or diaper quest is 1) and cat-ears is off-stage, now M is cat-ears;
-		if M is off-stage and M is actually summonable:
-			let R1 be a random number between 3 and 40;
-			let R2 be a random number between 3 and 40;
-			if unlucky is 1:
-				now R1 is a random number between 3 and 25;
-				now R2 is a random number between 3 and 25;
-			if R1 + R2 < the crawl count of the player:
-				if M is maid headdress:
-					say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
-				otherwise if M is cat-ears:
-					say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
-				summon M cursed;
-			otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
-				say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
-		if the crawl count of the player >= 12, progress quest of crawling-quest;
-		if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
-		if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
-			if the largeness of breasts > 10 and the semen coating of breasts is 0:
-				say "[one of]Your [BreastDesc] become smeared with [semen] as they rub along the ground.[or][or][or][cycling]";
-				CumTitsUp 1;
-				decrease the semen-puddle of the location of the player by 1;[TODO, milk and urine soaking into clothes; Player should probably be humiliated to crawl through their own urine.]
-			if there is a worn able to take more liquid leg covering clothing:
-				say "[one of]You can't help crawling through the puddle of [semen] as you move along the ground.[or][or][or][cycling]";
-				CumSoak 1 on a random worn able to take more liquid leg covering clothing;
-				decrease the semen-puddle of the location of the player by 1;
-	otherwise:
-		now the crawl count of the player is 0.
+	unless playerRegion is school:
+		if the player is prone:
+			increase the crawl count of the player by 1;
+			let M be black maid headdress;
+			if (15 is not too humiliating or playerRegion is Woods) and (the player is not crotch covered or diaper quest is 1) and cat-ears is off-stage, now M is cat-ears;
+			if M is off-stage and M is actually summonable:
+				let R1 be a random number between 3 and 40;
+				let R2 be a random number between 3 and 40;
+				if unlucky is 1:
+					now R1 is a random number between 3 and 25;
+					now R2 is a random number between 3 and 25;
+				if R1 + R2 < the crawl count of the player:
+					if M is maid headdress:
+						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
+					otherwise if M is cat-ears:
+						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
+					summon M cursed;
+				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
+					say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
+			if the crawl count of the player >= 12, progress quest of crawling-quest;
+			if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
+			if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
+				if the largeness of breasts > 10 and the semen coating of breasts is 0:
+					say "[one of]Your [BreastDesc] become smeared with [semen] as they rub along the ground.[or][or][or][cycling]";
+					CumTitsUp 1;
+					decrease the semen-puddle of the location of the player by 1;[TODO, milk and urine soaking into clothes; Player should probably be humiliated to crawl through their own urine.]
+				if there is a worn able to take more liquid leg covering clothing:
+					say "[one of]You can't help crawling through the puddle of [semen] as you move along the ground.[or][or][or][cycling]";
+					CumSoak 1 on a random worn able to take more liquid leg covering clothing;
+					decrease the semen-puddle of the location of the player by 1;
+		otherwise:
+			now the crawl count of the player is 0.
 
 
 
@@ -86,8 +87,11 @@ To compute class outfit of (H - a maid headdress):
 		if maid-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn exclusive bras:
@@ -144,7 +148,7 @@ To progress quest of (Q - puddle-cleaning-quest):
 		if the quest of C is Q:
 			let P be a random pink spraybottle;
 			increase the puddles-cleaned of Q by 1;
-			if the puddles-cleaned of Q < a random number between 3 and 4:
+			if the puddles-cleaned of Q < (a random number between 3 and 4) - diaper quest:
 				say "Your [ShortDesc of C] pulses happily. [one of]If you keep this sort of work ethic up, you're sure to be rewarded eventually[or]Keep it up[stopping]!";
 			otherwise if P is cloth and P is worn and the work ethic of P < 150:
 				say "Your [ShortDesc of C] [if C is cursed]doesn't uncurse - it [end if]seems to think you [one of]need to do more cleaning with the cloth until you have redeemed yourself for breaking the bottle[or]still need to do more cleaning[stopping]!";

@@ -37,7 +37,7 @@ To compute recipe specific cursing of (T - whip-of-domination):
 
 To compute attack effect of (W - whip-of-domination):
 	if attack-type is 1 and W is not cursed and the player is not feeling submissive:
-		arouse 100 + (20 * the sex addiction of the player);
+		passively stimulate vagina from W;
 		say "Using the [printed name of W] is [if the player is a pervert]quickly [end if]making you more[if the player is horny] and more[end if] aroused!".
 
 To decide which number is the damage improvement of (W - whip-of-domination):

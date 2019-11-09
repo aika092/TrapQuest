@@ -23,7 +23,8 @@ Check entering podium:
 
 Closing your eyes you can feel another shiver run though you. Taking a deep breath you hold it for a moment then let out slowly. ";
 	allocate 6 seconds;
-	arouse 660;
+	passively stimulate thighs from podium;
+	passively stimulate arms from podium;
 	let B be a random off-stage plentiful bracelet;
 	let P be a random eligible piercing;
 	if the charge of podium > 0 or the class of the player is princess or the class of the player is royal slave or timeBombTime > 0:

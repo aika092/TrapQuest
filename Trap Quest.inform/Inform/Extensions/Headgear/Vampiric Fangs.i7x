@@ -35,8 +35,8 @@ Definition: vampiric fangs is destructible: decide no.
 
 To decide which number is the strength-influence of (C - vampiric fangs):
 	let X be 0;
-	if the player is craving, decrease X by 1;
-	if the player is desperately craving, decrease X by 2;
+	if the player is craving semen, decrease X by 1;
+	if the player is desperately craving semen, decrease X by 2;
 	decide on X.
 
 

@@ -50,7 +50,7 @@ Definition: demon lord is willing to do oral if diaper focus is 1.
 
 Definition: demon lord is willing to do titfucks: decide no.
 
-To decide which number is the semen load of (M - demon lord):
+To decide which number is the base semen load of (M - demon lord):
 	decide on 15.
 
 To set up (M - demon lord):

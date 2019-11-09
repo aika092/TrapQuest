@@ -44,7 +44,10 @@ To decide which figure-name is the sex-profile of (M - gargoyle):
 
 
 To say MonsterDesc of (M - gargoyle):
-	say "An eerie stone statue of [if mythical creature fetish is 1]a [man of M] with long, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, and although rendered in stone, [he of M] gives you the feeling of a beast lying in wait, ready to pounce[otherwise]a winged [man of M] wearing an ill-fitting robe, draped open by [his of M] elbows, leaving her chest completely exposed. She is resting on one knee and her head is bowed, as if offering deference to her master. There's something way too realistic about her. You get the feeling she might wake up and attack you at any time[end if]. [if M is vigilant]She appraises you silently from atop her pedestal, never moving, not even to blink.[end if]".
+	if mythical creature fetish is 1:
+		say "An eerie stone statue of a [man of M] with long, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, and although rendered in stone, [big he of M] [if M is vigilant]appraises you silently from atop [his of M] pedestal, never moving, not even to blink.[otherwise]gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
+	otherwise:
+		say "An eerie stone statue of an angel wearing a[if lady fetish < 2]n ill-fitting robe, draped open by her elbows, leaving her chest completely exposed[otherwise]a thin robe that exposes his rippling chest muscles[end if]. [big he of M] is resting on one knee and [his of M] head is bowed, as if offering deference to [his of M] master. [if M is vigilant][big he of M] appraises you silently from atop [his of M] pedestal, never moving, not even to blink.[otherwise]There's something way too realistic about [him of M]. You get the feeling [he of M] might wake up and attack you at any time.[end if]".
 
 To set up (M - gargoyle):
 	reset M;
@@ -307,12 +310,12 @@ To compute blowjob sex of (M - gargoyle):
 		now the sleep of M is 150.
 
 To say BlowjobSubmissionFlav of (M - gargoyle):
-	if the size of penis > 8:[boobjob!]
+	if the size of penis > 8 and lady fetish < 2:[boobjob!]
 		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M]'s breasts bump your sack as [he of M] works your [manly-penis], torturing the tip with practised movements of her tongue and lips.[at random]";
 		cutshow Figure of gargoyle BJ 3 for M;
 	otherwise if the size of penis > 2:
 		say "[one of][BigNameDesc of M] slurps away at your [Shortdesc of penis], teasing your most sensitive parts with her tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from balls to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls her tongue around your tip as she mercilessly pumps you with [his of M] lips.[at random]";
-		cutshow Figure of gargoyle BJ 4 for M;
+		if lady fetish < 2, cutshow Figure of gargoyle BJ 4 for M;
 	otherwise:[doubt this will come up so it's mostly copypasta]
 		say "[one of][BigNameDesc of M] relentlessly teases your [Shortdesc of penis] with her tongue.[or][BigNameDesc of M] teases your [Shortdesc of penis] with the very tip of her tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with her tongue.[in random order]".
 

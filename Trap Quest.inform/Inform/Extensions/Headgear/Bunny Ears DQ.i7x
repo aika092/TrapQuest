@@ -102,6 +102,12 @@ To compute class outfit of (H - a bunny hat):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 			repeat with O running through worn trousers:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
@@ -181,6 +187,9 @@ To compute class outfit of (H - bunny glasses):
 	if B is actually summonable or (B is bunny outfit and bunny-glasses-summoned < 1 and the number of worn bunny dress is 0):
 		if bunny-glasses-summoned < 1:
 			repeat with O running through worn dresses:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn skirted clothing:

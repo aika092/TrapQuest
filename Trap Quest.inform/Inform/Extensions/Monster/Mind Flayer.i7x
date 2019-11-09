@@ -102,7 +102,7 @@ To compute facial sex of (M - mind flayer):
 	if the raw intelligence of the player > 4:
 		say "The creature[']s tentacles continue to suck on your head! You feel terribly light-headed but euphoric at the same time!";
 		Intdown 1;
-		arouse 50;
+		stimulate face from M;
 		cutshow figure of mindflayer cutscene 3 for M;
 	otherwise if the raw intelligence of the player is 4:
 		say "With a final squelching sound not unlike a straw struggling to pull the last drops of liquid from a cup, you feel the suction on your head come to a climax. The euphoria becomes so strong that so do you!";

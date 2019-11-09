@@ -6,6 +6,7 @@ When this is set to 1, we are flagging that we want the game to compute another 
 
 *!]
 another-turn is a number that varies.
+time-turns is a number that varies. [just lets us count how many turns have passed]
 
 [!<EveryTurn>+
 
@@ -33,14 +34,20 @@ Every turn:
 			now bubble-needs-overwriting is 0;
 		render map buttons;
 	now focused-thing is nothing;
-	now seconds is 0.
+	now seconds is 0;
+	if global timer interval > 50:
+		say "[bold type]BUG: The interpreter's timer just got stuck at [global timer interval]ms, when it is supposed to be at 50ms. Please report this to Aika along with as much detail as possible on what the last thing you did was.[roman type][line break]";
+		reset the Glulx timer.
 
 To allocate (N - a number) seconds:
-	if seconds is 0 and N > 0:
-		if solo-scene is 0, zero the focus-link-table;
-		if debugmode > 1, say "Zeroing focus stuff and allocating [N] seconds.";
-		zero focus stuff; [We've just been told that we're going to need to run the engine. Let's empty the lists of images to display and begin building it anew.]
-		render buffered stuff; [Gives the player some feedback to know that their command went through]
+	if N > 0:
+		[time is moving foward, so icons should move]
+		purge NPC icons;
+		if seconds is 0:
+			if solo-scene is 0, zero the focus-link-table;
+			if debugmode > 1, say "Zeroing focus stuff and allocating [N] seconds.";
+			zero focus stuff; [We've just been told that we're going to need to run the engine. Let's empty the lists of images to display and begin building it anew.]
+			render buffered stuff; [Gives the player some feedback to know that their command went through]
 	now seconds is N.
 
 To force allocate (N - a number) seconds:
@@ -51,10 +58,12 @@ To run the engine:
 	now another-turn is 1;
 	while another-turn is 1:
 		now another-turn is 0;
-		run the engine once.
+		run the engine once;
+	map-draw around the location of the player.
 
 To run the engine once:
 	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
+	increase time-turns by 1;
 	Store Previous Sizes;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
@@ -101,6 +110,8 @@ REQUIRES COMMENTING
 
 +!]
 To compute extra turn:
+	now predicament-painted-cutoffs is hand-decided;
+	now predicament-painted-cutoffs is not hand-blocked;
 	run the engine once.
 
 [!<ComputeCleanup>+

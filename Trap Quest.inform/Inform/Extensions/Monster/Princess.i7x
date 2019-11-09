@@ -134,7 +134,7 @@ To say PrincessHeal:
 	BodyHeal 10;
 	now the stance of the player is 0;
 	now the fatigue of the player is 0;
-	StrengthDown 4;[###Selkie: Whoah, you aren't kidding!]
+	StrengthDown 4; [Deliberately harsh.]
 	DexDown 4.
 
 To compute failed damage of (M - ex-princess):
@@ -200,7 +200,7 @@ To compute talk option (N - 2) to (M - ex-princess):
 		if the number of monsters in the location of the player is 1:
 			say "[variable custom style]'[one of]Who are you?'[line break][speech style of M]'I'm Princess Annie! [big please] help me!'[or]Why are you in there?'[line break][speech style of M]'I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[or]What are you going to do if you get out?'[line break][speech style of M]'I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[or]How can I help?'[line break][speech style of M]'I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to [if diaper quest is 1]pee in a dry diaper. Don't ask me why[otherwise]choose someone to get rather... familiar with[end if].'[or]Did I already ask how I could help you out?'[line break][speech style of M]'Azathot above... is this really the best chance I have? I need you to help me escape!'[stopping][roman type][line break]";
 		otherwise: [She's not alone so you can't talk sincerely]
-			say "You put on a vindictive act in front of your peers.[line break][variable custom style]'Having fun, slut?'[line break]You see [him of M] notice you're not alone, and [he of M] twitches [his of M] eyebrows at you.[line break][speech style of M]'Fuck you!'[roman type][line break]";
+			say "You put on a vindictive act in front of your peers.[line break][variable custom style]'Having fun, slut?'[roman type][line break]You see [him of M] notice you're not alone, and [he of M] twitches [his of M] eyebrows at you.[line break][speech style of M]'Fuck you!'[roman type][line break]";
 	otherwise:
 		say "[variable custom style]'Can you help me out?'[line break][speech style of M]'I need to conserve all my energy and strength, so that when the time comes, I can send my aid.'[roman type][line break]".
 
@@ -423,7 +423,7 @@ A later time based rule (this is the asscum annie rule):
 					if the player is in School34:
 						say "Suddenly a condom soars in from the hallway. The [semen] on the ground begins to rise into the air, and is soon filling the condom!";
 						let C be a random worn condom pinnable clothing;
-						if C is nothing, now C is a random string belt;
+						if C is nothing, now C is string-belt;
 						unless C is worn:
 							summon C cursed;
 							say "Suddenly, a [printed name of C] appears around your waist!";

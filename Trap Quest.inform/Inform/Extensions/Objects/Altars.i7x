@@ -20,10 +20,10 @@ Report going when the player is in Dungeon28:
 The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The indefinite article of the woods altar is "an". The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
 
 To decide which figure-name is the examine-image of (C - woods altar):
-	decide on  figure of woods altar.
+	decide on figure of woods altar.
 
 To say ExamineDesc of (C - woods altar):
-	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or]  It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
+	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or] It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
 
 The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al". Figure of elder altar is the file "Env/Mansion/altar1.jpg".
 
@@ -38,6 +38,9 @@ To say ExamineDesc of (C - elder altar):
 	say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don[']t want to think about what might happen if you got on it yourself.".
 
 The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al".
+
+A diaper quest fix rule:
+	destroy the hotel altar.
 
 Figure of hotel altar is the file "Env/Hotel/statue1.jpg".
 
@@ -137,12 +140,12 @@ To AltarPunish (C - a clothing):
 	if a random number between 1 and 2 is 1 or tutorial is 1:
 		if C is worn upgradable clothing:
 			potentially transform C;
-			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, [if the body soreness of the player > 0]there's only one more thing to do in this room. Let's get healed! Rooms with [bold type]furniture[newbie style] can generally be somehow used to heal up. This one is really straightforward, we just have to be on our knees and then we can use it to rest, healing over time! Let's try that now[otherwise]let's progress to the east[end if].[roman type][line break]";
 		otherwise:
 			say "Your [C] is momentarily surrounded by a dark glow.";
 			curse the C;
 			now the C is sure;
-			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while!  There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, [if the body soreness of the player > 0]there's only one more thing to do in this room. Let's get healed! Rooms with [bold type]furniture[newbie style] can generally be somehow used to heal up. This one is really straightforward, we just have to be on our knees and then we can use it to rest, healing over time! Let's try that now[otherwise]let's progress to the east[end if].[roman type][line break]";
 	otherwise:
 		say "Nothing seems to happen.".
 
@@ -211,7 +214,7 @@ To say GoddessAddress:
 
 [To AltarUniqueReward of (T - a headgear):
 	if the class of the player is adventurer and the virgin of the player is 1 and T is not runic headband and runic headband is off-stage and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:
-		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 		only destroy T;
 		summon runic headband cursed;
 		reset dungeon altar.]
@@ -321,7 +324,7 @@ To AltarPray (P - a person):
 				break;
 	if runic headband is actually summonable:
 		summon runic headband cursed;
-		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:  [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 	otherwise if flower hairclip is worn:
 		AltarUniqueReward of flower hairclip;
 	reset dungeon altar.
@@ -447,7 +450,7 @@ To WoodsOffer (T - an accessory):
 To WitchCheck (M - witch):
 	if the altar-uses of witch <= 0 and witch is bitchy:
 		if witch is unconcerned or witch is uninterested:
-			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing! No using that without my permission!'[or]You again!  You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
+			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing! No using that without my permission!'[or]You again! You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
 			anger witch;
 			now witch is interested;
 			now witch is unleashed;
@@ -514,9 +517,11 @@ To ElderOffer:
 			otherwise ElderBreed asshole;
 		otherwise:
 			ElderConnect;
-		reset elder altar.
+		reset elder altar;
+	otherwise:
+		say "The elder altar must be recharging or something, because nothing else happens.".
 
-To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing Aika: it also needs to do something for males, I assume?  And what about females that are unable to orgasm? ("if the player is not able to get horny")]
+To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing Aika: it also needs to do something for males, I assume? And what about females that are unable to orgasm? ("if the player is not able to get horny")]
 	repeat with C running through top level protection clothing worn by the player:
 		say "Your [C] vanishes in an ominous black flame!";
 		destroy C;
@@ -641,7 +646,7 @@ Provides a reward to the player based on how much the ritual beads have been cha
 +!]
 To compute dark reward of (T - ritual-beads):
 	let N be the charge of T;
-	let R be  0;
+	let R be 0;
 	if N > 8:
 		now R is a random number between 4 and 8;
 	otherwise if N > 6:
@@ -807,7 +812,7 @@ To compute DevilPayment (N - a number):
 		now M is not penetrating vagina;
 	otherwise:
 		say "into the skin of your temples. [if N < 3]A slight [italic type]hot[roman type] feeling settles[otherwise if N < 5]A noticeably [italic type]hot[roman type] feeling settles[otherwise]Arousal washes[end if] over your body as the symbol slowly fades.";
-		Arouse 500 * N;
+		Arouse 1000 * N;
 	if N > 2:[if the charge is high enough, then part of the payment will be permanent]
 		decrease N by N / 2;
 		say "A second, smaller pentagram appears on your forehead, followed by [run paragraph on]";

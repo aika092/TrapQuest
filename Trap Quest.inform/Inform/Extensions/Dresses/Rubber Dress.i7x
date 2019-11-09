@@ -36,7 +36,7 @@ Definition: a white rubber giant bow dress is bow themed: decide yes.
 
 Part 2 - Metallic Purple Rubber Dress
 
-A metallic purple rubber dress is a kind of rubber dress. There is 1 metallic purple rubber dress. A metallic purple rubber dress is neck covering. The text-shortcut of metallic purple rubber dress is "mpd". The printed name of metallic purple rubber dress is usually "[clothing-title-before]metallic purple latex dress[clothing-title-after]".
+A metallic purple rubber dress is a kind of rubber dress. There is 1 metallic purple rubber dress. A metallic purple rubber dress is neck covering. The text-shortcut of metallic purple rubber dress is "mpld". The printed name of metallic purple rubber dress is usually "[clothing-title-before]metallic purple latex dress[clothing-title-after]".
 
 Figure of metallic purple rubber dress is the file "Items/Clothes/Upper/Latex/rubberdress3.png".
 

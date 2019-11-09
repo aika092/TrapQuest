@@ -62,7 +62,7 @@ To Set Up The Hotel:
 	repeat with M running through alive monsters in the hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
 	[change the down exit of School01 to Hotel29;]
-	if armband is off-stage and receptionist is undefeated and the player is the donator: [Player can engage with the school side quest the first time they find this room]
+	if armband is off-stage and receptionist is undefeated: [Player can engage with the school side quest the first time they find this room]
 		set up receptionist;
 		now receptionist is in Hotel40;
 		now the destination of hotel portal is the school;

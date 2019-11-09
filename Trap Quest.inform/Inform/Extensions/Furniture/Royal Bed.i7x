@@ -37,7 +37,7 @@ To compute furniture resting on (F - the royal bed):
 	let N be a random off-stage nightie;
 	if nightie-check > 0 and the bladder of the player > 1:
 		if nightie-check is 3:
-			say "As you lie there, you become aware of a warm wet feeling below you. The nightie has made you wet yourself!  [line break][variable custom style]Oh my god, how embarrassing![roman type][line break]";
+			say "As you lie there, you become aware of a warm wet feeling below you. The nightie has made you wet yourself! [line break][variable custom style]Oh my god, how embarrassing![roman type][line break]";
 			now a random worn nightie is bed wetting;
 			now a random worn nightie is cursed;
 		otherwise:
@@ -52,7 +52,7 @@ To compute furniture resting on (F - the royal bed):
 			now the bladder of the player is 0;
 	otherwise if N is actually summonable and R is 1:
 		if the bladder of the player > 1 and diaper lover >= 1:
-			say "As you lie there, you become aware of a warm wet feeling below you. You've wet yourself!  [line break][variable custom style]Oh my god, how embarrassing![roman type][line break][if 0 is the number of worn overdress and R is 1][bold type]As you get up, feeling fully refreshed, a sheer nightie shimmers into being around your body.[roman type][line break][variable custom style]What is this about?![roman type][line break][end if]";
+			say "As you lie there, you become aware of a warm wet feeling below you. You've wet yourself! [line break][variable custom style]Oh my god, how embarrassing![roman type][line break][if 0 is the number of worn overdress and R is 1][bold type]As you get up, feeling fully refreshed, a sheer nightie shimmers into being around your body.[roman type][line break][variable custom style]What is this about?![roman type][line break][end if]";
 			if there is worn bottom level pee protection clothing, PissSoak the bladder of the player on a random worn bottom level pee protection clothing;
 			now the bladder of the player is 0;
 			now N is bed wetting;
@@ -60,9 +60,10 @@ To compute furniture resting on (F - the royal bed):
 			say "You instantly feel fully healed! Magic! [bold type]As you get up, a sheer nightie shimmers into being around your body.[roman type][line break][variable custom style]Ooh, I feel a bit lethargic now.[roman type][line break]";
 		summon N cursed with quest;
 	otherwise:
-		say "You instantly feel fully healed!  Magic!  ";
+		say "You instantly feel fully healed! Magic! ";
 		if the size of penis > 10 - the delicateness of the player:
 			PenisDown 1;
+			say "You feel your penis [shrink] into a [ShortDesc of penis].";
 		otherwise if the delicateness of the player < the sex addiction of the player:
 			increase the raw delicateness of the player by 1;
 			say "But you do feel a bit more[one of]... fragile?[or] delicate.[stopping]";

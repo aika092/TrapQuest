@@ -9,6 +9,7 @@ For females, has something alive fucked their vagina?  For males, have they had 
 The player has a number called virgin. The virgin of the player is usually 1.
 
 virginity-taker is a thing that varies. virginity-taker is the throne.
+penisvirginity-taker is a thing that varies. penisvirginity-taker is the throne.
 analvirginity-taker is a thing that varies. analvirginity-taker is the throne.
 
 [!<Player>@<analVirgin:Integer>*
@@ -72,6 +73,7 @@ REQUIRES COMMENTING
 
 +!]
 To virginreward:
+	let H be a random worn headgear;
 	if there is a worn plate warrior chestpiece and flower hairclip is blessed: [No more increases after you get this.]
 		do nothing;
 	otherwise if the player-class is the succubus:
@@ -79,7 +81,7 @@ To virginreward:
 		now virginity-valued is 0;
 	otherwise if the player is soulless:
 		say "[bold type]You begin to feel a brief flash of pride at having retained your virginity, but even as you do it sucks away into the emptiness within your heart.[roman type][line break]";[This prevents you gaining virgin bonuses while your soul is gone.]
-	otherwise if flower hairclip is worn:
+	otherwise if H is clothing and the quest of H is virginity-retention-quest:
 		say "[bold type]You are extremely proud of yourself for still having managed to retain your virginity! [one of]You[or]Once again you[stopping] feel [if background-pure is 1]yourself gaining real, physical power just from the happiness you feel from[otherwise][one of]elated from[or]motivated by[or]happy for[at random][end if] having retained your purity.[roman type][line break]";
 		progress quest of virginity-retention-quest;
 		if the class of the player is magical girl, MagicPowerUp 1;
@@ -97,6 +99,8 @@ To virginreward:
 			otherwise:
 				say "[bold type]You resolve to yourself that there is no way you are going to let this creepy game take away your virginity. Somehow, the game seems to sense this and summons a hairclip with a pure white rose onto your head![roman type][line break]";
 				summon flower hairclip cursed;
+			let H be a random worn headgear;
+			now the quest of H is virginity-retention-quest;
 		otherwise:
 			say "[bold type]You pause for a moment and reflect on the fact that you've [one of]managed to go this whole game without getting fucked in the [vagina] by anything that could be considered living. Regardless of the other experiences it has put you through, this game has not taken your virginity![roman type] You feel that by placing a lot of value on your virginity, you could gain some internal strength to help you fight your way through this world. But the negative impact of losing your virginity in the future would likely be more severe. Would you like to make the mental decision to care deeply about your virginity? [or]Still haven't lost your virginity. [roman type]Maybe now is the time to make the mental decision to care deeply about retaining it? [stopping]";
 			if the player is consenting:
@@ -110,6 +114,8 @@ To virginreward:
 					say "As if it can read your thoughts, the game summons a hairclip with a pure white rose onto your head!";
 					summon flower hairclip cursed;
 				now virginity-valued is 1;
+				let H be a random worn headgear;
+				now the quest of H is virginity-retention-quest;
 			otherwise:
 				say "You decide that [one of]in this game, placing all of your hopes on your virginity might not be the most sensible idea. At the very least, this[or]this still[stopping] isn't the right moment.".
 
@@ -125,7 +131,7 @@ The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
 Part - Virgin Punish (Sissification)
 
 Definition: yourself is a sissy:
-	if the number of worn sissifying clothing > 1 and the player is male, decide yes;
+	if the player is male and transGender is 0 and the number of worn sissifying clothing > 1, decide yes;
 	decide no.
 
 [!<VirginPunish>+
@@ -134,17 +140,11 @@ REQUIRES COMMENTING
 
 +!]
 To virginpunish:
-	[let H be a random off-stage pink sissy bow;
-	if H is actually summonable:
-		say "[VirginFlav]";
-		say "[bold type]A silky pink bow appears in your hair!  [line break][variable custom style]I get it, I'm being treated like a girl.[roman type][line break]";
-		summon H cursed;
-	otherwise if there is a worn sissy bow and there is off-stage sissifying fetish appropriate actually summonable clothing:]
-	if virgincursed > 0:
+	if virgincursed > 0 and transGender is 0:
 		let S be a random off-stage sissifying transformation-eligible actually summonable clothing;
 		if S is clothing:
 			say "[VirginFlav]";
-			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
+			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy slut]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 			summon S cursed with quest;
 			now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
 			announce sissification;
@@ -185,6 +185,7 @@ To check virginity with (M - a monster):
 			if (player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER)[ and player-fuckchoice is FUCK-PENETRATION]:[only 'true' dominant sex can reverse your virgin curse]
 				virginremovecurse;
 				now the virgin of the player is 0;
+				now penisvirginity-taker is M;
 			otherwise:
 				if player-fucking is DOMINANT-NEUTRAL, say "[variable custom style][one of]That wasn't really humiliating, but... I think I have to be more dominant than that...[or]That wasn't dominant enough. I have to keep trying...[stopping][roman type][line break]";[player was humiliated or emasculated a little]
 				otherwise say "[variable custom style][one of]I didn[']t feel like I was in charge at all... there[']s no way it counts...[or]No way that counts... I[']m gonna be a virgin forever...[stopping][roman type][line break]";[tables were completely turned, or the player was humiliated]
@@ -192,6 +193,7 @@ To check virginity with (M - a monster):
 			if player-fucking > DOMINANT-NONE and player-fucking is not DOMINANT-SHAMEFUL:
 				say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
 				now the virgin of the player is 0;
+				now penisvirginity-taker is M;
 			otherwise:
 				say "[variable custom style]I guess that was sex, but... I can[']t tell anybody that happened. No way I[']m calling this my first...[roman type][line break]".
 

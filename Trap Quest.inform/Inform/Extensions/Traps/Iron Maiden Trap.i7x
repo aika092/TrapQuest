@@ -98,7 +98,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 						say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [vagina]!";
 				otherwise if the size of penis > 0:
 					say "The metal tentacles [one of]wrap around your [ShortDesc of penis], massaging you in a fast rhythm and greatly increasing your arousal[or]continue to stroke your [player-penis][stopping]!";
-					arouse 1000;
+					stimulate penis from M;
 			unless there is worn top level ass protection clothing:
 				if M is penetrating asshole:
 					say "The metal tentacle behind you continues to [one of]impale your [asshole] on its seemingly endless length[or]plunder your [asshole], snaking its way up through your colon, with each thrust working closer and closer to your belly itself[or]delve deeper and deeper into your [asshole][or]ruin the deepest parts of your [asshole][in random order]!";

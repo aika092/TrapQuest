@@ -26,7 +26,7 @@ To decide which object is the potential-upgrade-target of (C - a clothing):
 			repeat with D running through L2:
 				say "[D] ";
 			say line break;
-		sort L2 in random order;[###Selkie: Why? This seems unnecessary. It won't slow things much, but still...?]
+		sort L2 in random order; [Otherwise whatever happens to be the lower object ID in the game's memory would always take priority over other items with the same eligibility]
 		let O be 100;
 		repeat with D running through L2: [Find the least outrageous of the eligible transformation items. Hopefully makes the choices follow a nice sequence.]
 			let IO be the initial outrage of D;
@@ -161,7 +161,7 @@ To compute (C - a clothing) unique inheriting from (D - a clothing):
 To transform (D - a clothing) into (C - a clothing):
 	say "[bold type]Your [ShortDesc of D] transforms into ";
 	silently transform D into C;
-	say "a [C][bold type][unless D is headgear or the player is in a blindroom] in front of your eyes[end if]![roman type] ";
+	say "a [C][bold type][unless D is headgear or the player is in a blindroom] in front of your eyes[end if]![roman type][line break]";
 	if transformation cutscenes is 1:
 		say FullExamineDesc of C;
 	otherwise:

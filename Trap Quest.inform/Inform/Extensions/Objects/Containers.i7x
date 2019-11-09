@@ -326,8 +326,7 @@ To add treasure to (X - a treasure chest):
 	let S be a random uncastable fetish appropriate magic-spell;
 	if a random number between 1 and 6 > (2 - the number of worn blue scrunchie) and earnings < starting-earnings - 100 and (R is recipe or S is magic-spell):
 		if S is magic-spell and a random number between -16 and the number of in-play recipes > 0:
-			say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...";
-			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a magic spell! Spells consume magic power, which is not particularly plentiful but you should hopefully acquire a bit of it over your adventure. Most spells require you to say the rude words while someone can hear (and understand) you.[roman type][line break][or][stopping]";
+			say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...[NewbieSpellFlav]";
 			compute learning of S;
 			cutshow figure of recipe for S;
 		otherwise:

@@ -51,6 +51,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is max-candy:
+	if the class of the player is trick-or-treater, decide on 0;
 	decide on 3.
 
 [!<SayCandyMachineDesc>+

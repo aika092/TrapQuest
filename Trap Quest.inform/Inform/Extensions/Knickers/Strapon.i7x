@@ -2,6 +2,7 @@ Strapon by Knickers begins here.
 
 A strapon-panties is a kind of knickers. The printed name of strapon-panties is "[clothing-title-before][PenisSizeFlav strap-length of the item described] [ShortDesc of item described][clothing-title-after]". Understand "strapon", "dildo", "strap on", "strap-on" as strapon-panties. A strapon-panties has a number called strap-length. A strapon-panties is usually totally-exclusive. A strapon-panties is usually leather. A strapon-panties is crotch-assless.
 Definition: a strapon-panties is penis themed: decide yes.
+Definition: a strapon-panties is fluid vulnerable: decide no.
 
 Figure of strapon-panties is the file "Items/Accessories/Toys/strapon1.jpg".
 

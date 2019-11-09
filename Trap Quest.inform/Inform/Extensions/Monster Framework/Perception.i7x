@@ -20,6 +20,11 @@ Chapter 1 - Check Perception
 hypno-curtsey-trigger is a number that varies.
 whore-exposing-quest is a headgear-clothing-quest.
 
+To decide which number is the stealth of the player:
+	let P be 2 + (the number of worn kimono * 2);
+	if the player is prone, increase P by 2;
+	decide on P.
+
 To check perception of (M - a monster):
 	if M is aware:
 		if M is defeated:
@@ -35,17 +40,19 @@ To check perception of (M - a monster):
 				say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
 			otherwise if the scared of M > 0:
 				say "[if the class of the player is cheerleader][BigNameDesc of M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness][BigNameDesc of M] scoffs and starts to move in the other direction.[otherwise][BigNameDesc of M] notices you immediately and starts to run away![end if]";
-			otherwise if (the class of the player is vixen or the blind-status of M > 0 or (M is woman-barbara and the woman-status of woman-barbara is 80)) and the player is not in a bossed room and a random number between 1 and 3 + (the number of worn kimono * 2) > 1:
+			otherwise if (the class of the player is vixen or the blind-status of M > 0 or (M is woman-barbara and the woman-status of woman-barbara is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
 				say PerceptionFail of M;
 				if the blind-status of M > 0, decrease the blind-status of M by 1;
 				distract M;
 			otherwise:
 				compute correct perception of M;
 				progress quest of whore-exposing-quest for M;
-				if M is intelligent, progress quest of show-and-tell-quest for M;
-				if topless temporary fetish > 0 and M is intelligent and breasts is lewdly exposed:
-					decrease topless temporary fetish by 1;
-					if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
+				if M is intelligent:
+					progress quest of show-and-tell-quest for M;
+					if topless temporary fetish > 0 and breasts is lewdly exposed:
+						decrease topless temporary fetish by 1;
+						if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
+						otherwise say "You [one of]can tell that you have made progress towards removing the curse that makes you desparate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
 				if the times-met of M < 0, now the times-met of M is 0;
 				increase the times-met of M by 1;
 				if M is friendly human monster and breasts is exposed:
@@ -139,6 +146,8 @@ Definition: a monster (called M) is aware: [Can it notice the player on its own?
 	if M is nearby and magnetism-elixir-timer > 0, decide yes;
 	decide no.
 
+Definition: a person is reactive if it is in the location of the player. [Can it react to things it sees the player do?]
+Definition: yourself is reactive: decide no.
 Definition: a monster is reactive if it is awake and it is intelligent and it is undefeated and it is in the location of the player. [Can it react to things it sees the player do?]
 
 
