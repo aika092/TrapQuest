@@ -44,6 +44,9 @@ To compute class outfit of (H - cat-ears):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 		say "[bold type]Your cat ears barely noticeably quiver, and then a sailor uniform appears on you! [roman type]No wait, this is only the neckline of a sailor uniform, leaving your entire body fully exposed!";
 		summon M;
 		now the raw-magic-modifier of M is the stance of the player;
@@ -78,10 +81,10 @@ To uniquely set up (C - cat-ears):
 	now the quest of C is puddle-licking-quest.
 
 To say QuestFlav of (Q - puddle-licking-quest):
-	say "You sense that it wants you to lick up puddles from the floor.".
+	say "You sense that it wants you to [if diaper quest is 1]drink lots of milk[otherwise]lick up puddles from the floor[end if].".
 
 To say QuestTitle of (Q - puddle-licking-quest):
-	say " (puddle licking quest)".
+	say " ([if diaper quest is 1]milk drinking[otherwise]puddle licking[end if] quest)".
 
 
 

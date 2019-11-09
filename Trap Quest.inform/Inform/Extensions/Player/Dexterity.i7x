@@ -72,8 +72,8 @@ To decide which number is the flat dexterity of the player:
 	if the player is blinded, decrease D by 2;
 	decrease D by the bondage dexterity penalty of the player;
 	if the player is bursting and the bladder of the player > 6, decrease D by (the bladder of the player - 6);
-	if the player is craving, decrease D by 1;
-	if the player is desperately craving, decrease D by 2;
+	if the player is craving semen, decrease D by 1;
+	if the player is desperately craving semen, decrease D by 2;
 	if the strut of the player is 1 and there is a worn heels and the player is upright, increase D by 3;
 	if the player is a bit horny, increase D by 2;
 	if the player is horny, increase D by 1;

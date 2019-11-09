@@ -29,6 +29,7 @@ Check rinsing it in:
 			unless the player is consenting:
 				say "Action cancelled." instead;
 		if the noun is worn, say "You can't wash that out whilst wearing it!" instead;
+	if the second noun is the swimming-pool and diaper quest is 0, say "That's not water..." instead;
 	if there is a lake monster in the location of the player, say "You can't safely do that with the tentacle monster still lurking in these waters." instead;
 	if the player is flying, say "You aren't even touching the ground!" instead;
 	if the player is immobile, say "You're a bit immobile at the moment!" instead.

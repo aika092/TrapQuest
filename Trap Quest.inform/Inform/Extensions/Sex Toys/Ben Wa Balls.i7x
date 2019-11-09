@@ -26,9 +26,12 @@ To compute periodic effect of (C - ben wa balls):
 			humiliate 100;
 		otherwise:
 			say "The Ben wa balls in your [variable F] jiggle when you move, slowly increasing your arousal.";
-		arouse 100;
+		passively stimulate F from C;
 	otherwise if the remainder after dividing the toy-charge of C by 4 is 0:
-		arouse 30;
+		arouse 100.
+
+To decide which number is the stimulation of (D - ben wa balls) on (B - a body part):
+	decide on 0.
 
 To decide which number is the original price of (C - ben wa balls):
 	decide on 3.

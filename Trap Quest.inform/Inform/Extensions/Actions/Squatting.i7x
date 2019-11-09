@@ -45,9 +45,9 @@ Check squatting:
 	if the player is ass protected:
 		let P be a random worn bottom level ass protection clothing;
 		if P is not cursed:
-			say "Do you really want to push the contents of your belly out into your [printed name of P]? ";
+			say "Do you really want to push the contents of your belly out into [NameDesc of P]? ";
 			if the player is bimbo consenting, say "";
-			otherwise say "Then you should probably [if P is displacable][bold type]displace[roman type] it[otherwise]get it out of the way[end if] first." instead;
+			otherwise say "Then you should probably [if P is displacable][bold type]displace[roman type] [him of P][otherwise]get [him of P] out of the way[end if] first." instead;
 	if the player is able to use a toilet and the location of the player is toilets:
 		say "Did you mean to use the toilet? ";
 		if the player is reverse bimbo consenting:

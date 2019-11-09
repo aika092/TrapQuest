@@ -58,7 +58,10 @@ To say MonsterDesc of (M - a fairy):
 	if diaper quest is 1:
 		say "A fairy.";
 	otherwise:
-		say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned woman, just about twice the size of your fist. She has four wings, [if M is blue-fairy]long flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and is completely naked. Her breasts are big for her size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized woman, and her [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down her erratic, unpredictable movements at all.".
+		if lady fetish is 2:
+			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned , just about twice the size of your fist. He has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. He has a thin, wispy body and [his of M] although its hard to tell thanks to his erratic movements, [his of M] [sissy-penis] is locked up in a tiny dark-[if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] cage.";
+		otherwise:
+			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned , just about twice the size of your fist. She has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. Her breasts are big for her size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized woman, and her [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down her erratic, unpredictable movements at all.".
 
 To set up (M - a fairy):
 	reset M;
@@ -445,13 +448,11 @@ To compute fairySuckling of (M - a fairy):
 		otherwise if the bimbo of the player > 10:
 			say "With a tremor of excited anticipation, you hold your [BreastDesc] up so the sexy little fairy knows you're ready for any attention she cares to give your swollen and eager nipples!";
 	if there is a worn cow piercing:
-		say "[variable custom style]'Ooh!  I can smell yummy milk from the big, slow cowgirl. Does the sexy cowgirl need milking?  Yes she does, doesn't she?  I bet she's just dying to moo for me and let me milk her!'  [roman type]She gives your heavy nipple ring a sharp tug and a twist, and your poor,  tender nub shoots a delicious mix of pain and thrilling pleasure right into your tummy, where it flares out in a shockingly intense sensation that surges into your groin. You blush at the way she's taunting you, but can't help feeling even more aroused!";
-		arouse 200;
-		humiliate 150; [Is that about right?]
+		say "[variable custom style]'Ooh!  I can smell yummy milk from the big, slow cowgirl. Does the sexy cowgirl need milking?  Yes she does, doesn't she?  I bet she's just dying to moo for me and let me milk her!' [roman type]She gives your heavy nipple ring a sharp tug and a twist, and your poor,  tender nub shoots a delicious mix of pain and thrilling pleasure right into your tummy, where it flares out in a shockingly intense sensation that surges into your groin. You blush at the way she's taunting you, but can't help feeling even more aroused!";
+		stimulate breasts from M;
 	otherwise if there is a worn nipple chain:
-		say "She tugs sharply on your heavy nipple ring, sending a thrill of pain-tipped pleasure surging through you. And the connecting chain jerks and tweaks your other nipple, doubling the sensation, and making your [BreastDesc] jiggle. She lands on the chain, her wings buzzing as she dances up it, shaking the chain so it jangles and tugs [italic type]both[roman type] your throbbingly-erect nubs, and then grabs the chain and hauls herself closer to the milk-beaded tip, licking her lips. It feels [italic type]so[roman type] good!  You bite your lip, knowing you shouldn't be enjoying the feelings of these heavy piercings in your swollen nipples!";
-		arouse 400;
-		humiliate 250; [About right?]
+		say "She tugs sharply on your heavy nipple ring, sending a thrill of pain-tipped pleasure surging through you. And the connecting chain jerks and tweaks your other nipple, doubling the sensation, and making your [BreastDesc] jiggle. She lands on the chain, her wings buzzing as she dances up it, shaking the chain so it jangles and tugs [italic type]both[roman type] your throbbingly-erect nubs, and then grabs the chain and hauls herself closer to the milk-beaded tip, licking her lips. It feels [italic type]so[roman type] good! You bite your lip, knowing you shouldn't be enjoying the feelings of these heavy piercings in your swollen nipples!";
+		stimulate breasts from M times 2;
 	if FairySuckled is 1:
 		say "She flutters toward your sensitive and milk-leaking nipple with a wicked gleam in her eye. You're about to swat her away, when her mouth gapes impossibly open and her lips somehow stretch as her head plunges down to engulf your tender tip!  A shock of pleasure stuns you at her sudden, fierce suction. Your eyes widen and your toes curl, and it's all you can do to stay on your feet. You're not sure where the milk is [italic type]going[roman type], but whatever's happening, you can't think properly: it's like you've been tasered with some kind of pleasure-gun!  You sway, slightly, lost in the sensations...";
 	otherwise:
@@ -468,7 +469,7 @@ To compute fairySuckling of (M - a fairy):
 		say "Her grin widens as she darts to your other nipple, which shivers in eager anticipation of its imminent fate. The knowing look in her eyes tells you how much she enjoys having you under her tiny thumb. Her eyes burn into yours: [italic type][one of]'Yes, putty in my hands.'[or]'That's my pretty cow-dolly.'[or]'Hello, Mommy.'[or]'Go on, be a good milk dispenser.'[or]'I should call you Buttercup!'[or]'Ooh, who's getting to be well-trained?'[or]'That's a good milk-cow.'[or]'I know you want me to suck on you.'[or]'Look how eager you are!'[or]'I know you love this![or]'Oh, look who can't wait?'[or]'Oh, my, look at them, standing up proud and glistening with milk for me!'[or]'Are your nipples getting bigger?'  She licks her lips.[at random][roman type]  Your eyes roll back in your head again as [one of]she fastens onto you![or]her mouth engulfs you![or] she starts suckling![at random]";
 	if there is a worn cow piercing or there is a worn nipple chain:
 		say "Her tiny hands are jerking at [italic type]this[roman type] nipple's piercing, even as her mouth stretches over your rosebud, and her lips press down right to the edge of the heavy metal as she begins sucking vigorously. Between her suckling at your  tit, and her tugging at the piercing, small lightning bolts of pleasure jolt and judder through you. You have the feeling that something a little magical just happened: your [BreastDesc] feel... [italic type]milkier[roman type]. Ooh - sexy!";
-		arouse 100;
+		passively stimulate breasts from M;
 		increase the lactation rate of the player by 2; [Cowgirls get even milkier!]
 	if FairySuckled is 1:
 		say "When you regain your senses, [NameDesc of M] is fluttering smugly above you and just out of reach, watching you as if considering doing more. Both your nipples now feel like signal flares crying out for you or [italic type]anyone[roman type] to... No! You're worried that if anything touched them right now, you'd come on the spot.";
@@ -476,7 +477,7 @@ To compute fairySuckling of (M - a fairy):
 		say "Your breasts do feel like they've been drained a little, but at the same time, you can't help but wonder whether her feeding might somehow make your body think you're breastfeeding a child? [italic type]That wouldn't make me lactate even more... would it?[roman type][line break]";
 	otherwise:
 		say "[one of]Your breasts feel emptier, but you worry that her feeding is somehow making your body think you're breastfeeding a child! [italic type]Is she training me to lactate?[roman type][or][BigNameDesc of M] belches prettily, watching you with satisfaction, and you feel a funny sort of [italic type]echo[roman type] ripple through the flesh deep inside your [BreastDesc].[at random][line break]";
-	arouse 500;
+	stimulate breasts from M;
 	MilkDown fM;
 	increase the lactation rate of the player by fM / 2;
 	say "[if FairySuckled > 1]Once again, as you waken from the pleasure-daze, your breasts feel less swollen with [milk], but at the same time... maybe a bit more [italic type]tingly[roman type] inside?[otherwise]You're not sure how much time has passed, but apart from feeling like you've just been through some mind-blanking oxytocin high, nothing much seems to have changed. [italic type]At least my breasts aren't aching inside so much, any more![roman type][line break][end if]".
@@ -781,8 +782,11 @@ To say PregnancyAssessment of (M - fairy-witch):
 	if M is the father:
 		say "[speech style of M]'Its definitely mine, heehee!'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
-	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is creampie pole trap or the father is sex doll:
+	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is sex doll:
 		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type]";
+		alwayscutshow figure of fairy interact 7 for M;
+	otherwise if the father is a creampie pole trap:
+		say "[speech style of M]'I don't know, could be anything! How fun!'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is royal guard or the father is gladiator:
 		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type]";
@@ -990,7 +994,7 @@ Section 2 - Fairy Witch
 
 fairy-witch is a fairy. The text-shortcut of fairy-witch is "faw". Understand "fairy", "witch" as fairy-witch.
 To say MediumDesc of (M - fairy-witch):
-	say "fairy witch".
+	say "fairy [if lady fetish is 2]wizard[otherwise]witch[end if]".
 
 
 Definition: fairy-witch (called M) is woods dwelling:

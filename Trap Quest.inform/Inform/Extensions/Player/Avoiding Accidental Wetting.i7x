@@ -45,7 +45,7 @@ To compute wetting failure:
 	now wetting-valued is -1;
 	if failed potty training tattoo is off-stage and there is a worn tattoo:
 		summon failed potty training tattoo;
-		say "Ouch!  You yelp as you feel a sharp, strong pain in your belly.";
+		say "Ouch! You yelp as you feel a sharp, strong pain in your belly.";
 		try examining failed potty training tattoo;
 	otherwise:
 		now diaper bonus is -2.

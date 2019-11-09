@@ -54,7 +54,7 @@ A later time based rule (this is the mindflayer quest rule):
 
 
 A time based rule (this is the mindflayer domination rule):
-	if the domination of the player > 0: [Revised Mind Flayer Domination Attack, starts by checking for domination at all]
+	if the domination of the player > 0:[Revised Mind Flayer Domination Attack, starts by checking for domination at all]
 		if domination-time - (a random number between the domination of the player and 40) < 0:
 			decrease the domination of the player by 1;
 			now domination-time is 30;

@@ -106,6 +106,8 @@ choice
 0 [combatvisor]
 1 [supportersEnabled]
 0 [strongCurses]
+0 [transGender]
+1 [halloween content]
 
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
@@ -392,8 +394,12 @@ To decide which number is april fools content:
 	if the player is not a top donator, decide on 0;
 	decide on the choice in row 67 of the Table of Player Options.
 
+To decide which number is halloween content:
+	decide on the choice in row 80 of the Table of Player Options.
+
 To decide which number is futanari fetish:
 	if diaper quest is 1, decide on 0;
+	if lady fetish is 2, decide on 0;
 	decide on the choice in row 68 of the Table of Player Options.
 
 To decide which number is incontinence protection:

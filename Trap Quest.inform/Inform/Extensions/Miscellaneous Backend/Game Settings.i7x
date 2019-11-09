@@ -89,6 +89,7 @@ choice
 30 [focus window height]
 0 [announcements seen]
 0 [combat-visor-hidden]
+1 [map-figures]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -480,8 +481,8 @@ Table of Game Settings
 title	subtable	description	toggle
 "Restore a Save File (to guarantee windows are the right size or if this crashes, try Quick Start followed by 'restore')"	--	--	load game rule
 "[if earnings is starting-earnings and the player is in Start]Normal Start (choose all your options, read prologue)[otherwise]Confirm Settings[end if] (shortcut: Q)"	--	--	quit rule
-"Quick Start (use same player choices as last time, skip prologue)"	--	--	quick start rule
-"Quick RANDOM Start (randomise everything that isn't set to [']never['] or [']always['], skip prologue)"	--	--	random start rule
+"Quick Start [if halloween content is 1]- disabled because halloween content is enabled (disable this in Normal Start > Seasonal Content)[otherwise](use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
+"Quick RANDOM Start [if halloween content is 1]- disabled because halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
 "Game Difficulty: [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
 "IMAGE AND LAYOUT SETTINGS"	Table of Image Settings	--	--
@@ -516,12 +517,12 @@ To prune settings menu:
 
 
 This is the quick start rule:
-	if earnings is starting-earnings:
+	if earnings is starting-earnings and halloween content is 0:
 		now quick start is 3;
 		follow quit rule.
 
 This is the random start rule:
-	if earnings is starting-earnings:
+	if earnings is starting-earnings and halloween content is 0:
 		now quick start is 2;
 		follow quit rule.
 
@@ -730,6 +731,7 @@ title	subtable	description	toggle
 "[InventoryFocusLimitOptions]"	--	--	inventoryFocusLimit toggle rule
 "Character Window: [if side images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if side images is 1]SMALLEST[otherwise if side images is 2]SMALL[otherwise if side images is 3]MEDIUM[otherwise if side images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	side images toggle rule
 "Map Window: [if map images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if map images is 1]SMALLEST[otherwise if map images is 2]SMALL[otherwise if map images is 3]MEDIUM[otherwise if map images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	map images toggle rule
+"Icons for nearby NPCs on Map Window (causes a bit of lag): [if map-figures is 1]ENABLED[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
 "Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
 "[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in lower display bar[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
@@ -1069,6 +1071,15 @@ This is the combat visor hidden toggle rule:
 		now choice in row 54 of Table of Settings is 0.
 
 
+To decide which number is map-figures:
+	if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator, decide on 0;
+	decide on choice in row 55 of Table of Settings.
+
+This is the map-figures toggle rule:
+	if map-figures is 0:
+		increase choice in row 55 of Table of Settings by 1;
+	otherwise:
+		now choice in row 55 of Table of Settings is 0.
 
 Part - Settings
 

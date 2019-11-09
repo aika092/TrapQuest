@@ -18,7 +18,7 @@ To decide which figure-name is the monster-image of (M - teacher-brooke):
 	decide on figure of brooke.
 
 To say MonsterDesc of (M - teacher-brooke):
-	say "This saucy young dark skinned woman short brown hair. A striped black and white referee's top adorns her upper half and everything looks normal until you reach the black latex pants clinging to her hips and legs. There is a huge gap at the buttocks which expose the back of her thighs and a large white adult diaper. She looks very proud of her dry padding.".
+	say "This saucy young dark skinned [man of M] short brown hair. A striped black and white referee's top adorns [his of M] upper half and everything looks normal until you reach the black latex pants clinging to [his of M] hips and legs. There is a huge gap at the buttocks which expose the back of [his of M] thighs and a large white adult diaper. [big he of M] looks very proud of [his of M] dry padding.".
 
 The teacher-name of teacher-brooke is "Brooke".
 
@@ -120,7 +120,7 @@ To decide which figure-name is the monster-image of (M - student-polly):
 	decide on figure of polly.
 
 To say MonsterDesc of (M - student-polly):
-	say "This quiet girl is wearing an excessively feminine baby pink babydoll dress with a big bow on the front. The rest of her attire is similarly styled - her white court heels have pink bows on the toes, and white cotton stockings reach up to her thighs. Her nails are painted pink and her baby pink headband has bows and flowers on it. Her very long flowing platinum blonde hair is so perfectly curly and full-bodied that you're sure it must be a wig. A subtle [if the current-rank of M is 3]crinkling[otherwise]squelching[end if] whenever she moves lets you know that she's padded[unless the current-rank of M is 3] and she's definitely not dry[end if].".
+	say "This quiet [sissy-girl] is wearing an excessively feminine baby pink babydoll dress with a big bow on the front. The rest of [his of M] attire is similarly styled - [his of M] white court heels have pink bows on the toes, and white cotton stockings reach up to [his of M] thighs. [big his of M] nails are painted pink and [his of M] baby pink headband has bows and flowers on it. [big his of M] very long flowing platinum blonde hair is so perfectly curly and full-bodied that you're sure it must be a wig. A subtle [if the current-rank of M is 3]crinkling[otherwise]squelching[end if] whenever [he of M] moves lets you know that [he of M]'s padded[unless the current-rank of M is 3] and [he of M]'s definitely not dry[end if].".
 
 The min-rank of student-polly is 3.
 The current-rank of student-polly is 3.
@@ -160,11 +160,11 @@ To decide which figure-name is the monster-image of (M - student-rachel):
 
 To say MonsterDesc of (M - student-rachel):
 	if the current-rank of M <= 2:
-		say "This woman is in her late twenties or early thirties. She is wearing a smart white blouse and red skirt. Her brunette hair is kept short and neat. She looks like a respectable businesswoman... or at least she would, if it wasn't for the huge double-diaper she's sporting under her skirt. She keeps pulling up her skirt to look at the already-damp padding underneath, and then blushing furiously, as if she couldn't really believe it was there until she checked again with her own two eyes.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] is wearing a smart white blouse and red skirt. [big his of M] brunette hair is kept short and neat. [big he of M] looks like a respectable businesswoman... or at least [he of M] would, if it wasn't for the huge double-diaper [he of M]'s sporting under [his of M] skirt. [big he of M] keeps pulling up [his of M] skirt to look at the already-damp padding underneath, and then blushing furiously, as if [he of M] couldn't really believe it was there until [he of M] checked again with [his of M] own two eyes.";
 	otherwise if the current-rank of M is 3:
-		say "This woman is in her late twenties or early thirties. She was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of her boobs. Her smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that she's got on underneath, which if anything is even thicker than before. Her short brunette hair has been put in little pigtails. She still constantly blushes wherever she goes.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of [his of M] chest. [big his of M] smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that [he of M]'s got on underneath, which if anything is even thicker than before. [big his of M] short brunette hair has been put in little pigtails. [big he of M] still constantly blushes wherever [he of M] goes.";
 	otherwise:
-		say "This woman is in her late twenties or early thirties. Her tight pink blouse have been replaced by a tight pink crop top that doesn't cover her belly button and reads 'BABYGIRL' on the front in large white letters. Her short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of her thick double diaper are on show, even as she tries to pull down on the tiny microskirt to get it to stretch as far as it can. She seems so embarrassed that she's moments away from tears at all times. It's crazy to think that just a short while ago this was woman was a respected young professional.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big his of M] tight pink blouse have been replaced by a tight pink crop top that doesn't cover [his of M] belly button and reads 'BABYGIRL' on the front in large white letters. [big his of M] short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of [his of M] thick double diaper are on show, even as [he of M] tries to pull down on the tiny microskirt to get it to stretch as far as it can. [big he of M] seems so embarrassed that [he of M]'s moments away from tears at all times. It's crazy to think that just a short while ago this was woman was a respected young professional.".
 
 The current-rank of student-rachel is 2.
 The max-rank of student-rachel is 4.
@@ -212,7 +212,7 @@ To decide which figure-name is the monster-image of (M - student-tanya):
 	decide on figure of tanya.
 
 To say MonsterDesc of (M - student-tanya):
-	say "This skinny woman has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of m] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
+	say "This skinny [man of M] has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of m] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
 
 The max-rank of student-tanya is 2.
 
@@ -241,7 +241,7 @@ To decide which figure-name is the monster-image of (M - student-emily):
 	decide on figure of emily.
 
 To say MonsterDesc of (M - student-emily):
-	say "This young Asian woman is wearing a short pink babydoll dress above bare thighs and knee-high pink socks. [big he of M] is so tall that it always feels like [he of M][']s looking down at you. [big his of M] expression suggests that she genuinely is.".
+	say "This young Asian [man of M] is wearing a short pink babydoll dress above bare thighs and knee-high pink socks. [big he of M] is so tall that it always feels like [he of M][']s looking down at you. [big his of M] expression suggests that [he of M] genuinely is.".
 
 The current-rank of student-emily is 3.
 The max-rank of student-emily is 4.
@@ -289,7 +289,7 @@ To decide which figure-name is the monster-image of (M - student-raye):
 	decide on figure of raye 3.
 
 To say MonsterDesc of (M - student-raye):
-	say "This shy looking woman is wearing a white T-shirt that says 'Yes, Daddy?' in pink writing. [if the current-rank of M is 3]A floral pattern skirt would be hiding her large white diaper if she wasn't frequently raising it up to make sure everyone gets cheeky views of her nappy[otherwise]She is no longer wearing a skirt, allowing her large white nappy to be on display at all times. She doesn't seem embarrassed about this in the slightest[end if]. Her brown hair is in pigtails with pink fluffy scrunchies[if the current-rank of M is 5]. She's visibly horny and keeps her thighs widely spread at all times, as if begging to be touched through her padding[end if].".
+	say "This shy looking [man of M] is wearing a white T-shirt that says 'Yes, Daddy?' in pink writing. [if the current-rank of M is 3]A floral pattern skirt would be hiding [his of M] large white diaper if she wasn't frequently raising it up to make sure everyone gets cheeky views of [his of M] nappy[otherwise][big he of M] is no longer wearing a skirt, allowing [his of M] large white nappy to be on display at all times. [big he of M] doesn't seem embarrassed about this in the slightest[end if]. [big his of M] brown hair is in pigtails with pink fluffy scrunchies[if the current-rank of M is 5]. [big he of M]'s visibly horny and keeps [his of M] thighs widely spread at all times, as if begging to be touched through [his of M] padding[end if].".
 
 The min-rank of student-raye is 3.
 The current-rank of student-raye is 3.
@@ -424,7 +424,8 @@ To compute teaching of (L - chess-lesson):
 		allocate 0 seconds;
 		now chess-move-choice is 1;
 		reset chess planning;
-		compute chess time;
+		while the chess-victor of chess-lesson is 0:
+			compute chess time;
 	otherwise:
 		say "You stay firmly sat down[if the player is shameless] - chess sounds boring![otherwise], not willing to risk the public shame of losing, and whatever additional punishments that might entail.[end if][line break][speech style of M]'Oh darling, you're all on your own? That's a shame, but understandable, it's a lot to ask of such weak, cowardly students[run paragraph on]";
 		if ST is promotable:
@@ -437,24 +438,24 @@ To compute teaching of (L - chess-lesson):
 		allocate 6 seconds.
 
 
-The playing chess rules is a rulebook.
+[The playing chess rules is a rulebook.]
 
 chess-move is an indexed text that varies.
 chess-move-choice is a number that varies.
 chess-lesson has a number called defensive-move.
-After reading a command:
+[After reading a command:
 	say line break;
 	if the chess-victor of chess-lesson is 0 and chess table is grabbing the player:
 		now chess-move is the player's command;
 		compute playing chess;
-		if chess-move-choice is not 0, change the text of the player's command to "finish setting"; [Does nothing]
-		if chess-move-choice > 0, compute chess time. [move time forward, but not really]
+		if chess-move-choice is not 0, change the text of the player's command to "finish setting";
+		if chess-move-choice > 0, compute chess time.
 
 To compute playing chess:
 	let ST be the chess-opponent of chess-lesson;
 	if chess-move is "l" or chess-move is "look" or chess-move is "debug" or chess-move exactly matches the regular expression "x .*" or chess-move matches the text "examine" or chess-move matches the text "showme":
 		now chess-move-choice is 0; [allow it to happen]
-	otherwise if chess-move matches the text "wait" or chess-move matches the text "think" or chess-move is "z":
+	otherwise if chess-move matches the text "wait" or chess-move matches the text "think":
 		now chess-move-choice is 1;
 	otherwise if (rectum > 4 or the player is feeling full) and (chess-move matches the text "mess" or chess-move matches the text "poo" or chess-move matches the text "poop"):
 		now chess-move-choice is 2;
@@ -522,7 +523,7 @@ To compute playing chess:
 		now student-great-move of chess-lesson is 999;
 	otherwise:
 		say "That's not a valid input.";
-		now chess-move-choice is -1.
+		now chess-move-choice is -1.]
 
 To compute chess time:
 	let ST be chess-opponent of chess-lesson;
@@ -556,7 +557,8 @@ To compute chess time:
 		check for arousal change;
 		now focused-thing is ST;
 		display stuff;
-		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left.[if inline hyperlinks < 2][line break][chess moves][end if]".
+		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left.";
+		compute chess move input.
 
 
 To compute opponent chess turn:
@@ -746,7 +748,7 @@ To compute chess messing:
 		say "You can't help but be [one of]turned on[or]aroused[at random] by the feeling!";
 		arouse 40 * the diaper addiction of the player;
 	if the mess of D < 30:
-		if the mess of D > 3, say "Your diaper stretches and expands to the point where it's about [bold type][the mess of D / 3]0%[roman type] of the way down to the pressure plate!";
+		if the mess of D > 3, say "Your diaper stretches and expands to the point where it's about [bold type][the mess of D / 3]0%[roman type] of the way down to the pressure plate![if debuginfo > 0][line break][input-style]([mess of D] / 30)[roman type][line break][end if]";
 		if the mess of D > 20 and the chess-cutscene of chess-lesson is 0:
 			now the chess-cutscene of chess-lesson is 1;
 			appropriate-cutscene-display figure of chess cutscene 2 with priority 4;
@@ -766,10 +768,10 @@ To compute chess urination:
 		say "You feel that your control over your bladder has been slightly weakened.";
 		increase incontinence by 1;
 	now the bladder of the player is 0;
-	if the diaper addiction of the player > 14 and the player is not unable to orgasm so soon:
+	if the diaper addiction of the player > 14 and the player is able to orgasm:
 		say "Your arousal grows.";
 		arouse 200 * (the diaper addiction of the player - 14);
-	if diaper messing < 3:
+	if diaper messing < 3: [we only use this metric if messing is disabled]
 		if the total-soak of D < the soak-limit of D:
 			if the total-soak of D > 5, say "Your diaper stretches and expands to the point where it's about [bold type][(the urine-soak of D * 10) / the soak-limit of D]0%[roman type] of the way down to the pressure plate!";
 			if the total-soak of D > (the soak-limit of D * 66) / 100 and the chess-cutscene of chess-lesson is 0:
@@ -812,12 +814,100 @@ To compute chess masturbation reaction of (M - a staff member):
 	say "[BigNameDesc of M] [one of]claps.[line break][speech style of M]'That's what I like to see!'[or]chuckles.[line break][speech style of M]'How predictable.'[or]cups a breast and begins to fondle [himself of M] while [he of M] watches you.[in random order][roman type][line break]You feel incredibly ashamed of yourself!";
 	humiliate 400.
 
-To say chess moves:
-	say "What do you want to do[one of][or] next[stopping]? You can ";
-	now inventory-busy is 1; [ensures that hyperlinks are enabled]
+To compute chess move input:
+	say "What do you want to do[one of][or] next[stopping]?";
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	if chess-turn of chess-lesson is 0:
+		if the student-lost-pieces of chess-lesson < 14 and the lost-pieces of chess-lesson < 14, set numerical response 1 to "make a dangerous aggressive move";
+		if defensive-move of chess-lesson <= 0, set numerical response 2 to "make a dangerous defensive move";
+		if safe-move of chess-lesson <= 0, set numerical response 3 to "make a safe move";
+		if trapping-move of chess-lesson <= 0, set numerical response 4 to "make a trapping move";
+		if great-move of chess-lesson <= 0, set numerical response 5 to "make a great move";
+	if rectum > 0 or the player is feeling full, set numerical response 6 to "mess yourself";
+	if the bladder of the player > 3 and the player is not incontinent, set numerical response 7 to "wet yourself";
+	if the player is a bit horny, set numerical response 8 to "masturbate";
+	set numerical response 9 to "wait and think";
+	set numerical response 0 to "look";
+	compute multiple choice question;
+	let CNR be the chosen numerical response;
+	now chess-move is the printed name of CNR;
+	if chess-move is "look":
+		now chess-move-choice is 0; [allow it to happen]
+		try looking;
+	otherwise if chess-move matches the text "wait":
+		now chess-move-choice is 1;
+	otherwise if chess-move matches the text "mess":
+		now chess-move-choice is 2;
+		compute chess messing;
+	otherwise if chess-move matches the text "wet":
+		now chess-move-choice is 3;
+		compute chess urination;
+	otherwise if chess-move is "masturbate":
+		now chess-move-choice is 4;
+		compute chess masturbation;
+	otherwise if chess-move matches the text "aggressive":
+		now chess-move-choice is 11;
+		now aggression of chess-lesson is 1;
+		if student-aggression of chess-lesson is 1 or a random number between 1 and 3 is 1:
+			say "You make an aggressive move, and within a few quick back-and-forth moves, you have traded a piece with your opponent.";
+			increase student-lost-pieces of chess-lesson by 1;
+			increase lost-pieces of chess-lesson by 1;
+		otherwise:
+			say "You make an aggressive move, [one of]hoping that there's nothing obvious you've missed[or]hoping that you haven't made a mistake[or]hoping to bring the game closer to its conclusion[in random order].";
+		reset chess player planning;
+		decrease the chess-boredom of headmistress by 1;
+	otherwise if chess-move matches the text "defensive":
+		now chess-move-choice is 12;
+		now aggression of chess-lesson is 0;
+		say "You make a defensive move, [one of]trying to make sure that you don't accidentally give the opponent an advantage[or]uncertain that there wasn't a better move you could have found[or]hoping to stall the game for longer[in random order].";
+		reset chess player planning;
+		if headmistress is alive:
+			increase the chess-boredom of headmistress by 1;
+			if the player is able to get horny and refactoryperiod <= 0 and chess-boredom of headmistress > a random number between 2 and 7:
+				say "[speech style of headmistress]'Booooring!'[roman type][line break][BigNameDesc of headmistress] cups both hands over [his of headmistress] mouth as [he of headmistress] yells to further amplify [his of headmistress] voice.[line break][speech style of headmistress]'[one of]I want to see more action! Here, this should help you get excited[or]Clearly you still need more encouragement[stopping]...'[roman type][line break][big he of headmistress] waves [his of headmistress] hands at you and you feel your body heating up and becoming sexually aroused. You can feel the blood pumping through your veins and your breathing becomes rushed and heavy.";
+				arouse 6000;
+				now the chess-boredom of headmistress is 1;
+	otherwise if chess-move matches the text "safe":
+		now chess-move-choice is 13;
+		now aggression of chess-lesson is 0;
+		say "You make a clever safe move, resetting the state of the board and ensuring that your opponent can't find any cracks in your defence.";
+		now safe-move of chess-lesson is 999; [Prevents the line about move no longer being possible]
+		reset chess planning;
+		now student-great-move of chess-lesson is 999;
+		now student-trapping-move of chess-lesson is 999;
+		increase the chess-boredom of headmistress by 1;
+	otherwise if chess-move matches the text "trapping":
+		now chess-move-choice is 14;
+		now aggression of chess-lesson is a random number between 0 and 1;
+		say "You make an innocent looking move, which makes it look like you've made a mistake but would actually allow you to come out ahead if your opponent takes the bait.";
+		now trapping-move of chess-lesson is 999; [Prevents the line about move no longer being possible]
+		reset chess planning;
+		now student-great-move of chess-lesson is a random number between 1 and 8;
+		now trapping-move of chess-lesson is 9999; [This is how we flag that trapping is active]
+	otherwise if chess-move matches the text "great":
+		now chess-move-choice is 15;
+		now aggression of chess-lesson is 1;
+		if student-trapping-move of chess-lesson > 1000: [player was caught by a trap]
+			let ST be chess-opponent of chess-lesson;
+			say "You grin inwardly as you make your clever move. [BigNameDesc of ST][']s expression doesn't fall but instead it looks like [he of ST] is grinning from behind [his of ST] pacifier gag! [big he of ST] quickly makes a planned move in return, and you realise you've fallen for a clever trap. Within the quick few back-and-forth moves that follow, you have lost three of your pieces for only one of [if ST is female]hers[otherwise]his[end if].";
+			increase student-lost-pieces of chess-lesson by 1;
+			increase lost-pieces of chess-lesson by 3;
+		otherwise:
+			let R be the student-aggression of chess-lesson;
+			say "You make a very smart move which after [one of]a couple of clever checks[or]a very sneaky knight fork[or]an impressive bishop fork[in random order] results in your opponent losing [R + 2] pieces and you losing [if R is 0]none at all[otherwise]only one[end if]!";
+			increase lost-pieces of chess-lesson by R;
+			increase student-lost-pieces of chess-lesson by R + 2;
+		now student-trapping-move of chess-lesson is 999; [prevents line about discovering the trap / move no longer possible]
+		now great-move of chess-lesson is 999; [prevents line about move no longer possible]
+		reset chess planning;
+		now student-great-move of chess-lesson is 999;
+	otherwise:
+		say "Bug! I didn't understand that. Please report this bug.";
+		now chess-move-choice is -1.
+	[now inventory-busy is 1;
 	if chess-turn of chess-lesson is 0, say "[if the student-lost-pieces of chess-lesson < 14 and the lost-pieces of chess-lesson < 14][wish-type]make a dangerous aggressive move[end-wish-type], [end if][if defensive-move of chess-lesson <= 0][wish-type]make a dangerous defensive move[end-wish-type], [end if][if safe-move of chess-lesson <= 0][wish-type]make a safe move[end-wish-type], [end if][if trapping-move of chess-lesson <= 0][wish-type]make a trapping move[end-wish-type], [end if][if great-move of chess-lesson <= 0][wish-type]make a great move[end-wish-type], [end if]";
 	say "[if rectum > 4 or the player is feeling full][wish-type]mess yourself[end-wish-type], [end if][if the bladder of the player > 3 and the player is not incontinent][wish-type]wet yourself[end-wish-type], [end if][if the player is a bit horny][wish-type]masturbate[end-wish-type], [end if][wish-type]wait and think[end-wish-type] or [wish-type]look[end-wish-type].";
-	now inventory-busy is 0.
+	now inventory-busy is 0.]
 
 To compute chess loss:
 	let ST be the chess-opponent of chess-lesson;
@@ -973,7 +1063,6 @@ enema-race-lesson is a lesson. The lesson-teacher of enema-race-lesson is teache
 To set up diaper gym lesson of (M - a monster):
 	say "[speech style of M]'[one of]I know what you're thinking. Why are you wearing a diaper? Aren't diapers for babies? Well yes [if diaper messing >= 3]MESSY[otherwise]USED[end if] diapers are for babies, since only a baby can't control their own bodily functions, but a DRY diaper can be used as a proud sign of your continence. Look at me, living proof! I carry this baby off with style and grace. And today, two of you lot will see who can do the same for longest[or]You know what time it is[stopping]. Follow me to the gym, little ones!'[roman type][line break]";
 	allocate 35 seconds;
-	now the location of the player is discovered;
 	repeat with N running through monsters in the location of the player:
 		if N is rank3 student or N is M, now N is in School23;
 	now the player is in School23.
@@ -1219,19 +1308,20 @@ To compute teaching of (L - dodgeball-lesson):
 		if currentBallHolder is yourself:
 			if NELS2 > 1:
 				while ballTarget is yourself:
-					say "You can throw the ball at ";
-					let NLS2 be 1;
+					say "You can throw the ball at:[line break]";
+					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 					repeat with TST running through LS2:
-						say "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if])[if NLS2 is NELS2].[otherwise if NLS2 is NELS2 - 1] or [otherwise], [end if]";
-						increase NLS2 by 1;
-					repeat with TST running through LS2:
-						if ballTarget is yourself:
-							say "Throw the ball at [NameDesc of TST]? ";
-							if the player is consenting, now ballTarget is TST;
+						set next numerical response to "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if]";
+					compute multiple choice question;
+					now ballTarget is entry player-numerical-response in LS2;
 			otherwise:
 				now ballTarget is entry 1 in LS2;
-			say "You can throw the ball at [student-name of ballTarget][']s upper or lower body. [one of][bold type]Aiming higher has a greater chance of hitting but also a much greater chance of immediate retaliation. [roman type][or][stopping]Aim at the upper body? ";
-			if the player is consenting, now bodyTarget is face;
+			say "You can throw the ball at [student-name of ballTarget][']s upper or lower body[one of]. [bold type]Aiming higher has a greater chance of hitting but also a much greater chance of immediate retaliation.[roman type][line break][or].[stopping]";
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			set numerical response 1 to "aim at [his of ballTarget] upper body";
+			set numerical response 2 to "aim at [his of ballTarget] lower body";
+			compute multiple choice question;
+			if player-numerical-response is 1, now bodyTarget is face;
 		otherwise:
 			if currentBallHolder is listed in LS2:
 				if yourself is listed in LS1:
@@ -1262,25 +1352,19 @@ To compute teaching of (L - dodgeball-lesson):
 		[Process dodging]
 		let dodgeChoice be -1;
 		if currentBallHolder is listed in LS2 and yourself is listed in LS1:
-			say "[BigNameDesc of currentBallHolder] is about to throw the ball! ";
-			while dodgeChoice is -1:
-				say "You can jump, duck, or ready your hands. ";
-				if rectum is 50:
-					say "[one of]Jumping will avoid all low attacks, ducking will avoid all high attacks, and readying your hands gives you a small bonus to dodging either. [bold type]Also, jumping or ducking has an increased chance of making you mess yourself. [roman type][or][stopping]";
-				otherwise if D is messed:
-					say "[one of]Jumping will avoid all low attacks, ducking will avoid all high attacks, and readying your hands gives you a small bonus to dodging either. [if the diaper addiction of the player < 15][bold type]Also, jumping or ducking might make your messy diaper squelch, which would continue to warp your mind's attitude towards messy diapers. [roman type][end if][or][stopping]";
-				otherwise:
-					say "[one of]Jumping will avoid all low attacks, ducking will avoid all high attacks, and readying your hands gives you a small bonus to dodging either. [or][stopping]";
-				say "Do you choose to stay still and ready your hands? ";
-				if the player is consenting:
-					now dodgeChoice is 0;
-				otherwise:
-					say "Do you choose to jump? ";
-					if the player is consenting:
-						now dodgeChoice is 1;
-					otherwise:
-						say "Do you choose to duck? ";
-						if the player is consenting, now dodgeChoice is 2;
+			say "[BigNameDesc of currentBallHolder] is about to throw the ball!";
+			if rectum is 50:
+				say "[one of]Jumping will avoid all low attacks, ducking will avoid all high attacks, and readying your hands gives you a small bonus to dodging either. [bold type]Also, jumping or ducking has an increased chance of making you mess yourself.[roman type][line break][or][stopping]";
+			otherwise if D is messed:
+				say "[one of]Jumping will avoid all low attacks, ducking will avoid all high attacks, and readying your hands gives you a small bonus to dodging either. [if the diaper addiction of the player < 15][bold type]Also, jumping or ducking might make your messy diaper squelch, which would continue to warp your mind's attitude towards messy diapers.[roman type][line break][end if][or][stopping]";
+			otherwise:
+				say "[one of]Jumping will avoid all low attacks, ducking will avoid all high attacks, and readying your hands gives you a small bonus to dodging either.[or][stopping]";
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			set numerical response 1 to "stay still and ready your hands";
+			set numerical response 2 to "jump";
+			set numerical response 3 to "duck";
+			compute multiple choice question;
+			now dodgeChoice is player-numerical-response - 1;
 		[Process ball throw]
 		say "[if currentBallHolder is yourself]You throw[otherwise][BigNameDesc of currentBallHolder] throws[end if] the ball at [YourDesc of ballTarget] [if bodyTarget is thighs]lower body[otherwise]upper body[end if]! [roman type]";
 		let ballHit be a random number between -20 and the dexterity of the player;
@@ -1407,6 +1491,8 @@ To compute teaching of (L - dodgeball-lesson):
 	say "[BigNameDesc of M] strokes [his of M] chin.[line break][speech style of M]'As for you super-stinkers... let me see, what punishment should I give you today...'[roman type][line break]";
 	if a random number between 1 and 1 is 1: [Maybe there are more varied punishments in the future]
 		let D2 be a random huge diaper;
+		while D is D2:
+			now D2 is a random huge diaper;
 		if the mess of D >= 100:
 			only destroy D2;
 			now D2 is cursed;
@@ -1482,8 +1568,6 @@ To compute teaching of (M - teacher-kaylee):
 
 
 ultimate-lesson is a lesson. The lesson-teacher of ultimate-lesson is teacher-kaylee.
-
-Definition: ultimate-lesson is lesson-appropriate if the player is a june 2019 diaper donator.
 
 An ultimate-lesson-object is a kind of object. An ultimate-lesson-object has a number called implant.
 Definition: an ultimate-lesson-object is eligible if the implant of it is 0.
@@ -1594,13 +1678,13 @@ To compute teaching of (L - ultimate-lesson):
 	if maxLessonImplants > 0:
 		say "[speech style of M]'That's enough!'[roman type][line break][BigNameDesc of M] claps [his of M] hands and you open your eyes.";
 		if the number of entries in LST > 0:
-			say "Congratulations, babies, you did it. You've become perfect diaper lovers. I couldn't be prouder. Now, come kiss my padding and claim your reward.";
+			say "[speech style of M]'Congratulations, babies, you did it. You've become perfect diaper lovers. I couldn't be prouder. Now, come kiss my padding and claim your reward.'[roman type][line break]";
 			repeat with ST running through LST:
 				say "[BigNameDesc of ST] crawls over and [one of]respectfully[or]lovingly[or]happily[in random order] [one of]kisses[or]nuzzles [his of ST] nose into[or]rubs [his of ST] face in[at random] [NameDesc of M][']s soggy diaper.";
 				promote ST;
 				if the current-rank of ST is 6, now the student-print of ST is "golden babygirl";
 		otherwise:
-			say "Congratulations, [NameBimbo], you did it. You've become the perfect diaper lover. I couldn't be prouder. Now, come kiss my padding and claim your reward.";
+			say "[speech style of M]'Congratulations, [NameBimbo], you did it. You've become the perfect diaper lover. I couldn't be prouder. Now, come kiss my padding and claim your reward.'[roman type][line break]";
 		say "You cross the room and kneel at [NameDesc of M][']s feet, looking up at [his of M] gentle smile.[line break][speech style of M]'Go ahead.'[roman type][line break]You plant your lips on the outside of [his of M] soaked diaper[if the player is feeling dominant], but without breaking eye contact with [him of M] at any time[otherwise]with eyes submissively lowered[end if].";
 		now armband is solid gold;
 		say "You watch as the ID card inside your armband transforms!";
@@ -1611,8 +1695,7 @@ To compute teaching of (L - ultimate-lesson):
 			say "[BigNameDesc of M] continues to speak.[line break][speech style of M]'Now that you've proven your loyalty to our cause, I've got something special to show you. Come with me!'[roman type][line break][BigNameDesc of M] leads you down to the other end of the school.";
 			repeat with N running through monsters in the location of the player:
 				now N is in the location of ex-princess;
-			now the location of ex-princess is discovered;
-			now School33 is discovered;
+			reveal the school dungeon;
 			teleport to the location of ex-princess;
 			now the stance of the player is 0;
 			say MonsterDesc of ex-princess;

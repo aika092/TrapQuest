@@ -70,6 +70,12 @@ To decide which number is appearance-cringe-level:
 			now O is OC;
 			now cringe-target is C;
 			now appearance-cringe-target is C;
+	repeat with C running through carried not-in-bag things:
+		let OC be the cringe of C / 2; [to make sure we only spend the CPU cycles to calculate it once]
+		if OC > O:
+			now O is OC;
+			now cringe-target is C;
+			now appearance-cringe-target is C;
 	repeat with C running through body parts:
 		let OC be the cringe of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
@@ -92,6 +98,8 @@ To decide which number is cumulative-cringe-level:
 	let maxSimilarItems be 4;
 	repeat with C running through worn currently at least partially visible wearthings:
 		if the cringe of C >= A2, increase N by 1;
+	repeat with C running through carried not-in-bag things:
+		if the cringe of C / 2 >= A2, increase N by 1;
 	repeat with C running through body parts:
 		if the cringe of C >= A2, increase N by 1;
 	if N > maxSimilarItems, now N is maxSimilarItems;

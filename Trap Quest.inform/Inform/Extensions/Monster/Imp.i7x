@@ -153,9 +153,9 @@ To check consensual submissive sex of (M - an imp):
 						say "[BigNameDesc of N] begins masturbating in your direction!";
 						if bukkake fetish is 1:
 							say "[big he of N] quickly climaxes, spraying you with [his of N] [semen]!";
-							now B is face;
+							let B be face;
 							if a random number between 1 and 2 is 1, now B is hips;
-							Squirt semen on B by the semen load of N;
+							squirt semen on B by (the semen load of N);
 						orgasm N;
 				if N is not penetrating a body part, now N is not friendly-fucking; [Make sure this flag doesn't linger when it's not supposed to]
 	otherwise:

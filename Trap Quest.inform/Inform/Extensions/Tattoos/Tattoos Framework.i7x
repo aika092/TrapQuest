@@ -54,6 +54,7 @@ To say MediumDesc of (T - a tattoo):
 
 To summon (T - a tattoo):
 	progress quest of inking-quest;
+	compute inking effect of T;
 	now T is worn by the player.
 
 To decide which number is the heaviness of (T - a tattoo):

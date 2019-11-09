@@ -97,7 +97,7 @@ To MapDraw:
 					otherwise if R is discovered and R is furnished:
 						if a random furniture in R is milking bench, say "{-}";
 						otherwise say "{~}";
-					otherwise if R is discovered and R is unusual:
+					otherwise if R is discovered and there is a dispenser in R:
 						say "{^}";
 					otherwise if R is discovered:
 						say "{#}";

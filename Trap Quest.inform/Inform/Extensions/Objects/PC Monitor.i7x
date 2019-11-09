@@ -1,7 +1,7 @@
 PC Monitor by Objects begins here.
 
 
-PC Monitor is a thing. PC Monitor is in Hotel33. PC Monitor is not portable. The printed name of PC Monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of PC Monitor is "pcm". PC Monitor has a number called currentlyOn.
+PC Monitor is a thing. PC Monitor is in Hotel33. PC Monitor is not portable. The printed name of PC Monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of PC Monitor is "pcm". PC Monitor has a number called currentlyOn. PC Monitor has a number called currentSlide.
 
 To say ShortDesc of (C - PC Monitor):
 	say "monitor".
@@ -15,9 +15,11 @@ To decide which figure-name is the examine-image of (C - PC Monitor):
 	decide on figure of PC monitor.
 
 To say ExamineDesc of (C - PC Monitor):
-	say "Your PC monitor sits on its desk at the end of your room. [if the currentlyOn of C is 1]You are currently in a video call with [FriendName], your [FriendRole][otherwise]It doesn't seem to be able to be turned on[end if].".
+	say "Your PC monitor sits on its desk at the end of your room. [if the currentlyOn of C is 1]You are currently in a video call with [FriendName], your [FriendRole].[otherwise if the currentlyOn of C > 2]It is currently displaying [SlideDesc of C][otherwise]It doesn't seem to be able to be turned on.[end if]";
 
-Definition: PC Monitor is broadcasting if the currentlyOn of PC Monitor is 1.
+To say SlideDesc of (C - PC Monitor):
+	say "[DisgracePost (currentSlide of PC Monitor)].[line break][DisgracePostReaction (currentSlide of PC Monitor)]";
+
 
 A later time based rule:
 	if the currentlyOn of PC Monitor < 2 and PC Monitor is in the location of the player and the number of patrons in the location of the player > 0:
@@ -40,9 +42,29 @@ A later time based rule:
 		now the currentlyOn of PC Monitor is 2; [So it doesn't happen again]
 		if PC monitor is in the location of the player:
 			if latestCombatFocus is not patron:
-				say "[first custom style]'Oh my god, you really WERE [if diaper quest is 1]doing that[otherwise]having sex[end if] for money?! I'm sorry but I can't be associated with such a disgusting and degenerate person as you. Don't ever contact me again.'[roman type][line break][strongHumiliateReflect][FriendName] hangs up the call, and then the PC Monitor goes blank.";
+				say "[first custom style]'Oh my god, you really WERE [if diaper quest is 1]doing that[otherwise]having sex[end if] for money?! I'm sorry but there's no way I'm not sending this to EVERYONE. You're such a disgrace.'[roman type][line break][strongHumiliateReflect][FriendName] hangs up the call, and then the PC Monitor goes blank.";
+				choose a blank row in Table of Published Disgraces;
+				now the content entry is the substituted form of "a screenshot of you in a video call, [if diaper quest is 1]engaging in ABDL kink play[otherwise]having sex[end if] with a patron,";
+				now the published entry is the substituted form of "posted to your wall on facepage.com by [FriendName], accompanied by the comment 'WTF explain yourself, [NameBimbo]!'";
+				now the severity entry is 100;
+				now the popularity entry is 0;
+				now the timestamp entry is 0;
+				[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 			otherwise:
 				say "[first custom style]'I don't really understand what's going on here but I also know I don't like it. You'd better have a pretty good fucking explanation the next time I see you, [OriginalNameBimbo].'[roman type][line break][FriendName] hangs up the call, and then the PC Monitor goes blank.";
+	otherwise if the currentlyOn of PC Monitor >= 2 and PC Monitor is in the location of the player:
+		increase the CurrentlyOn of PC Monitor by 1;
+		if the currentSlide of PC Monitor is 0:
+			now the currentSlide of PC Monitor is the number of filled rows in the Table of Published Disgraces;
+			say "[bold type]Suddenly, you hear the sound of your computer turning on again! [roman type]It's ";
+		otherwise if the currentlyOn of PC Monitor > 5 and the number of filled rows in the Table of Published Disgraces > 1:
+			say "[bold type]The PC monitor changes! [roman type]It's now ";
+			decrease the currentSlide of PC Monitor by 1;
+			if the currentSlide of PC Monitor is 0, now the currentSlide of PC Monitor is the number of filled rows in the Table of Published Disgraces;
+			now the currentlyOn of PC Monitor is 3;
+		say SlideDesc of PC Monitor;
+	otherwise if the currentlyOn of PC Monitor > 2:
+		increase the CurrentlyOn of PC Monitor by 1.
 
 
 

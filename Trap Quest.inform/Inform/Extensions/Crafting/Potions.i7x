@@ -210,8 +210,5 @@ Carry out quaffing space mead:
 	increase alcohol level;
 	increase alcohol level.
 
-
-
-
 Potions ends here.
 

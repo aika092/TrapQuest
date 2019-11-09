@@ -146,8 +146,11 @@ To compute perception of (M - djinn):
 
 To compute DQ perception of (M - djinn):
 	now M is interested;
-	if M is babifying the player:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh look, a little baby. Does someone need looking after?'[or]Oh it's the little baby again! Back for more?'[or]Come here again, young one.'[stopping][roman type] [big he of M] looks aggressive!";
+	if there is soiled-diaper retained by M:
+		say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
+		anger M;
+	otherwise if M is babifying the player:
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh look, a little baby. Does someone need looking after?'[or]Oh it's the little baby again! Back for more?'[or]Come here again, young one.'[stopping][roman type][line break][big he of M] looks aggressive!";
 		anger M;
 	otherwise if M is unfriendly:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You again! Did you think you'd been forgiven? No, you will suffer my wrath forever.'[or]Ah, perfect, I was just wondering where you had gotten to!'[or]You know the drill[if the player is upright]. Get on your knees[end if].'[stopping][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
@@ -162,7 +165,7 @@ To decide which number is the bimbo tolerance of (M - djinn):
 
 Part 3 - Djinn Wishing
 
-The djinn wish rules is a rulebook.
+[The djinn wish rules is a rulebook.
 
 wish-to-ask is a text that varies.
 wish-asked is an indexed text that varies.
@@ -187,14 +190,116 @@ To compute djinn wishing of (M - a monster):
 To say wishes of (M - a monster):
 	now inventory-busy is 1; [ensures that hyperlinks are enabled]
 	say "What do you wish for? You can [wish-type]wish for strength[end-wish-type], [wish-type]wish for wisdom[end-wish-type], [wish-type]wish for blessings[end-wish-type], [wish-type]wish for sanity[end-wish-type], [wish-type]wish for safety[end-wish-type], [if diaper quest is 0 and M is in the location of the player][wish-type]wish for a suck of his cock[end-wish-type], [otherwise if M is in the location of the player][wish-type]wish for a spanking[end-wish-type], [end if][if diaper lover >= 1][wish-type]wish for a diaper change[end-wish-type], [end if]or [wish-type]wish for nothing[end-wish-type] to not wish for anything.";
-	now inventory-busy is 0.
+	now inventory-busy is 0.]
+
+To compute djinn wishing of (M - a monster):
+	allocate 6 seconds;
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	set next numerical response to "wish for strength";
+	set next numerical response to "wish for wisdom";
+	set next numerical response to "wish for blessings";
+	set next numerical response to "wish for sanity";
+	set next numerical response to "wish for safety";
+	if M is in the location of the player:
+		if diaper quest is 0, set next numerical response to "wish for a suck of [his of M] cock";
+		otherwise set next numerical response to "wish for a spanking";
+	if diaper lover >= 1, set next numerical response to "wish for a diaper change";
+	set next numerical response to "wish for nothing";
+	compute multiple choice question;
+	let CNR be the chosen numerical response;
+	if the printed name of CNR is "wish for strength":
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your body. You feel your muscles grow!";
+		StrengthUp 2;
+		compute DjinnDisappointedAfter of M;
+	otherwise if the printed name of CNR is "wish for wisdom":
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your body. You feel stimulated!";
+		IntUp 2;
+		compute DjinnDisappointedAfter of M;
+	otherwise if the printed name of CNR is "wish for blessings":
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your body.";
+		let N be 3;
+		while N > 0:
+			let C be a random worn blessable clothing;
+			if C is clothing:
+				decrease N by 1;
+				say "Your [ShortDesc of C] is surrounded by a blue light!";
+				bless C;
+			otherwise:
+				now N is -1;
+		if N is -1, say "[speech style of M]'Hmm, looks like you weren't wearing enough to get the full effect from that. Not my problem though.'[roman type][line break]";
+		compute DjinnDisappointedAfter of M;
+	otherwise if the printed name of CNR is "wish for sanity":
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your head. You feel calmed!";
+		SexAddictDown 1;
+		SemenAddictDown 1;
+		DelicateDown 1;
+		Dignify 1000;
+		compute DjinnDisappointedAfter of M;
+	otherwise if the printed name of CNR is "wish for safety":
+		compute DjinnDisappointedAfter of M;
+		teleport to Dungeon12;
+	otherwise if the printed name of CNR is "wish for nothing":
+		if the wishes of a random magic lamp > 0:
+			say "[speech style of M]'Wow, what a way to waste your wish.'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'Wow, what a way to waste your wish. And now, I'm angry...'[roman type][line break][BigNameDesc of M] takes an aggressive stance!";
+			permanently anger M;
+			now the wish history of M is 1;
+	otherwise if the printed name of CNR matches the text "suck":
+		now the wish history of M is 2;
+		if the player is upright:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+			say "You open your mouth obediently.";
+		now the player-reaction of the player is submitting;
+		now presented-orifice is face;
+		check consensual submissive sex of M;
+	otherwise if the printed name of CNR is "wish for a spanking":
+		now the wish history of M is 2;
+		if the player is upright:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+			say "You get on your knees obediently, raising your [buttcheeks] into the air.";
+		now the player-reaction of the player is submitting;
+		anger M;
+		compute spanking of M;
+	otherwise if the printed name of CNR is "wish for a diaper change":
+		if there is a worn diaper or there is a worn messed knickers:
+			let D be a random worn knickers;
+			say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
+			if D is wet or D is messed:
+				say "A cloud of baby powder releases from the seams of your [MediumDesc of D]. It feels[if D is perceived messed], and smells,[end if] as if it were brand new!";
+				clean D;
+				WaterEmpty D;
+			otherwise:
+				say "[speech style of M]'Hmm, looks like your diaper was already clean. Not my problem though.'[roman type][line break]";
+		otherwise if the wish history of M is 0:
+			say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your crotch.[line break][speech style of M]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
+			if there are worn knickers:
+				let K be a random worn knickers;
+				say "You suddenly feel your [ShortDesc of K] vanish with a gust of air around your crotch!";
+				destroy K;
+			let E be a random eligible diaper;
+			say "With a flash of light, you feel a [ShortDesc of E] appear around your crotch, forcing your legs apart!";
+			summon E cursed with quest;
+		compute DjinnDisappointedAfter of M;
+	otherwise:
+		say "ERROR: unable to properly process that wish. Please report this as a bug!";
+		compute DjinnDisappointedAfter of M.
+		
+		
+To say SpankingDeclarationFlav of (M - djinn):
+	say "[speech style of M]'Heh, I had a feeling you would choose wisely. I'm going to enjoy this.'[roman type] ".
+	
 
 To say DjinnDisappointedBefore of (M - a monster):
-	say "The djinn narrows [his of M] eyes.[line break][first custom style]'Fine, so be it.'[roman type][line break]".
+	say "The djinn narrows [his of M] eyes.[line break][speech style of M]'Fine, so be it.'[roman type][line break]".
 
 To compute DjinnDisappointedAfter of (M - a monster):
 	if M is alive:
-		say "The djinn claps [his of M] hands and starts to disappear.[line break][first custom style]'You should hope that we don't meet again.'[roman type][line break]";
+		say "The djinn claps [his of M] hands and starts to disappear.[line break][speech style of M]'You should hope that we don't meet again.'[roman type][line break]";
 		regionally place M;
 		permanently anger M;
 		now the wish history of M is 1;
@@ -208,7 +313,7 @@ To compute DjinnDisappointedAfter of (M - a monster):
 			destroy L;
 		decrease the wishes of L by 1.
 
-To compute djinn wishing conclusion:
+[To compute djinn wishing conclusion:
 	allocate 6 seconds;
 	cancel djinn wishing.
 
@@ -359,7 +464,7 @@ This is the wishing for something rule:
 	say "Input not understood. Please wish for something. [wishes of djinn]";
 	rule fails.
 The wishing for something rule is listed last in the djinn wish rules.
-
+]
 
 Part 4 - Djinn Messing
 
@@ -702,6 +807,8 @@ To compute unique death of (M - djinn):
 Section 3 - DQ
 
 Definition: djinn is willing to spank gently: decide no.
+Definition: djinn is willing to spank: decide yes.
+Definition: djinn is willing to punish untidiness: decide yes.
 
 To decide which number is the spanking length of (M - djinn):
 	decide on 4.
@@ -736,6 +843,23 @@ To compute punishment of (P - djinn-mess):
 
 To say honey of (M - djinn):
 	say "[child of M]".
+
+
+Definition: djinn is willing to forcefeed: decide yes.
+To compute forcefeed round (N - a number) of (M - a djinn):
+	say "[one of]You gasp in surprise as [NameDesc of M][or][BigNameDesc of M][stopping] summons ";
+	if diaper messing >= 3 and a random number between 1 and diaper lover > 1 and (the player is not thirsty or the stomach-food of the player < the stomach-liquid of the player):
+		say "[one of]a block of chocolate[or]a large cube of watermelon[or]half a banana[or]a slice of pear[or]a digestive biscuit[in random order] out of thin air and makes it fly into your mouth. You are forced to chew and swallow it all down.";
+		StomachFoodUp 1;
+	otherwise:
+		say "a floating, swirling ball of [if breast-milk-this-time is 1]warm breast milk[otherwise][one of]some kind of fruit juice[or]warm black tea[in random order][end if] out of thin air and makes it shoot into your mouth. You are forced to swallow it all down.";
+		if breast-milk-this-time is 1, MilkDrunkUp 1;
+		otherwise StomachUp 2.
+
+To say DQFeedingResistReactionFlav of (M - a djinn):
+	say "[speech style of M]'[one of]What, don't like it? Should have wished for mother's teat... I favor nutrition over taste.'[or]If you don't like the flavor now you REALLY won't appreciate what it's going to make you do later!'[or]Oh, I'm paralyzed at the thought of you breaking free... of an almighty Djinn. You do have the decision making skills of an infant, don't you?'[then at random][roman type][line break]".
+
+
 
 Part 6 - Conversation
 

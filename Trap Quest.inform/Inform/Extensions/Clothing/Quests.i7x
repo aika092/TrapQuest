@@ -172,8 +172,12 @@ To say QuestPersistFlav of (Q - a clothing-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise if C is bland and Q is headgear-clothing-quest]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ".
 
 To compute persistent reward of (Q - a clothing-quest) on (C - a clothing):
-	say "[if C is pussy covering]gently vibrating, stimulating your [genitals][otherwise]flooding you with arousal[end if]!";
-	arouse 2500.
+	if C is pussy covering:
+		say "gently vibrating, stimulating your [genitals]!";
+		stimulate vagina from C;
+	otherwise:
+		say "flooding you with arousal!";
+		arouse 2500.
 
 
 Part - No Quest
@@ -501,6 +505,7 @@ To set up (Q - candy-eating-quest):
 	now the candy-count of Q is 0.
 
 To progress quest of (Q - candy-eating-quest):
+	progress quest of trick-or-treat-quest;
 	increase the candy-count of Q by 1;
 	repeat with C running through worn cursed clothing:
 		if the quest of C is Q:
@@ -890,13 +895,17 @@ To progress quest of (Q - show-and-tell-quest) for (M - a monster):
 				otherwise:
 					say "[BigNameDesc of C] shudders happily at being seen with you. Keep it up.".
 
-To compute persistent reward of (Q - whore-exposing-quest) on (C - a clothing):
+To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
 	now the expose-count of Q is 0;
 	if C is cursed:
-		compute generic first time class reward of Q on C;
+		compute persistent reward of Q on C;
 	otherwise:
-		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop letting everyone know how pathetic a whore you are.[or]even more blessed magic![stopping]".
+		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop letting everyone know how pathetic a [if diaper quest is 1]baby[otherwise]whore[end if] you are.[or]even more blessed magic![stopping]".
 
+Carry out taking off clothing:
+	if the quest of the noun is show-and-tell-quest and the expose-count of show-and-tell-quest >= 10:
+		say "You can feel the blessed magic your [ShortDesc of the noun] had stored within itself shoot straight into your tendons, making you more flexible!";
+		DexUp the expose-count of show-and-tell-quest / 7.
 
 
 Part - Plug Quest
@@ -1002,6 +1011,21 @@ To say QuestFlav of (Q - attack-quest):
 To say QuestTitle of (Q - attack-quest):
 	say " (alliance breaking quest)".
 
+
+
+
+Part - Predicament Quest
+
+predicament-quest is a clothing-quest.
+
+To decide what number is the quest-weighting of (Q - predicament-quest) for (C - a clothing):
+	decide on 0. [Only occurs when the code specifies (e.g. when you start a predicament)]
+
+To say QuestFlav of (Q - predicament-quest):
+	say "You sense that it wants you to reach the end of this predicament scenario.".
+
+To say QuestTitle of (Q - predicament-quest):
+	say " (predicament completion quest)".
 
 
 

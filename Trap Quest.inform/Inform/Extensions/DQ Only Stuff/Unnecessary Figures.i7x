@@ -187,6 +187,9 @@ To decide which figure-name is Figure of caged urinal princess piss:
 To decide which figure-name is Figure of Teacher Hannah Cutscene 2:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Quiz Predicament Room:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of hellhound:
 	decide on figure of small image.
 
@@ -345,6 +348,10 @@ To decide which figure-name is Figure of Lips Cutscene 2b:
 	decide on figure of small image.
 To decide which figure-name is Figure of Lips Cutscene 3:
 	decide on figure of small image.
+
+To decide which figure-name is Figure of Maths Predicament:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Modmachine Cutscene 1:
 	decide on figure of small image.
 
@@ -352,6 +359,12 @@ To get oral creampie image for (M - a thing):
 	do nothing.
 
 To decide which figure-name is Figure of Pole Cutscene 4:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Team Enema Predicament:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Tentacle cutscene 1:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Throne Cutscene 1:
@@ -421,6 +434,8 @@ To decide which figure-name is Figure of super rich bedroom sex:
 To decide which figure-name is Figure of super rich hummer exhibitionism:
 	decide on figure of small image.
 To decide which figure-name is Figure of super rich wife:
+	decide on figure of small image.
+To decide which figure-name is Figure of super rich curvy wife:
 	decide on figure of small image.
 To decide which figure-name is Figure of super rich car:
 	decide on figure of small image.

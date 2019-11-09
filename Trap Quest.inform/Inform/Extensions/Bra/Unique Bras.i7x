@@ -129,7 +129,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				say "Your [printed name of C] [if the training-progress of C < 1]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.[line break]";
 				TitFuckAddictUp 1;
 				if lactation fetish is 1, increase the lactation rate of the player by 1;
-				arouse 100 + the sensitivity of breasts * 10;
+				arouse 100 + (the sensitivity of breasts * 10);
 				increase the training-progress of C by 1;
 		otherwise:
 			say "Your [printed name of C] [if the training-progress of C < 1]tightens and emits a short tone[otherwise]tightens and emits [the training-progress of C + 1] short tones[end if] as warm fluid begins seeping through the flexible lining of the bra, soaking into your skin. You hear another tone after a while, and look down [if the training-progress of C >= 3]to see the bra dropping off your chest completely![otherwise]to see the silhouette of the bra hasn't changed! Your breasts must be bigger![end if][line break]";
