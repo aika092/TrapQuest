@@ -44,7 +44,7 @@ To Set Up The Dungeon:
 			now M is in a random sandy room;
 	repeat with N running from 1 to 7:
 		let G be a random placed sandy room;
-		unless G is unusual, deploy tank in G;
+		unless there is a tank in G, deploy tank in G;
 	repeat with K running through kneeling stools in The Dungeon:
 		now K is off-stage;
 		now K is bland;
@@ -76,9 +76,8 @@ To Set Up The Dungeon:
 	repeat with M running through alive monsters in the dungeon:
 		if the location of M is not placed, now M is in a random placed sandy room;
 	if a random number between 1 and 3 is 1, now gladiatorcurse is 1;
-	if the player is the donator:
-		set up the school;
-		now the destination of dungeon portal is the school;
+	set up the school;
+	now the destination of dungeon portal is the school;
 	now DogPetName is the substituted form of "[PossiblePetName]";
 	if debugmode is 0 and loading scenes is 1, clear the screen.
 

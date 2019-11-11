@@ -45,7 +45,7 @@ To compute climax effect of (E - royal scepter):
 			humiliate STRONG-HUMILIATION;
 		otherwise:
 			say "Your [ShortDesc of E] pulses, and you feel a powerful sense of yearning deep in your heart as an image of the [princess-consort] appears in your mind.";
-			Arouse 2000;
+			Arouse 3000;
 			if the refactory-period of princess-consort > 0, decrease the refactory-period of princess-consort by the charge of E * 20.
 
 

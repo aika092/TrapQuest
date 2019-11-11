@@ -152,6 +152,22 @@ Definition: a clothing (called C) is potentially penis covering:[does not check 
 		if the player is upright and C is not super-short and the size of penis < 4, decide yes; [short skirts protect against exposure as long as you're standing and have a small penis]
 	decide no.
 
+[!<ClothingIsPotentiallyPenisCovering>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: a clothing (called C) is potentially at least partially penis covering:[does not check if penis is visible, only if it is covered by something.]
+	if C is potentially pussy covering clothing:
+		if there is a worn chastity cage:
+			if the size of penis > 3 and the penis-capacity of C >= 1, decide yes;[when you're in chastity, certain clothing can still cover a penis that otherwise wouldn't fit]
+		if the size of penis <= the penis-capacity of C + 3, decide yes; [as long as not more than 3 inches are showing we say it's partially covered]
+	if C is skirted clothing:
+		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
+		if C is not super-short and C is not short, decide yes; [long skirts protect against exposure]
+		if the player is upright and C is not super-short, decide yes; [short skirts partially protect against exposure as long as you're standing]
+	decide no.
+
 [!<ClothingIsActuallyPenisCovering>+
 
 REQUIRES COMMENTING
@@ -168,7 +184,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a clothing (called C) is actually at least partially penis covering:
-	unless C is potentially penis covering, decide no;
+	unless C is potentially at least partially penis covering, decide no;
 	if C is not see-through, decide yes;
 	decide no.
 

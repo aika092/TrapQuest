@@ -120,23 +120,27 @@ To compute class outfit of (H - a pink scrunchie):
 	if C is nothing or there is a worn pigtail-scrunchie:
 		if blue-rubber-cheerleader-outfit is off-stage, now C is blue-rubber-cheerleader-outfit;
 		if C is nothing, now C is a random off-stage rubber cheerleader outfit;
-	let P be a random pom-pom;
+	let P be a random off-stage pom-pom;
 	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0 and the number of worn cheerleader outfit is 0 and the number of worn pink rubber dress is 0):
 		if cheerleader-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]A [ShortDesc of C] appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
 		summon C uncursed;
 		now cheerleader-summoned is 1;
 		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
-	otherwise if P is actually summonable:
-		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type]";
+	otherwise if P is actually summonable and cheerleader-summoned < 2:
+		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type][line break]";
 		summon P cursed with quest;
 		now the raw-magic-modifier of P is 0;
+		now cheerleader-summoned is 2;
 		if the player is not ass protected, now the raw-magic-modifier of P is 2.
 
 
@@ -255,7 +259,10 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with O running through worn dresses:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
-				repeat with O running through worn skirts:
+				repeat with O running through worn exclusive corsets:
+					say "Your [O] [wardrobeVanishes of O]!";
+					now O is in pink wardrobe;
+				repeat with O running through worn skirted clothing:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 			now schoolgirl-summoned is 2;

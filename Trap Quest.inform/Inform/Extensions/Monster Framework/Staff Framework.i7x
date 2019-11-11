@@ -124,7 +124,9 @@ To make (M - a staff member) expectant: [Staff members do not wait a turn before
 	do nothing.
 
 This is the staff member unique punishment rule:
-	if there is a worn armband: [No staff members have yet been attacked and no students killed]
+	if the player is immobile:
+		do nothing;
+	otherwise if there is a worn armband: [No staff members have yet been attacked and no students killed]
 		compute detention of current-monster;
 		repeat with M running through unfriendly staff members:
 			calm M;
@@ -365,13 +367,7 @@ To compute potential lesson:
 				compute detention of lesson-teacher of chosen-lesson;
 				now class-time is lessonFrequency;
 			otherwise:
-				let lesson-time be 0;
 				if chosen-lesson is correctly-situated:
-					now lesson-time is 1;
-				otherwise:
-					say "NB: This is the wrong classroom for your rank ([accessory-colour of armband]). Since this is an early alpha of the school, you can still participate in a lesson here if you want. However it might be really buggy depending on which students are currently present. Do you want to have a lesson in the [location of the player]? ";
-					if the player is consenting, now lesson-time is 1;
-				if lesson-time is 1:
 					set up chosen-lesson;
 					progress quest of next-lesson-quest;
 					refresh the clothing-focus-window;
@@ -385,7 +381,9 @@ To compute potential lesson:
 					let B be (the rank of the player * 3) - the bimbo of the player;
 					repeat with C running through worn clothing:
 						if the quest of C is next-lesson-quest, increase B by 2;
-					if B > 0, increase class-time by B * 60. [Lessons are spaced further apart if the player isn't slutty enough for them]
+					if B > 0, increase class-time by B * 60; [Lessons are spaced further apart if the player isn't slutty enough for them]
+				otherwise:
+					say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
 
 To compute teaching of (L - an object):
 	say "BUG - Tried to compute teaching of [L], but it doesn't exist.".
@@ -451,6 +449,9 @@ A time based rule (this is the assembly computation rule):
 Check going when the player is in School16 and there is an active assembly:
 	say "There seems to be some kind of forcefield preventing you from leaving via the doorway until assembly is over." instead.
 
+Check standing when the player is in School16 and the player is prone and there is an active assembly:
+	say "There seems to be some kind of magical force preventing you from standing up until assembly is over." instead.
+
 To execute (A - an assembly):
 	say "[speech style of the assemblyAnnouncer of A]'Actually, I've changed my mind, I've got nothing important to say. Run along now, classes are starting soon.'[roman type][line break]";
 	conclude A.
@@ -485,6 +486,54 @@ To execute (A - soiled-diaper-assembly):
 	DelicateUp 1;
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's enough. And [NameBimbo], make sure you take your disgusting mess with you this time.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
+
+
+egg-assembly is an assembly.
+Definition: egg-assembly is eligible if there is an egg in the School and asshole is not actually occupied.
+To say AssemblyStartFlav of (A - egg-assembly):
+	repeat with SD running through eggs:
+		if SD is in the school, now SD is in the location of the player;
+	let M be the assemblyAnnouncer of A;
+	now the stance of the player is 1;
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs that you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of player] eggs belong: UP [his of the player in upper case] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
+	repeat with C running through ass covering clothing:
+		if C is displacable, now C is crotch-displaced;
+		otherwise now C is in the location of the player.
+
+To decide which number is the assemblyTurns of (A - egg-assembly):
+	decide on the number of eggs in the location of the player.
+
+To execute (A - egg-assembly):
+	let M be the assemblyAnnouncer of A;
+	let ST be a random student in the location of the player;
+	let SD be a random egg in the location of the player;
+	if SD is nothing, let SD be a random held egg;
+	if SD is egg:
+		say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes [NameDesc of SD] and pushes it up against your [asshole]. ";
+		if SD is small egg:
+			say "[big he of ST] pushes it in with a quiet 'pop'.";
+			assfill 1 small eggs;
+		otherwise if SD is medium egg:
+			say "[big he of ST] eases it in with a noisy squelch.";
+			assfill 1 medium eggs;
+		otherwise:
+			say "[big he of ST] slowly forces the massive egg in with a satisfied grunt. It's so big!";
+			assfill 1 large eggs;
+		now SD is penetrating asshole;
+		ruin asshole;
+		destroy SD;
+	otherwise:
+		now the assemblyTime of A is 1;
+	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's it for today. And [NameBimbo], make sure you don't leave your disgusting eggs in my halls again.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
+
+Check squatting when egg-assembly is active:
+	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
+
+Check wearing when egg-assembly is active:
+	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
+
+Check replacing when egg-assembly is active:
+	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
 
 
 
@@ -588,7 +637,7 @@ To compute wand chair detention:
 		if the boredom of M is 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
 	if detention-turns > 0:
 		say "The magic wand [one of]buzzes powerfully[or]continues to buzz[stopping]!";[possibly add text here describing arousal so far]
-		arouse 500;
+		stimulate vagina from detention chair; [TODO NEXT: modify detention chair's stimulation value]
 		FatigueUp 30;
 		if vagina is pushed over the edge, vaginally orgasm shamefully;
 	otherwise:
@@ -743,7 +792,7 @@ To compute rem chair detention:
 
 
 To say RemHypnoContent:
-	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns. [line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish > 0]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if]. [line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
+	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns. [line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish > 0]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if].[line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
 	otherwise say "PLACEHOLDER".
 
 

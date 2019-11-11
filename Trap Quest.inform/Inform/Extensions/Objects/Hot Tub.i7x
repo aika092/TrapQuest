@@ -8,9 +8,10 @@ To decide which figure-name is the examine-image of (C - hot-tub):
 To say ExamineDesc of (H - hot-tub):
 	say "This large tub bubbles away with warm, inviting water.".
 
-To compute showering hot-tub:
+To compute showering (H - hot-tub):
 	say "Your time in the water leaves you feeling completely refreshed!";
 	now the fatigue of the player is 0;
+	BodyHeal 10;
 	let M be a random alive male teacher;
 	if diaper quest is 1, now M is a random alive teacher;
 	if M is monster and the refactory-period of M < 0 and armband is worn and face is not actually occupied and M is not in the location of the player:

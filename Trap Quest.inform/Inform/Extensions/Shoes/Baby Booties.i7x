@@ -2,9 +2,9 @@ Baby Booties by Shoes begins here.
 
 A baby booties is a kind of shoes. A baby booties is usually cotton. A baby booties is usually unique.
 
-The printed name of baby booties is usually "[clothing-title-before]pair of baby booties[clothing-title-after]". The text-shortcut of baby booties is "bbo".
+The printed name of baby booties is usually "[clothing-title-before]pair of baby booties[clothing-title-after]". The text-shortcut of baby booties is "bbo". Understand "baby", "booties" as baby booties.
 
-There is 1 baby booties.
+pink-baby-booties is a baby booties.
 
 Definition: a baby booties is pink themed: decide yes.
 

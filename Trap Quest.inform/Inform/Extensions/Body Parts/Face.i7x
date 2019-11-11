@@ -63,6 +63,10 @@ REQUIRES COMMENTING
 Face has a number called lips.
 
 
+[Can it be accessed right now with nothing blocking it?]
+Definition: face is undefended if face is not actually occupied.
+
+
 [!<facePresentableRules:Rulebook>*
 
 REQUIRES COMMENTING

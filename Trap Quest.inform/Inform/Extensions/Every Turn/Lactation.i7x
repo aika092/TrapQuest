@@ -117,7 +117,7 @@ To trigger lactation:
 				MilkDown M ;
 				AssFill M Milk;
 			say "The stimulation [one of]of the suction on your nipples combined with the [milk] rushing into your [asshole] [or][stopping]makes you aroused[if the sex addiction of the player < 11] against your will[end if].";
-			arouse 400;
+			passively stimulate asshole;
 		otherwise if N is clothing:
 			if M is 1:
 				say "A few drops of [milk] leak from your [BreastDesc] and [if N is bra]into the cups of[otherwise]onto[end if] your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if]";

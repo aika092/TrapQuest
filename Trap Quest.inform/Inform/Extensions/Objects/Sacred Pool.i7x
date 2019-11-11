@@ -9,7 +9,7 @@ To decide which figure-name is the examine-image of (C - sacred pool):
 To say ExamineDesc of (C - sacred pool):
 	say "A [if the corruption of C < 90]crystal clear pool of water[otherwise if the corruption of C < 180]slightly murky pool of water[otherwise]an opaque pool of what might be water[end if], rippling gently as a stone statue on the far edge gently trickles more in from a small basin cradled in her hands. The statue depicts a [if pregnancy fetish is 1]heavily pregnant nude[otherwise]robed[end if] woman, cradling a small basin of water from the pool. She is bowing slightly, allowing water from the basin to slowly trickle into the pool.".
 
-To compute showering sacred pool:[Much later: some interaction with slimegirl; Soon: bad effect when pool is corrupted]
+To compute showering (SP - sacred pool):[Much later: some interaction with slimegirl; Soon: bad effect when pool is corrupted]
 	let B be the number of worn blessed clothing + the number of worn cursed clothing;
 	if the corruption of the sacred pool > 200:
 		say "Tendrils of liquid lash out as soon as you break the surface, latching hold of you, dragging you the rest of the way in and pulling you underwater. You are thrashed around violently underneath the surface and abruptly thrown back out.";

@@ -129,7 +129,7 @@ To say LeftoverDesc (N - 123):
 	say "An unconscious adult baby is lying here, with a very full diaper and a smile on her face.".
 
 To say DiaperCheckResultsDryForNowFlav of (M - an adult baby slave):
-	say "[speech style of M]'[one of]Baby Waby foo foo, diapered up so thick! Dry and clean, so it seems, it has to be a trick!'[or]Haha, good joke, you must have literally just got a change, huh? There's no way you're tricking me, I know a pottypants when I see one!'[or]Why is this dry, sissy? Why would you waste a perfectly good diaper by not using it, huh?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Baby Waby foo foo, diapered up so thick! Dry and clean, so it seems, it has to be a trick!'[or]Haha, good joke, you must have literally just got a change, huh? There's no way you're tricking me, I know a pottypants when I see one!'[or]Why is this dry, [sissy slut]? Why would you waste a perfectly good diaper by not using it, huh?'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsDrynessProvedFlav of (M - an adult baby slave):
 	say "[speech style of M]'[one of]Hmph fine, I guess you really don't need diapers after all. It's your own loss really, but I don't mind if you want to take it off now.'[or]I guess diapers really aren't for you. That's sad, but I guess it's only fair that I allow you to wear big girl panties again... if that's what you really want.'[in random order][roman type][line break]".
@@ -381,12 +381,12 @@ To compute facial sex of (M - an adult baby slave):
 		if there is a worn perceived messed diaper:
 			say "[BigNameDesc of M] [one of]thoroughly rubs and mashes[or]lovingly massages[stopping] your messy diaper with her hands. [line break][speech style of M]'[one of]Do you like wearing messy diapers too? I thought I was alone in that!'[or]Don't you love the way they squish when they're dirty?'[or]Is it weird that I like the scent of your messy nappy?'[or]Got any more in your bowels? I think it'd be pretty hot if we messed our diapers at the same time, especially while I sit on your face.'[stopping][roman type][line break]";
 			humiliate 300;
-			arouse 300;
+			stimulate vagina from M;
 			DiaperAddictUp 1;
 		otherwise:
 			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from her advantageous position[or][stopping]. [line break][speech style of M]'[one of]I love how nice the outside of a nappy feels against my skin... What do you think?'[or]Do you think you could use your nappy for me? Pretty [please] with sugar on top?'[or]You know, it would make me really happy if you used your diaper for me...'[or]You know, I might cum faster if you use your diaper... That would be a pretty big turn-on.'[or]If you get stuck here forever and ever, I'll let you be my little [if player is male]brother[end if][if player is female]sister[end if].'[stopping][roman type][line break]";
 			humiliate 200;
-			arouse 400;
+			stimulate vagina from M;
 			if a random number between 1 and 3 is 1, DiaperAddictUp 1;
 	say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise if diaper quest is 1 or sex fainting is 0]You still can't breathe, and you are now pretty much out of oxygen completely![otherwise]You still can't breathe. You're going to faint any second now![end if]".
 

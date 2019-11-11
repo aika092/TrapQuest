@@ -138,21 +138,35 @@ REQUIRES COMMENTING
 +!]
 To say MaxAssSizeDesc:
 	if extreme proportions fetish is 1:
-		if max ass size is 11, say "humongous";
-		if max ass size is 12, say "Kardashian sized";
-		if max ass size is 13, say "giant wobbling";
-		if max ass size is 14, say "watermelon sized";
-		if max ass size is 16, say "beachball sized";
-		if max ass size is 18, say "comically inflated";
-		if max ass size is 20, say "impossibly giant";
+		if max ass size <= 11:
+			say "humongous";
+		otherwise if max ass size is 12:
+			say "Kardashian sized";
+		otherwise if max ass size is 13:
+			say "giant wobbling";
+		otherwise if max ass size is 14:
+			say "watermelon sized";
+		otherwise if max ass size <= 16:
+			say "beachball sized";
+		otherwise if max ass size <= 18:
+			say "comically inflated";
+		otherwise:
+			say "impossibly giant";
 	otherwise:
-		if max ass size is 1, say "completely flat";
-		if max ass size is 2, say "flat";
-		if max ass size is 3, say "tight";
-		if max ass size is 4, say "toned";
-		if max ass size is 6, say "curvy";
-		if max ass size is 8, say "cushioned";
-		if max ass size is 10, say "oversized".
+		if max ass size <= 1:
+			say "completely flat";
+		otherwise if max ass size is 2:
+			say "flat";
+		otherwise if max ass size is 3:
+			say "tight";
+		otherwise if max ass size is 4:
+			say "toned";
+		otherwise if max ass size <= 6:
+			say "curvy";
+		otherwise if max ass size <= 8:
+			say "cushioned";
+		otherwise:
+			say "oversized".
 
 
 [!<YourselfIsBottomHeavy>+
@@ -590,7 +604,7 @@ To FatAssUp (X - a number):
 				summon prime USDA tattoo;
 				say "A brand appears on your butt!";
 				try examining prime USDA tattoo;
-	if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][newbie style]Newbie tip: You're starting to pack on the pounds in the butt area! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Every turn you 'resist' during sex will exercise your butt muscles a bit, and help you lose that fat. Also, picking items up off the ground when standing exercises that butt slowly but surely. It also increases fatigue, though.[roman type][line break][or][stopping]".
+	if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][newbie style]Newbie tip: You're starting to pack on the pounds in the butt area! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Every turn you 'resist' [if diaper quest is 1]when NPCs are punishing you[otherwise]during sex[end if] will exercise your butt muscles a bit, and help you lose that fat.[roman type][line break][or][stopping]".
 
 [!<FatAssDownX>+
 

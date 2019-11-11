@@ -59,6 +59,7 @@ Check entering the throne:
 	if the player is flying, say "You're not even on the ground!" instead;
 	if the player is prone, say "You can't while you are on your hands and knees." instead;
 	if the throne is triggered, say "You already are!" instead;
+	if the woman-status of woman-barbara is 97 and the throne-scene of woman-barbara <= 4, say "It's occupied." instead;
 	allocate 2 seconds;
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: The throne has a lot of different possible outcomes when you sit on it, but you can only try it once in a while. Come back in a bit and try again![roman type][line break][or][stopping]";
 	say "You sit on the throne. ";
@@ -371,6 +372,7 @@ To ThroneDisconnect:
 	otherwise if the largeness of belly > 3:
 		 cutshow figure of throne cutscene 6 for the throne;
 	if the weight of belly > 18:
+		if seconds is 0, allocate 3 seconds;
 		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";
 		try kneeling.
 

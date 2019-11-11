@@ -49,8 +49,6 @@ Definition: an object is thigh-spreading: decide no.
 To decide which number is the DQBulk of (K - an object):
 	decide on 0.
 
-To say chess moves:
-	say "".
 
 To compute chess soiling:
 	do nothing.

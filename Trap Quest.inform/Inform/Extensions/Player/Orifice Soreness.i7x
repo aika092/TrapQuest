@@ -66,8 +66,11 @@ To decide which number is the tolerance of (F - a fuckhole):
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (O - an object) on (F - a fuckhole):
+To decide which number is the stimulation of (O - an object) on (F - a body part):
 	if the semen volume of vagina > 6 and F is vagina, decide on 4; [Pussy creampie expulsion]
+	if diaper quest is 1:
+		if F is fuckhole, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+		decide on 1;
 	decide on 0.
 
 [!<DecideWhichNumberIsTheStimulationOfMonster>+
@@ -75,26 +78,30 @@ To decide which number is the stimulation of (O - an object) on (F - a fuckhole)
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (M - a monster) on (F - a fuckhole):
-	if diaper quest is 1, decide on 6;
-	let S be the girth of M;
-	if interracial fetish is 1:
-		if M is dark skinned:
-			increase S by ((the BBC addiction of the player - 1) / 2) - 1;
-		otherwise if M is human:
-			if the player is queen of spades, decrease S by the BBC addiction of the player / 2;
-			if F is vagina and black hole tattoo is worn, decrease S by 2;
-	if S < 1, decide on 1;
-	decide on S.
+To decide which number is the stimulation of (M - a monster) on (F - a body part):
+	if diaper quest is 1, decide on 4 + (the difficulty of M / 8);
+	if F is fuckhole:
+		let S be the girth of M;
+		if interracial fetish is 1:
+			if M is dark skinned:
+				increase S by ((the BBC addiction of the player - 1) / 2) - 1;
+			otherwise if M is human:
+				if the player is queen of spades, decrease S by the BBC addiction of the player / 2;
+				if F is vagina and black hole tattoo is worn, decrease S by 2;
+		if S < 1, decide on 1;
+		decide on S;
+	otherwise:
+		decide on 1 + (the difficulty of M / 8).
 
 [!<DecideWhichNumberIsTheStimulationOfThing>+
 
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (T - a thing) on (F - a fuckhole):
-	if T is insertable, decide on (the girth of T * 2) / 3;
-	if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+To decide which number is the stimulation of (T - a thing) on (F - a body part):
+	if F is fuckhole:
+		if T is insertable, decide on the girth of T / 2;
+		if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 	decide on 0.
 
 [!<DecideWhichNumberIsTheStimulationOfTrap>+
@@ -102,21 +109,77 @@ To decide which number is the stimulation of (T - a thing) on (F - a fuckhole):
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the stimulation of (T - a trap) on (F - a fuckhole):
+To decide which number is the stimulation of (T - a trap) on (F - a body part):
 	if the girth of T > 0, decide on (the girth of T * 2) / 3;
 	if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 	decide on 0.
 
+To stimulate (F - a body part):
+	let T be a random thing penetrating F;
+	stimulate F from T.
+
+To stimulate (F - a body part) times (N - a number):
+	let T be a random thing penetrating F;
+	stimulate F from T times N.
+
+[This one can't cause an automatic orgasm]
+To passively stimulate (F - a body part):
+	let T be a random thing penetrating F;
+	passively stimulate F from T.
+
+To passively stimulate (F - a body part) times (N - a number):
+	while N > 0:
+		decrease N by 1;
+		passively stimulate F.
+
+To stimulate (F - a body part) from (T - an object):
+	stimulate F from T times 1.
+
+To stimulate (F - a body part) from (T - an object) times (N - a number):
+	while N > 0:
+		decrease N by 1;
+		if the player is able to get horny: [need to check this each time]
+			passively stimulate F from T;
+			if F is orgasming, do nothing. [This is how we check for an orgasm]
+
+To passively stimulate (F - a body part) from (T - an object) times (N - a number):
+	while N > 0:
+		decrease N by 1;
+		passively stimulate F from T.
+
+
+[This one can't cause an automatic orgasm]
+To passively stimulate (F - a body part) from (T - an object):
+	if the player is able to get horny:
+		let A be the sensitivity of F + 5;
+		if F is asshole, increase A by the square root of the anal sex addiction of the player;
+		if F is vagina or F is penis: [We use vagina as a shortcut to mean penis sometimes]
+			if the player is female, increase A by the square root of the vaginal sex addiction of the player;
+			otherwise increase A by the sex addiction of the player / 2;
+		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
+		let ST be stimulation of T on F * 6;
+		let AR be (ST + A) * 20;
+		if F is fuckhole or F is penis:
+			increase AR by 350;
+		otherwise if F is breasts:
+			increase AR by 200;
+		otherwise if F is face or F is thighs:
+			increase AR by 125;
+		otherwise:
+			increase AR by 50;
+		if debuginfo > 0, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is face or F is thighs]125)[otherwise]25)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
+		arouse AR.
+
 [!<latestAssholeInvader:Object>*
 
-REQUIRES COMMENTING
+This is just used to track which object we most recently told the player they are struggling to handle.
 
 *!]
 latest-asshole-invader is an object that varies.
 
 [!<latestVaginaInvader:Object>*
 
-REQUIRES COMMENTING
+This is just used to track which object we most recently told the player they are struggling to handle.
 
 *!]
 latest-vagina-invader is an object that varies.
@@ -140,6 +203,7 @@ To communicate struggling of (F - a fuckhole):
 			if ungape is 0, say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
 			otherwise say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
 
+
 [!<RuinRollFuckhole>+
 
 REQUIRES COMMENTING
@@ -147,15 +211,6 @@ REQUIRES COMMENTING
 +!]
 To RuinRoll (F - a fuckhole):
 	let T be a random thing penetrating F;
-	if refactoryperiod <= 0:
-		let A be the sensitivity of F;
-		if F is asshole, increase A by the square root of the anal sex addiction of the player;
-		if F is vagina, increase A by the square root of the vaginal sex addiction of the player;
-		if there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
-		let ST be stimulation of T on F * 250;
-		let AR be 350 + ST + (A * 100);
-		if debuginfo > 0, say "[input-style]Stimulation calculation: 350 + stimulation ([ST]) + addiction bonus ([A * 100]) = [AR][roman type][line break]";
-		arouse AR;
 	if diaper quest is 0:
 		let X be the tolerance of F;
 		if X < 1, now X is 1; [Always a small chance of avoiding soreness]
@@ -196,63 +251,6 @@ To RuinRoll (F - a fuckhole):
 
 
 
-[!<SayRuinedFlavOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
-To say RuinedFlav of (F - a fuckhole):
-	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If [FuckerDesc of random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
-
-
-[!<CheckSorenessFaintingOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
-To check soreness fainting of (F - a fuckhole):
-	if sex fainting is 1 or there is a futanari slutty sister penetrating F:
-		let N be the raw anal sex addiction of the player;
-		if F is vagina, now N is the raw vaginal sex addiction of the player;
-		if the tolerated of F <=  N / 2:
-			increase the tolerated of F by 1;
-		otherwise:
-			say "[one of]Your [variable F] is so sore that your mind can't take it any more. You feel yourself start to pass[or]You are on the verge of passing[stopping] out.[if debugmode > 0 and the raw delicateness of the player < 20]Do you want to steel your mind and power through (this will not change any stats because you are in debug mode)? [otherwise if the raw delicateness of the player < 20][line break]Do you want to steel your mind and attempt to power through (this will cause a slight increase in delicateness)? [end if]";
-			if the raw delicateness of the player < 20 and the player is consenting:
-				say "You steel your mind and manage to power through the intense feelings without fainting[if the delicateness of the player < 4][otherwise if the delicateness of the player < 8]. You whimper gently[otherwise if the delicateness of the player < 12]. You sob quietly[otherwise if the delicateness of the player < 16]. You can't help but cry[otherwise if diaper lover >= 1]. You bawl loudly like a baby[otherwise]. You bawl loudly[end if].";
-				if debugmode is 0:
-					PainUp 1;
-					potentially despair about F sex;
-			otherwise:
-				if the raw delicateness of the player < 20, say "Your mind is too weak and the feelings are too intense, and you fail to stay conscious!";
-				now delayed fainting is 1;
-				IntDown 1;
-				now the fainting reason of the player is 18;
-	otherwise:
-		increase sex-hurt-balance by 1;
-		if sex-hurt-balance > 1:
-			now sex-hurt-balance is 0;
-			PainUp 1;
-			potentially despair about F sex.
-
-[!<sexHurtBalance:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
-sex-hurt-balance is a number that varies.
-
-[!<PotentiallyDespairAboutFuckholeSex>+
-
-REQUIRES COMMENTING
-
-+!]
-To potentially despair about (F - a fuckhole) sex:
-	if the raw sex addiction of the player > the raw delicateness of the player:
-		say "[one of]Your addiction to sex slightly decreases.[or]Your mind associates sex with pain, slightly reducing your opinion of it.[in random order] ";
-		SilentlySexAddictDown 1;
-		if F is asshole and the raw anal sex addiction of the player * 2 > the raw delicateness of the player, AnalSexAddictDown 1;
-		if F is vagina and the raw vaginal sex addiction of the player * 2 > the raw delicateness of the player, VaginalSexAddictDown 1.
 
 
 To compute submission success of (M - a thing) in (F - a fuckhole):

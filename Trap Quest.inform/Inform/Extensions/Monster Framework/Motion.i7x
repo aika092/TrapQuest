@@ -15,11 +15,13 @@ To compute monstermotion of (M - a monster): [This is default wandering if funct
 
 To compute mandatory room leaving of (M - a monster):
 	let L be the location of M;
-	let N be 100;
+	let N be 30;
 	while N > 0 and M is in L:
 		compute room leaving of M;
 		decrease N by 1;
-	if N <= 0, say "BUG: [NameDesc of M] is unable to leave [L]. Please submit a save file to Aika for investigation.";
+	while N > -15 and M is in L:
+		decrease N by 1;
+		regionally place M.
 
 To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
 	if M is in Dungeon11 or M is in Dungeon10:

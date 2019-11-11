@@ -136,7 +136,74 @@ A time based rule (this is the invigoration elixir decay rule):
 		decrease invigoration-elixir-timer by time-seconds;
 		if invigoration-elixir-timer < 0, now invigoration-elixir-timer is 0.
 
+[Section 4 Elixir of Siphoning
 
+A elixir of siphoning is a kind of elixir. The printed name of elixir of siphoning is "[TQlink of item described]elixir of siphoning[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of elixir of siphoning is "[TQlink of item described]elixirs of siphoning[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of elixir of siphoning is "esp". There are 2 elixir of siphoning.
+
+To say ExamineDesc of (B - a elixir of siphoning):
+	say "A round clear hip flask filled with a dose of shimmering red liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
+
+To BackgroundRender (T - a elixir of siphoning) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	draw a rectangle TQcolour of red in the current focus window at X1 by Y1 with size DX by DY.
+
+To decide which number is the alchemy key of (A - a elixir of siphoning):
+	decide on 34.
+
+siphoning-elixir-timer is a number that varies. siphoning-elixir-timer is usually 0.
+siphoning-elixir-charge is a number that varies. siphoning-elixir-charge is usually 0.
+
+Carry out quaffing elixir of siphoning:
+	say "You pull out the small stopper and drink the shimmering liquid. You feel... hungry. You're not sure what that means";
+	let R be a random number between 20 and 25;
+	if the noun is blessed, now siphoning-elixir-charge is 100;
+	if the noun is cursed, now siphoning-elixir-charge is -1;
+	if the noun is not blessed and the noun is not cursed, now siphoning-elixir-charge is 1;
+	now siphoning-elixir-timer is R.
+
+A time based rule (this is the siphoning elixir decay rule):
+	if siphoning-elixir-timer > 0:
+		decrease siphoning-elixir-timer by time-seconds;
+		if siphoning-elixir-timer < 0:
+			say "You feel a wave of pleasure as your stored energy is fully absorbed into your body.";
+			if siphoning-elixir-charge > 100:
+				decrease siphoning-elixir-charge by 100;
+				let X be siphoning-elixir-charge;
+				if the player is female or the size of penis is 10:
+					if the virgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
+						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realize your [vagina] has been replaced by your original [player-penis]!";
+						ReverseSexChange the player;
+					otherwise:
+						say "You feel smarter!";
+						IntUp X / 2;
+				otherwise:
+					say "Your [player-penis] grows!";
+					PenisUp X / 2;
+				say "You feel stronger!";
+				StrengthUp X / 2;
+			otherwise if siphoning-elixir-charge > 0:
+				let X be siphoning-elixir-charge;
+				if the player is female or the size of penis is 10:
+					say "You feel smarter!";
+					IntUp X / 3;
+				otherwise:
+					say "Your [player-penis] grows!";
+					PenisUp X / 3;
+				say "You feel stronger!";
+				StrengthUp X / 3;
+			otherwise:
+				let X be siphoning-elixir-charge * -1;
+				if the size of penis > 0:
+					say "Your [player-penis] shrinks!";
+					PenisDown (X / 2) + 1;
+				otherwise:
+					say "You feel dumber.";
+					IntDown (X / 2) + 1;
+				say "You feel weaker.";
+				StrengthDown X / 2;
+			say "You feel like your magical power has increased.";
+			MagicPowerUp (X / 2) + 1;[you always get a little bit of power out of it]
+			now siphoning-elixir-charge is 0;
+			now siphoning-elixir-timer is 0.]
 
 Elixirs ends here.
 

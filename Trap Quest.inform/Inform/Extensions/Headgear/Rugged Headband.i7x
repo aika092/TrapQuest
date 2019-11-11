@@ -4,7 +4,7 @@ rugged-headband is a headgear. rugged-headband is unique. rugged-headband is red
 
 Definition: rugged-headband is roleplay: decide yes. [Extension not included in DQ]
 
-The printed name of rugged-headband is usually "[clothing-title-before]rugged headband[clothing-title-after]". The text-shortcut of rugged-headband is "rhb".
+The printed name of rugged-headband is usually "[clothing-title-before]rugged headband[clothing-title-after]". The text-shortcut of rugged-headband is "rghb".
 
 Figure of rugged-headband is the file "Items/Accessories/Head/ruggedheadband1.png".
 To decide which figure-name is the clothing-image of (C - rugged-headband):
@@ -50,7 +50,7 @@ To decide which number is the intelligence-influence of (C - rugged-headband):
 
 domination-quest is a headgear-clothing-quest.
 
-To uniquely set up (C - a rugged-headband):
+To uniquely set up (C - rugged-headband):
 	now the quest of C is domination-quest.
 
 To say QuestFlav of (Q - domination-quest):

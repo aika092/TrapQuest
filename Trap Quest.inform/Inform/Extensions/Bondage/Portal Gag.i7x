@@ -26,7 +26,7 @@ To compute periodic effect of (C - portal gag):
 		if the charge of C > a random number between 16 and 40:
 			now the charge of C is 0;
 			say "[bold type][one of]You can't help but[or]Once again you[stopping] accidentally stimulate yourself with your tongue![roman type][line break]";
-			arouse 1000;
+			stimulate vagina from face;
 			if the player is male:
 				if penis is pushed over the edge, vaginally orgasm shamefully;
 			otherwise:

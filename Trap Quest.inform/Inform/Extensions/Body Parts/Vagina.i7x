@@ -30,6 +30,11 @@ To decide which number is the total felchable volume of (F - vagina): [man I lov
 	if the pregnancy of the player > 0, decide on the semen volume of F;
 	otherwise decide on the total volume of F.
 
+[Can it be accessed right now with nothing blocking it?]
+Definition: vagina is undefended:
+	if vagina is actually occupied or the player is pussy protected or the player is male, decide no;
+	decide yes.
+
 Definition: vagina is exposed:
 	if the player is male, decide no;
 	if the at least partial concealer of vagina is a thing, decide no;

@@ -26,12 +26,11 @@ Check plugging something with:
 			say "You relax your [variable noun] as much as you can to try and push the [ShortDesc of the second noun] inside of you.".
 
 Carry out plugging something with:
+	allocate 6 seconds;
 	humiliate 50;
 	compute toyInsertion of the second noun into the noun;
 	unless the second noun is worn:
 		if the second noun is penetrating the noun, now the second noun is worn by the player.
-Report plugging something with:
-	allocate 6 seconds.
 
 []
 To compute toyInsertion of (S - a thing) into (F - a fuckhole):
@@ -69,6 +68,7 @@ Check unplugging something:
 	if diaper quest is 0 and the girth of the noun > the insertableGirthAcceptance of a random orifice penetrated by the noun + 4 and the noun is plug:
 		say "You push with your [random orifice penetrated by the noun]'s muscles and [if the noun is anal beads]pull on the cord [printed name of noun], but they're just so big that they[otherwise]pull on the base of the [printed name of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
 Carry out unplugging something:
+	allocate 6 seconds;
 	if the noun is anal beads, do nothing instead;[Important!]
 	if the player is in danger:
 		say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [printed name of the noun] out of your fuckhole to make it available for the [printed name of random unfriendly interested monster in the location of the player]. Your cheeks turn a beetroot shade of red.";
@@ -85,8 +85,7 @@ Report unplugging something:
 		say "As you pull it out, it glows strongly. It feels more powerful, as least for now!";
 		now the raw-magic-modifier of the noun is 5;
 	otherwise if the number of body parts penetrated by the noun < 1:
-		say "Successfully removed.";
-	allocate 6 seconds.
+		say "Successfully removed.".
 
 
 Plugging ends here.

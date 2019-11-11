@@ -70,7 +70,7 @@ To compute default cursed drinking (X - a bottle):
 			increase alcohol level;
 	if R is 9:
 		say "Your crotch feels all tingly!";
-		arouse 2000.
+		passively stimulate vagina times 3.
 
 
 [!<overfullQuotient:Integer>*
@@ -303,10 +303,10 @@ To compute drinking effect (N - 22):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
 		say "A very familiar taste. Oh nice, it's [milk]! That must be healthy.";
 	otherwise:
-		say "Another healthy gulp of [milk]. Yum!";
-	increase the fat-burning of the player by 250;
-	if the noun is blessed, increase the fat-burning of the player by 200;
-	MilkTasteAddictUp 1;
+		say "[one of]A[or]Another[stopping] healthy gulp of [milk]. Yum!";
+	MilkDrunkUp 1;
+	if the noun is blessed, increase the fat-burning of the player by 100;
+	if diaper quest is 1, progress quest of puddle-licking-quest;
 	progress quest of milk-drinking-quest.
 
 [!<ComputeDrinkingEffect23>+

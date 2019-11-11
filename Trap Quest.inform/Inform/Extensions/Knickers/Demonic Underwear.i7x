@@ -154,7 +154,7 @@ This is the demon junk punishment rule:
 			SexChange J;
 		if the player is female:
 			if the number of worn crotch tattoos is 0 and there is a worn tattoo:
-				say "You feel a piercing pain above your [vagina], and look down to see the words 'Xavier[']s Cunt' burned into your skin.";
+				say "You feel a piercing pain above your [vagina], and look down to see the words 'Xavier's Cunt' burned into your skin.";
 				summon xavier's cunt tattoo;
 			otherwise:
 				VaginalSexAddictUp 5;

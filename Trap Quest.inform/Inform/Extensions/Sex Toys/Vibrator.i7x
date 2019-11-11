@@ -22,16 +22,15 @@ To compute periodic effect of (P - a vibrator):
 		let F be a random fuckhole penetrated by P;
 		if P is blessed:
 			say "[one of]Your [ShortDesc of P] is vibrating just slowly enough to stimulate you without getting you any closer to an orgasm. It's maddening![or][or]Your [ShortDesc of P] continues to stimulate you.[or][cycling]";
-			arouse 100;[blessed vibrator does not increase soreness, it merely increases arousal]
+			passively stimulate F from P;
 		otherwise:
 			if the soreness of F > 7:
 				say "[one of]Your [ShortDesc of P] slows down just enough to keep stimulating you without [if refactoryperiod < 1]getting you any closer to orgasm. How cruel![otherwise]making you more sore. The relief is nice, but you feel a mounting need for release.[end if][or][or]Your [ShortDesc of P] continues to stimulate you.[or][or][or][cycling]";
-				arouse 200;
+				passively stimulate F from P;
 			otherwise:
 				if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more sore![or]Your [ShortDesc of P] continues to ruin your [variable F]![or]Your [ShortDesc of P] is still making you sore.[cycling]";
 				otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
-				if F is asshole, ruin asshole;
-				otherwise ruin vagina;
+				ruin F;
 				if P is cursed, arouse 200.
 
 To decide which number is the original price of (C - a vibrator):

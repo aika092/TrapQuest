@@ -25,7 +25,7 @@ Definition: heart hairpin is pink themed: decide yes.
 Definition: heart hairpin is white themed: decide yes.
 
 To decide which number is the intelligence-influence of (H - heart hairpin):
-	let M be the magic-power of the player;
+	let M be the magic power of the player;
 	let I be 0;
 	if M > 0:
 		increase I by 1;
@@ -63,7 +63,10 @@ To compute class outfit of (H - heart hairpin):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materializes around you.[roman type][line break]";

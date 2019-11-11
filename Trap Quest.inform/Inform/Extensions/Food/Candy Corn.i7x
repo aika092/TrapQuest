@@ -26,7 +26,7 @@ Carry out TQeating candy corn:
 
 To compute CandyCornEat:
 	if diaper quest is 1:
-		say "[second custom style]TASTY... TASTY... TASTY! [roman type]The word reverberates in your head over and over again. ";
+		say "[second custom style]TASTY... TASTY... TASTY![roman type][line break]The word reverberates in your head over and over again. ";
 		if hypno-trigger-tasty is 0:
 			say "That was weird...";
 			now hypno-trigger-tasty is 1;

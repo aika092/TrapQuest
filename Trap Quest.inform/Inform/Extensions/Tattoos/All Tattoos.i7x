@@ -575,7 +575,7 @@ Definition: buttslut tattoo is drawable:
 	if diaper quest is 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - buttslut tattoo):
-	say "The words BUTT SLUT cover the entirety of your [if the thickness of hips > 7]giant[otherwise if the thickness of hips > 5]huge[end if] ass cheeks, in a large and colourful classic tattoo font.[line break][if the anal sex addiction of the player < 3][line break][variable custom style]But I'm not! *sob*[otherwise if the anal sex addiction of the player < 7][variable custom style]Well now everything is going to aim for my [asshole], isn't it?![otherwise][line break][second custom style]This way everything and everyone knows that my [asshole] is open for business![end if][roman type][line break]".
+	say "The words BUTT SLUT cover the entirety of your [if the thickness of hips > 7]giant[otherwise if the thickness of hips > 5]huge[end if] ass cheeks, in a large blue classic tattoo font, with what looks like thick cum dripping from the letters.[line break][if the anal sex addiction of the player < 3][line break][variable custom style]But I'm not! *sob*[otherwise if the anal sex addiction of the player < 7][variable custom style]Well now everything is going to aim for my [asshole], isn't it?![otherwise][line break][second custom style]This way everything and everyone knows that my [asshole] is open for business![end if][roman type][line break]".
 To decide which number is the initial outrage of (T - buttslut tattoo):
 	decide on 13.
 This is the buttslut tattoo butt slut rule:
@@ -730,7 +730,9 @@ To say CurrentlyVisibleFlav of (C - cum dumpster lip tattoo):
 To say visibility-desc of (T - cum dumpster lip tattoo):
 	do nothing.
 This is the cum dumpster tattoo prevents gag reflex rule:
-	if cum dumpster lip tattoo is worn, rule succeeds.
+	if cum dumpster lip tattoo is worn:
+		if debuginfo > 0, say "[input-style]Avoid gagging check: cum dumpster lip tattoo | automatic success[roman type][line break]";
+		rule succeeds.
 The cum dumpster tattoo prevents gag reflex rule is listed in the gag reflex rules.
 Definition: cum dumpster lip tattoo is semen themed: decide yes.
 Definition: cum dumpster lip tattoo is oral sex themed: decide yes.
@@ -1588,6 +1590,22 @@ To decide which number is the initial cringe of (T - lipstick crystal tattoo):
 
 
 
+lock-it tattoo is a crotch tattoo. The tattoo-title of lock-it tattoo is "lock it then rock it".
+Definition: lock-it tattoo is drawable:
+	if there is a worn crotch tattoo, decide no;
+	if diaper quest is 1, decide no;
+	if bondage protection is 1, decide no;
+	decide yes.
+Definition: lock-it tattoo is eligible:
+	if the noun is skeleton key or the noun is bondage or the noun is wrist locking clothing or the noun is ankle locking clothing or the noun is strapon-panties, decide yes;
+	decide no.
+To say tattoo-desc of (T - loser tattoo):
+	say "The phrase 'Lock it, then rock it' is written above your [genitals], with a drawing of a key and a black arrow pointing down at your [genitals]. The dot of the 'i' in 'lock it' is a heart. You feel that there's a good chance you could get punished for masturbating...".
+Definition: lock-it tattoo is heart themed: decide yes.
+To decide which number is the initial outrage of (T - lock-it tattoo):
+	decide on 5.
+
+
 
 
 loser tattoo is a body tattoo. The tattoo-title of loser tattoo is "loser".
@@ -1742,7 +1760,7 @@ Definition: no-panties tattoo is eligible:
 	if the noun is crotch covering no protection clothing or the noun is undies, decide yes;
 	decide no.
 To say tattoo-desc of (T - no-panties tattoo):
-	say "The words 'no panties' are tattooed in small handwriting on your hip near your crotch.".
+	say "The words 'no panties' are tattooed in large letters on your hip near your crotch, underneath a drawing of panties and and a big red cross.".
 To decide which number is the initial outrage of (T - no-panties tattoo):
 	decide on 8.
 
@@ -2020,6 +2038,26 @@ To decide which number is the delicateness-influence of (T - property-tattoo):
 
 
 
+pull-to-choke tattoo is a body tattoo. The tattoo-title of pull-to-choke tattoo is "pull to choke".
+Definition: pull-to-choke tattoo is drawable:
+	if diaper quest is 1 or pull-to-choke tattoo is worn, decide no;
+	if the player is female, decide yes;
+	decide no.
+Definition: pull-to-choke tattoo is eligible:
+	if the noun is necklace or the noun is neckwear, decide yes;
+	decide no.
+To say tattoo-desc of (T - pull-to-choke tattoo):
+	say "The words 'pull to choke' is written just below your chin, just above a drawing of a belt looped around your neck.".
+To decide which number is the delicateness-influence of (T - pull-to-choke tattoo):
+	decide on 2.
+To decide which number is the initial outrage of (T - pull-to-choke tattoo):
+	decide on 8.
+To decide which object is the concealer of (T - pull-to-choke tattoo):
+	decide on a random worn actually dense neck covering clothing.
+
+
+
+
 pussy deluxe tattoo is a crotch tattoo. The tattoo-title of pussy deluxe tattoo is "pussy deluxe".
 Definition: pussy deluxe tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
@@ -2257,7 +2295,7 @@ Definition: sissy black cock whore tattoo is whore themed: decide yes.
 Definition: sissy black cock whore tattoo is drawable:
 	if there is a worn chest tattoo, decide no;
 	if interracial fetish is 0, decide no;
-	if the player is male and tg fetish is 0, decide yes;
+	if the player is male and tg fetish is 0 and transGender is 0, decide yes;
 	decide no.
 Definition: sissy black cock whore tattoo is eligible:
 	if the noun is sissifying clothing, decide yes;
@@ -2375,7 +2413,7 @@ Definition: spit first tattoo is eligible:
 	if the noun is lubricant, decide yes;
 	decide no.
 To say tattoo-desc of (T - spit first tattoo):
-	say "The word SPIT is tattooed above your [asshole], and FIRST is tattooed directly underneath it. You can tell that it somehow enhances the effects of lube.".
+	say "The word SPIT is tattooed above your [asshole], and FIRST is tattooed directly underneath it, with water effects going into the entrance. You can tell that it somehow enhances the effects of lube.".
 
 
 

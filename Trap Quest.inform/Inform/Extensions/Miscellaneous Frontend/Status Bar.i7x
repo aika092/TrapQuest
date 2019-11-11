@@ -726,12 +726,19 @@ To say VagueInternals:
 		otherwise:
 			say "Aroused";
 		now fine is 0;
-	if the player is craving:
+	if the player is craving semen:
 		if fine is 0, say " & ";
-		if the player is desperately craving:
+		if the player is desperately craving semen:
 			say "Desperately ";
-		if the player is craving:
-			say "Craving [if the class of the player is santa's little helper]A Festive Drink[otherwise]Cum[end if]";
+		if the player is craving semen:
+			say "Craving [if the player is craving milk]Milk And [end if][if the class of the player is santa's little helper]A Festive Drink[otherwise]Cum[end if]";
+			now fine is 0;
+	otherwise if the player is craving milk:
+		if fine is 0, say " & ";
+		if the player is desperately craving milk:
+			say "Very ";
+		if the player is craving milk:
+			say "Cranky";
 			now fine is 0;
 	if player-immobile is 1:
 		if fine is 0, say " & ";

@@ -14,9 +14,7 @@ REQUIRES COMMENTING
 *!]
 doomed is a number that varies.
 
-
-
-
+new-acolyte-counter is initially 0.
 
 
 [!<ComputeDoom>+
@@ -26,16 +24,19 @@ REQUIRES COMMENTING
 +!]
 A later time based rule (this is the compute doom rule):
 	if doom counter > 0:
-		if the location of the player is Mansion23 and doom notes is held and there is a held pocketbook and reception bell is held and black candle is held:
+		if the location of the player is Mansion23 and doom notes is held and there is a held pocketbook and (reception bell is held or there is a held catbell or cowbell is held) and black candle is held:
 			if there is unfriendly monster in the location of the player or there is an acolyte in the location of the player:
 				let L be the list of undefeated monsters in the location of the player;
 				repeat with M running through friendly undefeated monsters in the location of the player:
-					if M is not acolyte, remove M from L;
+					if M is not acolyte and M is not deep one, remove M from L;
 				if the number of entries in L > 0 and the player is not in danger, say "You want to perform the ritual [one of]to send the elder ones back to sleep [or][stopping]but you can't until the room is clear of all threats who would probably interrupt you - [L].";
 			otherwise:
 				say "[bold type]You pull out the paper the witch gave you and try to figure out what exactly you are supposed to do.[roman type] [if the raw intelligence of the player > 12]Fortunately you find it quite straightforward. [otherwise if the raw intelligence of the player > 7]It's a bit complicated but you eventually work it out. [otherwise]You honestly have no idea what any of this means, but it seemed the witch planned for that too because it ends with 'LOOK JUST LIGHT THE CANDLE, RING THE BELL, PICK UP THE BOOK, AND SAY GO FUCK OFF.'[line break][end if]As you carry out the instructions, there is a huge rush of air, a terrible noise, and a brief whiff of ozone. Afterwards the air feels still, and you believe you may have succeeded.";
 				now doom counter is -1;
 				now doomed is -1;
+				if the pink sphere is in the location of the player:
+					destroy the pink sphere;
+					say "You hear the sound of a thousand voices groaning angrily, and then the giant pink sphere fizzles from existence.";
 				progress quest of ritual-quest;
 				let X be a random off-stage plentiful necklace;
 				unless X is nothing:
@@ -47,6 +48,7 @@ A later time based rule (this is the compute doom rule):
 		otherwise if doomed < 5:
 			if debuginfo > 1, say "[input-style]DOOM: [doom counter] ";
 			let MA be the number of mindless acolytes in Mansion23;
+			let oldDC be doom counter;
 			increase doom counter by MA;
 			if debuginfo > 1, say "+ cultists currently performing ritual ([MA]) ";
 			if doom counter < 150 and doomed > 0:
@@ -75,7 +77,17 @@ A later time based rule (this is the compute doom rule):
 				if debuginfo > 1, say "- non-corrupted sacred pool (1) ";
 			if doom counter <= 0, now doom counter is 1; [Otherwise the quest can accidentally end itself]
 			if debuginfo > 1, say "=> [doom counter] | [(doomed + 1) * 150][roman type][line break]";
-			if doom counter > 150 and doomed is 0:
+			let MC be a random off-stage mindless acolyte;
+			if MC is a monster:
+				increase new-acolyte-counter by 1;
+				if debuginfo > 1, say "[input-style]New cultist counter: [new-acolyte-counter] | 250[roman type][line break]";
+				if new-acolyte-counter >= 250 and the player is not in Mansion23:
+					now new-acolyte-counter is 0;
+					set up MC;
+					summon MC in the mansion;
+					now MC is in Mansion23;
+					if debuginfo > 1, say "[input-style]NEW RITUAL CULTIST SPAWNED.[roman type][line break]";
+			otherwise if doom counter > 150 and doomed is 0:
 				say "[bold type]You feel a sense of impending doom, as though something terrible is in motion. Perhaps you should consult with an expert in magic?[roman type][line break]";
 				now doomed is 1;
 			otherwise if doom counter > 300 and doomed is 1:

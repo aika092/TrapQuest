@@ -2,6 +2,8 @@ Undies by Knickers begins here.
 
 undies is a kind of knickers.
 
+The DQFigure of undies is usually DQWhitePants.
+
 Definition: an undies is displacable: decide yes.
 Definition: an undies is same-type if theme-share-target is undies.
 

@@ -22,7 +22,7 @@ To decide which object is the potential-upgrade-target of (C - an overdress):
 		repeat with D running through L1:
 			now the upgrade-target of C is D;
 			if C is not transformation-theme-blocked, add D to L2; [Disregard ones that the item will refuse to transform into.]
-		sort L2 in random order;[###Selkie: Again, I don't understand why bother.]
+		sort L2 in random order;[So we don't always pick the object with lowest ID when they have the same eligibility]
 		let O be 100;
 		repeat with D running through L2: [Find the least outrageous of the eligible transformation items. Hopefully makes them go in a nice sequence.]
 			let IO be the initial outrage of D;

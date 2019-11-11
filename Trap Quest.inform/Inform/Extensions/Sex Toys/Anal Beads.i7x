@@ -1,6 +1,6 @@
 Anal Beads by Sex Toys begins here.
 
-An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after]". The printed plural name of anal beads is usually "[clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after]". The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. The notches of an anal beads is usually 0. An anal beads has a number called notch-taken. The notch-taken of an anal beads is usually 0. Understand "bead", "anal", "beads" as anal beads.
+An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after]". The printed plural name of anal beads is usually "[clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after]". The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. An anal beads has a number called notch-taken. Understand "bead", "anal", "beads" as anal beads.
 
 To compute unique summoning of (S - an anal beads):
 	now the notch-taken of S is the notches of S + (a random number between -1 and 0).

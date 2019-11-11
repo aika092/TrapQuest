@@ -202,12 +202,13 @@ Every turn we call this function to calculate what happens to the player's pregn
 To compute pregnancy:
 	increase maximum-pregnancy-delay-tracker by 1;
 	if the womb volume of vagina < 30: [In here we compute the normal growth of a pregnancy.]
+		if debuginfo > 1 and the pregnancy of the player is 1 and (slow pregnancy is not 2 or maximum-pregnancy-delay-tracker <= 1), say "[line break][input-style]Pregnancy ticker: [maximum-pregnancy-delay-tracker] | [maximum-pregnancy-delay].5[roman type][line break]";
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay or (slow pregnancy is 2 and maximum-pregnancy-delay-tracker > 1): [if slow pregnancy is 2 that means we grow babies super super fast]
 			now maximum-pregnancy-delay-tracker is 0;
 			increase slow-pregnancy-tracker by 1;
-			if debugmode > 0, say "Pregnancy growth check: Slow preg tracker is [slow-pregnancy-tracker].";
 			let M be a random off-stage maternity bra;
 			let B be the largeness of belly;
+			if debuginfo > 1 and the pregnancy of the player is 1 and slow pregnancy is 0, say "[line break][input-style]Pregnancy progress: Checks since last growth ([slow-pregnancy-tracker]) | (1.5) Next pregnancy growth threshold[roman type][line break]";
 			if the pregnancy of the player is 1 and (slow pregnancy > 0 or slow-pregnancy-tracker > 1): [If the pregnancy of the player is 2, this means pregnancy is paused. if slow pregnancy is 0, it takes twice as long]
 				now slow-pregnancy-tracker is 0;
 				increase the womb volume of vagina by 1; [1 or more, +1]
@@ -240,8 +241,8 @@ To compute pregnancy:
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay or (slow pregnancy is 2 and maximum-pregnancy-delay-tracker > 1): [if slow pregnancy is 2 that means we grow babies super super fast]
 			let B be the largeness of belly;
 			now maximum-pregnancy-delay-tracker is 0;
-			if debugmode > 0, say "Mega-pregnancy growth check: Slow preg tracker is [slow-pregnancy-tracker].";
 			increase slow-pregnancy-tracker by 1;
+			if debugmode > 0, say "Mega-pregnancy growth check: Slow preg tracker is [slow-pregnancy-tracker] | ([if slow pregnancy > 0]0[otherwise]1[end if].5) Next pregnancy growth threshold[roman type][line break]";
 			if slow pregnancy > 0 or slow-pregnancy-tracker > 1: [if slow pregnancy is 0, it takes twice as long]
 				now slow-pregnancy-tracker is 0;
 				increase the womb volume of vagina by 1;
@@ -255,6 +256,7 @@ To compute pregnancy:
 	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0:
 		now maximum-pregnancy-delay-tracker is 0;
 		increase slow-pregnancy-tracker by 1;
+		if debuginfo > 1, say "[line break][input-style]Birth progress: Full Term Time ([slow-pregnancy-tracker]) | ([slow birth rate].5) Birth Ready Threshold[roman type][line break]";
 		if slow-pregnancy-tracker > slow birth rate:
 			now auto is 1; [for displacing automatically]
 			if vagina is actually occupied or there is worn undisplacable cursed pee covering clothing: [the vagina is blocked, so we delay the pregnancy and punish the player with contractions]
@@ -323,15 +325,18 @@ To compute tentacle birth:
 	let T be a random off-stage living tentacles;
 	if laurel wreath is worn and T is clothing:
 		repeat with O running through worn dresses:
-			say "Your [O] vanishes!";
-			destroy O;
-		repeat with O running through worn skirts:
-			say "Your [O] vanishes!";
-			destroy O;
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn exclusive corsets:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn skirted clothing:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
 		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type]";
 		summon T;
 		now the raw-magic-modifier of T is childValue times 6;
-	if there is a worn tattoo and the number of worn ass tattoos is 0:
+	if there is a worn tattoo and the number of worn ass tattoos is 0 and a random number between 1 and 2 is 1:
 		say "Suddenly a new tattoo appears on you!";
 		summon tentacles tattoo;
 		try examining tentacles tattoo;
@@ -410,7 +415,7 @@ REQUIRES COMMENTING
 +!]
 To check for extreme pregnancies:
 	if extreme proportions fetish is 1 and inhuman pregnancy > 0 and the father is not the throne: [Super-pregnancies are go]
-		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord:
+		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger:
 			now the womb volume of vagina is 31;
 		if the father is creampie pole trap and inhuman pregnancy is 2 and a random number between 1 and 5 >= 2:
 			now the womb volume of vagina is 31;

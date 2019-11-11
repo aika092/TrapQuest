@@ -18,7 +18,7 @@ The text-shortcut of sex doll is "sd".
 To say ShortDesc of (M - a sex doll):
 	say "sex doll".
 
-[###Selkie wonders why only creamfilled- and airfilled-sex-doll are hyphenated. #MG class names and variables names in inform are somewhat interchangeable, which means you never know what might cause the compiler to say "hey wait, you already defined that somewhere else!" for example, "creamfilled sex doll" might cause problems with the condom of kings, because it has a field called "creamfilled."]
+[Selkie wondered why only creamfilled- and airfilled-sex-doll are hyphenated. MG explains: class names and variables names in inform are somewhat interchangeable, which means you never know what might cause the compiler to say "hey wait, you already defined that somewhere else!" for example, "creamfilled sex doll" might cause problems with the condom of kings, because it has a field called "creamfilled."]
 A creamfilled-sex-doll is a kind of sex doll.
 creepy sex doll is a creamfilled-sex-doll. The text-shortcut of creepy sex doll is "csd".
 To say MediumDesc of (M - creepy sex doll):

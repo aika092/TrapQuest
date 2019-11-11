@@ -211,10 +211,7 @@ To compute horse effect of (T - a wild horse):
 	if the player is diapered, decrease W by 5;
 	if W < 3, now W is 3;
 	let R be a random number between -1 and W;
-	say "The ridges of the horse continue to overstimulate your [asshole][if the player is female] and [vagina][end if].";
-	if the player is female, ruin vagina;
-	otherwise ruin asshole; [Otherwise horse is a bit imbalanced towards punishing females]
-	arouse 400; [Extra arousal hardcoded in here]
+	say "The ridges of the horse continue to put immense pressure on your [asshole][if the player is female] and [vagina][end if].";
 	if the TrapNo of T < 1:
 		now T is not penetrating vagina;
 		now T is not penetrating asshole;

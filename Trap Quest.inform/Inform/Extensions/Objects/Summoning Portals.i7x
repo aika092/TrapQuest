@@ -803,7 +803,7 @@ Carry out appeasing something with mysterious-mummy:
 			say "The [ShortDesc of noun] lights up as you place it up at the mummy's feet, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of the [ShortDesc of the noun] disappear completely.";
 			ChargeUp the second noun by 1000;
 			only destroy the noun;
-		otherwise if the noun is ectoplasm or the noun is possession clothing:
+		otherwise if the noun is ectoplasm or the noun is possession clothing or the noun is infernal gem:
 			say "The [ShortDesc of noun] lights up as you place it at the mummy's feet, and its aura brightens visibly. You can feel the magic intensifying as the [ShortDesc of noun] bursts into flames.";
 			ChargeDown the second noun by 400;
 			only destroy the noun;
@@ -817,7 +817,7 @@ Carry out appeasing something with mysterious-mummy:
 			if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 			if N <= 0:
 				say "You throw the [noun] into the circle, which glows bright blue as it slowly disintegrates. Nothing else happens. What a waste!";
-				ChargeUp the second noun by the soak-limit of the noun;
+				if the noun is clothing, ChargeUp the second noun by the soak-limit of the noun;
 				only destroy the noun;
 			otherwise:
 				say "The bodily fluids in the [noun] start to glow a fluorescent shade of red as you throw it into the circle, evaporating with a wave of scarlet flames as the magic around you rapidly intensifies.";

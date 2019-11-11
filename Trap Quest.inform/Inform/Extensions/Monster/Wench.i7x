@@ -444,7 +444,7 @@ To compute facial sex of (M - a wench):
 		otherwise if there is a worn diaper:
 			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from her advantageous position[or][stopping]. [line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
 			humiliate 200;
-			arouse 300;
+			passively stimulate vagina from M;
 		say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise]You still can't breathe. You're going to faint any second now![end if]".
 
 To say FacesitResisting of (M - a wench):
@@ -765,27 +765,27 @@ To compute failed dominance punishment of (M - a wench):
 		now another-turn is 1;
 	otherwise:
 		if the size of penis > 3:
-			say "[speech style of M]'What[']s the matter? Aren[']t you supposed to be fucking me right about now?'[roman type] She laughs derisively, shoving her middle and index fingers into your [asshole] and slapping your [AssDesc] as she begins to stroke your prostate from the inside. You sit there, frozen [if the player is proud]in abject humiliation[otherwise]with pleasure[end if] as she teases your [ShortDesc of penis] with the very tips of her fingers, [if the player is a bit horny]ensuring it stays achingly hard as[otherwise]ensuring it gets nice and hard as[end if] she violates your [if the openness of asshole > 5]loose[otherwise]tight[end if] hole. She[']s perfectly positioned to hold you down without putting a lot of effort in, but you just [if the player is feeling dominant]can't focus enough to challenge her even though you [italic type]know[roman type] how much you want to.[otherwise if the player is not feeling submissive]can't bring yourself to challenge her, even though you know you [italic type]want[roman type] to.[otherwise]can't bring yourself to stop her when it feel so good![end if] You have no choice but to lie underneath her, writhing with pleasure and humiliation as the slow stroking builds you to orgasm. [line break][speech style of M]'Ooh, you must really like having your asshole played with, faggot, I can already feel your prostate tightening up![roman type] [BigNameDesc of M] coos, abruptly yanking her finger out of your butt and removing her thumb before you can cum. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
+			say "[speech style of M]'What's the matter? Aren't you supposed to be fucking me right about now?'[roman type] [big he of M] laughs derisively, shoving [his of M] middle and index fingers into your [asshole] and slapping your [AssDesc] as [he of M] begins to stroke your prostate from the inside. You sit there, frozen [if the player is proud]in abject humiliation[otherwise]with pleasure[end if] as [he of M] teases your [ShortDesc of penis] with the very tips of [his of M] fingers, [if the player is a bit horny]ensuring it stays achingly hard as[otherwise]ensuring it gets nice and hard as[end if] [he of M] violates your [if the openness of asshole > 5]loose[otherwise]tight[end if] hole. [big he of M][']s perfectly positioned to hold you down without putting a lot of effort in, but you just [if the player is feeling dominant]can't focus enough to challenge [him of M] even though you [italic type]know[roman type] how much you want to.[otherwise if the player is not feeling submissive]can't bring yourself to challenge [him of M], even though you know you [italic type]want[roman type] to.[otherwise]can't bring yourself to stop [him of M] when it feels so good![end if] You have no choice but to lie underneath [him of M], writhing with pleasure and humiliation as the slow stroking builds you to orgasm. [line break][speech style of M]'Ooh, you must really like having your asshole played with[if transGender is 0], faggot[end if], I can already feel your prostate tightening up![roman type] [BigNameDesc of M] coos, abruptly yanking [his of M] finger out of your butt and removing [his of M] thumb before you can cum. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as [he of M] stands up.";
 			compute sissification;
-			arouse 3000;
+			passively stimulate asshole from M times 2;
 		otherwise:
-			say "[speech style of M]'Did you actually think you could fuck me with that shrimp dick? Now I HAVE to fucking mess with you.'[roman type][line break] She shoves her middle finger into your [asshole], smirking scornfully as she begins to stroke your prostate from the inside. You can[']t stifle your moans, frozen [if the humiliation of the player < 10000]in abject humiliation[otherwise]with pleasure[end if] as she rubs your poor, neglected [ShortDesc of penis] with the tip of her thumb, as if stimulating a clitoris. She doesn[']t put a lot of effort into holding you down, but you just [if the player is feeling dominant]can't focus enough to stop her even though you [i]know[/i] how much you want to.[otherwise if the player is not feeling submissive]can't bring yourself to stop her, even though you know you [i]want[/i] to.[otherwise]can't bring yourself to stop her when it feel so good![end if][line break][speech style of M]'Ooh, [one of]your clit is getting harder! You're about to cum, aren't you[or]you're about to cum, aren't you, you little faggot[or]is your little clitty about to cum[or]are you about to cum from having your clit played with, you little faggot[at random]? Beg for it and I might let you.[roman type][line break]Do you beg [him of M] to let you cum? ";
+			say "[speech style of M]'Did you actually think you could fuck me with that shrimp dick? Now I HAVE to fucking mess with you.'[roman type][line break][big he of M] shoves [his of M] middle finger into your [asshole], smirking scornfully as [he of M] begins to stroke your prostate from the inside. You can't stifle your moans, frozen [if the humiliation of the player < 10000]in abject humiliation[otherwise]with pleasure[end if] as [he of M] rubs your poor, neglected [ShortDesc of penis] with the tip of [his of M] thumb, as if stimulating a clitoris. [big he of M] doesn't put a lot of effort into holding you down, but you just [if the player is feeling dominant]can't focus enough to stop [him of M] even though you [i]know[/i] how much you want to.[otherwise if the player is not feeling submissive]can't bring yourself to stop [him of M], even though you know you [i]want[/i] to.[otherwise]can't bring yourself to stop [him of M] when it feels so good![end if][line break][speech style of M]'Ooh, [one of]your clit is getting harder! You're about to cum, aren't you[or]you're about to cum, aren't you[if transGender is 0], you little faggot[end if][or]is your little clitty about to cum[or]are you about to cum from having your clit played with[if transGender is 0], you little faggot[end if][at random]? Beg for it and I might let you.[roman type][line break]Do you beg [him of M] to let you cum? ";
 			if face is actually occupied:
-				say "[line break][speech style of M]'Huh? What's that? I can't hear you!'[roman type][line break][BigNameDesc of M] coos, abruptly yanking her finger out of your butt and removing her thumb before you finish. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
+				say "[line break][speech style of M]'Huh? What's that? I can't hear you!'[roman type][line break][BigNameDesc of M] coos, abruptly yanking [his of M] finger out of your butt and removing [his of M] thumb before you finish. You groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as [he of M] stands up.";
 				compute sissification;
-				arouse 3000;
+				passively stimulate asshole from M;
 			otherwise if the player is bimbo consenting:
 				if the charisma of the player > a random number between 1 and 3:
-					say "[line break][variable custom style]'[one of]Please let me cum!'[or]Please, I need to orgasm!'[or]Please, I want to cum!'[at random][roman type][line break] You blurt out. [BigNameDesc of M] looks you dead in the eye as [he of M] lets go of your [player-penis] and yanks [his of M] finger out of your [asshole], grinning as your [if the delicateness of the player < 7]furious[otherwise]helpless[end if] groan as [he of M] stands up";
-					arouse 3000;
+					say "[line break][variable custom style]'[one of]Please let me cum!'[or]Please, I need to orgasm!'[or]Please, I want to cum!'[at random][roman type][line break]You blurt out. [BigNameDesc of M] looks you dead in the eye as [he of M] lets go of your [player-penis] and yanks [his of M] finger out of your [asshole], grinning as your [if the delicateness of the player < 7]furious[otherwise]helpless[end if] groan as [he of M] stands up.";
+					passively stimulate asshole from M;
 				otherwise:
 					say "[line break][variable custom style]'[one of]Please let me cum!'[or]Please, I need to orgasm!'[or]Please, I want to cum!'[at random][roman type][line break] You blurt out. [BigNameDesc of M] laughs derisively as [he of M] removes [his of M] thumb from your [sissy-penis], focusing all the stimulation on your prostate.";
 					anally orgasm shamefully;[already humiliating]
 				severeHumiliate;
 			otherwise:
-				say "You refuse to give [him of M] the satisfaction, and [NameDesc of M] laughs derisively as [he of M] abruptly yanks [his of M] finger out of your butt, robbing you of your chance to finish. You can't help but groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as she stands up.";
+				say "You refuse to give [him of M] the satisfaction, and [NameDesc of M] laughs derisively as [he of M] abruptly yanks [his of M] finger out of your butt, robbing you of your chance to finish. You can't help but groan [if the delicateness of the player < 7]furiously[otherwise]helplessly[end if] as [he of M] stands up.";
 			compute sissification;
-			arouse 3000;
+			passively stimulate penis from M times 2;
 		Bore M.
 
 To say angry punishment insult of (M - a wench):
@@ -830,7 +830,7 @@ To suggestFucker (F - a body part) for (M - a wench):
 
 To say DominanceSuccess of (M - a wench):
 	if player-fucker is penis:
-		if player-fuckchoice is FUCK-PENETRATION:			
+		if player-fuckchoice is FUCK-PENETRATION:
 			vaginal dominate M;
 		otherwise:
 			oral dominate M;
@@ -882,12 +882,13 @@ To vaginal dominate (M - a wench):
 			orgasm;
 			say AfterDominationComment 3 of M;
 		otherwise:
-			say "[line break][speech style of M]'Keep going! I'm almost there! I'm almost there!'[roman type][line break]Knowing you're about to blow, you stop just long enough to ruin your own orgasm and immediately resume thrusting. [BigNameDesc of M] doesn't seem to notice that you came already, and [his of M] voice steadily rises as you push [him of M] closer and closer to climax. Finally, [his of M] whole body begins to convulse, and [he of M] shrieks in pleasure as [if lady fetish is 2][his of M] [sissy-penis] shoots [semen] across [his of M] belly[otherwise][his of M] [vagina] squirts out girlcum[end if].";
+			say "[line break][speech style of M]'Keep going! I'm almost there! I'm almost there!'[roman type][line break]Knowing you're about to blow, you stop just long enough to ruin your own orgasm and immediately resume thrusting.";
+			orgasm;
+			say "[BigNameDesc of M] doesn't seem to notice that you came already, and [his of M] voice steadily rises as you push [him of M] closer and closer to climax. Finally, [his of M] whole body begins to convulse, and [he of M] shrieks in pleasure as [if lady fetish is 2][his of M] [sissy-penis] shoots [semen] across [his of M] belly[otherwise][his of M] [vagina] squirts out girlcum[end if].";
 			now player-fucking is DOMINANT-NEUTRAL;
 			FavourUp M by 1;
-			orgasm;
 			orgasm M;
-			Arouse 1000;
+			passively stimulate vagina from M;
 			say AfterDominationComment 1 of M;
 		FuckGet;
 		increase the creampieTimer of M by 100;
@@ -1150,7 +1151,7 @@ To say TauntAccepted of (M - a wench):
 		say "[speech style of M]'N-nevermind. I was out of line. Sorry.'[roman type][line break][BigNameDesc of M] begins to run away!".
 
 To say TauntRejected of (M - a wench):
-	if the size of penis <= 3 and the player is male and penis is lewdly exposed and the player is feeling dominant:
+	if the size of penis <= 3 and the player is male and penis is lewdly exposed and the player is feeling dominant and transGender is 0:
 		say "[speech style of M]'[one of]Just try to fuck me, shrimp dick. I fucking dare you.'[or]So you're going to fuck me? Really. With a tiny cock like that?'[or]Go ahead and try to fuck me, faggot. I wouldn't even feel it.'[at random][roman type][line break]";
 		alwayscutshow figure of wench interact 6 for M;
 	otherwise if the player is male and M is unfriendly and the player is feeling dominant:

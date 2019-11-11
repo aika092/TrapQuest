@@ -6,6 +6,7 @@ Definition: a bloomers is displacable: decide yes.
 
 Definition: a bloomers is sissifying: decide yes.
 Definition: a bloomers is pink themed: decide yes.
+Definition: a bloomers is fetish appropriate if the player is male and transGender is 0.
 
 To set up influence of (C - a bloomers):
 	set up submissiveness-based influence of C.
@@ -53,7 +54,7 @@ To say ClothingDesc of (K - crotchless bloomers):
 	say "These [UniqueTitle of K] are very sheer. They would only ever be worn by sissy cross-dressers.".
 
 To say UniqueTitle of (K - crotchless bloomers):
-		say "sexy crotchless sissy-bloomers".
+		say "sexy crotchless sissy bloomers".
 
 Figure of crotchless bloomers is the file "Items/Clothes/Lower/Underwear/Bloomers/bloomers2.png".
 

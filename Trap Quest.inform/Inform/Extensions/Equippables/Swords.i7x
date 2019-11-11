@@ -214,10 +214,10 @@ Report plugging something with dildo sword:
 			if inflation fetish is 1, Assfill N * 2 air;
 			otherwise HipUp (N + 1) / 2;
 		otherwise if F is fuckhole:
-			say "it starts wriggling around, stimulating your insides all the way from the deepest point inside to your entrance![roman type] [if N is 5]The tentacle-like movement is extremely powerful and fast, causing your whole body to shudder. It lasts for several seconds!  [otherwise if N > 2]It lasts for a few seconds, enough to make you weak at the knees. [otherwise]It only lasts for a couple of seconds but it still felt intense. [end if]You can't help but become [if the player is a bit horny]further [end if]aroused.";
-			arouse 500 * N;
+			say "it starts wriggling around, stimulating your insides all the way from the deepest point inside to your entrance![roman type] [if N is 5]The tentacle-like movement is extremely powerful and fast, causing your whole body to shudder. It lasts for several seconds! [otherwise if N > 2]It lasts for a few seconds, enough to make you weak at the knees. [otherwise]It only lasts for a couple of seconds but it still felt intense. [end if]You can't help but become [if the player is a bit horny]further [end if]aroused.";
+			stimulate F from the second noun times N;
 			finally arouse;
-			if F is fuckhole, ruin F;
+			ruin F;
 	say "[if the second noun is cursed]Since you can't let go of the handle,[otherwise]Since the large dildo is so heavy, it can't stay inside on its own and[end if] you are forced to pull it back out. [if the raw-magic-modifier of the second noun < 5]As it comes out, you find that it is glistening with newly recharged magic power![end if]";
 	now the raw-magic-modifier of the second noun is 5;
 	dislodge the second noun.
@@ -562,7 +562,7 @@ To decide which figure-name is clothing-image of (C - sissy-sword):
 
 Definition: sissy-sword is sissifying: decide yes.
 Definition: sissy-sword is destiny-prioritised if the player is a sissy.
-Definition: sissy-sword is destiny-appropriate if the player is male and fast tg < 3.
+Definition: sissy-sword is destiny-appropriate if the player is male and fast tg < 3 and transGender is 0.
 
 To compute sword destiny of (S - sissy-sword):
 	say "You excitedly pull up on your new longsword, only to find that it's not quite as [']long['] as you were hoping for.";

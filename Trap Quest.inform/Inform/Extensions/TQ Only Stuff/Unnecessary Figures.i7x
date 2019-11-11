@@ -7,8 +7,6 @@ To decide which figure-name is Figure of acolyte 5:
 To decide which figure-name is Figure of demoness cutscene 15:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of ghost 5:
-	decide on figure of small image.
 To decide which figure-name is Figure of ghost 6:
 	decide on figure of small image.
 To decide which figure-name is Figure of ghost 7:

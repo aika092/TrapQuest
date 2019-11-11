@@ -58,16 +58,15 @@ To compute periodic effect of (P - a vibrating plug panties):
 	if the charge of P > 44:
 		now the charge of P is 0;
 		if the soreness of asshole is 10:
-			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating!  [end if]Your poor [asshole] spasms. It's so incredibly sensitive!";
+			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating! [end if]Your poor [asshole] spasms. It's so incredibly sensitive!";
+			stimulate asshole from P;
 		otherwise:
-			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating!  [end if]Your [asshole] spasms. Wearing [if P is cursed]it is very quickly[otherwise]the [printed name of P] is slowly[end if] making you sore!";
-		ruin asshole;
+			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating! [end if]Your [asshole] spasms. Wearing [if P is cursed]it is very quickly[otherwise]the [printed name of P] is slowly[end if] making you sore!";
+			ruin asshole;
 		if the player is female:
 			if the soreness of vagina is 10:
 				say "Your [vagina] spasms. It's so sensitive, the [printed name of P] are making you go crazy with a mixture lust and frustration!";
-				arouse 1000;
-				SemenAddictUp 1;
-				if a random number between 1 and 2 is 1, IntDown 1;
+				stimulate vagina from P;
 			otherwise:
 				say "Your [vagina] spasms. Wearing the [printed name of P] is slowly making you sore!";
 				ruin vagina.

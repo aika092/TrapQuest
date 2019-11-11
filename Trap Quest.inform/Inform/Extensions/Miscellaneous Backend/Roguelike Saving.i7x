@@ -14,7 +14,7 @@ When play begins (this is the restore if we have a savefile rule):
 	reset the Glulx timer;
 	if loading scenes is 1:
 		if images visible is 1:
-			if the player is the donator and choice in row 49 of Table of Settings > -1:
+			if choice in row 49 of Table of Settings > -1 and (diaper quest is 1 or choice in row 48 of the Table of Player Options > -1): [mythical creatures must be enabled to see the gargoyle]
 				let A be a random initial animation track;
 				commence animation of A;
 			otherwise:
