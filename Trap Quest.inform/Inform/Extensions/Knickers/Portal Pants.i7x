@@ -34,7 +34,7 @@ To set up influence of (C - portal-pants):
 
 To Squirt (L - a liquid-object) On (C - portal-pants) by (N - a number):
 	say ", disappearing through the portal.";
-	if the player is the donator and portal gag is worn:
+	if portal gag is worn:
 		say "The [L] flows out of the [portal gag] and into your mouth! There's nothing you can do but gulp and swallow!";
 		now N is (N + 1) / 2;
 		if L is semen:

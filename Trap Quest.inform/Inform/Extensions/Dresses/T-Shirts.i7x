@@ -192,7 +192,7 @@ To decide which number is the intelligence-influence of (C - an I wish these wer
 
 Part 6 - Birth Control is for Sissies T-shirt
 
-A birth control for sissies T-shirt is a kind of T-shirt. A birth control for sissies T-shirt is dense. The printed name of birth control for sissies T-shirt is usually "[clothing-title-before]birth control is for sissies T-shirt[clothing-title-after]". The text-shortcut of birth control for sissies T-shirt is "bcst". Understand "control is" as birth control for sissies T-shirt.
+A birth control for sissies T-shirt is a kind of T-shirt. A birth control for sissies T-shirt is dense. The printed name of birth control for sissies T-shirt is usually "[clothing-title-before]birth control is for sissies T-shirt[clothing-title-after]". The text-shortcut of birth control for sissies T-shirt is "bcss". Understand "control is" as birth control for sissies T-shirt.
 
 Figure of birth control for sissies T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt5.png".
 
@@ -245,7 +245,7 @@ To decide which number is the delicateness-influence of (C - sissy-T-shirt):
 
 Definition: sissy-T-shirt is sissifying: decide yes.
 Definition: sissy-T-shirt is white themed: decide yes.
-Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is male.
+Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is male and transGender is 0.
 
 To decide which object is the unique-upgrade-target of (C - sissy-T-shirt):
 	decide on a random off-stage sissy faggot T-shirt.
@@ -438,7 +438,7 @@ To decide which number is the delicateness-influence of (C - a sissy faggot T-sh
 
 Definition: a sissy faggot T-shirt is sissifying: decide yes.
 Definition: a sissy faggot T-shirt is white themed: decide yes.
-Definition: a sissy faggot T-shirt is fetish appropriate if the player is male and diaper quest is 0.
+Definition: a sissy faggot T-shirt is fetish appropriate if the player is male and diaper quest is 0 and transGender is 0.
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.

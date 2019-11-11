@@ -14,7 +14,7 @@ Check searching a container:
 	if the player is blinded, say "You can't see clearly enough to search while your face is so thoroughly plastered with [semen]!" instead;
 	if the player is prone, say "You can't search while on all fours!" instead;
 	if the player is immobile, say "You're a bit busy right now to be searching that!" instead;
-	[###Selkie: I thought I might use stuck instead of glued, for clothing, but I think stuck clothing means it's stuck to the floor, hence it stops you searching a container.]
+	[Selkie: I thought I might use stuck instead of glued, for clothing, but I think stuck clothing means it's stuck to the floor, hence it stops you searching a container.]
 	if the player is clothing stuck, say "You can't because your [a random stuck clothing worn by the player] is stuck in place!" instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the prevsearch of the noun is 0, First Time Search the noun instead;

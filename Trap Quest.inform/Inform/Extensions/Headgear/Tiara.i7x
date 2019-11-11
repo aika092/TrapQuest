@@ -43,7 +43,10 @@ To compute class outfit of (H - a tiara):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your tiara shines brightly, and a [if R is baby royal dress]childish[otherwise]silky[end if] pink dress materialises around you.[roman type][line break]";

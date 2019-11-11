@@ -5,7 +5,7 @@ A magical dress is a kind of overdress. A magical dress is usually unique. A mag
 Definition: a magical dress is class-transformation-protected if the class of the player is magical girl.
 
 To decide which number is the strength-influence of (O - a magical dress):
-	let M be the magic-power of the player;
+	let M be the magic power of the player;
 	if M > 5, decide on 4;
 	if M > 3, decide on 2;
 	if M > 0, decide on 1;

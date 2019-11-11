@@ -57,7 +57,15 @@ To MonsterStomp (M - a monster):
 	now the leftover-type of L is the leftover-type of N.]
 
 To compute (M - a monster) stomping (N - a monster):[We keep this completely generic to avoid potential conflicts with the specific instances of each monster.]
-	say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]. Report this bug please!";[This will not happen with default game but with added monsters it allows the ability for them to be dungeon dwelling and have a scene where the minotaur kills them.]
+	if N is female and N is not neuter:
+		if M is in the location of the player, say "[BigNameDesc of M] grabs [NameDesc of N] and pulls [him of N] towards [him of M]. Remaining fully standing, [he of M] lowers [him of N] onto [his of M] giant erect [DickDesc of M] and starts fucking [his of N] [HoleDesc of N] furiously. [big he of N] screams in both pleasure and terror as [his of M] member almost splits [him of N] in two, and very soon [he of M] is coming inside [him of N]. [big his of N] belly visibly bulges before pints of [semen] begin to explode from around the sides of [his of M] [DickDesc of M]. After [he of M] has finished, [his of M] tail lets go of [his of N] waist and [he of N] falls to the ground, where [he of N] promptly faints.";
+		otherwise say "You hear a [man of N] shout out in a mixture of ecstasy and terror from [if N is nearby]nearby[otherwise]somewhere in the [playerRegion][end if]!";
+		destroy N;
+		let L be a random off-stage leftover;
+		now L is in the location of M;
+		now the leftover-type of L is the leftover-type of N;
+	otherwise:
+		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]. Report this bug please!";[This will not happen with default game but with added monsters it allows the ability for them to be dungeon dwelling and have a scene where the minotaur kills them.]
 
 
 Chapter 1 Continue and Finish Sex
@@ -134,16 +142,22 @@ To orgasm (M - a monster):
 	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, follow the betrothal rule;
 	compute refactoryReset of M;
 	if M is infernal, progress quest of demon-slut-quest;
-	if there is a worn notebook, compute studying 0 of M;
+	if there is a worn notebook, compute studying 0 of M;[
+	if siphoning-elixir-charge is not 0:
+		say "You feel yourself absorbing some of [NameDesc of M]'s excess energy!";
+		if siphoning-elixir-charge > 0, increase siphoning-elixir-charge by 1;
+		otherwise decrease siphoning-elixir-charge by 1;]
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
 		say "You feel a tingle near the back of your neck as [ShortDesc of S]'s pressure intensifies.";
-		ChargeUp giant-statue by 60;
+		ChargeUp giant-statue by 60.
 
 To compute refactoryReset of (M - a monster):
 	if M is intelligent:
 		now the refactory-period of M is the refactory-time of M;
-		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
+		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);[
+		if siphoning-elixir-charge > 0, increase the refactory-period of M by 20;
+		if siphoning-elixir-charge > 0, decrease the refactory-period of M by 20;]
 		if there is a worn enhancing book of anal:
 			FavourUp M;
 			increase the refactory-period of M by the intelligence of the player.
@@ -272,8 +286,9 @@ To compute default facial climax for (M - a monster):
 				compute oral creampie of M;
 			otherwise: [submitted, deepthroat]
 				compute deepthroat creampie of M;
-	if M is interested and the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
-		satisfy M.[dislodges him automatically]
+	if the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
+		if M is interested, satisfy M;[dislodges him automatically]
+		otherwise dislodge M.
 
 [!<ComputeClimaxOfMonsterInFuckhole>+
 
@@ -289,8 +304,10 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 	otherwise FuckCount;
 	compute unique climax of M in F;
 	compute post climax effect of M in F;
-	if M is interested and the rounds of sex left of M <= 0:
-		satisfy M.
+	if the rounds of sex left of M <= 0:
+		if M is interested, satisfy M;
+		otherwise dislodge M.
+
 
 This is the default anal climax rule:
 	if current-monster is penetrating asshole:
@@ -354,9 +371,8 @@ To compute cleavage climax of (M - a monster):
 	if M is male:
 		say CleavageClimaxFlav of M;
 		CumTitsUp the semen load of M;
-	if M is interested:
-		satisfy M;
-	now M is not penetrating breasts.
+	if M is interested, satisfy M;
+	otherwise dislodge M.
 
 [Similarly, these are BLAND EXAMPLES of what progress sex might look like for your monster.]
 
@@ -386,7 +402,7 @@ To decide if (M - a monster) is anticipating-climax:
 	decide no.
 
 To compute default facial sex of (M - a monster):
-	if the oral sex addiction of the player > 6, arouse 400;
+	if the oral sex addiction of the player > 6, passively stimulate face from M;
 	if the sex-length of M is 1 and M is anticipating-climax:
 		say NearingClimaxOral of M;
 		decrease the sex-length of M by 1;
@@ -854,7 +870,14 @@ sex-length is the duration of sexual acts with the monster, not the length of th
 @param <BodyPart>:<B> The bodypart "M" is planning to fuck
 +!]
 To set up sex length of (M - a monster) in (B - a body part):
-	set up sex length 3 of M in B.
+	set up sex length (virility of M) of M in B.
+
+To decide which number is the virility of (M - a monster):
+	if M is male:
+		if interracial fetish is 1:
+			if M is dark skinned, decide on (a random number between 3 and 4) + the trophy-mode of bbc-trophy;
+			otherwise decide on a random number between 2 and 3;
+	decide on 3.
 
 [!<ComputeUniquePenetrationEffectOfMonsterInBodypart>+
 
@@ -1150,7 +1173,9 @@ Definition: a jismbodied ghost is a tripper: decide yes.
 
 This is the choice of attack rule:
 	if current-monster is a tripper:
-		if the last-tripped of current-monster > a random number between 1 and 10 or (tutorial is 1 and the last-tripped of current-monster is 2):
+		let TC be 10;
+		if the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is 5;
+		if the last-tripped of current-monster > a random number between 1 and TC or (tutorial is 1 and the last-tripped of current-monster is 2):
 			now the last-tripped of current-monster is 0;
 			compute tripping attack of current-monster;
 		otherwise:

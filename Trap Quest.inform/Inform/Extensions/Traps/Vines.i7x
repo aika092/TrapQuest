@@ -417,8 +417,6 @@ To compute vine diaper torture of (V - a vine):
 	if the TrapNo of V is 1:
 		if the player is in WoodsBoss01:
 			now the player is in a random placed jungle room;
-			now the location of the player is discovered;
-			now the location of the player is seen;
 			now V is in the location of the player;
 			display entire map;
 			say "A portal opens underneath your body and before you can react you are falling through the sky face first! The ground rushes up to reach you but vines catch your feet just in time. You are now back in the woods. The vines pull your feet back through a new portal above you and then after you are halfway up through this new portal your OWN diapered butt appears below you in front of your face! You are bent at the waist and your feet touch the ground. Your butt is placed into the perfect position so that your face is resting against the back of your diaper. You end up face-planting the back of your own [MediumDesc of D]!";

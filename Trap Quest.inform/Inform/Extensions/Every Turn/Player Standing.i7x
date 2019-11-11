@@ -136,10 +136,10 @@ REQUIRES COMMENTING
 +!]
 To compute drill damage:
 	repeat with D running through drill pole traps penetrating a fuckhole:
-		say "The dildo keeps spinning inside your [if D is penetrating asshole][asshole][otherwise][vagina][end if], making you more and more sensitive!";
-		arouse 250; [Extra arousal]
-		if D is penetrating asshole, ruin asshole;
-		otherwise ruin vagina.
+		let F be a random fuckhole penetrated by D;
+		say "The dildo keeps spinning inside your [variable F], making you more and more sensitive!";
+		ruin F;
+		stimulate F from D. [extra stimulation and chance of orgasm]
 
 
 Player Standing ends here.

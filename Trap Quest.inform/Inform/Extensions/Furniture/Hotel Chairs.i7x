@@ -124,10 +124,7 @@ To compute baby hotel chair sitting:
 				let N be a random number between 4 and 7;
 				while the player is able to get horny and busy is 1 and N > 0:
 					say "The vibrations of the chair send pleasurable waves through your [ShortDesc of D]!";
-					if diaper quest is 1:
-						ruin vagina times 2; [Orgasms can happen]
-					otherwise:
-						arouse 400;
+					stimulate vagina times 2;
 					decrease N by 1;
 					compute extra turn;
 			otherwise:

@@ -46,7 +46,10 @@ To compute class outfit of (H - laurel wreath):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your [printed name of H] [bold type]barely noticeably shakes, and then a white tunic materialises around you.[roman type][line break]You feel... divine!";

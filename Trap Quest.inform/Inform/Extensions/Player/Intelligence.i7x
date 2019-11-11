@@ -51,6 +51,8 @@ To decide which number is the flat intelligence of the player:
 	decrease I by the incidents of enema-int-loss;
 	decrease I by adult-baby-int * 3;
 	decrease I by fullness-penalty;
+	if the player is craving milk, decrease I by 4;
+	if the player is desperately craving milk, decrease I by 2;
 	increase I by the theme bonus of the intelligence theme rules;
 	if the arousal of the player >= 5000, decrease I by (the arousal of the player - 2000) / 3000;
 	increase I by ((strawberry-lace-timer + default-candy-duration - 1) / default-candy-duration) * 6;

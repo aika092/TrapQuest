@@ -67,18 +67,18 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 		decide on figure of acolyte 2.
 
 To say MonsterDesc of (M - an acolyte):
-	if diaper quest is 0, say "A veiled woman in a sheer black robe. What you can see of her expression suggests she[']s not exactly all there. Still, despite looking like she hasn't seen the sun in a few years she does seem to be in quite good shape and could be unexpectedly dangerous.";
-	otherwise say "This woman wears a black hooded robe that covers her eyes and therefore conceals her identity. Her full exposed breasts are pierced and chained together by a light gold chain. The open robe also leaves her massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. She has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on her pink pacifier read '777'. She wields a bizarre looking gold and blue sacrificial dagger in her left hand, with several pointed stars and other basic shapes etched into the design.".
+	if diaper quest is 0, say "A veiled [man of M] in a sheer black robe. What you can see of [his of M] expression suggests [he of M][']s not exactly all there. Still, despite looking like [he of M] hasn't seen the sun in a few years [he of M] does seem to be in quite good shape and could be unexpectedly dangerous.";
+	otherwise say "This [man of M] wears a black hooded robe that covers [his of M] eyes and therefore conceals [his of M] identity. [if lady fetish is 2]His fully exposed nipples[otherwise]Her fully exposed breasts[end if] are pierced and chained together by a light gold chain. The open robe also leaves [his of M] massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. [big he of M] has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on [his of M] pink pacifier read '777'. [big he of M] wields a bizarre looking gold and blue sacrificial dagger in [his of M] left hand, with several pointed stars and other basic shapes etched into the design.".
 
 To say MonsterComment of (M - an acolyte):
-	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]Yay, another sister in service of the [great one]s! Wait, what?[or]I hope my sister's not sad that the [great one]s haven't blessed her yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
+	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another sister in service of the [great one]s! Wait, what?[or]I hope my sister's not sad that the [great one]s haven't blessed her yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
 
 To say MonsterDesc of (M - a mindless acolyte):
 	if diaper quest is 1:
 		say MonsterDesc of ardent acolyte;
-		say "She stands completely still, humming, her mouth gaping vacantly as she rubs the front of her diaper with her right hand. Your impression is of someone who is completely empty minded or in a trance and wholly unaware of their surroundings.";
+		say "[big he of M] stands completely still, humming, [his of M] mouth gaping vacantly as [he of M] rubs the front of [his of M] diaper with [his of M] right hand. Your impression is of someone who is completely empty minded or in a trance and wholly unaware of their surroundings.";
 	otherwise:
-		say "A veiled woman in a sheer black robe. While you cannot clearly see her eyes, her mouth gapes vacantly and the cords of drool running from it betray how empty her mind must be[if pregnancy fetish is 1]. [big he of M] is massively pregnant, and her only motion is to absently rub her belly every so often[end if].".
+		say "A veiled [man of M] in a sheer black robe. While you cannot clearly see [his of M] eyes, [his of M] mouth gapes vacantly and the cords of drool running from it betray how empty [his of M] mind must be[if pregnancy fetish is 1 and lady fetish < 2]. She is massively pregnant, and her only motion is to absently rub her belly every so often[otherwise if lady fetish is 2]. His penis locked into a glowing purple chastity cage, and his only motion is to absently rub his ass every so often[otherwise]. Her only motion is to absently touch herself every so often[end if].".
 
 To say MonsterComment of (M - a mindless acolyte):
 	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]That's not how I'm supposed to end up, is it?[or]I need to make sure they don't do that to me...[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]They look like they have things really easy, maybe it wouldn't be so bad to join them...[or]My sisters look really happy...[in random order][otherwise if the bimbo of the player <= 8][first custom style]Well they're sure creepy.[otherwise][second custom style]That's kind of a hot look on them...[end if][roman type][line break]".
@@ -86,9 +86,9 @@ To say MonsterComment of (M - a mindless acolyte):
 To say MonsterDesc of (M - clairvoyant acolyte):
 	if diaper quest is 1:
 		say MonsterDesc of ardent acolyte;
-		say "Her body is pale, almost green, but it almost seems like she's... stronger for it.";
+		say "[big his of M] body is pale, almost green, but it almost seems like [he of M]'s... stronger for it.";
 	otherwise:
-		say "A veiled woman in a sheer black robe. While you cannot clearly see her eyes, there is a noticeably blank look on her face, as if she were thinking of... nothing at all. [if bukkake fetish is 1 and the location of the player is Mansion02]Her entire body is coated in [semen], especially her crotch and chin, which are very clearly leaking onto the bedspread beneath her[otherwise if the location of the player is Mansion02]Her body is pale, almost green compared to the bedspread beneath her[otherwise if bukkake fetish is 1]Her entire body is coated in [semen], especially [his of M] [HoleDesc of M] and chin, but [he of M] doesn't seem to mind[otherwise]Her body is pale, almost green, but it almost seems like she's... stronger for it[end if]. [if pregnancy fetish is 1]You can't be certain, but it looks like she has a bit of a baby bump.[end if]";
+		say "A veiled [man of M] in a sheer black robe. While you cannot clearly see [his of M] eyes, there is a noticeably blank look on her face, as if she were thinking of... nothing at all. [big his of M] [if bukkake fetish is 1 and the location of the player is Mansion02]entire body is coated in [semen], especially [his of M] crotch and chin, which are very clearly leaking onto the bedspread beneath [him of M][otherwise if the location of the player is Mansion02]body is pale, almost green compared to the bedspread beneath [him of M][otherwise if bukkake fetish is 1]entire body is coated in [semen], especially [his of M] [HoleDesc of M] and chin, but [he of M] doesn't seem to mind[otherwise]body is pale, almost green, but it almost seems like [he of M]'s... stronger for it[end if]. [if pregnancy fetish is 1 and lady fetish < 2]You can't be certain, but it looks like she has a bit of a baby bump.[end if]";
 
 To say MonsterComment of (M - clairvoyant acolyte):
 	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of][big he of M] seems different to the others, maybe I should be a bit cautious.[or]This one is definitely more in touch with whatever the cult works for.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of][big he of M]'s so pretty! I wish the [great one]s favoured me that much. Um, did I just think that?[or]I should probably stay and let her mould my weak mind. Wait, should I be thinking that?[in random order][otherwise if the bimbo of the player <= 8][first custom style]I might not want to stick around here...[otherwise][second custom style]That's a weird look, but it kind of works for her![end if][roman type][line break]".
@@ -124,26 +124,25 @@ Definition: an acolyte (called M) is controlling: [Otherwise it causes infinite 
 	decide no.
 
 This is the spawn initial acolytes rule:
-	if diaper quest is 0 or the player is an october 2018 diaper donator:
-		if clairvoyant acolyte is off-stage:
-			set up clairvoyant acolyte;
-			summon clairvoyant acolyte in the mansion;
-			now clairvoyant acolyte is in Mansion02;
-		if the number of alive intelligent acolytes < 2:
-			let M be a random off-stage intelligent acolyte;
-			set up M;
-			summon M in the mansion;
-		while the number of alive mindless acolyte < 2:
-			let M be a random off-stage mindless acolyte;
-			set up M;
-			summon M in the mansion;
-			now M is in Mansion23.
+	if clairvoyant acolyte is off-stage:
+		set up clairvoyant acolyte;
+		summon clairvoyant acolyte in the mansion;
+		now clairvoyant acolyte is in Mansion02;
+	if the number of alive intelligent acolytes < 2:
+		let M be a random off-stage intelligent acolyte;
+		set up M;
+		summon M in the mansion;
+	while the number of alive mindless acolyte < 2:
+		let M be a random off-stage mindless acolyte;
+		set up M;
+		summon M in the mansion;
+		now M is in Mansion23.
 The spawn initial acolytes rule is listed in the setting up mansion monsters rules.
 
 To say SummoningFlav of (M - an acolyte):
 	if M is in the location of the player:
 		if M is intelligent, say "The cloth wrappings covering the mummified figure slowly unravel, revealing [NameDesc of M] underneath. Her legs shake a bit as she steps forward, mumbling the same syllable over and over under her breath. The mummy immediately reforms behind her.";
-		otherwise say "The cloth wrappings covering the mummified figure slowly unravel, revealing [NameDesc of M] underneath. [big he of M] stands in place for a moment before stumbling forward, allowing the mummy to reform behind her.";
+		otherwise say "The cloth wrappings covering the mummified figure slowly unravel, revealing [NameDesc of M] underneath. [big he of M] stands in place for a moment before stumbling forward, allowing the mummy to reform behind [him of M].";
 	otherwise:
 		say "You hear fabric unravelling somewhere else in the mansion".
 
@@ -200,7 +199,7 @@ To compute perception of (M - a mindless acolyte):
 	commence doom.
 
 To commence doom:
-	if doom counter is 0 and (diaper quest is 0 or the player is an october 2018 top donator):
+	if doom counter is 0:
 		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to re-close the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
 		now doom counter is 1.
@@ -316,10 +315,11 @@ This is the cult conversion rule:
 				now the wind-up of M is 0;
 				rule succeeds;
 			otherwise if the wind-up of M is 1 and herald is alive:
-				say "[first custom style]'The herald...'[roman type]";
+				say "[first custom style]'The herald...'[roman type][line break]";
 				drag to the location of herald by M;
 				bore M;
 				now the wind-up of M is 0;
+				if herald is not interested, check perception of herald;
 				rule succeeds;
 			now the wind-up of M is 1;
 		rule succeeds.
@@ -875,7 +875,7 @@ To compute (M - clairvoyant acolyte) protecting against (X - a monster):
 
 To compute unique periodic effect of (M - a clairvoyant acolyte):
 	if a random number between 1 and 45 is 1:
-		if M is in the location of the player, say "[BigNameDesc of M] sighs as [semen] dribbles out of [his of M] [vagina]. [big he of M] recites a slow chant as it forms a puddle on the floor.";
+		if M is in the location of the player, say "[BigNameDesc of M] sighs as [semen] dribbles out of [his of M] [HoleDesc of M]. [big he of M] recites a slow chant as it forms a puddle on the floor.";
 		PuddleUp semen by 1 in (the location of M);
 		if doomed > 0 and doomed < 5, increase doom counter by 5.
 

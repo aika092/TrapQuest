@@ -55,8 +55,7 @@ To compute periodic effect of (C - a chastity cage):
 	[if C is cursed:
 		if the size of penis > min penis size and a random number between 1 and 250 is 1:
 			PenisDown 1;
-			say "You feel your cursed chastity cage [Shrink] your penis into a [ShortDesc of penis].";
-		arouse seconds * 10.]
+			say "You feel your cursed chastity cage [Shrink] your penis into a [ShortDesc of penis].";]
 
 [!<TheChastityCagePussySlutRule>+
 

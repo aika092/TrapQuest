@@ -102,7 +102,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, upset and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, upset and angry.[end if]";
+	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -292,7 +292,7 @@ Carry out dominating:
 		repeat with N running through monsters in the location of the player:
 			if N is not M, say DominationFailedReaction of N to M;
 	now player-fucking is DOMINANT-NONE;
-	now player-fuckchoice is FUCK-NONE;
+	now player-fuckchoice is FUCK-NONE.
 
 Report dominating:
 	allocate 6 seconds;
@@ -595,15 +595,15 @@ computeSissification is called whenever the monster doesn't have another punishm
 +!]
 To compute sissification:
 	let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-	if the player is male and pink sissy bow is off-stage and pink sissy bow is actually summonable:
-		say "[bold type]A silky pink bow appears in your hair!  [line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
+	if the player is male and transGender is 0 and pink sissy bow is off-stage and pink sissy bow is actually summonable:
+		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
 	otherwise if pink sissy bow is worn and S is clothing:
-		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
+		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 		summon S cursed;
 		announce sissification;
 	otherwise:
-		say "The [if the player is male]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
+		say "The [if the player is male and transGender is 0]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		SilentlyDelicateUp 1.
 
 

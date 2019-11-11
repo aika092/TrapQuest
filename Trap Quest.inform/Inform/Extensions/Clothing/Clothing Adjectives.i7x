@@ -253,9 +253,7 @@ This is the subdued immobility rule:
 	if the player is subdued, rule fails.
 The subdued immobility rule is listed in the immobility rules.
 Definition: a clothing is nudism-enabling: decide no. [If the player is wearing this, they are wearing something that counts as clothing!]
-Definition: a clothing (called C) is nudism-disabling:
-	if C is nudism-enabling, decide no;
-	decide yes.
+Definition: a clothing is nudism-disabling if it is not nudism-enabling.
 Definition: an accessory is nudism-enabling: decide yes.
 Definition: a sex toy is nudism-enabling: decide yes.
 Definition: a piercing is nudism-enabling: decide yes.

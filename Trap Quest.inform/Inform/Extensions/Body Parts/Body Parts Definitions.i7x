@@ -148,7 +148,11 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
-	decide on the lewdly exposed outrage of F - 3. [allows us to easily tweak this number]
+	let O be 10;
+	if F is asshole and the semen volume of belly > 0, increase O by 1;
+	if F is vagina and the semen volume of vagina > 0, increase O by 1;
+	increase O by the openness of F / 9; [only the most gaped orifices show through clothing]
+	decide on O.
 
 [!<GapeFuckholeTimesNumber>+
 
@@ -193,27 +197,88 @@ To ruin (F - a fuckhole) times (X - a number):
 			now the buildup of F is 0;
 		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and for deposit only tattoo is not worn:
 			check soreness fainting of F;
-		unless F is vagina and the player is male and diaper quest is 0, RuinRoll F;
+		let T be a random thing penetrating F;
+		passively stimulate F from T;
+		unless F is vagina and the player is male, RuinRoll F;
 		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say RuinedFlav of F;
 		now the previous soreness of F is the soreness of F.
 
-[To SeedFill (F - a fuckhole):
-	SeedFill F times 1.
+[!<SayRuinedFlavOfFuckhole>+
 
-To SeedFill (F - a fuckhole) times (X - a number):
-	do nothing.]
+REQUIRES COMMENTING
 
-To trigger shameful orgasm of (F - a fuckhole):
-	do nothing.
++!]
+To say RuinedFlav of (F - a fuckhole):
+	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If [FuckerDesc of random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
+
+
+[!<CheckSorenessFaintingOfFuckhole>+
+
+REQUIRES COMMENTING
+
++!]
+To check soreness fainting of (F - a fuckhole):
+	if sex fainting is 1 or there is a futanari slutty sister penetrating F:
+		let N be the raw anal sex addiction of the player;
+		if F is vagina, now N is the raw vaginal sex addiction of the player;
+		if the tolerated of F <=  N / 2:
+			increase the tolerated of F by 1;
+		otherwise:
+			say "[one of]Your [variable F] is so sore that your mind can't take it any more. You feel yourself start to pass[or]You are on the verge of passing[stopping] out.[if debugmode > 0 and the raw delicateness of the player < 20]Do you want to steel your mind and power through (this will not change any stats because you are in debug mode)? [otherwise if the raw delicateness of the player < 20][line break]Do you want to steel your mind and attempt to power through (this will cause a slight increase in delicateness)? [end if]";
+			if the raw delicateness of the player < 20 and the player is consenting:
+				say "You steel your mind and manage to power through the intense feelings without fainting[if the delicateness of the player < 4][otherwise if the delicateness of the player < 8]. You whimper gently[otherwise if the delicateness of the player < 12]. You sob quietly[otherwise if the delicateness of the player < 16]. You can't help but cry[otherwise if diaper lover >= 1]. You bawl loudly like a baby[otherwise]. You bawl loudly[end if].";
+				if debugmode is 0:
+					PainUp 1;
+					potentially despair about F sex;
+			otherwise:
+				if the raw delicateness of the player < 20, say "Your mind is too weak and the feelings are too intense, and you fail to stay conscious!";
+				now delayed fainting is 1;
+				IntDown 1;
+				now the fainting reason of the player is 18;
+	otherwise:
+		increase sex-hurt-balance by 1;
+		if sex-hurt-balance > 1:
+			now sex-hurt-balance is 0;
+			PainUp 1;
+			potentially despair about F sex.
+
+[!<sexHurtBalance:Integer>*
+
+REQUIRES COMMENTING
+
+*!]
+sex-hurt-balance is a number that varies.
+
+[!<PotentiallyDespairAboutFuckholeSex>+
+
+REQUIRES COMMENTING
+
++!]
+To potentially despair about (F - a fuckhole) sex:
+	if the raw sex addiction of the player > the raw delicateness of the player:
+		say "[one of]Your addiction to sex slightly decreases.[or]Your mind associates sex with pain, slightly reducing your opinion of it.[in random order] ";
+		SilentlySexAddictDown 1;
+		if F is asshole and the raw anal sex addiction of the player * 2 > the raw delicateness of the player, AnalSexAddictDown 1;
+		if F is vagina and the raw vaginal sex addiction of the player * 2 > the raw delicateness of the player, VaginalSexAddictDown 1.
+
+
+To trigger shameful orgasm of (F - a body part):
+	vaginally orgasm shamefully.
 
 To trigger shameful orgasm of (F - asshole):
 	anally orgasm shamefully.
 
-To trigger shameful orgasm of (F - vagina):
-	vaginally orgasm shamefully.
+To trigger shameful orgasm of (F - breasts):
+	breasts orgasm shamefully.
+
+Definition: a body part (called F) is orgasming:
+	if the player is extremely horny or F is pushed over the edge:
+		trigger shameful orgasm of F;
+		decide yes;
+	decide no.
 
 Definition: a fuckhole (called F) is orgasming:
-	if for deposit only tattoo is not worn and the player is extremely horny or F is pushed over the edge:
+	if for deposit only tattoo is not worn and (the player is extremely horny or F is pushed over the edge):
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
@@ -358,12 +423,12 @@ Definition: a body part is at least partially exposed if the concealer of it is 
 To decide which number is the lewdly exposed outrage of (B - a body part):
 	decide on 0. [not humiliating by default]
 To decide which number is the at least partially lewdly exposed outrage of (B - a body part):
-	let C be the lewdly exposed outrage of B - 3;
+	let C be the lewdly exposed outrage of B - 4;
 	if C < 0, decide on 0;
 	decide on C.
 To decide which number is the outrage of (B - a body part):
 	let O be 0;
-	if B is glazed and (B is exposed or (B is breasts and breasts is showing cleavage)), increase O by (the semen coating of B * the semen coating of B); [the more cum, the more noticeable it is. quickly.]
+	if B is glazed and (B is exposed or (B is breasts and breasts is showing cleavage)), increase O by (the semen coating of B * 3); [the more cum, the more noticeable it is. quickly.]
 	if B is lewdly exposed:
 		now O is the lewdly exposed outrage of B + O;
 	otherwise if B is at least partially lewdly exposed:
@@ -399,6 +464,11 @@ Definition: a body part is occupied:
 	if it is actually occupied, decide yes;
 	if it is fake occupied, decide yes;
 	decide no.
+
+[Can it be accessed right now with nothing blocking it?]
+Definition: a body part is undefended: decide yes.
+
+
 
 [!<BodyPartIsFakeOccupied>+
 

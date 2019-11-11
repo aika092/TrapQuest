@@ -26,6 +26,10 @@ Definition: condom-pack is whore themed: decide yes.
 
 Definition: condom-pack is fetish appropriate if diaper quest is 0.
 
+To decide which number is the outrage of (C - condom-pack):
+	decide on 12.
+
+
 To decide which number is the alchemy key of (C - condom-pack):
 	decide on 28.
 
@@ -50,7 +54,7 @@ Report taking condom-pack when the player is in Dungeon07:
 Report going when condom-pack is carried:
 	if condom-pack is condom-trapped:
 		say "[bold type]Suddenly your new condom pack soars out of your [if there is a worn bag of holding]bag[otherwise]hand[end if] and into the air! It must have been trapped with a curse! [roman type]Condoms start flying out of it in all directions and magically filling themselves with [semen].";
-		let S be a random string belt;
+		let S be string-belt;
 		if S is worn:
 			say "Three used condoms appear on your [ShortDesc of S]!";
 		otherwise:
@@ -83,8 +87,6 @@ Definition: an overdress is condom pinnable: decide yes.
 Definition: a stockings is condom pinnable: decide yes.
 
 Definition: a belt is condom pinnable: decide yes.
-
-Definition: a string belt is condom pinnable: decide yes.
 
 Definition: a clothing is condom pinned if the total condoms of it > 0.
 
@@ -144,14 +146,14 @@ To compute condom request choice of (M - a monster):
 					say CondomForceFailFlav of M.
 
 Definition: a monster (called M) is convinced to wear a condom:
-	let C be the charisma of the player;
+	let C be the charisma of the player + (the trophy-mode of condom-trophy * 20);
 	if the class of the player is fertility goddess, decrease C by 3;
 	let R be a random number between 0 and C;
 	if R < the condom resistance of M, decide no;
 	decide yes.
 
 Definition: a monster (called M) is forced to wear a condom:
-	let D be (the dexterity of the player) / 3;
+	let D be (the dexterity of the player) / (3 - (the trophy-mode of condom-trophy * 2));
 	if the class of the player is fertility goddess, decrease D by 3;
 	let R be a random number between -1 and D;
 	if R < the condom resistance of M, decide no;
@@ -168,7 +170,7 @@ To compute default condom filling of (M - a monster):
 	if C is nothing or a random number between 1 and 4 > 1, now C is a random worn condom pinnable clothing; [75% chance of condoms going on the same item as there are already condoms]
 	let S be nothing;
 	if C is nothing:
-		now S is a random string belt;
+		now S is string-belt;
 		summon S cursed;
 		now C is S;
 	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if][CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
@@ -185,7 +187,9 @@ To compute default condom filling of (M - a monster):
 	if C is cheerleader outfit and there is a worn pigtail-scrunchie and artificial enhancements fetish is 1:
 		let P be a random pink rubber dress;
 		transform C into P;
-	otherwise if C is string belt or total used condoms > 2:
+	otherwise if the player is in a predicament room:
+		do nothing; [no new classes in the predicament world!]
+	otherwise if (C is string-belt or total used condoms > 2):
 		if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
 			summon thirsty work condom hat cursed;
 			say "As if to celebrate your [']achievement['], a [ShortDesc of thirsty work condom hat] appears on your head!";
@@ -245,8 +249,8 @@ To say AutomaticCondomFlav of (M - a monster):
 	say "After taking one look at your [if there is a worn cumdumpster hat]cumdumpster hat[otherwise][ShortDesc of random held condom-providing thing][end if], [NameDesc of M] takes a condom and deftly protects [his of M] [manly-penis].";
 
 To say CondomPinFlav of (M - a monster) on (C - a clothing):
-	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [ShortDesc of C]. ";
-	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C]. ".
+	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [ShortDesc of C].";
+	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].".
 
 To say CondomPinReactionFlav of (M - a person) on (C - a clothing):
 	say "[variable custom style][one of][if the player is shameless and M is monster]What a great idea! Now everyone knows exactly what a whore I've been.[otherwise if the player is shameless]What a great idea! Now everyone will think that I'm a disgusting [semen]-addicted whore.[otherwise]What on earth?! Am I supposed to walk around with this thing just dangling there[end if][if the player is not shameless and M is monster]?! Everyone will know what I've been doing... how shameful...[otherwise if the player is not shameless]?! Everyone will think I put it there on purpose, as some kind of trophy...[end if][or][if the semen taste addiction of the player > 16 and (the player is not shameless or a random number between 1 and 2 is 1)]Sweet, I've got myself another tasty snack for later![otherwise if the player is shameless]Great! It looks much more sexy now![otherwise if the total condoms of C is 0]Oh great, now this has condoms on it too![otherwise][end if][stopping][roman type][line break]".
@@ -327,7 +331,7 @@ To compute spontaneous condom of (C - a clothing):
 	let P be a random worn condom pinnable clothing;
 	let S be nothing;
 	if P is nothing:
-		now S is a random string belt;
+		now S is string-belt;
 		summon S cursed;
 		now P is S;
 	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if]You watch in [horror the semen taste addiction of the player] as the condom flies onto your [MediumDesc of P] and fuses itself to the [clothing-material of P]. [if the used condoms of P is 0]Your [ShortDesc of P] now has a used condom pinned to it![end if][line break][CondomPinReactionFlav of yourself on P]";

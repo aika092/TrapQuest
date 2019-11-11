@@ -20,22 +20,22 @@ Carry out TQeating gelatin:
 				try urinating;
 		otherwise:
 			say "The fruity treat fills your body with lasting warmth and energy, but the taste fades quickly, giving way to the unmistakable flavour of fresh [semen]. Knowing you not only swallowed someone's load, but used it as a snack, fills you with [if the semen addiction of the player < 7]humiliation[otherwise]excitement[end if].";
-			Arouse the semen addiction of the player * 20;
+			Arouse the semen taste addiction of the player * 20;
 			Humiliate 100;
 			SemenAddictUp 1;
 			StomachSemenUp 1;
 	otherwise if a random number between 3 and the quality of the noun is 3 or diaper quest is 1:
-		say "The fruity taste fills your body with lasting warmth and energy!  You feel less tired... and a little more aroused.";
+		say "The fruity taste fills your body with lasting warmth and energy! You feel less tired... and a little more aroused.";
 		if the quality of the noun > 0, FatigueDown the quality of the noun * 20;
 		otherwise FatigueDown 10;
-		Arouse 300;
+		Arouse 1000;
 	otherwise:
 		say "The fruity taste fills your body with lasting warmth. [if the silicone volume of breasts + the silicone volume of hips > 0]Your implants seem to heat up, and as a wash of arousal moves through your body, you realize they've actually gotten bigger![otherwise]Your scalp seems to heat up, and as a wave of arousal descends over your body, you realize something's happening to your hair![end if]";
 		if the silicone volume of breasts > 0, BustImplantsUp 1;
 		if the silicone volume of hips > 0, AssImplantsUp 1;
 		if the silicone volume of hips + the silicone volume of breasts is 0:
 			ColourUp 1;
-		Arouse 600;
+		Arouse 1000;
 	StomachFoodUp 2;
 	allocate 6 seconds.
 		

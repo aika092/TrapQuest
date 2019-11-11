@@ -26,6 +26,7 @@ REQUIRES COMMENTING
 
 +!]
 To destroy (T - a thing):
+	uniquely destroy T;
 	remove T from play;
 	dislodge T.
 

@@ -2,7 +2,8 @@ Dungeon Chains by Objects begins here.
 
 dungeon chains is an ankle bond. dungeon chains is in School34. dungeon chains is sure. dungeon chains is identified.
 
-Definition: A dungeon chains is immune to change: decide yes.
+Definition: dungeon chains is immune to change: decide yes.
+Definition: dungeon chains is actually summonable: decide no.
 
 Figure of dungeon chains is the file "Env/School/dungeonchains1.jpg".
 

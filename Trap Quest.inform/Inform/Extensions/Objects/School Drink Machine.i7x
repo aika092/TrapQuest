@@ -33,7 +33,9 @@ To compute drink-machine decanting of (V - a vessel):
 			now keep-going is 0.
 
 To compute drink-machine filling of (V - a vessel):
-	now the fill-colour of V is the Appearance corresponding to an Magic of 3 in the Table of Drinks;
+	if diaper quest is 1, now the fill-colour of V is white;
+	otherwise now the fill-colour of V is the Appearance corresponding to an Magic of 3 in the Table of Drinks;
+	now V is player-origin;
 	if the doses of V < the max-doses of V:
 		say "The [ShortDesc of V] is filled with [if V is empty]a[otherwise]another[end if] mouthful of [fill-colour of V] liquid.";
 		increase the doses of V by 1;
@@ -42,9 +44,11 @@ To compute drink-machine filling of (V - a vessel):
 
 To compute sybian sitting:
 	let K be a random worn bottom level pee protection clothing;
-	say "You straddle the large vibrator[if K is clothing], the protruding nub pushing into your [genitals] through your [MediumDesc of K][otherwise if the player is female], allowing the silicone nub to sink into the entrance of your [vagina][end if]. As your weight presses down it clicks into action, the powerful mechanism sending superfast vibrations directly into your sensitive crotch. At the same time, the nozzle dispenses its soda.";
-	Arouse 2000;
-	ruin vagina.
+	say "You straddle the large vibrator[if K is clothing], the protruding nub pushing into your [genitals] through your [MediumDesc of K][otherwise if the player is female], allowing the silicone nub to sink into the entrance of your [vagina][end if]. As your weight presses down it clicks into action, the powerful mechanism sending superfast vibrations directly into your sensitive crotch. At the same time, the nozzle dispenses its [if diaper quest is 1][milk][otherwise]soda[end if].";
+	stimulate vagina from drink-machine.
+
+To decide which number is the stimulation of (D - drink-machine) on (B - a body part):
+	decide on 10. [Something like 4 or 5 is more common]
 
 Report going when the player is in School17: [We automatically get a bully if possible]
 	if the number of unfriendly uninterested students in the location of the player is 0:

@@ -9,6 +9,9 @@ To decide which figure-name is the examine-image of (B - a bag lunch):
 
 To say ShortDesc of (C - a bag lunch):
 	say "[']bag lunch[']".
+	
+To decide which number is the outrage of (C - a bag lunch):
+	decide on 20.
 
 Check TQeating bag lunch:
 	if there is a thing penetrating face or there is worn ringagged clothing, say "I can't get to the [semen] if I can't bite down on it." instead.

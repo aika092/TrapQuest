@@ -21,6 +21,8 @@ Definition: a tincture is never-in-bag: decide yes.
 Definition: water-bomb is never-in-bag: decide yes.
 
 Definition: a thing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried.
+Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet.
+Definition: a knickers is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and it is not messed.
 Definition: a thing is currently-in-bag if it is in-bag and there is a worn bag of holding.
 Definition: a thing is currently-not-in-bag if it is carried and it is not currently-in-bag.
 
@@ -32,7 +34,7 @@ Check taking something:
 		if there is a worn bag of holding:
 			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink. You'll have to drop some if you want to pick up more." instead;
 		otherwise:
-			say "You are at your limit for carrying objects. If only you still had that bag of holding." instead.
+			unless the noun is bag of holding, say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
 
 
 
@@ -186,7 +188,7 @@ To execute (E - bag-feeding-condoms) on (C - a thing):
 			let P be a random worn condom pinnable clothing;
 			let S be nothing;
 			if P is nothing:
-				now S is a random string belt;
+				now S is string-belt;
 				summon S cursed;
 				now P is S;
 			let UC be the used condoms of C;
@@ -345,6 +347,23 @@ To execute (E - bag-feeding-pink-theme) on (C - a thing):
 			otherwise:
 				say "You feel more perverted...";
 				SexAddictUp 1.
+
+
+bag-feeding-wet-diaper is a bag-feeding-effect.
+To execute (E - bag-feeding-wet-diaper) on (C - a thing):
+	if (C is wet diaper or (C is wet knickers and diaper quest is 1)) and the player is not incontinent:
+		say "Your bag reacts to the wetness! You feel a twinge behind your bladder as it weakens...";
+		increase incontinence by 1.
+
+
+bag-feeding-diaper-bag is a bag-feeding-effect.
+To execute (E - bag-feeding-diaper-bag) on (C - a thing):
+	if diaper messing >= 6 and C is diaper and (there is a worn diaper bag of holding or there is a worn baby diaper bag of holding):
+		let SD be a random off-stage soiled-diaper;
+		if SD is soiled-diaper:
+			now SD is in the location of the player;
+			DiaperPrint SD from C;
+			say "Your diaper bag reacts to the [ShortDesc of C]! It rumbles and then spits out a [SD] onto the ground!".
 
 
 

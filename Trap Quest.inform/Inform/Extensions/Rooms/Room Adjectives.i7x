@@ -105,7 +105,8 @@ A room can be trappable or untrappable. A room is usually trappable. [An untrapp
 REQUIRES COMMENTING
 
 +@!]
-A room can be stamped. A room is usually not stamped. [Have we placed the player's icon in this room on the map?]
+A room can be stamped. A room is usually not stamped. [Have we placed temporary icons or hyperlink buttons in this room on the map?]
+A room can be NPCStamped. A room is usually not NPCStamped. [Have we already calculated the coordinates for NPC icons on this space?]
 
 [!<Room>@<IsMandatory>+
 
@@ -161,12 +162,6 @@ A room can be bossed or unbossed. A room is usually unbossed.
 
 Definition: A room is furnished rather than unfurnished if there is furniture in it.
 
-[!<RoomIsUnusual>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: A room is unusual if there is a dispenser in it.
 
 Room Adjectives ends here.
 

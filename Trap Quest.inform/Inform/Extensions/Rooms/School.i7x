@@ -6,6 +6,12 @@ A room can be lecture. [It's a classroom]
 To decide which number is the entry-rank of (R - a room):
 	decide on 0.
 
+
+Definition: an academic room (called R) is within vision:
+	now neighbour finder is the location of the player;
+	if R is neighbour finder or ((armband is worn or the rank of the player >= the entry-rank of R) and R is next door), decide yes;
+	decide no.
+
 To say SchoolHallway:
 	say "An identical tiled marble floor to all the other sections of hallway. ".
 
@@ -48,13 +54,13 @@ To decide which number is the entry-rank of (R - School19):
 	decide on 1.
 
 [Rooms To The Left of Changing Room]
-School20 is a water-bodied academic room. The printed name of School20 is "Swimming Pool". "A medium sized rectangular swimming pool fills the air with the smell of chlorine. To the north is a set of tiered spectator stands. To the west a door reads 'Hot Tub'. To the south the door says 'Gymnasium'.". The shape of School20 is L5/0-0-1-1-1-1. The grid position of School20 is <5,9,7>. School20 is west of School19.
+School20 is a water-bodied academic room. The printed name of School20 is "Swimming Pool". "A medium sized rectangular swimming pool [if diaper quest is 0]filled to the brim with what appears to be fresh warm [semen][otherwise]fills the air with the smell of chlorine[end if]. To the north is a set of tiered spectator stands. To the west a door reads 'Hot Tub'. To the south the door says 'Gymnasium'.". The shape of School20 is L5/0-0-1-1-1-1. The grid position of School20 is <5,9,7>. School20 is west of School19.
 To decide which number is the entry-rank of (R - School20):
 	decide on 2.
 School21 is a water-bodied academic room. The printed name of School21 is "Hot Tub". "A large jacuzzi sits bubbling away at the centre of this otherwise small and empty room.". The shape of School21 is L5/0-0-0-1-0-0. The grid position of School21 is <5,8,7>. School21 is west of School20.
 To decide which number is the entry-rank of (R - School21):
 	decide on 4.
-School22 is an academic room. The printed name of School22 is "Spectator Stands". "Tiered viewing benches face the swimming pool.". The shape of School22 is L5/0-0-0-0-1-0. The grid position of School22 is <5,9,8>. School22 is north of School20.
+School22 is an academic room. The printed name of School22 is "Spectator Stands". "Tiered viewing benches face the [if diaper quest is 0][semen]-filled [end if]swimming pool.". The shape of School22 is L5/0-0-0-0-1-0. The grid position of School22 is <5,9,8>. School22 is north of School20.
 To decide which number is the entry-rank of (R - School22):
 	decide on 2.
 School23 is an academic room. The printed name of School23 is "Gym". "A large empty space typical of a school indoor gym, with the addition of racetrack markings around the outside.". The shape of School23 is L5/0-0-1-0-0-0. The grid position of School23 is <5,9,6>. School23 is south of School20.
@@ -76,6 +82,9 @@ To decide which number is the entry-rank of (R - School26):
 School27 is an academic room. The printed name of School27 is "Staff Room". "This doesn't look like any staff room you've ever seen before. [if diaper quest is 1]There's nothing here...[otherwise]Instead of any furniture there's just video cameras, piercing and tattoo needles held on giant robotic arms all poised and ready, pointing at... a gloryhole?![end if]". The shape of School27 is L5/0-0-0-1-0-0. The grid position of School27 is <5,10,8>. School27 is west of School26.
 To decide which number is the entry-rank of (R - School27):
 	decide on 6.
+Definition: School27 (called R) is within vision:
+	if R is Neighbour Finder or (R is next door and the rank of the player >= the entry-rank of R), decide yes;
+	decide no.
 School28 is an academic room. The printed name of School28 is "Science Lab". "A large metal lab bench has two metal bowls embedded into it. Maybe you can [bold type]craft[roman type] something in each.". The shape of School28 is L5/0-0-0-0-1-1. The grid position of School28 is <5,14,8>. School28 is east of School25. School28 is north of School15.
 To decide which number is the entry-rank of (R - School28):
 	decide on 3.
@@ -84,7 +93,7 @@ To decide which number is the entry-rank of (R - School28):
 School29 is a lecture academic room. The printed name of School29 is "Ruby Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with photos of [if diaper quest is 1]sexy adult women in dry diapers[otherwise]voluptuous women pleasuring themselves[end if].". The shape of School29 is L5/0-0-0-0-1-0. The grid position of School29 is <5,11,9>. School29 is north of School26.
 To decide which number is the entry-rank of (R - School29):
 	decide on 3.
-School30 is a lecture academic room. The printed name of School30 is "Pink Diamond Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with photos of [if diaper quest is 1]sexy adult women using their diapers[otherwise]voluptuous women taking cocks in all their holes[end if].". The shape of School30 is L5/0-0-0-0-1-0. The grid position of School30 is <5,13,9>. School30 is north of School25.
+School30 is a lecture academic room. The printed name of School30 is "Pink Diamond Classroom". "This 'classroom' has a large circle of lit candles on the ground. The walls are adorned with photos of [if diaper quest is 1]sexy adult women using their diapers[otherwise]voluptuous women taking cocks in all their holes[end if].". The shape of School30 is L5/0-0-0-0-1-0. The grid position of School30 is <5,13,9>. School30 is north of School25.
 To decide which number is the entry-rank of (R - School30):
 	decide on 4.
 School31 is an academic room. The printed name of School31 is "Trophy Hall". "A series of trophies, each for a different [if diaper quest is 1]baby related[otherwise]extremely lewd[end if] act, sit on shelves that line the east and west walls. To the north the door says 'Diamond Class'.". The shape of School31 is L5/0-0-1-0-1-0. The grid position of School31 is <5,12,9>. School31 is north of School24.

@@ -140,7 +140,7 @@ To trigger pole trap (Y - a dildo trap):
 				otherwise:
 					if O is diaper:
 						say "The dildo hits the thick padding of your [ShortDesc of O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
-						arouse 550;
+						passively stimulate vagina from Y;
 					otherwise:
 						say "Your [ShortDesc of O] blocks the dildo which bounces off harmlessly. The [if O is rigid]material is damaged[otherwise][clothing-material of O] material of the clothing is stretched[end if] a little by the attack.";
 						damage O;
@@ -618,7 +618,9 @@ To trigger (Y - a ghostly dildo pole trap):
 		otherwise:
 			now Y is penetrating target-BP;
 			say "You gasp as the dildo goes straight [if O is clothing]through your [ShortDesc of O], as if it wasn't there, and [end if]into your [variable target-BP]!";
-			ruin target-BP.
+			ruin target-BP;
+	repeat with M running through reactive monsters:
+		say DildoTrapReactFlav of M.
 
 [!<GhostlyDildoPoleTrap>@<ComputeOrgasmResolution>+
 

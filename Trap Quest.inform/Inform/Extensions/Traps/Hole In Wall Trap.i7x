@@ -215,7 +215,7 @@ Definition: hole-wank (called P) is appropriate:
 
 To compute punishment of (P - hole-wank):
 	now the priority of P is 1;
-	say "Suddenly you feel a hand groping your diaper!  [line break][variable custom style][if the diaper addiction of the player < 8]No, don't touch that! Gross... [otherwise]Ooh!  [end if][roman type][line break]The hand moves down towards your [genitals].";
+	say "Suddenly you feel a hand groping your diaper![line break][variable custom style][if the diaper addiction of the player < 8]No, don't touch that! Gross...[otherwise]Ooh![end if][roman type][line break]The hand moves down towards your [genitals].";
 	if the latex-transformation of the player > 3:
 		say "You hardly feel anything thanks to your rubbery genitals. The hand soon gives up and leaves you alone.";
 	otherwise:
@@ -227,13 +227,11 @@ To compute punishment of (P - hole-wank):
 				say "The hand finds [if the player is barbie]the doll-like flatness of your [sissy-penis] and pauses as if in surprise, then presses and strokes[otherwise if the player is male]the tip of your[player-penis] and tweaks[otherwise]your clit and rubs[end if] it carefully through your diaper.";
 			otherwise:
 				say "Your new tormentor goes all out, using both hands to rub circles in opposite directions all over your [if the player is male][player-penis][otherwise][vagina] and clit[end if]!";
-			Arouse 1000;
+			stimulate vagina from hole-in-wall;
 			let D be a random worn perceived messed diaper;
 			if D is diaper:
 				say "[one of]The gross squishiness of your messy diaper being used to masturbate you makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
 				DelicateUp 1;
-			if for deposit only tattoo is not worn and the player is extremely horny or vagina is pushed over the edge:
-				vaginally orgasm shamefully;
 			increase wank-attempts by 1;
 			compute extra turn;
 		if refactoryperiod > 0, say "The anonymous hand's owner is clearly satisfied with that as you feel it let go, lovingly pat your bottom a couple of times for good measure, and then leave you alone.";

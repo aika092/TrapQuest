@@ -190,7 +190,9 @@ REQUIRES COMMENTING
 
 +!]
 This is the throatskill prevents gag reflex rule:
-	if the throatskill of the player is 1, rule succeeds.
+	if the throatskill of the player is 1:
+		if debuginfo > 0, say "[input-style]Avoid gagging check: learned deepthroat skill | automatic success[roman type][line break]";
+		rule succeeds.
 The throatskill prevents gag reflex rule is listed in the gag reflex rules.
 
 [!<TheThroatskillListRule>+
