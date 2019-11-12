@@ -30,7 +30,7 @@ REQUIRES COMMENTING
 +!]
 To compute periodic effects with earnings (local-earnings - a number) and seconds (local-seconds - a number):
 	[If enough experience has been gained, level up heel skill]
-	if the heel time of the player  > (the raw heel skill of the player * 250) + 100 and the player is upright, HeelUp 1;
+	if the heel time of the player > (the raw heel skill of the player * 250) + 100 and the player is upright, HeelUp 1;
 	[Real world changes]
 	if the remainder after dividing local-earnings by (500 / (fast breast expansion + 1)) < local-seconds:
 		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1000 / (fast breast expansion + 1)) < local-seconds:
@@ -253,7 +253,7 @@ To compute inflation decay:
 	if the air volume of hips > 0:
 		decrease the air volume of hips by 1;
 		if flav-said is 0, say "Your [ShortDesc of hips] have slightly deflated.";
-	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air!  How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
+	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air! How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
 
 
 

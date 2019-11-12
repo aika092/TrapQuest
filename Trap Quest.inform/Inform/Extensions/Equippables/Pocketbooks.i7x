@@ -106,7 +106,7 @@ Section 2 - Book of Do Overs
 A book of regrets is a kind of pocketbook. There is 1 book of regrets. The text-shortcut of book of regrets is "bdo". Understand "do over", "doover", "do-over", "do overs", "do-overs", "overs", "my top 100", "top 100", "100" as book of regrets.
 
 To say ClothingDesc of (C - a book of regrets):
-	say "A small white pocket book [if diaper lover >= 1]with a picture of a confused looking woman in a diaper on the cover. Another woman is standing over her, sternly brandishing a dirty pair of undies.[otherwise if bukkake fetish is  1]with a picture of a naked woman surrounded by men on the cover. She's mid shrug, and there's a strangely wistful look on her face, which is absolutely plastered with [semen].[otherwise]with a picture of an anxious looking maid on the cover. A broken vase is on the floor in front of her, and behind her you can see her stern faced employer, holding a coiled up rope.[end if] 'Me and my Top 100 Do-overs, by [NameBimbo]' is superimposed over her forehead in big, red capital letters. [line break][variable custom style][one of]Is that my name? But [or][stopping]I didn't write this![roman type][line break]".
+	say "A small white pocket book [if diaper lover >= 1]with a picture of a confused looking woman in a diaper on the cover. Another woman is standing over her, sternly brandishing a dirty pair of undies.[otherwise if bukkake fetish is 1]with a picture of a naked woman surrounded by men on the cover. She's mid shrug, and there's a strangely wistful look on her face, which is absolutely plastered with [semen].[otherwise]with a picture of an anxious looking maid on the cover. A broken vase is on the floor in front of her, and behind her you can see her stern faced employer, holding a coiled up rope.[end if] 'Me and my Top 100 Do-overs, by [NameBimbo]' is superimposed over her forehead in big, red capital letters. [line break][variable custom style][one of]Is that my name? But [or][stopping]I didn't write this![roman type][line break]".
 
 To say ShortDesc of (C - a book of regrets):
 	say "book of do-overs".
@@ -197,7 +197,7 @@ To say MediumDesc of (C - a book of anal):
 	say "Brandi's Big Book of Anal".
 
 To decide which number is the soreness-influence of (C - a book of anal):
-	if C is tolerance, decide on 3 + (the flat intelligence of the player /  7);[more powerful the better your reading comprehension!]
+	if C is tolerance, decide on 3 + (the flat intelligence of the player / 7);[more powerful the better your reading comprehension!]
 	decide on 0.
 
 [!<TheBookOfAnalButtSlutRule>+

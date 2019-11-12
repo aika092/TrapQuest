@@ -348,7 +348,7 @@ Section - Mandatory Changes
 A supporter is usually male. The leftover-type of a supporter is usually 201.
 
 To say LeftoverDesc (N - 201):
-	say "The bloated, cumfilled and unconscious body of another player is on the ground here.[line break]".
+	say "The bloated, cum-filled and unconscious body of another player is on the ground here.[line break]".
 
 The supporter-name of a supporter is usually "NAME MISSING".
 
@@ -433,7 +433,7 @@ To say IdentifiablePosterReactionFlav of (M - a supporter):
 	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
 
 To say UnidentifiablePosterReactionFlav of (M - a supporter):
-	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if the player is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
+	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
 
 To say BimboSeduced of (M - a supporter): [This is when the player greets the NPC but accidentally says something lewd because of a 'temptation' item of clothing]
 	if M is friendly:
@@ -472,7 +472,7 @@ To say PresentAcceptanceFlav of (M - a supporter): [Your (aggressive) NPC has de
 To say PresentRejectionFlav of (M - a supporter): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] seems deep in thought.[line break][speech style of M]'Your opinion doesn't matter. The real question is, what do *I* want to do?'[roman type][line break]".
 
-To compute the busy waiting of (M - a supporter):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+To compute the busy waiting of (M - a supporter): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait.".
 
 To compute the default taunting of (M - a supporter): [The NPC isn't able to do their thing right now because the player is busy with a trap or another NPC, but they expect the player will be free soon.]
@@ -495,7 +495,7 @@ To say MonsterFailedTripFlav of (M - a supporter):
 	say "You manage to keep your balance.".
 
 To say StrikingSuccessFlav of (M - a supporter) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
-	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - a supporter) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
@@ -625,7 +625,7 @@ To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strapon
 [Vaginal & Anal]
 
 To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
-	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying her [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
+	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying [his of M] [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
 
 
 [###SUPPORTERS WITHOUT A PENIS OR STRAPON ONLY###]

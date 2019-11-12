@@ -126,7 +126,7 @@ To say ShortDesc of hair:
 	if X is 2, say "[if the player is male]standard short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 	if X is 3, say "[HairSoak][HairColour] ear length hair";
 	if X is 4, say "[HairSoak][HairColour] ear length hair";
-	if X is 5, say  "chin length [HairSoak][HairColour] hair";
+	if X is 5, say "chin length [HairSoak][HairColour] hair";
 	if X is 6, say "[HairSoak][HairColour] shoulder length hair";
 	if X is 7, say "[HairSoak][HairColour] nipple length hair";
 	if X is 8, say "[HairSoak][HairColour] elbow length hair";
@@ -248,7 +248,7 @@ To say 2HairDesc (X - a number):
 		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
 		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
-		if X is 5, say  "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
+		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
 		if X is 6, say "straight [HairSoak][HairColour] [HairStyle] that goes down to your shoulders";
 		if X is 7, say "straight [HairSoak][HairColour] [HairStyle] that goes down to your nipples";
 		if X is 8, say "straight [HairSoak][HairColour] [HairStyle] that flows down to your elbows";
@@ -265,7 +265,7 @@ To say 2HairDesc (X - a number):
 		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
 		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
-		if X is 5, say  "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
+		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
 		if X is 6, say "straight [HairSoak][HairColour] [HairStyle] that hangs past your chin as you kneel";
 		if X is 7, say "straight [HairSoak][HairColour] [HairStyle] that hangs past your chin as you kneel";
 		if X is 8, say "straight [HairSoak][HairColour] [HairStyle] that touches the ground as you crawl";
@@ -300,7 +300,7 @@ To say RealHairDesc (X - a number):
 	if X is 2, say "[if the player is male]standard short hair[otherwise]tomboyish hair[end if]";
 	if X is 3, say "ear length hair";
 	if X is 4, say "ear length hair";
-	if X is 5, say  "chin length hair";
+	if X is 5, say "chin length hair";
 	if X is 6, say "shoulder length hair";
 	if X is 7, say "nipple length hair";
 	if X is 8, say "elbow length hair";
@@ -359,15 +359,15 @@ To HairUp (X - a number):
 			if the largeness of hair is 11, say "Your hair continues to grow right in front of your eyes, until it reaches your [ShortDesc of thighs]. [if the semen coating of thighs > 2 and the player is upright]It starts to stick to the [semen] on the insides of your [ShortDesc of thighs]. [end if][if the thickness of hips > 5 and the player is upright]Behind you, it flows gracefully over your [MediumDesc of hips]. [end if][one of][if the semen addiction of the player < 10 and the semen coating of thighs > 2][line break][first custom style]Oh man, that's just gross. And I have to walk around like this?[otherwise if the bimbo of the player < 10][first custom style]My hair is so long it's making my head feel awkwardly heavy![otherwise][line break][second custom style]I wish I could see myself in a mirror, I bet my hair looks amazing![end if][or][stopping][roman type][line break]";
 			if the largeness of hair is 12, say "Your hair continues to grow right in front of your eyes, until it reaches your knees. [if the thickness of hips > 5 and the player is upright]You feel it continue to flow over your [MediumDesc of hips]. [end if][one of][if the bimbo of the player < 12][line break][first custom style]Please stop growing now...[otherwise][line break][second custom style]I have the best hair in the world![end if][or][if the bimbo of the player > 12][second custom style]This is the perfect hair length, I think.[end if][stopping][roman type][line break]";
 			if the largeness of hair is 13, say "Your hair continues to grow right in front of your eyes, until it reaches your calves. [one of][if the bimbo of the player < 12][line break][first custom style]If it grows any more, I'm definitely going to have trouble walking...[otherwise][line break][second custom style]Why wouldn't I want it to grow longer?[end if][or][stopping][roman type][line break]";
-			if the largeness of hair is 14, say "Your hair continues to grow right in front of your eyes, until it reaches your ankles! [one of][if the bimbo of the player < 12][line break][first custom style]Fuck this, now I'm basically tripping over my hair![otherwise][line break][second custom style]Whoops!  My hair is so long, I'd better take care not to trip on it![end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 14, say "Your hair continues to grow right in front of your eyes, until it reaches your ankles! [one of][if the bimbo of the player < 12][line break][first custom style]Fuck this, now I'm basically tripping over my hair![otherwise][line break][second custom style]Whoops! My hair is so long, I'd better take care not to trip on it![end if][or][stopping][roman type][line break]";
 			if the largeness of hair is 15, say "Your hair grows even further, and now touches the floor! [one of][if the bimbo of the player < 12][line break][first custom style]How am I supposed to walk around like this...[otherwise][line break][second custom style]Wow, my hair is crazily long![end if][or][stopping][roman type][line break]";
-			if the largeness of hair > 15, say "Your hair grows even further, and [one of]now starts[or]continues[stopping] to collect on the floor! [one of][if the bimbo of the player < 13][line break][first custom style]Fuck me... my hair is insane.[otherwise]Whoops!  There it goes, still growing even longer...[line break][second custom style][end if][or][line break][variable custom style]They should call me Rapunzel![or][stopping][roman type][line break]";
+			if the largeness of hair > 15, say "Your hair grows even further, and [one of]now starts[or]continues[stopping] to collect on the floor! [one of][if the bimbo of the player < 13][line break][first custom style]Fuck me... my hair is insane.[otherwise]Whoops! There it goes, still growing even longer...[line break][second custom style][end if][or][line break][variable custom style]They should call me Rapunzel![or][stopping][roman type][line break]";
 		let P be a random off-stage pink scrunchie;
 		if P is actually summonable and 0 is the number of worn headgear and there are 2 off-stage pink scrunchie and (hair-fail > 0 or the raw largeness of hair >= 8):
-			say "[bold type]You jump in shock as you feel your [ShortDesc of hair] twisted tightly together behind you, and a scrunchie added!  Your hair is now in a ponytail![roman type][line break]";
+			say "[bold type]You jump in shock as you feel your [ShortDesc of hair] twisted tightly together behind you, and a scrunchie added! Your hair is now in a ponytail![roman type][line break]";
 			summon P;
 		otherwise if a random number between 1 and 250 is 1 and P is actually summonable and there is a worn pink scrunchie and (hair-fail > 0 or the raw largeness of hair >= 12):
-			say "[bold type]You jump in shock as you feel your ponytail split in two behind you, and another scrunchie added!  Your hair is now in pigtails![roman type][line break]";
+			say "[bold type]You jump in shock as you feel your ponytail split in two behind you, and another scrunchie added! Your hair is now in pigtails![roman type][line break]";
 			summon P;
 		otherwise if hair-fail is 2:
 			say "You feel your hair try to grow, but it's already so long it can't grow any further!".

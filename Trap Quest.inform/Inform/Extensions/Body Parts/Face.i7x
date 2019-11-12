@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Orifice>
 
 @!]
-face is an orifice. Face is everywhere. The printed name of face is "[if item described is occupied]mouth[otherwise]face[end if]". Understand "mouth", "blowjob", "oral", "oral sex", "fellatio", "cunnilingus", "blow job" as face. [This way 'offer/suggest blowjob/etc. is understood by the game]  The text-shortcut of face is "face".
+face is an orifice. Face is everywhere. The printed name of face is "[if item described is occupied]mouth[otherwise]face[end if]". Understand "mouth", "blowjob", "oral", "oral sex", "fellatio", "cunnilingus", "blow job" as face. [This way 'offer/suggest blowjob/etc. is understood by the game] The text-shortcut of face is "face".
 To say FullExamineDesc of (B - face):
 	say "[TotalDesc of face]".
 
@@ -195,9 +195,9 @@ To say ShortDesc of (F - face):
 	if the semen coating of face > 7:
 		say ", cum plastered";
 	otherwise if the semen coating of face > 4:
-		say  ", partially cum-covered";
+		say ", partially cum-covered";
 	otherwise if the semen coating of face > 0:
-		say  ", creamed";
+		say ", creamed";
 	if the lips of face is 1:
 		say " big-lipped";
 	otherwise if the lips of face > 1:
@@ -229,9 +229,9 @@ To say TotalDesc of face:
 	if the semen coating of face > 7:
 		say "your face [MakeUpDesc][if the make-up of face is 0] but is completely covered in [semen].[otherwise]. It is also completely plastered in [semen]![end if]";
 	otherwise if the semen coating of face > 4:
-		say  "your face [MakeUpDesc] and is dripping with [semen].";
+		say "your face [MakeUpDesc] and is dripping with [semen].";
 	otherwise if the semen coating of face > 0:
-		say  "your face [MakeUpDesc] and has a few lines of [semen] slowly dripping off it.";
+		say "your face [MakeUpDesc] and has a few lines of [semen] slowly dripping off it.";
 	otherwise:
 		say "your face [MakeUpDesc].";
 	let A be alcohol-level;

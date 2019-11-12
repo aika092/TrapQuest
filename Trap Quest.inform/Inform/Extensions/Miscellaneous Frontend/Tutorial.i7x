@@ -135,7 +135,7 @@ Report opening a container:
 
 Check slapping when tutorial is 1:
 	if the noun is not monster, say "This verb is for attacking NPCs." instead;
-	if the noun is friendly, say "Let's not antagonise him." instead;
+	if the noun is friendly, say "Let's not antagonise [him of the noun]." instead;
 	say "We're going to only use [bold type]kick[roman type]ing in this fight." instead.
 
 Check kneeing when tutorial is 1:
@@ -143,7 +143,7 @@ Check kneeing when tutorial is 1:
 
 Check kicking when tutorial is 1:
 	if the noun is not monster, say "This verb is for attacking NPCs." instead;
-	if the noun is friendly, say "Let's not antagonise him." instead.
+	if the noun is friendly, say "Let's not antagonise [him of the noun]." instead.
 
 Check waiting when tutorial is 1:
 	say "There's no waiting around allowed in this scripted tutorial!" instead.

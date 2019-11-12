@@ -45,7 +45,7 @@ To say AttractionWorry of (N - a monster):
 	otherwise:
 		let M be a random monster in the location of the player;
 		if M is a monster:
-			[If there's a monster right here, the player probably isn't going to worry about a nearby monster?  Or would they.?  Hmm.]
+			[If there's a monster right here, the player probably isn't going to worry about a nearby monster? Or would they? Hmm.]
 			do nothing;[We do nothing instead of explicitly "compute correct kneeling reaction of M" because that's automatically done by the "Report kneeling when the player is in danger and seconds > 1" rule. If we did it here too, we'd get two messages in a row.]
 		otherwise:
 			if the player is glue stuck:

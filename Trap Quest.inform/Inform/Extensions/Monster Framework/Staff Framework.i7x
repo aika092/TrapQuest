@@ -13,7 +13,7 @@ To say FullMonsterDesc of (M - a staff member):
 	if M is undefeated, say StaffDesc of M.
 
 To say StaffDesc of (M - a staff member):
-	say "[Big he of M] is wearing a black armband which says 'STAFF' in large [rank-colour of M] letters.".
+	say "[big he of M] is wearing a black armband which says 'STAFF' in large [rank-colour of M] letters.".
 
 To say rank-colour of (M - a staff member):
 	if M is sapphire-teacher:
@@ -82,7 +82,7 @@ To compute student perception of (M - a staff member):
 	do nothing.
 
 To compute nonstudent perception of (M - a staff member):
-	say "[speech style of M]'You! Where is your armband?!'[roman type][line break][Big he of M] takes an aggressive stance.";
+	say "[speech style of M]'You! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
 	anger M.
 
 To compute (M - a staff member) reacting to armband replacement:
@@ -513,7 +513,7 @@ To say LateDetention of (M - a staff member):
 To say GenericDetention of (M - a staff member):
 	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
 
-dq-staff-detention is a diaper punishment.  the priority of dq-staff-detention is 5.
+dq-staff-detention is a diaper punishment. the priority of dq-staff-detention is 5.
 
 To compute punishment of (P - a dq-staff-detention):
 	follow the unique punishment rule of current-monster.
@@ -549,7 +549,7 @@ To compute chair detention of (M - a staff member):
 	if (diaper quest is 1 or a random number between 0 and 3 < diaper lover) and the number of worn diapers is 0, compute DQChairSetup of M;
 	say "[if the delicateness of the player > 10]You crawl over to the [ShortDesc of detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise]quickly binding[end if] you in place with the straps. ";
 	if the player is able to speak:
-		say "[if the player is able to speak][line break][speech style of M]'[one of]These are the rules: You must announce out loud whenever you orgasm, and whenever someone speaks to you, you must say [']Thank you for putting me in my place, Sir or Ma[']am.'[or]I[']d tell you the rules, but unfortunately we have been through this before.'[stopping][roman type][line break][end if]She points to a camera in the upper corner of the room, facing the chair. [line break][speech style of M]I will be watching. I will release you when I believe you have learned your lesson.'[roman type][line break]";
+		say "[if the player is able to speak][line break][speech style of M]'[one of]These are the rules: You must announce out loud whenever you orgasm, and whenever someone speaks to you, you must say [']Thank you for putting me in my place, Sir or Ma[']am.'[or]I[']d tell you the rules, but unfortunately we have been through this before.'[stopping][roman type][line break][end if][big he of M] points to a camera in the upper corner of the room, facing the chair. [line break][speech style of M]I will be watching. I will release you when I believe you have learned your lesson.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]I will release you when I believe you have learned your lesson.'[roman type][line break]";
 	compute mandatory room leaving of M;
@@ -687,7 +687,7 @@ To compute remedial detention of (M - a staff member):
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	otherwise compute DQChairSetup of M;]
-	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break]She slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
+	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
 	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress. [line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realize how [if the player is male]hard[otherwise if the player is female]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute mandatory room leaving of M;

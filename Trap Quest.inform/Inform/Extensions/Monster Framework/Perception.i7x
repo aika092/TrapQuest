@@ -59,12 +59,12 @@ To check perception of (M - a monster):
 					now the greet-window of M is 3;
 					if newbie tips is 1 and tutorial is 0:
 						if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them. If thirsty, you could even 'ask [ShortDesc of M] for drink'.[roman type][line break][or][stopping]";
-						otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away!  If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
+						otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away! If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
 					reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
 				if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
 					let R be a random number between 1 and hypno-curtsey-trigger;
 					let HR be the square root of (the humiliation of the player / 2000);
-					if debuginfo > 0, say "[input-style]Curtsey resistance check:  Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
+					if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
 					if R <= HR:
 						increase hypno-curtsey-trigger by 1;
 						let C be a random worn knee-length or longer crotch-in-place clothing;

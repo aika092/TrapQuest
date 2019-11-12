@@ -25,7 +25,7 @@ To say MonsterDesc of (M - a student):
 	say "This student seems to be missing [his of M] description!".
 
 To say StudentDesc of (M - a student):
-	say "[if M is clitLeaded]A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. [end if][Big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
+	say "[if M is clitLeaded]A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. [end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
 
 To set up (M - a student):
 	reset M;
@@ -207,7 +207,7 @@ To compute student perception of (M - a student):
 	say "[one of]It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or][stopping]";
 
 To compute nonstudent perception of (M - a student):
-	say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][Big he of M] starts to run away!";
+	say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][big he of M] starts to run away!";
 	anger M;
 	now the scared of M is 100.
 
@@ -238,7 +238,7 @@ To FavourDown (M - an amicable student) by (N - a number):
 Part - Protection
 
 To compute (M - a student) protecting against (X - a monster):
-	say "[speech style of M]'[if X is staff member]Eek!  [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek!  I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
+	say "[speech style of M]'[if X is staff member]Eek! [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek! I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
 	now the scared of M is 100;
 	anger M.
 
@@ -427,7 +427,7 @@ To say WhereAnswer of (M - a student):
 	say "[speech style of M]'[if the rank of the player <= 1]We're in [slut school].'[otherwise]The better you are at being a good girl, the higher rank you'll be able to reach.'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - a student):
-	say "[speech style of M]'I came to this school to learn to be a better [if diaper quest is 1]girl[otherwise]slut[end if]. What more do you need to know?'[roman type][line break]".
+	say "[speech style of M]'I came to this school to learn to be a better [if diaper quest is 1][boy of M][otherwise]slut[end if]. What more do you need to know?'[roman type][line break]".
 
 To say EscapeAnswer of (M - a student):
 	say "[speech style of M]'Nicer, cosier rooms, that's for sure. And maybe even some cool items.'[roman type][line break]".

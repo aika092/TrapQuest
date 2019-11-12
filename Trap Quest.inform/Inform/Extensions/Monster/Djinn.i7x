@@ -10,7 +10,7 @@ Definition: djinn is dark skinned: decide yes.
 
 Definition: djinn is raunchy: decide yes.
 
-The text-shortcut of djinn is "ndj". Understand "nubian" as djinn.
+The text-shortcut of djinn is "ndj". Understand "nubian", "genie", "jinn" as djinn.
 
 To say ShortDesc of (M - djinn):
 	say "djinn".
@@ -32,7 +32,7 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - djinn):
 	decide on figure of djinn cutscene 1.
 
 To say MonsterDesc of (M - djinn):
-	say "This [if lady fetish is 0]tall, dark-skinned man[otherwise]muscular, dark-skinned woman[end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from her waist.[end if]".
+	say "This [if lady fetish is 0]tall, dark-skinned [man of M][otherwise]muscular, dark-skinned [man of M][end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]".
 
 To say LongDickDesc of (M - djinn):
 	if full-lady fetish is 1:
@@ -67,7 +67,7 @@ Definition: djinn is human: decide yes.
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - djinn):[shouldn't happen]
-	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the centre of the clearing, growing darker and darker as a four-armed man materializes from the waist up. He looks at you and narrows his eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned man materializes from the waist up. He crosses his arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
+	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the centre of the clearing, growing darker and darker as a four-armed [man of M] materializes from the waist up. [big he of M] looks at you and narrows [his of M] eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned [man of M] materializes from the waist up. [big he of M] crosses [his of M] arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
 	otherwise say "You hear a low toned manly voice echo throughout the woods. [line break][first custom style]'WHO DISTURBS MY SLUMBER?'[roman type][line break]".
 
 To say DiaperReaction of (M - djinn):
@@ -395,18 +395,18 @@ To compute (M - djinn) protecting against (X - a monster):
 		let T be a random placed jungle room;
 		while T is Dungeon12 or T is the location of the player:
 			now T is a random placed jungle room;
-		say "[BigNameDesc of M] gets between you and the [X]. [line break][speech style of M]As mother of my children, you are above fighting these vermin. You will not sully your hands fighting them under any circumstances.[roman type][line break]He taps you on the forehead, and the scenery around you shifts as you reappear in the [printed name of T]!";
+		say "[BigNameDesc of M] gets between you and the [X]. [line break][speech style of M]As mother of my children, you are above fighting these vermin. You will not sully your hands fighting them under any circumstances.[roman type][line break][big he of M] taps you on the forehead, and the scenery around you shifts as you reappear in the [printed name of T]!";
 		teleport to T;
 	otherwise:
 		compute default protecting of M.
 
 To say SexSubmissionFlav of (M - djinn): [this is customized because I rewrote the scene so the player is floating a couple feet off the ground.]
 	if diaper quest is 1:
-		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let him have his way, it's not like you can do much about it anyway[or]You submit to the superior being[in random order].";
+		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it's not like you can do much about it anyway[or]You submit to the superior being[in random order].";
 	otherwise if the relevant sex addiction of M < 10:
-		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let him have his way, it[']s not like you can do much about it anyway[or]You submit to the superior being plowing away at your [random body part penetrated by M][in random order].";
+		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it[']s not like you can do much about it anyway[or]You submit to the superior being plowing away at your [random body part penetrated by M][in random order].";
 	otherwise:
-		say "[one of]You allow [NameDesc of M] to violate you as much as he likes. He's in charge![or]You relax and enjoy the feeling of [NameDesc of M]'s [LongDickDesc of M].[at random]".
+		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M]'s in charge![or]You relax and enjoy the feeling of [NameDesc of M]'s [LongDickDesc of M].[at random]".
 
 To say SexResistFlav of (M - djinn):
 	say "[one of]You hopelessly flail against [NameDesc of M]'s grip, doing everything you can to resist the invasion.[or]You seem to be being held still by some kind of magical force, leaving you with no real way of resisting, but you still try![or]You flail around and make as much noise as you can, but no matter how much you try, you can't do anything about [NameDesc of M]'s powerful pistoning.[or]You fight against the [if interracial fetish is 1 and M is penetrating a fuckhole]pleasure that his [LongDickDesc of M] is sending through your sensitive hole[otherwise][M][end if] but it's no use, you can't do anything to stop the action![in random order]".
@@ -616,7 +616,7 @@ This is the djinn punishes diaper rule:
 			say "[BigNameDesc of M] points at your [ShortDesc of D], and a bolt of magic lightning erupts from [his of M] finger! Your [ShortDesc of D] starts to shimmer...";
 			potentially transform D;
 			if the transform-attempts of D > 0 and the transform-attempts of D < 4:
-				say "[speech style of M]'Hmm, that's weird...'[roman type][line break]He doesn't seem satisfied.";
+				say "[speech style of M]'Hmm, that's weird...'[roman type][line break][big he of M] doesn't seem satisfied.";
 			otherwise:
 				say "[speech style of M]'[if the transform-attempts of D >= 4]I give up.'[otherwise]Ha ha, that's much better, don't you think?'[roman type][line break]";
 				satisfy M;
