@@ -31,13 +31,13 @@ To trigger (Y - a camera trap):
 	if ((the number of worn trousers is 0 and the number of worn skirted clothing > 0) or asshole is lewdly exposed or the flesh volume of hips > 5) and P is poster:
 		say "[FlashFlav of Y]";
 		say "It was in a perfect position to capture a full shot [if the number of worn trousers is 0 and the number of worn skirted clothing > 0]right up your skirt[otherwise]of your [HipDesc][end if].";
-		say "[one of][line break][variable custom style][if the humiliation of the player < 20000]Oh my god, how embarrassing!  I hope I never see that photo.[otherwise if the humiliation of the player < 30000]Whatever. Not the worst situation I've been caught in with this game.[otherwise]Fine by me.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style][one of]I bet I looked sexy[or]Whatever makes me popular with the boys[stopping]![end if][stopping][roman type][line break]";
+		say "[one of][line break][variable custom style][if the humiliation of the player < 20000]Oh my god, how embarrassing! I hope I never see that photo.[otherwise if the humiliation of the player < 30000]Whatever. Not the worst situation I've been caught in with this game.[otherwise]Fine by me.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style][one of]I bet I looked sexy[or]Whatever makes me popular with the boys[stopping]![end if][stopping][roman type][line break]";
 		set up P;
 	otherwise:
 		say "You hear a weird whirring, a bit like an old camera film being wound forwards, but nothing else happens.".
 
 To say FlashFlav of (Y - a camera trap):
-	say "[bold type]FLASH![roman type]  A bright flash like lightning envelops the room for a brief moment. [if Y is revealed and the reset-timer of Y < 99000]You had forgotten about that stupid camera!  [otherwise if Y is revealed][line break][variable custom style][one of]How many photos is that thing going to take?  [or][stopping][roman type][line break][otherwise]You were not expecting that!  Looking towards the light source, you notice a[one of][or]nother[stopping] camera. [end if]";
+	say "[bold type]FLASH![roman type] A bright flash like lightning envelops the room for a brief moment. [if Y is revealed and the reset-timer of Y < 99000]You had forgotten about that stupid camera! [otherwise if Y is revealed][line break][variable custom style][one of]How many photos is that thing going to take? [or][stopping][roman type][line break][otherwise]You were not expecting that! Looking towards the light source, you notice a[one of][or]nother[stopping] camera. [end if]";
 	now Y is revealed;
 	now the reset-timer of Y is 99999.
 
@@ -163,8 +163,8 @@ A time based rule (this is the player spots poster rule):
 		otherwise:
 			say "You yelp in surprise as you enter this room and immediately spot a large poster of a lewd scene on [if playerRegion is Woods]a giant tree[otherwise]a wall[end if]. The image is one of you, taken by a camera trap earlier in the game. ";
 		say "[line break][ShortDesc of P][TitleDesc of P]";
-		say "[if the humiliation of the player < 10000][line break][first custom style][one of]Oh my god!  No no no no no!  How many people have seen this?  I feel so ashamed...[or]Oh no! There's one here too?![or]Oh no!  How may of these are there?![or]No no no, not another one!  There are pictures of me everywhere![then at random][otherwise if the humiliation of the player < 20000][line break][variable custom style][one of]Oh no!  How do I take this down?!  How embarrassing![or]Eek!  Another one!  How awful...[or]Fucking hell, how many pictures of me are there?[then at random][otherwise if the humiliation of the player < 30000][variable custom style][one of]Ooh!  What meanie put this up without asking me?  I should have at least been asked![or]If I find who put this up they're going to be in big trouble![or]That's so mean!  But kind of hot...[or]How do I get myself into these situations! *giggle*[then at random][otherwise if the humiliation of the player < 40000][line break][second custom style]I can't believe how much this is turning me on, to be objectified like that![otherwise][second custom style]I deserved that.[end if][roman type][line break]";
-		if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high!  [line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it!  [line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
+		say "[if the humiliation of the player < 10000][line break][first custom style][one of]Oh my god! No no no no no! How many people have seen this? I feel so ashamed...[or]Oh no! There's one here too?![or]Oh no! How may of these are there?![or]No no no, not another one! There are pictures of me everywhere![then at random][otherwise if the humiliation of the player < 20000][line break][variable custom style][one of]Oh no! How do I take this down?! How embarrassing![or]Eek! Another one! How awful...[or]Fucking hell, how many pictures of me are there?[then at random][otherwise if the humiliation of the player < 30000][variable custom style][one of]Ooh! What meanie put this up without asking me? I should have at least been asked![or]If I find who put this up they're going to be in big trouble![or]That's so mean! But kind of hot...[or]How do I get myself into these situations! *giggle*[then at random][otherwise if the humiliation of the player < 40000][line break][second custom style]I can't believe how much this is turning me on, to be objectified like that![otherwise][second custom style]I deserved that.[end if][roman type][line break]";
+		if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high! [line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it! [line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
 		say "[one of]Dare you look closer at your own shameful image?[or][stopping]";
 		humiliate the lewdness of P;
 		now P is spotted.
@@ -182,7 +182,7 @@ A time based rule (this is the monster spots poster rule):
 				now M is disapproving P.
 
 To IdentifiablePosterReaction of (M - a monster):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'Wait a second, is this YOU?!  Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'Wait a second, is this YOU?! Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
@@ -331,7 +331,7 @@ To compute title of (P - a shameful orgasm poster):
 		otherwise if the diaper quest is 1:
 			if the old-knickers of P is not knickers:
 				if P is in the hotel, now the title of P is "PUBLIC DISGRACE";
-				otherwise now the title of P is "Be on the look-out for this disgusting pervert!  Punish her on sight!";
+				otherwise now the title of P is "Be on the look-out for this disgusting pervert! Punish her on sight!";
 			if the old-knickers of P is diaper:
 				if P is in the hotel, now the title of P is "I LOVE MY PADDING";
 				otherwise now the title of P is "My thick padding feels sooo good I just can't help but cum in them again and again!";
@@ -391,7 +391,7 @@ To compute title of (P - a masturbation poster):
 	if old-monster of P is monster:
 		if old-sex-addiction of P < 7:
 			if P is in the hotel, now the title of P is "PUBLIC DISGRACE";
-			otherwise now the title of P is "This one tries to claim she's not a slut, but enjoys an audience when wanking!  Someone's in denial.";
+			otherwise now the title of P is "This one tries to claim she's not a slut, but enjoys an audience when wanking! Someone's in denial.";
 		otherwise if old-sex-addiction of P < 10:
 			if P is in the hotel, now the title of P is "SHAMELESS";
 			otherwise now the title of P is "She prefers when there's an audience.";
@@ -401,7 +401,7 @@ To compute title of (P - a masturbation poster):
 	otherwise if diaper quest is 1:
 		if the old-knickers of P is not knickers:
 			if P is in the hotel, now the title of P is "PUBLIC DISGRACE";
-			otherwise now the title of P is "Be on the look-out for this exhibitionist masturbating pervert!  Punish her on sight!";
+			otherwise now the title of P is "Be on the look-out for this exhibitionist masturbating pervert! Punish her on sight!";
 		if the old-knickers-mess of P > 0:
 			if P is in the hotel, now the title of P is "ULTIMATE DISGRACE";
 			otherwise now the title of P is "Little one proves there are no limits to her depravity.";
@@ -557,7 +557,7 @@ To compute title of (P - a wetting poster):
 			otherwise now the title of P is "Not her proudest moment.";
 		otherwise:
 			if P is in the hotel, now the title of P is "PISS PERVERT";
-			otherwise now the title of P is "Caught in the act!  What a pervert.";
+			otherwise now the title of P is "Caught in the act! What a pervert.";
 	otherwise:
 		if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "PRINCESS PUDDLES";
@@ -587,7 +587,7 @@ To say ExamineDesc of (C - a wetting poster):
 	otherwise if old-peereaction of C is 3:
 		say "[if old-bimbo of C > 9]You have a naughty, guilty grin on your face[otherwise]You have a disgusted look on your face[end if]. ";
 	otherwise if urination-target of C is a room:
-		say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor. [line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through!  [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
+		say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor. [line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through! [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
 	if old-overdress of C is clothing, say "You are wearing a [ShortDesc of old-overdress of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";
@@ -630,7 +630,7 @@ To compute title of (P - an expulsion poster):
 			otherwise now the title of P is "Whatever is inside that egg, you can be sure it's not of this world.";
 		otherwise if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "QUEEN CHICKEN";
-			otherwise now the title of P is "Royal princess caught laying mystery eggs!  Is she an alien?";
+			otherwise now the title of P is "Royal princess caught laying mystery eggs! Is she an alien?";
 		otherwise if P is in the hotel:
 			if old-bimbo of P < 7:
 				now the title of P is "I LAY EGGS";

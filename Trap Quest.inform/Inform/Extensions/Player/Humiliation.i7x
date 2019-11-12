@@ -372,7 +372,7 @@ To finally humiliate (X - a number):
 			now humiliation-restriction is 1; [Player can't snap]
 		otherwise if there is a worn holy warrior chestpiece:
 			let P be a random plate warrior chestpiece;
-			say "[bold type]You feel your mind about to snap - and then, it just doesn't. You feel excited about getting humiliated, but still feel focused on your [if the bimbo of the player < 15]original goal[otherwise]quest to stay a virgin[end if]. Suddenly you feel your chestpiece transform around you - the metal slithers and slides around you, reshaping into plate armour that leaves your [ShortDesc of breasts] completely uncovered.[roman type][line break][variable custom style]Ooh, even more naughty!  How perfect.[roman type][line break]";
+			say "[bold type]You feel your mind about to snap - and then, it just doesn't. You feel excited about getting humiliated, but still feel focused on your [if the bimbo of the player < 15]original goal[otherwise]quest to stay a virgin[end if]. Suddenly you feel your chestpiece transform around you - the metal slithers and slides around you, reshaping into plate armour that leaves your [ShortDesc of breasts] completely uncovered.[roman type][line break][variable custom style]Ooh, even more naughty! How perfect.[roman type][line break]";
 			repeat with M running through holy warrior chestpieces: [banish them from ever appearing again]
 				now M is in Holding Pen;
 			summon P;
@@ -408,7 +408,7 @@ REQUIRES COMMENTING
 To 2Humiliate (X - a number):
 	if the humiliation of the player < 50000, increase the humiliation of the player by X;
 	if the player-class is not succubus:
-		if the humiliation of the player > 8000 and the humiliation of the player < 9000, say "[one of][line break][first custom style]How can I consider myself a dignified person if there are people witnessing me doing these things?  I feel so ashamed...[roman type][line break][or][stopping]";
+		if the humiliation of the player > 8000 and the humiliation of the player < 9000, say "[one of][line break][first custom style]How can I consider myself a dignified person if there are people witnessing me doing these things? I feel so ashamed...[roman type][line break][or][stopping]";
 		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of][line break][first custom style]Oh god, what am I doing?[if the player is female][line break]I'm willingly doing everything I would normally stand against![end if][roman type][line break]You can feel the lights in the back of your head slowly shutting down and accepting your inevitable spiral into sexual shame.[or][stopping]";
 		if the humiliation of the player > 24000 and the humiliation of the player < 25000, say "[one of][line break][second custom style]Like, whatever, I guess[roman type][line break]You are getting so used to humiliating yourself that it doesn't affect you as much as it used to. You definitely don't feel like anyone has any reason to respect you any more, but you're not even that bothered by that.[or][stopping]";
 		if the humiliation of the player > 32000 and the humiliation of the player < 33000, say "[one of][line break][second custom style]Things are so much easier when I just accept that I'm worthless.[roman type][line break]You now have barely a shred of self respect or dignity left. You are not far off from being unable to see yourself as anything but an object to be used.[or][stopping]";

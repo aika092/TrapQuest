@@ -50,7 +50,7 @@ To decide which figure-name is clothing-image of (C - silvery briefs):
 To decide which figure-name is clothing-image of (C - green-briefs):
 	decide on figure of briefs 8.
 
-To decide which figure-name is clothing-image of (C -  grey-briefs):
+To decide which figure-name is clothing-image of (C - grey-briefs):
 	decide on figure of briefs 9.
 
 To decide which figure-name is clothing-image of (C - pale briefs):
@@ -77,14 +77,14 @@ To decide which figure-name is clothing-image of (C - pink-kitty-briefs):
 To decide which figure-name is clothing-image of (C - red-anal-briefs):
 	decide on figure of briefs 17.
 
-white-briefs is a briefs. white-briefs is sheer. The text-shortcut of white-briefs is "whb".  Understand "white" as white-briefs.
+white-briefs is a briefs. white-briefs is sheer. The text-shortcut of white-briefs is "whb". Understand "white" as white-briefs.
 To say selfexamineuniquetitle of (G - white-briefs):
 	say "pair of white briefs".
 To say UniqueClothingDesc of (G - white-briefs):
 	say "This small white pair of briefs is a bit too sheer to give much modesty.".
 Definition: white-briefs is white themed: decide yes.
 
-white-good girl briefs is a briefs. white-good girl briefs is sheer-when-wet. The text-shortcut of white-good girl briefs is "wgg".  Understand "white", "good" as white-good girl briefs.
+white-good girl briefs is a briefs. white-good girl briefs is sheer-when-wet. The text-shortcut of white-good girl briefs is "wgg". Understand "white", "good" as white-good girl briefs.
 To say selfexamineuniquetitle of (G - white-good girl briefs):
 	say "pair of white 'good girl' briefs".
 To say UniqueClothingDesc of (G - white-good girl briefs):
@@ -123,7 +123,7 @@ Report wearing a white-diagram briefs:
 		otherwise PenisDown 1;
 		say "[Shrink] into a [ShortDesc of penis].".
 
-pink briefs is a briefs. The text-shortcut of pink briefs is "pib".  pink briefs has a number called charge.
+pink briefs is a briefs. The text-shortcut of pink briefs is "pib". pink briefs has a number called charge.
 To say selfexamineuniquetitle of (G - pink briefs):
 	say "pair of pink 'Hole' briefs".
 To say UniqueClothingDesc of (G - pink briefs):
@@ -175,7 +175,7 @@ To decide which number is the unique outrage of (C - black briefs):
 Definition: black briefs is black themed: decide yes.
 Definition: black briefs is gem themed: decide yes.
 
-blue-briefs is a briefs. The text-shortcut of blue-briefs is "bbr".  Understand "blue", "briefs" as blue-briefs.
+blue-briefs is a briefs. The text-shortcut of blue-briefs is "bbr". Understand "blue", "briefs" as blue-briefs.
 To say selfexamineuniquetitle of (G - blue-briefs):
 	say "pair of blue briefs".
 To say UniqueClothingDesc of (G - blue-briefs):
@@ -225,7 +225,7 @@ To say UniqueClothingDesc of (G - pale briefs):
 Definition: pale briefs is sissifying: decide yes.
 Definition: pale briefs is pink themed: decide yes.
 
-white-cameltoe briefs is a briefs. The text-shortcut of white-cameltoe briefs is "wcb".  Understand "white", "cameltoe" as white-cameltoe briefs.
+white-cameltoe briefs is a briefs. The text-shortcut of white-cameltoe briefs is "wcb". Understand "white", "cameltoe" as white-cameltoe briefs.
 To say selfexamineuniquetitle of (G - white-cameltoe briefs):
 	say "pair of white cameltoe briefs".
 To say UniqueClothingDesc of (G - white-cameltoe briefs):

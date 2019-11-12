@@ -31,7 +31,7 @@ Carry out TQeating cookie:
 			say "Your stomach gurgles worryingly as the prunes start to work their magic...";
 			now suppository is 1;
 		otherwise:
-			say "The excessive amount of salt leaves your mouth feeling extremely dry!  [line break][variable custom style]Oh dear, I really need a drink now![roman type][line break]";
+			say "The excessive amount of salt leaves your mouth feeling extremely dry! [line break][variable custom style]Oh dear, I really need a drink now![roman type][line break]";
 			now the stomach-water of the player is 1;
 	otherwise if the quality of the noun is -2:
 		say "You start feeling a bit woozy as the food settles in your stomach, and you realize [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][line break][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type][line break]";

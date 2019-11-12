@@ -16,7 +16,7 @@ Check TQeating bag lunch:
 Carry out TQeating bag lunch:
 	allocate 6 seconds;
 	let X be 3;
-	say "You pop the condom in your mouth and bite down, puncturing the edible outer covering and causing it to coat the inside of your mouth with bodily fluids. [if the semen addiction of the player + the flesh volume of arms < 10]The shock of the sudden blast makes you swallow the load on reflex[otherwise if the semen addiction of the player  + the flesh volume of arms < 20]You gulp down the [semen] without thinking[otherwise]You savour the taste in your mouth for a few moments before beginning to swallow it down bit by bit, enjoying the feeling of the slimy stuff as it travels down your throat[end if].";
+	say "You pop the condom in your mouth and bite down, puncturing the edible outer covering and causing it to coat the inside of your mouth with bodily fluids. [if the semen addiction of the player + the flesh volume of arms < 10]The shock of the sudden blast makes you swallow the load on reflex[otherwise if the semen addiction of the player + the flesh volume of arms < 20]You gulp down the [semen] without thinking[otherwise]You savour the taste in your mouth for a few moments before beginning to swallow it down bit by bit, enjoying the feeling of the slimy stuff as it travels down your throat[end if].";
 	if watersports fetish is 1:
 		StomachUp 1;
 		decrease X by 1;

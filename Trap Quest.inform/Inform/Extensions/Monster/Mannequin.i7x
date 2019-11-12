@@ -49,13 +49,13 @@ To decide which figure-name is the monster-image of (M - lycra-clad mannequin):
 To say MediumDesc of (M - lycra-clad mannequin):
 	say "lycra-clad mannequin".
 
-swimmer mannequin is a mannequin.  The text-shortcut of swimmer mannequin is "swi".
+swimmer mannequin is a mannequin. The text-shortcut of swimmer mannequin is "swi".
 To decide which figure-name is the monster-image of (M - swimmer mannequin):
 	decide on figure of swimmer mannequin.
 To say MediumDesc of (M - swimmer mannequin):
 	say "swimmer mannequin".
 
-latex-clad mannequin is a mannequin.  The text-shortcut of latex-clad mannequin is "lat". Understand "latex", "clad" as latex-clad mannequin.
+latex-clad mannequin is a mannequin. The text-shortcut of latex-clad mannequin is "lat". Understand "latex", "clad" as latex-clad mannequin.
 To decide which figure-name is the monster-image of (M - latex-clad mannequin):
 	decide on figure of latex-clad mannequin.
 To say MediumDesc of (M - latex-clad mannequin):
@@ -111,7 +111,7 @@ To say MonsterDesc of (M - skater mannequin):
 	say "An unsettling female mannequin complete with striking makeup and blankly smiling stare. A pink punk-styled top sits above a tiny white skater mini-skirt, which barely hides whatever underwear she might be wearing. Fishnet tights sit under multicoloured striped knee-length socks and knee-pads. Fingerless gloves, elbow-pads and black & white trainers finish off the skater look.".
 
 To say MonsterComment of (M - a mannequin):
-	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, she's really creepy.[or]She doesn't look tough, but she's not human so I should keep an eye out.[or]I wonder if she's got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt she can feel pain, but she probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of]She's actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed her up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of]Her make up looks really good.[or]Is that a wig or is that real hair?  She has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have her do my make up![or]Maybe she can give me some fashion pointers, teehee![or]People stare at her all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like her![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or]She[']s so lucky, people make all her choices for her every day![in random order][end if][roman type][line break]".
+	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, she's really creepy.[or]She doesn't look tough, but she's not human so I should keep an eye out.[or]I wonder if she's got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt she can feel pain, but she probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of]She's actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed her up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of]Her make up looks really good.[or]Is that a wig or is that real hair? She has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have her do my make up![or]Maybe she can give me some fashion pointers, teehee![or]People stare at her all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like her![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or]She[']s so lucky, people make all her choices for her every day![in random order][end if][roman type][line break]".
 
 To set up (M - a mannequin):
 	reset M;
@@ -171,7 +171,7 @@ To compute perception of (M - a mannequin):
 	if permanent makeup is 0 or the anal sex addiction of the player < 9:
 		if the latex-transformation of the player < 3:
 			anger M;
-			say "[BigNameDesc of M] seems to notice you!  Uh-oh...";
+			say "[BigNameDesc of M] seems to notice you! Uh-oh...";
 		otherwise:
 			bore M;
 	otherwise if the player is a bit horny:
@@ -191,7 +191,7 @@ To compute perception of (M - a mannequin):
 
 To compute DQ perception of (M - a mannequin):
 	now M is interested;
-	say "[BigNameDesc of M] seems to notice you!  Uh-oh...";
+	say "[BigNameDesc of M] seems to notice you! Uh-oh...";
 	anger M.
 
 
@@ -353,7 +353,7 @@ This is the mannequin forces orgasm through diaper rule:
 		let D be a random worn diaper;
 		while the coverer of D is clothing:
 			now D is the coverer of D;
-		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with her blank expression, she presses a hand to the front of your [D] and pushes firmly. Her hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]!  The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]!  [line break][variable custom style]Unfff... it's too strong!  I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
+		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with her blank expression, she presses a hand to the front of your [D] and pushes firmly. Her hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]! The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]! [line break][variable custom style]Unfff... it's too strong! I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
 		orgasm;
 		SexAddictUp 1;
 		say "[BigNameDesc of M] cocks her creepy head to one side, silently pulls her hand away and then leaves you alone to recover[if the player is male and the bimbo of the player < 6]I can't believe I just came into my diaper...[end if].[roman type][line break]";
@@ -362,7 +362,7 @@ This is the mannequin forces orgasm through diaper rule:
 		rule succeeds;
 	otherwise if (there is a worn diaper or diaper quest is 1) and diaper messing >= 3 and the stomach-food of the player > 3 + incontinence and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
 		let M be current-monster;
-		say "You see [NameDesc of M] moving something towards your face and expect her to apply a new layer of make up. But instead, she pushes a small white pill into your mouth and down your throat!  You are forced to swallow it before you can react!  You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
+		say "You see [NameDesc of M] moving something towards your face and expect her to apply a new layer of make up. But instead, she pushes a small white pill into your mouth and down your throat! You are forced to swallow it before you can react! You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
 		increase rectum by the stomach-food of the player;
 		now the stomach-food of the player is 1;
 		say "[BigNameDesc of M] cocks her creepy head to one side, silently turns away and then leaves you alone to contemplate what might be coming very soon...";

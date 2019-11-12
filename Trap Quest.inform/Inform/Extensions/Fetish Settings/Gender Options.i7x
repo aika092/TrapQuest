@@ -24,7 +24,7 @@ This is the male choice rule:
 
 REQUIRES COMMENTING
 
-+!]	
++!]
 This is the female choice rule:
 	now choice in row 1 of the Table of Player Options is 1;
 	follow quit rule.

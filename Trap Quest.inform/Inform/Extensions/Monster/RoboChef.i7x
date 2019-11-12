@@ -157,7 +157,7 @@ To compute (M - a robochef) destroying (C - a clothing):
 	destroy C.
 
 To compute (M - a robochef) ripping (C - a clothing):
-	say "[BigNameDesc of M] manages to create a tear in the fabric!  Your [printed name of C] is now permanently ripped.";
+	say "[BigNameDesc of M] manages to create a tear in the fabric! Your [printed name of C] is now permanently ripped.";
 	now C is crotch-ripped.
 
 To set up sex length of (M - a robochef) in (F - asshole):

@@ -37,7 +37,7 @@ A room has a spatial coordinate called grid position.
 
 REQUIRES COMMENTING
 
-+!]	
++!]
 Definition: A spatial coordinate (called G) is an empty position:
 	repeat with R running through placed rooms:
 		if the grid position of R is G, decide no;
@@ -161,7 +161,7 @@ To decide which number is the distance of (R - a room):
 		now RouteFinder is the room D from Z;
 		increase X by 1;
 	decide on X.
-	
+
 Chapter - Shapes of individual rooms
 
 [!<LabrinthShape>@
