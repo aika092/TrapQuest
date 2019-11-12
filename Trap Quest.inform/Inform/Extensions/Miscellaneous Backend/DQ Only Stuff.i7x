@@ -112,7 +112,7 @@ To decide which text is tonguesColour:
 	decide on "white".
 To say tongueStatus of (C - a clothing):
 	say "".
-portal-pants is a knickers. portal-pants is unique.  The printed name of portal-pants is "portal pants".
+portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
 
 Include Stuffies by Equippables.
 

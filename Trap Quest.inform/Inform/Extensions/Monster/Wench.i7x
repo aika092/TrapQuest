@@ -830,7 +830,7 @@ To suggestFucker (F - a body part) for (M - a wench):
 
 To say DominanceSuccess of (M - a wench):
 	if player-fucker is penis:
-		if player-fuckchoice is FUCK-PENETRATION:			
+		if player-fuckchoice is FUCK-PENETRATION:
 			vaginal dominate M;
 		otherwise:
 			oral dominate M;

@@ -21,13 +21,13 @@ To say ClothingDesc of (H - severed-tentacle):
 
 To say ShortDesc of (H - severed-tentacle):
 	say "severed tentacle".
-	
+
 To compute SelfExamineDesc of (H - severed-tentacle):
 	say "[if the player is male and the player is wearing a throbbing-tentacle]The end of a tentacle barely sticks out of your [asshole].[otherwise if the player is wearing a throbbing-tentacle]The end of a tentacle barely sticks out of your [vagina].[otherwise]You have a gently throbbing tentacle wrapped around your head.[end if]".
-	
+
 Carry out wearing severed-tentacle:
 	say "As you lay the tentacle on your head, it suddenly wraps tightly around it! You feel gentle suction, and then a voice:[line break][first custom style]'As expected you reveal yourself for the [whore] you are. Your body will serve me now!'[roman type][line break]".
-	
+
 Check TQeating severed-tentacle:
 	if the noun is worn, say "You would need to take it off your head first." instead.
 
@@ -36,7 +36,7 @@ Carry out TQeating severed-tentacle:
 	destroy the noun;
 	allocate 6 seconds;
 	IntUp 2.
-	
+
 To compute periodic effect of (H - severed-tentacle):
 	if a random number between 1 and 20 is 1:
 		if the intelligence of the player > 1:
@@ -73,8 +73,8 @@ To compute periodic effect of (H - severed-tentacle):
 				anally orgasm shamefully;
 			otherwise:
 				vaginally orgasm shamefully.
-				
-	
+
+
 Check taking off severed-tentacle:
 	if the player is wearing a throbbing-tentacle:
 		say "You can feel the Master is comfortable where he is, and have no desire to remove him." instead;

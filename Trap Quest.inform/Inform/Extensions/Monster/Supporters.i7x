@@ -1005,7 +1005,7 @@ To compute MasturbationReaction of (M - supporter-jim):
 			if M is friendly-fucking:
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
-				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily. [line break][first custom style]'What's wrong with a kiss, [boy of the player]? Hmm? Why not start it off with a nice kiss? ... You don't have to go leaping straight for the [if the player is female]clitoris[otherwise]penis[end if] like a bull at a gate.  Suck the nipple. Stroking the thighs. Biting the neck. Nibbling the earlobe, uhh, kneading the buttocks, and so on and so forth. We have all these possibilities before we stampede towards the [if the player is female]clitoris[otherwise]penis[end if], [NameBimbo].'[roman type][line break]";
+				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily. [line break][first custom style]'What's wrong with a kiss, [boy of the player]? Hmm? Why not start it off with a nice kiss? ... You don't have to go leaping straight for the [if the player is female]clitoris[otherwise]penis[end if] like a bull at a gate. Suck the nipple. Stroking the thighs. Biting the neck. Nibbling the earlobe, uhh, kneading the buttocks, and so on and so forth. We have all these possibilities before we stampede towards the [if the player is female]clitoris[otherwise]penis[end if], [NameBimbo].'[roman type][line break]";
 				PainUp 1;
 				now wanking is 0;
 		otherwise:
@@ -1130,7 +1130,7 @@ To say DiaperReaction of (M - supporter-jim):
 		otherwise:
 			say "[speech style of M]'[if there is a worn messed knickers]I told you to lay off the beans, you whore!'[otherwise]Wow, just like a big baby.'[end if][roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
 			FavourDown M;
-			say "[speech style of M]'[if M is unfriendly and there is a worn messed knickers]You are hereby charged where you did willfully take part in a strange fetish. That is a piss, poop, or volumous excretion of a sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise if M is unfriendly]You are hereby charged where you did willfully take part in a strange fetish. That is a piss, whizz, or urination of an  sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
+			say "[speech style of M]'[if M is unfriendly and there is a worn messed knickers]You are hereby charged where you did willfully take part in a strange fetish. That is a piss, poop, or volumous excretion of a sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise if M is unfriendly]You are hereby charged where you did willfully take part in a strange fetish. That is a piss, whizz, or urination of an sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
 			if M is unfriendly, now M is interested;
 		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
 		otherwise say "You turn bright red.";
@@ -1239,14 +1239,14 @@ To compute delay of (M - supporter-misako): [NPCs, when they're confident that t
 To say PresentRejectionFlav of (M - supporter-misako): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'No, I think this will work better...'[roman type][line break]".
 
-To compute the busy waiting of (M - supporter-misako):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+To compute the busy waiting of (M - supporter-misako): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait, rubbing herself over her belt in vain as she does.".
 
 To compute the dildo stuck taunting of (M - supporter-misako):
 	say "[one of][BigNameDesc of M] rubbing herself over her belt, trying to feel something[line break][speech style of M]'I wish I could have a dildo impale me by my pussy. Even the shame of that would be better than no feeling at all...'[roman type][line break][or][stopping]".
 
 To say StrikingSuccessFlav of (M - supporter-misako) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
-	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - supporter-misako) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".

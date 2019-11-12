@@ -551,7 +551,7 @@ To say AfterDominationComment (N - a number) of (M - unicorn):
 		say "[speech style of M]'Although you forced yourself on me, in truth, I...er....we won't speak of this again. Goodbye.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Did you have to make a mess of my face?[or]Did you have to make me look like a tart?'[or]My makeup is ruined!'[in random order][roman type][line break]";
-	
+
 
 Part 4 - Conversation
 
