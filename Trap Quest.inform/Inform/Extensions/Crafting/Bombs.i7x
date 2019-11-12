@@ -77,6 +77,9 @@ To say ExamineDesc of (B - water-bomb):
 To decide which number is the alchemy key of (A - water-bomb):
 	decide on 30.
 
+To decide which number is the outrage of (A - water-bomb):
+	decide on 20 * the cum-known of water-bomb.
+
 To decide which figure-name is the examine-image of (V - water-bomb):
 	decide on the figure of water bomb.
 

@@ -4,7 +4,7 @@ rugged-headband is a headgear. rugged-headband is unique. rugged-headband is red
 
 Definition: rugged-headband is roleplay: decide yes. [Extension not included in DQ]
 
-The printed name of rugged-headband is usually "[clothing-title-before]rugged headband[clothing-title-after]". The text-shortcut of rugged-headband is "rhb".
+The printed name of rugged-headband is usually "[clothing-title-before]rugged headband[clothing-title-after]". The text-shortcut of rugged-headband is "rghb".
 
 Figure of rugged-headband is the file "Items/Accessories/Head/ruggedheadband1.png".
 To decide which figure-name is the clothing-image of (C - rugged-headband):
@@ -42,22 +42,15 @@ To compute class outfit of (H - rugged-headband):[TODO: eventually add a loinclo
 		say "[bold type]Your headband flexes, and a [printed name of B] materializes on your crotch![roman type][line break]";
 		summon B.
 
-
-To decide which number is the strength-influence of (C - rugged-headband):
-	let X be 3;
-	if C is cursed, decrease X by 2;
-	if C is blessed, increase X by 1;
-	decide on X.
-
 To decide which number is the intelligence-influence of (C - rugged-headband):
-	let X be -3;
+	let X be -5;
 	if C is cursed, decrease X by 2;
 	if C is blessed, increase X by 2;
 	decide on X.
 
 domination-quest is a headgear-clothing-quest.
 
-To uniquely set up (C - a rugged-headband):
+To uniquely set up (C - rugged-headband):
 	now the quest of C is domination-quest.
 
 To say QuestFlav of (Q - domination-quest):

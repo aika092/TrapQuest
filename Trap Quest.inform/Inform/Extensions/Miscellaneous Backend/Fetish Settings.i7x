@@ -105,6 +105,9 @@ choice
 0 [slow birth]
 0 [combatvisor]
 1 [supportersEnabled]
+0 [strongCurses]
+0 [transGender]
+1 [halloween content]
 
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
@@ -391,8 +394,12 @@ To decide which number is april fools content:
 	if the player is not a top donator, decide on 0;
 	decide on the choice in row 67 of the Table of Player Options.
 
+To decide which number is halloween content:
+	decide on the choice in row 80 of the Table of Player Options.
+
 To decide which number is futanari fetish:
 	if diaper quest is 1, decide on 0;
+	if lady fetish is 2, decide on 0;
 	decide on the choice in row 68 of the Table of Player Options.
 
 To decide which number is incontinence protection:
@@ -422,11 +429,6 @@ Part - Options Menus
 
 
 
-Include Gender Options by Fetish Settings.
-Include Diaper Lover Options by Fetish Settings.
-Include Pregnancy Options by Fetish Settings.
-Include Instant TG Options by Fetish Settings.
-Include Info Options by Fetish Settings.
 
 
 [!<tableOfKinkOptions:Table>*
@@ -482,6 +484,7 @@ To decide which number is positive points count:
 	if tough-shit is 1, increase X by 8;
 	if inventory handicap is 1, increase X by 3;
 	if clumsy is 1, increase X by 5;
+	if strongCurses is 1, increase X by 5;
 	if save game limit > 0, increase X by 2 + (save game limit * 2);
 	increase X by natural redness;
 	increase X by natural blondeness;

@@ -31,6 +31,9 @@ To compute attack of (W - royal scepter) at (M - a monster):
 Definition: royal scepter is unlimited horniness: decide yes.
 Definition: royal scepter is royalty themed: decide yes.
 
+To decide which number is the initial outrage of (E - royal scepter):
+	decide on 2.
+
 
 To compute climax effect of (E - royal scepter):
 	if princess-consort is penetrating a body part:
@@ -42,7 +45,7 @@ To compute climax effect of (E - royal scepter):
 			humiliate STRONG-HUMILIATION;
 		otherwise:
 			say "Your [ShortDesc of E] pulses, and you feel a powerful sense of yearning deep in your heart as an image of the [princess-consort] appears in your mind.";
-			Arouse 2000;
+			Arouse 3000;
 			if the refactory-period of princess-consort > 0, decrease the refactory-period of princess-consort by the charge of E * 20.
 
 
@@ -99,15 +102,15 @@ To punish infidelity:
 	humiliate the charge of royal scepter * 40;
 	decrease the charge of royal scepter by 1;
 	if royal scepter is blessed, now royal scepter is bland;
-	if unfaithful tattoo is not worn and true love tattoo is not worn and there is a worn tattoo:
+	if the number of worn chest tattoo is 0 and there is a worn tattoo:
 		summon unfaithful tattoo;
 		say "You feel a searing pain as the word 'UNFAITHFUL' burns itself into your chest in big red letters.";
-	otherwise if cheating whore tattoo is not worn and there is a worn tattoo:
+	otherwise if the number of worn ass tattoo is 0 and there is a worn tattoo:
 		summon cheating whore tattoo;
 		say "You experience a heavy feeling of shame as the words 'CHEATING WHORE' etch themselves into your cheeks.";
 	otherwise if a random number between 1 and 2 is 1 and there is a worn plentiful accessory:
 		let J be random worn plentiful accessory;
-		say "Your [printed name of J] hisses as it slowly disintegrates";
+		say "Your [printed name of J] hisses as it slowly disintegrates.";
 		only destroy J;
 	otherwise:
 		IntDown 1;

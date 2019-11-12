@@ -28,8 +28,9 @@ To trigger (Y - a slingshot):
 	let C be a random off-stage crotch rope;
 	if the player is male, now C is a random off-stage pouch-panties;
 	if diaper focus is 1 and diaper lover > 0:
-		now C is a random off-stage eligible disposable diaper;
-		if C is DQLessBulky diaper and the player is an october 2018 diaper donator, now C is a random off-stage DQBulkier disposable diaper;
+		now C is a random eligible disposable diaper;
+		if C is DQLessBulky diaper, now C is a random off-stage DQBulkier plentiful disposable diaper;
+		if C is nothing, now C is a random eligible diaper;
 	let D be a random currently uncovered diaper;
 	now autowear is true;
 	if C is actually wearable:
@@ -38,7 +39,7 @@ To trigger (Y - a slingshot):
 		repeat with M running through reactive monsters:
 			say SlingshotTrapReactFlav of M;
 	otherwise if C is clothing:
-		if D is diaper and C is diaper and the player is an october 2018 diaper donator:
+		if D is diaper and C is diaper:
 			say "You yelp in surprise as you feel some kind of underwear fly up your legs and into place at your hips, straight on top of your [ShortDesc of D]. It's a [ShortDesc of C]!";
 			only destroy C;
 			set up C;

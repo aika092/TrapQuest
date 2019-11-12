@@ -221,7 +221,7 @@ pale briefs is a briefs. A pale briefs is sheer. A pale briefs is nylon. Underst
 To say selfexamineuniquetitle of (G - pale briefs):
 	say "pair of sheer nylon briefs".
 To say UniqueClothingDesc of (G - pale briefs):
-	say "This pair of pink sissy briefs are very delicate and sheer.".
+	say "This pair of pink [sissy] briefs are very delicate and sheer.".
 Definition: pale briefs is sissifying: decide yes.
 Definition: pale briefs is pink themed: decide yes.
 
@@ -231,6 +231,11 @@ To say selfexamineuniquetitle of (G - white-cameltoe briefs):
 To say UniqueClothingDesc of (G - white-cameltoe briefs):
 	say "A pair of low cut white briefs that would give a female wearer a very visible cameltoe.".
 Definition: white-cameltoe briefs is white themed: decide yes.
+To decide which number is the unique outrage of (C - white-cameltoe briefs):
+	if the player is female, decide on 3;
+	decide on 0.
+To decide which number is the penis-capacity of (H - white-cameltoe briefs):
+	decide on 2.
 
 pink-kitty-briefs is a briefs. pink-kitty-briefs is silk. Understand "frilly", "kitty" as pink-kitty-briefs. The text-shortcut of pink-kitty-briefs is "fkb".
 To say selfexamineuniquetitle of (G - pink-kitty-briefs):

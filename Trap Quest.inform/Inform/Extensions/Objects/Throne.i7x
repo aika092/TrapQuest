@@ -59,11 +59,13 @@ Check entering the throne:
 	if the player is flying, say "You're not even on the ground!" instead;
 	if the player is prone, say "You can't while you are on your hands and knees." instead;
 	if the throne is triggered, say "You already are!" instead;
+	if the woman-status of woman-barbara is 97 and the throne-scene of woman-barbara <= 4, say "It's occupied." instead;
 	allocate 2 seconds;
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: The throne has a lot of different possible outcomes when you sit on it, but you can only try it once in a while. Come back in a bit and try again![roman type][line break][or][stopping]";
 	say "You sit on the throne. ";
 	increase timesSat of the throne by 1;
 	if the charge of the throne <= 0:
+		progress quest of throne-quest;
 		now the charge of the throne is 400;
 		let R be a random number from 1 to 6;
 		let R-old be R;
@@ -363,13 +365,14 @@ To ThroneDisconnect:
 	now the throne is not filling asshole;
 	if a random number between -1 and the TrapNo of the throne < 1:
 		say "[bold type]As you get up, the insertable part of the throne breaks off into your [asshole].[roman type] As it detaches from the throne you feel it shifting in form as the [unless the class of the player is princess]Princess['] [end if]magic leaves it.";
-		let P be a random off-stage plentiful plug;
-		assign size (the openness of asshole + 2) to P;
+		let P be a random off-stage basic plug;
 		summon P cursed with quest;
+		assign size (the openness of asshole + 2) to P;
 		if the openness of asshole < 9, say "You can feel your [asshole] being kept open more than you can take comfortably!";
 	otherwise if the largeness of belly > 3:
 		 cutshow figure of throne cutscene 6 for the throne;
 	if the weight of belly > 18:
+		if seconds is 0, allocate 3 seconds;
 		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";
 		try kneeling.
 

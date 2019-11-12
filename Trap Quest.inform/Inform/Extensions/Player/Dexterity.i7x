@@ -72,8 +72,8 @@ To decide which number is the flat dexterity of the player:
 	if the player is blinded, decrease D by 2;
 	decrease D by the bondage dexterity penalty of the player;
 	if the player is bursting and the bladder of the player > 6, decrease D by (the bladder of the player - 6);
-	if the player is craving, decrease D by 1;
-	if the player is desperately craving, decrease D by 2;
+	if the player is craving semen, decrease D by 1;
+	if the player is desperately craving semen, decrease D by 2;
 	if the strut of the player is 1 and there is a worn heels and the player is upright, increase D by 3;
 	if the player is a bit horny, increase D by 2;
 	if the player is horny, increase D by 1;
@@ -93,6 +93,7 @@ To decide which number is the flat dexterity of the player:
 		if the silicone volume of breasts > 18, increase D by 3;
 	if fudge-poison-timer > 0, now D is D / 2;
 	if cookie-poison-timer > 0, decrease D by 2;
+	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
 	if the player is grossed out and D > 5, now D is 5;
 	if temp_dex_dam > 0, decrease D by temp_dex_dam;
 	now D is (D * (5 - alcohol-level)) / 5;

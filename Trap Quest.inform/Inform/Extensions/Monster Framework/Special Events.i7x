@@ -103,7 +103,7 @@ Determines whether the player is mentally able to refuse to drink semen
 Definition: a person is desperate to drink semen:
 	if the thirst of the player is 5, decide yes;
 	if the player is desperate to drink and the semen taste addiction of the player > 10, decide yes;
-	if the player is craving and the player is not overly full, decide yes;
+	if the player is craving semen and the player is not overly full, decide yes;
 	decide no.
 
 [!<APersonIsDesperateToDrinkUrine>+
@@ -721,7 +721,7 @@ To say NearingClimaxOral of (M - a monster):
 	say "[one of]You can feel [FuckerDesc of M]'s [DickDesc of M] start twitching in your mouth[or][BigFuckerDesc of M] breathes more and more rapidly[or][BigFuckerDesc of M]'s grip on your head noticeably tightens[in random order]. [big he of M] must be [one of]close[or]ready to cum[or]close to finishing[at random]!".
 
 To compute facesit sex of (M - a monster):[see supporter framework for the defaults]
-	if the oral sex addiction of the player > 6, arouse 400;
+	if the oral sex addiction of the player > 6, passively stimulate face from M;
 	if the sex-length of M is 1 and M is anticipating-climax:
 		say NearingClimaxFacesit of M;
 		decrease the sex-length of M by 1;
@@ -985,7 +985,7 @@ To compute racial submission to (M - a monster):
 	if M is dark skinned and M is male and a random number between 8 and 11 < the bbc addiction of the player + (the square root of the delicateness of the player):
 		now auto is 1;
 		let B be a random actually presentable body part;
-		if B is not face and face is actually presentable and M is male and the player is craving and M is willing to do oral, now B is face;
+		if B is not face and face is actually presentable and M is male and the player is craving semen and M is willing to do oral, now B is face;
 		if the player is a butt slut and asshole is actually presentable and M is willing to do anal, now B is asshole;
 		if the player is a pussy slut and vagina is actually presentable and M is willing to do vaginal, now B is vagina;
 		if the player is a tit slut and M is male and M is willing to do titfucks and breasts are actually presentable, now B is breasts;

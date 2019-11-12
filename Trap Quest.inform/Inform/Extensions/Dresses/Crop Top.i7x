@@ -308,7 +308,7 @@ Definition: rugged-crop-top is leopard themed: decide yes.
 Definition: rugged-crop-top is class-transformation-protected if the class of the player is barbarian.
 
 To say ClothingDesc of (C - rugged-crop-top):
-	say "A leopard print crop top that leaves your belly exposed. The cut of the fabric leaves one of your shoulders exposed.".
+	say "A leopard print crop top that doesn't cover your belly. The cut of the fabric leaves one of your shoulders exposed.".
 
 To say ShortDesc of (C - rugged-crop-top):
 	say "rugged crop top".

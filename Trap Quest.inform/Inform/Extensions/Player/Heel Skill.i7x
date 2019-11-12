@@ -48,10 +48,14 @@ The player has a number called raw heel skill. The raw heel skill of the player 
 
 [!<Player>@<heelTime:Integer>*
 
-REQUIRES COMMENTING
+Experience
 
 *@!]
 The player has a number called heel time. The heel time of the player is usually 0.
+
+
+To decide which number is minHeelXP:  [How much experience does it take to go up one level of heel skill]
+	decide on 220.
 
 
 [!<HeelUpX>+
@@ -74,9 +78,13 @@ To 2HeelUp:
 	if the raw heel skill of the player is 3, say "[if the bimbo of the player < 5][line break][first custom style]Ahh, if I put the heel down first...[otherwise][line break][second custom style]I'm getting better at walking in these... yay![end if][roman type][line break]";
 	if the raw heel skill of the player is 5, say "[if the bimbo of the player < 6][line break][first custom style]I could totally get used to walking in heels![otherwise][line break][second custom style]Walking in heels is fun![end if][roman type][line break]";
 	if the raw heel skill of the player is 8, say "[if the bimbo of the player < 8][line break][first custom style]Okay now I can walk on my heels a bit too well for my liking...[otherwise][line break][second custom style]I can waltz around in heels almost perfectly![end if][roman type][line break]";
-	if the raw heel skill of the player < 10:
+	let HMod be 0;
+	if heel-module is worn, now HMod is the heel-skill-influence of heel-module; [The amount that the heel module contributes to heel skill kind-of counts as raw heel skill]
+	if the raw heel skill of the player + HMod < 10:
 		progress quest of heel-walking-quest;
-		increase the raw heel skill of the player by 1.
+		increase the raw heel skill of the player by 1;
+		now heel time of the player is 0.
+
 
 [!<HeelDownX>+
 

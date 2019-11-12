@@ -1,12 +1,13 @@
 Diaper Framework by Knickers begins here.
 
 
-diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 36. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
+diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
+
+The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 A diaper has a number called perceived-urine-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
 
 Definition: yourself is diaper aware: [Do they always know the state of their diaper?]
-	if the player is not an october 2018 diaper donator, decide yes;
 	if failed potty training tattoo is worn or the diaper addiction of the player >= 20, decide no;
 	decide yes.
 
@@ -172,7 +173,8 @@ To clean (C - a knickers):
 		now the perceived-urine-soak of C is 0;
 		now the perceived-milk-soak of C is 0;
 		now the perceived-semen-soak of C is 0;
-	if C is listed in the list of stacked diapers, update diaper stack.
+	if C is listed in the list of stacked diapers, update diaper stack;
+	if C is worn, update appearance level.
 
 
 To set up influence of (C - a diaper):
@@ -184,8 +186,6 @@ To compute drying of (C - a diaper):
 disposable diaper is a kind of diaper.
 Definition: a disposable diaper is crotch-pullup: decide no.
 pullup diaper is a kind of diaper.
-
-The printed name of diaper is usually "[clothing-title-before]diaper[clothing-title-after]".
 
 The DQFigure of diaper is usually DQMedium.
 
@@ -211,24 +211,29 @@ To decide which number is the heaviness of (D - a diaper):
 
 To decide which number is the initial outrage of (C - a diaper):
 	if diaper quest is 1, decide on 0;
-	if C is currently diaper covered, decide on 3;
+	if C is currently diaper covered:
+		if the trophy-mode of diaper-trophy is 1, decide on 0;
+		decide on 6;
 	let O be 6 + the unique outrage of C;
 	if the urine-soak of C is 0, decrease O by 2;
 	decide on O.
 
 To decide which number is the initial cringe of (C - a diaper):
-	if C is currently diaper covered, decide on 3;
+	if C is currently diaper covered:
+		if the trophy-mode of diaper-trophy is 1, decide on 0;
+		decide on 6;
 	let O be 6 + the unique outrage of C;
 	if the urine-soak of C is 0, decrease O by 2;
 	decide on O.
 
-Definition: a diaper (called D) is currently diaper covered: [if it's not, that means it's fully visible. otherwise it means that probably just the shape can be seen.]
+Definition: a diaper (called D) is currently diaper covered rather than currently diaper uncovered: [if it's uncovered, that means it's fully visible. otherwise it means that probably just the shape can be seen.]
 	if D is not worn, decide no;
 	if there is a worn diaper covering clothing, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is diaper covering:
-	if C is potentially at least partially asshole covering not-butt-windowed clothing and C is not knickers, decide yes;
+	if C is potentially at least partially asshole covering not-butt-windowed clothing and C is not knickers:
+		if the skirtLength of C >= the DQBulk of the player, decide yes;
 	decide no.
 
 To decide which number is the unique outrage of (C - a diaper):
@@ -294,12 +299,7 @@ To compute unique periodic effect of (D - a diaper):
 
 Definition: a diaper is basic loot: decide no. [a diaper never spawns from selecting a random basic loot knickers. #MG Seems redundant with the default]
 
-Definition: a diaper (called D) is fetish appropriate:
-	if diaper lover >= 1, decide yes;
-	decide no.
-
-To decide which number is the heaviness of (D - a diaper):
-	decide on the weight of D.
+Definition: a diaper is fetish appropriate if diaper lover >= 1.
 
 To decide which number is the weight of (D - a diaper):
 	let X be 0;
@@ -314,6 +314,7 @@ Definition: a diaper (called D) is eligible: [This allows us to pull diapers tha
 	if D is store, decide no;
 	if D is not plentiful, decide no;
 	if D is off-stage, decide yes;
+	if there is off-stage plentiful unowned diaper, decide no; [There are some off-stage so we want one of them, not this one]
 	if D is in holding pen, decide no;
 	if D is held, decide no;
 	if D is in the location of the player, decide no;
@@ -342,7 +343,7 @@ To say diaper-saturation-desc of (C - a diaper):
 Report wearing diaper:
 	if the urine-soak of the noun > 0:
 		say "The cold wet squelch as you put the [noun] on makes you [if the diaper addiction of the player < 10]shudder involuntarily. How gross[otherwise if the diaper addiction of the player < 14]squirm uncomfortably. It's cold and clammy[otherwise]shiver with arousal[end if].";
-		if the diaper addiction of the player < 14, arouse 350;
+		if the diaper addiction of the player >= 14, stimulate vagina from the noun;
 		DiaperAddictUp 1;
 	if diaper messing is 3 and the player is feeling full:
 		say "Almost as if a switch is flicked inside your stomach, you suddenly feel the [if rectum > 6]desperate [end if]need to go number two.[one of][line break][variable custom style]It's like I only can feel the need to go whilst wearing a diaper?! This game is [if the bimbo of the player < 10]fucked up[otherwise]weird[end if]![roman type][line break][or][stopping]";
@@ -583,12 +584,16 @@ To decide which object is the concealer of (K - diaper-stack): [Nothing can comp
 	decide on nothing.
 
 To SemenSoakUp (C - diaper-stack) by (N - a number):
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	SemenSoakUp entry 1 of the list of stacked diapers by N.
 To UrineSoakUp (C - diaper-stack) by (N - a number):
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	UrineSoakUp entry 1 of the list of stacked diapers by N.
 To MilkSoakUp (C - diaper-stack) by (N - a number):
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	MilkSoakUp entry 1 of the list of stacked diapers by N.
 To WaterSoakUp (C - diaper-stack) by (N - a number):
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	WaterSoakUp entry 1 of the list of stacked diapers by N.
 
 To LiquidSoak (L - semen) On (C - diaper-stack):
@@ -641,17 +646,20 @@ To MessSet (K - diaper-stack) to (N - a number):
 To clean (C - diaper-stack):
 	repeat with D running through the list of stacked diapers:
 		clean D;
-	update diaper stack.
+	update diaper stack;
+	if C is worn, update appearance level.
 
 To WaterEmpty (C - diaper-stack):
 	repeat with D running through the list of stacked diapers:
 		WaterEmpty D;
-	update diaper stack.
+	update diaper stack;
+	if C is worn, update appearance level.
 
 To Drench (C - diaper-stack):
 	repeat with D running through the list of stacked diapers:
 		Drench D;
-	update diaper stack.
+	update diaper stack;
+	if C is worn, update appearance level.
 
 To update diaper stack:
 	if diaper-stack is worn:

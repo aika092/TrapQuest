@@ -3,6 +3,7 @@ Leotard by Dresses begins here.
 A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet. A leotard has a number called charge.
 
 Definition: a leotard is ballet related: decide yes.
+Definition: a leotard is sissifying: decide yes.
 
 A pink leotard is a kind of leotard. A sexy blue leotard is a kind of leotard.
 
@@ -24,7 +25,6 @@ To say ClothingDesc of (C - a sexy blue leotard):
 	say "A blue leotard which is so sheer that it would reveal everything if it wasn't the for opaque stars over each nipple and the crotch.[if C is crotch-ripped]A rip at the bottom of the leotard means that it unfortunately doesn't protect the crotch region.[end if]".
 
 Definition: a pink leotard is pink themed: decide yes.
-Definition: a pink leotard is sissifying: decide yes.
 Definition: a sexy blue leotard is star themed: decide yes.
 Definition: a sexy blue leotard is blue themed: decide yes.
 

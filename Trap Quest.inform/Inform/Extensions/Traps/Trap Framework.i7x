@@ -311,12 +311,12 @@ To say HarshTrapReactFlav of (M - a monster):
 To say NastyTrapReactFlav of (M - a monster):
 	say "[BigNameDesc of M] [one of]makes a disgusted sound[or]almost chokes in surprise[or]grimaces[at random].[line break][speech style of M]'[one of]Yuck.'[or]How could you let that happen to you? Do you have no shame?'[or]Oh my lord! What a disgrace.'[in random order][roman type][line break]".
 To say LewdTrapReactFlav of (M - a monster):
-	say "[BigNameDesc of M] [one of]widens [his of M] eyes[or][if M is human]puts [his of M] hand in front of [his of M] mouth[otherwise]looks surprised[end if][or][if M is human]raises [his of M] eyebrows[otherwise][end if][at random].[line break][speech style of M]'[one of]I didn't know you were into things like that.'[or]Are you really doing what it looks like you're doing?!'[or][if diaper quest is 0]Slut[otherwise]What a silly baby[end if].'[or]That's a pretty outrageous thing to be caught doing, you know.'[or]Do my eyes deceive me, or are you...?!'[in random order][roman type][line break]";
+	say "[BigNameDesc of M] [one of]widens [his of M] eyes[or][if M is human]puts [his of M] hand in front of [his of M] mouth[otherwise]looks surprised[end if][or][if M is human]raises [his of M] eyebrows[otherwise]looks shocked[end if][at random].[line break][speech style of M]'[one of]I didn't know you were into things like that.'[or]Are you really doing what it looks like you're doing?!'[or][if diaper quest is 0]Slut[otherwise]What a silly baby[end if].'[or]That's a pretty outrageous thing to be caught doing, you know.'[or]Do my eyes deceive me, or are you...?!'[in random order][roman type][line break]";
 	moderateHumiliate;
 	FavourDown M with consequences.
 
 
-
+[
 Part 1 Grabby Traps
 
 
@@ -359,7 +359,7 @@ REQUIRES COMMENTING
 +!@]
 To trigger (Y - a grabby trap):
 	say "A pair of hands burst from the floor and grab your ankles.".
-
+]
 
 
 

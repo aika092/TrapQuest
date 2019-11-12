@@ -10,6 +10,9 @@ To decide which figure-name is the examine-image of (C - pack of playing cards):
 To say ExamineDesc of (P - a pack of playing cards):
 	say "[if P is not held and P is in Dungeon07]A pack of playing cards is spread across the table, ready for a game to be played. Each of the cards has a photo of a naked woman on it[otherwise if born to lose tattoo is worn]The pack of nude lady playing cards you took from the poker table. Half of them are missing, but you notice that the queen of hearts is still there[otherwise]The pack of nude lady playing cards you took from the poker table[end if].".
 
+To decide which number is the outrage of (C - pack of playing cards):
+	decide on 5.
+
 To decide which number is the crafting key of (C - pack of playing cards):
 	decide on 31.
 

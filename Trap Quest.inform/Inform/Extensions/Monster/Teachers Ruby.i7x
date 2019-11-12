@@ -58,7 +58,7 @@ To compute teaching of (L - eating-lesson):
 	allocate 40 seconds;
 	let M be the lesson-teacher of L;
 	say "[BigNameDesc of M] guides you all to the Food Hall.";
-	repeat with N running through monsters in School17:
+	repeat with N running through monsters in School17: [Clear out the Food Hall of unnecessary NPCs]
 		now N is in School02;
 	repeat with N running through monsters in the location of M:
 		now N is in School17;
@@ -125,7 +125,7 @@ To compute teaching of (L - eating-lesson):
 			now the armband-print of armband is "greedy [if diaper quest is 0]cum [end if]guzzler";
 			say ClothingDesc of armband;
 			repeat with ST running through students in the location of the player:
-				if ST is not listed in F, FavourDown ST;
+				if ST is not listed in F, HappinessDown ST;
 		otherwise:
 			promote N;
 	if yourself is listed in F, update students; [an important line which makes boring old students disappear and new cool ones appear]

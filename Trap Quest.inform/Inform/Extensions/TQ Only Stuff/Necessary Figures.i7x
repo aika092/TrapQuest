@@ -50,6 +50,7 @@ Figure of ghost 1 is the file "NPCs/Mansion/Ghost/ghost1.png".
 Figure of ghost 2 is the file "NPCs/Mansion/Ghost/ghost2.png".
 Figure of ghost 3 is the file "NPCs/Mansion/Ghost/ghost3.png".
 Figure of ghost 4 is the file "NPCs/Mansion/Ghost/ghost4.png".
+Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost8.jpg".
 
 Figure of Ghost Cutscene 1 is the file "Special/Cutscene/cutscene-ghost-sex1.png". [No undies vaginal]
 Figure of Ghost Cutscene 2 is the file "Special/Cutscene/cutscene-ghost-sex2.png". [Undies vaginal]
@@ -100,9 +101,11 @@ Figure of Wild Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladi
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
 
+Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
 
-Figure of quiz lesson is the file "Special/Cutscene/cutscene-hyacinthe-quiz1.jpg".
+Figure of quiz predicament room is the file "Special/Cutscene/cutscene-quiz1.jpg".
+Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
 
@@ -199,6 +202,32 @@ Figure of Lips Cutscene 1 is the file "Special/Cutscene/cutscene-lips1.jpg".
 Figure of Lips Cutscene 2a is the file "Special/Cutscene/cutscene-lips2a.jpg".
 Figure of Lips Cutscene 2b is the file "Special/Cutscene/cutscene-lips2b.jpg".
 Figure of Lips Cutscene 3 is the file "Special/Cutscene/cutscene-lips3.png".
+
+Figure of Maths Predicament Xray 1 is the file "Special/Cutscene/cutscene-maths-xray1.jpg".
+Figure of Maths Predicament 0 is the file "Special/Cutscene/cutscene-maths0.jpg".
+Figure of Maths Predicament 1 is the file "Special/Cutscene/cutscene-maths1.jpg".
+Figure of Maths Predicament 2 is the file "Special/Cutscene/cutscene-maths2.jpg".
+Figure of Maths Predicament 3 is the file "Special/Cutscene/cutscene-maths3.jpg".
+Figure of Maths Predicament 4 is the file "Special/Cutscene/cutscene-maths4.jpg".
+Figure of Maths Predicament 5 is the file "Special/Cutscene/cutscene-maths5.jpg".
+
+To decide which figure-name is figure of maths predicament:
+	if maths-timer is -100:
+		decide on figure of maths predicament xray 1;
+	otherwise if the used condoms of string-belt is 0:
+		decide on figure of maths predicament 0;
+	otherwise if the used condoms of string-belt is 1:
+		decide on figure of maths predicament 1;
+	otherwise if the used condoms of string-belt is 2:
+		decide on figure of maths predicament 2;
+	otherwise if the used condoms of string-belt is 3:
+		decide on figure of maths predicament 3;
+	otherwise if the used condoms of string-belt is 4:
+		decide on figure of maths predicament 4;
+	otherwise:
+		decide on figure of maths predicament 5.
+
+
 Figure of Modmachine Cutscene 1 is the file "Special/Cutscene/cutscene-modmachine1.png".
 
 Figure of Oral Creampie Cutscene 1 is the file "Special/Cutscene/cutscene-oral-creampie1.jpg".
@@ -257,6 +286,7 @@ Figure of super rich male buttslut is the file "Special/Epilogue/epilogue-super-
 Figure of super rich bedroom sex is the file "Special/Epilogue/epilogue-super-rich1.jpg".
 Figure of super rich hummer exhibitionism is the file "Special/Epilogue/epilogue-super-rich2.jpg".
 Figure of super rich wife is the file "Special/Epilogue/epilogue-super-rich3.jpg".
+Figure of super rich curvy wife is the file "Special/Epilogue/epilogue-super-rich9.jpg".
 Figure of super rich car is the file "Special/Epilogue/epilogue-super-rich4.jpg".
 Figure of super rich businesswoman is the file "Special/Epilogue/epilogue-super-rich5.jpg".
 Figure of super rich petrol exhibitionism is the file "Special/Epilogue/epilogue-super-rich6.jpg".
@@ -427,6 +457,14 @@ Figure of lesbian anilingus tattoo is the file "Items/Tats/tattoo100.jpg".
 To decide which figure-name is the examine-image of (T - lesbian anilingus tattoo):
 	decide on figure of lesbian anilingus tattoo.
 
+Figure of lock-it tattoo is the file "Items/Tats/tattoo151.jpg".
+To decide which figure-name is the examine-image of (T - lock-it tattoo):
+    decide on figure of lock-it tattoo.
+
+Figure of measurement tattoo is the file "Items/Tats/tattoo150.jpg".
+To decide which figure-name is the examine-image of (T - measurement tattoo):
+    decide on figure of measurement tattoo.
+
 Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.jpg".
 To decide which figure-name is the examine-image of (T - my-vagina tattoo):
 	decide on figure of my-vagina tattoo.
@@ -458,6 +496,10 @@ To decide which figure-name is the examine-image of (T - prime USDA tattoo):
 Figure of property-tattoo is the file "Items/Tats/tattoo121.jpg".
 To decide which figure-name is the examine-image of (T - property-tattoo):
 	decide on figure of property-tattoo.
+
+Figure of pull-to-choke tattoo is the file "Items/Tats/tattoo152.jpg".
+To decide which figure-name is the examine-image of (T - pull-to-choke tattoo):
+    decide on figure of pull-to-choke tattoo.
 
 Figure of pussy deluxe tattoo is the file "Items/Tats/tattoo46.jpg".
 To decide which figure-name is the examine-image of (T - pussy deluxe tattoo):

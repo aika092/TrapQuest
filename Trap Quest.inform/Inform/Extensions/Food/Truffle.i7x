@@ -36,7 +36,7 @@ Carry out TQeating truffle:
 				say "[first custom style]I'm so disgusting. I can[']t believe I really ate that...[roman type]";
 				SemenAddictUp 1;
 				Humiliate 125;
-			Arouse the semen addiction of the player * 20;
+			Arouse the semen taste addiction of the player * 20;	
 			StomachSemenUp 1;
 	otherwise if a random number between 3 and the quality of the noun is 3:
 		say "The rich chocolate leaves you feeling really satisfied, and you feel like you could put up with a lot as long as you still feel that great taste in the back of your mouth";

@@ -132,6 +132,7 @@ To fill in table blanks:
 		unless there is a choice in row 52 of the Table of Settings, now choice in row 52 of Table of Settings is 30;
 		unless there is a choice in row 53 of the Table of Settings, now choice in row 53 of Table of Settings is 0;
 		unless there is a choice in row 54 of the Table of Settings, now choice in row 54 of Table of Settings is 0;
+		unless there is a choice in row 55 of the Table of Settings, now choice in row 55 of Table of Settings is 1;
 	[Allows old save files to load properly]
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
 	unless there is a choice in row 33 of the Table of Player Options, now choice in row 33 of Table of Player Options is 0;
@@ -178,13 +179,12 @@ To fill in table blanks:
 	unless there is a choice in row 74 of the Table of Player Options, now choice in row 74 of Table of Player Options is 0;
 	unless there is a choice in row 75 of the Table of Player Options, now choice in row 75 of Table of Player Options is 0;
 	unless there is a choice in row 76 of the Table of Player Options, now choice in row 76 of Table of Player Options is 0;
-	unless there is a choice in row 77 of the Table of Player Options, now choice in row 77 of Table of Player Options is 1.
+	unless there is a choice in row 77 of the Table of Player Options, now choice in row 77 of Table of Player Options is 1;
+	unless there is a choice in row 78 of the Table of Player Options, now choice in row 78 of Table of Player Options is 0;
+	unless there is a choice in row 79 of the Table of Player Options, now choice in row 79 of Table of Player Options is 0;
+	unless there is a choice in row 80 of the Table of Player Options, now choice in row 80 of Table of Player Options is 1. [TODO change to 0]
 
 To correct table entries:
-	[if the player is not the donator:
-		choose the row with a toggle of ultra undo toggle rule in the Table of Game Settings;
-		blank out the whole row;
-		now choice in row 26 of the Table of Settings is 0;]
 	if the player is not the donator or Name in row 1 of Table of Custom Male Name is "Undefined Name 1":
 		choose the row with a toggle of custom name rule in the Table of Male Name Options;
 		blank out the whole row;
@@ -195,15 +195,11 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	if the player is not a top donator:
+	[if the player is not a top donator:
 		choose the row with a subtable of Table of Festive Options in the Table of Kink Options;
 		blank out the whole row;
-		if the player is not a top donator:
-			choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
-			blank out the whole row;
-	if the player is not a top donator:
-		choose the row with a toggle of school names toggle rule in the Table of Optional Text Settings;
-		blank out the whole row;
+		choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
+		blank out the whole row;]
 	if diaper quest is 0:
 		choose the row with a toggle of easter content toggle rule in the Table of Festive Options;
 		blank out the whole row;
@@ -237,10 +233,10 @@ To retrieve gender:
 		now the player is male.
 
 To retrieve name:
-	if the player is male, now the current menu is the Table of Male Name Options;
+	if the player is male and transGender is 0, now the current menu is the Table of Male Name Options;
 	otherwise now the current menu is the Table of Female Name Options;
 	if diaper quest is 1:
-		if the player is male, now the current menu is the Table of Male Name Diaper Quest Options;
+		if the player is male and transGender is 0, now the current menu is the Table of Male Name Diaper Quest Options;
 		otherwise now the current menu is the Table of Female Name Diaper Quest Options;
 	if the player is male:
 		choose the row with a toggle of pure background toggle rule in the Table of Background Options;
@@ -307,7 +303,7 @@ To retrieve diaper focus options:
 		clear the screen.
 
 To retrieve diaper options:
-	if diaper messing >= 1: [if it's -1 the player has asked to never be offered messing again]
+	if diaper lover >= 1 and choice in row 50 of the Table of Player Options > -2:
 		now the current menu is the Table of Diaper Options;
 		carry out the displaying activity;
 		clear the screen.

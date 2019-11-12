@@ -86,7 +86,7 @@ To set up (M - minotaur):
 To decide which number is the girth of (M - minotaur):
 	decide on 8.
 
-To decide which number is the semen load of (M - minotaur):
+To decide which number is the base semen load of (M - minotaur):
 	decide on 18.
 
 This is the spawn initial minotaur rule:
@@ -254,11 +254,12 @@ To compute anal sex of (M - minotaur):
 		unless M is wrapped, AssFill 2;
 		if the soreness of asshole < 10 or the reaction of the player is 0, ruin asshole;
 	otherwise:
+		TimesSubmittedUp M by 1;
 		now the nutting-turns of M is 0;
 		let R be 20 + a random number between 1 and 10;
 		if debuginfo > 0, say "[input-style][ShortDesc of M] sleep pin check: d10+20.5 ([R].5) | [strength of the player + dexterity of the player] = ([strength of the player]) strength + ([dexterity of the player]) dexterity[roman type][line break]";
 		if the dexterity of the player + the strength of the player > 20 + R:
-			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, half-crushing your body.[or][BigNameDesc of M], completely spent, collapses on top of you, half crushing your body.[or][BigNameDesc of M] collapses on top of you, spent.[at random] You barely manage to crawl out from underneath [him of M], [if the soreness of asshole > 4 or the openness of asshole < 8]wincing as [his of M][one of] shrinking[or] cummy[or][or][at random] [manly-penis] [one of]slides out[or]pops out[at random] of your [asshole][otherwise]sighing as his[one of] shrinking[or] cummy[or][or][at random] [manly-penis] slides out of your [asshole][end if].";
+			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, half-crushing your body.[or][BigNameDesc of M], completely spent, collapses on top of you, half crushing your body.[or][BigNameDesc of M] collapses on top of you, spent.[at random] You barely manage to crawl out from underneath [him of M], [if the soreness of asshole > 4 or the openness of asshole < 8]wincing as [his of M][one of] shrinking[or] cummy[or][or][at random] [DickDesc of M] [one of]slides out[or]pops out[at random] of your [asshole][otherwise]sighing as his[one of] shrinking[or] cummy[or][or][at random] [DickDesc of M] slides out of your [asshole][end if].";
 			now M is not penetrating asshole;
 		otherwise:
 			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath [his of M] weight![or][BigNameDesc of M], spent, collapses on top of you, crushing you under [his of M] full weight. You try, but you don't manage to crawl out from underneath [him of M]![or][BigNameDesc of M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath [him of M].[or][BigNameDesc of M], completely spent, collapses on top of you, pinning you down with his full weight. No matter what you do, you can't manage to crawl out from underneath [him of M]![at random] You're going to have to wait [one of]like this with [his of M] [DickDesc of M] in your [asshole] until [he of M] wakes up...[or]with [his of M] [DickDesc of M] buried in your asshole until [he of M] wakes up...[at random]";
@@ -279,6 +280,7 @@ To compute vaginal sex of (M - minotaur):
 		unless M is wrapped, PussyFill 2;
 		if the soreness of vagina < 10 or the reaction of the player is 0, ruin vagina;
 	otherwise:
+		TimesSubmittedUp M by 1;
 		now the nutting-turns of M is 0;
 		PussyFill 2;
 		say "[one of][BigNameDesc of M] seems completely spent - [he of M] pulls your bloated body off [his of M] shaft and leaves you to recover[or][BigNameDesc of M], spent, pulls your bloated body off [his of M] deflating shaft and leaves you to recover[or][BigNameDesc of M] pulls your bloated body off [his of M] shaft as [his of M] ejaculation finally ends, leaving you on the floor to recover[or][BigNameDesc of M] removes [his of M] deflating shaft from your [vagina], completely spent[at random]. [big he of M] stalks off, probably looking for another woman to breed.";
@@ -293,7 +295,8 @@ To compute vaginal sex of (M - minotaur):
 
 To compute priestessBlessing of (M - minotaur):
 	say "You feel a surge in your holy aura and a voice appears in your head: 'Good work, Sister!'";
-	decrease the charge of the dungeon altar by 300.
+	decrease the charge of the dungeon altar by 300;
+	RitualUp 2.
 
 To compute fuckhole sex of (M - minotaur):
 	let F be a random fuckhole penetrated by M;

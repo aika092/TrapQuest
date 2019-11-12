@@ -26,7 +26,7 @@ To decide which number is the strength-influence of (C - a blazing dress):
 
 Definition: a blazing dress is class-transformation-protected if the class of the player is succubus.
 Definition: a blazing dress is red themed: decide yes.
-
+Definition: a blazing dress is demonic: decide yes.
 
 
 

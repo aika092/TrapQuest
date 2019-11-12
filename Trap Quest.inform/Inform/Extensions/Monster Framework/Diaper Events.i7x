@@ -104,10 +104,11 @@ To say DiaperCheckResultsFlav of (M - a monster):
 		say "[DiaperCheckResultsMostlyDryReactionFlav of M]";
 	otherwise:
 		say "[DiaperCheckResultsDryFlav of M]";
-		if the diaper-duration of M > 1:
-			decrease the diaper-duration of M by 1;
-		otherwise if the diaper-duration of M is 1:
-			now the diaper-duration of M is 0.
+		if the trophy-mode of diaper-trophy is 0:
+			if the diaper-duration of M > 1:
+				decrease the diaper-duration of M by 1;
+			otherwise if the diaper-duration of M is 1:
+				now the diaper-duration of M is 0.
 
 To say DiaperCheckResultsMessedFlav of (M - a monster):
 	let D be a random worn knickers;
@@ -260,7 +261,7 @@ To compute diaper change of (M - a monster):
 			rule succeeds;
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
 			say DiaperPowderFlav of M;
-			if there is a worn diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;
+			if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;
 			if new-diaper is nothing, now new-diaper is a random eligible plentiful disposable diaper;
 			if new-diaper is nothing, now new-diaper is a random eligible diaper;
 			if new-diaper is not worn:
@@ -289,7 +290,8 @@ To compute diaper change of (M - a monster):
 				if old-diaper is diaper:
 					say DiaperChangeFlav of M;
 					say DiaperChangeComment of M;
-					if oldDiaperLeft is a thing, say DiaperDropFlav of M;
+					if oldDiaperLeft is a thing and oldDiaperLeft is in the location of the player, say DiaperDropFlav of M;
+					if new-diaper is cursed and strongCurses is 1, compute new quest of new-diaper;
 				otherwise:
 					say DiaperDonateFlav of M;
 					say DiaperDonateComment of M;
@@ -384,7 +386,7 @@ To decide which number is the diaper punishment length of (M - a monster):
 	decide on 3.
 
 To say DiaperSpace of (M - a monster):
-	say "[if there is a worn diaper bag of holding and new-diaper is carried diaper]your [ShortDesc of random worn diaper bag of holding][otherwise]seemingly nowhere[end if]".
+	say "[if there is a worn diaper bag of holding and new-diaper is carried diaper]your [ShortDesc of random worn diaper bag of holding][otherwise if there is a worn baby diaper bag of holding and new-diaper is carried diaper]your [ShortDesc of random worn baby diaper bag of holding][otherwise]seemingly nowhere[end if]".
 
 To say DiaperChangeStart of (M - a monster):
 	say "[BigNameDesc of M] rolls you onto your back and pins you down with one strong arm.".
@@ -501,7 +503,7 @@ To say SpankingMercyBeg of (M - a monster):
 	say "[roman type] You beg [NameDesc of M] for mercy.".
 
 To say SpankingMercyRejectionFlav of (M - a monster):
-	say "[speech style of M]'[one of]You're not getting off that easy this time.'[or]That line won't work on me today, young Miss.'[or]It's not a proper punishment if you don't cry.'[in random order][roman type] [BigNameDesc of M] ignores your pleas.".
+	say "[if M is intelligent][speech style of M]'[one of]You're not getting off that easy this time.'[or]That line won't work on me today, young Miss.'[or]It's not a proper punishment if you don't cry.'[in random order][roman type][line break][end if][BigNameDesc of M] ignores your pleas.".
 
 To say SoftSpankingFlav of (M - a monster):
 	say "[BigNameDesc of M] hesitates, and then delivers a few weak blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'I guess that'll do for now. Just this once.'[roman type][line break][BigNameDesc of M] turns away and lets you go.".
@@ -510,7 +512,7 @@ To say SpankingStartFlav of (M - a monster):
 	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still!".
 
 To say SpankingDeclarationFlav of (M - a monster):
-	say "[speech style of M]'[one of]I think you deserve a good spanking.'[or]Time for your spanking, little one!'[at random][roman type] ".
+	if M is intelligent, say "[speech style of M]'[one of]I think you deserve a good spanking.'[or]Time for your spanking, little one!'[at random][roman type][line break]".
 
 To say SpankingFlav of (M - a monster):
 	say "[BigNameDesc of M] delivers [one of]two[or]three[or]four[as decreasingly likely outcomes] powerful blows to your [buttcheeks] with [his of M] hand.".
@@ -574,11 +576,8 @@ To say MasturbationStartFlav of (M - a monster):
 
 To progress masturbation of (M - a monster):
 	say MasturbationFlav of M;
-	arouse 1000 + the masturbation skill of M;
-	if the player is male:
-		progress male masturbation of M;
-	otherwise if the player is female:
-		progress female masturbation of M;
+	stimulate vagina from M;
+	if the player is male, RawUp penis;
 	if refactoryperiod > 0, now the sex-length of M is 0;[If player came, the monster is done]
 	compute unique masturbation effect of M.
 
@@ -588,23 +587,6 @@ To compute unique masturbation effect of (M - a monster):
 		say "[one of]The gross squishiness of your messy diaper being rubbed makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
 		humiliate 150;
 		DelicateUp 1.
-
-To progress male masturbation of (M - a monster):
-	RawUp penis;
-	if penis is pushed over the edge, compute masturbation climax of M;[if an orgasm needs to happen, have one happen]
-
-To progress female masturbation of (M - a monster):
-	let O be the buildup of vagina;
-	let K be a random worn vagina plugging clothing;
-	increase the buildup of vagina by 1;[we do all build up changes pre-emptively so we can catch an orgasm before it happens]
-	if K is clothing, increase the buildup of vagina by 1;
-	if vagina is pushed over the edge or (for deposit only tattoo is not worn and the player is extremely horny):
-		compute masturbation climax of M;
-	now the buildup of vagina is O;[now that we know an orgasm won't happen, we let build up happen the normal way]
-	if refactoryperiod > 0, ruin vagina;
-	if K is clothing:
-		say "The plug[if K is ass plugging]s[end if] inside of you send pleasurable sensations deep into your [vagina].";
-		ruin vagina.
 
 To decide which number is the masturbation length of (M - a monster):
 	decide on a random number between 3 and 5.
@@ -629,12 +611,10 @@ To compute masturbation climax of (M - a monster):
 	otherwise compute vanilla masturbation climax of M.
 
 To compute diaper masturbation climax of (M - a monster):
-	if the player is female, vaginally orgasm shamefully;
-	otherwise orgasm.
+	vaginally orgasm shamefully.
 
 To compute vanilla masturbation climax of (M - a monster):
-	if the player is female, vaginally orgasm shamefully;
-	otherwise orgasm.
+	vaginally orgasm shamefully.
 
 To compute masturbation aftermath of (M - a monster):
 	say MasturbationAfterFlav of M;
@@ -668,27 +648,27 @@ Section - Enema
 To compute enema of (M - a monster):
 	if M is not enema-filling the player:
 		compute enema start of M;
-	say "[EnemaFlav of M]";
+	say EnemaFlav of M;
 	Assfill (belly limit / 4) water;
 	decrease the sex-length of M by 1;
 	if the sex-length of M <= 0 and M is enema-filling the player: [Sometimes the monster might move from one punishment to another]
-		say "[EnemaAftermath of M]";
+		say EnemaAftermath of M;
 		dislodge M;
 		replace any buttplugs;
 		if the number of sex toy filling asshole is 0 and M is eager to plug an enema, compute enema plugging of M;
 		replace any diapers;
 		replace any clothes;
-		say "[EnemaAfterFlav of M]";
+		say EnemaAfterFlav of M;
 		satisfy M.
 
 To compute enema start of (M - a monster):
 	now the sex-length of M is the enema quarts of M;
-	say "[EnemaDeclarationFlav of M]";
+	say EnemaDeclarationFlav of M;
 	compute M removing all ass protection;
 	now M is grabbing the player;
 	now M is enema-filling the player;
 	now M is penetrating asshole;
-	say "[EnemaStartFlav of M]".
+	say EnemaStartFlav of M.
 
 To decide which number is the enema quarts of (M - a monster):
 	if tutorial is 1, decide on 3;
@@ -704,7 +684,7 @@ To decide which number is the enema plug reluctance of (M - a monster):
 	decide on 4. [Set this to 0 to have the monster never plug after an enema]
 
 To say EnemaDeclarationFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'Hmm, [one of]I think [sex-length of M] quart[if the sex-length of M > 1]s[end if] should do...' [or][if the sex-length of M is 1]I guess I'll let you off with one quart this time.' [otherwise]I reckon you deserve [sex-length of M] quarts this time.' [end if][at random][roman type]".
+	if M is intelligent, say "[speech style of M]'Hmm, [one of]I think [sex-length of M] quart[if the sex-length of M > 1]s[end if] should do...'[or][if the sex-length of M is 1]I guess I'll let you off with one quart this time.'[otherwise]I reckon you deserve [sex-length of M] quarts this time.'[end if][at random][roman type][line break]".
 
 To say EnemaStartFlav of (M - a monster):
 	say "[BigNameDesc of M] pulls [if the sex-length of M is 1]a full enema syringe[otherwise][sex-length of M] full enema syringes[end if] [EnemaSpace of M], [one of]grinning widely[or]smirking vindictively[or]frowning with cold determination[at random].".
@@ -785,19 +765,19 @@ To compute forcefeed of (M - a monster):
 	compute forcefeed round S of M;
 	if the sex-length of M <= 0:
 		dislodge M;
-		say "[ForcefeedAftermath of M]";
-		say "[ForcefeedAfterFlav of M]";
+		say ForcefeedAftermath of M;
+		say ForcefeedAfterFlav of M;
 		replace any gags;
 		satisfy M.
 
 To compute forcefeed start of (M - a monster):
 	now the sex-length of M is the forcefeed-length of M;
 	now the chosen-forcefeed-round of M is the max-forcefeed-length of M + 1; [because we always subtract at least 1 before the first forcefeed]
-	say "[ForcefeedDeclarationFlav of M]";
+	say ForcefeedDeclarationFlav of M;
 	follow the monster removing gag rule; [If there's a gag, let's take it off for now]
 	now M is grabbing the player;
 	now M is feeding the player;
-	say "[ForcefeedStartFlav of M]".
+	say ForcefeedStartFlav of M.
 
 To decide which number is the forcefeed-length of (M - a monster):
 	decide on 2.
@@ -829,6 +809,10 @@ To say ForcefeedPillDeclarationFlav of (M - a monster):
 To say ForcefeedStartFlav of (M - a monster):
 	say "[BigNameDesc of M] takes you onto [his of M] lap, your back pressing into [his of M] chest, and holds you very tightly. You won't be able to escape now.".
 
+To decide which number is breast-milk-this-time:
+	if the class of the player is catgirl, decide on 1;
+	decide on the remainder after dividing time-turns by 2.
+
 To compute forcefeed round (N - a number) of (M - a monster):
 	if N is 1 and M is willing to forcefeed pills:
 		if M is intelligent, say "[ForcefeedPillDeclarationFlav of M]";
@@ -840,8 +824,9 @@ To compute forcefeed round (N - a number) of (M - a monster):
 			say "[one of]a large banana[or]a candy bar[or]a handful of marshmallows[or]a cookie[in random order] into your mouth. You are forced to chew and swallow it all down.";
 			StomachFoodUp 1;
 		otherwise:
-			say "a baby bottle full of [one of]apple juice[or]warm milk[or]orange juice[or]cold coffee[in random order] into your mouth. You are forced to suck and swallow it all down.";
-			StomachUp 2.
+			say "a baby bottle full of [if breast-milk-this-time is 1]warm breast milk[otherwise][one of]apple juice[or]orange juice[or]cold coffee[in random order][end if] into your mouth. You are forced to suck and swallow it all down.";
+			if breast-milk-this-time is 1, MilkDrunkUp 1;
+			otherwise StomachUp 2.
 
 To say ForcefeedAftermath of (M - a monster):
 	say "After you're finished, [he of M] lifts you off of [his of M] lap and drops you down onto the floor on your [buttcheeks].".

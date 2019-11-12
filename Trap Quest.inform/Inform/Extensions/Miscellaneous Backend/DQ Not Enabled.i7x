@@ -19,7 +19,12 @@ Figure of slavehound is the file "NPCs/Mansion/Hound/hound2.png".
 Include Unnecessary Figures by TQ Only Stuff.
 Include Necessary Figures by TQ Only Stuff.
 
+temporaryYesNoBackground is a figure-name that varies.
+A game universe initialisation rule:
+	now temporaryYesNoBackground is figure of small image.
+
 To decide which figure-name is YesNoBackground:
+	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
 	if the largeness of breasts > 14, decide on figure of YesNoBackground5;
 	if the largeness of breasts > 9, decide on figure of YesNoBackground4;
 	if the player is female or the largeness of breasts > 4, decide on figure of YesNoBackground3;
@@ -54,6 +59,7 @@ Include Minotaur by Monster.
 Include Giant Wasp by Monster.
 Include Aeromancer by Monster.
 Include Tentacle Monster by Monster.
+Include Facehugger by Monster.
 Include RoboMaid by Monster.
 Include Golem by Monster.
 Include Gargoyle by Monster.
@@ -73,6 +79,8 @@ Include Slutty Clutches of Holding by Bags of Holding.
 Include Clutches of Holding by Bags of Holding.
 Include Ultra Slutty Bags of Holding by Bags of Holding.
 A diaper bag of holding is a kind of bag of holding.
+A baby diaper bag of holding is a kind of bag of holding.
+A stuffie is a kind of equippable. A stuffie is unique.
 
 Include School Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
@@ -88,7 +96,6 @@ Include Gape Gloves by Equippables.
 Include Heavy Club by Equippables.
 
 Include Portal Pants by Knickers.
-Include Portal Gag by Bondage.
 
 
 Include Break Room Girl by Nintendolls Job Epilogues.

@@ -90,7 +90,6 @@ Definition: a monster (called M) is aware that a diapering is possible:
  	decide yes.
 
 Definition: a monster (called M) is eager to double diapers:
-	unless the player is an october 2018 diaper donator, decide no;
 	let D be a random worn diaper;
 	if D is diaper:
 		if M is double-diaper-committed, decide yes;
@@ -224,9 +223,7 @@ Definition: a monster (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
  	decide no.
 
-Definition: a monster (called M) is able to confiscate:
-	if there is confiscatable clothing, decide yes;
-	decide no.
+Definition: a monster is able to confiscate if there is confiscatable clothing.
 
 Definition: a clothing (called C) is confiscatable:
 	if C is not worn or C is cursed or C is locked or C is unremovable or C is not stealable or C is not currently visible or the unworn cringe of C > 0, decide no;
@@ -251,9 +248,7 @@ Definition: a monster (called M) is eager to donate babywear:
 	if M is able to donate babywear, decide yes;
  	decide no.
 
- Definition: a monster (called M) is able to donate babywear:
-	if there is babywearable clothing, decide yes;
-	decide no.
+Definition: a monster is able to donate babywear if there is babywearable clothing.
 
 Definition: a clothing (called C) is babywearable:
 	if C is on-stage or C is not babywear, decide no;

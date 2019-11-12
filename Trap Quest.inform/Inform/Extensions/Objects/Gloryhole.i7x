@@ -64,7 +64,7 @@ Check entering gloryhole:
 	otherwise:
 		if there is a held condom-providing thing and face is not actually occupied:
 			say "Use a condom?";
-			if the player consents:
+			if the player is consenting:
 				say "You delicately place a condom between your lips and put your mouth up to the hole.";
 				now gloryhole is glorywrapped;
 		if gloryhole is gloryunwrapped:
@@ -80,7 +80,7 @@ Check entering gloryhole:
 				if bottom level lactation cover is nothing and random worn nipple covering clothing is nothing:
 					say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
 				otherwise:
-					repeat with B running through not not-top-displacable nipple covering clothing:
+					repeat with B running through worn not not-top-displacable nipple covering clothing:
 						TopDisplace B;
 					say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
 					[say "Two springy rods shoot up from the ground, slamming up into your [BreastDesc] from below and pushing aside everything covering them, an instant before two suction cups leap out of the bottom of the portrait to latch onto your nipples! The rods slam back down into the ground, leaving behind the suction devices, now impossibly-tightly latched to your instantly erect and throbbing nipples!";]
@@ -260,7 +260,7 @@ A time based rule (this is the compute gloryhole rule):
 						now busy is 0;
 					otherwise:
 						say "[one of]The anonymous girl's tongue gently swirls around your tip, causing you to moan with pleasure.[or][if the size of penis > 3]The anonymous slut forces your [player-penis] deep into her throat, and you hear gagging sounds coming through the wall. You squeal with delight.[otherwise]The girl tries to deepthroat your length, but your [player-penis] can't even reach the back of her throat. You make an embarrassed sound and she giggles.[end if][or]The girl lightly scrapes your [player-penis] with her teeth, causing you to shiver, but in a good way.[or]The girl silently sucks away, taking you to a world of bliss.[in random order]";
-						arouse 750;
+						passively stimulate penis from gloryhole;
 				otherwise:
 					if (the player is extremely horny and the turns trapped of gloryhole > 1) or (the player is very horny and the turns trapped of gloryhole > 3) or the turns trapped of gloryhole > 5:
 						say "You shudder as the sensations bring you to a powerful climax.";
@@ -272,7 +272,13 @@ A time based rule (this is the compute gloryhole rule):
 						now busy is 0;
 					otherwise:
 						say "[one of]The anonymous tongue gently swirls around your clit, causing you to moan with pleasure.[or]The anonymous slut forces their tongue as deep as it can go into your [vagina]. You squeal with delight.[or]The tongue carefully explores all the way around your external folds.[or]The tongue silently licks away at your entrance, taking you to a world of bliss.[in random order]";
-						arouse 750;
+						passively stimulate vagina from gloryhole;
+						if vagina is orgasming:
+							say "After lapping up your girlcum, the anonymous tongue removes itself from underneath you and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You feel more dominant!";
+							LickGet;
+							DelicateDown 1;
+							now gloryhole is not grabbing the player;
+							now busy is 0;
 			otherwise if gloryhole is painting oral:
 				if the turns trapped of gloryhole > a random number between 5 and 8:
 					say "The [manly-penis] in your mouth spasms as [if the reaction of the player > 0]you bring it to climax[otherwise]it reaches its climax[end if], and it shoots several ropes of salty [semen] into your mouth. [if the semen taste addiction of the player > 10]You quickly[otherwise]The [manly-penis] doesn't move from its position filling your mouth and you are forced to[end if] swallow it all.";

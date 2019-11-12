@@ -270,6 +270,7 @@ Definition: yourself is able to get horny:
 	if the player is grossed out, decide no;
 	if the class of the player is princess and princess-consort is monster and the refactory-period of princess-consort > 0, decide no;
 	if the latex-transformation of the player > 3, decide no;
+	if refactoryperiod > 2 and (the player is male or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
 	[if the player is male and the size of penis is 0, decide no;]
 	decide yes.
 

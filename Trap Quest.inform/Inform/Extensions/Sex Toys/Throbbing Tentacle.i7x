@@ -10,20 +10,24 @@ To say FuckerDesc of (C - a throbbing-tentacle):
 	say "the Master".
 To say BigFuckerDesc of (C - a throbbing-tentacle):
 	say "The Master".
-To say ShortDesc of (C - a throbbing-tentacle):
-	say FuckerDesc of C.
 
 To say ClothingDesc of (C - a throbbing-tentacle):
-	say "[if the player is wearing a throbbing-tentacle]You can barely see the end of the Master sticking out of you, slowly waving.[otherwise]Your Master, presently no longer in his home. You feel empty without him in your hole.[end if]".
+	say "[if C is worn]You can barely see the end of the Master sticking out of you, slowly waving.[otherwise]Your Master, presently no longer in his home. You feel empty without him in your hole.[end if]".
 
 To say ShortDesc of (C - a throbbing-tentacle):
-	say "The Master".
+	say "Master".
 
 To compute SelfExamineDesc of (H - a throbbing-tentacle):
-	say "[if the player is male and the player is wearing a throbbing-tentacle]The end of your Master barely sticks out of your [asshole].[otherwise if the player is wearing a throbbing-tentacle]The end of your Master barely sticks out of your [vagina].[end if]".
+	say "The end of your Master barely sticks out of your [if H is penetrating asshole][asshole][otherwise if H is penetrating vagina][vagina][otherwise]tailbone. Please report this bug[end if].".
 
 Check taking off throbbing-tentacle:
 	say "You can feel the Master is comfortable where he is, and have no desire to remove him." instead.
+
+This is the master head exclusivity rule:
+	if throbbing-tentacle is worn:
+		if summoning is 0 and autowear is false, say "There is no point in equipping the [printed name of wearing-target]. Your head already belongs to The Master.";
+		rule fails.
+The master head exclusivity rule is listed last in the headgear wearability rules.
 
 Definition: a throbbing-tentacle is removable: decide no.
 

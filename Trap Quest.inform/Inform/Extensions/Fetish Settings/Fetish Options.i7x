@@ -24,11 +24,10 @@ title	subtable	description	toggle
 "Big Black Cocks - 2 points ([if choice in row 45 of the Table of Player Options is -1]never[otherwise if choice in row 45 of the Table of Player Options is 0]not now[otherwise if choice in row 45 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	interracial fetish toggle rule
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - [mythical creature points] points ([if choice in row 48 of the Table of Player Options is -1]never[otherwise if choice in row 48 of the Table of Player Options is 0]not now[otherwise if choice in row 48 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	mythical creature fetish toggle rule
 "Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if choice in row 61 of the Table of Player Options is -1]never[otherwise if choice in row 61 of the Table of Player Options is 0]not now[otherwise if choice in row 61 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tentacle fetish toggle rule
-"Feminine NPCs only (this changes all masculine monsters to be more feminine) - 0 points ([if the player is not a top donator]alpha testers only for now![otherwise if choice in row 70 of the Table of Player Options is -1]never[otherwise if choice in row 70 of the Table of Player Options is 0]not now[otherwise if choice in row 70 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	lady fetish toggle rule
+"NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is a top donator]free[otherwise]alpha testers only for now[end if])"	--	--	lady fetish toggle rule
 "Alcohol - 2 points ([if the player is not the donator]beta testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 [DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. But them above this row instead.]
-
 
 [!<tableOfDiaperFetishOptions:Table>*
 
@@ -42,12 +41,13 @@ title	subtable	description	toggle
 "Clumsy (Every now and then, usually while on your feet, you might do something you don't mean to) - 5 points ([if choice in row 74 of the Table of Player Options is -1]never[otherwise if choice in row 74 of the Table of Player Options is 0]not now[otherwise if choice in row 74 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	clumsy toggle rule
 "Fashion victim (more cursed/forced/transforming clothing) - 6 points ([if choice in row 17 of the Table of Player Options is -1]never[otherwise if choice in row 17 of the Table of Player Options is 0]not now[otherwise if choice in row 17 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	unlucky toggle rule
 "Encased in latex (not for beginners!) - 8 points ([if choice in row 15 of the Table of Player Options is -1]never[otherwise if choice in row 15 of the Table of Player Options is 0]not now[otherwise if choice in row 15 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	latex prisoner toggle rule
+"Stronger Curses (The knives and altars can't remove cursed clothing, instead, altars can reroll uncurse quests) - 5 points ([if choice in row 78 of the Table of Player Options is -1]never[otherwise if choice in row 78 of the Table of Player Options is 0]not now[otherwise if choice in row 78 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongCurses toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
 "Roguelike Mode (Saving & restoring is automatic and save file is deleted after restarting / losing) - [if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
+"Weight gain - 3 points ([if choice in row 12 of the Table of Player Options is -1]never[otherwise if choice in row 12 of the Table of Player Options is 0]not now[otherwise if choice in row 12 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	weight gain fetish toggle rule
 "Alcohol - 2 points ([if the player is not a top donator]bab testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
-[DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
 
 
 
@@ -179,7 +179,6 @@ This is the inflation random rule:
 The inflation random rule is listed in the random mode rules.
 
 To decide which number is weight gain fetish:
-	if diaper quest is 1, decide on 0;
 	if choice in row 12 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
 This is the weight gain fetish toggle rule:
@@ -297,18 +296,18 @@ The alcohol random rule is listed in the random mode rules.
 To decide which number is lady fetish:
 	if the player is not a top donator or diaper quest is 1, decide on 0;
 	if choice in row 70 of the Table of Player Options <= 0, decide on 0;
-	otherwise decide on 1.
+	otherwise decide on choice in row 70 of the Table of Player Options / 2.
 To decide which number is full-lady fetish:[lady fetish should come with a disclaimer that futa may be unavoidable. full-lady indicates that futa is off and lady fetish is on]
 	if lady fetish is 1 and futanari fetish is 0, decide on 1;
 	decide on 0.
 This is the lady fetish toggle rule:
-	if choice in row 70 of the Table of Player Options < 2, increase choice in row 70 of the Table of Player Options by 1;
-	otherwise now choice in row 70 of the Table of Player Options is -1.
-[This is the lady nightmare rule:
-	if choice in row 70 of the Table of Player Options is 0, now choice in row 70 of the Table of Player Options is 1.
-The lady nightmare rule is listed in the nightmare mode rules.]
+	if choice in row 70 of the Table of Player Options < 5, increase choice in row 70 of the Table of Player Options by 1;
+	otherwise now choice in row 70 of the Table of Player Options is 0.
+This is the lady nightmare rule:
+	now choice in row 70 of the Table of Player Options is 0.[thus enabling everything]
+The starting body shape nightmare rule is listed in the nightmare mode rules.
 This is the lady random rule:
-	if choice in row 70 of the Table of Player Options is 0 or choice in row 70 of the Table of Player Options is 1, now choice in row 70 of the Table of Player Options is a random number between 0 and 1.
+	if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 1, now choice in row 70 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
 The lady random rule is listed in the random mode rules.
 
 

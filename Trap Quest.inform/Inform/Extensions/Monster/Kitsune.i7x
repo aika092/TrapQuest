@@ -69,6 +69,7 @@ Part 1 - Perception
 
 Definition: kitsune is objectifying the player: decide no.
 Definition: kitsune is babifying the player: decide no.
+Definition: kitsune is normally annoyed: decide yes. [Kitsune never drops to unfriendly levels of favour]
 
 To compute perception of (M - kitsune):
 	now M is interested;
@@ -89,12 +90,7 @@ To decide which number is the damage modifier of (M - kitsune):
 [The kitsune doesn't actually fight no matter what happens, if you attack her while she's out of disguise she'll just laugh at you and disappear. Attacking her in disguise is how you actually trigger her to be interactible.]
 To compute failed damage of (M - kitsune):
 	if M is uninterested and the target-disguise of M is not M:
-		say "The [printed name of M] suddenly shimmers and disappears in a puff of pink smoke! [line break][speech style of M]'[if the times-revealed of M is 0]Oh my, you saw through my disguise! I'm so impressed, stranger! Say, you look like an adventurer of wealth and taste. If you come across anything particularly shiny and impressive in your quest, I'd be very interested. I might just have some... interesting items that could be of use to you.'[otherwise]Ah, hello again! My offer still stands, your shiny things for my favour, and valuable rewards!'[end if][roman type][line break]";
-		now M is interested;
-		reveal disguise of M;
-		increase the times-revealed of M by 1;
-		now the vanish timer of M is 10;
-		FavourUp M by 1; [the kitsune likes playing hide and seek with you]
+		compute KitsuneReveal of M;
 	otherwise:
 		say "The kitsune suddenly vanishes in a puff of pink smoke and laughter!";
 		cutshow figure of kitsune interact 4 for M;
@@ -109,13 +105,27 @@ Part 3 - Conversation
 
 Section 1 - Greeting
 
+To compute KitsuneReveal of (M - kitsune):
+	say "[BigNameDesc of M] suddenly shimmers and disappears in a puff of pink smoke![line break][speech style of M]'[if the times-revealed of M is 0]Oh my, you saw through my disguise! I'm so impressed, stranger! Say, you look like an adventurer of wealth and taste. If you come across anything particularly shiny and impressive in your quest, I'd be very interested. I might just have some... interesting items that could be of use to you.'[otherwise]Ah, hello again! My offer still stands, your shiny things for my favour, and valuable rewards!'[end if][roman type][line break]";
+	now M is interested;
+	reveal disguise of M;
+	increase the times-revealed of M by 1;
+	now the vanish timer of M is 10;
+	FavourUp M by 1. [the kitsune likes playing hide and seek with you]
+
 To say FirstResponse of (M - kitsune):
-	say "[speech style of M]'Hey there. Feeling lucky?'[roman type][line break]";
-		alwayscutshow figure of kitsune interact 2 for M.
+	if the target-disguise of M is M:
+		say "[speech style of M]'Hey there. Feeling lucky?'[roman type][line break]";
+		alwayscutshow figure of kitsune interact 2 for M;
+	otherwise:
+		compute KitsuneReveal of M.
 
 To say RepeatResponse of (M - kitsune):
-	say "[speech style of M]'How do you feel about changing your luck?'[roman type][line break]";
-		alwayscutshow figure of kitsune interact 2 for M.
+	if the target-disguise of M is M:
+		say "[speech style of M]'How do you feel about changing your luck?'[roman type][line break]";
+		alwayscutshow figure of kitsune interact 2 for M;
+	otherwise:
+		compute KitsuneReveal of M.
 
 
 Section 2 - Questioning

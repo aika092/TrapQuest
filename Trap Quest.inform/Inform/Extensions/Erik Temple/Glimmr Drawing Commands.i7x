@@ -325,7 +325,8 @@ To line (coord1 - a list of numbers) to (coord2 - a list of numbers) at (wgt - a
 
 Section - Line using angle + distance
 
-To draw a line (hue - a number) in (win - a g-window) from (x1 - a number) by (y1 - a number) measuring/of (distance - a number) pixel/pixels/px/-- long/-- at (angle - a real number) angle/-- with (wgt - a number) pixel/pixels/px/-- line-weight/stroke:
+[Trying to reduce unnecessary code]
+[To draw a line (hue - a number) in (win - a g-window) from (x1 - a number) by (y1 - a number) measuring/of (distance - a number) pixel/pixels/px/-- long/-- at (angle - a real number) angle/-- with (wgt - a number) pixel/pixels/px/-- line-weight/stroke:
 	let xx be (sine of angle) * distance to the nearest whole number;
 	let yy be (cosine of angle) * distance to the nearest whole number;
 	let x2 be x1 + xx;
@@ -346,7 +347,7 @@ To line (coord1 - a list of numbers) dist/distance (distance - a number) px/pixe
 		rule fails;
 	let x1 be entry 1 of coord1;
 	let y1 be entry 2 of coord1;
-	Draw a line (current foreground-color) in (current graphics window) from (x1) by (y1) measuring (distance) pixels at (angle) with (wgt) pixel line-weight.
+	Draw a line (current foreground-color) in (current graphics window) from (x1) by (y1) measuring (distance) pixels at (angle) with (wgt) pixel line-weight.]
 
 
 
@@ -2046,7 +2047,6 @@ Speed notes:
 
 	Bitmap-rendered strings draw a number of bitmaps each time they are redrawn, and bitmaps themselves are composed of multiple rectangle-drawing instructions. As such, bitmap-rendered strings are the most intensive of Glimmr's drawing commands. Because most interpreters are still relatively slow when it comes to drawing rectangles, they will draw relatively slowly. If you want to use bitmap-rendered strings and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmap-rendered strings.)
 
-
 Section: Image-rendered strings
 
 Image-rendered strings are painted from individual image files. Each glyph in the font is saved as a separate PNG file. (JPEG files should be avoided--we will have far more flexibility if we save the image file as a transparent PNG. This will allow us, for example, to specify a background color--JPEG files are opaque, and will not permit us to see anything behind them.)
@@ -2481,7 +2481,7 @@ Note the window-drawing rule provided does not scale, centre, or otherwise vary 
 
 	Arcade is a room. "Nothing at all to do here."
 
-	The graphics-window is a graphics g-window spawned by the main window. The position is g-placeabove.
+	The graphics-window is a graphics g-window spawned by the main window.	The position is g-placeabove.
 
 	G-White is always "#FFFFFF".
 	G-Yellow is always "#FFEE00".

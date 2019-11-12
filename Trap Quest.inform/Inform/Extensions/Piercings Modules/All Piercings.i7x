@@ -35,45 +35,52 @@ Check taking off piercing:
 
 
 
-A module is a kind of piercing. A module has a number called module-charge.
+A module is a kind of piercing.  A module has a number called module-charge. Understand "module" as a module.
 
 Definition: a module is eligible: decide no.
+Definition: a module is discovered varied: decide no.
+To uniquely set up (M - a module):
+	now M is blessed.
 
 To say ModuleFlav of (M - a module):
 	say "".
 To say ShortDesc of (M - a module):
 	say "module".
 
+Figure of module 1 is the file "Items/Accessories/Piercings/module1.jpg".
+Figure of module 2 is the file "Items/Accessories/Piercings/module2.jpg".
+Figure of module 3 is the file "Items/Accessories/Piercings/module3.jpg".
+Figure of module 4 is the file "Items/Accessories/Piercings/module4.jpg".
 
 
-An ass module is a kind of module. The printed name of ass module is "[TQlink of item described][item style]ass module[clothing-title-after]". The text-shortcut of ass module is "asm". There is 1 ass module.
 
-ass module has a number called dex-transfer. The dex-transfer of ass module is 0.
+ass-module is a module. The printed name of ass-module is "[clothing-title-before]ass module[clothing-title-after]". The text-shortcut of ass-module is "asm". Understand "ass module" as ass-module.
 
-To decide which number is the dexterity-influence of (C - an ass module):
-	let D be the dex-transfer of C + 2;
+ass-module has a number called dex-transfer. The dex-transfer of ass-module is 0.
+
+To decide which figure-name is the clothing-image of (C - ass-module):
+	decide on figure of module 4.
+
+To decide which number is the dexterity-influence of (C - ass-module):
+	let D be the dex-transfer of C + 3;
 	decide on D.
 
-To say ModuleFlav of (M - an ass module):
-	say "[second custom style]'Thank you for participating in the trial! Module type selected: Silicone Reflex Support. This module allows large external silicone sources to be leveraged to support subject's reflexes. Subject asked to facilitate this process by capturing high-density protein within anal orifice.'[roman type] An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your ass, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind. '[line break][second custom style]The Health and Safety Department reminds all testers that removal of installed modules may result in severe nerve disruption and permanent loss of all brain function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]![roman type][line break]'".
+To say ModuleFlav of (M - ass-module):
+	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your ass, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Reflex Support module trial! Please listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your buttocks. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
-To say ClothingDesc of (C - an ass module):
-	say "A triangle of silvery metal is pressed into your skin just above your ass. You recall the dire warning you were given and don[']t mess with it.".
-To say ShortDesc of (C - an ass module):
+To say ClothingDesc of (C - ass-module):
+	say "A triangle of silvery metal is pressed into your skin just above your ass. You recall the dire warning you were given - [if the dex-transfer of C > 0]removing with it would cause irreperable damage to your agility[otherwise]once it has started to store more power inside your buttocks, removing the module would cause you to lose all that power permanently[end if].".
+To say ShortDesc of (C - ass-module):
 	say "ass module".
 
-To compute periodic effect of (P - an ass module):
+To compute periodic effect of (P - ass-module):
 	increase the module-charge of P by 1;
-	if the module-charge of P > 24:
+	if the module-charge of P > 48:
 		now the module-charge of P is 0;
-		if the silicone volume of hips > 0 and the thickness of hips < max ass size and the semen volume of belly > 0:
-			decrease the semen volume of belly by 1;
-			AnalSexAddictUp 1;
+		if the raw dexterity of the player > 1 and the thickness of hips < max ass size:
+			say "[bold type]Your ass suddenly feels terribly warm, and some of the nanobots in it spring to life. It suddenly swells up in size! You feel some [one of][or]more [stopping]of your athletic power transferred into the nanobots for safekeeping.[roman type][line break]";
 			AssImplantsUp 1;
-			say "[bold type]Your ass suddenly feels terribly warm, and some of the semen in it begins to soak in. It suddenly swells up in size! You also begin to feel a strange emptiness, as though the void between your cheeks MUST be filled...[roman type][line break]";
-		otherwise if the raw dexterity of the player > 1 and the silicone volume of hips > the dex-transfer of P:
 			Dexdown 1;
-			say "[bold type]You feel unsteady for a moment, but manage to regain your balance. Strange.[roman type][line break]";
 			increase the dex-transfer of P by 1.
 
 [!<TheAssModuleButtSlutRule>+
@@ -82,18 +89,24 @@ Increases the chances of anal sex.
 
 +!]
 This is the ass module butt slut rule:
-	if there is a worn ass module, increase the desirability of asshole by 10.
+	if ass-module is worn, increase the desirability of asshole by the dex-transfer of ass-module.
 The ass module butt slut rule is listed in the butt slut eligibility rules.
 
 
 
-A breast module is a kind of module. The printed name of breast module is "[TQlink of item described][item style]breast module[clothing-title-after]". The text-shortcut of breast module is "brm". There is 1 breast module.
+breast-module is a module. The printed name of breast-module is "[clothing-title-before]breast module[clothing-title-after]". The text-shortcut of breast-module is "brm". Understand "breast module" as breast-module.
 
-breast module has a number called int-transfer. The int-transfer of breast module is 0.
+To decide which figure-name is the clothing-image of (C - breast-module):
+	decide on figure of module 2.
 
-To decide which number is the intelligence-influence of (C - a breast module):
-	let I be the int-transfer of C + 2;
-	decide on I.
+breast-module has a number called str-transfer. The str-transfer of breast-module is 0.
+
+To decide which number is the strength-influence of (C - breast-module):
+	let D be the str-transfer of C + 3;
+	decide on D.
+
+To say ModuleFlav of (M - breast-module):
+	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your cleavage, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Strength Support module trial! Please listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your breasts. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 [!<TheBreastModuleSlutRule>+
 
@@ -101,30 +114,25 @@ A breast module increases the chance of titfucks.
 
 +!]
 This is the breast module slut rule:
-	if there is a worn breast module, increase the desirability of breasts by 10.
+	if breast-module is worn, increase the desirability of breasts by the str-transfer of breast-module.
 The breast module slut rule is listed in the tit slut eligibility rules.
 
-To say ModuleFlav of (M - a breast module):
-	say "[second custom style]'Thank you for participating in the trial! Module type selected: Silicone Processing Support. This module allows large external silicone sources to be leveraged to support subject's processing power. Subject asked to facilitate activation by capturing high-density protein on module.'[roman type] An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your cleavage, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind. '[line break][second custom style]The Health and Safety Department reminds all testers that removal of installed modules may result in severe nerve disruption and permanent loss of all brain function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
-To say ClothingDesc of (C - a breast module):
-	say "A triangle of silvery metal is pressed into your skin just above your cleavage. You recall the dire warning you were given and don[']t mess with it.".
-To say ShortDesc of (C - a breast module):
+To say ClothingDesc of (C - breast-module):
+	say "A triangle of silvery metal is pressed into your skin just above your cleavage. You recall the dire warning you were given - [if the str-transfer of C > 0]removing with it would cause irreperable damage to your strength[otherwise]once it has started to store more power inside your breasts, removing the module would cause you to lose all that power permanently[end if].".
+
+To say ShortDesc of (C - breast-module):
 	say "breast module".
 
-To compute periodic effect of (P - a breast module):
+To compute periodic effect of (P - breast-module):
 	increase the module-charge of P by 1;
-	if the module-charge of P > 24:
+	if the module-charge of P > 48:
 		now the module-charge of P is 0;
-		if the silicone volume of breasts > 0 and the player is not top heavy and the semen coating of breasts > 0:
-			CumTitsDown 1;
-			TitfuckAddictUp 1;
+		if the player is not top heavy and the raw intelligence of the player > 1:
+			say "[bold type]Your breasts suddenly feel terribly warm, they suddenly swell up in size! You feel some [one of][or]more [stopping]of your muscular power transferred into the nanobots for safekeeping.[roman type][line break]";
 			BustImplantsUp 1;
-			say "[bold type]Your breasts suddenly feel terribly warm, and some of the semen on them begins to soak into them. They suddenly swell up in size! They also feel somehow more sensitive...[roman type][line break]";
-		otherwise if the raw intelligence of the player > 1 and the silicone volume of breasts > the int-transfer of P:
 			Intdown 1;
-			say "[bold type]You catch yourself slightly zoning out, as though some of your thoughts were suddenly coming from slightly farther away.[roman type][line break]";
-			increase the int-transfer of P by 1.
+			increase the str-transfer of P by 1.
 
 
 clitoris lead is a piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. Figure of clitoris lead is the file "Items/Accessories/Piercings/clitlead1.png".
@@ -223,8 +231,8 @@ To decide which number is the initial outrage of (C - slut clit piercing):
 	decide on 17.
 
 To say PiercingFlav of (P - a clitoris piercing):
-	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your poor clitoris is painfully pierced. The needle is quickly removed and a jewelled metal piercing is pushed into place.[line break][variable custom style][if the delicateness of the player < 10]Oww! No, no, anywhere but there! That's my most sensitive part... and I can feel this making it even more sensitive![otherwise if 15 is too humiliating]I have to make sure this is kept hidden under clothes! How embarrassing.[otherwise]Hmm, I can feel this making my clit WAY more sensitive. I guess that will help me have lots of orgasms![end if][roman type][line break]";
-	if there is a worn tattoo:
+	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as your poor clitoris is painfully pierced. The needle is quickly removed and a jewelled metal piercing is pushed into place.[line break][variable custom style][if the delicateness of the player < 10]Oww!  No, no, anywhere but there! That's my most sensitive part... and I can feel this making it even more sensitive![otherwise if 15 is too humiliating]I have to make sure this is kept hidden under clothes! How embarrassing.[otherwise]Hmm, I can feel this making my clit WAY more sensitive. I guess that will help me have lots of orgasms![end if][roman type][line break]";
+	if there is a worn tattoo and clit-piercing tattoo is not worn and a random number between 1 and 2 is 1:
 		say "A bizarre tattoo appears in your armpit!";
 		summon clit-piercing tattoo;
 		try examining clit-piercing tattoo.
@@ -310,7 +318,7 @@ To compute periodic effect of (N - a nipple chain):
 		now the arousal-charge of N is 0;
 		if N is cursed and the latex-transformation of the player < 6:
 			say "[bold type]Your [printed name of N] are [one of][or]still [stopping]making your nipples over-sensitive and erect, keeping you stimulated![roman type][line break]";
-			arouse 400.
+			passively stimulate breasts from N.
 
 Definition: a nipple chain is eligible: decide no.
 
@@ -406,40 +414,6 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 				rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
 
-
-A crotch module is a kind of module. The printed name of crotch module is "[TQlink of item described][item style]crotch module[clothing-title-after]". The text-shortcut of crotch module is "crm". There is 1 crotch module.
-
-To say ClothingDesc of (C - a crotch module):
-	say "A triangle of silvery metal is pressed into your skin where your pubic hair would normally be. You recall the dire warning you were given and don[']t mess with it.".
-To say ShortDesc of (C - a crotch module):
-	say "crotch module".
-
-To say ModuleFlav of (M - a crotch module):
-	say "[second custom style]'Thank you for participating in the trial! Module type selected: Semen Burning Engine. This module allows your body to be powered by injected semen.'[roman type] An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your [if the player is male]penis[otherwise]vagina[end if], and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind. [line break][second custom style]'The Health and Safety Department reminds all testers that removal of installed modules may result in severe nerve disruption and permanent loss of all brain function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
-
-To compute periodic effect of (P - a crotch module):
-	increase the module-charge of P by 1;
-	if the module-charge of P > 14:
-		now the module-charge of P is 0;
-		if the semen volume of vagina > 0: [###Selkie: is this a safe construct if the player is male?]
-			if the fatigue of the player > 0:
-				FatigueDown 50;
-			arouse 200;
-			say "[bold type]You feel a sudden warmth from your [vagina]. You feel more energetic, but the warmth doesn't seem to be fading away.[roman type][line break]";
-		otherwise if semen volume of belly > 0:
-			if the fatigue of the player > 0:
-				FatigueDown 50;
-			arouse 200;
-			say "[bold type]You feel a sudden warmth from your ass. You feel more energetic, but the warmth doesn't seem to be fading away.[roman type][line break]".
-
-[!<TheCrotchModulePussySlutRule>+
-
-Increases the chances of vaginal sex.
-
-+!]
-This is the crotch module pussy slut rule:
-	if there is a worn crotch module, increase the desirability of vagina by 10.
-The crotch module pussy slut rule is listed in the pussy slut eligibility rules.
 
 
 A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
@@ -559,26 +533,39 @@ The pair of earrings already worn rule is listed in the pair of earrings wearabi
 
 
 
-A heel module is a kind of module. The printed name of heel module is "[TQlink of item described][item style]heel module[clothing-title-after]". The text-shortcut of heel module is "hem". There is 1 heel module.
 
-To say ClothingDesc of (C - a heel module):
+
+heel-module is a module. The printed name of heel-module is "[clothing-title-before]heel module[clothing-title-after]". The text-shortcut of heel-module is "hem". Understand "heel module" as heel-module.
+
+To decide which figure-name is the clothing-image of (C - heel-module):
+	decide on figure of module 3.
+
+heel-module has a number called heel-transfer. The heel-transfer of heel-module is 0.
+
+To decide which number is the heel-skill-influence of (C - heel-module):
+	decide on 2 + the heel-transfer of C.
+
+To say ClothingDesc of (C - heel-module):
 	say "Your ankles are now covered in a silvery substance that extends to the base of your foot.".
-To say ShortDesc of (C - a heel module):
+To say ShortDesc of (C - heel-module):
 	say "heel module".
 
-To say ModuleFlav of (M - a heel module):
-	say "[second custom style]'Thank you for participating in the trial! Module type selected: Allure Improvement System. This module will improve the ability of your body to balance in an appropriately feminine posture.'[roman type] An arm snakes out and painfully injects something into your ankles, which are soon covered in a pliable but tough silvery substance. [line break][second custom style]'The Health and Safety Department reminds all testers that removal of installed modules may result in severe nerve disruption and permanent loss of all brain function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+To say ModuleFlav of (M - heel-module):
+	say " An arm snakes out and painfully injects something into your ankles, which are soon covered in a pliable but tough silvery substance.[line break][second custom style]'Thank you for participating in the Allure Improvement System module trial! Please listen carefully to the following instructions. This module will improve the ability of your body to balance in an appropriately feminine posture. Please listen carefully to the following instructions. Module nanobots will ensure that the height of any worn high heels is kept at an appropriate height to allow for further high heel training and perfection, and enable the [bold type][']strut['][second custom style] protocol. Over time heel muscle memory will be migrated to the module database for enhancement and safekeeping. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored talent. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
-Definition: a heel module is strut enabling: decide yes.
+Definition: heel-module is strut enabling: decide yes.
 
-To compute periodic effect of (P - a heel module):
-	increase the module-charge of P by 1;
-	if the module-charge of P > 24:
-		now the module-charge of P is 0;
-		let H be a random worn heels;
-		if H is heels and the hindrance of H > 0:
-			HeelUp 1;
-			say "You feel your ankles twitch, and you suddenly feel more comfortable in your heels.".
+To compute periodic effect of (M - heel-module):
+	let H be a random worn heels;
+	increase the module-charge of M by 1;
+	if H is heels:
+		let Hi be the hindrance of H;
+		if the module-charge of M > 48 and the raw heel skill of the player > 0:
+			decrease the raw heel skill of the player by 1;
+			increase heel-transfer of M by 1;
+			now the module-charge of M is 0;
+			increase the heel-height of H by 1;
+			say "You feel your ankles twitch, and you suddenly feel your [ShortDesc of H] increase in height. They are now [H]!".
 
 
 
@@ -626,47 +613,51 @@ The lip piercing already worn rule is listed in the lip piercing wearability rul
 
 
 
-A lips module is a kind of module. The printed name of lips module is "[TQlink of item described][item style]lips module[clothing-title-after]". The text-shortcut of lips module is "lpm". There is 1 lips module.
+head-module is a module. The printed name of head-module is "[clothing-title-before]head module[clothing-title-after]". The text-shortcut of head-module is "hdmd".
 
-To say ClothingDesc of (C - a lips module):
-	say "A resilient yet supple silvery coating covers your lips. Nothing you do seems to be able to rub it off.".
-To say ShortDesc of (C - a lips module):
-	say "lips module".
+To decide which figure-name is the clothing-image of (C - head-module):
+	decide on figure of module 1.
 
-To say ModuleFlav of (M - a lips module):
-	say "[second custom style]'Thank you for participating in the trial! Module type selected: Semen Conversion System. This module modifies the oral consumption systems of the subject, allowing semen to be used for system repair.'[roman type] An arm snakes out with a strange, silvery mouth guard on one end. It carefully presses it up to your lips, and you feel a sudden burning sensation from them. After a moment it pulls away, and a mirror rises to show you that your lips are now coated in something silvery. '[line break][second custom style]'The Health and Safety Department has issued a warning against attempted removal of this installation. Severe loss of motor and cognitive function may result. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+head-module has a number called int-transfer. The int-transfer of head-module is 0.
 
-To compute periodic effect of (P - a lips module):
-	increase the module-charge of P by 1;
-	if the module-charge of P > 24:
-		now the module-charge of P is 0;
-		if the stomach-semen of the player > 0:
-			decrease the stomach-semen of the player by 1;
-			say "Your lips feel warm for an instant, which spreads to your body.";
-			if the body soreness of the player > 0:
-				bodyheal 1;
-				say "You feel slightly better!";
-			otherwise if the soreness of vagina > 0:
-				heal vagina times 1;
-				say "You feel slightly less sore!";
-			otherwise if the soreness of asshole > 0:
-				heal asshole times 1;
-				say "You feel slightly less sore!";
-			otherwise:
-				say "You feel as though your skin has gotten slightly tougher.";
-				DelicateDown 1;
-		otherwise if the raw semen taste addiction of the player < 4 * the lips of face:
-			SemenTasteAddictUp 1;
-			say "[bold type]Your lips tingle for a moment, and suddenly you feel oddly thirsty.[roman type][line break]".
+To decide which number is the intelligence-influence of (C - head-module):
+	let D be the int-transfer of C + 3;
+	decide on D.
+
+To say ModuleFlav of (M - head-module):
+	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on the middle of your your forehead, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Central Processor Support module trial! Please listen carefully to the following instructions. You will find that your brainpower has improved and will continue to grow in-line with the enhancements to your hair and lips. Nanobots will draw power from your body and store it safely inside the artificial materials. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored mental function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 [!<TheLipsModuleBlowjobSlutRule>+
 
 Increases the chance of oral sex.
 
 +!]
-This is the lips module blowjob slut rule:
-	if there is a worn lips module, increase the desirability of face by 10.
-The lips module blowjob slut rule is listed in the blowjob slut eligibility rules.
+This is the head module blowjob slut rule:
+	if head-module is worn, increase the desirability of face by the int-transfer of head-module.
+The head module blowjob slut rule is listed in the blowjob slut eligibility rules.
+
+To say ClothingDesc of (C - head-module):
+	say "A triangle of silvery metal is pressed into your forehead. You recall the dire warning you were given - [if the int-transfer of C > 0]removing with it would cause irreperable damage to your intelligence[otherwise]once it has started to store more brainpower inside your hair and lips, removing the module would cause you to lose all that power permanently[end if].".
+To say ShortDesc of (C - head-module):
+	say "head module".
+
+To compute periodic effect of (P - head-module):
+	increase the module-charge of P by 1;
+	if the module-charge of P > 48:
+		now the module-charge of P is 0;
+		let HL be max hair length - the largeness of hair;
+		if frozen hair is 1, now HL is 0;
+		if the raw intelligence of the player > 1 and (the lips of face < 3 or HL > 0):
+			IntDown 1;
+			increase the int-transfer of P by 1;
+			if HL / 3 > (3 - the lips of face):
+				FakeHairUp 1;
+				say "[bold type]Your hair [if the fake largeness of hair > 0]extensions suddenly feel terribly warm and they suddenly stretch in size[otherwise]suddenly feels terribly warm as extensions begin to manifest themselves at the tips[end if]! ";
+			otherwise:
+				LipsUp 1;
+				say "[bold type]Your lips suddenly feel terribly warm as they puff out inside, even more collagen having been created inside by the module! ";
+			say "You feel some [one of][or]more [stopping]of your brainpower transferred into the nanobots for safekeeping.[roman type][line break]";
+
 
 
 
@@ -753,7 +744,9 @@ Definition: a tongue piercing (called C) is currently visible: [Is the item worn
 	decide no.
 
 This is the tongue piercing inhibits gag reflex rule:
-	if there is a worn tongue piercing, rule succeeds.
+	if there is a worn tongue piercing:
+		if debuginfo > 0, say "[input-style]Avoid gagging check: tongue piercing | automatic success[roman type][line break]";
+		rule succeeds.
 The tongue piercing inhibits gag reflex rule is listed in the gag reflex rules.
 
 To decide which object is the concealer of (C - a tongue piercing):

@@ -28,6 +28,9 @@ Definition: a sparkly princess pacifier is royalty themed: decide yes.
 Definition: a sparkly princess pacifier is heart themed: decide yes.
 Definition: a sparkly princess pacifier is gem themed: decide yes.
 Definition: a sparkly princess pacifier is pink themed: decide yes.
+A ghost pacifier is a kind of baby pacifier. There is 1 ghost pacifier. The printed name of ghost pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]ghost pacifier[clothing-title-after]". The text-shortcut of ghost pacifier is "gpa".
+Definition: a ghost pacifier is orange themed: decide yes.
+Definition: a ghost pacifier is transformation-protected if the class of the player is trick-or-treater.
 
 To say ShortDesc of (P - a pacifier):
 	say "pacifier".
@@ -61,10 +64,13 @@ To decide which number is the initial cringe of (C - a pacifier):
 	decide on 8.
 
 To decide which number is the initial cringe of (C - a pink pacifier):
+	decide on 9.
+
+To decide which number is the initial cringe of (C - a ghost pacifier):
 	decide on 10.
 
 To decide which number is the initial cringe of (C - a sparkly princess pacifier):
-	decide on 14.
+	decide on 13.
 
 To decide which number is the bartering value of (T - a pacifier) for (M - a matron):
 	if M is friendly and incontinence <= 2, decide on 4;
@@ -88,6 +94,7 @@ Figure of pink pacifier is the file "Items/Accessories/Head/pacifier1.png".
 Figure of tiger pacifier is the file "Items/Accessories/Head/pacifier2.png".
 Figure of yellow pacifier is the file "Items/Accessories/Head/pacifier3.png".
 Figure of sparkly princess pacifier is the file "Items/Accessories/Head/pacifier4.png".
+Figure of ghost pacifier is the file "Items/Accessories/Head/pacifier5.png".
 
 To decide which figure-name is clothing-image of (C - a cock pacifier):
 	decide on figure of cock pacifier.
@@ -99,6 +106,8 @@ To decide which figure-name is clothing-image of (C - a yellow pacifier):
 	decide on figure of yellow pacifier.
 To decide which figure-name is clothing-image of (C - a sparkly princess pacifier):
 	decide on figure of sparkly princess pacifier.
+To decide which figure-name is clothing-image of (C - a ghost pacifier):
+	decide on figure of ghost pacifier.
 
 To say ClothingDesc of (C - a cock pacifier):
 	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practice sucking [manly-penis] all the time.[end if]".
@@ -114,6 +123,9 @@ To say ClothingDesc of (C - a yellow pacifier):
 
 To say ClothingDesc of (C - a sparkly princess pacifier):
 	say "This very large purple pacifier has a heart-shaped motif of a happy princess on the front and sparkly gems adorning its edges!".
+
+To say ClothingDesc of (C - a ghost pacifier):
+	say "This large orange pacifier has a spooky ghost on the front!".
 
 
 

@@ -156,12 +156,12 @@ This is the worn shoes prevents removal of stockings rule:
 		if autolayerremove is false, rule fails.
 The worn shoes prevents removal of stockings rule is listed in the stockings removability rules.
 
-This is the worn leg covering clothing prevents removal of stockings rule:
+[This is the worn leg covering clothing prevents removal of stockings rule:
 	repeat with C running through worn leg covering clothing:
 		unless C is wearing-target:
 			if summoning is 0 and autoremove is false, say "You would need to remove your [C] first.";
 			if autolayerremove is false, rule fails.
-The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.
+The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.]
 
 
 
@@ -324,35 +324,55 @@ Definition: bow-stockings is white themed: decide yes.
 
 
 A black rubber stockings is a kind of stockings. There is 1 transformation-rare black rubber stockings. A black rubber stockings is usually latex. A black rubber stockings is usually dense. The text-shortcut of black rubber stockings is "bls". The printed name of black rubber stockings is usually "[clothing-title-before]pair of black [clothing-material of the item described] stockings[clothing-title-after]".
+A black-and-orange rubber stockings is a kind of stockings. There is 1 transformation-rare black-and-orange rubber stockings. A black-and-orange rubber stockings is usually latex. A black-and-orange rubber stockings is usually dense. The text-shortcut of black-and-orange rubber stockings is "bols". The printed name of black-and-orange rubber stockings is usually "[clothing-title-before]pair of black and orange [clothing-material of the item described] stockings[clothing-title-after]".
 A red rubber stockings is a kind of stockings. There is 1 red transformation-rare rubber stockings. A red rubber stockings is usually latex. A red rubber stockings is usually dense. The text-shortcut of red rubber stockings is "rls". The printed name of red rubber stockings is usually "[clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after]".
 
-To decide which figure-name is clothing-image of (C - a red rubber stockings):
-	decide on figure of rubber stockings B.
 
 To say ShortDesc of (C - a red rubber stockings):
-	say "pair of red latex stockings".
+	say "latex stockings".
 To say ShortDesc of (C - a black rubber stockings):
+	say "latex stockings".
+To say ShortDesc of (C - a black-and-orange rubber stockings):
+	say "latex stockings".
+
+To say MediumDesc of (C - a red rubber stockings):
+	say "pair of red latex stockings".
+To say MediumDesc of (C - a black rubber stockings):
 	say "pair of black latex stockings".
+To say MediumDesc of (C - a black-and-orange rubber stockings):
+	say "pair of black and orange latex stockings".
 
 To say ClothingDesc of (C - a red rubber stockings):
 	say "These red latex thigh high stockings are exclusively fetishwear.".
 
 To decide which figure-name is clothing-image of (C - a black rubber stockings):
 	decide on figure of rubber stockings A.
+To decide which figure-name is clothing-image of (C - a red rubber stockings):
+	decide on figure of rubber stockings B.
+To decide which figure-name is clothing-image of (C - a black-and-orange rubber stockings):
+	decide on figure of rubber stockings C.
 
 To say ClothingDesc of (C - a black rubber stockings):
 	say "These black latex thigh high stockings are extremely provocative and eye catching.".
 
+To say ClothingDesc of (C - a black-and-orange rubber stockings):
+	say "These black and orange striped latex thigh high stockings are very shiny.".
+
 Definition: a black rubber stockings is black themed: decide yes.
+Definition: a black-and-orange rubber stockings is black themed: decide yes.
+Definition: a black-and-orange rubber stockings is orange themed: decide yes.
 Definition: a red rubber stockings is red themed: decide yes.
 
 Definition: a stockings is end of transformation chain if it is latex.
 
 Figure of rubber stockings A is the file "Items/Clothes/Lower/Legs/rubberstockings1.png".
 Figure of rubber stockings B is the file "Items/Clothes/Lower/Legs/rubberstockings2.png".
+Figure of rubber stockings C is the file "Items/Clothes/Lower/Legs/rubberstockings3.png".
 
 To decide which number is the initial outrage of (C - a latex stockings):
 	decide on 4.
+To decide which number is the initial cringe of (C - a latex stockings):
+	decide on 2.
 
 
 A magical stockings is a kind of stockings. There is 1 magical stockings. A magical stockings is usually cotton. The text-shortcut of magical stockings is "mst". A magical stockings is usually unique. A magical stockings is usually dexterity-influencing. The printed name of magical stockings is "[clothing-title-before]magical stockings[clothing-title-after]".
@@ -374,7 +394,7 @@ To decide which number is the initial outrage of (C - a magical stockings):
 Definition: a magical stockings is transformation-protected: decide yes.
 
 To decide which number is the dexterity-influence of (S - a magical stockings):
-	let M be the magic-power of the player;
+	let M be the magic power of the player;
 	if M > 5, decide on 4;
 	if M > 3, decide on 2;
 	if M > 0, decide on 1;

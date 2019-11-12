@@ -26,11 +26,21 @@ To decide which figure-name is the examine-image of (C - a thing):
 Carry out examining a thing:
 	say FullExamineDesc of the noun.
 
+
 To say FullExamineDesc of (C - a thing):
+	say FullTitle of C;
 	say ImageDesc of C;
 	say ExamineDesc of C;
 	say ThemeDesc of C;
+	if C is carried and C is not-in-bag and (the outrage of C > 0 or (diaper quest is 1 and the cringe of C > 0)), say HeldOutrageDesc of C;
 	if C is worn wearthing, say InfluenceDesc of C.
+
+
+To say FullTitle of (C - a thing):
+	let T be links-disabled;
+	now links-disabled is true;
+	say "[bold type][C][roman type][line break]";
+	now links-disabled is T.
 
 To say ImageDesc of (C - a thing):
 	maybe-map-display C.
@@ -52,6 +62,25 @@ The examine undescribed things rule is not listed in the carry out examining rul
 
 To say ExamineDesc of (C - a thing):
 	say "The [MediumDesc of C] looks exactly how you'd expect.".
+
+
+To say HeldOutrageDesc of (C - a thing):
+	say variable custom style;
+	if the player is broken:
+		say "This is rather embarassing to hold like this, I guess. Perfect for a pathetic object like me.";
+	otherwise if diaper quest is 1 and the cringe of C / 2 is too humiliating:
+		say "This is way too childish for me to be carrying around like this where it's completely on display!";
+	otherwise if the outrage of C / 2 is too humiliating:
+		say "I can't believe I am carrying this around with me where everyone can see it. How awful!";
+	otherwise if (the cringe of C / 2) - 2 is too humiliating or (the outrage of C / 2) - 2 is too humiliating:
+		say "I really would prefer to not be carrying around something this humiliating.";
+	otherwise:
+		say "I guess I should find this a bit embarrassing to carry around where everyone can see it, but I just don't.";
+	if debuginfo > 0, say "[line break][input-style]Held visible item outrage: [outrage of C / 2] / 10[if diaper quest is 1]; childishness: [cringe of C / 2] / 10[end if].";
+	say "[roman type][line break]";
+
+
+
 
 To say MediumDesc of (C - a thing):
 	say ShortDesc of C.

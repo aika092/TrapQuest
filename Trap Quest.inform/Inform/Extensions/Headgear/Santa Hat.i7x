@@ -120,7 +120,10 @@ To compute class outfit of (H - a red bow headband):
 		repeat with O running through worn dresses:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
-		repeat with O running through worn skirts:
+		repeat with O running through worn exclusive corsets:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn skirted clothing:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		if christmas-summoned is 0, now christmas-summoned is 1;
@@ -162,7 +165,10 @@ To compute class outfit of (H - a star headband):
 		repeat with O running through worn dresses:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
-		repeat with O running through worn skirts:
+		repeat with O running through worn exclusive corsets:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn skirted clothing:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		if christmas-summoned < 2, now christmas-summoned is 2;

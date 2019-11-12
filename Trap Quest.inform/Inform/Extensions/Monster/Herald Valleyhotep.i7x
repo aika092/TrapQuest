@@ -30,7 +30,7 @@ To say BigFuckerDesc of (M - herald):
 	say "Valleyhotep".
 
 To say MonsterDesc of (M - herald):
-	say "This mass of pink smoke and crackling lightning has taken the shape of a voluptuous [man of M]. While its face has no features, you feel like a thousand eyes are peering into your soul in its presence.";
+	say "This mass of pink smoke and crackling lightning has taken the shape of a [if lady fetish is 2]bubble-bootied man[otherwise]voluptuous woman[end if]. While its face has no features, you feel like a thousand eyes are peering into your soul in its presence.";
 
 To set up (M - herald):
 	now the monstersetup of M is 1;
@@ -71,7 +71,7 @@ This is the herald's power attack rule:
 	if the player is upright:
 		say "Pink lightning arcs from Valleyhotep! You feel terribly tired and yet also horny at the same time!";
 		FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 5;
-		arouse 200.
+		stimulate vagina from M.
 The herald's power attack rule is listed in the herald attack rules.
 
 This is the herald's blessing attack rule:
@@ -162,14 +162,14 @@ Part 3 - Conversation
 Section 1 - Greeting
 
 To say FirstResponse of (M - herald):
-	if M is unfriendly:
-		say "[speech style of M]'[one of]Just be still, this will totally all be over soon.[or]I am like already so over this fight, just give up.[or]You know submission is the new black, maybe you should try it?[at random]'[roman type][line break]";
-	otherwise if the player-class is cultist:
+	if the player-class is cultist:
 		say "[speech style of M]'Ooh, what a cutie! Care for a blessing, little one?'[roman type][line break]";
 	otherwise if the player-class is succubus:
 		say "[speech style of M]'At least Xavier has good taste, gotta give him that.'[roman type][line break]";
-	otherwise:
+	otherwise if the class of the player is vampire spawn:
 		say "[speech style of M]'A vampire? Bleh, always hated those books. Get lost.'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'[one of]Just be still, this will totally all be over soon.[or]I am like already so over this fight, just give up.[or]You know submission is the new black, maybe you should try it?[at random]'[roman type][line break]".
 
 To say RepeatResponse of (M - herald):
 	if M is unfriendly:

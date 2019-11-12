@@ -27,9 +27,12 @@ To say MonsterDesc of (M - nurse):
 	otherwise if M is diaper-enslaved:
 		say "The fingers of the nurse's gloves have been removed, turning them into long latex fingerless mittens. [big his of M] mouth is kept full by a large purple pacifier gag. [big his of M] skirt has been shortened, so it fully exposes [his of M] new thick pale purple diaper. [if diaper quest is 1]A loud buzzing is emanating from the inside of [his of M] diaper, and you think you can see a stream of lady-drool trickling down one of [his of M] legs, which might explain why [his of M] face is constantly red and sweating.[otherwise]Every few seconds, [he of M] winces and you hear a nasty squelch-fart sound come from [his of M] rear end. [big his of M] diaper is beginning to leak now, as you watch a steady sticky stream of [semen] trickle down [his of M] right leg. It would appear that [he of M]'s been cursed to have [his of M] anal cavity constantly slowly filled with [semen]...[end if]";
 	otherwise:
-		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] tits and ass. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
+		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] [if lady fetish is 2]ass[otherwise]tits and ass[end if]. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
 
 Definition: nurse is willing to do oral: decide yes.
+
+To regionally place (M - nurse):
+	now M is in School11.
 
 To set up (M - nurse):
 	reset M;
@@ -94,12 +97,12 @@ To say StrikingFailureFlav of (M - a nurse) on (B - a body part):
 
 To compute (M - nurse) striking (B - a body part):
 	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 6;
-	Arouse 30.
+	passively stimulate arms from M.
 
 To compute damage of (M - nurse):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "[big he of M] raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don[']t fret dear, this will help you calm down some.'[roman type][line break]";
+			say "She raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -161,13 +164,13 @@ To say WhoAnswer of (M - a nurse):
 	say "[speech style of M]'I'm the nurse! Glad to make your acquaintance, dear.'[roman type][line break]".
 
 To say WhereAnswer of (M - a nurse):
-	say "[speech style of M]'[if the rank of the player <= 1]You[']re in the nurse's office sweetie. If you[']re not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I[']m not sure. Just do your best on your schoolwork and I[']m sure you[']ll be all ranked up in no time!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You're in the nurse's office sweetie. If you're not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I'm not sure. Just do your best on your schoolwork and I'm sure you'll be all ranked up in no time!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a nurse):
-	say "[speech style of M]'[one of]Mmm, I don[']t know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don[']t know too much about that.'[or]Sorry honey, but I don[']t know much about that. Maybe when you[']re all done here you should try increasing your rank?'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Mmm, I don't know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don't know too much about that.'[or]Sorry honey, but I don't know much about that. Maybe when you're all done here you should try increasing your rank?'[at random][roman type][line break]".
 
 To say StoryAnswer of (M - a nurse):
-	say "[speech style of M]'Mmm, well, I started working here because I love making people feel good. Doesn[']t matter where this place came from as long as I can do that.'[roman type][line break]".
+	say "[speech style of M]'Mmm, well, I started working here because I love making people feel good. Doesn't matter where this place came from as long as I can do that.'[roman type][line break]".
 
 To say AdviceAnswer of (M - a nurse):
 	say "[speech style of M]'Remember where this place is so you can come back and let me patch you up when you get hurt, alright honey?'[roman type][line break]".
@@ -198,20 +201,22 @@ To say FriendlyMouthPenetrationFlav of (M - nurse):
 	say MouthPenetrationFlav of M.
 
 To say MouthPenetrationFlav of (M - nurse):
-	say "The [nurse] lifts up [his of M] dress and plonks [his of M] bare shaved pussy right down onto your mouth.";
+	say "[NameDesc of M] lifts up [his of M] dress[if lady fetish is 2], allowing you to glimpse a mint-green chastity cage for an instant before [he of M] turns around and plops right down on your face[otherwise] and plonks [his of M] bare shaved [HoleDesc of M] right down onto your mouth[end if].";
 	now the sex-length of M is 1.
 
 To compute facial sex of (M - a nurse):
 	decrease the sex-length of M by 1;
-	say "The [nurse] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds [his of M] ass against you. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	otherwise say "[BigNameDesc of M] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	if med bay bed is grabbing the player, now another-turn is 1.
 
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;
 	LickCount;
-	say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over him. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	otherwise say "[BigNameDesc of M] grunts as she shudders, a strong orgasm washing over her. Your mouth and face soon feel even wetter than before as her girlcum joins her other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	OralSexAddictUp 1;
-	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] pussy from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
+	say "[BigNameDesc of M] takes a few moments to recover and then plucks her [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. She unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	satisfy M;
 	calm M;
@@ -234,7 +239,7 @@ To say ForcefeedAftermath of (M - nurse):
 	say "After it's all gone, [he of M] unbuckles the straps holding you down and allows you to leave.".
 
 To say ForcefeedAfterFlav of (M - nurse):
-	say "[speech style of M]'There we go, that should give a growing [boy of the player] like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
+	say "[speech style of M]'There we go, that should give a growing girl like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
 
 To say ForcefeedPillDeclarationFlav of (M - nurse):
 	say "[speech style of M]'[one of]Hmm, and we'd better add this to your prescription!'[or]And now time for your prescription pill!'[stopping][roman type][line break]".

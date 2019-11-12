@@ -40,6 +40,7 @@ To decide which number is the delicateness of the player:
 	if the womb volume of vagina >= 30 and the class of the player is not fertility goddess, increase S by 3;
 	repeat with C running through worn wearthings:
 		increase S by the delicateness-influence of C;
+	if the player is craving milk, decrease S by 3;
 	if mindbreak protection is 1 and S > 16, decide on 16;
 	if virgincursed > 0 and S < 8, decide on 8;
 	if truffle-confidence-timer > 0, decrease S by 2;
@@ -85,13 +86,22 @@ pain-balance is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-To PainUp (X - a number): [This one is anticipated to have flavour]
+To PainUp (X - a number): [This function is anticipated to output some kind of flavour text when called]
 	let timesTicked be 0;
 	let K be 0;
 	repeat with C running through worn confidence clothing:
 		if C is blessed, increase K by 1;
 		increase K by 1;
-	if X > 0, increase pain-duration by X;
+	if X > 0:
+		increase pain-duration by X;
+		if the trophy-mode of pain-trophy > 0:
+			say "[one of]Thanks to the magic of [NameDesc of pain-trophy], the pain feels so good![or]Thanks to the magic of [NameDesc of pain-trophy], the painful sensation feels incredible![or][BigNameDesc of pain-trophy][']s magic turns the sensation of pain into sexual pleasure![then at random]";
+			stimulate vagina;
+			unless vagina is orgasming, SlowSexAddictUp X; [This can trigger a shameful orgasm. If it does, we don't increase sex addiciton any further]
+			now X is 0;
+			if the raw sex addiction of the player >= 20:
+				say "Your brain is now a mushy mess of pleasure-obssessed nymphomania. [bold type]You feel the magical effect of [NameDesc of pain-trophy] [bold type]deactivate itself.[roman type][line break]";
+				now the trophy-mode of pain-trophy is 0;
 	while X > 0:
 		decrease X by 1;
 		if a random number between 1 and 8 > K: [Sometimes confidence clothing stops delicateness increases]
@@ -102,7 +112,7 @@ To PainUp (X - a number): [This one is anticipated to have flavour]
 					if highest delicateness <= the delicateness of the player and (pain-balance > 0 or timesTicked >= 2): [We only say this bit if delicateness actually goes up]
 						if the delicateness of the player is 1, say "[first custom style]Isn't this supposed to be a FUN game?![roman type][line break]";
 						if the delicateness of the player is 2, say "[first custom style]I won't let them break me![roman type][line break]";
-						if the delicateness of the player is 3, say "[first custom style]I've got to stay strong[if there is an unfriendly monster in the location of the player], I can't let them see me back down[end if]![roman type][line break]";
+						if the delicateness of the player is 3, say "[first custom style]I've got to stay strong![roman type][line break]";
 						if the delicateness of the player is 4, say "[first custom style]This is outrageous![roman type][line break]";
 						if the delicateness of the player is 5, say "[first custom style]I'm going to find whoever created this game and kill them![roman type][line break]";
 						if the delicateness of the player is 6, say "[variable custom style]Maybe relaxing and trying to enjoy whatever happens is the best way to survive down here...[roman type][line break]";

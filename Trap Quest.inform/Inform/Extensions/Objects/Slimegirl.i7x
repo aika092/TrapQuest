@@ -1,7 +1,7 @@
 Slimegirl by Objects begins here.
 
 
-A slimegirl is a kind of person. There is 1 slimegirl. The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "sg". Understand "slime", "girl" as slimegirl. A slimegirl is wearable.
+A slimegirl is a kind of person. There is 1 slimegirl. The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "slgl". Understand "slime", "girl" as slimegirl. A slimegirl is wearable.
 
 Figure of slimegirl is the file "NPCs/Forest/slimegirl1.png".
 Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1.png".
@@ -153,22 +153,18 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 		cutshow figure of slimegirl cutscene 1 for M;
 		if the total felchable volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected:
 			say "[BigNameDesc of M] moves down to your [vagina], and laps away with great enthusiasm. ";
-			if (the arousal of the player / 1000) + the total felchable volume of vagina >= 6 and the player is able to get horny:
-				say "It feels so good [if S > 4]and [he of M] licks away with such vigour [end if] that you are quickly brought to an orgasm[if the player is not a pervert] against your will[end if]!";
-				vaginally orgasm shamefully;
-				VaginalSexAddictUp 1;
-			otherwise:
-				say "It feels amazing!";
+			stimulate vagina from M;
 			increase S by the semen volume of vagina;
 			now the semen volume of vagina is 0;
 			if the pregnancy of the player is 0:
 				increase S by the womb volume of vagina;
 				WombEmpty the womb volume of vagina;
 		if the semen volume of belly > 0 and asshole is not actually occupied and the player is not ass protected:
-			say "[BigNameDesc of M] moves down to your [asshole], and licks with increased vigour. It feels incredibly relaxing!";
+			say "[BigNameDesc of M] moves down to your [asshole], and licks with increased vigour. It feels incredible!";
 			increase S by 1;
-		if bukkake fetish is 1, say "[big he of M] continues licking you up and down until all the [semen] you had on you is gone. Everywhere [he of M] licks gives you a little tingle of pleasure.";
-		arouse 1000;
+			stimulate asshole from M;
+		if bukkake fetish is 1, say "She continues licking you up and down until all the [semen] you had on you is gone. Everywhere she licks gives you a little tingle of pleasure.";
+		passively stimulate thighs from M times 2;
 		repeat with C running through worn clothing:
 			clean C;
 			Drench C;
@@ -188,6 +184,7 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 			say "[BigNameDesc of M] smacks [his of M] lips. [line break][second custom style]'That was [one of]the best feast I've had in a long time[or]just as great as last time[stopping]! I think I'm going to have to travel with you for a while...'[roman type][line break]";
 			say "[one of]You are still trying to work out what that means when[or]Once again[stopping] [he of M] dives underwater, and suddenly you feel something poking forcefully at your [asshole]. [big he of M]'s... [he of M]'s trying to force [himself of M] in!";
 			let R be a random number between (the number of worn swimming themed wearthing * 5) and the dexterity of the player;
+			if acolyte-chestpiece is worn, now R is 0;
 			say "[bold type]Do you want to try and escape?[roman type] ";
 			if the player is consenting:
 				if debuginfo > 0, say "[input-style]Escape from slimegirl check: swimming modifier ([the number of worn swimming themed wearthing * 5]); dexterity ([dexterity of the player]) -> RNG([the number of worn swimming themed wearthing * 5]~[dexterity of the player]) = [R] | (7.5) slimegirl invasion skill[roman type][line break]";

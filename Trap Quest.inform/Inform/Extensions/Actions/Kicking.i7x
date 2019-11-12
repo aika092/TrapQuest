@@ -102,6 +102,7 @@ Carry out kicking:
 			say "You kick [NameDesc of the noun] with all your might.";
 			damage A on the noun;
 	compute upright fatigue gain;
+	if there is a worn hostility clothing, compute hostileDamage;
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "kick [something]", "ki [something]" as kicking.
 

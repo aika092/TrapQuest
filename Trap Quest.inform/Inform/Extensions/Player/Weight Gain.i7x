@@ -37,7 +37,10 @@ To decide which number is the relieved heaviness of (H - a thing):
 	decide on the heaviness of H.
 
 Report examining a carried thing:
-	if the relieved heaviness of the noun > 0, say "It [if there is a worn bag of holding]can't go in your bag of holding so it [end if]is currently [if the relieved heaviness of the noun > 2]massively [otherwise if the relieved heaviness of the noun > 1]significantly [end if]weighing you down.";
+	if the relieved heaviness of the noun > 0:
+		say "It ";
+		if there is a worn bag of holding, say "can't go in your bag of holding[if the noun is messed knickers] (because of the biological waste on it)[otherwise if the noun is wet clothing] (because of the liquid soaked into it)[end if] so it ";
+		say "is currently [if the relieved heaviness of the noun > 4]massively[otherwise if the relieved heaviness of the noun > 2]significantly[otherwise if the relieved heaviness of the noun > 1]noticeably[otherwise]slightly[end if] weighing you down.";
 
 To decide which number is the heaviness of (H - a thing):
 	decide on 0.
@@ -144,7 +147,11 @@ Carry out going:
 		if the player is prone:
 			FatigueUp 1.[even when kneeling]
 
+
 A time based rule (this is the training rule):
+	let MD be milk-exercise-bonus;
+	if MD > 10, now MD is 10;
+	let FBT be (40 - (exercise theme bonus * 40)) + ((the raw dexterity of the player + the raw strength of the player) * (25 - MD));
 	if the flesh volume of thighs > 0 or the flesh volume of belly > 0:
 		if debuginfo > 1, say "[input-style]Exercise check: exercise count ([fat-burning of the player]) | (400) exercise target[if exercise theme bonus > 0] (minus exercise theme bonus of [exercise theme bonus * 40])[end if][roman type][line break]";
 		if the fat-burning of the player > (400 - (exercise theme bonus * 40)):
@@ -161,20 +168,22 @@ A time based rule (this is the training rule):
 					if debuginfo > 0, say "[flesh volume of belly][roman type][line break]";
 					now the fat-burning of the player is 0;
 			say "[bold type]Your recent exercise has helped you stay fit![roman type] You can tell that you've burned some calories.";
-	otherwise if the fat-burning of the player > (40 - (exercise theme bonus * 40)) + ((the raw dexterity of the player + the raw strength of the player) * 25):
-		if a random number between 1 and 2 is 1 and the raw strength of the player < 20:
+	otherwise if the fat-burning of the player > FBT:
+		if debuginfo > 0, say "[input-style]Exercise threshold reached: exercise count ([fat-burning of the player]) | [FBT] = ([25 - MD] = 25 - ([MD]) historic milk consumption) * ([raw strength of the player + raw dexterity of the player] = ([raw strength of the player ]) strength + ([raw dexterity of the player]) dexterity) + (40) exercise base[if exercise theme bonus > 0] (minus exercise theme bonus of [exercise theme bonus * 40])[end if][roman type][line break]";
+		if a random number between 1 and 2 is 1 and the raw strength of the player < 20 + MD:
 			say "[bold type]Your recent exercise has helped you stay fit![roman type] You can tell that you're a bit stronger now.";
 			StrengthUp 1;
-		otherwise if the raw dexterity of the player < 20:
+		otherwise if the raw dexterity of the player < 20 + MD:
 			say "[bold type]Your recent exercise has helped you stay fit![roman type] You can tell that you're a bit faster now.";
 			DexUp 1;
-		otherwise if the raw strength of the player < 20:
+		otherwise if the raw strength of the player < 20 + MD:
 			say "[bold type]Your recent exercise has helped you stay fit![roman type] You can tell that you're a bit stronger now.";
 			StrengthUp 1;
 		otherwise:
 			say "[bold type]You feel extremely proud of your tip top athletic shape![roman type]";
 			dignify 2000;
-		now the fat-burning of the player is 0.
+		now the fat-burning of the player is 0;
+		decrease milk-exercise-bonus by 1.
 
 
 Part 3 - Modify Fat Stats
@@ -193,15 +202,15 @@ REQUIRES COMMENTING
 
 +!]
 To FatUp (X - a number):
-	if the latex-transformation of the player > 3, now X is 0;
-	while X > 0 and weight gain fetish is 1:
-		let R be a random number between 1 and 4;
-		if R is 1, FatThighsUp 1;
-		if R is 2, FatArmsUp 1;
-		if R is 3, FatBellyUp 1;
-		if R is 4, FatAssUp 1;
-		decrease X by 1;
 	if weight gain fetish is 1:
+		if the latex-transformation of the player > 3, now X is 0;
+		while X > 0:
+			let R be a random number between 1 and 4;
+			if R is 1, FatThighsUp 1;
+			if R is 2, FatArmsUp 1;
+			if R is 3, FatBellyUp 1;
+			if R is 4, FatAssUp 1;
+			decrease X by 1;
 		if the fat-weight of the player > 35:
 			say "[one of][line break][variable custom style]If I keep gaining wait I won't even be able to stand...[roman type][line break][FatCutscene 3][or][stopping]";
 		otherwise if the fat-weight of the player > 23:

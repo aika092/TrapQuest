@@ -15,11 +15,13 @@ To compute monstermotion of (M - a monster): [This is default wandering if funct
 
 To compute mandatory room leaving of (M - a monster):
 	let L be the location of M;
-	let N be 100;
+	let N be 30;
 	while N > 0 and M is in L:
 		compute room leaving of M;
 		decrease N by 1;
-	if N <= 0, say "BUG: [NameDesc of M] is unable to leave [L]. Please submit a save file to Aika for investigation.";
+	while N > -15 and M is in L:
+		decrease N by 1;
+		regionally place M.
 
 To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
 	if M is in Dungeon11 or M is in Dungeon10:
@@ -30,10 +32,10 @@ To compute room leaving of (M - a monster): [This CANNOT be replaced with a func
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
 		let P be the room A from the location of M;
-		if A is a random N-viable direction and P is not bossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+		if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 			try M going A;
 			compute monstermotion reactions of M;
-		otherwise if A is a random N-viable direction and P is not bossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+		otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 			try M going A;
 			compute monstermotion reactions of M.
 
@@ -66,10 +68,10 @@ To check seeking (N - a number) of (M - a monster):
 				now neighbour finder is L;
 				let L2 be the room D from the location of M;
 				if D is N-viable:
-					if the player is glued seductively and P is not bossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
+					if the player is glued seductively and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
 						compute M seeking D;
 						say AttractionWorry of M;
-					otherwise if the seek roll of M > 0 and P is not bossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
+					otherwise if the seek roll of M > 0 and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
 						compute M seeking D;
 			if N is 2, now M is moved;
 		otherwise:
@@ -90,7 +92,7 @@ To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified
 	now neighbour finder is the location of M;
 	let A be a random N-viable direction;
 	let P be the room A from the location of M;
-	if A is a random N-viable direction and the room A from the location of M is not bossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+	if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 		try M going A;
 	otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 		try M going A;
@@ -129,7 +131,8 @@ To compute sleeping of (M - a monster):
 	compute periodic recovery of M;
 	compute sleep reduction of M;[needs to come after healing and recovery]
 	if M is simulated, compute unique periodic effect of M;
-	compute unique unsimulated periodic effect of M.
+	compute unique unsimulated periodic effect of M;
+	if the last-interaction of M > 0, decrease the last-interaction of M by 1.
 
 To compute scared reduction of (M - a monster):
 	if the scared of M > 0:
@@ -172,12 +175,20 @@ To MonsterHeal (M - a monster) by (N - a number):
 		increase the health of M by N;
 		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]
 
+To decide which number is the messRefactoryLimit of (M - a monster):
+	decide on -800.
+
 To compute periodic recovery of (M - a monster):
 	unless the class of the player is princess and M is asleep, decrease the refactory-period of M by 4;
-	if the class of the player is princess and princess-consort is M:
+	if M is messy and the refactory-period of M + 4 > the messRefactoryLimit of M:
+		if M is in the location of the player, say SuddenMessFlav of M;
+	otherwise if the class of the player is princess and princess-consort is M:
 		if the refactory-period of M <= 0:
 			if the refactory-period of M > -4, say "A strange tingle passes through your body[if the player is very horny], and you suddenly find yourself stricken with need[end if] as thoughts of the [princess-consort] begin to swirl around inside your head. Somehow, you know you won't be able to satisfy yourself at all until you see to [his of M] needs.[line break][variable custom style][if the player is not a pervert]Ugh, it's not my job to get anyone off! Stop messing with my head, game![otherwise if the sex addiction of the player < 12]I guess I should go see [him of M] quick so I can get it over with.[otherwise]Looks like [he of M] needs my help. I don't want to keep [him of M] waiting![end if][roman type][line break]";
 			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
+
+To say SuddenMessFlav of (M - a monster):
+	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophany of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".
 
 To compute unique periodic effect of (M - a monster):
 	do nothing.

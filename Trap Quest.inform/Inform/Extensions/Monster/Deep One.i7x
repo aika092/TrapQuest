@@ -2,9 +2,6 @@ Deep One by Monster begins here.
 
 deep one is a monster. The difficulty of deep one is 12. Understand "deepone" as deep one. deep one is male. The text-shortcut of deep one is "do".
 
-To say ShortDesc of (M - deep one):
-	say "deep one".
-
 deep one can be angered.
 
 Figure of deep one is the file "NPCs/Mansion/deepone1.png".
@@ -47,6 +44,8 @@ Definition: deep one is willing to do oral: decide no.
 
 Definition: deep one is willing to do titfucks: decide no.
 
+Definition: deep one is able to remove cursed plugs: decide yes.
+
 To compute monstermotion of (M - deep one):
 	do nothing.
 
@@ -55,12 +54,16 @@ To compute (M - deep one) seeking (D - a direction):
 
 Part 1 - Perception
 
+Definition: deep one is objectifying the player:
+	if deep one is angered, decide yes;
+	if the player-class is cultist or the pregnancy of the player > 0 or altar-diaper-link > 0, decide no;
+	decide yes.
+
 To compute perception of (M - deep one):
 	now M is interested;
 	if M is angered:
 		say "[BigNameDesc of M] roars in anger! This doesn't look good!";
-		anger M;
-	otherwise if the player-class is cultist or the pregnancy of the player > 0 or altar-diaper-link > 0:
+	otherwise if M is not objectifying the player:
 		say "[BigNameDesc of M] looks at you, but seems not to be concerned with your presence.";
 		calm M;
 	otherwise:
@@ -91,7 +94,19 @@ To decide if (M - deep one) is willing to creampie (F - a fuckhole):
 
 Section 2 - DQ
 
-Definition: deep one is willing to spank: decide yes.
+Definition: deep one is willing to deliver enemas: decide yes.
+
+To say EnemaStartFlav of (M - deep one):
+	say "[BigNameDesc of M] opens [his of M] mouth wide. Inside, you can see that [his of M] groteque tongue is actually more of a hollow tube. Without a moment's hesitation, [he of M] begins to push this powerful tube-muscle into your unprotected [asshole]!".
+
+To say EnemaFlav of (M - deep one):
+	say "[BigNameDesc of M] [one of]makes a weird gurgling sound[or]makes a low humming sound[or]makes a clicking sound[in random order] as water pumps [one of]into your belly[or]up your anal passage[or]into you[at random] from [one of]inside [his of M] body[or][his of M] alien tongue[at random].".
+
+To say EnemaAftermath of (M - deep one):
+	say "[BigNameDesc of M] pulls [his of M] tube-like tongue from your [asshole] with a noisy slurp, and then [he of M] releases you.".
+	
+To decide which number is the enema quarts of (M - deep one):
+	decide on a random number between 2 and 3.
 
 Definition: deep one is willing to confiscate: decide yes.
 

@@ -317,8 +317,8 @@ REQUIRES COMMENTING
 +!]
 Check masturbating:
 	if the player is not able to masturbate, do nothing instead;
-	if the wanktime of the player > 0 and auto is 0 and the number of on-stage chastity cages is 0:
-		say "You hesitate, having a sneaking suspicion that [masturbating] so soon after the previous time has a [italic type]chance[roman type] of the girls running the game punishing you for it. Do you want to go ahead and risk it? ";
+	if (the wanktime of the player > 0 or lock-it tattoo is worn) and auto is 0 and the number of on-stage chastity cages is 0:
+		say "You hesitate, having a sneaking suspicion that [masturbating] [if the wanktime of the player > 0]so soon after the previous time [end if]has a [italic type]chance[roman type] of the girls running the game punishing you for it. Do you want to go ahead and risk it? ";
 		unless the player is in agreement, say "You decide against it." instead;
 	if the buttskill of the player is 1:
 		if the player is fapping-blocked:
@@ -475,6 +475,7 @@ Carry out masturbating:
 				increase vaginal-orgasms by 1;
 		if a random number between 1 and the sex addiction of the player < 6, SexAddictUp 1;
 		orgasm;[handle anything that needs to happen for an orgasm]
+		if lock-it tattoo is worn and the wanktime of the player < 120, now the wanktime of the player is 120;
 		if auto is 0 and the wanktime of the player > 0 and the number of on-stage chastity cages is 0:[Put the player in chastity if necessary]
 			let R be a random number between 1 and 225;
 			if unlucky is 1, now R is a random number between 1 and 150;

@@ -4,11 +4,12 @@ DQ Only Stuff by Miscellaneous Backend begins here.
 To compute periodic effect of (C - royal scepter):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
-		if the charge of C is 0:
+		if the charge of C is 0 and player-urinating is 0:
 			let D be a random worn dirty diaper;
 			if D is diaper:
 				say "[bold type]The shining light of your [ShortDesc of C] goes out. [roman type]As it does, your [D] [if D is not messed or diaper messing < 6]disappears[otherwise]is removed from your body and falls to the ground[end if]! Your loins are magically wiped clean.";
 				let SD be a random off-stage soiled-diaper;
+				now the charge of C is 100;
 				if D is messed and SD is a thing and diaper messing >= 6:
 					DiaperPrint SD from D;
 					now SD is in the location of the player;
@@ -30,6 +31,10 @@ Figure of slavehound is the file "NPCs/Mansion/Hound/hound3.png".
 Include Unnecessary Figures by DQ Only Stuff.
 Include Necessary Figures by DQ Only Stuff.
 
+temporaryYesNoBackground is a figure-name that varies.
+A game universe initialisation rule:
+	now temporaryYesNoBackground is figure of small image.
+
 Chapter - Unused but referenced Figures
 
 Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
@@ -44,7 +49,7 @@ Include School Stuff by DQ Only Stuff.
 Include Nursery by Nintendolls Job Epilogues.
 Include Just Married by Nintendolls One Year Later Epilogues.
 
-a wench is a kind of monster. a horny-wench is a kind of wench.
+a wench is a kind of monster. a horny-wench is a kind of wench. a wench has a number called creampieTimer.
 To compute (M - a monster) WenchReceiving (C - a clothing):
 	do nothing.
 To reset submissive wenches:
@@ -57,8 +62,9 @@ To compute (M - a monster) stomping (N - a monster):
 
 giant wasp is a kind of monster.
 newborn-wasp is an object that varies.
+wasp-honey-timer is a number that varies. wasp-poison-timer is a number that varies.
 aeromancer is a kind of monster. an aeromancer has a number called balloon. an aeromancer can be wand-empowered.
-tentacle monster is a kind of monster. A tentacle monster can be newborn, large, massive (this is the tentacle-size property). A tentacle monster has a number called evolved.
+tentacle monster is a kind of monster. durable-tentacle-monster is a tentacle monster. A tentacle monster can be newborn, large, massive (this is the tentacle-size property). A tentacle monster has a number called evolved.
 To compute tentacle birth:
 	do nothing.
 
@@ -68,6 +74,9 @@ gargoyle is a monster.
 unicorn is a monster.
 A slutty sister is a kind of monster. A bulging slutty sister is a kind of slutty sister. A futanari slutty sister is a kind of slutty sister.
 Icarus is a monster.
+A facehugger is a kind of monster.
+An ultimate-lesson-actor is a kind of monster.
+student-katya is a monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.
@@ -99,15 +108,21 @@ Include Diaper Bags of Holding by Bags of Holding.
 Include Baby Diaper Bags of Holding by Bags of Holding.
 a condom rolls bag of holding is a kind of bag of holding.
 
-gape-gloves is a gloves.
-heavy-club is an equippable.
+gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
+heavy-club is an equippable. The printed name of heavy-club is "heavy club".
 
 Include Chocolates Bag by Objects.
 Include Chocolate Egg by Food.
 Include Bunny Ears DQ by Headgear.
-rugged-headband is a headgear. domination-quest is a headgear-clothing-quest. rugged-summoned is a number that varies.
-spiked-tiara is a headgear.
-portal-pants is a knickers. portal-pants is unique. portal gag is a bondage.
+rugged-headband is a headgear. domination-quest is a headgear-clothing-quest. rugged-summoned is a number that varies. The printed name of rugged-headband is "rugged headband".
+spiked-tiara is a headgear. The printed name of spiked-tiara is "spiked tiara".
+To decide which text is tonguesColour:
+	decide on "white".
+To say tongueStatus of (C - a clothing):
+	say "".
+portal-pants is a knickers. portal-pants is unique.  The printed name of portal-pants is "portal pants".
+
+Include Stuffies by Equippables.
 
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".
@@ -129,7 +144,7 @@ Figure of Jammy Messy Loading Animation Frame 46 is the file "Special/Animations
 Figure of Jammy Messy Loading Animation Frame 49 is the file "Special/Animations/JammyLoading/frame_000049.jpeg".
 Figure of Jammy Messy Loading Animation Frame 52 is the file "Special/Animations/JammyLoading/frame_000052.jpeg".
 Figure of Jammy Messy Loading Animation Frame 55 is the file "Special/Animations/JammyLoading/frame_000055.jpeg".
-Figure of Jammy Messy Loading Animation Frame 58 is the file "Special/Animations/JammyLoading/frame_000058.jpeg".
+[Figure of Jammy Messy Loading Animation Frame 58 is the file "Special/Animations/JammyLoading/frame_000058.jpeg".
 Figure of Jammy Messy Loading Animation Frame 61 is the file "Special/Animations/JammyLoading/frame_000061.jpeg".
 Figure of Jammy Messy Loading Animation Frame 64 is the file "Special/Animations/JammyLoading/frame_000064.jpeg".
 Figure of Jammy Messy Loading Animation Frame 67 is the file "Special/Animations/JammyLoading/frame_000067.jpeg".

@@ -230,7 +230,9 @@ To start a/-- Glulx timer of (T - a number) millisecond/milliseconds:
 	say "[>console][CA]Timer event requested for every [N] milliseconds.[<]";
 	#end if.
 
- To pause/stop the/-- Glulx timer:
+
+[Re-implemented in timer stuff.i7x]
+ [To pause/stop the/-- Glulx timer:
 	request Glk timer event at 0 milliseconds;
 	#if utilizing animation debugging;
 	say "[>console][CA]Timer event requested at 0 milliseconds.[<]";
@@ -240,7 +242,7 @@ To request Glk timer event at (T - a number) milliseconds:
 	(- glk_request_timer_events({T}); (+ global timer interval +) = {T}; -).
 
 To reset the Glulx timer:
-	start a Glulx timer of (global timer interval) milliseconds.
+	start a Glulx timer of (global timer interval) milliseconds.]
 
 
 Section - Restart the timer after restoring
@@ -2169,6 +2171,8 @@ Or, without specifying a duration:
 	animate <track> as a custom animation at <interval>, <randomized><cycling>
 
 Note that the latter will have a duration of 1 frame by default unless we specify it some other way.
+
+On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behavior will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
 On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
 

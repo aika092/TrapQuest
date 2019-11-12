@@ -63,6 +63,7 @@ To compute furniture resting on (F - the royal bed):
 		say "You instantly feel fully healed! Magic! ";
 		if the size of penis > 10 - the delicateness of the player:
 			PenisDown 1;
+			say "You feel your penis [shrink] into a [ShortDesc of penis].";
 		otherwise if the delicateness of the player < the sex addiction of the player:
 			increase the raw delicateness of the player by 1;
 			say "But you do feel a bit more[one of]... fragile?[or] delicate.[stopping]";

@@ -50,7 +50,7 @@ A graphlink processing rule for a g-element (called the link) (this is the Aika 
 			change the text of the player's command to the Glulx replacement command;
 			now the glk event type is line-event;
 			now the glk event value 1 is the number of characters in the glulx replacement command;
-		otherwise: [If we're waiting on a *character*, we convert a hyperlink event to a char event here. Currently coded for yes/no hyperlinks only.]
+		otherwise: [If we're waiting on a *character*, we convert a hyperlink event to a char event here. Currently coded for yes/no hyperlinks and integers only.]
 			cancel input in main window;
 			follow the command-showing rules;
 			now the glk event type is char-event;
@@ -262,21 +262,23 @@ Definition: yourself is reverse bimbo consenting:
 		decide no.
 
 To render YesNoButtons:
+	let F be YesNoBackground;
+	if F is Figure of no-image-yet, display entire map; [We still want to show the player the map]
 	zero map-link-table;
 	zero map-button-table;
 	let H be the height of the map-window;
 	let W be the width of the map-window;
 	[Calculate background image size]
-	let F be YesNoBackground;
-	let XRatio be (W * 1.0) / the pixel-width of F;
-	let FY be the pixel-height of F * XRatio;
-	let FYi be FY to the nearest whole number;
+	if F is not Figure of no-image-yet:
+		let XRatio be (W * 1.0) / the pixel-width of F;
+		let FY be the pixel-height of F * XRatio;
+		let FYi be FY to the nearest whole number;
+		display the image F in the map-window at 0 by 0 with dimensions W by FYi;
 	[Calculate button image sizes and locations]
 	let buttonSize be H / 3;
 	if W < H, now buttonSize is W / 3;
 	let X be (W - (buttonSize * 2)) / 3;
 	let Y be (H / 2) - (buttonSize / 2);
-	display the image F in the map-window at 0 by 0 with dimensions W by FYi;
 	if actual inline hyperlinks >= 1 and YesNoPreference > 0:
 		display the image Figure of YesButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
 		set a graphlink in the map-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
@@ -286,7 +288,90 @@ To render YesNoButtons:
 		set a graphlink in the map-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
 		draw a box lightModeFullRed in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset.
 
-Part 3 - VerbDescs
+
+Part 3 - Multiple Choice
+
+player-numerical-response is a number that varies.
+
+A numerical-response is a kind of thing.
+
+numerical-response-1 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-1):
+	decide on 1.
+numerical-response-2 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-2):
+	decide on 2.
+numerical-response-3 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-3):
+	decide on 3.
+numerical-response-4 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-4):
+	decide on 4.
+numerical-response-5 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-5):
+	decide on 5.
+numerical-response-6 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-6):
+	decide on 6.
+numerical-response-7 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-7):
+	decide on 7.
+numerical-response-8 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-8):
+	decide on 8.
+numerical-response-9 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-9):
+	decide on 9.
+numerical-response-0 is a numerical-response.
+To decide which number is the numerical-response-value of (N - numerical-response-0):
+	decide on 0.
+
+To decide which object is the chosen numerical response of (N - a number):
+	repeat with R running through numerical-response:
+		if the numerical-response-value of R is N, decide on R.
+
+To decide which object is the chosen numerical response:
+	decide on the chosen numerical response of player-numerical-response.
+
+To set next numerical response to (T - a text):
+	repeat with R running through numerical-response:
+		if the printed name of R is "":
+			now the printed name of R is T;
+			break.
+
+To set numerical response (N - a number) to (T - a text):
+	repeat with R running through numerical-response:
+		if the numerical-response-value of R is N, now the printed name of R is T.
+
+To compute multiple choice question:
+	let inputNumber be 0;
+	let validAnswer be 0;
+	while validAnswer is 0:
+		repeat with R running through numerical-response:
+			if the printed name of R is not "":
+				let N be the numerical-response-value of R;
+				say "[link][N]) [R][as][N][end link][line break]";
+		display focus stuff;
+		if the player is virtual, display stuff;
+		now inputNumber is the chosen letter;
+		decrease inputNumber by 48; [convert key ID to integer]
+		say line break;
+		repeat with R running through numerical-response:
+			if the printed name of R is not "" and inputNumber is the numerical-response-value of R, now validAnswer is 1;
+		if validAnswer is 0, say "Input not understood. Please choose a valid number.";
+	now player-numerical-response is inputNumber.
+
+To reset multiple choice questions:
+	repeat with R running through numerical-response:
+		now the printed name of R is "".
+	
+	
+		
+
+
+
+
+Part 4 - VerbDescs
 
 [!<SayVerbDescOfThing>+
 
@@ -363,7 +448,7 @@ To say displacelinks of (T - a clothing):
 
 To say wipelinks of (T - a clothing):
 	if T is not worn and T is appropriate for cleaning and the semen-soak of T + the urine-soak of T + the milk-soak of T < the soak-limit of T:
-		unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0] [link][bracket]wipe face[close bracket][as]wipe face with [text-shortcut of T][end link][otherwise if the semen coating of hair > 1] [link][bracket]wipe hair[close bracket][as]wipe hair with [text-shortcut of T][end link][otherwise if the semen coating of breasts > 0] [link][bracket]wipe chest[close bracket][as]wipe breasts with [text-shortcut of T][end link][otherwise if the semen coating of belly > 0] [link][bracket]wipe belly[close bracket][as]wipe belly with [text-shortcut of T][end link][otherwise if the semen coating of thighs > 0] [link][bracket]wipe thighs[close bracket][as]wipe thighs with [text-shortcut of T][end link][end if]".
+		unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving semen and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0] [link][bracket]wipe face[close bracket][as]wipe face with [text-shortcut of T][end link][otherwise if the semen coating of hair > 1] [link][bracket]wipe hair[close bracket][as]wipe hair with [text-shortcut of T][end link][otherwise if the semen coating of breasts > 0] [link][bracket]wipe chest[close bracket][as]wipe breasts with [text-shortcut of T][end link][otherwise if the semen coating of belly > 0] [link][bracket]wipe belly[close bracket][as]wipe belly with [text-shortcut of T][end link][otherwise if the semen coating of thighs > 0] [link][bracket]wipe thighs[close bracket][as]wipe thighs with [text-shortcut of T][end link][end if]".
 
 [!<SayUniqueVerbDescOfAccessory>+
 
@@ -424,7 +509,13 @@ To say unique-verb-desc of (T - a monster):
 		if T is friendly and T is intelligent:
 			say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
 		otherwise if the player is upright:
-			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
+			let TZaps be "";
+			if the player is able to zap:
+				repeat with BM running through held zappable things:
+					if the damage improvement of BM > 0, now TZaps is "[TZaps] [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
+			repeat with BM running through carried combat-bomb bombs:
+				now TZaps is "[TZaps] [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
+			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link][TZaps][if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][end if]";
 		otherwise if T is uninterested:
 			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]".
 
@@ -733,6 +824,14 @@ REQUIRES COMMENTING
 To say unique-verb-desc of (T - a knife):
 	if inline hyperlinks >= 2, say "[if diaper quest is 0 and the largeness of hair > favourite hair length] [link][bracket]cut hair[close bracket][as]cut hair[end link][end if]".
 
+[!<SayUniqueVerbDescOfTrophy>+
+
+REQUIRES COMMENTING
+
++!]
+To say unique-verb-desc of (T - a trophy):
+	if inline hyperlinks >= 2, say " [link][bracket]rub[close bracket][as]rub [text-shortcut of T][end link]".
+
 [!<SayUniqueVerbDescOfSummoningCircle>+
 
 REQUIRES COMMENTING
@@ -800,9 +899,7 @@ REQUIRES COMMENTING
 To compute options:
 	now hyperlink extras is 1;
 	reset entire catalogue;
-	if inline hyperlinks >= 2:
-		if the chess-victor of chess-lesson is 0 and chess table is grabbing the player, say chess moves;
-		otherwise compute smart links;
+	if inline hyperlinks >= 2, compute smart links;
 	now hyperlink extras is 0.
 
 To compute smart links:
@@ -864,7 +961,7 @@ To compute smart links:
 						if F is not catalogued, say "[F] ";
 						now F is catalogued;
 			say "[if the body soreness of the player > 0 and there is a held bandage and the player is not in danger][link]use bandage[end link] [end if]";
-			unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0][link]wipe face[end link] [end if][if the semen coating of hair > 1][link]wipe hair[end link] [end if][if the semen coating of breasts > 0][link]wipe tits[end link] [end if][if the semen coating of belly > 0][link]wipe belly[end link] [end if][if the semen coating of thighs > 0][link]wipe thighs[end link] [end if]";
+			unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving semen and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0][link]wipe face[end link] [end if][if the semen coating of hair > 1][link]wipe hair[end link] [end if][if the semen coating of breasts > 0][link]wipe tits[end link] [end if][if the semen coating of belly > 0][link]wipe belly[end link] [end if][if the semen coating of thighs > 0][link]wipe thighs[end link] [end if]";
 			if (the player is in Dungeon35 or the player is in Woods05):
 				repeat with F running through carried dirty clothing:
 					if F is not catalogued, say "[F] ";
@@ -965,6 +1062,7 @@ CraftListing is an action applying to nothing.
 Carry out CraftListing:
 	repeat with F running through carried ingredient things:
 		say "[F] ";
+	if there is a held magic token, say "[random held magic token] ([number of held magic tokens]) "; [Even if there are 10 held we only want to write it once]
 	if there is a held sanity token, say "[random held sanity token] ([number of held sanity tokens]) "; [Even if there are 10 held we only want to write it once]
 	if there is a held fabric token, say "[random held fabric token] ([number of held fabric tokens]) "; [Even if there are 10 held we only want to write it once]
 	if there is a held defiance token, say "[random held defiance token] ([number of held defiance tokens]) ". [Even if there are 10 held we only want to write it once]

@@ -93,8 +93,8 @@ Carry out rocking:
 			say "You can't help but feel a bit more submissive.";
 			increase the raw delicateness of the player by 1; [The player wasn't in pain so we don't trigger the main function with all the pain reflection flavour]
 		otherwise:
-			say "The saddle vibrates, gently stimulating you through your diaper.";
-			arouse 500;
+			say "The saddle vibrates, [if the player is not a bit horny]gently [end if]stimulating you through your diaper.";
+			stimulate vagina from Y;
 	otherwise:
 		say "The magic binding on the saddle seems to disappear! You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed! Wow![or]Once again, you feel fully healed![stopping]";
 		now the soreness of asshole is 0;

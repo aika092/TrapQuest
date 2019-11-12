@@ -177,7 +177,7 @@ To say IcarusSummonFlav of (C - a clothing):
 To compute Icarus science of (M - Icarus):
 	let C be a random off-stage IcarusScienceAppropriate wearthing;
 	if C is wearthing:
-		say "[speech style of M]'[one of]Sweet! Let's do this.' [or]Okay, cool! Here we go...' [or]Nice! Right, stay still...' [at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
+		say "[speech style of M]'[one of]Sweet! Let's do this.'[or]Okay, cool!  Here we go...'[or]Nice! Right, stay still...'[at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
 		compute IcarusSummon of C;
 		if M is outrage disapproving:
 			FavourDown M by 1;
@@ -336,7 +336,7 @@ Definition: icarus-belly is IcarusScienceAppropriate if pregnancy fetish + infla
 Figure of icarus-belly is the file "Special/Cutscene/cutscene-icarus-belly1.jpg".
 To compute IcarusSummon of (C - icarus-belly):
 	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
-	if pregnancy fetish > 0:
+	if pregnancy fetish > 0 and the player is female:
 		now the pregnancy of the player is 1;
 		cancel father material of vagina;
 		now forcedFertility is true;

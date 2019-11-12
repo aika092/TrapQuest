@@ -102,7 +102,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, upset and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, upset and angry.[end if]";
+	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -271,12 +271,14 @@ Carry out dominating:
 			follow the demon junk reward rule;
 		replace M after domination;
 		let H be rugged-headband;
-		if the times-dominated of M >= 2 and the player is an april 2019 top donator:
+		if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER and H is worn and the player is an april 2019 top donator, progress quest of domination-quest;
+		if the times-dominated of M >= 2 and the player is the donator:
 			if H is actually summonable and rugged-summoned is 0:
 				say "You feel your hair being tousled as a [MediumDesc of H] materializes on your head.";
 				summon H cursed with quest;
 				now rugged-summoned is 1;
-		if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER and H is worn and the player is an april 2019 top donator, progress quest of domination-quest;
+		repeat with N running through monsters in the location of the player:
+			if N is not M, say DominationReaction of N to M;
 	otherwise:[Player failed and is getting punished]
 		if J is clothing, say CodLoosenFlav of J;
 		unless M is unfriendly, anger M;[this handles edge cases where the player goes for a monster that isn't paying attention to the player.]
@@ -287,13 +289,21 @@ Carry out dominating:
 		unless M is interested:[If the monster is still interested it usually means they're about to fuck the player]
 			say DominanceFailed of M;
 			replace M after domination;
+		repeat with N running through monsters in the location of the player:
+			if N is not M, say DominationFailedReaction of N to M;
 	now player-fucking is DOMINANT-NONE;
-	now player-fuckchoice is FUCK-NONE;
+	now player-fuckchoice is FUCK-NONE.
 
 Report dominating:
 	allocate 6 seconds;
 
 Understand "dominate [something]", "fuck [something]", "dom [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]", "top [something] as dominating.
+
+To say DominationReaction of (M - a monster) to (N - a monster):
+	if M is interested, make M expectant;
+
+To say DominationFailedReaction of (M - a monster) to (N - a monster):
+	if M is interested, make M expectant;
 
 [!<DecideWhichNumberIsTheDominanceOfThePlayer>+
 
@@ -451,7 +461,7 @@ To compute unique dominance reward of (M - a monster):
 To compute default dominance reward of (M - a monster):
 	let S be the raw sex addiction of the player;
 	if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER, SexAddictDown 2;
-	if the player is male:[male players must reduce addiction to 0 before penis increases]
+	if the player is male:
 		PenisUp 1;
 	otherwise:[female players don't have penis length to gain, so better delicate decrease]
 		DelicateDown 1.
@@ -585,15 +595,15 @@ computeSissification is called whenever the monster doesn't have another punishm
 +!]
 To compute sissification:
 	let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-	if the player is male and pink sissy bow is off-stage and pink sissy bow is actually summonable:
-		say "[bold type]A silky pink bow appears in your hair! [line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
+	if the player is male and transGender is 0 and pink sissy bow is off-stage and pink sissy bow is actually summonable:
+		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
 	otherwise if pink sissy bow is worn and S is clothing:
-		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";
+		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 		summon S cursed;
 		announce sissification;
 	otherwise:
-		say "The [if the player is male]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
+		say "The [if the player is male and transGender is 0]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		SilentlyDelicateUp 1.
 
 

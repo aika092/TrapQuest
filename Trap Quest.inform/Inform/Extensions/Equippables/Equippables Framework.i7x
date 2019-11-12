@@ -1,11 +1,14 @@
 Equippables Framework by Equippables begins here.
 
-An equippable is a kind of clothing. An equippable can be slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee.
+An equippable is a kind of clothing. An equippable can be slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). An equippable is usually manly. The soak-limit of an equippable is usually 5. An equippable can be melee or projectile. An equippable is usually melee. An equippable is usually unique.
 
 The printed name of an equippable is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
 To say ShortDesc of of (E - an equippable):
 	say "weapon".
+
+To say MediumDesc of of (E - an equippable):
+	say ShortDesc of E.
 
 Definition: an equippable is alwaysSure: decide yes.
 
@@ -138,6 +141,27 @@ Check taking off worn gloves:
 	if E is clothing and E is not the noun:
 		say "You would need to stop wielding the [E] first." instead.
 
+
+
+
+painted-vibrator-hands is a gloves.
+The printed name of painted-vibrator-hands is "[clothing-title-before]painted vibrator hands[clothing-title-after]". The text-shortcut of painted-vibrator-hands is "pvh". Figure of painted-vibrator-hands is the file "Items/Accessories/Equippables/thumbvibrators1.jpg". Understand "painted", "vibrator", "hands" as painted-vibrator-hands.
+Definition: painted-vibrator-hands is blue themed: decide yes.
+Definition: painted-vibrator-hands is transformation-protected: decide yes.
+Definition: painted-vibrator-hands is removable: decide no.
+Definition: painted-vibrator-hands is discovered varied: decide no.
+
+To decide which number is the stimulation of (D - painted-vibrator-hands) on (B - a body part):
+	decide on a random number between 5 and 10.
+
+To decide which figure-name is clothing-image of (H - painted-vibrator-hands):
+	decide on figure of painted-vibrator-hands.
+
+To say UniqueClothingDesc of (Y - painted-vibrator-hands):
+	say "Blue and white paint has been applied to the backs of your hands in the correct pattern to complete the missing pattern around your crotch. Two silently but powerfully buzzing blue egg vibrators are somehow stuck to the inner tips of your two thumbs. That's right... in order to make your painted-on cutoffs look convincing, you would need to push the two egg vibrators into your sensitive clit...".
+
+To say ShortDesc of (Y - painted-vibrator-hands):
+	say "thumb vibrators".
 
 
 Equippables Framework ends here.

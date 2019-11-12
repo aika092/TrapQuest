@@ -39,9 +39,12 @@ To compute class outfit of (H - cat-ears):
 	let P be a random off-stage cat tail plug;
 	let M be a random off-stage exposing magical dress;
 	let W be a random off-stage heart wand;
-	if the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
+	if diaper quest is 0 and the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
 		if kitty-summoned is 0:
 			repeat with O running through worn dresses:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your cat ears barely noticeably quiver, and then a sailor uniform appears on you! [roman type]No wait, this is only the neckline of a sailor uniform, leaving your entire body fully exposed!";
@@ -78,10 +81,10 @@ To uniquely set up (C - cat-ears):
 	now the quest of C is puddle-licking-quest.
 
 To say QuestFlav of (Q - puddle-licking-quest):
-	say "You sense that it wants you to lick up puddles from the floor.".
+	say "You sense that it wants you to [if diaper quest is 1]drink lots of milk[otherwise]lick up puddles from the floor[end if].".
 
 To say QuestTitle of (Q - puddle-licking-quest):
-	say " (puddle licking quest)".
+	say " ([if diaper quest is 1]milk drinking[otherwise]puddle licking[end if] quest)".
 
 
 

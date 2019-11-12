@@ -4,6 +4,7 @@ Lubricant by Consumables begins here.
 A lubricant is a kind of collectible. There are 9 lubricants. Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu".
 
 Definition: a lubricant is anal sex themed: decide yes.
+Definition: a lubricant is never-in-bag: decide yes.
 
 To say ExamineDesc of (B - a lubricant):
 	if diaper focus is 1:
@@ -55,11 +56,14 @@ If the player has recently drank lube, there's a chance that they will auto-succ
 +!]
 This is the lube prevents gag reflex rule:
 	let M be a random thing penetrating face;
-	let G be 2;
-	if M is a thing, now G is the girth of M;
+	let G be the stomach-semen of the player;
+	if M is a thing, increase G by the girth of M;
+	if G < 3, now G is 3;
 	let lube-bonus be (7 * the number of lubricants covering face);
-	if lube-bonus + (a random number between 0 and the intelligence of the player) > G, rule succeeds.
-The lube prevents gag reflex rule is listed in the gag reflex rules.
+	let I be a random number between 0 and the intelligence of the player;
+	if debuginfo > 0, say "[input-style]Avoid gagging check: intelligence roll (d[intelligence of the player + 1]-1) = [I + 0] [if lube-bonus > 0]+ lubricated throat bonus (7) = [lube-bonus + I] [end if]| ([G].5) gag reflex[roman type][line break]";
+	if lube-bonus + I > G, rule succeeds.
+The lube prevents gag reflex rule is listed last in the gag reflex rules.
 
 
 Orilubing it with is an action applying to two things.
@@ -144,6 +148,9 @@ To decide which number is the bartering value of (T - a lubricant) for (M - a we
 
 To decide which number is the bartering value of (T - a lubricant) for (M - a wrestler):
 	decide on 3.
+
+To decide which number is the outrage of (T - a lubricant):
+	decide on 10.
 
 This is the lube not appropriate in diaper quest rule:
 	repeat with C running through lubricant:

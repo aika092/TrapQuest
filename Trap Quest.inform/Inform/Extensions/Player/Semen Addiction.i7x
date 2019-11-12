@@ -89,9 +89,10 @@ To SemenAddictUp (X - a number):
 		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
-		if a random number between 1 and 8 > K and creampieAddictCountdown < X: [creampieAddictCountdown stops semen addiction going crazy if the player receives a creampie over several turns]
-			if the raw semen addiction of the player < 20 and a random number between 1 and 40 > the raw semen addiction of the player:
+		if a random number between 1 and 8 > K and (creampieAddictCountdown < X or the number of live things penetrating a fuckhole is 0): [creampieAddictCountdown stops semen addiction going crazy if the player receives a creampie over several turns]
+			if the raw semen addiction of the player < 20:
 				increase the raw semen addiction of the player by 1;
+				if the trophy-mode of condom-trophy > 0 and there is a live thing penetrating a fuckhole and the raw semen addiction of the player < 20, increase the raw semen addiction of the player by 1;
 	if there is a live thing penetrating a fuckhole and creampieAddictCountdown <= 0, now creampieAddictCountdown is 2.
 
 [!<SemenAddictDownX>+

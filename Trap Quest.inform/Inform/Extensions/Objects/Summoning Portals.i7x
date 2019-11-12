@@ -148,7 +148,7 @@ To compute (S - a summoning portal) summoning (M - a monster):
 	if M is nonexistant and M is on-stage, set up M;
 	now M is in the location of S;
 	say SummoningFlav of M;[should describe portal closing up if the player is in the room]
-	now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
+	if M is not interested, now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
 
 [!<ComputePortalRegionallySummoningMonster>+
 
@@ -490,6 +490,11 @@ Chapter 3 - Teleportation Pad
 
 The teleportation-pad is in Hotel41. The teleportation-pad is a summoning portal. The printed name of teleportation-pad is "[TQlink of item described]teleportation pad[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "teleportation", "pad" as teleportation-pad. The text-shortcut of teleportation-pad is "ted".
 
+Figure of teleportation pad is the file "Env/Hotel/teleportationpad1.jpg".
+
+To decide which figure-name is the examine-image of (C - teleportation-pad):
+	decide on figure of teleportation pad.
+
 To say ExamineDesc of (C - teleportation-pad):
 	say "A large metal pad lined with [PortalHint of C] sensors. The surface is strangely mirror like, [if C is active]and you feel like energy is slowly building up around it. Maybe you can try to offer something to [bold type]appease[roman type] it[otherwise]although it doesn't seem to show your reflection[end if].[if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
 
@@ -798,7 +803,7 @@ Carry out appeasing something with mysterious-mummy:
 			say "The [ShortDesc of noun] lights up as you place it up at the mummy's feet, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of the [ShortDesc of the noun] disappear completely.";
 			ChargeUp the second noun by 1000;
 			only destroy the noun;
-		otherwise if the noun is ectoplasm or the noun is possession clothing:
+		otherwise if the noun is ectoplasm or the noun is possession clothing or the noun is infernal gem:
 			say "The [ShortDesc of noun] lights up as you place it at the mummy's feet, and its aura brightens visibly. You can feel the magic intensifying as the [ShortDesc of noun] bursts into flames.";
 			ChargeDown the second noun by 400;
 			only destroy the noun;
@@ -812,7 +817,7 @@ Carry out appeasing something with mysterious-mummy:
 			if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
 			if N <= 0:
 				say "You throw the [noun] into the circle, which glows bright blue as it slowly disintegrates. Nothing else happens. What a waste!";
-				ChargeUp the second noun by the soak-limit of the noun;
+				if the noun is clothing, ChargeUp the second noun by the soak-limit of the noun;
 				only destroy the noun;
 			otherwise:
 				say "The bodily fluids in the [noun] start to glow a fluorescent shade of red as you throw it into the circle, evaporating with a wave of scarlet flames as the magic around you rapidly intensifies.";

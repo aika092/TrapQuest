@@ -60,37 +60,19 @@ Carry out browsing pocket necronomicon:
 	say "You consult the Necronomicon, though it's probably a bad idea.";
 	if the player-class is cultist and the invokeskill of the player is 0:
 		say "Your mind is opened to eldritch vistas by what you've read!";
-		humiliate 200;
+		humiliate 2000;
 		teach invoking;
+	otherwise if the magic power of the player > 0:
+		let S be a random uncastable fetish appropriate magic-spell;
+		if S is magic-spell:
+			say "Magic flows from your body, turning a black page in the book into the instructions for how to cast a new spell. Wow!";
+			say NewbieMagicSpells;
+			compute learning of S;
+			compute spell consequences of the noun;
+		otherwise:
+			say "It seems you've learned every spell you can, as no new text appears.";
 	otherwise:
-		let R be a random number between 1 and 8;
-		humiliate 350;
- 		if R is 1 and the mercyskill of the player is 0:
- 			say "You find the secrets of submission to those of strength!";
- 			teach begging for mercy;
- 		otherwise if R is 2 and the throatskill of the player is 0:
- 			say "You find a diagram demonstrating how to take a tentacle down the throat comfortably!";
- 			teach deepthroating;
- 		otherwise if R is 3 and the strutskill of the player is 0:
- 			say "You... find some advice on walking in heels. This book really DOES have everything!";
- 			teach strutting;
- 		otherwise if R is 4 and the breastskill of the player is 0:
- 			say "You find a depiction of the fighting style of a strange, bulbous creature. You think you might be able to apply it to yourself!";
- 			teach titjobs;
- 		otherwise if R is 5 and the identifyskill of the player is 0:
- 			say "You find a listing of terrible and cursed artefacts and their properties!";
- 			teach identifying;
- 		otherwise if R is 6 and the bellyskill of the player is 0:
- 			say "You see a diagram of cultists, heavy with the spawn of the old ones. They seem to be standing a particular way, perhaps it is more comfortable?";
- 			teach belly management;
- 		otherwise if R is 7 and the relaxskill of the player is 0:
- 			say "You see an artwork depicting a cultist spreading her fuckholes one hand as she guides two giant cocks inside with the other. You think you can understand how she's able to take them without it hurting.";
- 			teach relaxing;
-		otherwise if R is 8 and the fuckskill of the player is 0:
-			say "You find a depiction of a cultist shape-shifting into some huge creature. The others seem to keep worshipping it.";
-			teach fuckskill;
- 		otherwise:
-			say "You feel your mind slipping away into madness at the revelations of the book!".
+		say "The book has no text on any of the pages. Perhaps if you had more magic power, it would reveal its secrets to you.".
 
 To decide which number is the humiliation-influence of (C - a pocket necronomicon):
 	let B be -1;
@@ -154,7 +136,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
 		ruin vagina times (the previous openness of vagina - the openness of vagina + P + 5);
 	otherwise if R is 1 and the analvirgin of the player is 0 and the player is male and the openness of asshole > 5:
-		say "'[one of]Ever since that first time, all I can think about is getting my prostate pounded by that huge [manly-penis]! Now, that's the only way I get any satisfaction at all! It's not my fault my hot fuckhole makes such a great cumdump[or]I still get tingles in my [asshole] whenever I think about my first time. I'd sit on anyone's hard cock and bounce on it until they came if I could just get a second chance! It's only fair I should get to choose who breeds my nasty fuckhole[or]It seems like every time I meet a real man, he decides the best place for his [manly-penis] is up my sissy ass! I know you can't get your virginity back, but my slutty boy hole is getting tired of all these thick creamy loads[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since your first time getting fucked that way. The words light up as the book emits a wave of energy, erasing themselves from the page as your [asshole] suddenly and very painfully begins tightening up.";
+		say "'[one of]Ever since that first time, all I can think about is getting my prostate pounded by that huge [manly-penis]! Now, that's the only way I get any satisfaction at all! It's not my fault my hot fuckhole makes such a great cumdump[or]I still get tingles in my [asshole] whenever I think about my first time. I'd sit on anyone's hard cock and bounce on it until they came if I could just get a second chance! It's only fair I should get to choose who breeds my nasty fuckhole[or]It seems like every time I meet a real [man of shopkeeper], [he of shopkeeper] decides the best place for [his of shopkeeper] [manly-penis] is up my [sissy] ass! I know you can't get your virginity back, but my slutty boy hole is getting tired of all these thick creamy loads[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since your first time getting fucked that way. The words light up as the book emits a wave of energy, erasing themselves from the page as your [asshole] suddenly and very painfully begins tightening up.";
 		AssClose 5;
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
 		ruin asshole times (the previous openness of asshole - the openness of asshole + P + 5);

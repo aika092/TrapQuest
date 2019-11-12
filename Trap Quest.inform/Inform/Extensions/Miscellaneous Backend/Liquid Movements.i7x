@@ -97,8 +97,8 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 		if LC is clothing, increase N by 1;
 		if N > a random number between 0 and 3, SemenAddictUp 1;
 		if the semen addiction of the player > 14:
-			arouse (N * 30) + 100;
 			say "You shiver with arousal as your face gets a fresh gooey load.";
+			stimulate face from semen times N;
 		if M > 0 and hair is not soaked:
 			decrease N by M; [face]
 			Squirt L on hair by M;
@@ -216,7 +216,11 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 				PuddleUp semen by the semen coating of C;
 				now the semen coating of C is 0;
 		if belly is unsoaked, say "The [variable L] steadily flows down your chest to your [BellyDesc].";
-		Squirt L on Belly by N.
+		Squirt L on Belly by N;
+	if acolyte-chestpiece is worn:
+		say "The gemstones adorning your [ShortDesc of acolyte-chestpiece] glint as waves of fatigue and arousal wash through your body.";
+		Arouse 500 * N;
+		FatigueUp N * 15.
 
 To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
 	let BC be a random worn top level belly cover clothing;
@@ -492,6 +496,10 @@ REQUIRES COMMENTING
 To WaterSoak (C - a clothing):
 	WaterSoak 1 on C.
 
+To CumHairUp (X - a number):
+	Squirt semen on Hair By X;
+	if a random number between 7 and 15 < the semen coating of hair, SemenAddictUp 1;
+	reset soak flavour
 
 [!<CumFaceUpX>+
 

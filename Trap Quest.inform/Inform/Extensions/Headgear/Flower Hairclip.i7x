@@ -57,6 +57,9 @@ To compute class outfit of (H - flower hairclip):
 			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 		say "[bold type]A belt suddenly latches around you with a dull *clang*. Two strips of pure white fabric hang from the sides. You feel incredible - fuelled with extra determination and feeling more comfortable with your current situation, you surge onwards![roman type][line break]";
 		summon G;
 		now warrior-summoned is 2;

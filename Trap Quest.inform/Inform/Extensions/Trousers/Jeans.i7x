@@ -15,7 +15,9 @@ To say ShortDesc of (Y - a jeans):
 	say "pair of zip up jeans".
 
 To decide which object is the unique-upgrade-target of (C - a jeans):
-	if the number of worn knickers is 0, decide on a random off-stage cutoffs.
+	if there is a worn diaper, decide on a random off-stage blue buttockless pants;
+	if the number of worn knickers is 0, decide on a random off-stage cutoffs;
+	decide on nothing.
 
 Jeans ends here.
 

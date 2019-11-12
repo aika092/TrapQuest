@@ -273,7 +273,10 @@ Definition: a recipe for nail bomb is appropriate if diaper quest is 0.
 To decide which number is the recipe key of (R - a recipe for nail bomb):
 	decide on 33.
 
-
+Recipe for elixir of siphoning is a kind of recipe. [The printed name of recipe for elixir of siphoning is "[TQlink of item described]recipe for elixir of siphoning[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for elixir of siphoning. The text-shortcut of recipe for elixir of siphoning is "resp".]
+[Definition: a recipe for elixir of siphoning is appropriate if diaper quest is 0.
+To decide which number is the recipe key of (R - recipe for elixir of siphoning):
+	decide on 34.]
 
 
 Recipes ends here.

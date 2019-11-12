@@ -345,9 +345,51 @@ To say BellyContents:
 	[####Selkie: this next used to be 34000, i.e. HUMILIATION-DISGRACED + 2000. not H-D + 1000]
 	if the milk volume of belly > 0, say "It is currently [if the humiliation of the player < HUMILIATION-DISGRACED + 1000]a reluctant [otherwise if the humiliation of the player > HUMILIATION-SHAMELESS + 1000]a welcoming [end if]home to a [if the milk volume of belly > 20]ridiculously huge[otherwise if the milk volume of belly > 15]huge[otherwise if the milk volume of belly > 10]large[otherwise if the milk volume of belly > 5]decent[otherwise]small[end if] amount of [milk]. ";
 	if the air volume of belly > 0, say "It is currently inflated by a [if the air volume of belly > 20]ridiculously huge[otherwise if the air volume of belly > 15]huge[otherwise if the air volume of belly > 10]large[otherwise if the air volume of belly > 5]decent[otherwise]small[end if] amount of air. ";
-	if the small egg count of belly > 0, say "It is currently inflated by a [if the small egg count of belly > 20]ridiculously huge[otherwise if the small egg count of belly > 15]huge[otherwise if the small egg count of belly > 10]large[otherwise if the small egg count of belly > 5]decent[otherwise]small[end if] number of small eggs. ";
+	if the small egg count of belly > 0, say "It is currently inflated by a [if the small egg count of belly > 20]ridiculously huge[otherwise if the small egg count of belly > 15]huge[otherwise if the small egg count of belly > 10]large[otherwise if the small egg count of belly > 5]decent[otherwise]small[end if] number of [ShortDesc of a random small egg]s. ";
 	if the medium egg count of belly > 0, say "It is currently inflated by a [if the medium egg count of belly > 10]ridiculously huge[otherwise if the medium egg count of belly > 7]huge[otherwise if the medium egg count of belly > 5]high[otherwise if the medium egg count of belly > 2]notable[otherwise]low[end if] number of average sized eggs. ";
 	if the large egg count of belly > 0, say "It is currently inflated by [if the large egg count of belly > 4]a ridiculously huge number of giant eggs[otherwise if the large egg count of belly > 3]a big number of giant eggs[otherwise if the large egg count of belly > 2]three giant eggs[otherwise if the large egg count of belly > 1]two giant eggs[otherwise]a single giant egg[end if]. ".
+
+[!<SayBellyContentsAlone>+
+
+If we just want to describe the contents of the belly.
+This is OTT, but was kind of fun.
+Who says inform doesn't support bitmaps? :-)
+I'm ignoring air content.
+
++!]
+To say BellyContentsAlone:
+	let XM be the milk volume of belly;
+	let XS be the semen volume of belly;
+	let XU be the urine volume of belly;
+	let XES be the small egg count of belly;
+	let XEM be the medium egg count of belly * 2;
+	let XEL be the large egg count of belly * 4;
+	let XMN be 0;
+	let XSN be 0;
+	let XUN be 0;
+	let XEN be 0;
+	if XS > 0, now XSN is 1;
+	if XM > 0, now XMN is 2;
+	if XU > 0, now XUN is 4;
+	if XES + XEM + XEL > 0, now XEN is 8;
+	if XSN + XMN + XUN + XEN is:
+		--  0: say "empty";
+		--  1: say "[semen]";
+		--  2: say "[urine]";
+		--  3: say "a mix of [semen] and [urine]";
+		--  4: say "[milk]";
+		--  5: say "a mix of [semen] and [milk]";
+		--  6: say "a mix of [urine] and [milk]";
+		--  7: say "a mix of [semen], [urine], and [milk]";
+		--  8: if XES + XEM + XEL < 5 say "eggs", otherwise say "a mass of eggs";
+		--  9: say "a mix of [semen] and eggs";
+		-- 10: say "a mix of [urine] and eggs";
+		-- 12: say "a mix of [milk] and eggs";
+		-- 11: say "a mix of [semen], [urine], and eggs";
+		-- 13: say "a mix of [semen], [milk], and eggs";
+		-- 14: say "a mix of [semen], [milk], and eggs";
+		-- 15: say "an astonishing melange of [semen], [milk], [urine], and eggs".
+
 
 [!<SayBellyWeight>+
 
@@ -549,12 +591,12 @@ To Overflow:
 					now urine-flav-said is 2;
 			otherwise if the small egg count of belly > 0:
 				if the stomach of the player < 15:
-					say "[if small-egg-flav-said is 0]Your stomach audibly gurgles and you wince in pain as a solid egg is forced upwards through your body into your stomach.[line break][one of][line break][variable custom style]What the fuck is happening to me![or]Not again![stopping][roman type][line break][otherwise]Another egg is forced up from your belly into your stomach.[end if]";
+					say "[if small-egg-flav-said is 0]Your stomach audibly gurgles and you wince in pain as a solid [ShortDesc of a random small egg] is forced upwards through your body into your stomach.[line break][one of][line break][variable custom style]What the fuck is happening to me![or]Not again![stopping][roman type][line break][otherwise]Another egg is forced up from your belly into your stomach.[end if]";
 					now small-egg-flav-said is 1;
 					StomachFoodUp 2;
 					decrease the small egg count of belly by 1;
 				otherwise:
-					if delayed fainting is 0, say "Your body's insides are now just completely full of eggs, but they don't stop coming. As an egg is forced up towards your mouth, it cuts off your ability to breathe. You quickly black out.";
+					if delayed fainting is 0, say "Your body's insides are now just completely full of [ShortDesc of a random small egg]s, but they don't stop coming. As a [ShortDesc of a random small egg] is forced up towards your mouth, it cuts off your ability to breathe. You quickly black out.";
 					now delayed fainting is 1;
 					now the fainting reason of the player is 10;
 			otherwise if the medium egg count of belly > 0:
@@ -604,7 +646,7 @@ assfilled is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-To Assfill (X - a number):
+To Assfill (X - a number):[TODO: the slimegirl doesn't like demonic cum]
 	let L be a random worn lipstick collar;
 	if L is clothing, increase X by 1;
 	let M be a random wrapped monster penetrating asshole;
@@ -847,8 +889,8 @@ To AssSquirt:
 		now target-count is the total squirtable fill of belly / 3;
 	if target-count < 4:
 		now target-count is 3;
-	if the total squirtable fill of belly < 6 or voluntarySquatting is 1: [If the player squats, everything comes out.]
-		now target-count is the total squirtable fill of belly;]
+	if the total squirtable fill of belly < 6 or voluntarySquatting is 1:
+		now target-count is the total squirtable fill of belly;] [If the player squats, everything comes out.]
 	now target-count is the total squirtable fill of belly; [Experimental balance change - everything always comes out]
 	[The simple option: if everything is coming out!]
 	if the total squirtable fill of belly is target-count:
@@ -928,7 +970,7 @@ To AssSquirt:
 		now ST is in the location of the player;
 		dislodge ST;
 	[Now we set up an expulsion poster, if appropriate]
-	if there is a camera trap in the location of the player and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
+	if (there is a camera trap in the location of the player or there is a camera-bystander in the location of the player) and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
 		now target-poster is a random off-stage expulsion poster;
 		compute uniquest variables of target-poster;
 	[Now we have our big while loop that can get exited early by the player's ass getting plugged.]
@@ -939,6 +981,11 @@ To AssSquirt:
 				lay small-egg-count small eggs;
 				progress quest of egg-laying-quest;
 				if voluntarySquatting is 0, progress quest of egg-holding-quest;
+				let Y be a random camera trap in the location of the player;
+				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
+				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
+					set up target-poster;
 				allocate 6 seconds;
 				compute extra turn; [After each type of egg comes out, the game world gets a turn to act.]
 			increase element-count by 1;
@@ -952,6 +999,11 @@ To AssSquirt:
 				lay medium-egg-count medium eggs;
 				progress quest of egg-laying-quest;
 				if voluntarySquatting is 0, progress quest of egg-holding-quest;
+				let Y be a random camera trap in the location of the player;
+				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
+				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
+					set up target-poster;
 				allocate 6 seconds;
 				compute extra turn;
 			increase element-count by 1;
@@ -967,6 +1019,11 @@ To AssSquirt:
 				lay large-egg-count large eggs;
 				progress quest of egg-laying-quest;
 				if voluntarySquatting is 0, progress quest of egg-holding-quest;
+				let Y be a random camera trap in the location of the player;
+				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
+				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
+					set up target-poster;
 				allocate 6 seconds;
 				compute extra turn;
 			increase element-count by 1;
@@ -976,12 +1033,17 @@ To AssSquirt:
 				if turn-count is 0 or collecting is a thing:
 					if debugmode is 1, say "there are [open-topped-vessel-count] open topped vessels held by the player.";
 					if the player is not flying and the player is not in HoleInWall and the player is not in DiaperPail and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
+						let LV be the list of carried open topped vessels;
+						if the number of entries in LV > 1:
+							say "You have the following open topped vessels:[line break]";
+							repeat with V running through LV:
+								say "[V][line break]";
 						if the player is upright:
 							repeat with P running through closed pedestals in the location of the player:
 								if collecting is nothing and (P is fertile or P is chilled or P is parched):
 									say "Expel into the [P]? ";
 									if the player is consenting, now collecting is P;
-						repeat with V running through carried open topped vessels:
+						repeat with V running through LV:
 							if collecting is nothing:
 								say "Collect the liquid you're about to expel into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
 								if the player is consenting:
@@ -999,7 +1061,7 @@ To AssSquirt:
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
 					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1][one of]murky[or]lumpy[in random order] brown water[otherwise if there is a worn total protection diaper]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
-					say "[if the player is ass protected]into your [ShortDesc of random bottom level ass protection clothing worn by the player][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
+					say "[if the player is ass protected]into [NameDesc of random bottom level ass protection clothing worn by the player][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
 					if there is a worn total protection diaper and the player is full and diaper messing >= 3:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
@@ -1076,15 +1138,19 @@ To AssSquirt:
 				if the player is ass protected, now C is a random bottom level ass protection clothing worn by the player;
 				if turn-count is 0, compute squirt declarations into C;
 				while liquid-count < 6 and liquid-count < liquid-total:
+					let temp-milk-count be 0;
+					let temp-semen-count be 0;
+					let temp-urine-count be 0;
+					let temp-water-count be 0;
 					if milk-count > 0:
-						if C is worn, MilkSoak C;
+						if C is worn, increase temp-milk-count by 1;
 						otherwise MilkPuddleUp 1;
 						decrease the milk volume of belly by 1;
 						decrease milk-count by 1;
 						increase liquid-count by 1;
 					if semen-count > 0:
 						if C is worn:
-							CumSoak 1 on C;
+							increase temp-semen-count by 1;
 						otherwise if voluntarySquatting is 0:
 							Squirt semen On Thighs By 1;
 						otherwise:
@@ -1095,7 +1161,7 @@ To AssSquirt:
 						increase liquid-count by 1;
 					if urine-count > 0:
 						if C is worn:
-							PissSoak C;
+							increase temp-urine-count by 1;
 						otherwise:
 							UrinePuddleUp 1;
 							if flav-said is 0, now flav-said is 1;
@@ -1107,12 +1173,16 @@ To AssSquirt:
 						if W > 6 - liquid-count, now W is 6 - liquid-count;
 						if W > 0:
 							if C is worn:
-								WaterSoak W on C;
+								increase temp-water-count by 1;
 							otherwise if flav-said is 0:
 								now flav-said is 1;
 							decrease the water volume of belly by W;
 							decrease water-count by W;
 							increase liquid-count by W;
+					if temp-milk-count > 0, MilkSoak temp-milk-count on C;
+					if temp-urine-count > 0, PissSoak temp-urine-count on C;
+					if temp-semen-count > 0, CumSoak temp-semen-count on C;
+					if temp-water-count > 0, WaterSoak temp-water-count on C;
 					if flav-said is 1:
 						say "It flows down your thighs to the ground.";
 						now flav-said is 2;
@@ -1122,13 +1192,6 @@ To AssSquirt:
 				[Let's fix that piece of off-stage clothing we just messed up]
 				clean C2;
 				WaterEmpty C2;
-				let Y be a random camera trap in the location of the player;
-				if target-poster is an expulsion poster and Y is camera trap:
-					if the reset-timer of Y < 99900:
-						say "[FlashFlav of Y]";
-						say "It was in a perfect position to capture a full shot of what just happened.";
-						say "[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh god, how embarrassing![otherwise]Now everyone will know what I've had happen to me recently.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]Ooh, I can't wait to see that one![end if][stopping][roman type][line break]";
-						set up target-poster;
 				[Now we deal with if there's much left and therefore we need to keep going. In total, no more than 6 liquid should have been released]
 				if liquid-total > 6 and liquid-total < 1000:
 					decrease liquid-total by 6;
@@ -1141,6 +1204,11 @@ To AssSquirt:
 				otherwise:
 					now liquid-total is 0;
 				now liquid-count is 0;
+				let Y be a random camera trap in the location of the player;
+				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
+				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
+					set up target-poster;
 				allocate 6 seconds;
 				compute extra turn;
 				increase turn-count by 1;
@@ -1186,17 +1254,17 @@ REQUIRES COMMENTING
 
 +!]
 To lay (X - a number) small eggs:
-	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third[end if][if X > 3], then a fourth [line break][variable custom style](woah!)[roman type][line break][end if][if X > 4], then a fifth[end if][if X > 5], then a sixth [line break][variable custom style](how many?!)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth [line break][variable custom style](holy shit...)[roman type][line break][end if][if X > 8], then a ninth[end if] small spherical egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
-	otherwise say "smallish eggs one by one plop from your [asshole]. There are so many that you quickly lose count, it's at least ten but you really have no idea.";
+	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third[end if][if X > 3], then a fourth [line break][variable custom style](woah!)[roman type][line break][end if][if X > 4], then a fifth[end if][if X > 5], then a sixth [line break][variable custom style](how many?!)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth [line break][variable custom style](holy shit...)[roman type][line break][end if][if X > 8], then a ninth[end if] [MediumDesc of a random small egg] slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
+	otherwise say "smallish [ShortDesc of a random small egg]s one by one plop from your [asshole]. By the time it's finished, [X] have popped out.";
 	if X > 2 and the latex-transformation of the player < 3:
-		say "The movement of each egg forcefully stimulates the inside of your ass, which feels incredible but also makes you quite sore.";
+		say "The movement of each one forcefully stimulates the inside of your ass, which feels incredible but also makes you quite sore.";
 		let E be a random small egg;
 		now E is penetrating asshole; [For size calculations]
 		ruin asshole times X;
 		now E is not penetrating asshole;
 	let D be a random worn total protection diaper;
 	if D is diaper:
-		say "The egg[if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
+		say "The [ShortDesc of a random small egg][if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
 		while X > 0:
 			decrease the small egg count of belly by 1;
 			decrease X by 1;
@@ -1499,8 +1567,8 @@ REQUIRES COMMENTING
 To compute enema reactions:
 	let C be nothing;
 	if the player is ass protected, now C is a random bottom level ass protection clothing worn by the player;
-	repeat with M running through reactive monsters:
-		unless M is reacted-already:
+	repeat with M running through reactive people:
+		unless M is reacted-already monster:
 			if C is diaper:
 				compute diaper mess reaction of M;
 			otherwise if C is clothing:
@@ -1509,38 +1577,39 @@ To compute enema reactions:
 			otherwise:
 				say "[EnemaFloorReactionFlav of M]";
 				compute enema floor reaction of M;
-			now M is reacted-already.
+			if M is monster, now M is reacted-already;
 
 [!<ComputeEnemaFloorReactionOfMonster>+
 
 REQUIRES COMMENTING
 
 +!]
-To compute enema floor reaction of (M - a monster):
-	FavourDown M with consequences;
+To compute enema floor reaction of (M - a person):
 	humiliate 200;
 	if voluntarySquatting is 1, humiliate 500;
-	if M is friendly and M is interested:
-		say "[BigNameDesc of M] turns to leave you alone.";
-		distract M.
+	if M is monster:
+		FavourDown M with consequences;
+		if M is friendly and M is interested:
+			say "[BigNameDesc of M] turns to leave you alone.";
+			distract M.
 
 [!<SayEnemaFloorReactionFlavOfMonster>+
 
 REQUIRES COMMENTING
 
 +!]
-To say EnemaFloorReactionFlav of (M - a monster):
-	say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if]. [line break][speech style of M]'Disgusting[if M is unfriendly and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+To say EnemaFloorReactionFlav of (M - a person):
+	say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if]. [line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
 
 [!<ComputeEnemaReactionOfMonsterIntoClothing>+
 
 REQUIRES COMMENTING
 
 +!]
-To compute enema reaction of (M - a monster) into (C - a clothing):
+To compute enema reaction of (M - a person) into (C - a clothing):
 	compute enema floor reaction of M.
 
-To say EnemaReactionFlav of (M - a monster) into (C - a clothing):
+To say EnemaReactionFlav of (M - a person) into (C - a clothing):
 	say EnemaFloorReactionFlav of M.
 
 

@@ -8,6 +8,8 @@ Definition: a ghost is father material: decide yes.
 
 Definition: A ghost is mansion dwelling: decide yes.
 
+Definition: A ghost is delayed if the last-interaction of it is 2 and diaper quest is 0. [In DQ, ghosts don't get delayed.]
+
 The text-shortcut of ghost is "pe". Understand "ghost", "dick", "cock", "penis", "diaperghost" as a ghost.
 
 To say ShortDesc of (M - a ghost):
@@ -116,6 +118,7 @@ To satisfy (M - jismbodied ghost) for (N - a number) seconds:
 
 To satisfy (M - a ghost) for (N - a number) seconds:
 	say "[BigNameDesc of M] slowly fades out of existence. You have a feeling you'll be seeing it again...";
+	now creepiness is 0; [Having dealt with a ghost shouldn't cause a new one to appear immediately]
 	if N >= 50 and the player is not in Dungeon12, decrease the charge of the dungeon altar by a random number between 1 and 50;
 	destroy M;
 	bore M for N seconds.[Is dislodging handled with the destroy M function?.]
@@ -487,7 +490,7 @@ The ghosts are patient rule is listed in the ghost priority attack rules.]
 
 This is the ghost winding rule:[Ghosts should wind up if they have a full bank and haven't been given an "invitation" to fuck you]
 	if debugmode > 0, say "Checking ghost winding rule...[line break]";
-	if the player is not immobile and presented-orifice is nothing and the bank of current-monster > 100:
+	if diaper quest is 0 and the player is not immobile and presented-orifice is nothing and the bank of current-monster > 100:
 		let W be 0;
 		repeat with M running through ghosts in the location of the player:
 			if the wind-up of M is 1, now W is 1;
@@ -783,6 +786,9 @@ Part 4 - Ghostly Tentacle
 
 ghostly tentacle is a ghost. Understand "phantom", "ghost", "diapered" as ghostly tentacle. The bank of ghostly tentacle is usually 3.
 
+To decide which figure-name is the monster-image of (M - ghostly tentacle):
+	decide on figure of ghost 5.
+
 To say MediumDesc of (M - ghostly tentacle):
 	say "[if diaper quest is 1]diapered ghost[otherwise]phantom tentacle[end if]".
 
@@ -866,6 +872,36 @@ Check kneeing ghostly tentacle:
 	if the wind-up of the noun is 1, say "It has you by the wrist! You can't reach it with your leg!" instead.
 Check kicking ghostly tentacle:
 	if the wind-up of the noun is 1, say "It has you by the wrist! You can't reach it with your leg!" instead.
+
+
+Section - DQ
+
+
+ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 5.
+Definition: ghostly-diaper-use (called P) is appropriate:
+	if current-monster is not ghostly tentacle, decide no;
+	if there is worn fluid vulnerable knickers, decide yes;
+	decide no.
+
+To compute punishment of (P - ghostly-diaper-use):
+	let M be current-monster;
+	let K be a random worn knickers;
+	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... [he of M] starts urinating?! [big his of M] [urine] doesn't go into [his of M] ghostly diaper but becomes completely real!";
+	PissSoak 50 on K;
+	say "[variable custom style]Oh come on![roman type][line break]";
+	satisfy M.
+
+
+Definition: ghostly tentacle is willing to donate diapers if the number of worn knickers is 0.
+
+To compute diaper change of (M - ghostly tentacle):
+	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... you feel part of [him of M] become corporeal around your waist. [big he of M] sails away, but now you have a diaper where before you had nothing!";
+	let D be a random eligible diaper;
+	summon D cursed with quest;
+	bore M.
+
+
+
 
 Section 2 - Tripping
 

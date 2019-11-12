@@ -2,6 +2,11 @@ Soiled Diaper by Collectibles begins here.
 
 A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described]soiled [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soiled-diaper is the file "Items/Collectibles/diaper1.jpg". Understand "soiled", "diaper" as soiled diaper.
 
+To decide which number is the outrage of (S - a soiled-diaper):
+	decide on 20.
+To decide which number is the cringe of (S - a soiled-diaper):
+	decide on 20.
+
 The text-shortcut of soiled-diaper is "sdp".
 
 A soiled-diaper has a text called diaper-origin. The diaper-origin of a soiled-diaper is usually "disposable diaper". Understand the diaper-origin property as describing a soiled-diaper.
@@ -30,10 +35,11 @@ A game universe initialisation rule:
 
 turnsWithSoiledDiaper is a number that varies.
 This is the soiled diapers smell gross rule:
-	if there is a carried soiled-diaper or there is a soiled-diaper in the location of the player:
-		increase turnsWithSoiledDiaper by 1;
-	otherwise:
-		now turnsWithSoiledDiaper is 0.
+	if there is a carried soiled-diaper or there is a soiled-diaper in the location of the player or there is a messed knickers in the location of the player or there is a carried messed knickers or there is a messy monster in the location of the player:
+		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
+	otherwise if the number of worn messed knickers is 0:
+		now turnsWithSoiledDiaper is (turnsWithSoiledDiaper * 3) / 4;
+		if turnsWithSoiledDiaper > 0, say "The gross smell is gradually leaving your nostrils[one of]. It will be gone soon[or][stopping].".
 The soiled diapers smell gross rule is listed first in the advance counters rules. [Listed early to make sure that the notification that the player is upset about mess comes after it.]
 
 To say unique-verb-desc of (T - a soiled-diaper):
@@ -120,7 +126,28 @@ A later time based rule:
 		let N be the number of soiled-diaper in DiaperPail;
 		if a random number between 0 and N is not 0:
 			say "The horrid aroma of the [if N > 1][N] used diapers[otherwise]messy diaper[end if] pressed against your face overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] by the second[in random order].";
-			SilentlyDelicateUp 1;
+			SilentlyDelicateUp 1.
+
+
+BabChanging it with is an action applying to two things.
+Check BabChanging it with:
+	if the noun is not a monster, say "This command only works on NPCs." instead;
+	if the second noun is not a clean diaper and the second noun is not a diaper bag of holding and the second noun is not a baby diaper bag of holding, say "You would need a clean diaper or diaper bag to do that, not the [NameDesc of the second noun]." instead;
+	if the second noun is worn diaper, say "You would need to take that off first." instead;
+	if the noun is not messy, say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
+	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
+	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
+	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.
+Carry out BabChanging it with:
+	allocate 6 seconds;
+	say "Settling [NameDesc of the noun] onto [his of the noun] back, you get to work cleaning up [his of the noun] messy nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. Eventually [he of the noun][']s all clean and safely padded again.";
+	now the refactory-period of the noun is a random number between -100 and 300;
+	let SD be a random off-stage soiled-diaper;
+	if diaper messing >= 6 and SD is soiled-diaper:
+		now SD is carried by the player;
+		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
+	only destroy the second noun.
+Understand "change [a person] with [something]", "change [a person] into [something]" as BabChanging it with.
 
 
 Soiled Diaper ends here.

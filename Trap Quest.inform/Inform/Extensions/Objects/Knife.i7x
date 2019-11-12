@@ -29,7 +29,7 @@ The knife charge decay rule is listed in the advance counters rules.
 Knifing it with is an action applying to two things.
 Check knifing:
 	if the second noun is not knife and (the second noun is not sword or the second noun is not metal) and the second noun is not midnight tanto, say "How would you cut anything with that?" instead;
-	if the second noun is knife:
+	if the second noun is knife or the second noun is not midnight tanto:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
 		if the player is not able to manually use manual dexterity, do nothing instead;
 	otherwise:
@@ -90,6 +90,8 @@ Carry out knifing:
 	otherwise:
 		if (the noun is bondage or the noun is unremovable) and the noun is not blessed:
 			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![line break][variable custom style]Perhaps if it was blessed?[roman type][line break]";
+		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
+			say "The knife can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";
 		otherwise if the charge of the second noun > 0:
 			say "The knife seems to be completely dull at the moment! You give up.";
 		otherwise:

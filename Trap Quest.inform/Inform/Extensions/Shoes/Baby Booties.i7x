@@ -2,9 +2,9 @@ Baby Booties by Shoes begins here.
 
 A baby booties is a kind of shoes. A baby booties is usually cotton. A baby booties is usually unique.
 
-The printed name of baby booties is usually "[clothing-title-before]pair of baby booties[clothing-title-after]". The text-shortcut of baby booties is "bbo".
+The printed name of baby booties is usually "[clothing-title-before]pair of baby booties[clothing-title-after]". The text-shortcut of baby booties is "bbo". Understand "baby", "booties" as baby booties.
 
-There is 1 baby booties.
+pink-baby-booties is a baby booties.
 
 Definition: a baby booties is pink themed: decide yes.
 
@@ -14,10 +14,11 @@ To decide which figure-name is the clothing-image of (H - a baby booties):
 Figure of baby booties is the file "Items/Clothes/Lower/Feet/Booties/booties1.png".
 
 To decide which number is the unique outrage of (C - a baby booties):
-	decide on 6.
+	if diaper quest is 1, decide on 0;
+	decide on the unique cringe of C.
 
 To decide which number is the unique cringe of (C - a baby booties):
-	decide on 10.
+	decide on 6.
 
 To decide which number is the hindrance-modifier of (C - a baby booties):
 	decide on 0.

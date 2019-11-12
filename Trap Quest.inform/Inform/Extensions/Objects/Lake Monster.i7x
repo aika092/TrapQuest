@@ -311,8 +311,8 @@ To LakeMonsterCheck (S - a number):
 	repeat with T running through lake monsters in the location of the player:
 		now R is 0;
 	if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 9999;
-	if (R * 40 < the semen-sniffing of L) or (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):[if a number between 800 and 1000 is less than L]
-		if the dexterity of the player + (the number of worn swimming themed wearthing * 10) < a random number between 7 and 25:
+	if (R * 40 < the semen-sniffing of L) or  (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):[if a number between 800 and 1000 is less than L]
+		if the dexterity of the player + (the number of worn swimming themed wearthing * 10) < a random number between 7 and 25 or acolyte-chestpiece is worn:
 			allocate 6 seconds;
 			if R is 0, say "[line break]The tentacle monster sends one of its tentacles to grab your leg! You're caught!";
 			otherwise say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters, towards where you are. Before you can pull yourself out of the lake to safety, the shadow has moved underneath you and four large octopus-like tentacles have risen to the surface! It must have been attracted here by all the [semen] you washed into the water. You have no chance of escaping as one tentacle grabs one of your ankles and drags you out into the deeper water with incredible strength. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";

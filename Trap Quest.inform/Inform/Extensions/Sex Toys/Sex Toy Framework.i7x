@@ -26,13 +26,21 @@ Definition: a sex toy (called S) is vaginally summonable:
 A sex toy is a kind of clothing. Understand "sex toys" as sex toy. The text-shortcut of a sex toy is "sty".
 A sex toy is usually plastic. A sex toy is usually manly.
 A sex toy has a number called size. The size of a sex toy is usually 0.
-The printed name of a sex toy is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][DongSize the size of the item described] [MediumDesc of item described][clothing-title-after]".
+The printed name of a sex toy is usually "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 Definition: a sex toy is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 A sex toy has a number called toy-charge.
 Definition: a sex toy is magic-enhanceable: decide no.
 Definition: a sex toy is too boring: decide no.
 Definition: a sex toy is transformation-protected: decide yes.
 Definition: a sex toy is disintegration-protected: decide yes.
+
+To decide which number is the initial outrage of (S - a sex toy):
+	decide on 10 + the size of S.
+
+
+To say DongSize of (C - a sex toy):
+	let N be the size of C;
+	say DongSize N.
 
 To say DongSize (N - a number):
 	say "[if N < 3]small[otherwise if N < 5]medium sized[otherwise if N < 7]large[otherwise if N < 9]huge[otherwise]monstrous[end if]".
@@ -41,7 +49,7 @@ To say ShortDesc of (C - a sex toy):
 	say "sex toy".
 
 To say MediumDesc of (C - a sex toy):
-	say "[DongSize the size of C] [ShortDesc of C]".
+	say "[DongSize of C] [ShortDesc of C]".
 
 Report examining a sex toy:
 	repeat with O running through orifices penetrated by the noun:
@@ -53,6 +61,17 @@ To ToyShortcutAssign (C - a sex toy):
 	if the text-shortcut of C is "sty":
 		now the text-shortcut of C is substituted form of "sty[toyShortcutCount]";
 		increase toyShortcutCount by 1.
+
+
+
+This is the sex toy pussy slut rule:
+	if there is a sex toy penetrating vagina, decrease the desirability of vagina by 7.
+The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
+
+This is the sex toy butt slut rule:
+	if there is a sex toy penetrating asshole, decrease the desirability of asshole by 7.
+The sex toy butt slut rule is listed in the butt slut eligibility rules.
+
 
 
 To decide which number is the original price of (C - a sex toy):
@@ -168,9 +187,6 @@ To decide which number is the girth of (I - a sex toy):
 To decide which number is the girth of (I - a clothing):
 	decide on the plug size of I.
 
-To decide which number is the girth of (I - a monster):
-	decide on 3. [Normal penis girth]
-
 A time based rule (this is the sex toys slipping out rule):
 	repeat with I running through insertable things penetrating a fuckhole:
 		compute gripping of I.
@@ -233,7 +249,7 @@ To compute gripping of (I - an insertable thing):
 		increase analGripCount by 1;
 		if analGripCount > 33 - ((the girth of I - the openness of asshole) * 3):
 			say "The [ShortDesc of I] [one of]stimulates[or]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
-			arouse 350;
+			passively stimulate asshole from I;
 			if the girth of I > the openness of asshole and diaper quest is 0:
 				let open be the openness of asshole;
 				say "It's so big that you feel yourself getting slowly stretched and ruined.";
@@ -244,7 +260,7 @@ To compute gripping of (I - an insertable thing):
 		increase vaginalGripCount by 1;
 		if vaginalGripCount > 23 - ((the girth of I - the openness of vagina) * 2):
 			say "The [ShortDesc of I] [one of]stimulates[or]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
-			arouse 500;
+			passively stimulate vagina from I;
 			if the girth of I > the openness of vagina and diaper quest is 0:
 				let open be the openness of vagina;
 				say "It's so big that you feel yourself getting slowly stretched and ruined.";
@@ -256,7 +272,6 @@ To decide which number is the bartering value of (T - a sex toy) for (M - a mann
 	unless M is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
-Include Plugging by Actions.
 
 Check taking off sex toy:
 	try unplugging the noun instead.
@@ -313,8 +328,6 @@ Chapter 2 - Plugs
 
 A plug is a kind of sex toy. A basic plug is a kind of plug. The size of plug is usually 4. Understand "butt", "plug" as plug. Understand "small" as plug when the size of item described < 4. Understand "medium", "sized" as plug when the size of item described is 4. Understand "large" as plug when the size of item described < 7 and the size of item described >= 5. Understand "huge" as plug when the size of item described < 9 and the size of item described >= 7. Understand "monstrous" as plug when the size of item described >= 9. The text-shortcut of a plug is "plu".
 
-The printed name of a basic plug is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][MediumDesc of item described][clothing-title-after]".
-
 black-plug is a basic plug. The size of black-plug is 1. The text-shortcut of black-plug is "plu1". Understand "black" as black-plug.
 To say MediumDesc of (P - black-plug):
 	say "small black plug".
@@ -329,11 +342,15 @@ To say MediumDesc of (P - small-jewelled-plug):
 Definition: small-jewelled-plug is grey themed: decide yes.
 Definition: small-jewelled-plug is purple themed: decide yes.
 Definition: small-jewelled-plug is gem themed: decide yes.
+To decide which number is the initial cringe of (S - small-jewelled-plug):
+	decide on the initial outrage of S.
 medium-jewelled-plug is a basic plug. The size of medium-jewelled-plug is 4. The text-shortcut of medium-jewelled-plug is "plu4". medium-jewelled-plug is metal.
 To say MediumDesc of (P - medium-jewelled-plug):
 	say "medium sized metal plug".
 Definition: medium-jewelled-plug is gem themed: decide yes.
 Definition: medium-jewelled-plug is grey themed: decide yes.
+To decide which number is the initial cringe of (S - medium-jewelled-plug):
+	decide on the initial outrage of S.
 round-plug is a basic plug. The size of round-plug is 5. The text-shortcut of round-plug is "plu5". Understand "round", "black" as round-plug.
 To say MediumDesc of (P - round-plug):
 	say "large round black plug".
@@ -359,6 +376,12 @@ tiered-plug is a basic plug. The size of tiered-plug is 10. The text-shortcut of
 To say MediumDesc of (P - tiered-plug):
 	say "monstrous beige plug".
 
+To assign size (X - a number) to (C - a basic plug):
+	let P be C;
+	repeat with Z running through basic plugs:
+		if the size of Z is X, now P is Z;
+	if P is not C, silently transform C into P.
+
 To say ShortDesc of (C - a plug):
 	say "plug".
 
@@ -367,6 +390,10 @@ To say MediumDesc of (C - a plug):
 
 
 A tail plug is a kind of plug.
+To decide which number is the initial outrage of (S - a tail plug):
+	decide on 14.
+To decide which number is the initial cringe of (S - a tail plug):
+	decide on the initial outrage of S.
 
 A balancing tail plug is a kind of tail plug.
 

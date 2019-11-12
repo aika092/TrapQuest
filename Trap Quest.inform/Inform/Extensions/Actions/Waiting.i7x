@@ -38,7 +38,7 @@ Check waiting:
 					say "[BigNameDesc of M]'s [manly-penis] twitches inside of you.";
 					ruin asshole;
 			if M is awake:
-				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong breaks its airtight seal, and, assuming that you are unconscious, wanders off to search for other victims.";
+				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong breaks its airtight seal, and assuming that you are unconscious, and wanders off to search for other victims.";
 				bore M for 50 seconds;
 				regionally place M;
 				display entire map;

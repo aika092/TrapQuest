@@ -5,6 +5,8 @@ A haunted mirror trap is a kind of trap. There are 5 pressure haunted mirror tra
 
 
 Figure of haunted mirror is the file "Env/Mansion/mirror1.jpg".
+To decide which figure-name is the examine-image of (T - a haunted mirror trap):
+	decide on figure of haunted mirror.
 
 [!<HauntedMirrorTrap>@<SayEnvironmentDesc>+
 
@@ -75,9 +77,9 @@ mirror nipple tweak is a mirror attack.
 Definition: mirror nipple tweak is acceptable: decide yes.
 To compute resolution of (X - mirror nipple tweak):
 	let C be bottom level lactation cover;
-	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [ShortDesc of C][end if] until they reach their nipples. [if times-mirrored is 0]You jump with surprise as you realise the mirror isn't lying - you are also doing this yourself! Your expression changes to one of sinister glee, and you realise that you have somehow been possessed by the mirror, and it temporarily has control over your entire body. [end if]You are absolutely powerless to fight back as you watch yourself begin to twist your nipples roughly, until you squeal with pain. Or rather you would if you could, but instead your face just turns into one of lustful glee. [if times-mirrored is 0]It's almost as if the possession can also influence your thoughts, because despite the pain, you're also getting aroused! [otherwise]Once again, you find the almost unbearable pain somehow turning you on![end if]";
+	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [ShortDesc of C][end if] until they reach their nipples. [if times-mirrored is 0]You jump with surprise as you realise the mirror isn't lying - you are also doing this yourself! Your expression changes to one of sinister glee, and you realise that you have somehow been possessed by the mirror, and it temporarily has control over your entire body. [end if]You are absolutely powerless to fight back as you watch yourself begin to twist your nipples roughly, until you squeal with pain. Or rather you would if you could, but instead your face just turns into one of lustful glee. [if times-mirrored is 0]It's almost as if the possession can also influence your thoughts, because despite the pain, you're also getting aroused[otherwise]Once again, you find the almost unbearable pain somehow turning you on[end if]!";
 	PainUp 1;
-	Arouse 1000;
+	stimulate breasts from a random haunted mirror trap;
 	if times-mirrored is 0, say "You feel the possessing spirit lose control of your body as you finally manage to tear your eyes away from the mirror.".
 
 mirror forced masturbation is a mirror attack.
@@ -179,6 +181,16 @@ To compute resolution of (X - mirror soiling):
 	now mirror-delayed is 0.
 
 
+mirror-stuffie is a mirror attack.
+Definition: mirror-stuffie is acceptable:
+	let S be a random stuffie in the location of the player;
+	if S is stuffie and S is not held and S is actually summonable, decide yes;
+	decide no.
+To compute resolution of (M - mirror-stuffie):
+	let C be a random stuffie in the location of the player;
+	say "Your reflection reaches down and picks up [NameDesc of C], cuddling [him of C] close to your chest. You realise you are doing the same thing! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying [him of C] around for a while!";
+	summon C cursed with quest.
+				
 
 Haunted Mirror Trap ends here.
 

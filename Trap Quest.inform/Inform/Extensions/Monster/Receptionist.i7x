@@ -23,7 +23,7 @@ To say MediumDesc of (M - receptionist):
 
 To say MonsterDesc of (M - receptionist):
 	if M is sex-enslaved:
-		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing [his of M] naked pussy. It's also been torn over one breast. [big his of M] armband, instead of showing a picture of [his of M] face, and the word 'STAFF', now just reads 'SPANK ME'. [big his of M] left hand is still raised with an adorable pointing finger, but the fury on [his of M] face tells you it's not hanging there of [his of M] own volition. In fact both of [his of M] arms and hands seem magically frozen in place. [big his of M] face and mouth have been left free to allow [him of M] to frown and snarl[if M is in School01], and [he of M] would be able to walk around if one of [his of M] ankles wasn't bound to the back of [his of M] reception desk with a strong metal chain[end if].";
+		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing [his of M] [if lady fetish is 2]bright pink chastity cage[otherwise]naked pussy[end if]. It's also been torn over one breast. [big his of M] armband, instead of showing a picture of [his of M] face, and the word 'STAFF', now just reads 'SPANK ME'. [big his of M] left hand is still raised with an adorable pointing finger, but the fury on [his of M] face tells you it's not hanging there of [his of M] own volition. In fact both of [his of M] arms and hands seem magically frozen in place. [big his of M] face and mouth have been left free to allow [him of M] to frown and snarl[if M is in School01], and [he of M] would be able to walk around if one of [his of M] ankles wasn't bound to the back of [his of M] reception desk with a strong metal chain[end if].";
 	otherwise if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in [his of M] hair and blue flowers on the hem of [his of M] shortened dress. [big he of M]'s got girly frills at the top of [his of M] blue socks and a blue choker around [his of M] neck. [big his of M] hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of [his of M] dress. It's so big that [he of M] has to keep [his of M] feet a metre apart just to be able to walk at all[if M is in School01] - not that [he of M] can go very far anyway, since one of [his of M] ankles is bound to the back of [his of M] reception desk with a strong metal chain[end if]. [big he of M] can't seem to stop rubbing the front and back of [his of M] diaper with [his of M] two mittened hands, with a vacant drooling facial expression. Whatever [his of M] mega-diaper is full of, it sloshes around rather noisily as [he of M] rubs it into [himself of M].";
 	otherwise:
@@ -36,7 +36,7 @@ To say MonsterComment of (M - receptionist):
 To set up (M - receptionist):
 	reset M;
 	now the monstersetup of M is 1;
-	if the player is a top donator, now M is in [School01] Dungeon10;
+	now M is in [School01] Dungeon10;
 	now M is guarding;
 	now the difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
@@ -98,9 +98,9 @@ To compute perception of (M - receptionist):
 					say "[big he of M] pushes you through the warp portal. Colours rush all around you, and then suddenly you're standing on a marble floor in front of a large oak desk!";
 					let R be the location of headmistress;
 					teleport to R;
-					now the location of the player is discovered;
 					now shocked-monsters is 0;
 					compute perception of headmistress;
+					increase the times-met of headmistress by 1;
 					display entire map;
 					now receptionist is not interested;
 					now the boredom of receptionist is 0;

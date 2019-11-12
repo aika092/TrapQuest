@@ -16,7 +16,7 @@ Check taking a plentiful accessory:
 	try wearing the noun instead.
 
 Report taking off a plentiful accessory:
-	say "After it's removed, the [BigNameDesc of the noun] suddenly feels like it weighs 100 tonnes! You are forced to drop it to the ground.";
+	say "After it's removed, [NameDesc of the noun] suddenly feels like it weighs 100 tonnes! You are forced to drop it to the ground.";
 	try dropping the noun.
 
 Before wearing a thing:
@@ -60,6 +60,7 @@ Check inserting something into:
 			if the noun is gag and the second noun is face, try wearing the noun instead;
 			if the noun is insertable, try plugging the second noun with the noun instead;
 			say "[variable custom style]I'm pretty sure I'm supposed to wear that, not stuff it inside of myself![if the bimbo of the player > 14]That does sound fun, though...[end if][roman type][line break]" instead;
+		if the noun is insertable and the second noun is fuckhole, try plugging the second noun with the noun instead;
 		say "[variable custom style]I'm pretty sure I'm not supposed to stuff that inside of myself![if the bimbo of the player > 14]That does sound fun, though...[end if][roman type][line break]" instead;
 	if the second noun is hips:
 		try plugging asshole with the noun instead; [The game registers "ass" as hips, the player probably meant their asshole]

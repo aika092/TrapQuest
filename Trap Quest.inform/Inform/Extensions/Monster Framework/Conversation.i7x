@@ -714,12 +714,12 @@ To compute talk option (N - 2) to (M - a monster):
 			now Q is a random number between (I - 1) and 6;
 			now the conversation-sequence of M is Q;
 		if M is not intelligent:
-			say "[MuteQuestionResponse of M]";
+			say MuteQuestionResponse of M;
 		otherwise if player is seductive and M is raunchy and a random number between 1 and 4 is 1:
 			now M is interested;
 			say "[BimboSeduce of M]";
 			say "[BimboSeduced of M]";
-		if M is uninterested:
+		otherwise if M is uninterested:
 			say UnGreeted of M;
 		otherwise if the questioned of M > the mild-annoyance threshold of M or M is unfriendly:
 			compute annoyance of M;
@@ -1123,7 +1123,7 @@ Chapter 5 Dismissal
 
 dismissalConvincingPower is a number that varies.
 
-Definition: a monster is dismissable: decide yes. [Some NPCs can't be told to leave even when they're friendly, like the shopkeeper and witch.]
+Definition: a monster is dismissable if it is unleashed or it is unconcerned. [Some NPCs can't be told to leave even when they're friendly, like the shopkeeper and witch.]
 
 
 To say Undismissable of (M - a monster):

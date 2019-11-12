@@ -129,7 +129,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				say "Your [printed name of C] [if the training-progress of C < 1]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.[line break]";
 				TitFuckAddictUp 1;
 				if lactation fetish is 1, increase the lactation rate of the player by 1;
-				arouse 100 + the sensitivity of breasts * 10;
+				arouse 100 + (the sensitivity of breasts * 10);
 				increase the training-progress of C by 1;
 		otherwise:
 			say "Your [printed name of C] [if the training-progress of C < 1]tightens and emits a short tone[otherwise]tightens and emits [the training-progress of C + 1] short tones[end if] as warm fluid begins seeping through the flexible lining of the bra, soaking into your skin. You hear another tone after a while, and look down [if the training-progress of C >= 3]to see the bra dropping off your chest completely![otherwise]to see the silhouette of the bra hasn't changed! Your breasts must be bigger![end if][line break]";
@@ -142,7 +142,57 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				destroy C;
 				ProgressUp senior robobellboy.
 
+acolyte-chestpiece is a cupless bra. The text-shortcut of acolyte-chestpiece is "actp". acolyte-chestpiece is metal. The soak-limit of acolyte-chestpiece is 0. Understand "gold", "golden", "acolyte", "acolyte's", "chestpiece" as acolyte-chestpiece. acolyte-chestpiece is unique. acolyte-chestpiece is top-exclusive. The printed name of acolyte-chestpiece is "[clothing-title-before]acolyte's chestpiece[clothing-title-after]". acolyte-chestpiece has a number called charge. The charge of acolyte-chestpiece is usually 0.
 
+Definition: acolyte-chestpiece is blessable: decide no.
+Definition: acolyte-chestpiece is demonic: decide yes.
+Definition: acolyte-chestpiece is yellow themed: decide yes.
+
+Figure of acolyte chestpiece is the file "Items/Clothes/Upper/Bras/cuplessbra2.jpg".
+
+To decide which figure-name is clothing-image of (C - acolyte-chestpiece):
+	decide on figure of acolyte chestpiece.
+
+To decide which object is the unique-upgrade-target of (C - acolyte-chestpiece):
+	decide on nothing.
+
+To say ShortDesc of (B - acolyte-chestpiece):
+	say "acolyte's chestpiece".
+
+To compute SelfExamineDesc of (B - a acolyte-chestpiece):
+	say " that hang freely out of your pointless gold cupless bra. ".
+
+To say ClothingDesc of (C - acolyte-chestpiece):
+	say "This curved set of gem-encrusted gold 'plates' [if C is worn]rides so low that it exposes your[otherwise]would ride so low that it would completely expose the wearer's[end if] nipples.[if the charge of C > 0][line break][end if][if the charge of C > 4]The metal is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The metal is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The metal is surprisingly cool to the touch.[end if][line break]You get the feeling that you would sink like a rock if you tried swimming in this.";
+
+To MagicSteal (C - acolyte-chestpiece):
+	if the charge of C < 5:
+		say "Your [printed name of C] absorbs the magical energy!";
+		increase the charge of C by 1;
+		if the charge of C is 5:
+			say "A surge of warmth passes through the metal, and you get the feeling it has reached maximum power.";
+	otherwise:
+		increase the magic-power of the player by 1.
+
+This is the worshipper tit slut rule:
+	if acolyte-chestpiece is worn, increase the desirability of breasts by 5.
+The worshipper tit slut rule is listed in the tit slut eligibility rules.
+
+[any fluid touching the breasts will cause arousal and fatigue gain.]
+
+To decide which number is the titfuck-addiction-influence of (C - acolyte-chestpiece):
+	decide on 1 - the magic-modifier of C.
+
+To decide which number is the delicateness-influence of (C - acolyte-chestpiece):
+	decide on 2 - the magic-modifier of C.
+
+To decide which number is the strength-influence of (C - acolyte-chestpiece):
+	if the charge of C < 5:
+		if the magic-modifier of C < 0, decide on the magic-modifier of C;
+		decide on 0;
+	otherwise:
+		if the magic-modifier of C > 0, decide on the magic-modifier of C + 1;
+		decide on 1.
 
 Unique Bras ends here.
 

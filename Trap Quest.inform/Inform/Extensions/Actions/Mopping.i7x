@@ -3,7 +3,7 @@ Mopping by Actions begins here.
 Mopping is an action applying to one thing. [TODO mopping with clothing]
 
 Rule for supplying a missing noun while mopping:
-	if there is a worn pink spraybottle and (diaper quest is 1 or (the player is not craving and the player is not thirsty)), now the noun is a random worn pink spraybottle;
+	if there is a worn pink spraybottle and (diaper quest is 1 or (the player is not craving semen and the player is not thirsty)), now the noun is a random worn pink spraybottle;
 	otherwise now the noun is face.
 
 Check mopping:
@@ -14,7 +14,7 @@ Check mopping:
 	if the noun is pink spraybottle:
 		if there is a dangerous monster in the location of the player, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 		if the noun is not worn by the player, say "But you're not holding the cloth..." instead;
-	if the noun is face and the player is not craving and the semen-puddle of the location of the player > 0 and the class of the player is not maid and the class of the player is not catgirl:
+	if the noun is face and the player is not craving semen and the semen-puddle of the location of the player > 0 and the class of the player is not maid and the class of the player is not catgirl:
 		if the semen taste addiction of the player < 12 and the player is not broken and the semen taste addiction of the player * the thirst of the player < 18 and the player is not extremely thirsty, say "[if the semen taste addiction of the player * 5 >= 18][variable custom style]I'd have to be more thirsty than this before I'd consider doing that...[roman type][line break][otherwise]You can't bring yourself to do something so disgusting.[end if]" instead;
 		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the semen taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [random monster in the location of the player]. [if the semen taste addiction of the player > 14][line break][second custom style]no matter how much you want to...[roman type][line break][end if]" instead;
 	otherwise if the noun is face and the urine-puddle of the location of the player > 0 and the class of the player is not maid and the class of the player is not catgirl:
@@ -118,7 +118,7 @@ Report Mopping:
 	if the noun is face:
 		progress quest of puddle-licking-quest;
 		if cat-ears is off-stage and cat-ears is actually summonable and a random number between 1 and 3 is 1:
-			say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player > 12][line break][second custom style]Teehee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][line break][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
+			say "[bold type]You feel a headband with cat ears materialise on your head.[line break][if the bimbo of the player > 12][second custom style]Teehee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
 			summon cat-ears;
 	now was-mopping is 1;
 	if the noun is spray pink spraybottle and total puddle <= 0:

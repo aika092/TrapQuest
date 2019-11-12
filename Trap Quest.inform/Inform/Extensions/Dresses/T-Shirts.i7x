@@ -192,7 +192,7 @@ To decide which number is the intelligence-influence of (C - an I wish these wer
 
 Part 6 - Birth Control is for Sissies T-shirt
 
-A birth control for sissies T-shirt is a kind of T-shirt. A birth control for sissies T-shirt is dense. The printed name of birth control for sissies T-shirt is usually "[clothing-title-before]birth control is for sissies T-shirt[clothing-title-after]". The text-shortcut of birth control for sissies T-shirt is "bcst". Understand "control is" as birth control for sissies T-shirt.
+A birth control for sissies T-shirt is a kind of T-shirt. A birth control for sissies T-shirt is dense. The printed name of birth control for sissies T-shirt is usually "[clothing-title-before]birth control is for sissies T-shirt[clothing-title-after]". The text-shortcut of birth control for sissies T-shirt is "bcss". Understand "control is" as birth control for sissies T-shirt.
 
 Figure of birth control for sissies T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt5.png".
 
@@ -220,36 +220,34 @@ To decide which number is the vaginal-sex-addiction-influence of (C - a birth co
 	decide on S.
 
 
-Part 7 - Oh to be a Sissy T-shirt
+Part 7 - Sissy T-shirt
 
-An oh to be a sissy T-shirt is a kind of T-shirt. The printed name of oh to be a sissy T-shirt is usually "[clothing-title-before]oh to be a sissy T-shirt[clothing-title-after]". The text-shortcut of oh to be a sissy T-shirt is "tbt".
+sissy-T-shirt is a T-shirt. The printed name of sissy-T-shirt is "[clothing-title-before]sissy T-shirt[clothing-title-after]". The text-shortcut of sissy-T-shirt is "tbt". Understand "Oh to be a sissy", "sissy", "T-shirt" as sissy-T-shirt.
 
-Figure of oh to be a sissy T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt6.png".
+Figure of sissy-T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt6.png".
 
-There is 1 oh to be a sissy T-shirt.
+To decide which figure-name is clothing-image of (C - sissy-T-shirt):
+	decide on figure of sissy-T-shirt.
 
-To decide which figure-name is clothing-image of (C - an oh to be a sissy T-shirt):
-	decide on figure of oh to be a sissy T-shirt.
+To say ClothingDesc of (C - sissy-T-shirt):
+	say "This unisex T-shirt has the words 'sissy' in large pink letters on the front, along with a picture of a girl in a flimsy frock.".
 
-To say ClothingDesc of (C - an oh to be a sissy T-shirt):
-	say "This unisex T-shirt has the words 'oh to be a sissy' in large pink letters on the front, along with a picture of a girl in a flimsy frock.".
-
-To say MediumDesc of (C - an oh to be a sissy T-shirt):
+To say MediumDesc of (C - sissy-T-shirt):
 	say "white sissy T-shirt".
 
-To decide which number is the initial outrage of (C - an oh to be a sissy T-shirt):
+To decide which number is the initial outrage of (C - sissy-T-shirt):
 	decide on 5.
 
-To decide which number is the delicateness-influence of (C - an oh to be a sissy T-shirt):
+To decide which number is the delicateness-influence of (C - sissy-T-shirt):
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
 
-Definition: an oh to be a sissy T-shirt is sissifying: decide yes.
-Definition: an oh to be a sissy T-shirt is white themed: decide yes.
-Definition: an oh to be a sissy T-shirt is fetish appropriate if diaper lover > 0 and the player is male.
+Definition: sissy-T-shirt is sissifying: decide yes.
+Definition: sissy-T-shirt is white themed: decide yes.
+Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is male and transGender is 0.
 
-To decide which object is the unique-upgrade-target of (C - an oh to be a sissy T-shirt):
+To decide which object is the unique-upgrade-target of (C - sissy-T-shirt):
 	decide on a random off-stage sissy faggot T-shirt.
 
 
@@ -348,6 +346,7 @@ To decide which number is the initial cringe of (C - a high maintenance T-shirt)
 
 Definition: a high maintenance T-shirt is dog themed: decide yes.
 Definition: a high maintenance T-shirt is white themed: decide yes.
+Definition: a high maintenance T-shirt is fetish appropriate if diaper lover > 0.
 
 Part 11 - Dear Santa T-shirt
 
@@ -439,7 +438,7 @@ To decide which number is the delicateness-influence of (C - a sissy faggot T-sh
 
 Definition: a sissy faggot T-shirt is sissifying: decide yes.
 Definition: a sissy faggot T-shirt is white themed: decide yes.
-Definition: a sissy faggot T-shirt is fetish appropriate if the player is male and diaper quest is 0.
+Definition: a sissy faggot T-shirt is fetish appropriate if the player is male and diaper quest is 0 and transGender is 0.
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.

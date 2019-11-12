@@ -8,9 +8,10 @@ To decide which figure-name is the examine-image of (C - hot-tub):
 To say ExamineDesc of (H - hot-tub):
 	say "This large tub bubbles away with warm, inviting water.".
 
-To compute showering hot-tub:
+To compute showering (H - hot-tub):
 	say "Your time in the water leaves you feeling completely refreshed!";
 	now the fatigue of the player is 0;
+	BodyHeal 10;
 	let M be a random alive male teacher;
 	if diaper quest is 1, now M is a random alive teacher;
 	if M is monster and the refactory-period of M < 0 and armband is worn and face is not actually occupied and M is not in the location of the player:
@@ -18,7 +19,7 @@ To compute showering hot-tub:
 			now M is in the location of the player;
 			now M is interested;
 			calm M;
-			say "Just as you're ready to get out, [NameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.[line break][speech style of M]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]It looks like you're going to have to decide whether or not to accept the rather blunt proposal...[line break]Do you suck [his of M] [manly-penis]? ";
+			say "Just as you're ready to get out, [NameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.[line break][speech style of M]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]It looks like you're going to have to decide whether or not to accept the rather blunt proposal...[line break]Do you suck [his of M] [DickDesc of M]? ";
 			if the player is bimbo consenting:
 				now presented-orifice is face;
 				now the chosen-orifice of M is presented-orifice;

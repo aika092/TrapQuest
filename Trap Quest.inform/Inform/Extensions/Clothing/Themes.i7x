@@ -109,7 +109,7 @@ The material matching rule is listed in the interesting theme sharing rules.
 
 Definition: an object is pregnancy related: decide no.
 A theme blocking rule:
-	if theme-target is pregnancy related and the number of worn pregnancy related wearthings > 1:
+	if theme-target is pregnancy related and the number of currently at least partially visible pregnancy related wearthings > 1:
 		add "pregnancy related" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not pregnancy related, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the pregnancy matching rule):
@@ -117,7 +117,7 @@ A theme sharing rule (this is the pregnancy matching rule):
 The pregnancy matching rule is listed in the interesting theme sharing rules.
 Definition: an object is ballet related: decide no.
 A theme blocking rule:
-	if theme-target is ballet related and the number of worn ballet related wearthings > 1:
+	if theme-target is ballet related and the number of currently at least partially visible ballet related wearthings > 1:
 		add "ballet related" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not ballet related, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the ballet matching rule):
@@ -125,7 +125,7 @@ A theme sharing rule (this is the ballet matching rule):
 The ballet matching rule is listed in the interesting theme sharing rules.
 Definition: an object is party themed: decide no.
 A theme blocking rule:
-	if theme-target is party themed and the number of worn party themed wearthings > 1:
+	if theme-target is party themed and the number of currently at least partially visible party themed wearthings > 1:
 		add "party themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not party themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the party matching rule):
@@ -134,7 +134,7 @@ The party matching rule is listed in the interesting theme sharing rules.
 
 Definition: an object is inflation themed: decide no.
 A theme blocking rule:
-	if theme-target is inflation themed and the number of worn inflation themed wearthings > 1:
+	if theme-target is inflation themed and the number of currently at least partially visible inflation themed wearthings > 1:
 		add "inflation themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not inflation themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the inflation matching rule):
@@ -143,7 +143,7 @@ The inflation matching rule is listed in the interesting theme sharing rules.
 Definition: an object is interracial themed: [Is it something that implies BBC love?]
 	decide no.
 A theme blocking rule:
-	if theme-target is interracial themed and the number of worn interracial themed wearthings > 1:
+	if theme-target is interracial themed and the number of currently at least partially visible interracial themed wearthings > 1:
 		add "interracial themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not interracial themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the interracial matching rule):
@@ -152,7 +152,7 @@ The interracial matching rule is listed in the interesting theme sharing rules.
 Definition: an object is royalty themed: [Is it something to do with royalty]
 	decide no.
 A theme blocking rule:
-	if theme-target is royalty themed and the number of worn royalty themed wearthings > 1:
+	if theme-target is royalty themed and the number of currently at least partially visible royalty themed wearthings > 1:
 		add "royalty themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not royalty themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the royalty matching rule):
@@ -161,7 +161,7 @@ The royalty matching rule is listed in the interesting theme sharing rules.
 Definition: an object is cow themed: [Is it something to do with cows]
 	decide no.
 A theme blocking rule:
-	if theme-target is cow themed and the number of worn cow themed wearthings > 1:
+	if theme-target is cow themed and the number of currently at least partially visible cow themed wearthings > 1:
 		add "cow themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not cow themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the cow matching rule):
@@ -170,7 +170,7 @@ The cow matching rule is listed in the interesting theme sharing rules.
 Definition: an object is cat themed: [Is it something to do with cats]
 	decide no.
 A theme blocking rule:
-	if theme-target is cat themed and the number of worn cat themed wearthings > 1:
+	if theme-target is cat themed and the number of currently at least partially visible cat themed wearthings > 1:
 		add "cat themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not cat themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the cat matching rule):
@@ -179,7 +179,7 @@ The cat matching rule is listed in the interesting theme sharing rules.
 Definition: an object is dog themed: [Is it something to do with dogs]
 	decide no.
 A theme blocking rule:
-	if theme-target is dog themed and the number of worn dog themed wearthings > 1:
+	if theme-target is dog themed and the number of currently at least partially visible dog themed wearthings > 1:
 		add "dog themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not dog themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the dog matching rule):
@@ -188,7 +188,7 @@ The dog matching rule is listed in the interesting theme sharing rules.
 Definition: an object is horse themed: [Is it something to do with horses]
 	decide no.
 A theme blocking rule:
-	if theme-target is horse themed and the number of worn horse themed wearthings > 1:
+	if theme-target is horse themed and the number of currently at least partially visible horse themed wearthings > 1:
 		add "horse themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not horse themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the horse matching rule):
@@ -197,7 +197,7 @@ The horse matching rule is listed in the interesting theme sharing rules.
 Definition: an object is elephant themed: [Is it something to do with elephants]
 	decide no.
 A theme blocking rule:
-	if theme-target is elephant themed and the number of worn elephant themed wearthings > 1:
+	if theme-target is elephant themed and the number of currently at least partially visible elephant themed wearthings > 1:
 		add "elephant themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not elephant themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the elephant matching rule):
@@ -206,7 +206,7 @@ The elephant matching rule is listed in the interesting theme sharing rules.
 Definition: an object is bird themed: [Is it something to do with birds]
 	decide no.
 A theme blocking rule:
-	if theme-target is bird themed and the number of worn bird themed wearthings > 1:
+	if theme-target is bird themed and the number of currently at least partially visible bird themed wearthings > 1:
 		add "bird themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not bird themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the bird matching rule):
@@ -215,7 +215,7 @@ The bird matching rule is listed in the interesting theme sharing rules.
 Definition: an object is butterfly themed: [Is it something to do with butterflies]
 	decide no.
 A theme blocking rule:
-	if theme-target is butterfly themed and the number of worn butterfly themed wearthings > 1:
+	if theme-target is butterfly themed and the number of currently at least partially visible butterfly themed wearthings > 1:
 		add "butterfly themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not butterfly themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the butterfly matching rule):
@@ -225,7 +225,7 @@ Definition: an object is oral sex themed: [Is it something that relates to oral 
 	if it is ringagged clothing, decide yes;
 	decide no.
 A theme blocking rule:
-	if theme-target is oral sex themed and the number of worn oral sex themed wearthings > 1:
+	if theme-target is oral sex themed and the number of currently at least partially visible oral sex themed wearthings > 1:
 		add "oral sex themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not oral sex themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the oral sex matching rule):
@@ -235,7 +235,7 @@ Definition: an object is anal sex themed: [Is it something that relates to anal 
 	if it is pussy protection, decide yes;
 	decide no.
 A theme blocking rule:
-	if theme-target is anal sex themed and the number of worn anal sex themed wearthings > 1:
+	if theme-target is anal sex themed and the number of currently at least partially visible anal sex themed wearthings > 1:
 		add "anal sex themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not anal sex themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the anal sex matching rule):
@@ -244,7 +244,7 @@ The anal sex matching rule is listed in the interesting theme sharing rules.
 Definition: an object is vagina themed: [Is it something that relates to vaginas?]
 	decide no.
 A theme blocking rule:
-	if theme-target is vagina themed and the number of worn vagina themed wearthings > 1:
+	if theme-target is vagina themed and the number of currently at least partially visible vagina themed wearthings > 1:
 		add "vagina themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not vagina themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the vagina matching rule):
@@ -253,7 +253,7 @@ The vagina matching rule is listed in the interesting theme sharing rules.
 Definition: an object is penis themed: [Is it something that relates to penises?]
 	decide no.
 A theme blocking rule:
-	if theme-target is penis themed and the number of worn penis themed wearthings > 1:
+	if theme-target is penis themed and the number of currently at least partially visible penis themed wearthings > 1:
 		add "[manly-penis] themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not penis themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the penis matching rule):
@@ -262,7 +262,7 @@ The penis matching rule is listed in the interesting theme sharing rules.
 Definition: an object is boob themed: [Is it something that relates to boobs?]
 	decide no.
 A theme blocking rule:
-	if theme-target is boob themed and the number of worn boob themed wearthings > 1:
+	if theme-target is boob themed and the number of currently at least partially visible boob themed wearthings > 1:
 		add "boobs themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not boob themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the boob matching rule):
@@ -271,7 +271,7 @@ The boob matching rule is listed in the interesting theme sharing rules.
 Definition: an object is semen themed: [Is it something that relates to semen?]
 	decide no.
 A theme blocking rule:
-	if theme-target is semen themed and the number of worn semen themed wearthings > 1:
+	if theme-target is semen themed and the number of currently at least partially visible semen themed wearthings > 1:
 		add "[semen] themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not semen themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the semen matching rule):
@@ -280,7 +280,7 @@ The semen matching rule is listed in the interesting theme sharing rules.
 Definition: an object is toilet themed: [Is it something that relates to watersports?]
 	decide no.
 A theme blocking rule:
-	if theme-target is toilet themed and the number of worn toilet themed wearthings > 1:
+	if theme-target is toilet themed and the number of currently at least partially visible toilet themed wearthings > 1:
 		add "toilet themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not toilet themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the toilet matching rule):
@@ -289,7 +289,7 @@ The toilet matching rule is listed in the interesting theme sharing rules.
 Definition: an object is impact play themed: [Is it something that relates to corporal discipline?]
 	decide no.
 A theme blocking rule:
-	if theme-target is impact play themed and the number of worn impact play themed wearthings > 1:
+	if theme-target is impact play themed and the number of currently at least partially visible impact play themed wearthings > 1:
 		add "impact play themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not impact play themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the impact play matching rule):
@@ -297,7 +297,7 @@ A theme sharing rule (this is the impact play matching rule):
 The impact play matching rule is listed in the interesting theme sharing rules.
 Definition: an object is christmas themed: decide no.
 A theme blocking rule:
-	if theme-target is christmas themed and the number of worn christmas themed wearthings > 1:
+	if theme-target is christmas themed and the number of currently at least partially visible christmas themed wearthings > 1:
 		add "christmas themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not christmas themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the christmas matching rule):
@@ -306,7 +306,7 @@ The christmas matching rule is listed in the interesting theme sharing rules.
 
 Definition: an object is pink themed: decide no.
 A theme blocking rule:
-	if theme-target is pink themed and the number of worn pink themed clothing > 2:
+	if theme-target is pink themed and the number of currently at least partially visible pink themed clothing > 2:
 		add "pink" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not pink themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the pink matching rule):
@@ -314,7 +314,7 @@ A theme sharing rule (this is the pink matching rule):
 The pink matching rule is listed in the colour sharing rules.
 Definition: an object is green themed: decide no.
 A theme blocking rule:
-	if theme-target is green themed and the number of worn green themed clothing > 2:
+	if theme-target is green themed and the number of currently at least partially visible green themed clothing > 2:
 		add "green" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not green themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the green matching rule):
@@ -322,7 +322,7 @@ A theme sharing rule (this is the green matching rule):
 The green matching rule is listed in the colour sharing rules.
 Definition: an object is black-and-white themed if it is white themed and it is black themed.
 A theme blocking rule:
-	if theme-target is black-and-white themed and the number of worn black-and-white themed clothing > 1:
+	if theme-target is black-and-white themed and the number of currently at least partially visible black-and-white themed clothing > 1:
 		add "black & white" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not black-and-white themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the black-and-white matching rule):
@@ -330,7 +330,7 @@ A theme sharing rule (this is the black-and-white matching rule):
 The black-and-white matching rule is listed in the colour sharing rules.
 Definition: an object is white themed: decide no.
 A theme blocking rule:
-	if theme-target is white themed and the number of worn white themed clothing > 3:
+	if theme-target is white themed and the number of currently at least partially visible white themed clothing > 3:
 		add "white" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not white themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the white matching rule):
@@ -338,7 +338,7 @@ A theme sharing rule (this is the white matching rule):
 The white matching rule is listed in the colour sharing rules.
 Definition: an object is black themed: decide no.
 A theme blocking rule:
-	if theme-target is black themed and the number of worn black themed clothing > 3:
+	if theme-target is black themed and the number of currently at least partially visible black themed clothing > 3:
 		add "black" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not black themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the black matching rule):
@@ -346,7 +346,7 @@ A theme sharing rule (this is the black matching rule):
 The black matching rule is listed in the colour sharing rules.
 Definition: an object is purple themed: decide no.
 A theme blocking rule:
-	if theme-target is purple themed and the number of worn purple themed clothing > 2:
+	if theme-target is purple themed and the number of currently at least partially visible purple themed clothing > 2:
 		add "purple" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not purple themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the purple matching rule):
@@ -354,7 +354,7 @@ A theme sharing rule (this is the purple matching rule):
 The purple matching rule is listed in the colour sharing rules.
 Definition: an object is blue themed: decide no.
 A theme blocking rule:
-	if theme-target is blue themed and the number of worn blue themed clothing > 2:
+	if theme-target is blue themed and the number of currently at least partially visible blue themed clothing > 2:
 		add "blue" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not blue themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the blue matching rule):
@@ -362,7 +362,7 @@ A theme sharing rule (this is the blue matching rule):
 The blue matching rule is listed in the colour sharing rules.
 Definition: an object is red themed: decide no.
 A theme blocking rule:
-	if theme-target is red themed and the number of worn red themed clothing > 2:
+	if theme-target is red themed and the number of currently at least partially visible red themed clothing > 2:
 		add "red" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not red themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the red matching rule):
@@ -370,7 +370,7 @@ A theme sharing rule (this is the red matching rule):
 The red matching rule is listed in the colour sharing rules.
 Definition: an object is orange themed: decide no.
 A theme blocking rule:
-	if theme-target is orange themed and the number of worn orange themed clothing > 1:
+	if theme-target is orange themed and the number of currently at least partially visible orange themed clothing > 1:
 		add "orange" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not orange themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the orange matching rule):
@@ -378,7 +378,7 @@ A theme sharing rule (this is the orange matching rule):
 The orange matching rule is listed in the colour sharing rules.
 Definition: an object is brown themed: decide no.
 A theme blocking rule:
-	if theme-target is brown themed and the number of worn brown themed clothing > 2:
+	if theme-target is brown themed and the number of currently at least partially visible brown themed clothing > 2:
 		add "brown" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not brown themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the brown matching rule):
@@ -387,7 +387,7 @@ The brown matching rule is listed in the colour sharing rules.
 
 Definition: an object is bow themed: decide no.
 A theme blocking rule:
-	if theme-target is bow themed and the number of worn bow themed wearthings > 2: [Needs 3 because it's quite common]
+	if theme-target is bow themed and the number of currently at least partially visible bow themed wearthings > 2: [Needs 3 because it's quite common]
 		add "bow ribboned" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not bow themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the bow matching rule):
@@ -395,7 +395,7 @@ A theme sharing rule (this is the bow matching rule):
 The bow matching rule is listed in the interesting theme sharing rules.
 Definition: an object is pin themed: decide no. [Mainly safety pins]
 A theme blocking rule:
-	if theme-target is pin themed and the number of worn pin themed wearthings > 1:
+	if theme-target is pin themed and the number of currently at least partially visible pin themed wearthings > 1:
 		add "safety pin themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not pin themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the pin matching rule):
@@ -403,7 +403,7 @@ A theme sharing rule (this is the pin matching rule):
 The pin matching rule is listed in the interesting theme sharing rules.
 Definition: an object is star themed: decide no.
 A theme blocking rule:
-	if theme-target is star themed and the number of worn star themed wearthings > 1:
+	if theme-target is star themed and the number of currently at least partially visible star themed wearthings > 1:
 		add "star themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not star themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the star matching rule):
@@ -411,7 +411,7 @@ A theme sharing rule (this is the star matching rule):
 The star matching rule is listed in the interesting theme sharing rules.
 Definition: an object is dinosaur themed: decide no. [Is it something to do with dinosaurs]
 A theme blocking rule:
-	if theme-target is dinosaur themed and the number of worn dinosaur themed wearthings > 1:
+	if theme-target is dinosaur themed and the number of currently at least partially visible dinosaur themed wearthings > 1:
 		add "dinosaur themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not dinosaur themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the dinosaur matching rule):
@@ -421,13 +421,13 @@ The dinosaur matching rule is listed in the interesting theme sharing rules.
 Definition: an object is babywear: decide no. [Is it something that an NPC might put on a player to make them look more like a baby?]
 Definition: an object is baby themed if it is babywear. [Is it something that only an adult baby fetishist would have?]
 A theme blocking rule:
-	if diaper quest is 0 and theme-target is baby themed and the number of worn baby themed wearthings > 2:
+	if diaper quest is 0 and theme-target is baby themed and the number of currently at least partially visible baby themed wearthings > 2:
 		add "baby themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not baby themed, increase interesting-themes-shared by 1.
 
 Definition: an object is cult garb: decide no.
 A theme blocking rule:
-	if theme-target is cult garb and the number of worn cult garb wearthings > 1:
+	if theme-target is cult garb and the number of currently at least partially visible cult garb wearthings > 1:
 		add "cultist themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not cult garb, increase interesting-themes-shared by 1.
 A theme sharing rule:
@@ -442,7 +442,7 @@ Definition: an object is bear themed: [Is it something to do with bears]
 	decide no.
 
 A theme blocking rule:
-	if theme-target is bear themed and the number of worn bear themed wearthings > 1:
+	if theme-target is bear themed and the number of currently at least partially visible bear themed wearthings > 1:
 		add "bear themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not bear themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the bear matching rule):
@@ -473,7 +473,7 @@ Definition: an object is heart themed: [Is it something to do with hearts]
 	decide no.
 
 A theme blocking rule:
-	if theme-target is heart themed and the number of worn heart themed wearthings > 1:
+	if theme-target is heart themed and the number of currently at least partially visible heart themed wearthings > 1:
 		add "heart themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not heart themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the heart matching rule):
@@ -511,7 +511,7 @@ Definition: an object is leopard themed: [Is it something to do with leopards, o
 	decide no.
 
 A theme blocking rule:
-	if theme-target is leopard themed and the number of worn leopard themed wearthings > 1:
+	if theme-target is leopard themed and the number of currently at least partially visible leopard themed wearthings > 1:
 		add "leopard print" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not leopard themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the leopard matching rule):
@@ -543,7 +543,7 @@ Definition: an object is flower themed: [Is it something to do with flowers]
 	decide no.
 
 A theme blocking rule:
-	if theme-target is flower themed and the number of worn flower themed wearthings > 1:
+	if theme-target is flower themed and the number of currently at least partially visible flower themed wearthings > 1:
 		add "floral themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not flower themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the flower matching rule):
@@ -573,7 +573,7 @@ Section - Gem
 Definition: an object is gem themed: decide no.
 
 A theme blocking rule:
-	if theme-target is gem themed and the number of worn gem themed wearthings > 1:
+	if theme-target is gem themed and the number of currently at least partially visible gem themed wearthings > 1:
 		add "sparkly" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not gem themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the gem matching rule):
@@ -604,7 +604,7 @@ Definition: an object is tartan themed: [Has it got a tartan pattern]
 	decide no.
 
 A theme blocking rule:
-	if theme-target is tartan themed and the number of worn tartan themed clothing > 1:
+	if theme-target is tartan themed and the number of currently at least partially visible tartan themed clothing > 1:
 		add "tartan" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not tartan themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the tartan matching rule):
@@ -633,7 +633,7 @@ Definition: an object is exercise themed: [Is it something that one would wear t
 	decide no.
 
 A theme blocking rule:
-	if theme-target is exercise themed and the number of worn exercise themed wearthings > 1:
+	if theme-target is exercise themed and the number of currently at least partially visible exercise themed wearthings > 1:
 		add "exercise themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not exercise themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the exercise matching rule):
@@ -665,7 +665,7 @@ Section - Yellow
 Definition: an object is yellow themed if it is leopard themed.
 
 A theme blocking rule:
-	if theme-target is yellow themed and the number of worn yellow themed wearthings > 2:
+	if theme-target is yellow themed and the number of currently at least partially visible yellow themed wearthings > 2:
 		add "yellow" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not yellow themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the yellow matching rule):
@@ -697,7 +697,7 @@ Definition: an object is grey themed: [Is it significantly grey?]
 	decide no.
 
 A theme blocking rule:
-	if theme-target is grey themed and the number of worn grey themed wearthings > 1:
+	if theme-target is grey themed and the number of currently at least partially visible grey themed wearthings > 2:
 		add "silver & grey" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not grey themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the grey matching rule):
@@ -798,7 +798,7 @@ Definition: an object is food themed: [Is it something that has food in the patt
 	decide no.
 
 A theme blocking rule:
-	if theme-target is food themed and the number of worn food themed wearthings > 1:
+	if theme-target is food themed and the number of currently at least partially visible food themed wearthings > 1:
 		add "food themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not food themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the food matching rule):
@@ -826,7 +826,7 @@ Definition: an object is drink themed: [Is it something that has a drink in the 
 	decide no.
 
 A theme blocking rule:
-	if theme-target is drink themed and the number of worn drink themed wearthings > 1:
+	if theme-target is drink themed and the number of currently at least partially visible drink themed wearthings > 1:
 		add "drink themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not drink themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the drink matching rule):
@@ -843,7 +843,7 @@ Definition: an object is swimming themed: [Items flagged as swimwear help with a
 	decide no.
 
 A theme blocking rule:
-	if theme-target is swimming themed and the number of worn swimming themed wearthings > 1:
+	if theme-target is swimming themed and the number of currently at least partially visible swimming themed wearthings > 1:
 		add "swimwear" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not swimming themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the swimming matching rule):
@@ -864,7 +864,7 @@ Definition: an object is whore themed: [Is it something that relates to whores o
 	decide no.
 
 A theme blocking rule:
-	if theme-target is whore themed and the number of worn whore themed wearthings > 1:
+	if theme-target is whore themed and the number of currently at least partially visible whore themed wearthings > 1:
 		add "whoring themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not whore themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the whore matching rule):
@@ -893,7 +893,7 @@ Section - Magic Themed
 Definition: an object is magic themed: [Is it something that implies magic?]
 	decide no.
 A theme blocking rule:
-	if theme-target is magic themed and the number of worn magic themed wearthings > 1:
+	if theme-target is magic themed and the number of currently at least partially visible magic themed wearthings > 1:
 		add "magic themed" to interesting-themes-shared-list;
 		if the upgrade-target of theme-target is not magic themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the magic matching rule):

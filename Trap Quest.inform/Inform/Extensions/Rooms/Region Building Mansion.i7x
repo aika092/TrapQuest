@@ -47,17 +47,23 @@ To Set Up The Mansion:
 	repeat with M running through alive monsters in the mansion:
 		if the location of M is not placed, now M is in a random placed haunted room;
 	let N be 0;
+	let Nattempts be 0;
 	while N < 4:
-		let R be a random placed room in the mansion;
+		increase Nattempts by 1;
+		let R be a random placed haunted room;
 		if R is not garlic and R is not Mansion16 and R is not Mansion01:
 			now R is garlic;
 			increase N by 1;
+		if Nattempts > 100:
+			say "BUG: Unable to make enough rooms 'garlic'. Please report this bug along with a save file.";
+			now N is 4;
 	repeat with P running through pedestals:
 		now P is in Mansion28;
 		add treasure to P;
 	now a random master bed is in Mansion16;
 	lock pedestals;
-	if debugmode is 0 and loading scenes is 1, clear the screen.
+	if debugmode is 0 and loading scenes is 1, clear the screen;
+	progress quest of new-region-quest.
 
 [!<ScrambleMansion>+
 

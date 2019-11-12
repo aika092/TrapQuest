@@ -120,24 +120,27 @@ To compute class outfit of (H - a pink scrunchie):
 	if C is nothing or there is a worn pigtail-scrunchie:
 		if blue-rubber-cheerleader-outfit is off-stage, now C is blue-rubber-cheerleader-outfit;
 		if C is nothing, now C is a random off-stage rubber cheerleader outfit;
-	let P be a random pom-pom;
+	let P be a random off-stage pom-pom;
 	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0 and the number of worn cheerleader outfit is 0 and the number of worn pink rubber dress is 0):
 		if cheerleader-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]A [ShortDesc of C] appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
-		summon C;
-		now the raw-magic-modifier of C is 0;
+		summon C uncursed;
 		now cheerleader-summoned is 1;
 		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
-	otherwise if P is actually summonable:
-		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type]";
-		summon P cursed;
+	otherwise if P is actually summonable and cheerleader-summoned < 2:
+		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type][line break]";
+		summon P cursed with quest;
 		now the raw-magic-modifier of P is 0;
+		now cheerleader-summoned is 2;
 		if the player is not ass protected, now the raw-magic-modifier of P is 2.
 
 
@@ -227,9 +230,8 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with SK running through worn skirted clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
-			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt? I think I know where this is going...[roman type][line break]";
-			summon T;
-			now the raw-magic-modifier of T is 0;
+			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt?  I think I know where this is going...[roman type][line break]";
+			summon T uncursed;
 			if diaper quest is 0, now T is temptation;
 			now schoolgirl-summoned is 1;
 		if there is a worn tartan miniskirt and (O is actually summonable or (schoolgirl-summoned < 2 and O is tube top)): [if the miniskirt spawned let's try and spawn the tube top as well]
@@ -238,19 +240,17 @@ To compute class outfit of (H - a blue scrunchie):
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
 			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Tee hee! I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
-			summon O;
-			now the raw-magic-modifier of O is 0;
+			summon O uncursed;
 			now O is confidence;
 			if tentacle-quest is appropriate, now the quest of O is tentacle-quest;
 			now schoolgirl-summoned is 2;
 		otherwise if S is actually summonable and there is a worn tartan tube top and there is a worn tartan miniskirt and there is a worn necktie:
-			summon S;
+			summon S uncursed;
 			now the raw-magic-modifier of S is 1;
 			now S is confidence;
 			say "[bold type]Fishnet stockings appear around your [ShortDesc of thighs]![roman type][line break]";
 		otherwise if N is actually summonable and there is a worn tartan tube top and there is a worn tartan miniskirt:
-			summon N;
-			now the raw-magic-modifier of N is 0;
+			summon N uncursed;
 			say "[bold type]A small tartan necktie shimmers into existence around your neck![line break][variable custom style]This must complete the outfit.[roman type][line break]";
 	otherwise:
 		let S be a random off-stage frilly stockings;
@@ -259,7 +259,10 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with O running through worn dresses:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
-				repeat with O running through worn skirts:
+				repeat with O running through worn exclusive corsets:
+					say "Your [O] [wardrobeVanishes of O]!";
+					now O is in pink wardrobe;
+				repeat with O running through worn skirted clothing:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 			now schoolgirl-summoned is 2;

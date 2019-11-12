@@ -35,7 +35,8 @@ To compute rest ending of (F - a guest bed):
 To compute furniture resting on (F - a guest bed):
 	[now song is 0]
 	if clairvoyant acolyte is in the location of the player:
-		say "[BigNameDesc of clairvoyant acolyte] sings smoothly as you pull up the covers, sliding off the bed as drowsiness takes a surprisingly quick hold on your body. Your arms go limp and droop off the side of the bed as the [man of clairvoyant acolyte] sways around the room, your chest rising and falling with the lilting timbre of [his of clairvoyant acolyte] voice. Hints of arousal creep into [his of clairvoyant acolyte] tone as [he of clairvoyant acolyte] gently lifts your arm back onto the bed and firmly tucks you in.";
+		let M be clairvoyant acolyte;
+		say "[BigNameDesc of clairvoyant acolyte] sings smoothly as you pull up the covers, sliding off the bed as drowsiness takes a surprisingly quick hold on your body. Your arms go limp and droop off the side of the bed as the [man of M] sways around the room, your chest rising and falling with the lilting timbre of [his of M] voice. Hints of arousal creep into [his of M] tone as [he of M] gently lifts your arm back onto the bed and firmly tucks you in.";
 		now F is tended;
 	otherwise:
 		say "You slip into the bed and pull up the covers.";

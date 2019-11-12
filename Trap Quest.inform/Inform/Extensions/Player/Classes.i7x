@@ -27,6 +27,19 @@ The player class rules is a rulebook.
 
 
 
+[!<TheTrickOrTreaterClassRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the trick-or-treater class rule:
+	if there is worn halloween headgear:
+		now player-class is "trick or treater";
+		rule succeeds.
+The trick-or-treater class rule is listed in the player class rules.
+trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
+
+
 [!<ThePrincessClassRule>+
 
 REQUIRES COMMENTING
@@ -219,7 +232,7 @@ Thanks to the cow slave multi-class, we have multiple different texts that need 
 
 +!]
 Definition: a text (called T) is royal slave:
-	if T is "royal slave" or T is "cow slave", decide yes;
+	if T is "royal slave" or T is "cow slave" or T is "demon slave", decide yes;
 	decide no.
 
 
@@ -598,8 +611,6 @@ A time based rule (this is the compute whispers rule):
 				Dexup 1;
 			now whisper-type is 0.
 
-
-
 [!<TheVixenClassRule>+
 
 REQUIRES COMMENTING
@@ -693,7 +704,6 @@ Definition: a text (called T) is hotel employment:
 
 Definition: a text (called T) is trained hooker:
 	if the training-progress of senior robobellboy is -1, decide yes.
-
 
 [!<TheCumdumpsterClassRule>+
 
@@ -879,10 +889,25 @@ The virgin magical girl class rule is listed first in the player class rules.
 This is the barbarian class rule:
 	if rugged-headband is worn:
 		if heavy-club is worn:
-			now player-class is "barbarian";
+			now the player-class is "barbarian";
 			rule succeeds.
 The barbarian class rule is listed first in the player class rules.
 barbarian is a text that varies. barbarian is "barbarian".
+
+This is the worshipper class rule:
+	if gold-tiara is worn:
+		if there is a worn demonic-milking basque:
+			now the player-class is "demon slave";
+			rule succeeds;
+		otherwise if the number of worn demonic wearthings > 1:
+			now the player-class is "demon worshipper";
+			rule succeeds.
+The worshipper class rule is listed first in the player class rules.
+
+Definition: a text (called T) is worshipper:
+	if T is "demon slave" or T is "demon worshipper" or T is "demon concubine", decide yes;
+	decide no.
+
 
 [!<TheLivingSexDollClassRule>+
 
@@ -905,6 +930,7 @@ Goes last because it is purely cosmetic and doesn't necessarily use headgear so 
 This is the adult baby class rule:
 	if adult-baby-class is 1, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
+
 
 [!<TheAdventurerClassRule>+
 

@@ -151,8 +151,10 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the distance of (R - a room):
-	now RouteFinder is the location of the player;
-	let Z be RouteFinder;
+	decide on the distance of R from the location of the player;
+
+To decide which number is the distance of (R - a room) from (Z - a room):
+	now RouteFinder is Z;
 	let X be 0;
 	while RouteFinder is not R:
 		now Z is RouteFinder;
@@ -248,7 +250,7 @@ Definition: A room is mansionplaced if it is placed and it is in the Mansion.
 REQUIRES COMMENTING
 
 +!]
-Definition: A room is schoolplaced if it is placed and it is in the School.
+Definition: A room is schoolplaced if it is placed and it is not predicament room and it is in the School.
 
 [!<LabyrinthRoom>@<IsUnshaped>+
 

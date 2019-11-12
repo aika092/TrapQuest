@@ -197,7 +197,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, and stumbling. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 [Clothing can be blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, or stumbling (this is the magic-type property). Clothing is usually blandness.]
 A thing can be unowned, store, museum-store, stolen (this is the ownership property). A thing is usually unowned.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
@@ -253,9 +253,7 @@ This is the subdued immobility rule:
 	if the player is subdued, rule fails.
 The subdued immobility rule is listed in the immobility rules.
 Definition: a clothing is nudism-enabling: decide no. [If the player is wearing this, they are wearing something that counts as clothing!]
-Definition: a clothing (called C) is nudism-disabling:
-	if C is nudism-enabling, decide no;
-	decide yes.
+Definition: a clothing is nudism-disabling if it is not nudism-enabling.
 Definition: an accessory is nudism-enabling: decide yes.
 Definition: a sex toy is nudism-enabling: decide yes.
 Definition: a piercing is nudism-enabling: decide yes.

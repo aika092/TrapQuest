@@ -1,6 +1,6 @@
 Spiked Tiara by Headgear begins here.
 
-spiked-tiara is a headgear. spiked-tiara is biological. spiked-tiara is blondeness-negative. spiked-tiara is brightness-positive. spiked-tiara is redness-negative. spiked-tiara is sex-addiction-influencing.
+spiked-tiara is a headgear. spiked-tiara is biological. spiked-tiara is blondeness-negative. spiked-tiara is brightness-positive. spiked-tiara is redness-negative. spiked-tiara is sex-addiction-influencing. Understand "spiked", "tiara" as spiked-tiara.
 
 Definition: spiked-tiara is tongued: decide yes.
 
@@ -63,12 +63,20 @@ A time based rule (this is the tongued clothing licking rule):
 			if refactoryperiod > 0 and tonguesActive < 0, now tonguesActive is -30; [As soon as refactory period is over, tongues will start]
 		otherwise:
 			increase the rounds-horny of no-orgasm-quest by 1;
-		if tonguesActive <= -30 and refactoryperiod <= 0:
+		if tonguesActive <= -30 and refactoryperiod <= 0: [It's been 30 rounds since they were licking, so they start again]
 			say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] seem disappointed that you're [one of]not[or]no longer[stopping] aroused, and begin to salivate and lick you wherever they can reach![roman type][line break]";
 			now tonguesActive is a random number between 15 and 40;
 			update appearance level;
 			force clothing-focus redraw; [This forces the clothing window to redraw]
-			arouse 25 * N;
+			repeat with TC running through worn tongued clothing:
+				if TC is bottom level protection:
+					stimulate vagina from TC;
+				otherwise if TC is bottom level lactation cover:
+					stimulate breasts from TC;
+				otherwise if TC is crotch covering:
+					stimulate thighs from TC;
+				otherwise:
+					stimulate arms from TC;
 		otherwise if tonguesActive >= 0:
 			if tonguesActive is 0:
 				say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] [if the player is horny]seem satisfied with how horny they've made you, and [end if]return to a passive state.[roman type][line break]";
@@ -101,7 +109,7 @@ To compute tongue clothing:
 			now tonguesActive is a random number between 15 and 40;
 			update appearance level;
 			force clothing-focus redraw; [This forces the clothing window to redraw]
-			arouse 25 * N;
+			stimulate arms from C;
 		if spiked-tiara is off-stage and tonguesActive > 0 and spiked-tiara is actually summonable:
 			say "[bold type]A [MediumDesc of spiked-tiara] appears on your forehead! You feel its tongues immediately begin to explore your head, and inside your ears...[roman type][line break]";
 			summon spiked-tiara cursed.

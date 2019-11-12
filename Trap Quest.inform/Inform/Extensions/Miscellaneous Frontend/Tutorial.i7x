@@ -16,15 +16,11 @@ This is the tutorial start rule:
 	follow the quit rule.
 
 
-Table of DarkModeAttempt
-title	subtable	description	toggle
-"I'm a new player, please show me the ropes (and chains)!"	--	--	quit rule
-"I'm not a noob, my preferences file just got moved or deleted."	--	--	skip tutorial rule
-
 To say TutorialCapsule:
 	if tutorial is 1:
+		if the player is female, now the flesh volume of breasts is 6;
 		say "[paragraph break][newbie style]Hello and welcome to [if diaper quest is 1]Diaper[otherwise]Trap[end if] Quest! In this tutorial (and in the main game as long as you keep newbie tips enabled) you'll get some instructions, direction and advice from these green text paragraphs. Please pay good attention whenever you see one, since without this information you will probably get confused, frustrated and abandon the game, and nobody wants that.[paragraph break][if inline hyperlinks < 2]You have disabled in-line hyperlinks which is going to make your life much more miserable. It is strongly recommended to type 'settings' and navigate the menus to change this immediately. However if you really really hate the hyperlinks then you can use the keyboard to enter all commands so it is possible to play this way. But some verbs may not be obvious to you![otherwise]The game uses hyperlinks for your convenience, to try and help you understand what commands are available to you at any time. It is very important to understand both the power and the limits of the hyperlinks. The power is that you can examine and usually interact with any item using clicks. But these intelligent options are not always perfect - you can miss out on some options if you aren't aware that [bold type]you can use the keyboard to manually enter any commands. [newbie style]For example, maybe you want to examine a specific part of your body, such as your face. Rather than slow down the interpreter by providing a hyperlink for this every single round, we're leaving it up to you to realise that you can type 'examine face' (or even 'x face') at any time.[end if][if inline hyperlinks < 2]You can always use the keyboard to manually enter commands. For example, maybe you want to examine a specific part of your body, such as your face. So you can type 'examine face' (or even 'x face') at any time.[end if][line break]Note that most commands also have a shortcut/abbreviated form - like 'w' to go west, or 'x' for eXamine.[line break]";
-		say "Anyway, in this room there is only one option! You are stuck in the capsule with nothing to interact with except for the big red button. You can examine it by [if inline hyperlinks < 2]typing 'x button'[otherwise]clicking on the main body of its hyperlink[end if] and then when you are ready to move on, you can push the button itself by [if inline hyperlinks < 2]typing 'push button'[otherwise]clicking on the 'push' option next to its name[end if]. Sometimes there might be too much text (and/or images) output to the main text window at one time, at which point you'll get a red [input-style][bracket]More[close bracket][newbie style] prompt at the bottom of the screen, and you'll need to press the [bold type]enter key[newbie style] on your keyboard to see the rest. And if at any time too much text has scrolled past and you need to remind yourself what is in the room[if inline hyperlinks >= 2] and regain access to the relevant hyperlinks[end if], just [if inline hyperlinks < 2]type[otherwise]click on[end if] 'look'. And if you're using Windows Git as recommended, you can always press [bold type]CTRL+L[newbie style] to scroll back through the entire transcript history.[roman type][line break]".
+		say "Anyway, in this room there is only one option! You are stuck in the capsule with nothing to interact with except for the big red button. You can examine it by [if inline hyperlinks < 2]typing 'x button'[otherwise]clicking on the main body of its hyperlink[end if] and then when you are ready to move on, you can push the button itself by [if inline hyperlinks < 2]typing 'push button'[otherwise]clicking on the 'push' option next to its name[end if]. Sometimes there might be too much text (and/or images) output to the main text window at one time, at which point you'll get a red [input-style][bracket]More[close bracket][newbie style] prompt at the bottom of the screen, and you'll need to [bold type]press any keyboard key[newbie style] on your keyboard to see the rest. And if at any time too much text has scrolled past and you need to remind yourself what is in the room[if inline hyperlinks >= 2] and regain access to the relevant hyperlinks[end if], just [if inline hyperlinks < 2]type[otherwise]click on[end if] 'look'. And if you're using Windows Git as recommended, you can always press [bold type]CTRL+L[newbie style] to scroll back through the entire transcript history.[roman type][line break]".
 
 Check going west when tutorial is 1:
 	say "There's no going back in this tutorial!" instead.
@@ -70,10 +66,10 @@ Check standing when tutorial is 1:
 	if the player is prone and the number of interested monsters is 0:
 		say "Please only make change to your stance (kneel, or stand) when asked to!" instead.
 
-Tutorial05 is an introductory room. "This room has some kind of stone altar in the middle of it. [newbie style]Nice, we're now alone now, so the player will be willing to relieve themselves. So the first thing you should do is that, with 'expel'![roman type][line break]". Tutorial05 is south of Tutorial04. The printed name of Tutorial05 is "Altar room". The shape of Tutorial05 is L10/0-0-1-0-0-0. The grid position of Tutorial05 is <10,14,11>.
+Tutorial05 is an introductory room. "This room has some kind of stone altar in the middle of it. [newbie style]Nice, we're now alone now, so the player will be willing to relieve themselves. So the first thing you should do is that, with 'expel'[if diaper quest is 1]! Don't worry, it's just clean water, nothing more gross.[otherwise]![end if][roman type][line break]". Tutorial05 is south of Tutorial04. The printed name of Tutorial05 is "Altar room". The shape of Tutorial05 is L10/0-0-1-0-0-0. The grid position of Tutorial05 is <10,14,11>.
 
 Check going east when the player is in Tutorial05:
-	if there is an in-play uncursed grey string monokini, say "Make sure you've followed all the instructions before moving on." instead.
+	if there is an in-play uncursed grey string monokini or there is an in-play uncursed teddybear playsuit or the body soreness of the player > 0, say "Make sure you've followed all the instructions before moving on." instead.
 
 Tutorial06 is an introductory room. "This room has no other exit. It must be the final room! [newbie style]This room has a 'candy machine' in it. These are important rooms because they provide you with awesome edibles. These edibles [if diaper quest is 1]usually have great effects, but if you enable messing, it will contribute to how quickly nature calls[otherwise]not only stave off hunger but usually have great effects[end if]. Let's get one now.[roman type][line break]". Tutorial06 is east of Tutorial05. The printed name of Tutorial06 is "Final Room". The shape of Tutorial06 is L10/0-0-0-1-0-0. The grid position of Tutorial06 is <10,15,11>.
 
@@ -187,6 +183,11 @@ Check praying something with when the player is in Tutorial05:
 	if the noun is not heels and there is worn cursed heels, say "You should use the altar to uncurse your heels instead." instead;
 	if (the noun is not swimsuit and the noun is not baby-dress) and the number of worn cursed heels is 0, say "You should use the altar on your [if diaper quest is 1]outfit[otherwise]swimsuit[end if]." instead.
 
+Check entering furniture when the player is in Tutorial05:
+	if there is worn cursed heels, say "You should use the altar to uncurse your heels first." instead;
+	now the body soreness of the player is 0;
+	say "You rest on the kneeling stool.[paragraph break]Time passes.[paragraph break]Time passes.[paragraph break]Time passes.[paragraph break]Time passes.[paragraph break]You feel fully rested![paragraph break][newbie style]Awesome, that was straightforward, wasn't it! It can be really difficult to play this game if you don't take good notice of where the furniture is that can allow you to heal up, because otherwise you'll spend most of the game on your knees, unable to fight or flee. Anyway, now that you've healed up, and tested out the altar a couple of times, let's move to the east.[roman type][line break]" instead.
+
 Report praying something with when the player is in Tutorial05:
 	if the noun is heels:
 		say "[newbie style]Great! [if the noun is worn]You should remove the heels too, since they're still a -1 item so are still reducing your intelligence by 1. [end if]Next let's see what happens if you try to use the altar again straight away, when it's not glowing. Place your [if diaper quest is 1]outfit[otherwise]swimsuit[end if] on the altar.[roman type][line break]" instead.
@@ -216,6 +217,7 @@ To start the tutorial:
 	now T is click;
 	deploy T in Tutorial04;
 	now the dungeon altar is in Tutorial05;
+	now a random kneeling stool is in Tutorial05;
 	now a random candy machine is in Tutorial06;
 	now the player is in Tutorial01;
 	set up debug stuff;

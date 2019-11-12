@@ -43,7 +43,8 @@ To Set Up The Woods:
 	follow the set up woods traps rules;
 	repeat with M running through alive monsters in the woods:
 		if the location of M is not placed, now M is in a random placed dodgy room;
-	if debugmode is 0 and loading scenes is 1, clear the screen.
+	if debugmode is 0 and loading scenes is 1, clear the screen;
+	progress quest of new-region-quest.
 
 [!<TheSpawnInitialWoodsBucketsRule>+
 

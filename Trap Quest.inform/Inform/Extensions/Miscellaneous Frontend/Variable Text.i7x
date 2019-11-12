@@ -62,7 +62,7 @@ If the player is impressed with the NPC (unknown gender)
 
 +!]
 To say stud/master/mistress of (M - a monster):
-	if M is female or lady fetish > 0, say mistress;
+	if M is presenting as female, say mistress;
 	otherwise say stud.
 
 [!<SayWormOfMonster>+
@@ -115,6 +115,18 @@ REQUIRES COMMENTING
 +!]
 To say slut:
 	say "[one of]slut[or]skank[or]slag[as decreasingly likely outcomes]".
+
+To say sissy:
+	if transGender is 0 and the player is male, say "sissy";
+	otherwise say "[if diaper quest is 0]slutty[otherwise]girly[end if]".
+
+To say sissy slut:
+	if transGender is 0 and the player is male:
+		say "sissy[one of][if diaper quest is 0] slut[end if][or][as decreasingly likely outcomes]";
+	otherwise if diaper quest is 1:
+		say "babygirl";
+	otherwise:
+		say slut.
 
 [!<SayBitch>+
 
@@ -258,7 +270,7 @@ REQUIRES COMMENTING
 
 +!]
 To say asshole:
-	if the player is male:
+	if the player is male and transGender is 0:
 		if the raw intelligence of the player < 5 and diaper lover >= 1:
 			say "[one of]bum[or]butt[or]no-no[or]muffin[as decreasingly likely outcomes]";
 		otherwise if the bimbo of the player < 8 or diaper quest is 1:
@@ -357,7 +369,7 @@ To say milk:
 	if the class of the player is santa's little helper:
 		say "brandy butter";
 	otherwise:
-		say "[if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
+		say "[if a random number between 10 and 20 < the milk taste addiction of the player][one of]tasty[or]yummy[purely at random] [end if][if diaper lover >= 1][one of]milk[or]breast milk[or]momma's milk[or]boob juice[as decreasingly likely outcomes][otherwise if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
 
 
 To decide which text is man of (M - a thing):
@@ -365,7 +377,6 @@ To decide which text is man of (M - a thing):
 
 To decide which text is man of (M - a person):
 	decide on "[if M is neuter]being[otherwise if M is presenting as female]woman[otherwise]man[end if]".
-
 
 To decide which text is men of (M - a thing):
 	decide on "[if M is live]beings[otherwise]things[end if]".
@@ -375,8 +386,11 @@ To decide which text is men of (M - a person):
 
 
 
-[To decide which text is girl:
-	say boy of the player.]
+To decide which text is sissy-girl:
+	decide on "[if lady fetish is 2]sissy[otherwise]girl[end if]".
+
+To decide which text is sissy-girls:
+	decide on "[if lady fetish is 2]sissies[otherwise]girls[end if]".
 
 To decide which text is boy of (M - a thing):
 	decide on man of M.
@@ -442,11 +456,11 @@ To say LongDickDesc of (M - a monster):
 	otherwise say "hard [manly-penis]".
 
 To say HoleDesc of (M - a monster):
-	if lady fetish is 2, say "[asshole]";
-	say "[vagina]".
+	if M is presenting as male, say "[asshole]";
+	otherwise say "[vagina]".
 
  To say ChestDesc of (M - a monster):
-	if M is male and lady fetish is 2, say "chest";
+	if M is presenting as male, say "chest";
 	otherwise say "breasts".
 
 [!<SayDaddyOfMonster>+
@@ -575,7 +589,8 @@ To say enema: [must be singular e.g. "creampie", not plural e.g. "creampies"]
 	otherwise if the urine volume of belly is the total squirtable fill of belly:
 		say "[urine] enema";
 	otherwise if the total egg fill of belly > 0:
-		say "collection of eggs";
+		if egg laying fetish is 1, say "collection of eggs";
+		otherwise say "anal ping pong balls";
 	otherwise:
 		say "horrid mixture".
 
