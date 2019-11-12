@@ -18,19 +18,19 @@ To decide which number is the initial outrage of (C - a heart wand):
 
 To decide which number is the raw-masturbation-bonus of (C - a heart wand):
 	let X be -1;
-	increase X by the magic-power of the player;
+	increase X by the magic power of the player;
 	decide on X.
 
 heartWandAttacks is a number that varies.
 To say magicHearts:
-	let M be the magic-power of the player;
+	let M be the magic power of the player;
 	if M < 1, now M is 1;
 	now M is (M * 3) - a random number between 0 and 2;
-	say "[if M is 1]a single[otherwise][M][end if] [if the magic-power of the player > 5][one of]blindingly bright[or]giant[or]powerfully radiant[at random][otherwise if the magic-power of the player > 0][one of]gaudy[or]magical[or]pretty[or]darling[at random][otherwise][one of]pale[or]weak[or]grey[at random][end if] heart[if M > 1]s[end if]".
+	say "[if M is 1]a single[otherwise][M][end if] [if the magic power of the player > 5][one of]blindingly bright[or]giant[or]powerfully radiant[at random][otherwise if the magic power of the player > 0][one of]gaudy[or]magical[or]pretty[or]darling[at random][otherwise][one of]pale[or]weak[or]grey[at random][end if] heart[if M > 1]s[end if]".
 
 To compute attack of (W - a heart wand) at (M - a monster):
 	say "[one of]You slash at [NameDesc of M] with a blast of [magicHearts].[or]You strike [NameDesc of M] with [magicHearts].[or]You flail at [NameDesc of M] with a vicious arc of [magicHearts].[or]A stream of [magicHearts] lashes [NameDesc of M].[at random][if the player is not a pervert][line break][one of][variable custom style]I suppose it could be worse: they could be floating kisses.[roman type][line break][or][stopping][end if]";
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		increase heartWandAttacks by 1;
 		if heartWandAttacks > 2:
 			now heartWandAttacks is 0;

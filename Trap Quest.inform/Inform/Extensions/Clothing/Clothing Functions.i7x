@@ -182,6 +182,7 @@ To SemenSoakUp (C - a clothing) by (N - a number):
 		increase the semen-soak of diaper-stack by N;
 		increase the perceived-semen-soak of diaper-stack by N;
 	increase the semen-soak of C by N;
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	if C is diaper, increase the perceived-semen-soak of C by N.
 
 
@@ -190,6 +191,7 @@ To UrineSoakUp (C - a clothing) by (N - a number):
 		increase the urine-soak of diaper-stack by N;
 		increase the perceived-urine-soak of diaper-stack by N;
 	increase the urine-soak of C by N;
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	if C is diaper, increase the perceived-urine-soak of C by N.
 
 To MilkSoakUp (C - a clothing) by (N - a number):
@@ -197,6 +199,7 @@ To MilkSoakUp (C - a clothing) by (N - a number):
 		increase the milk-soak of diaper-stack by N;
 		increase the perceived-milk-soak of diaper-stack by N;
 	increase the milk-soak of C by N;
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	if C is diaper, increase the perceived-milk-soak of C by N.
 
 To WaterSoakUp (C - a clothing) by (N - a number):
@@ -204,6 +207,7 @@ To WaterSoakUp (C - a clothing) by (N - a number):
 		increase the water-soak of diaper-stack by N;
 		increase the perceived-water-soak of diaper-stack by N;
 	increase the water-soak of C by N;
+	now previous-clothing-glazed is -1; [force appearance reassessment]
 	if C is diaper, increase the perceived-water-soak of C by N.
 
 [We call the stealth functions when it's a way that a 100% babified player might not notice the soaking happening.]
@@ -252,10 +256,12 @@ To only destroy (C - a thing):
 
 To WaterEmpty (C - a clothing):
 	now the water-soak of C is 0;
-	if C is diaper, now the perceived-water-soak of C is 0.
+	if C is diaper, now the perceived-water-soak of C is 0;
+	if C is worn, update appearance level.
 To Drench (C - a clothing):
 	increase the water-soak of C by the soak-limit of C - the total-soak of C;
-	if C is diaper and the player is diaper aware, now the perceived-water-soak of C is the water-soak of C.
+	if C is diaper and the player is diaper aware, now the perceived-water-soak of C is the water-soak of C;
+	if C is worn, update appearance level.
 
 [!<OnlyDestroyClothing>+
 
@@ -264,6 +270,8 @@ Skip imprinting
 +!]
 To only destroy (C - clothing):
 	uniquely destroy C;
+	now C is crotch-in-place;
+	now C is top-placed;
 	now the top-layer of C is 0;
 	now the mid-layer of C is 0;
 	now the bottom-layer of C is 0;
@@ -273,6 +281,7 @@ To only destroy (C - clothing):
 	WaterEmpty C;
 	dislodge C;
 	repair C;
+	if C is crotch-unzipped, now C is crotch-zipped;
 	now C is not stuck;
 	now C is not glued;
 	if C is strut enabling and C is worn and the strut of the player is 1 and the strutskill of the player is 0 and the number of worn strut enabling clothing is 1, now the strut of the player is 0;
@@ -291,9 +300,6 @@ To only destroy (C - clothing):
 	remove C from play;
 	if C is listed in the list of stacked diapers, diaperRemove C;
 	set up C.
-
-To uniquely destroy (C - a thing):
-	do nothing.
 
 
 Clothing Functions ends here.

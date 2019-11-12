@@ -113,7 +113,7 @@ To compute spraybottle punishment:
 			let P be a random worn plug penetrating asshole;
 			say "You feel your [P] suddenly increase in size, [if the size of P > the openness of asshole and the openness of asshole < 10]painfully stretching out your poor [asshole] from the inside[otherwise]filling the extra space in your already gaping [asshole][end if]!";
 			sizeUp P by 2;
-		otherwise if P is actually summonable:
+		otherwise if P is not worn and P is actually summonable:
 			assign size (the openness of asshole + 2) to P;
 			say "You feel your a hard object prodding at your [asshole], as if trying to get inside. It succeeds, [if the openness of asshole < 10]brutally [end if]stretching you out as it forces its way in.";
 			summon P cursed with quest;
@@ -171,13 +171,13 @@ To compute (M - a mechanic) considering (T - a pink spraybottle):
 		say "[speech style of M]'I can see that it's not broken. Congratulations, you aren't the most useless maid ever. Incredible...'[roman type][line break][big he of M] doesn't seem very interested in the [ShortDesc of the noun].".
 
 To decide which number is the damage improvement of (S - a pink spraybottle):
-	if S is spray and the magic-power of the player > 0:
+	if S is spray and the magic power of the player > 0:
 		if the class of the player is maid, decide on 7;
 		decide on 5;
 	decide on 0.
 
 To compute attack of (S - a pink spraybottle) at (M - a monster):
-	if S is spray and the magic-power of the player > 0:
+	if S is spray and the magic power of the player > 0:
 		say "You pull the trigger of your [ShortDesc of S], sending offensive magic through your arm into the water. It hits [NameDesc of M] stinging [him of M] with acidic liquid!";
 	otherwise:
 		say "You pull the trigger of your [ShortDesc of S], but you have no magic to empower the water that comes out. It's not very effective!";

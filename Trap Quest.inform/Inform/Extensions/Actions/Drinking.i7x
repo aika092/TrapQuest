@@ -21,11 +21,11 @@ Definition: a bottle (called B) is actually drinkable:
 	decide yes.
 
 This is the addicts refuse to drink other liquids rule:
-	if the semen taste addiction of the player is 20 or the player is desperately craving or the urine taste addiction of the player > 15:
+	if the semen taste addiction of the player is 20 or the player is desperately craving semen or the urine taste addiction of the player > 15:
 		if the thirst of the player is 5:
 			if autodrink is 0, say "[variable custom style]I guess I should drink something to stop myself fainting...[roman type][line break]";
 		otherwise:
-			unless (the fill-colour of drinking-target is creamy and (the semen taste addiction of the player is 20 or the player is desperately craving)) or (the fill-colour of drinking-target is golden and the urine taste addiction of the player > 15):
+			unless (the fill-colour of drinking-target is creamy and (the semen taste addiction of the player is 20 or the player is desperately craving semen)) or (the fill-colour of drinking-target is golden and the urine taste addiction of the player > 15) or (the fill-colour of drinking-target is white and the milk taste addiction of the player > 13):
 				if autodrink is 0, say "[OnlyDrinksSemen]";
 				rule fails.
 The addicts refuse to drink other liquids rule is listed last in the global drinkability rules.
@@ -48,11 +48,11 @@ This is the bottles can't be drunk while inside you rule:
 		rule fails.
 The bottles can't be drunk while inside you rule is listed in the global drinkability rules.
 
-Check drinking squeezy-bottle when the semen taste addiction of the player is 20 or the player is desperately craving or the urine taste addiction of the player > 15:
+Check drinking squeezy-bottle when the semen taste addiction of the player is 20 or the player is desperately craving semen or the urine taste addiction of the player > 15:
 	if the thirst of the player is 5:
 		say "[variable custom style]I guess I should drink something to stop myself fainting...[roman type][line break]";
 	otherwise:
-		unless (the fill-colour of the noun is creamy and (the semen taste addiction of the player is 20 or the player is desperately craving)) or (the fill-colour of the noun is golden and the urine taste addiction of the player > 15), say "[OnlyDrinksSemen]" instead.
+		unless (the fill-colour of the noun is creamy and (the semen taste addiction of the player is 20 or the player is desperately craving semen)) or (the fill-colour of the noun is golden and the urine taste addiction of the player > 15), say "[OnlyDrinksSemen]" instead.
 
 Check drinking food:
 	try eating the noun instead.
@@ -64,7 +64,7 @@ To say OnlyDrinksSemen:
 	say "[second custom style]I won't drink that, [one of]it'll fill up my stomach and then I won't be able to drink as much [AddictedFluids]![or]I am on a strict diet of [AddictedFluids].[cycling][roman type][line break]".
 
 To say AddictedFluids:
-	say "[if the urine taste addiction of the player > 15][urine][end if][if the urine taste addiction of the player > 15 and (the semen taste addiction of the player is 20 or the player is desperately craving)] and [end if][if the semen taste addiction of the player is 20 or the player is desperately craving][semen][end if]".
+	say "[if the urine taste addiction of the player > 15][urine][end if][if the urine taste addiction of the player > 15 and (the semen taste addiction of the player is 20 or the player is desperately craving semen)] and [end if][if the semen taste addiction of the player is 20 or the player is desperately craving semen][semen][end if]".
 
 Understand "suck [something]", "suck on [something]", "gulp [something]", "gulp from [something]", "drink from [something]", "dr [something]", "dri [something]" as drinking.
 

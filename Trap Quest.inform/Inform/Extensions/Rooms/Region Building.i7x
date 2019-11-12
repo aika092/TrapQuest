@@ -165,38 +165,38 @@ To solve the puzzle:
 	while Terra Incognita is open:
 		let P be a random solvable room;
 		if P is nothing and only-singles-left is 0:
-			if debugmode is 1, say "[bold type][line break]ONLY SINGLES LEFT.[roman type][line break]";
+			if debugmode > 0, say "[bold type][line break]ONLY SINGLES LEFT.[roman type][line break]";
 			now only-singles-left is 1;
 			repeat with R running through puzzle piece rooms:
 				make all directions possible for R;
 			now P is a random solvable room;
-		if debugmode is 1, say "P is [P]. ";
+		if debugmode > 0, say "P is [P]. ";
 		if P is room:
 			now target-puzzle-piece is P;
 			now chosen-puzzle-direction is a random empty puzzle socket direction;
-			if debugmode is 1, say "Direction is [chosen-puzzle-direction]. ";
+			if debugmode > 0, say "Direction is [chosen-puzzle-direction]. ";
 			if chosen-puzzle-direction is the-final-one and only-singles-left is 0, now closing-forbidden is 1;
 			otherwise now closing-forbidden is 0;
-			if debugmode is 1, say "Closing is [if closing-forbidden is 0]not [end if]forbidden.";
+			if debugmode > 0, say "Closing is [if closing-forbidden is 0]not [end if]forbidden.";
 			let the current position be the grid position of target-puzzle-piece;
 			now Door Finder is the vector sum of the current position and the vector of chosen-puzzle-direction;
 			let chosen-puzzle-room be a random fully ready room;
 			if chosen-puzzle-room is nothing:
-				if debugmode is 1, say "No fully ready room found.";
+				if debugmode > 0, say "No fully ready room found.";
 				now chosen-puzzle-room is a random mostly ready room;
 				if chosen-puzzle-room is nothing:
-					if debugmode is 1, say "No mostly ready room found.";
+					if debugmode > 0, say "No mostly ready room found.";
 					flag chosen-puzzle-direction as impossible;
 			if chosen-puzzle-room is a room:
 				if Door Finder is an empty position:
-					if debugmode is 1, say "[bold type][chosen-puzzle-room] chosen to be [chosen-puzzle-direction] of [target-puzzle-piece] with coordinates [Door Finder].[roman type][line break]";
+					if debugmode > 0, say "[bold type][chosen-puzzle-room] chosen to be [chosen-puzzle-direction] of [target-puzzle-piece] with coordinates [Door Finder].[roman type][line break]";
 					position chosen-puzzle-room at Door Finder;
 				otherwise:
 					[This means there is a room already there, it's just that this room isn't connected to it.]
 					flag chosen-puzzle-direction as impossible;
 		otherwise:
 			[We either have finished or need to reset]
-			if debugmode is 1, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
+			if debugmode > 0, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
 			if there are unplaced puzzle piece mandatory rooms:
 				increase puzzleAttempts by 1;
 				flip the table around target-floor; [Reset all the rooms, we need to start again!]
@@ -211,6 +211,9 @@ To solve the puzzle:
 							now Terra Incognita is closed;
 							if the player is not a top donator, now debugmode is 0;
 			otherwise:
+				if debugmode is 2:
+					say "Region successfully built.";
+					if the player is consenting, do nothing;
 				if the player is not a top donator, now debugmode is 0;
 				now Terra Incognita is closed.
 

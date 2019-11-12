@@ -230,7 +230,9 @@ To start a/-- Glulx timer of (T - a number) millisecond/milliseconds:
 	say "[>console][CA]Timer event requested for every [N] milliseconds.[<]";
 	#end if.
 
- To pause/stop the/-- Glulx timer:
+
+[Re-implemented in timer stuff.i7x]
+ [To pause/stop the/-- Glulx timer:
 	request Glk timer event at 0 milliseconds;
 	#if utilizing animation debugging;
 	say "[>console][CA]Timer event requested at 0 milliseconds.[<]";
@@ -240,7 +242,7 @@ To request Glk timer event at (T - a number) milliseconds:
 	(- glk_request_timer_events({T}); (+ global timer interval +) = {T}; -).
 
 To reset the Glulx timer:
-	start a Glulx timer of (global timer interval) milliseconds.
+	start a Glulx timer of (global timer interval) milliseconds.]
 
 
 Section - Restart the timer after restoring
@@ -916,7 +918,7 @@ To store block value at entry (N - a number) of (L - a list of values) as proper
 To assign non-block value in property (P - a number) of (O - an object) to (PP - a property) of (OO - an object): (- {OO}.{PP}={O}.{P}; -).
 
 To decide what list of numbers is list property (P - a (list of numbers) valued property) of (O - an object):
-	(- GProperty(OBJECT_TY,{O},{P}) -)
+	(- GProperty(OBJECT_TY,{O},{P})  -)
 
 To say property (P - a property):
 	(- PrintPropertyName({P}); -)
@@ -2731,7 +2733,7 @@ There is only a single animation track, the movement track. We initialize both i
 		say "On the next screen, you will be able to assign easing equations to the movement of a ball.[line break]Click on one of the links in the left column to assign the easing for the x-axis of movement, and on the right to assign the easing for the y-axis.[line break]Then just click somewhere in the black part of the screen to move the ball to that point.[paragraph break]Depending on the way in which you have paired the easing equations, different effects will be generated:[paragraph break][b]1. [/b]If the easing of the two axes is the same, the ball will move in a straight line, but its acceleration will change to reflect the non-linear easing used.[line break][b]2. [/b]If linear easing on one axis is paired with nonlinear easing on the other, then requesting the ball to move diagonally will produce a motion similar to the graph shown for the nonlinear easing.[line break][b]3. [/b]If you have nonlinear easing on both axes, there will be plenty of potential for unpredictable movement, especially on the diagonal.[paragraph break]Typically, you will see more variation in the path of the ball if you request a destination diagonal from the ball's current position. Horizontally or vertically, most of the variation will tend to be in ball's acceleration patterns.[paragraph break]Maximize your window now, then [b]press any key to start experimenting![/b][paragraph break]"
 
 	To display (F - a figure name) in (win - a g-window), one time only:
-		(- DisplayFigureWin({win}, ResourceIDsOfFigures->{F}); -) .
+		(-  DisplayFigureWin({win}, ResourceIDsOfFigures->{F}); -) .
 
 	Include (-
 		[ DisplayFigureWin win resource_ID one_time;

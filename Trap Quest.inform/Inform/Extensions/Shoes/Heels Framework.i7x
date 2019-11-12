@@ -95,6 +95,7 @@ To decide which number is the hindrance of (C - a heels):
 		increase X by the hindrance-modifier of H;
 	[Magic effects often impact on hindrance]
 	decrease X by the magic-modifier of C;
+	now X is X / ((the trophy-mode of trip-trophy * 2) + 1);
 	if X < 0, now X is 0;
 	decide on X.
 

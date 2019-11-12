@@ -304,7 +304,7 @@ To check glue tripping:
 					otherwise if N > GS + BaseDiff:
 						say "[one of]Bugger! Your [printed name of H] twists underfoot as you tried to get back to your feet, and slipped deeper into the glue.[or]You can't get your [printed name of H] under you to stand.[or]I think I would've gotten out then, if I was better at wearing high heels![at random]";
 					otherwise if N > GS:
-						say "[one of]Dammit! If you'd been on your feet, instead of on your knees like a submissive [if the player is male]sissy[otherwise]slut[end if] you feel you might have pulled free. Unfortunately, you wobbled and have become even more stuck.[or]You sob, on your knees in the glue, wondering if this is some kind of sign?[or]Wah - it's so hard to get out of glue when you're stuck helplessly down like this![at random]";
+						say "[one of]Dammit! If you'd been on your feet, instead of on your knees like a submissive [sissy slut] you feel you might have pulled free. Unfortunately, you wobbled and have become even more stuck.[or]You sob, on your knees in the glue, wondering if this is some kind of sign?[or]Wah - it's so hard to get out of glue when you're stuck helplessly down like this![at random]";
 					otherwise:
 						say "[one of]In your twisting struggles to get free, you slip and stick yourself even more strongly to the ground![or]You squirm in the glue, trying to pull free, but instead you feel the glue spread further! Your panting struggles to get free brings fresh parts of your body in contact with the glue. Oh no![at random]";
 					say "[one of][at random]";
@@ -315,7 +315,7 @@ To check glue tripping:
 					otherwise if N > GS + BaseDiff:
 						say "[one of]Bugger! Your [printed name of H] twists underfoot as you try to get to your feet. [line break][variable custom style]No! I can't let that happen! [roman type][line break]You almost dislocate your hip, wrenching your leg back.[or]Your [printed name of H] almost slips further into the glue.[or]Drat! I would've escaped then, if I was better at wearing high heels![at random]";
 					otherwise if N > GS:
-						say "[one of][line break][variable custom style]Dammit! If I'd been on my feet instead of kneeling like a submissive [if the player is male]sissy[otherwise]slut[end if], I would've pulled free then.[roman type][line break][or]You sob, on your knees in the glue.[or][line break][variable custom style]I hate this stupid glue![roman type][line break][at random]";
+						say "[one of][line break][variable custom style]Dammit! If I'd been on my feet instead of kneeling like a submissive [sissy slut], I would've pulled free then.[roman type][line break][or]You sob, on your knees in the glue.[or][line break][variable custom style]I hate this stupid glue![roman type][line break][at random]";
 					otherwise:
 						say "[one of]In your twisting struggle, you nearly stick yourself even more strongly to the ground![or]You squirm in the glue, trying to pull free, fearing the glue might spread further! [at random]";
 					FatigueUp 1;
@@ -406,7 +406,7 @@ To compute glue escaping:
 		[I think max strength is 30]
 		if the strength of the player < bond-grip:
 			if the strength of the player < 6:
-				say "Your [if the player is male]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
+				say "Your [if the player is male and transGender is 0]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
 			otherwise:
 				say "Your [if the strength of the player < 10]weak little [end if]muscles simply aren't strong enough to pull free of this glue as things stand!";
 			say "Unless you have clothes to [bold type]rub[roman type] in the glue and scrape it away or soak it up, looks like you might have to wait for the glue to weaken, or for someone to rescue you!";

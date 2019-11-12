@@ -33,7 +33,7 @@ To decide which figure-name is the monster-image of (M - student-laci):
 	decide on figure of laci.
 
 To say MonsterDesc of (M - student-laci):
-	say "This tall dirty blonde woman is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross her feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
+	say "This tall, dirty blonde [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross her feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
 
 The max-rank of student-laci is 3.
 
@@ -114,8 +114,6 @@ To say DamageReaction (N - a number) of (M - student-candy):
 	otherwise:
 		say "The [noun] takes the hit, fighting to maintain [his of M] balance!";
 	say "[speech style of M]'[one of]HISS!'[or]NROOWL!'[or]OW, F- I mean, NYOUCH![at random][roman type]".
-
-
 
 Part - Default Conversation
 

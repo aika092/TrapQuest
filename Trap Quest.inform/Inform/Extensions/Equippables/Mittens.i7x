@@ -22,7 +22,7 @@ To say ShortDesc of (W - a mittens):
 
 This is the mittens prevent manual dexterity rule:
 	if there are worn mittens:
-		if manual hands attempt is 1, say "Your [ShortDesc of random worn mittens] mean you don't have the manual dexterity to do that.";
+		if manual hands attempt is 1, say "Your [random worn mittens] mean you don't have the manual dexterity to do that.";
 		rule fails.
 The mittens prevent manual dexterity rule is listed in the manual dexterity restriction rules.
 
@@ -88,6 +88,12 @@ To decide which number is the damage improvement of (W - inflated rubber mittens
 
 Definition: inflated rubber mittens is black themed: decide yes.
 Definition: inflated rubber mittens is inflation themed: decide yes.
+
+This is the inflated mittens prevent manual dexterity rule:
+	if inflated rubber mittens is worn:
+		if manual hands attempt is 1, say "Your [inflated rubber mittens] mean you don't have the manual dexterity to do that.";
+		rule fails.
+The inflated mittens prevent manual dexterity rule is listed in the hands restriction rules.
 
 
 

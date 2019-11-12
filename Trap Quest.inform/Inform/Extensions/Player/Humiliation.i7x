@@ -456,6 +456,103 @@ To Dignify (X - a number):
 
 
 
+Table of Published Disgraces
+content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)
+with 100 blank rows
+
+
+To decide which number is DisgracePostViews (N - a number):
+	choose row N in Table of Published Disgraces;
+	decide on popularity entry * (timestamp entry - earnings). [views]
+
+To decide which number is DisgracePostImpact (N - a number):
+	choose row N in Table of Published Disgraces;
+	let ET be DisgracePostViews N;
+	if ET < 1, now ET is 1; [somtimes they don't have increasing tracked views, and it's just flat severity]
+	decide on (the square root of ET) * severity entry; [reputation damage]
+
+To decide which number is the public disgrace of the player:
+	let PD be 0;
+	repeat with N running from 1 to the number of rows in the Table of Published Disgraces:
+		if there is a severity in row N of the Table of Published Disgraces, increase PD by DisgracePostImpact N;
+	decide on PD.
+
+To say DisgracePost (N - a number):
+	choose row N in Table of Published Disgraces;
+	let DPV be DisgracePostViews N;
+	say "[content entry] [published entry][if DPV > 1]. It has been viewed [DPV] times[end if]";
+
+To say DisgracePostReaction (N - a number):
+	let S be DisgracePostImpact N;
+	say variable custom style;
+	if the player is modest:
+		say "[if S < 100][one of]No, no, no, no, NO! This is on the real Internet?![or]No way, my friends will be able to see this![or]I can't believe this is on the real Internet...[then at random][otherwise][one of]Noooo! There's no way I can let anyone in the real world see this![or]No no no no no! I need to get this taken down RIGHT AWAY![or]If this is really on the actual Internet, I'll never ever be able to life this down! I'll be a walking disgrace![or]Oh god no... I'm never going to be able to look my family in the eyes ever again...[in random order][end if]";
+	otherwise if the player is not shameless:
+		say "[if S < 100][one of]Well, it could be worse, I guess...[or]This is pretty embarrassing, but hopefully I can laugh it off.[or]This is not good for my public reputation. Oh dear...[or]Well, as long as nobody I know sees this, it's actually kind of hot to think about strangers getting hot and heavy looking at me...[in random order][otherwise][one of]Oh god, how am I ever going to live this down?![or]Oh shit! I guess I've got to hope nobody I know ever sees this...[or]Fuck me, this is really damning. If this gets shared around my friends, I'll never be able to hold my head high again...[in random order][end if]";
+	otherwise:
+		say "[if S < 100][one of]I deserve everyone to see me like this. I'm such a disgrace.[or]Thinking about my friends seeing me like this is just turning me on...[or]Only that many views? I'm offended! I should make an even naughtier post...[in random order][otherwise][one of]There's no going back from this. I'm a public disgrace forever more...[or]I guess I deserve this. I am disgusting, and it's only fair that everybody knows it.[or]I'm such a filthy, horrible pervert. Why does it turn me on to know that this is on the Internet...[in random order][end if]";
+	say "[roman type][line break]".
+
+
+To compute digital reputation damage (T - a text) strength (S - a number) quality (N - a number):
+	decrease N by a random number between 0 and 1;
+	now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
+	let W be "[if S < a random number between 3 and 5][sexyWebsite][otherwise][sluttyWebsite][end if]";
+	choose a blank row in Table of Published Disgraces;
+	now the content entry is the substituted form of T;
+	now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [W]";
+	now the severity entry is S;
+	now the popularity entry is N;
+	now the timestamp entry is earnings;
+
+To decide which text is ReputationAttire:
+	let C be the at least partial concealer of vagina;
+	if the player is male, now C is the at least partial concealer of penis;
+	if breasts is exposed:
+		if (the player is male and penis is exposed) or (the player is female and vagina is exposed):
+			decide on "with your chest and [if the player is male][ShortDesc of penis][otherwise][vagina][end if] on full display";
+		otherwise:
+			decide on "topless, with a [ShortDesc of C][if C is not actually dense] partially covering your [genitals][end if]";
+	otherwise:
+		let B be the at least partial concealer of breasts;
+		decide on "wearing a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B]and a [ShortDesc of C][end if]";
+
+
+To say sexyWebsite:
+	if diaper quest is 1, say "embarrassedbabes.net";
+	otherwise say "[one of]trashyboners.xxx[or]publicnudity.xxx[or]embarrassedbabes.net[or]caughtoncandid.com[or]whoisthathottie.com[at random]".
+
+To say sluttyWebsite:
+	if diaper quest is 1, say "publicdisgraces.xxx";
+	otherwise say "[one of]publicdisgraces.xxx[or]caughtintheact.com[or]whoresexposed.net[or]sluthub.xxx[or]namedandshamed.com[at random]".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Humiliation ends here.
 

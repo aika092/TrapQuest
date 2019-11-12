@@ -88,7 +88,7 @@ Report going when the player is female and the player is upright and there is wo
 	increase the walkCharge of C by 1;
 	if the walkCharge of C > 10:
 		say "Your [MediumDesc of C] [one of]stimulates your [vagina][or]continues to stimulate you[cycling] as you walk.";
-		Arouse 200;
+		passively stimulate vagina from C;
 		now the walkCharge of C is 0.
 
 

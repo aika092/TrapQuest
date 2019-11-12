@@ -2,6 +2,11 @@ Soiled Diaper by Collectibles begins here.
 
 A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described]soiled [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soiled-diaper is the file "Items/Collectibles/diaper1.jpg". Understand "soiled", "diaper" as soiled diaper.
 
+To decide which number is the outrage of (S - a soiled-diaper):
+	decide on 20.
+To decide which number is the cringe of (S - a soiled-diaper):
+	decide on 20.
+
 The text-shortcut of soiled-diaper is "sdp".
 
 A soiled-diaper has a text called diaper-origin. The diaper-origin of a soiled-diaper is usually "disposable diaper". Understand the diaper-origin property as describing a soiled-diaper.

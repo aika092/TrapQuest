@@ -1,19 +1,23 @@
 Stomach by Every Turn begins here.
 
 
-[!<PersonIsBecomingMoreAddictedToCum>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is becoming more addicted to cum if a random number between 1 and the stomach-semen of the player <= 2. [It's as your stomach empties of semen that you begin to crave it more.]
 
 [!<coldTurkey:Integer>*
 
-REQUIRES COMMENTING
+How long has the player starved themselves of semen?
 
 *!]
 cold turkey is a number that varies.
+[!<coldMilky:Integer>*
+
+How long has the player starved themselves of milk?
+
+*!]
+cold milky is a number that varies.
+To decide which number is cold milky limit:
+	decide on 180. [how long until addiction kicks in]
+To decide which number is cold milky addiction limit:
+	decide on 35. [multiple of milk taste addiction until addiction fades away]
 
 [!<lastBegged:Thing>*
 
@@ -99,15 +103,21 @@ REQUIRES COMMENTING
 +!]
 A time based rule (this is the compute stomach rule):
 	compute corset strain;
-	if the player is craving and the stomach-semen of the player is 0:
+	if the player is craving semen and the stomach-semen of the player is 0:
 		if cold turkey <= the semen taste addiction of the player * 20:
 			increase cold turkey by time-seconds;
 			if cold turkey > the semen taste addiction of the player * 20:
-				say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
+				say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving semen]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
+	increase cold milky by time-seconds;
+	if cold milky > cold milky limit and the milk taste addiction of the player > 13:
+		if cold milky - time-seconds <= cold milky limit:
+			say "[bold type]Your stomach and taste buds are beginning to [if the player is desperately craving milk]desperately [end if]crave more [milk]. [roman type]Until you either drink some more [milk] or avoid milk for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
+		otherwise if cold milky > the milk taste addiction of the player * cold milky addiction limit and cold milky - time-seconds <= the milk taste addiction of the player * cold milky addiction limit:
+			say "[bold type]Your mind and body is now slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
 	[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
 	if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
 		compute hunger and thirst;
-	compute bladder growth;
+	unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth;
 	if the thirst of the player is 5 and the player is thirsty and delayed fainting is 0 and busy is 0 and the player is able to speak and the player is not flying and the player is not stuck:
 		if the player is in Dungeon10 and diaper quest is 0:
 			say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 6]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 10]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if]. [if the player is upright]You get on your knees. [end if]";
@@ -146,7 +156,7 @@ To compute hunger and thirst:
 			if P is pacifier:
 				say "Your [P] suddenly feels less stuck in your mouth. Maybe you're allowed to take it out to drink?";
 		otherwise if the thirst of the player is 4:
-			say "[bold type]Your throat is feeling pretty dry, you should really drink [if the player is craving]someone's [semen][otherwise]something[end if]![roman type][line break]";
+			say "[bold type]Your throat is feeling pretty dry, you should really drink [if the player is craving semen]someone's [semen][otherwise]something[end if]![roman type][line break]";
 		otherwise if the thirst of the player is 5:
 			say "[bold type]You are dying to drink something, anything![roman type][line break]";
 		if there is a worn cock pacifier and the thirst of the player > 2:

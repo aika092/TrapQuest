@@ -103,7 +103,7 @@ To decide which object is the unique-upgrade-target of (C - a large ballgag):
 Definition: A ballgag is fetish appropriate if diaper quest is 0.
 
 
-A bit gag is a kind of ballgag. There is 1 bit gag. The printed name of bit gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]bit gag[clothing-title-after]". The text-shortcut of bit gag is "pbg".
+A bit gag is a kind of ballgag. There is 1 bit gag. The printed name of bit gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]bit gag[clothing-title-after]". The text-shortcut of bit gag is "btg".
 
 To say ShortDesc of (C - a bit gag):
 	say "bit gag".

@@ -1,7 +1,7 @@
 Slimegirl by Objects begins here.
 
 
-A slimegirl is a kind of person. There is 1 slimegirl. The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "sg". Understand "slime", "girl" as slimegirl. A slimegirl is wearable.
+A slimegirl is a kind of person. There is 1 slimegirl. The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "slgl". Understand "slime", "girl" as slimegirl. A slimegirl is wearable.
 
 Figure of slimegirl is the file "NPCs/Forest/slimegirl1.png".
 Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1.png".
@@ -153,22 +153,18 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 		cutshow figure of slimegirl cutscene 1 for M;
 		if the total felchable volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected:
 			say "[BigNameDesc of M] moves down to your [vagina], and laps away with great enthusiasm. ";
-			if (the arousal of the player / 1000) + the total felchable volume of vagina >= 6 and the player is able to get horny:
-				say "It feels so good [if S > 4]and she licks away with such vigour [end if] that you are quickly brought to an orgasm[if the player is not a pervert] against your will[end if]!";
-				vaginally orgasm shamefully;
-				VaginalSexAddictUp 1;
-			otherwise:
-				say "It feels amazing!";
+			stimulate vagina from M;
 			increase S by the semen volume of vagina;
 			now the semen volume of vagina is 0;
 			if the pregnancy of the player is 0:
 				increase S by the womb volume of vagina;
 				WombEmpty the womb volume of vagina;
 		if the semen volume of belly > 0 and asshole is not actually occupied and the player is not ass protected:
-			say "[BigNameDesc of M] moves down to your [asshole], and licks with increased vigour. It feels incredibly relaxing!";
+			say "[BigNameDesc of M] moves down to your [asshole], and licks with increased vigour. It feels incredible!";
 			increase S by 1;
+			stimulate asshole from M;
 		if bukkake fetish is 1, say "She continues licking you up and down until all the [semen] you had on you is gone. Everywhere she licks gives you a little tingle of pleasure.";
-		arouse 1000;
+		passively stimulate thighs from M times 2;
 		repeat with C running through worn clothing:
 			clean C;
 			Drench C;

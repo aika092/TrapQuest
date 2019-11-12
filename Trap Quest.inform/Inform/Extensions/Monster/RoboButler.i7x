@@ -20,7 +20,7 @@ To decide which figure-name is the monster-image of (M - a robobutler):
 	decide on figure of robobutler.
 
 To say MonsterDesc of (M - a robobutler):
-	say "A tall, spindly robot with old fashioned joints and a fixed expression etched into [his of the item described] polished metal face. [big he of the item described] is wearing a finely tailored suit, complete with a bow-tie and a pair of white gloves. One of [his of the item described] arms is permanently welded to [his of the item described] chest, holding a strange, duster-like apparatus, giving [him of the item described] the look of a posh butler. [big his of the item described] [']eyes['] glow brightly as [he of the item described] glides around silently on [his of the item described] wheeled feet.".
+	say "A tall, spindly robot with old fashioned joints and a fixed expression etched into [his of M] polished metal face. [big he of M] is wearing a finely tailored suit, complete with a bow-tie and a pair of white gloves. One of [his of M] arms is permanently welded to [his of M] chest, holding a strange, duster-like apparatus, giving [him of M] the look of a posh butler. [big his of M] [']eyes['] glow brightly as [he of M] glides around silently on [his of M] wheeled feet.".
 
 To set up (M - a robobutler):
 	reset M;
@@ -138,7 +138,7 @@ To compute forcefeed of (M - a robobutler):
 		if the player is not in the target-room of M:
 			drag to the target-room of M by M;
 		otherwise:
-			say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type] [BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
+			say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 		try BowlFeeding feeding bowls;
 		satisfy M for 500 seconds.
 
@@ -206,7 +206,7 @@ This is the robobutler punishment rule:
 		otherwise:
 			say "[speech style of M]'STORAGE UNIT IS EMPTY OF PLUGS. WE APOLOGISE FOR THE INCONVENIENCE. SEARCHING FOR ALTERNATIVE INTERACTION...'[roman type][line break]";
 	otherwise if the planned-punishment of M is 2:
-		say "[speech style of M]'ADMINISTERING COLLAGEN SERUM.'[roman type] [BigNameDesc of M] uses a small needle to inject something into your lips. Your eyes go wide as they swell up like inflatable pillows.";
+		say "[speech style of M]'ADMINISTERING COLLAGEN SERUM.'[roman type][line break][BigNameDesc of M] uses a small needle to inject something into your lips. Your eyes go wide as they swell up like inflatable pillows.";
 		LipsUp 1;
 		satisfy M for 500 seconds;
 		rule succeeds;[He doesn't drag you if he increases the size of your lips.]

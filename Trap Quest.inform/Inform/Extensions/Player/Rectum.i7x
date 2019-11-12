@@ -166,7 +166,7 @@ To compute soiling:
 		if the player is upset about sitting in mess and the delicateness of the player < 20:
 			say "You shiver uncontrollably as you continue to wallow in your own mess.";
 			DelicateUp 1;
-		check real messing.
+		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
 
 To decide which number is rectum-risky-level:
 	decide on 12 - (incontinence + suppository).
@@ -249,6 +249,9 @@ To compute messing:
 	if asshole is actually occupied:
 		let A be a random thing penetrating asshole;
 		say "Your messing episode is prevented thanks to [NameDesc of A] blocking the way.";
+	otherwise if quiz-partner is worn:
+		now rectum is 30;
+		compute quiz partner messing;
 	otherwise:
 		if rectum < 2, now rectum is 2;
 		now the alert of the player is 1;
@@ -286,8 +289,8 @@ To compute messing:
 			otherwise:
 				say "A [if rectum < 3]a small amount of mush[otherwise if rectum < 5]reasonable amount of squishy mush forces its way[otherwise if rectum < 8]large amount of lumpy mush[otherwise if rectum < 10]huge bulky log forces its way[otherwise]seemingly unending series of large mushy lumps become one giant ball which stretches you on its journey[end if] out of your butt and fills your [ShortDesc of D]. You feel it bulge out behind you, and you're almost afraid to move at all. A diaper would at least shield and properly contain your shame but the [ShortDesc of D] threatens to buckle at any moment. You need a change, and you need one now!";
 				MessUp D by rectum - 1;
-		if the player is ready to cum from messing, anally orgasm shamefully;
 		unless the player is upset about mess, arouse 300 + (rectum * 50);
+		if the player is ready to cum from messing, anally orgasm shamefully;
 		if the player is upset about sitting in mess:
 			say "[variable custom style][if the diaper addiction of the player < 7 and voluntarySquatting is 1]I'd better be able to find a way to clean up fucking quickly. This is nasty.[otherwise if (the diaper addiction of the player < 12 and voluntarySquatting is 1) or D is not diaper]I guess I should try and find a way to change now, before I make myself cry...[otherwise if the diaper addiction of the player < 7]How did I let this happen[one of][or] again[stopping]?![otherwise if the diaper addiction of the player < 12][one of]Am I really just as pathetic as an incontinent child now?[or]I guess it's time to accept that this is who I am now. A useless baby who can't even control when [he of the player] goes number two.[stopping][otherwise if the diaper addiction of the player < 15][one of]I can't believe how good that felt...[or]Mmmmph, that feels way too good...[stopping][otherwise]Uh-oh, I did a naughty thing[one of]! But it was so fun[or] again, now I have to find a Mummy or Daddy to change me again[or] again, but it feels so good when I can't help myself[or] again[stopping]![end if][roman type][line break]";
 		otherwise:
@@ -373,14 +376,15 @@ REQUIRES COMMENTING
 To say diaper mess declaration of (M2 - a monster):
 	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo! Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".
 
+
 [!<ComputeDiaperMessReactionOfMonster>+
 
 REQUIRES COMMENTING
 
 +!]
-To compute diaper mess reaction of (M - a monster):
-	if diaper quest is 1:
-		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
+To compute diaper mess reaction of (M - a person):
+	if diaper quest is 1 and M is monster:
+		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me?  You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		unless M is staff member:
@@ -393,7 +397,7 @@ To compute diaper mess reaction of (M - a monster):
 		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes]. [line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?! How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
-		if M is friendly or M is uninterested:
+		if M is monster and (M is friendly or M is uninterested):
 			if M is friendly, say "Unable to stomach what [he of M][']s seeing, [NameDesc of M] abandons you.";
 			bore M;
 			compute mandatory room leaving of M.

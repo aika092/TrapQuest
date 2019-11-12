@@ -1,5 +1,18 @@
 Magic Power by Player begins here.
 
+[!<Player>@<magicPower:Integer>*
+
+Raw magic power
+
+*!]
+The player has a number called magic-power.
+
+[Magic power as treated by spells and so on.]
+To decide which number is the magic power of the player:
+	if magic-power of the player < 2 and the trophy-mode of magic-trophy is 2, decide on 2;
+	otherwise decide on the magic-power of the player.
+
+
 [Creating functions for magic power management so I can use these to trigger becoming the Magical Girl if you don't have another class when gaining magic power]
 
 To MagicPowerUp (X - a number):
@@ -35,9 +48,9 @@ To MagicPowerDown (X - a number):
 the magic consequences rules is a rulebook.
 
 To decide which number is MagicPowerDamage:
-	let X be the magic-power of the player;
+	let X be the magic power of the player;
 	increase X by magic theme bonus;
-	if X > 5, decide on 5;
+	if X > 6, decide on 6;
 	decide on X.
 
 To compute spell consequences of (Z - a thing):
@@ -45,7 +58,7 @@ To compute spell consequences of (Z - a thing):
 	follow the magic consequences rules.
 
 To compute MagicDrain of (Z - a thing):
-	if the magic-power of the player > 0:
+	if the magic-power of the player > 0 and the trophy-mode of magic-trophy is 0:
 		MagicPowerDown 1.
 
 
@@ -99,7 +112,8 @@ phrase (text)	naughtiness (number)
 with 50 blank rows
 
 
-
+To say NewbieSpellFlav:
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a magic spell! Spells consume magic power, which is not particularly plentiful but you should hopefully acquire a bit of it over your adventure. Most spells require you to say the rude words while someone can hear (and understand) you.[roman type][line break][or][stopping]".
 
 To compute learning of (S - a magic-spell):
 	now S is everywhere;
@@ -269,9 +283,9 @@ magic-mapping is a magic-spell.
 To say MagicSpellEffect of (S - magic-mapping):
 	say "conjure a mental map of the entire region".
 Report Spellcasting magic-mapping when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		repeat with R running through rooms:
-			if R is regionally in playerRegion, now R is discovered;
+			if R is not predicament room and R is regionally in playerRegion, now R is discovered;
 		say "You can see a perfect map of the entire [playerRegion] in your mind!";
 		display entire map;
 	otherwise:
@@ -289,7 +303,7 @@ Report Spellcasting magic-blinking:
 		say "Your body shimmers and tries to disappear, but it can't because you're being held in place!";
 	otherwise if R is Solid Rock:
 		say "Your body shimmers and tries to disappear, but the spell can't find a place to blink to away to!";
-	otherwise if the magic-power of the player > 0:
+	otherwise if the magic power of the player > 0:
 		say "Your body shimmers and then disappears! A split second later, you have reappeared to the [D] in the [R].";
 		repeat with M running through interested monsters in the location of the player:
 			let F be the favour of M;
@@ -308,7 +322,7 @@ To say MagicSpellEffect of (S - magic-inflating):
 Report Spellcasting magic-inflating when there is a reactive monster:
 	if the weight of the player < -5 or the latex-transformation of the player > 6:
 		say "Nothing happens, as you're already lighter than air!";
-	otherwise if the magic-power of the player > 0:
+	otherwise if the magic power of the player > 0:
 		say "Your breasts, belly and butt explode with size as your body is filled with air!";
 		let N be 0;
 		while N < 100 and the weight of the player > -6:
@@ -325,7 +339,7 @@ magic-smarting is a magic-spell.
 To say MagicSpellEffect of (S - magic-smarting):
 	say "temporarily boost your intelligence".
 Report Spellcasting magic-smarting when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		say "The magic rushes to your brain, filling it with keen focus and expanded knowledge!";
 		increase magic-smarts-timer by default-candy-duration;
 	otherwise:
@@ -347,7 +361,7 @@ magic-speeding is a magic-spell.
 To say MagicSpellEffect of (S - magic-speeding):
 	say "temporarily boost your speed".
 Report Spellcasting magic-speeding when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		say "The magic rushes to your legs, giving you additional reflexes and speed!";
 		increase magic-speed-timer by default-candy-duration;
 	otherwise:
@@ -371,7 +385,7 @@ magic-strengthing is a magic-spell.
 To say MagicSpellEffect of (S - magic-strengthing):
 	say "temporarily boost your strength".
 Report Spellcasting magic-strengthing when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		say "The magic rushes to your arms, giving them additional energy and strength!";
 		increase magic-strength-timer by default-candy-duration;
 	otherwise:
@@ -394,7 +408,7 @@ magic-blind is a magic-spell.
 To say MagicSpellEffect of (S - magic-blind):
 	say "temporarily blind every enemy in the room".
 Report Spellcasting magic-blind when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		let blindSuccess be 0;
 		repeat with M running through unfriendly monsters in the location of the player:
 			if the blind-status of M is 0:
@@ -409,7 +423,7 @@ magic-poison is a magic-spell.
 To say MagicSpellEffect of (S - magic-poison):
 	say "poison every enemy in the room".
 Report Spellcasting magic-poison when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		let poisonSuccess be 0;
 		repeat with M running through unfriendly monsters in the location of the player:
 			if the poison-status of M is 0:
@@ -425,7 +439,7 @@ magic-paralyze is a magic-spell.
 To say MagicSpellEffect of (S - magic-paralyze):
 	say "paralyze every enemy in the room".
 Report Spellcasting magic-paralyze when there is a reactive monster:
-	if the magic-power of the player > 0:
+	if the magic power of the player > 0:
 		let paralyzeSuccess be 0;
 		repeat with M running through unfriendly monsters in the location of the player:
 			if the paralyze-status of M is 0:

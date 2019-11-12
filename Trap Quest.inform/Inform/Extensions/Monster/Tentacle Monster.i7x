@@ -195,18 +195,12 @@ To decide which number is the girth of (M - a tentacle monster):
 	if M is large, decide on 6;
 	decide on 4.
 
-To decide which number is the semen load of (M - a tentacle monster):
+To decide which number is the base semen load of (M - a tentacle monster):
 	let C be 2;
 	if M is large, increase C by 2;
 	if M is massive, increase C by 4;
 	if M is wet-tentacle-monster, increase C by 2;
 	decide on C.
-
-To decide which number is the maxhealth of (M - a monster):
-	let X be 1;
-	increase X by the difficulty of M * (3 + game difficulty);
-	if M is durable-tentacle-monster, increase X by the difficulty of M;
-	decide on X.
 
 A wet-tentacle-monster has a number called dripTimer. The dripTimer of a wet-tentacle-monster is usually 0.
 

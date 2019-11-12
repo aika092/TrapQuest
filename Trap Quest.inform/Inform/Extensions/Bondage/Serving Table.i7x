@@ -20,9 +20,9 @@ To compute periodic effect of (C - a serving-bondage):
 		if C is serving table:
 			say "[bold type]The [ShortDesc of C] vanishes![roman type][line break]";
 			only destroy C;
-		otherwise:
+		otherwise if C is locked or C is wrist locked:
 			say "[bold type]The lock holding the chains to your [ShortDesc of C] clicks open, and the ropes holding your wrists behind you vanish![roman type] It looks like you can remove the [ShortDesc of C] when you want to.";
-			now C is not locked;
+			now C is unlocked;
 			now C is wristless.
 
 

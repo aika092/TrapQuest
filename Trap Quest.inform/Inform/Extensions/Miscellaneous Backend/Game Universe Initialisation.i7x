@@ -14,7 +14,17 @@ To Start The Machine:
 	Set Up The Dungeon;
 	Set Up Monsters;
 	if debugmode > 1, say "Finished setting up monsters.";
-	now the player is in Dungeon12;
+	if halloween content is 1:
+		Set Up The Woods;
+		follow the setting up woods monsters rules;
+		Set Up The Mansion;
+		follow the setting up mansion monsters rules;
+		repeat with M running through alive nonsetup monsters:
+			set up M;
+		now the player is in Mansion01;
+		now playerRegion is Mansion;
+	otherwise:
+		now the player is in Dungeon12;
 	resolve graphics windows mayhem;
 	fix window overhang;
 	if debugmode > 1, say "Now configuring pink smoke.";
@@ -25,18 +35,44 @@ To Start The Machine:
 	move toilet backdrop to all toilets rooms;
 	if spontaneous tattoos is 1:
 		summon ink-me tattoo;
-		say "You notice that [if latex prisoner is 0]you are naked, and that [end if]you have a tattoo of the words 'INK ME' on the back of your left hand.[line break]";
+		say "You notice that [if latex prisoner is 0 and halloween content is 0]you are naked, and that [end if]you have a tattoo of the words 'INK ME' on the back of your left hand.[line break]";
 	if background-nurse is 1:
 		let B be a random bandage;
 		now B is held by the player;
 		say "You notice that you seem to have some medical supplies. Handy![line break]";
+	if halloween content is 1:
+		set up vampiress;
+		now vampiress is in Mansion01;
+		now vampiress is interested;
+		calm vampiress;
+		now the pink pill is in pink wardrobe;
+		let C be a random candy corn;
+		now C is in a random placed mandatory haunted room;
+		let C be a random liquorice;
+		now C is in a random placed mandatory haunted room;
+		while the number of candy in the location of C > 1:
+			now C is in a random placed mandatory haunted room;
+		let C be a random strawberry lace;
+		now C is in a random placed mandatory haunted room;
+		while the number of candy in the location of C > 1:
+			now C is in a random placed mandatory haunted room;
+		let H be a random fetish appropriate halloween headgear;
+		compute full outfit summon of H;
+		say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]";
+		if diaper lover > 0, now the bladder of the player is 8;
+		if diaper messing >= 3, now rectum is 11;
+		if diaper quest is 1:
+			set up ghostly tentacle;
+			now ghostly tentacle is in a random placed mandatory haunted room;
+		display inventory-focus stuff;
+	otherwise:
+		now the pink pill is carried by the player;
+		say "You notice you are holding a small pink pill in your hand.";
 	if latex prisoner is 1, initialise latex prisoner;
 	if bondage prisoner is 1, initialise bondage prisoner;
 	if bondage protection is 1, initialise bondage protection;
 	if debugmode > 1, say "Now initialising wardrobe.";
 	initialise wardrobe;
-	now the pink pill is held by the player;
-	say "You notice you are holding a small pink pill in your hand.";
 	set up debug stuff;
 	follow the game universe initialisation rules;
 	display stuff;
@@ -207,20 +243,20 @@ To initialise latex prisoner:
 	if diaper quest is 0, say "Suddenly you feel your [if the player is female][vagina] and [end if][asshole] invaded by [if the player is male]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is female]rear [end if]plug starts vibrating!";
 	let L be a random latex transformation-eligible heels;
 	if diaper quest is 1, now L is a random sissy ballet boots;
-	if L is clothing, summon L;
+	if L is actually summonable clothing, summon L;
 	let L be a random latex transformation-eligible bra;
 	if diaper quest is 1, now L is rubber mittens;
-	if L is clothing, summon L;
+	if L is actually summonable clothing, summon L;
 	if diaper quest is 0:
 		let L be a random off-stage vibrating plug panties;
-		if L is clothing, summon L;
+		if L is actually summonable clothing, summon L;
 	let L be a random black rubber stockings;
 	if diaper quest is 1, now L is rubber-baby-bonnet;
-	if L is clothing, summon L;
+	if L is actually summonable clothing, summon L;
 	let L be a random off-stage black catsuit;
 	if diaper quest is 1, now L is a random rubber dungarees;
-	if L is clothing, summon L;
-	repeat with C running through worn cursable clothing:
+	if L is actually summonable clothing, summon L;
+	repeat with C running through worn cursable latex clothing:
 		if C is discovered varied:
 			if a random number between 1 and 4 is 1, now the raw-magic-modifier of C is -2;
 			otherwise now the raw-magic-modifier of C is -1;
@@ -245,10 +281,9 @@ To initialise latex prisoner:
 		now rubber-baby-bonnet is cursed;
 		now baby-summoned is 1;
 		now the outfit-charge of rubber-baby-bonnet is -500;
-	if diaper quest is 0:
+	if there is worn vibrating plug panties:
 		ruin asshole;
-		if the player is female:
-			ruin vagina.
+		if the player is female, ruin vagina.
 
 [!<InitialiseBondagePrisoner>+
 
@@ -265,12 +300,12 @@ To initialise bondage prisoner:
 	let G be a random off-stage small ballgag;
 	let S be a random off-stage slave collar;
 	let D be a random off-stage eligible plentiful diaper;
-	summon A locked;
+	if A is actually summonable clothing, summon A locked;
 	unless there is worn vibrating plug panties:
 		summon C cursed with silent quest;
-		if diaper lover >= 1, summon D cursed with silent quest;
-	summon G cursed with silent quest;
-	summon S cursed with silent quest;
+	if diaper lover >= 1 and D is actually summonable clothing, summon D cursed with silent quest;
+	if G is actually summonable clothing, summon G cursed with silent quest;
+	if S is actually summonable clothing, summon S cursed with silent quest;
 	say "Suddenly, a collar is wrapped around your neck and a pair of metal cuffs latch around your [if R is 2]wrists[otherwise]ankles[end if]![line break][first custom style]Oh come on, that's not fair![roman type][line break][if there is worn vibrating plug panties]You are about to shout your objections to this dick move by Nintendolls when [otherwise]You are suddenly placed in chastity by a cage appearing at your loins! You don't even have time to consider the implications of this before [end if]your mouth is forced open by the appearance of a [ShortDesc of G]![line break][if D is worn]Just as you think it's over, your eyes widen in shock as a [ShortDesc of D] materialises over your chastity cage![line break][end if][line break][first custom style]'MMMMMMPH!'[roman type][line break]".
 
 

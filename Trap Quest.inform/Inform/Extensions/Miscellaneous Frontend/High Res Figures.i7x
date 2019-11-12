@@ -3,7 +3,7 @@ High Res Figures by Miscellaneous Frontend begins here.
 Figure of dungeon loading is the file "Special/Loading/loading7.png".
 Figure of dungeon pregnant loading is the file "Special/Loading/loading7a.jpg".
 Figure of dungeon minotaur loading is the file "Special/Loading/loading7b.jpg".
-Figure of dq dungeon loading is the file "Special/Loading/loading5a.jpg".
+[Figure of dq dungeon loading is the file "Special/Loading/loading5a.jpg".] Figure of dq dungeon loading is the file "Special/Loading/loading5b.jpg".
 
 Figure of woods loading is the file "Special/Loading/loading1.jpg".
 Figure of woods vines loading is the file "Special/Loading/loading2.png".

@@ -198,7 +198,7 @@ To Set Up Dispensers:
 	repeat with D running through all dispensers:
 		refill D with N;
 		SetDose D to a random number between 2 + bonus liquid and 8;
-		if D is alchemical vat, SetDose D to 10;
+		if D is alchemical vat, SetDose D to 5;
 		increase N by 1;
 		if N is 16, now N is 1;
 	repeat with D running through dispensers in Dungeon12:
@@ -206,11 +206,14 @@ To Set Up Dispensers:
 		SetDose D to 1.
 
 [The vat is a unique dispenser that periodically refills itself with a new liquid. TODO: make the vat less busted]
-An alchemical vat is a kind of dispenser. There is 1 alchemical vat in Mansion19. Understand "murky" as alchemical vat when the doses of the item described > 0.
+alchemical vat is a dispenser. alchemical vat is in Mansion19. Understand "murky" as alchemical vat when the doses of the item described > 0.
+Figure of vat is the file "Env/Mansion/vat1.jpg".
+To decide which figure-name is the examine-image of (C - alchemical vat):
+	decide on figure of vat.
 
-The printed name of an alchemical vat is usually "[TQlink of item described][if the doses of item described > 0]vat of murky potion[otherwise]empty vat[end if][shortcut-desc][TQxlink of item described]". The text-shortcut of an alchemical vat is usually "av".
+The printed name of an alchemical vat is "[TQlink of item described][if the doses of item described > 0]vat of murky potion[otherwise]empty vat[end if][shortcut-desc][TQxlink of item described]". The text-shortcut of alchemical vat is usually "av".
 
-To say ExamineDesc of (D - an alchemical vat):
+To say ExamineDesc of (D - alchemical vat):
 	say "A huge wrought iron vat, resting on the floor between two counters. You can reach into it if you stretch your arm, but it would be pretty challenging to drink from directly. [run paragraph on]";
 	if the doses of D > 0:
 		let X be the fill-type of D;
@@ -218,19 +221,19 @@ To say ExamineDesc of (D - an alchemical vat):
 	otherwise:
 		say "It is empty anyway.".
 
-Definition: An alchemical vat is immune to change: decide yes.
+Definition: alchemical vat is immune to change: decide yes.
 
 A time based rule (this is the vat cycling rule):
-	if playerRegion is Mansion and the remainder after dividing earnings by 995 < seconds:
-		let V be a random alchemical vat;
+	if Mansion19 is placed and the remainder after dividing time-earnings by 995 < time-seconds:
 		let N be a random number between 1 and 15;
-		refill V with N;
-		SetDose V to 10;
-		if the location of the player is Mansion19, say "A small compartment opens in the wall, and a hose snakes out, filling the vat with another serving of potion!";
+		refill alchemical vat with N;
+		SetDose alchemical vat to 5;
+		if the location of the player is Mansion19, say "A small compartment opens in the wall, and a hose snakes out, filling the vat with another serving of murky potion!";
 
 Report decanting something with alchemical vat:
 	let N be a random number between 1 and 15;
-	refill the second noun with N.
+	refill the second noun with N;
+	[say "[if the doses of N > 0]The rest of the liquid drains away down a sinkhole at the bottom of the vat. Then, a[otherwise]A[end if] small compartment opens in the wall, and a hose snakes out, filling the vat with another serving of [appearance corresponding to an Magic of N in the Table of Drinks] potion[if known corresponding to an Magic of N in the table of drinks is 1] ([FillName N])[end if]!";]
 
 
 

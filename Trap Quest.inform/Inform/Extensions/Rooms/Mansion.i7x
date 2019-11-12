@@ -39,6 +39,7 @@ Mansion32 is a creaky mandatory haunted room. The printed name of Mansion32 is "
 Mansion33 is a creaky haunted room. The printed name of Mansion33 is "Old Library". "A large dusty room with high bookshelves lining the walls. It feels like nobody's been in here in years.". The shape of Mansion33 is L4/0-0-1-0-0-0.
 Mansion34 is a creaky haunted room. The printed name of Mansion34 is "Occult Room". "A small room decorated with expensive-looking purple rugs and tapestries.". The shape of Mansion34 is L4/0-0-0-1-1-1.
 Mansion35 is a haunted room. The printed name of Mansion35 is "Singed Room.". "A small room occupied with charred and burnt furniture. Something stinks.". The shape of Mansion35 is L4/0-0-1-1-0-1.
+Mansion36 is a mandatory creaky haunted room. The printed name of Mansion36 is "Statue Room". "[ExamineDesc of MansionScenery01]".
 
 [Hallways]
 
@@ -59,7 +60,7 @@ Mansion09 is a haunted room. The printed name of Mansion09 is "Dark Hallway". "T
 REQUIRES COMMENTING
 
 *!]
-The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34 and Mansion35 are in The Mansion.
+The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35 and Mansion36 are in The Mansion.
 
 
 

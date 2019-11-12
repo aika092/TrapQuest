@@ -94,7 +94,7 @@ To decide which number is the calculated semen taste addiction of the player:
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is craving:
+Definition: yourself is craving semen:
 	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 14:
 		if cold turkey > the semen taste addiction of the player * 20, decide no;
 		decide yes;
@@ -105,7 +105,7 @@ Definition: yourself is craving:
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is desperately craving:
+Definition: yourself is desperately craving semen:
 	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 17:
 		if cold turkey > the semen taste addiction of the player * 20, decide no;
 		decide yes;

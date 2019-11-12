@@ -204,7 +204,7 @@ To compute facial sex of (M - a supporter):
 		compute facesit sex of M.
 
 To compute strapon facial sex of (M - a supporter):
-	if the oral sex addiction of the player > 6, arouse 400;
+	if the oral sex addiction of the player > 6, passively stimulate face from M;
 	if the reaction of the player is 0:
 		say StraponOralResisting of M;
 		say StraponOralResistingResponse of M;

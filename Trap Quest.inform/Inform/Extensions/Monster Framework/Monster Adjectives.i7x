@@ -11,7 +11,10 @@ A monster can be friendly-fucking. [Are they having non-aggressive sex with you?
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
-	decide on 3 + ((the difficulty of M * (10 + game difficulty)) / 3).
+	let X be 3;
+	increase X by (the difficulty of M * (10 + game difficulty)) / 3;
+	if M is durable-tentacle-monster, increase X by the difficulty of M;
+	decide on X.
 A monster has a number called boredom. The boredom of a monster is usually 0. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
 A monster has a number called friendly boredom. The friendly boredom of a monster is usually 0. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
@@ -174,10 +177,14 @@ To decide which number is the girth of (M - a monster):
 	if M is male, decide on 2; [Normal penis girth]
 	decide on 0.
 
-To decide which number is the semen load of (M - a monster):
+To decide which number is the base semen load of (M - a monster):
 	decide on the girth of M.
 
-Definition: a monster is alive if it is on-stage. Understand "alive" as a thing when item described is on-stage.
+To decide which number is the semen load of (M - a monster):
+	if the trophy-mode of ejaculate-trophy is 1, decide on (the girth of M * 2) + 5;
+	decide on the girth of M.
+
+Definition: a person is alive if it is on-stage. Understand "alive" as a thing when item described is on-stage.
 
 To decide which number is the amount of available directions of (M - a monster):
 	let X be 0;

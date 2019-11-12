@@ -34,6 +34,9 @@ Definition: a sex toy is too boring: decide no.
 Definition: a sex toy is transformation-protected: decide yes.
 Definition: a sex toy is disintegration-protected: decide yes.
 
+To decide which number is the initial outrage of (S - a sex toy):
+	decide on 10 + the size of S.
+
 
 To say DongSize of (C - a sex toy):
 	let N be the size of C;
@@ -246,7 +249,7 @@ To compute gripping of (I - an insertable thing):
 		increase analGripCount by 1;
 		if analGripCount > 33 - ((the girth of I - the openness of asshole) * 3):
 			say "The [ShortDesc of I] [one of]stimulates[or]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
-			arouse 350;
+			passively stimulate asshole from I;
 			if the girth of I > the openness of asshole and diaper quest is 0:
 				let open be the openness of asshole;
 				say "It's so big that you feel yourself getting slowly stretched and ruined.";
@@ -257,7 +260,7 @@ To compute gripping of (I - an insertable thing):
 		increase vaginalGripCount by 1;
 		if vaginalGripCount > 23 - ((the girth of I - the openness of vagina) * 2):
 			say "The [ShortDesc of I] [one of]stimulates[or]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
-			arouse 500;
+			passively stimulate vagina from I;
 			if the girth of I > the openness of vagina and diaper quest is 0:
 				let open be the openness of vagina;
 				say "It's so big that you feel yourself getting slowly stretched and ruined.";
@@ -339,11 +342,15 @@ To say MediumDesc of (P - small-jewelled-plug):
 Definition: small-jewelled-plug is grey themed: decide yes.
 Definition: small-jewelled-plug is purple themed: decide yes.
 Definition: small-jewelled-plug is gem themed: decide yes.
+To decide which number is the initial cringe of (S - small-jewelled-plug):
+	decide on the initial outrage of S.
 medium-jewelled-plug is a basic plug. The size of medium-jewelled-plug is 4. The text-shortcut of medium-jewelled-plug is "plu4". medium-jewelled-plug is metal.
 To say MediumDesc of (P - medium-jewelled-plug):
 	say "medium sized metal plug".
 Definition: medium-jewelled-plug is gem themed: decide yes.
 Definition: medium-jewelled-plug is grey themed: decide yes.
+To decide which number is the initial cringe of (S - medium-jewelled-plug):
+	decide on the initial outrage of S.
 round-plug is a basic plug. The size of round-plug is 5. The text-shortcut of round-plug is "plu5". Understand "round", "black" as round-plug.
 To say MediumDesc of (P - round-plug):
 	say "large round black plug".
@@ -383,6 +390,10 @@ To say MediumDesc of (C - a plug):
 
 
 A tail plug is a kind of plug.
+To decide which number is the initial outrage of (S - a tail plug):
+	decide on 14.
+To decide which number is the initial cringe of (S - a tail plug):
+	decide on the initial outrage of S.
 
 A balancing tail plug is a kind of tail plug.
 

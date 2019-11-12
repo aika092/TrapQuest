@@ -23,11 +23,11 @@ To say MediumDesc of (M - receptionist):
 
 To say MonsterDesc of (M - receptionist):
 	if M is sex-enslaved:
-		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing her naked pussy. It's also been torn over one breast. Her armband, instead of showing a picture of her face, and the word 'STAFF', now just reads 'SPANK ME'. Her left hand is still raised with an adorable pointing finger, but the fury on her face tells you it's not hanging there of her own volition. In fact both of her arms and hands seem magically frozen in place. Her face and mouth have been left free to allow her to frown and snarl[if M is in School01], and she would be able to walk around if one of her ankles wasn't bound to the back of her reception desk with a strong metal chain[end if].";
+		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing [his of M] [if lady fetish is 2]bright pink chastity cage[otherwise]naked pussy[end if]. It's also been torn over one breast. [big his of M] armband, instead of showing a picture of [his of M] face, and the word 'STAFF', now just reads 'SPANK ME'. [big his of M] left hand is still raised with an adorable pointing finger, but the fury on [his of M] face tells you it's not hanging there of [his of M] own volition. In fact both of [his of M] arms and hands seem magically frozen in place. [big his of M] face and mouth have been left free to allow [him of M] to frown and snarl[if M is in School01], and [he of M] would be able to walk around if one of [his of M] ankles wasn't bound to the back of [his of M] reception desk with a strong metal chain[end if].";
 	otherwise if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in her hair and blue flowers on the hem of her shortened dress. She's got girly frills at the top of her blue socks and a blue choker around her neck. Her hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of her dress. It's so big that she has to keep her feet a metre apart just to be able to walk at all[if M is in School01] - not that she can go very far anyway, since one of her ankles is bound to the back of her reception desk with a strong metal chain[end if]. She can't seem to stop rubbing the front and back of her diaper with her two mittened hands, with a vacant drooling facial expression. Whatever her mega-diaper is full of, it sloshes around rather noisily as she rubs it into herself.";
 	otherwise:
-		say "This woman looks like she's in her mid-thirties, but her complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
+		say "This [man of M] looks like [he of M]'s in [his of M] mid-thirties, but [his of M] complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
 
 
 To say MonsterComment of (M - receptionist):
@@ -36,7 +36,7 @@ To say MonsterComment of (M - receptionist):
 To set up (M - receptionist):
 	reset M;
 	now the monstersetup of M is 1;
-	if the player is the donator, now M is in [School01] Dungeon10;
+	now M is in [School01] Dungeon10;
 	now M is guarding;
 	now the difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
@@ -98,9 +98,9 @@ To compute perception of (M - receptionist):
 					say "[big he of M] pushes you through the warp portal. Colours rush all around you, and then suddenly you're standing on a marble floor in front of a large oak desk!";
 					let R be the location of headmistress;
 					teleport to R;
-					now the location of the player is discovered;
 					now shocked-monsters is 0;
 					compute perception of headmistress;
+					increase the times-met of headmistress by 1;
 					display entire map;
 					now receptionist is not interested;
 					now the boredom of receptionist is 0;

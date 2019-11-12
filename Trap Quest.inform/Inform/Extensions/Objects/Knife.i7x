@@ -29,7 +29,7 @@ The knife charge decay rule is listed in the advance counters rules.
 Knifing it with is an action applying to two things.
 Check knifing:
 	if the second noun is not knife and (the second noun is not sword or the second noun is not metal) and the second noun is not midnight tanto, say "How would you cut anything with that?" instead;
-	if the second noun is knife:
+	if the second noun is knife or the second noun is not midnight tanto:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
 		if the player is not able to manually use manual dexterity, do nothing instead;
 	otherwise:

@@ -86,7 +86,7 @@ To set up (M - minotaur):
 To decide which number is the girth of (M - minotaur):
 	decide on 8.
 
-To decide which number is the semen load of (M - minotaur):
+To decide which number is the base semen load of (M - minotaur):
 	decide on 18.
 
 This is the spawn initial minotaur rule:
@@ -254,6 +254,7 @@ To compute anal sex of (M - minotaur):
 		unless M is wrapped, AssFill 2;
 		if the soreness of asshole < 10 or the reaction of the player is 0, ruin asshole;
 	otherwise:
+		TimesSubmittedUp M by 1;
 		now the nutting-turns of M is 0;
 		let R be 20 + a random number between 1 and 10;
 		if debuginfo > 0, say "[input-style][ShortDesc of M] sleep pin check: d10+20.5 ([R].5) | [strength of the player + dexterity of the player] = ([strength of the player]) strength + ([dexterity of the player]) dexterity[roman type][line break]";
@@ -279,6 +280,7 @@ To compute vaginal sex of (M - minotaur):
 		unless M is wrapped, PussyFill 2;
 		if the soreness of vagina < 10 or the reaction of the player is 0, ruin vagina;
 	otherwise:
+		TimesSubmittedUp M by 1;
 		now the nutting-turns of M is 0;
 		PussyFill 2;
 		say "[one of][BigNameDesc of M] seems completely spent - [he of M] pulls your bloated body off [his of M] shaft and leaves you to recover[or][BigNameDesc of M], spent, pulls your bloated body off [his of M] deflating shaft and leaves you to recover[or][BigNameDesc of M] pulls your bloated body off [his of M] shaft as [his of M] ejaculation finally ends, leaving you on the floor to recover[or][BigNameDesc of M] removes [his of M] deflating shaft from your [vagina], completely spent[at random]. [big he of M] stalks off, probably looking for another woman to breed.";

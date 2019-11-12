@@ -325,7 +325,8 @@ To line (coord1 - a list of numbers) to (coord2 - a list of numbers) at (wgt - a
 
 Section - Line using angle + distance
 
-To draw a line (hue - a number) in (win - a g-window) from (x1 - a number) by (y1 - a number) measuring/of (distance - a number) pixel/pixels/px/-- long/-- at (angle - a real number) angle/-- with (wgt - a number) pixel/pixels/px/-- line-weight/stroke:
+[Trying to reduce unnecessary code]
+[To draw a line (hue - a number) in (win - a g-window) from (x1 - a number) by (y1 - a number) measuring/of (distance - a number) pixel/pixels/px/-- long/-- at (angle - a real number) angle/-- with (wgt - a number) pixel/pixels/px/-- line-weight/stroke:
 	let xx be (sine of angle) * distance to the nearest whole number;
 	let yy be (cosine of angle) * distance to the nearest whole number;
 	let x2 be x1 + xx;
@@ -346,7 +347,7 @@ To line (coord1 - a list of numbers) dist/distance (distance - a number) px/pixe
 		rule fails;
 	let x1 be entry 1 of coord1;
 	let y1 be entry 2 of coord1;
-	Draw a line (current foreground-color) in (current graphics window) from (x1) by (y1) measuring (distance) pixels at (angle) with (wgt) pixel line-weight.
+	Draw a line (current foreground-color) in (current graphics window) from (x1) by (y1) measuring (distance) pixels at (angle) with (wgt) pixel line-weight.]
 
 
 
@@ -1078,7 +1079,8 @@ To draw/display an/-- image-map in (WIN - a g-window) at (COORD1 - a list of num
 	display an image-map in (WIN) at (X1) by (Y1) using (IMG_MAP) rendered using (TSET) with tile-size (W) by (H).
 
 
-Section - Short form	of tileset image map
+
+Section - Short form of tileset image map
 
 To image-map (IMG_MAP - a list of lists of numbers) at (COORD1 - a list of numbers) width/w (WDT - a number) tileset (TSET - a tileset) tile-size/size (W - a number) by/x (H - a number) pixel/pixels/px/--, backgrounded:
 	if the type of the current graphics window is g-graphics:
@@ -1423,6 +1425,7 @@ To say >console:
 
 To say <:
 	(-  glk_set_window( gg_mainwin ); } RunParagraphOn(); -).
+
 
 
 
@@ -2045,7 +2048,6 @@ The text color for short-form commands is determined by the "current foreground-
 Speed notes:
 
 	Bitmap-rendered strings draw a number of bitmaps each time they are redrawn, and bitmaps themselves are composed of multiple rectangle-drawing instructions. As such, bitmap-rendered strings are the most intensive of Glimmr's drawing commands. Because most interpreters are still relatively slow when it comes to drawing rectangles, they will draw relatively slowly. If you want to use bitmap-rendered strings and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmap-rendered strings.)
-
 
 Section: Image-rendered strings
 

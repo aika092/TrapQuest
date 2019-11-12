@@ -51,8 +51,8 @@ Definition: a clothing (called C) is able to cover crotch: [Either C is the only
 	let X be 0;
 	if C is worn, increase X by 1;
 	if the player is male:
-		if C is actually penis covering and C is potentially asshole covering:
-			if the number of worn actually penis covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
+		if C is actually at least partially penis covering and C is potentially asshole covering:
+			if the number of worn actually at least partially penis covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
 	otherwise:
 		if C is potentially vagina covering and C is potentially asshole covering:
 			if the number of worn potentially vagina covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
@@ -140,7 +140,7 @@ This is the belly covering clothing can't have an exclusive clash rule:
 				if C is top-exclusive and wearing-target is top-exclusive:
 					if summoning is 0 and autowear is false, say "You can't wear this because you are already wearing the [C]!";
 					rule fails;
-				otherwise if C is corset or wearing-target is corset:
+				otherwise if (C is corset and C is not exclusive) or (wearing-target is corset and wearing-target is not exclusive):
 					continue the action; [corsets are easygoing and will try to fit where needed]
 				otherwise if C is top-exclusive or wearing-target is bottom-exclusive:
 					if wearing-target is overdress or (wearing-target is underdress and C is not overdress):

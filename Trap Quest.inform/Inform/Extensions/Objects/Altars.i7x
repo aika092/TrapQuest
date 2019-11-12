@@ -39,6 +39,9 @@ To say ExamineDesc of (C - elder altar):
 
 The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al".
 
+A diaper quest fix rule:
+	destroy the hotel altar.
+
 Figure of hotel altar is the file "Env/Hotel/statue1.jpg".
 
 To decide which figure-name is the examine-image of (C - hotel altar):
@@ -137,12 +140,12 @@ To AltarPunish (C - a clothing):
 	if a random number between 1 and 2 is 1 or tutorial is 1:
 		if C is worn upgradable clothing:
 			potentially transform C;
-			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, [if the body soreness of the player > 0]there's only one more thing to do in this room. Let's get healed! Rooms with [bold type]furniture[newbie style] can generally be somehow used to heal up. This one is really straightforward, we just have to be on our knees and then we can use it to rest, healing over time! Let's try that now[otherwise]let's progress to the east[end if].[roman type][line break]";
 		otherwise:
 			say "Your [C] is momentarily surrounded by a dark glow.";
 			curse the C;
 			now the C is sure;
-			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, let's move along to the east![roman type][line break]";
+			if tutorial is 1, say "[newbie style]Uh-oh, looks like the altar can only be used once in a while! There are lots of places like this in the game, with interactable entities that generally do good things for you, but you can only use them once in a while. The altar is the most important because it can bless clothing (and therefore remove curses) but it's also the most risky since it does bad stuff if you use it too early, before the cooldown is reset. If you want to 100% avoid this bad outcome, wait until it is 'glowing strongly' again. Anyway, [if the body soreness of the player > 0]there's only one more thing to do in this room. Let's get healed! Rooms with [bold type]furniture[newbie style] can generally be somehow used to heal up. This one is really straightforward, we just have to be on our knees and then we can use it to rest, healing over time! Let's try that now[otherwise]let's progress to the east[end if].[roman type][line break]";
 	otherwise:
 		say "Nothing seems to happen.".
 
@@ -514,7 +517,9 @@ To ElderOffer:
 			otherwise ElderBreed asshole;
 		otherwise:
 			ElderConnect;
-		reset elder altar.
+		reset elder altar;
+	otherwise:
+		say "The elder altar must be recharging or something, because nothing else happens.".
 
 To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing Aika: it also needs to do something for males, I assume? And what about females that are unable to orgasm? ("if the player is not able to get horny")]
 	repeat with C running through top level protection clothing worn by the player:
@@ -807,7 +812,7 @@ To compute DevilPayment (N - a number):
 		now M is not penetrating vagina;
 	otherwise:
 		say "into the skin of your temples. [if N < 3]A slight [italic type]hot[roman type] feeling settles[otherwise if N < 5]A noticeably [italic type]hot[roman type] feeling settles[otherwise]Arousal washes[end if] over your body as the symbol slowly fades.";
-		Arouse 500 * N;
+		Arouse 1000 * N;
 	if N > 2:[if the charge is high enough, then part of the payment will be permanent]
 		decrease N by N / 2;
 		say "A second, smaller pentagram appears on your forehead, followed by [run paragraph on]";

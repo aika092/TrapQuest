@@ -174,11 +174,11 @@ To compute service spill punishment:
 		transform black maid headdress into cafe maid headdress;
 	if bondage protection is 1 or the class of the player is bunny:
 		if the total weighty volume of hips < the largeness of breasts and the player is not bottom heavy:
-			say "You feel your butt expanding [if the silicone volume of hips > 0]with more silicone [otherwise if artificial enhancements fetish is 1]with silicone implants [end if]as punishment[one of] for being a clumsy waitress[or][stopping]!";
+			say "You feel your butt expanding [if the silicone volume of hips > 0]with more silicone [otherwise if artificial enhancements fetish is 1]with silicone implants [end if]as punishment[if the class of the player is bunny][one of] for being a clumsy waitress[or][stopping][end if]!";
 			if artificial enhancements fetish is 1, AssImplantsUp 2;
 			otherwise AssSwell 2;
 		otherwise if the player is not top heavy:
-			say "You feel your [if the silicone volume of breasts > 0]breast implants expanding[otherwise if artificial enhancements fetish is 1]breasts being enhanced with silicone implants[otherwise]breasts growing larger[end if] to try and make up for the fact that you're a [one of]useless[or]rubbish[or]terrible[or]clumsy[in random order] cocktail waitress!";
+			say "You feel your [if the silicone volume of breasts > 0]breast implants expanding[otherwise if artificial enhancements fetish is 1]breasts being enhanced with silicone implants[otherwise]breasts growing larger[end if] [if the class of the player is bunny]to try and make up for the fact that you're a [one of]useless[or]rubbish[or]terrible[or]clumsy[in random order] cocktail waitress[otherwise]as punishment[end if]!";
 			if artificial enhancements fetish is 1, BustImplantsUp 4;
 			otherwise BustUp 4.
 
@@ -195,6 +195,12 @@ To compute class outfit of (H - bunny waitress ears):
 	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny waitress outfit is 0):
 		if bunny-summoned is 0:
 			repeat with O running through worn dresses:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn trousers:
@@ -235,7 +241,8 @@ To progress quest of (Q - bunny-waitress-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase serve-count of Q by 1;
-			if serve-count of Q > 1:
+			if playerRegion is not school, increase serve-count of Q by 1;
+			if serve-count of Q > 4:
 				compute quest completion of Q on C.
 
 To compute persistent reward of (Q - bunny-waitress-quest) on (C - a clothing):
@@ -245,10 +252,10 @@ To compute persistent reward of (Q - bunny-waitress-quest) on (C - a clothing):
 		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a bunny waitress.[or]even more blessed magic![stopping]".
 
 To uniquely destroy (C - bunny waitress ears):
-	if the serve-count of bunny-waitress-quest > 2 and the quest of C is bunny-waitress-quest:
+	if the serve-count of bunny-waitress-quest > 4 and the quest of C is bunny-waitress-quest:
 		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot out around you.";
-		while the serve-count of bunny-waitress-quest > 2:
-			decrease the serve-count of bunny-waitress-quest by 1;
+		while the serve-count of bunny-waitress-quest > 4:
+			decrease the serve-count of bunny-waitress-quest by 2;
 			let B be a random held blessable bottle;
 			if B is bottle:
 				say "A blue light surrounds your [B]!";
@@ -288,6 +295,9 @@ To compute class outfit of (H - rubber bunny ears):
 	if B is actually summonable or (B is bunny outfit and rubber-bunny-summoned < 2):
 		if rubber-bunny-summoned < 2:
 			repeat with O running through worn dresses:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn trousers:

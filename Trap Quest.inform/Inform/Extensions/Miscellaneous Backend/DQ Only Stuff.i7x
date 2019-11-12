@@ -31,6 +31,10 @@ Figure of slavehound is the file "NPCs/Mansion/Hound/hound3.png".
 Include Unnecessary Figures by DQ Only Stuff.
 Include Necessary Figures by DQ Only Stuff.
 
+temporaryYesNoBackground is a figure-name that varies.
+A game universe initialisation rule:
+	now temporaryYesNoBackground is figure of small image.
+
 Chapter - Unused but referenced Figures
 
 Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
@@ -45,7 +49,7 @@ Include School Stuff by DQ Only Stuff.
 Include Nursery by Nintendolls Job Epilogues.
 Include Just Married by Nintendolls One Year Later Epilogues.
 
-a wench is a kind of monster. a horny-wench is a kind of wench.
+a wench is a kind of monster. a horny-wench is a kind of wench. a wench has a number called creampieTimer.
 To compute (M - a monster) WenchReceiving (C - a clothing):
 	do nothing.
 To reset submissive wenches:
@@ -58,8 +62,9 @@ To compute (M - a monster) stomping (N - a monster):
 
 giant wasp is a kind of monster.
 newborn-wasp is an object that varies.
+wasp-honey-timer is a number that varies. wasp-poison-timer is a number that varies.
 aeromancer is a kind of monster. an aeromancer has a number called balloon. an aeromancer can be wand-empowered.
-tentacle monster is a kind of monster. A tentacle monster can be newborn, large, massive (this is the tentacle-size property). A tentacle monster has a number called evolved.
+tentacle monster is a kind of monster. durable-tentacle-monster is a tentacle monster. A tentacle monster can be newborn, large, massive (this is the tentacle-size property). A tentacle monster has a number called evolved.
 To compute tentacle birth:
 	do nothing.
 
@@ -69,6 +74,9 @@ gargoyle is a monster.
 unicorn is a monster.
 A slutty sister is a kind of monster. A bulging slutty sister is a kind of slutty sister. A futanari slutty sister is a kind of slutty sister.
 Icarus is a monster.
+A facehugger is a kind of monster.
+An ultimate-lesson-actor is a kind of monster.
+student-katya is a monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.

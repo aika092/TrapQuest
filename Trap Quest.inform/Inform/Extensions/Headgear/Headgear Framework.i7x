@@ -34,7 +34,7 @@ To compute persistent reward of (Q - a headgear-clothing-quest) on (C - a clothi
 	otherwise:
 		compute generic class reward of Q on C.
 
-To compute generic first time class reward of (Q - a headgear-clothing-quest) on (C - a clothing):
+To compute generic first time class reward of (Q - a clothing-quest) on (C - a clothing):
 	let D be a random off-stage ring;
 	if D is ring:
 		now D is pink diamond;
@@ -67,10 +67,14 @@ To compute generic class reward of (Q - a headgear-clothing-quest) on (C - a clo
 Report taking off headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
 	compute AutoRemoveFizzling of the noun.
 
+Report dropping headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
+	compute AutoRemoveFizzling of the noun.
+
 To compute AutoRemoveFizzling of (H - a headgear):
-	say "As you remove the [ShortDesc of H], it fizzles into nothingness. ";
-	only destroy H;
-	commence recycling of H. [Headgear only comes once in a while]
+	if H is in-play:
+		say "As you remove the [ShortDesc of H], it fizzles into nothingness. ";
+		only destroy H;
+		commence recycling of H. [Headgear only comes once in a while]
 
 The list of headgear recycling is a list of headgear that varies.
 
@@ -157,11 +161,12 @@ To set up magic state of (C - a headgear):
 	do nothing.
 
 To compute periodic effect of (H - a headgear):
-	if diaper quest is 0:
-		compute hair growth of H;
-		compute hair colour change of H;
-	compute outfit of H;
-	compute unique periodic effect of H.
+	if the player is not in a predicament room:
+		if diaper quest is 0:
+			compute hair growth of H;
+			compute hair colour change of H;
+		compute outfit of H;
+		compute unique periodic effect of H.
 
 To compute unique periodic effect of (H - a headgear):
 	do nothing.

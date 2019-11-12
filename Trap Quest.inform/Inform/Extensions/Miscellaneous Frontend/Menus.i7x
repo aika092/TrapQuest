@@ -113,7 +113,7 @@ To show menu contents:
 		end repeat;
 		now the current menu title is the temporary title;
 		reprint current menu;
-		let __x be the chosen letter;
+		let __x be the actual chosen letter;
 		if __x is a number listed in the Table of Menu Commands
 		begin;
 			follow the effect entry;
@@ -221,7 +221,7 @@ This is the hint toggle rule:
 	let __index be 0;
 	while __index < 1
 	begin;
-		let __x be the chosen letter;
+		let __x be the actual chosen letter;
 		if __x is 13 or __x is 31 or __x is 32, let __index be 1;
 		if __x is 72 or __x is 104, say hints from the subtable entry;
 	end while;

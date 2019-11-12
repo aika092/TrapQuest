@@ -57,8 +57,8 @@ To mimicReplace (M - a memic):
 	if the mimic-boredom of M <= 0:[sometimes there's a "move" to nothing here, but I don't understand why it happens unless G is holding the "location of M" pointer, not the "location of M" reference]
 		let R be a random placed creaky haunted room;
 		let G be the location of M;
-		if R is placed and the number of containers in R > 0:
-			let C be a random container in R;
+		let C be a random closed container in R;
+		if R is placed and C is container:
 			now M is in R;
 			now the mimic-disguise of M is C;
 			now M is closed;
@@ -122,14 +122,14 @@ To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or ful
 				BodyRuin 1;
 				FatigueUp 15;
 				if lactation fetish is 1, trigger lactation;
-				otherwise arouse 100;
+				otherwise passively stimulate breasts from memic;
 		otherwise if R > 2:
 			say "Your nipples harden a little painfully, turning visibly red as a wave of newfound sensitivity washes over your chest.";
 			increase the raw sensitivity of breasts by 2;
 		otherwise:
 			say "It feels like your whole body is on fire, and tears well up in your eyes as you wait for the venom to finally wear off.";
 			PainUp 2;
-		arouse 500.
+		passively stimulate vagina from memic.
 
 To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes or messes with the player's headgear]
 	say "A shadowy mass rises out of the crate, slowly forming itself into a green-skinned woman with piercing yellow eyes and huge GG-cup breasts, which are barely restrained by a sparkling magenta bikini. [line break][first custom style]'[one of]You[']re looking for a makeover, aren[']t you? Of course you are, you look terrible honey.'[or]I can[']t blame you for being greedy, you obviously need a complete makeover.'[or]Oh my. You[']re in dire need of my expertise, aren[']t you, honey?[or]You may not think you need a makeover, but trust me honey, you do.'[at random][roman type][line break]";
@@ -234,7 +234,7 @@ Report waiting when the player is in MimicCrib:
 	otherwise:
 		say "All of a sudden, white objects start to rain from the darkness above you. As the first ones thump against your face and body you realise with [horror the diaper addiction of the player] what they are - used disposable diapers! As more and more start to pile on top of each other on and around you, [if diaper messing >= 3]the disgusting smell of them[otherwise]the stench of piss[end if] soon fills your nostrils[if the diaper addiction of the player < 14], making you gag[end if].";
 		appropriate-cutscene-display figure of mimic cutscene 4;
-		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding. Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting you end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
+		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding. Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
 		PainUp 1;
 		now the fatigue of the player is the buckle threshold of the player;
 	now the stance of the player is 1;

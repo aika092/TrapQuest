@@ -230,6 +230,12 @@ To say ForcefeedAftermath of (M - a robochef):
 To say ForcefeedAfterFlav of (M - a robochef):
 	say "[speech style of M]'[one of][caps please] RETURN ONCE [if diaper messing >= 3]YOUR FOOD HAS TAKEN ITS NATURAL COURSE[otherwise]YOU ARE EMPTY AGAIN[end if] FOR A REFILL.'[or]SUBJECT SUFFICIENTLY SATIATED[if diaper messing >= 4]. WARNING: DIAPER RECOMMENDED TO AVOID POTTY FAILURE[end if].'[in random order][roman type][line break].".
 
+To say DQFeedingResistReactionFlav of (M - a robochef):
+	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PERAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".
+
+
+
+
 
 Part 5 - Conversation
 

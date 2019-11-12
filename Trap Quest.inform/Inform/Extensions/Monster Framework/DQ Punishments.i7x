@@ -90,7 +90,6 @@ Definition: a monster (called M) is aware that a diapering is possible:
  	decide yes.
 
 Definition: a monster (called M) is eager to double diapers:
-	unless the player is an october 2018 diaper donator, decide no;
 	let D be a random worn diaper;
 	if D is diaper:
 		if M is double-diaper-committed, decide yes;

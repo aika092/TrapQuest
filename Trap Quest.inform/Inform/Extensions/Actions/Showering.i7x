@@ -45,6 +45,8 @@ Check showering:
 Carry out showering:
 	if WoodsScenery01 is in the location of the player: [Unique stuff because of slimegirl]
 		compute showering WoodsScenery01;
+	otherwise if swimming-pool is in the location of the player and diaper quest is 0: [Unique stuff because the pool is full of cum]
+		compute showering swimming-pool;
 	otherwise:
 		if seconds is 0 and auto is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the water and begin to wash yourself. ";
 		now tracked-semen is 0;

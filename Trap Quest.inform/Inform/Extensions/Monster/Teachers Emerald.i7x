@@ -3,15 +3,12 @@ Teachers Emerald by Monster begins here.
 To say MediumDesc of (M - an emerald-teacher):
 	say "emerald teacher [teacher-name of M]".
 
-
-
 Part - Hannah
 
 teacher-hannah is an emerald-teacher.
 
 The text-shortcut of teacher-hannah is "teha".
 
-Figure of DQ hannah is the file "NPCs/School/Teacher/teacher5a.png".
 Figure of babslave hannah is the file "NPCs/School/Teacher/teacher5c.png".
 Figure of Teacher Hannah Cutscene 1 is the file "Special/Cutscene/cutscene-hannah-bondage1.png".
 
@@ -24,9 +21,9 @@ To decide which figure-name is the pacified-image of (M - teacher-hannah):
 
 To say MonsterDesc of (M - teacher-hannah):
 	if M is diaper-enslaved:
-		say "This tall ginger-haired black woman has had her slinky blue dress swapped out for a super-short navy baby dress with a cute starry sky pattern, with matching colours of stockings and baby mittens. She is wearing a matching white diaper with blue stars. The pacifier gag she had been wielding is firmly locked in her mouth. She's on her knees in front of the wooden paddle she had previously been holding, with one mittened hand held up in front of her breasts. Whenever she lowers the hand, the paddle springs to life, rising up from the ground and slapping her on the breasts. And every time she tries to change position so that the paddle can't get to her breasts, it just starts spanking her butt! Oh dear...";
+		say "This tall ginger-haired black [man of M] has had [his of M] slinky blue dress swapped out for a super-short navy baby dress with a cute starry sky pattern, with matching colours of stockings and baby mittens. [big he of M] is wearing a matching white diaper with blue stars. The pacifier gag [he of M] had been wielding is firmly locked in [his of M] mouth. [big he of M]'s on [his of M] knees in front of the wooden paddle [he of M] had previously been holding, with one mittened hand held up in front of [his of M] [ChestDesc of M]. Whenever [he of M] lowers the hand, the paddle springs to life, rising up from the ground and slapping [him of M] on the [ChestDesc of M]. And every time [he of M] tries to change position so that the paddle can't get to [his of M] [ChestDesc of M], it just starts spanking [his of M] butt! Oh dear...";
 	otherwise:
-		say "This tall ginger-haired black woman has a slinky blue dress that goes down to her knees. She's wielding a paddle in one hand and a [if diaper quest is 1]pacifier [otherwise]ball[end if]gag in the other. Her gaze and posture exude a great amount of confidence and strength.".
+		say "This tall ginger-haired black [man of M] has a slinky blue dress that goes down to her knees. [big he of M]'s wielding a paddle in one hand and a [if diaper quest is 1]pacifier [otherwise]ball[end if]gag in the other. [big his of M] gaze and posture exude a great amount of confidence and strength.".
 
 The teacher-name of teacher-hannah is "Hannah".
 
@@ -52,7 +49,7 @@ pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
 
 To compute teaching of (L - pain-lesson):
 	let M be the lesson-teacher of L;
-	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as she paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to her. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
+	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as [he of M] paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to [his of M]. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
 	if the player is wrist bound or the player is ankle bound or portal gag is worn:
 		if wrist collar bar is worn or portal gag is worn:
 			let W be wrist collar bar;
@@ -73,7 +70,7 @@ To compute teaching of (L - pain-lesson):
 		say "[variable custom style]Boy, that sure went well![roman type][line break]";
 		allocate 12 seconds;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
-	otherwise if diaper quest is 0 and clitoris piercing is eligible and (a random number between 1 and 3 > 1 or portal gag is not actually summonable):
+	otherwise if diaper quest is 0 and clitoris piercing is eligible and (a random number between 1 and 3 > 1 or portal gag is not actually summonable) and lady fetish < 2:
 		say "Well, today we'll be finding out the first step. Anyone who wants to be able to progress further in this class you must make a permanent change in order to prove your dedication.'[roman type][line break][big he of M] holds up a small, glittering metal object.[line break][speech style of M]'Personally, I think that every slut should have their clit pierced. It's not just a way to enhance the feelings, it's a symbol that constantly reminds you of your place in the world. And, of course, it means that everyone that sees it will know that you've gone through excruciating pain just to decorate yourself as a submissive.'[roman type][line break][big he of M] begins putting on hygienic latex gloves and produces a professional-looking sterilized piercing kit. Everyone in the room looks very nervous.[line break][speech style of M]'So, who's going to dedicate themselves to progress?'[roman type][line break]Do you let her give you a clitoris piercing? ";[possibly more indication here that everyone will follow you]
 		if the player is bimbo consenting:
 			let ST be a random tryhard student in the location of the player;
@@ -100,7 +97,7 @@ To compute teaching of (L - pain-lesson):
 		otherwise:
 			say "[if the player is feeling dominant]There's no way you're going to [']mark yourself as a submissive[']! You fold you arms and audibly huff. The other students seem to be influenced by you and in the end, nobody volunteers at all[otherwise]You look around but nobody is making any move to go forward, and you don't have the bravery to go through it alone[end if]. [BigNameDesc of M] frowns.[line break][speech style of M]'You do realise, by all being complete wusses that you've essentially proven my point? Bah. Well, we'll try again next time, and see if any of you have grown some kahunas. Now get out of my sight.'[roman type][line break]";
 			allocate 12 seconds;
-	otherwise if there is a worn clitoris piercing and clitoris lead is not worn and the number of cursed pussy covering clothing <= the number of cursed displacable pussy covering clothing:
+	otherwise if there is a worn clitoris piercing and clitoris lead is not worn and the number of cursed pussy covering clothing <= the number of cursed displacable pussy covering clothing and lady fetish < 2:
 		say "Well, let's try reminding them of the symbol of submission they've got permanently welded in between their thighs, hmm?'[roman type][line break]You shiver as you clench your thighs together, almost instinctively protecting your [ShortDesc of random worn clitoris piercing] from [him of M].[line break][speech style of M]'Today we're going to have a little competition, and the winner will get promoted. I need two volunteers, each with a pierced clit.'[roman type][line break]Do you volunteer? ";
 		if the player is bimbo consenting:
 			let ST be a random promotable student in the location of the player;
@@ -184,7 +181,7 @@ To compute teaching of (L - pain-lesson):
 				if N is nothing or a random number between 1 and 3 is 1 or diaper quest is 1, now N is M;
 				now portal-pants is in Holding Pen;
 				now N is retaining portal-pants;
-				say "[if N is M][BigNameDesc of M] pockets the device.[line break][speech style of M]'I think I'll keep it for myself.'[otherwise][BigNameDesc of M] twirls the device in [his of M] hand. I think I'll give it to Teacher [teacher-name of N]. Something tells me [he of N] will be able to find some good uses for your mouth! If you haven't met [him of M] yet, [he of M][']s the proud owner of a rather juicy [manly-penis], which pretty soon your mouth and tongue are likely to be well acquainted with, I should think!'[end if][roman type][line break]";
+				say "[if N is M][BigNameDesc of M] pockets the device.[line break][speech style of M]'I think I'll keep it for myself.'[otherwise][BigNameDesc of M] twirls the device in [his of M] hand. I think I'll give it to Teacher [teacher-name of N]. Something tells me [he of N] will be able to find some good uses for your mouth! If you haven't met [him of M] yet, [he of M][']s the proud owner of a rather juicy [DickDesc of N], which pretty soon your mouth and tongue are likely to be well acquainted with, I should think!'[end if][roman type][line break]";
 			say "You emit a muffled whine through the gag.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! [bold type]Keep it on until next time we have this class [speech style of M]and I'll reward you with a promotion, okay?'[roman type][line break]As [NameDesc of M] dismisses the class, there's nothing you can do but groan and accept your new fate. There is a small silver lining - you can feel that the magic power of the portal gag has slightly rubbed off on you, adding to your own magic power reserves.";
 			MagicPowerUp 2;
 		increase class-time by 120; [There's a longer time period until the next class]
@@ -399,7 +396,7 @@ To decide which figure-name is the monster-image of (M - teacher-bianca):
 	decide on figure of bianca.
 
 To say MonsterDesc of (M - teacher-bianca):
-	say "This tall slim-yet-curvy lady has long light brown hair. She's wearing all black. Her tight dress has a split section at the front of the skirt, the resulting gap rising high enough to fully expose her black panties. She seems completely comfortable with her appearance.".
+	say "This tall [if lady fetish is 2]slim, yet bootilicious man[otherwise]slim-yet-curvy lady[end if] has long light brown hair. [big he of M]'s wearing all black. [big his of M] tight dress has a split section at the front of the skirt, the resulting gap rising high enough to fully expose [his of M] black panties. [big he of M] seems completely comfortable with [his of M] appearance.".
 
 The teacher-name of teacher-bianca is "Bianca".
 

@@ -97,8 +97,8 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 		if LC is clothing, increase N by 1;
 		if N > a random number between 0 and 3, SemenAddictUp 1;
 		if the semen addiction of the player > 14:
-			arouse (N * 30) + 100;
 			say "You shiver with arousal as your face gets a fresh gooey load.";
+			stimulate face from semen times N;
 		if M > 0 and hair is not soaked:
 			decrease N by M; [face]
 			Squirt L on hair by M;
@@ -496,6 +496,10 @@ REQUIRES COMMENTING
 To WaterSoak (C - a clothing):
 	WaterSoak 1 on C.
 
+To CumHairUp (X - a number):
+	Squirt semen on Hair By X;
+	if a random number between 7 and 15 < the semen coating of hair, SemenAddictUp 1;
+	reset soak flavour
 
 [!<CumFaceUpX>+
 

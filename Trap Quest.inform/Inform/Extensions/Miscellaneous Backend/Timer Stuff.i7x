@@ -64,17 +64,15 @@ To decide what number is the character code returned:
 To pause/stop the/-- Glulx timer:
 	request repeating Glk timer event at 0 milliseconds.
 
-latest-timer-request is a number that varies.
-
 To request repeating Glk timer event at (T - a number) milliseconds:
-	now latest-timer-request is T;
+	if debugmode > 0, say "[input-style]Timer set to [T]ms intervals.[roman type][line break]";
 	actually request repeating Glk timer event at T milliseconds.
 
 To actually request repeating Glk timer event at (T - a number) milliseconds:
 	(- glk_request_timer_events({T}); (+ global timer interval +) = {T}; -).
 
 To reset the/-- Glulx timer:
-	request repeating Glk timer event at (global timer interval) milliseconds.
+	request repeating Glk timer event at 50 milliseconds.
 
 To render buffered stuff:
 	wait before continuing.

@@ -74,7 +74,7 @@ Breasts has a number called raw sensitivity.
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the sensitivity of breasts:
+To decide which number is the sensitivity of (B - breasts):
 	let S be 0;
 	if the class of the player is cowgirl:
 		if the milk volume of breasts > 10, increase S by 1;
@@ -88,14 +88,15 @@ To decide which number is the sensitivity of breasts:
 	increase S by the raw sensitivity of breasts;
 	if there is a worn nipple chain, increase S by 2;
 	if true love tattoo is worn, increase S by 2;
+	increase S by 6 * the trophy-mode of bust-trophy;
 	decide on S.
 
 
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
-	decide on 11. [allows us to easily tweak this number]
+	decide on 9.
 
 To decide which number is the lewdly exposed outrage of (B - breasts):
-	decide on 14. [allows us to easily tweak this number]
+	decide on 14.
 
 
 Definition: breasts is exposed:
@@ -143,7 +144,7 @@ To decide which number is the outrage of (B - breasts):
 		if B is at least partially lewdly exposed, now P is the at least partially lewdly exposed outrage of B + O;
 		now O is (2 + (the largeness of breasts * 3)) / cleavageCover; [This will be the value of how lewd it is that the player has big breasts, scaled down by how much of the titty meat is covered up by clothing]
 		if P > O, now O is P; [Take the larger of what's humiliating from big cleavage and exposed nipples]
-	now O is S + O; [Don't forget to add on semen coating]
+	now O is (S + O) / (the trophy-mode of bust-trophy + 1); [Add on semen coating; Bust trophy halves outrage]
 	if O > 20, decide on 20;
 	if O < 0, decide on 0;
 	decide on O.
@@ -1099,7 +1100,7 @@ breastStimulationFlavAllowed is initially true.
 To stimulate (X - breasts):
 	if breasts is pushed over the edge:
 		breasts orgasm shamefully;
-	otherwise if the sensitivity of breasts >= 2:
+	otherwise if the sensitivity of breasts >= 2 and the player is able to get horny:
 		arouse (the square root of (the sensitivity of breasts * 1000)) * 10;
 		if breastStimulationFlavAllowed is true:
 			if the sensitivity of breasts >= 10:

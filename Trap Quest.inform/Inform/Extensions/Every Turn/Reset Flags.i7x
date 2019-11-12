@@ -17,7 +17,9 @@ REQUIRES COMMENTING
 
 +!]
 To Reset Flags:
-	if refactoryperiod > 0, decrease refactoryperiod by 1;
+	if refactoryperiod > 0:
+		decrease refactoryperiod by 1;
+		now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]
 	[if testing-val is not the number of things in standard item pen and testing-val > 0, say "[bold type]The number of things in Standard Item Pen went from [testing-val] to [number of things in standard item pen].[roman type][line break]";
 	now testing-val is the number of things in standard item pen;]
 	now auto is 0;

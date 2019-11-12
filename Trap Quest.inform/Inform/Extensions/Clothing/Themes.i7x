@@ -697,7 +697,7 @@ Definition: an object is grey themed: [Is it significantly grey?]
 	decide no.
 
 A theme blocking rule:
-	if theme-target is grey themed and the number of currently at least partially visible grey themed wearthings > 1:
+	if theme-target is grey themed and the number of currently at least partially visible grey themed wearthings > 2:
 		add "silver & grey" to colour-themes-shared-list;
 		if the upgrade-target of theme-target is not grey themed, increase colour-themes-shared by 1.
 A theme sharing rule (this is the grey matching rule):

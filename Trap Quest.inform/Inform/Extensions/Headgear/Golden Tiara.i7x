@@ -37,6 +37,9 @@ To compute class outfit of (H - gold-tiara):[TODO: acolyte arm braces]
 		repeat with O running through worn dress:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
+		repeat with O running through worn exclusive corsets:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
 		summon B;
 		say "[bold type]Your tiara shivers, and a [printed name of B] materializes on your chest![roman type][line break]";
 		if gold-summoned < 2, now gold-summoned is 2;

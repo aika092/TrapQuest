@@ -61,6 +61,8 @@ To decide which number is cumulative-outrage-level:
 	let maxSimilarItems be 4;
 	repeat with C running through worn currently at least partially visible wearthings:
 		if the outrage of C >= A2, increase N by 1;
+	repeat with C running through carried not-in-bag things:
+		if the outrage of C / 2 >= A2, increase N by 1;
 	repeat with C running through body parts:
 		if the outrage of C >= A2, increase N by 1;
 	if N > maxSimilarItems, now N is maxSimilarItems;
@@ -92,6 +94,11 @@ To decide which number is appearance-outrage-level:
 		if OC > O:
 			now O is OC;
 			now appearance-outrage-target is C;
+	repeat with C running through carried not-in-bag things:
+		let OC be the outrage of C / 2; [to make sure we only spend the CPU cycles to calculate it once]
+		if OC > O:
+			now O is OC;
+			now appearance-outrage-target is C;
 	repeat with C running through body parts:
 		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
@@ -115,6 +122,16 @@ An appearance needs updating rule (this is the previous items worn check rule):
 		if entry N of L is not entry N of previous-items-worn, rule succeeds.
 An appearance validation check update rule (this is the previous items worn update rule):
 	now previous-items-worn is the list of worn wearthings.
+
+previous-items-not-in-bag is a list of things that varies.
+An appearance needs updating rule (this is the previous items not-in-bag check rule):
+	let L be the list of carried not-in-bag things;
+	let LN be the number of entries in L;
+	if LN is not the number of entries in previous-items-not-in-bag, rule succeeds;
+	repeat with N running from 1 to LN:
+		if entry N of L is not entry N of previous-items-not-in-bag, rule succeeds.
+An appearance validation check update rule (this is the previous items not-in-bag update rule):
+	now previous-items-not-in-bag is the list of carried not-in-bag things.
 
 previous-items-displaced is a number that varies.
 An appearance needs updating rule (this is the displaced items worn check rule):

@@ -8,12 +8,16 @@ supporter-ai is a supporter. supporter-ai is female. The leftover-type of suppor
 The supporter-name of supporter-ai is "Ai".
 
 To say MonsterDesc of (M - supporter-ai):
-	say "This woman looks like the epitome of a blonde bimbo. She's completely naked, her giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic. Her huge, visibly enhanced cock-suckling lips are coloured a deep shade of pink and two hoops with hears in the centre hang from her earlobes. Her medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
+	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if lady fetish is 2]aside from a neon-pink chastity cage around his [sissy-penis][otherwise]her giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-suckling lips are coloured a deep shade of pink and two hoops with hears in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
 
 Figure of Ai is the file "NPCs/MultiFloor/Supporter/aika1.png".
 
 To decide which figure-name is the monster-image of (M - supporter-ai):
 	decide on figure of Ai.
+
+To say ChestDesc of (M - supporter-ai):
+	if lady fetish is 2, say "pecs";
+	otherwise say "boobs".
 
 To say LeftoverDesc (N - 202):
 	say "The bloated, cumfilled and unconscious body of Ai is on the ground here.[line break]".
@@ -22,38 +26,39 @@ To say BoringPerception of (M - supporter-ai):
 	say "[speech style of M]'[one of]Another player, huh? Sorry but I have no interest in banging someone who looks so basic[or]You again. Sorry, but I'm not looking for people who aren't at least half as hot as me[stopping].'[roman type][line break]".
 
 To say DisapprovalFlav of (M - supporter-ai):
-	say "[BigNameDesc of M] [one of]shivers with arousal.[or]moves a hand down to delicately touch her clit.[or]licks [his of M] lips seductively[in random order][line break][speech style of M]'Keep that up, and [one of]you might like what happens next[or]I might decide that you're worth my time[at random].'[roman type][line break]".
+	say "[BigNameDesc of M] [one of]shivers with arousal.[or]moves a hand down to delicately touch [his of M] [if lady fetish is 2]caged [sissy-penis][otherwise]clit[end if].[or]licks [his of M] lips seductively[in random order][line break][speech style of M]'Keep that up, and [one of]you might like what happens next[or]I might decide that you're worth my time[at random].'[roman type][line break]".
 
 To say UnidentifiablePosterReactionFlav of (M - supporter-ai):
 	say "[speech style of M]'Not bad, not bad at all! This babe is almost as hot as me.'[roman type][line break]".
 
 To say MonsterTripAnnounceFlav of (M - supporter-ai):
-	say "[BigNameDesc of M] pushes her giant boobs together and moves them towards your face as if to let you motorboat them, but it was just a distraction! At the last moment she lets fly with an attempted kick at your [feet]!".
+	say "[BigNameDesc of M] pushes [his of M] giant [ChestDesc of M] together and moves them towards your face as if to let you motorboat them, but it was just a distraction! At the last moment [he of M] lets fly with an attempted kick at your [feet]!".
 
 To say DamageReactHealthy of (M - supporter-ai):
 	say "[BigNameDesc of M] giggles condescendingly.[line break][speech style of M]'[one of]Aww, how cute[or]That was adorable[or]You should probably quit while you're ahead[in random order].'[roman type][line break]".
 
 To say DamageReactDamaged of (M - supporter-ai):
-	say "[BigNameDesc of M][']s [one of]giant boobs bounce wildly from the impact, with inhuman physics[or]body takes the blow, her big breasts acting like airbags[or]giant tits cushion the vast majority of the hit[in random order]!".
+	if lady fetish is 2, say "[BigNameDesc of M]'s body takes the blow!";
+	otherwise say "[BigNameDesc of M][']s [one of]giant boobs bounce wildly from the impact, with inhuman physics[or]body takes the blow, her big breasts acting like airbags[or]giant tits cushion the vast majority of the hit[in random order]!".
 
 To say DamageReactTired of (M - supporter-ai):
-	say "[BigNameDesc of M] [one of]takes the hit to the belly, causing her to bend over in pain[or]tries to twirl to dodge but ends up taking a painful hit to the buttocks[or]blocks with her arms but still recoils with pain[in random order].".
+	say "[BigNameDesc of M] [one of]takes the hit to the belly, causing [him of M] to bend over in pain[or]tries to twirl to dodge but ends up taking a painful hit to the buttocks[or]blocks with [his of M] arms but still recoils with pain[in random order].".
 
 To say DamageReactWeak of (M - supporter-ai):
-	say "[BigNameDesc of M] [one of]squeaks as her breasts take another hit and become even more sore[or]shakes at the knees as they threaten to give out from under her[or]is knocked off balance and very nearly falls over[in random order].".
+	say "[BigNameDesc of M] [one of]squeaks as [his of M] [ChestDesc of M] take another hit and become even more sore[or]shakes at the knees as they threaten to give out from under [his of M][or]is knocked off balance and very nearly falls over[in random order].".
 
 To compute unique death of (M - supporter-ai):
-	say "[speech style of M]'Nooo, my perfect body, how could it lose?!'[roman type][line break][BigNameDesc of M] asks out loud as her body begins to disintegrate into blue pixels. Moments later she has completely disappeared.".
+	say "[speech style of M]'Nooo, my perfect body, how could it lose?!'[roman type][line break][BigNameDesc of M] asks out loud as [his of M] body begins to disintegrate into blue pixels. Moments later [he of M] has completely disappeared.".
 
 To say SelectionFrustrated of (M - supporter-ai):
-	say "[BigNameDesc of M] looks at her wrist as if she was wearing a watch, yawns loudly and visibly loses interest.";
+	say "[BigNameDesc of M] looks at [his of M] wrist as if [he of M] was wearing a watch, yawns loudly and visibly loses interest.";
 	bore M.
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-ai):
 	say "[speech style of M]'It's your lucky day. Since you asked so nicely, I'll allow it, this time.'[roman type][line break]".
 
 To compute the default taunting of (M - supporter-ai):
-	say "[BigNameDesc of M] watches, [one of]gently touching herself downstairs as she does[or]moving one hand to her breast as the other circles her clit[or]pushing two fingers inside herself and tweaking one nipple[or]fingering herself rapidly as she moves her other hand to play with the entrance to her asshole[or]pushing three fingers each into her pussy and asshole before bringing them up to her mouth to lick them all clean[then at random].".
+	say "[BigNameDesc of M] watches, [one of]gently touching [him of M]self downstairs as [he of M] does[or]moving one hand to [his of M] breast as the other circles her [if lady fetish is 2]cage[otherwise]clit[end if][or]pushing two fingers inside [him of M]self and tweaking one nipple[or][if lady fetish is 2]teasing himself through his cage[otherwise]fingering herself rapidly[end if] as [he of M] moves [his of M] other hand to play with the entrance to [his of M] asshole[or]pushing three fingers each into [his of M] [if lady fetish is 2]asshole[otherwise]pussy and asshole[end if] before bringing them up to [his of M] mouth to lick them all clean[then at random].".
 
 
 
@@ -61,12 +66,12 @@ Part - Aika
 
 supporter-aika is a supporter. The leftover-type of supporter-aika is 203.
 
-Definition: supporter-aika is presenting as male: decide no.
+Definition: supporter-aika is presenting as male if lady fetish is 2.
 
 Definition: supporter-aika is father material: decide yes.
 
 To say MonsterDesc of (M - supporter-aika):
-	say "A terrifying blonde woman stands before you. She's wearing medieval metal bracers on her arms and legs, and wields a barbaric-looking shortsword. Her huge H-cup breasts are completely bare and sit heavily on her chest, hanging away from each other in a way that lets you know they're almost certainly natural. Her tiny grey loincloth does nothing to hide the [LongDickDesc of M] and balls hanging from her crotch, swaying gently as she moves. A metal warlord's mask covers her face, preventing you from seeing her features or expression.".
+	say "A terrifying blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs, and wields a barbaric-looking shortsword[if lady fetish < 2]. Her huge H-cup breasts are completely bare and sit heavily on her chest, hanging away from each other in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth does nothing to hide the [LongDickDesc of M] and balls hanging from [his of M] crotch, swaying gently as [he of M] moves. A metal warlord's mask covers [his of M] face, preventing you from seeing [his of M] features or expression.".
 
 Figure of Aika is the file "NPCs/MultiFloor/Supporter/aika2.png".
 
@@ -76,7 +81,7 @@ To decide which figure-name is the monster-image of (M - supporter-aika):
 	decide on figure of Aika.
 
 To say LeftoverDesc (N - 203):
-	say "The bloated, cumfilled and unconscious body of Aika is on the ground here, cum still leaking out of her mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
+	say "The bloated, cumfilled and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
 
 To set up (M - supporter-aika):
 	reset M;
@@ -609,7 +614,7 @@ Definition: supporter-teagan is able to remove cursed plugs: decide yes. [spent 
 Definition: supporter-teagan is butt slut immune: decide yes. [spent 2 credits]
 
 Definition: supporter-teagan (called M) is fetish appropriate:
-	if lactation fetish is 0, decide no;
+	if lactation fetish is 2, decide no;
 	decide yes.
 
 To say LeftoverDesc (N - 205):
@@ -837,7 +842,7 @@ To decide which figure-name is the monster-image of (M - supporter-reiko):
 	decide on figure of reiko.]
 
 To say MonsterDesc of (M - supporter-reiko):
-	say "This woman is naked apart from a chastity belt. It doesn't appear to have a visible lock. Could it be permanent?".
+	say "This [man of M] is naked apart from a chastity belt. It doesn't appear to have a visible lock. Could it be permanent?".
 
 To set up (M - supporter-reiko):
 	reset M;
@@ -852,7 +857,7 @@ To set up sex length of (M - supporter-reiko) in (B - face):
 	set up sex length 2 of M in B. [+0 from credit spending]
 
 To say LeftoverDesc (N - 205):
-	say "Reiko is lying here, hardly conscious, mindlessly pawing at the chastity cage blocking her crotch.".
+	say "Reiko is lying here, hardly conscious, mindlessly pawing at the chastity cage blocking [his of supporter-reiko] crotch.".
 
 Definition: supporter-reiko is fetish appropriate: decide no. [Incomplete]
 
@@ -872,7 +877,7 @@ To decide which figure-name is the monster-image of (M - supporter-jim):
 	decide on figure of jim.
 
 To say MonsterDesc of (M - supporter-jim):
-	say "This [man of M][']s glasses and hat give [him of M] the air of a wizened wizard. [big his of M] grin and wiggling fingers give [him of M] the air of a lecherous pervert[if M is presenting as female]. Also, she has a penis[end if]. DEV NOTE: The image is temporary until Icarus makes one for [him of M].".
+	say "This [man of M][']s robe, hat and the electricity crackling in the palm of [his of M] hand give [him of M] the air of a wizened wizard. [big his of M] full bushy facial hair, wiggling fingers and a robe that looks like a dressing gown give [him of M] the air of a lecherous pervert[if M is presenting as female]. Also, she has a penis[end if].".
 
 To set up (M - supporter-jim):
 	reset M;
@@ -1159,13 +1164,12 @@ To decide which figure-name is the monster-image of (M - supporter-misako):
 	decide on figure of misako 2.
 
 To say MonsterDesc of (M - supporter-misako):
-	say "This fiery redhead is wearing a full body latex bodysuit that goes down to her wrists and ankles. Over the top, a metal chastity cage keeps her pussy permanently unstimulated. ";
-	if M is defeated, say "The cursed bodysuit's buttplug is repeatedly bringing her to climax with powerful vibrations, making sure to shut off instantly at the moment of climax, to ensure that the anal orgasm is closer to denial torture than true pleasurable release. This has happened countless times already, and [NameDesc of M] is just a moaning, writhing mess on the floor, unable to string two coherent words together.";
-	otherwise say "She looks rather unpleased about that fact. One might even say... desperate.".
-
+	say "This [man of M] is wearing a black latex bra, hood, and thigh high boots. The hood appears to cover [his of M] eyes, but since [he of M] seems to be able to wander around without bumping into walls, it's clear that [he of M] has some amount of limited vision through them.[paragraph break][big he of M] is stuck in a lot of bondage: black bondage straps connect a metal collar to thick wristcuffs which are in turn tightly connected to a leather chastity belt. Both the front and rear of the chastity belt have protrusions with several red LEDs going around the outside, indicating that [he of M] likely has remotely controlled vibrators inserted into both [his of M] pussy and asshole.[paragraph break]A pink ballgag is stuck in [his of M] mouth, which makes all of [his of M] speech rather muffled and at times barely intelligble.";
+	if M is defeated, say "The cursed chastiy device's vaginal vibrator is repeatedly bringing [him of M] to near climax with powerful vibrations, before switching to the anal vibrator for the last bit, and then making sure to shut off instantly at the moment of climax, to ensure that the anal orgasm is closer to denial torture than true pleasurable release. This has happened countless times already, and [NameDesc of M] is just a moaning, writhing mess on the floor, unable to string two coherent words together.";
+	otherwise say "[big he of M] looks rather unpleased about [his of M] predicament. One might even say... desperate.".
 
 To say LeftoverDesc (N - 207):
-	say "Misako is lying here, unconscious, [semen] slowly oozing out of her gaped asshole through the hole torn in her red latex bodysuit. Her cursed chastity belt is still in place.".
+	say "[BigNameDesc of supporter-misako] is lying here, unconscious, [semen] slowly oozing out of [his of supporter-misako] gaped asshole through the hole torn in [his of supporter-misako] chastity belt. [big his of supporter-misako] cursed chastity belt is still in place.".
 
 To say CurtseyReactionFlav of (M - supporter-misako):
 	if there is a worn chastity cage, say "[BigNameDesc of M][']s eyes grow sad.[line break][speech style of M]'Oh, you're locked up too? We're both doomed to go crazy, aren't we...'[roman type][line break]";
@@ -1185,10 +1189,10 @@ Definition: supporter-misako is willing to urinate: decide no.
 
 
 To say DisapprovalFlav of (M - supporter-misako): [This is when the player is in some way looking suddenly more lewd in front of the NPC, maybe because they pulled out their tits, or maybe because a trap pulled up their skirt, or jizzed on them, or similar.]
-	say "[BigNameDesc of M][']s eyes glaze over a little bit.[line break][speech style of M]'Please don't tempt me!'[roman type][line break]".
+	say "[BigNameDesc of M][']s mouth wobble a little bit.[line break][speech style of M]'Please don't tempt me!'[roman type][line break]".
 
 To say BecomesAggressive of (M - supporter-misako):
-	say "[speech style of M]'That's it... I just can't take it any more... maybe if we grind together I can get something... anything!'[roman type][line break]She takes an offensive stance!".
+	say "[speech style of M]'That's it... I just can't take it any more... maybe if we grind together I can get something... anything!'[roman type][line break][big he of M] takes an offensive stance[one of]! ...Well, at least as offensive as [he of M] is capable of...[or]![stopping]".
 
 To say AlreadyUnfriendlyPerception of (M - supporter-misako): [The NPC has just spotted the player, and has already decided they're best used as a cumdump]
 	say "[speech style of M]'You again... maybe this time I'll be able to feel something. Please, don't fight back.'[roman type][line break]".
@@ -1226,24 +1230,23 @@ To say FriendlySexReleaseRefusalSpeech of (M - supporter-misako): [The player ha
 
 
 To compute kneeling reaction of (M - supporter-misako): [The player has got on their knees voluntarily while the NPC is aggressive.]
-	say "[BigNameDesc of M] smiles happily with wide eyes.[line break][speech style of M]'Thank you, thank you so much!'[roman type][line break]";
+	say "[BigNameDesc of M] smiles happily.[line break][speech style of M]'Thank you, thank you so much!'[roman type][line break]";
 	humiliate 75.
 
 To say SubmissionFlav of (M - supporter-misako): [The player has done something submissive like remove an item of clothing while the NPC is aggressive.]
-	say "[BigNameDesc of M] tries to rub herself through her belt as she watches.[line break][speech style of M]'That's it, keep going...'[roman type][line break]".
+	say "[BigNameDesc of M] tries to rub herself through her belt as [he of M] watches.[line break][speech style of M]'That's it, keep going...'[roman type][line break]".
 
 To compute delay of (M - supporter-misako): [NPCs, when they're confident that the player can't escape, will sometimes get the player a chance to request a certain type of sex.]
-	say "[BigNameDesc of M] squats over you, eagerly soaking in your entire body with her wide, crazy and lust-filled eyes.[line break][speech style of M]'So, how should we try this?'[roman type][line break]".
-
+	say "[BigNameDesc of M] squats over you, eagerly soaking in your entire body.[line break][speech style of M]'So, how should we try this?'[roman type][line break]".
 
 To say PresentRejectionFlav of (M - supporter-misako): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'No, I think this will work better...'[roman type][line break]".
 
-To compute the busy waiting of (M - supporter-misako): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
-	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait, rubbing herself over her belt in vain as she does.".
+To compute the busy waiting of (M - supporter-misako):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait, rubbing [himself of M] as close as [he of M] can reach to [his of M] pussy as [he of M] does.".
 
 To compute the dildo stuck taunting of (M - supporter-misako):
-	say "[one of][BigNameDesc of M] rubbing herself over her belt, trying to feel something[line break][speech style of M]'I wish I could have a dildo impale me by my pussy. Even the shame of that would be better than no feeling at all...'[roman type][line break][or][stopping]".
+	say "[one of][BigNameDesc of M] rubbing [himself of M] as close as [he of M] can reach to [his of M] pussy, trying to feel something[line break][speech style of M]'I wish I could have a dildo impale me by my pussy. Even the shame of that would be better than no feeling at all...'[roman type][line break][or][stopping]".
 
 To say StrikingSuccessFlav of (M - supporter-misako) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
@@ -1252,32 +1255,32 @@ To say StrikingFailureFlav of (M - supporter-misako) on (B - a body part): [Targ
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
 
 To say DamageVibeConversion of (M - supporter-misako):
-	say "[one of][bold type][BigNameDesc of M][bold type][']s bodysuit seems to somehow absorb the hit! In the next moment, [NameDesc of M][bold type] shrieks in surprise as a powerful vibration can be heard from where her asshole must be. [roman type]It only lasts a few seconds but is enough to cause her legs to shake and her hands to rush to her backside, scrambling in vain to find a way to make it stop.[line break][speech style of M]'What the hell?! No, no, not my ass! I don't want to cum from my ass! Now I understand why the witch warned me about what will happen if I cum from my ass. I can't let that happen or my cursed bodysuit will... um... oh god... no... NO!'[roman type][line break]She turns back to you, a mixture of shame, arousal and fury on her face.[line break][speech style of M]'You [bitch]! There's no way I'll let you make me cum from my ass!'[roman type][line break][or]Once again [NameDesc of M][']s bodysuit absorbs the blow and converts it into loud, powerful vibrations inside her asshole. [stopping]";
+	say "[one of][bold type][BigNameDesc of M][bold type][']s bodysuit seems to somehow absorb the hit! In the next moment, [NameDesc of M][bold type] shrieks in surprise as a powerful vibration can be heard from where [his of M] asshole must be. [roman type]It only lasts a few seconds but is enough to cause [his of M]legs to shake and [his of M] hands to rush to [his of M] backside, scrambling in vain to find a way to make it stop.[line break][speech style of M]'What the hell?! No, no, not my ass! I don't want to cum from my ass! Now I understand why the witch warned me about what will happen if I cum from my ass. I can't let that happen or my cursed bodysuit will... um... oh god... no... NO!'[roman type][line break][big he of M] turns back to you, a mixture of shame, arousal and fury on [his of M] face.[line break][speech style of M]'You [bitch]! There's no way I'll let you make me cum from my ass!'[roman type][line break][or]Once again [NameDesc of M][']s bodysuit absorbs the blow and converts it into loud, powerful vibrations inside [his of M] asshole. [stopping]";
 
 To say MindingOwnBusinessCombatFlav of (M - supporter-misako): [Your NPC was minding their own business and not even looking at the player when they attacked]
-	say "[DamageVibeConversion of M]She leaps towards you, ready to fight with everything she's got!".
+	say "[DamageVibeConversion of M][big he of M] leaps towards you, ready to fight with everything [he of M][']s got!".
 
 To say RudeAwakeningFlav of (M - supporter-misako): [Your NPC was sleeping when the player attacked]
 	say MindingOwnBusinessCombatFlav of M.
 
 To say DamageReactHealthy of (M - supporter-misako):
-	say "[DamageVibeConversion of M][one of]She growls with anger[or]howls in frustration[cycling]!".
+	say "[DamageVibeConversion of M][one of][big he of M] growls with anger[or]howls in frustration[cycling]!".
 
 To say DamageReactDamaged of (M - supporter-misako):
-	say "[DamageVibeConversion of M]Her breathing is heavy but regular.".
+	say "[DamageVibeConversion of M][big his of M] breathing is heavy but regular.".
 
 To say DamageReactTired of (M - supporter-misako):
-	say "[DamageVibeConversion of M][BigNameDesc of M] [one of]squeals with shameful pleasure, and then grinds her teeth together with determination[or]emits a high pitched whine, and does a panicked dance on the spot[at random].".
+	say "[DamageVibeConversion of M][BigNameDesc of M] [one of]squeals with shameful pleasure, and then grinds [his of M] teeth together with determination[or]emits a high pitched whine, and does a panicked dance on the spot[at random].".
 
 To say DamageReactWeak of (M - supporter-misako):
-	say "[DamageVibeConversion of M][BigNameDesc of M] [one of]whimpers as her legs shake uncontrollably[or]breathes heavily and irregularly. Her eyes look glazed over[at random][one of]. She's close[or][stopping].".
+	say "[DamageVibeConversion of M][BigNameDesc of M] [one of]whimpers as [his of M] legs shake uncontrollably[or]breathes heavily and irregularly. [big his of M] eyes look glazed over[at random][one of]. [big he of M][']s close[or][stopping].".
 
 To say DamageReactSubmissive of (M - supporter-misako): [Hinting that the player might be able to turn the tables and fuck your NPC]
 	say DamageReactWeak of M.
 
 To compute death of (M - supporter-misako):
 	if the health of M <= 0:
-		say "[DamageVibeConversion of M][BigNameDesc of M] drops to her knees as she screams[line break][speech style of M]'Oh god, oh god, oh god, I'm cumming, I'm coming from my ass...!'[roman type][line break]And at the instant that she stars to cum the vibrations suddenly shut off, leaving her flopping on the ground wildly with a frustrating, shameful and unsatisfying ruined orgasm. And then, as soon as it's over, the vibrations start again, this time non-stop instead of in three-second bursts.[line break][speech style of M]'No, no, please, I didn't mean to cum! I'm sorry! Please don't say the curse has activated! Hah... hah... haaaaaah... cumming!'[roman type][line break]The cursed bodysuit's buttplug quickly manages to bring her to the edge again, once again shutting off at the moment of climax, to ensure that the anal orgasm is closer to denial torture than true pleasurable release. By this point, [NameDesc of M] is just a writhing mess on the floor.[line break][speech style of M]'Noooo, I'm going to go insane, I'm going to go insane!'[roman type][line break][BigNameDesc of M] keeps mumbling that to herself as the butt plug begins to bring her to her third ruined anal orgasm in less than a minute. There's nothing you can do for her - it's probably best just to leave her to it.";
+		say "[DamageVibeConversion of M][BigNameDesc of M] drops to [his of M] knees as [he of M] screams[line break][speech style of M]'Oh god, oh god, oh god, I'm cumming, I'm coming from my ass...!'[roman type][line break]And at the instant that [he of M] stars to cum the vibrations suddenly shut off, leaving [him of M] flopping on the ground wildly with a frustrating, shameful and unsatisfying ruined orgasm. And then, as soon as it's over, the vibrations start again, this time non-stop instead of in three-second bursts and in [his of M] vagina instead of [his of M] asshole.[line break][speech style of M]'No, no, please, I didn't mean to cum! I'm sorry! Please don't say the curse has activated! Hah... hah... haaaaaah...'[roman type][line break]The cursed belt's vaginal vibrator quickly manages to bring [him of M] close to the edge again, before shutting off. Then the anal vibrator turns on again, bringing [him of M] to [his of M] second anal orgasm.[line break][speech style of M]'Cumming!'[roman type][line break]It shuts off just before [his of M] peak, to ensure that the anal orgasm is closer to denial torture than true pleasurable release. By this point, [NameDesc of M] is just a writhing mess on the floor.[line break][speech style of M]'Noooo, I'm going to go insane, I'm going to go insane!'[roman type][line break][BigNameDesc of M] keeps mumbling that to [himself of M] as the team of vibrators begins to bring [him of M] to [his of M] third ruined anal orgasm in less than a minute, again making sure to bring [him of M] most of the way vaginally, before switching to anal only when [he of M] gets close. There's nothing you can do for [him of M] - it's probably best just to leave [him of M] to it.";
 		now M is fucked-silly;
 		now the health of M is 1;
 		if there are things retained by M:
@@ -1304,17 +1307,17 @@ To compute MasturbationReaction of (M - supporter-misako):
 		if M is penetrating a body part:
 			say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 		otherwise:
-			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]That's... that's so mean! Ugh! That's it, I'm going to use YOU to get me off, if it's the last thing I do!'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break]She flexes her wrists in anticipation.";
+			say "[BigNameDesc of M] stares.[line break][speech style of M]'[if M is friendly]That's... that's so mean! Ugh! That's it, I'm going to use YOU to get me off, if it's the last thing I do!'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break][big he of M] flexes [his of M] wrists in anticipation.";
 			now M is interested;
 			anger M.
 
 [Oral]
 
 To say CommencingFacesitFlav of (M - supporter-misako): [The NPC sits on the player's face.]
-	say "[BigNameDesc of M] flips you onto your back and before you know it, your head is between her latex-clad thighs and the seat of her chastity belt is being lowered right onto your face! It seems like [he of M] has no intention of letting you go before she's tried her best to make herself cum.".
+	say "[BigNameDesc of M] flips you onto your back and before you know it, your head is between [his of M] latex-clad thighs and the seat of [his of M] chastity belt is being lowered right onto your face! It seems like [he of M] has no intention of letting you go before [he of M][']s tried [his of M] best to make [himself of M] cum.".
 
 To say FacesitResistingResponse of (M - supporter-misako): [The player is refusing to play ball and perform cunnilingus / anilingus. How does the NPC act?]
-	say "[one of][BigNameDesc of M] whines in frustration as [he of M] rocks back and forth on your face.[or][BigNameDesc of M] squeezes tight on your head with [his of M] thighs as she grinds away, practically sobbing with frustration.[or][BigNameDesc of M] rapidly grinds away on your face, panting heavily.[then at random][line break][speech style of M]'[one of]Come on, let me feel something!'[or]Dammit, I can't feel a thing!'[or]Is it really not going to work?'[or]Come on, please work, I need to cum so badly!!!'[then at random][roman type][line break]".
+	say "[one of][BigNameDesc of M] whines in frustration as [he of M] rocks back and forth on your face.[or][BigNameDesc of M] squeezes tight on your head with [his of M] thighs as [he of M] grinds away, practically sobbing with frustration.[or][BigNameDesc of M] rapidly grinds away on your face, panting heavily.[then at random][line break][speech style of M]'[one of]Come on, let me feel something!'[or]Dammit, I can't feel a thing!'[or]Is it really not going to work?'[or]Come on, please work, I need to cum so badly!!!'[then at random][roman type][line break]".
 
 To say FacesitSubmissionResponse of (M - supporter-misako): [Normal facesitting oral sex. Explain what's happening!]
 	say FacesitResistingResponse of M.
@@ -1323,7 +1326,7 @@ To say NearingClimaxFacesit of (M - supporter-misako): [Next turn your NPC is go
 	say FacesitResistingResponse of M.
 
 To say FacesitClimaxFlav of (M - supporter-misako):
-	say "[BigNameDesc of M] begins to grind with increasing speed and desperation until all of a sudden she stops, and stands up, with a face covered in tears.[line break][speech style of M]'It doesn't work. I don't know what to do. Nothing works!'[roman type][line break]".
+	say "[BigNameDesc of M] begins to grind with increasing speed and desperation until all of a sudden [he of M] stops, and stands up, with a face covered in tears.[line break][speech style of M]'It doesn't work. I don't know what to do. Nothing works!'[roman type][line break]".
 
 [Vaginal & Anal]
 
@@ -1346,7 +1349,7 @@ To say AssholeSpecialPenetrationFlav of (M - supporter-misako): [This can be wha
 	say VaginaSpecialPenetrationFlav of M.
 
 To say SexSubmitFlav of (M - supporter-misako) in (F - a fuckhole): [The player has submitted to your acts. How does that make your NPC act?]
-	say "[one of][BigNameDesc of M] whines in frustration as [he of M] scissors you for all that she's worth.[or][BigNameDesc of M] squeezes tight on your torso with [his of M] thighs as she grinds away, practically sobbing with frustration.[or][BigNameDesc of M] rapidly grinds away on your [genitals], panting heavily.[then at random][line break][speech style of M]'[one of]Come on, let me feel something!'[or]Dammit, I can't feel a thing!'[or]Is it really not going to work?'[or]Come on, please work, I need to cum so badly!!!'[then at random][roman type][line break]".
+	say "[one of][BigNameDesc of M] whines in frustration as [he of M] scissors you for all that [he of M][']s worth.[or][BigNameDesc of M] squeezes tight on your torso with [his of M] thighs as [he of M] grinds away, practically sobbing with frustration.[or][BigNameDesc of M] rapidly grinds away on your [genitals], panting heavily.[then at random][line break][speech style of M]'[one of]Come on, let me feel something!'[or]Dammit, I can't feel a thing!'[or]Is it really not going to work?'[or]Come on, please work, I need to cum so badly!!!'[then at random][roman type][line break]".
 
 To say SexResistFlav of (M - supporter-misako) in (F - a fuckhole): [The player is resisting against your acts. How does that make your NPC act?]
 	say SexSubmitFlav of M in F.

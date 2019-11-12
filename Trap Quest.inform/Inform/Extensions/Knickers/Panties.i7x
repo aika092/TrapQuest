@@ -223,7 +223,7 @@ pale-panties is a panties. pale-panties is sheer. pale-panties is nylon. Underst
 To say selfexamineuniquetitle of (G - pale-panties):
 	say "pair of sheer nylon panties".
 To say UniqueClothingDesc of (G - pale-panties):
-	say "This pair of sissy panties are very delicate and sheer.".
+	say "This pair of [sissy] panties are very delicate and sheer.".
 Definition: pale-panties is sissifying: decide yes.
 Definition: pale-panties is pink themed: decide yes.
 

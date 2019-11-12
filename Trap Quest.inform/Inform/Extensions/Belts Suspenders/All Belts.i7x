@@ -322,12 +322,12 @@ To say TransformReaction of (C - a sissy-suspenders):
 		if C is cursed, say "[variable custom style]Am I really stuck wearing this? Look at these stupid hyper-feminine frills![roman type][line break]";
 		otherwise say "[variable custom style]Maybe it's time to take these off. They've just got way too ridiculous...[roman type][line break]";
 	otherwise if C is almost too much:
-		say "[variable custom style]I guess this is what I have become. [if the player is male]A super feminine sissy...[otherwise]A parody of my own gender...[end if][roman type][line break]";
+		say "[variable custom style]I guess this is what I have become. [if the player is male and transGender is 0]A super feminine sissy...[otherwise]A parody of my own gender...[end if][roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 		say "[variable custom style]These are so [if the humiliation of the player > HUMILIATION-SHAMELESS - 2000]perfect[otherwise]cute[end if]. I love the silky frills![roman type][line break]".
 
 
-A string belt is a kind of clothing. [No clashes.] The printed name of string belt is usually "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string belt is "stb". There is 1 unique hemp manly string belt. The soak-limit of a string belt is usually 1.
+string-belt is a clothing. [No clashes.]  The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
 
 Figure of string belt 0 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt0.png".
 Figure of string belt 1 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt1.png".
@@ -336,7 +336,7 @@ Figure of string belt 3 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt3
 Figure of string belt 4 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt4.png".
 Figure of string belt 5 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt5.png".
 
-To decide which figure-name is the clothing-image of (C - a string belt):
+To decide which figure-name is the clothing-image of (C - string-belt):
 	let T be the used condoms of C;
 	if T > 4:
 		decide on figure of string belt 5;
@@ -351,12 +351,13 @@ To decide which figure-name is the clothing-image of (C - a string belt):
 	otherwise:
 		decide on figure of string belt 0.
 
-To say ClothingDesc of (C - a string belt):
+To say ClothingDesc of (C - string-belt):
 	say "This is a just a piece of string tied around your waist.".
 
-To say ShortDesc of (C - a string belt):
+To say ShortDesc of (C - string-belt):
 	say "string belt".
 
+Definition: string-belt is condom pinnable: decide yes.
 
 
 

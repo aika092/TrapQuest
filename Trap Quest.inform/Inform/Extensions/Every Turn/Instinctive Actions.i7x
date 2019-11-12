@@ -77,7 +77,7 @@ To Compute Broken Actions:
 		if there is a willing to shag monster in the location of the player:
 			let M be a random willing to shag monster in the location of the player;
 			compute broken sex of M;
-	otherwise if the arousal of the player >= maximum arousal:
+	otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room:
 		[say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";] [How did this get here?!]
 		if the player is able to automatically masturbate:
 			say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
@@ -97,7 +97,7 @@ To compute broken sex of (M - a monster):
 	if broken-present-cooldown <= 0:
 		now auto is 1;
 		now B is a random actually presentable orifice;
-		if B is not face and face is actually presentable and M is male and the player is craving and M is willing to do oral, now B is face;
+		if B is not face and face is actually presentable and M is male and the player is craving semen and M is willing to do oral, now B is face;
 		if the player is a butt slut and asshole is actually presentable and M is willing to do anal, now B is asshole;
 		if the player is a pussy slut and vagina is actually presentable and M is willing to do vaginal, now B is vagina;
 		if the player is a tit slut and M is male and M is willing to do titfucks and breasts are actually presentable, now B is breasts;

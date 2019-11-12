@@ -18,10 +18,10 @@ To say MediumDesc of (M - a matron):
 	say "strict matron".
 
 To say MonsterDesc of (M - a matron):
-	say "Standing proudly in her pink latex dress the matron of the Adult Nursery is casting a vigilant eye across the room. She has the look of a determined mother that will do anything to attend to those under her special care. Her aura of dominance is only slightly muted by the sluttiness of her dress."
+	say "Standing proudly in [his of M] pink latex dress the matron of the Adult Nursery is casting a vigilant eye across the room. [big he of M] has the look of a determined mother that will do anything to attend to those under [his of M] special care. [big his of M] aura of dominance is only slightly muted by the sluttiness of [his of M] dress."
 
 To say MonsterComment of (M - a matron):
-	if diaper quest is 0, say "[variable custom style][if the diaper addiction of the player < 6 and the player is male]What a MILF! This must be the woman in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*Giggle* [one of]Maybe she can be my mommy[or]It's my mommy[stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe she'll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games she'd play with someone that's not her baby?[otherwise if the delicateness of the player < 16]I bet she could take real good care of me.[otherwise]I hope she can be my mommy and show me how to be a slut like her.[end if][roman type][line break]".
+	if diaper quest is 0 and lady fetish < 2, say "[variable custom style][if the diaper addiction of the player < 6 and the player is male]What a MILF! This must be the woman in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*Giggle* [one of]Maybe she can be my mommy[or]It's my mommy[stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe she'll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games she'd play with someone that's not her baby?[otherwise if the delicateness of the player < 16]I bet she could take real good care of me.[otherwise]I hope she can be my mommy and show me how to be a slut like her.[end if][roman type][line break]".
 
 Definition: matron is able to remove cursed plugs: decide yes.
 
@@ -50,11 +50,11 @@ To say speech style of (M - matron):
 	say first custom style.
 
 To say GrabStatus of (M - matron):
-	say "[if M is feeding the player]has you in a high chair[otherwise if M is changing the player]has you on a giant changing table[otherwise if M is spanking the player]has you over her shoulder[otherwise]is restraining you[end if]".
+	say "[if M is feeding the player]has you in a high chair[otherwise if M is changing the player]has you on a giant changing table[otherwise if M is spanking the player]has you over [his of M] shoulder[otherwise]is restraining you[end if]".
 
 To say GroundPeeReaction of (M - matron):
 	if M is friendly or M is uninterested:
-		say "[speech style of M]'Now that just won't do! You're wetting [if the location of M is Hotel22]my nursery's[otherwise]the[end if] floor, you disgusting [if M is female]girl[otherwise]sissy[end if]! You've lost your adult underwear privileges, child - I'm going to put you in diapers and if I have anything to say about it, you'll be wearing them until the day you die!'[roman type][line break]";
+		say "[speech style of M]'Now that just won't do! You're wetting [if the location of M is Hotel22]my nursery's[otherwise]the[end if] floor, you disgusting [if M is presenting as female]girl[otherwise]sissy[end if]! You've lost your adult underwear privileges, child - I'm going to put you in diapers and if I have anything to say about it, you'll be wearing them until the day you die!'[roman type][line break]";
 		anger M;
 		now M is interested;
 		now M is diaper-committed.
@@ -70,7 +70,7 @@ To compute MasturbationReaction of (M - matron):
 	if M is in Hotel22 and (M is friendly or M is uninterested):
 		say "[BigNameDesc of M] watches you with a bemused expression.";
 		if there is a worn total protection diaper:
-			say "[speech style of M]'[one of]Wow, you really are enjoying your nappies aren't you? Well don't let me stop you!'[or]Do you realise how much of a pathetic baby you look like right now? There's no way anyone in the world could treat you like a grown up again after this!'[or]What a good [if the player is male]sissy baby[otherwise]girl[end if]!'[stopping][roman type][line break][if the humiliation of the player < 40000]You turn [one of]bright[or]an even brighter shade of[stopping] red.[end if]";
+			say "[speech style of M]'[one of]Wow, you really are enjoying your nappies aren't you? Well don't let me stop you!'[or]Do you realise how much of a pathetic baby you look like right now? There's no way anyone in the world could treat you like a grown up again after this!'[or]What a good [if the player is presenting as male]sissy baby[otherwise]girl[end if]!'[stopping][roman type][line break][if the humiliation of the player < 40000]You turn [one of]bright[or]an even brighter shade of[stopping] red.[end if]";
 			humiliate 50;
 			now the boredom of M is 50; [This stops an unfriendly matron suddenly running out of boredom and interrupting the player to perform some maintenance feeding]
 		otherwise:
@@ -80,7 +80,7 @@ To compute MasturbationReaction of (M - matron):
 			now M is interested;
 			now the boredom of M is 0;
 			if the player is prone:
-				say "Grabbing your hands away from you, she picks you up and plops you down on the giant changing table. She smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps.";
+				say "Grabbing your hands away from you, [he of M] picks you up and plops you down on the giant changing table. [big he of M] smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps.";
 				now M is grabbing the player;
 				now M is changing the player;
 			otherwise:
@@ -90,7 +90,8 @@ To say waitingflav of (M - matron):
 	say "[DQWaitingFlav of M]".
 
 To say LeftoverDesc (N - 116):
-	say "An unconscious [input-style][ShortDesc of matron][roman type] on the ground here has a bulging belly and still has [semen] slowly flowing out of her [vagina].[line break]".
+	let M be matron;
+	say "An unconscious [input-style][ShortDesc of M][roman type] on the ground here has a bulging belly and still has [semen] slowly flowing out of [his of M] [HoleDesc of M].[line break]".
 
 To say DiaperDonateComment of (M - matron):
 	say "[speech style of M]'Now remember, be a good baby and stay in diapers for Nana.'[roman type][line break]".
@@ -98,16 +99,16 @@ To say DiaperDonateComment of (M - matron):
 Part 2 - Perception
 
 To compute sudden objectification of (M - matron):
-	say "[BigNameDesc of M] puts a hand over her mouth in shock.[line break][speech style of M]'Oh dear darling, this just won't do. You clearly need someone to take care of you...'[roman type][line break]".
+	say "[BigNameDesc of M] puts a hand over [his of M] mouth in shock.[line break][speech style of M]'Oh dear darling, this just won't do. You clearly need someone to take care of you...'[roman type][line break]".
 
 To compute perception of (M - matron):
  	now M is interested;
  	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
  	if the class of the player is living sex doll:
- 		say "It doesn't look like she's interested in you.";
+ 		say "It doesn't look like [he of M]'s interested in you.";
  		bore M for 500 seconds;
 	otherwise if M is unfriendly:
-		say "[one of]She seems compelled by her maternal instincts to care for her newest charge[or]She smiles warmly[if the delicateness of the player < 15], but with a small hint of malice[end if][stopping]. [line break][speech style of M]'Hi, you naughty baby! You look like you need nanny's help.'[roman type][line break][if the diaper addiction of the player < 8]There's worry in your eyes as she approaches. She won't accept that you're really an adult and can care for your own self. [otherwise if the diaper addiction of the player > 15]You giggle and react with a whimsical [line break][second custom style]'Ack!'[roman type][line break]as you ready to play with your Nanny. [end if][if the delicateness of the player < 7]You hope you have the strength to fight her off. [otherwise if the delicateness of the player < 12]Your mind begins to wander thinking of what sort of humiliation she'll put you through, now.[otherwise if the delicateness of the player < 16]You yearn for her care.[otherwise]You ache to fall to your knees and let her do whatever she wants with your body.[end if]";
+		say "[one of][big he of M] seems compelled by [his of M] maternal instincts to care for [his of M] newest charge[or][big he of M] smiles warmly[if the delicateness of the player < 15], but with a small hint of malice[end if][stopping]. [line break][speech style of M]'Hi, you naughty baby! You look like you need nanny's help.'[roman type][line break][if the diaper addiction of the player < 8]There's worry in your eyes as [he of M] approaches. [big he of M] won't accept that you're really an adult and can care for your own self. [otherwise if the diaper addiction of the player > 15]You giggle and react with a whimsical [line break][second custom style]'Ack!'[roman type][line break]as you ready to play with your Nanny. [end if][if the delicateness of the player < 7]You hope you have the strength to fight [him of M] off. [otherwise if the delicateness of the player < 12]Your mind begins to wander thinking of what sort of humiliation [he of M]'ll put you through, now.[otherwise if the delicateness of the player < 16]You yearn for [his of M] care.[otherwise]You ache to fall to your knees and let [him of M] do whatever [he of M] wants with your body.[end if]";
 		compute diaper check of M;
 	otherwise if there is a worn diaper or the player is incontinent or M is aware that the player needs a change:
 		say "[speech style of M]'[if the times-met of M < 1]Hey there you cute little thing.'[otherwise][one of]Oh it's my favourite big baby!'[or]Hi little baby potty pants!'[or]Don't you cry little one, Nanny is here to take care of you!'[in random order][end if][roman type][line break]";
@@ -159,12 +160,12 @@ To compute diaper check of (M - matron):
 		say "[speech style of M]'You look so cute in your waddle diapee!'[roman type][line break]";
 	otherwise if there is a worn diaper:
 		let D be a random worn diaper;
-		say "[one of]She swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your [D], pushing firmly to get a good feel. [or]With concern in her eyes she swiftly walks up to you. She takes [if diaper messing < 3]a well manicured hand and presses it against the front[otherwise]her well manicured hands and presses them into the front and back[end if] of your [D]. She pushes it firmly to get a good feel of how [if diaper messing < 3]wet[otherwise]used[end if] your diaper is. [in random order][one of][if the diaper addiction of the player < 11]You lightly recoil against her touch, embarrassed that [NameDesc of M] is giving you a diaper check.[otherwise if the diaper addiction of the player > 13]Almost instinctively you push your hips forward so that [NameDesc of M] can get a good feel.[end if][or][if the delicateness of the player < 7]You feel shame at her touching you in this intimate manner.[otherwise if the delicateness of the player < 12]You hope that what she has planned for you is beneficial to your survival of this cruel game.[otherwise if the delicateness of the player < 16]You want her to press more firmly, yielding to her lovingly maternal decisions.[otherwise if the diaper addiction of the player > 6]You want to press your hips more into her touch, you crave her touch against your diapered crotch.[otherwise]You have no intention of resisting, since she is clearly in charge.[end if][purely at random]";
+		say "[one of][big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your [D], pushing firmly to get a good feel. [or]With concern in [his of M] eyes [he of M] swiftly walks up to you. [big he of M] takes [if diaper messing < 3]a well manicured hand and presses it against the front[otherwise]her well manicured hands and presses them into the front and back[end if] of your [D]. [big he of M] pushes it firmly to get a good feel of how [if diaper messing < 3]wet[otherwise]used[end if] your diaper is. [in random order][one of][if the diaper addiction of the player < 11]You lightly recoil against [his of M] touch, embarrassed that [NameDesc of M] is giving you a diaper check.[otherwise if the diaper addiction of the player > 13]Almost instinctively you push your hips forward so that [NameDesc of M] can get a good feel.[end if][or][if the delicateness of the player < 7]You feel shame at [him of M] touching you in this intimate manner.[otherwise if the delicateness of the player < 12]You hope that what [he of M] has planned for you is beneficial to your survival of this cruel game.[otherwise if the delicateness of the player < 16]You want [him of M] to press more firmly, yielding to [his of M] lovingly maternal decisions.[otherwise if the diaper addiction of the player > 6]You want to press your hips more into [his of M] touch, you crave [his of M] touch against your diapered crotch.[otherwise]You have no intention of resisting, since [he of M] is clearly in charge.[end if][purely at random]";
 		if D is total protection and asshole is not actually occupied and D is not messed and rectum > 1 and rectum + suppository + the incontinence of the player > a random number between 3 and 6:
-			say "Her hands against your padded butt make you feel so much more relaxed. You sigh with pleasure and you can feel your sphincter dilating slightly. [BigNameDesc of M] begins to speak. [line break][speech style of M]'[if the urine-soak of D > the soak-limit of D / 9]Oopsie, It seems like my little baby has had a big accident! Thank goodness your cute little bottom was diapered. [otherwise]Hmm, it looks like you don't need a change yet... [end if]Wait, what's this?!'[roman type][line break]As soon as [NameDesc of M] stops speaking you can feel what she has detected - you've lost control of your bowels and have started to mess yourself!";
+			say "[big his of M] hands against your padded butt make you feel so much more relaxed. You sigh with pleasure and you can feel your sphincter dilating slightly. [BigNameDesc of M] begins to speak. [line break][speech style of M]'[if the urine-soak of D > the soak-limit of D / 9]Oopsie, It seems like my little baby has had a big accident! Thank goodness your cute little bottom was diapered. [otherwise]Hmm, it looks like you don't need a change yet... [end if]Wait, what's this?!'[roman type][line break]As soon as [NameDesc of M] stops speaking you can feel what [he of M] has detected - you've lost control of your bowels and have started to mess yourself!";
 			compute messing;
 		otherwise if the urine-soak of D + the water-soak of D > the soak-limit of D / 9 or D is messed:
-			say "[speech style of M]'Oopsie, It seems like my little baby has [if D is messed][one of]messed their nappy[or]filled their nappy again[stopping][otherwise]had a big accident[end if]! [if D is messed]You definitely need a change now though, you stinky minx[otherwise]Thank goodness your cute little bottom was diapered[end if]. I'm so proud of you for coming [if times-met of M > 0]back [end if]to me [one of]for a diaper change[or]again[stopping]!'[roman type] [one of][if the player is upset about sitting in mess]You are relieved that you're going to be rescued from your gross situation.[otherwise if the diaper addiction of the player < 11]You feel a small amount of embarrassment at having to be changed by this slutty MILF.[otherwise if the diaper addiction of the player > 15 and the player is able to speak][line break][second custom style]'*giggle* I love the squishy sound your hand makes against my diaper!'[roman type][line break][end if][or][if the humiliation of the player < 10000]You fret about what she'll think when she sees your [player-crotch].[otherwise if the diaper addiction of the player > 6]You figure that a diaper change will be good for you, at least.[otherwise if the anal sex addiction of the player < 9] You're eager to have your [player-crotch] exposed to [NameDesc of M] when she removes your diaper.[otherwise]You get a little excited hoping that she'll play with your [asshole] while she changes your diaper.[end if][in random order]";
+			say "[speech style of M]'Oopsie, It seems like my little baby has [if D is messed][one of]messed their nappy[or]filled their nappy again[stopping][otherwise]had a big accident[end if]! [if D is messed]You definitely need a change now though, you stinky minx[otherwise]Thank goodness your cute little bottom was diapered[end if]. I'm so proud of you for coming [if times-met of M > 0]back [end if]to me [one of]for a diaper change[or]again[stopping]!'[roman type] [one of][if the player is upset about sitting in mess]You are relieved that you're going to be rescued from your gross situation.[otherwise if the diaper addiction of the player < 11]You feel a small amount of embarrassment at having to be changed by this slutty MILF.[otherwise if the diaper addiction of the player > 15 and the player is able to speak][line break][second custom style]'*giggle* I love the squishy sound your hand makes against my diaper!'[roman type][line break][end if][or][if the humiliation of the player < 10000]You fret about what [he of M]'ll think when [he of M] sees your [player-crotch].[otherwise if the diaper addiction of the player > 6]You figure that a diaper change will be good for you, at least.[otherwise if the anal sex addiction of the player < 9] You're eager to have your [player-crotch] exposed to [NameDesc of M] when [he of M] removes your diaper.[otherwise]You get a little excited hoping that [he of M]'ll play with your [asshole] while [he of M] changes your diaper.[end if][in random order]";
 			now M is diaper-committed;
 			if D is perceived unsoiled, compute state check of D;
  		otherwise if D is not total protection:
@@ -175,8 +176,8 @@ To compute diaper check of (M - matron):
 			otherwise say "[speech style of M]'Hmm, seems like you've managed to stay dry for now. Well done my little darling!'[roman type][line break]";
 			FavourUp M by 1;
 			if M is unfriendly:
-				say "[BigNameDesc of M] considers her options, her jutting breasts inches away from your face. Her [if lactation fetish is 1]full, engorged [end if]nipples [if the oral sex addiction of the player > 7]protruding from her shiny latex dress causes your mind to think of the feeling of your tongue running along a sweet delicious cock. [otherwise]protrude from her shiny latex dress. [end if][line break][speech style of M]'Hmm, you don't need a change yet, but I think a naughty minx like you needs [if diaper quest is 0]feeding again, to make sure you're getting your nutrients[otherwise]some sort of discipline to keep you in line[end if]. [if the player is upright]Get on your knees, baby!'[otherwise]Come here...'[end if][roman type][line break]";
-				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This woman is trying to force me to use my diaper![otherwise][line break][second custom style]*Giggle* If she feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let her do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope she feeds me with a delicious cream pie from her pussy.[otherwise if the delicateness of the player > 10]At least if she feeds me I won't be hungry. [otherwise if the sex addiction of the player < 4 and the player is male]Maybe she'll have me eat some food off her hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope she feeds me by letting me suckle her giant breasts.[otherwise if the sex addiction of the player < 11]This is just outrageous, I'm being treated like some kind of powerless baby![otherwise]I'm letting her treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
+				say "[BigNameDesc of M] considers [his of M] options, [his of M] jutting [ChestDesc of M] inches away from your face. [big his of M] [if lactation fetish is 1]full, engorged [end if]nipples [if the oral sex addiction of the player > 7]protruding from [his of M] shiny latex dress causes your mind to think of the feeling of your tongue running along a sweet delicious cock. [otherwise]protrude from [his of M] shiny latex dress. [end if][line break][speech style of M]'Hmm, you don't need a change yet, but I think a naughty minx like you needs [if diaper quest is 0]feeding again, to make sure you're getting your nutrients[otherwise]some sort of discipline to keep you in line[end if]. [if the player is upright]Get on your knees, baby!'[otherwise]Come here...'[end if][roman type][line break]";
+				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This [man of M] is trying to force me to use my diaper![otherwise][line break][second custom style]*Giggle* If [he of M] feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let [him of M] do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope [he of M] feeds me with a delicious cream pie from [his of M] [HoleDesc of M].[otherwise if the delicateness of the player > 10]At least if [he of M] feeds me I won't be hungry. [otherwise if the sex addiction of the player < 4 and the player is male]Maybe [he of M]'ll have me eat some food off [his of M] hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope [he of M] feeds me by letting me suckle [his of M] nipples.[otherwise if the sex addiction of the player < 11]This is just outrageous, I'm being treated like some kind of powerless baby![otherwise]I'm letting [him of M] treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
 	otherwise if M is unfriendly or M is motherly:
  		say "[speech style of M]'[one of][if M is motherly]Didn't I tell you it's important for you to stay in diapers? [otherwise]It's important for babies like you to stay in diapers. [end if][if the player is prone]Stay on your knees[otherwise]Get on your knees[end if] and I'll fix that for you...'[or]How many times am I going to catch you out of nappies? You're getting put in my naughty book for sure this time.'[or]Come on you naughty girl! Time for your diaper.'[stopping][roman type][line break]";
  		now M is diaper-committed;
@@ -188,7 +189,7 @@ To compute diaper check of (M - matron):
 		say "[speech style of M]'[one of]Hmm, you are pretty far gone, aren't you darling? I think you need a bit of caring for, don't you hun? [if the player is prone]Stay on your knees[otherwise]Get on your knees[end if] and I'll show you how I can help you.'[or]You definitely need my help again, don't you darling?'[stopping][roman type][line break]";
 		now M is diaper-committed;
 	if continued urination is 1 and the player is upright:
-		say "[if the humiliation of the player < 18000]The sheer humiliation of the situation[otherwise if the delicateness of the player < 10]Something about the way she is gripping your private parts[otherwise]Something deep inside of you feels comforted and[end if] makes your knees buckle. You fall to the ground in front of [NameDesc of M].";
+		say "[if the humiliation of the player < 18000]The sheer humiliation of the situation[otherwise if the delicateness of the player < 10]Something about the way [he of M] is gripping your private parts[otherwise]Something deep inside of you feels comforted and[end if] makes your knees buckle. You fall to the ground in front of [NameDesc of M].";
 		try kneeling.
 
 Part 3 - Motion
@@ -296,13 +297,13 @@ Definition: matron (called M) is diaper change chastity cummies rewarding:
 	decide no.
 
 To compute diaper change chastity cummies reward of (M - matron):
-	if the player is male, say "[speech style of M]'[one of]Oh you poor thing, are you struggling to get your cummies while locked into that thing? Don't worry dear, I'll help you have your squirt squirt like a good sissy girl.'[or]Time for your girly squirt squirt, for being such a good sissy!'[stopping][roman type] [BigNameDesc of M] sticks [if the openness of asshole < 4]her index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your prostate. ";
+	if the player is presenting as male, say "[speech style of M]'[one of]Oh you poor thing, are you struggling to get your cummies while locked into that thing? Don't worry dear, I'll help you have your squirt squirt like a good sissy girl.'[or]Time for your girly squirt squirt, for being such a good sissy!'[stopping][roman type] [BigNameDesc of M] sticks [if the openness of asshole < 4]her index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your prostate. ";
 	otherwise say "[speech style of M]'[one of]I be you're being starved of your cummies locked away behind that thing, aren't you? Well don't worry, I know just the trick, there's another hole we can use...'[or]Time for your anal squirt squirt, for being such a good baby!'[stopping][roman type] [BigNameDesc of M] sticks [if the openness of asshole < 4]her index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your G-spot. ";
-	say "Her professional skill is evident, as you very quickly feel a certain warmth rising...";
+	say "[big his of M] professional skill is evident, as you very quickly feel a certain warmth rising...";
 	now M is penetrating asshole;
 	anally orgasm shamefully;
 	diaperaddictup 1;
-	say "[BigNameDesc of M] pulls out slowly and gently. [line break][speech style of M]'If you keep being a good locked up [if the player is male]sissy[otherwise]baby[end if] for Nanny, you'll get more where that came from.'[roman type][line break]";
+	say "[BigNameDesc of M] pulls out slowly and gently. [line break][speech style of M]'If you keep being a good locked up [if the player is presenting as male]sissy[otherwise]baby[end if] for Nanny, you'll get more where that came from.'[roman type][line break]";
 	now M is not penetrating asshole;
 	FavourDown M by 2.
 
@@ -310,14 +311,14 @@ To say DiaperPowderFlav of (M - matron):
 	say "[BigNameDesc of M] pulls out a bottle of baby power and squeezes it liberally over your crotch area, completely coating it and forming a huge white cloud of powder. ".
 
 To say DiaperChangeFlav of (M - matron):
-	say "From [DiaperSpace of M] [he of M] produces [if current-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] slides underneath your bum[one of] and then fixes in place[or], folds it over and tapes it up[at random]. [if current-diaper is diaper]She chucks the old one into the diaper pail and you hear a little 'whoosh' as it is whisked away by some hidden mechanism.[end if][line break][speech style of M]'There now, [one of]isn't that much better? [or]You DO belong in them, oh yesh we do, oh yesh we do! [in random order]Off you trot now[one of]. But you'd better make sure that I never see you without a nappy on - you're my baby now, and you'll be kept in diapies for as long as I'm around!'[or]!'[stopping][roman type][line break]She releases you from the bondage and carries you back down onto the ground.".
+	say "From [DiaperSpace of M] [he of M] produces [if current-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] slides underneath your bum[one of] and then fixes in place[or], folds it over and tapes it up[at random]. [if current-diaper is diaper][big he of M] chucks the old one into the diaper pail and you hear a little 'whoosh' as it is whisked away by some hidden mechanism.[end if][line break][speech style of M]'There now, [one of]isn't that much better? [or]You DO belong in them, oh yesh we do, oh yesh we do! [in random order]Off you trot now[one of]. But you'd better make sure that I never see you without a nappy on - you're my baby now, and you'll be kept in diapies for as long as I'm around!'[or]!'[stopping][roman type][line break][big he of M] releases you from the bondage and carries you back down onto the ground.".
 
 To say DiaperSpace of (M - matron):
 	say "underneath the table".
 
 To say DiaperChangeStart of (M - matron):
 	let D be a random worn messed diaper;
-	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and plops you down on the giant changing table. She smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps[if D is diaper]. [big he of M] runs [his of M] hand along [NameDesc of D] and clicks [his of M] tongue.[line break][speech style of M]'Uh oh, we really had to go didn't we? Stinky little baby waby yesh we are!'[line break][roman type][otherwise].[end if]".
+	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and plops you down on the giant changing table. [big he of M] smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps[if D is diaper]. [big he of M] runs [his of M] hand along [NameDesc of D] and clicks [his of M] tongue.[line break][speech style of M]'Uh oh, we really had to go didn't we? Stinky little baby waby yesh we are!'[line break][roman type][otherwise].[end if]".
 
 
 To say DiaperDropFlav of (M - matron):
@@ -331,9 +332,9 @@ To compute unique diaper change effect of (M - matron):
 	[increase the times-changed of M by 1;
 		if the times-changed of M > 2 and (M is guardian or M is ally) and the player is incontinent and the potty-training of M is 0:
 			if the potty-training-asked of M is 0:
-				say "[speech style of M]'You've been such a good little [if the player is female]baby girl[otherwise]sissy baby[end if] for me, how would you like to try being potty trained?' [roman type]";
+				say "[speech style of M]'You've been such a good little [if the player is presenting as female]baby girl[otherwise]sissy baby[end if] for me, how would you like to try being potty trained?' [roman type]";
 				if the player is consenting and the diaper addiction of the player < 17:
-					say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall. [line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type] She adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
+					say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall. [line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is presenting as male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type] [big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
 					now the potty-training of M is 1;
 					now the potty-training-asked of M is 1;
 				otherwise if the player is consenting:
@@ -346,7 +347,7 @@ To compute unique diaper change effect of (M - matron):
 					say "[speech style of M]'My offer to start potty training you still stands, baby.'[roman type][line break]Do you accept [his of M] offer? ";
 					if the player is bimbo consenting:
 						if the diaper addiction of the player < 17:
-							say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall. [line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type] She adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
+							say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall. [line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is presenting as male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type] [big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
 							now the potty-training of M is 1;
 							now the potty-training-asked of M is 1;
 						otherwise:
@@ -384,19 +385,19 @@ To compute confiscate of (M - matron):
 			now baby's bottle is bland;
 			now the fill-colour of baby's bottle is white;
 			DoseFill baby's bottle;
-			say "She forces a baby's bottle full of milk into your hand! ";
+			say "[big he of M] forces a baby's bottle full of milk into your hand! ";
 		say "[speech style of M]'Babies only need their bottles, I don't want to see you using these big girl cups any more, okay sweetie?'[roman type][line break]";
 		satisfy M;
 	otherwise if M is motherly and C is necklace and a random number between 1 and 3 is 1 and the favour of M < 13:
-		say "[BigNameDesc of M] notices your [ShortDesc of C]![line break][speech style of M]'Where did you get this, baby?! This is my jewellery! Bad [if the player is male]sissy[otherwise]girl[end if], this isn't yours to play with! It's precious and delicate. I'll be taking it back now.'[roman type][line break]She pulls it off from your neck!";
+		say "[BigNameDesc of M] notices your [ShortDesc of C]![line break][speech style of M]'Where did you get this, baby?! This is my jewellery! Bad [if the player is presenting as male]sissy[otherwise]girl[end if], this isn't yours to play with! It's precious and delicate. I'll be taking it back now.'[roman type][line break][big he of M] pulls it off from your neck!";
 		now C is in Holding Pen;
 		now C is retained by M;
-		say "[variable custom style][if the player is able to speak]'Sorry I didn't know it was yours! You have to believe me!'[otherwise]How was I to know it was hers?! I can't even explain the mix-up...[end if][roman type][line break]";
+		say "[variable custom style][if the player is able to speak]'Sorry I didn't know it was yours! You have to believe me!'[otherwise]How was I to know it was [hers of M]?! I can't even explain the mix-up...[end if][roman type][line break]";
 		FavourDown M;
 		satisfy M;
 	otherwise if H is actually summonable:
 		summon H cursed;
-		say "[BigNameDesc of M] strokes your [ShortHairDesc]. [line break][speech style of M]'I've decided to make you my personal baby! We're going to have such fun together!'[roman type][line break]She puts a [H] on your head! [if the diaper addiction of the player < 10][line break][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise]Yay! I want to stay with Nanny forever![end if][roman type][line break]";
+		say "[BigNameDesc of M] strokes your [ShortHairDesc]. [line break][speech style of M]'I've decided to make you my personal baby! We're going to have such fun together!'[roman type][line break][big he of M] puts a [H] on your head! [if the diaper addiction of the player < 10][line break][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise]Yay! I want to stay with Nanny forever![end if][roman type][line break]";
 		satisfy M;
 	otherwise:
 		compute enema of M.
@@ -424,21 +425,21 @@ To say ForcefeedDeclarationFlav of (M - matron):
 		say "[line break][speech style of M]'I think it's a certain naughty baby's dinner time...'[roman type][line break]".
 
 To say ForcefeedStartFlav of (M - matron):
-	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and plops you down on the giant high chair. She pulls the tray into place in front of you and locks it shut, preventing you from escaping. [if the number of worn bibs is 0]She gets a large pink bib with an image of a cartoon animal on it, and fastens it around your neck. [end if][line break][speech style of M]'Time for your dindins!'[roman type][line break]".
+	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and plops you down on the giant high chair. [big he of M] pulls the tray into place in front of you and locks it shut, preventing you from escaping. [if the number of worn bibs is 0][big he of M] gets a large pink bib with an image of a cartoon animal on it, and fastens it around your neck. [end if][line break][speech style of M]'Time for your dindins!'[roman type][line break]".
 
 To decide which number is the forcefeed-length of (M - matron):
 	decide on 4.
 
 To compute forcefeed round (N - 4) of (M - matron):
-	say "[BigNameDesc of M] holds your nose closed to force you to open your mouth, and shoves in a heaped spoonful of mushy peas. [line break][speech style of M]'These will help you grow big and healthy.'[roman type][line break]You are forced to swallow just to keep breathing, and before you can protest she has a second, and then a third, and then a fourth spoonful ready to force in. The outside of your lips are covered in green thanks to her rather indiscriminate aim.[line break][variable custom style]'*Splutter* [if the bimbo of the player < 12]I am not a baby[otherwise]Waaaaah, I can feed myself[end if]!'[roman type][line break]";
+	say "[BigNameDesc of M] holds your nose closed to force you to open your mouth, and shoves in a heaped spoonful of mushy peas. [line break][speech style of M]'These will help you grow big and healthy.'[roman type][line break]You are forced to swallow just to keep breathing, and before you can protest [he of M] has a second, and then a third, and then a fourth spoonful ready to force in. The outside of your lips are covered in green thanks to [his of M] rather indiscriminate aim.[line break][variable custom style]'*Splutter* [if the bimbo of the player < 12]I am not a baby[otherwise]Waaaaah, I can feed myself[end if]!'[roman type][line break]";
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 3) of (M - matron):
-	say "Ignoring your protests, [NameDesc of M] starts smushing a soft, warm banana into your mouth, again covering your face just as much as feeding you.[line break][variable custom style]'*Omnom*[roman type] [if the oral sex addiction of the player > 7]Your need for a cock in your mouth causes you to tongue the banana as it slides down your throat. [otherwise if diaper quest is 0]The phallic object hurriedly moves down your throat in large chunks. [otherwise]You are forced to chew it rapidly to avoid having to swallow it whole! [end if][line break][variable custom style]'[if the diaper addiction of the player < 8]Get off me you crazy woman!'[otherwise]I don't need to eat anything!'[end if][roman type][line break]";
+	say "Ignoring your protests, [NameDesc of M] starts smushing a soft, warm banana into your mouth, again covering your face just as much as feeding you.[line break][variable custom style]'*Omnom*[roman type] [if the oral sex addiction of the player > 7]Your need for a cock in your mouth causes you to tongue the banana as it slides down your throat. [otherwise if diaper quest is 0]The phallic object hurriedly moves down your throat in large chunks. [otherwise]You are forced to chew it rapidly to avoid having to swallow it whole! [end if][line break][variable custom style]'[if the diaper addiction of the player < 8]Get off me you crazy [man of M]!'[otherwise]I don't need to eat anything!'[end if][roman type][line break]";
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 2) of (M - matron):
-	say "Without even responding, [NameDesc of M] has moved onto another bowl, this one full of oatmeal! [line break][speech style of M]'Here comes the airplane!'[roman type][line break]You [line break][variable custom style]'MMPH'[roman type][line break]in protest but it's too late, there's already a full spoon in your mouth! She doesn't relent until half the bowl is in your stomach, and the other half is down your bib.";
+	say "Without even responding, [NameDesc of M] has moved onto another bowl, this one full of oatmeal! [line break][speech style of M]'Here comes the airplane!'[roman type][line break]You [line break][variable custom style]'MMPH'[roman type][line break]in protest but it's too late, there's already a full spoon in your mouth! [big he of M] doesn't relent until half the bowl is in your stomach, and the other half is down your bib.";
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 1) of (M - matron):
@@ -455,7 +456,7 @@ To compute forcefeed round (N - 1) of (M - matron):
 	if rectum is 0 and diaper lover > 2, now rectum is 1; [The matron has started an unmentionable process]
 
 To say ForcefeedAftermath of (M - matron):
-	say "She lets you down from your chair, done with you. For now.".
+	say "[big he of M] lets you down from your chair, done with you. For now.".
 
 To say ForcefeedAfterFlav of (M - matron):
 	say "".
@@ -467,7 +468,7 @@ To say SpankingFlav of (M - matron):
 	say "[if there is worn knickers][BigNameDesc of M]'s outstretched hand comes down [one of]hard and fast[or]hard like a sledgehammer[or]as fast as a whip[at random] onto your [AssDesc][otherwise]With little time between actions the Matron sends an open palm to your rear end[one of], spanking in a constant motion over one cheek and then onto the other[or]. Your cries of anguish only serves as instentive to prolong the spanking even further[at random][end if]!".
 
 To say SpankingDeclarationFlav of (M - matron):
-	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and throws you over her shoulder, holding you in a fireman's grip. [line break][speech style of M]'I'm going to give you [if the sex-length of M > 2]a spanking you'll never forget, you demon child!'[otherwise][one of]a[or]another[stopping] quick maintenance spanking so that you remember who's in charge here.'[end if][roman type][line break]".
+	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and throws you over [his of M] shoulder, holding you in a fireman's grip. [line break][speech style of M]'I'm going to give you [if the sex-length of M > 2]a spanking you'll never forget, you demon child!'[otherwise][one of]a[or]another[stopping] quick maintenance spanking so that you remember who's in charge here.'[end if][roman type][line break]".
 
 To say SpankingCommentFlav of (M - matron):
 	say "[first custom style]'[one of]Take this!'[or]You should be thanking me for this lesson!'[or]Don't whinge, you deserve this.'[or]It's okay if you cry, you are only little after all.'[or]I'm not going to stop until your cute bottom is nice and red all over.'[or]You really are a brat, you know that?'[at random][roman type][line break]".
@@ -501,12 +502,12 @@ Section 1 - Damage
 To compute damage of (M - matron):
 	if the health of M > 0:
 		if M is uninterested:
-			say "She shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
+			say "[big he of M] shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
 			now M is interested;
 			anger M;
 		otherwise:
 			if M is friendly:
-				say "She shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
+				say "[big he of M] shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
 				anger M;
 			otherwise:
 				say DamageReaction (the health of M) of M;
@@ -514,32 +515,32 @@ To compute damage of (M - matron):
 		compute death of M.
 
 To say DamageReactHealthy of (M - matron):
-	say "[one of]'[line break][speech style of M]You definitely deserve a punishment, you naughty harlot, you... Grr!'[roman type][line break][or]She sneers aggressively![stopping]".
+	say "[one of]'[line break][speech style of M]You definitely deserve a punishment, you naughty harlot, you... Grr!'[roman type][line break][or][big he of M] sneers aggressively![stopping]".
 
 To say DamageReactDamaged of (M - matron):
-	say "She snarls angrily, taking the hit!".
+	say "[big he of M] snarls angrily, taking the hit!".
 
 To say DamageReactTired of (M - matron):
-	say "She seems to get angrier with every hit!".
+	say "[big he of M] seems to get angrier with every hit!".
 
 To say DamageReactWeak of (M - matron):
-	say "She keeps her eyes trained on you, never wavering as she fights to maintain her balance.".
+	say "[big he of M] keeps [his of M] eyes trained on you, never wavering as [he of M] fights to maintain [his of M] balance.".
 
 To compute unique death of (M - matron):
-	say "The [noun] screams as she falls to the floor. ";
+	say "The [noun] screams as [he of M] falls to the floor. ";
 	let B be a random off-stage baby's bottle;
 	if B is a thing:
 		now B is blessed;
 		now B is in the location of the player;
-		say "Her body disappears, leaving behind a [printed name of B].";
+		say "[big his of M] body disappears, leaving behind a [printed name of B].";
 		compute autotaking B;
 	otherwise:
-		say "Her body disappears.".
+		say "[big his of M] body disappears.".
 
 Chapter 2 Conversation
 
 To IdentifiablePosterReaction of (M - matron):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, she starts laughing uncontrollably.";
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] starts laughing uncontrollably.";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
@@ -612,7 +613,7 @@ To say AnnoyedResponse of (M - matron):
 	say "[speech style of M]'[one of]That's ENOUGH!'[or]I'm warning you, I am running out of patience!'[at random][roman type][line break]".
 
 To say InvitationRejected of (M - matron) with (N - a monster):
-	say "[speech style of M]'[one of]What [if N is robobutler]the butler does to you is his[otherwise if N is neuter]this cute little thing does to you is its[otherwise if N is male]this man does to you is his[otherwise]this woman does to you is her[end if] business. I better not catch you trying to weasel out of a punishment again.'[or]You like getting punished, don[']t you. Such a naughty girl...'[or]Enjoying your punishment? That[']s very naughty...'[or]Don[']t say those naughty things to me! That's probably the reason [if N is robobutler]the butler[otherwise if N is neuter]this thing[otherwise if N is male]this man[otherwise]this woman[end if] is punishing you in the first place!'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]What [if N is robobutler]the butler does to you is his[otherwise if N is neuter]this cute little thing does to you is its[otherwise if N is male]this man does to you is his[otherwise]this woman does to you is [him of M][end if] business. I better not catch you trying to weasel out of a punishment again.'[or]You like getting punished, don[']t you. Such a naughty girl...'[or]Enjoying your punishment? That[']s very naughty...'[or]Don[']t say those naughty things to me! That's probably the reason [if N is robobutler]the butler[otherwise if N is neuter]this thing[otherwise if N is male]this man[otherwise]this woman[end if] is punishing you in the first place!'[at random][roman type][line break]".
 
 To say AssistanceRejected of (M - matron) with (N - a monster):
 	say "[speech style of M]'[one of][if N is robobutler]The butler[otherwise if N is neuter]This thing[otherwise if N is male]This man[otherwise]This woman[end if] would not be punishing you without a good reason. This is what happens when you misbehave.'[or]It's time to be a little independent, sweetie. Take your punishment like a good little girl.'[or]You are obviously being punished for something. I know it's hard, honey, but I[']m afraid you are responsible for your own actions.'[or]It's time you learned responsibility. Be a good girl and accept your punishment.'[or]I[']m not going to take your punishment for you, honey!'[at random][roman type][line break]".
@@ -626,7 +627,7 @@ To say WhoAnswer of (M - matron):
 	say "[speech style of M]'I'm a professional nanny dom, who's very experienced in taking care of any big babies who need my help!'[roman type][line break]".
 
 To say StoryAnswer of (M - matron):
-	say "[speech style of M]'[one of]When I heard they were building this fetish hotel, I just had to get involved! I was the one who convinced them to set up this room to take care of all the adult babies we would inevitably get coming through here.'[or]I[']m the head manager of the Nintendolls R&D team. After spending a lot of time in this game, some of the researchers end up in a state where they can[']t take care of themselves at all! I[']m not sure what they would do if I weren[']t here to change their diapers...'[or]I told my son he couldn't play naughty games at home until he moved out of the house, so when I saw this game on his desk, I couldn't believe my eyes! I was so mad that I decided to play through the game and beat it before he got the chance. It's so much fun I just decided not to leave![or]My daughter told me she was moving out, so I convinced her to play this game with me as a going away present. Now I[']m changing her diapers again. We[']re closer than ever!'[as decreasingly likely outcomes][line break]".
+	say "[speech style of M]'[one of]When I heard they were building this fetish hotel, I just had to get involved! I was the one who convinced them to set up this room to take care of all the adult babies we would inevitably get coming through here.'[or]I[']m the head manager of the Nintendolls R&D team. After spending a lot of time in this game, some of the researchers end up in a state where they can[']t take care of themselves at all! I[']m not sure what they would do if I weren[']t here to change their diapers...'[or]I told my son he couldn't play naughty games at home until he moved out of the house, so when I saw this game on his desk, I couldn't believe my eyes! I was so mad that I decided to play through the game and beat it before he got the chance. It's so much fun I just decided not to leave![or]My daughter told me [he of M] was moving out, so I convinced her to play this game with me as a going away present. Now I[']m changing her diapers again. We[']re closer than ever!'[as decreasingly likely outcomes][line break]".
 
 To say EscapeAnswer of (M - matron):
 	say "[speech style of M]'You can leave via the front entrance of the hotel whenever you want. Just make sure to pay your bill before you leave.'[roman type][line break]".
@@ -637,7 +638,7 @@ To say AdviceAnswer of (M - matron):
 To say UnGreeted of (M - a monster):
 	say "[BigNameDesc of M] ignores your question.".
 
-[I think it makes sense to have her be a little more standoffish than everyone else.]
+[I think it makes sense to have [his of M] be a little more standoffish than everyone else.]
 To compute annoyance of (M - matron):
 	if M is uninterested:
 		say "[BigNameDesc of M] ignores your question.";

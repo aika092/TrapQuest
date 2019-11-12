@@ -27,6 +27,19 @@ The player class rules is a rulebook.
 
 
 
+[!<TheTrickOrTreaterClassRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the trick-or-treater class rule:
+	if there is worn halloween headgear:
+		now player-class is "trick or treater";
+		rule succeeds.
+The trick-or-treater class rule is listed in the player class rules.
+trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
+
+
 [!<ThePrincessClassRule>+
 
 REQUIRES COMMENTING

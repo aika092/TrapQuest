@@ -65,6 +65,9 @@ To compute class outfit of (H - royal circlet):
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
+			repeat with O running through worn exclusive corsets:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 			repeat with O running through worn knickers:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;

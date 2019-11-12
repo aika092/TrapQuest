@@ -42,8 +42,6 @@ To update name of (M - student-hailey):
 To say StoryAnswer of (M - student-hailey):
 	say "[speech style of M]'I asked my boyfriend what would make him happy and he said he wanted me to try out this place, so here I am. [if the current-rank of M is 1]I'll do[otherwise]I'm doing[end if] my best...'[roman type][line break]".
 
-
-
 Part - Default Conversation
 
 To say WhoAnswer of (M - an innocent student):

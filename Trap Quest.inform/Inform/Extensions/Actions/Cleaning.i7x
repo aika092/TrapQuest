@@ -111,7 +111,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
 		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
 		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean yourself with it." instead;
-	otherwise if the player is not craving: [i.e. If the second noun is arms]
+	otherwise if the player is not craving semen: [i.e. If the second noun is arms]
 		if the semen taste addiction of the player < 8 and the thirst of the player < 4, say "You can't bring yourself to do that[if the semen addiction of the player > 12]. And even if you did like the taste, you love the feeling of it too much to remove it[end if]!" instead;
 	if the second noun is not acceptableCumRag:
 		if the second noun is arms and the semen addiction of the player > 15 and the semen addiction of the player > the semen taste addiction of the player, say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]! I only get to drink it if there's extra left over.[or]It's more important for me to look like a slut than get to taste my favourite drink.[or][if the noun is face]How will guys know I want their [manly-penis] in my mouth don't have [semen] on my face? The best way to make sure I get to taste more cum is by keeping the stuff on my face there.[otherwise]I deserve to have this on my [noun]. Removing it would be unfair to the contributors.[end if][or]I like wearing it! No way am I wiping it off!, even if it is to taste it![or]If I want to taste [semen], I could convince a hunk to fuck my throat, not cheat by licking it off my body.[or]That would be cheating. I should find a cock to suck if I want a fix.[or]It would be more fun to let a guy cum in my ass, and then collect it in a cup. To lick cum off my own body would be too cheap and easy for a girl like me.[or]My body is all dirty and sweaty. I want to drink pure cum, straight from the tap.[or]I'm supposed to wear it, not drink it. I was naughty and this is my punishment[if the intelligence of the player > 13]. Semen, semen everywhere, through all my pores did shrink; semen, semen everywhere, nor any drop to drink. Ooh, that sounds like great idea for a poem! I'll call it 'The Rime of the Ancient Cum Guzzler'[end if].[in random order][roman type][line break]" instead;
@@ -119,8 +119,8 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 
 Definition: a thing (called T) is acceptableCumRag:
 	if T is fluid immune clothing, decide no;
-	if T is arms and face is actually occupied or (the player is not craving and the semen taste addiction of the player < 8 and the thirst of the player < 4), decide no;
-	if the humiliation of the player > 28000 and the semen addiction of the player > 15 and ((the player is not craving and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player) or T is not arms), decide no;
+	if T is arms and face is actually occupied or (the player is not craving semen and the semen taste addiction of the player < 8 and the thirst of the player < 4), decide no;
+	if the humiliation of the player > 28000 and the semen addiction of the player > 15 and ((the player is not craving semen and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player) or T is not arms), decide no;
 	decide yes.
 
 [!<CarryOutCleaningItWith>+
@@ -190,7 +190,8 @@ REQUIRES COMMENTING
 To clean (C - a clothing):
 	now the urine-soak of C is 0;
 	now the milk-soak of C is 0;
-	now the semen-soak of C is 0.
+	now the semen-soak of C is 0;
+	if C is worn, update appearance level.
 
 
 Cleaning ends here.

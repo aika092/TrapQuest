@@ -117,7 +117,6 @@ This is the remove inappropriate knickers rule:
 The remove inappropriate knickers rule is listed in the diaper quest fix rules.
 
 
-The DQFigure of knickers is usually DQWhitePants.
 
 Part - Wearability
 
