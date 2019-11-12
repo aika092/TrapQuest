@@ -2153,7 +2153,7 @@ Animating the scaling of only the y-axis to "compress" a sprite visually. Making
 	To squish the blob:
 		animate the squishy track as a parameterized zooming animation targeting the y-scaling factor of the Blob and ending at 0.1000 at 24 fps with a duration of 4 frames.
 
-Easing equations can be applied to a parameterized zooming track just as they can a standard zooming track.
+Easing equations can be applied to a parametrised zooming track just as they can a standard zooming track.
 
 
 Chapter: Custom animations
@@ -2170,9 +2170,9 @@ Or, without specifying a duration:
 
 Note that the latter will have a duration of 1 frame by default unless we specify it some other way.
 
-On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behavior will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
+On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
-The animation rule belongs to the "animation" rulebook, and is parameterized on the animation track to be animated. In other words, if we have defined a custom animation track called "my anim-track", then we would write our animation rule's preamble like this:
+The animation rule belongs to the "animation" rulebook, and is parametrised on the animation track to be animated. In other words, if we have defined a custom animation track called "my anim-track", then we would write our animation rule's preamble like this:
 
 	Animation rule for my anim-track:
 
@@ -2631,7 +2631,7 @@ Note that the implementation of this as a standard action, particularly with the
 
 
 	When play begins:
-		say "This example demonstrates the use of multiple 'tracks' to provide complex animation effects. Click on an image to zoom in and move it to the center. Click again to toggle. You can also click on a second cover while the first is zoomed; both will animate smoothly into the appropriate positions.[paragraph break]The images are the back covers of Dell Map-Back mystery books. The Map-Back was a prototype of and possibly a direct influence on the 'feelies' that accompanied classic Infocom games such as [i]Deadline[/i]. These images are from Marble River's Ephemera; you can see the front covers at http://marbleriver.blogspot.com/2010/01/backs-dell-more-map.html.";
+		say "This example demonstrates the use of multiple 'tracks' to provide complex animation effects. Click on an image to zoom in and move it to the centre. Click again to toggle. You can also click on a second cover while the first is zoomed; both will animate smoothly into the appropriate positions.[paragraph break]The images are the back covers of Dell Map-Back mystery books. The Map-Back was a prototype of and possibly a direct influence on the 'feelies' that accompanied classic Infocom games such as [i]Deadline[/i]. These images are from Marble River's Ephemera; you can see the front covers at http://marbleriver.blogspot.com/2010/01/backs-dell-more-map.html.";
 		repeat with item running through cover-images:
 			now the rightful position of the item is the origin of the item;
 			now the scaling factor of the item is the resting scaling ratio.

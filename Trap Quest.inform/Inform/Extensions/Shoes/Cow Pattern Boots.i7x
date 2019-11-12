@@ -3,7 +3,7 @@ Cow Pattern Boots by Shoes begins here.
 A cow pattern boots is a kind of boots. A cow pattern boots is usually leather. A cow pattern boots is usually unique. The heel-height of a cow pattern boots is usually 3.
 Definition: a cow pattern boots is fluid immune: decide yes.
 
-The printed name of cow pattern boots is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch cow pattern boots[clothing-title-after]".   The text-shortcut of cow pattern boots is "cpb".
+The printed name of cow pattern boots is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch cow pattern boots[clothing-title-after]". The text-shortcut of cow pattern boots is "cpb".
 
 Understand "boots" as cow pattern boots.
 

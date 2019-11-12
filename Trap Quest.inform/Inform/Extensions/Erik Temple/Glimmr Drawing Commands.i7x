@@ -2481,7 +2481,7 @@ Note the window-drawing rule provided does not scale, centre, or otherwise vary 
 
 	Arcade is a room. "Nothing at all to do here."
 
-	The graphics-window is a graphics g-window spawned by the main window.	The position is g-placeabove.
+	The graphics-window is a graphics g-window spawned by the main window. The position is g-placeabove.
 
 	G-White is always "#FFFFFF".
 	G-Yellow is always "#FFEE00".

@@ -38,7 +38,7 @@ To say ShortDesc of (T - a vine):
 	say "vine".
 
 To say EnvironmentDesc of (T - a vine):
-	say "Strong, living vines worm through the soil [if the player is vine-cursed]underneath your feet.[otherwise]around your feet.[end if]  ".
+	say "Strong, living vines worm through the soil [if the player is vine-cursed]underneath your feet.[otherwise]around your feet.[end if] ".
 
 To say PregGrowth of (M - a vine):
 	say "the [one of]vines['] offspring[or]vines['] [child][stopping]".
@@ -356,7 +356,7 @@ To compute vineNut of (V - a vine):
 			SemenPuddleUp 2;
 			let F be a random fairy grabbing the player;
 			if F is monster and the pregnancy of the player is 0 and pregnancy fetish is 1 and inhuman pregnancy is 2:
-				say "Your belly grows rapidly, emitting magenta light as [NameDesc of F] grins up at you, fingering herself as she floats away.";
+				say "Your belly grows rapidly, emitting magenta light as [NameDesc of F] grins up at you, fingering [himself of F] as [he of F] floats away.";
 				cutshow figure of fairy cutscene 19 for F;
 				now the pregnancy of the player is 1;
 				now V is inseminating vagina;

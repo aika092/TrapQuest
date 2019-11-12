@@ -186,7 +186,7 @@ To say AllyDamageFlav of (M - a giant wasp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]speedily flies in to protect you and your eggs. It [or][stopping]stings the [X]!".
 
 To compute anal sex of (M - a giant wasp):
-	say "[BigNameDesc of M] keeps thrusting with its ovipositor!  ";
+	say "[BigNameDesc of M] keeps thrusting with its ovipositor! ";
 	if the medium egg count of belly is 0, cutshow figure of wasp cutscene 1 for M;
 	if a random number between 1 and 2 is 1:
 		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [asshole], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your belly!";
@@ -196,7 +196,7 @@ To compute anal sex of (M - a giant wasp):
 		if the sex-length of M > 1:
 			decrease the sex-length of M by 1;
 			assfill 1 medium eggs;
-	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof!  This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
+	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof! This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
 	decrease the sex-length of M by 1;
 	ruin asshole.
 
@@ -396,7 +396,7 @@ To compute delay of (M - domesticated wasp):
 	say "The wasp rider pulls back on [NameDesc of M]'s reins [line break][speech style of M]'[one of]Let's see her beg. Heheh.'[or]So, should he violate you anally or anally?'[or]He's about to breed your starfish! Why don't you show it to him?'[or]Wait. I want to see her ask for it.'[or]Show it to him, loser. Show him.'[in random order][roman type][line break]".
 
 To say PrepTaunt of (M - a domesticated wasp) in (F - asshole):
-	say "[line break][speech style of M]'[one of]Here comes the fun part. Get it? [']Part?[']'[or]That's right. She's all yours!'[or]Get ready loser, it's breeding time.'[or]I'd do it, but it just won't fit. Thanks a lot, loser!'[or]I like to watch.'[at random][roman type][line break]";
+	say "[line break][speech style of M]'[one of]Here comes the fun part. Get it? [']Part?[']'[or]That's right. [big he of M]'s all yours!'[or]Get ready loser, it's breeding time.'[or]I'd do it, but it just won't fit. Thanks a lot, loser!'[or]I like to watch.'[at random][roman type][line break]";
 
 To compute unique death of (M - domesticated wasp):
 	[let F be a random off-stage fairy;
@@ -405,14 +405,14 @@ To compute unique death of (M - domesticated wasp):
 		set up F;
 		now F is in the location of the player;
 	otherwise:]
-	say "The fairy leaps off the wasp as it falls to the ground and slowly melts into nothingness. She sticks out her tongue at you as she flies off into the distance.";
+	say "The fairy leaps off the wasp as it falls to the ground and slowly melts into nothingness. [big he of F] sticks out her tongue at you as she flies off into the distance.";
 	let W be a random off-stage wasp wing;
 	if W is wasp wing:
 		say "[one of]On closer inspection, you notice that[or]Once again,[stopping] a [W] has been left behind.";
 		now W is in the location of the player.
 
 To compute (M - a giant wasp) fathering (W - a domesticated wasp):
-	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with her hair drawn back into a ponytail bursts from the bushes. She sprinkles the young wasp with a handful of glittering dust as she wraps a pair of fibrous reins around his head, causing it to go through the entire metamorphosis a normal wasp goes through in its youth, but in the span of only a few seconds. The fairy seems too absorbed with her new mount to care about you.";
+	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with her hair drawn back into a ponytail bursts from the bushes. [big he of M] sprinkles the young wasp with a handful of glittering dust as she wraps a pair of fibrous reins around his head, causing it to go through the entire metamorphosis a normal wasp goes through in its youth, but in the span of only a few seconds. The fairy seems too absorbed with her new mount to care about you.";
 	now W is in the location of M;
 	newbornSetup W;
 	now the fertilization-cooldown of M is 200;
@@ -544,9 +544,9 @@ To compute SelectionFailure of (M - domesticated wasp):
 	if the player is male and the size of penis > min penis size:
 		let P be the size of penis;
 		PenisDown 1;
-		say "She fires several bolts of pink magic toward your crotch, [if P > the size of penis]causing your penis to shrink into a [ShortDesc of penis][otherwise]which doesn't seem to have any visible effect[end if].";
+		say "[big he of M] fires several bolts of pink magic toward your crotch, [if P > the size of penis]causing your penis to shrink into a [ShortDesc of penis][otherwise]which doesn't seem to have any visible effect[end if].";
 	otherwise:
-		say "She fires several bolts of red magic toward your ass, which cause your skin to tingle as her magic painfully gapes your [asshole].";
+		say "[big he of M] fires several bolts of red magic toward your ass, which cause your skin to tingle as her magic painfully gapes your [asshole].";
 		ruin asshole;
 	bore M.
 

@@ -16,7 +16,7 @@ To decide which figure-name is the monster-image of (M - teacher-hyacinthe):
 	decide on figure of hyacinthe.
 
 To say MonsterDesc of (M - teacher-hyacinthe):
-	say "This tall thin Asian woman is wearing a lilac coloured corset connected to a lilac coloured frilly skirt with two distinct layers. The frills then descent to ground all around her rear half, giving her a trail of lilac fabric wherever she goes. Her short white court heels, perfect posture, elegant gait and welcoming smile give her an aura of dignity and grace.".
+	say "This tall thin Asian [man of M] is wearing a lilac coloured corset connected to a lilac coloured frilly skirt with two distinct layers. The frills then descent to ground all around [his of M] rear half, giving [him of M] a trail of lilac fabric wherever [he of M] goes. [big his of M] short white court heels, perfect posture, elegant gait and welcoming smile give [him of M] an aura of dignity and grace.".
 
 The teacher-name of teacher-hyacinthe is "Hyacinthe".
 

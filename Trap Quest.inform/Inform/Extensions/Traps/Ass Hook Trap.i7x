@@ -192,7 +192,7 @@ To HookPull:
 		otherwise:
 			say "You can't get a grip on the hook to pull it down at all. Keep pulling!";
 	[otherwise if sex fainting is 1:
-		say "Your joints are so stiff that you can't bend your arms properly get a good grip on the ass hook at all!  This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move!  It may be best to just [bold type]wait[roman type] and see what happens.";]
+		say "Your joints are so stiff that you can't bend your arms properly get a good grip on the ass hook at all! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens.";]
 	otherwise:
 		if H is grabbing the player:
 			say "Your low dexterity causes you to have to repeatedly pull down on the hook, flossing your crack raw.";

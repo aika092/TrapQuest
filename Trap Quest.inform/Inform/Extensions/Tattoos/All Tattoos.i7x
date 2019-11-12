@@ -1128,8 +1128,8 @@ To decide which object is the concealer of (T - failed potty training tattoo):
 	decide on a random worn actually dense belly covering clothing.
 To decide which number is the initial cringe of (T - failed potty training tattoo):
 	decide on 15.
-Definition: failed potty training tattoo is baby themed:  decide yes. [Is it something that only an adult baby fetishist would have?]
-Definition: failed potty training tattoo is toilet themed:  decide yes.
+Definition: failed potty training tattoo is baby themed: decide yes. [Is it something that only an adult baby fetishist would have?]
+Definition: failed potty training tattoo is toilet themed: decide yes.
 
 
 
@@ -1319,7 +1319,7 @@ Definition: funcenter tattoo is eligible:
 	if the noun is plug or the noun is ass plugging clothing or the noun is mechanical joint or the noun is lubricant or the noun is pin themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - funcenter tattoo):
-	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTER' inked in giant letters above it.".
+	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTRE' inked in giant letters above it.".
 To decide which number is the anal sensitivity influence of (C - funcenter tattoo):
 	decide on 2.
 
@@ -2482,7 +2482,7 @@ Definition: target tattoo is eligible:
 		if the semen-soak of the noun + the urine-soak of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - target tattoo):
-	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the center.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".
+	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the centre.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".
 To decide which number is the perceived-bimbo-influence of (C - target tattoo):
 	decide on 2.
 To decide which number is the semen-addiction-influence of (T - target tattoo):
@@ -2563,7 +2563,7 @@ Definition: tentacles tattoo is drawable:
 	decide no.
 Definition: tentacles tattoo is eligible if the noun is egg or the noun is writhing vine.
 To say tattoo-desc of (T - tentacles tattoo):
-	say "Several octopus-like tentacles are drawn across your butt, centered on your [asshole] and [vagina]. You feel even more fertile when it comes to tentacle monsters!".
+	say "Several octopus-like tentacles are drawn across your butt, centred on your [asshole] and [vagina]. You feel even more fertile when it comes to tentacle monsters!".
 To decide which number is the initial outrage of (T - tentacles tattoo):
 	decide on 5.
 Definition: tentacles tattoo is pregnancy related: decide yes.

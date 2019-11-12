@@ -26,7 +26,7 @@ To compute attack of (E - an equippable) at (M - a monster):
 		otherwise:
 			say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Nothing happens!";
 	otherwise:
-		say "You strike the [noun] with your [E]!  ".
+		say "You strike the [noun] with your [E]! ".
 
 To compute attack effect of (E - an equippable):
 	do nothing.

@@ -13,7 +13,7 @@ Strength is used to pull free: but if you pull free with too much strength, you 
 glu-colour is a kind of value. The glu-colours are pinkish, yellowish, blackish, whiteish.
 
 [Limit how many glue traps, you want, in total, here. 3 means at most 1 in dungeon, at most 1 in hotel, the rest in the jungle: provided that code isn't commented out.]
-A glue is a kind of thing. There are 3 glues. A glue has a number called glue-strength. A glue has a glu-colour called the active-colour. A glue has a number called smell-duration. A glue has a number called times-stuck. Understand the active-colour property as describing a glue. The active-colour of a glue is normally pinkish. The glue-strength of a glue is normally 14. The smell-duration of a glue is normally 4. [4 rounds]  A glue can be full-strength or weakened. The printed name of glue is "[TQlink of item described]puddle of glue[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of glue is "glu". Understand "glu", "sticky", "blob", "adhesive" as glue. A glue is not portable.
+A glue is a kind of thing. There are 3 glues. A glue has a number called glue-strength. A glue has a glu-colour called the active-colour. A glue has a number called smell-duration. A glue has a number called times-stuck. Understand the active-colour property as describing a glue. The active-colour of a glue is normally pinkish. The glue-strength of a glue is normally 14. The smell-duration of a glue is normally 4. [4 rounds] A glue can be full-strength or weakened. The printed name of glue is "[TQlink of item described]puddle of glue[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of glue is "glu". Understand "glu", "sticky", "blob", "adhesive" as glue. A glue is not portable.
 
 Figure of Glue Cutscene 1 is the file "Special/Cutscene/cutscene-glue1.jpg".
 Figure of Glue Cutscene 2 is the file "Special/Cutscene/cutscene-glue2.jpg".
@@ -60,7 +60,7 @@ To say ShortDesc of (T - a glue trap):
 
 [!<YourselfIsGlueStuck>+
 
-Is there a puddle of glue grabbing the player?  Selkie is unsure if this is redundant, given that a non-zero stickiness should indicate this.
+Is there a puddle of glue grabbing the player? Selkie is unsure if this is redundant, given that a non-zero stickiness should indicate this.
 
 +!]
 Definition: yourself is glue stuck:
@@ -96,10 +96,10 @@ To say ExamineDesc of (C - a glue trap):
 		if the C is organic:
 			say "There is a swollen, mossy-looking rock on the [one of]wall[or]low ceiling[or]floor[stopping] here with a fold or seam running down its middle. It looks... squishy. Sniffing it, you find it has an interesting smell.";
 		otherwise:
-			say "Mounted on the [one of]wall[or]low ceiling[or]the floor[stopping] here is an electronic panel with some kind of... sensor, maybe...? with a gnurled knob that looks like the overhead air-vent you get in the cabin of a commercial airliner.".
+			say "Mounted on the [one of]wall[or]low ceiling[or]the floor[stopping] here is an electronic panel with some kind of... sensor, maybe...? with a gnarled knob that looks like the overhead air-vent you get in the cabin of a commercial airliner.".
 
 To say ShortDesc of (Y - a glue trap):
-	say "There's a [if the Y is organic]mossy kind of... rock...? with a faint seam[otherwise]rounded knob poking from a gnurled, circular nut[end if] here.";
+	say "There's a [if the Y is organic]mossy kind of... rock...? with a faint seam[otherwise]rounded knob poking from a gnarled, circular nut[end if] here.";
 
 Definition: a glue is too boring: decide no.
 
@@ -296,7 +296,7 @@ To check glue tripping:
 					now the smell-duration of G is 4;
 					if debugmode is 1, say "###debug: the stickiness of the player is now [the stickiness of the player].";
 				let MoreStick be a random number between 1 and 3; [###Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
-				if the strength of the player  > the stickiness of the player + MoreStick:
+				if the strength of the player > the stickiness of the player + MoreStick:
 					increase the stickiness of the player by a random number between 1 and MoreStick;
 					[They were already glued: now they're glued more!]
 					 if N > GS + BaseDiff + HeelsDiff:
@@ -309,7 +309,7 @@ To check glue tripping:
 						say "[one of]In your twisting struggles to get free, you slip and stick yourself even more strongly to the ground![or]You squirm in the glue, trying to pull free, but instead you feel the glue spread further! Your panting struggles to get free brings fresh parts of your body in contact with the glue. Oh no![at random]";
 					say "[one of][at random]";
 				otherwise:
-					[Don't make it even harder if they're already weaker than  the glue!]
+					[Don't make it even harder if they're already weaker than the glue!]
 					 if N > GS + BaseDiff + HeelsDiff:
 						say "[one of]Your [ShortHairDesc] dips towards the glue, but knowing how awful that would be, you desperately whip it aside at the last moment![or]Oh no: your [ShortHairDesc] falls forward. You almost strain your neck, wrenching your head back. Whew - that was close![or]Damn this long hair - it almost got stuck in the glue again![at random]";
 					otherwise if N > GS + BaseDiff:
@@ -341,7 +341,7 @@ A time based rule (this is the glue-stuck-mutation rule):
 		[if the player is flying:
 			let M be a random monster in the location of the player;
 			if M is a monster:
-				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again!  Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
+				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again! Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
 			otherwise:
 				say "[one of]You bob blissfully above the puddle of glue[or]You feel a bit worried about the glue puddle below you[or][line break][first custom style]I hope I don't land in the glue when I finally descend![roman type][line break][or]The glue puddle seems to draw your eye[or]The glue puddle beckons to you.[stopping]";
 				stop;]
@@ -414,7 +414,7 @@ To compute glue escaping:
 		FatigueUp 2;
 		if debuginfo > 0, say "[input-style]Glue escape check: strength roll d[strength of the player] ([T]) | ([bond-grip].5) glue strength[roman type][line break]";
 		if T > bond-grip: [Less than this and it's a fail]
-			[[decrease the glue-strength of G by T;]] [Aika had said: The whole point of pulling is that we expect it to possibly succeed outright if the player is strong enough!  So let's make that at least vaguely possible. Also this now makes it much more realistic that the player could succeed so hard that they fail.]
+			[[decrease the glue-strength of G by T;]] [Aika had said: The whole point of pulling is that we expect it to possibly succeed outright if the player is strong enough! So let's make that at least vaguely possible. Also this now makes it much more realistic that the player could succeed so hard that they fail.]
 			[[if the glue-strength of G < 1:]]
 			[Selkie: Let's instead measure how much they've weakened their glue bond. We'll then zero stickiness, unless the glue snaps dramatically/suddenly and they fall back in if they fail the Dex check (where "dramatic" means > 6 excess).]
 			let drama be T - bond-grip;
@@ -458,7 +458,7 @@ To compute glue escaping:
 				[check glue G freeing by M;]
 				if a random number between 1 and 2 is 1:
 					say "[big he of M] pulls you free!";
-					compute raw glue escaping G  with 0;
+					compute raw glue escaping G with 0;
 				otherwise:
 					say "Unfortunately, [he of M] fails. [one of]Strangely, the glue seems not to affect [him of M] at all.[or]Again, the glue doesn't affect [him of M].[stopping]";
 					decrease the stickiness of the player by 1;
@@ -481,7 +481,7 @@ To compute glue-freeing by (M - a monster):
 		let G be a random glue in the location of the player;
 		if M is aeromancer:
 			say "[first custom style]Hmm, you seem to be in a sticky situation![roman type][line break]";
-		say "[He of M] pulls you free!";
+		say "[big he of M] pulls you free!";
 		compute raw glue escaping G with 0.
 
 Check attacking glue:
@@ -530,7 +530,7 @@ To compute the mutation effects of (G - a glue):
 		say "You feel the glue burning, [one of]penetrating your[or]working some inner change deep beneath your[or]transforming beneath your[at random] skin like some weird scientist's menthol ointment.";
 		if the active-colour of G is pinkish:
 			if the latex-transformation of the player > 2:
-				say "The burn tingles through your skin, intensifying the strange feeling it's had since the aeromancer cast her weird spell on you.";
+				say "The burn tingles through your skin, intensifying the strange feeling it's had since the aeromancer cast [his of an aeromancer] weird spell on you.";
 				if a random number between 1 and 2 is 1:
 					compute latex transformation; [But wait, there's more...]
 			if the silicone volume of breasts + the silicone volume of hips > 0:
@@ -575,7 +575,7 @@ To compute the mutation effects of (G - a glue):
 			if X is 1:
 				if weight gain fetish is 1:
 					say "[one of]The glue smells delicious, and you suddenly have the genius idea of eating your way free - if you can just bite the right parts away[or][stopping]";
-					say "[one of]You manage to stretch some of the glue binding you, up as high as your mouth, and bite through it... it's chewy and delicious![or]Once again you nibble at the yummy glue.[or]You bite off some  more of the tasty glue[or]The glue stretches like taffy - and tastes even better![at random]";
+					say "[one of]You manage to stretch some of the glue binding you, up as high as your mouth, and bite through it... it's chewy and delicious![or]Once again you nibble at the yummy glue.[or]You bite off some more of the tasty glue[or]The glue stretches like taffy - and tastes even better![at random]";
 					decrease the stickiness of the player by 1;
 					FatUp 1;
 					compute glue escaping;
@@ -782,8 +782,8 @@ Check GlueRubbing:
 	otherwise if the noun is a body part:
 		[say "You gingerly rub the [printed name of S] [if the noun is fuckhole]around[otherwise]onto[end if] your [ShortDesc of the noun] and wait to see what will happen.[line break]";]
 		if the noun is penis and there is no worn crotch covering clothing:
-			say "You touch just the tip of your finger to your [ShortDesc of penis] and find it bonds almost instantly!  You shriek and start trying to pull it free immediately, before it gets any more stuck!";
-			say "It hurts!  And the tugging is making your [ShortDesc of penis] stiffen, despite the pain. But you can't walk around here with one hand glued to your dick!  You keep pulling, despite the pain, and eventually tug your hand free, your [ShortDesc of penis] now throbbing and burning in pain while tears stream from your eyes.";
+			say "You touch just the tip of your finger to your [ShortDesc of penis] and find it bonds almost instantly! You shriek and start trying to pull it free immediately, before it gets any more stuck!";
+			say "It hurts! And the tugging is making your [ShortDesc of penis] stiffen, despite the pain. But you can't walk around here with one hand glued to your dick! You keep pulling, despite the pain, and eventually tug your hand free, your [ShortDesc of penis] now throbbing and burning in pain while tears stream from your eyes.";
 			PainUp 1;
 			bodyruin 1;
 		otherwise if the noun is vagina or the noun is hips:
@@ -838,7 +838,7 @@ Otherwise, the monster reacts to seeing the player stuck and struggling and vuln
 @param <Monster>:<M>
 +!]
 To compute glued reaction of (M - a monster):
-	if a random number between 1 and 3 < 3:  [+? "and M is intelligent"? ]
+	if a random number between 1 and 3 < 3: [+? "and M is intelligent"? ]
 		say "[BigNameDesc of M] [if M is intelligent][one of]looks at you with amusement[or]grins at your hampered situation[at random][otherwise][one of]senses your vulnerability[or]sees your helplessness[at random][end if]";
 		FavourDown M;
 		humiliate 200;
@@ -847,14 +847,14 @@ To compute glued reaction of (M - a monster):
 			if M is intelligent:
 				say "[one of]You hear [NameDesc of M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
 			otherwise:
-				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [him of M]self up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
+				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [himself of M] up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
 		otherwise if M is friendly and M is interested:
 			say "[one of][BigNameDesc of M] rolls [his of M] eyes before [his of M] expression shifts and become s a little more... calculating, then[or]Once again, [his of M] expression alters, making you shiver, before [he of M][stopping] turns to leave you alone.";
 			distract M;
 		otherwise:
 			anger M;
 			now the sex-length of M is 3;[probably something to avoid if at all possible]
-			say "[BigNameDesc of M] seems to realise your predicament!  Oh, no...";
+			say "[BigNameDesc of M] seems to realise your predicament! Oh, no...";
 			now M is interested;
 	otherwise:
 		compute correct kneeling reaction of M.

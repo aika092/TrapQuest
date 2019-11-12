@@ -178,7 +178,7 @@ To say SexResistFlav of (G - gloryhole):
 		if a random number between 3 and the oral sex addiction of the player > 6:
 			say "You can't bring yourself to stop right now! [SexSubmissionFlav of G]";
 		otherwise:
-			say "You shuffle backwards, removing the [manly-penis] from you mouth and giving the anonymous [man of shopkeeper] blue balls. [line break][first custom style]'[one of]Fucking bitch! Come back here!'[or]What the fuck? You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]! Finish sucking my [manly-penis] you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
+			say "You shuffle backwards, removing the [manly-penis] from your mouth and giving the anonymous [man of shopkeeper] blue balls. [line break][first custom style]'[one of]Fucking bitch! Come back here!'[or]What the fuck? You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]! Finish sucking my [manly-penis] you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
 			dislodge G;
 	otherwise if G is normal glory hole:
 		say "You try to pull away but the magical suction is holding you tightly against the wall[if the player is not a pervert][one of]! You can't even pull your eyes away from the large painting of the [manly-penis] in front of your face[or][or][or][or][or][cycling][end if]!";

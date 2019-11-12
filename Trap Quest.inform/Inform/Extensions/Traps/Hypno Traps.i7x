@@ -1,6 +1,6 @@
 Hypno Traps by Traps begins here.
 
-A hypno trap is a kind of trap. A cocksucker hypno trap is a kind of hypno trap. A fucktoy hypno trap is a kind of hypno trap. A BBC hypno trap is a kind of hypno trap. A diaper hypno trap is a kind of hypno trap. There are 3 potentially wire potentially sticky potentially click cocksucker hypno traps. There are 3 potentially wire potentially sticky potentially click fucktoy hypno traps.  There are 2 potentially wire potentially sticky potentially click BBC hypno traps. There are 4 potentially wire potentially sticky potentially click diaper hypno traps. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
+A hypno trap is a kind of trap. A cocksucker hypno trap is a kind of hypno trap. A fucktoy hypno trap is a kind of hypno trap. A BBC hypno trap is a kind of hypno trap. A diaper hypno trap is a kind of hypno trap. There are 3 potentially wire potentially sticky potentially click cocksucker hypno traps. There are 3 potentially wire potentially sticky potentially click fucktoy hypno traps. There are 2 potentially wire potentially sticky potentially click BBC hypno traps. There are 4 potentially wire potentially sticky potentially click diaper hypno traps. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
 
 This is the spawn initial hotel hypno traps rule:
 	repeat with N running from 1 to 4:
@@ -63,7 +63,7 @@ To compute hypno effect of (Y - a hypno trap):
 	increase R by a random number between 0 and the intelligence of the player / 2;
 	if the player is immobile and R >= 0, increase R by 7; [There is always a chance of tearing eyes away even when immobile with low int]
 	if R > the intelligence of the player or the bimbo of the player > 14 or wanking is 1:
-		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere!  [otherwise]You can't bring yourself to look away!  [end if]";
+		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere! [otherwise]You can't bring yourself to look away! [end if]";
 		say "[video content of Y]";
 		compute specific hypno effect of Y;
 		if woman-barbara is in the location of the player:
