@@ -45,17 +45,17 @@ Definition: boogeymonster (called M) is able to remove cursed plugs: [Can the mo
 	decide yes.
 
 To say LeftoverDesc (N - 107):
-	say "The corpse of boogeymonster lies on the ground. The back of its head is missing, and a huge bloody hole is all that remains of its brain.[line break]".
+	say "The corpse of boogeymonster lies on the ground. The back of [his of boogeymonster] head is missing, and a huge bloody hole is all that remains of [his of boogeymonster] brain.[line break]".
 
 Part 1 - Perception
 
 To compute perception of (M - boogeymonster):
-	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of], even though you're not completely sure if it has an intelligent mind behind its one giant blue eye.[or].[stopping][otherwise]![end if]";
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of], even though you're not completely sure if [he of M] has an intelligent mind behind [his of M] one giant blue eye.[or].[stopping][otherwise]![end if]";
 	anger M;
 	if M is unleashed:
-		say "It does not look friendly. In fact, you can see some malice in its giant eye.";
+		say "[big he of M] does not look friendly. In fact, you can see some malice in [his of M] giant eye.";
 	otherwise:
-		say "It snarls angrily at its captivity.".
+		say "[big he of M] snarls angrily at [his of M] captivity.".
 
 To say BecomesBoredFlav of (M - boogeymonster):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
@@ -476,7 +476,7 @@ To compute damage of (M - boogeymonster):
 
 To compute unique death of (M - boogeymonster):
 	let B be a random off-stage tincture of strength;
-	say "[BigNameDesc of M] falls to the ground, defeated. [if B is tincture]He dropped a [printed name of B]![end if]";
+	say "[BigNameDesc of M] falls to the ground, defeated. [if B is tincture][big he of M] dropped a [printed name of B]![end if]";
 	if B is tincture:
 		now B is in the location of the player;
 		compute autotaking B;

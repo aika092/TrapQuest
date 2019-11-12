@@ -18,7 +18,7 @@ To decide which figure-name is the monster-image of (M - teacher-brooke):
 	decide on figure of brooke.
 
 To say MonsterDesc of (M - teacher-brooke):
-	say "This saucy young dark skinned woman short brown hair. A striped black and white referee's top adorns her upper half and everything looks normal until you reach the black latex pants clinging to her hips and legs. There is a huge gap at the buttocks which expose the back of her thighs and a large white adult diaper. She looks very proud of her dry padding.".
+	say "This saucy young dark skinned [man of M] short brown hair. A striped black and white referee's top adorns [his of M] upper half and everything looks normal until you reach the black latex pants clinging to [his of M] hips and legs. There is a huge gap at the buttocks which expose the back of [his of M] thighs and a large white adult diaper. [big he of M] looks very proud of [his of M] dry padding.".
 
 The teacher-name of teacher-brooke is "Brooke".
 
@@ -95,7 +95,7 @@ To update name of (M - student-lottie):
 		now the student-name of M is "Lollie".
 
 To say StoryAnswer of (M - student-lottie):
-	say "[speech style of M]'I love my boyfriend but he's into some weird stuff!  I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
+	say "[speech style of M]'I love my boyfriend but he's into some weird stuff! I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-lottie):
 	say "[speech style of M]'[if the rank of the player <= 1]Don't believe the propaganda, this place is for one thing only - training people to enjoy being adult babies.'[otherwise]We can take things to, err, speed up our metabolic functions. But I don't know if I can bring myself to do it...'[end if][roman type][line break]".
@@ -120,7 +120,7 @@ To decide which figure-name is the monster-image of (M - student-polly):
 	decide on figure of polly.
 
 To say MonsterDesc of (M - student-polly):
-	say "This quiet girl is wearing an excessively feminine baby pink babydoll dress with a big bow on the front. The rest of her attire is similarly styled - her white court heels have pink bows on the toes, and white cotton stockings reach up to her thighs. Her nails are painted pink and her baby pink headband has bows and flowers on it. Her very long flowing platinum blonde hair is so perfectly curly and full-bodied that you're sure it must be a wig. A subtle [if the current-rank of M is 3]crinkling[otherwise]squelching[end if] whenever she moves lets you know that she's padded[unless the current-rank of M is 3] and she's definitely not dry[end if].".
+	say "This quiet [boy of M] is wearing an excessively feminine baby pink babydoll dress with a big bow on the front. The rest of [his of M] attire is similarly styled - [his of M] white court heels have pink bows on the toes, and white cotton stockings reach up to [his of M] thighs. [big his of M] nails are painted pink and [his of M] baby pink headband has bows and flowers on it. [big his of M] very long flowing platinum blonde hair is so perfectly curly and full-bodied that you're sure it must be a wig. A subtle [if the current-rank of M is 3]crinkling[otherwise]squelching[end if] whenever [he of M] moves lets you know that [he of M]'s padded[unless the current-rank of M is 3] and [he of M]'s definitely not dry[end if].".
 
 The min-rank of student-polly is 3.
 The current-rank of student-polly is 3.
@@ -153,7 +153,7 @@ To decide which figure-name is the monster-image of (M - student-tanya):
 	decide on figure of tanya.
 
 To say MonsterDesc of (M - student-tanya):
-	say "This skinny woman has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of m] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
+	say "This skinny [man of M] has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of m] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
 
 The max-rank of student-tanya is 2.
 
@@ -168,7 +168,7 @@ To update name of (M - student-tanya):
 		now the text-shortcut of student-tanya is "stte".
 
 To say StoryAnswer of (M - student-tanya):
-	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear!  And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
+	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear! And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
 Part - Nasty Student Emily
 
@@ -182,7 +182,7 @@ To decide which figure-name is the monster-image of (M - student-emily):
 	decide on figure of emily.
 
 To say MonsterDesc of (M - student-emily):
-	say "This young Asian woman is wearing a short pink babydoll dress above bare thighs and knee-high pink socks. [big he of M] is so tall that it always feels like [he of M][']s looking down at you. [big his of M] expression suggests that she genuinely is.".
+	say "This young Asian [man of M] is wearing a short pink babydoll dress above bare thighs and knee-high pink socks. [big he of M] is so tall that it always feels like [he of M][']s looking down at you. [big his of M] expression suggests that [he of M] genuinely is.".
 
 The current-rank of student-emily is 3.
 The max-rank of student-emily is 4.
@@ -230,7 +230,7 @@ To decide which figure-name is the monster-image of (M - student-raye):
 	decide on figure of raye 3.
 
 To say MonsterDesc of (M - student-raye):
-	say "This shy looking woman is wearing a white T-shirt that says 'Yes, Daddy?' in pink writing. [if the current-rank of M is 3]A floral pattern skirt would be hiding her large white diaper if she wasn't frequently raising it up to make sure everyone gets cheeky views of her nappy[otherwise]She is no longer wearing a skirt, allowing her large white nappy to be on display at all times. She doesn't seem embarrassed about this in the slightest[end if]. Her brown hair is in pigtails with pink fluffy scrunchies[if the current-rank of M is 5]. She's visibly horny and keeps her thighs widely spread at all times, as if begging to be touched through her padding[end if].".
+	say "This shy looking [man of M] is wearing a white T-shirt that says 'Yes, Daddy?' in pink writing. [if the current-rank of M is 3]A floral pattern skirt would be hiding [his of M] large white diaper if [he of M] wasn't frequently raising it up to make sure everyone gets cheeky views of [his of M] nappy[otherwise][big he of M] is no longer wearing a skirt, allowing [his of M] large white nappy to be on display at all times. [big he of M] doesn't seem embarrassed about this in the slightest[end if]. [big his of M] brown hair is in pigtails with pink fluffy scrunchies[if the current-rank of M is 5]. [big he of M]'s visibly horny and keeps [his of M] thighs widely spread at all times, as if begging to be touched through [his of M] padding[end if].".
 
 The min-rank of student-raye is 3.
 The current-rank of student-raye is 3.
@@ -451,7 +451,7 @@ To compute playing chess:
 		now chess-move-choice is 15;
 		now aggression of chess-lesson is 1;
 		if student-trapping-move of chess-lesson > 1000: [player was caught by a trap]
-			say "You grin inwardly as you make your clever move. [BigNameDesc of ST][']s expression doesn't fall but instead it looks like [he of ST] is grinning from behind [his of ST] pacifier gag! [big he of ST] quickly makes a planned move in return, and you realise you've fallen for a clever trap. Within the quick few back-and-forth moves that follow, you have lost three of your pieces for only one of [if ST is female]hers[otherwise]his[end if].";
+			say "You grin inwardly as you make your clever move. [BigNameDesc of ST][']s expression doesn't fall but instead it looks like [he of ST] is grinning from behind [his of ST] pacifier gag! [big he of ST] quickly makes a planned move in return, and you realise you've fallen for a clever trap. Within the quick few back-and-forth moves that follow, you have lost three of your pieces for only one of [hers of ST].";
 			increase student-lost-pieces of chess-lesson by 1;
 			increase lost-pieces of chess-lesson by 3;
 		otherwise:
@@ -513,7 +513,7 @@ To compute opponent chess turn:
 		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [his of ST] belly gurgles and the next thing you know, [he of ST][']s whining with shame and [if diaper messing >= 3]messing[otherwise]wetting[end if] [himself of ST].";
 		compute student chess soiling;
 		now the chess-turn of chess-lesson is 1; [Messing doesn't end their turn]
-	otherwise if a random number between 1 and (8 + (mess-factor / 3)) >  4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
+	otherwise if a random number between 1 and (8 + (mess-factor / 3)) > 4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
 		say "[BigNameDesc of ST] keeps thinking.";
 		now the chess-turn of chess-lesson is 1; [Thinking doesn't end their turn]
 	otherwise if student-great-move of chess-lesson <= 0 and a random number between 1 and 3 > 1:
@@ -976,7 +976,7 @@ To compute teaching of (L - enema-race-lesson):
 					now silentMess is 0;
 					say "You can now see for the first time that [he of S2] is sporting some very bulky brown and heavy padding - [he of S2][']s already messed [himself of S2]!";
 				if M1 >= 0 and M2 is -1 and the diaper addiction of the player < 8:
-					say "The sight of [him of S2] [if diaper messing < 3]soggy[otherwise]nasty messy[end if] diaper grosses you out, which affects your morale and speed.";
+					say "The sight of [his of S2] [if diaper messing < 3]soggy[otherwise]nasty messy[end if] diaper grosses you out, which affects your morale and speed.";
 					decrease D1 by 1;
 				otherwise if the player is feeling dominant:
 					say "The sight of [him of S2] in front of you fills you with a powerful desire to defeat [him of S2]! It helps you pick up the pace.";
@@ -1040,7 +1040,7 @@ To compute teaching of (L - enema-race-lesson):
 			decrease D1 by 10; [rival moves 5m forward]
 			if M2 >= 0, increase D1 by M2 / 2; [rival's movement reduction from needing to mess]
 			otherwise increase D1 by 1; [rival's mess slowdown penalty]
-			increase D1 by 10;  [player moves 5m forward]
+			increase D1 by 10; [player moves 5m forward]
 			let BK be the buckle threshold of the player;
 			if the fatigue of the player * 3 > BK, decrease D1 by 1;
 			if (the fatigue of the player * 3) / 2 > BK, decrease D1 by 1;
@@ -1102,9 +1102,9 @@ To compute teaching of (L - enema-race-lesson):
 		now the fatigue of the player is the buckle threshold of the player;
 		DexUp 2;
 	otherwise:
-		say "The two ladies burst across the track, both sprinting as fast as they can, which is definitely less than normal thanks to their enema-pregnant bellies, thick padding and poorly supported breasts. The waddling women seem evenly matched for pace at first but after one lap of the gym a gap does begin to appear with [NameDesc of S1] out in front. But then calamity strikes as she loses control and her diaper starts to fill. You watch with [horror the diaper addiction of the player] as her belly slowly deflates and a symphony of squelching and spurting sounds fill the hall. She significantly slows down as the avalanche of [if diaper messing >= 3]liquid poop[otherwise]water[end if] exits her butthole - clearly she can't handle the weird sensation. Her diaper bulges beneath her, the back side expanding to double its original size and becoming very unwieldy. By the time she's finished[if diaper messing >= 3] messing herself[end if], she's fallen behind [NameDesc of S2].";
+		say "The two ladies burst across the track, both sprinting as fast as they can, which is definitely less than normal thanks to their enema-pregnant bellies, thick padding and poorly supported breasts. The waddling women seem evenly matched for pace at first but after one lap of the gym a gap does begin to appear with [NameDesc of S1] out in front. But then calamity strikes as [he of S1] loses control and [his of S1] diaper starts to fill. You watch with [horror the diaper addiction of the player] as [his of S1] belly slowly deflates and a symphony of squelching and spurting sounds fill the hall. [big he of S1] significantly slows down as the avalanche of [if diaper messing >= 3]liquid poop[otherwise]water[end if] exits [his of S1] butthole - clearly [he of S1] can't handle the weird sensation. [big his of S1] diaper bulges beneath [him of S1], the back side expanding to double its original size and becoming very unwieldy. By the time [he of S1]'s finished[if diaper messing >= 3] messing [himself of S1][end if], [he of S1][']s fallen behind [NameDesc of S2].";
 		if diaper messing >= 3, appropriate-cutscene-display figure of teacher brooke cutscene 1 with priority 4;
-		say "Meanwhile [NameDesc of S2] is having problems of her own. She grips her belly in panic as she travels around the track. Her lead on [NameDesc of S1] continues to grow but only up until the point that she loses control herself. If anything the trumpeting coming from her butthole is even louder than [NameDesc of S1][']s had been! She groans with audible discomfort as she fills the seat of her nappy with her shame. Her sprint turns into a jog turns into an awkward walk as she loudly [if diaper messing >= 3]poops her pants[otherwise]expels her enema[end if]. By the time she's finished and has regained her wits [NameDesc of S1] is once again at her heels, and this makes the final seconds of the race equal amounts of pathetic and intense - two tearful women with heavy, bloated diapers trying to waddle their way along the track faster than the other. In the end it seems that [NameDesc of S1] has had more of a chance to get used to the technique of running with a full nappy and this gives her the advantage - when [NameDesc of M] blows the whistle she has managed to grab the lead by less than a meter. They both collapse to the ground, completely exhausted.";
+		say "Meanwhile [NameDesc of S2] is having problems of [his of S2] own. [big he of S2] grips [his of S2] belly in panic as [he of S2] travels around the track. [big his of S2] lead on [NameDesc of S1] continues to grow but only up until the point that [he of S2] loses control [himself of S2]. If anything the trumpeting coming from [his of S2] butthole is even louder than [NameDesc of S1][']s had been! [big he of S2] groans with audible discomfort as [he of S2] fills the seat of [his of S2] nappy with [his of S2] shame. [big his of S2] sprint turns into a jog turns into an awkward walk as [he of S2] loudly [if diaper messing >= 3]poops [his of S2] pants[otherwise]expels [his of S2] enema[end if]. By the time [he of S2][']s finished and has regained [his of S2] wits [NameDesc of S1] is once again at [his of S2] heels, and this makes the final seconds of the race equal amounts of pathetic and intense - two tearful women with heavy, bloated diapers trying to waddle their way along the track faster than the other. In the end it seems that [NameDesc of S1] has had more of a chance to get used to the technique of running with a full nappy and this gives [him of S1] the advantage - when [NameDesc of M] blows the whistle [he of S1] has managed to grab the lead by less than a meter. They both collapse to the ground, completely exhausted.";
 		say "[speech style of M]'What a great race! [student-name of S1], congratulations on your win. You deserve this.'[roman type][line break]";
 		promote S1;
 		say "[speech style of M]'As for you, [student-name of S2], your punishment is that you're not allowed to get a change until you've shown every single other student and teacher your yucky used diaper and explained that it proves you can't be trusted to make it to the grown-up toilet in time. Understood? Good. In that case, class is now dismissed!'[roman type][line break]";
@@ -1244,7 +1244,7 @@ To compute teaching of (L - dodgeball-lesson):
 				if bodyTarget is face, FavourDown ballTarget;
 				if dodgeChoice > 0, say BadDodgeChoice dodgeChoice;
 				say "[BigNameDesc of ballTarget] [one of]groans[or]winces[at random] with discomfort as [he of ballTarget] picks up the ball.";
-				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED;  1: FILLED WITH MESS;  2: DOUBLEFILLED WITH MESS;  3: MESSED ONCE;  4: MESSED AND FILLED WITH MESS;  5: MESSED AND DOUBLEFILLED WITH MESS  6+: Scheduled for elimination]
+				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED; 1: FILLED WITH MESS; 2: DOUBLEFILLED WITH MESS; 3: MESSED ONCE; 4: MESSED AND FILLED WITH MESS; 5: MESSED AND DOUBLEFILLED WITH MESS 6+: Scheduled for elimination]
 			otherwise:
 				if dodgeChoice is 0, say "You try to [one of]bash the ball out of the way but it rebounds off of your hand and hits your arm[or]sidestep but the ball grazes your chest[at random]! ";
 				otherwise say "You [if dodgeChoice is 1]jump into the air[otherwise]duck towards the ground[end if], which turns out to be the wrong thing to do as the ball comes hurtling towards your [if dodgeChoice is 1]upper[otherwise]lower[end if] half[if D is messed]. To make things worse, your sticky messy diaper sloshes underneath you as you do[end if]. ";

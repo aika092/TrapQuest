@@ -34,7 +34,7 @@ Part 1 - Perception
 Definition: vine boss is uniquely unfriendly: decide yes.
 
 To compute perception of (M - vine boss):
-	say "[BigNameDesc of M] notices you, and roars!  Time to decide: fight or flight?".
+	say "[BigNameDesc of M] notices you, and roars! Time to decide: fight or flight?".
 
 To say BecomesBoredFlav of (M - vine boss):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
@@ -63,7 +63,7 @@ To say MonsterFailedTripFlav of (M - vine boss):
 	say "You manage to hop over the vine like a skipping rope.".
 
 To say StrikingSuccessFlav of (M - vine boss) on (B - a body part):
-	say "[BigNameDesc of M] whips a powerful vine right [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] whips a powerful vine right [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - vine boss) on (B - a body part):
 	say "[BigNameDesc of M] sends a vine to whack you [TargetName of B] but you avoid it just in time!".
@@ -116,7 +116,7 @@ This is the vine boss ultimate victory attack rule:
 					decrease the traitor-hypno of hypno-lesson by 1;
 					say "[BigNameDesc of ex-princess] is just about to leap into the air when you grab [him of ex-princess] by the wrists. Something deep inside you is reminding you to [second custom style]help your friend[roman type]. You yank [his of ex-princess] arms behind [his of ex-princess] back, forcing [him of ex-princess] to drop [his of ex-princess] wand. [BigNameDesc of vine boss] almost seems to be huffing with sadistic laughter as [he of vine boss] sends several vines up your body to wrap aroundo [NameDesc of ex-princess][']s limbs, as you clamber onto [his of ex-princess] back like some sort of acrobatic wrestler, putting your ankles up around [his of ex-princess] neck.[line break][variable custom style]'[teacher-name of lesson-teacher of hypno-lesson] sends [his of lesson-teacher of hypno-lesson] regards.'[roman type][line break]You hear yourself whispering into [NameDesc of ex-princess][']s ear, as two vines begin to find their way up [his of ex-princess] legs to [his of ex-princess] lower fuckholes.";
 					fullscreencutshow figure of vine boss cutscene 2 for current-monster;
-					say "[speech style of ex-princess]'No, no, no! Not like this!'[roman type][line break]Anything more that [he of ex-princess] might have wanted to say is cut off by a pair of vines finding their way into [his of ex-princess] mouth as others begin to undergo a scientific experiment to discover how many [his of ex-princess] cunt and asshole can each accomodate.[line break][speech style of ex-princess]'MMMMMMMMMMMMMMPH!'[roman type][line break]That's the last sound from [him of ex-princess] that you ever hear, as [his of ex-princess] body is raised into the air. You are temporarily released, dropped to the ground, as [NameDesc of ex-princess] is pulled into the belly of [NameDesc of vine boss], countless powerful vines still thrusting in and out as [he of ex-princess] disappears inside.";
+					say "[speech style of ex-princess]'No, no, no! Not like this!'[roman type][line break]Anything more that [he of ex-princess] might have wanted to say is cut off by a pair of vines finding their way into [his of ex-princess] mouth as others begin to undergo a scientific experiment to discover how many [his of ex-princess] cunt and asshole can each accommodate.[line break][speech style of ex-princess]'MMMMMMMMMMMMMMPH!'[roman type][line break]That's the last sound from [him of ex-princess] that you ever hear, as [his of ex-princess] body is raised into the air. You are temporarily released, dropped to the ground, as [NameDesc of ex-princess] is pulled into the belly of [NameDesc of vine boss], countless powerful vines still thrusting in and out as [he of ex-princess] disappears inside.";
 					destroy ex-princess;
 					now ex-princess is fucked-silly; [Just to make sure she definitely never respawns]
 					if there is a worn tattoo and the number of worn chest tattoo is 0:
@@ -230,7 +230,7 @@ To say DamageReactWeak of (M - vine boss):
 
 To compute unique death of (M - vine boss):
 	let B be a random writhing vine;
-	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory!  Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
+	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory! Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
 	repeat with V running through vines:
 		destroy V;
 	now B is in the location of the player;

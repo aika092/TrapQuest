@@ -20,7 +20,7 @@ To decide which figure-name is the monster-image of (M - student-laci):
 	decide on figure of laci.
 
 To say MonsterDesc of (M - student-laci):
-	say "This tall dirty blonde woman is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross her feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
+	say "This tall dirty blonde [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross her feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
 
 The max-rank of student-laci is 3.
 
@@ -38,13 +38,13 @@ To say FirstResponse of (M - student-laci):
 
 To say RepeatResponse of (M - student-laci):
 	if diaper quest is 0, say FirstResponse of M;
-	otherwise say "[speech style of M]'Hey there. [if there is a worn diaper]I see you're in diapers. Too bad you don't have the [maturity] to wear something like this.'[otherwise]I've still never had an accident. Are you jealous of my panties?  You should be.'[end if][roman type][line break]".
+	otherwise say "[speech style of M]'Hey there. [if there is a worn diaper]I see you're in diapers. Too bad you don't have the [maturity] to wear something like this.'[otherwise]I've still never had an accident. Are you jealous of my panties? You should be.'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - student-laci):
-	say "[speech style of M]'[if diaper quest is 1]I've been sent here to prove my [maturity]. And as you can see, I am wearing sexy ADULT panties!  You can see them, right???  No nappies here!'[otherwise if the current-rank of M is 1]My boyfriend has a fetish for upskirts so I'm here to train to be less shy in short skirts and always bend over at the waist. Am I doing it right?'[otherwise]My boyfriend is going to to nuts when he sees me waltzing around in tiny skirts like this!  I'm going to get the prize for best girlfriend ever!'[end if][roman type][line break]".
+	say "[speech style of M]'[if diaper quest is 1]I've been sent here to prove my [maturity]. And as you can see, I am wearing sexy ADULT panties! You can see them, right??? No nappies here!'[otherwise if the current-rank of M is 1]My boyfriend has a fetish for upskirts so I'm here to train to be less shy in short skirts and always bend over at the waist. Am I doing it right?'[otherwise]My boyfriend is going to to nuts when he sees me waltzing around in tiny skirts like this! I'm going to get the prize for best girlfriend ever!'[end if][roman type][line break]".
 
 To say WhereAnswer of (M - student-laci):
-	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert!  Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practice makes perfect. Oops, I dropped my pen, tee-hee!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert! Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practice makes perfect. Oops, I dropped my pen, tee-hee!'[end if][roman type][line break]".
 
 Part - Misty
 
@@ -83,7 +83,7 @@ To say StoryAnswer of (M - student-misty):
 
 To compute friendly drink of (M - a student-misty):
 	if the current-rank of M is 4:
-		say "[speech style of M]'No way, I need all this water to keep my clothes wet!  Find your own drink.'[roman type][line break]";
+		say "[speech style of M]'No way, I need all this water to keep my clothes wet! Find your own drink.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Bah. I guess you can have a sip from my water bottle. But only a little mind you, I need the rest [if the current-rank of M is 2]for... reasons[otherwise]to, erm, well, keep myself looking so sexy[end if].'[roman type][line break]";
 		say "You take a sip and feel much better!";
@@ -101,7 +101,7 @@ To decide which figure-name is the monster-image of (M - student-candy):
 	decide on figure of student-candy.
 
 To say MonsterDesc of (M - student-candy):
-	say "This tall blonde woman is wearing a super skimpy pink kitty themed outfit made out of a tiny tube top and even tinier microskirt. [big he of M] has a tattoo of a tiger on [his of M] leg and a black-and-white braid in [his of M] hair. [if the current-rank of M > 1]A sequins necklace in the style of a paw print hangs above [his of M] chest. [end if][big his of M] make up is rather heavily done[if diaper quest is 1] but still looks very grown-up[end if]. [big his of M] expression exudes focus and confidence.".
+	say "This tall blonde [man of M] is wearing a super skimpy pink kitty themed outfit made out of a tiny tube top and even tinier microskirt. [big he of M] has a tattoo of a tiger on [his of M] leg and a black-and-white braid in [his of M] hair. [if the current-rank of M > 1]A sequins necklace in the style of a paw print hangs above [his of M] chest. [end if][big his of M] make up is rather heavily done[if diaper quest is 1] but still looks very grown-up[end if]. [big his of M] expression exudes focus and confidence.".
 
 The max-rank of student-candy is 3.
 
@@ -126,13 +126,13 @@ To say FirstResponse of (M - student-candy):
 		otherwise:
 			say "[big he of M] puts on [his of M] sweetest kitty cat voice.[line break][speech style of M]'Nyaa! You're cute, but just you wait, one day I'm going to be the cutest cat you've ever seen!'[roman type][line break]";
 	otherwise:
-		say "[big he of M] puts on [his of M] sweetest kitty cat voice.[line break][speech style of M]'Nyaa!  Aren't I just the cutest cat you've ever seen?'[roman type][line break]";
+		say "[big he of M] puts on [his of M] sweetest kitty cat voice.[line break][speech style of M]'Nyaa! Aren't I just the cutest cat you've ever seen?'[roman type][line break]";
 
 To say RepeatResponse of (M - student-candy):
 	say FirstResponse of M.
 
 To say StoryAnswer of (M - student-candy):
-	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my owner!  I'm good at following instructions. No actually, I'm the BEST at following instructions!  My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this school can help me out.'[otherwise]My owner wants me to be his 24/7 live-in pet girl but I'm still learning how to properly [please] men. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
+	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my owner! I'm good at following instructions. No actually, I'm the BEST at following instructions! My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this school can help me out.'[otherwise]My owner wants me to be his 24/7 live-in pet [boy of the player] but I'm still learning how to properly [please] men. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
 
 To say DamageReaction (N - a number) of (M - student-candy):
 	if N > (the maxhealth of M / 4) * 3:
@@ -158,7 +158,7 @@ To decide which figure-name is the monster-image of (M - student-rain):
 	decide on figure of rain.
 
 To say MonsterDesc of (M - student-rain):
-	say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parting above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M >= 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
+	say "This very short, petite [man of M] can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] small boobs and cute innie pussy are very visible[otherwise][big his of M] small boobs are very visible through the fabric and it is purposefully parting above [his of M] belly button, to leave [his of M] pussy fully exposed[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] pussy squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].".
 
 The min-rank of student-rain is 3.
 The current-rank of student-rain is 3.
@@ -206,7 +206,7 @@ To say WhoAnswer of (M - a tryhard student):
 	say "[speech style of M]'My teacher says it is [student-name of M], so it's [student-name of M].'[roman type][line break]".
 
 To say WhereAnswer of (M - a tryhard student):
-	say "[speech style of M]'[if the rank of the player <= 1]God, how can you not even know where we are!  Unless, wait, is that something the teachers will mark you up for?!'[otherwise]By FOCUSING ON YOUR STUDIES!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]God, how can you not even know where we are! Unless, wait, is that something the teachers will mark you up for?!'[otherwise]By FOCUSING ON YOUR STUDIES!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a tryhard student):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]It's pretty cool, but I don't see why you should be allowed to know before you've earned the rank!'[otherwise]I know the answers, of course, but I'm... err... not allowed to tell you. Yeah...'[end if][roman type][line break]".
@@ -218,7 +218,7 @@ To compute teaching of (M - a tryhard student):
 	say "[speech style of M]'I totally could, because I'm way better at this than you. But I'm technically not allowed, since I'm not a qualified teacher here.'[roman type][line break]".
 
 To say detention chair tease of (M - a tryhard student):
-	say "[speech style of M]'[one of]You really should try to get to class on time, you know.'[or]Is there something wrong with your ears?  Did you not hear your armband warn you when class was starting?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]You really should try to get to class on time, you know.'[or]Is there something wrong with your ears? Did you not hear your armband warn you when class was starting?'[in random order][roman type][line break]".
 
 Students Tryhard ends here.
 

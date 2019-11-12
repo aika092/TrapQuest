@@ -235,11 +235,11 @@ To compute fuckhole sex of (M - demon lord):
 	let F be a random fuckhole penetrated by M;
 	if the class of the player is succubus:
 		say "You feel fulfilled in serving your true Master!";
-		dignify 800;
+		dignify 800; 
 	otherwise if the reaction of the player is 2:
 		say "[speech style of M][one of]HAHAHA! I WILL HURT YOU ANYWAY![or]HAHAHA! SCREAM FOR ME![or]In that case... I WILL FUCK YOU HARDER![or]NO! HAHAHA![or]YES! BEG FOR MERCY![or]YOU SCREAM LIKE MY FIRST WIFE! HAHAHA![at random][roman type]";
 	otherwise:
-		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
+		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELLED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
 	if the reaction of the player > 0:
 		compute sexSubmit of M in F;
 		if the reaction of the player is 2:
@@ -401,7 +401,7 @@ To say SpankingStartFlav of (M - demon lord):
 	say "[BigNameDesc of M][one of][']s eyes glow a fearsome red, before you could stare at them too long you begin to levitate into the air.[or] picks you up off of the ground with [his of M] tail! You're suspended in mid-air, there's no way you can get away now![cycling]".
 
 To say SpankingFlav of (M - demon lord):
-	say "[one of]A series of stinging hot flashes collapse into your tender behind in an inconsistant rhythm as to not let you brace for the visceral impacts[or][BigNameDesc of M] delivers several powerful blows to your [buttcheeks][stopping]!".
+	say "[one of]A series of stinging hot flashes collapse into your tender behind in an inconsistent rhythm as to not let you brace for the visceral impacts[or][BigNameDesc of M] delivers several powerful blows to your [buttcheeks][stopping]!".
 
 To say SpankingDeclarationFlav of (M - demon lord):
 	say "[speech style of M]'HOW SHALL I TORTURE YOU...'[roman type][line break]".
@@ -410,7 +410,7 @@ To say SpankingAfterFlav of (M - demon lord):
 	say "After this [he of M] seems satisfied, and mercilessly drops you to the ground.".
 
 To say DQSpankResistReactionFlav of (M - demon lord):
-	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Surely a weak little lamb like you knows better than to try that.'[or]Really now? How precious... this is a resistence even a baby slave would giggle at!'[or]Keep this going and I won't stop until you call me [daddy of demon lord]!'[or]You know what would complete this picture? Squeaks, yes squeak for me little thing.'[or]Come now, all you're doing is exciting me.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Surely a weak little lamb like you knows better than to try that.'[or]Really now? How precious... this is a resistance even a baby slave would giggle at!'[or]Keep this going and I won't stop until you call me [daddy of M]!'[or]You know what would complete this picture? Squeaks, yes squeak for me little thing.'[or]Come now, all you're doing is exciting me.'[in random order][roman type][line break]".
 
 To say DiaperReaction of (M - demon lord):
 	say "[BigNameDesc of M] laughs, with a deep booming tone.[line break][speech style of M]'[one of]YES, I SEE YOU ARE LEARNING YOUR TRUE ROLE AS A PATHETIC DIAPERED MORTAL[or]YOU ARE SO PATHETIC THAT YOU CANNOT EVEN WAIT TO BE ALONE BEFORE SOILING YOUR OWN GARMENTS[at random]!'[roman type][line break]".

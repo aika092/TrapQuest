@@ -143,7 +143,7 @@ To compute perception of (M - Icarus):
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Look who's still lurking around nearby! Clearly you haven't had enough of me, huh?'[or]I've been wondering when you'd show your face here again. I'll make you wish you hadn't, haha!'[or]Lovely to see you again! Let's fuck.'[in random order][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
 		alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the player is in danger or there is a live thing penetrating a body part:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][Big he of M] turns to leave you alone.";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][big he of M] turns to leave you alone.";
 		distract M;
 		alwayscutshow figure of Icarus interact 4 for M;
 	otherwise:
@@ -177,7 +177,7 @@ To say IcarusSummonFlav of (C - a clothing):
 To compute Icarus science of (M - Icarus):
 	let C be a random off-stage IcarusScienceAppropriate wearthing;
 	if C is wearthing:
-		say "[speech style of M]'[one of]Sweet! Let's do this.' [or]Okay, cool!  Here we go...' [or]Nice! Right, stay still...' [at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
+		say "[speech style of M]'[one of]Sweet! Let's do this.' [or]Okay, cool! Here we go...' [or]Nice! Right, stay still...' [at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
 		compute IcarusSummon of C;
 		if M is outrage disapproving:
 			FavourDown M by 1;
@@ -207,7 +207,7 @@ To compute Icarus science of (M - Icarus):
 
 
 
-bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut.  bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
+bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
 
 Definition: bondage-ribbons is red themed: decide yes.
 Definition: bondage-ribbons is christmas themed: decide yes.
@@ -263,7 +263,7 @@ To decide which number is the initial outrage of (C - chain-collar):
 
 
 
-leather-jacket is a jacket. leather-jacket is leather.  leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
+leather-jacket is a jacket. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
 

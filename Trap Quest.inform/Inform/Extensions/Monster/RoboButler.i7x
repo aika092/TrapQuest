@@ -138,7 +138,7 @@ To compute forcefeed of (M - a robobutler):
 		if the player is not in the target-room of M:
 			drag to the target-room of M by M;
 		otherwise:
-			say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type]  [BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
+			say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type] [BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 		try BowlFeeding feeding bowls;
 		satisfy M for 500 seconds.
 
@@ -228,7 +228,7 @@ To say DragArrival of (M - a robobutler) to (R - a room):
 		say "[speech style of M]'ASSISTED MOVEMENT PROGRAM COMPLETE.'[roman type][line break]";
 
 To say StrikingFlav of (M - a robot) on (B - a body part):
-	say "[BigNameDesc of M] attempts to strike you [TargetName of B] with a powerful metal fist!  ".
+	say "[BigNameDesc of M] attempts to strike you [TargetName of B] with a powerful metal fist! ".
 
 To say StrikingSuccessFlav of (M - a robot) on (B - a body part):
 	say "[StrikingFlav of M on B][one of]That's going to leave a bruise[or]It's a direct hit[or]It leaves a sore red mark where it hit[at random]!".
@@ -258,7 +258,7 @@ To say FirstResponse of (M - a robobutler):
 	otherwise:
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 
-To say RepeatResponse of (M -  a robobutler):
+To say RepeatResponse of (M - a robobutler):
 	if the class of the player is maid:
 		say "[first custom style]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise if M is unconcerned:

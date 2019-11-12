@@ -55,8 +55,8 @@ To say LongDickDesc of (M - a minotaur):
 
 
 To say MonsterDesc of (M - minotaur):
-	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long gray horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1]her heavy bosom[otherwise]his thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
-	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1]her heavy bosom[otherwise]his thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.".
+	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long gray horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
+	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.".
 
 To say MonsterComment of (M - minotaur):
 	if item described is caged:
@@ -70,7 +70,7 @@ To say MonsterComment of (M - minotaur):
 		if the bimbo of the player < 10:
 			say "[first custom style][one of]I'm not sure I'm prepared to fight [him of the item described], but it's going to happen one way or the other.[or][big he of the item described] still seems so angry. Letting [him of the item described] out of that cage was a bad idea.[or]Holy shit, look at [him of the item described] go! [big he of the item described]'s a killing machine![or][big he of the item described] looks tough. I'm not really sure I can take [him of the item described].[or]Oh god, I think [his of the item described] thing is pointing at me![or]I hope [he of the item described] doesn't want to 'thank' me for letting [him of the item described] out.[or][big he of the item described] doesn't seem to care what [he of the item described] attacks.[or]We're going to fight eventually, but it doesn't have to happen right this minute.[or]As long as I can run away from [him of the item described], I'll be in control.[or]I should stay out of [his of the item described] way.[or]If [he of the item described] decides to fight me, it's a good idea to run.[or]I don't even want to know what [he of the item described] might do with those horns.[in random order][roman type][line break]";
 		otherwise if the bimbo of the player < 14:
-			say "[variable custom style][one of]I'm not sure what's going to happen now that [he of the item described]'s out of his cage. But I'm sure I'll be sore afterwards.[or][big he of the item described] seems so angry. Maybe if I get [him of the item described] off before I fight [him of the item described] it will be easier.[or][big he of the item described] looks pretty tough. Maybe if I let [him of the item described] have [his of the item described] way with me [he of the item described]'ll leave me alone for a while.[or][big his of the item described] [manly-penis] looks bigger now that [he of the item described]'s out of his cage.[or]I think [he of the item described] wants to thank me for letting [him of the item described] out. Maybe I should let [him of the item described]. Just once.[or]He's fucking everything in sight! I might as well get on my knees, it will happen anyway.[or][big he of the item described] doesn't look that fast. If I end up losing the fight, and [he of the item described] fucks me, it's still kind of on my terms.[or]I should try to keep away from [him of the item described]. At least until I know that boner of [his of the item described] is only pointing at me.[in random order][roman type][line break]";
+			say "[variable custom style][one of]I'm not sure what's going to happen now that [he of the item described]'s out of his cage. But I'm sure I'll be sore afterwards.[or][big he of the item described] seems so angry. Maybe if I get [him of the item described] off before I fight [him of the item described] it will be easier.[or][big he of the item described] looks pretty tough. Maybe if I let [him of the item described] have [his of the item described] way with me [he of the item described]'ll leave me alone for a while.[or][big his of the item described] [manly-penis] looks bigger now that [he of the item described]'s out of his cage.[or]I think [he of the item described] wants to thank me for letting [him of the item described] out. Maybe I should let [him of the item described]. Just once.[or][big he of item described]'s fucking everything in sight! I might as well get on my knees, it will happen anyway.[or][big he of the item described] doesn't look that fast. If I end up losing the fight, and [he of the item described] fucks me, it's still kind of on my terms.[or]I should try to keep away from [him of the item described]. At least until I know that boner of [his of the item described] is only pointing at me.[in random order][roman type][line break]";
 		otherwise:
 			say "[second custom style][one of][big he of the item described]'s out of [his of the item described] cage, now [he of the item described] can fuck me![or]Don't worry baby, I know how to fix that boner![or]Look at that BIG BONER![or][big he of the item described] looks horny. We have that much in common, teehee![or]I only want to fight [him of the item described] after [he of the item described]'s put a couple loads in me. No point attacking someone who's got enough energy to fuck you.[or]Wow! [big his of the item described] [manly-penis] is SO big! I wonder how it would feel inside me?[or]I hope [he of the item described] wants to thank me for letting [him of the item described] out![or]I should let [him of the item described] have fun with everyone else before I get on my knees. That way, I'll have [him of the item described] all to myself.[or]I really want to get on my knees and stuff that [manly-penis] in my mouth![or][big he of the item described] looks like [he of the item described] needs a good blowjob.[or]I want to stay nearby in case [he of the item described] wants to fuck me.[or]I want to stay nearby. It's so fun watching [him of the item described] obliterate everyone in [his of the item described] path![or][big he of the item described] looks so angry! I know just the way to get [him of the item described] nice and calmed down![in random order][roman type][line break]".
 
@@ -110,7 +110,7 @@ To say PregGrowth of (M - minotaur):
 To compute labour to (M - minotaur):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half... whatever [he of M] is[end if][roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half... whatever [he of M] is[end if][roman type][line break]";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -206,7 +206,7 @@ To compute interaction of (M - a minotaur):
 			say "[one of][CagedMinotaurFlav][or][or][or][in random order]".
 
 To say CagedMinotaurFlav:
-	say "[one of][BigNameDesc of current-monster] angrily shakes the metal bars of [his of current-monster] cage.[or][BigNameDesc of current-monster] paws at the floor of [his of current-monster] cage, snarling with anger.[or][BigNameDesc of current-monster] snarls angrily at [his of current-monster] captive state.[or][BigNameDesc of current-monster] bangs at the bars of [his of current-monster] cage. The sound of clanging metal rings through the room.[or][BigNameDesc of current-monster] throws [him of current-monster]self at the bars of [his of current-monster] cage. You try to ignore [his of current-monster] angry snarling.[in random order]".
+	say "[one of][BigNameDesc of current-monster] angrily shakes the metal bars of [his of current-monster] cage.[or][BigNameDesc of current-monster] paws at the floor of [his of current-monster] cage, snarling with anger.[or][BigNameDesc of current-monster] snarls angrily at [his of current-monster] captive state.[or][BigNameDesc of current-monster] bangs at the bars of [his of current-monster] cage. The sound of clanging metal rings through the room.[or][BigNameDesc of current-monster] throws [himself of current-monster] at the bars of [his of current-monster] cage. You try to ignore [his of current-monster] angry snarling.[in random order]".
 
 To say ArousedCagedMinotaurFlav:
 	let M be current-monster;
@@ -284,7 +284,7 @@ To compute vaginal sex of (M - minotaur):
 		say "[one of][BigNameDesc of M] seems completely spent - [he of M] pulls your bloated body off [his of M] shaft and leaves you to recover[or][BigNameDesc of M], spent, pulls your bloated body off [his of M] deflating shaft and leaves you to recover[or][BigNameDesc of M] pulls your bloated body off [his of M] shaft as [his of M] ejaculation finally ends, leaving you on the floor to recover[or][BigNameDesc of M] removes [his of M] deflating shaft from your [vagina], completely spent[at random]. [big he of M] stalks off, probably looking for another woman to breed.";
 		if there is a worn tattoo and bred by a bull tattoo is not worn:
 			summon bred by a bull tattoo;
-			say "The words 'BRED BY A BULL' materialise on your left side!  They are now permanently inked onto your skin.";
+			say "The words 'BRED BY A BULL' materialise on your left side! They are now permanently inked onto your skin.";
 		otherwise if cow-ears is off-stage and cow-ears is actually summonable and lactation fetish is 1:
 			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
 			summon cow-ears cursed;
@@ -331,7 +331,7 @@ To say StrikingSuccessFlav of (M - minotaur) on (B - a body part):
 	BodyRuin 1. [The minotaur automatically does 1 damage, and 2 if he hits.]
 
 To say StrikingFailureFlav of (M - minotaur) on (B - a body part):
-	say "You try to dodge [NameDesc of M]'s fist, but [he of M] still manages to land a glancing blow!  Ouch!";
+	say "You try to dodge [NameDesc of M]'s fist, but [he of M] still manages to land a glancing blow! Ouch!";
 	BodyRuin 1.
 
 To compute striking attack of (M - minotaur):
@@ -350,7 +350,7 @@ This is the minotaur replaces the monster rule:
 	let M be current-monster;
 	let N be a random monster penetrating a fuckhole;
 	if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
-	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately!  [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
+	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately! [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
 	if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 3 for M;
 	now the sex-length of M is 0;
 	now the chosen-orifice of M is asshole;
@@ -403,7 +403,7 @@ To set up sex length of (M - minotaur) in (B - a fuckhole):
 
 
 To say AssholePenetrationFlav of (M - minotaur):
-	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously!  [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
+	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously! [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
 
 
 To say VaginaPenetrationFlav of (M - minotaur):
@@ -415,7 +415,7 @@ To compute damage of (M - minotaur):
 	if the health of M > 0:
 		if M is awake:
 			if M is uninterested:
-				say "[big he of M] growls viciously!  Uh-oh...";
+				say "[big he of M] growls viciously! Uh-oh...";
 				now M is interested;
 				anger M;
 			otherwise:
@@ -448,7 +448,7 @@ To compute unique death of (M - minotaur):
 	if mythical creature fetish is 1:
 		if full-lady fetish is 1 and X is clothing and a random number between 1 and 3 is 1 and the player is the donator:
 			now the strap-length of X is 11;[15 inches]
-			say "[BigNameDesc of M] falls to the ground, dead. His body disappears, but the huge strapon dildo he was wearing stays behind. It seems like you could actually wear it!";
+			say "[BigNameDesc of M] falls to the ground, dead. [big his of M] body disappears, but the huge strapon dildo [he of M] was wearing stays behind. It seems like you could actually wear it!";
 			now X is in the location of the player;
 			compute autotaking X;
 		otherwise if H is a thing:

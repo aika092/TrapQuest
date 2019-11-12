@@ -44,16 +44,16 @@ The text-shortcut of woman is "wo".
 To say ShortDesc of (M - woman-barbara):
 	say "[if M is stranger]the [end if][FuckerDesc of M]".
 To say MediumDesc of (M - woman-barbara):
-	say "[if M is introduced][BarbaraTitle] [BarbaraName][otherwise]mysterious woman[end if][if M is tentacle-pregnant] (pregnant)[end if]".
+	say "[if M is introduced][BarbaraTitle] [BarbaraName][otherwise]mysterious [man of M][end if][if M is tentacle-pregnant] (pregnant)[end if]".
 
 To say NameDesc of (M - woman-barbara):
 	say "[input-style][FuckerDesc of M][roman type]".
 To say BigNameDesc of (M - woman-barbara):
 	say "[input-style][BigFuckerDesc of M][roman type]".
 To say FuckerDesc of (M - woman-barbara):
-	say "[if M is stranger]the mysterious woman[otherwise][BarbaraName][end if]".
+	say "[if M is stranger]the mysterious [man of M][otherwise][BarbaraName][end if]".
 To say BigFuckerDesc of (M - woman-barbara):
-	say "[if M is stranger]The mysterious woman[otherwise][BarbaraName][end if]".
+	say "[if M is stranger]The mysterious [man of M][otherwise][BarbaraName][end if]".
 
 To say BarbaraTitle:
 	say "[if the woman-old-bimbo of woman-barbara is the woman-bimbo of woman-barbara][current-title of woman-barbara][otherwise][old-title of woman-barbara][end if]".
@@ -79,8 +79,8 @@ To decide which figure-name is the monster-image of (M - woman-barbara):
 To say MonsterDesc of (M - woman-barbara):
 	if the woman-bimbo of M < 3, say "A long haired, large breasted brunette wearing a black fishnet shirt underneath a tight black leather corset, and a pair of torn fishnet leggings under a tiny pair of black hotpants, which provides modesty for [his of M] crotch region but little else. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
 	if the woman-bimbo of M is 3, say "A long haired, huge breasted brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [he of M][']s not wearing underwear and barely provides any modesty for [his of M] pussy. [big he of M] is wearing glasses over a decent amount of makeup.";
-	if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that she's having more trouble than usual thinking straight.";
-	if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that she's having huge amounts of trouble thinking straight.";
+	if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";
+	if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that [he of M]'s having huge amounts of trouble thinking straight.";
 	if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if]. [big his of M] facial expression is one of empty-headed bliss.";
 	if the woman-bimbo of M is 6 and bukkake fetish is 1, say "[big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] two lower fuckholes. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";
 	if M is tentacle-pregnant, say "[big his of M] massive bulging belly is a clear sign that [he of M][']s pregnant, and probably with something inhuman.";
@@ -170,7 +170,7 @@ To uniquely destroy (M - woman-barbara): [Are there any special rules we need to
 Definition: woman-barbara is human: decide yes.
 
 To say LeftoverDesc (N - 129):
-	say "[if playerRegion is Dungeon][random woman] lies unconscious on the floor here but you can hardly tell that it's [him of woman-barbara]. [big he of woman-barbara][']s on [his of woman-barbara] back but [his of woman-barbara] belly is so large that it covers [his of woman-barbara] body from [his of woman-barbara] knees to [his of woman-barbara] neck. Minotaur [semen] is gradually spilling out of both [his of woman-barbara] mouth and from down below, you can see that [his of woman-barbara] belly is very slowly deflating.[otherwise][random woman] lies unconscious on the floor here, with demon [semen] still slowly seeping out of [his of woman-barbara] gaping vagina.[end if]".
+	say "[if playerRegion is Dungeon][random woman] lies unconscious on the floor here but you can hardly tell that it's [him of woman-barbara]. [big he of woman-barbara][']s on [his of woman-barbara] back but [his of woman-barbara] belly is so large that it covers [his of woman-barbara] body from [his of woman-barbara] knees to [his of woman-barbara] neck. Minotaur [semen] is gradually spilling out of both [his of woman-barbara] mouth and, from down below, you can see that [his of woman-barbara] belly is very slowly deflating.[otherwise][random woman] lies unconscious on the floor here, with demon [semen] still slowly seeping out of [his of woman-barbara] gaping vagina.[end if]".
 
 Part 1 - Perception
 
@@ -361,7 +361,7 @@ A time based rule (this is the barbara vines rule):
 				if W is in the location of the player, say "[second custom style]'[big please] help me [please] help me [please] help me I'll give you all I haaaaa~'[roman type][line break]A fourth vine makes its way into the already fully stuffed cavern that is [NameDesc of W][']s cunt. It is now gaped wider than should be physically possible, in the real world. All fourth vines piston in and out with unforgiving strength and speed.";
 			otherwise if the vine-scene of W is 5:
 				if W is in the location of the player:
-					say "[second custom style]'Gzzt... cumming... Gah!'[roman type][line break][NameDesc of W] climaxes at the same time as the vines, her belly exploding outwards as her womb is inflated full of tentacle seed.[line break][second custom style]'You fucking bitch...'[roman type][line break][big he of W] murmurs before passing out.";
+					say "[second custom style]'Gzzt... cumming... Gah!'[roman type][line break][NameDesc of W] climaxes at the same time as the vines, [his of W] belly exploding outwards as [his of W] womb is inflated full of tentacle seed.[line break][second custom style]'You fucking bitch...'[roman type][line break][big he of W] murmurs before passing out.";
 					increase the delayed sluttification of W by 1;
 					if living belt of sturdiness is off-stage:
 						now living belt of sturdiness is in the location of the player;
@@ -424,7 +424,7 @@ Report going when there is an uninterested mechanic in the location [of the play
 		now woman-barbara is interested;
 		now mechanic is interested;
 		anger mechanic;
-		say "As you arrive here you see that [NameDesc of woman-barbara] is here on [his of woman-barbara] knees, with [NameDesc of mechanic][']s [manly-penis] firmly lodged in her throat. [big he of mechanic] is holding [him of woman-barbara] roughly by the hair and forcing [his of woman-barbara] head forward and back, using [his of woman-barbara] mouth as [his of mechanic] personal onahole.";
+		say "As you arrive here you see that [NameDesc of woman-barbara] is here on [his of woman-barbara] knees, with [NameDesc of mechanic][']s [manly-penis] firmly lodged in [his of woman-barbara] throat. [big he of mechanic] is holding [him of woman-barbara] roughly by the hair and forcing [his of woman-barbara] head forward and back, using [his of woman-barbara] mouth as [his of mechanic] personal onahole.";
 		follow the mechanic facefucks barbara rule.
 
 This is the mechanic facefucks barbara rule:
@@ -444,7 +444,7 @@ This is the mechanic facefucks barbara rule:
 			now J is solid gold;
 			set shortcut of J;
 			now J is in the location of the player;
-			say "[BigNameDesc of mechanic] moans as [he of mechanic] cums, [his of mechanic] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [Big he of mechanic] removes [his of mechanic] [manly-penis] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of mechanic] drops the [J] in front of you.[line break][speech style of mechanic]'Money well spent.'[roman type][line break]";
+			say "[BigNameDesc of mechanic] moans as [he of mechanic] cums, [his of mechanic] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [big he of mechanic] removes [his of mechanic] [manly-penis] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of mechanic] drops the [J] in front of you.[line break][speech style of mechanic]'Money well spent.'[roman type][line break]";
 			now the latest-appearance of mechanic is the appearance of the player; [to stop him suddenly noticing the player and deciding to bang]
 			satisfy mechanic;
 			now mechanic is unleashed;
@@ -636,7 +636,7 @@ This is the woman spawning to get shopkeeper discount rule:
 The woman spawning to get shopkeeper discount rule is listed last in the womanspawning rules.
 
 Report going when shopkeeper is in the location [of the player ]and woman-barbara is in the location [of the player ]and the woman-bimbo of woman-barbara <= 2 and the shopkeeper-scene of woman-barbara is 0 and woman-barbara is not interested and shopkeeper is not interested:
-	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-barbara] is on [his of woman-barbara] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-barbara] mouth. [big he of woman-barbara] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-barbara] throat. Lewd gagging noises fill the room as the distension in [his of woman-barbara] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn girl, you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-barbara][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past her jaw. Noises of weak resistance emanate from [NameDesc of woman-barbara][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-barbara] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-barbara] and [he of woman-barbara] falls back choking, spewing up lumps of thick [semen].[line break][second custom style]'Did I win?'[roman type][line break]Is all [he of woman-barbara] manages to say before [he of woman-barbara] collapses backward onto the ground.[line break][first custom style]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-barbara] has already passed out cold.";
+	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-barbara] is on [his of woman-barbara] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-barbara] mouth. [big he of woman-barbara] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-barbara] throat. Lewd gagging noises fill the room as the distension in [his of woman-barbara] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn girl, you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-barbara][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past [his of woman-barbara] jaw. Noises of weak resistance emanate from [NameDesc of woman-barbara][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-barbara] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-barbara] and [he of woman-barbara] falls back choking, spewing up lumps of thick [semen].[line break][second custom style]'Did I win?'[roman type][line break]Is all [he of woman-barbara] manages to say before [he of woman-barbara] collapses backward onto the ground.[line break][first custom style]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-barbara] has already passed out cold.";
 	now the sleep of woman-barbara is 200;
 	[increase the delayed sluttification of woman-barbara by 1;]
 	now the woman-status of woman-barbara is 92;
@@ -656,7 +656,7 @@ A time based rule (this is the barbara hypno hotel rule):
 				now Y is not untriggered;
 				now the reset-timer of Y is 250;
 				now the woman-status of woman-barbara is 94;
-				say "[bold type]You spot [NameDesc of woman-barbara] nearby![roman type] [big he of woman-barbara] appears to be standing there, oblivious to your presence, transfixed by a screen. On the screen is [hypno content of Y]. You suppose you could go and attempt to rescue her, but you might get stuck looking at the screen yourself...";
+				say "[bold type]You spot [NameDesc of woman-barbara] nearby![roman type] [big he of woman-barbara] appears to be standing there, oblivious to your presence, transfixed by a screen. On the screen is [hypno content of Y]. You suppose you could go and attempt to rescue [him of woman-barbara], but you might get stuck looking at the screen yourself...";
 				now the hypno-scene of woman-barbara is 1;
 				increase the delayed sluttification of woman-barbara by 2.
 
@@ -666,7 +666,7 @@ To compute barbara hypno shared progression:
 		increase the delayed sluttification of woman-barbara by 1.
 
 To compute barbara hypno solo progression:
-	say "[BigNameDesc of woman-barbara] drools a bit as she watches the screen.";
+	say "[BigNameDesc of woman-barbara] drools a bit as [he of woman-barbara] watches the screen.";
 	increase the delayed sluttification of woman-barbara by 1.
 
 Chapter - Human Toilet Scene
@@ -968,7 +968,7 @@ To compute PlayerBarbaraStoolFuck:
 		say "You feel more dominant!";
 		DominateUp W;
 		DelicateDown 2;
-		say "With a proud smirk, you loosen [his of W] binds a bit, and then turn [him of W] towards the [random N-viable direction] and give her a hard thwack on the rear, which makes [him of W] squeal in pain and begin waddling [his of W] way out of the room. With those weakened knots, [he of W][']ll manage to free [himself of W] after not too long, but [he of W] won't know that it was you who tormented [him of W] first.";
+		say "With a proud smirk, you loosen [his of W] binds a bit, and then turn [him of W] towards the [random N-viable direction] and give [him of W] a hard thwack on the rear, which makes [him of W] squeal in pain and begin waddling [his of W] way out of the room. With those weakened knots, [he of W][']ll manage to free [himself of W] after not too long, but [he of W] won't know that it was you who tormented [him of W] first.";
 		now the stool-scene of W is 2;
 		vanish W.
 
@@ -1135,7 +1135,7 @@ This is the woman gives birth to a tentacle monster rule:
 			now M is newborn;
 			set up M;
 			now M is in the location of the player;
-			say "[BigNameDesc of woman-barbara] collapses to the ground.[line break][second custom style]'Oh fuck, it's coming!'[roman type][line break][big he of woman-barbara] spreads her legs, exposing [his of woman-barbara] dilated pussy and womb. You watch with [horror the bimbo of the player] as one, two, then three tentacles pry [his of woman-barbara] cunt open even further and then the thing inside begins to pull itself out.[line break][second custom style]'[if the woman-bimbo of woman-barbara < 4]It hurts! Get it out! It hurts so much[otherwise]I'm going to be a mama[end if]!'[roman type][line break][BigNameDesc of woman-barbara] flails helplessly as a basketball-sized lump of grey flesh forces its way out of [his of woman-barbara] and into the world. [big he of woman-barbara] lies exhausted on the ground as her spawn's single giant eye focuses on you.";
+			say "[BigNameDesc of woman-barbara] collapses to the ground.[line break][second custom style]'Oh fuck, it's coming!'[roman type][line break][big he of woman-barbara] spreads [his of woman-barbara] legs, exposing [his of woman-barbara] dilated pussy and womb. You watch with [horror the bimbo of the player] as one, two, then three tentacles pry [his of woman-barbara] cunt open even further and then the thing inside begins to pull itself out.[line break][second custom style]'[if the woman-bimbo of woman-barbara < 4]It hurts! Get it out! It hurts so much[otherwise]I'm going to be a mama[end if]!'[roman type][line break][BigNameDesc of woman-barbara] flails helplessly as a basketball-sized lump of grey flesh forces its way out of [his of woman-barbara] and into the world. [big he of woman-barbara] lies exhausted on the ground as [his of woman-barbara] spawn's single giant eye focuses on you.";
 			now woman-barbara is not tentacle-pregnant;
 			distract woman-barbara;
 			now the sleep of woman-barbara is 100;
@@ -1226,7 +1226,7 @@ This is the barbara unique punishment rule:
 		say "[BigNameDesc of woman-barbara] spreads [his of woman-barbara] cheeks and moves [his of woman-barbara] crack towards your face.";
 		if face is not actually occupied, say "[line break][second custom style]'[if the woman-bimbo of woman-barbara < 5]Lick my asshole, [cunt]. Show me you admit defeat.'[otherwise]Wanna taste?'[end if][roman type][line break]Do you lick [NameDesc of woman-barbara][']s butthole? ";
 		if face is not actually occupied and the player is bimbo consenting:
-			say "You [if the player is not a pervert]reluctantly[otherwise if the player is not a nympho]obediently[otherwise]happily[end if] tongue her loose hole, [if the player is not a pervert]wincing with shame[otherwise if the player is not a nympho]and start to get turned on[end if] when she sighs with pleasure. ";
+			say "You [if the player is not a pervert]reluctantly[otherwise if the player is not a nympho]obediently[otherwise]happily[end if] tongue [his of woman-barbara] loose hole, [if the player is not a pervert]wincing with shame[otherwise if the player is not a nympho]and start to get turned on[end if] when [he of woman-barbara] sighs with pleasure. ";
 			if the raw delicateness of the player < the raw anal sex addiction of the player * 2:
 				say "You feel a bit more submissive for having done that.";
 				increase the raw delicateness of the player by 1;
@@ -1247,7 +1247,7 @@ The unique punishment rule of woman-barbara is the barbara unique punishment rul
 Section 1 - Fighting
 
 To say MonsterTripAnnounceFlav of (M - woman-barbara):
-	say "[BigNameDesc of M] [if the woman-bimbo of M < 4]shifts [his of M] weight and goes for a slide tackle[otherwise if the woman-bimbo of M < 6]grabs your shoulders and tries to hook a foot behind your ankle[otherwise]drops to her knees and after greedily staring at your crotch for a moment, tries to grab your legs and squeeze them together[end if]!".
+	say "[BigNameDesc of M] [if the woman-bimbo of M < 4]shifts [his of M] weight and goes for a slide tackle[otherwise if the woman-bimbo of M < 6]grabs your shoulders and tries to hook a foot behind your ankle[otherwise]drops to [his of M] knees and after greedily staring at your crotch for a moment, tries to grab your legs and squeeze them together[end if]!".
 
 To say MonsterFailedTripFlav of (M - woman-barbara):
 	say "[if the woman-bimbo of M < 4]You manage to leap out of the way just in time[otherwise]You manage to pull yourself free before you fall over[end if]. Phew!".
@@ -1295,7 +1295,7 @@ To compute damage of (M - woman-barbara):
 		compute death of M.
 
 To say DamageReactHealthy of (M - woman-barbara):
-	say "[big he of M] looks [one of][or]even [stopping]more pissed off than she did already!".
+	say "[big he of M] looks [one of][or]even [stopping]more pissed off than [he of M] did already!".
 
 To say DamageReactDamaged of (M - woman-barbara):
 	say "[big he of M] grunts in pain!".
@@ -1307,7 +1307,7 @@ To say DamageReactWeak of (M - woman-barbara):
 	say "[big he of M] screams in pain, struggling to maintain [his of M] balance!".
 
 To say DamageReactSubmissive of (M - woman-barbara):
-	say "[big he of M] groans in pain, [if the size of penis <= 3]seemingly resigning [himself of M] to something[otherwise]staring apprehensively at your crotch[end if] as [he of M] fights to maintain her balance.".
+	say "[big he of M] groans in pain, [if the size of penis <= 3]seemingly resigning [himself of M] to something[otherwise]staring apprehensively at your crotch[end if] as [he of M] fights to maintain [his of M] balance.".
 
 To compute unique death of (M - woman-barbara):
 	now the sleep of M is 0;
@@ -1345,7 +1345,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 		say "[variable custom style][gag sounds][roman type][line break]";
 	if the woman-status of M is 0 and M is stranger:
 		say "[second custom style]'Oh shit! Wait... oh my god, are you another player? I didn't realise there was more than one of us playing at the same time! [if the faint count of the player > 1]No wonder the map keeps resetting around me... [otherwise if the faint count of the player is 1]No wonder the map shifted around me a while ago! [end if]I wonder if we're allowed to work together? What's my name? My name... I can't think of anything except 'Barbara'... but I don't think that is my real name...'[roman type][line break]";
-		if newbie tips is 1, say "[newbie style]Newbie tip: Barbara is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside her, she'll start to lose the game herself, and become more slutty. Also, sometimes when you bump into her she'll be in the middle of a predicament, and you have to choose whether to help her or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Barbara's progress towards becoming a brainless bimbo. A super slutty Barbara is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of minotaur].[roman type][line break]";
+		if newbie tips is 1, say "[newbie style]Newbie tip: Barbara is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M]'ll start to lose the game [himself of M], and become more slutty. Also, sometimes when you bump into [him of M] [he of M]'ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Barbara's progress towards becoming a brainless bimbo. A super slutty Barbara is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of minotaur].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "ba";
 	otherwise if the woman-status of M is 91 and the mechanic-scene of M <= 5 and M is in the location of the player and mechanic is unfriendly:
@@ -1377,7 +1377,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 	otherwise if the woman-status of M is 2 or the woman-status of M is 7:
 		if the favour of M < the bondage-favour-limit of M:
 			say "[second custom style]'Karma's a bitch, but not as much of a bitch as you.'[roman type][line break]";
-		otherwise	if the woman-old-bimbo of M is the woman-bimbo of M:
+		otherwise if the woman-old-bimbo of M is the woman-bimbo of M:
 			if the woman-bimbo of M < 3:
 				say "[second custom style]'You should be more careful, bondage is really difficult to deal with.'[roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:

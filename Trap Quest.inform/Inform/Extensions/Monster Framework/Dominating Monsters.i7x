@@ -102,7 +102,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, upset and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, upset and angry.[end if]";
+	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, upset and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, upset and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -246,7 +246,7 @@ We start off with a check to see if the monster in question is over 50% hp or if
 IF we can't determine anything with that, we use a special function called DecideWhichNumberIsTheSubmissivenessOfMonster, which outputs either 1 or -1 depending on a couple factors.
 Now that we have the result, we diverge.
 IF THE PLAYER SUCCEEDED, we output some flavour text describing the monster and the player having sex. In general, if the player uses their penis/strapon for sex, big penis is good, small penis is bad. If the player uses a fuckhole for sex and the monster has a penis, the player will usually ride on top of them and then have some choice at the end of the scene, depending on a couple factors. Otherwise, the player will sit on a monster's face, which probably won't get the player an orgasm, but it has few drawbacks. Once the scene has been displayed, we apply any rewards for dominant sex. These rewards vary depending on the monster and any specific events that may have happened in the scene. Once we're done, we send the monster somewhere else so the player can't immediately attack them again, although this isn't actually a big problem, since they'll instantly be at full health after it's over. It is not necessary to make the monster lose interest after a successful dominance scene, and in the case of male monsters that fuck the player, it can be inadvisable, since it makes it difficult to know whether or not the player used a condom.
-IF THE PLAYER FAILED, we output a short piece of flavour where the monster turns the tables. After that, the monster will give the player some sort of unique punishment. In general, these punishments should not be something the player wants to repeat, so the player doesn't use it as an excuse to always weasel out of normal punishments.  Note that if the monster has a penis, it's often strictly worse than if the player had just done things the normal way. If the monster is still interested after handling the punishment, it means they ARE going to do things the normal way, so we don't send them anywhere.
+IF THE PLAYER FAILED, we output a short piece of flavour where the monster turns the tables. After that, the monster will give the player some sort of unique punishment. In general, these punishments should not be something the player wants to repeat, so the player doesn't use it as an excuse to always weasel out of normal punishments. Note that if the monster has a penis, it's often strictly worse than if the player had just done things the normal way. If the monster is still interested after handling the punishment, it means they ARE going to do things the normal way, so we don't send them anywhere.
 AFTER EVERYTHING is said and done, we reset player-fucking to 0.
 
 +!]
@@ -416,7 +416,7 @@ This function determines what happens when a monster fails its "submissiveness" 
 
 +!]
 To say DominanceSuccess of (M - a monster):
-	say "You successfully force [NameDesc of M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve!  [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
+	say "You successfully force [NameDesc of M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve! [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
 
 [!<ComputeSuccessfulDominanceOfMonster>+
 
@@ -518,7 +518,7 @@ To watersports dominate (M - a monster):[Boring, needs changing for wenchy monst
 	SportsGet.
 
 To oral dominate (M - a monster):[Boring, needs changing for wenchy monsters]
-	say "You make [NameDesc of M] to give you a blowjob.";
+	say "You make [NameDesc of M] give you a blowjob.";
 	BlowGet.
 
 To anal dominate (M - a monster):[Boring, needs changing for wenchy monsters]
@@ -549,7 +549,7 @@ The text in this function should output whenever the player unsuccessfully domin
 To say DominanceFailure of (M - a monster):
 	say "You try to force yourself on [NameDesc of M], but [he of M] turns the tables and forces you to your knees instead!";
 
-[Usually when you mess up you'll be punished by having some clothes torn off, but if you're not wearing anything you'll have to deal with a more intense punishment courtesy of nintendolls]
+[Usually when you mess up you'll be punished by having some clothes torn off, but if you're not wearing anything you'll have to deal with a more intense punishment courtesy of Nintendolls]
 [!<ComputeFailedDominancePunishmentOfMonster>+
 
 The failed dominance punishment should be implemented for any monster that the player can dominate. By default, the monster will perform their angry punishment, or the monster will leave the player alone and the game will punish them instead(with sissification). Most monsters should follow this general formula. If the monster decides to repay the player with sex, any punishment here should be fairly mild, and the another-turn flag should be set to 1. If the monster won't be having sex with the player right after, the punishment here should be a bit more intense, and we should make sure the monster loses interest at the end.
@@ -586,7 +586,7 @@ computeSissification is called whenever the monster doesn't have another punishm
 To compute sissification:
 	let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
 	if the player is male and pink sissy bow is off-stage and pink sissy bow is actually summonable:
-		say "[bold type]A silky pink bow appears in your hair!  [line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
+		say "[bold type]A silky pink bow appears in your hair! [line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
 	otherwise if pink sissy bow is worn and S is clothing:
 		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic sissy...[or]Even more sissy clothing?![stopping][roman type][line break]";

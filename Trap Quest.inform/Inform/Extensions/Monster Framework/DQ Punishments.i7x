@@ -100,7 +100,7 @@ Definition: a monster (called M) is eager to double diapers:
 Definition: a monster is willing to double diapers: decide no.
 
 Definition: a monster (called M) is willing to donate diapers:
-	if the diaper-duration of M > 0, decide no; [The player had already been told by the NPC to stay in diapers!  It's proper punishment time.]
+	if the diaper-duration of M > 0, decide no; [The player had already been told by the NPC to stay in diapers! It's proper punishment time.]
 	if M is willing to change diapers, decide yes;
 	decide no.
 

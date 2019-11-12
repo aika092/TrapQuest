@@ -23,15 +23,15 @@ To say MediumDesc of (M - receptionist):
 
 To say MonsterDesc of (M - receptionist):
 	if M is sex-enslaved:
-		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing her naked pussy. It's also been torn over one breast. Her armband, instead of showing a picture of her face, and the word 'STAFF', now just reads 'SPANK ME'. Her left hand is still raised with an adorable pointing finger, but the fury on her face tells you it's not hanging there of her own volition. In fact both of her arms and hands seem magically frozen in place. Her face and mouth have been left free to allow her to frown and snarl[if M is in School01], and she would be able to walk around if one of her ankles wasn't bound to the back of her reception desk with a strong metal chain[end if].";
+		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing [his of M] naked pussy. It's also been torn over one breast. [big his of M] armband, instead of showing a picture of [his of M] face, and the word 'STAFF', now just reads 'SPANK ME'. [big his of M] left hand is still raised with an adorable pointing finger, but the fury on [his of M] face tells you it's not hanging there of [his of M] own volition. In fact both of [his of M] arms and hands seem magically frozen in place. [big his of M] face and mouth have been left free to allow [him of M] to frown and snarl[if M is in School01], and [he of M] would be able to walk around if one of [his of M] ankles wasn't bound to the back of [his of M] reception desk with a strong metal chain[end if].";
 	otherwise if M is diaper-enslaved:
-		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in her hair and blue flowers on the hem of her shortened dress. She's got girly frills at the top of her blue socks and a blue choker around her neck. Her hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of her dress. It's so big that she has to keep her feet a metre apart just to be able to walk at all[if M is in School01] - not that she can go very far anyway, since one of her ankles is bound to the back of her reception desk with a strong metal chain[end if]. She can't seem to stop rubbing the front and back of her diaper with her two mittened hands, with a vacant drooling facial expression. Whatever her mega-diaper is full of, it sloshes around rather noisily as she rubs it into herself.";
+		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in [his of M] hair and blue flowers on the hem of [his of M] shortened dress. [big he of M]'s got girly frills at the top of [his of M] blue socks and a blue choker around [his of M] neck. [big his of M] hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of [his of M] dress. It's so big that [he of M] has to keep [his of M] feet a metre apart just to be able to walk at all[if M is in School01] - not that [he of M] can go very far anyway, since one of [his of M] ankles is bound to the back of [his of M] reception desk with a strong metal chain[end if]. [big he of M] can't seem to stop rubbing the front and back of [his of M] diaper with [his of M] two mittened hands, with a vacant drooling facial expression. Whatever [his of M] mega-diaper is full of, it sloshes around rather noisily as [he of M] rubs it into [himself of M].";
 	otherwise:
-		say "This woman looks like she's in her mid-thirties, but her complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
+		say "This [man of M] looks like [he of M]'s in [his of M] mid-thirties, but [his of M] complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
 
 
 To say MonsterComment of (M - receptionist):
-	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama!  What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of]She looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, she's probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
+	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, [he of M]'s probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
 
 To set up (M - receptionist):
 	reset M;
@@ -75,7 +75,7 @@ To compute perception of (M - receptionist):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the times-met of M <= 1 and armband is not worn and the number of fucked-silly monsters in the school is 0:
 		if M is in School01:
-			say "[line break][speech style of M]'Well hello there, you're a new face! Welcome to [slut school]! Did your [if diaper quest is 1]Daddy[otherwise]boyfriend[end if] send you along? Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[roman type][line break]She hands you a neon reflective pink armband and gestures for you to strap it on.";
+			say "[line break][speech style of M]'Well hello there, you're a new face! Welcome to [slut school]! Did your [if diaper quest is 1]Daddy[otherwise]boyfriend[end if] send you along? Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.";
 			now armband is carried by the player;
 			now the armband-print of armband is "new recruit";
 			say ExamineDesc of armband;
@@ -83,7 +83,7 @@ To compute perception of (M - receptionist):
 			if the player is bimbo consenting:
 				try wearing armband;
 			otherwise:
-				say "The receptionist looks disappointed.[line break][speech style of M]'It was not a request. Put it on right now or I'll make you!'[roman type][line break]She looks ready to fight.";
+				say "The receptionist looks disappointed.[line break][speech style of M]'It was not a request. Put it on right now or I'll make you!'[roman type][line break][big he of M] looks ready to fight.";
 				anger M;
 		otherwise:
 			say "[line break][speech style of M]'[one of]Well hello there, I've been looking for you everywhere! You must be the new recruit, right? I was told that you'd be dressed rather... [']interestingly['][run paragraph on][if the appearance of the player > 3], but I see you've really taken that instruction to heart![otherwise].[end if] Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[or]You there, you've got to be the new student I'm looking for, right?'[stopping][roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.[line break][speech style of M]'Quickly now, strap this on and jump through the portal. It'll take you straight to the head office.'[roman type][line break]";
@@ -142,7 +142,7 @@ To say MovementBlock of (M - receptionist):
 
 To compute (M - a monster) stomping (N - receptionist):
 	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
-	otherwise say "You hear a woman screech [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
+	otherwise say "You hear a [man of N] screech [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
 	destroy N;
 	let L be a random off-stage leftover;
 	now L is in the location of M;
@@ -176,7 +176,7 @@ The receptionist forces armband rule is listed first in the receptionist unique 
 The staff member unique punishment rule is listed last in the receptionist unique punishment rules. [Detention / Dungeon]
 
 To compute (M - receptionist) forcing armband:
-	say "[BigNameDesc of M] twists your left arm so it's held painfully behind your back. [unless armband is in the location of the player or armband is held]She presses some kind of cold metal device against your biceps and a beeping sound occurs. A few moments later a nearby printer has somehow... 'printed' your pink armband! Or at least an identical one. [end if]She reaches for the armband and then places it on your right hand, pulling your arm tighter until you are forced to comply.";
+	say "[BigNameDesc of M] twists your left arm so it's held painfully behind your back. [unless armband is in the location of the player or armband is held][big he of M] presses some kind of cold metal device against your biceps and a beeping sound occurs. A few moments later a nearby printer has somehow... 'printed' your pink armband! Or at least an identical one. [end if][big he of M] reaches for the armband and then places it on your right hand, pulling your arm tighter until you are forced to comply.";
 	now armband is worn by the player;
 	compute armband replacement.
 

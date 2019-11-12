@@ -126,7 +126,7 @@ To say ShortDesc of (H - equine-strapon):
 	say "[if mythical creature fetish is 1]equine[otherwise]industrial[end if] strap-on".
 
 To say UniqueClothingDesc of (K - equine-strapon):
-	say "A [PenisFlavour of K] mounted onto a sturdy leather harness.  [if K is worn and the size of penis > 0]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the size of penis > 0]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
+	say "A [PenisFlavour of K] mounted onto a sturdy leather harness. [if K is worn and the size of penis > 0]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the size of penis > 0]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
 
 [
 Only needed if the player's penis can ever go beyond 10
@@ -135,7 +135,7 @@ To say PenisSoften of (K - an equine-strapon):
 To say PenisHarden of (K - an equine-strapon):
 	say "You feel your [ShortDesc of penis] tingle as your strapon dildo transforms into a [printed name of K].";]
 
-Chapter 3 -  Gemstone Strapon
+Chapter 3 - Gemstone Strapon
 
 Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. The armour of gem-strapon is 6. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
 

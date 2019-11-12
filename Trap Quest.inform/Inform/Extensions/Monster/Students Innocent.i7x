@@ -60,7 +60,7 @@ To decide which figure-name is the monster-image of (M - student-winnie):
 	decide on figure of winnie.
 
 To say MonsterDesc of (M - student-winnie):
-	say "This middle aged woman is wearing denim daisy dukes and a short T-shirt that reads 'Whore In Training' in black letters. She looks [if the current-rank of M is 1]a little out of her comfort zone but still calm and collected[otherwise]a little bit anxious[end if].".
+	say "This middle aged [man of M] is wearing denim daisy dukes and a short T-shirt that reads 'Whore In Training' in black letters. [big he of M] looks [if the current-rank of M is 1]a little out of [his of M] comfort zone but still calm and collected[otherwise]a little bit anxious[end if].".
 
 The max-rank of student-winnie is 2.
 
@@ -72,10 +72,10 @@ To update name of (M - student-winnie):
 		now the student-name of M is "Winnie".
 
 To say StoryAnswer of (M - student-winnie):
-	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real?  But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
+	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real? But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-winnie):
-	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously!  Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously! Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
 
 To decide which number is the heel-skill of (M - student-winnie):
 	decide on -2.
@@ -95,7 +95,7 @@ To decide which figure-name is the monster-image of (M - student-austin):
 	decide on figure of austin.
 
 To say MonsterDesc of (M - student-austin):
-	say "This long ginger-haired beauty has gorgeous [if the current-rank of M is 1]big eyes[otherwise]long lashes[end if] and alluring red lips. A pink latex dress clings tightly to her form. She looks [if the current-rank of M is 1]rather innocent and shy[otherwise]uptight and apprehensive[end if].".
+	say "This long ginger-haired beauty has gorgeous [if the current-rank of M is 1]big eyes[otherwise]long lashes[end if] and alluring red lips. A pink latex dress clings tightly to [his of M] form. [big he of M] looks [if the current-rank of M is 1]rather innocent and shy[otherwise]uptight and apprehensive[end if].".
 
 The max-rank of student-austin is 2.
 
@@ -135,11 +135,11 @@ To decide which figure-name is the monster-image of (M - student-rachel):
 
 To say MonsterDesc of (M - student-rachel):
 	if the current-rank of M <= 2:
-		say "This woman is in her late twenties or early thirties. She is wearing a smart white blouse and red skirt. Her brunette hair is kept short and neat. She looks like a respectable businesswoman... or at least she would, if it wasn't for the huge double-diaper she's sporting under her skirt. She keeps pulling up her skirt to look at the already-damp padding underneath, and then blushing furiously, as if she couldn't really believe it was there until she checked again with her own two eyes.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] is wearing a smart white blouse and red skirt. [big his of M] brunette hair is kept short and neat. [big he of M] looks like a respectable businesswoman... or at least [he of M] would, if it wasn't for the huge double-diaper [he of M]'s sporting under [his of M] skirt. [big he of M] keeps pulling up [his of M] skirt to look at the already-damp padding underneath, and then blushing furiously, as if [he of M] couldn't really believe it was there until [he of M] checked again with [his of M] own two eyes.";
 	otherwise if the current-rank of M is 3:
-		say "This woman is in her late twenties or early thirties. She was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of her boobs. Her smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that she's got on underneath, which if anything is even thicker than before. Her short brunette hair has been put in little pigtails. She still constantly blushes wherever she goes.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of [his of M] boobs. [big his of M] smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that [he of M]'s got on underneath, which if anything is even thicker than before. [big his of M] short brunette hair has been put in little pigtails. [big he of M] still constantly blushes wherever [he of M] goes.";
 	otherwise:
-		say "This woman is in her late twenties or early thirties. Her tight pink blouse have been replaced by a tight pink crop top that doesn't cover her belly button and reads 'BABYGIRL' on the front in large white letters. Her short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of her thick double diaper are on show, even as she tries to pull down on the tiny microskirt to get it to stretch as far as it can. She seems so embarrassed that she's moments away from tears at all times. It's crazy to think that just a short while ago this was woman was a respected young professional.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big his of M] tight pink blouse have been replaced by a tight pink crop top that doesn't cover [his of M] belly button and reads 'BABYGIRL' on the front in large white letters. [big his of M] short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of [his of M] thick double diaper are on show, even as [he of M] tries to pull down on the tiny microskirt to get it to stretch as far as it can. [big he of M] seems so embarrassed that [he of M]'s moments away from tears at all times. It's crazy to think that just a short while ago this was [man of M] was a respected young professional.";
 
 The current-rank of student-rachel is 2.
 The max-rank of student-rachel is 4.

@@ -73,16 +73,16 @@ To compute perception of (M - unicorn):
 
 To compute appearance assessment of (M - unicorn):
 	if the class of the player is succubus or the class of the player is hotel employment:
-		say "[Big he of M] frowns. [line break][speech style of M]'You look horrid. I thought you should know.'[roman type][line break]";
+		say "[big he of M] frowns. [line break][speech style of M]'You look horrid. I thought you should know.'[roman type][line break]";
 		FavourDown M by 2;
 	otherwise if breasts is lewdly exposed:
-		say "[Big his of M] eyes go directly to your chest, and linger there as a flush spreads over [his of M] cheeks. [line break][speech style of M]'[one of]T-They look so soft...'[or]A-are those real?'[at random][roman type][line break]";
+		say "[big his of M] eyes go directly to your chest, and linger there as a flush spreads over [his of M] cheeks. [line break][speech style of M]'[one of]T-They look so soft...'[or]A-are those real?'[at random][roman type][line break]";
 		FavourDown M;
 	otherwise if the class of the player is cowgirl or (the class of the player is catgirl and the player is a bit horny) or the number of glazed body parts > 0:
 		say "[BigNameDesc of M][']s nose twitches, and a visible flush spreads over [his of M] face.[line break][speech style of M]'[one of]'U-uhm... G-go take a shower!'[or]I-I hate how you smell! T-take a shower!'[or]Y-your scent is a-awful. Y-yes. Take a shower.'[at random]";
 		FavourDown M;
 	otherwise:
-		say "[Big his of M] expression remains mostly neutral, except for a small smile as [he of M] nods toward you.".
+		say "[big his of M] expression remains mostly neutral, except for a small smile as [he of M] nods toward you.".
 
 To say SatisfiedFlav of (M - unicorn):
 	say "[BigNameDesc of M] looks really satisfied and loses interest.".
@@ -151,7 +151,7 @@ To say PresentAcceptanceFlav of (M - unicorn):[TODO: more interesting]
 	say "[speech style of M]'[one of]You'd do that for me?'[or]Yes! Finally!'[stopping][roman type] [BigNameDesc of M] seems convinced by your request!".
 
 To say NormalMouthPenetrationFlav of (M - unicorn):
-	say "[one of][if the relevant sex addiction of M < 8][BigNameDesc of M] presses the tip of [his of M] [DickDesc of M] against your lips, smearing [his of M] precum up and down your chin until you finally relent and let [him of M] slide in. You glower up at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13][BigNameDesc of M] presses the tip of [his of M] [DickDesc of M] against your lips, smearing [his of M] precum up and down your chin until you finally give in and open your mouth, emitting a slow sigh through your nose as [his of M] shaft slides through your lips.[otherwise][BigNameDesc of M] positions [his of M] [DickDesc of M] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[end if][or][BigNameDesc of M] puts one hand on the back of your head, rapidly jerking [him of M]self off as [his of M] tip prods your lips. [if the relevant sex addiction of M < 8] You open your mouth to tell [him of M] off, but [he of M] immediately inserts [his of M] [DickDesc of M] and begins to thrust.[otherwise if the relevant sex addiction of M < 12]Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[otherwise]You obediently loll out your tongue, gazing at [his of M] [DickDesc of M] reverently as it slides through your lips.[end if][or][BigNameDesc of M] points to your mouth, desperately pumping [his of M] [DickDesc of M]. [if the relevant sex addiction of M < 7]You snarl. [line break][first custom style]'Not my proble-'[roman type][line break][big he of M] cuts you off by immediately shoving [himself of M] into your mouth. You glare lividly as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13]You open your mouth and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [DickDesc of M] slides between your lips.[otherwise]You greedily lean forward and take [his of M] yummy [DickDesc of M] into your mouth.[end if][or][BigNameDesc of M] points to your mouth, whining as [he of M] jerks [him of M]self off. [if the relevant sex addiction of M < 3]You spit at [his of M] feet. [line break][first custom style]'That[']s your problem! Ask-'[roman type][line break][big he of M] cuts you off by immediately shoving [his of M] [DickDesc of M] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 7]You slowly open it, not sure whether to hate or congratulate yourself as [his of M] [LongDickDesc of M] slides past your lips.[otherwise if the relevant sex addiction of M < 11]You obediently open your mouth, telling yourself not to enjoy it too much as [he of M] slides in.[otherwise]You eagerly part your lips and accept [his of M] [LongDickDesc of M] into your mouth.[end if][in random order]".
+	say "[one of][if the relevant sex addiction of M < 8][BigNameDesc of M] presses the tip of [his of M] [DickDesc of M] against your lips, smearing [his of M] precum up and down your chin until you finally relent and let [him of M] slide in. You glower up at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13][BigNameDesc of M] presses the tip of [his of M] [DickDesc of M] against your lips, smearing [his of M] precum up and down your chin until you finally give in and open your mouth, emitting a slow sigh through your nose as [his of M] shaft slides through your lips.[otherwise][BigNameDesc of M] positions [his of M] [DickDesc of M] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[end if][or][BigNameDesc of M] puts one hand on the back of your head, rapidly jerking [himself of M] off as [his of M] tip prods your lips. [if the relevant sex addiction of M < 8] You open your mouth to tell [him of M] off, but [he of M] immediately inserts [his of M] [DickDesc of M] and begins to thrust.[otherwise if the relevant sex addiction of M < 12]Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[otherwise]You obediently loll out your tongue, gazing at [his of M] [DickDesc of M] reverently as it slides through your lips.[end if][or][BigNameDesc of M] points to your mouth, desperately pumping [his of M] [DickDesc of M]. [if the relevant sex addiction of M < 7]You snarl. [line break][first custom style]'Not my proble-'[roman type][line break][big he of M] cuts you off by immediately shoving [himself of M] into your mouth. You glare lividly as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13]You open your mouth and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [DickDesc of M] slides between your lips.[otherwise]You greedily lean forward and take [his of M] yummy [DickDesc of M] into your mouth.[end if][or][BigNameDesc of M] points to your mouth, whining as [he of M] jerks [himself of M] off. [if the relevant sex addiction of M < 3]You spit at [his of M] feet. [line break][first custom style]'That[']s your problem! Ask-'[roman type][line break][big he of M] cuts you off by immediately shoving [his of M] [DickDesc of M] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 7]You slowly open it, not sure whether to hate or congratulate yourself as [his of M] [LongDickDesc of M] slides past your lips.[otherwise if the relevant sex addiction of M < 11]You obediently open your mouth, telling yourself not to enjoy it too much as [he of M] slides in.[otherwise]You eagerly part your lips and accept [his of M] [LongDickDesc of M] into your mouth.[end if][in random order]".
 
 [For now, the unicorn doesn't change anything from the orgasm portion of the oral climax]
 To compute angry punishment of (M - unicorn):
@@ -176,7 +176,7 @@ To compute angry punishment of (M - unicorn):
 
 
 To check forgiveness of (M - unicorn):
-	if the class of the player is priestess and a random number between the blue-balls of M  * -1 and the charisma of the player > 1:
+	if the class of the player is priestess and a random number between the blue-balls of M * -1 and the charisma of the player > 1:
 		compute angry forgiveness of M;
 	otherwise:
 		compute angry punishment of M.
@@ -277,7 +277,7 @@ Section 3 - Damage
 [To compute damage of (M - a unicorn):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "[big he of M] [if M is asleep]wakes up and [end if]snarls menacingly!  Uh-oh...";
+			say "[big he of M] [if M is asleep]wakes up and [end if]snarls menacingly! Uh-oh...";
 			now M is interested;
 			now the variety of M is gladiator-next-level of M;
 			anger M;

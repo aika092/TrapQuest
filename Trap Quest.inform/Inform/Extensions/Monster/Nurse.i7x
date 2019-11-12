@@ -23,11 +23,11 @@ To say MediumDesc of (M - nurse):
 
 To say MonsterDesc of (M - nurse):
 	if M is sex-enslaved:
-		say "The nurse has lost the bottom half of her purple dress. What material is left is bunched up at her waist, exposing the magical purple thigh strap which keeps her legs snapped tightly together, and prevents her from being able to walk around. A magic purple vibrator is embedded in her butthole, visibly and audibly buzzing away inside her ass, never tiring, never ceasing. Her [if bukkake fetish is 1]cum covered [end if]facial expression reveals her mental state - vacant, orgasm-addled, but happy. She waddles around on her knees, gleefully licking up a bit of cum she's found stuck to her glove.";
+		say "The nurse has lost the bottom half of [his of M] purple dress. What material is left is bunched up at [his of M] waist, exposing the magical purple thigh strap which keeps [his of M] legs snapped tightly together, and prevents [him of M] from being able to walk around. A magic purple vibrator is embedded in [his of M] butthole, visibly and audibly buzzing away inside [his of M] ass, never tiring, never ceasing. [big his of M] [if bukkake fetish is 1]cum covered [end if]facial expression reveals [his of M] mental state - vacant, orgasm-addled, but happy. [big he of M] waddles around on [his of M] knees, gleefully licking up a bit of cum [he of M]'s found stuck to [his of M] glove.";
 	otherwise if M is diaper-enslaved:
-		say "The fingers of the nurse's gloves have been removed, turning them into long latex fingerless mittens. Her mouth is kept full by a large purple pacifier gag. Her skirt has been shortened, so it fully exposes her new thick pale purple diaper. [if diaper quest is 1]A loud buzzing is emanating from the inside of her diaper, and you think you can see a stream of lady-drool trickling down one of her legs, which might explain why her face is constantly red and sweating.[otherwise]Every few seconds, she winces and you hear a nasty squelch-fart sound come from her rear end. Her diaper is beginning to leak now, as you watch a steady sticky stream of [semen] trickle down her right leg. It would appear that she's been cursed to have her anal cavity constantly slowly filled with [semen]...[end if]";
+		say "The fingers of the nurse's gloves have been removed, turning them into long latex fingerless mittens. [big his of M] mouth is kept full by a large purple pacifier gag. [big his of M] skirt has been shortened, so it fully exposes [his of M] new thick pale purple diaper. [if diaper quest is 1]A loud buzzing is emanating from the inside of [his of M] diaper, and you think you can see a stream of lady-drool trickling down one of [his of M] legs, which might explain why [his of M] face is constantly red and sweating.[otherwise]Every few seconds, [he of M] winces and you hear a nasty squelch-fart sound come from [his of M] rear end. [big his of M] diaper is beginning to leak now, as you watch a steady sticky stream of [semen] trickle down [his of M] right leg. It would appear that [he of M]'s been cursed to have [his of M] anal cavity constantly slowly filled with [semen]...[end if]";
 	otherwise:
-		say "Even the nurse of this institution is not immune from its theme: her tight purple latex dress hugs her slim figure and emphasises the curves of her tits and ass. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. Her long black hair rests alluringly on her shoulders. Black lipstick and a naughty grin gives her a slight air of... evil. You feel like she definitely doesn't see you as an equal.";
+		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] tits and ass. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
 
 Definition: nurse is willing to do oral: decide yes.
 
@@ -84,13 +84,13 @@ To say DamageReactWeak of (M - nurse):
 	say "[BigNameDesc of M] takes the hit, fighting to maintain [his of M] balance! [line break][speech style of M]'[one of]Ooh!'[or]Ouch!'[at random][roman type][line break]".
 
 To say StrikingFlav of (M - a nurse) on (B - a body part):
-	say "[BigNameDesc of M] grabs you by the wrist and pulls your arm toward her with seemingly impossible strength!".
+	say "[BigNameDesc of M] grabs you by the wrist and pulls your arm toward [him of M] with seemingly impossible strength!".
 
 To say StrikingSuccessFlav of (M - a nurse) on (B - a body part):
-	say "[StrikingFlav of M on B]She pricks your biceps with the syringe of pink liquid, which immediately makes you woozy.".
+	say "[StrikingFlav of M on B][big he of M] pricks your biceps with the syringe of pink liquid, which immediately makes you woozy.".
 
 To say StrikingFailureFlav of (M - a nurse) on (B - a body part):
-	say "[StrikingFlav of M on B][one of]You manage to escape before she can prick you with the syringe[or]You manage to dodge the syringe[or]You bat away the syringe before she can prick you[in random order].".
+	say "[StrikingFlav of M on B][one of]You manage to escape before [he of M] can prick you with the syringe[or]You manage to dodge the syringe[or]You bat away the syringe before [he of M] can prick you[in random order].".
 
 To compute (M - nurse) striking (B - a body part):
 	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 6;
@@ -99,7 +99,7 @@ To compute (M - nurse) striking (B - a body part):
 To compute damage of (M - nurse):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "She raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don[']t fret dear, this will help you calm down some.'[roman type][line break]";
+			say "[big he of M] raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don[']t fret dear, this will help you calm down some.'[roman type][line break]";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -139,11 +139,11 @@ To compute student perception of (M - nurse):
 	otherwise if the breast-enhancement of M is 1:
 		say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise if the body soreness of the player > 0:
-		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]!  Why don't you come through to the med bay [one of]with me?  I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
+		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
 	otherwise if the player is tired:
 		say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
 	otherwise if the boost-cooldown of M <= 0:
-		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]?  If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]".
 
@@ -198,20 +198,20 @@ To say FriendlyMouthPenetrationFlav of (M - nurse):
 	say MouthPenetrationFlav of M.
 
 To say MouthPenetrationFlav of (M - nurse):
-	say "The [nurse] lifts up her dress and plonks her bare shaved pussy right down onto your mouth.";
+	say "The [nurse] lifts up [his of M] dress and plonks [his of M] bare shaved pussy right down onto your mouth.";
 	now the sex-length of M is 1.
 
 To compute facial sex of (M - a nurse):
 	decrease the sex-length of M by 1;
-	say "The [nurse] grinds her cunt over your nose and mouth, coating them in her juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	say "The [nurse] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	if med bay bed is grabbing the player, now another-turn is 1.
 
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;
 	LickCount;
-	say "[BigNameDesc of M] grunts as she shudders, a strong orgasm washing over her. Your mouth and face soon feel even wetter than before as her girlcum joins her other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	OralSexAddictUp 1;
-	say "[BigNameDesc of M] takes a few moments to recover and then plucks her pussy from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. She unbuckles the straps holding you down and allows you to leave[end if].";
+	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] pussy from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	satisfy M;
 	calm M;
@@ -234,7 +234,7 @@ To say ForcefeedAftermath of (M - nurse):
 	say "After it's all gone, [he of M] unbuckles the straps holding you down and allows you to leave.".
 
 To say ForcefeedAfterFlav of (M - nurse):
-	say "[speech style of M]'There we go, that should give a growing girl like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit she's right - you do feel fully rested!".
+	say "[speech style of M]'There we go, that should give a growing [boy of the player] like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
 
 To say ForcefeedPillDeclarationFlav of (M - nurse):
 	say "[speech style of M]'[one of]Hmm, and we'd better add this to your prescription!'[or]And now time for your prescription pill!'[stopping][roman type][line break]".
@@ -244,7 +244,7 @@ To say DragFlav of (M - nurse) to (R - a room):
 
 To say DiaperChangeStart of (M - nurse):
 	unless M is in School12, drag to School12 by M;
-	say "[unless med bay bed is grabbing the player][BigNameDesc of M] lowers you onto the [med bay bed]. She pins you down with one strong arm and uses the other to binds your wrists and ankles with the inbuilt straps.[end if]".
+	say "[unless med bay bed is grabbing the player][BigNameDesc of M] lowers you onto the [med bay bed]. [big he of M] pins you down with one strong arm and uses the other to binds your wrists and ankles with the inbuilt straps.[end if]".
 
 
 Nurse ends here.
