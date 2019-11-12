@@ -159,7 +159,7 @@ Report wearing something (this is the identify-magic-state rule):
 	if the noun is wearthing:
 		now the magic-ID of the noun is identified;
 		now the curse-ID of the noun is sure;
-		if newbie tips is 1 and the noun is cursed and tutorial is 0, say "[one of][newbie style]Newbie tip: Uh-oh, this item is cursed!  That means that you won't be able to take it off on your own. You need to find an altar to get it blessed. There is one somewhere in the Dungeon, and one in the Woods. The one in the Dungeon works on a simple timer, you can use it about once every 5 minutes of in-game time; and all you need to do is [']place['] the item you want blessed onto the altar. The one in the woods works very differently, as you'll find out when you speak to the witch that guards it! [bold type]Headgear[newbie style] work differently - there's no way to decurse them except for with their class quest. If you really can't succeed at the quest, try the knife in the hotel region.[roman type][line break][or][stopping]".
+		if newbie tips is 1 and the noun is cursed and tutorial is 0, say "[one of][newbie style]Newbie tip: Uh-oh, this item is cursed! That means that you won't be able to take it off on your own. You need to find an altar to get it blessed. There is one somewhere in the Dungeon, and one in the Woods. The one in the Dungeon works on a simple timer, you can use it about once every 5 minutes of in-game time; and all you need to do is [']place['] the item you want blessed onto the altar. The one in the woods works very differently, as you'll find out when you speak to the witch that guards it! [bold type]Headgear[newbie style] work differently - there's no way to decurse them except for with their class quest. If you really can't succeed at the quest, try the knife in the hotel region.[roman type][line break][or][stopping]".
 The identify-magic-state rule is listed last in the report wearing rulebook.
 
 Report wearing suppression clothing:
@@ -178,7 +178,7 @@ Report wearing confidence clothing:
 	if the humiliation-influence of the noun >= 0, say "A pleasant feeling flows through you. You feel good about your body[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing constriction clothing:
-	say "[if the noun is belly covering]The [ShortDesc of the noun][otherwise]An invisible force[end if] clamps down on your waist, forcing it smaller than is at all comfortable. [if the noun is cursed]It's cursed!  [end if]";
+	say "[if the noun is belly covering]The [ShortDesc of the noun][otherwise]An invisible force[end if] clamps down on your waist, forcing it smaller than is at all comfortable. [if the noun is cursed]It's cursed! [end if]";
 	now the squirt timer of belly is 1;
 	if the total felchable volume of vagina > 0:
 		say "The [semen] is squeezed from your womb and out of your [vagina].";
@@ -198,10 +198,10 @@ Report wearing bed wetting clothing:
 	say "Your bladder tingles slightly[if incontinence < 10], and you somehow can tell you have less control over not wetting yourself![end if]".
 
 Report wearing stumbling clothing:
-	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now!  [end if]This [ShortDesc of the noun] is making it harder for you to stay balanced!".
+	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now! [end if]This [ShortDesc of the noun] is making it harder for you to stay balanced!".
 
 Report plugging something with stumbling clothing:
-	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now!  [end if]This [ShortDesc of the second noun] is making it harder for you to stay balanced!".
+	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now! [end if]This [ShortDesc of the second noun] is making it harder for you to stay balanced!".
 
 Report wearing posture training clothing:
 	if the number of worn posture training clothing is 1, say "You feel yourself [if the bimbo of the player < 6]involuntarily [end if]push your [BreastDesc] out forward and your [AssDesc] out behind you[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".

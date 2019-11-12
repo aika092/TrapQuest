@@ -64,11 +64,11 @@ To First Time Search (X - a container):
 				let BR be a random number from the bimbo of the player to 20;
 				if debuginfo > 0, say "[input-style]Temptation resist check: [if the bimbo of the player < 8]Bimbo ([bimbo of the player]) = automatic success[otherwise]Bimbo ([bimbo of the player]) ==> RNG([bimbo of the player]~20) = [BR] | (17.5) temptation threshold[end if][roman type][line break]";
 				if the bimbo of the player < 8 or BR < 18:
-					say "Uh- oh, looks like this [ShortDesc of X] is trapped with a [ShortDesc of trigger-target of X]!  Better leave it alone...";
+					say "Uh-oh, looks like this [ShortDesc of X] is trapped with a [ShortDesc of trigger-target of X]! Better leave it alone...";
 					if there is a worn stethoscope, now the prevsearch of X is 4;
 					otherwise now the prevsearch of X is 2;
 				otherwise:
-					say "It looks like this [ShortDesc of X] is trapped!  But you're eager to have fun, so you decide to open it anyway...";
+					say "It looks like this [ShortDesc of X] is trapped! But you're eager to have fun, so you decide to open it anyway...";
 					now autoopen is 1;
 					try opening X;
 			otherwise:
@@ -113,10 +113,10 @@ To Second Time Search (X - a container):
 						let BR be a random number from the bimbo of the player to 20;
 						if debuginfo > 0, say "[input-style]Temptation resist check: [if the bimbo of the player < 8]Bimbo ([bimbo of the player]) = automatic success[otherwise]Bimbo ([bimbo of the player]) ==> RNG([bimbo of the player]~20) = [BR] | (17.5) temptation threshold[end if][roman type][line break]";
 						if the bimbo of the player < 8 or BR < 18:
-							say "Uh- oh, looks like this [ShortDesc of X] is trapped with a [ShortDesc of trigger-target of X] after all! Good call!";
+							say "Uh-oh, looks like this [ShortDesc of X] is trapped with a [ShortDesc of trigger-target of X] after all! Good call!";
 							now the prevsearch of X is 4;
 						otherwise:
-							say "It looks like this [ShortDesc of X] is trapped after all!  But you're eager to have fun, so you decide to open it anyway...";
+							say "It looks like this [ShortDesc of X] is trapped after all! But you're eager to have fun, so you decide to open it anyway...";
 							now autoopen is 1;
 							try opening X;
 					otherwise:

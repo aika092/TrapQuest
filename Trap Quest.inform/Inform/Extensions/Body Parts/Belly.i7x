@@ -625,7 +625,7 @@ To Assfill (X - a number):
 		otherwise now the body soreness of the player is 0;
 	if there is a worn slimegirl:
 		let M be a random slimegirl;
-		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of M]! She communicates with you telepathically.";
+		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of M]! [big he of M] communicates with you telepathically.";
 		say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of M > 2]! I feel better now...'[otherwise]!'[end if][roman type][line break]";
 		now the hunger of M is 0;
 		if the intensity of M > 0:

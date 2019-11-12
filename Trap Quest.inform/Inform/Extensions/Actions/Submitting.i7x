@@ -78,8 +78,7 @@ To say SexSubmissionFlav of (T - a thing):
 	if T is penetrating a body part, say "[one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[purely at random]";
 	otherwise say "[if T is live]You don't resist against the [T]'s acts[otherwise]You keep still and wait[end if].".
 
-Understand "submit", "surrender", "resign", "give up", "give in", "forfeit", "yy", "yesway", "fuck", 
-"stop resisting" as submitting.
+Understand "submit", "surrender", "resign", "give up", "give in", "forfeit", "yy", "yesway", "fuck", "stop resisting" as submitting.
 
 [!<ComputePlayerSubmission>+
 

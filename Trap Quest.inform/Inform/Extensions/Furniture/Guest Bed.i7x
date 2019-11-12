@@ -15,7 +15,7 @@ To say RestingDesc of (F - a guest bed):
 To compute rest ending of (F - a guest bed):
 	if the holeCount of F > 0:
 		let O be a random orifice penetrated by F;
-		say "[if F is penetrating face]The feeling of [semen] spurting into your mouth[otherwise]The feeling of warm fluid flowing into you[end if] suddenly jars you from your stupor. [if the holeCount of F is 1]Your [variable O] is stuffed full of a giant purple tentacle, throbbing viciously as it pumps you full of [semen].[otherwise]You're being pinned down by several giant tentacles, which throb viciously as they pump your holes full of [semen].[end if] [BigNameDesc of clairvoyant acolyte] regards you from the side of the bed, gasping softly as feminine fluids dribble down her bare legs. You feel a fog being lifted as the tentacles slowly retract, allowing you to finally throw aside the covers.";
+		say "[if F is penetrating face]The feeling of [semen] spurting into your mouth[otherwise]The feeling of warm fluid flowing into you[end if] suddenly jars you from your stupor. [if the holeCount of F is 1]Your [variable O] is stuffed full of a giant purple tentacle, throbbing viciously as it pumps you full of [semen].[otherwise]You're being pinned down by several giant tentacles, which throb viciously as they pump your holes full of [semen].[end if] [BigNameDesc of clairvoyant acolyte] regards you from the side of the bed, gasping softly as feminine fluids dribble down [his of clairvoyant acolyte] bare legs. You feel a fog being lifted as the tentacles slowly retract, allowing you to finally throw aside the covers.";
 		repeat with S running through orifices penetrated by F:
 			now ghostly tentacle is penetrating S;
 			now F is not penetrating S;
@@ -35,7 +35,7 @@ To compute rest ending of (F - a guest bed):
 To compute furniture resting on (F - a guest bed):
 	[now song is 0]
 	if clairvoyant acolyte is in the location of the player:
-		say "[BigNameDesc of clairvoyant acolyte] sings smoothly as you pull up the covers, sliding off the bed as drowsiness takes a surprisingly quick hold on your body. Your arms go limp and droop off the side of the bed as the woman sways around the room, your chest rising and falling with the lilting timbre of her voice. Hints of arousal creep into her tone as she gently lifts your arm back onto the bed and firmly tucks you in.";
+		say "[BigNameDesc of clairvoyant acolyte] sings smoothly as you pull up the covers, sliding off the bed as drowsiness takes a surprisingly quick hold on your body. Your arms go limp and droop off the side of the bed as the [man of clairvoyant acolyte] sways around the room, your chest rising and falling with the lilting timbre of [his of clairvoyant acolyte] voice. Hints of arousal creep into [his of clairvoyant acolyte] tone as [he of clairvoyant acolyte] gently lifts your arm back onto the bed and firmly tucks you in.";
 		now F is tended;
 	otherwise:
 		say "You slip into the bed and pull up the covers.";
@@ -71,7 +71,7 @@ To compute unique normal effect of (F - a guest bed):
 To compute song effect of (F - a guest bed):
 	let N be the song of F;
 	if N < 10:
-		if N is 4, say "Your field of view seems to darken, and you feel yourself slipping deeper and deeper into the sound of the cultists's voice.";
+		if N is 4, say "Your field of view seems to darken, and you feel yourself slipping deeper and deeper into the sound of the cultist's voice.";
 		if N is 7, say "You barely notice the sheets tightening as your vision fades completely, and the endless face of the void slowly leaks into your mind. Someone is singing.";
 		if N is 10, say "Nothing. No light. No sound. Only them.".
 
@@ -80,7 +80,7 @@ To say RestingDesc of (F - a guest bed):
 	let N be the song of F;
 	say "[line break]";
 	if N < 4:
-		say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if M is in the location of the player]. [BigNameDesc of M] [one of]twists her nipples[or]strokes her clit[or]fondles herself[or]paws at herself[or]fondles you through the covers[or][at random] [one of]as she whispers incomprehensible lyrics into your ear[or]as she moans her song into your ear[or]as she croons lecherously[at random][end if].";
+		say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if M is in the location of the player]. [BigNameDesc of M] [one of]twists [his of M] nipples[or]strokes [his of M] clit[or]fondles [himself of M][or]paws at [himself of M][or]fondles you through the covers[or][at random] [one of]as [he of M] whispers incomprehensible lyrics into your ear[or]as [he of M] moans [his of M] song into your ear[or]as [he of M] croons lecherously[at random][end if].";
 	otherwise if N < 7:
 		say "You continue to rest on the comfortable mattress, [one of]silently repeating [NameDesc of M]'s words.[or]watching every movement of [NameDesc of M]'s lips.[or], feeling yourself drifting to rhythm of [NameDesc of M]'s voice.[or], hanging onto [NameDesc of M]'s every word.[at random]";
 	otherwise if N < 11 or diaper quest is 1:

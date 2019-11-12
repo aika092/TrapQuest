@@ -465,7 +465,7 @@ Check going:
 			unless the player is bimbo consenting, say "You change your mind." instead;
 	if seconds is 0, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
 	repeat with M running through expectant monsters:
-		now the last-interaction of M is 0; [Naughty player, moving is not submissive!  Monsters are not delayed by a going action.]
+		now the last-interaction of M is 0; [Naughty player, moving is not submissive! Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
 	if seconds is 3: [only in normal moves, not in double moves]
 		if the player is prone and the player is zeroG:
@@ -596,9 +596,9 @@ Check going:
 					otherwise:
 						if the weight of breasts < 15:
 							if the largeness of belly < 5:
-								say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you[if the bimbo of the player > 8], your [AssDesc] high in the air and your face close to the ground[end if].";
+								say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you[if the bimbo of the player > 8], your [AssDesc] high in the air, and your face close to the ground[end if].";
 							otherwise if the largeness of belly < 8:
-								say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
+								say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air, and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
 							otherwise:
 								say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [ShortDesc of hips] high in the air and your [BreastDesc] to drag along the floor.";
 						otherwise:
@@ -617,7 +617,7 @@ Check going:
 		choose a trap to trigger;
 		if the player-motion of the player is 0, say "[bold type]You are still in the [printed name of the location of the player][roman type]." instead; [Some traps will have set player-motion to 0. This means the player hasn't successfully moved from this room.]
 	if the player is triggering a clumsy action, do nothing instead;
-	[The player is successfully moving!  For sure!  So, anything location specific needs to go here, since if we put it as a "carry out" function, we may have already moved.]
+	[The player is successfully moving! For sure! So, anything location specific needs to go here, since if we put it as a "carry out" function, we may have already moved.]
 	[Here we reset paddle traps.]
 	repeat with Y running through swing traps in the location of the player:
 		repeat with D running through dispensers in the location of Y:
@@ -731,7 +731,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 		compute stealing of C;
 		if shopkeeper is not mating:
 			increase the stolen-aware of shopkeeper by 1;
-			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon.  Looks like you're in trouble with the law!";
+			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
 			repeat with M running through alive royal guards:
 				deinterest M;
 				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
@@ -739,7 +739,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 			now shopkeeper is interested;
 			anger shopkeeper;
 		otherwise:
-			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what she wants. I hope you find it useful!'[roman type][line break]";
+			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what [he of the player] wants. I hope you find it useful!'[roman type][line break]";
 			now C is unowned;
 		now flav-said is 1.
 
@@ -859,7 +859,7 @@ To Test a Sticky Trap:
 		say ". You manage to avoid falling over!".
 
 To say StickyTriggerFlav of (T - a trap):
-	say "As your hands hit the ground, you feel a pressure pad depress underneath them!  [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
+	say "As your hands hit the ground, you feel a pressure pad depress underneath them! [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
 
 
 [!<YourselfIsWalkingIntoAPressureTrap>+
@@ -906,10 +906,10 @@ To Test A Pressure Trap:
 		if R > 13:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
 			if B > 16:
-				say "  However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap!  Whoops![line break]";
+				say " However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
 				trigger a pressure trap;
 		otherwise:
-			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type]  You fail to react in time and trigger a trap![line break]";
+			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";
 			trigger a pressure trap.
 
 
@@ -983,7 +983,7 @@ To Test A Wire Trap:
 			say "[bold type]You [if there are worn rollerskates]manage to leap[otherwise if AnkB is clothing]carefully sidestep[otherwise]gracefully step[end if] over [if playerRegion is Mansion]a protruding floorboard[otherwise]a tripwire[end if].[roman type][line break]";
 		otherwise:
 			if there are worn rollerskates and playerRegion is Dungeon, say "[bold type][if T is tripwire trap]Your rollerskates make it incredibly difficult to clear the tripwire[otherwise]You skate straight into a tripwire[end if]![roman type][line break]";
-			otherwise say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you walked right into a [if playerRegion is Mansion]raised floorboard[otherwise]tripwire[end if]![roman type]  Oops![line break]";
+			otherwise say "[bold type]You were too busy concentrating on [if the soreness of asshole > 6]your sore [asshole][otherwise]other things[end if], and you walked right into a [if playerRegion is Mansion]raised floorboard[otherwise]tripwire[end if]![roman type] Oops![line break]";
 			trigger a wire trap;
 	otherwise:
 		if the largeness of breasts < 16 or playerRegion is Mansion:

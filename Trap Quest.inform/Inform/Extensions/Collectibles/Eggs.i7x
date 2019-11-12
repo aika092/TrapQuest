@@ -37,19 +37,19 @@ A small egg is a kind of egg. The printed name of small egg is "[TQlink of item 
 To decide which figure-name is the examine-image of (C - a small egg):
 	decide on figure of small egg.
 To say ExamineDesc of (B - a small egg):
-	say "A small spherical [if the class of the player is santa's little helper]chocolate[otherwise]white[end if] egg, about half the size of a normal chicken egg.[if B is laid]  You laid it out of your own [asshole].[end if]".
+	say "A small spherical [if the class of the player is santa's little helper]chocolate[otherwise]white[end if] egg, about half the size of a normal chicken egg.[if B is laid] You laid it out of your own [asshole].[end if]".
 
-A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". understand "sized" as medium egg. The text-shortcut of medium egg is "mde". There are 30 medium eggs.  Figure of medium egg is the file "Items/Collectibles/egg2.png".
+A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". understand "sized" as medium egg. The text-shortcut of medium egg is "mde". There are 30 medium eggs. Figure of medium egg is the file "Items/Collectibles/egg2.png".
 To decide which figure-name is the examine-image of (C - a medium egg):
 	decide on figure of medium egg.
 To say ExamineDesc of (B - a medium egg):
-	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if].[if B is laid]  You laid it out of your own [asshole].[end if]".
+	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if].[if B is laid] You laid it out of your own [asshole].[end if]".
 
 A large egg is a kind of egg. The printed name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large egg is "le". There are 15 large eggs. Figure of large egg is the file "Items/Collectibles/egg3.png".
 To decide which figure-name is the examine-image of (C - a large egg):
 	decide on figure of large egg.
 To say ExamineDesc of (B - a large egg):
-	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if]![if B is laid]  You laid it out of your own [asshole], although now looking at its size you can hardly believe it.[end if]".
+	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if]![if B is laid] You laid it out of your own [asshole], although now looking at its size you can hardly believe it.[end if]".
 
 To say ShortDesc of (E - a small egg):
 	say "small egg".
