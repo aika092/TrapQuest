@@ -31,9 +31,9 @@ THE TRINITY OF ADDICTIONS BIBLE:
 * Low Sex Obsession & High Delicateness & Low Orifice Addiction = My body won't enjoy it, but I'll do it if I'm told to...
 * Low Sex Obsession & High Delicateness & High Orifice Addiction = "Please fuck my face... Huh? No of course I don't *want* to suck your cock... baka..."
 * High Sex Obsession & Low Delicateness & Low Orifice Addiction = Dominatrix who will fight to try and be the one on top!
-* High Sex Obsession & Low Delicateness & High Orifice Addiction = "Fine you win... this time.  But next time I'll be on top." (monster initiated sex) OR "Lie down and let me ride your cock you fucking piece of trash" (player initiated sex)
-* High Sex Obsession & High Delicateness & Low Orifice Addiction = "Are you going to train my innocent body to become your personal cock-addicted fuckdoll?  Please be gentle with me, Master~"
-* High Sex Obsession & High Delicateness & High Orifice Addiction = "Yes, yes, this is more like it, the more the merrier!  If I don't have dicks in two of my holes within the next five seconds I'm gonna be disappointed. Well come on, hurry up!!!" (monster initiated sex) OR "How would you like to feel what it's like to have these huge soft lips wrap around your delicious cock, stud?" (player initiated sex)
+* High Sex Obsession & Low Delicateness & High Orifice Addiction = "Fine you win... this time. But next time I'll be on top." (monster initiated sex) OR "Lie down and let me ride your cock you fucking piece of trash" (player initiated sex)
+* High Sex Obsession & High Delicateness & Low Orifice Addiction = "Are you going to train my innocent body to become your personal cock-addicted fuckdoll? Please be gentle with me, Master~"
+* High Sex Obsession & High Delicateness & High Orifice Addiction = "Yes, yes, this is more like it, the more the merrier! If I don't have dicks in two of my holes within the next five seconds I'm gonna be disappointed. Well come on, hurry up!!!" (monster initiated sex) OR "How would you like to feel what it's like to have these huge soft lips wrap around your delicious cock, stud?" (player initiated sex)
 ]
 
 To decide which body part is most desirable body part:
@@ -56,11 +56,11 @@ Definition: yourself is feeling submissive: [Does the player prefer taking a sub
 	if the delicateness of the player > (14 - the sex addiction of the player / 4), decide yes;
 	decide no.
 
-Definition: yourself is a pervert:  [Does the player enjoy weird kinky stuff?]
+Definition: yourself is a pervert: [Does the player enjoy weird kinky stuff?]
 	if the sex addiction of the player > 7, decide yes;
 	decide no.
 
-Definition: yourself is a nympho:  [Does the player have an extreme obsession for having orgasms?]
+Definition: yourself is a nympho: [Does the player have an extreme obsession for having orgasms?]
 	if the sex addiction of the player >= 14, decide yes;
 	decide no.
 
@@ -72,14 +72,14 @@ Definition: yourself is a masochist: [Does the player prefer taking a submissive
 	if the player is feeling submissive and the player is a pervert, decide yes;
 	decide no.
 
-Definition: a body part is unconditioned rather than conditioned if the desire of it < 6.  [Is body part relatively untouched and not used to this new world?]
+Definition: a body part is unconditioned rather than conditioned if the desire of it < 6. [Is body part relatively untouched and not used to this new world?]
 
 Definition: yourself is conditioned rather than unconditioned if there is a conditioned body part. [Is the player's body relatively untouched and not used to this new world?]
 
 
 [!<TheSexAddictionDescriptionRule>+
 
-We explain how much the player is a pervert and how much they crave sex and orgasms overall.  We take into account delicateness and body part sex addiction where necessary to make sure we don't say anything inaccurate.
+We explain how much the player is a pervert and how much they crave sex and orgasms overall. We take into account delicateness and body part sex addiction where necessary to make sure we don't say anything inaccurate.
 
 +!]
 This is the sex addiction description rule:
@@ -115,7 +115,7 @@ This is the sex addiction description rule:
 		otherwise if the sex addiction of the player < 16:
 			say "You crave sexual release. As soon as you cum, you start think about how great your next orgasm will be. You can't really think of many situations where you would refuse to let someone play with you. ";
 			if the player is feeling dominant:
-				say "Of course, you'd fight to be on top if you could.  But getting off is more important than winning.";
+				say "Of course, you'd fight to be on top if you could. But getting off is more important than winning.";
 			otherwise:
 				say "You [if the player is not feeling submissive]like to pretend to fight back but in reality you are happy being on the bottom[otherwise if highest body part sex addiction < 6 and diaper quest is 0]can't wait to have your body used in any way your dominators can think of, regardless of whether you enjoy it or not, until your body is forced to grow to love it[otherwise]are now so naturally submissive that you would be a little horrified if someone was to ask you to dominate them[end if].";
 		otherwise:
@@ -145,7 +145,7 @@ We explain how much the player likes performing tittyfucks.
 +!]
 This is the titfuck addiction description rule:
 	if the titfuck addiction of the player > 1 and the largeness of breasts >= 5:
-		say "[if the titfuck addiction of the player <= 2]You gain no personal pleasure from having a [manly-penis] in between your breasts[otherwise if the titfuck addiction of the player <= 3]You find there is little pleasure for you in relieving [manly-penis]s with your tits[otherwise if the titfuck addiction of the player <= 5 and the anal sex addiction of the player <= 5 and the vaginal sex addiction of the player <= 5]You don't mind giving titjobs. It's often better than the alternatives, and it feels surprisingly pleasant on your skin[otherwise if the titfuck addiction of the player <= 5]You don't mind giving titjobs, but you usually find other types of sex more fun[otherwise if the titfuck addiction of the player <= 7]You love pleasuring men with your boobs!  It just feels so great thanks to your extra-sensitive skin[otherwise if the titfuck addiction of the player <= 9]Having a cock pumping in and out of your cleavage is a great pleasure; your breasts are becoming like another sex organ[otherwise]Whenever your cleavage is empty, your titty flesh aches to feel another phallic object thrusting in and out of its voluptuous fold[end if].";
+		say "[if the titfuck addiction of the player <= 2]You gain no personal pleasure from having a [manly-penis] in between your breasts[otherwise if the titfuck addiction of the player <= 3]You find there is little pleasure for you in relieving [manly-penis]s with your tits[otherwise if the titfuck addiction of the player <= 5 and the anal sex addiction of the player <= 5 and the vaginal sex addiction of the player <= 5]You don't mind giving titjobs. It's often better than the alternatives, and it feels surprisingly pleasant on your skin[otherwise if the titfuck addiction of the player <= 5]You don't mind giving titjobs, but you usually find other types of sex more fun[otherwise if the titfuck addiction of the player <= 7]You love pleasuring men with your boobs! It just feels so great thanks to your extra-sensitive skin[otherwise if the titfuck addiction of the player <= 9]Having a cock pumping in and out of your cleavage is a great pleasure; your breasts are becoming like another sex organ[otherwise]Whenever your cleavage is empty, your titty flesh aches to feel another phallic object thrusting in and out of its voluptuous fold[end if].";
 		if debuginfo > 0, say "[input-style](Titfuck addiction [titfuck addiction of the player] / 10)[roman type][line break]".
 The titfuck addiction description rule is listed in the addiction listing rules.
 
@@ -156,7 +156,7 @@ We explain how much the player likes receiving vaginal sex and the idea of getti
 +!]
 This is the vaginal sex addiction description rule:
 	if the player is female and diaper quest is 0:
-		say "[if the vaginal sex addiction of the player <= 3 and the virgin of the player is 1 and the anal sex addiction of the player > 5]You've never tried vaginal sex, but why would you?  Your [asshole] makes a perfectly good substitute[otherwise if the vaginal sex addiction of the player <= 3 and the virgin of the player is 1]You've never tried vaginal sex, and you have no particular desire to lose your virginity today[otherwise if the vaginal sex addiction of the player <= 3]Your [vagina] feels completely content being empty and remaining that way[otherwise if the vaginal sex addiction of the player <= 5]You are acutely aware of how good it feels when you have a [manly-penis] in your [vagina][otherwise if the vaginal sex addiction of the player <= 7]Every now and then you feel your [vagina] throb with a deep ache, a desire to be filled by a big [manly-penis][otherwise if the anal sex addiction of the player <= 9]After a while of being empty, your [vagina] begins to feel a deep longing to be filled, stretched and plundered by a big fat [manly-penis][otherwise]As soon as your greedy cunt is empty you begin to crave that feeling of being filled to the brim by [manly-penis], or toys, or anything!  It's like an itch that always needs scratching[end if]. ";
+		say "[if the vaginal sex addiction of the player <= 3 and the virgin of the player is 1 and the anal sex addiction of the player > 5]You've never tried vaginal sex, but why would you? Your [asshole] makes a perfectly good substitute[otherwise if the vaginal sex addiction of the player <= 3 and the virgin of the player is 1]You've never tried vaginal sex, and you have no particular desire to lose your virginity today[otherwise if the vaginal sex addiction of the player <= 3]Your [vagina] feels completely content being empty and remaining that way[otherwise if the vaginal sex addiction of the player <= 5]You are acutely aware of how good it feels when you have a [manly-penis] in your [vagina][otherwise if the vaginal sex addiction of the player <= 7]Every now and then you feel your [vagina] throb with a deep ache, a desire to be filled by a big [manly-penis][otherwise if the anal sex addiction of the player <= 9]After a while of being empty, your [vagina] begins to feel a deep longing to be filled, stretched and plundered by a big fat [manly-penis][otherwise]As soon as your greedy cunt is empty you begin to crave that feeling of being filled to the brim by [manly-penis], or toys, or anything! It's like an itch that always needs scratching[end if]. ";
 		if pregnancy fetish is 1:
 			if the pregnancy of the player is 0, say "[if the semen addiction of the player <= 6 and the vaginal sex addiction of the player <= 3]Especially because you have no intention of getting pregnant any time soon![otherwise if the semen addiction of the player <= 5]You are terrified of getting pregnant.[otherwise if the semen addiction of the player <= 9]You would prefer to keep the risk of getting pregnant low, if possible.[otherwise if the semen addiction of the player <= 13]The idea of getting knocked up turns you on.[otherwise if the children of the player is 0]You are desperate to find out what it's like to get pregnant and give birth to a child![otherwise]You long for that feeling of waddling around with a giant pregnant belly and you can't wait to experience the miracle of childbirth again and again![end if]";
 			otherwise say "[if the semen addiction of the player <= 5]You feel shame and despair at the fact that you have gotten pregnant.[otherwise if the semen addiction of the player <= 8]You are eager for this shameful and rather inconvenient pregnancy to be over.[otherwise if the semen addiction of the player <= 13]Being pregnant turns you on, and you are quietly fascinated to see how large your belly will grow.[otherwise if the children of the player is 0]You love the feel of being pregnant and are happy for it to last as long as possible, but are also very excited to experience the miracle of childbirth![otherwise if the largeness of belly < 8]You are impatient for your belly to grow even bigger! You long for that feeling of waddling around with a giant pregnant belly so big that you can hardly move, never mind fight.[otherwise]You love love love your giant pregnant belly but you also can't wait to experience the miracle of childbirth again, so that you can go find another stud to knock you up and begin the process again from the start![end if]";

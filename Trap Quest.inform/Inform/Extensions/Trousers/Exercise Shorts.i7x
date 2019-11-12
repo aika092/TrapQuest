@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (H - an exercise shorts):
 To say UniqueClothingDesc of (Y - an exercise shorts):
 	say "A pair of tight grey exercise shorts that's a size too small for you.".
 
-To say ShortDesc of (Y - an  exercise shorts):
+To say ShortDesc of (Y - an exercise shorts):
 	say "pair of exercise shorts".
 
 To decide which object is the unique-upgrade-target of (C - an exercise shorts):

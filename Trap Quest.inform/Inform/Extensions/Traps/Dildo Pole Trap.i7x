@@ -177,7 +177,7 @@ To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhol
 		now doll-stuck is "[one of]turn[or]rotate[or]twirl around[at random] like a [one of]pretty[or]dainty[or]delicate[at random] [one of]ballerina dolly[or]toy ballerina[at random] in a music box";
 		now doll-stuck-num is 1;
 		now doll-stuck-kind is 1; [ballerina]
-		say "You slowly [doll-stuck]. [one of]Your ankles flex, trying futilely to stretch down to touch the floor, but it's useless! You're impaled, suspended helplessly above the ground. And then the pole starts slowly turning, and of course, you move with it, unable to do anything to prevent it.  A wave of humiliation washes through you, and the dildo briefly vibrates, as if sensing your shame and rubbing it in. But how will you ever get off here?[line break]As if in response to your thought, a picture of a pretty ballerina in a frilly, wispy tutu, turning in a music box, flashes into your mind[or]You try to stretch your toes to the floor, but fail[or]The tinkly music starts up again, as the pole starts turning you[stopping]. You feel a mental pressure to submit, and adopt the required pose.".
+		say "You slowly [doll-stuck]. [one of]Your ankles flex, trying futilely to stretch down to touch the floor, but it's useless! You're impaled, suspended helplessly above the ground. And then the pole starts slowly turning, and of course, you move with it, unable to do anything to prevent it. A wave of humiliation washes through you, and the dildo briefly vibrates, as if sensing your shame and rubbing it in. But how will you ever get off here?[line break]As if in response to your thought, a picture of a pretty ballerina in a frilly, wispy tutu, turning in a music box, flashes into your mind[or]You try to stretch your toes to the floor, but fail[or]The tinkly music starts up again, as the pole starts turning you[stopping]. You feel a mental pressure to submit, and adopt the required pose.".
 
 
 To say DildoTrapReactFlav of (M - a monster):
@@ -220,8 +220,8 @@ To compute DollObservation humiliation:
 		[Could test for friendly or unfriendly in the taunting function]
 		compute the dildo stuck taunting of M;
 		if M is friendly:
-			if the player is modest, say "[one of]You hope [he of M] won't think less of you.[or][variable custom style]How embarrassing![variable custom style][or]You sense [he of M] losing respect for you.[or]How bad would it be if they let your friends watch through the eyes of these NPCs?[or]Mild disgust curdles [his of M] expression.[or][Big he of M] looks highly unimpressed by your shameful display.[in random order]";
-			otherwise say "[one of][variable custom style]I wonder if [he of M] is enjoying the show?[roman type][line break][or][variable custom style]What does [he of M] want?[roman type][line break][or][Big his of M] disgust actually makes the experience more exciting.[or][Big he of M] shakes [his of M] head at your lewd display.[in random order]";
+			if the player is modest, say "[one of]You hope [he of M] won't think less of you.[or][variable custom style]How embarrassing![variable custom style][or]You sense [he of M] losing respect for you.[or]How bad would it be if they let your friends watch through the eyes of these NPCs?[or]Mild disgust curdles [his of M] expression.[or][big he of M] looks highly unimpressed by your shameful display.[in random order]";
+			otherwise say "[one of][variable custom style]I wonder if [he of M] is enjoying the show?[roman type][line break][or][variable custom style]What does [he of M] want?[roman type][line break][or][big his of M] disgust actually makes the experience more exciting.[or][big he of M] shakes [his of M] head at your lewd display.[in random order]";
 			FavourDown M;
 		moderateHumiliate;
 	[Sex dolls are not intelligent. But I think it'd be especially humiliating to be posing like a doll in front of a doll.]
@@ -364,7 +364,7 @@ REQUIRES COMMENTING
 @!]
 A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The printed name of dildo pole trap is "[TQlink of item described]dildo pole trap[TQxlink of item described][verb-desc of item described]".
 To say ExamineDesc of (C - a dildo pole trap):
-	say "A metal pole with a flesh coloured dildo on the end. [if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if C is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if C is penetrating vagina][vagina]!  [otherwise][asshole]!  [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]".
+	say "A metal pole with a flesh coloured dildo on the end. [if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if C is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if C is penetrating vagina][vagina]! [otherwise][asshole]! [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]".
 
 [!<TheSpawnInitialDildoPoleTrapsRule>+
 
@@ -457,7 +457,7 @@ To Jump From The Drill:
 			if the player is very horny:
 				say "You're so desperate for an orgasm that you're finding it difficult to bring yourself to try to jump free. Try again?";
 			otherwise if the player is not a bit horny:
-				say "The extreme spinning of the dildo has left you temporarily stunned and unable to move!  Try again?";
+				say "The extreme spinning of the dildo has left you temporarily stunned and unable to move! Try again?";
 			otherwise:
 				say "You're currently enjoying the feeling of the spinning dildo too much to bring yourself to jump off it. Try again?";
 			repeat with M running through reactive monsters:
@@ -541,10 +541,10 @@ To trigger (Y - a creampie pole trap):
 	otherwise:
 		let X be a random worn top level protection clothing;
 		if X is nothing:
-			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip!  Your thighs get coated.";
+			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip! Your thighs get coated.";
 			CumThighsUp 6;
 		otherwise:
-			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip!  Your [printed name of X] gets coated.";
+			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip! Your [printed name of X] gets coated.";
 			Cumsoak 6 on X.
 
 [!<CreampiePoleTrap>@<ComputeOrgasmResolution>+

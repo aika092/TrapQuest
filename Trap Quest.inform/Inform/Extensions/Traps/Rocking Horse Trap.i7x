@@ -96,7 +96,7 @@ Carry out rocking:
 			say "The saddle vibrates, gently stimulating you through your diaper.";
 			arouse 500;
 	otherwise:
-		say "The magic binding on the saddle seems to disappear! You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed!  Wow![or]Once again, you feel fully healed![stopping]";
+		say "The magic binding on the saddle seems to disappear! You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed! Wow![or]Once again, you feel fully healed![stopping]";
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
 		if the player is female:

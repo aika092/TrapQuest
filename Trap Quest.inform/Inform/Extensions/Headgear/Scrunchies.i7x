@@ -227,7 +227,7 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with SK running through worn skirted clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
-			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt?  I think I know where this is going...[roman type][line break]";
+			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt? I think I know where this is going...[roman type][line break]";
 			summon T;
 			now the raw-magic-modifier of T is 0;
 			if diaper quest is 0, now T is temptation;
@@ -365,7 +365,7 @@ To compute class outfit of (C - a pigtail-scrunchie):
 
 Chapter 5 - Helium Balloons
 
-A pair of helium balloons is a kind of pigtail-scrunchie.  A pair of helium balloons is usually latex.  A pair of helium balloons is not roleplay. The text-shortcut of a pair of helium balloons is "pohb". There is 1 pair of helium balloons.
+A pair of helium balloons is a kind of pigtail-scrunchie. A pair of helium balloons is usually latex. A pair of helium balloons is not roleplay. The text-shortcut of a pair of helium balloons is "pohb". There is 1 pair of helium balloons.
 
 To decide which figure-name is the clothing-image of (C - a pair of helium balloons):
 	decide on figure of helium balloons.

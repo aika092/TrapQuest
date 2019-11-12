@@ -35,9 +35,9 @@ Decreases the charge of a summoning portal by a given amount
 @param <Integer>:<X> The amount of charge the portal will lose
 
 +!]
-To ChargeDown (S - a summoning portal)  by (X - a number):
+To ChargeDown (S - a summoning portal) by (X - a number):
 	decrease the charge of S by X.
-To ChargeDown (S - summoning-circle)  by (X - a number):
+To ChargeDown (S - summoning-circle) by (X - a number):
 	if the number of alive royal guards is 0, increase X by X * (1 + the number of held stolen clothing);
 	decrease the charge of S by X.
 
@@ -345,15 +345,15 @@ To say ExamineDesc of (C - giant-statue):
 To say PortalHint of (S - giant-statue):
 	let N be the next-summon of S;
 	if N < 3 and N > 0:
-		say "You can hear really intense moaning coming from inside her. [if the sex addiction of the player < 6][line break][first custom style]Sounds like screaming...[roman type][line break][otherwise if the sex addiction of the player < 14][line break][variable custom style]Why do I feel jealous...[roman type][line break][otherwise][line break][second custom style]Wow, whoever is in there must feel really good...[roman type][line break][end if]";[demoness/wasp]
+		say "You can hear really intense moaning coming from inside [him of S]. [if the sex addiction of the player < 6][line break][first custom style]Sounds like screaming...[roman type][line break][otherwise if the sex addiction of the player < 14][line break][variable custom style]Why do I feel jealous...[roman type][line break][otherwise][line break][second custom style]Wow, whoever is in there must feel really good...[roman type][line break][end if]";[demoness/wasp]
 	otherwise if N is 3:
-		say "You can make out a faint slapping noise coming from inside her. It's rhythmic, and every so often you hear a moan.";[gladiator]
+		say "You can make out a faint slapping noise coming from inside [him of S]. It's rhythmic, and every so often you hear a moan.";[gladiator]
 	otherwise if N is 4 or N is 6:
 		say "You can make out a faint noise every so often, almost like a slurp.";[aeromancer/unicorn]
 	otherwise if N is 6:
-		say "You can faintly someone giggling inside her. It's almost too quiet for you to hear, but it's definitely there.";[fairy]
+		say "You can faintly someone giggling inside [him of S]. It's almost too quiet for you to hear, but it's definitely there.";[fairy]
 	otherwise:
-		say "[if the charge of S > 50]It's eerily silent[otherwise]You can hear a really distinct buzzing noise coming from inside of her[end if].".[mannequin]
+		say "[if the charge of S > 50]It's eerily silent[otherwise]You can hear a really distinct buzzing noise coming from inside of [him of S][end if].".[mannequin]
 
 To say DivinationHint of (S - giant-statue):
 	let N be the next-summon of S;
@@ -665,7 +665,7 @@ To say MummyType of (S - a mysterious-mummy):
 	otherwise:
 		say "mysterious".
 
-Understand "winged", "crawling",  "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
+Understand "winged", "crawling", "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
 
 To decide which object is the summonChoice of (S - a mysterious-mummy):
 	let N be the next-summon of S;
@@ -712,29 +712,29 @@ To say PortalHint of (S - a mysterious-mummy):
 	if S is active:
 		let N be the next-summon of the item described;
 		if N is 1:[cultist]
-			say "A squirming woman wrapped from head to toe in white linen, with a purple aura highlighting her features. Her arms are crossed in front of her chest, but it looks like her wrists are being held together by an invisible rope. There's nothing lewd about the way she's standing, but whenever you look at her, you can't help but feel like you're watching someone having sex.";
+			say "A squirming [man of N] wrapped from head to toe in white linen, with a purple aura highlighting [his of N] features. [big his of N] arms are crossed in front of [his of N] chest, but it looks like [his of N] wrists are being held together by an invisible rope. There's nothing lewd about the way [he of N]'s standing, but whenever you look at [him of N], you can't help but feel like you're watching someone having sex.";
 		otherwise if N is 2:[gladiator]
-			say "A tall woman wrapped from head to toe in white linen, with a golden aura highlighting her busty features. [if futanari fetish is 1 or lady fetish is 2]The cloth is distorted by a banana-like shape near her crotch, which twitches slightly[otherwise]There is a dark spot near her crotch, which grows slowly[end if] as her visibly muscular arms struggle against their wrappings.";
+			say "A tall [man of N] wrapped from head to toe in white linen, with a golden aura highlighting [his of N] busty features. [if futanari fetish is 1 or lady fetish is 2]The cloth is distorted by a banana-like shape near [his of N] crotch, which twitches slightly[otherwise]There is a dark spot near [his of N] crotch, which grows slowly[end if] as [his of N] visibly muscular arms struggle against their wrappings.";
 		otherwise if N is 3 or N is 8:[vampiress(8); 3 used to be gargoyle, but she no longer re-spawns.]
-			say "A feminine figure wrapped in white linen, her features highlighted by a faint pink aura. There is a bat resting on one of her shoulders.";
+			say "A feminine figure wrapped in white linen, [his of N] features highlighted by a faint pink aura. There is a bat resting on one of [his of N] shoulders.";
 		otherwise if N is 4:[mannequin]
-			say "A feminine figure wrapped from head to toe in white linen, with a black aura surrounding her features. Dusky makeup is peppered over its face, and its arms are splayed at disturbing angles to its sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
+			say "A feminine figure wrapped from head to toe in white linen, with a black aura surrounding [his of N] features. Dusky makeup is peppered over its face, and its arms are splayed at disturbing angles to its sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
 		otherwise if N is 5:[demoness]
-			say "A tall woman wrapped from head to toe in white linen, with a red aura highlight her features. One hand rests on her hips, and the other extends out in front of her in command. Two horns curve around her temples, like a wreath, and although you can't see her feet, you're almost certain she's wearing heels.[if pregnancy fetish is 1] She's pregnant.[end if]";
+			say "A tall [man of N] wrapped from head to toe in white linen, with a red aura highlight [his of N] features. One hand rests on [his of N] hips, and the other extends out in front of [him of N] in command. Two horns curve around [his of N] temples, like a wreath, and although you can't see [his of N] feet, you're almost certain [he of N]'s wearing heels.[if pregnancy fetish is 1] [big he of N]'s pregnant.[end if]";
 		otherwise if N is 6:[kitsune; shouldn't happen]
-			say "A feminine figure wrapped in white linen from head to toe, which a silvery aura highlighting her features. She has just about your build and height, and her arms are crossed in front of her chest. The wrappings don't actually look that secure, and its head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
+			say "A feminine figure wrapped in white linen from head to toe, which a silvery aura highlighting [his of N] features. [big he of N] has just about your build and height, and [his of N] arms are crossed in front of [his of N] chest. The wrappings don't actually look that secure, and its head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
 		otherwise if N is 7:[hellhound]
-			say "A feminine figure wrapped in linen from head to toe, with a red aura highlight her features. She's on all fours, and there is a leather collar and leash gripped in one of her hands. [one of]For some reason she's holding it from the wrong end[or]She's holding it from the collar end instead of the leash[at random].";
+			say "A feminine figure wrapped in linen from head to toe, with a red aura highlight [his of N] features. [big he of N]'s on all fours, and there is a leather collar and leash gripped in one of [his of N] hands. [one of]For some reason [he of N]'s holding it from the wrong end[or][big he of N]'s holding it from the collar end instead of the leash[at random].";
 		otherwise:[ghost?]
-			say "A womanly figure wrapped in white linen, with a green aura highlighting her features in the relative darkness. The fabric is pulled taut near all of her sensitive parts, and the air around you is positively dripping with [italic type]intent[roman type]. You're feel a little violated just standing in the same room too long.";
+			say "A womanly figure wrapped in white linen, with a green aura highlighting [his of N] features in the relative darkness. The fabric is pulled taut near all of [his of N] sensitive parts, and the air around you is positively dripping with [italic type]intent[roman type]. You're feel a little violated just standing in the same room too long.";
 	otherwise:
-		say "A feminine figure wrapped in white linen. Her height and build seem to change slightly whenever you look at her, and her arms seem to be gesturing to what's below her.".
+		say "A feminine figure wrapped in white linen. [big his of S] height and build seem to change slightly whenever you look at [him of S], and [his of S] arms seem to be gesturing to what's below [him of S].".
 
 To say DivinationHint of (S - mysterious-mummy):
 	if S is active:
-		say "You can sense that she's getting ready to summon [run paragraph on]";
+		say "You can sense that [he of S]'s getting ready to summon [run paragraph on]";
 	otherwise:
-		say "You can sense that she will definitely summon [run paragraph on]";
+		say "You can sense that [he of S] will definitely summon [run paragraph on]";
 	let N be the next-summon of S;
 	if N is 1:
 		say "a cultist next.";

@@ -190,7 +190,7 @@ To compute gripping of (I - an insertable thing):
 			otherwise if G < 4:
 				say "The [printed name of I] starts sliding out of your [asshole] and before you can stop it, it comes completely out and falls to the ground.";
 			otherwise if G < 6:
-				say "Your [asshole] relaxes for a moment, causing the [printed name of I] to start to slide out. This makes you clench your [asshole] in surprise, which ends up pushing the whole thing out!  It falls and drops to the floor.";
+				say "Your [asshole] relaxes for a moment, causing the [printed name of I] to start to slide out. This makes you clench your [asshole] in surprise, which ends up pushing the whole thing out! It falls and drops to the floor.";
 			otherwise if G < 8:
 				say "Your [asshole] momentarily spasms with the [if the girth of I > 6]intense size[otherwise]stimulation[end if] of your [printed name of I]. This causes it to move a bit inside you and the next thing you know it has travelled out of your [asshole] completely and dropped to the floor.";
 			otherwise:
@@ -214,14 +214,14 @@ To compute gripping of (I - an insertable thing):
 			otherwise if G < 4:
 				say "The [printed name of I] starts sliding out of your [vagina] and before you can stop it, it comes completely out and falls to the ground.";
 			otherwise if G < 6:
-				say "Your [vagina] relaxes for a moment, causing the [printed name of I] to start to slide out. This makes you clench your [vagina] surprise, which ends up pushing the whole thing out!  It falls and drops to the floor.";
+				say "Your [vagina] relaxes for a moment, causing the [printed name of I] to start to slide out. This makes you clench your [vagina] surprise, which ends up pushing the whole thing out! It falls and drops to the floor.";
 			otherwise if G < 8:
 				say "Your [vagina] momentarily spasms with the [if the girth of I > 6]intense size[otherwise]stimulation[end if] of your [printed name of I]. This causes it to move a bit inside you and the next thing you know it has travelled out of your [vagina] completely and dropped to the floor.";
 			otherwise:
 				say "You find yourself momentarily paralysed by the intense feelings coming from your [printed name of I] as it starts slowly worming its way out of your [vagina] of its own accord. Your instinct is to push it back in but the feeling of it forcing your sphincter open renders you completely unable to move until it finishes its journey, exits your [vagina] with a loud 'PLOP' and drops to the ground[if the openness of vagina > 6], leaving your very empty feeling [vagina] gaping[end if].";
 			[Flavour and soreness]
 			if G < 4:
-				say "[if the bimbo of the player < 7][line break][first custom style]'Hmm, well I guess there's no way something that small is going to stay inside my [vagina] for very long.'[otherwise if the bimbo of the player < 14][line break][variable custom style]'Oops, I guess this one is too small for my [vagina]!'[otherwise][line break][second custom style]'Aww, no, it fell out!  I need to find a bigger one that can properly fill my greedy [vagina] and keep it stretched and open!'[end if][roman type][line break]";
+				say "[if the bimbo of the player < 7][line break][first custom style]'Hmm, well I guess there's no way something that small is going to stay inside my [vagina] for very long.'[otherwise if the bimbo of the player < 14][line break][variable custom style]'Oops, I guess this one is too small for my [vagina]!'[otherwise][line break][second custom style]'Aww, no, it fell out! I need to find a bigger one that can properly fill my greedy [vagina] and keep it stretched and open!'[end if][roman type][line break]";
 			otherwise if G < 8 or the player is not horny or the player is unable to orgasm so soon:
 				ruin vagina;
 				say "[if the bimbo of the player < 7][line break][first custom style]'Holy shit, that felt pretty intense!'[otherwise if the bimbo of the player < 14][line break][variable custom style]'I can't believe how good that made my [vagina] feel!'[otherwise][line break][second custom style]'MM, I love that feeling!'[end if][roman type][line break]";
@@ -253,7 +253,7 @@ To compute gripping of (I - an insertable thing):
 			now vaginalGripCount is 0.
 
 To decide which number is the bartering value of (T - a sex toy) for (M - a mannequin):
-	unless M  is retaining a sex toy, decide on 3;
+	unless M is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
 Include Plugging by Actions.
@@ -441,7 +441,7 @@ To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a plug):
 	say "[speech style of M]'Pff, that's not big enough for me, it'd fall right out!'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a plug):
-	say "[speech style of M]'Ooh, fine, you've tempted me.'[roman type][line break][BigNameDesc of M] unzips the crotch of her latex outfit, and with a lewd, shameless face, works the plug into her asshole, before zipping her outfit back up.[line break][speech style of M]'Tada!'[roman type][line break]".
+	say "[speech style of M]'Ooh, fine, you've tempted me.'[roman type][line break][BigNameDesc of M] unzips the crotch of [his of M] latex outfit, and with a lewd, shameless face, works the plug into [his of M] asshole, before zipping [his of M] outfit back up.[line break][speech style of M]'Tada!'[roman type][line break]".
 
 Definition: a plug is transformation-protected if it is not plentiful.
 

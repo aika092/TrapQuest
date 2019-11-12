@@ -100,7 +100,7 @@ Carry out knifing:
 Report knifing:
 	let M be a random friendly robochef in the location of the player;
 	if M is a monster:
-		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORIZED COOKING DETECTED! RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
+		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORISED COOKING DETECTED! RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
 		anger M;
 		now M is interested;
 		now the boredom of M is 0.
