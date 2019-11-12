@@ -2,7 +2,7 @@ Vampiric Claws by Equippables begins here.
 
 A vampiric claws is a kind of equippable. There is 1 vampiric claws. A vampiric claws is usually unique. A vampiric claws is usually slap ready. A vampiric claws is usually manly. A vampiric claws is usually biological.
 
-The printed name of vampiric claws is usually "[clothing-title-before]vampiric claws[clothing-title-after]". The text-shortcut of vampiric claws is "vcl". 
+The printed name of vampiric claws is usually "[clothing-title-before]vampiric claws[clothing-title-after]". The text-shortcut of vampiric claws is "vcl".
 
 To say ClothingDesc of (W - vampiric claws):
 	say "A pair of claws where your fingernails used to be.".
@@ -23,7 +23,7 @@ To decide which number is the damage improvement of (W - a vampiric claws):
 
 To compute attack of (W - a vampiric claws) at (M - a monster):
 	say "[one of]You slash at [NameDesc of M] with your [ShortDesc of W].[or]You scratch [NameDesc of M] with your [ShortDesc of W].[at random]".
-	
+
 To compute attack effect of (W - a vampiric claws):
 	if attack-type is 1:
 		bodyheal 1;

@@ -1,6 +1,6 @@
 Girly Bow Court Heels by Shoes begins here.
 
-A girly bow court heels is a kind of court heels. A girly bow court heels is transformation-rare. The printed name of girly bow court heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch girly bow court heels[clothing-title-after]".  The text-shortcut of girly bow court heels is "gbc".
+A girly bow court heels is a kind of court heels. A girly bow court heels is transformation-rare. The printed name of girly bow court heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch girly bow court heels[clothing-title-after]". The text-shortcut of girly bow court heels is "gbc".
 
 There is 1 leather girly bow court heels.
 

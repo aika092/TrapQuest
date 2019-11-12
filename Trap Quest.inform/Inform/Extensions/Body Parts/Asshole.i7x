@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-asshole is a fuckhole. asshole is everywhere.  Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
+asshole is a fuckhole. asshole is everywhere. Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
 
 To say FullExamineDesc of (B - asshole):
 	say "[TotalDesc of asshole][AssholeModesty]".
@@ -206,8 +206,8 @@ To say TotalDesc of asshole:
 		if the soreness of asshole is 6, say "feels sore most of the way inside. ";
 		if the soreness of asshole is 7, say "feels sore, from the entrance to the deepest point inside you. ";
 		if the soreness of asshole is 8, say "feels completely ruined. ";
-		if the soreness of asshole is 9, say "has been ruined so hard, it feels like it's on fire!  ";
-		if the soreness of asshole is 10, say "has been completely destroyed by fuckings, you feel like you're about to faint!!  ";
+		if the soreness of asshole is 9, say "has been ruined so hard, it feels like it's on fire! ";
+		if the soreness of asshole is 10, say "has been completely destroyed by fuckings, you feel like you're about to faint!! ";
 	otherwise:
 		say "feels numb. ";
 	if there is a lubricant covering asshole, say "It is dripping with slippery [lubricant]. ".
@@ -272,13 +272,13 @@ To gape (A - asshole) times (X - a number):
 			if the openness of asshole is 7:
 				say "[if the bimbo of the player < 8][line break][variable custom style][one of]Surely my [asshole] isn't permanently stretched this wide?! It'll close back up again soon, right?[or]Oh god, it's super stretched again![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] feels permanently stretched, but that can only be a good thing.[or]My [asshole] feels like it can take anything again![stopping][end if][roman type][line break]";
 			if the openness of asshole is 9:
-				say "[if the bimbo of the player < 10][line break][variable custom style][one of]How it is even possible?  My asshole is permanently stretched wider than my fist![or]I can't believe it is even possible to be gaped so wide![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] is gaping wide, I'm so proud![or]I just love the feeling of having a permanently gaping wide [asshole]![stopping][end if][roman type][line break]";
+				say "[if the bimbo of the player < 10][line break][variable custom style][one of]How it is even possible? My asshole is permanently stretched wider than my fist![or]I can't believe it is even possible to be gaped so wide![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] is gaping wide, I'm so proud![or]I just love the feeling of having a permanently gaping wide [asshole]![stopping][end if][roman type][line break]";
 			increase the openness of asshole by 1;
 			now ruined is 2;
 	if the player is female and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo:
 		if asshole-cupid tattoo is drawable:
 			summon asshole-cupid tattoo;
-			say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]!  [line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
+			say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]! [line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
 	if virgincursed > 1:
 		if virgincursed is 2:
 			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else! [roman type]The realisation crushes your spirit and your body shivers involuntarily. The game seems to detect these feelings and you feel ";
@@ -286,7 +286,7 @@ To gape (A - asshole) times (X - a number):
 				PenisDown 1;
 				say "your penis [Shrink] into a [ShortDesc of penis]. ";
 			otherwise:
-				say "cursed!  "; [###Selkie: but this is a lie, right? There's actually no consequence?]
+				say "cursed! "; [###Selkie: but this is a lie, right? There's actually no consequence?]
 			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...[roman type][line break]";
 		otherwise:[i thought it was weird you would sometimes not a message like this on losing your anal virginity first, so I wrote this to clarify things.]
 			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it. [line break][variable custom style]'Anal is probably way better anyway. Who cares?'[roman type][line break]";

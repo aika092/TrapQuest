@@ -59,10 +59,10 @@ Check unplugging something:
 		otherwise say "That is not inside of you!" instead;
 	if the noun is not penetrating a fuckhole, say "That is not removed like this, try [bold type]removing[roman type] it instead" instead;
 	if the noun is cursed and the noun is not dildo sword: [dildo swords come straight back out]
-		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside!  It must be the curse..." instead;
+		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside! It must be the curse..." instead;
 		if the noun is worn:
 			now the noun is sure;
-			say "It refuses to budge, it's like it's glued inside!  It must be cursed..." instead;
+			say "It refuses to budge, it's like it's glued inside! It must be cursed..." instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [printed name of random bottom level ass protection clothing worn by the player] out of the way first." instead;
 	if the noun is penetrating vagina and the player is pussy protected, say "You need to get your [printed name of random bottom level protection clothing worn by the player] out of the way first." instead;
