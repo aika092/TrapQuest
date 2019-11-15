@@ -24,7 +24,7 @@ A person is classed as virtual if they are actually in the game that the person 
 *BWAAAAAAMP*
 
 +!]
-Definition: a person is virtual:
+Definition: yourself is virtual:
 	if gameover-flag is 1 or tutorial is 1, decide no;
 	if the player is in capsule or the player is in start, decide no;
 	decide yes.
@@ -55,7 +55,7 @@ The player has a number called room-entering.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called motion.
+The player has a number called player-motion.
 
 [!<milking:Integer>*
 
@@ -66,10 +66,10 @@ milking is a number that varies. milking is usually 0.
 
 [!<Player>@<alert:Integer>*
 
-REQUIRES COMMENTING
+Tells the game that something has happened that should interrupt resting / longwaiting. Needs to be set to 0 when resting / longwaiting starts.
 
 *@!]
-The player has a number called alert. The alert of the player is usually 0.
+The player has a number called alert.
 
 [!<Player>@<faintCount:Integer>*
 
@@ -105,7 +105,7 @@ The player has a number called pregnancy rate. The pregnancy rate of the player 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called children. The children of the player is usually 0.
+The player has a number called children.
 
 [!<Player>@<delayedArousal:Integer>*
 
@@ -236,6 +236,7 @@ To decide which number is the reaction of the player: [TODO eventually remove]
 	if the player-reaction of the player is resisting, decide on 0;
 	if the player-reaction of the player is submitting, decide on 1;
 	if the player-reaction of the player is begging for mercy, decide on 2;
+	if wanking is 1, decide on 1;[you always submit when you wank]
 	if the delicateness of the player > 8, decide on 1;
 	decide on 0.
 
@@ -341,12 +342,6 @@ REQUIRES COMMENTING
 *!]
 FairySuckleSlashes is a number that varies. FairySuckleSlashes is 0.
 
-[!<Player>@<magicPower:Integer>*
-
-This variable builds as you defeat tentacle monsters and allows you to purify the tentacle spawners
-
-*!]
-The player has a number called magic-power. The magic-power of the player is usually 0.
 
 Misc Variables ends here.
 

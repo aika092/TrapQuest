@@ -115,14 +115,64 @@ This is the eat-all-food hypno rule:
 The eat-all-food hypno rule is listed in the hypno triggers rules.
 
 This is the autopush hypno rule:
-	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and there are worn soilable knickers:
+	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
 		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, [end if]grunting and pushing.[roman type][line break]";
-		now player-squatting is 1;
-		unless there is a royal guard in the location of the player or there is a gladiator in the location of the player, now diaper-scene-unhandled is 1; 
+		now voluntarySquatting is 1;
 		compute messing;
-		now player-squatting is 0;
 		now another-turn is 1.
 The autopush hypno rule is listed in the hypno triggers rules.
+
+This is the autospread hypno rule:
+	if (hypno-trigger is "pussy" or hypno-trigger is "cunt") and hypno-trigger-pussy is 1 and the player is female and vagina is not lewdly exposed:
+		say "[bold type]Having heard the word '[hypno-trigger]', you find yourself automatically trying to get your [vagina] on display.[roman type][line break]";
+		repeat with C running through worn potentially at least partially vagina covering skirted clothing: [We do skirted first to try and make sure that the order makes sense]
+			if C is displacable:
+				say "You pull up your [ShortDesc of C]!";
+				displace C;
+			otherwise:
+				say "You try to remove your [ShortDesc of C]!";
+				try taking off C;
+		repeat with C running through worn potentially at least partially vagina covering trousers: [We do trousers next to try and make sure that the order makes sense]
+			if C is displacable:
+				say "You pull down your [ShortDesc of C]!";
+				displace C;
+			otherwise if C is zippable:
+				say "You unzip your [ShortDesc of C]!";
+				ZipDown C;
+			otherwise:
+				say "You try to remove your [ShortDesc of C]!";
+				try taking off C;
+		repeat with C running through worn potentially at least partially vagina covering unskirted clothing: [We do everything else last to try and make sure that the order makes sense]
+			if C is displacable:
+				say "You pull your [ShortDesc of C] to the side!";
+				displace C;
+			otherwise if C is zippable:
+				say "You unzip your [ShortDesc of C]!";
+				ZipDown C;
+			otherwise:
+				say "You try to remove your [ShortDesc of C]!";
+				try taking off C;
+		now another-turn is 1.
+The autospread hypno rule is listed in the hypno triggers rules.
+
+This is the autopiss hypno rule:
+	if hypno-trigger is "please" and hypno-trigger-please is 1:
+		if diaper lover > 0:
+			if the bladder of the player > 0 and the latex-transformation of the player <= 4:
+				say "[bold type]Having heard the word 'please', your bladder immediately lets itself go, completely without your conscious control.[roman type][line break]";
+				now delayed urination is 1;
+				try urinating;
+				if continued urination is 1, compute continued urination; [This line is needed because we've already gone past the check for compulsory actions.]
+		otherwise if the player is able to get horny: [Different hypnotic effect from the statue when diapers are disabled]
+			say "[bold type]Having heard the word 'please', your head fills with a deep blissful arousal.[roman type][line break]";
+			arouse 5000;
+			check for arousal change;
+			if the player is very horny and the player is able to automatically masturbate:
+				now auto is 1;
+				try masturbating;
+				now auto is 0;
+				now another-turn is 1.
+The autopiss hypno rule is listed in the hypno triggers rules.
 
 Hypnotic Suggestion ends here.
 

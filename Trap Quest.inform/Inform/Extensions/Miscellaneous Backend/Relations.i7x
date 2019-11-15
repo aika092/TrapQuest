@@ -13,8 +13,8 @@ The verb to penetrate (he penetrates, they penetrate, he penetrated, it is penet
 
 Retaining relates one person to various things.
 The verb to retain (he retains, they retain, he retained, it is retained, he is retaining) implies the retaining relation.
-Withholding relates one person to various things. [###Selkie: I guess it can't use correct grammar, i.e. use withheld rather than withholded?]
-The verb to withhold (he withholds, they withhold, he withholded, it is withholded, he is withholding) implies the withholding relation.
+Withholding relates one person to various things.
+The verb to withhold (he withholds, they withhold, he withheld, it is withheld, he is withholding) implies the withholding relation.
 
 Rejecting relates one person to various things.
 The verb to reject (he rejects, they reject, he rejected, it is rejected, he is rejecting) implies the rejecting relation.

@@ -1,8 +1,8 @@
 Ben Wa Balls by Sex Toys begins here.
 
-A ben wa balls is a kind of plug. The printed name of ben wa balls is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]ben wa balls[clothing-title-after][TQxlink of item described][verb-desc of item described]". The printed plural name of ben wa balls is usually "[TQlink of item described][clothing-title-before]sets of ben wa balls[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of ben wa balls is "bwb". There is 1 ben wa balls.
+A ben wa balls is a kind of plug. The printed name of ben wa balls is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]ben wa balls[clothing-title-after]". The printed plural name of ben wa balls is usually "[clothing-title-before]sets of ben wa balls[clothing-title-after]". The text-shortcut of ben wa balls is "bwb". There is 1 ben wa balls.
 
-Figure of ben wa balls is the file "Items\Accessories\Toys\benWaBalls1.png".
+Figure of ben wa balls is the file "Items/Accessories/Toys/benWaBalls1.jpg".
 
 To decide which figure-name is clothing-image of (C - ben wa balls):
 	decide on figure of ben wa balls.
@@ -26,16 +26,19 @@ To compute periodic effect of (C - ben wa balls):
 			humiliate 100;
 		otherwise:
 			say "The Ben wa balls in your [variable F] jiggle when you move, slowly increasing your arousal.";
-		arouse 100;
+		passively stimulate F from C;
 	otherwise if the remainder after dividing the toy-charge of C by 4 is 0:
-		arouse 30;
+		arouse 100.
+
+To decide which number is the stimulation of (D - ben wa balls) on (B - a body part):
+	decide on 0.
 
 To decide which number is the original price of (C - ben wa balls):
 	decide on 3.
 
 To uniquely set up (C - ben wa balls):
 	let R be a random number between 1 and 10;
-	if R is 1, now C is endurance;
+	if R is 1, now C is endurance.
 
 Ben Wa Balls ends here.
 

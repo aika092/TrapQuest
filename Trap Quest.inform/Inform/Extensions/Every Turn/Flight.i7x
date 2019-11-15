@@ -27,23 +27,27 @@ REQUIRES COMMENTING
 +!]
 To Execute Takeoff:
 	now last-turn-flight is 1;
-	say "Your body is now lighter than air!  As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][line break][first custom style]What the fuck is happening to me?![otherwise][line break][second custom style]Oooh, yay, I can fly!  Wait, how do I control where I go?  Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again!  Weeeee![end if][stopping][roman type][line break]";
+	say "Your body is now lighter than air! As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][line break][first custom style]What the fuck is happening to me?![otherwise][line break][second custom style]Oooh, yay, I can fly! Wait, how do I control where I go?  Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again!  Weeeee![end if][stopping][roman type][line break]";
 	repeat with D running through dildo traps penetrating a fuckhole:
+		if doll-stuck-num > 0:
+			say "[one of]You feel your eyes widen and your jaw drop[or]You once more gape foolishly[stopping] as you rise up off the impaling [printed name of D] which buzzes angrily as you escape, and the music stops. [one of]You don't think you knew the true meaning of shame until this absolutely humiliating 'rescue'[or]The shame of the rescue is just as bad as last time[stopping].";
+			humiliate SEVERE-HUMILIATION;
 		dislodge D;
 	let flav-said be 0;
-	repeat with C running through things held by the player:
-		unless C is worn:
-			if flav-said is 0, say "Your sudden flight makes [if there is a worn bag of holding]all your items fall out of your [ShortDesc of random worn bag of holding] and [end if]you drop all the items you're carrying!";
-			now flav-said is 1;
-			now C is in the location of the player;
+	if the floatskill of the player is 0:
+		repeat with C running through things held by the player:
+			unless C is worn:
+				if flav-said is 0, say "Your sudden flight makes [if there is a worn bag of holding]all your items fall out of your [ShortDesc of random worn bag of holding] and [end if]you drop all the items you're carrying!";
+				now flav-said is 1;
+				now C is in the location of the player;
 	if there is a worn magic wand:
 		compute takeoff of a random worn magic wand;
-	if the player is in the woods:
-		say "Before you know it, you are high up in the sky!  You can see the entirety of the woods from here!";
-		repeat with R running through placed jungle rooms:
+	if the location of the player is no-roof:
+		say "Before you know it, you are high up in the sky! You can see the entirety of the woods from here!";
+		repeat with R running through placed no-roof rooms:
 			now R is discovered;
 		now the player is in Sky01;
-		if map images is 1, display entire map;
+	refresh the map-window;
 	now the alert of the player is 1. [You stop resting]
 
 [!<ExecuteLanding>+
@@ -65,7 +69,7 @@ To Execute Landing:
 		say LandingTaunt of M;
 		now monster-flav is 1;
 	say "[bold type]As you land, you fall to your knees.[roman type][line break]";
-	if map images is 1, display entire map;
+	if map images > 0, display entire map;
 	if the player is upright:
 		try kneeling;
 	otherwise if the location of the player is glue-puddled:
@@ -79,7 +83,7 @@ REQUIRES COMMENTING
 +!]
 To say LandingTaunt of (M - a monster):
 	if M is intelligent:
-		say "The [M] grins at the sight.";
+		say "[BigNameDesc of M] grins at the sight.";
 		humiliate 50.
 
 Part 2 - Various Levels of Flight
@@ -96,7 +100,7 @@ Part 2 - Various Levels of Flight
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is grounded:
+Definition: yourself is grounded:
 	if the weight of the player > 2, decide yes;
 	decide no.
 
@@ -105,7 +109,7 @@ Definition: a person (called P) is grounded:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is on tiptoes:
+Definition: yourself is on tiptoes:
 	if there is a worn butterfly wings, decide yes;
 	if the weight of the player < 3 and the weight of the player > -3, decide yes;
 	decide no.
@@ -115,7 +119,7 @@ Definition: a person (called P) is on tiptoes:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is zeroG:
+Definition: yourself is zeroG:
 	if the weight of the player < -2 and the weight of the player > -6, decide yes;
 	decide no.
 
@@ -124,7 +128,7 @@ Definition: a person (called P) is zeroG:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is flying:
+Definition: yourself is flying:
 	if the player is immobile, decide no;
 	if there is a worn butterfly wings, decide no;
 	if the latex-transformation of the player > 5, decide no;
@@ -136,8 +140,8 @@ Definition: a person (called P) is flying:
 REQUIRES COMMENTING
 
 +!]
-Definition: a person (called P) is too high to see:
-	if the player is flying and the player is in the Woods, decide yes;
+Definition: yourself is too high to see:
+	if the player is flying and playerRegion is Woods, decide yes;
 	decide no.
 
 

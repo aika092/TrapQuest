@@ -6,7 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 Report dropping something:
-	now seconds is 2;
+	allocate 2 seconds;
 
 [!<ReportDroppingInsertibleThings>+
 

@@ -1,6 +1,6 @@
 Kitty Claws by Equippables begins here.
 
-A kitty claws is a kind of gloves. A kitty claws is usually unique. A kitty claws is usually wool. There is 1 kitty claws. The printed name of kitty claws is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of kitty claws[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "Items\Accessories\Equippables\kittyclaws1.png". Figure of kitty claws 2 is the file "Items\Accessories\Equippables\kittyclaws2.png". Understand "paws" as kitty claws.
+A kitty claws is a kind of gloves. A kitty claws is usually unique. A kitty claws is usually wool. There is 1 kitty claws. The printed name of kitty claws is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of kitty claws[clothing-title-after]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "Items/Accessories/Equippables/kittyclaws1.png". Figure of kitty claws 2 is the file "Items/Accessories/Equippables/kittyclaws2.png". Understand "paws" as kitty claws.
 
 To decide which figure-name is clothing-image of (C - a kitty claws):
 	if C is cursed, decide on figure of kitty claws 1;
@@ -19,7 +19,7 @@ This is the kitty claws prevent manual dexterity rule:
 The kitty claws prevent manual dexterity rule is listed in the manual dexterity restriction rules.
 
 To decide which number is the initial outrage of (C - a kitty claws):
-	decide on 2.
+	decide on 3.
 To decide which number is the initial cringe of (C - a kitty claws):
 	decide on 5.
 
@@ -30,25 +30,18 @@ To decide which number is the damage improvement of (W - a kitty claws):
 	decide on X.
 
 To compute attack of (W - a kitty claws) at (M - a monster):
-	if W is cursed, say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at the [M] with your [printed name of W]!";
-	otherwise say "[one of]You slash at the [M] with your cat claws.[or]You scratch the [M] with your sharp claws.[or]You meow as you swipe at the [M] with your kitty claws.[or]You hiss as you slice the [M] with your claws.[at random]".
+	if W is cursed, say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W]!";
+	otherwise say "[one of]You slash at [NameDesc of M] with your cat claws.[or]You scratch [NameDesc of M] with your sharp claws.[or]You meow as you swipe at [NameDesc of M] with your kitty claws.[or]You hiss as you slice [NameDesc of M] with your claws.[at random]".
 
-To curse (B - a kitty claws):
-	if B is not blessed:
-		if B is held, say "The claws of your [printed name of B] retract back into the fabric.";
-		now B is cursed;
-	otherwise:
-		now B is bland.
+To say CurseCurseFlav of (B - a kitty claws):
+	if B is held, say "The claws of your [printed name of B] retract back into the fabric.".
 
-To bless (B - a kitty claws):
-	if B is not cursed:
-		now B is blessed;
-	otherwise:
-		if B is held, say "Claws spring out of your [printed name of B]!";
-		now B is bland.
+To say BlessBlandFlav of (B - a kitty claws):
+	if B is held, say "Claws spring out of your [printed name of B]!".
 
-Definition: a kitty claws (called C) is cat themed:
-	decide yes.
+Definition: a kitty claws is cat themed: decide yes.
+Definition: a kitty claws is black themed: decide yes.
+Definition: a kitty claws is pink themed if it is cursed.
 
 
 Kitty Claws ends here.

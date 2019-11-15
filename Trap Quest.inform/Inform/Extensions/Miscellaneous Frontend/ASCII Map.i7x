@@ -8,19 +8,19 @@ REQUIRES COMMENTING
 
 +!]
 To MapDraw:
-	if map images is 1:
+	if map images > 0:
 		display entire map;
 	otherwise:
 		let Z be 1;
 		let G be the grid position of Dungeon11;
 		say "[fixed letter spacing]";
-		if the player is in the Dungeon:
+		if playerRegion is Dungeon:
 			now G is <1,0,0>;
-		otherwise if the player is in the Woods:
+		otherwise if playerRegion is Woods:
 			now G is <2,0,0>;
-		otherwise if the player is in the Hotel:
+		otherwise if playerRegion is Hotel:
 			now G is <3,0,0>;
-		otherwise if the player is in the Mansion:
+		otherwise if playerRegion is Mansion:
 			now G is <4,0,0>;
 		let minX be 25;
 		let minY be 25;
@@ -36,13 +36,13 @@ To MapDraw:
 					if maxY < Y, now maxY is Y;
 				now G is the map sum of G and <0,1,0>;
 			now G is the map sum of G and <0,0,24>;
-		if the player is in the Dungeon:
+		if playerRegion is Dungeon:
 			now G is <1,0,0>;
-		otherwise if the player is in the Woods:
+		otherwise if playerRegion is Woods:
 			now G is <2,0,0>;
-		otherwise if the player is in the Hotel:
+		otherwise if playerRegion is Hotel:
 			now G is <3,0,0>;
-		otherwise if the player is in the Mansion:
+		otherwise if playerRegion is Mansion:
 			now G is <4,0,0>;
 		now minX is minX - 1;
 		now minY is minY - 1;
@@ -97,7 +97,7 @@ To MapDraw:
 					otherwise if R is discovered and R is furnished:
 						if a random furniture in R is milking bench, say "{-}";
 						otherwise say "{~}";
-					otherwise if R is discovered and R is unusual:
+					otherwise if R is discovered and there is a dispenser in R:
 						say "{^}";
 					otherwise if R is discovered:
 						say "{#}";

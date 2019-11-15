@@ -1,7 +1,10 @@
 Pack of Crisps by Food begins here.
 
 
-A pack of crisps is a kind of snack. The printed name of pack of crisps is "[TQlink of item described]pack of crisps[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pack of crisps is "[TQlink of item described]packs of crisps[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pack of crisps is "cri". The description of pack of crisps is "A smallish pack of ready salted crisps that you could open and eat.". There are 2 pack of crisps.
+A pack of crisps is a kind of snack. The printed name of pack of crisps is "[TQlink of item described]pack of crisps[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pack of crisps is "[TQlink of item described]packs of crisps[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pack of crisps is "cri". There are 2 pack of crisps.
+
+To say ExamineDesc of (C - a pack of crisps):
+	say "A smallish pack of ready salted crisps that you could open and eat.".
 
 To say ShortDesc of (C - a pack of crisps):
 	say "pack of crisps".

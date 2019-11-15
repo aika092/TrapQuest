@@ -42,7 +42,6 @@ To decide which number is the calculated semen addiction of the player:
 	if there is a worn slimegirl:
 		let I be the intensity of a random slimegirl;
 		increase S by I * 3;
-	if there is a worn wet dream tattoo, increase S by 2;
 	if S < the semen taste addiction of the player, decide on the semen taste addiction of the player;
 	if S < recent-bimbo / 3, now S is recent-bimbo / 3;
 	if S > 20, decide on 20;
@@ -66,6 +65,10 @@ REQUIRES COMMENTING
 *!]
 highest semen addiction is a number that varies.
 
+creampieAddictCountdown is a number that varies.
+An advance counters rule:
+	if creampieAddictCountdown > 0, decrease creampieAddictCountdown by 1.
+
 [!<SemenAddictUpX>+
 
 REQUIRES COMMENTING
@@ -86,9 +89,11 @@ To SemenAddictUp (X - a number):
 		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
-		if a random number between 1 and 8 > K:
-			if the raw semen addiction of the player < 20 and a random number between 1 and 40 > the raw semen addiction of the player:
-				increase the raw semen addiction of the player by 1.
+		if a random number between 1 and 8 > K and (creampieAddictCountdown < X or the number of live things penetrating a fuckhole is 0): [creampieAddictCountdown stops semen addiction going crazy if the player receives a creampie over several turns]
+			if the raw semen addiction of the player < 20:
+				increase the raw semen addiction of the player by 1;
+				if the trophy-mode of condom-trophy > 0 and there is a live thing penetrating a fuckhole and the raw semen addiction of the player < 20, increase the raw semen addiction of the player by 1;
+	if there is a live thing penetrating a fuckhole and creampieAddictCountdown <= 0, now creampieAddictCountdown is 2.
 
 [!<SemenAddictDownX>+
 
@@ -98,7 +103,7 @@ REQUIRES COMMENTING
 To SemenAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw semen taste addiction of the player >= the raw semen addiction of the player, SemenTasteAddictDown 1;
+		[if the raw semen taste addiction of the player >= the raw semen addiction of the player, SemenTasteAddictDown 1;]
 		if the raw semen addiction of the player > 1, decrease the raw semen addiction of the player by 1.
 
 [!<semenEncountered:Integer>*
@@ -123,11 +128,11 @@ To say SemenEncounterFlav:
 		if the semen addiction of the player is 6, say "[variable custom style]It feels like I'm slowly getting used to the feeling of [semen]. It must be the game slowly warping my mind![roman type][line break]";
 		if the semen addiction of the player is 7, say "[variable custom style]I guess you could say [semen] feels kind of cool, a bit like PVC glue.[roman type][line break]";
 		if the semen addiction of the player is 8, say "[second custom style]How have I never noticed how nice the smell of [semen] is?[roman type][line break]";
-		if the semen addiction of the player is 9, say "[variable custom style]Ooh, [if the total volume of vagina > 0 or the semen volume of belly > 0]the feeling of getting creampied is actually quite rewarding[otherwise]watching men ejaculate is really quite fascinating[end if]!  This must be the work of the game... but it's not necessarily a BAD thing, right?[roman type][line break]";
+		if the semen addiction of the player is 9, say "[variable custom style]Ooh, [if (the total volume of vagina > 0 or the semen volume of belly > 0) and (there is a live thing penetrating a fuckhole or bukkake fetish is 0)]the feeling of getting creampied is actually quite rewarding[otherwise]watching men ejaculate is really quite fascinating[end if]!  This must be the work of the game... but it's not necessarily a BAD thing, right?[roman type][line break]";
 		if the semen addiction of the player is 10, say "[variable custom style]I should be thanking them for making me like [semen], they're just helping me enjoy the game as much as possible![roman type][line break]";
 		if the semen addiction of the player is 11, say "[second custom style]Wow, I can't believe I used to hate [semen]. I can't get enough of this stuff![roman type][line break]";
 		if the semen addiction of the player is 12, say "[second custom style]Aww is that all?  I was kind of hoping there would be more.[roman type][line break]";
-		if the semen addiction of the player is 13, say "[variable custom style]This is getting out of hand, I'm really getting addicted to this stuff!  Soon I'm not going to be able to bring myself from saying no to [manly-penis]![roman type][line break]";
+		if the semen addiction of the player is 13, say "[variable custom style]This is getting out of hand, I'm really getting addicted to this stuff! Soon I'm not going to be able to bring myself to say no to [manly-penis]![roman type][line break]";
 		if the semen addiction of the player is 14, say "[second custom style][if the total volume of vagina > 0 or the semen volume of belly > 0]Having [semen] in me is making me feel more comforted... and proud[otherwise]I'm going to wear all this cum like a symbol of pride[end if]![roman type][line break]";
 		if the semen addiction of the player is 15, say "[second custom style][if the player is a nympho]I like it better when I'm full of [semen]. It helps remind me what I'm to be used for.[otherwise]This world is great, it's basically making sure I always have [semen] on tap![end if][roman type][line break]";
 		if the semen addiction of the player is 16, say "[second custom style]This is enough to satisfy me for now, I guess...[roman type][line break]";

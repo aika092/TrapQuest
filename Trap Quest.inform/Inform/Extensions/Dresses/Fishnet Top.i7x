@@ -1,6 +1,6 @@
 Fishnet Top by Dresses begins here.
 
-A fishnet top is a kind of overdress. A fishnet top is usually unskirted. A fishnet top is usually belly exposing. A fishnet top is usually mesh. A fishnet top is usually see-through. A fishnet top is usually top-displacable. Understand "fish", "net" as fishnet top. A fishnet top is usually unique.
+A fishnet top is a kind of overdress. A fishnet top is usually unskirted. A fishnet top is usually belly exposing. A fishnet top is usually mesh. A fishnet top is usually see-through. A fishnet top is usually top-displacable. Understand "fish", "net" as fishnet top. A fishnet top is usually transformation-rare.
 
 Definition: a fishnet top is optional-top-displacable if the largeness of breasts > 7. [Very much like a tube top]
 
@@ -26,18 +26,19 @@ This is the remove inappropriate fishnet tops rule:
 		now B is in Holding Pen.
 The remove inappropriate fishnet tops rule is listed in the diaper quest fix rules.
 
-Definition: a fishnet top (called C) is end of transformation chain:
-	decide yes.
+Definition: a fishnet top is end of transformation chain: decide yes.
 
 Part 1 - Black Fishnet Top
 
 A black fishnet top is a kind of fishnet top. There is 1 black fishnet top.
 
+Definition: a black fishnet top is black themed: decide yes.
+
 The soak-limit of a black fishnet top is usually 6.
 
-Figure of black fishnet top is the file "Items\Clothes\Upper\Exposing\Fishnet\fishnettop1.png".
+Figure of black fishnet top is the file "Items/Clothes/Upper/Exposing/Fishnet/fishnettop1.png".
 
-The printed name of black fishnet top is usually "[TQlink of item described][clothing-title-before]black fishnet top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of black fishnet top is "bft".
+The printed name of black fishnet top is usually "[clothing-title-before]black fishnet top[clothing-title-after]". The text-shortcut of black fishnet top is "bft".
 
 To decide which figure-name is clothing-image of (C - a black fishnet top):
 	decide on figure of black fishnet top.
@@ -48,10 +49,11 @@ To say ClothingDesc of (C - a black fishnet top):
 Part 2 - Pink Fishnet Top
 
 A pink fishnet top is a kind of fishnet top. There is 1 pink fishnet top. A pink fishnet top is only arm covering.
+Definition: a pink fishnet top is pink themed: decide yes.
 
-Figure of pink fishnet top is the file "Items\Clothes\Upper\Exposing\Fishnet\fishnettop2.png".
+Figure of pink fishnet top is the file "Items/Clothes/Upper/Exposing/Fishnet/fishnettop2.png".
 
-The printed name of pink fishnet top is usually "[TQlink of item described][clothing-title-before]pink fishnet top[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink fishnet top is "pft".
+The printed name of pink fishnet top is usually "[clothing-title-before]pink fishnet top[clothing-title-after]". The text-shortcut of pink fishnet top is "pft".
 
 To decide which figure-name is clothing-image of (C - a pink fishnet top):
 	decide on figure of pink fishnet top.

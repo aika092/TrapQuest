@@ -1,12 +1,23 @@
 Potions by Crafting begins here.
 
+A potion is a kind of alchemy product.
 
+Definition: a potion is drink themed: decide yes.
 
-A potion is a kind of alchemy product. Understand "potions" as a potion.
+Figure of potion is the file "Items/Collectibles/potion1.png".
+To decide which figure-name is the examine-image of (V - an potion):
+	decide on the figure of potion.
 
 Section 1 Potion of Balance
 
-A potion of balance is a kind of potion. The printed name of potion of balance is "[TQlink of item described]potion of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of balance is "[TQlink of item described]potions of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of balance is "pb". The description of potion of balance is "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of balance. 
+A potion of balance is a kind of potion. The printed name of potion of balance is "[TQlink of item described]potion of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of balance is "[TQlink of item described]potions of balance[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of balance is "pba". There are 3 potion of balance.
+
+To say ExamineDesc of (B - a potion of balance):
+	say "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
+
+To BackgroundRender (T - a potion of balance) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	let TQC be appearance corresponding to an Magic of 4 in the Table of Drinks;
+	draw a rectangle TQcolour of TQC in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - a potion of balance):
 	decide on 6.
@@ -44,7 +55,13 @@ Carry out quaffing potion of balance:
 
 Section 2 Potion of the Womb
 
-A potion of the womb is a kind of potion. The printed name of potion of the womb is "[TQlink of item described]potion of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of the womb is "[TQlink of item described]potions of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of the womb is "pw". The description of potion of the womb is "A round clear hip flask filled with a dose of smoky pink liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of the womb.
+A potion of the womb is a kind of potion. The printed name of potion of the womb is "[TQlink of item described]potion of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of the womb is "[TQlink of item described]potions of the womb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of the womb is "potw". There are 3 potion of the womb.
+
+To say ExamineDesc of (B - a potion of the womb):
+	say "A round clear hip flask filled with a dose of smoky pink liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
+
+To BackgroundRender (T - a potion of the womb) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	draw a rectangle TQcolour of magenta in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - a potion of the womb):
 	decide on 7.
@@ -58,15 +75,16 @@ Carry out quaffing potion of the womb:
 			now the pregnancy of the player is 1;
 			if the womb volume of vagina < 5, now the womb volume of vagina is 5;
 			if the noun is cursed, now the womb volume of vagina is 15;
-			if there is an alive fairy and inhuman pregnancy > 0 and the noun is not cursed:
+			if the noun is blessed:
+				now the father is shopkeeper;
+			otherwise if there is an alive fairy and inhuman pregnancy > 0 and the noun is not cursed:
 				now the father is a random alive fairy;
-			otherwise if the noun is blessed:
-				now the father is a random shopkeeper;
 			otherwise:
 				now the father is random creampie pole trap; [Tentacles for players who have them enabled]
+			check sudden pregnancy;
 		otherwise if the pregnancy of the player is 1:
 			[Pause the pregnancy]
-			say "Your [BellyDesc] seems suddenly.. inactive.[if the largeness of belly > 6]  But you still feel kicking coming from inside your womb.[end if]";
+			say "Your [BellyDesc] seems suddenly... inactive.[if the largeness of belly > 6]  But you still feel kicking coming from inside your womb.[end if]";
 			now the pregnancy of the player is 2;
 		otherwise if the pregnancy of the player is 2:
 			[Unpause the pregnancy]
@@ -80,28 +98,42 @@ Section 3 Potion of Blessing
 To decide which number is the alchemy key of (A - a potion of blessing):
 	decide on 8.
 
-A potion of blessing is a kind of potion. The printed name of potion of blessing is "[TQlink of item described]potion of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of blessing is "[TQlink of item described]potions of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of blessing is "pb". The description of potion of blessing is "A round clear hip flask filled with a dose of bright glowing blue liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of blessing. 
+A potion of blessing is a kind of potion. The printed name of potion of blessing is "[TQlink of item described]potion of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of blessing is "[TQlink of item described]potions of blessing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of blessing is "pob". There are 3 potion of blessing.
+
+To say ExamineDesc of (B - a potion of blessing):
+	say "A round clear hip flask filled with a dose of bright glowing blue liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
+
+To BackgroundRender (T - a potion of blessing) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	draw a rectangle TQcolour of turquoise in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out quaffing potion of blessing:
 	say "You pull out the stopper and down the brightly glowing liquid.";
-	if the player is not in the dungeon or the player is trap stuck or a random lake monster is penetrating an orifice:[how would this last condition occur?]
+	if playerRegion is not Dungeon or the player is trap stuck or a random lake monster is penetrating an orifice:[how would this last condition occur?]
 		say "Nothing seems to happen.";
 	otherwise if the player is not in Dungeon28:
 		say "You feel yourself sucked through a portal. ";
 		if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;
-		say " The scenery around you slightly changes, and you are now in an altar room!  ";
+		say "The scenery around you slightly changes, and you are now in an altar room! ";
 		teleport to Dungeon28;
-		if map images is 1, display entire map;
-	otherwise if the charge of the dungeon altar > 0 or the noun is cursed:
-		say "You feel that it is safe to pray at the altar.";
+		if map images > 0, display entire map;
+	if the player is in Dungeon28 and (the charge of the dungeon altar > 0 or the noun is cursed):
+		say "You feel that it is safe to pray at the altar. Hopefully the potion you drank wasn't cursed, or you might be mistaken...";
 		if the noun is cursed, now the charge of the dungeon altar is 99;
 		otherwise now the charge of the dungeon altar is 0;
+		force inventory-focus redraw; [This forces the inventory window to redraw]
+		force clothing-focus redraw; [This forces the clothing window to redraw]
 	otherwise:
 		say "Nothing seems to happen.".
 
 Section 4 Potion of Bull Strength
 
-A potion of bull strength is a kind of potion. The printed name of potion of bull strength is "[TQlink of item described]potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of bull strength is "[TQlink of item described]potions of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of bull strength is "pb". The description of potion of bull strength is "A round clear hip flask filled with a dose of murky white liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...". There are 3 potion of bull strength. 
+A potion of bull strength is a kind of potion. The printed name of potion of bull strength is "[TQlink of item described]potion of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of potion of bull strength is "[TQlink of item described]potions of bull strength[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of potion of bull strength is "pbu". There are 2 potion of bull strength.
+
+To say ExamineDesc of (B - a potion of bull strength):
+	say "A round clear hip flask filled with a dose of murky white liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
+
+To BackgroundRender (T - a potion of bull strength) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	draw a rectangle TQcolour of white in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - a potion of bull strength):
 	decide on 12.
@@ -116,7 +148,7 @@ The potion of bull strength specific recipe rule is listed in the specific recip
 To compute recipe specific cursing of (T - a potion of bull strength):
 	let K be the alchemy key of T;
 	if the noun is bottle:
-		if the fill-colour of the noun is white and the noun is minotaur horn and the noun is monster-origin:
+		if the fill-colour of the noun is white and the noun is horn and the noun is monster-origin:
 			now T is bland;
 			if the noun is blessed or (a random number between 1 and 7 <= the number of worn blue scrunchies and the class of the player is schoolgirl):
 				now T is blessed;
@@ -134,24 +166,32 @@ Carry out quaffing potion of bull strength:
 		say "Your body instantly spills out as you instantly put on huge amounts of weight!";
 		FatUp 20;
 	if lactation fetish is 1:
-		if the class of the player is adventurer:
-			let H2 be a random worn headgear;
-			say "Your [H2] suddenly vanishes!";
-			destroy H2;
-		let H be a random off-stage cow ears;
-		if H is actually summonable:
+		[if the class of the player is adventurer:
+			let H be a random worn headgear;
+			if H is clothing:
+				say "Your [ShortDesc of H] suddenly vanishes!";
+				destroy H;
+				now H is off-stage; [The player hasn't had a chance to do this class properly]]
+		if cow-ears is off-stage and cow-ears is actually summonable:
 			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
-			summon H cursed;
+			summon cow-ears cursed;
 			now the lactation-count of the player is 0;
 		let B be a random off-stage cow print bikini top;
 		if B is actually summonable:
 			say "[bold type]A cow print bikini top materialises on your chest.[roman type][line break]";
-			summon B cursed;
+			if there is worn cow-ears, summon B;
+			otherwise summon B cursed with quest;
 			now B is milk production.
-			
+
 Section 5 Space Mead
 
-A space mead is a kind of potion. The printed name of space mead is "[TQlink of item described]carafe of space mead[TQxlink of item described][verb-desc of item described]". The printed plural name of space mead is "[TQlink of item described]carafes of space mead[TQxlink of item described][verb-desc of item described]". The description of space mead is "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual.". There are 3 space meads. Understand "carafe" as space mead. The text-shortcut of space mead is "smd".
+A space mead is a kind of potion. The printed name of space mead is "[TQlink of item described]carafe of space mead[TQxlink of item described][verb-desc of item described]". The printed plural name of space mead is "[TQlink of item described]carafes of space mead[TQxlink of item described][verb-desc of item described]". There are 3 space meads. Understand "carafe" as space mead. The text-shortcut of space mead is "smd".
+
+To say ExamineDesc of (B - a space mead):
+	say "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual.".
+
+To BackgroundRender (T - a space mead) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	draw a rectangle TQcolour of golden in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out quaffing space mead:
 	say "You drink the golden liquid.";
@@ -167,9 +207,8 @@ Carry out quaffing space mead:
 	StomachUp 4;
 	humiliate 500;
 	say "You feel more full, but somehow it also feels as though a vast emptiness has eaten away at your sense of self.";
-	
-
-
+	increase alcohol level;
+	increase alcohol level.
 
 Potions ends here.
 

@@ -1,6 +1,7 @@
 Ass Hook Trap by Traps begins here.
 
 
+
 [!<AssHook>@
 
 REQUIRES COMMENTING
@@ -8,7 +9,16 @@ REQUIRES COMMENTING
 @inherits <Trap>
 
 @!]
-An ass hook is a kind of trap. The printed name of ass hook is "[TQlink of item described]ass hook[TQxlink of item described][verb-desc of item described]". The description of an ass hook is "An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?". There are 5 wire ass hooks. Understand "rope" as ass hook. The text-shortcut of an ass hook is "aho".
+An ass hook is a kind of trap. The printed name of ass hook is "[TQlink of item described][if item described is penetrating asshole]ass [end if]hook[TQxlink of item described][verb-desc of item described]". There are 5 wire ass hooks. Understand "rope" as ass hook. The text-shortcut of an ass hook is "aho". Figure of ass hook is the file "Env/Dungeon/asshook1.png". An ass hook has an object called the wedgie-target.
+
+To say ExamineDesc of (C - an ass hook):
+	say "[if playerRegion is school]A strong hook that is usually used to hang gym clothes.[otherwise]An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?[end if]".
+
+To decide which figure-name is the examine-image of (C - an ass hook):
+	if C is penetrating asshole:
+		if the player is male, decide on figure of hook cutscene 1;
+		otherwise decide on figure of hook cutscene 2;
+	decide on figure of ass hook.
 
 [!<TheSpawnInitialDungeonAssHookTrapsRule>+
 
@@ -57,10 +67,9 @@ To decide which number is the girth of (D - an ass hook):
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is hook stuck:
-	repeat with X running through all ass hooks:
-		if X is penetrating a fuckhole, decide yes;
-	decide no.
+Definition: yourself is anally hook stuck if there is an ass hook penetrating a fuckhole.
+Definition: yourself is wedgie hook stuck if there is an ass hook grabbing the player.
+Definition: yourself is hook stuck if yourself is anally hook stuck or yourself is wedgie hook stuck.
 
 [!<AssHook>@<Trigger>+
 
@@ -68,8 +77,8 @@ REQUIRES COMMENTING
 
 +@!]
 To trigger (Y - an ass hook):
-	now the motion of the player is 0;
-	say "[bold type]You feel a rope rise from the ground to in between your legs and then to up behind you somewhere.[roman type]  Before you can react, you feel the rope swiftly pulled towards the back of you. You feel a piece of metal at the end of the rope which ";
+	now the player-motion of the player is 0;
+	say "[bold type]You feel a rope rise from the ground to in between your legs and then to up behind you somewhere. [roman type]Before you can react, you feel the rope swiftly pulled towards the back of you. You feel a piece of metal at the end of the rope which ";
 	now Y is not untriggered;
 	now Y is revealed;
 	now the reset-timer of Y is 400;
@@ -79,36 +88,58 @@ To trigger (Y - an ass hook):
 	otherwise if diaper quest is 1 or the player is ass protected:
 		let K be a random worn knickers;
 		let O be a random worn skirted clothing;
-		if O is super-short skirt or O is short skirt:
-			say "hooks into your [ShortDesc of O], pulling it up and ripping it from you!  Your [O] is destroyed.";
+		if O is short skirt:
+			say "hooks into your [ShortDesc of O], pulling it up and ripping it from you! Your [O] is destroyed.";
 			destroy O;
 		otherwise if O is knee-length clothing and O is displacable clothing:
 			say "hooks into your [ShortDesc of O], pulling it up and revealing what's underneath!";
 			displace O;
-		otherwise if K is currently uncovered clothing:
+			repeat with M running through reactive monsters:
+				compute curtsey reaction of M;
+		otherwise if K is currently uncovered unskirted clothing:
 			if K is diaper:
 				say "tries to hook into your [ShortDesc of K], but the padded material is too thick for it to be able to pull the material into a wedgie.";
-			otherwise: [TODO: change this to a humiliating wedgie which the player has to jump to destroy or strength check to untangle (but could cause further hurt instead)]
-				say "hooks into your [ShortDesc of K], pulling it up into a painful wedgie!";
-				DelicateUp 1;
-				say "The hook continues to pull up with tremendous pressure until your [K] are ripped from your butt crack and destroyed.";
+			otherwise if K is displacable:
+				say "hooks into your [K], pulling it up into a painful wedgie!";
+				now Y is grabbing the player;
+				now the wedgie-target of Y is K;
+				say "It looks like you'll need to [bold type]pull[roman type] the hook to try and save your underwear, or you could [bold type]jump[roman type] if you are happy for them to be destroyed.";
+				[say "The hook continues to pull up with tremendous pressure until your [ShortDesc of K] are ripped from your butt crack and destroyed.";
 				destroy K;
-				if asshole is lewdly exposed and K is total protection and 11 is too humiliating, say "[variable custom style]Nooo!  Now I'm practically naked![roman type][line break]";
+				if asshole is lewdly exposed and K is total protection and 11 is too humiliating, say "[variable custom style]Nooo! Now I'm practically naked![roman type][line break]";]
+				repeat with M running through reactive monsters:
+					say WedgieTrapReactFlav of M;
+			otherwise:
+				say "thankfully bounces harmlessly away[if K is clothing] thanks to your [ShortDesc of K][otherwise] without being able to find anything to hook onto[end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
 		otherwise:
-			say "thankfully bounces harmlessly away[if K is clothing] thanks to your [ShortDesc of coverer of K][otherwise] without being able to find anything to hook onto[end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+			let CK be nothing;
+			if K is clothing, now CK is the coverer of K;
+			say "thankfully bounces harmlessly away[if CK is clothing] thanks to your [ShortDesc of CK][otherwise] without being able to find anything to hook onto[end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
  		now Y is unrevealed;
  	otherwise if asshole is actually occupied:
  		say "thankfully bounces harmlessly away thanks to your [if the player is ass protected][ShortDesc of random top level ass protection clothing][otherwise][ShortDesc of random thing penetrating asshole][end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
  		now Y is unrevealed;
  	otherwise:
- 		say "glides swiftly into your [asshole] with the upward motion of the rope. You realise as it tries to lift you off the ground by your delicate hole that this is an ass hook on the end of the rope!  It lifts you onto your tiptoes and clearly would lift you off the ground by your [asshole] if its pulling mechanism had the strength!";
- 		if image cutscenes is 1:
-			if the player is male, display figure of hook cutscene 1;
-			otherwise display figure of hook cutscene 2;
+ 		say "glides swiftly into your [asshole] with the upward motion of the rope. You realise as it tries to lift you off the ground by your delicate hole that this is an ass hook on the end of the rope! It lifts you onto your tiptoes and clearly would lift you off the ground by your [asshole] if its pulling mechanism had the strength!";
 		now Y is penetrating asshole;
-	if Y is penetrating asshole, now Y is revealed. [because wtf glitches I don't understand]
+		repeat with M running through reactive monsters:
+			say AssHookTrapReactFlav of M;
+	if Y is penetrating asshole or Y is grabbing the player, now Y is revealed. [because wtf glitches I don't understand]
+
+To say WedgieTrapReactFlav of (M - a monster):
+	say TriggeredTrapReactFlav of M.
+To say AssHookTrapReactFlav of (M - a monster):
+	say HarshTrapReactFlav of M.
 
 Part - Escaping from Hook Trap
+
+Check taking off knickers when the player is wedgie hook stuck:
+	repeat with H running through ass hooks grabbing the player:
+		if the wedgie-target of H is the noun, say "There's no way you can raise your feet high enough to do that while it's hooked up in a powerful dangling wedgie!" instead.
+
+Check pulling knickers when the player is wedgie hook stuck:
+	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
+	HookPull instead.
 
 [!<CheckPullingAnAssHook>+
 
@@ -116,6 +147,7 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling an ass hook:
+	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
 [!<HookPull>+
@@ -124,40 +156,55 @@ REQUIRES COMMENTING
 
 +!]
 To HookPull:
-	now seconds is 3;
+	let H be the noun;
+	if the player is wedgie hook stuck, now H is a random ass hook grabbing the player;
+	let K be the wedgie-target of H;
+	allocate 3 seconds;
 	let S be the dexterity of the player;
 	if S > 4 or the class of the player is cheerleader:[cheerleaders always get a chance to try.]
 		if S < 9, now S is 9;
 		let R be a random number from 1 to S;
 		if R > 3:
 			if R > 6:
-				say "You manage to slowly pull down on the ass hook until it comes out of your [asshole], at which point you can take a step to the side and let go. The ass hook shoots up into the hole in the ceiling that the rope was connected to.";
-				now the noun is not penetrating asshole;
-				now the noun is unrevealed;
+				if H is grabbing the player, say "You manage to slowly pull down on the hook until it releases your [ShortDesc of K], ";
+				otherwise say "You manage to slowly pull down on the ass hook until it comes out of your [asshole], ";
+				say "at which point you can take a step to the side and let go. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+				dislodge H;
+				now H is unrevealed;
 			otherwise:
-				say "You manage to pull down on the ass hook but can't quite get it out of your [asshole]. You slip and it shoots back into your [asshole], just making it more sore!  Fuck!  You should [one of][bold type][or][stopping]keep trying[roman type]!";
-				let able-to-orgasm be 1;
-				let prev-horny be 0;
-				if the player is a bit horny, now prev-horny is 1;
-				if the player is horny, now prev-horny is 2;
-				if the player is unable to orgasm so soon, now able-to-orgasm is 0;
-				ruin asshole;
-				if image cutscenes is 1:
+				say "You manage to pull down on the [if H is grabbing the player]hook but it doesn't quite manage to release your [ShortDesc of K] before you slip and it pulls the wedgie right back up, hurting you even more[otherwise]ass hook but can't quite get it out of your [asshole]. You slip and it shoots back into your [asshole], just making it more sore[end if]! Fuck! You should [one of][bold type][or][stopping]keep trying[roman type]!";
+				if H is penetrating asshole:
+					let able-to-orgasm be 1;
+					let prev-horny be 0;
+					if the player is a bit horny, now prev-horny is 1;
+					if the player is horny, now prev-horny is 2;
+					if the player is unable to orgasm so soon, now able-to-orgasm is 0;
+					ruin asshole;
 					if able-to-orgasm is 1 and the player is unable to orgasm so soon: [player just came]
-						if the player is male, display figure of hook cutscene 6;
-						otherwise display figure of hook cutscene 5;
+						if the player is male, cutshow figure of hook cutscene 6 for H;
+						otherwise cutshow figure of hook cutscene 5 for H;
 					otherwise if (prev-horny is 0 and the player is a bit horny) or (prev-horny is 1 and the player is horny): [player just got aroused]
-						if the player is male, display figure of hook cutscene 3;
-						otherwise display figure of hook cutscene 4;
+						if the player is male, cutshow figure of hook cutscene 3 for H;
+						otherwise cutshow figure of hook cutscene 4 for H;
+					repeat with M running through reactive monsters:
+						say AssHookFuckTrapReactFlav of M;
+				otherwise:
+					PainUp 1;
 		otherwise:
-			say "You can't get a grip on the ass hook to pull it down at all. Keep pulling!";
+			say "You can't get a grip on the hook to pull it down at all. Keep pulling!";
 	[otherwise if sex fainting is 1:
 		say "Your joints are so stiff that you can't bend your arms properly get a good grip on the ass hook at all!  This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move!  It may be best to just [bold type]wait[roman type] and see what happens.";]
 	otherwise:
-		say "Your low dexterity causes you to have to repeatedly pull down on the hook, fucking your [asshole] raw. After you finally get it out, the ass hook shoots up into the hole in the ceiling that the rope was connected to.";
-		now the soreness of asshole is 10;
-		now the noun is not penetrating asshole;
-		now the noun is unrevealed.
+		if H is grabbing the player:
+			say "Your low dexterity causes you to have to repeatedly pull down on the hook, flossing your crack raw.";
+			PainUp 2;
+			say "After you finally manage to release your [ShortDesc of K], the hook shoots up into the hole in the ceiling that the rope was connected to.";
+			BodyRuin 3;
+		otherwise:
+			say "Your low dexterity causes you to have to repeatedly pull down on the hook, fucking your [asshole] raw. After you finally get it out, the ass hook shoots up into the hole in the ceiling that the rope was connected to.";
+			now the soreness of asshole is 10;
+		dislodge H;
+		now H is unrevealed.
 
 Hook fucking is an action applying to one touchable thing.
 
@@ -176,15 +223,19 @@ REQUIRES COMMENTING
 
 +!]
 Carry out hook fucking:
-	now seconds is 3;
+	allocate 3 seconds;
 	ruin asshole;
 	if the bimbo of the player < 13:
-		say "You're pulling it the wrong way!  Ow!";
+		say "You're pulling it the wrong way! Ow!";
 	otherwise:
 		say "You repeatedly pull up on the hook, fucking your [asshole] raw.";
-		ruin asshole.
+		ruin asshole;
+	repeat with M running through reactive monsters:
+		say AssHookFuckTrapReactFlav of M.
 Understand "pull up on [something]", "pull [something] up" as hook fucking.
 
+To say AssHookFuckTrapReactFlav of (M - a monster):
+	say LewdTrapReactFlav of M.
 
 [!<JumpFromTheHook>+
 
@@ -192,9 +243,43 @@ REQUIRES COMMENTING
 
 +!]
 To Jump From The Hook:
-	say "You jump up as much as you can while on tip toes, which isn't much, hoping you can get off the hook this way. But the rope just pulls up as you jump, and now you are even more on tiptoes as before as the rope refuses to return to its original amount of slack!  This is putting even more of your weight on the hook in your [asshole]!  Maybe try [bold type]pull[roman type]ing it instead?";
-	now seconds is 6;
-	ruin asshole.	
+	allocate 6 seconds;
+	compute upright fatigue gain;
+	if the player is anally hook stuck:
+		say "You jump up as much as you can while on tip toes, which isn't much, hoping you can get off the hook this way. But the rope just pulls up as you jump, and now you are even more on tiptoes as before as the rope refuses to return to its original amount of slack! This is putting even more of your weight on the hook in your [asshole]! Maybe try [bold type]pull[roman type]ing it instead?";
+		ruin asshole;
+		repeat with M running through reactive monsters:
+			say AssHookFuckTrapReactFlav of M;
+	otherwise:
+		let H be a random ass hook grabbing the player;
+		let K be the wedgie-target of H;
+		say "Grimacing, you jump into the air and then allow yourself to sail back down. Your [K] instantly rips in two, before falling to the ground, ruined.";
+		destroy K;
+		say "It didn't hurt too much more than before, but it's left a red mark.";
+		BodyRuin 1;
+		now H is unrevealed;
+		dislodge H;
+		if playerRegion is school:
+			destroy H;
+			repeat with M running through unfriendly students in the location of the player:
+				FavourDown M;
+				now M is interested.
+
+A time based rule (this is the ass hook wedgie pain rule):
+	let H be a random ass hook grabbing the player;
+	if H is ass hook:
+		say "The pressure of the wedgie on your ass crack is causing you significant pain!";
+		PainUp 1;
+		if playerRegion is school and the number of students in the location of the player is 0:
+			let M be a random alive amicable student;
+			if M is nothing, now M is a random alive staff member;
+			now M is in the location of the player;
+			now M is interested;
+			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is student]Please don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
+			now H is unrevealed;
+			dislodge H;
+			destroy H;
+			distract M.
 
 
 Ass Hook Trap ends here.

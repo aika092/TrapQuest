@@ -1,11 +1,6 @@
 Region Building by Rooms begins here.
 
 
-Include Region Building Dungeon by Rooms.
-Include Region Building Woods by Rooms.
-Include Region Building Hotel by Rooms.
-Include Region Building Mansion by Rooms.
-Include Region Building School by Rooms.
 
 
 [!<targetFloor:Room>*
@@ -166,51 +161,65 @@ To solve the puzzle:
 	repeat with R running through puzzle piece rooms:
 		make all directions possible for R;
 	let only-singles-left be 0;
+	let puzzleAttempts be 0;
 	while Terra Incognita is open:
 		let P be a random solvable room;
 		if P is nothing and only-singles-left is 0:
-			if debugmode is 1, say "[bold type][line break]ONLY SINGLES LEFT.[roman type][line break]";
+			if debugmode > 0, say "[bold type][line break]ONLY SINGLES LEFT.[roman type][line break]";
 			now only-singles-left is 1;
 			repeat with R running through puzzle piece rooms:
 				make all directions possible for R;
 			now P is a random solvable room;
-		if debugmode is 1, say "P is [P]. ";
+		if debugmode > 0, say "P is [P]. ";
 		if P is room:
 			now target-puzzle-piece is P;
 			now chosen-puzzle-direction is a random empty puzzle socket direction;
-			if debugmode is 1, say "Direction is [chosen-puzzle-direction]. ";
-			if chosen-puzzle-direction is the final one and only-singles-left is 0, now closing-forbidden is 1;
+			if debugmode > 0, say "Direction is [chosen-puzzle-direction]. ";
+			if chosen-puzzle-direction is the-final-one and only-singles-left is 0, now closing-forbidden is 1;
 			otherwise now closing-forbidden is 0;
-			if debugmode is 1, say "Closing is [if closing-forbidden is 0]not [end if]forbidden.";
+			if debugmode > 0, say "Closing is [if closing-forbidden is 0]not [end if]forbidden.";
 			let the current position be the grid position of target-puzzle-piece;
 			now Door Finder is the vector sum of the current position and the vector of chosen-puzzle-direction;
 			let chosen-puzzle-room be a random fully ready room;
 			if chosen-puzzle-room is nothing:
-				if debugmode is 1, say "No fully ready room found.";
+				if debugmode > 0, say "No fully ready room found.";
 				now chosen-puzzle-room is a random mostly ready room;
 				if chosen-puzzle-room is nothing:
-					if debugmode is 1, say "No mostly ready room found.";
+					if debugmode > 0, say "No mostly ready room found.";
 					flag chosen-puzzle-direction as impossible;
 			if chosen-puzzle-room is a room:
 				if Door Finder is an empty position:
-					if debugmode is 1, say "[bold type][chosen-puzzle-room] chosen to be [chosen-puzzle-direction] of [target-puzzle-piece] with coordinates [Door Finder].[roman type][line break]";
+					if debugmode > 0, say "[bold type][chosen-puzzle-room] chosen to be [chosen-puzzle-direction] of [target-puzzle-piece] with coordinates [Door Finder].[roman type][line break]";
 					position chosen-puzzle-room at Door Finder;
 				otherwise:
 					[This means there is a room already there, it's just that this room isn't connected to it.]
 					flag chosen-puzzle-direction as impossible;
 		otherwise:
 			[We either have finished or need to reset]
-			if debugmode is 1, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
+			if debugmode > 0, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
 			if there are unplaced puzzle piece mandatory rooms:
+				increase puzzleAttempts by 1;
 				flip the table around target-floor; [Reset all the rooms, we need to start again!]
 				now only-singles-left is 0;
-				[now debugmode is 1;]
+				if puzzleAttempts >= 20:
+					now debugmode is 1;
+					if puzzleAttempts > 20:
+						say "Alert! The game has encountered a game-breaking bug, it can't find a solution for the map puzzle to this region! Please report this bug to the devs with the transcript above of the game trying to build this region.";
+						say "If you are a developer or tester or just curious, you can keep trying to build the map. Would you like to try to rebuild the map?";
+						unless the player is consenting:
+							say "The game will now abandon trying to build this region. Return from whence you came; do not try to progress through it.";
+							now Terra Incognita is closed;
+							if the player is not a top donator, now debugmode is 0;
 			otherwise:
+				if debugmode is 2:
+					say "Region successfully built.";
+					if the player is consenting, do nothing;
+				if the player is not a top donator, now debugmode is 0;
 				now Terra Incognita is closed.
 
 [!<FlipTheTableAroundRoom>+
 
-REQUIRES COMMENTING
+Reshuffle the pieces to allow us to start again.
 
 +!]
 To flip the table around (X - a room):
@@ -260,7 +269,7 @@ REQUIRES COMMENTING
 	change the east exit of Mansion12 to Solid Rock;
 	change the east exit of Mansion22 to Solid Rock;
 	change the west exit of Mansion22 to Solid Rock.]
-	
+
 
 [
 THE PLAN:
@@ -359,8 +368,7 @@ To make all directions possible for (R - a room):
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is empty puzzle socket:
-	decide no.
+Definition: a direction is empty puzzle socket: decide no.
 
 [!<WestIsEmptyPuzzleSocket>+
 
@@ -408,7 +416,7 @@ Definition: south (called D) is empty puzzle socket:
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is the final one:
+Definition: a direction (called D) is the-final-one:
 	let N be Neighbour Finder;
 	repeat with R running through placed puzzle piece rooms:
 		now Neighbour Finder is R;
@@ -462,8 +470,7 @@ Definition: a room (called R) is fully ready:
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is solvable puzzle socket:
-	decide no.
+Definition: a direction is solvable puzzle socket: decide no.
 
 [!<WestIsSolvablePuzzleSocket>+
 
@@ -515,8 +522,7 @@ Definition: south (called D) is solvable puzzle socket:
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called D) is fully solvable puzzle socket:
-	decide no.
+Definition: a direction is fully solvable puzzle socket: decide no.
 
 [!<WestIsFullySolvablePuzzleSocket>+
 

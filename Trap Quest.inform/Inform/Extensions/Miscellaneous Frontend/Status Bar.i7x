@@ -7,8 +7,10 @@ REQUIRES COMMENTING
 
 +!]
 Rule for constructing the status line:
-	if the player is not in Capsule and the player is not in Start:
-		if debugmode > 0:
+	if the player is virtual or the player is in an introductory room:
+		if choice in row 19 of Table of Settings is 2:
+			fill status bar with Table of Minimal Status;
+		otherwise if debuginfo > 0:
 			fill status bar with Table of Debug Low Res Status;
 		otherwise:
 			if choice in row 19 of Table of Settings is 1 or diaper quest is 1, fill status bar with Table of Low Res Status;
@@ -16,15 +18,10 @@ Rule for constructing the status line:
 	otherwise:
 		fill status bar with Table of Empty Status;
 	rule succeeds.
-	
+
 Part - Normal Status Bars
 
 
-[!<tableOfHighResStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of High Res Status
 left	central	right
 "[TitleBimbo]"	""	""
@@ -32,11 +29,6 @@ left	central	right
 "[HighResBarThirdRow]"	"[HighResBarFourthRow]"	""
 
 
-[!<tableOfLowResStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Low Res Status
 left	central	right
 "[TitleBimbo]"	""	""
@@ -47,11 +39,23 @@ left	central	right
 "[LowResStatus]"	""	""
 "[LowResCombat]"	""	""
 
+
+Table of Minimal Status
+left	central	right
+"[TitleBimbo]    [TQDQ Appearance]"	""	""
+"[MinimalBarSecondRow]"	""	""
+
+To say TQDQ Appearance:
+	say "APPEARANCE: [if diaper quest is 1 and the saved cringe appearance of the player >= the saved appearance of the player][VagueCringeHumiliation] [VagueCringeAppearance][otherwise][VagueHumiliation] [VagueAppearance][end if]".
+
 To say MainStatsBar:
 	say "STR: [VagueStrength] DEX: [VagueDex] INT: [VagueInt]".
 
 To say HighResBarSecondRow:
-	say "STATUS: [VagueInternalFeeling]   APPEARANCE: [VagueHumiliation] [VagueAppearance]  [VagueDignity]   SLAP: [slap damage of the player - combat bonus remainder] KNEE: [knee damage of the player - combat bonus remainder] KICK: [kick damage of the player - combat bonus remainder][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if]".
+	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance]  [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+
+To say MinimalBarSecondRow:
+	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 To say HighResBarThirdRow:
 	say "[if diaper quest is 0]TITS: [VagueBreast] BELLY: [VagueBelly][otherwise]STOMACH: [VagueStomach][end if] [if diaper quest is 1 and there is a worn diaper]DIAPER: [VagueDiaper][otherwise if diaper quest is 1 and there is a worn knickers]UNDIES: [VagueDiaper][otherwise if diaper quest is 0]HIPS: [VagueHips][end if]".
@@ -66,7 +70,7 @@ To say LowResBarPotty:
 	say "STOMACH: [VagueStomach] [if there is a worn diaper]DIAPER: [VagueDiaper][otherwise if there is a worn knickers]UNDIES: [VagueDiaper][end if]".
 
 To say LowResBarAppearance:
-	say "APPEARANCE: [if diaper quest is 1 and the cringe appearance of the player >= the appearance of the player][VagueCringeHumiliation] [VagueCringeAppearance][otherwise][VagueHumiliation] [VagueAppearance][end if]  [VagueDignity]".
+	say "[TQDQ Appearance]  [VagueDignity]".
 
 To say LowResAddictions:
 	say "[if diaper quest is 1]DIAPER ATTITUDE: [VagueDiaperAddiction][otherwise]SEXUALITY: [VagueAddiction][end if]  PERSONALITY: [VagueDelicateness]".
@@ -75,36 +79,41 @@ To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
 
 To say LowResCombat:
-	say "SLAP POWER: [slap damage of the player - combat bonus remainder] KNEE POWER: [knee damage of the player - combat bonus remainder] KICK POWER: [kick damage of the player - combat bonus remainder][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if]".
+	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 
 
 Part - Debug Res Status Bars
 
 
-[!<tableOfDebugHighResStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Debug High Res Status
 left	central	right
 "[TitleBimbo]"	""	""
-"STR: [flat strength of the player]/30 DEX: [flat dexterity of the player]/30 INT: [flat intelligence of the player]/30"	"STATUS: [VagueInternalFeeling]   APPEARANCE: [appearance of the player]/20 DIGNITY: [humiliation of the player]/40000"	""
+"STR: [saved-flat-strength]/30 DEX: [saved-flat-dexterity]/30 INT: [saved-flat-intelligence]/30"	"STATUS: [VagueInternalFeeling]   APPEARANCE: [saved appearance of the player]/20 DIGNITY: [humiliation of the player]/40000"	""
 "TITS: [largeness of breasts]/[max breast size] BELLY: [largeness of belly]/[max belly size] HIPS: [thickness of hips]/[max ass size]"	"HEALTH: [VagueExternalFeeling]   SEX ADDICTION: [sex addiction of the player]/20   DELICATENESS: [delicateness of the player]/20"	""
 
-[!<tableOfDebugLowResStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Debug Low Res Status
 left	central	right
 "[TitleBimbo]"	""	""
-"STR:[flat strength of the player]/30 DEX:[flat dexterity of the player]/30 INT:[flat intelligence of the player]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
-"APPEARANCE:[appearance of the player]/20 [if appearance-outrage-level > 5](caused by [MediumDesc of appearance-outrage-target] [bracket][appearance-outrage-level][close bracket]) [end if] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
-"FATIGUE:[fatigue of the player] HEALTH:[body soreness of the player]/10 ASSHOLE:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player]"	""	""
-"STATUS: [VagueInternalFeeling] SLAP DICE: 2d[slap damage of the player - combat bonus remainder] KNEE DICE: 2d[knee damage of the player - combat bonus remainder] KICK DICE: 2d[kick damage of the player - combat bonus remainder]"	""	""
+"STR:[saved-flat-strength]/30 DEX:[saved-flat-dexterity]/30 INT:[saved-flat-intelligence]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
+"[DebugLowResAppearance] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
+"FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the magic-power of the player > 0] MAGIC:[magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]"	""	""
+"STATUS: [VagueInternalFeeling] SLAP DICE: 2d[saved-printed-slap-damage] KNEE DICE: 2d[saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK DICE: 2d[saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks]"	""	""
+
+To say caused by (N - a number):
+	if N > 4, say "caused by";
+	otherwise say "with".
+
+To say DebugLowResAppearance:
+	if diaper quest is 1 and the saved cringe appearance of the player >= the saved appearance of the player, say "BABY APPEARANCE:[saved cringe appearance of the player]/20 [if calculated-cringe-level > 2]([caused by calculated-cringe-level] [MediumAppearanceDesc of appearance-cringe-target] [bracket][calculated-cringe-level][close bracket]) [end if]";
+	otherwise say "APPEARANCE:[saved appearance of the player]/20 [if calculated-appearance-outrage-level > 2]([caused by calculated-appearance-outrage-level] [MediumAppearanceDesc of appearance-outrage-target] [bracket][calculated-appearance-outrage-level][close bracket]) [end if]";
+
+To say ZapAttacks:
+	repeat with Z running through held zappable things:
+		let T be the substituted form of "[ShortDesc of Z]";
+		now currentZapper is Z;
+		say " [T in upper case]: [zap damage of the player]";
+
 
 Part - Rose
 
@@ -131,27 +140,12 @@ To say (way - a direction) abbreviation:
 	If way is inside, say " IN";
 	If way is outside, say "OUT";
 
-[!<SayTopRose>+
-
-REQUIRES COMMENTING
-
-+!]
 To say top rose:
 	say "[rose up][rose north][rose outside]".
 
-[!<SayMiddleRose>+
-
-REQUIRES COMMENTING
-
-+!]
 To say middle rose:
 	say "[if up is viable] [end if][rose west] + [rose east]";
 
-[!<SayBottomRose>+
-
-REQUIRES COMMENTING
-
-+!]
 To say bottom rose:
 	say "[if up is viable] [end if][rose down][rose south][rose inside]".
 
@@ -163,17 +157,17 @@ REQUIRES COMMENTING
 
 +!]
 To say VagueStrength:
-	if the flat strength of the player < 5:
+	if saved-flat-strength < 5:
 		say "Weakling  ";
-	otherwise if the flat strength of the player < 10:
+	otherwise if saved-flat-strength < 10:
 		say "Womanly   ";
-	otherwise if the flat strength of the player < 15:
+	otherwise if saved-flat-strength < 15:
 		say "Manly     ";
-	otherwise if the flat strength of the player < 20:
+	otherwise if saved-flat-strength < 20:
 		say "Well Built";
-	otherwise if the flat strength of the player < 25:
+	otherwise if saved-flat-strength < 25:
 		say "Powerhouse";
-	otherwise if the flat strength of the player < 30:
+	otherwise if saved-flat-strength < 30:
 		say "Superhuman";
 	otherwise:
 		if the bimbo of the player < 14:
@@ -187,17 +181,17 @@ REQUIRES COMMENTING
 
 +!]
 To say VagueDex:
-	if the flat dexterity of the player < 5:
+	if saved-flat-dexterity < 5:
 		say "Stiff     ";
-	otherwise if the flat dexterity of the player < 10:
+	otherwise if saved-flat-dexterity < 10:
 		say "Sluggish  ";
-	otherwise if the flat dexterity of the player < 15:
+	otherwise if saved-flat-dexterity < 15:
 		say "Limber    ";
-	otherwise if the flat dexterity of the player < 20:
+	otherwise if saved-flat-dexterity < 20:
 		say "Flexible  ";
-	otherwise if the flat dexterity of the player < 25:
+	otherwise if saved-flat-dexterity < 25:
 		say "Acrobat   ";
-	otherwise if the flat dexterity of the player < 30:
+	otherwise if saved-flat-dexterity < 30:
 		say "Superhuman";
 	otherwise:
 		say "Samus Aran".
@@ -212,21 +206,21 @@ To say VagueInt:
 		say "Braindead ";
 	otherwise if the soreness of asshole is 10 or the soreness of vagina is 10 or the player is very horny:
 		say "Distracted";
-	otherwise if the flat intelligence of the player < 4:
+	otherwise if saved-flat-intelligence < 4:
 		say "Air-headed ";
-	otherwise if the flat intelligence of the player < 7:
+	otherwise if saved-flat-intelligence < 7:
 		say "Dumb[if diaper quest is 0] Broad[end if]";
-	otherwise if the flat intelligence of the player < 10:
+	otherwise if saved-flat-intelligence < 10:
 		say "Average   ";
-	otherwise if the flat intelligence of the player < 13:
+	otherwise if saved-flat-intelligence < 13:
 		say "Pensive   ";
-	otherwise if the flat intelligence of the player < 16:
+	otherwise if saved-flat-intelligence < 16:
 		say "Geeky     ";
-	otherwise if the flat intelligence of the player < 20:
+	otherwise if saved-flat-intelligence < 20:
 		say "Brainy    ";
-	otherwise if the flat intelligence of the player < 24:
+	otherwise if saved-flat-intelligence < 24:
 		say "Genius    ";
-	otherwise if the flat intelligence of the player < 29:
+	otherwise if saved-flat-intelligence < 29:
 		say "Sage      ";
 	otherwise:
 		say "Deep Thought".
@@ -276,7 +270,7 @@ REQUIRES COMMENTING
 
 +!]
 To say VagueHumiliation:
-	let B be the appearance of the player;
+	let B be the saved appearance of the player;
 	if the player-class is not succubus:
 		if the humiliation of the player < HUMILIATION-PROUD:
 			say "[if B > 9]Mortified[otherwise if B > 5]Embarrassed[otherwise if B > 1]Uncomfortable[otherwise]Smug[end if]";
@@ -310,40 +304,39 @@ REQUIRES COMMENTING
 
 +!]
 To say VagueAppearance:
-	let B be the appearance of the player;
+	let B be the saved appearance of the player;
 	if the class of the player is succubus:
 		say "Succubus";
-	otherwise if B < 3:
-		say "[if the player is male and the largeness of breasts < 4 and the thickness of hips < 4]Man[otherwise if the player is male and the largeness of breasts < 4]Trap[otherwise]Woman[end if]";
-	otherwise if B < 12 and B > 4 and the semen coating of face + the semen coating of breasts > 0:
+	otherwise if B <= 3:
+		say "[if the player is presenting as male]Man[otherwise if the player is male and the largeness of breasts < 3]Trap[otherwise]Woman[end if]";
+	otherwise if B < 12 and B > 4 and (there is glazed lewdly exposed body part or breasts is glazed showing cleavage body part):
 		say "Cumslut";
 	otherwise if the player is naked and B < 10:
 		say "Nudist";
-	otherwise if B < 6 and the player is male and the largeness of breasts < 4 and the thickness of hips < 4 and (the number of worn nudism-disabling clothing - the number of worn nudism-disabling manly clothing > 0) and the bimbo of the player < 8:
+	otherwise if B < 6 and the player is presenting as male and (the number of worn nudism-disabling clothing - the number of worn nudism-disabling manly clothing > 0) and the bimbo of the player < 8:
 		say "Crossdresser";
-	otherwise if B < 9 and the player is male and the largeness of breasts < 4 and the bimbo of the player < 8:
-		say "Trap";
-	otherwise if B is 3:
-		say "Girl";
 	otherwise if B is 4:
 		say "Cutie";
 	otherwise if B is 5:
-		say "Honey";
-	otherwise if B < 8:
+		say "Babe";
+	otherwise if B is 6:
+		say "Flirt";
+	otherwise if B < 9:
+		say "Floozy";
+	otherwise if B < 11:
 		say "Slut";
-	otherwise if B < 10:
+	otherwise if B < 13:
 		say "Bimbo";
-	otherwise if B < 12:
-		say "Nympho";
-	otherwise if B < 14:
+	otherwise if B < 15:
 		say "Pornstar";
-	otherwise if B < 16:
+	otherwise if B < 17:
 		say "Whore";
 	otherwise:
-		say "Cumdump";
-	let O be appearance-outrage-level;
-	if B > 5 and O > 5:
-		say " (caused by [MediumDesc of appearance-outrage-target][if debugmode > 0] [bracket][O][close bracket][end if])".
+		say "[if there is glazed lewdly exposed body part or breasts is glazed showing cleavage body part]Cumdump[otherwise]Fuckdoll[end if]";
+	let O be calculated-appearance-outrage-level;
+	say "[if debuginfo > 0] [bracket][B + 0]/20[close bracket][end if] ";
+	if B > 2 and O > 2:
+		say "([caused by B] [MediumAppearanceDesc of appearance-outrage-target][if debuginfo > 0] [bracket][O]/20[close bracket][end if])".
 
 [!<SayVagueCringeHumiliation>+
 
@@ -351,16 +344,16 @@ REQUIRES COMMENTING
 
 +!]
 To say VagueCringeHumiliation:
-	let B be the cringe appearance of the player;
-	if the humiliation of the player < HUMILIATION-PROUD:
+	let B be the saved cringe appearance of the player;
+	if the player is proud:
 		say "[if B > 9]Mortified[otherwise if B > 5]Embarrassed[otherwise if B > 1]Uncomfortable[otherwise]Proud[end if]";
-	otherwise if the humiliation of the player < HUMILIATION-MODEST:
+	otherwise if the player is modest:
 		say "[if B > 12]Mortified[otherwise if B > 8]Embarrassed[otherwise if B > 5]Uncomfortable[otherwise if B > 2]Bold[otherwise]Dignified[end if]";
-	otherwise if the humiliation of the player < HUMILIATION-DISGRACED:
+	otherwise if player is not disgraced:
 		say "[if B > 8]Embarrassed[otherwise if B > 6]Uncomfortable[otherwise if B > 2]Cheeky[otherwise]Bored[end if]";
-	otherwise if the humiliation of the player < HUMILIATION-SHAMELESS:
+	otherwise if player is not shameless:
 		say "[if B > 8]Disgraced[otherwise if B > 4]Naughty[otherwise]Bored[end if]";
-	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
+	otherwise if the player is not broken:
 		say "[if B > 10]Shameless[otherwise]Bored[end if]";
 	otherwise:
 		say "Completely Content".
@@ -371,23 +364,19 @@ REQUIRES COMMENTING
 
 +!]
 To say VagueCringeAppearance:
-	let B be the cringe appearance of the player;
-	if B < 3:
-		say "[if the player is male and the largeness of breasts < 4 and the thickness of hips < 4]Man[otherwise if the player is male and the largeness of breasts < 4]Trap[otherwise]Woman[end if]";
+	let B be the saved cringe appearance of the player;
+	if B <= 3:
+		say "[if the player is presenting as male]Man[otherwise if the player is male and the largeness of breasts < 3]Trap[otherwise]Woman[end if]";
 	otherwise if the player is naked and B < 10:
 		say "Nudist";
-	otherwise if B < 6 and the player is male and the largeness of breasts < 4 and the thickness of hips < 4 and (the number of worn clothing - the number of worn manly clothing > 0) and the diaper addiction of the player < 3:
+	otherwise if B < 6 and the player is presenting as male and (the number of worn clothing - the number of worn manly clothing > 0) and the diaper addiction of the player < 3:
 		say "Crossdresser";
-	otherwise if B < 6 and the player is male and the largeness of breasts < 4 and the diaper addiction of the player < 3:
-		say "Trap";
-	otherwise if B is 3:
-		say "Honey";
 	otherwise if B is 4:
 		say "Cutie";
 	otherwise if B is 5:
-		say "Girl";
+		say "[if the player is presenting as male]Boy[otherwise]Girl[end if]";
 	otherwise if B < 8:
-		say "Babygirl";
+		say "Baby[if the player is presenting as male]boy[otherwise]girl[end if]";
 	otherwise if B < 10:
 		say "Adult Baby";
 	otherwise if B < 12:
@@ -398,8 +387,9 @@ To say VagueCringeAppearance:
 		say "Baby";
 	otherwise:
 		say "Booboo";
-	if B > 5 and appearance-cringe-level > 5:
-		say " (caused by [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumDesc of cringe-target][end if][if debugmode > 0] [bracket][appearance-cringe-level][close bracket][end if])".
+	say "[if debuginfo > 0] [bracket][B + 0]/20[close bracket][end if] ";
+	if B > 2 and appearance-cringe-level > 2:
+		say "([caused by B] [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumAppearanceDesc of cringe-target][end if][if debuginfo > 0] [bracket][appearance-cringe-level]/20[close bracket][end if])".
 
 [!<SayVagueAddiction>+
 
@@ -482,7 +472,7 @@ To say VagueDelicateness:
 
 REQUIRES COMMENTING
 
-+!]		
++!]
 To say VagueBreast:
 	if the largeness of breasts < 3:
 		say "Flat     ";
@@ -542,14 +532,14 @@ REQUIRES COMMENTING
 +!]
 To say VagueDiaper:
 	let D be a random worn knickers;
-	if D is messed, say "Messy[if the total-soak of D > 0] & [end if]";
-	if the total-soak of D >= the soak-limit of D:
+	if D is perceived messed, say "Messy[if the total-soak of D > 0] & [end if]";
+	if the known-total-soak of D >= the soak-limit of D:
 		say "[if D is diaper]Full[otherwise]Saturated[end if]";
-	otherwise if the total-soak of D >= the soak-limit of D / 2:
+	otherwise if the known-total-soak of D >= the soak-limit of D / 2:
 		say "[if D is diaper]Half-Full[otherwise]Soaked[end if]";
-	otherwise if the total-soak of D > 0:
+	otherwise if the known-total-soak of D > 0:
 		say "[if D is diaper]Used[otherwise]Wet[end if]";
-	otherwise if D is not messed:
+	otherwise if D is not perceived messed:
 		say "[if D is diaper]Clean[otherwise]Dry[end if]".
 
 [!<SayVagueInternalFeeling>+
@@ -568,7 +558,7 @@ REQUIRES COMMENTING
 To say VagueExternalFeeling:
 	say "[VagueSoreness]".
 
-	
+
 [!<DecideWhichNumberIsTheOrificeSorenessOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -602,7 +592,7 @@ To say VagueSoreness:
 			say "Sore";
 		now fine is 0;
 	if the body soreness of the player > 2:
-		if fine is 0, say " & ";	
+		if fine is 0, say " & ";
 		if the body soreness of the player > 9 and the player is prone:
 			say "Defeated";
 		otherwise if the body soreness of the player > 6:
@@ -611,10 +601,10 @@ To say VagueSoreness:
 			say "Weakened";
 		otherwise:
 			say "Bruised";
-		now fine is 0;	
+		now fine is 0;
 	if diaper quest is 0:
 		if the player is thirsty:
-			if fine is 0, say " & ";	
+			if fine is 0, say " & ";
 			if the thirst of the player is 5:
 				say "Extremely ";
 			otherwise if the thirst of the player is 4:
@@ -682,8 +672,17 @@ REQUIRES COMMENTING
 +!]
 To say VagueInternals:
 	let fine be 1;
-	if the player is breasts blinded:
+	let A be alcohol-level;
+	if the player is blinded:
 		say "Blinded";
+		now fine is 0;
+	if A > 0:
+		if fine is 0, say " & ";
+		say "[if A is 1]Buzzed[otherwise if A is 2]Tipsy[otherwise if A is 3]Drunk[otherwise if A is 4]Very Drunk[otherwise]Extremely Drunk[end if]";
+		now fine is 0;
+	if hungover > 0:
+		if fine is 0, say " & ";
+		say "Hungover";
 		now fine is 0;
 	if the player is grossed out:
 		if fine is 0, say " & ";
@@ -707,9 +706,10 @@ To say VagueInternals:
 		now fine is 0;
 	if the player is bursting:
 		if fine is 0, say " & ";
-		if the bladder of the player > 13:
+		let B be bladder-bursting-level;
+		if B >= 2 or the player is fake bursting:
 			say "Desperate ";
-		otherwise if the bladder of the player > 9:
+		otherwise if B >= 0:
 			say "Bursting ";
 		otherwise:
 			say "Need ";
@@ -726,12 +726,19 @@ To say VagueInternals:
 		otherwise:
 			say "Aroused";
 		now fine is 0;
-	if the player is craving:
+	if the player is craving semen:
 		if fine is 0, say " & ";
-		if the player is desperately craving:
+		if the player is desperately craving semen:
 			say "Desperately ";
-		if the player is craving:
-			say "Craving [if the class of the player is santa's little helper]A Festive Drink[otherwise]Cum[end if]";
+		if the player is craving semen:
+			say "Craving [if the player is craving milk]Milk And [end if][if the class of the player is santa's little helper]A Festive Drink[otherwise]Cum[end if]";
+			now fine is 0;
+	otherwise if the player is craving milk:
+		if fine is 0, say " & ";
+		if the player is desperately craving milk:
+			say "Very ";
+		if the player is craving milk:
+			say "Cranky";
 			now fine is 0;
 	if player-immobile is 1:
 		if fine is 0, say " & ";
@@ -763,7 +770,7 @@ Rule for constructing the status line while displaying:
 		fill status bar with Table of Game Settings Status;
 	otherwise if the current menu is the Table of Gender Options:
 		fill status bar with Table of Gender Options Status;
-	otherwise if the current menu is the Table of Male Name Options or the current menu is the Table of Female Name Options:
+	otherwise if the current menu is the Table of Male Name Options or the current menu is the Table of Female Name Options or the current menu is the Table of Male Name Diaper Quest Options or the current menu is the Table of Female Name Diaper Quest Options:
 		fill status bar with Table of Name Options Status;
 	otherwise if the current menu is the Table of Benefit Options or the current menu is the Table of Diaper Quest Benefit Options or the current menu is the Table of Secret Options or the current menu is the Table of Background Options:
 		fill status bar with Table of Benefit Options Status;
@@ -771,20 +778,20 @@ Rule for constructing the status line while displaying:
 		fill status bar with table of diaper choice status;
 	otherwise if the current menu is the table of toilet allowance options:
 		fill status bar with table of toilet allowance status;
-	otherwise if the current menu is the table of panty messing options:
-		fill status bar with table of panty messing status;
 	otherwise if the current menu is the table of diaper focus options:
 		fill status bar with table of diaper focus status;
 	otherwise if the current menu is the table of pregnancy options:
 		fill status bar with table of pregnancy choice status;
-	otherwise if the current menu is the table of slow pregnancy options:
+	otherwise if the current menu is the table of slow pregnancy options or the current menu is the table of slow birth options:
 		fill status bar with table of slow pregnancy status;
+	otherwise if the current menu is the table of random settings:
+		fill status bar with table of random settings status;
 	otherwise if the current menu is the table of tg options:
 		fill status bar with table of tg status;
 	otherwise:
 		if the endnode flag is 0,
 			fill status bar with Table of Deep Menu Status;
-		otherwise fill status bar with Table of Shallow Menu Status; 
+		otherwise fill status bar with Table of Shallow Menu Status;
 	rule succeeds.
 
 [!<tableOfGameSettingsStatus:Table>*
@@ -907,16 +914,17 @@ left	central	right
 ""	"Enable the player to pull the diaper to one side when in a room with a toilet?"	""
 ""	""	""
 
-[!<tableOfPantyMessingStatus>*
+[!<tableOfRandomSettingsStatus:Table>*
 
 REQUIRES COMMENTING
 
 *!]
-Table of Panty Messing Status
+Table of Random Settings Status
 left	central	right
 ""	""	""
-""	"Risk accidental messing in some normal underwear?"	""
+""	"Randomise Your Setup?"	""
 ""	""	""
+
 
 
 

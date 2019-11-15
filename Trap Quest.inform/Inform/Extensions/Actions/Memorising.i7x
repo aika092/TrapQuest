@@ -15,12 +15,12 @@ Check memorising:
 		say "How would you memorise that?" instead;
 	if the noun is memorised, say "You've already committed that to memory." instead;
 	if the player is in danger, say "You're a bit busy to do that, aren't you?" instead;
-	if the flat intelligence of the player < 4 + the number of memorised recipes, say "You're not smart enough to memorise that many recipes." instead.
+	if saved-flat-intelligence < 4 + the number of memorised recipes and the class of the player is not schoolgirl, say "You're not smart enough to memorise that many recipes." instead.
 Carry out memorising:
 	now the noun is memorised.
 Report memorising:
 	say "You study the words on the page and commit them to memory.";
-	now seconds is 6.
+	allocate 6 seconds.
 Understand "memorise [something]", "memorize [something]", "remember [something]", "learn [something]", "commit [something] to memory", "le [something]", "mem [something]", "re [something]", "rem [something]" as memorising.
 Does the player mean memorising a recipe:
 	it is very likely.
@@ -29,13 +29,17 @@ Does the player mean memorising a recipe:
 
 Recalling is an action applying to nothing.
 Check recalling:
-	if the number of memorised recipes is 0, say "You haven't committed anything to memory." instead.
+	if the number of memorised recipes + the number of castable magic-spells is 0, say "You haven't committed anything to memory." instead.
 
 Carry out recalling:
 	say "[bold type]MEMORISED RECIPES:[roman type][line break]";
 	repeat with R running through memorised recipes:
-		say "[printed name of R]: [description of R][line break]".
-Understand "recall recipes", "recipes", "memorised recipes", "known recipes" as recalling.
+		say "[printed name of R]: [ExamineDesc of R][line break]";
+	if there is a castable magic-spell:
+		say "[bold type]MEMORISED SPELLS:[roman type][line break]";
+		repeat with R running through castable magic-spells:
+			say "'[link]I [incantation of R][end link]': [MagicSpellEffect of R].[SpellOutrageousnessInfo of R][line break]".
+Understand "recall recipes", "recipes", "memorised recipes", "known recipes", "recall spells", "spells", "memorised spells", "known spells" as recalling.
 
 Memorising ends here.
 

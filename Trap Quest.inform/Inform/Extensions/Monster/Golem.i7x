@@ -1,66 +1,70 @@
 Golem by Monster begins here.
 
-A golem is a kind of monster. There is 1 golem. A golem is usually neuter. The poison-status of a golem is -1.
+golem is a monster. golem is neuter. golem is guarding. The poison-status of golem is -1.
 
-The description of golem is usually "[GolemDesc]". The text-shortcut of golem is "sg". The printed name of golem is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if artificial enhancements fetish is 1]silicone[otherwise]flesh[end if] golem[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "silicone", "flesh" as golem.
+The text-shortcut of golem is "gol". Understand "silicone", "flesh" as golem.
 
-To say GolemDesc:
-	say "[if artificial enhancements fetish is 1]This creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created it was most concerned with, as the face has only crude detail while the breasts and ass are rendered with as much perfection as can be managed in the medium. In spite of the lack of expression on the thing's face, it exudes a sense of malice.[otherwise]The product of some especially mad science, this appears to be some kind of Frankenstein's Bimbo pieced together from parts as mismatched as they are comically exaggerated. In spite of its vapid expression, you can somehow sense an air of malice about it.[end if]".
+Figure of Golem is the file "NPCs/MultiFloor/golem1.jpg".
 
-To set up (M - a golem):
+To decide which figure-name is the monster-image of (M - golem):
+	decide on Figure of Golem.
+
+To say ShortDesc of (M - golem):
+	say "golem".
+
+To say MediumDesc of (M - golem):
+	say "[if artificial enhancements fetish is 1]silicone[otherwise]flesh[end if] golem".
+
+To say MonsterDesc of (M - golem):
+	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created it was most concerned with, as the face has only crude detail while the breasts and ass are rendered with as much perfection as can be managed in the medium. In spite of the lack of expression on the thing's face, it exudes a sense of malice.".
+
+To set up (M - golem):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 7;
-	now the health of M is the maxhealth of M;
-	now M is captive.
+	now M is guarding;
+	now the health of M is the maxhealth of M.
 
-To compute motion of (M - a golem):
-	if M is released:
+To compute monstermotion of (M - golem):
+	if M is unleashed:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
 		if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
 			try M going A;
 		otherwise if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
 			try M going A;
-		MonsterStomp M.	
+		MonsterStomp M.
 
-To compute (M - a monster) stomping (N - a golem):
-	say "The [M] grabs the [N], but the golem seems happier for it! [if artificial enhancements fetish is 1]Its body engulfs the [M], and his muscles bulge out with new definition and power![otherwise]Its body dissolves into a mass of ones and zeroes, which are absorbed into the [M]'s skin. He grunts as his muscles suddenly bulge out with even more definition and power![end if]";
+To compute (M - a monster) stomping (N - golem):
+	say "[BigNameDesc of M] grabs the [N], but the golem seems happier for it! [if artificial enhancements fetish is 1]Its body engulfs [NameDesc of M], and its muscles bulge out with new definition and power![otherwise]Its body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M]'s skin. It grunts as its muscles suddenly bulge out with even more definition and power![end if]";
 	DifficultyUp M by 6;
 	destroy N.
 
-Definition: a golem (called M) is objectifying the player:
-	decide yes.
+Definition: golem is objectifying the player: decide yes.
 
-To compute motion of (M - a golem):
-	if M is released:
-		now neighbour finder is the location of M;
-		let A be a random N-viable direction;
-		if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
-			try M going A;
-		otherwise if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
-			try M going A;
 
-To compute perception of (M - a golem):
+To compute perception of (M - golem):
 	now M is interested;
 	anger M;
-	say "The golem turns to face you almost mechanically and yet with unsettling grace. It seems to be blocking the path forward, you'll need to deal with it to move on.".
+	now M is unleashed;
+	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. It seems to be blocking the path forward, you'll need to deal with it to move on[or][stopping].".
 
-To compute (M - a monster) stomping (N - a golem):
-	if M is in the location of the player, say "The [M] holds the [N] with two powerful fists and pulls apart with impossible strength. The [N] splits into two!  The pieces fall to the ground and then disappear.";
+To compute (M - a monster) stomping (N - golem):
+	if M is in the location of the player, say "[BigNameDesc of M] holds the [N] with two powerful fists and pulls apart with impossible strength. The [N] splits into two! The pieces fall to the ground and then disappear.";
 	otherwise say "You hear a very loud ripping sound!";
 	destroy N.
 
-The unique punishment rule of a golem is usually the golem merging rule.
+The unique punishment rule of golem is usually the golem merging rule.
 This is the golem merging rule:
-	let M be a random golem;
 	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realize it isn't stopping as it moves towards you, and finally presses up against you! Its cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what it might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
 	if artificial enhancements fetish is 1:
-		let T be a random off-stage rubber top hat;
-		if the player is not top heavy:
+		if rubber top hat is off-stage and rubber top hat is actually summonable:
+			say "You're now wearing a small pink latex top hat!";
+			summon rubber top hat cursed;
+		otherwise if the player is not top heavy:
 			say "Your chest feels strange and you look down in horror to see your breasts have expanded. [if the silicone volume of breasts is 0]Apparently you have breast implants now![otherwise]Your breast implants are even bigger![end if]";
 			BustImplantsUp 4;
-		otherwise if the thickness of hips < max ass size:
+		otherwise if the flesh volume of hips + the silicone volume of hips < max ass size:
 			say "Your ass feels strange and you look down in horror to see it's expanded. [if the silicone volume of hips is 0]Apparently you have silicone implants in it now![otherwise]Your butt implants are even bigger than they used to be![end if]";
 			AssImplantsUp 4;
 		if the lips of face < 3:
@@ -70,40 +74,46 @@ This is the golem merging rule:
 		If the player is not top heavy:
 			say "Your chest feels suddenly heavier...";
 			Bustup 4;
-		if the total volume of hips < max ass size:
+		if the player is not bottom heavy:
 			say "Your ass feels suddenly heavier...";
-			FatAssUp 4;
+			HipUp 4;
 		say "Your muscles feel a bit stiff...";
-		Dexdown 2;	
-	destroy M;
+		Dexdown 2;
+	destroy golem;
 	rule succeeds.
-	
-To compute damage of (M - a golem):
+
+To compute damage of (M - golem):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The [M] barely seems to react but does take up what could be interpreted as a fighting stance.";
+			say "[BigNameDesc of M] barely seems to react but does take up what could be interpreted as a fighting stance.";
 			anger M;
 		otherwise:
-			if the health of M > the maxhealth of M / 2, say "The [M] seems completely unaffected by your attack!";
+			if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] seems completely unaffected by your attack!";
 			otherwise say "";
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a golem):
+To say DamageReaction (N - a number) of (M - golem):
 	if N > (the maxhealth of M / 4):
-		say "The [M] seems completely unaffected by your attack!";
+		say "[BigNameDesc of M] seems completely unaffected by your attack!";
 	otherwise:
-		say "[if artificial enhancements fetish is 1]The [M] seems to be leaking clear fluid from some tears in its body.[otherwise]The [M] seems to be starting to come apart at the seams.[end if]".
+		say "[if artificial enhancements fetish is 1][BigNameDesc of M] seems to be leaking clear fluid from some tears in its body.[otherwise][BigNameDesc of M] seems to be starting to come apart at the seams.[end if]".
 
-To say StrikingSuccessFlav of (M - a golem) on (B - a body part):
-	say "The [M] smacks you with a [if artificial enhancements fetish is 1]moist yet firm[otherwise]surprisingly strong[end if] fist!".
+To say StrikingSuccessFlav of (M - golem) on (B - a body part):
+	say "[BigNameDesc of M] smacks you with a [if artificial enhancements fetish is 1]moist yet firm[otherwise]surprisingly strong[end if] fist!".
 
-To say StrikingFailureFlav of (M - a golem) on (B - a body part):
-	say "The [M] swipes at you, but you manage to dodge it".
+To say StrikingFailureFlav of (M - golem) on (B - a body part):
+	say "[BigNameDesc of M] swipes at you, but you manage to dodge it.".
 
-To compute unique death of (M - a golem):
-	say "The [M] [if artificial enhancements fetish is 1]dissolves into clear fluid and evaporates away[otherwise]collapses into a pile of limbs, which is a bit gross, you must admit[end if].";
+To compute unique death of (M - golem):
+	say "[BigNameDesc of M] [if artificial enhancements fetish is 1]dissolves into clear fluid and evaporates away[otherwise]collapses into a pile of limbs, which is a bit gross, you must admit[end if].";
 	destroy M.
+
+To say MuteGreetResponse of (M - golem):
+	say "The mannequin doesn't reply. It would appear to be magically animated rather than sentient.".
+
+To say MuteQuestionResponse of (M - golem):
+	say "[SexDollExplanation of M]".
 
 
 Golem ends here.

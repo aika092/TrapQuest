@@ -99,6 +99,13 @@ REQUIRES COMMENTING
 *@]
 The player has a number called craftskill. The craftskill of the player is usually 0.
 
+[!<Player>@<floatSkill:Integer>
+
+REQUIRES COMMENTING
+
+*@]
+The player has a number called floatskill. The floatskill of the player is usually 0.
+
 [!<Player>@<wishSkill:Integer>
 
 REQUIRES COMMENTING
@@ -113,6 +120,10 @@ REQUIRES COMMENTING
 *@]
 The player has a number called fuckskill. The fuckskill of the player is usually 0.
 
+The player has a number called buttskill. The buttskill of the player is usually 0.
+
+The player has a number called divinationskill. The divinationskill of the player is usually 0.
+
 Part 1 - Mercy
 
 [!<TeachBeggingForMercy>+
@@ -124,18 +135,18 @@ To teach begging for mercy:
 	if the mercyskill of the player is 0:
 		if diaper quest is 1:
 			if the delicateness of the player > 3:
-				say "[bold type]**You have learned how to beg for mercy!  Sometimes you will automatically escape a spanking punishment by using diplomacy. Convincing power (make-up) makes this more likely!**[roman type]";
+				say "[bold type]**You have learned how to beg for mercy!  Sometimes you will automatically escape a spanking punishment by using diplomacy. Convincing power (make-up) makes this more likely!**[roman type][line break]";
 				now the mercyskill of the player is 1;
 			otherwise:
 				say "You are much too stubborn to admit defeat! If you were to suffer a few more painful moments, then maybe you'd pay more attention to this tip...";
 		otherwise:
 			if the analvirgin of the player is 0 or (the player is female and the virgin of the player is 0):
-				say "[bold type]**You have learned how to beg for mercy!**[roman type]";
+				say "[bold type]**You have learned how to beg for mercy!**[roman type][line break]";
 				now the mercyskill of the player is 1;
 			otherwise:
 				say "You have no plans to [if the player is not a nympho]get fucked, so don't feel that the advice is very useful. If you were to lose your virginity, then maybe you'd pay more attention to this tip...[otherwise]complain if someone is nice enough to fuck you, so you ignore the advice![end if]";
 	otherwise:
-		say "[bold type]You already know how to beg for mercy![roman type]".
+		say "[bold type]You already know how to beg for mercy![roman type][line break]".
 
 [!<TheMercySkillListRule>+
 
@@ -169,7 +180,7 @@ To teach deepthroating:
 			say "[bold type]**You have learned how to deepthroat!**[roman type][line break][if the oral sex addiction of the player < 5]As much as you don't ever want to be deep-throated, never mind be known as a particularly skilled throater, you have to admit to yourself that in this game it's probably sensible to know how! [end if]You will now be able to prevent yourself from puking up semen during blowjobs.";
 			now the throatskill of the player is 1;
 		otherwise:
-			say "You ignore this piece of advice, [if the sex addiction of the player < 13]you don't ever want to be deep-throated, never mind be known as a particularly skilled throater!  Maybe if you are ever forced to swallow some semen, then you might decide it's worth knowing how to do this.[otherwise]since you would much rather get fucked properly if the opportunity arises.[end if]";
+			say "You ignore this piece of advice, [if the sex addiction of the player < 13]you don't ever want to be deep-throated, never mind be known as a particularly skilled throater! Maybe if you are ever forced to swallow some semen, then you might decide it's worth knowing how to do this.[otherwise]since you would much rather get fucked properly if the opportunity arises.[end if]";
 	otherwise:
 		say "[bold type]You already know how to deepthroat![roman type][line break]".
 
@@ -179,7 +190,9 @@ REQUIRES COMMENTING
 
 +!]
 This is the throatskill prevents gag reflex rule:
-	if the throatskill of the player is 1, rule succeeds.
+	if the throatskill of the player is 1:
+		if debuginfo > 0, say "[input-style]Avoid gagging check: learned deepthroat skill | automatic success[roman type][line break]";
+		rule succeeds.
 The throatskill prevents gag reflex rule is listed in the gag reflex rules.
 
 [!<TheThroatskillListRule>+
@@ -211,12 +224,12 @@ REQUIRES COMMENTING
 To teach strutting:
 	if the strutskill of the player is 0:
 		if the heel skill of the player > 3:
-			say "[bold type]**You have learned how to strut!**[line break]Type 'strut' to activate or deactivate strutting whilst wearing heels. You'll slowly gain humiliation but have increased dexterity.[roman type]";
+			say "[bold type]**You have learned how to strut!**[line break]Type 'strut' to activate or deactivate strutting whilst wearing heels. You'll have significantly increased dexterity but also your [MediumDesc of hips] will look much more provocative.[roman type][line break]";
 			now the strutskill of the player is 1;
 		otherwise:
 			say "[if the bimbo of the player < 12]You decide that looking more slutty than you do already is not a priority right now[otherwise]You resent her for implying that you need to look any more sexy than you already do, and ignore her advice[end if]. But maybe once you're better at walking in heels, you'll value her advice.";
 	otherwise:
-		say "[bold type]You already know how to strut![roman type]".
+		say "[bold type]You already know how to strut![roman type][line break]".
 
 [!<TheStrutSkillListRule>+
 
@@ -301,7 +314,7 @@ To teach identifying:
 			say "[bold type]**You have learned how to identify!**[line break]Every now and then when you find a cursed item in a container, you will immediately be able to tell that it is cursed. The higher your intelligence, the higher the chance.[roman type][line break]";
 			now the identifyskill of the player is 1;
 		otherwise:
-			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
+			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the incidents of enema-int-loss > 0]butt-clenching[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
 	otherwise:
 		say "[bold type]You have already heard and memorised these hints![roman type][line break]".
 
@@ -445,7 +458,9 @@ To teach fastcrafting:
 			say "[bold type]**You have learned how to preserve the magic energy of the alchemist's bowl!**[line break]When you craft an item, the table will be ready to use again four times as quickly.[roman type][line break]";
 			now the craftskill of the player is 1;
 		otherwise:
-			say "When you admit that you have no idea what she means by alchemy, she quickly shuts up. [line break][second custom style]'Forget I said anything.'[roman type][line break]";
+			let M be a random interested friendly aeromancer in the location of the player;
+			if M is nothing, now M is Icarus;
+			say "When you admit that you have no idea what [he of M] means by alchemy, [he of M] quickly shuts up.[line break][second custom style]'Forget I said anything.'[roman type][line break]";
 	otherwise:
 		say "[bold type]You already know how to craft faster![roman type][line break]".
 
@@ -608,8 +623,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the doomed quest list rule:
-	let M be a random witch;
-	if the doom-warned of M is 1:
+	if the doom-warned of witch is 1:
 		say "Doom: A witch has warned you of a terrible doom coming, and asked you to collect a bell, book, and candle.";
 	otherwise if doom counter > 0:
 		say "Doom: You have a sense of impending doom.".
@@ -669,6 +683,110 @@ This is the milkskill learn rule:
 		now the milkskill of the player is 1.
 The milkskill learn rule is listed in the skill cheating rules.
 
+Part 16 - Butt Skill
+
+To teach buttskill:
+	if the buttskill of the player is 0:
+		if (there is a worn chastity cage or the anal sex addiction of the player > 3 or the player is barbie) and the player is ashamed:
+			say "[bold type]**You have learned how to masturbate anally**[roman type]";
+			now the buttskill of the player is 1;
+		otherwise:
+			say "You [if the player is ashamed]can already masturbate the normal way, so you don't see the usefulness of this tip. Maybe you'd pay more attention if you had fewer options.[otherwise]have no intention of degrading yourself like that, so you ignore the advice![end if]".
+
+This is the buttskill list rule:
+	if the buttskill of the player is 1, say "You know how to masturbate anally".
+The buttskill list rule is listed in the skill listing rules.
+
+This is the buttskill learn rule:
+	if the player is the donator:
+		if the buttskill of the player is 0, say "You now know how to masturbate anally.";
+		now the buttskill of the player is 1.
+The buttskill learn rule is listed in the skill cheating rules.
+
+Part 17 - Domination Skill
+
+To teach divinationskill:
+	if the divinationskill of the player is 0:
+		say "She launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic !**[line break]From now on, you[']ll find it a lot easier to find a way to have dominant sex![roman type][line break]";
+		now the divinationskill of the player is 1;
+		[otherwise:
+			say "She launches into a very long complicated explanation you don't really understand, and although you're nodding along, when she's finished talking you feel like you haven't really learned anything.";]
+	otherwise:
+		say "[bold type]You[']ve already learned how to read the flow of magic![roman type]".
+
+This is the divinationskill list rule:
+	if the divinationskill of the player is 1, say "You are able to read the flow of magic, and sense what type of monsters will emerge from portals.".
+The divinationskill list rule is listed in the skill listing rules.
+
+This is the divinationskill learn rule:
+	if the divinationskill of the player is 0, say "When you try to have dominant sex, you are now just as likely to succeed regardless of sex addiction.";
+	now the divinationskill of the player is 1.
+The divinationskill learn rule is listed in the skill cheating rules.
+
+
+Part 18 - Safe Floating
+
+[!<TeachSafeFloating>+
+
+REQUIRES COMMENTING
+
++!]
+To teach safefloating from (M - a monster):
+	say "[speech style of M]'There are some tricks to keeping hold of your items while floating. Let me show you...'[roman type][line break]";
+	if the floatskill of the player is 0:
+		say "[bold type]**You have learned how to hold onto your items while floating!**[roman type][line break]";
+		now the floatskill of the player is 1;
+	otherwise:
+		say "[speech style of M]'...Oh, I've already shown you that? Well then perhaps you'll be interested in how to cast a spell to let you fly whenever you want? If you point at yourself like this, and say the words...'[roman type][line break]";
+		if magic-inflating is uncastable:
+			compute learning of magic-inflating;
+		otherwise:
+			say "You actually already know this spell! Do you want to try to take [NameDesc of M] by surprise and overpower [him of M]?";
+			if the player is consenting:
+				say "You say the words at the same time as [NameDesc of M], and focus your energy on [him of M]:[line break][variable custom style]'I [incantation of magic-inflating]!'[roman type][line break]";
+				if MagicPowerDamage > a random number between 0 and 2:
+					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] lose control of the spell.[line break][speech style of M]'What? NO!'[roman type][line break]But it's too late - [his of M] body is expanding rapidly to stupid sizes! It's only a moment before [he of M][']s soaring up and away into the air. In [his of M] panic, [he of M] drops [his of M] wand! Without that, [he of M] can't reverse the spell! [big he of M] floats further and further away into the sky, probably gone for good.";
+					destroy M;
+					let P be a random off-stage golden phallus;
+					if P is a thing:
+						now P is in the location of the player;
+						compute autotaking P;
+				otherwise:
+					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] almost lose control of the spell. But your magic isn't strong enough, and [he of M] manages to retain control![line break][speech style of M]'What was that? You were trying to overpower me, weren't you? You [bitch]!'[roman type][line break]";
+					anger M;
+					say "[BigNameDesc of M] takes advantage of your magic fatigue[if the player is not wrist bound] and summons cuffs around your wrists. They're now bound behind you[end if][if face is not actually occupied]! A bit gag appears in your mouth[end if]! [big he of M] presses [his of M] wand to your chest and starts the spell... and [big he of M][']s not stopping!";
+					cutshow figure of aeromancer cutscene 7 for M;
+					if the player is not wrist bound:
+						let W be a random off-stage wrist bond;
+						if pair of wristcuffs is off-stage, now W is pair of wristcuffs;
+						if W is wrist bond:
+							summon W locked;
+							now W is wrist-bound-behind;
+					let G be a random bit gag;
+					if G is actually summonable:
+						summon G locked;
+					BustInflate 100;
+			otherwise:
+				say "You decide against it.".
+
+[!<TheFloatSkillListRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the floatskill list rule:
+	if the floatskill of the player is 1, say "When you become lighter than air, you won't drop your items.".
+The floatskill list rule is listed in the skill listing rules.
+
+[!<TheFloatSkillLearnRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the floatskill learn rule:
+	if the floatskill of the player is 0, say "When you become lighter than air, you won't drop your items.";
+	now the floatskill of the player is 1.
+The floatskill learn rule is listed in the skill cheating rules.
 
 
 Skills ends here.

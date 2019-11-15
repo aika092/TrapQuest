@@ -25,8 +25,8 @@ REQUIRES COMMENTING
 +!]
 Check submitting:
 	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
-	if there is a fucking daddy's hole monster:
-		try resisting instead; [See resisting for more info on this mechanic]
+	if there is a fucking daddy's hole monster or there is a wrong race fucking monster:
+		try resisting instead; [See resisting for more info on these mechanics]
 
 [!<CarryOutSubmitting>+
 
@@ -34,19 +34,23 @@ REQUIRES COMMENTING
 
 +!]
 Carry out submitting:
-	now the the player-reaction of the player is submitting;
-	if the player is live fucked:
-		if the player-class is succubus: 
+	now the player-reaction of the player is submitting;
+	if diaper quest is 1 and there is a live thing grabbing the player:
+		moderateHumiliate;
+	otherwise if the player is live fucked:
+		if the player-class is succubus:
 			humiliate 125; [Implemented increased humiliation for any demoness submitting]
+		otherwise if (the player is shameless or the player is feeling submissive) and the player is not having marital sex:
+			do nothing; [shameless players don't find submissive sex to be embarrassing]
 		otherwise if the relevant sex addiction of the player < 7:
 			if the player is having marital sex, dignify 5;[princesses are humiliated less by sex with consorts.]
 			otherwise humiliate 25;
 		otherwise if the relevant sex addiction of the player < 14:
 			if the player is having marital sex, dignify 10;
-			unless the player is having marital sex, humiliate 15;
+			otherwise humiliate 15;
 		otherwise:
 			if the player is having marital sex, dignify 20;[princesses who accept their role fully are more confident after sex with their consorts]
-	now seconds is 6.
+	allocate 6 seconds.
 
 [!<ReportSubmitting>+
 
@@ -57,8 +61,9 @@ Report submitting:
 	let M be a random thing grabbing the player;
 	if M is nothing, now M is a random live thing penetrating a body part;
 	unless M is nothing:
-		if forced submit is 1:
-			do nothing;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
+		if forced submit > 0:
+			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
+			now forced submit is 0;
 		if the player is friendly fucked:
 			say FriendlySexSubmissionFlav of M;
 		otherwise:
@@ -81,8 +86,8 @@ REQUIRES COMMENTING
 
 +!]
 To compute player submission:
-	repeat with M running through enjoys sex dangerous monsters in the location of the player:
-		if the last-interaction of M is 0, say SubmissionFlav of M;
+	repeat with M running through awake monsters in the location of the player:
+		if the last-interaction of M is 0 and M is enjoys sex dangerous monster, say SubmissionFlav of M;
 		if the player is having marital sex, dignify the sex addiction of the player * 5;
 		otherwise humiliate 125;
 		compute submission reaction of M;
@@ -103,16 +108,16 @@ REQUIRES COMMENTING
 +!]
 To say SubmissionFlav of (M - a monster):
 	if M is intelligent:
-		say "The [M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you. ";
+		say "[BigNameDesc of M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you. ";
 	otherwise:
-		say "The [M] prepares to assault you. ".
+		say "[BigNameDesc of M] prepares to assault you. ".
 
 
 To make (M - a monster) expectant: [This is in a function so that you can override it in a particular monster's definition if required.]
-	unless M is survived, now M is triumphant;
-	now the last-interaction of M is 2.
+	if M is unfriendly and M is not survived, now M is triumphant;
+	if M is unfriendly or the player is in danger, now the last-interaction of M is 2.
 
-	
+
 [!<ResetSubmittedMonsters>+
 
 REQUIRES COMMENTING

@@ -29,7 +29,7 @@ Dungeon02 is a sandy labyrinth room. The printed name of Dungeon02 is "Large Sto
 REQUIRES COMMENTING
 
 *!]
-Dungeon03 is a sandy labyrinth room. The printed name of Dungeon03 is "Stone Cell". "In a far, dark corner of the dungeon, you find a room containing a private jail cell. The room is divided in half with metal bars, a door with an opened lock bridging the divide. Peering inside the cell, you can make out only a stone bench for the captive to lay on, and some chains on the walls to hold them in place. [if diaper quest is 0]Dark visions pass through your mind as you think of what could happen to someone stuck in this game for too long...[end if][if the flat intelligence of the player > 12][one of][line break]Examining the jail cell, you come across a strange carving under the bench. While most of the text in the dungeon is a language you don't know, there is a single word in plain English: hope. Standing up and returning to the lock, you notice that it was picked open, possibly by whoever was being held here. Maybe there's someone with the will to fight still in this world. Maybe you can find an ally.[or][stopping][end if]". The shape of Dungeon02 is L1/0-0-0-0-1-0.
+Dungeon03 is a sandy labyrinth room. The printed name of Dungeon03 is "Stone Cell". "In a far, dark corner of the dungeon, you find a room containing a private jail cell. The room is divided in half with metal bars, a door with an opened lock bridging the divide. Peering inside the cell, you can make out only a stone bench for the captive to lay on, and some chains on the walls to hold them in place. [if diaper quest is 0]Dark visions pass through your mind as you think of what could happen to someone stuck in this game for too long...[end if][if saved-flat-intelligence > 12][one of][line break]Examining the jail cell, you come across a strange carving under the bench. While most of the text in the dungeon is a language you don't know, there is a single word in plain English: hope. Standing up and returning to the lock, you notice that it was picked open, possibly by whoever was being held here. Maybe there's someone with the will to fight still in this world. Maybe you can find an ally.[or][stopping][end if]". The shape of Dungeon02 is L1/0-0-0-0-1-0.
 
 [!<dungeon04:LabyrinthRoom>*
 
@@ -50,7 +50,7 @@ Dungeon05 is a sandy labyrinth room. The printed name of Dungeon05 is "Storage R
 REQUIRES COMMENTING
 
 *!]
-Dungeon06 is a mandatory important labyrinth room. The printed name of Dungeon06 is "Prison Guard's Bedroom". "Far away from the standard bunk rooms of the rank-and-file royal guards, you come across a private bedroom. The bed in it appears to simply be two of the lower bunks pushed together with a larger mattress placed over them, but the royal banner hanging over the bed shows that whoever sleeps there is of some kind of authority. You dare not rest in this bed, it is clearly not for you. There are a few sparse bookcases and a desk with a lamp attached to it. Against the back wall is a single ominous looking lever with a label attached to it, but to what it does you do not know.[if the flat intelligence of the player > 14 and diaper quest is 0][one of][line break]Examining the handle reveals a leather engraving of some kind of mythological beast. Running your fingers over it, you can make out the horns of an animal and the body of a man. This lever probably has something to do with the minotaur...[or][stopping]".
+Dungeon06 is a mandatory important labyrinth room. The printed name of Dungeon06 is "Prison Guard's Bedroom". "Far away from the standard bunk rooms of the rank-and-file royal guards, you come across a private bedroom. The bed in it appears to simply be two of the lower bunks pushed together with a larger mattress placed over them, but the royal banner hanging over the bed shows that whoever sleeps there is of some kind of authority. You dare not rest in this bed, it is clearly not for you. There are a few sparse bookcases and a desk with a lamp attached to it. Against the back wall is a single ominous looking lever with a label attached to it, but to what it does you do not know.[if saved-flat-intelligence > 14 and diaper quest is 0][one of][line break]Examining the handle reveals a leather engraving of some kind of mythological beast. Running your fingers over it, you can make out the horns of an animal and the body of a man. This lever probably has something to do with the minotaur...[or][stopping]".
 
 [!<dungeon07:LabyrinthRoom>*
 
@@ -64,7 +64,7 @@ Dungeon07 is a sandy labyrinth room. The printed name of Dungeon07 is "Poker Roo
 REQUIRES COMMENTING
 
 *!]
-Dungeon08 is an important labyrinth room. The printed name of Dungeon08 is "Training Room". "Nestled out of the way is a room that reeks of sweat and chopped wood, giving a strange musk to the entire area. This room is probably used by guards, gladiators and the like for training when not patrolling. There are wooden dummies made out to relatively human shapes, along with a few leather targets for archery practice, though you have never seen a guard with a bow.[if the flat intelligence of the player > 8][one of][line break]Examining the tools along the wall, you can see among them crops, paddles, and bindings that don't fit in with the rest of the weight-lifting gear. A shiver runs down your spine as you imagine another kind of 'training' one could be forced through.[or][stopping][end if]".
+Dungeon08 is an important labyrinth room. The printed name of Dungeon08 is "Training Room". "Nestled out of the way is a room that reeks of sweat and chopped wood, giving a strange musk to the entire area. This room is probably used by guards, gladiators and the like for training when not patrolling. There are wooden dummies made out to relatively human shapes, along with a few leather targets for archery practice, though you have never seen a guard with a bow.[if saved-flat-intelligence > 8][one of][line break]Examining the tools along the wall, you can see among them crops, paddles, and bindings that don't fit in with the rest of the weight-lifting gear. A shiver runs down your spine as you imagine another kind of 'training' one could be forced through.[or][stopping][end if]".
 
 [!<dungeon09:LabyrinthRoom>*
 
@@ -73,19 +73,20 @@ REQUIRES COMMENTING
 *!]
 Dungeon09 is a sandy labyrinth room. The printed name of Dungeon09 is "Arena". "While it isn't large enough to house many, the arena in the dungeons has seen plenty of use. From the slash marks and broken boards along the wooden walls of the fighting ring, it is very easy to see that the warriors who fought within it had the strength to match. There are a few crude seats around it, and the lighting is a little more complex, with wall torches for those watching and a single metal lantern suspended from the ceiling for the fighters.".
 
+
 [!<dungeon10:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon10 is a pinned important untrappable labyrinth room. The printed name of Dungeon10 is "Statue Hall". "Descending from the throne room is a long hall flanked with statues on both sides. The beautiful bronzed decorations are of [if diaper quest is 1]naked women, their large bare bums facing towards you like some lewd display.[line break][variable custom style][end if][one of][if diaper quest is 1 and the diaper addiction of the player < 2]What does this game have to do with butts?[otherwise if diaper quest is 1 and asshole is exposed]I'm as exposed as they are![otherwise if diaper quest is 1]I wish I was allowed to keep my butt bare...[end if][roman type][line break][or][stopping][if diaper quest is 0]both men and women, each depicted in the most fantastic of physical shape. The women are extremely voluptuous and the men both well hung and quite erect. Their eyes seem to peer at you as you walk, inviting you towards their genitals...[one of][line break]The male statues seem to give the sound of liquid moving through them. Upon closer inspection, you can see that they can dispense some kind of liquid if one was desperate or thirsty enough to get curious with them.[or][stopping][end if]". Dungeon10 is east of Dungeon11. The shape of Dungeon10 is L1/0-0-0-1-0-1. The grid position of Dungeon10 is  <1,13,12>.
+Dungeon10 is a pinned important untrappable labyrinth room. The printed name of Dungeon10 is "Statue Hall". "Descending from the throne room is a long hall with a line of statues standing in a line against the south wall. The beautiful bronzed decorations are of [if diaper quest is 1]naked women, their large bare bums facing towards you like some lewd display.[line break][variable custom style][end if][one of][if diaper quest is 1 and the diaper addiction of the player < 2]What does this game have to do with butts?[roman type][line break][otherwise if diaper quest is 1 and asshole is exposed]I'm as exposed as they are![roman type][line break][otherwise if diaper quest is 1]I wish I was allowed to keep my butt bare...[roman type][line break][end if][or][roman type][line break][stopping][if diaper quest is 0]both men and women, each depicted in the most fantastic of physical shape. The women are extremely voluptuous and the men both well hung and quite erect. Their eyes seem to peer at you as you walk, inviting you towards their genitals...[one of][line break]The male statues seem to give the sound of liquid moving through them. Upon closer inspection, you can see that they can dispense some kind of liquid if one was desperate or thirsty enough to get curious with them.[or][stopping][end if][line break][if there is a warp portal in Dungeon10]This room has a swirling green portal in the north wall that leads to another part of this world.[otherwise]This room has a bizarre closed metal shutter in the north wall. It doesn't look like you can do anything with it at the moment, but maybe later it will have opened.[end if]". Dungeon10 is east of Dungeon11. The shape of Dungeon10 is L1/0-0-0-1-0-1. The grid position of Dungeon10 is  <1,13,12>.
 
 [!<dungeon11:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon11 is a pinned important untrappable labyrinth room. Dungeon11 is west of Dungeon10. Dungeon11 is east of Dungeon12. The printed name of Dungeon11 is "Throne Room". "The throne room; the centre jewel of the kingdom. Sitting high among a series of risers and stairs is a beautiful throne, fit truly for royalty. Descending down the stairs and along the scarlet carpeting leads into another long hall, and tucked away behind a false wall is the spiral staircase back to the Royal Bedroom.[if the flat intelligence of the player > 10][one of][line break]Listening closely to the throne as you walk by it, you can detect some kind of apparatus within it. A closer look reveals little that could trigger whatever machine or magic the throne protects, other than giving the soft-cushion a sit...[or][stopping]". The shape of Dungeon11 is L1/0-0-0-1-0-1. The grid position of Dungeon11 is  <1,12,12>. Dungeon11 is seen.
+Dungeon11 is a pinned important untrappable labyrinth room. Dungeon11 is west of Dungeon10. Dungeon11 is east of Dungeon12. The printed name of Dungeon11 is "Throne Room". "The throne room; the centre jewel of the kingdom. Sitting high among a series of risers and stairs is [if the throne is transformed]a plastic training potty, with a cheap princess motif, where the throne once stood[otherwise]a beautiful throne, fit truly for royalty[end if]. Descending down the stairs and along the scarlet carpeting leads into another long hall, and tucked away behind a false wall is the spiral staircase back to the Royal Bedroom.[if saved-flat-intelligence > 10 and there is an untransformed throne in Dungeon11][one of][line break]Listening closely to the throne as you walk by it, you can detect some kind of apparatus within it. A closer look reveals little that could trigger whatever machine or magic the throne protects, other than giving the soft-cushion a sit...[or][stopping]". The shape of Dungeon11 is L1/0-0-0-1-0-1. The grid position of Dungeon11 is  <1,12,12>. Dungeon11 is seen.
 
 [!<dungeon12:LabyrinthRoom>*
 
@@ -190,14 +191,14 @@ Dungeon25 is a sandy labyrinth room. The printed name of Dungeon25 is "Bunk Room
 REQUIRES COMMENTING
 
 *!]
-Dungeon27 is a sandy labyrinth room. The printed name of Dungeon27 is "Library". "Providing a small commodity to the otherwise dull area, you encounter a rather quaint library. Books line the walls and a few sparse shelves divide the room up into a few reading areas. A few lamps rest along the area, either hanging from the ceiling or sitting atop a few desks scattered among the tomes. Sadly, admiring the spines of the reading material reveals it to be in an unknown language. ".
+Dungeon27 is a sandy labyrinth room. The printed name of Dungeon27 is "Library". "Providing a small commodity to the otherwise dull area, you encounter a rather quaint library. Books line the walls and a few sparse shelves divide the room up into a few reading areas. A few lamps rest along the area, either hanging from the ceiling or sitting atop a few desks scattered among the tomes. Sadly, admiring the spines of the reading material reveals it to be in an unknown language.".
 
 [!<dungeon28:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon28 is a mandatory important labyrinth room. The printed name of Dungeon28 is "Altar Room". "The sounds of the dungeon seem to fade away as you enter the hallowed room, the air standing still as you approach the rectangular stone altar. There is no light in the room, other than a circular glass window letting in outside light directly above it. The light draws you closer to the altar, inviting you to test its power...[if the flat intelligence of the player > 10][one of][line break]Looking along the floor, you notice some kind of engraving surrounding the altar. It's not in any language you can understand, but there appears to be some numbers you can make out. While the words around it are shrouded in a different language, you make out a 300 and a 120...[or][stopping][end if]". The shape of Dungeon28 is L1/0-0-1-0-0-0.
+Dungeon28 is a mandatory important labyrinth room. The printed name of Dungeon28 is "Altar Room". "The sounds of the dungeon seem to fade away as you enter the hallowed room, the air standing still as you approach the rectangular stone altar. There is no light in the room, other than a circular glass window letting in outside light directly above it. The light draws you closer to the altar, inviting you to test its power...[if saved-flat-intelligence > 10][one of][line break]Looking along the floor, you notice some kind of engraving surrounding the altar. It's not in any language you can understand, but there appears to be some numbers you can make out. While the words around it are shrouded in a different language, you make out a 300 and a 120...[or][stopping][end if]". The shape of Dungeon28 is L1/0-0-1-0-0-0.
 
 [!<dungeon29:LabyrinthRoom>*
 
@@ -232,7 +233,7 @@ Dungeon32 is a pinned untrappable labyrinth room. The printed name of Dungeon32 
 REQUIRES COMMENTING
 
 *!]
-Dungeon33 is a sandy labyrinth room. The printed name of Dungeon33 is "Ritual room". "Entering the room, you are immediately beset by a feeling of dread as you scout the dark room. Dim torches illuminate what appears to be a small room, the heavy iron lock that kept it shut having long since rusted away. Inside there is a softly glowing pentagram, with a set of candles congregated along the points of the star. Whatever ritual here has been long past, but the effects could still be felt.[if the flat intelligence of the player > 8][one of][line break]Along the walls you can make out some kind of pairing of scratch marks and what appear to be heel-prints, as if indicating that something climbed up. Following their path, you can see an area of loose rocks, pulled away to let whatever was in here escape to the surrounding areas...[or][stopping]". The shape of Dungeon33 is L1/0-0-0-1-0-1.
+Dungeon33 is a sandy labyrinth room. The printed name of Dungeon33 is "Ritual room". "Entering the room, you are immediately beset by a feeling of dread as you scout the dark room. Dim torches illuminate what appears to be a small room, the heavy iron lock that kept it shut having long since rusted away. Inside there is a softly glowing pentagram, with a set of candles congregated along the points of the star. Whatever ritual here has been long past, but the effects could still be felt.[if saved-flat-intelligence > 8][one of][line break]Along the walls you can make out some kind of pairing of scratch marks and what appear to be heel-prints, as if indicating that something climbed up. Following their path, you can see an area of loose rocks, pulled away to let whatever was in here escape to the surrounding areas...[or][stopping]". The shape of Dungeon33 is L1/0-0-0-1-0-1.
 
 [!<dungeon34:LabyrinthRoom>*
 
@@ -246,14 +247,14 @@ Dungeon34 is an important labyrinth room. The printed name of Dungeon34 is "[if 
 REQUIRES COMMENTING
 
 *!]
-Dungeon35 is a mandatory labyrinth room. The printed name of Dungeon35 is "Underground Lake". "Stepping through the archway, you discover to your awe and amusement an underground lake. It is quite expansive, flowing into various other caves beyond your view. In the distance, you wonder if you can vaguely make out some kind of outlet leading to the outside world, though swimming is out of the question.[if the flat intelligence of the player > 11 and bukkake fetish is 1][one of][line break]Examining the currents and ripples in the water, you deduce that something large inhabits the pond. While it may not stir from your movements, there is the chance that whatever it is will awaken if you enter.[or][stopping][end if]". The shape of Dungeon35 is L1/0-0-0-0-1-1. The first forbidden direction of Dungeon35 is north. The second forbidden direction of Dungeon35 is east.
+Dungeon35 is a mandatory water-bodied labyrinth room. The printed name of Dungeon35 is "Underground Lake". "Stepping through the archway, you discover to your awe and amusement an underground lake. It is quite expansive, flowing into various other caves beyond your view. In the distance, you wonder if you can vaguely make out some kind of outlet leading to the outside world, though swimming is out of the question.[if saved-flat-intelligence > 11 and bukkake fetish is 1][one of][line break]Examining the currents and ripples in the water, you deduce that something large inhabits the pond. While it may not stir from your movements, there is the chance that whatever it is will awaken if you enter.[or][stopping][end if]". The shape of Dungeon35 is L1/0-0-0-0-1-1. The first forbidden direction of Dungeon35 is north. The second forbidden direction of Dungeon35 is east.
 
 [!<dungeon36:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon36 is a mandatory sandy labyrinth room. The printed name of Dungeon36 is "Cage Room". "The room is massive and complex, making it one of the few areas you've seen of the dungeon that required some level of craftsmanship. In the centre of the room is a large cage made of extremely heavy metal, built in a bell-shape. It is suspended by a tough-looking chain that keeps the entire contraption about eighteen inches off the ground. [if there is an alive captive dungeon boss and the flat intelligence of the player > 7]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm. Looking up at the chain that keeps the cage suspended, you notice that it doesn't appear to coordinate to any device or lever in the room. To lower the monster and open the cage, you'd need to find something elsewhere.[otherwise if a random minotaur is an alive captive monster]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm.[otherwise]The cage is open and empty.[end if][if there is a mystical amulet in Dungeon36][line break]In the middle of the cage, you can see a valuable looking amulet.[end if]". The semen-puddle of Dungeon36 is usually 2. [He's a messy guy.]
+Dungeon36 is a mandatory sandy labyrinth room. The printed name of Dungeon36 is "Cage Room". "The room is massive and complex, making it one of the few areas you've seen of the dungeon that required some level of craftsmanship. In the centre of the room is a large cage made of extremely heavy metal, built in a bell-shape. It is suspended by a tough-looking chain that keeps the entire contraption about eighteen inches off the ground. [if there is an alive caged dungeon boss and saved-flat-intelligence > 7]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm. Looking up at the chain that keeps the cage suspended, you notice that it doesn't appear to coordinate to any device or lever in the room. To lower the monster and open the cage, you'd need to find something elsewhere.[otherwise if minotaur is an alive caged monster]The beast contained within can see and look around with ease, capable of swinging itself a few inches in any direction if it feels provoked, but unable to inflict any real harm.[otherwise]The cage is open and empty.[end if][if mystical amulet is in Dungeon36][line break]In the middle of the cage, you can see a valuable looking amulet.[end if]". The semen-puddle of Dungeon36 is usually 2. [He's a messy guy.]
 
 [!<TheNoMinotaurSemenInDQRule>+
 
@@ -290,7 +291,7 @@ Dungeon39 is a sandy labyrinth room. The printed name of Dungeon39 is "Healer's 
 REQUIRES COMMENTING
 
 *!]
-Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular Stone Room". "While the other rooms you've passed through in the dungeon have proven to be of a fairly rudimentary rectangular shape, this single room has a circular design. It wouldn't be noteworthy if it weren't for the strange change from the norm that it brought. Examining the area, you look up at the domed ceiling to make out a portrait of female angels circling overhead, looking down at you as you pass through.[if the flat intelligence of the player > 7][one of][line break]Upon closer examination, you recognize the angels as the Nintendolls employees that locked you in this simulation. The reminder of your captivity doesn't sit easy with you as you press on.[or][stopping]".
+Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular Stone Room". "While the other rooms you've passed through in the dungeon have proven to be of a fairly rudimentary rectangular shape, this single room has a circular design. It wouldn't be noteworthy if it weren't for the strange change from the norm that it brought. Examining the area, you look up at the domed ceiling to make out a portrait of female angels circling overhead, looking down at you as you pass through.[if saved-flat-intelligence > 7][one of][line break]Upon closer examination, you recognize the angels as the Nintendolls employees that locked you in this simulation. The reminder of your captivity doesn't sit easy with you as you press on.[or][stopping]".
 
 [!<dungeon41:LabyrinthRoom>*
 
@@ -299,33 +300,34 @@ REQUIRES COMMENTING
 *!]
 Dungeon41 is a mandatory untrappable labyrinth room. The printed name of Dungeon41 is "Dungeon Shop". "The shop you emerge in would fit into nearly any fantasy RPG, with lines of products sitting on wooden shelves, and with their prices neatly stencilled onto wooden plaques sitting beneath them. All manner of goods are sold here, all at the behest of the massive shopkeeper.". The shape of Dungeon41 is L1/0-0-0-0-1-0.
 
-[!<dungeon42:LabyrinthRoom>*
-
-REQUIRES COMMENTING
-
-*!]
-Dungeon42 is a sandy mandatory labyrinth room. The printed name of Dungeon42 is "[if there is a warp portal in Dungeon42]Dungeon Portal Room[otherwise]Empty Room[end if]". "[if there is a warp portal in Dungeon42]This room has a swirling green portal in the north wall that leads to the Hotel.[otherwise]This room has a bizarre closed metal shutter in the north wall. It doesn't look like you can do anything with it at the moment, but maybe later it will have opened.[end if]". The shape of Dungeon42 is L1/0-0-0-1-1-1.
 
 [!<dungeonScenery02:Scenery>*
 
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery02 is scenery. DungeonScenery02 is in Dungeon15. The printed name of DungeonScenery02 is "Ditch". The description of DungeonScenery02 is "There is a large ditch here, which looks like it once held water for people to swim in. [one of]It's completely empty now though.[or]There's no point going in there.[stopping]". Understand "swimming","pool","swimming pool", "ditch" as DungeonScenery02. Instead of entering DungeonScenery02, say "There's nothing interesting down there.".
+DungeonScenery02 is scenery. DungeonScenery02 is in Dungeon15. The printed name of DungeonScenery02 is "Ditch". Understand "swimming","pool","swimming pool", "ditch" as DungeonScenery02. Instead of entering DungeonScenery02, say "There's nothing interesting down there.".
+
+To say ExamineDesc of (C - DungeonScenery02):
+	say "There is a large ditch here, which looks like it once held water for people to swim in. [one of]It's completely empty now though.[or]There's no point going in there.[stopping]".
 
 [!<dungeonScenery03:Scenery>*
 
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery03 is scenery. DungeonScenery03 is in Dungeon35. The printed name of DungeonScenery03 is "Lake". The description of DungeonScenery03 is  usually "[LakeDesc]". Understand "lake", "underground", "underground lake", "water", "pool", "sea" as DungeonScenery03.
+DungeonScenery03 is a water-body-scenery. DungeonScenery03 is in Dungeon35. The printed name of DungeonScenery03 is "Lake". Understand "lake", "underground", "underground lake", "pool", "sea" as DungeonScenery03. The text-shortcut of DungeonScenery03 is "lake".
+Figure of DungeonScenery03 is the file "Env/Dungeon/lake1.png".
+
+To decide which figure-name is the examine-image of (C - DungeonScenery03):
+	decide on figure of DungeonScenery03.
 
 [!<SayLakeDesc>+
 
 REQUIRES COMMENTING
 
 +!]
-To say LakeDesc:
+To say ExamineDesc of (T - DungeonScenery03):
 	let L be a random lake monster;
 	let S be the semen-sniffing of L;
 	if L is not in the location of the player, now S is 0;
@@ -336,65 +338,50 @@ To say LakeDesc:
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery04 is scenery. DungeonScenery04 is in Dungeon36. The printed name of DungeonScenery04 is "Cage". The description of DungeonScenery04 is "A large metal cage. [if there is an alive captive dungeon boss]The entrance to the cage is locked, and appears to be opened by an automatic mechanism. Inside there is an angry looking monster. He snarls at you.[otherwise]The cage is open and empty.[end if]". Understand "cage", "prison" as DungeonScenery04.
+DungeonScenery04 is scenery. DungeonScenery04 is in Dungeon36. The printed name of DungeonScenery04 is "Cage". Understand "cage", "prison" as DungeonScenery04.
+To say ExamineDesc of (C - DungeonScenery04):
+	say "A large metal cage. [if there is an alive caged dungeon boss]The entrance to the cage is locked, and appears to be opened by an automatic mechanism. Inside there is an angry looking monster. He snarls at you.[otherwise]The cage is open and empty.[end if]".
 
 [!<dungeonScenery05:Scenery>*
 
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". The description of DungeonScenery05 is "[if the faint count of the player is 0]A pink photo frame. There is currently no picture in the frame.[otherwise]The photo within the pink frame shows you[RealDesc][end if]". Understand "photo", "picture", "frame" as DungeonScenery05.
+DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". Understand "photo", "picture", "frame" as DungeonScenery05.
+To say ExamineDesc of (C - DungeonScenery05):
+	say "[if the faint count of the player is 0]A pink photo frame. There is currently no picture in the frame.[otherwise]The photo within the pink frame shows you[RealDesc][end if]".
 
 [!<dungeonScenery06:Thing>*
 
 REQUIRES COMMENTING
 
 *!]
-DungeonScenery06 is a thing. DungeonScenery06 is in Dungeon06. DungeonScenery06 is not portable. The printed name of DungeonScenery06 is "[TQlink of item described]lever[TQxlink of item described][verb-desc of item described]". The description of DungeonScenery06 is "Whatever pulling this lever does, it can't be good.". Understand "lever" as DungeonScenery06. The text-shortcut of DungeonScenery06 is "lv".
+DungeonScenery06 is a thing. DungeonScenery06 is in Dungeon06. DungeonScenery06 is not portable. The printed name of DungeonScenery06 is "[TQlink of item described]lever[TQxlink of item described][verb-desc of item described]". Understand "lever" as DungeonScenery06. The text-shortcut of DungeonScenery06 is "lv". Figure of lever is the file "Env/Dungeon/lever1.png".
 
-[!<DungeonScenery06IsImmuneToChange>+
+To say ExamineDesc of (C - DungeonScenery06):
+	say "Whatever pulling this lever does, it can't be good.".
 
-REQUIRES COMMENTING
+To decide which figure-name is the examine-image of (L - DungeonScenery06):
+	decide on figure of lever.
 
-+!]
-Definition: DungeonScenery06 is immune to change:
-	decide yes.
+Definition: DungeonScenery06 is immune to change: decide yes.
 
-[!<CheckPullingDungeonScenery06>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pulling DungeonScenery06:
 	try turning the noun instead.
 
-[!<CheckTurningDungeonScenery06>+
-
-REQUIRES COMMENTING
-
-+!]
 Check turning DungeonScenery06:
-	let M be a random alive captive dungeon boss;
-	now seconds is 2;
+	let M be a random alive caged dungeon boss;
+	allocate 2 seconds;
 	if M is not monster, say "Nothing seems to happen." instead;
-	now M is released;
-	say "You hear a mechanism whirring, and what sounds like a metal door swing open." instead.
+	now M is unleashed;
+	say "You hear a mechanism whirring, and what sounds like a metal door swing open.";
+	progress quest of lever-quest;
+	progress quest of insanity-quest;
+	do nothing instead.
 
-[!<CheckPushingDungeonScenery06>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pushing DungeonScenery06:
 	try turning the noun instead.
 
-[!<SayRealDesc>+
-
-REQUIRES COMMENTING
-
-+!]
-To say RealDesc:
-	say "inside a metal chamber filled with a transparent liquid. You are motionless and have your eyes closed. You have straight black [RealHairDesc], [RealBreastDesc] and what look like [RealHipDesc]. [RealGapeDesc].".
 
 [!<stairwell01:LabyrinthRoom>*
 
@@ -408,7 +395,7 @@ Stairwell01 is a mandatory labyrinth room. The printed name of Stairwell01 is "S
 REQUIRES COMMENTING
 
 *!]
-The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, Dungeon06, Dungeon07, Dungeon08, Dungeon09, Dungeon10, Dungeon11, Dungeon12, Dungeon13, Dungeon14, Dungeon15, Dungeon16, Dungeon17, Dungeon18, Dungeon19, Dungeon20, Dungeon21, Dungeon22, Dungeon23, Dungeon24, Dungeon25, [Dungeon26,] Dungeon27, Dungeon28, Dungeon29, Dungeon30, Dungeon31, Dungeon32, Dungeon33, Dungeon34, Dungeon35, Dungeon36, Dungeon37, Dungeon38, Dungeon39, Dungeon40, Dungeon41, Dungeon42, Stairwell01 are in The Dungeon.
+The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, Dungeon06, Dungeon07, Dungeon08, Dungeon09, Dungeon10, Dungeon11, Dungeon12, Dungeon13, Dungeon14, Dungeon15, Dungeon16, Dungeon17, Dungeon18, Dungeon19, Dungeon20, Dungeon21, Dungeon22, Dungeon23, Dungeon24, Dungeon25, [Dungeon26,] Dungeon27, Dungeon28, Dungeon29, Dungeon30, Dungeon31, Dungeon32, Dungeon33, Dungeon34, Dungeon35, Dungeon36, Dungeon37, Dungeon38, Dungeon39, Dungeon40, Dungeon41, Stairwell01 are in The Dungeon.
 
 
 Dungeon ends here.

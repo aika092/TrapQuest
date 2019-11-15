@@ -1,6 +1,6 @@
 Dining Dresses by Dresses begins here.
 
-A dining dress is a kind of overdress. 
+A dining dress is a kind of overdress.
 
 To set up influence of (C - a dining dress):
 	set up random-based influence of C.
@@ -10,14 +10,15 @@ This is the remove inappropriate dining dresses rule:
 		now B is in Holding Pen.
 The remove inappropriate dining dresses rule is listed in the diaper quest fix rules.
 
-Definition: a dining dress (called C) is slitted: [Slitted skirts don't block knee attacks]
-	decide yes.
+Definition: a dining dress is slitted: decide yes. [Slitted skirts don't block knee attacks]
+Definition: a dining dress is party themed: decide yes.
+
 
 Part 1 - Red Dining Dress
 
-A red dining dress is a kind of dining dress. There is 1 red dining dress. The text-shortcut of red dining dress is "rdd". The printed name of red dining dress is usually "[TQlink of item described][clothing-title-before]red dining dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A red dining dress is a kind of dining dress. There is 1 red dining dress. The text-shortcut of red dining dress is "rdd". The printed name of red dining dress is usually "[clothing-title-before]red dining dress[clothing-title-after]".
 
-Figure of red dining dress is the file "Items\Clothes\Upper\Dresses\Evening\diningdress1.png".
+Figure of red dining dress is the file "Items/Clothes/Upper/Dresses/Evening/diningdress1.png".
 
 To decide which figure-name is clothing-image of (C - a red dining dress):
 	decide on figure of red dining dress.
@@ -29,19 +30,19 @@ To say ShortDesc of (C - a red dining dress):
 	say "red high-slit evening dress".
 
 To decide which number is the initial outrage of (C - a red dining dress):
-	decide on 5.
+	decide on 3.
 
-To decide which object is the potential-upgrade-target of (C - a red dining dress)
+To decide which object is the unique-upgrade-target of (C - a red dining dress)
 	if diaper quest is 1:
 		if there is an off-stage pink clubbing dress, decide on a random off-stage pink clubbing dress;
 		decide on a random off-stage floofy sissy baby dress;
-	decide on a random off-stage red evening dress.
+	decide on nothing.
 
 Part 2 - Black Dining Dress
 
-A black dining dress is a kind of dining dress. There is 1 black dining dress. A black dining dress is usually fully covering. The text-shortcut of black dining dress is "bdd". The printed name of black dining dress is usually "[TQlink of item described][clothing-title-before]black dining dress[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+A black dining dress is a kind of dining dress. There is 1 black dining dress. A black dining dress is usually fully covering. The text-shortcut of black dining dress is "bdd". The printed name of black dining dress is usually "[clothing-title-before]black dining dress[clothing-title-after]".
 
-Figure of black dining dress is the file "Items\Clothes\Upper\Dresses\Evening\diningdress2.png".
+Figure of black dining dress is the file "Items/Clothes/Upper/Dresses/Evening/diningdress2.png".
 
 To decide which figure-name is clothing-image of (C - a black dining dress):
 	decide on figure of black dining dress.
@@ -53,13 +54,7 @@ To say ShortDesc of (C - a black dining dress):
 	say "black high-slit evening dress".
 
 To decide which number is the initial outrage of (C - a black dining dress):
-	decide on 4.
-
-To decide which object is the potential-upgrade-target of (C - a black dining dress):
-	if diaper quest is 1:
-		decide on a random off-stage supertiny black clubbing dress;
-	decide on a random off-stage black lace evening dress;
-	decide on nothing.
+	decide on 2.
 
 
 Dining Dresses ends here.

@@ -6,6 +6,8 @@ There is 1 wonder bra. The text-shortcut of wonder bra is "wbr".
 
 The min size of a wonder bra is usually 3. The max size of a wonder bra is usually 6. The support of a wonder bra is usually 3. A wonder bra is low cut.
 
+Definition: a wonder bra is black themed: decide yes.
+
 To say ShortDesc of (B - a wonder bra):
 	say "wonderbra".
 
@@ -24,9 +26,8 @@ To decide what number is the original price of (C - a wonder bra):
 To decide which number is the initial outrage of (C - a wonder bra):
 	decide on 3.
 
-To decide which object is the potential-upgrade-target of (C - a wonder bra):
-	if the number of worn breast covering clothing > 1, decide on a random off-stage flimsy bra;
-	decide on a random off-stage white bikini top.
+To decide which number is the adult-influence of (C - a wonder bra):
+	decide on 1.
 
 Wonder Bra ends here.
 

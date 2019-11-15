@@ -1,22 +1,42 @@
 Throbbing Tentacle by Sex Toys begins here.
 
-A throbbing-tentacle is a kind of dong. There is one unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
+A throbbing-tentacle is a kind of dong. There is 1 unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after]". The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
+
+To say NameDesc of (C - a throbbing-tentacle):
+	say "[input-style][FuckerDesc of C][roman type]".
+To say BigNameDesc of (C - a throbbing-tentacle):
+	say "[input-style][BigFuckerDesc of C][roman type]".
+To say FuckerDesc of (C - a throbbing-tentacle):
+	say "the Master".
+To say BigFuckerDesc of (C - a throbbing-tentacle):
+	say "The Master".
 
 To say ClothingDesc of (C - a throbbing-tentacle):
-	say "[if the player is wearing a throbbing-tentacle]You can barely see the end of the Master sticking out of you, slowly waving.[otherwise]Your Master, presently no longer in his home. You feel empty without him in your hole.[end if]".
+	say "[if C is worn]You can barely see the end of the Master sticking out of you, slowly waving.[otherwise]Your Master, presently no longer in his home. You feel empty without him in your hole.[end if]".
 
 To say ShortDesc of (C - a throbbing-tentacle):
-	say "The Master".
-	
+	say "Master".
+
 To compute SelfExamineDesc of (H - a throbbing-tentacle):
-	say "[if the player is male and the player is wearing a throbbing-tentacle]The end of your Master barely sticks out of your [asshole].[otherwise if the player is wearing a throbbing-tentacle]The end of your Master barely sticks out of your [vagina].[end if]".
-	
+	say "The end of your Master barely sticks out of your [if H is penetrating asshole][asshole][otherwise if H is penetrating vagina][vagina][otherwise]tailbone. Please report this bug[end if].".
+
 Check taking off throbbing-tentacle:
 	say "You can feel the Master is comfortable where he is, and have no desire to remove him." instead.
 
-Definition: a throbbing-tentacle (called T) is removable:
-	decide no.
-		
+This is the master head exclusivity rule:
+	if throbbing-tentacle is worn:
+		if summoning is 0 and autowear is false, say "There is no point in equipping the [printed name of wearing-target]. Your head already belongs to The Master.";
+		rule fails.
+The master head exclusivity rule is listed last in the headgear wearability rules.
+
+Definition: a throbbing-tentacle is removable: decide no.
+
+To decide which number is the raw-masturbation-bonus of (C - a throbbing-tentacle):
+	decide on 4.[The best masturbation aid]
+
+To compute climax effect of (C - a throbbing-tentacle):
+	now the toy-charge of C is 0;
+
 To compute periodic effect of (P - a throbbing-tentacle):
 	increase the toy-charge of P by 1;
 	if the toy-charge of P > 30:
@@ -26,11 +46,19 @@ To compute periodic effect of (P - a throbbing-tentacle):
 			if the player is male:
 				anally orgasm shamefully;
 			otherwise:
-				vaginally orgasm shamefully.
+				vaginally orgasm shamefully;
+	if the pregnancy of the player is 1 and P is penetrating vagina and asshole is not actually occupied:
+		say "[BigNameDesc of P], sensing your pregnancy, slithers out of your [vagina] and pushes [his of P] way into your [asshole] instead.";
+		ruin vagina;
+		dislodge P;
+		now P is penetrating asshole;
+		ruin asshole.
+
+To set up magic state of (P - a throbbing-tentacle):
+	do nothing.[Currently redundant, but just in case we end up making a default dong / sex toy rule and forget about this edge case]
 
 To uniquely set up (P - a throbbing-tentacle):
 	do nothing.[No enchantments here!]
-
 
 Throbbing Tentacle ends here.
 

@@ -1,7 +1,9 @@
 Region Building Mansion by Rooms begins here.
 
 
-Figure of mansion loading is the file "Special/Loading/loading10.png".
+Figure of mansion loading 1 is the file "Special/Loading/loading10.png".
+Figure of mansion loading 2 is the file "Special/Loading/loading11.png".
+Figure of mansion loading 3 is the file "Special/Loading/loading12.png".
 
 [!<SetUpTheMansion>+
 
@@ -12,15 +14,25 @@ To Set Up The Mansion:
 	if loading scenes is 1:
 		clear the screen;
 		if images visible is 1:
-			display figure of mansion loading;
+			if diaper quest is 0:
+				let R be a random number between 1 and 3;
+				if R is 1:
+					display figure of mansion loading 1;
+				otherwise if R is 2:
+					display figure of mansion loading 2;
+				otherwise:
+					display figure of mansion loading 3;
+			otherwise:
+				if diaper messing >= 3, display figure of dq mansion messy loading;
+				otherwise display figure of dq mansion loading;
 		say "Now loading the mansion region!";
-		wait 50 ms before continuing;
+		render buffered stuff;
 	Scramble Mansion;
 	if debugmode is 1, say "SETTING UP CONTAINERS[line break]";
 	repeat with G running through creaky rooms in The Mansion:
 		unless G is the location of the player:
 			let R be a random number between 1 and 3;
-			if debugmode is 1, say "[R] in [G]...";	
+			if debugmode is 1, say "[R] in [G]...";
 			let Y be a random large sack in Holding Pen;
 			if memic is in Holding Pen, now Y is memic;
 			if Y is not memic:
@@ -35,17 +47,23 @@ To Set Up The Mansion:
 	repeat with M running through alive monsters in the mansion:
 		if the location of M is not placed, now M is in a random placed haunted room;
 	let N be 0;
+	let Nattempts be 0;
 	while N < 4:
-		let R be a random placed room in the mansion;
+		increase Nattempts by 1;
+		let R be a random placed haunted room;
 		if R is not garlic and R is not Mansion16 and R is not Mansion01:
 			now R is garlic;
 			increase N by 1;
+		if Nattempts > 100:
+			say "BUG: Unable to make enough rooms 'garlic'. Please report this bug along with a save file.";
+			now N is 4;
 	repeat with P running through pedestals:
 		now P is in Mansion28;
 		add treasure to P;
 	now a random master bed is in Mansion16;
 	lock pedestals;
-	if debugmode is 0 and loading scenes is 1, clear the screen.
+	if debugmode is 0 and loading scenes is 1, clear the screen;
+	progress quest of new-region-quest.
 
 [!<ScrambleMansion>+
 

@@ -1,6 +1,10 @@
 Cum Dump's Undergarment by Knickers begins here.
 
-a cum dump's undergarment is a kind of crotchless panties. A cum dump's undergarment is usually unique. A cum dump's undergarment is usually totally-exclusive. There is 1 cum dump's undergarment. The armour of cum dump's undergarment is 1. The printed name of cum dump's undergarment is usually "[TQlink of item described][clothing-title-before]unholy cum dump's undergarment[clothing-title-after][TQxlink of item described][verb-desc of item described]". Figure of unholy panties is the file "Items\Clothes\Lower\Underwear\Skimpy\Crotchless\crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
+a cum dump's undergarment is a kind of crotchless-panties. A cum dump's undergarment is usually unique. There is 1 cum dump's undergarment. The armour of cum dump's undergarment is 1. The printed name of cum dump's undergarment is usually "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
+
+Definition: a cum dump's undergarment is uncovered themed: decide yes.
+Definition: a cum dump's undergarment is butterfly themed: decide yes.
+Definition: a cum dump's undergarment is white themed: decide yes.
 
 To compute SelfExamineDesc of (K - a cum dump's undergarment):
 	say "A pair of unholy crotchless panties does nothing to provide any modesty to your [ShortDesc of hips]. ";
@@ -12,7 +16,7 @@ To say ClothingDesc of (K - a cum dump's undergarment):
 	say "This white pair of crotchless panties has a butterfly pattern above the crotch, giving it an innocent look. But you somehow know that it's much more than that, possessing incredible unholy powers.".
 
 To decide which number is the initial outrage of (C - a cum dump's undergarment):
-	decide on 10.
+	decide on 14.
 
 Definition: a cum dump's undergarment (called C) is product:
 	if diaper quest is 1, decide no;
@@ -22,8 +26,7 @@ To decide which number is the alchemy key of (C - a cum dump's undergarment):
 	if diaper quest is 1, decide on 0;
 	decide on 18.
 
-Definition: a cum dump's undergarment (called C) is recipe specific:
-	decide yes.
+Definition: a cum dump's undergarment is recipe specific: decide yes.
 
 This is the cum dump's undergarment specific recipe rule:
 	now the Product in row 32 of the Table of Alchemy is 18;
@@ -42,7 +45,7 @@ To compute recipe specific cursing of (T - a cum dump's undergarment):
 	otherwise:
 		now T is dressup;
 		now T is cursed.
-	
+
 To set up influence of (C - a cum dump's undergarment):
 	now C is semen-addiction-influencing.
 

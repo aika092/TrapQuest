@@ -9,7 +9,9 @@ REQUIRES COMMENTING
 @inherits <Flesh>
 
 @!]
-breasts is a flesh. breasts is everywhere. The description of breasts is "[TotalDesc of breasts][line break]". Understand "tits", "breast", "boobs", "cleavage", "bust" as breasts. Understand "chest" as breasts when the number of treasure chests in the location of the player is 0.
+breasts is a flesh. breasts is everywhere. Understand "tits", "breast", "boobs", "cleavage", "bust" as breasts. Understand "chest" as breasts when the number of treasure chests in the location of the player is 0. The text-shortcut of breasts is "breasts".
+To say FullExamineDesc of (B - breasts):
+	say "[TotalDesc of breasts][line break]".
 
 [!<Breasts>@<fleshVolume:Integer>*
 
@@ -72,7 +74,7 @@ Breasts has a number called raw sensitivity.
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the sensitivity of breasts:
+To decide which number is the sensitivity of (B - breasts):
 	let S be 0;
 	if the class of the player is cowgirl:
 		if the milk volume of breasts > 10, increase S by 1;
@@ -85,71 +87,115 @@ To decide which number is the sensitivity of breasts:
 		if there is a worn nipple chain, increase S by 1;
 	increase S by the raw sensitivity of breasts;
 	if there is a worn nipple chain, increase S by 2;
-	if there is a worn true love tattoo, increase S by 2;
+	if true love tattoo is worn, increase S by 2;
+	increase S by 6 * the trophy-mode of bust-trophy;
 	decide on S.
 
-[!<BreastsIsLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: breasts (called B) is lewdly exposed:
-	if breasts is exposed and the largeness of breasts > 2, decide yes;
-	decide no.
-
-To decide which number is the lewdly exposed outrage of (B - breasts):
-	decide on 9. [allows us to easily tweak this number]
-
-[!<BreastsIsExposed>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: breasts (called B) is exposed:
-	if breasts is not at least partially exposed, decide no;
-	if the number of worn actually breast covering nipple covering top-placed clothing is the number of worn see-through actually breast covering nipple covering top-placed clothing, decide yes; [Is all worn  breast covering clothing see-through?]
-	decide no.
-
-[!<BreastsIsAtLeastPartiallyLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: breasts (called B) is at least partially lewdly exposed:
-	if breasts is at least partially exposed and the largeness of breasts > 2, decide yes;
-	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
-	decide on 7. [allows us to easily tweak this number]
+	decide on 9.
+
+To decide which number is the lewdly exposed outrage of (B - breasts):
+	decide on 14.
+
+
+Definition: breasts is exposed:
+	if breasts is not at least partially exposed, decide no;
+	if the number of worn actually breast covering nipple covering clothing is the number of worn see-through actually breast covering nipple covering clothing, decide yes; [Is all worn breast covering clothing see-through?]
+	decide no.
+
+Definition: breasts is at least partially exposed if the number of worn actually dense actually breast covering nipple covering clothing is 0.
+
+Definition: breasts is lewdly exposed if breasts is exposed and (the player is female or the largeness of breasts > 1).
+
+Definition: breasts is at least partially lewdly exposed if breasts is at least partially exposed and the largeness of breasts > 1.
+
+To decide which number is the cleavageCover of (C - a clothing):
+	if C is breast covering:
+		if C is fully covering, decide on 100;
+		if C is high cut, decide on 7;
+		if C is average cut, decide on 6;
+		if C is low cut, decide on 5;
+		if C is very low cut, decide on 4;
+		if C is ridiculously low cut, decide on 3;
+		if C is fully exposing, decide on 0;
+	decide on 0.
+
+To decide which number is cleavageCover: [The higher this number, the less humiliating giant breasts are]
+	if there is worn actually dense high cut or higher actually breast covering clothing:
+		decide on 7;
+	otherwise if there is worn actually dense average cut actually breast covering clothing:
+		decide on 6;
+	otherwise if there is worn actually dense low cut actually breast covering clothing:
+		decide on 5;
+	otherwise if there is worn actually dense very low cut actually breast covering clothing:
+		decide on 4;
+	decide on 3.
 
 To decide which number is the outrage of (B - breasts):
-	if there is worn actually dense fully covering top-placed clothing, decide on 0; [can be fully concealed which prevents them from being embarrassing]
-	let O be the semen coating of B * 2;
+	let O be 0;
+	let S be the semen coating of B * the semen coating of B;
+	if S > 0:
+		if there is worn actually dense fully covering actually breast covering clothing, now S is 0; [can be fully concealed which prevents us from seeing that they're glazed with cum]
 	unless diaper quest is 1 and the breastskill of the player is 1:
-		increase O by the largeness of breasts / 3;
-		if there is a worn currently visible top-displaced clothing, increase O by 1;
-		if B is lewdly exposed, decide on the lewdly exposed outrage of B + O;
-		if B is at least partially lewdly exposed, decide on the at least partially lewdly exposed outrage of B + O;
-	decide on O. [not humiliating by default]
+		let P be 0; [This will be the value of how lewd it is that the player's nipples are visible]
+		if there is a worn currently at least partially visible top-displaced clothing, increase O by 2;
+		if B is lewdly exposed, now P is the lewdly exposed outrage of B + O;
+		if B is at least partially lewdly exposed, now P is the at least partially lewdly exposed outrage of B + O;
+		now O is (2 + (the largeness of breasts * 3)) / cleavageCover; [This will be the value of how lewd it is that the player has big breasts, scaled down by how much of the titty meat is covered up by clothing]
+		if P > O, now O is P; [Take the larger of what's humiliating from big cleavage and exposed nipples]
+	now O is (S + O) / (the trophy-mode of bust-trophy + 1); [Add on semen coating; Bust trophy halves outrage]
+	if O > 20, decide on 20;
+	if O < 0, decide on 0;
+	decide on O.
 
-[!<BreastsIsAtLeastPartiallyExposed>+
+To decide which number is the cringe of (B - breasts):
+	let C be the outrage of B;
+	if C < 4:
+		if B is exposed, decide on 2;
+		decide on 0;
+	decide on C - 3. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
 
-REQUIRES COMMENTING
 
-+!]
-Definition: breasts (called B) is at least partially exposed:
-	if there is worn actually dense actually breast covering nipple covering top-placed clothing, decide no;
-	decide yes.
-
-[!<BreastsIsShowingCleavage>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: breasts is showing cleavage:
 	if the largeness of breasts < 4, decide no;
-	if there is worn actually dense fully covering top-placed clothing, decide no;
+	if there is worn actually dense fully covering actually breast covering clothing, decide no;
 	decide yes.
+
+Definition: a clothing (called C) is ridiculously low cut or higher:
+	if C is chestless or C is fully exposing, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is very low cut or higher:
+	if C is chestless or C is fully exposing or C is ridiculously low cut, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is low cut or higher:
+	if C is chestless or C is fully exposing or C is ridiculously low cut or C is very low cut, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is average cut or higher:
+	if C is average cut or C is high cut or C is fully covering, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is high cut or higher:
+	if C is high cut or C is fully covering, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is ridiculously low cut or lower:
+	if C is fully exposing or C is ridiculously low cut, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is very low cut or lower:
+	if C is very low cut or C is ridiculously low cut or lower, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is low cut or lower:
+	if C is low cut or C is very low cut or lower, decide yes;
+	decide no.
+
+
+
 
 [!<DecideWhichNumberIsTheLargenessOfBreasts>+
 
@@ -200,9 +246,8 @@ To decide which number is the supportable weight of breasts:
 		if S is cursed, increase O by 4;
 		otherwise decrease O by 3;
 		if S is blessed, decrease O by 3;
-	if there is a worn Atlas tattoo:
-		decrease O by 3;
-	if there is a worn abyssal tattoo and the class of the player is silicone queen:
+	if Atlas tattoo is worn, decrease O by 3;
+	if abyssal tattoo is worn and the class of the player is silicone queen:
 		decrease O by the silicone volume of breasts / 6; [breast implants weigh half as much for the silicone queen if you've got the bonus]
 	if the air volume of breasts <= 0 and O < 0, now O is 0; [Can't have negative weight without inflation fetish]
 	decide on O.
@@ -242,7 +287,7 @@ To decide which number is the weight of (XXX - breasts):
 		now S is S / 2;
 		if S < 1, now S is 1;
 	if the latex-transformation of the player > 1 and S > 10, now S is 10;
-	if the latex-transformation of the player > 5 and  S > 0, now S is 0;
+	if the latex-transformation of the player > 5 and S > 0, now S is 0;
 	decide on S.
 
 [!<BreastsIsHeavy>+
@@ -250,18 +295,14 @@ To decide which number is the weight of (XXX - breasts):
 REQUIRES COMMENTING
 
 +!]
-Definition: breasts is heavy:
-	if the weight of breasts >= 18, decide yes;
-	decide no.
+Definition: breasts is heavy if the weight of breasts >= 18.
 
 [!<YourselfIsTopHeavy>+
 
 Are breasts going to fail to grow any further?
 
 +!]
-Definition: yourself is top heavy:
-	if the largeness of breasts < max breast size, decide no;
-	decide yes.
+Definition: yourself is top heavy if the largeness of breasts >= max breast size.
 
 [!<DecideWhichNumberIsMaxBreastSize>+
 
@@ -309,10 +350,15 @@ REQUIRES COMMENTING
 
 +!]
 This is the breasts covered by clothing rule:
-	repeat with B running through worn breast covering clothing:
-		if B is not fully exposing and B is not optional-top-displacable and B is top-placed:
-			if auto is 0, say "You would need to take your [printed name of B] off first.";
-			rule fails.
+	let allDisplacable be 1;
+	repeat with B running through worn breast covering top-placed clothing:
+		if B is not fully exposing and B is not optional-top-displacable:
+			unless (B is top-displacable and B is not glued) or B is usually autoremovable, now allDisplacable is 0;
+	if allDisplacable is 0:
+		repeat with B running through worn breast covering top-placed clothing:
+			if B is not fully exposing and B is not optional-top-displacable:
+				if auto is 0, say "You would need to take your [printed name of B] off first.";
+				rule fails.
 The breasts covered by clothing rule is listed in the breasts presentable rules.
 
 [!<TheMonsterDoesNotDoTitfucksRule>+
@@ -356,7 +402,7 @@ Definition: a person is breasts blinded:
 	if the largeness of breasts > 10 and the weight of breasts < 0:
 		if breasts-blinded is 0:
 			now breasts-blinded is 1;
-			say "[bold type]Your [ShortDesc of breasts] are now floating in front of your face, obscuring your vision!  [one of]You will have lowered combat damage, slightly lowered dexterity and be unable to search until they deflate.[or][stopping][roman type][line break]";
+			say "[bold type]Your [ShortDesc of breasts] are now floating in front of your face, obscuring your vision! [one of]You will have lowered combat damage, slightly lowered dexterity and be unable to search until they deflate.[or][stopping][roman type][line break]";
 		decide yes;
 	otherwise:
 		if breasts-blinded is 1:
@@ -372,7 +418,7 @@ How much does the player want this body part to be used?
 To decide which number is the desire of (B - breasts):
 	decide on the titfuck addiction of the player.
 
-	
+
 Part 2 - Description
 
 [!<SayShortDescOfBreasts>+
@@ -381,7 +427,7 @@ Very brief details (size)
 
 +!]
 To say ShortDesc of breasts:
-	say "[BreastDesc]".
+	say BreastDesc.
 
 [!<SayMediumDescOfBreasts>+
 
@@ -389,7 +435,25 @@ Less brief details (size, exposure, semen)
 
 +!]
 To say MediumDesc of (B - breasts):
-	say "[if breasts is lewdly exposed]fully exposed [otherwise if breasts is at least partially lewdly exposed]visible [otherwise if breasts is showing cleavage]partially exposed [otherwise if breasts is not exposed]concealed [end if][if the semen coating of breasts > 6]cum-coated [otherwise if the semen coating of breasts > 0]cum-splattered [end if][BreastDesc]".
+	say "[if breasts is lewdly exposed]fully exposed [CumBreastDesc][otherwise if breasts is at least partially lewdly exposed]visible [CumBreastDesc][otherwise if breasts is showing cleavage][CumBreastDesc] [CleavageDesc][otherwise if breasts is not exposed]concealed [CumBreastDesc][end if]".
+
+To say CumBreastDesc:
+	say "[if the semen coating of breasts > 6]cum-coated [otherwise if the semen coating of breasts > 0]cum-splattered [end if][BreastDesc]".
+
+To say CleavageDesc:
+	if breasts is showing cleavage:
+		if there is worn actually dense high cut actually breast covering clothing:
+			say "with some slight cleavage showing";
+		otherwise if there is worn actually dense average cut actually breast covering clothing:
+			say "showing a normal amount of cleavage";
+		otherwise if there is worn actually dense low cut actually breast covering clothing:
+			say "showing a lot of cleavage";
+		otherwise if there is worn actually dense very low cut actually breast covering clothing:
+			say "with lots of cleavage spilling out";
+		otherwise if there is worn actually dense actually breast covering clothing:
+			say "(barely covered at all)".
+
+
 
 [!<SayTotalDescOfBreasts>+
 
@@ -403,7 +467,7 @@ To say TotalDesc of breasts:
 		otherwise say "somehow managing to stand up with ";
 	otherwise:
 		if the largeness of breasts < 11 or the latex-transformation of the player > 1, say "on your knees, with [if the largeness of breasts is 1]a [end if]";
-		otherwise say "on your hands and knees under the weight of your ";	
+		otherwise say "on your hands and knees under the weight of your ";
 	if there is a worn bra:
 		say "[BreastDesc][BraDesc]";
 	otherwise if the player is prone:
@@ -412,6 +476,7 @@ To say TotalDesc of breasts:
 		say "[BreastDesc][BreastStandingDesc]";
 	if lactation fetish is 1 or inflation fetish is 1 or artificial enhancements fetish is 1:
 		if the latex-transformation of the player is 0, say BreastFillDesc;
+		say BreastLactationRate;
 	say "[BreastWeight][BreastModesty]";
 	if the semen coating of breasts > 7:
 		say "[BreastsTheyAre] completely covered in [semen]. ";
@@ -444,7 +509,7 @@ REQUIRES COMMENTING
 +!]
 To say BreastDesc:
 	let X be the largeness of breasts;
-	if X is 1, say "flat chest";
+	if X is 1, say "[if the player is female]almost [end if]flat chest";
 	if X is 2, say "minuscule AA bee stings";
 	if X is 3, say "tiny A cup bullets";
 	if X is 4, say "small B cup bosoms";
@@ -465,7 +530,7 @@ To say BreastDesc:
 	if X is 19, say "back breaking, comically sized mountain peaks";
 	if X is 20, say "impossibly voluminous globes".
 
-[To be used in sentences like  "Your breasts <bounce> as you strut along. ]
+[To be used in sentences like "Your breasts <bounce> as you strut along." ]
 [!<SayBreastBounceDesc>+
 
 REQUIRES COMMENTING
@@ -501,7 +566,7 @@ REQUIRES COMMENTING
 +!]
 To say BreastBouncingDesc:
 	let X be the largeness of breasts;
-	if X is 1, say "are flat and unmoving";
+	if X is 1, say "flat and unmoving";
 	if X is 2, say "quivering slightly";
 	if X is 3, say "quivering";
 	if X is 4, say "juddering";
@@ -600,7 +665,7 @@ To say BreastKneelingDesc:
 		if X is 7, say " that hang and sway as you crawl. ";
 		if X is 8, say " that are constantly distracting you as you try to crawl around. ";
 		if X is 9, say " that get in the way of your elbows as you crawl. ";
-		if X is 10, say " that keep bumping into each other and  bouncing off each other as you crawl. ";
+		if X is 10, say " that keep bumping into each other and bouncing off each other as you crawl. ";
 		if X is 11, say " that are forcing your chest and head closer to the ground, and pushing your ass into the air. ";
 		if X is 12, say " that keep touching the ground as you crawl. ";
 		if X is 13, say " that are so large, that your nipples keep rubbing against the ground as you crawl. ";
@@ -632,7 +697,7 @@ To say BreastFillDesc:
 		say "They feel like they are extremely bloated with [milk]. ";
 	if the silicone volume of breasts is 0:
 		say "";
-	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts  > the silicone volume of breasts * 2:
+	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts > the silicone volume of breasts * 2:
 		say "They contain a pair of small silicone implants. ";
 	otherwise if the flesh volume of breasts + the air volume of breasts + the milk volume of breasts > the silicone volume of breasts:
 		say "They contain a pair of decently sized silicone implants. ";
@@ -646,10 +711,14 @@ To say BreastFillDesc:
 		say "They are slightly inflated with air. ";
 	otherwise if the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts:
 		say "They are inflated with a decent amount of air. ";
-	otherwise if the flesh volume of breasts  + the milk volume of breasts + the silicone volume of breasts is the air volume of breasts or the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts / 2:
+	otherwise if the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts is the air volume of breasts or the flesh volume of breasts + the milk volume of breasts + the silicone volume of breasts > the air volume of breasts / 2:
 		say "They are ballooned with a huge amount of air. ";
 	otherwise:
 		say "They are ballooned with a massive amount of air. ".
+
+To say BreastLactationRate:
+	let R be the lactation rate of the player;
+	if R > 0, say "The [if R < 2]sporadic tingling[otherwise if R < 4]occasional itch[otherwise if R < 6]recurrent tickling[otherwise if R < 8]persistent prickling[otherwise]incessant throbbing[end if] in your [if the largeness of breasts < 5][one of]breasts[or]boobs[or]tits[in random order][otherwise][one of]titties[or]jugs[or]udders[in random order][end if] warns you when you're about to [if R < 3]leak a few drops of milk[otherwise if R < 5]squirt your next cup of cream[otherwise if R < 7]pour your next pint of dairy[otherwise if R < 9]start spraying quarts of moo juice[otherwise]gush another gallon of nipple nectar[end if]. ".
 
 [!<SayBreastWeight>+
 
@@ -678,7 +747,7 @@ To say BreastWeight:
 		otherwise if W < 21:
 			say "They are weighing you down to the point where it's a constantly noticeable burden. ";
 		otherwise if W < 27:
-			say "They are weighing you down a lot, your back is not happy!  ";
+			say "They are weighing you down a lot, your back is not happy! ";
 		otherwise if W < 33:
 			say "They are ridiculously heavy, and you can't help but lean forward as they pull your upper body towards the ground. ";
 		otherwise:
@@ -692,18 +761,20 @@ REQUIRES COMMENTING
 To say BreastModesty:
 	if breasts is lewdly exposed:
 		if there is a worn breast covering top-placed clothing:
-			say "Your chest is clearly visible through your [random worn breast covering top-placed clothing]. ";
+			say "Your chest is clearly visible through your [ShortDesc of random worn breast covering top-placed clothing]. ";
 		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [random worn breast covering clothing]. ";
+			say "Your nipples are clearly visible through your [ShortDesc of random worn breast covering clothing]. ";
 		otherwise:
 			say "They are completely uncovered, on display for anyone who wants to [if the bimbo of the player < 5]perv on[otherwise if the bimbo of the player < 10]ogle at[otherwise]get intimate with[end if] them. ";
 	otherwise if breasts is at least partially lewdly exposed:
 		if there is a worn breast covering top-placed clothing:
-			say "Your chest is partially visible through your [random worn breast covering top-placed clothing]. ";
+			say "Your chest is partially visible through your [ShortDesc of random worn breast covering top-placed clothing]. ";
 		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [random worn nipple covering top-placed clothing]. ";
-	otherwise if breasts are not exposed:
-		say "[BreastsTheyAre] hidden safely behind your [random worn actually dense nipple covering clothing]. ".
+			say "Your nipples are clearly visible through your [ShortDesc of random worn nipple covering top-placed clothing]. ";
+	otherwise if breasts are not at least partially exposed:
+		say "[BreastsTheyAre] hidden safely behind your [ShortDesc of random worn actually dense nipple covering clothing]. ";
+	otherwise if the player is female:
+		say "[BreastsTheyAre] so flat that you could be mistaken for a man. This does mean that it's not particularly outrageous for your nipples to be on display. ";
 
 [!<SayBreastCupNumber>+
 
@@ -758,61 +829,66 @@ To Bustup (X - a number):
 	if the player is a flatchested trap or diaper quest is 1, now X is 0;
 	while X > 0:
 		decrease X by 1;
-		2Bustup;
+		if there is a restricting salve covering breasts:
+			say "[one of]You feel your [BreastDesc] try to grow, but the salve of restriction stops them from changing size![or][or][or][or][or][in random order]";
+			now X is 0;
+		otherwise if the player is top heavy and inflation fetish is 1 and the air volume of breasts > 0:
+			let Z be 0;
+			if fast breast expansion is 0 and extreme proportions fetish is 0, now Z is 1;
+			if fast breast expansion is 0 and extreme proportions fetish is 1, now Z is a random number from 1 to 2;
+			if fast breast expansion is 1 and extreme proportions fetish is 0, now Z is a random number from 1 to 2;
+			if fast breast expansion is 1 and extreme proportions fetish is 1, now Z is 2;
+			if the air volume of breasts < Z, now Z is the air volume of breasts;
+			increase the flesh volume of breasts by Z;
+			decrease the air volume of breasts by Z;
+		otherwise if the player is top heavy and lactation fetish is 1 and the milk volume of breasts > the flesh volume of breasts:
+			let Z be 0;
+			if fast breast expansion is 0 and extreme proportions fetish is 0, now Z is 1;
+			if fast breast expansion is 0 and extreme proportions fetish is 1, now Z is a random number from 1 to 2;
+			if fast breast expansion is 1 and extreme proportions fetish is 0, now Z is a random number from 1 to 2;
+			if fast breast expansion is 1 and extreme proportions fetish is 1, now Z is 2;
+			if the milk volume of breasts < Z, now Z is the milk volume of breasts;
+			increase the flesh volume of breasts by Z;
+			decrease the milk volume of breasts by Z;
+			MilkUp Z;
+		otherwise if the player is not top heavy:
+			let Z be 0;
+			if fast breast expansion is 0 and extreme proportions fetish is 0, now Z is 1;
+			if fast breast expansion is 0 and extreme proportions fetish is 1, now Z is a random number from 1 to 2;
+			if fast breast expansion is 1 and extreme proportions fetish is 0, now Z is a random number from 1 to 2;
+			if fast breast expansion is 1 and extreme proportions fetish is 1, now Z is 2;
+			increase the flesh volume of breasts by Z;
+		otherwise:
+			say "[one of]You feel your breasts try to grow, but apparently they can't get any bigger![or][or][or][or][or][in random order]";
+			now X is 0;
 	if the largeness of breasts > B:
 		say "Your breasts have visibly [one of]grown[or]swelled[or]expanded[at random] into [ShortDesc of breasts].";
 		if the largeness of breasts is 1:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]Woah, am I getting boobs?[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]Oooh, I'm growing tits![roman type][line break][or][stopping]";
+			if the player is male, cutshow figure of body reaction 1 for breasts;
 		if the largeness of breasts is 3:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break][if the player is male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
-			otherwise say "[one of][line break][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";	
-		if the largeness of breasts is 5:		
+			otherwise say "[one of][line break][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";
+			if the player is male, cutshow figure of body reaction 2 for breasts;
+		if the largeness of breasts is 5:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]Okay, these boobs are getting worryingly big now...[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 10:
 			if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]Tee hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 15:
-			if the bimbo of the player < 15, say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
-			otherwise say "[one of][line break][second custom style][line break]*giggle* My tits are just ridiculously huge!  I wonder if they can grow any bigger?[roman type][line break][or][stopping]";
+			if the bimbo of the player < 15:
+				say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
+				cutshow figure of body reaction 14 for breasts;
+			otherwise:
+				say "[one of][line break][second custom style][line break]*giggle* My tits are just ridiculously huge! I wonder if they can grow any bigger?[roman type][line break][or][stopping]";
+				cutshow figure of body reaction 15 for breasts;
 		compute bra strain;
+		update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
 
-[!<2BustUp>+
 
-REQUIRES COMMENTING
-
-+!]
-To 2Bustup:
-	if there is a restricting salve covering breasts:
-		say "[one of]You feel your [BreastDesc] try to grow, but the salve of restriction stops them from changing size![or][or][or][or][or][in random order]";
-	otherwise if the player is top heavy and inflation fetish is 1 and the air volume of breasts > 0:
-		let X be 0;
-		if fast breast expansion is 0 and extreme proportions fetish is 0, now X is 1;
-		if fast breast expansion is 0 and extreme proportions fetish is 1, now X is a random number from 1 to 2;
-		if fast breast expansion is 1 and extreme proportions fetish is 0, now X is a random number from 1 to 2;
-		if fast breast expansion is 1 and extreme proportions fetish is 1, now X is 2;
-		increase the flesh volume of breasts by X;
-		decrease the air volume of breasts by 1;
-	otherwise if the player is top heavy and lactation fetish is 1 and the milk volume of breasts > the flesh volume of breasts:
-		let X be 0;
-		if fast breast expansion is 0 and extreme proportions fetish is 0, now X is 1;
-		if fast breast expansion is 0 and extreme proportions fetish is 1, now X is a random number from 1 to 2;
-		if fast breast expansion is 1 and extreme proportions fetish is 0, now X is a random number from 1 to 2;
-		if fast breast expansion is 1 and extreme proportions fetish is 1, now X is 2;
-		increase the flesh volume of breasts by X;
-		decrease the milk volume of breasts by 1;
-		MilkUp X;
-	otherwise if the player is not top heavy:
-		let X be 0;
-		if fast breast expansion is 0 and extreme proportions fetish is 0, now X is 1;
-		if fast breast expansion is 0 and extreme proportions fetish is 1, now X is a random number from 1 to 2;
-		if fast breast expansion is 1 and extreme proportions fetish is 0, now X is a random number from 1 to 2;
-		if fast breast expansion is 1 and extreme proportions fetish is 1, now X is 2;
-		increase the flesh volume of breasts by X;
-	otherwise:
-		say "[one of]You feel your breasts try to grow, but apparently they can't get any bigger![or][or][or][or][or][in random order]".
 
 [!<SetRealBreastSize>+
 
@@ -877,6 +953,11 @@ To 2Bustdown:
 	otherwise:
 		decrease the flesh volume of breasts by 1;
 
+To decide which number is the milk capacity of (B - breasts):
+	let F be the flesh volume of breasts * 2;
+	if F > 40, decide on 40;
+	decide on F.
+
 [!<MilkUpX>+
 
 REQUIRES COMMENTING
@@ -888,21 +969,22 @@ To Milkup (X - a number):
 	let old-B be the largeness of breasts;
 	while X > 0:
 		decrease X by 1;
-		if the milk volume of breasts < the flesh volume of breasts * 2:
+		if the milk volume of breasts < the milk capacity of breasts:
 			2MilkUp; [This is the player's breasts silently filling up with milk.]
 		otherwise if the player is top heavy and X is 1: [This is only done for the final unit of milk]
 			increase the milk volume of breasts by 1;
 			trigger lactation; [We have filled the player's breasts beyond legal capacity so we trigger lactation, which will empty some of it.]
-			if the player is top heavy, now the milk volume of breasts is the flesh volume of breasts; [Here we make sure that there isn't a huge amount of leftover milk that shouldn't be allowed to exist. However we may want to improve this as with edge conditions there's a chance that much more milk will disappear here than it should.]
-			if a random number between 1 and 2 is 1 and the milk volume of breasts > 1:
-				say "[variable custom style]I [one of]really[or]urgently[purely at random] need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break]";
 		otherwise if the player is top heavy:
 			increase the milk volume of breasts by 1; [When temporarily overfilling beyond legal capacity, we don't want to break any bras that are suddenly "too small" so we don't use 2MilkUp]
 		otherwise:
 			2Milkup; [We do this if the player's breast flesh is completely full of milk but the breasts are still allowed to grow.]
 			increase the flesh volume of breasts by 1;
-	if old-B < the largeness of breasts, say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!".
-	[if the player is overbusted, say "[one of][bold type]MilkUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";]
+			update appearance level;
+	if old-B < the largeness of breasts:
+		say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!";
+		unless last-lactated-time - earnings < 60, trigger lactation; [Don't want to cause lactation super frequently]
+	if the milk volume of breasts >= the milk capacity of breasts and a random number between 1 and 2 is 1 and (the milk volume of breasts > 5 or the player is top heavy), say "[one of][variable custom style]I really need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break][or][or][cycling]".
+
 
 [!<2MilkUp>+
 
@@ -952,12 +1034,13 @@ To BustInflate (X - a number):
 		decrease X by 1;
 		if the player is not top heavy and inflation fetish is 1, increase the air volume of breasts by 1;
 	compute bra strain;
+	update appearance level;
 	if previous-weight > -6 and the weight of breasts < -5 :
-		say "Your [BreastDesc] are now significantly lighter than air!  You can constantly feel their pull, trying to lift you up off the ground.";
+		say "Your [BreastDesc] are now significantly lighter than air! You can constantly feel their pull, trying to lift you up off the ground.";
 	otherwise if previous-weight > -1 and the weight of breasts < 0:
-		say "Your [BreastDesc] are now lighter than air!  They gently try to rise from your body like two helium balloons glued to your chest.";
+		say "Your [BreastDesc] are now lighter than air! They gently try to rise from your body like two helium balloons glued to your chest.";
 	otherwise if previous-weight > 0 and the weight of breasts is 0:
-		say "Your [BreastDesc] are now weightless!  They seem to ignore the effects of gravity and now constantly wobble.";
+		say "Your [BreastDesc] are now weightless! They seem to ignore the effects of gravity and now constantly wobble.";
 	if the player is overbusted, say "[one of][bold type]BustInflate function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
 
 [!<BustDeflateX>+
@@ -991,9 +1074,15 @@ To BustImplantsUp (X - a number):
 			trigger lactation;
 			increase the silicone volume of breasts by 1;
 		otherwise if attempt-done < 2:
-			say "Your [BreastDesc] are just too big, the skin won't stretch any further!  Your new [if the silicone volume of breasts > 0]and improved [end if]implants shrink under the pressure.";
+			say "Your [BreastDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of breasts > 0]and improved [end if]implants shrink under the pressure.";
 			now attempt-done is 2;
+		if X is 0:
+			let C be a random worn cheerleader outfit;
+			let L be a random off-stage rubber cheerleader outfit;
+			if blue-rubber-cheerleader-outfit is off-stage, now L is blue-rubber-cheerleader-outfit;
+			if C is a thing and L is a thing, transform C into L;
 	compute bra strain;
+	update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustImplants function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
 
 [!<BustImplantsDownX>+
@@ -1005,6 +1094,59 @@ To BustImplantsDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the silicone volume of breasts > 0, decrease the silicone volume of breasts by 1.
+
+breastStimulationFlavAllowed is initially true.
+
+To stimulate (X - breasts):
+	if breasts is pushed over the edge:
+		breasts orgasm shamefully;
+	otherwise if the sensitivity of breasts >= 2 and the player is able to get horny:
+		arouse (the square root of (the sensitivity of breasts * 1000)) * 10;
+		if breastStimulationFlavAllowed is true:
+			if the sensitivity of breasts >= 10:
+				say "[one of]The nerves in your breasts explode with sensation! [if the player is female]Your [vagina] gushes with pleasure.[otherwise if the size of penis > 0]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
+			otherwise if the sensitivity of breasts >= 6:
+				say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or (the player is male and the size of penis is 0)]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+			otherwise:
+				say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
+
+Report going:
+	let SB be the sensitivity of breasts;
+	if SB > 5:
+		let C be bottom level lactation cover;
+		if C is clothing:
+			let SM be 24;
+			if C is fully covering, now SM is 19;
+			if C is high cut, now SM is 20;
+			if C is average cut, now SM is 21;
+			if C is low cut, now SM is 22;
+			if C is very low cut, now SM is 23;
+			if SB * 3 > SM, now SM is SB * 3;
+			if a random number between 5 and SM < SB:
+				say "Your [ShortDesc of C] rubs against your [if SM < 24][BreastDesc] and [end if]sensitive nipples as you [if the player is upright]walk[otherwise]crawl[end if].";
+				if a random number between 1 and 5 > 1, now breastStimulationFlavAllowed is false;
+				stimulate breasts;
+				now breastStimulationFlavAllowed is true;
+		otherwise if the player is prone and SB > 7 and the largeness of breasts > 10:
+			let SM be 24;
+			if SB * 3 > SM, now SM is SB * 3;
+			if a random number between 5 and SM < SB:
+				say "Your sensitive nipples rub against the ground as you crawl.";
+				if a random number between 1 and 5 > 1, now breastStimulationFlavAllowed is false;
+				stimulate breasts;
+				now breastStimulationFlavAllowed is true.
+
+
+
+Section - Image for graphics window
+
+The text-shortcut of breasts is "breasts".
+Figure of CumBreastsButton is the file "Special/Buttons/cumbreasts.png".
+
+To decide which figure-name is the examine-image of (T - breasts):
+	if T is overglazed, decide on Figure of CumBreastsButton;
+	decide on figure of no-image-yet.
+
 
 Breasts ends here.
 

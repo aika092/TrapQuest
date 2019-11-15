@@ -1,7 +1,15 @@
 Chocolate Bar by Food begins here.
 
 
-A chocolate bar is a kind of candy. The printed name of chocolate bar is "[TQlink of item described]chocolate bar[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of chocolate bar is "[TQlink of item described]bars of chocolate[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolate bar is "cb". The description of chocolate bar is "A small bar of chocolate, still in its wrapper. The label says 'Experimental molecule replication nanobots will bulk up whatever organic matter they come across!  Be healed in seconds!'". There is 1 chocolate bar.
+A chocolate bar is a kind of candy. The printed name of chocolate bar is "[TQlink of item described]chocolate bar[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of chocolate bar is "[TQlink of item described]bars of chocolate[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolate bar is "cb". There is 1 chocolate bar.
+To say ExamineDesc of (B - a chocolate bar):
+	say "A small bar of chocolate, still in its wrapper. The label says 'Experimental molecule replication nanobots will bulk up whatever organic matter they come across! Be healed in seconds!'".
+
+
+Figure of chocolate is the file "Items/Collectibles/chocolate1.jpg".
+
+To decide which figure-name is the examine-image of (F - a chocolate bar):
+	decide on figure of chocolate.
 
 To decide which number is the crafting key of (C - a chocolate bar):
 	decide on 30.
@@ -10,13 +18,13 @@ To say ShortDesc of (C - a chocolate bar):
 	say "chocolate bar".
 
 Carry out TQeating chocolate bar:
-	say "[DevourFlav of the noun][if the body soreness of the player > 1]You can feel the nanobots inside the chocolate getting to work, healing your bruises and easing your tired muscles!  But then suddenly[otherwise]Suddenly[end if] ";
+	say "[DevourFlav of the noun][if the body soreness of the player > 1]You can feel the nanobots inside the chocolate getting to work, healing your bruises and easing your tired muscles! But then suddenly[otherwise]Suddenly[end if] ";
 	bodyheal 7;
 	if rectum > 2:
 		now rectum is rectum * 4;
 		say "you feel a rumbling in your bowels and whimper as you feel the digested food within your intestines expand and quadruple in bulk. Your belly swells to contain the huge load, and [if the player is feeling full]you feel a desperate need to go number two![otherwise]you can tell that are going to have to go number two soon.[end if]";
 	otherwise if diaper quest is 1:
-		if diaper lover >= 3:
+		if diaper messing >= 3:
 			StomachFoodUp 2;
 			increase rectum by 5;
 		otherwise:

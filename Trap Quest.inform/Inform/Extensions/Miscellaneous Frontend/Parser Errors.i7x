@@ -1,9 +1,26 @@
 Parser Errors by Miscellaneous Frontend begins here.
 
 
-After asking which do you mean (this is the Disambiguation Choices cause crashes rule):
-	if inline hyperlinks > 0 and newbie tips is 1, say "[bold type][one of]Do not use a hyperlink here, or this will cause the game to crash. Type a number instead. I have no idea why, sorry.[or]Remember, don't use a hyperlink or the game will crash.[stopping][roman type][line break]".
+[After asking which do you mean (this is the Disambiguation Choices cause crashes rule):
+	if inline hyperlinks > 0 and newbie tips is 1, say "[bold type][one of]Do not use a hyperlink here, or this will cause the game to crash. Type a number instead. I have no idea why, sorry.[or]Remember, don't use a hyperlink or the game will crash.[stopping][roman type][line break]".]
 
+disambiguation-busy is initially false.
+
+A thing has a number called the disambiguation-ID. Understand the disambiguation-ID property as describing a thing when disambiguation-ID-count > 1.
+
+Disambiguation-ID-count is a number that varies.
+
+Before asking which do you mean (this is the Disambiguation Choices need clarification rule):
+	now disambiguation-busy is true.
+
+After asking which do you mean (this is the Disambiguation Choices no longer need clarification rule):
+	now disambiguation-busy is false.
+
+Every turn:
+	if disambiguation-ID-count > 1:
+		now disambiguation-ID-count is 1;
+		repeat with T running through things:
+			now the disambiguation-ID of T is 0.
 
 [!<RuleForPrintingAParserErrorWhenTheLatestParserErrorIsTheIBedYourPardonError>+
 
@@ -17,7 +34,7 @@ Rule for printing a parser error when the latest parser error is the I beg your 
 
 REQUIRES COMMENTING
 
-+!]	
++!]
 Rule for printing a parser error when the latest parser error is the not a verb I recognise error:
 	say "That's not a verb I recognise. But if you really think it should be, maybe tell Aika?" instead;
 
@@ -35,7 +52,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 REQUIRES COMMENTING
 
 *!]
-Last error is indexed text that varies. The last error is "derp". 
+Last error is indexed text that varies. The last error is "derp".
 
 [!<RuleForPrintingAParserErrorWhenTheLatestParserErrorIsTheNotAVerbIRecogniseError>+
 

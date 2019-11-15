@@ -1,15 +1,16 @@
 Superheroine Outfit by Dresses begins here.
 
 A superheroine outfit is a kind of overdress. A superheroine outfit is rare. A superheroine outfit is usually nylon. A superheroine outfit is usually low cut. A superheroine outfit is usually unskirted. A superheroine outfit is usually top-exclusive. A superheroine outfit is usually not-top-displacable. The soak-limit of a superheroine outfit is usually 20.
+Definition: a superheroine outfit is boob themed: decide yes.
 
-The printed name of superheroine outfit is usually "[TQlink of item described][clothing-title-before]superheroine outfit[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of superheroine outfit is usually "[clothing-title-before]superheroine outfit[clothing-title-after]".
 
 To compute SelfExamineDesc of (C - a superheroine outfit):
 	say "You are wearing a [ShortDesc of C]. ".
 
 To decide which number is the initial outrage of (C - a superheroine outfit):
 	if diaper quest is 1, decide on 4;
-	otherwise decide on 6.
+	otherwise decide on 5.
 
 To decide which number is the strength-influence of (C - a superheroine outfit):
 	let S be -1;
@@ -20,16 +21,13 @@ To decide which number is the strength-influence of (C - a superheroine outfit):
 	otherwise:
 		increase S by the largeness of breasts / 3;
 	decide on S.
-	
+
 Report examining a superheroine outfit:
 	if diaper quest is 1, say "[if the noun is worn]You somehow know by instinct that the strength of the outfit depends on the thickness of your diaper.[end if]";
-	otherwise say "[if the flat intelligence of the player > 9]You realise that the cleavage window is probably the secret to its magic power. [end if][if the flat intelligence of the player > 15]The larger your breasts, the more strength this will give you.[end if]".
+	otherwise say "[if saved-flat-intelligence > 9]You realise that the cleavage window is probably the secret to its magic power. [end if][if saved-flat-intelligence > 15]The larger your breasts, the more strength this will give you.[end if]".
 
-Definition: a superheroine outfit (called C) is untransformable:
-	decide yes.
-
-Definition: a superheroine outfit (called C) is displacable:
-	decide no.
+Definition: a superheroine outfit is disintegration-protected: decide yes.
+Definition: a superheroine outfit is displacable: decide no.
 
 This is the superheroine outfit fix rule:
 	repeat with A running through anime superheroine tops:
@@ -43,7 +41,7 @@ Part 1 - Anime Superheroine Top
 An anime superheroine top is a kind of superheroine outfit. An anime superheroine top is usually pvc. An anime superheroine top is usually neck covering. An anime superheroine top is usually belly exposing.
 There is 1 anime superheroine top. The text-shortcut of anime superheroine top is "aso".
 
-Figure of anime heroine top is the file "Items\Clothes\Upper\Special\Hero\animeheroine1.png".
+Figure of anime heroine top is the file "Items/Clothes/Upper/Special/Hero/animeheroine1.png".
 
 To decide which number is the initial outrage of (C - an anime superheroine top):
 	decide on 6.
@@ -54,7 +52,7 @@ To decide which number is the initial cringe of (C - an anime superheroine top):
 To decide what number is the price of (C - an anime superheroine top):
 	decide on 2.
 
-The printed name of anime superheroine top is usually "[TQlink of item described][clothing-title-before]anime superheroine top[clothing-title-after][TQxlink of item described][verb-desc of item described]".
+The printed name of anime superheroine top is usually "[clothing-title-before]anime superheroine top[clothing-title-after]".
 
 To decide which figure-name is clothing-image of (C - an anime superheroine top):
 	decide on figure of anime heroine top.
@@ -63,14 +61,21 @@ To say ClothingDesc of (C - an anime superheroine top):
 	say "This red PVC top has a large heart cut out at the chest, in order to expose a lot of cleavage. It is styled in an anime fashion.".
 
 To say ShortDesc of (C - an anime superheroine top):
+	say "cosplay top".
+To say MediumDesc of (C - an anime superheroine top):
 	say "PVC anime style cosplay outfit".
+
+Definition: an anime superheroine top is heart themed: decide yes.
+Definition: an anime superheroine top is pink themed: decide yes.
+Definition: an anime superheroine top is end of transformation chain: decide yes.
+
 
 
 Part 2 - Blue Superheroine Outfit
 
-A blue superheroine outfit is a kind of superheroine outfit. A blue superheroine outfit is usually leg covering. A blue superheroine outfit is usually only arm covering. A blue superheroine outfit is usually crotch-intact. There is 1 blue superheroine outfit. The text-shortcut of blue superheroine outfit is "bso".
+A blue superheroine outfit is a kind of superheroine outfit. A blue superheroine outfit is usually leg covering. A blue superheroine outfit is manly. A blue superheroine outfit is usually only arm covering. A blue superheroine outfit is usually crotch-intact. There is 1 blue superheroine outfit. The text-shortcut of blue superheroine outfit is "bso".
 
-Figure of blue superheroine outfit is the file "Items\Clothes\Upper\Special\Hero\Xheroine1.png".
+Figure of blue superheroine outfit is the file "Items/Clothes/Upper/Special/Hero/Xheroine1.png".
 
 To decide what number is the price of (C - a blue superheroine outfit):
 	decide on 4.
@@ -84,19 +89,13 @@ To say ClothingDesc of (C - a blue superheroine outfit):
 To say ShortDesc of (C - a blue superheroine outfit):
 	say "blue lycra outfit".
 
-To uniquely set up (C - a blue superheroine outfit):
-	repair C.
-
 Report wearing a blue superheroine outfit when there is a worn diaper:
-	if image cutscenes is 1, display figure of superhero cutscene 1.
-
-Definition: a blue superheroine outfit (called C) is untransformable:
-	if diaper quest is 1, decide no;
-	decide yes.
+	cutshow figure of superhero cutscene 1 for the noun.
 
 To decide which object is the unique-upgrade-target of (C - a blue superheroine outfit):
-	decide on a random off-stage anime superheroine top.
+	if diaper quest is 0, decide on a random off-stage anime superheroine top.
 
+Definition: a blue superheroine outfit is blue themed: decide yes.
 
 
 

@@ -16,9 +16,9 @@ The remove inappropriate shirts rule is listed in the diaper quest fix rules.
 
 Part - I heart cum shirt
 
-An I heart cum shirt is a kind of shirt. The printed name of I heart cum shirt is usually "[TQlink of item described][clothing-title-before]I heart cum shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". An I heart cum shirt is usually semen-addiction-influencing. The text-shortcut of I heart cum shirt is "hcs".
+An I heart cum shirt is a kind of shirt. The printed name of I heart cum shirt is usually "[clothing-title-before]I heart cum shirt[clothing-title-after]". An I heart cum shirt is usually semen-addiction-influencing. The text-shortcut of I heart cum shirt is "hcs".
 
-Figure of I heart cum shirt is the file "Items\Clothes\Upper\Shirts\shirt1.png".
+Figure of I heart cum shirt is the file "Items/Clothes/Upper/Shirts/shirt1.png".
 
 To set up influence of (C - an I heart cum shirt):
 	now C is semen-addiction-influencing.
@@ -34,84 +34,82 @@ To say ClothingDesc of (C - an I heart cum shirt):
 To say ShortDesc of (C - an I heart cum shirt):
 	say "'I <3 cum' shirt".
 
+Definition: an I heart cum shirt is heart themed: decide yes.
+Definition: an I heart cum shirt is semen themed: decide yes.
+Definition: an I heart cum shirt is white themed: decide yes.
+Definition: an I heart cum shirt is black-and-white themed: decide yes.
+
 To decide which number is the initial outrage of (C - an I heart cum shirt):
-	decide on 2.
+	decide on 10.
 
 To decide which number is the oral-sex-addiction-influence of (C - an I heart cum shirt):
 	if C is blessed, decide on 1;
 	decide on 2.
-
-To decide which object is the potential-upgrade-target of (C - an I heart cum shirt):
-	if (the player is female and a random number between 1 and 2 is 1) or interracial fetish is 1, decide on a random off-stage gang bang girl T-shirt;
-	decide on a random off-stage my ass vest top.
 
 Part 2 - Rubber Shirt
 
 A rubber shirt is a kind of shirt. A rubber shirt is usually latex.
 
 To decide which number is the initial outrage of (C - a rubber shirt):
-	decide on 3.
+	decide on 2.
 
-To decide which object is the potential-upgrade-target of (C - a rubber shirt):
+To decide which object is the unique-upgrade-target of (C - a rubber shirt):
 	decide on a random off-stage rubber vest top.
 
-A pink rubber shirt is a kind of rubber shirt. The printed name of pink rubber shirt is usually "[TQlink of item described][clothing-title-before]pink latex shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink rubber shirt is "prs".
+A pink rubber shirt is a kind of rubber shirt. The printed name of pink rubber shirt is usually "[clothing-title-before]pink latex shirt[clothing-title-after]". The text-shortcut of pink rubber shirt is "prs".
 
 There is 1 pink rubber shirt.
 
-Figure of pink rubber shirt is the file "Items\Clothes\Upper\Latex\latexshirt1.png".
+Figure of pink rubber shirt is the file "Items/Clothes/Upper/Latex/latexshirt1.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt.
 
 To say ClothingDesc of (C - a pink rubber shirt):
-	say "This pink top is actually pretty modest; the only thing unusual about it is the latex material it is made from.".
-	
+	say "This pink top is actually pretty modest; the only thing unusual about it is the latex material it is made from[if C is worn], which means your nipples can poke through a bit when they're hard[end if].".
+
 To compute SelfExamineDesc of (C - a pink rubber shirt):
 	say "You are wearing a tight fitting but skin covering pink latex top. ".
 
 To say ShortDesc of (C - a pink rubber shirt):
 	say "pink rubber top".
 
-To decide which object is the unique-upgrade-target of (C - a pink rubber shirt):
-	if diaper quest is 1 and the number of worn trousers is 0 and the number of worn skirted clothing is 0:
-		decide on a random off-stage waddle outfit;
-	otherwise:
-		decide on nothing.
+
+Definition: a pink rubber shirt is pink themed: decide yes.
 
 Part 3 - Blue Rubber Shirt
 
-A blue rubber shirt is a kind of rubber shirt. The printed name of blue rubber shirt is usually "[TQlink of item described][clothing-title-before]blue latex shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of blue rubber shirt is "bsh".
+A blue rubber shirt is a kind of rubber shirt. The printed name of blue rubber shirt is usually "[clothing-title-before]blue latex shirt[clothing-title-after]". The text-shortcut of blue rubber shirt is "bsh".
 
 There is 1 blue rubber shirt.
 
-Figure of blue rubber shirt is the file "Items\Clothes\Upper\Latex\latexshirt2.png".
+Figure of blue rubber shirt is the file "Items/Clothes/Upper/Latex/latexshirt2.png".
 
 To decide which figure-name is clothing-image of (C -  a blue rubber shirt):
 	decide on figure of blue rubber shirt.
 
 To say ClothingDesc of (C - a blue rubber shirt):
 	say "This blue top is actually pretty modest; the only thing unusual about it is the latex material it is made from. It stylishly sits over one shoulder, exposing the other one.".
-	
+
 To compute SelfExamineDesc of (C - a blue rubber shirt):
 	say "You are wearing a tight fitting but skin covering blue latex top. ".
 
 To say ShortDesc of (C - a blue rubber shirt):
 	say "blue rubber top".
 
-To decide which object is the unique-upgrade-target of (C - a blue rubber shirt):
-	if diaper quest is 1 and the number of worn trousers is 0 and the number of worn skirted clothing is 0:
-		decide on a random off-stage waddle outfit;
-	otherwise:
-		decide on nothing.
+
+Definition: a blue rubber shirt is blue themed: decide yes.
 
 Part 4 - Polo Shirt
 
-A polo shirt is a kind of shirt. The printed name of polo shirt is usually "[TQlink of item described][clothing-title-before]polo shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of polo shirt is "ps".
+A polo shirt is a kind of shirt. The printed name of polo shirt is usually "[clothing-title-before]polo shirt[clothing-title-after]". The text-shortcut of polo shirt is "ps".
 
-Figure of polo shirt is the file "Items\Clothes\Upper\Shirts\poloshirt1.png".
+Figure of polo shirt is the file "Items/Clothes/Upper/Shirts/poloshirt1.png".
 
 There is 1 polo shirt.
+
+To decide which number is the adult-influence of (C - a polo shirt):
+	decide on 1.
 
 To decide which figure-name is clothing-image of (C - a polo shirt):
 	decide on figure of polo shirt.
@@ -120,20 +118,20 @@ To say ClothingDesc of (C - a polo shirt):
 	say "This short sleeved pink ladies tennis shirt is very modest[if the player is male and the bimbo of the player < 5]. The only problem with it is, of course, its feminine style[end if].".
 
 To say ShortDesc of (C - a polo shirt):
+	say "tennis shirt".
+
+To say MediumDesc of (C - a polo shirt):
 	say "modest ladies tennis shirt".
 
-To decide which object is the potential-upgrade-target of (C - a polo shirt):
-	if diaper quest is 1:
-		if the number of worn skirts is 0, decide on a random off-stage dinosaur baby dress;
-		otherwise decide on a random off-stage T-shirt;
-	otherwise:
-		decide on a random off-stage I heart cum shirt.
+
+Definition: a polo shirt is exercise themed: decide yes.
+Definition: a polo shirt is pink themed: decide yes.
 
 Part 5 - Torn Shirt
 
-A torn shirt is a kind of shirt. A torn shirt is usually very low cut. The printed name of torn shirt is usually "[TQlink of item described][clothing-title-before]torn shirt[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of torn shirt is "trs".
+A torn shirt is a kind of shirt. A torn shirt is usually very low cut. The printed name of torn shirt is usually "[clothing-title-before]torn shirt[clothing-title-after]". The text-shortcut of torn shirt is "trs".
 
-Figure of torn shirt is the file "Items\Clothes\Upper\Shirts\shirt2.png".
+Figure of torn shirt is the file "Items/Clothes/Upper/Shirts/shirt2.png".
 
 There is 1 torn shirt.
 
@@ -149,12 +147,11 @@ To say ShortDesc of (C - a torn shirt):
 To decide which number is the initial outrage of (C - a torn shirt):
 	decide on 4.
 
-To decide which object is the potential-upgrade-target of (C - a torn shirt):
-	if diaper quest is 1:
-		if the number of worn skirts is 0, decide on a random off-stage baby-dress;
-		otherwise decide on a random off-stage T-shirt;
-	otherwise:
-		if the number of worn skirts is 0, decide on a random off-stage black clubbing dress.
+To decide which number is the adult-influence of (C - a torn shirt):
+	decide on 1.
+
+
+Definition: a torn shirt is black themed: decide yes.
 
 
 Shirt ends here.

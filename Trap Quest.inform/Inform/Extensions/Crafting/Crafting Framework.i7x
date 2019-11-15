@@ -24,8 +24,7 @@ Whenever you add shit to the crafting framework, please compile and test with "o
 REQUIRES COMMENTING
 
 +!]
-Definition: a thing (called T) is ingredient:
-	decide no.
+Definition: a thing is ingredient: decide no.
 
 [It's important to flag any item that can be used as an ingredient with this flag, or the game may not properly include it. We also need to make sure that it has a unique crafting key. This will probably be 1 higher than whatever the current highest crafting key is.]
 [!<Collectible>@<IsIngredient>+
@@ -33,9 +32,8 @@ Definition: a thing (called T) is ingredient:
 REQUIRES COMMENTING
 
 +!]
-Definition: a collectible (called C) is ingredient: 
-	decide yes.
-	
+Definition: a collectible is ingredient: decide yes.
+
 [Giving each alchemy ingredient a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
 [!<Thing>@<WhichNumberIsTheCraftingKey>+
 
@@ -85,83 +83,7 @@ REQUIRES COMMENTING
 Table of Alchemy
 Ingredient	Product	Recipe
 0	0	0
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
---	--	--
+with 100 blank rows
 
 [!<SetUpCollectibles>+
 
@@ -197,10 +119,10 @@ To set up alchemy table:
 		now the Product in row N of the Table of Alchemy is R;
 		now the Recipe in row N of the Table of Alchemy is 0;
 	follow the specific recipe rules; [First we set up all specific recipes, then allocate the random ones.]
-	[Now we assign each product to its true ingredient. This will overwrite a few rows above.]	
+	[Now we assign each product to its true ingredient. This will overwrite a few rows above.]
 	repeat with N running from 1 to MA:
-		if N is alchemy appropriate and N is recipe appropriate:
-			let K be 0;
+		if N is alchemy appropriate:
+			let K be a random number between 1 and MC;
 			while K is not ingredient appropriate:
 				now K is a random number between 1 and MC;
 			now the Product in row K of the Table of Alchemy is N;
@@ -213,11 +135,13 @@ REQUIRES COMMENTING
 +!]
 Definition: a number (called K) is ingredient appropriate: [Will this ingredient be available in-game?]
 	[Here we can identify that some ingredients will never appear and are therefore inappropriate to put on a recipe.]
-	if (K is 20 and diaper quest is 1) or (K is 22 and lactation fetish is 0) or (K is 21 and watersports fetish is 0 and diaper lover <= 0) or (K is 23 and ((lactation fetish is 0 and watersports fetish is 0) or diaper quest is 1)), decide no;
-	if K is 37 and the player is not the donator, decide no; [Pocketbooks for crafting study guide]
-	if ((K >= 23 and K <= 25) or K is 16) and egg laying fetish is 0, decide no; [all three types of eggs and wasp wing]
-	if K is 36 and inflation fetish is 0, decide no;
 	if the Recipe in row K of the Table of Alchemy is 1, decide no; [We have already assigned this ingredient to a recipe]
+	if (K is 20 and diaper quest is 1) or (K is 22 and lactation fetish is 0) or (K is 21 and watersports mechanics is 0) or (K is 23 and ((lactation fetish is 0 and watersports fetish is 0) or diaper quest is 1)), decide no;
+	if (K is 24 or K is 25 or K is 49) and egg laying fetish is 0, decide no; [all three types of eggs ]
+	if K is 16 and egg laying fetish is 0 or mythical creature fetish is 0, decide no; [wasp wing]
+	if K is 36 and inflation fetish is 0, decide no;
+	if K is 55 and diaper quest is 0, decide no; [Chocolate eggs]
+	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]
 	decide yes.
 
 [!<NumberIsAlchemyAppropriate>+
@@ -229,38 +153,31 @@ Definition: a number (called K) is alchemy appropriate: [Should we use this alch
 	now current-alchemy-key is K;
 	let H be a random product-highlighted thing;
 	if H is a thing:
-		if H is recipe specific, decide no;
-		if H is fetish appropriate, decide yes;
+		if H is fetish appropriate:
+			if H is always alchemy appropriate, decide yes; [First we check if we ignore recipe specific rules - some items e.g. condom pack want to be able to appear randomly too]
+			if H is recipe specific, decide no;
+			decide yes;
 	decide no.
 
-[!<NumberIsRecipeAppropriate>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a number (called K) is recipe appropriate: [Does this recipe get fully randomised (some will need a specific ingredient)?]
-	now current-alchemy-key is K;
-	let H be a random product-highlighted thing;
-	if H is a thing:
-		if H is recipe specific, decide no;
-		decide yes;
+Definition: a thing (called T) is always alchemy appropriate: [Should we OVERRIDE the above function and use this alchemy product as a random outcome?]
 	decide no.
+
 
 [!<Thing>@<IsProduct>+
 
 REQUIRES COMMENTING
 
 +@!]
-Definition: thing (called A) is product:
-	decide no.
+Definition: thing is product: decide no.
 
 [!<AlchemyProduct>@<IsProduct>+
 
 REQUIRES COMMENTING
 
 +@!]
-Definition: an alchemy product (called A) is product:
-	decide yes.
+Definition: an alchemy product is product: decide yes.
+
+Definition: an alchemy product is magic themed: decide yes.
 
 [Giving each alchemy product a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
 [!<Thing>@<WhichNumberIsTheAlchemyKey>+
@@ -315,8 +232,7 @@ Definition: an alchemy product (called A) is fetish appropriate:
 REQUIRES COMMENTING
 
 +@!]
-Definition: a thing (called A) is recipe specific:
-	decide no.
+Definition: a thing is recipe specific: decide no.
 
 
 [We are not going to classify these as 'bottles' a) since they don't obey the colour & effect rules and b) so that they never get mixed up with normal drinks that are found in containers etc.]
@@ -344,11 +260,10 @@ REQUIRES COMMENTING
 *@!]
 An alchemy product has a magic-curse. Understand the magic-curse property as describing an alchemy product when item described is sure.
 
-Include Powder by Crafting.
 
 To display complete alchemy data:
-	repeat through the Table of Alchemy:
-		say "Product: [Product entry], Recipe: [Recipe entry], Ingredient: [ingredient entry].";
+	[repeat through the Table of Alchemy:
+		say "Product: [Product entry], Recipe: [Recipe entry], Ingredient: [ingredient entry].";]
 	say "Max Crafting was [max crafting key] and Max Alchemy was [max alchemy key].";
 	repeat through the Table of Alchemy:
 		now current-alchemy-key is Product entry;

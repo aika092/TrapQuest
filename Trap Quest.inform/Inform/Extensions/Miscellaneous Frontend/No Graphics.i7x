@@ -6,7 +6,7 @@ To decide which number is diaper quest:
 	decide on 0.
 
 The story description is "Explore a dangerous world of transformation, penetration and bimbofication. 18+ only!".
-The release number is 9.
+The release number is 10.
 
 character-version is a number that varies.
 pixels-down is a number that varies.
@@ -24,7 +24,6 @@ keriaxfuck is a number that varies.
 keriaxshopblow is a number that varies.
 
 tile finder is a room that varies.
-
 To initialise map stuff:
 	do nothing.
 To terminate map stuff:
@@ -50,15 +49,13 @@ To terminate display stuff:
 
 To initialise hyperlink stuff:
 	do nothing.
-To fill hyperlink window:
-	do nothing.
 
 To vary stickman counters:
 	do nothing.
 
 
 A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually NoDQImage.
-DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing.
+DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
 
 
 [!<DecideWhichTextIsHairColourText>+
@@ -157,20 +154,20 @@ Table of Image Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
 "Display Images: (Enable images - many / most are adult.) [if images visible is 1]ON[otherwise]OFF[end if]  "	--	--	images visible toggle rule
-"Map Window: On / Off: [if map images is 1]ON[otherwise]OFF[end if]"	--	--	map images toggle rule
+"Map Window: On / Off: [if map images > 0]ON[otherwise]OFF[end if]"	--	--	map images toggle rule
 "Loading Screens: On / Off: [if loading scenes is 1]ON[otherwise]OFF[end if]"	--	--	loading scenes toggle rule
 
 
 
-Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png". 
-Figure of Witch is the file "NPCs/Forest/Witch/witch2.png".
-Figure of wench1 is the file "NPCs/Dungeon/Wench/wench1b.png".
-Figure of wench2 is the file "NPCs/Dungeon/Wench/wench2b.png".
-Figure of wench3 is the file "NPCs/Dungeon/Wench/wench3b.png".
-Figure of wench4 is the file "NPCs/Dungeon/Wench/wench4b.png".
+Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png".
+Figure of wench1 is the file "NPCs/Dungeon/Wench/wench1.png".
+Figure of wench2 is the file "NPCs/Dungeon/Wench/wench2.png".
+Figure of wench3 is the file "NPCs/Dungeon/Wench/wench3.png".
+Figure of wench4 is the file "NPCs/Dungeon/Wench/wench4.png".
 Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png". Figure of Shopkeeper 2 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
-Figure of slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
+
+Include Low Res Figures by Miscellaneous Frontend.
 
 No Graphics ends here.
 

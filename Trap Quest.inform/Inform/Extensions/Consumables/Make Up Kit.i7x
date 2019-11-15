@@ -1,10 +1,22 @@
 Make Up Kit by Consumables begins here.
 
 
-A make up kit is a kind of collectible. There are 7 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". The description of make up kit is "A small box which contains an internal mirror and a few brushes. It looks like there's only enough for one use.". Understand "makeup", "makeup kit" as make up kit.
+A make up kit is a kind of collectible. There are 7 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". Understand "makeup", "makeup kit" as make up kit.
+Figure of make up kit is the file "Items/Collectibles/makeup1.png".
+
+To decide which figure-name is the examine-image of (C - a make up kit):
+	decide on figure of make up kit.
+
+To say ExamineDesc of (B - a make up kit):
+	say "A small box which contains an internal mirror and a few brushes. It looks like there's only enough for one use.".
+
+To decide which number is the outrage of (C - a make up kit):
+	decide on 5.
+
 To decide which number is the crafting key of (C - a make up kit):
 	decide on 34.
 To decide which number is the bartering value of (T - a make up kit) for (M - a wench):
+	if M is horny-wench, decide on 0;
 	decide on 3.
 To decide which number is the bartering value of (T - a make up kit) for (M - a gladiator):
 	decide on 1.
@@ -39,10 +51,12 @@ Check brushing something with:
 	if the player is not able to manually use manual dexterity, do nothing instead.
 
 Carry out brushing something with:
-	now seconds is 6;
+	allocate 6 seconds;
 	say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. You discard the used [noun].";
 	destroy the noun;
 	FaceUp 1.
+
+Definition: a make up kit is oral sex themed: decide yes.
 
 Understand "brush [something] on [something]", "makeup [something] on [something]" as brushing it with.
 

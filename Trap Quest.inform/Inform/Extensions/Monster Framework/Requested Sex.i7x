@@ -22,33 +22,29 @@ To check consensual submissive sex of (M - a monster):
 		FavourUp M by the sex desire of M;
 		follow the insertion rules of M;
 	otherwise:
-		if presented-orifice is nothing, say "The [M] can't seem to understand what you want from [him of M].".
+		if presented-orifice is nothing, say "[BigNameDesc of M] can't seem to understand what you want from [him of M].".
 
 To decide which number is the sex desire of (M - a monster):
-	decide on 1. [How much favour does the player gain from fucking them?]
+	decide on 1.[How much favour does the player gain from fucking them?]
 
 This is the default monster friendly convinced rule:
 	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 0:
-		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavor can refer to chosen orifice.]
-		say "[PresentFriendlyAcceptanceFlav of current-monster]";
+		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
+		say PresentFriendlyAcceptanceFlav of current-monster;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
-		say "[PresentFriendlyRejectionFlav of current-monster]".
+		say PresentFriendlyRejectionFlav of current-monster.
 
 To say PresentFriendlyAcceptanceFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'You're on!'[roman type][line break]";
-	otherwise say "The [M] seems convinced by your request!".
+	otherwise say "[BigNameDesc of M] seems convinced by your request!".
 
 To say PresentFriendlyRejectionFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[if presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover from our last session!'[otherwise if presented-orifice is a potential target]Not interested.'[otherwise]Not today, honey. I don't feel like it.'[end if][roman type][line break]";
-	otherwise say "The [M] seems to ignore your request.".
-
-
-
-
+	if M is intelligent, say "[speech style of M]'[if M is male and presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover from my last orgasm!'[otherwise if presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover my energy!'[otherwise if presented-orifice is a potential target]Not today, honey. I don't feel like it.'[otherwise]Not interested.'[end if][roman type][line break]";
+	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To say FriendlyBreastsPenetrationFlav of (M - a monster):
-	say "The [M] places [his of M] [manly-penis] in between your [ShortDesc of breasts], and begins thrusting!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
+	say "[BigNameDesc of M] places [his of M] [DickDesc of M] in between your [ShortDesc of breasts], and begins thrusting!".[This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
 
 To say FriendlySexResistFlav of (T - a thing):
 	say "You squirm but can't get away!".
@@ -56,7 +52,7 @@ To say FriendlySexResistFlav of (T - a thing):
 To say FriendlySexResistFlav of (M - a monster):
 	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Oh god, we have to stop now!'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind, I don't want this!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
 	otherwise say "[if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
-	if M is penetrating an orifice, say "[one of]You tap the [M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from the [M]'s grasp.[or]You try and pull the [M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push the [M] off you.[purely at random]";
+	if M is penetrating an orifice, say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M]'s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]";
 	otherwise say "You squirm but can't get away!".
 
 To say FriendlySexSubmissionFlav of (T - a thing):
@@ -88,14 +84,14 @@ To say FriendlySexReleaseSpeech of (M - a monster):
 
 To say FriendlySexReleaseFlav of (M - a monster):
 	if M is intelligent, say FriendlySexReleaseSpeech of M;
-	say "The [M] pulls [if M is penetrating an orifice]out[otherwise]away[end if].".
+	say "[BigNameDesc of M] pulls [if M is penetrating an orifice]out[otherwise]away[end if].".
 
 To say FriendlySexReleaseRefusalSpeech of (M - a monster):
 	say "[speech style of M]'[one of]Yeah, that's not going to happen.'[or]You've got to be kidding, I'm not done yet.'[or]We're done when I say we're done.'[or]Fuck you, I'm not stopping until I get my [if M is male]nut[otherwise]fill[end if].'[or]Ha ha ha, no way.'[or][if the sex-length of M is 1]I'm way too close to stop now!'[otherwise]Oh there's a long time to go yet before we can stop.'[end if][in random order][roman type][line break]".
 
 To say FriendlySexReleaseRefusalFlav of (M - a monster):
 	if M is intelligent, say FriendlySexReleaseRefusalSpeech of M;
-	say "The [M] refuses to let you go!".
+	say "[BigNameDesc of M] refuses to let you go!".
 
 
 

@@ -2,7 +2,7 @@ Drinks Framework by Drinks begins here.
 
 
 
-	
+
 [
 Magic Types:
 1: Potion of dignity
@@ -68,6 +68,28 @@ golden	21	1
 white	22	1
 murky	23	1
 
+To decide which number is the TQcolour of (D - a drink-colour):
+	if D is silver, decide on 12371660;
+	if D is scarlet, decide on 16720896;
+	if D is blue, decide on 255;
+	if D is bronze, decide on 13467442;
+	if D is green, decide on 32768;
+	if D is grey, decide on 13882323;
+	if D is clear, decide on 16777215;
+	if D is indigo, decide on 4915330;
+	if D is magenta, decide on 16711935;
+	if D is orange, decide on 16753920;
+	if D is lime, decide on lightModeFullGreen;
+	if D is brownish, decide on 10824234;
+	if D is violet, decide on 15631086;
+	if D is glittery, decide on 16776960;
+	if D is turquoise, decide on 4251856;
+	if D is white, decide on 16382457;
+	if D is creamy, decide on 16776656;
+	if D is golden, decide on 16766720;
+	if D is murky, decide on 16111219;
+	decide on 12345.
+
 [!<ANumberIsRemembered>+
 
 Does the player know what type of drink this is?
@@ -83,14 +105,14 @@ Definition: A number is remembered:
 REQUIRES COMMENTING
 
 *!]
-magic-curse is a kind of value. The magic-curses are bland, blessed, and cursed. 
+magic-curse is a kind of value. The magic-curses are bland, blessed, and cursed.
 
 [!<curseID:CurseIDEnum>*
 
 REQUIRES COMMENTING
 
 *!]
-curse-ID is a kind of value. The curse-IDs are sure and unsure. 
+curse-ID is a kind of value. The curse-IDs are sure and unsure.
 
 [!<Thing>@<SayMagicCurse>+
 
@@ -110,7 +132,7 @@ Drink-Colour is a kind of value. The drink-colours are white, scarlet, blue, gol
 
 Understand "milk" as a can when the fill-colour of item described is white and the doses of item described > 0.
 Understand "urine", "piss", "pee", "wee" as a bottle when the fill-colour of item described is golden and the doses of item described > 0.
-Understand "semen", "cum", "jizz" as a bottle when the fill-colour of item described is creamy and the doses of item described > 0. 
+Understand "semen", "cum", "jizz" as a bottle when the fill-colour of item described is creamy and the doses of item described > 0.
 Understand "unholy" as a can when the fill-colour of item described is murky and the doses of item described > 0.
 
 [!<Thing>@<KnownGoodPotion>+
@@ -118,16 +140,14 @@ Understand "unholy" as a can when the fill-colour of item described is murky and
 REQUIRES COMMENTING
 
 +@!]
-Definition: a thing (called T) is known-good-potion:
-	decide no.
+Definition: a thing is known-good-potion: decide no.
 
 [!<Thing>@<KnownCursedPotion>+
 
 REQUIRES COMMENTING
 
 +@!]
-Definition: a thing (called T) is known-cursed-potion:
-	decide no.
+Definition: a thing is known-cursed-potion: decide no.
 
 To Scramble Bottles:
 	let I be 1;
@@ -139,7 +159,7 @@ To Scramble Bottles:
 			increase I by 1.
 
 To Print Drinks Table:
-	repeat with N running from 1 to the number of rows in the Table of Drinks: 
+	repeat with N running from 1 to the number of rows in the Table of Drinks:
 		say "[appearance in row N of Table of Drinks] [Magic in row N of Table of Drinks] [Known in row N of Table of Drinks][line break]" .
 
 

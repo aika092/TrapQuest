@@ -2,7 +2,8 @@ Red String Bikini Top by Bra begins here.
 
 A red string bikini top is a kind of string bikini top. A red string bikini top is usually normally-nipple-exposing. Figure of bikini 2 is the file "Items/Clothes/Upper/Bras/bikini2.png". The text-shortcut of red string bikini top is "rbt".
 
-There is 1 unique red string bikini top. A red string bikini top is ridiculously low cut.
+There is 1 transformation-rare red string bikini top. A red string bikini top is ridiculously low cut.
+
 
 To say ShortDesc of (B - a red string bikini top):
 	say "red string bikini top".
@@ -19,8 +20,7 @@ To say ClothingDesc of (C - a red string bikini top):
 To decide which number is the initial outrage of (C - a red string bikini top):
 	decide on 10.
 
-To decide which object is the potential-upgrade-target of (C - a red string bikini top):
-	decide on a random off-stage nipple ring bikini top.
+Definition: a red string bikini top is red themed: decide yes.
 
 Red String Bikini Top ends here.
 

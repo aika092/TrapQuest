@@ -1,17 +1,19 @@
 Rope Harness by Dresses begins here.
 
-A rope harness is a kind of overdress. A rope harness is usually hemp. A rope harness is usually see-through. A rope harness is usually fully exposing. A rope harness is usually belly covering. A rope harness is usually unskirted. There is rope harness. Figure of rope harness is the file "Items\Clothes\Upper\Exposing\ropeharness1.png". The soak-limit of a rope harness is usually 7.  A rope harness has a number called charge.
+A rope harness is a kind of overdress. A rope harness is usually hemp. A rope harness is usually see-through. A rope harness is usually fully exposing. A rope harness is optional-top-displacable. A rope harness is usually neck covering. A rope harness is usually unskirted. There is rope harness. Figure of rope harness is the file "Items/Clothes/Upper/Exposing/ropeharness1.png". Figure of rope harness full is the file "Items/Clothes/Upper/Exposing/ropeharness2.png". The soak-limit of a rope harness is usually 7. A rope harness has a number called charge.
 
 To decide which number is the original price of (C - a rope harness):
 	decide on 5.
 
 To decide which number is the initial outrage of (C - a rope harness):
-	decide on 9.
-	
-The printed name of rope harness is usually "[TQlink of item described][clothing-title-before]rope harness[clothing-title-after][TQxlink of item described][verb-desc of item described]". The text-shortcut of rope harness is "rh".
+	decide on 12.
+
+The printed name of rope harness is usually "[clothing-title-before]rope harness[clothing-title-after]". The text-shortcut of rope harness is "rh".
 
 To decide which figure-name is clothing-image of (C - a rope harness):
 	decide on figure of rope harness.
+To decide which figure-name is icarus-clothing-image of (C - a rope harness):
+	decide on figure of rope harness full.
 
 To say ClothingDesc of (C - a rope harness):
 	say "[if C is worn]A shibari style rope harness[otherwise]This set of ropes with knots becomes a shibari style rope harness when worn[end if]. It restricts movement but maybe it could be used to train your muscles?".
@@ -27,7 +29,6 @@ To decide which number is the dexterity-influence of (C - a rope harness):
 	increase D by the magic-modifier of C;
 	if D < 0, decide on D;
 	decide on 0.
-	
 
 To compute periodic effect of (C - a rope harness):
 	increase the charge of C by 1;
@@ -35,10 +36,12 @@ To compute periodic effect of (C - a rope harness):
 		now the charge of C is 0;
 		say "[bold type]Thanks to wearing the [ShortDesc of C], your muscles have gotten stronger![roman type][line break]";
 		StrengthUp 1.
-	
-Definition: a rope harness (called C) is untransformable:
-	decide yes.
-	
+
+Definition: a rope harness is transformation-protected: decide yes.
+Definition: a rope harness is brown themed: decide yes.
+
+Definition: a rope harness is IcarusScienceAppropriate if it is actually summonable.
+
 This is the remove inappropriate rope harnesses rule:
 	repeat with B running through rope harness:
 		now B is in Holding Pen.

@@ -1,9 +1,13 @@
 Hammock by Furniture begins here.
 
-a hammock is a kind of furniture. There are 3 hammocks. The printed name of hammock is "[TQlink of item described]hammock[TQxlink of item described][shortcut-desc][verb-desc of item described]". The description of hammock is "[HammockDesc]". The text-shortcut of hammock is "ha".
-To say HammockDesc:
-	if images visible is 1, display figure of hammock;
+a hammock is a kind of furniture. There are 3 hammocks. The printed name of hammock is "[TQlink of item described]hammock[TQxlink of item described][shortcut-desc][verb-desc of item described]". A hammock is permanent fixture. The text-shortcut of hammock is "ha".
+
+To decide which figure-name is the examine-image of (C - a hammock):
+	decide on figure of hammock.
+
+To say ExamineDesc of (C - a hammock):
 	say "A relaxing looking hammock is strung quite low between two trees.".
+
 Figure of hammock is the file "Env/Forest/hammock1.png".
 
 To compute furniture resting on (H - a hammock):
@@ -14,11 +18,11 @@ To compute furniture resting on (H - a hammock):
 		now the stance of the player is 1;
 		while the fatigue of the player > 0:
 			now busy is 1;
-			now seconds is 6;
+			allocate 6 seconds;
 			compute extra turn;
 		while the body soreness of the player > 0:
 			now busy is 1;
-			now seconds is 6;
+			allocate 6 seconds;
 			BodyHeal 1;
 			compute extra turn;
 		now busy is 0;

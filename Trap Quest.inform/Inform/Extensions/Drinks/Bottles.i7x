@@ -10,6 +10,9 @@ All drinking vessels that obey standard dosage and colour rules. I.e. not the sq
 @!]
 A bottle is a kind of thing.
 
+Definition: a bottle is drink themed: [Is it something that has a drink in the pattern?]
+	decide yes.
+
 [!<Bottle>@<doses:Integer>*
 
 How many gulps of liquid are in it right now?  A gulp of liquid is about 2 units of liquid everywhere else.
@@ -19,6 +22,7 @@ A bottle has a number called doses.
 
 Definition: a bottle is empty rather than non-empty if the doses of it <= 0.
 
+
 [!<Bottle>@<maxDoses:Integer>*
 
 How many gulps of liquid can it hold?
@@ -26,13 +30,48 @@ How many gulps of liquid can it hold?
 *@!]
 A bottle has a number called max-doses.
 
+To DoseUp (B - a bottle):
+	DoseUp B by 1.
+
+To DoseUp (B - a bottle) by (N - a number):
+	if the doses of B < the max-doses of B:
+		increase the doses of B by N;
+		if the doses of B > the max-doses of B, now the doses of B is the max-doses of B;
+		force inventory-focus redraw. [Force inventory window redraw]
+
+To DoseDown (B - a bottle):
+	DoseDown B by 1.
+
+To DoseDown (B - a bottle) by (N - a number):
+	if the doses of B > 0:
+		decrease the doses of B by N;
+		if the doses of B < 0, now the doses of B is 0;
+		force inventory-focus redraw. [Force inventory window redraw]
+
+To DoseFill (B - a bottle):
+	if the doses of B is not the max-doses of B:
+		now the doses of B is the max-doses of B;
+		force inventory-focus redraw. [Force inventory window redraw]
+
+To SetDose (B - a bottle) to (N - a number):
+	if the doses of B is not N:
+		now the doses of B is N;
+		if the doses of B > the max-doses of B, now the doses of B is the max-doses of B;
+		if the doses of B < 0, now the doses of B is 0;
+		force inventory-focus redraw. [Force inventory window redraw]
+
+To DoseEmpty (B - a bottle):
+	if the doses of B is not 0:
+		now the doses of B is 0;
+		force inventory-focus redraw. [Force inventory window redraw]
+
 [!<Bottle>@<curseID:CurseIDEnum>*
 
 It is possible for the player to know (sure) or not know (unsure) the BUC status of the bottle.
 
 *@!]
 A bottle has a curse-ID.
-Understand the curse-ID property as describing a bottle .
+Understand the curse-ID property as describing a bottle.
 A bottle is usually unsure.
 
 [!<Bottle>@<magicCurse:MagicCurseEnum>*
@@ -44,6 +83,19 @@ A bottle has a magic-curse.
 Understand the magic-curse property as describing a bottle when item described is sure.
 A bottle is usually bland.
 
+Definition: a bottle (called C) is cursable:
+	if C is cursed, decide no;
+	decide yes.
+
+To say BlessBlessFlav of (B - a bottle):
+	if B is in the location of the player:
+		say "A flash of blue and gold surrounds the [ShortDesc of B] for an instant. It must now be blessed!";
+		now B is sure.
+
+To say BlessBlandFlav of (B - a thing):
+	if B is in the location of the player:
+		say "A flash of blue surrounds the [ShortDesc of B] as a black aura seems to fizzle away. It must have been uncursed!";
+		now B is sure.
 
 [!<Bottle>@<fillColour:DrinkColourEnums>*
 
@@ -66,7 +118,7 @@ To say ShortDesc of (B - a bottle):
 This variable maybe needs to be renamed, because what it really is checking is whether the liquid has at any point been up the player's ass. If it has, then it gets flagged as monster-origin. The exception is urine; if the urine came from collecting from being pissed on, then it gets flagged as monster-origin. This is mainly for tracking how valuable the liquid is to the witch. ###Selkie suggests: pee-origin-player or pee-origin-monster
 
 *@!]
-A bottle can be player-origin or monster-origin. A bottle is usually player-origin. 
+A bottle can be player-origin or monster-origin. A bottle is usually player-origin.
 
 
 [!<Bottle>@<WhichNumberIsTheFillType>+
@@ -83,8 +135,7 @@ To decide which number is the fill-type of (B - a bottle):
 Can it be used to craft things?
 
 +@!]
-Definition: a bottle (called B) is ingredient: 
-	decide yes.
+Definition: a bottle is ingredient: decide yes.
 
 [!<Bottle>@<WhichNumberIsTheCraftingKey>+
 
@@ -107,8 +158,7 @@ To decide which number is the heaviness of (B - a bottle):
 Does the player know what type of drink it is?  (This is just to prevent runtime errors during crafting)
 
 +@!]
-Definition: a thing (called T) is known-potion:
-	decide no.
+Definition: a thing is known-potion: decide no.
 
 [!<Bottle>@<KnownPotion>+
 
@@ -125,7 +175,7 @@ Does the player know that it's a cursed potion?
 
 +@!]
 Definition: a bottle (called B) is known-cursed-potion:
-	if B is known-potion and the fill-type of B >= lowest-cursed and the fill-type of B < 20, decide yes; 
+	if B is known-potion and the fill-type of B >= lowest-cursed and the fill-type of B <= highest-cursed, decide yes;
 	decide no.
 
 [!<Bottle>@<KnownGoodPotion>+
@@ -163,6 +213,7 @@ To Set Up Drinks:
 			if R is 1, curse B;
 			if R is 8, bless B;
 	let N be 1;
+	let T be 1;
 	repeat with C running through all cans:
 		if N is 1:
 			now the fill-colour of C is silver;
@@ -209,12 +260,14 @@ To Set Up Drinks:
 		if N is 15:
 			now the fill-colour of C is turquoise;
 			now the text-shortcut of C is "trq";
+		now the text-shortcut of C is "can[T]"; [trying out a new text shortcut system for cans]
 		increase N by 1;
+		increase T by 1;
 		if N is 16, now N is 1.
 
 [!<DumpBottle>+
 
-When a bottle of bodily fluids is emptied on to the floor, we make sure to increase the appropriate puddle in the location of the player. 
+When a bottle of bodily fluids is emptied on to the floor, we make sure to increase the appropriate puddle in the location of the player.
 
 +!]
 To Dump (X - a bottle):
@@ -230,7 +283,7 @@ To Dump (X - a bottle):
 			UrinePuddleUp the doses of X;
 		if lactation fetish is 1:
 			MilkPuddleUp the doses of X;
-	now the doses of X is 0.
+	DoseEmpty X.
 
 
 [!<DestroyBottle>+
@@ -242,7 +295,7 @@ To destroy (T - a bottle):
 	remove T from play;
 	now the magic-curse of T is bland;
 	now the curse-ID of T is unsure;
-	now the doses of T is 0;
+	DoseEmpty T;
 	dislodge T.
 
 

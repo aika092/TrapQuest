@@ -1,12 +1,72 @@
 "Trap Quest" by Aika
 
+[PUBLIC VERSION]
+
 Release along with cover art.
 The story genre is "Erotica".
 Use BRIEF room descriptions.
-The story creation year is 2017.
+The story creation year is 2019.
+Use scoring.
 
-Include Compiler Settings by Miscellaneous Backend.
-Include Third Party Extensions by Third Party Extensions.
+Include Save File Control by Nathanael Marion.
+The binary file of save data is called "DoNotTouchMe".
+Include Roguelike Saving by Miscellaneous Backend.
+
+Use ALLOC_CHUNK_SIZE of 3200000.
+Use SYMBOLS_CHUNK_SIZE of 100000.
+Use MAX_EXPRESSION_NODES of 20000.
+Use MAX_SYMBOLS of 500000.
+Use MAX_PROP_TABLE_SIZE of 4000000.
+Use MAX_NUM_STATIC_STRINGS of 300000.
+Use MAX_STATIC_DATA of 100000000.
+Use MAX_CLASSES of 2000.
+Use MAX_OBJECTS of 10000.
+Use MAX_LABELS of 20000.
+Use MAX_ARRAYS of 1000000.
+Use MAX_ZCODE_SIZE of 1000000.
+Use MAX_ACTIONS of 512.
+Use MAX_VERBS of 512.
+Use MAX_VERBSPACE of 80000.
+[Use maximum file based undo count of at least 30.]
+Use MAX_OBJ_PROP_COUNT of 256.
+Use MAX_DICT_ENTRIES of 10000.
+
+Use MAX_LINK_DATA_SIZE of 20000.
+
+Use dynamic memory allocation of at least 1738400.
+[Use maximum indexed text length of at least 200000.]
+
+Include Flexible Windows by Jon Ingold.
+Include Inline Hyperlinks by Erik Temple.
+Include Glimmr Drawing Commands by Erik Temple.
+Include Undo Output Control by Erik Temple.
+Include Glimmr Canvas-Based Drawing by Erik Temple.
+Include Glimmr Graphic Hyperlinks by Erik Temple.
+Include Menus by Emily Short.
+
+links-disabled is a truth state that varies. [When you want to briefly disable links]
+
+
+[Include Version 3 of Fixed Point Maths by Third Party Extensions.
+Include Version 4 of Glulx Text Effects by Third Party Extensions.
+Include Basic Screen Effects by Third Party Extensions.
+Include Glulx Text Effects by Third Party Extensions.
+Include Plurality by Third Party Extensions.
+Include Questions by Third Party Extensions.
+Include Real-Time Delays by Third Party Extensions.
+Include Glulx Image Centering by Third Party Extensions.
+Include Basic Screen Effects by Third Party Extensions.
+Include Glimmr Canvas-Based Drawing by Third Party Extensions.
+Include Glimmr Graphic Hyperlinks by Third Party Extensions.
+Include Glimmr Bitmap Font by Third Party Extensions.
+Include Numbered Disambiguation Choices by Third Party Extensions.
+Include Undo Output Control by Third Party Extensions.
+Include Menus by Third Party Extensions.
+Include Basic Help Menu by Third Party Extensions.
+Include Ultra Undo by Third Party Extensions.
+Include Text Capture by Third Party Extensions.
+Include Inline Hyperlinks by Third Party Extensions.
+Include Default Messages by Third Party Extensions.]
 
 [!<SetUpDebugStuff>+
 
@@ -14,7 +74,32 @@ Used for testing, to modify the starting state.
 
 +!]
 To set up debug stuff:
+	[try RegionPlacing;
+	now armband is worn by the player;
+	now the armband-title of armband is "[NameBimbo]";
+	now the armband-print of armband is "submissive in training";
+	now armband is emerald;
+	update students;
+	now armband is ruby;
+	update students;
+	now the player is in School26;
+	try waiting;
+	display entire map;]
 	do nothing.
+	[now virgincursed is 1;
+	now the size of penis is 4;
+	summon a random rubber top hat cursed;
+	summon a random heels cursed;
+	summon a random bikini top cursed;
+	summon pouch-panties cursed;
+	summon a random nylon leggings cursed;
+	summon a random pink rubber dress;
+	summon a random sissifying suspenders cursed;
+	summon a random cumslut collar cursed;]
+	[summon a random chastity cage cursed;]
+	[virginpunish;
+	virginpunish;
+	virginpunish.]
 [
  Beginning InformDoc specification:
 
@@ -22,7 +107,7 @@ To set up debug stuff:
  Any function documentation starts with the tag [!<FUNCTIONNAME>+ (again, closed in reverse order). +!]
  Any class documentation (including variables and functions within classes) starts with the tag [!<CLASSNAME>@ @!]
  Class tags for variables/functions within classes should be expanded to [!<ClassName>@<VARIABLENAME:VARIABLETYPE|FUNCTIONNAME>*|+ (as appropriate) +|*!]
-"
+
  All annotations associated with normal JavaDocs should still work within these tags. ALL ANNOTATIONS MUST OCCUR AFTER THE GENERAL FUNCTION/CLASS DESCRIPTION. The main annotations to take note of are:
 	 @param <CLASSNAME>:<VariableName> -> For any parameter/argument used within the function, describe the class it belongs to and the name of the variable within the function immediately after the annotation.
 	 @return <CLASSNAME> -> If the function returns a variable, describe the class of that variable immediately after the annotation.
@@ -84,15 +169,12 @@ can document things. Woop!
 
 [
 Needs Testing:
-* Mysterious mummy
-* Dual classes
-* Fuckholes (heheh)
+*
 ]
 
 [
 Big reworks:
 * Break up removal checks into functions like wearability
-* Mansion generates randomly like other regions
 ]
 
 [
@@ -130,38 +212,59 @@ Area 4: Nintendolls R&D Facility
 
 Include Cutscene Figures by Miscellaneous Frontend.
 
+Volume 1 - Graphics (Private Version Only)
+
+Include Graphics Window Stuff by Miscellaneous Frontend.
+
+Include Main Map Window Code by Map Window.
+Include Generic Map Window Code by Map Window.
+
+Include Dungeon Map Window by Map Window.
+Include Woods Map Window by Map Window.
+Include Hotel Map Window by Map Window.
+Include Mansion Map Window by Map Window.
+Include School Map Window by Map Window.
+
+Include ASCII Map by Miscellaneous Frontend.
 
 Volume 2 - Game Setup
+
+
 
 Include Output Text by Miscellaneous Frontend.
 Include Variable Text by Miscellaneous Frontend.
 Include Parser Errors by Miscellaneous Frontend.
 Include Links by Miscellaneous Frontend.
 Include Status Bar by Miscellaneous Frontend.
+Include Player Name by Miscellaneous Frontend.
 Include Player Title by Miscellaneous Frontend.
 Include Disclaimer by Miscellaneous Frontend.
+Include Announcements by Miscellaneous Frontend.
 
-Include Room Descriptions by Miscellaneous Backend. [TODO: Move to Rooms Framework]
+Include Prologue by Miscellaneous Frontend.
 
-Include Game Settings by Miscellaneous Backend. 
-Include Fetish Settings by Miscellaneous Backend. 
 
-Include Static Rooms by Rooms.
-Include Help by Miscellaneous Frontend.
+[Include Menus by Third Party Extensions.
+Include Basic Help Menu by Third Party Extensions.
+Include Help by Miscellaneous Frontend.]
+
+Include Timer Stuff by Miscellaneous Backend.
+
+Include Game Settings by Miscellaneous Backend.
+Include Fetish Settings by Miscellaneous Backend.
+
+Include Fetish Options by Fetish Settings.
+Include Handicap Options by Fetish Settings.
+Include Benefit Options by Fetish Settings.
+Include DQ Benefit Options by Fetish Settings.
+Include Background Options by Fetish Settings.
+Include Secret Options by Fetish Settings.
+Include Body Limit Options by Fetish Settings.
+Include Festive Options by Fetish Settings.
 
 Include Engine Initialisation by Miscellaneous Backend.
-Include Prologue by Miscellaneous Frontend.
 Include Game Universe Initialisation by Miscellaneous Backend.
 
-Book 1 - Randomly Generated Regions
-
-Include Spatial Vectors and Shape by Rooms.
-Include Solid Rock by Rooms.
-Include Terra Incognita by Rooms.
-Include Region Building by Rooms.
-Include Deploying by Rooms.
-
-Book 2 - Fainting
 
 Include Executing Fainting by Fainting.
 Include Fainting Flavour by Fainting.
@@ -175,7 +278,22 @@ Include Recovering Containers by Fainting.
 Include Recovering Monsters by Fainting.
 Include Fainting Reasons by Fainting.
 
-Volume 3 - Rooms
+
+Include Static Rooms by Rooms.
+
+
+Include Spatial Vectors and Shape by Rooms.
+Include Solid Rock by Rooms.
+Include Terra Incognita by Rooms.
+
+Include Region Building Dungeon by Rooms.
+Include Region Building Woods by Rooms.
+Include Region Building Hotel by Rooms.
+Include Region Building Mansion by Rooms.
+Include Region Building School by Rooms.
+Include Region Building by Rooms.
+Include Deploying by Rooms.
+
 
 Include Room Adjectives by Rooms.
 Include Room Descriptions by Rooms.
@@ -183,13 +301,16 @@ Include Puddles by Rooms.
 Include Dungeon by Rooms.
 Include Woods by Rooms.
 Include Hotel by Rooms.
+Include Laundry Robots by Objects.
+Include Barriers by Rooms.
 Include Mansion by Rooms.
 Include School by Rooms.
 
 An introductory room is a kind of room.  An introductory room has a labyrinth shape called shape.  The shape of an introductory room is usually L3/0-0-1-1-1-1.  The grid position of an introductory room is usually <0,0,0>.
 
 
-Volume 4 - The Player
+
+Volume 1 - The Player
 
 Include Gender by Player.
 Include Fatigue by Player.
@@ -198,7 +319,9 @@ Include Misc Variables by Player.
 Book 1 - Body Parts
 
 Include Body Parts Definitions by Body Parts.
+Include Desirability by Body Parts.
 Include Breasts by Body Parts.
+Include Stomach by Player.
 Include Belly by Body Parts.
 Include Hips by Body Parts.
 Include Vagina by Body Parts.
@@ -220,6 +343,7 @@ Include Anal Sex Addiction by Player.
 Include Vaginal Sex Addiction by Player.
 Include Semen Taste and Oral Sex Addiction by Player.
 Include Titfuck Addiction by Player.
+Include BBC Addiction by Player.
 Include Semen Addiction by Player.
 Include Milk Taste Addiction by Player.
 Include Urine Taste Addiction by Player.
@@ -247,12 +371,13 @@ Include Virginity by Player.
 Include Avoiding Accidental Wetting by Player.
 Include Orgasms by Player.
 
-Include Liquid Movements by Miscellaneous Backend.
+Volume 1.5 - Things that have to go after The Player in the code
 
+Include Liquid Movements by Miscellaneous Backend.
+Include Teleporting and Dragging by Miscellaneous Backend.
 Include Taking Inventory by Miscellaneous Frontend.
 
-
-Book 3 - Player Description
+Volume 2 - Player Description
 
 Include Overall Description by Player Description.
 Include Soreness by Player Description.
@@ -267,9 +392,7 @@ Include Status by Player Description.
 Include Addictions by Player Description.
 
 
-
-
-Volume 5 - Every Turn (MAIN CODE BLOCK)
+Volume 3 - Every Turn (MAIN CODE BLOCK)
 
 Include Compute Turn by Every Turn.
 Include Player Standing by Every Turn.
@@ -290,27 +413,98 @@ Include Reset Flags by Every Turn.
 Include Latex Curse by Every Turn.
 Include Mindflayer Quest by Every Turn.
 Include Doom by Every Turn.
+Include Absorption by Every Turn.
+Include Pregnancy by Every Turn.
 Include Semen Movements by Every Turn.
 Include Diaper Orgasms by Every Turn.
 Include Hypnotic Suggestion by Every Turn.
 
-
-
-Volume 6 - Things
+Volume 4 - Things
 
 Include Things Framework by Objects.
+
+Include Drinks Framework by Drinks.
+
+Include Bottles by Drinks.
+Include Cans by Drinks.
+Include Vessels by Drinks.
+Include Drink Effects by Drinks.
+Include Dispensers by Drinks.
+
 Include Destroying by Objects.
 Include Containers by Objects.
 Include Mimic by Objects.
 Include MimicInvestigating by Actions.
+
 Include Candy Machine by Objects.
 
+
+Include Altars by Objects.
+Include Sacred Pool by Objects.
+Include Hot Tub by Objects.
+Include Swimming Pool by Objects.
+Include Pink Wardrobe by Objects.
+Include Crafting Table by Objects.
+Include Podium by Objects.
+
+Include WellWishing by Actions.
+Include Well by Objects.
+Include Dungeon Statue by Objects.
+Include Woods Statue by Objects.
+Include Pink Sphere by Objects.
+Include Summoning Portals by Objects.
+Include Knife by Objects.
+Include Cross Trainer by Objects.
+Include PC Monitor by Objects.
+Include Stop Button by Objects.
+Include Gloryhole by Objects.
+Include White Wall by Objects.
+Include Warp Portal by Objects.
+Include Tentacle Breeder by Objects.
+Include Sewing Bench by Objects.
+
+Part - Collectibles
+
+Include Collectible Definition by Collectibles.
+
+Include Sanity Token by Collectibles.
+Include Defiance Token by Collectibles.
+Include Fabric Token by Collectibles.
+
+Include Doom Stuff by Collectibles.
+Include Ectoplasm by Collectibles.
+Include Condom Pack by Collectibles.
+Include Magic Lamp by Collectibles.
+Include Eggs by Collectibles.
+Include Piece of Rubber by Collectibles.
+Include Infernal Gem by Collectibles.
+Include Wasp Wing by Collectibles.
+Include Pink Hair by Collectibles.
+Include Mechanical Joint by Collectibles.
+Include Metal Disc by Collectibles.
+Include Royal Sigil by Collectibles.
+Include Playing Cards by Collectibles.
+Include Chess Piece by Collectibles.
+Include Soul Gem by Collectibles.
+Include Soiled Diaper by Collectibles.
+
+Include Lubricant by Consumables.
+Include Pink Pill by Consumables.
+Include Christmas Gift by Consumables.
+Include Make Up Kit by Consumables.
+Include Electric Fan by Consumables.
+Include Squeezy Bottle by Consumables.
+Include Skeleton Key by Consumables.
+Include Bandage by Consumables.
+Include Dark Scroll by Consumables.
+
+Part - Traps
+
 Include Trap Framework by Traps.
-Include Dildo Pole Trap by Traps.
-Include Bukkake Traps by Traps.
+
+
 Include Makeup Pad Trap by Traps.
 Include Ass Hook Trap by Traps.
-Include Wooden Horse Traps by Traps.
 Include Rocking Horse Trap by Traps.
 Include Slingshot Trap by Traps.
 Include Pink Smoke Pad Trap by Traps.
@@ -330,29 +524,32 @@ Include Iron Maiden Trap by Traps.
 Include Glue Trap by Traps.
 Include Hole In Wall Trap by Traps.
 
-Include Drinks Framework by Drinks.
-Include Bottles by Drinks.
-Include Cans by Drinks.
-Include Vessels by Drinks.
-Include Drink Effects by Drinks.
-Include Dispensers by Drinks.
+Include Throne by Objects.
+
+Part - Crafting
 
 Include Crafting Framework by Crafting.
+
+
+Include Powder by Crafting.
+Include Bombs by Crafting.
 Include Tinctures by Crafting.
 Include Elixirs by Crafting.
 Include Potions by Crafting.
 Include Salves by Crafting.
 
-Include Drinking by Actions.
-Include Quaffing by Actions.
-Include Decanting by Actions.
-Include Extracting by Actions.
-Include Squirting by Actions.
-Include Minibar Restocking by Actions.
+Include Salve Rubbing by Actions.
+
+Include Recipes by Crafting.
+Include Currently Craftable by Crafting.
+Include Memorising by Actions.
+Include Crafting by Actions.
+
+Part - Furniture
 
 Include Furniture Framework by Furniture.
+
 Include Kneeling Stool by Furniture.
-Include Milking Bench by Furniture.
 Include Hammock by Furniture.
 Include Hotel Bed by Furniture.
 Include Royal Bed by Furniture.
@@ -367,66 +564,16 @@ Include Master Bed by Furniture.
 Include Med Bay Bed by Furniture.
 Include Detention Chair by Furniture.
 
-Include Throne by Objects.
-Include Altars by Objects.
-Include Lake Monster by Objects.
-Include Slimegirl by Objects.
-Include Sacred Pool by Objects.
-Include Pink Wardrobe by Objects.
-Include Alchemist's Table by Objects.
-Include Podium by Objects.
-Include Well by Objects.
-Include Dungeon Statue by Objects.
-Include Woods Statue by Objects.
-Include Pink Sphere by Objects.
-Include Summoning Portals by Objects.
-Include Knife by Objects.
-Include Cross Trainer by Objects.
-Include Stop Button by Objects.
-Include Gloryhole by Objects.
-Include White Wall by Objects.
-Include Warp Portal by Objects.
-Include Tentacle Breeder by Objects.
-Include Sewing Bench by Objects.
+Part - Food
 
 
-Include Collectible Definition by Collectibles.
-
-Include Lubricant by Consumables.
-Include Pink Pill by Consumables.
-Include Christmas Gift by Consumables.
-Include Make Up Kit by Consumables.
-Include Electric Fan by Consumables.
-Include Squeezy Bottle by Consumables.
-Include Skeleton Key by Consumables.
-Include Bandage by Consumables.
-Include Dark Scroll by Consumables.
-
-Include Doom Stuff by Collectibles.
-Include Ectoplasm by Collectibles.
-Include Condom Pack by Collectibles.
-Include Magic Lamp by Collectibles.
-Include Eggs by Collectibles.
-Include Piece of Rubber by Collectibles.
-Include Infernal Gem by Collectibles.
-Include Wasp Wing by Collectibles.
-Include Pink Hair by Collectibles.
-Include Writhing Vine by Collectibles.
-Include Mechanical Joint by Collectibles.
-Include Metal Disc by Collectibles.
-Include Royal Sigil by Collectibles.
-Include Playing Cards by Collectibles.
-
-Include Teleporting and Dragging by Miscellaneous Backend.
-
-A food is a kind of collectible.  Food is edible.
-
+Include Food Framework by Food.
 Include Fae Mushroom by Food.
 Include Candy by Food.
 Include Toffee by Food.
 Include Fudge by Food.
 Include Creme Egg by Food.
-Include Pink Nugget by Food.
+Include Pink Nougat by Food.
 Include Chocolate Bar by Food.
 Include Liquorice by Food.
 Include Strawberry Lace by Food.
@@ -440,8 +587,8 @@ Include Gelatin by Food.
 Include Candy Corn by Food.
 
 Include Hotel Feeding Bowls by Objects.
-Include Chocolates Bag by Objects.
 Include School Food Machine by Objects.
+Include School Drink Machine by Objects.
 
 Include Snacks by Food.
 Include Banana by Food.
@@ -450,16 +597,14 @@ Include Pack of Crisps by Food.
 Include Lemon by Food.
 Include Pack of Nuts by Food.
 
-Include Recipes by Crafting.
-Include Currently Craftable by Crafting.
-Include Memorising by Actions.
-Include Crafting by Actions.
-
-Volume 7 - Clothes
+Part - Clothing
 
 Include Clothing Adjectives by Clothing.
+Include Orifice Protection by Clothing.
 Include Clothing Functions by Clothing.
 Include Clothing Setup by Clothing.
+
+
 Include Outrage by Clothing.
 Include Cringe by Clothing.
 Include Price by Clothing.
@@ -474,8 +619,12 @@ Include Magic State by Clothing.
 Include Transformation by Clothing.
 Include Influence by Clothing.
 Include Imprinting by Clothing.
+Include Quests by Clothing.
+Include Themes by Clothing.
+
 
 Include Headgear Framework by Headgear.
+
 Include Tiara by Headgear.
 Include Maid Headdress by Headgear.
 Include Scrunchies by Headgear.
@@ -500,8 +649,17 @@ Include Puppy Ears by Headgear.
 Include Glittering Rose by Headgear.
 Include Cumdumpster Hat by Headgear.
 Include Heart Hairpin by Headgear.
+Include Combat Visor by Headgear.
+
 
 Include Shoes Framework by Shoes.
+
+Include Rollerskates Framework by Shoes.
+Include White Rollerskates by Shoes.
+Include Nonwhite Rollerskates by Shoes.
+Include Heels Framework by Shoes.
+
+
 Include Thigh High Boots by Shoes.
 Include Peep Toe Heels by Shoes.
 Include Platform Heels by Shoes.
@@ -517,11 +675,14 @@ Include Ballet Shoes by Shoes.
 Include Lipstick Heels by Shoes.
 Include Armadillo Heels by Shoes.
 Include Baby Booties by Shoes.
+Include Bunny Booties by Shoes.
 Include Mary Janes by Shoes.
 Include Sandals by Shoes.
 Include Trainee Boots by Shoes.
 
 Include Bra Framework by Bra.
+
+
 Include Training Bra by Bra.
 Include Wonder Bra by Bra.
 Include Exercise Bra by Bra.
@@ -536,7 +697,7 @@ Include Purple Bikini Top by Bra.
 Include Leopard Print Bikini Top by Bra.
 Include Silver Bikini Top by Bra.
 Include Cream Bikini Top by Bra.
-Include White Bikini Top by Bra.
+Include Skimpy Pink Bikini Top by Bra.
 Include Pink Bikini Top by Bra.
 Include Purple String Bikini Top by Bra.
 Include Nipple Ring Bikini Top by Bra.
@@ -547,7 +708,9 @@ Include Sheer Bra by Bra.
 Include Trainee Bra by Bra.
 Include Pasties by Bra.
 
+
 Include Knickers Framework by Knickers.
+
 Include Plug Panties by Knickers.
 Include Cutoffs by Knickers.
 Include Bikini Bottoms by Knickers.
@@ -558,7 +721,7 @@ Include Cum Dump's Undergarment by Knickers.
 Include Hotpants by Knickers.
 Include Bloomers by Knickers.
 Include Microshorts by Knickers.
-Include Demon Lord's Codpiece by Knickers.
+Include Strapon by Knickers.
 
 Include Undies by Knickers.
 Include G-strings by Knickers.
@@ -566,9 +729,11 @@ Include Thongs by Knickers.
 Include Briefs by Knickers.
 Include Panties by Knickers.
 
+
 Include Diaper Framework by Knickers.
 Include Diapers by Knickers.
 Include Diaper Covers by Knickers.
+
 
 Include Trousers Framework by Trousers.
 Include Yoga Pants by Trousers.
@@ -577,6 +742,11 @@ Include Jeans by Trousers.
 Include Buttocksless Pants by Trousers.
 Include Leggings by Trousers.
 Include Latex Pants by Trousers.
+Include Bloomers by Trousers.
+Include Teddy Bear Pantyhose by Trousers.
+Include Exercise Shorts by Trousers.
+
+Part - Dresses
 
 Include Dresses Framework by Dresses.
 
@@ -625,6 +795,7 @@ Include Butterfly Wings by Dresses.
 Include Lycra Bodysuit by Dresses.
 Include Diaper Dresses by Dresses.
 Include Ribbon Dress by Dresses.
+Include Slave Dress by Dresses.
 Include Business Dresses by Dresses.
 Include Rompers by Dresses.
 Include Dining Dresses by Dresses.
@@ -632,6 +803,11 @@ Include Rubber Dress by Dresses.
 Include Gingham Dress by Dresses.
 Include Magical Dress by Dresses.
 Include Christmas Dress by Dresses.
+Include Bunny Outfit by Dresses.
+Include Open Front Dress by Dresses.
+Include Latex Dungarees by Dresses.
+
+Part - Corsets
 
 Include Corsets Framework by Corsets.
 Include Gothic Corset by Corsets.
@@ -644,40 +820,25 @@ Include Santa Corset by Corsets.
 Include Spike Corset by Corsets.
 Include Ballet Corset by Corsets.
 
-Include Skirts Framework by Skirts.
-Include Microskirts by Skirts.
-Include Miniskirt by Skirts.
-Include Gown of Purity by Skirts.
-Include Sequins Belt by Skirts.
-Include Chainmail Skirt by Skirts.
-Include Latex Skirt by Skirts.
-Include Naughty Leather Skirt by Skirts.
-Include Punishment Latex Hobble Skirt by Skirts.
-Include Office Skirt by Skirts.
-Include Flowing White Skirt by Skirts.
+Part - Skirts
 
-Include Belt Framework by Belts Suspenders.
-Include Living Belt of Sturdiness by Belts Suspenders.
-Include Suspenders Framework by Belts Suspenders.
-Include Sissy Suspenders by Belts Suspenders.
-Include Bridal Sissy Suspenders by Belts Suspenders.
-Include White Suspenders by Belts Suspenders.
-Include Black Suspenders by Belts Suspenders.
-Include Red Suspenders by Belts Suspenders.
-Include String Belt by Belts Suspenders.
-Include Demon Belt by Belts Suspenders.
+Include All Skirts by Skirts.
 
-Include Stockings Framework by Stockings.
-Include Mesh Stockings by Stockings.
-Include Nylon Stockings by Stockings.
-Include Latex Stockings by Stockings.
-Include Cotton Stockings by Stockings.
-Include Wool Stockings by Stockings.
-Include Striped Stockings by Stockings.
-Include Magical Stockings by Stockings.
-Include Christmas Socks by Stockings.
+
+
+Part - Belts and Suspenders
+
+Include All Belts by Belts Suspenders.
+
+
+Part - Stockings
+
+Include All Stockings by Stockings.
+
+Part - Accessories
 
 Include Accessories Framework by Accessories.
+
 Include Rings by Accessories.
 Include Necklaces by Accessories.
 Include Bracelets by Accessories.
@@ -701,22 +862,23 @@ Include Research Airhancer by Accessories.
 Include Armband by Accessories.
 
 
-Include Piercing Framework by Piercings Modules.
-Include Nipple Piercings by Piercings Modules.
-Include Tongue Piercing by Piercings Modules.
-Include Earrings by Piercings Modules.
-Include Clitoris Piercing by Piercings Modules.
-Include Nose Piercing by Piercings Modules.
-Include Lip Piercing by Piercings Modules.
-Include Clitoris Lead by Piercings Modules.
-Include Cow Nipple Piercing by Piercings Modules.
-			
+
+Part - Piercing
+
+Include All Piercings by Piercings Modules.
+
+
+Part - Equippables
+
 Include Equippables Framework by Equippables.
+
+
 Include Whip of Domination by Equippables.
 Include Magic Wand by Equippables.
 Include Kitty Claws by Equippables.
 Include Mittens by Equippables.
 Include Swords by Equippables.
+Include Prayer Beads by Equippables.
 
 Include Pink Spraybottle by Equippables.
 Include Mopping by Actions.
@@ -724,24 +886,43 @@ Include Spritzing by Actions.
 
 Include Wasp Cloud by Equippables.
 Include Vampiric Claws by Equippables.
+Include Carrot Daggers by Equippables.
 Include Royal Scepter by Equippables.
 Include Pocketbooks by Equippables.
 Include Midnight Tanto by Equippables.
 Include Puppy Mittens by Equippables.
 Include Fairy Wand by Equippables.
+Include Nintendolls Wand by Equippables.
 Include Fake Nails by Equippables.
 Include Totem of Purity by Equippables.
 Include Pom Poms by Equippables.
 Include Heart Wand by Equippables.
+Include Magic Pistol by Equippables.
+Include Wrench by Equippables.
+
+Part - Bondage
 
 Include Bondage Framework by Bondage.
+
+
 Include Wrist Bondage by Bondage.
 Include Ankle Bondage by Bondage.
+Include Dungeon Chains by Objects.
 Include Gags by Bondage.
+Include Pacifiers by Bondage.
+Include Puppy Gag by Bondage.
+Include Rubber Duck Gag by Bondage.
+Include Ring Gag by Bondage.
 Include Chastity Cage by Bondage.
 Include Pet Collar by Bondage.
+Include Ball and Chain by Bondage.
+Include Wrist Collar Bar by Bondage.
+
+Part - Sex Toys
+
 
 Include Sex Toy Framework by Sex Toys.
+
 Include Golden Phallus by Sex Toys.
 Include Throbbing Tentacle by Sex Toys.
 Include Vibrator by Sex Toys.
@@ -749,158 +930,34 @@ Include Jelly Dildo by Sex Toys.
 Include Mamba by Sex Toys.
 Include Johnson by Sex Toys.
 Include Cat Tail Plug by Sex Toys.
+Include Bunny Tail Plug by Sex Toys.
 Include Puppy Tail Plug by Sex Toys.
 Include Demon Tail Plug by Sex Toys.
 Include Prostate Massager Plug by Sex Toys.
 Include Anal Beads by Sex Toys.
 Include Ben Wa Balls by Sex Toys.
+Include Unicorn Horn by Sex Toys.
+Include Writhing Vine by Sex Toys.
 
 Include Condom of Kings by Clothing.
 
+Part - Tattoos
+
 Include Tattoos Framework by Tattoos.
-
-Include Buttslut Tattoo by Tattoos.
-Include Freedom Tattoo by Tattoos.
-Include Spank Me Tattoo by Tattoos.
-Include Spank My Kitty Tattoo by Tattoos.
-Include Just The Tip Tattoo by Tattoos.
-
-Include Funcenter Tattoo by Tattoos.
-Include Daddy's Cock Only Tattoo by Tattoos.
-Include Anal Dragon Tattoo by Tattoos.
-Include Anal Star Tattoo by Tattoos.
-Include Butt Slut Asshole Tattoo by Tattoos.
-Include Spit First Tattoo by Tattoos.
-Include Asshole Cupid Tattoo by Tattoos.
-
-Include No Panties Tattoo by Tattoos.
-Include Topless Tattoo by Tattoos.
-Include Hundred Percent Cunt Tattoo by Tattoos.
-Include For Deposit Only Tattoo by Tattoos.
-Include Born To Lose Tattoo by Tattoos.
-Include Lucky You Tattoo by Tattoos.
-Include Forever Tattoo by Tattoos.
-Include Slut Tattoo by Tattoos.
-Include Womb Diagram Tattoo by Tattoos.
-Include Zip Tattoo by Tattoos.
-Include Bird Nest Tattoo by Tattoos.
-Include Demon Tattoo by Tattoos.
-Include Let it Die Tattoo by Tattoos.
-Include Daddy's Little Girl Tattoo by Tattoos.
-Include Whore is my Mind Tattoo by Tattoos.
-Include Pussy Deluxe Tattoo by Tattoos.
-Include Worthless Cunt Tattoo by Tattoos.
-Include Xavier's Cunt Tattoo by Tattoos.
-Include Slut for Black Cock Tattoo by Tattoos.
-Include Cumlust Tattoo by Tattoos.
-
-Include Wet Dream Tattoo by Tattoos.
-Include You Live You Learn Tattoo by Tattoos.
-Include Overcome Tattoo by Tattoos.
-Include Cupcake Tattoo by Tattoos.
-Include Sissy Black Cock Whore Tattoo by Tattoos.
-Include Atlas Tattoo by Tattoos.
-Include True Love Tattoo by Tattoos.
-Include Unfaithful Tattoo by Tattoos.
-Include Bat Tattoo by Tattoos.
-Include Target Tattoo by Tattoos.
-Include Showtime Tattoo by Tattoos.
-
-Include Heavyweight Tattoo by Tattoos.
-Include Witchcraft Tattoo by Tattoos.
-Include White Trash Tattoo by Tattoos.
-Include Ribbon Bow Tattoo by Tattoos.
-
-Include Semen Demon Tattoo by Tattoos.
-Include Stupid Whore Tattoo by Tattoos.
-Include Tear It Up Daddy Tattoo by Tattoos.
-Include Anal Slut Tattoo by Tattoos.
-Include Princess Tattoo by Tattoos.
-Include Property Tattoo by Tattoos.
-Include Bitch Tattoo by Tattoos.
-
-Include Virgin Void Tattoo by Tattoos.
-Include Black Hole Tattoo by Tattoos.
-Include Cum Dumpster Lip Tattoo by Tattoos.
-Include Nothing's Sacred Tattoo by Tattoos.
-Include Fuckin Classy Tattoo by Tattoos.
-Include No Regrets Tattoo by Tattoos.
-Include Angel Tattoo by Tattoos.
-Include Demongirl Tattoo by Tattoos.
-Include Bed Wetter Tattoo by Tattoos.
-Include Bred Bull Tattoo by Tattoos.
-Include Ink Me Tattoo by Tattoos.
-Include Abyssal Tattoo by Tattoos.
-Include Nintendolls Brand Tattoo by Tattoos.
-Include Bright Hair Tattoo by Tattoos.
-Include Pentagram Tattoo by Tattoos.
-Include Tally Tattoos by Tattoos.
-Include Black Owned Tattoo by Tattoos.
-Include Black Cock Only Tattoo by Tattoos.
-Include Failed Potty Training Tattoo by Tattoos.
-Include Weakness Tattoo by Tattoos.
-Include Dolly Tattoo by Tattoos.
-Include Thorny Tattoo by Tattoos.
-
-Include Empty Mind Tattoo by Tattoos.
-Include Cheating Whore Tattoo by Tattoos.
-Include Fuck Me Tattoo by Tattoos.
-Include Free Ride Tattoo by Tattoos.
-
-Include Safety Pin Tattoo by Tattoos.
-Include Cloth Revolution Tattoo by Tattoos.
-Include Take It Easy Tattoo by Tattoos.
-Include Flower Ballerina Tattoo by Tattoos.
-Include Bird Kitty Tattoo by Tattoos.
-Include Paw Print Tattoo by Tattoos.
-Include Tribal Diaper Tattoo by Tattoos.
-Include Unicorn Horn Finger Tattoo by Tattoos.
-Include Cupcake Wrist Tattoo by Tattoos.
-Include Lipstick Crystal Tattoo by Tattoos.
-Include DrinkMe Tattoo by Tattoos.
-Include Babygirl Tattoo by Tattoos.
-Include Royal Hearts Tattoo by Tattoos.
-Include Princess Castle Tattoo by Tattoos.
-Include Kitty Cat Tattoo by Tattoos.
-Include Birds Tattoo by Tattoos.
-Include Ribbon Bow Neck Tattoo by Tattoos.
-Include Teapot Tattoo by Tattoos.
-Include Elephant Tattoo by Tattoos.
-Include Diapered Dinosaur Tattoo by Tattoos.
-Include Daddys Wild Child Tattoo by Tattoos.
-Include Can't Change Self Tattoo by Tattoos.
-Include Cum When Messing Tattoo by Tattoos.
-
-Include Demon Belly Mark by Tattoos.
-Include Demon Link Mark by Tattoos.
-
-Include Whip Tattoo by Tattoos.
+Include All Tattoos by Tattoos.
 
 Include Inking by Actions.
 
+
+Part - Bags of Holding
+
 Include Bags of Holding Framework by Bags of Holding.
 Include Sacks of Holding by Bags of Holding.
-Include Patterned Sacks of Holding by Bags of Holding.
-Include Pink Sacks of Holding by Bags of Holding.
-Include Slutty Clutches of Holding by Bags of Holding.
-Include Clutches of Holding by Bags of Holding.
-Include Ultra Slutty Bags of Holding by Bags of Holding.
 Include Handbags of Holding by Bags of Holding.
 
-[DQ bags begin here]
-Include Satchels of Holding by Bags of Holding.
-Include Backpacks of Holding by Bags of Holding.
-Include Childish Backpacks of Holding by Bags of Holding.
-Include Diaper Bags of Holding by Bags of Holding.
-Include Baby Diaper Bags of Holding by Bags of Holding.
 
-Include Wearing by Actions.
-Include Taking Off by Actions.
-Include Displacing Replacing by Actions.
-Include TopDisplacing TopReplacing by Actions.
-Include Zipping by Actions.
 
-Volume 8 - Various Definitions
+Volume 5 - More Backend Stuff
 
 Include Relations by Miscellaneous Backend.
 Include Immobility by Player.
@@ -908,7 +965,21 @@ Include Manual Dexterity by Player.
 Include Dungeon Shop by Rooms.
 Include Nearby Simulated Danger by Miscellaneous Backend.
 
-Volume 9 - Actions
+
+Volume 6 - Other Actions
+
+Include Wearing by Actions.
+Include Taking Off by Actions.
+Include Displacing Replacing by Actions.
+Include TopDisplacing TopReplacing by Actions.
+Include Zipping by Actions.
+
+Include Drinking by Actions.
+Include Quaffing by Actions.
+Include Decanting by Actions.
+Include Extracting by Actions.
+Include Squirting by Actions.
+Include Minibar Restocking by Actions.
 
 Include Searching by Actions.
 Include Opening by Actions.
@@ -948,7 +1019,7 @@ Include Invoking by Actions.
 Include Poking by Actions.
 Include Fainting by Actions.
 
-Volume 10 - Monsters
+Volume 7 - Monsters
 
 Include Monster Adjectives by Monster Framework.
 Include Monster Descriptions by Monster Framework.
@@ -968,22 +1039,22 @@ Include Diaper Events by Monster Framework.
 Include Requested Sex by Monster Framework.
 Include Penetrative Sex by Monster Framework.
 Include Attacking Monsters by Monster Framework.
+
+Include Attacking by Actions.
+Include Slapping by Actions.
+Include Kneeing by Actions.
+Include Kicking by Actions.
+
 Include Dominating Monsters by Monster Framework.
 
 Include Royal Guard by Monster.
-Include Wench by Monster.
-Include Sex Doll by Monster.
 Include Mannequin by Monster.
 Include Demoness by Monster.
 Include Gladiator by Monster.
-Include Minotaur by Monster.
 Include Shopkeeper by Monster.
 Include Vine Boss by Monster.
 Include Fairy by Monster.
 Include Witch by Monster.
-Include Giant Wasp by Monster.
-Include Aeromancer by Monster.
-Include Tentacle Monster by Monster.
 Include Patron by Monster.
 Include Matron by Monster.
 
@@ -991,12 +1062,10 @@ Include Robots Framework by Monster Framework.
 Include RoboBellboy by Monster.
 Include RoboButler by Monster.
 Include RoboChef by Monster.
-Include RoboMatron by Monster.
 
 Include Wrestler by Monster.
 Include Mechanic by Monster.
 Include Demon Lord Xavier by Monster.
-Include Slutty Sisters by Monster.
 Include Dominatrix by Monster.
 Include Mind Flayer by Monster.
 Include Acolyte Cultist by Monster.
@@ -1008,16 +1077,17 @@ Include Herald Valleyhotep by Monster.
 Include Djinn by Monster.
 Include Kitsune by Monster.
 Include Hellhound by Monster.
-Include Gargoyle by Monster.
-Include Boogeymonster by Monster.
-Include Golem by Monster.
 Include Pimp by Monster.
+Include Princess by Monster.
 
 Include Staff Framework by Monster Framework.
 Include Receptionist by Monster.
 Include Headmistress by Monster.
 Include Nurse by Monster.
 Include Teachers Sapphire by Monster.
+Include Teachers Emerald by Monster.
+Include Teachers Ruby by Monster.
+Include Teachers Pink Diamond by Monster.
 
 Include Student Framework by Monster Framework.
 Include Students Amicable by Monster.
@@ -1026,11 +1096,15 @@ Include Students Innocent by Monster.
 Include Students Nasty by Monster.
 Include Students Ditzy by Monster.
 
+Include Supporter Framework by Monster Framework.
+Include Supporters by Monster.
+
 Include Woman Barbara by Monster.
 
 Include Talking by Actions.
 
-Volume 11 - Other
+
+Volume 8 - Other
 
 Include Forbidden Actions by Actions.
 
@@ -1038,7 +1112,64 @@ Include Actions with Missing Nouns by Actions.
 
 Include Tutorial by Miscellaneous Frontend.
 
-Volume 12 - Version
+
+The clothingFocusPriority of headgear is -10.
+
+The clothingFocusPriority of combat visor is -9.
+
+The clothingFocusPriority of pair of earrings is -8.
+
+The clothingFocusPriority of nose piercing is -7.
+
+The clothingFocusPriority of tongue piercing is -6.
+
+The clothingFocusPriority of gag is -5.
+
+The clothingFocusPriority of lip piercing is -4.
+
+The clothingFocusPriority of lips module is -4.
+
+The clothingFocusPriority of neckwear is -3.
+
+[The clothingFocusPriority of serving-bondage is -2.]
+
+The clothingFocusPriority of bracelet is -1.
+
+The clothingFocusPriority of wrist bond is 0.
+
+The clothingFocusPriority of gloves is 2.
+
+The clothingFocusPriority of nipple piercing is 4.
+
+The clothingFocusPriority of bra is 5.
+
+The clothingFocusPriority of an underdress is 6.
+
+The clothingFocusPriority of dress is 7.
+
+The clothingFocusPriority of corset is 8.
+
+The clothingFocusPriority of belt is 11.
+
+The clothingFocusPriority of sex toy is 12.
+
+The clothingFocusPriority of knickers is 13.
+
+The clothingFocusPriority of diaper cover is 14.
+
+The clothingFocusPriority of trousers is 15.
+
+The clothingFocusPriority of skirt is 16.
+
+The clothingFocusPriority of stockings is 18.
+
+The clothingFocusPriority of an ankle bond is 19.
+
+The clothingFocusPriority of shoes is 20.
+
+The clothingFocusPriority of bag of holding is 24.
+
+
+Volume 3 - Version
 
 Include Public Version Stuff by Miscellaneous Backend.
-
