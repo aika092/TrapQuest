@@ -212,7 +212,7 @@ To compute happy reward of (M - unicorn):
 To say PrepTaunt of (M - unicorn) in (F - a fuckhole):
 	if M is unwrapped:
 		if F is vagina, say "[line break][speech style of M]'[one of]I-I'm gonna breed you![or]L-let's breed!'[or]Lemme cum inside you!'[or]Can I cum inside? I-I think I will!'[or]I'll breed you fast. N-nice and fast!'[at random][roman type]";
-		otherwise say "[line break][speech style of M]'[one of]Lemme cum inside![or]I-I'll put it all inside...'[or]It's ok if it's not my ass.'[or]Can I cum inside? Y-you probably don't mind...'[or]D-do I have to pull out? It- it's probably better that I don't...'[at random][roman type]".
+		otherwise say "[line break][speech style of M]'[one of]Lemme cum inside![or]I-I'll put it all inside...'[or]It's OK if it's not my ass.'[or]Can I cum inside? Y-you probably don't mind...'[or]D-do I have to pull out? It- it's probably better that I don't...'[at random][roman type]".
 
 To decide if (M - unicorn) is willing to creampie (F - a fuckhole):
 	if the reaction of the player is 1, decide no;
@@ -573,7 +573,7 @@ To compute annoyed punishment of (M - unicorn):
 	ApplyFullConvoFatigue to M.
 
 To say InvitationAccepted of (M - unicorn) with (N - a monster):
-	say "[speech style of M]'[one of]A-as long as you're willing.'[or]W-well, since you put it like that...'[or]O-oh, its really ok?'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]A-as long as you're willing.'[or]W-well, since you put it like that...'[or]O-oh, its really OK?'[at random][roman type][line break]".
 
 To say InvitationRejected of (M - unicorn) with (N - a monster):
 	say "[speech style of M]'W-Why would I want to do that! H-how ridiculous!'[roman type][line break]".

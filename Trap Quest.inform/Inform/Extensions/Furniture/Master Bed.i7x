@@ -3,7 +3,7 @@ Master Bed by Furniture begins here.
 A master bed is a kind of furniture. There is 1 master bed. The printed name of master bed is "[TQlink of item described]master bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "master", "bed" as master bed. The text-shortcut of master bed is "vmb". A master bed has a number called charge.
 
 To say ExamineDesc of (C - a master bed):
-	say "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerizing pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.".
+	say "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerising pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.".
 
 To decide which figure-name is the examine-image of (C - a master bed):
 	decide on figure of hotel bed.
@@ -132,7 +132,7 @@ To compute rest completion of (F - a master bed):
 			[otherwise if R is 2:
 				say "It's too hard to resist, and you fall straight into a dream. ";
 			otherwise:
-				say "A quick shake of your head is enough to get rid of the lingering lethargy, but your body is still too sleepy to make any progress getting rid of the blankets. They feel a lot heavier than they did when you got into the bed, and the faint shifting feeling is now far too pronounced to ignore. You can feel your [ShortDesc of breasts] being groped as a hard spot grows in the center of the mattress, pushing up against your [AssDesc] in a way that's far too lifelike.
+				say "A quick shake of your head is enough to get rid of the lingering lethargy, but your body is still too sleepy to make any progress getting rid of the blankets. They feel a lot heavier than they did when you got into the bed, and the faint shifting feeling is now far too pronounced to ignore. You can feel your [ShortDesc of breasts] being groped as a hard spot grows in the centre of the mattress, pushing up against your [AssDesc] in a way that's far too lifelike.
 
 
 				The blankets tighten around your body, pinning you to the mattress. ";]

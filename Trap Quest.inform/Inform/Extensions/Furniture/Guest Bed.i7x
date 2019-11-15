@@ -72,7 +72,7 @@ To compute unique normal effect of (F - a guest bed):
 To compute song effect of (F - a guest bed):
 	let N be the song of F;
 	if N < 10:
-		if N is 4, say "Your field of view seems to darken, and you feel yourself slipping deeper and deeper into the sound of the cultists's voice.";
+		if N is 4, say "Your field of view seems to darken, and you feel yourself slipping deeper and deeper into the sound of the cultist's voice.";
 		if N is 7, say "You barely notice the sheets tightening as your vision fades completely, and the endless face of the void slowly leaks into your mind. Someone is singing.";
 		if N is 10, say "Nothing. No light. No sound. Only them.".
 
