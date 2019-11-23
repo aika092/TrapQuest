@@ -559,7 +559,7 @@ The text in this function should output whenever the player unsuccessfully domin
 To say DominanceFailure of (M - a monster):
 	say "You try to force yourself on [NameDesc of M], but [he of M] turns the tables and forces you to your knees instead!";
 
-[Usually when you mess up you'll be punished by having some clothes torn off, but if you're not wearing anything you'll have to deal with a more intense punishment courtesy of nintendolls]
+[Usually when you mess up you'll be punished by having some clothes torn off, but if you're not wearing anything you'll have to deal with a more intense punishment courtesy of Nintendolls]
 [!<ComputeFailedDominancePunishmentOfMonster>+
 
 The failed dominance punishment should be implemented for any monster that the player can dominate. By default, the monster will perform their angry punishment, or the monster will leave the player alone and the game will punish them instead(with sissification). Most monsters should follow this general formula. If the monster decides to repay the player with sex, any punishment here should be fairly mild, and the another-turn flag should be set to 1. If the monster won't be having sex with the player right after, the punishment here should be a bit more intense, and we should make sure the monster loses interest at the end.

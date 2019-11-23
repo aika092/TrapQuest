@@ -472,7 +472,7 @@ To say RepeatGreeting to (M - a slutty sister):
 	otherwise if the bimbo of the player < 10 and the player is female:
 		say "'[one of]Ugh, haven[']t we been through this already? You had your fun, now let me out!'[or]You[']re not going to turn me into a slut. Not if I can beat you first.'[or]I really don[']t want to keep fighting you. I just want to leave!'[or]This isn[']t fair! If you[']re going to turn me into a slut at least play by your own rules!'[at random]";
 	otherwise if the bimbo of the player < 10:
-		say "'[one of]Ok, you proved I[']m not much of a man anymore, but instead of rubbing it in, you could let me out of here instead.'[or]Listen. I want to fuck sluts, not become one! You put me in the wrong game!'[or]Let me out while I can still think straight!'[at random]";
+		say "'[one of]OK, you proved I[']m not much of a man anymore, but instead of rubbing it in, you could let me out of here instead.'[or]Listen. I want to fuck sluts, not become one! You put me in the wrong game!'[or]Let me out while I can still think straight!'[at random]";
 	otherwise if the bimbo of the player < 15:
 		say "[second custom style]'[one of]This time I[']ll satisfy you for sure!'[or]I[']ll make you both cum eventually, then I[']ll be free!'[or]I[']m pretty sure you[']re gonna get tired of fucking with me soon, then I[']ll be free to get out of here and suck some... freedom.'[at random]";
 	otherwise:

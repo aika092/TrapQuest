@@ -509,7 +509,7 @@ To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
 To compute happy reward of (M - mechanic):
 	let T be a random tiara;
 	if M is retaining T:
-		say "[line break][speech style of M]'[one of]Alright [']princess['], I guess you've earned this back.'[or]Ok I feel better now. Maybe next time you'll bring the old princess and make it a threesome.'[or]Fuck, that was good. Here's your garbage back.'[or]I like you loads more than the old princess. Take it.'[at random][roman type][line break][BigNamedesc of M] hands you the [ShortDesc of T].";
+		say "[line break][speech style of M]'[one of]Alright [']princess['], I guess you've earned this back.'[or]OK I feel better now. Maybe next time you'll bring the old princess and make it a threesome.'[or]Fuck, that was good. Here's your garbage back.'[or]I like you loads more than the old princess. Take it.'[at random][roman type][line break][BigNamedesc of M] hands you the [ShortDesc of T].";
 		now T is held by the player;
 		now T is not retained by M;
 		now M is not withholding T;
@@ -690,7 +690,7 @@ To say SubmissiveResponse of (M - mechanic):
 	otherwise if M is not unfriendly:
 		say "[speech style of M]'[one of]Ha ha, yes this is my realm - er, I mean hotel, and I'll fuck whoever I want, whenever I want!'[or]You're still on about that? Ha, you're welcome, I guess.'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Back for more, slut?'[or]Did remembering what happened earlier made you horny? Can[']t say I blame you, you obviously can[']t help being a tart.'[or]Horny again, are we? I[']ll help.'[or]Not satisfied with [the times-submitted of M] dickings? Ok, let[']s make it [the times-submitted of M + 1]!'[or]Ah! It[']s a good thing you showed up, I was watching you in my security cameras and thought, Man, I[']d like to bang that slut again.'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]Back for more, slut?'[or]Did remembering what happened earlier made you horny? Can[']t say I blame you, you obviously can[']t help being a tart.'[or]Horny again, are we? I[']ll help.'[or]Not satisfied with [the times-submitted of M] dickings? OK, let[']s make it [the times-submitted of M + 1]!'[or]Ah! It[']s a good thing you showed up, I was watching you in my security cameras and thought, Man, I[']d like to bang that slut again.'[at random][roman type][line break]".
 
 To say InvitationRejected of (M - mechanic) with (N - a monster):
 	say "[speech style of M]'[one of]Heh, how could I say no to a face like that?'[or]You need help from the boss, huh? Alright, I can do that.'[or]Hurting for the boss's [DicKDesc of M], huh? I guess I can sate you.'[at random][roman type][line break]";
@@ -1333,7 +1333,7 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 		unless H is off-stage and H is actually summonable, now H is black maid headdress;
 		if the class of the player is hotel employment:
 			increase the employee-record of senior robobellboy by 1;
-			say "[speech style of M]'[one of]Good roleplay, but I felt like something important was missing.[or]Your acting was ok, but I think your performance was missing something.[or][if pregnancy fetish is 1]Breeding[otherwise]Nutting in[end if] you was fun, but I didn't really *believe* you were trying to steal it.[at random]'[roman type][line break]";
+			say "[speech style of M]'[one of]Good roleplay, but I felt like something important was missing.[or]Your acting was OK, but I think your performance was missing something.[or][if pregnancy fetish is 1]Breeding[otherwise]Nutting in[end if] you was fun, but I didn't really *believe* you were trying to steal it.[at random]'[roman type][line break]";
 		otherwise:
 			if the employee-record of senior robobellboy < 0, increase the employee-record of senior robobellboy by 1;
 			say "[speech style of M]'[one of]Good fuck, but I don[']t know if I[']d hire you.'[or]That was fun, but if this were an interview, I[']d say you didn[']t bring your A-game.'[or]That felt good, but if you were trying to impress me with your acting, you're going to need to do better.'[at random][roman type][line break]";
@@ -1342,7 +1342,7 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 	otherwise if N is 4:[the player stole the amulet]
 		say "[speech style of M]'[one of]This is not over. I will have my amulet one way or another.'[or]You can't even unleash the amulet's full power. It was foolish to take it.'[or]You think you[']ve won, but you haven't. I WILL have my amulet.'[or]You are a fool to think you can truly steal that from me.'[at random][roman type][line break]";
 	otherwise if N is 5:[the player stole the wrench]
-		say "[speech style of M]'[one of]Ugh, whatever. I'll find a fucking replacement, how's that?'[or][if the player is female]Women[otherwise]Sluts[end if] are so annoying. Whatever. I'll just have to replace it.'[or]Ok, you win. Keep it. I'll fucking buy a replacement.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Ugh, whatever. I'll find a fucking replacement, how's that?'[or][if the player is female]Women[otherwise]Sluts[end if] are so annoying. Whatever. I'll just have to replace it.'[or]OK, you win. Keep it. I'll fucking buy a replacement.'[at random][roman type][line break]";
 	otherwise if N is 6:
 		say "[speech style of M]'[one of]You ALMOST had it. Just kidding. Stupid bitch.'[or]Try stealing it again and you[']re going to wish you hadn't.'[or]I didn[']t get to where I am today letting stupid bitches like you steal my possessions.'[at random][roman type][line break]";
 	otherwise:

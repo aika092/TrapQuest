@@ -324,7 +324,7 @@ Check masturbating:
 		if the player is fapping-blocked:
 			now asswank is 1;
 			if auto is 0:
-				say "You can only use your ass to masturbate right now right now[if the player is not anal flexible and the player is upright], and you'll have to get on your knees first[end if]. Is that ok? ";
+				say "You can only use your ass to masturbate right now right now[if the player is not anal flexible and the player is upright], and you'll have to get on your knees first[end if]. Is that OK? ";
 				unless the player is bimbo consenting:
 					say "You decide against it.";
 					now asswank is 0 instead;

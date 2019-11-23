@@ -7,7 +7,7 @@ To say ShortDesc of (C - a truffle):
 	say "truffle".
 
 To say ExamineDesc of (C - a truffle):
-	say "[if the quality of C > -1]A chocolate truffle, garnished with a thick sugary glaze.[otherwise if diaper quest is 1]A chocolate truffle, with a pacifier design stencilled into its surface. You can't be confident of what it's filled with.[otherwise if the quality of C > -2]A chocolate truffle with a design stencilled into its surface to make it look like the tip of an erect penis. complete with a really suggestive trail of sugary glaze.[otherwise]What used to be a chocolate truffle until someone put their [manly-penis] in it and filled the center with [semen]. Looking at it reminds you of a well fucked hole.[end if]". 
+	say "[if the quality of C > -1]A chocolate truffle, garnished with a thick sugary glaze.[otherwise if diaper quest is 1]A chocolate truffle, with a pacifier design stencilled into its surface. You can't be confident of what it's filled with.[otherwise if the quality of C > -2]A chocolate truffle with a design stencilled into its surface to make it look like the tip of an erect penis, complete with a really suggestive trail of sugary glaze.[otherwise]What used to be a chocolate truffle until someone put their [manly-penis] in it and filled the centre with [semen]. Looking at it reminds you of a well fucked hole.[end if]". 
 
 truffle-confidence-timer is a number that varies.
 

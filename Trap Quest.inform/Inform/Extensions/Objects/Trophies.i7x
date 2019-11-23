@@ -26,7 +26,7 @@ A trophy has a number called trophy-mode.
 
 
 Check taking trophy:
-	if the player is in School31, say "Unforunately it seems to have been fixed in place!" instead.
+	if the player is in School31, say "Unfortunately it seems to have been fixed in place!" instead.
 
 TrophySwitching is an action applying to one thing.
 
@@ -151,12 +151,12 @@ condom-trophy is a trophy. The printed name of condom-trophy is "[TQlink of item
 Definition: condom-trophy is fetish appropriate if diaper quest is 0.
 
 To say ExamineDesc of (T - condom-trophy):
-	say "This trophy is in the shape of a realistic erect penis protected by a condom. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that people are much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you recieve any[otherwise]red glow, which allows you to sense that its magical powers to make condoms more reliable and cremapies more addicitve are inactive[end if].".
+	say "This trophy is in the shape of a realistic erect penis protected by a condom. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that people are much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you receive any[otherwise]red glow, which allows you to sense that its magical powers to make condoms more reliable and cremapies more addictive are inactive[end if].".
 
 Carry out TrophySwitching condom-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of condom-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]people will be much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you recieve any.[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]people will be much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you receive any.[roman type][line break]";
 		now the trophy-mode of condom-trophy is 1;
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]people's attitude to condoms and the addictiveness of creampies has returned to normal.[roman type][line break]";
@@ -171,7 +171,7 @@ ejaculate-trophy is a trophy. The printed name of ejaculate-trophy is "[TQlink o
 Definition: ejaculate-trophy is fetish appropriate if ((the player is female or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1.
 
 To say ExamineDesc of (T - ejaculate-trophy):
-	say "This trophy is in the shape of a realistic erect penis in the middle of ejaulating a vertiable fountain of semen. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that drinking [semen] is no longer addictive, but also everyone in this world now ejaculates huge amounts of [semen][otherwise]red glow, which allows you to sense that its magical powers to make ejaculations much more volumnous and creampies less addicitve are inactive[end if].".
+	say "This trophy is in the shape of a realistic erect penis in the middle of ejaculating a veritable fountain of semen. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that drinking [semen] is no longer addictive, but also everyone in this world now ejaculates huge amounts of [semen][otherwise]red glow, which allows you to sense that its magical powers to make ejaculations much more voluminous and creampies less addictive are inactive[end if].".
 
 Carry out TrophySwitching ejaculate-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";

@@ -1038,7 +1038,7 @@ Definition: drinkme tattoo is magic themed: decide yes.
 
 dumb baby tattoo is a body tattoo. The tattoo-title of dumb baby tattoo is "dumb baby".
 To say tattoo-desc of (T - dumb baby tattoo):
-	say "The words 'dumb baby' are written onto your leg with red sharpie.".
+	say "The words 'dumb baby' are written onto your leg with red Sharpie.".
 To decide which object is the concealer of (T - dumb baby tattoo):
 	decide on a random worn actually dense leg covering clothing.
 To decide which number is the intelligence-influence of (T - dumb baby tattoo):
@@ -1322,7 +1322,7 @@ Definition: funcenter tattoo is eligible:
 	if the noun is plug or the noun is ass plugging clothing or the noun is mechanical joint or the noun is lubricant or the noun is pin themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - funcenter tattoo):
-	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTER' inked in giant letters above it.".
+	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTRE' inked in giant letters above it.".
 To decide which number is the anal sensitivity influence of (C - funcenter tattoo):
 	decide on 2.
 
@@ -1402,7 +1402,7 @@ Definition: i-suck tattoo is eligible:
 To decide which figure-name is the examine-image of (T - i-suck tattoo):
     decide on figure of i-suck tattoo.
 To say tattoo-desc of (T - i-suck tattoo):
-	say "The words 'I suck' are written on your arm with red sharpie.".
+	say "The words 'I suck' are written on your arm with red Sharpie.".
 To decide which object is the concealer of (T - i-suck tattoo):
 	decide on a random worn actually dense arm covering clothing.
 To decide which number is the dexterity-influence of (T - i-suck tattoo):
@@ -1416,7 +1416,7 @@ Definition: i-suck tattoo is oral sex themed: decide yes.
 
 incontinent-when-speaking tattoo is a body tattoo. The tattoo-title of incontinent-when-speaking tattoo is "Incontinent when speaking".
 To say tattoo-desc of (T - incontinent-when-speaking tattoo):
-	say "The words 'Incontinent when speaking' are written on your inner thigh with black sharpie. [if the player is incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
+	say "The words 'Incontinent when speaking' are written on your inner thigh with black Sharpie. [if the player is incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
 To decide which object is the concealer of (T - incontinent-when-speaking tattoo):
 	decide on a random worn actually dense leg covering clothing.
 To decide which number is the initial cringe of (T - incontinent-when-speaking tattoo):
@@ -1610,7 +1610,7 @@ To decide which number is the initial outrage of (T - lock-it tattoo):
 
 loser tattoo is a body tattoo. The tattoo-title of loser tattoo is "loser".
 To say tattoo-desc of (T - loser tattoo):
-	say "The word 'Loser' is written on your shoulder and neck area with red sharpie.".
+	say "The word 'Loser' is written on your shoulder and neck area with red Sharpie.".
 To decide which object is the concealer of (T - loser tattoo):
 	let C be a random worn actually dense neck covering clothing;
 	unless C is accessory, decide on C;
@@ -1680,7 +1680,7 @@ The measurement tattoo pussy slut rule is listed in the pussy slut eligibility r
 mushbutt tattoo is a chest tattoo. The tattoo-title of mushbutt tattoo is "mushbutt".
 Definition: mushbutt tattoo is drawable: decide no.
 To say tattoo-desc of (T - mushbutt tattoo):
-	say "The word 'mushbutt' is written on your chest with red sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
+	say "The word 'mushbutt' is written on your chest with red Sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
 To decide which number is the initial cringe of (T - mushbutt tattoo):
 	if there is worn messed knickers, decide on 20;
 	decide on 5.
@@ -1741,7 +1741,7 @@ Definition: nintendolls-brand tattoo is eligible:
 	if the noun is cow themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - nintendolls-brand tattoo):
-	say "The nintendolls logo has been branded just below your cleavage, just like a cow. You can feel it making your breasts much more active!".
+	say "The Nintendolls logo has been branded just below your cleavage, just like a cow. You can feel it making your breasts much more active!".
 To decide which object is the concealer of (T - nintendolls-brand tattoo):
 	decide on a random worn actually dense breast covering clothing.
 Definition: nintendolls-brand tattoo is cow themed: decide yes.
@@ -2420,7 +2420,7 @@ To say tattoo-desc of (T - spit first tattoo):
 
 stinker tattoo is a body tattoo. The tattoo-title of stinker tattoo is "stinker".
 To say tattoo-desc of (T - stinker tattoo):
-	say "The word 'stinker' is written on your arm with red sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
+	say "The word 'stinker' is written on your arm with red Sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
 To decide which object is the concealer of (T - stinker tattoo):
 	decide on a random worn actually dense arm covering clothing.
 To decide which number is the initial cringe of (T - stinker tattoo):
@@ -2521,7 +2521,7 @@ Definition: target tattoo is eligible:
 		if the semen-soak of the noun + the urine-soak of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - target tattoo):
-	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the center.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".
+	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the centre.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".
 To decide which number is the perceived-bimbo-influence of (C - target tattoo):
 	decide on 2.
 To decide which number is the semen-addiction-influence of (T - target tattoo):
