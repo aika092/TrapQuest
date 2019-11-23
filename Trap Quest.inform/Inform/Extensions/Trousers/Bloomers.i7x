@@ -12,7 +12,7 @@ Definition: a baby bloomers is pink themed: decide yes.
 To decide which number is the initial cringe of (B - a baby bloomers):
 	decide on 7.
 
-pink bloomers is a baby bloomers. The printed name of pink bloomers is "[clothing-title-before]pink bloomers[clothing-title-after]". pink bloomers is latex.  The text-shortcut of pink bloomers is "pkb".  Figure of pink bloomers is the file "Items/Clothes/Lower/Pants/bloomers1.png".
+pink bloomers is a baby bloomers. The printed name of pink bloomers is "[clothing-title-before]pink bloomers[clothing-title-after]". pink bloomers is latex. The text-shortcut of pink bloomers is "pkb". Figure of pink bloomers is the file "Items/Clothes/Lower/Pants/bloomers1.png".
 
 To say ShortDesc of (C - a pink bloomers):
 	say "pink latex baby bloomers".

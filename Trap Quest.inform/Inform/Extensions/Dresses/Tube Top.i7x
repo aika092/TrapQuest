@@ -226,12 +226,12 @@ Definition: a yellow exposing tube top is end of transformation chain: decide ye
 
 To say TransformReaction of (C - a yellow exposing tube top):
 	if the outrage of C is too humiliating:
-		if C is cursed, say "[variable custom style]Am I really stuck wearing this?  It's worse than just being topless![roman type][line break]";
+		if C is cursed, say "[variable custom style]Am I really stuck wearing this? It's worse than just being topless![roman type][line break]";
 		otherwise say "[variable custom style]I think I'd genuinely rather be topless than have attention drawn to my breasts like this...[roman type][line break]";
 	otherwise if C is almost too much:
-		say "[variable custom style]This is pretty extreme!  But also kind of thrilling to be wearing such a naughty top...[roman type][line break]";
+		say "[variable custom style]This is pretty extreme! But also kind of thrilling to be wearing such a naughty top...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
-		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear!  This way, everyone knows I don't mind them checking out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
+		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear! This way, everyone knows I don't mind them checking out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
 
 Part 8 - Jacket
 

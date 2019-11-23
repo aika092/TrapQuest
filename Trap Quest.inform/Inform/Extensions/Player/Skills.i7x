@@ -135,7 +135,7 @@ To teach begging for mercy:
 	if the mercyskill of the player is 0:
 		if diaper quest is 1:
 			if the delicateness of the player > 3:
-				say "[bold type]**You have learned how to beg for mercy!  Sometimes you will automatically escape a spanking punishment by using diplomacy. Convincing power (make-up) makes this more likely!**[roman type][line break]";
+				say "[bold type]**You have learned how to beg for mercy! Sometimes you will automatically escape a spanking punishment by using diplomacy. Convincing power (make-up) makes this more likely!**[roman type][line break]";
 				now the mercyskill of the player is 1;
 			otherwise:
 				say "You are much too stubborn to admit defeat! If you were to suffer a few more painful moments, then maybe you'd pay more attention to this tip...";
@@ -275,7 +275,7 @@ REQUIRES COMMENTING
 To teach titshow:
 	if the breastskill of the player is 0:
 		if humiliation of the player >= 6500:
-			say "[bold type]**You know how to display your chest with dignity!  A bare chest will no longer affect your appearance rating.**[roman type][line break]";
+			say "[bold type]**You know how to display your chest with dignity! A bare chest will no longer affect your appearance rating.**[roman type][line break]";
 			now the breastskill of the player is 1;
 		otherwise:
 			say "You are too horrified with the idea of everyone seeing your bare chest to take this advice to heart.";
@@ -432,7 +432,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the invokeskill list rule:
-	if the invokeskill of the player is 1, say "You know how to invoke dark gods, allowing you to  [if the player-class is cultist]curse otherwise useless blessed clothing[otherwise]remove curses and bless the items on your person[end if].".
+	if the invokeskill of the player is 1, say "You know how to invoke dark gods, allowing you to [if the player-class is cultist]curse otherwise useless blessed clothing[otherwise]remove curses and bless the items on your person[end if].".
 The invokeskill list rule is listed in the skill listing rules.
 
 [!<TheInvokeSkillLearnRule>+
@@ -663,8 +663,8 @@ Part 15 - Milk Skill
 To teach milkskill:
 	if the milkskill of the player is 0 and lactation fetish is 1:
 		if the milk volume of breasts > 0:
-			say "[second custom style]'Well, if you have large enough breasts, have you ever considered that you could pull them up to your mouth and drink the [milk] from them?  It's healthy and natural!'[line break]";
-			say "[bold type]You've learned how to drink from your own breasts!  By typing 'drink breasts' you can now consume [milk] from your breasts as long as they are big enough and your nipples are easily accessed. This can quench your thirst and make exercise more effective, but is quite a humiliating act to perform![roman type]";
+			say "[second custom style]'Well, if you have large enough breasts, have you ever considered that you could pull them up to your mouth and drink the [milk] from them? It's healthy and natural!'[line break]";
+			say "[bold type]You've learned how to drink from your own breasts! By typing 'drink breasts' you can now consume [milk] from your breasts as long as they are big enough and your nipples are easily accessed. This can quench your thirst and make exercise more effective, but is quite a humiliating act to perform![roman type]";
 			now the milkskill of the player is 1;
 		otherwise:
 			say "[second custom style]'Nope, sorry, nothing that would be useful to you at this moment!'[roman type]";

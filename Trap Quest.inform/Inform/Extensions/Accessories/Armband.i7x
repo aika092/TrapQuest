@@ -60,7 +60,7 @@ Report taking off armband[ when playerRegion is School]:
 	display entire map. [Some arrows might turn green]
 
 Carry out wearing armband:
-	say "You place the armband around your left biceps and strap it tight[one of]. As you do, you feel it close itself even tighter around you, as if it is magic, or maybe even somehow alive!  It almost feels like part of your arm now - you sense that bad things might happen if you tried to remove it against its will[or][stopping].";
+	say "You place the armband around your left biceps and strap it tight[one of]. As you do, you feel it close itself even tighter around you, as if it is magic, or maybe even somehow alive! It almost feels like part of your arm now - you sense that bad things might happen if you tried to remove it against its will[or][stopping].";
 
 [Check going when armband is worn:
 	if the noun is not north and class-time <= 0:

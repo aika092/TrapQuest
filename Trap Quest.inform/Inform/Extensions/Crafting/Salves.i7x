@@ -39,7 +39,7 @@ To say ExamineDesc of (C - a buoyant salve):
 	say "You feel a salve making your [random backdrop covered by C] [if C is cursed]heavier[otherwise]lighter[end if].".
 
 To oil (B - a body part) with (S - a salve of buoyancy):
-	if S is cursed, say "You somehow feel a bit heavier!  Uh-oh...";
+	if S is cursed, say "You somehow feel a bit heavier! Uh-oh...";
 	otherwise say "You somehow feel a [if the noun is blessed]bit[otherwise]lot[end if] lighter!";
 	let O be a random off-stage buoyant salve;
 	[now O is held by the player;]
@@ -81,10 +81,10 @@ A time based rule (this is the cursed restricting salve punishment rule):
 			if S is covering hips:
 				if extreme proportions fetish is 1 and the thickness of hips < 20:
 					increase the thickness of hips by 1;
-					say "Your [ShortDesc of hips] have somehow slightly grown in size[one of]!  The salve must have been cursed[or][stopping]!";
+					say "Your [ShortDesc of hips] have somehow slightly grown in size[one of]! The salve must have been cursed[or][stopping]!";
 				otherwise if the thickness of hips < 10:
 					increase the thickness of hips by 1;
-					say "Your [ShortDesc of hips] have somehow slightly grown in size[one of]!  The salve must have been cursed[or][stopping]!";
+					say "Your [ShortDesc of hips] have somehow slightly grown in size[one of]! The salve must have been cursed[or][stopping]!";
 				if weight gain fetish is 0 or the flesh volume of hips is the thickness of hips - 1, now the flesh volume of hips is the thickness of hips.
 
 

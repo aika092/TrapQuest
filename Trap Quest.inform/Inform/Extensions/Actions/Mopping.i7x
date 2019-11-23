@@ -71,7 +71,7 @@ To decide which number is total puddle:
 	increase X by the semen-puddle of the location of the player;
 	decide on X.
 
-Carry out mopping pink spraybottle:[TODO:  breasts largeness 10+ will touch the ground and become soaked.]
+Carry out mopping pink spraybottle:[TODO: breasts largeness 10+ will touch the ground and become soaked.]
 	allocate 6 seconds;
 	let D be 0;
 	let E be a random number between 2 and 3;
@@ -129,7 +129,7 @@ Report Mopping:
 			now the magic-charge of the noun is 0.
 
 
-Understand "clean puddle with [something]", "mop up puddle with [something]", "clean mess with [something]", "clean with [something]", "[something] puddle", "clean room with [something]"  as mopping.
+Understand "clean puddle with [something]", "mop up puddle with [something]", "clean mess with [something]", "clean with [something]", "[something] puddle", "clean room with [something]" as mopping.
 Understand "clean cum with [something]", "clean semen with [something]" as mopping when the semen-puddle of the location of the player > 0.
 Understand "clean piss with [something]", "clean urine with [something]" as mopping when the urine-puddle of the location of the player > 0.
 Understand "clean milk with [something]" as mopping when the milk-puddle of the location of the player > 0.

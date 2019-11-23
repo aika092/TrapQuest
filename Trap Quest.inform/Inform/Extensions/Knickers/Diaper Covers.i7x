@@ -107,7 +107,7 @@ The diaper cover already worn rule is listed in the diaper cover wearability rul
 
 This is the diaper covers disabled rule:
 	if diaper lover <= 0 and wearing-target is diaper cover:
-		if summoning is 0 and autowear is false, say "You can't wear this, you should even be able to see this, whoops!  Please report the bug.";
+		if summoning is 0 and autowear is false, say "You can't wear this, you should even be able to see this, whoops! Please report the bug.";
 		rule fails.
 The diaper covers disabled rule is listed in the diaper cover wearability rules.
 
