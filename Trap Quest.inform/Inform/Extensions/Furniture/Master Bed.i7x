@@ -132,7 +132,7 @@ To compute rest completion of (F - a master bed):
 			[otherwise if R is 2:
 				say "It's too hard to resist, and you fall straight into a dream. ";
 			otherwise:
-				say "A quick shake of your head is enough to get rid of the lingering lethargy, but your body is still too sleepy to make any progress getting rid of the blankets. They feel a lot heavier than they did when you got into the bed, and the faint shifting feeling is now far too pronounced to ignore. You can feel your [ShortDesc of breasts] being groped as a hard spot grows in the center of the mattress, pushing up against your [AssDesc] in a way that's far too lifelike.
+				say "A quick shake of your head is enough to get rid of the lingering lethargy, but your body is still too sleepy to make any progress getting rid of the blankets. They feel a lot heavier than they did when you got into the bed, and the faint shifting feeling is now far too pronounced to ignore. You can feel your [ShortDesc of breasts] being groped as a hard spot grows in the centre of the mattress, pushing up against your [AssDesc] in a way that's far too lifelike.
 
 
 				The blankets tighten around your body, pinning you to the mattress. ";]

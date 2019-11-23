@@ -15,7 +15,7 @@ Definition: a wench is dungeon dwelling if diaper quest is 0.
 To say ShortDesc of (M - a wench):
 	say "wench".
 
-Understand "slave","girl" as a wench.
+Understand "slave", "girl" as a wench.
 
 Figure of kidnapped wench is the file "NPCs/Dungeon/Wench/wench1.png".
 Figure of lost wench is the file "NPCs/Dungeon/Wench/wench2.png".
@@ -79,8 +79,8 @@ To say MonsterDesc of (M - a wench):
 	let K be a random knickers retained by M;
 	if M is horny-wench:
 		if bukkake fetish is 1:
-			if lady fetish is 2, say "This man has a glazed look in his eye, and from his tiny penis and jizz-coated figure, he's definitely the type you'd expect to be passed around down here. He is wearing a white blouse, which is unbuttoned and completely soaked in the same pearly white stuff running out of his asshole. He has one hand constantly between his legs, vigorously working his [semen] loaded ass as he wanders around with a bow-legged stride.";
-			otherwise say "This woman has a glazed look in her eye, and from her voluptuous, jizz-coated figure, she[']s definitely the type of woman you[']d expect to see down here. She is wearing a white blouse , which is completely unbuttoned and soaked with the same pearly white stuff running out of both her holes. Her hands are constantly buried in her crotch, vigorously working her [semen]-loaded pussy as she wanders around with a bow-legged stride.";[not sure desperate wenches can steal, so left panty bits out]
+			if lady fetish is 2, say "This man has a glazed look in his eye, and from his tiny penis and jizz-coated figure, he's definitely the type you'd expect to be passed around down here. He is wearing a white blouse, which is unbuttoned and completely soaked in the same pearly white stuff running out of his asshole. He has one hand constantly between his legs, vigorously working his [semen]-loaded ass as he wanders around with a bow-legged stride.";
+			otherwise say "This woman has a glazed look in her eye, and from her voluptuous, jizz-coated figure, she[']s definitely the type of woman you[']d expect to see down here. She is wearing a white blouse, which is completely unbuttoned and soaked with the same pearly white stuff running out of both her holes. Her hands are constantly buried in her crotch, vigorously working her [semen]-loaded pussy as she wanders around with a bow-legged stride.";[not sure desperate wenches can steal, so left panty bits out]
 		otherwise:
 			if lady fetish is 2, say "This man has a glazed look in his eye, a tiny, useless penis, and one hand between his legs. He is wearing a white blouse, which is completely soaked and appears to have been rather forcefully unbuttoned. His long, beach blonde hair is plastered around his face, and thick, pearly [semen] is visibly leaking from his asshole.";
 			otherwise say "This woman has a glazed look in her eye, a voluptuous figure, and both hands buried in her crotch. She is wearing a white blouse, which is completely soaked and appears to have been rather forcefully unbuttoned. Her beach blonde hair is plastered around her face, and thick, pearly [semen] is visibly leaking from both of her holes.";

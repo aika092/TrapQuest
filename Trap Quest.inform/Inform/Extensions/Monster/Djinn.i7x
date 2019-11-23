@@ -67,7 +67,7 @@ Definition: djinn is human: decide yes.
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - djinn):[shouldn't happen]
-	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the center of the clearing, growing darker and darker as a four-armed man materializes from the waist up. He looks at you and narrows his eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned man materializes from the waist up. He crosses his arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
+	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the centre of the clearing, growing darker and darker as a four-armed man materializes from the waist up. He looks at you and narrows his eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned man materializes from the waist up. He crosses his arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
 	otherwise say "You hear a low toned manly voice echo throughout the woods. [line break][first custom style]'WHO DISTURBS MY SLUMBER?'[roman type][line break]".
 
 To say DiaperReaction of (M - djinn):

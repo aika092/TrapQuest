@@ -17,7 +17,7 @@ Carry Out AutoFainting:
 	if the player is consenting:
 		now the fainting reason of the player is 50;
 		execute fainting.
-Understand "faint", "i like pineapple on pizza", "i like pineapple pizza", "pineapple pizza", "pineapple" as  AutoFainting.
+Understand "faint", "i like pineapple on pizza", "i like pineapple pizza", "pineapple pizza", "pineapple" as AutoFainting.
 
 
 Fainting ends here.
