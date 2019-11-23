@@ -1,7 +1,7 @@
 Armadillo Heels by Shoes begins here.
 
 
-An armadillo heels is a kind of stiletto heels. An armadillo heels is rare. An armadillo heels is usually leather. The heel-height of an armadillo heels is usually 5.  There is 1 armadillo heels. An armadillo heels has a number called heal-charge.
+An armadillo heels is a kind of stiletto heels. An armadillo heels is rare. An armadillo heels is usually leather. The heel-height of an armadillo heels is usually 5. There is 1 armadillo heels. An armadillo heels has a number called heal-charge.
 
 The printed name of armadillo heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch armadillo heels[clothing-title-after]". The text-shortcut of armadillo heels is "ah".
 
@@ -38,11 +38,11 @@ To compute periodic effect of (C - an armadillo heels):
 		if the heal-charge of C > 10:
 			now the heal-charge of C is 0;
 			if the soreness of asshole is 10:
-				say "You feel your [C] heal your [asshole]!  Wow, now that is magic!";
+				say "You feel your [C] heal your [asshole]! Wow, now that is magic!";
 				now the soreness of asshole is 0;
 				now the tolerated of asshole is 0;
 			if the soreness of vagina is 10:
-				say "You feel your [C] heal your [vagina]!  Wow, now that is magic!";
+				say "You feel your [C] heal your [vagina]! Wow, now that is magic!";
 				now the soreness of vagina is 0;
 				now the tolerated of vagina is 0.
 

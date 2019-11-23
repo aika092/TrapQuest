@@ -185,7 +185,7 @@ To compute angry punishment of (M - unicorn):
 
 
 To check forgiveness of (M - unicorn):
-	if the class of the player is priestess and a random number between the blue-balls of M  * -1 and the charisma of the player > 1:
+	if the class of the player is priestess and a random number between the blue-balls of M * -1 and the charisma of the player > 1:
 		compute angry forgiveness of M;
 	otherwise:
 		compute angry punishment of M.
@@ -286,7 +286,7 @@ Section 3 - Damage
 [To compute damage of (M - a unicorn):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "[big he of M] [if M is asleep]wakes up and [end if]snarls menacingly!  Uh-oh...";
+			say "[big he of M] [if M is asleep]wakes up and [end if]snarls menacingly! Uh-oh...";
 			now M is interested;
 			now the variety of M is gladiator-next-level of M;
 			anger M;

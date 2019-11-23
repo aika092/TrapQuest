@@ -72,11 +72,11 @@ To set up influence of (C - a crotchless-panties):
 
 To say TransformReaction of (C - a crotchless-panties):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]Come on, what is even the point of these?!  They don't help me in any way at all. [if C is cursed]I wish I could[otherwise]I guess I should probably[end if] take them off and wear a normal pair...[roman type][line break]";
+		say "[variable custom style]Come on, what is even the point of these?! They don't help me in any way at all. [if C is cursed]I wish I could[otherwise]I guess I should probably[end if] take them off and wear a normal pair...[roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]What does it say about me that I kind of like the way this looks, even though it's completely useless?[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
-		say "[variable custom style]Now THIS is the sort of underwear that a gal like me likes to be seen in!  Sweet![roman type][line break]".
+		say "[variable custom style]Now THIS is the sort of underwear that a gal like me likes to be seen in! Sweet![roman type][line break]".
 
 Definition: a crotchless-panties is walking-stimulating: decide no.
 Definition: crotch chain is walking-stimulating: decide yes.

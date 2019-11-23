@@ -2,7 +2,7 @@ Witch by Monster begins here.
 
 witch is a monster. witch is intelligent. witch has a number called altar-uses. The altar-uses of a witch is 2. witch is unconcerned. witch has a number called curse-quest. witch can be bitchy or unbitchy. witch is bitchy.
 
-witch is in Woods20.  Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
+witch is in Woods20. Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
 
 Definition: witch is dark skinned: decide yes.
 
@@ -105,7 +105,7 @@ To compute perception of (M - witch):
 		calm M;
 	otherwise if the latex-transformation of the player > 0:
 		if the curse-quest of M is 0 or the curse-quest of M >= 3:
-			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of][if the latex-transformation of the player < 7]Merlin's Cock, I can feel that magic from a mile away. You've been cursed with a powerful latex transformation spell, and it won't be long before you're an almost mindless sex doll!  Look, I can[otherwise]Oh my, you've been turned into a sex doll haven't you?  Can you still hear me in there?  If you can understand me, I can still[end if] cure this for you[or]Merlin's Cock, have you been affected by the rare latex curse again?  Of course I can help you again sweetie[stopping], but first I need you to bring me a fae mushroom...'[roman type][line break]";
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of][if the latex-transformation of the player < 7]Merlin's Cock, I can feel that magic from a mile away. You've been cursed with a powerful latex transformation spell, and it won't be long before you're an almost mindless sex doll! Look, I can[otherwise]Oh my, you've been turned into a sex doll haven't you? Can you still hear me in there? If you can understand me, I can still[end if] cure this for you[or]Merlin's Cock, have you been affected by the rare latex curse again? Of course I can help you again sweetie[stopping], but first I need you to bring me a fae mushroom...'[roman type][line break]";
 			now the curse-quest of M is 1;
 		otherwise if the curse-quest of M is 1:
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'So, did you get that fae mushroom I need?'[roman type][line break]";
@@ -279,7 +279,7 @@ The witch tries to trip the player rule is listed last in the witch attack rules
 To say MonsterTripAnnounceFlav of (M - witch):
 	say "[one of]The witch holds [his of M] hand in the air, causing a giant clay hand to grow out of the ground.[or]The witch raises [his of M] hand, causing a giant clay hand to grow out of the ground.[purely at random]".
 
-To say MonsterTrippedFlav of (M - witch):  [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
+To say MonsterTrippedFlav of (M - witch): [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
 	say "[if there is a worn nipple chain]It hooks a finger around your nipple chain, yanking you to the ground.[otherwise if there is a worn nipple piercing]It nimbly snatches the ring in one nipple and tugs down, the pain making you squeal and toppling you onto all fours on the ground[otherwise][one of]It chops your ankle out from under you, causing you to topple over onto your hands and knees.[or]It grabs your ankle, yanking it out from under you. You topple onto your hands and knees.[or]It grabs you by your ankles, tossing you off the ground. You yelp as you fly through the air and land on your hands and knees.[or]It grabs you by the wrist and yanks you onto your hands and knees.[or]It picks you up by your waist and roughly tosses you onto your hands and knees.[or]It grabs you at the knees and roughly yanks them out from under you. You fall to the ground![in random order][end if]".
 
 To say MonsterFailedTripFlav of (M - witch):
@@ -389,7 +389,7 @@ To suggestFucker (F - a body part) for (M - witch):
 
 To say DominanceSuccess of (M - witch):
 	if player-fucker is penis:
-		say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [one of][if there is a worn tattoo]A red star tattooed around [his of M] [asshole] catches your eye, and you go straight for it[otherwise]Feeling particularly sadistic, you go straight for [his of M] [asshole][end if][or]Once again, you go straight for [his of M] [asshole][stopping], pushing [if sexual-penis-length > 5]your entire length [end if]in with no lubrication. You enjoy the intense feelings around your [SexDesc of penis] as [NameDesc of M] screams in despair. [if sexual-penis-length < 6]Soon [he of M] is[otherwise]Immediately [he of M] starts[end if] pleading with you to stop.[line break][speech style of M]'[big please], [please], it's too much!  I'll do anything!  Here, I'll bless your items!'[roman type][line break]";
+		say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [one of][if there is a worn tattoo]A red star tattooed around [his of M] [asshole] catches your eye, and you go straight for it[otherwise]Feeling particularly sadistic, you go straight for [his of M] [asshole][end if][or]Once again, you go straight for [his of M] [asshole][stopping], pushing [if sexual-penis-length > 5]your entire length [end if]in with no lubrication. You enjoy the intense feelings around your [SexDesc of penis] as [NameDesc of M] screams in despair. [if sexual-penis-length < 6]Soon [he of M] is[otherwise]Immediately [he of M] starts[end if] pleading with you to stop.[line break][speech style of M]'[big please], [please], it's too much! I'll do anything! Here, I'll bless your items!'[roman type][line break]";
 		orgasm;
 	otherwise:
 		say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [if the player is male][big he of M] seems to expect you to fuck [him of M] in some way so screams with shock and pain when you [otherwise]When you are sure [he of M] isn't looking, you suddenly [end if]force your entire fist into [his of M] asshole. [BigNameDesc of M] immediately screams in shock and surprise. [big he of M] then starts pleading with you to stop.[line break][speech style of M]'[big please], [please], it's too much! I'll do anything! Here, I'll bless your items!'[roman type][line break]";[TODO: describe her tattoo]

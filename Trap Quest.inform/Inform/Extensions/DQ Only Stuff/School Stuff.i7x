@@ -95,7 +95,7 @@ To update name of (M - student-lottie):
 		now the student-name of M is "Lollie".
 
 To say StoryAnswer of (M - student-lottie):
-	say "[speech style of M]'I love my boyfriend but he's into some weird stuff!  I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
+	say "[speech style of M]'I love my boyfriend but he's into some weird stuff! I'm here to try and get my head around what makes him tick, and see if I can find stuff that I like about it too.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-lottie):
 	say "[speech style of M]'[if the rank of the player <= 1]Don't believe the propaganda, this place is for one thing only - training people to enjoy being adult babies.'[otherwise]We can take things to, err, speed up our metabolic functions. But I don't know if I can bring myself to do it...'[end if][roman type][line break]".
@@ -227,7 +227,7 @@ To update name of (M - student-tanya):
 		now the text-shortcut of student-tanya is "stte".
 
 To say StoryAnswer of (M - student-tanya):
-	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear!  And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
+	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear! And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
 Part - Nasty Student Emily
 
@@ -572,7 +572,7 @@ To compute opponent chess turn:
 		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [his of ST] belly gurgles and the next thing you know, [he of ST][']s whining with shame and [if diaper messing >= 3]messing[otherwise]wetting[end if] [himself of ST].";
 		compute student chess soiling;
 		now the chess-turn of chess-lesson is 1; [Messing doesn't end their turn]
-	otherwise if a random number between 1 and (8 + (mess-factor / 3)) >  4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
+	otherwise if a random number between 1 and (8 + (mess-factor / 3)) > 4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
 		say "[BigNameDesc of ST] keeps thinking.";
 		now the chess-turn of chess-lesson is 1; [Thinking doesn't end their turn]
 	otherwise if student-great-move of chess-lesson <= 0 and a random number between 1 and 3 > 1:
@@ -1186,7 +1186,7 @@ To compute teaching of (L - enema-race-lesson):
 			decrease D1 by 10; [rival moves 5m forward]
 			if M2 >= 0, increase D1 by M2 / 3; [rival's movement reduction from needing to mess]
 			otherwise increase D1 by 1; [rival's mess slowdown penalty]
-			increase D1 by 10;  [player moves 5m forward]
+			increase D1 by 10; [player moves 5m forward]
 			let BK be the buckle threshold of the player;
 			if the fatigue of the player * 3 > BK, decrease D1 by 1;
 			if (the fatigue of the player * 3) / 2 > BK, decrease D1 by 1;
@@ -1385,7 +1385,7 @@ To compute teaching of (L - dodgeball-lesson):
 				if bodyTarget is face, HappinessDown ballTarget;
 				if dodgeChoice > 0, say BadDodgeChoice dodgeChoice;
 				say "[BigNameDesc of ballTarget] [one of]groans[or]winces[at random] with discomfort as [he of ballTarget] picks up the ball.";
-				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED;  1: FILLED WITH MESS;  2: DOUBLEFILLED WITH MESS;  3: MESSED ONCE;  4: MESSED AND FILLED WITH MESS;  5: MESSED AND DOUBLEFILLED WITH MESS  6+: Scheduled for elimination]
+				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED; 1: FILLED WITH MESS; 2: DOUBLEFILLED WITH MESS; 3: MESSED ONCE; 4: MESSED AND FILLED WITH MESS; 5: MESSED AND DOUBLEFILLED WITH MESS 6+: Scheduled for elimination]
 			otherwise:
 				if dodgeChoice is 0, say "You try to [one of]bash the ball out of the way but it rebounds off of your hand and hits your arm[or]sidestep but the ball grazes your chest[at random]! ";
 				otherwise say "You [if dodgeChoice is 1]jump into the air[otherwise]duck towards the ground[end if], which turns out to be the wrong thing to do as the ball comes hurtling towards your [if dodgeChoice is 1]upper[otherwise]lower[end if] half[if D is messed]. To make things worse, your sticky messy diaper sloshes underneath you as you do[end if]. ";
@@ -1517,8 +1517,8 @@ To compute dodgeball messing of (ST - a student) with (M - a monster):
 		say "[BigNameDesc of M] cackles and claps [his of M] hands.[line break][speech style of M]'[one of]Oh how I love getting to watch a double doodoo disaster like that! Outstanding stuff[or]Hahahaha, another double dump! This is my favourite bit[or]Bahahahahahahaha, that looked SO. FUCKING. PATHETIC! Seriously! You're a disgrace! I love it[then at random][if the lessonInt1 of ST is 5]. Well anyway[one of] I'm afraid that means [or], [stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[or][stopping][end if].'[roman type][line break]";
 		increase the lessonInt1 of ST by 1;
 	otherwise if (the lessonInt1 of ST is 1 or the lessonInt1 of ST is 4) and a random number between -2 and (the dedication of ST + 1) < 0:
-		say "A [one of]small whimper comes from [NameDesc of ST][or]sharp intake of breath from [NameDesc of ST][at random] as [he of ST] [one of]soils[or]messes[or]unleashes a massive poop into[at random] [his of ST] diaper. [one of]The whole room can clearly hear the loud disgusting sound[or]it's loud enough for everyone to hear[or]It's several seconds before the trumpeting sounds coming from [his of ST] rear end finally cease[at random] and [one of]you all watch the bizarre sight as [his of ST] belly shrinks and[or]you can't help but watch[or]you can all see[or]you all watch[then at random] as [big his of ST] [if the lessonInt1 of ST is 4]nappy [one of]expands[or]balloons[purely at random] to a giant size, [one of]rendering [him of ST] barely mobile[or]forcing [his of ST] legs wide apart[at random][otherwise]padding [one of]turns brown[or]slowly bulges beneath [him of ST][or]bubbles and expands behind [him of ST][at random][end if].";
-		say "[BigNameDesc of M] smiles and wrings [his of M] hands.[line break][speech style of M]'[one of]That's nasty. I bet you never thought you'd be doing that in front of your classmates before today, did you? [or]What a pathetic pantypooper! Ah I love my job so much. [or]That's music to my ears! [or]Haha, how do you feel, [student-name of ST]? Disgusting? I should hope so. [or]Heh, that was an instant classic. None of us will ever be able to look at you the same way, [student-name of ST]. [in random order][if the lessonInt1 of ST is 4]And [one of]I'm afraid that means [or][stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[stopping][otherwise][one of]Well what are you waiting for? You have to keep playing, you know[or]Well now you've got to play the rest of the game while stinky, so enjoy that[or]I'm going to enjoy listening to the sounds your nappy makes for the rest of the game, sweetie[or]Aww, poor diddums is going to have to play the rest of her dodgeball game with a poopy nappy... does that make you want to cry? I bet it does[or]Try not to make lots of gross sounds as you keep playing now[or]Are you ready to keep playing with your new squishy nappy? Too bad, you don't have a choice[then at random][end if].'[roman type][line break]";
+		say "A [one of]small whimper comes from [NameDesc of ST][or]sharp intake of breath from [NameDesc of ST][at random] as [he of ST] [one of]soils[or]messes[or]unleashes a massive poop into[at random] [his of ST] diaper. [one of]The whole room can clearly hear the loud disgusting sound[or]It's loud enough for everyone to hear[or]It's several seconds before the trumpeting sounds coming from [his of ST] rear end finally cease[at random] and [one of]you all watch the bizarre sight as [his of ST] belly shrinks and[or]you can't help but watch[or]you can all see[or]you all watch[then at random] as [big his of ST] [if the lessonInt1 of ST is 4]nappy [one of]expands[or]balloons[purely at random] to a giant size, [one of]rendering [him of ST] barely mobile[or]forcing [his of ST] legs wide apart[at random][otherwise]padding [one of]turns brown[or]slowly bulges beneath [him of ST][or]bubbles and expands behind [him of ST][at random][end if].";
+		say "[BigNameDesc of M] smiles and wrings [his of M] hands.[line break][speech style of M]'[one of]That's nasty. I bet you never thought you'd be doing that in front of your classmates before today, did you? [or]What a pathetic pantypooper! Ah I love my job so much. [or]That's music to my ears! [or]Haha, how do you feel, [student-name of ST]? Disgusting? I should hope so. [or]Heh, that was an instant classic. None of us will ever be able to look at you the same way, [student-name of ST]. [in random order][if the lessonInt1 of ST is 4]And [one of]I'm afraid that means [or][stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[stopping][otherwise][one of]Well what are you waiting for? You have to keep playing, you know[or]Well now you've got to play the rest of the game while stinky, so enjoy that[or]I'm going to enjoy listening to the sounds your nappy makes for the rest of the game, sweetie[or]Aww, poor diddums is going to have to play the rest of [his of ST] dodgeball game with a poopy nappy... does that make you want to cry? I bet it does[or]Try not to make lots of gross sounds as you keep playing now[or]Are you ready to keep playing with your new squishy nappy? Too bad, you don't have a choice[then at random][end if].'[roman type][line break]";
 		increase the lessonInt1 of ST by 2.
 
 
@@ -1543,7 +1543,7 @@ To decide which figure-name is the monster-image of (M - teacher-kaylee):
 
 
 To say MonsterDesc of (M - teacher-kaylee):
-	say "This middle-aged brunette [man of M] is dressed completely in white - white vest top, white sheer stockings, white 6 inch platform heels, and a white (and well-used) diaper. [big he of M] is always sporting a wide friendly grin and occassionally absent-mindedly rubs [himself of M] through [his of M] soggy padding.".
+	say "This middle-aged brunette [man of M] is dressed completely in white - white vest top, white sheer stockings, white 6 inch platform heels, and a white (and well-used) diaper. [big he of M] is always sporting a wide friendly grin and occasionally absent-mindedly rubs [himself of M] through [his of M] soggy padding.".
 
 The teacher-name of teacher-kaylee is "Kaylee".
 
@@ -1606,7 +1606,7 @@ To compute toilet predicament punishment:
 		appropriate-cutscene-display Figure of Ultimate Lesson Toilet User Cutscene;
 		say "[one of]You're trying to make sense of all of this as you feel a flow of something hot and slimy on your backside.[line break][variable custom style]No, surely not...![roman type][line break][or]Once again you feel that flow of hot slimy stuff on your backside.[stopping]";
 		appropriate-cutscene-display Figure of Ultimate Lesson Toilet Player Cutscene;
-		say "Yep - [FriendName][']s super nasty episode is being funneled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [FriendNickname] continues to unload her belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [FriendName] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your binds and carrying you back to the [location of the player], but leaving you with a overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
+		say "Yep - [FriendName][']s super nasty episode is being funnelled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [FriendNickname] continues to unload her belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [FriendName] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your binds and carrying you back to the [location of the player], but leaving you with a overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
 		MessSet plain-massive-diaper to 36;
 		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This just is too gross[end if]...[stopping][roman type][line break]";
 	otherwise:

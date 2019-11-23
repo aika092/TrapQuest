@@ -1,6 +1,6 @@
 Rollerskates Framework by Shoes begins here.
 
-rollerskates is a kind of shoes. A rollerskates is manly. Understand  "rollerskates", "skates" as rollerskates.
+rollerskates is a kind of shoes. A rollerskates is manly. Understand "rollerskates", "skates" as rollerskates.
 
 
 To say ShoeType of (S - a rollerskates):

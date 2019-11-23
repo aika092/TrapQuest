@@ -18,7 +18,7 @@ Definition: a piercing is eligible if it is off-stage.
 
 
 To say PiercingFlav of (P - a piercing):
-	say "An arm comes down with a searing hot needle!  You scream as your flesh is burned and pierced. The needle is quickly moved and a [P] is pushed into place. The connection somehow welds itself shut, meaning that the piercing is permanent!".
+	say "An arm comes down with a searing hot needle! You scream as your flesh is burned and pierced. The needle is quickly moved and a [P] is pushed into place. The connection somehow welds itself shut, meaning that the piercing is permanent!".
 
 Definition: a piercing is too boring: decide no.
 Definition: a piercing is disintegration-protected: decide yes.
@@ -177,7 +177,7 @@ Definition: yourself is clit stuck:
 	decide no.
 
 To say SubduedGrabFlav of (C - clitoris lead):
-	say "[variable custom style][if the delicateness of the player < 8]Fuck, fuck, fuck, get off!!![otherwise if the delicateness of the player < 14]Eek that's way too sensitive!  I can't move a muscle![otherwise]Oopsie, caught again![end if][roman type][line break]".
+	say "[variable custom style][if the delicateness of the player < 8]Fuck, fuck, fuck, get off!!![otherwise if the delicateness of the player < 14]Eek that's way too sensitive! I can't move a muscle![otherwise]Oopsie, caught again![end if][roman type][line break]".
 
 Check taking off clitoris lead:
 	[###Selkie: it would be nice to add some text here if the piercing is not blessed, saying stuff like "... but the attempt to remove it has aroused you further" and increasing the sensitivity of the vagina]
@@ -281,7 +281,7 @@ The cursed clitoris piercing stops you wearing crotch covering dresses rule is l
 
 A nipple piercing is a kind of piercing.
 
-A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[clothing-title-before]nipple chain[clothing-title-after]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing.  A nipple chain has a number called arousal-charge.
+A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[clothing-title-before]nipple chain[clothing-title-after]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing. A nipple chain has a number called arousal-charge.
 
 To decide which object is the coverer of (C - a nipple chain):
 	repeat with O running through top-layer-concealing clothing:
@@ -331,7 +331,7 @@ To say LeashFlav of (C - a nipple chain):
 	say "nipple chain".
 
 To say SubduedGrabFlav of (C - nipple chain):
-	say "[variable custom style][if the delicateness of the player < 8]Fuck, fuck, fuck, get off!!![otherwise if the delicateness of the player < 14]Eek, that's way too sensitive!  I daren't move a muscle![otherwise]Oopsie, caught again![end if][roman type][line break]".
+	say "[variable custom style][if the delicateness of the player < 8]Fuck, fuck, fuck, get off!!![otherwise if the delicateness of the player < 14]Eek, that's way too sensitive! I daren't move a muscle![otherwise]Oopsie, caught again![end if][roman type][line break]".
 
 Section 1 Wearability
 
@@ -410,7 +410,7 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 	if wearing-target is normally-nipple-covering:
 		repeat with N running through worn cow piercings:
 			unless N is blessed:
-				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is magically preventing you from wearing any kind of bra!  Maybe if you blessed it?";
+				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is magically preventing you from wearing any kind of bra! Maybe if you blessed it?";
 				rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
 
@@ -440,7 +440,7 @@ To say BlessBlessFlav of (C - a pair of earrings):
 	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!".
 
 To say BlessBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones!  I guess these are pretty trashy too...[end if][roman type][line break]".
+	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]".
 
 To decide which number is the initial outrage of (C - a pair of earrings):
 	if C is cursed, decide on 12;
@@ -521,7 +521,7 @@ To decide which number is the intelligence-influence of (C - a pair of earrings)
 	decide on 0.
 
 To say PiercingFlav of (P - a pair of earrings):
-	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two large circular earrings with profanities printed on the sides are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me!  These look absolutely ridiculous!  Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist!  Teehee.[end if][roman type][line break]".
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two large circular earrings with profanities printed on the sides are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Teehee.[end if][roman type][line break]".
 
 Section - Wearability
 
@@ -598,7 +598,7 @@ To set up influence of (C - a lip piercing):
 	set up taste-based influence of C.
 
 To say PiercingFlav of (P - a lip piercing):
-	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as you are painfully pierced just below your bottom lip. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as you are painfully pierced just below your bottom lip. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
 
 Check taking off lip piercing:
 	say "That's permanently welded into your lip!" instead.
@@ -677,7 +677,7 @@ To decide which object is the concealer of (C - a nose piercing):
 	decide on a random worn actually dense hood.
 
 To say PiercingFlav of (P - a nose piercing):
-	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
 
 
 
@@ -733,7 +733,7 @@ The nose piercing already worn rule is listed in the nose piercing wearability r
 
 
 
-A tongue piercing is a kind of piercing. The printed name of tongue piercing is "[TQlink of item described][item style]tongue piercing[clothing-title-after]". The printed plural name of tongue piercing is "[TQlink of item described][item style]tongue piercings[clothing-title-after]". The text-shortcut of tongue piercing is "tpi". There is 1 tongue piercing. A tongue piercing is usually oral-sex-addiction-influencing.  A tongue piercing has a number called thirst-charge.
+A tongue piercing is a kind of piercing. The printed name of tongue piercing is "[TQlink of item described][item style]tongue piercing[clothing-title-after]". The printed plural name of tongue piercing is "[TQlink of item described][item style]tongue piercings[clothing-title-after]". The text-shortcut of tongue piercing is "tpi". There is 1 tongue piercing. A tongue piercing is usually oral-sex-addiction-influencing. A tongue piercing has a number called thirst-charge.
 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.

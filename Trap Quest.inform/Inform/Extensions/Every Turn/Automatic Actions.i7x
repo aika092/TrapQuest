@@ -14,7 +14,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute continued urination:
-	if the player is in danger, say "You try to stop the flow but you can't!  You continue to [urinate]. ";
+	if the player is in danger, say "You try to stop the flow but you can't! You continue to [urinate]. ";
 	otherwise say "[one of]Time passes as you[or]You[cycling] continue to [urinate]. ";
 	compute urination;
 	now another-turn is 1.

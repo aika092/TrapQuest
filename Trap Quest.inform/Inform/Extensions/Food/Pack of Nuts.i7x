@@ -10,7 +10,7 @@ To say ShortDesc of (C - a pack of nuts):
 	say "pack of nuts".
 
 Report TQeating pack of nuts:
-	say "Opening the packet, you [if the fat-weight of the player > 20]greedily shove mouthfuls of nuts into your mouth and they are quickly gone. [otherwise]eat the nuts one or two at a time until they are all gone. [end if]You feel more dominant!  You discard the empty wrapper.";
+	say "Opening the packet, you [if the fat-weight of the player > 20]greedily shove mouthfuls of nuts into your mouth and they are quickly gone. [otherwise]eat the nuts one or two at a time until they are all gone. [end if]You feel more dominant! You discard the empty wrapper.";
 	DelicateDown 1.
 
 To compute (M - a robochef) cooking (I - a pack of nuts):

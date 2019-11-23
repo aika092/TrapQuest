@@ -44,7 +44,7 @@ To say PresentFriendlyRejectionFlav of (M - a monster):
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To say FriendlyBreastsPenetrationFlav of (M - a monster):
-	say "[BigNameDesc of M] places [his of M] [DickDesc of M] in between your [ShortDesc of breasts], and begins thrusting!".[This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
+	say "[BigNameDesc of M] places [his of M] [DickDesc of M] in between your [ShortDesc of breasts], and begins thrusting!".[This needs changing for every monster! It's boring and might not even be accurate if the monster isn't male.]
 
 To say FriendlySexResistFlav of (T - a thing):
 	say "You squirm but can't get away!".

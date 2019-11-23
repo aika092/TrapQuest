@@ -38,7 +38,7 @@ To say ShortDesc of (T - a vine):
 	say "vine".
 
 To say EnvironmentDesc of (T - a vine):
-	say "Strong, living vines worm through the soil [if the player is vine-cursed]underneath your feet.[otherwise]around your feet.[end if]  ".
+	say "Strong, living vines worm through the soil [if the player is vine-cursed]underneath your feet.[otherwise]around your feet.[end if] ".
 
 To say PregGrowth of (M - a vine):
 	say "the [one of]vines['] offspring[or]vines['] [child][stopping]".
