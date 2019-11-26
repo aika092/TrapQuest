@@ -2,7 +2,7 @@ Mary Janes by Shoes begins here.
 
 A mary janes is a kind of shoes. A mary janes is usually leather. A mary janes is usually unique.
 
-The printed name of mary janes is usually "[clothing-title-before]pair of mary janes[clothing-title-after]".  The text-shortcut of mary janes is "mjs".
+The printed name of mary janes is usually "[clothing-title-before]pair of mary janes[clothing-title-after]". The text-shortcut of mary janes is "mjs".
 
 There is 1 mary janes.
 

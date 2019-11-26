@@ -76,7 +76,7 @@ To say ClothingDesc of (C - a supershort cheerleader outfit):
 
 To say TransformReaction of (C - a supershort cheerleader outfit):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]Oh no, change it back! [if asshole is lewdly exposed or vagina is lewdly exposed]This is much too short, my naughty bits are on show!  Eek![otherwise]This is much too short, it's not decent![end if][roman type][line break]";
+		say "[variable custom style]Oh no, change it back! [if asshole is lewdly exposed or vagina is lewdly exposed]This is much too short, my naughty bits are on show! Eek![otherwise]This is much too short, it's not decent![end if][roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]I thought I would hate wearing such a ridiculously short skirt, but it's actually kind of exhilarating...[roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:

@@ -3,7 +3,7 @@ Queen of Hearts Heels by Shoes begins here.
 
 A queen of hearts heels is a kind of stiletto heels. A queen of hearts heels is usually leather. A queen of hearts heels is usually unique. The heel-height of a queen of hearts heels is usually 5.
 
-The printed name of queen of hearts heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of hearts heels[clothing-title-after]".  The text-shortcut of queen of hearts heels is "qh".
+The printed name of queen of hearts heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of hearts heels[clothing-title-after]". The text-shortcut of queen of hearts heels is "qh".
 
 There is 1 queen of hearts heels.
 

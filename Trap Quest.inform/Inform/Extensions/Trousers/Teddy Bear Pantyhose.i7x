@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (H - a teddy bear pantyhose):
 To say UniqueClothingDesc of (B - a teddy bear pantyhose):
 	say "A pair of thick red pantyhose with a smiling teddybear face on the front[if B is not worn or the number of worn diapers is 0]. Its weird shape makes it look and feel like you're wearing a diaper even when you're not[end if].".
 
-To say ShortDesc of (Y - a  teddy bear pantyhose):
+To say ShortDesc of (Y - a teddy bear pantyhose):
 	say "teddy bear pantyhose".
 
 To decide which number is the initial cringe of (B - a teddy bear pantyhose):

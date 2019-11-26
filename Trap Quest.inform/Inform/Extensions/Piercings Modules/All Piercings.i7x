@@ -69,7 +69,7 @@ To say ModuleFlav of (M - ass-module):
 	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your ass, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Reflex Support module trial! Please listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your buttocks. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 To say ClothingDesc of (C - ass-module):
-	say "A triangle of silvery metal is pressed into your skin just above your ass. You recall the dire warning you were given - [if the dex-transfer of C > 0]removing with it would cause irreperable damage to your agility[otherwise]once it has started to store more power inside your buttocks, removing the module would cause you to lose all that power permanently[end if].".
+	say "A triangle of silvery metal is pressed into your skin just above your ass. You recall the dire warning you were given - [if the dex-transfer of C > 0]removing with it would cause irreparable damage to your agility[otherwise]once it has started to store more power inside your buttocks, removing the module would cause you to lose all that power permanently[end if].".
 To say ShortDesc of (C - ass-module):
 	say "ass module".
 
@@ -119,7 +119,7 @@ The breast module slut rule is listed in the tit slut eligibility rules.
 
 
 To say ClothingDesc of (C - breast-module):
-	say "A triangle of silvery metal is pressed into your skin just above your cleavage. You recall the dire warning you were given - [if the str-transfer of C > 0]removing with it would cause irreperable damage to your strength[otherwise]once it has started to store more power inside your breasts, removing the module would cause you to lose all that power permanently[end if].".
+	say "A triangle of silvery metal is pressed into your skin just above your cleavage. You recall the dire warning you were given - [if the str-transfer of C > 0]removing with it would cause irreparable damage to your strength[otherwise]once it has started to store more power inside your breasts, removing the module would cause you to lose all that power permanently[end if].".
 
 To say ShortDesc of (C - breast-module):
 	say "breast module".
@@ -637,7 +637,7 @@ This is the head module blowjob slut rule:
 The head module blowjob slut rule is listed in the blowjob slut eligibility rules.
 
 To say ClothingDesc of (C - head-module):
-	say "A triangle of silvery metal is pressed into your forehead. You recall the dire warning you were given - [if the int-transfer of C > 0]removing with it would cause irreperable damage to your intelligence[otherwise]once it has started to store more brainpower inside your hair and lips, removing the module would cause you to lose all that power permanently[end if].".
+	say "A triangle of silvery metal is pressed into your forehead. You recall the dire warning you were given - [if the int-transfer of C > 0]removing with it would cause irreparable damage to your intelligence[otherwise]once it has started to store more brainpower inside your hair and lips, removing the module would cause you to lose all that power permanently[end if].".
 To say ShortDesc of (C - head-module):
 	say "head module".
 

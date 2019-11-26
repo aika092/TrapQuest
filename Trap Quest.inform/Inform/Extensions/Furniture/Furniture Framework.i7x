@@ -72,12 +72,12 @@ To compute monster detection:
 		if the player is in danger:
 			let M be a random dangerous monster in the location of the player;
 			if the alert of the player is 0:
-				if the intelligence of the player < a random number between 5 and the body soreness of the player + 6, say "You are so comfortable that you can't bring yourself to stop resting!  ";
+				if the intelligence of the player < a random number between 5 and the body soreness of the player + 6, say "You are so comfortable that you can't bring yourself to stop resting! ";
 				otherwise now the alert of the player is 1;
 		otherwise:
 			let M be a random nearby dangerous monster;
-			if the alert of the player is 0, say "You are so busy resting you don't notice [NameDesc of M] nearby!  ";
-			if the alert of the player is 1, say "You spot a threatening looking [M] nearby!  ".
+			if the alert of the player is 0, say "You are so busy resting you don't notice [NameDesc of M] nearby! ";
+			if the alert of the player is 1, say "You spot a threatening looking [M] nearby! ".
 
 [!<computeFurnitureResting>+
 
@@ -152,7 +152,7 @@ Calls sayFurnitureRestingDesc, increments seconds by 4, then calls UniqueFurnitu
 
 +!]
 To compute fatigue refresh of (F - a furniture):
-	say  RestingDesc of F;
+	say RestingDesc of F;
 	allocate 4 seconds;
 	compute unique fatigue effect of F;
 	compute normal effect of F.
@@ -175,7 +175,7 @@ Calls sayFurnitureRestingDesc, increments seconds by 6, calls UniqueFurnitureSor
 
 +!]
 To compute soreness refresh of (F - a furniture):
-	say  RestingDesc of F;
+	say RestingDesc of F;
 	allocate 6 seconds;
 	if debuginfo > 0, say "[input-style]Body damage [body soreness of the player] -> ";
 	compute unique soreness effect of F;

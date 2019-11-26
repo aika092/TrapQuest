@@ -386,7 +386,7 @@ To say TauntResponse of (M - a monster):
 
 [monster runs away]
 To say TauntAccepted of (M - a monster):
-	say "[speech style of M]'H-hey, there's no need for that. I'll just leave you alone, ok?'[roman type][line break]".
+	say "[speech style of M]'H-hey, there's no need for that. I'll just leave you alone, OK?'[roman type][line break]".
 
 To compute taunt acceptance effect of (M - a monster):
 	now the scared of M is 30;

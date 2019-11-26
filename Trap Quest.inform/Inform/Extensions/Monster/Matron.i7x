@@ -606,7 +606,7 @@ To say UnAnnoyedResponse of (M - matron):
 	say "[speech style of M]'You're being so good!'[roman type]";
 
 To say MildAnnoyedResponse of (M - matron):
-	say "[speech style of M]'[one of]That's enough, snookums!'[or]Ok, that's enough now!'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]That's enough, snookums!'[or]OK, that's enough now!'[at random][roman type][line break]".
 
 To say AnnoyedResponse of (M - matron):
 	say "[speech style of M]'[one of]That's ENOUGH!'[or]I'm warning you, I am running out of patience!'[at random][roman type][line break]".

@@ -91,7 +91,7 @@ To say MonsterComment of (M - dominatrix):
 		otherwise if the player is female:
 			say "[second custom style][one of]Wow! Look at that cock![or][big his of M] new dildo looks so yummy! If I[']m good, maybe I[']ll get fucked with it![or]Sometimes, I wish guys would grow bigger cocks if you do your best to make them feel good. I guess Mistress is better than a guy![or][big his of M] rules about orgasms are so unfair! It feels so good when Mistress fucks me, how can I not cum?[in random order]";
 		otherwise if the bimbo of the player < 7:
-			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]Ok, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the size of penis < 1][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]Ok, so what if [he of M] decides I[']m a chick or something. My dick is still massive, and I[']ll always have that on [him of M]. Next time we meet, things will change, and I[']ll be the one fucking [him of M].[end if][in random order]";
+			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]OK, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the size of penis < 1][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]OK, so what if [he of M] decides I[']m a chick or something. My dick is still massive, and I[']ll always have that on [him of M]. Next time we meet, things will change, and I[']ll be the one fucking [him of M].[end if][in random order]";
 		otherwise if the bimbo of the player < 14:
 			say "[variable custom style][one of]I can[']t believe I actually let [him of M] fuck me. I[']m supposed to be a man, men shouldn[']t get fucked...[or]I know I don[']t want [him of M] to fuck me with that again, but, I don[']t want to punish me either. How did I get into this mess?[or]I[']m actually looking forward to letting [him of M] fuck me again. I guess I[']m a total [if transGender is 0]fag[otherwise]slut[end if] now.[or]I[']m [him of M] slave now, so I can[']t exactly say no if [he of M] wants to but that in me, but it's not like I wanted to be [him of M] slave in the first place. I think.[or][if the size of penis < 1]I[']m stuck with no penis, and [hers of M] is even bigger. If I let people fuck me, and I don[']t have a penis, how can I call myself a man?[otherwise if the size of penis < 5]The first dildo made me feel inadequate. This is just cruel. It's not my fault if my penis keeps shrinking! Everybody wants to fuck me![otherwise if the size of penis < 9][big his of M] dildo is actually bigger than my penis. I deserve to be smaller, though. After letting [him of M] fuck me, there[']s no way for me to pretend I make a better man than [he of M] does.[otherwise]My dick is still bigger than [hers of M], but only by a few inches. And if I keep letting [him of M] fuck me, it's only a matter of time until that[']s not true.[end if][or]I know by now it's not a good idea to play by [his of M] rules, but how am I supposed to hold my orgasm when that thing is going to be ramming my prostate?[in random order]";
 		otherwise:
@@ -428,7 +428,7 @@ To compute facial climax of (M - dominatrix):
 		compute happy reward of M;
 		TimesSubmittedUp M by 1;
 	otherwise if M is friendly-fucking:
-		say "[speech style of M]'Ok, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] pulls [his of M] [DickDesc of M] out of your mouth and turns [his of M] attention to getting it clean.";
+		say "[speech style of M]'OK, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] pulls [his of M] [DickDesc of M] out of your mouth and turns [his of M] attention to getting it clean.";
 		now the sex-length of M is 0;
 		TimesSubmittedUp M by 1;
 	otherwise:[times-submitted isn't incremented here yet.]
@@ -545,7 +545,7 @@ To compute unique climax of (M - dominatrix) in (F - asshole):
 		decrease the blue-balls of M by 2;
 		compute happy reward of M;
 	otherwise if M is friendly-fucking:
-		say "[speech style of M]'Ok, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] loses interest.";
+		say "[speech style of M]'OK, that[']s all the time you get. [if the blue-balls of M < 2]Feel free to come back next time you have some cash, you[']re a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] loses interest.";
 		now the sex-length of M is 0;
 	otherwise if M is interested:
 		if the disappointment of M is 1:
@@ -980,7 +980,7 @@ To say FriendlyPartnerGreeting to (M - dominatrix):
 		if the player is feeling dominant:
 			say "[first custom style]'[one of]This is confidential, right?'[or]You won't tell anyone about this, right?'[or]You'll keep this a secret, right?'[at random][roman type]";
 		otherwise:
-			say "[variable custom style]'[one of]Just so you know, I don't exactly want to become a slave permanently.'[or]And remember, you can't tell ANYONE about this...'[or]This is just a business transaction! N-nothing more, ok?'[at random][roman type]";
+			say "[variable custom style]'[one of]Just so you know, I don't exactly want to become a slave permanently.'[or]And remember, you can't tell ANYONE about this...'[or]This is just a business transaction! N-nothing more, OK?'[at random][roman type]";
 		say NonEnthusiasmResponse of M.
 
 To say MildAnnoyedResponse of (M - dominatrix):

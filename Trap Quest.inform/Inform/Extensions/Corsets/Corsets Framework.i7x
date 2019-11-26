@@ -30,7 +30,7 @@ To compute corset strain of (C - a corset):
 		increase F by the leniency-addition of X;
 	let B be the largeness fill of belly;
 	if B > F:
-		say "Your [printed name of C] rips and bursts under the pressure from your belly!  ";
+		say "Your [printed name of C] rips and bursts under the pressure from your belly! ";
 		repeat with D running through worn dresses:
 			if a random number between 1 and 5 > 2 and the mid-layer of D > the mid-layer of C:
 				say "The [printed name of C] destroys your [printed name of D] with it!";

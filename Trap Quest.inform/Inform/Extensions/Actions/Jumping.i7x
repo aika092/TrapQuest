@@ -12,7 +12,7 @@ Check jumping:
 	if the player is in Start, say "Stop messing around and choose a gender!" instead;
 	if the player is prone, say "You can't jump while on all fours!" instead;
 	if the throne is triggered, say "You can't jump while sitting on the throne." instead;
-	if the player is vine stuck, say "Vines are pinning your ankles to the ground!  Try [bold type]pulling[roman type] them?" instead;
+	if the player is vine stuck, say "Vines are pinning your ankles to the ground! Try [bold type]pulling[roman type] them?" instead;
 	repeat with C running through clothing worn by the player:
 		if C is stuck and the player is not dildo stuck, say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	let B be the largeness of breasts;
@@ -47,7 +47,7 @@ Check jumping:
 				otherwise:
 					if a random number between 1 and 3 is 1, FavourDown M by 1;
 	otherwise:
-		say "You jump, making your wobbly bits wobble. [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face!  Ouch![end if]";
+		say "You jump, making your wobbly bits wobble. [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face! Ouch![end if]";
 	compute upright fatigue gain.
 Understand "leap", "bounce", "ju", "cheer", "hop" as jumping.
 

@@ -29,7 +29,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the weight of (XXX - thighs):
 	let S be the flesh volume of thighs;
-	if the latex-transformation of the player > 1 and  S > 0, now S is 0;
+	if the latex-transformation of the player > 1 and S > 0, now S is 0;
 	decide on S.
 
 Definition: thighs is exposed if the concealer of thighs is nothing.
@@ -106,7 +106,7 @@ To FatThighsUp (X - a number):
 	while X > 0 and weight gain fetish is 1:
 		if the flesh volume of thighs < 10, increase the flesh volume of thighs by 1;
 		decrease X by 1;
-		if newbie tips is 1 and the flesh volume of thighs > 2, say "[one of][newbie style]Newbie tip: Your thighs are getting quite thick!  That's making you heavier and therefore you'll tire out faster. However, it is fully reversible!  Lots of things exercise fat away from your thighs, including fighting enemies and drinking milk.[roman type][line break][or][stopping]".
+		if newbie tips is 1 and the flesh volume of thighs > 2, say "[one of][newbie style]Newbie tip: Your thighs are getting quite thick! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Lots of things exercise fat away from your thighs, including fighting enemies and drinking milk.[roman type][line break][or][stopping]".
 
 [!<FatThighsDownX>+
 

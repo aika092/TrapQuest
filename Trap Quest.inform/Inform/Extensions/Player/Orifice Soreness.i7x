@@ -251,7 +251,6 @@ To RuinRoll (F - a fuckhole):
 
 
 
-
 To compute submission success of (M - a thing) in (F - a fuckhole):
 	say submission success of M in F;
 	if F is asshole:
