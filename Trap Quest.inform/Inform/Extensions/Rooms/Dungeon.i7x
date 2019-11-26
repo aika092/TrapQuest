@@ -331,7 +331,7 @@ To say ExamineDesc of (T - DungeonScenery03):
 	let L be a random lake monster;
 	let S be the semen-sniffing of L;
 	if L is not in the location of the player, now S is 0;
-	say "A large underground lake, spanning as far as you can see. [if S < 200]The waters are calm, and you can see deep into the dark abyss underneath the surface.[otherwise if S < 400]The water is calm, although a tiny wave occasionally travels across the surface.[otherwise if S < 800]Tiny waves move frequently over the surface, seeming to emanate from some place far offshore.[otherwise if L is not in the location of the player]Tiny waves move across the surface in a subtle rhythm, emanating from some place far offshore.[otherwise]The surface is choppy, and the tentacles appear to be in the center of the waves.[end if]".
+	say "A large underground lake, spanning as far as you can see. [if S < 200]The waters are calm, and you can see deep into the dark abyss underneath the surface.[otherwise if S < 400]The water is calm, although a tiny wave occasionally travels across the surface.[otherwise if S < 800]Tiny waves move frequently over the surface, seeming to emanate from some place far offshore.[otherwise if L is not in the location of the player]Tiny waves move across the surface in a subtle rhythm, emanating from some place far offshore.[otherwise]The surface is choppy, and the tentacles appear to be in the centre of the waves.[end if]".
 
 [!<dungeonScenery04:Scenery>*
 

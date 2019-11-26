@@ -121,7 +121,7 @@ To compute perception of (M - matron):
 		say "[speech style of M]'Ooh, this one is really cute isn't [unless the player is male and the bimbo of the player < 7]s[end if]he! I know exactly what to do with you, darling. From now on you should call me [']Mommy['], okay sweetie pie[if M is not eager to change diapers]? Now let's get you into something more appropriate...'[otherwise]?'[end if][roman type][line break]";
 		now M is diaper-committed;
 	otherwise if the class of the player is schoolgirl and there is no worn diaper:
-		say "[speech style of M]'Oh my, you look so adorable in that uniform. But there[']s something we need to take care of before you can go off to school, now isn[']t there! Don[']t fight me sweety, I need to make sure you don[']t have any accidents in class.'[roman type][line break]";
+		say "[speech style of M]'Oh my, you look so adorable in that uniform. But there[']s something we need to take care of before you can go off to school, now isn[']t there! Don[']t fight me sweetie, I need to make sure you don[']t have any accidents in class.'[roman type][line break]";
 		now M is diaper-committed;
 	otherwise if diaper focus is 1 or M is diaper-committed:
 		say "[speech style of M]'Ooh, you're new! And not diapered... Well we can fix that right away! [if the player is upright]Get on your knees, little one!'[otherwise]Stay right there...'[end if][roman type][line break]";
@@ -607,7 +607,7 @@ To say UnAnnoyedResponse of (M - matron):
 	say "[speech style of M]'You're being so good!'[roman type]";
 
 To say MildAnnoyedResponse of (M - matron):
-	say "[speech style of M]'[one of]That's enough, snookums!'[or]Ok, that's enough now!'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]That's enough, snookums!'[or]OK, that's enough now!'[at random][roman type][line break]".
 
 To say AnnoyedResponse of (M - matron):
 	say "[speech style of M]'[one of]That's ENOUGH!'[or]I'm warning you, I am running out of patience!'[at random][roman type][line break]".

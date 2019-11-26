@@ -67,7 +67,7 @@ Definition: A strapon-dildo (called P) is dildo-usage:
 	decide yes.
 
 To say PenisSoften of (K - a strapon-dildo):
-	say "The nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materializes out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
+	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materializes out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
 To say PenisHarden of (K - a strapon-dildo):
 	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.". [###Selkie: At first sight, I wondered if this meant your penis fell off onto the ground! ;-) ]

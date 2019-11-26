@@ -299,7 +299,7 @@ To compute SelectionFailure of (M - a giant wasp):
 	bore M.
 
 To say SpitroastPrep of (M - a giant wasp) with (O - a monster) in (F - asshole):
-	say "[BigNameDesc of M] lands on top of you, displacing your center of gravity as [his of M] bizarre breeding appendage hangs down between your legs".
+	say "[BigNameDesc of M] lands on top of you, displacing your centre of gravity as [his of M] bizarre breeding appendage hangs down between your legs".
 
 To say ThreesomePrep of (M - a giant wasp) with (N - a monster) in (F - asshole):
 	if N is intelligent, say "[NameDesc of N] flips you over as [NameDesc of M] lands on top of you, [his of M] bizarre breeding appendage hanging down between your legs.";

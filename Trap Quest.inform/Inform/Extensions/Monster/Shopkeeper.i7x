@@ -517,7 +517,7 @@ To send (M - shopkeeper) home:
 	bore M.
 
 To say CondomPieFlav of (M - shopkeeper) in (F - a fuckhole):
-	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's ok since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
+	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
 
 To say CreampieFlav of (M - shopkeeper) in (F - vagina):
 	if the class of the player is living sex doll:[#####Selkie: could do much better here]
@@ -1316,7 +1316,7 @@ To say AfterDominationComment (N - a number) of (M - shopkeeper):
 	otherwise if N is 4:[sph]
 		say "[speech style of M]'[one of]Glad I could help. Don't be shy about asking for a fuck!'[or]Honestly though, it would be more fun if we just had sex.'[or]You'll be huge in no time. And don't worry, I'm always game to fuck you.'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]I'd rather we had sex, but that was ok.'[or]Did you really enjoy that? Sex is way better.'[or]I hope we can work our way up to sex sometime.'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]I'd rather we had sex, but that was OK.'[or]Did you really enjoy that? Sex is way better.'[or]I hope we can work our way up to sex sometime.'[at random][roman type][line break]".
 
 To say DominanceFailure of (M - shopkeeper):
 	if player-fucker is penis:
@@ -1378,7 +1378,7 @@ To say DragArrival of (M - shopkeeper) to (R - Dungeon05):
 	otherwise if the class of the player is cheerleader:
 		say "[speech style of M]'No hard feelings, by the way. I finally get to fuck a cheerleader!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Ok, you can moan as loud as you want here. Better luck next time, by the way.'[roman type][line break]";
+		say "[speech style of M]'OK, you can moan as loud as you want here. Better luck next time, by the way.'[roman type][line break]";
 	now the sex-length of M is a random number between 4 and 5.[the sex lasts longer because you're alone]
 
 To say DragFlav of (M - shopkeeper) to (R - Dungeon08):[Training room]

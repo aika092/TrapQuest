@@ -986,7 +986,7 @@ To compute failed dominance punishment of (M - a wrestler):
 		otherwise:
 			compute sissification;
 	otherwise if the size of penis < 4 and the size of penis > 0 and asshole is not actually occupied:
-		say "[big he of M] giggles as [he of M] [if there is bottom level protection clothing]pulls aside your [ShortDesc of a random bottom level protection clothing][otherwise]pinches your [sissy-penis] between [his of M] thumb and forefinger[end if].[line break][speech style of M]'Ok, time for a little game. I'm going to kiss your little clitty, and if you can't cum from that, I'm going to teach you a lesson. Fun, right?'[roman type][line break]";
+		say "[big he of M] giggles as [he of M] [if there is bottom level protection clothing]pulls aside your [ShortDesc of a random bottom level protection clothing][otherwise]pinches your [sissy-penis] between [his of M] thumb and forefinger[end if].[line break][speech style of M]'OK, time for a little game. I'm going to kiss your little clitty, and if you can't cum from that, I'm going to teach you a lesson. Fun, right?'[roman type][line break]";
 		let R be a random number between 1 and 3;
 		while R > 0 and M is interested:
 			RawUp penis;

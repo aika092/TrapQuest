@@ -269,7 +269,7 @@ To compute toilet use:
 			if C is nothing, now C is a random off-stage eligible diaper;
 			if C is diaper:
 				now C is blessed;
-				say "Suddenly a bright light flashes from the potty throne. When your vision is restored, you see a [ShortDesc of C] on the floor in front of you.[line break][variable custom style]Maybe this is [if the player is diapered]my reward for being peroperly diapered[otherwise]what the throne thinks I should be wearing?[end if][roman type][line break]";
+				say "Suddenly a bright light flashes from the potty throne. When your vision is restored, you see a [ShortDesc of C] on the floor in front of you.[line break][variable custom style]Maybe this is [if the player is diapered]my reward for being properly diapered[otherwise]what the throne thinks I should be wearing?[end if][roman type][line break]";
 				now C is in the location of the player;
 				compute autotaking C;
 	progress quest of careful-peeing-quest;
