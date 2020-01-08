@@ -1,7 +1,7 @@
 Sprinkle Trap by Traps begins here.
 
 
-A sprinkle trap is a kind of trap.  There are 10 potentially wire potentially sticky sprinkle traps.  Understand "sprinkler" as sprinkle trap.
+A sprinkle trap is a kind of trap. There are 10 potentially wire potentially sticky sprinkle traps. Understand "sprinkler" as sprinkle trap.
 
 This is the spawn initial dungeon sprinkle traps rule:
 	repeat with N running from 1 to 3 - (diaper quest * 2):
@@ -21,7 +21,7 @@ To trigger (Y - a sprinkle trap):
 	if the TrapNo of Y is 0, now the TrapNo of Y is a random number between 1 and 4;
 	now Y is revealed;
 	now Y is not untriggered;
-	say "Sprinklers in the ceiling start spraying [if diaper quest is 1]water over the entire room[otherwise]some kind of [SprinkleLiquid of Y][end if]!  It gets over your hair and body, and over everything in the room!  Everything is covered in a fine layer of [SprinkleLiquid of Y].";
+	say "Sprinklers in the ceiling start spraying [if diaper quest is 1]water over the entire room[otherwise]some kind of [SprinkleLiquid of Y][end if]! It gets over your hair and body, and over everything in the room! Everything is covered in a fine layer of [SprinkleLiquid of Y].";
 	now the sprinkle-puddle of the location of Y is 4;
 	now the reset-timer of Y is 250.
 
@@ -71,3 +71,4 @@ To compute time decay of (T - a sprinkle trap):
 
 
 Sprinkle Trap ends here.
+

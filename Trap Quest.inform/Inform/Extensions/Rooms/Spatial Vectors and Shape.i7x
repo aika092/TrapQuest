@@ -37,7 +37,7 @@ A room has a spatial coordinate called grid position.
 
 REQUIRES COMMENTING
 
-+!]	
++!]
 Definition: A spatial coordinate (called G) is an empty position:
 	repeat with R running through placed rooms:
 		if the grid position of R is G, decide no;
@@ -64,7 +64,7 @@ To decide which number is the current maze level:
 REQUIRES COMMENTING
 
 *!]
-The previous maze level is a number that varies.  The previous maze level is usually 0.
+The previous maze level is a number that varies. The previous maze level is usually 0.
 
 [!<Direction>@
 
@@ -151,8 +151,10 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the distance of (R - a room):
-	now RouteFinder is the location of the player;
-	let Z be RouteFinder;
+	decide on the distance of R from the location of the player;
+
+To decide which number is the distance of (R - a room) from (Z - a room):
+	now RouteFinder is Z;
 	let X be 0;
 	while RouteFinder is not R:
 		now Z is RouteFinder;
@@ -161,7 +163,7 @@ To decide which number is the distance of (R - a room):
 		now RouteFinder is the room D from Z;
 		increase X by 1;
 	decide on X.
-	
+
 Chapter - Shapes of individual rooms
 
 [!<LabrinthShape>@
@@ -243,6 +245,13 @@ REQUIRES COMMENTING
 +!]
 Definition: A room is mansionplaced if it is placed and it is in the Mansion.
 
+[!<Room>@<IsSchoolplaced>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: A room is schoolplaced if it is placed and it is not predicament room and it is in the School.
+
 [!<LabyrinthRoom>@<IsUnshaped>+
 
 REQUIRES COMMENTING
@@ -321,10 +330,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a direction (called thataway) is N-viable:
-	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and thataway is north, decide yes;
-	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and thataway is south, decide yes;
-	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and thataway is west, decide yes;
-	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and thataway is east, decide yes;
+	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and (thataway is north or thataway is south or thataway is west or thataway is east), decide yes;
 	decide no.
 
 
@@ -333,8 +339,7 @@ Definition: a direction (called thataway) is N-viable:
 REQUIRES COMMENTING
 
 +!]
-Definition: A direction (called D) is wanted:
-	decide no.
+Definition: A direction is wanted: decide no.
 
 [!<NorthIsWanted>+
 
@@ -385,3 +390,4 @@ Definition: West (called D) is wanted:
 	decide yes.
 
 Spatial Vectors and Shape ends here.
+

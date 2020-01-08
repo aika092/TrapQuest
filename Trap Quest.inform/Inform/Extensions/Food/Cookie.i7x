@@ -1,19 +1,23 @@
 Cookie by Food begins here.
 
 
-A cookie is a kind of chef food. There is 1 cookie. The printed name of a cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper lover >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise]glazed cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a cookie is "[TQlink of item described]cookies[shortcut-desc][TQxlink of item described][verb-desc of item described]". The description of a cookie is "[CookieDesc]".  The text-shortcut of a cookie is "cas".
+A cookie is a kind of chef food. There is 1 cookie. The printed name of a cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper messing >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise]glazed cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a cookie is "[TQlink of item described]cookies[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a cookie is "cas".
 
-To say CookieDesc:
-	if the quality of the noun > 1:
+To say ExamineDesc of (C - a cookie):
+	if the quality of C > 1:
 		say "A chocolate chip cookie.";
-	otherwise if the quality of the noun > -1:
+	otherwise if the quality of C > -1:
 		say "A sugar cookie.";
 	otherwise if diaper quest is 1:
-		say "[if diaper lover >= 3]A cookie made with prunes instead of chocolate chips[otherwise]This cookie has been made with way too much salt, so eating it will probably make you thirsty[end if].";
-	otherwise if the quality of the noun > -2:
+		say "[if diaper messing >= 3]A cookie made with prunes instead of chocolate chips[otherwise]This cookie has been made with way too much salt, so eating it will probably make you thirsty[end if].";
+	otherwise if the quality of C > -2:
 		say "A penis shaped cookie.";
 	otherwise:
 		say "A penis shaped cookie covered in white 'glaze'.".
+
+To say ShortDesc of (C - a cookie):
+	say "cookie".
+
 
 cookie-poison-timer is a number that varies.
 
@@ -23,17 +27,17 @@ To say DevourFlav of (C - a cookie):
 Carry out TQeating cookie:
 	say "[DevourFlav of the noun]";
 	if the quality of the noun <= -1 and diaper quest is 1:
-		if diaper lover >= 3:
+		if diaper messing >= 3:
 			say "Your stomach gurgles worryingly as the prunes start to work their magic...";
 			now suppository is 1;
 		otherwise:
-			say "The excessive amount of salt leaves your mouth feeling extremely dry!  [variable custom style]Oh dear, I really need a drink now![roman type][line break]";
+			say "The excessive amount of salt leaves your mouth feeling extremely dry!  [line break][variable custom style]Oh dear, I really need a drink now![roman type][line break]";
 			now the stomach-water of the player is 1;
 	otherwise if the quality of the noun is -2:
-		say "You start feeling a bit woozy as the food settles in your stomach, and you realize [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type]";
+		say "You start feeling a bit woozy as the food settles in your stomach, and you realize [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][line break][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type][line break]";
 		increase cookie-poison-timer by default-candy-duration + the fat of the noun * 5;
 		FatigueUp 50;
-		Arouse the semen addiction of the player * 20;
+		Arouse the semen taste addiction of the player * 20;
 		StomachFoodUp 2;
 		Humiliate 10;
 		SemenAddictUp 1;
@@ -46,7 +50,7 @@ Carry out TQeating cookie:
 		StomachFoodUp 1;
 		StomachFoodDown the fat of the noun;
 	bodyHeal 2;
-	now seconds is 6.
+	allocate 6 seconds.
 
 a time based rule (this is the cookie poison decay rule):
 	if cookie-poison-timer > 0:
@@ -58,3 +62,4 @@ a time based rule (this is the cookie poison decay rule):
 
 
 Cookie ends here.
+

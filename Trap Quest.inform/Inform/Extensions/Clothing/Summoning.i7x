@@ -7,20 +7,21 @@ To summon (C - a wearthing):
 	now C is worn by the player.
 
 To summon (C - a clothing):
-	destroy C; [This cleans up all potentially incorrect flags except ripped and various effects]
+	only destroy C; [This cleans up all potentially incorrect flags except ripped and various effects]
 	layer C correctly;
 	now C is worn by the player;
 	now C is identified;
 	now C is sure;
 	compute unique summoning of C;
-	if C is ass plugging, now C is penetrating asshole;
+	if C is ass plugging or (C is vagina plugging and the player is male), now C is penetrating asshole;
 	if C is vagina plugging and the player is female, now C is penetrating vagina;
-	if C is ballgag, now C is penetrating face.
+	if C is ballgag, now C is penetrating face.[a ballgag is any gag that occupies the player's face. I.e. most gags]
 
 To compute unique summoning of (C - a thing):
 	do nothing.
-	
+
 To summon (S - a sex toy): [We can only use summon for asshole at the moment]
+	only destroy S; [This cleans up all potentially incorrect flags]
 	now S is not penetrating vagina; [Just in case]
 	now S is worn by the player;
 	now S is penetrating asshole;
@@ -29,6 +30,7 @@ To summon (S - a sex toy): [We can only use summon for asshole at the moment]
 	compute unique summoning of S.
 
 To summon (P - a sex toy) vaginally:
+	only destroy P; [This cleans up all potentially incorrect flags]
 	now P is not penetrating asshole;
 	now P is worn by the player;
 	now P is penetrating vagina;
@@ -36,24 +38,44 @@ To summon (P - a sex toy) vaginally:
 	now P is sure;
 	compute unique summoning of P.
 
+To summon (P - a sex toy) cursed vaginally:
+	summon P vaginally;
+	now P is cursed.
+
+To summon (C - a clothing) uncursed:
+	summon C;
+	if C is locked, now C is unlocked;
+	now the raw-magic-modifier of C is 0;
+	now C is blandness;
+	now C is bland.
+
 To summon (C - a thing) cursed:
 	summon C;
 	if C is locked clothing, now C is unlocked;
 	now C is cursed.
 
+To summon (C - a thing) cursed with quest:
+	summon C cursed;
+	if C is clothing, compute summoned quest of C.
+
+To summon (C - a sex toy) cursed vaginally with quest:
+	summon C cursed vaginally;
+	compute summoned quest of C.
+
+To summon (C - a thing) cursed with silent quest:
+	summon C cursed;
+	if C is clothing, compute quest of C.
+
 To summon (C - a clothing) locked:
 	summon C;
 	if C is cursed, now C is bland;
 	now C is locked;
-	if newbie tips is 1, say "[one of][item style]Oh dear, this item is locked!  You'll need a key rather than a blessing to make it removable.  Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately.  Instead, he is going to wait until your 'sentence' is over, which will take a decent amount of time.  Of course, if you could defeat him in combat I'm sure you'd be able to salvage a key from his corpse.[roman type][line break][or][stopping]".
-	
-Definition: a thing (called C) is removable: [Some clothing can never be removed, even by monsters.]
-	unless C is tattoo, decide yes;
-	decide no.
+	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, he is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat him in combat I'm sure you'd be able to salvage a key from his corpse.[roman type][line break][or][stopping]".
 
-Definition: a thing (called C) is unremovable:
-	if C is removable, decide no;
-	decide yes.
+Definition: a thing is removable: decide yes.
+Definition: a tattoo is removable: decide no.
+
+Definition: a thing is unremovable if it is not removable.
 
 [!<ThingIsStealable>+
 
@@ -70,8 +92,9 @@ This definition performs 3 checks to determine whether or not a monster will act
 
 Definition: a thing (called C) is stealable: [Some clothing can never be stolen or destroyed, even by monsters.]
 	if C is unremovable, decide no;
-	if C is bondage, decide no;
 	if C is accessory and (the unworn outrage of C >= 5 or the unworn cringe of C >= 5), decide no;[Regardless of how you feel about regular clothes, most npcs would agree it's better not to be naked.]
+	if C is sex toy, decide no;
+	if C is overdress and the class of the player is not adventurer, decide no;
 	decide yes.
 
 [!<ThingIsDestructible>+
@@ -84,11 +107,15 @@ This definition determines whether or not an item can be conventionally "destroy
 
 +!]
 Definition: a thing (called C) is destructible:
+	if C is metal, decide no;
+	decide yes.
+Definition: a thing (called C) is indestructible:
+	if C is destructible, decide no;
 	decide yes.
 
 [!<ThingIsTearable>+
 
-This definition determines whether or not a given item can be destroyed by being torn off the player
+This definition determines whether or not a given item can be destroyed by being torn off by monsters
 
 @param <Object>:<C> The item that can potentially be torn off
 
@@ -108,21 +135,17 @@ This definition determines whether or not an item is unable to be stolen by an n
 @return <Boolean> returns false if C can be stolen, otherwise returns true
 
 +!]
-Definition: a thing (called C) is unstealable:
-	if C is stealable, decide no;
-	decide yes.
+Definition: a thing is unstealable if it is not stealable.
 
-Definition: an object (called O) is actually wearable:
-	decide no.
+Definition: an object is actually wearable: decide no.
 
-Definition: an object (called O) is actually summonable:
-	decide no.
+Definition: an object is actually summonable: decide no.
 
 Definition: a clothing (called C) is actually summonable:
-	if roleplay fetish is 1 and C is off-stage roleplay headgear, decide no;
 	now summoning is 1; [suppresses wearing text outputs, let the game know this is being summoned (some stuff can be summoned but not put on)]
 	if C is actually wearable, decide yes;
 	decide no.
 
 
 Summoning ends here.
+

@@ -6,6 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 To dislodge (C - a thing):
+	compute unique dislodging of C;
 	if C is monster:
 		now C is doing nothing special;
 		now C is unwrapped;
@@ -16,12 +17,16 @@ To dislodge (C - a thing):
 	repeat with B running through things covered by C:
 		now C is not covering B.
 
+To compute unique dislodging of (C - a thing):
+	do nothing.
+
 [!<DestroyThing>+
 
 REQUIRES COMMENTING
 
 +!]
 To destroy (T - a thing):
+	uniquely destroy T;
 	remove T from play;
 	dislodge T.
 
@@ -36,3 +41,4 @@ To uniquely destroy (T - a thing): [Are there any special rules we need to follo
 
 
 Destroying ends here.
+

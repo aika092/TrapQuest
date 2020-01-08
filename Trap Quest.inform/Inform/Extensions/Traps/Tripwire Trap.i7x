@@ -1,8 +1,10 @@
 Tripwire Trap by Traps begins here.
 
-A tripwire trap is a kind of trap.  There are 30 wire tripwire traps.  The description of tripwire trap is "A thin wire crosses the [trap-direction] exit of the room at knee height.".
+A tripwire trap is a kind of trap. There are 30 wire tripwire traps.
+To say ExamineDesc of (C - a tripwire trap):
+	say "A thin wire crosses the [trap-direction] exit of the room at knee height.".
 
-A tripwire trap has a number called memory.  The memory of a tripwire trap is usually 0.
+A tripwire trap has a number called memory. The memory of a tripwire trap is usually 0.
 
 To trigger (Y - a tripwire trap):
 	now Y is revealed;
@@ -14,7 +16,14 @@ To trigger (Y - a tripwire trap):
 		now delayed stand is 1; [This is a dirty roundabout fix to the gladiator pulling the player in one direction after a trip, but then the player ending up in the location they would have been if the gladiator didn't pull them anyway, by preventing the gladiator from pulling.]
 		try kneeling;
 		if the player is upright or autostand is 0, now delayed stand is 0;
+		if the player is prone:
+			repeat with M running through reactive monsters:
+				say TripwireTrapReactFlav of M;
 	otherwise:
 		say "Luckily, nothing seems to happen.".
 
+To say TripwireTrapReactFlav of (M - a monster):
+	say TriggeredTrapReactFlav of M.
+
 Tripwire Trap ends here.
+

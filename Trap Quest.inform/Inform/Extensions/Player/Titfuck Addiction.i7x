@@ -53,7 +53,7 @@ Part 2 - Modify Titfuck Addiction
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called raw titfuck addiction.  The raw titfuck addiction of the player is usually 1. [Min 1 Max 10]
+The player has a number called raw titfuck addiction. The raw titfuck addiction of the player is usually 1. [Min 1 Max 10]
 
 [!<TitfuckAddictUpX>+
 
@@ -68,7 +68,7 @@ To TitfuckAddictUp (X - a number):
 		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
-		if the raw titfuck addiction of the player < 10, increase the raw titfuck addiction of the player by 1. 
+		if the raw titfuck addiction of the player < 10, increase the raw titfuck addiction of the player by 1.
 
 [!<TitfuckAddictDownX>+
 
@@ -95,17 +95,23 @@ To TitfuckAddictUp (X - a number):
 		decrease X by 3;
 	while X > 0:
 		decrease X by 1;
-		if the raw sensitivity of breasts < 10, increase the raw sensitivity of breasts by 1. 
+		if the raw sensitivity of breasts < 10, increase the raw sensitivity of breasts by 1.
 
-[!<TitfuckAddictDownX>+
 
-REQUIRES COMMENTING
-
-+!]
 To TitfuckAddictDown (X - a number):
+	let S be the raw sensitivity of breasts;
+	SilentlyTitfuckAddictDown X;
+	decrease S by the raw sensitivity of breasts;
+	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]oversensitive[otherwise]sensitive[end if].".
+
+To SilentlyTitfuckAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw sensitivity of breasts > 1, decrease the raw sensitivity of breasts by 1.
+		SilentlyTitfuckAddictDown.
+
+To SilentlyTitfuckAddictDown:
+	if the raw sensitivity of breasts > 1, decrease the raw sensitivity of breasts by 1.
 
 
 Titfuck Addiction ends here.
+

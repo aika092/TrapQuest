@@ -6,7 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 Report dropping something:
-	now seconds is 2;
+	allocate 2 seconds;
 
 [!<ReportDroppingInsertibleThings>+
 
@@ -20,3 +20,4 @@ Does the player mean dropping a held thing: it is likely.
 
 
 Dropping ends here.
+

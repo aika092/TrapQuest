@@ -59,15 +59,16 @@ To say PerceivedAdultDesc:
 		otherwise:
 			say "You look like a big shameless baby in need of permanent enslavement, discipline and care.";
 	otherwise if P < 6 and the player is male and the largeness of breasts < 4:
-		say "You look like an androgynous person wearing feminine clothing, but you don't look as outrageous as some crossdressers often do[if C > 2].  Parts of your appearance look weirdly childish[end if].";
+		say "You look like an androgynous person wearing feminine clothing, but you don't look as outrageous as some crossdressers often do[if C > 2]. Parts of your appearance look weirdly childish[end if].";
 	otherwise if P < 5:
-		say "You look very feminine, but not outrageous enough to call slutty[if C > 2].  Parts of your appearance look weirdly childish[end if].";
+		say "You look very feminine, but not outrageous enough to call slutty[if C > 2]. Parts of your appearance look weirdly childish[end if].";
 	otherwise if P is 5:
-		say "You look very provocative; in a club setting you'd be followed around by a swarm of guys all night[if there is worn diaper].  That is, if it wasn't for the diaper[otherwise if C > 2].  Especially because of your 'babygirl' style[end if].";
+		say "You look very provocative; in a club setting you'd be followed around by a swarm of guys all night[if there is worn diaper]. That is, if it wasn't for the diaper[otherwise if C > 2]. Especially because of your 'babygirl' style[end if].";
 	otherwise if P < 8:
-		say "Your appearance can be described as nothing except slutty - your attire is quite clearly a provocative statement.  [if C > 5]It clashes with your babyish attire, giving the impression of someone who can't be trusted to dress themselves[otherwise if there is a worn diaper]It clashes with your diaper, making you look quite ridiculous[otherwise if C > 2]Especially with your 'babygirl' style, your attire screams 'I[']m looking for a Daddy to dominate me.'  Overall, you look very submissive[otherwise]You are in danger of people thinking you are an immature brat trying way too hard to look like an adult[end if].";
+		say "Your appearance can be described as nothing except slutty - your attire is quite clearly a provocative statement. [if C > 5]It clashes with your babyish attire, giving the impression of someone who can't be trusted to dress themselves[otherwise if there is a worn diaper]It clashes with your diaper, making you look quite ridiculous[otherwise if C > 2]Especially with your 'babygirl' style, your attire screams 'I[']m looking for a Daddy to dominate me.' Overall, you look very submissive[otherwise]You are in danger of people thinking you are an immature brat trying way too hard to look like an adult[end if].";
 	otherwise:
-		say "You look [if there is a lewdly exposed body part]like you have purposefully chosen a wardrobe designed to expose yourself[otherwise]like a dolled up bimbo[end if], like one might expect from a porn star or stripper.  [if C > 5]It clashes horribly with your infantile attire, making you look like you have some bizarre split personality[otherwise if there is a worn diaper]It clashes with your diaper, making you look quite ridiculous[otherwise if C > 2]Especially with the more childish elements, you give off the impression of a dedicated submissive[otherwise]Anyone who felt responsible for your safekeeping would have no choice but to punish you and take control of dressing you themselves[end if].".
+		say "You look [if there is a lewdly exposed body part]like you have purposefully chosen a wardrobe designed to expose yourself[otherwise]like a dolled up bimbo[end if], like one might expect from a porn star or stripper. [if the player is naked]Perhaps you should put some clothes on[otherwise if C > 5]It clashes horribly with your infantile attire, making you look like you have some bizarre split personality[otherwise if there is a worn diaper]It clashes with your diaper, making you look quite ridiculous[otherwise if C > 2]Especially with the more childish elements, you give off the impression of a dedicated submissive[otherwise]Anyone who felt responsible for your safekeeping would have no choice but to punish you and take control of dressing you themselves[end if].".
 
 
 Appearance ends here.
+

@@ -1,8 +1,8 @@
 Pasties by Bra begins here.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20.  The max size of a pasties is 20. A pasties is usually fully exposing. There is 1 unique pasties. Understand "stickers", "caps", "nipple" as pasties.
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually fully exposing. Understand "stickers", "caps", "nipple" as pasties. There is 1 transformation-rare pasties. The text-shortcut of a pasties is "psts".
 
-Figure of pasties is the file "pasties1.png".
+Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.jpg".
 
 To decide which figure-name is clothing-image of (C - a pasties):
 	decide on figure of pasties.
@@ -17,7 +17,7 @@ To set up influence of (C - a pasties):
 	now C is titfuck-addiction-influencing.
 
 To decide which number is the initial outrage of (C - a pasties):
-	decide on 12.
+	decide on 8.
 
 To compute bra strain of (C - a pasties):
 	do nothing.
@@ -31,27 +31,31 @@ To decide which number is the bartering value of (T - a pasties) for (M - a robo
 To decide which number is the bartering value of (T - a pasties) for (M - a mechanic):
 	decide on 2.
 
-Definition: a pasties (called C) is end of transformation chain:
-	decide yes.
+Definition: a pasties is end of transformation chain: decide yes.
+Definition: a pasties is red themed: decide yes.
 
 [nipple tassels]
 
-A tassels is a kind of pasties. There is 1 unique tassels.
+tassels is a pasties. tassels is transformation-rare. The text-shortcut of tassels is "tsls".
 
-To say ShortDesc of (B - a tassels):
+To say ShortDesc of (B - tassels):
 	say "nipple tassels".
 
-Figure of tassels is the file "tassels1.png".
+Definition: tassels is gem themed: decide yes.
+Definition: tassels is red themed: decide no.
+Definition: tassels is white themed: decide yes.
 
-To decide which figure-name is clothing-image of (C - a tassels):
+Figure of tassels is the file "Items/Clothes/Upper/Bras/tassels1.png".
+
+To decide which figure-name is clothing-image of (C - tassels):
 	decide on figure of tassels.
 
-To say ClothingDesc of (C - a tassels):
-	say "A pair of white nipple caps with [if item described is worn]nylon tassels hanging from the center, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the center, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and the item described is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
+To say ClothingDesc of (C - tassels):
+	say "A pair of white nipple caps with [if C is worn]nylon tassels hanging from the centre, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the centre, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and C is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
 
-To decide which number is the perceived-bimbo-influence of (C - a tassels):
-	if the largeness of breasts > 5, decide on 2;
+To decide which number is the perceived-bimbo-influence of (C - tassels):
+	if the largeness of breasts > 3, decide on 1;
 	decide on 0.
 
-
 Pasties ends here.
+

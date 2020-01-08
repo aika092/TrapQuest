@@ -32,7 +32,7 @@ To position (new room - a room) at (grid ref - a spatial coordinate):
 		let the further position be the vector sum of the grid ref and the vector of this way;
 		if the further position is not <0,0,0>:
 			let the further room be the room at the further position;
-			if debugmode is 1, say "[line break]Grid ref is [grid ref].  The further position is [further position].  The further room is [further room].";
+			if debugmode is 1, say "[line break]Grid ref is [grid ref]. The further position is [further position]. The further room is [further room].";
 			[unless the further room is Solid Rock:]
 			now Neighbour Finder is new room;
 			if this way is wanted:
@@ -85,7 +85,7 @@ Definition: A direction (called D) is desired:
 	if D is empty puzzle socket, decide yes;
 	decide no.
 
-[Here we look at a spatial coordinate and we look at the rooms around it.  And if our new room we want to put in the spatial coordinate wants doors in certain other directions, we check that rooms already there are happy with that.]
+[Here we look at a spatial coordinate and we look at the rooms around it. And if our new room we want to put in the spatial coordinate wants doors in certain other directions, we check that rooms already there are happy with that.]
 [!<Room>@<IsOpenAndReady>+
 
 REQUIRES COMMENTING
@@ -112,3 +112,4 @@ Definition:  A room (called R) is open and ready:
 
 
 Terra Incognita ends here.
+

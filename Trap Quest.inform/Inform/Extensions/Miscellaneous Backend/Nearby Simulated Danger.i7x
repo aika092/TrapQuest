@@ -7,12 +7,12 @@ REQUIRES COMMENTING
 +!]
 Definition: a thing (called M) is nearby:
 	if M is monster:
-		if M is not alive or M is captive, decide no;
+		if M is not alive or M is pacified, decide no;
 	let L be the location of M;
 	now neighbour finder is the location of the player;
 	repeat with D running through N-viable directions:
 		if the room D from the location of the player is L, decide yes;
-	decide no. 
+	decide no.
 
 [!<ARoomIsNearby>+
 
@@ -23,6 +23,12 @@ Definition: a room (called R) is nearby:
 	repeat with M running through nearby monsters:
 		decide yes;
 	decide no.
+
+Definition: a room (called R) is within vision:
+	now neighbour finder is the location of the player;
+	if R is neighbour finder or R is next door, decide yes;
+	decide no.
+
 
 [!<ARoomIsNextDoor>+
 
@@ -43,7 +49,7 @@ To decide which direction is the nearby-direction of (M - a monster):
 	let L be the location of M;
 	now neighbour finder is the location of the player;
 	repeat with D running through N-viable directions:
-		if the room D from the location of the player is L, decide on D.	
+		if the room D from the location of the player is L, decide on D.
 
 [!<ADirectionIsNearby>+
 
@@ -57,23 +63,23 @@ Definition: a direction (called D) is nearby:
 
 [!<AMonsterIsDangerous>+
 
-REQUIRES COMMENTING
+Ready to fight the player, or already fighting / fucking.
 
 +!]
 Definition: a monster (called M) is dangerous:
-	if M is interested and M is unfriendly and M is released and the sleep of M is 0 and the boredom of M is 0 and the health of M > 0:
+	if M is interested and M is threatening and M is awake and the boredom of M is 0 and the health of M > 0 and M is unfriendly:
 		if the scared of M is 0 or M is penetrating a body part:
 			decide yes;
 	decide no.
 
-[!<YourselfIsInDanger>+
+[!<AMonsterIsCombative>+
 
-REQUIRES COMMENTING
+Fighting the player or already fucking the player.
 
 +!]
-Definition: yourself (called P) is in danger:
-	if there is a dangerous monster in the location of the player, decide yes;
-	decide no.
+Definition: a monster is combative if it is in the location of the player and it is dangerous.
+
+Definition: yourself is in danger if there is a combative monster.
 
 [!<TheDangerBlocksMasturbationRule>+
 
@@ -86,39 +92,27 @@ This is the danger blocks masturbation rule:
 		rule fails.
 The danger blocks masturbation rule is listed last in the masturbation restriction rules.
 
-[!<YourselfIsInNearDanger>+
+[!<AThingIsRegional>+
 
-REQUIRES COMMENTING
-
-+!]
-Definition: a person (called P) is in near danger:
-	if P is in danger or there is a dangerous nearby monster, decide yes;
-	decide no.
-
-[!<AMonsterIsRegional>+
-
-REQUIRES COMMENTING
+REMEMBER YOU FUCKWAD, WHEN STORING A REGION IN A VARIABLE AS OPPOSED TO EXPLICITLY NAMING IT YOU MUST USE THE "regionally in" CONDITION RATHER THAN JUST "in" OR EVERYTHING BREAKS AND YOU WASTE HOURS TRYING TO DEBUG WTF IS GOING ON
 
 +!]
-Definition: a monster (called M) is regional:
-	if M is in the dungeon and the player is in the dungeon, decide yes;
-	if M is in the woods and the player is in the woods, decide yes;
-	if M is in the hotel and the player is in the hotel, decide yes;
-	if M is in the mansion and the player is in the mansion, decide yes;
-	decide no.
+Definition: a thing is regional if it is regionally in playerRegion.
 
-[!<ARegionIsSimulated>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: A region (called R) is simulated:
-	if R is dungeon, decide yes;
-	if R is woods and woods01 is discovered, decide yes;
-	if R is hotel and hotel01 is discovered, decide yes;
-	if R is mansion and mansion01 is discovered, decide yes;
-	decide no.
-
+playerRegion is a region that varies. playerRegion is Dungeon.
+noRegion is a region.
+To decide which region is currentPlayerRegion:
+	repeat with R running through regions:
+		if the player is regionally in R, decide on R;
+	decide on noRegion.
+To update player region:
+	let R be currentPlayerRegion;
+	if R is not noRegion, now playerRegion is R.
+Report going up:
+	update player region.
+Report going down:
+	update player region.
 
 
 Nearby Simulated Danger ends here.
+

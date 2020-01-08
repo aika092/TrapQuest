@@ -6,7 +6,7 @@ Fainting Reasons by Fainting begins here.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called fainting reason.  The fainting reason of the player is usually 0.
+The player has a number called fainting reason. The fainting reason of the player is usually 0.
 
 [!<Leftover>@
 
@@ -41,7 +41,8 @@ REQUIRES COMMENTING
 Before doing something when a leftover is the second noun:
 	print the you can't see message instead.
 
-The description of a leftover is "[LeftoverDesc the leftover-type of the item described]";
+To say ExamineDesc of (L - a leftover):
+	say "[LeftoverDesc the leftover-type of the L]".
 
 [!<SayLeftoverDesc>+
 
@@ -146,3 +147,4 @@ To say LeftoverDesc (N - 100):
 
 
 Fainting Reasons ends here.
+

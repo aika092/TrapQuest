@@ -8,7 +8,9 @@ REQUIRES COMMENTING
 @inherits <Trap>
 
 @!]
-A makeup pad is a kind of trap.  There are 12 click makeup pads.  The description of a makeup pad is "A cotton pad on the end of a wooden pole, set up on a catapult style mechanism.".
+A makeup pad is a kind of trap. There are 12 click makeup pads.
+To say ExamineDesc of (C - a makeup pad):
+	say "A cotton pad on the end of a wooden pole, set up on a catapult style mechanism.".
 
 [!<TheSpawnInitialDungeonMakeUpTrapsRule>+
 
@@ -40,10 +42,9 @@ REQUIRES COMMENTING
 
 +!]
 This is the spawn initial hotel makeup traps rule:
-	repeat with N running from 1 to 1:
-		let R be a random click untrapped trappable placed modern room;
-		let T be a random off-stage makeup pad;
-		unless there is a makeup pad in R, deploy T in R.
+	let R be a random click untrapped trappable placed modern room;
+	let T be a random off-stage makeup pad;
+	unless there is a makeup pad in R, deploy T in R.
 The spawn initial hotel makeup traps rule is listed in the set up hotel traps rules.
 
 [!<MakeUpPad>@<Trigger>+
@@ -64,8 +65,13 @@ To trigger (Y - a makeup pad):
 		otherwise:
 			say "A large cotton pad swings out and smacks you straight in the face!  [if the make-up of face < 3][one of]You[or]Once again you[stopping] are left with [one of]trashy[or]over-done[or]over-the-top[at random] make up that looks like it was [one of]done by a ten year old playing dressup[or]applied by a child[cycling]![otherwise]But nothing really seems to have changed...[end if]";
 			FaceUp 3;
+		repeat with M running through reactive monsters:
+			say MakeUpTrapReactFlav of M;
 	otherwise:
 		say "With lightning reflexes, you dodge a large cotton pad that was flying straight for your face!  It looks like you avoided a compulsory [if diaper quest is 0]slutty [end if]makeover!".
 
+To say MakeUpTrapReactFlav of (M - a monster):
+	say TriggeredTrapReactFlav of M.
 
 Makeup Pad Trap ends here.
+

@@ -18,6 +18,7 @@ The setup starting snacks rule is listed in the setup starting items rules.]
 Carry out TQeating snack:
 	destroy the noun;
 	StomachFoodUp 2;
-	now seconds is 6.
+	allocate 6 seconds.
 
 Snacks ends here.
+

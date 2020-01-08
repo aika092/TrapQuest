@@ -26,9 +26,10 @@ To decide what number is the price of (C - a clothing):
 		increase X by the magic-modifier of C * 2;
 		if C is not blandness, increase X by 1;
 		if discount > 0, decrease X by 5;
-		if the blue-balls of a random shopkeeper < 0, decrease X by 1;
+		if the blue-balls of shopkeeper < 0, decrease X by 1;
 		if X < 1, now X is 1;
 	decide on X.
 
 
 Price ends here.
+

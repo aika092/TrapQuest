@@ -6,17 +6,40 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the knee damage of (P - a person):
+	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-knee-damage;
+	if damage-explained > 1, say "[input-style]Base knee damage calculation: [bracket]3 (base damage) ";
 	let A be 3;
 	increase A by combat bonus;
-	if there are worn stockings:
-		let S be a random worn stockings;
-		increase A by the knee-modifier of S;
+	if damage-explained > 1, say combat bonus explanation;
+	repeat with S running through worn wearthings:
+		let N be the knee-modifier of S;
+		if N is not 0:
+			increase A by N;
+			if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of S] bonus) ";
 	increase A by permanent-knee-bonus;
-	if the weight of the player < 1, decrease A by 2;
-	if there is a worn demon horns and the total-souls of the player > 9, increase A by 3;
-	if the player is diaper kicking, decrease A by 1;
-	if the player is zeroG, now A is 0;
+	if damage-explained > 1 and permanent-knee-bonus is not 0, say "[if permanent-knee-bonus >= 0]+[end if][permanent-knee-bonus] (imprinted knee bonus) ";
+	if the weight of the player < 1:
+		decrease A by 2;
+		if damage-explained > 1, say "-2 (very low weight) ";
+	if demon horns is worn and the total-souls of the player > 9:
+		increase A by 3;
+		if damage-explained > 1, say "+3 (over 9 souls collected) ";
+	if the player is diaper kicking:
+		decrease A by 1;
+		if damage-explained > 1, say "-1 (diaper penalty) ";
+	if the player is zeroG:
+		if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
+		now A is 0;
 	decide on A.
+
+knee-fatigue is a number that varies.
+knee-fatigue-delay is a number that varies.
+
+A time based rule (this is the knee fatigue recovery rule):
+	if knee-fatigue-delay > 0:
+		decrease knee-fatigue-delay by 1;
+	otherwise if knee-fatigue > 0:
+		decrease knee-fatigue by 1.
 
 permanent-knee-bonus is a number that varies.
 
@@ -28,12 +51,14 @@ REQUIRES COMMENTING
 
 +!]
 Check kneeing:
+	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not a monster, say "Err, why would you do that?" instead;
-	if the noun is woman, say "Something tells you this would be a stupid idea." instead;
-	if the noun is captive and the noun is dungeon boss, say "You can't reach it through the cage!" instead;
+	if the noun is woman-barbara and woman-barbara is not angered:
+		say "Are you sure? You probably won't be able to make her friendly ever again, if you were to do that. ";
+		unless the player is consenting, say "You change your mind." instead;
 	if the player is not able to knee, do nothing instead;
-	if the noun is intimidating, compute surrender to the noun instead.
+	if the noun is too intimidating, compute surrender to the noun instead.
 
 [!<CarryOutKneeing>+
 
@@ -44,41 +69,29 @@ Carry out kneeing:
 	now attack-type is 2;
 	reset submitted monsters;
 	increase the fat-burning of the player by 30;
+	now damage-explained is debuginfo;
 	let A be the knee damage of the player;
-	now seconds is 6;
-	if there are worn heels and the player is grounded and 1 is 0: [removed for new combat mechanics test]
-		let H be a random worn heels;
-		increase the heel time of the player by the hindrance of H / 2;
-		let X be the hindrance of H;
-		let D be a random number between 0 and 32;
-		if (the living belt of sturdiness is worn and the living belt of sturdiness is not cursed) or there is a worn yoga pants, now D is 9999;
-		if debugmode is 1, say "Kneeing attempt: Player ([D].5 | [X] Heels[line break]";
-		if D + 2 < X:
-			say "As you attempt to knee the [noun] you lose your balance and go flying!  Whoops.";
-			try kneeling;
-		otherwise if D < X:
-			say "You knee [the noun] with all your might.";
-			damage A on the noun;
-			say "Before you can get both heels securely on the floor again, you wobble and fall!  Oopsie!";
-			try kneeling;
-		otherwise:
-			say "You knee [the noun] with all your might.";
-			damage A on the noun;
+	if damage-explained > 0, say "[if damage-explained > 1][close bracket] = [A]; [otherwise][input-style]Knee attack: [A] [end if]";
+	decrease A by knee-fatigue;
+	if knee-fatigue > 0 and damage-explained > 0, say "-[knee-fatigue] (knee fatigue)";
+	if damage-explained > 0, say "[roman type][line break]";
+	now knee-fatigue-delay is 2;
+	increase knee-fatigue by 1;
+	allocate 6 seconds;
+	if the player is zeroG:
+		say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
+	otherwise if the weight of the player < 1:
+		say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
+	otherwise if the player is diaper kicking:
+		say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
 	otherwise:
-		if the player is zeroG:
-			say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
-			damage A on the noun;
-		otherwise if the weight of the player < 1:
-			say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
-			damage A on the noun;
-		otherwise if the player is diaper kicking:
-			say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
-			damage A on the noun;
-		otherwise:
-			say "You knee [the noun] with all your might.";
-			damage A on the noun;
+		say "You knee [NameDesc of the noun] with all your might.";
+	damage A on the noun;
+	compute upright fatigue gain;
+	if there is a worn hostility clothing, compute hostileDamage;
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "knee [something]", "kn [something]" as kneeing.
 
 
 Kneeing ends here.
+

@@ -8,6 +8,10 @@ REQUIRES COMMENTING
 To deploy (O - an object) in (G - a room):
 	do nothing.
 
+
+To deploy (T - a trap) in (O - an object):
+	if debugmode > 0, say "ERROR: There was not enough room to find a place to deploy [T].".
+
 [!<DeployTrapInRoom>+
 
 REQUIRES COMMENTING
@@ -23,7 +27,9 @@ To deploy (T - a trap) in (G - a room):
 		if R is 4 and T is potentially sticky and G is in the Woods or G is in the Hotel or (T is glue trap and G is in the dungeon), now T is sticky;
 		increase R by 1;
 		if R is 5, now R is 1;
-	if the player is female and T is dildo trap and a random number between 1 and 2 is 1, now T is vaginal;
+	if T is click:
+		now the click-trigger of T is a random untrapped container in the location of T;
+		if the click-trigger of T is nothing, now the click-trigger of T is a random container in the location of T;
 	if T is wire or T is pressure, choose direction of T;
 	if debugmode is 1, say "Deploying a [printed name of T] in [printed name of G].".
 
@@ -58,7 +64,7 @@ To deploy tank in (G - a room):
 		now a random off-stage paddle trap is in G;
 		if debugmode is 1, say "The tank is trapped with a paddle trap.[paragraph break]";
 	let T be a random tank in Holding Pen;
-	now the doses of T is a random number from 3 to 8;
+	SetDose T to (a random number from 2 + bonus liquid to 8);
 	now T is in G.
 
 [!<DeployBucketInRoom>+
@@ -71,7 +77,7 @@ To deploy bucket in (G - a room):
 	if the number of on-stage iron-maidens is 0:
 		now a random off-stage iron-maiden is in G;
 	let T be a random bucket in Holding Pen;
-	now the doses of T is a random number from 3 to 8;
+	SetDose T to (a random number from 2 + bonus liquid to 8);
 	now T is in G.
 
 [!<DeployMinibarInRoom>+
@@ -86,3 +92,4 @@ To deploy minibar in (G - a room):
 
 
 Deploying ends here.
+

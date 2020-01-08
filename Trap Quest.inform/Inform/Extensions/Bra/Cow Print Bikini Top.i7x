@@ -1,6 +1,6 @@
 Cow Print Bikini Top by Bra begins here.
 
-A cow print bikini top is a kind of bikini top. Figure of bikini 3 is the file "bikini3.png".  The text-shortcut of cow print bikini top is "cpt".
+A cow print bikini top is a kind of bikini top. Figure of bikini 3 is the file "Items/Clothes/Upper/Bras/bikini3.png". The text-shortcut of cow print bikini top is "cpt".
 
 There is 1 unique cow print bikini top.
 
@@ -15,14 +15,20 @@ To say ClothingDesc of (C - a cow print bikini top):
 
 To decide which number is the initial outrage of (C - a cow print bikini top):
 	decide on 1.
-	
+
+Definition: a cow print bikini top is cow themed: decide yes.
+Definition: a cow print bikini top is black themed: decide yes.
+Definition: a cow print bikini top is white themed: decide yes.
+Definition: a cow print bikini top is discovered varied: decide no.
+
 To compute periodic effect of (B - a cow print bikini top):
 	BraGrow B;
 	let K be a random off-stage cow print bikini bottoms;
 	if lactation fetish is 1 and a random number between 1 and 250 - (unlucky * 100) is 1 and K is actually summonable:
-		say "[bold type]A cow print bikini bottom appears around your loins, matching your [printed name of B]![roman type][line break]";
+		say "[bold type]A cow print bikini bottom appears around your loins, matching your [ShortDesc of B]![roman type][line break]";
 		now the effect of K is 1;
-		summon K cursed.
+		if the class of the player is cowgirl, summon K;
+		otherwise summon K cursed with quest.
 
 To BraGrow (B - a cow print bikini top): [Quadruple the standard chance of the bra increasing in size each round.]
 	if B is cursed and the player is not top heavy:
@@ -43,8 +49,7 @@ To decide which object is the unique-upgrade-target of (C - a cow print bikini t
 To compute (C - a cow print bikini top) unique inheriting from (D - a clothing):
 	now C is milk production.
 
-Definition: a cow print bikini top (called C) is untransformable:
-	if the class of the player is cowgirl, decide yes;
-	decide no.
+Definition: a cow print bikini top is transformation-protected if the class of the player is cowgirl.
 
 Cow Print Bikini Top ends here.
+

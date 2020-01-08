@@ -1,6 +1,5 @@
 Solid Rock by Rooms begins here.
 
-
 ["Solid Rock" is a room which is never visited, but which is used to indicate blocked-off routes: an exit leading to Solid Rock is considered blocked. Initially, when none of the labyrinth rooms have been "played" into the maze, all exits are blocked in this way. Solid Rock is also used as a special value meaning that no room is at a given grid position: thus "the room at <1,4,12>" might evaluate to a room present in the maze, or it might evaluate to Solid Rock.]
 
 [!<SolidRock>@
@@ -107,6 +106,8 @@ REQUIRES COMMENTING
 +!]
 To decide which room is the room at (grid ref - a spatial coordinate):
 	if grid ref is <0,0,0>, decide on Solid Rock;
+	if the player is in Toilet01 and the grid position of Toilet01 is grid ref, decide on Toilet01;
+	if the player is in Toilet02 and the grid position of Toilet02 is grid ref, decide on Toilet02;
 	repeat with R running through rooms in the Dungeon:
 		if the grid position of R is grid ref, decide on R;
 	repeat with W running through rooms in the Woods:
@@ -115,6 +116,8 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 		if the grid position of H is grid ref, decide on H;
 	repeat with M running through rooms in the Mansion:
 		if the grid position of M is grid ref, decide on M;
+	repeat with M running through rooms in the School:
+		if the grid position of M is grid ref and M is not Toilet01 and M is not Toilet02, decide on M;
 	repeat with M running through rooms in the tutorialarea:
 		if the grid position of M is grid ref, decide on M;
 	decide on Solid Rock.
@@ -124,9 +127,14 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 REQUIRES COMMENTING
 
 +!]
-Check going to Solid Rock:
+[Check going to Solid Rock:
 	if the noun is down, try foodlisting instead;
-	unless the noun is north and there is a warp portal in the location of the player, say "You can't go that way." instead.
+	let W be a random warp portal in the location of the player;
+	unless W is warp portal and the covered-direction of W is the noun:
+		if the actor is the player:
+			say "[We] [can't go] that way." (A);
+		stop the action.]
 
 
 Solid Rock ends here.
+

@@ -19,9 +19,8 @@ Check SalveRubbing:
 			say "You already have the [printed name of random worn true salve covering breasts] covering your breasts!" instead;
 		if the player is wrist bound behind, say "You can't reach your chest to apply the salve whilst your wrists are bound behind you." instead;
 		if there is a worn bra:
-			if the support of a random worn bra > 0 and a random worn bra is not top-displaced, say "You would need to remove your [printed name of random worn bra] first." instead; [A support of 0 means the bra is cupless]
-		if there is a worn overdress:
-			if a random worn overdress is nipple exposing and a random worn overdress is not top-displaced, say "You would need to remove your [printed name of random worn overdress] first." instead;
+			if the support of a random worn bra > 0 and a random worn bra is actually breast covering, say "You would need to remove your [printed name of random worn bra] first." instead; [A support of 0 means the bra is cupless]
+		if there is a worn actually breast covering overdress, say "You would need to remove your [printed name of random worn overdress] first." instead;
 	otherwise if the second noun is belly:
 		if there is a worn true salve covering belly:
 			say "You already have the [printed name of random worn true salve covering belly] covering your belly!" instead;
@@ -41,23 +40,18 @@ Check SalveRubbing:
 		if O is clothing:
 			unless O is no protection, say "Your [printed name of O] is covering too much of your butt, you would need to [if O is displacable]displace[otherwise]remove[end if] it first." instead;
 	otherwise if the second noun is asshole:
-		let O be a random worn ass covering overdress;
 		if there is a worn true salve covering asshole:
 			say "You already have the [printed name of random worn true salve covering asshole] covering your [asshole]!" instead;
-		if there is a worn ass covering knickers:
-			say "Your [printed name of random worn ass covering knickers] are covering your [asshole]!" instead;
-		if O is clothing:
-			say "Your [O] is covering your [asshole]!" instead;
+		if there is ass covering clothing:
+			say "Your [printed name of random ass covering clothing] is covering your [asshole]!" instead;
 	otherwise if the second noun is vagina:
 		if there is a worn true salve covering vagina:
 			say "You already have the [printed name of random worn true salve covering vagina] covering your [vagina]!" instead;
-		if there is a worn pussy covering knickers:
-			say "Your [printed name of random worn pussy covering knickers] are covering your [vagina]!" instead;
-		if there is a worn pussy covering overdress:
-			say "Your [printed name of random worn pussy covering overdress] is covering your [vagina]!" instead;
+		if there is a pussy covering clothing:
+			say "Your [printed name of random pussy covering clothing] is covering your [vagina]!" instead;
 	otherwise if the noun is ectoplasm:
 		if the second noun is not clothing or the second noun is accessory or the second noun is headgear or the second noun is stockings or the second noun is heels, say "You can't really rub it on properly. It's like the slime refuses to soak into it!" instead;
-		if the second noun is worn, say "You can't really rub it on properly when you're already wearing it." instead;
+		[if the second noun is worn, say "You can't really rub it on properly when you're already wearing it." instead;]
 		if the second noun is not fluid vulnerable, say "That doesn't like it would absorb any of the slime." instead;
 		if the second noun is possession, say "You try, but it doesn't do anything." instead.
 
@@ -72,9 +66,10 @@ Carry out SalveRubbing:
 	destroy S.
 	
 Report SalveRubbing:
-	now seconds is 6;
+	allocate 6 seconds;
 	
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
 
 
 Salve Rubbing ends here.
+

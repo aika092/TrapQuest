@@ -35,6 +35,8 @@ REQUIRES COMMENTING
 *!]
 targeted-body-part is an object that varies.
 
+
+
 [!<DecideWhichNumberIsTotalDesirability>+
 
 REQUIRES COMMENTING
@@ -43,7 +45,7 @@ REQUIRES COMMENTING
 To decide which number is total desirability:
 	let N be 0;
 	repeat with B running through actual target body parts:
-		increase N by the desirability of B;
+		unless B is presented-orifice and the number of actual target body parts > 1, increase N by the desirability of B;
 	decide on N.
 
 [!<ChooseASexMethod>+
@@ -58,10 +60,11 @@ To choose a sex method:
 	otherwise:
 		let targeting-RNG be a random number between 1 and total desirability;
 		repeat with B running through actual target body parts:
-			decrease targeting-RNG by the desirability of B;
-			if targeting-RNG <= 0:
-				now targeted-body-part is B;
-				break.
+			unless B is presented-orifice and the number of actual target body parts > 1:
+				decrease targeting-RNG by the desirability of B;
+				if targeting-RNG <= 0:
+					now targeted-body-part is B;
+					break.
 
 
 [!<BodyPartIsMostDesirable>+
@@ -81,13 +84,13 @@ REQUIRES COMMENTING
 +!]
 A time based rule (this is the determining desirability rule):
 	if diaper quest is 0:
-		now the desirability of face is 5;
+		now the desirability of face is 5 + the number of worn oral sex themed wearthings;
 		now the desirability of breasts is 0;
 		now the desirability of asshole is 5;
 		now the desirability of vagina is 0;
 		now the desirability of belly is 0; [remember that belly = urination]
 		if the largeness of breasts > 7:
-			now the desirability of breasts is 2;
+			now the desirability of breasts is the largeness of breasts / 2;
 			follow the tit slut eligibility rules;
 		if the player is female:
 			now the desirability of vagina is 5;
@@ -182,3 +185,4 @@ the butt slut eligibility rules is a rulebook.
 
 
 Desirability ends here.
+

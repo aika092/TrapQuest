@@ -3,8 +3,13 @@ Candy by Food begins here.
 
 A candy is a kind of food. Understand "candy" as candy.
 
+Figure of candy is the file "Items/Collectibles/candy1.png".
+
+To decide which figure-name is the examine-image of (F - candy):
+	decide on figure of candy.
+
 Check dropping candy:
-	say "You get the feeling that this would be a really bad idea." instead.
+	if the player is able to use their hands, say "You get the feeling that this would be a really bad idea." instead.
 
 Check inserting candy into something:
 	say "You get the feeling that this would be a really bad idea." instead.
@@ -23,11 +28,11 @@ Definition: a candy (called C) is top tier:
 Carry out TQeating candy:
 	destroy the noun;
 	StomachFoodUp 2;
-	now seconds is 6.
+	allocate 6 seconds.
 
 To say DevourFlav of (C - a candy):
-	say "You unwrap the [C] and [if the player is in danger]devour it as quickly as you can[otherwise if the fat-weight of the player > 28]greedily stuff the entire thing into your mouth, immediately swallowing it whole[otherwise if the fat-weight of the player > 12]speedily devour the sweet[otherwise]consume the sweet slowly, savouring the taste[end if].  ".
-	
+	say "You unwrap the [C] and [if the player is in danger]devour it as quickly as you can[otherwise if the fat-weight of the player > 28]greedily stuff the entire thing into your mouth, immediately swallowing it whole[otherwise if the fat-weight of the player > 12]speedily devour the sweet[otherwise]consume the sweet slowly, savouring the taste[end if]. ".
+
 To restock (C - a candy):
 	let B be a random off-stage candy;
 	if B is candy, now B is in Standard Item Pen.
@@ -44,3 +49,4 @@ To decide which number is default-candy-duration:
 
 
 Candy ends here.
+

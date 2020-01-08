@@ -1,19 +1,30 @@
 Fudge by Food begins here.
 
 
-A fudge is a kind of candy.  The printed name of fudge is "[TQlink of item described]fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The printed plural name of fudge is "[TQlink of item described]pieces of fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]".  The text-shortcut of fudge is "fu".  The description of fudge is "A piece of fudge, still in its wrapper.  It will definitely significantly increase your energy, and hopefully it isn't poisoned.".  There is 1 fudge.
+A fudge is a kind of candy. The printed name of fudge is "[TQlink of item described]fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of fudge is "[TQlink of item described]pieces of fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fudge is "fud". There is 1 fudge.
+
+To say ExamineDesc of (C - a fudge):
+	say "A piece of fudge, still in its wrapper. It will definitely significantly increase your energy, and hopefully it isn't poisoned.".
+
+Figure of fudge is the file "Items/Collectibles/fudge1.jpg".
+
+To decide which figure-name is the examine-image of (F - fudge):
+	decide on figure of fudge.
 
 fudge-poison-timer is a number that varies.
 
 To decide which number is the crafting key of (C - a fudge):
 	decide on 29.
 
+To say ShortDesc of (C - a fudge):
+	say "fudge".
+
 Carry out TQeating fudge:
 	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]!  ";
 	FatigueDown 160;
 	bodyheal 4;
-	if a random number between 1 and 4 is 1:
-		say "[if fudge-poison-timer > 0]You feel more of the dexterity draining poison enter your veins.[otherwise]But your limbs suddenly feel much heavier.  The fudge was poisoned![end if]";
+	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper messing < 3):
+		say "[if fudge-poison-timer > 0]You feel more of the dexterity draining poison enter your veins.[otherwise]But your limbs suddenly feel much heavier. The fudge was poisoned![end if]";
 		increase fudge-poison-timer by default-candy-duration / 2.
 
 a time based rule (this is the fudge poison decay rule):
@@ -32,3 +43,4 @@ To compute (M - a robochef) cooking (I - a fudge):
 
 
 Fudge ends here.
+

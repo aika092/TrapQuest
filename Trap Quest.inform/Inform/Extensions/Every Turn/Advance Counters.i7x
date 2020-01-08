@@ -30,8 +30,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the modification machine charge decay rule:
-	let M be a random modification machine;
-	if the charge of M > 0, decrease the charge of M by counters-seconds.
+	if the charge of modification machine > 0, decrease the charge of modification machine by counters-seconds.
 The modification machine charge decay rule is listed in the advance counters rules.
 
 [!<TheCrossTrainerChargeDecayRule>+
@@ -90,8 +89,22 @@ REQUIRES COMMENTING
 This is the alchemy charge decay rule:
 	if the charge of alchemist's table > 0:
 		decrease the charge of alchemist's table by counters-seconds;
-		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type]  It just be ready for another ingredient to transform!".
+		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
 The alchemy charge decay rule is listed in the advance counters rules.
+
+[!<TheScienceChargeDecayRule>+
+
+REQUIRES COMMENTING
+
++!]
+This is the science charge decay rule:
+	if the charge of science table > 0:
+		decrease the charge of science table by counters-seconds;
+		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The left hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!";
+	if the second charge of science table > 0:
+		decrease the second charge of science table by counters-seconds;
+		if the second charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
+The science charge decay rule is listed in the advance counters rules.
 
 [!<TheLaundryChargeDecayRule>+
 
@@ -113,7 +126,7 @@ This is the sacred pool decay rule:
 		decrease the charge of the sacred pool by counters-seconds.
 The sacred pool decay rule is listed in the advance counters rules.
 
-This is the living tentacles decay rule:
+This is the living tentacles decay rule:[TODO: migrate to periodical effect function for living tentacles]
 	let L be a random living tentacles;
 	if the charge of L > 0:
 		decrease the charge of L by counters-seconds.
@@ -143,7 +156,7 @@ This is the urine gross out resolution rule:
 	if the player is upset about urine, now previous-urine-upset is 1;
 	otherwise now previous-urine-upset is 0;
 	if P is not previous-urine-upset:
-		if P is 0, say "[bold type][one of]You can't help but be extremely grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing.  Until you remove or clean it all, [otherwise][random worn urine soaked clothing].  Until you clean it or remove it, [end if]your dexterity will be significantly reduced.[or]Once again your dexterity is significantly limited until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]";
+		if P is 0, say "[bold type][one of]You can't help but be extremely grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn urine soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be significantly reduced.[or]Once again your dexterity is significantly limited until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]";
 		now the arousal of the player is 0.
 The urine gross out resolution rule is listed in the advance counters rules.
 
@@ -165,9 +178,12 @@ This is the mess gross out resolution rule:
 	otherwise now previous-mess-upset is 0;
 	if P is not previous-mess-upset:
 		if P is 0 and previous-urine-upset is 0:
-			if diaper lover is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping]!  All arousal immediately disappears as the reality of your situation hits you.[roman type][line break]";
-			otherwise say "[bold type][one of]You can't believe what has just happened!  Until you get changed, your dexterity will be significantly reduced and you won't be able to knee or kick enemies.[or]Once again your dexterity is significantly limited until you can escape the gross [random worn messed knickers].[stopping][roman type][line break]";
-		now the arousal of the player is 0.
+			if the player is upset about sitting in mess:
+				if diaper messing is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping][if the player is not magically horny]! All arousal immediately disappears as the reality of your situation hits you[end if].[roman type][line break]";
+				otherwise say "[bold type][one of]You can't believe what has just happened! Until you get changed, your dexterity will be significantly reduced and you won't be able to knee or kick enemies.[or]Once again your dexterity is significantly limited until you can escape the gross [random worn messed knickers].[stopping][roman type][line break]";
+			otherwise:
+				say "[bold type]You are [one of][or]once again [stopping]completely grossed out[if the player is not magically horny]! All arousal immediately disappears as the smell hits your nostrils[end if].[roman type][line break]";
+		if the player is not magically horny, now the arousal of the player is 0.
 The mess gross out resolution rule is listed in the advance counters rules.
 
 [!<previousTooFull:Integer>*
@@ -183,11 +199,12 @@ REQUIRES COMMENTING
 
 +!]
 This is the too full resolution rule:
-	let P be previous-too-full;
-	if the player is overly full, now previous-too-full is 1;
-	otherwise now previous-too-full is 0;
-	if P is not previous-too-full:
-		if P is 0, say "[bold type]Your stomach is now overly full!  [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
+	if diaper quest is 0:
+		let P be previous-too-full;
+		if the player is overly full, now previous-too-full is 1;
+		otherwise now previous-too-full is 0;
+		if P is not previous-too-full:
+			if P is 0, say "[bold type]Your stomach is now overly full!  [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
 The too full resolution rule is listed in the advance counters rules.
 
 [!<recentBreastsLargeness:Integer>*
@@ -205,23 +222,6 @@ REQUIRES COMMENTING
 This is the recent breasts largeness rule:
 	now recent-breasts-largeness is the largeness of breasts.
 The recent breasts largeness rule is listed in the advance counters rules.
-
-[!<TheKitsuneVanishesRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the kitsune vanishes rule:
-	let M be a random kitsune;
-	if the vanish timer of M > -1:
-		if the vanish timer of M is 0:
-			if M is in the location of the player:
-				say "The kitsune vanishes in a puff of pink smoke!";
-			regionally place M;
-			bore M;
-			set up disguise of M;
-		decrease the vanish timer of M by 1.
-The kitsune vanishes rule is listed in the advance counters rules.
 
 [!<TheFirstAidCooldownRule>+
 
@@ -250,3 +250,4 @@ The pain drain cooldown rule is listed in the advance counters rules.
 
 
 Advance Counters ends here.
+

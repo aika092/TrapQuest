@@ -24,9 +24,10 @@ A person is classed as virtual if they are actually in the game that the person 
 *BWAAAAAAMP*
 
 +!]
-Definition: a person is virtual:
-	if gameover-flag is 1, decide no;
-	if the player is in the dungeon or the player is in the woods or the player is in the hotel or the player is in the mansion or the player is in woodsboss01 or the player is in iron maiden or the player is in blindfolded or the player is in sky01 or the player is in HoleInWall, decide yes.
+Definition: yourself is virtual:
+	if gameover-flag is 1 or tutorial is 1, decide no;
+	if the player is in capsule or the player is in start, decide no;
+	decide yes.
 
 [!<Player>@<travelDirection:Direction>*
 
@@ -54,35 +55,35 @@ The player has a number called room-entering.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called motion.
+The player has a number called player-motion.
 
 [!<milking:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-milking is a number that varies.  milking is usually 0.
+milking is a number that varies. milking is usually 0.
 
 [!<Player>@<alert:Integer>*
 
-REQUIRES COMMENTING
+Tells the game that something has happened that should interrupt resting / longwaiting. Needs to be set to 0 when resting / longwaiting starts.
 
 *@!]
-The player has a number called alert.  The alert of the player is usually 0.
+The player has a number called alert.
 
 [!<Player>@<faintCount:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called faint count.  The faint count of the player is usually 0.
+The player has a number called faint count. The faint count of the player is usually 0.
 
 [!<Player>@<crawlCount:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called crawl count.  The crawl count of the player is usually 0.
+The player has a number called crawl count. The crawl count of the player is usually 0.
 
 
 [!<Player>@<pregnancy:Integer>*
@@ -90,29 +91,21 @@ The player has a number called crawl count.  The crawl count of the player is us
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called pregnancy.  The pregnancy of the player is usually 0.
+The player has a number called pregnancy. The pregnancy of the player is usually 0.
 
 [!<Player>@<pregnancyRate:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called pregnancy rate.  The pregnancy rate of the player is usually 1.
+The player has a number called pregnancy rate. The pregnancy rate of the player is usually 1.
 
 [!<Player>@<children:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called children.  The children of the player is usually 0.
-
-[!<Player>@<questionAsked:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-The player has a number called question-asked.  The question-asked of the player is usually 1.
-
+The player has a number called children.
 
 [!<Player>@<delayedArousal:Integer>*
 
@@ -168,7 +161,7 @@ The player has a number called latex-transformation.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called extra lives.  The extra lives of the player is usually 3.
+The player has a number called extra lives. The extra lives of the player is usually 3.
 
 
 [!<Person>@<souled:Boolean>*
@@ -225,7 +218,7 @@ The player has a number called enhanced.
 REQUIRES COMMENTING
 
 @!]
-person-reaction is a kind of value.  The person-reactions are unprepared, resisting, submitting, begging for mercy.
+person-reaction is a kind of value. The person-reactions are unprepared, resisting, submitting, begging for mercy.
 
 [!<Player>@<playerReaction:PersonReaction>*
 
@@ -243,6 +236,7 @@ To decide which number is the reaction of the player: [TODO eventually remove]
 	if the player-reaction of the player is resisting, decide on 0;
 	if the player-reaction of the player is submitting, decide on 1;
 	if the player-reaction of the player is begging for mercy, decide on 2;
+	if wanking is 1, decide on 1;[you always submit when you wank]
 	if the delicateness of the player > 8, decide on 1;
 	decide on 0.
 
@@ -268,63 +262,63 @@ Incontinence is a number that varies.
 REQUIRES COMMENTING
 
 *!]
-Delayed Stand is a number that varies.  Delayed Stand is 0.
+Delayed Stand is a number that varies. Delayed Stand is 0.
 
 [!<delayedUrination:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Delayed Urination is a number that varies.  Delayed Urination is 0.
+Delayed Urination is a number that varies. Delayed Urination is 0.
 
 [!<delayedFainting:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Delayed Fainting is a number that varies.  Delayed Fainting is 0.
+Delayed Fainting is a number that varies. Delayed Fainting is 0.
 
 [!<startingEarnings:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Starting-earnings is a number that varies.  Starting-earnings is 999999.
+Starting-earnings is a number that varies. Starting-earnings is 999999.
 
 [!<earnings:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Earnings is a number that varies.  Earnings is 0.
+Earnings is a number that varies. Earnings is 0.
 
 [!<seconds:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Seconds is a number that varies.  Seconds is 0.
+Seconds is a number that varies. Seconds is 0.
 
 [!<victory:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Victory is a number that varies.  Victory is 0.
+Victory is a number that varies. Victory is 0.
 
 [!<virginCursed:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-Virgincursed is a number that varies.  Virgincursed is 0.
+Virgincursed is a number that varies. Virgincursed is 0.
 
 [!<lastLactatedTime:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-last-lactated-time is a number that varies.  last-lactated-time is 0.
+last-lactated-time is a number that varies. last-lactated-time is 0.
 [The idea of last-lactated-time is that the player will smell of milk for a while after lactating, and possibly exciting some monsters when they scent it. At present, that's just the fairies.]
 
 [!<decideToSuckle:Integer>*
@@ -348,11 +342,6 @@ REQUIRES COMMENTING
 *!]
 FairySuckleSlashes is a number that varies. FairySuckleSlashes is 0.
 
-[!<Player>@<magicPower:Integer>*
-
-This variable builds as you defeat tentacle monsters and allows you to purify the tentacle spawners
-
-*!]
-The player has a number called magic-power. The magic-power of the player is usually 0.
 
 Misc Variables ends here.
+

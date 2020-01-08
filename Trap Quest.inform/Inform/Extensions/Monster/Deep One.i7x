@@ -1,34 +1,36 @@
 Deep One by Monster begins here.
 
-A deep one is a kind of monster. A deep one is usually male. [A deep one is usually intelligent. ]There is 1 deep one. A deep one is usually willing to do vaginal. A deep one is usually willing to do anal. The difficulty of a deep one is usually 12. A deep one is usually captive. A deep one is usually father material. Understand "deepone" as deep one.
+deep one is a monster. The difficulty of deep one is 12. Understand "deepone" as deep one. deep one is male. The text-shortcut of deep one is "do".
 
-The printed name of a deep one is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style]deep one[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The description of a deep one is usually "[DeepOneDesc]".  The text-shortcut of deep one is "do". 
+deep one can be angered.
 
-A deep one has a number called angered. The angered of a deep one is usually 0.
+Figure of deep one is the file "NPCs/Mansion/deepone1.png".
+Figure of family friendly deep one is the file "NPCs/Mansion/deepone2.png".
 
-Figure of deep one is the file "deepone1.png".
+To decide which figure-name is the monster-image of (M - deep one):
+	if diaper quest is 1, decide on figure of family friendly deep one;
+	decide on figure of deep one.
 
-To say DeepOneDesc:
-	if images visible is 1, display figure of deep one;
-	say "The creature before you resembles nothing so much as a horrible cross between fish, frog, and man. Its grey-blue skin is moist and lightly covered in scales, and it reeks of the sea. In spite of its hunched gait, you can tell it is quite tall and terribly strong. Its size extends to more than just height, the most human part of the creature is the huge, throbbing erection between its legs. It actually has the air of intelligence, but you're not sure how you could communicate with it.".
+To say ShortDesc of (M - deep one):
+	say "deep one".
 
-To set up (M - a deep one):
+To say MediumDesc of (M - deep one):
+	say "deep one".
+
+To say MonsterDesc of (M - deep one):
+	say "The creature before you resembles nothing so much as a horrible cross between fish, frog, and [man of M]. [big his of M] grey-blue skin is moist and lightly covered in scales, and [he of M] reeks of the sea. In spite of [his of M] hunched gait, you can tell [he of M] is quite tall and terribly strong. [if diaper quest is 0][big his of M] size extends to more than just height, the most human part of the creature is the huge, throbbing [DickDesc of M] between [his of M] legs. [end if][he of M] has the air of human-level intelligence.".
+
+To set up (M - deep one):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 10;
 	now the health of M is the maxhealth of M;
 	anger M.
 
-Definition: a deep one (called M) is dangerous:
-	if M is interested and M is unfriendly and the sleep of M is 0 and the boredom of M is 0 and the health of M > 0:
-		if the scared of M is 0 or M is penetrating a body part:
-			decide yes;
-	decide no.
-
-To compute labour to (M - a deep one):
+To compute labour to (M - deep one):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  He[end if] kneels down on one knee and delivers a grotesque hybrid child, which he presents to you with a broad, fishy smile. He then leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player][BigNameDesc of father][otherwise][BigNameDesc of father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers a grotesque hybrid child, which [he of M] presents to you with a broad, fishy smile. [big he of M] then leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment and loss at the same time.";
 			StrengthUp 1;
@@ -38,60 +40,86 @@ To compute labour to (M - a deep one):
 	otherwise if M is alive:
 		Delay Labour.
 
+Definition: deep one is willing to do oral: decide no.
+
+Definition: deep one is willing to do titfucks: decide no.
+
+Definition: deep one is able to remove cursed plugs: decide yes.
+
+To compute monstermotion of (M - deep one):
+	do nothing.
+
+To compute (M - deep one) seeking (D - a direction):
+	do nothing.
+
 Part 1 - Perception
 
-To compute perception of (M - a deep one):
+Definition: deep one is objectifying the player:
+	if deep one is angered, decide yes;
+	if the player-class is cultist or the pregnancy of the player > 0 or altar-diaper-link > 0, decide no;
+	decide yes.
+
+To compute perception of (M - deep one):
 	now M is interested;
-	if the angered of M is 1:
-		say "The [M] roars in anger! This doesn[']t look good!";
-		anger M;
-	otherwise if the player-class is cultist or the pregnancy of the player > 0:
-		say "The [M] looks at you, but seems not to be concerned with your presence.";
+	if M is angered:
+		say "[BigNameDesc of M] roars in anger! This doesn't look good!";
+	otherwise if M is not objectifying the player:
+		say "[BigNameDesc of M] looks at you, but seems not to be concerned with your presence.";
 		calm M;
 	otherwise:
-		say "The [M] moves to engage you!";
+		say "[BigNameDesc of M] moves to engage you!";
 		anger M.
-		
+
 Part 2 - Combat
 
 Section 1 - Attack
 
-To compute (M - a deep one) entering asshole:
-	if M is friendly-fucking or presented-orifice is asshole, say "[FriendlyAssholePenetrationFlav of M]";
-	otherwise say "[AssholePenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating asshole;
-	AssRuin 1.
+To TimesSubmittedUp (M - deep one) by (N - a number):
+	if M is angered, now M is not angered;
+	DirectTimesSubmittedUp M by N.
 
-To compute (M - a deep one) entering vagina:
-	say "[VaginaPenetrationFlav of M]";
-	now the sex-length of M is a random number between 2 and 3;
-	now M is penetrating vagina;
-	PussyRuin 1.
-		
-To compute vaginal climax of (M - a deep one):
-	TimesFuckedUp M by 1;
-	say "The [M] ejaculates deep inside your [vagina]!";
-	WombFill the semen load of M;
-	now M is not penetrating vagina;
-	if the angered of M > 0:
-		now the angered of M is 0;
-	bore M.
+To say CreampieFlav of (M - deep one) in (F - a fuckhole):[TODO]
+	say "[BigNameDesc of M] ejaculates deep inside your [variable F]!".
 
-To compute anal climax of (M - a deep one):
-	TimesFuckedUp M by 1;
-	say "The [M] ejaculates deep inside your [asshole]!";
-	AssFill the semen load of M;
-	now M is not penetrating asshole;
-	if the angered of M > 0:
-		now the angered of M is 0;
-	bore M.
+To say CondomPieFlav of (M - deep one) in (F - a fuckhole):
+	say "[BigNameDesc of M] ejaculates into the condom.";
+
+To decide if (M - deep one) is willing to creampie (F - a fuckhole):
+	if F is vagina:
+		if pregnancy fetish is 1 and the pregnancy of the player > 0, decide yes;
+	let X be (the number of worn swimming themed wearthing) * 5;
+	if there is a lubricant covering F, increase X by 2;
+	if a random number between -2 and X > -1, decide yes;
+	decide no.
+
+Section 2 - DQ
+
+Definition: deep one is willing to deliver enemas: decide yes.
+
+To say EnemaStartFlav of (M - deep one):
+	say "[BigNameDesc of M] opens [his of M] mouth wide. Inside, you can see that [his of M] groteque tongue is actually more of a hollow tube. Without a moment's hesitation, [he of M] begins to push this powerful tube-muscle into your unprotected [asshole]!".
+
+To say EnemaFlav of (M - deep one):
+	say "[BigNameDesc of M] [one of]makes a weird gurgling sound[or]makes a low humming sound[or]makes a clicking sound[in random order] as water pumps [one of]into your belly[or]up your anal passage[or]into you[at random] from [one of]inside [his of M] body[or][his of M] alien tongue[at random].".
+
+To say EnemaAftermath of (M - deep one):
+	say "[BigNameDesc of M] pulls [his of M] tube-like tongue from your [asshole] with a noisy slurp, and then [he of M] releases you.".
 	
-Section 2 - Damage
+To decide which number is the enema quarts of (M - deep one):
+	decide on a random number between 2 and 3.
 
-To compute damage of (M - a deep one):
+Definition: deep one is willing to confiscate: decide yes.
+
+Definition: deep one (called M) is eager to confiscate:
+	if M is able to confiscate, decide yes;
+ 	decide no.
+
+
+Section 3 - Damage
+
+To compute damage of (M - deep one):
 	if the health of M > 0:
-		if M is uninterested:
+		if M is uninterested or M is friendly:
 			say "The creature shrieks in rage!";
 			now M is interested;
 			anger M;
@@ -100,21 +128,29 @@ To compute damage of (M - a deep one):
 	otherwise:
 		compute death of M.
 
-To say DamageReaction (N - a number) of (M - a deep one):
-	if N > (the maxhealth of M / 4) * 3:
-		say "The creature seems uninjured!";
-	otherwise if N > (the maxhealth of M / 4) * 2:
-		say "The creature doesn[']t seem to be affected by its injuries!";
-	otherwise if N > (the maxhealth of M / 4):
-		say "The creature is becoming rather frantic!";
-	otherwise:
-		say "The creature seems to be having trouble staying on its feet!".
-		
-To compute unique death of (M - a deep one):
-	say "The [noun] shrieks and falls to the ground.  ";
-	say "Its body decomposes into a foul mist, and quicker than you can react it sinks into your skin! You feel much stronger and tougher!";
-	Strengthup 2;
-	DelicateDown 4.
+To say DamageReactHealthy of (M - deep one):
+	say "The creature seems uninjured!".
 
+To say DamageReactDamaged of (M - deep one):
+	say "The creature doesn't seem to be affected by its injuries!".
+
+To say DamageReactTired of (M - deep one):
+	say "The creature is becoming rather frantic!".
+
+To say DamageReactWeak of (M - deep one):
+	say "The creature seems to be having trouble staying on its feet!".
+
+To compute unique death of (M - deep one):
+	say "[BigNameDesc of M] shrieks and falls to the ground. Its body decomposes into a foul mist, and quicker than you can react it sinks into your skin! You feel much stronger and tougher!";
+	Strengthup 2;
+	DelicateDown 2.
+
+To compute domination interference of (M - a deep one) for (N - a monster):
+	if N is acolyte:
+		say "[BigNameDesc of M] gets between you and [NameDesc of N]! Looks like you're going to have to deal with [him of M] first!";
+		now player-fucking is DOMINANT-FAILURE;
+	otherwise if M is interested:
+		say "[BigNameDesc of M] pauses, waiting to see what happens next.".
 
 Deep One ends here.
+

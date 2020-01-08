@@ -1,43 +1,126 @@
 Cumdumpster Hat by Headgear begins here.
 
 
-A cumdumpster hat is a kind of headgear.  There is 1 polyester cumdumpster hat.  Figure of cumdumpster hat is the file "cumdumpsterhat1.png".  A cumdumpster hat is usually hair growing. A cumdumpster hat is usually roleplay.
+A cumdumpster hat is a kind of headgear. A cumdumpster hat is usually hair growing. Understand "cumdumpster" as cumdumpster hat.
 
-Definition: a cumdumpster hat (called C) is fluid immune:
-	decide no.
-
-The printed name of cumdumpster hat is usually "[TQlink of item described][clothing-title-before]cumdumpster hat[clothing-title-after][TQxlink of item described][verb-desc of item described]".  The text-shortcut of cumdumpster hat is "cdh".
-
-To decide which figure-name is the clothing-image of (C - a cumdumpster hat):
-	decide on figure of cumdumpster hat.
-
-To say ClothingDesc of (H - a cumdumpster hat):
-	say "This black and white truckers hat [if H is worn]sits on your head. It [end if]has 'Cum Dumpster' written across the front in gothic letters[if the total condoms of H is 0 and the appearance of the player > 6].  The writing could be seen as ironic on such an otherwise normal hat if it wasn't for how the rest of you currently looks[end if].".
-	
-To say ShortDesc of (H - a cumdumpster hat):
-	say "cum dumpster hat.".
-
-To compute SelfExamineDesc of (H - cumdumpster hat):
-	let X be the largeness of hair;
-	say "You are wearing a hat that reads 'Cum Dumpster' on top of your [ShortDesc of hair].  ".
-	
 To set up influence of (C - a cumdumpster hat):
 	set up stat-based influence of C.
 
+To say ShortDesc of (H - a cumdumpster hat):
+	say "cum dumpster hat".
+
+Definition: a cumdumpster hat is condom pinnable: decide yes.
+
+Definition: a cumdumpster hat is semen themed: decide yes.
+
+Report wearing a cumdumpster hat:
+	if condom-pack is not carried:
+		now condom-pack is carried by the player;
+		say "Suddenly a pack of condoms appears in your hand!";
+		now condom-pack is not condom-trapped.
+
+To decide which number is the initial outrage of (C - a cumdumpster hat):
+	decide on 10.
+
+To compute unique recycling of (C - a cumdumpster hat):
+	now the condom-count of condom-eating-quest is 0.
+
+
+
+thirsty work condom hat is a cumdumpster hat. thirsty work condom hat is plastic. thirsty work condom hat is roleplay.
+The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work cumdumpster hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
+
+Figure of thirsty work condom hat is the file "Items/Accessories/Head/cumdumpsterhat2.png".
+
+To decide which figure-name is the clothing-image of (C - thirsty work condom hat):
+	decide on figure of thirsty work condom hat.
+
+To say ClothingDesc of (H - thirsty work condom hat):
+	say "This red hard hat has the words 'THIRSTY WORK' written in white on the front. Straws connect two dangling fake used condoms to your mouth, making it look like you can easily drink them.".
+
+To compute SelfExamineDesc of (H - thirsty work condom hat):
+	say "You are wearing a condom drinking hat that reads 'Thirsty Work' on top of your [ShortDesc of hair]. ".
+
+
+Definition: thirsty work condom hat is drink themed: decide yes.
+Definition: thirsty work condom hat is red themed: decide yes.
+
+Definition: thirsty work condom hat is transformation-protected: decide no.
+To decide which object is the unique-upgrade-target of (C - thirsty work condom hat):
+	decide on cumdumpster condom hat.
+
+
+cumdumpster condom hat is a cumdumpster hat. cumdumpster condom hat is plastic.
+The printed name of cumdumpster condom hat is "[clothing-title-before]purple cumdumpster hat[clothing-title-after]". The text-shortcut of cumdumpster condom hat is "pcdh". Understand "purple" as cumdumpster condom hat.
+
+Figure of cumdumpster condom hat is the file "Items/Accessories/Head/cumdumpsterhat1.png".
+
+To decide which figure-name is the clothing-image of (C - cumdumpster condom hat):
+	decide on figure of cumdumpster condom hat.
+
+To say ClothingDesc of (H - cumdumpster condom hat):
+	say "This purple hard hat has the words 'CUM DUMPSTER' written in white on the front. Straws connect six dangling fake used condoms to make it look like you plan to drink them. There's also an empty used condom glued to the front.".
+
+To compute SelfExamineDesc of (H - cumdumpster condom hat):
+	say "You are wearing a condom drinking hat that reads 'cumdumpster' on top of your [ShortDesc of hair]. ".
+
+To decide which number is the initial outrage of (C - cumdumpster condom hat):
+	decide on 16.
+
+Definition: cumdumpster condom hat is drink themed: decide yes.
+Definition: cumdumpster condom hat is purple themed: decide yes.
+
+
+
+Chapter - Class Outfit
+
+Definition: a cumdumpster hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+	if the used condoms of wearing-target > 0 and (C is not wearing-target or C is not blessed), decide yes;
+	decide no.
+
+To say RemovalBlocked of (C - a cumdumpster hat):
+	say "Your [ShortDesc of C] is somehow preventing you from taking this off while it still has used condoms on it that you haven't yet eaten!".
+
 To compute class outfit of (H - a cumdumpster hat):
-	let K be a random off-stage lycra-bodysuit;
-	if the headgear chance of H < the threshold of H * 3 and K is actually summonable: [This thing summons quickly if it can!]
-		summon K cursed;
-		now the raw-magic-modifier of K is the used condoms of H / 2;
-		say "[bold type]Your cumdumpster hat makes a weird squelching sound as a [K] suddenly appears around your body![roman type][line break]".
+	if lycra-bodysuit is off-stage and lycra-bodysuit is actually summonable:
+		summon lycra-bodysuit cursed;
+		if the raw-magic-modifier of H >= 0 or H is blessed, now the raw-magic-modifier of lycra-bodysuit is the used condoms of H / 2;
+		say "[bold type]Your cumdumpster hat makes a weird squelching sound as a [ShortDesc of lycra-bodysuit] suddenly appears around your body![roman type][line break]".
 
-To decide which number is the strength-influence of (H - a cumdumpster hat):
-	let S be total pinned condoms / 5;
-	increase S by the magic-modifier of H;
-	decide on S.
+Chapter - Quest
 
-Definition: a cumdumpster hat (called C) is condom pinnable:
-	decide yes.
+condom-eating-quest is a headgear-clothing-quest. condom-eating-quest has a number called condom-count. condom-eating-quest has a number called delayed-condom-count.
+
+To uniquely set up (C - a cumdumpster hat):
+	now the quest of C is condom-eating-quest.
+
+To say QuestFlav of (Q - condom-eating-quest):
+	say "You sense that it wants you to drink the cum from used condoms, or collect more condoms onto your clothing.".
+
+To say QuestTitle of (Q - condom-eating-quest):
+	say " (used condom collection & drinking quest)".
+
+To progress quest of (Q - condom-eating-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			increase condom-count of Q by 1;
+			if condom-count of Q > 2:
+				now the condom-count of Q is 0;
+				compute quest completion of Q on C.
+
+To compute persistent reward of (Q - condom-eating-quest) on (C - a clothing):
+	if C is cursed:
+		compute generic first time class reward of Q on C;
+	otherwise:
+		increase delayed-condom-count of Q by 1;
+		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a cumdumpster.[or]even more blessed magic![stopping]".
+
+To uniquely destroy (C - a cumdumpster hat):
+	if the delayed-condom-count of condom-eating-quest > 0 and the quest of C is condom-eating-quest:
+		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your muscles!";
+		StrengthUp the delayed-condom-count of condom-eating-quest;
+		now the delayed-condom-count of condom-eating-quest is 0.
 
 
 Cumdumpster Hat ends here.
+
