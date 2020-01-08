@@ -52,4 +52,3 @@ To compute wetting failure:
 
 
 Avoiding Accidental Wetting ends here.
-

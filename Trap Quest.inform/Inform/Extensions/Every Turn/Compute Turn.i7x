@@ -231,7 +231,4 @@ To compute turn:
 	if newbie tips is 1, say other tips.
 
 
-
-
 Compute Turn ends here.
-

@@ -30,4 +30,3 @@ To compute creepiness:[first implementation of "creeping" of ghosts in non-garli
 
 
 Creepiness ends here.
-

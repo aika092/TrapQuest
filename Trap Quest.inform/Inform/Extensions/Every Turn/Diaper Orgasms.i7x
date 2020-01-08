@@ -62,4 +62,3 @@ To decide which number is the stimulation of (D - a diaper) on (F - a body part)
 	decide on 1 + (the square root of the diaper addiction of the player).
 
 Diaper Orgasms ends here.
-

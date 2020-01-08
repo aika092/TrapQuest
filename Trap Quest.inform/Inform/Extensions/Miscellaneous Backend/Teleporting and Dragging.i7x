@@ -68,11 +68,10 @@ To check shopstealing of (M - a monster):
 		repeat with C running through held store clothing:
 			compute stealing of C;
 		if X > 0:
-			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault. [line break][speech style of M]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
+			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault. [line break][speech style of M]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
 			now shopkeeper is interested;
 			increase the stolen-aware of shopkeeper by 1;
 			anger shopkeeper.
 
 
 Teleporting and Dragging ends here.
-

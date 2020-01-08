@@ -22,4 +22,3 @@ To decide which number is the initial outrage of (C - a white string bikini top)
 Definition: a white string bikini top is white themed: decide yes.
 
 White String Bikini Top ends here.
-

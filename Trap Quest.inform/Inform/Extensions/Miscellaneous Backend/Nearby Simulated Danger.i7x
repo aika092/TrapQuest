@@ -115,4 +115,3 @@ Report going down:
 
 
 Nearby Simulated Danger ends here.
-

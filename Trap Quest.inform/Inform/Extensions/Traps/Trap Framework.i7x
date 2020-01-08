@@ -362,6 +362,4 @@ To trigger (Y - a grabby trap):
 ]
 
 
-
 Trap Framework ends here.
-

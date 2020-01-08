@@ -75,7 +75,7 @@ Definition: yourself is dildo stuck:
 
 
 [doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to
- force you to pose like a little dolly.  In this case, the only such trap will be one that makes you pose
+ force you to pose like a little dolly. In this case, the only such trap will be one that makes you pose
  like a ballerina - because you're wearing ballerina wearables.
  If it's set to "", it's a flag that you're not currently stuck like that.
  To be used in case we use some randomness to decide whether the 'pose' attack initiates.
@@ -89,9 +89,9 @@ Definition: yourself is dildo stuck:
 	1: Ballerina.
 	2: TBD
 ]
-doll-stuck is a text that varies.  doll-stuck is "".
-doll-stuck-num is a number that varies.  doll-stuck-num is 0.
-doll-stuck-kind is a number that varies.  doll-stuck-kind is 0.
+doll-stuck is a text that varies. doll-stuck is "".
+doll-stuck-num is a number that varies. doll-stuck-num is 0.
+doll-stuck-kind is a number that varies. doll-stuck-kind is 0.
 
 [!<YourselfIsHorseStuck>+
 
@@ -144,4 +144,3 @@ To say SubduedGrabFlav of (C - clothing):
 	if the player is glue stuck, say "[variable custom style]Oh no, this is gonna hurt![roman type][line break]".
 
 Immobility ends here.
-

@@ -241,7 +241,6 @@ To say QuestTitle of (Q - cum-swallowing-quest):
 	say " (cum swallowing quest)".
 
 
-
 Part - Piss Drinking Quest
 
 piss-drinking-quest is a clothing-quest. piss-drinking-quest is persistent.
@@ -328,7 +327,6 @@ To say QuestTitle of (Q - vaginal-virginity-quest):
 	say " (vaginal sex quest)".
 
 
-
 Part - Egg Laying Quest
 
 egg-laying-quest is a clothing-quest.
@@ -351,7 +349,6 @@ To say QuestTitle of (Q - egg-laying-quest):
 	say " (egg laying quest)".
 
 
-
 Part - Interracial Presenting Quest
 
 interracial-sex-quest is a clothing-quest.
@@ -372,8 +369,6 @@ To say QuestFlav of (Q - interracial-sex-quest):
 
 To say QuestTitle of (Q - interracial-sex-quest):
 	say " (interracial sex seeking quest)".
-
-
 
 
 Part - Titfuck Quest
@@ -410,8 +405,6 @@ To progress quest of (Q - titfuck-quest):
 				say QuestProgressFlav of Q on C.
 
 
-
-
 Part - Creampie Drinking Quest
 
 creampie-drinking-quest is a clothing-quest.
@@ -431,7 +424,6 @@ To say QuestFlav of (Q - creampie-drinking-quest):
 
 To say QuestTitle of (Q - creampie-drinking-quest):
 	say " (creampie drinking quest)".
-
 
 
 Part - Milk Drinking Quest
@@ -676,8 +668,6 @@ To compute persistent reward of (Q - swimming-quest) on (C - a clothing):
 	SemenAddictUp 1.
 
 
-
-
 Part - Poking Quest
 
 poking-quest is a clothing-quest.
@@ -693,7 +683,6 @@ To say QuestFlav of (Q - poking-quest):
 
 To say QuestTitle of (Q - poking-quest):
 	say " (poking quest)".
-
 
 
 Part - Crawling Quest
@@ -714,7 +703,6 @@ To say QuestTitle of (Q - crawling-quest):
 
 To set up (Q - crawling-quest):
 	now the crawl count of the player is 0.
-
 
 
 Part - Inking Quest
@@ -739,7 +727,6 @@ To compute persistent reward of (Q - inking-quest) on (C - a clothing):
 	now the fatigue of the player is 0;
 	heal asshole times 10;
 	heal vagina times 10.
-
 
 
 Part - Lever Quest
@@ -831,7 +818,6 @@ To say QuestPersistFlav of (Q - a bursting-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to pee on purpose by[otherwise if C is bland and Q is headgear-clothing-quest]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to pee on purpose by[otherwise]Your [MediumDesc of C] rewards your continued bladder holding efforts by[end if] ".
 
 
-
 Part - Next Lesson Quest
 
 next-lesson-quest is a clothing-quest. next-lesson-quest is persistent.
@@ -854,7 +840,6 @@ To compute persistent reward of (Q - next-lesson-quest) on (C - a clothing):
 		say "dropping an [A] into your hand.";
 	otherwise:
 		say "filling your mind with a reminder to eat your fruit.".
-
 
 
 Part - Show and Tell Quest
@@ -881,7 +866,6 @@ To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
 	otherwise:
 		say "filling your mind with pure thoughts.";
 		SexAddictDown 1.
-
 
 
 To progress quest of (Q - show-and-tell-quest) for (M - a monster):
@@ -939,7 +923,6 @@ A time based rule:
 		now the plug-count of plug-quest is 0.
 
 
-
 Part - Hotel Altar Quest
 
 hotel-altar-quest is a clothing-quest.
@@ -957,7 +940,6 @@ To say QuestTitle of (Q - hotel-altar-quest):
 	say " (hotel altar quest)".
 
 
-
 Part - New Region Quest
 
 new-region-quest is a clothing-quest.
@@ -973,7 +955,6 @@ To say QuestFlav of (Q - new-region-quest):
 
 To say QuestTitle of (Q - new-region-quest):
 	say " (region discovery quest)".
-
 
 
 Part - Throne Quest
@@ -995,7 +976,6 @@ To set up (Q - throne-quest):
 	now the charge of throne is 0.
 
 
-
 Part - Attack Provocation Quest
 
 attack-quest is a clothing-quest. attack-quest is persistent.
@@ -1012,8 +992,6 @@ To say QuestTitle of (Q - attack-quest):
 	say " (alliance breaking quest)".
 
 
-
-
 Part - Predicament Quest
 
 predicament-quest is a clothing-quest.
@@ -1026,7 +1004,6 @@ To say QuestFlav of (Q - predicament-quest):
 
 To say QuestTitle of (Q - predicament-quest):
 	say " (predicament completion quest)".
-
 
 
 Quests ends here.

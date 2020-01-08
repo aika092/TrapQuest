@@ -45,4 +45,3 @@ To say ShortDesc of (C - a bat corset):
 	say "bat corset".
 
 Bat Corset ends here.
-

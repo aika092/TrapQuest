@@ -23,7 +23,6 @@ To compute SelfExamineDesc of (H - a metal tiara):
 	say "You are wearing a[if the bimbo of the player > 11]n[line break][second custom style] absolutely gorgeous and shiny[roman type][line break][end if] metal [ShortDesc of H] on top of your [ShortDesc of hair]. ".
 
 
-
 Chapter - Class Outfit
 
 Definition: a tiara (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -79,4 +78,3 @@ To say QuestTitle of (Q - stealth-diaper-quest):
 
 
 Tiara ends here.
-

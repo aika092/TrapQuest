@@ -298,4 +298,3 @@ To decide what number is the vaginal defence of the player:
 
 
 Orifice Protection ends here.
-

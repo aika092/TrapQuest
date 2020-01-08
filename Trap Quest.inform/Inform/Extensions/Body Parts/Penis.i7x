@@ -248,7 +248,7 @@ REQUIRES COMMENTING
 +!]
 To say PenisFlavour (N - a number):
 	if N is 0:
-		say "barbie doll style lack of genitalia";
+		say "Barbie doll style lack of genitalia";
 	otherwise:
 		if N is 1, say "[PenisSizeFlav N], [PenisShaftFlav N]";
 		otherwise say "[PenisSizeFlav N] [PenisShaftFlav N]".
@@ -409,6 +409,4 @@ To PenisDown (X - a number):
 		now Shrink is "shrink".
 
 
-
 Penis ends here.
-

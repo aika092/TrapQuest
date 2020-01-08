@@ -42,4 +42,3 @@ To compute MonsterSetUpFix:
 Definition: a monster is nonsetup if the monstersetup of it is 0.
 
 Set Up Monsters ends here.
-

@@ -164,4 +164,3 @@ Definition: A room is furnished rather than unfurnished if there is furniture in
 
 
 Room Adjectives ends here.
-

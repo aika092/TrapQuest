@@ -76,7 +76,4 @@ To decide which object is the unique-upgrade-target of (C - a leotard):
 	otherwise decide on a random off-stage teddybear playsuit.
 
 
-
-
 Leotard ends here.
-

@@ -121,19 +121,6 @@ Definition: a bit gag is orange themed: decide yes.
 Definition: a bit gag is fetish appropriate: decide no. [Never appears randomly]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 outrageous-gag is a humiliating situation.
 Definition: outrageous-gag (called A) is applicable:
 	if the player is not disgraced and the bimbo of the player < 14 and there is a worn gag, decide yes;
@@ -145,7 +132,6 @@ To reflect on (A - outrageous-gag):
 	if G is cock pacifier, say "[variable custom style][if the oral sex addiction of the player > 6]I guess it's pretty embarrassing to have this fake [manly-penis] in my mouth, but at least it keeps me hydrated! Yum![otherwise]This [manly-penis] pacifier is so humiliating. Not only can everyone see that I've got a pacifier in my mouth, but while it's in my mouth I'm basically permanently sucking [manly-penis]![end if]";
 	if G is opengag, say "[variable custom style]I can't even talk with this gag in my mouth, and it makes me look like I'm always ready to suck dick. Yuck!";
 	say "[roman type][line break]".
-
 
 
 Chapter - Wearability
@@ -165,4 +151,3 @@ This is the mouth already full rule:
 The mouth already full rule is listed in the gag wearability rules.
 
 Gags ends here.
-

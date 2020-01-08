@@ -36,7 +36,7 @@ To say the/-- captured text:
 
 Part 3 - I6 Code
 
-Include (-	Global capture_active = 0;	-).
+Include (- Global capture_active = 0; -).
 
 Chapter Z - Z-Machine Version (for Z-Machine Only)
 
@@ -207,7 +207,7 @@ Example: * Intelligent Putting - Using text capture to improve implicit take mes
 
 It generally makes for smoother game-play if commands like PUT BALL IN BOX or PUT BOX ON TABLE perform an implicit take when the object to be put somewhere isn't already held. We generally do this by saying "(first taking the whatever)" and then using 'silently try taking the whatever' to attempt the implicit take.
 
-If, however, the attempted take  doesn't succeed (perhaps because the object we're trying to take is fixed in place), then a message like "(first taking the whatever)" is a little misleading, since we have not in fact taken the object in question, we have merely attempted to do so. In this situation "(first trying to take the whatever)" would be more appropriate. The difficulty is that we don't know whether 'silently try taking the whatever' will succeed until we try it, so we don't know whether we want "first taking..." or "first trying to take..." until we've tried to take the object and maybe seen a message explaining why we can't; but we'd then want "(first trying to take the whatever)" to be displayed before the message explaining why it couldn't be taken.
+If, however, the attempted take doesn't succeed (perhaps because the object we're trying to take is fixed in place), then a message like "(first taking the whatever)" is a little misleading, since we have not in fact taken the object in question, we have merely attempted to do so. In this situation "(first trying to take the whatever)" would be more appropriate. The difficulty is that we don't know whether 'silently try taking the whatever' will succeed until we try it, so we don't know whether we want "first taking..." or "first trying to take..." until we've tried to take the object and maybe seen a message explaining why we can't; but we'd then want "(first trying to take the whatever)" to be displayed before the message explaining why it couldn't be taken.
 
 One way round this is to capture the output from the take action, then test whether it succeeded so we can decide what form of the implicit take message to use, and only then display the captured message if we need to explain why the take failed.
 

@@ -31,4 +31,3 @@ This is the skirts can't be summoned with short skirts fetish rule:
 The skirts can't be summoned with short skirts fetish rule is listed in the global wearability rules.
 
 Short Skirt Addiction ends here.
-

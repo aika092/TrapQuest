@@ -83,7 +83,7 @@ To compute vine betrothal:
 		if princess-consort is the throne:
 			now princess-consort is vine boss;
 			now royal scepter is worn by the player;
-			say "You find yourself peering wistfully at the ground below you, and somehow, you know that under there something is looking up at you. A [printed name of royal scepter] appears in your hand, as if to symbolize the blossoming of your connection.";
+			say "You find yourself peering wistfully at the ground below you, and somehow, you know that under there something is looking up at you. A [printed name of royal scepter] appears in your hand, as if to symbolise the blossoming of your connection.";
 			now the player is vine-cursed.
 
 To compute (M - vine boss) removing (C - a thing): [This is used for removing insertables]
@@ -249,4 +249,3 @@ To loot (M - vine boss):
 
 
 Vine Boss ends here.
-

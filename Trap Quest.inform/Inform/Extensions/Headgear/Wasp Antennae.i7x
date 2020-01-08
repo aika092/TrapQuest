@@ -79,4 +79,3 @@ after you have laid enough eggs, you start very slowly producing them yourself i
 
 
 Wasp Antennae ends here.
-

@@ -150,4 +150,3 @@ To StrengthDown (X - a number):
 
 
 Strength ends here.
-

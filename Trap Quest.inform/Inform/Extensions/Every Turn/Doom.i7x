@@ -31,7 +31,7 @@ A later time based rule (this is the compute doom rule):
 					if M is not acolyte and M is not deep one, remove M from L;
 				if the number of entries in L > 0 and the player is not in danger, say "You want to perform the ritual [one of]to send the elder ones back to sleep [or][stopping]but you can't until the room is clear of all threats who would probably interrupt you - [L].";
 			otherwise:
-				say "[bold type]You pull out the paper the witch gave you and try to figure out what exactly you are supposed to do.[roman type] [if the raw intelligence of the player > 12]Fortunately you find it quite straightforward. [otherwise if the raw intelligence of the player > 7]It's a bit complicated but you eventually work it out. [otherwise]You honestly have no idea what any of this means, but it seemed the witch planned for that too because it ends with 'LOOK JUST LIGHT THE CANDLE, RING THE BELL, PICK UP THE BOOK, AND SAY GO FUCK OFF.'[line break][end if]As you carry out the instructions, there is a huge rush of air, a terrible noise, and a brief whiff of ozone. Afterwards the air feels still, and you believe you may have succeeded.";
+				say "[bold type]You pull out the paper the witch gave you and try to figure out what exactly you are supposed to do.[roman type] [if the raw intelligence of the player > 12]Fortunately you find it quite straightforward. [otherwise if the raw intelligence of the player > 7]It's a bit complicated but you eventually work it out. [otherwise]You honestly have no idea what any of this means, but it seemed the witch planned for that too because it ends with 'LOOK, JUST LIGHT THE CANDLE, RING THE BELL, PICK UP THE BOOK, AND SAY GO FUCK OFF.'[line break][end if]As you carry out the instructions, there is a huge rush of air, a terrible noise, and a brief whiff of ozone. Afterwards the air feels still, and you believe you may have succeeded.";
 				now doom counter is -1;
 				now doomed is -1;
 				if the pink sphere is in the location of the player:
@@ -125,7 +125,7 @@ A later time based rule (this is the compute doom rule):
 					SexAddictUp 2;
 					SemenAddictUp 2;
 					DelicateUp 2;
-				Resolve Doom;[spawn valleyhotep and remove the pink bubble]
+				Resolve Doom; [spawn valleyhotep and remove the pink bubble]
 		otherwise:
 			if the gifted of herald > 0, decrease the gifted of herald by 1.
 
@@ -202,4 +202,3 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 
 
 Doom ends here.
-

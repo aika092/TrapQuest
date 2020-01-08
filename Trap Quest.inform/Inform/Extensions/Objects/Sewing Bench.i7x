@@ -12,4 +12,3 @@ To say ExamineDesc of (C - sewing bench):
 
 
 Sewing Bench ends here.
-

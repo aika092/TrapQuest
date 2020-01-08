@@ -87,13 +87,10 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 	change the text of the player's command to "finish setting".
 
 
-
 This is the setup custom flavour rule:
 	follow the quit rule;
 	now setting-info is 1;
 	now setting-instruction is "Enter a type of woman who it would be weird for you to interact with sexually, for example maybe it's your 'old babysitter' or 'ex-teacher' or 'boss' or 'landlord' (the current entry is [FriendRole]): ";
-
-
 
 
 After reading a command when setting-male-names > 0 (this is the custom male name choosing rule):
@@ -174,6 +171,4 @@ This is the setup custom female name rule:
 	now setting-instruction is "Enter a name for your (female) player at between 1 and 3 (out of 20) bimbo (the current entry is [name in row 1 of the Table of Custom Female Name]): ";
 
 
-
 Info Options ends here.
-

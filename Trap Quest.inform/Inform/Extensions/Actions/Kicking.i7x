@@ -108,4 +108,3 @@ Understand "kick [something]", "ki [something]" as kicking.
 
 
 Kicking ends here.
-

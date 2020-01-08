@@ -311,7 +311,7 @@ To LakeMonsterCheck (S - a number):
 	repeat with T running through lake monsters in the location of the player:
 		now R is 0;
 	if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 9999;
-	if (R * 40 < the semen-sniffing of L) or  (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):[if a number between 800 and 1000 is less than L]
+	if (R * 40 < the semen-sniffing of L) or (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):[if a number between 800 and 1000 is less than L]
 		if the dexterity of the player + (the number of worn swimming themed wearthing * 10) < a random number between 7 and 25 or acolyte-chestpiece is worn:
 			allocate 6 seconds;
 			if R is 0, say "[line break]The tentacle monster sends one of its tentacles to grab your leg! You're caught!";
@@ -339,6 +339,4 @@ To LakeMonsterCheck (S - a number):
 		display entire map.
 
 
-
 Lake Monster ends here.
-

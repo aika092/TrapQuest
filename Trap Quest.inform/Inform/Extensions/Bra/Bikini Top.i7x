@@ -32,4 +32,3 @@ To decide which object is the unique-upgrade-target of (C - a bikini top):
 	decide on nothing.
 
 Bikini Top ends here.
-

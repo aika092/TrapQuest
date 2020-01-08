@@ -455,7 +455,7 @@ To say SuddenPregTitle of (M - a thing):
 	say "[ShortDesc of M]".
 
 To say SuddenPregFlav of (M - a thing):
-	say "Suddenly[one of] and impossibly,[or][stopping] your belly bulges out to a [if the semen volume of vagina is 50]gigantic[otherwise]huge[end if] size! [one of][unless the father is the throne]You instinctively know that the [SuddenPregTitle of the father] has just made you pregnant.[end if][line break][variable custom style][if the semen addiction of the player < 7]Oh COME ON! You're seriously telling me that[otherwise]So[end if] this is how pregnancy works in this game?[or]You are once again instantly brought to full term pregnancy.[line break][variable custom style][if the semen addiction of the player > 14]Yippee![otherwise]Oof! So heavy...[end if][stopping][roman type][line break]".
+	say "Suddenly[one of] and impossibly,[or][stopping] your belly bulges out to a [if the semen volume of vagina >= 50]gigantic[otherwise]huge[end if] size! [one of][unless the father is the throne]You instinctively know that the [SuddenPregTitle of the father] has just made you pregnant.[end if][line break][variable custom style][if the semen addiction of the player < 7]Oh COME ON! You're seriously telling me that[otherwise]So[end if] this is how pregnancy works in this game?[or]You are once again instantly brought to full term pregnancy.[line break][variable custom style][if the semen addiction of the player > 14]Yippee![otherwise]Oof! So heavy...[end if][stopping][roman type][line break]".
 
 [!<PussyEmptyX>+
 
@@ -592,4 +592,3 @@ To cancel father material of (F - vagina):
 
 
 Vagina ends here.
-

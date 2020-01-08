@@ -86,7 +86,4 @@ To SilentlyVaginalSexAddictDown:
 	if the raw vaginal sex addiction of the player > 1, decrease the raw vaginal sex addiction of the player by 1.
 
 
-
-
 Vaginal Sex Addiction ends here.
-

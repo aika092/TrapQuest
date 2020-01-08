@@ -32,4 +32,3 @@ To say ClothingDesc of (C - a ballet heels):
 Definition: a ballet heels is ballet related: decide yes.
 
 Ballet Heels ends here.
-

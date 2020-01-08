@@ -1,6 +1,6 @@
 Nighties by Dresses begins here.
 
-A nightie is a kind of overdress. A nightie is usually sheer. A nightie is usually short. A nightie is usually silk. A nightie is usually transformation-rare. Understand "nightie" as nightie. A nightie is usually not-top-displacable. A nightie is usually delicateness-influencing.  A nightie has a number called charge.
+A nightie is a kind of overdress. A nightie is usually sheer. A nightie is usually short. A nightie is usually silk. A nightie is usually transformation-rare. Understand "nightie" as nightie. A nightie is usually not-top-displacable. A nightie is usually delicateness-influencing. A nightie has a number called charge.
 
 Definition: a nightie is sissifying: decide yes.
 Definition: a nightie is pink themed: decide yes.
@@ -159,4 +159,3 @@ To say ShortDesc of (C - a flimsy pink nightie):
 
 
 Nighties ends here.
-

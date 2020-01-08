@@ -56,4 +56,3 @@ To decide which object is the potential-upgrade-target of (C - a court heels):
 	decide on nothing.
 
 Court Heels ends here.
-

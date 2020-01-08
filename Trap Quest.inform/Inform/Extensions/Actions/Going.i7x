@@ -458,7 +458,7 @@ Check going:
 				unless the player is in agreement, say "You change your mind." instead;
 		repeat with ST running through futanari slutty sisters in L:
 			unless ST is asleep or ST is off-stage or the wealth of the player < 20:
-				say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
+				say "You can see [if the number of alive slutty sisters > 1]the two [boy of ST]s[otherwise]one of the [boy of ST]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 				unless the player is bimbo consenting, say "You change your mind." instead;
 		if robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
@@ -659,7 +659,6 @@ This is the player trips on lever rule:
 The player trips on lever rule is listed in the clumsiness rules.
 
 
-
 [!<TheMonstersGoNextRule>+
 
 REQUIRES COMMENTING
@@ -737,7 +736,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 		compute stealing of C;
 		if shopkeeper is not mating:
 			increase the stolen-aware of shopkeeper by 1;
-			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
+			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
 			repeat with M running through alive royal guards:
 				deinterest M;
 				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
@@ -939,7 +938,6 @@ To Trigger A Pressure Trap:
 				now N is 1.
 
 
-
 [!<YourselfIsWalkingIntoAWireTrap>+
 
 REQUIRES COMMENTING
@@ -1027,4 +1025,3 @@ To Place Permanent Triggered Wire:
 
 
 Going ends here.
-

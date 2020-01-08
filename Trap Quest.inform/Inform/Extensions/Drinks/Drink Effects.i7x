@@ -165,7 +165,6 @@ To compute drinking effect (N - 2):
 		VaginalSexAddictDown 1.
 
 
-
 [!<ComputeDrinkingEffect3>+
 
 REQUIRES COMMENTING
@@ -257,7 +256,6 @@ To compute drinking effect (N - 7):
 		say "You sense that something good has happened, but you don't know where[if debugmode >= 1] (DEBUG: It was the [C] in the [location of C])[end if].".
 
 
-
 Definition: a clothing (called C) is positive-magic-enhanceable:
 	if C is not magic-enhanceable, decide no;
 	if the raw-magic-modifier of C < 0, decide no;
@@ -321,6 +319,4 @@ To compute drinking effect (N - 23):
 	if lactation fetish is 1, increase the fat-burning of the player by 250.
 
 
-
 Drink Effects ends here.
-

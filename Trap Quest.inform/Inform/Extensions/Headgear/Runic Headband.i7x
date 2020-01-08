@@ -124,8 +124,4 @@ To compute persistent reward of (Q - altar-sex-quest) on (C - a clothing):
 			compute autotaking ritual-beads.
 
 
-
-
-
 Runic Headband ends here.
-

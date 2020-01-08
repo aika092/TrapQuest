@@ -7,7 +7,6 @@ Version 5/150123 of Glulx Text Effects (for Glulx only) by Emily Short begins he
 Use authorial modesty.
 
 
-
 Chapter - Specifying styles
 
 [ It is important that the values be specified precisely in the following orders, because otherwise the I6 assumptions about the relation of named values to number constants will be wrong. ]
@@ -22,7 +21,6 @@ A font weight is a kind of value.
 The font weights are light-weight, regular-weight, and bold-weight.
 
 
-
 Section - The Table of User Styles definition
 
 [ This table is given its own section so that it can be replaced to add extra columns needed by other extensions (such as Flexible Windows) ]
@@ -30,7 +28,6 @@ Section - The Table of User Styles definition
 Table of User Styles
 style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 with 1 blank row
-
 
 
 Chapter - Sorting the Table of User Styles
@@ -74,7 +71,6 @@ Before starting the virtual machine (this is the sort the Table of User Styles r
 			otherwise:
 				now row1 is row2;
 		increment row2;
-
 
 
 Chapter - Setting the styles - unindexed
@@ -184,7 +180,6 @@ Include (-
 -).
 
 
-
 Chapter - Additional style phrases
 
 To say alert style:
@@ -217,9 +212,7 @@ To say second special/custom style:
 	(- glk_set_style( style_User2 ); -).
 
 
-
 Glulx Text Effects ends here.
-
 
 
 ---- Documentation ----
@@ -227,10 +220,9 @@ Glulx Text Effects ends here.
 Glulx Text Effects provides an easy way to set up special text effects for Glulx.
 
 
-
 Chapter: Styles in Glulx
 
-Unlike the Z-Machine, which allows arbitrary combinations of features (such as color and boldness) to be applied to text, Glulx requires the author to define and then use text styles.
+Unlike the Z-Machine, which allows arbitrary combinations of features (such as colour and boldness) to be applied to text, Glulx requires the author to define and then use text styles.
 
 There are eleven of these styles:
 
@@ -250,7 +242,6 @@ There are eleven of these styles:
 Additionally, when defining styles you can set "all-styles" which will define all eleven styles at once.
 
 
-
 Chapter: Style features
 
 Each text style has the following features:
@@ -268,7 +259,6 @@ Each text style has the following features:
 	reversed	a truth state (default: false). If true then the foreground and background colors of the text will be reversed. This is most commonly used for the status line
 
 Not all interpreters support all of these features. Notably, Gargoyle does not support justification or font sizes. If the interpreter does not support one of the features it will just be quietly ignored.
-
 
 
 Chapter: Defining styles
@@ -296,7 +286,6 @@ If you use a color many times you can define it as a text constant, and then use
 	special-style-1	red
 
 
-
 Chapter: Using the styles
 
 You may invoke the text styles by using the following phrases
@@ -315,13 +304,11 @@ You may invoke the text styles by using the following phrases
 	special-style-2	"[special-style-2]", "[second special style]", or "[second custom style]"
 
 
-
 Chapter: About this extension
 
 This extension was originally by Emily Short. Version 5 was rewritten by Dannii Willis.
 
 The latest version of this extension can be found at <https://github.com/i7/extensions>. This extension is released under the Creative Commons Attribution licence. Bug reports, feature requests or questions can be made at <https://github.com/i7/extensions/issues>.
-
 
 
 Example: * Gaudy - A visually overpowering exercise in modifying all the built-in text styles.
@@ -355,7 +342,6 @@ Example: * Gaudy - A visually overpowering exercise in modifying all the built-i
 		display the boxed quotation "Tempus fugit."
 
 	Test me with "z / z / z / jump".
-
 
 
 Example: ** The Gallic War - An excuse to print a large, fancily-formatted bit of text using custom styles.

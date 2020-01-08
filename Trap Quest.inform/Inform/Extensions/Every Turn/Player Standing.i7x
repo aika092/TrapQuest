@@ -143,4 +143,3 @@ To compute drill damage:
 
 
 Player Standing ends here.
-

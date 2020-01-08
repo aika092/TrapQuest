@@ -90,7 +90,7 @@ To compute perception of (M - receptionist):
 			now armband is carried by the player;
 			now the armband-print of armband is "new recruit";
 			say ExamineDesc of armband;
-			if newbie tips is 1, say "[newbie style]Newbie tip: This will teleport you to the start of the '[Slut School]' region side-quest. [one of]The School is a separate region that you'll be warped to at regular intervals. It's a safe space pretty much free from combat (unless you start it) but every time you go there, you have to attend a [']class['], and if you've taken too long to arrive you'll instead be sent to [']detention['], both of which can have negative effects. However if you get promoted to the top of the school's ladder, the conclusion will be very rewarding.[paragraph break]But if[or]This is usually your last chance to engage with this side quest. As I said before, if[stopping] this is your first ever game, I'd recommend selecting 'No', because including this side quest will just make the game more complicated and less easy to pick up.[roman type][line break]";
+			if newbie tips is 1, say "[newbie style]Newbie tip: This will teleport you to the start of the '[slut school]' region side-quest. [one of]The School is a separate region that you'll be warped to at regular intervals. It's a safe space pretty much free from combat (unless you start it) but every time you go there, you have to attend a [']class['], and if you've taken too long to arrive you'll instead be sent to [']detention['], both of which can have negative effects. However if you get promoted to the top of the school's ladder, the conclusion will be very rewarding.[paragraph break]But if[or]This is usually your last chance to engage with this side quest. As I said before, if[stopping] this is your first ever game, I'd recommend selecting 'No', because including this side quest will just make the game more complicated and less easy to pick up.[roman type][line break]";
 			say "Do you do what [he of M] says? ";
 			if the player is bimbo consenting:
 				try wearing armband;
@@ -124,7 +124,6 @@ To compute perception of (M - receptionist):
 		make M expectant.
 
 
-
 Part - Combat
 
 
@@ -137,7 +136,6 @@ Definition: receptionist (called M) is successfully blocking: [Do they succeed i
 
 To say MovementBlock of (M - receptionist):
 	say "[BigNameDesc of M] moves into the doorway, completely blocking your path![line break][speech style of M]'No [honey of M], you're not allowed [if the noun is north]into the school[otherwise]to just skip classes[end if] [if armband is worn and playerRegion is School]with that attitude[otherwise if armband is worn]without consequences for your actions[otherwise]without an armband[end if][if the class of the player is princess]. Don't expect to get special treatment just because you're a princess[otherwise if the class of the player is maid]. I do not care what mess you're trying to clean up[otherwise if the class of the player is schoolgirl]. If you got away with this sort of thing at your old school, you're in for a rude awakening here[otherwise if the class of the player is cheerleader]. Don't worry, I'm sure someone like you can catch up in no time[otherwise if the class of the player is hooker in training]. I already know you're eager to learn, but that doesn't mean you don't have to follow the same rules as everyone else[end if].'[roman type][line break]";
-
 
 
 To compute (M - a monster) stomping (N - receptionist):
@@ -181,6 +179,4 @@ To compute (M - receptionist) forcing armband:
 	compute armband replacement.
 
 
-
 Receptionist ends here.
-

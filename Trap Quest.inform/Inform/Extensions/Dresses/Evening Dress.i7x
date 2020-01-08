@@ -119,7 +119,7 @@ To say MediumDesc of (C - a black lace evening dress):
 	say "chest exposing black lace evening dress".
 
 To say spawning flavour of (C - a black lace evening dress):
-	say "[bold type]A black lace evening dress appears on you!  Its outrageous style means that your chest remains completely exposed, and it restricts your walking![roman type][line break]".
+	say "[bold type]A black lace evening dress appears on you! Its outrageous style means that your chest remains completely exposed, and it restricts your walking![roman type][line break]".
 
 Definition: a black lace evening dress is black themed: decide yes.
 
@@ -133,7 +133,7 @@ To decide which figure-name is clothing-image of (C - a lace evening dress):
 	decide on figure of evening dress 4.
 
 To say ClothingDesc of (C - a lace evening dress):
-	say "This lacy black evening dress restricts your movement with its tight white hobble skirt section around your legs. The pattern on the main section of the dress is woven such that the dress is mostly see through.[if the largeness of breasts > 3 and C is worn]  Your [BreastDesc] are clearly visible though it.[end if]".
+	say "This lacy black evening dress restricts your movement with its tight white hobble skirt section around your legs. The pattern on the main section of the dress is woven such that the dress is mostly see through.[if the largeness of breasts > 3 and C is worn] Your [BreastDesc] are clearly visible though it.[end if]".
 
 To say ShortDesc of (C - a lace evening dress):
 	say "black lace evening dress".
@@ -142,7 +142,7 @@ To say MediumDesc of (C - a lace evening dress):
 	say "mostly see-through black lace evening dress".
 
 To say spawning flavour of (C - a lace evening dress):
-	say "[bold type]A black and white lacy evening dress appears on you!  Its outrageous style means that your chest remains visible through the fabric, and it restricts your walking![roman type][line break]".
+	say "[bold type]A black and white lacy evening dress appears on you! Its outrageous style means that your chest remains visible through the fabric, and it restricts your walking![roman type][line break]".
 
 Definition: a lace evening dress is black themed: decide yes.
 Definition: a lace evening dress is white themed: decide yes.
@@ -174,4 +174,3 @@ To decide which number is the initial outrage of (C - purple-evening-dress):
 
 
 Evening Dress ends here.
-

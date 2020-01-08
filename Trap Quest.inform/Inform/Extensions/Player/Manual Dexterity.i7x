@@ -120,4 +120,3 @@ The hand use required for masturbation rule is listed last in the masturbation r
 
 
 Manual Dexterity ends here.
-

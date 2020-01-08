@@ -83,4 +83,3 @@ To decide which number is latex transformation rate:
 
 
 Latex Curse ends here.
-

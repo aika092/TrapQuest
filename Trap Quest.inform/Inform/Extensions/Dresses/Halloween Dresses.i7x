@@ -63,7 +63,6 @@ Definition: witch's trousers is black themed: decide yes.
 Definition: witch's trousers is magic themed: decide yes.
 
 
-
 doll-dress is an overdress. doll-dress is unique. doll-dress is average cut. doll-dress is super-short. doll-dress is latex. doll-dress is neck covering. The text-shortcut of doll-dress is "rbdd". The printed name of doll-dress is "[clothing-title-before]rubber doll dress[clothing-title-after]". Understand "rubber", "doll", "dress" as doll-dress.
 
 Figure of doll-dress is the file "Items/Clothes/Upper/Special/Halloween/dolldress1.png".
@@ -89,4 +88,3 @@ Definition: doll-dress is orange themed: decide yes.
 
 
 Halloween Dresses ends here.
-

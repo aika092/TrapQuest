@@ -94,11 +94,7 @@ To wait before continuing:
 	if the current glk event is glk-initiated, now event-outcome is glk event handled in null-event context.
 
 
-
-
-
 Part - Animation Stuff
-
 
 
 Section - Animation Tracks
@@ -161,7 +157,6 @@ To wait until animations are over:
 	if animationsEnabled is 1 or there is a g-animated initial animation track:
 		while there is g-animated animation track:
 			wait before continuing.
-
 
 
 To compute TQanimation of (F - a figure-name) in (W - a g-window) at (X1 - a number) by (Y1 - a number) with dimensions (BX - a number) by (BY - a number):
@@ -274,7 +269,6 @@ To compute animation of (T - an animation track):
 		cease animation of T.
 
 
-
 To decide which object is the TQAnimTrack of (F - a figure-name):
 	decide on nothing.
 
@@ -334,7 +328,6 @@ To uniquely set up (T - alarmAnimation):
 	add Figure of AlarmIcon to the image-reel of T;
 	add Figure of AlarmIcon to the image-reel of T;
 	add Figure of AlarmIcon to the image-reel of T.
-
 
 
 Figure of AnimatedSirenIcon1 is the file "Special/Animations/Siren/frame1.png".
@@ -451,7 +444,6 @@ To cease animation of (T - a solo animation track):
 	close the map-window.
 
 
-
 An initial animation track is a kind of solo animation track.
 
 To commence animation of (T - an initial animation track):
@@ -497,7 +489,6 @@ To decide which number is the frameSlowness of (T - an initial animation track):
 	decide on 3.
 
 
-
 An epilogue animation track is a kind of solo animation track. An epilogue animation track is g-looping.
 
 To commence animation of (T - an epilogue animation track):
@@ -519,7 +510,6 @@ To commence animation of (T - an epilogue animation track):
 
 To decide which number is the frameSlowness of (T - an epilogue animation track):
 	decide on 1.
-
 
 
 Timer Stuff ends here.

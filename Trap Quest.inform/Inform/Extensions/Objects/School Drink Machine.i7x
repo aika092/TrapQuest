@@ -41,7 +41,6 @@ To compute drink-machine filling of (V - a vessel):
 		increase the doses of V by 1;
 
 
-
 To compute sybian sitting:
 	let K be a random worn bottom level pee protection clothing;
 	say "You straddle the large vibrator[if K is clothing], the protruding nub pushing into your [genitals] through your [MediumDesc of K][otherwise if the player is female], allowing the silicone nub to sink into the entrance of your [vagina][end if]. As your weight presses down it clicks into action, the powerful mechanism sending superfast vibrations directly into your sensitive crotch. At the same time, the nozzle dispenses its [if diaper quest is 1][milk][otherwise]soda[end if].";
@@ -75,7 +74,4 @@ Report going when the player is in School17: [We automatically get a bully if po
 			if M is in the location of the player, compute perception of M.
 
 
-
-
 School Drink Machine ends here.
-

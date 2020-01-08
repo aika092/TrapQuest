@@ -1,8 +1,6 @@
 Monokinis by Dresses begins here.
 
 
-
-
 Part 1 - White Monokini
 
 A white monokini is a kind of monokini. A white monokini is usually sheer. There is 1 white monokini. A white monokini is fully covering. A white monokini is not-top-displacable. The text-shortcut of white monokini is "wmk".
@@ -145,4 +143,3 @@ To decide which object is the unique-upgrade-target of (C - turtle-swimsuit):
 	decide on nothing.
 
 Monokinis ends here.
-

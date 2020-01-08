@@ -225,6 +225,4 @@ Figure of thong 13 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thon
 Figure of thong 14 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong14.png".
 
 
-
 Thongs ends here.
-

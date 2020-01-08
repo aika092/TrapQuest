@@ -47,5 +47,4 @@ To compute cum pool face coating:
 			now the semen-soak of C is the soak-limit of C.
 
 
-
 Swimming Pool ends here.

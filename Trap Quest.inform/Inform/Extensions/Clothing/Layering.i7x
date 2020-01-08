@@ -282,4 +282,3 @@ To check that (C - a corset) usually goes under (D - a dress):
 	rule succeeds.
 
 Layering ends here.
-

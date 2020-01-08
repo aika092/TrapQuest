@@ -53,4 +53,3 @@ The trousers ankle bondage clash rule is listed in the trousers wearability rule
 
 
 Ankle Bondage ends here.
-

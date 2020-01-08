@@ -15,17 +15,17 @@ To say big royal-subject of (M - a robot):
 
 
 To compute (S - a spike bra) damaging (M - a robot):
-	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
+	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
 To compute (S - a striped top) damaging (M - a robot):
-	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
+	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
 To compute kneeling reaction of (M - a robot):
-	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
+	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
 	humiliate 75.
 
 To compute DQ kneeling reaction of (M - a robot):
-	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
+	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
 	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 To compute lead holding of (M - a robot):
@@ -43,7 +43,7 @@ To IdentifiablePosterReaction of (M - a robot):
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
 To UnidentifiablePosterReaction of (M - a robot):
-	say "[BigNameDesc of M] looks at the banner. [line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE SHE IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
+	say "[BigNameDesc of M] looks at the banner. [line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of the player] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
@@ -66,7 +66,7 @@ To compute the default taunting of (M - a robot):
 	say "[one of][BigNameDesc of M] watches you without any emotion or expression.[or][or][cycling]".
 
 To say ToiletPeeDeclaration of (M - a robot):
-	say "[if the humiliation of the player < 22500]You squirm uncomfortably, hoping that [NameDesc of M] isn't intelligent enough to understand what it is watching you do.[otherwise]You casually wonder if [NameDesc of M] understands what it is witnessing you do.[end if]".
+	say "[if the humiliation of the player < 22500]You squirm uncomfortably, hoping that [NameDesc of M] isn't intelligent enough to understand what [he of M] is watching you do.[otherwise]You casually wonder if [NameDesc of M] understands what [he of M] is witnessing you do.[end if]".
 
 To say GroundPeeReaction of (M - a robot):
 	say "[speech style of M]'LEAKAGE DETECTED. SUBJECT APPEARS TO BE [if diaper lover > 0]UNABLE TO CONTROL BASIC BODILY FUNCTIONS[otherwise][one of]PUBLIC DISGRACE[or]DANGEROUSLY PERVERSE[or]IN NEED OF RECONDITIONING[in random order][end if].'[roman type][line break]";
@@ -80,13 +80,13 @@ To say ClothesPeeReaction of (M - a robot):
 	say GroundPeeReaction of M.
 
 To say DiaperReaction of (M - a robot):
-	say "[BigNameDesc of M]'s blank metal expression does not change, so it's hard to gauge whether it saw or understood what you just did in front of it.".
+	say "[BigNameDesc of M]'s blank metal expression does not change, so it's hard to gauge whether [he of M] saw or understood what you just did in front of [him of M].".
 
 To say BecomesAggressive of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn red![line break][speech style of M]'[one of]CHOOSING PUNISHMENT ROUTINE.'[or]EXECUTING [if the player is upright]COMBAT.EXE[otherwise]PUNISHMENT.BAT[end if].'[in random order][roman type][line break]".
 
 To compute (M - a monster) stomping (N - a robot):
-	if M is in the location of the player, say "[M] growls at the [N], which the [N] seems to interpret as a command, and it scurries away quickly.";
+	if M is in the location of the player, say "[M] growls at the [N], which the [N] seems to interpret as a command, and [he of M] scurries away quickly.";
 	regionally place N;
 	bore N.
 
@@ -232,7 +232,7 @@ Section 1 Damage
 To compute damage of (M - a robot):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "Its eyes turn red! Uh-oh...";
+			say "[big his of M] eyes turn red! Uh-oh...";
 			now M is interested;
 			now M is unleashed;
 			anger M;
@@ -277,4 +277,3 @@ To finally destroy (M - a robot):
 
 
 Robots Framework ends here.
-

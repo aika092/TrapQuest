@@ -67,8 +67,6 @@ To compute class outfit of (H - a baby bonnet):
 		now the raw-magic-modifier of P is 0.
 
 
-
-
 Part - Quest
 
 
@@ -116,9 +114,4 @@ This is the rubber baby bonnet prevents speech rule:
 The rubber baby bonnet prevents speech rule is listed in the player speech rules.
 
 
-
-
-
-
 Baby Bonnet ends here.
-

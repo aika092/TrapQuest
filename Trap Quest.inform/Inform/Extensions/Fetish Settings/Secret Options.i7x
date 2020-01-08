@@ -111,7 +111,4 @@ This is the artificial fetish toggle rule:
 		if points count >= 7 and artificial enhancements fetish is 1, now choice in row 59 of the Table of Player Options is 1.
 
 
-
-
 Secret Options ends here.
-

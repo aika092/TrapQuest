@@ -130,4 +130,3 @@ Definition: a minimalist schoolgirl outfit is blue themed: decide yes.
 
 
 Schoolgirl Outfit ends here.
-

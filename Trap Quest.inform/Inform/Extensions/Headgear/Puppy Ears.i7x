@@ -73,4 +73,3 @@ To say QuestTitle of (Q - obedience-quest):
 
 
 Puppy Ears ends here.
-

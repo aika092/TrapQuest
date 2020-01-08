@@ -1,10 +1,6 @@
 Region Building Woods by Rooms begins here.
 
 
-
-
-
-
 [!<SetUpTheWoods>+
 
 REQUIRES COMMENTING
@@ -75,4 +71,3 @@ To Scramble Woods:
 
 
 Region Building Woods ends here.
-

@@ -233,4 +233,3 @@ To compute rest ending of (F - a furniture):
 
 
 Furniture Framework ends here.
-

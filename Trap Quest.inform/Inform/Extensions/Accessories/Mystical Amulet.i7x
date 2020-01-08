@@ -41,4 +41,3 @@ Definition: A mystical amulet is immune to change: decide yes.
 
 
 Mystical Amulet ends here.
-

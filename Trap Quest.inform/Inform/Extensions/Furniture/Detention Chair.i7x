@@ -20,4 +20,3 @@ To say unique-verb-desc of (T - detention chair):
 	say "".
 
 Detention Chair ends here.
-

@@ -34,8 +34,7 @@ Check taking off piercing:
 	say "You can't take that off, it's permanently pierced into your skin!" instead.
 
 
-
-A module is a kind of piercing.  A module has a number called module-charge. Understand "module" as a module.
+A module is a kind of piercing. A module has a number called module-charge. Understand "module" as a module.
 
 Definition: a module is eligible: decide no.
 Definition: a module is discovered varied: decide no.
@@ -51,7 +50,6 @@ Figure of module 1 is the file "Items/Accessories/Piercings/module1.jpg".
 Figure of module 2 is the file "Items/Accessories/Piercings/module2.jpg".
 Figure of module 3 is the file "Items/Accessories/Piercings/module3.jpg".
 Figure of module 4 is the file "Items/Accessories/Piercings/module4.jpg".
-
 
 
 ass-module is a module. The printed name of ass-module is "[clothing-title-before]ass module[clothing-title-after]". The text-shortcut of ass-module is "asm". Understand "ass module" as ass-module.
@@ -91,7 +89,6 @@ Increases the chances of anal sex.
 This is the ass module butt slut rule:
 	if ass-module is worn, increase the desirability of asshole by the dex-transfer of ass-module.
 The ass module butt slut rule is listed in the butt slut eligibility rules.
-
 
 
 breast-module is a module. The printed name of breast-module is "[clothing-title-before]breast module[clothing-title-after]". The text-shortcut of breast-module is "brm". Understand "breast module" as breast-module.
@@ -191,8 +188,6 @@ Definition: clitoris lead (called P) is eligible:
 	decide no.
 
 
-
-
 clitoris piercing is a kind of piercing.
 
 normal clit piercing is a clitoris piercing.
@@ -231,7 +226,7 @@ To decide which number is the initial outrage of (C - slut clit piercing):
 	decide on 17.
 
 To say PiercingFlav of (P - a clitoris piercing):
-	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as your poor clitoris is painfully pierced. The needle is quickly removed and a jewelled metal piercing is pushed into place.[line break][variable custom style][if the delicateness of the player < 10]Oww!  No, no, anywhere but there! That's my most sensitive part... and I can feel this making it even more sensitive![otherwise if 15 is too humiliating]I have to make sure this is kept hidden under clothes! How embarrassing.[otherwise]Hmm, I can feel this making my clit WAY more sensitive. I guess that will help me have lots of orgasms![end if][roman type][line break]";
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your poor clitoris is painfully pierced. The needle is quickly removed and a jewelled metal piercing is pushed into place.[line break][variable custom style][if the delicateness of the player < 10]Oww! No, no, anywhere but there! That's my most sensitive part... and I can feel this making it even more sensitive![otherwise if 15 is too humiliating]I have to make sure this is kept hidden under clothes! How embarrassing.[otherwise]Hmm, I can feel this making my clit WAY more sensitive. I guess that will help me have lots of orgasms![end if][roman type][line break]";
 	if there is a worn tattoo and clit-piercing tattoo is not worn and a random number between 1 and 2 is 1:
 		say "A bizarre tattoo appears in your armpit!";
 		summon clit-piercing tattoo;
@@ -276,7 +271,6 @@ This is the cursed clitoris piercing stops you wearing crotch covering dresses r
 				if autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
 				rule fails. [NB this purposefully doesn't prevent them from being summoned.]
 The cursed clitoris piercing stops you wearing crotch covering dresses rule is listed in the overdress wearability rules.
-
 
 
 A nipple piercing is a kind of piercing.
@@ -361,8 +355,6 @@ This is the bra nipple chain clash rule:
 The bra nipple chain clash rule is listed in the bra wearability rules.
 
 
-
-
 A cow piercing is a kind of nipple piercing. The printed name of cow piercing is "[clothing-title-before]nipple rings[clothing-title-after]". The text-shortcut of cow piercing is "nr". There is 1 cow piercing. Understand "nipple", "rings" as cow piercing. A cow piercing is usually titfuck-addiction-influencing. A cow piercing is milk production. Figure of cow piercing is the file "Items/Accessories/Piercings/nipplepiercing1.png".
 
 To decide which figure-name is the clothing-image of (C - a cow piercing):
@@ -413,7 +405,6 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is magically preventing you from wearing any kind of bra! Maybe if you blessed it?";
 				rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
-
 
 
 A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
@@ -521,7 +512,7 @@ To decide which number is the intelligence-influence of (C - a pair of earrings)
 	decide on 0.
 
 To say PiercingFlav of (P - a pair of earrings):
-	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two large circular earrings with profanities printed on the sides are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Teehee.[end if][roman type][line break]".
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two large circular earrings with profanities printed on the sides are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Tee-hee.[end if][roman type][line break]".
 
 Section - Wearability
 
@@ -530,9 +521,6 @@ pair of earrings wearability rules is a rulebook. The wearability rules of pair 
 This is the pair of earrings already worn rule:
 	if there is a worn pair of earrings, rule fails.
 The pair of earrings already worn rule is listed in the pair of earrings wearability rules.
-
-
-
 
 
 heel-module is a module. The printed name of heel-module is "[clothing-title-before]heel module[clothing-title-after]". The text-shortcut of heel-module is "hem". Understand "heel module" as heel-module.
@@ -566,7 +554,6 @@ To compute periodic effect of (M - heel-module):
 			now the module-charge of M is 0;
 			increase the heel-height of H by 1;
 			say "You feel your ankles twitch, and you suddenly feel your [ShortDesc of H] increase in height. They are now [H]!".
-
 
 
 A lip piercing is a kind of piercing. The printed name of lip piercing is "[TQlink of item described][item style]lip piercing[clothing-title-after]". The text-shortcut of lip piercing is "lpc". There is 1 lip piercing. Figure of lip piercing is the file "Items/Accessories/Piercings/lippiercing1.png".
@@ -610,7 +597,6 @@ lip piercing wearability rules is a rulebook. The wearability rules of lip pierc
 This is the lip piercing already worn rule:
 	if there is a worn lip piercing, rule fails.
 The lip piercing already worn rule is listed in the lip piercing wearability rules.
-
 
 
 head-module is a module. The printed name of head-module is "[clothing-title-before]head module[clothing-title-after]". The text-shortcut of head-module is "hdmd".
@@ -659,10 +645,6 @@ To compute periodic effect of (P - head-module):
 			say "You feel some [one of][or]more [stopping]of your brainpower transferred into the nanobots for safekeeping.[roman type][line break]";
 
 
-
-
-
-
 A nose piercing is a kind of piercing. The text-shortcut of nose piercing is "np". Understand "septum", "sep" as nose piercing. Figure of small nose piercing is the file "Items/Accessories/Piercings/nosepiercing1.png". Figure of ugly nose piercing is the file "Items/Accessories/Piercings/nosepiercing2.png". A nose piercing is usually manly.
 
 To decide which number is the intelligence-influence of (C - a nose piercing):
@@ -678,7 +660,6 @@ To decide which object is the concealer of (C - a nose piercing):
 
 To say PiercingFlav of (P - a nose piercing):
 	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
-
 
 
 Part 1 - Small Nose Piercing
@@ -730,7 +711,6 @@ nose piercing wearability rules is a rulebook. The wearability rules of nose pie
 This is the nose piercing already worn rule:
 	if there is a worn nose piercing, rule fails.
 The nose piercing already worn rule is listed in the nose piercing wearability rules.
-
 
 
 A tongue piercing is a kind of piercing. The printed name of tongue piercing is "[TQlink of item described][item style]tongue piercing[clothing-title-after]". The printed plural name of tongue piercing is "[TQlink of item described][item style]tongue piercings[clothing-title-after]". The text-shortcut of tongue piercing is "tpi". There is 1 tongue piercing. A tongue piercing is usually oral-sex-addiction-influencing. A tongue piercing has a number called thirst-charge.

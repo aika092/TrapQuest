@@ -120,4 +120,3 @@ To compute broken sex of (M - a monster):
 
 
 Instinctive Actions ends here.
-

@@ -266,8 +266,4 @@ To say ShortDesc of (L - a list of things):
 		decrease E by 1.
 
 
-
-
-
 Taking Inventory ends here.
-

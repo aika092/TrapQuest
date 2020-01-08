@@ -25,4 +25,3 @@ Definition: a leopard print bikini top is leopard themed: decide yes.
 Definition: a leopard print bikini top is yellow themed: decide yes.
 
 Leopard Print Bikini Top ends here.
-

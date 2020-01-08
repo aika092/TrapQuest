@@ -542,4 +542,3 @@ To decide which figure-name is the examine-image of (T - hair):
 
 
 Hair ends here.
-

@@ -7,7 +7,6 @@ Use authorial modesty.
 Include version 1/160919 of Glulx Definitions by Dannii Willis.
 
 
-
 Chapter - Basic event handling
 
 Section - Event result variables
@@ -29,11 +28,9 @@ The glk event value 2 is a number variable.
 The glk event value 2 variable translates into I6 as "GE_Event_Struct_val2".
 
 
-
 Section - The glulx input handling rules
 
 The glulx input handling rules are a g-event based rulebook.
-
 
 
 Section - Intercepting glk_select()
@@ -67,7 +64,6 @@ Include (-
 	return 0;
 ];
 -) after "Infglk" in "Glulx.i6t".
-
 
 
 Glk Events ends here.

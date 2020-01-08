@@ -1,7 +1,6 @@
 ASCII Map by Miscellaneous Frontend begins here.
 
 
-
 [!<MapDraw>+
 
 REQUIRES COMMENTING
@@ -151,4 +150,3 @@ To decide if there is something to the (D - a direction):
 
 
 ASCII Map ends here.
-

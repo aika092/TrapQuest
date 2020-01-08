@@ -72,4 +72,3 @@ To compute generic first time class reward of (Q - stealing-quest) on (C - a clo
 		compute generic second time class reward of Q on C.
 
 Fox Ears ends here.
-

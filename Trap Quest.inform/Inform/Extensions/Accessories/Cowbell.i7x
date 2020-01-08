@@ -58,4 +58,3 @@ This is the cowbell stops clanking rule:
 The cowbell stops clanking rule is listed in the advance counters rules.
 
 Cowbell ends here.
-

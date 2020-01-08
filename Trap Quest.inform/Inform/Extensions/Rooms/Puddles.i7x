@@ -247,4 +247,3 @@ To construct normal buttons for (T - puddle-object):
 
 
 Puddles ends here.
-

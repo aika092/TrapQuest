@@ -37,8 +37,6 @@ Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".
 Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.png".
 
 
-
-
 Figure of Babified Royal Guard 1 is the file "NPCs/Dungeon/royalguardbab1.jpg".
 Figure of Babified Royal Guard 2 is the file "NPCs/Dungeon/royalguardbab2.jpg".
 To decide which figure-name is the pacified-image of (M - a royal guard):
@@ -48,10 +46,6 @@ To decide which figure-name is the pacified-image of (M - a royal guard):
 
 Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".
 Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.jpg".
-
-
-
-
 
 
 Figure of change self tattoo is the file "Items/Tats/tattoo110.jpg".
@@ -123,8 +117,6 @@ To decide which figure-name is the examine-image of (T - tribal diaper tattoo):
 Figure of walking teddy bear tattoo is the file "Items/Tats/tattoo99.jpg".
 To decide which figure-name is the examine-image of (T - walking teddy bear tattoo):
 	decide on figure of walking teddy bear tattoo.
-
-
 
 
 Necessary Figures ends here.

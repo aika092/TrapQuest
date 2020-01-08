@@ -57,4 +57,3 @@ Report wearing hemp clothing:
 
 
 Rope Harness ends here.
-

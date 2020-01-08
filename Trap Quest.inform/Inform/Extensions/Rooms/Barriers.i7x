@@ -1,7 +1,6 @@
 Barriers by Rooms begins here.
 
 
-
 [!<Barrier>@
 
 REQUIRES COMMENTING
@@ -59,7 +58,4 @@ To compute raising of (B - a modesty shutter):
 					compute perception of pimp.
 
 
-
-
 Barriers ends here.
-

@@ -5,7 +5,6 @@ Version 1/160919 of Glulx Definitions (for Glulx only) by Dannii Willis begins h
 Use authorial modesty.
 
 
-
 Chapter - Testing interpreter features (gestalts)
 
 Include (-
@@ -39,7 +38,6 @@ To decide whether glulx function acceleration is supported:
 
 To decide whether glulx real numbers are supported:
 	(- GD_GlulxGestalt( 11 ) -).
-
 
 
 To decide what number is the glk version:
@@ -118,7 +116,6 @@ To decide whether glk/glulx graphics window character input is supported:
 	(- glk_gestalt( gestalt_GraphicsCharInput, 0 ) -).
 
 
-
 Chapter - Glulx and Glk kinds
 
 Section - Events
@@ -146,17 +143,14 @@ To decide which g-event is null-event:
 	(- 0 -).
 
 
-
 Glulx Definitions ends here.
-
 
 
 ---- Documentation ----
 
-This extension is a low level utility library containing core defintions for the Glulx and Glk systems.
+This extension is a low level utility library containing core definitions for the Glulx and Glk systems.
 
 This extension is released under the Creative Commons Attribution licence. Bug reports, feature requests or questions should be made at <https://github.com/i7/extensions/issues>.
-
 
 
 Chapter: Testing interpreter features (gestalts)

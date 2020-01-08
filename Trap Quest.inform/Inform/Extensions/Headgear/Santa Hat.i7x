@@ -59,7 +59,6 @@ To compute persistent reward of (Q - christmas-quest) on (C - a clothing):
 		now CG is carried by the player.
 
 
-
 A santa hat is a kind of christmas headgear. A santa hat is usually wool. Figure of santa hat is the file "Items/Accessories/Head/santahat1.png". There is 1 santa hat.
 
 The printed name of santa hat is usually "[clothing-title-before]santa hat[clothing-title-after]". The text-shortcut of santa hat is "sah".
@@ -71,7 +70,7 @@ To say ClothingDesc of (H - a santa hat):
 	say "A smallish red and white santa hat.".
 
 To compute ShortDesc of (H - a santa hat):
-	say "santa hat".
+	say "Santa hat".
 
 To compute SelfExamineDesc of (H - a santa hat):
 	say "You are wearing a santa hat on top of your [ShortDesc of hair]. ".
@@ -141,7 +140,6 @@ To decide which number is the initial cringe of (H - a red bow headband):
 	decide on 2.
 
 
-
 A star headband is a kind of christmas headgear. The printed name of star headband is usually "[clothing-title-before]star headband[clothing-title-after]". Figure of star headband is the file "Items/Accessories/Head/starheadband1.png". There is 1 star headband. The text-shortcut of star headband is "strh".
 
 To decide which figure-name is the clothing-image of (C - a star headband):
@@ -184,6 +182,4 @@ To decide which number is the initial cringe of (H - a star headband):
 Definition: a star headband is star themed: decide yes.
 
 
-
 Santa Hat ends here.
-

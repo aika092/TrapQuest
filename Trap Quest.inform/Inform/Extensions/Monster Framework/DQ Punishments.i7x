@@ -31,7 +31,6 @@ To choose a diaper punishment:
 		decrease current-priority by 1.
 
 
-
 Section 1 Diaper Change
 
 diaper-change is a diaper punishment. The priority of diaper-change is 4.
@@ -291,4 +290,3 @@ To compute punishment of (P - untidy-session):
 
 
 DQ Punishments ends here.
-

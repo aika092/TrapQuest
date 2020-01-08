@@ -1,7 +1,6 @@
 Pregnancy by Every Turn begins here.
 
 
-
 [!<father:Thing>*
 
 REQUIRES COMMENTING
@@ -110,7 +109,7 @@ REQUIRES COMMENTING
 +!]
 Carry out Family Printing:
 	print fatherly things.
-Understand "who's the daddy" as Family Printing.
+Understand "who's the daddy", "print family" as Family Printing.
 
 [NB the priority order for fatherhood. What can I say, some stuff has stronger sperm.]
 [!<DecideWhichThingIsTheNewFather>+
@@ -465,4 +464,3 @@ To compute pregnancy annoyance:
 		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".
 
 Pregnancy ends here.
-

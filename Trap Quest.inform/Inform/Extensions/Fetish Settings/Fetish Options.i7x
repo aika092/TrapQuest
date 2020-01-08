@@ -50,12 +50,6 @@ title	subtable	description	toggle
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 
 
-
-
-
-
-
-
 The random mode rules is a rulebook.
 This is the randomise choices rule:
 	follow the random mode rules.
@@ -221,7 +215,6 @@ This is the diaper lover random rule:
 The diaper lover random rule is listed in the random mode rules.
 
 
-
 [!<DecideWhichNumberIsWatersportsMechanics>+
 
 Does the player sometimes need to pee?
@@ -245,7 +238,6 @@ The interracial nightmare rule is listed in the nightmare mode rules.
 This is the interracial random rule:
 	if choice in row 45 of the Table of Player Options is 0 or choice in row 45 of the Table of Player Options is 1, now choice in row 45 of the Table of Player Options is a random number between 0 and 1.
 The interracial random rule is listed in the random mode rules.
-
 
 
 To decide which number is mythical creature/creatures fetish:
@@ -311,8 +303,4 @@ This is the lady random rule:
 The lady random rule is listed in the random mode rules.
 
 
-
-
-
 Fetish Options ends here.
-

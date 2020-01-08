@@ -78,7 +78,6 @@ To decide which number is the original price of (C - a pink catsuit):
 	decide on 8.
 
 
-
 Part 2 - Black Catsuit
 
 A black catsuit is a kind of catsuit. A black catsuit is fully exposing. There is 1 black catsuits. The printed name of black catsuit is usually "[clothing-title-before]black latex catsuit[clothing-title-after]". The text-shortcut of black catsuit is "bcs".
@@ -175,4 +174,3 @@ To decide which number is the original price of (C - a plugsuit):
 	decide on 4.
 
 Catsuit ends here.
-

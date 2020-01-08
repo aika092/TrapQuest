@@ -24,9 +24,6 @@ REQUIRES COMMENTING
 The player class rules is a rulebook.
 
 
-
-
-
 [!<TheTrickOrTreaterClassRule>+
 
 REQUIRES COMMENTING
@@ -166,8 +163,6 @@ Definition: a text is schoolgirl if it is "schoolgirl" or it is "magical schoolg
 Definition: a wearthing is schoolgirl-enabling: decide no.
 
 
-
-
 [!<TheCheerleaderClassRule>+
 
 REQUIRES COMMENTING
@@ -280,8 +275,6 @@ The latex fetish model class rule is listed in the player class rules.
 latex fetish model is a text that varies. latex fetish model is "latex fetish model".
 
 
-
-
 [!<TheHumanToiletClassRule>+
 
 REQUIRES COMMENTING
@@ -328,7 +321,6 @@ puppygirl is a text that varies. puppygirl is "puppygirl".
 puppy is a text that varies. puppy is "puppygirl".
 
 
-
 [!<TheSymbioteClassRule>+
 
 REQUIRES COMMENTING
@@ -349,8 +341,6 @@ Thanks to the virgin symbiote warrior multi-class, we have multiple different te
 Definition: a text (called T) is symbiote:
 	if T is "symbiote" or T is "virgin symbiote warrior", decide yes;
 	decide no.
-
-
 
 
 [!<TheSantaClassRule>+
@@ -465,7 +455,7 @@ A time based rule (this is the compute brood rule):
 				destroy E;
 			otherwise:
 				let W be a random off-stage wasp-cloud;
-				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognize you as their mother!";
+				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognise you as their mother!";
 				summon W;
 				now the swarm of W is 3;
 				now total-wasps is 3;
@@ -478,7 +468,6 @@ A time based rule (this is the compute brood rule):
 		if total-wasps > 49 and the swarm of W < (total-wasps / 10) and a random number between 1 and 3 is 1:
 			say "A small swarm of wasps that was resting on your fur seems to be ready for more action!";
 			increase the swarm of W by 1. [The idea is that your weapon's equilibrium strength will slowly increase once you get past the 50 wasps birthed cut-off, though swarm will tend to be very hard to raise above 20 because it always wants to decay to that point. Also these wasps are technically ones you 'lost' earlier so they don't increase your total]
-
 
 
 [!<TheVampireSpawnClassRule>+
@@ -944,4 +933,3 @@ adventurer is a text that varies. adventurer is "adventurer".
 
 
 Classes ends here.
-

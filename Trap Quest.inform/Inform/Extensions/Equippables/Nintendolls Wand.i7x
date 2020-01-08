@@ -23,7 +23,6 @@ To decide which number is the raw-masturbation-bonus of (W - nintendolls-wand):
 	decide on 0.
 
 
-
 glittery-wand is a vibe-wand. glittery-wand is unique. The printed name of glittery-wand is "[clothing-title-before]glittery wand[clothing-title-after]". The text-shortcut of glittery-wand is "gw". Understand "glittery" as glittery-wand.
 
 Figure of glittery wand is the file "Items/Accessories/Equippables/wand2.jpg".

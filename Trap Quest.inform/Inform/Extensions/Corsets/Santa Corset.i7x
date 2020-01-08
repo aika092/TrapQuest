@@ -22,7 +22,6 @@ To decide what number is the price of (C - a santa corset):
 	decide on 6.
 
 To say ShortDesc of (C - a santa corset):
-	say "santa corset".
+	say "Santa corset".
 
 Santa Corset ends here.
-

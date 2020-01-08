@@ -128,6 +128,4 @@ To reset submitted monsters: [This means that making an aggressive move breaks a
 		now the last-interaction of M is 0.
 
 
-
 Submitting ends here.
-

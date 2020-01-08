@@ -104,22 +104,22 @@ To say BimboSeduce of (M - a monster):
 		otherwise if the class of the player is santa's little helper:
 			say "[second custom style]'[one of]Ooh, I'm a bad little elf, punish me!'[or]I've been very naughty this Christmas, I need a [daddy of M] to punish me!'[in random order][roman type][line break]";
 		otherwise:
-			say "[second custom style]'[one of]Ooh, I'm a bad girl, punish me!'[or]Please treat me like I deserve!'[or]Do you want to be my [daddy of M]?'[in random order][roman type][line break]";
+			say "[second custom style]'[one of]Ooh, I'm a bad [boy of the player], punish me!'[or]Please treat me like I deserve!'[or]Do you want to be my [daddy of M]?'[in random order][roman type][line break]";
 	otherwise if the class of the player is santa's little helper:
 		say "[second custom style]'Santa baby, slip a [if M is male][one of]hard[or]big[or]thick[in random order] cock[otherwise]finger[end if] [if there is a worn christmas dress]under the tree, in me[otherwise]inside of me, or three[end if]...'[roman type][line break]";
 	otherwise if the class of the player is cheerleader:
 		say CheerSeduce of M;
 	otherwise if M is neuter:
-		say "[second custom style]'[one of]Ooh, I'm a bad girl, punish me!'[or]Please fuck me!'[at random][roman type][line break]";
+		say "[second custom style]'[one of]Ooh, I'm a bad [boy of the player], punish me!'[or]Please fuck me!'[at random][roman type][line break]";
 	otherwise if M is male:
-		say "[second custom style]'[one of]Ooh, I'm a bad girl, punish me!'[or]Please fuck me!'[or]Wouldn't it be fun, to like, treat me like a fucktoy?'[or]Mmm, anal is my favourite...'[or]Can I suck your [manly-penis]?'[or]Can I please give you a blowjob?'[or]Hey baby, need a cumdump?'[or]Want to know what the back of my head looks like?'[or]Fuck me, I'm ready right now!'[or][if bukkake fetish is 0]When was the last time you got your [manly-penis] sucked, sexy?'[otherwise]Wouldn't it be fun, to like, jizz on my face?'[end if][or]I do anal.'[or]I'll let you cum inside!'[or]I've been a naughty girl and I need a good hard fucking!'[purely at random][roman type][line break]";
+		say "[second custom style]'[one of]Ooh, I'm a bad [boy of the player], punish me!'[or]Please fuck me!'[or]Wouldn't it be fun, to like, treat me like a fucktoy?'[or]Mmm, anal is my favourite...'[or]Can I suck your [manly-penis]?'[or]Can I please give you a blowjob?'[or]Hey baby, need a cumdump?'[or]Want to know what the back of my head looks like?'[or]Fuck me, I'm ready right now!'[or][if bukkake fetish is 0]When was the last time you got your [manly-penis] sucked, sexy?'[otherwise]Wouldn't it be fun, to like, jizz on my face?'[end if][or]I do anal.'[or]I'll let you cum inside!'[or]I've been a naughty [boy of the player] and I need a good hard fucking!'[purely at random][roman type][line break]";
 	otherwise:
-		say "[second custom style]'[one of]Ooh, I'm a bad girl, punish me!'[or]Let me eat your pussy!'[or]I want to put my tongue in your ass!'[or]I'll go down on you!'[or]Please fuck me!'[or]Please sit on my face!'[or]Wouldn't it be fun, to like, treat me like a fucktoy?'[purely at random][roman type][line break]";
+		say "[second custom style]'[one of]Ooh, I'm a bad [boy of the player], punish me!'[or]Let me eat your pussy!'[or]I want to put my tongue in your ass!'[or]I'll go down on you!'[or]Please fuck me!'[or]Please sit on my face!'[or]Wouldn't it be fun, to like, treat me like a fucktoy?'[purely at random][roman type][line break]";
 	if M is intelligent raunchy monster, progress quest of greet-quest.
 
 To say CheerSeduce of (M - a monster):
 	if M is unfriendly:
-		say "[second custom style]'[one of]Aren[']t you like, excited to fuck a super hot cheerleader?[or]I love talking almost as much as I love fucking. And I reeeaally love fucking.'[or]Do you even want to have sex with me? I[']ve been talking pretty long and you[']re not fucking me yet.'[or]People tell me to shut up all the time, but it's like, I have so many interesting things to say!'[or]My name is [NameBimbo], but most people call me shut up slut!'[or]I[']m on the cheerleading team!'[or]Go Team!'[in random order][roman type][line break]";
+		say "[second custom style]'[one of]Aren[']t you like, excited to fuck a super hot cheerleader?[or]I love talking almost as much as I love fucking. And I reeeaally love fucking.'[or]Do you even want to have sex with me? I[']ve been talking pretty long and you[']re not fucking me yet.'[or]People tell me to shut up all the time, but it's like, I have so many interesting things to say!'[or]My name is [NameBimbo], but most people call me [']shut up slut![']'[or]I[']m on the cheerleading team!'[or]Go Team!'[in random order][roman type][line break]";
 	otherwise:
 		say "[second custom style]'[one of]Want to know why they call me the head cheerleader?'[or]Anal is like, waayy underrated. I can prove it if you want.'[or]Oooooh... I have a great idea. Let's have sex!'[or]I[']m on the cheerleading team. Wanna fuck me?'[or]Cheerleading isn[']t hard, it's easy. Just like meee~'[or]I like to fuck bareback. Figured you would want to know.'[or]Hey cutie, want to be the top of the pyramid?'[at random][roman type][line break]".
 
@@ -136,10 +136,10 @@ To say BimboSeduced of (M - a monster):
 		anger M;
 		now the boredom of M is 0;
 	otherwise if the class of the player is cheerleader and M is unfriendly and a random number between 1 and 3 is 1 and M is not grabbing the player:
-		say "Something seems to suddenly switch in [NameDesc of M]'s head, [his of M] grin changing into a nonplussed grimace. It must be something you said, [NameDesc of M] doesn't look interested in you anymore.[line break]";[You ran your mouth so much the monster lost interest.]
+		say "Something seems to suddenly switch in [NameDesc of M]'s head, [his of M] grin changing into a nonplussed grimace. It must be something you said; [NameDesc of M] doesn't look interested in you any more.[line break]";[You ran your mouth so much the monster lost interest.]
 		now the scared of M is 30;
 	otherwise:
-		say "Something seems to suddenly switch in [NameDesc of M]'s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
+		say "Something seems to suddenly switch in [NameDesc of M]'s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh-oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
 		anger M;
 		now the boredom of M is 0.
 
@@ -454,7 +454,7 @@ To say VanityAnnoyed of (M - a monster):
 		say "[speech style of M]'I'll follow you for a little bit, I guess.'[roman type][line break]".
 
 To say VanityRejected of (M - a monster):
-	if M is unfriendly, say "[speech style of M]'I've had enough of this. Its time I put you in your place.'[roman type][line break]";
+	if M is unfriendly, say "[speech style of M]'I've had enough of this. It's time I put you in your place.'[roman type][line break]";
 	otherwise say "[speech style of M]'I've had enough. Bye.'[roman type][line break]".
 
 [!<ComputeConventionalGreetingToMonster>+
@@ -496,7 +496,7 @@ To say InSexGreeting to (M - a monster) with (N - a monster):
 		if the player is fully occupied, now G is face;
 		otherwise now G is a random fuckhole that is not actually occupied;
 		if the class of the player is princess:
-			say "You compulsively arch your back as your words come out in a measured tone.[line break][first custom style]'[one of][big royal-subject of M]. Every moment my [G] remains empty is a further embarassment for you.'[or]You there, [royal-subject of M]. You may assist in satisfying me. Chop chop.'[or]Greetings, [royal-subject of M]. I assume you are waiting for an invitation?'[at random][roman type][line break]";
+			say "You compulsively arch your back as your words come out in a measured tone.[line break][first custom style]'[one of][big royal-subject of M]. Every moment my [G] remains empty is a further embarrassment for you.'[or]You there, [royal-subject of M]. You may assist in satisfying me. Chop chop.'[or]Greetings, [royal-subject of M]. I assume you are waiting for an invitation?'[at random][roman type][line break]";
 			trivialDignify;
 		otherwise:
 			say "[second custom style]'[one of]Hey there. Wanna join in?'[or]Hey babe. Don't you think [NameDesc of N] could use a hand?'[or]Hey you! Take my [G]!'[at random][roman type][line break]";
@@ -520,7 +520,7 @@ To say InFriendlySexGreeting to (M - a monster) with (N - a monster):
 	otherwise if the player is feeling submissive:
 		say "[variable custom style]'[one of]Yoo-hoo! Look over here!'[or]Hey, look over here!'[or]Hey, look over here for something fun!'[at random][roman type]";
 	otherwise:
-		say "[first custom style]'[one of]H-hey, could you look at me real quick?'[or]Look, this is really embarassing, but can you look over here?'[or]Hey, I know this is weird, but I need you to watch this.'[at random][roman type]";
+		say "[first custom style]'[one of]H-hey, could you look at me real quick?'[or]Look, this is really embarrassing, but can you look over here?'[or]Hey, I know this is weird, but I need you to watch this.'[at random][roman type]";
 	say AttentionResponse of M.
 
 To say DominantGreeting to (M - a monster):
@@ -538,10 +538,10 @@ To say SubmissiveGreeting to (M - a monster):
 	let N be the times-submitted of M;
 	let P be N + 1;
 	if the class of the player is princess and M is princess-consort:
-		say "You compulsively straighten your back as your words come out in a measured tone.[line break][first custom style]'[one of][big royal-subject of M]. Our previous tryst was most satisfying, I will admit.'[or][big royal-subject of M]. Your status certaintly belies your skill in the bedroom.'[or]Greetings, [royal-subject of M]. I would not mind it if you were to ravish me again at a later time.'[at random][roman type][line break]";
+		say "You compulsively straighten your back as your words come out in a measured tone.[line break][first custom style]'[one of][big royal-subject of M]. Our previous tryst was most satisfying, I will admit.'[or][big royal-subject of M]. Your status certainly belies your skill in the bedroom.'[or]Greetings, [royal-subject of M]. I would not mind it if you were to ravish me again at a later time.'[at random][roman type][line break]";
 		trivialDignify;
 	otherwise if M is mating:
-		say "[second custom style]'[one of][if M is presenting as female]Hey there baby momma!'[otherwise]Hey there baby daddy.'[end if][or]Hey baby. Want to make out?'[or]Hey babe! Let's hold hands!'[or][if M is presenting as female]So, want to be girlfriend girlfriend now that we have a baby together?'[otherwise]Want to be boyfriend girlfriend now that we have a baby together?'[end if][at random][roman type][line break]";
+		say "[second custom style]'[one of][if M is presenting as female]Hey there baby momma!'[otherwise]Hey there baby daddy.'[end if][or]Hey baby. Want to make out?'[or]Hey babe! Let's hold hands!'[or][if M is presenting as female]So, want to be girlfriend[/]girlfriend now that we have a baby together?'[otherwise]Want to be boyfriend[/]girlfriend now that we have a baby together?'[end if][at random][roman type][line break]";
 	otherwise if the player is not a nympho:
 		say "[second custom style]'[one of]Hey there. You sure know how to have a good time.'[or]I can go another round, if you want.'[or]So, want to go again? That last fuck was pretty good.'[or]You sure know how to please a lady. Want to go for round [P]?'[at random][roman type][line break]";
 	otherwise:
@@ -700,7 +700,6 @@ To say RepeatResponse of (M - a monster):
 	say FirstResponse of M.
 
 
-
 Chapter 2 Questioning
 
 To compute talk option (N - 2) to (M - a monster):
@@ -740,7 +739,6 @@ To compute talk option (N - 2) to (M - a monster):
 			if Q < 6, compute answer of M to Q;
 			increase the conversation-sequence of M by 1;
 			if the conversation-sequence of M > 6, now the conversation-sequence of M is 1.
-
 
 
 [questioning npcs will annoy them slightly, but for most you will get 3-4 questions out of them before they tell you to leave them be
@@ -799,7 +797,7 @@ To compute raw answer of (M - a monster) to (Q - a number):
 		say "[AdviceAnswer of M]".
 
 To say UnGreeted of (M - a monster):
-	say "[BigNameDesc of M] doesn't seem to realize you're talking to [him of M].".
+	say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].".
 
 [this is where we determine whether or not a monster is willing to punish the player for questioning them so much. We also put the "uninterested" stuff here.]
 To compute annoyance of (M - a monster):
@@ -1006,7 +1004,6 @@ To say DiaperEnslavedDrinkRequest of (M - a monster):
 	say DiaperEnslavedGreet of M.
 
 
-
 Chapter 4 Food Requesting
 
 To compute talk option (N - 4) to (M - a monster):
@@ -1116,7 +1113,6 @@ To say SexEnslavedFoodRequest of (M - a monster):
 
 To say DiaperEnslavedFoodRequest of (M - a monster):
 	say DiaperEnslavedGreet of M.
-
 
 
 Chapter 5 Dismissal
@@ -1381,4 +1377,3 @@ To say DefeatedDismissal of (M - a monster):
 
 
 Conversation ends here.
-

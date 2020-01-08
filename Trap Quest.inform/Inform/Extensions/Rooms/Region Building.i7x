@@ -1,8 +1,6 @@
 Region Building by Rooms begins here.
 
 
-
-
 [!<targetFloor:Room>*
 
 REQUIRES COMMENTING
@@ -460,10 +458,6 @@ Definition: a room (called R) is fully ready:
 	decide no.
 
 
-
-
-
-
 [Notably more computationally time consuming than empty puzzle socket, we check if there are any rooms left that are actually eligible to go here.]
 [!<DirectionIsSolvablePuzzleSocket>+
 
@@ -538,7 +532,6 @@ Definition: west (called D) is fully solvable puzzle socket:
 	decide no.
 
 
-
 [!<RoomIsRelaxing>+
 
 Has furniture in it already.
@@ -558,4 +551,3 @@ Definition: A room (called R) is unrelaxing:
 	decide yes.
 
 Region Building ends here.
-

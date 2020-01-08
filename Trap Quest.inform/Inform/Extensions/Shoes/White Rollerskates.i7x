@@ -47,5 +47,4 @@ To decide which figure-name is the clothing-image of (C - pink-wheeled white-rol
 	decide on figure of pink-wheeled white-rollerskates.
 
 
-
 White Rollerskates ends here.

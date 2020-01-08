@@ -23,4 +23,3 @@ To decide which number is the initial outrage of (C - a red string bikini top):
 Definition: a red string bikini top is red themed: decide yes.
 
 Red String Bikini Top ends here.
-

@@ -279,9 +279,6 @@ To compute sex resist punishment of (M - a monster):
 Understand "resist", "fight back", "escape", "run", "fight", "nono", "noway", "nn" as resisting.
 
 
-
-
-
 [!<SayForcedSubmitFlav>+
 
 REQUIRES COMMENTING
@@ -510,7 +507,6 @@ To say DQResistMasturbationChastise of (M - a monster):
 	say "[BigNameDesc of M] [one of]laughs[or]smirks[or]chuckles[at random].[line break][speech style of M]'[one of]Uh-oh, is my little baby getting a bit flustered down there?'[or]You're getting a bit worked up, aren't you?'[or]Are you trying to tell me you don't like it? I don't believe you!'[or]Your body is telling me the truth of how good this feels!'[or]You should be thanking me!'[or]Haha, stop pretending you don't want more.'[in random order][roman type][line break]".
 
 To say DQResistChangeChastise of (M - a monster):
-	say "[BigNameDesc of M] [one of]tuts condescendingly[or]scowls[or]makes a noise like an angry parent[at random].[line break][speech style of M]'[one of]Hey, no messing around now, or I'll be keeping you in diapers for even longer!'[or]This is for your own good, you silly baby!'[or]All you're doing is making me angrier.'[or]You are NOT acting like someone who's ready for big girl panties.'[or]Is this the way that someone who's trying to prove they're big girl should act? I don't think so.'[or]All you're doing is proving that you're just a pathetic child.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] [one of]tuts condescendingly[or]scowls[or]makes a noise like an angry parent[at random].[line break][speech style of M]'[one of]Hey, no messing around now, or I'll be keeping you in diapers for even longer!'[or]This is for your own good, you silly baby!'[or]All you're doing is making me angrier.'[or]You are NOT acting like someone who's ready for big [boy of the player] panties.'[or]Is this the way that someone who's trying to prove they're a big [boy of the player] should act? I don't think so.'[or]All you're doing is proving that you're just a pathetic child.'[in random order][roman type][line break]".
 
 Resisting ends here.
-

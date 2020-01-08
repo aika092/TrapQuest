@@ -43,8 +43,7 @@ To say TransformReaction of (C - a tall platform heels):
 	otherwise if C is almost too much:
 		say "[variable custom style]I actually quite how quirky these are, and they make me feel really tall! [if the hindrance of C > 2]I'm not sure how I'm to walk around in them without falling over though.[otherwise]I hope I don't fall over too much, though![end if][roman type][line break]";
 	otherwise if the player is not broken:
-		say "[variable custom style]OMG, these are so cool! [if the hindrance of C > 2]It's going to make it very difficult for me to stay on two feet and keep the naughty boys away from my ass though, tee hee![otherwise]And they're just what I need to get proper practice walking in extreme heels.[end if][roman type][line break]".
-
+		say "[variable custom style]OMG, these are so cool! [if the hindrance of C > 2]It's going to make it very difficult for me to stay on two feet and keep the naughty boys away from my ass though, tee-hee![otherwise]And they're just what I need to get proper practice walking in extreme heels.[end if][roman type][line break]".
 
 
 tongue-heels is a platform heels. tongue-heels is biological. tongue-heels is unique.
@@ -89,6 +88,4 @@ To uniquely set up (C - tongue-heels):
 	increase the heel-height of C by 2.
 
 
-
 Supertall Platform Heels ends here.
-

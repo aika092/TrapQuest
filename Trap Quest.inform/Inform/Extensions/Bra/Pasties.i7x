@@ -58,4 +58,3 @@ To decide which number is the perceived-bimbo-influence of (C - tassels):
 	decide on 0.
 
 Pasties ends here.
-

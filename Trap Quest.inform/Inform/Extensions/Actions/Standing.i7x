@@ -191,4 +191,3 @@ To say LongHairStandingBlock of (M - a monster):
 
 
 Standing ends here.
-

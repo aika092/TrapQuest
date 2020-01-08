@@ -55,4 +55,3 @@ To say SuddenTransformTrapReactFlav of (M - a monster):
 
 
 Discombobulator Laser Trap ends here.
-

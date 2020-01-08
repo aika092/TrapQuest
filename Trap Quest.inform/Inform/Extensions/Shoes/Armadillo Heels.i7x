@@ -47,4 +47,3 @@ To compute periodic effect of (C - an armadillo heels):
 				now the tolerated of vagina is 0.
 
 Armadillo Heels ends here.
-

@@ -5,7 +5,7 @@ A potion is a kind of alchemy product.
 Definition: a potion is drink themed: decide yes.
 
 Figure of potion is the file "Items/Collectibles/potion1.png".
-To decide which figure-name is the examine-image of (V - an potion):
+To decide which figure-name is the examine-image of (V - a potion):
 	decide on the figure of potion.
 
 Section 1 Potion of Balance
@@ -211,4 +211,3 @@ Carry out quaffing space mead:
 	increase alcohol level.
 
 Potions ends here.
-

@@ -89,7 +89,7 @@ REQUIRES COMMENTING
 This is the alchemy charge decay rule:
 	if the charge of alchemist's table > 0:
 		decrease the charge of alchemist's table by counters-seconds;
-		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
+		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type] It must be ready for another ingredient to transform!".
 The alchemy charge decay rule is listed in the advance counters rules.
 
 [!<TheScienceChargeDecayRule>+
@@ -100,10 +100,10 @@ REQUIRES COMMENTING
 This is the science charge decay rule:
 	if the charge of science table > 0:
 		decrease the charge of science table by counters-seconds;
-		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The left hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!";
+		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The left hand bowl on the science table starts glowing again.[roman type] It must be ready for another ingredient to transform!";
 	if the second charge of science table > 0:
 		decrease the second charge of science table by counters-seconds;
-		if the second charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type]  It must be ready for another ingredient to transform!".
+		if the second charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type] It must be ready for another ingredient to transform!".
 The science charge decay rule is listed in the advance counters rules.
 
 [!<TheLaundryChargeDecayRule>+
@@ -204,7 +204,7 @@ This is the too full resolution rule:
 		if the player is overly full, now previous-too-full is 1;
 		otherwise now previous-too-full is 0;
 		if P is not previous-too-full:
-			if P is 0, say "[bold type]Your stomach is now overly full!  [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
+			if P is 0, say "[bold type]Your stomach is now overly full! [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
 The too full resolution rule is listed in the advance counters rules.
 
 [!<recentBreastsLargeness:Integer>*
@@ -250,4 +250,3 @@ The pain drain cooldown rule is listed in the advance counters rules.
 
 
 Advance Counters ends here.
-

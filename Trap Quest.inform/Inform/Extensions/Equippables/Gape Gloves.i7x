@@ -87,4 +87,3 @@ To compute periodic effect of (C - gape-gloves):
 
 
 Gape Gloves ends here.
-

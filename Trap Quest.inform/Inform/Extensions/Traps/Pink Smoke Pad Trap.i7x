@@ -44,6 +44,4 @@ To compute reset cooldown of (T - a pink smoke pad):
 	do nothing. [Only ever triggers once]
 
 
-
 Pink Smoke Pad Trap ends here.
-

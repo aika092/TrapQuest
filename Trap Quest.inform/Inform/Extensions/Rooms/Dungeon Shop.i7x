@@ -39,4 +39,3 @@ To decide which number is the wealth of the player:
 
 
 Dungeon Shop ends here.
-

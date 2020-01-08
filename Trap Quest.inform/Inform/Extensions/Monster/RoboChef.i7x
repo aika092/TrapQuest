@@ -47,7 +47,7 @@ Part 1 - Misc Flavour
 To say SummoningFlav of (M - a robochef):
 	if M is in the location of the player:
 		let P be a random patron;
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materializes on the pad. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
 
@@ -142,7 +142,6 @@ Definition: a robochef (called M) is able to remove cursed plugs: [Can the monst
 	decide yes.
 
 
-
 Part 4 - Combat
 
 Chapter 1 - Attack
@@ -164,7 +163,7 @@ To set up sex length of (M - a robochef) in (F - asshole):
 	set up sex length (a random number between 2 and 3) of M in F.
 
 To say AssholePenetrationFlav of (M - a robochef):
-	say "[BigNameDesc of M] forces its glass [manly-penis] into your [asshole]!".
+	say "[BigNameDesc of M] forces [his of M] glass [manly-penis] into your [asshole]!".
 
 To compute sexDumb of (M - a robochef) in (F - a fuckhole):
 	say "[BigNameDesc of M] continues to [one of]methodically plow[or]emotionlessly fuck[or]steadily thrust into[in random order] your [variable F]!".
@@ -191,7 +190,7 @@ To compute unique climax of (M - a robochef) in (F - asshole):
 
 To compute condom filling of (M - a robochef):
 	now M is unwrapped;
-	say "You can feel the rubbery coating of [M]'s [manly-penis] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break][BigNameDesc of M] emits a sharp *ding*, and its bulging rubber [manly-penis] detaches from [his of M] body, landing behind you with a pronounced *plop*. [big he of M] seems to lose interest.";
+	say "You can feel the rubbery coating of [M]'s [manly-penis] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break][BigNameDesc of M] emits a sharp *ding*, and [his of M] bulging rubber [manly-penis] detaches from [his of M] body, landing behind you with a pronounced *plop*. [big he of M] seems to lose interest.";
 	ruin asshole;
 	let L be a random off-stage bag lunch;
 	now L is in the location of the player;
@@ -199,7 +198,7 @@ To compute condom filling of (M - a robochef):
 	progress quest of condom-creampie-quest.
 
 To say CondomAcceptFlav of (M - a robochef):
-	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M]'s glass penis retracts into its body, replacing itself with a black rubber dildo of the same size.".
+	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M]'s glass penis retracts into [his of M] body, replacing itself with a black rubber dildo of the same size.".
 
 Chapter 2 - DQ
 
@@ -232,9 +231,6 @@ To say ForcefeedAfterFlav of (M - a robochef):
 
 To say DQFeedingResistReactionFlav of (M - a robochef):
 	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PERAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".
-
-
-
 
 
 Part 5 - Conversation
@@ -295,7 +291,7 @@ To compute (M - a robochef) considering (T - a thing):
 		compute M cooking T;
 		let D be a random chef food retained by M;
 		if D is chef food:
-			say "A grate opens up on [NameDesc of M]'s face as it takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as it processes your food, and after a sharp ding, its chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
+			say "A grate opens up on [NameDesc of M]'s face as [he of M] takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as [he of M] processes your food, and after a sharp ding, [his of M] chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
 			now D is held by the player;
 			say "[speech style of M]UPGRADE COMPLETE. PAYMENT HAS BEEN DEDUCTED FROM YOUR ACCOUNT.[roman type][line break]";
 			compute resolution of M taking T;
@@ -365,4 +361,3 @@ To say MonsterOfferRejectFlav of (M - a robochef) to (T - a chef food):
 
 
 RoboChef ends here.
-

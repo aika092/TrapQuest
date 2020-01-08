@@ -19,12 +19,12 @@ To decide which figure-name is the monster-image of (M - witch):
 
 To say MonsterDesc of (M - witch):
 	if lady fetish is 2:
-		say "A tall black man dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in his hand and a witch's hat on his head makes his speciality quite clear. [if there is a diaper retained by M]He is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]";
+		say "A tall black [man of M] dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]";
 	otherwise:
-		say "A tall black woman dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. Her [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper retained by M]She is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]".
+		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
-	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet she loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
+	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [big he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Tee-hee![purely at random][end if][roman type][line break]".
 
 To set up (M - witch):
 	reset M;
@@ -246,7 +246,7 @@ This is the witch summons cursed clothing rule:
 			compute summoned quest of C;
 		otherwise if G is actually summonable:[TODO: update for opengags]
 			if G is opengag:
-				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as [he of M] uncurls [his of M] fingers. [big he of M] smirks as a [printed name of G] materializes in your mouth.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as [he of M] uncurls [his of M] fingers. A rigid [printed name of G] attaches itself to your face as [he of M] finishes [his of M] spell.[at random][line break][variable custom style]'UUOAAH!?!'[roman type][line break]";
+				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as [he of M] uncurls [his of M] fingers. [big he of M] smirks as a [printed name of G] materialises in your mouth.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as [he of M] uncurls [his of M] fingers. A rigid [printed name of G] attaches itself to your face as [he of M] finishes [his of M] spell.[at random][line break][variable custom style]'UUOAAH!?!'[roman type][line break]";
 			otherwise:
 				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as [he of M] uncurls [his of M] fingers. Clasping [his of M] hands together, [he of M] attaches a [printed name of G] to your face.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as [he of M] uncurls [his of M] fingers. [big he of M] clasps [his of M] hands together, your teeth suddenly digging into hard plastic. A [printed name of G] has been attached to your face![or][BigNameDesc of M] holds up a fist and slowly uncurls [his of M] fingers, forcing your jaws apart. Your tongue is forced to the bottom of your mouth as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] holds up a fist and slowly uncurls [his of M] fingers, forcing your jaws apart. Your teeth dig into hard plastic as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] holds up a fist and slowly uncurls [his of M] fingers, forcing your jaws apart. Your mouth stays open as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] magically forces open your jaws and clasps [his of M] hands together. You claw at your mouth in vain as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] magically forces open your jaws and clasps [his of M] hands together. Your eyes widen in shock as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] magically forces your jaws apart. [big he of M] clasps [his of M] hands together as a [printed name of G] attaches itself to your face. [line break][variable custom style]'MMMMPH!'[roman type][in random order]";
 			summon G locked;
@@ -489,7 +489,7 @@ To say RepeatResponse of (M - witch):
 		say "[speech style of M]'[one of]SHIT! Mistress, I wasn[']t slacking- Oh. It's you.'[or]Only thing worse than a whore is a whore that gets pregnant.'[or]Not everyone wants to breed with you. Piss off'[or]If you[']re here about an offering, I figure I should tell you that your vagina isn[']t an acceptable container.'[or]If you[']re dumb enough to get pregnant, you[']re probably dumb enough to piss me off. So piss off.'[at random][roman type][line break]";
 	otherwise if the class of the player is succubus:
 		let D be demon lord;
-		say "[speech style of M]'[one of]So, [he of D] returned? I thought [he of D] got [his of D] ass kicked by some bitch in dress up.'[or]If you[']re here about [his of D] return, FYI I don[']t care.'[or]If you[']re here about [him of D], tell [him of D] I just bought a new roll of condoms.'[at random]";
+		say "[speech style of M]'[one of]So, [he of D] returned? I thought [he of D] got [his of D] ass kicked by some bitch in dress up.'[or]If you[']re here about [his of D] return, F.Y.I. I don[']t care.'[or]If you[']re here about [him of D], tell [him of D] I just bought a new roll of condoms.'[at random]";
 	otherwise:
 		say "[speech style of M]'[one of]You heard me before. Pay up or piss off.'[or]You heard what I said before. If you can't pay, piss off.'[or]I'll say it again. If you want to use the altar, you better fucking pay me first.'[at random][roman type][line break]".
 
@@ -498,7 +498,7 @@ To compute taunt acceptance effect of (M - witch):
 	calm M.
 
 To say TauntAccepted of (M - witch):
-	say "[speech style of M]'L-Look, lets call a truce. I'll let you use my altar for free, JUST THIS ONCE.'[roman type][line break]".
+	say "[speech style of M]'L-Look, let's call a truce. I'll let you use my altar for free, JUST THIS ONCE.'[roman type][line break]".
 
 [monster gets stronger]
 To say TauntRejected of (M - witch):
@@ -547,7 +547,7 @@ To say WhereAnswer of (M - witch):
 	if M is unbitchy:
 		say "[speech style of M]'[one of]Tinctures tend to have really nasty drawbacks. Timing is everything.'[or]Recipes seem to change depending on what you like.'[or]Salves won[']t stay on if you go for a swim. If you[']re wearing one, be prepared to stay dirty, or make sure you don[']t get that way.'[or][if pregnancy fetish is 1]It's not a coincidence that the recipe for the elixir of life includes a fae mushroom.'[otherwise]A potion of blessing is essentially sugar water anywhere other than the dungeon.'[end if][or]Powerful creatures tend to drop powerful reagents.'[or]Obviously, try not to mess up. There's a risk you don't end up with exactly what you wanted.'[at random][roman type][line break]";
 	otherwise:
-		say "[one of][BigNameDesc of M] snorts. [line break][speech style of M]'Ha. Like you[']d even know an eye of newt from a gargoyle[']s toenail.'[or][BigNameDesc of M] chuckles to [him of M]self. [speech style of M]'Wouldn[']t you like to know.'[at random][roman type][line break]".
+		say "[one of][BigNameDesc of M] snorts. [line break][speech style of M]'Ha. Like you[']d even know an eye of newt from a gargoyle[']s toenail.'[or][BigNameDesc of M] chuckles to [himself of M]. [speech style of M]'Wouldn[']t you like to know.'[at random][roman type][line break]".
 
 To say StoryAnswer of (M - witch):
 	if M is unbitchy:
@@ -612,6 +612,4 @@ To decide which number is the bartering value of (T - a thing) for (M - witch):
 	decide on 0.
 
 
-
 Witch ends here.
-

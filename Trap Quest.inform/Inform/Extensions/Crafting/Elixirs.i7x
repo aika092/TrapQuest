@@ -46,7 +46,6 @@ A time based rule (this is the magnetism elixir decay rule):
 		if magnetism-elixir-timer < 0, now magnetism-elixir-timer is 0.
 
 
-
 Section 2 Elixir of Life
 
 An elixir of life is a kind of elixir. The printed name of elixir of life is "[TQlink of item described]elixir of life[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of elixir of life is "[TQlink of item described]elixirs of life[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of elixir of life is "el". There are 3 elixir of life.
@@ -170,7 +169,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				let X be siphoning-elixir-charge;
 				if the player is female or the size of penis is 10:
 					if the virgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
-						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realize your [vagina] has been replaced by your original [player-penis]!";
+						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realise your [vagina] has been replaced by your original [player-penis]!";
 						ReverseSexChange the player;
 					otherwise:
 						say "You feel smarter!";
@@ -206,4 +205,3 @@ A time based rule (this is the siphoning elixir decay rule):
 			now siphoning-elixir-timer is 0.]
 
 Elixirs ends here.
-

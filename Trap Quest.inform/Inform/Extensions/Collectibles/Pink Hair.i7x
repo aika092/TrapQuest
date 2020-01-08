@@ -21,4 +21,3 @@ To say ShortDesc of (C - a pink hair):
 Definition: a pink hair is pink themed: decide yes.
 
 Pink Hair ends here.
-

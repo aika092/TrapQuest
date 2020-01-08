@@ -128,4 +128,3 @@ To decide which figure-name is the examine-image of (T - thighs):
 	decide on figure of no-image-yet.
 
 Thighs ends here.
-

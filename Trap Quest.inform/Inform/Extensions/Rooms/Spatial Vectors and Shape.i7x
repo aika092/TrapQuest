@@ -390,4 +390,3 @@ Definition: West (called D) is wanted:
 	decide yes.
 
 Spatial Vectors and Shape ends here.
-

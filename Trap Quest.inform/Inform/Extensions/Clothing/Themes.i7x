@@ -434,8 +434,6 @@ A theme sharing rule:
 	if theme-target is cult garb and theme-share-target is cult garb, rule succeeds.
 
 
-
-
 Section - Bear
 
 Definition: an object is bear themed: [Is it something to do with bears]
@@ -536,7 +534,6 @@ A strength theme rule:
 	increase tempThemeBonus by leopard theme bonus * 2.
 
 
-
 Section - Flower
 
 Definition: an object is flower themed: [Is it something to do with flowers]
@@ -595,9 +592,6 @@ A theme effect description rule:
 		if GTB > 0, say "As a reward for wearing [if GTB is 1]two[otherwise]several[end if] sparkly jewel themed items, you can feel that your charisma is being [if GTB > 1]significantly [end if]enhanced! ".
 
 
-
-
-
 Section - Tartan
 
 Definition: an object is tartan themed: [Has it got a tartan pattern]
@@ -624,7 +618,6 @@ A theme effect description rule:
 	if theme-target is tartan themed:
 		let TTB be tartan theme craft bonus;
 		if TTB > 1, say "As a reward for wearing [if TTB is 2]two[otherwise]several[end if] tartan themed items, you can feel that you will be able to perform alchemy [if TTB > 2]much [end if]more frequently! ".
-
 
 
 Section - Exercise
@@ -722,7 +715,6 @@ A theme effect description rule:
 
 A sex addiction theme rule:
 	increase tempThemeBonus by grey theme bonus.
-
 
 
 Section - Unskirted Themed
@@ -855,7 +847,6 @@ A theme description rule:
 		if theme-target is wearable, say "You [if theme-target is not worn]would [end if]feel safer and more competent swimming[if theme-target is clothing] whilst wearing this[end if]. It would be fashionable to wear this along with other swimming themed items. ";
 		otherwise say "This item would probably be valuable to anyone who loves swimming.";
 		if theme-target is fluid vulnerable clothing, say "You sense that this item [if theme-target is wet and theme-target is clean and theme-target is worn]currently has significantly increased magical powers because it is[otherwise]would have significantly increased magical powers whilst[end if] wet (but only with water).".
-
 
 
 Section - Whore Themed

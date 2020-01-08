@@ -122,7 +122,7 @@ An advance counters rule (this is the diapers affect adult babies rule):
 			say "[bold type]You can feel that the game is no longer identifying you as an adult baby.[roman type][line break]";
 		if adult-baby-dex is 1:
 			now adult-baby-dex is 0;
-			say "[bold type]Now that you're no longer being labeled as an 'adult baby', you can feel that your reflexes have returned to normal.[roman type][line break]";
+			say "[bold type]Now that you're no longer being labelled as an 'adult baby', you can feel that your reflexes have returned to normal.[roman type][line break]";
 		if adult-baby-int is 1:
 			now adult-baby-int is 0;
 			say "[bold type]Now that you're no longer being treated as an 'adult baby', you can feel your lost intelligence and strength returning to you.[roman type][line break]".
@@ -131,4 +131,3 @@ An advance counters rule (this is the diapers affect adult babies rule):
 
 
 Diaper Addiction ends here.
-

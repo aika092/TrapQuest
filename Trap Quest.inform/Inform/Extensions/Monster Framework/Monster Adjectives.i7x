@@ -209,6 +209,4 @@ Definition: a monster is defeated rather than undefeated if it is fucked-silly o
 Definition: a monster is messy if it is diaper-enslaved and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 6 and it is not in the school.
 
 
-
 Monster Adjectives ends here.
-

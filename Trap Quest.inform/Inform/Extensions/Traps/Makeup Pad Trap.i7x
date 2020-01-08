@@ -60,18 +60,17 @@ To trigger (Y - a makeup pad):
 	let X be a random number between 8 and 20;
 	if X > the dexterity of the player or the make-up of face is 3:
 		if diaper quest is 0:
-			say "A large cotton pad swings out and smacks you straight in the face!  [if the make-up of face is 0]A fine cloud of dust is created as it instantly applies a layer of makeup.[otherwise if the make-up of face < 3]A fine cloud of dust is created as it instantly applies another layer of makeup to your already slutty appearance.[otherwise]But nothing really seems to have changed...[end if]";
+			say "A large cotton pad swings out and smacks you straight in the face! [if the make-up of face is 0]A fine cloud of dust is created as it instantly applies a layer of makeup.[otherwise if the make-up of face < 3]A fine cloud of dust is created as it instantly applies another layer of makeup to your already slutty appearance.[otherwise]But nothing really seems to have changed...[end if]";
 			FaceUp 1;
 		otherwise:
-			say "A large cotton pad swings out and smacks you straight in the face!  [if the make-up of face < 3][one of]You[or]Once again you[stopping] are left with [one of]trashy[or]over-done[or]over-the-top[at random] make up that looks like it was [one of]done by a ten year old playing dressup[or]applied by a child[cycling]![otherwise]But nothing really seems to have changed...[end if]";
+			say "A large cotton pad swings out and smacks you straight in the face! [if the make-up of face < 3][one of]You[or]Once again you[stopping] are left with [one of]trashy[or]over-done[or]over-the-top[at random] make up that looks like it was [one of]done by a ten year old playing dressup[or]applied by a child[cycling]![otherwise]But nothing really seems to have changed...[end if]";
 			FaceUp 3;
 		repeat with M running through reactive monsters:
 			say MakeUpTrapReactFlav of M;
 	otherwise:
-		say "With lightning reflexes, you dodge a large cotton pad that was flying straight for your face!  It looks like you avoided a compulsory [if diaper quest is 0]slutty [end if]makeover!".
+		say "With lightning reflexes, you dodge a large cotton pad that was flying straight for your face! It looks like you avoided a compulsory [if diaper quest is 0]slutty [end if]makeover!".
 
 To say MakeUpTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 
 Makeup Pad Trap ends here.
-

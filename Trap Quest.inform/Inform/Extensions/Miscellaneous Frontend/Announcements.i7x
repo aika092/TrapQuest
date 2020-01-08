@@ -34,6 +34,4 @@ To compute announcements:
 			now choice in row 53 of Table of Settings is 5;
 
 
-
 Announcements ends here.
-

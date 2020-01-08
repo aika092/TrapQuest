@@ -14,4 +14,3 @@ Check inserting something into wishing well:
 	try WellWishing the noun instead.
 
 Well ends here.
-

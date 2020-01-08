@@ -26,4 +26,3 @@ To say TripwireTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 
 Tripwire Trap ends here.
-

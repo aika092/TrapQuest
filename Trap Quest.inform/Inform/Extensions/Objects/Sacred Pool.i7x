@@ -60,4 +60,3 @@ To pollute (N - a number):
 			increase doom counter by 150.
 
 Sacred Pool ends here.
-

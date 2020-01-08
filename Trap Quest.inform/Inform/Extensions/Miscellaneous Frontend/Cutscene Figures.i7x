@@ -26,4 +26,3 @@ Figure of Rocking Horse Cutscene is the file "Special/Cutscene/cutscene-rockingh
 
 
 Cutscene Figures ends here.
-

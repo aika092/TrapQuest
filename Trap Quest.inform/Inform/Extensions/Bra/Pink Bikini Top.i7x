@@ -1,6 +1,6 @@
 Pink Bikini Top by Bra begins here.
 
-pink-bikini-top is a bikini top. Figure of bikini 8 is the file "Items/Clothes/Upper/Bras/bikini8.png".  The text-shortcut of pink-bikini-top is "pkbt". Understand "pink", "bikini", "top" as pink-bikini-top.
+pink-bikini-top is a bikini top. Figure of bikini 8 is the file "Items/Clothes/Upper/Bras/bikini8.png". The text-shortcut of pink-bikini-top is "pkbt". Understand "pink", "bikini", "top" as pink-bikini-top.
 
 Definition: pink-bikini-top is pink themed: decide yes.
 
@@ -20,4 +20,3 @@ To decide which number is the initial outrage of (C - pink-bikini-top):
 	decide on 3.
 
 Pink Bikini Top ends here.
-

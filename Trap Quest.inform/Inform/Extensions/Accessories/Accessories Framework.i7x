@@ -91,6 +91,4 @@ To decide which indexed text is jewellery-shortcut of (A - an accessory):
 	decide on "r".
 
 
-
 Accessories Framework ends here.
-

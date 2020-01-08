@@ -83,7 +83,6 @@ This is the great ones hypno rule:
 The great ones hypno rule is listed in the hypno triggers rules.
 
 
-
 This is the present-for-oral hypno rule:
 	if hypno-trigger is "tasty" and hypno-trigger-tasty is 1 and diaper quest is 0:
 		say "[bold type]Having heard the word 'tasty', you find yourself automatically [if face is actually occupied]trying to present[otherwise]presenting[end if] your mouth for use.[roman type][line break]";
@@ -116,7 +115,7 @@ The eat-all-food hypno rule is listed in the hypno triggers rules.
 
 This is the autopush hypno rule:
 	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
-		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, [end if]grunting and pushing.[roman type][line break]";
+		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, grunting, [otherwise]grunting [end if]and pushing.[roman type][line break]";
 		now voluntarySquatting is 1;
 		compute messing;
 		now another-turn is 1.
@@ -175,4 +174,3 @@ This is the autopiss hypno rule:
 The autopiss hypno rule is listed in the hypno triggers rules.
 
 Hypnotic Suggestion ends here.
-

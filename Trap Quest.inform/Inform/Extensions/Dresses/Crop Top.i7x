@@ -317,4 +317,3 @@ To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
 	if leopard print tube top is off-stage, decide on leopard print tube top.
 
 Crop Top ends here.
-

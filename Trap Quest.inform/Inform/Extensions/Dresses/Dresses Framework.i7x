@@ -44,7 +44,6 @@ An underdress is usually knee-length. An underdress is usually average cut. An u
 Definition: an underdress is displacable: decide yes.
 
 
-
 Chapter - Wearability
 
 underdress wearability rules is a rulebook. The wearability rules of underdress is usually underdress wearability rules.
@@ -152,7 +151,4 @@ This is the bra overdress clash rule:
 The bra overdress clash rule is listed in the bra wearability rules.
 
 
-
-
 Dresses Framework ends here.
-

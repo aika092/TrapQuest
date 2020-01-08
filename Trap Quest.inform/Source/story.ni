@@ -230,7 +230,6 @@ Include ASCII Map by Miscellaneous Frontend.
 Volume 2 - Game Setup
 
 
-
 Include Output Text by Miscellaneous Frontend.
 Include Variable Text by Miscellaneous Frontend.
 Include Parser Errors by Miscellaneous Frontend.
@@ -306,8 +305,7 @@ Include Barriers by Rooms.
 Include Mansion by Rooms.
 Include School by Rooms.
 
-An introductory room is a kind of room.  An introductory room has a labyrinth shape called shape.  The shape of an introductory room is usually L3/0-0-1-1-1-1.  The grid position of an introductory room is usually <0,0,0>.
-
+An introductory room is a kind of room. An introductory room has a labyrinth shape called shape. The shape of an introductory room is usually L3/0-0-1-1-1-1. The grid position of an introductory room is usually <0,0,0>.
 
 
 Volume 1 - The Player
@@ -825,7 +823,6 @@ Part - Skirts
 Include All Skirts by Skirts.
 
 
-
 Part - Belts and Suspenders
 
 Include All Belts by Belts Suspenders.
@@ -860,7 +857,6 @@ Include Fuckdoll Collar by Accessories.
 Include Research Airhancer by Accessories.
 
 Include Armband by Accessories.
-
 
 
 Part - Piercing
@@ -954,7 +950,6 @@ Part - Bags of Holding
 Include Bags of Holding Framework by Bags of Holding.
 Include Sacks of Holding by Bags of Holding.
 Include Handbags of Holding by Bags of Holding.
-
 
 
 Volume 5 - More Backend Stuff

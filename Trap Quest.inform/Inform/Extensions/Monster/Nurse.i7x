@@ -102,7 +102,7 @@ To compute (M - nurse) striking (B - a body part):
 To compute damage of (M - nurse):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "She raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]";
+			say "[big he of M] raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -213,10 +213,10 @@ To compute facial sex of (M - a nurse):
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;
 	LickCount;
-	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over him. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
-	otherwise say "[BigNameDesc of M] grunts as she shudders, a strong orgasm washing over her. Your mouth and face soon feel even wetter than before as her girlcum joins her other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	OralSexAddictUp 1;
-	say "[BigNameDesc of M] takes a few moments to recover and then plucks her [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. She unbuckles the straps holding you down and allows you to leave[end if].";
+	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	satisfy M;
 	calm M;
@@ -239,7 +239,7 @@ To say ForcefeedAftermath of (M - nurse):
 	say "After it's all gone, [he of M] unbuckles the straps holding you down and allows you to leave.".
 
 To say ForcefeedAfterFlav of (M - nurse):
-	say "[speech style of M]'There we go, that should give a growing girl like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
+	say "[speech style of M]'There we go, that should give a growing [boy of the player] like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
 
 To say ForcefeedPillDeclarationFlav of (M - nurse):
 	say "[speech style of M]'[one of]Hmm, and we'd better add this to your prescription!'[or]And now time for your prescription pill!'[stopping][roman type][line break]".
@@ -253,4 +253,3 @@ To say DiaperChangeStart of (M - nurse):
 
 
 Nurse ends here.
-

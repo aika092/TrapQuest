@@ -60,4 +60,3 @@ To say ClothingDesc of (C - a johnson):
 
 
 Johnson ends here.
-

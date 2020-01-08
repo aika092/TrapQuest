@@ -19,7 +19,7 @@ To say SexAddictionDesc:
 	otherwise if the sex addiction of the player < 14:
 		say "You look forward to your next opportunity to enjoy your newly found fetish for submissive sex. ";
 	otherwise if the sex addiction of the player < 16:
-		say "You are obsessed with sex in all its forms, where you get to be the submissive!  You no longer have any desire to be the dominant partner in a relationship or sexual encounter. ";
+		say "You are obsessed with sex in all its forms, where you get to be the submissive! You no longer have any desire to be the dominant partner in a relationship or sexual encounter. ";
 	otherwise if the sex addiction of the player < 18:
 		say "You are completely addicted to getting fucked by anyone who is happy to dominate you. ";
 	otherwise:
@@ -35,4 +35,3 @@ To say SexAddictionDesc:
 
 
 Sex Addiction ends here.
-

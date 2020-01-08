@@ -158,7 +158,7 @@ Check drinking water-body-scenery:
 Check drinking water-body:
 	if a random lake monster is in the location of the player, say "You don't dare go near the tentacle monster." instead;
 	allocate 2 seconds;
-	say "You try tasting it. Ugh, it tastes horrible! That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
+	say "You try tasting it. Ugh, it tastes horrible! That is definitely not good for you. You [if the thirst of the player < 5]would rather faint[otherwise]stop[end if]." instead.
 
 Carry out drinking water-body:
 	say "You place your lips in the water and sip. It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
@@ -200,4 +200,3 @@ The block drinking rule is not listed in the check drinking rulebook.
 
 
 Drinking ends here.
-

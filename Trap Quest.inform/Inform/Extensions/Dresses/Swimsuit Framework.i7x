@@ -16,7 +16,6 @@ Definition: a swimsuit is swimming themed: decide yes.
 Definition: a swimsuit is uncovered themed: decide yes.
 
 
-
 Chapter - Monokini
 
 A monokini is a kind of swimsuit. A monokini is usually crotch-intact. Understand "onepiece", "swimsuit" as monokini. A monokini is usually top-displacable.
@@ -74,5 +73,3 @@ To decide which number is the original price of (C - a string monokini):
 
 
 Swimsuit Framework ends here.
-
-

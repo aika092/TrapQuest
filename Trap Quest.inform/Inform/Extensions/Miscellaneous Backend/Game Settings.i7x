@@ -1142,4 +1142,3 @@ Increase game save counter:
 -) instead of "Save The Game Rule" in "Glulx.i6t".]
 
 Game Settings ends here.
-

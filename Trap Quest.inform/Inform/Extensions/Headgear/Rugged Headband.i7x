@@ -32,14 +32,14 @@ To compute class outfit of (H - rugged-headband):[TODO: eventually add a loinclo
 	if T is not actually summonable, now T is a random off-stage leopard print bikini top;
 	let C be heavy-club;
 	if C is actually summonable:
-		say "[bold type]Your headband flexes, and a [printed name of C] materializes in your hands.[roman type][line break]";
+		say "[bold type]Your headband flexes, and a [printed name of C] materialises in your hands.[roman type][line break]";
 		summon C;
 	otherwise if T is clothing and T is actually summonable:
-		say "[bold type]Your headband flexes, and a [printed name of T] materializes on your chest![roman type][line break]";
+		say "[bold type]Your headband flexes, and a [printed name of T] materialises on your chest![roman type][line break]";
 		summon T;
 	otherwise if B is clothing and B is actually summonable:
-		now B is dominance;[means you can't wear a strapon, so you get a bit of a freebie]
-		say "[bold type]Your headband flexes, and a [printed name of B] materializes on your crotch![roman type][line break]";
+		now B is dominance;[means you can't wear a strap-on, so you get a bit of a freebie]
+		say "[bold type]Your headband flexes, and a [printed name of B] materialises on your crotch![roman type][line break]";
 		summon B.
 
 To decide which number is the intelligence-influence of (C - rugged-headband):

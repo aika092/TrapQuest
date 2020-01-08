@@ -704,4 +704,3 @@ This is the maintain diaper stack rule:
 The maintain diaper stack rule is listed in the advance counters rules.
 
 Diaper Framework ends here.
-

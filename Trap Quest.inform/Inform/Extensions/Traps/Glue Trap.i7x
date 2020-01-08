@@ -341,7 +341,7 @@ A time based rule (this is the glue-stuck-mutation rule):
 		[if the player is flying:
 			let M be a random monster in the location of the player;
 			if M is a monster:
-				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again! Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
+				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh-oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again! Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
 			otherwise:
 				say "[one of]You bob blissfully above the puddle of glue[or]You feel a bit worried about the glue puddle below you[or][line break][first custom style]I hope I don't land in the glue when I finally descend![roman type][line break][or]The glue puddle seems to draw your eye[or]The glue puddle beckons to you.[stopping]";
 				stop;]
@@ -747,9 +747,9 @@ To compute GlueClothing (C - a clothing) with (G - a glue):
 	now C is glued;
 	if C is worn:
 		if C is diaper:
-			say "[one of]There's a crinkling sound as the glue spreads under your diaper, shrinking the plastic slightly. You feel the edges adhere to your skin, and your eyes widen as you realise what that means - when you need to change them...?[or]You feel glue seep under the elasticated edge of your [ShortDesc of C] and tighten against your skin. Uh oh![or]There's a crinkly, rustling sound as the glue melts into the [ShortDesc of C], bonding it to your flesh.[i]Now[/i] how will it come off?[as decreasingly likely outcomes]";
+			say "[one of]There's a crinkling sound as the glue spreads under your diaper, shrinking the plastic slightly. You feel the edges adhere to your skin, and your eyes widen as you realise what that means - when you need to change them...?[or]You feel glue seep under the elasticated edge of your [ShortDesc of C] and tighten against your skin. Uh-oh![or]There's a crinkly, rustling sound as the glue melts into the [ShortDesc of C], bonding it to your flesh.[i]Now[/i] how will it come off?[as decreasingly likely outcomes]";
 		otherwise:
-			say "You wipe your glue-covered hands on your [ShortDesc of C]. [one of]Uh oh... the glue spreads under the material and you feel it stick, and set. You tug at the edges, but that only spreads more glue and sticks it down more! Uh oh... you seem to have glued the clothing onto yourself![or]Once again the glue soaks into the [ShortDesc of C], sticking it to you.[or]Now you've glued your [ShortDesc of C], too.[or]The [ShortDesc of C] is now glued.[stopping]";
+			say "You wipe your glue-covered hands on your [ShortDesc of C]. [one of]Uh-oh... the glue spreads under the material and you feel it stick, and set. You tug at the edges, but that only spreads more glue and sticks it down more! Uh-oh... you seem to have glued the clothing onto yourself![or]Once again the glue soaks into the [ShortDesc of C], sticking it to you.[or]Now you've glued your [ShortDesc of C], too.[or]The [ShortDesc of C] is now glued.[stopping]";
 		force clothing-focus redraw; [This forces the clothing window to redraw]
 	otherwise:
 		[They're rubbing something in the glue to wipe it up or scrape it up: clever!]
@@ -850,7 +850,7 @@ To compute glued reaction of (M - a monster):
 			if M is intelligent:
 				say "[one of]You hear [NameDesc of M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
 			otherwise:
-				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [himself of M] up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
+				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [himself of M] up. [line break][second custom style]Uh-oh, that can't be a good sign![roman type][line break]";
 		otherwise if M is friendly and M is interested:
 			say "[one of][BigNameDesc of M] rolls [his of M] eyes before [his of M] expression shifts and become s a little more... calculating, then[or]Once again, [his of M] expression alters, making you shiver, before [he of M][stopping] turns to leave you alone.";
 			distract M;
@@ -924,6 +924,4 @@ Check pulling glue:
 	if the player is glue stuck, try standing instead.
 
 
-
 Glue Trap ends here.
-

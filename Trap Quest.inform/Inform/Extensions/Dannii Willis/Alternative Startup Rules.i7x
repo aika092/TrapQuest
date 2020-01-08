@@ -13,7 +13,6 @@ The after starting the virtual machine rulebook is a good place for extensions t
 Use authorial modesty.
 
 
-
 Chapter - Rearranging the Startup Rules
 
 The alternative virtual machine startup rule is listed instead of the virtual machine startup rule in the startup rules.
@@ -47,7 +46,6 @@ The alternative update chronological records rule translates into I6 as "UPDATE_
 The start in the correct scenes rule is not listed in the startup rules.
 After starting the virtual machine (this is the alternative start in the correct scenes rule):
 	follow the scene changing rules.
-
 
 
 Chapter - Dividing up VM_Initialise
@@ -147,7 +145,6 @@ Include (-
 	rfalse;
 ];
 -).
-
 
 
 Alternative Startup Rules ends here.

@@ -122,4 +122,3 @@ To say IronMaidenTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.
 
 Iron Maiden Trap ends here.
-

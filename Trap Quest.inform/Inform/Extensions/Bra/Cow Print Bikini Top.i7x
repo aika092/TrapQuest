@@ -52,4 +52,3 @@ To compute (C - a cow print bikini top) unique inheriting from (D - a clothing):
 Definition: a cow print bikini top is transformation-protected if the class of the player is cowgirl.
 
 Cow Print Bikini Top ends here.
-

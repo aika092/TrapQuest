@@ -88,7 +88,7 @@ To say DiaperReaction of (M - an adult baby slave):
 		if M is unfriendly:
 			say "[BigNameDesc of M] slaps your diapered ass as you wet yourself.[line break][speech style of M]'[if M is penetrating a body part][one of]Once I'm done playing with you, you should probably go to a Daddy or Mommy for a change unless you like sitting in your wet diapers. I do.'[or]Having you pee your diaper while I sit on your face is really turning me on... You don't have to do anything else, do you?'[or]You peeing your diaper while I sit on your face with mine is making me pretty horny.'[at random][otherwise if the player is upright]You really should have let me know if we were gonna take a pee break.'[otherwise]It's nice to see that I'm in good company, piddle-pants.'[end if][roman type][line break]";
 		otherwise:
-			say "[BigNameDesc of M] smiles gently and pats your back.[line break][speech style of M]'[one of]Don[']t feel bad about wetting your diaper. It means that you're more like me.'[or]Doesn't it feel really good to flood your diaper? I love the warm, wet squish!'[or]If we go ask mommy, maybe she'll change us into each others diapers... Would you want to wear my wet diaper?'[at random][roman type][line break]";
+			say "[BigNameDesc of M] smiles gently and pats your back.[line break][speech style of M]'[one of]Don[']t feel bad about wetting your diaper. It means that you're more like me.'[or]Doesn't it feel really good to flood your diaper? I love the warm, wet squish!'[or]If we go ask [daddytitle of matron], maybe [he of matron]'ll change us into each other's diapers... Would you want to wear my wet diaper?'[at random][roman type][line break]";
 		if the player is modest, say "[variable custom style][if the player is able to speak]'Wait! I swear I don[']t normally do that!'[otherwise]I can[']t even try to explain myself...[end if][roman type][line break]";
 		otherwise say "You feel your cheeks flush as you avert your eyes from [his of M] gaze.";
 	otherwise:
@@ -97,11 +97,11 @@ To say DiaperReaction of (M - an adult baby slave):
 To compute diaper mess reaction of (M - an adult baby slave):
 	if M is unfriendly:
 		if M is bratty adult baby slave, say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]You made all that fuss and you still went in your pants? Guess you're just drooling and babbling away, from being like the other babies around here. You were all just talk!'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]Ohhh, I know you could only feel it, but watching your dignity drain out of you to swell your diaper was just a sight! You know what I'm going to do now right? It's OK, you'll learn to love it!'[roman type][line break]As the musk of soiled diaper furrows into your nostrils, the slave's unnecessarily evil giggle fills the room, [his of M] victory punctuated by [his of M] childish bouncing and mocking tune, the song of your helpless subservience to [his of M] infantile wants![line break][speech style of M]'Just let it happen cutie, your smelly load tells me how badly you want this!'[roman type][line break]You panic as the reality of the situation sets in. Your body grows heavy as you struggle desperately for just one gasp of fresh air as the adult baby's filthy diaper takes dominion of your senses.[at random][otherwise if the player is upright]Awww, you know how long it's been since I had a 69 diaper soiling? You say you're a big [boy of the player] but you're a selfish one!'[otherwise]How does it feel being dominated by a dirty diaper slave, are you embarrassed?'[end if][roman type][line break]";
-		otherwise say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]Once I'm done playing with you, you should probably go to mommy for a change unless you like sitting in your dirty diapers... I do but mommy says that only the biggest babies like playing in their own messes...'[or]Watching you make such a big, mushy mess in your huggies is making me really horny!'[or]That's not fair! If you told me you had to mess, we could have gone at the same time! Still... Is it weird that I think your dirty diaper smells really good?'[roman type][line break]The adult baby slave shoves [his of M] face in your messy diaper, adopting a 69 position.[line break][speech style of M]'But better late than never, right?'[roman type][line break]You panic at [his of M] insinuation as [he of M] fills [his of M] diaper with a load of warm mush on your face, causing you to gag at the scent of [his of M] mess as [he of M] continues to nuzzle and caress your own.[at random][otherwise if the player is upright]Hey! You should have told me you needed to mess yourself! I might have let you sit on my face...'[otherwise]'How does it feel knowing that you're as big a baby as I am?[end if][roman type][line break]";
+		otherwise say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]Once I'm done playing with you, you should probably go to [daddytitle of matron] for a change unless you like sitting in your dirty diapers... I do but [daddytitle of matron] says that only the biggest babies like playing in their own messes...'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]That's not fair! If you told me you had to mess, we could have gone at the same time! Still... Is it weird that I think your dirty diaper smells really good?'[roman type][line break]The adult baby slave shoves [his of M] face in your messy diaper, adopting a 69 position.[line break][speech style of M]'But better late than never, right?'[roman type][line break]You panic at [his of M] insinuation as [he of M] fills [his of M] diaper with a load of warm mush on your face, causing you to gag at the scent of [his of M] mess as [he of M] continues to nuzzle and caress your own.[at random][otherwise if the player is upright]Hey! You should have told me you needed to mess yourself! I might have let you sit on my face...'[otherwise]'How does it feel knowing that you're as big a baby as I am?[end if][roman type][line break]";
 		humiliate 400;
 	otherwise: [###Selkie: “Kimberly”, not [PlayerName]?]
 		if M is bratty adult baby slave, say "[BigNameDesc of M] smiles gently and pats your back. [line break][speech style of M]'[one of]Ewww, did you just soil your diaper? I thought you were a big [boy of the player]! Maybe if you beg I'll change you... in exchange for some playtime!'[or]How did you manage to stinky your diaper before me? I'd be back in big girl panties WAY before you... if I wanted them anyway!'[or]Kimberly made a stiiinky~! Kimberly made a stiiinky~! Wait until I tell mama what you did!'[or]Ohhhh, so THAT's what it means to be a big girl, you make even bigger dirty diapers!'[or]sniff sniff PU! I think I found the dirty diaper culprit!'[at random][roman type][line break]";
-		otherwise say "[BigNameDesc of M] smiles gently and pats your back. [line break][speech style of M]'[one of]Don[']t feel too bad about messing your diaper. You might just be a big baby but at least we can be big babies together!'[or]Doesn't it feel really good to fill your diaper with hot mush? I love feeling the warm, squishy feeling spread around my diaper...'[or]If we go ask mommy, maybe she'll change us into each others diapers... Would you want to wear my messy diaper?'[at random][roman type][line break]";
+		otherwise say "[BigNameDesc of M] smiles gently and pats your back. [line break][speech style of M]'[one of]Don[']t feel too bad about messing your diaper. You might just be a big baby but at least we can be big babies together!'[or]Doesn't it feel really good to fill your diaper with hot mush? I love feeling the warm, squishy feeling spread around my diaper...'[or]If we go ask [daddytitle of matron], maybe she'll change us into each others diapers... Would you want to wear my messy diaper?'[at random][roman type][line break]";
 		humiliate 400;
 	if the humiliation of the player < 15000, say "[variable custom style][if the player is able to speak]'Wait! This isn't normal for me! I'm not a baby!'[otherwise]I'm stuck in a loaded diaper and I can't even try to explain myself... What could I even say?[end if][roman type][line break]";
 	otherwise say "You blush fiercely and avert your eyes, hearing [him of M] giggle as you do so.".
@@ -132,13 +132,13 @@ To say DiaperCheckResultsDryForNowFlav of (M - an adult baby slave):
 	say "[speech style of M]'[one of]Baby Waby foo foo, diapered up so thick! Dry and clean, so it seems, it has to be a trick!'[or]Haha, good joke, you must have literally just got a change, huh? There's no way you're tricking me, I know a pottypants when I see one!'[or]Why is this dry, [sissy slut]? Why would you waste a perfectly good diaper by not using it, huh?'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsDrynessProvedFlav of (M - an adult baby slave):
-	say "[speech style of M]'[one of]Hmph fine, I guess you really don't need diapers after all. It's your own loss really, but I don't mind if you want to take it off now.'[or]I guess diapers really aren't for you. That's sad, but I guess it's only fair that I allow you to wear big girl panties again... if that's what you really want.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hmph fine, I guess you really don't need diapers after all. It's your own loss really, but I don't mind if you want to take it off now.'[or]I guess diapers really aren't for you. That's sad, but I guess it's only fair that I allow you to wear big [boy of the player] panties again... if that's what you really want.'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsDryWellDoneFlav of (M - an adult baby slave):
 	say "[speech style of M]'[one of]Oh how boring, you haven't used it at all! Come on, surely you've got something in there that you can let out? For me?'[or]This can't be right, you feel completely dry! Are you sure you need diapers?'[or]Boo! You know the whole point of diapers it to make them nice and big and [if diaper messing >= 3]smelly[otherwise]soggy[end if], right?'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsMostlyDryFlav of (M - an adult baby slave):
-	say "[speech style of M]'[one of]Uh ohs, what is this? Tinkle spots are here! Just let it go, don't slow the flow, you don't have to fear!'[or]Aww, is this all you could do for me? Are you sure you don't have some more tinkles in there to really get this padding nice and soggy?'[or]Ooh, you've wet yourself a bit! I'm kinda disappointed it's not really full yet though. Come on, I know you've got more in there!'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Uh-ohs, what is this? Tinkle spots are here! Just let it go, don't slow the flow, you don't have to fear!'[or]Aww, is this all you could do for me? Are you sure you don't have some more tinkles in there to really get this padding nice and soggy?'[or]Ooh, you've wet yourself a bit! I'm kinda disappointed it's not really full yet though. Come on, I know you've got more in there!'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsWetFlav of (M - an adult baby slave):
 	let D be a random worn knickers;
@@ -180,13 +180,13 @@ To compute perception of (M - an adult baby slave):
 		say "[big he of M] eyes you mischievously and, compelled by some dark, childish impulse, [he of M] seems ready to pounce at you in a moments notice.";
 		now the sex-length of M is 3;
 	otherwise if the player is an adult baby and M is friendly:
-		say "[speech style of M]'Oh my god! You're just too cute! Mommy has to see you later!'[one of][line break][variable custom style]Mommy?[or][stopping][roman type][line break]";
+		say "[speech style of M]'Oh my god! You're just too cute! [daddytitle of matron] has to see you later!'[one of][line break][variable custom style][daddytitle of matron]?[or][stopping][roman type][line break]";
 		FavourUp M by 3;
 	otherwise if there is a worn waddle diaper and M is friendly:
-		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Wow! I'm so jealous of your waddle diaper! I should ask Mommy to put me in one!'[roman type][line break]";
+		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Wow! I'm so jealous of your waddle diaper! I should ask [daddytitle of matron] to put me in one!'[roman type][line break]";
 		FavourUp M by 2;
 	otherwise if there is a worn cat themed diaper and M is friendly:
-		say "She looks you up and down and smiles.[line break][speech style of M]'Your kitty diaper is adorable! I wish mine was so pretty!'[roman type][line break]";
+		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Your kitty diaper is adorable! I wish mine was so pretty!'[roman type][line break]";
 		FavourUp M by 1;
 	otherwise if there is a worn diaper and M is friendly:
 		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Hey! Cute diaper!'[roman type][line break]";
@@ -219,7 +219,7 @@ This is the adult baby slave gets bored rule:
 
 To say GroundPeeReaction of (M - a bratty adult baby slave):
 	if M is friendly or M is uninterested:
-		say "[speech style of M]'That's naughty! If you can[']t control your pee, you obviously need diapers! Let's see what mommy has to say about this!'[roman type][line break]";
+		say "[speech style of M]'That's naughty! If you can[']t control your pee, you obviously need diapers! Let's see what [daddytitle of matron] has to say about this!'[roman type][line break]";
 		now M is interested;
 		now current-monster is M;
 		now the ToMatron of M is 1;
@@ -275,11 +275,11 @@ This is the adult baby slave shows you to mommy rule:
 		now the target-room of M is Hotel22;
 		anger M;
 		if the player is not in the target-room of M:
-			say "[one of][line break][second custom style]'We're gonna go see mommy!'[roman type][line break][or][stopping]";
+			say "[one of][line break][second custom style]'We're gonna go see [daddytitle of N]!'[roman type][line break][or][stopping]";
 			drag to the target-room of M by M;
 		if N is in the location of M:
-			if the times-met of N < 1, say "[second custom style]'[NameBimbo], meet Mommy! [big he of N]'s the best.'[line break]";
-			otherwise say "[second custom style]'Mommy! [NameBimbo] had an accident so [he of the player] needs diapers! That's the rule, right?!'[line break]";
+			if the times-met of N < 1, say "[second custom style]'[NameBimbo], meet [daddytitle of N]! [big he of N]'s the best.'[line break]";
+			otherwise say "[second custom style]'[daddytitle of N]! [NameBimbo] had an accident so [he of the player] needs diapers! That's the rule, right?!'[line break]";
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]Let me go!'[otherwise]Umm...'[end if]";
 			say "[roman type][line break]";
 			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, humming to [himself of M] merrily, seemingly happy with [himself of M] for [his of M] 'good deed'.";
@@ -523,7 +523,6 @@ This is the adult baby slave extra continue sex check rule:
 The adult baby slave extra continue sex check rule is listed in the adult baby slave continue sex rules.
 
 
-
 adult-baby-facesit is a diaper punishment. The priority of adult-baby-facesit is 2.
 Definition: an adult-baby-facesit (called P) is appropriate:
 	if current-monster is not adult baby slave, decide no;
@@ -559,7 +558,6 @@ Definition: an adult baby slave (called M) is eager to feed to master:
 	decide no.
 
 
-
 To compute punishment of (P - adult-baby-matron-drag):
 	 follow the adult baby slave shows you to mommy rule.
 
@@ -585,7 +583,7 @@ To compute damage of (M - an adult baby slave):
 	if the health of M > 0:
 		if M is awake:
 			if M is uninterested:
-				say "The girl looks shocked. [line break][speech style of M]'[one of]Hey! I'll tell mommy on you![or]Stop! That hurts!'[or]I'm gonna make you pay for this!'[at random][roman type][line break]";
+				say "The [boy of M] looks shocked. [line break][speech style of M]'[one of]Hey! I'll tell [daddytitle of matron] on you![or]Stop! That hurts!'[or]I'm gonna make you pay for this!'[at random][roman type][line break]";
 				now M is interested;
 				anger M;
 				now the sex-length of M is 3;
@@ -697,29 +695,29 @@ Section 2 - Questioning
 
 To compute annoyance of (M - an adult baby slave):
 	if M is uninterested:
-		say "The adult baby slave doesn't seem to realize you are talking to [him of M].[line break]";
+		say "The adult baby slave doesn't seem to realise you are talking to [him of M].[line break]";
 	otherwise if M is unfriendly:
 		say "The adult baby slave ignores your question. [line break][speech style of M]'No!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'You're getting kind of boring... Could you stop?'[roman type][line break]";
 
 To say WhereAnswer of (M - an adult baby slave):
-	if M is in the hotel, say "[speech style of M]'[one of]We're in a hotel with a bunch of big toys that feed you or change you... And, of course, mommy's here.'[or]I already told you! We're in a hotel. It's like a vacation!'[or]I said I already told you 'bout where we are!'[stopping][roman type][line break]";
+	if M is in the hotel, say "[speech style of M]'[one of]We're in a hotel with a bunch of big toys that feed you or change you... And, of course, [daddytitle of matron]'s here.'[or]I already told you! We're in a hotel. It's like a vacation!'[or]I said I already told you 'bout where we are!'[stopping][roman type][line break]";
 	otherwise say "[speech style of M]'[one of]We're in a big world full of Mommies and Daddies that want to keep us in diapers. It's the best!'[or]I already told you! We're in a magical diaper world. It's like the best place ever!'[or]I said I already told you 'bout where we are!'[stopping][roman type][line break]".
 
 To say WhoAnswer of (M - an adult baby slave):
-	if M is in the hotel, say "[speech style of M]'I'm one of mommy's slaves. It's actually pretty fun! You should be one'a her slaves too!'[roman type][line break]";
+	if M is in the hotel, say "[speech style of M]'I'm one of [daddytitle of matron]'s slaves. It's actually pretty fun! You should be one'a [his of matron] slaves too!'[roman type][line break]";
 	otherwise say "[speech style of M]'I'm your new best friend!'[roman type][line break]".
 
 To say StoryAnswer of (M - an adult baby slave):
-	say "[speech style of M]'[one of]Well, I used to be a big [boy of M]. Then, I tried out some video game where I met mommy and she taught me that I was never really a big [boy of M] all along.'[or]For a while, I really thought I was a grown-up. Mommy showed me that wasn't true.'[or]Let's see... I played a video game, I met mommy and then I became her baby and I've never been happier!'[or]Hm... I think I used to work on making some sorta game... I forgotted about that. Oh well!'[as decreasingly likely outcomes][roman type][line break]".
+	say "[speech style of M]'[one of]Well, I used to be a big [boy of M]. Then, I tried out some video game where I met [daddytitle of matron] and [he of matron] taught me that I was never really a big [boy of M] all along.'[or]For a while, I really thought I was a grown-up. [daddytitle of matron] showed me that wasn't true.'[or]Let's see... I played a video game, I met [daddytitle of matron] and then I became [his of matron] baby and I've never been happier!'[or]Hm... I think I used to work on making some sorta game... I forgotted about that. Oh well!'[as decreasingly likely outcomes][roman type][line break]".
 
 To say EscapeAnswer of (M - an adult baby slave):
-	if M is in the hotel, say "[speech style of M]'You can leave the hotel any time you'd like from the front entrance but why would you want to when mommy and me are here? Plus there are all of the big toys!'[roman type][line break]";
-	otherwise say "[speech style of M]'You can leave the dungeon any time you'd like by going up the stairs. And you should, because upstairs you can meet mommy!'[roman type][line break]".
+	if M is in the hotel, say "[speech style of M]'You can leave the hotel any time you'd like from the front entrance but why would you want to when [daddytitle of matron] and me are here? Plus there are all of the big toys!'[roman type][line break]";
+	otherwise say "[speech style of M]'You can leave the dungeon any time you'd like by going up the stairs. And you should, because upstairs you can meet [daddytitle of matron]!'[roman type][line break]".
 
 To say AdviceAnswer of (M - an adult baby slave):
-	if M is in the hotel, say "[speech style of M]'[one of]The toys here can be pretty helpful but they don't listen too good when you tell them no. As long as your tummy is full and you're dressed, they'll usually leave you alone though.'[or]Hm... Mommy says you'll forget how to take your diaper off if you leave it on for too long. That happened to me. But, mommy'll always change you if you need it!'[at random][roman type][line break]";
+	if M is in the hotel, say "[speech style of M]'[one of]The toys here can be pretty helpful but they don't listen too good when you tell them no. As long as your tummy is full and you're dressed, they'll usually leave you alone though.'[or]Hm... [daddytitle of matron] says you'll forget how to take your diaper off if you leave it on for too long. That happened to me. But, [daddytitle of matron]'ll always change you if you need it!'[at random][roman type][line break]";
 	otherwise say "[speech style of M]'[one of]If you want to make sure that the people here take good care of you, dress like a baby or like a slut. If you wear normal grown up clothes, they'll leave you alone, which is boring.'[or]Crawling around is a good way to make sure that you can't fight back when a Mommy or Daddy comes to punish you. But the sad thing is that being on your knees means most traps won't be able to affect you, which is always disappointing...'[at random][roman type][line break]".
 
 To compute teaching of (M - an adult baby slave):
@@ -734,11 +732,10 @@ To compute unfriendly drink of (M - an adult baby slave):
 		say "[speech style of M]'Drink my pee diaper, dumbie!'[roman type][line break]";
 		now the boredom of M is 0;
 	otherwise:
-		say "[speech style of M]'Go ask [if M is in the hotel]mommy[otherwise]a mommy or daddy[end if].'[roman type][line break]".
+		say "[speech style of M]'Go ask [if M is in the hotel][daddytitle of matron][otherwise]a Mommy or Daddy[end if].'[roman type][line break]".
 
 To compute friendly drink of (M - an adult baby slave):
 	compute unfriendly drink of M.
 
 
 Adult Baby Slave ends here.
-

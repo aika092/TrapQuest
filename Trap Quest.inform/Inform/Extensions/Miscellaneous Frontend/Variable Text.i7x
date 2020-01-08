@@ -39,7 +39,7 @@ To say stud:
 	otherwise if the player is not feeling submissive:
 		say "[if diaper lover >= 1]Sir[otherwise][one of]stud[or]handsome[or]stud[or]sailor[as decreasingly likely outcomes][end if]";
 	otherwise:
-		say "[if diaper lover >= 1 and the bimbo of the player > 12]daddy[otherwise]Master[end if]".
+		say "[if diaper lover >= 1 and the bimbo of the player > 12]Daddy[otherwise]Master[end if]".
 
 [!<SayMistress>+
 
@@ -48,13 +48,13 @@ If the player is impressed with the (assumed female) NPC
 +!]
 To say mistress:
 	if the class of the player is santa's little helper:
-		say "Mrs Santa";
+		say "Mrs. Santa";
 	if the delicateness of the player < 7:
 		say "[one of]honey[or]cutie[as decreasingly likely outcomes]";
 	otherwise if the delicateness of the player < 14:
 		say "[if diaper lover >= 1]Missus[otherwise][one of]beauty[or]Madame[or]Missus[as decreasingly likely outcomes][end if]";
 	otherwise:
-		say "[if diaper lover >= 1 and the bimbo of the player > 12]mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
+		say "[if diaper lover >= 1 and the bimbo of the player > 12]Mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
 
 [!<SayStud>+
 
@@ -350,7 +350,7 @@ To say urine:
 	otherwise if the urine taste addiction of the player < 14:
 		say "[one of]pee[or]piss[or]piss[or]wee[or]urine[as decreasingly likely outcomes]";
 	otherwise:
-		say "[one of][or]yummy [or]tasty [or][or]delicious [or][or]my favourite drink [as decreasingly likely outcomes]piss".
+		say "[one of][or]yummy [or]tasty [or][or]delicious [or][or]my favourite drink, [as decreasingly likely outcomes]piss".
 
 [!<SayUrinate>+
 
@@ -385,7 +385,6 @@ To decide which text is men of (M - a person):
 	decide on "[if M is neuter]beings[otherwise if M is presenting as female]women[otherwise]men[end if]".
 
 
-
 To decide which text is sissy-girl:
 	decide on "[if lady fetish is 2]sissy[otherwise]girl[end if]".
 
@@ -398,6 +397,12 @@ To decide which text is boy of (M - a thing):
 To decide which text is boy of (M - a person):
 	decide on "[if M is neuter]youngling[otherwise if M is presenting as female]girl[otherwise]boy[end if]".
 
+To decide which text is big boy of (M - a thing):
+	decide on boy of M in title case.
+
+To decide which text is caps boy of (M - a thing):
+	decide on boy of M in upper case.
+
 To decide which text is he of (M - a thing):
 	decide on "[if M is live]they[otherwise]it[end if]".
 
@@ -407,11 +412,20 @@ To decide which text is he of (M - a person):
 To decide which text is big he of (M - a thing):
 	decide on he of M in title case.
 
+To decide which text is caps he of (M - a thing):
+	decide on he of M in upper case.
+
 To decide which text is him of (M - a thing):
 	decide on "[if M is live]them[otherwise]it[end if]".
 
 To decide which text is him of (M - a person):
 	decide on "[if M is neuter]it[otherwise if M is presenting as female]her[otherwise]him[end if]".
+
+To decide which text is big him of (M - a thing):
+	decide on him of M in title case.
+
+To decide which text is caps him of (M - a thing):
+	decide on him of M in upper case.
 
 To decide which text is his of (M - a thing):
 	decide on "[if M is live]their[otherwise]its[end if]".
@@ -419,14 +433,23 @@ To decide which text is his of (M - a thing):
 To decide which text is his of (M - a person):
 	decide on "[if M is neuter]its[otherwise if M is presenting as female]her[otherwise]his[end if]".
 
+To decide which text is big his of (M - a thing):
+	decide on his of M in title case.
+
+To decide which text is caps his of (M - a thing):
+	decide on his of M in upper case.
+
 To decide which text is hers of (M - a thing):
 	decide on "[if M is live]theirs[otherwise]its[end if]".
 
 To decide which text is hers of (M - a person):
 	decide on "[if M is neuter]its[otherwise if M is presenting as female]hers[otherwise]his[end if]".
 
-To decide which text is big his of (M - a thing):
-	decide on his of M in title case.
+To decide which text is big hers of (M - a thing):
+	decide on hers of M in title case.
+
+To decide which text is caps hers of (M - a thing):
+	decide on hers of M in upper case.
 
 To decide which text is himself of (M - a thing):
 	decide on "[if M is live]themselves[otherwise]itself[end if]".
@@ -436,6 +459,12 @@ To decide which text is himself of (M - yourself):
 
 To decide which text is himself of (M - a person):
 	decide on "[if M is neuter]itself[otherwise if M is presenting as female]herself[otherwise]himself[end if]".
+
+To decide which text is big himself of (M - a thing):
+	decide on himself of M in title case.
+
+To decide which text is caps himself of (M - a thing):
+	decide on himself of M in upper case.
 
 [!<SayDickDescOfMonster>+
 
@@ -474,7 +503,13 @@ To say daddy of (M - a monster):
 	otherwise if the bimbo of the player > 18:
 		say "[if M is presenting as male]Papa[otherwise]Mama[end if]";
 	otherwise:
-		say "[if M is presenting as male]Daddy[otherwise]Mummy[end if]".
+		say "[if M is presenting as male]Daddy[otherwise]Mommy[end if]".
+
+To say daddytitle of (M - a monster):
+	if M is presenting as male:
+		say "Daddy";
+	otherwise:
+		say "Mommy".
 
 To say royal-subject of (M - a monster):
 	if M is princess-consort:
@@ -688,6 +723,14 @@ To say tasty:
 	say "tasty";
 	now hypno-trigger is "tasty".
 
+To say big tasty:
+	say "Tasty";
+	now hypno-trigger is "tasty".
+
+To say caps tasty:
+	say "TASTY";
+	now hypno-trigger is "tasty".
+
 [!<SayMaturity>+
 
 Aika's first DQ hypnosis test
@@ -743,4 +786,3 @@ To say caps please:
 
 
 Variable Text ends here.
-

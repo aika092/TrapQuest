@@ -89,4 +89,3 @@ To decide which number is the initial outrage of (C - a living tentacles):
 Definition: a living tentacles is purple themed: decide yes.
 
 Fertility Goddess Outfit ends here.
-

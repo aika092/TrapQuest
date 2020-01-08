@@ -187,7 +187,7 @@ To Fertilize (E - a medium egg) with (M - a giant wasp):
 		remove E from play.
 
 To compute (M - a giant wasp) fathering (W - a giant wasp):
-	say "[BigNameDesc of M] swoops down and lands next to the egg. [one of]A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds. Before you realise what has happened, there are two identical giant wasps hovering in front of you. The 'father' looks ready for round 2, and the newborn doesn't seem to care that you're his 'mother'. It looks like it wants to follow its immediate instincts to reproduce.[or]Once again you are forced to watch the wasp fertilize your egg, changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds. The 'father' looks ready for round 2, and just like the previous time, the newborn doesn't seem to care that you're his 'mother'...[stopping]";
+	say "[BigNameDesc of M] swoops down and lands next to the egg. [one of]A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds. Before you realise what has happened, there are two identical giant wasps hovering in front of you. The 'father' looks ready for round 2, and the newborn doesn't seem to care that you're his 'mother'. It looks like it wants to follow its immediate instincts to reproduce.[or]Once again you are forced to watch the wasp fertilise your egg, changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping its seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds. The 'father' looks ready for round 2, and just like the previous time, the newborn doesn't seem to care that you're his 'mother'...[stopping]";
 	now W is in the location of M;
 	newbornSetup W;
 	now the fertilization-cooldown of M is 200;
@@ -329,13 +329,12 @@ To set up sex length of (M - a giant wasp) in (B - asshole):
 	set up sex length 4 of M in B.
 
 
-
 To compute striking attack of (M - a giant wasp):
 	if M is dangerous-wasp and a random number between 1 and 2 is 1 and the player is the donator:
 		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
 		increase wasp-poison-timer by 3 * the difficulty of M;
 	otherwise if M is honey-wasp and a random number between 1 and 2 is 1 and the player is the donator:
-		say "An alien-looking appendage unfurls from [NameDesc of M]'s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]Its getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
+		say "An alien-looking appendage unfurls from [NameDesc of M]'s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]It's getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
 		increase wasp-honey-timer by 5 * the difficulty of M;
 		if wasp-honey-timer > 80:
 			say "[bold type]The honey covering your limbs begins to harden, and within moments it becomes impossible to move at all. [roman type][BigNameDesc of M] bumps you gently with [his of M] body, which in your immobile state causes you to fall over.";
@@ -460,7 +459,7 @@ To say MonsterFailedTripFlav of (M - domesticated wasp):
 	say "[one of]You manage to avoid it catching you.[or]Luckily, you're fast enough to avoid it catching you.[at random]".
 
 To compute delay of (M - domesticated wasp):
-	say "The wasp rider pulls back on [NameDesc of M]'s reins [line break][speech style of M]'[one of]Let's see her beg. Heheh.'[or]So, should he violate you anally or anally?'[or]He's about to breed your starfish! Why don't you show it to him?'[or]Wait. I want to see her ask for it.'[or]Show it to him, loser. Show him.'[in random order][roman type][line break]".
+	say "The wasp rider pulls back on [NameDesc of M]'s reins [line break][speech style of M]'[one of]Let's see her beg. Heheh.'[or]So, should [he of M] violate you anally or anally?'[or][big he of M]'s about to breed your starfish! Why don't you show it to him?'[or]Wait. I want to see her ask for it.'[or]Show it to him, loser. Show him.'[in random order][roman type][line break]".
 
 To say PrepTaunt of (M - a domesticated wasp) in (F - asshole):
 	say "[line break][speech style of M]'[one of]Here comes the fun part. Get it? [']Part?[']'[or]That's right. [big he of M]'s all yours!'[or]Get ready loser, it's breeding time.'[or]I'd do it, but it just won't fit. Thanks a lot, loser!'[or]I like to watch.'[at random][roman type][line break]";
@@ -472,7 +471,7 @@ To compute unique death of (M - domesticated wasp):
 		set up F;
 		now F is in the location of the player;
 	otherwise:]
-	say "The fairy leaps off the wasp as it falls to the ground and slowly melts into nothingness. [big he of F] sticks out her tongue at you as she flies off into the distance.";
+	say "The fairy leaps off the wasp as it falls to the ground and slowly melts into nothingness. [big he of F] sticks out [his of F] tongue at you as [he of F] flies off into the distance.";
 	let W be a random off-stage wasp wing;
 	if W is wasp wing:
 		say "[one of]On closer inspection, you notice that[or]Once again,[stopping] a [W] has been left behind.";
@@ -518,7 +517,7 @@ To say UnAnnoyedResponse of (M - domesticated wasp):
 	say "[speech style of M]'[one of]Hahaha! What a pervert!'[or]Do you really like getting fucked by a wasp? Gross!'[at random][roman type][line break]";
 
 To say MildAnnoyedResponse of (M - domesticated wasp):
-	say "[speech style of M]'[one of]Sorry, but when he has a need to seed, he has a need to seed. Or egg. I guess.'[or]But if he doesn't fuck you, where would he put all his eggs? They wouldn't fit in me. Stupid.'[or]Oh come on, it's not like it's going to go on forever.'[or]'Stop being a selfish bitch. He has needs too!'[or]Where else do you expect him to put his eggs? So stupid...'[or]Maybe you should make your butt less fun to breed!'[at random][roman type][line break]";
+	say "[speech style of M]'[one of]Sorry, but when [he of M] has a need to seed, [he of M] has a need to seed. Or egg. I guess.'[or]But if [he of M] doesn't fuck you, where would [he of M] put all [his of M] eggs? They wouldn't fit in me. Stupid.'[or]Oh come on, it's not like it's going to go on forever.'[or]'Stop being a selfish bitch. [big he of M] has needs too!'[or]Where else do you expect him to put [his of M] eggs? So stupid...'[or]Maybe you should make your butt less fun to breed!'[at random][roman type][line break]";
 
 To say AnnoyedResponse of (M - domesticated wasp):
 	say "[speech style of M]'Stop ruining the moment!'[roman type][line break]".
@@ -540,7 +539,7 @@ To say AssistanceRejected of (M - domesticated wasp) with (N - a monster):
 
 To compute annoyance of (M - domesticated wasp):
 	if M is uninterested:
-		say "The wasp rider doesn't seem to realize you are talking to her.";
+		say "The wasp rider doesn't seem to realise you are talking to her.";
 	otherwise if M is unfriendly:
 		say "[speech style of M]'Heheh, talking is useless now!'[roman type][line break]";
 	otherwise:
@@ -620,4 +619,3 @@ To compute SelectionFailure of (M - domesticated wasp):
 	bore M.
 
 Giant Wasp ends here.
-

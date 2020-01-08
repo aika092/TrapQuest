@@ -30,4 +30,3 @@ To compute absorption of (B - a clothing):
 
 
 Absorption ends here.
-

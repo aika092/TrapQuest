@@ -86,9 +86,4 @@ To compute recipe specific cursing of (T - a thing):
 Understand "craft [something]", "brew [something]", "craft with [something]", "brew with [something]", "do alchemy with [something]", "perform alchemy with [something]" as crafting.
 
 
-
-
-
-
 Crafting ends here.
-

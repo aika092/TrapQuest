@@ -67,7 +67,7 @@ Definition: A strapon-dildo (called P) is dildo-usage:
 	decide yes.
 
 To say PenisSoften of (K - a strapon-dildo):
-	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materializes out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
+	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materialises out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
 To say PenisHarden of (K - a strapon-dildo):
 	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.". [###Selkie: At first sight, I wondered if this meant your penis fell off onto the ground! ;-) ]
@@ -134,7 +134,7 @@ Only needed if the player's penis can ever go beyond 10
 To say PenisSoften of (K - an equine-strapon):
 	say "Your [ShortDesc of penis] is forcibly softened as your cock ring transforms into a [printed name of K].";
 To say PenisHarden of (K - an equine-strapon):
-	say "You feel your [ShortDesc of penis] tingle as your strapon dildo transforms into a [printed name of K].";]
+	say "You feel your [ShortDesc of penis] tingle as your strap-on dildo transforms into a [printed name of K].";]
 
 Chapter 3 - Gemstone Strapon
 
@@ -178,7 +178,6 @@ To compute periodic effect of (G - gem-strapon):
 	otherwise if the strap-length of G > 3:
 		now the strap-length of G is 3;
 		say "The gemstones covering your strap-on lose almost all of their colour, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
-
 
 
 To decide which number is the sex-addiction-influence of (C - a gem-strapon):

@@ -97,7 +97,6 @@ First for processing hyperlinks (This is the Aika char-inject with hyperlinks ru
 	continue the action.
 
 
-
 Part 1 - Basic Links
 
 
@@ -364,11 +363,6 @@ To compute multiple choice question:
 To reset multiple choice questions:
 	repeat with R running through numerical-response:
 		now the printed name of R is "".
-	
-	
-		
-
-
 
 
 Part 4 - VerbDescs
@@ -1086,4 +1080,3 @@ Understand "list blessables" as AltarListing.
 
 
 Links ends here.
-

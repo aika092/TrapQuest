@@ -142,7 +142,7 @@ To compute unique final action of (M - ghostly tentacle):
 	do nothing.
 
 To say SummoningFlav of (M - a ghost):
-	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over her face[otherwise if futanari fetish is 0]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
 
@@ -451,7 +451,7 @@ To say CondomPieFlav of (M - a ghost) in (F - a fuckhole):
 	say "[one of]The room fills with a ghastly glow as [NameDesc of M] slams itself home, eagerly flooding the condom with its seed. After several [if the semen addiction of the player < 7]excruciating[otherwise if the semen addiction of the player < 15]intense[otherwise]wonderful[end if] moments of stillness, broken only by the subtle twitching between loads, [NameDesc of M] pulls out.[or][BigNameDesc of M] jizzes into the condom, continuing to thrust as it slowly fills with its unnervingly cold [semen]. You look over your shoulder, [if the semen addiction of the player < 7]shuddering[otherwise]quivering[end if][if the semen addiction of the player > 14] with excitement[end if] as it pulls out.[or][BigNameDesc of M] throbs as it pumps load after load of thick [semen] into the condom, allowing the ghastly cold to soak you through to the bone before pulling out.[or][BigNameDesc of M] continues to thrust as its ghastly cold [semen] slowly fills the condom ensuring the sensation will be thoroughly embedded into your memory for a long, long time.[at random][line break]".
 
 To say CondomPinFlav of (M - a ghost) on (C - a clothing):
-	say "A ghostly hand materializes to peel the [one of]wobbling[or]semen-swollen[or]newly used[or]slimy[at random] condom off [his of M] shaft and presses it to your [C].";
+	say "A ghostly hand materialises to peel the [one of]wobbling[or]semen-swollen[or]newly used[or]slimy[at random] condom off [his of M] shaft and presses it to your [C].";
 	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. ";
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [C]. ".
 
@@ -483,7 +483,7 @@ The ghost priority attack rules is a rulebook. The priority attack rules of a gh
 
 [This is the ghosts are patient rule:
 	if current-monster is objectifying the player and current-monster is not unfriendly:
-		say "[BigNameDesc of current-monster] visibly stiffens. Uh oh.";
+		say "[BigNameDesc of current-monster] visibly stiffens. Uh-oh.";
 		anger current-monster;
 		rule succeeds.
 The ghosts are patient rule is listed in the ghost priority attack rules.]
@@ -692,7 +692,6 @@ To compute punishment of (P - ghost-using):
 	satisfy M.
 
 
-
 Part 3 - Damage
 
 Definition: a ghost (called M) is damageable:
@@ -739,7 +738,7 @@ To compute damage of (M - a ghost):
 			now M is interested;
 			anger M;
 		otherwise if the health of M is the maxhealth of M:
-			say "[one of]Green fluid beads at its tip[or]Green fluid continues dripping from its tip[stopping]. It seems like all you've succeeded at is turning it on!";
+			say "[one of]Green fluid beads at its tip[or]Green fluid continues dripping from its tip[stopping]. It seems like all you've succeeded at is turning [him of M] on!";
 			increase the bank of M by 10;
 			anger M;
 		otherwise if the wind-up of M > 0 and M is not jismbodied ghost:
@@ -753,7 +752,7 @@ To compute damage of (M - a ghost):
 			otherwise:
 				say "[BigNameDesc of M] seems completely undeterred by your attack!";
 		otherwise:
-			if the health of M > the maxhealth of M / 2, say "It seems completely undeterred by your attack!";
+			if the health of M > the maxhealth of M / 2, say "[big he of M] seems completely undeterred by your attack!";
 			otherwise say "Its glow is getting dimmer.";
 	otherwise:
 		compute death of M.
@@ -764,7 +763,7 @@ To compute unique death of (M - a ghost):
 		let X be ghost-strapon;
 		if X is off-stage and the player is the donator and a random number between 1 and 3 is 1 and M is not disembodied ghost:
 			now X is in the location of the player;
-			say "You hear a terrible shriek as [NameDesc of M] abruptly drops to the ground, and a pair of black crotchless panties materialize on top of it.";
+			say "You hear a terrible shriek as [NameDesc of M] abruptly drops to the ground, and a pair of black crotchless panties materialise on top of it.";
 			compute autotaking X;
 		otherwise:
 			let D be a random off-stage ectoplasm;
@@ -901,8 +900,6 @@ To compute diaper change of (M - ghostly tentacle):
 	bore M.
 
 
-
-
 Section 2 - Tripping
 
 To compute tripping attack of (M - ghostly tentacle):
@@ -949,4 +946,3 @@ To say MonsterFailedTripFlav of (M - ghostly tentacle):
 
 
 Ghost ends here.
-

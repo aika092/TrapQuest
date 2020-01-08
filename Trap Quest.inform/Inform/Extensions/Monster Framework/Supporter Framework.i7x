@@ -107,7 +107,7 @@ To say LongDickDesc of (M - a supporter):
 		say "16 inch destroyer";
 	otherwise:
 		say "20 inch [if mythical creature fetish is 1]horsecock[otherwise]behemoth[end if]";
-	if futanari fetish is 0, say " strapon dildo".
+	if futanari fetish is 0, say " strap-on dildo".
 
 Definition: A supporter (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120, decide yes;
@@ -198,7 +198,7 @@ To say MouthPenetrationFlav of (M - a supporter):
 To compute facial sex of (M - a supporter):
 	if M is male: [Actual penis]
 		compute default facial sex of M;
-	otherwise if M is strapped: [Strapon]
+	otherwise if M is strapped: [Strap-on]
 		compute strapon facial sex of M;
 	otherwise: [Facesitting]
 		compute facesit sex of M.
@@ -218,7 +218,7 @@ To say StraponOralResisting of (M - a supporter):
 To compute facial climax of (M - a supporter):
 	if M is male: [Actual penis]
 		compute default facial climax for M;
-	otherwise if M is strapped: [Strapon]
+	otherwise if M is strapped: [Strap-on]
 		compute facial strapon climax of M;
 	otherwise: [Facesitting]
 		compute facesit climax of M.
@@ -248,7 +248,7 @@ The supporter facesitting prevents breathing rule is listed in the breathing blo
 [Vaginal and Anal]
 
 To say VaginaPenetrationFlav of (M - a supporter):
-	if M is male or M is strapped: [Cock or Strapon]
+	if M is male or M is strapped: [Cock or Strap-on]
 		say PenPrep of M in vagina;
 		say PenetrationFlav of M in vagina;
 	otherwise: [Supporter's choice]
@@ -256,7 +256,7 @@ To say VaginaPenetrationFlav of (M - a supporter):
 
 
 To say AssholePenetrationFlav of (M - a supporter):
-	if M is male or M is strapped: [Cock or Strapon]
+	if M is male or M is strapped: [Cock or Strap-on]
 		say PenPrep of M in asshole;
 		say PenetrationFlav of M in asshole;
 	otherwise: [Supporter's choice]
@@ -265,7 +265,7 @@ To say AssholePenetrationFlav of (M - a supporter):
 To compute vaginal sex of (M - a supporter):
 	if M is male: [Actual penis]
 		compute default vaginal sex of M;
-	otherwise if M is strapped: [Strapon]
+	otherwise if M is strapped: [Strap-on]
 		compute strapon sex of M in vagina;
 	otherwise: [Supporter's choice]
 		compute supporter sex of M in vagina.
@@ -273,7 +273,7 @@ To compute vaginal sex of (M - a supporter):
 To compute anal sex of (M - a supporter):
 	if M is male: [Actual penis]
 		compute default anal sex of M;
-	otherwise if M is strapped: [Strapon]
+	otherwise if M is strapped: [Strap-on]
 		compute strapon sex of M in asshole;
 	otherwise: [Supporter's choice]
 		compute supporter sex of M in asshole.
@@ -321,7 +321,7 @@ To compute unique climax of (M - a supporter) in (F - a fuckhole):
 	if M is male: [Actual penis]
 		if M is wrapped, compute wrapped climax of M in F;
 		otherwise compute unprotected climax of M in F;
-	otherwise if M is strapped: [Strapon]
+	otherwise if M is strapped: [Strap-on]
 		compute strapon climax of M in F;
 	otherwise: [Supporter's choice]
 		compute supporter climax of M in F.
@@ -332,11 +332,6 @@ To compute strapon climax of (M - a supporter) in (F - a fuckhole):
 
 To compute supporter climax of (M - a supporter) in (F - a fuckhole):
 	say ClimaxFlav of M in F.
-
-
-
-
-
 
 
 Part - Customisable Stuff
@@ -405,7 +400,7 @@ Section - Optional Changes
 [This stuff the supporter can customise if they wish.]
 
 To say DisapprovalFlav of (M - a supporter): [This is when the player is in some way looking suddenly more lewd in front of the NPC, maybe because they pulled out their tits, or maybe because a trap pulled up their skirt, or jizzed on them, or similar.]
-	say "[BigNameDesc of M] [one of]blows a wolf-whistle in your direction.[or]grabs [his of M] crotch as [he of M] sees you.[or]licks [his of M] lips lecherously.[or]looks you in the eyes and sticks his tongue between two fingers, licking wildly, which makes a very crude gesture.[in random order]".
+	say "[BigNameDesc of M] [one of]blows a wolf-whistle in your direction.[or]grabs [his of M] crotch as [he of M] sees you.[or]licks [his of M] lips lecherously.[or]looks you in the eyes and sticks [his of M] tongue between two fingers, licking wildly, which makes a very crude gesture.[in random order]".
 
 To say CurtseyReactionFlav of (M - a supporter):
 	let K be a random worn currently visible knickers;
@@ -550,7 +545,7 @@ To say MonsterOfferRejectFlav of (M - a supporter) to (T - a thing):
 	say "[BigNameDesc of M] refuses.[line break][speech style of M]'I don't do trades.'[roman type][line break]".
 
 To compute sudden objectification of (M - a supporter): [The player's appearance just jumped to completely unacceptable standards right in front of your NPC, and your NPC has noticed, and now wants to bang.]
-	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yes, that's right I'm the boss, and you're my little [whore]...'[otherwise if the player is monster fucked]That does look like a lot of fun! Maybe it's time I joined in...'[otherwise]You know what? I think you've swirled far enough down the drain of slutdom that it's finally worth giving you a once-over.'[end if][roman type][line break]".
+	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yes, that's right, I'm the boss, and you're my little [whore]...'[otherwise if the player is monster fucked]That does look like a lot of fun! Maybe it's time I joined in...'[otherwise]You know what? I think you've swirled far enough down the drain of slutdom that it's finally worth giving you a once-over.'[end if][roman type][line break]".
 
 To compute MasturbationReaction of (M - a supporter):
 	if M is awake:
@@ -607,9 +602,9 @@ To say CondomPinFlav of (M - a supporter) on (C - a clothing):
 	say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
 
 To say CreampieFlav of (M - a supporter) in (F - a fuckhole):
-	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] balls inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".
+	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps [his of M] [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] balls inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".
 
-[###SUPPORTERS WITH A STRAPON ONLY###]
+[###SUPPORTERS WITH A STRAP-ON ONLY###]
 
 [Oral]
 
@@ -619,8 +614,8 @@ To say StraponOralResistingResponse of (M - a supporter): [The player is refusin
 To say StraponOralSubmissionResponse of (M - a supporter): [The player is sucking obediently on the dildo. What does that look like?]
 	say "[one of][BigNameDesc of M] thrusts at a good pace, holding on as if to make sure you won't stop.[or][BigNameDesc of M] holds you with an almost uncomfortably tight grip, guiding your movement.[or][BigNameDesc of M] holds the dildo still and lets you do all the work, making it that much more humiliating.[in random order]".
 
-To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strapon facefucking]
-	say "[BigNameDesc of M] picks up the speed and power, trying to get [his of M] strapon all the way down your throat.".
+To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strap-on facefucking]
+	say "[BigNameDesc of M] picks up the speed and power, trying to get [his of M] strap-on all the way down your throat.".
 
 [Vaginal & Anal]
 
@@ -628,7 +623,7 @@ To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
 	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying [his of M] [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
 
 
-[###SUPPORTERS WITHOUT A PENIS OR STRAPON ONLY###]
+[###SUPPORTERS WITHOUT A PENIS OR STRAP-ON ONLY###]
 
 [Oral]
 

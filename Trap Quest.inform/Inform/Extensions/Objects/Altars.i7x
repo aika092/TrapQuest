@@ -258,7 +258,7 @@ To AltarPray (P - a person):
 			if T is actually summonable and T is off-stage:
 				summon T;
 				now T is blessed;
-				say "You feel your [asshole] being forced open as a [printed name of T] materializes in your ass.";
+				say "You feel your [asshole] being forced open as a [printed name of T] materialises in your ass.";
 				break;
 		if permanent makeup is 1:
 			say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
@@ -386,7 +386,6 @@ To AltarReward (T - a bottle):
 	reset dungeon altar.
 
 
-
 To AltarReward (T - a clothing):
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] [if T is cursed and strongCurses is 1]I shall help you with this curse[otherwise if T is cursed]I shall remove this curse for you[otherwise]I shall bless this item for you[end if]!'[roman type][line break]";
 	now T is sure;
@@ -494,14 +493,14 @@ To ElderEmpower (T - flower hairclip):
 To ElderEmpower (T - runic headband):
 	let R be ritual-beads;
 	if R is actually summonable and R is off-stage and the player is the donator:
-		say "You feel your [asshole] being forced open as a [ShortDesc of R] materializes in your ass.";
+		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R cursed;
 		reset elder altar.
 
 To ElderEmpower (T - a cultist veil):
 	let R be ritual-beads;
 	if R is actually summonable and R is off-stage and the player is the donator:
-		say "You feel your [asshole] being forced open as a [ShortDesc of R] materializes in your ass.";
+		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R;
 		now R is cursed;
 		reset elder altar.
@@ -828,7 +827,6 @@ To compute DevilPayment (N - a number):
 			SexAddictUp N.
 
 
-
 To DevilPray (P - yourself):
 	let N be (the charge of hotel altar / 180) + 1;
 	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
@@ -838,7 +836,7 @@ To DevilPray (P - yourself):
 	if gold-summoned is 0:
 		if the player is soulless or (the pregnancy of the player is 1 and the father is an infernal monster) or the times-submitted of demon lord > 0, now R is 0;
 	if R is 0 and gold-tiara is actually summonable: [if the player is soulless, or the player's babydaddy is a demon, or the player has ever had sex with the demon lord, the altar can summon a gold tiara]
-		say "The statue's face seems to grin as a golden tiara materializes on your head.";
+		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if R is 1 and the number of entries in LDC > 0:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
 		sort LDC in random order;
@@ -971,6 +969,4 @@ Check putting something on woods altar:
 Understand "place [something] on [something]", "offer [something] on [something]"[, "use [something] on [something]"] as praying it with.
 
 
-
 Altars ends here.
-

@@ -80,8 +80,6 @@ To say ClothingDesc of (H - black hood):
 	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
 
 
-
-
 Chapter - Class Outfit
 
 Definition: black hood (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -404,7 +402,7 @@ Report wearing trainee hood:
 To compute class outfit of (H - trainee hood):[TODO: improve]
 	if the training-progress of H is 3:
 		LipsUp 3;
-		say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them off, you realize they've merged fully with your skin! You now have [LipDesc]!";
+		say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them off, you realise they've merged fully with your skin! You now have [LipDesc]!";
 		DelicateUp 2;
 		now the training-progress of H is 0;
 		only destroy H;
@@ -420,4 +418,3 @@ To demagnetise (C - a clothing):[Do not call this function unless you know it is
 	now C is not magnetized.
 
 Hoods ends here.
-

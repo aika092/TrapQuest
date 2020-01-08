@@ -90,7 +90,7 @@ To compute baby hotel chair sitting:
 			say "As you sit there, something clicks inside of you, and you feel yourself losing control of your bowels! ";
 			compute messing;
 		otherwise if K is total protection clothing and the player is female and vagina is not actually occupied and diaper quest is 0:
-			say "You feel something very thin poke its way through the [if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then find its way to the entrance of your [vagina]. Suddenly you feel it start to powerfully pump out something warm and viscous - it's pumping you full of [semen]! What the fuck!";
+			say "You feel something very thin poke its way through the [if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then find its way to the entrance of your [vagina]. Suddenly you feel it start to powerfully pump out something warm and viscous - it's pumping you full of [semen]! What the fuck!?";
 			PussyFill 6;
 			now a random creampie pole trap is inseminating vagina;
 			say "The pumping keeps going for what feels like a full 10 seconds before it stops, leaving your womb feeling very full.";
@@ -145,14 +145,14 @@ To compute baby hotel chair sitting:
 			say "If you were wearing a nice thick diaper, you might have been protected, but you're not and your bottom gets painfully scorched for several seconds before the chair cools back down!";
 			PainUp 2;
 	otherwise:
-		say "As you sit there, you suddenly hear a loud voice sound out from the chair, which sounds exactly like your own. [line break][variable custom style]'[if there is a female intelligent monster in the location of the player]NANA! NANA![otherwise]DADA! DADA![end if] Look at me[one of] being a good girl[or], sitting in the good girl chair[or], I'm a pretty princess on her magic throne[or], I'm safe and sound on my big girl chair[in random order]!'[roman type][line break][if the humiliation of the player < 12500]Consumed with shame, you turn a deep shade of red as you wrestle with the straps.[otherwise if the humiliation of the player < 28000 and the bimbo of the player < 12]You whine to yourself gently. Not fair, it's not really you saying those things![otherwise]You don't really mind the fact that the chair is pretending to speak for you.[end if]";
+		say "As you sit there, you suddenly hear a loud voice sound out from the chair, which sounds exactly like your own. [line break][variable custom style]'[if there is a female intelligent monster in the location of the player]NANA! NANA![otherwise]DADA! DADA![end if] Look at me[one of] being a good [boy of the player][or], sitting in the good [boy of the player] chair[or], I'm a pretty princess on her magic throne[or], I'm safe and sound on my big [boy of the player] chair[in random order]!'[roman type][line break][if the humiliation of the player < 12500]Consumed with shame, you turn a deep shade of red as you wrestle with the straps.[otherwise if the humiliation of the player < 28000 and the bimbo of the player < 12]You whine to yourself gently. Not fair, it's not really you saying those things![otherwise]You don't really mind the fact that the chair is pretending to speak for you.[end if]";
 		repeat with M running through reactive monsters:
 			compute BabyChairReaction of M;
 		humiliate 150;
 	if busy is 1, say "[one of]Eventually[or]Finally,[stopping] the straps unlock themselves and you stand up. [one of]You walk away, finding that you feel very refreshed! You're[or]Once again, you're[stopping] fully healed! As you move away from the chairs, they all disappear backwards behind hidden panels in the wall behind them! After a few seconds mechanical whirring coming from behind the wall, the panels open again and the chairs reappear. [one of]But something tells you they are in a different order than before![or]Once again you are completely unable to tell them apart, so you don't know which is which![stopping]". [if busy is 0, this means the scene was interrupted]
 
 To compute BabyChairReaction of (M - a monster):
-	say "[BigNameDesc of M] looks at you and grins. [line break][speech style of M]'[one of]Yes you are a good girl, aren't you?'[or]Good girl! [if M is male]Daddy[otherwise]Nanny[end if] is very impressed.'[or]Aww, does little sweetie want a gold sticker?'[in random order][roman type][line break]";
+	say "[BigNameDesc of M] looks at you and grins. [line break][speech style of M]'[one of]Yes you are a good [boy of the player], aren't you?'[or]Good [boy of the player]! [if M is male]Daddy[otherwise]Nanny[end if] is very impressed.'[or]Aww, does little sweetie want a gold sticker?'[in random order][roman type][line break]";
 	moderateHumiliate;
 	FavourDown M with consequences.
 
@@ -160,6 +160,4 @@ To say RestingDesc of (F - hotel chairs):
 	say "You are happy to find that you instantly feel less tired and less sore! Wow!".
 
 
-
 Hotel Chairs ends here.
-

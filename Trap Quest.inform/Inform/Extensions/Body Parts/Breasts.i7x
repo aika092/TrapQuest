@@ -195,8 +195,6 @@ Definition: a clothing (called C) is low cut or lower:
 	decide no.
 
 
-
-
 [!<DecideWhichNumberIsTheLargenessOfBreasts>+
 
 REQUIRES COMMENTING
@@ -452,7 +450,6 @@ To say CleavageDesc:
 			say "with lots of cleavage spilling out";
 		otherwise if there is worn actually dense actually breast covering clothing:
 			say "(barely covered at all)".
-
 
 
 [!<SayTotalDescOfBreasts>+
@@ -876,7 +873,7 @@ To Bustup (X - a number):
 			otherwise say "[one of][line break][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 10:
 			if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
-			otherwise say "[one of][line break][second custom style][line break]Tee hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]Tee-hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 15:
 			if the bimbo of the player < 15:
 				say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";
@@ -887,7 +884,6 @@ To Bustup (X - a number):
 		compute bra strain;
 		update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
-
 
 
 [!<SetRealBreastSize>+
@@ -1137,7 +1133,6 @@ Report going:
 				now breastStimulationFlavAllowed is true.
 
 
-
 Section - Image for graphics window
 
 The text-shortcut of breasts is "breasts".
@@ -1149,4 +1144,3 @@ To decide which figure-name is the examine-image of (T - breasts):
 
 
 Breasts ends here.
-

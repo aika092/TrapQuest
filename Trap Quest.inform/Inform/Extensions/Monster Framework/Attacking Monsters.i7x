@@ -694,4 +694,3 @@ To compute combatProvoked of (M - a monster):
 
 
 Attacking Monsters ends here.
-

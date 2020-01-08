@@ -25,7 +25,7 @@ To decide which figure-name is clothing-image of (C - a jewel pattern backpack o
 	decide on figure of jewel pattern backpack of holding.
 
 To say ClothingDesc of (C - a jewel pattern backpack of holding):
-	say "A childish, girly backpack in a youthful shade of pink with a pattern of jewels and a royal bear on the back. It holds all your spare items and negates their weight. [if the bimbo of the player < 10]It's very clearly meant for young girls and not an adult like you!  But it's in your size... [otherwise]It's clearly designed for big babies just like you, and it's in your size!  [end if]A warning on the label says '[BagHoldingWarning] backpack'.".
+	say "A childish, girly backpack in a youthful shade of pink with a pattern of jewels and a royal bear on the back. It holds all your spare items and negates their weight. [if the bimbo of the player < 10]It's very clearly meant for young girls and not an adult like you! But it's in your size... [otherwise]It's clearly designed for big babies just like you, and it's in your size! [end if]A warning on the label says '[BagHoldingWarning] backpack'.".
 
 
 Definition: a jewel pattern backpack of holding is bear themed: [Is it something that has a bear in the pattern?]
@@ -45,7 +45,7 @@ To decide which figure-name is clothing-image of (C - an animal pattern backpack
 	decide on figure of animal pattern backpack of holding.
 
 To say ClothingDesc of (C - an animal pattern backpack of holding):
-	say "A childish, girly backpack in a youthful shade of pink with a pattern of cartoon animals on the back. It holds all your spare items and negates their weight. [if the bimbo of the player < 10]It's very clearly meant for young girls and not an adult like you!  But it's in your size... [otherwise]It's clearly designed for big babies just like you, and it's in your size!  [end if]A warning on the label says '[BagHoldingWarning] backpack'.".
+	say "A childish, girly backpack in a youthful shade of pink with a pattern of cartoon animals on the back. It holds all your spare items and negates their weight. [if the bimbo of the player < 10]It's very clearly meant for young girls and not an adult like you! But it's in your size... [otherwise]It's clearly designed for big babies just like you, and it's in your size! [end if]A warning on the label says '[BagHoldingWarning] backpack'.".
 
 Definition: an animal pattern backpack of holding is elephant themed: decide yes.
 
@@ -59,8 +59,7 @@ To decide which figure-name is clothing-image of (C - a bubbles pattern backpack
 	decide on figure of bubbles pattern backpack of holding.
 
 To say ClothingDesc of (C - a bubbles pattern backpack of holding):
-	say "A childish, girly backpack in a youthful shade of pink with a pattern of colourful bubbles all over. It holds all your spare items and negates their weight. [if the bimbo of the player < 10]It's very clearly meant for young girls and not an adult like you!  But it's in your size... [otherwise]It's clearly designed for big babies just like you, and it's in your size!  [end if]A warning on the label says '[BagHoldingWarning] backpack'.".
+	say "A childish, girly backpack in a youthful shade of pink with a pattern of colourful bubbles all over. It holds all your spare items and negates their weight. [if the bimbo of the player < 10]It's very clearly meant for young girls and not an adult like you! But it's in your size... [otherwise]It's clearly designed for big babies just like you, and it's in your size! [end if]A warning on the label says '[BagHoldingWarning] backpack'.".
 
 
 Childish Backpacks of Holding ends here.
-

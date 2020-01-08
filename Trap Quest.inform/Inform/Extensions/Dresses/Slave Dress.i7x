@@ -22,4 +22,3 @@ Definition: slave-dress is end of transformation chain: decide yes.
 Definition: slave-dress is black themed: decide yes.
 
 Slave Dress ends here.
-

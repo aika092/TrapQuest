@@ -71,9 +71,9 @@ To reflect on (A - outrageous-fetish-dress):
 	otherwise if O is windowed fetish dress:
 		say "[first custom style][one of]What is the point in even wearing this latex dress?! Everyone can still see my private parts through this slutty material, and it's probably even more provocative than wearing nothing at all.[or]Whatever benefits this latex dress is giving me are not worth looking so trashy![stopping]";
 	otherwise if O is black fetish hobble dress:
-		say "[first custom style][one of]Why would anyone wear a dress like this?  I can't even walk properly.[or]Whatever benefits this latex dress is giving me are not worth looking so trashy![stopping]";
+		say "[first custom style][one of]Why would anyone wear a dress like this? I can't even walk properly.[or]Whatever benefits this latex dress is giving me are not worth looking so trashy![stopping]";
 	otherwise if O is fetish baby dress:
-		say "[first custom style][one of]Why would anyone wear a dress like this?  I can't even walk properly.[or]Whatever benefits this latex dress is giving me are not worth looking so trashy![stopping]";
+		say "[first custom style][one of]Why would anyone wear a dress like this? I can't even walk properly.[or]Whatever benefits this latex dress is giving me are not worth looking so trashy![stopping]";
 	say "[roman type][line break]".
 
 Part 1 - Green Fetish Hobble Dress
@@ -203,9 +203,9 @@ Definition: a black fetish hobble dress is transformation-protected if the class
 
 To say TransformReaction of (C - a black fetish hobble dress):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]How am I even supposed to walk properly in this?!  [if C is cursed]I wish I could take it off.[otherwise if the class of the player is maid]I guess I should probably take it off. But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
+		say "[variable custom style]How am I even supposed to walk properly in this?! [if C is cursed]I wish I could take it off.[otherwise if the class of the player is maid]I guess I should probably take it off. But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
 	otherwise if C is almost too much:
-		say "[variable custom style]The way this forces me to walk actually makes me feel really sexy!  But it's probably not going to help me win this game...[roman type][line break]";
+		say "[variable custom style]The way this forces me to walk actually makes me feel really sexy! But it's probably not going to help me win this game...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
 		say "[variable custom style]Ooh, I didn't think that outfit could get any more ridiculous, but I'm glad it did![roman type][line break]".
 
@@ -319,4 +319,3 @@ Definition: a fetish baby dress is transformation-protected if the class of the 
 
 
 Fetish Dress ends here.
-

@@ -203,7 +203,7 @@ Check drinking time-bomb:
 		wait 1 ms before continuing;
 		repeat with N running from 1 to 200:
 			if N < 10 or (N < 20 and the remainder after dividing N by 3 is 0) or (N < 40 and the remainder after dividing N by 9 is 0) or (the remainder after dividing N by 27 is 0), wait before continuing;
-			say "[first custom style]'[one of]Hello there...' [or]One more for the road...' [or]Cumming!' [or]One more time!' [or]My turn!' [or]This is my favourite part of the day.' [or]Juicy...' [or]Fuck yeah!' [or]Lovely...' [or]Wonderful!' [or]Yum.' [or]Come to Daddy.' [or]Boo-ya.' [or]Anal?' [or]Again.' [or]More.' [or]Yes.' [or]Feels so good!' [or]Crikey!' [or]Ooh!' [or]Here we are again.' [or]My name is Buck. I like to fuck.' [or]Ew, slimy.' [or]Someone should probably clean up this mess.' [or]Cool!' [or]Gross!' [or]How deplorable.' [or]I'm glad I'm not you.' [or]Nice.' [or]Delightful.' [or]How interesting.' [or]This is unique.' [or]Open wide, honey.' [or]Rad!' [or]Wow...' [at random] [roman type][one of]Shlick[or]Slap[or]Fap[or]Shluck[or]Thud[or]Spurt[or]Squirt[purely at random] ";
+			say "[first custom style]'[one of]Hello there...' [or]One more for the road...' [or]Cumming!' [or]One more time!' [or]My turn!' [or]This is my favourite part of the day.' [or]Juicy...' [or]Fuck yeah!' [or]Lovely...' [or]Wonderful!' [or]Yum.' [or]Come to [daddytitle of a random wench].' [or]Boo-ya.' [or]Anal?' [or]Again.' [or]More.' [or]Yes.' [or]Feels so good!' [or]Crikey!' [or]Ooh!' [or]Here we are again.' [or]My name is Buck. I like to fuck.' [or]Ew, slimy.' [or]Someone should probably clean up this mess.' [or]Cool!' [or]Gross!' [or]How deplorable.' [or]I'm glad I'm not you.' [or]Nice.' [or]Delightful.' [or]How interesting.' [or]This is unique.' [or]Open wide, honey.' [or]Rad!' [or]Wow...' [at random] [roman type][one of]Shlick[or]Slap[or]Fap[or]Shluck[or]Thud[or]Spurt[or]Squirt[purely at random] ";
 		say line break;
 		wait 800 ms before continuing;
 		reset the Glulx timer;
@@ -337,4 +337,3 @@ Check drinking nail-bomb:
 	do nothing instead.
 
 Bombs ends here.
-

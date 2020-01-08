@@ -117,7 +117,6 @@ This is the remove inappropriate knickers rule:
 The remove inappropriate knickers rule is listed in the diaper quest fix rules.
 
 
-
 Part - Wearability
 
 knickers wearability rules is a rulebook. The wearability rules of knickers is usually knickers wearability rules.
@@ -183,6 +182,4 @@ Check taking off worn knickers:
 			do nothing instead.
 
 
-
 Knickers Framework ends here.
-

@@ -119,6 +119,4 @@ Check taking off clothing:
 	unless the noun is actually removable, do nothing instead.
 
 
-
 Removability ends here.
-

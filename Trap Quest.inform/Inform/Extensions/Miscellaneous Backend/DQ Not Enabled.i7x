@@ -136,9 +136,6 @@ Include Super Giant Tits by Nintendolls One Year Later Epilogues.
 Include Super Giant Ass by Nintendolls One Year Later Epilogues.
 
 
-
-
-
 Figure of Gargoyle Titwank Loading Banner is the file "Special/Animations/GargoyleTitwank/loading banner.png".
 Figure of Gargoyle Titwank Animation Frame 1 is the file "Special/Animations/GargoyleTitwank/G001.jpg".
 Figure of Gargoyle Titwank Animation Frame 4 is the file "Special/Animations/GargoyleTitwank/G004.jpg".
@@ -482,4 +479,3 @@ To decide which number is the frameSlowness of (T - GargoyleTitwankAnimation):
 	decide on 1.
 
 DQ Not Enabled ends here.
-

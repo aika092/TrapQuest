@@ -344,4 +344,3 @@ FairySuckleSlashes is a number that varies. FairySuckleSlashes is 0.
 
 
 Misc Variables ends here.
-

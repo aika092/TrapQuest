@@ -23,4 +23,3 @@ Definition: a silver bikini top is silver themed: decide yes.
 Definition: a silver bikini top is pink themed: decide yes.
 
 Silver Bikini Top ends here.
-

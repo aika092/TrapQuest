@@ -79,7 +79,7 @@ To decide which text is HairColourText:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "olive";
 			if the redness of hair is 2, decide on "purple";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 3:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "olive";
@@ -100,7 +100,7 @@ To decide which text is HairColourText:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "pale purple";
 			if the redness of hair is 2, decide on "purple";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 3:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "pale purple";
@@ -116,12 +116,12 @@ To decide which text is HairColourText:
 			if the redness of hair is 0, decide on "grey";
 			if the redness of hair is 1, decide on "olive";
 			if the redness of hair is 2, decide on "red";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 2:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "pale purple";
 			if the redness of hair is 2, decide on "red";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 3:
 			if the redness of hair is 0, decide on "dirty blonde";
 			if the redness of hair is 1, decide on "light brown";
@@ -153,10 +153,9 @@ To decide which text is HairColourText:
 Table of Image Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
-"Display Images: (Enable images - many / most are adult.) [if images visible is 1]ON[otherwise]OFF[end if]  "	--	--	images visible toggle rule
+"Display Images: (Enable images - many / most are adult.) [if images visible is 1]ON[otherwise]OFF[end if] "	--	--	images visible toggle rule
 "Map Window: On / Off: [if map images > 0]ON[otherwise]OFF[end if]"	--	--	map images toggle rule
 "Loading Screens: On / Off: [if loading scenes is 1]ON[otherwise]OFF[end if]"	--	--	loading scenes toggle rule
-
 
 
 Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png".
@@ -170,4 +169,3 @@ Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
 Include Low Res Figures by Miscellaneous Frontend.
 
 No Graphics ends here.
-

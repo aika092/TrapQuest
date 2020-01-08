@@ -237,7 +237,6 @@ Definition: pink-kitty-panties is cat themed: decide yes.
 Definition: pink-kitty-panties is pink themed: decide yes.
 
 
-
 Figure of panties 1 is the file "Items/Clothes/Lower/Underwear/Panties/panties1.png".
 Figure of panties special 1 is the file "Items/Clothes/Lower/Underwear/Panties/pantiesspecial1.png".
 Figure of panties 2 is the file "Items/Clothes/Lower/Underwear/Panties/panties2.png".
@@ -254,4 +253,3 @@ Figure of panties 10 is the file "Items/Clothes/Lower/Underwear/Panties/panties1
 
 
 Panties ends here.
-

@@ -285,7 +285,7 @@ To compute messing:
 				otherwise if the mess of D <= 17:
 					say "[if the diaper addiction of the player < 3]completely disgusts you and makes you grow concerned about the limits of what it can hold[otherwise if the diaper addiction of the player < 6]almost makes you grow concerned about the limits of what it can hold[otherwise if the diaper addiction of the player < 9]shocks you as you struggle to get used to its new heavy weight[otherwise if the diaper addiction of the player < 11]is going past the limit of what you can find comfortable[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]makes you feel weirdly fuzzy inside, in an almost good way[otherwise if the diaper addiction of the player < 15]is so thick, slimy and warm that you can't help but shiver with arousal[otherwise if the diaper addiction of the player < 17]is turning you on so much to feel it all right there, outside of your body but very must still a part of your person[otherwise]makes your [genitals] feel so [italic type]amazing[roman type] that you instantly want to find a Mommy or Daddy to give you [italic type]cummies[roman type][end if].";
 				otherwise:
-					say "[if the diaper addiction of the player < 9]feels like moving is almost out of the question - every time you try you can feel the gross sludge sliding against your skin.[otherwise if the diaper addiction of the player < 11]smushes and squelches with every tiny movement you make, which feels too gross even for someone who has begun to like the feeling of using diapers as much as you have[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]is so thick and sticky and [italic type]everywhere[roman type] that is on the brink of being too extreme for you to even tolerate[otherwise if the diaper addiction of the player < 15]is so impossibly thick, voluminous and gross that it simultaneously turns you on and disgusts you[otherwise if the diaper addiction of the player < 17]still very much turns you on, although you're really not sure it should[otherwise if refactoryPeriod > 0]is so disgustingly glorious that almost makes you cum a second time[otherwise]is so disgustingly glorious that almost makes you cum on the spot[end if].";
+					say "[if the diaper addiction of the player < 9]feels like moving is almost out of the question - every time you try you can feel the gross sludge sliding against your skin.[otherwise if the diaper addiction of the player < 11]smushes and squelches with every tiny movement you make, which feels too gross even for someone who has begun to like the feeling of using diapers as much as you have[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]is so thick and sticky and [italic type]everywhere[roman type] that is on the brink of being too extreme for you to even tolerate[otherwise if the diaper addiction of the player < 15]is so impossibly thick, voluminous, and gross that it simultaneously turns you on and disgusts you[otherwise if the diaper addiction of the player < 17]still very much turns you on, although you're really not sure it should[otherwise if refactoryPeriod > 0]is so disgustingly glorious that almost makes you cum a second time[otherwise]is so disgustingly glorious that almost makes you cum on the spot[end if].";
 			otherwise:
 				say "A [if rectum < 3]a small amount of mush[otherwise if rectum < 5]reasonable amount of squishy mush forces its way[otherwise if rectum < 8]large amount of lumpy mush[otherwise if rectum < 10]huge bulky log forces its way[otherwise]seemingly unending series of large mushy lumps become one giant ball which stretches you on its journey[end if] out of your butt and fills your [ShortDesc of D]. You feel it bulge out behind you, and you're almost afraid to move at all. A diaper would at least shield and properly contain your shame but the [ShortDesc of D] threatens to buckle at any moment. You need a change, and you need one now!";
 				MessUp D by rectum - 1;
@@ -384,7 +384,7 @@ REQUIRES COMMENTING
 +!]
 To compute diaper mess reaction of (M - a person):
 	if diaper quest is 1 and M is monster:
-		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me?  You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		unless M is staff member:
@@ -418,7 +418,7 @@ Player tries to go number 2.
 +!]
 Check messing:
 	if the total squirtable fill of belly > 0, try squatting instead;
-	if the player is not feeling full and the player is incontinent, say "You've become so incontinent that you cannot feel or control this anymore! No matter how much you push, you feel absolutely nothing!" instead;
+	if the player is not feeling full and the player is incontinent, say "You've become so incontinent that you cannot feel or control this any more! No matter how much you push, you feel absolutely nothing!" instead;
 	if the player is able to use a toilet and the location of the player is toilets:
 		allocate 6 seconds;
 		if rectum > 1 and (the player is feeling full or rectum > 3 or rectum >= rectum-risky-level):
@@ -470,6 +470,4 @@ Check TargetMessing:
 	try messing instead.
 
 
-
 Rectum ends here.
-

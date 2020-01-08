@@ -34,7 +34,7 @@ Carry out TQeating cookie:
 			say "The excessive amount of salt leaves your mouth feeling extremely dry! [line break][variable custom style]Oh dear, I really need a drink now![roman type][line break]";
 			now the stomach-water of the player is 1;
 	otherwise if the quality of the noun is -2:
-		say "You start feeling a bit woozy as the food settles in your stomach, and you realize [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][line break][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type][line break]";
+		say "You start feeling a bit woozy as the food settles in your stomach, and you realise [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][line break][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type][line break]";
 		increase cookie-poison-timer by default-candy-duration + the fat of the noun * 5;
 		FatigueUp 50;
 		Arouse the semen taste addiction of the player * 20;
@@ -46,7 +46,7 @@ Carry out TQeating cookie:
 		bodyHeal the fat of the noun;
 		StomachFoodUp 2;
 	otherwise:
-		say "Your stomach rumbles, and you realize the chef might have used some dubious ingredients in your food! You're even hungrier than you were before!";
+		say "Your stomach rumbles, and you realise the chef might have used some dubious ingredients in your food! You're even hungrier than you were before!";
 		StomachFoodUp 1;
 		StomachFoodDown the fat of the noun;
 	bodyHeal 2;
@@ -60,6 +60,4 @@ a time based rule (this is the cookie poison decay rule):
 			now cookie-poison-timer is 0.
 
 
-
 Cookie ends here.
-

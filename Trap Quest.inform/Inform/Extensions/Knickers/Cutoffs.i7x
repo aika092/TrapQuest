@@ -63,4 +63,3 @@ Definition: heart window cutoffs is heart themed: decide yes.
 
 
 Cutoffs ends here.
-

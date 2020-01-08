@@ -8,7 +8,6 @@ Include Fainting Framework by Fainting.
 Include Rooms Framework by Rooms.
 
 
-
 Volume 1 - The Player
 
 Include Gender by Player.
@@ -86,8 +85,6 @@ Include Delicateness by Player Description.
 Include TG by Player Description.
 Include Status by Player Description.
 Include Addictions by Player Description.
-
-
 
 
 Volume 3 - Every Turn (MAIN CODE BLOCK)
@@ -200,7 +197,6 @@ Volume 8 - Other
 Include Forbidden Actions by Actions.
 
 Include Actions with Missing Nouns by Actions.
-
 
 
 Backend Framework ends here.

@@ -62,4 +62,3 @@ To say SlingshotTrapReactFlav of (M - a monster):
 
 
 Slingshot Trap ends here.
-

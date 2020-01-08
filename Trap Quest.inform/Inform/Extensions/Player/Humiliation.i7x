@@ -455,7 +455,6 @@ To Dignify (X - a number):
 		otherwise decrease the humiliation of the player by X.
 
 
-
 Table of Published Disgraces
 content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)
 with 100 blank rows
@@ -468,7 +467,7 @@ To decide which number is DisgracePostViews (N - a number):
 To decide which number is DisgracePostImpact (N - a number):
 	choose row N in Table of Published Disgraces;
 	let ET be DisgracePostViews N;
-	if ET < 1, now ET is 1; [somtimes they don't have increasing tracked views, and it's just flat severity]
+	if ET < 1, now ET is 1; [sometimes they don't have increasing tracked views, and it's just flat severity]
 	decide on (the square root of ET) * severity entry; [reputation damage]
 
 To decide which number is the public disgrace of the player:
@@ -527,32 +526,4 @@ To say sluttyWebsite:
 	otherwise say "[one of]publicdisgraces.xxx[or]caughtintheact.com[or]whoresexposed.net[or]sluthub.xxx[or]namedandshamed.com[at random]".
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Humiliation ends here.
-

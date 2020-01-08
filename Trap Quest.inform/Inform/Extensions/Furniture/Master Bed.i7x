@@ -58,7 +58,7 @@ To compute furniture resting on (F - a master bed):
 			anger V;
 			now the stance of the player is 1;
 		otherwise if the player is very horny and C is actually summonable:
-			say "You climb onto the bed and slip under the covers. The normally soft mattress is as hard as rock, and the sheets seem to bristle excitedly at your presence. Comfortable waves of heat blossom from the silky throw-pillows cradling your head, and you feel a tingling sensation along the nape of your neck, like a tongue on your skin slowly tracing its way all the way around. You hear a sound like someone breathily moaning in your ear as a leather collar materializes around your neck.";
+			say "You climb onto the bed and slip under the covers. The normally soft mattress is as hard as rock, and the sheets seem to bristle excitedly at your presence. Comfortable waves of heat blossom from the silky throw-pillows cradling your head, and you feel a tingling sensation along the nape of your neck, like a tongue on your skin slowly tracing its way all the way around. You hear a sound like someone breathily moaning in your ear as a leather collar materialises around your neck.";
 			summon C cursed;
 		otherwise if there is a worn submissive collar:
 			say "You climb into the bed and slip under the covers. The mattress is even more comfortable than you expected it to be, cradling your body as if it were made of wisps of cloud.";
@@ -78,7 +78,7 @@ To compute chain rest of (F - a master bed):
 	unless V is in the location of the player:
 		say "You hear high pitched shrieking as dozens of bats fly in through some narrow, high windows, converging in a twisting mass of flapping wings and black fur. Just as suddenly as they appeared, the bats disperse, leaving a [printed name of V] standing in the doorway.";
 		now V is in the location of the player;
-	say "[speech style of V]Mmm, what do we have here?[roman type][line break][big he of V] purrs, snapping her fingers as the chains release you and recede back into the bed.";
+	say "[speech style of V]Mmm, what do we have here?[roman type][line break][big he of V] purrs, snapping [his of V] fingers as the chains release you and recede back into the bed.";
 	now F is not grabbing the player.
 
 To compute normal rest of (F - a master bed):
@@ -126,7 +126,7 @@ To compute rest completion of (F - a master bed):
 		if a random number between 5 and (the intelligence of the player - A) < 7:
 			[let R be a random number between 1 and 3;]
 			say "Shaking your head doesn't make the lethargy go away, but you manage to will yourself to pull off the blankets and sit up on the side of the bed. Someone clears their throat, and you look up to see your lover standing in the doorway, both hands on her hips. You share an electrifying stare with each other as she saunters across the room, anticipation blossoming in your belly[if diaper quest is 0] as her [manly-penis] quickly grows erect[end if].[line break][first custom style]'You were looking forward to this, weren't you, darling?'[roman type][line break]You nod, tenderly fondling her [if diaper quest is 0]balls and pumping her shaft as you polish it with your tongue. It tastes like every delicious flavour in the world all wrapped up into one package, throbbing mouth-wateringly as you guide it fully into your mouth. The harder you suck, the better it tastes, and the more your hunger seems to grow. Every moment leaves you more sure that there could be nothing more satisfying than tasting her [semen]. You'd [i]keep sucking[/i]forever if only you could taste one drop of her [semen]. It's the only thing that can sate your hunger. You need to taste her [semen][otherwise]breasts and tentatively flicking one of her nipples with your tongue. It tastes like every delicious flavour in the world all wrapped up into one package, throbbing mouth-wateringly as you guide it fully into your mouth. The harder you suck, the better it tastes, and the more your hunger seems to grow. Every moment leaves you more sure that there could be nothing more satisfying than tasting her [milk]. You'd [i]keep sucking[/i]forever if only you could taste one drop of her [milk]. It's the only thing that can sate your hunger. You need to taste her [milk][end if], even if you have to [i]keep sucking forever[/i]. Forever and ever and [i]ever[/i]...[paragraph break]";
-			say "Your eyes snap open and you realize you're still lying in bed, half pulling back the covers. You shake the remnants of the dream from your head and climb out of the bed.";
+			say "Your eyes snap open and you realise you're still lying in bed, half pulling back the covers. You shake the remnants of the dream from your head and climb out of the bed.";
 			if diaper quest is 0, SemenTasteAddictUp a random number between 1 and 2;
 			otherwise MilkTasteAddictUp a random number between 1 and 2;
 			[otherwise if R is 2:
@@ -147,4 +147,3 @@ To compute rest completion of (F - a master bed):
 	now auto is 0.
 
 Master Bed ends here.
-

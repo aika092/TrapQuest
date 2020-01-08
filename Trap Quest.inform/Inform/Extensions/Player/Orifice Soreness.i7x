@@ -250,7 +250,6 @@ To RuinRoll (F - a fuckhole):
 [NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions. The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
 
 
-
 To compute submission success of (M - a thing) in (F - a fuckhole):
 	say submission success of M in F;
 	if F is asshole:
@@ -262,6 +261,4 @@ To say submission success of (M - a thing) in (F - a fuckhole):
 	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of [FuckerDesc of M], you have successfully stopped your [variable F] getting more sore![end if]".
 
 
-
 Orifice Soreness ends here.
-

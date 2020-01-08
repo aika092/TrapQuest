@@ -15,4 +15,3 @@ Definition: a research airhancer is inflation themed: decide yes.
 Definition: a research airhancer is magic themed: decide yes.
 
 Research Airhancer ends here.
-

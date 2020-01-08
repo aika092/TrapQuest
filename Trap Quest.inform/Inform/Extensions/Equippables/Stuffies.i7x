@@ -70,8 +70,6 @@ To assign quest to (C - a stuffie):
 	set up the quest of C.
 
 
-
-
 commodore cuddles is a stuffie. The printed name of commodore cuddles is "[clothing-title-before]Commodore Cuddles[clothing-title-after]". The text-shortcut of commodore cuddles is "cmdc".
 
 Figure of commodore cuddles is the file "Items/Accessories/Equippables/stuffie1.jpg".
@@ -97,8 +95,4 @@ To decide which number is the strength-influence of (W - commodore cuddles):
 	decide on 1.
 
 
-
-
-
 Stuffies ends here.
-

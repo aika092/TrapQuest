@@ -20,7 +20,7 @@ To say ShortDesc of (C - a fudge):
 	say "fudge".
 
 Carry out TQeating fudge:
-	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]!  ";
+	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]! ";
 	FatigueDown 160;
 	bodyheal 4;
 	if a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper messing < 3):
@@ -43,4 +43,3 @@ To compute (M - a robochef) cooking (I - a fudge):
 
 
 Fudge ends here.
-

@@ -78,6 +78,4 @@ Definition: a sequins dress is party themed: decide yes.
 Definition: a sequins dress is gem themed: decide yes.
 
 
-
 Sequins Outfit ends here.
-

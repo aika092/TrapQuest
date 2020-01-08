@@ -54,7 +54,7 @@ Experience
 The player has a number called heel time. The heel time of the player is usually 0.
 
 
-To decide which number is minHeelXP:  [How much experience does it take to go up one level of heel skill]
+To decide which number is minHeelXP: [How much experience does it take to go up one level of heel skill]
 	decide on 220.
 
 
@@ -106,4 +106,3 @@ To 2HeelDown:
 
 
 Heel Skill ends here.
-

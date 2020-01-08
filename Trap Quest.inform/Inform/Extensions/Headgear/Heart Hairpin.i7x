@@ -69,16 +69,15 @@ To compute class outfit of (H - heart hairpin):
 			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materializes around you.[roman type][line break]";
+		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materialises around you.[roman type][line break]";
 		summon D;
 		now magic-summoned is 1;
 	otherwise if S is actually summonable:
 		say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
 		summon S;
 	otherwise if W is actually summonable:
-		say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+		say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
 		summon W.
-
 
 
 Chapter - Quest
@@ -111,4 +110,3 @@ The tentacle monsters are interesting rule is listed in the time based rules.
 The tentacle monsters are interesting rule is listed in the later time based rules. [Just to make sure we don't somehow miss a chance to see a big tentacle monster]
 
 Heart Hairpin ends here.
-

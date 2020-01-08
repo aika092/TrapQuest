@@ -23,4 +23,3 @@ To decide which number is the initial outrage of (C - a purple string bikini top
 Definition: a purple string bikini top is purple themed: decide yes.
 
 Purple String Bikini Top ends here.
-

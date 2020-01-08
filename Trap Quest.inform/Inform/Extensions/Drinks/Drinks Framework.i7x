@@ -1,8 +1,6 @@
 Drinks Framework by Drinks begins here.
 
 
-
-
 [
 Magic Types:
 1: Potion of dignity
@@ -164,4 +162,3 @@ To Print Drinks Table:
 
 
 Drinks Framework ends here.
-

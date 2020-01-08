@@ -31,4 +31,3 @@ Definition: a clothing (called C) is almost too cringeworthy:
 
 
 Cringe ends here.
-

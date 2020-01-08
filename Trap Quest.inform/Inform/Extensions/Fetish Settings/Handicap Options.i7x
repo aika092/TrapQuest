@@ -265,7 +265,6 @@ To decide which number is starting body shape points:
 	decide on choice in row 62 of the Table of Player Options.
 
 
-
 [
 0: Less items
 1: Bag gets hungry
@@ -306,7 +305,6 @@ To say aprilFoolsClumsyFlav:
 	if clumsy april fools is 1, say "[one of][variable custom style]Wait a minute, I'm not usually this clumsy! What's going on?![roman type][line break]As if responding to your thoughts, you hear a girly voice from just behind you giggle and say[line break][second custom style]'Tee-hee, April Fools!'[roman type][line break]But when you turn around, there's nobody there...[or]You hear girly snickering from just behind you, but when you turn around, there's nobody there.[or]Once again you hear giggling from somewhere behind you.[stopping]".
 
 
-
 To decide which number is strongCurses:
 	if tutorial is 1 or (diaper quest is 0 and the player is not an august 2019 top donator) or (diaper quest is 1 and the player is not an august 2019 diaper donator), decide on 0;
 	if choice in row 78 of the Table of Player Options <= 0, decide on 0;
@@ -323,4 +321,3 @@ The strongCurses random rule is listed in the random mode rules.
 
 
 Handicap Options ends here.
-

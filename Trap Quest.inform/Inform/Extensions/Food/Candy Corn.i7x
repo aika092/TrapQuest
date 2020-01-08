@@ -102,4 +102,3 @@ To compute (M - a robochef) cooking (I - a candy corn):
 		now D is retained by M.
 
 Candy Corn ends here.
-

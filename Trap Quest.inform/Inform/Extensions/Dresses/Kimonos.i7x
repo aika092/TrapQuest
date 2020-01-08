@@ -26,4 +26,3 @@ To compute SelfExamineDesc of (C - an illusory kimono):
 
 
 Kimonos ends here.
-

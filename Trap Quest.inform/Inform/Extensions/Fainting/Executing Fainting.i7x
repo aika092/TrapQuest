@@ -117,7 +117,7 @@ To Execute Fainting:
 			say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
 			now the pink pill is held by the player;
 		if Newly-tattooed is 1:
-			say "Your lower back feels sore, and when you look you realize you[']ve had the word 'PROPERTY' tattooed on your back! Oh no!";
+			say "Your lower back feels sore, and when you look you realise you[']ve had the word 'PROPERTY' tattooed on your back! Oh no!";
 			now Newly-tattooed is 0;
 		if inhuman pregnancy is 2 and tentacled is 1:
 			now tentacled is 0;
@@ -183,6 +183,4 @@ To decide which object is the biggest held jewel:
 	decide on bigJ.
 
 
-
 Executing Fainting ends here.
-

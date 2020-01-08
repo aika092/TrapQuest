@@ -31,6 +31,4 @@ To compute failed transform of (C - a condom rolls bag of holding):
 	compute spontaneous condom of C.
 
 
-
 Ultra Slutty Bags of Holding ends here.
-

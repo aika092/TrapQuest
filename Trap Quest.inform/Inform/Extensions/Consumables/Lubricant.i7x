@@ -170,4 +170,3 @@ To destroy (C - a lubricant):
 	if C is held by the player, remove C from play.
 
 Lubricant ends here.
-

@@ -1,6 +1,6 @@
 Version 5/170902 of Undo Output Control by Erik Temple begins here.
 
-"In addition to allowing control over UNDO default messages, provides hooks into UNDO processing, including multiple ways to suspend UNDO temporarily, to place limitations on UNDO (such as allowing only one UNDO in a row), to undo the current turn from code, and to control when the game state is saved. Using the latter, we can effectively control which turn UNDO returns us to.  Also allows changing the words which invoke UNDO and OOPS.  Also allows the story to edit a blank command before analyzing it.  Updated to Inform 6M62."
+"In addition to allowing control over UNDO default messages, provides hooks into UNDO processing, including multiple ways to suspend UNDO temporarily, to place limitations on UNDO (such as allowing only one UNDO in a row), to undo the current turn from code, and to control when the game state is saved. Using the latter, we can effectively control which turn UNDO returns us to. Also allows changing the words which invoke UNDO and OOPS. Also allows the story to edit a blank command before analysing it. Updated to Inform 6M62."
 
 Volume - High Level Stuff
 
@@ -241,7 +241,7 @@ Include (-
 		! Set nw to the number of words
 		#Ifdef TARGET_ZCODE; nw = a_table->1; #Ifnot; nw = a_table-->0; #Endif;
 
-		! If the line was blank, ask the game to fill it in.  If it doesn't, get a fresh line.
+		! If the line was blank, ask the game to fill it in. If it doesn't, get a fresh line.
 		if (nw == 0) {
 			x2 = false; ! repurposing local variable as a flag
 
@@ -250,7 +250,7 @@ Include (-
 				@push etype; etype = BLANKLINE_PE;
 				players_command = 100;
 				BeginActivity(PRINTING_A_PARSER_ERROR_ACT);
-				if (ForActivity(PRINTING_A_PARSER_ERROR_ACT) == false)  {
+				if (ForActivity(PRINTING_A_PARSER_ERROR_ACT) == false) {
 					PARSER_ERROR_INTERNAL_RM('X', noun); new_line;
 				}
 				EndActivity(PRINTING_A_PARSER_ERROR_ACT);
@@ -398,7 +398,7 @@ Include (-
 				@push etype; etype = BLANKLINE_PE;
 				players_command = 100;
 				BeginActivity(PRINTING_A_PARSER_ERROR_ACT);
-				if (ForActivity(PRINTING_A_PARSER_ERROR_ACT) == false)  {
+				if (ForActivity(PRINTING_A_PARSER_ERROR_ACT) == false) {
 					PARSER_ERROR_INTERNAL_RM('X', noun); new_line;
 				}
 				EndActivity(PRINTING_A_PARSER_ERROR_ACT);
@@ -526,7 +526,7 @@ Include (-
 		! Save the start of the buffer, in case "oops" needs to restore it
 		Memcpy(oops_workspace, a_buffer, 64);
 
-		! Set up the input requests. (Normally just line input, but the game can customize this.)
+		! Set up the input requests. (Normally just line input, but the game can customise this.)
 		FollowRulebook((+ setting up input rules +), incontext, true);
 
 		undoable = (+ setting-up-input-undoability-flag +);
@@ -661,7 +661,7 @@ Include (-
 		! Save the start of the buffer, in case "oops" needs to restore it
 		Memcpy(oops_workspace, a_buffer, 64);
 
-		! Set up the input requests. (Normally just line input, but the game can customize this.)
+		! Set up the input requests. (Normally just line input, but the game can customise this.)
 		FollowRulebook((+ setting up input rules +), incontext, true);
 
 		undoable = (+ setting-up-input-undoability-flag +);
@@ -783,8 +783,6 @@ Include (-
 
 Undo Output Control ends here.
 
-
-
 ---- DOCUMENTATION ----
 
 Undo Output Control patches the I6 template routines Keyboard(); and Perform_Undo(); so that we can use I7 rulebooks to hook into the UNDO command. These allow us to do anything we like--write new messages for UNDO responses and error text, keep track of variables (partially) independently of the game state as restored by UNDO, and even suspend UNDO programmatically.
@@ -823,7 +821,7 @@ A number of rules are provided as "before" and "after" counterparts of these rul
 
 The before, after, and report prevented undo rules apply only when Inform's built-in use undo prevention option is enabled.
 
-It should be emphasized that, though these rules look like standard action rulebooks, they are not. UNDO is not an action, and these rules are limited to imitating the appearance of action rules. This is why "check undoing" and "instead of undoing" rulebooks are not provided. We have hooks into the output, but little else.
+It should be emphasised that, though these rules look like standard action rulebooks, they are not. UNDO is not an action, and these rules are limited to imitating the appearance of action rules. This is why "check undoing" and "instead of undoing" rulebooks are not provided. We have hooks into the output, but little else.
 
 However, it should be noted that when the before undoing an action rulebook ends in explicit failure, undo will be prevented from occurring; this is one way (perhaps the simplest) of disabling UNDO. An example:
 
@@ -851,7 +849,7 @@ Finally, a rulebook is provided that allows us to control the reporting of a fai
 
 By default, these rules print the message "That action cannot be undone."
 
-Be warned that if the player types UNDO immediately after you have reinstated it, there may be unexpected behavior, as the game can revert to the suspended state, but in such a way that the report attempt to undo-while-disabled rules do not fire.
+Be warned that if the player types UNDO immediately after you have reinstated it, there may be unexpected behaviour, as the game can revert to the suspended state, but in such a way that the report attempt to undo-while-disabled rules do not fire.
 
 
 Section - Removing the option to UNDO at the end of the game
@@ -909,9 +907,9 @@ To eliminate the "o" synonym for oops:
 
 Section - Undoing the current turn
 
-While UNDO is not an action, it is possible to trigger undo from an action.  Under the hood, Inform saves the game after reading a command but before parsing it.  UNDO then restores to this point, with a signal to read a new command.  Inform must do the save very early in the command processing cycle in order to avoid any accidental side-effects in author-written parsing or action processing routines.  However,  UNDO (and OOPS) have to be processed before this save; otherwise they will restore to just before the player typed "UNDO", rather than before the previous command!
+While UNDO is not an action, it is possible to trigger undo from an action. Under the hood, Inform saves the game after reading a command but before parsing it. UNDO then restores to this point, with a signal to read a new command. Inform must do the save very early in the command processing cycle in order to avoid any accidental side-effects in author-written parsing or action processing routines. However, UNDO (and OOPS) have to be processed before this save; otherwise they will restore to just before the player typed "UNDO", rather than before the previous command!
 
-However, you can use this to your advantage.  If at the end of a very long and complicated turn which changed a lot of world state, you decide the player probably shouldn't have done that, you can issue an undo order and restore the game to just before the player issued that command.  This will undo the current turn -- not the previous turn.
+However, you can use this to your advantage. If at the end of a very long and complicated turn which changed a lot of world state, you decide the player probably shouldn't have done that, you can issue an undo order and restore the game to just before the player issued that command. This will undo the current turn -- not the previous turn.
 
 	undo the current turn;
 
@@ -922,7 +920,7 @@ You can also prevent the player from undoing and still use this in your code.
 
 Section - Repairing an empty command
 
-This version integrates the extension Empty Command Handling by Daniel Stelzer, based on code by Matt Weiner.  Because Empty Command Handling replaces the same underlying library code as Undo Output Control, it cannot be used with Empty Command Handling; so the entirety of the extension has been integrated.
+This version integrates the extension Empty Command Handling by Daniel Stelzer, based on code by Matt Weiner. Because Empty Command Handling replaces the same underlying library code as Undo Output Control, it cannot be used with Empty Command Handling; so the entirety of the extension has been integrated.
 
 This extension adds a new activity, "repairing an empty command". When the player presses ENTER at the prompt, without typing anything, the "repairing an empty command" activity will be run before showing the parser error. This can be used to give better responses to empty input without hacking into the response system.
 
@@ -944,16 +942,16 @@ Section - Using this extension with Unified Glulx Input by Andrew Plotkin
 
 Unified Glulx Input has its own method for turning UNDO on and off; these all work, as do the methods in this extension.
 
-Unified Glulx Input has its own method for redefining the words which trigger UNDO, so the method in this extension does not work for "undo" words.  However, "oops" words can still be changed using this extension.
+Unified Glulx Input has its own method for redefining the words which trigger UNDO, so the method in this extension does not work for "undo" words. However, "oops" words can still be changed using this extension.
 
 Unified Glulx Input has its own (superior) method for dealing with blank lines; "repairing an empty command" is not implemented.
 
 
 Section - Change log
 
-	v5 - Add "undo the current turn", documentation, and example.  (Nathanael Nerode)  Integrate Empty Command Handling by Daniel Stelzer.  Make compatible with Unified Glulx Input.
+	v5 - Add "undo the current turn", documentation, and example. (Nathanael Nerode) Integrate Empty Command Handling by Daniel Stelzer. Make compatible with Unified Glulx Input.
 
-	v4 - Substantial updates by Nathanael Nerode.  Update to 6M62.  Fix bugs. Improve documentation.
+	v4 - Substantial updates by Nathanael Nerode. Update to 6M62. Fix bugs. Improve documentation.
 
 	v3 - Removed unnecessary check of the "before undoing an action" rulebook at the end of the game. This caused an UNDO typed at the end of the game to fail silently.
 
@@ -968,7 +966,7 @@ Example: * Mynah Undo - Presents report rules that reproduce Inform's default ou
 
 	Include Undo Output Control by Erik Temple.
 
-	Laboratory is a room. The pen, the vial, the bunsen burner, the beaker, the banana, and the viol are in Laboratory.
+	Laboratory is a room. The pen, the vial, the Bunsen burner, the beaker, the banana, and the viol are in Laboratory.
 
 	Report undoing an action:
 		say "[bold type]";
@@ -1064,7 +1062,7 @@ Note that Inform saves the game state even for out-of-world actions, so if the p
 			say "His eyes dart to the pile of broken glass at your feet.";
 			end the story finally saying "You are in deep trouble";
 		otherwise:
-			say "He looks at each of the glass containers in turn, then smiles when he realizes that you managed to stay in here alone for five whole minutes without breaking a single one.";
+			say "He looks at each of the glass containers in turn, then smiles when he realises that you managed to stay in here alone for five whole minutes without breaking a single one.";
 			end the story finally saying "You have made your father proud"
 
 Example: ** Purgatory - Illustrates how to suspend and reinstate the saving of undo states. The player is presented with a bottle of poison. If she drinks it, she will die within a certain number of turns. We suspend saving of the undo state on the drinking of the bottle, though, so that the player need type UNDO only once to return to the turn before drinking the poison, no matter how many turns have passed since.
@@ -1128,7 +1126,7 @@ Example: ** Purgatory II - As an additional enhancement, we make an automatic un
 
 	To say the end:
 		say "You have died.";
-		say "[bracket]...maybe you shouldn't have drunk the poison.  Attempting to undo to the moment just before you drank the poison.[close bracket][paragraph break]";
+		say "[bracket]...maybe you shouldn't have drunk the poison. Attempting to undo to the moment just before you drank the poison.[close bracket][paragraph break]";
 		undo the current turn;
 		say "[bracket] Well, I guess that didn't work. [close bracket][paragraph break]";
 		end the story saying "You have died".

@@ -33,7 +33,6 @@ To say ClothingDesc of (K - gold-microshorts):
 	say "These super-tiny super-shiny super-skimpy gold microshorts just scream 'the only thing I care about is how sexy I look'.".
 
 
-
 Chapter 2 Black Microshorts
 
 black-microshorts are a kind of microshorts. The printed name of black-microshorts is "[clothing-title-before]pair of black microshorts[clothing-title-after]". The text-shortcut of black-microshorts is "bmi". Understand "black" as black-microshorts.
@@ -52,6 +51,4 @@ To say UniqueTitle of (K - black-microshorts):
 	say "shiny black microshorts".
 
 
-
 Microshorts ends here.
-

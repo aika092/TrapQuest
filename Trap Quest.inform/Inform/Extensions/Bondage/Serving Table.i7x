@@ -46,8 +46,6 @@ This is the serving table prevents standing rule:
 The serving table prevents standing rule is listed in the ability to stand rules.
 
 
-
-
 serving tray is a serving-bondage. serving tray is leather. The printed name of serving tray is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]serving tray[clothing-title-after]".
 
 To decide which figure-name is clothing-image of (C - serving tray):

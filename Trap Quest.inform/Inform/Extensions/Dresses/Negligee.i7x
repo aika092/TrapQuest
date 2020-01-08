@@ -50,7 +50,4 @@ To say ClothingDesc of (C - a lacy negligee):
 	say "This sheer naughty lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them. Your nipples are covered by straps but only just.".
 
 
-
-
 Negligee ends here.
-

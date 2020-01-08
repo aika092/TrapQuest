@@ -212,7 +212,7 @@ To FatUp (X - a number):
 			if R is 4, FatAssUp 1;
 			decrease X by 1;
 		if the fat-weight of the player > 35:
-			say "[one of][line break][variable custom style]If I keep gaining wait I won't even be able to stand...[roman type][line break][FatCutscene 3][or][stopping]";
+			say "[one of][line break][variable custom style]If I keep gaining weight I won't even be able to stand...[roman type][line break][FatCutscene 3][or][stopping]";
 		otherwise if the fat-weight of the player > 23:
 			say "[one of][line break][variable custom style]When did I get so fat?![roman type][line break][FatCutscene 2][or][stopping]";
 		otherwise if the fat-weight of the player > 11:
@@ -266,4 +266,3 @@ To say InventoryWeightDesc:
 
 
 Weight Gain ends here.
-

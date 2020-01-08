@@ -33,7 +33,6 @@ To decide which number is the unique outrage of (C - plain-massive-diaper):
 	decide on 1.
 
 
-
 blue-massive-diaper is a massive diaper. The text-shortcut of blue-massive-diaper is "bmd". Understand "blue" as blue-massive-diaper.
 Figure of blue massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1b.png".
 To decide which figure-name is clothing-image of (C - blue-massive-diaper):
@@ -49,7 +48,6 @@ Definition: blue-massive-diaper is drink themed: decide yes.
 Definition: blue-massive-diaper is bow themed: decide yes.
 
 
-
 teddy-massive-diaper is a massive diaper. The text-shortcut of teddy-massive-diaper is "tpmd". Understand "teddy", "pattern" as teddy-massive-diaper.
 Figure of teddy massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1c.png".
 To decide which figure-name is clothing-image of (C - teddy-massive-diaper):
@@ -60,7 +58,6 @@ To say ClothingDesc of (C - teddy-massive-diaper):
 	say "An extremely large teddy bear patterned adult diaper, with huge amounts of extra puffy padding.".
 Definition: teddy-massive-diaper is bear themed: decide yes.
 Definition: teddy-massive-diaper is green themed: decide yes.
-
 
 
 Chapter 2 Giant Diaper
@@ -85,7 +82,6 @@ To say ClothingDesc of (C - pink-giant-diaper):
 Definition: pink-giant-diaper is pink themed: decide yes.
 
 
-
 white-giant-diaper is a giant diaper. The text-shortcut of white-giant-diaper is "gwd". Understand "white" as white-giant-diaper.
 Figure of white giant diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2b.png".
 To decide which figure-name is clothing-image of (C - white-giant-diaper):
@@ -97,7 +93,6 @@ To say ClothingDesc of (C - white-giant-diaper):
 Definition: white-giant-diaper is white themed: decide yes.
 
 
-
 purple-giant-diaper is a giant diaper. The text-shortcut of purple-giant-diaper is "gppd". Understand "purple", "polka", "polka dot" as purple-giant-diaper.
 Figure of purple giant diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2c.png".
 To decide which figure-name is clothing-image of (C - purple-giant-diaper):
@@ -107,7 +102,6 @@ To say selfexamineuniquetitle of (K - purple-giant-diaper):
 To say ClothingDesc of (C - purple-giant-diaper):
 	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding anda polka dot pattern. It has three rows of girly frills at the back.".
 Definition: purple-giant-diaper is purple themed: decide yes.
-
 
 
 demon-diaper is a giant diaper. The text-shortcut of demon-diaper is "dmd". The armour of demon-diaper is 25. demon-diaper is unique. A demon-diaper has a number called dry-timer. Understand "pink", "demon" as demon-diaper.
@@ -146,8 +140,6 @@ Definition: demon-diaper is transformation-protected: decide yes.
 Definition: demon-diaper is eligible: decide no. [Never selected randomly]
 Definition: demon-diaper is demonic: decide yes.
 Definition: demon-diaper is pink themed: decide yes.
-
-
 
 
 Chapter 3 Waddle Diaper
@@ -204,7 +196,7 @@ To say MediumDesc of (C - a waddle diaper):
 	say "humongous [selfexamineuniquetitle of C]".
 To say ClothingDesc of (C - a waddle diaper):
 	say "This unique giant PVC [selfexamineuniquetitle of C] has several massive frills on the behind. It has a huge amount of extra material at the crotch, so this heavy rubber forces your thighs apart even when the diaper is completely unused! ";
-	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it!  There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added urine insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
+	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it! There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added urine insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
 
 
 pink-waddle-diaper is a waddle diaper. The text-shortcut of pink-waddle-diaper is "pwd". Understand "pink" as pink-waddle-diaper.
@@ -234,10 +226,6 @@ To say selfexamineuniquetitle of (K - yellow-waddle-diaper):
 	say "yellow floral waddle diaper".
 Definition: yellow-waddle-diaper is yellow themed: decide yes.
 Definition: yellow-waddle-diaper is flower themed: decide yes.
-
-
-
-
 
 
 Chapter 4 Velcro Diaper
@@ -283,10 +271,6 @@ Definition: purple-velcro-diaper is purple themed: decide yes.
 Definition: purple-velcro-diaper is star themed: decide yes.
 To say ClothingDesc of (C - purple-velcro-diaper):
 	say "A velcro diaper with a layer of noisy purple plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has velcro straps to keep it in place. It has a blue pattern of suns, moons, stars and clouds.".
-
-
-
-
 
 
 Chapter 5 Button Diaper
@@ -341,10 +325,6 @@ To say ClothingDesc of (C - purple-button-diaper):
 	say "A reasonably thick purple diaper that does up with white buttons to seal the tabs. There is a colourful pattern of onesies and pacifiers.".
 
 
-
-
-
-
 Chapter 6 Cloth Diaper
 
 
@@ -393,10 +373,6 @@ To decide which number is the unique outrage of (C - blue-cloth-diaper):
 Definition: blue-cloth-diaper is blue themed: decide yes.
 
 
-
-
-
-
 Chapter 7 Huge Diaper
 
 
@@ -416,7 +392,6 @@ To say selfexamineuniquetitle of (K - pink-huge-diaper):
 Definition: pink-huge-diaper is pink themed: decide yes.
 To say ClothingDesc of (C - pink-huge-diaper):
 	say "A huge pink disposable diaper with excessively thick padding, for the heaviest of wetters. There's no special pattern.".
-
 
 
 balloon-huge-diaper is a huge diaper. The text-shortcut of balloon-huge-diaper is "hbpd". Understand "balloon", "pattern" as balloon-huge-diaper.
@@ -441,12 +416,6 @@ Definition: doggy-huge-diaper is white themed: decide yes.
 Definition: doggy-huge-diaper is dog themed: decide yes.
 To say ClothingDesc of (C - doggy-huge-diaper):
 	say "A huge white and green disposable diaper with excessively thick padding, for the heaviest of wetters. It has a pattern of blue paw prints and bones.".
-
-
-
-
-
-
 
 
 Chapter 8 Large Diaper
@@ -491,10 +460,6 @@ Definition: black-largish-diaper is black themed: decide yes.
 Definition: black-largish-diaper is cat themed: decide yes.
 To say ClothingDesc of (C - black-largish-diaper):
 	say "A large white disposable diaper with rather thick padding, for heavy wetters. It has a blue-green kitty cat pattern.".
-
-
-
-
 
 
 Chapter 9 Medium Diaper
@@ -544,7 +509,6 @@ To say ClothingDesc of (C - baby-medium-diaper):
 	say "An average sized white disposable diaper with a decent amount of padding, for average wetters. There's an adorable pattern of onesies and pacifiers across the main part of the fabric.".
 To decide which number is the unique outrage of (C - baby-medium-diaper):
 	decide on 2.
-
 
 
 Chapter 10 Small Diaper
@@ -597,7 +561,6 @@ To say ClothingDesc of (C - pink-small-diaper):
 	say "An smaller than average pink disposable diaper with a slightly reduced amount of padding, for light wetters. There's a subtle pattern of ice cream and cupcakes.".
 
 
-
 Chapter 11 Training Pants
 
 A training pants is a kind of knickers. There is 1 unique training pants. The printed name of training pants is usually "[clothing-title-before]pair of [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants. The text-shortcut of training pants is "pa". The armour of a training pants is usually 11.
@@ -642,7 +605,6 @@ To say ClothingDesc of (C - a sexy training pants):
 	say "A pair of frilly purple underwear with [if the bimbo of the player <= 4 and the urine-soak of C <= 0 and C is worn]weird padding in the centre, which makes it a little bit awkward to wear[otherwise if the bimbo of the player <= 4 and the urine-soak of C <= 0]weird padding in the centre, which looks like it would be a little bit awkward to wear[otherwise]absorbent padding in the centre to catch any little accidents that the wearer might have[end if].".
 
 Definition: a training pants is transformation-protected: decide yes.
-
 
 
 Chapter 25 Latex Diaper
@@ -692,6 +654,4 @@ To compute unique periodic effect of (C - ghost-diaper):
 The DQFigure of ghost-diaper is usually DQVelcro.
 
 
-
 Diapers ends here.
-

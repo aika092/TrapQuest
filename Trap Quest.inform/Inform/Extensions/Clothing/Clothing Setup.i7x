@@ -135,8 +135,4 @@ To set up BUC of (C - a clothing):
 	if R >= 7 and C is not cursed, now C is blessed.
 
 
-
-
-
 Clothing Setup ends here.
-

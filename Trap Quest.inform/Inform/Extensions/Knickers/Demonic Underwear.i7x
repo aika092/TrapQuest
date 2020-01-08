@@ -45,7 +45,6 @@ To compute periodic effect of (C - tongue-panties):
 		displace C.
 
 
-
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
 Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The soak-limit of demon codpiece is 6. The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
 
@@ -213,4 +212,3 @@ To decide which number is the dexterity-influence of (C - acolyte-undergarment):
 		decide on 2.
 
 Demonic Underwear ends here.
-

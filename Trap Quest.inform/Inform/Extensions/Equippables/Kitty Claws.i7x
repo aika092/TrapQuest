@@ -45,4 +45,3 @@ Definition: a kitty claws is pink themed if it is cursed.
 
 
 Kitty Claws ends here.
-

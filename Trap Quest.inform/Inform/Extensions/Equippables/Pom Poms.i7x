@@ -47,4 +47,3 @@ To compute attack effect of (E - a pom-pom):
 		FatigueDown 2.
 
 Pom Poms ends here.
-

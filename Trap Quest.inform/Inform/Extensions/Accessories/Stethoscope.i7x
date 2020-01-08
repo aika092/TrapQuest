@@ -72,6 +72,4 @@ To say ClothingDesc of (C - a cock stethoscope):
 	say "A normal doctor's stethoscope but with cocks for your ears and at the sensor end. You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.".
 
 
-
 Stethoscope ends here.
-

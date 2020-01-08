@@ -96,6 +96,4 @@ This is the inflated mittens prevent manual dexterity rule:
 The inflated mittens prevent manual dexterity rule is listed in the hands restriction rules.
 
 
-
 Mittens ends here.
-

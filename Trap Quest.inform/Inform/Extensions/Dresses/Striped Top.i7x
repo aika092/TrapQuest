@@ -29,4 +29,3 @@ Definition: a striped top is yellow themed: decide yes.
 Definition: a striped top is black themed: decide yes.
 
 Striped Top ends here.
-

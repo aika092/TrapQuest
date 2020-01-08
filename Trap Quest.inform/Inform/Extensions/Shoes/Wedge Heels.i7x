@@ -1,6 +1,6 @@
 Wedge Heels by Shoes begins here.
 
-A wedge heels is a kind of heels.  The printed name of wedge heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch wedge heels[clothing-title-after]".  The printed plural name of wedge heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch wedge heels[clothing-title-after]".  The text-shortcut of wedge heels is "whe".
+A wedge heels is a kind of heels. The printed name of wedge heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch wedge heels[clothing-title-after]". The printed plural name of wedge heels is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch wedge heels[clothing-title-after]". The text-shortcut of wedge heels is "whe".
 
 There is 1 leather wedge heels. There is 1 pvc wedge heels. There is 1 satin wedge heels.
 
@@ -56,4 +56,3 @@ To decide which object is the potential-upgrade-target of (C - a wedge heels):
 	decide on nothing.
 
 Wedge Heels ends here.
-

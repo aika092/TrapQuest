@@ -87,7 +87,7 @@ Check talking:
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, they can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to speak, say "You are currently not able to speak!  You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
+		if the player is not able to speak, say "You are currently not able to speak! You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 
@@ -187,7 +187,7 @@ Carry out drink requesting:
 	allocate 6 seconds;
 	now conversation-target is the noun;
 	compute talk option 3 to the noun.
-Understand "ask [something] for drink", "ask [something] for dr", "ask [something] for a drink", "ask [something] for something to drink" as drink requesting.
+Understand "ask [something] for drink", "ask [something] for dr", "ask [something] for a drink", "ask [something] for something to drink", "request a drink from [something]" as drink requesting.
 
 Food Requesting is an action applying to one thing.
 
@@ -215,7 +215,7 @@ Carry out food requesting:
 	allocate 6 seconds;
 	now conversation-target is the noun;
 	compute talk option 4 to the noun.
-Understand "ask [something] for food", "ask [something] for some food", "ask [something] for something to eat" as food requesting.
+Understand "ask [something] for food", "ask [something] for some food", "ask [something] for something to eat", "request food from [something]" as food requesting.
 
 
 Dismissal is an action applying to one thing.
@@ -236,6 +236,4 @@ Carry out dismissal:
 Understand "dismiss [something]", "ask [something] to leave", "say bye to [something]", "say goodbye to [something]", "end conversation with [something]" as dismissal.
 
 
-
 Talking ends here.
-

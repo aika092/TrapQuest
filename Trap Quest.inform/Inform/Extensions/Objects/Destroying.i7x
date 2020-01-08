@@ -39,6 +39,4 @@ To uniquely destroy (T - a thing): [Are there any special rules we need to follo
 	do nothing.
 
 
-
 Destroying ends here.
-

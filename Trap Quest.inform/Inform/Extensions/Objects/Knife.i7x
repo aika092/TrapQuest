@@ -112,4 +112,3 @@ Check cutting when the player is in Hotel19:
 
 
 Knife ends here.
-

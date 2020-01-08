@@ -64,6 +64,4 @@ To decide which object is the unique-upgrade-target of (C - pink bodice):
 	decide on nothing.
 
 
-
 Blouse ends here.
-

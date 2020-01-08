@@ -224,7 +224,7 @@ To compute horse effect of (T - a wild horse):
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;
 		otherwise:
-			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cowgirl on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
+			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cow[boy of the player] on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
 			FatigueUp W;
 			bodyruin W / 2;[TODO: light players go flying]
 		try kneeling;
@@ -268,6 +268,4 @@ Carry Out horsePulling:
 		say "You pull hard on the bit, but the horse doesn[']t leave its path, the pre-recorded galloping sound continuing to play as it rounds the clearing.".
 
 
-
 Wooden Horse Traps ends here.
-

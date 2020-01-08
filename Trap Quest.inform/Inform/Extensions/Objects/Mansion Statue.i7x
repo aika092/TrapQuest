@@ -76,4 +76,3 @@ To decide which number is the stimulation of (T - MansionScenery01) on (F - a bo
 	decide on 5.
 
 Mansion Statue ends here.
-

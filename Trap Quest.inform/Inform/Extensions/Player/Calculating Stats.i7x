@@ -71,4 +71,3 @@ To decide which number is fetish-bonus of the player:
 
 
 Calculating Stats ends here.
-

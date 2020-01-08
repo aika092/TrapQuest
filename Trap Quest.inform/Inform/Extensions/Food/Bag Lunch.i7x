@@ -9,7 +9,7 @@ To decide which figure-name is the examine-image of (B - a bag lunch):
 
 To say ShortDesc of (C - a bag lunch):
 	say "[']bag lunch[']".
-	
+
 To decide which number is the outrage of (C - a bag lunch):
 	decide on 20.
 
@@ -45,4 +45,3 @@ To decide which number is the bartering value of (T - a bag lunch) for (M - a se
 Definition: a bag lunch is oral sex themed: decide yes.
 
 Bag Lunch ends here.
-

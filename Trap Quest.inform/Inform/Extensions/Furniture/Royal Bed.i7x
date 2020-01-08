@@ -78,6 +78,4 @@ To compute furniture resting on (F - the royal bed):
 	allocate 6 seconds.
 
 
-
 Royal Bed ends here.
-

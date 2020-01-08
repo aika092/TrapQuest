@@ -8,7 +8,6 @@ Definition: a magic-beads is blessable: decide no.
 Definition: a magic-beads is magic themed: decide yes.
 
 
-
 prayer-beads is a magic-beads. prayer-beads is plastic. prayer-beads is unique. Understand "prayer", "prayer beads" as prayer-beads. The text-shortcut of a prayer-beads is usually "pyb".
 
 To say ShortDesc of (C - prayer-beads):
@@ -67,7 +66,7 @@ To compute jinx of (L - jinx-beads):
 	HairBrightDown 1;
 	FaceUp 1;
 	if M < the make-up of face and B > the brightness of hair:
-		say "The [printed name of L] curl around your fingers as your hair colour darkens, seemingly draining its color into the new layer of makeup that appears on your face.";
+		say "The [printed name of L] curl around your fingers as your hair colour darkens, seemingly draining its colour into the new layer of makeup that appears on your face.";
 	otherwise if M < the make-up of face or B > the brightness of hair:
 		say "The [printed name of L] curl around your fingers as [if B > the brightness of hair]your hair colour darkens[otherwise]a new layer of makeup appears on your face[end if].".
 

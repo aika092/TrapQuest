@@ -16,7 +16,7 @@ To say MediumDesc of (M - golem):
 	say "[if artificial enhancements fetish is 1]silicone[otherwise]flesh[end if] golem".
 
 To say MonsterDesc of (M - golem):
-	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created it was most concerned with, as the face has only crude detail while the breasts and ass are rendered with as much perfection as can be managed in the medium. In spite of the lack of expression on the thing's face, it exudes a sense of malice.".
+	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created [him of M] was most concerned with, as the face has only crude detail while the breasts and ass are rendered with as much perfection as can be managed in the medium. In spite of the lack of expression on the thing's face, [he of M] exudes a sense of malice.".
 
 To set up (M - golem):
 	reset M;
@@ -36,7 +36,7 @@ To compute monstermotion of (M - golem):
 		MonsterStomp M.
 
 To compute (M - a monster) stomping (N - golem):
-	say "[BigNameDesc of M] grabs the [N], but the golem seems happier for it! [if artificial enhancements fetish is 1]Its body engulfs [NameDesc of M], and its muscles bulge out with new definition and power![otherwise]Its body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M]'s skin. It grunts as its muscles suddenly bulge out with even more definition and power![end if]";
+	say "[BigNameDesc of M] grabs the [N], but the golem seems happier for it! [if artificial enhancements fetish is 1][big his of N] body engulfs [NameDesc of M], and [his of N] muscles bulge out with new definition and power![otherwise][big his of N] body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M]'s skin. [big he of M] grunts as [his of M] muscles suddenly bulge out with even more definition and power![end if]";
 	DifficultyUp M by 6;
 	destroy N.
 
@@ -47,7 +47,7 @@ To compute perception of (M - golem):
 	now M is interested;
 	anger M;
 	now M is unleashed;
-	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. It seems to be blocking the path forward, you'll need to deal with it to move on[or][stopping].".
+	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. [big he of M] seems to be blocking the path forward, you'll need to deal with [him of M] to move on[or][stopping].".
 
 To compute (M - a monster) stomping (N - golem):
 	if M is in the location of the player, say "[BigNameDesc of M] holds the [N] with two powerful fists and pulls apart with impossible strength. The [N] splits into two! The pieces fall to the ground and then disappear.";
@@ -56,7 +56,7 @@ To compute (M - a monster) stomping (N - golem):
 
 The unique punishment rule of golem is usually the golem merging rule.
 This is the golem merging rule:
-	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realize it isn't stopping as it moves towards you, and finally presses up against you! Its cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what it might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
+	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realise [he of M] isn't stopping as [he of M] moves towards you, and finally presses up against you! [big his of M] cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what [he of M] might have done to you...[otherwise]The creature embraces you in [his of M] mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
 	if artificial enhancements fetish is 1:
 		if rubber top hat is off-stage and rubber top hat is actually summonable:
 			say "You're now wearing a small pink latex top hat!";
@@ -117,4 +117,3 @@ To say MuteQuestionResponse of (M - golem):
 
 
 Golem ends here.
-

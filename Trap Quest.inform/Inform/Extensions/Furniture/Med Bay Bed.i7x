@@ -53,7 +53,7 @@ To compute furniture resting on (F - med bay bed):
 					anger nurse;
 					compute forcefeed of nurse;
 			otherwise:
-				say "[big he of nurse] lovingly massages your shoulders as you lie stuck there.[line break][speech style of nurse]'Does that feel good, [honey of nurse]?'[roman type][line break][one of]Actually, it[or]It[stopping] really does!  Within moments you feel rested and healed. [BigNameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
+				say "[big he of nurse] lovingly massages your shoulders as you lie stuck there.[line break][speech style of nurse]'Does that feel good, [honey of nurse]?'[roman type][line break][one of]Actually, it[or]It[stopping] really does! Within moments you feel rested and healed. [BigNameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
 				now auto is 1;
 				try standing;
 				now auto is 0;
@@ -99,4 +99,3 @@ To compute med bay breast enhancement:
 	say "[if the largeness of breasts > B and artificial enhancements fetish is 1]You now have [BreastDesc][otherwise]Your breasts feel noticeably bigger[end if]![line break][speech style of nurse]'Oh wow don't they look amazing? You must be very proud!'[roman type][line break]After that, [NameDesc of nurse] unbuckles the straps holding you down and allows you to leave.".
 
 Med Bay Bed ends here.
-

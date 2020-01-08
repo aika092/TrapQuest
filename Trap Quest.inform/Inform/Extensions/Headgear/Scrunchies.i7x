@@ -230,7 +230,7 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with SK running through worn skirted clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
-			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt?  I think I know where this is going...[roman type][line break]";
+			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt? I think I know where this is going...[roman type][line break]";
 			summon T uncursed;
 			if diaper quest is 0, now T is temptation;
 			now schoolgirl-summoned is 1;
@@ -239,7 +239,7 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with SK running through worn breast covering clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
-			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Tee hee! I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
+			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Tee-hee! I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
 			summon O uncursed;
 			now O is confidence;
 			if tentacle-quest is appropriate, now the quest of O is tentacle-quest;
@@ -304,7 +304,6 @@ To compute generic first time class reward of (Q - recipe-quest) on (C - a cloth
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
 	otherwise:
 		compute generic second time class reward of Q on C.
-
 
 
 Chapter 3 - Monkey Scrunchie
@@ -433,7 +432,4 @@ Definition: a condom pigtails is roleplay: decide no.
 Definition: a condom pigtails is semen themed: decide yes.
 
 
-
-
 Scrunchies ends here.
-

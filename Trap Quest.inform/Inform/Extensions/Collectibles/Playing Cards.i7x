@@ -45,6 +45,4 @@ To say ExamineDesc of (C - poker table):
 	say "[if diaper quest is 0]A round wooden table split into four quarters by a pattern of womanly legs wearing fishnets. At the centre of the table their spread, exposed pussies are explicitly drawn[otherwise]A round wooden table with green felt[end if]. [if pack of cards is not held and pack of cards is in Dungeon07][ExamineDesc of pack of playing cards][end if]".
 
 
-
 Playing Cards ends here.
-

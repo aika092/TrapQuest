@@ -24,4 +24,3 @@ To decide which number is the bartering value of (T - a metal disc) for (M - a s
 	decide on 1.
 
 Metal Disc ends here.
-

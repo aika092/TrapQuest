@@ -25,7 +25,7 @@ Carry out unlocking:
 	now the noun is unlocked;
 	destroy skeleton key;
 	allocate 6 seconds.
-Understand "unlock [something]", "unlock [something] with key" as unlocking.
+Understand "unlock [something]", "unlock [something] with key", "use key on [something]", "use key to unlock [something]", "unlock [something] using key" as unlocking.
 
 Check inserting an unlock-key into something:
 	try unlocking the second noun instead.
@@ -50,4 +50,3 @@ To say ExamineDesc of (B - toilet-key):
 
 
 Skeleton Key ends here.
-

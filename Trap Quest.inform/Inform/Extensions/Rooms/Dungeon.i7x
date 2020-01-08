@@ -79,21 +79,21 @@ Dungeon09 is a sandy labyrinth room. The printed name of Dungeon09 is "Arena". "
 REQUIRES COMMENTING
 
 *!]
-Dungeon10 is a pinned important untrappable labyrinth room. The printed name of Dungeon10 is "Statue Hall". "Descending from the throne room is a long hall with a line of statues standing in a line against the south wall. The beautiful bronzed decorations are of [if diaper quest is 1]naked women, their large bare bums facing towards you like some lewd display.[line break][variable custom style][end if][one of][if diaper quest is 1 and the diaper addiction of the player < 2]What does this game have to do with butts?[roman type][line break][otherwise if diaper quest is 1 and asshole is exposed]I'm as exposed as they are![roman type][line break][otherwise if diaper quest is 1]I wish I was allowed to keep my butt bare...[roman type][line break][end if][or][roman type][line break][stopping][if diaper quest is 0]both men and women, each depicted in the most fantastic of physical shape. The women are extremely voluptuous and the men both well hung and quite erect. Their eyes seem to peer at you as you walk, inviting you towards their genitals...[one of][line break]The male statues seem to give the sound of liquid moving through them. Upon closer inspection, you can see that they can dispense some kind of liquid if one was desperate or thirsty enough to get curious with them.[or][stopping][end if][line break][if there is a warp portal in Dungeon10]This room has a swirling green portal in the north wall that leads to another part of this world.[otherwise]This room has a bizarre closed metal shutter in the north wall. It doesn't look like you can do anything with it at the moment, but maybe later it will have opened.[end if]". Dungeon10 is east of Dungeon11. The shape of Dungeon10 is L1/0-0-0-1-0-1. The grid position of Dungeon10 is  <1,13,12>.
+Dungeon10 is a pinned important untrappable labyrinth room. The printed name of Dungeon10 is "Statue Hall". "Descending from the throne room is a long hall with a line of statues standing in a line against the south wall. The beautiful bronzed decorations are of [if diaper quest is 1]naked women, their large bare bums facing towards you like some lewd display.[line break][variable custom style][end if][one of][if diaper quest is 1 and the diaper addiction of the player < 2]What does this game have to do with butts?[roman type][line break][otherwise if diaper quest is 1 and asshole is exposed]I'm as exposed as they are![roman type][line break][otherwise if diaper quest is 1]I wish I was allowed to keep my butt bare...[roman type][line break][end if][or][roman type][line break][stopping][if diaper quest is 0]both men and women, each depicted in the most fantastic of physical shape. The women are extremely voluptuous and the men both well hung and quite erect. Their eyes seem to peer at you as you walk, inviting you towards their genitals...[one of][line break]The male statues seem to give the sound of liquid moving through them. Upon closer inspection, you can see that they can dispense some kind of liquid if one was desperate or thirsty enough to get curious with them.[or][stopping][end if][line break][if there is a warp portal in Dungeon10]This room has a swirling green portal in the north wall that leads to another part of this world.[otherwise]This room has a bizarre closed metal shutter in the north wall. It doesn't look like you can do anything with it at the moment, but maybe later it will have opened.[end if]". Dungeon10 is east of Dungeon11. The shape of Dungeon10 is L1/0-0-0-1-0-1. The grid position of Dungeon10 is <1,13,12>.
 
 [!<dungeon11:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon11 is a pinned important untrappable labyrinth room. Dungeon11 is west of Dungeon10. Dungeon11 is east of Dungeon12. The printed name of Dungeon11 is "Throne Room". "The throne room; the centre jewel of the kingdom. Sitting high among a series of risers and stairs is [if the throne is transformed]a plastic training potty, with a cheap princess motif, where the throne once stood[otherwise]a beautiful throne, fit truly for royalty[end if]. Descending down the stairs and along the scarlet carpeting leads into another long hall, and tucked away behind a false wall is the spiral staircase back to the Royal Bedroom.[if saved-flat-intelligence > 10 and there is an untransformed throne in Dungeon11][one of][line break]Listening closely to the throne as you walk by it, you can detect some kind of apparatus within it. A closer look reveals little that could trigger whatever machine or magic the throne protects, other than giving the soft-cushion a sit...[or][stopping]". The shape of Dungeon11 is L1/0-0-0-1-0-1. The grid position of Dungeon11 is  <1,12,12>. Dungeon11 is seen.
+Dungeon11 is a pinned important untrappable labyrinth room. Dungeon11 is west of Dungeon10. Dungeon11 is east of Dungeon12. The printed name of Dungeon11 is "Throne Room". "The throne room; the centre jewel of the kingdom. Sitting high among a series of risers and stairs is [if the throne is transformed]a plastic training potty, with a cheap princess motif, where the throne once stood[otherwise]a beautiful throne, fit truly for royalty[end if]. Descending down the stairs and along the scarlet carpeting leads into another long hall, and tucked away behind a false wall is the spiral staircase back to the Royal Bedroom.[if saved-flat-intelligence > 10 and there is an untransformed throne in Dungeon11][one of][line break]Listening closely to the throne as you walk by it, you can detect some kind of apparatus within it. A closer look reveals little that could trigger whatever machine or magic the throne protects, other than giving the soft-cushion a sit...[or][stopping]". The shape of Dungeon11 is L1/0-0-0-1-0-1. The grid position of Dungeon11 is <1,12,12>. Dungeon11 is seen.
 
 [!<dungeon12:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon12 is a pinned important bossed untrappable labyrinth room. Dungeon12 is west of Dungeon11. The printed name of Dungeon12 is "Royal Chambers". "Tucked away out of sight from everything that prowls the dungeon, you feel safe in the pink confines of the royal chambers. Everything in the room is an eye-catching pink, from the bed to the wardrobe, and everything in-between. The lack of any windows gives the feeling of being held captive, even in such a plush room. It may be the chamber of royalty, but it is also the prison that houses you. A pink photo frame hangs on one wall.[one of][or]  You feel safe from monsters here.[stopping]". The shape of Dungeon12 is L1/0-0-0-1-0-0. The grid position of Dungeon12 is  <1,11,12>. Dungeon12 is discovered.
+Dungeon12 is a pinned important bossed untrappable labyrinth room. Dungeon12 is west of Dungeon11. The printed name of Dungeon12 is "Royal Chambers". "Tucked away out of sight from everything that prowls the dungeon, you feel safe in the pink confines of the royal chambers. Everything in the room is an eye-catching pink, from the bed to the wardrobe, and everything in-between. The lack of any windows gives the feeling of being held captive, even in such a plush room. It may be the chamber of royalty, but it is also the prison that houses you. A pink photo frame hangs on one wall.[one of][or] You feel safe from monsters here.[stopping]". The shape of Dungeon12 is L1/0-0-0-1-0-0. The grid position of Dungeon12 is <1,11,12>. Dungeon12 is discovered.
 
 [!<dungeon13:LabyrinthRoom>*
 
@@ -205,7 +205,7 @@ Dungeon28 is a mandatory important labyrinth room. The printed name of Dungeon28
 REQUIRES COMMENTING
 
 *!]
-Dungeon29 is a sandy labyrinth room. The printed name of Dungeon29 is "Tool Room". "This room is filled with [if the bimbo of the player > 10 and diaper quest is 1]grown-up[otherwise if the bimbo of the player > 10]manly[otherwise]heavy[end if] tools.  Better leave them alone.". The shape of Dungeon29 is L1/0-0-1-0-0-0.
+Dungeon29 is a sandy labyrinth room. The printed name of Dungeon29 is "Tool Room". "This room is filled with [if the bimbo of the player > 10 and diaper quest is 1]grown-up[otherwise if the bimbo of the player > 10]manly[otherwise]heavy[end if] tools. Better leave them alone.". The shape of Dungeon29 is L1/0-0-1-0-0-0.
 
 [!<dungeon30:LabyrinthRoom>*
 
@@ -226,7 +226,7 @@ Dungeon31 is a sandy labyrinth room. The printed name of Dungeon31 is "[if diape
 REQUIRES COMMENTING
 
 *!]
-Dungeon32 is a pinned untrappable labyrinth room. The printed name of Dungeon32 is "Stone Hallway". "[one of]Upon descending the stairs in the statue hall, the long cobblestone corridors of the dungeon sprawl out in all directions. [or][stopping]Heavy iron lanterns stand motionless above you, casting long shadows as you venture into the complex of rooms and further away from the safety of the bedroom.". Dungeon32 is east of Dungeon10. Dungeon10 is west of Dungeon32. The grid position of Dungeon32 is  <1,14,12>.
+Dungeon32 is a pinned untrappable labyrinth room. The printed name of Dungeon32 is "Stone Hallway". "[one of]Upon descending the stairs in the statue hall, the long cobblestone corridors of the dungeon sprawl out in all directions. [or][stopping]Heavy iron lanterns stand motionless above you, casting long shadows as you venture into the complex of rooms and further away from the safety of the bedroom.". Dungeon32 is east of Dungeon10. Dungeon10 is west of Dungeon32. The grid position of Dungeon32 is <1,14,12>.
 
 [!<dungeon33:LabyrinthRoom>*
 
@@ -291,7 +291,7 @@ Dungeon39 is a sandy labyrinth room. The printed name of Dungeon39 is "Healer's 
 REQUIRES COMMENTING
 
 *!]
-Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular Stone Room". "While the other rooms you've passed through in the dungeon have proven to be of a fairly rudimentary rectangular shape, this single room has a circular design. It wouldn't be noteworthy if it weren't for the strange change from the norm that it brought. Examining the area, you look up at the domed ceiling to make out a portrait of female angels circling overhead, looking down at you as you pass through.[if saved-flat-intelligence > 7][one of][line break]Upon closer examination, you recognize the angels as the Nintendolls employees that locked you in this simulation. The reminder of your captivity doesn't sit easy with you as you press on.[or][stopping]".
+Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular Stone Room". "While the other rooms you've passed through in the dungeon have proven to be of a fairly rudimentary rectangular shape, this single room has a circular design. It wouldn't be noteworthy if it weren't for the strange change from the norm that it brought. Examining the area, you look up at the domed ceiling to make out a portrait of female angels circling overhead, looking down at you as you pass through.[if saved-flat-intelligence > 7][one of][line break]Upon closer examination, you recognise the angels as the Nintendolls employees that locked you in this simulation. The reminder of your captivity doesn't sit easy with you as you press on.[or][stopping]".
 
 [!<dungeon41:LabyrinthRoom>*
 
@@ -388,7 +388,7 @@ Check pushing DungeonScenery06:
 REQUIRES COMMENTING
 
 *!]
-Stairwell01 is a mandatory labyrinth room. The printed name of Stairwell01 is "Stone Stairwell". [Stairwell01 is east of Dungeon02.]  "Before you even emerge in the room, you can feel that it is different. The air is lighter and there is natural lighting; could it be a way out? Sure enough, you discover a stone staircase leading up and out of the dungeon to whatever wonders and wilderness await you above the dungeon complex.". The shape of Stairwell01 is L1/1-0-1-1-1-1.
+Stairwell01 is a mandatory labyrinth room. The printed name of Stairwell01 is "Stone Stairwell". [Stairwell01 is east of Dungeon02.] "Before you even emerge in the room, you can feel that it is different. The air is lighter and there is natural lighting; could it be a way out? Sure enough, you discover a stone staircase leading up and out of the dungeon to whatever wonders and wilderness await you above the dungeon complex.". The shape of Stairwell01 is L1/1-0-1-1-1-1.
 
 [!<dungeon:Region>*
 
@@ -399,4 +399,3 @@ The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, 
 
 
 Dungeon ends here.
-

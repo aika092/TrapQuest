@@ -131,7 +131,7 @@ To HoleWait:
 		calm M;
 		distract M;
 		now the boredom of M is 30;
-		say "A little while later you feel someone gripping you by your hips! [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'PLEASE REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
+		say "A little while later you feel someone gripping you by your hips! [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'[caps please] REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
 		now the player is in the location of hole-in-wall;
 		say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
 		refresh the map-window;
@@ -407,4 +407,3 @@ To compute punishment of (P - hole-gatling-fuck):
 
 
 Hole In Wall Trap ends here.
-

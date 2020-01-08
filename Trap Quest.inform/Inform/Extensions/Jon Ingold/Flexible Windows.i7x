@@ -13,13 +13,11 @@ Version 15/170131 of Flexible Windows (for Glulx only) by Jon Ingold begins here
 ]
 
 
-
 Use authorial modesty.
 
 Include version 1/140516 of Alternative Startup Rules by Dannii Willis.
 Include version 10/160919 of Glulx Entry Points by Emily Short.
 Include version 5/140516 of Glulx Text Effects by Emily Short.
-
 
 
 Section - Interpreter Sniffing (for use with Interpreter Sniffing by Friends of I7)
@@ -28,7 +26,6 @@ Section - Interpreter Sniffing (for use with Interpreter Sniffing by Friends of 
 The resniffing stage rule is not listed in the startup rules.
 Before starting the virtual machine (this is the alternate resniffing stage rule):
 	consider the resniffing rules;
-
 
 
 Part - Windows
@@ -80,7 +77,6 @@ A g-window can be g-present or g-unpresent.
 A g-window is usually g-unpresent.
 
 
-
 Chapter - The spawning relation
 
 [ The most efficient relations use the object tree. Inform will only use the object tree for a few built in relations however, so we piggy back on to the containment relation. ]
@@ -90,7 +86,6 @@ The verb to be ancestral to implies the enclosure relation.
 The verb to be descended from implies the reversed enclosure relation.
 
 
-
 Chapter - Windows for the styles table
 
 [ These things *must* be defined first in order for sorting to work. ]
@@ -98,7 +93,6 @@ Chapter - Windows for the styles table
 All-windows is a g-window.
 All-buffer-windows is a g-window.
 All-grid-windows is a g-window.
-
 
 
 Chapter - The built-in windows
@@ -115,7 +109,6 @@ Use no status line translates as (- Constant USE_NO_STATUS_LINE 1; -).
 The quote window is a g-window spawned by the main window.
 
 
-
 Section - Styles for the built-in windows
 
 [ These are the original styles set by Inform in VM_Initialise(). ]
@@ -125,7 +118,6 @@ window	style name	reversed	justification	font weight	italic
 all-buffer-windows	italic-style	--	--	regular-weight	true
 all-buffer-windows	header-style	--	left-justified
 all-grid-windows	all-styles	true
-
 
 
 Section - Open the built-in windows
@@ -142,7 +134,6 @@ This is the open the built-in windows using Flexible Windows rule:
 		open the status window;
 	close the quote window;
 	continue the activity;
-
 
 
 Part - Variables and phrases to access the I6 template layer - unindexed
@@ -188,7 +179,6 @@ To safely carry out the (A - activity on value of kind K) activity with (val - K
 	(- @push say__p; @push say__pc; CarryOutActivity( {A}, {val} ); @pull say__pc; @pull say__p; -).
 
 
-
 Section - And some phrases to find windows - unindexed
 
 [ This may be a non-existent window, or one which was created in I6 but has no corresponding g-window ]
@@ -215,7 +205,6 @@ To decide which g-window is the window with rock (rock - a number):
 	decide on the invalid window;
 
 
-
 Part - The Flexible Windows API
 
 Chapter - Opening and closing windows
@@ -233,7 +222,6 @@ To close (win - a g-window):
 		now win is g-unrequired;
 		now every g-window descended from win is g-unrequired;
 		calibrate windows;
-
 
 
 Section - Calibrating windows - unindexed
@@ -255,7 +243,6 @@ To calibrate windows:
 		now win is currently being processed;
 		safely carry out the constructing activity with win;
 		now win is not currently being processed;
-
 
 
 Section - Constructing a window
@@ -336,7 +323,6 @@ First after constructing a g-window (called win) (this is the check if the windo
 		now win is g-present;
 
 
-
 Section - Deconstructing windows
 
 Deconstructing something is an activity on g-windows.
@@ -344,7 +330,6 @@ Deconstructing something is an activity on g-windows.
 For deconstructing a g-window (called win) (this is the basic deconstruction rule):
 	now win is g-unpresent;
 	call FW_glk_window_close for the ref number of win;
-
 
 
 Chapter - Clearing and refreshing windows
@@ -392,7 +377,6 @@ A glulx object-updating rule (this is the refresh windows after restoring rule):
 	refresh all windows;
 
 
-
 Chapter - Focus and changing the acting main window
 
 The current focus window is a g-window variable.
@@ -418,7 +402,6 @@ To set (win - a g-present textual g-window) as the acting main window:
 		open the status window;
 
 
-
 Chapter - Window measurements
 
 To decide what number is the height of (win - a g-window):
@@ -438,7 +421,6 @@ Include (-
 	return 0;
 ];
 -).
-
 
 
 Part - Keeping the built-in windows up to date
@@ -482,7 +464,6 @@ A first glulx object-updating rule (this is the recalibrate windows rule):
 	focus the current focus window;
 
 
-
 Chapter - Updating windows that we control
 
 After constructing a textual g-window (called win) (this is the focus the acting main window rule):
@@ -515,7 +496,6 @@ After deconstructing a textual g-window (called win) (this is the clear the I6 w
 		now gg_statuswin is 0;
 	if win is the quote window:
 		now gg_quotewin is 0;
-
 
 
 Chapter - Interjecting for windows we don't control - unindexed
@@ -603,7 +583,6 @@ Include (-
 -).
 
 
-
 Part - Window styles
 
 [ We extend Glulx Text Effects to allow you to specify styles for specific windows ]
@@ -615,7 +594,6 @@ Section - The Extended Table of User Styles definition (in place of Section - Th
 Table of User Styles
 window (a g-window)	style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 --
-
 
 
 Section - Sorting the Table of User Styles
@@ -666,7 +644,6 @@ Before starting the virtual machine (this is the Flexible Windows sort the Table
 		increment row2;
 	[ Sort once more to put the blank rows at the bottom ]
 	sort the Table of User Styles in window order;
-
 
 
 Section - Enhanced phrases for applying styles to specific window types - unindexed
@@ -750,7 +727,6 @@ Include (-
 -).
 
 
-
 Section - Applying the generic styles
 
 [ At this stage only apply the generic (non window specific) styles. ]
@@ -789,13 +765,12 @@ A glulx zeroing-reference rule (this is the set generic text styles rule):
 		if there is a reversed entry:
 			set reversed of wintype W for the style name entry to the reversed entry;
 
-[ Gargoyle sets the cursor color to whatever the last text-buffer color hint was. We will reset it using a variable the story author can change.
+[ Gargoyle sets the cursor colour to whatever the last text-buffer colour hint was. We will reset it using a variable the story author can change.
 This is apparently by design, but seems unuseful and buggy to me. I raised the issue at https://groups.google.com/forum/#!topic/garglk-dev/DdqG0Ppt2lY ]
 
 The Gargoyle cursor color is initially "#000000".
-After constructing a textual g-window (this is the Gargoyle cursor color rule):
+After constructing a textual g-window (this is the Gargoyle cursor colour rule):
 	set the color of wintype 3 for normal-style to the Gargoyle cursor color;
-
 
 
 Section - Applying window specific styles
@@ -880,7 +855,6 @@ A first after constructing a textual g-window (called win) (this is the clear th
 		follow the set generic text styles rule;
 
 
-
 Chapter - Window background colors
 
 A g-window has a text called background color.
@@ -895,10 +869,10 @@ First after constructing a textual g-window (called win) (this is the reset the 
 	if the background color of win is not empty:
 		clear the background color of wintype 0 for all-styles;
 
-[ Setting the background color of graphics windows is handled by the automatic clearing which occurs after the window is constructed ]
+[ Setting the background colour of graphics windows is handled by the automatic clearing which occurs after the window is constructed ]
 
 [ As explained by Ben Cressey (http://groups.google.com/group/rec.arts.int-fiction/msg/b88316e2dcf1bb6b)
-Gargoyle sets the colour of its window padding based on the last background colour style hint given to the normal style. So after clearing all the background colours and styles, we set it based on the background color of the main window, or just set white if it isn't set. ]
+Gargoyle sets the colour of its window padding based on the last background colour style hint given to the normal style. So after clearing all the background colours and styles, we set it based on the background colour of the main window, or just set white if it isn't set. ]
 
 [ This phrase is made available in case you want to set the colour at some other time (such as when opening a pop-over window) ]
 To set the Gargoyle window padding to (T - a text):
@@ -912,7 +886,6 @@ After constructing a textual g-window (this is the Gargoyle window padding rule)
 	if T is empty:
 		let T be "#FFFFFF";
 	set the Gargoyle window padding to T;
-
 
 
 Flexible Windows ends here.
@@ -935,7 +908,7 @@ Chapter: Window Types, Properties, and Styles
 
 Section: Window Type
 
-Each window is a thing of the kind g-window. There are three types of Glulx window: text buffer, text grid and graphics. A text buffer is a teletype-style stream of text (akin to the main window), a graphics screen cannot accept text but can render images, and a text grid (akin to the status bar) allows for flexible positioning of text characters (for instance, centering text).
+Each window is a thing of the kind g-window. There are three types of Glulx window: text buffer, text grid and graphics. A text buffer is a teletype-style stream of text (akin to the main window), a graphics screen cannot accept text but can render images, and a text grid (akin to the status bar) allows for flexible positioning of text characters (for instance, centring text).
 
 There are two potential ways to define a window's type. One is to declare it to be of the appropriate kind:
 
@@ -1118,4 +1091,3 @@ Example: * Inventory Window - A simple example showing how to place a side windo
 	The Study is a room. In the study is an old oak desk. On the desk is a Parker pen, a letter, an envelope and twenty dollars.
 
 	Test me with "take pen/take letter/i/take all".
-

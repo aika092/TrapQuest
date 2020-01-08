@@ -23,7 +23,7 @@ To say MediumDesc of (M - hellhound):
 
 To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
-		say "This huge black canine is as tall as you even when it's on all fours. Its spiked tail, sharp fangs and elongated claws are dead give-aways that it is from another plane[if a random pet collar is off-stage]It holds a collar and leash in its mouth, as if it's looking for someone to take it on a walk, or more likely, a pet of its own to lead around!  [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
+		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane[if a random pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] is completely visible, adorned with a black cock ring near the base[end if].".
 
@@ -272,7 +272,7 @@ To say CreampieFlav of (M - hellhound) of (F - a fuckhole):
 	say "But rather than pulling out, [NameDesc of M] [if mythical creature fetish is 0]chuckles knowingly to [himself of M] and [end if][one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and [if mythical creature fetish is 0]you hear something that sounds like a balloon inflating as [his of M] cock ring begins to rapidly expand inside of you[otherwise]you can't help but make high pitched noises as you feel the base of [his of M] [DickDesc of M] inflating[end if][one of][or], stretching your tired hole once again[stopping]. There's nothing you can do under the weight of the [if mythical creature fetish is 0][man of M][otherwise]demon[end if] except shudder as you are [']knotted['] by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].";
 
 To say MessyPullOutFlav of (M - hellhound) in (F - asshole):
-	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel [if mythical creature fetish is 0][his of M] cock ring[otherwise]the base of [his of M] [DickDesc of M][end if] inflating. Pinned down by [his of M] full weight, [if the anal sex addiction of the player < 3]your heart sinks[otherwise if the anal sex addiction of the player < 7]you groan[otherwise]you mewl happily[end if] as you realize you are anally [']knotted['] by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].".
+	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realise you can feel [if mythical creature fetish is 0][his of M] cock ring[otherwise]the base of [his of M] [DickDesc of M][end if] inflating. Pinned down by [his of M] full weight, [if the anal sex addiction of the player < 3]your heart sinks[otherwise if the anal sex addiction of the player < 7]you groan[otherwise]you mewl happily[end if] as you realise you are anally [']knotted['] by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].".
 
 To say MessyPullOutFlav of (M - hellhound) in (F - vagina):
 	say "[BigNameDesc of M] pulls out, seeming to snicker as [he of M] walks around in front of you. [big his of M] red eyes fix you with a cruel stare as [he of M] lifts [his of M] leg and begins to pee in your face, as if marking you as [his of M] territory!".
@@ -331,7 +331,7 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 		otherwise PussyFill 1;
 		decrease the sex-length of M by 1;
 	otherwise:
-		say "[BigNameDesc of M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realizes that [his of M] giant inflated [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] has wedged [his of M] [DickDesc of M] firmly inside your [variable F]. Digging [his of M] [if mythical creature fetish is 0]elbows[otherwise]bestial talons[end if] into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], [he of M] [i]wrenches[/i] [himself of M] free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force, releasing you with a loud *POP*.";
+		say "[BigNameDesc of M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realises that [his of M] giant inflated [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] has wedged [his of M] [DickDesc of M] firmly inside your [variable F]. Digging [his of M] [if mythical creature fetish is 0]elbows[otherwise]bestial talons[end if] into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], [he of M] [i]wrenches[/i] [himself of M] free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force, releasing you with a loud *POP*.";
 		ruin F times 5;
 		PainUp 2;
 		UnKnot M in F;
@@ -546,4 +546,3 @@ To compute talk option (N - 4) to (M - hellhound):
 
 
 Hellhound ends here.
-

@@ -72,7 +72,7 @@ To check perception of (M - a monster):
 					if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
 						let R be a random number between 1 and hypno-curtsey-trigger;
 						let HR be 2 + the square root of (the humiliation of the player / 2000);
-						if debuginfo > 0, say "[input-style]Curtsey resistance check:  Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
+						if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
 						if R <= HR:
 							increase hypno-curtsey-trigger by 1;
 							let C be a random worn knee-length or longer crotch-in-place clothing;
@@ -134,7 +134,6 @@ To say CurtseyReactionFlav of (M - a monster):
 		say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'Erm, I can see your underwear.'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] seems completely unaffected[one of] by your sudden display of submissive humility[or][or][cycling].".
-
 
 
 Chapter 2 - Aggro Framework
@@ -478,4 +477,3 @@ Definition: a person is sluttily dressed:
 
 
 Perception ends here.
-

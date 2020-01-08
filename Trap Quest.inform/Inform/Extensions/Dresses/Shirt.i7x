@@ -155,4 +155,3 @@ Definition: a torn shirt is black themed: decide yes.
 
 
 Shirt ends here.
-

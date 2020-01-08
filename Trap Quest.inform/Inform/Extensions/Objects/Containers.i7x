@@ -384,7 +384,7 @@ A pedestal can be wood, stone, clay, terracotta or marble(this is the pedestal-v
 There are 5 pedestals.
 
 To say ExamineDesc of (P - a pedestal):
-	say "A [pedestal-variant of P] pedestal[if there is a thing in P] bearing a [ShortDesc of a random thing in P][end if], which is protected by a glass case. [if P is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if P is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of P] basin protrudes from one side.[otherwise if P is erect and diaper lover > 0]A[one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if P is erect]A [pedestal-variant of P][one of]...[or] [stopping]penis protrudes from one side of the pedestal[one of]. Drinking from it will in all likelihood unlock the case, but at what cost?[or].[stopping][otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of P] on the inside of case, written in roman numerals.";
+	say "A [pedestal-variant of P] pedestal[if there is a thing in P] bearing a [ShortDesc of a random thing in P][end if], which is protected by a glass case. [if P is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if P is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of P] basin protrudes from one side.[otherwise if P is erect and diaper lover > 0]A[one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if P is erect]A [pedestal-variant of P][one of]...[or] [stopping]penis protrudes from one side of the pedestal[one of]. Drinking from it will in all likelihood unlock the case, but at what cost?[or].[stopping][otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of P] on the inside of case, written in Roman numerals.";
 	if newbie tips is 1, say "[newbie style]Newbie Tip: You need to [if P is erect]get on your knees and suck on this pedestal[otherwise if P is chilled]pour a container with milk in it into this pedestal[otherwise if P is parched]pour a container with urine in it into this pedestal[otherwise]pour a container with semen in it into this pedestal[end if] to open it.[roman type][line break]".
 
 Report examining a pedestal: [Specifically with examining we want it to appear in the main window always]
@@ -428,7 +428,6 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now P is museum-store;
 		now the paid of X is the price of P / 3;
 		if the paid of X <= 0, now the paid of X is 1.
-
 
 
 To BackgroundRender (T - a pedestal) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
@@ -555,6 +554,4 @@ To say paymentSatisfyReject of (P - a pedestal):
 	say "The [pedestal-variant of P] basin fills with the liquid, but the dome doesn't open. Maybe that's the wrong type of liquid? [if P is fertile]Something to do with fertility might be a better shot...[otherwise if P is parched]Maybe the fact that the carving looks like a human toilet is supposed to be suggesting something in particular...[otherwise if P is chilled]The pedestal looks like it keeps whatever liquid it stores cool, so maybe it's for making sure that a certain lactated liquid doesn't go off?[end if]".
 
 
-
 Containers ends here.
-

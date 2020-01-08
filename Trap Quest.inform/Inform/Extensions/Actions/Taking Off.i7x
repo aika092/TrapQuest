@@ -2,7 +2,7 @@ Taking Off by Actions begins here.
 
 Does the player mean taking off a worn clothing: it is very likely.
 
-Understand "rm [something]" as taking off.
+Understand "rm [something], remove [something]", "take [something] off" as taking off.
 
 Check taking off insertable:
 	unless the noun is clothing, try unplugging the noun instead.
@@ -57,4 +57,3 @@ Report taking off clothing:
 
 
 Taking Off ends here.
-

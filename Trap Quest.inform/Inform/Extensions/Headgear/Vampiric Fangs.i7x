@@ -96,4 +96,3 @@ To compute persistent reward of (Q - ritual-quest) on (C - a clothing):
 		compute generic class reward of Q on C.
 
 Vampiric Fangs ends here.
-

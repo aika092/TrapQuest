@@ -69,6 +69,4 @@ To compute time decay of (T - a sprinkle trap):
 		now T is expired.
 
 
-
 Sprinkle Trap ends here.
-

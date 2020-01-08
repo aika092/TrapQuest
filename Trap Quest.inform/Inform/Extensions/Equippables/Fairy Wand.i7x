@@ -43,4 +43,3 @@ To compute attack of (W - a fairy wand) at (M - a monster):
 Definition: a fairy wand is magic themed: decide yes.
 
 Fairy Wand ends here.
-

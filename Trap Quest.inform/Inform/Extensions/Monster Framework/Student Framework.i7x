@@ -92,14 +92,14 @@ To say rank-colour of (M - a student):
 Definition: a student (called M) is demotable:
 	if the min-rank of M < the current-rank of M:
 		repeat with ST running through alive students:
-			if ST is not M and the current-rank of ST is the current-rank of M,	decide yes; [There must be at least 1 student of each rank. So we can't demote this person unless they're not the only one left.]
+			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 student of each rank. So we can't demote this person unless they're not the only one left.]
 	decide no.
 
 Definition: a student (called M) is promotable:
 	if the current-rank of M is 5, decide yes; [everyone can become solid gold from pure diamond]
 	if the max-rank of M > the current-rank of M:
 		repeat with ST running through alive students:
-			if ST is not M and the current-rank of ST is the current-rank of M,	decide yes; [There must be at least 1 student of each rank. So we can't promote this person unless they're not the only one left.]
+			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 student of each rank. So we can't promote this person unless they're not the only one left.]
 	decide no.
 
 To update name of (M - a student):
@@ -290,13 +290,13 @@ To say FarGoneAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking as outrageous as that! My poor eyes!'[or]Holy cow, do you know how nasty you look right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
 To say LewdAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
 
 To say FarGoneBabAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking as outrageous as that! My poor eyes!'[or]Holy cow, do you know how extreme your outfit is right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
 To say BabAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
 
 
 To compute nonstudent perception of (M - a student):
@@ -466,7 +466,6 @@ Check going when the player is in School20:
 		do nothing instead. [failsafe]
 
 
-
 student-bully-wedgie is a diaper punishment. The priority of student-bully-wedgie is 1.
 Definition: student-bully-wedgie is appropriate:
 	if current-monster is student and the player is not immobile and the player is not flying and the rank of the player >= the entry-rank of School19 and the current-rank of current-monster >= the entry-rank of School19 and there is an off-stage ass hook and there is worn displacable knickers, decide yes;
@@ -501,7 +500,6 @@ Check going when the player is in School19:
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
-
 
 
 student-bully-swirlie is a diaper punishment. The priority of student-bully-swirlie is 3.
@@ -653,7 +651,6 @@ To compute food hall bullying of (M - a student):
 	satisfy M.
 
 
-
 Part - Damage
 
 To compute damage of (M - a student):
@@ -720,7 +717,7 @@ To decide which number is the annoyance threshold of (M - a student):
 
 
 To say DismissalRequestVixen of (M - a student):
-	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student is going in [his of M] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
+	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student is going in [his of a random student] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
 
 To say DismissalResponseVixen of (M - a student):
 	say "[speech style of M]'[if M is interested]Haha, pull the other one.'[otherwise]OMG! I'll be right there!'[end if][roman type][line break]".
@@ -749,18 +746,6 @@ To say DismissalResponseBursting of (M - a student):
 		say "[speech style of M]'[if M is interested]Ooh, goody! I can't wait to watch your face as you wet your nappy in front of me[otherwise]Fair enough[end if].'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the teachers catch you having an accident[end if]!'[roman type][line break]".
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 [This is the object used for the team predicament where the student is bound behind the player]
@@ -812,7 +797,7 @@ Check standing when quiz-partner is worn:
 
 To compute quiz partner messing:
 	let ST be the bound-target of quiz-partner;
-	say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if rectum >= 30 and asshole is not actually occupied]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if  rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding that is covering[end if] [his of ST] eyes, nose and mouth.";
+	say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if rectum >= 30 and asshole is not actually occupied]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding that is covering[end if] [his of ST] eyes, nose and mouth.";
 	let D be a random worn diaper;
 	if rectum >= 30 and asshole is not actually occupied:
 		MessUp D by 30;
@@ -834,6 +819,4 @@ To say CurrentlyVisibleFlav of (C - quiz-partner):
 	say "".
 
 
-
 Student Framework ends here.
-

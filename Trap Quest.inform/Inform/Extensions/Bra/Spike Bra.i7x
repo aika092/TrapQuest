@@ -99,6 +99,4 @@ To decide which number is the bartering value of (T - a spike bra) for (M - a gl
 	decide on 4.
 
 
-
 Spike Bra ends here.
-

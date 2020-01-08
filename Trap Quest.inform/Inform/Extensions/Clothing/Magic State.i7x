@@ -52,8 +52,6 @@ Definition: a bottle is blessable if it is held and it is not blessed.
 Definition: an alchemy product is blessable if it is carried and it is not blessed.
 
 
-
-
 [Selkie: Would it be a helpful hint add some flavour text here?
 	if B is not blessed:
 		say "You feel [one of]a chill from the [B][or]the [B] vibrates for a moment[or]the [B] throbs angrily[or]the [B] chills unpleasantly, momentarily[or]the [B] burns briefly[or]the [B] seems somehow to squirm internally[at random]. ";
@@ -143,4 +141,3 @@ To say raw-magic-modifier-desc:
 
 
 Magic State ends here.
-

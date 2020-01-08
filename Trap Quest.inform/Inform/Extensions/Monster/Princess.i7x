@@ -198,7 +198,7 @@ To compute talk option (N - 2) to (M - ex-princess):
 		compute talk option 1 to M;
 	otherwise if M is caged:
 		if the number of monsters in the location of the player is 1:
-			say "[variable custom style]'[one of]Who are you?'[line break][speech style of M]'I'm Princess Annie! [big please] help me!'[or]Why are you in there?'[line break][speech style of M]'I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[or]What are you going to do if you get out?'[line break][speech style of M]'I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[or]How can I help?'[line break][speech style of M]'I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to [if diaper quest is 1]pee in a dry diaper. Don't ask me why[otherwise]choose someone to get rather... familiar with[end if].'[or]Did I already ask how I could help you out?'[line break][speech style of M]'Azathot above... is this really the best chance I have? I need you to help me escape!'[stopping][roman type][line break]";
+			say "[variable custom style]'[one of]Who are you?'[line break][speech style of M]'I'm Princess Annie! [big please] help me!'[or]Why are you in there?'[line break][speech style of M]'I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[or]What are you going to do if you get out?'[line break][speech style of M]'I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[or]How can I help?'[line break][speech style of M]'I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to [if diaper quest is 1]pee in a dry diaper. Don't ask me why[otherwise]choose someone to get rather... familiar with[end if].'[or]Did I already ask how I could help you out?'[line break][speech style of M]'[Azathot] above... is this really the best chance I have? I need you to help me escape!'[stopping][roman type][line break]";
 		otherwise: [She's not alone so you can't talk sincerely]
 			say "You put on a vindictive act in front of your peers.[line break][variable custom style]'Having fun, slut?'[roman type][line break]You see [him of M] notice you're not alone, and [he of M] twitches [his of M] eyebrows at you.[line break][speech style of M]'Fuck you!'[roman type][line break]";
 	otherwise:
@@ -238,7 +238,7 @@ To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - skeleton key):
 
 
 To say MonsterOfferRejectFlav of (M - ex-princess) to (T - a thing):
-	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'[if M is caged and the number of monsters in the location of the player > 1]I don't want that! That's the sort of thing you'd give me if you were trying to help me escape, which would be a very silly thing to do IN FRONT OF PEOPLE, haha! Good joke!'[otherwise if T is skeleton key and M is caged]You'd better get me a magic wand first.'[otherwise if M is caged][big please], they'll just punish me more if they catch me with that. Just bring the things I asked for. A magic wand and a key...'[otherwise]Don't worry, honey, I don't need anything from you any more. You've done more than enough for me.'[end if][roman type][line break]";
+	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'[if M is caged and the number of monsters in the location of the player > 1]I don't want that! That's the sort of thing you'd give me if you were trying to help me escape, which would be a very silly thing to do IN FRONT OF PEOPLE, haha! Good joke!'[otherwise if T is skeleton key and M is caged]You'd better get me a magic wand first.'[otherwise if M is caged][big please], they'll just punish me more if they catch me with that. Just bring the things I asked for. A magic wand and a key...'[otherwise]Don't worry, [honey of M], I don't need anything from you any more. You've done more than enough for me.'[end if][roman type][line break]";
 	if T is vibe-wand or T is skeleton key, now M is not rejecting T.
 
 To say MonsterTakeFlav of (M - ex-princess) to (T - a vibe-wand):
@@ -381,7 +381,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 				otherwise:
 					now enslave-success is 0;
 					now glittery-wand is cursed;
-					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and goes to deflect it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand. Time seems to slow as [NameDesc of N] grins and says with a glint in [his of N] eye:[line break][speech style of N]'Oh, where did you get that wand from, I wonder?'[line break][speech style of M]'What? NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W] turning its gems to a jet black. [BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
+					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and goes to deflect it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand. Time seems to slow as [NameDesc of N] grins and says with a glint in [his of N] eye:[line break][speech style of N]'Oh, where did you get that wand from, I wonder?'[line break][speech style of M]'What? NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W] turning its gems to a jet black. [BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as, clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
 			otherwise:
 				say "[BigNameDesc of M] laughs in gleeful triumph as [he of M] blasts [NameDesc of N] with a powerful wave of magical energy. [BigNameDesc of N] screeches in shock as [he of N] has [his of N] outfit transformed";
 	if enslave-success is 1:
@@ -447,7 +447,7 @@ A later time based rule (this is the fannie facerub rule):
 	if ex-princess is diaper-enslaved and playerRegion is School:
 		if ex-princess is in the location of the player:
 			if there is a worn dirty diaper:
-				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise]Please move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
+				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise][big please] move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
 				ruin vagina;
 			if the current-torment of ex-princess <= 0:
 				now the current-torment of ex-princess is a random number between 25 and 35;
@@ -485,7 +485,7 @@ Check pushing ex-princess when ex-princess is caged:
 	if the current-torment of ex-princess <= 0:
 		now the current-torment of ex-princess is 60;
 		increase the torment-count of ex-princess by 1;
-		say "[BigNameDesc of ex-princess] wails in despair as mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies.[line break][speech style of ex-princess]'Nooooo! You fucking cunt!'[roman type][line break]That's all [he of ex-princess] has time to say before a loud vibrating sound can be heard through the intercom. A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
+		say "[BigNameDesc of ex-princess] wails in despair as mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies.[line break][speech style of ex-princess]'Nooooo! You fucking [cunt]!'[roman type][line break]That's all [he of ex-princess] has time to say before a loud vibrating sound can be heard through the intercom. A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
 		DelicateDown 1;
 		obsceneDignify;
 	otherwise:
@@ -495,7 +495,7 @@ Check pushing ex-princess when ex-princess is caged:
 
 To compute toilet reaction of (M - ex-princess):
 	if M is caged:
-		say "[BigNameDesc of M] wails in despair as your [urine] flows towards [his of M] food.[speech style of M]'You fucking cunt!'[roman type][line break]That's all [he of M] has time to say before [he of M] has to begin sucking up your [urine] and transferring it, mouthful by mouthful, into [his of M] toilet[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
+		say "[BigNameDesc of M] wails in despair as your [urine] flows towards [his of M] food.[speech style of M]'You fucking [cunt]!'[roman type][line break]That's all [he of M] has time to say before [he of M] has to begin sucking up your [urine] and transferring it, mouthful by mouthful, into [his of M] toilet[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
 		DelicateDown 1;
 		obsceneDignify;
 		increase the torment-count of M by 1;
@@ -538,7 +538,6 @@ A time based rule (this is the caged princess tortured rule):
 			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N][one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
 
-
 Definition: ex-princess is messy if it is unconcerned and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 7.
 
 To say SuddenMessFlav of (M - ex-princess):
@@ -555,7 +554,7 @@ To compute ChangeRequest of (M - ex-princess):
 			if the player is upright:
 				say "[bold type]You get on your knees.[roman type][line break]";
 				now the stance of the player is 1;
-			say "[BigNameDesc of M] smiles with shy appreciation as she mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+			say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
 			now the refactory-period of M is a random number between 0 and 200;
 			DelicateUp 1;
 			SexAddictUp 1;
@@ -564,4 +563,3 @@ To compute ChangeRequest of (M - ex-princess):
 
 
 Princess ends here.
-

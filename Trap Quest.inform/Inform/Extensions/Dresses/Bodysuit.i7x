@@ -45,7 +45,7 @@ Definition: a bodysuit is end of transformation chain: decide yes.
 
 Part - Latex Bodysuit
 
-A rubber bodysuit is a kind of bodysuit. A rubber bodysuit is usually sheer. A rubber bodysuit is usually neck covering. There is 1 manly latex rubber bodysuit.  The text-shortcut of rubber bodysuit is "lab".
+A rubber bodysuit is a kind of bodysuit. A rubber bodysuit is usually sheer. A rubber bodysuit is usually neck covering. There is 1 manly latex rubber bodysuit. The text-shortcut of rubber bodysuit is "lab".
 
 Figure of latex bodysuit 1 is the file "Items/Clothes/Upper/Latex/bodysuit1.png".
 
@@ -92,4 +92,3 @@ To decide which number is the initial cringe of (C - a full body baby romper):
 	decide on 12.
 
 Bodysuit ends here.
-

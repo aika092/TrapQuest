@@ -29,6 +29,4 @@ This is the instant tg hater rule:
 	follow quit rule.
 
 
-
 Instant TG Options ends here.
-

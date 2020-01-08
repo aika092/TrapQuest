@@ -6,7 +6,7 @@ To decide which figure-name is clothing-image of (C - a cat tail plug):
 	decide on figure of cat tail plug.
 
 To say UniquePlugDesc of (P - a cat tail plug):
-	say "This [PlugSize size of P] butt plug has a long realistic cat tail coming out of the base.[if P is worn]It makes you look like a cat!  [end if]".
+	say "This [PlugSize size of P] butt plug has a long realistic cat tail coming out of the base.[if P is worn]It makes you look like a cat! [end if]".
 
 To say ShortDesc of (P - a cat tail plug):
 	say "cat tail butt plug".
@@ -15,4 +15,3 @@ Definition: a cat tail plug is cat themed: decide yes.
 Definition: a cat tail plug is black themed: decide yes.
 
 Cat Tail Plug ends here.
-

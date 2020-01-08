@@ -60,7 +60,7 @@ To say ShortDesc of (C - a cow print milking basque):
 To decide which figure-name is clothing-image of (C - a cow print milking basque):
 	decide on figure of cow print basque.
 
-A demonic-milking basque is a kind of milking basque. The printed name of demonic-milking basque is usually "[clothing-title-before]demonic basque[clothing-title-after]". The text-shortcut of demonic-milking basque is "dmb". 
+A demonic-milking basque is a kind of milking basque. The printed name of demonic-milking basque is usually "[clothing-title-before]demonic basque[clothing-title-after]". The text-shortcut of demonic-milking basque is "dmb".
 
 [There is 1 demonic-milking basque.]
 
@@ -88,4 +88,3 @@ When you take a bukkake, it gets absorbed into your skin and converted into milk
 ]
 
 Basque ends here.
-

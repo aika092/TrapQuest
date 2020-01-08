@@ -27,7 +27,7 @@ REQUIRES COMMENTING
 +!]
 To Execute Takeoff:
 	now last-turn-flight is 1;
-	say "Your body is now lighter than air! As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][line break][first custom style]What the fuck is happening to me?![otherwise][line break][second custom style]Oooh, yay, I can fly! Wait, how do I control where I go?  Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again!  Weeeee![end if][stopping][roman type][line break]";
+	say "Your body is now lighter than air! As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][line break][first custom style]What the fuck is happening to me?![otherwise][line break][second custom style]Oooh, yay, I can fly! Wait, how do I control where I go? Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again! Weeeee![end if][stopping][roman type][line break]";
 	repeat with D running through dildo traps penetrating a fuckhole:
 		if doll-stuck-num > 0:
 			say "[one of]You feel your eyes widen and your jaw drop[or]You once more gape foolishly[stopping] as you rise up off the impaling [printed name of D] which buzzes angrily as you escape, and the music stops. [one of]You don't think you knew the true meaning of shame until this absolutely humiliating 'rescue'[or]The shame of the rescue is just as bad as last time[stopping].";
@@ -73,7 +73,7 @@ To Execute Landing:
 	if the player is upright:
 		try kneeling;
 	otherwise if the location of the player is glue-puddled:
-		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh oh.[or][line break][variable custom style]Please, no![roman type][line break][or][line break][variable custom style]Dear lord, not again![roman type][line break][at random]";
+		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh-oh.[or][line break][variable custom style]Please, no![roman type][line break][or][line break][variable custom style]Dear lord, not again![roman type][line break][at random]";
 		check glue tripping.
 
 [!<SayLandingTauntOfMonster>+
@@ -145,6 +145,4 @@ Definition: yourself is too high to see:
 	decide no.
 
 
-
 Flight ends here.
-

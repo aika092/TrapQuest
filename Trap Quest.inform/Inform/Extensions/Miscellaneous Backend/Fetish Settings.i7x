@@ -276,7 +276,6 @@ To decide which number is toilet allowance:
 	decide on choice in row 39 of the Table of Player Options.
 
 
-
 [!<DecideWhichNumberIsDiaperFocus>+
 
 REQUIRES COMMENTING
@@ -296,7 +295,6 @@ REQUIRES COMMENTING
 To decide which number is roleplay fetish:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 47 of the Table of Player Options.
-
 
 
 [!<DecideWhichNumberIsBackgroundNurse>+
@@ -372,7 +370,6 @@ To decide which number is artificial-fetish:
 	decide on the choice in row 59 of the Table of Player Options.
 
 
-
 To decide which number is max bonus liquid:
 	decide on 6.
 
@@ -417,7 +414,6 @@ To decide which number is supportersEnabled:
 	decide on the choice in row 77 of the Table of Player Options.
 
 
-
 Definition: a person is a flatchested trap:
 	if diaper quest is 1, decide no;
 	if trap fetish is 1 and the player is male, decide yes;
@@ -426,9 +422,6 @@ Definition: a person is a flatchested trap:
 
 
 Part - Options Menus
-
-
-
 
 
 [!<tableOfKinkOptions:Table>*
@@ -544,7 +537,6 @@ To decide which number is points count:
 	decide on X.
 
 
-
 [!<TheRandomiseBonusesRule>+
 
 REQUIRES COMMENTING
@@ -571,7 +563,4 @@ REQUIRES COMMENTING
 					follow max ass size rule.]
 
 
-
-
 Fetish Settings ends here.
-

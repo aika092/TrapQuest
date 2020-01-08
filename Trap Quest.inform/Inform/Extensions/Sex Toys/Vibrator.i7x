@@ -46,4 +46,3 @@ To uniquely set up (C - a vibrator):
 	if R is 4, now C is dominance.
 
 Vibrator ends here.
-

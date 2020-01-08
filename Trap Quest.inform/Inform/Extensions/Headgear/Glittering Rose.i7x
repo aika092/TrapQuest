@@ -83,6 +83,4 @@ This is the check for new pregnancy rule:
 The check for new pregnancy rule is listed in the advance counters rules.
 
 
-
 Glittering Rose ends here.
-

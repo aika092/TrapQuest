@@ -42,5 +42,4 @@ To compute showering (H - hot-tub):
 				satisfy M.
 
 
-
 Hot Tub ends here.

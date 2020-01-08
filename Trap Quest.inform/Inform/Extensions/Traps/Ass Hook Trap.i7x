@@ -1,7 +1,6 @@
 Ass Hook Trap by Traps begins here.
 
 
-
 [!<AssHook>@
 
 REQUIRES COMMENTING
@@ -275,7 +274,7 @@ A time based rule (this is the ass hook wedgie pain rule):
 			if M is nothing, now M is a random alive staff member;
 			now M is in the location of the player;
 			now M is interested;
-			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is student]Please don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
+			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is student][big please] don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
 			now H is unrevealed;
 			dislodge H;
 			destroy H;
@@ -283,4 +282,3 @@ A time based rule (this is the ass hook wedgie pain rule):
 
 
 Ass Hook Trap ends here.
-

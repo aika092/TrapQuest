@@ -246,8 +246,8 @@ To decide which object is the summonChoice of (S - a summoning-circle):
 To say ActiveWarning of (S - a summoning-circle):
 	say "[bold type][if the location of the player is Dungeon33]The [printed name of summoning-circle] slowly lights up, and you can feel dark energy gathering around you...[otherwise]A pulse of energy passes through the dungeon, and something changes in the air. It's almost like there's a draft.[end if][roman type][line break]";
 	if the location of the player is Dungeon33, say "[variable custom style]Is something going to come through that?[roman type][line break]";
-	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Teehee, cumming.[otherwise]...[end if][roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Uh oh, looks like the dungeon's summoning altar just activated! It will slowly count down until it releases a brand new monster into the dungeon. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
+	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Tee-hee, cumming.[otherwise]...[end if][roman type][line break]";
+	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Uh-oh, looks like the dungeon's summoning altar just activated! It will slowly count down until it releases a brand new monster into the dungeon. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
 
 Check entering summoning-circle:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -279,7 +279,7 @@ Check entering summoning-circle:
 		say "A strange feeling ripples down your spine, and you look over your shoulder to catch your [AssDesc] having a sudden growth spurt!";
 		AssSwell a random number between 1 and 2;
 	if R is 5:[force the player to masturbate, which gets the portal closer to spawning]
-		say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares as you realize its impossible to resist...";
+		say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares as you realise its impossible to resist...";
 		now auto is 1;
 		if the player is very horny, try masturbating;
 		now auto is 0;
@@ -298,7 +298,7 @@ Carry out appeasing something with summoning-circle:
 		ChargeUp the second noun by 300;
 		only destroy the noun;
 	otherwise if the noun is demonic:
-		say "The [noun] lights up as you throw it into the circle, which turns bright red as it cannibalizes its energy. You can feel the magic intensify rapidly as the [noun] bursts into flames.";
+		say "The [noun] lights up as you throw it into the circle, which turns bright red as it cannibalises its energy. You can feel the magic intensify rapidly as the [noun] bursts into flames.";
 		ChargeDown the second noun by 1000;
 		only destroy the noun;
 	otherwise if the noun is blessed clothing:
@@ -406,7 +406,7 @@ To say ActiveWarning of (G - a giant-statue):
 		say "You hear a rumble far off in the distance, and a really strange heated feeling comes over you as the noise passes through the trees.";
 	if the location of the player is Woods30, say "[variable custom style]What happens when she comes?[roman type][line break]";
 	otherwise say "[variable custom style]It feels like something is coming...[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh oh, looks like the woods summoning altar just activated! It will slowly count down until it releases a brand new monster into the woods. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the woods summoning altar just activated! It will slowly count down until it releases a brand new monster into the woods. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
 
 Check entering giant-statue:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -554,7 +554,7 @@ To say ActiveWarning of (G - teleportation-pad):
 	otherwise say "[bold type]The lights flicker as a low humming noise pierces the hotel.[roman type][line break]";
 	if the location of the player is Hotel41, say "[variable custom style]'Is it about to summon something?'[roman type][line break]";
 	otherwise say "[variable custom style]'It feels like something is coming...'[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh oh, looks like the hotel summoning altar just activated! It will slowly count down until it releases a brand new monster into the hotel. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the hotel summoning altar just activated! It will slowly count down until it releases a brand new monster into the hotel. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
 
 Check entering teleportation-pad:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -780,7 +780,7 @@ To say ActiveWarning of (S - a mysterious-mummy):
 		say "You hear a peal of mocking laughter as the mummy's wrappings pull taut around its chest, and it falls forward onto its knees, arms suddenly snapping together behind its back. A bright green glow begins to build up around the now kneeling figure.";
 	if S is in the location of the player, say " Distinctly unclean energy seems to slowly gather around it.[variable custom style]Something is happening.[roman type][line break]";
 	otherwise say "[variable custom style]I wonder what's going on?[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh oh, looks like the mansion summoning altar (the mummy) just activated! It will slowly count down until it releases a brand new monster into the mansion. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the mansion summoning altar (the mummy) just activated! It will slowly count down until it releases a brand new monster into the mansion. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][or][stopping]".
 
 To ChargeUp (S - a mysterious-mummy) by (X - a number):
 	decrease X by the reset-count of S * 10;
@@ -867,7 +867,7 @@ Check entering mysterious-mummy:
 			FaceUp 1;
 			if the number of off-stage mansion dwelling mannequins > 0, now the next-summon of the noun is 4;
 		otherwise if the class of the player is succubus or the class of the player is priestess:
-			say "Your vision is filled with pure flame, and for a moment, you feel only fear as you realize something is staring at you from beyond.";
+			say "Your vision is filled with pure flame, and for a moment, you feel only fear as you realise something is staring at you from beyond.";
 			if a random number between 1 and 2 is 1, DelicateUp 1;
 			if there is an off-stage demoness:
 				now the next-summon of the noun is 5;
@@ -912,7 +912,7 @@ Check entering mysterious-mummy:
 			say "A shiver runs up your spine.";
 			increase creepiness by 100;
 		if R is 5:
-			say "The magic surrounding you seems to intensify rather than fade away, and as your arousal flares as you realize its impossible to resist...";
+			say "The magic surrounding you seems to intensify rather than fade away, and as your arousal flares as you realise its impossible to resist...";
 			now auto is 1;
 			if the player is very horny, try masturbating;
 			now auto is 0;
@@ -920,4 +920,3 @@ Check entering mysterious-mummy:
 	do nothing instead.
 
 Summoning Portals ends here.
-

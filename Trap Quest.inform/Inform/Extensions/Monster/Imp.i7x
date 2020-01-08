@@ -26,9 +26,9 @@ snickering imp is an imp. The text-shortcut of snickering imp is "sni".
 To say MediumDesc of (M - snickering imp):
 	say "snickering imp".
 
-sniveling imp is an imp. The text-shortcut of sniveling imp is "svi".
-To say MediumDesc of (M - sniveling imp):
-	say "sniveling imp".
+snivelling imp is an imp. The text-shortcut of snivelling imp is "svi".
+To say MediumDesc of (M - snivelling imp):
+	say "snivelling imp".
 
 simpering imp is an imp. The text-shortcut of simpering imp is "smi".
 To say MediumDesc of (M - simpering imp):
@@ -43,7 +43,6 @@ To say MediumDesc of (M - naughty imp):
 	say "naughty imp".
 
 
-
 To decide which number is the girth of (M - an imp):
 	decide on 2.
 
@@ -51,7 +50,7 @@ Definition: an imp is infernal: decide yes.
 
 To say MonsterDesc of (M - an imp):
 	if diaper quest is 0:
-		say "A tiny, naked [man of M] with red skin. [if full-lady fetish is 1]Her breasts are quite large for her size, as is the strap-on dildo sticking out of the harness around her waist[otherwise if lady fetish is 1]Her breasts are quite large for her size, as is the [manly-penis] hanging between her legs[otherwise]The [manly-penis] hanging between his legs is huge for his size[end if], and [if the intelligence of the player > 5]from the way [he of M]'s looking at you, it isn't hard to tell where [he of M][']d like to put it[otherwise]you have a lot of trouble focusing long enough to keep yourself from staring[end if]. For some reason you don't feel too self-conscious about [him of M] seeing you in humiliating situations - it's probably because [he of M] doesn't feel very human, and doesn't seem to be at all interested in what you're up to at any given moment. [if the imp-rudeness of M > 3][big he of M] has become more and more irritable[otherwise if the imp-rudeness of M > 1][big he of M] feels like [he of M] is growing impatient faster than before[otherwise if the imp-rudeness of M > 0][big he of M] seems to be getting more and more bored following you around everywhere[otherwise if M is friendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...";
+		say "A tiny, naked [man of M] with red skin. [if full-lady fetish is 1][big his of M] breasts are quite large for [his of M] size, as is the strap-on dildo sticking out of the harness around [his of M] waist[otherwise if lady fetish is 1][big his of M] breasts are quite large for [his of M] size, as is the [manly-penis] hanging between [his of M] legs[otherwise]The [manly-penis] hanging between [his of M] legs is huge for [his of M] size[end if], and [if the intelligence of the player > 5]from the way [he of M]'s looking at you, it isn't hard to tell where [he of M][']d like to put it[otherwise]you have a lot of trouble focusing long enough to keep yourself from staring[end if]. For some reason you don't feel too self-conscious about [him of M] seeing you in humiliating situations - it's probably because [he of M] doesn't feel very human, and doesn't seem to be at all interested in what you're up to at any given moment. [if the imp-rudeness of M > 3][big he of M] has become more and more irritable[otherwise if the imp-rudeness of M > 1][big he of M] feels like [he of M] is growing impatient faster than before[otherwise if the imp-rudeness of M > 0][big he of M] seems to be getting more and more bored following you around everywhere[otherwise if M is friendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...";
 	otherwise:
 		say "A tiny, red-skinned [man of M] dressed in rags. [unless M is unfriendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...".
 
@@ -62,7 +61,7 @@ To set up (M - an imp):
 	now the health of M is the maxhealth of M;
 	now the imp-rudeness of M is 0;
 	compute refactoryReset of M;
-	now the favour of M is 99.[always start at max favor]
+	now the favour of M is 99.[always start at max favour]
 
 To compute birth set up of (M - an imp):
 	set up M;
@@ -82,18 +81,18 @@ Definition: an imp (called M) is objectifying the player:
 Part 1 - Misc Flavour
 
 To compute (M - a monster) stomping (N - an imp):
-	if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground, ignoring [his of N] cursing as [he of M] forces [his of M] [DickDesc of M] into [NameDesc of N]'s [HoleDesc of N]! [BigNameDesc of N] abdomen bulges obscenely as [NameDesc of M] fucks [him of N], and [he of N] shrieks as [NameDesc of M]'s [LongDickDesc of M] forces [him of M] to [if full-lady fetish is 1]squirt[otherwise]cum[end if] and immediately disappear.";
+	if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground, ignoring [his of N] cursing as [he of M] forces [his of M] [DickDesc of M] into [NameDesc of N]'s [HoleDesc of N]! [BigNameDesc of N]'s abdomen bulges obscenely as [NameDesc of M] fucks [him of N], and [he of N] shrieks as [NameDesc of M]'s [LongDickDesc of M] forces [him of M] to [if full-lady fetish is 1]squirt[otherwise]cum[end if] and immediately disappear.";
 	otherwise say "You hear cursing and shrieking coming from somewhere else in the dungeon!";
 	destroy N.
 
 To compute (M - demon lord) stomping (N - an imp):
 	compute N protecting against M.[the imp betrays you]
-	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] facefirst onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of M], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of M] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
+	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] facefirst onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of N], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of N] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
 	otherwise say "You hear gagging noises coming from somewhere else in the hotel!";
 	destroy N.]
 
 To say MuteGreetResponse of (M - an imp):
-	say "[BigNameDesc of M] replies noncommittally. Looks like [he of M] isn't much for conversation.".
+	say "[BigNameDesc of M] replies non-committally. Looks like [he of M] isn't much for conversation.".
 
 To say MuteQuestionResponse of (M - an imp):
 	say "[variable custom style]'Hey, do you understand me?'[roman type][line break]";
@@ -243,7 +242,6 @@ To compute (M - an imp) protecting against (X - a monster):
 
 To say AllyDamageFlav of (M - an imp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]claws [NameDesc of X][or]laughs as [he of M] punches [NameDesc of X][or]punches [NameDesc of X][or]kicks [NameDesc of X][then at random]!".
-
 
 
 Section 2 - Damage

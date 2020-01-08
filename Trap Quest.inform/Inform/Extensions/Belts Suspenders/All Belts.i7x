@@ -105,8 +105,6 @@ This is the cursed stockings prevents removal of suspenders rule:
 The cursed stockings prevents removal of suspenders rule is listed in the suspenders removability rules.
 
 
-
-
 a black suspenders is a kind of suspenders. There is 1 black suspenders. A black suspenders is usually nylon. A black suspenders is usually sheer. The printed name of a black suspenders is usually "[clothing-title-before]pair of black sheer suspenders[clothing-title-after]". The printed plural name of a black suspenders is usually "[clothing-title-before]pairs of black sheer suspenders[clothing-title-after]". The text-shortcut of black suspenders is "bsu". Figure of black suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders5.png". Understand "sheer" as black suspenders.
 Definition: a black suspenders is black themed: decide yes.
 
@@ -178,7 +176,7 @@ To say ClothingDesc of (C - living belt of sturdiness):
 	say "This 'belt' is a loop of living metallic silver tentacles that are slowly undulating. They look almost robotic in nature but they are warm to the touch and not as solid as a real metal.";
 	if C is penetrating a fuckhole:
 		say "[if C is filling asshole and C is filling vagina]The tentacles are[otherwise]The tentacle is[end if] currently penetrating you and filling you to the brim. ";
-		if C is thrusting, say "[if C is filling asshole and C is filling vagina and (the anal sex addiction of the player > 6 or the vaginal sex addiction of the player > 6)]Moreover, the tentacles are fucking you simultaneously in a deliciously teasing[otherwise if the anal sex addiction of the player > 6]Moreover, the tentacle is fucking you in a deliciously teasing[otherwise if C is filling asshole and C is filling vagina] Even worse, the tentacles are fucking you simultaneously in a frustratingly distracting[otherwise] Even worse, the tentacle is fucking you in a frustratingly distracting[end if] slow, strong and steady manner.";
+		if C is thrusting, say "[if C is filling asshole and C is filling vagina and (the anal sex addiction of the player > 6 or the vaginal sex addiction of the player > 6)]Moreover, the tentacles are fucking you simultaneously in a deliciously teasing[otherwise if the anal sex addiction of the player > 6]Moreover, the tentacle is fucking you in a deliciously teasing[otherwise if C is filling asshole and C is filling vagina]Even worse, the tentacles are fucking you simultaneously in a frustratingly distracting[otherwise]Even worse, the tentacle is fucking you in a frustratingly distracting[end if] slow, strong and steady manner.";
 		otherwise say line break.
 
 To say ShortDesc of (Y - living belt of sturdiness):
@@ -280,7 +278,6 @@ This is the trousers living belt clash rule:
 The trousers living belt clash rule is listed in the trousers wearability rules.
 
 
-
 a red suspenders is a kind of suspenders. There is 1 transformation-rare red suspenders. A red suspenders is usually nylon. A red suspenders is usually sheer. The printed name of a red suspenders is usually "[clothing-title-before]pair of red suspenders[clothing-title-after]". The printed plural name of a red suspenders is usually "[clothing-title-before]pairs of red suspenders[clothing-title-after]". The text-shortcut of red suspenders is "rss". Figure of red suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders4.png".
 Definition: a red suspenders is red themed: decide yes.
 
@@ -292,7 +289,6 @@ To decide which figure-name is clothing-image of (C - a red suspenders):
 
 To say ClothingDesc of (S - a red suspenders):
 	say "A sexy pair of frilly red suspenders.".
-
 
 
 a sissy-suspenders is a kind of suspenders. There is 1 transformation-rare sissy-suspenders. A sissy-suspenders is usually silk. The printed name of a sissy-suspenders is usually "[clothing-title-before]pair of sissy suspenders[clothing-title-after]". The printed plural name of a sissy-suspenders is usually "[clothing-title-before]pairs of sissy suspenders[clothing-title-after]". Figure of sissy-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders2.png". The text-shortcut of sissy-suspenders is "sss". Understand "sissy", "suspenders" as sissy-suspenders.
@@ -327,7 +323,7 @@ To say TransformReaction of (C - a sissy-suspenders):
 		say "[variable custom style]These are so [if the humiliation of the player > HUMILIATION-SHAMELESS - 2000]perfect[otherwise]cute[end if]. I love the silky frills![roman type][line break]".
 
 
-string-belt is a clothing. [No clashes.]  The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
+string-belt is a clothing. [No clashes.] The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
 
 Figure of string belt 0 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt0.png".
 Figure of string belt 1 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt1.png".
@@ -360,8 +356,6 @@ To say ShortDesc of (C - string-belt):
 Definition: string-belt is condom pinnable: decide yes.
 
 
-
-
 tongue-belt is a belt. tongue-belt is unique. tongue-belt is biological. The printed name of tongue-belt is "[clothing-title-before]tongue belt[clothing-title-after]". The text-shortcut of tongue-belt is "tgbt". Understand "tongue", "belt" as tongue-belt.
 
 Figure of tongue belt is the file "Items/Clothes/Lower/Waist/Belts/tonguebelt1a.png".
@@ -390,9 +384,6 @@ To decide which object is the unique-upgrade-target of (C - a belt):
 	decide on nothing.
 
 
-
-
-
 a white suspenders is a kind of suspenders. There is 1 white suspenders. A white suspenders is usually nylon. A white suspenders is usually sheer. The printed name of a white suspenders is usually "[clothing-title-before]pair of white sheer suspenders[clothing-title-after]". The printed plural name of a white suspenders is usually "[clothing-title-before]pairs of white sheer suspenders[clothing-title-after]". The text-shortcut of white suspenders is "wss". Figure of white suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders3.png". Understand "sheer" as white suspenders.
 Definition: a white suspenders is white themed: decide yes.
 
@@ -404,7 +395,6 @@ To say ClothingDesc of (S - a white suspenders):
 
 To decide which number is the initial outrage of (C - a white suspenders):
 	decide on 1.
-
 
 
 All Belts ends here.

@@ -31,4 +31,3 @@ To say ClothingDesc of (C - a cow pattern boots):
 	say "[SteadinessDesc of C]".
 
 Cow Pattern Boots ends here.
-

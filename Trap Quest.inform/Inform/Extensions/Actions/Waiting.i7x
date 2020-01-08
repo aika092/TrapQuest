@@ -190,7 +190,7 @@ To HookWait:
 		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as she looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
 		now woman-barbara is in the location of the player;
 		if the woman-bimbo of woman-barbara < 3:
-			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
+			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, [honey of woman-barbara].'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
@@ -199,12 +199,12 @@ To HookWait:
 			ruin asshole;
 			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses [his of woman-barbara] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
-			say "[second custom style]'Silly girl, try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
+			say "[second custom style]'Silly [boy of the player], try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise:
-			say "[second custom style]'*Giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
+			say "[second custom style]'*giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
 			ruin asshole;
 			say "[second custom style]'That looks like so much fun!'[roman type][line break][big he of woman-barbara] pulls it out a bit more but then again lets go. You squeal in discomfort.";
 			ruin asshole;
@@ -229,4 +229,3 @@ To HookWait:
 			if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".
 
 Waiting ends here.
-

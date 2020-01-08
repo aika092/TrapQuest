@@ -215,7 +215,6 @@ To say VirginFlav:
 	say "[bold type]Another wave of [if the humiliation of the player < 40000]shame[otherwise]the curse[end if] flows through you as you [one of][or]once again [stopping]find yourself thinking about your embarrassing virginity. [roman type]".
 
 
-
 Part 3 - Virginity Taking Things
 
 [!<ThingIsVirginityTaking>+
@@ -231,7 +230,6 @@ REQUIRES COMMENTING
 
 +!]
 Definition: A thing is live: decide no.
-
 
 
 [!<YourselfIsLiveFucked>+
@@ -254,4 +252,3 @@ To compute virginity-loss of (T - a thing):
 
 
 Virginity ends here.
-

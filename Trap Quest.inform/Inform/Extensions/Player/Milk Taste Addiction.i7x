@@ -40,7 +40,6 @@ To decide which number is the milk taste addiction of the player:
 	decide on S.
 
 
-
 [!<YourselfIsCraving>+
 
 REQUIRES COMMENTING
@@ -55,7 +54,6 @@ Definition: yourself is desperately craving milk:
 	let MTA be the milk taste addiction of the player;
 	if MTA > 17 and cold milky > cold milky limit and cold milky <= MTA * cold milky addiction limit, decide yes;
 	decide no.
-
 
 
 Part 2 - Modify Milk Taste Addiction
@@ -116,6 +114,4 @@ A time based rule (this is the milk digestion rule):
 		if milk-drunk > 0, MilkDrunkDown 1.
 
 
-
 Milk Taste Addiction ends here.
-

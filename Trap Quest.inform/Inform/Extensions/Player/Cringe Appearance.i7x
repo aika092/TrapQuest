@@ -84,7 +84,6 @@ To decide which number is appearance-cringe-level:
 	decide on O.
 
 
-
 [!<DecideWhichNumberIsCumulativeCringeLevel>+
 
 REQUIRES COMMENTING
@@ -112,4 +111,3 @@ calculated-cringe-level is a number that varies.
 calculated-cumulative-cringe-level is a number that varies.
 
 Cringe Appearance ends here.
-

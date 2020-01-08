@@ -81,4 +81,3 @@ To Scramble Mansion:
 
 
 Region Building Mansion ends here.
-

@@ -250,7 +250,6 @@ To decide which number is the weight of (XXX - hips):
 	decide on H.
 
 
-
 Part 2 - Description
 
 [!<SayShortDescOfHips>+
@@ -622,7 +621,6 @@ To FatAssDown (X - a number):
 			decrease X by 1.
 
 
-
 Section - Image for graphics window
 
 The text-shortcut of hips is "hips".
@@ -633,4 +631,3 @@ To decide which figure-name is the examine-image of (T - hips):
 	decide on figure of no-image-yet.
 
 Hips ends here.
-

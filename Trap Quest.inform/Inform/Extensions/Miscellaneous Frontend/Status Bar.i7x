@@ -82,7 +82,6 @@ To say LowResCombat:
 	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 
-
 Part - Debug Res Status Bars
 
 
@@ -751,7 +750,6 @@ To say VagueInternals:
 	if fine is 1, say "Fine".
 
 
-
 The constructing status line while displaying rule is not listed in any rulebook.
 
 [!<RuleForConstructingTheStatusLineWhileDisplaying>+
@@ -926,7 +924,4 @@ left	central	right
 ""	""	""
 
 
-
-
 Status Bar ends here.
-

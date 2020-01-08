@@ -287,8 +287,6 @@ To decide what number is the character code returned:
 	(- gg_event-->2 -)
 
 
-
-
 Chapter - Delaying the player's input
 
 Section - Delaying input until all animations end
@@ -1338,7 +1336,7 @@ To decide what number is cubic back easing out for time (t - a number) duration 
 	let b1 be b;
 	say "[>console][CA]Cubic back easing in: using custom parameter of [param] (change the global variable 'back easing parameter' to adjust).[<]";
 	#end if;
-	let t1 be  ((t plus 0.0) / d ) - 1;
+	let t1 be ((t plus 0.0) / d ) - 1;
 	decide on (c * (1 + ( (t1 * t1) * ((param * t1) + t1 + param) ))) + b to the nearest whole number.
 
 To decide what number is cubic back easing in-out for time (t - a number) duration (d - a number) beginning (b - a number) change (c - a number ) (this is the cubic back easing in-out rule):
@@ -1346,7 +1344,7 @@ To decide what number is cubic back easing in-out for time (t - a number) durati
 	let b1 be b;
 	say "[>console][CA]Cubic back easing in-out: using custom parameter of [back easing parameter] (change the global variable 'back easing parameter' to adjust).[<]";
 	#end if;
-	let t1 be  ( (t plus 0.0) / ( (d plus 0.0) / 2 ) );
+	let t1 be ( (t plus 0.0) / ( (d plus 0.0) / 2 ) );
 	let param1 be the back easing parameter * 1.5250;
 	[if t1 < 1:
 		decide on ((((c plus 0.0) / 2) * t) * t * (((param1 + 1) * t) - param1) ) + b to the nearest whole number;]
@@ -1393,7 +1391,7 @@ Glimmr Canvas Animation (GCA) extends Glimmr Canvas-Based Drawing, allowing for 
 
 Section: The state of animation in Glulx
 
-Glulx has no built-in animation support. Instead, animation is achieved through what is essentially a hack: we start a repeating timer, and every time that timer "ticks", we update the display. Unlike true game animation engines, which skip frames to maintain the timing when the processor is unable to realize the requested framerate, Glulx simply skips timer ticks: every frame of the animation will be shown, and the animation will simply unfold more slowly than intended if the processor can't keep time.
+Glulx has no built-in animation support. Instead, animation is achieved through what is essentially a hack: we start a repeating timer, and every time that timer "ticks", we update the display. Unlike true game animation engines, which skip frames to maintain the timing when the processor is unable to realise the requested framerate, Glulx simply skips timer ticks: every frame of the animation will be shown, and the animation will simply unfold more slowly than intended if the processor can't keep time.
 
 Moreover, the Glulx timer is explicitly not intended to be perfectly reliable. Some interpreters have better timer implementations than others, and combined with performance variability in graphics drawing and other operations, this means that the precise performance of a given animation is not guaranteed to be the same on different Glulx virtual machines.
 
@@ -1406,7 +1404,7 @@ The timer approach to animation makes simple animations fairly easy to write, es
 
 Chapter: Including Glimmr Canvas Animation in a project
 
-Inform remains fairly unsophisticated in its mechanisms for organizing included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up, and the result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section-such as this one-about how to include it, particularly in relation to other extensions.
+Inform remains fairly unsophisticated in its mechanisms for organising included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up, and the result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section-such as this one-about how to include it, particularly in relation to other extensions.
 
 Glimmr Canvas Animation automatically includes Glimmr Canvas-Based Drawing, Glimmr Drawing Commands, Flexible Windows, and their dependencies. You do not need to include any of these extensions explicitly in your story file; GCA will include them automatically (provided they are installed with your copy of Inform, of course).
 
@@ -1469,7 +1467,7 @@ The "global timer interval" variable is dynamic: it only contains a value when t
 
 Any time we start a new timer, GCA will look at any animations that may be running and adjust the rate we've requested to maintain their rates. It is probably best never to set the timer directly when animations are involved-just use the "animate..." phrases, detailed below, to trigger animations.
 
-The timer can, of course, run independently of animations. If we want to use the timer for some other purpose in our game, we are welcome to simply start the timer using the same phrase, without using an animation preset. Animations are not activated unless we specifically start them with an animation phrase. It is not a good idea to try to use timed events for other purposes while animations are running-when animations are running, the virtual timer system is invoked, which may cause unpredictability in timed behaviors that don't take that system into account. You can study the source code to see how you might take the system into account, but the easiest way to deal with the situation is to use custom animation tracks-see the chapter on custom animation below-to control all of your non-graphical timed events. This will allow them to use the virtual timer system.
+The timer can, of course, run independently of animations. If we want to use the timer for some other purpose in our game, we are welcome to simply start the timer using the same phrase, without using an animation preset. Animations are not activated unless we specifically start them with an animation phrase. It is not a good idea to try to use timed events for other purposes while animations are running-when animations are running, the virtual timer system is invoked, which may cause unpredictability in timed behaviours that don't take that system into account. You can study the source code to see how you might take the system into account, but the easiest way to deal with the situation is to use custom animation tracks-see the chapter on custom animation below-to control all of your non-graphical timed events. This will allow them to use the virtual timer system.
 
 To stop *all* running timers, use:
 
@@ -1507,7 +1505,7 @@ Animation tracks can also do such things as increase or decrease the scaling fac
 
 Section: Basics of animation tracks
 
-In programming terms, an animation track is an Inform 7 object, not too different from the "things" that authors use to build their storyworlds. However, they are not intended to be physical game objects; they are simply convenient containers for storing and organizing information, usually in the form of properties. (Users of Glimmr Canvas-Based Drawing will recognize the same concept in the use of g-elements, which are also objects in the same sense.) Defining an animation track is quite simple. Here we do two at a stroke:
+In programming terms, an animation track is an Inform 7 object, not too different from the "things" that authors use to build their storyworlds. However, they are not intended to be physical game objects; they are simply convenient containers for storing and organising information, usually in the form of properties. (Users of Glimmr Canvas-Based Drawing will recognize the same concept in the use of g-elements, which are also objects in the same sense.) Defining an animation track is quite simple. Here we do two at a stroke:
 
 	The movement track and the walking track are animation tracks.
 
@@ -1545,7 +1543,7 @@ Tracks are fully recyclable, meaning that once a track is done running, we can i
 	(later...)
 	animate the default track as a reel animation...
 
-Unless we are obsessed with efficiency, though, it probably isn't the best idea to reuse a track for a totally different purpose in this way. It won't be quite as easy to read the code later. Study the "Scourge of the Vampyr" example to see how multiple tracks can be used alone and together to both organize and control animations.
+Unless we are obsessed with efficiency, though, it probably isn't the best idea to reuse a track for a totally different purpose in this way. It won't be quite as easy to read the code later. Study the "Scourge of the Vampyr" example to see how multiple tracks can be used alone and together to both organise and control animations.
 
 GCA includes one pre-declared animation track, called the "default track". We can make use of this track or not in our own game as we like.
 
@@ -1827,7 +1825,7 @@ Section: Zooming animation tracks
 	g-elements
 	graphics g-windows
 
-When targeting a g-element, a zooming animation affects the "scaling factor" property of the element. The effect this has depends on the type of g-element; only the line-weight of primitives is affected by the scaling factor, and the scaling factor of bitmaps is much more coarsely realized than that of images. See the docs for Glimmr Canvas-Based Drawing for more information. (Note that if you are using asymmetrically scaling, the zooming track will nevertheless scale symmetrically. Use the "parameterized zooming" preset-see below-to scale axes independently.)
+When targeting a g-element, a zooming animation affects the "scaling factor" property of the element. The effect this has depends on the type of g-element; only the line-weight of primitives is affected by the scaling factor, and the scaling factor of bitmaps is much more coarsely realised than that of images. See the docs for Glimmr Canvas-Based Drawing for more information. (Note that if you are using asymmetrically scaling, the zooming track will nevertheless scale symmetrically. Use the "parameterized zooming" preset-see below-to scale axes independently.)
 
 When targeting a graphics window, the property affected is the "arbitrary scaling factor" of the window. This forces manual scaling of the window (see Glimmr Canvas-Based Drawing), so if we wish to return to automatic scaling after completing the animation, we will need to reset the arbitrary scaling factor and trigger a redraw, e.g.:
 
@@ -2172,7 +2170,7 @@ Or, without specifying a duration:
 
 Note that the latter will have a duration of 1 frame by default unless we specify it some other way.
 
-On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behavior will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
+On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
 On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomization logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
@@ -2251,7 +2249,7 @@ Chapter: Easing (Tweening)
 
 The term “easing” refers to motions in which the acceleration changes over time. The term may seem strange, but think of it in terms of easing into a chair–your body moves more slowly as you approach the cushion. Easing equations can imitate this sort of gradual slowing as the motion reaches the endpoint, and they can also do much more, such as imitate the bouncing of a ball, or overshoot the endpoint and snap back.
 
-Easing is closely related to the concept of "tweening". Briefly, tweening is short for “in-betweening”. In traditional animation, animations were organized around key frames–-the critical points in any sequence. These keyframes were drawn first, and then the “betweens” were filled in to connect those key moments smoothly; because they were less critical, they were often filled in by the lower ranks of the animation team. In computer animation, keyframes are defined by the user, and the tweening is done automatically by the software.
+Easing is closely related to the concept of "tweening". Briefly, tweening is short for “in-betweening”. In traditional animation, animations were organised around key frames–-the critical points in any sequence. These keyframes were drawn first, and then the “betweens” were filled in to connect those key moments smoothly; because they were less critical, they were often filled in by the lower ranks of the animation team. In computer animation, keyframes are defined by the user, and the tweening is done automatically by the software.
 
 Glimmr Canvas Animation (GCA) is no different, though it doesn’t really use the concept of the keyframe. Where programs like Flash have a master timeline punctuated by user-defined keyframes, each GCA animation track can be thought of as a self-contained timeline separating two keyframes–the starting and ending points of that particular motion or effect. GCA builds sophisticated and customizable tweening into nearly all of the preset animation types via the use of “easing” equations that interpolate movement between the starting and ending points.
 
@@ -2322,7 +2320,7 @@ If we want to reset the secondary easing, we can do that by specifying "null eas
 
 Section: Implementation details
 
-Every easing equation utilizes four parameters, conventionally known as "t", "d", "b", and "c":
+Every easing equation utilises four parameters, conventionally known as "t", "d", "b", and "c":
 
 	t - time, the current frame of the animation.
 	d - duration, the length in frames of the animation.
@@ -2404,7 +2402,6 @@ Chapter: Performance Tips
 	6. If you have multiple animations running at once, see whether you get better performance by running them at the same rate. If you have animations running at different rates, make one a (preferably low) multiple of the other, e.g. 100 ms per frame and 200 ms per frame. This will mean fewer timer ticks where nothing meaningful takes place.
 
 
-
 Chapter: Contact info
 
 This extension is released under the Creative Commons Attribution licence. Bug reports, feature requests or questions should be made at <https:/github.com/i7/extensions/issues>.
@@ -2417,7 +2414,6 @@ Chapter: Change Log
 Version 2: Updated for 6M62 by Dannii Willis
 
 Version 1: Initial release.
-
 
 
 Example: * Animation Rule Variations - This simple example shows how we can vary preset animations by adding rules to the animation rulebook. We'll have four variations on a simple horizontal motion animation. The "player" can choose from among these variation via a keypress menu. The chosen animation will play immediately, and once it finishes s/he will have a chance to choose another.
@@ -2496,7 +2492,7 @@ The after printing the banner text rule contains the entire flow of the "game": 
 
 The "key-option" variable, which contains the number of the menu that the player selected, is now used to decide which subsidiary animation to use. We don't need to run a second rule if the player pressed 1, since that corresponds to the unadorned movement invoked by the "animate..." phrase. The subsidiary rules run *after* the built-in preset animation rule, so they tweak the outcomes of that rule. (If we wanted our animation rules to run before the preset rule, we could make them "first" rules.)
 
-Option 2 randomly deforms the basic path of motion, and requires only a very simple rule that adds or subtracts a number between 1 and 10 from the x and y coordinates of the ball's origin. The "adjust the origin..." phrase used here is an easter egg phrase provided by GCA; we can also use "adjust the endpoint" for primitive elements. Note that this option will almost never finish on the destination coordinate specified, since we are adding noise to the chosen coordinate all the way along.
+Option 2 randomly deforms the basic path of motion, and requires only a very simple rule that adds or subtracts a number between 1 and 10 from the x and y coordinates of the ball's origin. The "adjust the origin..." phrase used here is an Easter egg phrase provided by GCA; we can also use "adjust the endpoint" for primitive elements. Note that this option will almost never finish on the destination coordinate specified, since we are adding noise to the chosen coordinate all the way along.
 
 Option 3 uses the same deformation as Option 2, but with a twist. We want to end on the originally specified destination point. This is tricky, because motion animations are completely relative: when the animation is set, up GCA calculates what we'll have to do to get to the destination, but doesn't save any information about the destination itself. To keep our eyes on the prize, then, we need to reconstruct the original destination coordinate, and reorient ourselves to it, every frame. This will cause the deformation to be a bit smoother than in Option 2, but still noticeable. Note that we only apply deformations for the first 3/4 of the animation's running time. That's so that we don't jump too unnaturally to the destination at the end if we are far off.
 
@@ -2523,10 +2519,9 @@ Option 4 actually changes the rate of the animation itself. Once we're about 1/3
 			time the movement track at (rate) ms per frame.
 
 
+Example: * Maps of Murder - The user interface is an ideal place to experiment with animation effects. Here, we sketch a kind of image browser for an IF game. Four thumbnail versions (the map illustrations from Dell Map-Back murder mysteries) are displayed in a grid. We can click on any one of them to maximize it; we use two animation tracks to animate the maximisation, scaling the image to full size while moving it to the centre of the window. Click on the cover again to return it to the original thumbnail size and location.
 
-Example: * Maps of Murder - The user interface is an ideal place to experiment with animation effects. Here, we sketch a kind of image browser for an IF game. Four thumbnail versions (the map illustrations from Dell Map-Back murder mysteries) are displayed in a grid. We can click on any one of them to maximize it; we use two animation tracks to animate the maximization, scaling the image to full size while moving it to the center of the window. Click on the cover again to return it to the original thumbnail size and location.
-
-This example illustrates the "stacking" of animation tracks to achieve more complex effects; in this case we are stacking motion and scaling animations, with an easing effect lending a subtle arc to things. The example also demonstrates how we can test the animation state of an object so as to modify behavior appropriately, and more generally it shows how to write generalized code-we could add 20 more covers without changing any of the core code.
+This example illustrates the "stacking" of animation tracks to achieve more complex effects; in this case we are stacking motion and scaling animations, with an easing effect lending a subtle arc to things. The example also demonstrates how we can test the animation state of an object so as to modify behaviour appropriately, and more generally it shows how to write generalized code-we could add 20 more covers without changing any of the core code.
 
 	*: "Maps of Murder"
 
@@ -2555,9 +2550,9 @@ This example illustrates the "stacking" of animation tracks to achieve more comp
 
 	[----------------]
 
-We create a new kind of sprite, the "cover-image", and give it a new coordinate property, the "rightful position". This is the position to which the cover should return after it has been maximized. Note that we are showing the covers at half size initially; they will be shown at full size on maximization.
+We create a new kind of sprite, the "cover-image", and give it a new coordinate property, the "rightful position". This is the position to which the cover should return after it has been maximised. Note that we are showing the covers at half size initially; they will be shown at full size on maximisation.
 
-When a cover has been maximized, we place a semi-transparent overlay over the other images so that they don't distract from the player's view of the enlarged sprite. (This overlay is itself a sprite.) The grid of covers is on display layer 1. The overlay, when it appears, will be drawn on layer 2, and the cover, when it is maximized is shown on layer 4. Layer 3 is used for sprites that are in the process of minimization.
+When a cover has been maximised, we place a semi-transparent overlay over the other images so that they don't distract from the player's view of the enlarged sprite. (This overlay is itself a sprite.) The grid of covers is on display layer 1. The overlay, when it appears, will be drawn on layer 2, and the cover, when it is maximised is shown on layer 4. Layer 3 is used for sprites that are in the process of minimisation.
 
 	*: A cover-image is a kind of sprite. A cover-image is center-aligned. Some cover-images are defined by the Table of Covers.
 
@@ -3077,5 +3072,3 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 
 	Report requesting the story file version:
 		say "The images used in this demo come courtesy of:[paragraph break] - Sean Howard, via his Free Pixel Project (http://www.squidi.net/pixel/index.php), released under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License.[line break] - David E. Gervais (http://pousse.rapiere.free.fr/tome/), released under Creative Commons Attribution 3.0 Unported License."
-
-

@@ -100,7 +100,6 @@ To compute failed damage of (M - kitsune):
 		set up disguise of M.
 
 
-
 Part 3 - Conversation
 
 Section 1 - Greeting
@@ -233,4 +232,3 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 
 
 Kitsune ends here.
-

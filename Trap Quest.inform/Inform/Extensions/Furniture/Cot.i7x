@@ -17,15 +17,14 @@ To compute furniture resting on (F - a cot):
 	compute normal rest of F.
 
 To say RestingDesc of (F - a cot):
-	say  "You [one of][or]continue to [stopping]rest on the cot.";
+	say "You [one of][or]continue to [stopping]rest on the cot.";
 
 To compute rest ending of (F - a cot):
 	if the number of modesty shutters in the location of the player > 0:
 		let M be a random alive dominatrix in the location of the player;
-		say "[BigNameDesc of M] grins. Looks like you[']ll have to handle her before you can leave this room.";
+		say "[BigNameDesc of M] grins. Looks like you[']ll have to handle [him of M] before you can leave this room.";
 		now the sex-length of M is 5;
 		if number of plentiful accessories retained by M < 1, now a random off-stage ring is retained by M;
 		now M is interested.
 
 Cot ends here.
-

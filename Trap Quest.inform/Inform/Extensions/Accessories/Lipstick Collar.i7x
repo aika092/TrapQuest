@@ -22,7 +22,7 @@ Definition: a lipstick collar is black themed: decide yes.
 Report wearing lipstick collar:
 	now a random lipstick collar is cursed;
 	now a random lipstick collar is temptation;
-	say "The collar tightens around your neck, and as you struggle to regain your breathing, you [one of][or]once again [stopping]realize it's somehow forcing you to make a very lewd, provocative face. [if the bimbo of the player < 8][line break][first custom style]Another reason not to look anyone here in the eye. Great.[otherwise if the bimbo of the player < 12][line break][variable custom style]I guess it's not that bad. I mean, it's not like I'm making this face on purpose.[otherwise][line break][second custom style]Great, now everybody will know what I really want![end if][roman type][line break]";
+	say "The collar tightens around your neck, and as you struggle to regain your breathing, you [one of][or]once again [stopping]realise it's somehow forcing you to make a very lewd, provocative face. [if the bimbo of the player < 8][line break][first custom style]Another reason not to look anyone here in the eye. Great.[otherwise if the bimbo of the player < 12][line break][variable custom style]I guess it's not that bad. I mean, it's not like I'm making this face on purpose.[otherwise][line break][second custom style]Great, now everybody will know what I really want![end if][roman type][line break]";
 	if the location of the player is mansion28:
 		say "A wave of relief seems to pass through the air, and the glass on the pedestals shifts to a translucent shade of pink.";
 	repeat with P running through closed pedestals:
@@ -60,6 +60,4 @@ Report going down when there is a worn tethering lipstick collar:
 	end tethering.
 
 
-
 Lipstick Collar ends here.
-

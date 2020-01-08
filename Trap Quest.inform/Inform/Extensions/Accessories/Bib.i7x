@@ -31,4 +31,3 @@ To decide which number is the initial cringe of (C - a bib):
 
 
 Bib ends here.
-

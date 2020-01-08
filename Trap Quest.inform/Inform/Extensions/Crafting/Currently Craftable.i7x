@@ -41,4 +41,3 @@ To decide which number is craftable-recipes:
 
 
 Currently Craftable ends here.
-

@@ -354,4 +354,3 @@ Definition: blue-polka-dot briefs is blue themed: decide yes.
 
 
 Briefs ends here.
-

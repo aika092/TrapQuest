@@ -98,4 +98,3 @@ Definition: a clothing is outrageAcceptable if the outrage of it <= 6.
 
 
 Outrage ends here.
-

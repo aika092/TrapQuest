@@ -362,7 +362,7 @@ There is 1 unique dear santa T-shirt.
 Definition: a dear santa T-shirt is white themed: decide yes.
 
 To say ClothingDesc of (C - a dear santa T-shirt):
-	say "This white T-shirt has the words 'Dear santa... I can explain' on the front in red letters.".
+	say "This white T-shirt has the words 'Dear Santa... I can explain' on the front in red letters.".
 
 To say MediumDesc of (C - a dear santa T-shirt):
 	say "white 'dear santa' T-shirt".
@@ -444,4 +444,3 @@ To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.
 
 T-Shirts ends here.
-

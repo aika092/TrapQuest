@@ -85,7 +85,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DeathBrink of (M - a monster):
-	say "[BigNameDesc of M] is on the brink of defeat. Do you want to leave her alive and fuck her instead?".
+	say "[BigNameDesc of M] is on the brink of defeat. Do you want to leave [him of M] alive and fuck [him of M] instead?".
 
 [!<ComputeDeathOfMonster>+
 
@@ -119,7 +119,6 @@ To compute death of (M - a monster):
 			destroy M;
 		if playerRegion is Woods and giant-statue is active:
 			ChargeDown giant-statue by 20;
-
 
 
 [!<ComputeUniqueDeathOfMonster>+
@@ -228,6 +227,4 @@ To set jewellery value of (X - an accessory) to (R - a number):
 	set shortcut of X.
 
 
-
 Monster Functions ends here.
-

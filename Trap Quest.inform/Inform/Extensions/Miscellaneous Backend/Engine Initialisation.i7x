@@ -354,5 +354,3 @@ To fix starting stats:
 	now the real largeness of hair is the raw largeness of hair.
 
 Engine Initialisation ends here.
-
-

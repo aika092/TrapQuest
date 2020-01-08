@@ -58,4 +58,3 @@ Definition: white-hotpants is bird themed: decide yes.
 Definition: white-hotpants is white themed: decide yes.
 
 Hotpants ends here.
-

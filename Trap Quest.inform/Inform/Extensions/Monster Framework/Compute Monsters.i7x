@@ -114,6 +114,4 @@ To say BecomesBoredFlav of (M - a monster):
 Definition: a monster is distracted: decide no.
 
 
-
 Compute Monsters ends here.
-

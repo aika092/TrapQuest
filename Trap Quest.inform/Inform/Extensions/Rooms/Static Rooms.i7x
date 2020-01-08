@@ -17,8 +17,6 @@ Loading is a room. "Type '[bold type]restore[roman type]' to load your save file
 Definition: Loading is nonstandard: decide yes.
 
 
-
-
 [!<capsule:Room>*
 
 REQUIRES COMMENTING
@@ -117,7 +115,4 @@ Definition: DiaperPail is nonstandard: decide yes.
 Figure of DiaperPailBackground is the file "Map/pail1.jpg".
 
 
-
-
 Static Rooms ends here.
-

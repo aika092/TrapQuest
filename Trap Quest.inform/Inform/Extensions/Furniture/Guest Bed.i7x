@@ -106,4 +106,3 @@ To say RestingDesc of (F - a guest bed):
 
 
 Guest Bed ends here.
-

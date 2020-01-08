@@ -271,6 +271,4 @@ This is the cultist won't wear blessed clothing rule:
 The cultist won't wear blessed clothing rule is listed in the global wearability rules.
 
 
-
 Wearability ends here.
-

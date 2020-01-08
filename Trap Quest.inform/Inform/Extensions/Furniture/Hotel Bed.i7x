@@ -48,15 +48,15 @@ To compute rest ending of (F - HotelBedCreamy):
 			say "[if the player is bursting]You manage to hold onto your pee[otherwise]Luckily, it seems like you are too empty to be forced into wetting the bed[end if]. ";
 		say "Eventually, the magic bedding seems to tire itself out, and releases its hold on you. You are able to leave the bed.";
 	otherwise if bukkake fetish is 1:
-		say "[if F is unencountered]It is only as you start to get up you realise that underneath the covers, the entire bed is soaked in [semen]!  [otherwise]Once again the [semen] from the thoroughly soaked bed has gotten all over you. [end if]Your body [if the number of worn fluid vulnerable clothing > 0]and clothes are[otherwise]is[end if] covered in a layer of [semen].";
-		say "[if the semen addiction of the player < 6][line break][first custom style]Ewww! How fucking gross. I need to clean up now![otherwise if the semen addiction of the player < 10][line break][variable custom style]I feel all slippery and weird![otherwise if the semen addiction of the player < 15][variable custom style]Ooh, it's all so sticky and thick!  I wonder whose it is...[otherwise if the semen taste addiction of the player < the semen addiction of the player][line break][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat![otherwise][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat! I can't wait to taste it.[end if][roman type][line break]";
+		say "[if F is unencountered]It is only as you start to get up you realise that underneath the covers, the entire bed is soaked in [semen]! [otherwise]Once again the [semen] from the thoroughly soaked bed has gotten all over you. [end if]Your body [if the number of worn fluid vulnerable clothing > 0]and clothes are[otherwise]is[end if] covered in a layer of [semen].";
+		say "[if the semen addiction of the player < 6][line break][first custom style]Ewww! How fucking gross. I need to clean up now![otherwise if the semen addiction of the player < 10][line break][variable custom style]I feel all slippery and weird![otherwise if the semen addiction of the player < 15][variable custom style]Ooh, it's all so sticky and thick! I wonder whose it is...[otherwise if the semen taste addiction of the player < the semen addiction of the player][line break][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat![otherwise][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat! I can't wait to taste it.[end if][roman type][line break]";
 		CumTitsUp a random number between 2 and 5;
 		CumBellyUp a random number between 2 and 5;
 		CumThighsUp a random number between 2 and 5;
 		repeat with C running through worn fluid vulnerable clothing:
 			cumsoak a random number between 2 and 5 on C;
 	otherwise:
-		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]!  The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";
+		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]! The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";
 		SemenAddictUp 1.
 
 
@@ -65,7 +65,7 @@ HotelBedCollar is a kind of hotel bed. There are 2 HotelBedCollar.
 To compute rest ending of (F - HotelBedCollar):
 	let C be a random pullstring collar;
 	if C is off-stage and C is actually summonable:
-		say "[bold type]You squawk in surprise as a tight collar appears around your neck![roman type]  Feeling around you can find absolutely no latch or way to remove it, but at the back there is a ripcord you can pull. Do you dare pull it, or do you leave it alone?!";
+		say "[bold type]You squawk in surprise as a tight collar appears around your neck![roman type] Feeling around you can find absolutely no latch or way to remove it, but at the back there is a ripcord you can pull. Do you dare pull it, or do you leave it alone?!";
 		summon C.
 
 HotelBedPatrons is a kind of hotel bed.
@@ -105,4 +105,3 @@ To compute PatronSpawning of (F - a hotel bed):
 
 
 Hotel Bed ends here.
-

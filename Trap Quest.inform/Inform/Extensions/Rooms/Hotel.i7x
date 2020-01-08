@@ -107,7 +107,7 @@ Hotel13 is a corporate modern room. The printed name of Hotel13 is "LoveLace Roo
 REQUIRES COMMENTING
 
 *!]
-Hotel14 is a corporate modern room. The printed name of Hotel14 is "Shirley [if pregnancy fetish is 1]Pregnant[otherwise if diaper quest is 1]Soggy[otherwise]Braindead[end if] Room". "[if pregnancy fetish is 1 or diaper quest is 1]A meeting room with discarded gift wrapping and pictures of babies littering the floor. Looks like a baby shower was held here.[otherwise]The wallpaper of this room has cartoon images of blonde women dressed completely in pink. They are surrounded by speech bubbles, containing phrases you'd stereotypically hear from bimbos; from [line break][second custom style]'Like, his dick was totally huge!'[roman type][line break]to [line break][second custom style]'Blondes have way more fun... on their knees!'[roman type][line break][end if]". The shape of Hotel14 is L3/0-0-0-1-0-1.
+Hotel14 is a corporate modern room. The printed name of Hotel14 is "Shirley [if pregnancy fetish is 1]Pregnant[otherwise if diaper quest is 1]Soggy[otherwise]Braindead[end if] Room". "[if pregnancy fetish is 1 or diaper quest is 1]A meeting room with discarded gift wrapping and pictures of babies littering the floor. Looks like a baby shower was held here.[otherwise]The wallpaper of this room has cartoon images of blonde women dressed completely in pink. They are surrounded by speech bubbles, containing phrases you'd stereotypically hear from bimbos, from [line break][second custom style]'Like, his dick was totally huge!'[roman type][line break]to [line break][second custom style]'Blondes have way more fun... on their knees!'[roman type][line break][end if]". The shape of Hotel14 is L3/0-0-0-1-0-1.
 
 [!<hotel15:ModernRoom>*
 
@@ -349,6 +349,4 @@ Check entering HotelScenery01:
 	say "You don't see any point unless you want to [bold type]insert[roman type] something into the hole." instead.
 
 
-
 Hotel ends here.
-

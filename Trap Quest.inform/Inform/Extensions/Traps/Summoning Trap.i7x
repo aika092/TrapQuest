@@ -128,4 +128,3 @@ To summon (M - a monster) in (D - the school):
 
 
 Summoning Trap ends here.
-

@@ -294,4 +294,3 @@ This is the supporters enabled toggle rule:
 	otherwise now choice in row 77 of the Table of Player Options is 1.
 
 Benefit Options ends here.
-

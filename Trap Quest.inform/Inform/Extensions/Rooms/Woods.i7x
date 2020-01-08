@@ -240,7 +240,7 @@ Stairwell03 is a mandatory untrappable jungle room. The printed name of Stairwel
 REQUIRES COMMENTING
 
 *!]
-Stairwell02 is a mandatory untrappable jungle room. The printed name of Stairwell02 is "Hotel Rear Entrance". "An entrance to what appears to be a hotel seems very out of place embedded in a cliff face. Stairs lead up to the doors; a sign above them says 'Hotel Premier Sinn - Backdoor Entrance'.[one of]  [if the bimbo of the player < 9 and diaper quest is 0][line break][first custom style]Oh look, another anal sex pun. This is getting old fast.[otherwise if the bimbo of the player < 9][first custom style]Is that supposed to be another butthole pun?  This is getting old fast.[otherwise][line break][second custom style]*Snigger* Backdoor entrance...[end if][roman type][line break][or][stopping]". The shape of Stairwell02 is L2/0-0-0-1-0-0. The first forbidden direction of Stairwell02 is west.
+Stairwell02 is a mandatory untrappable jungle room. The printed name of Stairwell02 is "Hotel Rear Entrance". "An entrance to what appears to be a hotel seems very out of place embedded in a cliff face. Stairs lead up to the doors; a sign above them says 'Hotel Premier Sinn - Backdoor Entrance'.[one of] [if the bimbo of the player < 9 and diaper quest is 0][line break][first custom style]Oh look, another anal sex pun. This is getting old fast.[otherwise if the bimbo of the player < 9][first custom style]Is that supposed to be another butthole pun? This is getting old fast.[otherwise][line break][second custom style]*Snigger* Backdoor entrance...[end if][roman type][line break][or][stopping]". The shape of Stairwell02 is L2/0-0-0-1-0-0. The first forbidden direction of Stairwell02 is west.
 
 [!<woodsBoss01:Room>*
 
@@ -258,7 +258,7 @@ REQUIRES COMMENTING
 Sky01 is a no-roof room. The printed name of Sky01 is "Up in the Sky". "You can see all of the Woods from up here!".
 Definition: Sky01 is nonstandard: decide yes.
 
-[Selkie wonders: what happens if you add a new room here, but forget to add it to the statement: "The Woods is a region. Woods01,..., Woods30, Stairwell02 are in The Woods."  Bad things?  If so: remember to adjust that definition, if you add new rooms here. Like uncommenting "Stairwell03"...]
+[Selkie wonders: what happens if you add a new room here, but forget to add it to the statement: "The Woods is a region. Woods01,..., Woods30, Stairwell02 are in The Woods." Bad things? If so: remember to adjust that definition, if you add new rooms here. Like uncommenting "Stairwell03"...]
 
 [!<woodsScenery01:Scenery>*
 
@@ -341,4 +341,3 @@ The Woods is a region. Woods01, Woods02, Woods03, Woods04, Woods05, Woods06, Woo
 
 
 Woods ends here.
-

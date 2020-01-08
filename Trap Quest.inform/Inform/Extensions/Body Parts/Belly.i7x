@@ -1225,7 +1225,7 @@ To AssSquirt:
 			now element-count is 5;
 	now the squirt timer of belly is 0;
 	if asshole is actually occupied:
-		say "The cascade stops since your [asshole] is now occupied.";
+		say "The [cascade] stops since your [asshole] is now occupied.";
 	otherwise:
 		if voluntarySquatting is 0:
 			do nothing;
@@ -1624,4 +1624,3 @@ To decide which figure-name is the examine-image of (T - belly):
 
 
 Belly ends here.
-

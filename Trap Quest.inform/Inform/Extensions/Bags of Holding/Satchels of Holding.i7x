@@ -32,4 +32,3 @@ To say ShortDesc of (C - a pink satchel of holding):
 	say "pink leather satchel".
 
 Satchels of Holding ends here.
-

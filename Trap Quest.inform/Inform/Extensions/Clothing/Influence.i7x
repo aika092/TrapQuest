@@ -44,4 +44,3 @@ To set up influence of (C - a clothing):
 
 
 Influence ends here.
-

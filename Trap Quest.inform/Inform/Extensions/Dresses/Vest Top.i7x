@@ -120,4 +120,3 @@ Definition: a rubber vest top is black themed: decide yes.
 
 
 Vest Top ends here.
-

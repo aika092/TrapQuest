@@ -221,7 +221,7 @@ To check soreness fainting of (F - a fuckhole):
 	if sex fainting is 1 or there is a futanari slutty sister penetrating F:
 		let N be the raw anal sex addiction of the player;
 		if F is vagina, now N is the raw vaginal sex addiction of the player;
-		if the tolerated of F <=  N / 2:
+		if the tolerated of F <= N / 2:
 			increase the tolerated of F by 1;
 		otherwise:
 			say "[one of]Your [variable F] is so sore that your mind can't take it any more. You feel yourself start to pass[or]You are on the verge of passing[stopping] out.[if debugmode > 0 and the raw delicateness of the player < 20]Do you want to steel your mind and power through (this will not change any stats because you are in debug mode)? [otherwise if the raw delicateness of the player < 20][line break]Do you want to steel your mind and attempt to power through (this will cause a slight increase in delicateness)? [end if]";
@@ -469,7 +469,6 @@ Definition: a body part is occupied:
 Definition: a body part is undefended: decide yes.
 
 
-
 [!<BodyPartIsFakeOccupied>+
 
 Some things can make an orifice 'appear' occupied to living things (not dildo traps etc.). E.g. salve of concealment.
@@ -531,7 +530,6 @@ Definition: yourself is crotch covered:
 	decide yes.
 
 
-
 Section - Image for graphics window
 
 
@@ -557,6 +555,4 @@ To construct normal buttons for (T - a body part):
 				now the ButtonColour entry is lightModeFullGreen.
 
 
-
 Body Parts Definitions ends here.
-

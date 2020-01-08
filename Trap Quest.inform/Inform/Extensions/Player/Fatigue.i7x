@@ -75,4 +75,3 @@ To FatigueDown (X - a number):
 
 
 Fatigue ends here.
-

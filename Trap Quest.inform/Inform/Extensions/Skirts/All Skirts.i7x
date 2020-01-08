@@ -108,7 +108,6 @@ Check taking off worn skirt:
 		if the noun is penetrating a fuckhole, say "You're going to have to find some way to remove it from your insides first!" instead.
 
 
-
 assless skirt is a skirt. assless skirt is latex. assless skirt is transformation-rare. assless skirt is butt-windowed.
 Definition: assless skirt is black themed: decide yes.
 
@@ -128,7 +127,6 @@ To say MediumDesc of (Y - assless skirt):
 
 To decide which number is the initial outrage of (C - assless skirt):
 	decide on 7.
-
 
 
 A chainmail skirt is a kind of miniskirt. A chainmail skirt is usually see-through. A chainmail skirt is rare. A chainmail skirt is metal. There is 1 chainmail skirt. Figure of chainmail skirt is the file "Items/Clothes/Lower/Skirts/chainmailskirt1.png".
@@ -154,7 +152,6 @@ Definition: a chainmail skirt is transformation-protected: decide yes.
 Definition: a chainmail skirt is grey themed: decide yes.
 
 [A chainmail skirt is a skirt, so its cost is 2, which is appropriate.]
-
 
 
 chequered skirt is a skirt. Figure of chequered skirt is the file "Items/Clothes/Lower/Skirts/skirt2.png". The printed name of chequered skirt is "[clothing-title-before]chequered skirt[clothing-title-after]". The text-shortcut of chequered skirt is "cqs".
@@ -299,8 +296,6 @@ To set up influence of (C - black-rubber-hobble-skirt):
 	do nothing.
 
 
-
-
 blue rubber hobble skirt is a skirt. Printed name of blue rubber hobble skirt is "[clothing-title-before]blue latex hobble skirt[clothing-title-after]". The text-shortcut of blue rubber hobble skirt is "lxhs". blue rubber hobble skirt is latex. blue rubber hobble skirt is hobble-skirted. blue rubber hobble skirt is crotch-skirted. The armour of blue rubber hobble skirt is 12.
 
 Figure of blue rubber hobble skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt1.png".
@@ -316,7 +311,6 @@ To say ShortDesc of (C - blue rubber hobble skirt):
 
 To decide which number is the initial outrage of (C - blue rubber hobble skirt):
 	decide on 4.
-
 
 
 Definition: blue rubber hobble skirt is blue themed: decide yes.
@@ -382,7 +376,6 @@ To say ShortDesc of (Y - a pink rubber miniskirt):
 
 Definition: a pink rubber miniskirt is pink themed: decide yes.
 Definition: a pink rubber miniskirt is black themed: decide no.
-
 
 
 A microskirt is a kind of skirt. A microskirt is usually super-short. The soak-limit of microskirt is usually 10. A microskirt is usually transformation-rare.
@@ -456,7 +449,6 @@ To decide which number is the initial outrage of (C - a microskirt):
 Definition: a microskirt is end of transformation chain: decide yes.
 
 
-
 A lace miniskirt is a kind of miniskirt. There is 1 mesh lace miniskirt. A lace miniskirt is transformation-rare. Printed name of lace miniskirt is "[clothing-title-before]sheer miniskirt[clothing-title-after]". The text-shortcut of lace miniskirt is "sms". Figure of lace miniskirt is the file "Items/Clothes/Lower/Skirts/Mini/miniskirt1.png". Understand "sheer" as lace miniskirt.
 
 To decide which figure-name is the clothing-image of (C - a lace miniskirt):
@@ -490,7 +482,6 @@ Definition: a tartan miniskirt is tartan themed: decide yes.
 Definition: a tartan miniskirt is orange themed: decide yes.
 
 
-
 A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is transformation-rare. A naughty skirt is usually butt-windowed.
 
 There is 1 naughty skirts. Printed name of naughty skirt is "[clothing-title-before]naughty leather skirt[clothing-title-after]". The text-shortcut of naughty skirt is "nls". Figure of naughty skirt is the file "Items/Clothes/Lower/Skirts/naughtyskirt1.png".
@@ -511,7 +502,6 @@ To decide which number is the initial outrage of (C - a naughty skirt):
 	decide on 6.
 
 Definition: a naughty skirt is black themed: decide yes.
-
 
 
 office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted. The armour of office skirt is 7.
@@ -615,7 +605,6 @@ To transform (D - a sequins belt) into (C - a sequins outfit):
 	say "[TransformReaction of C]".
 
 
-
 skirt-tray-vibrator is a skirt. skirt-tray-vibrator is unique. skirt-tray-vibrator is sure. skirt-tray-vibrator is identified.
 
 Figure of skirt tray vibrator is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1.jpg".
@@ -706,13 +695,6 @@ This is the orgasm drops cupcakes rule:
 			say "[bold type]Your whole body shakes, and you can't help but make the tray shake too![roman type] [if D is 1]Another cupcake falls off its pressure plate[otherwise][D] more cupcakes fall off their pressure plates[end if] and onto the ground. [skirtTrayBuzzFlav]";
 			now the charge of skirt-tray-vibrator is 3.
 The orgasm drops cupcakes rule is listed last in the orgasm fatigue effects rules.
-
-
-
-
-
-
-
 
 
 All Skirts ends here.

@@ -90,6 +90,4 @@ To say glitter:
 	say "[if glitter-identified is 0]some kind of glitter[otherwise]magic dust[end if]".
 
 
-
 Magic Dust Trap ends here.
-

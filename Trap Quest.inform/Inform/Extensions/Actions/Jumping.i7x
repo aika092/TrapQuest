@@ -53,4 +53,3 @@ Understand "leap", "bounce", "ju", "cheer", "hop" as jumping.
 
 
 Jumping ends here.
-

@@ -3,7 +3,7 @@ Christmas Gift by Consumables begins here.
 
 A christmas gift is a kind of thing. There are 25 christmas gifts. Understand "present", "wrapping" as christmas gift. The printed name of christmas gift is "[TQlink of item described]christmas gift[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of christmas gift is "chg".
 To say ExamineDesc of (B - a christmas gift):
-	say "A beautifully wrapped christmas present. Open it and find what's inside!".
+	say "A beautifully wrapped Christmas present. Open it and find what's inside!".
 
 Figure of christmas gift is the file "Items/Collectibles/gift1.png".
 To decide which figure-name is the examine-image of (B - a christmas gift):
@@ -45,7 +45,6 @@ To compute christmas event of (C - a christmas-gift-cumshot):
 		let N be a random number between 5 and 8;
 		display cumshot reaction to N;
 		CumFaceUp N.
-
 
 
 A christmas-gift-transformation is a kind of christmas-gift-event. There are 8 christmas-gift-transformation in Christmas Item Pen.
@@ -213,4 +212,3 @@ Carry out unwrapping:
 	decide on 7.]
 
 Christmas Gift ends here.
-

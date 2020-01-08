@@ -58,4 +58,3 @@ To decide which number is the initial outrage of (C - a submissive collar):
 	decide on 8.
 
 Necklaces ends here.
-

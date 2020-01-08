@@ -270,7 +270,6 @@ To decide which number is the disintegrate-resistance of (C - a heels):
 	decide on the heel-height of C.
 
 
-
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;
 	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
@@ -284,4 +283,3 @@ To compute failed transform of (C - a clothing):
 
 
 Transformation ends here.
-

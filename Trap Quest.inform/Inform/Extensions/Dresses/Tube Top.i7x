@@ -231,7 +231,7 @@ To say TransformReaction of (C - a yellow exposing tube top):
 	otherwise if C is almost too much:
 		say "[variable custom style]This is pretty extreme! But also kind of thrilling to be wearing such a naughty top...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
-		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear! This way, everyone knows I don't mind them checking out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
+		say "[variable custom style]Tee-hee, this game knows exactly what sort of thing I'd love to wear! This way, everyone knows I don't mind them checking out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
 
 Part 8 - Jacket
 
@@ -295,4 +295,3 @@ To decide which object is the unique-upgrade-target of (C - leopard print tube t
 	decide on a random off-stage leopard print bikini.
 
 Tube Top ends here.
-

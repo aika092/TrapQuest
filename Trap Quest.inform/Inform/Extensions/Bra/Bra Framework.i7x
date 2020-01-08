@@ -134,7 +134,7 @@ Report going: [Let's make sure that all bras are a sensible size when encountere
 
 To compute bra strain:
 	repeat with B running through worn bras:
-		if the size of B  + the leniency of B < the largeness of breasts:
+		if the size of B + the leniency of B < the largeness of breasts:
 			compute bra strain of B.
 
 To compute bra strain of (B - a bra):
@@ -262,4 +262,3 @@ Report wearing a bra:
 	if the noun is cursed, say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bikini top![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart. This must be a cursed bra![end if]".
 
 Bra Framework ends here.
-

@@ -48,4 +48,3 @@ To say ShortDesc of (C - a ring):
 The setup starting rings rule is listed in the setup starting items rules.]
 
 Rings ends here.
-

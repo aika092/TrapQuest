@@ -82,7 +82,7 @@ To compute periodic effect of (C - a pink spraybottle):
 
 To compute (S - a pink spraybottle) breaking:
 	if a random number between 1 and the dexterity of the player < 5 or (a random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
-		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
+		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee-hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
 		now S is cloth;
 		now the charge of S is 0;
 		unless there is a worn cursed maid headdress, now S is cursed;
@@ -140,7 +140,7 @@ To compute spraybottle punishment:
 				repeat with C running through worn currently uncovered fluid vulnerable clothing:
 					WaterSoak 1 on C;
 				if the fatigue of the player > the tired threshold of the player:
-					say "[if the player is not prone]Its so jarring you instantly fall to your knees.[end if]";
+					say "[if the player is not prone]It's so jarring you instantly fall to your knees.[end if]";
 					silently try kneeling;
 				say "You [if the player is prone]stay[otherwise]stand[end if] there, shivering in place, from the cold.";
 				if the make-up of face > 0 and permanent makeup is 0:
@@ -183,7 +183,4 @@ To compute attack of (S - a pink spraybottle) at (M - a monster):
 		say "You pull the trigger of your [ShortDesc of S], but you have no magic to empower the water that comes out. It's not very effective!";
 
 
-
-
 Pink Spraybottle ends here.
-

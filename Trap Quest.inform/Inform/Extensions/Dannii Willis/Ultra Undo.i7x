@@ -159,7 +159,6 @@ Global ultra_undo_needed = 0;
 -) instead of "Undo" in "Glulx.i6t".
 
 
-
 Section - Tests
 
 [ Test if the VM is able to perform an undo. This is necessary because Git won't tell us that it can't. ]
@@ -206,7 +205,6 @@ Include (-
 -) instead of "Save The Game Rule" in "Glulx.i6t".
 
 
-
 Section - Cleaning up
 
 [ Clean up after ourselves when the player quits - delete all the external files ]
@@ -231,7 +229,6 @@ The delete Ultra Undo savefiles rule is listed in the after starting the virtual
 The delete Ultra Undo savefiles rule translates into I6 as "Ultra_Undo_Delete_All".
 
 
-
 [ Compatibility with Undo Output Control. If it's not included, add the variable we refer to. If it is, don't let it replace our Undo code. ]
 
 Chapter (for use without Undo Output Control by Erik Temple) unindexed
@@ -241,7 +238,6 @@ Save undo state is a truth state that varies. Save undo state is usually true.
 Chapter (for use with Undo Output Control by Erik Temple)
 
 Section - Undo save control (in place of Section - Undo save control in Undo Output Control by Erik Temple)
-
 
 
 Ultra Undo ends here.

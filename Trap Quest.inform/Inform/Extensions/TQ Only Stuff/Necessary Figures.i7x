@@ -297,9 +297,6 @@ Figure of helium balloons is the file "Items/Accessories/Head/scrunchie4.png".
 Figure of condom pigtails is the file "Items/Accessories/Head/scrunchie5.png".
 
 
-
-
-
 Figure of all-you-can-eat tattoo is the file "Items/Tats/tattoo145.jpg".
 To decide which figure-name is the examine-image of (T - all-you-can-eat tattoo):
 	decide on figure of all-you-can-eat tattoo.
@@ -459,11 +456,11 @@ To decide which figure-name is the examine-image of (T - lesbian anilingus tatto
 
 Figure of lock-it tattoo is the file "Items/Tats/tattoo151.jpg".
 To decide which figure-name is the examine-image of (T - lock-it tattoo):
-    decide on figure of lock-it tattoo.
+	decide on figure of lock-it tattoo.
 
 Figure of measurement tattoo is the file "Items/Tats/tattoo150.jpg".
 To decide which figure-name is the examine-image of (T - measurement tattoo):
-    decide on figure of measurement tattoo.
+	decide on figure of measurement tattoo.
 
 Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.jpg".
 To decide which figure-name is the examine-image of (T - my-vagina tattoo):
@@ -499,7 +496,7 @@ To decide which figure-name is the examine-image of (T - property-tattoo):
 
 Figure of pull-to-choke tattoo is the file "Items/Tats/tattoo152.jpg".
 To decide which figure-name is the examine-image of (T - pull-to-choke tattoo):
-    decide on figure of pull-to-choke tattoo.
+	decide on figure of pull-to-choke tattoo.
 
 Figure of pussy deluxe tattoo is the file "Items/Tats/tattoo46.jpg".
 To decide which figure-name is the examine-image of (T - pussy deluxe tattoo):
@@ -614,7 +611,6 @@ To decide which figure-name is the examine-image of (T - xavier's cunt tattoo):
 Figure of zip tattoo is the file "Items/Tats/tattoo19.jpg".
 To decide which figure-name is the examine-image of (T - zip tattoo):
 	decide on figure of zip tattoo.
-
 
 
 Figure of HypnoBBCAnimation001 is the file "Special/Animations/HypnoBBC/frame_001.jpg".

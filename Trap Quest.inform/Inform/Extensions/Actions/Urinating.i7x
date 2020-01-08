@@ -189,7 +189,7 @@ To compute toilet use:
 	say "sit on the [if the player is in Dungeon11]training potty throne[otherwise]nearby toilet[end if] [if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2]above [NameDesc of woman-barbara][']s ring-gagged face [end if]and release your hold on your bladder.";
 	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied:
 		if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2:
-			say "With an embarrassing sound, you evacuate your bowels too, kind of cream-pie-ing her. [if the bimbo of the player < 10][one of]You blush at the thought she'll know how you've been used back there.[or]Once again you've sort of creampied her.[or][variable custom style]I hope she doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style]She must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if she appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
+			say "With an embarrassing sound, you evacuate your bowels too, kind of cream-pie-ing [him of woman-barbara]. [if the bimbo of the player < 10][one of]You blush at the thought [he of woman-barbara]'ll know how you've been used back there.[or]Once again you've sort of creampied [him of woman-barbara].[or][variable custom style]I hope [he of woman-barbara] doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style][big he of woman-barbara] must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if [he of woman-barbara] appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
 		otherwise:
 			say "With an embarrassing sound, you evacuate your bowels too. ";
 		if the large egg count of belly > 0:
@@ -827,7 +827,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ToiletPeeReaction of (M - a monster):
-	say "[BigNameDesc of M] frowns with distaste. [line break][speech style of M]'[one of]Disgusting[or]Gross[or]Ugh[in random order]!  [one of][if M is interested]You couldn't wait until we had parted ways[otherwise]I can't believe you'd do that with me standing here... Did you think I was deaf or something[end if][or]Do you enjoy peeing in front of [if M is buddy]friends[otherwise]strangers[end if] or something[or]I'm standing right here, and you just start going to the toilet like that[in random order]?!'[roman type][line break]";
+	say "[BigNameDesc of M] frowns with distaste. [line break][speech style of M]'[one of]Disgusting[or]Gross[or]Ugh[in random order]! [one of][if M is interested]You couldn't wait until we had parted ways[otherwise]I can't believe you'd do that with me standing here... Did you think I was deaf or something[end if][or]Do you enjoy peeing in front of [if M is buddy]friends[otherwise]strangers[end if] or something[or]I'm standing right here, and you just start going to the toilet like that[in random order]?!'[roman type][line break]";
 	unless M is staff member, FavourDown M with consequences.
 
 [!<SayPeeReaction1>+
@@ -1001,7 +1001,7 @@ REQUIRES COMMENTING
 To say ClothesPeeReaction of (M - a monster):
 	if diaper quest is 1:
 		if M is friendly:
-			say "[BigNameDesc of M] frowns. [line break][speech style of M]'What are you doing?! It looks to me like you need diapers, little girl. I am very unimpressed.'[roman type][line break]";
+			say "[BigNameDesc of M] frowns. [line break][speech style of M]'What are you doing?! It looks to me like you need diapers, little [boy of the player]. I am very unimpressed.'[roman type][line break]";
 			FavourDown M by 2;
 			if M is unfriendly:
 				say "[speech style of M]'Yes in fact, I think you need training. [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], baby!'[roman type][line break]";
@@ -1038,4 +1038,3 @@ To say BrokenPeeFlav during sex with (M - a monster):
 
 
 Urinating ends here.
-

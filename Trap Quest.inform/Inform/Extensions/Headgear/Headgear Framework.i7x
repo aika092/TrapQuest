@@ -227,7 +227,4 @@ To compute HeadgearAutoCursing of (H - a headgear):
 		now H is cursed.
 
 
-
-
 Headgear Framework ends here.
-

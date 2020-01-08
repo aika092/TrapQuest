@@ -35,4 +35,3 @@ To compute attack of (W - a wasp-cloud) at (M - a monster):
 
 
 Wasp Cloud ends here.
-

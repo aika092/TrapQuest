@@ -28,4 +28,3 @@ To compute periodic effect of (W - a midnight tanto):
 		if the charge of W <= 0, say "[bold type]Your [ShortDesc of W] is now glowing. It could probably cut through another clothing item, if you like.[roman type][line break]".
 
 Midnight Tanto ends here.
-

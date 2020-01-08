@@ -268,9 +268,6 @@ Definition: yourself is naked:
 	decide yes.
 
 
-
-
-
 Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
 	decide no.
 
@@ -309,4 +306,3 @@ Definition: a clothing is tonguing if it is tongued and tonguesActive > 0 and it
 
 
 Clothing Adjectives ends here.
-

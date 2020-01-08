@@ -23,4 +23,3 @@ To decide which number is the bartering value of (T - a wasp wing) for (M - Icar
 Definition: a wasp wing is inflation themed: decide yes.
 
 Wasp Wing ends here.
-

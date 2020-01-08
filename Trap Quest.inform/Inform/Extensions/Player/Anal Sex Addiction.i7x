@@ -85,6 +85,4 @@ To SilentlyAnalSexAddictDown:
 	if the raw anal sex addiction of the player > 1, decrease the raw anal sex addiction of the player by 1.
 
 
-
 Anal Sex Addiction ends here.
-

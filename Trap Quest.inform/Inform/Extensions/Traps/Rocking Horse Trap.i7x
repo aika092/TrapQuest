@@ -128,6 +128,4 @@ To say RockingReactionSpeech of (M - a monster):
 	say "[one of][line break][speech style of M]'Haha, you look just like a real baby!'[roman type][line break][or][stopping]".
 
 
-
 Rocking Horse Trap ends here.
-

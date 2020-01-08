@@ -58,4 +58,3 @@ Include No Graphics by Miscellaneous Frontend.
 Include No Epilogue by Ending the Game.
 
 Public Version Stuff ends here.
-

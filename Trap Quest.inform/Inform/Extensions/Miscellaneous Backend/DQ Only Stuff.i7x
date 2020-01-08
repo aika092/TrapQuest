@@ -120,7 +120,7 @@ To decide which text is tonguesColour:
 	decide on "white".
 To say tongueStatus of (C - a clothing):
 	say "".
-portal-pants is a knickers. portal-pants is unique.  The printed name of portal-pants is "portal pants".
+portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
 
 Include Stuffies by Equippables.
 
@@ -700,10 +700,6 @@ The animationColour of JammyLoadingAnimation is 16765178.
 
 To decide which number is the frameSlowness of (T - JammyLoadingAnimation):
 	decide on 1.
-
-
-
-
 
 
 [Figure of Mirror Loading Banner is the file "Special/Animations/Mirror/mirror banner.png".

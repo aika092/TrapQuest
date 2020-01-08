@@ -39,4 +39,3 @@ To say ClothingDesc of (C - a baby car diaper bag of holding):
 	say "A home-made pink diaper bag that holds all your spare items and negates their weight. It has a baby car pattern with buttons for wheels sewn into the front as well as the words 'cute as a button', which makes it extremely clear what kind of bag it is. A warning on the label says '[BagHoldingWarning] bag'.".
 
 Baby Diaper Bags of Holding ends here.
-

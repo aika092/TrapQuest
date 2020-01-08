@@ -1,7 +1,6 @@
 Stomach by Every Turn begins here.
 
 
-
 [!<coldTurkey:Integer>*
 
 How long has the player starved themselves of semen?
@@ -340,4 +339,3 @@ Definition: yourself is nearly hungry:
 
 
 Stomach ends here.
-

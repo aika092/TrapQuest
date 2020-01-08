@@ -135,4 +135,3 @@ To say RestingDesc of (F - a milking bench):
 	say "You [one of][or]continue to [stopping]kneel on the bench.";
 
 Milking Bench ends here.
-

@@ -77,4 +77,3 @@ Definition: yourself is able to eat:
 
 
 Eating ends here.
-

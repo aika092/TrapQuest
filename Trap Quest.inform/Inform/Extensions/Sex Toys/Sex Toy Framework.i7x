@@ -63,7 +63,6 @@ To ToyShortcutAssign (C - a sex toy):
 		increase toyShortcutCount by 1.
 
 
-
 This is the sex toy pussy slut rule:
 	if there is a sex toy penetrating vagina, decrease the desirability of vagina by 7.
 The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
@@ -71,7 +70,6 @@ The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
 This is the sex toy butt slut rule:
 	if there is a sex toy penetrating asshole, decrease the desirability of asshole by 7.
 The sex toy butt slut rule is listed in the butt slut eligibility rules.
-
 
 
 To decide which number is the original price of (C - a sex toy):
@@ -531,6 +529,4 @@ To say CurrentlyVisibleFlav of (C - a tail plug):
 	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
 
 
-
 Sex Toy Framework ends here.
-

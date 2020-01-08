@@ -54,7 +54,7 @@ Carry out begging:
 		follow the speech penalties rules;
 	repeat with M running through alive monsters:
 		if M is penetrating a body part or M is grabbing the player, say MercyReaction of M.
-Understand "beg", "beg for mercy", "beg mercy", "mercy", "pls", "grovel", "cry", "ny", "yn", "ty" as begging.
+Understand "beg", "beg for mercy", "beg mercy", "mercy", "pls", "grovel", "cry", "ask for mercy", "ny", "yn", "ty" as begging.
 
 [!<SayMercyAskOfMonster>+
 
@@ -80,4 +80,3 @@ To say MercyReaction of (M - a monster):
 
 
 Begging for Mercy ends here.
-

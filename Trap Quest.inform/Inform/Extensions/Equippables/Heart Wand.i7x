@@ -43,4 +43,3 @@ Definition: a heart wand is pink themed: decide yes.
 
 
 Heart Wand ends here.
-

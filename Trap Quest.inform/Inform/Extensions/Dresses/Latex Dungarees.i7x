@@ -25,5 +25,4 @@ To say ShortDesc of (C - blue-latex-dungarees):
 Definition: blue-latex-dungarees is blue themed: decide yes.
 
 
-
 Latex Dungarees ends here.

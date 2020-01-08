@@ -225,4 +225,3 @@ To decide which number is the dexterity-influence of (C - ritual-beads):
 	decide on F * -1.
 
 Anal Beads ends here.
-

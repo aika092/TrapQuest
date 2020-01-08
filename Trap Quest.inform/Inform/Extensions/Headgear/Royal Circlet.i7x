@@ -47,7 +47,6 @@ Report examining worn clothing:
 	if the noun is enema-helping, say "You can feel that this item somehow prevents your body from being weaker when holding in enemas.".
 
 
-
 Chapter - Class Outfit
 
 Definition: royal circlet (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -107,4 +106,3 @@ To say QuestTitle of (Q - milk-serve-quest):
 
 
 Royal Circlet ends here.
-

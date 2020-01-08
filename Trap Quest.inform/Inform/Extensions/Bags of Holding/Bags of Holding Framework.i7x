@@ -37,7 +37,6 @@ Check taking something:
 			unless the noun is bag of holding, say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
 
 
-
 Check inserting food into bag of holding:
 	say "A warning on the [second noun] says that this would be a horrible idea." instead.
 
@@ -366,12 +365,9 @@ To execute (E - bag-feeding-diaper-bag) on (C - a thing):
 			say "Your diaper bag reacts to the [ShortDesc of C]! It rumbles and then spits out a [SD] onto the ground!".
 
 
-
 To compute BagFeedingEffect of (C - a thing):
 	repeat with E running through bag-feeding-effects:
 		execute E on C.
 
 
-
 Bags of Holding Framework ends here.
-

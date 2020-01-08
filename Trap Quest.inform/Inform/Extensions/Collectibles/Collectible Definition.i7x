@@ -25,4 +25,3 @@ Definition: a mass collectible is ingredient: decide no.
 
 
 Collectible Definition ends here.
-

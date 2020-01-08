@@ -412,7 +412,7 @@ Part 7a - Debugging Commands (not for release)
 
 Chapter 7.1 - Debugging Graphlinks Table
 
-Debugging graphlinks is an action out of world.	Understand "graphlinks" or "graphlinks table" as debugging graphlinks.
+Debugging graphlinks is an action out of world. Understand "graphlinks" or "graphlinks table" as debugging graphlinks.
 
 Check debugging graphlinks:
 	say "[line break][bold type]Table of Graphlink Glulx Replacement Commands[roman type] (presented in reverse order)[line break]There are [number of filled rows in the Table of Graphlink Glulx Replacement Commands] entries in the table.";
@@ -459,7 +459,6 @@ A clicking graphlink rule when coordinate-trace is true (this is the report coor
 	continue the action.
 
 
-
 Glimmr Graphic Hyperlinks ends here.
 
 
@@ -467,7 +466,7 @@ Glimmr Graphic Hyperlinks ends here.
 
 Glimmr Graphic Hyperlinks allows us to identify any number of rectangular areas of a Glulx graphic window as "hotlinked". When the player clicks within one of these zones, a command will be entered on behalf of the player, or we can specify some appropriate response of our own. Graphic links ("graphlinks") can be defined in any number of graphics windows simultaneously. At minimum, the extension requires Jon Ingold's Flexible Windows extension, which is used to define and manage the windowing system. It can also be used with Glimmr Canvas-Based Drawing to fully automate the maintenance of the list of graphlinks.
 
-Glimmr Graphic Hyperlinks (GGH) is an adaptation and amplification of Jeff Sheets' Graphic Links extension to the framework provided by Jon Ingold's Flexible Windows. Like the original Graphic Links, it is not really intended to be complete in itself, but rather to be a relatively flexible template for more specific applications. The major limitation of both extensions is their reliance on the coordinate system of the window itself to define links; an image that has been scaled and centered in a window will move relative to the window coordinates any time the window is resized. For nearly all purposes, then, authors will want to provide a conversion from a more stable coordinate system to the window's system. The Glimmr Canvas-Based Drawing extension does just this, while also providing completely automated updating of links by binding them to graphic elements.
+Glimmr Graphic Hyperlinks (GGH) is an adaptation and amplification of Jeff Sheets' Graphic Links extension to the framework provided by Jon Ingold's Flexible Windows. Like the original Graphic Links, it is not really intended to be complete in itself, but rather to be a relatively flexible template for more specific applications. The major limitation of both extensions is their reliance on the coordinate system of the window itself to define links; an image that has been scaled and centred in a window will move relative to the window coordinates any time the window is resized. For nearly all purposes, then, authors will want to provide a conversion from a more stable coordinate system to the window's system. The Glimmr Canvas-Based Drawing extension does just this, while also providing completely automated updating of links by binding them to graphic elements.
 
 
 Section: Basic usage

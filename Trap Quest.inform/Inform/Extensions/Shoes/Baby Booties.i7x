@@ -119,4 +119,3 @@ This is the trousers latex booties clash rule:
 The trousers latex booties clash rule is listed in the trousers wearability rules.
 
 Baby Booties ends here.
-

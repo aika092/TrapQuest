@@ -20,4 +20,3 @@ To decide which number is the initial outrage of (C - a pink corset):
 
 
 Satin Corset ends here.
-

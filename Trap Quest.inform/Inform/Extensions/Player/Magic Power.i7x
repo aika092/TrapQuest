@@ -108,7 +108,7 @@ A magic-spell has a text called the incantation. [Understand the incantation pro
 Definition: a magic-spell is reactive-only: decide yes. [Does it only work when used in front of someone who's listening?]
 
 Table of Possible Incantations
-phrase (text)	naughtiness (number)
+phrase (text) naughtiness (number)
 with 50 blank rows
 
 
@@ -379,7 +379,6 @@ a time based rule (this is the magic speed decay rule):
 			now magic-speed-timer is 0.
 
 
-
 magic-strength-timer is a number that varies.
 magic-strengthing is a magic-spell.
 To say MagicSpellEffect of (S - magic-strengthing):
@@ -401,7 +400,6 @@ a time based rule (this is the magic strength decay rule):
 		if magic-strength-timer <= 0:
 			say "[bold type]The strength improving effects of the magic spell have ended.[roman type][line break]";
 			now magic-strength-timer is 0.
-
 
 
 magic-blind is a magic-spell.
@@ -437,13 +435,13 @@ Report Spellcasting magic-poison when there is a reactive monster:
 
 magic-paralyze is a magic-spell.
 To say MagicSpellEffect of (S - magic-paralyze):
-	say "paralyze every enemy in the room".
+	say "paralyse every enemy in the room".
 Report Spellcasting magic-paralyze when there is a reactive monster:
 	if the magic power of the player > 0:
 		let paralyzeSuccess be 0;
 		repeat with M running through unfriendly monsters in the location of the player:
 			if the paralyze-status of M is 0:
-				say "Ropes of golden light wrap around [NameDesc of M][']s body. [big he of M][']s been paralyzed!";
+				say "Ropes of golden light wrap around [NameDesc of M][']s body. [big he of M][']s been paralysed!";
 				now the paralyze-status of M is 5;
 				now paralyzeSuccess is 1;
 		if paralyzeSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
@@ -451,26 +449,4 @@ Report Spellcasting magic-paralyze when there is a reactive monster:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Magic Power ends here.
-

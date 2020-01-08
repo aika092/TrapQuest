@@ -60,6 +60,4 @@ To Prologue:
 	clear the screen.
 
 
-
 Prologue ends here.
-

@@ -117,7 +117,4 @@ This is the pure background toggle rule:
 		if points count >= 5, now choice in row 55 of the Table of Player Options is 1.
 
 
-
-
 Background Options ends here.
-

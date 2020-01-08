@@ -128,7 +128,6 @@ To say ClothingDesc of (C - a ghost pacifier):
 	say "This large orange pacifier has a spooky ghost on the front!".
 
 
-
 To decide which number is the strength-influence of (C - a tiger pacifier):
 	let S be 2;
 	increase S by the magic-modifier of C;
@@ -148,4 +147,3 @@ To compute periodic effect of (P - a pacifier):
 
 
 Pacifiers ends here.
-

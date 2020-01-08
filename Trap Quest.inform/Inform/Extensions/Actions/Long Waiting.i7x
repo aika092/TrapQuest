@@ -401,7 +401,6 @@ This is the long wait report turns rule:
 The long wait report turns rule is listed in the long wait report rules.
 
 
-
 Carry out LongWaiting:
 	say "Please enter a maximum number of turns to wait: ";
 	now stat-to-set is "wait".
@@ -435,9 +434,7 @@ This is the longwait setting rule:
 The longwait setting rule is listed in the statsetting rules.
 
 
-
-Understand "long wait", "wait for a while" as LongWaiting.
+Understand "long wait", "wait for a while", "wait for a long time" as LongWaiting.
 
 
 Long Waiting ends here.
-

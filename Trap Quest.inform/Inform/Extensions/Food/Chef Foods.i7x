@@ -18,7 +18,7 @@ Report TQeating chef food:
 		FatUp the fat of the noun;
 		if the flesh volume of arms > 3 and Q > 0, decrease Q by 1;
 		if the flesh volume of arms > 7 and Q > -2, now Q is 1;
-	say "As you finish eating the [noun], you feel both your muscles and mind expanding!  Wow!";
+	say "As you finish eating the [noun], you feel both your muscles and mind expanding! Wow!";
 	StrengthUp 1;
 	DexUp 1;
 	IntUp 1;
@@ -27,4 +27,3 @@ Report TQeating chef food:
 
 
 Chef Foods ends here.
-

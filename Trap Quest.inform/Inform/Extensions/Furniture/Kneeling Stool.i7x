@@ -24,6 +24,4 @@ To compute furniture resting on (K - a Kneeling Stool):
 	compute normal rest of K.
 
 
-
 Kneeling Stool ends here.
-

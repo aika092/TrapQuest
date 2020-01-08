@@ -32,4 +32,3 @@ Definition: a golden phallus is inflation themed: decide yes.
 Definition: a golden phallus is magic themed: decide yes.
 
 Golden Phallus ends here.
-

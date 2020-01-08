@@ -15,4 +15,3 @@ Definition: a sack of holding is brown themed: decide yes.
 
 
 Sacks of Holding ends here.
-

@@ -25,4 +25,3 @@ To decide which number is the initial outrage of (C - a soulstone):
 	decide on 1.
 
 Soulstone ends here.
-

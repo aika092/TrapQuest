@@ -109,4 +109,3 @@ To say detention chair tease of (M - a nasty student):
 	say "[speech style of M]'[one of]Bahahah, you really are the worst, aren't you?'[or]You should just give up, you know. Someone like you is never going to make it in a place like this.'[or]Nyer nyer, look at the loser on her punishment chair. Enjoying yourself, [bitch]?'[in random order][roman type][line break]".
 
 Students Nasty ends here.
-

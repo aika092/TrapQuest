@@ -62,7 +62,4 @@ To decide which number is HUMILIATION-BROKEN:
 	decide on HUMILIATION-SHAMELESS + 8000.
 
 
-
-
 Humiliation ends here.
-

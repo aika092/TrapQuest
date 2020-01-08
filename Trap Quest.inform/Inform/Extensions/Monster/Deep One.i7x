@@ -97,14 +97,14 @@ Section 2 - DQ
 Definition: deep one is willing to deliver enemas: decide yes.
 
 To say EnemaStartFlav of (M - deep one):
-	say "[BigNameDesc of M] opens [his of M] mouth wide. Inside, you can see that [his of M] groteque tongue is actually more of a hollow tube. Without a moment's hesitation, [he of M] begins to push this powerful tube-muscle into your unprotected [asshole]!".
+	say "[BigNameDesc of M] opens [his of M] mouth wide. Inside, you can see that [his of M] grotesque tongue is actually more of a hollow tube. Without a moment's hesitation, [he of M] begins to push this powerful tube-muscle into your unprotected [asshole]!".
 
 To say EnemaFlav of (M - deep one):
 	say "[BigNameDesc of M] [one of]makes a weird gurgling sound[or]makes a low humming sound[or]makes a clicking sound[in random order] as water pumps [one of]into your belly[or]up your anal passage[or]into you[at random] from [one of]inside [his of M] body[or][his of M] alien tongue[at random].".
 
 To say EnemaAftermath of (M - deep one):
 	say "[BigNameDesc of M] pulls [his of M] tube-like tongue from your [asshole] with a noisy slurp, and then [he of M] releases you.".
-	
+
 To decide which number is the enema quarts of (M - deep one):
 	decide on a random number between 2 and 3.
 
@@ -132,16 +132,16 @@ To say DamageReactHealthy of (M - deep one):
 	say "The creature seems uninjured!".
 
 To say DamageReactDamaged of (M - deep one):
-	say "The creature doesn't seem to be affected by its injuries!".
+	say "The creature doesn't seem to be affected by [his of M] injuries!".
 
 To say DamageReactTired of (M - deep one):
 	say "The creature is becoming rather frantic!".
 
 To say DamageReactWeak of (M - deep one):
-	say "The creature seems to be having trouble staying on its feet!".
+	say "The creature seems to be having trouble staying on [his of M] feet!".
 
 To compute unique death of (M - deep one):
-	say "[BigNameDesc of M] shrieks and falls to the ground. Its body decomposes into a foul mist, and quicker than you can react it sinks into your skin! You feel much stronger and tougher!";
+	say "[BigNameDesc of M] shrieks and falls to the ground. [big his of M] body decomposes into a foul mist, and quicker than you can react it sinks into your skin! You feel much stronger and tougher!";
 	Strengthup 2;
 	DelicateDown 2.
 
@@ -153,4 +153,3 @@ To compute domination interference of (M - a deep one) for (N - a monster):
 		say "[BigNameDesc of M] pauses, waiting to see what happens next.".
 
 Deep One ends here.
-

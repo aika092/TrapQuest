@@ -62,4 +62,3 @@ Understand "strut", "strutting", "slut it up" as strutting.
 
 
 Strutting ends here.
-

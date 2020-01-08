@@ -61,4 +61,3 @@ To uniquely set up (P - a throbbing-tentacle):
 	do nothing.[No enchantments here!]
 
 Throbbing Tentacle ends here.
-

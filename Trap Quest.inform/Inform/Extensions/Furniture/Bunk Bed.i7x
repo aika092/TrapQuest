@@ -11,4 +11,3 @@ To say ExamineDesc of (C - a bunk bed):
 	say "A basic, inexpensive looking bed, for military personnel. You have no idea if you would get in trouble for resting on it or not[if the intelligence of the player > 7], but knowing this game, the odds aren't in your favour.[otherwise].[end if]".
 
 Bunk Bed ends here.
-

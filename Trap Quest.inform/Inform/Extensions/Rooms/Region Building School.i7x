@@ -127,4 +127,3 @@ To update students:
 			destroy M.]
 
 Region Building School ends here.
-

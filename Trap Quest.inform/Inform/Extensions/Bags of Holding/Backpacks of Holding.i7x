@@ -24,4 +24,3 @@ To say ShortDesc of (C - a pink backpack of holding):
 	say "girly pink leather backpack".
 
 Backpacks of Holding ends here.
-

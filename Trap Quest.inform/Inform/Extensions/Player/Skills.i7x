@@ -790,4 +790,3 @@ The floatskill learn rule is listed in the skill cheating rules.
 
 
 Skills ends here.
-

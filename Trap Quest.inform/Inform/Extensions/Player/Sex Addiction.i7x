@@ -105,7 +105,6 @@ To decide which number is the relevant sex addiction of (M - a thing): [We want 
 Part 2 - Modify Sex Addiction
 
 
-
 [!<Player>@<rawSexAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -247,4 +246,3 @@ The number of times the player has had submissive sex with any monster, not just
 The player has a number called sex-count. The sex-count of the player is 0.
 
 Sex Addiction ends here.
-

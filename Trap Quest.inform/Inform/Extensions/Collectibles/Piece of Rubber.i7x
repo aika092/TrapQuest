@@ -25,4 +25,3 @@ Definition: a piece of rubber is pink themed: decide yes.
 
 
 Piece of Rubber ends here.
-

@@ -115,7 +115,7 @@ To say MonsterDesc of (M - skater mannequin):
 	say "An unsettling [mannequin-model of M] mannequin complete with striking makeup and blankly smiling stare. A pink punk-styled top sits above a tiny white skater mini-skirt, which barely hides whatever underwear [he of M] might be wearing. Fishnet tights sit under multicoloured striped knee-length socks and knee-pads. Fingerless gloves, elbow-pads and black & white trainers finish off the skater look.".
 
 To say MonsterComment of (M - a mannequin):[TODO: fix this]
-	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair?  [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like her![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]".
+	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, tee-hee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like [him of M]![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]".
 
 To set up (M - a mannequin):
 	reset M;
@@ -159,7 +159,7 @@ To say SummoningFlav of (M - a mannequin):
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say SummoningFlav of (M - a goth mannequin):
-	if M is in the location of the player, say "A deafening whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes its first few steps into the room, and the mummy's wrappings slowly reform behind it.";[TODO: goth mannequin eventually]
+	if M is in the location of the player, say "A deafening whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes [his of M] first few steps into the room, and the mummy's wrappings slowly reform behind it.";[TODO: goth mannequin eventually]
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say MuteGreetResponse of (M - a mannequin):
@@ -338,7 +338,7 @@ To set up sex length of (M - a mannequin) in (F - asshole):
 To compute (M - a mannequin) entering anally:
 	let P be a random sex toy retained by M;
 	if P is sex toy:
-		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if size of penis is 0]angling it toward herself as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
+		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if size of penis is 0]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
 	otherwise:
 		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion.";
 	if the player is female:
@@ -357,7 +357,7 @@ This is the mannequin forces orgasm through diaper rule:
 		let D be a random worn diaper;
 		while the coverer of D is clothing:
 			now D is the coverer of D;
-		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with [his of M] blank expression, [he of M] presses a hand to the front of your [D] and pushes firmly. [big his of M] hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]!  The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]!  [line break][variable custom style]Unfff... it's too strong!  I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
+		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with [his of M] blank expression, [he of M] presses a hand to the front of your [D] and pushes firmly. [big his of M] hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]! The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]! [line break][variable custom style]Unfff... it's too strong! I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
 		orgasm;
 		SexAddictUp 1;
 		say "[BigNameDesc of M] cocks [his of M] creepy head to one side, silently pulls [his of M] hand away and then leaves you alone to recover[if the player is male and the bimbo of the player < 6]I can't believe I just came into my diaper...[end if].[roman type][line break]";
@@ -366,7 +366,7 @@ This is the mannequin forces orgasm through diaper rule:
 		rule succeeds;
 	otherwise if (there is a worn diaper or diaper quest is 1) and diaper messing >= 3 and the stomach-food of the player > 3 + incontinence and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
 		let M be current-monster;
-		say "You see [NameDesc of M] moving something towards your face and expect [his of M] to apply a new layer of make up. But instead, [he of M] pushes a small white pill into your mouth and down your throat!  You are forced to swallow it before you can react!  You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
+		say "You see [NameDesc of M] moving something towards your face and expect [him of M] to apply a new layer of make up. But instead, [he of M] pushes a small white pill into your mouth and down your throat! You are forced to swallow it before you can react! You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
 		increase rectum by the stomach-food of the player;
 		now the stomach-food of the player is 1;
 		say "[BigNameDesc of M] cocks [his of M] creepy head to one side, silently turns away and then leaves you alone to contemplate what might be coming very soon...";
@@ -434,4 +434,3 @@ To compute unique death of (M - a mannequin):
 
 
 Mannequin ends here.
-

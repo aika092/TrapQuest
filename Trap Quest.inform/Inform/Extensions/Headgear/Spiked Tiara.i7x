@@ -174,7 +174,4 @@ To say QuestTitle of (Q - no-orgasm-quest):
 	say " (orgasm avoiding quest)".
 
 
-
-
 Spiked Tiara ends here.
-

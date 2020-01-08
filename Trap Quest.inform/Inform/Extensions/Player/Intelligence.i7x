@@ -138,4 +138,3 @@ To Intdown (X - a number):
 			decrease the raw intelligence of the player by 1. [One orgasm away from instant loss.]
 
 Intelligence ends here.
-

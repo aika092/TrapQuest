@@ -154,7 +154,6 @@ To StomachSemenUp (X - a number):
 	if there is a worn tethering lipstick collar, end tethering.
 
 
-
 [!<PersonIsBecomingMoreAddictedToCum>+
 
 It's as your stomach empties of semen that you're more likely to begin to crave it more. This is to ensure that a huge load of cum doesn't increase semen taste addiction by stupidly large amounts.
@@ -273,4 +272,3 @@ To PukeUp (X - a number):
 		say "The liquid from your stomach flows out of your mouth and onto the ground.".
 
 Stomach ends here.
-

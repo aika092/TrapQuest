@@ -19,7 +19,6 @@ To decide which g-window is the glk event window:
 	decide on the acting main window;
 
 
-
 Chapter - Hyperlinks
 
 To say link (N - a number):

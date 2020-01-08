@@ -118,7 +118,7 @@ Report Mopping:
 	if the noun is face:
 		progress quest of puddle-licking-quest;
 		if cat-ears is off-stage and cat-ears is actually summonable and a random number between 1 and 3 is 1:
-			say "[bold type]You feel a headband with cat ears materialise on your head.[line break][if the bimbo of the player > 12][second custom style]Teehee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
+			say "[bold type]You feel a headband with cat ears materialise on your head.[line break][if the bimbo of the player > 12][second custom style]Tee-hee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
 			summon cat-ears;
 	now was-mopping is 1;
 	if the noun is spray pink spraybottle and total puddle <= 0:
@@ -136,6 +136,4 @@ Understand "clean milk with [something]" as mopping when the milk-puddle of the 
 Understand "lick puddle", "lick floor", "lick ground", "drink puddle", "slurp puddle", "slurp up puddle", "clean puddle", "clean mess", "mop puddle", "mop", "mop mess", "clean room", "mop room", "spray room", "spray puddle", "spray mess", "mop up puddle" as mopping.
 
 
-
 Mopping ends here.
-

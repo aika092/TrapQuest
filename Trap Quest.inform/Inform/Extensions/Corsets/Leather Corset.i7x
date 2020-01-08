@@ -19,4 +19,3 @@ To say ShortDesc of (C - a black corset):
 	say "leather corset".
 
 Leather Corset ends here.
-

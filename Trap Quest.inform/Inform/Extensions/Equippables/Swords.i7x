@@ -19,7 +19,6 @@ Check taking a sword:
 	if there is a worn hand ready equippable, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
 
 
-
 Section 0 - Sword In The Stone
 
 which-sword is a thing. which-sword is in Woods26. The printed name of which-sword is "[TQlink of item described]sword in the stone[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of which-sword is "sw". Understand "sword", "stone", "in the stone" as which-sword.
@@ -377,7 +376,7 @@ To compute attack effect of (W - demon broadsword):
 			if the bimbo of the player < 13 and the relevant sex addiction of the player < 15:
 				if a random number between 1 and 2 is 1, say "[first custom style][one of]Ugh. That's disgusting.[or]Ohh... this feels disturbingly like holding an actual, stiffening penis.[or]Stop that, you disgusting sword! I'm not doing this for your pleasure! What sort of pervert makes a hilt that looks like a penis?[or]Dammit! The more I use this, the more it feels like an actual penis.[or]Good grief! I hope my friends can't see this penis-hilt, and think I'm enjoying groping it![then at random][roman type]";
 			otherwise:
-				if a random number between 1 and 2 is 1, say "[second custom style][one of]Ohh, actually, that's kind of nice to squeeze![or]I wish this was a real [penis] I was holding[or]Yeah, baby, get thicker, maybe I'll find another use for you.[or]I love the way it feels, swelling up while I grip it![or][if tg fetish >= 1]I wonder if this is what they do with the left-over penises? This might be some former player's penis, tee hee![otherwise]I wonder if this penis actually belongs to somebody. Maybe if I return it, the owner will fuck me as a reward![end if][or]I [if tg fetish >= 1]wonder if my penis[otherwise]hope every penis[end if] might one day be used like this.[or]I wouldn't mind using the handle for something else if I win this fight![then at random][roman type]";
+				if a random number between 1 and 2 is 1, say "[second custom style][one of]Ohh, actually, that's kind of nice to squeeze![or]I wish this was a real [penis] I was holding[or]Yeah, baby, get thicker, maybe I'll find another use for you.[or]I love the way it feels, swelling up while I grip it![or][if tg fetish >= 1]I wonder if this is what they do with the left-over penises? This might be some former player's penis, tee-hee![otherwise]I wonder if this penis actually belongs to somebody. Maybe if I return it, the owner will fuck me as a reward![end if][or]I [if tg fetish >= 1]wonder if my penis[otherwise]hope every penis[end if] might one day be used like this.[or]I wouldn't mind using the handle for something else if I win this fight![then at random][roman type]";
 		otherwise if W is not dildoed:
 			compute demon punishment of W;
 		otherwise:
@@ -422,7 +421,7 @@ To compute periodic effect of (H - demon broadsword):
 					say "The [printed name of H] stiffens, blasting your face with several hot ropes of [semen]. Your head swims as you breathe in its masculine musk.";
 					CumFaceUp 4;
 				otherwise:
-					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is male]emasculating[otherwise]dehumanizing[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
+					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is male]emasculating[otherwise]dehumanising[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
 					if a random number between 1 and 3 is 1, PainUp 1;
 					otherwise SemenTasteAddictUp 1;
 					Arouse 200 + (the semen taste addiction of the player * 10) + (the arousal of H * 10);
@@ -610,4 +609,3 @@ This is the sissy-swords resolution rule:
 The sissy-swords resolution rule is listed in the orgasm resolution rules.
 
 Swords ends here.
-

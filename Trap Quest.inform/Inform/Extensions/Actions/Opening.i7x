@@ -36,7 +36,7 @@ Check opening a container:
 			say "You decide against it." instead;
 	if the prevsearch of the noun is 0 and the noun is not pink wardrobe and the bimbo of the player <= 12 and autosearch is 1 and the player is upright and autoopen is 0 and the player is able to use manual dexterity and the player is not blinded and tutorial is 0:
 		if the delicateness of the player > 1:
-			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10].  [line break][variable custom style]This game is mental.  I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
+			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10]. [line break][variable custom style]This game is mental. I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
 			try searching the noun;
 			if the prevsearch of the noun is 2 or the prevsearch of the noun is 4:
 				do nothing instead;
@@ -44,9 +44,9 @@ Check opening a container:
 				compute extra turn;
 				if the player is in danger, say "[bold type]You are in danger, so you stop.[roman type]" instead;
 				allocate 2 seconds;
-			if the noun is open, now autoopen is 0 instead; [If the player automatically searches, there's a chance this could then cause the player to automatically open the container!  SO it might already be open here.]
+			if the noun is open, now autoopen is 0 instead; [If the player automatically searches, there's a chance this could then cause the player to automatically open the container! SO it might already be open here.]
 		otherwise:
-			say "[one of][line break][variable custom style]Searching for traps sounds like a waste of time.  What's the worst they could do?[roman type][line break][or][stopping]";
+			say "[one of][line break][variable custom style]Searching for traps sounds like a waste of time. What's the worst they could do?[roman type][line break][or][stopping]";
 	now autoopen is 0.
 
 [!<CarryOutOpeningAContainer>+
@@ -94,4 +94,3 @@ Check closing a container:
 
 
 Opening ends here.
-

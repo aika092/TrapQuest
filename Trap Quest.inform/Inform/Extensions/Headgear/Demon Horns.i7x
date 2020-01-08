@@ -100,4 +100,3 @@ To compute succubus transformation:
 
 
 Demon Horns ends here.
-

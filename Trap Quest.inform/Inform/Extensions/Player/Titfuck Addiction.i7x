@@ -81,7 +81,6 @@ To TitfuckAddictDown (X - a number):
 		if the raw titfuck addiction of the player > 1, decrease the raw titfuck addiction of the player by 1.
 
 
-
 [!<TitfuckAddictUpX>+
 
 REQUIRES COMMENTING
@@ -114,4 +113,3 @@ To SilentlyTitfuckAddictDown:
 
 
 Titfuck Addiction ends here.
-

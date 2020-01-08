@@ -80,4 +80,3 @@ trousers removability rules is a rulebook. The removability rules of trousers is
 
 
 Trousers Framework ends here.
-

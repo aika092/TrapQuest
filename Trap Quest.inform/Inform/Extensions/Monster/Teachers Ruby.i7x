@@ -34,7 +34,7 @@ To say PracticalAssessment of (M - a teacher) to (N - a number) with (C - a numb
 	otherwise:
 		if N > a random number between 1 and 3, say "[speech style of M]'[one of]Ooh, good job! [or]I like what you've got! [or]What a good slut! [or]Just like a proper whore. Well done! [or]Good effort! [or]Impressive technique! [or]Excellent display. [in random order]";
 		otherwise say "[speech style of M]'[one of]Bo-ooring. [or]Bah, try harder next time. [or]Too delicate. Put more effort in next time. [or]Is that really the best you can do? [or]You're not going to be the one to make me cum like that. [in random order]";
-		say "Okay STOP! [one of]Your time's up. Now head to the back of the line, and the next girl at the front of the queue, you're up.'[or]Head to the back, you'll get another turn soon.'[or]That's it, keep the line moving. You're getting the idea.'[or]Next one, let's go.'[or]Next please!'[or]Next [slut]!'[stopping][roman type][line break][BigNameDesc of M] [one of]barks [his of M] commands with controlled authority[or]lies back and waits patiently[or]stays horizontal as [he of M] tells everyone what to do[or]snaps [his of M] fingers as [he of M] finishes speaking[or]licks [his of M] lips and smiles[or]remains rock hard as [he of M] waits[in random order].";
+		say "Okay STOP! [one of]Your time's up. Now head to the back of the line, and the next girl at the front of the queue, you're up.'[or]Head to the back, you'll get another turn soon.'[or]That's it, keep the line moving. You're getting the idea.'[or]Next one, let's go.'[or]Next [please]!'[or]Next [slut]!'[stopping][roman type][line break][BigNameDesc of M] [one of]barks [his of M] commands with controlled authority[or]lies back and waits patiently[or]stays horizontal as [he of M] tells everyone what to do[or]snaps [his of M] fingers as [he of M] finishes speaking[or]licks [his of M] lips and smiles[or]remains rock hard as [he of M] waits[in random order].";
 
 To decide which number is the practical dirtiness of (M - a student):
 	decide on 3.
@@ -46,9 +46,6 @@ To decide which number is the practical dirtiness of (M - an innocent student):
 	decide on 1.
 To decide which number is the practical dirtiness of (M - a tryhard student):
 	decide on 6.
-
-
-
 
 
 eating-lesson is a lesson.
@@ -129,14 +126,6 @@ To compute teaching of (L - eating-lesson):
 		otherwise:
 			promote N;
 	if yourself is listed in F, update students; [an important line which makes boring old students disappear and new cool ones appear]
-
-
-
-
-
-
-
-
 
 
 Teachers Ruby ends here.

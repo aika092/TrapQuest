@@ -33,9 +33,9 @@ Report going:
 					now R2 is a random number between 3 and 25;
 				if R1 + R2 < the crawl count of the player:
 					if M is maid headdress:
-						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
+						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee-hee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
 					otherwise if M is cat-ears:
-						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
+						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee-hee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
 					summon M cursed;
 				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
 					say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
@@ -52,7 +52,6 @@ Report going:
 					decrease the semen-puddle of the location of the player by 1;
 		otherwise:
 			now the crawl count of the player is 0.
-
 
 
 Chapter - Class Outfit
@@ -123,7 +122,7 @@ To compute class outfit of (H - a maid headdress):
 			say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
 			summon S uncursed;
 		otherwise if W is actually summonable:
-			say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+			say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
 			summon W uncursed.
 
 
@@ -181,7 +180,7 @@ To compute generic class reward of (Q - puddle-cleaning-quest) on (C - a clothin
 		if P is cloth and the work ethic of P < 0:
 			compute generic second time class reward of Q on C;
 		otherwise if P is cloth:
-			say "Your [printed name of P] lights up, emitting a lemony scent as a matching pink spraybottle materializes in your other hand!";
+			say "Your [printed name of P] lights up, emitting a lemony scent as a matching pink spraybottle materialises in your other hand!";
 			now P is spray;
 			now the charge of P is 1;
 		otherwise if P is cursed:
@@ -242,6 +241,4 @@ To decide which number is the initial cringe of (C - cafe maid headdress):
 Definition: cafe maid headdress is bear themed: decide yes.
 
 
-
 Maid Headdress ends here.
-

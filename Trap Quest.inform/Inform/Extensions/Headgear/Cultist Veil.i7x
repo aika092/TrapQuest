@@ -72,7 +72,6 @@ Report wearing cultist veil:
 Definition: cultist veil is condom pinnable: decide yes.
 
 
-
 Chapter - Class Outfit
 
 Definition: cultist veil (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -149,4 +148,3 @@ To compute generic first time class reward of (Q - insanity-quest) on (C - a clo
 		compute generic second time class reward of Q on C.
 
 Cultist Veil ends here.
-

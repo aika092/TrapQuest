@@ -50,4 +50,3 @@ To compute recipe specific cursing of (T - a queen of hearts heels):
 Definition: a queen of hearts heels is strut enabling: decide yes.
 
 Queen of Hearts Heels ends here.
-

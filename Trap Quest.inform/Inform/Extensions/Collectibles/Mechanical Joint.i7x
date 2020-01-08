@@ -15,4 +15,3 @@ To say ShortDesc of (C - a mechanical joint):
 	say "mechanical joint".
 
 Mechanical Joint ends here.
-

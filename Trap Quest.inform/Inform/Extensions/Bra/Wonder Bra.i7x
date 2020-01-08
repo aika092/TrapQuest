@@ -30,4 +30,3 @@ To decide which number is the adult-influence of (C - a wonder bra):
 	decide on 1.
 
 Wonder Bra ends here.
-

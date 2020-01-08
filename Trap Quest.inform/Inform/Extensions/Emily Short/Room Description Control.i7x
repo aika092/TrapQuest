@@ -94,7 +94,6 @@ Definition: a thing is mentionable if it is marked for listing and it is unmenti
 Definition: a thing is descriptively dull if the description-rank of it is lowest-rank.
 
 
-
 [This portion makes sure that items that are listed together in groups get properly flagged 'mentioned':]
 
 After printing the plural name of something (called target):
@@ -109,7 +108,7 @@ After printing the plural name of something (called target):
 To decide whether (X - a thing) nominally matches (Y - a thing):
 	(- ({X}.list_together == {Y}.list_together) -)
 
-[Used to be: "To call (RL - an objects based rule) on everything in scope:",  but 6M62 will only have it this way]
+[Used to be: "To call (RL - an objects based rule) on everything in scope:", but 6M62 will only have it this way]
 To call (RL - a rule) on everything in scope:
 (-
    processing_rule = {RL};
@@ -209,7 +208,7 @@ All the ranking rules are considered in sequence unless a rule explicitly succee
 
 Section: Reporting to the player
 
-(3) Writing a paragraph about. Finally, Room Description Control goes through the Table of Seen Things and executes the Writing a paragraph about activity for each unmentioned item it finds there. (Things whose names have been printed earlier during the room description are thereafter marked "mentioned" and will not have their writing a paragraph about activity called. This emulates the default behavior of Inform.)
+(3) Writing a paragraph about. Finally, Room Description Control goes through the Table of Seen Things and executes the Writing a paragraph about activity for each unmentioned item it finds there. (Things whose names have been printed earlier during the room description are thereafter marked "mentioned" and will not have their writing a paragraph about activity called. This emulates the default behaviour of Inform.)
 
 An item is considered to be "mentionable" when it is unmentioned and marked for listing.
 
@@ -219,7 +218,7 @@ Several possible collections of writing-a-paragraph rules are provided as sister
 
 The minimalist "Single Paragraph Description" combines all description of all items into a single paragraph. This is likely to be unattractive and unruly in all but the most spartan games, but it is provided in response to a specific author request.
 
-"Ordinary Room Description" emulates as closely as possible the Inform default behavior while still relying on Room Description Control; this means that concealment and priority rules can be applied while otherwise retaining the look and feel of a game. Ordinary Room Description also makes use of the listing nondescript items activity.
+"Ordinary Room Description" emulates as closely as possible the Inform default behaviour while still relying on Room Description Control; this means that concealment and priority rules can be applied while otherwise retaining the look and feel of a game. Ordinary Room Description also makes use of the listing nondescript items activity.
 
 "Tailored Room Description" is the most complex solution: it does away with parenthetical lists of contents and instead produces detailed full paragraphs.
 

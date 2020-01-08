@@ -254,4 +254,3 @@ To compute talk option (N - 4) to (M - a slimegirl):
 
 
 Slimegirl ends here.
-

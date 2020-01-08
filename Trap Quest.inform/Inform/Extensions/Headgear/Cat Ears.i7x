@@ -52,7 +52,7 @@ To compute class outfit of (H - cat-ears):
 		now the raw-magic-modifier of M is the stance of the player;
 		now kitty-summoned is 2;
 	otherwise if W is actually summonable and the class of the player is magical girl:
-		say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+		say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
 		summon W;
 	otherwise if K is actually summonable or (K is kitty claws and kitty-summoned is 0):
 		if kitty-summoned is 0:
@@ -87,6 +87,4 @@ To say QuestTitle of (Q - puddle-licking-quest):
 	say " ([if diaper quest is 1]milk drinking[otherwise]puddle licking[end if] quest)".
 
 
-
 Cat Ears ends here.
-

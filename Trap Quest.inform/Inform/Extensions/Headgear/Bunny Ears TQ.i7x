@@ -70,7 +70,6 @@ To decide which number is the waitress bartering value of (T - a bottle) for (M 
 	decide on 0.
 
 
-
 To say OfferFlav of (T - a waitress vessel):
 	if the player is able to speak:
 		say "[variable custom style]'[if the second noun is unfriendly]Please, take this instead!'[otherwise if bunny waitress ears is worn and T is non-empty]Would you care for a drink?'[otherwise if the class of the player is royal slave]Please accept this freshly brewed milk as a gift from the Princess.'[otherwise]Would you be interested in this?'[end if][roman type][line break]";
@@ -346,7 +345,6 @@ Part 4 - Bunny Glasses
 bunny glasses is a bunny ears.
 
 trap-braving-quest is a headgear-clothing-quest.
-
 
 
 Bunny Ears TQ ends here.

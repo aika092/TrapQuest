@@ -314,7 +314,7 @@ For instance our Table of Options might look like this:
 	"How do I reach the mastodon's jawbone?"	Table of Mastodon Hints		""	hint toggle rule
 	"How can I make Leaky leave me alone?"	Table of Leaky Hints	""	hint toggle rule
 
-	[where the toggle is always "hint toggle rule", and the subtable is always a table containing the hints themselves. A table of hints consists of just two columns, and one of those is for internal bookkeeping and should be initialized to contain a number. So:]
+	[where the toggle is always "hint toggle rule", and the subtable is always a table containing the hints themselves. A table of hints consists of just two columns, and one of those is for internal bookkeeping and should be initialised to contain a number. So:]
 
 	Table of Mastodon Hints
 	hint	used

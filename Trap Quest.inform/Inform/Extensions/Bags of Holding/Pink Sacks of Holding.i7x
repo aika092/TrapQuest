@@ -51,6 +51,4 @@ To say ShortDesc of (C - a bimbo pink sack of holding):
 Definition: a bimbo pink sack of holding is heart themed: decide yes.
 
 
-
 Pink Sacks of Holding ends here.
-

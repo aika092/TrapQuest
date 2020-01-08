@@ -54,6 +54,4 @@ Report SelfDrinking:
 	progress quest of milk-drinking-quest.
 
 
-
 Self Drinking ends here.
-

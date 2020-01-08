@@ -177,7 +177,7 @@ To say IcarusSummonFlav of (C - a clothing):
 To compute Icarus science of (M - Icarus):
 	let C be a random off-stage IcarusScienceAppropriate wearthing;
 	if C is wearthing:
-		say "[speech style of M]'[one of]Sweet! Let's do this.'[or]Okay, cool!  Here we go...'[or]Nice! Right, stay still...'[at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
+		say "[speech style of M]'[one of]Sweet! Let's do this.'[or]Okay, cool! Here we go...'[or]Nice! Right, stay still...'[at random][roman type][line break]Pointing [his of M] hands towards you, [NameDesc of M] concentrates. ";
 		compute IcarusSummon of C;
 		if M is outrage disapproving:
 			FavourDown M by 1;
@@ -204,7 +204,6 @@ To compute Icarus science of (M - Icarus):
 	otherwise:
 		say "[speech style of M]'Hmm, actually I've changed my mind. See you later.'[roman type][line break][BigNameDesc of M] loses interest.";
 		bore M.
-
 
 
 bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
@@ -237,7 +236,6 @@ To decide which number is the initial outrage of (C - bondage-ribbons):
 	decide on 11.
 
 
-
 chain-collar is a submissive collar. chain-collar is unique. chain-collar is leather. The text-shortcut of chain-collar is "chnc". The printed name of chain-collar is "[clothing-title-before]chain collar[clothing-title-after]". Understand "chain", "collar" as chain-collar.
 
 Definition: chain-collar is grey themed: decide yes.
@@ -262,7 +260,6 @@ To decide which number is the initial outrage of (C - chain-collar):
 	decide on 4.
 
 
-
 leather-jacket is a jacket. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
@@ -279,12 +276,10 @@ To say ClothingDesc of (C - leather-jacket):
 	say "A thin black leather jacket that doesn't have enough fabric to be able to button up at your front. In fact it's more of a half-jacket, that barely covers your nipples and exposes your middle.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
 
 
-
 Definition: a pink rubber shirt is IcarusScienceAppropriate if it is actually summonable.
 Figure of pink rubber shirt full is the file "Items/Clothes/Upper/Latex/latexshirt2.jpg".
 To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt full.
-
 
 
 icarus-butt is a wearthing.
@@ -358,8 +353,6 @@ To decide which figure-name is icarus-clothing-image of (C - icarus-pasties):
 	decide on figure of icarus-pasties full.
 To say ClothingDesc of (C - icarus-pasties):
 	say "Two slightly sheer black pasties made of a flimsy fabric are all that cover your nipples.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
-
-
 
 
 Part 4 - Combat
@@ -610,4 +603,3 @@ To say DismissalResponseStalker of (M - Icarus):
 	say "[speech style of M]'[if M is interested]Oi, I'm gathering important data here! How dare you[otherwise]Hmm, I guess it would be a breach of company policy for me to distract you for any longer[end if].'[roman type][line break]".
 
 Icarus ends here.
-

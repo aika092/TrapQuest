@@ -231,8 +231,4 @@ To teleport via (W - a warp portal):
 		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]".
 
 
-
-
-
 Warp Portal ends here.
-

@@ -147,7 +147,7 @@ Carry out BabChanging it with:
 		now SD is carried by the player;
 		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
 	only destroy the second noun.
-Understand "change [a person] with [something]", "change [a person] into [something]" as BabChanging it with.
+Understand "change [a person] with [something]", "change [a person] into [something]", "change [a person] using [something]" as BabChanging it with.
 
 
 Soiled Diaper ends here.

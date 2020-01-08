@@ -58,4 +58,3 @@ Definition: doom notes is immune to change: decide yes.
 Definition: doom notes is ingredient: decide no.
 
 Doom Stuff ends here.
-

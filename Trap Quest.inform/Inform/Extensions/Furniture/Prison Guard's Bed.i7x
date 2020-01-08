@@ -25,4 +25,3 @@ To say RestingDesc of (F - prison guard's bed):
 
 
 Prison Guard's Bed ends here.
-

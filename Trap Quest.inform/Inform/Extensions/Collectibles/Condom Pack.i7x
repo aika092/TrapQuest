@@ -1,7 +1,7 @@
 Condom Pack by Collectibles begins here.
 
 
-condom-pack is a thing. condom-pack is in Dungeon07. The printed name of condom-pack is "[TQlink of item described]condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-pack is "cdp". Understand ["condom", ]"pack", "condom pack", "condom box", "box", "super", "safe" as condom-pack. condom-pack can be condom-trapped.
+condom-pack is a thing. condom-pack is in Dungeon07. The printed name of condom-pack is "[TQlink of item described]condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-pack is "cdp". Understand ["condom", ]"pack", "condom pack", "pack of condoms", "condom box", "box of condoms", "box", "super", "safe" as condom-pack. condom-pack can be condom-trapped.
 
 A diaper quest fix rule:
 	remove condom-pack from play.
@@ -342,4 +342,3 @@ To compute spontaneous condom of (C - a clothing):
 	force clothing-focus redraw. [Forces redraw of clothing window]
 
 Condom Pack ends here.
-

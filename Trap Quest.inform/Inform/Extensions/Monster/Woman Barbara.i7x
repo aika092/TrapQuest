@@ -82,21 +82,21 @@ if (tg fetish is 1 and the woman-bimbo of M < 2 and lady fetish is not 1) or lad
 ]
 To say MonsterDesc of (M - woman-barbara):
 	if lady fetish is 2:
-		if the woman-bimbo of M is 0, say "A slim, brown-haired man wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. His strong jawline is darkened with stubble, and although most of his skin is covered up, you can tell he's fairly athletic. He is wearing a pair of square-rimmed glasses and carrying a modern-looking pistol.";[Barney]
-		if the woman-bimbo of M is 1, say "A man with ear-length brown hair and a soft cast to his facial features that makes him look very feminine. He is wearing a black fishnet shirt under a cropped leather jacket, and a matching pair of fishnet leggings underneath a pair of form-hugging leather shorts. The glasses resting on the bridge of his nose are slightly askew, and he is carrying a modern-looking pistol.";[Barry]
-		if the woman-bimbo of M is 2, say "A long haired brunette wearing a black fishnet shirt underneath a tight black leather corset. Below that, he's wearing a pair of torn fishnet leggings and a tiny pair of black hotpants, which provides the bare minimum of modesty for [his of M] crotch. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
-		if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that his [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
-		if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on his top half but a sheer lace bra that leaves his nipples very visible. He is wearing black suspenders and stockings but no underwear, leaving his [manly-penis], which is locked into chastity, fully exposed. He is wearing heavily done make up. You can tell by his facial expressions that he's having more trouble than usual thinking straight.";
-		if the woman-bimbo of M is 5, say "A man is wearing nothing on his top half at all except a tight black latex choker around his neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose his chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. He is wearing a very heavy amount of make up. You can tell by his facial expressions that he's having huge amounts of trouble thinking straight.";
+		if the woman-bimbo of M is 0, say "A slim, brown-haired [man of M] wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. [big his of M] strong jawline is darkened with stubble, and although most of [his of M] skin is covered up, you can tell [he of M]'s fairly athletic. [big he of M] is wearing a pair of square-rimmed glasses and carrying a modern-looking pistol.";[Barney]
+		if the woman-bimbo of M is 1, say "A [man of M] with ear-length brown hair and a soft cast to [his of M] facial features that makes him look very feminine. [big he of M] is wearing a black fishnet shirt under a cropped leather jacket, and a matching pair of fishnet leggings underneath a pair of form-hugging leather shorts. The glasses resting on the bridge of [his of M] nose are slightly askew, and [he of M] is carrying a modern-looking pistol.";[Barry]
+		if the woman-bimbo of M is 2, say "A long haired brunette wearing a black fishnet shirt underneath a tight black leather corset. Below that, [he of M]'s wearing a pair of torn fishnet leggings and a tiny pair of black hotpants, which provides the bare minimum of modesty for [his of M] crotch. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
+		if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [his of M] [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
+		if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] [manly-penis], which is locked into chastity, fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";
+		if the woman-bimbo of M is 5, say "A [man of M] is wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose [his of M] chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that [he of M]'s having huge amounts of trouble thinking straight.";
 		if the woman-bimbo of M is 6:
-			say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if] and a matching white chastity cage around his [sissy-penis]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] fuckhole. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";
+			say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if] and a matching white chastity cage around [his of M] [sissy-penis]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] fuckhole. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";
 	otherwise:
-		if the woman-bimbo of M is 0, say "A short haired, flatchested brunette wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. She isn't wearing makeup, so her naturally sharp facial features are accentuated by the glasses resting on the bridge of her nose. She is carrying a modern-looking pistol.";[no cleavage, crotch covered]
-		if the woman-bimbo of M is 1, say "A long haired, slim brunette wearing a black fishnet shirt under a cropped leather jacket and a matching pair of form-hugging leather shorts over a pair of black fishnet leggings. She is wearing glasses over a small amount of makeup, and carrying a modern-looking pistol.";[cleavage, nipples covered, crotch covered]
+		if the woman-bimbo of M is 0, say "A short haired, flat-chested brunette wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. [big he of M] isn't wearing makeup, so [his of M] naturally sharp facial features are accentuated by the glasses resting on the bridge of [his of M] nose. [big he of M] is carrying a modern-looking pistol.";[no cleavage, crotch covered]
+		if the woman-bimbo of M is 1, say "A long haired, slim brunette wearing a black fishnet shirt under a cropped leather jacket and a matching pair of form-hugging leather shorts over a pair of black fishnet leggings. [big he of M] is wearing glasses over a small amount of makeup, and carrying a modern-looking pistol.";[cleavage, nipples covered, crotch covered]
 		if the woman-bimbo of M < 3, say "A long haired, big breasted brunette wearing a black fishnet shirt underneath a tight black leather corset, and a pair of torn fishnet leggings under a tiny pair of black hotpants, which provides modesty for [his of M] crotch region but little else. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";[nipples exposed, crotch covered]
 		if the woman-bimbo of M is 3, say "A long haired, large breasted brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [he of M][']s not wearing underwear and barely provides any modesty for [his of M] pussy. [big he of M] is wearing glasses over a decent amount of makeup.";[nipples exposed, crotch almost visible]
-		if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that she's having more trouble than usual thinking straight.";[nipples exposed, crotch exposed]
-		if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that she's having huge amounts of trouble thinking straight.";[basically naked]
+		if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";[nipples exposed, crotch exposed]
+		if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that [he of M]'s having huge amounts of trouble thinking straight.";[basically naked]
 		if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] two lower fuckholes. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";[actually naked]
 	if M is tentacle-pregnant, say "[big his of M] massive bulging belly is a clear sign that [he of M][']s pregnant, and probably with something inhuman.";
 	if the human-toilet-scene of M is 1, say "[big he of M] is wearing oversized nipple rings and has the words 'TOILET SLUT' and 'URINAL GIRL' permanently written onto [his of M] flesh.";
@@ -202,7 +202,7 @@ To compute perception of (M - woman-barbara):
 
 To compute (M - a minotaur) stomping (N - woman-barbara):
 	if M is in the location of the player:
-		say "[BigNameDesc of M] grabs [NameDesc of N] by the ankles. [big he of N] shrieks as [he of N] is slowly impaled onto the waiting [LongDickDesc of M]. It takes only a few thrusts for [him of M] to start cumming - you can tell because [his of N] belly expands at an alarming rate. An impossible amount of [semen] fills [his of N] up and with one last wail you see [his of N] sounds cut off by the [semen] flying out of [his of N] mouth. [big he of N] soon loses consciousness and [NameDesc of M] discards [his of N] body. [big he of N] lands on [his of N] back with [his of N] belly covering most of [his of N] body.";
+		say "[BigNameDesc of M] grabs [NameDesc of N] by the ankles. [big he of N] shrieks as [he of N] is slowly impaled onto the waiting [LongDickDesc of M]. It takes only a few thrusts for [him of M] to start cumming - you can tell because [his of N] belly expands at an alarming rate. An impossible amount of [semen] fills [him of N] up and with one last wail you see [his of N] sounds cut off by the [semen] flying out of [his of N] mouth. [big he of N] soon loses consciousness and [NameDesc of M] discards [his of N] body. [big he of N] lands on [his of N] back with [his of N] belly covering most of [his of N] body.";
 		let L be a random off-stage leftover;
 		now L is in the location of M;
 		now the leftover-type of L is the leftover-type of N;
@@ -467,7 +467,7 @@ This is the mechanic facefucks barbara rule:
 			now J is solid gold;
 			set shortcut of J;
 			now J is in the location of the player;
-			say "[BigNameDesc of M] moans as [he of M] cums, [his of M] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [Big he of M] removes [his of M] [Dickdesc of M] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of M] drops the [J] in front of you.[line break][speech style of M]'Money well spent.'[roman type][line break]";
+			say "[BigNameDesc of M] moans as [he of M] cums, [his of M] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [big he of M] removes [his of M] [Dickdesc of M] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of M] drops the [J] in front of you.[line break][speech style of M]'Money well spent.'[roman type][line break]";
 			now the latest-appearance of M is the appearance of the player; [to stop him suddenly noticing the player and deciding to bang]
 			satisfy mechanic;
 			now mechanic is unleashed;
@@ -699,7 +699,7 @@ woman-barbara has a number called human-toilet-scene.
 To check barbara toilet:
 	if the player is in Hotel38 and watersports fetish is 1:
 		if the human-toilet-scene of woman-barbara is 0 and woman-barbara is not permanently dead and woman-barbara is introduced and woman-barbara is not nearby and woman-barbara is not in the location of the player and the woman-bimbo of woman-barbara >= a random number between 2 and 5 and the woman-status of woman-barbara < 10:
-			say "A groaning, gurgling noise from below you makes you notice that the woman below you looks different from usual.";
+			say "A groaning, gurgling noise from below you makes you notice that the [man of woman-barbara] below you looks different from usual.";
 			cutshow figure of barbara cutscene 4 for toilet;
 			say "Looking [if the player is female]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-barbara]! [big he of woman-barbara] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-barbara]'Wease eh ee ow! Weeeease! Ha hay-hron hah heh hee!'[roman type][line break]You think you understand what [he of woman-barbara][']s saying? There's a key that can be used to release [him of woman-barbara], but it's currently in the possession of a hotel patron. Perhaps if you spend enough time in the hotel, you'll be able to encounter [him of a random patron] and agree to pay some kind of... [']ransom[']. Until then there's nothing you can do about the fact that [NameDesc of woman-barbara] is the new hotel toilet. It's up to you how many more times you use [his of woman-barbara] mouth as your waste disposal unit. You doubt it'll be very good for [his of woman-barbara] sanity, but it might help you feel more dominant.";
 			now the human-toilet-scene of woman-barbara is 2;
@@ -943,7 +943,7 @@ To say BarbaraStoolFuckReactionFlav of (M - a monster):
 
 To say BarbaraStoolFuckClimaxFlav of (M - a monster):
 	let W be woman-barbara;
-	say "[BigNameDesc of M] [one of]thrusts [his of M] hips back and forth with no visible care or concern for whether [NameDesc of W] enjoys [himself of W][or]jackhammers in and out at impressive speed[or]enjoys [himself of M] with long, slow thrusts, each one going as deep as [his of M] [DickDesc of M] will allow[in random order], until [he of M] [one of]grunts[or]moans animalistically[at random] and [one of]fills [NameDesc of W][']s belly with more [semen][or]sends [his of M] swimmers [if pregnancy fetish is 1]searching in vain for an egg to fertilize [end if]down the wrong hole[in random order].";
+	say "[BigNameDesc of M] [one of]thrusts [his of M] hips back and forth with no visible care or concern for whether [NameDesc of W] enjoys [himself of W][or]jackhammers in and out at impressive speed[or]enjoys [himself of M] with long, slow thrusts, each one going as deep as [his of M] [DickDesc of M] will allow[in random order], until [he of M] [one of]grunts[or]moans animalistically[at random] and [one of]fills [NameDesc of W][']s belly with more [semen][or]sends [his of M] swimmers [if pregnancy fetish is 1]searching in vain for an egg to fertilise [end if]down the wrong hole[in random order].";
 
 To compute PlayerBarbaraStoolFuck:
 	if the latex-transformation of the player >= 6:
@@ -956,7 +956,7 @@ To compute PlayerBarbaraStoolFuck:
 		say "Do you want to [if S is clothing]use your [SexDesc of penis] on[otherwise]fuck[end if] [his of woman-barbara] [asshole]?";
 		if the player is consenting, now PF is S;
 	if PF is penis:[Now that the part we want to use is selected, validate]
-		let S be a random worn dildo-usage strapon-panties;[dildo-usage determines whether the player's dick is sticking out of the strapon]
+		let S be a random worn dildo-usage strapon-panties;[dildo-usage determines whether the player's dick is sticking out of the strap-on]
 		if there is a worn condom of kings:
 			say "You wouldn't feel anything from it, so you don't see the point.";
 			now PF is vagina;
@@ -1003,7 +1003,6 @@ Check pulling woman-barbara when the woman-status of woman-barbara is 80 and the
 	FavourUp the noun by 4;
 	now the stool-scene of the noun is 2;
 	vanish the noun instead.
-
 
 
 Chapter - Throne Scene
@@ -1058,9 +1057,6 @@ A time based rule (this is the barbara throne rule):
 			vanish W.
 
 
-
-
-
 Chapter - Crafting Scene
 
 woman-barbara has a number called crafting-scene.
@@ -1098,10 +1094,6 @@ Report going when the player is in Dungeon37 and the player is an april 2019 top
 				say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
 				ImmediateWomanUnsluttify;
 			say MonsterDesc of W.
-
-
-
-
 
 
 Part 4 - Wandering
@@ -1159,7 +1151,7 @@ This is the woman gives birth to a tentacle monster rule:
 			now M is newborn;
 			set up M;
 			now M is in the location of the player;
-			say "[BigNameDesc of woman-barbara] collapses to the ground.[line break][second custom style]'Oh fuck, it's coming!'[roman type][line break][big he of woman-barbara] spreads [his of woman-barbara] legs, exposing [his of woman-barbara] dilated pussy and womb. You watch with [horror the bimbo of the player] as one, two, then three tentacles pry [his of woman-barbara] cunt open even further and then the thing inside begins to pull itself out.[line break][second custom style]'[if the woman-bimbo of woman-barbara < 4]It hurts! Get it out! It hurts so much[otherwise]I'm going to be a mama[end if]!'[roman type][line break][BigNameDesc of woman-barbara] flails helplessly as a basketball-sized lump of grey flesh forces its way out of [his of woman-barbara] and into the world. [big he of woman-barbara] lies exhausted on the ground as [his of woman-barbara] spawn's single giant eye focuses on you.";
+			say "[BigNameDesc of woman-barbara] collapses to the ground.[line break][second custom style]'Oh fuck, it's coming!'[roman type][line break][big he of woman-barbara] spreads [his of woman-barbara] legs, exposing [his of woman-barbara] dilated pussy and womb. You watch with [horror the bimbo of the player] as one, two, then three tentacles pry [his of woman-barbara] cunt open even further and then the thing inside begins to pull itself out.[line break][second custom style]'[if the woman-bimbo of woman-barbara < 4]It hurts! Get it out! It hurts so much[otherwise]I'm going to be a mama[end if]!'[roman type][line break][BigNameDesc of woman-barbara] flails helplessly as a basketball-sized lump of grey flesh forces its way out of [him of woman-barbara] and into the world. [big he of woman-barbara] lies exhausted on the ground as [his of woman-barbara] spawn's single giant eye focuses on you.";
 			now woman-barbara is not tentacle-pregnant;
 			distract woman-barbara;
 			now the sleep of woman-barbara is 100;
@@ -1387,7 +1379,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 			otherwise if the woman-bimbo of M < 5:
 				say "[big he of M] grins at you. [line break][second custom style]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
-				say "[second custom style]'*Giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
+				say "[second custom style]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 1:
 		if M is interested:
 			say "[second custom style]'There are lots of sex dolls around here at the moment, aren't there?'[roman type][line break]";
@@ -1397,7 +1389,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 			otherwise if the woman-bimbo of M < 5:
 				say "[big he of M] grins at you. [line break][second custom style]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
-				say "[second custom style]'*Giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
+				say "[second custom style]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 2 or the woman-status of M is 7:
 		if the favour of M < the bondage-favour-limit of M:
 			say "[second custom style]'Karma's a bitch, but not as much of a bitch as you.'[roman type][line break]";
@@ -1414,7 +1406,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 			otherwise if the woman-bimbo of M < 5:
 				say "[big he of M] grins at you. [line break][second custom style]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
-				say "[second custom style]'*Giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
+				say "[second custom style]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 3:
 		if the woman-old-bimbo of M is the woman-bimbo of M:
 			if the woman-bimbo of M < 3:
@@ -1429,7 +1421,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 			otherwise if the woman-bimbo of M < 5:
 				say "[big he of M] grins at you. [line break][second custom style]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
-				say "[second custom style]'*Giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
+				say "[second custom style]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 4:
 		if M is interested:
 			say "[second custom style]'Hmm, robots are kind of sexy, I guess?'[roman type][line break]";
@@ -1439,7 +1431,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 			otherwise if the woman-bimbo of M < 5:
 				say "[big he of M] beams at you. [line break][second custom style]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Hey there, honey.'[end if][roman type][line break]";
 			otherwise:
-				say "[second custom style]'*Giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]I'm not called that any more, my name is obviously [current-name of M]!'[otherwise]Look who it is! Aren't you just LOVING this fetish hotel?'[end if][roman type][line break]";
+				say "[second custom style]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]I'm not called that any more, my name is obviously [current-name of M]!'[otherwise]Look who it is! Aren't you just LOVING this fetish hotel?'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 5:
 		say "[second custom style]'[one of][if the woman-bimbo of M < 4]Let's not talk about what just happened okay? [big please]?'[otherwise if the woman-bimbo of M is 4]I can't believe I let you catch me in such a humiliating moment. Maybe I really am a slut...'[otherwise]I feel so much better after sitting on that dildo chair! Yum!'[end if][or][if the woman-bimbo of M < 4]Come on, let's try and find the exit to this crazy hotel.'[otherwise]Exploring the hotel with you is so much fun!'[end if][stopping][roman type][line break]";
 		if the woman-old-bimbo of M is not the woman-bimbo of M, say "[second custom style]'My name is [current-name of M] now, by the way.'[roman type][line break]";
@@ -1475,14 +1467,14 @@ To compute talk option (N - 2) to (M - woman-barbara):
 		if the woman-bimbo of M < 3:
 			say "[one of][line break][second custom style]'How did I get this gun?... You don't want to know what I had to do to get this gun.'[roman type][line break][big he of M] looks ashamed.[or][line break][second custom style]'They tricked you into thinking this was just a normal game? Those bastards, do they not get enough money from the rest of us?! I'm here because I have huge debts I can't pay off, so I'm risking my mind and body for a chance at winning some of the prize money.'[roman type][line break][or][line break][second custom style]'Am I a man or woman in real life? I... can't remember... if I was a man, I doubt I am any more.'[roman type][line break][in random order][line break]";
 		otherwise if the woman-bimbo of M < 5:
-			say "[second custom style]'[one of]How do I keep my hair this dark? I don't know, it never seems to change for me. No idea why, I'd love to try out being a blonde!'[or]Am I a man or woman in real life? I'm clearly woman! I think.'[or]The makeup? Well those mannequins keep coming, and sometimes it's just less risky to let them do what they want, and then they'll stop chasing you. You wouldn't want to get caught by something a lot scarier because you are already too beaten up now, would you?'[in random order][roman type][line break]";
+			say "[second custom style]'[one of]How do I keep my hair this dark? I don't know, it never seems to change for me. No idea why, I'd love to try out being a blonde!'[or]Am I a man or woman in real life? I'm clearly a woman! I think.'[or]The makeup? Well those mannequins keep coming, and sometimes it's just less risky to let them do what they want, and then they'll stop chasing you. You wouldn't want to get caught by something a lot scarier because you are already too beaten up now, would you?'[in random order][roman type][line break]";
 		otherwise:
 			say "[second custom style]'[one of]What happened to me? Lots of fun things, that's what!'[or]I'm sorry I have no idea what you just said, I was too busy thinking about [manly-penis]s.'[or]Escape? Why would I want to escape?'[in random order][roman type][line break]";
 	otherwise if the woman-status of M is 2 and the favour of M < the bondage-favour-limit of M:
 		say "[second custom style]'[one of]Why am I not giving you the key? Payback, of course. What else?'[or]Payback for what? You bloody well know what.'[or]Plead all you want, I'm not changing my mind.'[stopping][roman type][line break]";
 	otherwise if the woman-status of M is 3:
 		if the woman-bimbo of M < 5:
-			say "[second custom style]'[one of]Why am I back down here? Can you keep a secret? I may have pulled the lever for the [ShortDesc of minotaur]! Tee hee!'[or]If I were you, I've leave the Dungeon before it finds you!'[or]I don't know what happens if the [ShortDesc of minotaur] catches you, but something tells me it's pretty unique!'[cycling][roman type][line break]";
+			say "[second custom style]'[one of]Why am I back down here? Can you keep a secret? I may have pulled the lever for the [ShortDesc of minotaur]! Tee-hee!'[or]If I were you, I've leave the Dungeon before it finds you!'[or]I don't know what happens if the [ShortDesc of minotaur] catches you, but something tells me it's pretty unique!'[cycling][roman type][line break]";
 		otherwise:
 			say "[second custom style]'[one of]Why am I back down here? To [']fight['] the [ShortDesc of minotaur], of course, silly!'[or]Yep, I've let it out! If I were you, I've leave the Dungeon before it finds you! Unless you want to join in with the fun?'[or]I don't know what happens if the [ShortDesc of minotaur] catches you, that's why I want to find out!'[cycling][roman type][line break]";
 	otherwise if playerRegion is Dungeon:
@@ -1496,7 +1488,7 @@ To compute talk option (N - 2) to (M - woman-barbara):
 		if the woman-bimbo of M < 4:
 			say "[second custom style]'[one of]I'm still looking for the way out. I hope you haven't fallen into complete depravity yet, have you?'[or]From the looks of it, I'd say that the mechanic looks like he's probably the most dangerous of the lot. But it's just a hunch.'[or]I'd just had way too much trouble with those vines, so I came up here to get away from here. And now I have to deal with robots! Grr!'[in random order][roman type][line break]";
 		otherwise:
-			say "[second custom style]'[one of]I'm getting myself some deliciously thick robot cock! What about you?'[or]I don't know who's the strongest here, but it's definitely not me! Tee hee.'[or]Ooh, yes, you must try the modification machine in room 101 - I feel much more ready to [']take on['] the monsters now, if you know what I mean.'[in random order][roman type][line break]";
+			say "[second custom style]'[one of]I'm getting myself some deliciously thick robot cock! What about you?'[or]I don't know who's the strongest here, but it's definitely not me! Tee-hee.'[or]Ooh, yes, you must try the modification machine in room 101 - I feel much more ready to [']take on['] the monsters now, if you know what I mean.'[in random order][roman type][line break]";
 	otherwise if there is a revealed hypno trap in the location of M: [looking at hypno trap]
 		say "[second custom style]'Uuuuuuuuh...'[roman type][line break]";
 	otherwise if the woman-status of M >= 90:
@@ -1531,4 +1523,3 @@ To say Undismissable of (M - woman-barbara):
 	say "[BigNameDesc of M] seems [if the woman-status of M is 80]a bit confused[otherwise]to choose to ignore that[end if].".
 
 Woman Barbara ends here.
-

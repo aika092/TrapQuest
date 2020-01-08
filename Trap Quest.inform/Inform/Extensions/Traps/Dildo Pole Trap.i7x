@@ -379,8 +379,6 @@ This is the spawn initial dildo pole traps rule:
 The spawn initial dildo pole traps rule is listed in the set up dungeon traps rules.
 
 
-
-
 Part 2 - Drill Pole Trap
 
 [!<DrillPoleTrap>@
@@ -640,4 +638,3 @@ To compute orgasm resolution of (R - a ghostly dildo pole trap):
 
 
 Dildo Pole Trap ends here.
-

@@ -98,6 +98,4 @@ To transform (D - a clothing) into (C - a baby royal dress):
 	say "[TransformReaction of C]".
 
 
-
 Royal Dress ends here.
-

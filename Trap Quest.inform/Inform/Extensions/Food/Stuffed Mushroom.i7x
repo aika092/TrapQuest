@@ -1,7 +1,6 @@
 Stuffed Mushroom by Food begins here.
 
 
-
 A stuffed mushroom is a kind of chef food. There is 1 stuffed mushroom. The printed name of a stuffed mushroom is "[TQlink of item described]stuffed mushroom[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a stuffed mushroom is "[TQlink of item described]stuffed mushrooms[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of stuffed mushroom is usually "sm".
 
 To say ExamineDesc of (C - a stuffed mushroom):
@@ -43,4 +42,3 @@ Carry out TQeating stuffed mushroom:
 
 
 Stuffed Mushroom ends here.
-

@@ -94,4 +94,3 @@ Understand "knee [something]", "kn [something]", "strike [something] with knee",
 
 
 Kneeing ends here.
-

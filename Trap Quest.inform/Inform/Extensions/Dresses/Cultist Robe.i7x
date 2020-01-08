@@ -25,4 +25,3 @@ Definition: a cultist robe is black themed: decide yes.
 Definition: a cultist robe is slitted: decide yes.
 
 Cultist Robe ends here.
-

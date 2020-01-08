@@ -188,4 +188,3 @@ To say NeedleTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 
 Needle Trap ends here.
-

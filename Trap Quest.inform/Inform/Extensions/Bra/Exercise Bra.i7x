@@ -75,4 +75,3 @@ To decide which object is the unique-upgrade-target of (C - a greyish exercise b
 Definition: a greyish exercise bra is IcarusScienceAppropriate if it is actually summonable.
 
 Exercise Bra ends here.
-

@@ -10,7 +10,7 @@ Table of Pregnancy Options
 title	subtable	description	toggle
 "I would rather not give birth to something bizarre or inhuman."	--	--	inhuman pregnancy hater rule
 "If it's at least partly human and doesn't come back I'm sure I'll be fine, but nothing too weird please!"	--	--	inhuman pregnancy disliker rule
-"I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate!  (+1 point)"	--	--	inhuman pregnancy rule
+"I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate! (+1 point)"	--	--	inhuman pregnancy rule
 
 
 [!<TheInhumanPregnancyRule>+
@@ -39,11 +39,6 @@ REQUIRES COMMENTING
 This is the inhuman pregnancy hater rule:
 	now choice in row 20 of the Table of Player Options is 0;
 	follow quit rule.
-
-
-
-
-
 
 
 [!<randomSlowPregnancy:Integer>*
@@ -163,8 +158,6 @@ This is the slow pregnancy lover rule:
 	follow quit rule.
 
 
-
-
 [!<tableOfSlowBirthOptions:Table>*
 
 REQUIRES COMMENTING
@@ -206,7 +199,6 @@ This is the fast birth lover rule:
 	follow quit rule.
 
 
-
 [!<TheSuperfastBirthLoverRule>+
 
 REQUIRES COMMENTING
@@ -226,7 +218,4 @@ This is the random birth lover rule:
 	follow quit rule.
 
 
-
-
 Pregnancy Options ends here.
-

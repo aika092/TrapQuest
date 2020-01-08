@@ -22,4 +22,3 @@ To compute (M - a robochef) cooking (I - an apple):
 
 
 Apple ends here.
-

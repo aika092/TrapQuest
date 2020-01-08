@@ -1,6 +1,6 @@
 Golden Tiara by Headgear begins here.
 
-gold-tiara is a headgear. gold-tiara is metal.  gold-tiara is redness-positive. gold-tiara is hair growing. gold-tiara is roleplay. gold-tiara is womanly. Understand "gold", "golden", "tiara" as gold-tiara.
+gold-tiara is a headgear. gold-tiara is metal. gold-tiara is redness-positive. gold-tiara is hair growing. gold-tiara is roleplay. gold-tiara is womanly. Understand "gold", "golden", "tiara" as gold-tiara.
 
 Figure of gold-tiara is the file "Items/Accessories/Head/royaltiara2.jpg".
 
@@ -41,14 +41,14 @@ To compute class outfit of (H - gold-tiara):[TODO: acolyte arm braces]
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		summon B;
-		say "[bold type]Your tiara shivers, and a [printed name of B] materializes on your chest![roman type][line break]";
+		say "[bold type]Your tiara shivers, and a [printed name of B] materialises on your chest![roman type][line break]";
 		if gold-summoned < 2, now gold-summoned is 2;
 	otherwise if T is not worn and (gold-summoned < 3 or T is actually summonable):
 		repeat with O running through worn crotch covering clothing:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		summon T;
-		say "[bold type]Your tiara shivers, and a [printed name of T] materializes on your crotch.[roman type][line break]";
+		say "[bold type]Your tiara shivers, and a [printed name of T] materialises on your crotch.[roman type][line break]";
 		if gold-summoned < 3, now gold-summoned is 3.
 
 

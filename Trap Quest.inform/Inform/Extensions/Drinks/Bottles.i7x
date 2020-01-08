@@ -299,6 +299,4 @@ To destroy (T - a bottle):
 	dislodge T.
 
 
-
 Bottles ends here.
-

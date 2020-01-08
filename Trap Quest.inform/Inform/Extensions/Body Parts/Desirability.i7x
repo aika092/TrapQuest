@@ -36,7 +36,6 @@ REQUIRES COMMENTING
 targeted-body-part is an object that varies.
 
 
-
 [!<DecideWhichNumberIsTotalDesirability>+
 
 REQUIRES COMMENTING
@@ -185,4 +184,3 @@ the butt slut eligibility rules is a rulebook.
 
 
 Desirability ends here.
-

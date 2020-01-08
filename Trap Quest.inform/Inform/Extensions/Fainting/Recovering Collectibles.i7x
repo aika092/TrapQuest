@@ -16,4 +16,3 @@ To Recover Collectibles:
 	now the pink pill is held by the player.
 
 Recovering Collectibles ends here.
-

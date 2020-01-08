@@ -147,6 +147,4 @@ To say SemenEncounterFlav:
 		say "[if the semen addiction of the player < 6][line break][first custom style][one of]Fuck[or]Shit[or]No no no[purely at random]![otherwise if the semen addiction of the player < 9][line break][variable custom style][one of]Gross[or]Eew[or]Grr[stopping].[otherwise if the semen addiction of the player < 12][otherwise if the semen addiction of the player < 15][line break][second custom style]Ooh, yummy![otherwise if the bimbo of the player < 17][second custom style]I want more![otherwise][second custom style][NameBimbo][one of] wants more[or] needs more[or][']s not full yet[then at random]![end if][roman type][line break]".
 
 
-
 Semen Addiction ends here.
-

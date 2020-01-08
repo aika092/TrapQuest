@@ -123,7 +123,6 @@ REQUIRES COMMENTING
 The player has a number called raw semen taste addiction. The raw semen taste addiction of the player is usually 1. [Min 1 Max 20]
 
 
-
 [!<Player>@<rawOralSexAddiction:Integer>*
 
 
@@ -188,7 +187,6 @@ To SemenTasteAddictUp (X - a number):
 			increase the raw semen taste addiction of the player by 1.
 
 
-
 To SemenTasteAddictDown (X - a number):
 	let S be the raw semen taste addiction of the player;
 	SilentlySemenTasteAddictDown X;
@@ -204,6 +202,4 @@ To SilentlySemenTasteAddictDown:
 	if the raw semen taste addiction of the player > 1, decrease the raw semen taste addiction of the player by 1.
 
 
-
 Semen Taste and Oral Sex Addiction ends here.
-

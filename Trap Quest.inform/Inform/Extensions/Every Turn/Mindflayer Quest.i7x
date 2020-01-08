@@ -17,7 +17,6 @@ REQUIRES COMMENTING
 mindflayer spawned is a number that varies. mindflayer spawned is 0.
 
 
-
 [!<Player>@<domination:Integer>*
 
 REQUIRES COMMENTING
@@ -49,7 +48,7 @@ A later time based rule (this is the mindflayer quest rule):
 		say "You hear a strange tapping sound, and suddenly a voice rings out as though from a PA system! [line break][second custom style]'Testing, testing. Is this thing on? Hello, testers! It appears a monster from a not-yet-implemented area has inadvertently been introduced into the live test area. We[']re not really sure how this happened, but this does highlight the importance of your job as testers. We don[']t seem to be able to despawn it ourselves, if one of you could be a dear and destroy it so we can analyse its data we would really appreciate it.[roman type][line break]";
 		now mindflayer quest is 1;
 	if mindflayer quest is 1 and mind flayer is off-stage:
-		say "The PA system comes alive again. [line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it, it[']s an item from later in the game so it[']s probably pretty powerful.'[roman type][line break]";
+		say "The PA system comes alive again. [line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it; it[']s an item from later in the game so it[']s probably pretty powerful.'[roman type][line break]";
 		now mindflayer quest is 2.
 
 
@@ -67,7 +66,7 @@ A time based rule (this is the mindflayer domination rule):
 			otherwise if (a random number between 1 and 3 < 3) and (the raw oral sex addiction of the player < 10):
 				say "Images of erect penises fill your mind, and you hear a voice in your head! [line break][first custom style]'You hunger to taste the prize inside of us.'[roman type][line break]You feel a sudden strange longing to fill your mouth with [manly-penis]!";
 				OralSexAddictUp 1;
-			otherwise if (a random number between 1 and 2 < 3)	and (the humiliation of the player < 40000):
+			otherwise if (a random number between 1 and 2 < 3) and (the humiliation of the player < 40000):
 				say "You see images of yourself mindlessly complying as men use every part of your body, and you hear a voice in your head! [line break][first custom style]'A man chooses, an object obeys.'[roman type][line break]You feel less and less like a person!";
 				humiliate 400;
 			otherwise:
@@ -78,4 +77,3 @@ A time based rule (this is the mindflayer domination rule):
 				[Digesting souls- preliminary version definitely way too strong but it has to be in the game to balance it]
 
 Mindflayer Quest ends here.
-

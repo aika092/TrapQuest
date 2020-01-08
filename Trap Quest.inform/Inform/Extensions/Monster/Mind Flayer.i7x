@@ -70,14 +70,14 @@ To compute perception of (M - mind flayer):
 	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
-		say "It doesn't look like it's interested in you.";
+		say "[big he of M] doesn't look like [he of M]'s interested in you.";
 		bore M for 500 seconds;
 	otherwise:
 		alwayscutshow figure of mindflayer cutscene 1 for M;
 		anger M.
 
 To compute (M - a minotaur) stomping (N - mind flayer):
-	if M is in the location of the player, say "[BigNameDesc of M] angrily glares and stamps at the [N], which looks shockingly nonplussed and crosses its spindly arms. As [NameDesc of M] begins to charge, suddenly the [N] glares harshly and the mighty creature confusedly slams into a wall, head first. As it lays stunned on the ground, the [N] almost casually wraps its tentacles around the beast's head. It lets out a blood-curdling moo as the [N][']s tentacles push their way through its skull and gruesomely extract its brain!";
+	if M is in the location of the player, say "[BigNameDesc of M] angrily glares and stamps at the [N], which looks shockingly nonplussed and crosses [his of N] spindly arms. As [NameDesc of M] begins to charge, suddenly the [N] glares harshly and the mighty creature confusedly slams into a wall, head first. As [he of M] lays stunned on the ground, the [N] almost casually wraps [his of N] tentacles around the beast's head. [big he of M] lets out a blood-curdling moo as the [N][']s tentacles push their way through [his of M] skull and gruesomely extract [his of M] brain!";
 	otherwise say "You hear a blood-curdling moo from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
 	destroy M;
 	let L be a random off-stage leftover;
@@ -85,7 +85,7 @@ To compute (M - a minotaur) stomping (N - mind flayer):
 	now the leftover-type of L is the leftover-type of M.
 
 To compute (M - a demon lord) stomping (N - mind flayer):
-	if M is in the location of the player, say "[M] growls at the [N], which seems to briefly consider its options before hurriedly backing away.";
+	if M is in the location of the player, say "[M] growls at the [N], which seems to briefly consider [his of N] options before hurriedly backing away.";
 	regionally place N;
 	bore N.
 
@@ -93,9 +93,9 @@ Part 2 - Combat
 
 To say MouthPenetrationFlav of (M - mind flayer):
 	if the raw intelligence of the player > 3:
-		say "The creature tentatively sniffs at your forehead, then lets out an exultant shriek as it wraps its tentacles around your skull!";
+		say "The creature tentatively sniffs at your forehead, then lets out an exultant shriek as [he of M] wraps [his of M] tentacles around your skull!";
 	otherwise:
-		say "The creature tentatively sniffs at your head, but its expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as it fixes a piercing gaze on you...".
+		say "The creature tentatively sniffs at your head, but [his of M] expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as [he of M] fixes a piercing gaze on you...".
 
 
 To compute facial sex of (M - mind flayer):
@@ -129,15 +129,15 @@ To set up sex length of (M - mind flayer) in (B - face):
 
 To compute facial climax of (M - mind flayer):
 	if the raw intelligence of the player > 3 and the feeding of M is 1:
-		say "The creature pulls away its tentacles from your head, seemingly satisfied for the moment.";
+		say "The creature pulls away [his of M] tentacles from your head, seemingly satisfied for the moment.";
 		bore M;
 		cutshow figure of mindflayer cutscene 5 for M;
 	otherwise if the feeding of M is 1:
-		say "The creature pulls its tentacles away, seemingly satisfied for the moment.";
+		say "The creature pulls [his of M] tentacles away, seemingly satisfied for the moment.";
 		bore M;
 		cutshow figure of mindflayer cutscene 6 for M;
 		if there is a worn tattoo and empty-mind tattoo is not worn:
-			say "As it pulls away, the word 'EMPTY' suddenly appears on your forehead!";
+			say "As [he of M] pulls away, the word 'EMPTY' suddenly appears on your forehead!";
 			summon empty-mind tattoo;
 	otherwise:
 		say "You aren[']t quite sure what happened while you were blacked out [if the bimbo of the player > 8]but you are quite concerned![otherwise].[end if]The creature, seemingly satisfied, haughtily walks away.";
@@ -162,7 +162,7 @@ This is the mind flayer psychic attack rule:
 		otherwise:
 			say "You are able to shake the attack off!";
 	otherwise:
-		say "You feel the creature bear all its will down on you!";
+		say "You feel the creature bear all [his of M] will down on you!";
 		if (10 - a random number between 1 and the raw intelligence of the player) > 0:
 			say "You feel compelled to drop to your knees!";
 			try kneeling;
@@ -176,17 +176,17 @@ This is the mind flayer sees a target rule:
 	let M be current-monster;
 	repeat with N running through monsters in the location of M:
 		if N is woman and the woman-bimbo of woman-barbara < 6:
-			if M is in the location of the player, say "[BigNameDesc of M] sniffs at [N][']s head then stares heavily at [him of N]. [big his of N] eyes roll slightly back into [his of N] head and [his of N] mouth hangs open as [he of N] drops to [his of N] knees and presents [his of N] head to the creature, which wraps its tentacles around it. [big he of N] moans euphorically as a horrible sucking sound fills the area, and after the creature withdraws its tentacles [he of N] wanders away, drooling, with unfocused eyes.";
+			if M is in the location of the player, say "[BigNameDesc of M] sniffs at [N][']s head then stares heavily at [him of N]. [big his of N] eyes roll slightly back into [his of N] head and [his of N] mouth hangs open as [he of N] drops to [his of N] knees and presents [his of N] head to the creature, which wraps [his of M] tentacles around it. [big he of N] moans euphorically as a horrible sucking sound fills the area, and after the creature withdraws [his of M] tentacles [he of N] wanders away, drooling, with unfocused eyes.";
 			otherwise say "You hear a strange sucking sound from somewhere else.";
 			WomanSluttify;
 			Vanish N;
 		otherwise if N is woman:
 			if M is in the location of the player and the raw intelligence of the player > 3:
-				say "[BigNameDesc of M] sniffs briefly at [N][']s head and a look of disappointment crosses its face. It stares at [him of N], irritated. After a moment it smirks, seemingly satisfied, and [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis].";
+				say "[BigNameDesc of M] sniffs briefly at [N][']s head and a look of disappointment crosses [his of M] face. [big he of M] stares at [him of N], irritated. After a moment [he of M] smirks, seemingly satisfied, and [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis].";
 				regionally place N;
 				bore N;
 			otherwise if M is in the location of the player:
-				say "[BigNameDesc of M] sniffs the air, then [N][']s head, then yours. It rolls its white eyes in brief annoyance before a broad, beaky grin crosses its face. It glares at you both, and both of you mindlessly drop to your knees. It stares at [him of N] for a moment and then smirks, seemingly satisfied, as [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis]. Then it turns to you...";
+				say "[BigNameDesc of M] sniffs the air, then [N][']s head, then yours. [big he of M] rolls [his of M] white eyes in brief annoyance before a broad, beaky grin crosses [his of M] face. [big he of M] glares at you both, and both of you mindlessly drop to your knees. [big he of M] stares at [him of N] for a moment and then smirks, seemingly satisfied, as [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis]. Then [he of M] turns to you...";
 				regionally place N;
 				bore N;
 				try kneeling.
@@ -212,20 +212,19 @@ To say DamageReactDamaged of (M - mind flayer):
 	say "The creature doesn[']t seem to be looking quite at you, only slightly reacting to the hit.".
 
 To say DamageReactTired of (M - mind flayer):
-	say "The creature takes the hit, its expression remaining as hard to read as ever.".
+	say "The creature takes the hit, [his of M] expression remaining as hard to read as ever.".
 
 To say DamageReactWeak of (M - mind flayer):
-	say "The creature's expression grows frantic as it senses its life is in jeopardy!".
+	say "The creature's expression grows frantic as [he of M] senses [his of M] life is in jeopardy!".
 
 To compute unique death of (M - mind flayer):
-	say "[BigNameDesc of M] screams hideously as it collapses to the ground. ";
+	say "[BigNameDesc of M] screams hideously as [he of M] collapses to the ground. ";
 	if severed-tentacle is off-stage:
 		now severed-tentacle is in the location of the player;
-		say "Its body disappears, leaving behind a [ShortDesc of severed-tentacle].";
+		say "[big his of M] body disappears, leaving behind a [ShortDesc of severed-tentacle].";
 		compute autotaking severed-tentacle;
 	otherwise:
-		say "Its body disappears".
+		say "[big his of M] body disappears".
 
 
 Mind Flayer ends here.
-

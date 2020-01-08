@@ -216,7 +216,6 @@ To decide which figure-name is Figure of Xavier Cutscene 2:
 	decide on figure of small image.
 
 
-
 Part - Other
 
 To decide which figure-name is Figure of Body Reaction 1:
@@ -449,12 +448,10 @@ To decide which figure-name is Figure of super rich domme:
 	decide on figure of small image.
 
 
-
 To decide which figure-name is figure of helium balloons:
 	decide on figure of small image.
 To decide which figure-name is figure of condom pigtails:
 	decide on figure of small image.
-
 
 
 Unnecessary Figures ends here.

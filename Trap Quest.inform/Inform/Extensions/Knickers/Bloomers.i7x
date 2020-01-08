@@ -39,7 +39,7 @@ To decide which number is the initial cringe of (C - sissy-bloomers):
 To decide which object is the unique-upgrade-target of (C - sissy-bloomers):
 	decide on a random off-stage crotchless bloomers.
 
-crotchless bloomers is a bloomers. crotchless bloomers is crotch-exposing.  crotchless bloomers is transformation-rare. The printed name of crotchless bloomers is "[clothing-title-before]pair of crotchless sheer nylon bloomers[clothing-title-after]". The text-shortcut of crotchless bloomers is "csnb".
+crotchless bloomers is a bloomers. crotchless bloomers is crotch-exposing. crotchless bloomers is transformation-rare. The printed name of crotchless bloomers is "[clothing-title-before]pair of crotchless sheer nylon bloomers[clothing-title-after]". The text-shortcut of crotchless bloomers is "csnb".
 
 To decide which figure-name is clothing-image of (H - crotchless bloomers):
 	decide on figure of crotchless bloomers.
@@ -71,4 +71,3 @@ Definition: crotchless bloomers is end of transformation chain: decide yes.
 
 
 Bloomers ends here.
-

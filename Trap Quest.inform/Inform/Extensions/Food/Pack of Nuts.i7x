@@ -21,4 +21,3 @@ To compute (M - a robochef) cooking (I - a pack of nuts):
 		now D is retained by M.
 
 Pack of Nuts ends here.
-

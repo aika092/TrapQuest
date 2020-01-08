@@ -12,10 +12,10 @@ To say ExamineDesc of (C - a stop button):
 
 Check pushing a stop button:
 	repeat with M running through dangerous monsters in the location of the player:
-		say "[BigNameDesc of M] blocks you from reaching the button!  You're going to have to deal with [him of M] first!" instead;
+		say "[BigNameDesc of M] blocks you from reaching the button! You're going to have to deal with [him of M] first!" instead;
 	if robomatron is in the location of the player:
-		unless robomatron is interested and robomatron is friendly, say "The [robomatron] blocks you from reaching the button!  You're going to have to deal with [him of robomatron] first!" instead;
-	say "This is it!  The game will end if you push the button. Remember only [bold type]worn[roman type] jewellery will count towards your prize winnings (currently $[25000 * the wealth of the player]). Are you sure you want to hit the button?";
+		unless robomatron is interested and robomatron is friendly, say "The [robomatron] blocks you from reaching the button! You're going to have to deal with [him of robomatron] first!" instead;
+	say "This is it! The game will end if you push the button. Remember only [bold type]worn[roman type] jewellery will count towards your prize winnings (currently $[25000 * the wealth of the player]). Are you sure you want to hit the button?";
 	unless the player is consenting, say "Action cancelled." instead.
 
 Report pushing a stop button:
@@ -27,4 +27,3 @@ Check touching a stop button:
 
 
 Stop Button ends here.
-

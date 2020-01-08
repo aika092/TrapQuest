@@ -77,8 +77,6 @@ To decide which number is the initial outrage of (C - tongue-gloves):
 	decide on 4.
 
 
-
-
 Part 2 - Wands
 
 A vibe-wand is a kind of equippable. A vibe-wand is usually zap ready. Understand "vibe", "vibrator", "wand", "vibrating" as vibe-wand. A vibe-wand is usually projectile. A vibe-wand is usually plastic.
@@ -142,8 +140,6 @@ Check taking off worn gloves:
 		say "You would need to stop wielding the [E] first." instead.
 
 
-
-
 painted-vibrator-hands is a gloves.
 The printed name of painted-vibrator-hands is "[clothing-title-before]painted vibrator hands[clothing-title-after]". The text-shortcut of painted-vibrator-hands is "pvh". Figure of painted-vibrator-hands is the file "Items/Accessories/Equippables/thumbvibrators1.jpg". Understand "painted", "vibrator", "hands" as painted-vibrator-hands.
 Definition: painted-vibrator-hands is blue themed: decide yes.
@@ -165,4 +161,3 @@ To say ShortDesc of (Y - painted-vibrator-hands):
 
 
 Equippables Framework ends here.
-

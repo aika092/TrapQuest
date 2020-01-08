@@ -61,4 +61,3 @@ To compute teaching of (M - an innocent student):
 
 
 Students Innocent ends here.
-

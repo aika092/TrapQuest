@@ -22,7 +22,7 @@ Part 1 - Salve of Buoyancy
 
 A salve of buoyancy is a kind of salve. The printed name of salve of buoyancy is "[TQlink of item described]salve of buoyancy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of salve of buoyancy is "[TQlink of item described]salves of buoyancy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of salve of buoyancy is "sbo". There are 3 salve of buoyancy.
 To say ExamineDesc of (C - a salve of buoyancy):
-	say "A small round metal container that contains an orange greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type].[end if]".
+	say "A small round metal container that contains an orange greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type], or [bold type]butt[roman type].[end if]".
 
 To BackgroundRender (T - a salve of buoyancy) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle TQcolour of orange in the current focus window at X1 by Y1 with size DX by DY.
@@ -48,12 +48,11 @@ To oil (B - a body part) with (S - a salve of buoyancy):
 	if S is cursed, now O is cursed.
 
 
-
 Part 2 - Salve of Restriction
 
 A salve of restriction is a kind of salve. The printed name of salve of restriction is "[TQlink of item described]salve of restriction[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of salve of restriction is "[TQlink of item described]salves of restriction[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of salve of restriction is "sor". There are 3 salve of restriction.
 To say ExamineDesc of (C - a salve of restriction):
-	say "A small round metal container that contains a blue greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type].[end if]".
+	say "A small round metal container that contains a blue greasy lip-balm-like substance. [if item described is covering a backdrop][SalveStatus][otherwise]It seems like you are supposed to rub it on your body, and something tells you it is probably most appropriate to apply it to your [bold type]breasts[roman type], [bold type]belly[roman type], or [bold type]butt[roman type].[end if]".
 
 To BackgroundRender (T - a salve of restriction) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle TQcolour of blue in the current focus window at X1 by Y1 with size DX by DY.
@@ -145,7 +144,4 @@ This is the salve butt slut rule:
 The salve butt slut rule is listed in the butt slut eligibility rules.
 
 
-
-
 Salves ends here.
-

@@ -135,7 +135,6 @@ To decide which number is the initial outrage of (C - blue-rubber-cheerleader-ou
 	decide on 5.
 
 
-
 black-rubber-cheerleader-outfit is a rubber cheerleader outfit. Understand "black" as black-rubber-cheerleader-outfit.
 
 Figure of black rubber cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader7.png".
@@ -153,7 +152,6 @@ Definition: black-rubber-cheerleader-outfit is black themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - black-rubber-cheerleader-outfit):
 	decide on black-fetish-cheerleader-outfit.
-
 
 
 black-fetish-cheerleader-outfit is a rubber cheerleader outfit. Understand "black", "fetish" as black-fetish-cheerleader-outfit. black-fetish-cheerleader-outfit is high cut.
@@ -175,4 +173,3 @@ Definition: black-fetish-cheerleader-outfit is black themed: decide yes.
 
 
 Cheerleader Outfit ends here.
-

@@ -67,7 +67,7 @@ To say ExamineDesc of (C - a thing):
 To say HeldOutrageDesc of (C - a thing):
 	say variable custom style;
 	if the player is broken:
-		say "This is rather embarassing to hold like this, I guess. Perfect for a pathetic object like me.";
+		say "This is rather embarrassing to hold like this, I guess. Perfect for a pathetic object like me.";
 	otherwise if diaper quest is 1 and the cringe of C / 2 is too humiliating:
 		say "This is way too childish for me to be carrying around like this where it's completely on display!";
 	otherwise if the outrage of C / 2 is too humiliating:
@@ -78,8 +78,6 @@ To say HeldOutrageDesc of (C - a thing):
 		say "I guess I should find this a bit embarrassing to carry around where everyone can see it, but I just don't.";
 	if debuginfo > 0, say "[line break][input-style]Held visible item outrage: [outrage of C / 2] / 10[if diaper quest is 1]; childishness: [cringe of C / 2] / 10[end if].";
 	say "[roman type][line break]";
-
-
 
 
 To say MediumDesc of (C - a thing):
@@ -114,9 +112,6 @@ To say NameDesc of (C - a monster):
 
 To say BigNameDesc of (C - a monster):
 	say "The [input-style][MediumDesc of C][roman type]".
-
-
-
 
 
 [Show the image in the main window if the player has requested so]
@@ -154,7 +149,4 @@ To onlycutshow (F - a figure-name) for (M - a thing):
 	if the focus-window is g-present and image cutscenes > 1, alwayscutshow F for M.
 
 
-
-
 Things Framework ends here.
-

@@ -13,4 +13,3 @@ Definition: WoodsScenery03 is immune to change: decide yes.
 
 
 White Wall ends here.
-

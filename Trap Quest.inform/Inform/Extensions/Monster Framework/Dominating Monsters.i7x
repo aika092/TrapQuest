@@ -102,7 +102,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
+	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -159,7 +159,7 @@ Dominating is an action applying to one thing.
 
 [!<CheckDominating>+
 
-This functions determines whether we let the player try to dominate a monster, and sets things up for the actual attempt. Players that have a penis and players who are wearing strapons have an option to use those on monsters. Players also have an option to use either their vagina (female players) or their asshole (male players). If the player has no penis or no strapon, then it defaults to one of those two. Once we know what the player will be using to dominate the monster, we perform some more specific checks to make sure that the player is actually able to use that properly. NOTE: if the player has a chastity item on, then they won't be able to use a penis for sex, even if it's not directly attached to their body
+This functions determines whether we let the player try to dominate a monster, and sets things up for the actual attempt. Players that have a penis and players who are wearing strap-ons have an option to use those on monsters. Players also have an option to use either their vagina (female players) or their asshole (male players). If the player has no penis or no strap-on, then it defaults to one of those two. Once we know what the player will be using to dominate the monster, we perform some more specific checks to make sure that the player is actually able to use that properly. NOTE: if the player has a chastity item on, then they won't be able to use a penis for sex, even if it's not directly attached to their body
 
 +!]
 Check dominating:
@@ -196,7 +196,7 @@ Check dominating:
 		do nothing instead;
 	if player-fucker is penis:[Now that the part we want to use is selected, validate]
 		if there is a worn condom of kings, say "You wouldn't feel anything from it, so you don't see the point." instead;
-		if S is clothing:[dildo-usage determines whether the player's dick is sticking out of the strapon]
+		if S is clothing:[dildo-usage determines whether the player's dick is sticking out of the strap-on]
 			if there is a worn chastity cage or there is a worn restricting research airhancer:
 				say "Your [if there is a worn chastity cage][printed name of a random worn chastity cage] pulses[otherwise][printed name of a random research airhancer] flashes several times[end if], and your [SexDesc of penis] immediately loses all rigidity. Looks like you need to try something else...";
 				if S is demon codpiece, say CodLoosenFlav of S instead;
@@ -245,7 +245,7 @@ This function handles a player's attempt to dominate a given monster. Dominant s
 We start off with a check to see if the monster in question is over 50% hp or if the player has max delicateness, which is an automatic failure.
 IF we can't determine anything with that, we use a special function called DecideWhichNumberIsTheSubmissivenessOfMonster, which outputs either 1 or -1 depending on a couple factors.
 Now that we have the result, we diverge.
-IF THE PLAYER SUCCEEDED, we output some flavour text describing the monster and the player having sex. In general, if the player uses their penis/strapon for sex, big penis is good, small penis is bad. If the player uses a fuckhole for sex and the monster has a penis, the player will usually ride on top of them and then have some choice at the end of the scene, depending on a couple factors. Otherwise, the player will sit on a monster's face, which probably won't get the player an orgasm, but it has few drawbacks. Once the scene has been displayed, we apply any rewards for dominant sex. These rewards vary depending on the monster and any specific events that may have happened in the scene. Once we're done, we send the monster somewhere else so the player can't immediately attack them again, although this isn't actually a big problem, since they'll instantly be at full health after it's over. It is not necessary to make the monster lose interest after a successful dominance scene, and in the case of male monsters that fuck the player, it can be inadvisable, since it makes it difficult to know whether or not the player used a condom.
+IF THE PLAYER SUCCEEDED, we output some flavour text describing the monster and the player having sex. In general, if the player uses their penis/strap-on for sex, big penis is good, small penis is bad. If the player uses a fuckhole for sex and the monster has a penis, the player will usually ride on top of them and then have some choice at the end of the scene, depending on a couple factors. Otherwise, the player will sit on a monster's face, which probably won't get the player an orgasm, but it has few drawbacks. Once the scene has been displayed, we apply any rewards for dominant sex. These rewards vary depending on the monster and any specific events that may have happened in the scene. Once we're done, we send the monster somewhere else so the player can't immediately attack them again, although this isn't actually a big problem, since they'll instantly be at full health after it's over. It is not necessary to make the monster lose interest after a successful dominance scene, and in the case of male monsters that fuck the player, it can be inadvisable, since it makes it difficult to know whether or not the player used a condom.
 IF THE PLAYER FAILED, we output a short piece of flavour where the monster turns the tables. After that, the monster will give the player some sort of unique punishment. In general, these punishments should not be something the player wants to repeat, so the player doesn't use it as an excuse to always weasel out of normal punishments. Note that if the monster has a penis, it's often strictly worse than if the player had just done things the normal way. If the monster is still interested after handling the punishment, it means they ARE going to do things the normal way, so we don't send them anywhere.
 AFTER EVERYTHING is said and done, we reset player-fucking to 0.
 
@@ -255,7 +255,7 @@ Carry out dominating:
 	now player-fucking is DOMINANT-NONE;[we set this to 1 after we're finished determining success]
 	let R be (the number of worn dominance clothing * 2) + (the maxhealth of M / 2);
 	if let it die tattoo is worn, decrease R by 10;
-	if the health of M >= R or the delicateness of the player is 20, now player-fucking is DOMINANT-FAILURE;[anymore than 50% hp and it's auto loss]
+	if the health of M >= R or the delicateness of the player is 20, now player-fucking is DOMINANT-FAILURE;[any more than 50% hp and it's auto loss]
 	if debugmode > 0 and player-fucking is DOMINANT-FAILURE:
 		if the delicateness of the player is 20, say "[input style]Player is too submissive.[line break]";
 		otherwise say "[input style]Target has too much health.[line break]";
@@ -274,7 +274,7 @@ Carry out dominating:
 		if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER and H is worn and the player is an april 2019 top donator, progress quest of domination-quest;
 		if the times-dominated of M >= 2 and the player is the donator:
 			if H is actually summonable and rugged-summoned is 0:
-				say "You feel your hair being tousled as a [MediumDesc of H] materializes on your head.";
+				say "You feel your hair being tousled as a [MediumDesc of H] materialises on your head.";
 				summon H cursed with quest;
 				now rugged-summoned is 1;
 		repeat with N running through monsters in the location of the player:
@@ -562,7 +562,7 @@ To say DominanceFailure of (M - a monster):
 [Usually when you mess up you'll be punished by having some clothes torn off, but if you're not wearing anything you'll have to deal with a more intense punishment courtesy of Nintendolls]
 [!<ComputeFailedDominancePunishmentOfMonster>+
 
-The failed dominance punishment should be implemented for any monster that the player can dominate. By default, the monster will perform their angry punishment, or the monster will leave the player alone and the game will punish them instead(with sissification). Most monsters should follow this general formula. If the monster decides to repay the player with sex, any punishment here should be fairly mild, and the another-turn flag should be set to 1. If the monster won't be having sex with the player right after, the punishment here should be a bit more intense, and we should make sure the monster loses interest at the end.
+The failed dominance punishment should be implemented for any monster that the player can dominate. By default, the monster will perform their angry punishment, or the monster will leave the player alone and the game will punish them instead (with sissification). Most monsters should follow this general formula. If the monster decides to repay the player with sex, any punishment here should be fairly mild, and the another-turn flag should be set to 1. If the monster won't be having sex with the player right after, the punishment here should be a bit more intense, and we should make sure the monster loses interest at the end.
 +!]
 To compute failed dominance punishment of (M - a monster):
 	if M is male:
@@ -607,6 +607,4 @@ To compute sissification:
 		SilentlyDelicateUp 1.
 
 
-
 Dominating Monsters ends here.
-

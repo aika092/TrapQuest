@@ -56,7 +56,7 @@ To say MediumDesc of (M - uncanny sex doll):
 To say SexDollGender of (M - a sex doll):
 	if M is creamfilled-sex-doll:
 		if full-lady fetish is 1:
-			say "female strapon";
+			say "female strap-on";
 		otherwise if lady fetish is 1:
 			say "futanari";
 		otherwise:
@@ -65,7 +65,7 @@ To say SexDollGender of (M - a sex doll):
 		say "female dildo".
 
 Understand "male" as a sex doll when the item described is creamfilled-sex-doll.
-Understand "female", "strapon" as a sex doll when the item described is not airfilled-sex-doll.
+Understand "female", "strapon", "strap-on" as a sex doll when the item described is not airfilled-sex-doll.
 
 [
 Cum filled:
@@ -93,17 +93,17 @@ To say DollColour of (M - an airfilled-sex-doll):
 	say "[if M is wandering sex doll]silver[otherwise if M is mindless sex doll]gold[otherwise if M is puppetlike sex doll]brown[otherwise if M is uncanny sex doll]red[end if]".
 
 To say DollColour of (M - a creamfilled-sex-doll):
-	say "[if M is creepy sex doll]black[otherwise if M is expressionless sex doll]yellow[otherwise if M is animated sex doll]gray[otherwise if M is zombielike sex doll]red[end if]";
+	say "[if M is creepy sex doll]black[otherwise if M is expressionless sex doll]yellow[otherwise if M is animated sex doll]grey[otherwise if M is zombielike sex doll]red[end if]";
 
 To say MonsterDesc of (M - a sex doll):
 	if M is creamfilled-sex-doll:
-		say "A [if lady fetish is 1]female sex doll with conical breasts[otherwise]male sex doll with painted on abs[end if] and [DollColour of M] 'hair' that couldn't look more fake if it were drawn on in permanent marker. [big he of M] is filled with opaque liquid, which sloshes around visibly with [his of M] movements. [if full-lady fetish is 1][big his of M] crotch is black, which makes the flesh-coloured dildo extending from [his of M] crotch look like a strapon[otherwise]A flesh-coloured dildo extends from [his of M] crotch, accompanied by a rubbery sack[end if].";
+		say "A [if lady fetish is 1]female sex doll with conical breasts[otherwise]male sex doll with painted on abs[end if] and [DollColour of M] 'hair' that couldn't look more fake if it were drawn on in permanent marker. [big he of M] is filled with opaque liquid, which sloshes around visibly with [his of M] movements. [if full-lady fetish is 1][big his of M] crotch is black, which makes the flesh-coloured dildo extending from [his of M] crotch look like a strap-on[otherwise]A flesh-coloured dildo extends from [his of M] crotch, accompanied by a rubbery sack[end if].";
 	otherwise:
 		say "An inflatable female sex doll with spherical breasts and [DollColour of M] lips painted on [his of M] face. [big he of M] is completely naked, and the ends of [his of M] arms are adorned with large suctions cups, which could probably give [him of M] a quite strong grip. A flesh-coloured dildo extends from [his of M] crotch, [if inflation fetish is 1]which appears to be filled with some sort of dark liquid[otherwise]almost like a cork[end if].".
 
 To say MonsterComment of (M - a sex doll):
 	if M is not liquidfilled:
-		say "[if the bimbo of the player > 11][line break][variable custom style][one of]Hee hee, look at her boobies![or]I bet [he of M]'s squeaky![or][big he of M] doesn't look tough. I should be gentle when I'm getting on my knees.[in random order][otherwise if the bimbo of the player > 7][variable custom style][one of]It doesn't look strong, but I don't want to give the wrong idea by touching it.[or]Not many men would use a sex doll with a dildo on it. That thing is probably here for me.[in random order][otherwise if the player is female][line break][first custom style][one of]That's the last thing I need to deal with, a moving balloon animal.[or]So creepy. I'm popping it.[or]If that thing comes anywhere near me, I'm popping it.[or]A sex doll? I think I'm going to throw up.[in random order][otherwise][first custom style][one of]Whoa, I knew this place had cool stuff! [or]Heh, don't mind if I- wait, is that a dildo?[or]Just like the blow-up doll I have at home. Minus the dildo.[or]The doll doesn't look like it has anything in it. Probably a blow-up doll.[or]Heh, maybe I should take that dildo. Chicks love toys.[in random order][end if][roman type][line break]";
+		say "[if the bimbo of the player > 11][line break][variable custom style][one of]Hee hee, look at [his of M] boobies![or]I bet [he of M]'s squeaky![or][big he of M] doesn't look tough. I should be gentle when I'm getting on my knees.[in random order][otherwise if the bimbo of the player > 7][variable custom style][one of][big he of M] doesn't look strong, but I don't want to give the wrong idea by touching it.[or]Not many men would use a sex doll with a dildo on it. That thing is probably here for me.[in random order][otherwise if the player is female][line break][first custom style][one of]That's the last thing I need to deal with, a moving balloon animal.[or]So creepy. I'm popping [him of M].[or]If that thing comes anywhere near me, I'm popping it.[or]A sex doll? I think I'm going to throw up.[in random order][otherwise][first custom style][one of]Whoa, I knew this place had cool stuff! [or]Heh, don't mind if I- wait, is that a dildo?[or]Just like the blow-up doll I have at home. Minus the dildo.[or]The doll doesn't look like it has anything in it. Probably a blow-up doll.[or]Heh, maybe I should take that dildo. Chicks love toys.[in random order][end if][roman type][line break]";
 	otherwise:
 		say "[if the semen taste addiction of the player > 11][line break][variable custom style][one of]Sounds like something *yummy* is sloshing around in there![or]What's in it? I hope it's [semen]![in random order][otherwise if the semen taste addiction of the player > 5][variable custom style][one of]It's full of something. Is it [semen]?[or]That dildo isn't that big. I could handle it if I had to.[or]It doesn't look tough at all. But I don't want it to pop and spill everywhere.[in random order][otherwise if the player is female][line break][first custom style][one of]That is just about the creepiest *thing* I've ever seen.[or]If that thing comes anywhere near me, I'm popping it.[or]Is there something *IN* there?[or]I can kind of see something sloshing around inside it. Gross.[in random order][otherwise if M is creamfilled-sex-doll][first custom style][one of]What's that inside it? And why am I so scared that I know the answer?[or]It looks like there's [semen] in it. Creepy.[stopping][otherwise][first custom style][one of]A female sex doll with a dick? The chicks in here must be mad slutty.[or]I've got to find a chick to try that out for me.[in random order][end if][roman type][line break]".
 
@@ -129,14 +129,14 @@ To say LeftoverDesc (N - 103):
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a sex doll):
-	say "[if M is in the location of the player]A space opens up in the centre of the circle, just large enough for a pink balloon to quickly float free. You hear a rush of air as it transforms into a [printed name of M]![otherwise]You hear the sound of rushing air coming from another part of the dungeon.[end if]".
+	say "[if M is in the location of the player]A space opens up in the centre of the circle, just large enough for a pink balloon to quickly float free. You hear a rush of air as [he of M] transforms into a [printed name of M]![otherwise]You hear the sound of rushing air coming from another part of the dungeon.[end if]".
 
 To say PregGrowth of (M - a sex doll):
 	say "the sex doll".
 
 To compute labour to (M - a sex doll):[priority for testing]
 	compute pregnancy clothing displacement;
-	say "[PregFlav]You hear the sound of rubber stretching, and look down to see an inflatable head ballooning from your [vagina]. The sound of rushing air and balloon inflation fills the air as slowly but surely a fully sized sex doll emerges from inside of you. You lay there stunned as it rights itself onto its rubber legs and starts to wander away.";
+	say "[PregFlav]You hear the sound of rubber stretching, and look down to see an inflatable head ballooning from your [vagina]. The sound of rushing air and balloon inflation fills the air as slowly but surely a fully sized sex doll emerges from inside of you. You lay there stunned as [he of M] rights [himself of M] onto [his of M] rubber legs and starts to wander away.";
 	set up M;
 	dislodge M;
 	regionally place M.
@@ -168,7 +168,7 @@ Report kneeling when there is an uninterested sex doll in the location of the pl
 To compute perception of (M - a sex doll):
 	deinterest M; [This is because the sex doll does not notice enemies by default.]
 	if the class of the player is living sex doll:
-		say "[BigNameDesc of M] seems to notice you! But it seems to no longer consider you an enemy.";
+		say "[BigNameDesc of M] seems to notice you! But [he of M] seems to no longer consider you an enemy.";
 		now the boredom of M is 300;
 	otherwise if M is objectifying the player:
 		anger M;
@@ -224,7 +224,7 @@ To compute FluidFill of (M - a sex doll):
 		HipUp 1;
 	otherwise:
 		let R be a random number between 1 and 3;
-		say "[if R is 3][BigNameDesc of M] suddenly stops, its [manly-penis] bulging slightly as several spurts of cool fluid flow inside of you. You feel your breasts and hips both growing in size![otherwise][one of]After one final thrust, you feel [NameDesc of M]'s [manly-penis] inflate slightly, as if to create an airtight seal. You gasp as several spurts cool fluid flow inside of you. Your breasts jiggle as they quickly grow in size.[or]You feel [NameDesc of M]'s [manly-penis] inflate slightly, as if to create an airtight seal. Several spurts of cool fluid flow inside of you. A strange sensation spreads through your body, dissipating as your breasts suddenly burgeon with size.[or][BigNameDesc of M] suddenly stops, its [manly-penis] bulging slightly as several spurts of cool fluid flow inside of you. Your breasts suddenly grow![at random][end if][if the bimbo of the player < 7][line break][first custom style][one of] What the fuck is going on?![or]Not again...[stopping][roman type][line break]The sex doll disappears into nothingness.";
+		say "[if R is 3][BigNameDesc of M] suddenly stops, [his of M] [manly-penis] bulging slightly as several spurts of cool fluid flow inside of you. You feel your breasts and hips both growing in size![otherwise][one of]After one final thrust, you feel [NameDesc of M]'s [manly-penis] inflate slightly, as if to create an airtight seal. You gasp as several spurts cool fluid flow inside of you. Your breasts jiggle as they quickly grow in size.[or]You feel [NameDesc of M]'s [manly-penis] inflate slightly, as if to create an airtight seal. Several spurts of cool fluid flow inside of you. A strange sensation spreads through your body, dissipating as your breasts suddenly burgeon with size.[or][BigNameDesc of M] suddenly stops, [his of M] [manly-penis] bulging slightly as several spurts of cool fluid flow inside of you. Your breasts suddenly grow![at random][end if][if the bimbo of the player < 7][line break][first custom style][one of] What the fuck is going on?![or]Not again...[stopping][roman type][line break]The sex doll disappears into nothingness.";
 		BustUp 3;
 		if R is 3, HipUp 1.
 
@@ -271,7 +271,7 @@ To compute (M - a sex doll) entering mouth:
 				BustUp 3;
 		otherwise:
 			now M is penetrating face; [To allow for gagging]
-			say "[BigNameDesc of M] walks round to your face and sticks its dildo [manly-penis] in your mouth. It immediately deflates, filling your stomach to the brim with [semen]! [if the semen taste addiction of the player < 6][line break][first custom style]Fuck that's disgusting![otherwise if the semen taste addiction of the player < 13][line break][second custom style]Ooh, that's made me quite full...[otherwise][second custom style]Aww, I hardly even got to taste that.[end if][roman type][line break]";
+			say "[BigNameDesc of M] walks round to your face and sticks [his of M] dildo [manly-penis] in your mouth. It immediately deflates, filling your stomach to the brim with [semen]! [if the semen taste addiction of the player < 6][line break][first custom style]Fuck that's disgusting![otherwise if the semen taste addiction of the player < 13][line break][second custom style]Ooh, that's made me quite full...[otherwise][second custom style]Aww, I hardly even got to taste that.[end if][roman type][line break]";
 			cutshow figure of sexdoll cutscene 2 for M;
 			if the stomach of the player < 10, increase the stomach-semen of the player by 10 - the stomach of the player;
 			StomachSemenUp 2;
@@ -279,10 +279,10 @@ To compute (M - a sex doll) entering mouth:
 		destroy M;
 	otherwise:
 		if M is not creamfilled-sex-doll:
-			say "[BigNameDesc of M] walks round to your face and waits there for a few seconds, motionless. It looked like it was about to mess with you, but something seemed to change its mind.";
+			say "[BigNameDesc of M] walks round to your face and waits there for a few seconds, motionless. It looked like [he of M] was about to mess with you, but something seemed to change [his of M] mind.";
 		otherwise if bukkake fetish is 1:
 			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen! Could change I guess if there's open gags put into the game]
-			say "[BigNameDesc of M] moves round to your face, air hissing quietly as its rubber sack slowly expands. A beat after the noise stops, the doll suddenly begins blasting your face with a torrent of pure white ejaculate! You're completely plastered by the time it deflates.";
+			say "[BigNameDesc of M] moves round to your face, air hissing quietly as [his of M] rubber sack slowly expands. A beat after the noise stops, the doll suddenly begins blasting your face with a torrent of pure white ejaculate! You're completely plastered by the time it deflates.";
 			CumFaceUp 8;
 		otherwise:
 			say "You hear a faint hissing noise as [NameDesc of M] stands motionless next to your [ShortDesc of hips], which are suddenly blasted by a torrent of ejaculate! Your lower body gets plastered by what feels like gallons of [semen] as it deflates.";
@@ -299,13 +299,13 @@ To say type security of (M - a sex doll):
 	otherwise say "The suction cups form a weak seal against your skin, but subtle movements of the doll's arms make it tighter and tighter. ".
 
 To say type fuck secured of (M - a sex doll):
-	if M is liquidfilled, say "its grip on your hips tightening as the adhesive dries";
-	otherwise say "the suction cups completely sealing its 'hands' to your hips".
+	if M is liquidfilled, say "[his of M] grip on your hips tightening as the adhesive dries";
+	otherwise say "the suction cups completely sealing [his of M] 'hands' to your hips".
 
 To say PenPrep of (M - a sex doll) in (F - asshole):
 	let N be a random monster penetrating vagina;
-	if N is monster, say "Invisible puppet strings fasten themselves to your knees and elbows, foisting you up and flipping you over so your [BreastDesc] and [ShortDesc of belly] are pressed flat against the [N]. [BigNameDesc of M] places its primitive hands on either side of your waist. ";
-	otherwise say "[BigNameDesc of M] moves behind you, placing its primitive hands on your hips. ";
+	if N is monster, say "Invisible puppet strings fasten themselves to your knees and elbows, foisting you up and flipping you over so your [BreastDesc] and [ShortDesc of belly] are pressed flat against the [N]. [BigNameDesc of M] places [his of M] primitive hands on either side of your waist. ";
+	otherwise say "[BigNameDesc of M] moves behind you, placing [his of M] primitive hands on your hips. ";
 	say type security of M.
 
 To say AssholePenetrationFlav of (M - a sex doll):
@@ -316,8 +316,8 @@ To say VaginalPenetrationFlav of (M - a sex doll):
 
 To say PenPrep of (M - a sex doll) in (F - vagina):
 	let N be a random monster penetrating asshole;
-	if N is monster, say "You feel invisible puppet strings fasten themselves to your elbows, foisting you up so your back is flush with the chest of the [N]. [BigNameDesc of M] places its primitive hands on either side of your waist. ";
-	otherwise say "[BigNameDesc of M] moves behind you, placing its primitive hands on your hips. ";
+	if N is monster, say "You feel invisible puppet strings fasten themselves to your elbows, foisting you up so your back is flush with the chest of the [N]. [BigNameDesc of M] places [his of M] primitive hands on either side of your waist. ";
+	otherwise say "[BigNameDesc of M] moves behind you, placing [his of M] primitive hands on your hips. ";
 	say type security of M.
 
 To set up sex length (N - a number) of (M - a sex doll) in (F - a fuckhole):
@@ -334,13 +334,13 @@ To say FuckholePenetrationFlav of (M - a sex doll):[TODO: implement penetrationf
 	let F be the chosen-orifice of M;
 	say PenPrep of M in F;
 	if the openness of F < the girth of M:
-		say "[if the relevant sex addiction of M < 6]The doll thrusts forward with an unexpected precision. You seize up as its stiff dildo [manly-penis] burrows its way into your tight [variable F], filling you up more than is comfortable. The doll slowly begins to move, [type fuck secured of M]. There's no chance you'll get away now...[otherwise if the relevant sex addiction of M < 11]The doll thrusts forward with an unexpected precision. You seize up as its stiff dildo [manly-penis] burrows its way into your tight [variable F], filling you up more than is comfortable. The doll slowly begins to move, [type fuck secured of M]. You can't help feeling there was more you could have done to get away...[otherwise]The doll thrusts forward with an unexpected precision. You giggle as its stiff dildo [manly-penis] burrows its way into your tight [variable F], filling you up a tiny bit more than is comfortable. The doll slowly begins to move, [type fuck secured of M]. There's no getting away now![end if]";
+		say "[if the relevant sex addiction of M < 6]The doll thrusts forward with an unexpected precision. You seize up as [his of M] stiff dildo [manly-penis] burrows its way into your tight [variable F], filling you up more than is comfortable. The doll slowly begins to move, [type fuck secured of M]. There's no chance you'll get away now...[otherwise if the relevant sex addiction of M < 11]The doll thrusts forward with an unexpected precision. You seize up as [his of M] stiff dildo [manly-penis] burrows its way into your tight [variable F], filling you up more than is comfortable. The doll slowly begins to move, [type fuck secured of M]. You can't help feeling there was more you could have done to get away...[otherwise]The doll thrusts forward with an unexpected precision. You giggle as its stiff dildo [manly-penis] burrows its way into your tight [variable F], filling you up a tiny bit more than is comfortable. The doll slowly begins to move, [type fuck secured of M]. There's no getting away now![end if]";
 	otherwise if the openness of F < the girth of M + 2:
-		say "[if the relevant sex addiction of M < 7]The doll thrusts forward with unexpected precision. You shudder as its stiff dildo [manly-penis] penetrates your [variable F], the small plastic shape seeming to complement your tightness. The doll immediately begins to move, [type fuck secured of M]. There's no chance you'll get away now...[otherwise if the relevant sex addiction of M < 11]The doll thrusts forward with unexpected precision. You stifle a moan as its stiff dildo [manly-penis] penetrates your [variable F], the small plastic shape perfectly complementing your tightness. The doll immediately begins to move, [type fuck secured of M]. Some part of you is glad you have no chance of getting away.[otherwise]The doll thrusts forward with unexpected precision. You emit a low sigh as its stiff dildo [manly-penis] penetrates your [variable F], the small plastic shape seeming to complement your tightness. The doll immediately begins to move, [type fuck secured of M]. You couldn't get away even if you wanted to![end if]";
+		say "[if the relevant sex addiction of M < 7]The doll thrusts forward with unexpected precision. You shudder as [his of M] stiff dildo [manly-penis] penetrates your [variable F], the small plastic shape seeming to complement your tightness. The doll immediately begins to move, [type fuck secured of M]. There's no chance you'll get away now...[otherwise if the relevant sex addiction of M < 11]The doll thrusts forward with unexpected precision. You stifle a moan as its stiff dildo [manly-penis] penetrates your [variable F], the small plastic shape perfectly complementing your tightness. The doll immediately begins to move, [type fuck secured of M]. Some part of you is glad you have no chance of getting away.[otherwise]The doll thrusts forward with unexpected precision. You emit a low sigh as its stiff dildo [manly-penis] penetrates your [variable F], the small plastic shape seeming to complement your tightness. The doll immediately begins to move, [type fuck secured of M]. You couldn't get away even if you wanted to![end if]";
 	otherwise if the openness of F < the girth of M + 4:
-		say "[if the relevant sex addiction of M < 6]The doll thrusts forward with unexpected precision. Your heart sinks as its stiff dildo [manly-penis] slides into your [variable F] and immediately begins to move. By now, you know there's no chance of escape, but the idea of sex still makes you sick to your stomach! The doll doesn't seem to register your displeasure, [type fuck secured of M]. You hope it'll be over soon.[otherwise if the relevant sex addiction of M < 11]The doll thrusts forward with unexpected precision. You gasp sharply as its stiff dildo [manly-penis] slides into your [variable F] and immediately begins to move. It's not the biggest you've ever taken, but you still feel every thrust! The doll doesn't seem to notice your reaction, [type fuck secured of M]. You can't shake the feeling that you're going to enjoy this.[otherwise]The doll thrusts forward with unexpected precision. You bite your lip as its stiff dildo [manly-penis] slides into your [variable F] and immediately begins to move. It's a little bit smaller than you're used to, but that doesn't bother you at all! The doll doesn't seem to register your enthusiasm, [type fuck secured of M]. You're not getting away now, teehee![end if]";
+		say "[if the relevant sex addiction of M < 6]The doll thrusts forward with unexpected precision. Your heart sinks as its stiff dildo [manly-penis] slides into your [variable F] and immediately begins to move. By now, you know there's no chance of escape, but the idea of sex still makes you sick to your stomach! The doll doesn't seem to register your displeasure, [type fuck secured of M]. You hope it'll be over soon.[otherwise if the relevant sex addiction of M < 11]The doll thrusts forward with unexpected precision. You gasp sharply as its stiff dildo [manly-penis] slides into your [variable F] and immediately begins to move. It's not the biggest you've ever taken, but you still feel every thrust! The doll doesn't seem to notice your reaction, [type fuck secured of M]. You can't shake the feeling that you're going to enjoy this.[otherwise]The doll thrusts forward with unexpected precision. You bite your lip as its stiff dildo [manly-penis] slides into your [variable F] and immediately begins to move. It's a little bit smaller than you're used to, but that doesn't bother you at all! The doll doesn't seem to register your enthusiasm, [type fuck secured of M]. You're not getting away now, tee-hee![end if]";
 	otherwise:
-		say "[if the relevant sex addiction of M < 4]The doll thrusts forward with unexpected precision. You glance over your shoulder as its stiff dildo glides into your [variable F], grimly pleased that you barely felt anything. The doll doesn't seem to register your satisfaction and immediately begins to move. You resolve to try and feel it as little as possible, [type fuck secured of M].[otherwise if the relevant sex addiction of M < 8]The doll thrusts forward with unexpected precision. You bow your head as its stiff dildo glides into your [variable F], half glad and half disappointed to realize you barely felt anything. The doll doesn't seem to register your disappointment and immediately begins to move. You resolve to try and ignore it as much as possible, [type fuck secured of M].[otherwise]The doll thrusts forward with unexpected precision. You whine petulantly as the stiff dildo glides into your [variable F], knowing it's barely big enough for you to feel anything. The doll doesn't seem to register your disappointment and immediately begins to move. You resolve to enjoy it as much as possible anyway, [type fuck secured of M].[end if]".
+		say "[if the relevant sex addiction of M < 4]The doll thrusts forward with unexpected precision. You glance over your shoulder as [his of M] stiff dildo glides into your [variable F], grimly pleased that you barely felt anything. The doll doesn't seem to register your satisfaction and immediately begins to move. You resolve to try and feel it as little as possible, [type fuck secured of M].[otherwise if the relevant sex addiction of M < 8]The doll thrusts forward with unexpected precision. You bow your head as its stiff dildo glides into your [variable F], half glad and half disappointed to realise you barely felt anything. The doll doesn't seem to register your disappointment and immediately begins to move. You resolve to try and ignore it as much as possible, [type fuck secured of M].[otherwise]The doll thrusts forward with unexpected precision. You whine petulantly as the stiff dildo glides into your [variable F], knowing it's barely big enough for you to feel anything. The doll doesn't seem to register your disappointment and immediately begins to move. You resolve to enjoy it as much as possible anyway, [type fuck secured of M].[end if]".
 
 This is the sex doll fills diaper rule:
 	let M be current-monster;
@@ -354,7 +354,7 @@ The diaper punishment rule of a sex doll is usually the sex doll fills diaper ru
 
 
 To say StrikingSuccessFlav of (M - a sex doll) on (B - a body part):
-	say "[BigNameDesc of M] flails its limbs, seemingly blindly! It smacks you [TargetName of B]! Ouch!!".
+	say "[BigNameDesc of M] flails [his of M] limbs, seemingly blindly! [big he of M] smacks you [TargetName of B]! Ouch!!".
 
 To compute (S - a spike bra) damaging (M - a sex doll):
 	say "[BigNameDesc of M], hitting your [printed name of random bra worn by the player], punctures.";
@@ -432,4 +432,3 @@ To loot (M - a sex doll):
 
 
 Sex Doll ends here.
-

@@ -27,7 +27,7 @@ To say WhereAnswer of (M - teacher-hyacinthe):
 	say "[speech style of M]'[if the rank of the player <= 1]Somewhere you can feel completely safe. Welcome to your new home!'[otherwise]Oh darling, I can tell you're on the right track already! A burning desire to improve yourself and reach the next rung on the ladder is the most important quality you can have.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - teacher-hyacinthe):
-	say "[speech style of M]'Oh honey, I would love to let you skip ahead and find out that sort of thing already, but it wouldn't be fair on the other students now, would it? But if you put your mind to it I just know that you'll be able to find out for yourself in no time.'[roman type][line break]".
+	say "[speech style of M]'Oh [honey of M], I would love to let you skip ahead and find out that sort of thing already, but it wouldn't be fair on the other students now, would it? But if you put your mind to it I just know that you'll be able to find out for yourself in no time.'[roman type][line break]".
 
 To say StoryAnswer of (M - a teacher-hyacinthe):
 	say "[speech style of M]'Our beloved headmistress keeps this place going, as a safe haven from the outside world, where everyone is completely free to become exactly who they were born to be.'[roman type][line break]".
@@ -37,13 +37,6 @@ To say AdviceAnswer of (M - teacher-hyacinthe):
 
 To compute teaching of (M - teacher-hyacinthe):
 	say "[speech style of M]'[if the rank of the player < 4]Oh sweetie, one day soon I'm sure you'll be ready for my lessons, but as of right now I'm afraid you haven't progressed enough to be able to handle what awaits you in the pink diamond classroom[otherwise if the rank of the player is 4]Yes dear, that's why I'm here[otherwise]I'm afraid I've taught you all that I can. You're ready for what lies ahead[end if].'[roman type][line break]".
-
-
-
-
-
-
-
 
 
 hypno-lesson is a lesson. The lesson-teacher of hypno-lesson is teacher-hyacinthe.
@@ -83,10 +76,6 @@ To compute teaching of (L - hypno-lesson):
 		otherwise:
 			say "[speech style of M]'There's still too much [one of]hesitance[or]reluctance[or]rebellion[then at random] in you, [student-name of S]. Maybe next time.'[roman type][line break]";
 	if armband is pure diamond, update students. [an important line which makes boring old students disappear and new cool ones appear]
-
-
-
-
 
 
 Teachers Pink Diamond ends here.

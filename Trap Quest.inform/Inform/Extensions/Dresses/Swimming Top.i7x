@@ -30,4 +30,3 @@ To decide which object is the unique-upgrade-target of (C - a swimming top):
 	if C is actually sheer, decide on a random off-stage white monokini.
 
 Swimming Top ends here.
-

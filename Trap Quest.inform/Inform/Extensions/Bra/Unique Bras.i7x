@@ -36,10 +36,6 @@ To compute bra strain of (B - a chastity bra):
 	say "[one of]You can feel your [printed name of B] preventing your [BreastDesc] from growing any further.[or][then purely at random]".
 
 
-
-
-
-
 tongue-bra is a bra. tongue-bra is unique. tongue-bra is biological. tongue-bra is ridiculously low cut. The printed name of tongue-bra is "[clothing-title-before]tongue bra[clothing-title-after]". The text-shortcut of tongue-bra is "tgbr". Understand "tongue", "bra" as tongue-bra.
 The min size of tongue-bra is 20. The max size of tongue-bra is 20. The support of tongue-bra is 0.
 
@@ -73,9 +69,6 @@ Definition: tongue-bra is black themed if tonguesBlack is true.
 To decide which number is the initial outrage of (C - tongue-bra):
 	if C is tonguing, decide on 17;
 	decide on 7.
-
-
-
 
 
 A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
@@ -120,7 +113,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 		now the train-charge of C is 0;
 		if artificial enhancements fetish is 1:
 			if the training-progress of C >= 3:
-				say "Your [printed name of C] emits [the training-progress of C + 1] short tones, tightening slightly each time. You feel a pinch as the bra emits a [the training-progress of C + 2]th, sustained tone and drops off your chest completely. Looking down, you realize the silicone pads have seamlessly attached themselves to your chest. You have breast implants!";
+				say "Your [printed name of C] emits [the training-progress of C + 1] short tones, tightening slightly each time. You feel a pinch as the bra emits a [the training-progress of C + 2]th, sustained tone and drops off your chest completely. Looking down, you realise the silicone pads have seamlessly attached themselves to your chest. You have breast implants!";
 				BustImplantsUp 5;
 				now the training-progress of C is 0;
 				destroy C;
@@ -195,4 +188,3 @@ To decide which number is the strength-influence of (C - acolyte-chestpiece):
 		decide on 1.
 
 Unique Bras ends here.
-

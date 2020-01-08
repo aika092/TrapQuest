@@ -26,7 +26,6 @@ To compute unique recycling of (C - a cumdumpster hat):
 	now the condom-count of condom-eating-quest is 0.
 
 
-
 thirsty work condom hat is a cumdumpster hat. thirsty work condom hat is plastic. thirsty work condom hat is roleplay.
 The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work cumdumpster hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
 
@@ -69,7 +68,6 @@ To decide which number is the initial outrage of (C - cumdumpster condom hat):
 
 Definition: cumdumpster condom hat is drink themed: decide yes.
 Definition: cumdumpster condom hat is purple themed: decide yes.
-
 
 
 Chapter - Class Outfit
@@ -123,4 +121,3 @@ To uniquely destroy (C - a cumdumpster hat):
 
 
 Cumdumpster Hat ends here.
-

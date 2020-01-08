@@ -94,7 +94,7 @@ This is the betrothal rule:[This only triggers when the player is fucked by a mo
 		if royal scepter is actually summonable:
 			now princess-consort is current-monster;
 			now royal scepter is worn by the player;
-			say "You look up at [NameDesc of current-monster] and your eyes meet. A [printed name of royal scepter] appears in your hand, as if to symbolize your lasting connection.";
+			say "You look up at [NameDesc of current-monster] and your eyes meet. A [printed name of royal scepter] appears in your hand, as if to symbolise your lasting connection.";
 		progress quest of betrothal-quest.
 [The betrothal rule is part of the end of sex rules]
 
@@ -118,4 +118,3 @@ To punish infidelity:
 
 
 Royal Scepter ends here.
-

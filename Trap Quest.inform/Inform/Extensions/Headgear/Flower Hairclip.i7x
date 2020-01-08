@@ -115,4 +115,3 @@ To uniquely destroy (C - a flower hairclip):
 		DexUp the virginity-count of virginity-retention-quest - 1.
 
 Flower Hairclip ends here.
-

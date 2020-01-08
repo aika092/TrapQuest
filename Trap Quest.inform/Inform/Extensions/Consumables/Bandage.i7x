@@ -41,4 +41,3 @@ Understand "bandage with [something]", "bandage self with [something]" as bandag
 
 
 Bandage ends here.
-

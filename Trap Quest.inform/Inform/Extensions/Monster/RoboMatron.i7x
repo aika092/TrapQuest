@@ -11,7 +11,7 @@ To say MediumDesc of (M - robomatron):
 	say "MatronBot".
 
 To say MonsterDesc of (M - robomatron):
-	say "This huge humanoid robot looks like it's come straight out of a comic book. Eight arms, each wielding some kind of baby related item at the end, are backed up by two further flying hands, carrying further implements with which to advance your babification. There's no mistake about it - this is some kind of Final Boss.".
+	say "This huge humanoid robot looks like [he of M]'s come straight out of a comic book. Eight arms, each wielding some kind of baby related item at the end, are backed up by two further flying hands, carrying further implements with which to advance your babification. There's no mistake about it - this is some kind of Final Boss.".
 
 Figure of robomatron is the file "NPCs/Bosses/matronbot1.png".
 
@@ -108,7 +108,7 @@ Definition: robomatron is willing to deliver enemas: decide yes.
 Definition: robomatron is eager to enhance the spanking: decide yes.
 
 To say SpankingMercyRejectionFlav of (M - robomatron):
-	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type] It doesn't look like [NameDesc of M] plans to be nice.".
+	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type] [big he of M] doesn't look like [NameDesc of M] plans to be nice.".
 
 To say SpankingStartFlav of (M - robomatron):
 	say "[BigNameDesc of M] grabs you by the ankles and pulls you into the air, so that you are hanging vertically upside down! [line break][variable custom style][if the player is able to speak]'Eek! Put me down!!!'[otherwise]What?! No way, I can't get punished like this[one of][or] again[stopping]![end if][roman type][line break]".
@@ -123,7 +123,7 @@ To say SpankingAftermath of (M - robomatron):
 	say "[one of]This is the most brutal spanking session you've experienced so far this game[or]Once again you've just experienced a spanking session more brutal than any other in this world[stopping]. [if the delicateness of the player > 8]By the end you have been reduced to a puddle of tears and desperate sobs, begging for mercy and feeling like a little baby[otherwise]You can't stop yourself from crying a bit as the punishment feels never ending, and by the end of the session you really do feel like a little baby[end if].".
 
 To say SpankingAfterFlav of (M - robomatron):
-	say "After this [he of M] seems satisfied, lowers you to the floor gently and allows you to crawl away.".
+	say "After this [he of M] seems satisfied, lowering you to the floor gently and allowing you to crawl away.".
 
 To decide which number is the enema quarts of (M - robomatron):
 	decide on 4.
@@ -175,4 +175,3 @@ To compute unique death of (M - robomatron):
 	say "[speech style of M]'CRITICAL ERROR...'[roman type][line break][BigNameDesc of M]'s metal arms fall out of their sockets, and the light disappears from [his of M] eyes. A moment later, [his of M] entire body clatters to the ground.".
 
 RoboMatron ends here.
-

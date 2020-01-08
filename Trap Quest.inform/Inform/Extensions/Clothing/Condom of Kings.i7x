@@ -75,4 +75,3 @@ To compute periodic effect of (C - a condom of kings):
 Definition: a condom of kings is stealable: decide no.
 
 Condom of Kings ends here.
-

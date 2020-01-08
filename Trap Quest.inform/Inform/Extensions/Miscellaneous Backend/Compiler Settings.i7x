@@ -20,11 +20,9 @@ Use MAX_OBJ_PROP_COUNT of 128.
 Use MAX_DICT_ENTRIES of 10000.
 
 
-
 Use MAX_LINK_DATA_SIZE of 20000.
 
 Use dynamic memory allocation of at least 1738400.
 Use maximum indexed text length of at least 200000.
 
 Compiler Settings ends here.
-

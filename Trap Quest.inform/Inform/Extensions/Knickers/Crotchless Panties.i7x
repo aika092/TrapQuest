@@ -92,7 +92,4 @@ Report going when the player is female and the player is upright and there is wo
 		now the walkCharge of C is 0.
 
 
-
-
 Crotchless Panties ends here.
-

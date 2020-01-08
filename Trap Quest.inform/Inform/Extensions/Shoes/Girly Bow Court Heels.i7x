@@ -25,7 +25,7 @@ To say UniqueShortDesc of (C - a girly bow court heels):
 
 pink girly bow court heels is a girly bow court heels.
 
-The printed name of pink girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch pink girly bow court heels[clothing-title-after]".  The text-shortcut of pink girly bow court heels is "pgbc".
+The printed name of pink girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch pink girly bow court heels[clothing-title-after]". The text-shortcut of pink girly bow court heels is "pgbc".
 
 Definition: a pink girly bow court heels is pink themed: decide yes.
 
@@ -41,7 +41,7 @@ To say ClothingDesc of (C - a pink girly bow court heels):
 
 black girly bow court heels is a girly bow court heels.
 
-The printed name of black girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch black and orange girly bow court heels[clothing-title-after]".  The text-shortcut of black girly bow court heels is "bgbc".
+The printed name of black girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch black and orange girly bow court heels[clothing-title-after]". The text-shortcut of black girly bow court heels is "bgbc".
 
 Definition: a black girly bow court heels is black themed: decide yes.
 Definition: a black girly bow court heels is orange themed: decide yes.
@@ -57,4 +57,3 @@ To say ClothingDesc of (C - a black girly bow court heels):
 
 
 Girly Bow Court Heels ends here.
-

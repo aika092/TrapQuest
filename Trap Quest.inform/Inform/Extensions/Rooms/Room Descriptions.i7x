@@ -35,7 +35,6 @@ To say RoomTrapDesc:
 	say "[RoomMonsterDesc]".
 
 
-
 [!<RoomMonsterDesc>+
 
 REQUIRES COMMENTING
@@ -92,7 +91,6 @@ REQUIRES COMMENTING
 +!]
 To say hyperdesc of (D - a direction):
 	say "[TQlink][D][TQdlink]".
-
 
 
 [This is a rule that comes with the base code, we are removing it to add our own directly below. We are doing this because the original code doesn't list the items inside a container in the things the player can see in a room.]
@@ -197,6 +195,4 @@ To say ExamineDesc of (C - water-body):
 		say "This body of water is large enough to wash yourself in.".
 
 
-
 Room Descriptions ends here.
-

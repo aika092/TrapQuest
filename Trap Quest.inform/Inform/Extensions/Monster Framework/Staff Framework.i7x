@@ -466,7 +466,6 @@ To conclude (A - an assembly):
 	now the assemblyTime of A is 0.
 
 
-
 soiled-diaper-assembly is an assembly.
 Definition: soiled-diaper-assembly is eligible if there is a soiled-diaper in the School.
 To say AssemblyStartFlav of (A - soiled-diaper-assembly):
@@ -487,7 +486,6 @@ To execute (A - soiled-diaper-assembly):
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's enough. And [NameBimbo], make sure you take your disgusting mess with you this time.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
 
-
 egg-assembly is an assembly.
 Definition: egg-assembly is eligible if there is an egg in the School and asshole is not actually occupied.
 To say AssemblyStartFlav of (A - egg-assembly):
@@ -495,7 +493,7 @@ To say AssemblyStartFlav of (A - egg-assembly):
 		if SD is in the school, now SD is in the location of the player;
 	let M be the assemblyAnnouncer of A;
 	now the stance of the player is 1;
-	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs that you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of player] eggs belong: UP [his of the player in upper case] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs that you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of player] eggs belong: UP [caps his of the player] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
 	repeat with C running through ass covering clothing:
 		if C is displacable, now C is crotch-displaced;
 		otherwise now C is in the location of the player.
@@ -534,7 +532,6 @@ Check wearing when egg-assembly is active:
 
 Check replacing when egg-assembly is active:
 	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
-
 
 
 Part - Detention
@@ -743,7 +740,7 @@ To compute remedial detention of (M - a staff member):
 	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	otherwise compute DQChairSetup of M;]
 	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
-	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress. [line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realize how [if the player is male]hard[otherwise if the player is female]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
+	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress. [line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is male]hard[otherwise if the player is female]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute mandatory room leaving of M;
 	now M is in Holding Pen;
@@ -797,4 +794,3 @@ To say RemHypnoContent:
 
 
 Staff Framework ends here.
-

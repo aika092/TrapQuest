@@ -271,4 +271,3 @@ Definition: a hand-tattoo (called A) is drawable:
 
 
 Tattoos Framework ends here.
-

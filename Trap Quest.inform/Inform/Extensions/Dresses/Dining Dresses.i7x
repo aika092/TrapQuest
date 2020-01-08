@@ -58,4 +58,3 @@ To decide which number is the initial outrage of (C - a black dining dress):
 
 
 Dining Dresses ends here.
-

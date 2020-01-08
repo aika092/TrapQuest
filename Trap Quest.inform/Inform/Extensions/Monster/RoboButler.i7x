@@ -44,7 +44,7 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a robobutler):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a tall, spindly robot materializes on the pad. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a tall, spindly robot materialises on the pad. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]".
 
@@ -57,7 +57,7 @@ To compute perception of (M - a robobutler):
  	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
  	if the class of the player is maid:
- 		say "It seems to recognise you as a member of staff and leaves you alone.";
+ 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
 		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party themed wearthing):
@@ -65,60 +65,60 @@ To compute perception of (M - a robobutler):
 		otherwise if a random number between 0 and watersports fetish is 1:
 			serve urine from M;
 		otherwise:
-			say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.[end if]";
+			say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of [his of M] 'hands' is politely placed upturned towards you, as if [he of M] is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
-		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
 		now the planned-punishment of M is 3;
 		anger M;
 	otherwise if there is a worn catsuits or the class of the player is vixen:
-		say "Its eyes turn red and it spins toward you[if there is a worn catsuit], focusing in on your catsuit[end if].[line break][speech style of M]'BURGLAR DETECTED! CRIMINAL APPREHENSION PROGRAM INITIATED!'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins toward you[if there is a worn catsuit], focusing in on your catsuit[end if].[line break][speech style of M]'BURGLAR DETECTED! CRIMINAL APPREHENSION PROGRAM INITIATED!'[roman type][line break]";
 		now the planned-punishment of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
- 		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
+ 		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
  		anger M;
  		now the planned-punishment of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
- 		say "Its eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+ 		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
  		anger M;
  		now the planned-punishment of M is 1;
  	otherwise:
-		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
+		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of [his of M] 'hands' is unsubtly placed upturned towards you.";
 		now the planned-punishment of M is 0;
 		calm M.
 
 To serve alcohol from (M - a robobutler):
 	now autodrink is 1;
 	if the player is able to drink:
-		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'PARTYGOER DETECTED. [caps please] HAVE ANOTHER DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass and pours a shot of [one of]gin[or]vodka[or]white rum[or]Sambuca[purely at random] from a bottle. It doesn't seem like it's looking for 'no' as an answer. Do you drink the shot? ";
+		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'PARTYGOER DETECTED. [caps please] HAVE ANOTHER DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass and pours a shot of [one of]gin[or]vodka[or]white rum[or]Sambuca[purely at random] from a bottle. [big he of M] doesn't seem like [he of M]'s looking for 'no' as an answer. Do you drink the shot? ";
 		if the player is bimbo consenting:
 			StomachUp 1;
 			say "You [unless the player is feeling dominant]obediently [end if]down the fiery liquid in one, feeling the effects almost instantly. ";
 			satisfy M;
 			increase alcohol level;
 		otherwise:
-			say "Its eyes flash red for a brief moment.[line break][first custom style]'PARTYPOOPER DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break]It turns to leave you alone, for now.";
+			say "[big his of M] eyes flash red for a brief moment.[line break][first custom style]'PARTYPOOPER DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break][big he of M] turns to leave you alone, for now.";
 			FavourDown M;
 			bore M;
 	otherwise:
-		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'PARTYGOER DETECTED. I HOPE YOU ARE ENJOYING THE PARTY.'[roman type][line break]";
+		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'PARTYGOER DETECTED. I HOPE YOU ARE ENJOYING THE PARTY.'[roman type][line break]";
 		calm M.
 
 To serve urine from (M - a robobutler):
 	now autodrink is 1;
 	if the player is able to drink:
-		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [urine]. It doesn't seem like it's looking for 'no' as an answer. Do you drink the shot? ";
+		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [urine]. [big he of M] doesn't seem like [he of M]'s looking for 'no' as an answer. Do you drink the shot? ";
 		if the player is bimbo consenting:
 			StomachUp 1;
 			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck yuck yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
 			satisfy M;
 			UrineTasteAddictUp 1;
 		otherwise:
-			say "Its eyes flash red for a brief moment.[line break][first custom style]'RELUCTANCE DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break]It turns to leave you alone, for now.";
+			say "[big his of M] eyes flash red for a brief moment.[line break][first custom style]'RELUCTANCE DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break][big he of M] turns to leave you alone, for now.";
 			FavourDown M;
 			bore M;
 	otherwise:
-		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'GREETINGS VISITOR.'[roman type][line break]";
+		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'GREETINGS VISITOR.'[roman type][line break]";
 		calm M.
 
 Report going in the presence of a robobutler:
@@ -237,7 +237,6 @@ To say StrikingFailureFlav of (M - a robot) on (B - a body part):
 	say "[StrikingFlav of M on B][one of]You manage to dodge the blow enough that it doesn't hurt.[or]By swiftly blocking the hit, you manage to avoid getting hurt.[or]You manage to step backwards and dodge it.[at random]".
 
 
-
 Part 4 - Conversation
 
 Section 1 - Greeting
@@ -285,7 +284,7 @@ To compute answer of (M - a robobutler):
 		now C is sure;
 		FavourDown M by 2;
 		if M is not buddy:
-			say "[BigNameDesc of M] turns around, facing away. One of its 'hands' is politely placed upturned towards you, as if it is subtly asking for a tip.";
+			say "[BigNameDesc of M] turns around, facing away. One of [his of M] 'hands' is politely placed upturned towards you, as if [he of M] is subtly asking for a tip.";
 	otherwise:
 		say "[first custom style]'NOT CURRENTLY, [robogreeting]. APOLOGIES.'[roman type][line break]".
 
@@ -307,4 +306,3 @@ To compute friendly drink of (M - a robot):
 		say "[first custom style]'DRINKS ARE AVAILABLE FROM THE MINIBAR, [robogreeting].'[roman type][line break]".
 
 RoboButler ends here.
-

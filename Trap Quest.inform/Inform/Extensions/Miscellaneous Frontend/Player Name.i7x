@@ -809,6 +809,4 @@ This is the stephanie name rule:
 	follow quit rule.
 
 
-
 Player Name ends here.
-

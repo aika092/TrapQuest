@@ -38,6 +38,4 @@ To say RestingDesc of (F - a Hammock):
 	say "You continue to rest against the hammock.";
 
 
-
 Hammock ends here.
-

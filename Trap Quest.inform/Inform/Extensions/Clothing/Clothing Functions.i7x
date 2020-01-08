@@ -1,7 +1,6 @@
 Clothing Functions by Clothing begins here.
 
 
-
 [!<ComputeShortDescOfClothing>+
 
 REQUIRES COMMENTING
@@ -303,4 +302,3 @@ To only destroy (C - clothing):
 
 
 Clothing Functions ends here.
-

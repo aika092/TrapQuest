@@ -75,7 +75,6 @@ Report taking off a corset:
 	if the largeness of belly > 2, say "As you loosen the straps of the [ShortDesc of the noun] your belly [if the largeness of belly > 5]suddenly shoots outwards[otherwise]rounds out[end if], relieved from the pressure.".
 
 
-
 Part - Wearability
 
 corset wearability rules is a rulebook. The wearability rules of corset is usually corset wearability rules.
@@ -102,6 +101,4 @@ This is the bra corset clash rule:
 The bra corset clash rule is listed in the bra wearability rules.
 
 
-
 Corsets Framework ends here.
-

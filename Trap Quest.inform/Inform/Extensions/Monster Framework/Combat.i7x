@@ -227,7 +227,7 @@ To compute replacement of (D - a clothing):
 			compute unique summoning of D;
 			if D is ass plugging or (D is vagina plugging and the player is male), now D is penetrating asshole;
 			if D is vagina plugging and the player is female, now D is penetrating vagina;
-			if D is ballgag, now D is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
+			if D is ballgag, now D is penetrating face; [a ballgag is any gag that occupies the player's face, i.e. most gags]
 		otherwise:
 			say "[BigNameDesc of current-monster], unable to replace your [D], just drops it onto the ground.";
 			now D is in the location of the player;
@@ -383,7 +383,6 @@ The default progress sex rule is listed last in the default continue sex rules.
 
 To decide which number is the rounds of sex left of (M - a monster):
 	decide on the sex-length of M. [Default function allows us to rewrite where this isn't true, e.g. witch and demoness]
-
 
 
 This is the default facial sex rule:
@@ -1368,7 +1367,4 @@ To say AllyDamageFlav of (X - a monster) on (M - a monster):
 	say "The [X] strikes [NameDesc of M]!".
 
 
-
-
 Combat ends here.
-

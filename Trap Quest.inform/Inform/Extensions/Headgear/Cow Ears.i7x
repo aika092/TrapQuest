@@ -47,10 +47,10 @@ To compute cowgirl horniness:[cowgirls get horny if they're in the dungeon at th
 			say "All it takes is one whiff of the [minotaur]'s virile musk to send a wave of arousal rippling through your body. [line break][second custom style]M-moooo.[roman type][line break]";
 			now the arousal of the player is 3500;[the cowgirl is instantly horny in the same room as the minotaur, no matter what]
 		otherwise if minotaur is in the location of the player and a random number between 1 and 3 is 1:
-			say "Spending time close to the [minotaur] is causing your body to react to his potent virile hormones. You [if the arousal of the player > 1]get even more aroused![otherwise]can feel arousal building up inside you![end if]";
+			say "Spending time close to the [minotaur] is causing your body to react to [his of minotaur] potent virile hormones. You [if the arousal of the player > 1]get even more aroused![otherwise]can feel arousal building up inside you![end if]";
 			arouse 300;
 		otherwise if the player is in Dungeon36 and minotaur is not in the location of the player and a random number between 1 and 3 is 1:
-			say "Although the [minotaur] isn't around, his musk still hangs over his cage, slowly building up your arousal.";
+			say "Although the [minotaur] isn't around, [his of minotaur] musk still hangs over [his of minotaur] cage, slowly building up your arousal.";
 			arouse 150;
 		otherwise:
 			increase cow-horny-charge by 1;
@@ -155,6 +155,4 @@ To progress quest of (Q - milking-quest):
 					say "Your [ShortDesc of C] pulse happily. [one of]If you keep up this sort of milking routine, you're sure to be rewarded eventually[or]Keep it up[stopping]!".
 
 
-
 Cow Ears ends here.
-

@@ -106,6 +106,4 @@ A time based rule (this is the acceleration tincture decay rule):
 			if the player is upright and acceleration-tincture-bonus > 0, increase the fat-burning of the player by 20.
 
 
-
 Tinctures ends here.
-

@@ -172,4 +172,3 @@ A time based rule (this is the tentacle breeder tester rule):
 
 
 Tentacle Breeder ends here.
-

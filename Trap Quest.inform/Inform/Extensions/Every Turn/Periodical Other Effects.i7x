@@ -1,7 +1,6 @@
 Periodical Other Effects by Every Turn begins here.
 
 
-
 [!<dominationTime:Integer>*
 
 REQUIRES COMMENTING
@@ -31,7 +30,7 @@ REQUIRES COMMENTING
 +!]
 To compute periodic effects with earnings (local-earnings - a number) and seconds (local-seconds - a number):
 	[If enough experience has been gained, level up heel skill]
-	if the heel time of the player  > minHeelXP and the player is upright, HeelUp 1;
+	if the heel time of the player > minHeelXP and the player is upright, HeelUp 1;
 	[Real world changes]
 	if the remainder after dividing local-earnings by (500 / (fast breast expansion + 1)) < local-seconds:
 		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1000 / (fast breast expansion + 1)) < local-seconds:
@@ -257,7 +256,6 @@ To compute inflation decay:
 	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air! How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
 
 
-
 To compute stat healing:
 	if temp_str_dam > 0 and a random number between 1 and 10 > temp_str_dam:
 		decrease temp_str_dam by 1;
@@ -268,8 +266,6 @@ To compute stat healing:
 	if temp_int_dam > 0 and a random number between 1 and 10 > temp_int_dam:
 		decrease temp_int_dam by 1;
 		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
-
-
 
 
 A time based rule (this is the dressup rule):
@@ -295,11 +291,11 @@ A time based rule (this is the dressup rule):
 				now S is a random off-stage woven stockings;
 			if P is actually summonable and R is 1:
 				if diaper quest is 1, say "[bold type]Suddenly, a big diaper appears on you![roman type][line break]";
-				otherwise say "[bold type]A pair of crotchless panties appear on you!  How useless![roman type][line break]";
+				otherwise say "[bold type]A pair of crotchless panties appear on you! How useless![roman type][line break]";
 				now C is P;
 			otherwise if B is actually summonable and R is 2:
 				if diaper quest is 1, say "[bold type]A pair of baby booties appear on your feet![roman type][line break]";
-				otherwise say "[bold type]A cupless bra appears on you!  How pointless![roman type][line break]";
+				otherwise say "[bold type]A cupless bra appears on you! How pointless![roman type][line break]";
 				now C is B;
 				now C is absorption;
 			otherwise if E is actually summonable and R is 3:
@@ -308,7 +304,7 @@ A time based rule (this is the dressup rule):
 				now C is E;
 			otherwise if S is actually summonable and R is 4:
 				if diaper quest is 1, say "[bold type]A pair of woolly, frilly stockings suddenly appear on you![roman type][line break]";
-				otherwise say "[bold type]A small belt with strips of sequins hanging off it appears around you!  That doesn't seem very useful.[roman type][line break]";
+				otherwise say "[bold type]A small belt with strips of sequins hanging off it appears around you! That doesn't seem very useful.[roman type][line break]";
 				now C is S;
 			unless C is nothing:
 				summon C cursed with quest;
@@ -351,7 +347,4 @@ A time based rule (this is the dressup rule):
 			if P is breasts, stimulate breasts.
 
 
-
-
 Periodical Other Effects ends here.
-

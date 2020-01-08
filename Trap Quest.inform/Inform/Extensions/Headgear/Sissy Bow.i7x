@@ -94,8 +94,4 @@ Definition: baby sissy bow is fetish appropriate if diaper lover > 0.
 Definition: baby sissy bow is blue themed: decide yes.
 
 
-
-
-
 Sissy Bow ends here.
-

@@ -28,8 +28,6 @@ To say FullMonsterDesc of (M - a monster):
 	if M is messy, say MessyMonsterFlav of M.
 
 
-
-
 To say MonsterDesc of (M - a monster):
 	say "This NPC seems to be missing [his of M] description!".
 
@@ -51,7 +49,6 @@ To say MonsterFaceDesc of (M - a fairy):
 
 To say MessyMonsterFlav of (M - a monster):
 	say "The back of [his of M] diaper is bulging out and [his of M] face is red with embarrassment. It seems that someone has done a stinky.".
-
 
 
 To decide which number is the health-colour of (M - a monster):
@@ -140,8 +137,6 @@ To decide which figure-name is the examine-image of (M - a monster):
 	decide on the non-sex-profile of M.
 
 
-
-
 After examining a monster:
 	unless the noun is not intelligent or the noun is robot:
 		say "[FavourDesc of the noun]";
@@ -177,4 +172,3 @@ To say SexDollExplanation of (M - a monster):
 
 
 Monster Descriptions ends here.
-

@@ -16,7 +16,7 @@ To say ShortDesc of (M - djinn):
 	say "djinn".
 
 To say MediumDesc of (M - djinn):
-	say "nubian djinn".
+	say "Nubian djinn".
 
 Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.png".
 Figure of censored djinn is the file "NPCs/Forest/Djinn/djinn2.png".
@@ -63,11 +63,10 @@ The spawn initial djinn rule is listed in the setting up woods monsters rules.
 Definition: djinn is human: decide yes.
 
 
-
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - djinn):[shouldn't happen]
-	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the centre of the clearing, growing darker and darker as a four-armed [man of M] materializes from the waist up. [big he of M] looks at you and narrows [his of M] eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned [man of M] materializes from the waist up. [big he of M] crosses [his of M] arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
+	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the centre of the clearing, growing darker and darker as a four-armed [man of M] materialises from the waist up. [big he of M] looks at you and narrows [his of M] eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned [man of M] materialises from the waist up. [big he of M] crosses [his of M] arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
 	otherwise say "You hear a low toned manly voice echo throughout the woods. [line break][first custom style]'WHO DISTURBS MY SLUMBER?'[roman type][line break]".
 
 To say DiaperReaction of (M - djinn):
@@ -189,7 +188,7 @@ To compute djinn wishing of (M - a monster):
 
 To say wishes of (M - a monster):
 	now inventory-busy is 1; [ensures that hyperlinks are enabled]
-	say "What do you wish for? You can [wish-type]wish for strength[end-wish-type], [wish-type]wish for wisdom[end-wish-type], [wish-type]wish for blessings[end-wish-type], [wish-type]wish for sanity[end-wish-type], [wish-type]wish for safety[end-wish-type], [if diaper quest is 0 and M is in the location of the player][wish-type]wish for a suck of his cock[end-wish-type], [otherwise if M is in the location of the player][wish-type]wish for a spanking[end-wish-type], [end if][if diaper lover >= 1][wish-type]wish for a diaper change[end-wish-type], [end if]or [wish-type]wish for nothing[end-wish-type] to not wish for anything.";
+	say "What do you wish for? You can [wish-type]wish for strength[end-wish-type], [wish-type]wish for wisdom[end-wish-type], [wish-type]wish for blessings[end-wish-type], [wish-type]wish for sanity[end-wish-type], [wish-type]wish for safety[end-wish-type], [if diaper quest is 0 and M is in the location of the player][wish-type]wish for a suck of [his of M] cock[end-wish-type], [otherwise if M is in the location of the player][wish-type]wish for a spanking[end-wish-type], [end if][if diaper lover >= 1][wish-type]wish for a diaper change[end-wish-type], [end if]or [wish-type]wish for nothing[end-wish-type] to not wish for anything.";
 	now inventory-busy is 0.]
 
 To compute djinn wishing of (M - a monster):
@@ -208,15 +207,15 @@ To compute djinn wishing of (M - a monster):
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
 	if the printed name of CNR is "wish for strength":
-		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your body. You feel your muscles grow!";
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body. You feel your muscles grow!";
 		StrengthUp 2;
 		compute DjinnDisappointedAfter of M;
 	otherwise if the printed name of CNR is "wish for wisdom":
-		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your body. You feel stimulated!";
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body. You feel stimulated!";
 		IntUp 2;
 		compute DjinnDisappointedAfter of M;
 	otherwise if the printed name of CNR is "wish for blessings":
-		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your body.";
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.";
 		let N be 3;
 		while N > 0:
 			let C be a random worn blessable clothing;
@@ -229,7 +228,7 @@ To compute djinn wishing of (M - a monster):
 		if N is -1, say "[speech style of M]'Hmm, looks like you weren't wearing enough to get the full effect from that. Not my problem though.'[roman type][line break]";
 		compute DjinnDisappointedAfter of M;
 	otherwise if the printed name of CNR is "wish for sanity":
-		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your head. You feel calmed!";
+		say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your head. You feel calmed!";
 		SexAddictDown 1;
 		SemenAddictDown 1;
 		DelicateDown 1;
@@ -268,7 +267,7 @@ To compute djinn wishing of (M - a monster):
 	otherwise if the printed name of CNR is "wish for a diaper change":
 		if there is a worn diaper or there is a worn messed knickers:
 			let D be a random worn knickers;
-			say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
+			say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
 			if D is wet or D is messed:
 				say "A cloud of baby powder releases from the seams of your [MediumDesc of D]. It feels[if D is perceived messed], and smells,[end if] as if it were brand new!";
 				clean D;
@@ -276,7 +275,7 @@ To compute djinn wishing of (M - a monster):
 			otherwise:
 				say "[speech style of M]'Hmm, looks like your diaper was already clean. Not my problem though.'[roman type][line break]";
 		otherwise if the wish history of M is 0:
-			say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds his folded arms and waves them at your crotch.[line break][speech style of M]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
+			say "[DjinnDisappointedBefore of M][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your crotch.[line break][speech style of M]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
 			if there are worn knickers:
 				let K be a random worn knickers;
 				say "You suddenly feel your [ShortDesc of K] vanish with a gust of air around your crotch!";
@@ -288,11 +287,11 @@ To compute djinn wishing of (M - a monster):
 	otherwise:
 		say "ERROR: unable to properly process that wish. Please report this as a bug!";
 		compute DjinnDisappointedAfter of M.
-		
-		
+
+
 To say SpankingDeclarationFlav of (M - djinn):
 	say "[speech style of M]'Heh, I had a feeling you would choose wisely. I'm going to enjoy this.'[roman type] ".
-	
+
 
 To say DjinnDisappointedBefore of (M - a monster):
 	say "The djinn narrows [his of M] eyes.[line break][speech style of M]'Fine, so be it.'[roman type][line break]".
@@ -331,7 +330,7 @@ Definition: djinn (called M) is waiting for a wish:
 This is the wishing for strength rule:
 	if wish-asked is "wish for strength" or wish-asked is "strength":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your body. You feel your muscles grow!";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your body. You feel your muscles grow!";
 			StrengthUp 2;
 			compute DjinnDisappointedAfter of djinn;
 		compute djinn wishing conclusion;
@@ -341,7 +340,7 @@ The wishing for strength rule is listed in the djinn wish rules.
 This is the wishing for wisdom rule:
 	if wish-asked is "wish for wisdom" or wish-asked is "wisdom":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your head. You feel stimulated!";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your head. You feel stimulated!";
 			IntUp 2;
 			compute DjinnDisappointedAfter of djinn;
 		compute djinn wishing conclusion;
@@ -351,7 +350,7 @@ The wishing for wisdom rule is listed in the djinn wish rules.
 This is the wishing for blessings rule:
 	if wish-asked is "wish for blessings" or wish-asked is "blessings" or wish-asked is "wish for blessing" or wish-asked is "blessing":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your body.";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your body.";
 			let N be 3;
 			while N > 0:
 				let C be a random worn blessable clothing;
@@ -370,7 +369,7 @@ The wishing for blessings rule is listed in the djinn wish rules.
 This is the wishing for sanity rule:
 	if wish-asked is "wish for sanity" or wish-asked is "sanity":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your head. You feel calmed!";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your head. You feel calmed!";
 			SexAddictDown 1;
 			SemenAddictDown 1;
 			DelicateDown 1;
@@ -439,7 +438,7 @@ This is the wishing for a change rule:
 		if djinn is waiting for a wish:
 			if the wish history of djinn is 0 and (there is a worn diaper or there is a worn messed knickers):
 				let D be a random worn knickers;
-				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
+				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
 				if D is wet or D is messed:
 					say "A cloud of baby powder releases from the seams of your [MediumDesc of D]. It feels[if D is perceived messed], and smells,[end if] as if it were brand new!";
 					clean D;
@@ -447,7 +446,7 @@ This is the wishing for a change rule:
 				otherwise:
 					say "[first custom style]'Hmm, looks like your diaper was already clean. Not my problem though.'[roman type][line break]";
 			otherwise if the wish history of djinn is 0:
-				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your crotch.[line break][first custom style]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
+				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your crotch.[line break][first custom style]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
 				if there are worn knickers:
 					let K be a random worn knickers;
 					say "You suddenly feel your [ShortDesc of K] vanish with a gust of air around your crotch!";
@@ -478,7 +477,7 @@ To compute djinn messing of (M - djinn):
 		DexDown 1.
 
 To compute (M - djinn) transforming (C - a clothing):
-	say "[big he of M] points at your [ShortDesc of C], and a bolt of magic lightning erupts from his finger! Your [ShortDesc of C] starts to shimmer...";
+	say "[big he of M] points at your [ShortDesc of C], and a bolt of magic lightning erupts from [his of M] finger! Your [ShortDesc of C] starts to shimmer...";
 	let enhanced be 0;
 	if a random number between 2 and 6 > the raw-magic-modifier of C, now enhanced is 1;
 	[Below is a slightly modified version of the "potentially transform (C - a clothing)" code.]
@@ -506,7 +505,7 @@ To compute (M - djinn) protecting against (X - a monster):
 	otherwise:
 		compute default protecting of M.
 
-To say SexSubmissionFlav of (M - djinn): [this is customized because I rewrote the scene so the player is floating a couple feet off the ground.]
+To say SexSubmissionFlav of (M - djinn): [this is customised because I rewrote the scene so the player is floating a couple feet off the ground.]
 	if diaper quest is 1:
 		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it's not like you can do much about it anyway[or]You submit to the superior being[in random order].";
 	otherwise if the relevant sex addiction of M < 10:
@@ -515,7 +514,7 @@ To say SexSubmissionFlav of (M - djinn): [this is customized because I rewrote t
 		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M]'s in charge![or]You relax and enjoy the feeling of [NameDesc of M]'s [LongDickDesc of M].[at random]".
 
 To say SexResistFlav of (M - djinn):
-	say "[one of]You hopelessly flail against [NameDesc of M]'s grip, doing everything you can to resist the invasion.[or]You seem to be being held still by some kind of magical force, leaving you with no real way of resisting, but you still try![or]You flail around and make as much noise as you can, but no matter how much you try, you can't do anything about [NameDesc of M]'s powerful pistoning.[or]You fight against the [if interracial fetish is 1 and M is penetrating a fuckhole]pleasure that his [LongDickDesc of M] is sending through your sensitive hole[otherwise][M][end if] but it's no use, you can't do anything to stop the action![in random order]".
+	say "[one of]You hopelessly flail against [NameDesc of M]'s grip, doing everything you can to resist the invasion.[or]You seem to be being held still by some kind of magical force, leaving you with no real way of resisting, but you still try![or]You flail around and make as much noise as you can, but no matter how much you try, you can't do anything about [NameDesc of M]'s powerful pistoning.[or]You fight against the [if interracial fetish is 1 and M is penetrating a fuckhole]pleasure that [his of M] [LongDickDesc of M] is sending through your sensitive hole[otherwise][M][end if] but it's no use, you can't do anything to stop the action![in random order]".
 
 To say angry punishment insult of (M - djinn):
 	if M is not friendly-fucking:
@@ -580,7 +579,7 @@ To decide if (M - djinn) is losing wrapper in (F - vagina):
 
 To compute post climax effect of (M - djinn) in (F - vagina):
 	if M is unwrapped and pregnancy fetish is 1 and the pregnancy of the player is 0:
-		say "You immediately feel the [if the bbc addiction of the player > 4]superior virility of [his of M] nubian sperm[otherwise]magical sperm[end if] barrelling down your tubes and straight to your undefended egg[if inhuman pregnancy > 0]s[end if]. A strange tingle shoots through you from deep inside, kind of in your belly, almost, and you feel certain you're now pregnant with [his of M] child[if inhuman pregnancy > 0]ren[end if]![line break]";
+		say "You immediately feel the [if the bbc addiction of the player > 4]superior virility of [his of M] Nubian sperm[otherwise]magical sperm[end if] barrelling down your tubes and straight to your undefended egg[if inhuman pregnancy > 0]s[end if]. A strange tingle shoots through you from deep inside, kind of in your belly, almost, and you feel certain you're now pregnant with [his of M] child[if inhuman pregnancy > 0]ren[end if]![line break]";
 		compute sudden pregnancy; [Allows a chance even when sudden pregnancy is disabled]
 		if the pregnancy of the player is 0:
 			now the pregnancy of the player is 1;
@@ -678,7 +677,7 @@ To say StrikingSuccessFlav of (M - djinn) on (B - a body part):
 	say "A miniature lightning bolt strikes you [TargetName of B]. The powerful electric shock sizzles painfully against your skin!".
 
 To compute (S - a spike bra) damaging (M - djinn):
-	say "You see [NameDesc of M] flinch back in pain as his lightning bolt strikes your [printed name of a random spike bra worn by the player]. The attack was somehow reflected!";
+	say "You see [NameDesc of M] flinch back in pain as [his of M] lightning bolt strikes your [printed name of a random spike bra worn by the player]. The attack was somehow reflected!";
 	decrease the health of M by 3;
 
 To say StrikingFailureFlav of (M - djinn) on (B - a body part):
@@ -857,8 +856,7 @@ To compute forcefeed round (N - a number) of (M - a djinn):
 		otherwise StomachUp 2.
 
 To say DQFeedingResistReactionFlav of (M - a djinn):
-	say "[speech style of M]'[one of]What, don't like it? Should have wished for mother's teat... I favor nutrition over taste.'[or]If you don't like the flavor now you REALLY won't appreciate what it's going to make you do later!'[or]Oh, I'm paralyzed at the thought of you breaking free... of an almighty Djinn. You do have the decision making skills of an infant, don't you?'[then at random][roman type][line break]".
-
+	say "[speech style of M]'[one of]What, don't like it? Should have wished for mother's teat... I favour nutrition over taste.'[or]If you don't like the flavour now you REALLY won't appreciate what it's going to make you do later!'[or]Oh, I'm paralysed at the thought of you breaking free... of an almighty Djinn. You do have the decision making skills of an infant, don't you?'[then at random][roman type][line break]".
 
 
 Part 6 - Conversation
@@ -872,7 +870,7 @@ To say RepeatResponse of (M - djinn):
 	if M is unfriendly:
 		say "[speech style of M]'[one of]Hmm, strange decision to show your face here again.'[or]Well if it isn't my favourite morsel... I mean mortal.'[or]Ah, my human plaything. Excellent!'[at random][roman type][line break]";
 	otherwise if the player is feeling submissive:
-		say "[speech style of M]'[one of]Do I not scare you, little one?'[or]Aren't you afraid of me? I would be.'[or]I see the fear in your eyes.'[or][if the player is prone]Hm. Good manners. Most manners must be taught to kneel before me.'[otherwise]Hm. That look of fear in your eyes. Have you realized the danger in looking me in the eye, mortal?'[end if][at random][roman type][line break]";
+		say "[speech style of M]'[one of]Do I not scare you, little one?'[or]Aren't you afraid of me? I would be.'[or]I see the fear in your eyes.'[or][if the player is prone]Hm. Good manners. Most manners must be taught to kneel before me.'[otherwise]Hm. That look of fear in your eyes. Have you realised the danger in looking me in the eye, mortal?'[end if][at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Do I not scare you, little one?'[or]Aren't you afraid of me? I would be.'[or]You are not afraid of me? Strange.'[at random][roman type][line break]".
 
@@ -898,7 +896,7 @@ To say TauntRejected of (M - djinn):
 	say "[speech style of M]'Haha. Very interesting!'[roman type][line break][BigNameDesc of M] seems to be putting even more effort into fighting you.".
 
 To say PleadRejected of (M - djinn):
-	say "[speech style of M]'Quiet, please.'[roman type][line break]".
+	say "[speech style of M]'Quiet, [please].'[roman type][line break]".
 
 Section 2 - Questioning
 
@@ -926,7 +924,7 @@ To say StoryAnswer of (M - djinn):
 	say "[speech style of M]'Have you seen Aladdin? Something like that, but with way more sex.'[roman type][line break]".
 
 To say EscapeAnswer of (M - djinn):
-	say "[speech style of M]'[one of]Why would I tell you that? What's in it for me if you escape? Exactly, nothing.'[or]Naturally I am powerful enough to travel between dimensions as I [please]. Mortal plane? Furthest reaches of the cosmos? All child's play. I guess that wouldn't work for you though.'[or]Perhaps if you [if diaper quest is 0]suck my cock[otherwise]call me Daddy[end if] enough times, I will tell you.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Why would I tell you that? What's in it for me if you escape? Exactly, nothing.'[or]Naturally I am powerful enough to travel between dimensions as I [please]. Mortal plane? Furthest reaches of the cosmos? All child's play. I guess that wouldn't work for you though.'[or]Perhaps if you [if diaper quest is 0]suck my cock[otherwise]call me [daddytitle of M][end if] enough times, I will tell you.'[in random order][roman type][line break]".
 
 To say AdviceAnswer of (M - djinn):
 	say "[speech style of M]'[one of]Do something too much and you'll get addicted.'[or]Resting on furniture may heal you, but it also resets your exercise counter.'[in random order][roman type][line break]".
@@ -942,6 +940,4 @@ To compute unfriendly drink of (M - djinn):
 	now the boredom of M is 0.
 
 
-
 Djinn ends here.
-

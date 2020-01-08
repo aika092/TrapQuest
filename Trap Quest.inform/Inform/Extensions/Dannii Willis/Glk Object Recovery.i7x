@@ -7,7 +7,6 @@ Version 1/171025 of Glk Object Recovery (for Glulx only) by Dannii Willis begins
 Use authorial modesty.
 
 
-
 Section - Glk object recovery
 
 [ These should technically all be called 'glk' rulebooks, but we'll keep them named 'glulx' for compatibility. ]
@@ -20,7 +19,6 @@ The glulx object-updating rules is a rulebook.
 
 Current glulx rock is a number that varies.
 Current glulx rock-ref is a number that varies.
-
 
 
 Section - GGRecoverObjects
@@ -73,7 +71,6 @@ Include (-
 	rfalse;
 ];
 -) after "Starting Up" in "Glulx.i6t".
-
 
 
 Section - The built in object recovery rules
@@ -171,7 +168,6 @@ Include (-
 	rfalse;
 ];
 -).
-
 
 
 Glk Object Recovery ends here.

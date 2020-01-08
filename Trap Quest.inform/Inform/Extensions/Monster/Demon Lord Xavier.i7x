@@ -237,7 +237,7 @@ To compute fuckhole sex of (M - demon lord):
 	let F be a random fuckhole penetrated by M;
 	if the class of the player is succubus:
 		say "You feel fulfilled in serving your true Master!";
-		dignify 800; 
+		dignify 800;
 	otherwise if the reaction of the player is 2:
 		say "[speech style of M][one of]HAHAHA! I WILL HURT YOU ANYWAY![or]HAHAHA! SCREAM FOR ME![or]In that case... I WILL FUCK YOU HARDER![or]NO! HAHAHA![or]YES! BEG FOR MERCY![or]YOU SCREAM LIKE MY FIRST WIFE! HAHAHA![at random][roman type]";
 	otherwise:
@@ -301,10 +301,10 @@ To compute condom failure of (M - demon lord) in (F - a fuckhole):
 	PussyFill the semen load of M / 2.
 
 To say CondomPieFlav of (M - demon lord) in (F - a fuckhole):
-	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of]his orgasm dies down just as the condom is about to overflow, and [he of M] begins to pull out[or]he starts to pull out just as it's about to overflow[or]it doesn't overflow, and [his of M] [semen] stays safely behind a layer of latex as [he of M] pulls out[at random]. [big he of M] seems to lose interest.".
+	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of][his of M] orgasm dies down just as the condom is about to overflow, and [he of M] begins to pull out[or][he of M] starts to pull out just as it's about to overflow[or]it doesn't overflow, and [his of M] [semen] stays safely behind a layer of latex as [he of M] pulls out[at random]. [big he of M] seems to lose interest.".
 
 To say CondomFailFlav of (M - demon lord) in (O - a fuckhole):
-	say "[BigNameDesc of M] [one of]roars with pleasure, pushing the condom further and further off [his of M] [DickDesc of M] with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that condom is slowly dragged further and further off [his of M] [DickDesc of M][or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation pushes it further and further off [his of M] [DickDesc of M][at random]. You feel every throb that much more intimately than the last, [one of]knowing it's far too late to escape[or]held too tightly to escape[or]completely pinned under [his of M] weight[at random] as a final, powerful spurt forces the condom off completely! [big he of M] laughs powerfully as [one of]your unprotected [variable O] floods with [his of M] [semen], which leaks[or]his load explodes into your [variable O], flooding it with fresh [semen], which leaks[or]his [semen] coats the inside of your [variable O], leaking[at random] out slowly as [he of M] pulls out.".
+	say "[BigNameDesc of M] [one of]roars with pleasure, pushing the condom further and further off [his of M] [DickDesc of M] with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that condom is slowly dragged further and further off [his of M] [DickDesc of M][or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation pushes it further and further off [his of M] [DickDesc of M][at random]. You feel every throb that much more intimately than the last, [one of]knowing it's far too late to escape[or]held too tightly to escape[or]completely pinned under [his of M] weight[at random] as a final, powerful spurt forces the condom off completely! [big he of M] laughs powerfully as [one of]your unprotected [variable O] floods with [his of M] [semen], which leaks[or][his of M] load explodes into your [variable O], flooding it with fresh [semen], which leaks[or][his of M] [semen] coats the inside of your [variable O], leaking[at random] out slowly as [he of M] pulls out.".
 
 To decide if (M - demon lord) is willing to creampie (F - a fuckhole):
 	let W be a random number between the weight of the player and 0;
@@ -408,7 +408,7 @@ To say SpankingAfterFlav of (M - demon lord):
 	say "After this [he of M] seems satisfied, and mercilessly drops you to the ground.".
 
 To say DQSpankResistReactionFlav of (M - demon lord):
-	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Surely a weak little lamb like you knows better than to try that.'[or]Really now? How precious... this is a resistance even a baby slave would giggle at!'[or]Keep this going and I won't stop until you call me [daddy of M]!'[or]You know what would complete this picture? Squeaks, yes squeak for me little thing.'[or]Come now, all you're doing is exciting me.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Surely a weak little lamb like you knows better than to try that.'[or]Really now? How precious... this is a resistance even a baby slave would giggle at!'[or]Keep this going and I won't stop until you call me [daddytitle of M]!'[or]You know what would complete this picture? Squeaks. Yes, squeak for me little thing.'[or]Come now, all you're doing is exciting me.'[in random order][roman type][line break]".
 
 To say DiaperReaction of (M - demon lord):
 	say "[BigNameDesc of M] laughs, with a deep booming tone.[line break][speech style of M]'[one of]YES, I SEE YOU ARE LEARNING YOUR TRUE ROLE AS A PATHETIC DIAPERED MORTAL[or]YOU ARE SO PATHETIC THAT YOU CANNOT EVEN WAIT TO BE ALONE BEFORE SOILING YOUR OWN GARMENTS[at random]!'[roman type][line break]".
@@ -469,8 +469,6 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	satisfy M.
 
 
-
-
 xavier-nightmare-gag is a xavier-nightmare.
 
 Definition: xavier-nightmare-gag is appropriate if current-monster is demon lord.
@@ -487,7 +485,7 @@ To compute punishment of (P - xavier-nightmare-gag):
 	let M be current-monster;
 	let K be a random worn knickers;
 	say "[DemonNightmareStartFlav]";
-	say "[second custom style]'Ooh yes, [he of the player][']s perfect!'[roman type][line break]You find yourself alone kneeling in front of a six foot high female demon in a large posh garden. Her tall, powerful figure is contrasted by a high-pitched feminine voice. She is clutching a large diapered doll with a curiously life-like expression. The garden itself is extremely large and well-kept, the sort of thing you would expect to see at only the grandest of estates. This demon is rich.[line break][second custom style]'Thank you Daddy! [big he of the player][']ll fit right in place!'[line break][variable custom style]Is she calling Xavier 'Daddy'? That probably means this is [his of M] daughter.[roman type][line break]";
+	say "[second custom style]'Ooh yes, [he of the player][']s perfect!'[roman type][line break]You find yourself alone kneeling in front of a six foot high female demon in a large posh garden. Her tall, powerful figure is contrasted by a high-pitched feminine voice. She is clutching a large diapered doll with a curiously life-like expression. The garden itself is extremely large and well-kept, the sort of thing you would expect to see at only the grandest of estates. This demon is rich.[line break][second custom style]'Thank you [daddytitle of M]! [big he of the player][']ll fit right in place!'[line break][variable custom style]Is she calling Xavier '[daddytitle of M]'? That probably means this is [his of M] daughter.[roman type][line break]";
 	if K is clothing and K is not an unmessed dry massive diaper and K is not demon-diaper:
 		say "[if K is diaper and the DQBulk of K < 7][second custom style]'That's not near big enough!'[roman type][line break][end if]She points to your [ShortDesc of K], and before you can even react, a huge slice appears all the way across it, and it falls from your body in tatters.";
 		if K is messed: [need to check before we destroy and reset it]
@@ -511,7 +509,7 @@ To compute punishment of (P - xavier-nightmare-gag):
 	fullscreencutshow figure of cutscene-xavier-nightmare-gag-clean for M;
 	say "As you drink, something weird happens. You feel the liquid travelling down your throat, and then it just hits your bladder instantly. [if the player is incontinent]Due to your incontinence you are powerless to prevent yourself from peeing immediately[otherwise]It's not long at all until you are bursting and so you are soon forced to wet your diaper[end if]. Thankfully your diaper is so giant that there's still a lot of dry padding left. For now. You reflect on what just happened - it seems like your stomach is now directly connected to your bladder, in some kind of magic fashion. Everything you drink - and there's a lot - is going straight into your bladder. And since you're being forced to drink such a lot, it's all coming out pretty immediately too. You're essentially stuck in a permanent state of both drinking and peeing, which means that your diaper is gradually getting heavier and heavier. No matter how big it is, it's got to get full at some point, right?![line break]But no matter how much you pee, it doesn't seem to leak. And you keep on peeing. The demon plane's sun moves across the sky and you have nothing to do but drink and wee, drink and wee.[line break][italic type]Glug glug glug[line break]Hsssssss[roman type][line break]Eventually it gets to the point where you can't really remember what it feels like to not be peeing. It just feels normal to be permanently urinating. It's like it's your natural state. And still time moves forward. Day turns to night, and night to day. It must be nearly 24 hours since you were imprisoned here. With nothing to stimulate your attention, time slowly begins to lose meaning. All you know is drinking and wetting. Your diaper feels so heavy that it's like it's made of lead. Another day passes, and then another night. Xavier's daughter is nowhere to be seen. Will nobody come to release you? Why do you not feel hungry, or tired? Are those just weird quirks of this infernal dimension, or is it some magic effect that has been specifically applied to you? Does it matter? But you have nothing better to occupy your mind than questions like this.";
 	fullscreencutshow figure of cutscene-xavier-nightmare-gag-wet for M;
-	say "On the third day, Xavier's daughter does finally return. You are so happy just to see another face that you gurgle with glee.[line break][second custom style]'Hey there little miss soggy bottom, how are you settling in? From what I understand, the first thousand years are going to be the worst. After that you get used to it.'[roman type][line break]That makes your eyes widen with horror.[variable custom style][muffled sounds][line break][second custom style]'Yeah I thought you might say something like that. Well, too bad, you're mine now.'[roman type][line break]Just at that moment, the demon girl's form seems to begin to shimmer. No wait, the whole world is shimmering! Every second it's fading more and more.[line break][second custom style]'Yeah, only kidding, Daddy says you have to go back now. So I just came to say goodbye and to thank you for being such a good water feature. But I hope you come and play again soon!'[roman type][line break]You manage to sound one final gurgle of relief before she completely disappears from view.";
+	say "On the third day, Xavier's daughter does finally return. You are so happy just to see another face that you gurgle with glee.[line break][second custom style]'Hey there little miss soggy bottom, how are you settling in? From what I understand, the first thousand years are going to be the worst. After that you get used to it.'[roman type][line break]That makes your eyes widen with horror.[variable custom style][muffled sounds][line break][second custom style]'Yeah I thought you might say something like that. Well, too bad, you're mine now.'[roman type][line break]Just at that moment, the demon girl's form seems to begin to shimmer. No wait, the whole world is shimmering! Every second it's fading more and more.[line break][second custom style]'Yeah, only kidding, [daddytitle of M] says you have to go back now. So I just came to say goodbye and to thank you for being such a good water feature. But I hope you come and play again soon!'[roman type][line break]You manage to sound one final gurgle of relief before she completely disappears from view.";
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat.";
 	say "[speech style of M]'I GUESS YOU ARE VERY LUCKY THAT DUE TO MY WEAKENED FORM I HAD TO EVENTUALLY BRING YOU BACK! MAYBE NEXT TIME WE MEET, MY POWERS WILL HAVE FULLY RETURNED AND I CAN KEEP YOU AS MY DAUGHTER'S STATUE FOREVER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
 	satisfy M;
@@ -572,7 +570,6 @@ To compute punishment of (P - xavier-nightmare-belt):
 		now delayed urination is 1;
 		try urinating;
 	if M is interested, satisfy M.
-
 
 
 Section 4 - Damage
@@ -769,6 +766,4 @@ To say MonsterOfferRejectFlav of (M - demon lord) to (T - a thing):
 	say "[first custom style]'I CARE NOT FOR YOUR MORTAL TRINKETS!'[roman type][line break]".
 
 
-
 Demon Lord Xavier ends here.
-

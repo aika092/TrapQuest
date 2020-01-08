@@ -139,7 +139,7 @@ To decide which number is the penis-capacity of (G - green-lace-g-string):
 Definition: green-lace-g-string is bow themed: decide yes.
 Definition: green-lace-g-string is green themed: decide yes.
 
-pink-sequin-g-string is a g-string. The text-shortcut of pink-sequin-g-string is "psg".	Understand "pink", "sequin", "be", "mine" as pink-sequin-g-string.
+pink-sequin-g-string is a g-string. The text-shortcut of pink-sequin-g-string is "psg". Understand "pink", "sequin", "be", "mine" as pink-sequin-g-string.
 To say selfexamineuniquetitle of (G - pink-sequin-g-string):
 	say "pink sequin 'BE MINE' g-string".
 To say UniqueClothingDesc of (G - pink-sequin-g-string):
@@ -164,4 +164,3 @@ Figure of g-string 11 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/
 
 
 G-Strings ends here.
-

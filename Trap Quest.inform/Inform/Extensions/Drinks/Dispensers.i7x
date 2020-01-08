@@ -236,6 +236,4 @@ Report decanting something with alchemical vat:
 	[say "[if the doses of N > 0]The rest of the liquid drains away down a sinkhole at the bottom of the vat. Then, a[otherwise]A[end if] small compartment opens in the wall, and a hose snakes out, filling the vat with another serving of [appearance corresponding to an Magic of N in the Table of Drinks] potion[if known corresponding to an Magic of N in the table of drinks is 1] ([FillName N])[end if]!";]
 
 
-
 Dispensers ends here.
-

@@ -68,8 +68,6 @@ This is the toilet forbidden rule:
 	follow quit rule.
 
 
-
-
 Part 4 - Diaper Focus
 
 
@@ -116,4 +114,3 @@ The diaper focus butt slut rule is listed first in the butt slut eligibility rul
 
 
 Diaper Lover Options ends here.
-

@@ -115,4 +115,3 @@ To compute generic first time class reward of (Q - titfuck-desirability-quest) o
 
 
 Rubber Top Hat ends here.
-

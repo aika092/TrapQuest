@@ -124,7 +124,6 @@ To decide which number is the outrage of (V - a squirt dildo):
 	decide on 14.
 
 
-
 baby's bottle is a vessel. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".
 To decide which figure-name is the examine-image of (V - baby's bottle):
 	decide on the figure of baby's bottle.
@@ -326,11 +325,6 @@ To compute drunken adventure:
 		refresh the map-window.
 
 
-
-
-
-
-
 gold chalice is a vessel. the curse-ID of gold chalice is sure. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items/Accessories/Vessels/goldenchalice1.png".
 To decide which figure-name is the examine-image of (V - gold chalice):
 	decide on the figure of gold chalice.
@@ -427,7 +421,6 @@ Definition: a witch's goblet is magic themed: decide yes.
 Definition: a witch's goblet is gem themed: decide yes.
 
 
-
 horn is a vessel. horn is open topped. The max-doses of horn is 2. The printed name of horn is "[TQlink of item described][unless curse-ID of the item described is unsure][magic-curse] [end if]minotaur horn[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of horn is "mho". Figure of horn is the file "Items/Accessories/Vessels/horn1.png". Understand "minotaur" as horn.
 To decide which figure-name is the examine-image of (V - horn):
 	decide on the figure of horn.
@@ -466,9 +459,4 @@ To say VesselDesc of (V - a vessel):
 	say "A [ShortDesc of V].".
 
 
-
-
-
-
 Vessels ends here.
-

@@ -87,6 +87,4 @@ Check drinking an electric fan:
 Definition: an electric fan is inflation themed: decide yes.
 
 
-
 Electric Fan ends here.
-

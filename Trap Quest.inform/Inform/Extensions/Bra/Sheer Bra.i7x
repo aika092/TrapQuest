@@ -36,4 +36,3 @@ To decide which object is the unique-upgrade-target of (C - a flimsy bra):
 	decide on a random off-stage ribbon bra.
 
 Sheer Bra ends here.
-
