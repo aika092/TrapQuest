@@ -90,7 +90,7 @@ To say RestingDesc of (F - a guest bed):
 	otherwise:
 		if the remainder after dividing N by 4 is 1:[every four turns, add another tentacle.]
 			let O be a random orifice;
-			if the player is male and O is vagina:
+			if the player is not possessing a vagina and O is vagina:
 				now O is asshole;
 			now F is penetrating O;
 			increase the holeCount of F by 1;

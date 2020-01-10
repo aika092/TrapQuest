@@ -169,7 +169,7 @@ To reflect on (A - chubby-slut):
 	otherwise if the fat-weight of the player > 22:
 		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat!  Nobody is going to want to have sex with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 14:
-		say "[variable custom style][one of]Uh-oh, I'm really quite a heavy [if the player is female]girl[otherwise]person[end if] now aren't I?[or]Oops, I've really started to let myself go!  I should probably be less lazy...[in random order][roman type][line break]";
+		say "[variable custom style][one of]Uh-oh, I'm really quite a heavy [if the player is gendered female]girl[otherwise]person[end if] now aren't I?[or]Oops, I've really started to let myself go!  I should probably be less lazy...[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 8:
 		say "[variable custom style][one of]Oh dear, I'm getting a bit unfit, aren't I?[or]Oh dear, I feel like I'm getting a bit chubby![in random order][roman type][line break]".
 

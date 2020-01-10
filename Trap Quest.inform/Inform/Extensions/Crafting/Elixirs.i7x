@@ -192,7 +192,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				StrengthUp X / 3;
 			otherwise:
 				let X be siphoning-elixir-charge * -1;
-				if the size of penis > 0:
+				if the player is possessing a penis:
 					say "Your [player-penis] shrinks!";
 					PenisDown (X / 2) + 1;
 				otherwise:

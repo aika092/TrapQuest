@@ -78,7 +78,7 @@ Definition: a vine (called V) is aggressive:
 		if there is a worn wet diaper or there is a worn messed diaper, decide yes;
 		if there is a worn diaper and (the player is prone or (diaper messing >= 3 and face is not actually occupied)), decide yes;
 		decide no;
-	if asshole is actually occupied and (the player is male or vagina is actually occupied), decide no;
+	if asshole is actually occupied and (the player is not possessing a vagina or vagina is actually occupied), decide no;
 	decide yes.
 
 [!<ComputeVinesStanding>+
@@ -165,7 +165,7 @@ To compute (V - a vine) penetrating:
 		let R be a random number between 1 and 2;
 		let F be asshole;
 		if the player is a pussy slut, now R is 2;
-		if R is 2 and the player is female and the player is not a butt slut, now F is vagina;
+		if R is 2 and the player is possessing a vagina and the player is not a butt slut, now F is vagina;
 		let H be a random number from 1 to 14;
 		if the player is prone, now H is 14;
 		if H < the total volume of hips and H < 10, say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [AssDesc]. It recoils back into the ground.";

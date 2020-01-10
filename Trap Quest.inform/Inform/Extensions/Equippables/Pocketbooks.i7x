@@ -130,7 +130,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		otherwise SemenPuddleUp 1;]
  		StrengthDown X / 10;
  		DexDown X / 10;
-	otherwise if R is 1 and the virgin of the player is 0 and the player is female and the openness of vagina > 5:
+	otherwise if R is 1 and the virgin of the player is 0 and the player is possessing a vagina and the openness of vagina > 5:
 		say "'[one of]I just can't stop thinking about the way I lost my cherry. My tight little cumdump got ruined by that big, hard [manly-penis]! Now, it's like everybody wants to pin me down and [if pregnancy fetish is 1]breed my hot box[otherwise]come inside me[end if]! Life is so unfair[or]I can't believe I let anybody put their [manly-penis] in my fuckhole! Now whenever I get fucked, I have to think about my first time, and how huge that yummy [manly-penis] was[or]I can barely look at myself in the mirror ever since I lost my virginity! All I can think about is getting pounded into the floor by that heavenly [manly-penis]. Umm, hellooo, if I wanted to be treated like the worthless cumdumpster I am, I would ask[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since you lost your purity. The words light up as the book emits a wave of energy, erasing themselves from the page as your [vagina] suddenly and very painfully begins tightening up.";
 		PussyClose 5;
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;

@@ -9,9 +9,9 @@ To decide which text is NameBimbo:
 	if schoolNames is 1 and armband is worn and the armband-print of armband is not "new recruit" and the armband-print of armband is not "slut in training" and the armband-print of armband is not "submissive in training" and the armband-title of armband is not "":
 		decide on "[armband-title of armband]";
 	otherwise if the player-name is 0:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Raymond";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Ray";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Ramielle";
@@ -22,9 +22,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Rae Doll";
 	otherwise if the player-name is 1:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Nicholas";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Nick";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Nickola";
@@ -35,9 +35,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Nikki";
 	otherwise if the player-name is 2:
-		if the bimbo of the player < 6 and the player is male:
+		if the bimbo of the player < 6 and the player is gendered male:
 			decide on "Jonathan";
-		otherwise if the bimbo of the player < 10 and the player is male:
+		otherwise if the bimbo of the player < 10 and the player is gendered male:
 			decide on "Jonny";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Jezebel";
@@ -46,9 +46,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Jeni";
 	otherwise if the player-name is 3:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Christopher";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Chris";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Chastity";
@@ -59,20 +59,20 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Kristi";
 	otherwise if the player-name is 4:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Michael";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Mike";
-		otherwise if the bimbo of the player < 14 and the player is male:
+		otherwise if the bimbo of the player < 14 and the player is gendered male:
 			decide on "Mickey";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Misery";
 		otherwise:
 			decide on "Mika";
 	otherwise if the player-name is 5:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Lucas";
-		otherwise if the bimbo of the player < 7 and the player is male:
+		otherwise if the bimbo of the player < 7 and the player is gendered male:
 			decide on "Luke";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Lust";
@@ -83,11 +83,11 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Laci";
 	otherwise if the player-name is 6:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "Nathaniel";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Nathan";
-		otherwise if the bimbo of the player < 11 and the player is male:
+		otherwise if the bimbo of the player < 11 and the player is gendered male:
 			decide on "Nate";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Nihila";
@@ -96,9 +96,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Natasha";
 	otherwise if the player-name is 7:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Harold";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Harry";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Hellia";
@@ -107,9 +107,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Henrietta";
 	otherwise if the player-name is 8:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "George";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Georgie";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Greed";
@@ -118,11 +118,11 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Georgina";
 	otherwise if the player-name is 9:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Matthew";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Matt";
-		otherwise if the bimbo of the player < 12 and the player is male:
+		otherwise if the bimbo of the player < 12 and the player is gendered male:
 			decide on "Mattie";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Malia";
@@ -131,9 +131,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Matilda";
 	otherwise if the player-name is 10:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Stanley";
-		otherwise if the bimbo of the player < 10 and the player is male:
+		otherwise if the bimbo of the player < 10 and the player is gendered male:
 			decide on "Stan";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Strega";
@@ -142,9 +142,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Starburst";
 	otherwise if the player-name is 11:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Andrew";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Andy";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Vanity";
@@ -155,9 +155,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Kandi";
 	otherwise if the player-name is 12:
-		if the bimbo of the player < 5 and the player is male:
+		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Terrence";
-		otherwise if the bimbo of the player < 9 and the player is male:
+		otherwise if the bimbo of the player < 9 and the player is gendered male:
 			decide on "Terry";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Terror";
@@ -168,11 +168,11 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Trouble";
 	otherwise if the player-name is 13:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "David";
-		otherwise if the bimbo of the player < 6 and the player is male:
+		otherwise if the bimbo of the player < 6 and the player is gendered male:
 			decide on "Dave";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Davey";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Darkness";
@@ -183,11 +183,11 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Divinity";
 	otherwise if the player-name is 14:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "Joseph";
-		otherwise if the bimbo of the player < 6 and the player is male:
+		otherwise if the bimbo of the player < 6 and the player is gendered male:
 			decide on "Joey";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Joe";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Joelle";
@@ -198,9 +198,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Joy";
 	otherwise if the player-name is 15:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "Charles";
-		otherwise if the bimbo of the player < 6 and the player is male:
+		otherwise if the bimbo of the player < 6 and the player is gendered male:
 			decide on "Charlie";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Chastity";
@@ -211,11 +211,11 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Charity";
 	otherwise if the player-name is 16:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "Ronald";
-		otherwise if the bimbo of the player < 6 and the player is male:
+		otherwise if the bimbo of the player < 6 and the player is gendered male:
 			decide on "Ronnie";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Ron";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Raven";
@@ -226,9 +226,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Ruby";
 	otherwise if the player-name is 17:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "Brent";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Bren";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Brielle";
@@ -239,9 +239,9 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Randi";
 	otherwise if the player-name is 18:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "Patrick";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Patrice";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Pain";
@@ -254,22 +254,22 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Panther";
 	otherwise if the player-name is 19:
-		if the bimbo of the player < 4 and the player is male:
+		if the bimbo of the player < 4 and the player is gendered male:
 			decide on "James";
-		otherwise if the bimbo of the player < 8 and the player is male:
+		otherwise if the bimbo of the player < 8 and the player is gendered male:
 			decide on "Jimmy";
-		otherwise if the bimbo of the player < 12 and the player is male:
+		otherwise if the bimbo of the player < 12 and the player is gendered male:
 			decide on "Jamie";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Joy";
-		otherwise if the bimbo of the player < 11 or the bimbo of the player < 14 and the player is male:
+		otherwise if the bimbo of the player < 11 or (the bimbo of the player < 14 and the player is gendered male):
 			decide on "Julie";
 		otherwise if the bimbo of the player < 16:
 			decide on "Jubilee";
 		otherwise:
 			decide on "Juicy";
 	otherwise if the player-name is 20:
-		if the bimbo of the player < 10 and the player is male:
+		if the bimbo of the player < 10 and the player is gendered male:
 			decide on "Colin";
 		otherwise if the player-class is succubus and total-souls of the player > 10:
 			decide on "Conviction";
@@ -496,11 +496,11 @@ To decide which text is NameBimbo:
 			otherwise:
 				decide on Name in row 6 of Table of Custom Female Name;
 		otherwise:
-			if the bimbo of the player < 4 and the player is male:
+			if the bimbo of the player < 4 and the player is gendered male:
 				decide on Name in row 1 of Table of Custom Male Name;
-			otherwise if the bimbo of the player < 7 and the player is male:
+			otherwise if the bimbo of the player < 7 and the player is gendered male:
 				decide on Name in row 2 of Table of Custom Male Name;
-			otherwise if the bimbo of the player < 10 and the player is male:
+			otherwise if the bimbo of the player < 10 and the player is gendered male:
 				decide on Name in row 3 of Table of Custom Male Name;
 			otherwise if the bimbo of the player < 13:
 				decide on Name in row 4 of Table of Custom Male Name;

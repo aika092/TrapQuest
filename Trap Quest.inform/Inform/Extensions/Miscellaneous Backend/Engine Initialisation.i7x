@@ -233,16 +233,16 @@ To retrieve gender:
 		now the player is male.
 
 To retrieve name:
-	if the player is male and transGender is 0, now the current menu is the Table of Male Name Options;
+	if the player is gendered male, now the current menu is the Table of Male Name Options;
 	otherwise now the current menu is the Table of Female Name Options;
 	if diaper quest is 1:
-		if the player is male and transGender is 0, now the current menu is the Table of Male Name Diaper Quest Options;
+		if the player is gendered male, now the current menu is the Table of Male Name Diaper Quest Options;
 		otherwise now the current menu is the Table of Female Name Diaper Quest Options;
 	if the player is male:
 		choose the row with a toggle of pure background toggle rule in the Table of Background Options;
 		blank out the whole row;
 	if tutorial is 1:
-		if the player is male, follow the terrence name rule;
+		if the player is gendered male, follow the terrence name rule;
 		otherwise follow the kimberly name rule;
 	otherwise if quick start > 1:
 		if diaper quest is 0:

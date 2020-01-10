@@ -6,7 +6,8 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a thing is barbie:
-	if the player is male and the size of penis is 0, decide yes;
+	if the player is sexed male and the size of penis is 0, decide yes;
+	if the player is sexed female and the openness of vagina is -1, decide yes;
 	decide no.
 
 [!<YourselfIsAbleToWank>+
@@ -100,7 +101,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the lack of genitalia rule:
-	if the size of penis is 0 and the player is male and the buttskill of the player is 0:
+	if the player is not possessing a vagina and the player is not possessing a penis and the buttskill of the player is 0:
 		if auto is 0, say "You can't wank without genitalia!";
 		rule fails.
 The lack of genitalia rule is listed first in the masturbation restriction rules.
@@ -117,7 +118,7 @@ This is the chastity cage blocks masturbation rule:
 The chastity cage blocks masturbation rule is listed last in the masturbation restriction rules.
 
 This is the research restriction blocks masturbation rule:
-	if there is a worn restricting research airhancer and the buttskill of the player is 0 and the player is male:
+	if there is a worn restricting research airhancer and the buttskill of the player is 0 and the player is possessing a penis:
 		if auto is 0, say "The [printed name of a random worn research airhancer] is keeping you from getting hard enough to masturbate!";
 		rule fails.
 The research restriction blocks masturbation rule is listed last in the masturbation restriction rules.
@@ -208,7 +209,7 @@ REQUIRES COMMENTING
 
 +!]
 To say masturbate:
-	say "[if the bimbo of the player < 6]stimulate yourself[otherwise if the player is male]wank[otherwise]jill yourself[end if]".
+	say "[if the bimbo of the player < 6]stimulate yourself[otherwise if the player is gendered male]wank[otherwise]jill yourself[end if]".
 
 [!<SayMasturbating>+
 
@@ -216,7 +217,7 @@ REQUIRES COMMENTING
 
 +!]
 To say masturbating:
-	say "[if the bimbo of the player < 6]stimulating yourself[otherwise if the player is male]wanking[otherwise]jilling yourself[end if]".
+	say "[if the bimbo of the player < 6]stimulating yourself[otherwise if the player is gendered male]wanking[otherwise]jilling yourself[end if]".
 
 [!<wanking:Integer>*
 
@@ -249,23 +250,23 @@ To say PlayerFantasy: [paired with "fantasizing about [X]." syntax, so no punctu
 	otherwise if the player is diaper focused and the diaper addiction of the player > 14:
 		say "[one of]sitting on your mommy's lap as she rubs the front of your leaking diaper and degrades you for being such a baby[or]laying down as your daddy sticks his [manly-penis] into the leg-hole of your diaper and cums inside[or]bouncing on your daddy's knee in a [if diaper messing >= 4]messy diaper[otherwise]wet diaper[end if][or]drinking milk from your mommy's breasts while she lovingly rubs your [if diaper messing >= 4]messy diaper[otherwise]wet diaper[end if][or]being used and punished by an especially mean babysitter[in random order]";
 	otherwise if the player is diaper focused and the diaper addiction of the player > 9:
-		say "[one of][if the player is male]having a girlfriend force you into diapers before making you wet yourself[otherwise]having a boyfriend force you into diapers before making you wet yourself[end if][or]a dominatrix turning you into a baby against your will and parading you around town for everyone to see your humiliation[or]being blackmailed by your best friend to become her personal diaper slave[or]losing control of your bladder and having to wear diapers as people mock you for being a big baby[in random order]";
+		say "[one of][if the player is gendered male]having a girlfriend force you into diapers before making you wet yourself[otherwise]having a boyfriend force you into diapers before making you wet yourself[end if][or]a dominatrix turning you into a baby against your will and parading you around town for everyone to see your humiliation[or]being blackmailed by your best friend to become her personal diaper slave[or]losing control of your bladder and having to wear diapers as people mock you for being a big baby[in random order]";
 	otherwise if the player is diaper focused and the diaper addiction of the player > 4:
-		say "[one of][if the player is male]a cute diapered slut sucking your [manly-penis][otherwise]a cute boy in a diaper eating your [vagina][end if][or]forcing those bitches who put you in here into diapers[or]someone being forcibly diapered before shamefully cumming into their padding[or]a girl being diapered and pulled over a mommy-domme's knee for a spanking[in random order]";
+		say "[one of][if the player is possessing a penis]a cute diapered slut sucking your [manly-penis][otherwise]a cute boy in a diaper eating your [vagina][end if][or]forcing those bitches who put you in here into diapers[or]someone being forcibly diapered before shamefully cumming into their padding[or]a girl being diapered and pulled over a mommy-domme's knee for a spanking[in random order]";
 	otherwise if the bimbo of the player < 4 and the player is male and asswank is 0:[dominating women]
 		say "[one of]steamy sex with your favourite pornstar, [if pregnancy fetish is 1]Candi Creampie[otherwise]Jenna Juggz[end if][or]letting a team of super hot cheerleaders take turns sucking your dick[or]having a threesome with a couple of [if extreme proportions fetish is 1]stacked as hell bitches[otherwise]super fine bitches[end if][or][if the analvirgin of the player is 1]anally[otherwise]revenge[end if] fucking [if the intelligence of the player > 5]the slutty sisters[otherwise]the sexy bitches[end if] who put you in here[or]sexy women with big breasts and an interest in sitting on your cock[in random order]";
 	otherwise if the bimbo of the player < 4 and asswank is 0:[dominating/humiliating men, equal sex with women]
 		say "[one of]life as a powerful business woman, with a cute secretary that[']s always there when you feel like having an orgasm[or]having steamy sex with your college room-mate on her boyfriend's bed[or]forcing the bitches who put you in here to pleasure you as you redesign their wardrobe from scratch[or]taking over your misogynistic boss's company and having him hang up a picture of himself in a dress in his office[or]sex with a cute guy that always respects your boundaries and has the sense to be gone when you're not horny anymore[or]a whirlwind romance with your misogynistic boss's wife[in random order]";
-	otherwise if the bimbo of the player < 8 and the player is male:[Being dominated by women, or the player isn't dominated but there's emphasis on penises]
+	otherwise if the bimbo of the player < 8 and the player is gendered male:[Being dominated by women, or the player isn't dominated but there's emphasis on penises]
 		say "[one of]sexy women getting fucked by long, hard cocks[or]being pinned underneath a strongly muscled [if futanari fetish is 1]futa[otherwise]woman[end if] as she plows you with her big hard [if futanari fetish is 0]strapon[otherwise]cock[end if][or]having a threesome with a girl and her strong, muscular boyfriend[or]serving a gorgeous woman as she locks you into chastity[in random order]";
 	otherwise if the bimbo of the player < 8:[being dominated by women, men taking passive/equal role]
 		say "[one of]the slutty sisters and their sexy choice of clothes[or]being stripped nude by a tall, strapon-wearing woman and roughly impaled on her plastic cock[or]joining in after walking in on your room-mate and her boyfriend having sex[or]getting in bed with the cute guy from the accounting division[or]being held down by a tall, shirtless man as the slutty sisters take turns pounding you with strapon dildos[in random order]";
-	otherwise if the bimbo of the player < 12 and the player is male:[submitting to women and men at the same time. Submitting to men because of women.]
-		say "[one of]making out with your ex-girlfriend after [if bukkake fetish is 1]her boyfriend unloads on your face[otherwise if watersports fetish is 1]her boyfriend pisses on your face[otherwise]swallowing her boyfriend's[end if][or]eating out your ex-girlfriend right after her boyfriend finishes giving her a massive creampie[or]waking up naked in a sorority house with [if bukkake fetish is 1][semen] all over your face[otherwise if artificial enhancements fetish is 1]lipstick tattooed on your face[otherwise]a huge plug in your ass[end if] and a cowbell around your neck[or]sucking off your college room-mate until he comes[in random order]";
+	otherwise if the bimbo of the player < 12 and the player is gendered male:[submitting to women and men at the same time. Submitting to men because of women.]
+		say "[one of]making out with your ex-girlfriend after [if bukkake fetish is 1]her boyfriend unloads on your face[otherwise if watersports fetish is 1]her boyfriend pisses on your face[otherwise]swallowing her boyfriend's cum[end if][or]eating out your ex-girlfriend right after her boyfriend finishes giving her a massive creampie[or]waking up naked in a sorority house with [if bukkake fetish is 1][semen] all over your face[otherwise if artificial enhancements fetish is 1]lipstick tattooed on your face[otherwise]a huge plug in your ass[end if] and a cowbell around your neck[or]sucking off your college room-mate until he comes[in random order]";
 	otherwise if the bimbo of the player < 12:[submitting to people the player knows, sex with strangers]
 		say "[one of]tall, muscular men with big, hard [manly-penis]s[or]the last guy that called you a frigid prude, and how his [if bukkake fetish is 1][semen] would feel all over your face[otherwise if pregnancy fetish is 1][semen] would feel oozing out of your [vagina][otherwise][manly-penis] would feel inside your mouth[end if][or]letting your room-mate[']s boyfriend [if bukkake fetish is 1]cum on your face[otherwise]fuck you in the ass[end if][or][if pregnancy fetish is 1]letting a stranger fuck your [vagina] without a condom[otherwise]getting into a stranger's car and sucking his cock until you get to his apartment[end if].[or]letting your ex-boyfriend fuck you in front of all your friends[in random order]";
 	otherwise if the bimbo of the player < 15:[degradation from strangers]
-		say "[one of]getting fucked until [if the player is female and pregnancy fetish is 1]you're pregnant[otherwise]you can't walk[end if][or]being pinned down and fucked by muscular men with big hard [manly-penis]s[or]being blindfolded, bound, and stuffed full of dildos[or][if the player is originally female]arriving at an important meeting and immediately getting slammed on the table and fucked by the majority shareholder[otherwise]making money on porno sets as a cock warmer between scenes[end if][or][if bukkake fetish is 1 and a random number between 1 and 2 is 1]the feeling of thick, warm [semen] rolling down your face[otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1]the feeling of warm, frothy [urine] streaming into your mouth[otherwise if the raw semen taste addiction of the player > 10]the feeling of thick, warm [semen] spurting into your mouth and rolling down your throat[otherwise]the feeling of a warm, hard [manly-penis] in your mouth[end if][in random order]";
+		say "[one of]getting fucked until [if the player is possessing a vagina and pregnancy fetish is 1]you're pregnant[otherwise]you can't walk[end if][or]being pinned down and fucked by muscular men with big hard [manly-penis]s[or]being blindfolded, bound, and stuffed full of dildos[or][if the player is originally female]arriving at an important meeting and immediately getting slammed on the table and fucked by the majority shareholder[otherwise]making money on porno sets as a cock warmer between scenes[end if][or][if bukkake fetish is 1 and a random number between 1 and 2 is 1]the feeling of thick, warm [semen] rolling down your face[otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1]the feeling of warm, frothy [urine] streaming into your mouth[otherwise if the raw semen taste addiction of the player > 10]the feeling of thick, warm [semen] spurting into your mouth and rolling down your throat[otherwise]the feeling of a warm, hard [manly-penis] in your mouth[end if][in random order]";
 	otherwise:[even more degradation from strangers]
 		say "[one of]getting gangbanged in the alleyway behind your favourite bar[or][if the player is originally female]using all that time you wasted in business school to further your career as porn actress[otherwise]becoming a pornographic actress[end if][or]waking up bound, naked, and surrounded by a gang of complete strangers with big hard [manly-penis]s[or]giving a wet, sloppy blowjob to every man that passes you in the street[or]play-testing even more [i]fun[/i] games for Nintendolls[in random order]".
 
@@ -300,7 +301,7 @@ Monsters are more likely to go for the pussy if the player is masturbating.
 +!]
 This is the fingering looks slutty rule:
 	if wanking is 1:
-		if asswank is 0 and the player is female and vagina is not actually occupied, increase the desirability of vagina by 5.
+		if asswank is 0 and the player is possessing a vagina and vagina is not actually occupied, increase the desirability of vagina by 5.
 The fingering looks slutty rule is listed in the pussy slut eligibility rules.
 
 [!<masturbating:Action>*
@@ -368,7 +369,7 @@ Carry out masturbating:
 				if the player is consenting:
 					now object-choice is O;
 					break;
-	if asswank is 0 and the player is able to wank and the player is female and vagina is not actually occupied and the number of cursed pussy covering clothing is 0 and auto is 0:[check for insertable]
+	if asswank is 0 and the player is able to wank and the player is possessing a vagina and vagina is not actually occupied and the number of cursed pussy covering clothing is 0 and auto is 0:[check for insertable]
 		repeat with O running through carried insertable things:
 			if the girth of O < the openness of vagina + 3:
 				say "Would you like to use the [ShortDesc of O] to masturbate with? ";
@@ -470,7 +471,7 @@ Carry out masturbating:
 			progress quest of anal-orgasm-quest;
 		otherwise:
 			if the player is male, heal asshole times 1;
-			if the player is female:
+			if the player is possessing a vagina:
 				if object-choice is not an insertable object, heal vagina times 1;
 				increase vaginal-orgasms by 1;
 		if a random number between 1 and the sex addiction of the player < 6, SexAddictUp 1;
@@ -481,7 +482,7 @@ Carry out masturbating:
 			if unlucky is 1, now R is a random number between 1 and 150;
 			let C be a random off-stage chastity cage;
 			if R < the wanktime of the player and C is actually summonable:
-				say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]!  [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
+				say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a chastity cage has appeared around your [if the player is possessing a penis][ShortDesc of penis][otherwise][vagina][end if]! [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
 				summon C locked;
 				say "[variable custom style]What is the game saying?  That I'm too eager to play with myself?  How frustrating...![roman type][line break]";
 		now the wanktime of the player is 500;

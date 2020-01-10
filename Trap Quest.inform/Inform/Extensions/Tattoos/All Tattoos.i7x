@@ -420,11 +420,11 @@ Definition: black hole tattoo is drawable:
 	if it is eligible, decide yes;
 	decide no.
 Definition: black hole tattoo is eligible:
-	if interracial fetish is 1 and the player is female and (the noun is interracial themed or the noun is vagina themed), decide yes;
+	if interracial fetish is 1 and the player is possessing a vagina and (the noun is interracial themed or the noun is vagina themed), decide yes;
 	if (interracial fetish is 0 or the player is male) and the noun is food themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - black hole tattoo):
-	say "[if the player is female and interracial fetish is 1]The words [i]black hole[/i] are tattooed above your belly button, with a large arrow pointing toward your crotch. You feel like it's making the point that your [vagina] should be used exclusively for black cock![otherwise]The words [i]black hole[/i] are tattooed on your belly, with small arrows pointing to your belly button, indicating that you[']re a very enthusiastic eater.[end if]".
+	say "[if the player is possessing a vagina and interracial fetish is 1]The words [i]black hole[/i] are tattooed above your belly button, with a large arrow pointing toward your crotch. You feel like it's making the point that your [vagina] should be used exclusively for black cock![otherwise]The words [i]black hole[/i] are tattooed on your belly, with small arrows pointing to your belly button, indicating that you[']re a very enthusiastic eater.[end if]".
 
 Definition: black hole tattoo is interracial themed:
 	if the player is female, decide yes;
@@ -989,7 +989,7 @@ double penetration tattoo is a body tattoo.
 The tattoo-title of double penetration tattoo is "double penetration".
 Definition: a double penetration tattoo is drawable if it is not worn and diaper quest is 0 and it is eligible.
 Definition: a double penetration tattoo is eligible:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the noun is heart themed or (the noun is anal sex themed and the noun is vagina themed), decide yes;
 	if the noun is clothing:
 		if the noun is crotch covering and the noun is no protection, decide yes;
@@ -1380,9 +1380,9 @@ Definition: hundred percent cunt tattoo is eligible:
 	if the noun is not manly clothing and (the noun is knickers or the noun is trousers), decide yes;
 	decide no.
 To say tattoo-desc of (T - hundred percent cunt tattoo):
-	say "The words '100% CUNT' are tattooed in block capitals above your crotch. [if the player is male]At the moment, this is clearly a lie![otherwise]Now that this is true, it seems to be helping your mind stay focused, but you can also feel it making your [vagina] somehow... desirable.[end if]".
+	say "The words '100% CUNT' are tattooed in block capitals above your crotch. [if the player is not possessing a vagina]At the moment, this is clearly a lie![otherwise]Now that this is true, it seems to be helping your mind stay focused, but you can also feel it making your [vagina] somehow... desirable.[end if]".
 To decide which number is the bimbo-influence of (T - hundred percent cunt tattoo):
-	if the player is female, decide on -2;
+	if the player is possessing a vagina, decide on -2;
 	decide on 0.
 This is the hundred percent cunt tattoo pussy slut rule:
 	if hundred percent cunt tattoo is worn, increase the desirability of vagina by 10.
@@ -1518,7 +1518,7 @@ Definition: kitty cat tattoo is cat themed: decide yes.
 
 knock-me-up tattoo is a belly tattoo. The tattoo-title of knock-me-up tattoo is "knock me up daddy". Understand "knock", "knock me", "knock me up", "daddy" as knock-me-up tattoo.
 To say tattoo-desc of (T - knock-me-up tattoo):
-	say "The words 'Knock Me Up Daddy' are tattooed in a black cursive font in an arch above your belly button[if the player is female]. You can feel it increasing your fertility[end if].".
+	say "The words 'Knock Me Up Daddy' are tattooed in a black cursive font in an arch above your belly button[if the player is possessing a vagina]. You can feel it increasing your fertility[end if].".
 Definition: knock-me-up tattoo is drawable: decide no.
 Definition: knock-me-up tattoo is pregnancy related: decide yes.
 To summon (T - knock-me-up tattoo):
@@ -1662,7 +1662,7 @@ To decide which object is the concealer of (T - marker chest tattoo):
 
 measurement tattoo is a crotch tattoo. The tattoo-title of measurement tattoo is "measurement".
 Definition: measurement tattoo is drawable:
-	if the player is male or there is a worn crotch tattoo or diaper quest is 1, decide no;
+	if the player is not possessing a vagina or there is a worn crotch tattoo or diaper quest is 1, decide no;
 	decide yes.
 Definition: measurement tattoo is eligible:
 	if the noun is lubricant or the noun is piece of rubber or the noun is sex toy or the noun is zippable clothing, decide yes;
@@ -2062,7 +2062,7 @@ pussy deluxe tattoo is a crotch tattoo. The tattoo-title of pussy deluxe tattoo 
 Definition: pussy deluxe tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if the player is female, decide yes;
+	if the player is possessing a vagina, decide yes;
 	decide no.
 Definition: pussy deluxe tattoo is eligible:
 	if the noun is plentiful accessory or the noun is gem themed or the noun is whore themed, decide yes;
@@ -2111,11 +2111,11 @@ Definition: respect the pussy tattoo is eligible:
 		if the noun is crotch-exposing or (the noun is vagina themed and the initial outrage of the noun <= 5), decide yes;
 	decide no.
 To say tattoo-desc of (T - respect the pussy tattoo):
-	say "The words 'respect the pussy' are inked above your [genitals][if the player is male]. It doesn't seem to do much right now[otherwise if T is not currently visible]. It feels like it wants to be kept on display[end if].".
+	say "The words 'respect the pussy' are inked above your [genitals][if the player is not possessing a vagina]. It doesn't seem to do much right now[otherwise if T is not currently visible]. It feels like it wants to be kept on display[end if].".
 To decide which number is the initial outrage of (T - respect the pussy tattoo):
 	decide on 7.
 To decide which number is the delicateness-influence of (T - respect the pussy tattoo):
-	if the player is female and T is currently visible, decide on -2;
+	if the player is possessing a vagina and T is currently visible, decide on -2;
 	decide on 0.
 Definition: respect the pussy tattoo is vagina themed: decide yes.
 
@@ -2771,7 +2771,7 @@ Definition: VIP pussy tattoo is eligible:
 	if the noun is salve of concealment or the noun is vagina themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - VIP pussy tattoo):
-	say "The letters 'V', 'I' and 'P' are written in stylish blue and black above your [genitals]. [if the player is male]It doesn't seem to do much right now[otherwise]It might discourage weak enemies from choosing vaginal sex[end if].".
+	say "The letters 'V', 'I' and 'P' are written in stylish blue and black above your [genitals]. [if the player is not possessing a vagina]It doesn't seem to do much right now[otherwise]It might discourage weak enemies from choosing vaginal sex[end if].".
 To decide which number is the initial outrage of (T - VIP pussy tattoo):
 	decide on 9.
 This is the VIP pussy tattoo pussy slut rule:

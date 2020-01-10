@@ -99,7 +99,7 @@ To say DemonSkin of (M - an abyssal demoness):
 To say MonsterComment of (M - a demoness):
 	if diaper quest is 0:
 		if the bimbo of the player < 7:
-			if the player is male and transGender is 0, say "[first custom style][one of][big he of M]'s smoking hot. I think it's a bad idea to ask if [he of M] wants to fuck, though.[or]This slut looks like [he of M]'s DTF.[or]I normally think eating [HoleDesc of M] is only for Beta faggots, but... I'd do a lot if I could fuck that [if lady fetish is 2]hunk[otherwise]chick[end if].[or]Man, what is up with those heels? I'd hate to get hit with one of those.[or]Whoa, are those dildos on [his of M] heels? Maybe [he of M]'d let me stick one up [his of M] butt.[in random order]";
+			if the player is gendered male, say "[first custom style][one of][big he of M]'s smoking hot. I think it's a bad idea to ask if [he of M] wants to fuck, though.[or]This slut looks like [he of M]'s DTF.[or]I normally think eating [HoleDesc of M] is only for Beta faggots, but... I'd do a lot if I could fuck that [if lady fetish is 2]hunk[otherwise]chick[end if].[or]Man, what is up with those heels? I'd hate to get hit with one of those.[or]Whoa, are those dildos on [his of M] heels? Maybe [he of M]'d let me stick one up [his of M] butt.[in random order]";
 			otherwise say "[first custom style][one of]Wow, I can't believe how [he of M]'s dressed. Slut.[or]Even someone that beautiful has to play to the male fantasies of this game. Ugh.[or]There is something supernatural about this [man of M].[or]Why not wear a T-shirt that says 'Hey men, come and get me!' Disgusting.[or]Those heels look like they pack a punch, even if they look ridiculous.[or]There's something foreboding about this [man of M].[in random order]";
 		otherwise if the bimbo of the player < 12:
 			say "[variable custom style][one of][big he of M]'s stunning. I'm jealous.[or]Where did [he of M] get [his of M] outfit? It looks... comfy.[or]I don't think I'd win a fight against [him of M], but for some reason... I want to try anyway?[or]Something about [him of M] makes me want to get on my knees.[or][big he of M]'s so tall! If I want [him of M] to see me as an equal I'll have to find a way to get myself to [his of M] level.[or][big he of M] towers over me. I know it's only those heels, but it's strangely intimidating.[or]Something tells me I could be in a lot of pain if I don't submit to [his of M] wishes.[in random order]";
@@ -493,7 +493,7 @@ To compute the orifice choosing of (M - a demoness):
 	if M is unfriendly:
 		now the chosen-orifice of M is asshole;
 		if the excitement of M > 5 or doomed is 5 or demon lord is alive or the soul-timer of M is -99:[she has to be in the mood for vaginal sex]
-			if the player is female and a random number between 1 and 2 is 1, now the chosen-orifice of M is vagina;
+			if the player is possessing a vagina and a random number between 1 and 2 is 1, now the chosen-orifice of M is vagina;
 
 This is the demoness punishes diaper rule:
 	let P be a random sex toy penetrating asshole;
@@ -880,7 +880,7 @@ To compute (M - a demoness) entering mouth:
 
 To say FriendlyOralRequest of (M - a demoness):
 	if the oral sex addiction of the player < 4:
-		say "[first custom style]'[one of]I[']m taking the deal. That's all I'm doing. [if the player is male and transGender is 0]This isn't a gay thing.'[otherwise]Don't get any sick ideas.'[end if][or]I'll take the deal. [if bukkake fetish is 1]But don[']t you fucking dare cum on my face.'[otherwise]But I[']m not going to pretend I enjoy sucking dick. Got it?'[end if][or]I'm hoping this deal isn't what I think it is...'[at random][roman type][line break]";
+		say "[first custom style]'[one of]I[']m taking the deal. That's all I'm doing. [if the player is gendered male]This isn't a gay thing.'[otherwise]Don't get any sick ideas.'[end if][or]I'll take the deal. [if bukkake fetish is 1]But don[']t you fucking dare cum on my face.'[otherwise]But I[']m not going to pretend I enjoy sucking dick. Got it?'[end if][or]I'm hoping this deal isn't what I think it is...'[at random][roman type][line break]";
 		cutshow figure of demoness cutscene 9 for M;
 	otherwise if the player is craving semen:
 		say "[second custom style]'[one of]Cum is part of my reward right? I'm desperate for a taste...'[or]I really need to wet my throat, give me whatever you want...'[or]Let me have a taste of your cum. I promise I[']ll take whatever reward you want...'[at random][roman type][line break]";
@@ -1018,7 +1018,7 @@ To compute happy reward of (M - a demoness):
 		let N be a random number between 2 and 3;
 		if N + the size of penis > 10, now N is 10 - the size of penis;
 		increase the size of penis by N;
-	otherwise if R is 1 and M is not penetrating vagina and the player is female and the openness of vagina > 0:
+	otherwise if R is 1 and M is not penetrating vagina and the player is possessing a vagina and the openness of vagina > 0:
 		say "[speech style of M]Good girl. You remind me of myself before the dark lord made me into his eternal servant.[roman type][line break] [BigNameDesc of M] points at your [vagina], which glows with unnatural light as it spontaneously tightens.";
 		let N be a random number between 2 and 3;
 		PussyClose N;
@@ -1670,7 +1670,7 @@ To compute failed dominance punishment of (M - a demoness):
 		if lady fetish is 1, now N is a random vine;
 		now N is penetrating vagina;
 		now N is penetrating asshole;
-		if the player is female, PussyFill X;
+		if the player is possessing a vagina, PussyFill X;
 		AssFill X;
 		now N is not penetrating vagina;
 		now N is not penetrating asshole;

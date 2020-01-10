@@ -435,7 +435,7 @@ To compute teaching of (L - practical-lesson):
 			if face is not actually occupied:
 				if pussy-count is 0 and ass-count is 0 and slobber-owner is the player, set numerical response 1 to "use your mouth";
 				otherwise set numerical response 1 to "use your mouth (you'll have to slurp up[if pussy-count > 1] [pussy-count] lots of vaginal juices[otherwise if pussy-count > 0] the taste of someone's pussy juice[end if][if pussy-count > 0 and ass-count > 0] and[end if][if ass-count > 1] [ass-count] lots of ass juices[otherwise if ass-count >  0] the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0] [NameDesc of slobber-owner][']s slobber[end if])";
-			if the player is female and vagina is not actually occupied and the number of worn chastity cage is 0:
+			if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity cage is 0:
 				if ass-count is 0, set numerical response 2 to "use your pussy";
 				otherwise say "You aren't allowed to use your [vagina] while there's someone else's ass juices on [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L], as that would be unhealthy.";
 			if asshole is not actually occupied, set numerical response 3 to "use your asshole";

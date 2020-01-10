@@ -67,7 +67,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: penis is tiny:
-	if the size of penis > 0 and the size of penis < 4, decide yes;
+	if the player is possessing a penis and the size of penis < 4, decide yes;
 	decide no.
 
 
@@ -101,7 +101,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: penis is exposed:
-	if the size of penis <= 0, decide no;
+	if the player is not possessing a penis, decide no;
 	if there is a worn actually at least partially penis covering clothing, decide no;
 	decide yes.
 
@@ -111,7 +111,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: penis is at least partially exposed:
-	if the size of penis <= 0, decide no;
+	if the player is not possessing a penis, decide no;
 	if there is a worn actually penis covering clothing, decide no;
 	decide yes.
 
@@ -196,6 +196,15 @@ REQUIRES COMMENTING
 To decide which number is min penis size:
 	if min penis size points is 0, decide on diaper quest;
 	decide on min penis size points + diaper quest + micro-choice.
+
+[!<PlayerIsPossessingPenis>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: yourself is possessing a penis:
+	if the player is sexed male and the player is possessing a penis, decide yes;
+	decide no.
 
 Part 2 - Description
 
@@ -307,14 +316,14 @@ REQUIRES COMMENTING
 
 +!]
 To say TotalDesc of penis:
-	if the size of penis > 0:
+	if the player is possessing a penis:
 		if there is worn chastity cage:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
 		otherwise if there is pussy covering clothing:
 			say "You have a [ShortDesc of penis] and [ShortBallsDesc]. ";
 		otherwise:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
-	otherwise if the player is male:
+	otherwise if the player is sexed male:
 		say "A doll-like flat mound exists where your penis used to be. [if watersports fetish is 1 or diaper lover >= 1]There's just a tiny hole to allow you to pee.[end if]".
 
 [!<SayShortBallsDesc>+
@@ -323,8 +332,10 @@ REQUIRES COMMENTING
 
 +!]
 To say ShortBallsDesc:
-	if the size of penis < 3:
+	if the size of penis =< 0:
 		say "internal testicles";
+	otherwise if the size of penis < 3:
+		say "light, tiny balls";
 	otherwise if the size of penis < 5:
 		say "small, tight ball sac";
 	otherwise if the size of penis < 7:
@@ -344,7 +355,7 @@ To say PenisModesty:
 			say "It is [if penis is exposed]clearly[otherwise]partially[end if] visible [if W is actually dense]poking out of[otherwise]through[end if] your [ShortDesc of W]. ";
 		otherwise:
 			say "You have no clothing covering it. ";
-	otherwise if the size of penis > 0:
+	otherwise if the player is possessing a penis:
 		let W be a random worn actually penis covering clothing;
 		say "It can't be seen thanks to the [ShortDesc of W]. ".
 
@@ -362,7 +373,7 @@ To PenisUp (X - a number):
 	if fast tg is 3, now X is -1; [no text flavour]
 	if bitch tattoo is worn, now X is X / 2;
 	if X is 0:
-		say "[if the player is male]Your [manly-penis] can't seem to grow any larger![end if]";
+		say "[if the player is possessing a penis]Your [manly-penis] can't seem to grow any larger![end if]";
 	while X > 0:
 		decrease X by 1;
 		if the size of penis < 10:
@@ -390,11 +401,11 @@ To PenisDown (X - a number):
 			let R be a random number from 1 to (the pregnancy rate of the player + TG fetish);
 			decrease the size of penis by a random number from 1 to R;
 			if the size of penis <= 4 and the size of penis > 1 and previous penis length > 4, cutshow figure of body reaction 4 for penis;
-		otherwise if the player is male and the size of penis is 0 and previous penis length is 0:
+		otherwise if the player is sexed male and the size of penis is 0 and previous penis length is 0:
 			say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but since you have nothing left, it can't!";
 			now X is 0;
 	if the size of penis < min penis size, now the size of penis is min penis size;
-	if the size of penis <= 0 and previous penis length > 0:
+	if the player is not possessing a penis and previous penis length > 0:
 		let C be a random worn chastity cage;
 		cutshow figure of body reaction 4 for penis;
 		if C is a thing:

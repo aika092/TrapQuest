@@ -225,8 +225,8 @@ To compute replacement of (D - a clothing):
 			now D is identified;
 			now D is sure;
 			compute unique summoning of D;
-			if D is ass plugging or (D is vagina plugging and the player is male), now D is penetrating asshole;
-			if D is vagina plugging and the player is female, now D is penetrating vagina;
+			if D is ass plugging or (D is vagina plugging and the player is not possessing a vagina), now D is penetrating asshole;
+			if D is vagina plugging and the player is possessing a vagina, now D is penetrating vagina;
 			if D is ballgag, now D is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
 		otherwise:
 			say "[BigNameDesc of current-monster], unable to replace your [D], just drops it onto the ground.";
@@ -346,7 +346,7 @@ The default vaginal climax rule is listed in the default end-of-sex rules.
 
 To replace any cuntplugs:
 	repeat with G running through sex toys retained by current-monster:
-		if the player is female, compute replacement of G in vagina;
+		if the player is possessing a vagina, compute replacement of G in vagina;
 		otherwise compute replacement of G in asshole.
 
 To compute vaginal climax of (M - a monster):
@@ -649,7 +649,7 @@ Definition: face (called B) is a potential target:
 	decide no.
 
 Definition: vagina (called B) is a potential target:
-	if current-monster is willing to do vaginal and the player is female, decide yes;
+	if current-monster is willing to do vaginal and the player is possessing a vagina, decide yes;
 	decide no.
 
 Definition: asshole (called B) is a potential target:

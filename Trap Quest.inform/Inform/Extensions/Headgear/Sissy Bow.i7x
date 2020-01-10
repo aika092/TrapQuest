@@ -2,7 +2,7 @@ Sissy Bow by Headgear begins here.
 
 A sissy bow is a kind of headgear. A sissy bow is usually silk. A sissy bow is blondeness-positive. A sissy bow is brightness-positive. A sissy bow is redness-positive. A sissy bow is usually hair growing. A sissy bow is womanly.
 
-Definition: a sissy bow is roleplay if the player is male.
+Definition: a sissy bow is roleplay if the player is gendered male.
 
 The printed name of sissy bow is usually "[clothing-title-before]sissy bow[clothing-title-after]".
 

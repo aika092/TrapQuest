@@ -117,11 +117,11 @@ To say slut:
 	say "[one of]slut[or]skank[or]slag[as decreasingly likely outcomes]".
 
 To say sissy:
-	if transGender is 0 and the player is male, say "sissy";
+	if the player is gendered male, say "sissy";
 	otherwise say "[if diaper quest is 0]slutty[otherwise]girly[end if]".
 
 To say sissy slut:
-	if transGender is 0 and the player is male:
+	if the player is gendered male:
 		say "sissy[one of][if diaper quest is 0] slut[end if][or][as decreasingly likely outcomes]";
 	otherwise if diaper quest is 1:
 		say "babygirl";
@@ -183,8 +183,8 @@ REQUIRES COMMENTING
 
 +!]
 To say player-crotch:
-	if the player is male and the size of penis is 0, say "[asshole]";
-	otherwise say "[if the player is female][vagina][otherwise if the size of penis > 5][manly-penis][otherwise][sissy-penis][end if] and [asshole]".
+	if the player is not possessing a penis and the player is not possessing a vagina, say "[asshole]";
+	otherwise say "[if the player is possessing a vagina][vagina][otherwise if the size of penis > 5][manly-penis][otherwise][sissy-penis][end if] and [asshole]".
 
 [!<SayFuckholes>+
 
@@ -192,7 +192,7 @@ REQUIRES COMMENTING
 
 +!]
 To say fuckholes:
-	say "[if the player is female][vagina] and [end if][asshole]".
+	say "[if the player is possessing a vagina][vagina] and [end if][asshole]".
 
 [!<SayLoad>+
 
@@ -270,7 +270,7 @@ REQUIRES COMMENTING
 
 +!]
 To say asshole:
-	if the player is male and transGender is 0:
+	if the player is gendered male:
 		if the raw intelligence of the player < 5 and diaper lover >= 1:
 			say "[one of]bum[or]butt[or]no-no[or]muffin[as decreasingly likely outcomes]";
 		otherwise if the bimbo of the player < 8 or diaper quest is 1:

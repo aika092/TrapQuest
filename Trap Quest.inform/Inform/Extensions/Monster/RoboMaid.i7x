@@ -38,7 +38,7 @@ To say speech style of (M - a robomaid):
 	say second custom style.
 
 To say robogreeting of (M - a robomaid):
-	say "[if the class of the player is maid]GIRLFRIEND[otherwise if the player is female or the bimbo of the player > 9]SEXY[otherwise]BIG BOY[end if]".
+	say "[if the class of the player is maid]GIRLFRIEND[otherwise if the player is gendered female or the bimbo of the player > 9]SEXY[otherwise]BIG BOY[end if]".
 
 This is the spawn initial robomaid rule:
 	if the number of alive robomaids is 0:

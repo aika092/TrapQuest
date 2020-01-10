@@ -381,7 +381,7 @@ To compute (M - minotaur) removing (X - a thing):
 	dislodge X.
 
 To decide if (M - minotaur) is willing to creampie (F - a vagina):
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
 	if the class of the player is cowgirl, decide yes;
 	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;

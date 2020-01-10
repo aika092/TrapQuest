@@ -124,7 +124,7 @@ To compute periodic effect of (C - an expansion clothing):
 		let F be a random fuckhole penetrated by C;
 		if the size of C > the openness of F, Ruin F;
 		say "Your [ShortDesc of C] drastically increases in size![if the size of C > the openness of F] You feel your [variable F] stretching painfully to accommodate the enlarged intruder[otherwise] You feel the [clothing-material of C] pressing much tighter against the inside of your [variable F][end if].";
-		if the player is male and the size of penis < the size of C, PenisUp 1.[expansion clothing will slowly increase penis size for male players]
+		if the player is possessing a penis and the size of penis < the size of C, PenisUp 1.[expansion clothing will slowly increase penis size for male players]
 
 To compute periodic effect of (C - a rejuvenation clothing):
 	increase the toy-charge of C by 1;

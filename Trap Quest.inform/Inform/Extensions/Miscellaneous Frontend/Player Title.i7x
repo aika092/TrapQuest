@@ -134,9 +134,9 @@ To say TitleBimbo:
 				say " adult baby";
 		if T is not "adventurer":
 			if armband is worn, say " [armband-print of armband]";
-			if T is "catgirl" and the player is male and the bimbo of the player < 13 and the largeness of breasts < 6:
+			if T is "catgirl" and the player is gendered male and the bimbo of the player < 13 and the largeness of breasts < 6:
 				say " catboy";
-			otherwise if T is "puppygirl" and the player is male and the bimbo of the player < 13 and the largeness of breasts < 6:
+			otherwise if T is "puppygirl" and the player is gendered male and the bimbo of the player < 13 and the largeness of breasts < 6:
 				say " puppyboy";
 			otherwise if the player is a sissy and the player is queen of spades and the bimbo of the player > 7:
 				say " black cock [if highest body part sex addiction > 7]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
@@ -145,7 +145,7 @@ To say TitleBimbo:
 		otherwise if armband is worn:
 			say " [armband-print of armband]";
 		otherwise if there is a worn ballet related dress and there is a worn ballet related shoes:
-			say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
+			say " [if the player is gendered male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 		otherwise if whip-of-domination is worn and the player is feeling dominant:
 			say " dominatrix";
 		otherwise if newborn-wasp is an alive giant wasp:
@@ -171,7 +171,7 @@ To say TitleBimbo:
 					if the number of worn clothing > 4, say " cross-dressing";
 					say " trap";
 				otherwise:
-					say " girl[if the player is male]yboy[end if]";
+					say " girl[if the player is gendered male]yboy[end if]";
 		if the player is a piss slut and T is not "toilet":
 			say " urinal".
 
@@ -200,7 +200,7 @@ To say TitleBaby:
 		if T is "" and the player is not a sissy, say " adult";
 		otherwise say "[if the delicateness of the player > 16] baby[end if] [T]";
 	otherwise if there is a worn ballet related dress and there is a worn ballet related shoes:
-		say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
+		say " [if the player is gendered male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 	otherwise:
 		if the bimbo of the player < 5 or submissive sex addict is 1:
 			say " adventurer";
@@ -212,7 +212,7 @@ To say TitleBaby:
 			if the number of worn clothing > 4, say " cross-dressing";
 			say " trap";
 		otherwise:
-			say " girl[if the player is male]yboy[end if]".
+			say " girl[if the player is gendered male]yboy[end if]".
 
 
 

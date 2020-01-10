@@ -270,7 +270,7 @@ To say VanityResponse of (M - a robobutler):
 	say "[BigNameDesc of M] ignores you.".
 
 To say robogreeting:
-	say "[if the class of the player is maid]SERVANT[otherwise if the player is female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
+	say "[if the class of the player is maid]SERVANT[otherwise if the player is gendered female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
 
 Section 2 - Questioning
 

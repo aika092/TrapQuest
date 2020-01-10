@@ -185,7 +185,7 @@ Increases the soreness of a fuckhole "F" by a given number and handles all effec
 +!]
 To ruin (F - a fuckhole) times (X - a number):
 	now the previous soreness of F is the soreness of F;
-	unless F is vagina and the player is male, increase the buildup of F by 1;
+	unless F is vagina and the player is not possessing a vagina, increase the buildup of F by 1;
 	while X > 0:
 		decrease X by 1;
 		if the soreness of F > 8 and there is a worn cum dump's undergarment, now the soreness of F is 8; [undergarment prevents fainting from soreness]
@@ -199,7 +199,7 @@ To ruin (F - a fuckhole) times (X - a number):
 			check soreness fainting of F;
 		let T be a random thing penetrating F;
 		passively stimulate F from T;
-		unless F is vagina and the player is male, RuinRoll F;
+		unless F is vagina and the player is not possessing a vagina, RuinRoll F;
 		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say RuinedFlav of F;
 		now the previous soreness of F is the soreness of F.
 

@@ -214,7 +214,7 @@ Definition: a birth control for sissies T-shirt is pregnancy related: decide yes
 Definition: a birth control for sissies T-shirt is black themed: decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a birth control for sissies T-shirt):
-	if the player is male, decide on 0;
+	if the player is not possessing a vagina, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
@@ -245,7 +245,7 @@ To decide which number is the delicateness-influence of (C - sissy-T-shirt):
 
 Definition: sissy-T-shirt is sissifying: decide yes.
 Definition: sissy-T-shirt is white themed: decide yes.
-Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is male and transGender is 0.
+Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is gendered male.
 
 To decide which object is the unique-upgrade-target of (C - sissy-T-shirt):
 	decide on a random off-stage sissy faggot T-shirt.
@@ -277,7 +277,7 @@ Definition: an I'm knocked up T-shirt is pregnancy related: decide yes.
 Definition: an I'm knocked up T-shirt is pink themed: decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - an I'm knocked up T-shirt):
-	if the player is male, decide on 0;
+	if the player is not possessing a vagina, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
@@ -438,7 +438,7 @@ To decide which number is the delicateness-influence of (C - a sissy faggot T-sh
 
 Definition: a sissy faggot T-shirt is sissifying: decide yes.
 Definition: a sissy faggot T-shirt is white themed: decide yes.
-Definition: a sissy faggot T-shirt is fetish appropriate if the player is male and diaper quest is 0 and transGender is 0.
+Definition: a sissy faggot T-shirt is fetish appropriate if the player is gendered male.
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.

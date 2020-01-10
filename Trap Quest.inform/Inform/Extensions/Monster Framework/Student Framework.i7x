@@ -317,7 +317,7 @@ To say SatisfiedFlav of (M - a student):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[if M is friendly][line break][speech style of M]'Okay, we're cool now. Just don't you dare piss me off again.'[roman type][line break]".
 
 To say SatisfiedFlav of (M - a nasty student):
-	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is male and transGender is 0]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
+	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
 
 To FavourDown (M - a student) by (N - a number):
 	RespectDown M by N.

@@ -9,10 +9,10 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female. The text-shortcut of vagina is "vagina".
+vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is possessing a vagina. The text-shortcut of vagina is "vagina".
 
 To say FullExamineDesc of (B - vagina):
-	say "[if the player is female][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
+	say "[if the player is possessing a vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
 
 [!<Vagina>@<semenVolume:Integer>*
 
@@ -32,16 +32,16 @@ To decide which number is the total felchable volume of (F - vagina): [man I lov
 
 [Can it be accessed right now with nothing blocking it?]
 Definition: vagina is undefended:
-	if vagina is actually occupied or the player is pussy protected or the player is male, decide no;
+	if vagina is actually occupied or the player is pussy protected or the player is not possessing a vagina, decide no;
 	decide yes.
 
 Definition: vagina is exposed:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the at least partial concealer of vagina is a thing, decide no;
 	decide yes.
 
 Definition: vagina is at least partially exposed:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the concealer of vagina is a thing, decide no;
 	decide yes.
 
@@ -100,7 +100,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the vagina doesn't exist rule:
-	if the player is male:
+	if the player is not possessing a vagina:
 		if auto is 0, say "You don't have a vagina.";
 		rule fails.
 The vagina doesn't exist rule is listed in the vagina presentable rules.
@@ -155,6 +155,15 @@ How much does the player want this body part to be used?
 To decide which number is the desire of (B - vagina):
 	decide on the vaginal sex addiction of the player.
 
+[!<PlayerIsPossessingVagina>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: yourself is possessing a vagina:
+	if the player is sexed female and the openness of vagina > -1, decide yes;
+	decide no.
+
 Part 2 - Description
 
 [!<SayShortDescOfVagina>+
@@ -208,7 +217,7 @@ REQUIRES COMMENTING
 
 +!]
 To say TotalDesc of vagina:
-	if the player is female:
+	if the player is possessing a vagina:
 		if the openness of vagina < 2, say "Your virgin[if the virgin of the player is 0]-like[end if] [vagina] ";
 		if the openness of vagina is 2, say "Your very tight [vagina] ";
 		if the openness of vagina is 3, say "Your tight [vagina] ";
@@ -238,6 +247,8 @@ To say TotalDesc of vagina:
 			if the pregnancy of the player > 0, say "[if inhuman pregnancy is 0]A baby[otherwise]Something[end if] [if the womb volume of vagina is 30 or the womb volume of vagina >= 50]has been[otherwise if slow pregnancy is 0]is rapidly[otherwise]is slowly[end if] growing inside your womb[if the womb volume of vagina is 30 or the womb volume of vagina >= 50] and has reached full term[end if]. [if the pregnancy of the player is 2]You can feel that your pregnancy has somehow magically been paused. [end if]";
 			otherwise say "[if the womb volume of vagina > 3]A huge amount of[otherwise]Some[end if] [semen] has made it into your [if pregnancy fetish is 1 and the pregnancy of the player is 0]fertile [end if]womb. ";
 		if there is a lubricant covering vagina, say "It is dripping with slippery [lubricant]. ".
+	otherwise if the player is sexed female:
+		say "A doll-like flat ridge exists where your vagina used to be. [if watersports fetish is 1 or diaper lover >= 1]There's just a tiny hole to allow you to pee.[end if]".
 
 [!<SayVaginaModesty>+
 
