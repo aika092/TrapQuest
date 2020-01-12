@@ -109,7 +109,10 @@ To decide which number is the entry-rank of (R - School32):
 [East Dungeon]
 School33 is an academic room. The printed name of School33 is "Dungeon Hall". "Dungeon cells sit either side of this hidden extension to the hallway.". The shape of School33 is L5/0-0-1-0-1-1. The grid position of School33 is <5,16,6>. [School33 is east of School07.]
 Report going when the player is in School33:
-	change the east exit of School07 to School33. [As soon as the player steps into the hall from either cell we need to make the connection, otherwise the map button won't appear.]
+	change the east exit of School07 to School33; [As soon as the player steps into the hall from either cell we need to make the connection, otherwise the map button won't appear.]
+	update Nviables of School07;
+	update Nviables of School33.
+
 School34 is an academic room. The printed name of School34 is "Dungeon Cell". "A dark cell. The cell has a permanently open doorway, but anyone cuffed to the chains attached to the wall would be unable to leave.". The shape of School34 is L5/0-0-1-0-0-0. The grid position of School34 is <5,16,5>. School34 is south of School33.
 School35 is an academic room. The printed name of School35 is "Dungeon Cell". "A dark cell.". The shape of School35 is L5/0-0-0-0-1-0. The grid position of School35 is <5,16,7>. School35 is north of School33.
 
@@ -124,6 +127,8 @@ The School is a region. School01, School02, School03, School04, School05, School
 
 To reveal the school dungeon:
 	change the east exit of School07 to School33;
+	update Nviables of School07;
+	update Nviables of School33;
 	now School33 is seen;
 	now School33 is discovered;
 	now School34 is seen;
@@ -299,7 +304,7 @@ To execute (T - dungeon-food-test):
 	say "[speech style of M]'Here's your food, little slave.'[roman type][line break][BigNameDesc of M] drops a dog bowl in front of you! It's filled with mushy peas[if watersports fetish is 1] drowned in [urine][otherwise if diaper quest is 0] drowned in [semen][end if]. Do you [if the player is upright]get down on your knees and [end if]eat it? ";
 	if the player is bimbo consenting:
 		StomachFoodUp 1;
-		say "You [if the player is upright]kneel and [end if] begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer. [moderateHumiliateReflect]When you are finished [he of M] takes the bowl away.";
+		say "You [if the player is upright]kneel and [end if]begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer. [moderateHumiliateReflect]When you are finished [he of M] takes the bowl away.";
 		if watersports fetish is 1:
 			UrineTasteAddictUp 1;
 		otherwise if diaper quest is 0:

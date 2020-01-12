@@ -20,7 +20,7 @@ To decide which number is the crafting key of (C - a toffee):
 	decide on 28.
 
 Carry out TQeating toffee:
-	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]!  ";
+	say "[DevourFlav of the noun]You feel more energetic[if the body soreness of the player > 1] and healed[end if]! ";
 	FatigueDown 80;
 	bodyheal 2;
 	if (a random number between 1 and 4 is 1 and (diaper quest is 0 or diaper messing < 3)) or tutorial is 1:

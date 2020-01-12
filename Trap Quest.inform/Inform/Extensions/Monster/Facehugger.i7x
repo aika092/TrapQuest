@@ -25,7 +25,7 @@ To say MediumDesc of (M - facehugger):
 	say "facehugger".
 
 To say MonsterDesc of (M - facehugger):
-	say "This weird insect-like monster is not much bigger than your handspan. It has several strong legs which allow it to leap really high and then try to latch onto you.".
+	say "This weird insect-like monster is not much bigger than your hand-span. It has several strong legs which allow it to leap really high and then try to latch onto you.".
 
 To set up (M - facehugger):
 	reset M;
@@ -60,9 +60,13 @@ To compute action (N - a number) of (M - a facehugger):
 				say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. It turns around, ready to try again...";
 			otherwise:
 				let SL be a random number between 3 and 5;
-				say "You can't move out of the way in time! It latches on, quickly pushing its ovipositor into your [variable O] before you have a chance to rip it off.";
+				say "You don't move out of the way in time! It latches on, quickly pushing its ovipositor into your [variable O] before you have a chance to rip it off.";
 				now M is penetrating O;
 				if O is fuckhole, ruin O;
+				if the player is able to use their hands:
+					say "[one of]You tug at the horrid, slimy creature[or]You frantically try to pull it free[or]Its thick, bony legs are like steel clamps, and its main body is stuck to you as if its sucking at your skin[or]Your fingers scrabble futilely against its tough, slick skin[in random order]. [one of]But it's like it's vacuum-sealed to you. You can't squeeze even a fingertip under the edge of its inhuman grip[or]But rather than pulling it loose, all you do is shift it and your flesh around together, making it look like you're actively participating in its fucking of your[variable O][or]But between its slimy skin and inhuman suction, all you do is jiggle it, thrusting it harder into your [variable O][in random order]!";
+				otherwise:
+					say "Without the use of your hands[one of] you can only squirm helplessly as you feel something [i]thick[/i] force open your [variable O][or] it's like you're welcoming the invasive penetration of your [variable O][or] you try to squeeze your muscles to prevent the muscular penetration... fruitlessly[or] you shiver helplessly as you feel [i]something[/i] gape your [variable O] wide, throbbing as it does[in random order].";
 				if O is asshole:
 					if egg laying fetish is 1:
 						say "It pumps several eggs inside of your belly!";

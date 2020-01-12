@@ -41,6 +41,10 @@ To say stud:
 	otherwise:
 		say "[if diaper lover >= 1 and the bimbo of the player > 12]daddy[otherwise]Master[end if]".
 
+To say literalMistress of (M - a monster):
+	if M is presenting as female, say "mistress";
+	otherwise say "master".
+
 [!<SayMistress>+
 
 If the player is impressed with the (assumed female) NPC
@@ -549,7 +553,7 @@ REQUIRES COMMENTING
 +!]
 To say open mouth sounds:
 	if there is a live thing penetrating a fuckhole:
-		say "'[if the relevant sex addiction of the player < 8 or 5 - (the delicateness of the player / 4) < fuckhole pain][one of]EEEEH!!!'[or]OOOOOHH!!!'[or]UH-UH! UH-UH!'[or]AAAAAAGH!'[at random][otherwise if the relevant sex addiction of the player < 13][one of]Uuf!  Uuf! Uuf...'[or]Aaaah...'[or]Ah!'[or]Aaah?'[at random][otherwise][one of]Ooh.'[or]Oooooh...'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
+		say "'[if the relevant sex addiction of the player < 8 or 5 - (the delicateness of the player / 4) < fuckhole pain][one of]EEEEH!!!'[or]OOOOOHH!!!'[or]UH-UH! UH-UH!'[or]AAAAAAGH!'[at random][otherwise if the relevant sex addiction of the player < 13][one of]Uuf! Uuf! Uuf...'[or]Aaaah...'[or]Ah!'[or]Aaah?'[at random][otherwise][one of]Ooh.'[or]Oooooh...'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
 	otherwise if the player is in danger:
 		say "'[if the sex addiction of the player < 8][one of]Uh-uh.'[or]Uh...'[or]Ah-uh.'[or]Uh!'[at random][otherwise if the sex addiction of the player < 13][one of]Uhhhhh...'[or]Aaaaah!'[at random][otherwise][one of]Oooh.'[or]Ah!'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
 	otherwise:
@@ -566,7 +570,7 @@ To say gag sounds:
 	otherwise if the player is not able to make sounds:
 		say "";
 	otherwise if there is a live thing penetrating a fuckhole:
-		say "'[if the relevant sex addiction of the player < 8 or 5 - (the delicateness of the player / 4) < fuckhole pain][one of]MMMMMMPH!!!'[or]HHMMMNNNGGH!!!'[or]NNNG!  NNNG!  NNNNNNNNG!!!'[or]AAAAAAGHN!'[at random][otherwise if the relevant sex addiction of the player < 13][one of]Unf!  Unf! Unf...'[or]Mmmph...'[or]Gah!'[or]Aag.'[at random][otherwise][one of]Mmmm.'[or]Mmmmm!'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
+		say "'[if the relevant sex addiction of the player < 8 or 5 - (the delicateness of the player / 4) < fuckhole pain][one of]MMMMMMPH!!!'[or]HHMMMNNNGGH!!!'[or]NNNG! NNNG! NNNNNNNNG!!!'[or]AAAAAAGHN!'[at random][otherwise if the relevant sex addiction of the player < 13][one of]Unf! Unf! Unf...'[or]Mmmph...'[or]Gah!'[or]Aag.'[at random][otherwise][one of]Mmmm.'[or]Mmmmm!'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
 	otherwise if the player is in danger:
 		say "'[if the relevant sex addiction of the player < 8][one of]Nn nn.'[or]Mm mm.'[or]Mmph.'[or]Ah ah!'[at random][otherwise if the relevant sex addiction of the player < 13][one of]Hmmmm...'[or]Mmmph...'[or]Mmm.'[or]Aag.'[at random][otherwise][one of]Mmmm.'[or]Mmmmm!'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
 	otherwise if diaper quest is 1 and there is a worn baby pacifier:

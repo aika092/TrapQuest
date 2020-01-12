@@ -10,6 +10,23 @@ Something that the player can refill and drink from repeatedly.
 @!]
 A vessel is a kind of bottle.
 
+To decide which number is the outrage of (V - a vessel):
+	let O be the initial outrage of V;
+	if V is open topped and the doses of V > 0:
+		if the fill-colour of V is golden or the fill-colour of V is creamy, increase O by 8;
+		if the fill-colour of V is murky, increase O by 12;
+	decide on O.
+
+To decide which number is the cringe of (V - a vessel):
+	let O be the initial outrage of V;
+	if V is open topped and the doses of V > 0 and diaper quest is 1 and the fill-colour of V is white, increase O by 8;
+	decide on O.
+
+To decide which number is the initial outrage of (V - a vessel):
+	decide on 0.
+To decide which number is the initial cringe of (V - a vessel):
+	decide on 0.
+
 [!<WaitressVessel>@
 
 Has special effects with the waitress bunny class.
@@ -120,7 +137,7 @@ To say ShortVesselDesc of (V - a squirt dildo):
 Definition: a squirt dildo is inflation themed: decide yes.
 Definition: a squirt dildo is oral sex themed: decide yes.
 Definition: a squirt dildo is penis themed: decide yes.
-To decide which number is the outrage of (V - a squirt dildo):
+To decide which number is the initial outrage of (V - a squirt dildo):
 	decide on 14.
 
 
@@ -145,14 +162,16 @@ To compute cursed drinking (X - baby's bottle):
 		IntDown 1;
 	MilkDrunkUp 1.
 To say VesselDesc of (V - baby's bottle):
-	say "A bottle with a sucker for a lid, traditionally for babies to drink breast milk from.".
+	say "A bottle with a sucker for a lid, traditionally for babies to drink breast milk from[if the doses of V > 0 and the fill-colour of V is white]. The fact that it's full of breast milk makes it even more embarrassing to be holding onto[otherwise if the doses of V > 0]. The fact that you're using it to carry around a drink makes it even more embarrassing to be holding onto[end if].".
 To say ShortVesselDesc of (V - baby's bottle):
 	say "baby's bottle".
-To decide which number is the outrage of (V - baby's bottle):
+To decide which number is the initial outrage of (V - baby's bottle):
 	if diaper quest is 0, decide on 10;
 	decide on 0.
-To decide which number is the cringe of (V - baby's bottle):
-	decide on 14.
+To decide which number is the initial cringe of (V - baby's bottle):
+	if the doses of V is 0, decide on 8;
+	if the fill-colour of V is white, decide on 14;
+	decide on 10.
 
 alcohol is a number that varies.
 hungover is a number that varies.
@@ -164,7 +183,7 @@ To say VesselDesc of (V - cocktail-glass):
 	say "A pink cocktail glass decorated with high heels and handbags, for delicate ladies to drink tasty alcoholic beverages out of.".
 To say ShortVesselDesc of (V - cocktail-glass):
 	say "cocktail glass".
-To decide which number is the outrage of (V - cocktail-glass):
+To decide which number is the initial outrage of (V - cocktail-glass):
 	decide on 2.
 
 champagne-glass is a waitress vessel. champagne-glass is open topped. The max-doses of champagne-glass is 1. The printed name of champagne-glass is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]champagne glass[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of champagne-glass is "cgl". Understand "champagne", "glass" as champagne-glass. Figure of champagne glass is the file "Items/Accessories/Vessels/champagneglass1.png".
@@ -174,7 +193,7 @@ To say VesselDesc of (V - champagne-glass):
 	say "A trashy pink bubbly wine vessel, with the words 'SEXY BITCH' across one side in tacky fake diamonds.".
 To say ShortVesselDesc of (V - champagne-glass):
 	say "champagne glass".
-To decide which number is the outrage of (V - champagne-glass):
+To decide which number is the initial outrage of (V - champagne-glass):
 	decide on 6.
 
 To compute cursed drinking (X - a waitress vessel):
@@ -375,10 +394,10 @@ To compute cursed drinking (X - novelty mug):
 		otherwise:
 			BustUp a random number between 1 and 2;
 			say "You feel your [BreastDesc] slightly swell.".
-To decide which number is the outrage of (V - a novelty mug):
+To decide which number is the initial outrage of (V - a novelty mug):
 	if diaper quest is 1, decide on 0;
 	decide on 10.
-To decide which number is the cringe of (V - a novelty mug):
+To decide which number is the initial cringe of (V - a novelty mug):
 	decide on 10.
 
 teapot is a vessel. The max-doses of teapot is 2. The printed name of teapot is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]teapot[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of teapot is "tp".
@@ -406,10 +425,10 @@ To compute cursed drinking (X - teapot):
 	otherwise:
 		say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The teapot changed everything inside it into [semen]! [if the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 0][one of][line break][variable custom style]'Either the teapot or the drink colour is cursed, but I don[']t know which...'[roman type][line break][or][stopping][end if][line break]";
 		StomachSemenUp 1.
-To decide which number is the outrage of (V - teapot):
+To decide which number is the initial outrage of (V - teapot):
 	if diaper quest is 1, decide on 0;
 	decide on 10.
-To decide which number is the cringe of (V - teapot):
+To decide which number is the initial cringe of (V - teapot):
 	decide on 6.
 
 witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items/Accessories/Vessels/goblet1.jpg".

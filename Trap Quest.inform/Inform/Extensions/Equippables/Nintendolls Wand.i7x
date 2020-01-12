@@ -35,7 +35,7 @@ Definition: glittery-wand is gem themed: decide yes.
 To say ShortDesc of (W - glittery-wand):
 	say "glittery wand".
 To say ClothingDesc of (W - glittery-wand):
-	say "A gem encursted wand vibrator. Something tells you that this is even more powerful than your average wand vibrator.".
+	say "A gem encrusted wand vibrator. Something tells you that this is even more powerful than your average wand vibrator.".
 To decide which number is the raw-masturbation-bonus of (W - glittery-wand):
 	decide on 2.
 To compute climax effect of (E - a glittery-wand):

@@ -54,13 +54,13 @@ To rotate (W - a warp portal) attempt (N - a number):
 	if the destination of W is the Mansion and (N is 1 or the location of mansion portal is not discovered or W is in the mansion):
 		now the destination of W is the school;
 		if N is 1, now N is 2;
-	if the destination of W is the school and (N is 0 or (W is in the school and ((the player is not an october 2019 top donator and the player is not an october 2019 diaper donator) or the number of appropriate eligible predicaments is 0 or predicamentJustDone is true)) or (armband is not worn and ex-princess is not unconcerned)):
+	if the destination of W is the school and (N is 1 or (W is in the school and ((the player is not an october 2019 top donator and the player is not an october 2019 diaper donator) or the number of appropriate eligible predicaments is 0 or predicamentJustDone is true or the player is not predicament-ready)) or (armband is not worn and ex-princess is not unconcerned)):
 		now the destination of W is the dungeon;
 		if W is in the Dungeon and N < 3, rotate W attempt (N + 1).
 
 To say DestinationDesc of (T - a warp portal):
 	if T is regionally in school and the destination of T is school:
-		say "The warp portal will now take you to[one of]... the 'Extra Credit' zone? What's that?![or] the 'extra credit' zone.[stopping]";
+		say "The warp portal will now take you to[one of]... the 'Extra Credit' zone? What's that?! Text underneath reads [bold type]'Removes all cursed clothing and earns participating students a [']trophy['].'[roman type][line break][or] the 'extra credit' zone again, where you can free yourself from cursed clothing and earn a trophy.[stopping]";
 	otherwise if T is next-portal-forbidden:
 		say "The warp portal won't currently be able to take you anywhere - it's glitching wildly!";
 	otherwise if T is not regionally in the destination of T:
@@ -111,7 +111,7 @@ To teleport via (W - a warp portal):
 					if a random number between the favour of M and 10 < 9, now M is ST;
 				if M is student:
 					now team-predicament-partner is M;
-					if there is an eligible appropriate predicament:
+					if there is an eligible appropriate predicament and the player is predicament-ready:
 						now M is in the location of the player;
 						say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on the lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
 						satisfy M;
@@ -150,7 +150,7 @@ To teleport via (W - a warp portal):
 		now P is not next-portal-forbidden;
 		if P is regionally in the destination of W, now D is P;
 	if D is warp portal, now the destination of D is playerRegion; [The portal you just went through will send you right back to where you were unless you pull the lever]
-	if W is D: [School portal leads to extra credit zone]
+	if W is D: [School portal leads to extra credit zone. Anything added here might also need to be added to the detention code in Staff Framework.i7x]
 		now the destination of W is the Dungeon;
 		display entire map;
 		let L be the list of eligible appropriate predicaments;
@@ -191,6 +191,8 @@ To teleport via (W - a warp portal):
 		let TP be a random off-stage fetish appropriate trophy;
 		if TP is trophy, now TP is in Predicament20;
 		now current-predicament is P;
+		now turnsWithSoiledDiaper is 0;
+		now the printed name of Predicament01 is "Abandoned Warehouse";
 		execute P;
 		increase the times-completed of P by 1;
 		now temporaryYesNoBackground is Figure of small image;
@@ -228,7 +230,8 @@ To teleport via (W - a warp portal):
 		update player region;
 		now the location of the player is discovered;
 		display entire map;
-		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]".
+		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]";
+	progress quest of predicament-quest. [failsafe in case it has been missed at the end of a predicament somehow]
 
 
 

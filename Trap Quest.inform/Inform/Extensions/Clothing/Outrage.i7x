@@ -25,8 +25,8 @@ To decide which number is the unworn outrage of (C - a clothing):
 	if C is sheer-when-wet and C is actually sheer, increase O by 2; [Wet T-shirt contest is not really a dignified look]
 	if O < 11 and C is drinkable condom pinned, now O is 11; [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
 	if diaper quest is 0 and O < 9 and the semen-soak of C > 0, now O is 9; [can't have cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
-	increase O by the fluid outrage of C;
-	increase O by the condom outrage of C;
+	if C is not worn or C is currently visible, increase O by the fluid outrage of C;
+	if C is not worn or C is currently visible, increase O by the condom outrage of C;
 	[if C is breast covering and C is actually sheer and O < the at least partially lewdly exposed outrage of breasts and breasts is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of breasts;
 	if C is breast covering and (C is nipple exposing or C is see-through) and O < the lewdly exposed outrage of breasts and breasts is lewdly exposed, now O is the lewdly exposed outrage of breasts;
 	if C is crotch covering and C is actually sheer and O < the at least partially lewdly exposed outrage of asshole and asshole is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of asshole;

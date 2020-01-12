@@ -122,7 +122,7 @@ To say UniqueShortDesc of (C - a heels):
 To compute SelfExamineDesc of (H - a heels):
 	if the player is upright:
 		say "You are [if the player is ankle bound]somehow managing to hobble along with[otherwise if the strut of the player is 1]strutting around provocatively in your[otherwise if the hindrance of H < 2]walking around confidently in your[otherwise]managing to balance on a[end if] [ShortDesc of H]. ";
-		if diaper quest is 0, say "[one of]Your [BreastDesc] [BreastBounceDesc] as you [if the player is ankle bound]mince in tiny steps[otherwise if the strut of the player is 1]strut[otherwise if the hindrance of H < 2]stride[otherwise]teeter[end if] through these [if the delicateness of the player  < 4]weird and disturbing places[otherwise]scary environs[end if]. [or][or][or][or][in random order]";
+		if diaper quest is 0, say "[one of]Your [BreastDesc] [BreastBounceDesc] as you [if the player is ankle bound]mince in tiny steps[otherwise if the strut of the player is 1]strut[otherwise if the hindrance of H < 2]stride[otherwise]teeter[end if] through these [if the delicateness of the player < 4]weird and disturbing places[otherwise]scary environs[end if]. [or][or][or][or][in random order]";
 	otherwise:
 		say "A [ShortDesc of H] are currently latched to your feet[if the player is ankle bound], and your ankles are bound close together making it difficult to crawl[end if]. ".
 
@@ -141,7 +141,7 @@ To say MonsterOfferRejectFlav of (M - a demoness) to (T - a heels):
 	say "[speech style of M]'Do I look like I have any need for another pair of heels?'[roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - a heels):
-	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-panties;
+	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-heels;
 	if diaper quest is 1 and the heel-height of C < 2, decide on a random off-stage mary janes;
 	if there is a worn diaper, decide on a random off-stage baby booties;
 	if (there are worn stockings or diaper quest is 0) and the heel-height of C < (2 + diaper quest), decide on a random off-stage white rollerskates.

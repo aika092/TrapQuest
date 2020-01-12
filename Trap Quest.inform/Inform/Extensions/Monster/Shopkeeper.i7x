@@ -517,7 +517,7 @@ To send (M - shopkeeper) home:
 	bore M.
 
 To say CondomPieFlav of (M - shopkeeper) in (F - a fuckhole):
-	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
+	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's ok since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
 
 To say CreampieFlav of (M - shopkeeper) in (F - vagina):
 	if the class of the player is living sex doll:[#####Selkie: could do much better here]
@@ -777,13 +777,13 @@ Definition: shopkeeper (called M) is willing to change diapers:
 Definition: shopkeeper is willing to donate diapers: decide yes.
 
 To say SpankingStartFlav of (M - shopkeeper):
-	say "You see the large shop keep dive down to grab at your ankles with one rough hand, raiding you up with ease and dangling you upside down. As you strain against the large [man of M] [he of M] quickly fastens your ankles into leather straps secured against a large metal beam, holding you firmply upside down. Your high up, making you unable to grab at anything but the air, and unable to look at anything but the shop keep as [he of M] runs a finger along a row of paddles on display! [BigNameDesc of M] grabs one on the end, one side completely covered in rubber spikes. Your thrashing only accomplishes in giving [NameDesc of M] a sinister smirk as [he of M] walks back over to you and raises [his of M] paddle, sending it crashing into your waiting behind!".
+	say "You see the large shopkeeper dive down to grab at your ankles with one rough hand, raising you up with ease and dangling you upside down. As you strain against the large [man of M] [he of M] quickly fastens your ankles into leather straps secured against a large metal beam, holding you firmly upside down. You're high up, making you unable to grab at anything but the air, and unable to look at anything but the shopkeeper as [he of M] runs a finger along a row of paddles on display! [BigNameDesc of M] grabs one on the end, one side completely covered in rubber spikes. Your thrashing only results in giving [NameDesc of M] a sinister smirk as [he of M] walks back over to you and raises [his of M] paddle, sending it crashing into your waiting behind!".
 
 To say DQChangeResistReactionFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] looks frustrated.[line break][speech style of M]'[one of]Gahhh, is my merchandise too good for ya? This powder is imported, you know!'[or]Is the diaper too thin then? I got some REALLY thick ones in the back. I didn't use them, cause, you know, I thought you wanted to walk like an adult.'[in random order][roman type][line break]".
 
 To say DQSpankResistReactionFlav of (M - shopkeeper):
-	say "[BigNameDesc of M] looks amused.[line break][speech style of M]'[one of]Gahhh, is my merchandise too good for ya? This powder is imported, you know!'[or]You know with all your pent up energy you could make a fine display, I can demo all kinds of items on you!'[or]Yeah yeah struggle all you want, you're only giving me inspiration to keep you as a form of kinetic art! You'd really bring the room together!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks amused.[line break][speech style of M]'[one of]Gahhh, is my merchandise too good for ya? This powder is imported, you know!'[or]Hmm, with all your pent up energy you could make a fine display, I can demo all kinds of items on you!'[or]Yeah, yeah, struggle all you want, you're only giving me inspiration to keep you as a form of kinetic art! You'd really bring the room together!'[in random order][roman type][line break]".
 
 To say DQSpankResistExtensionFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] looks frustrated.[line break][speech style of M]'[one of][NameBimbo], we got a sale going on today, 3 struggles gets you 10 free lashes!'[or]Oh, I guess that means you want even more?'[cycling][roman type][line break]".
@@ -894,7 +894,7 @@ To say InvitationRejected of (M - shopkeeper) with (N - a monster):
 
 To say AssistanceRejected of (M - shopkeeper) with (N - a monster):
 	if M is unfriendly:
-		say "[speech style of M]'[one of]Ha. Thieves like you deserve whatever you get.'[or]You deserve it. But don't worry, after [if N is male]he's[otherwise]she's[end if]done, I'm going to punish you personally.'[or]If it were up to me, every criminal would get tossed in jail and gangfucked until they passed out. You're getting off easy.'[or]I[']m not here because I want to help you. I[']m here because I[']m going to punish you personally once [he of N]'s done.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Ha. Thieves like you deserve whatever you get.'[or]You deserve it. But don't worry, after [if N is male]he's[otherwise]she's[end if]done, I'm going to punish you personally.'[or]If it were up to me, every criminal would get tossed in jail and gangbanged until they passed out. You're getting off easy.'[or]I[']m not here because I want to help you. I[']m here because I[']m going to punish you personally once [he of N]'s done.'[at random][roman type][line break]";
 	otherwise:
 		if N is aeromancer:
 			say "[speech style of M]'Ha! Blow her up!'[roman type][line break]";
@@ -932,7 +932,7 @@ To compute taunt acceptance effect of (M - shopkeeper):
 	now the discount is 30.
 
 To say TauntAccepted of (M - shopkeeper):
-	say "[speech style of M]'Well, if that's really how you feel about it...I'll give you a one-time discount. Pick fast, and don't make me regret this.'[roman type][line break]".
+	say "[speech style of M]'Well, if that's really how you feel about it... I'll give you a one-time discount. Pick fast, and don't make me regret this.'[roman type][line break]".
 
 To say TauntRejected of (M - shopkeeper):
 	say "[speech style of M]'That's not going to work this time, thief.'[roman type][line break][BigNameDesc of M] seems even more determined to beat you!".
@@ -1316,7 +1316,7 @@ To say AfterDominationComment (N - a number) of (M - shopkeeper):
 	otherwise if N is 4:[sph]
 		say "[speech style of M]'[one of]Glad I could help. Don't be shy about asking for a fuck!'[or]Honestly though, it would be more fun if we just had sex.'[or]You'll be huge in no time. And don't worry, I'm always game to fuck you.'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]I'd rather we had sex, but that was OK.'[or]Did you really enjoy that? Sex is way better.'[or]I hope we can work our way up to sex sometime.'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]I'd rather we had sex, but that was ok.'[or]Did you really enjoy that? Sex is way better.'[or]I hope we can work our way up to sex sometime.'[at random][roman type][line break]".
 
 To say DominanceFailure of (M - shopkeeper):
 	if player-fucker is penis:
@@ -1346,6 +1346,7 @@ To compute failed dominance punishment of (M - shopkeeper):
 		drag to Dungeon08 by M;
 	otherwise:[he usually takes cheerleaders here]
 		drag to Dungeon05 by M;
+	now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 	now another-turn is 1.
 
 To say DragFlav of (M - shopkeeper) to (R - Dungeon03):[The stone cell]
@@ -1378,7 +1379,7 @@ To say DragArrival of (M - shopkeeper) to (R - Dungeon05):
 	otherwise if the class of the player is cheerleader:
 		say "[speech style of M]'No hard feelings, by the way. I finally get to fuck a cheerleader!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'OK, you can moan as loud as you want here. Better luck next time, by the way.'[roman type][line break]";
+		say "[speech style of M]'Ok, you can moan as loud as you want here. Better luck next time, by the way.'[roman type][line break]";
 	now the sex-length of M is a random number between 4 and 5.[the sex lasts longer because you're alone]
 
 To say DragFlav of (M - shopkeeper) to (R - Dungeon08):[Training room]

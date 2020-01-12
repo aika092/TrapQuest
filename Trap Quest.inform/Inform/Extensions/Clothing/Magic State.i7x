@@ -52,7 +52,16 @@ Definition: a bottle is blessable if it is held and it is not blessed.
 Definition: an alchemy product is blessable if it is carried and it is not blessed.
 
 
+To blandify (C - a clothing):
+	only destroy C;
+	now the raw-magic-modifier of C is 0;
+	now C is bland;
+	now C is blandness.
 
+To blandify and reveal (C - a clothing):
+	blandify C;
+	now C is sure;
+	now C is identified.
 
 [Selkie: Would it be a helpful hint add some flavour text here?
 	if B is not blessed:

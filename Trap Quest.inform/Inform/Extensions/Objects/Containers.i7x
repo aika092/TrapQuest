@@ -379,9 +379,9 @@ A pedestal is not trappable.
 
 A pedestal can be fertile, parched, chilled, or erect (this is the pedestal-lock property). A pedestal is usually erect. Understand the pedestal-lock property as describing a pedestal. Understand "nurturing" as pedestal when the item described is erect.
 
-A pedestal can be wood, stone, clay, terracotta or marble(this is the pedestal-variant property). A pedestal is usually stone. Understand the pedestal-variant property as describing a pedestal. [Pedestals have names so you can refer to them individually.]
+A pedestal can be wood, clay, terracotta, granite, quartz, sandstone or marble(this is the pedestal-variant property). A pedestal is usually sandstone. Understand the pedestal-variant property as describing a pedestal. [Pedestals have names so you can refer to them individually.]
 
-There are 5 pedestals.
+There are 7 pedestals.
 
 To say ExamineDesc of (P - a pedestal):
 	say "A [pedestal-variant of P] pedestal[if there is a thing in P] bearing a [ShortDesc of a random thing in P][end if], which is protected by a glass case. [if P is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if P is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of P] basin protrudes from one side.[otherwise if P is erect and diaper lover > 0]A[one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if P is erect]A [pedestal-variant of P][one of]...[or] [stopping]penis protrudes from one side of the pedestal[one of]. Drinking from it will in all likelihood unlock the case, but at what cost?[or].[stopping][otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of P] on the inside of case, written in roman numerals.";
@@ -392,7 +392,7 @@ Report examining a pedestal: [Specifically with examining we want it to appear i
 		display the examine-image of T.
 
 To lock pedestals:
-	let V be 1;
+	let V be 1;[if V is 1, the pedestal is sandstone]
 	repeat with P running through pedestals:
 		now the text-shortcut of P is the substituted form of "pe[V]";
 		if V is 2, now P is wood;
@@ -400,8 +400,10 @@ To lock pedestals:
 		if diaper quest is 1 and V > 3:
 			destroy P; [Not enough different rare items to allow them all to be found in this room]
 		otherwise:
-			if V is 4, now P is terracotta;
-			if V is 5, now P is clay;
+			if V is 4, now P is clay;
+			if V is 5, now P is terracotta;
+			if V is 6, now P is granite;
+			if V is 7, now P is quartz;
 			increase V by 1;
 		let L be a random number between 1 and 5;
 		if L is 1 and diaper quest is 0, now P is fertile;
@@ -422,6 +424,11 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now P is in X;
 		now P is museum-store;
 		now the paid of X is 2;
+	otherwise if there is an off-stage wood-dong and diaper quest is 0:[if this is found in the mansion shop, its ridiculously expensive]
+		let P be a random off-stage wood-dong;
+		now P is in X;
+		now P is museum-store;
+		now the paid of X is 10;
 	otherwise:
 		let P be a random off-stage rare fetish appropriate clothing;
 		now P is in X;

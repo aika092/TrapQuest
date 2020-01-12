@@ -41,7 +41,7 @@ To compute furniture resting on (F - med bay bed):
 						anger nurse;
 						compute nurse entering mouth;
 						now another-turn is 1;
-						say "You already feel fully rested and healed, but you're still strapped to the chair and the [nurse] is still sitting on your face, so you can't even begin to try and get up!";
+						if another-turn-flavour is "", now another-turn-flavour is "You already feel fully rested and healed, but you're still strapped to the chair and [FuckerDesc of nurse] is still sitting on your face, so you can't even begin to try and get up!";
 					otherwise:
 						say "[line break][speech style of nurse]'Now darling, while you're resting there, why don't we give you a little something extra?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! ";
 						compute med bay breast enhancement;
@@ -53,7 +53,7 @@ To compute furniture resting on (F - med bay bed):
 					anger nurse;
 					compute forcefeed of nurse;
 			otherwise:
-				say "[big he of nurse] lovingly massages your shoulders as you lie stuck there.[line break][speech style of nurse]'Does that feel good, [honey of nurse]?'[roman type][line break][one of]Actually, it[or]It[stopping] really does!  Within moments you feel rested and healed. [BigNameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
+				say "[big he of nurse] lovingly massages your shoulders as you lie stuck there.[line break][speech style of nurse]'Does that feel good, [honey of nurse]?'[roman type][line break][one of]Actually, it[or]It[stopping] really does! Within moments you feel rested and healed. [BigNameDesc of nurse] unbuckles the straps holding you down and allows you to leave.";
 				now auto is 1;
 				try standing;
 				now auto is 0;

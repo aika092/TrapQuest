@@ -1,6 +1,6 @@
 Leggings by Trousers begins here.
 
-leggings is a kind of trousers. There is 1 nylon leggings. leggings are usually sheer. The armour of leggings is 2. The printed name of leggings is usually "[clothing-title-before]sheer nylon leggings[clothing-title-after]". The text-shortcut of leggings is "nl". Figure of leggings is the file "Items/Clothes/Lower/Pants/leggings1.png". Understand "sheer" as leggings.
+leggings is a kind of trousers. leggings is transformation-rare. There is 1 nylon leggings. leggings are usually sheer. The armour of leggings is 2. The printed name of leggings is usually "[clothing-title-before]sheer nylon leggings[clothing-title-after]". The text-shortcut of leggings is "nl". Figure of leggings is the file "Items/Clothes/Lower/Pants/leggings1.png". Understand "sheer" as leggings.
 
 Definition: a leggings is unskirted themed: [Is it something that should not be worn at the same time as a skirt?]
 	decide no.
@@ -11,7 +11,7 @@ To decide which figure-name is clothing-image of (H - a leggings):
 To say UniqueClothingDesc of (B - a leggings):
 	say "A pair of flimsy extremely sheer white nylon leggings.".
 
-To say ShortDesc of (Y - a leggings):
+To say ShortDesc of (Y - a  leggings):
 	say "pair of white nylon leggings".
 
 To decide which number is the initial outrage of (B - a leggings):

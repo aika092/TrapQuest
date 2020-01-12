@@ -1,7 +1,7 @@
 Armadillo Heels by Shoes begins here.
 
 
-An armadillo heels is a kind of stiletto heels. An armadillo heels is rare. An armadillo heels is usually leather. The heel-height of an armadillo heels is usually 5. There is 1 armadillo heels. An armadillo heels has a number called heal-charge.
+An armadillo heels is a kind of stiletto heels. An armadillo heels is rare. An armadillo heels is usually leather. The heel-height of an armadillo heels is usually 5.  There is 1 armadillo heels. An armadillo heels has a number called heal-charge.
 
 The printed name of armadillo heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch armadillo heels[clothing-title-after]". The text-shortcut of armadillo heels is "ah".
 

@@ -189,7 +189,7 @@ To decide which figure-name is the examine-image of (C - summoning-circle):
 
 
 To say ExamineDesc of (C - summoning-circle):
-	say "A softly glowing pentagram, with candles placed at all five points of the star. You can see that a mirror has been inlaid into the centre of the circle, although if you look closely, you see that it doesn't show your reflection. [if C is active][PortalHint of C]The energy around the circle is slowly building, as if it were hungry for something. Maybe you can find some way to [bold type]appease[roman type] it.[end if][if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
+	say "A softly glowing pentagram, with candles placed at all five points of the star. You can see that a mirror has been inlaid into the center of the circle, although if you look closely, you see that it doesn't show your reflection. [if C is active][PortalHint of C]The energy around the circle is slowly building, as if it were hungry for something. Maybe you can find some way to [bold type]appease[roman type] it.[end if][if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
 	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: This is the mechanism that the Dungeon uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the dungeon. When it gets close, it'll start glowing, at which point you can increase its timer by entering it or offering valuable items to it.[roman type][or][stopping]".
 
 To say PortalHint of (S - summoning-circle):
@@ -200,7 +200,7 @@ To say PortalHint of (S - summoning-circle):
 		say "You can make out a smoky image of a sword inside it.";[gladiator]
 	otherwise if diaper quest is 1:
 		say "You can make out the figure of someone crawling around.";[ABS]
-	otherwise if N > 0:[you're probably going to be most excited for a wench, so let's throw a curveball]
+	otherwise if N > 0:[you're probably going to be most excited for a wench, so let's throw a curve ball]
 		say "You can make out a faint image inside of it. It looks like...[if the charge of S > 20 or N is 3]the back of someone's head?[otherwise if N is 4]a hat?[end if]";[wench or aeromancer]
 	otherwise:
 		say "You can make out an image of a balloon inside it.".[sex doll]
@@ -346,7 +346,7 @@ To say PortalHint of (S - giant-statue):
 	let N be the next-summon of S;
 	if N < 3 and N > 0:
 		say "You can hear really intense moaning coming from inside her. [if the sex addiction of the player < 6][line break][first custom style]Sounds like screaming...[roman type][line break][otherwise if the sex addiction of the player < 14][line break][variable custom style]Why do I feel jealous...[roman type][line break][otherwise][line break][second custom style]Wow, whoever is in there must feel really good...[roman type][line break][end if]";[demoness/wasp]
-	otherwise if N is 3:
+	otherwise if N is 3 or N is 7:
 		say "You can make out a faint slapping noise coming from inside her. It's rhythmic, and every so often you hear a moan.";[gladiator]
 	otherwise if N is 4 or N is 6:
 		say "You can make out a faint noise every so often, almost like a slurp.";[aeromancer/unicorn]
@@ -369,6 +369,8 @@ To say DivinationHint of (S - giant-statue):
 		say "You can sense that she will summon a fairy next.";
 	otherwise if N is 6:
 		say "You can sense that she will summon a unicorn next.";
+	otherwise if N is 7:
+		say "You can sense that she will summon a centaur next.";
 	otherwise:
 		say "You can sense that she will summon a mannequin next.".
 
@@ -396,6 +398,8 @@ To decide which object is the summonChoice of (G - a giant-statue):
 		now M is a random off-stage fairy;
 	otherwise if N is 6 and unicorn is off-stage:
 		now M is unicorn;
+	otherwise if N is 7 and centaur is off-stage:
+		now M is centaur;
 	decide on M.
 
 To say ActiveWarning of (G - a giant-statue):
@@ -582,7 +586,7 @@ Check entering teleportation-pad:
 		let V be vampiress;
 		teleport to the location of V;
 		now M is V;
-	unless M is throne:
+	if M is throne:
 		say "Your body seems to absorb the static electricity, which just seems to intensify even further as your body converts it to red hot arousal. You can't resist...";
 		now auto is 1;
 		try masturbating;
@@ -670,7 +674,7 @@ To say MummyType of (S - a mysterious-mummy):
 	otherwise:
 		say "mysterious".
 
-Understand "winged", "crawling",  "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
+Understand "winged", "crawling", "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
 
 To decide which object is the summonChoice of (S - a mysterious-mummy):
 	let N be the next-summon of S;

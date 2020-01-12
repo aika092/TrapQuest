@@ -130,13 +130,6 @@ To cutshow (F - a figure-name) for (M - a thing):
 To cutshow (F - a figure-name):
 	cutshow F for yourself.
 
-[Override the entire focus window for 1 turn, to show only this image.]
-To fullscreencutshow (F - a figure-name) for (M - a thing):
-	unless F is figure of no-image-yet:
-		if the focus-window is g-present:
-			appropriate-display F with priority 4;
-		otherwise: [The player has requested cutscenes show up in the main body of the text instead.]
-			cutshow F for M.
 
 [Always show the image in the focus window if it's open. Use this one if we know it's going to be a good replacement for the thing's bust]
 To alwayscutshow (F - a figure-name) for (M - a thing):

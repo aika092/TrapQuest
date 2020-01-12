@@ -47,7 +47,7 @@ To compute throbbing of (H - severed-tentacle) into (T - throbbing-tentacle):
 	only destroy H;
 	if the player is male:
 		if the player is able to get horny, anally orgasm shamefully;
-		say " You leave the tentacle inside your [asshole], sensing that now it is in its proper place.";
+		say " You leave the tentacle inside your [asshole], sensing it is now in its proper place.";
 		summon T cursed;
 		now T is penetrating asshole;
 	otherwise:
@@ -86,7 +86,7 @@ Check taking off severed-tentacle:
 	say "You reach up to try and remove [the printed name of S] from your head.";
 	if the intelligence of the player is 1:
 		if (the player is female and T is vaginally summonable) or (the player is male and T is actually summonable):
-			say "The tentacle on your head throbs with increasing frequency and you feel an increasing sense of suction on your head. [line break][first custom style]'You want to move me? Hm, then I suppose its unavoidable. Remove me and place me before your entrance, [whore].'[roman type][line break]";
+			say "The tentacle on your head throbs with greater frequency and you feel an increasing sense of suction on your head. [line break][first custom style]'You want to move me? Hm, then I suppose it's unavoidable. Remove me and place me before your entrance, [whore].'[roman type][line break]";
 			compute throbbing of S into T instead;
 		otherwise:
 			say "You remember your head belongs to your [ShortDesc of T] anyway, and immediately stop." instead;

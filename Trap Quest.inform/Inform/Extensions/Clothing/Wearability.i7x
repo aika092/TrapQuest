@@ -101,7 +101,7 @@ This is the sex doll can't wear new clothes rule:
 The sex doll can't wear new clothes rule is listed in the global wearability rules.
 
 This is the assfilled players can't wear ass plugging clothes rule:
-	if asshole is actually occupied and wearing-target is ass plugging:
+	if asshole is actually occupied and (wearing-target is ass plugging or wearing-target is sex toy):
 		if summoning is 0 and autowear is false, say "You can't wear this with something already in your [asshole]!";
 		rule fails.
 The assfilled players can't wear ass plugging clothes rule is listed in the global wearability rules.

@@ -29,7 +29,7 @@ To compute attack of (E - an equippable) at (M - a monster):
 		otherwise:
 			say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Nothing happens!";
 	otherwise:
-		say "You strike the [noun] with your [E]!  ".
+		say "You strike the [noun] with your [E]! ".
 
 To compute attack effect of (E - an equippable):
 	do nothing.
@@ -44,6 +44,8 @@ Part 1 - Gloves
 
 A gloves is a kind of equippable. A gloves is usually slap ready. Understand "pair", "pair of", "glove" as gloves.
 
+To decide which number is the damage improvement of (G - a gloves):
+	decide on the magic-modifier of G.
 
 tongue-gloves is a gloves. tongue-gloves is unique. tongue-gloves is biological. The printed name of tongue-gloves is "[clothing-title-before]tongue gloves[clothing-title-after]". The text-shortcut of tongue-gloves is "tgvs". Understand "tongue", "gloves" as tongue-gloves.
 
@@ -157,12 +159,34 @@ To decide which number is the stimulation of (D - painted-vibrator-hands) on (B 
 To decide which figure-name is clothing-image of (H - painted-vibrator-hands):
 	decide on figure of painted-vibrator-hands.
 
-To say UniqueClothingDesc of (Y - painted-vibrator-hands):
+To say ClothingDesc of (Y - painted-vibrator-hands):
 	say "Blue and white paint has been applied to the backs of your hands in the correct pattern to complete the missing pattern around your crotch. Two silently but powerfully buzzing blue egg vibrators are somehow stuck to the inner tips of your two thumbs. That's right... in order to make your painted-on cutoffs look convincing, you would need to push the two egg vibrators into your sensitive clit...".
 
 To say ShortDesc of (Y - painted-vibrator-hands):
 	say "thumb vibrators".
 
+
+
+candy-cane-gloves is a gloves. candy-cane-gloves is latex.
+The printed name of candy-cane-gloves is "[clothing-title-before]candy cane gloves[clothing-title-after]". The text-shortcut of candy-cane-gloves is "ccg". Figure of candy-cane-gloves is the file "Items/Accessories/Equippables/gloves2.png". Understand "candy", "cane", "gloves" as candy-cane-gloves.
+Definition: candy-cane-gloves is red themed: decide yes.
+Definition: candy-cane-gloves is white themed: decide yes.
+Definition: candy-cane-gloves is christmas themed: decide yes.
+Definition: candy-cane-gloves is transformation-protected: decide yes.
+
+To decide which figure-name is clothing-image of (H - candy-cane-gloves):
+	decide on figure of candy-cane-gloves.
+
+To say ClothingDesc of (Y - candy-cane-gloves):
+	say "These elbow-length gloves have a red and white striped pattern, much like a candy cane.".
+
+To say ShortDesc of (Y - candy-cane-gloves):
+	say "candy cane gloves".
+To say MediumDesc of (Y - candy-cane-gloves):
+	say "candy cane pattern elbow-length gloves".
+
+To decide which number is the initial outrage of (C - candy-cane-gloves):
+	decide on 3.
 
 Equippables Framework ends here.
 

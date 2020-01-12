@@ -61,9 +61,9 @@ To say OptionalDescription:
 	if the player is glue stuck:
 		say "You are embedded in a mass of stretchy glue holding you helplessly down on the ground. ";
 	if the player is drill stuck:
-		say "You are stuck on a spinning drill!  [if the latex-transformation of the player < 4]Your poor fuckhole is getting more and more sore by the second!  [end if]";
+		say "You are stuck on a spinning drill! [if the latex-transformation of the player < 4]Your poor fuckhole is getting more and more sore by the second! [end if]";
 	if the player is pole stuck:
-		say "You are stuck on a dildo!  [if the latex-transformation of the player < 3]Your hole is getting stretched further and further. [end if]";
+		say "You are stuck on a dildo! [if the latex-transformation of the player < 3]Your hole is getting stretched further and further. [end if]";
 	otherwise if the player is dildo stuck:
 		if doll-stuck is "":
 			say "You are impaled on a dildo mounted on a pole!";
@@ -74,12 +74,12 @@ To say OptionalDescription:
 	otherwise if the player is wedgie hook stuck:
 		say "A wedgie hook is painfully holding your underwear up your butt crack! ";
 	if the player is horse stuck:
-		say "You are currently [if the latex-transformation of the player < 4]in significant pain, [end if]stuck on a wooden horse torture device!  ";
+		say "You are currently [if the latex-transformation of the player < 4]in significant pain, [end if]stuck on a wooden horse torture device! ";
 	if the player is vine stuck:
 		if the player is vine fucked:
-			say "Vines are holding you still and fucking your [if the player is male][asshole]!  [otherwise][vagina]!  [end if]";
+			say "Vines are holding you still and fucking your [if the player is male][asshole]! [otherwise][vagina]! [end if]";
 		otherwise:
-			if the player is upright, say "Vines are holding your ankles still!  ";
+			if the player is upright, say "Vines are holding your ankles still! ";
 			otherwise say "Vines are holding your wrists and ankles down, keeping you on your knees. ";
 	otherwise if the player is live fucked:
 		say "[BigFuckerDesc of random live thing penetrating a body part] is [if diaper quest is 1]punishing you[otherwise][one of]having fun with your body[or]using your body as a playground[or]currently defiling your body[at random][end if]. ";

@@ -126,7 +126,7 @@ To say ShortDesc of hair:
 	if X is 2, say "[if the player is male]standard short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 	if X is 3, say "[HairSoak][HairColour] ear length hair";
 	if X is 4, say "[HairSoak][HairColour] ear length hair";
-	if X is 5, say "chin length [HairSoak][HairColour] hair";
+	if X is 5, say  "chin length [HairSoak][HairColour] hair";
 	if X is 6, say "[HairSoak][HairColour] shoulder length hair";
 	if X is 7, say "[HairSoak][HairColour] nipple length hair";
 	if X is 8, say "[HairSoak][HairColour] elbow length hair";
@@ -248,7 +248,7 @@ To say 2HairDesc (X - a number):
 		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
 		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
-		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
+		if X is 5, say  "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
 		if X is 6, say "straight [HairSoak][HairColour] [HairStyle] that goes down to your shoulders";
 		if X is 7, say "straight [HairSoak][HairColour] [HairStyle] that goes down to your nipples";
 		if X is 8, say "straight [HairSoak][HairColour] [HairStyle] that flows down to your elbows";
@@ -265,7 +265,7 @@ To say 2HairDesc (X - a number):
 		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
 		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
-		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
+		if X is 5, say  "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
 		if X is 6, say "straight [HairSoak][HairColour] [HairStyle] that hangs past your chin as you kneel";
 		if X is 7, say "straight [HairSoak][HairColour] [HairStyle] that hangs past your chin as you kneel";
 		if X is 8, say "straight [HairSoak][HairColour] [HairStyle] that touches the ground as you crawl";
@@ -300,7 +300,7 @@ To say RealHairDesc (X - a number):
 	if X is 2, say "[if the player is male]standard short hair[otherwise]tomboyish hair[end if]";
 	if X is 3, say "ear length hair";
 	if X is 4, say "ear length hair";
-	if X is 5, say "chin length hair";
+	if X is 5, say  "chin length hair";
 	if X is 6, say "shoulder length hair";
 	if X is 7, say "nipple length hair";
 	if X is 8, say "elbow length hair";

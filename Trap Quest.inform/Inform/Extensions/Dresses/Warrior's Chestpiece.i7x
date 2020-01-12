@@ -6,7 +6,7 @@ Definition: a warrior chestpiece is class-transformation-protected if the class 
 
 
 Check wearing warrior chestpiece:
-	if the virgin of the player is 0, say "The latches refuse to close!  It's almost as if the chestpiece is refusing to let you wear it..." instead.
+	if the virgin of the player is 0, say "The latches refuse to close! It's almost as if the chestpiece is refusing to let you wear it..." instead.
 
 To compute virginity-loss of (H - a warrior chestpiece):
 	say "As the [H] falls from your [BreastDesc], you feel [if the virgin bonus of the player < 0]more of [end if]your willpower ripped from you.";
@@ -167,7 +167,7 @@ Definition: a hide warrior chestpiece is black themed: decide yes.
 
 To say TransformReaction of (C - a hide warrior chestpiece):
 	if the outrage of C is too humiliating:
-		say "[variable custom style]No, this is even worse!  If being a virgin warrior in this place means wearing such embarrassing things as this, maybe I don't want to be one...[roman type][line break]";
+		say "[variable custom style]No, this is even worse! If being a virgin warrior in this place means wearing such embarrassing things as this, maybe I don't want to be one...[roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]I don't feel proud to be [if breasts is lewdly exposed]showing off my breasts like[otherwise]wearing[end if] this, but it is kind of thrilling...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:

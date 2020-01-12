@@ -140,7 +140,8 @@ Definition: a magic-spell is fetish appropriate: decide yes.
 Spellcasting is an action applying to one thing.
 Check Spellcasting:
 	if the noun is uncastable, say "You don't know that spell." instead;
-	if the player is not able to speak, say "You can't currently speak in order to perform the incantation!" instead.
+	if the player is in a predicament room, say "It seems like magic doesn't work here..." instead;
+	if the player is not able to trigger manual speech, say "You can't currently speak in order to perform the incantation!" instead.
 Carry Out Spellcasting:
 	allocate 3 seconds;
 	say CastFlav of the noun.
@@ -151,7 +152,8 @@ Report Spellcasting:
 		repeat with M running through reactive monsters:
 			if M is in L, compute spell outrageousness reaction of M to the noun;
 	otherwise:
-		say "Nothing happens. It would seem that this spell only works when used in front of someone who can listen and understand the words.[one of][line break][variable custom style]The laws of this universe are so stupid!!![roman type][line break][or][stopping]".
+		say "Nothing happens. It would seem that this spell only works when used in front of someone who can listen and understand the words.[one of][line break][variable custom style]The laws of this universe are so stupid!!![roman type][line break][or][stopping]";
+	follow the speech penalties rules.
 Understand "I [magic-spell]" as Spellcasting.
 
 

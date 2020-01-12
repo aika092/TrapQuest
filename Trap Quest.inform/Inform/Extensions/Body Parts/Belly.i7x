@@ -340,9 +340,9 @@ REQUIRES COMMENTING
 To say BellyContents:
 	if the flesh volume of belly > 0, say "It has a [if the flesh volume of belly > 6]large[otherwise if the flesh volume of belly > 3]medium[otherwise]small[end if] amount of fat. ";
 	if the semen volume of belly > 0, say "It is currently [if the semen addiction of the player < 9]a reluctant [otherwise if the semen addiction of the player > 14]a welcoming [end if]home to a [if the semen volume of belly > 20]ridiculously huge[otherwise if the semen volume of belly > 15]huge[otherwise if the semen volume of belly > 10]large[otherwise if the semen volume of belly > 5]decent[otherwise]small[end if] amount of [semen]. ";
-	[####Selkie: this next used to be 34000, i.e. HUMILIATION-DISGRACED + 2000. not H-D + 1000]
+	[###Selkie: this next used to be 34000, i.e. HUMILIATION-DISGRACED + 2000. not H-D + 1000]
 	if the urine volume of belly > 0, say "It is currently [if the humiliation of the player < HUMILIATION-DISGRACED + 1000]a reluctant [otherwise if the humiliation of the player > HUMILIATION-SHAMELESS + 1000]a welcoming [end if]home to a [if the urine volume of belly > 20]ridiculously huge[otherwise if the urine volume of belly > 15]huge[otherwise if the urine volume of belly > 10]large[otherwise if the urine volume of belly > 5]decent[otherwise]small[end if] amount of [urine]. ";
-	[####Selkie: this next used to be 34000, i.e. HUMILIATION-DISGRACED + 2000. not H-D + 1000]
+	[###Selkie: this next used to be 34000, i.e. HUMILIATION-DISGRACED + 2000. not H-D + 1000]
 	if the milk volume of belly > 0, say "It is currently [if the humiliation of the player < HUMILIATION-DISGRACED + 1000]a reluctant [otherwise if the humiliation of the player > HUMILIATION-SHAMELESS + 1000]a welcoming [end if]home to a [if the milk volume of belly > 20]ridiculously huge[otherwise if the milk volume of belly > 15]huge[otherwise if the milk volume of belly > 10]large[otherwise if the milk volume of belly > 5]decent[otherwise]small[end if] amount of [milk]. ";
 	if the air volume of belly > 0, say "It is currently inflated by a [if the air volume of belly > 20]ridiculously huge[otherwise if the air volume of belly > 15]huge[otherwise if the air volume of belly > 10]large[otherwise if the air volume of belly > 5]decent[otherwise]small[end if] amount of air. ";
 	if the small egg count of belly > 0, say "It is currently inflated by a [if the small egg count of belly > 20]ridiculously huge[otherwise if the small egg count of belly > 15]huge[otherwise if the small egg count of belly > 10]large[otherwise if the small egg count of belly > 5]decent[otherwise]small[end if] number of [ShortDesc of a random small egg]s. ";
@@ -381,7 +381,7 @@ To say BellyContentsAlone:
 		--  5: say "a mix of [semen] and [milk]";
 		--  6: say "a mix of [urine] and [milk]";
 		--  7: say "a mix of [semen], [urine], and [milk]";
-		--  8: if XES + XEM + XEL < 5 say "eggs", otherwise say "a mass of eggs";
+		--  8: say eggsOnly XES with XEM and XEL;
 		--  9: say "a mix of [semen] and eggs";
 		-- 10: say "a mix of [urine] and eggs";
 		-- 12: say "a mix of [milk] and eggs";
@@ -390,6 +390,9 @@ To say BellyContentsAlone:
 		-- 14: say "a mix of [semen], [milk], and eggs";
 		-- 15: say "an astonishing melange of [semen], [milk], [urine], and eggs".
 
+To say eggsOnly (S - a number) with (M - a number) and (L - a number):
+	if S + M + L < 5, say "eggs";
+	otherwise say "a mass of eggs";
 
 [!<SayBellyWeight>+
 
@@ -515,7 +518,7 @@ REQUIRES COMMENTING
 
 +!]
 To Overflow:
-	if the player is able to expel and belly liquid types + belly egg count > 0 and the total fill of belly > belly limit and currently-squirting is 0 and the latex-transformation of the player <= 4:
+	if currently-squirting is 0 and (diaper quest is 1 or (the player is able to expel and belly liquid types + belly egg count > 0 and the total fill of belly > belly limit and the latex-transformation of the player <= 4)):
 		AssSquirt;
 	otherwise if the total fill of belly > belly limit + 20 and the latex-transformation of the player > 4:
 		say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
@@ -646,7 +649,7 @@ assfilled is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-To Assfill (X - a number):[TODO: the slimegirl doesn't like demonic cum]
+To Assfill (X - a number):
 	let L be a random worn lipstick collar;
 	if L is clothing, increase X by 1;
 	let M be a random wrapped monster penetrating asshole;
@@ -1032,28 +1035,35 @@ To AssSquirt:
 				[On the first round, we check if the player wants to collect some in a vessel, and output some unique flavour text.]
 				if turn-count is 0 or collecting is a thing:
 					if debugmode is 1, say "there are [open-topped-vessel-count] open topped vessels held by the player.";
-					if the player is not flying and the player is not in HoleInWall and the player is not in DiaperPail and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
-						let LV be the list of carried open topped vessels;
-						if the number of entries in LV > 1:
+					if the player is not flying and the player is not in a nonstandard room and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
+						let LV be a list of things;
+						repeat with V running through carried open topped vessels:
+							add V to LV;
+						[if the number of entries in LV > 1:
 							say "You have the following open topped vessels:[line break]";
 							repeat with V running through LV:
-								say "[V][line break]";
+								say "[V][line break]";]
 						if the player is upright:
 							repeat with P running through closed pedestals in the location of the player:
-								if collecting is nothing and (P is fertile or P is chilled or P is parched):
-									say "Expel into the [P]? ";
-									if the player is consenting, now collecting is P;
-						repeat with V running through LV:
-							if collecting is nothing:
-								say "Collect the liquid you're about to expel into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
-								if the player is consenting:
-									if the doses of V > 0:
-										say "You tip the contents of the [ShortDesc of V] onto the floor.";
-										dump V;
-									now collecting is V;
+								if P is fertile or P is chilled or P is parched, add P to LV;
+						if the number of entries in LV > 0:
+							reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+							truncate LV to 9 entries;
+							repeat with V running through LV:
+								say "Where do you want to collect the liquid you're about to expel?[line break]";
+								if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+								otherwise set next numerical response to "[BigNameDesc of V]";
+							set numerical response 0 to "don't collect";
+							compute multiple choice question;
+							if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 					if collecting is bottle:
-						if collecting is fishbowl, say "[BigNameDesc of woman-barbara] holds the bowl under your [asshole] as you begin to expel ";
-						otherwise say "You position the [printed name of collecting] below your [asshole] just in time, as you begin to expel ";
+						if collecting is fishbowl:
+							say "[BigNameDesc of woman-barbara] holds the bowl under your [asshole] as you begin to expel ";
+						otherwise:
+							if the doses of collecting > 0:
+								say "You tip the contents of the [ShortDesc of collecting] onto the floor.";
+								dump collecting;
+							say "You position the [printed name of collecting] below your [asshole] just in time, as you begin to expel ";
 					otherwise if small-egg-count > 0 or medium-egg-count > 0 or large-egg-count > 0:
 						say "The eggs are immediately followed by ";
 					otherwise:

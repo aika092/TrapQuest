@@ -121,54 +121,25 @@ To compute (T - a dungeon-breeder) regionally summoning (M - a monster):
 	summon M in the dungeon;
 	now the charge of T is 450.
 
-This is the dungeon breeder rule:
-	if playerRegion is Dungeon and the dungeon-breeder is in the dungeon:
-		compute summoning check of dungeon-breeder.
+A time based rule (this is the tentacle breeders progress rule):
+	repeat with T running through tentacle-breeder:
+		if T is regionally in playerRegion, compute summoning check of T.
 
 To compute (T - a woods-breeder) regionally summoning (M - a monster):
 	summon M in the woods;
 	now the charge of T is 400.
 
-This is the woods breeder rule:
-	if playerRegion is Woods and the woods-breeder is in the woods:
-		compute summoning check of woods-breeder.
-
 To compute (T - a hotel-breeder) regionally summoning (M - a monster):
 	summon M in the hotel;
-	now the charge of T is 450.
-
-This is the hotel breeder rule:
-	if playerRegion is Hotel and the hotel-breeder is in the hotel:
-		compute summoning check of hotel-breeder.
+	now the charge of T is 300.
 
 To compute (T - a mansion-breeder) regionally summoning (M - a monster):
 	summon M in the mansion;
-	now the charge of T is 200.
-
-This is the mansion breeder rule:
-	if playerRegion is Mansion and the mansion-breeder is in the mansion:
-		compute summoning check of mansion-breeder.
-
-This is the player breeder rule:
-	if the player-breeder is in-play:
-		repeat with R running through regions:
-			if the player is in R and the player-breeder is in R:
-				compute summoning check of player-breeder;
-				break.
+	now the charge of T is 200. [Just because I expect people to spend less time in the mansion]
 
 To compute (T - a player-breeder) regionally summoning (M - a monster):
 	summon M;
-	now the charge of T is 500.
-
-The tentacle-breeder-spawning rules is a rulebook.
-The dungeon breeder rule is listed in the tentacle-breeder-spawning rules.
-The woods breeder rule is listed in the tentacle-breeder-spawning rules.
-The hotel breeder rule is listed in the tentacle-breeder-spawning rules.
-The mansion breeder rule is listed in the tentacle-breeder-spawning rules.
-The player breeder rule is listed in the tentacle-breeder-spawning rules
-
-A time based rule (this is the tentacle breeder tester rule):
-	follow the tentacle-breeder-spawning rules.
+	now the charge of T is 300.
 
 
 Tentacle Breeder ends here.

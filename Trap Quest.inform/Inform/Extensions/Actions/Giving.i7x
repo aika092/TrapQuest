@@ -46,12 +46,12 @@ Check giving:
 				increase the altar-uses of the second noun by the doses of the noun;
 				if diaper quest is 0, cutshow figure of witch cutscene 1 for witch;
 			otherwise:
-				say "After she's finished, she frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you?  This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you.  Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
+				say "After she's finished, she frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you? This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you. Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
 				increase the altar-uses of the second noun by 1;
 			allocate 6 seconds;
 			DoseEmpty the noun instead;
 			do nothing instead;
-			[say "Minor bug: action should end here!  Don't worry, Aika knows about it." instead.]
+			[say "Minor bug: action should end here! Don't worry, Aika knows about it." instead.]
 		otherwise if the noun is diaper:
 			let T be the total-soak of the noun - the water-soak of the noun;
 			if T < the soak-limit of the noun / 3 and the noun is not messed:
@@ -71,8 +71,8 @@ Check giving:
 				now the second noun is retaining the noun;
 				now the noun is in Holding Pen;
 				if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
-				if N > 0, say "[second custom style]'Ooh, that feels [if N > 1]incredible[otherwise]goood[end if]!  You've earned [if N is 1]one use[otherwise][N] uses[end if] of the altar[one of]. Hey, don't judge me!  I'm not the one who NEEDS to wear nappies[or][stopping].'[roman type][line break]";
-				otherwise say "[second custom style]'Ooh, that feels pretty fucking good!  You've not earned any uses of the altar though, since I had to use my magic to remove that curse[one of]. What, you thought I wouldn't notice that you were stuck in it?'[or].'[stopping][roman type][line break]";
+				if N > 0, say "[second custom style]'Ooh, that feels [if N > 1]incredible[otherwise]goood[end if]! You've earned [if N is 1]one use[otherwise][N] uses[end if] of the altar[one of]. Hey, don't judge me! I'm not the one who NEEDS to wear nappies[or][stopping].'[roman type][line break]";
+				otherwise say "[second custom style]'Ooh, that feels pretty fucking good! You've not earned any uses of the altar though, since I had to use my magic to remove that curse[one of]. What, you thought I wouldn't notice that you were stuck in it?'[or].'[stopping][roman type][line break]";
 				increase the altar-uses of the second noun by N;
 			do nothing instead;
 		otherwise if the noun is soiled-diaper:
@@ -99,7 +99,7 @@ Check giving:
 				now a random recipe for latex curse reversal is in Hotel25;
 				now the second noun is interested instead;
 			otherwise if the curse-quest of the second noun is 2 and the noun is recipe for latex curse reversal:
-				say "[second custom style]'Nice, you got it!  All right leave the rest to me...'[roman type][line break]The [second noun] takes the recipe and studies it carefully, muttering words you don't understand whilst stirring the mushroom into some kind of murky liquid. With a hum and a wave of her wand, you feel the curse leaving you! [if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human. What a relief![line break][second custom style]'[one of]You know that was the most interesting thing I've had to do this century, I've been DYING of boredom here. You're all right kid. Feel[or]You should probably be more careful in the future, or eventually we'll run out of mushrooms to turn you back. See you around baby - you should still feel[stopping] free to come by any time if you want to use my altar.'[roman type][line break]";
+				say "[second custom style]'Nice, you got it! All right leave the rest to me...'[roman type][line break]The [second noun] takes the recipe and studies it carefully, muttering words you don't understand whilst stirring the mushroom into some kind of murky liquid. With a hum and a wave of her wand, you feel the curse leaving you! [if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human. What a relief![line break][second custom style]'[one of]You know that was the most interesting thing I've had to do this century, I've been DYING of boredom here. You're all right kid. Feel[or]You should probably be more careful in the future, or eventually we'll run out of mushrooms to turn you back. See you around baby - you should still feel[stopping] free to come by any time if you want to use my altar.'[roman type][line break]";
 				now the latex-transformation of the player is 0;
 				if the pregnancy of the player is 2, now the pregnancy of the player is 1;
 				now the second noun is unbitchy;

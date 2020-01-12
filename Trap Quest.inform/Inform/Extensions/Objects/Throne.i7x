@@ -1,6 +1,6 @@
 Throne by Objects begins here.
 
-The throne is in Dungeon11. The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]". The throne is a trap. The throne is not portable. The throne is not triggered. The throne is untriggered. The throne is revealed. Understand "bind", "binds", "tentacle", "tentacles" as the throne. The throne has a number called charge. The charge of the throne is usually 0. The throne has a number called turns. The throne can be untransformed or transformed. The throne is untransformed. The throne has a number called timesSat. The text-shortcut of throne is "thr".
+The throne is in Dungeon11. The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]". The throne is a trap. The throne is not portable. The throne is not triggered. The throne is untriggered. The throne is revealed. Understand "bind","binds","tentacle","tentacles" as the throne. The throne has a number called charge. The charge of the throne is usually 0. The throne has a number called turns. The throne can be untransformed or transformed. The throne is untransformed. The throne has a number called timesSat. The text-shortcut of throne is "thr".
 
 To decide which figure-name is the examine-image of (C - throne):
 	if C is penetrating asshole:
@@ -14,10 +14,10 @@ To decide which figure-name is the examine-image of (C - throne):
 		otherwise:
 			 decide on figure of throne cutscene 1;
 	if C is untransformed, decide on figure of throne;
-	decide on figure of potty throne.
+	decide on figure of transformed throne.
 
 To say ExamineDesc of (C - throne):
-	if the noun is untransformed, say "A pink and gold throne clearly fit for a royal lady. Pink frills at the bottom obscure what could be underneath the throne.";
+	if the noun is untransformed, say "A pink and silver throne clearly fit for a royal lady. Pink frills at the bottom obscure what could be underneath the throne.";
 	otherwise say "A pink plastic chair cheaply fashioned into a princess theme through a crown decal on the backrest. A hole in the middle of the seat contains a training potty.".
 
 To say EnvironmentDesc of (T - throne):
@@ -37,8 +37,6 @@ Definition: yourself is throne stuck:
 
 Does the player mean entering the throne: it is very likely.
 
-Figure of throne is the file "Env/Dungeon/throne1.png".
-Figure of potty throne is the file "Env/Dungeon/throne2.png".
 [
 Definitions for the throne:
 Triggered - Player is interacting with the throne in some way.
@@ -369,8 +367,9 @@ To ThroneDisconnect:
 		summon P cursed with quest;
 		assign size (the openness of asshole + 2) to P;
 		if the openness of asshole < 9, say "You can feel your [asshole] being kept open more than you can take comfortably!";
-	otherwise if the largeness of belly > 3:
-		 cutshow figure of throne cutscene 6 for the throne;
+	otherwise:
+		if the largeness of belly > 3, cutshow figure of throne cutscene 6 for the throne;
+		otherwise cutshow figure of transformed throne for the throne;
 	if the weight of belly > 18:
 		if seconds is 0, allocate 3 seconds;
 		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";

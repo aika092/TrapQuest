@@ -15,7 +15,7 @@ Definition: a wench is dungeon dwelling if diaper quest is 0.
 To say ShortDesc of (M - a wench):
 	say "wench".
 
-Understand "slave", "girl" as a wench.
+Understand "slave","girl" as a wench.
 
 Figure of kidnapped wench is the file "NPCs/Dungeon/Wench/wench1.png".
 Figure of lost wench is the file "NPCs/Dungeon/Wench/wench2.png".
@@ -79,8 +79,8 @@ To say MonsterDesc of (M - a wench):
 	let K be a random knickers retained by M;
 	if M is horny-wench:
 		if bukkake fetish is 1:
-			if lady fetish is 2, say "This man has a glazed look in his eye, and from his tiny penis and jizz-coated figure, he's definitely the type you'd expect to be passed around down here. He is wearing a white blouse, which is unbuttoned and completely soaked in the same pearly white stuff running out of his asshole. He has one hand constantly between his legs, vigorously working his [semen]-loaded ass as he wanders around with a bow-legged stride.";
-			otherwise say "This woman has a glazed look in her eye, and from her voluptuous, jizz-coated figure, she[']s definitely the type of woman you[']d expect to see down here. She is wearing a white blouse, which is completely unbuttoned and soaked with the same pearly white stuff running out of both her holes. Her hands are constantly buried in her crotch, vigorously working her [semen]-loaded pussy as she wanders around with a bow-legged stride.";[not sure desperate wenches can steal, so left panty bits out]
+			if lady fetish is 2, say "This man has a glazed look in his eye, and from his tiny penis and jizz-coated figure, he's definitely the type you'd expect to be passed around down here. He is wearing a white blouse, which is unbuttoned and completely soaked in the same pearly white stuff running out of his asshole. He has one hand constantly between his legs, vigorously working his [semen] loaded ass as he wanders around with a bow-legged stride.";
+			otherwise say "This woman has a glazed look in her eye, and from her voluptuous, jizz-coated figure, she[']s definitely the type of woman you[']d expect to see down here. She is wearing a white blouse , which is completely unbuttoned and soaked with the same pearly white stuff running out of both her holes. Her hands are constantly buried in her crotch, vigorously working her [semen]-loaded pussy as she wanders around with a bow-legged stride.";[not sure desperate wenches can steal, so left panty bits out]
 		otherwise:
 			if lady fetish is 2, say "This man has a glazed look in his eye, a tiny, useless penis, and one hand between his legs. He is wearing a white blouse, which is completely soaked and appears to have been rather forcefully unbuttoned. His long, beach blonde hair is plastered around his face, and thick, pearly [semen] is visibly leaking from his asshole.";
 			otherwise say "This woman has a glazed look in her eye, a voluptuous figure, and both hands buried in her crotch. She is wearing a white blouse, which is completely soaked and appears to have been rather forcefully unbuttoned. Her beach blonde hair is plastered around her face, and thick, pearly [semen] is visibly leaking from both of her holes.";
@@ -728,7 +728,7 @@ To say DominationReaction of (M - a wench) to (N - a monster):
 			say "[line break][speech style of M]'Um, you were doing well at the beginning.'[roman type][line break][BigNameDesc of M] seems sympathetic.";
 	otherwise:
 		if M is unfriendly:
-			say "[line break][speech style of M]'Uh, I just remembered something. Lets hash things out later.'[roman type][line break][BigNameDesc of M] turns to walk away.";
+			say "[line break][speech style of M]'Uh, I just remembered something. Let's hash things out later.'[roman type][line break][BigNameDesc of M] turns to walk away.";
 			Bore M;
 			now the scared of M is 30;
 		otherwise:
@@ -762,6 +762,7 @@ To compute failed dominance punishment of (M - a wench):
 			Bore M;
 	otherwise if the size of penis is 0 or the number of things penetrating asshole > 0:
 		say "[speech style of M]'[one of]Wait your turn you fucking greedy bitch!'[or]I need this more than you do, you fucking bitch.'[or]I don[']t care how fucking horny you are, bitch! It was my idea first!'[at random][roman type][line break]";
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1;
 	otherwise:
 		if the size of penis > 3:
@@ -843,15 +844,15 @@ To vaginal dominate (M - a wench):
 	let R be a random number between 3 and 7;
 	let C be a random bottom level protection clothing;
 	if sexual-penis-length > 8:
-		say "[BigNameDesc of M]'s makes a defeated noise as you push [him of M] to the ground, but obediently spreads [his of M] legs anyway. However, [his of M] eyes widen [if C is not strapon-panties and C is clothing]as you pull your [SexDesc of penis] out of your [printed name of C][otherwise]when [he of M] sees your [SexDesc of penis][end if].[line break][speech style of M]'[if M is horny-wench]Please make me cum!'[otherwise]A-alright, I can handle that. You'll make sure I cum, right?'[end if][roman type][line break]You nod, not really listening as you guide your [sexual-player-penis] into [his of M] [if the creampieTimer of M > 0][semen]-laden[end if] [HoleDesc of M]. [big he of M] can't help but moan as you slowly begin to thrust, and as [his of M] voice grows louder, you can't help but smirk knowing how quickly you're going to make [him of M] peak. A few thrusts later, you realize your peak is even closer, and you find yourself breathing heavily with effort and anticipation as you try to modify your pace. [run paragraph on]";
+		say "[BigNameDesc of M] makes a defeated noise as you push [him of M] to the ground, but obediently spreads [his of M] legs anyway. However, [his of M] eyes widen [if C is not strapon-panties and C is clothing]as you pull your [SexDesc of penis] out of your [printed name of C][otherwise]when [he of M] sees your [SexDesc of penis][end if].[line break][speech style of M]'[if M is horny-wench]Please make me cum!'[otherwise]A- alright, I can handle that. You'll make sure I cum, right?'[end if][roman type][line break]You nod, not really listening as you guide your [sexual-player-penis] into [his of M] [if the creampieTimer of M > 0][semen]-laden[end if] [HoleDesc of M]. [big he of M] can't help but moan as you slowly begin to thrust, and as [his of M] voice grows louder, you can't help but smirk knowing how quickly you're going to make [him of M] peak. A few thrusts later, you realize your peak is even closer, and you find yourself breathing heavily with effort and anticipation as you try to modify your pace. [run paragraph on]";
 		if debugmode > 0, say "[line break][input style]Wench premature check:[line break]Is [A] (excitement check) > [R]?[roman type][line break]";
 		if A > R:[she has a ruined orgasm]
-			say "Unfortunately, you're too turned on.[line break][speech style of M]'Don't stop! Don't sto-'[roman type][line break]You cut [him of M] with a guttural groan of pleasure, a brief flash of shame flashing through your chest as you flood [his of M] [HoleDesc of M] with your massive load. [BigNameDesc of M] is hot on your heels, and [his of M] whole body begins to shudder as [he of M] begins to clench up around you. However, your [sexual-player-penis] begins to soften too early, and slips out of [him of M] without satisfying [him of M].";
+			say "Unfortunately, you're too turned on.[line break][speech style of M]'Don't stop! Don't sto-'[roman type][line break]You cut [him of M] with a guttural groan of pleasure, a brief surge of shame flashing through your chest as you flood [his of M] [HoleDesc of M] with your massive load. [BigNameDesc of M] is hot on your heels, and [his of M] whole body begins to shudder as [he of M] begins to clench up around you. However, your [sexual-player-penis] begins to soften too early, and slips out of [him of M] without satisfying [him of M].";
 			now player-fucking is DOMINANT-NEUTRAL;
 			orgasm M;[she came, but no favour boost]
 			say AfterDominationComment 0 of M;
 		otherwise:
-			say "[line break][speech style of M]'Don't stop! Don't stop!'[roman type][line break]You grit your teeth as the pleasure comes to a head, forcing yourself to hold on just a moment longer. And just a moment later, [BigNameDesc of M] climaxes explosively, [his of M] whole body shuddering uncontrollably as [his of M] [if lady fetish is 2][sissy-penis] shoots across [his of M] belly[otherwise][vagina] squirts out girlcum[end if]. Knowing you've reached the finish line, you allow yourself to lose control, emitting a primal groan as you flood [his of M] [HoleDesc of M] with your massive load.";
+			say "[line break][speech style of M]'Don't stop! Don't stop!'[roman type][line break]You grit your teeth as the pleasure comes to a head, forcing yourself to hold on just a moment longer. And an instant later, [BigNameDesc of M] climaxes explosively, [his of M] whole body shuddering uncontrollably as [his of M] [if lady fetish is 2][sissy-penis] shoots across [his of M] belly[otherwise][vagina] squirts out girlcum[end if]. Knowing you've reached the finish line, you allow yourself to lose control, emitting a primal groan as you flood [his of M] [HoleDesc of M] with your massive load.";
 			FavourUp M by 2;
 			orgasm M;
 			say AfterDominationComment 1 of M;
@@ -859,14 +860,14 @@ To vaginal dominate (M - a wench):
 		orgasm;
 		FuckGet;
 	otherwise if sexual-penis-length > 6:
-		say "[BigNameDesc of M]'s eyes find [if C is not strapon-panties and C is clothing]your bulge as you push [him of M] to the ground, and [he of M] obediently spreads [his of M] legs as [he of M] pulls your [sexual-player-penis] out of your [printed name of C][otherwise]your [sexual-player-penis] as you push [him of M] to the ground, obediently spreading [his of M] legs as [he of M] strokes your hardening [SexShaft][end if].[line break][speech style of M]'[if M is horny-wench]Y-you'll let me cum, right? Please, I'm so horny!'[otherwise]OK, I'll fuck you. Make sure I cum, OK?'[end if][roman type][line break]You nod, fondling [his of M] [ChestDesc of M] as [he of M] slides your [SexDesc of penis] into [his of M] [if the creampieTimer of M > 0]creampied[otherwise]loose[end if] [HoleDesc of M]. [big he of M] moans quietly as you begin to fuck [him of M], looking up at with [if M is horny-wench]a hungry look[otherwise]a surprisingly eager look[end if] in [his of M] eye as you pick up steam. You do your best to pace yourself, but even as [NameDesc of M]'s voice slowly rises in pitch, you feel yourself closing in on your peak. [BigNameDesc of M] isn't that far behind you, but holding on is more difficult with every moment, and you aren't sure you can keep going all the way to the end. [run paragraph on]";
+		say "[BigNameDesc of M]'s eyes find [if C is not strapon-panties and C is clothing]your bulge as you push [him of M] to the ground, and [he of M] obediently spreads [his of M] legs as [he of M] pulls your [sexual-player-penis] out of your [printed name of C][otherwise]your [sexual-player-penis] as you push [him of M] to the ground, obediently spreading [his of M] legs as [he of M] strokes your hardening [SexShaft][end if].[line break][speech style of M]'[if M is horny-wench]Y-you'll let me cum, right? Please, I'm so horny!'[otherwise]Ok, I'll fuck you. Make sure I cum, ok?'[end if][roman type][line break]You nod, fondling [his of M] [ChestDesc of M] as [he of M] slides your [SexDesc of penis] into [his of M] [if the creampieTimer of M > 0]creampied[otherwise]loose[end if] [HoleDesc of M]. [big he of M] moans quietly as you begin to fuck [him of M], looking up at with [if M is horny-wench]a hungry look[otherwise]a surprisingly eager look[end if] in [his of M] eye as you pick up steam. You do your best to pace yourself, but even as [NameDesc of M]'s voice slowly rises in pitch, you feel yourself closing in on your peak. [BigNameDesc of M] isn't that far behind you, but holding on is more difficult with every moment, and you aren't sure you can keep going all the way to the end. [run paragraph on]";
 		if debugmode > 0, say "[line break][input style]Wench premature check:[line break]Is [A] (excitement check) > [R]?[roman type][line break]";
 		if A > R:
 			say "Unfortunately, you're right.[line break][speech style of M]'Just like that! Keep going just like-'[roman type][line break]You cut [him of M] off with a throaty groan of defeat, your cheeks burning with shame as you flood [his of M] [HoleDesc of M] with a big load. [BigNameDesc of M] tries [his of M] best to catch up to you, but your [sexual-player-penis] has already softened too much to be of any use, and slips out of [him of M] before [he of M] has a chance to finish.";
 			now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 2 of M;
 		otherwise:
-			say "[line break][speech style of M]'Just like that! Keep going just like that!'[roman type][line break]You grit your teeth, desperately trying to keep yourself under control, but its just too much. You groan involuntarily as your body finally gives in and your [sexual-player-penis] throbs powerfully as you fill [his of M] [HoleDesc of M] with a big load. Luckily, [he of M] finishes a few moments later, shuddering violently as [if lady fetish is 2][his of M] [sissy-penis] shoots across [his of M] belly[otherwise][his of M] [vagina] squirts out girlcum[end if].";
+			say "[line break][speech style of M]'Just like that! Keep going just like that!'[roman type][line break]You grit your teeth, desperately trying to keep yourself under control, but it's just too much. You groan involuntarily as your body finally gives in and your [sexual-player-penis] throbs powerfully as you fill [his of M] [HoleDesc of M] with a big load. Luckily, [he of M] finishes a few moments later, shuddering violently as [if lady fetish is 2][his of M] [sissy-penis] shoots across [his of M] belly[otherwise][his of M] [vagina] squirts out girlcum[end if].";
 			FavourUp M by 1;
 			orgasm M;
 			say AfterDominationComment 1 of M;
@@ -874,10 +875,10 @@ To vaginal dominate (M - a wench):
 		orgasm;
 		FuckGet;
 	otherwise if sexual-penis-length > 3:
-		say "[BigNameDesc of M]'s eyes find [if C is not strapon-panties and C is clothing]your bulge as you push [him of M] to the ground, and [he of M] obediently spreads [his of M] legs as [he of M] pulls your [sexual-player-penis] out of your [printed name of C][otherwise]your [sexual-player-penis] as you push [him of M] to the ground, and [he of M] obediently spreads [his of M] legs as [he of M] strokes your hardening [SexShaft][end if].[line break][speech style of M]'[if M is horny-wench]Please give me time to cum. I'm so horny...'[otherwise]Fine, but you better make me cum.'[end if][roman type][line break]You nod, fondling [his of M] [ChestDesc of M] as [he of M] slides your [SexDesc of penis] into [his of M] [if the creampieTimer of M > 0]creampied[otherwise]loose[end if] [HoleDesc of M]. [big he of M] touches [his of M] fingers to [his of M] [if lady fetish is 2][sissy-penis][otherwise]clit[end if] as you begin to fuck [him of M], playing with [himself of M] as you slowly pick up steam. You're a little annoyed not to be the centre of attention, but on the other hand, you can already feel yourself closing in on your peek. You try to pace yourself as much as you can, but it becomes more difficult with every passing moment, and [NameDesc of M] is playing with [himself of M] as you pick up steam. You're a little insulted not to be the centre of attention, and speed up in hopes of regaining [his of M] interest. It seems to work, albeit slowly, and [he of M] begin to moan as you eagerly piston away. Unfortunately, its even more effective on you, and you struggle to keep yourself under control as your body rapidly closes in on its peak. [run paragraph on]";
+		say "[BigNameDesc of M]'s eyes find [if C is not strapon-panties and C is clothing]your bulge as you push [him of M] to the ground, and [he of M] obediently spreads [his of M] legs as [he of M] pulls your [sexual-player-penis] out of your [printed name of C][otherwise]your [sexual-player-penis] as you push [him of M] to the ground, and [he of M] obediently spreads [his of M] legs as [he of M] strokes your hardening [SexShaft][end if].[line break][speech style of M]'[if M is horny-wench]Please give me time to cum. I'm so horny...'[otherwise]Fine, but you better make me cum.'[end if][roman type][line break]You nod, fondling [his of M] [ChestDesc of M] as [he of M] slides your [SexDesc of penis] into [his of M] [if the creampieTimer of M > 0]creampied[otherwise]loose[end if] [HoleDesc of M]. [big he of M] touches [his of M] fingers to [his of M] [if lady fetish is 2][sissy-penis][otherwise]clit[end if] as you begin to fuck [him of M], playing with [him of M]self as you slowly pick up steam. You're a little annoyed not to be the center of attention, but on the other hand, you can already feel yourself closing in on your peak. You try to pace yourself as much as you can, but it becomes more difficult with every passing moment, and [NameDesc of M] is playing with [him of M]self as you pick up steam. You're a little insulted not to be the center of attention, and speed up in hopes of regaining [his of M] interest. It seems to work, albeit slowly, and [he of M] begin to moan as you eagerly piston away. Unfortunately, it's even more effective on you, and you struggle to keep yourself under control as your body rapidly closes in on its own release. [run paragraph on]";
 		if debugmode > 0, say "[line break][input style]Wench premature check:[line break]Is [A] (excitement check) > [R]?[roman type][line break]";
 		if A > R:
-			say "Its too much. [line break][speech style of M]'Yes! Keep going! I'm almost there! I'm almost-'[roman type][line break]You cut [him of M] off with a groan of defeat, your cheeks burning with shame as you fill [his of M] [HoleDesc of M] with your load. [BigNameDesc of M] gives you an unimpressed look as your [sexual-player-penis] softens and slips out of [him of M], spent.";
+			say "It's too much. [line break][speech style of M]'Yes! Keep going! I'm almost there! I'm almost-'[roman type][line break]You cut [him of M] off with a groan of defeat, your cheeks burning with shame as you fill [his of M] [HoleDesc of M] with your load. [BigNameDesc of M] gives you an unimpressed look as your [sexual-player-penis] softens and slips out of [him of M], spent.";
 			now player-fucking is DOMINANT-SHAMEFUL;
 			orgasm;
 			say AfterDominationComment 3 of M;
@@ -1006,15 +1007,15 @@ To say AfterDominationComment (N - a number) of (M - a wench):
 	if N is 0:
 		say "[speech style of M]'[one of]I guess that counts[or]I guess that was what I asked for[or]I guess you did your job[in random order]. Ugh. I can't wait to take you down a peg.'[roman type][line break]";
 	otherwise if N is 1:
-		say "[speech style of M]'[one of]FUCK that was good[or]That was actually kind of great[or]That felt so fucking good. Wow[in random order]...maybe I'll give you some space next time I see you.'[roman type][line break]";
+		say "[speech style of M]'[one of]FUCK that was good[or]That was actually kind of great[or]That felt so fucking good. Wow[in random order]...[if M is unfriendly]don't think this makes us friends.'[otherwise]Ok, we're cool. I won't attack you anymore.'[end if][roman type][line break]";
 	otherwise if N is 2:
 		say "[speech style of M]'[one of]What the fuck was that?! UGH[or]UGH, you jerk! I was so fucking CLOSE[or]Are you kidding me? Do you even KNOW how CLOSE I was[in random order]! I am SO getting you back for this!'[roman type][line break]";
 	otherwise if N is 3:
 		say "[speech style of M]'[one of]I guess I'm not surprised[or]I don't know what I expected[or]I guess I only have myself to blame[in random order]...Don't think you'll get another chance like this.'[roman type][line break]";
 	otherwise if N is 4:
-		say "[speech style of M]'[one of]Now, you can tell everybody we had sex[or]Now you can at least say you came inside me[or]Now its almost like we had sex[in random order]! FYI, I only did this because I pity you. I don't plan on doing that next time.'[roman type][line break]";
-	otherwise if N is 5:[in this case, your penis is probably huge, so she's probably not aggressive]
-		say "[speech style of M]'[one of]...We both know you're in charge.'[or]...You don't have to be so rough, you know.'[or]...At least be a little gentler next time.'[in random order][roman type][line break]";
+		say "[speech style of M]'[one of]Now, you can tell everybody we had sex[or]Now you can at least say you came inside me[or]Now it's almost like we had sex[in random order]! FYI, I only did this because I pity you. I don't plan on doing that next time.'[roman type][line break]";
+	otherwise if N is 5:[in this case, your penis is huge, so she's probably not aggressive]
+		say "[speech style of M]'[one of]...I know you're in charge, Ok?'[or]...You don't have to be so rough, you know.'[or]...At least be a little gentler next time.'[in random order][roman type][line break]";
 	otherwise if N is 6:
 		say "[speech style of M]'[one of]I'm your whore now, but just you wait.'[or]Treat me like that as much as you want. I'll remember it when I'm kicking your ass.'[or]I'm not a sore loser. But I bet YOU are.'[in random order][roman type][line break]";
 	otherwise if N is 7:
@@ -1129,7 +1130,7 @@ To say AssistanceRejected of (M - a wench) with (N - a monster):
 		alwayscutshow figure of wench interact 3 for M;
 	otherwise:
 		if the size of penis > 8 and M is friendly:
-			say "[speech style of M]'[one of]Haha, a dick that big and its still useless!'[or]Donkey dick and you're still getting fucked. Haha wow.'[at random][roman type][line break]";
+			say "[speech style of M]'[one of]Haha, a dick that big and it's still useless!'[or]Donkey dick and you're still getting fucked. Haha wow.'[at random][roman type][line break]";
 			alwayscutshow figure of wench interact 9 for M;
 		otherwise:
 			say "[speech style of M]'[one of]No way! I'm getting out of here!'[or]Fuck that! I don't want them turning on me!'[or]Do I look like I can help?'[at random][roman type][line break]";
@@ -1137,18 +1138,18 @@ To say AssistanceRejected of (M - a wench) with (N - a monster):
 
 To say AttentionAccepted of (M - a wench) with (N - a monster):
 	if the size of penis > 8 and M is friendly:
-		say "[speech style of M]'[one of]Haha, a dick that big and its still useless!'[or]Donkey dick and you're still getting fucked. Haha wow.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Haha, a dick that big and it's still useless!'[or]Donkey dick and you're still getting fucked. Haha wow.'[at random][roman type][line break]";
 		alwayscutshow figure of wench interact 9 for M;
 	otherwise:
 		say "[speech style of M]'It's actually sort of hot when someone else gets fucked.'[roman type][line break]";
 
 To say TauntAccepted of (M - a wench):
 	if the size of penis <= 3 and the player is male:
-		say "[speech style of M]'Nevermind! I don't wanna be humiliated again![roman type][line break][BigNameDesc of M] begins to run away!";
+		say "[speech style of M]'Never mind! I don't wanna be humiliated again![roman type][line break][BigNameDesc of M] begins to run away!";
 	otherwise if the size of penis > 8:
 		say "[speech style of M]'W-wait a second! I-I can't take a dick that big. I'm out of here!'[roman type][line break][BigNameDesc of M] begins to run away!";
 	otherwise:
-		say "[speech style of M]'N-nevermind. I was out of line. Sorry.'[roman type][line break][BigNameDesc of M] begins to run away!".
+		say "[speech style of M]'N-never mind. I was out of line. Sorry.'[roman type][line break][BigNameDesc of M] begins to run away!".
 
 To say TauntRejected of (M - a wench):
 	if the size of penis <= 3 and the player is male and penis is lewdly exposed and the player is feeling dominant and transGender is 0:
@@ -1288,11 +1289,11 @@ To say MonsterDesc of (M - workaholic wench):
 		say "This [man of M] has dozens of hatch marks next to [his of M] mouth, [if lady fetish is 2]and [asshole][otherwise][asshole], and [vagina][end if], and from the way [semen] is leaking from [if lady fetish is 1][his of M] hole[otherwise][his of M] holes[end if], its not hard to guess their significance. [big he of M]'s wearing a soaking wet white blouse[if K is clothing] with a [printed name of K][end if], and you can see the words 'Free Ride' tattooed across [his of M] right cheek. [big he of M] looks a little exhausted.".
 
 To say WhereAnswer of (M - workaholic wench):
-	say "[speech style of M]'[if the class of the player is hotel employment]Our place of work. The boss is a real asshole.'[otherwise]My place of work. Its true, there are no benefits, and the customers treat you like dog shit, but somebody's gotta turn the tricks around here. Might as well be us, right?'[end if][roman type][line break]";
+	say "[speech style of M]'[if the player is hotel employed]Our place of work. The boss is a real asshole.'[otherwise]My place of work. Its true, there are no benefits, and the customers treat you like dog shit, but somebody's gotta turn the tricks around here. Might as well be us, right?'[end if][roman type][line break]";
 	alwayscutshow figure of wench interact 5 for M.
 
 To say WhoAnswer of (M - workaholic wench):
-	say "[speech style of M]'[if the class of the player is hotel employment]Well, on the employment papers it says I'm a maid, but who am I kidding? There's only one thing wusses are useful for.'[otherwise]My name's Dee, [please]d to meet you.'[end if][roman type][line break]";
+	say "[speech style of M]'[if the player is hotel employed]Well, on the employment papers it says I'm a maid, but who am I kidding? There's only one thing whores like us are useful for.'[otherwise]My name's Dee, [please]d to meet you.'[end if][roman type][line break]";
 	alwayscutshow figure of wench interact 7 for M.
 
 To say StoryAnswer of (M - workaholic wench):
@@ -1304,7 +1305,10 @@ To say EscapeAnswer of (M - workaholic wench):
 	alwayscutshow figure of wench interact 13 for M.
 
 To say AdviceAnswer of (M - workaholic wench):
-	say "[speech style of M]'[one of]Depending on what you're wearing, you can earn more when you're servicing customers.'[or]You know that pimp that shows up after your first couple tricks? Well, he doesn't actually work here. Don't be afraid to kick his ass.'[or]Condoms are unreliable sometimes, but they're usually better than going without.'[or]That wrestler doesn't really care too much about winning or losing. She just wants to have fun.'[or]Customers hate it when you don't play along. Even if you feel like you're not in the mood for a gangbang, you should probably just let it happen. You make more money that way, you know?'[or]You know the mechanic? I think [he of mechanic]'s hiding something.'[at random][roman type][line break]";
+	let P be pimp;
+	let W be a random wrestler;
+	let B be mechanic;
+	say "[speech style of M]'[one of]Depending on what you're wearing, you can earn more when you're servicing customers.'[or]You know that pimp that shows up after your first couple tricks? Well, [he of P] doesn't actually work here. Don't be afraid to kick [his of P] ass.'[or]Condoms are unreliable sometimes, but they're usually better than going without.'[or]That wrestler doesn't really care too much about winning or losing. [big he of W] just wants to have fun.'[or]Even if you feel like you're not in the mood for a gangbang, its a good way to make a lot of cash. I think its a lot smarter to just play again. I mean, we're just whores anyway.'[or][if the player is a trained hooker]You completed the training too? Well, take it from me, there will still be consequences if you let your performance drop.'[otherwise]You'll make more money if you finish the employee training first.'[end if][or][if demon lord is alive]Some [DickDesc of B]s need to be avoided [otherwise]You know [NameDesc of B]? I think [he of mechanic]'s hiding something[end if].'[at random][roman type][line break]";
 	alwayscutshow figure of wench interact 2 for M.
 
 To compute patronMeeting of (M - workaholic wench) with (P - a patron):
@@ -1317,7 +1321,7 @@ To compute patronMeeting of (M - workaholic wench) with (P - a patron):
 
 To compute annoyance of (M - workaholic wench):
 	if M is uninterested:
-		say "[BigNameDesc of M] doesn't seem to realize you are talking to her.[line break]";
+		say "[BigNameDesc of M] doesn't seem to realize you are talking to [him of M].[line break]";
 	otherwise if M is unfriendly:
 		say "[BigNameDesc of M] ignores your question. [line break][speech style of M]'Shut up and help me!'[roman type][line break]";
 		alwayscutshow figure of wench interact 5 for M;

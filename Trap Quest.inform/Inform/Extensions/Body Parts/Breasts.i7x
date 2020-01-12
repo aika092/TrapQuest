@@ -100,15 +100,33 @@ To decide which number is the lewdly exposed outrage of (B - breasts):
 
 
 Definition: breasts is exposed:
-	if breasts is not at least partially exposed, decide no;
-	if the number of worn actually breast covering nipple covering clothing is the number of worn see-through actually breast covering nipple covering clothing, decide yes; [Is all worn breast covering clothing see-through?]
-	decide no.
+	if the at least partial concealer of breasts is a thing, decide no;
+	decide yes.
 
-Definition: breasts is at least partially exposed if the number of worn actually dense actually breast covering nipple covering clothing is 0.
+Definition: breasts is at least partially exposed:
+	if the concealer of breasts is a thing, decide no;
+	decide yes.
 
 Definition: breasts is lewdly exposed if breasts is exposed and (the player is female or the largeness of breasts > 1).
 
 Definition: breasts is at least partially lewdly exposed if breasts is at least partially exposed and the largeness of breasts > 1.
+
+To decide which object is the at least partial concealer of (B - breasts):
+	repeat with C running through worn actually breast covering at least partially nipple covering clothing:
+		unless C is see-through:
+			let this-one be 1;
+			repeat with D running through worn actually breast covering at least partially nipple covering clothing:
+				if D is not see-through and the cleavageCover of D > the cleavageCover of C, now this-one is 0;
+			if this-one is 1, decide on C;
+	decide on nothing.
+
+To decide which object is the concealer of (B - breasts):
+	repeat with C running through worn actually dense actually breast covering nipple covering clothing:
+		let this-one be 1;
+		repeat with D running through worn actually dense actually breast covering nipple covering clothing:
+			if the cleavageCover of D > the cleavageCover of C, now this-one is 0;
+		if this-one is 1, decide on C;
+	decide on nothing.
 
 To decide which number is the cleavageCover of (C - a clothing):
 	if C is breast covering:
@@ -122,15 +140,14 @@ To decide which number is the cleavageCover of (C - a clothing):
 	decide on 0.
 
 To decide which number is cleavageCover: [The higher this number, the less humiliating giant breasts are]
-	if there is worn actually dense high cut or higher actually breast covering clothing:
-		decide on 7;
-	otherwise if there is worn actually dense average cut actually breast covering clothing:
-		decide on 6;
-	otherwise if there is worn actually dense low cut actually breast covering clothing:
-		decide on 5;
-	otherwise if there is worn actually dense very low cut actually breast covering clothing:
-		decide on 4;
-	decide on 3.
+	let C be the at least partial concealer of breasts;
+	if C is clothing:
+		let CC be the cleavageCover of C;
+		if CC < 3, decide on 3;
+		if CC > 7, decide on 7;
+		decide on CC;
+	otherwise:
+		decide on 3.
 
 To decide which number is the outrage of (B - breasts):
 	let O be 0;
@@ -142,12 +159,16 @@ To decide which number is the outrage of (B - breasts):
 		if there is a worn currently at least partially visible top-displaced clothing, increase O by 2;
 		if B is lewdly exposed, now P is the lewdly exposed outrage of B + O;
 		if B is at least partially lewdly exposed, now P is the at least partially lewdly exposed outrage of B + O;
-		now O is (2 + (the largeness of breasts * 3)) / cleavageCover; [This will be the value of how lewd it is that the player has big breasts, scaled down by how much of the titty meat is covered up by clothing]
+		now O is cleavage outrage; [This will be the value of how lewd it is that the player has big breasts, scaled down by how much of the titty meat is covered up by clothing]
 		if P > O, now O is P; [Take the larger of what's humiliating from big cleavage and exposed nipples]
 	now O is (S + O) / (the trophy-mode of bust-trophy + 1); [Add on semen coating; Bust trophy halves outrage]
 	if O > 20, decide on 20;
 	if O < 0, decide on 0;
 	decide on O.
+
+To decide which number is cleavage outrage:
+	if breasts is not showing cleavage, decide on 0;
+	decide on (2 + (the largeness of breasts * 3)) / cleavageCover.
 
 To decide which number is the cringe of (B - breasts):
 	let C be the outrage of B;
@@ -158,8 +179,7 @@ To decide which number is the cringe of (B - breasts):
 
 
 Definition: breasts is showing cleavage:
-	if the largeness of breasts < 4, decide no;
-	if there is worn actually dense fully covering actually breast covering clothing, decide no;
+	if the largeness of breasts < 3 or cleavageCover is 7, decide no;
 	decide yes.
 
 Definition: a clothing (called C) is ridiculously low cut or higher:
@@ -442,16 +462,30 @@ To say CumBreastDesc:
 
 To say CleavageDesc:
 	if breasts is showing cleavage:
-		if there is worn actually dense high cut actually breast covering clothing:
-			say "with some slight cleavage showing";
-		otherwise if there is worn actually dense average cut actually breast covering clothing:
-			say "showing a normal amount of cleavage";
-		otherwise if there is worn actually dense low cut actually breast covering clothing:
-			say "showing a lot of cleavage";
-		otherwise if there is worn actually dense very low cut actually breast covering clothing:
-			say "with lots of cleavage spilling out";
-		otherwise if there is worn actually dense actually breast covering clothing:
-			say "(barely covered at all)".
+		let C be the at least partial concealer of breasts;
+		if C is ridiculously low cut clothing:
+			say "(barely covered at all)";
+		otherwise:
+			let O be cleavage outrage;
+			if O > 8:
+				say "with [if O > 9]insane[otherwise]ridiculous[end if] amounts of fully exposed titty meat";
+			otherwise if O > 7:
+				say "with excessive amounts of exposed titty flesh";
+			otherwise if O > 6:
+				say "with a huge amount of exposed breast";
+			otherwise if O > 5:
+				say "with a very large amount of exposed flesh";
+			otherwise if O > 4:
+				say "with an indecently large amount of exposed flesh";
+			otherwise if O > 3:
+				say "with an indecent amount of cleavage showing";
+			otherwise if O > 2:
+				say "with a lot of cleavage showing";
+			otherwise if O > 1:
+				say "with a normal cleavage line";
+			otherwise if O > 0:
+				say "with only a small amount of cleavage".
+
 
 
 
@@ -463,13 +497,16 @@ REQUIRES COMMENTING
 To say TotalDesc of breasts:
 	say "You are ";
 	if the player is upright:
-		if the largeness of breasts < 11 or the latex-transformation of the player > 1, say "[if the throne is triggered or the player is horse stuck]sitting down[otherwise]standing up[end if] with [if the largeness of breasts is 1]a [end if]";
+		if the supportable weight of breasts < 35 or the latex-transformation of the player > 1, say "[if the throne is triggered or the player is horse stuck]sitting down[otherwise]standing up[end if] with [if the largeness of breasts is 1 and the player is female]an [otherwise if the largeness of breasts is 1]a [end if]";
 		otherwise say "somehow managing to stand up with ";
 	otherwise:
-		if the largeness of breasts < 11 or the latex-transformation of the player > 1, say "on your knees, with [if the largeness of breasts is 1]a [end if]";
+		if the supportable weight of breasts < 35 or the latex-transformation of the player > 1, say "on your knees, with [if the largeness of breasts is 1 and the player is female]an [otherwise if the largeness of breasts is 1]a [end if]";
 		otherwise say "on your hands and knees under the weight of your ";
-	if there is a worn bra:
-		say "[BreastDesc][BraDesc]";
+	let supportiveBra be 0;
+	let B be a random worn bra;
+	if B is bra and the support of B > 0 and B is top-placed, now supportiveBra is 1;
+	if supportiveBra is 1:
+		say "[BreastDesc]. ";
 	otherwise if the player is prone:
 		say "[BreastDesc][BreastKneelingDesc]";
 	otherwise:
@@ -494,13 +531,8 @@ To say BreastsTheyAre:
 	if the largeness of breasts is 1, say "It is";
 	otherwise say "They are".
 
-[!<SayBraDesc>+
-
-REQUIRES COMMENTING
-
-+!]
-To say BraDesc:
-	compute SelfExamineDesc of a random worn bra.
+[To say BraDesc:
+	compute SelfExamineDesc of a random worn bra.]
 
 [!<SayBreastDesc>+
 
@@ -759,22 +791,29 @@ REQUIRES COMMENTING
 
 +!]
 To say BreastModesty:
+	let cleavageDescPlease be 0;
+	let C be armband;
 	if breasts is lewdly exposed:
-		if there is a worn breast covering top-placed clothing:
-			say "Your chest is clearly visible through your [ShortDesc of random worn breast covering top-placed clothing]. ";
-		otherwise if there is a worn nipple covering top-placed clothing:
+		if there is a worn nipple covering top-placed clothing:
+			say "[BreastsTheyAre] clearly visible through your [ShortDesc of random worn nipple covering top-placed clothing]. ";
+		otherwise if there is a worn breast covering top-placed clothing:
 			say "Your nipples are clearly visible through your [ShortDesc of random worn breast covering clothing]. ";
 		otherwise:
-			say "They are completely uncovered, on display for anyone who wants to [if the bimbo of the player < 5]perv on[otherwise if the bimbo of the player < 10]ogle at[otherwise]get intimate with[end if] them. ";
+			say "[BreastsTheyAre] completely uncovered, on display for anyone who wants to [if the bimbo of the player < 5]perv on[otherwise if the bimbo of the player < 10]ogle at[otherwise]get intimate with[end if] them. ";
 	otherwise if breasts is at least partially lewdly exposed:
-		if there is a worn breast covering top-placed clothing:
-			say "Your chest is partially visible through your [ShortDesc of random worn breast covering top-placed clothing]. ";
-		otherwise if there is a worn nipple covering top-placed clothing:
-			say "Your nipples are clearly visible through your [ShortDesc of random worn nipple covering top-placed clothing]. ";
+		now C is the at least partial concealer of breasts;
+		say "Your chest is partially visible through [NameDesc of C][run paragraph on]";
+		now cleavageDescPlease is 1;
 	otherwise if breasts are not at least partially exposed:
-		say "[BreastsTheyAre] hidden safely behind your [ShortDesc of random worn actually dense nipple covering clothing]. ";
-	otherwise if the player is female:
+		now C is the concealer of breasts;
+		now cleavageDescPlease is 2;
+	otherwise if the player is presenting as female:
 		say "[BreastsTheyAre] so flat that you could be mistaken for a man. This does mean that it's not particularly outrageous for your nipples to be on display. ";
+	if cleavageDescPlease > 0:
+		let O be cleavage outrage;
+		let RLC be the at least partial concealer of breasts;
+		if cleavageDescPlease is 2, say "[if O >= 3]Your nipples are[otherwise][BreastsTheyAre][end if] concealed behind [NameDesc of C][run paragraph on]";
+		say "[if RLC is ridiculously low cut clothing], but [NameDesc of RLC] leaves practically all of your flesh exposed[otherwise if O > 0] [CleavageDesc][end if].".
 
 [!<SayBreastCupNumber>+
 
@@ -1036,7 +1075,7 @@ To BustInflate (X - a number):
 	compute bra strain;
 	update appearance level;
 	if previous-weight > -6 and the weight of breasts < -5 :
-		say "Your [BreastDesc] are now significantly lighter than air! You can constantly feel their pull, trying to lift you up off the ground.";
+		say "Your [BreastDesc] are now significantly lighter than air! You can constantly feel their pull, trying to lift you off the ground.";
 	otherwise if previous-weight > -1 and the weight of breasts < 0:
 		say "Your [BreastDesc] are now lighter than air! They gently try to rise from your body like two helium balloons glued to your chest.";
 	otherwise if previous-weight > 0 and the weight of breasts is 0:

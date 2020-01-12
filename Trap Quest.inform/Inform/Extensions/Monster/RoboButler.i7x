@@ -110,7 +110,7 @@ To serve urine from (M - a robobutler):
 		say "Its eyes turn yellow as it looks at you.[line break][first custom style]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [urine]. It doesn't seem like it's looking for 'no' as an answer. Do you drink the shot? ";
 		if the player is bimbo consenting:
 			StomachUp 1;
-			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck yuck yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
+			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck, yuck, yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
 			satisfy M;
 			UrineTasteAddictUp 1;
 		otherwise:
@@ -141,6 +141,8 @@ To compute forcefeed of (M - a robobutler):
 			say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 		try BowlFeeding feeding bowls;
 		satisfy M for 500 seconds.
+
+
 
 To compute (M - a robobutler) cuffing:
 	let W be a random off-stage pair of wristcuffs;
@@ -211,8 +213,19 @@ This is the robobutler punishment rule:
 		satisfy M for 500 seconds;
 		rule succeeds;[He doesn't drag you if he increases the size of your lips.]
 	if presented-orifice is not nothing, say "[speech style of M]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
+	if the currentSlide of security screens > 0 and a random number between 1 and 5 > 2, compute forced screen viewing of M;
 	if M is interested, compute forcefeed of M;
 	rule succeeds.
+
+To compute forced screen viewing of (M - a robobutler):
+	drag to Hotel30 by M;
+	satisfy M.
+
+butler-screen is a kind of diaper punishment. The priority of butler-screen is 2.
+
+Definition: butler-screen (called P) is appropriate:
+	if current-monster is not robobutler or the number of filled rows in the Table of Published Disgraces is 0, decide no;
+	decide yes.
 
 To say DragFlav of (M - a robobutler) to (R - a room):
 	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
@@ -221,6 +234,9 @@ To say DragArrival of (M - a robobutler) to (R - Hotel18):
 	if the planned-punishment of M is not 5, say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 	otherwise say DragArrival of M to Stairwell01.
 
+To say DragArrival of (M - a robobutler) to (R - Hotel30):
+	say "[speech style of M]'VIEWING SESSION ENGAGED. [caps please] ENJOY YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully holds your head back and makes you look at the security screens.".
+
 To say DragArrival of (M - a robobutler) to (R - a room):
 	if the planned-punishment of M is 5:
 		say "[speech style of M]CRIMINAL DELIVERY PROGRAM COMPLETE. [caps please] WAIT PATIENTLY DURING REFORM PROCESS![roman type][line break]";
@@ -228,7 +244,7 @@ To say DragArrival of (M - a robobutler) to (R - a room):
 		say "[speech style of M]'ASSISTED MOVEMENT PROGRAM COMPLETE.'[roman type][line break]";
 
 To say StrikingFlav of (M - a robot) on (B - a body part):
-	say "[BigNameDesc of M] attempts to strike you [TargetName of B] with a powerful metal fist!  ".
+	say "[BigNameDesc of M] attempts to strike you [TargetName of B] with a powerful metal fist! ".
 
 To say StrikingSuccessFlav of (M - a robot) on (B - a body part):
 	say "[StrikingFlav of M on B][one of]That's going to leave a bruise[or]It's a direct hit[or]It leaves a sore red mark where it hit[at random]!".

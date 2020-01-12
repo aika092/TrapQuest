@@ -12,6 +12,8 @@ To decide which figure-name is the examine-image of (B - a christmas gift):
 Check opening a christmas gift:
 	try unwrapping the noun instead.
 
+Definition: a christmas gift is never-in-bag: decide yes.
+
 When play begins:
 	let giftShortcutCount be 1;
 	repeat with E running through christmas gift:
@@ -114,6 +116,9 @@ To initialise christmas gifts:
 			now E is in Christmas Item Pen;
 	[8 transformations]
 	[7 surprise penetrations]
+	if diaper messing > 3 and diaper quest is 1:
+		repeat with W running through pocketwipes:
+			now W is in Christmas Item Pen;
 	repeat with N running from 1 to 6: [6 electric fans]
 		let E be a random off-stage electric fan;
 		now E is in Christmas Item Pen;
@@ -154,7 +159,7 @@ To initialise christmas gifts:
 
 
 To compute christmas gifting of (M - a monster):
-	if christmas content is 1 and M is intelligent:
+	if christmas content is 1 and M is reactive:
 		let CG be a random off-stage christmas gift;
 		if CG is a thing:
 			now CG is carried by the player;

@@ -59,7 +59,7 @@ Definition: a clothing (called C) is potentially vagina covering:
 	decide no.
 
 Definition: a clothing (called C) is potentially at least partially vagina covering:
-	if C is potentially pussy covering and C is not see-through, decide yes;[if it protects your pussy, it must be covering it.]
+	if (C is potentially pussy covering or C is crotch-ripped or C is crotch-unzipped) and C is not see-through, decide yes;[if it protects your pussy, it must be covering it.]
 	if C is skirt-covering-crotch and C is not see-through, decide yes;
 	decide no.
 
@@ -328,20 +328,24 @@ To PussyClose (X - a number):
 
 Chapter 2 - Expulsion
 
-continued-pussy-expulsion is a number that varies.
+continued-pussy-expulsion is initially false.
 
-To compute pussy expulsion:
-	say "[bold type]You [if the vaginal sex addiction of the player * 1000 > 9000 - the arousal of the player]don't move, lost in pleasure[otherwise]are unable to move[end if][roman type] as [semen] [if continued-pussy-expulsion is 1]continues to flood[otherwise]floods[end if] out of your [vagina] and [if there is a worn bottom level pee protection clothing and bukkake fetish is 1]onto your [ShortDesc of random worn bottom level pee protection clothing][otherwise if the player is prone]onto the ground[otherwise]splatters all over your thighs[end if].";
-	if continued-pussy-expulsion is 0: [We only say reflection flavour once, on the first turn of the expulsion]
+This is the continued pussy expulsion rule:
+	say "[bold type]You [if the vaginal sex addiction of the player * 1000 > 9000 - the arousal of the player]don't move, lost in pleasure[otherwise]are unable to move[end if][roman type] as [semen] [if continued-pussy-expulsion is true]continues to flood[otherwise]floods[end if] out of your [vagina] and [if there is a worn bottom level pee protection clothing and bukkake fetish is 1]onto your [ShortDesc of random worn bottom level pee protection clothing][otherwise if the player is prone]onto the ground[otherwise]splatters all over your thighs[end if].";
+	if continued-pussy-expulsion is false: [We only say reflection flavour once, on the first turn of the expulsion]
 		say "[variable custom style][if the semen addiction of the player > 14 and pregnancy fetish is 1 and the pregnancy of the player is 0][second custom style][one of]Omigod I hope I get pregnant![or]Nooo, stay inside me and help me get pregnant![or]Oh no, what a waste! Stay inside me, I need to get pregnant first![in random order][otherwise if the semen addiction of the player > 14][second custom style][one of]Nooo, I want it to stay inside me![or]Unf, it feels so good to be so full of [semen]![or]I wish I could have plugged myself in time, to keep it all inside me...[cycling][otherwise if the pregnancy of the player > 0][one of]No wonder I got pregnant, if this is how I allow my [vagina] to be treated...[or]If I keep getting creampies like this, I'm going to be perpetually pregnant for the rest of my life...[cycling][otherwise if the semen addiction of the player > 7 and pregnancy fetish is 1][one of]If I keep this up, I'm at a real risk of getting knocked up.[or]Oh geez, I'm practically certain to get pregnant now, aren't I?[or]Oh my, I'm practically begging to get knocked up, aren't I?[cycling][otherwise if the semen addiction of the player > 7][one of]Why does this feel so good?![or]Unf, I can't believe how good this feels...[or]I could get addicted to this feeling...[cycling][otherwise if pregnancy fetish is 1][one of]No, no no... I can't allow this to happen and more, I'll get knocked up for sure![or]Oh no, please tell me I haven't got pregnant from this...[or]There's so much! Gross! Get it out of me![or]Please say nothing got into my womb...![in random order][otherwise][one of]There's so much! Gross! Get it out of me![or]Yuck yuck yuck yuck![or]You can't be serious?! There's so much![or]What the hell? This can't be real...[in random order][end if][roman type][line break]";
 	ruin vagina; [This needs to go before PussySquirt in order for the stimulation to be calculated properly]
 	if the semen volume of vagina >= 12, PussySquirt 6;
 	otherwise PussySquirt the semen volume of vagina - 6; [so we always leave 6 behind for dripping over time]
-	now another-turn is 1;
 	commence animation of PussyExpelAnimation;
-	if the semen volume of vagina > 6 and vagina is not actually occupied, now continued-pussy-expulsion is 1;
-	otherwise now continued-pussy-expulsion is 0.
+	if the semen volume of vagina > 6 and vagina is not actually occupied, now continued-pussy-expulsion is true;
+	otherwise now continued-pussy-expulsion is false.
 
+This is the compulsory pussy expulsion rule:
+	if the semen volume of vagina > 6 and vagina is not actually occupied:
+		now another-turn is 1;
+		add continued pussy expulsion rule to another-turn-rules.
+The compulsory pussy expulsion rule is listed in the compulsory action rules.
 
 Chapter 3 - Contents and Pregnancy
 
@@ -415,7 +419,12 @@ To WombFill (X - a number):
 					say "You feel yourself being corrupted as [semen] enters your womb!";
 					if a random number between 1 and 2 is 1, DelicateUp 1;
 					otherwise SexAddictUp 1;
-		if (slow pregnancy > 2 or (tentacles tattoo is worn and (there is a tentacle monster penetrating vagina or there is a vine penetrating vagina or there is a creampie pole trap penetrating vagina))) and the pregnancy of the player is 0 and pregnancy fetish is 1:
+		let IG be 0;
+		if slow pregnancy > 2, now IG is 1;
+		if tentacles tattoo is worn and (there is a tentacle monster penetrating vagina or there is a vine penetrating vagina or there is a creampie pole trap penetrating vagina), now IG is 1;
+		if IG is 0 and the player is pheromonal and there is a musky monster penetrating vagina:
+			if a random number between 1 and 4 is 1, now IG is 1;
+		if IG is 1 and the pregnancy of the player is 0 and pregnancy fetish is 1:
 			compute father material of vagina;
 			compute sudden pregnancy.
 

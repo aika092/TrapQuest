@@ -88,6 +88,7 @@ A time based rule (this is the determining desirability rule):
 		now the desirability of breasts is 0;
 		now the desirability of asshole is 5;
 		now the desirability of vagina is 0;
+		now the desirability of penis is 0;
 		now the desirability of belly is 0; [remember that belly = urination]
 		if the largeness of breasts > 7:
 			now the desirability of breasts is the largeness of breasts / 2;
@@ -95,6 +96,9 @@ A time based rule (this is the determining desirability rule):
 		if the player is female:
 			now the desirability of vagina is 5;
 			follow the pussy slut eligibility rules;
+		if the size of penis > 0:
+			now the desirability of penis is 5;
+			follow the penis slut eligibility rules;
 		if watersports fetish is 1:
 			now the desirability of belly is 5;
 			follow the piss slut eligibility rules;
@@ -183,6 +187,11 @@ Let's check all the things that might increase the chances of anal sex.
 *!]
 the butt slut eligibility rules is a rulebook.
 
+Definition: yourself is a penis slut:
+	if the desirability of penis >= 25 and penis is most desirable, decide yes;
+	decide no.
+
+The penis slut eligibility rules is a rulebook.
 
 Desirability ends here.
 
