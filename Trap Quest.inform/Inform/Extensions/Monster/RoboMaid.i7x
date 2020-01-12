@@ -353,7 +353,7 @@ To say FirstResponse of (M - a robomaid):
 	otherwise:
 		say "[first custom style]'GREETINGS [robogreeting of M].'[roman type][line break]";
 
-To say RepeatResponse of (M -  a robomaid):
+To say RepeatResponse of (M - a robomaid):
 	if the class of the player is maid:
 		say "[first custom style]'HEY GIRLFRIEND. GOODBYE.'[roman type][line break]";
 	otherwise if M is unconcerned:

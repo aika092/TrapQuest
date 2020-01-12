@@ -35,7 +35,7 @@ Include (-
 [ GGRecoverObjects ref;
 	! Reset all Glk references as if none existed
 	FollowRulebook( (+ glulx zeroing-reference rules +) );
-	
+
 	! Iterate through each of the windows, streams, file refs and sound channels
 	while ( ref = glk_window_iterate( ref, gg_arguments ) )
 	{

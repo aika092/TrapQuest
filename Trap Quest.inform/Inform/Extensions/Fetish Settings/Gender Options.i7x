@@ -16,7 +16,7 @@ title	subtable	description	toggle
 1 means that the player is always referred to as female]
 To decide which number is transGender:
 	decide on choice in row 79 of the Table of Player Options.
-	
+
 
 [!<TheMaleChoiceRule>+
 

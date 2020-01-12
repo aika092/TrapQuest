@@ -2,7 +2,7 @@ Version 1/160501 of Ultra Undo (for Glulx only) by Dannii Willis begins here.
 
 "Handles undo using external files for very big story files"
 
-Use maximum file based undo count of at least 10 translates as (- Constant ULTRA_UNDO_MAX_COUNT = {N}; -). 
+Use maximum file based undo count of at least 10 translates as (- Constant ULTRA_UNDO_MAX_COUNT = {N}; -).
 
 [ If the interpreter cannot perform an undo for us, store the state using external files. We can do this by hijacking VM_Undo and VM_Save_Undo. ]
 
@@ -39,7 +39,7 @@ Global ultra_undo_needed = 0;
 	{
 		return Ultra_Undo();
 	}
-	
+
 	@restoreundo result_code;
 	return ( ~~result_code );
 ];
@@ -50,13 +50,13 @@ Global ultra_undo_needed = 0;
 	{
 		return -2;
 	}
-	
+
 	! If we are using external files
 	if ( ultra_undo_needed )
 	{
 		return Ultra_Save_Undo();
 	}
-	
+
 	@saveundo result_code;
 	! Check if it we have just restored
 	if ( result_code == -1 )
@@ -169,11 +169,11 @@ The Ultra Undo Test rule is listed last in the startup rules.
 
 [ Rerun the tests if we load a saved game. ]
 
-Section (for use with Interpreter Sniffing by Friends of I7) 
+Section (for use with Interpreter Sniffing by Friends of I7)
 
 The Ultra Undo Test rule is listed in the resniffing rules.
 
-Section (for use without Interpreter Sniffing by Friends of I7) 
+Section (for use without Interpreter Sniffing by Friends of I7)
 
 Include (-
 
@@ -187,7 +187,7 @@ Include (-
 	@save gg_savestr res;
 	if (res == -1) {
 		! The player actually just typed "restore". We're going to print
-		!  GL__M(##Restore,2); the Z-Code Inform library does this correctly
+		! GL__M(##Restore,2); the Z-Code Inform library does this correctly
 		! now. But first, we have to recover all the Glk objects; the values
 		! in our global variables are all wrong.
 		Ultra_Undo_Test();

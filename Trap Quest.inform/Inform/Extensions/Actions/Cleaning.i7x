@@ -141,7 +141,7 @@ Carry out cleaning it with:
 REQUIRES COMMENTING
 
 +!]
-To 2Clean (P - a body part) with  (C - a clothing):
+To 2Clean (P - a body part) with (C - a clothing):
 	say "You use the [printed name of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
  	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
  		decrease the semen coating of P by 1;

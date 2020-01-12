@@ -14,7 +14,7 @@ REQUIRES COMMENTING
 
 +!]
 Check kneeling while gloryhole is grabbing the player:
-	say  "[if seconds is 0]You can't move![end if]" instead.
+	say "[if seconds is 0]You can't move![end if]" instead.
 
 
 [!<CheckKneelingWhileThePlayerIsDildoStuck>+
@@ -23,7 +23,7 @@ REQUIRES COMMENTING
 
 +!]
 Check kneeling while the player is dildo stuck:
-	say  "[if seconds is 0]You can't move![end if]" instead.
+	say "[if seconds is 0]You can't move![end if]" instead.
 
 
 [!<CheckKneelingWhileThePlayerIsImmobile>+
@@ -79,7 +79,7 @@ Carry out kneeling:
 			let R be a random number between 1 and D;
 			if debuginfo > 0, say "[input-style][ShortVesselDesc of X] balance check: dexterity [if background-waitress > 0](doubled from waitress background) [end if]d[D] ([R]) | ([1 + (clumsy * 4)].5) spill evasion difficulty[roman type][line break]";
 			if R < (2 + (clumsy * 4)) or there is worn serving-bondage:
-				say  "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
+				say "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
 				Dump X;
 				if servePunished is 0 and ((X is waitress vessel and clumsy is 1) or X is probably-serve-ready waitress vessel or (the service-ready of bunny waitress ears is 1 and bunny waitress ears is worn)):
 					now servePunished is 1; [So that this only happens once per trip, even with multiple vessels]

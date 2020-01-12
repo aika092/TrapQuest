@@ -17,7 +17,7 @@ To compute furniture resting on (F - a cot):
 	compute normal rest of F.
 
 To say RestingDesc of (F - a cot):
-	say  "You [one of][or]continue to [stopping]rest on the cot.";
+	say "You [one of][or]continue to [stopping]rest on the cot.";
 
 To compute rest ending of (F - a cot):
 	if the number of modesty shutters in the location of the player > 0:
