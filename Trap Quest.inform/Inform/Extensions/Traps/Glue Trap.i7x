@@ -13,7 +13,7 @@ Strength is used to pull free: but if you pull free with too much strength, you 
 glu-colour is a kind of value. The glu-colours are pinkish, yellowish, blackish, whiteish.
 
 [Limit how many glue traps, you want, in total, here. 3 means at most 1 in dungeon, at most 1 in hotel, the rest in the jungle: provided that code isn't commented out.]
-A glue is a kind of thing. There are 3 glues. A glue has a number called glue-strength. A glue has a glu-colour called the active-colour. A glue has a number called smell-duration. A glue has a number called times-stuck. Understand the active-colour property as describing a glue. The active-colour of a glue is normally pinkish. The glue-strength of a glue is normally 14. The smell-duration of a glue is normally 4. [4 rounds] A glue can be full-strength or weakened. The printed name of glue is "[TQlink of item described]puddle of glue[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of glue is "glu". Understand "glu", "sticky", "blob", "adhesive" as glue. A glue is not portable.
+A glue is a kind of thing. There are 3 glues. A glue has a number called glue-strength. A glue has a glu-colour called the active-colour. A glue has a number called smell-duration. A glue has a number called times-stuck. Understand the active-colour property as describing a glue. The active-colour of a glue is normally pinkish. The glue-strength of a glue is normally 14. The smell-duration of a glue is normally 4. [4 rounds]  A glue can be full-strength or weakened. The printed name of glue is "[TQlink of item described]puddle of glue[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of glue is "glu". Understand "glu", "sticky", "blob", "adhesive" as glue. A glue is not portable.
 
 Figure of Glue Cutscene 1 is the file "Special/Cutscene/cutscene-glue1.jpg".
 Figure of Glue Cutscene 2 is the file "Special/Cutscene/cutscene-glue2.jpg".
@@ -60,7 +60,7 @@ To say ShortDesc of (T - a glue trap):
 
 [!<YourselfIsGlueStuck>+
 
-Is there a puddle of glue grabbing the player? Selkie is unsure if this is redundant, given that a non-zero stickiness should indicate this.
+Is there a puddle of glue grabbing the player?  Selkie is unsure if this is redundant, given that a non-zero stickiness should indicate this.
 
 +!]
 Definition: yourself is glue stuck:
@@ -244,23 +244,23 @@ To check glue tripping:
 		let X be N - (GS + BaseDiff + HairDiff + HeelsDiff);
 		[How negative X is, tells how badly they failed the dexterity check.
 		 Which difficulty modifier tipped them into failure tells us why they tripped.
-			(NB BaseDiff = 0 implies they were standing, > 0 they were kneeling)
+		    (NB BaseDiff = 0 implies they were standing, > 0 they were kneeling)
 			HairDiff = 0 if their hair is short OR they were standing.
 		 Example 1:
-			Dex 18. glue-str 12, BaseDiff 0, HairDiff 0, HeelsDiff 3 (Tot 15):
-			N = 18 --> X = 3 - Dex saved
-			N = 15 --> X = 0 - fell due to Heels
-			N = 13 --> X = -1 - fell due to Heels
-			N = 15 --> X = -2 - fell due to dex
+		  Dex 18. glue-str 12, BaseDiff 0, HairDiff 0, HeelsDiff 3 (Tot 15):
+		    N = 18 --> X =  3 - Dex saved
+		    N = 15 --> X =  0 - fell due to Heels
+		    N = 13 --> X = -1 - fell due to Heels
+		    N = 15 --> X = -2 - fell due to dex
 		 Example 2:
-			Dex 25. glue-str 10, BaseDiff 5, HairDiff 6, HeelsDiff 2 (Tot 23):
-			N = 24 --> X = 1 - saved by dex
-			N = 22 --> X = -3 - fell due to Heels
-			N = 21 --> X = -2 - fell due to Heels
-			N = 20 --> X = -3 - fell due to Hair
-			N = 15 --> X = -5 - fell due to kneeling
-			N = 10 --> X = -13- fell due to bad dex check
-			]
+		  Dex 25. glue-str 10, BaseDiff 5, HairDiff 6, HeelsDiff 2 (Tot 23):
+		    N = 24 --> X =  1 - saved by dex
+		    N = 22 --> X = -3 - fell due to Heels
+		    N = 21 --> X = -2 - fell due to Heels
+		    N = 20 --> X = -3 - fell due to Hair
+		    N = 15 --> X = -5 - fell due to kneeling
+		    N = 10 --> X = -13- fell due to bad dex check
+		    ]
 		if debugmode is 1, say "###debug: Check glue tripping: X = [X], dex = [Dex], N = [N]; GS = [GS], BaseDiff =[BaseDiff], HairDiff = [HairDiff], HeelsDiff = [HeelsDiff], TS = [TS], Flat Dex = [saved-flat-dexterity][line break]";
 		if X < 0:
 			[the player gets (more?) stuck]
@@ -295,8 +295,8 @@ To check glue tripping:
 					if the times-stuck of G is 1, increase the stickiness of the player by 2; [If they just triggered it, because they were on their knees they get stuck a little worse than they'd crawled up to it or knelt deliberately (the MoreStick, below).]
 					now the smell-duration of G is 4;
 					if debugmode is 1, say "###debug: the stickiness of the player is now [the stickiness of the player].";
-				let MoreStick be a random number between 1 and 3; [###Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
-				if the strength of the player > the stickiness of the player + MoreStick:
+				let MoreStick be a random number between 1 and 3; [Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
+				if the strength of the player  > the stickiness of the player + MoreStick:
 					increase the stickiness of the player by a random number between 1 and MoreStick;
 					[They were already glued: now they're glued more!]
 					 if N > GS + BaseDiff + HeelsDiff:
@@ -309,7 +309,7 @@ To check glue tripping:
 						say "[one of]In your twisting struggles to get free, you slip and stick yourself even more strongly to the ground![or]You squirm in the glue, trying to pull free, but instead you feel the glue spread further! Your panting struggles to get free brings fresh parts of your body in contact with the glue. Oh no![at random]";
 					say "[one of][at random]";
 				otherwise:
-					[Don't make it even harder if they're already weaker than the glue!]
+					[Don't make it even harder if they're already weaker than  the glue!]
 					 if N > GS + BaseDiff + HeelsDiff:
 						say "[one of]Your [ShortHairDesc] dips towards the glue, but knowing how awful that would be, you desperately whip it aside at the last moment![or]Oh no: your [ShortHairDesc] falls forward. You almost strain your neck, wrenching your head back. Whew - that was close![or]Damn this long hair - it almost got stuck in the glue again![at random]";
 					otherwise if N > GS + BaseDiff:
@@ -331,7 +331,7 @@ To check glue tripping:
 				otherwise:
 					say "Good thing you weren't kneeling down, then!";
 			otherwise:
-				say "You dextrously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
+				say "You dexterously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
 
 
 [See if the glue trap gets the player. If so, it knocks them off their feet.
@@ -414,7 +414,7 @@ To compute glue escaping:
 		FatigueUp 2;
 		if debuginfo > 0, say "[input-style]Glue escape check: strength roll d[strength of the player] ([T]) | ([bond-grip].5) glue strength[roman type][line break]";
 		if T > bond-grip: [Less than this and it's a fail]
-			[[decrease the glue-strength of G by T;]] [Aika had said: The whole point of pulling is that we expect it to possibly succeed outright if the player is strong enough! So let's make that at least vaguely possible. Also this now makes it much more realistic that the player could succeed so hard that they fail.]
+			[[decrease the glue-strength of G by T;]] [Aika had said: The whole point of pulling is that we expect it to possibly succeed outright if the player is strong enough!  So let's make that at least vaguely possible. Also this now makes it much more realistic that the player could succeed so hard that they fail.]
 			[[if the glue-strength of G < 1:]]
 			[Selkie: Let's instead measure how much they've weakened their glue bond. We'll then zero stickiness, unless the glue snaps dramatically/suddenly and they fall back in if they fail the Dex check (where "dramatic" means > 6 excess).]
 			let drama be T - bond-grip;
@@ -458,7 +458,7 @@ To compute glue escaping:
 				[check glue G freeing by M;]
 				if a random number between 1 and 2 is 1:
 					say "[big he of M] pulls you free!";
-					compute raw glue escaping G with 0;
+					compute raw glue escaping G  with 0;
 				otherwise:
 					say "Unfortunately, [he of M] fails. [one of]Strangely, the glue seems not to affect [him of M] at all.[or]Again, the glue doesn't affect [him of M].[stopping]";
 					decrease the stickiness of the player by 1;
@@ -841,7 +841,7 @@ Otherwise, the monster reacts to seeing the player stuck and struggling and vuln
 @param <Monster>:<M>
 +!]
 To compute glued reaction of (M - a monster):
-	if a random number between 1 and 3 < 3: [+? "and M is intelligent"? ]
+	if a random number between 1 and 3 < 3:  [+? "and M is intelligent"? ]
 		say "[BigNameDesc of M] [if M is intelligent][one of]looks at you with amusement[or]grins at your hampered situation[at random][otherwise][one of]senses your vulnerability[or]sees your helplessness[at random][end if]";
 		FavourDown M;
 		humiliate 200;
@@ -873,7 +873,7 @@ A time based rule (this is the glue pain threshold rule):
 
 [!<CheckTearingOffWornClothing>+
 
-Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dextrous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
+Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dexterous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
 ###Later, we should allow monsters to tear worn clothing off too, if they want.
 
 +!]

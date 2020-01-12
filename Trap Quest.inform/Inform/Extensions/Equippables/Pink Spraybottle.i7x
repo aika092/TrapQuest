@@ -81,13 +81,13 @@ To compute periodic effect of (C - a pink spraybottle):
 
 
 To compute (S - a pink spraybottle) breaking:
-	if a random number between 1 and the dexterity of the player < 5 or (a random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
+	if a random number between 1 and the dexterity of the player < 5 or (a  random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
 		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
 		now S is cloth;
 		now the charge of S is 0;
 		unless there is a worn cursed maid headdress, now S is cursed;
 		if mechanic is reactive:
-			say "[speech style of mechanic]'That[']s coming out of your pay-check you clumsy bitch!'[roman type][line break][BigNameDesc of mechanic] looks furious.";
+			say "[speech style of mechanic]'That's coming out of your pay-check you clumsy bitch!'[roman type][line break][BigNameDesc of mechanic] looks furious.";
 			now mechanic is interested;
 			anger mechanic;
 		if the work ethic of S > -100, now the work ethic of S is -100;
@@ -100,8 +100,8 @@ To compute spraybottle punishment:
 		increase the work ethic of S by 130;
 		let V be a random off-stage vibrator;
 		let O be a random worn overdress;
-		let P be a random off-stage plug;
-		if there is a worn plug, now P is a random worn plug;
+		let P be a random worn sex toy;
+		if P is nothing, let P be a random off-stage basic plug;
 		say "[bold type]Your [ShortDesc of a random worn maid headdress] causes you to feel deep shame at your awful work ethic![roman type][line break]";
 		if V is vaginally summonable and the player is female:
 			say "You feel a stiff, hard object burrowing into your [vagina]. It starts vibrating. ";
@@ -109,14 +109,21 @@ To compute spraybottle punishment:
 		otherwise if V is actually summonable and the player is male:
 			say "You feel a stiff, hard object pushing itself into your [asshole]. It settles right up against your prostate and immediately begins to vibrate! ";
 			summon V cursed with quest;
-		otherwise if P is worn and the size of P < 10 and the size of P < the openness of asshole + 3:
-			let P be a random worn plug penetrating asshole;
+		otherwise if P is penetrating asshole and the size of P < 10 and the size of P < the openness of asshole + 3:
 			say "You feel your [P] suddenly increase in size, [if the size of P > the openness of asshole and the openness of asshole < 10]painfully stretching out your poor [asshole] from the inside[otherwise]filling the extra space in your already gaping [asshole][end if]!";
 			sizeUp P by 2;
 		otherwise if P is not worn and P is actually summonable:
-			assign size (the openness of asshole + 2) to P;
 			say "You feel your a hard object prodding at your [asshole], as if trying to get inside. It succeeds, [if the openness of asshole < 10]brutally [end if]stretching you out as it forces its way in.";
+			if debugmode > 0:
+				say "Toys before maid plug summon:[line break]";
+				repeat with C running through worn sex toy:
+					say "[C] is penetrating [list of body parts penetrated by C].";
 			summon P cursed with quest;
+			assign size (the openness of asshole + 2) to P;
+			if debugmode > 0:
+				say "Toys after maid plug summon:[line break]";
+				repeat with C running through worn sex toy:
+					say "[C] is penetrating [list of body parts penetrated by C].";
 		otherwise if the player is not immobile and a random number between 1 and 4 is 1:
 			say "You notice a shadow looming over you, and look around just in time to see a broad wooden paddle colliding harshly with your backside.";
 			try kneeling;
@@ -142,11 +149,11 @@ To compute spraybottle punishment:
 				if the fatigue of the player > the tired threshold of the player:
 					say "[if the player is not prone]Its so jarring you instantly fall to your knees.[end if]";
 					silently try kneeling;
-				say "You [if the player is prone]stay[otherwise]stand[end if] there, shivering in place, from the cold.";
 				if the make-up of face > 0 and permanent makeup is 0:
 					say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
 					FaceDown 1;
 				now another-turn is 1;
+				if another-turn-flavour is "", now another-turn-flavour is "You [if the player is prone]stay[otherwise]stand[end if] there, shivering in place, recovering from the cold water.";
 			otherwise if L is 2:
 				say "[if the raw semen addiction of the player < 8]You shriek[otherwise if the raw semen taste addiction of the player > 10]You smile and open your mouth wide[otherwise if the raw semen addiction of the player < 12]You close your eyes[otherwise]You smile and close your eyes[end if] as it cascades over you, soaking your clothes and covering your skin with thick white [semen]!";
 				if the raw semen taste addiction of the player > 10:

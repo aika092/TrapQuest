@@ -59,9 +59,9 @@ To say MonsterDesc of (M - a fairy):
 		say "A fairy.";
 	otherwise:
 		if lady fetish is 2:
-			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned , just about twice the size of your fist. He has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. He has a thin, wispy body and [his of M] although its hard to tell thanks to his erratic movements, [his of M] [sissy-penis] is locked up in a tiny dark-[if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] cage.";
+			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned, about twice the size of your fist. He has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. He has a thin, wispy body and [his of M] although it's hard to tell thanks to his erratic movements, [his of M] [sissy-penis] is locked up in a tiny dark-[if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] cage.";
 		otherwise:
-			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned , just about twice the size of your fist. She has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. Her breasts are big for her size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized woman, and her [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down her erratic, unpredictable movements at all.".
+			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned, about twice the size of your fist. She has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. Her breasts are big for her size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized woman, and her [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down her erratic, unpredictable movements at all.".
 
 To set up (M - a fairy):
 	reset M;
@@ -311,7 +311,7 @@ Definition: a body part is fairy targetable: decide no.
 
 Definition: breasts (called XXX) is fairy targetable:
 	now decideToSuckle is 0;
-	[Selkie: yes if the player has recently lactated; or probably yes if they have a lot of milk]
+	[Selkie: yes if the player has recently lactated; or  probably yes if they have a lot of milk]
 	if a random number between 1 and the milk volume of breasts > 5:
 		now decideToSuckle is 1;
 		decide yes;
@@ -407,7 +407,7 @@ To compute fairySuckling of (M - a fairy):
 			say "Damn it! She [italic type]has[roman type] trained your nipples to sit up and beg!";
 		otherwise if FairySuckled > 7:
 			say "Your trained nipples perk up, to order!";
-	otherwise: [This is the case were she has to attempt to deal with your nipple covering(s).]
+	otherwise:  [This is the case were she has to attempt to deal with your nipple covering(s).]
 		say "She darts forward, and [if FairySuckleSlashes is 0]you suddenly notice her tiny hands are tipped by [otherwise]you just [italic type]know[roman type] she can smell your lovely [milk]. [one of]Your nipples are already perking up.[or]Your traitorous nipples perk up.[at random] Once again your eyes are drawn to her [end if]wickedly-sharp little nails! With amazing and horrifying speed, fingers outstretched, she swoops towards your nipples, moving so fast you don't dare even twitch, for fear of what might happen if you do!";
 		repeat with nC running through worn nipple covering clothing:
 			if nc is milking flappable: [Fairies love milk so much they don't ask, they just rudely expose the player!]
@@ -425,7 +425,7 @@ To compute fairySuckling of (M - a fairy):
 				say "Her [one of]flashing nails[or]tiny but scary claws[or]razor-sharp fingernails[or]oyster-shell sharp little crescent nails[at random] [one of]carve[or]cut[or]slice[or]magically slide through[at random] your [nC], exposing your nipples to her [one of]tender mercies[or]gaze[or]hungry gaze[or]eager mouth[at random].[line break]";
 				now nC is top-ripped;
 				now slashedSomething is 1;
-				[###Selkie: Given I've bypassed the damage clothing function, maybe it's okay to just add a little damage directly this way?]
+				[Selkie: Given I've bypassed the damage clothing function, maybe it's okay to just add a little damage directly this way?]
 				increase the damage of nC by 2;
 		if slashedSomething is 1:
 			increase FairySuckleSlashes by 1;
@@ -468,7 +468,7 @@ To compute fairySuckling of (M - a fairy):
 			say "You find yourself biting your lip, and holding it up slightly to her, offering yourself.";
 		say "Her grin widens as she darts to your other nipple, which shivers in eager anticipation of its imminent fate. The knowing look in her eyes tells you how much she enjoys having you under her tiny thumb. Her eyes burn into yours: [italic type][one of]'Yes, putty in my hands.'[or]'That's my pretty cow-dolly.'[or]'Hello, Mommy.'[or]'Go on, be a good milk dispenser.'[or]'I should call you Buttercup!'[or]'Ooh, who's getting to be well-trained?'[or]'That's a good milk-cow.'[or]'I know you want me to suck on you.'[or]'Look how eager you are!'[or]'I know you love this![or]'Oh, look who can't wait?'[or]'Oh, my, look at them, standing up proud and glistening with milk for me!'[or]'Are your nipples getting bigger?' She licks her lips.[at random][roman type] Your eyes roll back in your head again as [one of]she fastens onto you![or]her mouth engulfs you![or] she starts suckling![at random]";
 	if there is a worn cow piercing or there is a worn nipple chain:
-		say "Her tiny hands are jerking at [italic type]this[roman type] nipple's piercing, even as her mouth stretches over your rosebud, and her lips press down right to the edge of the heavy metal as she begins sucking vigorously. Between her suckling at your  tit, and her tugging at the piercing, small lightning bolts of pleasure jolt and judder through you. You have the feeling that something a little magical just happened: your [BreastDesc] feel... [italic type]milkier[roman type]. Ooh - sexy!";
+		say "Her tiny hands are jerking at [italic type]this[roman type] nipple's piercing, even as her mouth stretches over your rosebud, and her lips press down right to the edge of the heavy metal as she begins sucking vigorously. Between her suckling at your tit, and her tugging at the piercing, small lightning bolts of pleasure jolt and judder through you. You have the feeling that something a little magical just happened: your [BreastDesc] feel... [italic type]milkier[roman type]. Ooh - sexy!";
 		passively stimulate breasts from M;
 		increase the lactation rate of the player by 2; [Cowgirls get even milkier!]
 	if FairySuckled is 1:
@@ -561,16 +561,19 @@ Definition: vagina (called XXX) is fairy targetable:
 
 To compute fairy meddling on (XXX - vagina):
 	let D be a random worn uncursed currently at least partially visible diaper;
-	if D is transformable diaper and diaper quest is 0:
+	if diaper quest is 1 and diaper messing >= 3 and the player is not hungry:
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your belly as she does. ";
+		compute DQ hunger;
+	otherwise if D is transformable diaper and diaper quest is 0:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your [printed name of D] as she does. ";
 		potentially transform D;
 	otherwise:
 		increase the bladder of the player by 7;
 		if the bladder of the player < 14, now the bladder of the player is 14;
 		if the bladder of the player > 20, now the bladder of the player is 20;
-		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as she does. She turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
+		say  "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as she does. She turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
 
-[Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off? And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off? Just an idea.]
+[Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off?  And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off? Just an idea.]
 [Aika: Maybe we do need a more reliable way to deal with fairies. Something like the spraybottle idea but accessible to any class (or at least most)]
 This is the fairy tries meddling rule:
 	let B be a random fairy targetable body part;
@@ -677,7 +680,7 @@ To say InvitationAccepted of (M - a fairy) with (N - a monster):
 
 To say InvitationRejected of (M - a fairy) with (N - a monster):
 	if there is a father material monster penetrating vagina and pregnancy fetish is 1:
-		say "[speech style of M]'[one of]Hee hee! Looks like you're about to get inseminated!'[or]It looks like you[']re about to get inseminated! I[']m so happy for you!'[or]Cum inside her, teehee!'[or]Get her pregnant! Get her pregnant!'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Hee hee! Looks like you're about to get inseminated!'[or]It looks like he's about to squirt inside you! I[']m so happy for you!'[or]Cum inside her, teehee!'[or]Get her pregnant! Get her pregnant!'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Sorry, I don't feel like playing right now.'[or]We had playtime together already, now it[']s [him of N]'s turn.'[at random][roman type][line break]";
 
@@ -701,7 +704,7 @@ To say VanityAnnoyed of (M - a fairy):
 
 To say VanityRejected of (M - a fairy):
 	if the boredom of M <= 100:
-		say "[speech style of M]'Lets play!'[roman type][line break]";
+		say "[speech style of M]'Let's play!'[roman type][line break]";
 		now M is fairydistracted;
 	otherwise:
 		say "[speech style of M]'This is boring.'[roman type][line break]".
@@ -732,7 +735,7 @@ To compute annoyance of (M - a fairy):
 
 To say TeachQuestion of (M - a fairy):
 	if bellyskill is 1 and the pregnancy of the player is 1, say "[variable custom style]'Can you teach me anything useful?'[roman type][line break]";
-	otherwise say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by chance?'[or]Can you tell me what's growing inside me?'[at random][roman type] You gesture at your [BellyDesc].".
+	otherwise say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by any chance?'[or]Can you tell me what's growing inside me?'[at random][roman type] You gesture at your [BellyDesc].".
 
 To decide which number is the mild-annoyance threshold of (M - a fairy):
 	decide on 440.
@@ -755,7 +758,7 @@ To say PregnancyAssessment of (M - a fairy):
 		say "[speech style of M]'Hee hee! I'm going to be a daddy!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is creampie pole trap:
-		say "[big he of M] looks up at you and starts giggling uncontrollably. What could that mean?";
+		say "[speech style of M]'Oooh, how kinky!'[roman type] [big he of M] looks up at you and starts giggling uncontrollably. What could that mean?";
 		alwayscutshow figure of fairy interact 5 for M;
 	otherwise if the father is royal guard or the father is unicorn:
 		say "[speech style of M]'Ooh, You[']re a lucky girl.'[roman type] You don[']t really feel like that was helpful...";
@@ -780,7 +783,7 @@ To say PregnancyAssessment of (M - a fairy):
 To say PregnancyAssessment of (M - fairy-witch):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if M is the father:
-		say "[speech style of M]'Its definitely mine, heehee!'[roman type]";
+		say "[speech style of M]'It's definitely mine, heehee!'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is sex doll:
 		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type]";
@@ -801,7 +804,7 @@ To say PregnancyAssessment of (M - fairy-witch):
 		say "[big he of M] recoils and starts, rubbing [his of M] cheek.[line break][speech style of M]'Whoever the daddy is, [he of mechanic]'s really really mean!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 6 for M;
 	otherwise if the father is fairy:
-		say "[line break][speech style of M]'Tee hee. Its obviously a fairy!'[roman type][line break]";
+		say "[line break][speech style of M]'Tee hee. It's obviously a fairy!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
 		say "[speech style of M]'Well, it was definitely a human. Does that help?'[roman type]";
@@ -811,13 +814,13 @@ To say PregnancyAssessment of (M - fairy-witch):
 To say PregnancyAssessment of (M - blue-fairy):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if the father is fairy:
-		say "[speech style of M]'Uuuuummm, I think its a fairy?'[roman type]";
+		say "[speech style of M]'Uuuuummm, I think it's a fairy?'[roman type]";
 		alwayscutshow figure of fairy interact 11 for M;
 	otherwise if the father is mansion dwelling:
 		say "[big he of M] shivers.[speech style of M]It sounds like the daddy lives somewhere really spooky!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is hotel dwelling or the father is demon lord or the father is patron:
-		say "[speech style of M]'The daddy sounds really rich. Have you slept with any piggybanks recently?'[roman type][line break]";
+		say "[speech style of M]'The daddy sounds really rich. Have you slept with any piggy-banks recently?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is woods dwelling:
 		say "[speech style of M]'The daddy carries the forest lord's blessing! Or maybe it IS the forest lord.'[roman type][line break]";
@@ -826,7 +829,7 @@ To say PregnancyAssessment of (M - blue-fairy):
 		say "[speech style of M]'Hmm, the daddy must live somewhere underground. I think.'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
-		say "[speech style of M]'Uhhhh...mmmmm....I think its, uhmm. I...don't know. Sorry.";
+		say "[speech style of M]'Uhhhh... mmmmm... I think it's, uhmm. I... don't know. Sorry.";
 		alwayscutshow figure of fairy interact 7 for M;
 	say "[line break]".
 
